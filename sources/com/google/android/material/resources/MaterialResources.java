@@ -104,7 +104,6 @@ public class MaterialResources {
         return typedValue.getComplexUnit();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static int getIndexWithValue(TypedArray typedArray, int i, int i2) {
         return typedArray.hasValue(i) ? i : i2;
     }

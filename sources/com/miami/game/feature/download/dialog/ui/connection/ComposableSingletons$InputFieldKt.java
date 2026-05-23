@@ -10,12 +10,12 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InputField.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$InputFieldKt {
     public static final ComposableSingletons$InputFieldKt INSTANCE = new ComposableSingletons$InputFieldKt();
 
     /* renamed from: lambda$-1682333503  reason: not valid java name */
-    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f133lambda$1682333503 = ComposableLambdaKt.composableLambdaInstance(-1682333503, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$InputFieldKt$$ExternalSyntheticLambda0
+    private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f53lambda$1682333503 = ComposableLambdaKt.composableLambdaInstance(-1682333503, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$InputFieldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$InputFieldKt.lambda__1682333503$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -23,8 +23,8 @@ public final class ComposableSingletons$InputFieldKt {
     });
 
     /* renamed from: getLambda$-1682333503$dialogs  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9093getLambda$1682333503$dialogs() {
-        return f133lambda$1682333503;
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9731getLambda$1682333503$dialogs() {
+        return f53lambda$1682333503;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

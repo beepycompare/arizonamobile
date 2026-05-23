@@ -105,9 +105,9 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
         }
         Modifier windowInsetsPadding = WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), this.$windowInsets);
         f = WideNavigationRailKt.ExpandedRailMaxWidth;
-        Modifier m871widthInVpY3zN4$default = SizeKt.m871widthInVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null);
+        Modifier m1124widthInVpY3zN4$default = SizeKt.m1124widthInVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null);
         f2 = WideNavigationRailKt.WNRVerticalPadding;
-        Modifier selectableGroup = SelectableGroupKt.selectableGroup(PaddingKt.m822paddingqDBjuR0$default(m871widthInVpY3zN4$default, 0.0f, f2, 0.0f, 0.0f, 13, null));
+        Modifier selectableGroup = SelectableGroupKt.selectableGroup(PaddingKt.m1054paddingqDBjuR0$default(m1124widthInVpY3zN4$default, 0.0f, f2, 0.0f, 0.0f, 13, null));
         ComposerKt.sourceInformationMarkerStart(composer, -1006965742, "CC(remember):WideNavigationRail.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -139,15 +139,15 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
         } else {
             composer.useNode();
         }
-        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-        Updater.m4049setimpl(m4041constructorimpl, anonymousClass2, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+        Updater.m4475setimpl(m4467constructorimpl, anonymousClass2, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, 1714873591, "C270@12077L9:WideNavigationRail.kt#uh7d8r");
         if (function2 != null) {
             composer.startReplaceGroup(1714892004);
@@ -170,15 +170,15 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl2 = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 310577628, "C268@12032L8:WideNavigationRail.kt#uh7d8r");
@@ -238,7 +238,7 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
         @Override // androidx.compose.ui.layout.MeasurePolicy
         /* renamed from: measure-3p2s80s */
         public MeasureResult mo41measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, long j) {
-            int m7510getMinWidthimpl;
+            int m8115getMinWidthimpl;
             int i;
             int i2;
             int i3;
@@ -255,19 +255,19 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
             float f2;
             float WideNavigationRailLayout$lambda$8;
             List<? extends Measurable> list2 = list;
-            int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+            int m8112getMaxHeightimpl = Constraints.m8112getMaxHeightimpl(j);
             int size = list2.size();
-            int m7510getMinWidthimpl2 = Constraints.m7510getMinWidthimpl(j);
-            if (Constraints.m7510getMinWidthimpl(j) == 0) {
+            int m8115getMinWidthimpl2 = Constraints.m8115getMinWidthimpl(j);
+            if (Constraints.m8115getMinWidthimpl(j) == 0) {
                 f2 = WideNavigationRailKt.ExpandedRailMinWidth;
-                m7510getMinWidthimpl2 = RangesKt.coerceAtMost(measureScope.mo399roundToPx0680j_4(f2), Constraints.m7508getMaxWidthimpl(j));
+                m8115getMinWidthimpl2 = RangesKt.coerceAtMost(measureScope.mo428roundToPx0680j_4(f2), Constraints.m8113getMaxWidthimpl(j));
                 WideNavigationRailLayout$lambda$8 = WideNavigationRailKt.WideNavigationRailLayout$lambda$8(this.$minWidth$delegate);
-                m7510getMinWidthimpl = RangesKt.coerceAtMost(measureScope.mo399roundToPx0680j_4(WideNavigationRailLayout$lambda$8), Constraints.m7508getMaxWidthimpl(j));
+                m8115getMinWidthimpl = RangesKt.coerceAtMost(measureScope.mo428roundToPx0680j_4(WideNavigationRailLayout$lambda$8), Constraints.m8113getMaxWidthimpl(j));
             } else {
-                m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
+                m8115getMinWidthimpl = Constraints.m8115getMinWidthimpl(j);
             }
             if (size < 1) {
-                return MeasureScope.layout$default(measureScope, m7510getMinWidthimpl, m7507getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$WideNavigationRailLayout$1$2$$ExternalSyntheticLambda0
+                return MeasureScope.layout$default(measureScope, m8115getMinWidthimpl, m8112getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$WideNavigationRailLayout$1$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit unit;
@@ -277,14 +277,14 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                     }
                 }, 4, null);
             }
-            long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+            long m8103copyZbe2FdA$default = Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
             if (this.$header != null) {
                 int size2 = list2.size();
                 for (int i8 = 0; i8 < size2; i8++) {
                     Measurable measurable = list2.get(i8);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "header")) {
-                        objectRef.element = measurable.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
+                        objectRef.element = measurable.mo6818measureBRTryo0(m8103copyZbe2FdA$default);
                         if (size > 1) {
                             list2 = list2.subList(1, size);
                         }
@@ -297,7 +297,7 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
             }
             i = 0;
             final ArrayList arrayList = size > 0 ? new ArrayList() : null;
-            int m7508getMaxWidthimpl = this.$expanded ? Constraints.m7508getMaxWidthimpl(m7498copyZbe2FdA$default) : m7510getMinWidthimpl;
+            int m8113getMaxWidthimpl = this.$expanded ? Constraints.m8113getMaxWidthimpl(m8103copyZbe2FdA$default) : m8115getMinWidthimpl;
             if (arrayList != null) {
                 float f3 = this.$minimumA11ySize;
                 boolean z = this.$expanded;
@@ -305,7 +305,7 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                 int i9 = i;
                 ArrayList arrayList2 = new ArrayList(list2.size());
                 int size3 = list2.size();
-                i4 = m7507getMaxHeightimpl;
+                i4 = m8112getMaxHeightimpl;
                 int i10 = 0;
                 i5 = 0;
                 int i11 = i9;
@@ -317,23 +317,23 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                     int i13 = -i11;
                     boolean z2 = z;
                     State<Dp> state2 = state;
-                    long m7528offsetNN6EwU$default = ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, 0, i13, 1, null);
+                    long m8133offsetNN6EwU$default = ConstraintsKt.m8133offsetNN6EwU$default(m8103copyZbe2FdA$default, 0, i13, 1, null);
                     Constraints.Companion companion = Constraints.Companion;
                     int i14 = i10;
-                    int i15 = measureScope.mo399roundToPx0680j_4(f3);
+                    int i15 = measureScope.mo428roundToPx0680j_4(f3);
                     float f4 = f3;
                     WideNavigationRailLayout$lambda$11 = WideNavigationRailKt.WideNavigationRailLayout$lambda$11(state2);
                     ArrayList arrayList4 = arrayList2;
-                    int i16 = m7510getMinWidthimpl2;
-                    int i17 = m7510getMinWidthimpl;
-                    Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(ConstraintsKt.m7523constrainN9IONVI(m7528offsetNN6EwU$default, companion.m7517fitPrioritizingWidthZbe2FdA(i15, m7508getMaxWidthimpl, measureScope.mo399roundToPx0680j_4(WideNavigationRailLayout$lambda$11), Constraints.m7507getMaxHeightimpl(m7498copyZbe2FdA$default))));
-                    int measuredWidth = mo6216measureBRTryo0.getMeasuredWidth();
+                    int i16 = m8115getMinWidthimpl2;
+                    int i17 = m8115getMinWidthimpl;
+                    Placeable mo6818measureBRTryo0 = measurable2.mo6818measureBRTryo0(ConstraintsKt.m8128constrainN9IONVI(m8133offsetNN6EwU$default, companion.m8122fitPrioritizingWidthZbe2FdA(i15, m8113getMaxWidthimpl, measureScope.mo428roundToPx0680j_4(WideNavigationRailLayout$lambda$11), Constraints.m8112getMaxHeightimpl(m8103copyZbe2FdA$default))));
+                    int measuredWidth = mo6818measureBRTryo0.getMeasuredWidth();
                     if (z2 && i5 < measuredWidth) {
                         f = WideNavigationRailKt.ItemHorizontalPadding;
-                        i5 = measuredWidth + measureScope.mo399roundToPx0680j_4(f);
+                        i5 = measuredWidth + measureScope.mo428roundToPx0680j_4(f);
                     }
-                    i11 = mo6216measureBRTryo0.getHeight();
-                    arrayList3.add(Boolean.valueOf(arrayList.add(mo6216measureBRTryo0)));
+                    i11 = mo6818measureBRTryo0.getHeight();
+                    arrayList3.add(Boolean.valueOf(arrayList.add(mo6818measureBRTryo0)));
                     i10 = i14 + 1;
                     list2 = list3;
                     z = z2;
@@ -341,15 +341,15 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                     arrayList2 = arrayList4;
                     size3 = i12;
                     state = state2;
-                    m7510getMinWidthimpl2 = i16;
-                    m7510getMinWidthimpl = i17;
+                    m8115getMinWidthimpl2 = i16;
+                    m8115getMinWidthimpl = i17;
                 }
-                i2 = m7510getMinWidthimpl2;
-                i3 = m7510getMinWidthimpl;
+                i2 = m8115getMinWidthimpl2;
+                i3 = m8115getMinWidthimpl;
             } else {
-                i2 = m7510getMinWidthimpl2;
-                i3 = m7510getMinWidthimpl;
-                i4 = m7507getMaxHeightimpl;
+                i2 = m8115getMinWidthimpl2;
+                i3 = m8115getMinWidthimpl;
+                i4 = m8112getMaxHeightimpl;
                 i5 = 0;
             }
             if (!this.$expanded) {
@@ -357,7 +357,7 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                 WideNavigationRailLayout$lambda$6 = WideNavigationRailKt.WideNavigationRailLayout$lambda$6(this.$actualMaxExpandedWidth$delegate);
                 if (WideNavigationRailLayout$lambda$6 > 0) {
                     WideNavigationRailLayout$lambda$9 = WideNavigationRailKt.WideNavigationRailLayout$lambda$9(this.$widthFullRange$delegate);
-                    int i18 = measureScope.mo399roundToPx0680j_4(WideNavigationRailLayout$lambda$9);
+                    int i18 = measureScope.mo428roundToPx0680j_4(WideNavigationRailLayout$lambda$9);
                     WideNavigationRailLayout$lambda$3 = WideNavigationRailKt.WideNavigationRailLayout$lambda$3(this.$currentWidth$delegate);
                     i6 = RangesKt.coerceIn(i18, i6, RangesKt.coerceAtLeast(WideNavigationRailLayout$lambda$3, i6));
                 }
@@ -366,9 +366,9 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                 int max = Math.max(i5, placeable != null ? placeable.getWidth() : 0);
                 i6 = i3;
                 if (max > i6 && max > (i7 = i2)) {
-                    int coerceAtMost = RangesKt.coerceAtMost(Math.max(max, i7), Constraints.m7508getMaxWidthimpl(j));
+                    int coerceAtMost = RangesKt.coerceAtMost(Math.max(max, i7), Constraints.m8113getMaxWidthimpl(j));
                     WideNavigationRailLayout$lambda$92 = WideNavigationRailKt.WideNavigationRailLayout$lambda$9(this.$widthFullRange$delegate);
-                    i6 = RangesKt.coerceAtMost(measureScope.mo399roundToPx0680j_4(WideNavigationRailLayout$lambda$92), coerceAtMost);
+                    i6 = RangesKt.coerceAtMost(measureScope.mo428roundToPx0680j_4(WideNavigationRailLayout$lambda$92), coerceAtMost);
                     this.$actualMaxExpandedWidth$delegate.setIntValue(i6);
                 }
             }
@@ -392,14 +392,14 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
             float WideNavigationRailLayout$lambda$10;
             float f2;
             f = WideNavigationRailKt.WNRVerticalPadding;
-            int i3 = i - measureScope.mo399roundToPx0680j_4(f);
+            int i3 = i - measureScope.mo428roundToPx0680j_4(f);
             if (objectRef.element == 0 || ((Placeable) objectRef.element).getHeight() <= 0) {
                 i2 = 0;
             } else {
                 Placeable.PlacementScope.placeRelative$default(placementScope, (Placeable) objectRef.element, 0, 0, 0.0f, 4, null);
                 int height = ((Placeable) objectRef.element).getHeight();
                 f2 = WideNavigationRailKt.WNRHeaderPadding;
-                i2 = height + measureScope.mo399roundToPx0680j_4(f2);
+                i2 = height + measureScope.mo428roundToPx0680j_4(f2);
             }
             if (list != null) {
                 if (!Intrinsics.areEqual(vertical, Arrangement.INSTANCE.getCenter())) {
@@ -413,7 +413,7 @@ public final class WideNavigationRailKt$WideNavigationRailLayout$1 implements Fu
                     if (i4 < list.size() - 1) {
                         int i5 = iArr[i4];
                         WideNavigationRailLayout$lambda$10 = WideNavigationRailKt.WideNavigationRailLayout$lambda$10(state);
-                        iArr[i4] = i5 + measureScope.mo399roundToPx0680j_4(WideNavigationRailLayout$lambda$10);
+                        iArr[i4] = i5 + measureScope.mo428roundToPx0680j_4(WideNavigationRailLayout$lambda$10);
                     }
                 }
                 int[] iArr2 = new int[list.size()];

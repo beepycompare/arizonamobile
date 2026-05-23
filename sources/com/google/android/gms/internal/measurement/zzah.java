@@ -7,7 +7,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzah implements zzao {
     private final Double zza;
@@ -70,14 +70,6 @@ public final class zzah implements zzao {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao
-    public final zzao zzcA(String str, zzg zzgVar, List list) {
-        if (!"toString".equals(str)) {
-            throw new IllegalArgumentException(String.format("%s.%s is not a function.", zzc(), str));
-        }
-        return new zzas(zzc());
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzao
     public final Double zzd() {
         return this.zza;
     }
@@ -100,5 +92,13 @@ public final class zzah implements zzao {
     @Override // com.google.android.gms.internal.measurement.zzao
     public final zzao zzt() {
         return new zzah(this.zza);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final zzao zzcG(String str, zzg zzgVar, List list) {
+        if ("toString".equals(str)) {
+            return new zzas(zzc());
+        }
+        throw new IllegalArgumentException(String.format("%s.%s is not a function.", zzc(), str));
     }
 }

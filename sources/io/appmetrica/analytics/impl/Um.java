@@ -1,46 +1,88 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.io.UnsupportedEncodingException;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes5.dex */
-public final class Um extends M2 {
-    public Um(int i, String str) {
-        this(i, str, PublicLogger.getAnonymousInstance());
+public final class Um extends MessageNano {
+    public static volatile Um[] c;
+
+    /* renamed from: a  reason: collision with root package name */
+    public String f797a;
+    public byte[] b;
+
+    public Um() {
+        a();
     }
 
-    public final int b() {
-        return this.f689a;
-    }
-
-    public Um(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
-    }
-
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ln
-    public final String a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return str;
-        }
-        try {
-            byte[] bytes = str.getBytes("UTF-8");
-            int length = bytes.length;
-            int i = this.f689a;
-            if (length > i) {
-                String str2 = new String(bytes, 0, i, "UTF-8");
-                try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f689a));
-                } catch (UnsupportedEncodingException unused) {
+    public static Um[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new Um[0];
                 }
-                return str2;
             }
-            return str;
-        } catch (UnsupportedEncodingException unused2) {
-            return str;
         }
+        return c;
+    }
+
+    public final Um a() {
+        this.f797a = "";
+        this.b = WireFormatNano.EMPTY_BYTES;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f797a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f797a);
+        }
+        return !Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f797a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f797a);
+        }
+        if (!Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(2, this.b);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Um mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f797a = codedInputByteBufferNano.readString();
+            } else if (readTag != 18) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.b = codedInputByteBufferNano.readBytes();
+            }
+        }
+        return this;
+    }
+
+    public static Um b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Um().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Um a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Um) MessageNano.mergeFrom(new Um(), bArr);
     }
 }

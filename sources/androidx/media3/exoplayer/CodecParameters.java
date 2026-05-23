@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CodecParameters {
     public static final CodecParameters EMPTY = new Builder().build();
     private final Map<String, Object> params;
@@ -20,7 +20,7 @@ public final class CodecParameters {
         return new Builder();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private final Map<String, Object> params;
 

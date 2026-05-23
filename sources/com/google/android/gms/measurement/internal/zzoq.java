@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzoq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzoq> CREATOR = new zzor();

@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class DisplayMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Picker = m2029constructorimpl(0);
-    private static final int Input = m2029constructorimpl(1);
+    private static final int Picker = m2474constructorimpl(0);
+    private static final int Input = m2474constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DisplayMode m2028boximpl(int i) {
+    public static final /* synthetic */ DisplayMode m2473boximpl(int i) {
         return new DisplayMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m2029constructorimpl(int i) {
+    public static int m2474constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2030equalsimpl(int i, Object obj) {
-        return (obj instanceof DisplayMode) && i == ((DisplayMode) obj).m2034unboximpl();
+    public static boolean m2475equalsimpl(int i, Object obj) {
+        return (obj instanceof DisplayMode) && i == ((DisplayMode) obj).m2479unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2031equalsimpl0(int i, int i2) {
+    public static final boolean m2476equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2032hashCodeimpl(int i) {
+    public static int m2477hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2030equalsimpl(this.value, obj);
+        return m2475equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2032hashCodeimpl(this.value);
+        return m2477hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2034unboximpl() {
+    public final /* synthetic */ int m2479unboximpl() {
         return this.value;
     }
 
@@ -68,22 +68,22 @@ public final class DisplayMode {
         }
 
         /* renamed from: getPicker-jFl-4v0  reason: not valid java name */
-        public final int m2036getPickerjFl4v0() {
+        public final int m2481getPickerjFl4v0() {
             return DisplayMode.Picker;
         }
 
         /* renamed from: getInput-jFl-4v0  reason: not valid java name */
-        public final int m2035getInputjFl4v0() {
+        public final int m2480getInputjFl4v0() {
             return DisplayMode.Input;
         }
     }
 
     public String toString() {
-        return m2033toStringimpl(this.value);
+        return m2478toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2033toStringimpl(int i) {
-        return m2031equalsimpl0(i, Picker) ? "Picker" : m2031equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m2478toStringimpl(int i) {
+        return m2476equalsimpl0(i, Picker) ? "Picker" : m2476equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

@@ -2,6 +2,7 @@ package com.google.android.material.card;
 
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -16,15 +17,19 @@ import android.view.View;
 import androidx.cardview.R;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
+import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.CornerTreatment;
 import com.google.android.material.shape.CutCornerTreatment;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.RoundedCornerTreatment;
+import com.google.android.material.shape.ShapeAppearance;
 import com.google.android.material.shape.ShapeAppearanceModel;
+import com.google.android.material.shape.StateListShapeAppearanceModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public class MaterialCardViewHelper {
@@ -34,7 +39,9 @@ public class MaterialCardViewHelper {
     private static final double COS_45 = Math.cos(Math.toRadians(45.0d));
     public static final int DEFAULT_FADE_ANIM_DURATION = 300;
     private static final int DEFAULT_STROKE_VALUE = -1;
+    private static final int NOT_SET = -1;
     private final MaterialShapeDrawable bgDrawable;
+    private float cardCornerRadius;
     private boolean checkable;
     private Drawable checkedIcon;
     private int checkedIconGravity;
@@ -52,7 +59,7 @@ public class MaterialCardViewHelper {
     private final MaterialCardView materialCardView;
     private ColorStateList rippleColor;
     private Drawable rippleDrawable;
-    private ShapeAppearanceModel shapeAppearanceModel;
+    private ShapeAppearance shapeAppearanceModel;
     private ColorStateList strokeColor;
     private int strokeWidth;
     private final Rect userContentPadding = new Rect();
@@ -64,18 +71,21 @@ public class MaterialCardViewHelper {
     }
 
     public MaterialCardViewHelper(MaterialCardView materialCardView, AttributeSet attributeSet, int i, int i2) {
+        this.cardCornerRadius = -1.0f;
         this.materialCardView = materialCardView;
+        TypedArray obtainStyledAttributes = materialCardView.getContext().obtainStyledAttributes(attributeSet, R.styleable.CardView, i, R.style.CardView);
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(materialCardView.getContext(), attributeSet, i, i2);
         this.bgDrawable = materialShapeDrawable;
         materialShapeDrawable.initializeElevationOverlay(materialCardView.getContext());
         materialShapeDrawable.setShadowColor(-12303292);
         ShapeAppearanceModel.Builder builder = materialShapeDrawable.getShapeAppearanceModel().toBuilder();
-        TypedArray obtainStyledAttributes = materialCardView.getContext().obtainStyledAttributes(attributeSet, R.styleable.CardView, i, R.style.CardView);
         if (obtainStyledAttributes.hasValue(R.styleable.CardView_cardCornerRadius)) {
-            builder.setAllCornerSizes(obtainStyledAttributes.getDimension(R.styleable.CardView_cardCornerRadius, 0.0f));
+            float dimension = obtainStyledAttributes.getDimension(R.styleable.CardView_cardCornerRadius, 0.0f);
+            this.cardCornerRadius = dimension;
+            builder.setAllCornerSizes(dimension);
         }
         this.foregroundContentDrawable = new MaterialShapeDrawable();
-        setShapeAppearanceModel(builder.build());
+        setShapeAppearance(builder.build());
         this.iconFadeAnimInterpolator = MotionUtils.resolveThemeInterpolator(materialCardView.getContext(), com.google.android.material.R.attr.motionEasingLinearInterpolator, AnimationUtils.LINEAR_INTERPOLATOR);
         this.iconFadeInAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), com.google.android.material.R.attr.motionDurationShort2, 300);
         this.iconFadeOutAnimDuration = MotionUtils.resolveThemeDuration(materialCardView.getContext(), com.google.android.material.R.attr.motionDurationShort1, 300);
@@ -84,6 +94,7 @@ public class MaterialCardViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void loadFromAttributes(TypedArray typedArray) {
+        StateListShapeAppearanceModel create;
         ColorStateList colorStateList = MaterialResources.getColorStateList(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_strokeColor);
         this.strokeColor = colorStateList;
         if (colorStateList == null) {
@@ -111,6 +122,17 @@ public class MaterialCardViewHelper {
         Drawable clickableForeground = shouldUseClickableForeground() ? getClickableForeground() : this.foregroundContentDrawable;
         this.fgDrawable = clickableForeground;
         this.materialCardView.setForeground(insetDrawable(clickableForeground));
+        if (this.cardCornerRadius != -1.0f || (create = StateListShapeAppearanceModel.create(this.materialCardView.getContext(), typedArray, com.google.android.material.R.styleable.MaterialCardView_shapeAppearance)) == null) {
+            return;
+        }
+        SpringForce createSpringForce = createSpringForce(this.materialCardView.getContext());
+        this.bgDrawable.setCornerSpringForce(createSpringForce);
+        this.foregroundContentDrawable.setCornerSpringForce(createSpringForce);
+        MaterialShapeDrawable materialShapeDrawable = this.foregroundShapeDrawable;
+        if (materialShapeDrawable != null) {
+            materialShapeDrawable.setCornerSpringForce(createSpringForce);
+        }
+        setShapeAppearance(create);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -227,7 +249,7 @@ public class MaterialCardViewHelper {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.card.MaterialCardViewHelper$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MaterialCardViewHelper.this.m8854xa4d79c2b(valueAnimator2);
+                MaterialCardViewHelper.this.m9469xa4d79c2b(valueAnimator2);
             }
         });
         this.iconAnimator.setInterpolator(this.iconFadeAnimInterpolator);
@@ -243,7 +265,7 @@ public class MaterialCardViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$animateCheckedIcon$0$com-google-android-material-card-MaterialCardViewHelper  reason: not valid java name */
-    public /* synthetic */ void m8854xa4d79c2b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9469xa4d79c2b(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.checkedIcon.setAlpha((int) (255.0f * floatValue));
         this.checkedAnimationProgress = floatValue;
@@ -251,7 +273,8 @@ public class MaterialCardViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setCornerRadius(float f) {
-        setShapeAppearanceModel(this.shapeAppearanceModel.withCornerSize(f));
+        this.cardCornerRadius = f;
+        setShapeAppearance(this.shapeAppearanceModel.getDefaultShape().withCornerSize(f));
         this.fgDrawable.invalidateSelf();
         if (shouldAddCornerPaddingOutsideCardBackground() || shouldAddCornerPaddingInsideCardBackground()) {
             updateContentPadding();
@@ -442,23 +465,20 @@ public class MaterialCardViewHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void setShapeAppearanceModel(ShapeAppearanceModel shapeAppearanceModel) {
-        this.shapeAppearanceModel = shapeAppearanceModel;
-        this.bgDrawable.setShapeAppearanceModel(shapeAppearanceModel);
-        MaterialShapeDrawable materialShapeDrawable = this.bgDrawable;
-        materialShapeDrawable.setShadowBitmapDrawingEnable(!materialShapeDrawable.isRoundRect());
-        MaterialShapeDrawable materialShapeDrawable2 = this.foregroundContentDrawable;
-        if (materialShapeDrawable2 != null) {
-            materialShapeDrawable2.setShapeAppearanceModel(shapeAppearanceModel);
+    public void setShapeAppearance(ShapeAppearance shapeAppearance) {
+        this.shapeAppearanceModel = shapeAppearance;
+        this.bgDrawable.setShapeAppearance(shapeAppearance);
+        this.foregroundContentDrawable.setShapeAppearance(shapeAppearance);
+        MaterialShapeDrawable materialShapeDrawable = this.foregroundShapeDrawable;
+        if (materialShapeDrawable != null) {
+            materialShapeDrawable.setShapeAppearance(shapeAppearance);
         }
-        MaterialShapeDrawable materialShapeDrawable3 = this.foregroundShapeDrawable;
-        if (materialShapeDrawable3 != null) {
-            materialShapeDrawable3.setShapeAppearanceModel(shapeAppearanceModel);
-        }
+        MaterialShapeDrawable materialShapeDrawable2 = this.bgDrawable;
+        materialShapeDrawable2.setShadowBitmapDrawingEnable(!materialShapeDrawable2.isRoundRect());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public ShapeAppearanceModel getShapeAppearanceModel() {
+    public ShapeAppearance getShapeAppearance() {
         return this.shapeAppearanceModel;
     }
 
@@ -527,8 +547,19 @@ public class MaterialCardViewHelper {
         return this.materialCardView.getPreventCornerOverlap() && canClipToOutline() && this.materialCardView.getUseCompatPadding();
     }
 
+    private float getMaxCornerPadding(ShapeAppearanceModel shapeAppearanceModel) {
+        return Math.max(Math.max(calculateCornerPaddingForCornerTreatment(shapeAppearanceModel.getTopLeftCorner(), this.bgDrawable.getTopLeftCornerResolvedSize()), calculateCornerPaddingForCornerTreatment(shapeAppearanceModel.getTopRightCorner(), this.bgDrawable.getTopRightCornerResolvedSize())), Math.max(calculateCornerPaddingForCornerTreatment(shapeAppearanceModel.getBottomRightCorner(), this.bgDrawable.getBottomRightCornerResolvedSize()), calculateCornerPaddingForCornerTreatment(shapeAppearanceModel.getBottomLeftCorner(), this.bgDrawable.getBottomLeftCornerResolvedSize())));
+    }
+
     private float calculateActualCornerPadding() {
-        return Math.max(Math.max(calculateCornerPaddingForCornerTreatment(this.shapeAppearanceModel.getTopLeftCorner(), this.bgDrawable.getTopLeftCornerResolvedSize()), calculateCornerPaddingForCornerTreatment(this.shapeAppearanceModel.getTopRightCorner(), this.bgDrawable.getTopRightCornerResolvedSize())), Math.max(calculateCornerPaddingForCornerTreatment(this.shapeAppearanceModel.getBottomRightCorner(), this.bgDrawable.getBottomRightCornerResolvedSize()), calculateCornerPaddingForCornerTreatment(this.shapeAppearanceModel.getBottomLeftCorner(), this.bgDrawable.getBottomLeftCornerResolvedSize())));
+        ShapeAppearanceModel[] shapeAppearanceModels;
+        float f = 0.0f;
+        for (ShapeAppearanceModel shapeAppearanceModel : this.shapeAppearanceModel.getShapeAppearanceModels()) {
+            if (shapeAppearanceModel != null) {
+                f = Math.max(f, getMaxCornerPadding(shapeAppearanceModel));
+            }
+        }
+        return f;
     }
 
     private float calculateCornerPaddingForCornerTreatment(CornerTreatment cornerTreatment, float f) {
@@ -558,8 +589,9 @@ public class MaterialCardViewHelper {
         }
         if (this.clickableForegroundDrawable == null) {
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{this.rippleDrawable, this.foregroundContentDrawable, this.checkedIcon});
-            this.clickableForegroundDrawable = layerDrawable;
+            FocusRingDrawable.layer(this.materialCardView.getContext(), layerDrawable, this.foregroundShapeDrawable);
             layerDrawable.setId(2, com.google.android.material.R.id.mtrl_card_checked_layer_id);
+            this.clickableForegroundDrawable = layerDrawable;
         }
         return this.clickableForegroundDrawable;
     }
@@ -609,5 +641,9 @@ public class MaterialCardViewHelper {
 
     private boolean isCheckedIconBottom() {
         return (this.checkedIconGravity & 80) == 80;
+    }
+
+    private SpringForce createSpringForce(Context context) {
+        return MotionUtils.resolveThemeSpringForce(context, com.google.android.material.R.attr.motionSpringFastSpatial, com.google.android.material.R.style.Motion_Material3_Spring_Standard_Fast_Spatial);
     }
 }

@@ -7,7 +7,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.firebase.abt.FirebaseABTesting;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzc {
     public static final /* synthetic */ int zza = 0;
@@ -46,28 +46,6 @@ public final class zzc {
         return !zzb.contains(str);
     }
 
-    public static boolean zzd(String str, String str2) {
-        if ("_ce1".equals(str2) || "_ce2".equals(str2)) {
-            return str.equals("fcm") || str.equals(FirebaseABTesting.OriginService.REMOTE_CONFIG);
-        } else if (Constants.ScionAnalytics.USER_PROPERTY_FIREBASE_LAST_NOTIFICATION.equals(str2)) {
-            return str.equals("fcm") || str.equals("fiam");
-        } else if (zzf.contains(str2)) {
-            return false;
-        } else {
-            ImmutableList immutableList = zzg;
-            int size = immutableList.size();
-            int i = 0;
-            while (i < size) {
-                boolean matches = str2.matches((String) immutableList.get(i));
-                i++;
-                if (matches) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
-
     public static boolean zze(String str, String str2, Bundle bundle) {
         if (Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(str2)) {
             if (zza(str) && bundle != null) {
@@ -101,5 +79,27 @@ public final class zzc {
             return false;
         }
         return true;
+    }
+
+    public static boolean zzd(String str, String str2) {
+        if ("_ce1".equals(str2) || "_ce2".equals(str2)) {
+            return str.equals("fcm") || str.equals(FirebaseABTesting.OriginService.REMOTE_CONFIG);
+        } else if (Constants.ScionAnalytics.USER_PROPERTY_FIREBASE_LAST_NOTIFICATION.equals(str2)) {
+            return str.equals("fcm") || str.equals("fiam");
+        } else if (zzf.contains(str2)) {
+            return false;
+        } else {
+            ImmutableList immutableList = zzg;
+            int size = immutableList.size();
+            int i = 0;
+            while (i < size) {
+                boolean matches = str2.matches((String) immutableList.get(i));
+                i++;
+                if (matches) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

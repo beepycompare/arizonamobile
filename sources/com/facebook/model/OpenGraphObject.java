@@ -5,10 +5,10 @@ import com.facebook.model.GraphObject;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface OpenGraphObject extends GraphObject {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Factory {
         public static <T extends OpenGraphObject> T createForPost(Class<T> cls, String str) {
             return (T) createForPost(cls, str, null, null, null, null);

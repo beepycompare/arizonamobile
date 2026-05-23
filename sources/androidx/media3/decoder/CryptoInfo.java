@@ -2,7 +2,7 @@ package androidx.media3.decoder;
 
 import android.media.MediaCodec;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CryptoInfo {
     public int clearBlocks;
     public int encryptedBlocks;
@@ -56,7 +56,7 @@ public final class CryptoInfo {
         iArr2[0] = iArr2[0] + i;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class PatternHolderV24 {
         private final MediaCodec.CryptoInfo frameworkCryptoInfo;
         private final MediaCodec.CryptoInfo.Pattern pattern;

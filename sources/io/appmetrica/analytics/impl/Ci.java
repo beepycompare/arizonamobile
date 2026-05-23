@@ -1,31 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public abstract class Ci {
+public final class Ci implements El {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f541a;
-    public final String b;
-    public final String c;
+    public final /* synthetic */ Jc f498a;
 
-    public Ci(Context context, String str, String str2) {
-        this.f541a = context;
-        this.b = str;
-        this.c = str2;
+    public Ci(Jc jc) {
+        this.f498a = jc;
     }
 
-    public final Object a() {
-        int identifier = this.f541a.getResources().getIdentifier(this.b, this.c, this.f541a.getPackageName());
-        if (identifier != 0) {
-            try {
-                return a(identifier);
-            } catch (Throwable unused) {
-                return null;
-            }
-        }
-        return null;
+    public final boolean a() {
+        return this.f498a.b.f();
     }
-
-    public abstract Object a(int i);
 }

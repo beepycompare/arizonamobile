@@ -15,12 +15,12 @@ import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.ranges.RangesKt;
 /* compiled from: TextFieldMagnifier.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a/\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"calculateSelectionMagnifierCenterAndroid", "Landroidx/compose/ui/geometry/Offset;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "selectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "magnifierSize", "Landroidx/compose/ui/unit/IntSize;", "calculateSelectionMagnifierCenterAndroid-hUlJWOE", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;J)J", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a/\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"calculateSelectionMagnifierCenterAndroid", "Landroidx/compose/ui/geometry/Offset;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "selectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "magnifierSize", "Landroidx/compose/ui/unit/IntSize;", "calculateSelectionMagnifierCenterAndroid-hUlJWOE", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;J)J", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextFieldMagnifierKt {
 
     /* compiled from: TextFieldMagnifier.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -44,48 +44,48 @@ public final class TextFieldMagnifierKt {
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-hUlJWOE  reason: not valid java name */
-    public static final long m1493calculateSelectionMagnifierCenterAndroidhUlJWOE(TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, TextLayoutState textLayoutState, long j) {
-        int m7003getStartimpl;
-        long m1508getHandleDragPositionF1C5BW0 = textFieldSelectionState.m1508getHandleDragPositionF1C5BW0();
-        if ((9223372034707292159L & m1508getHandleDragPositionF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats || transformedTextFieldState.getVisualText().length() == 0) {
-            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+    public static final long m1926calculateSelectionMagnifierCenterAndroidhUlJWOE(TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, TextLayoutState textLayoutState, long j) {
+        int m7608getStartimpl;
+        long m1941getHandleDragPositionF1C5BW0 = textFieldSelectionState.m1941getHandleDragPositionF1C5BW0();
+        if ((9223372034707292159L & m1941getHandleDragPositionF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats || transformedTextFieldState.getVisualText().length() == 0) {
+            return Offset.Companion.m5118getUnspecifiedF1C5BW0();
         }
-        long m1336getSelectiond9O1mEE = transformedTextFieldState.getVisualText().m1336getSelectiond9O1mEE();
+        long m1724getSelectiond9O1mEE = transformedTextFieldState.getVisualText().m1724getSelectiond9O1mEE();
         Handle draggingHandle = textFieldSelectionState.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
         if (i == -1) {
-            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5118getUnspecifiedF1C5BW0();
         }
         if (i == 1 || i == 2) {
-            m7003getStartimpl = TextRange.m7003getStartimpl(m1336getSelectiond9O1mEE);
+            m7608getStartimpl = TextRange.m7608getStartimpl(m1724getSelectiond9O1mEE);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            m7003getStartimpl = TextRange.m6998getEndimpl(m1336getSelectiond9O1mEE);
+            m7608getStartimpl = TextRange.m7603getEndimpl(m1724getSelectiond9O1mEE);
         }
         TextLayoutResult layoutResult = textLayoutState.getLayoutResult();
         if (layoutResult == null) {
-            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5118getUnspecifiedF1C5BW0();
         }
-        float intBitsToFloat = Float.intBitsToFloat((int) (m1508getHandleDragPositionF1C5BW0 >> 32));
-        int lineForOffset = layoutResult.getLineForOffset(m7003getStartimpl);
+        float intBitsToFloat = Float.intBitsToFloat((int) (m1941getHandleDragPositionF1C5BW0 >> 32));
+        int lineForOffset = layoutResult.getLineForOffset(m7608getStartimpl);
         float lineLeft = layoutResult.getLineLeft(lineForOffset);
         float lineRight = layoutResult.getLineRight(lineForOffset);
         float coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
-        if (!IntSize.m7724equalsimpl0(j, IntSize.Companion.m7731getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+        if (!IntSize.m8329equalsimpl0(j, IntSize.Companion.m8336getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+            return Offset.Companion.m5118getUnspecifiedF1C5BW0();
         }
         float lineTop = layoutResult.getLineTop(lineForOffset);
-        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2.0f) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
+        long m5095constructorimpl = Offset.m5095constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2.0f) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             if (!textLayoutNodeCoordinates.isAttached()) {
                 textLayoutNodeCoordinates = null;
             }
             if (textLayoutNodeCoordinates != null) {
-                m4519constructorimpl = TextLayoutStateKt.m1453coerceIn3MmeM6k(m4519constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
+                m5095constructorimpl = TextLayoutStateKt.m1885coerceIn3MmeM6k(m5095constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
             }
         }
-        return TextLayoutStateKt.m1455fromTextLayoutToCoreUv8p0NA(textLayoutState, m4519constructorimpl);
+        return TextLayoutStateKt.m1887fromTextLayoutToCoreUv8p0NA(textLayoutState, m5095constructorimpl);
     }
 }

@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: ScalingButton.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButton$1$1", f = "ScalingButton.kt", i = {0}, l = {30}, m = "invoke", n = {"$this$pointerInput"}, nl = {-1}, s = {"L$0"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ScalingButtonKt$ScalingButton$1$1$invoke$1 extends ContinuationImpl {
     Object L$0;
     int label;

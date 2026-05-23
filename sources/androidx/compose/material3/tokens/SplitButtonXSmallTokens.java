@@ -9,30 +9,30 @@ import kotlin.Metadata;
 public final class SplitButtonXSmallTokens {
     public static final int $stable = 0;
     public static final SplitButtonXSmallTokens INSTANCE = new SplitButtonXSmallTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
-    private static final float ContainerHeight = Dp.m7555constructorimpl(32.0f);
+    private static final float BetweenSpace = Dp.m8160constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(32.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
     private static final CornerSize InnerHoveredCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
     private static final CornerSize InnerPressedCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
-    private static final float LeadingButtonLeadingSpace = Dp.m7555constructorimpl(12.0f);
-    private static final float LeadingButtonTrailingSpace = Dp.m7555constructorimpl(10.0f);
+    private static final float LeadingButtonLeadingSpace = Dp.m8160constructorimpl(12.0f);
+    private static final float LeadingButtonTrailingSpace = Dp.m8160constructorimpl(10.0f);
     private static final float OuterCornerCornerSizePercent = 50.0f;
-    private static final float TrailingIconSize = Dp.m7555constructorimpl(22.0f);
+    private static final float TrailingIconSize = Dp.m8160constructorimpl(22.0f);
     private static final float TrailingInnerSelectedCornerCornerSizePercent = 50.0f;
-    private static final float TrailingButtonLeadingSpace = Dp.m7555constructorimpl(13.0f);
-    private static final float TrailingButtonTrailingSpace = Dp.m7555constructorimpl(13.0f);
+    private static final float TrailingButtonLeadingSpace = Dp.m8160constructorimpl(13.0f);
+    private static final float TrailingButtonTrailingSpace = Dp.m8160constructorimpl(13.0f);
 
     private SplitButtonXSmallTokens() {
     }
 
     /* renamed from: getBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3774getBetweenSpaceD9Ej5fM() {
+    public final float m4219getBetweenSpaceD9Ej5fM() {
         return BetweenSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3775getContainerHeightD9Ej5fM() {
+    public final float m4220getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -53,12 +53,12 @@ public final class SplitButtonXSmallTokens {
     }
 
     /* renamed from: getLeadingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3776getLeadingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4221getLeadingButtonLeadingSpaceD9Ej5fM() {
         return LeadingButtonLeadingSpace;
     }
 
     /* renamed from: getLeadingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3777getLeadingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4222getLeadingButtonTrailingSpaceD9Ej5fM() {
         return LeadingButtonTrailingSpace;
     }
 
@@ -67,7 +67,7 @@ public final class SplitButtonXSmallTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3780getTrailingIconSizeD9Ej5fM() {
+    public final float m4225getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 
@@ -76,12 +76,12 @@ public final class SplitButtonXSmallTokens {
     }
 
     /* renamed from: getTrailingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3778getTrailingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4223getTrailingButtonLeadingSpaceD9Ej5fM() {
         return TrailingButtonLeadingSpace;
     }
 
     /* renamed from: getTrailingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3779getTrailingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4224getTrailingButtonTrailingSpaceD9Ej5fM() {
         return TrailingButtonTrailingSpace;
     }
 }

@@ -8,31 +8,31 @@ import kotlin.Metadata;
 public final class NavigationBarHorizontalItemTokens {
     public static final int $stable = 0;
     public static final NavigationBarHorizontalItemTokens INSTANCE = new NavigationBarHorizontalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(40.0f);
-    private static final float ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ActiveIndicatorHeight = Dp.m8160constructorimpl(40.0f);
+    private static final float ActiveIndicatorLeadingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float ActiveIndicatorTrailingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
 
     private NavigationBarHorizontalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3533getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3978getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getActiveIndicatorLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3534getActiveIndicatorLeadingSpaceD9Ej5fM() {
+    public final float m3979getActiveIndicatorLeadingSpaceD9Ej5fM() {
         return ActiveIndicatorLeadingSpace;
     }
 
     /* renamed from: getActiveIndicatorTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3535getActiveIndicatorTrailingSpaceD9Ej5fM() {
+    public final float m3980getActiveIndicatorTrailingSpaceD9Ej5fM() {
         return ActiveIndicatorTrailingSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3536getIconSizeD9Ej5fM() {
+    public final float m3981getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

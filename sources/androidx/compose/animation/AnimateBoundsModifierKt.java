@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.IntSize;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AnimateBoundsModifier.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a0\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00012\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b\"\u000e\u0010\t\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"animateBounds", "Landroidx/compose/ui/Modifier;", "lookaheadScope", "Landroidx/compose/ui/layout/LookaheadScope;", "modifier", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "animateMotionFrameOfReference", "", "DefaultBoundsTransform", "animation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a0\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00012\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b\"\u000e\u0010\t\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"animateBounds", "Landroidx/compose/ui/Modifier;", "lookaheadScope", "Landroidx/compose/ui/layout/LookaheadScope;", "modifier", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "animateMotionFrameOfReference", "", "DefaultBoundsTransform", "animation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AnimateBoundsModifierKt {
     private static final BoundsTransform DefaultBoundsTransform = new BoundsTransform() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$$ExternalSyntheticLambda0
@@ -45,17 +45,17 @@ public final class AnimateBoundsModifierKt {
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7495boximpl(m37invoke2pbfIzA(intSize.m7730unboximpl(), constraints.m7514unboximpl()));
+                return Constraints.m8100boximpl(m37invoke2pbfIzA(intSize.m8335unboximpl(), constraints.m8119unboximpl()));
             }
         }, z)).then(modifier2).then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m7495boximpl(m38invoke2pbfIzA(intSize.m7730unboximpl(), constraints.m7514unboximpl()));
+                return Constraints.m8100boximpl(m38invoke2pbfIzA(intSize.m8335unboximpl(), constraints.m8119unboximpl()));
             }
 
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
             public final long m38invoke2pbfIzA(long j, long j2) {
-                return Constraints.Companion.m7518fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
+                return Constraints.Companion.m8123fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
             }
         }, z));
     }

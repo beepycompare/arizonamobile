@@ -1,7 +1,7 @@
 package com.google.android.gms.common.moduleinstall;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ModuleInstallStatusCodes extends CommonStatusCodes {
     public static final int INSUFFICIENT_STORAGE = 46003;

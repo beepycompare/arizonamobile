@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class MyHouseScreenBinding implements ViewBinding {
     public final ImageView backButton;
     public final TextView bizId;

@@ -115,7 +115,7 @@ public final class SnackbarHostKt {
             }
             Modifier modifier3 = modifier;
             if (i5 != 0) {
-                function3 = ComposableSingletons$SnackbarHostKt.INSTANCE.m1945getLambda$1548712596$material3();
+                function3 = ComposableSingletons$SnackbarHostKt.INSTANCE.m2390getLambda$1548712596$material3();
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1077081618, i3, -1, "androidx.compose.material3.SnackbarHost (SnackbarHost.kt:220)");
@@ -214,7 +214,7 @@ public final class SnackbarHostKt {
                     ComposerKt.traceEventStart(-977568115, i3, -1, "androidx.compose.material3.FadeInFadeOutWithScale (SnackbarHost.kt:326)");
                 }
                 Strings.Companion companion2 = Strings.Companion;
-                String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_snackbar_pane_title), startRestartGroup, 0);
+                String m3533getString2EP1pXo = Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_snackbar_pane_title), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1154887069, "CC(remember):SnackbarHost.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -244,9 +244,9 @@ public final class SnackbarHostKt {
                     int i6 = 0;
                     while (i6 < size2) {
                         SnackbarData snackbarData2 = (SnackbarData) fastFilterNotNull.get(i6);
-                        items2.add(new FadeInFadeOutAnimationItem(snackbarData2, ComposableLambdaKt.rememberComposableLambda(-1952400805, true, new SnackbarHostKt$FadeInFadeOutWithScale$1$1(snackbarData2, snackbarData, fadeInFadeOutState, m3088getString2EP1pXo), startRestartGroup, 54)));
+                        items2.add(new FadeInFadeOutAnimationItem(snackbarData2, ComposableLambdaKt.rememberComposableLambda(-1952400805, true, new SnackbarHostKt$FadeInFadeOutWithScale$1$1(snackbarData2, snackbarData, fadeInFadeOutState, m3533getString2EP1pXo), startRestartGroup, 54)));
                         i6++;
-                        m3088getString2EP1pXo = m3088getString2EP1pXo;
+                        m3533getString2EP1pXo = m3533getString2EP1pXo;
                     }
                     startRestartGroup.endReplaceGroup();
                 } else {
@@ -270,15 +270,15 @@ public final class SnackbarHostKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1595840844, "C381@15059L21:SnackbarHost.kt#uh7d8r");

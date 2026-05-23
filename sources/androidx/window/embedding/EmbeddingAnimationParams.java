@@ -1,6 +1,6 @@
 package androidx.window.embedding;
 
-import io.appmetrica.analytics.impl.C0739z2;
+import io.appmetrica.analytics.impl.M2;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -128,7 +128,7 @@ public final class EmbeddingAnimationParams {
     }
 
     /* compiled from: EmbeddingAnimationParams.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\n\u001a\u00020\u00002\u0006\u0010\u000b\u001a\u00020\u0005H\u0007J\u0010\u0010\f\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0010\u0010\u000e\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0010\u0010\u000f\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0006\u0010\u0010\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/window/embedding/EmbeddingAnimationParams$Builder;", "", "<init>", "()V", "animationBackground", "Landroidx/window/embedding/EmbeddingAnimationBackground;", "openAnimation", "Landroidx/window/embedding/EmbeddingAnimationParams$AnimationSpec;", "closeAnimation", "changeAnimation", "setAnimationBackground", C0739z2.g, "setOpenAnimation", "spec", "setCloseAnimation", "setChangeAnimation", "build", "Landroidx/window/embedding/EmbeddingAnimationParams;", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\n\u001a\u00020\u00002\u0006\u0010\u000b\u001a\u00020\u0005H\u0007J\u0010\u0010\f\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0010\u0010\u000e\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0010\u0010\u000f\u001a\u00020\u00002\u0006\u0010\r\u001a\u00020\u0007H\u0007J\u0006\u0010\u0010\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/window/embedding/EmbeddingAnimationParams$Builder;", "", "<init>", "()V", "animationBackground", "Landroidx/window/embedding/EmbeddingAnimationBackground;", "openAnimation", "Landroidx/window/embedding/EmbeddingAnimationParams$AnimationSpec;", "closeAnimation", "changeAnimation", "setAnimationBackground", M2.g, "setOpenAnimation", "spec", "setCloseAnimation", "setChangeAnimation", "build", "Landroidx/window/embedding/EmbeddingAnimationParams;", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Builder {
         private EmbeddingAnimationBackground animationBackground = EmbeddingAnimationBackground.DEFAULT;

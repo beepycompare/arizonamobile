@@ -30,8 +30,8 @@ public abstract class LibraryLoader {
                 loadLibrary(str);
             }
             this.isAvailable = true;
-        } catch (UnsatisfiedLinkError unused) {
-            Log.w(TAG, "Failed to load " + Arrays.toString(this.nativeLibraries));
+        } catch (UnsatisfiedLinkError e) {
+            Log.w(TAG, "Failed to load " + Arrays.toString(this.nativeLibraries), e);
         }
         return this.isAvailable;
     }

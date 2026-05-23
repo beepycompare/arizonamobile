@@ -18,7 +18,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 import kotlin.math.MathKt;
 /* compiled from: AndroidOverscroll.android.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0007\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\f\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0002J\b\u0010\u0015\u001a\u00020\u0014H\u0002J\u001c\u0010\u0016\u001a\u00020\u00142\u0006\u0010\u0017\u001a\u00020\u00182\n\u0010\u0019\u001a\u00060\u001aj\u0002`\u001bH\u0002J\u001c\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u001d\u001a\u00020\u00182\n\u0010\u0019\u001a\u00060\u001aj\u0002`\u001bH\u0002J\u001c\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001f\u001a\u00020\u00182\n\u0010\u0019\u001a\u00060\u001aj\u0002`\u001bH\u0002J\u001c\u0010 \u001a\u00020\u00142\u0006\u0010!\u001a\u00020\u00182\n\u0010\u0019\u001a\u00060\u001aj\u0002`\u001bH\u0002J$\u0010\"\u001a\u00020\u00142\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u00182\n\u0010\u0019\u001a\u00060\u001aj\u0002`\u001bH\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f¨\u0006&"}, d2 = {"Landroidx/compose/foundation/StretchOverscrollNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "pointerInputNode", "Landroidx/compose/ui/node/DelegatableNode;", "overscrollEffect", "Landroidx/compose/foundation/AndroidEdgeEffectOverscrollEffect;", "edgeEffectWrapper", "Landroidx/compose/foundation/EdgeEffectWrapper;", "<init>", "(Landroidx/compose/ui/node/DelegatableNode;Landroidx/compose/foundation/AndroidEdgeEffectOverscrollEffect;Landroidx/compose/foundation/EdgeEffectWrapper;)V", "_renderNode", "Landroid/graphics/RenderNode;", "renderNode", "getRenderNode", "()Landroid/graphics/RenderNode;", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "shouldDrawVerticalStretch", "", "shouldDrawHorizontalStretch", "drawLeftStretch", TtmlNode.LEFT, "Landroid/widget/EdgeEffect;", "canvas", "Landroid/graphics/Canvas;", "Landroidx/compose/ui/graphics/NativeCanvas;", "drawTopStretch", "top", "drawRightStretch", TtmlNode.RIGHT, "drawBottomStretch", "bottom", "drawWithRotation", "rotationDegrees", "", "edgeEffect", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0007\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\f\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0016J\b\u0010\u0013\u001a\u00020\u0014H\u0002J\b\u0010\u0015\u001a\u00020\u0014H\u0002J\u0018\u0010\u0016\u001a\u00020\u00142\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010\u001d\u001a\u00020\u00142\u0006\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010\u001f\u001a\u00020\u00142\u0006\u0010 \u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J \u0010!\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000f¨\u0006%"}, d2 = {"Landroidx/compose/foundation/StretchOverscrollNode;", "Landroidx/compose/ui/node/DelegatingNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "pointerInputNode", "Landroidx/compose/ui/node/DelegatableNode;", "overscrollEffect", "Landroidx/compose/foundation/AndroidEdgeEffectOverscrollEffect;", "edgeEffectWrapper", "Landroidx/compose/foundation/EdgeEffectWrapper;", "<init>", "(Landroidx/compose/ui/node/DelegatableNode;Landroidx/compose/foundation/AndroidEdgeEffectOverscrollEffect;Landroidx/compose/foundation/EdgeEffectWrapper;)V", "_renderNode", "Landroid/graphics/RenderNode;", "renderNode", "getRenderNode", "()Landroid/graphics/RenderNode;", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "shouldDrawVerticalStretch", "", "shouldDrawHorizontalStretch", "drawLeftStretch", TtmlNode.LEFT, "Landroid/widget/EdgeEffect;", "canvas", "Landroid/graphics/Canvas;", "drawTopStretch", "top", "drawRightStretch", TtmlNode.RIGHT, "drawBottomStretch", "bottom", "drawWithRotation", "rotationDegrees", "", "edgeEffect", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class StretchOverscrollNode extends DelegatingNode implements DrawModifierNode {
     private RenderNode _renderNode;
@@ -62,18 +62,18 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
         Density density;
         LayoutDirection layoutDirection;
         Canvas canvas;
-        long mo5267getSizeNHjbRc;
+        long mo5843getSizeNHjbRc;
         GraphicsLayer graphicsLayer;
-        this.overscrollEffect.m244updateSizeuvyYCjk$foundation(contentDrawScope.mo5346getSizeNHjbRc());
+        this.overscrollEffect.m268updateSizeuvyYCjk$foundation(contentDrawScope.mo5922getSizeNHjbRc());
         android.graphics.Canvas nativeCanvas = AndroidCanvas_androidKt.getNativeCanvas(contentDrawScope.getDrawContext().getCanvas());
         this.overscrollEffect.getRedrawSignal$foundation().getValue();
-        if (Size.m4598isEmptyimpl(contentDrawScope.mo5346getSizeNHjbRc())) {
+        if (Size.m5174isEmptyimpl(contentDrawScope.mo5922getSizeNHjbRc())) {
             contentDrawScope.drawContent();
         } else if (!nativeCanvas.isHardwareAccelerated()) {
             this.edgeEffectWrapper.finishAll();
             contentDrawScope.drawContent();
         } else {
-            float f2 = contentDrawScope.mo405toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
+            float f2 = contentDrawScope.mo434toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
             EdgeEffectWrapper edgeEffectWrapper = this.edgeEffectWrapper;
             boolean shouldDrawVerticalStretch = shouldDrawVerticalStretch();
             boolean shouldDrawHorizontalStretch = shouldDrawHorizontalStretch();
@@ -98,7 +98,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 z = drawLeftStretch(orCreateLeftEffect, beginRecording);
                 if (edgeEffectWrapper.isLeftStretched()) {
                     f = 1.0f;
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1.0f - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & 4294967295L)));
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1.0f - Float.intBitsToFloat((int) (this.overscrollEffect.m267displacementF1C5BW0$foundation() & 4294967295L)));
                 } else {
                     f = 1.0f;
                 }
@@ -117,7 +117,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                     z = drawTopStretch(orCreateTopEffect, beginRecording) || z;
                     if (edgeEffectWrapper.isTopStretched()) {
                         c = ' ';
-                        EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> 32)));
+                        EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m267displacementF1C5BW0$foundation() >> 32)));
                         if (edgeEffectWrapper.isRightNegationStretched()) {
                             EdgeEffect orCreateRightEffectNegation = edgeEffectWrapper.getOrCreateRightEffectNegation();
                             drawLeftStretch(orCreateRightEffectNegation, beginRecording);
@@ -127,7 +127,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                             EdgeEffect orCreateRightEffect = edgeEffectWrapper.getOrCreateRightEffect();
                             z = drawRightStretch(orCreateRightEffect, beginRecording) || z;
                             if (edgeEffectWrapper.isRightStretched()) {
-                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() & 4294967295L)));
+                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m267displacementF1C5BW0$foundation() & 4294967295L)));
                             }
                         }
                         if (edgeEffectWrapper.isBottomNegationStretched()) {
@@ -139,7 +139,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                             EdgeEffect orCreateBottomEffect = edgeEffectWrapper.getOrCreateBottomEffect();
                             boolean z2 = drawBottomStretch(orCreateBottomEffect, beginRecording) || z;
                             if (edgeEffectWrapper.isBottomStretched()) {
-                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), f - Float.intBitsToFloat((int) (this.overscrollEffect.m243displacementF1C5BW0$foundation() >> c)));
+                                EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), f - Float.intBitsToFloat((int) (this.overscrollEffect.m267displacementF1C5BW0$foundation() >> c)));
                             }
                             z = z2;
                         }
@@ -153,17 +153,17 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                         contentDrawScope2 = contentDrawScope;
                         LayoutDirection layoutDirection2 = contentDrawScope.getLayoutDirection();
                         Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
-                        long j = contentDrawScope.mo5346getSizeNHjbRc();
+                        long j = contentDrawScope.mo5922getSizeNHjbRc();
                         density = contentDrawScope2.getDrawContext().getDensity();
                         layoutDirection = contentDrawScope2.getDrawContext().getLayoutDirection();
                         canvas = contentDrawScope2.getDrawContext().getCanvas();
-                        mo5267getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
+                        mo5843getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5843getSizeNHjbRc();
                         graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
                         DrawContext drawContext = contentDrawScope2.getDrawContext();
                         drawContext.setDensity(contentDrawScope);
                         drawContext.setLayoutDirection(layoutDirection2);
                         drawContext.setCanvas(Canvas);
-                        drawContext.mo5268setSizeuvyYCjk(j);
+                        drawContext.mo5844setSizeuvyYCjk(j);
                         drawContext.setGraphicsLayer(null);
                         Canvas.save();
                         contentDrawScope2.getDrawContext().getTransform().translate(f3, f2);
@@ -176,7 +176,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                         drawContext2.setDensity(density);
                         drawContext2.setLayoutDirection(layoutDirection);
                         drawContext2.setCanvas(canvas);
-                        drawContext2.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                        drawContext2.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc);
                         drawContext2.setGraphicsLayer(graphicsLayer);
                         getRenderNode().endRecording();
                         int save = nativeCanvas.save();
@@ -196,7 +196,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext22.setDensity(density);
                 drawContext22.setLayoutDirection(layoutDirection);
                 drawContext22.setCanvas(canvas);
-                drawContext22.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                drawContext22.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc);
                 drawContext22.setGraphicsLayer(graphicsLayer);
                 getRenderNode().endRecording();
                 int save2 = nativeCanvas.save();
@@ -210,7 +210,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext3.setDensity(density);
                 drawContext3.setLayoutDirection(layoutDirection);
                 drawContext3.setCanvas(canvas);
-                drawContext3.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+                drawContext3.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc);
                 drawContext3.setGraphicsLayer(graphicsLayer);
                 throw th;
             }
@@ -232,17 +232,17 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
             contentDrawScope2 = contentDrawScope;
             LayoutDirection layoutDirection22 = contentDrawScope.getLayoutDirection();
             Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
-            long j2 = contentDrawScope.mo5346getSizeNHjbRc();
+            long j2 = contentDrawScope.mo5922getSizeNHjbRc();
             density = contentDrawScope2.getDrawContext().getDensity();
             layoutDirection = contentDrawScope2.getDrawContext().getLayoutDirection();
             canvas = contentDrawScope2.getDrawContext().getCanvas();
-            mo5267getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5267getSizeNHjbRc();
+            mo5843getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5843getSizeNHjbRc();
             graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
             DrawContext drawContext4 = contentDrawScope2.getDrawContext();
             drawContext4.setDensity(contentDrawScope);
             drawContext4.setLayoutDirection(layoutDirection22);
             drawContext4.setCanvas(Canvas);
-            drawContext4.mo5268setSizeuvyYCjk(j2);
+            drawContext4.mo5844setSizeuvyYCjk(j2);
             drawContext4.setGraphicsLayer(null);
             Canvas.save();
         }

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.LinkedList;
@@ -35,7 +34,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: LicensePlatesScreen.kt */
 @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0014\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 02\u00020\u0001:\u000201B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010\u0013\u001a\u00020\u0012H\u0002J\u0010\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u0017\u001a\u00020\u0012H\u0002J\b\u0010\u0018\u001a\u00020\u0012H\u0002J\b\u0010\u0019\u001a\u00020\u0012H\u0002J\b\u0010\u001a\u001a\u00020\u0012H\u0002J\b\u0010\u001b\u001a\u00020\u0012H\u0002J\b\u0010\u001c\u001a\u00020\u0012H\u0002J\b\u0010\u001d\u001a\u00020\u0012H\u0002J\b\u0010\u001e\u001a\u00020\u0012H\u0002J\b\u0010\u001f\u001a\u00020\u0012H\u0002J\b\u0010 \u001a\u00020\u0012H\u0002J\b\u0010!\u001a\u00020\u0012H\u0002J\b\u0010\"\u001a\u00020\u0012H\u0002J\b\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0012H\u0002J\b\u0010%\u001a\u00020\u0012H\u0002J\b\u0010&\u001a\u00020\u0012H\u0002J\b\u0010'\u001a\u00020\u0012H\u0002J\b\u0010(\u001a\u00020\u0012H\u0002J\u0016\u0010)\u001a\u00020\u00122\f\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+H\u0002J\u0018\u0010-\u001a\u00020\u00122\u0006\u0010.\u001a\u00020\u00162\u0006\u0010/\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00050\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "platesScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "platesBinding", "Lru/mrlargha/arizonaui/databinding/AzLicencePlateScreenBinding;", "currentRegion", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlatesRegion;", "usaPlates", "Ljava/util/LinkedList;", FirebaseAnalytics.Param.INDEX, "usaPlatesAction", "", "chooseRegionAction", "installPlateNumber", "number", "", "rusPlatesAction", "uaPlatesAction", "byPlatesAction", "kzPlatesAction", "showKzPlatesScreen", "hideKzPlatesScreen", "showUaPlatesScreen", "hideUaPlatesScreen", "showByPlatesScreen", "hideByPlatesScreen", "showRusPlatesScreen", "hideRusPlatesScreen", "showChooseRegionScreen", "hideChooseRegionScreen", "showUSAPlatesScreen", "hideUSAPlatesScreen", "hideMainScreen", "showMainScreen", "updatePrices", "response", "", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$UpdatePricesResponse;", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class LicensePlatesScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     private Companion.LicensePlatesRegion currentRegion;
@@ -46,7 +45,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     /* compiled from: LicensePlatesScreen.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -340,7 +339,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
                     LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray2, charArray, textView, valueAnimator);
                 }
             });
-            ofInt.setDuration(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+            ofInt.setDuration(2000L);
             ofInt.start();
             new CountDownTimer() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$installPlateNumber$1$timer$1
                 @Override // android.os.CountDownTimer
@@ -350,7 +349,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
-                    super(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, 1000L);
+                    super(2000L, 1000L);
                 }
 
                 @Override // android.os.CountDownTimer
@@ -370,7 +369,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
                 LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray22, charArray, textView, valueAnimator);
             }
         });
-        ofInt2.setDuration(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+        ofInt2.setDuration(2000L);
         ofInt2.start();
         new CountDownTimer() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$installPlateNumber$1$timer$1
             @Override // android.os.CountDownTimer
@@ -380,7 +379,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, 1000L);
+                super(2000L, 1000L);
             }
 
             @Override // android.os.CountDownTimer
@@ -609,7 +608,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     /* compiled from: LicensePlatesScreen.kt */
     @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\u0004\u0005\u0006B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0007"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion;", "", "<init>", "()V", "LicensePlatesRegion", "UpdatePricesResponse", "BuyNumberRequest", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -622,7 +621,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
         /* compiled from: LicensePlatesScreen.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlatesRegion;", "", "number", "", "<init>", "(Ljava/lang/String;II)V", "getNumber", "()I", "COUNTRY_RUSSIA", "COUNTRY_UKRAINE", "COUNTRY_BELARUS", "COUNTRY_KAZAKHSTAN", "COUNTRY_USA", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class LicensePlatesRegion {
             private static final /* synthetic */ EnumEntries $ENTRIES;
             private static final /* synthetic */ LicensePlatesRegion[] $VALUES;
@@ -666,7 +665,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
         /* compiled from: LicensePlatesScreen.kt */
         @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J'\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$UpdatePricesResponse;", "", "country", "", "sum", FirebaseAnalytics.Param.CURRENCY, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getCountry", "()Ljava/lang/String;", "getSum", "getCurrency", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class UpdatePricesResponse {
             private final String country;
             private final String currency;
@@ -749,7 +748,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
         /* compiled from: LicensePlatesScreen.kt */
         @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\n\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000b\u001a\u00020\u0003HÆ\u0003J\u001d\u0010\f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0010\u001a\u00020\u0011HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0013"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$BuyNumberRequest;", "", "country", "", TtmlNode.TAG_REGION, "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getCountry", "()Ljava/lang/String;", "getRegion", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class BuyNumberRequest {
             private final String country;
             private final String region;
@@ -817,7 +816,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     /* compiled from: LicensePlatesScreen.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_VEHICLE_PLATE);
 

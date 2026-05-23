@@ -24,11 +24,14 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
     private static final String DEFAULT_CLASS_NAME = "android.view.View";
     public static final int HOST_ID = -1;
     public static final int INVALID_ID = Integer.MIN_VALUE;
-    private static final Rect INVALID_PARENT_BOUNDS = new Rect(Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE);
+    private final View mHost;
+    private final AccessibilityManager mManager;
+    private MyNodeProvider mNodeProvider;
+    private static final Rect INVALID_BOUNDS = new Rect(Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE);
     private static final FocusStrategy.BoundsAdapter<AccessibilityNodeInfoCompat> NODE_ADAPTER = new FocusStrategy.BoundsAdapter<AccessibilityNodeInfoCompat>() { // from class: androidx.customview.widget.ExploreByTouchHelper.1
         @Override // androidx.customview.widget.FocusStrategy.BoundsAdapter
         public void obtainBounds(AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, Rect rect) {
-            accessibilityNodeInfoCompat.getBoundsInParent(rect);
+            accessibilityNodeInfoCompat.getBoundsInScreen(rect);
         }
     };
     private static final FocusStrategy.CollectionAdapter<SparseArrayCompat<AccessibilityNodeInfoCompat>, AccessibilityNodeInfoCompat> SPARSE_VALUES_ADAPTER = new FocusStrategy.CollectionAdapter<SparseArrayCompat<AccessibilityNodeInfoCompat>, AccessibilityNodeInfoCompat>() { // from class: androidx.customview.widget.ExploreByTouchHelper.2
@@ -42,9 +45,6 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
             return sparseArrayCompat.size();
         }
     };
-    private final View mHost;
-    private final AccessibilityManager mManager;
-    private MyNodeProvider mNodeProvider;
     private final Rect mTempScreenRect = new Rect();
     private final Rect mTempParentRect = new Rect();
     private final Rect mTempVisibleRect = new Rect();
@@ -93,8 +93,8 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         this.mHost = view;
         this.mManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         view.setFocusable(true);
-        if (ViewCompat.getImportantForAccessibility(view) == 0) {
-            ViewCompat.setImportantForAccessibility(view, 1);
+        if (view.getImportantForAccessibility() == 0) {
+            view.setImportantForAccessibility(1);
         }
     }
 
@@ -182,8 +182,8 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         return this.mKeyboardFocusedVirtualViewId;
     }
 
-    private void getBoundsInParent(int i, Rect rect) {
-        obtainAccessibilityNodeInfo(i).getBoundsInParent(rect);
+    private void getBoundsInScreen(int i, Rect rect) {
+        obtainAccessibilityNodeInfo(i).getBoundsInScreen(rect);
     }
 
     private boolean moveFocus(int i, Rect rect) {
@@ -192,12 +192,12 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         int i2 = this.mKeyboardFocusedVirtualViewId;
         AccessibilityNodeInfoCompat accessibilityNodeInfoCompat2 = i2 == Integer.MIN_VALUE ? null : allNodes.get(i2);
         if (i == 1 || i == 2) {
-            accessibilityNodeInfoCompat = (AccessibilityNodeInfoCompat) FocusStrategy.findNextFocusInRelativeDirection(allNodes, SPARSE_VALUES_ADAPTER, NODE_ADAPTER, accessibilityNodeInfoCompat2, i, ViewCompat.getLayoutDirection(this.mHost) == 1, false);
+            accessibilityNodeInfoCompat = (AccessibilityNodeInfoCompat) FocusStrategy.findNextFocusInRelativeDirection(allNodes, SPARSE_VALUES_ADAPTER, NODE_ADAPTER, accessibilityNodeInfoCompat2, i, this.mHost.getLayoutDirection() == 1, false);
         } else if (i == 17 || i == 33 || i == 66 || i == 130) {
             Rect rect2 = new Rect();
             int i3 = this.mKeyboardFocusedVirtualViewId;
             if (i3 != Integer.MIN_VALUE) {
-                getBoundsInParent(i3, rect2);
+                getBoundsInScreen(i3, rect2);
             } else if (rect != null) {
                 rect2.set(rect);
             } else {
@@ -357,7 +357,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         obtain.setEnabled(true);
         obtain.setFocusable(true);
         obtain.setClassName("android.view.View");
-        Rect rect = INVALID_PARENT_BOUNDS;
+        Rect rect = INVALID_BOUNDS;
         obtain.setBoundsInParent(rect);
         obtain.setBoundsInScreen(rect);
         obtain.setParent(this.mHost);
@@ -366,8 +366,9 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
             throw new RuntimeException("Callbacks must add text or a content description in populateNodeForVirtualViewId()");
         }
         obtain.getBoundsInParent(this.mTempParentRect);
-        if (this.mTempParentRect.equals(rect)) {
-            throw new RuntimeException("Callbacks must set parent bounds in populateNodeForVirtualViewId()");
+        obtain.getBoundsInScreen(this.mTempScreenRect);
+        if (this.mTempParentRect.equals(rect) && this.mTempScreenRect.equals(rect)) {
+            throw new RuntimeException("Callbacks must set parent bounds or screen bounds in populateNodeForVirtualViewId()");
         }
         int actions = obtain.getActions();
         if ((actions & 64) == 0) {
@@ -391,21 +392,9 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
             }
             obtain.setFocused(z);
             this.mHost.getLocationOnScreen(this.mTempGlobalRect);
-            obtain.getBoundsInScreen(this.mTempScreenRect);
             if (this.mTempScreenRect.equals(rect)) {
-                obtain.getBoundsInParent(this.mTempScreenRect);
-                if (obtain.mParentVirtualDescendantId != -1) {
-                    AccessibilityNodeInfoCompat obtain2 = AccessibilityNodeInfoCompat.obtain();
-                    for (int i2 = obtain.mParentVirtualDescendantId; i2 != -1; i2 = obtain2.mParentVirtualDescendantId) {
-                        obtain2.setParent(this.mHost, -1);
-                        obtain2.setBoundsInParent(INVALID_PARENT_BOUNDS);
-                        onPopulateNodeForVirtualView(i2, obtain2);
-                        obtain2.getBoundsInParent(this.mTempParentRect);
-                        this.mTempScreenRect.offset(this.mTempParentRect.left, this.mTempParentRect.top);
-                    }
-                    obtain2.recycle();
-                }
-                this.mTempScreenRect.offset(this.mTempGlobalRect[0] - this.mHost.getScrollX(), this.mTempGlobalRect[1] - this.mHost.getScrollY());
+                setBoundsInScreenFromBoundsInParent(obtain, this.mTempParentRect);
+                obtain.getBoundsInScreen(this.mTempScreenRect);
             }
             if (this.mHost.getLocalVisibleRect(this.mTempVisibleRect)) {
                 this.mTempVisibleRect.offset(this.mTempGlobalRect[0] - this.mHost.getScrollX(), this.mTempGlobalRect[1] - this.mHost.getScrollY());
@@ -429,7 +418,7 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
     }
 
     private boolean performActionForHost(int i, Bundle bundle) {
-        return ViewCompat.performAccessibilityAction(this.mHost, i, bundle);
+        return this.mHost.performAccessibilityAction(i, bundle);
     }
 
     private boolean performActionForChild(int i, int i2, Bundle bundle) {
@@ -512,6 +501,27 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
         onVirtualViewKeyboardFocusChanged(i, false);
         sendEventForVirtualView(i, 8);
         return true;
+    }
+
+    public final void setBoundsInScreenFromBoundsInParent(AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, Rect rect) {
+        accessibilityNodeInfoCompat.setBoundsInParent(rect);
+        Rect rect2 = new Rect();
+        rect2.set(rect);
+        if (accessibilityNodeInfoCompat.mParentVirtualDescendantId != -1) {
+            AccessibilityNodeInfoCompat obtain = AccessibilityNodeInfoCompat.obtain();
+            Rect rect3 = new Rect();
+            for (int i = accessibilityNodeInfoCompat.mParentVirtualDescendantId; i != -1; i = obtain.mParentVirtualDescendantId) {
+                obtain.setParent(this.mHost, -1);
+                obtain.setBoundsInParent(INVALID_BOUNDS);
+                onPopulateNodeForVirtualView(i, obtain);
+                obtain.getBoundsInParent(rect3);
+                rect2.offset(rect3.left, rect3.top);
+            }
+            obtain.recycle();
+        }
+        this.mHost.getLocationOnScreen(this.mTempGlobalRect);
+        rect2.offset(this.mTempGlobalRect[0] - this.mHost.getScrollX(), this.mTempGlobalRect[1] - this.mHost.getScrollY());
+        accessibilityNodeInfoCompat.setBoundsInScreen(rect2);
     }
 
     /* loaded from: classes2.dex */

@@ -133,7 +133,7 @@ public final class MotionCarouselKt {
         String str6;
         float f2;
         final androidx.compose.runtime.State<MotionItemsProvider> state;
-        Modifier m8029carouselSwipeablepPrIpRY;
+        Modifier m8634carouselSwipeablepPrIpRY;
         Object rememberedValue5;
         Object rememberedValue6;
         Object rememberedValue7;
@@ -324,12 +324,12 @@ public final class MotionCarouselKt {
                             }
                             startRestartGroup.endReplaceGroup();
                             String str13 = (String) mutableState.getValue();
-                            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                            m8634carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8634carouselSwipeablepPrIpRY(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                                 @Override // kotlin.jvm.functions.Function2
                                 public final ThresholdConfig invoke(String str14, String str15) {
                                     return new FractionalThreshold(0.3f);
                                 }
-                            }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
+                            }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8639getVelocityThresholdD9Ej5fM() : 0.0f);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162113093, "CC(remember):MotionCarousel.kt#9igjgp");
                             rememberedValue5 = startRestartGroup.rememberedValue();
                             if (rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -341,21 +341,21 @@ public final class MotionCarouselKt {
 
                                     @Override // kotlin.jvm.functions.Function1
                                     public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                                        m7956invokeozmzZPI(intSize.m7730unboximpl());
+                                        m8561invokeozmzZPI(intSize.m8335unboximpl());
                                         return Unit.INSTANCE;
                                     }
 
                                     /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                                    public final void m7956invokeozmzZPI(long j) {
-                                        MutableFloatState.this.setFloatValue(IntSize.m7726getWidthimpl(j));
+                                    public final void m8561invokeozmzZPI(long j) {
+                                        MutableFloatState.this.setFloatValue(IntSize.m8331getWidthimpl(j));
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue5);
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            Modifier onSizeChanged = OnRemeasuredModifierKt.onSizeChanged(m8029carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
+                            Modifier onSizeChanged = OnRemeasuredModifierKt.onSizeChanged(m8634carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
-                            int m7910getNonebfy_xzQ = DebugFlags.Companion.m7910getNonebfy_xzQ();
+                            int m8515getNonebfy_xzQ = DebugFlags.Companion.m8515getNonebfy_xzQ();
                             final InvalidationStrategy defaultInvalidationStrategy = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
                             rememberedValue6 = startRestartGroup.rememberedValue();
@@ -468,7 +468,7 @@ public final class MotionCarouselKt {
                             };
                             String str14 = str10;
                             boolean z4 = z3;
-                            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str13, 257, m7910getNonebfy_xzQ, onSizeChanged, mutableState4, ref3, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                            MotionLayoutKt.m8577MotionLayoutCoreSehEMGo(motionScene2, f2, str13, 257, m8515getNonebfy_xzQ, onSizeChanged, mutableState4, ref3, defaultInvalidationStrategy, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
@@ -497,20 +497,20 @@ public final class MotionCarouselKt {
                         }
                         startRestartGroup.endReplaceGroup();
                         String str132 = (String) mutableState.getValue();
-                        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                        m8634carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8634carouselSwipeablepPrIpRY(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                             @Override // kotlin.jvm.functions.Function2
                             public final ThresholdConfig invoke(String str142, String str15) {
                                 return new FractionalThreshold(0.3f);
                             }
-                        }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
+                        }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8639getVelocityThresholdD9Ej5fM() : 0.0f);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162113093, "CC(remember):MotionCarousel.kt#9igjgp");
                         rememberedValue5 = startRestartGroup.rememberedValue();
                         if (rememberedValue5 == Composer.Companion.getEmpty()) {
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier onSizeChanged2 = OnRemeasuredModifierKt.onSizeChanged(m8029carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
+                        Modifier onSizeChanged2 = OnRemeasuredModifierKt.onSizeChanged(m8634carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
-                        int m7910getNonebfy_xzQ2 = DebugFlags.Companion.m7910getNonebfy_xzQ();
+                        int m8515getNonebfy_xzQ2 = DebugFlags.Companion.m8515getNonebfy_xzQ();
                         final InvalidationStrategy defaultInvalidationStrategy2 = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
                         rememberedValue6 = startRestartGroup.rememberedValue();
@@ -617,7 +617,7 @@ public final class MotionCarouselKt {
                         };
                         String str142 = str10;
                         boolean z42 = z3;
-                        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str132, 257, m7910getNonebfy_xzQ2, onSizeChanged2, mutableState42, ref32, defaultInvalidationStrategy2, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                        MotionLayoutKt.m8577MotionLayoutCoreSehEMGo(motionScene2, f2, str132, 257, m8515getNonebfy_xzQ2, onSizeChanged2, mutableState42, ref32, defaultInvalidationStrategy2, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         if (ComposerKt.isTraceInProgress()) {
                         }
@@ -719,20 +719,20 @@ public final class MotionCarouselKt {
                 }
                 startRestartGroup.endReplaceGroup();
                 String str1322 = (String) mutableState.getValue();
-                m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map22, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+                m8634carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8634carouselSwipeablepPrIpRY(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map22, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                     @Override // kotlin.jvm.functions.Function2
                     public final ThresholdConfig invoke(String str1422, String str152) {
                         return new FractionalThreshold(0.3f);
                     }
-                }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map22.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
+                }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map22.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8639getVelocityThresholdD9Ej5fM() : 0.0f);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162113093, "CC(remember):MotionCarousel.kt#9igjgp");
                 rememberedValue5 = startRestartGroup.rememberedValue();
                 if (rememberedValue5 == Composer.Companion.getEmpty()) {
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier onSizeChanged22 = OnRemeasuredModifierKt.onSizeChanged(m8029carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
+                Modifier onSizeChanged22 = OnRemeasuredModifierKt.onSizeChanged(m8634carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
-                int m7910getNonebfy_xzQ22 = DebugFlags.Companion.m7910getNonebfy_xzQ();
+                int m8515getNonebfy_xzQ22 = DebugFlags.Companion.m8515getNonebfy_xzQ();
                 final InvalidationStrategy defaultInvalidationStrategy22 = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
                 rememberedValue6 = startRestartGroup.rememberedValue();
@@ -839,7 +839,7 @@ public final class MotionCarouselKt {
                 };
                 String str1422 = str10;
                 boolean z422 = z3;
-                MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str1322, 257, m7910getNonebfy_xzQ22, onSizeChanged22, mutableState422, ref322, defaultInvalidationStrategy22, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function322, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+                MotionLayoutKt.m8577MotionLayoutCoreSehEMGo(motionScene2, f2, str1322, 257, m8515getNonebfy_xzQ22, onSizeChanged22, mutableState422, ref322, defaultInvalidationStrategy22, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function322, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -918,20 +918,20 @@ public final class MotionCarouselKt {
             }
             startRestartGroup.endReplaceGroup();
             String str13222 = (String) mutableState.getValue();
-            m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+            m8634carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8634carouselSwipeablepPrIpRY(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
                 @Override // kotlin.jvm.functions.Function2
                 public final ThresholdConfig invoke(String str14222, String str152) {
                     return new FractionalThreshold(0.3f);
                 }
-            }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
+            }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8639getVelocityThresholdD9Ej5fM() : 0.0f);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162113093, "CC(remember):MotionCarousel.kt#9igjgp");
             rememberedValue5 = startRestartGroup.rememberedValue();
             if (rememberedValue5 == Composer.Companion.getEmpty()) {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier onSizeChanged222 = OnRemeasuredModifierKt.onSizeChanged(m8029carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
+            Modifier onSizeChanged222 = OnRemeasuredModifierKt.onSizeChanged(m8634carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
-            int m7910getNonebfy_xzQ222 = DebugFlags.Companion.m7910getNonebfy_xzQ();
+            int m8515getNonebfy_xzQ222 = DebugFlags.Companion.m8515getNonebfy_xzQ();
             final InvalidationStrategy defaultInvalidationStrategy222 = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
             rememberedValue6 = startRestartGroup.rememberedValue();
@@ -1038,7 +1038,7 @@ public final class MotionCarouselKt {
             };
             String str14222 = str10;
             boolean z4222 = z3;
-            MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str13222, 257, m7910getNonebfy_xzQ222, onSizeChanged222, mutableState4222, ref3222, defaultInvalidationStrategy222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+            MotionLayoutKt.m8577MotionLayoutCoreSehEMGo(motionScene2, f2, str13222, 257, m8515getNonebfy_xzQ222, onSizeChanged222, mutableState4222, ref3222, defaultInvalidationStrategy222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function3222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (ComposerKt.isTraceInProgress()) {
             }
@@ -1121,20 +1121,20 @@ public final class MotionCarouselKt {
         }
         startRestartGroup.endReplaceGroup();
         String str132222 = (String) mutableState.getValue();
-        m8029carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8029carouselSwipeablepPrIpRY(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
+        m8634carouselSwipeablepPrIpRY = CarouselSwipeableKt.m8634carouselSwipeablepPrIpRY(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, 2, null), rememberCarouselSwipeableState, map2222, Orientation.Horizontal, (r26 & 8) != 0, (r26 & 16) != 0 ? false : true, (r26 & 32) != 0 ? null : null, (r26 & 64) != 0 ? CarouselSwipeableKt$carouselSwipeable$1.INSTANCE : new Function2<String, String, ThresholdConfig>() { // from class: androidx.constraintlayout.compose.MotionCarouselKt$MotionCarousel$3
             @Override // kotlin.jvm.functions.Function2
             public final ThresholdConfig invoke(String str142222, String str152) {
                 return new FractionalThreshold(0.3f);
             }
-        }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8034getVelocityThresholdD9Ej5fM() : 0.0f);
+        }, (r26 & 128) != 0 ? SwipeableDefaults.resistanceConfig$default(SwipeableDefaults.INSTANCE, map2222.keySet(), 0.0f, 0.0f, 6, null) : null, (r26 & 256) != 0 ? SwipeableDefaults.INSTANCE.m8639getVelocityThresholdD9Ej5fM() : 0.0f);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1162113093, "CC(remember):MotionCarousel.kt#9igjgp");
         rememberedValue5 = startRestartGroup.rememberedValue();
         if (rememberedValue5 == Composer.Companion.getEmpty()) {
         }
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        Modifier onSizeChanged2222 = OnRemeasuredModifierKt.onSizeChanged(m8029carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
+        Modifier onSizeChanged2222 = OnRemeasuredModifierKt.onSizeChanged(m8634carouselSwipeablepPrIpRY, (Function1) rememberedValue5);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -808697931, "CC(MotionLayout)P(4,6,3,7,1:androidx.constraintlayout.compose.DebugFlags,5,2)255@11054L53,256@11136L93,261@11391L627,277@12024L412:MotionLayout.kt#fysre8");
-        int m7910getNonebfy_xzQ2222 = DebugFlags.Companion.m7910getNonebfy_xzQ();
+        int m8515getNonebfy_xzQ2222 = DebugFlags.Companion.m8515getNonebfy_xzQ();
         final InvalidationStrategy defaultInvalidationStrategy2222 = InvalidationStrategy.Companion.getDefaultInvalidationStrategy();
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1692859891, "CC(remember):MotionLayout.kt#9igjgp");
         rememberedValue6 = startRestartGroup.rememberedValue();
@@ -1241,7 +1241,7 @@ public final class MotionCarouselKt {
         };
         String str142222 = str10;
         boolean z42222 = z3;
-        MotionLayoutKt.m7972MotionLayoutCoreSehEMGo(motionScene2, f2, str132222, 257, m7910getNonebfy_xzQ2222, onSizeChanged2222, mutableState42222, ref32222, defaultInvalidationStrategy2222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
+        MotionLayoutKt.m8577MotionLayoutCoreSehEMGo(motionScene2, f2, str132222, 257, m8515getNonebfy_xzQ2222, onSizeChanged2222, mutableState42222, ref32222, defaultInvalidationStrategy2222, ComposableLambdaKt.rememberComposableLambda(-23317463, true, function32222, startRestartGroup, 54), startRestartGroup, 806879232 | (i10 & 14) | (Ref.$stable << 21));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         if (ComposerKt.isTraceInProgress()) {
         }
@@ -1291,7 +1291,7 @@ public final class MotionCarouselKt {
             }
             Modifier layoutId$default = ConstraintLayoutTagKt.layoutId$default(Modifier.Companion, str + i, null, 2, null);
             if (z) {
-                layoutId$default = BorderKt.m275borderxT4_qwU(ClipKt.clip(layoutId$default, RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(20.0f))), Dp.m7555constructorimpl(2.0f), ColorKt.Color(0, 0, 0, 60), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(20.0f)));
+                layoutId$default = BorderKt.m299borderxT4_qwU(ClipKt.clip(layoutId$default, RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(20.0f))), Dp.m8160constructorimpl(2.0f), ColorKt.Color(0, 0, 0, 60), RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(20.0f)));
             }
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -1311,15 +1311,15 @@ public final class MotionCarouselKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1063080426, "C259@10738L8:MotionCarousel.kt#fysre8");

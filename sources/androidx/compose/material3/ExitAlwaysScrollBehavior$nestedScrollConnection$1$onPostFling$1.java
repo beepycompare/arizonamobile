@@ -26,6 +26,6 @@ public final class ExitAlwaysScrollBehavior$nestedScrollConnection$1$onPostFling
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo572onPostFlingRZ2iAVY(0L, 0L, this);
+        return this.this$0.mo602onPostFlingRZ2iAVY(0L, 0L, this);
     }
 }

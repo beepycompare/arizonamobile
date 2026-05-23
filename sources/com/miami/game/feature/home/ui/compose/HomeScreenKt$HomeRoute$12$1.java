@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: HomeScreen.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final /* synthetic */ class HomeScreenKt$HomeRoute$12$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public HomeScreenKt$HomeRoute$12$1(Object obj) {

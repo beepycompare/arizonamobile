@@ -58,7 +58,7 @@ import kotlinx.serialization.internal.SerializationConstructorMarker;
 import timber.log.Timber;
 /* compiled from: MainComponent.kt */
 @Metadata(d1 = {"\u0000°\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\b\u0007\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0005UVWXYBK\b\u0001\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0001\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\u0018\u0010 \u001a\u00020\u001b2\u0006\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\u0001H\u0002J\u0018\u0010(\u001a\u00020&2\u0006\u0010!\u001a\u00020$2\u0006\u0010\"\u001a\u00020\u0001H\u0002J\u0006\u0010)\u001a\u00020\u001fJ\u0006\u0010*\u001a\u00020\u001fJ\u0006\u0010+\u001a\u00020\u001fJ\u000e\u0010,\u001a\u00020\u001f2\u0006\u0010-\u001a\u00020.J\u0006\u0010/\u001a\u00020\u001fJ\u0006\u00100\u001a\u00020\u001fJ\u0014\u00101\u001a\u00020\u001f2\f\u00102\u001a\b\u0012\u0004\u0012\u00020\u001f03J\u0006\u00104\u001a\u00020\u001fJ\u001c\u00105\u001a\u00020\u001f2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u001f032\u0006\u00107\u001a\u00020.J\u0006\u00108\u001a\u00020\u001fJ\u0006\u00109\u001a\u00020\u001fJ\u0006\u0010:\u001a\u00020\u001fJ\u0006\u0010;\u001a\u00020\u001fJ\u0006\u0010<\u001a\u00020\u001fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\u0018\u001a\u0012\u0012\u000e\u0012\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00020\u001b0\u001a0\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010%\u001a\u0012\u0012\u000e\u0012\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00020&0\u001a0\u0019¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001dR\u0012\u0010=\u001a\u00020>X\u0096\u0005¢\u0006\u0006\u001a\u0004\b?\u0010@R\u0018\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00010BX\u0096\u0005¢\u0006\u0006\u001a\u0004\bC\u0010DR\u0012\u0010E\u001a\u00020FX\u0096\u0005¢\u0006\u0006\u001a\u0004\bG\u0010HR\u0012\u0010I\u001a\u00020JX\u0096\u0005¢\u0006\u0006\u001a\u0004\bK\u0010LR\u0012\u0010M\u001a\u00020NX\u0096\u0005¢\u0006\u0006\u001a\u0004\bO\u0010PR\u0012\u0010Q\u001a\u00020RX\u0096\u0005¢\u0006\u0006\u001a\u0004\bS\u0010T¨\u0006Z"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "Lcom/arkivanov/essenty/backhandler/BackHandlerOwner;", "componentContext", "homeFactory", "Lcom/miami/game/feature/home/ui/HomeComponent$Factory;", "selectServerFactory", "Lcom/miami/game/feature/select/server/ui/SelectServerComponent$Factory;", "settingsFactory", "Lcom/miami/game/feature/settings/ui/SettingsComponent$Factory;", "commonDialogFactory", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent$Factory;", "errorDialogFactory", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Factory;", "downloadScreenFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "notificationsFactory", "Lcom/miami/game/feature/notifications/presentation/NotificationsComponent$Factory;", "<init>", "(Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/feature/home/ui/HomeComponent$Factory;Lcom/miami/game/feature/select/server/ui/SelectServerComponent$Factory;Lcom/miami/game/feature/settings/ui/SettingsComponent$Factory;Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent$Factory;Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent$Factory;Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;Lcom/miami/game/feature/notifications/presentation/NotificationsComponent$Factory;)V", "nav", "Lcom/arkivanov/decompose/router/stack/StackNavigation;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "stack", "Lcom/arkivanov/decompose/value/Value;", "Lcom/arkivanov/decompose/router/stack/ChildStack;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "getStack", "()Lcom/arkivanov/decompose/value/Value;", "observeExternal", "", "child", "config", "ctx", "navDialog", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "stackDialog", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "getStackDialog", "childDialog", "navigateToHome", "navigateToSelectServers", "navigateToSettings", "navigateToDownloadDialog", "updateSize", "", "navigateToRepairGameSuccessDialog", "navigateToRepairGameErrorDialog", "navigateToRepairGameDialog", "onClick", "Lkotlin/Function0;", "navigateToRepairGameHome", "navigateToErrorDialog", "onRetry", "errorMessage", "navigateBack", "navigateBackDialog", "navigateToDownloadScreen", "retry", "navigateToNotificaionsScreen", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Factory", "Child", "Config", "DialogChild", "DialogConfig", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class MainComponent implements ComponentContext, CoroutineFeature, BackHandlerOwner {
     public static final int $stable = 8;
     private final /* synthetic */ ComponentContext $$delegate_0;
@@ -78,7 +78,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
     /* compiled from: MainComponent.kt */
     @AssistedFactory
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bç\u0080\u0001\u0018\u00002\u00020\u0001J\u0011\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H¦\u0002¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "", "invoke", "Lcom/miami/game/core/app/root/nav/main/MainComponent;", "componentContext", "Lcom/arkivanov/decompose/ComponentContext;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Factory {
         MainComponent invoke(ComponentContext componentContext);
     }
@@ -563,12 +563,12 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
     /* compiled from: MainComponent.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0005\u0002\u0003\u0004\u0005\u0006\u0082\u0001\u0005\u0007\b\t\n\u000b¨\u0006\fÀ\u0006\u0003"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "", "Home", "SelectServer", "DownloadScreen", "Settings", "Notification", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$DownloadScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Home;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Notification;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$SelectServer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Settings;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Child {
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Home;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "component", "Lcom/miami/game/feature/home/ui/HomeComponent;", "<init>", "(Lcom/miami/game/feature/home/ui/HomeComponent;)V", "getComponent", "()Lcom/miami/game/feature/home/ui/HomeComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Home implements Child {
             public static final int $stable = HomeComponent.$stable;
             private final HomeComponent component;
@@ -585,7 +585,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$SelectServer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "component", "Lcom/miami/game/feature/select/server/ui/SelectServerComponent;", "<init>", "(Lcom/miami/game/feature/select/server/ui/SelectServerComponent;)V", "getComponent", "()Lcom/miami/game/feature/select/server/ui/SelectServerComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class SelectServer implements Child {
             public static final int $stable = SelectServerComponent.$stable;
             private final SelectServerComponent component;
@@ -602,7 +602,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$DownloadScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "<init>", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class DownloadScreen implements Child {
             public static final int $stable = DownloadScreenComponent.$stable;
             private final DownloadScreenComponent component;
@@ -619,7 +619,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Settings;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "component", "Lcom/miami/game/feature/settings/ui/SettingsComponent;", "<init>", "(Lcom/miami/game/feature/settings/ui/SettingsComponent;)V", "getComponent", "()Lcom/miami/game/feature/settings/ui/SettingsComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Settings implements Child {
             public static final int $stable = SettingsComponent.$stable;
             private final SettingsComponent component;
@@ -636,7 +636,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Child$Notification;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Child;", "component", "Lcom/miami/game/feature/notifications/presentation/NotificationsComponent;", "<init>", "(Lcom/miami/game/feature/notifications/presentation/NotificationsComponent;)V", "getComponent", "()Lcom/miami/game/feature/notifications/presentation/NotificationsComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Notification implements Child {
             public static final int $stable = NotificationsComponent.$stable;
             private final NotificationsComponent component;
@@ -656,13 +656,13 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
     /* compiled from: MainComponent.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bs\u0018\u0000 \u00072\u00020\u0001:\u0006\u0002\u0003\u0004\u0005\u0006\u0007\u0082\u0001\u0005\b\t\n\u000b\f¨\u0006\rÀ\u0006\u0003"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "", "Home", "SelectServer", "Settings", "DownloadScreen", "NotificationScreen", "Companion", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$DownloadScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$Home;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$NotificationScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$SelectServer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$Settings;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
     @Serializable
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Config {
         public static final Companion Companion = Companion.$$INSTANCE;
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$Companion;", "", "<init>", "()V", "serializer", "Lkotlinx/serialization/KSerializer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Companion {
             static final /* synthetic */ Companion $$INSTANCE = new Companion();
 
@@ -677,7 +677,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$Home;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Home implements Config {
             public static final Home INSTANCE = new Home();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$Config$Home$$ExternalSyntheticLambda0
@@ -729,7 +729,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$SelectServer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class SelectServer implements Config {
             public static final SelectServer INSTANCE = new SelectServer();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$Config$SelectServer$$ExternalSyntheticLambda0
@@ -781,7 +781,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$Settings;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Settings implements Config {
             public static final Settings INSTANCE = new Settings();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$Config$Settings$$ExternalSyntheticLambda0
@@ -833,7 +833,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$DownloadScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class DownloadScreen implements Config {
             public static final DownloadScreen INSTANCE = new DownloadScreen();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$Config$DownloadScreen$$ExternalSyntheticLambda0
@@ -885,7 +885,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$Config$NotificationScreen;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Config;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class NotificationScreen implements Config {
             public static final NotificationScreen INSTANCE = new NotificationScreen();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$Config$NotificationScreen$$ExternalSyntheticLambda0
@@ -937,12 +937,12 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
     /* compiled from: MainComponent.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0007\u0002\u0003\u0004\u0005\u0006\u0007\b\u0082\u0001\u0007\t\n\u000b\f\r\u000e\u000f¨\u0006\u0010À\u0006\u0003"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "", "EMPTY", "DownloadCache", "RepairGameSuccess", "RepairGameError", "ErrorNoNetwork", "ErrorActivity", "RepairGameDialog", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$DownloadCache;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$EMPTY;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$ErrorActivity;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$ErrorNoNetwork;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameDialog;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameSuccess;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface DialogChild {
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\n\u0010\n\u001a\u00020\u000bHÖ\u0081\u0004¨\u0006\f"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$EMPTY;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class EMPTY implements DialogChild {
             public static final int $stable = 0;
             public static final EMPTY INSTANCE = new EMPTY();
@@ -972,7 +972,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$DownloadCache;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class DownloadCache implements DialogChild {
             public static final int $stable = CommonDialogComponent.$stable;
             private final CommonDialogComponent component;
@@ -989,7 +989,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameSuccess;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameSuccess implements DialogChild {
             public static final int $stable = CommonDialogComponent.$stable;
             private final CommonDialogComponent component;
@@ -1006,7 +1006,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/common/CommonDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameError implements DialogChild {
             public static final int $stable = CommonDialogComponent.$stable;
             private final CommonDialogComponent component;
@@ -1023,7 +1023,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$ErrorNoNetwork;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class ErrorNoNetwork implements DialogChild {
             public static final int $stable = ErrorDialogComponent.$stable;
             private final ErrorDialogComponent component;
@@ -1040,7 +1040,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$ErrorActivity;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class ErrorActivity implements DialogChild {
             public static final int $stable = ErrorDialogComponent.$stable;
             private final ErrorDialogComponent component;
@@ -1057,7 +1057,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild$RepairGameDialog;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogChild;", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "<init>", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;)V", "getComponent", "()Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameDialog implements DialogChild {
             public static final int $stable = ErrorDialogComponent.$stable;
             private final ErrorDialogComponent component;
@@ -1077,13 +1077,13 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
     /* compiled from: MainComponent.kt */
     @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bs\u0018\u0000 \t2\u00020\u0001:\b\u0002\u0003\u0004\u0005\u0006\u0007\b\t\u0082\u0001\u0007\n\u000b\f\r\u000e\u000f\u0010¨\u0006\u0011À\u0006\u0003"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "", "EMPTY", "DownloadCache", "RepairGameSuccess", "RepairGameError", "ActivityError", "RepairGameDialog", "ErrorNoNetwork", "Companion", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ActivityError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$DownloadCache;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$EMPTY;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ErrorNoNetwork;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameDialog;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameSuccess;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
     @Serializable
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface DialogConfig {
         public static final Companion Companion = Companion.$$INSTANCE;
 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$Companion;", "", "<init>", "()V", "serializer", "Lkotlinx/serialization/KSerializer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class Companion {
             static final /* synthetic */ Companion $$INSTANCE = new Companion();
 
@@ -1098,7 +1098,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$EMPTY;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class EMPTY implements DialogConfig {
             public static final EMPTY INSTANCE = new EMPTY();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$DialogConfig$EMPTY$$ExternalSyntheticLambda0
@@ -1150,7 +1150,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0087\b\u0018\u0000 \u001e2\u00020\u0001:\u0002\u001d\u001eB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B%\b\u0010\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\u0004\u0010\nJ\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0007HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0003HÖ\u0081\u0004J%\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0001¢\u0006\u0002\b\u001cR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u001f"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$DownloadCache;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "description", "", "<init>", "(Ljava/lang/String;)V", "seen0", "", "serializationConstructorMarker", "Lkotlinx/serialization/internal/SerializationConstructorMarker;", "(ILjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V", "getDescription", "()Ljava/lang/String;", "component1", "copy", "equals", "", "other", "", "hashCode", "toString", "write$Self", "", "self", "output", "Lkotlinx/serialization/encoding/CompositeEncoder;", "serialDesc", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "write$Self$app_root", "$serializer", "Companion", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class DownloadCache implements DialogConfig {
             public static final int $stable = 0;
             public static final Companion Companion = new Companion(null);
@@ -1189,7 +1189,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
             /* compiled from: MainComponent.kt */
             @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$DownloadCache$Companion;", "", "<init>", "()V", "serializer", "Lkotlinx/serialization/KSerializer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$DownloadCache;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static final class Companion {
                 public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                     this();
@@ -1223,7 +1223,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameSuccess;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameSuccess implements DialogConfig {
             public static final RepairGameSuccess INSTANCE = new RepairGameSuccess();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$DialogConfig$RepairGameSuccess$$ExternalSyntheticLambda0
@@ -1275,7 +1275,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameError implements DialogConfig {
             public static final RepairGameError INSTANCE = new RepairGameError();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$DialogConfig$RepairGameError$$ExternalSyntheticLambda0
@@ -1327,7 +1327,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ActivityError;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class ActivityError implements DialogConfig {
             public static final ActivityError INSTANCE = new ActivityError();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$DialogConfig$ActivityError$$ExternalSyntheticLambda0
@@ -1379,7 +1379,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00000\u000bJ\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$RepairGameDialog;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "serializer", "Lkotlinx/serialization/KSerializer;", "toString", "", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class RepairGameDialog implements DialogConfig {
             public static final RepairGameDialog INSTANCE = new RepairGameDialog();
             private static final /* synthetic */ Lazy<KSerializer<Object>> $cachedSerializer$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.miami.game.core.app.root.nav.main.MainComponent$DialogConfig$RepairGameDialog$$ExternalSyntheticLambda0
@@ -1431,7 +1431,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
         /* compiled from: MainComponent.kt */
         @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0087\b\u0018\u0000 \u001e2\u00020\u0001:\u0002\u001d\u001eB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B%\b\u0010\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\u0004\u0010\nJ\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0007HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0003HÖ\u0081\u0004J%\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0001¢\u0006\u0002\b\u001cR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u001f"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ErrorNoNetwork;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig;", "errorMessage", "", "<init>", "(Ljava/lang/String;)V", "seen0", "", "serializationConstructorMarker", "Lkotlinx/serialization/internal/SerializationConstructorMarker;", "(ILjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V", "getErrorMessage", "()Ljava/lang/String;", "component1", "copy", "equals", "", "other", "", "hashCode", "toString", "write$Self", "", "self", "output", "Lkotlinx/serialization/encoding/CompositeEncoder;", "serialDesc", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "write$Self$app_root", "$serializer", "Companion", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
         @Serializable
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static final class ErrorNoNetwork implements DialogConfig {
             public static final int $stable = 0;
             public static final Companion Companion = new Companion(null);
@@ -1470,7 +1470,7 @@ public final class MainComponent implements ComponentContext, CoroutineFeature, 
 
             /* compiled from: MainComponent.kt */
             @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ErrorNoNetwork$Companion;", "", "<init>", "()V", "serializer", "Lkotlinx/serialization/KSerializer;", "Lcom/miami/game/core/app/root/nav/main/MainComponent$DialogConfig$ErrorNoNetwork;", "app-root"}, k = 1, mv = {2, 3, 0}, xi = 48)
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static final class Companion {
                 public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                     this();

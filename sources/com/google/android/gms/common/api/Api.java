@@ -20,14 +20,14 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class Api<O extends ApiOptions> {
     private final AbstractClientBuilder zaa;
     private final ClientKey zab;
     private final String zac;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static abstract class AbstractClientBuilder<T extends Client, O> extends BaseClientBuilder<T, O> {
         @Deprecated
@@ -40,60 +40,61 @@ public final class Api<O extends ApiOptions> {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface AnyClient {
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class AnyClientKey<C extends AnyClient> {
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface ApiOptions {
         public static final NoOptions NO_OPTIONS = new NoOptions(null);
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface HasAccountOptions extends HasOptions, NotRequiredOptions {
             Account getAccount();
         }
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface HasGoogleSignInAccountOptions extends HasOptions {
             GoogleSignInAccount getGoogleSignInAccount();
         }
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface HasOptions extends ApiOptions {
         }
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public static final class NoOptions implements NotRequiredOptions {
             private NoOptions() {
+                throw null;
             }
 
-            /* synthetic */ NoOptions(zaa zaaVar) {
+            /* synthetic */ NoOptions(byte[] bArr) {
             }
         }
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface NotRequiredOptions extends ApiOptions {
         }
 
-        /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+        /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface Optional extends HasOptions, NotRequiredOptions {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static abstract class BaseClientBuilder<T extends AnyClient, O> {
         public static final int API_PRIORITY_GAMES = 1;
@@ -109,7 +110,7 @@ public final class Api<O extends ApiOptions> {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface Client extends AnyClient {
         void connect(BaseGmsClient.ConnectionProgressReportCallbacks connectionProgressReportCallbacks);
@@ -153,7 +154,7 @@ public final class Api<O extends ApiOptions> {
         boolean requiresSignIn();
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static final class ClientKey<C extends Client> extends AnyClientKey<C> {
     }
@@ -166,16 +167,16 @@ public final class Api<O extends ApiOptions> {
         this.zab = clientKey;
     }
 
-    public final AbstractClientBuilder zaa() {
+    public final BaseClientBuilder zaa() {
         return this.zaa;
     }
 
-    public final AnyClientKey zab() {
+    public final AbstractClientBuilder zab() {
+        return this.zaa;
+    }
+
+    public final AnyClientKey zac() {
         return this.zab;
-    }
-
-    public final BaseClientBuilder zac() {
-        return this.zaa;
     }
 
     public final String zad() {

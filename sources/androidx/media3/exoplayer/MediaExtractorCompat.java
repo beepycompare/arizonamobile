@@ -11,6 +11,7 @@ import android.os.PersistableBundle;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DefaultDataSource;
+import androidx.media3.exoplayer.source.BundledExtractorsAdapter;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.extractor.DefaultExtractorsFactory;
 import androidx.media3.extractor.ExtractorsFactory;
@@ -22,7 +23,7 @@ import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.UUID;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaExtractorCompat {
     public static final int SEEK_TO_CLOSEST_SYNC = 2;
     public static final int SEEK_TO_NEXT_SYNC = 1;
@@ -30,7 +31,7 @@ public final class MediaExtractorCompat {
     private final MediaExtractorCompatInternal delegate;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface SeekMode {
     }
 
@@ -39,7 +40,7 @@ public final class MediaExtractorCompat {
     }
 
     public MediaExtractorCompat(ExtractorsFactory extractorsFactory, DataSource.Factory factory) {
-        this.delegate = new MediaExtractorCompatInternal(extractorsFactory, factory);
+        this.delegate = new MediaExtractorCompatInternal(new BundledExtractorsAdapter(extractorsFactory), factory);
     }
 
     public void setDataSource(Uri uri, long j) throws IOException {

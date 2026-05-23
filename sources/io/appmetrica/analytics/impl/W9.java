@@ -1,10 +1,26 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class W9 {
-    public static boolean a(JSONObject jSONObject, String str, boolean z) {
-        return ((Boolean) WrapUtils.getOrDefault(jSONObject.has(str) ? Boolean.valueOf(jSONObject.getJSONObject(str).getBoolean("enabled")) : null, Boolean.valueOf(z))).booleanValue();
+
+    /* renamed from: a  reason: collision with root package name */
+    public final long f822a;
+
+    public W9(long j) {
+        this.f822a = j;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof W9) && this.f822a == ((W9) obj).f822a;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(this.f822a);
+    }
+
+    public final String toString() {
+        return "ExternalAttributionConfig(collectingInterval=" + this.f822a + ')';
     }
 }

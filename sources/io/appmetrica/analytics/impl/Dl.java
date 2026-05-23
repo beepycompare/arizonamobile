@@ -1,25 +1,41 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
 public final class Dl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f560a;
-    public final String b;
-    public final Integer c;
-    public final Integer d;
-    public final String e;
-    public final Boolean f;
+    public final InterfaceC0704x2 f515a;
 
-    public Dl(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
-        this.f560a = str;
-        this.b = str2;
-        this.c = num;
-        this.d = num2;
-        this.e = str3;
-        this.f = bool;
+    public Dl(InterfaceC0704x2 interfaceC0704x2) {
+        this.f515a = interfaceC0704x2;
     }
 
-    public Dl(StackTraceElement stackTraceElement) {
-        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
+    public final ArrayList a(Iterable iterable) {
+        String str;
+        String a2;
+        ArrayList arrayList = new ArrayList();
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            String str2 = (String) it.next();
+            try {
+                a2 = this.f515a.a(str2);
+            } catch (NoSuchAlgorithmException unused) {
+            }
+            if (a2 == null || (str = StringUtils.toHexString(MessageDigest.getInstance("SHA-256").digest(a2.getBytes(Charsets.UTF_8)))) == null) {
+                PublicLogger.Companion.getAnonymousInstance().info("Input " + str2 + " is not a valid data", new Object[0]);
+                str = null;
+            }
+            if (str != null) {
+                arrayList.add(str);
+            }
+        }
+        return arrayList;
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.actions;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class NoteIntents {
     public static final String ACTION_APPEND_NOTE = "com.google.android.gms.actions.APPEND_NOTE";
     public static final String ACTION_CREATE_NOTE = "com.google.android.gms.actions.CREATE_NOTE";

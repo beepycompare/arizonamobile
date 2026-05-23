@@ -12,7 +12,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class PlaybackException extends Exception {
     public static final int CUSTOM_ERROR_CODE_BASE = 1000000;
     public static final int ERROR_CODE_AUDIO_TRACK_INIT_FAILED = 5001;
@@ -82,7 +82,7 @@ public class PlaybackException extends Exception {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ErrorCode {
     }
 

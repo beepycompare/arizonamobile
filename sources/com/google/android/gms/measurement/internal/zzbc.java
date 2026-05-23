@@ -1,57 +1,93 @@
 package com.google.android.gms.measurement.internal;
 
+import android.os.Bundle;
+import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import java.util.Iterator;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzbc {
+public final class zzbc {
     final String zza;
     final String zzb;
-    final long zzc;
+    final String zzc;
     final long zzd;
     final long zze;
     final long zzf;
-    final long zzg;
-    final Long zzh;
-    final Long zzi;
-    final Long zzj;
-    final Boolean zzk;
+    final zzbf zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzbc(String str, String str2, long j, long j2, long j3, long j4, long j5, Long l, Long l2, Long l3, Boolean bool) {
-        Preconditions.checkNotEmpty(str);
+    public zzbc(zzic zzicVar, String str, String str2, String str3, long j, long j2, long j3, Bundle bundle) {
+        zzbf zzbfVar;
         Preconditions.checkNotEmpty(str2);
-        Preconditions.checkArgument(j >= 0);
-        Preconditions.checkArgument(j2 >= 0);
-        Preconditions.checkArgument(j3 >= 0);
-        Preconditions.checkArgument(j5 >= 0);
-        this.zza = str;
-        this.zzb = str2;
-        this.zzc = j;
-        this.zzd = j2;
-        this.zze = j3;
-        this.zzf = j4;
-        this.zzg = j5;
-        this.zzh = l;
-        this.zzi = l2;
-        this.zzj = l3;
-        this.zzk = bool;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbc zza(long j) {
-        return new zzbc(this.zza, this.zzb, this.zzc, this.zzd, this.zze, j, this.zzg, this.zzh, this.zzi, this.zzj, this.zzk);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbc zzb(long j, long j2) {
-        return new zzbc(this.zza, this.zzb, this.zzc, this.zzd, this.zze, this.zzf, j, Long.valueOf(j2), this.zzi, this.zzj, this.zzk);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbc zzc(Long l, Long l2, Boolean bool) {
-        if (bool != null) {
-            bool.booleanValue();
+        Preconditions.checkNotEmpty(str3);
+        this.zza = str2;
+        this.zzb = str3;
+        this.zzc = true == TextUtils.isEmpty(str) ? null : str;
+        this.zzd = j;
+        this.zze = j2;
+        this.zzf = j3;
+        if (j3 != 0 && j3 > j) {
+            zzicVar.zzaW().zze().zzb("Event created with reverse previous/current timestamps. appId", zzgu.zzl(str2));
         }
-        return new zzbc(this.zza, this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, this.zzh, l, l2, bool);
+        if (bundle != null && !bundle.isEmpty()) {
+            Bundle bundle2 = new Bundle(bundle);
+            Iterator<String> it = bundle2.keySet().iterator();
+            while (it.hasNext()) {
+                String next = it.next();
+                if (next == null) {
+                    zzicVar.zzaW().zzb().zza("Param name can't be null");
+                    it.remove();
+                } else {
+                    Object zzG = zzicVar.zzk().zzG(next, bundle2.get(next));
+                    if (zzG == null) {
+                        zzicVar.zzaW().zze().zzb("Param value can't be null", zzicVar.zzl().zzb(next));
+                        it.remove();
+                    } else {
+                        zzicVar.zzk().zzO(bundle2, next, zzG);
+                    }
+                }
+            }
+            zzbfVar = new zzbf(bundle2);
+        } else {
+            zzbfVar = new zzbf(new Bundle());
+        }
+        this.zzg = zzbfVar;
+    }
+
+    public final String toString() {
+        String obj = this.zzg.toString();
+        String str = this.zza;
+        int length = String.valueOf(str).length();
+        String str2 = this.zzb;
+        StringBuilder sb = new StringBuilder(length + 22 + String.valueOf(str2).length() + 10 + obj.length() + 1);
+        sb.append("Event{appId='");
+        sb.append(str);
+        sb.append("', name='");
+        sb.append(str2);
+        sb.append("', params=");
+        sb.append(obj);
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final zzbc zza(zzic zzicVar, long j) {
+        return new zzbc(zzicVar, this.zzc, this.zza, this.zzb, this.zzd, this.zze, j, this.zzg);
+    }
+
+    private zzbc(zzic zzicVar, String str, String str2, String str3, long j, long j2, long j3, zzbf zzbfVar) {
+        Preconditions.checkNotEmpty(str2);
+        Preconditions.checkNotEmpty(str3);
+        Preconditions.checkNotNull(zzbfVar);
+        this.zza = str2;
+        this.zzb = str3;
+        this.zzc = true == TextUtils.isEmpty(str) ? null : str;
+        this.zzd = j;
+        this.zze = j2;
+        this.zzf = j3;
+        if (j3 != 0 && j3 > j) {
+            zzicVar.zzaW().zze().zzc("Event created with reverse previous/current timestamps. appId, name", zzgu.zzl(str2), zzgu.zzl(str3));
+        }
+        this.zzg = zzbfVar;
     }
 }

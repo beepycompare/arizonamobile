@@ -16,12 +16,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: AndroidTextInputSession.android.kt */
-@Metadata(d1 = {"\u0000o\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001\u0000\b\n\u0018\u00002\u00020\u00012\u00020\u0002J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016J\u0017\u0010\u000b\u001a\u00020\b2\u0006\u0010\f\u001a\u00020\rH\u0016¢\u0006\u0004\b\u000e\u0010\u000fJ\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0010\u0010\u0014\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\u0016H\u0016J\u0010\u0010\u0017\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\u001a\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0018\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0016J\u0010\u0010\u001e\u001a\u00020\b2\u0006\u0010\u001f\u001a\u00020\u0011H\u0016J\t\u0010 \u001a\u00020\u0011H\u0096\u0001J\"\u0010!\u001a\u00020\b2\u0017\u0010\"\u001a\u0013\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\b0#¢\u0006\u0002\b%H\u0096\u0001J\t\u0010&\u001a\u00020\u0011H\u0096\u0001J\u0018\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0096\u0001¢\u0006\u0004\b*\u0010+J\u0018\u0010,\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0096\u0001¢\u0006\u0004\b-\u0010+R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006¨\u0006."}, d2 = {"androidx/compose/foundation/text/input/internal/AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1", "Landroidx/compose/foundation/text/input/internal/TextInputSession;", "Landroidx/compose/foundation/text/input/internal/ImeEditCommandScope;", "text", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "sendKeyEvent", "", "keyEvent", "Landroid/view/KeyEvent;", "onImeAction", "imeAction", "Landroidx/compose/ui/text/input/ImeAction;", "onImeAction-KlQnJC8", "(I)V", "onCommitContent", "", "transferableContent", "Landroidx/compose/foundation/content/TransferableContent;", "requestCursorUpdates", "cursorUpdateMode", "", "performHandwritingGesture", "gesture", "Landroid/view/inputmethod/HandwritingGesture;", "previewHandwritingGesture", "Landroid/view/inputmethod/PreviewableHandwritingGesture;", "cancellationSignal", "Landroid/os/CancellationSignal;", "updateTouchMode", "isInTouchMode", "beginBatchEdit", "edit", "block", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Lkotlin/ExtensionFunctionType;", "endBatchEdit", "mapFromTransformed", "Landroidx/compose/ui/text/TextRange;", "range", "mapFromTransformed-GEjPoXI", "(J)J", "mapToTransformed", "mapToTransformed-GEjPoXI", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000o\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001\u0000\b\n\u0018\u00002\u00020\u00012\u00020\u0002J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016J\u0017\u0010\u000f\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016¢\u0006\u0004\b\u0012\u0010\u0013J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\u0010\u0010\u0018\u001a\u00020\f2\u0006\u0010\u0019\u001a\u00020\bH\u0016J\u0010\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016J\u001a\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001b\u001a\u00020\u001e2\b\u0010\u001f\u001a\u0004\u0018\u00010 H\u0016J\u0010\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\u0015H\u0016J\t\u0010#\u001a\u00020\u0015H\u0096\u0001J\"\u0010$\u001a\u00020\f2\u0017\u0010%\u001a\u0013\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020\f0&¢\u0006\u0002\b(H\u0096\u0001J\t\u0010)\u001a\u00020\u0015H\u0096\u0001J\u0018\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020+H\u0096\u0001¢\u0006\u0004\b-\u0010.J\u0018\u0010/\u001a\u00020+2\u0006\u0010,\u001a\u00020+H\u0096\u0001¢\u0006\u0004\b0\u0010.R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006R\u0014\u0010\u0007\u001a\u00020\b8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\t\u0010\n¨\u00061"}, d2 = {"androidx/compose/foundation/text/input/internal/AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1", "Landroidx/compose/foundation/text/input/internal/TextInputSession;", "Landroidx/compose/foundation/text/input/internal/ImeEditCommandScope;", "text", "Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "getText", "()Landroidx/compose/foundation/text/input/TextFieldCharSequence;", "transformedLength", "", "getTransformedLength", "()I", "sendKeyEvent", "", "keyEvent", "Landroid/view/KeyEvent;", "onImeAction", "imeAction", "Landroidx/compose/ui/text/input/ImeAction;", "onImeAction-KlQnJC8", "(I)V", "onCommitContent", "", "transferableContent", "Landroidx/compose/foundation/content/TransferableContent;", "requestCursorUpdates", "cursorUpdateMode", "performHandwritingGesture", "gesture", "Landroid/view/inputmethod/HandwritingGesture;", "previewHandwritingGesture", "Landroid/view/inputmethod/PreviewableHandwritingGesture;", "cancellationSignal", "Landroid/os/CancellationSignal;", "updateTouchMode", "isInTouchMode", "beginBatchEdit", "edit", "block", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/input/TextFieldBuffer;", "Lkotlin/ExtensionFunctionType;", "endBatchEdit", "mapFromTransformed", "Landroidx/compose/ui/text/TextRange;", "range", "mapFromTransformed-GEjPoXI", "(J)J", "mapToTransformed", "mapToTransformed-GEjPoXI", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 implements TextInputSession, ImeEditCommandScope {
     private final /* synthetic */ DefaultImeEditCommandScope $$delegate_0;
     final /* synthetic */ ComposeInputMethodManager $composeImm;
     final /* synthetic */ CursorAnchorInfoController $cursorUpdatesController;
+    final /* synthetic */ DefaultImeEditCommandScope $imeEditCommandScope;
     final /* synthetic */ TextLayoutState $layoutState;
     final /* synthetic */ Function1<ImeAction, Unit> $onImeAction;
     final /* synthetic */ ReceiveContentConfiguration $receiveContentConfiguration;
@@ -47,19 +48,20 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapFromTransformed-GEjPoXI  reason: not valid java name */
-    public long mo1365mapFromTransformedGEjPoXI(long j) {
-        return this.$$delegate_0.mo1365mapFromTransformedGEjPoXI(j);
+    public long mo1751mapFromTransformedGEjPoXI(long j) {
+        return this.$$delegate_0.mo1751mapFromTransformedGEjPoXI(j);
     }
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapToTransformed-GEjPoXI  reason: not valid java name */
-    public long mo1366mapToTransformedGEjPoXI(long j) {
-        return this.$$delegate_0.mo1366mapToTransformedGEjPoXI(j);
+    public long mo1752mapToTransformedGEjPoXI(long j) {
+        return this.$$delegate_0.mo1752mapToTransformedGEjPoXI(j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1(DefaultImeEditCommandScope defaultImeEditCommandScope, TransformedTextFieldState transformedTextFieldState, ComposeInputMethodManager composeInputMethodManager, Function1<? super ImeAction, Unit> function1, ReceiveContentConfiguration receiveContentConfiguration, CursorAnchorInfoController cursorAnchorInfoController, TextLayoutState textLayoutState, Function0<Unit> function0, ViewConfiguration viewConfiguration, Function1<? super Boolean, Unit> function12) {
+        this.$imeEditCommandScope = defaultImeEditCommandScope;
         this.$state = transformedTextFieldState;
         this.$composeImm = composeInputMethodManager;
         this.$onImeAction = function1;
@@ -77,6 +79,11 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
         return this.$state.getVisualText();
     }
 
+    @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
+    public int getTransformedLength() {
+        return this.$imeEditCommandScope.getTransformedLength();
+    }
+
     @Override // androidx.compose.foundation.text.input.internal.TextInputSession
     public void sendKeyEvent(KeyEvent keyEvent) {
         this.$composeImm.sendKeyEvent(keyEvent);
@@ -84,10 +91,10 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
     @Override // androidx.compose.foundation.text.input.internal.TextInputSession
     /* renamed from: onImeAction-KlQnJC8  reason: not valid java name */
-    public void mo1367onImeActionKlQnJC8(int i) {
+    public void mo1753onImeActionKlQnJC8(int i) {
         Function1<ImeAction, Unit> function1 = this.$onImeAction;
         if (function1 != null) {
-            function1.invoke(ImeAction.m7168boximpl(i));
+            function1.invoke(ImeAction.m7773boximpl(i));
         }
     }
 

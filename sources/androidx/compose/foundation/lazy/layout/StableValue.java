@@ -6,34 +6,34 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayoutItemContentFactory.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0083@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010\f\u001a\u00020\rHÖ\u0001J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001R\u0013\u0010\u0003\u001a\u00028\u0000¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0003¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/lazy/layout/StableValue;", ExifInterface.GPS_DIRECTION_TRUE, "", "value", "constructor-impl", "(Ljava/lang/Object;)Ljava/lang/Object;", "getValue", "()Ljava/lang/Object;", "Ljava/lang/Object;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0083@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0004\b\u0004\u0010\u0005J\u0014\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\u0002HÖ\u0083\u0004J\n\u0010\f\u001a\u00020\rHÖ\u0081\u0004J\n\u0010\u000e\u001a\u00020\u000fHÖ\u0081\u0004R\u0013\u0010\u0003\u001a\u00028\u0000¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0003¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/lazy/layout/StableValue;", ExifInterface.GPS_DIRECTION_TRUE, "", "value", "constructor-impl", "(Ljava/lang/Object;)Ljava/lang/Object;", "getValue", "()Ljava/lang/Object;", "Ljava/lang/Object;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class StableValue<T> {
     private final T value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StableValue m1018boximpl(Object obj) {
+    public static final /* synthetic */ StableValue m1271boximpl(Object obj) {
         return new StableValue(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1019constructorimpl(T t) {
+    public static <T> Object m1272constructorimpl(T t) {
         return t;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1020equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof StableValue) && Intrinsics.areEqual(obj, ((StableValue) obj2).m1024unboximpl());
+    public static boolean m1273equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof StableValue) && Intrinsics.areEqual(obj, ((StableValue) obj2).m1277unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1021equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m1274equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1022hashCodeimpl(Object obj) {
+    public static int m1275hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -41,24 +41,24 @@ public final class StableValue<T> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1023toStringimpl(Object obj) {
+    public static String m1276toStringimpl(Object obj) {
         return "StableValue(value=" + obj + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1020equalsimpl(this.value, obj);
+        return m1273equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1022hashCodeimpl(this.value);
+        return m1275hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1023toStringimpl(this.value);
+        return m1276toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m1024unboximpl() {
+    public final /* synthetic */ Object m1277unboximpl() {
         return this.value;
     }
 

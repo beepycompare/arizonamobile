@@ -95,7 +95,7 @@ public interface MediaSource {
     default void updateMediaItem(MediaItem mediaItem) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPeriodId {
         public final int adGroupIndex;
         public final int adIndexInAdGroup;
@@ -153,10 +153,5 @@ public interface MediaSource {
         public int hashCode() {
             return ((((((((527 + this.periodUid.hashCode()) * 31) + this.adGroupIndex) * 31) + this.adIndexInAdGroup) * 31) + ((int) this.windowSequenceNumber)) * 31) + this.nextAdGroupIndex;
         }
-    }
-
-    @Deprecated
-    default void prepareSource(MediaSourceCaller mediaSourceCaller, TransferListener transferListener) {
-        prepareSource(mediaSourceCaller, transferListener, PlayerId.UNSET);
     }
 }

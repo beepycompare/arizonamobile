@@ -19,6 +19,26 @@ public class StoreInfoUtil {
         }
     }
 
+    public static Boolean getIsSystemApp(Context context) {
+        try {
+            if ((context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).flags & 1) != 0) {
+                return Boolean.TRUE;
+            }
+        } catch (Exception unused) {
+        }
+        return null;
+    }
+
+    public static Boolean getIsUpdatedSystemApp(Context context) {
+        try {
+            if ((context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).flags & 128) != 0) {
+                return Boolean.TRUE;
+            }
+        } catch (Exception unused) {
+        }
+        return null;
+    }
+
     public static String getOriginatingPackageName(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();

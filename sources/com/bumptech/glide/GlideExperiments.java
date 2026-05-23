@@ -16,7 +16,8 @@ public class GlideExperiments {
         this.experiments = Collections.unmodifiableMap(new HashMap(builder.experiments));
     }
 
-    <T extends Experiment> T get(Class<T> cls) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public <T extends Experiment> T get(Class<T> cls) {
         return (T) this.experiments.get(cls);
     }
 
@@ -38,7 +39,8 @@ public class GlideExperiments {
             return this;
         }
 
-        Builder add(Experiment experiment) {
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public Builder add(Experiment experiment) {
             this.experiments.put(experiment.getClass(), experiment);
             return this;
         }

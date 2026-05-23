@@ -118,7 +118,8 @@ public final class AudioFocusManager {
         if (this.audioFocusState == 2) {
             return 1;
         }
-        if (requestAudioFocusInternal() == 1) {
+        int requestAudioFocusInternal = requestAudioFocusInternal();
+        if (requestAudioFocusInternal == 1 || requestAudioFocusInternal == 2) {
             setAudioFocusState(2);
             return 1;
         }
@@ -143,7 +144,7 @@ public final class AudioFocusManager {
             } else {
                 buildUpon = audioFocusRequestCompat.buildUpon();
             }
-            this.audioFocusRequest = buildUpon.setAudioAttributes((AudioAttributes) Preconditions.checkNotNull(this.audioAttributes)).setWillPauseWhenDucked(willPauseWhenDucked()).setOnAudioFocusChangeListener(new AudioFocusManager$$ExternalSyntheticLambda0(this), this.eventHandler).build();
+            this.audioFocusRequest = buildUpon.setAudioAttributes((AudioAttributes) Preconditions.checkNotNull(this.audioAttributes)).setWillPauseWhenDucked(willPauseWhenDucked()).setAcceptsDelayedFocusGain(true).setOnAudioFocusChangeListener(new AudioFocusManager$$ExternalSyntheticLambda0(this), this.eventHandler).build();
             this.rebuildAudioFocusRequest = false;
         }
         return AudioManagerCompat.requestAudioFocus(this.audioManager.get(), this.audioFocusRequest);

@@ -15,7 +15,7 @@ import androidx.window.layout.WindowMetrics;
 import androidx.window.layout.WindowMetricsCalculator;
 import kotlin.Metadata;
 /* compiled from: AndroidWindowInfo.android.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002¨\u0006\u0007"}, d2 = {"calculateWindowSize", "Landroidx/compose/ui/platform/DerivedSize;", "view", "Landroid/view/View;", "tryUnwrapContext", "Landroid/content/Context;", "context", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0000\u001a\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002¨\u0006\u0007"}, d2 = {"calculateWindowSize", "Landroidx/compose/ui/platform/DerivedSize;", "view", "Landroid/view/View;", "tryUnwrapContext", "Landroid/content/Context;", "context", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidWindowInfo_androidKt {
     public static final DerivedSize calculateWindowSize(View view) {
@@ -23,10 +23,10 @@ public final class AndroidWindowInfo_androidKt {
         Context tryUnwrapContext = tryUnwrapContext(context);
         if (tryUnwrapContext != null) {
             WindowMetrics computeCurrentWindowMetrics = WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(tryUnwrapContext);
-            return DerivedSize.Companion.m6691fromPxSizeviCIZxY(IntSize.m7721constructorimpl((computeCurrentWindowMetrics.getBounds().width() << 32) | (computeCurrentWindowMetrics.getBounds().height() & 4294967295L)), AndroidDensity_androidKt.Density(tryUnwrapContext));
+            return DerivedSize.Companion.m7295fromPxSizeviCIZxY(IntSize.m8326constructorimpl((computeCurrentWindowMetrics.getBounds().width() << 32) | (computeCurrentWindowMetrics.getBounds().height() & 4294967295L)), AndroidDensity_androidKt.Density(tryUnwrapContext));
         }
         Configuration configuration = context.getResources().getConfiguration();
-        return DerivedSize.Companion.m6690fromDpSizeitqla9I(DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(configuration.screenWidthDp), Dp.m7555constructorimpl(configuration.screenHeightDp)), AndroidDensity_androidKt.Density(context));
+        return DerivedSize.Companion.m7294fromDpSizeitqla9I(DpKt.m8182DpSizeYgX7TsA(Dp.m8160constructorimpl(configuration.screenWidthDp), Dp.m8160constructorimpl(configuration.screenHeightDp)), AndroidDensity_androidKt.Density(context));
     }
 
     private static final Context tryUnwrapContext(Context context) {

@@ -177,6 +177,9 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             }
             trackOutput = track;
         }
+        if (trackData.mediaFormat.containsKey("durationUs")) {
+            trackOutput.durationUs(trackData.mediaFormat.getLong("durationUs"));
+        }
         Format exoPlayerFormat = toExoPlayerFormat(trackData);
         Format format = this.primaryTrackManifestFormat;
         trackOutput.format((format == null || i != this.primaryTrackIndex) ? exoPlayerFormat : exoPlayerFormat.withManifestFormatInfo(format));

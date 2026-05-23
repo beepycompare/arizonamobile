@@ -3,7 +3,7 @@ package com.google.android.flexbox;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FlexLine {
     boolean mAnyItemsHaveFlexGrow;
     boolean mAnyItemsHaveFlexShrink;

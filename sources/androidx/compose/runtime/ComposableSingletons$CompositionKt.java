@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Composition.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$CompositionKt {
     public static final ComposableSingletons$CompositionKt INSTANCE = new ComposableSingletons$CompositionKt();
@@ -35,7 +35,7 @@ public final class ComposableSingletons$CompositionKt {
         ComposerKt.sourceInformation(composer, "C:Composition.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(954879418, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$954879418.<anonymous> (Composition.kt:620)");
+                ComposerKt.traceEventStart(954879418, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$954879418.<anonymous> (Composition.kt:680)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -51,7 +51,7 @@ public final class ComposableSingletons$CompositionKt {
         ComposerKt.sourceInformation(composer, "C:Composition.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1918065384, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$1918065384.<anonymous> (Composition.kt:857)");
+                ComposerKt.traceEventStart(1918065384, i, -1, "androidx.compose.runtime.ComposableSingletons$CompositionKt.lambda$1918065384.<anonymous> (Composition.kt:917)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();

@@ -1,29 +1,64 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Intent;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
+import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 /* loaded from: classes5.dex */
-public final class Q2 implements Consumer {
+public abstract class Q2 implements ModulePreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ R2 f752a;
+    public final Zl f723a;
 
-    public Q2(R2 r2) {
-        this.f752a = r2;
+    public Q2(Zl zl) {
+        this.f723a = zl;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        Intent intent = (Intent) obj;
-        BatteryInfo batteryInfo = this.f752a.b;
-        ChargeType chargeType = batteryInfo == null ? null : batteryInfo.chargeType;
-        this.f752a.getClass();
-        BatteryInfo a2 = R2.a(intent);
-        this.f752a.b = a2;
-        if (chargeType != a2.chargeType) {
-            this.f752a.f763a.execute(new P2(this, a2));
-        }
+    public abstract String a(String str);
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void flushAsync() {
+        this.f723a.flushAsync();
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final boolean getBoolean(String str, boolean z) {
+        return ((Yd) this.f723a).a(str, z);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final int getInt(String str, int i) {
+        return ((Yd) this.f723a).a(str, i);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final long getLong(String str, long j) {
+        return ((Yd) this.f723a).a(a(str), j);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final String getString(String str, String str2) {
+        return ((Yd) this.f723a).a(a(str), str2);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putBoolean(String str, boolean z) {
+        Yd yd = (Yd) this.f723a;
+        yd.d(yd.g(a(str)), z);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putInt(String str, int i) {
+        Yd yd = (Yd) this.f723a;
+        yd.d(yd.g(str), i);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putLong(String str, long j) {
+        Yd yd = (Yd) this.f723a;
+        yd.d(yd.g(a(str)), j);
+    }
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
+    public final void putString(String str, String str2) {
+        Yd yd = (Yd) this.f723a;
+        yd.d(yd.g(a(str)), str2);
     }
 }

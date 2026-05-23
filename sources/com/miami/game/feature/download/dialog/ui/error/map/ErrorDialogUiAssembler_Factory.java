@@ -3,7 +3,7 @@ package com.miami.game.feature.download.dialog.ui.error.map;
 import android.content.res.Resources;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ErrorDialogUiAssembler_Factory implements Factory<ErrorDialogUiAssembler> {
     private final Provider<Resources> resourcesProvider;
 

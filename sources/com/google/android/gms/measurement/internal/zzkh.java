@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzkh implements Runnable {
     final /* synthetic */ long zza;
@@ -23,7 +23,7 @@ public final class zzkh implements Runnable {
         zzljVar.zzg();
         zzljVar.zzb();
         zzic zzicVar = zzljVar.zzu;
-        zzicVar.zzaV().zzj().zza("Resetting analytics data (FE)");
+        zzicVar.zzaW().zzj().zza("Resetting analytics data (FE)");
         zzic zzicVar2 = zzljVar.zzu;
         zzoc zzh = zzicVar2.zzh();
         zzh.zzg();
@@ -40,7 +40,7 @@ public final class zzkh implements Runnable {
         zzd.zzk.zzb(0L);
         zzd.zzl.zzb(0L);
         if (!zzicVar3.zzc().zzt()) {
-            zzd.zzn(z);
+            zzd.zzm(z);
         }
         zzd.zzr.zzb(null);
         zzd.zzs.zzb(0L);

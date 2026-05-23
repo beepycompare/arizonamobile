@@ -1,30 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class T4 {
+public final class T4 implements R2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X4 f798a;
-    public final String b = "[ComponentMigrationToV113]";
+    public final /* synthetic */ L4 f769a;
 
-    public T4(X4 x4) {
-        this.f798a = x4;
+    public T4(L4 l4) {
+        this.f769a = l4;
     }
 
-    public final X4 a() {
-        return this.f798a;
-    }
-
-    public final String b() {
-        return this.b;
-    }
-
-    public abstract boolean b(int i);
-
-    public abstract void c();
-
-    public final void a(int i) {
-        if (b(i)) {
-            c();
-        }
+    @Override // io.appmetrica.analytics.impl.R2
+    public final boolean a(Object obj, C0242f6 c0242f6) {
+        return ((Q4) obj).a(c0242f6, this.f769a);
     }
 }

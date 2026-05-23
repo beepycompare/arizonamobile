@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -22,6 +23,7 @@ import androidx.appcompat.R;
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.appcompat.widget.ListPopupWindow;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.resources.MaterialResources;
@@ -36,6 +38,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
     private ColorStateList dropDownBackgroundTint;
     private final ListPopupWindow modalListPopup;
     private final float popupElevation;
+    private final int[] selectedStateSet;
     private final int simpleItemLayout;
     private int simpleItemSelectedColor;
     private ColorStateList simpleItemSelectedRippleColor;
@@ -51,6 +54,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
 
     public MaterialAutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, 0), attributeSet, i);
+        this.selectedStateSet = new int[]{16842913};
         this.tempRect = new Rect();
         Context context2 = getContext();
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, com.google.android.material.R.styleable.MaterialAutoCompleteTextView, i, R.style.Widget_AppCompat_AutoCompleteTextView, new int[0]);
@@ -112,6 +116,36 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
         } else {
             super.dismissDropDown();
         }
+    }
+
+    @Override // android.widget.AutoCompleteTextView
+    public boolean isPopupShowing() {
+        ListPopupWindow listPopupWindow = this.modalListPopup;
+        if (listPopupWindow == null || !listPopupWindow.isShowing()) {
+            return super.isPopupShowing();
+        }
+        return true;
+    }
+
+    @Override // android.widget.AutoCompleteTextView, android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public boolean onKeyDown(int i, KeyEvent keyEvent) {
+        if (isPopupShowing()) {
+            return super.onKeyDown(i, keyEvent);
+        }
+        if (shouldShowPopup(i)) {
+            TextInputLayout findTextInputLayoutAncestor = findTextInputLayoutAncestor();
+            if (findTextInputLayoutAncestor != null) {
+                findTextInputLayoutAncestor.getEndIconView().performClick();
+                return true;
+            }
+            return true;
+        }
+        return super.onKeyDown(i, keyEvent);
+    }
+
+    boolean shouldShowPopup(int i) {
+        boolean z = i == 66 || i == 23;
+        return getKeyListener() != null ? z && getMaxLines() == 1 : z || (i == 62);
     }
 
     @Override // android.widget.AutoCompleteTextView, android.widget.TextView, android.view.View
@@ -333,7 +367,12 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
                 ColorDrawable colorDrawable = new ColorDrawable(MaterialAutoCompleteTextView.this.simpleItemSelectedColor);
                 if (this.pressedRippleColor != null) {
                     colorDrawable.setTintList(this.selectedItemRippleOverlaidColor);
-                    return new RippleDrawable(this.pressedRippleColor, colorDrawable, null);
+                    RippleDrawable rippleDrawable = new RippleDrawable(this.pressedRippleColor, colorDrawable, null);
+                    FocusRingDrawable layer = FocusRingDrawable.layer(getContext(), rippleDrawable);
+                    if (layer != null) {
+                        layer.setFocusRingStateSet(MaterialAutoCompleteTextView.this.selectedStateSet);
+                    }
+                    return rippleDrawable;
                 }
                 return colorDrawable;
             }

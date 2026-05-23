@@ -1,14 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class Zm implements to {
-    @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0380kh c0380kh) {
-        if (!TextUtils.isEmpty(n8.b)) {
-            return StringUtils.getUTF8Bytes(n8.b);
-        }
-        return new byte[0];
+public final class Zm extends BaseProtobufStateSerializer {
+    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final Ym defaultValue() {
+        Ym ym = new Ym();
+        ym.i = new Tm();
+        return ym;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final Ym toState(byte[] bArr) throws IOException {
+        return (Ym) MessageNano.mergeFrom(new Ym(), bArr);
     }
 }

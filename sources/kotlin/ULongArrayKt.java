@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class ULongArrayKt {
     /* renamed from: ulongArrayOf-QwZRm1k  reason: not valid java name */
-    private static final long[] m9452ulongArrayOfQwZRm1k(long... jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-elements$0");
-        return jArr;
+    private static final long[] m10092ulongArrayOfQwZRm1k(long... elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return elements;
     }
 
     private static final long[] ULongArray(int i, Function1<? super Integer, ULong> init) {
         Intrinsics.checkNotNullParameter(init, "init");
         long[] jArr = new long[i];
         for (int i2 = 0; i2 < i; i2++) {
-            jArr[i2] = init.invoke(Integer.valueOf(i2)).m9433unboximpl();
+            jArr[i2] = init.invoke(Integer.valueOf(i2)).m10073unboximpl();
         }
-        return ULongArray.m9436constructorimpl(jArr);
+        return ULongArray.m10076constructorimpl(jArr);
     }
 }

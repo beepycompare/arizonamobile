@@ -1,28 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 /* loaded from: classes5.dex */
-public class Jn implements Gi {
+public final class Jn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f654a;
-    public final int b;
-    public int c = 0;
+    public final DatabaseScript f618a;
+    public final DatabaseScript b;
+    public final Sa c;
+    public final Kn d;
 
-    public Jn(int i, int i2) {
-        this.f654a = i;
-        this.b = i2;
-    }
-
-    public final int a() {
-        return this.b;
-    }
-
-    public final boolean b() {
-        int i = this.c;
-        this.c = i + 1;
-        return i < this.f654a;
-    }
-
-    public final void c() {
-        this.c = 0;
+    public Jn(DatabaseScript databaseScript, DatabaseScript databaseScript2, Sa sa, Kn kn) {
+        this.f618a = databaseScript;
+        this.b = databaseScript2;
+        this.c = sa;
+        this.d = kn;
     }
 }

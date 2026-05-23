@@ -6,77 +6,77 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: BlendMode.kt */
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/BlendMode;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u0003HÖ\u0081\u0004R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/BlendMode;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-graphics"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class BlendMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Clear = m4679constructorimpl(0);
-    private static final int Src = m4679constructorimpl(1);
-    private static final int Dst = m4679constructorimpl(2);
-    private static final int SrcOver = m4679constructorimpl(3);
-    private static final int DstOver = m4679constructorimpl(4);
-    private static final int SrcIn = m4679constructorimpl(5);
-    private static final int DstIn = m4679constructorimpl(6);
-    private static final int SrcOut = m4679constructorimpl(7);
-    private static final int DstOut = m4679constructorimpl(8);
-    private static final int SrcAtop = m4679constructorimpl(9);
-    private static final int DstAtop = m4679constructorimpl(10);
-    private static final int Xor = m4679constructorimpl(11);
-    private static final int Plus = m4679constructorimpl(12);
-    private static final int Modulate = m4679constructorimpl(13);
-    private static final int Screen = m4679constructorimpl(14);
-    private static final int Overlay = m4679constructorimpl(15);
-    private static final int Darken = m4679constructorimpl(16);
-    private static final int Lighten = m4679constructorimpl(17);
-    private static final int ColorDodge = m4679constructorimpl(18);
-    private static final int ColorBurn = m4679constructorimpl(19);
-    private static final int Hardlight = m4679constructorimpl(20);
-    private static final int Softlight = m4679constructorimpl(21);
-    private static final int Difference = m4679constructorimpl(22);
-    private static final int Exclusion = m4679constructorimpl(23);
-    private static final int Multiply = m4679constructorimpl(24);
-    private static final int Hue = m4679constructorimpl(25);
-    private static final int Saturation = m4679constructorimpl(26);
-    private static final int Color = m4679constructorimpl(27);
-    private static final int Luminosity = m4679constructorimpl(28);
+    private static final int Clear = m5255constructorimpl(0);
+    private static final int Src = m5255constructorimpl(1);
+    private static final int Dst = m5255constructorimpl(2);
+    private static final int SrcOver = m5255constructorimpl(3);
+    private static final int DstOver = m5255constructorimpl(4);
+    private static final int SrcIn = m5255constructorimpl(5);
+    private static final int DstIn = m5255constructorimpl(6);
+    private static final int SrcOut = m5255constructorimpl(7);
+    private static final int DstOut = m5255constructorimpl(8);
+    private static final int SrcAtop = m5255constructorimpl(9);
+    private static final int DstAtop = m5255constructorimpl(10);
+    private static final int Xor = m5255constructorimpl(11);
+    private static final int Plus = m5255constructorimpl(12);
+    private static final int Modulate = m5255constructorimpl(13);
+    private static final int Screen = m5255constructorimpl(14);
+    private static final int Overlay = m5255constructorimpl(15);
+    private static final int Darken = m5255constructorimpl(16);
+    private static final int Lighten = m5255constructorimpl(17);
+    private static final int ColorDodge = m5255constructorimpl(18);
+    private static final int ColorBurn = m5255constructorimpl(19);
+    private static final int Hardlight = m5255constructorimpl(20);
+    private static final int Softlight = m5255constructorimpl(21);
+    private static final int Difference = m5255constructorimpl(22);
+    private static final int Exclusion = m5255constructorimpl(23);
+    private static final int Multiply = m5255constructorimpl(24);
+    private static final int Hue = m5255constructorimpl(25);
+    private static final int Saturation = m5255constructorimpl(26);
+    private static final int Color = m5255constructorimpl(27);
+    private static final int Luminosity = m5255constructorimpl(28);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BlendMode m4678boximpl(int i) {
+    public static final /* synthetic */ BlendMode m5254boximpl(int i) {
         return new BlendMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4679constructorimpl(int i) {
+    public static int m5255constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4680equalsimpl(int i, Object obj) {
-        return (obj instanceof BlendMode) && i == ((BlendMode) obj).m4684unboximpl();
+    public static boolean m5256equalsimpl(int i, Object obj) {
+        return (obj instanceof BlendMode) && i == ((BlendMode) obj).m5260unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4681equalsimpl0(int i, int i2) {
+    public static final boolean m5257equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4682hashCodeimpl(int i) {
+    public static int m5258hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4680equalsimpl(this.value, obj);
+        return m5256equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4682hashCodeimpl(this.value);
+        return m5258hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4684unboximpl() {
+    public final /* synthetic */ int m5260unboximpl() {
         return this.value;
     }
 
@@ -85,8 +85,8 @@ public final class BlendMode {
     }
 
     /* compiled from: BlendMode.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b<\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0014\u0010\u0007R\u0013\u0010\u0015\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0016\u0010\u0007R\u0013\u0010\u0017\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0018\u0010\u0007R\u0013\u0010\u0019\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001a\u0010\u0007R\u0013\u0010\u001b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001c\u0010\u0007R\u0013\u0010\u001d\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001e\u0010\u0007R\u0013\u0010\u001f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b \u0010\u0007R\u0013\u0010!\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\"\u0010\u0007R\u0013\u0010#\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b$\u0010\u0007R\u0013\u0010%\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b&\u0010\u0007R\u0013\u0010'\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b(\u0010\u0007R\u0013\u0010)\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b*\u0010\u0007R\u0013\u0010+\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b,\u0010\u0007R\u0013\u0010-\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b.\u0010\u0007R\u0013\u0010/\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b0\u0010\u0007R\u0013\u00101\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b2\u0010\u0007R\u0013\u00103\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b4\u0010\u0007R\u0013\u00105\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b6\u0010\u0007R\u0013\u00107\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b8\u0010\u0007R\u0013\u00109\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b:\u0010\u0007R\u0013\u0010;\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b<\u0010\u0007R\u0013\u0010=\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b>\u0010\u0007R\u0013\u0010?\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b@\u0010\u0007¨\u0006A"}, d2 = {"Landroidx/compose/ui/graphics/BlendMode$Companion;", "", "<init>", "()V", "Clear", "Landroidx/compose/ui/graphics/BlendMode;", "getClear-0nO6VwU", "()I", "I", "Src", "getSrc-0nO6VwU", "Dst", "getDst-0nO6VwU", "SrcOver", "getSrcOver-0nO6VwU", "DstOver", "getDstOver-0nO6VwU", "SrcIn", "getSrcIn-0nO6VwU", "DstIn", "getDstIn-0nO6VwU", "SrcOut", "getSrcOut-0nO6VwU", "DstOut", "getDstOut-0nO6VwU", "SrcAtop", "getSrcAtop-0nO6VwU", "DstAtop", "getDstAtop-0nO6VwU", "Xor", "getXor-0nO6VwU", "Plus", "getPlus-0nO6VwU", "Modulate", "getModulate-0nO6VwU", "Screen", "getScreen-0nO6VwU", "Overlay", "getOverlay-0nO6VwU", "Darken", "getDarken-0nO6VwU", "Lighten", "getLighten-0nO6VwU", "ColorDodge", "getColorDodge-0nO6VwU", "ColorBurn", "getColorBurn-0nO6VwU", "Hardlight", "getHardlight-0nO6VwU", "Softlight", "getSoftlight-0nO6VwU", "Difference", "getDifference-0nO6VwU", "Exclusion", "getExclusion-0nO6VwU", "Multiply", "getMultiply-0nO6VwU", "Hue", "getHue-0nO6VwU", ExifInterface.TAG_SATURATION, "getSaturation-0nO6VwU", "Color", "getColor-0nO6VwU", "Luminosity", "getLuminosity-0nO6VwU", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b<\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007R\u0013\u0010\u000f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0010\u0010\u0007R\u0013\u0010\u0011\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0012\u0010\u0007R\u0013\u0010\u0013\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0014\u0010\u0007R\u0013\u0010\u0015\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0016\u0010\u0007R\u0013\u0010\u0017\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0018\u0010\u0007R\u0013\u0010\u0019\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001a\u0010\u0007R\u0013\u0010\u001b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001c\u0010\u0007R\u0013\u0010\u001d\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u001e\u0010\u0007R\u0013\u0010\u001f\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b \u0010\u0007R\u0013\u0010!\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\"\u0010\u0007R\u0013\u0010#\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b$\u0010\u0007R\u0013\u0010%\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b&\u0010\u0007R\u0013\u0010'\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b(\u0010\u0007R\u0013\u0010)\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b*\u0010\u0007R\u0013\u0010+\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b,\u0010\u0007R\u0013\u0010-\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b.\u0010\u0007R\u0013\u0010/\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b0\u0010\u0007R\u0013\u00101\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b2\u0010\u0007R\u0013\u00103\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b4\u0010\u0007R\u0013\u00105\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b6\u0010\u0007R\u0013\u00107\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b8\u0010\u0007R\u0013\u00109\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b:\u0010\u0007R\u0013\u0010;\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b<\u0010\u0007R\u0013\u0010=\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b>\u0010\u0007R\u0013\u0010?\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b@\u0010\u0007¨\u0006A"}, d2 = {"Landroidx/compose/ui/graphics/BlendMode$Companion;", "", "<init>", "()V", "Clear", "Landroidx/compose/ui/graphics/BlendMode;", "getClear-0nO6VwU", "()I", "I", "Src", "getSrc-0nO6VwU", "Dst", "getDst-0nO6VwU", "SrcOver", "getSrcOver-0nO6VwU", "DstOver", "getDstOver-0nO6VwU", "SrcIn", "getSrcIn-0nO6VwU", "DstIn", "getDstIn-0nO6VwU", "SrcOut", "getSrcOut-0nO6VwU", "DstOut", "getDstOut-0nO6VwU", "SrcAtop", "getSrcAtop-0nO6VwU", "DstAtop", "getDstAtop-0nO6VwU", "Xor", "getXor-0nO6VwU", "Plus", "getPlus-0nO6VwU", "Modulate", "getModulate-0nO6VwU", "Screen", "getScreen-0nO6VwU", "Overlay", "getOverlay-0nO6VwU", "Darken", "getDarken-0nO6VwU", "Lighten", "getLighten-0nO6VwU", "ColorDodge", "getColorDodge-0nO6VwU", "ColorBurn", "getColorBurn-0nO6VwU", "Hardlight", "getHardlight-0nO6VwU", "Softlight", "getSoftlight-0nO6VwU", "Difference", "getDifference-0nO6VwU", "Exclusion", "getExclusion-0nO6VwU", "Multiply", "getMultiply-0nO6VwU", "Hue", "getHue-0nO6VwU", ExifInterface.TAG_SATURATION, "getSaturation-0nO6VwU", "Color", "getColor-0nO6VwU", "Luminosity", "getLuminosity-0nO6VwU", "ui-graphics"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -96,157 +96,157 @@ public final class BlendMode {
         }
 
         /* renamed from: getClear-0nO6VwU  reason: not valid java name */
-        public final int m4685getClear0nO6VwU() {
+        public final int m5261getClear0nO6VwU() {
             return BlendMode.Clear;
         }
 
         /* renamed from: getSrc-0nO6VwU  reason: not valid java name */
-        public final int m4708getSrc0nO6VwU() {
+        public final int m5284getSrc0nO6VwU() {
             return BlendMode.Src;
         }
 
         /* renamed from: getDst-0nO6VwU  reason: not valid java name */
-        public final int m4691getDst0nO6VwU() {
+        public final int m5267getDst0nO6VwU() {
             return BlendMode.Dst;
         }
 
         /* renamed from: getSrcOver-0nO6VwU  reason: not valid java name */
-        public final int m4712getSrcOver0nO6VwU() {
+        public final int m5288getSrcOver0nO6VwU() {
             return BlendMode.SrcOver;
         }
 
         /* renamed from: getDstOver-0nO6VwU  reason: not valid java name */
-        public final int m4695getDstOver0nO6VwU() {
+        public final int m5271getDstOver0nO6VwU() {
             return BlendMode.DstOver;
         }
 
         /* renamed from: getSrcIn-0nO6VwU  reason: not valid java name */
-        public final int m4710getSrcIn0nO6VwU() {
+        public final int m5286getSrcIn0nO6VwU() {
             return BlendMode.SrcIn;
         }
 
         /* renamed from: getDstIn-0nO6VwU  reason: not valid java name */
-        public final int m4693getDstIn0nO6VwU() {
+        public final int m5269getDstIn0nO6VwU() {
             return BlendMode.DstIn;
         }
 
         /* renamed from: getSrcOut-0nO6VwU  reason: not valid java name */
-        public final int m4711getSrcOut0nO6VwU() {
+        public final int m5287getSrcOut0nO6VwU() {
             return BlendMode.SrcOut;
         }
 
         /* renamed from: getDstOut-0nO6VwU  reason: not valid java name */
-        public final int m4694getDstOut0nO6VwU() {
+        public final int m5270getDstOut0nO6VwU() {
             return BlendMode.DstOut;
         }
 
         /* renamed from: getSrcAtop-0nO6VwU  reason: not valid java name */
-        public final int m4709getSrcAtop0nO6VwU() {
+        public final int m5285getSrcAtop0nO6VwU() {
             return BlendMode.SrcAtop;
         }
 
         /* renamed from: getDstAtop-0nO6VwU  reason: not valid java name */
-        public final int m4692getDstAtop0nO6VwU() {
+        public final int m5268getDstAtop0nO6VwU() {
             return BlendMode.DstAtop;
         }
 
         /* renamed from: getXor-0nO6VwU  reason: not valid java name */
-        public final int m4713getXor0nO6VwU() {
+        public final int m5289getXor0nO6VwU() {
             return BlendMode.Xor;
         }
 
         /* renamed from: getPlus-0nO6VwU  reason: not valid java name */
-        public final int m4704getPlus0nO6VwU() {
+        public final int m5280getPlus0nO6VwU() {
             return BlendMode.Plus;
         }
 
         /* renamed from: getModulate-0nO6VwU  reason: not valid java name */
-        public final int m4701getModulate0nO6VwU() {
+        public final int m5277getModulate0nO6VwU() {
             return BlendMode.Modulate;
         }
 
         /* renamed from: getScreen-0nO6VwU  reason: not valid java name */
-        public final int m4706getScreen0nO6VwU() {
+        public final int m5282getScreen0nO6VwU() {
             return BlendMode.Screen;
         }
 
         /* renamed from: getOverlay-0nO6VwU  reason: not valid java name */
-        public final int m4703getOverlay0nO6VwU() {
+        public final int m5279getOverlay0nO6VwU() {
             return BlendMode.Overlay;
         }
 
         /* renamed from: getDarken-0nO6VwU  reason: not valid java name */
-        public final int m4689getDarken0nO6VwU() {
+        public final int m5265getDarken0nO6VwU() {
             return BlendMode.Darken;
         }
 
         /* renamed from: getLighten-0nO6VwU  reason: not valid java name */
-        public final int m4699getLighten0nO6VwU() {
+        public final int m5275getLighten0nO6VwU() {
             return BlendMode.Lighten;
         }
 
         /* renamed from: getColorDodge-0nO6VwU  reason: not valid java name */
-        public final int m4688getColorDodge0nO6VwU() {
+        public final int m5264getColorDodge0nO6VwU() {
             return BlendMode.ColorDodge;
         }
 
         /* renamed from: getColorBurn-0nO6VwU  reason: not valid java name */
-        public final int m4687getColorBurn0nO6VwU() {
+        public final int m5263getColorBurn0nO6VwU() {
             return BlendMode.ColorBurn;
         }
 
         /* renamed from: getHardlight-0nO6VwU  reason: not valid java name */
-        public final int m4697getHardlight0nO6VwU() {
+        public final int m5273getHardlight0nO6VwU() {
             return BlendMode.Hardlight;
         }
 
         /* renamed from: getSoftlight-0nO6VwU  reason: not valid java name */
-        public final int m4707getSoftlight0nO6VwU() {
+        public final int m5283getSoftlight0nO6VwU() {
             return BlendMode.Softlight;
         }
 
         /* renamed from: getDifference-0nO6VwU  reason: not valid java name */
-        public final int m4690getDifference0nO6VwU() {
+        public final int m5266getDifference0nO6VwU() {
             return BlendMode.Difference;
         }
 
         /* renamed from: getExclusion-0nO6VwU  reason: not valid java name */
-        public final int m4696getExclusion0nO6VwU() {
+        public final int m5272getExclusion0nO6VwU() {
             return BlendMode.Exclusion;
         }
 
         /* renamed from: getMultiply-0nO6VwU  reason: not valid java name */
-        public final int m4702getMultiply0nO6VwU() {
+        public final int m5278getMultiply0nO6VwU() {
             return BlendMode.Multiply;
         }
 
         /* renamed from: getHue-0nO6VwU  reason: not valid java name */
-        public final int m4698getHue0nO6VwU() {
+        public final int m5274getHue0nO6VwU() {
             return BlendMode.Hue;
         }
 
         /* renamed from: getSaturation-0nO6VwU  reason: not valid java name */
-        public final int m4705getSaturation0nO6VwU() {
+        public final int m5281getSaturation0nO6VwU() {
             return BlendMode.Saturation;
         }
 
         /* renamed from: getColor-0nO6VwU  reason: not valid java name */
-        public final int m4686getColor0nO6VwU() {
+        public final int m5262getColor0nO6VwU() {
             return BlendMode.Color;
         }
 
         /* renamed from: getLuminosity-0nO6VwU  reason: not valid java name */
-        public final int m4700getLuminosity0nO6VwU() {
+        public final int m5276getLuminosity0nO6VwU() {
             return BlendMode.Luminosity;
         }
     }
 
     public String toString() {
-        return m4683toStringimpl(this.value);
+        return m5259toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4683toStringimpl(int i) {
-        return m4681equalsimpl0(i, Clear) ? "Clear" : m4681equalsimpl0(i, Src) ? "Src" : m4681equalsimpl0(i, Dst) ? "Dst" : m4681equalsimpl0(i, SrcOver) ? "SrcOver" : m4681equalsimpl0(i, DstOver) ? "DstOver" : m4681equalsimpl0(i, SrcIn) ? "SrcIn" : m4681equalsimpl0(i, DstIn) ? "DstIn" : m4681equalsimpl0(i, SrcOut) ? "SrcOut" : m4681equalsimpl0(i, DstOut) ? "DstOut" : m4681equalsimpl0(i, SrcAtop) ? "SrcAtop" : m4681equalsimpl0(i, DstAtop) ? "DstAtop" : m4681equalsimpl0(i, Xor) ? "Xor" : m4681equalsimpl0(i, Plus) ? "Plus" : m4681equalsimpl0(i, Modulate) ? "Modulate" : m4681equalsimpl0(i, Screen) ? "Screen" : m4681equalsimpl0(i, Overlay) ? "Overlay" : m4681equalsimpl0(i, Darken) ? "Darken" : m4681equalsimpl0(i, Lighten) ? "Lighten" : m4681equalsimpl0(i, ColorDodge) ? "ColorDodge" : m4681equalsimpl0(i, ColorBurn) ? "ColorBurn" : m4681equalsimpl0(i, Hardlight) ? "HardLight" : m4681equalsimpl0(i, Softlight) ? "Softlight" : m4681equalsimpl0(i, Difference) ? "Difference" : m4681equalsimpl0(i, Exclusion) ? "Exclusion" : m4681equalsimpl0(i, Multiply) ? "Multiply" : m4681equalsimpl0(i, Hue) ? "Hue" : m4681equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m4681equalsimpl0(i, Color) ? "Color" : m4681equalsimpl0(i, Luminosity) ? "Luminosity" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5259toStringimpl(int i) {
+        return m5257equalsimpl0(i, Clear) ? "Clear" : m5257equalsimpl0(i, Src) ? "Src" : m5257equalsimpl0(i, Dst) ? "Dst" : m5257equalsimpl0(i, SrcOver) ? "SrcOver" : m5257equalsimpl0(i, DstOver) ? "DstOver" : m5257equalsimpl0(i, SrcIn) ? "SrcIn" : m5257equalsimpl0(i, DstIn) ? "DstIn" : m5257equalsimpl0(i, SrcOut) ? "SrcOut" : m5257equalsimpl0(i, DstOut) ? "DstOut" : m5257equalsimpl0(i, SrcAtop) ? "SrcAtop" : m5257equalsimpl0(i, DstAtop) ? "DstAtop" : m5257equalsimpl0(i, Xor) ? "Xor" : m5257equalsimpl0(i, Plus) ? "Plus" : m5257equalsimpl0(i, Modulate) ? "Modulate" : m5257equalsimpl0(i, Screen) ? "Screen" : m5257equalsimpl0(i, Overlay) ? "Overlay" : m5257equalsimpl0(i, Darken) ? "Darken" : m5257equalsimpl0(i, Lighten) ? "Lighten" : m5257equalsimpl0(i, ColorDodge) ? "ColorDodge" : m5257equalsimpl0(i, ColorBurn) ? "ColorBurn" : m5257equalsimpl0(i, Hardlight) ? "HardLight" : m5257equalsimpl0(i, Softlight) ? "Softlight" : m5257equalsimpl0(i, Difference) ? "Difference" : m5257equalsimpl0(i, Exclusion) ? "Exclusion" : m5257equalsimpl0(i, Multiply) ? "Multiply" : m5257equalsimpl0(i, Hue) ? "Hue" : m5257equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5257equalsimpl0(i, Color) ? "Color" : m5257equalsimpl0(i, Luminosity) ? "Luminosity" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

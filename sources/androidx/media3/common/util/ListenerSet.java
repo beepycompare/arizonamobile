@@ -88,6 +88,10 @@ public final class ListenerSet<T> {
         return new ListenerSet<>(this.listeners, looper, looper.getThread(), clock, iterationFinishedEvent, this.throwsWhenUsingWrongThread);
     }
 
+    public boolean isRunningOnCorrectThread() {
+        return Thread.currentThread() == this.thread;
+    }
+
     public void add(T t) {
         Preconditions.checkNotNull(t);
         synchronized (this.releasedLock) {
@@ -208,7 +212,7 @@ public final class ListenerSet<T> {
 
     private void verifyCurrentThread() {
         if (this.throwsWhenUsingWrongThread) {
-            Preconditions.checkState(Thread.currentThread() == this.thread);
+            Preconditions.checkState(isRunningOnCorrectThread());
         }
     }
 

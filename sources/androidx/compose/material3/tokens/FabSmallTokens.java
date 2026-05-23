@@ -8,16 +8,16 @@ import kotlin.Metadata;
 public final class FabSmallTokens {
     public static final int $stable = 0;
     public static final FabSmallTokens INSTANCE = new FabSmallTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(40.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerMedium;
-    private static final float ContainerWidth = Dp.m7555constructorimpl(40.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ContainerWidth = Dp.m8160constructorimpl(40.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
 
     private FabSmallTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3419getContainerHeightD9Ej5fM() {
+    public final float m3864getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -26,12 +26,12 @@ public final class FabSmallTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3420getContainerWidthD9Ej5fM() {
+    public final float m3865getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3421getIconSizeD9Ej5fM() {
+    public final float m3866getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

@@ -22,7 +22,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EnterExitTransition.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\b\u0002\u0018\u00002\u00020\u0001B\u009b\u0001\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\u0005\u001a\u001a\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\t\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\u000b\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0010\u0013\u001a\u00020\u0014¢\u0006\u0004\b\u0015\u0010\u0016J\u001d\u0010I\u001a\u00020\u00072\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\bL\u0010MJ\b\u0010N\u001a\u00020OH\u0016J\u001d\u0010P\u001a\u00020\n2\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\bQ\u0010MJ#\u0010R\u001a\u00020S*\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u000206H\u0016¢\u0006\u0004\bX\u0010YJ\u001d\u0010\\\u001a\u00020\n2\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\b]\u0010MR \u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR2\u0010\u0005\u001a\u001a\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR2\u0010\t\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001c\"\u0004\b \u0010\u001eR2\u0010\u000b\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u001c\"\u0004\b\"\u0010\u001eR\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R \u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010+\"\u0004\b,\u0010-R\u001a\u0010\u0013\u001a\u00020\u0014X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u000e\u00102\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00103\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0004\n\u0002\u00104R \u00107\u001a\u0002062\u0006\u00105\u001a\u000206@BX\u0082\u000e¢\u0006\n\n\u0002\u00104\"\u0004\b8\u00109R\u001c\u0010:\u001a\u0004\u0018\u00010;X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R\u0013\u0010@\u001a\u0004\u0018\u00010;8F¢\u0006\u0006\u001a\u0004\bA\u0010=R.\u0010B\u001a\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040D\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070E0C¢\u0006\u0002\bF¢\u0006\b\n\u0000\u001a\u0004\bG\u0010HR.\u0010Z\u001a\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040D\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0E0C¢\u0006\u0002\bF¢\u0006\b\n\u0000\u001a\u0004\b[\u0010H¨\u0006^"}, d2 = {"Landroidx/compose/animation/EnterExitTransitionModifierNode;", "Landroidx/compose/animation/LayoutModifierNodeWithPassThroughIntrinsics;", "transition", "Landroidx/compose/animation/core/Transition;", "Landroidx/compose/animation/EnterExitState;", "sizeAnimation", "Landroidx/compose/animation/core/Transition$DeferredAnimation;", "Landroidx/compose/ui/unit/IntSize;", "Landroidx/compose/animation/core/AnimationVector2D;", "offsetAnimation", "Landroidx/compose/ui/unit/IntOffset;", "slideAnimation", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "isEnabled", "Lkotlin/Function0;", "", "graphicsLayerBlock", "Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;", "<init>", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function0;Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;)V", "getTransition", "()Landroidx/compose/animation/core/Transition;", "setTransition", "(Landroidx/compose/animation/core/Transition;)V", "getSizeAnimation", "()Landroidx/compose/animation/core/Transition$DeferredAnimation;", "setSizeAnimation", "(Landroidx/compose/animation/core/Transition$DeferredAnimation;)V", "getOffsetAnimation", "setOffsetAnimation", "getSlideAnimation", "setSlideAnimation", "getEnter", "()Landroidx/compose/animation/EnterTransition;", "setEnter", "(Landroidx/compose/animation/EnterTransition;)V", "getExit", "()Landroidx/compose/animation/ExitTransition;", "setExit", "(Landroidx/compose/animation/ExitTransition;)V", "()Lkotlin/jvm/functions/Function0;", "setEnabled", "(Lkotlin/jvm/functions/Function0;)V", "getGraphicsLayerBlock", "()Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;", "setGraphicsLayerBlock", "(Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;)V", "lookaheadConstraintsAvailable", "lookaheadSize", "J", "value", "Landroidx/compose/ui/unit/Constraints;", "lookaheadConstraints", "setLookaheadConstraints-BRTryo0", "(J)V", "currentAlignment", "Landroidx/compose/ui/Alignment;", "getCurrentAlignment", "()Landroidx/compose/ui/Alignment;", "setCurrentAlignment", "(Landroidx/compose/ui/Alignment;)V", "alignment", "getAlignment", "sizeTransitionSpec", "Lkotlin/Function1;", "Landroidx/compose/animation/core/Transition$Segment;", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "Lkotlin/ExtensionFunctionType;", "getSizeTransitionSpec", "()Lkotlin/jvm/functions/Function1;", "sizeByState", "targetState", "fullSize", "sizeByState-Uzc_VyU", "(Landroidx/compose/animation/EnterExitState;J)J", "onAttach", "", "targetOffsetByState", "targetOffsetByState-oFUgxo0", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "slideSpec", "getSlideSpec", "slideTargetValueByState", "slideTargetValueByState-oFUgxo0", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\b\u0002\u0018\u00002\u00020\u0001B\u009b\u0001\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\u0005\u001a\u001a\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\t\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u001e\u0010\u000b\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\u000f\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0010\u0013\u001a\u00020\u0014¢\u0006\u0004\b\u0015\u0010\u0016J\u001d\u0010I\u001a\u00020\u00072\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\bL\u0010MJ\b\u0010N\u001a\u00020OH\u0016J\u001d\u0010P\u001a\u00020\n2\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\bQ\u0010MJ#\u0010R\u001a\u00020S*\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u000206H\u0016¢\u0006\u0004\bX\u0010YJ\u001d\u0010\\\u001a\u00020\n2\u0006\u0010J\u001a\u00020\u00042\u0006\u0010K\u001a\u00020\u0007¢\u0006\u0004\b]\u0010MR \u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR2\u0010\u0005\u001a\u001a\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR2\u0010\t\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010\u001c\"\u0004\b \u0010\u001eR2\u0010\u000b\u001a\u001a\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0006R\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u001c\"\u0004\b\"\u0010\u001eR\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010$\"\u0004\b%\u0010&R\u001a\u0010\u000e\u001a\u00020\u000fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010(\"\u0004\b)\u0010*R \u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010+\"\u0004\b,\u0010-R\u001a\u0010\u0013\u001a\u00020\u0014X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u000e\u00102\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00103\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0004\n\u0002\u00104R \u00107\u001a\u0002062\u0006\u00105\u001a\u000206@BX\u0082\u000e¢\u0006\n\n\u0002\u00104\"\u0004\b8\u00109R\u001c\u0010:\u001a\u0004\u0018\u00010;X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b<\u0010=\"\u0004\b>\u0010?R\u0013\u0010@\u001a\u0004\u0018\u00010;8F¢\u0006\u0006\u001a\u0004\bA\u0010=R.\u0010B\u001a\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040D\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070E0C¢\u0006\u0002\bF¢\u0006\b\n\u0000\u001a\u0004\bG\u0010HR.\u0010Z\u001a\u001f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040D\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0E0C¢\u0006\u0002\bF¢\u0006\b\n\u0000\u001a\u0004\b[\u0010H¨\u0006^"}, d2 = {"Landroidx/compose/animation/EnterExitTransitionModifierNode;", "Landroidx/compose/animation/LayoutModifierNodeWithPassThroughIntrinsics;", "transition", "Landroidx/compose/animation/core/Transition;", "Landroidx/compose/animation/EnterExitState;", "sizeAnimation", "Landroidx/compose/animation/core/Transition$DeferredAnimation;", "Landroidx/compose/ui/unit/IntSize;", "Landroidx/compose/animation/core/AnimationVector2D;", "offsetAnimation", "Landroidx/compose/ui/unit/IntOffset;", "slideAnimation", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "isEnabled", "Lkotlin/Function0;", "", "graphicsLayerBlock", "Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;", "<init>", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function0;Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;)V", "getTransition", "()Landroidx/compose/animation/core/Transition;", "setTransition", "(Landroidx/compose/animation/core/Transition;)V", "getSizeAnimation", "()Landroidx/compose/animation/core/Transition$DeferredAnimation;", "setSizeAnimation", "(Landroidx/compose/animation/core/Transition$DeferredAnimation;)V", "getOffsetAnimation", "setOffsetAnimation", "getSlideAnimation", "setSlideAnimation", "getEnter", "()Landroidx/compose/animation/EnterTransition;", "setEnter", "(Landroidx/compose/animation/EnterTransition;)V", "getExit", "()Landroidx/compose/animation/ExitTransition;", "setExit", "(Landroidx/compose/animation/ExitTransition;)V", "()Lkotlin/jvm/functions/Function0;", "setEnabled", "(Lkotlin/jvm/functions/Function0;)V", "getGraphicsLayerBlock", "()Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;", "setGraphicsLayerBlock", "(Landroidx/compose/animation/GraphicsLayerBlockForEnterExit;)V", "lookaheadConstraintsAvailable", "lookaheadSize", "J", "value", "Landroidx/compose/ui/unit/Constraints;", "lookaheadConstraints", "setLookaheadConstraints-BRTryo0", "(J)V", "currentAlignment", "Landroidx/compose/ui/Alignment;", "getCurrentAlignment", "()Landroidx/compose/ui/Alignment;", "setCurrentAlignment", "(Landroidx/compose/ui/Alignment;)V", "alignment", "getAlignment", "sizeTransitionSpec", "Lkotlin/Function1;", "Landroidx/compose/animation/core/Transition$Segment;", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "Lkotlin/ExtensionFunctionType;", "getSizeTransitionSpec", "()Lkotlin/jvm/functions/Function1;", "sizeByState", "targetState", "fullSize", "sizeByState-Uzc_VyU", "(Landroidx/compose/animation/EnterExitState;J)J", "onAttach", "", "targetOffsetByState", "targetOffsetByState-oFUgxo0", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "slideSpec", "getSlideSpec", "slideTargetValueByState", "slideTargetValueByState-oFUgxo0", "animation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassThroughIntrinsics {
     private Alignment currentAlignment;
@@ -104,7 +104,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     };
 
     /* compiled from: EnterExitTransition.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -203,7 +203,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: setLookaheadConstraints-BRTryo0  reason: not valid java name */
-    private final void m106setLookaheadConstraintsBRTryo0(long j) {
+    private final void m109setLookaheadConstraintsBRTryo0(long j) {
         this.lookaheadConstraintsAvailable = true;
         this.lookaheadConstraints = j;
     }
@@ -246,7 +246,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: sizeByState-Uzc_VyU  reason: not valid java name */
-    public final long m107sizeByStateUzc_VyU(EnterExitState enterExitState, long j) {
+    public final long m110sizeByStateUzc_VyU(EnterExitState enterExitState, long j) {
         Function1<IntSize, IntSize> size;
         Function1<IntSize, IntSize> size2;
         int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
@@ -254,14 +254,14 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             if (i == 2) {
                 ChangeSize changeSize = this.enter.getData$animation().getChangeSize();
                 if (changeSize != null && (size = changeSize.getSize()) != null) {
-                    return size.invoke(IntSize.m7718boximpl(j)).m7730unboximpl();
+                    return size.invoke(IntSize.m8323boximpl(j)).m8335unboximpl();
                 }
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {
                 ChangeSize changeSize2 = this.exit.getData$animation().getChangeSize();
                 if (changeSize2 != null && (size2 = changeSize2.getSize()) != null) {
-                    return size2.invoke(IntSize.m7718boximpl(j)).m7730unboximpl();
+                    return size2.invoke(IntSize.m8323boximpl(j)).m8335unboximpl();
                 }
             }
         }
@@ -276,7 +276,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: targetOffsetByState-oFUgxo0  reason: not valid java name */
-    public final long m109targetOffsetByStateoFUgxo0(EnterExitState enterExitState, long j) {
+    public final long m112targetOffsetByStateoFUgxo0(EnterExitState enterExitState, long j) {
         if (this.currentAlignment != null && getAlignment() != null && !Intrinsics.areEqual(this.currentAlignment, getAlignment())) {
             int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
             if (i != 1) {
@@ -286,21 +286,21 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
                     }
                     ChangeSize changeSize = this.exit.getData$animation().getChangeSize();
                     if (changeSize != null) {
-                        long m7730unboximpl = changeSize.getSize().invoke(IntSize.m7718boximpl(j)).m7730unboximpl();
+                        long m8335unboximpl = changeSize.getSize().invoke(IntSize.m8323boximpl(j)).m8335unboximpl();
                         Alignment alignment = getAlignment();
                         Intrinsics.checkNotNull(alignment);
-                        long mo4246alignKFBX0sM = alignment.mo4246alignKFBX0sM(j, m7730unboximpl, LayoutDirection.Ltr);
+                        long mo4771alignKFBX0sM = alignment.mo4771alignKFBX0sM(j, m8335unboximpl, LayoutDirection.Ltr);
                         Alignment alignment2 = this.currentAlignment;
                         Intrinsics.checkNotNull(alignment2);
-                        return IntOffset.m7686minusqkQi6aY(mo4246alignKFBX0sM, alignment2.mo4246alignKFBX0sM(j, m7730unboximpl, LayoutDirection.Ltr));
+                        return IntOffset.m8291minusqkQi6aY(mo4771alignKFBX0sM, alignment2.mo4771alignKFBX0sM(j, m8335unboximpl, LayoutDirection.Ltr));
                     }
-                    return IntOffset.Companion.m7694getZeronOccac();
+                    return IntOffset.Companion.m8299getZeronOccac();
                 }
-                return IntOffset.Companion.m7694getZeronOccac();
+                return IntOffset.Companion.m8299getZeronOccac();
             }
-            return IntOffset.Companion.m7694getZeronOccac();
+            return IntOffset.Companion.m8299getZeronOccac();
         }
-        return IntOffset.Companion.m7694getZeronOccac();
+        return IntOffset.Companion.m8299getZeronOccac();
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
@@ -318,11 +318,11 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             this.currentAlignment = alignment;
         }
         if (measureScope.isLookingAhead()) {
-            final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-            long m7721constructorimpl = IntSize.m7721constructorimpl((mo6216measureBRTryo0.getWidth() << 32) | (mo6216measureBRTryo0.getHeight() & 4294967295L));
-            this.lookaheadSize = m7721constructorimpl;
-            m106setLookaheadConstraintsBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, (int) (m7721constructorimpl >> 32), (int) (m7721constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$1
+            final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
+            long m8326constructorimpl = IntSize.m8326constructorimpl((mo6818measureBRTryo0.getWidth() << 32) | (mo6818measureBRTryo0.getHeight() & 4294967295L));
+            this.lookaheadSize = m8326constructorimpl;
+            m109setLookaheadConstraintsBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, (int) (m8326constructorimpl >> 32), (int) (m8326constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -341,9 +341,9 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             }, 4, null);
         } else if (this.isEnabled.invoke().booleanValue()) {
             final Function1<GraphicsLayerScope, Unit> init = this.graphicsLayerBlock.init();
-            final Placeable mo6216measureBRTryo02 = measurable.mo6216measureBRTryo0(j);
-            long m7721constructorimpl2 = IntSize.m7721constructorimpl((mo6216measureBRTryo02.getWidth() << 32) | (mo6216measureBRTryo02.getHeight() & 4294967295L));
-            final long j2 = AnimationModifierKt.m73isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m7721constructorimpl2;
+            final Placeable mo6818measureBRTryo02 = measurable.mo6818measureBRTryo0(j);
+            long m8326constructorimpl2 = IntSize.m8326constructorimpl((mo6818measureBRTryo02.getWidth() << 32) | (mo6818measureBRTryo02.getHeight() & 4294967295L));
+            final long j2 = AnimationModifierKt.m73isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m8326constructorimpl2;
             Transition<EnterExitState>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation = this.sizeAnimation;
             State<IntSize> animate3 = deferredAnimation != null ? deferredAnimation.animate(this.sizeTransitionSpec, new Function1<EnterExitState, IntSize>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$animSize$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -354,20 +354,20 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntSize invoke(EnterExitState enterExitState) {
-                    return IntSize.m7718boximpl(m110invokeYEO4UFw(enterExitState));
+                    return IntSize.m8323boximpl(m113invokeYEO4UFw(enterExitState));
                 }
 
                 /* renamed from: invoke-YEO4UFw  reason: not valid java name */
-                public final long m110invokeYEO4UFw(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m107sizeByStateUzc_VyU(enterExitState, j2);
+                public final long m113invokeYEO4UFw(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m110sizeByStateUzc_VyU(enterExitState, j2);
                 }
             }) : null;
             if (animate3 != null) {
-                m7721constructorimpl2 = animate3.getValue().m7730unboximpl();
+                m8326constructorimpl2 = animate3.getValue().m8335unboximpl();
             }
-            long m7522constrain4WqzIAM = ConstraintsKt.m7522constrain4WqzIAM(j, m7721constructorimpl2);
+            long m8127constrain4WqzIAM = ConstraintsKt.m8127constrain4WqzIAM(j, m8326constructorimpl2);
             Transition<EnterExitState>.DeferredAnimation<IntOffset, AnimationVector2D> deferredAnimation2 = this.offsetAnimation;
-            long m7694getZeronOccac = (deferredAnimation2 == null || (animate2 = deferredAnimation2.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<IntOffset>>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$offsetDelta$1
+            long m8299getZeronOccac = (deferredAnimation2 == null || (animate2 = deferredAnimation2.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<IntOffset>>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$offsetDelta$1
                 @Override // kotlin.jvm.functions.Function1
                 public final FiniteAnimationSpec<IntOffset> invoke(Transition.Segment<EnterExitState> segment) {
                     SpringSpec springSpec;
@@ -383,16 +383,16 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntOffset invoke(EnterExitState enterExitState) {
-                    return IntOffset.m7674boximpl(m111invokeBjo55l4(enterExitState));
+                    return IntOffset.m8279boximpl(m114invokeBjo55l4(enterExitState));
                 }
 
                 /* renamed from: invoke-Bjo55l4  reason: not valid java name */
-                public final long m111invokeBjo55l4(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m109targetOffsetByStateoFUgxo0(enterExitState, j2);
+                public final long m114invokeBjo55l4(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m112targetOffsetByStateoFUgxo0(enterExitState, j2);
                 }
-            })) == null) ? IntOffset.Companion.m7694getZeronOccac() : animate2.getValue().m7692unboximpl();
+            })) == null) ? IntOffset.Companion.m8299getZeronOccac() : animate2.getValue().m8297unboximpl();
             Transition<EnterExitState>.DeferredAnimation<IntOffset, AnimationVector2D> deferredAnimation3 = this.slideAnimation;
-            long m7694getZeronOccac2 = (deferredAnimation3 == null || (animate = deferredAnimation3.animate(this.slideSpec, new Function1<EnterExitState, IntOffset>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$slideOffset$1
+            long m8299getZeronOccac2 = (deferredAnimation3 == null || (animate = deferredAnimation3.animate(this.slideSpec, new Function1<EnterExitState, IntOffset>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$slideOffset$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -401,18 +401,18 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntOffset invoke(EnterExitState enterExitState) {
-                    return IntOffset.m7674boximpl(m112invokeBjo55l4(enterExitState));
+                    return IntOffset.m8279boximpl(m115invokeBjo55l4(enterExitState));
                 }
 
                 /* renamed from: invoke-Bjo55l4  reason: not valid java name */
-                public final long m112invokeBjo55l4(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m108slideTargetValueByStateoFUgxo0(enterExitState, j2);
+                public final long m115invokeBjo55l4(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m111slideTargetValueByStateoFUgxo0(enterExitState, j2);
                 }
-            })) == null) ? IntOffset.Companion.m7694getZeronOccac() : animate.getValue().m7692unboximpl();
+            })) == null) ? IntOffset.Companion.m8299getZeronOccac() : animate.getValue().m8297unboximpl();
             Alignment alignment2 = this.currentAlignment;
-            final long m7687plusqkQi6aY = IntOffset.m7687plusqkQi6aY(alignment2 != null ? alignment2.mo4246alignKFBX0sM(j2, m7522constrain4WqzIAM, LayoutDirection.Ltr) : IntOffset.Companion.m7694getZeronOccac(), m7694getZeronOccac2);
-            final long j3 = m7694getZeronOccac;
-            return MeasureScope.layout$default(measureScope, (int) (m7522constrain4WqzIAM >> 32), (int) (m7522constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$2
+            final long m8292plusqkQi6aY = IntOffset.m8292plusqkQi6aY(alignment2 != null ? alignment2.mo4771alignKFBX0sM(j2, m8127constrain4WqzIAM, LayoutDirection.Ltr) : IntOffset.Companion.m8299getZeronOccac(), m8299getZeronOccac2);
+            final long j3 = m8299getZeronOccac;
+            return MeasureScope.layout$default(measureScope, (int) (m8127constrain4WqzIAM >> 32), (int) (m8127constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -428,12 +428,12 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Placeable.PlacementScope placementScope) {
-                    placementScope.placeWithLayer(Placeable.this, IntOffset.m7683getXimpl(j3) + IntOffset.m7683getXimpl(m7687plusqkQi6aY), IntOffset.m7684getYimpl(j3) + IntOffset.m7684getYimpl(m7687plusqkQi6aY), 0.0f, init);
+                    placementScope.placeWithLayer(Placeable.this, IntOffset.m8288getXimpl(j3) + IntOffset.m8288getXimpl(m8292plusqkQi6aY), IntOffset.m8289getYimpl(j3) + IntOffset.m8289getYimpl(m8292plusqkQi6aY), 0.0f, init);
                 }
             }, 4, null);
         } else {
-            final Placeable mo6216measureBRTryo03 = measurable.mo6216measureBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, mo6216measureBRTryo03.getWidth(), mo6216measureBRTryo03.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$3$1
+            final Placeable mo6818measureBRTryo03 = measurable.mo6818measureBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, mo6818measureBRTryo03.getWidth(), mo6818measureBRTryo03.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$3$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -458,23 +458,23 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: slideTargetValueByState-oFUgxo0  reason: not valid java name */
-    public final long m108slideTargetValueByStateoFUgxo0(EnterExitState enterExitState, long j) {
+    public final long m111slideTargetValueByStateoFUgxo0(EnterExitState enterExitState, long j) {
         Function1<IntSize, IntOffset> slideOffset;
         Function1<IntSize, IntOffset> slideOffset2;
         Slide slide = this.enter.getData$animation().getSlide();
-        long m7694getZeronOccac = (slide == null || (slideOffset2 = slide.getSlideOffset()) == null) ? IntOffset.Companion.m7694getZeronOccac() : slideOffset2.invoke(IntSize.m7718boximpl(j)).m7692unboximpl();
+        long m8299getZeronOccac = (slide == null || (slideOffset2 = slide.getSlideOffset()) == null) ? IntOffset.Companion.m8299getZeronOccac() : slideOffset2.invoke(IntSize.m8323boximpl(j)).m8297unboximpl();
         Slide slide2 = this.exit.getData$animation().getSlide();
-        long m7694getZeronOccac2 = (slide2 == null || (slideOffset = slide2.getSlideOffset()) == null) ? IntOffset.Companion.m7694getZeronOccac() : slideOffset.invoke(IntSize.m7718boximpl(j)).m7692unboximpl();
+        long m8299getZeronOccac2 = (slide2 == null || (slideOffset = slide2.getSlideOffset()) == null) ? IntOffset.Companion.m8299getZeronOccac() : slideOffset.invoke(IntSize.m8323boximpl(j)).m8297unboximpl();
         int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return m7694getZeronOccac2;
+                    return m8299getZeronOccac2;
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return m7694getZeronOccac;
+            return m8299getZeronOccac;
         }
-        return IntOffset.Companion.m7694getZeronOccac();
+        return IntOffset.Companion.m8299getZeronOccac();
     }
 }

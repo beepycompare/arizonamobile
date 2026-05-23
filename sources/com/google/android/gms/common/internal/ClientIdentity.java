@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class ClientIdentity extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ClientIdentity> CREATOR = new zaa();
@@ -33,7 +33,14 @@ public class ClientIdentity extends AbstractSafeParcelable {
     }
 
     public final String toString() {
-        return this.uid + StringUtils.PROCESS_POSTFIX_DELIMITER + this.packageName;
+        int i = this.uid;
+        int length = String.valueOf(i).length();
+        String str = this.packageName;
+        StringBuilder sb = new StringBuilder(length + 1 + String.valueOf(str).length());
+        sb.append(i);
+        sb.append(StringUtils.PROCESS_POSTFIX_DELIMITER);
+        sb.append(str);
+        return sb.toString();
     }
 
     @Override // android.os.Parcelable

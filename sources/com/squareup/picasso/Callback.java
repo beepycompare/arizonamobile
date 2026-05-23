@@ -1,8 +1,8 @@
 package com.squareup.picasso;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Callback {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class EmptyCallback implements Callback {
         @Override // com.squareup.picasso.Callback
         public void onError(Exception exc) {

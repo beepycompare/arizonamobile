@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Outline;
 import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -13,11 +14,12 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.view.ViewOutlineProvider;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -41,6 +43,7 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
     private final float[] gradientPositions;
     private final int minimumHeight;
     private final int minimumWidth;
+    private OnEnterKeyPressedListener onEnterKeyPressedListener;
     private final RectF scratch;
     private final Rect scratchLineBounds;
     private final ColorStateList textColor;
@@ -48,6 +51,11 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
     private final Rect textViewRect;
     private final AccessibilityDelegateCompat valueAccessibilityDelegate;
     private String[] values;
+
+    /* loaded from: classes4.dex */
+    interface OnEnterKeyPressedListener {
+        void onEnterKeyPressed();
+    }
 
     public ClockFaceView(Context context) {
         this(context, null);
@@ -78,19 +86,15 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
         int defaultColor = AppCompatResources.getColorStateList(context, R.color.material_timepicker_clockface).getDefaultColor();
         ColorStateList colorStateList2 = MaterialResources.getColorStateList(context, obtainStyledAttributes, R.styleable.ClockFaceView_clockFaceBackgroundColor);
         setBackgroundColor(colorStateList2 != null ? colorStateList2.getDefaultColor() : defaultColor);
-        getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: com.google.android.material.timepicker.ClockFaceView.1
-            @Override // android.view.ViewTreeObserver.OnPreDrawListener
-            public boolean onPreDraw() {
-                if (ClockFaceView.this.isShown()) {
-                    ClockFaceView.this.getViewTreeObserver().removeOnPreDrawListener(this);
-                    ClockFaceView.this.setRadius(((ClockFaceView.this.getHeight() / 2) - ClockFaceView.this.clockHandView.getSelectorRadius()) - ClockFaceView.this.clockHandPadding);
-                    return true;
-                }
-                return true;
+        obtainStyledAttributes.recycle();
+        setOutlineProvider(new ViewOutlineProvider() { // from class: com.google.android.material.timepicker.ClockFaceView.1
+            @Override // android.view.ViewOutlineProvider
+            public void getOutline(View view, Outline outline) {
+                outline.setOval(0, 0, view.getWidth(), view.getHeight());
             }
         });
-        setFocusable(false);
-        obtainStyledAttributes.recycle();
+        setFocusable(true);
+        setClipToOutline(true);
         this.valueAccessibilityDelegate = new AccessibilityDelegateCompat() { // from class: com.google.android.material.timepicker.ClockFaceView.2
             @Override // androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
@@ -253,9 +257,74 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
     public void onMeasure(int i, int i2) {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int max3 = (int) (this.clockSize / max3(this.minimumHeight / displayMetrics.heightPixels, this.minimumWidth / displayMetrics.widthPixels, 1.0f));
+        if (View.MeasureSpec.getMode(i) != 0) {
+            max3 = Math.min(max3, View.MeasureSpec.getSize(i));
+        }
+        if (View.MeasureSpec.getMode(i2) != 0) {
+            max3 = Math.min(max3, View.MeasureSpec.getSize(i2));
+        }
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(max3, 1073741824);
-        setMeasuredDimension(max3, max3);
+        int selectorRadius = ((max3 / 2) - this.clockHandView.getSelectorRadius()) - this.clockHandPadding;
+        if (selectorRadius != getRadius()) {
+            setRadius(selectorRadius);
+        }
         super.onMeasure(makeMeasureSpec, makeMeasureSpec);
+    }
+
+    private int getSelectedIndex() {
+        for (int i = 0; i < this.textViewPool.size(); i++) {
+            TextView valueAt = this.textViewPool.valueAt(i);
+            if (valueAt.isSelected()) {
+                return ((Integer) valueAt.getTag(R.id.material_value_index)).intValue();
+            }
+        }
+        return -1;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0042  */
+    @Override // android.view.View, android.view.KeyEvent.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean onKeyDown(int i, KeyEvent keyEvent) {
+        int length;
+        int selectedIndex = getSelectedIndex();
+        if (!isShown() || selectedIndex == -1) {
+            return super.onKeyDown(i, keyEvent);
+        }
+        if (i != 66) {
+            switch (i) {
+                case 19:
+                case 22:
+                    length = (selectedIndex + 1) % this.values.length;
+                    if (length == selectedIndex) {
+                        int i2 = (length / 12) + 1;
+                        if (i2 != getCurrentLevel()) {
+                            setCurrentLevel(i2);
+                        }
+                        setHandRotation((length % 12) * 30.0f);
+                        return true;
+                    }
+                    return super.onKeyDown(i, keyEvent);
+                case 20:
+                case 21:
+                    String[] strArr = this.values;
+                    length = ((selectedIndex - 1) + strArr.length) % strArr.length;
+                    if (length == selectedIndex) {
+                    }
+                    break;
+                case 23:
+                    break;
+                default:
+                    return super.onKeyDown(i, keyEvent);
+            }
+        }
+        OnEnterKeyPressedListener onEnterKeyPressedListener = this.onEnterKeyPressedListener;
+        if (onEnterKeyPressedListener != null) {
+            onEnterKeyPressedListener.onEnterKeyPressed();
+        }
+        return true;
     }
 
     private static float max3(float f, float f2, float f3) {
@@ -270,5 +339,9 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setCurrentLevel(int i) {
         this.clockHandView.setCurrentLevel(i);
+    }
+
+    public void setOnEnterKeyPressedListener(OnEnterKeyPressedListener onEnterKeyPressedListener) {
+        this.onEnterKeyPressedListener = onEnterKeyPressedListener;
     }
 }

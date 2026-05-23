@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PathHitTester.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0003\u0010\u0006\u001a\u00020\u0007J\u0018\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0086\u0002¢\u0006\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/graphics/PathHitTester;", "", "<init>", "()V", "path", "Landroidx/compose/ui/graphics/Path;", "tolerance", "", "bounds", "Landroidx/compose/ui/geometry/Rect;", "intervals", "Landroidx/compose/ui/graphics/IntervalTree;", "Landroidx/compose/ui/graphics/PathSegment;", "curves", "", "roots", "updatePath", "", "contains", "", "position", "Landroidx/compose/ui/geometry/Offset;", "contains-k-4lQ0M", "(J)Z", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0003\u0010\u0006\u001a\u00020\u0007J\u0018\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0086\u0002¢\u0006\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/graphics/PathHitTester;", "", "<init>", "()V", "path", "Landroidx/compose/ui/graphics/Path;", "tolerance", "", "bounds", "Landroidx/compose/ui/geometry/Rect;", "intervals", "Landroidx/compose/ui/graphics/IntervalTree;", "Landroidx/compose/ui/graphics/PathSegment;", "curves", "", "roots", "updatePath", "", "contains", "", "position", "Landroidx/compose/ui/geometry/Offset;", "contains-k-4lQ0M", "(J)Z", "ui-graphics"}, k = 1, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class PathHitTester {
     public static final int $stable = 8;
     private Rect bounds;
@@ -19,8 +19,8 @@ public final class PathHitTester {
     private float tolerance;
 
     /* compiled from: PathHitTester.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -83,10 +83,10 @@ public final class PathHitTester {
     }
 
     /* renamed from: contains-k-4lQ0M  reason: not valid java name */
-    public final boolean m5070containsk4lQ0M(long j) {
+    public final boolean m5646containsk4lQ0M(long j) {
         int i;
         int lineWinding;
-        if (!this.path.isEmpty() && this.bounds.m4553containsk4lQ0M(j)) {
+        if (!this.path.isEmpty() && this.bounds.m5129containsk4lQ0M(j)) {
             float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
             float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
             float[] fArr = this.curves;
@@ -124,7 +124,7 @@ public final class PathHitTester {
             } else {
                 i = 0;
             }
-            if (PathFillType.m5064equalsimpl0(this.path.mo4660getFillTypeRgk1Os(), PathFillType.Companion.m5068getEvenOddRgk1Os())) {
+            if (PathFillType.m5640equalsimpl0(this.path.mo5236getFillTypeRgk1Os(), PathFillType.Companion.m5644getEvenOddRgk1Os())) {
                 i &= 1;
             }
             if (i != 0) {

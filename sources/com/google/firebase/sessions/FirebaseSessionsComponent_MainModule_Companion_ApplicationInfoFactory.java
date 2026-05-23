@@ -4,12 +4,12 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.sessions.FirebaseSessionsComponent;
 import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Preconditions;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 /* loaded from: classes4.dex */
 public final class FirebaseSessionsComponent_MainModule_Companion_ApplicationInfoFactory implements Factory<ApplicationInfo> {
     private final Provider<FirebaseApp> firebaseAppProvider;
 
-    public FirebaseSessionsComponent_MainModule_Companion_ApplicationInfoFactory(Provider<FirebaseApp> provider) {
+    private FirebaseSessionsComponent_MainModule_Companion_ApplicationInfoFactory(Provider<FirebaseApp> provider) {
         this.firebaseAppProvider = provider;
     }
 

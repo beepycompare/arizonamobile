@@ -58,7 +58,6 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     });
     private int adtsFlags;
     private int amrFlags;
-    private int codecsToParseWithinGopSampleDependencies;
     private boolean constantBitrateSeekingAlwaysEnabled;
     private boolean constantBitrateSeekingEnabled;
     private int flacFlags;
@@ -74,6 +73,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     private int tsTimestampSearchBytes = TsExtractor.DEFAULT_TIMESTAMP_SEARCH_BYTES;
     private SubtitleParser.Factory subtitleParserFactory = new DefaultSubtitleParserFactory();
     private boolean textTrackTranscodingEnabled = true;
+    private int codecsToParseWithinGopSampleDependencies = 3;
 
     public synchronized DefaultExtractorsFactory setConstantBitrateSeekingEnabled(boolean z) {
         this.constantBitrateSeekingEnabled = z;

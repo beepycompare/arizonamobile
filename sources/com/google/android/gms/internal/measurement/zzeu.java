@@ -4,23 +4,23 @@ import android.app.Activity;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzeu extends zzeq {
+final class zzeu extends zzeo {
     final /* synthetic */ Activity zza;
-    final /* synthetic */ zzfa zzb;
+    final /* synthetic */ zzey zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeu(zzfa zzfaVar, Activity activity) {
-        super(zzfaVar.zza, true);
+    public zzeu(zzey zzeyVar, Activity activity) {
+        super(zzeyVar.zza, true);
         this.zza = activity;
-        Objects.requireNonNull(zzfaVar);
-        this.zzb = zzfaVar;
+        Objects.requireNonNull(zzeyVar);
+        this.zzb = zzeyVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     final void zza() throws RemoteException {
-        ((zzcr) Preconditions.checkNotNull(this.zzb.zza.zzQ())).onActivityStartedByScionActivityInfo(zzdf.zza(this.zza), this.zzi);
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zza.zzS())).onActivityPausedByScionActivityInfo(zzdd.zza(this.zza), this.zzj);
     }
 }

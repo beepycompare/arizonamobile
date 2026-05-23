@@ -1,11 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public interface S8 {
-    void a();
+public final class S8 {
 
-    void a(List list);
+    /* renamed from: a  reason: collision with root package name */
+    public final C0242f6 f760a;
+    public final EnumC0168c9 b;
 
-    void b(List list);
+    public S8(C0242f6 c0242f6, EnumC0168c9 enumC0168c9) {
+        this.f760a = c0242f6;
+        this.b = enumC0168c9;
+    }
 }

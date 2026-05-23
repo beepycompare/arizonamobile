@@ -39,12 +39,12 @@ public final class ShortNavigationBarOverrideScope {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2493getContainerColor0d7_KjU() {
+    public final long m2938getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2494getContentColor0d7_KjU() {
+    public final long m2939getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
@@ -53,7 +53,7 @@ public final class ShortNavigationBarOverrideScope {
     }
 
     /* renamed from: getArrangement-LnnQw40  reason: not valid java name */
-    public final int m2492getArrangementLnnQw40() {
+    public final int m2937getArrangementLnnQw40() {
         return this.arrangement;
     }
 

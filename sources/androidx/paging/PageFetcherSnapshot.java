@@ -4,6 +4,7 @@ import androidx.paging.LoadState;
 import androidx.paging.PageEvent;
 import androidx.paging.PageFetcherSnapshotState;
 import androidx.paging.PagingSource;
+import androidx.paging.ViewportHint;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -31,25 +32,26 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.sync.Mutex;
 /* compiled from: PageFetcherSnapshot.kt */
-@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0000\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B{\u0012\b\u0010\u0004\u001a\u0004\u0018\u00018\u0000\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\u0016\b\u0002\u0010\f\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\r\u0012\u0016\b\u0002\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u000f\u0012\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011¢\u0006\u0004\b\u0012\u0010\u0013J \u0010+\u001a\u00020\u000b2\u0006\u0010,\u001a\u00020-2\b\u0010.\u001a\u0004\u0018\u00010/H\u0082@¢\u0006\u0002\u00100J\u000e\u00101\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/J\u0006\u00102\u001a\u00020\u000bJ\u001a\u00103\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u000fH\u0086@¢\u0006\u0002\u00104J\f\u00105\u001a\u00020\u000b*\u000206H\u0002J \u00107\u001a\u00020\u000b*\b\u0012\u0004\u0012\u0002080\n2\u0006\u0010,\u001a\u00020-H\u0082@¢\u0006\u0002\u00109J%\u0010:\u001a\b\u0012\u0004\u0012\u00028\u00000;2\u0006\u0010,\u001a\u00020-2\b\u0010<\u001a\u0004\u0018\u00018\u0000H\u0002¢\u0006\u0002\u0010=J\u000e\u0010>\u001a\u00020\u000bH\u0082@¢\u0006\u0002\u00104J\u001e\u0010?\u001a\u00020\u000b2\u0006\u0010,\u001a\u00020-2\u0006\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010BJ5\u0010C\u001a\u00020D2\u0006\u0010,\u001a\u00020-2\b\u0010E\u001a\u0004\u0018\u00018\u00002\u0014\u0010F\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010GH\u0002¢\u0006\u0002\u0010HJ&\u0010I\u001a\u00020\u000b*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010J2\u0006\u0010,\u001a\u00020-H\u0082@¢\u0006\u0002\u0010KJ.\u0010L\u001a\u00020\u000b*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010J2\u0006\u0010,\u001a\u00020-2\u0006\u0010M\u001a\u00020NH\u0082@¢\u0006\u0002\u0010OJ7\u0010P\u001a\u0004\u0018\u00018\u0000*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010J2\u0006\u0010,\u001a\u00020-2\u0006\u0010Q\u001a\u0002082\u0006\u0010R\u001a\u000208H\u0002¢\u0006\u0002\u0010SJ\b\u0010T\u001a\u00020\u000bH\u0002R\u0018\u0010\u0004\u001a\u0004\u0018\u00018\u0000X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0014\u0010\u0015R \u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001f\u0010\f\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\r¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001c\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\u00060\u001ej\u0002`\u001fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 R\u001a\u0010!\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010#0\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010$\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010(\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010#0\n¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*¨\u0006U"}, d2 = {"Landroidx/paging/PageFetcherSnapshot;", "Key", "", "Value", "initialKey", "pagingSource", "Landroidx/paging/PagingSource;", "config", "Landroidx/paging/PagingConfig;", "retryFlow", "Lkotlinx/coroutines/flow/Flow;", "", "remoteMediatorConnection", "Landroidx/paging/RemoteMediatorConnection;", "previousPagingState", "Landroidx/paging/PagingState;", "jumpCallback", "Lkotlin/Function0;", "<init>", "(Ljava/lang/Object;Landroidx/paging/PagingSource;Landroidx/paging/PagingConfig;Lkotlinx/coroutines/flow/Flow;Landroidx/paging/RemoteMediatorConnection;Landroidx/paging/PagingState;Lkotlin/jvm/functions/Function0;)V", "getInitialKey$paging_common", "()Ljava/lang/Object;", "Ljava/lang/Object;", "getPagingSource$paging_common", "()Landroidx/paging/PagingSource;", "getRemoteMediatorConnection", "()Landroidx/paging/RemoteMediatorConnection;", "hintHandler", "Landroidx/paging/HintHandler;", "pageEventChCollected", "Ljava/util/concurrent/atomic/AtomicBoolean;", "Landroidx/paging/internal/AtomicBoolean;", "Ljava/util/concurrent/atomic/AtomicBoolean;", "pageEventCh", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/paging/PageEvent;", "stateHolder", "Landroidx/paging/PageFetcherSnapshotState$Holder;", "pageEventChannelFlowJob", "Lkotlinx/coroutines/CompletableJob;", "pageEventFlow", "getPageEventFlow", "()Lkotlinx/coroutines/flow/Flow;", "retryLoadError", "loadType", "Landroidx/paging/LoadType;", "viewportHint", "Landroidx/paging/ViewportHint;", "(Landroidx/paging/LoadType;Landroidx/paging/ViewportHint;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "accessHint", "close", "currentPagingState", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "startConsumingHints", "Lkotlinx/coroutines/CoroutineScope;", "collectAsGenerationalViewportHints", "", "(Lkotlinx/coroutines/flow/Flow;Landroidx/paging/LoadType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadParams", "Landroidx/paging/PagingSource$LoadParams;", "key", "(Landroidx/paging/LoadType;Ljava/lang/Object;)Landroidx/paging/PagingSource$LoadParams;", "doInitialLoad", "doLoad", "generationalHint", "Landroidx/paging/GenerationalViewportHint;", "(Landroidx/paging/LoadType;Landroidx/paging/GenerationalViewportHint;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadResultLog", "", "loadKey", "result", "Landroidx/paging/PagingSource$LoadResult;", "(Landroidx/paging/LoadType;Ljava/lang/Object;Landroidx/paging/PagingSource$LoadResult;)Ljava/lang/String;", "setLoading", "Landroidx/paging/PageFetcherSnapshotState;", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "setError", "error", "Landroidx/paging/LoadState$Error;", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;Landroidx/paging/LoadState$Error;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "nextLoadKeyOrNull", "generationId", "presentedItemsBeyondAnchor", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;II)Ljava/lang/Object;", "onInvalidLoad", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¶\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u0002*\b\b\u0001\u0010\u0003*\u00020\u00022\u00020\u0002B\u0085\u0001\u0012\b\u0010\u0004\u001a\u0004\u0018\u00018\u0000\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\u0016\b\u0002\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u000f\u0012\u0016\b\u0002\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u0011\u0012\u000e\b\u0002\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0013¢\u0006\u0004\b\u0014\u0010\u0015J \u0010-\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/2\b\u00100\u001a\u0004\u0018\u000101H\u0082@¢\u0006\u0002\u00102J\u000e\u00103\u001a\u00020\u000b2\u0006\u00100\u001a\u000201J\u0006\u00104\u001a\u00020\u000bJ\u001a\u00105\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0011H\u0086@¢\u0006\u0002\u00106J\f\u00107\u001a\u00020\u000b*\u000208H\u0002J \u00109\u001a\u00020\u000b*\b\u0012\u0004\u0012\u00020\r0\n2\u0006\u0010.\u001a\u00020/H\u0082@¢\u0006\u0002\u0010:J%\u0010;\u001a\b\u0012\u0004\u0012\u00028\u00000<2\u0006\u0010.\u001a\u00020/2\b\u0010=\u001a\u0004\u0018\u00018\u0000H\u0002¢\u0006\u0002\u0010>J\u000e\u0010?\u001a\u00020\u000bH\u0082@¢\u0006\u0002\u00106J\u001e\u0010@\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/2\u0006\u0010A\u001a\u00020BH\u0082@¢\u0006\u0002\u0010CJ5\u0010D\u001a\u00020E2\u0006\u0010.\u001a\u00020/2\b\u0010F\u001a\u0004\u0018\u00018\u00002\u0014\u0010G\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010HH\u0002¢\u0006\u0002\u0010IJ&\u0010J\u001a\u00020\u000b*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010K2\u0006\u0010.\u001a\u00020/H\u0082@¢\u0006\u0002\u0010LJ.\u0010M\u001a\u00020\u000b*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010K2\u0006\u0010.\u001a\u00020/2\u0006\u0010N\u001a\u00020OH\u0082@¢\u0006\u0002\u0010PJ7\u0010Q\u001a\u0004\u0018\u00018\u0000*\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010K2\u0006\u0010.\u001a\u00020/2\u0006\u0010R\u001a\u00020\r2\u0006\u0010S\u001a\u00020\rH\u0002¢\u0006\u0002\u0010TJ\u0016\u0010U\u001a\u00020\u000b2\u0006\u0010.\u001a\u00020/H\u0086@¢\u0006\u0002\u0010VJ\b\u0010W\u001a\u00020\u000bH\u0002J&\u0010X\u001a\u0004\u0018\u00018\u00002\u0012\u0010Y\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010ZH\u0080@¢\u0006\u0004\b[\u0010\\R\u0018\u0010\u0004\u001a\u0004\u0018\u00018\u0000X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b\u0016\u0010\u0017R \u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010\u0006X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001f\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001c\u0010\u0010\u001a\u0010\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u0001\u0018\u00010\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\u00060 j\u0002`!X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\"R\u001a\u0010#\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010%0$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u000e\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00028\u00010'X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010*\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010%0\n¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,¨\u0006]"}, d2 = {"Landroidx/paging/PageFetcherSnapshot;", "Key", "", "Value", "initialKey", "pagingSource", "Landroidx/paging/PagingSource;", "config", "Landroidx/paging/PagingConfig;", "retryFlow", "Lkotlinx/coroutines/flow/Flow;", "", "initialLoadSize", "", "remoteMediatorConnection", "Landroidx/paging/RemoteMediatorConnection;", "cachedInitialState", "Landroidx/paging/PagingState;", "jumpCallback", "Lkotlin/Function0;", "<init>", "(Ljava/lang/Object;Landroidx/paging/PagingSource;Landroidx/paging/PagingConfig;Lkotlinx/coroutines/flow/Flow;ILandroidx/paging/RemoteMediatorConnection;Landroidx/paging/PagingState;Lkotlin/jvm/functions/Function0;)V", "getInitialKey$paging_common", "()Ljava/lang/Object;", "Ljava/lang/Object;", "getPagingSource$paging_common", "()Landroidx/paging/PagingSource;", "getRemoteMediatorConnection", "()Landroidx/paging/RemoteMediatorConnection;", "hintHandler", "Landroidx/paging/HintHandler;", "pageEventChCollected", "Ljava/util/concurrent/atomic/AtomicBoolean;", "Landroidx/paging/internal/AtomicBoolean;", "Ljava/util/concurrent/atomic/AtomicBoolean;", "pageEventCh", "Lkotlinx/coroutines/channels/Channel;", "Landroidx/paging/PageEvent;", "stateHolder", "Landroidx/paging/PageFetcherSnapshotState$Holder;", "pageEventChannelFlowJob", "Lkotlinx/coroutines/CompletableJob;", "pageEventFlow", "getPageEventFlow", "()Lkotlinx/coroutines/flow/Flow;", "retryLoadError", "loadType", "Landroidx/paging/LoadType;", "viewportHint", "Landroidx/paging/ViewportHint;", "(Landroidx/paging/LoadType;Landroidx/paging/ViewportHint;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "processHint", "close", "currentPagingState", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "startConsumingHints", "Lkotlinx/coroutines/CoroutineScope;", "collectAsGenerationalViewportHints", "(Lkotlinx/coroutines/flow/Flow;Landroidx/paging/LoadType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadParams", "Landroidx/paging/PagingSource$LoadParams;", "key", "(Landroidx/paging/LoadType;Ljava/lang/Object;)Landroidx/paging/PagingSource$LoadParams;", "doInitialLoad", "doLoad", "generationalHint", "Landroidx/paging/GenerationalViewportHint;", "(Landroidx/paging/LoadType;Landroidx/paging/GenerationalViewportHint;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadResultLog", "", "loadKey", "result", "Landroidx/paging/PagingSource$LoadResult;", "(Landroidx/paging/LoadType;Ljava/lang/Object;Landroidx/paging/PagingSource$LoadResult;)Ljava/lang/String;", "setLoading", "Landroidx/paging/PageFetcherSnapshotState;", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "setError", "error", "Landroidx/paging/LoadState$Error;", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;Landroidx/paging/LoadState$Error;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "nextLoadKeyOrNull", "generationId", "presentedItemsBeyondAnchor", "(Landroidx/paging/PageFetcherSnapshotState;Landroidx/paging/LoadType;II)Ljava/lang/Object;", "forceSetHint", "(Landroidx/paging/LoadType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onInvalidLoad", "getLoadKey", "page", "Landroidx/paging/PagingSource$LoadResult$Page;", "getLoadKey$paging_common", "(Landroidx/paging/PagingSource$LoadResult$Page;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-common"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class PageFetcherSnapshot<Key, Value> {
+    private final PagingState<Key, Value> cachedInitialState;
     private final PagingConfig config;
     private final HintHandler hintHandler;
     private final Key initialKey;
+    private final int initialLoadSize;
     private final Function0<Unit> jumpCallback;
     private final Channel<PageEvent<Value>> pageEventCh;
     private final AtomicBoolean pageEventChCollected;
     private final CompletableJob pageEventChannelFlowJob;
     private final Flow<PageEvent<Value>> pageEventFlow;
     private final PagingSource<Key, Value> pagingSource;
-    private final PagingState<Key, Value> previousPagingState;
     private final RemoteMediatorConnection<Key, Value> remoteMediatorConnection;
     private final Flow<Unit> retryFlow;
     private final PageFetcherSnapshotState.Holder<Key, Value> stateHolder;
 
     /* compiled from: PageFetcherSnapshot.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -72,7 +74,7 @@ public final class PageFetcherSnapshot<Key, Value> {
         }
     }
 
-    public PageFetcherSnapshot(Key key, PagingSource<Key, Value> pagingSource, PagingConfig config, Flow<Unit> retryFlow, RemoteMediatorConnection<Key, Value> remoteMediatorConnection, PagingState<Key, Value> pagingState, Function0<Unit> jumpCallback) {
+    public PageFetcherSnapshot(Key key, PagingSource<Key, Value> pagingSource, PagingConfig config, Flow<Unit> retryFlow, int i, RemoteMediatorConnection<Key, Value> remoteMediatorConnection, PagingState<Key, Value> pagingState, Function0<Unit> jumpCallback) {
         CompletableJob Job$default;
         Intrinsics.checkNotNullParameter(pagingSource, "pagingSource");
         Intrinsics.checkNotNullParameter(config, "config");
@@ -82,8 +84,9 @@ public final class PageFetcherSnapshot<Key, Value> {
         this.pagingSource = pagingSource;
         this.config = config;
         this.retryFlow = retryFlow;
+        this.initialLoadSize = i;
         this.remoteMediatorConnection = remoteMediatorConnection;
-        this.previousPagingState = pagingState;
+        this.cachedInitialState = pagingState;
         this.jumpCallback = jumpCallback;
         if (config.jumpThreshold != Integer.MIN_VALUE && !pagingSource.getJumpingSupported()) {
             throw new IllegalArgumentException("PagingConfig.jumpThreshold was set, but the associated PagingSource has not marked support for jumps by overriding PagingSource.jumpingSupported to true.".toString());
@@ -105,12 +108,8 @@ public final class PageFetcherSnapshot<Key, Value> {
         return this.pagingSource;
     }
 
-    public final RemoteMediatorConnection<Key, Value> getRemoteMediatorConnection() {
-        return this.remoteMediatorConnection;
-    }
-
-    public /* synthetic */ PageFetcherSnapshot(Object obj, PagingSource pagingSource, PagingConfig pagingConfig, Flow flow, RemoteMediatorConnection remoteMediatorConnection, PagingState pagingState, Function0 function0, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(obj, pagingSource, pagingConfig, flow, (i & 16) != 0 ? null : remoteMediatorConnection, (i & 32) != 0 ? null : pagingState, (i & 64) != 0 ? new Function0() { // from class: androidx.paging.PageFetcherSnapshot$$ExternalSyntheticLambda0
+    public /* synthetic */ PageFetcherSnapshot(Object obj, PagingSource pagingSource, PagingConfig pagingConfig, Flow flow, int i, RemoteMediatorConnection remoteMediatorConnection, PagingState pagingState, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(obj, pagingSource, pagingConfig, flow, (i2 & 16) != 0 ? pagingConfig.initialLoadSize : i, (i2 & 32) != 0 ? null : remoteMediatorConnection, (i2 & 64) != 0 ? null : pagingState, (i2 & 128) != 0 ? new Function0() { // from class: androidx.paging.PageFetcherSnapshot$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit unit;
@@ -118,6 +117,10 @@ public final class PageFetcherSnapshot<Key, Value> {
                 return unit;
             }
         } : function0);
+    }
+
+    public final RemoteMediatorConnection<Key, Value> getRemoteMediatorConnection() {
+        return this.remoteMediatorConnection;
     }
 
     public final Flow<PageEvent<Value>> getPageEventFlow() {
@@ -137,13 +140,13 @@ public final class PageFetcherSnapshot<Key, Value> {
         }
     }
 
-    public final void accessHint(ViewportHint viewportHint) {
+    public final void processHint(ViewportHint viewportHint) {
         Intrinsics.checkNotNullParameter(viewportHint, "viewportHint");
         this.hintHandler.processHint(viewportHint);
     }
 
     public final void close() {
-        Job.DefaultImpls.cancel$default((Job) this.pageEventChannelFlowJob, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default((Job) this.pageEventChannelFlowJob, (CancellationException) null, 1, (Object) null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -208,10 +211,7 @@ public final class PageFetcherSnapshot<Key, Value> {
     }
 
     private final PagingSource.LoadParams<Key> loadParams(LoadType loadType, Key key) {
-        PagingSource.LoadParams.Companion companion = PagingSource.LoadParams.Companion;
-        LoadType loadType2 = LoadType.REFRESH;
-        PagingConfig pagingConfig = this.config;
-        return companion.create(loadType, key, loadType == loadType2 ? pagingConfig.initialLoadSize : pagingConfig.pageSize, this.config.enablePlaceholders);
+        return PagingSource.LoadParams.Companion.create(loadType, key, loadType == LoadType.REFRESH ? this.initialLoadSize : this.config.pageSize, this.config.enablePlaceholders);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -220,7 +220,7 @@ public final class PageFetcherSnapshot<Key, Value> {
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x02b2  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x02b4  */
     /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x004c  */
@@ -233,15 +233,15 @@ public final class PageFetcherSnapshot<Key, Value> {
     /* JADX WARN: Removed duplicated region for block: B:33:0x00ab  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00d6  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0161 A[Catch: all -> 0x025c, TryCatch #5 {all -> 0x025c, blocks: (B:53:0x0139, B:55:0x0161, B:56:0x0172, B:58:0x017b), top: B:144:0x0139 }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x017b A[Catch: all -> 0x025c, TRY_LEAVE, TryCatch #5 {all -> 0x025c, blocks: (B:53:0x0139, B:55:0x0161, B:56:0x0172, B:58:0x017b), top: B:144:0x0139 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01db  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01dd  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01e8  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0200  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0241  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0163 A[Catch: all -> 0x025e, TryCatch #5 {all -> 0x025e, blocks: (B:53:0x0139, B:55:0x0163, B:56:0x0174, B:58:0x017d), top: B:144:0x0139 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x017d A[Catch: all -> 0x025e, TRY_LEAVE, TryCatch #5 {all -> 0x025e, blocks: (B:53:0x0139, B:55:0x0163, B:56:0x0174, B:58:0x017d), top: B:144:0x0139 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0250  */
     /* JADX WARN: Type inference failed for: r11v0, types: [androidx.paging.PageFetcherSnapshot, androidx.paging.PageFetcherSnapshot<Key, Value>] */
     /* JADX WARN: Type inference failed for: r2v0, types: [int] */
     /* JADX WARN: Type inference failed for: r2v1, types: [kotlinx.coroutines.sync.Mutex] */
@@ -377,7 +377,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                         loadResult2 = loadResult6;
                                         try {
                                             PageFetcherSnapshotState pageFetcherSnapshotState3 = ((PageFetcherSnapshotState.Holder) holder3).state;
-                                            insert = pageFetcherSnapshotState3.insert(0, LoadType.REFRESH, (PagingSource.LoadResult.Page) loadResult2);
+                                            insert = pageFetcherSnapshotState3.insert(0, LoadType.REFRESH, (PagingSource.LoadResult.Page) loadResult2, this.initialKey);
                                             pageFetcherSnapshotState3.getSourceLoadStates$paging_common().set(LoadType.REFRESH, LoadState.NotLoading.Companion.getIncomplete$paging_common());
                                             if (((PagingSource.LoadResult.Page) loadResult2).getPrevKey() == null) {
                                                 pageFetcherSnapshotState3.getSourceLoadStates$paging_common().set(LoadType.PREPEND, LoadState.NotLoading.Companion.getComplete$paging_common());
@@ -504,7 +504,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                 loadResult2 = (PagingSource.LoadResult) pageFetcherSnapshot$doInitialLoad$1.L$0;
                                 ResultKt.throwOnFailure(obj);
                                 PageFetcherSnapshotState pageFetcherSnapshotState32 = ((PageFetcherSnapshotState.Holder) holder3).state;
-                                insert = pageFetcherSnapshotState32.insert(0, LoadType.REFRESH, (PagingSource.LoadResult.Page) loadResult2);
+                                insert = pageFetcherSnapshotState32.insert(0, LoadType.REFRESH, (PagingSource.LoadResult.Page) loadResult2, this.initialKey);
                                 pageFetcherSnapshotState32.getSourceLoadStates$paging_common().set(LoadType.REFRESH, LoadState.NotLoading.Companion.getIncomplete$paging_common());
                                 if (((PagingSource.LoadResult.Page) loadResult2).getPrevKey() == null) {
                                 }
@@ -595,28 +595,28 @@ public final class PageFetcherSnapshot<Key, Value> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x01eb, code lost:
-        if (r2.lock(null, r3) == r4) goto L155;
+        if (r2.lock(null, r3) == r4) goto L157;
      */
     /* JADX WARN: Finally extract failed */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x042c  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0440  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x042e  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0442  */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x04c9 A[Catch: all -> 0x008a, TRY_LEAVE, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0504  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x051f A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0533 A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x053a A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:145:0x04bb, B:147:0x04c9, B:154:0x0506, B:156:0x051f, B:158:0x052b, B:160:0x0533, B:162:0x0540, B:161:0x053a, B:163:0x0545, B:167:0x0573, B:14:0x0080), top: B:253:0x0080 }] */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x056d  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x056f  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x05c7  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x04cf A[Catch: all -> 0x008a, TRY_LEAVE, TryCatch #5 {all -> 0x008a, blocks: (B:149:0x04c1, B:151:0x04cf, B:158:0x050c, B:160:0x0525, B:162:0x0531, B:164:0x0539, B:166:0x0546, B:165:0x0540, B:167:0x054b, B:171:0x0579, B:14:0x0080), top: B:256:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x050a  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0525 A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:149:0x04c1, B:151:0x04cf, B:158:0x050c, B:160:0x0525, B:162:0x0531, B:164:0x0539, B:166:0x0546, B:165:0x0540, B:167:0x054b, B:171:0x0579, B:14:0x0080), top: B:256:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0539 A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:149:0x04c1, B:151:0x04cf, B:158:0x050c, B:160:0x0525, B:162:0x0531, B:164:0x0539, B:166:0x0546, B:165:0x0540, B:167:0x054b, B:171:0x0579, B:14:0x0080), top: B:256:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0540 A[Catch: all -> 0x008a, TryCatch #5 {all -> 0x008a, blocks: (B:149:0x04c1, B:151:0x04cf, B:158:0x050c, B:160:0x0525, B:162:0x0531, B:164:0x0539, B:166:0x0546, B:165:0x0540, B:167:0x054b, B:171:0x0579, B:14:0x0080), top: B:256:0x0080 }] */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0573  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0575  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x05e1  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x05ea  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0606  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x0661  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x05cd  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x05e7  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x05f0  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x060c  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0667  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ba  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x00e7  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0100  */
@@ -626,7 +626,7 @@ public final class PageFetcherSnapshot<Key, Value> {
     /* JADX WARN: Removed duplicated region for block: B:38:0x018b  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x01ac  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02e9 A[Catch: all -> 0x06a0, TRY_LEAVE, TryCatch #0 {all -> 0x06a0, blocks: (B:74:0x02d0, B:76:0x02e9), top: B:243:0x02d0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x02e9 A[Catch: all -> 0x06a6, TRY_LEAVE, TryCatch #2 {all -> 0x06a6, blocks: (B:74:0x02d0, B:76:0x02e9), top: B:250:0x02d0 }] */
     /* JADX WARN: Removed duplicated region for block: B:82:0x030b  */
     /* JADX WARN: Removed duplicated region for block: B:86:0x031b  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x0383  */
@@ -636,11 +636,12 @@ public final class PageFetcherSnapshot<Key, Value> {
     /* JADX WARN: Type inference failed for: r1v30, types: [kotlinx.coroutines.sync.Mutex] */
     /* JADX WARN: Type inference failed for: r2v10, types: [T] */
     /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v28, types: [androidx.paging.PageFetcherSnapshotState] */
     /* JADX WARN: Type inference failed for: r2v8 */
     /* JADX WARN: Type inference failed for: r8v28, types: [T, java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x059a -> B:194:0x05f1). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:183:0x059e -> B:194:0x05f1). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:187:0x05c7 -> B:249:0x05cd). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:185:0x05a0 -> B:198:0x05f7). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:187:0x05a4 -> B:198:0x05f7). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:191:0x05cd -> B:260:0x05d3). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -727,9 +728,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                     pageFetcherSnapshot$doLoad$1.label -= Integer.MIN_VALUE;
                     Object obj3 = pageFetcherSnapshot$doLoad$1.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    boolean z = true;
-                    z = true;
-                    z = true;
+                    int i5 = 1;
                     switch (pageFetcherSnapshot$doLoad$1.label) {
                         case 0:
                             ResultKt.throwOnFailure(obj3);
@@ -757,26 +756,26 @@ public final class PageFetcherSnapshot<Key, Value> {
                             loadType2 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             try {
                                 PageFetcherSnapshotState pageFetcherSnapshotState5 = ((PageFetcherSnapshotState.Holder) holder).state;
-                                int i5 = WhenMappings.$EnumSwitchMapping$0[loadType2.ordinal()];
-                                if (i5 == 1) {
+                                int i6 = WhenMappings.$EnumSwitchMapping$0[loadType2.ordinal()];
+                                if (i6 == 1) {
                                     throw new IllegalStateException("Use doInitialLoad for LoadType == REFRESH");
                                 }
-                                if (i5 == 2) {
+                                if (i6 == 2) {
                                     int initialPageIndex$paging_common = (pageFetcherSnapshotState5.getInitialPageIndex$paging_common() + generationalViewportHint2.getHint().getOriginalPageOffsetFirst()) - 1;
                                     if (initialPageIndex$paging_common > CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common())) {
                                         intRef.element += this.config.pageSize * (initialPageIndex$paging_common - CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common()));
                                         initialPageIndex$paging_common = CollectionsKt.getLastIndex(pageFetcherSnapshotState5.getPages$paging_common());
                                     }
                                     if (initialPageIndex$paging_common >= 0) {
-                                        int i6 = 0;
+                                        int i7 = 0;
                                         while (true) {
-                                            intRef.element += pageFetcherSnapshotState5.getPages$paging_common().get(i6).getData().size();
-                                            if (i6 != initialPageIndex$paging_common) {
-                                                i6++;
+                                            intRef.element += pageFetcherSnapshotState5.getPages$paging_common().get(i7).getData().size();
+                                            if (i7 != initialPageIndex$paging_common) {
+                                                i7++;
                                             }
                                         }
                                     }
-                                } else if (i5 != 3) {
+                                } else if (i6 != 3) {
                                     throw new NoWhenBranchMatchedException();
                                 } else {
                                     int initialPageIndex$paging_common2 = pageFetcherSnapshotState5.getInitialPageIndex$paging_common() + generationalViewportHint2.getHint().getOriginalPageOffsetLast() + 1;
@@ -866,16 +865,16 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                         obj3 = load;
                                                         loadResult6 = (PagingSource.LoadResult) obj3;
                                                         if (loadResult6 instanceof PagingSource.LoadResult.Page) {
-                                                            int i7 = WhenMappings.$EnumSwitchMapping$0[loadType4.ordinal()];
-                                                            if (i7 == 2) {
+                                                            int i8 = WhenMappings.$EnumSwitchMapping$0[loadType4.ordinal()];
+                                                            if (i8 == 2) {
                                                                 prevKey = ((PagingSource.LoadResult.Page) loadResult6).getPrevKey();
-                                                            } else if (i7 == 3) {
+                                                            } else if (i8 == 3) {
                                                                 prevKey = ((PagingSource.LoadResult.Page) loadResult6).getNextKey();
                                                             } else {
                                                                 throw new IllegalArgumentException("Use doInitialLoad for LoadType == REFRESH");
                                                             }
                                                             if (!this.pagingSource.getKeyReuseSupported() && Intrinsics.areEqual(prevKey, objectRef3.element)) {
-                                                                throw new IllegalStateException(StringsKt.trimMargin$default("The same value, " + objectRef3.element + ", was passed as the " + (loadType4 == LoadType.PREPEND ? "prevKey" : "nextKey") + " in two\n                            | sequential Pages loaded from a PagingSource. Re-using load keys in\n                            | PagingSource is often an error, and must be explicitly enabled by\n                            | overriding PagingSource.keyReuseSupported.\n                            ", null, z ? 1 : 0, null).toString());
+                                                                throw new IllegalStateException(StringsKt.trimMargin$default("The same value, " + objectRef3.element + ", was passed as the " + (loadType4 == LoadType.PREPEND ? "prevKey" : "nextKey") + " in two\n                            | sequential Pages loaded from a PagingSource. Re-using load keys in\n                            | PagingSource is often an error, and must be explicitly enabled by\n                            | overriding PagingSource.keyReuseSupported.\n                            ", null, i5, null).toString());
                                                             }
                                                             holder3 = this.stateHolder;
                                                             Mutex mutex12 = ((PageFetcherSnapshotState.Holder) holder3).lock;
@@ -893,7 +892,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                                 loadResult = loadResult6;
                                                                 mutex4 = mutex12;
                                                                 try {
-                                                                    if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult)) {
+                                                                    if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult, objectRef3.element)) {
                                                                         PagingLogger pagingLogger2 = PagingLogger.INSTANCE;
                                                                         if (pagingLogger2.isLoggable(2)) {
                                                                             pagingLogger2.log(2, loadResultLog(loadType4, objectRef3.element, th), th);
@@ -906,15 +905,15 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                                         PagingSource.LoadResult.Page page = (PagingSource.LoadResult.Page) loadResult;
                                                                         intRef3.element += page.getData().size();
                                                                         if ((loadType4 == LoadType.PREPEND && page.getPrevKey() == null) || (loadType4 == LoadType.APPEND && page.getNextKey() == null)) {
-                                                                            booleanRef2.element = z;
+                                                                            booleanRef2.element = true;
                                                                         }
                                                                         if (WhenMappings.$EnumSwitchMapping$0[loadType4.ordinal()] == 2) {
                                                                             loadType10 = LoadType.APPEND;
                                                                         } else {
                                                                             loadType10 = LoadType.PREPEND;
                                                                         }
-                                                                        holder5 = this.stateHolder;
-                                                                        Mutex mutex13 = ((PageFetcherSnapshotState.Holder) holder5).lock;
+                                                                        PageFetcherSnapshotState.Holder<Key, Value> holder8 = this.stateHolder;
+                                                                        Mutex mutex13 = ((PageFetcherSnapshotState.Holder) holder8).lock;
                                                                         pageFetcherSnapshot$doLoad$1.L$0 = loadType4;
                                                                         pageFetcherSnapshot$doLoad$1.L$1 = generationalViewportHint4;
                                                                         pageFetcherSnapshot$doLoad$1.L$2 = intRef3;
@@ -923,12 +922,10 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                                         pageFetcherSnapshot$doLoad$1.L$5 = loadParams;
                                                                         pageFetcherSnapshot$doLoad$1.L$6 = loadResult;
                                                                         pageFetcherSnapshot$doLoad$1.L$7 = loadType10;
-                                                                        pageFetcherSnapshot$doLoad$1.L$8 = holder5;
+                                                                        pageFetcherSnapshot$doLoad$1.L$8 = holder8;
                                                                         pageFetcherSnapshot$doLoad$1.L$9 = mutex13;
                                                                         pageFetcherSnapshot$doLoad$1.label = 8;
                                                                         if (mutex13.lock(null, pageFetcherSnapshot$doLoad$1) != coroutine_suspended) {
-                                                                            PagingSource.LoadResult loadResult7 = loadResult;
-                                                                            loadType6 = loadType10;
                                                                             mutex5 = mutex13;
                                                                             generationalViewportHint6 = generationalViewportHint4;
                                                                             objectRef4 = objectRef3;
@@ -936,7 +933,9 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                                             intRef4 = intRef3;
                                                                             booleanRef3 = booleanRef2;
                                                                             loadParams2 = loadParams;
-                                                                            loadResult3 = loadResult7;
+                                                                            loadResult3 = loadResult;
+                                                                            loadType6 = loadType10;
+                                                                            holder5 = holder8;
                                                                             pageFetcherSnapshotState4 = ((PageFetcherSnapshotState.Holder) holder5).state;
                                                                             dropEventOrNull = pageFetcherSnapshotState4.dropEventOrNull(loadType6, generationalViewportHint6.getHint());
                                                                             if (dropEventOrNull == null) {
@@ -1031,7 +1030,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                                                                         }
                                                                                         booleanRef = booleanRef3;
                                                                                         loadType3 = loadType9;
-                                                                                        z = true;
+                                                                                        i5 = 1;
                                                                                         if (objectRef2.element != null) {
                                                                                         }
                                                                                     }
@@ -1195,7 +1194,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                             generationalViewportHint4 = (GenerationalViewportHint) pageFetcherSnapshot$doLoad$1.L$1;
                             loadType4 = (LoadType) pageFetcherSnapshot$doLoad$1.L$0;
                             ResultKt.throwOnFailure(obj3);
-                            if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult)) {
+                            if (((PageFetcherSnapshotState.Holder) holder3).state.insert(generationalViewportHint4.getGenerationId(), loadType4, (PagingSource.LoadResult.Page) loadResult, objectRef3.element)) {
                             }
                             break;
                         case 6:
@@ -1335,7 +1334,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                                 }
                                 booleanRef = booleanRef3;
                                 loadType3 = loadType9;
-                                z = true;
+                                i5 = 1;
                                 if (objectRef2.element != null) {
                                 }
                                 return Unit.INSTANCE;
@@ -1362,7 +1361,7 @@ public final class PageFetcherSnapshot<Key, Value> {
                             }
                             booleanRef = booleanRef3;
                             loadType3 = loadType9;
-                            z = true;
+                            i5 = 1;
                             if (objectRef2.element != null) {
                             }
                             return Unit.INSTANCE;
@@ -1380,9 +1379,7 @@ public final class PageFetcherSnapshot<Key, Value> {
         pageFetcherSnapshot$doLoad$1 = new PageFetcherSnapshot$doLoad$1(this, continuation);
         Object obj32 = pageFetcherSnapshot$doLoad$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        boolean z2 = true;
-        z2 = true;
-        z2 = true;
+        int i52 = 1;
     }
 
     private final String loadResultLog(LoadType loadType, Key key, PagingSource.LoadResult<Key, Value> loadResult) {
@@ -1422,9 +1419,144 @@ public final class PageFetcherSnapshot<Key, Value> {
         return null;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a A[Catch: all -> 0x00bb, TryCatch #0 {all -> 0x00bb, blocks: (B:20:0x005e, B:22:0x007a, B:24:0x00ac, B:23:0x009c), top: B:32:0x005e }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x009c A[Catch: all -> 0x00bb, TryCatch #0 {all -> 0x00bb, blocks: (B:20:0x005e, B:22:0x007a, B:24:0x00ac, B:23:0x009c), top: B:32:0x005e }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object forceSetHint(LoadType loadType, Continuation<? super Unit> continuation) {
+        PageFetcherSnapshot$forceSetHint$1 pageFetcherSnapshot$forceSetHint$1;
+        int i;
+        Mutex mutex;
+        PageFetcherSnapshotState.Holder<Key, Value> holder;
+        ViewportHint.Access access;
+        try {
+            if (continuation instanceof PageFetcherSnapshot$forceSetHint$1) {
+                pageFetcherSnapshot$forceSetHint$1 = (PageFetcherSnapshot$forceSetHint$1) continuation;
+                if ((pageFetcherSnapshot$forceSetHint$1.label & Integer.MIN_VALUE) != 0) {
+                    pageFetcherSnapshot$forceSetHint$1.label -= Integer.MIN_VALUE;
+                    Object obj = pageFetcherSnapshot$forceSetHint$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = pageFetcherSnapshot$forceSetHint$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        if (loadType == LoadType.REFRESH) {
+                            throw new IllegalArgumentException("Called for REFRESH but this should only be called for either APPEND or PREPEND loads. This error indicates a bug in the Paging library. Please file a bug report in Buganizer.".toString());
+                        }
+                        PageFetcherSnapshotState.Holder<Key, Value> holder2 = this.stateHolder;
+                        mutex = ((PageFetcherSnapshotState.Holder) holder2).lock;
+                        pageFetcherSnapshot$forceSetHint$1.L$0 = loadType;
+                        pageFetcherSnapshot$forceSetHint$1.L$1 = holder2;
+                        pageFetcherSnapshot$forceSetHint$1.L$2 = mutex;
+                        pageFetcherSnapshot$forceSetHint$1.label = 1;
+                        if (mutex.lock(null, pageFetcherSnapshot$forceSetHint$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        holder = holder2;
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        holder = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$forceSetHint$1.L$1;
+                        ResultKt.throwOnFailure(obj);
+                        mutex = (Mutex) pageFetcherSnapshot$forceSetHint$1.L$2;
+                        loadType = (LoadType) pageFetcherSnapshot$forceSetHint$1.L$0;
+                    }
+                    PageFetcherSnapshotState pageFetcherSnapshotState = ((PageFetcherSnapshotState.Holder) holder).state;
+                    int i2 = -pageFetcherSnapshotState.getInitialPageIndex$paging_common();
+                    int size = (pageFetcherSnapshotState.getPages$paging_common().size() - pageFetcherSnapshotState.getInitialPageIndex$paging_common()) - 1;
+                    if (loadType != LoadType.APPEND) {
+                        access = new ViewportHint.Access(size, CollectionsKt.getLastIndex(((PagingSource.LoadResult.Page) CollectionsKt.last((List<? extends Object>) pageFetcherSnapshotState.getPages$paging_common())).getData()), pageFetcherSnapshotState.getStorageCount$paging_common() - 1, 0, i2, size);
+                    } else {
+                        access = new ViewportHint.Access(i2, 0, 0, pageFetcherSnapshotState.getStorageCount$paging_common() - 1, i2, size);
+                    }
+                    this.hintHandler.forceSetHint(loadType, access);
+                    Unit unit = Unit.INSTANCE;
+                    mutex.unlock(null);
+                    return Unit.INSTANCE;
+                }
+            }
+            PageFetcherSnapshotState pageFetcherSnapshotState2 = ((PageFetcherSnapshotState.Holder) holder).state;
+            int i22 = -pageFetcherSnapshotState2.getInitialPageIndex$paging_common();
+            int size2 = (pageFetcherSnapshotState2.getPages$paging_common().size() - pageFetcherSnapshotState2.getInitialPageIndex$paging_common()) - 1;
+            if (loadType != LoadType.APPEND) {
+            }
+            this.hintHandler.forceSetHint(loadType, access);
+            Unit unit2 = Unit.INSTANCE;
+            mutex.unlock(null);
+            return Unit.INSTANCE;
+        } catch (Throwable th) {
+            mutex.unlock(null);
+            throw th;
+        }
+        pageFetcherSnapshot$forceSetHint$1 = new PageFetcherSnapshot$forceSetHint$1(this, continuation);
+        Object obj2 = pageFetcherSnapshot$forceSetHint$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = pageFetcherSnapshot$forceSetHint$1.label;
+        if (i != 0) {
+        }
+    }
+
     private final void onInvalidLoad() {
         close();
         this.pagingSource.invalidate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object getLoadKey$paging_common(PagingSource.LoadResult.Page<Key, Value> page, Continuation<? super Key> continuation) {
+        PageFetcherSnapshot$getLoadKey$1 pageFetcherSnapshot$getLoadKey$1;
+        int i;
+        PagingSource.LoadResult.Page<Key, Value> page2;
+        PageFetcherSnapshotState.Holder<Key, Value> holder;
+        Mutex mutex;
+        try {
+            if (continuation instanceof PageFetcherSnapshot$getLoadKey$1) {
+                pageFetcherSnapshot$getLoadKey$1 = (PageFetcherSnapshot$getLoadKey$1) continuation;
+                if ((pageFetcherSnapshot$getLoadKey$1.label & Integer.MIN_VALUE) != 0) {
+                    pageFetcherSnapshot$getLoadKey$1.label -= Integer.MIN_VALUE;
+                    Object obj = pageFetcherSnapshot$getLoadKey$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = pageFetcherSnapshot$getLoadKey$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        PageFetcherSnapshotState.Holder<Key, Value> holder2 = this.stateHolder;
+                        Mutex mutex2 = ((PageFetcherSnapshotState.Holder) holder2).lock;
+                        pageFetcherSnapshot$getLoadKey$1.L$0 = page;
+                        pageFetcherSnapshot$getLoadKey$1.L$1 = holder2;
+                        pageFetcherSnapshot$getLoadKey$1.L$2 = mutex2;
+                        pageFetcherSnapshot$getLoadKey$1.label = 1;
+                        if (mutex2.lock(null, pageFetcherSnapshot$getLoadKey$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        page2 = page;
+                        holder = holder2;
+                        mutex = mutex2;
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        mutex = (Mutex) pageFetcherSnapshot$getLoadKey$1.L$2;
+                        holder = (PageFetcherSnapshotState.Holder) pageFetcherSnapshot$getLoadKey$1.L$1;
+                        page2 = (PagingSource.LoadResult.Page) pageFetcherSnapshot$getLoadKey$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                    }
+                    return ((PageFetcherSnapshotState.Holder) holder).state.getLoadKey(page2);
+                }
+            }
+            return ((PageFetcherSnapshotState.Holder) holder).state.getLoadKey(page2);
+        } finally {
+            mutex.unlock(null);
+        }
+        pageFetcherSnapshot$getLoadKey$1 = new PageFetcherSnapshot$getLoadKey$1(this, continuation);
+        Object obj2 = pageFetcherSnapshot$getLoadKey$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = pageFetcherSnapshot$getLoadKey$1.label;
+        if (i != 0) {
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

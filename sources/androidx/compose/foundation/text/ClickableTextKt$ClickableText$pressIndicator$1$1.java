@@ -12,7 +12,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function1;
 /* compiled from: ClickableText.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class ClickableTextKt$ClickableText$pressIndicator$1$1 implements PointerInputEventHandler {
     final /* synthetic */ MutableState<TextLayoutResult> $layoutResult;
@@ -42,7 +42,7 @@ final class ClickableTextKt$ClickableText$pressIndicator$1$1 implements PointerI
     public static final Unit invoke$lambda$0(MutableState mutableState, Function1 function1, Offset offset) {
         TextLayoutResult textLayoutResult = (TextLayoutResult) mutableState.getValue();
         if (textLayoutResult != null) {
-            function1.invoke(Integer.valueOf(textLayoutResult.m6973getOffsetForPositionk4lQ0M(offset.m4537unboximpl())));
+            function1.invoke(Integer.valueOf(textLayoutResult.m7578getOffsetForPositionk4lQ0M(offset.m5113unboximpl())));
         }
         return Unit.INSTANCE;
     }

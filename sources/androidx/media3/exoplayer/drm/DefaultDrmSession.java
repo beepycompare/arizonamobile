@@ -34,7 +34,7 @@ import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultDrmSession implements DrmSession {
     private static final int MAX_LICENSE_DURATION_TO_RENEW_SECONDS = 60;
     private static final int MSG_KEYS = 2;
@@ -68,7 +68,7 @@ public class DefaultDrmSession implements DrmSession {
     private int state;
     private final UUID uuid;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ProvisioningManager {
         void onProvisionCompleted();
 
@@ -77,14 +77,14 @@ public class DefaultDrmSession implements DrmSession {
         void provisionRequired(DefaultDrmSession defaultDrmSession);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ReferenceCountListener {
         void onReferenceCountDecremented(DefaultDrmSession defaultDrmSession, int i);
 
         void onReferenceCountIncremented(DefaultDrmSession defaultDrmSession, int i);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnexpectedDrmSessionException extends IOException {
         public UnexpectedDrmSessionException(Throwable th) {
             super(th);
@@ -508,7 +508,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ResponseHandler extends Handler {
         public ResponseHandler(Looper looper) {
             super(looper);
@@ -530,7 +530,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class RequestHandler extends Handler {
         private boolean isReleased;
 
@@ -623,7 +623,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class RequestTask {
         public final boolean allowRetry;
         public int errorCount;

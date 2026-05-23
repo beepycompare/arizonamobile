@@ -1,5 +1,5 @@
 package com.google.android.datatransport.runtime.time;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Clock {
     long getTime();
 }

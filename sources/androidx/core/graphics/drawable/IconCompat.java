@@ -15,8 +15,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
-import android.graphics.drawable.AdaptiveIconDrawable;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -26,7 +24,6 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
@@ -287,45 +284,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public Drawable loadDrawable(Context context) {
         checkResource(context);
-        return Api23Impl.loadDrawable(toIcon(context), context);
-    }
-
-    private Drawable loadDrawableInner(Context context) {
-        switch (this.mType) {
-            case 1:
-                return new BitmapDrawable(context.getResources(), (Bitmap) this.mObj1);
-            case 2:
-                String resPackage = getResPackage();
-                if (TextUtils.isEmpty(resPackage)) {
-                    resPackage = context.getPackageName();
-                }
-                try {
-                    return ResourcesCompat.getDrawable(getResources(context, resPackage), this.mInt1, context.getTheme());
-                } catch (RuntimeException e) {
-                    Log.e(TAG, String.format("Unable to load resource 0x%08x from pkg=%s", Integer.valueOf(this.mInt1), this.mObj1), e);
-                    break;
-                }
-            case 3:
-                return new BitmapDrawable(context.getResources(), BitmapFactory.decodeByteArray((byte[]) this.mObj1, this.mInt1, this.mInt2));
-            case 4:
-                InputStream uriInputStream = getUriInputStream(context);
-                if (uriInputStream != null) {
-                    return new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(uriInputStream));
-                }
-                break;
-            case 5:
-                return new BitmapDrawable(context.getResources(), createLegacyIconFromAdaptiveIcon((Bitmap) this.mObj1, false));
-            case 6:
-                InputStream uriInputStream2 = getUriInputStream(context);
-                if (uriInputStream2 != null) {
-                    if (Build.VERSION.SDK_INT >= 26) {
-                        return Api26Impl.createAdaptiveIconDrawable(null, new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(uriInputStream2)));
-                    }
-                    return new BitmapDrawable(context.getResources(), createLegacyIconFromAdaptiveIcon(BitmapFactory.decodeStream(uriInputStream2), false));
-                }
-                break;
-        }
-        return null;
+        return toIcon(context).loadDrawable(context);
     }
 
     public InputStream getUriInputStream(Context context) {
@@ -688,10 +647,6 @@ public class IconCompat extends CustomVersionedParcelable {
         private Api26Impl() {
         }
 
-        static Drawable createAdaptiveIconDrawable(Drawable drawable, Drawable drawable2) {
-            return new AdaptiveIconDrawable(drawable, drawable2);
-        }
-
         static Icon createWithAdaptiveBitmap(Bitmap bitmap) {
             return Icon.createWithAdaptiveBitmap(bitmap);
         }
@@ -879,10 +834,6 @@ public class IconCompat extends CustomVersionedParcelable {
                 createWithBitmap.setTintMode(iconCompat.mTintMode);
             }
             return createWithBitmap;
-        }
-
-        static Drawable loadDrawable(Icon icon, Context context) {
-            return icon.loadDrawable(context);
         }
     }
 }

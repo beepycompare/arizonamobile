@@ -1,15 +1,49 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.net.Uri;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public class Gg extends AbstractC0473oa {
-    public Gg(C0555ri c0555ri) {
-        super(c0555ri);
+public final class Gg {
+    public static C0141b8 a(String str) {
+        HashMap hashMap;
+        HashMap b = b(str);
+        if (b.isEmpty()) {
+            b = b(Uri.decode(str));
+        }
+        String decode = Uri.decode((String) b.get("appmetrica_deep_link"));
+        if (StringUtils.isNullOrEmpty(decode)) {
+            hashMap = null;
+        } else {
+            HashMap b2 = b(decode);
+            hashMap = new HashMap(b2.size());
+            for (Map.Entry entry : b2.entrySet()) {
+                hashMap.put(Uri.decode((String) entry.getKey()), Uri.decode((String) entry.getValue()));
+            }
+        }
+        return new C0141b8(decode, hashMap, str);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0473oa
-    public void a(List<Rg> list) {
-        list.add(this.f1156a.m);
-        list.add(this.f1156a.b);
+    public static HashMap b(String str) {
+        String[] split;
+        HashMap hashMap = new HashMap();
+        if (str != null) {
+            int lastIndexOf = str.lastIndexOf(63);
+            if (lastIndexOf >= 0) {
+                str = str.substring(lastIndexOf + 1);
+            }
+            if (str.contains("=")) {
+                for (String str2 : str.split("&")) {
+                    int indexOf = str2.indexOf("=");
+                    if (indexOf >= 0) {
+                        hashMap.put(str2.substring(0, indexOf), str2.substring(indexOf + 1));
+                    } else {
+                        hashMap.put(str2, "");
+                    }
+                }
+            }
+        }
+        return hashMap;
     }
 }

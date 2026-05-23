@@ -6,17 +6,19 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 /* compiled from: Delay.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "", "it"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__DelayKt$sample$2$1$2", f = "Delay.kt", i = {}, l = {293}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "", "it"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__DelayKt$sample$2$1$2", f = "Delay.kt", i = {0}, l = {293}, m = "invokeSuspend", n = {"value"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 final class FlowKt__DelayKt$sample$2$1$2 extends SuspendLambda implements Function2<Unit, Continuation<? super Unit>, Object> {
     final /* synthetic */ FlowCollector<T> $downstream;
     final /* synthetic */ Ref.ObjectRef<Object> $lastValue;
+    Object L$0;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,11 +52,10 @@ final class FlowKt__DelayKt$sample$2$1$2 extends SuspendLambda implements Functi
             }
             this.$lastValue.element = null;
             FlowCollector<T> flowCollector = this.$downstream;
-            if (obj2 == NullSurrogateKt.NULL) {
-                obj2 = null;
-            }
+            Object obj3 = obj2 != NullSurrogateKt.NULL ? obj2 : null;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(obj2);
             this.label = 1;
-            if (flowCollector.emit(obj2, this) == coroutine_suspended) {
+            if (flowCollector.emit(obj3, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

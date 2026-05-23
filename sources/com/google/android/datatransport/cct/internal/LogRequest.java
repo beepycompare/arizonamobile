@@ -3,7 +3,7 @@ package com.google.android.datatransport.cct.internal;
 import com.google.android.datatransport.cct.internal.AutoValue_LogRequest;
 import com.google.firebase.encoders.annotations.Encodable;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class LogRequest {
     public abstract ClientInfo getClientInfo();
 
@@ -24,7 +24,7 @@ public abstract class LogRequest {
         return new AutoValue_LogRequest.Builder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract LogRequest build();
 

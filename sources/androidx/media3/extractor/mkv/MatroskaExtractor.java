@@ -313,7 +313,7 @@ public class MatroskaExtractor implements Extractor {
         switch (i) {
             case ID_TRACK_TYPE /* 131 */:
             case 136:
-            case 155:
+            case ID_BLOCK_DURATION /* 155 */:
             case ID_CHANNELS /* 159 */:
             case ID_PIXEL_WIDTH /* 176 */:
             case ID_CUE_TIME /* 179 */:
@@ -826,7 +826,7 @@ public class MatroskaExtractor implements Extractor {
                 case 136:
                     getCurrentTrack(i).flagDefault = j == 1;
                     return;
-                case 155:
+                case ID_BLOCK_DURATION /* 155 */:
                     this.blockDurationUs = scaleTimecodeToUs(j);
                     return;
                 case ID_CHANNELS /* 159 */:

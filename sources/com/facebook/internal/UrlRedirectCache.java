@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class UrlRedirectCache {
     private static volatile FileLruCache urlRedirectCache;
     static final String TAG = "UrlRedirectCache";

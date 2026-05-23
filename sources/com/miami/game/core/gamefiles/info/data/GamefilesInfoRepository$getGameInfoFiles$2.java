@@ -23,7 +23,7 @@ import timber.log.Timber;
 /* compiled from: GamefilesInfoRepository.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/miami/game/core/gamefiles/info/domain/model/GameInfoFileData;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.gamefiles.info.data.GamefilesInfoRepository$getGameInfoFiles$2", f = "GamefilesInfoRepository.kt", i = {1, 1}, l = {34, 40}, m = "invokeSuspend", n = {"response", "gameInfoFiles"}, nl = {36, 45}, s = {"L$0", "L$1"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GamefilesInfoRepository$getGameInfoFiles$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super GameInfoFileData>, Object> {
     Object L$0;
     Object L$1;

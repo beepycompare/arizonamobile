@@ -11,6 +11,7 @@ import androidx.media3.common.Timeline;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.TransferListener;
+import androidx.media3.exoplayer.source.ClippingMediaPeriod;
 import androidx.media3.exoplayer.source.CompositeMediaSource;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MaskingMediaPeriod;
@@ -35,6 +36,7 @@ import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
 public final class AdsMediaSource extends CompositeMediaSource<MediaSource.MediaPeriodId> {
     private static final MediaSource.MediaPeriodId CHILD_SOURCE_MEDIA_PERIOD_ID = new MediaSource.MediaPeriodId(new Object());
+    private final List<AdMediaSourceHolder> activeMediaSourceHolders;
     private final MediaSource.Factory adMediaSourceFactory;
     private AdMediaSourceHolder[][] adMediaSourceHolders;
     private AdPlaybackState adPlaybackState;
@@ -49,6 +51,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     private final Handler mainHandler;
     private final Timeline.Period period;
     private Handler playerHandler;
+    private final boolean useAdMediaSourceClipping;
     private final boolean useLazyContentSourcePreparation;
 
     /* loaded from: classes3.dex */
@@ -94,11 +97,10 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     }
 
     public AdsMediaSource(MediaSource mediaSource, DataSpec dataSpec, Object obj, MediaSource.Factory factory, AdsLoader adsLoader, AdViewProvider adViewProvider) {
-        this(mediaSource, dataSpec, obj, factory, adsLoader, adViewProvider, true);
+        this(mediaSource, dataSpec, obj, factory, adsLoader, adViewProvider, true, false);
     }
 
-    public AdsMediaSource(MediaSource mediaSource, DataSpec dataSpec, Object obj, MediaSource.Factory factory, AdsLoader adsLoader, AdViewProvider adViewProvider, boolean z) {
-        this.useLazyContentSourcePreparation = z;
+    public AdsMediaSource(MediaSource mediaSource, DataSpec dataSpec, Object obj, MediaSource.Factory factory, AdsLoader adsLoader, AdViewProvider adViewProvider, boolean z, boolean z2) {
         this.contentMediaSource = new MaskingMediaSource(mediaSource, z);
         this.contentDrmConfiguration = ((MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaSource.getMediaItem().localConfiguration)).drmConfiguration;
         this.adMediaSourceFactory = factory;
@@ -106,9 +108,12 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.adViewProvider = adViewProvider;
         this.adTagDataSpec = dataSpec;
         this.adsId = obj;
+        this.useLazyContentSourcePreparation = z;
+        this.useAdMediaSourceClipping = z2;
         this.mainHandler = new Handler(Looper.getMainLooper());
         this.period = new Timeline.Period();
         this.adMediaSourceHolders = new AdMediaSourceHolder[0];
+        this.activeMediaSourceHolders = new ArrayList();
         adsLoader.setSupportedContentTypes(factory.getSupportedTypes());
     }
 
@@ -143,20 +148,29 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8296x9f9466de(componentListener);
+                AdsMediaSource.this.m8904x9f9466de(componentListener);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepareSourceInternal$0$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8296x9f9466de(ComponentListener componentListener) {
+    public /* synthetic */ void m8904x9f9466de(ComponentListener componentListener) {
         this.adsLoader.start(this, this.adTagDataSpec, this.adsId, this.adViewProvider, componentListener);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x004f, code lost:
+        if (r3 != androidx.media3.common.C.TIME_UNSET) goto L16;
+     */
     @Override // androidx.media3.exoplayer.source.MediaSource
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        if (((AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackState)).adGroupCount > 0 && mediaPeriodId.isAd()) {
+        AdMediaSourceHolder adMediaSourceHolder;
+        long j2;
+        AdPlaybackState adPlaybackState = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackState);
+        if (adPlaybackState.adGroupCount > 0 && mediaPeriodId.isAd()) {
             int i = mediaPeriodId.adGroupIndex;
             int i2 = mediaPeriodId.adIndexInAdGroup;
             AdMediaSourceHolder[][] adMediaSourceHolderArr = this.adMediaSourceHolders;
@@ -164,13 +178,23 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             if (adMediaSourceHolderArr2.length <= i2) {
                 adMediaSourceHolderArr[i] = (AdMediaSourceHolder[]) Arrays.copyOf(adMediaSourceHolderArr2, i2 + 1);
             }
-            AdMediaSourceHolder adMediaSourceHolder = this.adMediaSourceHolders[i][i2];
-            if (adMediaSourceHolder == null) {
-                adMediaSourceHolder = new AdMediaSourceHolder(mediaPeriodId);
+            AdMediaSourceHolder adMediaSourceHolder2 = this.adMediaSourceHolders[i][i2];
+            if (adMediaSourceHolder2 == null) {
+                if (this.useAdMediaSourceClipping) {
+                    AdPlaybackState.AdGroup adGroup = (AdPlaybackState.AdGroup) Preconditions.checkNotNull(adPlaybackState.getAdGroup(mediaPeriodId.adGroupIndex));
+                    if (adGroup.durationsUs.length > i2) {
+                        j2 = adGroup.durationsUs[i2];
+                    }
+                }
+                j2 = Long.MIN_VALUE;
+                adMediaSourceHolder = new AdMediaSourceHolder(mediaPeriodId, j2);
                 this.adMediaSourceHolders[i][i2] = adMediaSourceHolder;
+                this.activeMediaSourceHolders.add(adMediaSourceHolder);
                 maybeUpdateAdMediaSources();
+            } else {
+                adMediaSourceHolder = adMediaSourceHolder2;
             }
-            return adMediaSourceHolder.createMediaPeriod(mediaPeriodId, allocator, j);
+            return adMediaSourceHolder.createMediaPeriod(mediaPeriodId, allocator, j, this.useAdMediaSourceClipping);
         }
         MaskingMediaPeriod maskingMediaPeriod = new MaskingMediaPeriod(mediaPeriodId, allocator, j);
         maskingMediaPeriod.setMediaSource(this.contentMediaSource);
@@ -180,14 +204,15 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
     @Override // androidx.media3.exoplayer.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
-        MaskingMediaPeriod maskingMediaPeriod = (MaskingMediaPeriod) mediaPeriod;
+        MaskingMediaPeriod maskingMediaPeriod = (MaskingMediaPeriod) (mediaPeriod instanceof ClippingMediaPeriod ? ((ClippingMediaPeriod) mediaPeriod).mediaPeriod : mediaPeriod);
         MediaSource.MediaPeriodId mediaPeriodId = maskingMediaPeriod.id;
         if (mediaPeriodId.isAd()) {
             AdMediaSourceHolder adMediaSourceHolder = (AdMediaSourceHolder) Preconditions.checkNotNull(this.adMediaSourceHolders[mediaPeriodId.adGroupIndex][mediaPeriodId.adIndexInAdGroup]);
-            adMediaSourceHolder.releaseMediaPeriod(maskingMediaPeriod);
+            adMediaSourceHolder.releaseMediaPeriod(mediaPeriod);
             if (adMediaSourceHolder.isInactive()) {
                 adMediaSourceHolder.release();
                 this.adMediaSourceHolders[mediaPeriodId.adGroupIndex][mediaPeriodId.adIndexInAdGroup] = null;
+                this.activeMediaSourceHolders.remove(adMediaSourceHolder);
                 return;
             }
             return;
@@ -209,14 +234,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8297x4d6cb35f(componentListener);
+                AdsMediaSource.this.m8905x4d6cb35f(componentListener);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releaseSourceInternal$1$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8297x4d6cb35f(ComponentListener componentListener) {
+    public /* synthetic */ void m8905x4d6cb35f(ComponentListener componentListener) {
         this.adsLoader.stop(this, componentListener);
     }
 
@@ -233,7 +258,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                AdsMediaSource.this.m8295xbe1bc96f(timeline);
+                AdsMediaSource.this.m8903xbe1bc96f(timeline);
             }
         });
         if (this.useLazyContentSourcePreparation) {
@@ -243,7 +268,7 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-ads-AdsMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8295xbe1bc96f(Timeline timeline) {
+    public /* synthetic */ void m8903xbe1bc96f(Timeline timeline) {
         boolean handleContentTimelineChanged = this.adsLoader.handleContentTimelineChanged(this, timeline);
         Preconditions.checkState((handleContentTimelineChanged && this.useLazyContentSourcePreparation) ? false : true);
         if (handleContentTimelineChanged || this.useLazyContentSourcePreparation) {
@@ -274,6 +299,16 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             int checkValidAdPlaybackStateUpdate = checkValidAdPlaybackStateUpdate(adPlaybackState2, adPlaybackState);
             if (checkValidAdPlaybackStateUpdate > 0) {
                 this.adMediaSourceHolders = growAdMediaSourceHolderGrid(this.adMediaSourceHolders, checkValidAdPlaybackStateUpdate);
+            }
+            if (this.useAdMediaSourceClipping) {
+                for (int i = 0; i < this.activeMediaSourceHolders.size(); i++) {
+                    AdMediaSourceHolder adMediaSourceHolder = this.activeMediaSourceHolders.get(i);
+                    MediaSource.MediaPeriodId mediaPeriodId = adMediaSourceHolder.id;
+                    long j = adPlaybackState.getAdGroup(mediaPeriodId.adGroupIndex).durationsUs[mediaPeriodId.adIndexInAdGroup];
+                    if (j != C.TIME_UNSET) {
+                        adMediaSourceHolder.setEndPositionUs(j);
+                    }
+                }
             }
         }
         this.adPlaybackState = adPlaybackState;
@@ -357,29 +392,43 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
 
     @RequiresNonNull({"adPlaybackState"})
     private long[][] getAdDurationsUs() {
-        boolean endsWithLivePostrollPlaceHolder = ((AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackState)).endsWithLivePostrollPlaceHolder();
-        int length = this.adMediaSourceHolders.length + (endsWithLivePostrollPlaceHolder ? 1 : 0);
-        long[][] jArr = new long[length];
+        int length;
+        AdMediaSourceHolder adMediaSourceHolder;
+        AdPlaybackState adPlaybackState = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackState);
+        boolean endsWithLivePostrollPlaceHolder = adPlaybackState.endsWithLivePostrollPlaceHolder();
+        int length2 = this.adMediaSourceHolders.length + (endsWithLivePostrollPlaceHolder ? 1 : 0);
+        long[][] jArr = new long[length2];
         int i = 0;
         while (true) {
             AdMediaSourceHolder[][] adMediaSourceHolderArr = this.adMediaSourceHolders;
             if (i >= adMediaSourceHolderArr.length) {
                 break;
             }
-            jArr[i] = new long[adMediaSourceHolderArr[i].length];
+            if (this.useAdMediaSourceClipping) {
+                length = Math.max(adPlaybackState.getAdGroup(i).count, 0);
+            } else {
+                length = adMediaSourceHolderArr[i].length;
+            }
+            jArr[i] = new long[length];
             int i2 = 0;
-            while (true) {
-                AdMediaSourceHolder[] adMediaSourceHolderArr2 = this.adMediaSourceHolders[i];
-                if (i2 < adMediaSourceHolderArr2.length) {
-                    AdMediaSourceHolder adMediaSourceHolder = adMediaSourceHolderArr2[i2];
-                    jArr[i][i2] = adMediaSourceHolder == null ? C.TIME_UNSET : adMediaSourceHolder.getDurationUs();
-                    i2++;
+            while (i2 < length) {
+                long j = adPlaybackState.getAdGroup(i).durationsUs.length > i2 ? adPlaybackState.getAdGroup(i).durationsUs[i2] : -9223372036854775807L;
+                if (j != C.TIME_UNSET && this.useAdMediaSourceClipping) {
+                    jArr[i][i2] = j;
+                } else {
+                    AdMediaSourceHolder[] adMediaSourceHolderArr2 = this.adMediaSourceHolders[i];
+                    if (adMediaSourceHolderArr2.length <= i2 || (adMediaSourceHolder = adMediaSourceHolderArr2[i2]) == null) {
+                        jArr[i][i2] = -9223372036854775807L;
+                    } else {
+                        jArr[i][i2] = adMediaSourceHolder.getDurationUs();
+                    }
                 }
+                i2++;
             }
             i++;
         }
         if (endsWithLivePostrollPlaceHolder) {
-            jArr[length - 1] = new long[0];
+            jArr[length2 - 1] = new long[0];
         }
         return jArr;
     }
@@ -414,14 +463,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             this.playerHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$ComponentListener$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.ComponentListener.this.m8300x6396e000(adPlaybackState);
+                    AdsMediaSource.ComponentListener.this.m8908x6396e000(adPlaybackState);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onAdPlaybackState$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$ComponentListener  reason: not valid java name */
-        public /* synthetic */ void m8300x6396e000(AdPlaybackState adPlaybackState) {
+        public /* synthetic */ void m8908x6396e000(AdPlaybackState adPlaybackState) {
             if (this.stopped) {
                 return;
             }
@@ -451,14 +500,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             AdsMediaSource.this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$AdPrepareListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.AdPrepareListener.this.m8298x672fc1f4(mediaPeriodId);
+                    AdsMediaSource.AdPrepareListener.this.m8906x672fc1f4(mediaPeriodId);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepareComplete$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener  reason: not valid java name */
-        public /* synthetic */ void m8298x672fc1f4(MediaSource.MediaPeriodId mediaPeriodId) {
+        public /* synthetic */ void m8906x672fc1f4(MediaSource.MediaPeriodId mediaPeriodId) {
             AdsMediaSource.this.adsLoader.handlePrepareComplete(AdsMediaSource.this, mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup);
         }
 
@@ -468,14 +517,14 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             AdsMediaSource.this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.AdsMediaSource$AdPrepareListener$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AdsMediaSource.AdPrepareListener.this.m8299xa9898f8e(mediaPeriodId, iOException);
+                    AdsMediaSource.AdPrepareListener.this.m8907xa9898f8e(mediaPeriodId, iOException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepareError$1$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener  reason: not valid java name */
-        public /* synthetic */ void m8299xa9898f8e(MediaSource.MediaPeriodId mediaPeriodId, IOException iOException) {
+        public /* synthetic */ void m8907xa9898f8e(MediaSource.MediaPeriodId mediaPeriodId, IOException iOException) {
             AdsMediaSource.this.adsLoader.handlePrepareError(AdsMediaSource.this, mediaPeriodId.adGroupIndex, mediaPeriodId.adIndexInAdGroup, iOException);
         }
     }
@@ -483,30 +532,36 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public final class AdMediaSourceHolder {
-        private final List<MaskingMediaPeriod> activeMediaPeriods = new ArrayList();
+        private final List<MediaPeriod> activeMediaPeriods;
         private MediaItem adMediaItem;
         private MediaSource adMediaSource;
+        private long endPositionUs;
         private final MediaSource.MediaPeriodId id;
         private Timeline timeline;
 
-        public AdMediaSourceHolder(MediaSource.MediaPeriodId mediaPeriodId) {
+        private AdMediaSourceHolder(MediaSource.MediaPeriodId mediaPeriodId, long j) {
             this.id = mediaPeriodId;
+            this.endPositionUs = j;
+            this.activeMediaPeriods = new ArrayList();
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public void initializeWithMediaSource(MediaSource mediaSource, MediaItem mediaItem) {
             this.adMediaSource = mediaSource;
             this.adMediaItem = mediaItem;
             for (int i = 0; i < this.activeMediaPeriods.size(); i++) {
-                MaskingMediaPeriod maskingMediaPeriod = this.activeMediaPeriods.get(i);
-                maskingMediaPeriod.setMediaSource(mediaSource);
-                maskingMediaPeriod.setPrepareListener(new AdPrepareListener(mediaItem));
+                MaskingMediaPeriod activeMaskingMediaPeriod = getActiveMaskingMediaPeriod(i);
+                activeMaskingMediaPeriod.setMediaSource(mediaSource);
+                activeMaskingMediaPeriod.setPrepareListener(new AdPrepareListener(mediaItem));
             }
             AdsMediaSource.this.prepareChildSource(this.id, mediaSource);
         }
 
-        public MediaPeriod createMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public MediaPeriod createMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j, boolean z) {
             MaskingMediaPeriod maskingMediaPeriod = new MaskingMediaPeriod(mediaPeriodId, allocator, j);
-            this.activeMediaPeriods.add(maskingMediaPeriod);
+            MediaPeriod clippingMediaPeriod = z ? new ClippingMediaPeriod(maskingMediaPeriod, false, j, this.endPositionUs) : maskingMediaPeriod;
+            this.activeMediaPeriods.add(clippingMediaPeriod);
             MediaSource mediaSource = this.adMediaSource;
             if (mediaSource != null) {
                 maskingMediaPeriod.setMediaSource(mediaSource);
@@ -516,43 +571,73 @@ public final class AdsMediaSource extends CompositeMediaSource<MediaSource.Media
             if (timeline != null) {
                 maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(timeline.getUidOfPeriod(0), mediaPeriodId.windowSequenceNumber));
             }
-            return maskingMediaPeriod;
+            return clippingMediaPeriod;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public void handleSourceInfoRefresh(Timeline timeline) {
             Preconditions.checkArgument(timeline.getPeriodCount() == 1);
             if (this.timeline == null) {
                 Object uidOfPeriod = timeline.getUidOfPeriod(0);
                 for (int i = 0; i < this.activeMediaPeriods.size(); i++) {
-                    MaskingMediaPeriod maskingMediaPeriod = this.activeMediaPeriods.get(i);
-                    maskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, maskingMediaPeriod.id.windowSequenceNumber));
+                    MaskingMediaPeriod activeMaskingMediaPeriod = getActiveMaskingMediaPeriod(i);
+                    activeMaskingMediaPeriod.createPeriod(new MediaSource.MediaPeriodId(uidOfPeriod, activeMaskingMediaPeriod.id.windowSequenceNumber));
                 }
+                setEndPositionUs(this.endPositionUs);
             }
             this.timeline = timeline;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setEndPositionUs(long j) {
+            if (AdsMediaSource.this.useAdMediaSourceClipping && this.endPositionUs == Long.MIN_VALUE && j != Long.MIN_VALUE) {
+                this.endPositionUs = j;
+                for (int i = 0; i < this.activeMediaPeriods.size(); i++) {
+                    if (this.activeMediaPeriods.get(i) instanceof ClippingMediaPeriod) {
+                        ((ClippingMediaPeriod) this.activeMediaPeriods.get(i)).updateClipping(0L, j);
+                    }
+                }
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
         public long getDurationUs() {
             Timeline timeline = this.timeline;
             return timeline == null ? C.TIME_UNSET : timeline.getPeriod(0, AdsMediaSource.this.period).getDurationUs();
         }
 
-        public void releaseMediaPeriod(MaskingMediaPeriod maskingMediaPeriod) {
-            this.activeMediaPeriods.remove(maskingMediaPeriod);
-            maskingMediaPeriod.releasePeriod();
+        /* JADX INFO: Access modifiers changed from: private */
+        public void releaseMediaPeriod(MediaPeriod mediaPeriod) {
+            this.activeMediaPeriods.remove(mediaPeriod);
+            if (mediaPeriod instanceof ClippingMediaPeriod) {
+                mediaPeriod = ((ClippingMediaPeriod) mediaPeriod).mediaPeriod;
+            }
+            ((MaskingMediaPeriod) mediaPeriod).releasePeriod();
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public void release() {
             if (hasMediaSource()) {
                 AdsMediaSource.this.releaseChildSource(this.id);
             }
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public boolean hasMediaSource() {
             return this.adMediaSource != null;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public boolean isInactive() {
             return this.activeMediaPeriods.isEmpty();
+        }
+
+        private MaskingMediaPeriod getActiveMaskingMediaPeriod(int i) {
+            MediaPeriod mediaPeriod = this.activeMediaPeriods.get(i);
+            if (mediaPeriod instanceof ClippingMediaPeriod) {
+                mediaPeriod = ((ClippingMediaPeriod) mediaPeriod).mediaPeriod;
+            }
+            return (MaskingMediaPeriod) mediaPeriod;
         }
     }
 }

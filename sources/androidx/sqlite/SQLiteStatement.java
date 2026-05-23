@@ -9,22 +9,22 @@ import kotlin.Metadata;
 /* loaded from: classes3.dex */
 public interface SQLiteStatement extends AutoCloseable {
     /* renamed from: bindBlob */
-    void mo8405bindBlob(int i, byte[] bArr);
+    void mo9014bindBlob(int i, byte[] bArr);
 
     /* renamed from: bindDouble */
-    void mo8406bindDouble(int i, double d);
+    void mo9015bindDouble(int i, double d);
 
     /* renamed from: bindLong */
-    void mo8407bindLong(int i, long j);
+    void mo9016bindLong(int i, long j);
 
     /* renamed from: bindNull */
-    void mo8408bindNull(int i);
+    void mo9017bindNull(int i);
 
     /* renamed from: bindText */
-    void mo8409bindText(int i, String str);
+    void mo9018bindText(int i, String str);
 
     /* renamed from: clearBindings */
-    void mo8410clearBindings();
+    void mo9019clearBindings();
 
     @Override // java.lang.AutoCloseable
     void close();
@@ -50,15 +50,15 @@ public interface SQLiteStatement extends AutoCloseable {
     boolean step();
 
     default void bindFloat(int i, float f) {
-        mo8406bindDouble(i, f);
+        mo9015bindDouble(i, f);
     }
 
     default void bindInt(int i, int i2) {
-        mo8407bindLong(i, i2);
+        mo9016bindLong(i, i2);
     }
 
     default void bindBoolean(int i, boolean z) {
-        mo8407bindLong(i, z ? 1L : 0L);
+        mo9016bindLong(i, z ? 1L : 0L);
     }
 
     default float getFloat(int i) {

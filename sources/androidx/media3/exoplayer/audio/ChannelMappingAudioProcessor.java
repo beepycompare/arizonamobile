@@ -59,7 +59,11 @@ public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
                                 if (i2 != 268435456) {
                                     if (i2 != 1342177280) {
                                         if (i2 != 1610612736) {
-                                            throw new IllegalStateException("Unexpected encoding: " + this.inputAudioFormat.encoding);
+                                            if (i2 == 1879048192) {
+                                                replaceOutputBuffer.putDouble(byteBuffer.getDouble(byteDepth));
+                                            } else {
+                                                throw new IllegalStateException("Unexpected encoding: " + this.inputAudioFormat.encoding);
+                                            }
                                         }
                                     }
                                 }
@@ -80,7 +84,7 @@ public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor
-    protected void onFlush() {
+    protected void onFlush(AudioProcessor.StreamMetadata streamMetadata) {
         this.outputChannels = this.pendingOutputChannels;
     }
 

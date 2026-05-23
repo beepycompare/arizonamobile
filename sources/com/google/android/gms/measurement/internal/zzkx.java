@@ -7,7 +7,7 @@ import com.adjust.sdk.Constants;
 import com.google.firebase.messaging.Constants;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzkx implements Runnable {
     final /* synthetic */ boolean zza;
@@ -26,8 +26,8 @@ public final class zzkx implements Runnable {
         this.zze = zzkyVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00d8 A[Catch: RuntimeException -> 0x0153, TRY_LEAVE, TryCatch #0 {RuntimeException -> 0x0153, blocks: (B:3:0x000d, B:31:0x0099, B:33:0x00a3, B:36:0x00b0, B:38:0x00b6, B:39:0x00c9, B:40:0x00d1, B:43:0x00d8, B:47:0x00f9, B:50:0x0111, B:49:0x0103, B:52:0x0115, B:54:0x011b, B:56:0x0121, B:58:0x0127, B:60:0x012d, B:62:0x0135, B:64:0x013d, B:66:0x0143, B:68:0x0147, B:7:0x0029, B:9:0x002f, B:11:0x0037, B:13:0x003d, B:15:0x0043, B:17:0x0049, B:19:0x0051, B:21:0x0059, B:23:0x0061, B:25:0x0069, B:26:0x0077, B:28:0x008c), top: B:73:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00d7 A[Catch: RuntimeException -> 0x0152, TRY_LEAVE, TryCatch #0 {RuntimeException -> 0x0152, blocks: (B:3:0x000d, B:31:0x0099, B:33:0x00a3, B:36:0x00b0, B:38:0x00b6, B:39:0x00c9, B:40:0x00d1, B:42:0x00d7, B:46:0x00f8, B:49:0x0110, B:48:0x0102, B:51:0x0114, B:53:0x011a, B:55:0x0120, B:57:0x0126, B:59:0x012c, B:61:0x0134, B:63:0x013c, B:65:0x0142, B:67:0x0146, B:7:0x0029, B:9:0x002f, B:11:0x0037, B:13:0x003d, B:15:0x0043, B:17:0x0049, B:19:0x0051, B:21:0x0059, B:23:0x0061, B:25:0x0069, B:26:0x0077, B:28:0x008c), top: B:72:0x000d }] */
+    /* JADX WARN: Removed duplicated region for block: B:73:? A[RETURN, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -45,7 +45,9 @@ public final class zzkx implements Runnable {
             zzic zzicVar = zzljVar.zzu;
             zzpp zzk = zzicVar.zzk();
             if (!TextUtils.isEmpty(str2)) {
-                if (str2.contains("gclid") || str2.contains("gbraid") || str2.contains("utm_campaign") || str2.contains("utm_source") || str2.contains("utm_medium") || str2.contains("utm_id") || str2.contains("dclid") || str2.contains("srsltid") || str2.contains("sfmc_id")) {
+                if (!str2.contains("gclid") && !str2.contains("gbraid") && !str2.contains("utm_campaign") && !str2.contains("utm_source") && !str2.contains("utm_medium") && !str2.contains("utm_id") && !str2.contains("dclid") && !str2.contains("srsltid") && !str2.contains("sfmc_id")) {
+                    zzk.zzu.zzaW().zzj().zza("Activity created with data 'referrer' without required params");
+                } else {
                     String.valueOf(str2);
                     zzi = zzk.zzi(Uri.parse("https://google.com/search?".concat(String.valueOf(str2))));
                     if (zzi != null) {
@@ -57,33 +59,32 @@ public final class zzkx implements Runnable {
                         if (!zzi2.containsKey("gclid") && zzi != null && zzi.containsKey("gclid")) {
                             zzi2.putString("_cer", String.format("gclid=%s", zzi.getString("gclid")));
                         }
-                        zzljVar.zzF(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi2);
+                        zzljVar.zzE(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi2);
                         zzljVar.zzb.zzb(str, zzi2);
                     }
                     if (TextUtils.isEmpty(str2)) {
-                        zzicVar.zzaV().zzj().zzb("Activity created with referrer", str2);
+                        zzicVar.zzaW().zzj().zzb("Activity created with referrer", str2);
                         if (zzicVar.zzc().zzp(null, zzfy.zzaG)) {
                             if (zzi != null) {
-                                zzljVar.zzF(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi);
+                                zzljVar.zzE(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi);
                                 zzljVar.zzb.zzb(str, zzi);
                             } else {
-                                zzicVar.zzaV().zzj().zzb("Referrer does not contain valid parameters", str2);
+                                zzicVar.zzaW().zzj().zzb("Referrer does not contain valid parameters", str2);
                             }
-                            zzljVar.zzK("auto", "_ldl", null, true);
+                            zzljVar.zzJ("auto", "_ldl", null, true);
                             return;
                         } else if (!str2.contains("gclid") || (!str2.contains("utm_campaign") && !str2.contains("utm_source") && !str2.contains("utm_medium") && !str2.contains("utm_term") && !str2.contains("utm_content"))) {
-                            zzicVar.zzaV().zzj().zza("Activity created with data 'referrer' without required params");
+                            zzicVar.zzaW().zzj().zza("Activity created with data 'referrer' without required params");
                             return;
                         } else if (TextUtils.isEmpty(str2)) {
                             return;
                         } else {
-                            zzljVar.zzK("auto", "_ldl", str2, true);
+                            zzljVar.zzJ("auto", "_ldl", str2, true);
                             return;
                         }
                     }
                     return;
                 }
-                zzk.zzu.zzaV().zzj().zza("Activity created with data 'referrer' without required params");
             }
             zzi = null;
             str = this.zzc;
@@ -92,13 +93,13 @@ public final class zzkx implements Runnable {
                 if (!zzi2.containsKey("gclid")) {
                     zzi2.putString("_cer", String.format("gclid=%s", zzi.getString("gclid")));
                 }
-                zzljVar.zzF(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi2);
+                zzljVar.zzE(str, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, zzi2);
                 zzljVar.zzb.zzb(str, zzi2);
             }
             if (TextUtils.isEmpty(str2)) {
             }
         } catch (RuntimeException e) {
-            zzkyVar.zza.zzu.zzaV().zzb().zzb("Throwable caught in handleReferrerForOnActivityCreated", e);
+            zzkyVar.zza.zzu.zzaW().zzb().zzb("Throwable caught in handleReferrerForOnActivityCreated", e);
         }
     }
 }

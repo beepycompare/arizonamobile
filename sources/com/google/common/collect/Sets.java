@@ -719,8 +719,9 @@ public final class Sets {
                     return ((ImmutableSet) ImmutableList.this.get(index)).asList();
                 }
 
+                /* JADX INFO: Access modifiers changed from: package-private */
                 @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection
-                Object writeReplace() {
+                public Object writeReplace() {
                     return super.writeReplace();
                 }
             }));

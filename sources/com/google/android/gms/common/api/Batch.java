@@ -1,10 +1,9 @@
 package com.google.android.gms.common.api;
 
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class Batch extends BasePendingResult<BatchResult> {
     private int zae;
@@ -13,7 +12,7 @@ public final class Batch extends BasePendingResult<BatchResult> {
     private final PendingResult[] zah;
     private final Object zai;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static final class Builder {
         private final List zaa = new ArrayList();
@@ -23,10 +22,10 @@ public final class Batch extends BasePendingResult<BatchResult> {
             this.zab = googleApiClient;
         }
 
-        @ResultIgnorabilityUnspecified
         public <R extends Result> BatchResultToken<R> add(PendingResult<R> pendingResult) {
-            BatchResultToken<R> batchResultToken = new BatchResultToken<>(this.zaa.size());
-            this.zaa.add(pendingResult);
+            List list = this.zaa;
+            BatchResultToken<R> batchResultToken = new BatchResultToken<>(list.size());
+            list.add(pendingResult);
             return batchResultToken;
         }
 
@@ -35,7 +34,7 @@ public final class Batch extends BasePendingResult<BatchResult> {
         }
     }
 
-    /* synthetic */ Batch(List list, GoogleApiClient googleApiClient, zac zacVar) {
+    /* synthetic */ Batch(List list, GoogleApiClient googleApiClient, byte[] bArr) {
         super(googleApiClient);
         this.zai = new Object();
         int size = list.size();
@@ -46,7 +45,7 @@ public final class Batch extends BasePendingResult<BatchResult> {
             for (int i = 0; i < list.size(); i++) {
                 PendingResult pendingResult = (PendingResult) list.get(i);
                 this.zah[i] = pendingResult;
-                pendingResult.addStatusListener(new zab(this));
+                pendingResult.addStatusListener(new zaa(this));
             }
             return;
         }
@@ -71,5 +70,45 @@ public final class Batch extends BasePendingResult<BatchResult> {
     @Override // com.google.android.gms.common.api.internal.BasePendingResult
     public BatchResult createFailedResult(Status status) {
         return new BatchResult(status, this.zah);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ int zab() {
+        return this.zae;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zac(int i) {
+        this.zae = i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ boolean zad() {
+        return this.zaf;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zae(boolean z) {
+        this.zaf = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ boolean zaf() {
+        return this.zag;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zag(boolean z) {
+        this.zag = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ PendingResult[] zah() {
+        return this.zah;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Object zai() {
+        return this.zai;
     }
 }

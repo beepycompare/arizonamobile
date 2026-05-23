@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzna implements Runnable {
     final /* synthetic */ zzgb zza;
@@ -21,7 +21,7 @@ final class zzna implements Runnable {
             zznfVar.zzd(false);
             zznl zznlVar = zznfVar.zza;
             if (!zznlVar.zzh()) {
-                zznlVar.zzu.zzaV().zzj().zza("Connected to remote service");
+                zznlVar.zzu.zzaW().zzj().zza("Connected to remote service");
                 zznlVar.zzL(this.zza);
             }
         }

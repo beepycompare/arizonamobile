@@ -4,20 +4,20 @@ import android.os.Build;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FontSynthesis.android.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"synthesizeTypeface", "", "Landroidx/compose/ui/text/font/FontSynthesis;", "typeface", "font", "Landroidx/compose/ui/text/font/Font;", "requestedWeight", "Landroidx/compose/ui/text/font/FontWeight;", "requestedStyle", "Landroidx/compose/ui/text/font/FontStyle;", "synthesizeTypeface-FxwP2eA", "(ILjava/lang/Object;Landroidx/compose/ui/text/font/Font;Landroidx/compose/ui/text/font/FontWeight;I)Ljava/lang/Object;", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"synthesizeTypeface", "", "Landroidx/compose/ui/text/font/FontSynthesis;", "typeface", "font", "Landroidx/compose/ui/text/font/Font;", "requestedWeight", "Landroidx/compose/ui/text/font/FontWeight;", "requestedStyle", "Landroidx/compose/ui/text/font/FontStyle;", "synthesizeTypeface-FxwP2eA", "(ILjava/lang/Object;Landroidx/compose/ui/text/font/Font;Landroidx/compose/ui/text/font/FontWeight;I)Ljava/lang/Object;", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class FontSynthesis_androidKt {
     /* renamed from: synthesizeTypeface-FxwP2eA  reason: not valid java name */
-    public static final Object m7137synthesizeTypefaceFxwP2eA(int i, Object obj, Font font, FontWeight fontWeight, int i2) {
+    public static final Object m7742synthesizeTypefaceFxwP2eA(int i, Object obj, Font font, FontWeight fontWeight, int i2) {
         int weight;
-        boolean m7115equalsimpl0;
+        boolean m7720equalsimpl0;
         if (obj instanceof android.graphics.Typeface) {
             boolean z = true;
-            boolean z2 = FontSynthesis.m7129isWeightOnimpl$ui_text(i) && !Intrinsics.areEqual(font.getWeight(), fontWeight) && fontWeight.compareTo(AndroidFontUtils_androidKt.getAndroidBold(FontWeight.Companion)) >= 0 && font.getWeight().compareTo(AndroidFontUtils_androidKt.getAndroidBold(FontWeight.Companion)) < 0;
-            boolean z3 = FontSynthesis.m7128isStyleOnimpl$ui_text(i) && !FontStyle.m7115equalsimpl0(i2, font.mo7068getStyle_LCdwA());
+            boolean z2 = FontSynthesis.m7734isWeightOnimpl$ui_text(i) && !Intrinsics.areEqual(font.getWeight(), fontWeight) && fontWeight.compareTo(AndroidFontUtils_androidKt.getAndroidBold(FontWeight.Companion)) >= 0 && font.getWeight().compareTo(AndroidFontUtils_androidKt.getAndroidBold(FontWeight.Companion)) < 0;
+            boolean z3 = FontSynthesis.m7733isStyleOnimpl$ui_text(i) && !FontStyle.m7720equalsimpl0(i2, font.mo7673getStyle_LCdwA());
             if (z3 || z2) {
                 if (Build.VERSION.SDK_INT < 28) {
-                    if (!z3 || !FontStyle.m7115equalsimpl0(i2, FontStyle.Companion.m7121getItalic_LCdwA())) {
+                    if (!z3 || !FontStyle.m7720equalsimpl0(i2, FontStyle.Companion.m7726getItalic_LCdwA())) {
                         z = false;
                     }
                     return android.graphics.Typeface.create((android.graphics.Typeface) obj, AndroidFontUtils_androidKt.getAndroidTypefaceStyle(z2, z));
@@ -28,11 +28,11 @@ public final class FontSynthesis_androidKt {
                     weight = font.getWeight().getWeight();
                 }
                 if (z3) {
-                    m7115equalsimpl0 = FontStyle.m7115equalsimpl0(i2, FontStyle.Companion.m7121getItalic_LCdwA());
+                    m7720equalsimpl0 = FontStyle.m7720equalsimpl0(i2, FontStyle.Companion.m7726getItalic_LCdwA());
                 } else {
-                    m7115equalsimpl0 = FontStyle.m7115equalsimpl0(font.mo7068getStyle_LCdwA(), FontStyle.Companion.m7121getItalic_LCdwA());
+                    m7720equalsimpl0 = FontStyle.m7720equalsimpl0(font.mo7673getStyle_LCdwA(), FontStyle.Companion.m7726getItalic_LCdwA());
                 }
-                return TypefaceHelperMethodsApi28.INSTANCE.create((android.graphics.Typeface) obj, weight, m7115equalsimpl0);
+                return TypefaceHelperMethodsApi28.INSTANCE.create((android.graphics.Typeface) obj, weight, m7720equalsimpl0);
             }
         }
         return obj;

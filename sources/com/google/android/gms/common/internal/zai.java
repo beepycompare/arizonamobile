@@ -1,21 +1,24 @@
 package com.google.android.gms.common.internal;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
-import com.google.android.gms.common.internal.BaseGmsClient;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.content.Intent;
+import com.google.android.gms.common.api.internal.LifecycleFragment;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zai implements BaseGmsClient.BaseOnConnectionFailedListener {
-    final /* synthetic */ OnConnectionFailedListener zaa;
+final class zai extends zaj {
+    final /* synthetic */ Intent zaa;
+    final /* synthetic */ LifecycleFragment zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zai(OnConnectionFailedListener onConnectionFailedListener) {
-        this.zaa = onConnectionFailedListener;
+    public zai(Intent intent, LifecycleFragment lifecycleFragment, int i) {
+        this.zaa = intent;
+        this.zab = lifecycleFragment;
     }
 
-    @Override // com.google.android.gms.common.internal.BaseGmsClient.BaseOnConnectionFailedListener
-    public final void onConnectionFailed(ConnectionResult connectionResult) {
-        this.zaa.onConnectionFailed(connectionResult);
+    @Override // com.google.android.gms.common.internal.zaj
+    public final void zaa() {
+        Intent intent = this.zaa;
+        if (intent != null) {
+            this.zab.startActivityForResult(intent, 2);
+        }
     }
 }

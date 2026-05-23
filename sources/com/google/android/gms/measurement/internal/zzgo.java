@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.BaseGmsClient;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgo extends BaseGmsClient {
     public zzgo(Context context, Looper looper, BaseGmsClient.BaseConnectionCallbacks baseConnectionCallbacks, BaseGmsClient.BaseOnConnectionFailedListener baseOnConnectionFailedListener) {

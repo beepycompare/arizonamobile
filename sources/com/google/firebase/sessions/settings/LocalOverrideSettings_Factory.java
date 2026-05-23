@@ -2,12 +2,12 @@ package com.google.firebase.sessions.settings;
 
 import android.content.Context;
 import com.google.firebase.sessions.dagger.internal.Factory;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 /* loaded from: classes4.dex */
 public final class LocalOverrideSettings_Factory implements Factory<LocalOverrideSettings> {
     private final Provider<Context> appContextProvider;
 
-    public LocalOverrideSettings_Factory(Provider<Context> provider) {
+    private LocalOverrideSettings_Factory(Provider<Context> provider) {
         this.appContextProvider = provider;
     }
 

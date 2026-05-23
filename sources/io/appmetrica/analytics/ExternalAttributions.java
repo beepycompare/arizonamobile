@@ -1,53 +1,53 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.Ac;
-import io.appmetrica.analytics.impl.C0219eb;
-import io.appmetrica.analytics.impl.C0222ee;
-import io.appmetrica.analytics.impl.C0326ie;
-import io.appmetrica.analytics.impl.J9;
+import io.appmetrica.analytics.impl.C0146bd;
+import io.appmetrica.analytics.impl.EnumC0220ea;
+import io.appmetrica.analytics.impl.Gb;
+import io.appmetrica.analytics.impl.Ge;
+import io.appmetrica.analytics.impl.Ke;
 import java.util.Map;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class ExternalAttributions {
     public static ExternalAttribution adjust(Object obj) {
         if (obj == null) {
-            return new C0222ee(J9.ADJUST);
+            return new Ge(EnumC0220ea.b);
         }
-        return new C0326ie(J9.ADJUST, obj);
+        return new Ke(EnumC0220ea.b, obj);
     }
 
     public static ExternalAttribution airbridge(Map<String, String> map) {
         if (map == null) {
-            return new C0222ee(J9.AIRBRIDGE);
+            return new Ge(EnumC0220ea.e);
         }
-        return new Ac(J9.AIRBRIDGE, map);
+        return new C0146bd(EnumC0220ea.e, map);
     }
 
     public static ExternalAttribution appsflyer(Map<String, Object> map) {
         if (map == null) {
-            return new C0222ee(J9.APPSFLYER);
+            return new Ge(EnumC0220ea.f960a);
         }
-        return new Ac(J9.APPSFLYER, map);
+        return new C0146bd(EnumC0220ea.f960a, map);
     }
 
     public static ExternalAttribution kochava(JSONObject jSONObject) {
         if (jSONObject == null) {
-            return new C0222ee(J9.KOCHAVA);
+            return new Ge(EnumC0220ea.c);
         }
-        return new C0219eb(J9.KOCHAVA, jSONObject);
+        return new Gb(EnumC0220ea.c, jSONObject);
     }
 
     public static ExternalAttribution singular(Map<String, Object> map) {
         if (map == null) {
-            return new C0222ee(J9.SINGULAR);
+            return new Ge(EnumC0220ea.f);
         }
-        return new Ac(J9.SINGULAR, map);
+        return new C0146bd(EnumC0220ea.f, map);
     }
 
     public static ExternalAttribution tenjin(Map<String, String> map) {
         if (map == null) {
-            return new C0222ee(J9.TENJIN);
+            return new Ge(EnumC0220ea.d);
         }
-        return new Ac(J9.TENJIN, map);
+        return new C0146bd(EnumC0220ea.d, map);
     }
 }

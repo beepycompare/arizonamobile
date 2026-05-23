@@ -2,7 +2,7 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.Format;
 import androidx.media3.exoplayer.drm.DrmSession;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FormatHolder {
     public DrmSession drmSession;
     public Format format;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.arizona.promo.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ProgressItemBinding implements ViewBinding {
     public final TextView buttonGet;
     public final RelativeLayout center;

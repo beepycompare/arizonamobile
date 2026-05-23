@@ -8,7 +8,7 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.internal.Preconditions;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhh extends zzjf {
     static final Pair zza = new Pair("", 0L);
@@ -69,13 +69,13 @@ public final class zzhh extends zzjf {
         zzg();
         if (zzl().zzo(zzjk.AD_STORAGE)) {
             zzic zzicVar = this.zzu;
-            long elapsedRealtime = zzicVar.zzaZ().elapsedRealtime();
+            long elapsedRealtime = zzicVar.zzba().elapsedRealtime();
             String str2 = this.zzx;
             if (str2 == null || elapsedRealtime >= this.zzz) {
                 this.zzz = elapsedRealtime + zzicVar.zzc().zzl(str, zzfy.zza);
                 AdvertisingIdClient.setShouldSkipGmsCoreVersionCheck(true);
                 try {
-                    AdvertisingIdClient.Info advertisingIdInfo = AdvertisingIdClient.getAdvertisingIdInfo(zzicVar.zzaY());
+                    AdvertisingIdClient.Info advertisingIdInfo = AdvertisingIdClient.getAdvertisingIdInfo(zzicVar.zzaZ());
                     this.zzx = "";
                     String id = advertisingIdInfo.getId();
                     if (id != null) {
@@ -83,7 +83,7 @@ public final class zzhh extends zzjf {
                     }
                     this.zzy = advertisingIdInfo.isLimitAdTrackingEnabled();
                 } catch (Exception e) {
-                    this.zzu.zzaV().zzj().zzb("Unable to get advertising id", e);
+                    this.zzu.zzaW().zzj().zzb("Unable to get advertising id", e);
                     this.zzx = "";
                 }
                 AdvertisingIdClient.setShouldSkipGmsCoreVersionCheck(false);
@@ -96,9 +96,9 @@ public final class zzhh extends zzjf {
 
     @Override // com.google.android.gms.measurement.internal.zzjf
     @EnsuresNonNull.List({@EnsuresNonNull({"this.preferences"}), @EnsuresNonNull({"this.monitoringSample"})})
-    protected final void zzba() {
+    protected final void zzbb() {
         zzic zzicVar = this.zzu;
-        SharedPreferences sharedPreferences = zzicVar.zzaY().getSharedPreferences("com.google.android.gms.measurement.prefs", 0);
+        SharedPreferences sharedPreferences = zzicVar.zzaZ().getSharedPreferences("com.google.android.gms.measurement.prefs", 0);
         this.zzv = sharedPreferences;
         boolean z = sharedPreferences.getBoolean("has_been_opened", false);
         this.zzm = z;
@@ -125,13 +125,13 @@ public final class zzhh extends zzjf {
         zzw();
         if (this.zzw == null) {
             zzic zzicVar = this.zzu;
-            String packageName = zzicVar.zzaY().getPackageName();
+            String packageName = zzicVar.zzaZ().getPackageName();
             String.valueOf(packageName);
             String valueOf = String.valueOf(packageName);
-            zzgs zzk = zzicVar.zzaV().zzk();
+            zzgs zzk = zzicVar.zzaW().zzk();
             String concat = valueOf.concat("_preferences");
             zzk.zzb("Default prefs file", concat);
-            this.zzw = zzicVar.zzaY().getSharedPreferences(concat, 0);
+            this.zzw = zzicVar.zzaZ().getSharedPreferences(concat, 0);
         }
         return this.zzw;
     }
@@ -145,7 +145,7 @@ public final class zzhh extends zzjf {
             return new SparseArray();
         }
         if (intArray.length != longArray.length) {
-            this.zzu.zzaV().zzb().zza("Trigger URI source and timestamp array lengths do not match");
+            this.zzu.zzaW().zzb().zza("Trigger URI source and timestamp array lengths do not match");
             return new SparseArray();
         }
         SparseArray sparseArray = new SparseArray();
@@ -177,9 +177,9 @@ public final class zzhh extends zzjf {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzaz zzj() {
+    public final zzba zzj() {
         zzg();
-        return zzaz.zzg(zzd().getString("dma_consent_settings", null));
+        return zzba.zzg(zzd().getString("dma_consent_settings", null));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,31 +193,17 @@ public final class zzhh extends zzjf {
         return zzjl.zzf(zzd().getString("consent_settings", "G1"), zzd().getInt("consent_source", 100));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final boolean zzm(zzod zzodVar) {
-        zzg();
-        String string = zzd().getString("stored_tcf_param", "");
-        String zza2 = zzodVar.zza();
-        if (zza2.equals(string)) {
-            return false;
-        }
-        SharedPreferences.Editor edit = zzd().edit();
-        edit.putString("stored_tcf_param", zza2);
-        edit.apply();
-        return true;
-    }
-
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzn(boolean z) {
+    public final void zzm(boolean z) {
         zzg();
-        this.zzu.zzaV().zzk().zzb("App measurement setting deferred collection", Boolean.valueOf(z));
+        this.zzu.zzaW().zzk().zzb("App measurement setting deferred collection", Boolean.valueOf(z));
         SharedPreferences.Editor edit = zzd().edit();
         edit.putBoolean("deferred_analytics_collection", z);
         edit.apply();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzo() {
+    public final boolean zzn() {
         SharedPreferences sharedPreferences = this.zzv;
         if (sharedPreferences == null) {
             return false;
@@ -226,7 +212,7 @@ public final class zzhh extends zzjf {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzp(long j) {
+    public final boolean zzo(long j) {
         return j - this.zzf.zza() > this.zzk.zza();
     }
 }

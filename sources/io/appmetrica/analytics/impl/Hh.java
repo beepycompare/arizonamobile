@@ -1,21 +1,14 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Hh implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f619a;
-    public final /* synthetic */ Throwable b;
-    public final /* synthetic */ C0278gi c;
-
-    public Hh(C0278gi c0278gi, String str, Throwable th) {
-        this.c = c0278gi;
-        this.f619a = str;
-        this.b = th;
+public final class Hh extends AbstractC0305hh {
+    public Hh(C0448n5 c0448n5) {
+        super(c0448n5);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0278gi c0278gi = this.c;
-        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).reportError(this.f619a, this.b);
+    @Override // io.appmetrica.analytics.impl.AbstractC0305hh
+    public final boolean a(C0242f6 c0242f6) {
+        E9 e9 = this.f1016a.n;
+        e9.a(c0242f6, C0671vl.a(e9.c.b(c0242f6), c0242f6.i));
+        return false;
     }
 }

@@ -1,18 +1,36 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.util.Log;
+import java.lang.reflect.Method;
+import javax.annotation.Nullable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzrm implements zzrl {
-    public static final zzkm zza;
+public final class zzrm {
+    private static final Method zza;
 
     static {
-        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zza = zzb.zzd("measurement.tcf.consent_fix", true);
-        zzb.zzd("measurement.tcf.client", true);
-        zzb.zzd("measurement.tcf.empty_pref_fix", true);
+        Method method = null;
+        try {
+            try {
+                Class<?> cls = Class.forName("android.os.SystemProperties");
+                method = cls.getMethod("get", String.class, String.class);
+                cls.getMethod("getInt", String.class, Integer.TYPE);
+                cls.getMethod("getLong", String.class, Long.TYPE);
+                cls.getMethod("getBoolean", String.class, Boolean.TYPE);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } finally {
+            zza = method;
+        }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzrl
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    public static String zza(String str, @Nullable String str2) {
+        try {
+            return (String) zza.invoke(null, "tiktok_systrace", "false");
+        } catch (Exception e) {
+            Log.e("SystemProperties", "get error", e);
+            return "false";
+        }
     }
 }

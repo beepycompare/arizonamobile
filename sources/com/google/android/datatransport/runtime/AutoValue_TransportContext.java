@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime;
 import com.google.android.datatransport.Priority;
 import com.google.android.datatransport.runtime.TransportContext;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_TransportContext extends TransportContext {
     private final String backendName;
     private final byte[] extras;
@@ -49,7 +49,7 @@ final class AutoValue_TransportContext extends TransportContext {
         return this.priority.hashCode() ^ ((((this.backendName.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.extras)) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends TransportContext.Builder {
         private String backendName;
         private byte[] extras;

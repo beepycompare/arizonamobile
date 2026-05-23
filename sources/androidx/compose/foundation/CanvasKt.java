@@ -17,7 +17,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Canvas.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a.\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Canvas", "", "modifier", "Landroidx/compose/ui/Modifier;", "onDraw", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "contentDescription", "", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a.\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n2\u0017\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Canvas", "", "modifier", "Landroidx/compose/ui/Modifier;", "onDraw", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "contentDescription", "", "(Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CanvasKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,7 +35,7 @@ public final class CanvasKt {
     public static final void Canvas(final Modifier modifier, final Function1<? super DrawScope, Unit> function1, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-932836462);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Canvas)N(modifier,onDraw)40@1873L35:Canvas.kt#71ulvw");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Canvas)N(modifier,onDraw)41@1928L35:Canvas.kt#71ulvw");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(modifier) ? 4 : 2) | i;
         } else {
@@ -46,7 +46,7 @@ public final class CanvasKt {
         }
         if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-932836462, i2, -1, "androidx.compose.foundation.Canvas (Canvas.kt:40)");
+                ComposerKt.traceEventStart(-932836462, i2, -1, "androidx.compose.foundation.Canvas (Canvas.kt:41)");
             }
             SpacerKt.Spacer(DrawModifierKt.drawBehind(modifier, function1), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -69,7 +69,7 @@ public final class CanvasKt {
     public static final void Canvas(final Modifier modifier, final String str, final Function1<? super DrawScope, Unit> function1, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-1162737955);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Canvas)N(modifier,contentDescription,onDraw)60@3180L48,60@3135L94:Canvas.kt#71ulvw");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Canvas)N(modifier,contentDescription,onDraw)62@3290L48,62@3245L94:Canvas.kt#71ulvw");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(modifier) ? 4 : 2) | i;
         } else {
@@ -83,7 +83,7 @@ public final class CanvasKt {
         }
         if (startRestartGroup.shouldExecute((i2 & 147) != 146, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1162737955, i2, -1, "androidx.compose.foundation.Canvas (Canvas.kt:60)");
+                ComposerKt.traceEventStart(-1162737955, i2, -1, "androidx.compose.foundation.Canvas (Canvas.kt:62)");
             }
             Modifier drawBehind = DrawModifierKt.drawBehind(modifier, function1);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -699673267, "CC(remember):Canvas.kt#9igjgp");

@@ -3,9 +3,9 @@ package com.google.android.gms.internal.measurement;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzic extends zzmb implements zznn {
+public final class zzic extends zzadp implements zzafd {
     private zzic() {
         throw null;
     }
@@ -18,23 +18,23 @@ public final class zzic extends zzmb implements zznn {
     public /* synthetic */ zzic(byte[] bArr) {
         super(r1);
         zzid zzidVar;
-        zzidVar = zzid.zzat;
+        zzidVar = zzid.zzaw;
     }
 
     public final zzic zzA(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaW(j);
         return this;
     }
 
     public final zzic zzB() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaX();
         return this;
     }
 
     public final zzic zzC(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaY(ConstantDeviceInfo.APP_PLATFORM);
         return this;
     }
@@ -44,37 +44,37 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzE(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaZ(str);
         return this;
     }
 
     public final zzic zzF(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzba(str);
         return this;
     }
 
     public final zzic zzG() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbb();
         return this;
     }
 
     public final zzic zzH(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbc(str);
         return this;
     }
 
     public final zzic zzI(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbd(i);
         return this;
     }
 
     public final zzic zzJ(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbe(str);
         return this;
     }
@@ -84,26 +84,26 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzL(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbf(str);
         return this;
     }
 
     public final zzic zzM(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbg(str);
         return this;
     }
 
     public final zzic zzN(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbh(j);
         return this;
     }
 
     public final zzic zzO(long j) {
-        zzaX();
-        ((zzid) this.zza).zzbi(133005L);
+        zzaY();
+        ((zzid) this.zza).zzbi(161000L);
         return this;
     }
 
@@ -112,13 +112,13 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzQ(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbj(str);
         return this;
     }
 
     public final zzic zzR() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbk();
         return this;
     }
@@ -128,13 +128,13 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzT(boolean z) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbl(z);
         return this;
     }
 
     public final zzic zzU() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbm();
         return this;
     }
@@ -144,31 +144,31 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzW(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbn(str);
         return this;
     }
 
     public final zzic zzX() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbo();
         return this;
     }
 
     public final zzic zzY(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbp(j);
         return this;
     }
 
     public final zzic zzZ(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbq(i);
         return this;
     }
 
     public final zzic zza(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaG(1);
         return this;
     }
@@ -178,7 +178,7 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaB(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbP(str);
         return this;
     }
@@ -188,7 +188,7 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaD(boolean z) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbQ(z);
         return this;
     }
@@ -198,7 +198,7 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaF(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbR(str);
         return this;
     }
@@ -208,19 +208,19 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaH(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbS(i);
         return this;
     }
 
     public final zzic zzaI(zzhe zzheVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbT(zzheVar);
         return this;
     }
 
     public final zzic zzaJ(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbU(i);
         return this;
     }
@@ -234,43 +234,49 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaM(zzha zzhaVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbV(zzhaVar);
         return this;
     }
 
     public final zzic zzaN(zzis zzisVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbW(zzisVar);
         return this;
     }
 
     public final zzic zzaO(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbX(j);
         return this;
     }
 
-    public final zzic zzaP(String str) {
-        zzaX();
-        ((zzid) this.zza).zzbY("");
+    public final zzic zzaP(zzhh zzhhVar) {
+        zzaY();
+        ((zzid) this.zza).zzbY((zzho) zzhhVar.zzbd());
         return this;
     }
 
-    public final zzic zzaQ(zzhh zzhhVar) {
-        zzaX();
-        ((zzid) this.zza).zzbZ((zzho) zzhhVar.zzbc());
+    public final zzic zzaQ(String str) {
+        zzaY();
+        ((zzid) this.zza).zzbZ(str);
+        return this;
+    }
+
+    public final zzic zzaR(Iterable iterable) {
+        zzaY();
+        ((zzid) this.zza).zzca(iterable);
         return this;
     }
 
     public final zzic zzaa(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbr(str);
         return this;
     }
 
     public final zzic zzab() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbs();
         return this;
     }
@@ -280,31 +286,31 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzad(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbt(str);
         return this;
     }
 
     public final zzic zzae(boolean z) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbu(z);
         return this;
     }
 
     public final zzic zzaf(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbv(iterable);
         return this;
     }
 
     public final zzic zzag() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbw();
         return this;
     }
 
     public final zzic zzah(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbx(str);
         return this;
     }
@@ -314,103 +320,103 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzaj(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzby(i);
         return this;
     }
 
     public final zzic zzak() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbz();
         return this;
     }
 
     public final zzic zzal(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbA(j);
         return this;
     }
 
     public final zzic zzam(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbB(str);
         return this;
     }
 
     public final zzic zzan() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbC();
         return this;
     }
 
     public final zzic zzao(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbD(i);
         return this;
     }
 
     public final zzic zzap(zzie zzieVar) {
-        zzaX();
-        ((zzid) this.zza).zzbE((zzig) zzieVar.zzbc());
+        zzaY();
+        ((zzid) this.zza).zzbE((zzig) zzieVar.zzbd());
         return this;
     }
 
     public final zzic zzaq(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbF(iterable);
         return this;
     }
 
     public final zzic zzar(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbG(j);
         return this;
     }
 
     public final zzic zzas(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbH(j);
         return this;
     }
 
     public final zzic zzat(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbI(str);
         return this;
     }
 
     public final zzic zzau(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbJ(str);
         return this;
     }
 
     public final zzic zzav() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbK();
         return this;
     }
 
     public final zzic zzaw(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbL(iterable);
         return this;
     }
 
     public final zzic zzax(String str) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbM(str);
         return this;
     }
 
     public final zzic zzay(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbN(j);
         return this;
     }
 
     public final zzic zzaz(boolean z) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzbO(z);
         return this;
     }
@@ -428,37 +434,37 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zze(int i, zzhs zzhsVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaH(i, zzhsVar);
         return this;
     }
 
     public final zzic zzf(int i, zzhr zzhrVar) {
-        zzaX();
-        ((zzid) this.zza).zzaH(i, (zzhs) zzhrVar.zzbc());
+        zzaY();
+        ((zzid) this.zza).zzaH(i, (zzhs) zzhrVar.zzbd());
         return this;
     }
 
     public final zzic zzg(zzhr zzhrVar) {
-        zzaX();
-        ((zzid) this.zza).zzaI((zzhs) zzhrVar.zzbc());
+        zzaY();
+        ((zzid) this.zza).zzaI((zzhs) zzhrVar.zzbd());
         return this;
     }
 
     public final zzic zzh(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaJ(iterable);
         return this;
     }
 
     public final zzic zzi() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaK();
         return this;
     }
 
     public final zzic zzj(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaL(i);
         return this;
     }
@@ -468,51 +474,51 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final int zzl() {
-        return ((zzid) this.zza).zzg();
+        return ((zzid) this.zza).zzh();
     }
 
     public final zziu zzm(int i) {
-        return ((zzid) this.zza).zzh(i);
+        return ((zzid) this.zza).zzi(i);
     }
 
     public final zzic zzn(int i, zziu zziuVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaM(i, zziuVar);
         return this;
     }
 
     public final zzic zzo(zziu zziuVar) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaN(zziuVar);
         return this;
     }
 
     public final zzic zzp(zzit zzitVar) {
-        zzaX();
-        ((zzid) this.zza).zzaN((zziu) zzitVar.zzbc());
+        zzaY();
+        ((zzid) this.zza).zzaN((zziu) zzitVar.zzbd());
         return this;
     }
 
     public final zzic zzq(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaO(iterable);
         return this;
     }
 
     public final zzic zzr(int i) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaP(i);
         return this;
     }
 
     public final zzic zzs(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaQ(j);
         return this;
     }
 
     public final zzic zzt() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaR();
         return this;
     }
@@ -522,7 +528,7 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzv(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaS(j);
         return this;
     }
@@ -532,19 +538,19 @@ public final class zzic extends zzmb implements zznn {
     }
 
     public final zzic zzx(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaT(j);
         return this;
     }
 
     public final zzic zzy(long j) {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaU(j);
         return this;
     }
 
     public final zzic zzz() {
-        zzaX();
+        zzaY();
         ((zzid) this.zza).zzaV();
         return this;
     }

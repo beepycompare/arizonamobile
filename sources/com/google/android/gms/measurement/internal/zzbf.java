@@ -3,28 +3,66 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import java.util.Iterator;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzbf implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        Bundle bundle = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            if (SafeParcelReader.getFieldId(readHeader) == 2) {
-                bundle = SafeParcelReader.createBundle(parcel, readHeader);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzbe(bundle);
+public final class zzbf extends AbstractSafeParcelable implements Iterable<String> {
+    public static final Parcelable.Creator<zzbf> CREATOR = new zzbg();
+    private final Bundle zza;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzbf(Bundle bundle) {
+        this.zza = bundle;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzbe[i];
+    @Override // java.lang.Iterable
+    public final Iterator<String> iterator() {
+        return new zzbe(this);
+    }
+
+    public final String toString() {
+        return this.zza.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 2, zzf(), false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final Object zza(String str) {
+        return this.zza.get(str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final Long zzb(String str) {
+        return Long.valueOf(this.zza.getLong(str));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final Double zzc(String str) {
+        return Double.valueOf(this.zza.getDouble("value"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final String zzd(String str) {
+        return this.zza.getString(str);
+    }
+
+    public final int zze() {
+        return this.zza.size();
+    }
+
+    public final Bundle zzf() {
+        return new Bundle(this.zza);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Bundle zzg() {
+        return this.zza;
     }
 }

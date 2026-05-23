@@ -20,7 +20,7 @@ public final class FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorF
 
     /* loaded from: classes4.dex */
     private static final class InstanceHolder {
-        private static final FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory INSTANCE = new FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory();
+        static final FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory INSTANCE = new FirebaseSessionsComponent_MainModule_Companion_UuidGeneratorFactory();
 
         private InstanceHolder() {
         }

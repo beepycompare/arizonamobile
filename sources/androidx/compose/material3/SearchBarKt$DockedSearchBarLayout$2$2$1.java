@@ -34,7 +34,7 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo762measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public final MeasureResult mo924measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         IntRect collapsedBounds;
         Integer valueOf;
         Integer valueOf2;
@@ -44,13 +44,13 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
         int i = 1;
         List<? extends Measurable> list3 = list.get(1);
         collapsedBounds = SearchBarKt.getCollapsedBounds(this.$state);
-        int lerp = MathHelpersKt.lerp(collapsedBounds.getHeight(), measureScope.mo399roundToPx0680j_4(this.$maxHeight), this.$state.getProgress());
-        long m7523constrainN9IONVI = ConstraintsKt.m7523constrainN9IONVI(j, ConstraintsKt.Constraints$default(0, 0, RangesKt.coerceAtMost(measureScope.mo399roundToPx0680j_4(this.$minHeight), lerp), lerp, 3, null));
-        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(m7523constrainN9IONVI, 0, 0, 0, 0, 10, null);
+        int lerp = MathHelpersKt.lerp(collapsedBounds.getHeight(), measureScope.mo428roundToPx0680j_4(this.$maxHeight), this.$state.getProgress());
+        long m8128constrainN9IONVI = ConstraintsKt.m8128constrainN9IONVI(j, ConstraintsKt.Constraints$default(0, 0, RangesKt.coerceAtMost(measureScope.mo428roundToPx0680j_4(this.$minHeight), lerp), lerp, 3, null));
+        long m8103copyZbe2FdA$default = Constraints.m8103copyZbe2FdA$default(m8128constrainN9IONVI, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list2.size());
         int size = list2.size();
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(list2.get(i2).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
+            arrayList.add(list2.get(i2).mo6818measureBRTryo0(m8103copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         if (arrayList2.isEmpty()) {
@@ -95,11 +95,11 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
         }
         Integer num3 = valueOf2;
         final int intValue2 = num3 != null ? num3.intValue() : 0;
-        long m7498copyZbe2FdA$default2 = Constraints.m7498copyZbe2FdA$default(ConstraintsKt.m7528offsetNN6EwU$default(m7498copyZbe2FdA$default, 0, -intValue2, 1, null), 0, intValue, 0, 0, 13, null);
+        long m8103copyZbe2FdA$default2 = Constraints.m8103copyZbe2FdA$default(ConstraintsKt.m8133offsetNN6EwU$default(m8103copyZbe2FdA$default, 0, -intValue2, 1, null), 0, intValue, 0, 0, 13, null);
         ArrayList arrayList3 = new ArrayList(list3.size());
         int size2 = list3.size();
         for (int i5 = 0; i5 < size2; i5++) {
-            arrayList3.add(list3.get(i5).mo6216measureBRTryo0(m7498copyZbe2FdA$default2));
+            arrayList3.add(list3.get(i5).mo6818measureBRTryo0(m8103copyZbe2FdA$default2));
         }
         final ArrayList arrayList4 = arrayList3;
         if (arrayList4.isEmpty()) {
@@ -143,7 +143,7 @@ public final class SearchBarKt$DockedSearchBarLayout$2$2$1 implements MultiConte
             num = valueOf7;
         }
         Integer num5 = num;
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7525constrainWidthK40F9xA(m7523constrainN9IONVI, Math.max(intValue, num5 != null ? num5.intValue() : 0)), ConstraintsKt.m7524constrainHeightK40F9xA(m7523constrainN9IONVI, intValue3), null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2$2$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m8130constrainWidthK40F9xA(m8128constrainN9IONVI, Math.max(intValue, num5 != null ? num5.intValue() : 0)), ConstraintsKt.m8129constrainHeightK40F9xA(m8128constrainN9IONVI, intValue3), null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return SearchBarKt$DockedSearchBarLayout$2$2$1.measure_3p2s80s$lambda$8(arrayList2, arrayList4, intValue2, (Placeable.PlacementScope) obj);

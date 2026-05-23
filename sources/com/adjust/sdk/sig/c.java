@@ -17,68 +17,20 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.security.auth.x500.X500Principal;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f272a;
+    public final int f200a;
 
     public c(int i) {
-        this.f272a = i;
-    }
-
-    public final void a(Context context) {
-        KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-        keyStore.load(null);
-        keyStore.deleteEntry("key2");
-        context.getSharedPreferences("adjust_keys", 0).edit().remove("encrypted_key").apply();
-    }
-
-    public final void b(Context context) {
-        int i = this.f272a;
-        if (i >= 23) {
-            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            keyStore.load(null);
-            if (keyStore.containsAlias("key2")) {
-                return;
-            }
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacSHA256", "AndroidKeyStore");
-            keyGenerator.init(new KeyGenParameterSpec.Builder("key2", 4).build());
-            keyGenerator.generateKey();
-        } else if (i >= 18) {
-            SharedPreferences sharedPreferences = context.getSharedPreferences("adjust_keys", 0);
-            if (sharedPreferences.contains("encrypted_key")) {
-                return;
-            }
-            Date time = Calendar.getInstance().getTime();
-            Calendar calendar = Calendar.getInstance();
-            calendar.add(1, 1);
-            KeyPairGeneratorSpec.Builder endDate = new KeyPairGeneratorSpec.Builder(context).setAlias("key2").setSubject(new X500Principal("CN=key2")).setSerialNumber(BigInteger.TEN).setStartDate(time).setEndDate(calendar.getTime());
-            if (this.f272a >= 19) {
-                endDate.setKeySize(1024);
-            }
-            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-            keyPairGenerator.initialize(endDate.build());
-            keyPairGenerator.genKeyPair();
-            byte[] bArr = new byte[16];
-            new SecureRandom().nextBytes(bArr);
-            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
-            keyStore2.load(null);
-            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            cipher.init(1, ((KeyStore.PrivateKeyEntry) keyStore2.getEntry("key2", null)).getCertificate().getPublicKey());
-            String encodeToString = Base64.encodeToString(cipher.doFinal(bArr), 0);
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putString("encrypted_key", encodeToString);
-            edit.apply();
-        } else {
-            throw new b();
-        }
+        this.f200a = i;
     }
 
     public final byte[] a(Context context, byte[] bArr) {
         Key secretKeySpec;
         Mac mac = Mac.getInstance("HmacSHA256");
-        int i = this.f272a;
+        int i = this.f200a;
         if (i >= 23) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
@@ -101,5 +53,46 @@ public final class c {
         mac.init(secretKeySpec);
         mac.update(bArr);
         return mac.doFinal();
+    }
+
+    public final void a(Context context) {
+        int i = this.f200a;
+        if (i >= 23) {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore.load(null);
+            if (keyStore.containsAlias("key2")) {
+                return;
+            }
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacSHA256", "AndroidKeyStore");
+            keyGenerator.init(new KeyGenParameterSpec.Builder("key2", 4).build());
+            keyGenerator.generateKey();
+        } else if (i >= 18) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences("adjust_keys", 0);
+            if (sharedPreferences.contains("encrypted_key")) {
+                return;
+            }
+            Date time = Calendar.getInstance().getTime();
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(1, 1);
+            KeyPairGeneratorSpec.Builder endDate = new KeyPairGeneratorSpec.Builder(context).setAlias("key2").setSubject(new X500Principal("CN=key2")).setSerialNumber(BigInteger.TEN).setStartDate(time).setEndDate(calendar.getTime());
+            if (this.f200a >= 19) {
+                endDate.setKeySize(1024);
+            }
+            KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
+            keyPairGenerator.initialize(endDate.build());
+            keyPairGenerator.genKeyPair();
+            byte[] bArr = new byte[16];
+            new SecureRandom().nextBytes(bArr);
+            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
+            keyStore2.load(null);
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(1, ((KeyStore.PrivateKeyEntry) keyStore2.getEntry("key2", null)).getCertificate().getPublicKey());
+            String encodeToString = Base64.encodeToString(cipher.doFinal(bArr), 0);
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putString("encrypted_key", encodeToString);
+            edit.apply();
+        } else {
+            throw new b();
+        }
     }
 }

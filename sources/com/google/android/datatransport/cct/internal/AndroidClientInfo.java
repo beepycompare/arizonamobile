@@ -1,10 +1,10 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.AutoValue_AndroidClientInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AndroidClientInfo {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract AndroidClientInfo build();
 

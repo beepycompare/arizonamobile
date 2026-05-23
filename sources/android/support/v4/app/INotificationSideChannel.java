@@ -5,7 +5,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
 import android.os.RemoteException;
 import kotlin.text.Typography;
 /* loaded from: classes.dex */
@@ -75,7 +74,7 @@ public interface INotificationSideChannel extends IInterface {
                 return true;
             }
             if (i == 1) {
-                notify(parcel.readString(), parcel.readInt(), parcel.readString(), (Notification) _Parcel.readTypedObject(parcel, Notification.CREATOR));
+                notify(parcel.readString(), parcel.readInt(), parcel.readString(), (Notification) parcel.readTypedObject(Notification.CREATOR));
             } else if (i == 2) {
                 cancel(parcel.readString(), parcel.readInt(), parcel.readString());
             } else if (i == 3) {
@@ -111,7 +110,7 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.writeString(str);
                     obtain.writeInt(i);
                     obtain.writeString(str2);
-                    _Parcel.writeTypedObject(obtain, notification, 0);
+                    obtain.writeTypedObject(notification, 0);
                     this.mRemote.transact(1, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -143,27 +142,6 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.recycle();
                 }
             }
-        }
-    }
-
-    /* loaded from: classes.dex */
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static <T> T readTypedObject(Parcel parcel, Parcelable.Creator<T> creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
-            return null;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static <T extends Parcelable> void writeTypedObject(Parcel parcel, T t, int i) {
-            if (t != null) {
-                parcel.writeInt(1);
-                t.writeToParcel(parcel, i);
-                return;
-            }
-            parcel.writeInt(0);
         }
     }
 }

@@ -9,7 +9,7 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 /* compiled from: SuspendingPointerInputFilter.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J=\u0010\u0016\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172'\u0010\u0018\u001a#\b\u0001\u0012\u0004\u0012\u00020\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00170\u001b\u0012\u0006\u0012\u0004\u0018\u00010\u001c0\u0019¢\u0006\u0002\b\u001dH¦@¢\u0006\u0002\u0010\u001eR\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\u0005R\u0012\u0010\t\u001a\u00020\nX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR*\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e8V@VX\u0097\u000e¢\u0006\u0012\u0012\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u001fÀ\u0006\u0003"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputScope;", "Landroidx/compose/ui/unit/Density;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "_", "", "interceptOutOfBoundsChildEvents", "getInterceptOutOfBoundsChildEvents$annotations", "()V", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "awaitPointerEventScope", "R", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J=\u0010\u0016\u001a\u0002H\u0017\"\u0004\b\u0000\u0010\u00172'\u0010\u0018\u001a#\b\u0001\u0012\u0004\u0012\u00020\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00170\u001b\u0012\u0006\u0012\u0004\u0018\u00010\u001c0\u0019¢\u0006\u0002\b\u001dH¦@¢\u0006\u0002\u0010\u001eR\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\u0005R\u0012\u0010\t\u001a\u00020\nX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR*\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e8V@VX\u0097\u000e¢\u0006\u0012\u0012\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u001fÀ\u0006\u0003"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputScope;", "Landroidx/compose/ui/unit/Density;", "size", "Landroidx/compose/ui/unit/IntSize;", "getSize-YbymL2g", "()J", "extendedTouchPadding", "Landroidx/compose/ui/geometry/Size;", "getExtendedTouchPadding-NH-jbRc", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "_", "", "interceptOutOfBoundsChildEvents", "getInterceptOutOfBoundsChildEvents$annotations", "()V", "getInterceptOutOfBoundsChildEvents", "()Z", "setInterceptOutOfBoundsChildEvents", "(Z)V", "awaitPointerEventScope", "R", "block", "Lkotlin/Function2;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "Lkotlin/coroutines/Continuation;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public interface PointerInputScope extends Density {
     <R> Object awaitPointerEventScope(Function2<? super AwaitPointerEventScope, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation);
@@ -19,7 +19,7 @@ public interface PointerInputScope extends Density {
     }
 
     /* renamed from: getSize-YbymL2g */
-    long mo396getSizeYbymL2g();
+    long mo425getSizeYbymL2g();
 
     ViewConfiguration getViewConfiguration();
 
@@ -27,7 +27,7 @@ public interface PointerInputScope extends Density {
     }
 
     /* compiled from: SuspendingPointerInputFilter.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class DefaultImpls {
         public static /* synthetic */ void getInterceptOutOfBoundsChildEvents$annotations() {
@@ -35,50 +35,50 @@ public interface PointerInputScope extends Density {
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m6123roundToPxR2X_6o(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo398roundToPxR2X_6o(j);
+        public static int m6725roundToPxR2X_6o(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo427roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m6124roundToPx0680j_4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo399roundToPx0680j_4(f);
+        public static int m6726roundToPx0680j_4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo428roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m6125toDpGaN1DYA(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo400toDpGaN1DYA(j);
+        public static float m6727toDpGaN1DYA(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo429toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6126toDpu2uoSUM(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo401toDpu2uoSUM(f);
+        public static float m6728toDpu2uoSUM(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo430toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m6127toDpu2uoSUM(PointerInputScope pointerInputScope, int i) {
-            return PointerInputScope.super.mo402toDpu2uoSUM(i);
+        public static float m6729toDpu2uoSUM(PointerInputScope pointerInputScope, int i) {
+            return PointerInputScope.super.mo431toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m6128toDpSizekrfVVM(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo403toDpSizekrfVVM(j);
+        public static long m6730toDpSizekrfVVM(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo432toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m6129toPxR2X_6o(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo404toPxR2X_6o(j);
+        public static float m6731toPxR2X_6o(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo433toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m6130toPx0680j_4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo405toPx0680j_4(f);
+        public static float m6732toPx0680j_4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo434toPx0680j_4(f);
         }
 
         @Deprecated
@@ -88,32 +88,32 @@ public interface PointerInputScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m6131toSizeXkaWNTQ(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo406toSizeXkaWNTQ(j);
+        public static long m6733toSizeXkaWNTQ(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo435toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m6132toSp0xMU5do(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo407toSp0xMU5do(f);
+        public static long m6734toSp0xMU5do(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo436toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6133toSpkPz2Gy4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo408toSpkPz2Gy4(f);
+        public static long m6735toSpkPz2Gy4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo437toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m6134toSpkPz2Gy4(PointerInputScope pointerInputScope, int i) {
-            return PointerInputScope.super.mo409toSpkPz2Gy4(i);
+        public static long m6736toSpkPz2Gy4(PointerInputScope pointerInputScope, int i) {
+            return PointerInputScope.super.mo438toSpkPz2Gy4(i);
         }
 
         @Deprecated
         /* renamed from: getExtendedTouchPadding-NH-jbRc  reason: not valid java name */
-        public static long m6122getExtendedTouchPaddingNHjbRc(PointerInputScope pointerInputScope) {
-            return PointerInputScope.super.mo395getExtendedTouchPaddingNHjbRc();
+        public static long m6724getExtendedTouchPaddingNHjbRc(PointerInputScope pointerInputScope) {
+            return PointerInputScope.super.mo424getExtendedTouchPaddingNHjbRc();
         }
 
         @Deprecated
@@ -128,7 +128,7 @@ public interface PointerInputScope extends Density {
     }
 
     /* renamed from: getExtendedTouchPadding-NH-jbRc */
-    default long mo395getExtendedTouchPaddingNHjbRc() {
-        return Size.Companion.m4605getZeroNHjbRc();
+    default long mo424getExtendedTouchPaddingNHjbRc() {
+        return Size.Companion.m5181getZeroNHjbRc();
     }
 }

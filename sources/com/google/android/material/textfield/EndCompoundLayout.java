@@ -119,6 +119,18 @@ public class EndCompoundLayout extends LinearLayout {
         addView(appCompatTextView);
         addView(frameLayout);
         addView(createIconView);
+        createIconView.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.EndCompoundLayout$$ExternalSyntheticLambda0
+            @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
+            public final void onFocusableChanged(View view, boolean z) {
+                EndCompoundLayout.this.m9576x75feeb9b(view, z);
+            }
+        });
+        createIconView2.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.EndCompoundLayout$$ExternalSyntheticLambda1
+            @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
+            public final void onFocusableChanged(View view, boolean z) {
+                EndCompoundLayout.this.m9577x9b92f49c(view, z);
+            }
+        });
         textInputLayout.addOnEditTextAttachedListener(onEditTextAttachedListener);
         addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.google.android.material.textfield.EndCompoundLayout.3
             @Override // android.view.View.OnAttachStateChangeListener
@@ -131,6 +143,19 @@ public class EndCompoundLayout extends LinearLayout {
                 EndCompoundLayout.this.removeTouchExplorationStateChangeListenerIfNeeded();
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$0$com-google-android-material-textfield-EndCompoundLayout  reason: not valid java name */
+    public /* synthetic */ void m9576x75feeb9b(View view, boolean z) {
+        CheckableImageButton checkableImageButton = this.errorIconView;
+        IconHelper.updateIconTooltip(checkableImageButton, this.errorIconOnLongClickListener, checkableImageButton.getContentDescription());
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$1$com-google-android-material-textfield-EndCompoundLayout  reason: not valid java name */
+    public /* synthetic */ void m9577x9b92f49c(View view, boolean z) {
+        IconHelper.updateIconTooltip(this.endIconView, this.endIconOnLongClickListener, getEndIconContentDescription());
     }
 
     private CheckableImageButton createIconView(ViewGroup viewGroup, LayoutInflater layoutInflater, int i) {
@@ -270,11 +295,11 @@ public class EndCompoundLayout extends LinearLayout {
         setEndIconVisible(i != 0);
         EndIconDelegate endIconDelegate = getEndIconDelegate();
         setEndIconDrawable(getIconResId(endIconDelegate));
-        setEndIconContentDescription(endIconDelegate.getIconContentDescriptionResId());
         setEndIconCheckable(endIconDelegate.isIconCheckable());
         if (endIconDelegate.isBoxBackgroundModeSupported(this.textInputLayout.getBoxBackgroundMode())) {
             setUpDelegate(endIconDelegate);
             setEndIconOnClickListener(endIconDelegate.getOnIconClickListener());
+            setEndIconContentDescription(endIconDelegate.getIconContentDescriptionResId());
             EditText editText = this.editText;
             if (editText != null) {
                 endIconDelegate.onEditTextAttached(editText);
@@ -382,7 +407,11 @@ public class EndCompoundLayout extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setEndIconVisible(boolean z) {
+        EditText editText;
         if (isEndIconVisible() != z) {
+            if (!z && this.endIconView.hasFocus() && (editText = this.editText) != null) {
+                editText.requestFocus();
+            }
             this.endIconView.setVisibility(z ? 0 : 8);
             updateEndLayoutVisibility();
             updateSuffixTextViewPadding();
@@ -454,6 +483,7 @@ public class EndCompoundLayout extends LinearLayout {
     public void setEndIconContentDescription(CharSequence charSequence) {
         if (getEndIconContentDescription() != charSequence) {
             this.endIconView.setContentDescription(charSequence);
+            IconHelper.updateIconTooltip(this.endIconView, this.endIconOnLongClickListener, charSequence);
         }
     }
 

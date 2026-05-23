@@ -6,10 +6,14 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Share.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ShareKt", f = "Share.kt", i = {}, l = {326}, m = "stateIn", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ShareKt", f = "Share.kt", i = {0, 0, 0, 0}, l = {326}, m = "stateIn", n = {"$this$stateIn", "scope", "config", "result"}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ShareKt$stateIn$1<T> extends ContinuationImpl {
+    Object L$0;
+    Object L$1;
+    Object L$2;
+    Object L$3;
     int label;
     /* synthetic */ Object result;
 

@@ -1,12 +1,12 @@
 package com.google.android.gms.common.api;
 
 import com.google.android.gms.common.api.Result;
-import com.google.android.gms.common.api.internal.zacp;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.api.internal.zaci;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class ResultTransform<R extends Result, S extends Result> {
     public final PendingResult<S> createFailedResult(Status status) {
-        return new zacp(status);
+        return new zaci(status);
     }
 
     public Status onFailure(Status status) {

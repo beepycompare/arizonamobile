@@ -7,7 +7,7 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 class DividerMenuItem implements MenuItem {
     @Override // android.view.MenuItem
     public boolean collapseActionView() {

@@ -7,9 +7,106 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: WindowInsetsPadding.android.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0002\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0004\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0005\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0007\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u000b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001a>\u0010\r\u001a\u00020\u0001*\u00020\u00012\u0017\u0010\u000e\u001a\u0013\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00110\u000f¢\u0006\u0002\b\u00122\u0017\u0010\u0013\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u000f¢\u0006\u0002\b\u0012H\u0003¨\u0006\u0016"}, d2 = {"safeDrawingPadding", "Landroidx/compose/ui/Modifier;", "safeGesturesPadding", "safeContentPadding", "systemBarsPadding", "displayCutoutPadding", "statusBarsPadding", "imePadding", "navigationBarsPadding", "captionBarPadding", "waterfallPadding", "systemGesturesPadding", "mandatorySystemGesturesPadding", "windowInsetsPadding", "inspectorInfo", "Lkotlin/Function1;", "Landroidx/compose/ui/platform/InspectorInfo;", "", "Lkotlin/ExtensionFunctionType;", "insetsCalculation", "Landroidx/compose/foundation/layout/WindowInsetsHolder;", "Landroidx/compose/foundation/layout/WindowInsets;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0007\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u000b\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\r\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u000f\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0011\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0013\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0015\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0017\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u0019\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\u001b\u001a\u00020\u0001*\u00020\u0001\u001a>\u0010\u001d\u001a\u00020\u0001*\u00020\u00012\u0017\u0010\u001e\u001a\u0013\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020 0\u0003¢\u0006\u0002\b\u00062\u0017\u0010!\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006H\u0003\"\u001f\u0010\u0002\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\b\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\f\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u000e\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u0010\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u0012\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u0014\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u0018\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u001a\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001f\u0010\u001c\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0002\b\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"safeDrawingPadding", "Landroidx/compose/ui/Modifier;", "safeDrawingLambda", "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/WindowInsetsHolder;", "Landroidx/compose/foundation/layout/WindowInsets;", "Lkotlin/ExtensionFunctionType;", "safeGesturesPadding", "safeGesturesLambda", "safeContentPadding", "safeContentLambda", "systemBarsPadding", "systemBarsLambda", "displayCutoutPadding", "displayCutoutLambda", "statusBarsPadding", "statusBarsLambda", "imePadding", "imeLambda", "navigationBarsPadding", "navigationBarsLambda", "captionBarPadding", "captionBarLambda", "waterfallPadding", "waterfallLambda", "systemGesturesPadding", "systemGesturesLambda", "mandatorySystemGesturesPadding", "mandatorySystemGesturesLambda", "windowInsetsPadding", "inspectorInfo", "Landroidx/compose/ui/platform/InspectorInfo;", "", "insetsCalculation", "foundation-layout"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class WindowInsetsPadding_androidKt {
+    private static final Function1<WindowInsetsHolder, WindowInsets> safeDrawingLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda0
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            WindowInsets safeDrawing;
+            safeDrawing = ((WindowInsetsHolder) obj).getSafeDrawing();
+            return safeDrawing;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> safeGesturesLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda5
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            WindowInsets safeGestures;
+            safeGestures = ((WindowInsetsHolder) obj).getSafeGestures();
+            return safeGestures;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> safeContentLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda6
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            WindowInsets safeContent;
+            safeContent = ((WindowInsetsHolder) obj).getSafeContent();
+            return safeContent;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> systemBarsLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda7
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets systemBars;
+            systemBars = ((WindowInsetsHolder) obj).getSystemBars();
+            return systemBars;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> displayCutoutLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda8
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets displayCutout;
+            displayCutout = ((WindowInsetsHolder) obj).getDisplayCutout();
+            return displayCutout;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> statusBarsLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda9
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets statusBars;
+            statusBars = ((WindowInsetsHolder) obj).getStatusBars();
+            return statusBars;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> imeLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda10
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets ime;
+            ime = ((WindowInsetsHolder) obj).getIme();
+            return ime;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> navigationBarsLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda11
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets navigationBars;
+            navigationBars = ((WindowInsetsHolder) obj).getNavigationBars();
+            return navigationBars;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> captionBarLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda1
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets captionBar;
+            captionBar = ((WindowInsetsHolder) obj).getCaptionBar();
+            return captionBar;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> waterfallLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda2
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            ValueInsets waterfall;
+            waterfall = ((WindowInsetsHolder) obj).getWaterfall();
+            return waterfall;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> systemGesturesLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda3
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets systemGestures;
+            systemGestures = ((WindowInsetsHolder) obj).getSystemGestures();
+            return systemGestures;
+        }
+    };
+    private static final Function1<WindowInsetsHolder, WindowInsets> mandatorySystemGesturesLambda = new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda4
+        @Override // kotlin.jvm.functions.Function1
+        public final Object invoke(Object obj) {
+            AndroidWindowInsets mandatorySystemGestures;
+            mandatorySystemGestures = ((WindowInsetsHolder) obj).getMandatorySystemGestures();
+            return mandatorySystemGestures;
+        }
+    };
+
     private static final Modifier windowInsetsPadding(Modifier modifier, Function1<? super InspectorInfo, Unit> function1, Function1<? super WindowInsetsHolder, ? extends WindowInsets> function12) {
         return modifier.then(new SystemInsetsPaddingModifierElement(function1, function12));
     }
@@ -26,14 +123,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("safeDrawingPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda8
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets safeDrawing;
-                safeDrawing = ((WindowInsetsHolder) obj).getSafeDrawing();
-                return safeDrawing;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), safeDrawingLambda);
     }
 
     public static final Modifier safeGesturesPadding(Modifier modifier) {
@@ -48,14 +138,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("safeGesturesPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets safeGestures;
-                safeGestures = ((WindowInsetsHolder) obj).getSafeGestures();
-                return safeGestures;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), safeGesturesLambda);
     }
 
     public static final Modifier safeContentPadding(Modifier modifier) {
@@ -70,14 +153,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("safeContentPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda3
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets safeContent;
-                safeContent = ((WindowInsetsHolder) obj).getSafeContent();
-                return safeContent;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), safeContentLambda);
     }
 
     public static final Modifier systemBarsPadding(Modifier modifier) {
@@ -92,14 +168,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("systemBarsPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda6
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets systemBars;
-                systemBars = ((WindowInsetsHolder) obj).getSystemBars();
-                return systemBars;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), systemBarsLambda);
     }
 
     public static final Modifier displayCutoutPadding(Modifier modifier) {
@@ -114,14 +183,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("displayCutoutPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets displayCutout;
-                displayCutout = ((WindowInsetsHolder) obj).getDisplayCutout();
-                return displayCutout;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), displayCutoutLambda);
     }
 
     public static final Modifier statusBarsPadding(Modifier modifier) {
@@ -136,14 +198,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("statusBarsPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda11
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets statusBars;
-                statusBars = ((WindowInsetsHolder) obj).getStatusBars();
-                return statusBars;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), statusBarsLambda);
     }
 
     public static final Modifier imePadding(Modifier modifier) {
@@ -158,14 +213,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("imePadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda5
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets ime;
-                ime = ((WindowInsetsHolder) obj).getIme();
-                return ime;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), imeLambda);
     }
 
     public static final Modifier navigationBarsPadding(Modifier modifier) {
@@ -180,14 +228,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("navigationBarsPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda7
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets navigationBars;
-                navigationBars = ((WindowInsetsHolder) obj).getNavigationBars();
-                return navigationBars;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), navigationBarsLambda);
     }
 
     public static final Modifier captionBarPadding(Modifier modifier) {
@@ -202,14 +243,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("captionBarPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda9
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets captionBar;
-                captionBar = ((WindowInsetsHolder) obj).getCaptionBar();
-                return captionBar;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), captionBarLambda);
     }
 
     public static final Modifier waterfallPadding(Modifier modifier) {
@@ -224,14 +258,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("waterfallPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda10
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets waterfall;
-                waterfall = ((WindowInsetsHolder) obj).getWaterfall();
-                return waterfall;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), waterfallLambda);
     }
 
     public static final Modifier systemGesturesPadding(Modifier modifier) {
@@ -246,14 +273,7 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("systemGesturesPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets systemGestures;
-                systemGestures = ((WindowInsetsHolder) obj).getSystemGestures();
-                return systemGestures;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), systemGesturesLambda);
     }
 
     public static final Modifier mandatorySystemGesturesPadding(Modifier modifier) {
@@ -268,13 +288,6 @@ public final class WindowInsetsPadding_androidKt {
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("mandatorySystemGesturesPadding");
             }
-        } : InspectableValueKt.getNoInspectorInfo(), new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsPadding_androidKt$$ExternalSyntheticLambda4
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                WindowInsets mandatorySystemGestures;
-                mandatorySystemGestures = ((WindowInsetsHolder) obj).getMandatorySystemGestures();
-                return mandatorySystemGestures;
-            }
-        });
+        } : InspectableValueKt.getNoInspectorInfo(), mandatorySystemGesturesLambda);
     }
 }

@@ -5,7 +5,7 @@ import com.google.android.datatransport.Event;
 import com.google.android.datatransport.Transformer;
 import com.google.android.datatransport.Transport;
 import com.google.android.datatransport.TransportScheduleCallback;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class TransportImpl<T> implements Transport<T> {
     private final String name;
     private final Encoding payloadEncoding;

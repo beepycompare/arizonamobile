@@ -7,15 +7,15 @@ import com.google.android.gms.location.LocationResult;
 class GplLocationCallback extends LocationCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LocationListener f446a;
+    private final LocationListener f396a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GplLocationCallback(LocationListener locationListener) {
-        this.f446a = locationListener;
+        this.f396a = locationListener;
     }
 
     @Override // com.google.android.gms.location.LocationCallback
     public void onLocationResult(LocationResult locationResult) {
-        this.f446a.onLocationChanged(locationResult.getLastLocation());
+        this.f396a.onLocationChanged(locationResult.getLastLocation());
     }
 }

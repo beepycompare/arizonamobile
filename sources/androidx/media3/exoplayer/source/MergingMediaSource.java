@@ -32,6 +32,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
     private final Map<Object, Long> clippedDurationsUs;
     private final Multimap<Object, ClippingMediaPeriod> clippedMediaPeriods;
     private final CompositeSequenceableLoaderFactory compositeSequenceableLoaderFactory;
+    private boolean enableClippingInMediaPeriod;
     private final List<List<MediaPeriodAndId>> mediaPeriods;
     private final MediaSource[] mediaSources;
     private IllegalMergeException mergeError;
@@ -86,6 +87,10 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         this.clippedMediaPeriods = MultimapBuilder.hashKeys().arrayListValues().build();
     }
 
+    public void setEnableClippingInMediaPeriod(boolean z) {
+        this.enableClippingInMediaPeriod = z;
+    }
+
     @Override // androidx.media3.exoplayer.source.MediaSource
     public MediaItem getMediaItem() {
         MediaSource[] mediaSourceArr = this.mediaSources;
@@ -133,7 +138,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         }
         MergingMediaPeriod mergingMediaPeriod = new MergingMediaPeriod(this.compositeSequenceableLoaderFactory, this.periodTimeOffsetsUs[indexOfPeriod], mediaPeriodArr);
         if (this.clipDurations) {
-            ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(mergingMediaPeriod, false, 0L, ((Long) Preconditions.checkNotNull(this.clippedDurationsUs.get(mediaPeriodId.periodUid))).longValue());
+            ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(mergingMediaPeriod, false, 0L, ((Long) Preconditions.checkNotNull(this.clippedDurationsUs.get(mediaPeriodId.periodUid))).longValue(), this.enableClippingInMediaPeriod);
             this.clippedMediaPeriods.put(mediaPeriodId.periodUid, clippingMediaPeriod);
             return clippingMediaPeriod;
         }

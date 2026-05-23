@@ -4,8 +4,9 @@ import android.media.AudioDeviceInfo;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.audio.AudioOutput;
+import androidx.media3.exoplayer.audio.AudioOutputProvider;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ForwardingAudioOutput implements AudioOutput {
     private final AudioOutput audioOutput;
 
@@ -126,5 +127,10 @@ public class ForwardingAudioOutput implements AudioOutput {
     @Override // androidx.media3.exoplayer.audio.AudioOutput
     public void setPreferredDevice(AudioDeviceInfo audioDeviceInfo) {
         this.audioOutput.setPreferredDevice(audioDeviceInfo);
+    }
+
+    @Override // androidx.media3.exoplayer.audio.AudioOutput
+    public boolean canReuseAudioOutput(AudioOutputProvider.OutputConfig outputConfig, AudioOutputProvider.FormatConfig formatConfig, AudioOutputProvider.OutputConfig outputConfig2) {
+        return this.audioOutput.canReuseAudioOutput(outputConfig, formatConfig, outputConfig2);
     }
 }

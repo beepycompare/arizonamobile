@@ -2,7 +2,7 @@ package com.wardrumstudios.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaVault {
     private String secret;
 

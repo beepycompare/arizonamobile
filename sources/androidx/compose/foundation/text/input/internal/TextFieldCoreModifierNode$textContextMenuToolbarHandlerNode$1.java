@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldCoreModifier.kt */
-@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$textContextMenuToolbarHandlerNode$1", f = "TextFieldCoreModifier.kt", i = {}, l = {209, 210}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldCoreModifierNode$textContextMenuToolbarHandlerNode$1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
@@ -40,7 +40,7 @@ public final class TextFieldCoreModifierNode$textContextMenuToolbarHandlerNode$1
         if (r8.updateClipboardEntry(r7) == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0068, code lost:
-        if (r8.mo1591onShowSelectionToolbarSbBc2M(r1, r4.getTextFieldState$foundation().getVisualText().m1336getSelectiond9O1mEE(), r7) == r0) goto L16;
+        if (r8.mo2036onShowSelectionToolbarSbBc2M(r1, r4.getTextFieldState$foundation().getVisualText().m1724getSelectiond9O1mEE(), r7) == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
         return r0;

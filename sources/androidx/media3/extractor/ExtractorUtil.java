@@ -2,6 +2,7 @@ package androidx.media3.extractor;
 
 import androidx.media3.common.C;
 import androidx.media3.common.ParserException;
+import androidx.media3.container.OpusUtil;
 import java.io.EOFException;
 import java.io.IOException;
 import org.checkerframework.dataflow.qual.Pure;

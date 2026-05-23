@@ -48,7 +48,7 @@ public final class SavedStateDecoder extends AbstractDecoder {
         if (Intrinsics.areEqual(this.key, "")) {
             return this;
         }
-        return new SavedStateDecoder(SavedStateReader.m8471getSavedStateimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key), this.configuration);
+        return new SavedStateDecoder(SavedStateReader.m9080getSavedStateimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key), this.configuration);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0050, code lost:
@@ -64,20 +64,20 @@ public final class SavedStateDecoder extends AbstractDecoder {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int decodeElementIndex(SerialDescriptor descriptor) {
-        int m8494sizeimpl;
+        int m9103sizeimpl;
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         if (Intrinsics.areEqual(descriptor.getKind(), StructureKind.LIST.INSTANCE) || Intrinsics.areEqual(descriptor.getKind(), StructureKind.MAP.INSTANCE)) {
-            m8494sizeimpl = SavedStateReader.m8494sizeimpl(SavedStateReader.m8414constructorimpl(this.savedState));
+            m9103sizeimpl = SavedStateReader.m9103sizeimpl(SavedStateReader.m9023constructorimpl(this.savedState));
         } else {
-            m8494sizeimpl = descriptor.getElementsCount();
+            m9103sizeimpl = descriptor.getElementsCount();
         }
         while (true) {
             int i = this.index;
-            if (i >= m8494sizeimpl) {
+            if (i >= m9103sizeimpl) {
                 return -1;
             }
             String elementName = descriptor.getElementName(i);
-            if (!descriptor.isElementOptional(this.index) || SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(this.savedState), elementName)) {
+            if (!descriptor.isElementOptional(this.index) || SavedStateReader.m9024containsimpl(SavedStateReader.m9023constructorimpl(this.savedState), elementName)) {
                 break;
             }
             this.index++;
@@ -86,58 +86,58 @@ public final class SavedStateDecoder extends AbstractDecoder {
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public boolean decodeBoolean() {
-        return SavedStateReader.m8423getBooleanimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9032getBooleanimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public byte decodeByte() {
-        return (byte) SavedStateReader.m8445getIntimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return (byte) SavedStateReader.m9054getIntimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public short decodeShort() {
-        return (short) SavedStateReader.m8445getIntimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return (short) SavedStateReader.m9054getIntimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public int decodeInt() {
-        return SavedStateReader.m8445getIntimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9054getIntimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public long decodeLong() {
-        return SavedStateReader.m8455getLongimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9064getLongimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public float decodeFloat() {
-        return SavedStateReader.m8441getFloatimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9050getFloatimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public double decodeDouble() {
-        return SavedStateReader.m8437getDoubleimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9046getDoubleimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public char decodeChar() {
-        return SavedStateReader.m8427getCharimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9036getCharimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public String decodeString() {
-        return SavedStateReader.m8485getStringimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9094getStringimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public int decodeEnum(SerialDescriptor enumDescriptor) {
         Intrinsics.checkNotNullParameter(enumDescriptor, "enumDescriptor");
-        return SavedStateReader.m8445getIntimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return SavedStateReader.m9054getIntimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public boolean decodeNotNullMark() {
-        return !SavedStateReader.m8493isNullimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+        return !SavedStateReader.m9102isNullimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
@@ -149,31 +149,31 @@ public final class SavedStateDecoder extends AbstractDecoder {
         }
         SerialDescriptor descriptor = deserializer.getDescriptor();
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getIntListDescriptor())) {
-            return (T) SavedStateReader.m8448getIntListimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9057getIntListimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getStringListDescriptor())) {
-            return (T) SavedStateReader.m8488getStringListimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9097getStringListimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getBooleanArrayDescriptor())) {
-            return (T) SavedStateReader.m8424getBooleanArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9033getBooleanArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getCharArrayDescriptor())) {
-            return (T) SavedStateReader.m8428getCharArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9037getCharArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getDoubleArrayDescriptor())) {
-            return (T) SavedStateReader.m8438getDoubleArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9047getDoubleArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getFloatArrayDescriptor())) {
-            return (T) SavedStateReader.m8442getFloatArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9051getFloatArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getIntArrayDescriptor())) {
-            return (T) SavedStateReader.m8446getIntArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9055getIntArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getLongArrayDescriptor())) {
-            return (T) SavedStateReader.m8456getLongArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9065getLongArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         if (Intrinsics.areEqual(descriptor, SavedStateCodecUtilsKt.getStringArrayDescriptor())) {
-            return (T) SavedStateReader.m8486getStringArrayimpl(SavedStateReader.m8414constructorimpl(this.savedState), this.key);
+            return (T) SavedStateReader.m9095getStringArrayimpl(SavedStateReader.m9023constructorimpl(this.savedState), this.key);
         }
         return (T) super.decodeSerializableValue(deserializer);
     }

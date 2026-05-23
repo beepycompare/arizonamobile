@@ -20,6 +20,7 @@ import androidx.compose.runtime.CompositionLocalMap;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
@@ -68,13 +69,13 @@ public final class PullToRefreshDefaults {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$7(PullToRefreshDefaults pullToRefreshDefaults, PullToRefreshState pullToRefreshState, boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, Function3 function3, int i, int i2, Composer composer, int i3) {
-        pullToRefreshDefaults.m3097IndicatorBox1CPYgEU(pullToRefreshState, z, modifier, f, shape2, j, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        pullToRefreshDefaults.m3542IndicatorBox1CPYgEU(pullToRefreshState, z, modifier, f, shape2, j, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Indicator_2poqoh4$lambda$8(PullToRefreshDefaults pullToRefreshDefaults, PullToRefreshState pullToRefreshState, boolean z, Modifier modifier, long j, long j2, float f, int i, int i2, Composer composer, int i3) {
-        pullToRefreshDefaults.m3096Indicator2poqoh4(pullToRefreshState, z, modifier, j, j2, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        pullToRefreshDefaults.m3541Indicator2poqoh4(pullToRefreshState, z, modifier, j, j2, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -94,11 +95,11 @@ public final class PullToRefreshDefaults {
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(80.0f);
-        PositionalThreshold = m7555constructorimpl;
-        IndicatorMaxDistance = m7555constructorimpl;
-        Elevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
-        LoadingIndicatorElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+        float m8160constructorimpl = Dp.m8160constructorimpl(80.0f);
+        PositionalThreshold = m8160constructorimpl;
+        IndicatorMaxDistance = m8160constructorimpl;
+        Elevation = ElevationTokens.INSTANCE.m3806getLevel2D9Ej5fM();
+        LoadingIndicatorElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     }
 
     public final Shape getIndicatorShape() {
@@ -110,12 +111,12 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1066257972, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-containerColor> (PullToRefresh.kt:405)");
         }
-        long m1889getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1889getSurfaceContainerHigh0d7_KjU();
+        long m2334getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2334getSurfaceContainerHigh0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1889getSurfaceContainerHigh0d7_KjU;
+        return m2334getSurfaceContainerHigh0d7_KjU;
     }
 
     public final long getIndicatorContainerColor(Composer composer, int i) {
@@ -123,12 +124,12 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-80510850, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-indicatorContainerColor> (PullToRefresh.kt:409)");
         }
-        long m1889getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1889getSurfaceContainerHigh0d7_KjU();
+        long m2334getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2334getSurfaceContainerHigh0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1889getSurfaceContainerHigh0d7_KjU;
+        return m2334getSurfaceContainerHigh0d7_KjU;
     }
 
     public final long getIndicatorColor(Composer composer, int i) {
@@ -136,31 +137,31 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1441334156, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-indicatorColor> (PullToRefresh.kt:413)");
         }
-        long m1870getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1870getOnSurfaceVariant0d7_KjU();
+        long m2315getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2315getOnSurfaceVariant0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1870getOnSurfaceVariant0d7_KjU;
+        return m2315getOnSurfaceVariant0d7_KjU;
     }
 
     /* renamed from: getPositionalThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m3101getPositionalThresholdD9Ej5fM() {
+    public final float m3546getPositionalThresholdD9Ej5fM() {
         return PositionalThreshold;
     }
 
     /* renamed from: getIndicatorMaxDistance-D9Ej5fM  reason: not valid java name */
-    public final float m3099getIndicatorMaxDistanceD9Ej5fM() {
+    public final float m3544getIndicatorMaxDistanceD9Ej5fM() {
         return IndicatorMaxDistance;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3098getElevationD9Ej5fM() {
+    public final float m3543getElevationD9Ej5fM() {
         return Elevation;
     }
 
     /* renamed from: getLoadingIndicatorElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3100getLoadingIndicatorElevationD9Ej5fM() {
+    public final float m3545getLoadingIndicatorElevationD9Ej5fM() {
         return LoadingIndicatorElevation;
     }
 
@@ -188,7 +189,7 @@ public final class PullToRefreshDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3097IndicatorBox1CPYgEU(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, final Function3<? super BoxScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public final void m3542IndicatorBox1CPYgEU(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, final Function3<? super BoxScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         boolean z2;
         int i4;
@@ -269,7 +270,7 @@ public final class PullToRefreshDefaults {
                 if ((i2 & 256) != 0) {
                     i3 |= 100663296;
                 } else if ((100663296 & i) == 0) {
-                    i3 |= startRestartGroup.changed(this) ? 67108864 : 33554432;
+                    i3 |= startRestartGroup.changed(this) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     boolean z3 = true;
                     if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i3 & 1)) {
                         startRestartGroup.startDefaults();
@@ -288,7 +289,7 @@ public final class PullToRefreshDefaults {
                                 shape4 = shape2;
                             }
                             if (i5 != 0) {
-                                j2 = Color.Companion.m4808getUnspecified0d7_KjU();
+                                j2 = Color.Companion.m5384getUnspecified0d7_KjU();
                             }
                             if ((i2 & 64) != 0) {
                                 i3 &= -3670017;
@@ -311,7 +312,7 @@ public final class PullToRefreshDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1341144489, i3, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.IndicatorBox (PullToRefresh.kt:456)");
                         }
-                        Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(companion, PullToRefreshKt.getSpinnerContainerSize());
+                        Modifier m1117size3ABfNKs = SizeKt.m1117size3ABfNKs(companion, PullToRefreshKt.getSpinnerContainerSize());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -349648245, "CC(remember):PullToRefresh.kt#9igjgp");
                         Object rememberedValue = startRestartGroup.rememberedValue();
                         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -324,7 +325,7 @@ public final class PullToRefreshDefaults {
                             startRestartGroup.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier drawWithContent = DrawModifierKt.drawWithContent(m864size3ABfNKs, (Function1) rememberedValue);
+                        Modifier drawWithContent = DrawModifierKt.drawWithContent(m1117size3ABfNKs, (Function1) rememberedValue);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -349634834, "CC(remember):PullToRefresh.kt#9igjgp");
                         boolean z4 = ((i3 & 14) == 4) | ((i3 & 112) == 32) | ((((i3 & 7168) ^ 3072) > 2048 && startRestartGroup.changed(f3)) || (i3 & 3072) == 2048) | ((((3670016 & i3) ^ 1572864) > 1048576 && startRestartGroup.changed(f4)) || (i3 & 1572864) == 1048576);
                         if ((((57344 & i3) ^ 24576) <= 16384 || !startRestartGroup.changed(shape4)) && (i3 & 24576) != 16384) {
@@ -346,7 +347,7 @@ public final class PullToRefreshDefaults {
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier m263backgroundbw27NRU = BackgroundKt.m263backgroundbw27NRU(LayoutModifierKt.layout(drawWithContent, (Function3) rememberedValue2), j2, shape4);
+                        Modifier m287backgroundbw27NRU = BackgroundKt.m287backgroundbw27NRU(LayoutModifierKt.layout(drawWithContent, (Function3) rememberedValue2), j2, shape4);
                         Alignment center = Alignment.Companion.getCenter();
                         int i8 = ((i3 >> 12) & 7168) | 48;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -355,7 +356,7 @@ public final class PullToRefreshDefaults {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m263backgroundbw27NRU);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m287backgroundbw27NRU);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -367,15 +368,15 @@ public final class PullToRefreshDefaults {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                         function3.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8 >> 6) & 112) | 6));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -475,27 +476,27 @@ public final class PullToRefreshDefaults {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$2$lambda$1(ContentDrawScope contentDrawScope) {
-        int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
+        int m5337getIntersectrtfAjoo = ClipOp.Companion.m5337getIntersectrtfAjoo();
         DrawContext drawContext = contentDrawScope.getDrawContext();
-        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
+        long mo5843getSizeNHjbRc = drawContext.mo5843getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5270clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m4761getIntersectrtfAjoo);
+            drawContext.getTransform().mo5846clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m5337getIntersectrtfAjoo);
             contentDrawScope.drawContent();
             drawContext.getCanvas().restore();
-            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+            drawContext.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
+            drawContext.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc);
             throw th;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult IndicatorBox_1CPYgEU$lambda$6$lambda$5(final PullToRefreshState pullToRefreshState, final boolean z, final float f, final float f2, final Shape shape2, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda5
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(constraints.m8119unboximpl());
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4(Placeable.this, pullToRefreshState, z, f, f2, shape2, (Placeable.PlacementScope) obj);
@@ -517,8 +518,8 @@ public final class PullToRefreshDefaults {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3(PullToRefreshState pullToRefreshState, boolean z, float f, float f2, Shape shape2, GraphicsLayerScope graphicsLayerScope) {
         boolean z2 = pullToRefreshState.getDistanceFraction() > 0.0f || z;
-        graphicsLayerScope.setTranslationY((pullToRefreshState.getDistanceFraction() * graphicsLayerScope.mo399roundToPx0680j_4(f)) - Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)));
-        graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo405toPx0680j_4(f2) : 0.0f);
+        graphicsLayerScope.setTranslationY((pullToRefreshState.getDistanceFraction() * graphicsLayerScope.mo428roundToPx0680j_4(f)) - Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() & 4294967295L)));
+        graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo434toPx0680j_4(f2) : 0.0f);
         graphicsLayerScope.setShape(shape2);
         graphicsLayerScope.setClip(true);
         return Unit.INSTANCE;
@@ -542,7 +543,7 @@ public final class PullToRefreshDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3096Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
+    public final void m3541Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         long j3;
@@ -666,7 +667,7 @@ public final class PullToRefreshDefaults {
                 }
                 int i8 = i4 << 6;
                 Modifier modifier3 = companion;
-                m3097IndicatorBox1CPYgEU(pullToRefreshState, z, modifier3, f3, null, j7, 0.0f, ComposableLambdaKt.rememberComposableLambda(298232649, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$Indicator$1
+                m3542IndicatorBox1CPYgEU(pullToRefreshState, z, modifier3, f3, null, j7, 0.0f, ComposableLambdaKt.rememberComposableLambda(298232649, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$Indicator$1
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
                         invoke(boxScope, composer2, num.intValue());
@@ -725,7 +726,7 @@ public final class PullToRefreshDefaults {
                                 composer.startReplaceGroup(-499784343);
                                 ComposerKt.sourceInformation(composer, "529@20693L201");
                                 f = PullToRefreshKt.StrokeWidth;
-                                ProgressIndicatorKt.m2367CircularProgressIndicator4lLiAd8(SizeKt.m864size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), this.$color, f, 0L, 0, 0.0f, composer, 390, 56);
+                                ProgressIndicatorKt.m2812CircularProgressIndicator4lLiAd8(SizeKt.m1117size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), this.$color, f, 0L, 0, 0.0f, composer, 390, 56);
                                 composer.endReplaceGroup();
                             } else {
                                 composer.startReplaceGroup(-499540745);
@@ -821,7 +822,7 @@ public final class PullToRefreshDefaults {
                                         androidx.compose.ui.Modifier$Companion r12 = androidx.compose.ui.Modifier.Companion
                                         androidx.compose.ui.Modifier r12 = (androidx.compose.ui.Modifier) r12
                                         float r14 = androidx.compose.material3.pulltorefresh.PullToRefreshKt.getSpinnerSize()
-                                        androidx.compose.ui.Modifier r0 = androidx.compose.foundation.layout.SizeKt.m864size3ABfNKs(r12, r14)
+                                        androidx.compose.ui.Modifier r0 = androidx.compose.foundation.layout.SizeKt.m1117size3ABfNKs(r12, r14)
                                         long r1 = r11.$color
                                         r9 = 390(0x186, float:5.47E-43)
                                         r10 = 56
@@ -829,7 +830,7 @@ public final class PullToRefreshDefaults {
                                         r6 = 0
                                         r7 = 0
                                         r8 = r13
-                                        androidx.compose.material3.ProgressIndicatorKt.m2367CircularProgressIndicator4lLiAd8(r0, r1, r3, r4, r6, r7, r8, r9, r10)
+                                        androidx.compose.material3.ProgressIndicatorKt.m2812CircularProgressIndicator4lLiAd8(r0, r1, r3, r4, r6, r7, r8, r9, r10)
                                         r8.endReplaceGroup()
                                         goto La2
                                     L63:
@@ -857,7 +858,7 @@ public final class PullToRefreshDefaults {
                                         androidx.compose.material3.internal.FloatProducer r14 = (androidx.compose.material3.internal.FloatProducer) r14
                                         androidx.compose.runtime.ComposerKt.sourceInformationMarkerEnd(r8)
                                         long r11 = r11.$color
-                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3104access$CircularArrowProgressIndicatorRPmYEkk(r14, r11, r8, r2)
+                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3549access$CircularArrowProgressIndicatorRPmYEkk(r14, r11, r8, r2)
                                         r8.endReplaceGroup()
                                     La2:
                                         boolean r11 = androidx.compose.runtime.ComposerKt.isTraceInProgress()

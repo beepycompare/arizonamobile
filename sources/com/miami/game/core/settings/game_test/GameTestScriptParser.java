@@ -24,7 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 /* compiled from: GameTestScriptParser.kt */
 @Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0006\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007J\u0016\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\t2\u0006\u0010\u000b\u001a\u00020\fH\u0002J\u0018\u0010\r\u001a\u00020\n2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001e\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001f0\t2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010 \u001a\u00020\u0007H\u0002J$\u0010!\u001a\u00020\u001f*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u00072\u0006\u0010\"\u001a\u00020\u0007H\u0002J\u0018\u0010#\u001a\u00020$2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010%\u001a\u00020&2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\f\u0010'\u001a\u00020\u0007*\u00020\u0007H\u0002J\f\u0010(\u001a\u00020)*\u00020\u0007H\u0002J$\u0010*\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0011\u0012\u0006\u0012\u0004\u0018\u00010\u00070+*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u0010,\u001a\u00020-*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u0007H\u0002J\u0014\u0010.\u001a\u00020\u0007*\u00020\u000f2\u0006\u0010/\u001a\u00020\u0007H\u0002J\u0014\u00100\u001a\u000201*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u00102\u001a\u00020\u0007*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u00103\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u00104\u001a\u00020\u0011*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u00105\u001a\u000206*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001c\u00107\u001a\u000208*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J$\u00109\u001a\u000206*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010:\u001a\u0002062\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J$\u0010;\u001a\u000206*\u00020\u000f2\u0006\u0010/\u001a\u00020\u00072\u0006\u0010:\u001a\u0002062\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u001b\u0010<\u001a\u0004\u0018\u000106*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002¢\u0006\u0002\u0010=¨\u0006>"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptParser;", "", "<init>", "()V", "parse", "Lcom/miami/game/core/settings/game_test/GameTestScript;", "rawScript", "", "parseSteps", "", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "array", "Lorg/json/JSONArray;", "parseStep", "stepObject", "Lorg/json/JSONObject;", FirebaseAnalytics.Param.INDEX, "", "parseNotifyClick", "Lcom/miami/game/core/settings/game_test/GameTestStep$NotifyClick;", "parseShowUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$ShowUi;", "parseHideUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$HideUi;", "parseBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "parseWaitBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "parseAddBackendMessageListener", "Lcom/miami/game/core/settings/game_test/GameTestStep$AddBackendMessageListener;", "parseBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "owner", "parseBackendMessageListener", "defaultName", "parseReplayBackendFixture", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "parseStartBackendValidation", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendValidation;", "normalizeAction", "toStartTrigger", "Lcom/miami/game/core/settings/game_test/GameTestStartTrigger;", "parseBackendReference", "Lkotlin/Pair;", "parseBackendMessageMatcher", "Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "extractRawMessage", "key", "optReplayTarget", "Lcom/miami/game/core/settings/game_test/BackendReplayTarget;", "requireString", "requireInt", "requirePositiveInt", "requireNonNegativeLong", "", "requirePercent", "", "optNonNegativeLong", "defaultValue", "optPositiveLong", "optTimeoutMs", "(Lorg/json/JSONObject;I)Ljava/lang/Long;", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GameTestScriptParser {
     public static final GameTestScriptParser INSTANCE = new GameTestScriptParser();
 
@@ -698,7 +698,7 @@ public final class GameTestScriptParser {
         String str5;
         String optString3;
         String str6;
-        Object m9202constructorimpl;
+        Object m9842constructorimpl;
         BackendMessageMatcher backendMessageMatcher;
         JSONObject optJSONObject = jSONObject.optJSONObject("match");
         if (optJSONObject != null || (optJSONObject = jSONObject.optJSONObject("matcher")) != null) {
@@ -749,17 +749,17 @@ public final class GameTestScriptParser {
             if (str6 != null) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9202constructorimpl = Result.m9202constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
+                    m9842constructorimpl = Result.m9842constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
+                    m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9205exceptionOrNullimpl = Result.m9205exceptionOrNullimpl(m9202constructorimpl);
-                if (m9205exceptionOrNullimpl == null) {
-                    Regex regex = (Regex) m9202constructorimpl;
+                Throwable m9845exceptionOrNullimpl = Result.m9845exceptionOrNullimpl(m9842constructorimpl);
+                if (m9845exceptionOrNullimpl == null) {
+                    Regex regex = (Regex) m9842constructorimpl;
                 } else {
                     int i2 = i + 1;
-                    String message = m9205exceptionOrNullimpl.getMessage();
+                    String message = m9845exceptionOrNullimpl.getMessage();
                     if (message == null) {
                         message = "";
                     }

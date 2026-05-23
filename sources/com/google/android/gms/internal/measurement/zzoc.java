@@ -1,63 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import java.io.IOException;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzoc implements Iterator {
-    final /* synthetic */ zzoe zza;
-    private int zzb;
-    private boolean zzc;
-    private Iterator zzd;
+class zzoc extends zzof {
+    private volatile long zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzoc(zzoe zzoeVar, byte[] bArr) {
-        Objects.requireNonNull(zzoeVar);
-        this.zza = zzoeVar;
-        this.zzb = -1;
+    public zzoc(String str, String str2, zzph zzphVar) {
+        super("com.google.android.gms.measurement", str2, zzphVar);
     }
 
-    private final Iterator zza() {
-        if (this.zzd == null) {
-            this.zzd = this.zza.zzk().entrySet().iterator();
-        }
-        return this.zzd;
+    @Override // com.google.android.gms.internal.measurement.zznp
+    protected final /* synthetic */ Object zzc(String str) throws IOException {
+        return Long.valueOf(Long.parseLong(str));
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        int i = this.zzb + 1;
-        zzoe zzoeVar = this.zza;
-        if (i >= zzoeVar.zzj()) {
-            return !zzoeVar.zzk().isEmpty() && zza().hasNext();
-        }
-        return true;
+    @Override // com.google.android.gms.internal.measurement.zznp
+    protected final /* synthetic */ Object zzd(Object obj) throws IOException {
+        return (Long) obj;
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        this.zzc = true;
-        int i = this.zzb + 1;
-        this.zzb = i;
-        zzoe zzoeVar = this.zza;
-        return i < zzoeVar.zzj() ? (zzob) zzoeVar.zzi()[i] : (Map.Entry) zza().next();
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final /* synthetic */ Object zze() {
+        return Long.valueOf(this.zza);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        if (!this.zzc) {
-            throw new IllegalStateException("remove() was called before next()");
-        }
-        this.zzc = false;
-        zzoe zzoeVar = this.zza;
-        zzoeVar.zzh();
-        int i = this.zzb;
-        if (i < zzoeVar.zzj()) {
-            this.zzb = i - 1;
-            zzoeVar.zzg(i);
-            return;
-        }
-        zza().remove();
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final /* synthetic */ void zzh(Object obj) {
+        this.zza = ((Long) obj).longValue();
     }
 }

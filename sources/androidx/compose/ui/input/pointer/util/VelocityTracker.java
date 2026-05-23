@@ -3,7 +3,7 @@ package androidx.compose.ui.input.pointer.util;
 import androidx.compose.ui.unit.VelocityKt;
 import kotlin.Metadata;
 /* compiled from: VelocityTracker.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011¢\u0006\u0004\b\u0015\u0010\u0016J\u0006\u0010\u0017\u001a\u00020\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/input/pointer/util/VelocityTracker;", "", "<init>", "()V", "platformVelocityTracker", "Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "getPlatformVelocityTracker$ui", "()Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "addPosition", "", "timeMillis", "", "position", "Landroidx/compose/ui/geometry/Offset;", "addPosition-Uv8p0NA", "(JJ)V", "calculateVelocity", "Landroidx/compose/ui/unit/Velocity;", "calculateVelocity-9UxMQ8M", "()J", "maximumVelocity", "calculateVelocity-AH228Gc", "(J)J", "resetTracking", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\r\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0012\u0010\u0013J\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0011¢\u0006\u0004\b\u0015\u0010\u0016J\u0006\u0010\u0017\u001a\u00020\tR\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0018"}, d2 = {"Landroidx/compose/ui/input/pointer/util/VelocityTracker;", "", "<init>", "()V", "platformVelocityTracker", "Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "getPlatformVelocityTracker$ui", "()Landroidx/compose/ui/input/pointer/util/PlatformVelocityTracker;", "addPosition", "", "timeMillis", "", "position", "Landroidx/compose/ui/geometry/Offset;", "addPosition-Uv8p0NA", "(JJ)V", "calculateVelocity", "Landroidx/compose/ui/unit/Velocity;", "calculateVelocity-9UxMQ8M", "()J", "maximumVelocity", "calculateVelocity-AH228Gc", "(J)J", "resetTracking", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class VelocityTracker {
     public static final int $stable = 8;
@@ -14,18 +14,18 @@ public final class VelocityTracker {
     }
 
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public final void m6189addPositionUv8p0NA(long j, long j2) {
-        this.platformVelocityTracker.mo6180addPositionUv8p0NA(j, j2);
+    public final void m6791addPositionUv8p0NA(long j, long j2) {
+        this.platformVelocityTracker.mo6782addPositionUv8p0NA(j, j2);
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m6190calculateVelocity9UxMQ8M() {
-        return m6191calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
+    public final long m6792calculateVelocity9UxMQ8M() {
+        return m6793calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
     }
 
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public final long m6191calculateVelocityAH228Gc(long j) {
-        return this.platformVelocityTracker.mo6181calculateVelocityAH228Gc(j);
+    public final long m6793calculateVelocityAH228Gc(long j) {
+        return this.platformVelocityTracker.mo6783calculateVelocityAH228Gc(j);
     }
 
     public final void resetTracking() {

@@ -31,14 +31,14 @@ public class DeviceProfileWriter {
         this.mExecutor.execute(new Runnable() { // from class: androidx.profileinstaller.DeviceProfileWriter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DeviceProfileWriter.this.m8399lambda$result$0$androidxprofileinstallerDeviceProfileWriter(i, obj);
+                DeviceProfileWriter.this.m9008lambda$result$0$androidxprofileinstallerDeviceProfileWriter(i, obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$result$0$androidx-profileinstaller-DeviceProfileWriter  reason: not valid java name */
-    public /* synthetic */ void m8399lambda$result$0$androidxprofileinstallerDeviceProfileWriter(int i, Object obj) {
+    public /* synthetic */ void m9008lambda$result$0$androidxprofileinstallerDeviceProfileWriter(int i, Object obj) {
         this.mDiagnostics.onResultReceived(i, obj);
     }
 
@@ -231,7 +231,7 @@ public class DeviceProfileWriter {
         return this;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [byte[], androidx.profileinstaller.DexProfileData[]] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [androidx.profileinstaller.DexProfileData[], byte[]] */
     public boolean write() {
         byte[] bArr = this.mTranscodedProfile;
         if (bArr == null) {

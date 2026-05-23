@@ -23,7 +23,7 @@ import okhttp3.ResponseBody;
 import retrofit2.BuiltInConverters;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Retrofit {
     final HttpUrl baseUrl;
     final List<CallAdapter.Factory> callAdapterFactories;
@@ -259,7 +259,7 @@ public final class Retrofit {
         return new Builder(this);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         @Nullable
         private HttpUrl baseUrl;

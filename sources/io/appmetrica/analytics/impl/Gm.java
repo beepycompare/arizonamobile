@@ -1,29 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes5.dex */
 public final class Gm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f607a;
+    public final ProtobufStateStorage f565a;
+    public final Zo b;
 
-    public Gm(long j) {
-        this.f607a = j;
+    public Gm(ProtobufStateStorage protobufStateStorage, Zo zo) {
+        this.f565a = protobufStateStorage;
+        this.b = zo;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && Gm.class == obj.getClass() && this.f607a == ((Gm) obj).f607a;
-    }
-
-    public final int hashCode() {
-        long j = this.f607a;
-        return (int) (j ^ (j >>> 32));
-    }
-
-    public final String toString() {
-        return "StatSending{disabledReportingInterval=" + this.f607a + AbstractJsonLexerKt.END_OBJ;
+    public Gm(Context context) {
+        this(((AbstractC0621tn) C0569rn.a(Lm.class)).create(context), Na.k().D().a());
     }
 }

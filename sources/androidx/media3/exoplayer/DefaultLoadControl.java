@@ -23,7 +23,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultLoadControl implements LoadControl {
     public static final int DEFAULT_AUDIO_BUFFER_SIZE = 13107200;
     public static final int DEFAULT_BACK_BUFFER_DURATION_MS = 0;
@@ -75,7 +75,7 @@ public class DefaultLoadControl implements LoadControl {
         return -1;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private DefaultAllocator allocator;
         private int backBufferDurationMs;
@@ -522,7 +522,7 @@ public class DefaultLoadControl implements LoadControl {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class PlayerLoadingState {
         private int allocatedCounts;
         public boolean isLoading;
@@ -542,7 +542,7 @@ public class DefaultLoadControl implements LoadControl {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class PlayerIdFilteringAllocatorImpl implements PlayerIdAwareAllocator {
         private final HashMap<Allocation, PlayerId> allocationPlayerIdMap = new HashMap<>();
         private PlayerId playerId;

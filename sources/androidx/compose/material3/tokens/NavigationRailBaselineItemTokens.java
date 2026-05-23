@@ -8,26 +8,26 @@ import kotlin.Metadata;
 public final class NavigationRailBaselineItemTokens {
     public static final int $stable = 0;
     public static final NavigationRailBaselineItemTokens INSTANCE = new NavigationRailBaselineItemTokens();
-    private static final float ActiveIndicatorIconLabelSpace = Dp.m7555constructorimpl(8.0f);
-    private static final float ActiveIndicatorLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ActiveIndicatorIconLabelSpace = Dp.m8160constructorimpl(8.0f);
+    private static final float ActiveIndicatorLeadingSpace = Dp.m8160constructorimpl(16.0f);
     private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ActiveIndicatorTrailingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
+    private static final float ActiveIndicatorTrailingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(64.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerVerticalSpace = Dp.m7555constructorimpl(6.0f);
-    private static final float HeaderSpaceMinimum = Dp.m7555constructorimpl(40.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ContainerVerticalSpace = Dp.m8160constructorimpl(6.0f);
+    private static final float HeaderSpaceMinimum = Dp.m8160constructorimpl(40.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
 
     private NavigationRailBaselineItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3552getActiveIndicatorIconLabelSpaceD9Ej5fM() {
+    public final float m3997getActiveIndicatorIconLabelSpaceD9Ej5fM() {
         return ActiveIndicatorIconLabelSpace;
     }
 
     /* renamed from: getActiveIndicatorLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3553getActiveIndicatorLeadingSpaceD9Ej5fM() {
+    public final float m3998getActiveIndicatorLeadingSpaceD9Ej5fM() {
         return ActiveIndicatorLeadingSpace;
     }
 
@@ -36,12 +36,12 @@ public final class NavigationRailBaselineItemTokens {
     }
 
     /* renamed from: getActiveIndicatorTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3554getActiveIndicatorTrailingSpaceD9Ej5fM() {
+    public final float m3999getActiveIndicatorTrailingSpaceD9Ej5fM() {
         return ActiveIndicatorTrailingSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3555getContainerHeightD9Ej5fM() {
+    public final float m4000getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -50,17 +50,17 @@ public final class NavigationRailBaselineItemTokens {
     }
 
     /* renamed from: getContainerVerticalSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3556getContainerVerticalSpaceD9Ej5fM() {
+    public final float m4001getContainerVerticalSpaceD9Ej5fM() {
         return ContainerVerticalSpace;
     }
 
     /* renamed from: getHeaderSpaceMinimum-D9Ej5fM  reason: not valid java name */
-    public final float m3557getHeaderSpaceMinimumD9Ej5fM() {
+    public final float m4002getHeaderSpaceMinimumD9Ej5fM() {
         return HeaderSpaceMinimum;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3558getIconSizeD9Ej5fM() {
+    public final float m4003getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

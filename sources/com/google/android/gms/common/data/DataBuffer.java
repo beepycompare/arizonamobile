@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.android.gms.common.api.Releasable;
 import java.io.Closeable;
 import java.util.Iterator;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public interface DataBuffer<T> extends Iterable<T>, Releasable, Closeable {
     void close();
@@ -21,7 +21,9 @@ public interface DataBuffer<T> extends Iterable<T>, Releasable, Closeable {
     @Override // java.lang.Iterable
     Iterator<T> iterator();
 
-    void release();
+    default void release() {
+        close();
+    }
 
     Iterator<T> singleRefIterator();
 }

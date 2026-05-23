@@ -1,44 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.plugins.IPluginReporter;
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import java.util.Collection;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
+import io.appmetrica.analytics.ecommerce.ECommerceOrder;
+import java.util.List;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Oe implements IPluginReporter {
+public final class Oe extends ECommerceEvent {
+    public static final int d = 6;
+    public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Re f729a = new Re();
-    public final Se b = new Se();
-    public final IHandlerExecutor c = C0135b4.l().g().a();
-    public final Provider d;
+    public final int f700a;
+    public final Qe b;
+    public final InterfaceC0632u8 c;
 
-    public Oe(Provider<Ra> provider) {
-        this.d = provider;
+    public Oe(int i, ECommerceOrder eCommerceOrder) {
+        this(i, new Qe(eCommerceOrder), new Pe());
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        Re re = this.f729a;
-        re.f771a.a(pluginErrorDetails);
-        if (re.c.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1199a) {
-            this.b.getClass();
-            this.c.execute(new Me(this, pluginErrorDetails, str));
-        }
+    public final InterfaceC0632u8 a() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f729a.f771a.a(pluginErrorDetails);
-        this.b.getClass();
-        this.c.execute(new Le(this, pluginErrorDetails));
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
+    public final String getPublicDescription() {
+        return "order info";
     }
 
-    @Override // io.appmetrica.analytics.plugins.IPluginReporter
-    public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f729a.b.a(str);
-        this.b.getClass();
-        this.c.execute(new Ne(this, str, str2, pluginErrorDetails));
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0407lg
+    public final List<Xi> toProto() {
+        return (List) this.c.fromModel(this);
+    }
+
+    public final String toString() {
+        return "OrderInfoEvent{eventType=" + this.f700a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Oe(int i, Qe qe, InterfaceC0632u8 interfaceC0632u8) {
+        this.f700a = i;
+        this.b = qe;
+        this.c = interfaceC0632u8;
     }
 }

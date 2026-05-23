@@ -1,32 +1,19 @@
 package com.google.android.gms.common.api.internal;
 
-import java.util.concurrent.locks.Lock;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-abstract class zabg {
-    private final zabf zaa;
+final class zabg implements Runnable {
+    final /* synthetic */ zabk zaa;
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public zabg(zabf zabfVar) {
-        this.zaa = zabfVar;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zabg(zabk zabkVar) {
+        Objects.requireNonNull(zabkVar);
+        this.zaa = zabkVar;
     }
 
-    protected abstract void zaa();
-
-    public final void zab(zabi zabiVar) {
-        Lock lock;
-        Lock lock2;
-        zabf zabfVar;
-        lock = zabiVar.zai;
-        lock.lock();
-        try {
-            zabfVar = zabiVar.zan;
-            if (zabfVar == this.zaa) {
-                zaa();
-            }
-        } finally {
-            lock2 = zabiVar.zai;
-            lock2.unlock();
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.zaa.zat();
     }
 }

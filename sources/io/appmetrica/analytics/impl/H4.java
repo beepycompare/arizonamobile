@@ -1,32 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Arrays;
-import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class H4 implements X6 {
+public final class H4 extends I4 {
+    public H4(Li li) {
+        super(li);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final String f613a;
-    public final String b;
-
-    public H4(Q4 q4) {
-        String b;
-        if (q4.d()) {
-            b = JvmProtoBufUtil.DEFAULT_MODULE_NAME;
-        } else {
-            b = q4.b();
+    public final void a(Db db, List<AbstractC0305hh> list) {
+        if (!Q9.h.contains(db)) {
+            list.add(this.f587a.s);
         }
-        this.f613a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
-        this.b = "db_metrica_" + q4;
-    }
-
-    @Override // io.appmetrica.analytics.impl.X6
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.impl.X6
-    public final String b() {
-        return this.f613a;
+        if (Q9.b.contains(db)) {
+            return;
+        }
+        list.add(this.f587a.c);
     }
 }

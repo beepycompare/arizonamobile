@@ -25,7 +25,7 @@ import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class DecoderVideoRenderer extends BaseRenderer {
     private static final int REINITIALIZATION_STATE_NONE = 0;
     private static final int REINITIALIZATION_STATE_SIGNAL_END_OF_STREAM = 1;

@@ -7,11 +7,11 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.ranges.RangesKt;
 /* compiled from: Dp.kt */
-@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\n\u001a\"\u0010\n\u001a\u00020\u0002*\u00020\u00022\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\fH\u0086\b¢\u0006\u0004\b\r\u0010\u000e\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001d\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00152\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001e\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00102\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001f\u001a \u0010 \u001a\u00020\u00022\u0006\u0010!\u001a\u00020\u00022\u0006\u0010\"\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b#\u0010\u001d\u001a \u0010$\u001a\u00020\u00022\u0006\u0010!\u001a\u00020\u00022\u0006\u0010\"\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b%\u0010\u001d\u001a$\u0010&\u001a\u00020\u0002*\u00020\u00022\u0006\u0010'\u001a\u00020\u00022\u0006\u0010(\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b)\u0010*\u001a\u001c\u0010+\u001a\u00020\u0002*\u00020\u00022\u0006\u0010'\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b,\u0010\u001d\u001a\u001c\u0010-\u001a\u00020\u0002*\u00020\u00022\u0006\u0010(\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b.\u0010\u001d\u001a'\u00102\u001a\u00020\u00022\u0006\u00103\u001a\u00020\u00022\u0006\u00104\u001a\u00020\u00022\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\b6\u0010*\u001a \u00107\u001a\u0002082\u0006\u00109\u001a\u00020\u00022\u0006\u0010:\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b;\u0010<\u001a\"\u0010\n\u001a\u000208*\u0002082\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002080\fH\u0086\b¢\u0006\u0004\bC\u0010D\u001a'\u00102\u001a\u0002082\u0006\u00103\u001a\u0002082\u0006\u00104\u001a\u0002082\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\bE\u0010F\u001a\u001f\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020\u00022\u0006\u0010J\u001a\u00020\u0002H\u0007¢\u0006\u0004\bK\u0010<\u001a\"\u0010\n\u001a\u00020H*\u00020H2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020H0\fH\u0086\b¢\u0006\u0004\bP\u0010D\u001a\u001c\u0010\u001a\u001a\u00020H*\u00020\u00102\u0006\u0010U\u001a\u00020HH\u0087\n¢\u0006\u0004\bV\u0010W\u001a\u001c\u0010\u001a\u001a\u00020H*\u00020\u00182\u0006\u0010U\u001a\u00020HH\u0087\n¢\u0006\u0004\bV\u0010X\u001a'\u00102\u001a\u00020H2\u0006\u00103\u001a\u00020H2\u0006\u00104\u001a\u00020H2\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\bY\u0010F\"\u001f\u0010\u0000\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006\"\u001f\u0010\u0007\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\b\u0010\u0004\u001a\u0004\b\t\u0010\u0006\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00108Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u0013\u0010\u0014\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00158Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0016\u001a\u0004\b\u0013\u0010\u0017\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00188Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0004\u001a\u0004\b\u0013\u0010\u0019\"\u001f\u0010/\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b0\u0010\u0004\u001a\u0004\b1\u0010\u0006\"\u001f\u0010\u0000\u001a\u00020\u0001*\u0002088Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b=\u0010>\u001a\u0004\b?\u0010@\"\u001f\u0010\u0007\u001a\u00020\u0001*\u0002088Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bA\u0010>\u001a\u0004\bB\u0010@\"\u001f\u0010\u0000\u001a\u00020\u0001*\u00020H8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bL\u0010>\u001a\u0004\bM\u0010@\"\u001f\u0010\u0007\u001a\u00020\u0001*\u00020H8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bN\u0010>\u001a\u0004\bO\u0010@\"\u001e\u0010Q\u001a\u000208*\u00020H8FX\u0087\u0004¢\u0006\f\u0012\u0004\bR\u0010>\u001a\u0004\bS\u0010T\"\u001f\u0010I\u001a\u00020\u0002*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b[\u0010\\\u001a\u0004\b]\u0010^\"\u001f\u0010J\u001a\u00020\u0002*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b_\u0010\\\u001a\u0004\b`\u0010^\"\u001f\u0010U\u001a\u00020H*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\ba\u0010\\\u001a\u0004\bb\u0010c¨\u0006d"}, d2 = {"isSpecified", "", "Landroidx/compose/ui/unit/Dp;", "isSpecified-0680j_4$annotations", "(F)V", "isSpecified-0680j_4", "(F)Z", "isUnspecified", "isUnspecified-0680j_4$annotations", "isUnspecified-0680j_4", "takeOrElse", "block", "Lkotlin/Function0;", "takeOrElse-D5KLDUw", "(FLkotlin/jvm/functions/Function0;)F", "dp", "", "getDp$annotations", "(I)V", "getDp", "(I)F", "", "(D)V", "(D)F", "", "(F)F", "times", "other", "times-3ABfNKs", "(FF)F", "(DF)F", "(IF)F", "min", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "min-YgX7TsA", "max", "max-YgX7TsA", "coerceIn", "minimumValue", "maximumValue", "coerceIn-2z7ARbQ", "(FFF)F", "coerceAtLeast", "coerceAtLeast-YgX7TsA", "coerceAtMost", "coerceAtMost-YgX7TsA", "isFinite", "isFinite-0680j_4$annotations", "isFinite-0680j_4", "lerp", TtmlNode.START, "stop", "fraction", "lerp-Md-fbLM", "DpOffset", "Landroidx/compose/ui/unit/DpOffset;", "x", "y", "DpOffset-YgX7TsA", "(FF)J", "isSpecified-jo-Fl9I$annotations", "(J)V", "isSpecified-jo-Fl9I", "(J)Z", "isUnspecified-jo-Fl9I$annotations", "isUnspecified-jo-Fl9I", "takeOrElse-gVKV90s", "(JLkotlin/jvm/functions/Function0;)J", "lerp-xhh869w", "(JJF)J", "DpSize", "Landroidx/compose/ui/unit/DpSize;", "width", "height", "DpSize-YgX7TsA", "isSpecified-EaSLcWc$annotations", "isSpecified-EaSLcWc", "isUnspecified-EaSLcWc$annotations", "isUnspecified-EaSLcWc", "takeOrElse-itqla9I", TtmlNode.CENTER, "getCenter-EaSLcWc$annotations", "getCenter-EaSLcWc", "(J)J", "size", "times-6HolHcs", "(IJ)J", "(FJ)J", "lerp-IDex15A", "Landroidx/compose/ui/unit/DpRect;", "getWidth$annotations", "(Landroidx/compose/ui/unit/DpRect;)V", "getWidth", "(Landroidx/compose/ui/unit/DpRect;)F", "getHeight$annotations", "getHeight", "getSize$annotations", "getSize", "(Landroidx/compose/ui/unit/DpRect;)J", "ui-unit"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\n\u001a\"\u0010\n\u001a\u00020\u0002*\u00020\u00022\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\fH\u0086\b¢\u0006\u0004\b\r\u0010\u000e\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001d\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00152\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001e\u001a\u001c\u0010\u001a\u001a\u00020\u0002*\u00020\u00102\u0006\u0010\u001b\u001a\u00020\u0002H\u0087\n¢\u0006\u0004\b\u001c\u0010\u001f\u001a \u0010 \u001a\u00020\u00022\u0006\u0010!\u001a\u00020\u00022\u0006\u0010\"\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b#\u0010\u001d\u001a \u0010$\u001a\u00020\u00022\u0006\u0010!\u001a\u00020\u00022\u0006\u0010\"\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b%\u0010\u001d\u001a$\u0010&\u001a\u00020\u0002*\u00020\u00022\u0006\u0010'\u001a\u00020\u00022\u0006\u0010(\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b)\u0010*\u001a\u001c\u0010+\u001a\u00020\u0002*\u00020\u00022\u0006\u0010'\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b,\u0010\u001d\u001a\u001c\u0010-\u001a\u00020\u0002*\u00020\u00022\u0006\u0010(\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b.\u0010\u001d\u001a'\u00102\u001a\u00020\u00022\u0006\u00103\u001a\u00020\u00022\u0006\u00104\u001a\u00020\u00022\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\b6\u0010*\u001a \u00107\u001a\u0002082\u0006\u00109\u001a\u00020\u00022\u0006\u0010:\u001a\u00020\u0002H\u0087\b¢\u0006\u0004\b;\u0010<\u001a\"\u0010\n\u001a\u000208*\u0002082\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002080\fH\u0086\b¢\u0006\u0004\bC\u0010D\u001a'\u00102\u001a\u0002082\u0006\u00103\u001a\u0002082\u0006\u00104\u001a\u0002082\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\bE\u0010F\u001a\u001f\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020\u00022\u0006\u0010J\u001a\u00020\u0002H\u0007¢\u0006\u0004\bK\u0010<\u001a\"\u0010\n\u001a\u00020H*\u00020H2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020H0\fH\u0086\b¢\u0006\u0004\bP\u0010D\u001a\u001c\u0010\u001a\u001a\u00020H*\u00020\u00102\u0006\u0010U\u001a\u00020HH\u0087\n¢\u0006\u0004\bV\u0010W\u001a\u001c\u0010\u001a\u001a\u00020H*\u00020\u00182\u0006\u0010U\u001a\u00020HH\u0087\n¢\u0006\u0004\bV\u0010X\u001a'\u00102\u001a\u00020H2\u0006\u00103\u001a\u00020H2\u0006\u00104\u001a\u00020H2\u0006\u00105\u001a\u00020\u0018H\u0007¢\u0006\u0004\bY\u0010F\"\u001f\u0010\u0000\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006\"\u001f\u0010\u0007\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\b\u0010\u0004\u001a\u0004\b\t\u0010\u0006\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00108Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0012\u001a\u0004\b\u0013\u0010\u0014\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00158Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0016\u001a\u0004\b\u0013\u0010\u0017\"\u001f\u0010\u000f\u001a\u00020\u0002*\u00020\u00188Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0004\u001a\u0004\b\u0013\u0010\u0019\"\u001f\u0010/\u001a\u00020\u0001*\u00020\u00028Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b0\u0010\u0004\u001a\u0004\b1\u0010\u0006\"\u001f\u0010\u0000\u001a\u00020\u0001*\u0002088Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b=\u0010>\u001a\u0004\b?\u0010@\"\u001f\u0010\u0007\u001a\u00020\u0001*\u0002088Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bA\u0010>\u001a\u0004\bB\u0010@\"\u001f\u0010\u0000\u001a\u00020\u0001*\u00020H8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bL\u0010>\u001a\u0004\bM\u0010@\"\u001f\u0010\u0007\u001a\u00020\u0001*\u00020H8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\bN\u0010>\u001a\u0004\bO\u0010@\"\u001e\u0010Q\u001a\u000208*\u00020H8FX\u0087\u0004¢\u0006\f\u0012\u0004\bR\u0010>\u001a\u0004\bS\u0010T\"\u001f\u0010I\u001a\u00020\u0002*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b[\u0010\\\u001a\u0004\b]\u0010^\"\u001f\u0010J\u001a\u00020\u0002*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\b_\u0010\\\u001a\u0004\b`\u0010^\"\u001f\u0010U\u001a\u00020H*\u00020Z8Æ\u0002X\u0087\u0004¢\u0006\f\u0012\u0004\ba\u0010\\\u001a\u0004\bb\u0010c¨\u0006d"}, d2 = {"isSpecified", "", "Landroidx/compose/ui/unit/Dp;", "isSpecified-0680j_4$annotations", "(F)V", "isSpecified-0680j_4", "(F)Z", "isUnspecified", "isUnspecified-0680j_4$annotations", "isUnspecified-0680j_4", "takeOrElse", "block", "Lkotlin/Function0;", "takeOrElse-D5KLDUw", "(FLkotlin/jvm/functions/Function0;)F", "dp", "", "getDp$annotations", "(I)V", "getDp", "(I)F", "", "(D)V", "(D)F", "", "(F)F", "times", "other", "times-3ABfNKs", "(FF)F", "(DF)F", "(IF)F", "min", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "min-YgX7TsA", "max", "max-YgX7TsA", "coerceIn", "minimumValue", "maximumValue", "coerceIn-2z7ARbQ", "(FFF)F", "coerceAtLeast", "coerceAtLeast-YgX7TsA", "coerceAtMost", "coerceAtMost-YgX7TsA", "isFinite", "isFinite-0680j_4$annotations", "isFinite-0680j_4", "lerp", TtmlNode.START, "stop", "fraction", "lerp-Md-fbLM", "DpOffset", "Landroidx/compose/ui/unit/DpOffset;", "x", "y", "DpOffset-YgX7TsA", "(FF)J", "isSpecified-jo-Fl9I$annotations", "(J)V", "isSpecified-jo-Fl9I", "(J)Z", "isUnspecified-jo-Fl9I$annotations", "isUnspecified-jo-Fl9I", "takeOrElse-gVKV90s", "(JLkotlin/jvm/functions/Function0;)J", "lerp-xhh869w", "(JJF)J", "DpSize", "Landroidx/compose/ui/unit/DpSize;", "width", "height", "DpSize-YgX7TsA", "isSpecified-EaSLcWc$annotations", "isSpecified-EaSLcWc", "isUnspecified-EaSLcWc$annotations", "isUnspecified-EaSLcWc", "takeOrElse-itqla9I", TtmlNode.CENTER, "getCenter-EaSLcWc$annotations", "getCenter-EaSLcWc", "(J)J", "size", "times-6HolHcs", "(IJ)J", "(FJ)J", "lerp-IDex15A", "Landroidx/compose/ui/unit/DpRect;", "getWidth$annotations", "(Landroidx/compose/ui/unit/DpRect;)V", "getWidth", "(Landroidx/compose/ui/unit/DpRect;)F", "getHeight$annotations", "getHeight", "getSize$annotations", "getSize", "(Landroidx/compose/ui/unit/DpRect;)J", "ui-unit"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class DpKt {
     /* renamed from: getCenter-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7582getCenterEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8187getCenterEaSLcWc$annotations(long j) {
     }
 
     public static /* synthetic */ void getDp$annotations(double d) {
@@ -33,185 +33,185 @@ public final class DpKt {
     }
 
     /* renamed from: isFinite-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7584isFinite0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8189isFinite0680j_4$annotations(float f) {
     }
 
     /* renamed from: isSpecified-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7586isSpecified0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8191isSpecified0680j_4$annotations(float f) {
     }
 
     /* renamed from: isSpecified-EaSLcWc  reason: not valid java name */
-    public static final boolean m7587isSpecifiedEaSLcWc(long j) {
+    public static final boolean m8192isSpecifiedEaSLcWc(long j) {
         return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7588isSpecifiedEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8193isSpecifiedEaSLcWc$annotations(long j) {
     }
 
     /* renamed from: isSpecified-jo-Fl9I  reason: not valid java name */
-    public static final boolean m7589isSpecifiedjoFl9I(long j) {
+    public static final boolean m8194isSpecifiedjoFl9I(long j) {
         return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-jo-Fl9I$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7590isSpecifiedjoFl9I$annotations(long j) {
+    public static /* synthetic */ void m8195isSpecifiedjoFl9I$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-0680j_4$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7592isUnspecified0680j_4$annotations(float f) {
+    public static /* synthetic */ void m8197isUnspecified0680j_4$annotations(float f) {
     }
 
     /* renamed from: isUnspecified-EaSLcWc  reason: not valid java name */
-    public static final boolean m7593isUnspecifiedEaSLcWc(long j) {
+    public static final boolean m8198isUnspecifiedEaSLcWc(long j) {
         return j == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-EaSLcWc$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7594isUnspecifiedEaSLcWc$annotations(long j) {
+    public static /* synthetic */ void m8199isUnspecifiedEaSLcWc$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-jo-Fl9I  reason: not valid java name */
-    public static final boolean m7595isUnspecifiedjoFl9I(long j) {
+    public static final boolean m8200isUnspecifiedjoFl9I(long j) {
         return j == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-jo-Fl9I$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7596isUnspecifiedjoFl9I$annotations(long j) {
+    public static /* synthetic */ void m8201isUnspecifiedjoFl9I$annotations(long j) {
     }
 
     /* renamed from: isSpecified-0680j_4  reason: not valid java name */
-    public static final boolean m7585isSpecified0680j_4(float f) {
+    public static final boolean m8190isSpecified0680j_4(float f) {
         return !Float.isNaN(f);
     }
 
     /* renamed from: isUnspecified-0680j_4  reason: not valid java name */
-    public static final boolean m7591isUnspecified0680j_4(float f) {
+    public static final boolean m8196isUnspecified0680j_4(float f) {
         return Float.isNaN(f);
     }
 
     public static final float getDp(int i) {
-        return Dp.m7555constructorimpl(i);
+        return Dp.m8160constructorimpl(i);
     }
 
     public static final float getDp(double d) {
-        return Dp.m7555constructorimpl((float) d);
+        return Dp.m8160constructorimpl((float) d);
     }
 
     public static final float getDp(float f) {
-        return Dp.m7555constructorimpl(f);
+        return Dp.m8160constructorimpl(f);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7606times3ABfNKs(float f, float f2) {
-        return Dp.m7555constructorimpl(f * f2);
+    public static final float m8211times3ABfNKs(float f, float f2) {
+        return Dp.m8160constructorimpl(f * f2);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7605times3ABfNKs(double d, float f) {
-        return Dp.m7555constructorimpl(((float) d) * f);
+    public static final float m8210times3ABfNKs(double d, float f) {
+        return Dp.m8160constructorimpl(((float) d) * f);
     }
 
     /* renamed from: times-3ABfNKs  reason: not valid java name */
-    public static final float m7607times3ABfNKs(int i, float f) {
-        return Dp.m7555constructorimpl(i * f);
+    public static final float m8212times3ABfNKs(int i, float f) {
+        return Dp.m8160constructorimpl(i * f);
     }
 
     /* renamed from: min-YgX7TsA  reason: not valid java name */
-    public static final float m7601minYgX7TsA(float f, float f2) {
-        return Dp.m7555constructorimpl(Math.min(f, f2));
+    public static final float m8206minYgX7TsA(float f, float f2) {
+        return Dp.m8160constructorimpl(Math.min(f, f2));
     }
 
     /* renamed from: max-YgX7TsA  reason: not valid java name */
-    public static final float m7600maxYgX7TsA(float f, float f2) {
-        return Dp.m7555constructorimpl(Math.max(f, f2));
+    public static final float m8205maxYgX7TsA(float f, float f2) {
+        return Dp.m8160constructorimpl(Math.max(f, f2));
     }
 
     /* renamed from: coerceIn-2z7ARbQ  reason: not valid java name */
-    public static final float m7580coerceIn2z7ARbQ(float f, float f2, float f3) {
-        return Dp.m7555constructorimpl(RangesKt.coerceIn(f, f2, f3));
+    public static final float m8185coerceIn2z7ARbQ(float f, float f2, float f3) {
+        return Dp.m8160constructorimpl(RangesKt.coerceIn(f, f2, f3));
     }
 
     /* renamed from: coerceAtLeast-YgX7TsA  reason: not valid java name */
-    public static final float m7578coerceAtLeastYgX7TsA(float f, float f2) {
-        return Dp.m7555constructorimpl(RangesKt.coerceAtLeast(f, f2));
+    public static final float m8183coerceAtLeastYgX7TsA(float f, float f2) {
+        return Dp.m8160constructorimpl(RangesKt.coerceAtLeast(f, f2));
     }
 
     /* renamed from: coerceAtMost-YgX7TsA  reason: not valid java name */
-    public static final float m7579coerceAtMostYgX7TsA(float f, float f2) {
-        return Dp.m7555constructorimpl(RangesKt.coerceAtMost(f, f2));
+    public static final float m8184coerceAtMostYgX7TsA(float f, float f2) {
+        return Dp.m8160constructorimpl(RangesKt.coerceAtMost(f, f2));
     }
 
     /* renamed from: lerp-Md-fbLM  reason: not valid java name */
-    public static final float m7598lerpMdfbLM(float f, float f2, float f3) {
-        return Dp.m7555constructorimpl(MathHelpersKt.lerp(f, f2, f3));
+    public static final float m8203lerpMdfbLM(float f, float f2, float f3) {
+        return Dp.m8160constructorimpl(MathHelpersKt.lerp(f, f2, f3));
     }
 
     /* renamed from: takeOrElse-gVKV90s  reason: not valid java name */
-    public static final long m7603takeOrElsegVKV90s(long j, Function0<DpOffset> function0) {
-        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m7624unboximpl();
+    public static final long m8208takeOrElsegVKV90s(long j, Function0<DpOffset> function0) {
+        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m8229unboximpl();
     }
 
     /* renamed from: lerp-xhh869w  reason: not valid java name */
-    public static final long m7599lerpxhh869w(long j, long j2, float f) {
-        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m7616getXD9Ej5fM(j), DpOffset.m7616getXD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m7618getYD9Ej5fM(j), DpOffset.m7618getYD9Ej5fM(j2), f)) & 4294967295L));
+    public static final long m8204lerpxhh869w(long j, long j2, float f) {
+        return DpOffset.m8216constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m8221getXD9Ej5fM(j), DpOffset.m8221getXD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(DpOffset.m8223getYD9Ej5fM(j), DpOffset.m8223getYD9Ej5fM(j2), f)) & 4294967295L));
     }
 
     /* renamed from: takeOrElse-itqla9I  reason: not valid java name */
-    public static final long m7604takeOrElseitqla9I(long j, Function0<DpSize> function0) {
-        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m7661unboximpl();
+    public static final long m8209takeOrElseitqla9I(long j, Function0<DpSize> function0) {
+        return j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m8266unboximpl();
     }
 
     /* renamed from: getCenter-EaSLcWc  reason: not valid java name */
-    public static final long m7581getCenterEaSLcWc(long j) {
-        float m7555constructorimpl = Dp.m7555constructorimpl(DpSize.m7653getWidthD9Ej5fM(j) / 2.0f);
-        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(DpSize.m7651getHeightD9Ej5fM(j) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(m7555constructorimpl) << 32));
+    public static final long m8186getCenterEaSLcWc(long j) {
+        float m8160constructorimpl = Dp.m8160constructorimpl(DpSize.m8258getWidthD9Ej5fM(j) / 2.0f);
+        return DpOffset.m8216constructorimpl((Float.floatToRawIntBits(Dp.m8160constructorimpl(DpSize.m8256getHeightD9Ej5fM(j) / 2.0f)) & 4294967295L) | (Float.floatToRawIntBits(m8160constructorimpl) << 32));
     }
 
     /* renamed from: times-6HolHcs  reason: not valid java name */
-    public static final long m7609times6HolHcs(int i, long j) {
-        return DpSize.m7659timesGh9hcWk(j, i);
+    public static final long m8214times6HolHcs(int i, long j) {
+        return DpSize.m8264timesGh9hcWk(j, i);
     }
 
     /* renamed from: times-6HolHcs  reason: not valid java name */
-    public static final long m7608times6HolHcs(float f, long j) {
-        return DpSize.m7658timesGh9hcWk(j, f);
+    public static final long m8213times6HolHcs(float f, long j) {
+        return DpSize.m8263timesGh9hcWk(j, f);
     }
 
     /* renamed from: lerp-IDex15A  reason: not valid java name */
-    public static final long m7597lerpIDex15A(long j, long j2, float f) {
-        return DpSize.m7644constructorimpl((Float.floatToRawIntBits(m7598lerpMdfbLM(DpSize.m7653getWidthD9Ej5fM(j), DpSize.m7653getWidthD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(m7598lerpMdfbLM(DpSize.m7651getHeightD9Ej5fM(j), DpSize.m7651getHeightD9Ej5fM(j2), f)) & 4294967295L));
+    public static final long m8202lerpIDex15A(long j, long j2, float f) {
+        return DpSize.m8249constructorimpl((Float.floatToRawIntBits(m8203lerpMdfbLM(DpSize.m8258getWidthD9Ej5fM(j), DpSize.m8258getWidthD9Ej5fM(j2), f)) << 32) | (Float.floatToRawIntBits(m8203lerpMdfbLM(DpSize.m8256getHeightD9Ej5fM(j), DpSize.m8256getHeightD9Ej5fM(j2), f)) & 4294967295L));
     }
 
     public static final float getWidth(DpRect dpRect) {
-        return Dp.m7555constructorimpl(dpRect.m7639getRightD9Ej5fM() - dpRect.m7638getLeftD9Ej5fM());
+        return Dp.m8160constructorimpl(dpRect.m8244getRightD9Ej5fM() - dpRect.m8243getLeftD9Ej5fM());
     }
 
     public static final float getHeight(DpRect dpRect) {
-        return Dp.m7555constructorimpl(dpRect.m7637getBottomD9Ej5fM() - dpRect.m7640getTopD9Ej5fM());
+        return Dp.m8160constructorimpl(dpRect.m8242getBottomD9Ej5fM() - dpRect.m8245getTopD9Ej5fM());
     }
 
     /* renamed from: takeOrElse-D5KLDUw  reason: not valid java name */
-    public static final float m7602takeOrElseD5KLDUw(float f, Function0<Dp> function0) {
-        return !Float.isNaN(f) ? f : function0.invoke().m7569unboximpl();
+    public static final float m8207takeOrElseD5KLDUw(float f, Function0<Dp> function0) {
+        return !Float.isNaN(f) ? f : function0.invoke().m8174unboximpl();
     }
 
     /* renamed from: isFinite-0680j_4  reason: not valid java name */
-    public static final boolean m7583isFinite0680j_4(float f) {
+    public static final boolean m8188isFinite0680j_4(float f) {
         return (Float.floatToRawIntBits(f) & Integer.MAX_VALUE) < 2139095040;
     }
 
     /* renamed from: DpOffset-YgX7TsA  reason: not valid java name */
-    public static final long m7576DpOffsetYgX7TsA(float f, float f2) {
-        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static final long m8181DpOffsetYgX7TsA(float f, float f2) {
+        return DpOffset.m8216constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: DpSize-YgX7TsA  reason: not valid java name */
-    public static final long m7577DpSizeYgX7TsA(float f, float f2) {
-        return DpSize.m7644constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static final long m8182DpSizeYgX7TsA(float f, float f2) {
+        return DpSize.m8249constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     public static final long getSize(DpRect dpRect) {
-        return m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(dpRect.m7639getRightD9Ej5fM() - dpRect.m7638getLeftD9Ej5fM()), Dp.m7555constructorimpl(dpRect.m7637getBottomD9Ej5fM() - dpRect.m7640getTopD9Ej5fM()));
+        return m8182DpSizeYgX7TsA(Dp.m8160constructorimpl(dpRect.m8244getRightD9Ej5fM() - dpRect.m8243getLeftD9Ej5fM()), Dp.m8160constructorimpl(dpRect.m8242getBottomD9Ej5fM() - dpRect.m8245getTopD9Ej5fM()));
     }
 }

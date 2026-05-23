@@ -13,7 +13,7 @@ import android.util.Log;
 import com.nvidia.devtech.NvEventQueueActivity;
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarBase extends NvEventQueueActivity {
     private static final String TAG = "WarBase";
     public boolean FinalRelease = false;

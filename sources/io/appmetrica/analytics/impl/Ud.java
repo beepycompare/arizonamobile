@@ -1,5 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public interface Ud {
-    C0192d9 a(Integer num, String str);
+public final class Ud {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final U5 f790a = C0576s4.l().h();
 }

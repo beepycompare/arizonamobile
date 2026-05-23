@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.LayoutDirection;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 /* compiled from: CornerBasedShape.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\b\u0004\b'\u0018\u00002\u00020\u00012\u00020\u0002B'\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0004¢\u0006\u0004\b\b\u0010\tJ%\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016¢\u0006\u0004\b\u0017\u0010\u0018J?\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0003\u001a\u00020\u00192\u0006\u0010\u0005\u001a\u00020\u00192\u0006\u0010\u0006\u001a\u00020\u00192\u0006\u0010\u0007\u001a\u00020\u00192\u0006\u0010\u0013\u001a\u00020\u0014H&¢\u0006\u0004\b\u001a\u0010\u001bJ0\u0010\u001c\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00042\b\b\u0002\u0010\u0007\u001a\u00020\u0004H&J\u001c\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\b\u0010\u001f\u001a\u0004\u0018\u00010\u001e2\u0006\u0010 \u001a\u00020\u0019H\u0016J\u000e\u0010\u001c\u001a\u00020\u00002\u0006\u0010!\u001a\u00020\u0004R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000bR\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000b¨\u0006\""}, d2 = {"Landroidx/compose/foundation/shape/CornerBasedShape;", "Landroidx/compose/ui/graphics/Shape;", "Landroidx/compose/ui/graphics/Interpolatable;", "topStart", "Landroidx/compose/foundation/shape/CornerSize;", "topEnd", "bottomEnd", "bottomStart", "<init>", "(Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;)V", "getTopStart", "()Landroidx/compose/foundation/shape/CornerSize;", "getTopEnd", "getBottomEnd", "getBottomStart", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "", "createOutline-LjSzlW0", "(JFFFFLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/graphics/Outline;", "copy", "lerp", "", "other", "t", TtmlNode.COMBINE_ALL, "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\b\u0004\b'\u0018\u00002\u00020\u00012\u00020\u0002B'\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0004¢\u0006\u0004\b\b\u0010\tJ%\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016¢\u0006\u0004\b\u0017\u0010\u0018J?\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0003\u001a\u00020\u00192\u0006\u0010\u0005\u001a\u00020\u00192\u0006\u0010\u0006\u001a\u00020\u00192\u0006\u0010\u0007\u001a\u00020\u00192\u0006\u0010\u0013\u001a\u00020\u0014H&¢\u0006\u0004\b\u001a\u0010\u001bJ0\u0010\u001c\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00042\b\b\u0002\u0010\u0007\u001a\u00020\u0004H&J\u001c\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\b\u0010\u001f\u001a\u0004\u0018\u00010\u001e2\u0006\u0010 \u001a\u00020\u0019H\u0016J\u000e\u0010\u001c\u001a\u00020\u00002\u0006\u0010!\u001a\u00020\u0004R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0005\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\u000bR\u0011\u0010\u0006\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000bR\u0011\u0010\u0007\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000b¨\u0006\""}, d2 = {"Landroidx/compose/foundation/shape/CornerBasedShape;", "Landroidx/compose/ui/graphics/Shape;", "Landroidx/compose/ui/graphics/Interpolatable;", "topStart", "Landroidx/compose/foundation/shape/CornerSize;", "topEnd", "bottomEnd", "bottomStart", "<init>", "(Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;Landroidx/compose/foundation/shape/CornerSize;)V", "getTopStart", "()Landroidx/compose/foundation/shape/CornerSize;", "getTopEnd", "getBottomEnd", "getBottomStart", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "", "createOutline-LjSzlW0", "(JFFFFLandroidx/compose/ui/unit/LayoutDirection;)Landroidx/compose/ui/graphics/Outline;", "copy", "lerp", "", "other", "t", TtmlNode.COMBINE_ALL, "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class CornerBasedShape implements Shape, Interpolatable {
     public static final int $stable = 0;
@@ -22,7 +22,7 @@ public abstract class CornerBasedShape implements Shape, Interpolatable {
     public abstract CornerBasedShape copy(CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4);
 
     /* renamed from: createOutline-LjSzlW0 */
-    public abstract Outline mo1109createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
+    public abstract Outline mo1363createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
 
     public Object lerp(Object obj, float f) {
         return null;
@@ -53,28 +53,28 @@ public abstract class CornerBasedShape implements Shape, Interpolatable {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public final Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-        float mo1117toPxTmRCtEA = this.topStart.mo1117toPxTmRCtEA(j, density);
-        float mo1117toPxTmRCtEA2 = this.topEnd.mo1117toPxTmRCtEA(j, density);
-        float mo1117toPxTmRCtEA3 = this.bottomEnd.mo1117toPxTmRCtEA(j, density);
-        float mo1117toPxTmRCtEA4 = this.bottomStart.mo1117toPxTmRCtEA(j, density);
-        float m4595getMinDimensionimpl = Size.m4595getMinDimensionimpl(j);
-        float f = mo1117toPxTmRCtEA + mo1117toPxTmRCtEA4;
-        if (f > m4595getMinDimensionimpl) {
-            float f2 = m4595getMinDimensionimpl / f;
-            mo1117toPxTmRCtEA *= f2;
-            mo1117toPxTmRCtEA4 *= f2;
+    public final Outline mo344createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+        float mo1371toPxTmRCtEA = this.topStart.mo1371toPxTmRCtEA(j, density);
+        float mo1371toPxTmRCtEA2 = this.topEnd.mo1371toPxTmRCtEA(j, density);
+        float mo1371toPxTmRCtEA3 = this.bottomEnd.mo1371toPxTmRCtEA(j, density);
+        float mo1371toPxTmRCtEA4 = this.bottomStart.mo1371toPxTmRCtEA(j, density);
+        float m5171getMinDimensionimpl = Size.m5171getMinDimensionimpl(j);
+        float f = mo1371toPxTmRCtEA + mo1371toPxTmRCtEA4;
+        if (f > m5171getMinDimensionimpl) {
+            float f2 = m5171getMinDimensionimpl / f;
+            mo1371toPxTmRCtEA *= f2;
+            mo1371toPxTmRCtEA4 *= f2;
         }
-        float f3 = mo1117toPxTmRCtEA2 + mo1117toPxTmRCtEA3;
-        if (f3 > m4595getMinDimensionimpl) {
-            float f4 = m4595getMinDimensionimpl / f3;
-            mo1117toPxTmRCtEA2 *= f4;
-            mo1117toPxTmRCtEA3 *= f4;
+        float f3 = mo1371toPxTmRCtEA2 + mo1371toPxTmRCtEA3;
+        if (f3 > m5171getMinDimensionimpl) {
+            float f4 = m5171getMinDimensionimpl / f3;
+            mo1371toPxTmRCtEA2 *= f4;
+            mo1371toPxTmRCtEA3 *= f4;
         }
-        if (!(mo1117toPxTmRCtEA >= 0.0f && mo1117toPxTmRCtEA2 >= 0.0f && mo1117toPxTmRCtEA3 >= 0.0f && mo1117toPxTmRCtEA4 >= 0.0f)) {
-            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1117toPxTmRCtEA + ", topEnd = " + mo1117toPxTmRCtEA2 + ", bottomEnd = " + mo1117toPxTmRCtEA3 + ", bottomStart = " + mo1117toPxTmRCtEA4 + ")!");
+        if (!(mo1371toPxTmRCtEA >= 0.0f && mo1371toPxTmRCtEA2 >= 0.0f && mo1371toPxTmRCtEA3 >= 0.0f && mo1371toPxTmRCtEA4 >= 0.0f)) {
+            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1371toPxTmRCtEA + ", topEnd = " + mo1371toPxTmRCtEA2 + ", bottomEnd = " + mo1371toPxTmRCtEA3 + ", bottomStart = " + mo1371toPxTmRCtEA4 + ")!");
         }
-        return mo1109createOutlineLjSzlW0(j, mo1117toPxTmRCtEA, mo1117toPxTmRCtEA2, mo1117toPxTmRCtEA3, mo1117toPxTmRCtEA4, layoutDirection);
+        return mo1363createOutlineLjSzlW0(j, mo1371toPxTmRCtEA, mo1371toPxTmRCtEA2, mo1371toPxTmRCtEA3, mo1371toPxTmRCtEA4, layoutDirection);
     }
 
     public static /* synthetic */ CornerBasedShape copy$default(CornerBasedShape cornerBasedShape, CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4, int i, Object obj) {

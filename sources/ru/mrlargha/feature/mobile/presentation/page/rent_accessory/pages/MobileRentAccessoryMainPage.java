@@ -552,7 +552,7 @@ public final class MobileRentAccessoryMainPage {
         Job launch$default;
         Job job = this.updateJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryMainPage$checkUpdate$1(this, null), 3, null);
         this.updateJob = launch$default;

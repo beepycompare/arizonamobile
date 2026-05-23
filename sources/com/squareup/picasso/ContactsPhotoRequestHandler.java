@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import okio.Okio;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ContactsPhotoRequestHandler extends RequestHandler {
     private static final int ID_CONTACT = 3;
     private static final int ID_DISPLAY_PHOTO = 4;

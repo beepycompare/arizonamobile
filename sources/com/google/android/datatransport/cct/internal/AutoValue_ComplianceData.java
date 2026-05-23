@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.ComplianceData;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ComplianceData extends ComplianceData {
     private final ExternalPrivacyContext privacyContext;
     private final ComplianceData.ProductIdOrigin productIdOrigin;
@@ -49,7 +49,7 @@ final class AutoValue_ComplianceData extends ComplianceData {
         return hashCode ^ (productIdOrigin != null ? productIdOrigin.hashCode() : 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends ComplianceData.Builder {
         private ExternalPrivacyContext privacyContext;
         private ComplianceData.ProductIdOrigin productIdOrigin;

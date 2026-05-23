@@ -1,22 +1,25 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.locationapi.internal.LocationControllerObserver;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Lambda;
+import android.os.Handler;
+import android.os.SystemClock;
+import com.google.firebase.messaging.ServiceStarter;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Qb extends Lambda implements Function1 {
+public final class Qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Qb f754a = new Qb();
+    public final Handler f729a;
+    public final V2 b;
+    public final Rb c;
 
-    public Qb() {
-        super(1);
+    public Qb(Handler handler, V2 v2) {
+        this.f729a = handler;
+        this.b = v2;
+        this.c = new Rb(handler, v2);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final Object invoke(Object obj) {
-        ((LocationControllerObserver) obj).startLocationTracking();
-        return Unit.INSTANCE;
+    public static void a(Handler handler, V2 v2, Runnable runnable) {
+        handler.removeCallbacks(runnable, v2.b.b.getApiKey());
+        handler.postAtTime(runnable, v2.b.b.getApiKey(), SystemClock.uptimeMillis() + (((Integer) WrapUtils.getOrDefault(v2.b.b.getSessionTimeout(), 10)).intValue() * ServiceStarter.ERROR_UNKNOWN));
     }
 }

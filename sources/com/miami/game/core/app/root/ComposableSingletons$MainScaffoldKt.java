@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: MainScaffold.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$MainScaffoldKt {
     public static final ComposableSingletons$MainScaffoldKt INSTANCE = new ComposableSingletons$MainScaffoldKt();
     private static Function2<Composer, Integer, Unit> lambda$1170228028 = ComposableLambdaKt.composableLambdaInstance(1170228028, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda0
@@ -19,7 +19,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: lambda$-863503316  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f129lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
+    private static Function2<Composer, Integer, Unit> f49lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$MainScaffoldKt.lambda__863503316$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -27,7 +27,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: lambda$-1632204659  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f128lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
+    private static Function2<Composer, Integer, Unit> f48lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$MainScaffoldKt.lambda__1632204659$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -35,13 +35,13 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: getLambda$-1632204659$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9074getLambda$1632204659$app_root() {
-        return f128lambda$1632204659;
+    public final Function2<Composer, Integer, Unit> m9712getLambda$1632204659$app_root() {
+        return f48lambda$1632204659;
     }
 
     /* renamed from: getLambda$-863503316$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9075getLambda$863503316$app_root() {
-        return f129lambda$863503316;
+    public final Function2<Composer, Integer, Unit> m9713getLambda$863503316$app_root() {
+        return f49lambda$863503316;
     }
 
     public final Function2<Composer, Integer, Unit> getLambda$1170228028$app_root() {

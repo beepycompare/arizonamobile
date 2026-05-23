@@ -2,7 +2,7 @@ package com.google.android.datatransport;
 
 import com.google.android.datatransport.EventContext;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_EventContext extends EventContext {
     private final byte[] experimentIdsClear;
     private final byte[] experimentIdsEncrypted;
@@ -57,7 +57,7 @@ final class AutoValue_EventContext extends EventContext {
         return Arrays.hashCode(this.experimentIdsEncrypted) ^ (((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.experimentIdsClear)) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends EventContext.Builder {
         private byte[] experimentIdsClear;
         private byte[] experimentIdsEncrypted;

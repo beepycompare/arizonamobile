@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* compiled from: LocalRepository.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/datastore/preferences/core/Preferences;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$remove$2", f = "LocalRepository.kt", i = {}, l = {57}, m = "invokeSuspend", n = {}, nl = {59}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class LocalRepository$remove$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Preferences>, Object> {
     final /* synthetic */ String $key;
     int label;
@@ -47,7 +47,7 @@ public final class LocalRepository$remove$2 extends SuspendLambda implements Fun
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Landroidx/datastore/preferences/core/MutablePreferences;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$remove$2$1", f = "LocalRepository.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$remove$2$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<MutablePreferences, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $key;
         /* synthetic */ Object L$0;

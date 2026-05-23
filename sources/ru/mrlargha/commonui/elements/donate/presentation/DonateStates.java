@@ -124,7 +124,7 @@ public final class DonateStates {
         this.currentCategory = i;
         Job job = this.itemJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.itemJob = null;
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateStates$setItemsArizona$1(this, z, i, null), 3, null);
@@ -137,7 +137,7 @@ public final class DonateStates {
         this.currentCategory = i;
         Job job = this.itemJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.itemJob = null;
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateStates$setItemsRodina$1(this, i, z2, z, null), 3, null);
@@ -246,12 +246,12 @@ public final class DonateStates {
     public final void clearJobs() {
         Job job = this.itemJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.itemJob = null;
         Job job2 = this.updateItemJob;
         if (job2 != null) {
-            Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
         }
         this.updateItemJob = null;
     }

@@ -1,6 +1,6 @@
 package com.google.android.gms.measurement.internal;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public abstract class zzjf extends zzje {
     private boolean zza;
@@ -13,7 +13,7 @@ public abstract class zzjf extends zzje {
 
     protected abstract boolean zza();
 
-    protected void zzba() {
+    protected void zzbb() {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -43,7 +43,7 @@ public abstract class zzjf extends zzje {
         if (this.zza) {
             throw new IllegalStateException("Can't initialize twice");
         }
-        zzba();
+        zzbb();
         this.zzu.zzG();
         this.zza = true;
     }

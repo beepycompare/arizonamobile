@@ -1,11 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.os.UserManager;
-import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Yn {
-    public static boolean a(Context context) {
-        return ((Boolean) SystemServiceUtils.accessSystemServiceSafelyOrDefault((UserManager) context.getSystemService(UserManager.class), "detect unlocked user state", "User manager", Boolean.TRUE, new Xn())).booleanValue();
-    }
+public abstract class Yn {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final List f862a = CollectionUtils.createSortedListWithoutRepetitions("id", "scope", "data", "timestamp");
 }

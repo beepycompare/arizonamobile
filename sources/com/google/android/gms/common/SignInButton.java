@@ -7,12 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.internal.zaaa;
-import com.google.android.gms.common.internal.zaz;
+import com.google.android.gms.common.internal.zaac;
+import com.google.android.gms.common.internal.zaad;
 import com.google.android.gms.dynamic.RemoteCreator;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class SignInButton extends FrameLayout implements View.OnClickListener {
     public static final int COLOR_AUTO = 2;
@@ -26,13 +26,13 @@ public final class SignInButton extends FrameLayout implements View.OnClickListe
     private View zac;
     private View.OnClickListener zad;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface ButtonSize {
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface ColorScheme {
@@ -48,14 +48,14 @@ public final class SignInButton extends FrameLayout implements View.OnClickListe
             removeView(view);
         }
         try {
-            this.zac = zaz.zaa(context, this.zaa, this.zab);
+            this.zac = zaac.zaa(context, this.zaa, this.zab);
         } catch (RemoteCreator.RemoteCreatorException unused) {
             Log.w("SignInButton", "Sign in button not found, using placeholder instead");
             int i = this.zaa;
             int i2 = this.zab;
-            zaaa zaaaVar = new zaaa(context, null);
-            zaaaVar.zaa(context.getResources(), i, i2);
-            this.zac = zaaaVar;
+            zaad zaadVar = new zaad(context, null);
+            zaadVar.zaa(context.getResources(), i, i2);
+            this.zac = zaadVar;
         }
         addView(this.zac);
         this.zac.setEnabled(isEnabled());

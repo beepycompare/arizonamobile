@@ -1,14 +1,19 @@
 package com.google.android.material.resources;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.TypedValue;
 import android.view.View;
 import com.google.android.material.R;
 /* loaded from: classes4.dex */
 public class MaterialAttributes {
     public static TypedValue resolve(Context context, int i) {
+        return resolve(context.getTheme(), i);
+    }
+
+    public static TypedValue resolve(Resources.Theme theme, int i) {
         TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(i, typedValue, true)) {
+        if (theme.resolveAttribute(i, typedValue, true)) {
             return typedValue;
         }
         return null;
@@ -39,12 +44,20 @@ public class MaterialAttributes {
     }
 
     public static boolean resolveBoolean(Context context, int i, boolean z) {
-        TypedValue resolve = resolve(context, i);
+        return resolveBoolean(context.getTheme(), i, z);
+    }
+
+    public static boolean resolveBoolean(Resources.Theme theme, int i, boolean z) {
+        TypedValue resolve = resolve(theme, i);
         return (resolve == null || resolve.type != 18) ? z : resolve.data != 0;
     }
 
     public static int resolveInteger(Context context, int i, int i2) {
-        TypedValue resolve = resolve(context, i);
+        return resolveInteger(context.getTheme(), i, i2);
+    }
+
+    public static int resolveInteger(Resources.Theme theme, int i, int i2) {
+        TypedValue resolve = resolve(theme, i);
         return (resolve == null || resolve.type != 16) ? i2 : resolve.data;
     }
 
@@ -53,13 +66,12 @@ public class MaterialAttributes {
     }
 
     public static int resolveDimension(Context context, int i, int i2) {
-        float dimension;
-        TypedValue resolve = resolve(context, i);
-        if (resolve == null || resolve.type != 5) {
-            dimension = context.getResources().getDimension(i2);
-        } else {
-            dimension = resolve.getDimension(context.getResources().getDisplayMetrics());
-        }
-        return (int) dimension;
+        float resolveDimension = resolveDimension(context.getTheme(), i, Float.NaN);
+        return Float.isNaN(resolveDimension) ? (int) context.getResources().getDimension(i2) : (int) resolveDimension;
+    }
+
+    public static float resolveDimension(Resources.Theme theme, int i, float f) {
+        TypedValue resolve = resolve(theme, i);
+        return (resolve == null || resolve.type != 5) ? f : resolve.getDimension(theme.getResources().getDisplayMetrics());
     }
 }

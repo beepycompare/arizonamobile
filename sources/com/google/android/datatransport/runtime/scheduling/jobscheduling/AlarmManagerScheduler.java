@@ -12,7 +12,7 @@ import com.google.android.datatransport.runtime.logging.Logging;
 import com.google.android.datatransport.runtime.scheduling.persistence.EventStore;
 import com.google.android.datatransport.runtime.time.Clock;
 import com.google.android.datatransport.runtime.util.PriorityMapping;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AlarmManagerScheduler implements WorkScheduler {
     static final String ATTEMPT_NUMBER = "attemptNumber";
     static final String BACKEND_NAME = "backendName";

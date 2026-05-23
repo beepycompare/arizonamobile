@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.ResultTransform;
 import com.google.android.gms.common.api.TransformedResult;
 import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class OptionalPendingResultImpl<R extends Result> extends OptionalPendingResult<R> {
     private final BasePendingResult zaa;
@@ -33,8 +33,9 @@ public final class OptionalPendingResultImpl<R extends Result> extends OptionalP
 
     @Override // com.google.android.gms.common.api.OptionalPendingResult
     public final R get() {
-        if (this.zaa.isReady()) {
-            return (R) this.zaa.await(0L, TimeUnit.MILLISECONDS);
+        BasePendingResult basePendingResult = this.zaa;
+        if (basePendingResult.isReady()) {
+            return (R) basePendingResult.await(0L, TimeUnit.MILLISECONDS);
         }
         throw new IllegalStateException("Result is not available. Check that isDone() returns true before calling get().");
     }

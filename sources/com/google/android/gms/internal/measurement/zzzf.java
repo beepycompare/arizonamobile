@@ -1,0 +1,14 @@
+package com.google.android.gms.internal.measurement;
+
+import java.util.logging.Level;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+public abstract class zzzf {
+    public abstract String zza();
+
+    public abstract boolean zzb(Level level);
+
+    public abstract void zzc(zzzd zzzdVar);
+
+    public abstract void zzd(RuntimeException runtimeException, zzzd zzzdVar);
+}

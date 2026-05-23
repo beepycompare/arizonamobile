@@ -7,13 +7,13 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AndroidPopup.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ComposableSingletons$AndroidPopup_androidKt {
     public static final ComposableSingletons$AndroidPopup_androidKt INSTANCE = new ComposableSingletons$AndroidPopup_androidKt();
 
     /* renamed from: lambda$-1131826196  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f123lambda$1131826196 = ComposableLambdaKt.composableLambdaInstance(-1131826196, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt$lambda$-1131826196$1
+    private static Function2<Composer, Integer, Unit> f43lambda$1131826196 = ComposableLambdaKt.composableLambdaInstance(-1131826196, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt$lambda$-1131826196$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -27,7 +27,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:574)");
+                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:698)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -36,7 +36,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
     });
 
     /* renamed from: getLambda$-1131826196$ui  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m7809getLambda$1131826196$ui() {
-        return f123lambda$1131826196;
+    public final Function2<Composer, Integer, Unit> m8414getLambda$1131826196$ui() {
+        return f43lambda$1131826196;
     }
 }

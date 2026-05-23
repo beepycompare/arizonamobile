@@ -19,24 +19,36 @@ import java.util.List;
 public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private MediaPeriod.Callback callback;
     private ClippingMediaSource.IllegalClippingException clippingError;
+    private final boolean enableClippingInMediaPeriod;
     long endUs;
+    private boolean isPeriodClippingEndPosition;
     private long lastReportedDiscontinuityUs;
     public final MediaPeriod mediaPeriod;
     private long pendingInitialDiscontinuityPositionUs;
-    private ClippingSampleStream[] sampleStreams = new ClippingSampleStream[0];
+    private ClippingSampleStream[] sampleStreams;
     long startUs;
 
     public ClippingMediaPeriod(MediaPeriod mediaPeriod, boolean z, long j, long j2) {
+        this(mediaPeriod, z, j, j2, false);
+    }
+
+    public ClippingMediaPeriod(MediaPeriod mediaPeriod, boolean z, long j, long j2, boolean z2) {
         this.mediaPeriod = mediaPeriod;
+        this.sampleStreams = new ClippingSampleStream[0];
         this.pendingInitialDiscontinuityPositionUs = z ? j : -9223372036854775807L;
         this.lastReportedDiscontinuityUs = C.TIME_UNSET;
-        this.startUs = j;
-        this.endUs = j2;
+        this.enableClippingInMediaPeriod = z2;
+        updateClipping(j, j2);
     }
 
     public void updateClipping(long j, long j2) {
         this.startUs = j;
         this.endUs = j2;
+        if (this.enableClippingInMediaPeriod) {
+            long endPositionUs = this.mediaPeriod.setEndPositionUs(j2);
+            Preconditions.checkState(endPositionUs == Long.MIN_VALUE || endPositionUs == j2, "Period updating end positions not supported, %s!=%s", endPositionUs, j2);
+            this.isPeriodClippingEndPosition = endPositionUs == j2;
+        }
     }
 
     public void setClippingError(ClippingMediaSource.IllegalClippingException illegalClippingException) {
@@ -140,13 +152,19 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     @Override // androidx.media3.exoplayer.source.MediaPeriod, androidx.media3.exoplayer.source.SequenceableLoader
     public long getBufferedPositionUs() {
         long bufferedPositionUs = this.mediaPeriod.getBufferedPositionUs();
-        if (bufferedPositionUs != Long.MIN_VALUE) {
-            long j = this.endUs;
-            if (j == Long.MIN_VALUE || bufferedPositionUs < j) {
-                return bufferedPositionUs;
+        if (!this.isPeriodClippingEndPosition) {
+            if (bufferedPositionUs != Long.MIN_VALUE) {
+                long j = this.endUs;
+                if (j == Long.MIN_VALUE || bufferedPositionUs < j) {
+                }
             }
+            return Long.MIN_VALUE;
         }
-        return Long.MIN_VALUE;
+        long j2 = this.endUs;
+        if (j2 != Long.MIN_VALUE && bufferedPositionUs != Long.MIN_VALUE) {
+            return Math.min(j2, bufferedPositionUs);
+        }
+        return bufferedPositionUs;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
@@ -173,13 +191,19 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     @Override // androidx.media3.exoplayer.source.MediaPeriod, androidx.media3.exoplayer.source.SequenceableLoader
     public long getNextLoadPositionUs() {
         long nextLoadPositionUs = this.mediaPeriod.getNextLoadPositionUs();
-        if (nextLoadPositionUs != Long.MIN_VALUE) {
-            long j = this.endUs;
-            if (j == Long.MIN_VALUE || nextLoadPositionUs < j) {
-                return nextLoadPositionUs;
+        if (!this.isPeriodClippingEndPosition) {
+            if (nextLoadPositionUs != Long.MIN_VALUE) {
+                long j = this.endUs;
+                if (j == Long.MIN_VALUE || nextLoadPositionUs < j) {
+                }
             }
+            return Long.MIN_VALUE;
         }
-        return Long.MIN_VALUE;
+        long j2 = this.endUs;
+        if (j2 != Long.MIN_VALUE && nextLoadPositionUs != Long.MIN_VALUE) {
+            return Math.min(j2, nextLoadPositionUs);
+        }
+        return nextLoadPositionUs;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod, androidx.media3.exoplayer.source.SequenceableLoader
@@ -262,30 +286,65 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             this.childStream.maybeThrowError();
         }
 
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x007e, code lost:
+            if (r19.timeUs < r17.this$0.endUs) goto L31;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:35:0x008b, code lost:
+            if (r19.waitingForKeys == false) goto L29;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x008d, code lost:
+            r19.clear();
+            r19.setFlags(4);
+            r17.sentEos = true;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x0096, code lost:
+            return r4;
+         */
         @Override // androidx.media3.exoplayer.source.SampleStream
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public int readData(FormatHolder formatHolder, DecoderInputBuffer decoderInputBuffer, int i) {
+            int i2;
+            long j;
             if (ClippingMediaPeriod.this.isPendingInitialDiscontinuity()) {
                 return -3;
             }
-            if (this.sentEos) {
-                decoderInputBuffer.setFlags(4);
-                return -4;
-            }
-            long bufferedPositionUs = ClippingMediaPeriod.this.getBufferedPositionUs();
-            int readData = this.childStream.readData(formatHolder, decoderInputBuffer, i);
-            if (readData == -5) {
-                Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
-                if (format.encoderDelay != 0 || format.encoderPadding != 0) {
-                    formatHolder.format = format.buildUpon().setEncoderDelay(ClippingMediaPeriod.this.startUs != 0 ? 0 : format.encoderDelay).setEncoderPadding(ClippingMediaPeriod.this.endUs == Long.MIN_VALUE ? format.encoderPadding : 0).build();
+            if (ClippingMediaPeriod.this.isPeriodClippingEndPosition) {
+                int readData = this.childStream.readData(formatHolder, decoderInputBuffer, i);
+                if (readData == -5) {
+                    ClippingMediaPeriod.updateDecoderDelayPaddingForClipping(formatHolder, ClippingMediaPeriod.this.startUs, ClippingMediaPeriod.this.endUs);
+                    return -5;
                 }
-                return -5;
-            } else if (ClippingMediaPeriod.this.endUs == Long.MIN_VALUE || ((readData != -4 || decoderInputBuffer.timeUs < ClippingMediaPeriod.this.endUs) && !(readData == -3 && bufferedPositionUs == Long.MIN_VALUE && !decoderInputBuffer.waitingForKeys))) {
                 return readData;
-            } else {
-                decoderInputBuffer.clear();
+            } else if (this.sentEos) {
                 decoderInputBuffer.setFlags(4);
-                this.sentEos = true;
                 return -4;
+            } else {
+                long bufferedPositionUs = ClippingMediaPeriod.this.getBufferedPositionUs();
+                int readData2 = this.childStream.readData(formatHolder, decoderInputBuffer, i);
+                if (ClippingMediaPeriod.this.lastReportedDiscontinuityUs != C.TIME_UNSET && readData2 != -3) {
+                    ClippingMediaPeriod.this.lastReportedDiscontinuityUs = C.TIME_UNSET;
+                }
+                ClippingMediaPeriod clippingMediaPeriod = ClippingMediaPeriod.this;
+                if (readData2 == -5) {
+                    ClippingMediaPeriod.updateDecoderDelayPaddingForClipping(formatHolder, clippingMediaPeriod.startUs, ClippingMediaPeriod.this.endUs);
+                    return -5;
+                }
+                if (clippingMediaPeriod.endUs != Long.MIN_VALUE) {
+                    if (readData2 == -4) {
+                        i2 = -4;
+                        j = bufferedPositionUs;
+                    } else {
+                        i2 = -4;
+                        j = bufferedPositionUs;
+                    }
+                    if (readData2 == -3) {
+                        if (j == Long.MIN_VALUE) {
+                        }
+                    }
+                }
+                return readData2;
             }
         }
 
@@ -296,5 +355,14 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             }
             return this.childStream.skipData(j);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static void updateDecoderDelayPaddingForClipping(FormatHolder formatHolder, long j, long j2) {
+        Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
+        if (format.encoderDelay == 0 && format.encoderPadding == 0) {
+            return;
+        }
+        formatHolder.format = format.buildUpon().setEncoderDelay(j != 0 ? 0 : format.encoderDelay).setEncoderPadding(j2 == Long.MIN_VALUE ? format.encoderPadding : 0).build();
     }
 }

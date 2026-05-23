@@ -151,7 +151,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
     }
 
     private static String getLikelyScript(Locale locale) {
-        String script = Api21Impl.getScript(locale);
+        String script = locale.getScript();
         return !script.isEmpty() ? script : "";
     }
 
@@ -236,16 +236,5 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
     @Override // androidx.core.os.LocaleListInterface
     public Locale getFirstMatch(String[] strArr) {
         return computeFirstMatch(Arrays.asList(strArr), false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static String getScript(Locale locale) {
-            return locale.getScript();
-        }
     }
 }

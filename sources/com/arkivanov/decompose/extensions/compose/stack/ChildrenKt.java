@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.arkivanov.decompose.Child;
-import com.arkivanov.decompose.UtilsKt;
 import com.arkivanov.decompose.extensions.compose.SubscribeAsStateKt;
 import com.arkivanov.decompose.extensions.compose.stack.animation.EmptyStackAnimationKt;
 import com.arkivanov.decompose.extensions.compose.stack.animation.StackAnimation;
@@ -27,7 +26,6 @@ import java.util.HashSet;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
@@ -95,7 +93,7 @@ public final class ChildrenKt {
                 stackAnimation = null;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(100558968, i3, -1, "com.arkivanov.decompose.extensions.compose.stack.Children (Children.kt:23)");
+                ComposerKt.traceEventStart(100558968, i3, -1, "com.arkivanov.decompose.extensions.compose.stack.Children (Children.kt:22)");
             }
             final SaveableStateHolder rememberSaveableStateHolder = SaveableStateHolderKt.rememberSaveableStateHolder(startRestartGroup, 0);
             retainStates(rememberSaveableStateHolder, getKeys(stack), startRestartGroup, 0);
@@ -103,9 +101,9 @@ public final class ChildrenKt {
             Object consume = startRestartGroup.consume(StackAnimationProviderKt.getLocalStackAnimationProvider());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             StackAnimationProvider stackAnimationProvider = (StackAnimationProvider) consume;
-            startRestartGroup.startReplaceGroup(1543419138);
+            startRestartGroup.startReplaceGroup(1543417698);
             if (stackAnimation == null) {
-                startRestartGroup.startReplaceGroup(1543419541);
+                startRestartGroup.startReplaceGroup(1543418101);
                 boolean changed = startRestartGroup.changed(stackAnimationProvider);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -131,12 +129,12 @@ public final class ChildrenKt {
                 public final void invoke(final Child.Created<? extends C, ? extends T> child, Composer composer2, int i6) {
                     Intrinsics.checkNotNullParameter(child, "child");
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(-1548770973, i6, -1, "com.arkivanov.decompose.extensions.compose.stack.Children.<anonymous> (Children.kt:32)");
+                        ComposerKt.traceEventStart(-1548770973, i6, -1, "com.arkivanov.decompose.extensions.compose.stack.Children.<anonymous> (Children.kt:31)");
                     }
                     SaveableStateHolder saveableStateHolder = SaveableStateHolder.this;
-                    String keyHashString = UtilsKt.keyHashString(child);
+                    String key = child.getKey();
                     final Function3<Child.Created<? extends C, ? extends T>, Composer, Integer, Unit> function3 = content;
-                    saveableStateHolder.SaveableStateProvider(keyHashString, ComposableLambdaKt.rememberComposableLambda(-433908510, true, new Function2<Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$Children$1.1
+                    saveableStateHolder.SaveableStateProvider(key, ComposableLambdaKt.rememberComposableLambda(-433908510, true, new Function2<Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$Children$1.1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -149,7 +147,7 @@ public final class ChildrenKt {
                                 return;
                             }
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-433908510, i7, -1, "com.arkivanov.decompose.extensions.compose.stack.Children.<anonymous>.<anonymous> (Children.kt:33)");
+                                ComposerKt.traceEventStart(-433908510, i7, -1, "com.arkivanov.decompose.extensions.compose.stack.Children.<anonymous>.<anonymous> (Children.kt:32)");
                             }
                             function3.invoke(child, composer3, 0);
                             if (ComposerKt.isTraceInProgress()) {
@@ -217,7 +215,7 @@ public final class ChildrenKt {
             Modifier.Companion companion = i4 != 0 ? Modifier.Companion : modifier;
             StackAnimation<C, T> stackAnimation3 = i5 != 0 ? null : stackAnimation;
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(669199561, i3, -1, "com.arkivanov.decompose.extensions.compose.stack.Children (Children.kt:44)");
+                ComposerKt.traceEventStart(669199561, i3, -1, "com.arkivanov.decompose.extensions.compose.stack.Children (Children.kt:43)");
             }
             int i6 = i3 & 8176;
             StackAnimation<C, T> stackAnimation4 = stackAnimation3;
@@ -247,7 +245,7 @@ public final class ChildrenKt {
     private static final Set<String> getKeys(ChildStack<?, ?> childStack) {
         HashSet hashSet = new HashSet();
         for (Child child : childStack.getItems()) {
-            hashSet.add(UtilsKt.keyHashString(child));
+            hashSet.add(child.getKey());
         }
         return hashSet;
     }
@@ -265,9 +263,9 @@ public final class ChildrenKt {
         }
         if ((i2 & 19) != 18 || !startRestartGroup.getSkipping()) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-290867539, i2, -1, "com.arkivanov.decompose.extensions.compose.stack.retainStates (Children.kt:59)");
+                ComposerKt.traceEventStart(-290867539, i2, -1, "com.arkivanov.decompose.extensions.compose.stack.retainStates (Children.kt:58)");
             }
-            startRestartGroup.startReplaceGroup(647264842);
+            startRestartGroup.startReplaceGroup(647262698);
             boolean changed = startRestartGroup.changed(saveableStateHolder);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -276,7 +274,7 @@ public final class ChildrenKt {
             }
             final Keys keys = (Keys) rememberedValue;
             startRestartGroup.endReplaceGroup();
-            startRestartGroup.startReplaceGroup(647267484);
+            startRestartGroup.startReplaceGroup(647265340);
             boolean changedInstance = startRestartGroup.changedInstance(keys) | startRestartGroup.changedInstance(set) | startRestartGroup.changedInstance(saveableStateHolder);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -310,9 +308,9 @@ public final class ChildrenKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult retainStates$lambda$7$lambda$6(Keys keys, Set set, SaveableStateHolder saveableStateHolder, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
-        for (Object obj : keys.getSet()) {
-            if (!CollectionsKt.contains(set, obj)) {
-                saveableStateHolder.removeState(obj);
+        for (String str : keys.getSet()) {
+            if (!set.contains(str)) {
+                saveableStateHolder.removeState(str);
             }
         }
         keys.setSet(set);

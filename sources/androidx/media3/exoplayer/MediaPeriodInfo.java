@@ -4,7 +4,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaPeriodInfo {
     public final long durationUs;
     public final long endPositionUs;
@@ -14,11 +14,12 @@ public final class MediaPeriodInfo {
     public final boolean isLastInTimelinePeriod;
     public final boolean isLastInTimelineWindow;
     public final boolean isPrecededByTransitionFromSameStream;
+    public final long liveStreamStartPositionProjectionUs;
     public final long requestedContentPositionUs;
     public final long startPositionUs;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public MediaPeriodInfo(MediaSource.MediaPeriodId mediaPeriodId, long j, long j2, long j3, long j4, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
+    public MediaPeriodInfo(MediaSource.MediaPeriodId mediaPeriodId, long j, long j2, long j3, long j4, long j5, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
         boolean z6 = false;
         Preconditions.checkArgument(!z5 || z3);
         Preconditions.checkArgument(!z4 || z3);
@@ -28,9 +29,10 @@ public final class MediaPeriodInfo {
         Preconditions.checkArgument(z6);
         this.id = mediaPeriodId;
         this.startPositionUs = j;
-        this.requestedContentPositionUs = j2;
-        this.endPositionUs = j3;
-        this.durationUs = j4;
+        this.liveStreamStartPositionProjectionUs = j2;
+        this.requestedContentPositionUs = j3;
+        this.endPositionUs = j4;
+        this.durationUs = j5;
         this.isPrecededByTransitionFromSameStream = z;
         this.isFollowedByTransitionToSameStream = z2;
         this.isLastInTimelinePeriod = z3;
@@ -38,12 +40,12 @@ public final class MediaPeriodInfo {
         this.isFinal = z5;
     }
 
-    public MediaPeriodInfo copyWithStartPositionUs(long j) {
-        return j == this.startPositionUs ? this : new MediaPeriodInfo(this.id, j, this.requestedContentPositionUs, this.endPositionUs, this.durationUs, this.isPrecededByTransitionFromSameStream, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
+    public MediaPeriodInfo copyWithStartPositionUs(long j, long j2) {
+        return (j == this.startPositionUs && j2 == this.liveStreamStartPositionProjectionUs) ? this : new MediaPeriodInfo(this.id, j, j2, this.requestedContentPositionUs, this.endPositionUs, this.durationUs, this.isPrecededByTransitionFromSameStream, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
     }
 
     public MediaPeriodInfo copyWithRequestedContentPositionUs(long j) {
-        return j == this.requestedContentPositionUs ? this : new MediaPeriodInfo(this.id, this.startPositionUs, j, this.endPositionUs, this.durationUs, this.isPrecededByTransitionFromSameStream, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
+        return j == this.requestedContentPositionUs ? this : new MediaPeriodInfo(this.id, this.startPositionUs, this.liveStreamStartPositionProjectionUs, j, this.endPositionUs, this.durationUs, this.isPrecededByTransitionFromSameStream, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
     }
 
     public boolean equals(Object obj) {

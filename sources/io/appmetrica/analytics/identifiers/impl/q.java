@@ -8,10 +8,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public final class q implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final f f458a;
+    public final f f408a;
 
     public q(f fVar) {
-        this.f458a = fVar;
+        this.f408a = fVar;
     }
 
     @Override // io.appmetrica.analytics.identifiers.impl.b
@@ -22,7 +22,7 @@ public final class q implements b {
                 try {
                     c b = b(context);
                     try {
-                        this.f458a.b(context);
+                        this.f408a.b(context);
                         return b;
                     } catch (Throwable unused) {
                         return b;
@@ -36,7 +36,7 @@ public final class q implements b {
                     message = "No yandex adv_id service";
                 }
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, message, 2);
-                this.f458a.b(context);
+                this.f408a.b(context);
                 return cVar;
             } catch (g e2) {
                 String message2 = e2.getMessage();
@@ -44,20 +44,20 @@ public final class q implements b {
                     message2 = "unknown exception while binding yandex adv_id service";
                 }
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, message2, 2);
-                this.f458a.b(context);
+                this.f408a.b(context);
                 return cVar;
             }
         }
     }
 
     public final c b(Context context) {
-        s sVar = (s) ((u) this.f458a.a(context));
+        s sVar = (s) ((u) this.f408a.a(context));
         sVar.getClass();
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.yandex.android.advid.service.YandexAdvIdInterface");
-            sVar.f460a.transact(1, obtain, obtain2, 0);
+            sVar.f410a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             String readString = obtain2.readString();
             obtain2.recycle();
@@ -66,7 +66,7 @@ public final class q implements b {
             obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.yandex.android.advid.service.YandexAdvIdInterface");
-                sVar.f460a.transact(2, obtain, obtain2, 0);
+                sVar.f410a.transact(2, obtain, obtain2, 0);
                 obtain2.readException();
                 boolean z = obtain2.readInt() != 0;
                 obtain2.recycle();
@@ -83,8 +83,8 @@ public final class q implements b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public q() {
-        this(new f(r1, p.f457a, "yandex"));
+        this(new f(r1, p.f407a, "yandex"));
         Intent intent;
-        intent = r.f459a;
+        intent = r.f409a;
     }
 }

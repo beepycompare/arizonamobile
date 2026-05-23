@@ -1,50 +1,64 @@
 package com.google.android.gms.internal.measurement;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import android.content.Context;
+import com.google.common.base.Supplier;
+import javax.annotation.Nullable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzlc extends zzlg {
-    private final int zzc;
+final class zzlc extends zzlt {
+    private final Context zza;
+    @Nullable
+    private final Supplier zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzlc(byte[] bArr, int i, int i2) {
-        super(bArr);
-        zzj(0, i2, bArr.length);
-        this.zzc = i2;
+    public zzlc(Context context, @Nullable Supplier supplier) {
+        this.zza = context;
+        this.zzb = supplier;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzlg, com.google.android.gms.internal.measurement.zzlh
-    public final byte zzb(int i) {
-        return this.zza[i];
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlg, com.google.android.gms.internal.measurement.zzlh
-    public final int zzc() {
-        return this.zzc;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlg
-    protected final int zzd() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzlg, com.google.android.gms.internal.measurement.zzlh
-    public final byte zza(int i) {
-        int i2 = this.zzc;
-        if (((i2 - (i + 1)) | i) < 0) {
-            if (i < 0) {
-                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 11);
-                sb.append("Index < 0: ");
-                sb.append(i);
-                throw new ArrayIndexOutOfBoundsException(sb.toString());
-            }
-            StringBuilder sb2 = new StringBuilder(String.valueOf(i).length() + 18 + String.valueOf(i2).length());
-            sb2.append("Index > length: ");
-            sb2.append(i);
-            sb2.append(", ");
-            sb2.append(i2);
-            throw new ArrayIndexOutOfBoundsException(sb2.toString());
+    public final boolean equals(Object obj) {
+        Supplier supplier;
+        if (obj == this) {
+            return true;
         }
-        return this.zza[i];
+        if (obj instanceof zzlt) {
+            zzlt zzltVar = (zzlt) obj;
+            if (this.zza.equals(zzltVar.zza()) && ((supplier = this.zzb) != null ? supplier.equals(zzltVar.zzb()) : zzltVar.zzb() == null)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = this.zza.hashCode() ^ 1000003;
+        Supplier supplier = this.zzb;
+        return (supplier == null ? 0 : supplier.hashCode()) ^ (hashCode * 1000003);
+    }
+
+    public final String toString() {
+        String obj = this.zza.toString();
+        int length = obj.length();
+        String valueOf = String.valueOf(this.zzb);
+        StringBuilder sb = new StringBuilder(length + 45 + String.valueOf(valueOf).length() + 1);
+        sb.append("FlagsContext{context=");
+        sb.append(obj);
+        sb.append(", hermeticFileOverrides=");
+        sb.append(valueOf);
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzlt
+    public final Context zza() {
+        return this.zza;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzlt
+    @Nullable
+    public final Supplier zzb() {
+        return this.zzb;
     }
 }

@@ -1,6 +1,6 @@
 package com.arizonagames.feature.arizona.family.data;
 
-import androidx.media3.common.C;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
 import kotlin.Metadata;
@@ -94,9 +94,9 @@ public final class FamilyData {
         int i40 = (i15 & 4194304) != 0 ? familyData.currentExp : i11;
         int i41 = (i15 & 8388608) != 0 ? familyData.totalExp : i12;
         int i42 = (i15 & 16777216) != 0 ? familyData.hasEstate : i13;
-        int i43 = (i15 & 33554432) != 0 ? familyData.online : i14;
+        int i43 = (i15 & GroupFlagsKt.HasAuxSlotFlag) != 0 ? familyData.online : i14;
         Integer num3 = (i15 & 67108864) != 0 ? familyData.members : num;
-        if ((i15 & C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((i15 & 134217728) != 0) {
             num2 = num3;
             list2 = familyData.leaders;
             str10 = str24;

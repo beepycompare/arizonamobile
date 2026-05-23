@@ -30,7 +30,7 @@ public class RolloutsStateFactory {
             try {
                 JSONObject jSONObject = rolloutMetadata.getJSONObject(i);
                 String string = jSONObject.getString(ConfigContainer.ROLLOUT_METADATA_ID);
-                JSONArray jSONArray = jSONObject.getJSONArray(ConfigContainer.ROLLOUT_METADATA_AFFECTED_KEYS);
+                JSONArray jSONArray = jSONObject.getJSONArray("affectedParameterKeys");
                 if (jSONArray.length() > 1) {
                     Log.w(FirebaseRemoteConfig.TAG, String.format("Rollout has multiple affected parameter keys.Only the first key will be included in RolloutsState. rolloutId: %s, affectedParameterKeys: %s", string, jSONArray));
                 }

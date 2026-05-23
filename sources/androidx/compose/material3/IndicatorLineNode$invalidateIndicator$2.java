@@ -52,7 +52,7 @@ public final class IndicatorLineNode$invalidateIndicator$2 extends SuspendLambda
         Animatable animatable;
         boolean z;
         float f;
-        Dp m7553boximpl;
+        Dp m8158boximpl;
         boolean z2;
         SnapSpec snap$default;
         boolean z3;
@@ -66,7 +66,7 @@ public final class IndicatorLineNode$invalidateIndicator$2 extends SuspendLambda
                 z3 = this.this$0.enabled;
                 if (z3) {
                     f = this.this$0.focusedIndicatorWidth;
-                    m7553boximpl = Dp.m7553boximpl(f);
+                    m8158boximpl = Dp.m8158boximpl(f);
                     z2 = this.this$0.enabled;
                     if (!z2) {
                         snap$default = MotionSchemeKt.fromToken((MotionScheme) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.this$0, MaterialTheme.INSTANCE.getLocalMotionScheme$material3()), MotionSchemeKeyTokens.FastSpatial);
@@ -74,18 +74,18 @@ public final class IndicatorLineNode$invalidateIndicator$2 extends SuspendLambda
                         snap$default = AnimationSpecKt.snap$default(0, 1, null);
                     }
                     this.label = 1;
-                    if (Animatable.animateTo$default(animatable, m7553boximpl, snap$default, null, null, this, 12, null) == coroutine_suspended) {
+                    if (Animatable.animateTo$default(animatable, m8158boximpl, snap$default, null, null, this, 12, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
             }
             f = this.this$0.unfocusedIndicatorWidth;
-            m7553boximpl = Dp.m7553boximpl(f);
+            m8158boximpl = Dp.m8158boximpl(f);
             z2 = this.this$0.enabled;
             if (!z2) {
             }
             this.label = 1;
-            if (Animatable.animateTo$default(animatable, m7553boximpl, snap$default, null, null, this, 12, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(animatable, m8158boximpl, snap$default, null, null, this, 12, null) == coroutine_suspended) {
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

@@ -4,7 +4,7 @@ import android.util.Log;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StatsSnapshot {
     public final long averageDownloadSize;
     public final long averageOriginalBitmapSize;

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.facebook.Session;
 import com.facebook.SessionState;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class SessionTracker {
     private final LocalBroadcastManager broadcastManager;
     private final Session.StatusCallback callback;
@@ -15,7 +15,7 @@ public class SessionTracker {
     private final BroadcastReceiver receiver;
     private Session session;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private class ActiveSessionBroadcastReceiver extends BroadcastReceiver {
         private ActiveSessionBroadcastReceiver() {
         }
@@ -34,7 +34,7 @@ public class SessionTracker {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private class CallbackWrapper implements Session.StatusCallback {
         private final Session.StatusCallback wrapped;
 

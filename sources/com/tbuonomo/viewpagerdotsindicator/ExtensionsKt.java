@@ -14,13 +14,13 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import io.appmetrica.analytics.impl.C0739z2;
+import io.appmetrica.analytics.impl.M2;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Extensions.kt */
-@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\u0016\u0010\u0007\u001a\u00020\b*\u00020\tH\u0007ø\u0001\u0000¢\u0006\u0004\b\n\u0010\u000b\u001a\f\u0010\f\u001a\u00020\r*\u00020\u000eH\u0000\u001a*\u0010\u000f\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0010*\u0012\u0012\u0004\u0012\u0002H\u00100\u0011j\b\u0012\u0004\u0012\u0002H\u0010`\u00122\u0006\u0010\u0013\u001a\u00020\rH\u0000\u001a\u0011\u0010\u0014\u001a\u00020\t*\u00020\bH\u0007¢\u0006\u0002\u0010\u000b\u001a\u0011\u0010\u0014\u001a\u00020\t*\u00020\rH\u0007¢\u0006\u0002\u0010\u0015\u001a\u0014\u0010\u0016\u001a\u00020\u0017*\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a\u001a\u0014\u0010\u001b\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001c\u001a\u00020\rH\u0000\u001a\u0014\u0010\u001d\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001c\u001a\u00020\rH\u0000\u001a\u0014\u0010\u001e\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001f\u001a\u00020\rH\u0000\"\u001a\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0003\"\u001a\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0005\"\u0018\u0010\u0006\u001a\u00020\u0001*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0003\"\u0018\u0010\u0006\u001a\u00020\u0001*\u00020\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0005\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006 "}, d2 = {"isEmpty", "", "Landroidx/viewpager/widget/ViewPager;", "(Landroidx/viewpager/widget/ViewPager;)Z", "Landroidx/viewpager2/widget/ViewPager2;", "(Landroidx/viewpager2/widget/ViewPager2;)Z", "isNotEmpty", "dpToPx", "", "Landroidx/compose/ui/unit/Dp;", "dpToPx-8Feqmps", "(FLandroidx/compose/runtime/Composer;I)F", "getThemePrimaryColor", "", "Landroid/content/Context;", "isInBounds", ExifInterface.GPS_DIRECTION_TRUE, "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", FirebaseAnalytics.Param.INDEX, "pxToDp", "(ILandroidx/compose/runtime/Composer;I)F", "setBackgroundCompat", "", "Landroid/view/View;", C0739z2.g, "Landroid/graphics/drawable/Drawable;", "setPaddingHorizontal", "padding", "setPaddingVertical", "setWidth", "width", "viewpagerdotsindicator_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes3.dex */
+@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\u0016\u0010\u0007\u001a\u00020\b*\u00020\tH\u0007ø\u0001\u0000¢\u0006\u0004\b\n\u0010\u000b\u001a\f\u0010\f\u001a\u00020\r*\u00020\u000eH\u0000\u001a*\u0010\u000f\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0010*\u0012\u0012\u0004\u0012\u0002H\u00100\u0011j\b\u0012\u0004\u0012\u0002H\u0010`\u00122\u0006\u0010\u0013\u001a\u00020\rH\u0000\u001a\u0011\u0010\u0014\u001a\u00020\t*\u00020\bH\u0007¢\u0006\u0002\u0010\u000b\u001a\u0011\u0010\u0014\u001a\u00020\t*\u00020\rH\u0007¢\u0006\u0002\u0010\u0015\u001a\u0014\u0010\u0016\u001a\u00020\u0017*\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001a\u001a\u0014\u0010\u001b\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001c\u001a\u00020\rH\u0000\u001a\u0014\u0010\u001d\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001c\u001a\u00020\rH\u0000\u001a\u0014\u0010\u001e\u001a\u00020\u0017*\u00020\u00182\u0006\u0010\u001f\u001a\u00020\rH\u0000\"\u001a\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0003\"\u001a\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0005\"\u0018\u0010\u0006\u001a\u00020\u0001*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0003\"\u0018\u0010\u0006\u001a\u00020\u0001*\u00020\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0005\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006 "}, d2 = {"isEmpty", "", "Landroidx/viewpager/widget/ViewPager;", "(Landroidx/viewpager/widget/ViewPager;)Z", "Landroidx/viewpager2/widget/ViewPager2;", "(Landroidx/viewpager2/widget/ViewPager2;)Z", "isNotEmpty", "dpToPx", "", "Landroidx/compose/ui/unit/Dp;", "dpToPx-8Feqmps", "(FLandroidx/compose/runtime/Composer;I)F", "getThemePrimaryColor", "", "Landroid/content/Context;", "isInBounds", ExifInterface.GPS_DIRECTION_TRUE, "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", FirebaseAnalytics.Param.INDEX, "pxToDp", "(ILandroidx/compose/runtime/Composer;I)F", "setBackgroundCompat", "", "Landroid/view/View;", M2.g, "Landroid/graphics/drawable/Drawable;", "setPaddingHorizontal", "padding", "setPaddingVertical", "setWidth", "width", "viewpagerdotsindicator_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class ExtensionsKt {
     public static final void setPaddingHorizontal(View view, int i) {
         Intrinsics.checkNotNullParameter(view, "<this>");
@@ -78,7 +78,7 @@ public final class ExtensionsKt {
     }
 
     /* renamed from: dpToPx-8Feqmps  reason: not valid java name */
-    public static final float m9168dpToPx8Feqmps(float f, Composer composer, int i) {
+    public static final float m9807dpToPx8Feqmps(float f, Composer composer, int i) {
         composer.startReplaceGroup(141686460);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(141686460, i, -1, "com.tbuonomo.viewpagerdotsindicator.dpToPx (Extensions.kt:50)");
@@ -86,12 +86,12 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo405toPx0680j_4 = ((Density) consume).mo405toPx0680j_4(f);
+        float mo434toPx0680j_4 = ((Density) consume).mo434toPx0680j_4(f);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo405toPx0680j_4;
+        return mo434toPx0680j_4;
     }
 
     public static final float pxToDp(int i, Composer composer, int i2) {
@@ -102,12 +102,12 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo402toDpu2uoSUM = ((Density) consume).mo402toDpu2uoSUM(i);
+        float mo431toDpu2uoSUM = ((Density) consume).mo431toDpu2uoSUM(i);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo402toDpu2uoSUM;
+        return mo431toDpu2uoSUM;
     }
 
     public static final float pxToDp(float f, Composer composer, int i) {
@@ -118,11 +118,11 @@ public final class ExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo401toDpu2uoSUM = ((Density) consume).mo401toDpu2uoSUM(f);
+        float mo430toDpu2uoSUM = ((Density) consume).mo430toDpu2uoSUM(f);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo401toDpu2uoSUM;
+        return mo430toDpu2uoSUM;
     }
 }

@@ -26,7 +26,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PopulateViewStructure.android.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a.\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0006\u0010\t\u001a\u00020\nH\u0001¨\u0006\u000b"}, d2 = {"populate", "", "Landroid/view/ViewStructure;", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a.\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0006\u0010\t\u001a\u00020\nH\u0001¨\u0006\u000b"}, d2 = {"populate", "", "Landroid/view/ViewStructure;", "semanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "rootAutofillId", "Landroid/view/autofill/AutofillId;", RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, "", "rectManager", "Landroidx/compose/ui/spatial/RectManager;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PopulateViewStructure_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:106:0x029a  */
@@ -72,7 +72,7 @@ public final class PopulateViewStructure_androidKt {
         Integer valueOf;
         boolean z4;
         boolean z5;
-        String m6750toLegacyClassNameV4PA4sw;
+        String m7354toLegacyClassNameV4PA4sw;
         String[] contentHints;
         String[] contentHints2;
         MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui;
@@ -319,7 +319,7 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setCheckable(viewStructure, true);
                     autofillApi26Helper.setChecked(viewStructure, toggleableState == ToggleableState.On);
                 } else if (bool != null) {
-                    if (!(role == null ? false : Role.m6770equalsimpl0(role.m6773unboximpl(), Role.Companion.m6781getTabo7Vup1c()))) {
+                    if (!(role == null ? false : Role.m7374equalsimpl0(role.m7377unboximpl(), Role.Companion.m7385getTabo7Vup1c()))) {
                         autofillApi26Helper.setCheckable(viewStructure, true);
                         autofillApi26Helper.setChecked(viewStructure, bool.booleanValue());
                     }
@@ -343,8 +343,8 @@ public final class PopulateViewStructure_androidKt {
                             autofillApi26Helper.setText(viewStructure, str4);
                             autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextClassName);
                         }
-                        if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m6750toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6750toLegacyClassNameV4PA4sw(role.m6773unboximpl())) != null) {
-                            autofillApi26Helper.setClassName(viewStructure, m6750toLegacyClassNameV4PA4sw);
+                        if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m7354toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7354toLegacyClassNameV4PA4sw(role.m7377unboximpl())) != null) {
+                            autofillApi26Helper.setClassName(viewStructure, m7354toLegacyClassNameV4PA4sw);
                         }
                         if (z) {
                             autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextFieldClassName);
@@ -368,7 +368,7 @@ public final class PopulateViewStructure_androidKt {
                 if (list != null) {
                 }
                 if (semanticsInfo.getChildrenInfo().isEmpty()) {
-                    autofillApi26Helper.setClassName(viewStructure, m6750toLegacyClassNameV4PA4sw);
+                    autofillApi26Helper.setClassName(viewStructure, m7354toLegacyClassNameV4PA4sw);
                 }
                 if (z) {
                 }

@@ -17,6 +17,7 @@ import androidx.compose.runtime.ProvidedValue;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Alignment;
@@ -53,12 +54,12 @@ import kotlin.ranges.RangesKt;
 @Metadata(d1 = {"\u0000v\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a¦\u0001\u0010\u0000\u001a\u00020\u00012\u0011\u0010\u0002\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\u0015\b\u0002\u0010\u0007\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\t\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0015\b\u0002\u0010\n\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u000eH\u0007¢\u0006\u0004\b\u0010\u0010\u0011\u001at\u0010\u0012\u001a\u00020\u00012\u0013\u0010\u0013\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0014\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0011\u0010\u0015\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0016\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00042\u0013\u0010\u0017\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u0004H\u0003¢\u0006\u0002\u0010\u0018\u001aK\u0010\u0019\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020\u001a2\u0006\u0010 \u001a\u00020\u001a2\u0006\u0010!\u001a\u00020\u001a2\u0006\u0010\"\u001a\u00020#H\u0002¢\u0006\u0004\b$\u0010%\u001aS\u0010&\u001a\u00020\u001a*\u00020\u001b2\u0006\u0010'\u001a\u00020\u001a2\u0006\u0010(\u001a\u00020\u001a2\u0006\u0010)\u001a\u00020\u001a2\u0006\u0010*\u001a\u00020\u001a2\u0006\u0010+\u001a\u00020\u001a2\u0006\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u001a2\u0006\u0010\"\u001a\u00020#H\u0002¢\u0006\u0004\b/\u00100\u001an\u00101\u001a\u000202*\u0002032\u0006\u00104\u001a\u00020\u001a2\u0006\u00105\u001a\u00020\u001a2\b\u00106\u001a\u0004\u0018\u0001072\b\u00108\u001a\u0004\u0018\u0001072\b\u00109\u001a\u0004\u0018\u0001072\b\u0010:\u001a\u0004\u0018\u0001072\b\u0010;\u001a\u0004\u0018\u0001072\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010?\u001a\u00020\u001a2\u0006\u0010@\u001a\u00020\u001aH\u0002\u001a2\u0010A\u001a\u00020\u00012\u0006\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020E2\u0011\u0010F\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0004H\u0003¢\u0006\u0004\bG\u0010H\u001a\u0014\u0010^\u001a\u00020=*\u00020_2\u0006\u0010`\u001a\u00020\u001aH\u0002\u001a\u0017\u0010.\u001a\u00020\u000e2\u0006\u0010,\u001a\u00020-H\u0002¢\u0006\u0004\ba\u0010b\"\u001e\u0010I\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bJ\u0010K\u001a\u0004\bL\u0010M\"\u001e\u0010O\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bP\u0010K\u001a\u0004\bQ\u0010M\"\u001e\u0010R\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bS\u0010K\u001a\u0004\bT\u0010M\"\u001e\u0010U\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bV\u0010K\u001a\u0004\bW\u0010M\"\u001e\u0010X\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\bY\u0010K\u001a\u0004\bZ\u0010M\"\u001e\u0010[\u001a\u00020\u000e8\u0000X\u0081\u0004¢\u0006\u0010\n\u0002\u0010N\u0012\u0004\b\\\u0010K\u001a\u0004\b]\u0010M¨\u0006c"}, d2 = {"ListItem", "", "headlineContent", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "overlineContent", "supportingContent", "leadingContent", "trailingContent", "colors", "Landroidx/compose/material3/ListItemColors;", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "shadowElevation", "ListItem-HXNGIdc", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/ListItemColors;FFLandroidx/compose/runtime/Composer;II)V", "ListItemLayout", "leading", "trailing", "headline", "overline", "supporting", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "calculateWidth", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "leadingWidth", "trailingWidth", "headlineWidth", "overlineWidth", "supportingWidth", "horizontalPadding", "constraints", "Landroidx/compose/ui/unit/Constraints;", "calculateWidth-yeHjK3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIJ)I", "calculateHeight", "leadingHeight", "trailingHeight", "headlineHeight", "overlineHeight", "supportingHeight", "listItemType", "Landroidx/compose/material3/ListItemType;", "verticalPadding", "calculateHeight-N4Jib3Y", "(Landroidx/compose/ui/layout/IntrinsicMeasureScope;IIIIIIIJ)I", "place", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "width", "height", "leadingPlaceable", "Landroidx/compose/ui/layout/Placeable;", "trailingPlaceable", "headlinePlaceable", "overlinePlaceable", "supportingPlaceable", "isThreeLine", "", "startPadding", "endPadding", "topPadding", "ProvideTextStyleFromToken", "color", "Landroidx/compose/ui/graphics/Color;", "textToken", "Landroidx/compose/material3/tokens/TypographyKeyTokens;", FirebaseAnalytics.Param.CONTENT, "ProvideTextStyleFromToken-3J-VO9M", "(JLandroidx/compose/material3/tokens/TypographyKeyTokens;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ListItemVerticalPadding", "getListItemVerticalPadding$annotations", "()V", "getListItemVerticalPadding", "()F", "F", "ListItemThreeLineVerticalPadding", "getListItemThreeLineVerticalPadding$annotations", "getListItemThreeLineVerticalPadding", "ListItemStartPadding", "getListItemStartPadding$annotations", "getListItemStartPadding", "ListItemEndPadding", "getListItemEndPadding$annotations", "getListItemEndPadding", "LeadingContentEndPadding", "getLeadingContentEndPadding$annotations", "getLeadingContentEndPadding", "TrailingContentStartPadding", "getTrailingContentStartPadding$annotations", "getTrailingContentStartPadding", "isSupportingMultilineHeuristic", "Landroidx/compose/ui/unit/Density;", "estimatedSupportingHeight", "verticalPadding-yh95HIg", "(I)F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ListItemKt {
-    private static final float ListItemVerticalPadding = Dp.m7555constructorimpl(8.0f);
-    private static final float ListItemThreeLineVerticalPadding = Dp.m7555constructorimpl(12.0f);
-    private static final float ListItemStartPadding = Dp.m7555constructorimpl(16.0f);
-    private static final float ListItemEndPadding = Dp.m7555constructorimpl(16.0f);
-    private static final float LeadingContentEndPadding = Dp.m7555constructorimpl(16.0f);
-    private static final float TrailingContentStartPadding = Dp.m7555constructorimpl(16.0f);
+    private static final float ListItemVerticalPadding = Dp.m8160constructorimpl(8.0f);
+    private static final float ListItemThreeLineVerticalPadding = Dp.m8160constructorimpl(12.0f);
+    private static final float ListItemStartPadding = Dp.m8160constructorimpl(16.0f);
+    private static final float ListItemEndPadding = Dp.m8160constructorimpl(16.0f);
+    private static final float LeadingContentEndPadding = Dp.m8160constructorimpl(16.0f);
+    private static final float TrailingContentStartPadding = Dp.m8160constructorimpl(16.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ListItemLayout$lambda$8(Function2 function2, Function2 function22, Function2 function23, Function2 function24, Function2 function25, int i, Composer composer, int i2) {
@@ -68,13 +69,13 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ListItem_HXNGIdc$lambda$6(Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Function2 function25, ListItemColors listItemColors, float f, float f2, int i, int i2, Composer composer, int i3) {
-        m2212ListItemHXNGIdc(function2, modifier, function22, function23, function24, function25, listItemColors, f, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2657ListItemHXNGIdc(function2, modifier, function22, function23, function24, function25, listItemColors, f, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ProvideTextStyleFromToken_3J_VO9M$lambda$12(long j, TypographyKeyTokens typographyKeyTokens, Function2 function2, int i, Composer composer, int i2) {
-        m2213ProvideTextStyleFromToken3JVO9M(j, typographyKeyTokens, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2658ProvideTextStyleFromToken3JVO9M(j, typographyKeyTokens, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
@@ -131,7 +132,7 @@ public final class ListItemKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2212ListItemHXNGIdc(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, ListItemColors listItemColors, float f, float f2, Composer composer, final int i, final int i2) {
+    public static final void m2657ListItemHXNGIdc(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, ListItemColors listItemColors, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -223,7 +224,7 @@ public final class ListItemKt {
                                     i3 |= 100663296;
                                 } else if ((i & 100663296) == 0) {
                                     i11 = i10;
-                                    i3 |= startRestartGroup.changed(f2) ? 67108864 : 33554432;
+                                    i3 |= startRestartGroup.changed(f2) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                                     i12 = i3;
                                     if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i12 & 1)) {
                                         startRestartGroup.startDefaults();
@@ -265,11 +266,11 @@ public final class ListItemKt {
                                                 listItemColors3 = listItemColors;
                                                 i13 = i12;
                                             }
-                                            float m2211getElevationD9Ej5fM = i9 != 0 ? ListItemDefaults.INSTANCE.m2211getElevationD9Ej5fM() : f;
+                                            float m2656getElevationD9Ej5fM = i9 != 0 ? ListItemDefaults.INSTANCE.m2656getElevationD9Ej5fM() : f;
                                             if (i11 == 0) {
                                                 f5 = f2;
                                                 i14 = i13;
-                                                f6 = m2211getElevationD9Ej5fM;
+                                                f6 = m2656getElevationD9Ej5fM;
                                                 function29 = obj4;
                                                 listItemColors4 = listItemColors3;
                                                 function210 = obj3;
@@ -290,7 +291,7 @@ public final class ListItemKt {
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventStart(629852750, i16, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:106)");
                                                             }
-                                                            ListItemKt.m2213ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2205headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
+                                                            ListItemKt.m2658ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2650headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventEnd();
                                                                 return;
@@ -320,7 +321,7 @@ public final class ListItemKt {
                                                                 if (ComposerKt.isTraceInProgress()) {
                                                                     ComposerKt.traceEventStart(-1291211644, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:115)");
                                                                 }
-                                                                ListItemKt.m2213ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2208supportingColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemSupportingTextFont(), obj2, composer3, 48);
+                                                                ListItemKt.m2658ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2653supportingColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemSupportingTextFont(), obj2, composer3, 48);
                                                                 if (ComposerKt.isTraceInProgress()) {
                                                                     ComposerKt.traceEventEnd();
                                                                     return;
@@ -352,7 +353,7 @@ public final class ListItemKt {
                                                                 if (ComposerKt.isTraceInProgress()) {
                                                                     ComposerKt.traceEventStart(372414991, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:125)");
                                                                 }
-                                                                ListItemKt.m2213ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2207overlineColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemOverlineFont(), obj, composer3, 48);
+                                                                ListItemKt.m2658ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2652overlineColor0d7_KjU$material3(), ListTokens.INSTANCE.getListItemOverlineFont(), obj, composer3, 48);
                                                                 if (ComposerKt.isTraceInProgress()) {
                                                                     ComposerKt.traceEventEnd();
                                                                     return;
@@ -389,7 +390,7 @@ public final class ListItemKt {
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventStart(449548451, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:135)");
                                                             }
-                                                            Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, ListItemKt.getLeadingContentEndPadding(), 0.0f, 11, null);
+                                                            Modifier m1054paddingqDBjuR0$default = PaddingKt.m1054paddingqDBjuR0$default(Modifier.Companion, 0.0f, 0.0f, ListItemKt.getLeadingContentEndPadding(), 0.0f, 11, null);
                                                             ListItemColors listItemColors5 = ListItemColors.this;
                                                             Function2<Composer, Integer, Unit> function212 = function210;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -397,7 +398,7 @@ public final class ListItemKt {
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m822paddingqDBjuR0$default);
+                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m1054paddingqDBjuR0$default);
                                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -409,19 +410,19 @@ public final class ListItemKt {
                                                             } else {
                                                                 composer3.useNode();
                                                             }
-                                                            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
-                                                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer3);
+                                                            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                             }
-                                                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, 788364341, "C136@5840L177:ListItem.kt#uh7d8r");
-                                                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(listItemColors5.m2206leadingIconColorvNxB06k$material3(true))), function212, composer3, ProvidedValue.$stable);
+                                                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5338boximpl(listItemColors5.m2651leadingIconColorvNxB06k$material3(true))), function212, composer3, ProvidedValue.$stable);
                                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                                             composer3.endNode();
@@ -459,7 +460,7 @@ public final class ListItemKt {
                                                             if (ComposerKt.isTraceInProgress()) {
                                                                 ComposerKt.traceEventStart(1946411067, i16, -1, "androidx.compose.material3.ListItem.<anonymous>.<anonymous> (ListItem.kt:146)");
                                                             }
-                                                            Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, ListItemKt.getTrailingContentStartPadding(), 0.0f, 0.0f, 0.0f, 14, null);
+                                                            Modifier m1054paddingqDBjuR0$default = PaddingKt.m1054paddingqDBjuR0$default(Modifier.Companion, ListItemKt.getTrailingContentStartPadding(), 0.0f, 0.0f, 0.0f, 14, null);
                                                             ListItemColors listItemColors5 = ListItemColors.this;
                                                             Function2<Composer, Integer, Unit> function212 = function29;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -467,7 +468,7 @@ public final class ListItemKt {
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m822paddingqDBjuR0$default);
+                                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m1054paddingqDBjuR0$default);
                                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -479,19 +480,19 @@ public final class ListItemKt {
                                                             } else {
                                                                 composer3.useNode();
                                                             }
-                                                            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
-                                                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer3);
+                                                            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                             }
-                                                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                             ComposerKt.sourceInformationMarkerStart(composer3, -869008925, "C147@6264L223:ListItem.kt#uh7d8r");
-                                                            ListItemKt.m2213ProvideTextStyleFromToken3JVO9M(listItemColors5.m2209trailingIconColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemTrailingSupportingTextFont(), function212, composer3, 48);
+                                                            ListItemKt.m2658ProvideTextStyleFromToken3JVO9M(listItemColors5.m2654trailingIconColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemTrailingSupportingTextFont(), function212, composer3, 48);
                                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                                             composer3.endNode();
@@ -526,7 +527,7 @@ public final class ListItemKt {
                                                 final ComposableLambda composableLambda5 = composableLambda2;
                                                 int i16 = i14 >> 9;
                                                 composer2 = startRestartGroup;
-                                                SurfaceKt.m2569SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2194containerColor0d7_KjU$material3(), listItemColors4.m2205headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
+                                                SurfaceKt.m3014SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2639containerColor0d7_KjU$material3(), listItemColors4.m2650headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
                                                     @Override // kotlin.jvm.functions.Function2
                                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                         invoke(composer3, num.intValue());
@@ -560,8 +561,8 @@ public final class ListItemKt {
                                                 f4 = f5;
                                                 function28 = function211;
                                             } else {
-                                                f6 = m2211getElevationD9Ej5fM;
-                                                f5 = ListItemDefaults.INSTANCE.m2211getElevationD9Ej5fM();
+                                                f6 = m2656getElevationD9Ej5fM;
+                                                f5 = ListItemDefaults.INSTANCE.m2656getElevationD9Ej5fM();
                                                 listItemColors4 = listItemColors3;
                                                 i14 = i13;
                                             }
@@ -584,7 +585,7 @@ public final class ListItemKt {
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventStart(629852750, i162, -1, "androidx.compose.material3.ListItem.<anonymous> (ListItem.kt:106)");
                                                     }
-                                                    ListItemKt.m2213ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2205headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
+                                                    ListItemKt.m2658ProvideTextStyleFromToken3JVO9M(ListItemColors.this.m2650headlineColorvNxB06k$material3(true), ListTokens.INSTANCE.getListItemLabelTextFont(), function2, composer3, 48);
                                                     if (ComposerKt.isTraceInProgress()) {
                                                         ComposerKt.traceEventEnd();
                                                         return;
@@ -613,7 +614,7 @@ public final class ListItemKt {
                                         final Function2<? super Composer, ? super Integer, Unit> composableLambda52 = composableLambda2;
                                         int i162 = i14 >> 9;
                                         composer2 = startRestartGroup;
-                                        SurfaceKt.m2569SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion22, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2194containerColor0d7_KjU$material3(), listItemColors4.m2205headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
+                                        SurfaceKt.m3014SurfaceT9BRK9s(SemanticsModifierKt.semantics(companion22, true, (Function1) rememberedValue).then(companion), ListItemDefaults.INSTANCE.getShape(startRestartGroup, 6), listItemColors4.m2639containerColor0d7_KjU$material3(), listItemColors4.m2650headlineColorvNxB06k$material3(true), f6, f5, null, ComposableLambdaKt.rememberComposableLambda(1192488737, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ListItemKt$ListItem$2
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                 invoke(composer3, num.intValue());
@@ -858,9 +859,9 @@ public final class ListItemKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function2[] function2Arr = new Function2[5];
             function2Arr[0] = function23;
-            function2Arr[1] = function24 == null ? ComposableSingletons$ListItemKt.INSTANCE.m1937getLambda$489887388$material3() : function24;
+            function2Arr[1] = function24 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2382getLambda$489887388$material3() : function24;
             function2Arr[2] = function25 == null ? ComposableSingletons$ListItemKt.INSTANCE.getLambda$1629163587$material3() : function25;
-            function2Arr[3] = function2 == null ? ComposableSingletons$ListItemKt.INSTANCE.m1938getLambda$546752734$material3() : function2;
+            function2Arr[3] = function2 == null ? ComposableSingletons$ListItemKt.INSTANCE.m2383getLambda$546752734$material3() : function2;
             function2Arr[4] = function22 == null ? ComposableSingletons$ListItemKt.INSTANCE.getLambda$1572298241$material3() : function22;
             List listOf = CollectionsKt.listOf((Object[]) function2Arr);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)168@6883L62,165@6769L182:Layout.kt#80mrfh");
@@ -889,15 +890,15 @@ public final class ListItemKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -920,23 +921,23 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateWidth-yeHjK3Y  reason: not valid java name */
-    public static final int m2219calculateWidthyeHjK3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, long j) {
-        if (Constraints.m7504getHasBoundedWidthimpl(j)) {
-            return Constraints.m7508getMaxWidthimpl(j);
+    public static final int m2664calculateWidthyeHjK3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, long j) {
+        if (Constraints.m8109getHasBoundedWidthimpl(j)) {
+            return Constraints.m8113getMaxWidthimpl(j);
         }
         return i6 + i + Math.max(i3, Math.max(i4, i5)) + i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateHeight-N4Jib3Y  reason: not valid java name */
-    public static final int m2218calculateHeightN4Jib3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
-        float m3519getListItemTwoLineContainerHeightD9Ej5fM;
-        if (ListItemType.m2225equalsimpl0(i6, ListItemType.Companion.m2230getOneLineAlXitO8())) {
-            m3519getListItemTwoLineContainerHeightD9Ej5fM = ListTokens.INSTANCE.m3514getListItemOneLineContainerHeightD9Ej5fM();
+    public static final int m2663calculateHeightN4Jib3Y(IntrinsicMeasureScope intrinsicMeasureScope, int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
+        float m3964getListItemTwoLineContainerHeightD9Ej5fM;
+        if (ListItemType.m2670equalsimpl0(i6, ListItemType.Companion.m2675getOneLineAlXitO8())) {
+            m3964getListItemTwoLineContainerHeightD9Ej5fM = ListTokens.INSTANCE.m3959getListItemOneLineContainerHeightD9Ej5fM();
         } else {
-            m3519getListItemTwoLineContainerHeightD9Ej5fM = ListItemType.m2225equalsimpl0(i6, ListItemType.Companion.m2232getTwoLineAlXitO8()) ? ListTokens.INSTANCE.m3519getListItemTwoLineContainerHeightD9Ej5fM() : ListTokens.INSTANCE.m3516getListItemThreeLineContainerHeightD9Ej5fM();
+            m3964getListItemTwoLineContainerHeightD9Ej5fM = ListItemType.m2670equalsimpl0(i6, ListItemType.Companion.m2677getTwoLineAlXitO8()) ? ListTokens.INSTANCE.m3964getListItemTwoLineContainerHeightD9Ej5fM() : ListTokens.INSTANCE.m3961getListItemThreeLineContainerHeightD9Ej5fM();
         }
-        return RangesKt.coerceAtMost(Math.max(Math.max(Constraints.m7509getMinHeightimpl(j), intrinsicMeasureScope.mo399roundToPx0680j_4(m3519getListItemTwoLineContainerHeightD9Ej5fM)), i7 + Math.max(i, Math.max(i3 + i4 + i5, i2))), Constraints.m7507getMaxHeightimpl(j));
+        return RangesKt.coerceAtMost(Math.max(Math.max(Constraints.m8114getMinHeightimpl(j), intrinsicMeasureScope.mo428roundToPx0680j_4(m3964getListItemTwoLineContainerHeightD9Ej5fM)), i7 + Math.max(i, Math.max(i3 + i4 + i5, i2))), Constraints.m8112getMaxHeightimpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -979,7 +980,7 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ProvideTextStyleFromToken-3J-VO9M  reason: not valid java name */
-    public static final void m2213ProvideTextStyleFromToken3JVO9M(long j, final TypographyKeyTokens typographyKeyTokens, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m2658ProvideTextStyleFromToken3JVO9M(long j, final TypographyKeyTokens typographyKeyTokens, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         long j2;
         final Function2<? super Composer, ? super Integer, Unit> function22;
@@ -1005,7 +1006,7 @@ public final class ListItemKt {
                 ComposerKt.traceEventStart(-285397024, i2, -1, "androidx.compose.material3.ProvideTextStyleFromToken (ListItem.kt:703)");
             }
             j2 = j;
-            ProvideContentColorTextStyleKt.m3007ProvideContentColorTextStyle3JVO9M(j2, TypographyKt.getValue(typographyKeyTokens, startRestartGroup, (i2 >> 3) & 14), function2, startRestartGroup, i2 & 910);
+            ProvideContentColorTextStyleKt.m3452ProvideContentColorTextStyle3JVO9M(j2, TypographyKt.getValue(typographyKeyTokens, startRestartGroup, (i2 >> 3) & 14), function2, startRestartGroup, i2 & 910);
             function22 = function2;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -1049,12 +1050,12 @@ public final class ListItemKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean isSupportingMultilineHeuristic(Density density, int i) {
-        return i > density.mo398roundToPxR2X_6o(TextUnitKt.getSp(30));
+        return i > density.mo427roundToPxR2X_6o(TextUnitKt.getSp(30));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: verticalPadding-yh95HIg  reason: not valid java name */
-    public static final float m2220verticalPaddingyh95HIg(int i) {
-        return ListItemType.m2225equalsimpl0(i, ListItemType.Companion.m2231getThreeLineAlXitO8()) ? ListItemThreeLineVerticalPadding : ListItemVerticalPadding;
+    public static final float m2665verticalPaddingyh95HIg(int i) {
+        return ListItemType.m2670equalsimpl0(i, ListItemType.Companion.m2676getThreeLineAlXitO8()) ? ListItemThreeLineVerticalPadding : ListItemVerticalPadding;
     }
 }

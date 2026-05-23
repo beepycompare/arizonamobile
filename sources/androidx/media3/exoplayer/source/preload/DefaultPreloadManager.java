@@ -8,6 +8,7 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.common.util.Util;
+import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DefaultDataSource;
 import androidx.media3.datasource.cache.Cache;
 import androidx.media3.datasource.cache.CacheDataSource;
@@ -66,6 +67,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         private Executor cachingExecutor;
         private Clock clock;
         private final Context context;
+        private DataSource.Factory dataSourceFactory;
         private Supplier<LoadControl> loadControlSupplier;
         private PlaybackLooperProvider preloadLooperProvider;
         private Supplier<RenderersFactory> renderersFactorySupplier;
@@ -87,7 +89,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         }
 
         public Builder(final Context context, TargetPreloadStatusControl<Integer, PreloadStatus> targetPreloadStatusControl) {
-            super(new SimpleRankingDataComparator(), targetPreloadStatusControl, new MediaSourceFactorySupplier(context));
+            super(new SimpleRankingDataComparator(), targetPreloadStatusControl, new DefaultMediaSourceFactorySupplier(context));
             this.context = context;
             this.preloadLooperProvider = new PlaybackLooperProvider();
             this.trackSelectorFactory = new TrackSelector.Factory() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$Builder$$ExternalSyntheticLambda3
@@ -120,9 +122,39 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
             return new DefaultRenderersFactory(context);
         }
 
-        public Builder setMediaSourceFactory(MediaSource.Factory factory) {
+        @Deprecated
+        public Builder setMediaSourceFactory(final MediaSource.Factory factory) {
             Preconditions.checkState((this.buildCalled || this.buildExoPlayerCalled) ? false : true);
-            ((MediaSourceFactorySupplier) this.mediaSourceFactorySupplier).setCustomMediaSourceFactory(factory);
+            this.mediaSourceFactorySupplier = new MediaSourceFactorySupplier() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager.Builder.1
+                @Override // androidx.media3.exoplayer.source.preload.MediaSourceFactorySupplier
+                public MediaSourceFactorySupplier setCache(Cache cache) {
+                    return this;
+                }
+
+                @Override // androidx.media3.exoplayer.source.preload.MediaSourceFactorySupplier
+                public MediaSourceFactorySupplier setDataSourceFactory(DataSource.Factory factory2) {
+                    return this;
+                }
+
+                /* JADX WARN: Can't rename method to resolve collision */
+                @Override // com.google.common.base.Supplier
+                public MediaSource.Factory get() {
+                    return factory;
+                }
+            };
+            return this;
+        }
+
+        public Builder setMediaSourceFactorySupplier(MediaSourceFactorySupplier mediaSourceFactorySupplier) {
+            Preconditions.checkState((this.buildCalled || this.buildExoPlayerCalled) ? false : true);
+            this.mediaSourceFactorySupplier = mediaSourceFactorySupplier.setCache(this.cache).setDataSourceFactory(this.dataSourceFactory);
+            return this;
+        }
+
+        public Builder setDataSourceFactory(DataSource.Factory factory) {
+            Preconditions.checkState((this.buildCalled || this.buildExoPlayerCalled) ? false : true);
+            this.dataSourceFactory = factory;
+            this.mediaSourceFactorySupplier.setDataSourceFactory(factory);
             return this;
         }
 
@@ -174,7 +206,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         public Builder setCache(Cache cache) {
             Preconditions.checkState((this.buildCalled || this.buildExoPlayerCalled) ? false : true);
             this.cache = cache;
-            ((MediaSourceFactorySupplier) this.mediaSourceFactorySupplier).setCache(cache);
+            this.mediaSourceFactorySupplier.setCache(cache);
             return this;
         }
 
@@ -283,6 +315,7 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
 
     private DefaultPreloadManager(Builder builder) {
         super(new SimpleRankingDataComparator(), builder.targetPreloadStatusControl, builder.mediaSourceFactorySupplier.get());
+        DataSource.Factory factory;
         DefaultRendererCapabilitiesList createRendererCapabilitiesList = new DefaultRendererCapabilitiesList.Factory((RenderersFactory) builder.renderersFactorySupplier.get()).createRendererCapabilitiesList();
         this.rendererCapabilitiesList = createRendererCapabilitiesList;
         PlaybackLooperProvider playbackLooperProvider = builder.preloadLooperProvider;
@@ -303,7 +336,12 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
             HandlerThread handlerThread = new HandlerThread("DefaultPreloadManager:PreCacheHelper");
             this.preCacheThread = handlerThread;
             handlerThread.start();
-            this.preCacheHelperFactory = new PreCacheHelper.Factory(builder.context, cache, handlerThread.getLooper()).setDownloadExecutor(builder.cachingExecutor).setListener(new PreCacheHelperListener());
+            if (builder.dataSourceFactory != null) {
+                factory = builder.dataSourceFactory;
+            } else {
+                factory = new DefaultDataSource.Factory(builder.context);
+            }
+            this.preCacheHelperFactory = new PreCacheHelper.Factory(builder.context, cache, factory, handlerThread.getLooper()).setDownloadExecutor(builder.cachingExecutor).setListener(new PreCacheHelperListener());
         } else {
             this.preCacheThread = null;
             this.preCacheHelperFactory = null;
@@ -393,14 +431,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultPreloadManager.this.m8308xa55db43d();
+                DefaultPreloadManager.this.m8916xa55db43d();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadUtils$2$androidx-media3-exoplayer-source-preload-DefaultPreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8308xa55db43d() {
+    public /* synthetic */ void m8916xa55db43d() {
         this.rendererCapabilitiesList.release();
         this.trackSelector.release();
         this.preloadLooperProvider.releaseLooper();
@@ -631,18 +669,18 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
     }
 
     /* loaded from: classes3.dex */
-    private static class MediaSourceFactorySupplier implements Supplier<MediaSource.Factory> {
+    private static class DefaultMediaSourceFactorySupplier implements MediaSourceFactorySupplier {
         private Cache cache;
         private final Context context;
-        private MediaSource.Factory customMediaSourceFactory;
+        private DataSource.Factory dataSourceFactory;
         private final Supplier<DefaultMediaSourceFactory> defaultMediaSourceFactorySupplier;
 
-        public MediaSourceFactorySupplier(final Context context) {
+        private DefaultMediaSourceFactorySupplier(final Context context) {
             this.context = context;
-            this.defaultMediaSourceFactorySupplier = Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$MediaSourceFactorySupplier$$ExternalSyntheticLambda0
+            this.defaultMediaSourceFactorySupplier = Suppliers.memoize(new Supplier() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$DefaultMediaSourceFactorySupplier$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    return DefaultPreloadManager.MediaSourceFactorySupplier.lambda$new$0(context);
+                    return DefaultPreloadManager.DefaultMediaSourceFactorySupplier.lambda$new$0(context);
                 }
             });
         }
@@ -652,26 +690,32 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
             return new DefaultMediaSourceFactory(context);
         }
 
-        public void setCache(Cache cache) {
+        @Override // androidx.media3.exoplayer.source.preload.MediaSourceFactorySupplier
+        public DefaultMediaSourceFactorySupplier setCache(Cache cache) {
             this.cache = cache;
+            return this;
         }
 
-        public void setCustomMediaSourceFactory(MediaSource.Factory factory) {
-            this.customMediaSourceFactory = factory;
+        @Override // androidx.media3.exoplayer.source.preload.MediaSourceFactorySupplier
+        public DefaultMediaSourceFactorySupplier setDataSourceFactory(DataSource.Factory factory) {
+            this.dataSourceFactory = factory;
+            return this;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.google.common.base.Supplier
         public MediaSource.Factory get() {
-            MediaSource.Factory factory = this.customMediaSourceFactory;
-            if (factory != null) {
-                return factory;
-            }
             DefaultMediaSourceFactory defaultMediaSourceFactory = this.defaultMediaSourceFactorySupplier.get();
+            DataSource.Factory factory = this.dataSourceFactory;
+            if (factory == null) {
+                factory = new DefaultDataSource.Factory(this.context);
+            }
             Cache cache = this.cache;
             if (cache != null) {
-                defaultMediaSourceFactory.setDataSourceFactory(new CacheDataSource.Factory().setUpstreamDataSourceFactory(new DefaultDataSource.Factory(this.context)).setCache(cache).setCacheWriteDataSinkFactory(null));
+                defaultMediaSourceFactory.setDataSourceFactory(new CacheDataSource.Factory().setUpstreamDataSourceFactory(factory).setCache(cache).setCacheWriteDataSinkFactory(null));
+                return defaultMediaSourceFactory;
             }
+            defaultMediaSourceFactory.setDataSourceFactory(factory);
             return defaultMediaSourceFactory;
         }
     }

@@ -52,7 +52,7 @@ public final class RewardsTasksAdapter extends RecyclerView.Adapter<RodinaBattle
         Intrinsics.checkNotNullParameter(rewards, "rewards");
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.rewards.clear();
         this.rewards.addAll(rewards);

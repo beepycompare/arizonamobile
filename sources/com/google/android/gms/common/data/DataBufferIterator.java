@@ -3,7 +3,7 @@ package com.google.android.gms.common.data;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class DataBufferIterator<T> implements Iterator<T> {
     protected final DataBuffer zaa;
@@ -27,7 +27,10 @@ public class DataBufferIterator<T> implements Iterator<T> {
             return dataBuffer.get(i);
         }
         int i2 = this.zab;
-        throw new NoSuchElementException("Cannot advance the iterator beyond " + i2);
+        StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 35);
+        sb.append("Cannot advance the iterator beyond ");
+        sb.append(i2);
+        throw new NoSuchElementException(sb.toString());
     }
 
     @Override // java.util.Iterator

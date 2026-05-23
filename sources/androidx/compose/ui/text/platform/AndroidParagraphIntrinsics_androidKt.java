@@ -16,33 +16,33 @@ import java.util.List;
 import java.util.Locale;
 import kotlin.Metadata;
 /* compiled from: AndroidParagraphIntrinsics.android.kt */
-@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u0000¢\u0006\u0004\b\u0006\u0010\u0007\u001aR\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0014\u0010\u000e\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00110\u00100\u000f2\u0012\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\u00100\u000f2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0000\"\u0018\u0010\u0018\u001a\u00020\u0019*\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006\u001c"}, d2 = {"resolveTextDirectionHeuristics", "", "textDirection", "Landroidx/compose/ui/text/style/TextDirection;", "localeList", "Landroidx/compose/ui/text/intl/LocaleList;", "resolveTextDirectionHeuristics-HklW4sA", "(ILandroidx/compose/ui/text/intl/LocaleList;)I", "ActualParagraphIntrinsics", "Landroidx/compose/ui/text/ParagraphIntrinsics;", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "hasEmojiCompat", "", "getHasEmojiCompat", "(Landroidx/compose/ui/text/TextStyle;)Z", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u0000¢\u0006\u0004\b\u0006\u0010\u0007\u001aR\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0014\u0010\u000e\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00110\u00100\u000f2\u0012\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\u00100\u000f2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0000\"\u0018\u0010\u0018\u001a\u00020\u0019*\u00020\r8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001b¨\u0006\u001c"}, d2 = {"resolveTextDirectionHeuristics", "", "textDirection", "Landroidx/compose/ui/text/style/TextDirection;", "localeList", "Landroidx/compose/ui/text/intl/LocaleList;", "resolveTextDirectionHeuristics-HklW4sA", "(ILandroidx/compose/ui/text/intl/LocaleList;)I", "ActualParagraphIntrinsics", "Landroidx/compose/ui/text/ParagraphIntrinsics;", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "hasEmojiCompat", "", "getHasEmojiCompat", "(Landroidx/compose/ui/text/TextStyle;)Z", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidParagraphIntrinsics_androidKt {
     /* renamed from: resolveTextDirectionHeuristics-HklW4sA$default  reason: not valid java name */
-    public static /* synthetic */ int m7262resolveTextDirectionHeuristicsHklW4sA$default(int i, LocaleList localeList, int i2, Object obj) {
+    public static /* synthetic */ int m7867resolveTextDirectionHeuristicsHklW4sA$default(int i, LocaleList localeList, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             localeList = null;
         }
-        return m7261resolveTextDirectionHeuristicsHklW4sA(i, localeList);
+        return m7866resolveTextDirectionHeuristicsHklW4sA(i, localeList);
     }
 
     /* renamed from: resolveTextDirectionHeuristics-HklW4sA  reason: not valid java name */
-    public static final int m7261resolveTextDirectionHeuristicsHklW4sA(int i, LocaleList localeList) {
+    public static final int m7866resolveTextDirectionHeuristicsHklW4sA(int i, LocaleList localeList) {
         Locale locale;
-        if (TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7451getContentOrLtrs_7Xco())) {
+        if (TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8056getContentOrLtrs_7Xco())) {
             return 2;
         }
-        if (TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7452getContentOrRtls_7Xco())) {
+        if (TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8057getContentOrRtls_7Xco())) {
             return 3;
         }
-        if (TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7453getLtrs_7Xco())) {
+        if (TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8058getLtrs_7Xco())) {
             return 0;
         }
-        if (TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7454getRtls_7Xco())) {
+        if (TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8059getRtls_7Xco())) {
             return 1;
         }
-        if (TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7450getContents_7Xco()) || TextDirection.m7446equalsimpl0(i, TextDirection.Companion.m7455getUnspecifieds_7Xco())) {
+        if (TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8055getContents_7Xco()) || TextDirection.m8051equalsimpl0(i, TextDirection.Companion.m8060getUnspecifieds_7Xco())) {
             if (localeList == null || (locale = localeList.get(0).getPlatformLocale()) == null) {
                 locale = Locale.getDefault();
             }
@@ -60,7 +60,7 @@ public final class AndroidParagraphIntrinsics_androidKt {
     public static final boolean getHasEmojiCompat(TextStyle textStyle) {
         PlatformParagraphStyle paragraphStyle;
         PlatformTextStyle platformStyle = textStyle.getPlatformStyle();
-        EmojiSupportMatch m6850boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m6850boximpl(paragraphStyle.m6931getEmojiSupportMatch_3YsG6Y());
-        return !(m6850boximpl == null ? false : EmojiSupportMatch.m6853equalsimpl0(m6850boximpl.m6856unboximpl(), EmojiSupportMatch.Companion.m6859getNone_3YsG6Y()));
+        EmojiSupportMatch m7455boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m7455boximpl(paragraphStyle.m7536getEmojiSupportMatch_3YsG6Y());
+        return !(m7455boximpl == null ? false : EmojiSupportMatch.m7458equalsimpl0(m7455boximpl.m7461unboximpl(), EmojiSupportMatch.Companion.m7464getNone_3YsG6Y()));
     }
 }

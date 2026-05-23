@@ -10,8 +10,9 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 /* compiled from: Await.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u001e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a:\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u001e\u0010\u0003\u001a\u0010\u0012\f\b\u0001\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004\"\b\u0012\u0004\u0012\u0002H\u00020\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a*\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0007H\u0086@¢\u0006\u0002\u0010\b\u001a\"\u0010\t\u001a\u00020\n2\u0012\u0010\u000b\u001a\n\u0012\u0006\b\u0001\u0012\u00020\f0\u0004\"\u00020\fH\u0086@¢\u0006\u0002\u0010\r\u001a\u0018\u0010\t\u001a\u00020\n*\b\u0012\u0004\u0012\u00020\f0\u0007H\u0086@¢\u0006\u0002\u0010\b¨\u0006\u000e"}, d2 = {"awaitAll", "", ExifInterface.GPS_DIRECTION_TRUE, "deferreds", "", "Lkotlinx/coroutines/Deferred;", "([Lkotlinx/coroutines/Deferred;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "", "(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "joinAll", "", "jobs", "Lkotlinx/coroutines/Job;", "([Lkotlinx/coroutines/Job;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u001e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a:\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u001e\u0010\u0003\u001a\u0010\u0012\f\b\u0001\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004\"\b\u0012\u0004\u0012\u0002H\u00020\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a*\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0007H\u0086@¢\u0006\u0002\u0010\b\u001a\"\u0010\t\u001a\u00020\n2\u0012\u0010\u000b\u001a\n\u0012\u0006\b\u0001\u0012\u00020\f0\u0004\"\u00020\fH\u0086@¢\u0006\u0002\u0010\r\u001a\u0018\u0010\t\u001a\u00020\n*\b\u0012\u0004\u0012\u00020\f0\u0007H\u0086@¢\u0006\u0002\u0010\b¨\u0006\u000e"}, d2 = {"awaitAll", "", ExifInterface.GPS_DIRECTION_TRUE, "deferreds", "", "Lkotlinx/coroutines/Deferred;", "([Lkotlinx/coroutines/Deferred;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "", "(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "joinAll", "", "jobs", "Lkotlinx/coroutines/Job;", "([Lkotlinx/coroutines/Job;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class AwaitKt {
     public static final <T> Object awaitAll(Deferred<? extends T>[] deferredArr, Continuation<? super List<? extends T>> continuation) {
@@ -22,20 +23,23 @@ public final class AwaitKt {
         return collection.isEmpty() ? CollectionsKt.emptyList() : new AwaitAll((Deferred[]) collection.toArray(new Deferred[0])).await(continuation);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0058  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0053 -> B:19:0x0056). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x008a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0082 -> B:20:0x0085). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final Object joinAll(Job[] jobArr, Continuation<? super Unit> continuation) {
         AwaitKt$joinAll$1 awaitKt$joinAll$1;
         int i;
+        AwaitKt$joinAll$1 awaitKt$joinAll$12;
         int i2;
+        int i3;
         Job[] jobArr2;
         int length;
+        Job[] jobArr3;
         if (continuation instanceof AwaitKt$joinAll$1) {
             awaitKt$joinAll$1 = (AwaitKt$joinAll$1) continuation;
             if ((awaitKt$joinAll$1.label & Integer.MIN_VALUE) != 0) {
@@ -45,29 +49,51 @@ public final class AwaitKt {
                 i = awaitKt$joinAll$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
+                    awaitKt$joinAll$12 = awaitKt$joinAll$1;
                     i2 = 0;
+                    i3 = 0;
                     jobArr2 = jobArr;
                     length = jobArr.length;
+                    jobArr3 = jobArr2;
                     if (i2 < length) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    length = awaitKt$joinAll$1.I$1;
-                    i2 = awaitKt$joinAll$1.I$0;
+                    int i4 = awaitKt$joinAll$1.I$3;
+                    length = awaitKt$joinAll$1.I$2;
+                    int i5 = awaitKt$joinAll$1.I$1;
+                    int i6 = awaitKt$joinAll$1.I$0;
+                    Job job = (Job) awaitKt$joinAll$1.L$3;
+                    Job job2 = (Job) awaitKt$joinAll$1.L$2;
                     ResultKt.throwOnFailure(obj);
+                    jobArr3 = (Job[]) awaitKt$joinAll$1.L$1;
+                    i3 = i6;
+                    AwaitKt$joinAll$1 awaitKt$joinAll$13 = awaitKt$joinAll$1;
                     jobArr2 = (Job[]) awaitKt$joinAll$1.L$0;
-                    i2++;
+                    AwaitKt$joinAll$1 awaitKt$joinAll$14 = awaitKt$joinAll$13;
+                    i2 = i5 + 1;
+                    awaitKt$joinAll$12 = awaitKt$joinAll$14;
                     if (i2 < length) {
-                        Job job = jobArr2[i2];
-                        awaitKt$joinAll$1.L$0 = jobArr2;
-                        awaitKt$joinAll$1.I$0 = i2;
-                        awaitKt$joinAll$1.I$1 = length;
-                        awaitKt$joinAll$1.label = 1;
-                        if (job.join(awaitKt$joinAll$1) == coroutine_suspended) {
+                        Job job3 = jobArr3[i2];
+                        awaitKt$joinAll$12.L$0 = SpillingKt.nullOutSpilledVariable(jobArr2);
+                        awaitKt$joinAll$12.L$1 = jobArr3;
+                        awaitKt$joinAll$12.L$2 = SpillingKt.nullOutSpilledVariable(job3);
+                        awaitKt$joinAll$12.L$3 = SpillingKt.nullOutSpilledVariable(job3);
+                        awaitKt$joinAll$12.I$0 = i3;
+                        awaitKt$joinAll$12.I$1 = i2;
+                        awaitKt$joinAll$12.I$2 = length;
+                        awaitKt$joinAll$12.I$3 = 0;
+                        awaitKt$joinAll$12.label = 1;
+                        if (job3.join(awaitKt$joinAll$12) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i2++;
+                        int i7 = i2;
+                        awaitKt$joinAll$13 = awaitKt$joinAll$12;
+                        i5 = i7;
+                        AwaitKt$joinAll$1 awaitKt$joinAll$142 = awaitKt$joinAll$13;
+                        i2 = i5 + 1;
+                        awaitKt$joinAll$12 = awaitKt$joinAll$142;
                         if (i2 < length) {
                             return Unit.INSTANCE;
                         }
@@ -83,9 +109,9 @@ public final class AwaitKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x005d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -93,6 +119,8 @@ public final class AwaitKt {
         AwaitKt$joinAll$3 awaitKt$joinAll$3;
         int i;
         Iterator it;
+        Iterable iterable;
+        int i2;
         if (continuation instanceof AwaitKt$joinAll$3) {
             awaitKt$joinAll$3 = (AwaitKt$joinAll$3) continuation;
             if ((awaitKt$joinAll$3.label & Integer.MIN_VALUE) != 0) {
@@ -102,17 +130,35 @@ public final class AwaitKt {
                 i = awaitKt$joinAll$3.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    it = collection.iterator();
+                    Collection<? extends Job> collection2 = collection;
+                    it = collection2.iterator();
+                    iterable = collection2;
+                    i2 = 0;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    it = (Iterator) awaitKt$joinAll$3.L$0;
+                    int i3 = awaitKt$joinAll$3.I$1;
+                    int i4 = awaitKt$joinAll$3.I$0;
+                    Job job = (Job) awaitKt$joinAll$3.L$4;
+                    Object obj2 = awaitKt$joinAll$3.L$3;
+                    it = (Iterator) awaitKt$joinAll$3.L$2;
+                    iterable = (Iterable) awaitKt$joinAll$3.L$1;
                     ResultKt.throwOnFailure(obj);
+                    i2 = i4;
+                    collection = (Collection) awaitKt$joinAll$3.L$0;
                 }
                 while (it.hasNext()) {
-                    awaitKt$joinAll$3.L$0 = it;
+                    Object next = it.next();
+                    Job job2 = (Job) next;
+                    awaitKt$joinAll$3.L$0 = SpillingKt.nullOutSpilledVariable(collection);
+                    awaitKt$joinAll$3.L$1 = SpillingKt.nullOutSpilledVariable(iterable);
+                    awaitKt$joinAll$3.L$2 = it;
+                    awaitKt$joinAll$3.L$3 = SpillingKt.nullOutSpilledVariable(next);
+                    awaitKt$joinAll$3.L$4 = SpillingKt.nullOutSpilledVariable(job2);
+                    awaitKt$joinAll$3.I$0 = i2;
+                    awaitKt$joinAll$3.I$1 = 0;
                     awaitKt$joinAll$3.label = 1;
-                    if (((Job) it.next()).join(awaitKt$joinAll$3) == coroutine_suspended) {
+                    if (job2.join(awaitKt$joinAll$3) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -120,7 +166,7 @@ public final class AwaitKt {
             }
         }
         awaitKt$joinAll$3 = new AwaitKt$joinAll$3(continuation);
-        Object obj2 = awaitKt$joinAll$3.result;
+        Object obj3 = awaitKt$joinAll$3.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = awaitKt$joinAll$3.label;
         if (i != 0) {

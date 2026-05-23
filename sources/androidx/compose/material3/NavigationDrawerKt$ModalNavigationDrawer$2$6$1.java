@@ -39,11 +39,11 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
     /* renamed from: measure-3p2s80s */
     public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Integer valueOf;
-        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m8103copyZbe2FdA$default = Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(list.get(i).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
+            arrayList.add(list.get(i).mo6818measureBRTryo0(m8103copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         Integer num = null;

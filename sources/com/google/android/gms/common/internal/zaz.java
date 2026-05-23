@@ -1,36 +1,44 @@
 package com.google.android.gms.common.internal;
 
-import android.content.Context;
 import android.os.IBinder;
-import android.os.IInterface;
-import android.view.View;
-import com.google.android.gms.dynamic.ObjectWrapper;
-import com.google.android.gms.dynamic.RemoteCreator;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaz extends RemoteCreator {
-    private static final zaz zaa = new zaz();
-
-    private zaz() {
-        super("com.google.android.gms.common.ui.SignInButtonCreatorImpl");
+public final class zaz implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        boolean z = false;
+        boolean z2 = false;
+        IBinder iBinder = null;
+        ConnectionResult connectionResult = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 2) {
+                iBinder = SafeParcelReader.readIBinder(parcel, readHeader);
+            } else if (fieldId == 3) {
+                connectionResult = (ConnectionResult) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionResult.CREATOR);
+            } else if (fieldId == 4) {
+                z = SafeParcelReader.readBoolean(parcel, readHeader);
+            } else if (fieldId == 5) {
+                z2 = SafeParcelReader.readBoolean(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zay(i, iBinder, connectionResult, z, z2);
     }
 
-    public static View zaa(Context context, int i, int i2) throws RemoteCreator.RemoteCreatorException {
-        zaz zazVar = zaa;
-        try {
-            zax zaxVar = new zax(1, i, i2, null);
-            return (View) ObjectWrapper.unwrap(((zam) zazVar.getRemoteCreatorInstance(context)).zae(ObjectWrapper.wrap(context), zaxVar));
-        } catch (Exception e) {
-            throw new RemoteCreator.RemoteCreatorException("Could not get button with size " + i + " and color " + i2, e);
-        }
-    }
-
-    @Override // com.google.android.gms.dynamic.RemoteCreator
-    public final /* synthetic */ Object getRemoteCreator(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.ISignInButtonCreator");
-        return queryLocalInterface instanceof zam ? (zam) queryLocalInterface : new zam(iBinder);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zay[i];
     }
 }

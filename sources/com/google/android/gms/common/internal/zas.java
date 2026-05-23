@@ -1,5 +1,32 @@
 package com.google.android.gms.common.internal;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.internal.PendingResultUtil;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public interface zas {
+final class zas implements PendingResult.StatusListener {
+    final /* synthetic */ PendingResult zaa;
+    final /* synthetic */ TaskCompletionSource zab;
+    final /* synthetic */ PendingResultUtil.ResultConverter zac;
+    final /* synthetic */ zav zad;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zas(PendingResult pendingResult, TaskCompletionSource taskCompletionSource, PendingResultUtil.ResultConverter resultConverter, zav zavVar) {
+        this.zaa = pendingResult;
+        this.zab = taskCompletionSource;
+        this.zac = resultConverter;
+        this.zad = zavVar;
+    }
+
+    @Override // com.google.android.gms.common.api.PendingResult.StatusListener
+    public final void onComplete(Status status) {
+        if (status.isSuccess()) {
+            this.zab.setResult(this.zac.convert(this.zaa.await(0L, TimeUnit.MILLISECONDS)));
+            return;
+        }
+        this.zab.setException(ApiExceptionUtil.fromStatus(status));
+    }
 }

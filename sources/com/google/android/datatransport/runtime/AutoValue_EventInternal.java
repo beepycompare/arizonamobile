@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime;
 import com.google.android.datatransport.runtime.EventInternal;
 import java.util.Arrays;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_EventInternal extends EventInternal {
     private final Map<String, String> autoMetadata;
     private final Integer code;
@@ -119,7 +119,7 @@ final class AutoValue_EventInternal extends EventInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends EventInternal.Builder {
         private Map<String, String> autoMetadata;
         private Integer code;

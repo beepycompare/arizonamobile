@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DownloadUriOutputStream implements DownloadOutputStream {
     private final FileChannel channel;
     final FileOutputStream fos;

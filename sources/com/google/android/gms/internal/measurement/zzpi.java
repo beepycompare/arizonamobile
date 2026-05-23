@@ -1,27 +1,27 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import com.google.common.base.Preconditions;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzpi implements Supplier {
-    private static final zzpi zza = new zzpi();
-    private final Supplier zzb = Suppliers.ofInstance(new zzpk());
+public final class zzpi implements zzph {
+    private volatile zzon zza;
+    private zzpg zzb;
 
-    @SideEffectFree
-    public static boolean zza() {
-        return zza.get().zza();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzpi(zzon zzonVar, byte[] bArr) {
+        this.zza = zzonVar;
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzc */
-    public final zzpj get() {
-        return (zzpj) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzph
+    public final zzpg zza(zzlk zzlkVar, String str) {
+        Preconditions.checkArgument(true);
+        zzon zzonVar = this.zza;
+        zzon zzonVar2 = zzpg.zza;
+        if (zzonVar != zzonVar2) {
+            this.zzb = zzpg.zzd().zzc(zzlkVar, zzonVar, "").zza(zzlkVar, "");
+            this.zza = zzonVar2;
+        }
+        return this.zzb;
     }
 }

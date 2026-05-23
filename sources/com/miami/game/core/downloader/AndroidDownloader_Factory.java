@@ -3,7 +3,7 @@ package com.miami.game.core.downloader;
 import android.content.Context;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AndroidDownloader_Factory implements Factory<AndroidDownloader> {
     private final Provider<Context> applicationContextProvider;
 

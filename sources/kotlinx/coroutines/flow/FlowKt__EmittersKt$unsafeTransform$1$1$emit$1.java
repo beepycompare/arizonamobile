@@ -5,10 +5,11 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: Emitters.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$unsafeTransform$1$1", f = "Emitters.kt", i = {}, l = {49}, m = "emit", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$unsafeTransform$1$1", f = "Emitters.kt", i = {0}, l = {47}, m = "emit", n = {"value"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__EmittersKt$unsafeTransform$1$1$emit$1 extends ContinuationImpl {
+    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FlowKt__EmittersKt$unsafeTransform$1$1<T> this$0;

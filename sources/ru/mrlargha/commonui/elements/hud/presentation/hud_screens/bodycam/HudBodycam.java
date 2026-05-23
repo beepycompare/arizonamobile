@@ -75,7 +75,7 @@ public final class HudBodycam {
         Job launch$default;
         Job job = this.timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new HudBodycam$startTimer$1(j, this, null), 3, null);
         this.timerJob = launch$default;
@@ -85,7 +85,7 @@ public final class HudBodycam {
         Job launch$default;
         Job job = this.serverTimerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new HudBodycam$startServerTimer$1(j, this, null), 3, null);
         this.serverTimerJob = launch$default;
@@ -128,12 +128,12 @@ public final class HudBodycam {
     private final void stopTimer() {
         Job job = this.timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.timerJob = null;
         Job job2 = this.serverTimerJob;
         if (job2 != null) {
-            Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
         }
         this.serverTimerJob = null;
     }

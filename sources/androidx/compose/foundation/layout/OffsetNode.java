@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Offset.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ%\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0019\u0010\u001aJ#\u0010\u001b\u001a\u00020\u001c*\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0016¢\u0006\u0004\b\"\u0010#R\u001c\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u000e\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001c\u0010\u0005\u001a\u00020\u0004X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u000e\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\rR\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0015\u001a\u00020\u0007X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0012¨\u0006$"}, d2 = {"Landroidx/compose/foundation/layout/OffsetNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "x", "Landroidx/compose/ui/unit/Dp;", "y", "rtlAware", "", "<init>", "(FFZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getX-D9Ej5fM", "()F", "setX-0680j_4", "(F)V", "F", "getY-D9Ej5fM", "setY-0680j_4", "getRtlAware", "()Z", "setRtlAware", "(Z)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "update", "", "update-Md-fbLM", "(FFZ)V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u001f\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ%\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0019\u0010\u001aJ#\u0010\u001b\u001a\u00020\u001c*\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0016¢\u0006\u0004\b\"\u0010#R\u001c\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u000e\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001c\u0010\u0005\u001a\u00020\u0004X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u000e\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\rR\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0015\u001a\u00020\u0007X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0012¨\u0006$"}, d2 = {"Landroidx/compose/foundation/layout/OffsetNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "x", "Landroidx/compose/ui/unit/Dp;", "y", "rtlAware", "", "<init>", "(FFZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getX-D9Ej5fM", "()F", "setX-0680j_4", "(F)V", "F", "getY-D9Ej5fM", "setY-0680j_4", "getRtlAware", "()Z", "setRtlAware", "(Z)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "update", "", "update-Md-fbLM", "(FFZ)V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class OffsetNode extends Modifier.Node implements LayoutModifierNode {
     private boolean rtlAware;
@@ -37,12 +37,12 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: getX-D9Ej5fM  reason: not valid java name */
-    public final float m779getXD9Ej5fM() {
+    public final float m1011getXD9Ej5fM() {
         return this.x;
     }
 
     /* renamed from: getY-D9Ej5fM  reason: not valid java name */
-    public final float m780getYD9Ej5fM() {
+    public final float m1012getYD9Ej5fM() {
         return this.y;
     }
 
@@ -51,12 +51,12 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: setX-0680j_4  reason: not valid java name */
-    public final void m781setX0680j_4(float f) {
+    public final void m1013setX0680j_4(float f) {
         this.x = f;
     }
 
     /* renamed from: setY-0680j_4  reason: not valid java name */
-    public final void m782setY0680j_4(float f) {
+    public final void m1014setY0680j_4(float f) {
         this.y = f;
     }
 
@@ -66,8 +66,8 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: update-Md-fbLM  reason: not valid java name */
-    public final void m783updateMdfbLM(float f, float f2, boolean z) {
-        if (!Dp.m7560equalsimpl0(this.x, f) || !Dp.m7560equalsimpl0(this.y, f2) || this.rtlAware != z) {
+    public final void m1015updateMdfbLM(float f, float f2, boolean z) {
+        if (!Dp.m8165equalsimpl0(this.x, f) || !Dp.m8165equalsimpl0(this.y, f2) || this.rtlAware != z) {
             LayoutModifierNodeKt.invalidatePlacement(this);
         }
         this.x = f;
@@ -78,11 +78,11 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
+                return OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo6818measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
@@ -90,9 +90,9 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(OffsetNode offsetNode, Placeable placeable, Placeable.PlacementScope placementScope) {
         if (offsetNode.rtlAware) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(offsetNode.x), placementScope.mo399roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo428roundToPx0680j_4(offsetNode.x), placementScope.mo428roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
         } else {
-            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(offsetNode.x), placementScope.mo399roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo428roundToPx0680j_4(offsetNode.x), placementScope.mo428roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }

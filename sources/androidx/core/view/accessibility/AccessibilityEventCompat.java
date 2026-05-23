@@ -8,6 +8,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes2.dex */
 public final class AccessibilityEventCompat {
+    public static final int CONTENT_CHANGE_TYPE_CHECKED = 8192;
     public static final int CONTENT_CHANGE_TYPE_CONTENT_DESCRIPTION = 4;
     public static final int CONTENT_CHANGE_TYPE_CONTENT_INVALID = 1024;
     public static final int CONTENT_CHANGE_TYPE_DRAG_CANCELLED = 512;
@@ -15,11 +16,14 @@ public final class AccessibilityEventCompat {
     public static final int CONTENT_CHANGE_TYPE_DRAG_STARTED = 128;
     public static final int CONTENT_CHANGE_TYPE_ENABLED = 4096;
     public static final int CONTENT_CHANGE_TYPE_ERROR = 2048;
+    public static final int CONTENT_CHANGE_TYPE_EXPANDED = 16384;
     public static final int CONTENT_CHANGE_TYPE_PANE_APPEARED = 16;
     public static final int CONTENT_CHANGE_TYPE_PANE_DISAPPEARED = 32;
     public static final int CONTENT_CHANGE_TYPE_PANE_TITLE = 8;
+    public static final int CONTENT_CHANGE_TYPE_SORT_DIRECTION = 65536;
     public static final int CONTENT_CHANGE_TYPE_STATE_DESCRIPTION = 64;
     public static final int CONTENT_CHANGE_TYPE_SUBTREE = 1;
+    public static final int CONTENT_CHANGE_TYPE_SUPPLEMENTAL_DESCRIPTION = 32768;
     public static final int CONTENT_CHANGE_TYPE_TEXT = 2;
     public static final int CONTENT_CHANGE_TYPE_UNDEFINED = 0;
     public static final int TYPES_ALL_MASK = -1;

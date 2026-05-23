@@ -1,16 +1,16 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzis implements Runnable {
-    final /* synthetic */ zzbg zza;
+    final /* synthetic */ zzbh zza;
     final /* synthetic */ String zzb;
     final /* synthetic */ zzjd zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzis(zzjd zzjdVar, zzbg zzbgVar, String str) {
-        this.zza = zzbgVar;
+    public zzis(zzjd zzjdVar, zzbh zzbhVar, String str) {
+        this.zza = zzbhVar;
         this.zzb = str;
         Objects.requireNonNull(zzjdVar);
         this.zzc = zzjdVar;
@@ -19,7 +19,7 @@ final class zzis implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         zzjd zzjdVar = this.zzc;
-        zzjdVar.zzL().zzZ();
+        zzjdVar.zzL().zzaa();
         zzjdVar.zzL().zzD(this.zza, this.zzb);
     }
 }

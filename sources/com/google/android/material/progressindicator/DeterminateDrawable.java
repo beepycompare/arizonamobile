@@ -20,8 +20,8 @@ import com.google.android.material.progressindicator.DrawingDelegate;
 /* loaded from: classes4.dex */
 public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> extends DrawableWithAnimatedVisibilityChange {
     private static final int AMPLITUDE_ANIMATION_DURATION_MS = 500;
-    private static final float FULL_AMPLITUDE_FRACTION_MAX = 0.9f;
-    private static final float FULL_AMPLITUDE_FRACTION_MIN = 0.1f;
+    static final float FULL_AMPLITUDE_PROGRESS_MAX = 0.9f;
+    static final float FULL_AMPLITUDE_PROGRESS_MIN = 0.1f;
     static final float GAP_RAMP_DOWN_THRESHOLD = 0.01f;
     private static final FloatPropertyCompat<DeterminateDrawable<?>> INDICATOR_LENGTH_IN_LEVEL = new FloatPropertyCompat<DeterminateDrawable<?>>("indicatorLevel") { // from class: com.google.android.material.progressindicator.DeterminateDrawable.1
         @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
@@ -35,7 +35,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
             determinateDrawable.maybeStartAmplitudeAnimator((int) f);
         }
     };
-    private static final int MAX_DRAWABLE_LEVEL = 10000;
+    static final int MAX_DRAWABLE_LEVEL = 10000;
     private static final int PHASE_ANIMATION_DURATION_MS = 1000;
     private static final float SPRING_FORCE_STIFFNESS = 50.0f;
     private final DrawingDelegate.ActiveIndicator activeIndicator;
@@ -47,13 +47,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
     private final ValueAnimator phaseAnimator;
     private boolean skipAnimationOnLevelChange;
     private final SpringAnimation springAnimation;
-    private final SpringForce springForce;
     private float targetAmplitudeFraction;
-
-    private float getAmplitudeFractionFromLevel(int i) {
-        float f = i;
-        return (f < 1000.0f || f > 9000.0f) ? 0.0f : 1.0f;
-    }
 
     @Override // com.google.android.material.progressindicator.DrawableWithAnimatedVisibilityChange, androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public /* bridge */ /* synthetic */ void clearAnimationCallbacks() {
@@ -137,13 +131,9 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         DrawingDelegate.ActiveIndicator activeIndicator = new DrawingDelegate.ActiveIndicator();
         this.activeIndicator = activeIndicator;
         activeIndicator.isDeterminate = true;
-        SpringForce springForce = new SpringForce();
-        this.springForce = springForce;
-        springForce.setDampingRatio(1.0f);
-        springForce.setStiffness(50.0f);
         SpringAnimation springAnimation = new SpringAnimation(this, (FloatPropertyCompat<DeterminateDrawable<S>>) INDICATOR_LENGTH_IN_LEVEL);
         this.springAnimation = springAnimation;
-        springAnimation.setSpring(springForce);
+        springAnimation.setSpring(new SpringForce().setDampingRatio(1.0f).setStiffness(50.0f));
         ValueAnimator valueAnimator = new ValueAnimator();
         this.phaseAnimator = valueAnimator;
         valueAnimator.setDuration(1000L);
@@ -152,7 +142,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m8911x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
+                DeterminateDrawable.this.m9532x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
             }
         });
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0) {
@@ -163,7 +153,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m8911x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9532x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0 && isVisible()) {
             invalidateSelf();
         }
@@ -183,14 +173,14 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         this.amplitudeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m8910x5e685e4b(valueAnimator2);
+                DeterminateDrawable.this.m9531x5e685e4b(valueAnimator2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeInitializeAmplitudeAnimator$1$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m8910x5e685e4b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9531x5e685e4b(ValueAnimator valueAnimator) {
         this.activeIndicator.amplitudeFraction = this.amplitudeInterpolator.getInterpolation(this.amplitudeAnimator.getAnimatedFraction());
     }
 
@@ -230,7 +220,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
             return visibleInternal;
         }
         this.skipAnimationOnLevelChange = false;
-        this.springForce.setStiffness(50.0f / systemAnimatorDurationScale);
+        this.springAnimation.getSpring().setStiffness(50.0f / systemAnimatorDurationScale);
         return visibleInternal;
     }
 
@@ -243,17 +233,31 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
     @Override // android.graphics.drawable.Drawable
     protected boolean onLevelChange(int i) {
         float amplitudeFractionFromLevel = getAmplitudeFractionFromLevel(i);
-        boolean z = this.skipAnimationOnLevelChange;
-        SpringAnimation springAnimation = this.springAnimation;
-        if (z) {
-            springAnimation.skipToEnd();
+        if (this.skipAnimationOnLevelChange) {
+            this.springAnimation.skipToEnd();
             setIndicatorFraction(i / 10000.0f);
             setAmplitudeFraction(amplitudeFractionFromLevel);
             return true;
         }
-        springAnimation.setStartValue(getIndicatorFraction() * 10000.0f);
+        updateSpringMinVisibleChange();
+        this.springAnimation.setStartValue(getIndicatorFraction() * 10000.0f);
         this.springAnimation.animateToFinalPosition(i);
         return true;
+    }
+
+    private void updateSpringMinVisibleChange() {
+        int width = getBounds().width();
+        int height = getBounds().height();
+        if (width <= 0 || height <= 0) {
+            return;
+        }
+        boolean z = this.drawingDelegate instanceof LinearDrawingDelegate;
+        SpringAnimation springAnimation = this.springAnimation;
+        if (z) {
+            springAnimation.setMinimumVisibleChange(10000.0f / width);
+        } else {
+            springAnimation.setMinimumVisibleChange((float) (10000.0d / (Math.min(height, width) * 3.141592653589793d)));
+        }
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -266,9 +270,22 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         return this.drawingDelegate.getPreferredHeight();
     }
 
+    public SpringForce getSpringForce() {
+        return this.springAnimation.getSpring();
+    }
+
+    public void setSpringForce(SpringForce springForce) {
+        this.springAnimation.setSpring(springForce);
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setLevelByFraction(float f) {
         setLevel((int) (f * 10000.0f));
+    }
+
+    private float getAmplitudeFractionFromLevel(int i) {
+        float f = i;
+        return (f < this.baseSpec.waveAmplitudeRampProgressMin * 10000.0f || f > this.baseSpec.waveAmplitudeRampProgressMax * 10000.0f) ? 0.0f : 1.0f;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -358,5 +375,17 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         } else {
             this.phaseAnimator.cancel();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setWaveAmplitudeRampProgressMin(float f) {
+        this.baseSpec.waveAmplitudeRampProgressMin = f;
+        invalidateSelf();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setWaveAmplitudeRampProgressMax(float f) {
+        this.baseSpec.waveAmplitudeRampProgressMax = f;
+        invalidateSelf();
     }
 }

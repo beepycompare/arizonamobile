@@ -14,7 +14,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 @Singleton
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class MetadataBackendRegistry implements BackendRegistry {
     private static final String BACKEND_KEY_PREFIX = "backend:";
     private static final String TAG = "BackendRegistry";
@@ -48,7 +48,7 @@ class MetadataBackendRegistry implements BackendRegistry {
         return create;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class BackendFactoryProvider {
         private final Context applicationContext;
         private Map<String, String> backendProviders = null;

@@ -6,6 +6,7 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.OpusUtil;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;

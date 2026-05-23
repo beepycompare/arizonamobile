@@ -1,40 +1,73 @@
 package com.google.android.gms.common.internal;
 
+import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.internal.IAccountAccessor;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zay implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        Scope[] scopeArr = null;
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 2) {
-                i2 = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 3) {
-                i3 = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 4) {
-                scopeArr = (Scope[]) SafeParcelReader.createTypedArray(parcel, readHeader, Scope.CREATOR);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zax(i, i2, i3, scopeArr);
+public final class zay extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zay> CREATOR = new zaz();
+    final int zaa;
+    final IBinder zab;
+    private final ConnectionResult zac;
+    private final boolean zad;
+    private final boolean zae;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zay(int i, IBinder iBinder, ConnectionResult connectionResult, boolean z, boolean z2) {
+        this.zaa = i;
+        this.zab = iBinder;
+        this.zac = connectionResult;
+        this.zad = z;
+        this.zae = z2;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zax[i];
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof zay) {
+            zay zayVar = (zay) obj;
+            return this.zac.equals(zayVar.zac) && Objects.equal(zaa(), zayVar.zaa());
+        }
+        return false;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeInt(parcel, 1, this.zaa);
+        SafeParcelWriter.writeIBinder(parcel, 2, this.zab, false);
+        SafeParcelWriter.writeParcelable(parcel, 3, this.zac, i, false);
+        SafeParcelWriter.writeBoolean(parcel, 4, this.zad);
+        SafeParcelWriter.writeBoolean(parcel, 5, this.zae);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public final IAccountAccessor zaa() {
+        IBinder iBinder = this.zab;
+        if (iBinder == null) {
+            return null;
+        }
+        return IAccountAccessor.Stub.asInterface(iBinder);
+    }
+
+    public final ConnectionResult zab() {
+        return this.zac;
+    }
+
+    public final boolean zac() {
+        return this.zad;
+    }
+
+    public final boolean zad() {
+        return this.zae;
     }
 }

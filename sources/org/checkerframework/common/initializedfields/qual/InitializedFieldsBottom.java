@@ -11,6 +11,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @TargetLocations({TypeUseLocation.EXPLICIT_LOWER_BOUND, TypeUseLocation.EXPLICIT_UPPER_BOUND})
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({InitializedFields.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface InitializedFieldsBottom {
 }

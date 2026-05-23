@@ -4,26 +4,34 @@ import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.IntIterator;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.ranges.IntRange;
 /* compiled from: SafeCollector.common.kt */
-@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1", "Lkotlinx/coroutines/flow/Flow;", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1", "Lkotlinx/coroutines/flow/Flow;", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9 implements Flow<Integer> {
     final /* synthetic */ IntRange $this_asFlow$inlined;
 
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9", f = "Builders.kt", i = {0}, l = {111}, m = "collect", n = {"$this$asFlow_u24lambda_u2417"}, s = {"L$0"})
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9", f = "Builders.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {114}, m = "collect", n = {"collector", "$completion", "$this$asFlow_u24lambda_u248", "$this$forEach$iv", "element$iv", "$i$a$-unsafeFlow-FlowKt__BuildersKt$asFlow$9", "$i$f$forEach", "value", "$i$a$-forEach-FlowKt__BuildersKt$asFlow$9$1"}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 1)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {
+        int I$0;
+        int I$1;
+        int I$2;
+        int I$3;
         Object L$0;
         Object L$1;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
         int label;
         /* synthetic */ Object result;
 
@@ -43,9 +51,9 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9 implements Fl
         this.$this_asFlow$inlined = intRange;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0073  */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -53,30 +61,64 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9 implements Fl
     public Object collect(FlowCollector<? super Integer> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
+        Object obj;
+        Continuation continuation2;
         Iterator<Integer> it;
+        int i2;
+        FlowCollector<? super Integer> flowCollector2;
+        AnonymousClass1 anonymousClass12;
+        int i3;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
                 anonymousClass1.label -= Integer.MIN_VALUE;
-                Object obj = anonymousClass1.result;
+                Object obj2 = anonymousClass1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = anonymousClass1.label;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    it = this.$this_asFlow$inlined.iterator();
+                    ResultKt.throwOnFailure(obj2);
+                    IntRange intRange = this.$this_asFlow$inlined;
+                    obj = intRange;
+                    continuation2 = anonymousClass1;
+                    it = intRange.iterator();
+                    i2 = 0;
+                    flowCollector2 = flowCollector;
+                    anonymousClass12 = anonymousClass1;
+                    i3 = 0;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    it = (Iterator) anonymousClass1.L$1;
-                    flowCollector = (FlowCollector) anonymousClass1.L$0;
-                    ResultKt.throwOnFailure(obj);
+                    int i4 = anonymousClass1.I$3;
+                    int i5 = anonymousClass1.I$2;
+                    i2 = anonymousClass1.I$1;
+                    int i6 = anonymousClass1.I$0;
+                    Object obj3 = anonymousClass1.L$5;
+                    continuation2 = (Continuation) anonymousClass1.L$1;
+                    ResultKt.throwOnFailure(obj2);
+                    AnonymousClass1 anonymousClass13 = anonymousClass1;
+                    i3 = i6;
+                    flowCollector = (FlowCollector) anonymousClass1.L$2;
+                    obj = (Iterable) anonymousClass1.L$3;
+                    it = (Iterator) anonymousClass1.L$4;
+                    anonymousClass12 = anonymousClass13;
+                    flowCollector2 = (FlowCollector) anonymousClass1.L$0;
                 }
                 while (it.hasNext()) {
-                    Integer boxInt = Boxing.boxInt(((IntIterator) it).nextInt());
-                    anonymousClass1.L$0 = flowCollector;
-                    anonymousClass1.L$1 = it;
-                    anonymousClass1.label = 1;
-                    if (flowCollector.emit(boxInt, anonymousClass1) == coroutine_suspended) {
+                    Integer next = it.next();
+                    int intValue = next.intValue();
+                    Integer boxInt = Boxing.boxInt(intValue);
+                    anonymousClass12.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector2);
+                    anonymousClass12.L$1 = SpillingKt.nullOutSpilledVariable(continuation2);
+                    anonymousClass12.L$2 = flowCollector;
+                    anonymousClass12.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+                    anonymousClass12.L$4 = it;
+                    anonymousClass12.L$5 = SpillingKt.nullOutSpilledVariable(next);
+                    anonymousClass12.I$0 = i3;
+                    anonymousClass12.I$1 = i2;
+                    anonymousClass12.I$2 = intValue;
+                    anonymousClass12.I$3 = 0;
+                    anonymousClass12.label = 1;
+                    if (flowCollector.emit(boxInt, anonymousClass12) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -84,7 +126,7 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$9 implements Fl
             }
         }
         anonymousClass1 = new AnonymousClass1(continuation);
-        Object obj2 = anonymousClass1.result;
+        Object obj22 = anonymousClass1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = anonymousClass1.label;
         if (i != 0) {

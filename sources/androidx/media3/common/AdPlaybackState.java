@@ -395,13 +395,18 @@ public final class AdPlaybackState {
             return (SkipInfo[]) Arrays.copyOf(skipInfoArr, Math.max(i, skipInfoArr.length));
         }
 
+        @Deprecated
         public Bundle toBundle() {
+            return toBundle(9);
+        }
+
+        public Bundle toBundle(int i) {
             Bundle bundle = new Bundle();
             bundle.putLong(FIELD_TIME_US, this.timeUs);
             bundle.putInt(FIELD_COUNT, this.count);
             bundle.putInt(FIELD_ORIGINAL_COUNT, this.originalCount);
             bundle.putParcelableArrayList(FIELD_URIS, new ArrayList<>(Arrays.asList(this.uris)));
-            bundle.putParcelableArrayList(FIELD_MEDIA_ITEMS, getMediaItemsArrayBundles());
+            bundle.putParcelableArrayList(FIELD_MEDIA_ITEMS, getMediaItemsArrayBundles(i));
             bundle.putIntArray(FIELD_STATES, this.states);
             bundle.putLongArray(FIELD_DURATIONS_US, this.durationsUs);
             bundle.putLong(FIELD_CONTENT_RESUME_OFFSET_US, this.contentResumeOffsetUs);
@@ -412,11 +417,16 @@ public final class AdPlaybackState {
             return bundle;
         }
 
+        @Deprecated
         public static AdGroup fromBundle(Bundle bundle) {
+            return fromBundle(bundle, 9);
+        }
+
+        public static AdGroup fromBundle(Bundle bundle, int i) {
             SkipInfo[] skipInfosFromBundleArrays;
             long j = bundle.getLong(FIELD_TIME_US);
-            int i = bundle.getInt(FIELD_COUNT);
-            int i2 = bundle.getInt(FIELD_ORIGINAL_COUNT);
+            int i2 = bundle.getInt(FIELD_COUNT);
+            int i3 = bundle.getInt(FIELD_ORIGINAL_COUNT);
             ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_URIS);
             ArrayList parcelableArrayList2 = bundle.getParcelableArrayList(FIELD_MEDIA_ITEMS);
             int[] intArray = bundle.getIntArray(FIELD_STATES);
@@ -429,21 +439,17 @@ public final class AdPlaybackState {
             if (intArray == null) {
                 intArray = new int[0];
             }
-            MediaItem[] mediaItemsFromBundleArrays = getMediaItemsFromBundleArrays(parcelableArrayList2, parcelableArrayList);
+            MediaItem[] mediaItemsFromBundleArrays = getMediaItemsFromBundleArrays(parcelableArrayList2, parcelableArrayList, i);
             if (longArray == null) {
                 longArray = new long[0];
             }
-            String[] strArr = new String[0];
-            if (stringArrayList != null) {
-                strArr = (String[]) stringArrayList.toArray(strArr);
-            }
+            String[] strArr = stringArrayList == null ? new String[0] : (String[]) stringArrayList.toArray(new String[0]);
             if (parcelableArrayList3 == null) {
                 skipInfosFromBundleArrays = new SkipInfo[0];
             } else {
                 skipInfosFromBundleArrays = getSkipInfosFromBundleArrays(parcelableArrayList3);
             }
-            SkipInfo[] skipInfoArr = skipInfosFromBundleArrays;
-            return new AdGroup(j, i, i2, intArray, mediaItemsFromBundleArrays, longArray, j2, z, strArr, skipInfoArr, z2);
+            return new AdGroup(j, i2, i3, intArray, mediaItemsFromBundleArrays, longArray, j2, z, strArr, skipInfosFromBundleArrays, z2);
         }
 
         private ArrayList<Bundle> getSkipInfoArrayBundles() {
@@ -457,33 +463,33 @@ public final class AdPlaybackState {
             return arrayList;
         }
 
-        private ArrayList<Bundle> getMediaItemsArrayBundles() {
+        private ArrayList<Bundle> getMediaItemsArrayBundles(int i) {
             ArrayList<Bundle> arrayList = new ArrayList<>();
             MediaItem[] mediaItemArr = this.mediaItems;
             int length = mediaItemArr.length;
-            for (int i = 0; i < length; i++) {
-                MediaItem mediaItem = mediaItemArr[i];
-                arrayList.add(mediaItem == null ? null : mediaItem.toBundleIncludeLocalConfiguration());
+            for (int i2 = 0; i2 < length; i2++) {
+                MediaItem mediaItem = mediaItemArr[i2];
+                arrayList.add(mediaItem == null ? null : mediaItem.toBundleIncludeLocalConfiguration(i));
             }
             return arrayList;
         }
 
-        private static MediaItem[] getMediaItemsFromBundleArrays(ArrayList<Bundle> arrayList, ArrayList<Uri> arrayList2) {
-            int i = 0;
+        private static MediaItem[] getMediaItemsFromBundleArrays(ArrayList<Bundle> arrayList, ArrayList<Uri> arrayList2, int i) {
+            int i2 = 0;
             if (arrayList != null) {
                 MediaItem[] mediaItemArr = new MediaItem[arrayList.size()];
-                while (i < arrayList.size()) {
-                    Bundle bundle = arrayList.get(i);
-                    mediaItemArr[i] = bundle == null ? null : MediaItem.fromBundle(bundle);
-                    i++;
+                while (i2 < arrayList.size()) {
+                    Bundle bundle = arrayList.get(i2);
+                    mediaItemArr[i2] = bundle == null ? null : MediaItem.fromBundle(bundle, i);
+                    i2++;
                 }
                 return mediaItemArr;
             } else if (arrayList2 != null) {
                 MediaItem[] mediaItemArr2 = new MediaItem[arrayList2.size()];
-                while (i < arrayList2.size()) {
-                    Uri uri = arrayList2.get(i);
-                    mediaItemArr2[i] = uri == null ? null : MediaItem.fromUri(uri);
-                    i++;
+                while (i2 < arrayList2.size()) {
+                    Uri uri = arrayList2.get(i2);
+                    mediaItemArr2[i2] = uri == null ? null : MediaItem.fromUri(uri);
+                    i2++;
                 }
                 return mediaItemArr2;
             } else {
@@ -955,11 +961,16 @@ public final class AdPlaybackState {
         return j3 == Long.MIN_VALUE ? j2 == C.TIME_UNSET || adGroup.isLivePostrollPlaceholder() || j < j2 : j < j3;
     }
 
+    @Deprecated
     public Bundle toBundle() {
+        return toBundle(9);
+    }
+
+    public Bundle toBundle(int i) {
         Bundle bundle = new Bundle();
         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
         for (AdGroup adGroup : this.adGroups) {
-            arrayList.add(adGroup.toBundle());
+            arrayList.add(adGroup.toBundle(i));
         }
         if (!arrayList.isEmpty()) {
             bundle.putParcelableArrayList(FIELD_AD_GROUPS, arrayList);
@@ -973,22 +984,27 @@ public final class AdPlaybackState {
         if (j2 != adPlaybackState.contentDurationUs) {
             bundle.putLong(FIELD_CONTENT_DURATION_US, j2);
         }
-        int i = this.removedAdGroupCount;
-        if (i != adPlaybackState.removedAdGroupCount) {
-            bundle.putInt(FIELD_REMOVED_AD_GROUP_COUNT, i);
+        int i2 = this.removedAdGroupCount;
+        if (i2 != adPlaybackState.removedAdGroupCount) {
+            bundle.putInt(FIELD_REMOVED_AD_GROUP_COUNT, i2);
         }
         return bundle;
     }
 
+    @Deprecated
     public static AdPlaybackState fromBundle(Bundle bundle) {
+        return fromBundle(bundle, 9);
+    }
+
+    public static AdPlaybackState fromBundle(Bundle bundle, int i) {
         AdGroup[] adGroupArr;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_AD_GROUPS);
         if (parcelableArrayList == null) {
             adGroupArr = new AdGroup[0];
         } else {
             AdGroup[] adGroupArr2 = new AdGroup[parcelableArrayList.size()];
-            for (int i = 0; i < parcelableArrayList.size(); i++) {
-                adGroupArr2[i] = AdGroup.fromBundle((Bundle) parcelableArrayList.get(i));
+            for (int i2 = 0; i2 < parcelableArrayList.size(); i2++) {
+                adGroupArr2[i2] = AdGroup.fromBundle((Bundle) parcelableArrayList.get(i2), i);
             }
             adGroupArr = adGroupArr2;
         }

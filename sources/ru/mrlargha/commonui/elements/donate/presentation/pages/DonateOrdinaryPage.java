@@ -147,7 +147,7 @@ public final class DonateOrdinaryPage extends DonatePage {
         Job launch$default;
         Job job = this.renderJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + list.size());
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getMain(), null, new DonateOrdinaryPage$renderListGradually$1(list, this, null), 2, null);

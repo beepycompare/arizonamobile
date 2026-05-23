@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Separators.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.SeparatorState", f = "Separators.kt", i = {}, l = {217, 219, 220}, m = "onEvent", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class SeparatorState$onEvent$1 extends ContinuationImpl {

@@ -17,20 +17,20 @@ public final class FixedThreshold implements ThresholdConfig {
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    private final float m8031component1D9Ej5fM() {
+    private final float m8636component1D9Ej5fM() {
         return this.offset;
     }
 
     /* renamed from: copy-0680j_4$default  reason: not valid java name */
-    public static /* synthetic */ FixedThreshold m8032copy0680j_4$default(FixedThreshold fixedThreshold, float f, int i, Object obj) {
+    public static /* synthetic */ FixedThreshold m8637copy0680j_4$default(FixedThreshold fixedThreshold, float f, int i, Object obj) {
         if ((i & 1) != 0) {
             f = fixedThreshold.offset;
         }
-        return fixedThreshold.m8033copy0680j_4(f);
+        return fixedThreshold.m8638copy0680j_4(f);
     }
 
     /* renamed from: copy-0680j_4  reason: not valid java name */
-    public final FixedThreshold m8033copy0680j_4(float f) {
+    public final FixedThreshold m8638copy0680j_4(float f) {
         return new FixedThreshold(f, null);
     }
 
@@ -38,15 +38,15 @@ public final class FixedThreshold implements ThresholdConfig {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof FixedThreshold) && Dp.m7560equalsimpl0(this.offset, ((FixedThreshold) obj).offset);
+        return (obj instanceof FixedThreshold) && Dp.m8165equalsimpl0(this.offset, ((FixedThreshold) obj).offset);
     }
 
     public int hashCode() {
-        return Dp.m7561hashCodeimpl(this.offset);
+        return Dp.m8166hashCodeimpl(this.offset);
     }
 
     public String toString() {
-        return "FixedThreshold(offset=" + ((Object) Dp.m7566toStringimpl(this.offset)) + ')';
+        return "FixedThreshold(offset=" + ((Object) Dp.m8171toStringimpl(this.offset)) + ')';
     }
 
     private FixedThreshold(float f) {
@@ -55,6 +55,6 @@ public final class FixedThreshold implements ThresholdConfig {
 
     @Override // androidx.constraintlayout.compose.carousel.ThresholdConfig
     public float computeThreshold(Density density, float f, float f2) {
-        return f + (density.mo405toPx0680j_4(this.offset) * Math.signum(f2 - f));
+        return f + (density.mo434toPx0680j_4(this.offset) * Math.signum(f2 - f));
     }
 }

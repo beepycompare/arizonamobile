@@ -204,7 +204,9 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         for (int i : iArr) {
             arrayList.add(targetActivity.getString(i));
         }
-        return (String) CollectionsKt.random(arrayList, Random.Default);
+        Object random = CollectionsKt.random(arrayList, Random.Default);
+        Intrinsics.checkNotNullExpressionValue(random, "random(...)");
+        return (String) random;
     }
 
     private final void addExtraAwards(List<CaseAward> list) {

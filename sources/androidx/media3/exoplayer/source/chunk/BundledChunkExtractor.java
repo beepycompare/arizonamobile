@@ -64,9 +64,9 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
 
     /* loaded from: classes3.dex */
     public static final class Factory implements ChunkExtractor.Factory {
-        private int codecsToParseWithinGopSampleDependencies;
         private boolean parseSubtitlesDuringExtraction;
         private SubtitleParser.Factory subtitleParserFactory = new DefaultSubtitleParserFactory();
+        private int codecsToParseWithinGopSampleDependencies = 3;
 
         @Override // androidx.media3.exoplayer.source.chunk.ChunkExtractor.Factory
         public Factory setSubtitleParserFactory(SubtitleParser.Factory factory) {

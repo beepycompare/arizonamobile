@@ -6,11 +6,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Reduce.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ReduceKt", f = "Reduce.kt", i = {0}, l = {163}, m = "lastOrNull", n = {"result"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ReduceKt", f = "Reduce.kt", i = {0, 0}, l = {163}, m = "lastOrNull", n = {"$this$lastOrNull", "result"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ReduceKt$lastOrNull$1<T> extends ContinuationImpl {
     Object L$0;
+    Object L$1;
     int label;
     /* synthetic */ Object result;
 

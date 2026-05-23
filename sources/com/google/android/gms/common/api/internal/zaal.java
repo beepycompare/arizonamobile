@@ -1,55 +1,74 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Looper;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.internal.BaseGmsClient;
-import com.google.android.gms.common.internal.Preconditions;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.locks.Lock;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zaal implements BaseGmsClient.ConnectionProgressReportCallbacks {
-    private final WeakReference zaa;
-    private final Api zab;
-    private final boolean zac;
+final class zaal extends zaaq {
+    final /* synthetic */ zaar zaa;
+    private final Map zac;
 
-    public zaal(zaaw zaawVar, Api api, boolean z) {
-        this.zaa = new WeakReference(zaawVar);
-        this.zab = api;
-        this.zac = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zaal(zaar zaarVar, Map map) {
+        super(zaarVar, null);
+        Objects.requireNonNull(zaarVar);
+        this.zaa = zaarVar;
+        this.zac = map;
     }
 
-    @Override // com.google.android.gms.common.internal.BaseGmsClient.ConnectionProgressReportCallbacks
-    public final void onReportServiceBinding(ConnectionResult connectionResult) {
-        zabi zabiVar;
-        Lock lock;
-        Lock lock2;
-        boolean zaG;
-        boolean zaH;
-        zaaw zaawVar = (zaaw) this.zaa.get();
-        if (zaawVar == null) {
-            return;
+    @Override // com.google.android.gms.common.api.internal.zaaq
+    public final void zaa() {
+        zaar zaarVar = this.zaa;
+        com.google.android.gms.common.internal.zao zaoVar = new com.google.android.gms.common.internal.zao(zaarVar.zau());
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        Map map = this.zac;
+        for (Api.Client client : map.keySet()) {
+            if (!client.requiresGooglePlayServices() || ((zaai) map.get(client)).zaa()) {
+                arrayList2.add(client);
+            } else {
+                arrayList.add(client);
+            }
         }
-        Looper myLooper = Looper.myLooper();
-        zabiVar = zaawVar.zaa;
-        Preconditions.checkState(myLooper == zabiVar.zag.getLooper(), "onReportServiceBinding must be called on the GoogleApiClient handler thread");
-        lock = zaawVar.zab;
-        lock.lock();
-        try {
-            zaG = zaawVar.zaG(0);
-            if (zaG) {
-                if (!connectionResult.isSuccess()) {
-                    zaawVar.zaE(connectionResult, this.zab, this.zac);
-                }
-                zaH = zaawVar.zaH();
-                if (zaH) {
-                    zaawVar.zaF();
+        int i = 0;
+        int i2 = -1;
+        if (arrayList.isEmpty()) {
+            int size = arrayList2.size();
+            while (i < size) {
+                i2 = zaoVar.zaa(zaarVar.zat(), (Api.Client) arrayList2.get(i));
+                i++;
+                if (i2 == 0) {
+                    break;
                 }
             }
-        } finally {
-            lock2 = zaawVar.zab;
-            lock2.unlock();
+        } else {
+            int size2 = arrayList.size();
+            while (i < size2) {
+                i2 = zaoVar.zaa(zaarVar.zat(), (Api.Client) arrayList.get(i));
+                i++;
+                if (i2 != 0) {
+                    break;
+                }
+            }
+        }
+        if (i2 != 0) {
+            zaarVar.zar().zar(new zaaj(this, zaarVar, new ConnectionResult(i2, null)));
+            return;
+        }
+        if (zaarVar.zaw() && zaarVar.zav() != null) {
+            zaarVar.zav().zad();
+        }
+        for (Api.Client client2 : map.keySet()) {
+            BaseGmsClient.ConnectionProgressReportCallbacks connectionProgressReportCallbacks = (BaseGmsClient.ConnectionProgressReportCallbacks) map.get(client2);
+            if (!client2.requiresGooglePlayServices() || zaoVar.zaa(zaarVar.zat(), client2) == 0) {
+                client2.connect(connectionProgressReportCallbacks);
+            } else {
+                zaarVar.zar().zar(new zaak(this, zaarVar, connectionProgressReportCallbacks));
+            }
         }
     }
 }

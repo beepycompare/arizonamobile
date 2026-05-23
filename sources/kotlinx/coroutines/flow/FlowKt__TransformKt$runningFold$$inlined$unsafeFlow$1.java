@@ -7,25 +7,28 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: SafeCollector.common.kt */
-@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1", "Lkotlinx/coroutines/flow/Flow;", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1", "Lkotlinx/coroutines/flow/Flow;", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> implements Flow<R> {
     final /* synthetic */ Object $initial$inlined;
     final /* synthetic */ Function3 $operation$inlined;
     final /* synthetic */ Flow $this_runningFold$inlined;
 
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1", f = "Transform.kt", i = {0, 0, 0}, l = {110, 111}, m = "collect", n = {"this", "$this$runningFold_u24lambda_u249", "accumulator"}, s = {"L$0", "L$1", "L$2"})
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1", f = "Transform.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {113, 114}, m = "collect", n = {"collector", "$completion", "$this$runningFold_u24lambda_u240", "accumulator", "$i$a$-unsafeFlow-FlowKt__TransformKt$runningFold$1", "collector", "$completion", "$this$runningFold_u24lambda_u240", "accumulator", "$i$a$-unsafeFlow-FlowKt__TransformKt$runningFold$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {
+        int I$0;
         Object L$0;
         Object L$1;
         Object L$2;
+        Object L$3;
         int label;
         /* synthetic */ Object result;
 
@@ -41,24 +44,12 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
         }
     }
 
-    public FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1(Object obj, Flow flow, Function3 function3) {
-        this.$initial$inlined = obj;
-        this.$this_runningFold$inlined = flow;
-        this.$operation$inlined = function3;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0064, code lost:
-        if (r6.emit((java.lang.Object) r7.element, r0) == r1) goto L19;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x007f, code lost:
-        if (r5.$this_runningFold$inlined.collect(new kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$1$1(r7, r5.$operation$inlined, r6), r0) != r1) goto L11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0081, code lost:
-        return r1;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x00ba, code lost:
+        if (r8.$this_runningFold$inlined.collect(new kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$1$1(r2, r8.$operation$inlined, r9), r0) != r1) goto L11;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0047  */
-    /* JADX WARN: Type inference failed for: r2v1, types: [T, java.lang.Object] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0060  */
+    /* JADX WARN: Type inference failed for: r10v2, types: [T, java.lang.Object] */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -66,7 +57,11 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
     public Object collect(FlowCollector<? super R> flowCollector, Continuation<? super Unit> continuation) {
         AnonymousClass1 anonymousClass1;
         int i;
+        AnonymousClass1 anonymousClass12;
         Ref.ObjectRef objectRef;
+        int i2;
+        FlowCollector flowCollector2;
+        FlowCollector flowCollector3;
         if (continuation instanceof AnonymousClass1) {
             anonymousClass1 = (AnonymousClass1) continuation;
             if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
@@ -76,27 +71,46 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
                 i = anonymousClass1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
+                    anonymousClass12 = anonymousClass1;
                     objectRef = new Ref.ObjectRef();
                     objectRef.element = this.$initial$inlined;
-                    anonymousClass1.L$0 = this;
-                    anonymousClass1.L$1 = flowCollector;
-                    anonymousClass1.L$2 = objectRef;
+                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass12);
+                    anonymousClass1.L$2 = flowCollector;
+                    anonymousClass1.L$3 = objectRef;
+                    anonymousClass1.I$0 = 0;
                     anonymousClass1.label = 1;
+                    if (flowCollector.emit((Object) objectRef.element, anonymousClass1) != coroutine_suspended) {
+                        i2 = 0;
+                        flowCollector2 = flowCollector;
+                        flowCollector3 = flowCollector;
+                    }
+                    return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
+                        int i3 = anonymousClass1.I$0;
+                        Ref.ObjectRef objectRef2 = (Ref.ObjectRef) anonymousClass1.L$3;
+                        FlowCollector flowCollector4 = (FlowCollector) anonymousClass1.L$2;
+                        Continuation continuation2 = (Continuation) anonymousClass1.L$1;
+                        FlowCollector flowCollector5 = (FlowCollector) anonymousClass1.L$0;
                         ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    flowCollector = (FlowCollector) anonymousClass1.L$1;
+                    int i4 = anonymousClass1.I$0;
+                    objectRef = (Ref.ObjectRef) anonymousClass1.L$3;
+                    anonymousClass12 = (Continuation) anonymousClass1.L$1;
+                    flowCollector2 = (FlowCollector) anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    objectRef = (Ref.ObjectRef) anonymousClass1.L$2;
-                    this = (FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1) anonymousClass1.L$0;
+                    i2 = i4;
+                    flowCollector3 = (FlowCollector) anonymousClass1.L$2;
                 }
-                anonymousClass1.L$0 = null;
-                anonymousClass1.L$1 = null;
-                anonymousClass1.L$2 = null;
+                anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector2);
+                anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass12);
+                anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(flowCollector3);
+                anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(objectRef);
+                anonymousClass1.I$0 = i2;
                 anonymousClass1.label = 2;
             }
         }
@@ -106,9 +120,17 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
         i = anonymousClass1.label;
         if (i != 0) {
         }
-        anonymousClass1.L$0 = null;
-        anonymousClass1.L$1 = null;
-        anonymousClass1.L$2 = null;
+        anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector2);
+        anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass12);
+        anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(flowCollector3);
+        anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(objectRef);
+        anonymousClass1.I$0 = i2;
         anonymousClass1.label = 2;
+    }
+
+    public FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1(Object obj, Flow flow, Function3 function3) {
+        this.$initial$inlined = obj;
+        this.$this_runningFold$inlined = flow;
+        this.$operation$inlined = function3;
     }
 }

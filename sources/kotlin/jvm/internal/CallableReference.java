@@ -3,6 +3,7 @@ package kotlin.jvm.internal;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.GenericDeclaration;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.KotlinReflectionNotSupportedError;
@@ -13,7 +14,7 @@ import kotlin.reflect.KType;
 import kotlin.reflect.KTypeParameter;
 import kotlin.reflect.KVisibility;
 /* loaded from: classes5.dex */
-public abstract class CallableReference implements KCallable, Serializable {
+public abstract class CallableReference implements KCallable, Serializable, KotlinGenericDeclaration {
     public static final Object NO_RECEIVER = NoReceiver.INSTANCE;
     private final boolean isTopLevel;
     private final String name;
@@ -92,6 +93,11 @@ public abstract class CallableReference implements KCallable, Serializable {
 
     public String getSignature() {
         return this.signature;
+    }
+
+    @Override // kotlin.jvm.internal.KotlinGenericDeclaration
+    public GenericDeclaration findJavaDeclaration() {
+        return KotlinGenericDeclarationKt.findMethodBySignature(getOwner(), getSignature());
     }
 
     @Override // kotlin.reflect.KCallable

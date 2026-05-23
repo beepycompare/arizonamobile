@@ -37,18 +37,18 @@ public final class InstallationId {
         /* JADX WARN: Code restructure failed: missing block: B:15:0x0035, code lost:
             r7 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:28:0x0069, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x006c, code lost:
             r7 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x006a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x006d, code lost:
             android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting authentication token.", r7);
             r7 = r8;
             r8 = "";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:31:0x0084, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:31:0x0087, code lost:
             if (r7 != r9) goto L13;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:37:0x008e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x0091, code lost:
             android.util.Log.w(com.google.firebase.sessions.FirebaseSessions.TAG, "Error getting Firebase installation id .", r7);
             r8 = r8;
          */
@@ -102,8 +102,10 @@ public final class InstallationId {
                         firebaseInstallationsApi = (FirebaseInstallationsApi) installationId$Companion$create$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
+                    String token2 = ((InstallationTokenResult) obj).getToken();
+                    Intrinsics.checkNotNull(token2);
                     FirebaseInstallationsApi firebaseInstallationsApi2 = firebaseInstallationsApi;
-                    String str3 = ((InstallationTokenResult) obj).getToken();
+                    String str3 = token2;
                     FirebaseInstallationsApi firebaseInstallationsApi3 = firebaseInstallationsApi2;
                     Task<String> id = firebaseInstallationsApi3.getId();
                     Intrinsics.checkNotNullExpressionValue(id, "getId(...)");
@@ -120,8 +122,10 @@ public final class InstallationId {
             String str4 = "";
             if (i != 0) {
             }
+            String token22 = ((InstallationTokenResult) obj2).getToken();
+            Intrinsics.checkNotNull(token22);
             FirebaseInstallationsApi firebaseInstallationsApi22 = firebaseInstallationsApi;
-            String str32 = ((InstallationTokenResult) obj2).getToken();
+            String str32 = token22;
             FirebaseInstallationsApi firebaseInstallationsApi32 = firebaseInstallationsApi22;
             Task<String> id2 = firebaseInstallationsApi32.getId();
             Intrinsics.checkNotNullExpressionValue(id2, "getId(...)");

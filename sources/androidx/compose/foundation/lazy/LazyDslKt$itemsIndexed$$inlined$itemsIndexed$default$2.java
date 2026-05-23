@@ -3,7 +3,7 @@ package androidx.compose.foundation.lazy;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: LazyDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyDslKt$itemsIndexed$$inlined$itemsIndexed$default$2 implements Function1<Integer, Object> {
     final /* synthetic */ Object[] $items;

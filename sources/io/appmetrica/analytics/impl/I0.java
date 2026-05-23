@@ -1,27 +1,47 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.Base64;
-import com.google.firebase.remoteconfig.RemoteConfigConstants;
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
-import kotlin.text.Charsets;
-import org.json.JSONObject;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class I0 {
-    public static String a(H0 h0) {
-        try {
-            return Base64.encodeToString(new JSONObject().put("apiKey", h0.f610a).put(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME, h0.b).put("reporterType", h0.c.getStringValue()).put("processID", h0.d).put("processSessionID", h0.e).put("errorEnvironment", h0.f).toString().getBytes(Charsets.UTF_8), 0);
-        } catch (Throwable unused) {
-            return "";
-        }
+
+    /* renamed from: a  reason: collision with root package name */
+    public final NativeCrashSource f584a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final long e;
+    public final J0 f;
+
+    public I0(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, J0 j0) {
+        this.f584a = nativeCrashSource;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = j;
+        this.f = j0;
     }
 
-    public static H0 a(String str) {
-        try {
-            JSONObject jSONObject = new JSONObject(new String(Base64.decode(str, 0), Charsets.UTF_8));
-            return new H0(jSONObject.getString("apiKey"), jSONObject.getString(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME), CounterConfigurationReporterType.Companion.fromStringValue(jSONObject.getString("reporterType")), jSONObject.getInt("processID"), jSONObject.getString("processSessionID"), JsonUtils.optStringOrNull(jSONObject, "errorEnvironment"));
-        } catch (Throwable unused) {
-            return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj instanceof I0) {
+            I0 i0 = (I0) obj;
+            return this.f584a == i0.f584a && Intrinsics.areEqual(this.b, i0.b) && Intrinsics.areEqual(this.c, i0.c) && Intrinsics.areEqual(this.d, i0.d) && this.e == i0.e && Intrinsics.areEqual(this.f, i0.f);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = this.b.hashCode();
+        int hashCode2 = this.c.hashCode();
+        int hashCode3 = this.d.hashCode();
+        int hashCode4 = Long.hashCode(this.e);
+        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f584a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
+    }
+
+    public final String toString() {
+        return "AppMetricaNativeCrash(source=" + this.f584a + ", handlerVersion=" + this.b + ", uuid=" + this.c + ", dumpFile=" + this.d + ", creationTime=" + this.e + ", metadata=" + this.f + ')';
     }
 }

@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Errors.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
     final /* synthetic */ FlowCollector<T> $collector;
@@ -22,7 +23,7 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0034  */
     /* JADX WARN: Type inference failed for: r5v1, types: [java.lang.Throwable, T] */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
@@ -42,7 +43,7 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         FlowCollector<T> flowCollector = this.$collector;
-                        flowKt__ErrorsKt$catchImpl$2$emit$1.L$0 = this;
+                        flowKt__ErrorsKt$catchImpl$2$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                         flowKt__ErrorsKt$catchImpl$2$emit$1.label = 1;
                         if (flowCollector.emit(t, flowKt__ErrorsKt$catchImpl$2$emit$1) == coroutine_suspended) {
                             return coroutine_suspended;
@@ -50,7 +51,7 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        FlowKt__ErrorsKt$catchImpl$2 flowKt__ErrorsKt$catchImpl$2 = (FlowKt__ErrorsKt$catchImpl$2) flowKt__ErrorsKt$catchImpl$2$emit$1.L$0;
+                        Object obj2 = flowKt__ErrorsKt$catchImpl$2$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     this = (FlowKt__ErrorsKt$catchImpl$2<T>) Unit.INSTANCE;
@@ -67,7 +68,7 @@ public final class FlowKt__ErrorsKt$catchImpl$2<T> implements FlowCollector {
             throw r5;
         }
         flowKt__ErrorsKt$catchImpl$2$emit$1 = new FlowKt__ErrorsKt$catchImpl$2$emit$1(this, continuation);
-        Object obj2 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
+        Object obj3 = flowKt__ErrorsKt$catchImpl$2$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ErrorsKt$catchImpl$2$emit$1.label;
     }

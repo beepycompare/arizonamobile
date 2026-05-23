@@ -1,16 +1,6 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzns {
-    private static final zznr zza;
-
-    static {
-        int i = zznu.zza;
-        zza = new zznr();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zznr zza() {
-        return zza;
-    }
+    static final zzaev zza = zzaev.zza(zzagm.STRING, "", zzagm.MESSAGE, zznr.zzb());
 }

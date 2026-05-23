@@ -1,44 +1,79 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class Wm implements InterfaceC0232eo {
+public final class Wm extends MessageNano {
+    public static volatile Wm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f849a;
+    public int f830a;
 
-    public Wm(String str, List<String> list, int i, Ln ln, so soVar, J2 j2) {
-        List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(take, 10));
-        int i2 = 0;
-        for (Object obj : take) {
-            int i3 = i2 + 1;
-            if (i2 < 0) {
-                CollectionsKt.throwIndexOverflow();
+    public Wm() {
+        a();
+    }
+
+    public static Wm[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new Wm[0];
+                }
             }
-            arrayList.add(new Ym(str + '_' + i2, (String) obj, ln, soVar, j2));
-            i2 = i3;
         }
-        this.f849a = arrayList;
+        return b;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
-    public final void a(Cdo cdo) {
-        Iterator it = this.f849a.iterator();
-        while (it.hasNext()) {
-            ((Ym) it.next()).a(cdo);
-        }
+    public final Wm a() {
+        this.f830a = 86400;
+        this.cachedSize = -1;
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
-    public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f849a.iterator();
-        while (it.hasNext()) {
-            ((Ym) it.next()).e = publicLogger;
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        int i = this.f830a;
+        return i != 86400 ? CodedOutputByteBufferNano.computeUInt32Size(1, i) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        int i = this.f830a;
+        if (i != 86400) {
+            codedOutputByteBufferNano.writeUInt32(1, i);
         }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Wm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 8) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.f830a = codedInputByteBufferNano.readUInt32();
+            }
+        }
+        return this;
+    }
+
+    public static Wm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Wm().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Wm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Wm) MessageNano.mergeFrom(new Wm(), bArr);
     }
 }

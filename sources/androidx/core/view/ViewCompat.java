@@ -40,7 +40,6 @@ import androidx.core.util.Preconditions;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsAnimationCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 import androidx.core.view.accessibility.AccessibilityViewCommand;
@@ -126,8 +125,6 @@ public class ViewCompat {
     private static Method sDispatchFinishTemporaryDetach = null;
     private static Method sDispatchStartTemporaryDetach = null;
     private static boolean sTempDetachBound = false;
-    private static ThreadLocal<Rect> sThreadLocalRect = null;
-    private static WeakHashMap<View, String> sTransitionNameMap = null;
     private static boolean sTryHiddenViewTransformMatrixToGlobal = true;
     private static WeakHashMap<View, ViewPropertyAnimatorCompat> sViewPropertyAnimatorMap;
     private static final int[] ACCESSIBILITY_ACTIONS_RESOURCE_IDS = {R.id.accessibility_custom_action_0, R.id.accessibility_custom_action_1, R.id.accessibility_custom_action_2, R.id.accessibility_custom_action_3, R.id.accessibility_custom_action_4, R.id.accessibility_custom_action_5, R.id.accessibility_custom_action_6, R.id.accessibility_custom_action_7, R.id.accessibility_custom_action_8, R.id.accessibility_custom_action_9, R.id.accessibility_custom_action_10, R.id.accessibility_custom_action_11, R.id.accessibility_custom_action_12, R.id.accessibility_custom_action_13, R.id.accessibility_custom_action_14, R.id.accessibility_custom_action_15, R.id.accessibility_custom_action_16, R.id.accessibility_custom_action_17, R.id.accessibility_custom_action_18, R.id.accessibility_custom_action_19, R.id.accessibility_custom_action_20, R.id.accessibility_custom_action_21, R.id.accessibility_custom_action_22, R.id.accessibility_custom_action_23, R.id.accessibility_custom_action_24, R.id.accessibility_custom_action_25, R.id.accessibility_custom_action_26, R.id.accessibility_custom_action_27, R.id.accessibility_custom_action_28, R.id.accessibility_custom_action_29, R.id.accessibility_custom_action_30, R.id.accessibility_custom_action_31};
@@ -177,19 +174,6 @@ public class ViewCompat {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ ContentInfoCompat lambda$static$0(ContentInfoCompat contentInfoCompat) {
         return contentInfoCompat;
-    }
-
-    private static Rect getEmptyTempRect() {
-        if (sThreadLocalRect == null) {
-            sThreadLocalRect = new ThreadLocal<>();
-        }
-        Rect rect = sThreadLocalRect.get();
-        if (rect == null) {
-            rect = new Rect();
-            sThreadLocalRect.set(rect);
-        }
-        rect.setEmpty();
-        return rect;
     }
 
     public static void saveAttributeDataForStyleable(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i, int i2) {
@@ -426,7 +410,7 @@ public class ViewCompat {
     }
 
     public static boolean isImportantForAccessibility(View view) {
-        return Api21Impl.isImportantForAccessibility(view);
+        return view.isImportantForAccessibility();
     }
 
     @ReplaceWith(expression = "view.performAccessibilityAction(action, arguments)")
@@ -864,27 +848,27 @@ public class ViewCompat {
     }
 
     public static void setElevation(View view, float f) {
-        Api21Impl.setElevation(view, f);
+        view.setElevation(f);
     }
 
     public static float getElevation(View view) {
-        return Api21Impl.getElevation(view);
+        return view.getElevation();
     }
 
     public static void setTranslationZ(View view, float f) {
-        Api21Impl.setTranslationZ(view, f);
+        view.setTranslationZ(f);
     }
 
     public static float getTranslationZ(View view) {
-        return Api21Impl.getTranslationZ(view);
+        return view.getTranslationZ();
     }
 
     public static void setTransitionName(View view, String str) {
-        Api21Impl.setTransitionName(view, str);
+        view.setTransitionName(str);
     }
 
     public static String getTransitionName(View view) {
-        return Api21Impl.getTransitionName(view);
+        return view.getTransitionName();
     }
 
     public static void addOverlayView(ViewGroup viewGroup, View view) {
@@ -899,7 +883,7 @@ public class ViewCompat {
     }
 
     public static void requestApplyInsets(View view) {
-        Api20Impl.requestApplyInsets(view);
+        view.requestApplyInsets();
     }
 
     @Deprecated
@@ -948,7 +932,7 @@ public class ViewCompat {
     public static WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
         WindowInsets windowInsets = windowInsetsCompat.toWindowInsets();
         if (windowInsets != null) {
-            WindowInsets onApplyWindowInsets = Api20Impl.onApplyWindowInsets(view, windowInsets);
+            WindowInsets onApplyWindowInsets = view.onApplyWindowInsets(windowInsets);
             if (!onApplyWindowInsets.equals(windowInsets)) {
                 return WindowInsetsCompat.toWindowInsetsCompat(onApplyWindowInsets, view);
             }
@@ -1153,47 +1137,47 @@ public class ViewCompat {
     }
 
     public static ColorStateList getBackgroundTintList(View view) {
-        return Api21Impl.getBackgroundTintList(view);
+        return view.getBackgroundTintList();
     }
 
     public static void setBackgroundTintList(View view, ColorStateList colorStateList) {
-        Api21Impl.setBackgroundTintList(view, colorStateList);
+        view.setBackgroundTintList(colorStateList);
     }
 
     public static PorterDuff.Mode getBackgroundTintMode(View view) {
-        return Api21Impl.getBackgroundTintMode(view);
+        return view.getBackgroundTintMode();
     }
 
     public static void setBackgroundTintMode(View view, PorterDuff.Mode mode) {
-        Api21Impl.setBackgroundTintMode(view, mode);
+        view.setBackgroundTintMode(mode);
     }
 
     public static void setNestedScrollingEnabled(View view, boolean z) {
-        Api21Impl.setNestedScrollingEnabled(view, z);
+        view.setNestedScrollingEnabled(z);
     }
 
     public static boolean isNestedScrollingEnabled(View view) {
-        return Api21Impl.isNestedScrollingEnabled(view);
+        return view.isNestedScrollingEnabled();
     }
 
     public static boolean startNestedScroll(View view, int i) {
-        return Api21Impl.startNestedScroll(view, i);
+        return view.startNestedScroll(i);
     }
 
     public static void stopNestedScroll(View view) {
-        Api21Impl.stopNestedScroll(view);
+        view.stopNestedScroll();
     }
 
     public static boolean hasNestedScrollingParent(View view) {
-        return Api21Impl.hasNestedScrollingParent(view);
+        return view.hasNestedScrollingParent();
     }
 
     public static boolean dispatchNestedScroll(View view, int i, int i2, int i3, int i4, int[] iArr) {
-        return Api21Impl.dispatchNestedScroll(view, i, i2, i3, i4, iArr);
+        return view.dispatchNestedScroll(i, i2, i3, i4, iArr);
     }
 
     public static boolean dispatchNestedPreScroll(View view, int i, int i2, int[] iArr, int[] iArr2) {
-        return Api21Impl.dispatchNestedPreScroll(view, i, i2, iArr, iArr2);
+        return view.dispatchNestedPreScroll(i, i2, iArr, iArr2);
     }
 
     public static boolean startNestedScroll(View view, int i, int i2) {
@@ -1254,11 +1238,11 @@ public class ViewCompat {
     }
 
     public static boolean dispatchNestedFling(View view, float f, float f2, boolean z) {
-        return Api21Impl.dispatchNestedFling(view, f, f2, z);
+        return view.dispatchNestedFling(f, f2, z);
     }
 
     public static boolean dispatchNestedPreFling(View view, float f, float f2) {
-        return Api21Impl.dispatchNestedPreFling(view, f, f2);
+        return view.dispatchNestedPreFling(f, f2);
     }
 
     @ReplaceWith(expression = "view.isInLayout()")
@@ -1280,47 +1264,19 @@ public class ViewCompat {
     }
 
     public static float getZ(View view) {
-        return Api21Impl.getZ(view);
+        return view.getZ();
     }
 
     public static void setZ(View view, float f) {
-        Api21Impl.setZ(view, f);
+        view.setZ(f);
     }
 
     public static void offsetTopAndBottom(View view, int i) {
         view.offsetTopAndBottom(i);
     }
 
-    private static void compatOffsetTopAndBottom(View view, int i) {
-        view.offsetTopAndBottom(i);
-        if (view.getVisibility() == 0) {
-            tickleInvalidationFlag(view);
-            ViewParent parent = view.getParent();
-            if (parent instanceof View) {
-                tickleInvalidationFlag((View) parent);
-            }
-        }
-    }
-
     public static void offsetLeftAndRight(View view, int i) {
         view.offsetLeftAndRight(i);
-    }
-
-    private static void compatOffsetLeftAndRight(View view, int i) {
-        view.offsetLeftAndRight(i);
-        if (view.getVisibility() == 0) {
-            tickleInvalidationFlag(view);
-            ViewParent parent = view.getParent();
-            if (parent instanceof View) {
-                tickleInvalidationFlag((View) parent);
-            }
-        }
-    }
-
-    private static void tickleInvalidationFlag(View view) {
-        float translationY = view.getTranslationY();
-        view.setTranslationY(1.0f + translationY);
-        view.setTranslationY(translationY);
     }
 
     @ReplaceWith(expression = "view.setClipBounds(clipBounds)")
@@ -1348,15 +1304,15 @@ public class ViewCompat {
     }
 
     public static void setScrollIndicators(View view, int i) {
-        Api23Impl.setScrollIndicators(view, i);
+        view.setScrollIndicators(i);
     }
 
     public static void setScrollIndicators(View view, int i, int i2) {
-        Api23Impl.setScrollIndicators(view, i, i2);
+        view.setScrollIndicators(i, i2);
     }
 
     public static int getScrollIndicators(View view) {
-        return Api23Impl.getScrollIndicators(view);
+        return view.getScrollIndicators();
     }
 
     public static void setPointerIcon(View view, PointerIconCompat pointerIconCompat) {
@@ -1971,14 +1927,9 @@ public class ViewCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static class Api21Impl {
+    private static class Api21Impl {
         private Api21Impl() {
-        }
-
-        public static WindowInsetsCompat getRootWindowInsets(View view) {
-            return WindowInsetsCompat.Api21ReflectionHolder.getRootWindowInsets(view);
         }
 
         static WindowInsetsCompat computeSystemWindowInsets(View view, WindowInsetsCompat windowInsetsCompat, Rect rect) {
@@ -2031,94 +1982,6 @@ public class ViewCompat {
                 onApplyWindowInsetsListener.onApplyWindowInsets(view, windowInsets);
             }
         }
-
-        static boolean dispatchNestedFling(View view, float f, float f2, boolean z) {
-            return view.dispatchNestedFling(f, f2, z);
-        }
-
-        static boolean dispatchNestedPreFling(View view, float f, float f2) {
-            return view.dispatchNestedPreFling(f, f2);
-        }
-
-        static float getZ(View view) {
-            return view.getZ();
-        }
-
-        static void setZ(View view, float f) {
-            view.setZ(f);
-        }
-
-        static void setElevation(View view, float f) {
-            view.setElevation(f);
-        }
-
-        static void setTranslationZ(View view, float f) {
-            view.setTranslationZ(f);
-        }
-
-        static float getTranslationZ(View view) {
-            return view.getTranslationZ();
-        }
-
-        static void setTransitionName(View view, String str) {
-            view.setTransitionName(str);
-        }
-
-        static boolean isImportantForAccessibility(View view) {
-            return view.isImportantForAccessibility();
-        }
-
-        static float getElevation(View view) {
-            return view.getElevation();
-        }
-
-        static String getTransitionName(View view) {
-            return view.getTransitionName();
-        }
-
-        static void setBackgroundTintList(View view, ColorStateList colorStateList) {
-            view.setBackgroundTintList(colorStateList);
-        }
-
-        static ColorStateList getBackgroundTintList(View view) {
-            return view.getBackgroundTintList();
-        }
-
-        static PorterDuff.Mode getBackgroundTintMode(View view) {
-            return view.getBackgroundTintMode();
-        }
-
-        static void setBackgroundTintMode(View view, PorterDuff.Mode mode) {
-            view.setBackgroundTintMode(mode);
-        }
-
-        static void setNestedScrollingEnabled(View view, boolean z) {
-            view.setNestedScrollingEnabled(z);
-        }
-
-        static boolean isNestedScrollingEnabled(View view) {
-            return view.isNestedScrollingEnabled();
-        }
-
-        static boolean startNestedScroll(View view, int i) {
-            return view.startNestedScroll(i);
-        }
-
-        static void stopNestedScroll(View view) {
-            view.stopNestedScroll();
-        }
-
-        static boolean hasNestedScrollingParent(View view) {
-            return view.hasNestedScrollingParent();
-        }
-
-        static boolean dispatchNestedScroll(View view, int i, int i2, int i3, int i4, int[] iArr) {
-            return view.dispatchNestedScroll(i, i2, i3, i4, iArr);
-        }
-
-        static boolean dispatchNestedPreScroll(View view, int i, int i2, int[] iArr, int[] iArr2) {
-            return view.dispatchNestedPreScroll(i, i2, iArr, iArr2);
-        }
     }
 
     /* loaded from: classes2.dex */
@@ -2133,20 +1996,8 @@ public class ViewCompat {
             }
             WindowInsetsCompat windowInsetsCompat = WindowInsetsCompat.toWindowInsetsCompat(rootWindowInsets);
             windowInsetsCompat.setRootWindowInsets(windowInsetsCompat);
-            windowInsetsCompat.copyRootViewBounds(view.getRootView());
+            windowInsetsCompat.init(view.getRootView());
             return windowInsetsCompat;
-        }
-
-        static void setScrollIndicators(View view, int i) {
-            view.setScrollIndicators(i);
-        }
-
-        static void setScrollIndicators(View view, int i, int i2) {
-            view.setScrollIndicators(i, i2);
-        }
-
-        static int getScrollIndicators(View view) {
-            return view.getScrollIndicators();
         }
     }
 
@@ -2389,18 +2240,9 @@ public class ViewCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    public static class Api20Impl {
+    static class Api20Impl {
         private Api20Impl() {
-        }
-
-        static void requestApplyInsets(View view) {
-            view.requestApplyInsets();
-        }
-
-        static WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-            return view.onApplyWindowInsets(windowInsets);
         }
 
         static WindowInsets dispatchApplyWindowInsets(View view, WindowInsets windowInsets) {

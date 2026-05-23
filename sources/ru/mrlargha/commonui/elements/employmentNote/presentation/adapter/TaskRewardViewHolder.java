@@ -36,7 +36,7 @@ public final class TaskRewardViewHolder extends RecyclerView.ViewHolder {
         ItemTaskRewardBinding itemTaskRewardBinding = this.binding;
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (item.getItem() != null) {
             MaterialTextView materialTextView = itemTaskRewardBinding.tvRewardDesc;

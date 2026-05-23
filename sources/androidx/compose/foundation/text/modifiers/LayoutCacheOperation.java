@@ -4,66 +4,66 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: ParagraphLayoutCache.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0081@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation;", "", "flag", "", "constructor-impl", "(J)J", "getFlag", "()J", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0081@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0014\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u000b\u001a\u00020\fHÖ\u0081\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation;", "", "flag", "", "constructor-impl", "(J)J", "getFlag", "()J", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class LayoutCacheOperation {
     private final long flag;
     public static final Companion Companion = new Companion(null);
-    private static final long MarkDirtyStyle = m1536constructorimpl(0);
-    private static final long MarkDirtyDensity = m1536constructorimpl(1);
-    private static final long MarkDirtyNode = m1536constructorimpl(2);
-    private static final long LayoutWithConstraints = m1536constructorimpl(3);
+    private static final long MarkDirtyStyle = m1969constructorimpl(0);
+    private static final long MarkDirtyDensity = m1969constructorimpl(1);
+    private static final long MarkDirtyNode = m1969constructorimpl(2);
+    private static final long LayoutWithConstraints = m1969constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ LayoutCacheOperation m1535boximpl(long j) {
+    public static final /* synthetic */ LayoutCacheOperation m1968boximpl(long j) {
         return new LayoutCacheOperation(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m1536constructorimpl(long j) {
+    private static long m1969constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1537equalsimpl(long j, Object obj) {
-        return (obj instanceof LayoutCacheOperation) && j == ((LayoutCacheOperation) obj).m1541unboximpl();
+    public static boolean m1970equalsimpl(long j, Object obj) {
+        return (obj instanceof LayoutCacheOperation) && j == ((LayoutCacheOperation) obj).m1974unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1538equalsimpl0(long j, long j2) {
+    public static final boolean m1971equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1539hashCodeimpl(long j) {
+    public static int m1972hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1540toStringimpl(long j) {
+    public static String m1973toStringimpl(long j) {
         return "LayoutCacheOperation(flag=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1537equalsimpl(this.flag, obj);
+        return m1970equalsimpl(this.flag, obj);
     }
 
     public int hashCode() {
-        return m1539hashCodeimpl(this.flag);
+        return m1972hashCodeimpl(this.flag);
     }
 
     public String toString() {
-        return m1540toStringimpl(this.flag);
+        return m1973toStringimpl(this.flag);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m1541unboximpl() {
+    public final /* synthetic */ long m1974unboximpl() {
         return this.flag;
     }
 
     /* compiled from: ParagraphLayoutCache.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation$Companion;", "", "<init>", "()V", "MarkDirtyStyle", "Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation;", "getMarkDirtyStyle-DEKiAbY", "()J", "J", "MarkDirtyDensity", "getMarkDirtyDensity-DEKiAbY", "MarkDirtyNode", "getMarkDirtyNode-DEKiAbY", "LayoutWithConstraints", "getLayoutWithConstraints-DEKiAbY", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation$Companion;", "", "<init>", "()V", "MarkDirtyStyle", "Landroidx/compose/foundation/text/modifiers/LayoutCacheOperation;", "getMarkDirtyStyle-DEKiAbY", "()J", "J", "MarkDirtyDensity", "getMarkDirtyDensity-DEKiAbY", "MarkDirtyNode", "getMarkDirtyNode-DEKiAbY", "LayoutWithConstraints", "getLayoutWithConstraints-DEKiAbY", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -74,22 +74,22 @@ public final class LayoutCacheOperation {
         }
 
         /* renamed from: getMarkDirtyStyle-DEKiAbY  reason: not valid java name */
-        public final long m1545getMarkDirtyStyleDEKiAbY() {
+        public final long m1978getMarkDirtyStyleDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyStyle;
         }
 
         /* renamed from: getMarkDirtyDensity-DEKiAbY  reason: not valid java name */
-        public final long m1543getMarkDirtyDensityDEKiAbY() {
+        public final long m1976getMarkDirtyDensityDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyDensity;
         }
 
         /* renamed from: getMarkDirtyNode-DEKiAbY  reason: not valid java name */
-        public final long m1544getMarkDirtyNodeDEKiAbY() {
+        public final long m1977getMarkDirtyNodeDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyNode;
         }
 
         /* renamed from: getLayoutWithConstraints-DEKiAbY  reason: not valid java name */
-        public final long m1542getLayoutWithConstraintsDEKiAbY() {
+        public final long m1975getLayoutWithConstraintsDEKiAbY() {
             return LayoutCacheOperation.LayoutWithConstraints;
         }
     }

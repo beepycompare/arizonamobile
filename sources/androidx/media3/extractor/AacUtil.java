@@ -3,6 +3,7 @@ package androidx.media3.extractor;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
+import androidx.media3.container.OpusUtil;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

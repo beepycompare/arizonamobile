@@ -1,8 +1,8 @@
 package com.miami.game.ui.classic.dialogs;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class drawable {
         public static int accept_button_active = 0x7f08033a;
         public static int accept_button_not_active = 0x7f08033b;

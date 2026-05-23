@@ -6,12 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$1$1", f = "Limit.kt", i = {1, 1}, l = {34, 35, 37}, m = "emit", n = {"this", "value"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$1$1", f = "Limit.kt", i = {0, 1, 2}, l = {34, 35, 37}, m = "emit", n = {"value", "value", "value"}, s = {"L$0", "L$0", "L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$dropWhile$1$1$emit$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FlowKt__LimitKt$dropWhile$1$1<T> this$0;

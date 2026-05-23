@@ -4,60 +4,60 @@ import androidx.compose.ui.geometry.Rect;
 import androidx.compose.ui.unit.DpRect;
 import kotlin.Metadata;
 /* compiled from: Shadow.kt */
-@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0002À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/draw/DropShadowScope;", "Landroidx/compose/ui/draw/ShadowScope;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0002À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/draw/DropShadowScope;", "Landroidx/compose/ui/draw/ShadowScope;", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public interface DropShadowScope extends ShadowScope {
 
     /* compiled from: Shadow.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m4321roundToPxR2X_6o(DropShadowScope dropShadowScope, long j) {
-            return DropShadowScope.super.mo398roundToPxR2X_6o(j);
+        public static int m4897roundToPxR2X_6o(DropShadowScope dropShadowScope, long j) {
+            return DropShadowScope.super.mo427roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m4322roundToPx0680j_4(DropShadowScope dropShadowScope, float f) {
-            return DropShadowScope.super.mo399roundToPx0680j_4(f);
+        public static int m4898roundToPx0680j_4(DropShadowScope dropShadowScope, float f) {
+            return DropShadowScope.super.mo428roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m4323toDpGaN1DYA(DropShadowScope dropShadowScope, long j) {
-            return DropShadowScope.super.mo400toDpGaN1DYA(j);
+        public static float m4899toDpGaN1DYA(DropShadowScope dropShadowScope, long j) {
+            return DropShadowScope.super.mo429toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4324toDpu2uoSUM(DropShadowScope dropShadowScope, float f) {
-            return DropShadowScope.super.mo401toDpu2uoSUM(f);
+        public static float m4900toDpu2uoSUM(DropShadowScope dropShadowScope, float f) {
+            return DropShadowScope.super.mo430toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m4325toDpu2uoSUM(DropShadowScope dropShadowScope, int i) {
-            return DropShadowScope.super.mo402toDpu2uoSUM(i);
+        public static float m4901toDpu2uoSUM(DropShadowScope dropShadowScope, int i) {
+            return DropShadowScope.super.mo431toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m4326toDpSizekrfVVM(DropShadowScope dropShadowScope, long j) {
-            return DropShadowScope.super.mo403toDpSizekrfVVM(j);
+        public static long m4902toDpSizekrfVVM(DropShadowScope dropShadowScope, long j) {
+            return DropShadowScope.super.mo432toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m4327toPxR2X_6o(DropShadowScope dropShadowScope, long j) {
-            return DropShadowScope.super.mo404toPxR2X_6o(j);
+        public static float m4903toPxR2X_6o(DropShadowScope dropShadowScope, long j) {
+            return DropShadowScope.super.mo433toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m4328toPx0680j_4(DropShadowScope dropShadowScope, float f) {
-            return DropShadowScope.super.mo405toPx0680j_4(f);
+        public static float m4904toPx0680j_4(DropShadowScope dropShadowScope, float f) {
+            return DropShadowScope.super.mo434toPx0680j_4(f);
         }
 
         @Deprecated
@@ -67,26 +67,26 @@ public interface DropShadowScope extends ShadowScope {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m4329toSizeXkaWNTQ(DropShadowScope dropShadowScope, long j) {
-            return DropShadowScope.super.mo406toSizeXkaWNTQ(j);
+        public static long m4905toSizeXkaWNTQ(DropShadowScope dropShadowScope, long j) {
+            return DropShadowScope.super.mo435toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m4330toSp0xMU5do(DropShadowScope dropShadowScope, float f) {
-            return DropShadowScope.super.mo407toSp0xMU5do(f);
+        public static long m4906toSp0xMU5do(DropShadowScope dropShadowScope, float f) {
+            return DropShadowScope.super.mo436toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4331toSpkPz2Gy4(DropShadowScope dropShadowScope, float f) {
-            return DropShadowScope.super.mo408toSpkPz2Gy4(f);
+        public static long m4907toSpkPz2Gy4(DropShadowScope dropShadowScope, float f) {
+            return DropShadowScope.super.mo437toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m4332toSpkPz2Gy4(DropShadowScope dropShadowScope, int i) {
-            return DropShadowScope.super.mo409toSpkPz2Gy4(i);
+        public static long m4908toSpkPz2Gy4(DropShadowScope dropShadowScope, int i) {
+            return DropShadowScope.super.mo438toSpkPz2Gy4(i);
         }
     }
 }

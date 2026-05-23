@@ -8,6 +8,7 @@ import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -324,6 +325,24 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
     @Override // com.google.android.material.internal.VisibilityAwareImageButton, android.widget.ImageView, android.view.View
     public void setVisibility(int i) {
         super.setVisibility(i);
+    }
+
+    @Override // android.view.View
+    public void setContentDescription(CharSequence charSequence) {
+        super.setContentDescription(charSequence);
+        updateTooltip();
+    }
+
+    @Override // android.view.View
+    public void setClickable(boolean z) {
+        super.setClickable(z);
+        updateTooltip();
+    }
+
+    private void updateTooltip() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            setTooltipText(isClickable() ? getContentDescription() : null);
+        }
     }
 
     public void setMaxImageSize(int i) {

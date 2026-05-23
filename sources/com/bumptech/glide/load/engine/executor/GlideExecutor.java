@@ -17,6 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 /* loaded from: classes3.dex */
 public final class GlideExecutor implements ExecutorService {
     static final String DEFAULT_ANIMATION_EXECUTOR_NAME = "animation";
@@ -263,6 +264,7 @@ public final class GlideExecutor implements ExecutorService {
         private int corePoolSize;
         private int maximumPoolSize;
         private String name;
+        private Function<? super Runnable, ? extends Runnable> onExecuteDecorator;
         private final boolean preventNetworkOperations;
         private long threadTimeoutMillis;
         private ThreadFactory threadFactory = new DefaultPriorityThreadFactory();
@@ -299,11 +301,27 @@ public final class GlideExecutor implements ExecutorService {
             return this;
         }
 
+        public Builder experimentalSetOnExecuteDecorator(Function<? super Runnable, ? extends Runnable> function) {
+            this.onExecuteDecorator = function;
+            return this;
+        }
+
         public GlideExecutor build() {
+            ThreadPoolExecutor threadPoolExecutor;
             if (TextUtils.isEmpty(this.name)) {
                 throw new IllegalArgumentException("Name must be non-null and non-empty, but given: " + this.name);
             }
-            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.corePoolSize, this.maximumPoolSize, this.threadTimeoutMillis, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new DefaultThreadFactory(this.threadFactory, this.name, this.uncaughtThrowableStrategy, this.preventNetworkOperations));
+            DefaultThreadFactory defaultThreadFactory = new DefaultThreadFactory(this.threadFactory, this.name, this.uncaughtThrowableStrategy, this.preventNetworkOperations);
+            if (this.onExecuteDecorator != null) {
+                threadPoolExecutor = new ThreadPoolExecutor(this.corePoolSize, this.maximumPoolSize, this.threadTimeoutMillis, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), defaultThreadFactory) { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.Builder.1
+                    @Override // java.util.concurrent.ThreadPoolExecutor, java.util.concurrent.Executor
+                    public void execute(Runnable runnable) {
+                        super.execute((Runnable) Builder.this.onExecuteDecorator.apply(runnable));
+                    }
+                };
+            } else {
+                threadPoolExecutor = new ThreadPoolExecutor(this.corePoolSize, this.maximumPoolSize, this.threadTimeoutMillis, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), defaultThreadFactory);
+            }
             if (this.threadTimeoutMillis != 0) {
                 threadPoolExecutor.allowCoreThreadTimeOut(true);
             }

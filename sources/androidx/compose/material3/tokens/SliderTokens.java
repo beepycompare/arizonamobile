@@ -9,53 +9,53 @@ public final class SliderTokens {
     public static final int $stable = 0;
     public static final SliderTokens INSTANCE = new SliderTokens();
     private static final float ActiveContainerOpacity = 1.0f;
-    private static final float ActiveHandleHeight = Dp.m7555constructorimpl(44.0f);
-    private static final float ActiveHandleLeadingSpace = Dp.m7555constructorimpl(6.0f);
-    private static final float ActiveHandlePadding = Dp.m7555constructorimpl(6.0f);
+    private static final float ActiveHandleHeight = Dp.m8160constructorimpl(44.0f);
+    private static final float ActiveHandleLeadingSpace = Dp.m8160constructorimpl(6.0f);
+    private static final float ActiveHandlePadding = Dp.m8160constructorimpl(6.0f);
     private static final ShapeKeyTokens ActiveHandleShape = ShapeKeyTokens.CornerFull;
-    private static final float ActiveHandleTrailingSpace = Dp.m7555constructorimpl(6.0f);
-    private static final float ActiveHandleWidth = Dp.m7555constructorimpl(4.0f);
+    private static final float ActiveHandleTrailingSpace = Dp.m8160constructorimpl(6.0f);
+    private static final float ActiveHandleWidth = Dp.m8160constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens ActiveTrackColor = ColorSchemeKeyTokens.Primary;
-    private static final float ActiveTrackHeight = Dp.m7555constructorimpl(16.0f);
+    private static final float ActiveTrackHeight = Dp.m8160constructorimpl(16.0f);
     private static final ShapeKeyTokens ActiveTrackShape = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ActiveTrackShapeLeading = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DisabledActiveTrackColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledActiveTrackOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledHandleColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledHandleOpacity = 0.38f;
-    private static final float DisabledHandleWidth = Dp.m7555constructorimpl(4.0f);
+    private static final float DisabledHandleWidth = Dp.m8160constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens DisabledInactiveTrackColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledInactiveTrackOpacity = 0.12f;
     private static final ColorSchemeKeyTokens DisabledStopColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusActiveTrackColor = ColorSchemeKeyTokens.Primary;
-    private static final float FocusHandleWidth = Dp.m7555constructorimpl(2.0f);
+    private static final float FocusHandleWidth = Dp.m8160constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens FocusInactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens FocusStopColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HandleColor = ColorSchemeKeyTokens.Primary;
-    private static final float HandleHeight = Dp.m7555constructorimpl(44.0f);
+    private static final float HandleHeight = Dp.m8160constructorimpl(44.0f);
     private static final ShapeKeyTokens HandleShape = ShapeKeyTokens.CornerFull;
-    private static final float HandleWidth = Dp.m7555constructorimpl(4.0f);
+    private static final float HandleWidth = Dp.m8160constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens HoverHandleColor = ColorSchemeKeyTokens.Primary;
-    private static final float HoverHandleWidth = Dp.m7555constructorimpl(4.0f);
+    private static final float HoverHandleWidth = Dp.m8160constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens HoverStopColor = ColorSchemeKeyTokens.Primary;
     private static final float InactiveContainerOpacity = 1.0f;
     private static final ColorSchemeKeyTokens InactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float InactiveTrackHeight = Dp.m7555constructorimpl(16.0f);
+    private static final float InactiveTrackHeight = Dp.m8160constructorimpl(16.0f);
     private static final ShapeKeyTokens InactiveTrackShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens LabelContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens LabelTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens PressedActiveTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens PressedHandleColor = ColorSchemeKeyTokens.Primary;
-    private static final float PressedHandleWidth = Dp.m7555constructorimpl(2.0f);
+    private static final float PressedHandleWidth = Dp.m8160constructorimpl(2.0f);
     private static final ColorSchemeKeyTokens PressedInactiveTrackColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens PressedStopColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SliderActiveHandleColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens StopIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ColorSchemeKeyTokens StopIndicatorColorSelected = ColorSchemeKeyTokens.SecondaryContainer;
     private static final ShapeKeyTokens StopIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float StopIndicatorSize = Dp.m7555constructorimpl(4.0f);
-    private static final float StopIndicatorTrailingSpace = Dp.m7555constructorimpl(6.0f);
-    private static final float ValueIndicatorActiveBottomSpace = Dp.m7555constructorimpl(12.0f);
+    private static final float StopIndicatorSize = Dp.m8160constructorimpl(4.0f);
+    private static final float StopIndicatorTrailingSpace = Dp.m8160constructorimpl(6.0f);
+    private static final float ValueIndicatorActiveBottomSpace = Dp.m8160constructorimpl(12.0f);
     private static final ColorSchemeKeyTokens ValueIndicatorContainerColor = ColorSchemeKeyTokens.InverseSurface;
     private static final ColorSchemeKeyTokens ValueIndicatorLabelTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens ValueIndicatorLabelTextFont = TypographyKeyTokens.LabelLarge;
@@ -68,17 +68,17 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3717getActiveHandleHeightD9Ej5fM() {
+    public final float m4162getActiveHandleHeightD9Ej5fM() {
         return ActiveHandleHeight;
     }
 
     /* renamed from: getActiveHandleLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3718getActiveHandleLeadingSpaceD9Ej5fM() {
+    public final float m4163getActiveHandleLeadingSpaceD9Ej5fM() {
         return ActiveHandleLeadingSpace;
     }
 
     /* renamed from: getActiveHandlePadding-D9Ej5fM  reason: not valid java name */
-    public final float m3719getActiveHandlePaddingD9Ej5fM() {
+    public final float m4164getActiveHandlePaddingD9Ej5fM() {
         return ActiveHandlePadding;
     }
 
@@ -87,12 +87,12 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveHandleTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3720getActiveHandleTrailingSpaceD9Ej5fM() {
+    public final float m4165getActiveHandleTrailingSpaceD9Ej5fM() {
         return ActiveHandleTrailingSpace;
     }
 
     /* renamed from: getActiveHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3721getActiveHandleWidthD9Ej5fM() {
+    public final float m4166getActiveHandleWidthD9Ej5fM() {
         return ActiveHandleWidth;
     }
 
@@ -101,7 +101,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getActiveTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3722getActiveTrackHeightD9Ej5fM() {
+    public final float m4167getActiveTrackHeightD9Ej5fM() {
         return ActiveTrackHeight;
     }
 
@@ -130,7 +130,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getDisabledHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3723getDisabledHandleWidthD9Ej5fM() {
+    public final float m4168getDisabledHandleWidthD9Ej5fM() {
         return DisabledHandleWidth;
     }
 
@@ -151,7 +151,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getFocusHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3724getFocusHandleWidthD9Ej5fM() {
+    public final float m4169getFocusHandleWidthD9Ej5fM() {
         return FocusHandleWidth;
     }
 
@@ -168,7 +168,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3725getHandleHeightD9Ej5fM() {
+    public final float m4170getHandleHeightD9Ej5fM() {
         return HandleHeight;
     }
 
@@ -177,7 +177,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3726getHandleWidthD9Ej5fM() {
+    public final float m4171getHandleWidthD9Ej5fM() {
         return HandleWidth;
     }
 
@@ -186,7 +186,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getHoverHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3727getHoverHandleWidthD9Ej5fM() {
+    public final float m4172getHoverHandleWidthD9Ej5fM() {
         return HoverHandleWidth;
     }
 
@@ -203,7 +203,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getInactiveTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3728getInactiveTrackHeightD9Ej5fM() {
+    public final float m4173getInactiveTrackHeightD9Ej5fM() {
         return InactiveTrackHeight;
     }
 
@@ -228,7 +228,7 @@ public final class SliderTokens {
     }
 
     /* renamed from: getPressedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3729getPressedHandleWidthD9Ej5fM() {
+    public final float m4174getPressedHandleWidthD9Ej5fM() {
         return PressedHandleWidth;
     }
 
@@ -257,17 +257,17 @@ public final class SliderTokens {
     }
 
     /* renamed from: getStopIndicatorSize-D9Ej5fM  reason: not valid java name */
-    public final float m3730getStopIndicatorSizeD9Ej5fM() {
+    public final float m4175getStopIndicatorSizeD9Ej5fM() {
         return StopIndicatorSize;
     }
 
     /* renamed from: getStopIndicatorTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3731getStopIndicatorTrailingSpaceD9Ej5fM() {
+    public final float m4176getStopIndicatorTrailingSpaceD9Ej5fM() {
         return StopIndicatorTrailingSpace;
     }
 
     /* renamed from: getValueIndicatorActiveBottomSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3732getValueIndicatorActiveBottomSpaceD9Ej5fM() {
+    public final float m4177getValueIndicatorActiveBottomSpaceD9Ej5fM() {
         return ValueIndicatorActiveBottomSpace;
     }
 

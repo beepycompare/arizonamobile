@@ -83,7 +83,7 @@ public final class MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$
                 timeContainer.setVisibility(8);
                 job = this.this$0.rentTimerJob;
                 if (job != null) {
-                    Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                    Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
                 }
                 this.this$0.rentTimerJob = null;
             }

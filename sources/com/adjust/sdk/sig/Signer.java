@@ -18,23 +18,23 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f271a = false;
+    public boolean f199a = false;
     public d b;
     public a c;
     public c d;
 
     public static String getVersion() {
-        return "3.62.0";
+        return "3.67.0";
     }
 
     public final synchronized void a() {
-        if (this.f271a) {
+        if (this.f199a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f271a = true;
+        this.f199a = true;
     }
 
     public synchronized void onResume() {
@@ -42,7 +42,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f273a) {
+        if (!d.f201a) {
             ((NativeLibHelper) aVar).a();
         }
     }
@@ -62,8 +62,8 @@ public class Signer {
         c cVar = this.d;
         a aVar = this.c;
         dVar.getClass();
-        if (map != null && map.size() != 0 && map2 != null && map3 != null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT);
+        if (map != null && !map.isEmpty() && map2 != null && map3 != null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT, Locale.US);
             boolean equals = AdjustConfig.ENVIRONMENT_SANDBOX.equals(map.get("environment"));
             if (equals) {
                 Log.v("SignerInstance", "SDKv5 Signing all the parameters begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
@@ -75,7 +75,6 @@ public class Signer {
             if (!"b".equals(map2.get(CmcdData.OBJECT_TYPE_AUDIO_ONLY))) {
                 d.a(context, cVar, aVar, hashMap, str, str2);
                 if (hashMap.containsKey("signature") && hashMap.containsKey("adj_signing_id") && hashMap.containsKey("headers_id") && hashMap.containsKey("algorithm") && hashMap.containsKey("native_version")) {
-                    Locale locale = Locale.US;
                     String str3 = "algorithm=\"" + ((String) hashMap.get("algorithm")) + "\"";
                     map3.put("authorization", "Signature " + ("signature=\"" + ((String) hashMap.get("signature")) + "\"") + StringUtils.COMMA + ("adj_signing_id=\"" + ((String) hashMap.get("adj_signing_id")) + "\"") + StringUtils.COMMA + str3 + StringUtils.COMMA + ("headers_id=\"" + ((String) hashMap.get("headers_id")) + "\"") + StringUtils.COMMA + ("native_version=\"" + ((String) hashMap.get("native_version")) + "\""));
                 }

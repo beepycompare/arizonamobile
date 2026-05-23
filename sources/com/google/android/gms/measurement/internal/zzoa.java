@@ -3,19 +3,19 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzoa {
     protected long zza;
     protected long zzb;
     final /* synthetic */ zzoc zzc;
-    private final zzay zzd;
+    private final zzaz zzd;
 
     public zzoa(zzoc zzocVar) {
         Objects.requireNonNull(zzocVar);
         this.zzc = zzocVar;
         this.zzd = new zznz(this, zzocVar.zzu);
-        long elapsedRealtime = zzocVar.zzu.zzaZ().elapsedRealtime();
+        long elapsedRealtime = zzocVar.zzu.zzba().elapsedRealtime();
         this.zza = elapsedRealtime;
         this.zzb = elapsedRealtime;
     }
@@ -36,7 +36,7 @@ public final class zzoa {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzc() {
         this.zzd.zzd();
-        long elapsedRealtime = this.zzc.zzu.zzaZ().elapsedRealtime();
+        long elapsedRealtime = this.zzc.zzu.zzba().elapsedRealtime();
         this.zza = elapsedRealtime;
         this.zzb = elapsedRealtime;
     }
@@ -47,30 +47,30 @@ public final class zzoa {
         zzocVar.zzb();
         if (zzocVar.zzu.zzB()) {
             zzic zzicVar = zzocVar.zzu;
-            zzicVar.zzd().zzk.zzb(zzicVar.zzaZ().currentTimeMillis());
+            zzicVar.zzd().zzk.zzb(zzicVar.zzba().currentTimeMillis());
         }
         long j2 = j - this.zza;
-        if (z || j2 >= 1000) {
-            if (!z2) {
-                j2 = j - this.zzb;
-                this.zzb = j;
-            }
-            zzic zzicVar2 = zzocVar.zzu;
-            zzicVar2.zzaV().zzk().zzb("Recording user engagement, ms", Long.valueOf(j2));
-            Bundle bundle = new Bundle();
-            bundle.putLong("_et", j2);
-            zzic zzicVar3 = zzocVar.zzu;
-            zzpp.zzav(zzicVar3.zzs().zzh(!zzicVar2.zzc().zzv()), bundle, true);
-            if (!z2) {
-                zzicVar3.zzj().zzF("auto", "_e", bundle);
-            }
-            this.zza = j;
-            zzay zzayVar = this.zzd;
-            zzayVar.zzd();
-            zzayVar.zzb(((Long) zzfy.zzaq.zzb(null)).longValue());
-            return true;
+        if (!z && j2 < 1000) {
+            zzocVar.zzu.zzaW().zzk().zzb("Screen exposed for less than 1000 ms. Event not sent. time", Long.valueOf(j2));
+            return false;
         }
-        zzocVar.zzu.zzaV().zzk().zzb("Screen exposed for less than 1000 ms. Event not sent. time", Long.valueOf(j2));
-        return false;
+        if (!z2) {
+            j2 = j - this.zzb;
+            this.zzb = j;
+        }
+        zzic zzicVar2 = zzocVar.zzu;
+        zzicVar2.zzaW().zzk().zzb("Recording user engagement, ms", Long.valueOf(j2));
+        Bundle bundle = new Bundle();
+        bundle.putLong("_et", j2);
+        zzic zzicVar3 = zzocVar.zzu;
+        zzpp.zzay(zzicVar3.zzs().zzh(!zzicVar2.zzc().zzv()), bundle, true);
+        if (!z2) {
+            zzicVar3.zzj().zzE("auto", "_e", bundle);
+        }
+        this.zza = j;
+        zzaz zzazVar = this.zzd;
+        zzazVar.zzd();
+        zzazVar.zzb(((Long) zzfy.zzap.zzb(null)).longValue());
+        return true;
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import android.os.Bundle;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzpj {
     private final long zza;
@@ -41,7 +41,7 @@ public final class zzpj {
         com.google.android.gms.internal.measurement.zzib zzibVar = this.zzb;
         String str = this.zzc;
         zzls zzlsVar = this.zze;
-        return new zzom(j, zzibVar.zzcc(), str, bundle, zzlsVar.zza(), this.zzg, "");
+        return new zzom(j, zzibVar.zzcd(), str, bundle, zzlsVar.zza(), this.zzg, "");
     }
 
     public final long zzc() {

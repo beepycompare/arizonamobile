@@ -7,7 +7,7 @@ import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
 import okhttp3.OkHttpClient;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NetworkApiModule_ProvideAppNetworkDataSourceFactory implements Factory<NetworkDataSource> {
     private final Provider<ConnectionResolver> connectionResolverProvider;
     private final Provider<Gson> gsonProvider;

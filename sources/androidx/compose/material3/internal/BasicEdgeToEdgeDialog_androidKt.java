@@ -174,7 +174,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                             Object consume = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             i3 &= -7169;
-                            z3 = ColorKt.m4824luminance8_81llA(((Color) consume).m4782unboximpl()) < 0.5f;
+                            z3 = ColorKt.m5400luminance8_81llA(((Color) consume).m5358unboximpl()) < 0.5f;
                         }
                         if ((i2 & 16) != 0) {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
@@ -182,7 +182,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             i3 &= -57345;
                             modifier3 = companion;
-                            z4 = ColorKt.m4824luminance8_81llA(((Color) consume2).m4782unboximpl()) < 0.5f;
+                            z4 = ColorKt.m5400luminance8_81llA(((Color) consume2).m5358unboximpl()) < 0.5f;
                         } else {
                             modifier3 = companion;
                         }

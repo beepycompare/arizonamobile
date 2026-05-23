@@ -1,21 +1,30 @@
 package com.google.android.material.loadingindicator;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.ProgressBar;
 import com.google.android.material.R;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.progressindicator.AnimatorDurationScaleProvider;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 import java.util.Arrays;
 /* loaded from: classes4.dex */
 public final class LoadingIndicator extends View implements Drawable.Callback {
     static final int DEF_STYLE_RES = R.style.Widget_Material3_LoadingIndicator;
+    static final int MAX_HIDE_DELAY = 1000;
+    private final Runnable delayedHide;
+    private final Runnable delayedShow;
     private final LoadingIndicatorDrawable drawable;
+    private long lastShowStartTime;
+    private final int minHideDelay;
+    private final int showDelay;
     private final LoadingIndicatorSpec specs;
 
     public LoadingIndicator(Context context) {
@@ -26,14 +35,82 @@ public final class LoadingIndicator extends View implements Drawable.Callback {
         this(context, attributeSet, R.attr.loadingIndicatorStyle);
     }
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public LoadingIndicator(Context context, AttributeSet attributeSet, int i) {
-        super(MaterialThemeOverlay.wrap(context, attributeSet, i, DEF_STYLE_RES), attributeSet, i);
+        super(MaterialThemeOverlay.wrap(context, attributeSet, i, r4), attributeSet, i);
+        int i2 = DEF_STYLE_RES;
+        this.lastShowStartTime = -1L;
+        this.delayedShow = new Runnable() { // from class: com.google.android.material.loadingindicator.LoadingIndicator.1
+            @Override // java.lang.Runnable
+            public void run() {
+                LoadingIndicator.this.internalShow();
+            }
+        };
+        this.delayedHide = new Runnable() { // from class: com.google.android.material.loadingindicator.LoadingIndicator.2
+            @Override // java.lang.Runnable
+            public void run() {
+                LoadingIndicator.this.internalHide();
+                LoadingIndicator.this.lastShowStartTime = -1L;
+            }
+        };
         Context context2 = getContext();
         LoadingIndicatorDrawable create = LoadingIndicatorDrawable.create(context2, new LoadingIndicatorSpec(context2, attributeSet, i));
         this.drawable = create;
         create.setCallback(this);
         this.specs = create.getDrawingDelegate().specs;
+        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.LoadingIndicator, i, i2, new int[0]);
+        this.showDelay = obtainStyledAttributes.getInt(R.styleable.LoadingIndicator_showDelay, -1);
+        this.minHideDelay = Math.min(obtainStyledAttributes.getInt(R.styleable.LoadingIndicator_minHideDelay, -1), 1000);
+        obtainStyledAttributes.recycle();
         setAnimatorDurationScaleProvider(new AnimatorDurationScaleProvider());
+    }
+
+    public void show() {
+        int i = this.showDelay;
+        Runnable runnable = this.delayedShow;
+        if (i > 0) {
+            removeCallbacks(runnable);
+            postDelayed(this.delayedShow, this.showDelay);
+            return;
+        }
+        runnable.run();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void internalShow() {
+        if (this.minHideDelay > 0) {
+            this.lastShowStartTime = SystemClock.uptimeMillis();
+        }
+        setVisibility(0);
+    }
+
+    public void hide() {
+        if (getVisibility() != 0) {
+            removeCallbacks(this.delayedShow);
+            return;
+        }
+        removeCallbacks(this.delayedHide);
+        long uptimeMillis = SystemClock.uptimeMillis() - this.lastShowStartTime;
+        int i = this.minHideDelay;
+        int i2 = (uptimeMillis > i ? 1 : (uptimeMillis == i ? 0 : -1));
+        Runnable runnable = this.delayedHide;
+        if (i2 >= 0) {
+            runnable.run();
+        } else {
+            postDelayed(runnable, i - uptimeMillis);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void internalHide() {
+        getDrawable().setVisible(false, false, true);
+        if (getDrawable().isVisible()) {
+            return;
+        }
+        setVisibility(4);
     }
 
     @Override // android.view.View
@@ -88,6 +165,14 @@ public final class LoadingIndicator extends View implements Drawable.Callback {
     protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         this.drawable.setVisible(visibleToUser(), false, i == 0);
+    }
+
+    @Override // android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (visibleToUser()) {
+            internalShow();
+        }
     }
 
     @Override // android.view.View, android.graphics.drawable.Drawable.Callback

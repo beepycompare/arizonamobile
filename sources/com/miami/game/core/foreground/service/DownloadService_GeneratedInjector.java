@@ -1,5 +1,5 @@
 package com.miami.game.core.foreground.service;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface DownloadService_GeneratedInjector {
     void injectDownloadService(DownloadService downloadService);
 }

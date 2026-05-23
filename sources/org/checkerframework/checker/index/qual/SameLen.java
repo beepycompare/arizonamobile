@@ -11,7 +11,7 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({SameLenUnknown.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface SameLen {
     @JavaExpression
     String[] value();

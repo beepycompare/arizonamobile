@@ -7,24 +7,27 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.flow.internal.AbortFlowException;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Limit.kt */
-@Metadata(d1 = {"\u0000\u0013\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u0016\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0005¨\u0006\u0006¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1", "Lkotlinx/coroutines/flow/FlowCollector;", "emit", "", "value", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0013\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u0016\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0005¨\u0006\u0006¸\u0006\u0000"}, d2 = {"kotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1", "Lkotlinx/coroutines/flow/FlowCollector;", "emit", "", "value", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> implements FlowCollector<T> {
     final /* synthetic */ Function2 $predicate$inlined;
     final /* synthetic */ Ref.ObjectRef $result$inlined;
 
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2", f = "Reduce.kt", i = {0, 0}, l = {132}, m = "emit", n = {"this", "it"}, s = {"L$0", "L$1"})
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2", f = "Reduce.kt", i = {0, 0, 0, 0}, l = {142}, m = "emit", n = {"value", "$completion", "it", "$i$a$-collectWhile-FlowKt__ReduceKt$firstOrNull$4"}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 1)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends ContinuationImpl {
+        int I$0;
         Object L$0;
         Object L$1;
+        Object L$2;
         int label;
         /* synthetic */ Object result;
 
@@ -46,9 +49,9 @@ public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> imple
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0069  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -67,8 +70,10 @@ public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> imple
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Function2 function2 = this.$predicate$inlined;
-                    anonymousClass1.L$0 = this;
-                    anonymousClass1.L$1 = t;
+                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
+                    anonymousClass1.L$2 = t;
+                    anonymousClass1.I$0 = 0;
                     anonymousClass1.label = 1;
                     obj = function2.invoke(t, anonymousClass1);
                     if (obj == coroutine_suspended) {
@@ -77,8 +82,10 @@ public final class FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2<T> imple
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    t = (T) anonymousClass1.L$1;
-                    this = (FlowKt__ReduceKt$firstOrNull$$inlined$collectWhile$2) anonymousClass1.L$0;
+                    int i2 = anonymousClass1.I$0;
+                    t = (T) anonymousClass1.L$2;
+                    Continuation continuation2 = (Continuation) anonymousClass1.L$1;
+                    Object obj2 = anonymousClass1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {

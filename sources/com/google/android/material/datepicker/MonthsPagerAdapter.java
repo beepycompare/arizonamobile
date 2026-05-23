@@ -12,16 +12,21 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.R;
 import com.google.android.material.datepicker.MaterialCalendar;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
+    private static final int POSITION_UNSPECIFIED = 0;
     private final CalendarConstraints calendarConstraints;
     private final DateSelector<?> dateSelector;
     private final DayViewDecorator dayViewDecorator;
     private final int itemHeight;
+    private int keyboardFocusDirection = 0;
     private final MaterialCalendar.OnDayClickListener onDayClickListener;
+    private final MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener;
+    private Month visibleMonth;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public MonthsPagerAdapter(Context context, DateSelector<?> dateSelector, CalendarConstraints calendarConstraints, DayViewDecorator dayViewDecorator, MaterialCalendar.OnDayClickListener onDayClickListener) {
+    public MonthsPagerAdapter(Context context, DateSelector<?> dateSelector, CalendarConstraints calendarConstraints, DayViewDecorator dayViewDecorator, MaterialCalendar.OnDayClickListener onDayClickListener, MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener) {
         Month start = calendarConstraints.getStart();
         Month end = calendarConstraints.getEnd();
         Month openAt = calendarConstraints.getOpenAt();
@@ -36,6 +41,8 @@ class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
         this.dateSelector = dateSelector;
         this.dayViewDecorator = dayViewDecorator;
         this.onDayClickListener = onDayClickListener;
+        this.onMonthNavigationListener = onMonthNavigationListener;
+        this.visibleMonth = openAt;
         setHasStableIds(true);
     }
 
@@ -88,6 +95,49 @@ class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
                 }
             }
         });
+        materialCalendarGridView.setOnMonthNavigationListener(this.onMonthNavigationListener);
+        boolean isFullscreen = MaterialDatePicker.isFullscreen(viewHolder.itemView.getContext());
+        if (isFullscreen || monthsLater.equals(this.visibleMonth)) {
+            materialCalendarGridView.setFocusable(true);
+            materialCalendarGridView.setDescendantFocusability(131072);
+        } else {
+            materialCalendarGridView.setFocusable(false);
+            materialCalendarGridView.setDescendantFocusability(393216);
+        }
+        if (isFullscreen || !monthsLater.equals(this.visibleMonth)) {
+            return;
+        }
+        setInitialKeyboardFocus(materialCalendarGridView);
+    }
+
+    private void setInitialKeyboardFocus(final MaterialCalendarGridView materialCalendarGridView) {
+        final int i = this.keyboardFocusDirection;
+        this.keyboardFocusDirection = 0;
+        materialCalendarGridView.post(new Runnable() { // from class: com.google.android.material.datepicker.MonthsPagerAdapter$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                MonthsPagerAdapter.this.m9522x7f109e0a(materialCalendarGridView, i);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* renamed from: lambda$setInitialKeyboardFocus$0$com-google-android-material-datepicker-MonthsPagerAdapter  reason: not valid java name */
+    public /* synthetic */ void m9522x7f109e0a(MaterialCalendarGridView materialCalendarGridView, int i) {
+        if (!materialCalendarGridView.hasFocus() || i == 0) {
+            return;
+        }
+        materialCalendarGridView.setSelection(getInitialDayPositionForDirection(materialCalendarGridView.getAdapter2(), i));
+    }
+
+    private int getInitialDayPositionForDirection(MonthAdapter monthAdapter, int i) {
+        if (i == 1) {
+            int findLastValidDayPosition = monthAdapter.findLastValidDayPosition();
+            return findLastValidDayPosition == -1 ? monthAdapter.lastPositionInMonth() : findLastValidDayPosition;
+        }
+        int findFirstValidDayPosition = monthAdapter.findFirstValidDayPosition();
+        return findFirstValidDayPosition == -1 ? monthAdapter.firstPositionInMonth() : findFirstValidDayPosition;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -113,5 +163,22 @@ class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public int getPosition(Month month) {
         return this.calendarConstraints.getStart().monthsUntil(month);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setKeyboardFocusDirection(int i) {
+        this.keyboardFocusDirection = i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setVisibleMonth(Month month) {
+        if (month == null || month.equals(this.visibleMonth)) {
+            return;
+        }
+        int position = getPosition(this.visibleMonth);
+        this.visibleMonth = month;
+        int position2 = getPosition(month);
+        notifyItemChanged(position);
+        notifyItemChanged(position2);
     }
 }

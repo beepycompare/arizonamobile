@@ -1,14 +1,14 @@
 package io.appmetrica.analytics.coreutils.internal.logger;
 
-import android.text.TextUtils;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.HashMap;
 /* loaded from: classes5.dex */
 public abstract class LoggerStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap f410a = new HashMap();
+    private static HashMap f361a = new HashMap();
     private static final Object b = new Object();
     private static volatile PublicLogger c = PublicLogger.getAnonymousInstance();
 
@@ -23,16 +23,16 @@ public abstract class LoggerStorage {
 
     public static PublicLogger getOrCreatePublicLogger(String str) {
         PublicLogger publicLogger;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isNullOrEmpty(str)) {
             return PublicLogger.getAnonymousInstance();
         }
-        PublicLogger publicLogger2 = (PublicLogger) f410a.get(str);
+        PublicLogger publicLogger2 = (PublicLogger) f361a.get(str);
         if (publicLogger2 == null) {
             synchronized (b) {
-                publicLogger = (PublicLogger) f410a.get(str);
+                publicLogger = (PublicLogger) f361a.get(str);
                 if (publicLogger == null) {
                     publicLogger = new PublicLogger(ApiKeyUtils.createPartialApiKey(str));
-                    f410a.put(str, publicLogger);
+                    f361a.put(str, publicLogger);
                 }
             }
             return publicLogger;
@@ -41,7 +41,7 @@ public abstract class LoggerStorage {
     }
 
     public static void unsetPublicLoggers() {
-        f410a = new HashMap();
+        f361a = new HashMap();
         c = PublicLogger.getAnonymousInstance();
     }
 }

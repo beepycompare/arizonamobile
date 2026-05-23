@@ -10,15 +10,15 @@ import kotlin.text.Charsets;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f486a;
+    public final ServiceContext f436a;
 
     public u(ServiceContext serviceContext) {
-        this.f486a = serviceContext;
+        this.f436a = serviceContext;
     }
 
     public final boolean a(String str, String str2) {
         try {
-            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(this.f486a.getNetworkContext().getSslSocketFactoryProvider().getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(10240).build()).build().newCall(new Request.Builder(str).withMethod(Request.Method.POST).withBody(str2.getBytes(Charsets.UTF_8)).addHeader("Content-Type", "application/json").build()).execute();
+            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(this.f436a.getNetworkContext().getSslSocketFactoryProvider().getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(10240).build()).build().newCall(new Request.Builder(str).withMethod(Request.Method.POST).withBody(str2.getBytes(Charsets.UTF_8)).addHeader("Content-Type", "application/json").build()).execute();
             if (execute.isCompleted()) {
                 if (execute.getCode() != 200) {
                     int code = execute.getCode();

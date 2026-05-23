@@ -1,20 +1,23 @@
 package com.google.android.gms.internal.base;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import androidx.core.content.ContextCompat;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.Handler;
+import android.os.Looper;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zao extends ContextCompat {
-    @ResultIgnorabilityUnspecified
-    @Deprecated
-    public static Intent zaa(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
-        if (zan.zaa()) {
-            return context.registerReceiver(broadcastReceiver, intentFilter, true != zan.zaa() ? 0 : 2);
-        }
-        return context.registerReceiver(broadcastReceiver, intentFilter);
+public class zao extends Handler {
+    private final Looper zaa;
+
+    public zao() {
+        this.zaa = Looper.getMainLooper();
+    }
+
+    public zao(Looper looper) {
+        super(looper);
+        this.zaa = Looper.getMainLooper();
+    }
+
+    public zao(Looper looper, Handler.Callback callback) {
+        super(looper, callback);
+        this.zaa = Looper.getMainLooper();
     }
 }

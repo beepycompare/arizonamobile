@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import com.google.android.material.R;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.timepicker.ClockFaceView;
 import com.google.android.material.timepicker.ClockHandView;
 import java.util.Locale;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -64,28 +65,45 @@ public class TimePickerView extends ConstraintLayout implements TimePickerContro
             }
         };
         LayoutInflater.from(context).inflate(R.layout.material_timepicker, this);
-        this.clockFace = (ClockFaceView) findViewById(R.id.material_clock_face);
+        ClockFaceView clockFaceView = (ClockFaceView) findViewById(R.id.material_clock_face);
+        this.clockFace = clockFaceView;
         MaterialButtonToggleGroup materialButtonToggleGroup = (MaterialButtonToggleGroup) findViewById(R.id.material_clock_period_toggle);
         this.toggle = materialButtonToggleGroup;
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() { // from class: com.google.android.material.timepicker.TimePickerView$$ExternalSyntheticLambda0
             @Override // com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener
             public final void onButtonChecked(MaterialButtonToggleGroup materialButtonToggleGroup2, int i2, boolean z) {
-                TimePickerView.this.m8954x9f44237d(materialButtonToggleGroup2, i2, z);
+                TimePickerView.this.m9589x9f44237d(materialButtonToggleGroup2, i2, z);
             }
         });
         this.minuteView = (Chip) findViewById(R.id.material_minute_tv);
         this.hourView = (Chip) findViewById(R.id.material_hour_tv);
         this.clockHandView = (ClockHandView) findViewById(R.id.material_clock_hand);
+        clockFaceView.setOnEnterKeyPressedListener(new ClockFaceView.OnEnterKeyPressedListener() { // from class: com.google.android.material.timepicker.TimePickerView$$ExternalSyntheticLambda1
+            @Override // com.google.android.material.timepicker.ClockFaceView.OnEnterKeyPressedListener
+            public final void onEnterKeyPressed() {
+                TimePickerView.this.m9590xc89878be();
+            }
+        });
         setupDoubleTap();
         setUpDisplay();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-timepicker-TimePickerView  reason: not valid java name */
-    public /* synthetic */ void m8954x9f44237d(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
+    public /* synthetic */ void m9589x9f44237d(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
         if (z && this.onPeriodChangeListener != null) {
             this.onPeriodChangeListener.onPeriodChange(i == R.id.material_clock_period_pm_button ? 1 : 0);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$1$com-google-android-material-timepicker-TimePickerView  reason: not valid java name */
+    public /* synthetic */ void m9590xc89878be() {
+        OnSelectionChange onSelectionChange;
+        if (!this.hourView.isChecked() || (onSelectionChange = this.onSelectionChangeListener) == null) {
+            return;
+        }
+        onSelectionChange.onSelectionChanged(12);
     }
 
     private void setupDoubleTap() {

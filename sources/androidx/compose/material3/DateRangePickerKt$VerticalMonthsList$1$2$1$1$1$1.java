@@ -69,7 +69,7 @@ final class DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1 implements Function
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m2712TextNvy7gAk(formatMonthYear, SemanticsModifierKt.semantics$default(padding, false, (Function1) rememberedValue, 1, null), this.$colors.m1976getSubheadContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
+        TextKt.m3157TextNvy7gAk(formatMonthYear, SemanticsModifierKt.semantics$default(padding, false, (Function1) rememberedValue, 1, null), this.$colors.m2421getSubheadContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

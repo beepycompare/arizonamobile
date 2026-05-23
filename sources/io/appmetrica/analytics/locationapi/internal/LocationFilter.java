@@ -4,12 +4,12 @@ import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\b\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u000e\u001a\u00020\t\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u000f¢\u0006\u0004\b\u0015\u0010\u0016J\b\u0010\u0003\u001a\u00020\u0002H\u0016J\u0013\u0010\u0006\u001a\u00020\u00052\b\u0010\u0004\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\b\u001a\u00020\u0007H\u0016R\u0017\u0010\u000e\u001a\u00020\t8\u0006¢\u0006\f\n\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\rR\u0017\u0010\u0014\u001a\u00020\u000f8\u0006¢\u0006\f\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u0012\u0010\u0013¨\u0006\u0017"}, d2 = {"Lio/appmetrica/analytics/locationapi/internal/LocationFilter;", "", "", "toString", "other", "", "equals", "", "hashCode", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "J", "getUpdateTimeInterval", "()J", "updateTimeInterval", "", "b", "F", "getUpdateDistanceInterval", "()F", "updateDistanceInterval", "<init>", "(JF)V", "location-api_release"}, k = 1, mv = {1, 6, 0})
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\b\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u000e\u001a\u00020\t\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u000f¢\u0006\u0004\b\u0015\u0010\u0016J\b\u0010\u0003\u001a\u00020\u0002H\u0016J\u0013\u0010\u0006\u001a\u00020\u00052\b\u0010\u0004\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\b\u001a\u00020\u0007H\u0016R\u0017\u0010\u000e\u001a\u00020\t8\u0006¢\u0006\f\n\u0004\b\n\u0010\u000b\u001a\u0004\b\f\u0010\rR\u0017\u0010\u0014\u001a\u00020\u000f8\u0006¢\u0006\f\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u0012\u0010\u0013¨\u0006\u0017"}, d2 = {"Lio/appmetrica/analytics/locationapi/internal/LocationFilter;", "", "", "toString", "other", "", "equals", "", "hashCode", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "J", "getUpdateTimeInterval", "()J", "updateTimeInterval", "", "b", "F", "getUpdateDistanceInterval", "()F", "updateDistanceInterval", "<init>", "(JF)V", "location-api_release"}, k = 1, mv = {1, 9, 0})
 /* loaded from: classes5.dex */
 public final class LocationFilter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f1368a;
+    private final long f1347a;
     private final float b;
 
     public LocationFilter() {
@@ -21,11 +21,9 @@ public final class LocationFilter {
             return true;
         }
         if (Intrinsics.areEqual(LocationFilter.class, obj != null ? obj.getClass() : null)) {
-            if (obj != null) {
-                LocationFilter locationFilter = (LocationFilter) obj;
-                return this.f1368a == locationFilter.f1368a && this.b == locationFilter.b;
-            }
-            throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.locationapi.internal.LocationFilter");
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type io.appmetrica.analytics.locationapi.internal.LocationFilter");
+            LocationFilter locationFilter = (LocationFilter) obj;
+            return this.f1347a == locationFilter.f1347a && this.b == locationFilter.b;
         }
         return false;
     }
@@ -35,19 +33,19 @@ public final class LocationFilter {
     }
 
     public final long getUpdateTimeInterval() {
-        return this.f1368a;
+        return this.f1347a;
     }
 
     public int hashCode() {
-        return Float.hashCode(this.b) + (Long.hashCode(this.f1368a) * 31);
+        return Float.hashCode(this.b) + (Long.hashCode(this.f1347a) * 31);
     }
 
     public String toString() {
-        return "LocationFilter(updateTimeInterval=" + this.f1368a + ", updateDistanceInterval=" + this.b + ')';
+        return "LocationFilter(updateTimeInterval=" + this.f1347a + ", updateDistanceInterval=" + this.b + ')';
     }
 
     public LocationFilter(long j, float f) {
-        this.f1368a = j;
+        this.f1347a = j;
         this.b = f;
     }
 

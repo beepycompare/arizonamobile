@@ -1,8 +1,16 @@
 package com.google.gson;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
+import com.google.gson.internal.bind.ArrayTypeAdapter;
+import com.google.gson.internal.bind.CollectionTypeAdapterFactory;
 import com.google.gson.internal.bind.DefaultDateTypeAdapter;
+import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
+import com.google.gson.internal.bind.MapTypeAdapterFactory;
+import com.google.gson.internal.bind.NumberTypeAdapter;
+import com.google.gson.internal.bind.ObjectTypeAdapter;
+import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 import com.google.gson.internal.bind.TreeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.internal.sql.SqlTypesSupport;
@@ -11,54 +19,84 @@ import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicLongArray;
 /* loaded from: classes4.dex */
 public final class GsonBuilder {
-    private boolean complexMapKeySerialization;
-    private String datePattern;
-    private int dateStyle;
-    private boolean escapeHtmlChars;
-    private Excluder excluder;
-    private final List<TypeAdapterFactory> factories;
-    private FieldNamingStrategy fieldNamingPolicy;
-    private FormattingStyle formattingStyle;
-    private boolean generateNonExecutableJson;
-    private final List<TypeAdapterFactory> hierarchyFactories;
-    private final Map<Type, InstanceCreator<?>> instanceCreators;
-    private LongSerializationPolicy longSerializationPolicy;
-    private ToNumberStrategy numberToNumberStrategy;
-    private ToNumberStrategy objectToNumberStrategy;
-    private final ArrayDeque<ReflectionAccessFilter> reflectionFilters;
-    private boolean serializeNulls;
-    private boolean serializeSpecialFloatingPointValues;
-    private Strictness strictness;
-    private int timeStyle;
-    private boolean useJdkUnsafe;
+    static final GsonBuilder DEFAULT;
+    private static final boolean DEFAULT_COMPLEX_MAP_KEYS = false;
+    static final ConstructorConstructor DEFAULT_CONSTRUCTOR_CONSTRUCTOR;
+    private static final boolean DEFAULT_ESCAPE_HTML = true;
+    static final JsonAdapterAnnotationTypeAdapterFactory DEFAULT_JSON_ADAPTER_ANNOTATION_TYPE_ADAPTER_FACTORY;
+    private static final boolean DEFAULT_JSON_NON_EXECUTABLE = false;
+    private static final boolean DEFAULT_SERIALIZE_NULLS = false;
+    private static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES = false;
+    private static final Strictness DEFAULT_STRICTNESS = null;
+    static final List<TypeAdapterFactory> DEFAULT_TYPE_ADAPTER_FACTORIES;
+    private static final boolean DEFAULT_USE_JDK_UNSAFE = true;
+    boolean complexMapKeySerialization;
+    String datePattern;
+    int dateStyle;
+    boolean escapeHtmlChars;
+    Excluder excluder;
+    final List<TypeAdapterFactory> factories;
+    FieldNamingStrategy fieldNamingPolicy;
+    FormattingStyle formattingStyle;
+    boolean generateNonExecutableJson;
+    final List<TypeAdapterFactory> hierarchyFactories;
+    final Map<Type, InstanceCreator<?>> instanceCreators;
+    LongSerializationPolicy longSerializationPolicy;
+    ToNumberStrategy numberToNumberStrategy;
+    ToNumberStrategy objectToNumberStrategy;
+    final ArrayDeque<ReflectionAccessFilter> reflectionFilters;
+    boolean serializeNulls;
+    boolean serializeSpecialFloatingPointValues;
+    Strictness strictness;
+    int timeStyle;
+    boolean useJdkUnsafe;
+    private static final FormattingStyle DEFAULT_FORMATTING_STYLE = FormattingStyle.COMPACT;
+    private static final String DEFAULT_DATE_PATTERN = null;
+    private static final FieldNamingStrategy DEFAULT_FIELD_NAMING_STRATEGY = FieldNamingPolicy.IDENTITY;
+    private static final ToNumberStrategy DEFAULT_OBJECT_TO_NUMBER_STRATEGY = ToNumberPolicy.DOUBLE;
+    private static final ToNumberStrategy DEFAULT_NUMBER_TO_NUMBER_STRATEGY = ToNumberPolicy.LAZILY_PARSED_NUMBER;
+
+    static {
+        ConstructorConstructor constructorConstructor = new ConstructorConstructor(Collections.emptyMap(), true, Collections.emptyList());
+        DEFAULT_CONSTRUCTOR_CONSTRUCTOR = constructorConstructor;
+        JsonAdapterAnnotationTypeAdapterFactory jsonAdapterAnnotationTypeAdapterFactory = new JsonAdapterAnnotationTypeAdapterFactory(constructorConstructor);
+        DEFAULT_JSON_ADAPTER_ANNOTATION_TYPE_ADAPTER_FACTORY = jsonAdapterAnnotationTypeAdapterFactory;
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        DEFAULT = gsonBuilder;
+        DEFAULT_TYPE_ADAPTER_FACTORIES = gsonBuilder.createFactories(constructorConstructor, jsonAdapterAnnotationTypeAdapterFactory);
+    }
 
     public GsonBuilder() {
         this.excluder = Excluder.DEFAULT;
         this.longSerializationPolicy = LongSerializationPolicy.DEFAULT;
-        this.fieldNamingPolicy = FieldNamingPolicy.IDENTITY;
+        this.fieldNamingPolicy = DEFAULT_FIELD_NAMING_STRATEGY;
         this.instanceCreators = new HashMap();
         this.factories = new ArrayList();
         this.hierarchyFactories = new ArrayList();
         this.serializeNulls = false;
-        this.datePattern = Gson.DEFAULT_DATE_PATTERN;
+        this.datePattern = DEFAULT_DATE_PATTERN;
         this.dateStyle = 2;
         this.timeStyle = 2;
         this.complexMapKeySerialization = false;
         this.serializeSpecialFloatingPointValues = false;
         this.escapeHtmlChars = true;
-        this.formattingStyle = Gson.DEFAULT_FORMATTING_STYLE;
+        this.formattingStyle = DEFAULT_FORMATTING_STYLE;
         this.generateNonExecutableJson = false;
-        this.strictness = Gson.DEFAULT_STRICTNESS;
+        this.strictness = DEFAULT_STRICTNESS;
         this.useJdkUnsafe = true;
-        this.objectToNumberStrategy = Gson.DEFAULT_OBJECT_TO_NUMBER_STRATEGY;
-        this.numberToNumberStrategy = Gson.DEFAULT_NUMBER_TO_NUMBER_STRATEGY;
+        this.objectToNumberStrategy = DEFAULT_OBJECT_TO_NUMBER_STRATEGY;
+        this.numberToNumberStrategy = DEFAULT_NUMBER_TO_NUMBER_STRATEGY;
         this.reflectionFilters = new ArrayDeque<>();
     }
 
@@ -66,7 +104,7 @@ public final class GsonBuilder {
     public GsonBuilder(Gson gson) {
         this.excluder = Excluder.DEFAULT;
         this.longSerializationPolicy = LongSerializationPolicy.DEFAULT;
-        this.fieldNamingPolicy = FieldNamingPolicy.IDENTITY;
+        this.fieldNamingPolicy = DEFAULT_FIELD_NAMING_STRATEGY;
         HashMap hashMap = new HashMap();
         this.instanceCreators = hashMap;
         ArrayList arrayList = new ArrayList();
@@ -74,18 +112,18 @@ public final class GsonBuilder {
         ArrayList arrayList2 = new ArrayList();
         this.hierarchyFactories = arrayList2;
         this.serializeNulls = false;
-        this.datePattern = Gson.DEFAULT_DATE_PATTERN;
+        this.datePattern = DEFAULT_DATE_PATTERN;
         this.dateStyle = 2;
         this.timeStyle = 2;
         this.complexMapKeySerialization = false;
         this.serializeSpecialFloatingPointValues = false;
         this.escapeHtmlChars = true;
-        this.formattingStyle = Gson.DEFAULT_FORMATTING_STYLE;
+        this.formattingStyle = DEFAULT_FORMATTING_STYLE;
         this.generateNonExecutableJson = false;
-        this.strictness = Gson.DEFAULT_STRICTNESS;
+        this.strictness = DEFAULT_STRICTNESS;
         this.useJdkUnsafe = true;
-        this.objectToNumberStrategy = Gson.DEFAULT_OBJECT_TO_NUMBER_STRATEGY;
-        this.numberToNumberStrategy = Gson.DEFAULT_NUMBER_TO_NUMBER_STRATEGY;
+        this.objectToNumberStrategy = DEFAULT_OBJECT_TO_NUMBER_STRATEGY;
+        this.numberToNumberStrategy = DEFAULT_NUMBER_TO_NUMBER_STRATEGY;
         ArrayDeque<ReflectionAccessFilter> arrayDeque = new ArrayDeque<>();
         this.reflectionFilters = arrayDeque;
         this.excluder = gson.excluder;
@@ -315,46 +353,129 @@ public final class GsonBuilder {
     }
 
     public Gson create() {
-        ArrayList arrayList = new ArrayList(this.factories.size() + this.hierarchyFactories.size() + 3);
-        arrayList.addAll(this.factories);
-        Collections.reverse(arrayList);
-        ArrayList arrayList2 = new ArrayList(this.hierarchyFactories);
-        Collections.reverse(arrayList2);
-        arrayList.addAll(arrayList2);
-        addTypeAdaptersForDate(this.datePattern, this.dateStyle, this.timeStyle, arrayList);
-        return new Gson(this.excluder, this.fieldNamingPolicy, new HashMap(this.instanceCreators), this.serializeNulls, this.complexMapKeySerialization, this.generateNonExecutableJson, this.escapeHtmlChars, this.formattingStyle, this.strictness, this.serializeSpecialFloatingPointValues, this.useJdkUnsafe, this.longSerializationPolicy, this.datePattern, this.dateStyle, this.timeStyle, new ArrayList(this.factories), new ArrayList(this.hierarchyFactories), arrayList, this.objectToNumberStrategy, this.numberToNumberStrategy, new ArrayList(this.reflectionFilters));
+        return new Gson(this);
     }
 
-    private static void addTypeAdaptersForDate(String str, int i, int i2, List<TypeAdapterFactory> list) {
-        TypeAdapterFactory typeAdapterFactory;
-        TypeAdapterFactory typeAdapterFactory2;
-        boolean z = SqlTypesSupport.SUPPORTS_SQL_TYPES;
-        TypeAdapterFactory typeAdapterFactory3 = null;
-        if (str != null && !str.trim().isEmpty()) {
-            typeAdapterFactory = DefaultDateTypeAdapter.DateType.DATE.createAdapterFactory(str);
-            if (z) {
-                typeAdapterFactory3 = SqlTypesSupport.TIMESTAMP_DATE_TYPE.createAdapterFactory(str);
-                typeAdapterFactory2 = SqlTypesSupport.DATE_DATE_TYPE.createAdapterFactory(str);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public List<TypeAdapterFactory> createFactories(ConstructorConstructor constructorConstructor, JsonAdapterAnnotationTypeAdapterFactory jsonAdapterAnnotationTypeAdapterFactory) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(TypeAdapters.JSON_ELEMENT_FACTORY);
+        arrayList.add(ObjectTypeAdapter.getFactory(this.objectToNumberStrategy));
+        arrayList.add(this.excluder);
+        addUserDefinedAdapters(arrayList);
+        addDateTypeAdapters(arrayList);
+        arrayList.add(TypeAdapters.STRING_FACTORY);
+        arrayList.add(TypeAdapters.INTEGER_FACTORY);
+        arrayList.add(TypeAdapters.BOOLEAN_FACTORY);
+        arrayList.add(TypeAdapters.BYTE_FACTORY);
+        arrayList.add(TypeAdapters.SHORT_FACTORY);
+        TypeAdapter<Number> typeAdapter = this.longSerializationPolicy.typeAdapter();
+        arrayList.add(TypeAdapters.newFactory(Long.TYPE, Long.class, typeAdapter));
+        arrayList.add(TypeAdapters.newFactory(Double.TYPE, Double.class, doubleAdapter()));
+        arrayList.add(TypeAdapters.newFactory(Float.TYPE, Float.class, floatAdapter()));
+        arrayList.add(NumberTypeAdapter.getFactory(this.numberToNumberStrategy));
+        arrayList.add(TypeAdapters.ATOMIC_INTEGER_FACTORY);
+        arrayList.add(TypeAdapters.ATOMIC_BOOLEAN_FACTORY);
+        arrayList.add(TypeAdapters.newFactory(AtomicLong.class, TypeAdapters.atomicLongAdapter(typeAdapter)));
+        arrayList.add(TypeAdapters.newFactory(AtomicLongArray.class, TypeAdapters.atomicLongArrayAdapter(typeAdapter)));
+        arrayList.add(TypeAdapters.ATOMIC_INTEGER_ARRAY_FACTORY);
+        arrayList.add(TypeAdapters.CHARACTER_FACTORY);
+        arrayList.add(TypeAdapters.STRING_BUILDER_FACTORY);
+        arrayList.add(TypeAdapters.STRING_BUFFER_FACTORY);
+        arrayList.add(TypeAdapters.BIG_DECIMAL_FACTORY);
+        arrayList.add(TypeAdapters.BIG_INTEGER_FACTORY);
+        arrayList.add(TypeAdapters.LAZILY_PARSED_NUMBER_FACTORY);
+        arrayList.add(TypeAdapters.URL_FACTORY);
+        arrayList.add(TypeAdapters.URI_FACTORY);
+        arrayList.add(TypeAdapters.UUID_FACTORY);
+        arrayList.add(TypeAdapters.CURRENCY_FACTORY);
+        arrayList.add(TypeAdapters.LOCALE_FACTORY);
+        arrayList.add(TypeAdapters.INET_ADDRESS_FACTORY);
+        arrayList.add(TypeAdapters.BIT_SET_FACTORY);
+        arrayList.add(DefaultDateTypeAdapter.DEFAULT_STYLE_FACTORY);
+        arrayList.add(TypeAdapters.CALENDAR_FACTORY);
+        TypeAdapterFactory javaTimeTypeAdapterFactory = TypeAdapters.javaTimeTypeAdapterFactory();
+        if (javaTimeTypeAdapterFactory != null) {
+            arrayList.add(javaTimeTypeAdapterFactory);
+        }
+        arrayList.addAll(SqlTypesSupport.SQL_TYPE_FACTORIES);
+        arrayList.add(ArrayTypeAdapter.FACTORY);
+        arrayList.add(TypeAdapters.CLASS_FACTORY);
+        arrayList.add(new CollectionTypeAdapterFactory(constructorConstructor));
+        arrayList.add(new MapTypeAdapterFactory(constructorConstructor, this.complexMapKeySerialization));
+        arrayList.add(jsonAdapterAnnotationTypeAdapterFactory);
+        arrayList.add(TypeAdapters.ENUM_FACTORY);
+        arrayList.add(new ReflectiveTypeAdapterFactory(constructorConstructor, this.fieldNamingPolicy, this.excluder, jsonAdapterAnnotationTypeAdapterFactory, newImmutableList(this.reflectionFilters)));
+        arrayList.trimToSize();
+        return Collections.unmodifiableList(arrayList);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static <E> List<E> newImmutableList(Collection<E> collection) {
+        Object next;
+        if (collection.isEmpty()) {
+            return Collections.emptyList();
+        }
+        if (collection.size() == 1) {
+            if (collection instanceof List) {
+                next = ((List) collection).get(0);
+            } else {
+                next = collection.iterator().next();
             }
-            typeAdapterFactory2 = null;
-        } else if (i == 2 && i2 == 2) {
+            return Collections.singletonList(next);
+        }
+        return Collections.unmodifiableList(Arrays.asList(collection.toArray()));
+    }
+
+    private TypeAdapter<Number> doubleAdapter() {
+        return this.serializeSpecialFloatingPointValues ? TypeAdapters.DOUBLE : TypeAdapters.DOUBLE_STRICT;
+    }
+
+    private TypeAdapter<Number> floatAdapter() {
+        return this.serializeSpecialFloatingPointValues ? TypeAdapters.FLOAT : TypeAdapters.FLOAT_STRICT;
+    }
+
+    private void addUserDefinedAdapters(List<TypeAdapterFactory> list) {
+        if (!this.factories.isEmpty()) {
+            ArrayList arrayList = new ArrayList(this.factories);
+            Collections.reverse(arrayList);
+            list.addAll(arrayList);
+        }
+        if (this.hierarchyFactories.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList(this.hierarchyFactories);
+        Collections.reverse(arrayList2);
+        list.addAll(arrayList2);
+    }
+
+    private void addDateTypeAdapters(List<TypeAdapterFactory> list) {
+        TypeAdapterFactory createAdapterFactory;
+        TypeAdapterFactory createAdapterFactory2;
+        boolean z = SqlTypesSupport.SUPPORTS_SQL_TYPES;
+        String str = this.datePattern;
+        TypeAdapterFactory typeAdapterFactory = null;
+        if (str != null && !str.trim().isEmpty()) {
+            createAdapterFactory = DefaultDateTypeAdapter.DateType.DATE.createAdapterFactory(this.datePattern);
+            if (z) {
+                typeAdapterFactory = SqlTypesSupport.TIMESTAMP_DATE_TYPE.createAdapterFactory(this.datePattern);
+                createAdapterFactory2 = SqlTypesSupport.DATE_DATE_TYPE.createAdapterFactory(this.datePattern);
+            }
+            createAdapterFactory2 = null;
+        } else if (this.dateStyle == 2 && this.timeStyle == 2) {
             return;
         } else {
-            TypeAdapterFactory createAdapterFactory = DefaultDateTypeAdapter.DateType.DATE.createAdapterFactory(i, i2);
+            createAdapterFactory = DefaultDateTypeAdapter.DateType.DATE.createAdapterFactory(this.dateStyle, this.timeStyle);
             if (z) {
-                typeAdapterFactory3 = SqlTypesSupport.TIMESTAMP_DATE_TYPE.createAdapterFactory(i, i2);
-                TypeAdapterFactory createAdapterFactory2 = SqlTypesSupport.DATE_DATE_TYPE.createAdapterFactory(i, i2);
-                typeAdapterFactory = createAdapterFactory;
-                typeAdapterFactory2 = createAdapterFactory2;
-            } else {
-                typeAdapterFactory = createAdapterFactory;
-                typeAdapterFactory2 = null;
+                typeAdapterFactory = SqlTypesSupport.TIMESTAMP_DATE_TYPE.createAdapterFactory(this.dateStyle, this.timeStyle);
+                createAdapterFactory2 = SqlTypesSupport.DATE_DATE_TYPE.createAdapterFactory(this.dateStyle, this.timeStyle);
             }
+            createAdapterFactory2 = null;
         }
-        list.add(typeAdapterFactory);
+        list.add(createAdapterFactory);
         if (z) {
-            list.add(typeAdapterFactory3);
-            list.add(typeAdapterFactory2);
+            list.add(typeAdapterFactory);
+            list.add(createAdapterFactory2);
         }
     }
 }

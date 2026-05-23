@@ -1,19 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgb extends zzmb implements zznn {
+public final class zzgb extends zzadp implements zzafd {
     private zzgb() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ zzgb(byte[] bArr) {
-        super(r1);
-        zzgc zzgcVar;
-        zzgcVar = zzgc.zzf;
+        super(zzgc.zzb());
     }
 }

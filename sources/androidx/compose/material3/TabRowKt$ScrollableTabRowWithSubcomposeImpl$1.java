@@ -119,8 +119,8 @@ final class TabRowKt$ScrollableTabRowWithSubcomposeImpl$1 implements Function2<C
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult invoke$lambda$9$lambda$8(float f, Function2 function2, final Function2 function22, final ScrollableTabData scrollableTabData, final int i, final Function3 function3, final SubcomposeMeasureScope subcomposeMeasureScope, final Constraints constraints) {
-        int i2 = subcomposeMeasureScope.mo399roundToPx0680j_4(TabRowDefaults.INSTANCE.m2613getScrollableTabRowMinTabWidthD9Ej5fM());
-        final int i3 = subcomposeMeasureScope.mo399roundToPx0680j_4(f);
+        int i2 = subcomposeMeasureScope.mo428roundToPx0680j_4(TabRowDefaults.INSTANCE.m3058getScrollableTabRowMinTabWidthD9Ej5fM());
+        final int i3 = subcomposeMeasureScope.mo428roundToPx0680j_4(f);
         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function2);
         int i4 = 0;
         List<Measurable> list = subcompose;
@@ -129,16 +129,16 @@ final class TabRowKt$ScrollableTabRowWithSubcomposeImpl$1 implements Function2<C
             i4 = Integer.valueOf(Math.max(i4.intValue(), subcompose.get(i5).maxIntrinsicHeight(Integer.MAX_VALUE)));
         }
         final int intValue = i4.intValue();
-        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(constraints.m7514unboximpl(), i2, 0, intValue, intValue, 2, null);
+        long m8103copyZbe2FdA$default = Constraints.m8103copyZbe2FdA$default(constraints.m8119unboximpl(), i2, 0, intValue, intValue, 2, null);
         final ArrayList arrayList = new ArrayList();
         final ArrayList arrayList2 = new ArrayList();
         int size2 = list.size();
         for (int i6 = 0; i6 < size2; i6++) {
             Measurable measurable = subcompose.get(i6);
-            Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
-            float m7555constructorimpl = Dp.m7555constructorimpl(subcomposeMeasureScope.mo402toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo6216measureBRTryo0.getHeight()), mo6216measureBRTryo0.getWidth())) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f));
-            arrayList.add(mo6216measureBRTryo0);
-            arrayList2.add(Dp.m7553boximpl(m7555constructorimpl));
+            Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(m8103copyZbe2FdA$default);
+            float m8160constructorimpl = Dp.m8160constructorimpl(subcomposeMeasureScope.mo431toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo6818measureBRTryo0.getHeight()), mo6818measureBRTryo0.getWidth())) - Dp.m8160constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f));
+            arrayList.add(mo6818measureBRTryo0);
+            arrayList2.add(Dp.m8158boximpl(m8160constructorimpl));
         }
         Integer valueOf = Integer.valueOf(i3 * 2);
         int size3 = arrayList.size();
@@ -162,14 +162,14 @@ final class TabRowKt$ScrollableTabRowWithSubcomposeImpl$1 implements Function2<C
         for (int i6 = 0; i6 < size; i6++) {
             Placeable placeable = (Placeable) list.get(i6);
             Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i5, 0, 0.0f, 4, null);
-            arrayList.add(new TabPosition(subcomposeMeasureScope.mo402toDpu2uoSUM(i5), subcomposeMeasureScope.mo402toDpu2uoSUM(placeable.getWidth()), ((Dp) list2.get(i6)).m7569unboximpl(), null));
+            arrayList.add(new TabPosition(subcomposeMeasureScope.mo431toDpu2uoSUM(i5), subcomposeMeasureScope.mo431toDpu2uoSUM(placeable.getWidth()), ((Dp) list2.get(i6)).m8174unboximpl(), null));
             i5 += placeable.getWidth();
         }
         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Divider, function2);
         int size2 = subcompose.size();
         for (int i7 = 0; i7 < size2; i7++) {
-            Placeable mo6216measureBRTryo0 = subcompose.get(i7).mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(constraints.m7514unboximpl(), i3, i3, 0, 0, 8, null));
-            Placeable.PlacementScope.placeRelative$default(placementScope, mo6216measureBRTryo0, 0, i4 - mo6216measureBRTryo0.getHeight(), 0.0f, 4, null);
+            Placeable mo6818measureBRTryo0 = subcompose.get(i7).mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(constraints.m8119unboximpl(), i3, i3, 0, 0, 8, null));
+            Placeable.PlacementScope.placeRelative$default(placementScope, mo6818measureBRTryo0, 0, i4 - mo6818measureBRTryo0.getHeight(), 0.0f, 4, null);
         }
         List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Indicator, ComposableLambdaKt.composableLambdaInstance(2125766411, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1$1$1$2$3
             @Override // kotlin.jvm.functions.Function2
@@ -195,7 +195,7 @@ final class TabRowKt$ScrollableTabRowWithSubcomposeImpl$1 implements Function2<C
         }));
         int size3 = subcompose2.size();
         for (int i8 = 0; i8 < size3; i8++) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose2.get(i8).mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(i3, i4)), 0, 0, 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose2.get(i8).mo6818measureBRTryo0(Constraints.Companion.m8123fixedJhjzzOo(i3, i4)), 0, 0, 0.0f, 4, null);
         }
         scrollableTabData.onLaidOut(subcomposeMeasureScope, i, arrayList, i2);
         return Unit.INSTANCE;

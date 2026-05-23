@@ -364,7 +364,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         Job job = this.rateJob;
         if (job != null) {
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             this.rateJob = null;
         }

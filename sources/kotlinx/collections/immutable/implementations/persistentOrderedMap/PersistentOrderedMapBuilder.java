@@ -51,12 +51,12 @@ public final class PersistentOrderedMapBuilder<K, V> extends AbstractMutableMap<
     public PersistentMap<K, V> build() {
         PersistentOrderedMap<K, V> persistentOrderedMap = this.builtMap;
         if (persistentOrderedMap != null) {
-            CommonFunctionsKt.m10702assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
-            CommonFunctionsKt.m10702assert(this.firstKey == persistentOrderedMap.getFirstKey$kotlinx_collections_immutable());
-            CommonFunctionsKt.m10702assert(this.lastKey == persistentOrderedMap.getLastKey$kotlinx_collections_immutable());
+            CommonFunctionsKt.m11342assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
+            CommonFunctionsKt.m11342assert(this.firstKey == persistentOrderedMap.getFirstKey$kotlinx_collections_immutable());
+            CommonFunctionsKt.m11342assert(this.lastKey == persistentOrderedMap.getLastKey$kotlinx_collections_immutable());
             return persistentOrderedMap;
         }
-        CommonFunctionsKt.m10702assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
+        CommonFunctionsKt.m11342assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
         PersistentOrderedMap<K, V> persistentOrderedMap2 = new PersistentOrderedMap<>(this.firstKey, this.lastKey, this.hashMapBuilder.build());
         this.builtMap = persistentOrderedMap2;
         return persistentOrderedMap2;
@@ -113,7 +113,7 @@ public final class PersistentOrderedMapBuilder<K, V> extends AbstractMutableMap<
             LinkedValue<V> linkedValue2 = this.hashMapBuilder.get(obj);
             Intrinsics.checkNotNull(linkedValue2);
             LinkedValue<V> linkedValue3 = linkedValue2;
-            CommonFunctionsKt.m10702assert(!linkedValue3.getHasNext());
+            CommonFunctionsKt.m11342assert(!linkedValue3.getHasNext());
             this.hashMapBuilder.put(obj, linkedValue3.withNext(k));
             this.hashMapBuilder.put(k, new LinkedValue<>(v, obj));
             this.lastKey = k;

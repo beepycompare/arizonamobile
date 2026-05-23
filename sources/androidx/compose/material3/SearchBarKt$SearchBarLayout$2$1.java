@@ -51,7 +51,7 @@ public final class SearchBarKt$SearchBarLayout$2$1 implements MeasurePolicy {
         final float calculatePredictiveBackMultiplier;
         final Placeable placeable;
         int i;
-        int m7507getMaxHeightimpl;
+        int m8112getMaxHeightimpl;
         MeasureScope measureScope2 = measureScope;
         long j2 = j;
         final float floatValue = this.$animationProgress.getValue().floatValue();
@@ -80,34 +80,34 @@ public final class SearchBarKt$SearchBarLayout$2$1 implements MeasurePolicy {
                             i4++;
                         }
                         Measurable measurable4 = measurable;
-                        final int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo399roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
-                        int i5 = measureScope2.mo399roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
-                        int m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(j2, measurable2.maxIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j2)));
-                        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(j2, measurable2.minIntrinsicHeight(Constraints.m7508getMaxWidthimpl(j2)));
-                        int roundToInt = MathKt.roundToInt(Constraints.m7508getMaxWidthimpl(j2) * 0.9f);
-                        int roundToInt2 = MathKt.roundToInt(Constraints.m7507getMaxHeightimpl(j2) * 0.9f);
+                        final int top = this.$unconsumedInsets.getTop(measureScope2) + measureScope2.mo428roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
+                        int i5 = measureScope2.mo428roundToPx0680j_4(SearchBarKt.getSearchBarVerticalPadding());
+                        int m8130constrainWidthK40F9xA = ConstraintsKt.m8130constrainWidthK40F9xA(j2, measurable2.maxIntrinsicWidth(Constraints.m8112getMaxHeightimpl(j2)));
+                        int m8129constrainHeightK40F9xA = ConstraintsKt.m8129constrainHeightK40F9xA(j2, measurable2.minIntrinsicHeight(Constraints.m8113getMaxWidthimpl(j2)));
+                        int roundToInt = MathKt.roundToInt(Constraints.m8113getMaxWidthimpl(j2) * 0.9f);
+                        int roundToInt2 = MathKt.roundToInt(Constraints.m8112getMaxHeightimpl(j2) * 0.9f);
                         calculatePredictiveBackMultiplier = SearchBarKt.calculatePredictiveBackMultiplier(this.$currentBackEvent.getValue(), floatValue, this.$finalBackProgress.getFloatValue());
-                        int lerp = MathHelpersKt.lerp(m7525constrainWidthK40F9xA, roundToInt, calculatePredictiveBackMultiplier);
-                        int i6 = top + m7524constrainHeightK40F9xA;
+                        int lerp = MathHelpersKt.lerp(m8130constrainWidthK40F9xA, roundToInt, calculatePredictiveBackMultiplier);
+                        int i6 = top + m8129constrainHeightK40F9xA;
                         int lerp2 = MathHelpersKt.lerp(i6, roundToInt2, calculatePredictiveBackMultiplier);
-                        int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j2);
-                        int m7507getMaxHeightimpl2 = Constraints.m7507getMaxHeightimpl(j2);
-                        int lerp3 = MathHelpersKt.lerp(lerp, m7508getMaxWidthimpl, floatValue);
-                        final int lerp4 = MathHelpersKt.lerp(lerp2, m7507getMaxHeightimpl2, floatValue);
+                        int m8113getMaxWidthimpl = Constraints.m8113getMaxWidthimpl(j2);
+                        int m8112getMaxHeightimpl2 = Constraints.m8112getMaxHeightimpl(j2);
+                        int lerp3 = MathHelpersKt.lerp(lerp, m8113getMaxWidthimpl, floatValue);
+                        final int lerp4 = MathHelpersKt.lerp(lerp2, m8112getMaxHeightimpl2, floatValue);
                         final int lerp5 = MathHelpersKt.lerp(top, 0, floatValue);
                         final int lerp6 = MathHelpersKt.lerp(0, i5, floatValue);
-                        final Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(ConstraintsKt.Constraints(lerp3, m7508getMaxWidthimpl, m7524constrainHeightK40F9xA, m7524constrainHeightK40F9xA));
-                        int width = mo6216measureBRTryo0.getWidth();
-                        final Placeable mo6216measureBRTryo02 = measurable3.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(width, lerp4 - lerp5));
+                        final Placeable mo6818measureBRTryo0 = measurable2.mo6818measureBRTryo0(ConstraintsKt.Constraints(lerp3, m8113getMaxWidthimpl, m8129constrainHeightK40F9xA, m8129constrainHeightK40F9xA));
+                        int width = mo6818measureBRTryo0.getWidth();
+                        final Placeable mo6818measureBRTryo02 = measurable3.mo6818measureBRTryo0(Constraints.Companion.m8123fixedJhjzzOo(width, lerp4 - lerp5));
                         if (measurable4 != null) {
-                            if (Constraints.m7503getHasBoundedHeightimpl(j2)) {
+                            if (Constraints.m8108getHasBoundedHeightimpl(j2)) {
                                 i = 0;
-                                m7507getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m7507getMaxHeightimpl(j2) - (i6 + i5), 0);
+                                m8112getMaxHeightimpl = RangesKt.coerceAtLeast(Constraints.m8112getMaxHeightimpl(j2) - (i6 + i5), 0);
                             } else {
                                 i = 0;
-                                m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j2);
+                                m8112getMaxHeightimpl = Constraints.m8112getMaxHeightimpl(j2);
                             }
-                            placeable = measurable4.mo6216measureBRTryo0(ConstraintsKt.Constraints(width, width, i, m7507getMaxHeightimpl));
+                            placeable = measurable4.mo6818measureBRTryo0(ConstraintsKt.Constraints(width, width, i, m8112getMaxHeightimpl));
                         } else {
                             placeable = null;
                         }
@@ -116,7 +116,7 @@ public final class SearchBarKt$SearchBarLayout$2$1 implements MeasurePolicy {
                         return MeasureScope.layout$default(measureScope, width, lerp4, null, new Function1() { // from class: androidx.compose.material3.SearchBarKt$SearchBarLayout$2$1$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                return SearchBarKt$SearchBarLayout$2$1.measure_3p2s80s$lambda$3(MeasureScope.this, j, mutableState, floatValue, calculatePredictiveBackMultiplier, mutableState2, lerp4, mo6216measureBRTryo02, lerp5, mo6216measureBRTryo0, top, placeable, lerp6, (Placeable.PlacementScope) obj);
+                                return SearchBarKt$SearchBarLayout$2$1.measure_3p2s80s$lambda$3(MeasureScope.this, j, mutableState, floatValue, calculatePredictiveBackMultiplier, mutableState2, lerp4, mo6818measureBRTryo02, lerp5, mo6818measureBRTryo0, top, placeable, lerp6, (Placeable.PlacementScope) obj);
                             }
                         }, 4, null);
                     }
@@ -138,21 +138,21 @@ public final class SearchBarKt$SearchBarLayout$2$1 implements MeasurePolicy {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$3(MeasureScope measureScope, long j, MutableState mutableState, float f, float f2, MutableState mutableState2, int i, Placeable placeable, int i2, Placeable placeable2, int i3, Placeable placeable3, int i4, Placeable.PlacementScope placementScope) {
         float f3;
-        int m2436calculatePredictiveBackOffsetXrOvwMX4;
+        int m2881calculatePredictiveBackOffsetXrOvwMX4;
         float f4;
-        int m2437calculatePredictiveBackOffsetYdzo92Q0;
+        int m2882calculatePredictiveBackOffsetYdzo92Q0;
         f3 = SearchBarKt.SearchBarPredictiveBackMinMargin;
-        int i5 = measureScope.mo399roundToPx0680j_4(f3);
-        m2436calculatePredictiveBackOffsetXrOvwMX4 = SearchBarKt.m2436calculatePredictiveBackOffsetXrOvwMX4(j, i5, (BackEventCompat) mutableState.getValue(), measureScope.getLayoutDirection(), f, f2);
+        int i5 = measureScope.mo428roundToPx0680j_4(f3);
+        m2881calculatePredictiveBackOffsetXrOvwMX4 = SearchBarKt.m2881calculatePredictiveBackOffsetXrOvwMX4(j, i5, (BackEventCompat) mutableState.getValue(), measureScope.getLayoutDirection(), f, f2);
         BackEventCompat backEventCompat = (BackEventCompat) mutableState.getValue();
         BackEventCompat backEventCompat2 = (BackEventCompat) mutableState2.getValue();
         f4 = SearchBarKt.SearchBarPredictiveBackMaxOffsetY;
-        m2437calculatePredictiveBackOffsetYdzo92Q0 = SearchBarKt.m2437calculatePredictiveBackOffsetYdzo92Q0(j, i5, backEventCompat, backEventCompat2, i, measureScope.mo399roundToPx0680j_4(f4), f2);
-        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, m2436calculatePredictiveBackOffsetXrOvwMX4, m2437calculatePredictiveBackOffsetYdzo92Q0 + i2, 0.0f, 4, null);
-        int i6 = m2437calculatePredictiveBackOffsetYdzo92Q0 + i3;
-        Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, m2436calculatePredictiveBackOffsetXrOvwMX4, i6, 0.0f, 4, null);
+        m2882calculatePredictiveBackOffsetYdzo92Q0 = SearchBarKt.m2882calculatePredictiveBackOffsetYdzo92Q0(j, i5, backEventCompat, backEventCompat2, i, measureScope.mo428roundToPx0680j_4(f4), f2);
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable, m2881calculatePredictiveBackOffsetXrOvwMX4, m2882calculatePredictiveBackOffsetYdzo92Q0 + i2, 0.0f, 4, null);
+        int i6 = m2882calculatePredictiveBackOffsetYdzo92Q0 + i3;
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, m2881calculatePredictiveBackOffsetXrOvwMX4, i6, 0.0f, 4, null);
         if (placeable3 != null) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, m2436calculatePredictiveBackOffsetXrOvwMX4, i6 + placeable2.getHeight() + i4, 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, m2881calculatePredictiveBackOffsetXrOvwMX4, i6 + placeable2.getHeight() + i4, 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }

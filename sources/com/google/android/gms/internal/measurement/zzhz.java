@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhz extends zzmb implements zznn {
+public final class zzhz extends zzadp implements zzafd {
     private zzhz() {
         throw null;
     }
@@ -17,7 +17,7 @@ public final class zzhz extends zzmb implements zznn {
     public /* synthetic */ zzhz(byte[] bArr) {
         super(r1);
         zzib zzibVar;
-        zzibVar = zzib.zzh;
+        zzibVar = zzib.zzi;
     }
 
     public final List zza() {
@@ -33,25 +33,25 @@ public final class zzhz extends zzmb implements zznn {
     }
 
     public final zzhz zzd(int i, zzic zzicVar) {
-        zzaX();
-        ((zzib) this.zza).zzj(i, (zzid) zzicVar.zzbc());
+        zzaY();
+        ((zzib) this.zza).zzk(i, (zzid) zzicVar.zzbd());
         return this;
     }
 
     public final zzhz zze(zzic zzicVar) {
-        zzaX();
-        ((zzib) this.zza).zzk((zzid) zzicVar.zzbc());
+        zzaY();
+        ((zzib) this.zza).zzl((zzid) zzicVar.zzbd());
         return this;
     }
 
     public final zzhz zzf(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzib) this.zza).zzm(iterable);
         return this;
     }
 
     public final zzhz zzg() {
-        zzaX();
+        zzaY();
         ((zzib) this.zza).zzn();
         return this;
     }
@@ -61,13 +61,13 @@ public final class zzhz extends zzmb implements zznn {
     }
 
     public final zzhz zzi(String str) {
-        zzaX();
+        zzaY();
         ((zzib) this.zza).zzo(str);
         return this;
     }
 
     public final zzhz zzj(String str) {
-        zzaX();
+        zzaY();
         ((zzib) this.zza).zzp(str);
         return this;
     }

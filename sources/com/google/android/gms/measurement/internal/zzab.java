@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public abstract class zzab {
     final String zzb;
@@ -81,16 +81,16 @@ public abstract class zzab {
         String zzc;
         List list;
         Preconditions.checkNotNull(zzfrVar);
-        if (str != null && zzfrVar.zza() && zzfrVar.zzj() != 1 && (zzfrVar.zzj() != 7 ? zzfrVar.zzb() : zzfrVar.zzg() != 0)) {
-            int zzj = zzfrVar.zzj();
+        if (str != null && zzfrVar.zza() && zzfrVar.zzk() != 1 && (zzfrVar.zzk() != 7 ? zzfrVar.zzb() : zzfrVar.zzh() != 0)) {
+            int zzk = zzfrVar.zzk();
             boolean zze = zzfrVar.zze();
-            if (zze || zzj == 2 || zzj == 7) {
+            if (zze || zzk == 2 || zzk == 7) {
                 zzc = zzfrVar.zzc();
             } else {
                 zzc = zzfrVar.zzc().toUpperCase(Locale.ENGLISH);
             }
             String str2 = zzc;
-            if (zzfrVar.zzg() == 0) {
+            if (zzfrVar.zzh() == 0) {
                 list = null;
             } else {
                 List<String> zzf = zzfrVar.zzf();
@@ -103,7 +103,7 @@ public abstract class zzab {
                 }
                 list = zzf;
             }
-            return zzd(str, zzj, zze, str2, list, zzj == 2 ? str2 : null, zzguVar);
+            return zzd(str, zzk, zze, str2, list, zzk == 2 ? str2 : null, zzguVar);
         }
         return null;
     }
@@ -146,7 +146,7 @@ public abstract class zzab {
         if (zzflVar.zza()) {
             if (zzflVar.zzm() != 1) {
                 if (zzflVar.zzm() == 5) {
-                    if (!zzflVar.zzf() || !zzflVar.zzh()) {
+                    if (!zzflVar.zzf() || !zzflVar.zzi()) {
                         return null;
                     }
                 } else if (!zzflVar.zzd()) {
@@ -154,10 +154,10 @@ public abstract class zzab {
                 }
                 int zzm = zzflVar.zzm();
                 if (zzflVar.zzm() == 5) {
-                    if (zzpk.zzm(zzflVar.zzg()) && zzpk.zzm(zzflVar.zzi())) {
+                    if (zzpk.zzm(zzflVar.zzh()) && zzpk.zzm(zzflVar.zzj())) {
                         try {
-                            BigDecimal bigDecimal5 = new BigDecimal(zzflVar.zzg());
-                            bigDecimal4 = new BigDecimal(zzflVar.zzi());
+                            BigDecimal bigDecimal5 = new BigDecimal(zzflVar.zzh());
+                            bigDecimal4 = new BigDecimal(zzflVar.zzj());
                             bigDecimal3 = bigDecimal5;
                             bigDecimal2 = null;
                         } catch (NumberFormatException unused) {

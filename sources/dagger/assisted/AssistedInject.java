@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.CONSTRUCTOR})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface AssistedInject {
 }

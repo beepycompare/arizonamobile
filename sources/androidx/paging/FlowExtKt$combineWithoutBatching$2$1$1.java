@@ -14,7 +14,7 @@ import kotlinx.coroutines.channels.SendChannel;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 176)
 @DebugMetadata(c = "androidx.paging.FlowExtKt$combineWithoutBatching$2$1$1", f = "FlowExt.kt", i = {}, l = {132}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlowExtKt$combineWithoutBatching$2$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -63,18 +63,18 @@ public final class FlowExtKt$combineWithoutBatching$2$1$1 extends SuspendLambda 
                 ResultKt.throwOnFailure(obj);
             }
             if (atomicInteger.decrementAndGet() == 0) {
-                SendChannel.DefaultImpls.close$default(this.$$this$simpleChannelFlow, null, 1, null);
+                SendChannel.close$default(this.$$this$simpleChannelFlow, null, 1, null);
             }
             return Unit.INSTANCE;
         } finally {
             if (this.$incompleteFlows.decrementAndGet() == 0) {
-                SendChannel.DefaultImpls.close$default(this.$$this$simpleChannelFlow, null, 1, null);
+                SendChannel.close$default(this.$$this$simpleChannelFlow, null, 1, null);
             }
         }
     }
 
     /* compiled from: FlowExt.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
     /* renamed from: androidx.paging.FlowExtKt$combineWithoutBatching$2$1$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {

@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzku implements Runnable {
     final /* synthetic */ zzjl zza;
@@ -23,7 +23,7 @@ public final class zzku implements Runnable {
     public final void run() {
         zzlj zzljVar = this.zzd;
         zzjl zzjlVar = this.zza;
-        zzljVar.zzA(zzjlVar);
-        zzljVar.zzak(zzjlVar, this.zzb, true, this.zzc);
+        zzljVar.zzz(zzjlVar);
+        zzljVar.zzaj(zzjlVar, this.zzb, true, this.zzc);
     }
 }

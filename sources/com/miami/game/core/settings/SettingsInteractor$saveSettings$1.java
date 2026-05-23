@@ -26,7 +26,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: SettingsInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.settings.SettingsInteractor$saveSettings$1", f = "SettingsInteractor.kt", i = {0, 0, 0, 0}, l = {70}, m = "invokeSuspend", n = {"savedTestScripts", "resolvedActiveImportedScriptFileName", "activeImportedScript", "normalizedSettings"}, nl = {72}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SettingsInteractor$saveSettings$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ SettingState $settings;
     Object L$0;
@@ -94,7 +94,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
             }
             String obj4 = StringsKt.trim((CharSequence) this.$settings.getDebugGameTestScreenshotDeviceDir()).toString();
             normalizeConnectionData = this.this$0.normalizeConnectionData(this.$settings.getConnectionData());
-            SettingState copy$default = SettingState.copy$default(settingState2, 0.0f, 0, false, false, false, false, false, false, false, false, false, false, z, str, resolveActiveImportedScriptFileName, listImportedScripts, obj3, false, obj4, normalizeConnectionData, 135167, null);
+            SettingState copy$default = SettingState.copy$default(settingState2, 0.0f, 0, false, false, false, false, false, false, false, false, false, z, str, resolveActiveImportedScriptFileName, listImportedScripts, obj3, false, obj4, normalizeConnectionData, 67583, null);
             localRepository2 = this.this$0.localRepository;
             this.L$0 = SpillingKt.nullOutSpilledVariable(listImportedScripts);
             this.L$1 = SpillingKt.nullOutSpilledVariable(resolveActiveImportedScriptFileName);
@@ -117,7 +117,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
         localRepository3 = this.this$0.localRepository;
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(localRepository3.getContext());
         Intrinsics.checkNotNullExpressionValue(defaultSharedPreferences, "getDefaultSharedPreferences(...)");
-        SharedPreferences.Editor putBoolean = defaultSharedPreferences.edit().putInt(SettingsConstants.CHAT_PAGE_SIZE, settingState.getPageSize()).putFloat(SettingsConstants.CHAT_FONT_SIZE, settingState.getChatFontSize()).putBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, settingState.getShowChatTime()).putBoolean(SettingsConstants.SHOW_FPS, settingState.getShowFps()).putBoolean(SettingsConstants.UPDATED_GRAPHICS, settingState.getUpdatedGraphics()).putBoolean(SettingsConstants.USE_FULLSCREEN, settingState.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, settingState.getStreamerMode()).putBoolean(SettingsConstants.AMBIENT_SOUNDS, settingState.getAmbientSounds()).putBoolean(SettingsConstants.DEBUG_AUTO_CONNECT_TEST_SERVER, settingState.getDebugAutoConnectTestServer()).putBoolean(GameTestScriptPreferences.AUTO_RUN_KEY, settingState.getDebugAutoRunTestScript()).putBoolean(GameTestScriptPreferences.USE_IMPORTED_KEY, settingState.getDebugUseImportedTestScript());
+        SharedPreferences.Editor putBoolean = defaultSharedPreferences.edit().putInt(SettingsConstants.CHAT_PAGE_SIZE, settingState.getPageSize()).putFloat(SettingsConstants.CHAT_FONT_SIZE, settingState.getChatFontSize()).putBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, settingState.getShowChatTime()).putBoolean(SettingsConstants.SHOW_FPS, settingState.getShowFps()).putBoolean(SettingsConstants.USE_FULLSCREEN, settingState.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, settingState.getStreamerMode()).putBoolean(SettingsConstants.AMBIENT_SOUNDS, settingState.getAmbientSounds()).putBoolean(SettingsConstants.DEBUG_AUTO_CONNECT_TEST_SERVER, settingState.getDebugAutoConnectTestServer()).putBoolean(GameTestScriptPreferences.AUTO_RUN_KEY, settingState.getDebugAutoRunTestScript()).putBoolean(GameTestScriptPreferences.USE_IMPORTED_KEY, settingState.getDebugUseImportedTestScript());
         String debugImportedTestScriptName2 = settingState.getDebugImportedTestScriptName();
         if (debugImportedTestScriptName2 == null) {
             debugImportedTestScriptName2 = "";

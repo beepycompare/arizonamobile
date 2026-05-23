@@ -18,6 +18,10 @@ public class ParserException extends IOException {
         return new ParserException(str, th, true, 4);
     }
 
+    public static ParserException createForMalformedSteeringManifest(String str, Throwable th) {
+        return new ParserException(str, th, true, 8);
+    }
+
     public static ParserException createForManifestWithUnsupportedFeature(String str, Throwable th) {
         return new ParserException(str, th, false, 4);
     }

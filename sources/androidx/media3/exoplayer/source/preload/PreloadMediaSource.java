@@ -150,14 +150,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m8324xf99e9a56(j);
+                PreloadMediaSource.this.m8932xf99e9a56(j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$preload$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8324xf99e9a56(long j) {
+    public /* synthetic */ void m8932xf99e9a56(long j) {
         this.onSourcePreparedNotified = false;
         if (isUsedByPlayer()) {
             onUsedByPlayer();
@@ -175,14 +175,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         Util.postOrRun(this.preloadHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m8322xcf4780db();
+                PreloadMediaSource.this.m8930xcf4780db();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$clear$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8322xcf4780db() {
+    public /* synthetic */ void m8930xcf4780db() {
         if (this.preloadingMediaPeriodAndKey != null) {
             this.mediaSource.releasePeriod(((PreloadMediaPeriod) this.preloadingMediaPeriodAndKey.first).mediaPeriod);
             this.preloadingMediaPeriodAndKey = null;
@@ -213,14 +213,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m8323xd674fafd(timeline);
+                PreloadMediaSource.this.m8931xd674fafd(timeline);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8323xd674fafd(Timeline timeline) {
+    public /* synthetic */ void m8931xd674fafd(Timeline timeline) {
         if (isUsedByPlayer() || this.onSourcePreparedNotified) {
             return;
         }
@@ -298,14 +298,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.releaseHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m8325xd9831bcd();
+                PreloadMediaSource.this.m8933xd9831bcd();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadMediaSource$3$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8325xd9831bcd() {
+    public /* synthetic */ void m8933xd9831bcd() {
         if (this.preloadCalled) {
             this.loadControl.onReleased(PlayerId.PRELOAD);
         }
@@ -380,6 +380,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
     public class PreloadMediaPeriodCallback implements MediaPeriod.Callback {
         private int continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
         private Runnable maybeContinueLoadingRunnable;
+        private boolean onLoadToTheEndOfSourceNotified;
         private final long periodStartPositionUs;
         private boolean prepared;
 
@@ -393,16 +394,16 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8328x5a2a8722(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8936x5a2a8722(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepared$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m8328x5a2a8722(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m8936x5a2a8722(MediaPeriod mediaPeriod) {
             TrackSelectorResult trackSelectorResult;
-            if (PreloadMediaSource.this.isUsedByPlayer()) {
+            if (PreloadMediaSource.this.preloadingMediaPeriodAndKey == null || PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }
             PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) mediaPeriod;
@@ -427,7 +428,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             }
             preloadMediaSource.loadControl.onTracksSelected(createLoadControlParameters(PreloadMediaSource.this.getPlayerId(), (Timeline) Preconditions.checkNotNull(PreloadMediaSource.this.timeline), mediaPeriodId, mediaPeriod.getBufferedPositionUs()), trackGroups, trackSelectorResult.selections);
             this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
-            m8326xe55d806f(preloadMediaPeriod, mediaPeriodId);
+            m8934xe55d806f(preloadMediaPeriod, mediaPeriodId);
         }
 
         @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
@@ -435,38 +436,37 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8327xba37e565(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8935xba37e565(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onContinueLoadingRequested$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m8327xba37e565(MediaPeriod mediaPeriod) {
-            if (PreloadMediaSource.this.isUsedByPlayer()) {
+        public /* synthetic */ void m8935xba37e565(MediaPeriod mediaPeriod) {
+            if (PreloadMediaSource.this.preloadingMediaPeriodAndKey == null || PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }
             PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) mediaPeriod;
             if (this.prepared) {
                 long bufferedPositionUs = mediaPeriod.getBufferedPositionUs();
-                int i = (bufferedPositionUs > Long.MIN_VALUE ? 1 : (bufferedPositionUs == Long.MIN_VALUE ? 0 : -1));
-                PreloadMediaSource preloadMediaSource = PreloadMediaSource.this;
-                if (i == 0) {
-                    preloadMediaSource.preloadControl.onLoadedToTheEndOfSource(PreloadMediaSource.this);
-                    PreloadMediaSource.this.stopPreloading();
-                    return;
-                } else if (!preloadMediaSource.preloadControl.onContinueLoadingRequested(PreloadMediaSource.this, bufferedPositionUs - this.periodStartPositionUs)) {
-                    PreloadMediaSource.this.stopPreloading();
+                if (bufferedPositionUs != Long.MIN_VALUE) {
+                    if (!PreloadMediaSource.this.preloadControl.onContinueLoadingRequested(PreloadMediaSource.this, bufferedPositionUs - this.periodStartPositionUs)) {
+                        PreloadMediaSource.this.stopPreloading();
+                        return;
+                    }
+                } else {
+                    onLoadToTheEndOfSource();
                     return;
                 }
             }
             this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
-            m8326xe55d806f(preloadMediaPeriod, ((MediaPeriodKey) ((Pair) Preconditions.checkNotNull(PreloadMediaSource.this.preloadingMediaPeriodAndKey)).second).mediaPeriodId);
+            m8934xe55d806f(preloadMediaPeriod, ((MediaPeriodKey) ((Pair) Preconditions.checkNotNull(PreloadMediaSource.this.preloadingMediaPeriodAndKey)).second).mediaPeriodId);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: maybeContinueLoading */
-        public void m8326xe55d806f(final MediaPeriod mediaPeriod, final MediaSource.MediaPeriodId mediaPeriodId) {
+        public void m8934xe55d806f(final MediaPeriod mediaPeriod, final MediaSource.MediaPeriodId mediaPeriodId) {
             if (PreloadMediaSource.this.preloadingMediaPeriodAndKey == null || PreloadMediaSource.this.preloadingMediaPeriodAndKey.first != mediaPeriod) {
                 return;
             }
@@ -477,6 +477,10 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             if (PreloadMediaSource.this.loadControl.shouldContinueLoading(createLoadControlParameters(PreloadMediaSource.this.getPlayerId(), (Timeline) Preconditions.checkNotNull(PreloadMediaSource.this.timeline), mediaPeriodId, this.prepared ? mediaPeriod.getBufferedPositionUs() : 0L))) {
                 this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
                 mediaPeriod.continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(this.periodStartPositionUs).build());
+                if (this.prepared && mediaPeriod.getBufferedPositionUs() == Long.MIN_VALUE) {
+                    onLoadToTheEndOfSource();
+                    return;
+                }
                 return;
             }
             int i = this.continueLoadingRetryCountBeforeCallingPreloadControlAgain;
@@ -492,7 +496,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             this.maybeContinueLoadingRunnable = new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8326xe55d806f(mediaPeriod, mediaPeriodId);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m8934xe55d806f(mediaPeriod, mediaPeriodId);
                 }
             };
             PreloadMediaSource.this.preloadHandler.postDelayed(this.maybeContinueLoadingRunnable, 100L);
@@ -500,6 +504,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
 
         private LoadControl.Parameters createLoadControlParameters(PlayerId playerId, Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
             return new LoadControl.Parameters(playerId, timeline, mediaPeriodId, 0L, j, 1.0f, false, false, C.TIME_UNSET, C.TIME_UNSET);
+        }
+
+        private void onLoadToTheEndOfSource() {
+            if (!this.onLoadToTheEndOfSourceNotified) {
+                PreloadMediaSource.this.preloadControl.onLoadedToTheEndOfSource(PreloadMediaSource.this);
+                this.onLoadToTheEndOfSourceNotified = true;
+            }
+            PreloadMediaSource.this.stopPreloading();
         }
     }
 

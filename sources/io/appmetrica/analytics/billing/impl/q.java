@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class q implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final g f323a;
+    public final g f269a;
     public final f b;
 
     public q() {
@@ -21,7 +21,7 @@ public final class q implements JsonParser {
     /* renamed from: a */
     public final RemoteBillingConfig parse(JSONObject jSONObject) {
         s sVar;
-        g gVar = this.f323a;
+        g gVar = this.f269a;
         this.b.getClass();
         JSONObject optJSONObject = jSONObject.optJSONObject("auto_inapp_collecting");
         if (optJSONObject == null) {
@@ -30,7 +30,7 @@ public final class q implements JsonParser {
             s sVar2 = new s();
             Integer optIntOrNull = JsonUtils.optIntOrNull(optJSONObject, "send_frequency_seconds");
             if (optIntOrNull != null) {
-                sVar2.f325a = optIntOrNull.intValue();
+                sVar2.f271a = optIntOrNull.intValue();
             }
             Integer optIntOrNull2 = JsonUtils.optIntOrNull(optJSONObject, "first_collecting_inapp_max_age_seconds");
             if (optIntOrNull2 != null) {
@@ -39,7 +39,7 @@ public final class q implements JsonParser {
             sVar = sVar2;
         }
         gVar.getClass();
-        return new RemoteBillingConfig(true, new BillingConfig(sVar.f325a, sVar.b));
+        return new RemoteBillingConfig(true, new BillingConfig(sVar.f271a, sVar.b));
     }
 
     public final RemoteBillingConfig b(JSONObject jSONObject) {
@@ -52,7 +52,7 @@ public final class q implements JsonParser {
     }
 
     public q(g gVar, f fVar) {
-        this.f323a = gVar;
+        this.f269a = gVar;
         this.b = fVar;
     }
 

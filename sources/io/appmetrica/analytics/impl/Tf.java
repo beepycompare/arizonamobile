@@ -1,67 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
-import java.io.File;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes5.dex */
-public final class Tf implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final File f804a;
-    public final Function b;
-    public final Consumer c;
-    public final Consumer d;
-    public final Z9 e;
-    public final InterfaceC0126al f;
-
-    public Tf(File file, Function function, Consumer consumer, Consumer consumer2, Z9 z9, InterfaceC0126al interfaceC0126al) {
-        this.f804a = file;
-        this.b = function;
-        this.c = consumer;
-        this.d = consumer2;
-        this.e = z9;
-        this.f = interfaceC0126al;
-    }
-
-    public static final void a(File file) {
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.f804a.exists()) {
-            C0696x9 b = this.e.b(this.f804a.getName());
-            Consumer consumer = this.c;
-            try {
-                b.f1307a.lock();
-                b.b.a();
-            } catch (Throwable unused) {
-            }
-            if (!this.f804a.exists()) {
-                consumer.consume(this.f804a);
-                b.c();
-                Z9 z9 = this.e;
-                String name = this.f804a.getName();
-                synchronized (z9) {
-                    z9.b.remove(name);
-                }
-                return;
-            }
-            Object apply = this.b.apply(this.f804a);
-            if (apply != null) {
-                if (this.f.a(apply)) {
-                    this.d.consume(apply);
-                } else {
-                    consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.Tf$$ExternalSyntheticLambda0
-                        @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-                        public final void consume(Object obj) {
-                            Tf.a((File) obj);
-                        }
-                    };
-                }
-            }
-            consumer.consume(this.f804a);
-            b.c();
-            this.e.a(this.f804a.getName());
-        }
+public final class Tf extends AbstractC0296h8 {
+    public Tf(Context context, ProtobufStateStorage<Df> protobufStateStorage, AbstractC0347j8 abstractC0347j8, Do r4, InterfaceC0388kn interfaceC0388kn, InterfaceC0669vj interfaceC0669vj, InterfaceC0617tj interfaceC0617tj, R6 r6, Df df, String str) {
+        super(context, protobufStateStorage, abstractC0347j8, r4, interfaceC0388kn, interfaceC0669vj, interfaceC0617tj, r6, df);
     }
 }

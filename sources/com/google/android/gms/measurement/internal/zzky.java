@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import com.adjust.sdk.Constants;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzky implements Application.ActivityLifecycleCallbacks, zzkw {
     final /* synthetic */ zzlj zza;
@@ -22,27 +22,27 @@ public final class zzky implements Application.ActivityLifecycleCallbacks, zzkw 
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityCreated(Activity activity, Bundle bundle) {
-        zza(com.google.android.gms.internal.measurement.zzdf.zza(activity), bundle);
+        zza(com.google.android.gms.internal.measurement.zzdd.zza(activity), bundle);
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityDestroyed(Activity activity) {
-        zzb(com.google.android.gms.internal.measurement.zzdf.zza(activity));
+        zzb(com.google.android.gms.internal.measurement.zzdd.zza(activity));
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityPaused(Activity activity) {
-        zzc(com.google.android.gms.internal.measurement.zzdf.zza(activity));
+        zzc(com.google.android.gms.internal.measurement.zzdd.zza(activity));
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityResumed(Activity activity) {
-        zzd(com.google.android.gms.internal.measurement.zzdf.zza(activity));
+        zzd(com.google.android.gms.internal.measurement.zzdd.zza(activity));
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-        zze(com.google.android.gms.internal.measurement.zzdf.zza(activity), bundle);
+        zze(com.google.android.gms.internal.measurement.zzdd.zza(activity), bundle);
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -53,40 +53,39 @@ public final class zzky implements Application.ActivityLifecycleCallbacks, zzkw 
     public final void onActivityStopped(Activity activity) {
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(6:(10:21|22|(1:24)(1:41)|25|26|27|28|29|30|31)|27|28|29|30|31) */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0087, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0098, code lost:
-        r2.zza.zzu.zzaV().zzb().zzb("Throwable caught in onActivityCreated", r0);
-     */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x005f  */
     @Override // com.google.android.gms.measurement.internal.zzkw
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zza(com.google.android.gms.internal.measurement.zzdf zzdfVar, Bundle bundle) {
+    public final void zza(com.google.android.gms.internal.measurement.zzdd zzddVar, Bundle bundle) {
         zzky zzkyVar;
         zzic zzicVar;
         zzlj zzljVar;
         zzic zzicVar2;
         Intent intent;
         Uri uri;
-        String stringExtra;
-        String str;
         try {
-            zzljVar = this.zza;
-            zzicVar2 = zzljVar.zzu;
-            zzicVar2.zzaV().zzk().zza("onActivityCreated");
-            intent = zzdfVar.zzc;
+            try {
+                zzljVar = this.zza;
+                zzicVar2 = zzljVar.zzu;
+                zzicVar2.zzaW().zzk().zza("onActivityCreated");
+                intent = zzddVar.zzc;
+            } catch (Throwable th) {
+                th = th;
+                zzkyVar.zza.zzu.zzs().zzn(zzddVar, bundle);
+                throw th;
+            }
         } catch (RuntimeException e) {
             e = e;
             zzkyVar = this;
-        } catch (Throwable th) {
-            th = th;
+        } catch (Throwable th2) {
+            th = th2;
             zzkyVar = this;
-            zzkyVar.zza.zzu.zzs().zzm(zzdfVar, bundle);
+            zzkyVar.zza.zzu.zzs().zzn(zzddVar, bundle);
             throw th;
         }
         if (intent != null) {
@@ -96,30 +95,19 @@ public final class zzky implements Application.ActivityLifecycleCallbacks, zzkw 
                 }
                 uri = data;
                 if (uri != null && uri.isHierarchical()) {
-                    zzicVar2.zzk();
-                    stringExtra = intent.getStringExtra("android.intent.extra.REFERRER_NAME");
-                    try {
-                        if (!"android-app://com.google.android.googlequicksearchbox/https/www.google.com".equals(stringExtra) && !"https://www.google.com".equals(stringExtra) && !"android-app://com.google.appcrawler".equals(stringExtra)) {
-                            str = "auto";
-                            String str2 = str;
-                            String queryParameter = uri.getQueryParameter(Constants.REFERRER);
-                            zzkyVar = this;
-                            zzicVar2.zzaW().zzj(new zzkx(zzkyVar, bundle != null, uri, str2, queryParameter));
-                            zzicVar = zzkyVar.zza.zzu;
-                            zzicVar.zzs().zzm(zzdfVar, bundle);
-                        }
-                        zzicVar2.zzaW().zzj(new zzkx(zzkyVar, bundle != null, uri, str2, queryParameter));
-                        zzicVar = zzkyVar.zza.zzu;
-                        zzicVar.zzs().zzm(zzdfVar, bundle);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        zzkyVar.zza.zzu.zzs().zzm(zzdfVar, bundle);
-                        throw th;
-                    }
-                    str = "gs";
-                    String str22 = str;
-                    String queryParameter2 = uri.getQueryParameter(Constants.REFERRER);
+                    String str = !zzicVar2.zzk().zzj(intent) ? "gs" : "auto";
+                    String queryParameter = uri.getQueryParameter(Constants.REFERRER);
                     zzkyVar = this;
+                    try {
+                        zzicVar2.zzaX().zzj(new zzkx(zzkyVar, bundle != null, uri, str, queryParameter));
+                    } catch (RuntimeException e2) {
+                        e = e2;
+                        zzkyVar.zza.zzu.zzaW().zzb().zzb("Throwable caught in onActivityCreated", e);
+                        zzicVar = zzkyVar.zza.zzu;
+                        zzicVar.zzs().zzn(zzddVar, bundle);
+                    }
+                    zzicVar = zzkyVar.zza.zzu;
+                    zzicVar.zzs().zzn(zzddVar, bundle);
                 }
             }
             Bundle extras = intent.getExtras();
@@ -132,55 +120,43 @@ public final class zzky implements Application.ActivityLifecycleCallbacks, zzkw 
                 }
             }
             if (uri != null) {
-                zzicVar2.zzk();
-                stringExtra = intent.getStringExtra("android.intent.extra.REFERRER_NAME");
-                if (!"android-app://com.google.android.googlequicksearchbox/https/www.google.com".equals(stringExtra)) {
-                    str = "auto";
-                    String str222 = str;
-                    String queryParameter22 = uri.getQueryParameter(Constants.REFERRER);
-                    zzkyVar = this;
-                    zzicVar2.zzaW().zzj(new zzkx(zzkyVar, bundle != null, uri, str222, queryParameter22));
-                    zzicVar = zzkyVar.zza.zzu;
-                    zzicVar.zzs().zzm(zzdfVar, bundle);
-                }
-                str = "gs";
-                String str2222 = str;
-                String queryParameter222 = uri.getQueryParameter(Constants.REFERRER);
+                String str2 = !zzicVar2.zzk().zzj(intent) ? "gs" : "auto";
+                String queryParameter2 = uri.getQueryParameter(Constants.REFERRER);
                 zzkyVar = this;
-                zzicVar2.zzaW().zzj(new zzkx(zzkyVar, bundle != null, uri, str2222, queryParameter222));
+                zzicVar2.zzaX().zzj(new zzkx(zzkyVar, bundle != null, uri, str2, queryParameter2));
                 zzicVar = zzkyVar.zza.zzu;
-                zzicVar.zzs().zzm(zzdfVar, bundle);
+                zzicVar.zzs().zzn(zzddVar, bundle);
             }
         }
         zzicVar = zzljVar.zzu;
-        zzicVar.zzs().zzm(zzdfVar, bundle);
+        zzicVar.zzs().zzn(zzddVar, bundle);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzkw
-    public final void zzb(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
-        this.zza.zzu.zzs().zzs(zzdfVar);
+    public final void zzb(com.google.android.gms.internal.measurement.zzdd zzddVar) {
+        this.zza.zzu.zzs().zzt(zzddVar);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzkw
-    public final void zzc(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+    public final void zzc(com.google.android.gms.internal.measurement.zzdd zzddVar) {
         zzic zzicVar = this.zza.zzu;
-        zzicVar.zzs().zzp(zzdfVar);
+        zzicVar.zzs().zzq(zzddVar);
         zzoc zzh = zzicVar.zzh();
         zzic zzicVar2 = zzh.zzu;
-        zzicVar2.zzaW().zzj(new zznv(zzh, zzicVar2.zzaZ().elapsedRealtime()));
+        zzicVar2.zzaX().zzj(new zznv(zzh, zzicVar2.zzba().elapsedRealtime()));
     }
 
     @Override // com.google.android.gms.measurement.internal.zzkw
-    public final void zzd(com.google.android.gms.internal.measurement.zzdf zzdfVar) {
+    public final void zzd(com.google.android.gms.internal.measurement.zzdd zzddVar) {
         zzic zzicVar = this.zza.zzu;
         zzoc zzh = zzicVar.zzh();
         zzic zzicVar2 = zzh.zzu;
-        zzicVar2.zzaW().zzj(new zznu(zzh, zzicVar2.zzaZ().elapsedRealtime()));
-        zzicVar.zzs().zzn(zzdfVar);
+        zzicVar2.zzaX().zzj(new zznu(zzh, zzicVar2.zzba().elapsedRealtime()));
+        zzicVar.zzs().zzp(zzddVar);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzkw
-    public final void zze(com.google.android.gms.internal.measurement.zzdf zzdfVar, Bundle bundle) {
-        this.zza.zzu.zzs().zzq(zzdfVar, bundle);
+    public final void zze(com.google.android.gms.internal.measurement.zzdd zzddVar, Bundle bundle) {
+        this.zza.zzu.zzs().zzs(zzddVar, bundle);
     }
 }

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBindings;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.ghetto.GridOverlayView;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class GhettoMapBinding implements ViewBinding {
     public final CardView button;
     public final SubsamplingScaleImageView mapView;

@@ -189,7 +189,7 @@ public class MotionKeyPosition extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo8035clone() {
+    public MotionKey mo8640clone() {
         return new MotionKeyPosition().copy(this);
     }
 

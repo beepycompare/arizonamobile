@@ -14,7 +14,7 @@ import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgl extends zzg {
     private static final String[] zza = {"app_version", "ALTER TABLE messages ADD COLUMN app_version TEXT;", "app_version_int", "ALTER TABLE messages ADD COLUMN app_version_int INTEGER;"};
@@ -24,9 +24,9 @@ public final class zzgl extends zzg {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzgl(zzic zzicVar) {
         super(zzicVar);
-        Context zzaY = this.zzu.zzaY();
+        Context zzaZ = this.zzu.zzaZ();
         this.zzu.zzc();
-        this.zzb = new zzgj(this, zzaY, "google_app_measurement_local.db");
+        this.zzb = new zzgj(this, zzaZ, "google_app_measurement_local.db");
     }
 
     /* JADX WARN: Removed duplicated region for block: B:108:0x0169 A[SYNTHETIC] */
@@ -52,7 +52,7 @@ public final class zzgl extends zzg {
         if (!this.zzc) {
             zzic zzicVar = this.zzu;
             zzal zzc = zzicVar.zzc();
-            zzfx zzfxVar = zzfy.zzbb;
+            zzfx zzfxVar = zzfy.zzaW;
             Cursor cursor2 = null;
             zzr zzh = zzc.zzp(null, zzfxVar) ? this.zzu.zzv().zzh(null) : null;
             ContentValues contentValues = new ContentValues();
@@ -97,7 +97,7 @@ public final class zzgl extends zzg {
                                 } catch (SQLiteFullException e) {
                                     e = e;
                                     z = z2 ? 1 : 0;
-                                    this.zzu.zzaV().zzb().zzb("Error writing entry; local database full", e);
+                                    this.zzu.zzaW().zzb().zzb("Error writing entry; local database full", e);
                                     this.zzc = true;
                                     if (cursor != null) {
                                         cursor.close();
@@ -129,7 +129,7 @@ public final class zzgl extends zzg {
                                             throw th;
                                         }
                                     }
-                                    this.zzu.zzaV().zzb().zzb("Error writing entry to local database", e);
+                                    this.zzu.zzaW().zzb().zzb("Error writing entry to local database", e);
                                     this.zzc = true;
                                     if (cursor != null) {
                                         cursor.close();
@@ -144,13 +144,13 @@ public final class zzgl extends zzg {
                                 }
                             }
                             if (j >= SilenceSkippingAudioProcessor.DEFAULT_MINIMUM_SILENCE_DURATION_US) {
-                                zzicVar.zzaV().zzb().zza("Data loss, local db full");
+                                zzicVar.zzaW().zzb().zza("Data loss, local db full");
                                 String[] strArr = new String[1];
                                 long j2 = 100001 - j;
                                 strArr[z2 ? 1 : 0] = Long.toString(j2);
                                 long delete = sQLiteDatabase.delete("messages", "rowid in (select rowid from messages order by rowid asc limit ?)", strArr);
                                 if (delete != j2) {
-                                    zzgs zzb = zzicVar.zzaV().zzb();
+                                    zzgs zzb = zzicVar.zzaW().zzb();
                                     z = z2 ? 1 : 0;
                                     try {
                                         zzb.zzd("Different delete count than expected in local db. expected, received, difference", Long.valueOf(j2), Long.valueOf(delete), Long.valueOf(j2 - delete));
@@ -174,7 +174,7 @@ public final class zzgl extends zzg {
                                         z2 = z;
                                     } catch (SQLiteFullException e3) {
                                         e = e3;
-                                        this.zzu.zzaV().zzb().zzb("Error writing entry; local database full", e);
+                                        this.zzu.zzaW().zzb().zzb("Error writing entry; local database full", e);
                                         this.zzc = true;
                                         if (cursor != null) {
                                         }
@@ -187,7 +187,7 @@ public final class zzgl extends zzg {
                                         e = e4;
                                         if (sQLiteDatabase != null) {
                                         }
-                                        this.zzu.zzaV().zzb().zzb("Error writing entry to local database", e);
+                                        this.zzu.zzaW().zzb().zzb("Error writing entry to local database", e);
                                         this.zzc = true;
                                         if (cursor != null) {
                                         }
@@ -247,7 +247,7 @@ public final class zzgl extends zzg {
                 }
             }
             boolean z3 = z2 ? 1 : 0;
-            this.zzu.zzaV().zzk().zza("Failed to write entry to local database");
+            this.zzu.zzaW().zzk().zza("Failed to write entry to local database");
             return z3;
         }
         return z2;
@@ -266,19 +266,19 @@ public final class zzgl extends zzg {
             if (zzp == null || (delete = zzp.delete("messages", null, null)) <= 0) {
                 return;
             }
-            this.zzu.zzaV().zzk().zzb("Reset local analytics data. records", Integer.valueOf(delete));
+            this.zzu.zzaW().zzk().zzb("Reset local analytics data. records", Integer.valueOf(delete));
         } catch (SQLiteException e) {
-            this.zzu.zzaV().zzb().zzb("Error resetting local analytics data. error", e);
+            this.zzu.zzaW().zzb().zzb("Error resetting local analytics data. error", e);
         }
     }
 
-    public final boolean zzi(zzbg zzbgVar) {
+    public final boolean zzi(zzbh zzbhVar) {
         Parcel obtain = Parcel.obtain();
-        zzbh.zza(zzbgVar, obtain, 0);
+        zzbi.zza(zzbhVar, obtain, 0);
         byte[] marshall = obtain.marshall();
         obtain.recycle();
         if (marshall.length > 131072) {
-            this.zzu.zzaV().zzc().zza("Event is too long for local database. Sending event directly to service");
+            this.zzu.zzaW().zzc().zza("Event is too long for local database. Sending event directly to service");
             return false;
         }
         return zzs(0, marshall);
@@ -290,7 +290,7 @@ public final class zzgl extends zzg {
         byte[] marshall = obtain.marshall();
         obtain.recycle();
         if (marshall.length > 131072) {
-            this.zzu.zzaV().zzc().zza("User property too long for local database. Sending directly to service");
+            this.zzu.zzaW().zzc().zza("User property too long for local database. Sending directly to service");
             return false;
         }
         return zzs(1, marshall);
@@ -298,25 +298,25 @@ public final class zzgl extends zzg {
 
     public final boolean zzk(zzah zzahVar) {
         zzic zzicVar = this.zzu;
-        byte[] zzae = zzicVar.zzk().zzae(zzahVar);
-        if (zzae.length > 131072) {
-            zzicVar.zzaV().zzc().zza("Conditional user property too long for local database. Sending directly to service");
+        byte[] zzah = zzicVar.zzk().zzah(zzahVar);
+        if (zzah.length > 131072) {
+            zzicVar.zzaW().zzc().zza("Conditional user property too long for local database. Sending directly to service");
             return false;
         }
-        return zzs(2, zzae);
+        return zzs(2, zzah);
     }
 
-    public final boolean zzl(zzbe zzbeVar) {
+    public final boolean zzl(zzbf zzbfVar) {
         zzic zzicVar = this.zzu;
-        byte[] zzae = zzicVar.zzk().zzae(zzbeVar);
-        if (zzae == null) {
-            zzicVar.zzaV().zzc().zza("Null default event parameters; not writing to database");
+        byte[] zzah = zzicVar.zzk().zzah(zzbfVar);
+        if (zzah == null) {
+            zzicVar.zzaW().zzc().zza("Null default event parameters; not writing to database");
             return false;
-        } else if (zzae.length > 131072) {
-            zzicVar.zzaV().zzc().zza("Default event parameters too long for local database. Sending directly to service");
+        } else if (zzah.length > 131072) {
+            zzicVar.zzaW().zzc().zza("Default event parameters too long for local database. Sending directly to service");
             return false;
         } else {
-            return zzs(4, zzae);
+            return zzs(4, zzah);
         }
     }
 
@@ -360,7 +360,7 @@ public final class zzgl extends zzg {
         zzfx zzfxVar2;
         int i6;
         int i7;
-        zzbe zzbeVar;
+        zzbf zzbfVar;
         zzah zzahVar;
         zzpl zzplVar;
         String str6 = "entry";
@@ -431,7 +431,7 @@ public final class zzgl extends zzg {
                                                     i3 = i9;
                                                     i2 = 5;
                                                     cursor2 = null;
-                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                    this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                     this.zzc = true;
                                                     if (cursor2 != null) {
                                                     }
@@ -455,7 +455,7 @@ public final class zzgl extends zzg {
                                                     cursor2 = null;
                                                     if (sQLiteDatabase != null) {
                                                     }
-                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                    this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                     this.zzc = true;
                                                     if (cursor2 != null) {
                                                     }
@@ -493,7 +493,7 @@ public final class zzgl extends zzg {
                                         zzicVar = this.zzu;
                                         zzal zzc = zzicVar.zzc();
                                         i4 = 3;
-                                        zzfxVar = zzfy.zzbb;
+                                        zzfxVar = zzfy.zzaW;
                                         if (zzc.zzp(r6, zzfxVar)) {
                                             try {
                                                 strArr2 = new String[5];
@@ -532,7 +532,7 @@ public final class zzgl extends zzg {
                                                 i3 = i9;
                                                 i2 = 5;
                                                 cursor2 = null;
-                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                 this.zzc = true;
                                                 if (cursor2 != null) {
                                                 }
@@ -557,7 +557,7 @@ public final class zzgl extends zzg {
                                                 if (sQLiteDatabase != null) {
                                                     sQLiteDatabase.endTransaction();
                                                 }
-                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                 this.zzc = true;
                                                 if (cursor2 != null) {
                                                 }
@@ -604,7 +604,7 @@ public final class zzgl extends zzg {
                                             } catch (SQLiteFullException e5) {
                                                 e = e5;
                                                 cursor2 = null;
-                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                 this.zzc = true;
                                                 if (cursor2 != null) {
                                                 }
@@ -623,7 +623,7 @@ public final class zzgl extends zzg {
                                                 cursor2 = null;
                                                 if (sQLiteDatabase != null) {
                                                 }
-                                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                 this.zzc = true;
                                                 if (cursor2 != null) {
                                                 }
@@ -720,7 +720,7 @@ public final class zzgl extends zzg {
                                                                     try {
                                                                         obtain.unmarshall(blob, 0, blob.length);
                                                                         obtain.setDataPosition(0);
-                                                                        zzbg createFromParcel = zzbg.CREATOR.createFromParcel(obtain);
+                                                                        zzbh createFromParcel = zzbh.CREATOR.createFromParcel(obtain);
                                                                         try {
                                                                             if (createFromParcel != null) {
                                                                                 arrayList.add(new zzgk(createFromParcel, str5, j4));
@@ -754,7 +754,7 @@ public final class zzgl extends zzg {
                                                                             e = e9;
                                                                             str = str9;
                                                                             i3 = 0;
-                                                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                            this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                                             this.zzc = true;
                                                                             if (cursor2 != null) {
                                                                                 cursor2.close();
@@ -783,7 +783,7 @@ public final class zzgl extends zzg {
                                                                             if (sQLiteDatabase != null && sQLiteDatabase.inTransaction()) {
                                                                                 sQLiteDatabase.endTransaction();
                                                                             }
-                                                                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                            this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                                             this.zzc = true;
                                                                             if (cursor2 != null) {
                                                                                 cursor2.close();
@@ -807,7 +807,7 @@ public final class zzgl extends zzg {
                                                                             r6 = 0;
                                                                         }
                                                                     } catch (SafeParcelReader.ParseException unused6) {
-                                                                        this.zzu.zzaV().zzb().zza("Failed to load event from local database");
+                                                                        this.zzu.zzaW().zzb().zza("Failed to load event from local database");
                                                                         str = str9;
                                                                         i7 = 2;
                                                                         i6 = 3;
@@ -851,7 +851,7 @@ public final class zzgl extends zzg {
                                                                 } finally {
                                                                 }
                                                             } catch (SafeParcelReader.ParseException unused9) {
-                                                                this.zzu.zzaV().zzb().zza("Failed to load user property from local database");
+                                                                this.zzu.zzaW().zzb().zza("Failed to load user property from local database");
                                                                 obtain.recycle();
                                                                 zzplVar = null;
                                                             }
@@ -870,7 +870,7 @@ public final class zzgl extends zzg {
                                                                             obtain.setDataPosition(0);
                                                                             zzahVar = zzah.CREATOR.createFromParcel(obtain);
                                                                         } catch (SafeParcelReader.ParseException unused10) {
-                                                                            this.zzu.zzaV().zzb().zza("Failed to load conditional user property from local database");
+                                                                            this.zzu.zzaW().zzb().zza("Failed to load conditional user property from local database");
                                                                             obtain.recycle();
                                                                             zzahVar = null;
                                                                             if (zzahVar != null) {
@@ -917,7 +917,7 @@ public final class zzgl extends zzg {
                                                                 } catch (SQLiteFullException e13) {
                                                                     e = e13;
                                                                     i3 = 0;
-                                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                    this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                                     this.zzc = true;
                                                                     if (cursor2 != null) {
                                                                     }
@@ -936,7 +936,7 @@ public final class zzgl extends zzg {
                                                                     i3 = 0;
                                                                     if (sQLiteDatabase != null) {
                                                                     }
-                                                                    this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                                                    this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                                                     this.zzc = true;
                                                                     if (cursor2 != null) {
                                                                     }
@@ -959,23 +959,23 @@ public final class zzgl extends zzg {
                                                                         try {
                                                                             obtain.unmarshall(blob, 0, blob.length);
                                                                             obtain.setDataPosition(0);
-                                                                            zzbeVar = zzbe.CREATOR.createFromParcel(obtain);
+                                                                            zzbfVar = zzbf.CREATOR.createFromParcel(obtain);
                                                                         } finally {
                                                                         }
                                                                     } catch (SafeParcelReader.ParseException unused13) {
-                                                                        this.zzu.zzaV().zzb().zza("Failed to load default event parameters from local database");
+                                                                        this.zzu.zzaW().zzb().zza("Failed to load default event parameters from local database");
                                                                         obtain.recycle();
-                                                                        zzbeVar = null;
+                                                                        zzbfVar = null;
                                                                     }
-                                                                    if (zzbeVar != null) {
-                                                                        arrayList.add(new zzgk(zzbeVar, str5, j4));
+                                                                    if (zzbfVar != null) {
+                                                                        arrayList.add(new zzgk(zzbfVar, str5, j4));
                                                                     }
                                                                 } else {
                                                                     i6 = 3;
                                                                     if (i14 == 3) {
-                                                                        this.zzu.zzaV().zzk().zza("Skipping app launch break");
+                                                                        this.zzu.zzaW().zzk().zza("Skipping app launch break");
                                                                     } else {
-                                                                        this.zzu.zzaV().zzb().zza("Unknown record type in local database");
+                                                                        this.zzu.zzaW().zzb().zza("Unknown record type in local database");
                                                                     }
                                                                     i4 = i6;
                                                                     str6 = str;
@@ -1064,7 +1064,7 @@ public final class zzgl extends zzg {
                             try {
                                 strArr6[0] = Long.toString(j);
                                 if (sQLiteDatabase.delete("messages", "rowid <= ?", strArr6) < arrayList.size()) {
-                                    this.zzu.zzaV().zzb().zza("Fewer entries removed from local database than expected");
+                                    this.zzu.zzaW().zzb().zza("Fewer entries removed from local database than expected");
                                 }
                                 sQLiteDatabase.setTransactionSuccessful();
                                 sQLiteDatabase.endTransaction();
@@ -1090,7 +1090,7 @@ public final class zzgl extends zzg {
                                 r6 = 0;
                             } catch (SQLiteFullException e19) {
                                 e = e19;
-                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                 this.zzc = true;
                                 if (cursor2 != null) {
                                 }
@@ -1108,7 +1108,7 @@ public final class zzgl extends zzg {
                                 e = e20;
                                 if (sQLiteDatabase != null) {
                                 }
-                                this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                                this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                                 this.zzc = true;
                                 if (cursor2 != null) {
                                 }
@@ -1150,7 +1150,7 @@ public final class zzgl extends zzg {
                             str3 = str8;
                             i3 = i9;
                             cursor2 = null;
-                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                            this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                             this.zzc = true;
                             if (cursor2 != null) {
                             }
@@ -1173,7 +1173,7 @@ public final class zzgl extends zzg {
                             cursor2 = null;
                             if (sQLiteDatabase != null) {
                             }
-                            this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                            this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                             this.zzc = true;
                             if (cursor2 != null) {
                             }
@@ -1217,7 +1217,7 @@ public final class zzgl extends zzg {
                         i2 = i5;
                         str2 = str7;
                         cursor2 = null;
-                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                        this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                         this.zzc = true;
                         if (cursor2 != null) {
                         }
@@ -1241,7 +1241,7 @@ public final class zzgl extends zzg {
                         cursor2 = null;
                         if (sQLiteDatabase != null) {
                         }
-                        this.zzu.zzaV().zzb().zzb("Error reading entries from local database", e);
+                        this.zzu.zzaW().zzb().zzb("Error reading entries from local database", e);
                         this.zzc = true;
                         if (cursor2 != null) {
                         }
@@ -1285,7 +1285,7 @@ public final class zzgl extends zzg {
                     sQLiteDatabase = null;
                 }
             }
-            this.zzu.zzaV().zze().zza("Failed to read events from database in reasonable time");
+            this.zzu.zzaW().zze().zza("Failed to read events from database in reasonable time");
             return null;
         }
         return arrayList;
@@ -1302,7 +1302,7 @@ public final class zzgl extends zzg {
             int i2 = 0;
             while (true) {
                 if (i2 >= 5) {
-                    this.zzu.zzaV().zze().zza("Error deleting app launch break from local database in reasonable time");
+                    this.zzu.zzaW().zze().zza("Error deleting app launch break from local database in reasonable time");
                     break;
                 }
                 SQLiteDatabase sQLiteDatabase = null;
@@ -1320,7 +1320,7 @@ public final class zzgl extends zzg {
                             }
                             this.zzc = true;
                         } catch (SQLiteFullException e) {
-                            this.zzu.zzaV().zzb().zzb("Error deleting app launch break from local database", e);
+                            this.zzu.zzaW().zzb().zzb("Error deleting app launch break from local database", e);
                             this.zzc = true;
                             if (0 == 0) {
                             }
@@ -1339,7 +1339,7 @@ public final class zzgl extends zzg {
                                 throw th;
                             }
                         }
-                        this.zzu.zzaV().zzb().zzb("Error deleting app launch break from local database", e2);
+                        this.zzu.zzaW().zzb().zzb("Error deleting app launch break from local database", e2);
                         this.zzc = true;
                         if (0 != 0) {
                             sQLiteDatabase.close();
@@ -1372,8 +1372,8 @@ public final class zzgl extends zzg {
 
     final boolean zzq() {
         zzic zzicVar = this.zzu;
-        Context zzaY = zzicVar.zzaY();
+        Context zzaZ = zzicVar.zzaZ();
         zzicVar.zzc();
-        return zzaY.getDatabasePath("google_app_measurement_local.db").exists();
+        return zzaZ.getDatabasePath("google_app_measurement_local.db").exists();
     }
 }

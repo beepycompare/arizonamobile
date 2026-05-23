@@ -1,7 +1,6 @@
 package androidx.core.view.contentcapture;
 
 import android.os.Build;
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewStructure;
 import android.view.autofill.AutofillId;
@@ -51,7 +50,7 @@ public class ContentCaptureSessionCompat {
         } else if (Build.VERSION.SDK_INT < 29) {
         } else {
             ViewStructure newViewStructure = Api29Impl.newViewStructure((ContentCaptureSession) this.mWrappedObj, this.mView);
-            Api23Impl.getExtras(newViewStructure).putBoolean(KEY_VIEW_TREE_APPEARING, true);
+            newViewStructure.getExtras().putBoolean(KEY_VIEW_TREE_APPEARING, true);
             Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure);
             int i = 0;
             while (true) {
@@ -62,7 +61,7 @@ public class ContentCaptureSessionCompat {
                     i++;
                 } else {
                     ViewStructure newViewStructure2 = Api29Impl.newViewStructure((ContentCaptureSession) obj, this.mView);
-                    Api23Impl.getExtras(newViewStructure2).putBoolean(KEY_VIEW_TREE_APPEARED, true);
+                    newViewStructure2.getExtras().putBoolean(KEY_VIEW_TREE_APPEARED, true);
                     Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure2);
                     return;
                 }
@@ -75,11 +74,11 @@ public class ContentCaptureSessionCompat {
             Api29Impl.notifyViewsDisappeared((ContentCaptureSession) this.mWrappedObj, ((AutofillIdCompat) Objects.requireNonNull(ViewCompat.getAutofillId(this.mView))).toAutofillId(), jArr);
         } else if (Build.VERSION.SDK_INT >= 29) {
             ViewStructure newViewStructure = Api29Impl.newViewStructure((ContentCaptureSession) this.mWrappedObj, this.mView);
-            Api23Impl.getExtras(newViewStructure).putBoolean(KEY_VIEW_TREE_APPEARING, true);
+            newViewStructure.getExtras().putBoolean(KEY_VIEW_TREE_APPEARING, true);
             Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure);
             Api29Impl.notifyViewsDisappeared((ContentCaptureSession) this.mWrappedObj, ((AutofillIdCompat) Objects.requireNonNull(ViewCompat.getAutofillId(this.mView))).toAutofillId(), jArr);
             ViewStructure newViewStructure2 = Api29Impl.newViewStructure((ContentCaptureSession) this.mWrappedObj, this.mView);
-            Api23Impl.getExtras(newViewStructure2).putBoolean(KEY_VIEW_TREE_APPEARED, true);
+            newViewStructure2.getExtras().putBoolean(KEY_VIEW_TREE_APPEARED, true);
             Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure2);
         }
     }
@@ -127,16 +126,6 @@ public class ContentCaptureSessionCompat {
 
         public static void notifyViewTextChanged(ContentCaptureSession contentCaptureSession, AutofillId autofillId, CharSequence charSequence) {
             contentCaptureSession.notifyViewTextChanged(autofillId, charSequence);
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static Bundle getExtras(ViewStructure viewStructure) {
-            return viewStructure.getExtras();
         }
     }
 }

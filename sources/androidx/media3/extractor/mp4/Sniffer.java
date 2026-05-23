@@ -32,6 +32,7 @@ public final class Sniffer {
         int i4;
         long j3;
         int i5;
+        boolean z3;
         int[] iArr;
         long length = extractorInput.getLength();
         long j4 = -1;
@@ -44,10 +45,9 @@ public final class Sniffer {
         ParsableByteArray parsableByteArray = new ParsableByteArray(64);
         int i8 = 0;
         int i9 = 0;
-        boolean z3 = false;
+        boolean z4 = false;
         while (i9 < i7) {
             parsableByteArray.reset(8);
-            boolean z4 = true;
             if (!extractorInput.peekFully(parsableByteArray.getData(), i8, 8, true)) {
                 break;
             }
@@ -86,87 +86,91 @@ public final class Sniffer {
                 sniffFailure = null;
             }
             int i10 = i2 + i4;
-            if (readInt == 1836019574) {
+            if (readInt == 1836019574 || readInt == 1970628964) {
                 i7 += (int) j2;
                 if (i3 != 0 && i7 > length) {
                     i7 = (int) length;
                 }
-                i9 = i10;
-                i6 = i3;
-                j4 = j;
-                i8 = 0;
-            } else {
-                if (readInt != 1953653099 && readInt != 1835297121 && readInt != 1835626086) {
-                    if (readInt != 1836019558 && readInt != 1836475768) {
-                        if (readInt == 1835295092) {
-                            z3 = true;
-                        }
-                        if (readInt != 1937007212 || j2 <= 1000000) {
-                            j3 = length;
-                            if ((i10 + j2) - j7 < i7) {
-                                int i11 = (int) (j2 - j7);
-                                i9 = i10 + i11;
-                                if (readInt != 1718909296) {
-                                    i5 = 0;
-                                    if (i11 != 0) {
-                                        extractorInput.advancePeekPosition(i11);
-                                    }
-                                } else if (i11 < 8) {
-                                    return new AtomSizeTooSmallSniffFailure(readInt, i11, 8);
-                                } else {
-                                    parsableByteArray.reset(i11);
-                                    i5 = 0;
-                                    extractorInput.peekFully(parsableByteArray.getData(), 0, i11);
-                                    int readInt2 = parsableByteArray.readInt();
-                                    if (isCompatibleBrand(readInt2, z2)) {
-                                        z3 = true;
-                                    }
-                                    parsableByteArray.skipBytes(4);
-                                    int bytesLeft = parsableByteArray.bytesLeft() / 4;
-                                    if (!z3 && bytesLeft > 0) {
-                                        iArr = new int[bytesLeft];
-                                        int i12 = 0;
-                                        while (true) {
-                                            if (i12 >= bytesLeft) {
-                                                z4 = z3;
-                                                break;
-                                            }
-                                            int readInt3 = parsableByteArray.readInt();
-                                            iArr[i12] = readInt3;
-                                            if (isCompatibleBrand(readInt3, z2)) {
-                                                break;
-                                            }
-                                            i12++;
-                                        }
-                                    } else {
-                                        z4 = z3;
-                                        iArr = sniffFailure;
-                                    }
-                                    if (!z4) {
-                                        return new UnsupportedBrandsSniffFailure(readInt2, iArr);
-                                    }
-                                    z3 = z4;
+                if (readInt == 1836019574) {
+                    i9 = i10;
+                    i6 = i3;
+                    j4 = j;
+                    i8 = 0;
+                }
+            }
+            if (readInt != 1953653099 && readInt != 1835297121 && readInt != 1835626086) {
+                if (readInt != 1836019558 && readInt != 1836475768) {
+                    if (readInt == 1835295092) {
+                        z4 = true;
+                    }
+                    if (readInt != 1937007212 || j2 <= 1000000) {
+                        j3 = length;
+                        if ((i10 + j2) - j7 < i7) {
+                            int i11 = (int) (j2 - j7);
+                            i9 = i10 + i11;
+                            if (readInt != 1718909296) {
+                                i5 = 0;
+                                if (i11 != 0) {
+                                    extractorInput.advancePeekPosition(i11);
                                 }
+                            } else if (i11 < 8) {
+                                return new AtomSizeTooSmallSniffFailure(readInt, i11, 8);
+                            } else {
+                                parsableByteArray.reset(i11);
+                                i5 = 0;
+                                extractorInput.peekFully(parsableByteArray.getData(), 0, i11);
+                                int readInt2 = parsableByteArray.readInt();
+                                if (isCompatibleBrand(readInt2, z2)) {
+                                    z4 = true;
+                                }
+                                parsableByteArray.skipBytes(4);
+                                int bytesLeft = parsableByteArray.bytesLeft() / 4;
+                                if (!z4 && bytesLeft > 0) {
+                                    int[] iArr2 = new int[bytesLeft];
+                                    int i12 = 0;
+                                    while (true) {
+                                        if (i12 >= bytesLeft) {
+                                            z3 = z4;
+                                            iArr = iArr2;
+                                            break;
+                                        }
+                                        int readInt3 = parsableByteArray.readInt();
+                                        iArr2[i12] = readInt3;
+                                        if (isCompatibleBrand(readInt3, z2)) {
+                                            z3 = true;
+                                            iArr = iArr2;
+                                            break;
+                                        }
+                                        i12++;
+                                    }
+                                } else {
+                                    z3 = z4;
+                                    iArr = sniffFailure;
+                                }
+                                if (!z3) {
+                                    return new UnsupportedBrandsSniffFailure(readInt2, iArr);
+                                }
+                                z4 = z3;
                             }
                         }
-                        i = 0;
-                        break;
                     }
-                    i = 1;
+                    i = 0;
                     break;
                 }
-                j3 = length;
-                i5 = 0;
-                i9 = i10;
-                i8 = i5;
-                i6 = i3;
-                j4 = j;
-                length = j3;
+                i = 1;
+                break;
             }
+            j3 = length;
+            i5 = 0;
+            i9 = i10;
+            i8 = i5;
+            i6 = i3;
+            j4 = j;
+            length = j3;
         }
         sniffFailure = null;
         i = i8;
-        if (z3) {
+        if (z4) {
             if (z != i) {
                 if (i != 0) {
                     return IncorrectFragmentationSniffFailure.FILE_FRAGMENTED;

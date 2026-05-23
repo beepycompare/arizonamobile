@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal._UtilCommonKt;
 /* compiled from: InetAddressOrder.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001H\u0000¨\u0006\u0004"}, d2 = {"reorderForHappyEyeballs", "", "Ljava/net/InetAddress;", "addresses", "okhttp"}, k = 2, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class InetAddressOrderKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final List<InetAddress> reorderForHappyEyeballs(List<? extends InetAddress> addresses) {

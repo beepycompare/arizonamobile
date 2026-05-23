@@ -1,7 +1,7 @@
 package kotlin.concurrent.atomics;
 
 import androidx.exifinterface.media.ExifInterface;
-import com.google.common.util.concurrent.Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.gms.internal.measurement.zzah$$ExternalSyntheticBackportWithForwarding0;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.concurrent.atomic.AtomicIntegerArray;
 import java.util.concurrent.atomic.AtomicLongArray;
@@ -126,7 +126,7 @@ class AtomicArraysKt__AtomicArrays_jvmKt extends AtomicArraysKt__AtomicArrays_co
         Intrinsics.checkNotNullParameter(transform, "transform");
         do {
             t = atomicReferenceArray.get(i);
-        } while (!Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, transform.invoke(t)));
+        } while (!zzah$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, transform.invoke(t)));
     }
 
     private static final <T> T updateAndFetchAt(AtomicReferenceArray<T> atomicReferenceArray, int i, Function1<? super T, ? extends T> transform) {
@@ -137,7 +137,7 @@ class AtomicArraysKt__AtomicArrays_jvmKt extends AtomicArraysKt__AtomicArrays_co
         do {
             t = atomicReferenceArray.get(i);
             invoke = transform.invoke(t);
-        } while (!Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, invoke));
+        } while (!zzah$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, invoke));
         return invoke;
     }
 
@@ -147,7 +147,7 @@ class AtomicArraysKt__AtomicArrays_jvmKt extends AtomicArraysKt__AtomicArrays_co
         Intrinsics.checkNotNullParameter(transform, "transform");
         do {
             t = atomicReferenceArray.get(i);
-        } while (!Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, transform.invoke(t)));
+        } while (!zzah$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, transform.invoke(t)));
         return t;
     }
 }

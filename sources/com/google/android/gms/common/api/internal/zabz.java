@@ -1,13 +1,19 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
-import com.google.android.gms.common.ConnectionResult;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.internal.MethodInvocation;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public interface zabz {
-    void zaa(ConnectionResult connectionResult);
+final class zabz {
+    final MethodInvocation zaa;
+    final int zab;
+    final long zac;
+    final int zad;
 
-    void zab(Bundle bundle);
-
-    void zac(int i, boolean z);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zabz(MethodInvocation methodInvocation, int i, long j, int i2) {
+        this.zaa = methodInvocation;
+        this.zab = i;
+        this.zac = j;
+        this.zad = i2;
+    }
 }

@@ -201,7 +201,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCost  reason: collision with other method in class */
-    public final String m11174getCost() {
+    public final String m11814getCost() {
         if (this.countLeft > 0) {
             String string = CasesResponseKt.getAppContext().getString(R.string.cases_open);
             Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
@@ -230,7 +230,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCountLeft  reason: collision with other method in class */
-    public final String m11175getCountLeft() {
+    public final String m11815getCountLeft() {
         String string = CasesResponseKt.getAppContext().getString(R.string.cases_count_left, Integer.valueOf(this.countLeft));
         Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
         return string;
@@ -242,7 +242,7 @@ public final class CasesInfoModel {
     }
 
     /* renamed from: getCurrency  reason: collision with other method in class */
-    public final CasesCurrencyType m11176getCurrency() {
+    public final CasesCurrencyType m11816getCurrency() {
         Object obj;
         Iterator<E> it = CasesCurrencyType.getEntries().iterator();
         while (true) {

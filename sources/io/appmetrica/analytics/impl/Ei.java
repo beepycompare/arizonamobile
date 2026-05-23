@@ -1,23 +1,36 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class Ei extends AbstractCallableC0704xh {
-    public final Bf e;
-
-    public Ei(C0488p0 c0488p0, Zk zk, Bf bf) {
-        super(c0488p0, zk);
-        this.e = bf;
+public final class Ei implements InterfaceC0532qb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb, io.appmetrica.analytics.impl.InterfaceC0557rb
+    public final InterfaceC0532qb a() {
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractCallableC0704xh
-    public final void a(IAppMetricaService iAppMetricaService) {
-        Bundle bundle = new Bundle();
-        Bf bf = this.e;
-        synchronized (bf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", bf);
-        }
-        iAppMetricaService.resumeUserSession(bundle);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    public final void a(ReporterConfig reporterConfig) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    public final InterfaceC0376kb b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0443n0 c0443n0) {
+        return new Yc();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    public final InterfaceC0506pb b(ReporterConfig reporterConfig) {
+        return new Bi();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    public final InterfaceC0376kb a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0443n0 c0443n0) {
+        return new Yc();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    public final InterfaceC0609tb a(AppMetricaConfig appMetricaConfig) {
+        return new Bi();
     }
 }

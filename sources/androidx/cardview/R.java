@@ -2,20 +2,20 @@ package androidx.cardview;
 /* loaded from: classes.dex */
 public final class R {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public static final class attr {
-        public static int cardBackgroundColor = 0x7f0400be;
-        public static int cardCornerRadius = 0x7f0400bf;
-        public static int cardElevation = 0x7f0400c0;
-        public static int cardMaxElevation = 0x7f0400c2;
-        public static int cardPreventCornerOverlap = 0x7f0400c3;
-        public static int cardUseCompatPadding = 0x7f0400c4;
-        public static int cardViewStyle = 0x7f0400c5;
-        public static int contentPadding = 0x7f04018b;
-        public static int contentPaddingBottom = 0x7f04018c;
-        public static int contentPaddingLeft = 0x7f04018e;
-        public static int contentPaddingRight = 0x7f04018f;
-        public static int contentPaddingTop = 0x7f040191;
+        public static int cardBackgroundColor = 0x7f0400c1;
+        public static int cardCornerRadius = 0x7f0400c2;
+        public static int cardElevation = 0x7f0400c3;
+        public static int cardMaxElevation = 0x7f0400c5;
+        public static int cardPreventCornerOverlap = 0x7f0400c6;
+        public static int cardUseCompatPadding = 0x7f0400c7;
+        public static int cardViewStyle = 0x7f0400c8;
+        public static int contentPadding = 0x7f04018f;
+        public static int contentPaddingBottom = 0x7f040190;
+        public static int contentPaddingLeft = 0x7f040192;
+        public static int contentPaddingRight = 0x7f040193;
+        public static int contentPaddingTop = 0x7f040195;
 
         private attr() {
         }
@@ -42,12 +42,12 @@ public final class R {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class style {
         public static int Base_CardView = 0x7f13001a;
-        public static int CardView = 0x7f130134;
-        public static int CardView_Dark = 0x7f130135;
-        public static int CardView_Light = 0x7f130136;
+        public static int CardView = 0x7f13013d;
+        public static int CardView_Dark = 0x7f13013e;
+        public static int CardView_Light = 0x7f13013f;
 
         private style() {
         }

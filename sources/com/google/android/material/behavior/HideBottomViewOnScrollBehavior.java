@@ -36,6 +36,8 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     private TimeInterpolator exitAnimInterpolator;
     private int height;
     private final LinkedHashSet<OnScrollStateChangedListener> onScrollStateChangedListeners;
+    private int savedImportantForAccessibility;
+    private int savedVisibility;
     private AccessibilityManager.TouchExplorationStateChangeListener touchExplorationListener;
     private static final int ENTER_ANIM_DURATION_ATTR = R.attr.motionDurationLong2;
     private static final int EXIT_ANIM_DURATION_ATTR = R.attr.motionDurationMedium4;
@@ -62,6 +64,8 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         this.disableOnTouchExploration = true;
         this.currentState = 2;
         this.additionalHiddenOffsetY = 0;
+        this.savedImportantForAccessibility = 0;
+        this.savedVisibility = 0;
     }
 
     public HideBottomViewOnScrollBehavior(Context context, AttributeSet attributeSet) {
@@ -71,6 +75,8 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         this.disableOnTouchExploration = true;
         this.currentState = 2;
         this.additionalHiddenOffsetY = 0;
+        this.savedImportantForAccessibility = 0;
+        this.savedVisibility = 0;
     }
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
@@ -96,7 +102,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = new AccessibilityManager.TouchExplorationStateChangeListener() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior$$ExternalSyntheticLambda0
             @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
             public final void onTouchExplorationStateChanged(boolean z) {
-                HideBottomViewOnScrollBehavior.this.m8847x79d795e8(v, z);
+                HideBottomViewOnScrollBehavior.this.m9457x79d795e8(v, z);
             }
         };
         this.touchExplorationListener = touchExplorationStateChangeListener;
@@ -120,7 +126,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$disableIfTouchExplorationEnabled$0$com-google-android-material-behavior-HideBottomViewOnScrollBehavior  reason: not valid java name */
-    public /* synthetic */ void m8847x79d795e8(View view, boolean z) {
+    public /* synthetic */ void m9457x79d795e8(View view, boolean z) {
         if (z && isScrolledDown()) {
             slideUp(view);
         }
@@ -154,12 +160,12 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         if (isScrolledUp()) {
             return;
         }
+        updateCurrentState(v, 2);
         ViewPropertyAnimator viewPropertyAnimator = this.currentAnimator;
         if (viewPropertyAnimator != null) {
             viewPropertyAnimator.cancel();
             v.clearAnimation();
         }
-        updateCurrentState(v, 2);
         if (z) {
             animateChildTo(v, 0, this.enterAnimDuration, this.enterAnimInterpolator);
         } else {
@@ -192,24 +198,53 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
         int i = this.height + this.additionalHiddenOffsetY;
         if (z) {
             animateChildTo(v, i, this.exitAnimDuration, this.exitAnimInterpolator);
-        } else {
-            v.setTranslationY(i);
+            return;
+        }
+        v.setTranslationY(i);
+        if (v.getVisibility() == 0) {
+            v.setVisibility(4);
         }
     }
 
     private void updateCurrentState(V v, int i) {
         this.currentState = i;
+        updateViewPropertiesForState(v, i);
         Iterator<OnScrollStateChangedListener> it = this.onScrollStateChangedListeners.iterator();
         while (it.hasNext()) {
             it.next().onStateChanged(v, this.currentState);
         }
     }
 
-    private void animateChildTo(V v, int i, long j, TimeInterpolator timeInterpolator) {
+    private void updateViewPropertiesForState(V v, int i) {
+        if (i == 1) {
+            if (v.hasFocus()) {
+                v.clearFocus();
+            }
+            if (v.getImportantForAccessibility() != 4) {
+                this.savedImportantForAccessibility = v.getImportantForAccessibility();
+            }
+            if (v.getVisibility() != 4) {
+                this.savedVisibility = v.getVisibility();
+            }
+            v.setImportantForAccessibility(4);
+        } else if (i == 2) {
+            if (v.getImportantForAccessibility() == 4) {
+                v.setImportantForAccessibility(this.savedImportantForAccessibility);
+            }
+            if (v.getVisibility() == 4) {
+                v.setVisibility(this.savedVisibility);
+            }
+        }
+    }
+
+    private void animateChildTo(final V v, int i, long j, TimeInterpolator timeInterpolator) {
         this.currentAnimator = v.animate().translationY(i).setInterpolator(timeInterpolator).setDuration(j).setListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.behavior.HideBottomViewOnScrollBehavior.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 HideBottomViewOnScrollBehavior.this.currentAnimator = null;
+                if (HideBottomViewOnScrollBehavior.this.currentState == 1 && v.getVisibility() == 0) {
+                    v.setVisibility(4);
+                }
             }
         });
     }

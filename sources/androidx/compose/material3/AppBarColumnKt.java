@@ -185,15 +185,15 @@ public final class AppBarColumnKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                    Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                    Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                     startRestartGroup.endNode();
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

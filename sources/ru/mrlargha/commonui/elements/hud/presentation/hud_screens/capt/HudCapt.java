@@ -69,7 +69,7 @@ public final class HudCapt {
         root.setVisibility(8);
         Job job = timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
     }
 
@@ -189,7 +189,7 @@ public final class HudCapt {
         Job launch$default;
         Job job = timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(scope, null, null, new HudCapt$startTimer$1(j, hudCaptBinding, null), 3, null);
         timerJob = launch$default;
@@ -202,7 +202,7 @@ public final class HudCapt {
         Job launch$default;
         Job job = closeListJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(scope, null, null, new HudCapt$closeListAfterFiveSecond$1(hudCaptBinding, list, null), 3, null);
         closeListJob = launch$default;

@@ -16,7 +16,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.tabs.TabLayout;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class GamePassScreen2022Binding implements ViewBinding {
     public final AppCompatImageView award1Img;
     public final TextView award1Label;

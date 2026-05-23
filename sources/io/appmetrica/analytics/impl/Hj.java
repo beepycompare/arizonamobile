@@ -1,20 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes5.dex */
-public final class Hj implements Qa {
+public final class Hj implements InterfaceC0680w4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f621a;
-    public final /* synthetic */ boolean b;
+    public final Rg f578a;
 
-    public Hj(AdRevenue adRevenue, boolean z) {
-        this.f621a = adRevenue;
-        this.b = z;
+    public Hj(Rg rg) {
+        this.f578a = rg;
     }
 
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.reportAdRevenue(this.f621a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0680w4
+    public final void a() {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0680w4
+    public final void a(C0242f6 c0242f6, G4 g4) {
+        Rg rg = this.f578a;
+        if (rg != null) {
+            rg.a(c0242f6, g4);
+        }
     }
 }

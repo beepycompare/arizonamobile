@@ -6,8 +6,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import com.google.android.gms.common.internal.Asserts;
-import com.google.android.gms.internal.base.zam;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.internal.base.zaj;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class zag {
     final zad zaa;
@@ -23,14 +23,14 @@ public abstract class zag {
     public abstract void zaa(Drawable drawable, boolean z, boolean z2, boolean z3);
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zab(Context context, zam zamVar, boolean z) {
-        int i = this.zab;
-        zaa(i != 0 ? context.getResources().getDrawable(i) : null, z, false, false);
+    public final void zab(Context context, Bitmap bitmap, boolean z) {
+        Asserts.checkNotNull(bitmap);
+        zaa(new BitmapDrawable(context.getResources(), bitmap), false, false, true);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zac(Context context, Bitmap bitmap, boolean z) {
-        Asserts.checkNotNull(bitmap);
-        zaa(new BitmapDrawable(context.getResources(), bitmap), false, false, true);
+    public final void zac(Context context, zaj zajVar, boolean z) {
+        int i = this.zab;
+        zaa(i != 0 ? context.getResources().getDrawable(i) : null, z, false, false);
     }
 }

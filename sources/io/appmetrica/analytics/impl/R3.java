@@ -1,47 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Handler;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 /* loaded from: classes5.dex */
-public final class R3 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Q3 f764a;
-    public volatile C0746z9 b;
-    public volatile C0746z9 c;
-
-    public R3() {
-        this(new Q3());
-    }
-
-    public final IHandlerExecutor a() {
-        if (this.b == null) {
-            synchronized (this) {
-                if (this.b == null) {
-                    this.f764a.getClass();
-                    HandlerThreadC0168cb a2 = C0746z9.a("IAA-CDE");
-                    this.b = new C0746z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
+public final class R3 extends AbstractC0347j8 {
+    @Override // io.appmetrica.analytics.impl.AbstractC0347j8
+    public final boolean a(I3 i3, I3 i32) {
+        if (Oo.a(i32.f586a)) {
+            return true;
         }
-        return this.b;
-    }
-
-    public final ICommonExecutor b() {
-        if (this.c == null) {
-            synchronized (this) {
-                if (this.c == null) {
-                    this.f764a.getClass();
-                    HandlerThreadC0168cb a2 = C0746z9.a("IAA-CRS");
-                    this.c = new C0746z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
-                }
-            }
+        if (Oo.a(i3.f586a)) {
+            return false;
         }
-        return this.c;
-    }
-
-    public R3(Q3 q3) {
-        this.f764a = q3;
+        EnumC0399l8 enumC0399l8 = i3.b;
+        if (enumC0399l8 == EnumC0399l8.d) {
+            if (((Number) this.f1047a.a(enumC0399l8)).intValue() >= ((Number) this.f1047a.a(i32.b)).intValue()) {
+                return true;
+            }
+        } else if (((Number) this.f1047a.a(enumC0399l8)).intValue() > ((Number) this.f1047a.a(i32.b)).intValue()) {
+            return true;
+        }
+        return false;
     }
 }

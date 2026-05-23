@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* JADX INFO: Add missing generic type declarations: [S] */
 /* compiled from: Transition.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class TransitionKt$animateValue$targetValue$1$1<S> implements Function0<S> {
     final /* synthetic */ Transition<S> $this_animateValue;

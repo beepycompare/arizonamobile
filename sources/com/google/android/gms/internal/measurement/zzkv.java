@@ -1,6 +1,37 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import com.google.common.util.concurrent.AsyncCallable;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicBoolean;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzkv {
-    public static final /* synthetic */ int zza = 0;
+public final class zzkv extends BroadcastReceiver {
+    final /* synthetic */ AtomicBoolean zza;
+    final /* synthetic */ Context zzb;
+    final /* synthetic */ SettableFuture zzc;
+    final /* synthetic */ AsyncCallable zzd;
+    final /* synthetic */ Executor zze;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzkv(AtomicBoolean atomicBoolean, Context context, SettableFuture settableFuture, AsyncCallable asyncCallable, Executor executor) {
+        this.zza = atomicBoolean;
+        this.zzb = context;
+        this.zzc = settableFuture;
+        this.zzd = asyncCallable;
+        this.zze = executor;
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        if (this.zza.compareAndSet(false, true)) {
+            zzky.zzh(this.zzb, this);
+            this.zzc.setFuture(Futures.submitAsync(this.zzd, this.zze));
+        }
+    }
 }

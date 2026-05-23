@@ -2,7 +2,7 @@ package com.squareup.picasso;
 
 import android.graphics.Bitmap;
 import com.squareup.picasso.Picasso;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 class GetAction extends Action<Void> {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.squareup.picasso.Action

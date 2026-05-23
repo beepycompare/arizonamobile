@@ -37,6 +37,7 @@ import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.runtime.saveable.RememberSaveableKt;
@@ -54,7 +55,6 @@ import androidx.compose.ui.text.input.VisualTransformation;
 import androidx.compose.ui.text.style.TextOverflow;
 import androidx.compose.ui.unit.Dp;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
 import com.miami.game.core.settings.game_test.GameTestSavedScript;
@@ -72,7 +72,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: DebugGameTestScriptCard.kt */
 @Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a³\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\b\u0010\t\u001a\u0004\u0018\u00010\u00032\u0006\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u00032\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u000e2\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00112\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00112\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00010\u000e2\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u0011H\u0007¢\u0006\u0002\u0010\u0015\u001a-\u0010\u0016\u001a\u00020\u00012\u0006\u0010\u0017\u001a\u00020\u00032\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u000e2\b\b\u0002\u0010\u0019\u001a\u00020\u001aH\u0003¢\u0006\u0002\u0010\u001b¨\u0006\u001c²\u0006\n\u0010\u001d\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u001e\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u001f\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010 \u001a\u00020\u0003X\u008a\u008e\u0002²\u0006\n\u0010!\u001a\u00020\u0003X\u008a\u008e\u0002"}, d2 = {"DebugGameTestScriptCard", "", "activeScriptName", "", "isImported", "", "importedScripts", "", "Lcom/miami/game/core/settings/game_test/GameTestSavedScript;", "activeImportedScriptFileName", "screenshotPullPath", "screenshotButtonEnabled", "screenshotDeviceDir", "onImportGameTestScript", "Lkotlin/Function0;", "onUseBundledGameTestScript", "onSelectImportedGameTestScript", "Lkotlin/Function1;", "onUpdateScreenshotPullPath", "onToggleScreenshotButton", "onUpdateScreenshotDeviceDir", "(Ljava/lang/String;ZLjava/util/List;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "DebugGameTestScriptButton", "text", "onClick", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings", "isPullPathDialogVisible", "isDeviceDirDialogVisible", "isScriptListDialogVisible", "pullPathDraft", "deviceDirDraft"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DebugGameTestScriptCardKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DebugGameTestScriptButton$lambda$1(String str, Function0 function0, Modifier modifier, int i, int i2, Composer composer, int i3) {
@@ -155,10 +155,10 @@ public final class DebugGameTestScriptCardKt {
             i3 |= startRestartGroup.changedInstance(onImportGameTestScript) ? 8388608 : 4194304;
         }
         if ((100663296 & i) == 0) {
-            i3 |= startRestartGroup.changedInstance(onUseBundledGameTestScript) ? 67108864 : 33554432;
+            i3 |= startRestartGroup.changedInstance(onUseBundledGameTestScript) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
         }
         if ((805306368 & i) == 0) {
-            i3 |= startRestartGroup.changedInstance(onSelectImportedGameTestScript) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+            i3 |= startRestartGroup.changedInstance(onSelectImportedGameTestScript) ? 536870912 : 268435456;
         }
         int i7 = i3;
         if ((i2 & 6) == 0) {
@@ -255,15 +255,15 @@ public final class DebugGameTestScriptCardKt {
             startRestartGroup.updateRememberedValue(rememberedValue5);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final MutableState mutableState10 = (MutableState) RememberSaveableKt.rememberSaveable(objArr2, (Function0) rememberedValue5, startRestartGroup, 0);
-            Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(532.0f)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(8.0f))), Dp.m7555constructorimpl(1.0f), Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(8.0f))), Dp.m7555constructorimpl(20.0f), Dp.m7555constructorimpl(18.0f));
+            Modifier m1051paddingVpY3zN4 = PaddingKt.m1051paddingVpY3zN4(BorderKt.m301borderziNgDLE(BackgroundKt.m287backgroundbw27NRU(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(532.0f)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(8.0f))), Dp.m8160constructorimpl(1.0f), Brush.Companion.m5297linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5374getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(8.0f))), Dp.m8160constructorimpl(20.0f), Dp.m8160constructorimpl(18.0f));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
-            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(12.0f)), Alignment.Companion.getStart(), startRestartGroup, 6);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(12.0f)), Alignment.Companion.getStart(), startRestartGroup, 6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m819paddingVpY3zN4);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m1051paddingVpY3zN4);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -273,40 +273,40 @@ public final class DebugGameTestScriptCardKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1798981324, "C78@3331L27,82@3547L10,83@3592L13,79@3367L248,88@3734L10,89@3779L13,85@3624L250,96@4039L10,97@4084L13,93@3883L296,104@4404L10,105@4449L13,101@4188L356,109@4553L157,114@4719L525,131@5344L36,129@5253L185,136@5543L113,134@5447L267,144@5820L116,142@5723L271:DebugGameTestScriptCard.kt#1gr92h");
             TextSettingsKt.TextSettings("TEST SCRIPT", null, startRestartGroup, 6, 2);
-            TextKt.m2712TextNvy7gAk("Source: ".concat(z ? "IMPORTED FILE" : "PROJECT SCRIPT"), null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
+            TextKt.m3157TextNvy7gAk("Source: ".concat(z ? "IMPORTED FILE" : "PROJECT SCRIPT"), null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 131050);
             int i11 = i6;
             String str5 = str4;
-            TextKt.m2712TextNvy7gAk(activeScriptName, null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(16.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m7491getEllipsisgIe3tQ8(), false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, (i5 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
+            TextKt.m3157TextNvy7gAk(activeScriptName, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m8096getEllipsisgIe3tQ8(), false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, (i5 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
             str2 = screenshotPullPath;
-            TextKt.m2712TextNvy7gAk("Screenshot pull dir: " + str2, null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m7491getEllipsisgIe3tQ8(), false, 2, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
+            TextKt.m3157TextNvy7gAk("Screenshot pull dir: " + str2, null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m8096getEllipsisgIe3tQ8(), false, 2, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
             str3 = screenshotDeviceDir;
             String str6 = str3;
             if (StringsKt.isBlank(str6)) {
                 str6 = "app sandbox / files/game-test-screenshots";
             }
-            TextKt.m2712TextNvy7gAk("Phone screenshot dir: " + ((Object) str6), null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m7491getEllipsisgIe3tQ8(), false, 2, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
+            TextKt.m3157TextNvy7gAk("Phone screenshot dir: " + ((Object) str6), null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m8096getEllipsisgIe3tQ8(), false, 2, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
             z3 = z2;
             onToggleScreenshotButton = function0;
             SwitchButtonKt.SwitchButton("SCREENSHOT BUTTON", onToggleScreenshotButton, z3, startRestartGroup, (i8 & 112) | 6 | ((i5 >> 9) & 896));
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(12.0f)), Alignment.Companion.getTop(), startRestartGroup, 6);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(12.0f)), Alignment.Companion.getTop(), startRestartGroup, 6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, fillMaxWidth$default);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -316,12 +316,12 @@ public final class DebugGameTestScriptCardKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1323500673, "C118@4860L175,123@5048L186:DebugGameTestScriptCard.kt#1gr92h");
@@ -432,7 +432,7 @@ public final class DebugGameTestScriptCardKt {
                         return DebugGameTestScriptCardKt.DebugGameTestScriptCard$lambda$18(MutableState.this, (Composer) obj, ((Integer) obj2).intValue());
                     }
                 }, startRestartGroup, 54);
-                Function2<Composer, Integer, Unit> m9131getLambda$235814089$settings = ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9131getLambda$235814089$settings();
+                Function2<Composer, Integer, Unit> m9769getLambda$235814089$settings = ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9769getLambda$235814089$settings();
                 ComposableLambda rememberComposableLambda3 = ComposableLambdaKt.rememberComposableLambda(-349424584, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCardKt$$ExternalSyntheticLambda12
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
@@ -440,7 +440,7 @@ public final class DebugGameTestScriptCardKt {
                     }
                 }, startRestartGroup, 54);
                 mutableState4 = mutableState;
-                AndroidAlertDialog_androidKt.m1705AlertDialogOix01E0(function02, rememberComposableLambda, null, rememberComposableLambda2, null, m9131getLambda$235814089$settings, rememberComposableLambda3, null, Color, 0L, 0L, 0L, 0.0f, null, startRestartGroup, 102435894, 0, 16020);
+                AndroidAlertDialog_androidKt.m2150AlertDialogOix01E0(function02, rememberComposableLambda, null, rememberComposableLambda2, null, m9769getLambda$235814089$settings, rememberComposableLambda3, null, Color, 0L, 0L, 0L, 0.0f, null, startRestartGroup, 102435894, 0, 16020);
                 startRestartGroup.endReplaceGroup();
             } else {
                 j = 4279244838L;
@@ -467,7 +467,7 @@ public final class DebugGameTestScriptCardKt {
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 function1 = onUpdateScreenshotDeviceDir;
-                AndroidAlertDialog_androidKt.m1705AlertDialogOix01E0((Function0) rememberedValue10, ComposableLambdaKt.rememberComposableLambda(-1228415012, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCardKt$$ExternalSyntheticLambda25
+                AndroidAlertDialog_androidKt.m2150AlertDialogOix01E0((Function0) rememberedValue10, ComposableLambdaKt.rememberComposableLambda(-1228415012, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCardKt$$ExternalSyntheticLambda25
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
                         return DebugGameTestScriptCardKt.DebugGameTestScriptCard$lambda$21(Function1.this, mutableState10, mutableState12, (Composer) obj, ((Integer) obj2).intValue());
@@ -511,7 +511,7 @@ public final class DebugGameTestScriptCardKt {
                 ComposerKt.sourceInformationMarkerEnd(composer3);
                 final MutableState mutableState13 = mutableState4;
                 Composer composer4 = composer3;
-                AndroidAlertDialog_androidKt.m1705AlertDialogOix01E0((Function0) rememberedValue11, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.getLambda$66003835$settings(), null, ComposableLambdaKt.rememberComposableLambda(749964541, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCardKt$$ExternalSyntheticLambda1
+                AndroidAlertDialog_androidKt.m2150AlertDialogOix01E0((Function0) rememberedValue11, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.getLambda$66003835$settings(), null, ComposableLambdaKt.rememberComposableLambda(749964541, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCardKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
                         return DebugGameTestScriptCardKt.DebugGameTestScriptCard$lambda$25(MutableState.this, (Composer) obj, ((Integer) obj2).intValue());
@@ -634,7 +634,7 @@ public final class DebugGameTestScriptCardKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            OutlinedTextFieldKt.OutlinedTextField(DebugGameTestScriptCard$lambda$10, (Function1<? super String, Unit>) rememberedValue, fillMaxWidth$default, false, false, (TextStyle) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9129getLambda$1004594734$settings(), (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, false, (VisualTransformation) null, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (MutableInteractionSource) null, (Shape) null, (TextFieldColors) null, composer, 1573248, 12582912, 0, 8257464);
+            OutlinedTextFieldKt.OutlinedTextField(DebugGameTestScriptCard$lambda$10, (Function1<? super String, Unit>) rememberedValue, fillMaxWidth$default, false, false, (TextStyle) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9767getLambda$1004594734$settings(), (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, (Function2<? super Composer, ? super Integer, Unit>) null, false, (VisualTransformation) null, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (MutableInteractionSource) null, (Shape) null, (TextFieldColors) null, composer, 1573248, 12582912, 0, 8257464);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -673,7 +673,7 @@ public final class DebugGameTestScriptCardKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9133getLambda$937640016$settings(), composer, 805306368, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9771getLambda$937640016$settings(), composer, 805306368, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -711,7 +711,7 @@ public final class DebugGameTestScriptCardKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9130getLambda$1164861006$settings(), composer, 805306374, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9768getLambda$1164861006$settings(), composer, 805306374, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -741,13 +741,13 @@ public final class DebugGameTestScriptCardKt {
                 ComposerKt.traceEventStart(-1665996895, i, -1, "com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCard.<anonymous> (DebugGameTestScriptCard.kt:203)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
-            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(8.0f)), Alignment.Companion.getStart(), composer, 6);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(8.0f)), Alignment.Companion.getStart(), composer, 6);
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -757,16 +757,16 @@ public final class DebugGameTestScriptCardKt {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -162523412, "C209@8006L10,210@8063L13,206@7753L345,214@8226L23,212@8119L370:DebugGameTestScriptCard.kt#1gr92h");
-            TextKt.m2712TextNvy7gAk("Empty value keeps the default app sandbox folder. Relative paths are saved inside app external files.", null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(12.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 390, 0, 131050);
+            TextKt.m3157TextNvy7gAk("Empty value keeps the default app sandbox folder. Relative paths are saved inside app external files.", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(12.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 390, 0, 131050);
             String DebugGameTestScriptCard$lambda$13 = DebugGameTestScriptCard$lambda$13(mutableState);
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1934434382, "CC(remember):DebugGameTestScriptCard.kt#9igjgp");
@@ -829,7 +829,7 @@ public final class DebugGameTestScriptCardKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9132getLambda$5343975$settings(), composer, 805306368, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            ButtonKt.TextButton((Function0) rememberedValue, null, false, null, null, null, null, null, null, ComposableSingletons$DebugGameTestScriptCardKt.INSTANCE.m9770getLambda$5343975$settings(), composer, 805306368, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -897,16 +897,16 @@ public final class DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-371578048, i, -1, "com.miami.game.feature.settings.ui.compose.DebugGameTestScriptCard.<anonymous> (DebugGameTestScriptCard.kt:254)");
             }
-            Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(8.0f));
+            Arrangement.HorizontalOrVertical m742spacedBy0680j_4 = Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(8.0f));
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
-            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(m688spacedBy0680j_4, Alignment.Companion.getStart(), composer, 6);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(m742spacedBy0680j_4, Alignment.Companion.getStart(), composer, 6);
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, fillMaxWidth$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -916,12 +916,12 @@ public final class DebugGameTestScriptCardKt {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1653010329, "C260@9799L146,258@9642L385:DebugGameTestScriptCard.kt#1gr92h");
@@ -948,13 +948,13 @@ public final class DebugGameTestScriptCardKt {
             if (list.isEmpty()) {
                 composer.startReplaceGroup(1653410383);
                 ComposerKt.sourceInformation(composer, "270@10322L10,271@10383L13,267@10105L317");
-                TextKt.m2712TextNvy7gAk("No saved imported scripts yet. Use IMPORT FILE first.", null, Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(13.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 390, 0, 131050);
+                TextKt.m3157TextNvy7gAk("No saved imported scripts yet. Use IMPORT FILE first.", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.75f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 390, 0, 131050);
                 composer.endReplaceGroup();
             } else {
                 composer.startReplaceGroup(1653786816);
                 ComposerKt.sourceInformation(composer, "279@10744L1104,274@10476L1372");
-                Modifier m852heightInVpY3zN4$default = SizeKt.m852heightInVpY3zN4$default(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), 0.0f, Dp.m7555constructorimpl(260.0f), 1, null);
-                Arrangement.HorizontalOrVertical m688spacedBy0680j_42 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(8.0f));
+                Modifier m1105heightInVpY3zN4$default = SizeKt.m1105heightInVpY3zN4$default(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), 0.0f, Dp.m8160constructorimpl(260.0f), 1, null);
+                Arrangement.HorizontalOrVertical m742spacedBy0680j_42 = Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(8.0f));
                 ComposerKt.sourceInformationMarkerStart(composer, 330451718, "CC(remember):DebugGameTestScriptCard.kt#9igjgp");
                 boolean changedInstance = composer.changedInstance(list) | composer.changed(z) | composer.changed(str) | composer.changed(function1);
                 Object rememberedValue2 = composer.rememberedValue();
@@ -972,7 +972,7 @@ public final class DebugGameTestScriptCardKt {
                     rememberedValue2 = function12;
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                LazyDslKt.LazyColumn(m852heightInVpY3zN4$default, null, null, false, m688spacedBy0680j_42, null, null, false, null, (Function1) rememberedValue2, composer, 24582, 494);
+                LazyDslKt.LazyColumn(m1105heightInVpY3zN4$default, null, null, false, m742spacedBy0680j_42, null, null, false, null, (Function1) rememberedValue2, composer, 24582, 494);
                 composer.endReplaceGroup();
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -1210,16 +1210,16 @@ public final class DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1077844372, i, -1, "com.miami.game.feature.settings.ui.compose.DebugGameTestScriptButton.<anonymous> (DebugGameTestScriptCard.kt:323)");
             }
-            Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), ColorKt.Color(2568298285L), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(8.0f))), Dp.m7555constructorimpl(1.0f), Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.08f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.04f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.25f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(8.0f))), Dp.m7555constructorimpl(16.0f), Dp.m7555constructorimpl(14.0f));
+            Modifier m1051paddingVpY3zN4 = PaddingKt.m1051paddingVpY3zN4(BorderKt.m301borderziNgDLE(BackgroundKt.m287backgroundbw27NRU(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), ColorKt.Color(2568298285L), RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(8.0f))), Dp.m8160constructorimpl(1.0f), Brush.Companion.m5297linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.08f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.04f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5338boximpl(Color.m5347copywmQWz5c$default(Color.Companion.m5374getBlack0d7_KjU(), 0.25f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1380RoundedCornerShape0680j_4(Dp.m8160constructorimpl(8.0f))), Dp.m8160constructorimpl(16.0f), Dp.m8160constructorimpl(14.0f));
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m819paddingVpY3zN4);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m1051paddingVpY3zN4);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -1229,16 +1229,16 @@ public final class DebugGameTestScriptCardKt {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -972985017, "C347@13373L10,348@13422L13,344@13263L266:DebugGameTestScriptCard.kt#1gr92h");
-            TextKt.m2712TextNvy7gAk(str, null, Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9154dpToSp8Feqmps(Dp.m7555constructorimpl(14.0f), composer, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m7491getEllipsisgIe3tQ8(), false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
+            TextKt.m3157TextNvy7gAk(str, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9793dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), composer, 6), null, null, null, 0L, null, null, 0L, TextOverflow.Companion.m8096getEllipsisgIe3tQ8(), false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24960, 110570);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

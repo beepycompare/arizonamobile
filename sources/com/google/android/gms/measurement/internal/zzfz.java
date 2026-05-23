@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzfz extends com.google.android.gms.internal.measurement.zzbl implements zzgb {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,9 +48,9 @@ public final class zzfz extends com.google.android.gms.internal.measurement.zzbl
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final void zze(zzbg zzbgVar, zzr zzrVar) throws RemoteException {
+    public final void zze(zzbh zzbhVar, zzr zzrVar) throws RemoteException {
         Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbgVar);
+        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbhVar);
         com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzrVar);
         zzc(1, zza);
     }
@@ -71,7 +71,7 @@ public final class zzfz extends com.google.android.gms.internal.measurement.zzbl
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final void zzh(zzbg zzbgVar, String str, String str2) throws RemoteException {
+    public final void zzh(zzbh zzbhVar, String str, String str2) throws RemoteException {
         throw null;
     }
 
@@ -94,9 +94,9 @@ public final class zzfz extends com.google.android.gms.internal.measurement.zzbl
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final byte[] zzk(zzbg zzbgVar, String str) throws RemoteException {
+    public final byte[] zzk(zzbh zzbhVar, String str) throws RemoteException {
         Parcel zza = zza();
-        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbgVar);
+        com.google.android.gms.internal.measurement.zzbn.zzc(zza, zzbhVar);
         zza.writeString(str);
         Parcel zzP = zzP(9, zza);
         byte[] createByteArray = zzP.createByteArray();

@@ -1,5 +1,6 @@
 package androidx.paging;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.paging.LoadState;
 import androidx.paging.PageFetcherSnapshotState;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -24,8 +25,8 @@ import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [Value] */
 /* compiled from: PageFetcherSnapshot.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004H\n"}, d2 = {"<anonymous>", "", "Value", "", "Landroidx/paging/SimpleProducerScope;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1", f = "PageFetcherSnapshot.kt", i = {0, 0, 0, 0, 1, 2, 2, 2}, l = {647, 177, 659}, m = "invokeSuspend", n = {"$this$cancelableChannelFlow", "it", "this_$iv", "$this$withLock_u24default$iv$iv", "$this$cancelableChannelFlow", "$this$cancelableChannelFlow", "this_$iv", "$this$withLock_u24default$iv$iv"}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$0", "L$1", "L$2"}, v = 1)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004H\n"}, d2 = {"<anonymous>", "", "Value", "", "Landroidx/paging/SimpleProducerScope;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1", f = "PageFetcherSnapshot.kt", i = {0, 0, 0, 0, 1, 2, 2, 2}, l = {694, 178, TypedValues.TransitionType.TYPE_STAGGERED}, m = "invokeSuspend", n = {"$this$cancelableChannelFlow", "it", "this_$iv", "$this$withLock_u24default$iv$iv", "$this$cancelableChannelFlow", "$this$cancelableChannelFlow", "this_$iv", "$this$withLock_u24default$iv$iv"}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$0", "L$1", "L$2"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLambda implements Function2<SimpleProducerScope<PageEvent<Value>>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -98,7 +99,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
                 remoteMediatorConnection = this.this$0.getRemoteMediatorConnection();
                 if (remoteMediatorConnection != null) {
                     PageFetcherSnapshot<Key, Value> pageFetcherSnapshot = this.this$0;
-                    pagingState = ((PageFetcherSnapshot) pageFetcherSnapshot).previousPagingState;
+                    pagingState = ((PageFetcherSnapshot) pageFetcherSnapshot).cachedInitialState;
                     if (pagingState == null) {
                         holder = ((PageFetcherSnapshot) pageFetcherSnapshot).stateHolder;
                         mutex = holder.lock;
@@ -195,8 +196,8 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcherSnapshot.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$2", f = "PageFetcherSnapshot.kt", i = {}, l = {91}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$2", f = "PageFetcherSnapshot.kt", i = {}, l = {92}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -223,7 +224,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: PageFetcherSnapshot.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$2$1  reason: invalid class name */
         /* loaded from: classes3.dex */
         public static final class AnonymousClass1<T> implements FlowCollector {
@@ -302,8 +303,8 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcherSnapshot.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3", f = "PageFetcherSnapshot.kt", i = {}, l = {107}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3", f = "PageFetcherSnapshot.kt", i = {}, l = {108}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -345,7 +346,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
                     }
 
                     public final Object emit(Unit unit, Continuation<? super Unit> continuation) {
-                        channel.mo8396trySendJP2dKIU(unit);
+                        channel.mo9005trySendJP2dKIU(unit);
                         return Unit.INSTANCE;
                     }
                 }, this) == coroutine_suspended) {
@@ -362,8 +363,8 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcherSnapshot.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$4", f = "PageFetcherSnapshot.kt", i = {}, l = {111}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$4", f = "PageFetcherSnapshot.kt", i = {}, l = {112}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$4  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -393,7 +394,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: PageFetcherSnapshot.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$4$1  reason: invalid class name */
         /* loaded from: classes3.dex */
         public static final class AnonymousClass1<T> implements FlowCollector {
@@ -401,7 +402,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
             final /* synthetic */ PageFetcherSnapshot<Key, Value> this$0;
 
             /* compiled from: PageFetcherSnapshot.kt */
-            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
             /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$4$1$WhenMappings */
             /* loaded from: classes3.dex */
             public static final /* synthetic */ class WhenMappings {

@@ -3,12 +3,12 @@ package retrofit2;
 import java.io.IOException;
 import okhttp3.Request;
 import okio.Timeout;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public interface Call<T> extends Cloneable {
     void cancel();
 
     /* renamed from: clone */
-    Call<T> mo9087clone();
+    Call<T> mo9725clone();
 
     void enqueue(Callback<T> callback);
 

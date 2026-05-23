@@ -1,20 +1,14 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgi extends zzmb implements zznn {
+public final class zzgi extends zzadp implements zzafd {
     private zzgi() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ zzgi(byte[] bArr) {
-        super(r1);
-        zzgj zzgjVar;
-        zzgjVar = zzgj.zzh;
+        super(zzgj.zzj());
     }
 
     public final String zza() {
@@ -22,8 +16,8 @@ public final class zzgi extends zzmb implements zznn {
     }
 
     public final zzgi zzb(String str) {
-        zzaX();
-        ((zzgj) this.zza).zzh(str);
+        zzaY();
+        ((zzgj) this.zza).zzi(str);
         return this;
     }
 
@@ -48,6 +42,6 @@ public final class zzgi extends zzmb implements zznn {
     }
 
     public final int zzh() {
-        return ((zzgj) this.zza).zzg();
+        return ((zzgj) this.zza).zzh();
     }
 }

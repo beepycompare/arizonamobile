@@ -1,58 +1,78 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.util.Map;
-import kotlin.text.Charsets;
-import org.json.JSONObject;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes5.dex */
-public final class H9 extends Rg {
-    public final I9 b;
+public final class H9 extends MessageNano {
+    public static volatile H9[] b;
 
-    public H9(X4 x4, TimeProvider timeProvider) {
-        super(x4);
-        this.b = new I9(x4, timeProvider);
+    /* renamed from: a  reason: collision with root package name */
+    public byte[] f575a;
+
+    public H9() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.Rg
-    public final boolean a(P5 p5) {
-        long optLong;
-        I9 i9 = this.b;
-        B9 b9 = i9.f631a.t().B;
-        Long valueOf = b9 != null ? Long.valueOf(b9.f520a) : null;
-        if (valueOf != null) {
-            xo xoVar = i9.f631a.t;
-            synchronized (xoVar) {
-                optLong = xoVar.f1317a.a().optLong("external_attribution_window_start", -1L);
-            }
-            if (optLong < 0) {
-                optLong = i9.b.currentTimeMillis();
-                i9.f631a.t.a(optLong);
-            }
-            if (i9.b.currentTimeMillis() - optLong <= valueOf.longValue()) {
-                A9 a9 = (A9) MessageNano.mergeFrom(new A9(), p5.getValueBytes());
-                int i = a9.f501a;
-                String str = new String(a9.b, Charsets.UTF_8);
-                String str2 = this.b.f631a.c.k().get(Integer.valueOf(i));
-                if (str2 != null) {
-                    try {
-                        if (JsonUtils.isEqualTo(new JSONObject(str), new JSONObject(str2))) {
-                            this.f772a.m.info("Ignoring attribution of type `" + K9.a(i) + "` with value `" + str + "` since it is not new", new Object[0]);
-                            return true;
-                        }
-                    } catch (Throwable unused) {
-                    }
+    public static H9[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new H9[0];
                 }
-                I9 i92 = this.b;
-                Map<Integer, String> k = i92.f631a.c.k();
-                k.put(Integer.valueOf(i), str);
-                i92.f631a.c.b(k);
-                this.f772a.m.info("Handling attribution of type `" + K9.a(i) + '`', new Object[0]);
-                return false;
             }
         }
-        this.f772a.m.info("Ignoring attribution since out of collecting interval", new Object[0]);
-        return true;
+        return b;
+    }
+
+    public final H9 a() {
+        this.f575a = WireFormatNano.EMPTY_BYTES;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        return !Arrays.equals(this.f575a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f575a) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!Arrays.equals(this.f575a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f575a);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final H9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 10) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.f575a = codedInputByteBufferNano.readBytes();
+            }
+        }
+        return this;
+    }
+
+    public static H9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new H9().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static H9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (H9) MessageNano.mergeFrom(new H9(), bArr);
     }
 }

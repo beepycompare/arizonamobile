@@ -12,6 +12,7 @@ import androidx.compose.runtime.CompositionLocalKt;
 import androidx.compose.runtime.ProvidableCompositionLocal;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
@@ -35,23 +36,23 @@ public final class ShortNavigationBarKt {
             return shortNavigationBarOverride;
         }
     }, 1, null);
-    private static final float TopIconItemVerticalPadding = NavigationBarVerticalItemTokens.INSTANCE.m3544getContainerBetweenSpaceD9Ej5fM();
-    private static final float TopIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3542getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / 2.0f);
-    private static final float TopIconIndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / 2.0f);
-    private static final float StartIconIndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarHorizontalItemTokens.INSTANCE.m3533getActiveIndicatorHeightD9Ej5fM() - NavigationBarHorizontalItemTokens.INSTANCE.m3536getIconSizeD9Ej5fM()) / 2.0f);
-    private static final float TopIconIndicatorToLabelPadding = Dp.m7555constructorimpl(4.0f);
-    private static final float StartIconIndicatorHorizontalPadding = NavigationBarHorizontalItemTokens.INSTANCE.m3534getActiveIndicatorLeadingSpaceD9Ej5fM();
-    private static final float StartIconToLabelPadding = NavigationBarTokens.INSTANCE.m3539getItemActiveIndicatorIconLabelSpaceD9Ej5fM();
+    private static final float TopIconItemVerticalPadding = NavigationBarVerticalItemTokens.INSTANCE.m3989getContainerBetweenSpaceD9Ej5fM();
+    private static final float TopIconIndicatorVerticalPadding = Dp.m8160constructorimpl(Dp.m8160constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3987getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3990getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float TopIconIndicatorHorizontalPadding = Dp.m8160constructorimpl(Dp.m8160constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3988getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3990getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float StartIconIndicatorVerticalPadding = Dp.m8160constructorimpl(Dp.m8160constructorimpl(NavigationBarHorizontalItemTokens.INSTANCE.m3978getActiveIndicatorHeightD9Ej5fM() - NavigationBarHorizontalItemTokens.INSTANCE.m3981getIconSizeD9Ej5fM()) / 2.0f);
+    private static final float TopIconIndicatorToLabelPadding = Dp.m8160constructorimpl(4.0f);
+    private static final float StartIconIndicatorHorizontalPadding = NavigationBarHorizontalItemTokens.INSTANCE.m3979getActiveIndicatorLeadingSpaceD9Ej5fM();
+    private static final float StartIconToLabelPadding = NavigationBarTokens.INSTANCE.m3984getItemActiveIndicatorIconLabelSpaceD9Ej5fM();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ShortNavigationBarItem_6ZDA4I0$lambda$3(boolean z, Function0 function0, Function2 function2, Function2 function22, Modifier modifier, boolean z2, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, int i2, int i3, Composer composer, int i4) {
-        m2491ShortNavigationBarItem6ZDA4I0(z, function0, function2, function22, modifier, z2, i, navigationItemColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2936ShortNavigationBarItem6ZDA4I0(z, function0, function2, function22, modifier, z2, i, navigationItemColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ShortNavigationBar_kQ6Tpik$lambda$1(Modifier modifier, long j, long j2, WindowInsets windowInsets, int i, Function2 function2, int i2, int i3, Composer composer, int i4) {
-        m2490ShortNavigationBarkQ6Tpik(modifier, j, j2, windowInsets, i, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2935ShortNavigationBarkQ6Tpik(modifier, j, j2, windowInsets, i, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -67,7 +68,7 @@ public final class ShortNavigationBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2490ShortNavigationBarkQ6Tpik(Modifier modifier, long j, long j2, WindowInsets windowInsets, int i, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i2, final int i3) {
+    public static final void m2935ShortNavigationBarkQ6Tpik(Modifier modifier, long j, long j2, WindowInsets windowInsets, int i, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -81,7 +82,7 @@ public final class ShortNavigationBarKt {
         final WindowInsets windowInsets2;
         final int i6;
         ScopeUpdateScope endRestartGroup;
-        int m2488getArrangementLnnQw40;
+        int m2933getArrangementLnnQw40;
         long j7;
         WindowInsets windowInsets3;
         int i7;
@@ -201,7 +202,7 @@ public final class ShortNavigationBarKt {
                     if ((i3 & 16) != 0) {
                         i4 &= -57345;
                         modifier2 = companion;
-                        m2488getArrangementLnnQw40 = ShortNavigationBarDefaults.INSTANCE.m2488getArrangementLnnQw40();
+                        m2933getArrangementLnnQw40 = ShortNavigationBarDefaults.INSTANCE.m2933getArrangementLnnQw40();
                         j7 = j4;
                         windowInsets3 = obj2;
                         long j8 = j3;
@@ -212,21 +213,21 @@ public final class ShortNavigationBarKt {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                         Object consume = startRestartGroup.consume(LocalShortNavigationBarOverride);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ((ShortNavigationBarOverride) consume).ShortNavigationBar(new ShortNavigationBarOverrideScope(modifier2, j8, j7, windowInsets3, m2488getArrangementLnnQw40, obj3, null), startRestartGroup, 0);
+                        ((ShortNavigationBarOverride) consume).ShortNavigationBar(new ShortNavigationBarOverrideScope(modifier2, j8, j7, windowInsets3, m2933getArrangementLnnQw40, obj3, null), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
                         j5 = j8;
                         j6 = j7;
                         windowInsets2 = windowInsets3;
-                        i6 = m2488getArrangementLnnQw40;
+                        i6 = m2933getArrangementLnnQw40;
                     } else {
                         modifier2 = companion;
                     }
                 }
                 j7 = j4;
                 windowInsets3 = obj2;
-                m2488getArrangementLnnQw40 = i5;
+                m2933getArrangementLnnQw40 = i5;
                 long j82 = j3;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
@@ -234,13 +235,13 @@ public final class ShortNavigationBarKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                 Object consume2 = startRestartGroup.consume(LocalShortNavigationBarOverride);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ((ShortNavigationBarOverride) consume2).ShortNavigationBar(new ShortNavigationBarOverrideScope(modifier2, j82, j7, windowInsets3, m2488getArrangementLnnQw40, obj3, null), startRestartGroup, 0);
+                ((ShortNavigationBarOverride) consume2).ShortNavigationBar(new ShortNavigationBarOverrideScope(modifier2, j82, j7, windowInsets3, m2933getArrangementLnnQw40, obj3, null), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 j5 = j82;
                 j6 = j7;
                 windowInsets2 = windowInsets3;
-                i6 = m2488getArrangementLnnQw40;
+                i6 = m2933getArrangementLnnQw40;
             } else {
                 startRestartGroup.skipToGroupEnd();
                 modifier2 = obj;
@@ -296,7 +297,7 @@ public final class ShortNavigationBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2491ShortNavigationBarItem6ZDA4I0(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, boolean z2, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
+    public static final void m2936ShortNavigationBarItem6ZDA4I0(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Modifier modifier, boolean z2, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
         boolean z3;
         int i4;
         Function0<Unit> function02;
@@ -323,7 +324,7 @@ public final class ShortNavigationBarKt {
         boolean z6;
         NavigationItemColors navigationItemColors3;
         MutableInteractionSource mutableInteractionSource4;
-        boolean m2305equalsimpl0;
+        boolean m2750equalsimpl0;
         float f;
         float f2;
         int i13;
@@ -405,7 +406,7 @@ public final class ShortNavigationBarKt {
                         i4 |= 100663296;
                     } else if ((i2 & 100663296) == 0) {
                         i9 = i8;
-                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? 67108864 : 33554432;
+                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         i10 = i4;
                         if (startRestartGroup.shouldExecute((i4 & 38347923) != 38347922, i10 & 1)) {
                             startRestartGroup.startDefaults();
@@ -418,7 +419,7 @@ public final class ShortNavigationBarKt {
                                     z4 = true;
                                 }
                                 if (i6 != 0) {
-                                    i7 = NavigationItemIconPosition.Companion.m2310getTopxw1Ddg();
+                                    i7 = NavigationItemIconPosition.Companion.m2755getTopxw1Ddg();
                                 }
                                 if ((i3 & 128) != 0) {
                                     i12 = i10 & (-29360129);
@@ -456,14 +457,14 @@ public final class ShortNavigationBarKt {
                                         startRestartGroup.endReplaceGroup();
                                         mutableInteractionSource4 = mutableInteractionSource3;
                                     }
-                                    m2305equalsimpl0 = NavigationItemIconPosition.m2305equalsimpl0(i7, NavigationItemIconPosition.Companion.m2310getTopxw1Ddg());
-                                    if (!m2305equalsimpl0) {
+                                    m2750equalsimpl0 = NavigationItemIconPosition.m2750equalsimpl0(i7, NavigationItemIconPosition.Companion.m2755getTopxw1Ddg());
+                                    if (!m2750equalsimpl0) {
                                         f = TopIconIndicatorHorizontalPadding;
                                     } else {
                                         f = StartIconIndicatorHorizontalPadding;
                                     }
                                     float f3 = f;
-                                    if (!m2305equalsimpl0) {
+                                    if (!m2750equalsimpl0) {
                                         f2 = TopIconIndicatorVerticalPadding;
                                     } else {
                                         f2 = StartIconIndicatorVerticalPadding;
@@ -471,7 +472,7 @@ public final class ShortNavigationBarKt {
                                     int i15 = i12 >> 6;
                                     composer2 = startRestartGroup;
                                     int i16 = i7;
-                                    NavigationItemKt.m2314NavigationItem8Df7sds(z3, function02, function23, TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), startRestartGroup, 6), NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM(), f3, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z6, obj, i16, mutableInteractionSource4, composer2, (i12 & 14) | 906166272 | (i12 & 112) | (i12 & 896), 6 | ((i12 >> 18) & 112) | (i15 & 896) | (i15 & 7168) | ((i12 << 3) & 57344) | ((i12 >> 3) & 458752));
+                                    NavigationItemKt.m2759NavigationItem8Df7sds(z3, function02, function23, TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), startRestartGroup, 6), NavigationBarVerticalItemTokens.INSTANCE.m3988getActiveIndicatorWidthD9Ej5fM(), f3, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z6, obj, i16, mutableInteractionSource4, composer2, (i12 & 14) | 906166272 | (i12 & 112) | (i12 & 896), 6 | ((i12 >> 18) & 112) | (i15 & 896) | (i15 & 7168) | ((i12 << 3) & 57344) | ((i12 >> 3) & 458752));
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -493,16 +494,16 @@ public final class ShortNavigationBarKt {
                             }
                             if (mutableInteractionSource3 != null) {
                             }
-                            m2305equalsimpl0 = NavigationItemIconPosition.m2305equalsimpl0(i7, NavigationItemIconPosition.Companion.m2310getTopxw1Ddg());
-                            if (!m2305equalsimpl0) {
+                            m2750equalsimpl0 = NavigationItemIconPosition.m2750equalsimpl0(i7, NavigationItemIconPosition.Companion.m2755getTopxw1Ddg());
+                            if (!m2750equalsimpl0) {
                             }
                             float f32 = f;
-                            if (!m2305equalsimpl0) {
+                            if (!m2750equalsimpl0) {
                             }
                             int i152 = i12 >> 6;
                             composer2 = startRestartGroup;
                             int i162 = i7;
-                            NavigationItemKt.m2314NavigationItem8Df7sds(z3, function02, function23, TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), startRestartGroup, 6), NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM(), f32, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z6, obj, i162, mutableInteractionSource4, composer2, (i12 & 14) | 906166272 | (i12 & 112) | (i12 & 896), 6 | ((i12 >> 18) & 112) | (i152 & 896) | (i152 & 7168) | ((i12 << 3) & 57344) | ((i12 >> 3) & 458752));
+                            NavigationItemKt.m2759NavigationItem8Df7sds(z3, function02, function23, TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), startRestartGroup, 6), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), startRestartGroup, 6), NavigationBarVerticalItemTokens.INSTANCE.m3988getActiveIndicatorWidthD9Ej5fM(), f32, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z6, obj, i162, mutableInteractionSource4, composer2, (i12 & 14) | 906166272 | (i12 & 112) | (i12 & 896), 6 | ((i12 >> 18) & 112) | (i152 & 896) | (i152 & 7168) | ((i12 << 3) & 57344) | ((i12 >> 3) & 458752));
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             mutableInteractionSource2 = mutableInteractionSource3;

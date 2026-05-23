@@ -1,34 +1,31 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.Bundle;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzee extends zzeq {
-    final /* synthetic */ Bundle zza;
-    final /* synthetic */ zzco zzb;
-    final /* synthetic */ zzfb zzc;
+public final class zzee extends zzeo {
+    final /* synthetic */ zzcm zza;
+    final /* synthetic */ zzez zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzfb zzfbVar, Bundle bundle, zzco zzcoVar) {
-        super(zzfbVar, true);
-        this.zza = bundle;
-        this.zzb = zzcoVar;
-        Objects.requireNonNull(zzfbVar);
-        this.zzc = zzfbVar;
+    public zzee(zzez zzezVar, zzcm zzcmVar) {
+        super(zzezVar, true);
+        this.zza = zzcmVar;
+        Objects.requireNonNull(zzezVar);
+        this.zzb = zzezVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     final void zza() throws RemoteException {
-        ((zzcr) Preconditions.checkNotNull(this.zzc.zzQ())).performAction(this.zza, this.zzb, this.zzh);
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zzS())).getAppInstanceId(this.zza);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     protected final void zzb() {
-        this.zzb.zzb(null);
+        this.zza.zzb(null);
     }
 }

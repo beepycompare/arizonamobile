@@ -285,7 +285,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
     }
 
     private boolean shouldUpdateGestureInset() {
-        return this.extraBottomMarginGestureInset > 0 && !this.gestureInsetBottomIgnored && isSwipeDismissable();
+        return this.extraBottomMarginGestureInset > 0 && !this.gestureInsetBottomIgnored && isSwipeDismissable() && getAnchorView() == null;
     }
 
     private boolean isSwipeDismissable() {
@@ -740,6 +740,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
         private final int maxInlineActionWidth;
         private final int maxWidth;
         private Rect originalMargins;
+        private final int originalPaddingEnd;
         ShapeAppearanceModel shapeAppearanceModel;
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -766,6 +767,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
             this.maxWidth = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SnackbarLayout_android_maxWidth, -1);
             this.maxInlineActionWidth = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SnackbarLayout_maxActionInlineWidth, -1);
             obtainStyledAttributes.recycle();
+            this.originalPaddingEnd = getPaddingEnd();
             setOnTouchListener(consumeAllTouchListener);
             setFocusable(true);
             if (getBackground() == null) {
@@ -910,6 +912,11 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
 
         private void updateOriginalMargins(ViewGroup.MarginLayoutParams marginLayoutParams) {
             this.originalMargins = new Rect(marginLayoutParams.leftMargin, marginLayoutParams.topMargin, marginLayoutParams.rightMargin, marginLayoutParams.bottomMargin);
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public void removeOrRestorePaddingEnd(boolean z) {
+            setPaddingRelative(getPaddingStart(), getPaddingTop(), z ? 0 : this.originalPaddingEnd, getPaddingBottom());
         }
 
         private Drawable createThemedBackground() {

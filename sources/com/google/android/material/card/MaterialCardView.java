@@ -37,6 +37,7 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
     private static final int[] CHECKABLE_STATE_SET = {16842911};
     private static final int[] CHECKED_STATE_SET = {16842912};
     private static final int[] DRAGGED_STATE_SET = {R.attr.state_dragged};
+    private static final int[] HOVERED_STATE_SET = {16843623};
     private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CardView;
 
     @Retention(RetentionPolicy.SOURCE)
@@ -313,9 +314,10 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    protected int[] onCreateDrawableState(int i) {
-        int[] onCreateDrawableState = super.onCreateDrawableState(i + 3);
+    public int[] onCreateDrawableState(int i) {
+        int[] onCreateDrawableState = super.onCreateDrawableState(i + 8);
         if (isCheckable()) {
             mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
         }
@@ -324,6 +326,23 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
         }
         if (isDragged()) {
             mergeDrawableStates(onCreateDrawableState, DRAGGED_STATE_SET);
+        }
+        if (isDuplicateParentStateEnabled()) {
+            if (isPressed()) {
+                mergeDrawableStates(onCreateDrawableState, PRESSED_STATE_SET);
+            }
+            if (isHovered()) {
+                mergeDrawableStates(onCreateDrawableState, HOVERED_STATE_SET);
+            }
+            if (isEnabled()) {
+                mergeDrawableStates(onCreateDrawableState, ENABLED_STATE_SET);
+            }
+            if (isFocused()) {
+                mergeDrawableStates(onCreateDrawableState, FOCUSED_STATE_SET);
+            }
+            if (isSelected()) {
+                mergeDrawableStates(onCreateDrawableState, SELECTED_STATE_SET);
+            }
         }
         return onCreateDrawableState;
     }
@@ -401,12 +420,12 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
     @Override // com.google.android.material.shape.Shapeable
     public void setShapeAppearanceModel(ShapeAppearanceModel shapeAppearanceModel) {
         setClipToOutline(shapeAppearanceModel.isRoundRect(getBoundsAsRectF()));
-        this.cardViewHelper.setShapeAppearanceModel(shapeAppearanceModel);
+        this.cardViewHelper.setShapeAppearance(shapeAppearanceModel);
     }
 
     @Override // com.google.android.material.shape.Shapeable
     public ShapeAppearanceModel getShapeAppearanceModel() {
-        return this.cardViewHelper.getShapeAppearanceModel();
+        return this.cardViewHelper.getShapeAppearance().getDefaultShape();
     }
 
     private void forceRippleRedrawIfNeeded() {

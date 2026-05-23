@@ -1,56 +1,56 @@
 package com.google.android.gms.common.images;
 
-import android.graphics.Bitmap;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import com.google.android.gms.common.internal.Asserts;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zaa implements Runnable {
     final /* synthetic */ ImageManager zaa;
     private final Uri zab;
-    private final ParcelFileDescriptor zac;
+    private final AssetFileDescriptor zac;
 
-    public zaa(ImageManager imageManager, Uri uri, ParcelFileDescriptor parcelFileDescriptor) {
+    public zaa(ImageManager imageManager, Uri uri, AssetFileDescriptor assetFileDescriptor) {
+        Objects.requireNonNull(imageManager);
         this.zaa = imageManager;
         this.zab = uri;
-        this.zac = parcelFileDescriptor;
+        this.zac = assetFileDescriptor;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Handler handler;
         Asserts.checkNotMainThread("LoadBitmapFromDiskRunnable can't be executed in the main thread");
-        ParcelFileDescriptor parcelFileDescriptor = this.zac;
+        AssetFileDescriptor assetFileDescriptor = this.zac;
         boolean z = false;
-        Bitmap bitmap = null;
-        if (parcelFileDescriptor != null) {
+        if (assetFileDescriptor != null) {
             try {
-                bitmap = BitmapFactory.decodeFileDescriptor(parcelFileDescriptor.getFileDescriptor());
-            } catch (OutOfMemoryError e) {
-                Log.e("ImageManager", "OOM while loading bitmap for uri: ".concat(String.valueOf(String.valueOf(this.zab))), e);
-                z = true;
-            }
-            try {
-                this.zac.close();
-            } catch (IOException e2) {
-                Log.e("ImageManager", "closed failed", e2);
+                FileInputStream createInputStream = assetFileDescriptor.createInputStream();
+                r2 = createInputStream != null ? BitmapFactory.decodeStream(createInputStream) : null;
+                if (createInputStream != null) {
+                    createInputStream.close();
+                }
+            } catch (IOException | OutOfMemoryError e) {
+                String valueOf = String.valueOf(this.zab);
+                String.valueOf(valueOf);
+                Log.e("ImageManager", "Error loading bitmap for uri: ".concat(String.valueOf(valueOf)), e);
+                z = e instanceof OutOfMemoryError;
             }
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         ImageManager imageManager = this.zaa;
-        Uri uri = this.zab;
-        handler = imageManager.zae;
-        handler.post(new zac(imageManager, uri, bitmap, z, countDownLatch));
+        imageManager.zae().post(new zac(imageManager, this.zab, r2, z, countDownLatch));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {
-            Log.w("ImageManager", "Latch interrupted while posting ".concat(String.valueOf(String.valueOf(this.zab))));
+            String valueOf2 = String.valueOf(this.zab);
+            String.valueOf(valueOf2);
+            Log.w("ImageManager", "Latch interrupted while posting ".concat(String.valueOf(valueOf2)));
         }
     }
 }

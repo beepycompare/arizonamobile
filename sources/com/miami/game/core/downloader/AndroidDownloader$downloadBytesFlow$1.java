@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: AndroidDownloader.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.downloader.AndroidDownloader$downloadBytesFlow$1", f = "AndroidDownloader.kt", i = {0, 0, 1, 1}, l = {34, 35}, m = "invokeSuspend", n = {"$this$flow", "progress", "$this$flow", "progress"}, nl = {35, -1}, s = {"L$0", "J$0", "L$0", "J$0"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AndroidDownloader$downloadBytesFlow$1 extends SuspendLambda implements Function2<FlowCollector<? super Long>, Continuation<? super Unit>, Object> {
     long J$0;
     private /* synthetic */ Object L$0;

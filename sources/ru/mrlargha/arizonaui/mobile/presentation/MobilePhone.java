@@ -200,7 +200,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         this.phoneIsOpen = z;
         Job job = this.job;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.job = null;
         if (!this.phoneIsOpen) {

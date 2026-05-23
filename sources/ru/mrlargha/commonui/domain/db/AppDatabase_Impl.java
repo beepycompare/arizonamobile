@@ -9,7 +9,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
-import io.appmetrica.analytics.impl.C0739z2;
+import io.appmetrica.analytics.impl.M2;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -27,7 +27,7 @@ import ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao;
 import ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl;
 /* compiled from: AppDatabase_Impl.kt */
 @Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0007\u001a\u00020\bH\u0014J\b\u0010\t\u001a\u00020\nH\u0014J\b\u0010\u000b\u001a\u00020\fH\u0016J\"\u0010\r\u001a\u001c\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u000f\u0012\u000e\u0012\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u000f0\u00100\u000eH\u0014J\u0016\u0010\u0011\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u000f0\u0012H\u0016J*\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u00102\u001a\u0010\u0016\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00130\u000f\u0012\u0004\u0012\u00020\u00130\u000eH\u0016J\b\u0010\u0017\u001a\u00020\u0006H\u0016R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/domain/db/AppDatabase_Impl;", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "<init>", "()V", "_inventoryItemDao", "Lkotlin/Lazy;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao;", "createOpenDelegate", "Landroidx/room/RoomOpenDelegate;", "createInvalidationTracker", "Landroidx/room/InvalidationTracker;", "clearAllTables", "", "getRequiredTypeConverterClasses", "", "Lkotlin/reflect/KClass;", "", "getRequiredAutoMigrationSpecClasses", "", "Landroidx/room/migration/AutoMigrationSpec;", "createAutoMigrations", "Landroidx/room/migration/Migration;", "autoMigrationSpecs", "inventoryItemDao", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class AppDatabase_Impl extends AppDatabase {
     private final Lazy<InventoryItemDao> _inventoryItemDao = LazyKt.lazy(new Function0() { // from class: ru.mrlargha.commonui.domain.db.AppDatabase_Impl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
@@ -96,7 +96,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 linkedHashMap.put("text", new TableInfo.Column("text", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("item_type", new TableInfo.Column("item_type", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("amount", new TableInfo.Column("amount", "INTEGER", false, 0, null, 1));
-                linkedHashMap.put(C0739z2.g, new TableInfo.Column(C0739z2.g, "INTEGER", false, 0, null, 1));
+                linkedHashMap.put(M2.g, new TableInfo.Column(M2.g, "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("color", new TableInfo.Column("color", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("bits", new TableInfo.Column("bits", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("available", new TableInfo.Column("available", "INTEGER", false, 0, null, 1));

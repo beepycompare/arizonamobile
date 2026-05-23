@@ -1,28 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import org.json.JSONObject;
+import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Wi extends Rg {
-    public final C0602tf b;
+public abstract class Wi {
 
-    public Wi(X4 x4) {
-        this(x4, C0448na.k().t());
+    /* renamed from: a  reason: collision with root package name */
+    protected final Context f826a;
+    public final String b;
+    public final String c;
+
+    public Wi(Context context, String str, String str2) {
+        this.f826a = context;
+        this.b = str;
+        this.c = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Rg
-    public final boolean a(P5 p5) {
-        JSONObject jSONObject;
-        try {
-            jSONObject = new JSONObject(p5.getValue()).optJSONObject("preloadInfo");
-        } catch (Throwable unused) {
-            jSONObject = null;
+    public final Object a() {
+        int identifier = this.f826a.getResources().getIdentifier(this.b, this.c, this.f826a.getPackageName());
+        if (identifier != 0) {
+            try {
+                return a(identifier);
+            } catch (Throwable unused) {
+                return null;
+            }
         }
-        this.b.b(C0528qf.a(jSONObject));
-        return false;
+        return null;
     }
 
-    public Wi(X4 x4, C0602tf c0602tf) {
-        super(x4);
-        this.b = c0602tf;
-    }
+    public abstract Object a(int i);
 }

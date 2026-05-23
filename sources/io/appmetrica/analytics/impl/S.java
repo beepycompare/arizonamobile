@@ -1,26 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* loaded from: classes5.dex */
 public final class S extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f777a;
+    public final /* synthetic */ W f752a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public S(U u) {
+    public S(W w) {
         super(0);
-        this.f777a = u;
+        this.f752a = w;
+    }
+
+    public static final Void a(W w) {
+        w.b();
+        return null;
     }
 
     @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        U u = this.f777a;
-        N n = u.g;
-        Context context = u.f809a;
-        n.getClass();
-        return N.a(new L(n, context));
+    /* renamed from: a */
+    public final FutureTask invoke() {
+        final W w = this.f752a;
+        return new FutureTask(new Callable() { // from class: io.appmetrica.analytics.impl.S$$ExternalSyntheticLambda0
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                return S.a(W.this);
+            }
+        });
     }
 }

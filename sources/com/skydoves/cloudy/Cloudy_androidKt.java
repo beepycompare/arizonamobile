@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: Cloudy.android.kt */
 @Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a;\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0003\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0014\b\u0002\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007H\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"cloudy", "Landroidx/compose/ui/Modifier;", "radius", "", "enabled", "", "onStateChanged", "Lkotlin/Function1;", "Lcom/skydoves/cloudy/CloudyState;", "", "(Landroidx/compose/ui/Modifier;IZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/ui/Modifier;", "cloudy_release"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Cloudy_androidKt {
     @FunctionKeyMeta(endOffset = 1630, key = 503794224, startOffset = 1041)
     public static final Modifier cloudy(Modifier modifier, int i, boolean z, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
@@ -63,12 +63,12 @@ public final class Cloudy_androidKt {
             Object consume = composer.consume(InspectionModeKt.getLocalInspectionMode());
             ComposerKt.sourceInformationMarkerEnd(composer);
             if (((Boolean) consume).booleanValue()) {
-                Modifier m4295blurF8QBwvs$default = BlurKt.m4295blurF8QBwvs$default(modifier, Dp.m7555constructorimpl(i4), null, 2, null);
+                Modifier m4871blurF8QBwvs$default = BlurKt.m4871blurF8QBwvs$default(modifier, Dp.m8160constructorimpl(i4), null, 2, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m4295blurF8QBwvs$default;
+                return m4871blurF8QBwvs$default;
             }
             if (Build.VERSION.SDK_INT >= 31) {
                 cloudyLegacyBlurStrategy = CloudyRenderEffectStrategy.INSTANCE;

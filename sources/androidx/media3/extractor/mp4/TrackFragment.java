@@ -1,6 +1,6 @@
 package androidx.media3.extractor.mp4;
 
-import androidx.compose.runtime.ComposerImplKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import java.io.IOException;
@@ -42,7 +42,7 @@ final class TrackFragment {
             this.trunLength = new int[i];
         }
         if (this.sampleSizeTable.length < i2) {
-            int i3 = (i2 * ComposerImplKt.nodeKey) / 100;
+            int i3 = (i2 * GapComposerKt.nodeKey) / 100;
             this.sampleSizeTable = new int[i3];
             this.samplePresentationTimesUs = new long[i3];
             this.sampleIsSyncFrameTable = new boolean[i3];

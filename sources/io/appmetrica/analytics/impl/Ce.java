@@ -1,19 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 /* loaded from: classes5.dex */
-public final class Ce extends Dc {
-    public Ce(NetworkType networkType) {
-        super(networkType);
-        a(1, NetworkType.WIFI);
-        a(0, NetworkType.CELL);
-        a(7, NetworkType.BLUETOOTH);
-        a(9, NetworkType.ETHERNET);
-        a(4, NetworkType.MOBILE_DUN);
-        a(5, NetworkType.MOBILE_HIPRI);
-        a(2, NetworkType.MOBILE_MMS);
-        a(3, NetworkType.MOBILE_SUPL);
-        a(6, NetworkType.WIMAX);
-        a(17, NetworkType.VPN);
+public final class Ce implements Vo {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f495a;
+
+    public Ce(String str) {
+        this.f495a = str;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Vo
+    public final To a(Object obj) {
+        if (obj == null) {
+            return new To(this, false, this.f495a + " is null.");
+        }
+        return new To(this, true, "");
+    }
+
+    public final String a() {
+        return this.f495a;
     }
 }

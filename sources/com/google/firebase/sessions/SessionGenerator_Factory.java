@@ -1,13 +1,13 @@
 package com.google.firebase.sessions;
 
 import com.google.firebase.sessions.dagger.internal.Factory;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 /* loaded from: classes4.dex */
 public final class SessionGenerator_Factory implements Factory<SessionGenerator> {
     private final Provider<TimeProvider> timeProvider;
     private final Provider<UuidGenerator> uuidGeneratorProvider;
 
-    public SessionGenerator_Factory(Provider<TimeProvider> provider, Provider<UuidGenerator> provider2) {
+    private SessionGenerator_Factory(Provider<TimeProvider> provider, Provider<UuidGenerator> provider2) {
         this.timeProvider = provider;
         this.uuidGeneratorProvider = provider2;
     }

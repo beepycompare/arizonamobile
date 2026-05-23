@@ -11,13 +11,14 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import androidx.media3.exoplayer.mediacodec.SynchronousMediaCodecAdapter;
 import com.google.common.base.Supplier;
 import java.io.IOException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.Factory {
     private static final int MODE_DEFAULT = 0;
     private static final int MODE_DISABLED = 2;
     private static final int MODE_ENABLED = 1;
     private static final String TAG = "DMCodecAdapterFactory";
     private boolean asyncCryptoFlagEnabled;
+    private boolean asyncCryptoSynchronizationEnabled;
     private int asynchronousMode;
     private final Supplier<HandlerThread> callbackThreadSupplier;
     private final Context context;
@@ -26,7 +27,6 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
     @Deprecated
     public DefaultMediaCodecAdapterFactory() {
         this.asynchronousMode = 0;
-        this.asyncCryptoFlagEnabled = true;
         this.context = null;
         this.callbackThreadSupplier = null;
         this.queueingThreadSupplier = null;
@@ -59,6 +59,11 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
         return this;
     }
 
+    public DefaultMediaCodecAdapterFactory setAsyncCryptoSynchronizationEnabled(boolean z) {
+        this.asyncCryptoSynchronizationEnabled = z;
+        return this;
+    }
+
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter.Factory
     public MediaCodecAdapter createAdapter(MediaCodecAdapter.Configuration configuration) throws IOException {
         AsynchronousMediaCodecAdapter.Factory factory;
@@ -72,6 +77,7 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
                 factory = new AsynchronousMediaCodecAdapter.Factory(trackType);
             }
             factory.experimentalSetAsyncCryptoFlagEnabled(this.asyncCryptoFlagEnabled);
+            factory.setAsyncCryptoSynchronizationEnabled(this.asyncCryptoSynchronizationEnabled);
             return factory.createAdapter(configuration);
         }
         return new SynchronousMediaCodecAdapter.Factory().createAdapter(configuration);

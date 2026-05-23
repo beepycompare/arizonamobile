@@ -9,6 +9,6 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @SubtypeOf({UnknownVal.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface IntRangeFromPositive {
 }

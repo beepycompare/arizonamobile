@@ -16,6 +16,7 @@ import androidx.compose.runtime.EffectsKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
@@ -38,13 +39,14 @@ import androidx.compose.ui.window.AndroidPopup_androidKt;
 import androidx.compose.ui.window.PopupPositionProvider;
 import androidx.compose.ui.window.PopupProperties;
 import androidx.media3.exoplayer.RendererCapabilities;
-import androidx.media3.extractor.ts.TsExtractor;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.List;
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -62,11 +64,17 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: BasicTooltip.kt */
-@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aa\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u000f\u001a:\u0010\u0010\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0011\u001a@\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u000b\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0015\u001a\u001c\u0010\u0016\u001a\u00020\n*\u00020\n2\u0006\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\bH\u0002\u001a,\u0010\u0018\u001a\u00020\n*\u00020\n2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u0014H\u0002\u001a+\u0010\u001b\u001a\u00020\b2\b\b\u0002\u0010\u001c\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\f2\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0007¢\u0006\u0002\u0010 \u001a&\u0010!\u001a\u00020\b2\b\b\u0002\u0010\u001c\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\f2\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0007¨\u0006\""}, d2 = {"BasicTooltipBox", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "WrappedAnchor", "(ZLandroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "TooltipPopup", "scope", "Lkotlinx/coroutines/CoroutineScope;", "(Landroidx/compose/ui/window/PopupPositionProvider;Landroidx/compose/foundation/BasicTooltipState;Lkotlinx/coroutines/CoroutineScope;ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "handleGestures", "enabled", "anchorSemantics", Constants.ScionAnalytics.PARAM_LABEL, "", "rememberBasicTooltipState", "initialIsVisible", "isPersistent", "mutatorMutex", "Landroidx/compose/foundation/MutatorMutex;", "(ZZLandroidx/compose/foundation/MutatorMutex;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/BasicTooltipState;", "BasicTooltipState", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001ak\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\f2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u0010\u001aa\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u0011\u001aB\u0010\u0012\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u000e\u001a\u00020\f2\b\b\u0002\u0010\t\u001a\u00020\n2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0013\u001a@\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u000b\u001a\u00020\f2\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0017\u001a\u001c\u0010\u0018\u001a\u00020\n*\u00020\n2\u0006\u0010\u0019\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\bH\u0002\u001a,\u0010\u001a\u001a\u00020\n*\u00020\n2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0019\u001a\u00020\f2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002\u001a+\u0010\u001d\u001a\u00020\b2\b\b\u0002\u0010\u001e\u001a\u00020\f2\b\b\u0002\u0010\u001f\u001a\u00020\f2\b\b\u0002\u0010 \u001a\u00020!H\u0007¢\u0006\u0002\u0010\"\u001a&\u0010#\u001a\u00020\b2\b\b\u0002\u0010\u001e\u001a\u00020\f2\b\b\u0002\u0010\u001f\u001a\u00020\f2\b\b\u0002\u0010 \u001a\u00020!H\u0007¨\u0006$"}, d2 = {"BasicTooltipBox", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", "propagateMinConstraints", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "WrappedAnchor", "(ZLandroidx/compose/foundation/BasicTooltipState;ZLandroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "TooltipPopup", "scope", "Lkotlinx/coroutines/CoroutineScope;", "(Landroidx/compose/ui/window/PopupPositionProvider;Landroidx/compose/foundation/BasicTooltipState;Lkotlinx/coroutines/CoroutineScope;ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "handleGestures", "enabled", "anchorSemantics", Constants.ScionAnalytics.PARAM_LABEL, "", "rememberBasicTooltipState", "initialIsVisible", "isPersistent", "mutatorMutex", "Landroidx/compose/foundation/MutatorMutex;", "(ZZLandroidx/compose/foundation/MutatorMutex;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/BasicTooltipState;", "BasicTooltipState", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTooltipKt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit BasicTooltipBox$lambda$2(PopupPositionProvider popupPositionProvider, Function2 function2, BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, Function2 function22, int i, int i2, Composer composer, int i3) {
+    public static final Unit BasicTooltipBox$lambda$2(PopupPositionProvider popupPositionProvider, Function2 function2, BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, boolean z3, Function2 function22, int i, int i2, Composer composer, int i3) {
+        BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, modifier, z, z2, z3, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit BasicTooltipBox$lambda$3(PopupPositionProvider popupPositionProvider, Function2 function2, BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, Function2 function22, int i, int i2, Composer composer, int i3) {
         BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, modifier, z, z2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -78,62 +86,307 @@ public final class BasicTooltipKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit WrappedAnchor$lambda$1(boolean z, BasicTooltipState basicTooltipState, Modifier modifier, Function2 function2, int i, int i2, Composer composer, int i3) {
-        WrappedAnchor(z, basicTooltipState, modifier, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+    public static final Unit WrappedAnchor$lambda$1(boolean z, BasicTooltipState basicTooltipState, boolean z2, Modifier modifier, Function2 function2, int i, int i2, Composer composer, int i3) {
+        WrappedAnchor(z, basicTooltipState, z2, modifier, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0273  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x01c4  */
     /* JADX WARN: Removed duplicated region for block: B:114:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00e7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void BasicTooltipBox(final PopupPositionProvider popupPositionProvider, final Function2<? super Composer, ? super Integer, Unit> function2, BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2) {
+    public static final void BasicTooltipBox(final PopupPositionProvider popupPositionProvider, final Function2<? super Composer, ? super Integer, Unit> function2, final BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, boolean z3, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2) {
+        final PopupPositionProvider popupPositionProvider2;
         int i3;
         Object obj;
-        Modifier.Companion companion;
+        int i4;
+        boolean z4;
+        int i5;
+        boolean z5;
+        int i6;
+        boolean z6;
+        final BasicTooltipState basicTooltipState2;
+        Composer composer2;
+        final Modifier modifier2;
+        final boolean z7;
+        final boolean z8;
+        ScopeUpdateScope endRestartGroup;
+        Composer startRestartGroup = composer.startRestartGroup(-542290032);
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicTooltipBox)N(positionProvider,tooltip,state,modifier,focusable,enableUserInput,propagateMinConstraints,content)85@3932L24,91@4136L296,86@3961L471,105@4462L35,105@4438L59:BasicTooltip.kt#71ulvw");
+        if ((i & 6) == 0) {
+            popupPositionProvider2 = popupPositionProvider;
+            i3 = (startRestartGroup.changed(popupPositionProvider2) ? 4 : 2) | i;
+        } else {
+            popupPositionProvider2 = popupPositionProvider;
+            i3 = i;
+        }
+        if ((i & 48) == 0) {
+            i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changed(basicTooltipState) ? 256 : 128;
+        }
+        int i7 = i2 & 8;
+        if (i7 != 0) {
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
+            obj = modifier;
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
+            i4 = i2 & 16;
+            if (i4 == 0) {
+                i3 |= 24576;
+            } else if ((i & 24576) == 0) {
+                z4 = z;
+                i3 |= startRestartGroup.changed(z4) ? 16384 : 8192;
+                i5 = i2 & 32;
+                if (i5 != 0) {
+                    i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                } else if ((196608 & i) == 0) {
+                    z5 = z2;
+                    i3 |= startRestartGroup.changed(z5) ? 131072 : 65536;
+                    i6 = i2 & 64;
+                    if (i6 == 0) {
+                        i3 |= 1572864;
+                    } else if ((1572864 & i) == 0) {
+                        z6 = z3;
+                        i3 |= startRestartGroup.changed(z6) ? 1048576 : 524288;
+                        if ((i & 12582912) == 0) {
+                            i3 |= startRestartGroup.changedInstance(function22) ? 8388608 : 4194304;
+                        }
+                        if (!startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
+                            basicTooltipState2 = basicTooltipState;
+                            composer2 = startRestartGroup;
+                            composer2.skipToGroupEnd();
+                            modifier2 = obj;
+                            z7 = z5;
+                            z8 = z6;
+                        } else {
+                            Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
+                            final boolean z9 = i4 != 0 ? true : z4;
+                            if (i5 != 0) {
+                                z5 = true;
+                            }
+                            if (i6 != 0) {
+                                z6 = false;
+                            }
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventStart(-542290032, i3, -1, "androidx.compose.foundation.BasicTooltipBox (BasicTooltip.kt:84)");
+                            }
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)616@28039L68:Effects.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
+                            Object rememberedValue = startRestartGroup.rememberedValue();
+                            if (rememberedValue == Composer.Companion.getEmpty()) {
+                                rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
+                                startRestartGroup.updateRememberedValue(rememberedValue);
+                            }
+                            final CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                            int i8 = i3;
+                            z4 = z9;
+                            ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(99800901, true, new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda0
+                                @Override // kotlin.jvm.functions.Function2
+                                public final Object invoke(Object obj2, Object obj3) {
+                                    return BasicTooltipKt.BasicTooltipBox$lambda$0(BasicTooltipState.this, popupPositionProvider2, coroutineScope, z9, function2, function22, (Composer) obj2, ((Integer) obj3).intValue());
+                                }
+                            }, startRestartGroup, 54);
+                            int i9 = ((i8 >> 15) & 14) | 24576 | ((i8 >> 3) & 112) | ((i8 >> 12) & 896) | (i8 & 7168);
+                            composer2 = startRestartGroup;
+                            basicTooltipState2 = basicTooltipState;
+                            boolean z10 = z5;
+                            boolean z11 = z6;
+                            Modifier modifier3 = companion;
+                            WrappedAnchor(z10, basicTooltipState2, z11, modifier3, rememberComposableLambda, composer2, i9, 0);
+                            ComposerKt.sourceInformationMarkerStart(composer2, -1449650093, "CC(remember):BasicTooltip.kt#9igjgp");
+                            boolean z12 = (i8 & 896) == 256;
+                            Object rememberedValue2 = composer2.rememberedValue();
+                            if (z12 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda2
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj2) {
+                                        DisposableEffectResult BasicTooltipBox$lambda$1$0;
+                                        BasicTooltipBox$lambda$1$0 = BasicTooltipKt.BasicTooltipBox$lambda$1$0(BasicTooltipState.this, (DisposableEffectScope) obj2);
+                                        return BasicTooltipBox$lambda$1$0;
+                                    }
+                                };
+                                composer2.updateRememberedValue(rememberedValue2);
+                            }
+                            ComposerKt.sourceInformationMarkerEnd(composer2);
+                            EffectsKt.DisposableEffect(basicTooltipState2, (Function1) rememberedValue2, composer2, (i8 >> 6) & 14);
+                            if (ComposerKt.isTraceInProgress()) {
+                                ComposerKt.traceEventEnd();
+                            }
+                            z7 = z10;
+                            z8 = z11;
+                            modifier2 = modifier3;
+                        }
+                        Composer composer3 = composer2;
+                        final boolean z13 = z4;
+                        endRestartGroup = composer3.endRestartGroup();
+                        if (endRestartGroup != null) {
+                            final BasicTooltipState basicTooltipState3 = basicTooltipState2;
+                            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda3
+                                @Override // kotlin.jvm.functions.Function2
+                                public final Object invoke(Object obj2, Object obj3) {
+                                    return BasicTooltipKt.BasicTooltipBox$lambda$2(PopupPositionProvider.this, function2, basicTooltipState3, modifier2, z13, z7, z8, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                                }
+                            });
+                            return;
+                        }
+                        return;
+                    }
+                    z6 = z3;
+                    if ((i & 12582912) == 0) {
+                    }
+                    if (!startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
+                    }
+                    Composer composer32 = composer2;
+                    final boolean z132 = z4;
+                    endRestartGroup = composer32.endRestartGroup();
+                    if (endRestartGroup != null) {
+                    }
+                }
+                z5 = z2;
+                i6 = i2 & 64;
+                if (i6 == 0) {
+                }
+                z6 = z3;
+                if ((i & 12582912) == 0) {
+                }
+                if (!startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
+                }
+                Composer composer322 = composer2;
+                final boolean z1322 = z4;
+                endRestartGroup = composer322.endRestartGroup();
+                if (endRestartGroup != null) {
+                }
+            }
+            z4 = z;
+            i5 = i2 & 32;
+            if (i5 != 0) {
+            }
+            z5 = z2;
+            i6 = i2 & 64;
+            if (i6 == 0) {
+            }
+            z6 = z3;
+            if ((i & 12582912) == 0) {
+            }
+            if (!startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
+            }
+            Composer composer3222 = composer2;
+            final boolean z13222 = z4;
+            endRestartGroup = composer3222.endRestartGroup();
+            if (endRestartGroup != null) {
+            }
+        }
+        obj = modifier;
+        i4 = i2 & 16;
+        if (i4 == 0) {
+        }
+        z4 = z;
+        i5 = i2 & 32;
+        if (i5 != 0) {
+        }
+        z5 = z2;
+        i6 = i2 & 64;
+        if (i6 == 0) {
+        }
+        z6 = z3;
+        if ((i & 12582912) == 0) {
+        }
+        if (!startRestartGroup.shouldExecute((i3 & 4793491) != 4793490, i3 & 1)) {
+        }
+        Composer composer32222 = composer2;
+        final boolean z132222 = z4;
+        endRestartGroup = composer32222.endRestartGroup();
+        if (endRestartGroup != null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit BasicTooltipBox$lambda$0(BasicTooltipState basicTooltipState, PopupPositionProvider popupPositionProvider, CoroutineScope coroutineScope, boolean z, Function2 function2, Function2 function22, Composer composer, int i) {
+        ComposerKt.sourceInformation(composer, "C102@4417L9:BasicTooltip.kt#71ulvw");
+        if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
+            composer.skipToGroupEnd();
+        } else {
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventStart(99800901, i, -1, "androidx.compose.foundation.BasicTooltipBox.<anonymous> (BasicTooltip.kt:92)");
+            }
+            if (basicTooltipState.isVisible()) {
+                composer.startReplaceGroup(1051311053);
+                ComposerKt.sourceInformation(composer, "93@4181L216");
+                TooltipPopup(popupPositionProvider, basicTooltipState, coroutineScope, z, function2, composer, 0);
+                composer.endReplaceGroup();
+            } else {
+                composer.startReplaceGroup(1051541693);
+                composer.endReplaceGroup();
+            }
+            function22.invoke(composer, 0);
+            if (ComposerKt.isTraceInProgress()) {
+                ComposerKt.traceEventEnd();
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:92:? A[RETURN, SYNTHETIC] */
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility. Use version with propagateMinConstraints instead.")
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final /* synthetic */ void BasicTooltipBox(final PopupPositionProvider popupPositionProvider, final Function2 function2, final BasicTooltipState basicTooltipState, Modifier modifier, boolean z, boolean z2, final Function2 function22, Composer composer, final int i, final int i2) {
+        int i3;
+        final Object obj;
         int i4;
         boolean z3;
         int i5;
-        boolean z4;
-        Object obj2;
-        int i6;
+        Composer composer2;
+        final boolean z4;
         final boolean z5;
         ScopeUpdateScope endRestartGroup;
-        boolean z6;
-        final BasicTooltipState basicTooltipState2 = basicTooltipState;
         Composer startRestartGroup = composer.startRestartGroup(196062260);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BasicTooltipBox)N(positionProvider,tooltip,state,modifier,focusable,enableUserInput,content)82@3723L24,83@3752L453,102@4235L35,102@4211L59:BasicTooltip.kt#71ulvw");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BasicTooltipBox)N(positionProvider,tooltip,state,modifier,focusable,enableUserInput,content)124@4985L288:BasicTooltip.kt#71ulvw");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(popupPositionProvider) ? 4 : 2) | i;
         } else {
             i3 = i;
         }
         if ((i & 48) == 0) {
-            obj = function2;
-            i3 |= startRestartGroup.changedInstance(obj) ? 32 : 16;
-        } else {
-            obj = function2;
+            i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i3 |= startRestartGroup.changed(basicTooltipState2) ? 256 : 128;
+            i3 |= startRestartGroup.changed(basicTooltipState) ? 256 : 128;
         }
-        int i7 = i2 & 8;
-        if (i7 != 0) {
+        int i6 = i2 & 8;
+        if (i6 != 0) {
             i3 |= 3072;
         } else if ((i & 3072) == 0) {
-            companion = modifier;
-            i3 |= startRestartGroup.changed(companion) ? 2048 : 1024;
+            obj = modifier;
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
             i4 = i2 & 16;
             if (i4 == 0) {
                 i3 |= 24576;
@@ -144,136 +397,48 @@ public final class BasicTooltipKt {
                 if (i5 != 0) {
                     i3 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
                 } else if ((196608 & i) == 0) {
-                    z4 = z2;
-                    i3 |= startRestartGroup.changed(z4) ? 131072 : 65536;
-                    if ((1572864 & i) != 0) {
-                        obj2 = function22;
-                        i3 |= startRestartGroup.changedInstance(obj2) ? 1048576 : 524288;
-                    } else {
-                        obj2 = function22;
+                    i3 |= startRestartGroup.changed(z2) ? 131072 : 65536;
+                    if ((i & 1572864) == 0) {
+                        i3 |= startRestartGroup.changedInstance(function22) ? 1048576 : 524288;
                     }
-                    i6 = i3;
-                    if (startRestartGroup.shouldExecute((599187 & i6) == 599186, i6 & 1)) {
-                        startRestartGroup.skipToGroupEnd();
-                        z5 = z4;
+                    if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
+                        composer2 = startRestartGroup;
+                        composer2.skipToGroupEnd();
+                        z4 = z3;
+                        z5 = z2;
                     } else {
-                        if (i7 != 0) {
-                            companion = Modifier.Companion;
-                        }
-                        boolean z7 = i4 != 0 ? true : z3;
-                        if (i5 != 0) {
-                            z4 = true;
-                        }
+                        Modifier.Companion companion = i6 != 0 ? Modifier.Companion : obj;
+                        boolean z6 = i4 != 0 ? true : z3;
+                        boolean z7 = i5 != 0 ? true : z2;
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(196062260, i6, -1, "androidx.compose.foundation.BasicTooltipBox (BasicTooltip.kt:81)");
+                            ComposerKt.traceEventStart(196062260, i3, -1, "androidx.compose.foundation.BasicTooltipBox (BasicTooltip.kt:123)");
                         }
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
-                        Object rememberedValue = startRestartGroup.rememberedValue();
-                        if (rememberedValue == Composer.Companion.getEmpty()) {
-                            rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
-                            startRestartGroup.updateRememberedValue(rememberedValue);
-                        }
-                        CoroutineScope coroutineScope = (CoroutineScope) rememberedValue;
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
-                        MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
-                        int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                        CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, Modifier.Companion);
-                        Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
-                        if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                            ComposablesKt.invalidApplier();
-                        }
-                        startRestartGroup.startReusableNode();
-                        if (startRestartGroup.getInserting()) {
-                            startRestartGroup.createNode(constructor);
-                        } else {
-                            startRestartGroup.useNode();
-                        }
-                        Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
-                        BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833338756, "C94@4037L162:BasicTooltip.kt#71ulvw");
-                        if (!basicTooltipState.isVisible()) {
-                            z3 = z7;
-                            z6 = false;
-                            startRestartGroup.startReplaceGroup(1829588468);
-                        } else {
-                            startRestartGroup.startReplaceGroup(1833353604);
-                            ComposerKt.sourceInformation(startRestartGroup, "85@3801L216");
-                            int i8 = i6 >> 3;
-                            z6 = false;
-                            TooltipPopup(popupPositionProvider, basicTooltipState, coroutineScope, z7, obj, startRestartGroup, (i6 & 14) | (i8 & 112) | (i8 & 7168) | ((i6 << 9) & 57344));
-                            z3 = z7;
-                            startRestartGroup = startRestartGroup;
-                        }
-                        startRestartGroup.endReplaceGroup();
-                        int i9 = i6 >> 3;
-                        int i10 = ((i6 >> 15) & 14) | (i9 & 112) | (i9 & 896) | ((i6 >> 9) & 7168);
-                        basicTooltipState2 = basicTooltipState;
-                        Modifier modifier2 = companion;
-                        boolean z8 = z4;
-                        WrappedAnchor(z8, basicTooltipState2, modifier2, obj2, startRestartGroup, i10, 0);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        startRestartGroup.endNode();
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -562703369, "CC(remember):BasicTooltip.kt#9igjgp");
-                        boolean z9 = (i6 & 896) != 256 ? z6 : true;
-                        Object rememberedValue2 = startRestartGroup.rememberedValue();
-                        if (z9 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                            rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda6
-                                @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj3) {
-                                    DisposableEffectResult BasicTooltipBox$lambda$1$0;
-                                    BasicTooltipBox$lambda$1$0 = BasicTooltipKt.BasicTooltipBox$lambda$1$0(BasicTooltipState.this, (DisposableEffectScope) obj3);
-                                    return BasicTooltipBox$lambda$1$0;
-                                }
-                            };
-                            startRestartGroup.updateRememberedValue(rememberedValue2);
-                        }
-                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        EffectsKt.DisposableEffect(basicTooltipState2, (Function1) rememberedValue2, startRestartGroup, (i6 >> 6) & 14);
+                        composer2 = startRestartGroup;
+                        BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, companion, z6, z7, false, function22, composer2, (i3 & 14) | 1572864 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | ((i3 << 3) & 29360128), 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
-                        z5 = z8;
-                        companion = modifier2;
+                        obj = companion;
+                        z4 = z6;
+                        z5 = z7;
                     }
-                    final boolean z10 = z3;
-                    endRestartGroup = startRestartGroup.endRestartGroup();
+                    endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup == null) {
-                        final BasicTooltipState basicTooltipState3 = basicTooltipState2;
-                        final Modifier modifier3 = companion;
-                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda7
+                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda9
                             @Override // kotlin.jvm.functions.Function2
-                            public final Object invoke(Object obj3, Object obj4) {
-                                return BasicTooltipKt.BasicTooltipBox$lambda$2(PopupPositionProvider.this, function2, basicTooltipState3, modifier3, z10, z5, function22, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                            public final Object invoke(Object obj2, Object obj3) {
+                                return BasicTooltipKt.BasicTooltipBox$lambda$3(PopupPositionProvider.this, function2, basicTooltipState, obj, z4, z5, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                             }
                         });
                         return;
                     }
                     return;
                 }
-                z4 = z2;
-                if ((1572864 & i) != 0) {
+                if ((i & 1572864) == 0) {
                 }
-                i6 = i3;
-                if (startRestartGroup.shouldExecute((599187 & i6) == 599186, i6 & 1)) {
+                if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
                 }
-                final boolean z102 = z3;
-                endRestartGroup = startRestartGroup.endRestartGroup();
+                endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup == null) {
                 }
             }
@@ -281,18 +446,15 @@ public final class BasicTooltipKt {
             i5 = i2 & 32;
             if (i5 != 0) {
             }
-            z4 = z2;
-            if ((1572864 & i) != 0) {
+            if ((i & 1572864) == 0) {
             }
-            i6 = i3;
-            if (startRestartGroup.shouldExecute((599187 & i6) == 599186, i6 & 1)) {
+            if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
             }
-            final boolean z1022 = z3;
-            endRestartGroup = startRestartGroup.endRestartGroup();
+            endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
             }
         }
-        companion = modifier;
+        obj = modifier;
         i4 = i2 & 16;
         if (i4 == 0) {
         }
@@ -300,22 +462,31 @@ public final class BasicTooltipKt {
         i5 = i2 & 32;
         if (i5 != 0) {
         }
-        z4 = z2;
-        if ((1572864 & i) != 0) {
+        if ((i & 1572864) == 0) {
         }
-        i6 = i3;
-        if (startRestartGroup.shouldExecute((599187 & i6) == 599186, i6 & 1)) {
+        if (startRestartGroup.shouldExecute((599187 & i3) == 599186, i3 & 1)) {
         }
-        final boolean z10222 = z3;
-        endRestartGroup = startRestartGroup.endRestartGroup();
+        endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {
         }
     }
 
-    private static final void WrappedAnchor(final boolean z, final BasicTooltipState basicTooltipState, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01a0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private static final void WrappedAnchor(final boolean z, final BasicTooltipState basicTooltipState, final boolean z2, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         int i3;
-        Composer startRestartGroup = composer.startRestartGroup(1381511093);
-        ComposerKt.sourceInformation(startRestartGroup, "C(WrappedAnchor)N(enableUserInput,state,modifier,content)113@4506L24,114@4576L7,115@4588L212:BasicTooltip.kt#71ulvw");
+        Modifier.Companion companion;
+        ScopeUpdateScope endRestartGroup;
+        Composer startRestartGroup = composer.startRestartGroup(423692761);
+        ComposerKt.sourceInformation(startRestartGroup, "C(WrappedAnchor)N(enableUserInput,state,propagateMinConstraints,modifier,content)145@5547L24,146@5617L7,147@5629L272:BasicTooltip.kt#71ulvw");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(z) ? 4 : 2) | i;
         } else {
@@ -324,80 +495,95 @@ public final class BasicTooltipKt {
         if ((i & 48) == 0) {
             i3 |= startRestartGroup.changed(basicTooltipState) ? 32 : 16;
         }
-        int i4 = i2 & 4;
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changed(z2) ? 256 : 128;
+        }
+        int i4 = i2 & 8;
         if (i4 != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i3 |= startRestartGroup.changed(modifier) ? 256 : 128;
-        }
-        if ((i & 3072) == 0) {
-            i3 |= startRestartGroup.changedInstance(function2) ? 2048 : 1024;
-        }
-        if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
-            startRestartGroup.skipToGroupEnd();
-        } else {
-            if (i4 != 0) {
-                modifier = Modifier.Companion;
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
+            companion = modifier;
+            i3 |= startRestartGroup.changed(companion) ? 2048 : 1024;
+            if ((i & 24576) == 0) {
+                i3 |= startRestartGroup.changedInstance(function2) ? 16384 : 8192;
             }
-            if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1381511093, i3, -1, "androidx.compose.foundation.WrappedAnchor (BasicTooltip.kt:112)");
-            }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
-            Object rememberedValue = startRestartGroup.rememberedValue();
-            if (rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
-                startRestartGroup.updateRememberedValue(rememberedValue);
-            }
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier anchorSemantics = anchorSemantics(handleGestures(modifier, z, basicTooltipState), BasicTooltipStrings.INSTANCE.label(startRestartGroup, 6), z, basicTooltipState, (CoroutineScope) rememberedValue);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
-            MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
-            int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-            CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, anchorSemantics);
-            Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
-            if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                ComposablesKt.invalidApplier();
-            }
-            startRestartGroup.startReusableNode();
-            if (startRestartGroup.getInserting()) {
-                startRestartGroup.createNode(constructor);
+            if (startRestartGroup.shouldExecute((i3 & 9363) == 9362, i3 & 1)) {
+                startRestartGroup.skipToGroupEnd();
             } else {
-                startRestartGroup.useNode();
-            }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
-            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -529306613, "C121@4785L9:BasicTooltip.kt#71ulvw");
-            function2.invoke(startRestartGroup, Integer.valueOf((i3 >> 9) & 14));
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            startRestartGroup.endNode();
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventEnd();
-            }
-        }
-        final Modifier modifier2 = modifier;
-        ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
-        if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda4
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(Object obj, Object obj2) {
-                    return BasicTooltipKt.WrappedAnchor$lambda$1(z, basicTooltipState, modifier2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                if (i4 != 0) {
+                    companion = Modifier.Companion;
                 }
-            });
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventStart(423692761, i3, -1, "androidx.compose.foundation.WrappedAnchor (BasicTooltip.kt:144)");
+                }
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)616@28039L68:Effects.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
+                Object rememberedValue = startRestartGroup.rememberedValue();
+                if (rememberedValue == Composer.Companion.getEmpty()) {
+                    rememberedValue = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
+                    startRestartGroup.updateRememberedValue(rememberedValue);
+                }
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                Modifier anchorSemantics = anchorSemantics(handleGestures(companion, z, basicTooltipState), BasicTooltipStrings.INSTANCE.label(startRestartGroup, 6), z, basicTooltipState, (CoroutineScope) rememberedValue);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
+                MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), z2);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
+                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+                CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
+                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, anchorSemantics);
+                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
+                if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                    ComposablesKt.invalidApplier();
+                }
+                startRestartGroup.startReusableNode();
+                if (startRestartGroup.getInserting()) {
+                    startRestartGroup.createNode(constructor);
+                } else {
+                    startRestartGroup.useNode();
+                }
+                Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
+                BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821868185, "C154@5886L9:BasicTooltip.kt#71ulvw");
+                function2.invoke(startRestartGroup, Integer.valueOf((i3 >> 12) & 14));
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                startRestartGroup.endNode();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventEnd();
+                }
+            }
+            final Modifier modifier2 = companion;
+            endRestartGroup = startRestartGroup.endRestartGroup();
+            if (endRestartGroup == null) {
+                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function2
+                    public final Object invoke(Object obj, Object obj2) {
+                        return BasicTooltipKt.WrappedAnchor$lambda$1(z, basicTooltipState, z2, modifier2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    }
+                });
+                return;
+            }
+            return;
+        }
+        companion = modifier;
+        if ((i & 24576) == 0) {
+        }
+        if (startRestartGroup.shouldExecute((i3 & 9363) == 9362, i3 & 1)) {
+        }
+        final Modifier modifier22 = companion;
+        endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup == null) {
         }
     }
 
@@ -405,7 +591,7 @@ public final class BasicTooltipKt {
         Object obj;
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-1882542163);
-        ComposerKt.sourceInformation(startRestartGroup, "C(TooltipPopup)N(positionProvider,state,scope,focusable,content)134@5099L13,137@5201L109,143@5379L251,135@5117L513:BasicTooltip.kt#71ulvw");
+        ComposerKt.sourceInformation(startRestartGroup, "C(TooltipPopup)N(positionProvider,state,scope,focusable,content)167@6200L13,170@6302L109,176@6480L251,168@6218L513:BasicTooltip.kt#71ulvw");
         if ((i & 6) == 0) {
             obj = popupPositionProvider;
             i2 = (startRestartGroup.changed(obj) ? 4 : 2) | i;
@@ -429,14 +615,14 @@ public final class BasicTooltipKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1882542163, i2, -1, "androidx.compose.foundation.TooltipPopup (BasicTooltip.kt:133)");
+                ComposerKt.traceEventStart(-1882542163, i2, -1, "androidx.compose.foundation.TooltipPopup (BasicTooltip.kt:166)");
             }
             final String description = BasicTooltipStrings.INSTANCE.description(startRestartGroup, 6);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -941776166, "CC(remember):BasicTooltip.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(coroutineScope) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda1
+                rememberedValue = new Function0() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit TooltipPopup$lambda$0$0;
@@ -447,7 +633,7 @@ public final class BasicTooltipKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidPopup_androidKt.Popup(obj, (Function0) rememberedValue, new PopupProperties(z, false, false, false, 14, (DefaultConstructorMarker) null), ComposableLambdaKt.rememberComposableLambda(916917707, true, new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda2
+            AndroidPopup_androidKt.Popup(obj, (Function0) rememberedValue, new PopupProperties(z, false, false, false, false, 30, (DefaultConstructorMarker) null), ComposableLambdaKt.rememberComposableLambda(916917707, true, new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     return BasicTooltipKt.TooltipPopup$lambda$1(description, function2, (Composer) obj2, ((Integer) obj3).intValue());
@@ -459,7 +645,7 @@ public final class BasicTooltipKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda3
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     return BasicTooltipKt.TooltipPopup$lambda$2(PopupPositionProvider.this, basicTooltipState, coroutineScope, z, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
@@ -478,19 +664,19 @@ public final class BasicTooltipKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TooltipPopup$lambda$1(final String str, Function2 function2, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C146@5452L128,144@5389L235:BasicTooltip.kt#71ulvw");
+        ComposerKt.sourceInformation(composer, "C179@6553L128,177@6490L235:BasicTooltip.kt#71ulvw");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(916917707, i, -1, "androidx.compose.foundation.TooltipPopup.<anonymous> (BasicTooltip.kt:144)");
+                ComposerKt.traceEventStart(916917707, i, -1, "androidx.compose.foundation.TooltipPopup.<anonymous> (BasicTooltip.kt:177)");
             }
             Modifier.Companion companion = Modifier.Companion;
             ComposerKt.sourceInformationMarkerStart(composer, 689623211, "CC(remember):BasicTooltip.kt#9igjgp");
             boolean changed = composer.changed(str);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda0
+                rememberedValue = new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit TooltipPopup$lambda$1$0$0;
@@ -504,12 +690,12 @@ public final class BasicTooltipKt {
             Modifier semantics$default = SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, semantics$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -519,15 +705,15 @@ public final class BasicTooltipKt {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1506788405, "C151@5605L9:BasicTooltip.kt#71ulvw");
+            ComposerKt.sourceInformationMarkerStart(composer, 1506788405, "C184@6706L9:BasicTooltip.kt#71ulvw");
             function2.invoke(composer, 0);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -544,7 +730,7 @@ public final class BasicTooltipKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit TooltipPopup$lambda$1$0$0(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m6792setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6765getAssertive0phEisY());
+        SemanticsPropertiesKt.m7396setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m7369getAssertive0phEisY());
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }
@@ -553,8 +739,8 @@ public final class BasicTooltipKt {
         return z ? SuspendingPointerInputFilterKt.pointerInput(SuspendingPointerInputFilterKt.pointerInput(modifier, basicTooltipState, new PointerInputEventHandler() { // from class: androidx.compose.foundation.BasicTooltipKt$handleGestures$1
 
             /* compiled from: BasicTooltip.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1", f = "BasicTooltip.kt", i = {}, l = {162}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+            @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1", f = "BasicTooltip.kt", i = {}, l = {DownloaderService.STATUS_WAITING_FOR_NETWORK}, m = "invokeSuspend", n = {}, s = {}, v = 1)
             /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
             static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -584,8 +770,8 @@ public final class BasicTooltipKt {
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: BasicTooltip.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1", f = "BasicTooltip.kt", i = {0, 0, 1, 1}, l = {166, 169, 175}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "pass", "$this$awaitEachGesture", "pass"}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 1)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1", f = "BasicTooltip.kt", i = {0, 0, 1, 1}, l = {199, ComposerKt.compositionLocalMapKey, 208}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "pass", "$this$awaitEachGesture", "pass"}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 1)
                 /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
                 public static final class C00011 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -670,8 +856,8 @@ public final class BasicTooltipKt {
                             awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
                             ResultKt.throwOnFailure(obj);
                         }
-                        int m6088getTypeT8wyACA = ((PointerInputChange) obj).m6088getTypeT8wyACA();
-                        if (PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6163getTouchT8wyACA()) || PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6162getStylusT8wyACA())) {
+                        int m6688getTypeT8wyACA = ((PointerInputChange) obj).m6688getTypeT8wyACA();
+                        if (PointerType.m6758equalsimpl0(m6688getTypeT8wyACA, PointerType.Companion.m6765getTouchT8wyACA()) || PointerType.m6758equalsimpl0(m6688getTypeT8wyACA, PointerType.Companion.m6764getStylusT8wyACA())) {
                             this.L$0 = awaitPointerEventScope;
                             this.L$1 = pointerEventPass;
                             this.label = 2;
@@ -688,8 +874,8 @@ public final class BasicTooltipKt {
 
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* compiled from: BasicTooltip.kt */
-                    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1", f = "BasicTooltip.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_AC4}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+                    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1", f = "BasicTooltip.kt", i = {}, l = {205}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                     /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1  reason: invalid class name and collision with other inner class name */
                     /* loaded from: classes.dex */
                     public static final class C00021 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -759,8 +945,8 @@ public final class BasicTooltipKt {
         }), basicTooltipState, new PointerInputEventHandler() { // from class: androidx.compose.foundation.BasicTooltipKt$handleGestures$2
 
             /* compiled from: BasicTooltip.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1", f = "BasicTooltip.kt", i = {}, l = {186}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+            @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1", f = "BasicTooltip.kt", i = {}, l = {219}, m = "invokeSuspend", n = {}, s = {}, v = 1)
             /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1  reason: invalid class name */
             /* loaded from: classes.dex */
             static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -790,8 +976,8 @@ public final class BasicTooltipKt {
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: BasicTooltip.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1", f = "BasicTooltip.kt", i = {0, 0}, l = {DownloaderService.STATUS_PENDING}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "pass"}, s = {"L$0", "L$1"}, v = 1)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1", f = "BasicTooltip.kt", i = {0, 0}, l = {223}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "pass"}, s = {"L$0", "L$1"}, v = 1)
                 /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
                 public static final class C00031 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -873,15 +1059,15 @@ public final class BasicTooltipKt {
                             r5 = 0
                             java.lang.Object r4 = r4.get(r5)
                             androidx.compose.ui.input.pointer.PointerInputChange r4 = (androidx.compose.ui.input.pointer.PointerInputChange) r4
-                            int r4 = r4.m6088getTypeT8wyACA()
+                            int r4 = r4.m6688getTypeT8wyACA()
                             androidx.compose.ui.input.pointer.PointerType$Companion r5 = androidx.compose.ui.input.pointer.PointerType.Companion
-                            int r5 = r5.m6161getMouseT8wyACA()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6156equalsimpl0(r4, r5)
+                            int r5 = r5.m6763getMouseT8wyACA()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6758equalsimpl0(r4, r5)
                             if (r4 == 0) goto L29
-                            int r12 = r12.m6027getType7fucELk()
+                            int r12 = r12.m6618getType7fucELk()
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6038getEnter7fucELk()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6034equalsimpl0(r12, r4)
+                            int r4 = r4.m6629getEnter7fucELk()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6625equalsimpl0(r12, r4)
                             if (r4 == 0) goto L7a
                             kotlinx.coroutines.CoroutineScope r5 = r11.$$this$coroutineScope
                             androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1$1 r12 = new androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1$1
@@ -897,8 +1083,8 @@ public final class BasicTooltipKt {
                             goto L29
                         L7a:
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6039getExit7fucELk()
-                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6034equalsimpl0(r12, r4)
+                            int r4 = r4.m6630getExit7fucELk()
+                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6625equalsimpl0(r12, r4)
                             if (r12 == 0) goto L29
                             androidx.compose.foundation.BasicTooltipState r12 = r11.$state
                             r12.dismiss()
@@ -909,8 +1095,8 @@ public final class BasicTooltipKt {
 
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* compiled from: BasicTooltip.kt */
-                    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1$1", f = "BasicTooltip.kt", i = {}, l = {DownloaderService.STATUS_WAITING_FOR_NETWORK}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+                    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1$1", f = "BasicTooltip.kt", i = {}, l = {228}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                     /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$2$1$1$1  reason: invalid class name and collision with other inner class name */
                     /* loaded from: classes.dex */
                     public static final class C00041 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -981,7 +1167,7 @@ public final class BasicTooltipKt {
     }
 
     private static final Modifier anchorSemantics(Modifier modifier, final String str, boolean z, final BasicTooltipState basicTooltipState, final CoroutineScope coroutineScope) {
-        return z ? SemanticsModifierKt.semantics(modifier, true, new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda8
+        return z ? SemanticsModifierKt.semantics(modifier, true, new Function1() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return BasicTooltipKt.anchorSemantics$lambda$0(str, coroutineScope, basicTooltipState, (SemanticsPropertyReceiver) obj);
@@ -991,7 +1177,7 @@ public final class BasicTooltipKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit anchorSemantics$lambda$0(String str, final CoroutineScope coroutineScope, final BasicTooltipState basicTooltipState, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.onLongClick(semanticsPropertyReceiver, str, new Function0() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda5
+        SemanticsPropertiesKt.onLongClick(semanticsPropertyReceiver, str, new Function0() { // from class: androidx.compose.foundation.BasicTooltipKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean anchorSemantics$lambda$0$0;
@@ -1009,7 +1195,7 @@ public final class BasicTooltipKt {
     }
 
     public static final BasicTooltipState rememberBasicTooltipState(boolean z, boolean z2, MutatorMutex mutatorMutex, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1123859613, "C(rememberBasicTooltipState)N(initialIsVisible,isPersistent,mutatorMutex)245@9396L216:BasicTooltip.kt#71ulvw");
+        ComposerKt.sourceInformationMarkerStart(composer, 1123859613, "C(rememberBasicTooltipState)N(initialIsVisible,isPersistent,mutatorMutex)278@10497L216:BasicTooltip.kt#71ulvw");
         if ((i2 & 1) != 0) {
             z = false;
         }
@@ -1020,7 +1206,7 @@ public final class BasicTooltipKt {
             mutatorMutex = BasicTooltipDefaults.INSTANCE.getGlobalMutatorMutex();
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1123859613, i, -1, "androidx.compose.foundation.rememberBasicTooltipState (BasicTooltip.kt:245)");
+            ComposerKt.traceEventStart(1123859613, i, -1, "androidx.compose.foundation.rememberBasicTooltipState (BasicTooltip.kt:278)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 1992303573, "CC(remember):BasicTooltip.kt#9igjgp");
         boolean z3 = ((((i & 112) ^ 48) > 32 && composer.changed(z2)) || (i & 48) == 32) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(mutatorMutex)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);

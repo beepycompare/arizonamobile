@@ -4,23 +4,28 @@ import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzdv extends zzeq {
-    final /* synthetic */ Runnable zza;
-    final /* synthetic */ zzfb zzb;
+public final class zzdv extends zzeo {
+    final /* synthetic */ zzcm zza;
+    final /* synthetic */ zzez zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzdv(zzfb zzfbVar, Runnable runnable) {
-        super(zzfbVar, true);
-        this.zza = runnable;
-        Objects.requireNonNull(zzfbVar);
-        this.zzb = zzfbVar;
+    public zzdv(zzez zzezVar, zzcm zzcmVar) {
+        super(zzezVar, true);
+        this.zza = zzcmVar;
+        Objects.requireNonNull(zzezVar);
+        this.zzb = zzezVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     final void zza() throws RemoteException {
-        ((zzcr) Preconditions.checkNotNull(this.zzb.zzQ())).retrieveAndUploadBatches(new zzdu(this, this.zza));
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zzS())).getCachedAppInstanceId(this.zza);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzeo
+    protected final void zzb() {
+        this.zza.zzb(null);
     }
 }

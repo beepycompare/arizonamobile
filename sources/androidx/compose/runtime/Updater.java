@@ -10,29 +10,29 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Composer.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006JH\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2.\b\b\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u00110\f¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011H\u0087\b¢\u0006\u0004\b\u0012\u0010\u0013JI\u0010\t\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142,\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u0011H\u0014¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u0012\u0010\u0015JH\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2.\b\b\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u00110\f¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011H\u0087\b¢\u0006\u0004\b\u0017\u0010\u0013JI\u0010\u0016\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142,\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u0011H\u0014¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u0017\u0010\u0015J&\u0010\u0018\u001a\u00020\n2\u0017\u0010\r\u001a\u0013\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00020\n0\u0019¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001a\u0010\u001bJ:\u0010\u0018\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142\u001d\u0010\r\u001a\u0019\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u0002H\u0014\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001a\u0010\u0015J&\u0010\u001c\u001a\u00020\n2\u0017\u0010\r\u001a\u0013\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00020\n0\u0019¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001d\u0010\u001bJ\u0013\u0010\u001e\u001a\u00020\u001f2\b\u0010 \u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010!\u001a\u00020\fHÖ\u0001J\t\u0010\"\u001a\u00020#HÖ\u0001R\u0016\u0010\u0003\u001a\u00020\u00048\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0007\u0010\b\u0088\u0001\u0003\u0092\u0001\u00020\u0004¨\u0006$"}, d2 = {"Landroidx/compose/runtime/Updater;", ExifInterface.GPS_DIRECTION_TRUE, "", "composer", "Landroidx/compose/runtime/Composer;", "constructor-impl", "(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;", "getComposer$annotations", "()V", "set", "", "value", "", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "set-impl", "(Landroidx/compose/runtime/Composer;ILkotlin/jvm/functions/Function2;)V", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "update", "update-impl", "init", "Lkotlin/Function1;", "init-impl", "(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function1;)V", "reconcile", "reconcile-impl", "equals", "", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006JH\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2.\b\b\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u00110\f¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011H\u0087\b¢\u0006\u0004\b\u0012\u0010\u0013JI\u0010\t\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142,\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u0011H\u0014¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u0012\u0010\u0015JH\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2.\b\b\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u00110\f¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011H\u0087\b¢\u0006\u0004\b\u0017\u0010\u0013JI\u0010\u0016\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142,\u0010\r\u001a(\u0012\u0004\u0012\u00028\u0000\u0012\u0013\u0012\u0011H\u0014¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u0017\u0010\u0015J&\u0010\u0018\u001a\u00020\n2\u0017\u0010\r\u001a\u0013\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00020\n0\u0019¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001a\u0010\u001bJ:\u0010\u0018\u001a\u00020\n\"\u0004\b\u0001\u0010\u00142\u0006\u0010\u000b\u001a\u0002H\u00142\u001d\u0010\r\u001a\u0019\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u0002H\u0014\u0012\u0004\u0012\u00020\n0\u000e¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001a\u0010\u0015J&\u0010\u001c\u001a\u00020\n2\u0017\u0010\r\u001a\u0013\u0012\u0004\u0012\u00028\u0000\u0012\u0004\u0012\u00020\n0\u0019¢\u0006\u0002\b\u0011¢\u0006\u0004\b\u001d\u0010\u001bJ\u0014\u0010\u001e\u001a\u00020\u001f2\b\u0010 \u001a\u0004\u0018\u00010\u0002HÖ\u0083\u0004J\n\u0010!\u001a\u00020\fHÖ\u0081\u0004J\n\u0010\"\u001a\u00020#HÖ\u0081\u0004R\u0016\u0010\u0003\u001a\u00020\u00048\u0000X\u0081\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u0007\u0010\b\u0088\u0001\u0003\u0092\u0001\u00020\u0004¨\u0006$"}, d2 = {"Landroidx/compose/runtime/Updater;", ExifInterface.GPS_DIRECTION_TRUE, "", "composer", "Landroidx/compose/runtime/Composer;", "constructor-impl", "(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;", "getComposer$annotations", "()V", "set", "", "value", "", "block", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "set-impl", "(Landroidx/compose/runtime/Composer;ILkotlin/jvm/functions/Function2;)V", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "update", "update-impl", "init", "Lkotlin/Function1;", "init-impl", "(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function1;)V", "reconcile", "reconcile-impl", "equals", "", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class Updater<T> {
     private final Composer composer;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Updater m4040boximpl(Composer composer) {
+    public static final /* synthetic */ Updater m4466boximpl(Composer composer) {
         return new Updater(composer);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Composer m4041constructorimpl(Composer composer) {
+    public static <T> Composer m4467constructorimpl(Composer composer) {
         return composer;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4042equalsimpl(Composer composer, Object obj) {
-        return (obj instanceof Updater) && Intrinsics.areEqual(composer, ((Updater) obj).m4053unboximpl());
+    public static boolean m4468equalsimpl(Composer composer, Object obj) {
+        return (obj instanceof Updater) && Intrinsics.areEqual(composer, ((Updater) obj).m4479unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4043equalsimpl0(Composer composer, Composer composer2) {
+    public static final boolean m4469equalsimpl0(Composer composer, Composer composer2) {
         return Intrinsics.areEqual(composer, composer2);
     }
 
@@ -40,29 +40,29 @@ public final class Updater<T> {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4044hashCodeimpl(Composer composer) {
+    public static int m4470hashCodeimpl(Composer composer) {
         return composer.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4050toStringimpl(Composer composer) {
+    public static String m4476toStringimpl(Composer composer) {
         return "Updater(composer=" + composer + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4042equalsimpl(this.composer, obj);
+        return m4468equalsimpl(this.composer, obj);
     }
 
     public int hashCode() {
-        return m4044hashCodeimpl(this.composer);
+        return m4470hashCodeimpl(this.composer);
     }
 
     public String toString() {
-        return m4050toStringimpl(this.composer);
+        return m4476toStringimpl(this.composer);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Composer m4053unboximpl() {
+    public final /* synthetic */ Composer m4479unboximpl() {
         return this.composer;
     }
 
@@ -72,7 +72,7 @@ public final class Updater<T> {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Boxes more than than the generic overload")
     /* renamed from: set-impl  reason: not valid java name */
-    public static final /* synthetic */ void m4048setimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
+    public static final /* synthetic */ void m4474setimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
         if (composer.getInserting() || !Intrinsics.areEqual(composer.rememberedValue(), Integer.valueOf(i))) {
             composer.updateRememberedValue(Integer.valueOf(i));
             composer.apply(Integer.valueOf(i), function2);
@@ -80,7 +80,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final <V> void m4049setimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
+    public static final <V> void m4475setimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
         if (composer.getInserting() || !Intrinsics.areEqual(composer.rememberedValue(), v)) {
             composer.updateRememberedValue(v);
             composer.apply(v, function2);
@@ -89,7 +89,7 @@ public final class Updater<T> {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Boxes more than the generic overload")
     /* renamed from: update-impl  reason: not valid java name */
-    public static final /* synthetic */ void m4051updateimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
+    public static final /* synthetic */ void m4477updateimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
         boolean inserting = composer.getInserting();
         if (inserting || !Intrinsics.areEqual(composer.rememberedValue(), Integer.valueOf(i))) {
             composer.updateRememberedValue(Integer.valueOf(i));
@@ -101,7 +101,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    public static final <V> void m4052updateimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
+    public static final <V> void m4478updateimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
         boolean inserting = composer.getInserting();
         if (inserting || !Intrinsics.areEqual(composer.rememberedValue(), v)) {
             composer.updateRememberedValue(v);
@@ -113,7 +113,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: init-impl  reason: not valid java name */
-    public static final void m4046initimpl(Composer composer, final Function1<? super T, Unit> function1) {
+    public static final void m4472initimpl(Composer composer, final Function1<? super T, Unit> function1) {
         if (composer.getInserting()) {
             composer.apply(Unit.INSTANCE, new Function2() { // from class: androidx.compose.runtime.Updater$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
@@ -131,14 +131,14 @@ public final class Updater<T> {
     }
 
     /* renamed from: init-impl  reason: not valid java name */
-    public static final <V> void m4045initimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
+    public static final <V> void m4471initimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
         if (composer.getInserting()) {
             composer.apply(v, function2);
         }
     }
 
     /* renamed from: reconcile-impl  reason: not valid java name */
-    public static final void m4047reconcileimpl(Composer composer, final Function1<? super T, Unit> function1) {
+    public static final void m4473reconcileimpl(Composer composer, final Function1<? super T, Unit> function1) {
         composer.apply(Unit.INSTANCE, new Function2() { // from class: androidx.compose.runtime.Updater$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {

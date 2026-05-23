@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import com.squareup.picasso.Picasso;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 abstract class Action<T> {
     boolean cancelled;
     final Drawable errorDrawable;
@@ -26,7 +26,7 @@ abstract class Action<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void error(Exception exc);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class RequestWeakReference<M> extends WeakReference<M> {
         final Action action;
 

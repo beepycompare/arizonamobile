@@ -7,6 +7,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
@@ -15,8 +16,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.internal.CombineKt;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: Zip.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 1, 0}, xi = 176)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7", f = "Zip.kt", i = {}, l = {304}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 2, 0}, xi = 176)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7", f = "Zip.kt", i = {0}, l = {304}, m = "invokeSuspend", n = {"$this$safeFlow"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda implements Function2<FlowCollector<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Flow<T>[] $flowArray;
@@ -50,7 +51,7 @@ public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda imp
 
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* compiled from: Zip.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1<T> implements Function0<T[]> {
@@ -70,8 +71,8 @@ public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda imp
 
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* compiled from: Zip.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0006\b\u0001\u0010\u0003\u0018\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00042\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u0002H\u00030\u0006H\n"}, d2 = {"<anonymous>", "", "R", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;", "it", ""}, k = 3, mv = {2, 1, 0}, xi = 176)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7$2", f = "Zip.kt", i = {}, l = {304}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0006\b\u0001\u0010\u0003\u0018\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00042\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u0002H\u00030\u0006H\n"}, d2 = {"<anonymous>", "", "R", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;", "it", ""}, k = 3, mv = {2, 2, 0}, xi = 176)
+    @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7$2", f = "Zip.kt", i = {0, 0}, l = {304}, m = "invokeSuspend", n = {"$this$combineInternal", "it"}, s = {"L$0", "L$1"}, v = 1)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$7$2  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass2<T> extends SuspendLambda implements Function3<FlowCollector<? super R>, T[], Continuation<? super Unit>, Object> {
@@ -99,14 +100,16 @@ public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda imp
         /* JADX WARN: Multi-variable type inference failed */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
+            FlowCollector flowCollector = (FlowCollector) this.L$0;
+            Object[] objArr = (Object[]) this.L$1;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                Function3<FlowCollector<? super R>, T[], Continuation<? super Unit>, Object> function3 = this.$transform;
-                this.L$0 = null;
+                this.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                this.L$1 = SpillingKt.nullOutSpilledVariable(objArr);
                 this.label = 1;
-                if (function3.invoke((FlowCollector) this.L$0, (Object[]) this.L$1, this) == coroutine_suspended) {
+                if (this.$transform.invoke(flowCollector, objArr, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -126,6 +129,7 @@ public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda imp
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        FlowCollector flowCollector = (FlowCollector) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -133,8 +137,9 @@ public final class FlowKt__ZipKt$combineTransform$7<R> extends SuspendLambda imp
             Flow<T>[] flowArr = this.$flowArray;
             Intrinsics.needClassReification();
             Intrinsics.needClassReification();
+            this.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector);
             this.label = 1;
-            if (CombineKt.combineInternal((FlowCollector) this.L$0, flowArr, new AnonymousClass1(this.$flowArray), new AnonymousClass2(this.$transform, null), this) == coroutine_suspended) {
+            if (CombineKt.combineInternal(flowCollector, flowArr, new AnonymousClass1(this.$flowArray), new AnonymousClass2(this.$transform, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

@@ -38,8 +38,8 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SegmentedButtonDefaults {
     public static final int $stable = 0;
     public static final SegmentedButtonDefaults INSTANCE = new SegmentedButtonDefaults();
-    private static final float BorderWidth = OutlinedSegmentedButtonTokens.INSTANCE.m3596getOutlineWidthD9Ej5fM();
-    private static final float IconSize = OutlinedSegmentedButtonTokens.INSTANCE.m3595getIconSizeD9Ej5fM();
+    private static final float BorderWidth = OutlinedSegmentedButtonTokens.INSTANCE.m4041getOutlineWidthD9Ej5fM();
+    private static final float IconSize = OutlinedSegmentedButtonTokens.INSTANCE.m4040getIconSizeD9Ej5fM();
     private static final PaddingValues ContentPadding = ButtonDefaults.INSTANCE.getTextButtonContentPadding();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -71,39 +71,39 @@ public final class SegmentedButtonDefaults {
     }
 
     /* renamed from: colors-XqyqHi0  reason: not valid java name */
-    public final SegmentedButtonColors m2459colorsXqyqHi0(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, Composer composer, int i, int i2, int i3) {
+    public final SegmentedButtonColors m2904colorsXqyqHi0(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, Composer composer, int i, int i2, int i3) {
         long j13;
         ComposerKt.sourceInformationMarkerStart(composer, 132526205, "C(colors)N(activeContainerColor:c#ui.graphics.Color,activeContentColor:c#ui.graphics.Color,activeBorderColor:c#ui.graphics.Color,inactiveContainerColor:c#ui.graphics.Color,inactiveContentColor:c#ui.graphics.Color,inactiveBorderColor:c#ui.graphics.Color,disabledActiveContainerColor:c#ui.graphics.Color,disabledActiveContentColor:c#ui.graphics.Color,disabledActiveBorderColor:c#ui.graphics.Color,disabledInactiveContainerColor:c#ui.graphics.Color,disabledInactiveContentColor:c#ui.graphics.Color,disabledInactiveBorderColor:c#ui.graphics.Color)530@23230L11:SegmentedButton.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
-        long m4808getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m4808getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
-        long m4808getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j7;
-        long m4808getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j8;
-        long m4808getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j9;
-        long m4808getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j10;
-        long m4808getUnspecified0d7_KjU11 = (i3 & 1024) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j11;
-        long m4808getUnspecified0d7_KjU12 = (i3 & 2048) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j12;
+        long m5384getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j4;
+        long m5384getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m5384getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j6;
+        long m5384getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j7;
+        long m5384getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j8;
+        long m5384getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j9;
+        long m5384getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j10;
+        long m5384getUnspecified0d7_KjU11 = (i3 & 1024) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j11;
+        long m5384getUnspecified0d7_KjU12 = (i3 & 2048) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j12;
         if (ComposerKt.isTraceInProgress()) {
-            j13 = m4808getUnspecified0d7_KjU;
+            j13 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(132526205, i, i2, "androidx.compose.material3.SegmentedButtonDefaults.colors (SegmentedButton.kt:530)");
         } else {
-            j13 = m4808getUnspecified0d7_KjU;
+            j13 = m5384getUnspecified0d7_KjU;
         }
-        SegmentedButtonColors m2444copy2qZNXz8 = getDefaultSegmentedButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2444copy2qZNXz8(j13, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m4808getUnspecified0d7_KjU6, m4808getUnspecified0d7_KjU7, m4808getUnspecified0d7_KjU8, m4808getUnspecified0d7_KjU9, m4808getUnspecified0d7_KjU10, m4808getUnspecified0d7_KjU11, m4808getUnspecified0d7_KjU12);
+        SegmentedButtonColors m2889copy2qZNXz8 = getDefaultSegmentedButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2889copy2qZNXz8(j13, m5384getUnspecified0d7_KjU2, m5384getUnspecified0d7_KjU3, m5384getUnspecified0d7_KjU4, m5384getUnspecified0d7_KjU5, m5384getUnspecified0d7_KjU6, m5384getUnspecified0d7_KjU7, m5384getUnspecified0d7_KjU8, m5384getUnspecified0d7_KjU9, m5384getUnspecified0d7_KjU10, m5384getUnspecified0d7_KjU11, m5384getUnspecified0d7_KjU12);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2444copy2qZNXz8;
+        return m2889copy2qZNXz8;
     }
 
     public final SegmentedButtonColors getDefaultSegmentedButtonColors$material3(ColorScheme colorScheme) {
         SegmentedButtonColors defaultSegmentedButtonColorsCached$material3 = colorScheme.getDefaultSegmentedButtonColorsCached$material3();
         if (defaultSegmentedButtonColorsCached$material3 == null) {
-            SegmentedButtonColors segmentedButtonColors = new SegmentedButtonColors(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedContainerColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            SegmentedButtonColors segmentedButtonColors = new SegmentedButtonColors(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getUnselectedLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getSelectedContainerColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedSegmentedButtonTokens.INSTANCE.getOutlineColor()), OutlinedSegmentedButtonTokens.INSTANCE.getDisabledOutlineOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultSegmentedButtonColorsCached$material3(segmentedButtonColors);
             return segmentedButtonColors;
         }
@@ -126,7 +126,7 @@ public final class SegmentedButtonDefaults {
     }
 
     /* renamed from: getBorderWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2460getBorderWidthD9Ej5fM() {
+    public final float m2905getBorderWidthD9Ej5fM() {
         return BorderWidth;
     }
 
@@ -161,7 +161,7 @@ public final class SegmentedButtonDefaults {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m2461getIconSizeD9Ej5fM() {
+    public final float m2906getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -184,7 +184,7 @@ public final class SegmentedButtonDefaults {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1273041460, i2, -1, "androidx.compose.material3.SegmentedButtonDefaults.ActiveIcon (SegmentedButton.kt:614)");
             }
-            IconKt.m2160Iconww6aTOc(Icons.Filled.INSTANCE.getCheck$material3(), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, IconSize), 0L, startRestartGroup, 48, 8);
+            IconKt.m2605Iconww6aTOc(Icons.Filled.INSTANCE.getCheck$material3(), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, IconSize), 0L, startRestartGroup, 48, 8);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -258,7 +258,7 @@ public final class SegmentedButtonDefaults {
                     if (function25 == null) {
                         startRestartGroup.startReplaceGroup(-1416314439);
                         ComposerKt.sourceInformation(startRestartGroup, "642@28274L7,646@28514L7,648@28564L47,638@28088L523");
-                        AnimatedVisibilityKt.AnimatedVisibility(z2, (Modifier) null, EnterExitTransitionKt.fadeIn$default(MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), 0.0f, 2, null).plus(EnterExitTransitionKt.m85scaleInL8ZKhE(MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6), 0.0f, TransformOriginKt.TransformOrigin(0.0f, 1.0f))), ExitTransition.Companion.getNone(), (String) null, ComposableLambdaKt.rememberComposableLambda(2059591811, true, new Function3<AnimatedVisibilityScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonDefaults$Icon$1
+                        AnimatedVisibilityKt.AnimatedVisibility(z2, (Modifier) null, EnterExitTransitionKt.fadeIn$default(MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), 0.0f, 2, null).plus(EnterExitTransitionKt.m88scaleInL8ZKhE(MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, startRestartGroup, 6), 0.0f, TransformOriginKt.TransformOrigin(0.0f, 1.0f))), ExitTransition.Companion.getNone(), (String) null, ComposableLambdaKt.rememberComposableLambda(2059591811, true, new Function3<AnimatedVisibilityScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonDefaults$Icon$1
                             @Override // kotlin.jvm.functions.Function3
                             public /* bridge */ /* synthetic */ Unit invoke(AnimatedVisibilityScope animatedVisibilityScope, Composer composer2, Integer num) {
                                 invoke(animatedVisibilityScope, composer2, num.intValue());
@@ -356,15 +356,15 @@ public final class SegmentedButtonDefaults {
     }
 
     /* renamed from: borderStroke-l07J4OM$default  reason: not valid java name */
-    public static /* synthetic */ BorderStroke m2457borderStrokel07J4OM$default(SegmentedButtonDefaults segmentedButtonDefaults, long j, float f, int i, Object obj) {
+    public static /* synthetic */ BorderStroke m2902borderStrokel07J4OM$default(SegmentedButtonDefaults segmentedButtonDefaults, long j, float f, int i, Object obj) {
         if ((i & 2) != 0) {
             f = BorderWidth;
         }
-        return segmentedButtonDefaults.m2458borderStrokel07J4OM(j, f);
+        return segmentedButtonDefaults.m2903borderStrokel07J4OM(j, f);
     }
 
     /* renamed from: borderStroke-l07J4OM  reason: not valid java name */
-    public final BorderStroke m2458borderStrokel07J4OM(long j, float f) {
-        return BorderStrokeKt.m290BorderStrokecXLIe8U(f, j);
+    public final BorderStroke m2903borderStrokel07J4OM(long j, float f) {
+        return BorderStrokeKt.m314BorderStrokecXLIe8U(f, j);
     }
 }

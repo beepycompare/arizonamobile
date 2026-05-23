@@ -671,7 +671,7 @@ public final class DownloadTaskExtensionKt {
                 Intrinsics.checkParameterIsNotNull(endCause, "<anonymous parameter 1>");
                 Intrinsics.checkParameterIsNotNull(listener1Model, "<anonymous parameter 3>");
                 atomicBoolean.set(true);
-                SendChannel.DefaultImpls.close$default(Channel$default, null, 1, null);
+                SendChannel.close$default(Channel$default, null, 1, null);
             }
         }, 7, null);
         createListener1$default.setAlwaysRecoverAssistModelIfNotSet(true);
@@ -964,12 +964,12 @@ public final class DownloadTaskExtensionKt {
                 CancellableContinuation cancellableContinuation = CancellableContinuation.this;
                 if (exc != null) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(exc)));
+                    cancellableContinuation.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(exc)));
                     return;
                 }
                 DownloadResult downloadResult = new DownloadResult(cause);
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9202constructorimpl(downloadResult));
+                cancellableContinuation.resumeWith(Result.m9842constructorimpl(downloadResult));
             }
         }));
         function0.invoke();

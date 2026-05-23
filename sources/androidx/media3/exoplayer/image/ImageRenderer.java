@@ -13,7 +13,7 @@ import androidx.media3.exoplayer.image.ImageDecoder;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ImageRenderer extends BaseRenderer {
     private static final long IMAGE_PRESENTATION_WINDOW_THRESHOLD_US = 30000;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -27,6 +27,7 @@ public class ImageRenderer extends BaseRenderer {
     private int decoderReinitializationState;
     private int firstFrameState;
     private final DecoderInputBuffer flagsOnlyBuffer;
+    private ImageMetadataListener imageMetadataListener;
     private ImageOutput imageOutput;
     private DecoderInputBuffer inputBuffer;
     private Format inputFormat;
@@ -189,6 +190,8 @@ public class ImageRenderer extends BaseRenderer {
     public void handleMessage(int i, Object obj) throws ExoPlaybackException {
         if (i == 15) {
             setImageOutput(obj instanceof ImageOutput ? (ImageOutput) obj : null);
+        } else if (i == 23) {
+            this.imageMetadataListener = (ImageMetadataListener) obj;
         } else {
             super.handleMessage(i, obj);
         }
@@ -270,6 +273,10 @@ public class ImageRenderer extends BaseRenderer {
     protected boolean processOutputBuffer(long j, long j2, Bitmap bitmap, long j3) throws ExoPlaybackException {
         long j4 = j3 - j;
         if (shouldForceRender() || j4 < IMAGE_PRESENTATION_WINDOW_THRESHOLD_US) {
+            ImageMetadataListener imageMetadataListener = this.imageMetadataListener;
+            if (imageMetadataListener != null) {
+                imageMetadataListener.onImageAboutToBeAvailable(j3 - this.outputStreamInfo.streamOffsetUs, (Format) Preconditions.checkNotNull(this.inputFormat));
+            }
             this.imageOutput.onImageAvailable(j3 - this.outputStreamInfo.streamOffsetUs, bitmap);
             return true;
         }
@@ -430,7 +437,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class TileInfo {
         private final long presentationTimeUs;
         private Bitmap tileBitmap;
@@ -463,7 +470,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OutputStreamInfo {
         public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET);
         public final long previousStreamLastBufferTimeUs;

@@ -1,6 +1,7 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.compose.foundation.gestures.MouseWheelScrollingLogic;
+import androidx.compose.runtime.ComposerKt;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,9 +13,9 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: MouseWheelScrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/compose/foundation/gestures/MouseWheelScrollingLogic$MouseWheelScrollDelta;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$waitNextScrollDelta$2", f = "MouseWheelScrollable.kt", i = {}, l = {266}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+/* compiled from: MouseWheelScrollingLogic.kt */
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/compose/foundation/gestures/MouseWheelScrollingLogic$MouseWheelScrollDelta;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$waitNextScrollDelta$2", f = "MouseWheelScrollingLogic.kt", i = {}, l = {ComposerKt.providerKey}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$waitNextScrollDelta$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super MouseWheelScrollingLogic.MouseWheelScrollDelta>, Object> {
     int label;
@@ -40,7 +41,6 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$waitNextScr
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Channel channel;
-        Object busyReceive;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i != 0) {
@@ -51,10 +51,9 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$waitNextScr
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
-        channel = mouseWheelScrollingLogic.channel;
+        channel = this.this$0.channel;
         this.label = 1;
-        busyReceive = mouseWheelScrollingLogic.busyReceive(channel, this);
+        Object busyReceive = NonTouchScrollingLogicKt.busyReceive(channel, this);
         return busyReceive == coroutine_suspended ? coroutine_suspended : busyReceive;
     }
 }

@@ -23,7 +23,7 @@ public final class MenuItemCompat {
     private static final String TAG = "MenuItemCompat";
 
     @Deprecated
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface OnActionExpandListener {
         boolean onMenuItemActionCollapse(MenuItem menuItem);
 

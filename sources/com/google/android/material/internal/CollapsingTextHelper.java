@@ -623,26 +623,26 @@ public final class CollapsingTextHelper {
             this.currentDrawX = lerp(this.expandedDrawX, this.collapsedDrawX, f, this.positionInterpolator);
             this.currentDrawY = lerp(this.expandedDrawY, this.collapsedDrawY, f, this.positionInterpolator);
             setInterpolatedTextSize(f);
+            float f3 = this.collapsedLetterSpacing;
+            float f4 = this.expandedLetterSpacing;
+            int i = (f3 > f4 ? 1 : (f3 == f4 ? 0 : -1));
+            TextPaint textPaint = this.textPaint;
+            if (i != 0) {
+                textPaint.setLetterSpacing(lerp(f4, f3, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+            } else {
+                textPaint.setLetterSpacing(f3);
+            }
             f2 = f;
         }
         setCollapsedTextBlend(1.0f - lerp(0.0f, 1.0f, 1.0f - f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         setExpandedTextBlend(lerp(1.0f, 0.0f, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         ColorStateList colorStateList = this.collapsedTextColor;
         ColorStateList colorStateList2 = this.expandedTextColor;
-        TextPaint textPaint = this.textPaint;
-        if (colorStateList != colorStateList2) {
-            textPaint.setColor(blendARGB(getCurrentExpandedTextColor(), getCurrentCollapsedTextColor(), f2));
-        } else {
-            textPaint.setColor(getCurrentCollapsedTextColor());
-        }
-        float f3 = this.collapsedLetterSpacing;
-        float f4 = this.expandedLetterSpacing;
-        int i = (f3 > f4 ? 1 : (f3 == f4 ? 0 : -1));
         TextPaint textPaint2 = this.textPaint;
-        if (i != 0) {
-            textPaint2.setLetterSpacing(lerp(f4, f3, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+        if (colorStateList != colorStateList2) {
+            textPaint2.setColor(blendARGB(getCurrentExpandedTextColor(), getCurrentCollapsedTextColor(), f2));
         } else {
-            textPaint2.setLetterSpacing(f3);
+            textPaint2.setColor(getCurrentCollapsedTextColor());
         }
         this.currentShadowRadius = lerp(this.expandedShadowRadius, this.collapsedShadowRadius, f, null);
         this.currentShadowDx = lerp(this.expandedShadowDx, this.collapsedShadowDx, f, null);

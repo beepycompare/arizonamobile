@@ -1,17 +1,20 @@
 package com.google.android.gms.common.internal.service;
 
-import android.content.Context;
-import android.os.Looper;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.internal.ConnectionCallbacks;
-import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
-import com.google.android.gms.common.internal.ClientSettings;
-import com.google.android.gms.common.internal.TelemetryLoggingOptions;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zan extends Api.AbstractClientBuilder {
-    @Override // com.google.android.gms.common.api.Api.AbstractClientBuilder
-    public final /* synthetic */ Api.Client buildClient(Context context, Looper looper, ClientSettings clientSettings, Object obj, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        return new zap(context, looper, clientSettings, (TelemetryLoggingOptions) obj, connectionCallbacks, onConnectionFailedListener);
+public final class zan extends com.google.android.gms.internal.base.zaa implements IInterface {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zan(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.common.internal.service.ICommonService");
+    }
+
+    public final void zae(zam zamVar) throws RemoteException {
+        Parcel zaa = zaa();
+        com.google.android.gms.internal.base.zac.zac(zaa, zamVar);
+        zad(1, zaa);
     }
 }

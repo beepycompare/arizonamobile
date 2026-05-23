@@ -1,4 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class U2 {
+public abstract class U2 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final C0332ij f784a = new C0332ij();
 }

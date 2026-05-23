@@ -1,145 +1,25 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class O extends MessageNano {
-    public static volatile O[] d;
+public final class O {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1457a;
-    public long b;
-    public String[] c;
+    public final boolean f1439a;
+    public final List b;
+    public final long c;
+
+    public O(boolean z, List list, long j) {
+        this.f1439a = z;
+        this.b = list;
+        this.c = j;
+    }
+
+    public final String toString() {
+        return "ServiceSideContentObserverCaptorConfig(enabled=" + this.f1439a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
+    }
 
     public O() {
-        a();
-    }
-
-    public static O[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new O[0];
-                }
-            }
-        }
-        return d;
-    }
-
-    public final O a() {
-        this.f1457a = true;
-        this.b = 5L;
-        this.c = WireFormatNano.EMPTY_STRING_ARRAY;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f1457a;
-        if (!z) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
-        }
-        long j = this.b;
-        if (j != 5) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(2, j);
-        }
-        String[] strArr = this.c;
-        if (strArr == null || strArr.length <= 0) {
-            return computeSerializedSize;
-        }
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        while (true) {
-            String[] strArr2 = this.c;
-            if (i >= strArr2.length) {
-                return computeSerializedSize + i2 + i3;
-            }
-            String str = strArr2[i];
-            if (str != null) {
-                i3++;
-                i2 = CodedOutputByteBufferNano.computeStringSizeNoTag(str) + i2;
-            }
-            i++;
-        }
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f1457a;
-        if (!z) {
-            codedOutputByteBufferNano.writeBool(1, z);
-        }
-        long j = this.b;
-        if (j != 5) {
-            codedOutputByteBufferNano.writeInt64(2, j);
-        }
-        String[] strArr = this.c;
-        if (strArr != null && strArr.length > 0) {
-            int i = 0;
-            while (true) {
-                String[] strArr2 = this.c;
-                if (i >= strArr2.length) {
-                    break;
-                }
-                String str = strArr2[i];
-                if (str != null) {
-                    codedOutputByteBufferNano.writeString(3, str);
-                }
-                i++;
-            }
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final O mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f1457a = codedInputByteBufferNano.readBool();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readInt64();
-            } else if (readTag != 26) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                String[] strArr = this.c;
-                int length = strArr == null ? 0 : strArr.length;
-                int i = repeatedFieldArrayLength + length;
-                String[] strArr2 = new String[i];
-                if (length != 0) {
-                    System.arraycopy(strArr, 0, strArr2, 0, length);
-                }
-                while (length < i - 1) {
-                    strArr2[length] = codedInputByteBufferNano.readString();
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                strArr2[length] = codedInputByteBufferNano.readString();
-                this.c = strArr2;
-            }
-        }
-        return this;
-    }
-
-    public static O b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new O().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static O a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (O) MessageNano.mergeFrom(new O(), bArr);
+        this(new x().f1461a, AbstractC0791m.a(), new x().b);
     }
 }

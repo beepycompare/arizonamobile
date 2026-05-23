@@ -1,6 +1,7 @@
 package com.google.android.material.shape;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -8,7 +9,11 @@ import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import com.google.android.material.R;
 /* loaded from: classes4.dex */
-public class ShapeAppearanceModel {
+public class ShapeAppearanceModel implements ShapeAppearance {
+    public static final int CORNER_BOTTOM_LEFT = 4;
+    public static final int CORNER_BOTTOM_RIGHT = 8;
+    public static final int CORNER_TOP_LEFT = 1;
+    public static final int CORNER_TOP_RIGHT = 2;
     public static final int NUM_CORNERS = 4;
     public static final CornerSize PILL = new RelativeCornerSize(0.5f);
     EdgeTreatment bottomEdge;
@@ -27,6 +32,26 @@ public class ShapeAppearanceModel {
     /* loaded from: classes4.dex */
     public interface CornerSizeUnaryOperator {
         CornerSize apply(CornerSize cornerSize);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static boolean containsFlag(int i, int i2) {
+        return (i2 | i) == i;
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel getDefaultShape() {
+        return this;
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel getShapeForState(int[] iArr) {
+        return this;
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public boolean isStateful() {
+        return false;
     }
 
     /* loaded from: classes4.dex */
@@ -244,6 +269,22 @@ public class ShapeAppearanceModel {
             return -1.0f;
         }
 
+        public Builder setCornerSizeOverride(int i, CornerSize cornerSize) {
+            if (ShapeAppearanceModel.containsFlag(i, 1)) {
+                setTopLeftCornerSize(cornerSize);
+            }
+            if (ShapeAppearanceModel.containsFlag(i, 2)) {
+                setTopRightCornerSize(cornerSize);
+            }
+            if (ShapeAppearanceModel.containsFlag(i, 4)) {
+                setBottomLeftCornerSize(cornerSize);
+            }
+            if (ShapeAppearanceModel.containsFlag(i, 8)) {
+                setBottomRightCornerSize(cornerSize);
+            }
+            return this;
+        }
+
         public ShapeAppearanceModel build() {
             return new ShapeAppearanceModel(this);
         }
@@ -273,6 +314,10 @@ public class ShapeAppearanceModel {
         return builder(context, i, i2, 0);
     }
 
+    public static Builder builder(Resources.Theme theme, int i) {
+        return builder(theme.obtainStyledAttributes(i, R.styleable.ShapeAppearance), new AbsoluteCornerSize(0.0f));
+    }
+
     private static Builder builder(Context context, int i, int i2, int i3) {
         return builder(context, i, i2, new AbsoluteCornerSize(i3));
     }
@@ -282,20 +327,23 @@ public class ShapeAppearanceModel {
         if (i2 != 0) {
             contextThemeWrapper.getTheme().applyStyle(i2, true);
         }
-        TypedArray obtainStyledAttributes = contextThemeWrapper.obtainStyledAttributes(R.styleable.ShapeAppearance);
+        return builder(contextThemeWrapper.obtainStyledAttributes(R.styleable.ShapeAppearance), cornerSize);
+    }
+
+    private static Builder builder(TypedArray typedArray, CornerSize cornerSize) {
         try {
-            int i3 = obtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamily, 0);
-            int i4 = obtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyTopLeft, i3);
-            int i5 = obtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyTopRight, i3);
-            int i6 = obtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomRight, i3);
-            int i7 = obtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomLeft, i3);
-            CornerSize cornerSize2 = getCornerSize(obtainStyledAttributes, R.styleable.ShapeAppearance_cornerSize, cornerSize);
-            CornerSize cornerSize3 = getCornerSize(obtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeTopLeft, cornerSize2);
-            CornerSize cornerSize4 = getCornerSize(obtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeTopRight, cornerSize2);
-            CornerSize cornerSize5 = getCornerSize(obtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeBottomRight, cornerSize2);
-            return new Builder().setTopLeftCorner(i4, cornerSize3).setTopRightCorner(i5, cornerSize4).setBottomRightCorner(i6, cornerSize5).setBottomLeftCorner(i7, getCornerSize(obtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeBottomLeft, cornerSize2));
+            int i = typedArray.getInt(R.styleable.ShapeAppearance_cornerFamily, 0);
+            int i2 = typedArray.getInt(R.styleable.ShapeAppearance_cornerFamilyTopLeft, i);
+            int i3 = typedArray.getInt(R.styleable.ShapeAppearance_cornerFamilyTopRight, i);
+            int i4 = typedArray.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomRight, i);
+            int i5 = typedArray.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomLeft, i);
+            CornerSize cornerSize2 = getCornerSize(typedArray, R.styleable.ShapeAppearance_cornerSize, cornerSize);
+            CornerSize cornerSize3 = getCornerSize(typedArray, R.styleable.ShapeAppearance_cornerSizeTopLeft, cornerSize2);
+            CornerSize cornerSize4 = getCornerSize(typedArray, R.styleable.ShapeAppearance_cornerSizeTopRight, cornerSize2);
+            CornerSize cornerSize5 = getCornerSize(typedArray, R.styleable.ShapeAppearance_cornerSizeBottomRight, cornerSize2);
+            return new Builder().setTopLeftCorner(i2, cornerSize3).setTopRightCorner(i3, cornerSize4).setBottomRightCorner(i4, cornerSize5).setBottomLeftCorner(i5, getCornerSize(typedArray, R.styleable.ShapeAppearance_cornerSizeBottomLeft, cornerSize2));
         } finally {
-            obtainStyledAttributes.recycle();
+            typedArray.recycle();
         }
     }
 
@@ -394,10 +442,12 @@ public class ShapeAppearanceModel {
         return new Builder(this);
     }
 
+    @Override // com.google.android.material.shape.ShapeAppearance
     public ShapeAppearanceModel withCornerSize(float f) {
         return toBuilder().setAllCornerSizes(f).build();
     }
 
+    @Override // com.google.android.material.shape.ShapeAppearance
     public ShapeAppearanceModel withCornerSize(CornerSize cornerSize) {
         return toBuilder().setAllCornerSizes(cornerSize).build();
     }
@@ -414,6 +464,11 @@ public class ShapeAppearanceModel {
 
     public boolean hasRoundedCorners() {
         return (this.topRightCorner instanceof RoundedCornerTreatment) && (this.topLeftCorner instanceof RoundedCornerTreatment) && (this.bottomRightCorner instanceof RoundedCornerTreatment) && (this.bottomLeftCorner instanceof RoundedCornerTreatment);
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel[] getShapeAppearanceModels() {
+        return new ShapeAppearanceModel[]{this};
     }
 
     public String toString() {

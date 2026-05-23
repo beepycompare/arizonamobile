@@ -8,9 +8,10 @@ import androidx.compose.animation.core.TweenSpec;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.EffectsKt;
+import androidx.compose.runtime.SnapshotStateKt;
+import androidx.compose.runtime.State;
 import androidx.compose.ui.Modifier;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.media3.exoplayer.RendererCapabilities;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -22,7 +23,7 @@ import kotlin.jvm.functions.Function5;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DefaultStackAnimator.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001Bz\u0012\u000e\b\u0002\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012a\u0010\u0005\u001a]\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012$\u0012\"\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000f¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000e0\u0006¢\u0006\u0002\b\u000f¢\u0006\u0004\b\u0011\u0010\u0012JE\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\u0015\u001a\u00020\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u000e0\u00182\u0017\u0010\u0010\u001a\u0013\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000fH\u0097\u0002¢\u0006\u0002\u0010\u0019R\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000Rk\u0010\u0005\u001a]\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012$\u0012\"\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000f¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000e0\u0006¢\u0006\u0002\b\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0013¨\u0006\u001a"}, d2 = {"Lcom/arkivanov/decompose/extensions/compose/stack/animation/DefaultStackAnimator;", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/StackAnimator;", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "", TypedValues.AttributesType.S_FRAME, "Lkotlin/Function3;", "Lkotlin/ParameterName;", "name", "factor", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/Direction;", "direction", "Lkotlin/Function1;", "Landroidx/compose/ui/Modifier;", "", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "<init>", "(Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function5;)V", "Lkotlin/jvm/functions/Function5;", "invoke", "isInitial", "", "onFinished", "Lkotlin/Function0;", "(Lcom/arkivanov/decompose/extensions/compose/stack/animation/Direction;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "extensions-compose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001Bz\u0012\u000e\b\u0002\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012a\u0010\u0005\u001a]\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012$\u0012\"\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000f¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000e0\u0006¢\u0006\u0002\b\u000f¢\u0006\u0004\b\u0011\u0010\u0012JE\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\u0015\u001a\u00020\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u000e0\u00182\u0017\u0010\u0010\u001a\u0013\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000fH\u0097\u0002¢\u0006\u0002\u0010\u0019R\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000Rk\u0010\u0005\u001a]\u0012\u0013\u0012\u00110\u0004¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012$\u0012\"\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u000e0\f¢\u0006\u0002\b\u000f¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000e0\u0006¢\u0006\u0002\b\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0013¨\u0006\u001a²\u0006\u0010\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u000e0\u0018X\u008a\u0084\u0002"}, d2 = {"Lcom/arkivanov/decompose/extensions/compose/stack/animation/DefaultStackAnimator;", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/StackAnimator;", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "", TypedValues.AttributesType.S_FRAME, "Lkotlin/Function3;", "Lkotlin/ParameterName;", "name", "factor", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/Direction;", "direction", "Lkotlin/Function1;", "Landroidx/compose/ui/Modifier;", "", "Landroidx/compose/runtime/Composable;", FirebaseAnalytics.Param.CONTENT, "<init>", "(Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function5;)V", "Lkotlin/jvm/functions/Function5;", "invoke", "isInitial", "", "onFinished", "Lkotlin/Function0;", "(Lcom/arkivanov/decompose/extensions/compose/stack/animation/Direction;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "extensions-compose_release", "onFinishedRef"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class DefaultStackAnimator implements StackAnimator {
     public static final int $stable = 8;
@@ -77,9 +78,10 @@ public final class DefaultStackAnimator implements StackAnimator {
         Intrinsics.checkNotNullParameter(content, "content");
         composer.startReplaceGroup(1272740764);
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1272740764, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.DefaultStackAnimator.invoke (DefaultStackAnimator.kt:23)");
+            ComposerKt.traceEventStart(1272740764, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.DefaultStackAnimator.invoke (DefaultStackAnimator.kt:25)");
         }
-        composer.startReplaceGroup(248821482);
+        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(onFinished, composer, (i >> 6) & 14);
+        composer.startReplaceGroup(248826474);
         boolean z2 = ((((i & 14) ^ 6) > 4 && composer.changed(direction)) || (i & 6) == 4) | ((((i & 112) ^ 48) > 32 && composer.changed(z)) || (i & 48) == 32);
         Object rememberedValue = composer.rememberedValue();
         if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
@@ -88,11 +90,11 @@ public final class DefaultStackAnimator implements StackAnimator {
         }
         AnimationState animationState = (AnimationState) rememberedValue;
         composer.endReplaceGroup();
-        composer.startReplaceGroup(248825851);
-        boolean changed = composer.changed(animationState) | composer.changedInstance(this) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(onFinished)) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
+        composer.startReplaceGroup(248830846);
+        boolean changed = composer.changed(animationState) | composer.changedInstance(this) | composer.changed(rememberUpdatedState);
         Object rememberedValue2 = composer.rememberedValue();
         if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-            rememberedValue2 = (Function2) new DefaultStackAnimator$invoke$1$1(animationState, this, onFinished, null);
+            rememberedValue2 = (Function2) new DefaultStackAnimator$invoke$1$1(animationState, this, rememberUpdatedState, null);
             composer.updateRememberedValue(rememberedValue2);
         }
         composer.endReplaceGroup();
@@ -114,5 +116,10 @@ public final class DefaultStackAnimator implements StackAnimator {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Function0<Unit> invoke$lambda$0(State<? extends Function0<Unit>> state) {
+        return state.getValue();
     }
 }

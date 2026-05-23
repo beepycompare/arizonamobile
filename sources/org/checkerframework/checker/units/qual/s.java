@@ -10,7 +10,7 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({Time.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface s {
     Prefix value() default Prefix.one;
 }

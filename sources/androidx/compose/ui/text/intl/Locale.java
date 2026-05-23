@@ -4,8 +4,8 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-/* compiled from: Locale.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0007\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u0015\b\u0000\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\u0004\b\u0005\u0010\u0006B\u0011\b\u0016\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\u0005\u0010\tJ\u0006\u0010\u0014\u001a\u00020\bJ\u0013\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\bH\u0016R\u0017\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\r\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0010\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000fR\u0011\u0010\u0012\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000f¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/text/intl/Locale;", "", "platformLocale", "Ljava/util/Locale;", "Landroidx/compose/ui/text/intl/PlatformLocale;", "<init>", "(Ljava/util/Locale;)V", "languageTag", "", "(Ljava/lang/String;)V", "getPlatformLocale", "()Ljava/util/Locale;", "Ljava/util/Locale;", "language", "getLanguage", "()Ljava/lang/String;", "script", "getScript", TtmlNode.TAG_REGION, "getRegion", "toLanguageTag", "equals", "", "other", "hashCode", "", "toString", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+/* compiled from: Locale.jvmAndAndroid.kt */
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0007\u0018\u0000 \u00192\u00020\u0001:\u0001\u0019B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u0011\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0004\u0010\bJ\u0006\u0010\u0012\u001a\u00020\u0007J\u0013\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u0018\u001a\u00020\u0007H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\f\u0010\rR\u0011\u0010\u000e\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\rR\u0011\u0010\u0010\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\r¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/text/intl/Locale;", "", "platformLocale", "Ljava/util/Locale;", "<init>", "(Ljava/util/Locale;)V", "languageTag", "", "(Ljava/lang/String;)V", "getPlatformLocale", "()Ljava/util/Locale;", "language", "getLanguage", "()Ljava/lang/String;", "script", "getScript", TtmlNode.TAG_REGION, "getRegion", "toLanguageTag", "equals", "", "other", "hashCode", "", "toString", "Companion", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Locale {
     public static final int $stable = 0;
@@ -16,8 +16,8 @@ public final class Locale {
         this.platformLocale = locale;
     }
 
-    /* compiled from: Locale.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/intl/Locale$Companion;", "", "<init>", "()V", "current", "Landroidx/compose/ui/text/intl/Locale;", "getCurrent", "()Landroidx/compose/ui/text/intl/Locale;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* compiled from: Locale.jvmAndAndroid.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/intl/Locale$Companion;", "", "<init>", "()V", "current", "Landroidx/compose/ui/text/intl/Locale;", "getCurrent", "()Landroidx/compose/ui/text/intl/Locale;", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -36,24 +36,30 @@ public final class Locale {
         return this.platformLocale;
     }
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public Locale(String str) {
-        this(PlatformLocaleKt.getPlatformLocaleDelegate().parseLanguageTag(str));
+        this(r1);
+        java.util.Locale parseLanguageTag;
+        parseLanguageTag = Locale_jvmAndAndroidKt.parseLanguageTag(str);
     }
 
     public final String getLanguage() {
-        return PlatformLocale_jvmKt.getLanguage(this.platformLocale);
+        return this.platformLocale.getLanguage();
     }
 
     public final String getScript() {
-        return PlatformLocale_jvmKt.getScript(this.platformLocale);
+        return this.platformLocale.getScript();
     }
 
     public final String getRegion() {
-        return PlatformLocale_jvmKt.getRegion(this.platformLocale);
+        return this.platformLocale.getCountry();
     }
 
     public final String toLanguageTag() {
-        return PlatformLocale_jvmKt.getLanguageTag(this.platformLocale);
+        return this.platformLocale.toLanguageTag();
     }
 
     public boolean equals(Object obj) {

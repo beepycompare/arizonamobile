@@ -1,7 +1,7 @@
 package androidx.compose.runtime.tooling;
 
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.runtime.MovableContentKt;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,22 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ComposeStackTrace.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u000b\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u000e\u0010\u0003\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u0004H\u0000\u001a\u001c\u0010\u0006\u001a\u00020\u0002*\u00020\u00022\u000e\u0010\u0003\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u0004H\u0000\u001a\u0018\u0010\u0007\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\u000b\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\u001a\u0012\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r*\u00020\u0005H\u0000\u001a\u0018\u0010\u000f\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\"\u000e\u0010\u0010\u001a\u00020\u0011X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"tryAttachComposeStackTrace", "", "", "trace", "Lkotlin/Function0;", "Landroidx/compose/runtime/tooling/ComposeStackTrace;", "attachComposeStackTrace", "appendStackTrace", "", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "appendSourceInformationStackTrace", "filterInternalFramesByGroupKey", "", "Landroidx/compose/runtime/tooling/ComposeStackTraceFrame;", "appendGroupKeyStackTrace", "RuntimePackageHash", "", "IncludeDebugInfo", "runtime"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u000b\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u000e\u0010\u0003\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u0004H\u0000\u001a\u001c\u0010\u0006\u001a\u00020\u0002*\u00020\u00022\u000e\u0010\u0003\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u0004H\u0000\u001a\u0018\u0010\u0007\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\u000b\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\u001a\u0012\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r*\u00020\u0005H\u0000\u001a\u0018\u0010\u000f\u001a\u00020\b*\u00060\tj\u0002`\n2\u0006\u0010\u0003\u001a\u00020\u0005H\u0000\"\u000e\u0010\u0010\u001a\u00020\u0011X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"tryAttachComposeStackTrace", "", "", "trace", "Lkotlin/Function0;", "Landroidx/compose/runtime/tooling/ComposeStackTrace;", "attachComposeStackTrace", "appendStackTrace", "", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "appendSourceInformationStackTrace", "filterInternalFramesByGroupKey", "", "Landroidx/compose/runtime/tooling/ComposeStackTraceFrame;", "appendGroupKeyStackTrace", "RuntimePackageHash", "", "IncludeDebugInfo", "runtime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposeStackTraceKt {
     private static final boolean IncludeDebugInfo = false;
     private static final String RuntimePackageHash = "9igjgp";
 
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0053, code lost:
+        if (r6.getFrames().isEmpty() == false) goto L21;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x006a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static final boolean tryAttachComposeStackTrace(Throwable th, Function0<ComposeStackTrace> function0) {
         DiagnosticComposeException diagnosticComposeException;
+        ComposeStackTrace invoke;
         DiagnosticComposeException diagnosticComposeException2;
         List<Throwable> suppressedExceptions = ExceptionsKt.getSuppressedExceptions(th);
         int size = suppressedExceptions.size();
@@ -31,22 +39,35 @@ public final class ComposeStackTraceKt {
             }
         }
         try {
-            ComposeStackTrace invoke = function0.invoke();
-            if (invoke != null && !invoke.getFrames().isEmpty()) {
-                z = true;
-            }
-            if (z) {
-                Intrinsics.checkNotNull(invoke);
-                diagnosticComposeException2 = new DiagnosticComposeException(invoke);
-            } else {
-                diagnosticComposeException2 = null;
-            }
-            diagnosticComposeException = diagnosticComposeException2;
+            invoke = function0.invoke();
         } catch (Throwable th2) {
             diagnosticComposeException = th2;
         }
+        if (invoke != null) {
+            if (invoke.getHasSourceInformation()) {
+                List<ComposeStackTraceFrame> frames = invoke.getFrames();
+                int size2 = frames.size();
+                for (int i2 = 0; i2 < size2; i2++) {
+                    if (frames.get(i2).getSourceInfo() != null) {
+                        z = true;
+                        break;
+                    }
+                }
+            }
+            diagnosticComposeException = th2;
+            if (diagnosticComposeException != null) {
+                ExceptionsKt.addSuppressed(th, diagnosticComposeException);
+            }
+            return z;
+        }
+        if (z) {
+            Intrinsics.checkNotNull(invoke);
+            diagnosticComposeException2 = new DiagnosticComposeException(invoke);
+        } else {
+            diagnosticComposeException2 = null;
+        }
+        diagnosticComposeException = diagnosticComposeException2;
         if (diagnosticComposeException != null) {
-            ExceptionsKt.addSuppressed(th, diagnosticComposeException);
         }
         return z;
     }
@@ -66,7 +87,7 @@ public final class ComposeStackTraceKt {
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00a2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -102,7 +123,6 @@ public final class ComposeStackTraceKt {
                             str = "<unknown line>";
                         }
                         String str4 = str2 + '(' + str3 + AbstractJsonLexerKt.COLON + str + ')';
-                        Intrinsics.checkNotNullExpressionValue(str4, "toString(...)");
                         if (!sourceInfo.isCall()) {
                             String str5 = (String) CollectionsKt.removeLastOrNull(createListBuilder);
                         }
@@ -120,7 +140,6 @@ public final class ComposeStackTraceKt {
                 }
                 str = "<unknown line>";
                 String str42 = str2 + '(' + str3 + AbstractJsonLexerKt.COLON + str + ')';
-                Intrinsics.checkNotNullExpressionValue(str42, "toString(...)");
                 if (!sourceInfo.isCall()) {
                 }
                 if (Intrinsics.areEqual(sourceInfo.getFunctionName(), "rememberCompositionContext")) {
@@ -132,14 +151,12 @@ public final class ComposeStackTraceKt {
         int size2 = asReversed2.size();
         for (int i2 = 0; i2 < size2; i2++) {
             sb.append("\tat ");
-            StringBuilder append = sb.append((String) asReversed2.get(i2));
-            Intrinsics.checkNotNullExpressionValue(append, "append(...)");
-            Intrinsics.checkNotNullExpressionValue(append.append('\n'), "append(...)");
+            sb.append((String) asReversed2.get(i2)).append('\n');
         }
     }
 
     public static final List<ComposeStackTraceFrame> filterInternalFramesByGroupKey(ComposeStackTrace composeStackTrace) {
-        int[] iArr = {ComposerKt.providerKey, ComposerKt.compositionLocalMapKey, ComposerKt.providerMapsKey, ComposerKt.referenceKey, ComposerKt.reuseKey, ComposerImplKt.nodeKey, ComposerKt.defaultsKey, MovableContentKt.movableContentKey, 200};
+        int[] iArr = {ComposerKt.providerKey, ComposerKt.compositionLocalMapKey, ComposerKt.providerMapsKey, ComposerKt.referenceKey, ComposerKt.reuseKey, GapComposerKt.nodeKey, ComposerKt.defaultsKey, MovableContentKt.movableContentKey, 200};
         int size = composeStackTrace.getFrames().size();
         ArrayList arrayList = new ArrayList();
         int i = 0;
@@ -169,7 +186,7 @@ public final class ComposeStackTraceKt {
             sb.append("\tat $$compose.m$");
             sb.append(filterInternalFramesByGroupKey.get(i).getGroupKey());
             sb.append("(SourceFile:1)");
-            Intrinsics.checkNotNullExpressionValue(sb.append('\n'), "append(...)");
+            sb.append('\n');
         }
     }
 }

@@ -71,16 +71,16 @@ public final class DraggableAnchorsNodeV2<T> extends Modifier.Node implements La
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo69measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
         if (!measureScope.isLookingAhead() || !this.didLookahead) {
-            Pair<? extends androidx.compose.foundation.gestures.DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m7718boximpl(IntSize.m7721constructorimpl((mo6216measureBRTryo0.getHeight() & 4294967295L) | (mo6216measureBRTryo0.getWidth() << 32))), Constraints.m7495boximpl(j));
+            Pair<? extends androidx.compose.foundation.gestures.DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m8323boximpl(IntSize.m8326constructorimpl((mo6818measureBRTryo0.getHeight() & 4294967295L) | (mo6818measureBRTryo0.getWidth() << 32))), Constraints.m8100boximpl(j));
             this.state.updateAnchors(invoke.getFirst(), invoke.getSecond());
         }
         this.didLookahead = measureScope.isLookingAhead() || this.didLookahead;
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.DraggableAnchorsNodeV2$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.DraggableAnchorsNodeV2$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return DraggableAnchorsNodeV2.measure_3p2s80s$lambda$1(MeasureScope.this, this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
+                return DraggableAnchorsNodeV2.measure_3p2s80s$lambda$1(MeasureScope.this, this, mo6818measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }

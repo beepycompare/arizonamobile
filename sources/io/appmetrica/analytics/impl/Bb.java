@@ -1,17 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.modulesapi.internal.common.InternalModuleEvent;
 /* loaded from: classes5.dex */
-public final class Bb {
-    public final C0307hl c;
+public abstract /* synthetic */ class Bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0145be f521a = new C0145be("Context");
-    public final C0145be b = new C0145be("Config");
-    public final C0145be d = new C0145be("Sender");
-    public final C0145be e = new C0145be("Event");
-    public final C0145be f = new C0145be("Payload");
-    public final C0286h0 g = new C0286h0();
+    public static final /* synthetic */ int[] f473a;
 
-    public Bb(C0737z0 c0737z0) {
-        this.c = new C0307hl(c0737z0);
+    static {
+        int[] iArr = new int[InternalModuleEvent.Category.values().length];
+        try {
+            iArr[InternalModuleEvent.Category.SYSTEM.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            iArr[InternalModuleEvent.Category.GENERAL.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        f473a = iArr;
     }
 }

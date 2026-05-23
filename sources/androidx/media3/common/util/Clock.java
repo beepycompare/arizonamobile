@@ -2,7 +2,7 @@ package androidx.media3.common.util;
 
 import android.os.Handler;
 import android.os.Looper;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface Clock {
     public static final Clock DEFAULT = new SystemClock();
 

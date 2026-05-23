@@ -1,5 +1,6 @@
 package kotlin.collections;
 
+import androidx.collection.SieveCacheKt;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,16 +26,27 @@ public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
     public static final <T> List<T> flatten(T[][] tArr) {
         Intrinsics.checkNotNullParameter(tArr, "<this>");
         T[][] tArr2 = tArr;
-        int i = 0;
+        long j = 0;
         for (T[] tArr3 : tArr2) {
-            i += tArr3.length;
+            j += tArr3.length;
         }
-        ArrayList arrayList = new ArrayList(i);
+        if (j == 0) {
+            return CollectionsKt.emptyList();
+        }
+        if (j > SieveCacheKt.NodeLinkMask) {
+            throw new IllegalArgumentException(("Sum of all arrays lengths (" + j + ") exceeds maximum list size (2147483647)").toString());
+        }
+        Object[] objArr = new Object[(int) j];
         int length = tArr2.length;
+        int i = 0;
         for (int i2 = 0; i2 < length; i2++) {
-            CollectionsKt.addAll(arrayList, tArr[i2]);
+            T[] tArr4 = tArr[i2];
+            ArraysKt.copyInto$default(tArr4, objArr, i, 0, 0, 12, (Object) null);
+            i += tArr4.length;
         }
-        return arrayList;
+        List<T> asList = ArraysKt.asList(objArr);
+        Intrinsics.checkNotNull(asList, "null cannot be cast to non-null type kotlin.collections.List<T of kotlin.collections.ArraysKt__ArraysKt.flatten>");
+        return asList;
     }
 
     public static final <T, R> Pair<List<T>, List<R>> unzip(Pair<? extends T, ? extends R>[] pairArr) {
@@ -110,19 +122,19 @@ public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
                         return false;
                     }
                 } else if ((t instanceof UByteArray) && (t2 instanceof UByteArray)) {
-                    if (!UArraysKt.m9783contentEqualskV0jMPg(((UByteArray) t).m9292unboximpl(), ((UByteArray) t2).m9292unboximpl())) {
+                    if (!UArraysKt.m10423contentEqualskV0jMPg(((UByteArray) t).m9932unboximpl(), ((UByteArray) t2).m9932unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof UShortArray) && (t2 instanceof UShortArray)) {
-                    if (!UArraysKt.m9781contentEqualsFGO6Aew(((UShortArray) t).m9555unboximpl(), ((UShortArray) t2).m9555unboximpl())) {
+                    if (!UArraysKt.m10421contentEqualsFGO6Aew(((UShortArray) t).m10195unboximpl(), ((UShortArray) t2).m10195unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof UIntArray) && (t2 instanceof UIntArray)) {
-                    if (!UArraysKt.m9782contentEqualsKJPZfPQ(((UIntArray) t).m9371unboximpl(), ((UIntArray) t2).m9371unboximpl())) {
+                    if (!UArraysKt.m10422contentEqualsKJPZfPQ(((UIntArray) t).m10011unboximpl(), ((UIntArray) t2).m10011unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof ULongArray) && (t2 instanceof ULongArray)) {
-                    if (!UArraysKt.m9784contentEqualslec5QzE(((ULongArray) t).m9450unboximpl(), ((ULongArray) t2).m9450unboximpl())) {
+                    if (!UArraysKt.m10424contentEqualslec5QzE(((ULongArray) t).m10090unboximpl(), ((ULongArray) t2).m10090unboximpl())) {
                         return false;
                     }
                 } else if (!Intrinsics.areEqual(t, t2)) {
@@ -194,16 +206,16 @@ public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
                 sb.append(arrays8);
             } else if (t instanceof UByteArray) {
                 UByteArray uByteArray = (UByteArray) t;
-                sb.append(UArraysKt.m9789contentToString2csIQuQ(uByteArray != null ? uByteArray.m9292unboximpl() : null));
+                sb.append(UArraysKt.m10429contentToString2csIQuQ(uByteArray != null ? uByteArray.m9932unboximpl() : null));
             } else if (t instanceof UShortArray) {
                 UShortArray uShortArray = (UShortArray) t;
-                sb.append(UArraysKt.m9791contentToStringd6D3K8(uShortArray != null ? uShortArray.m9555unboximpl() : null));
+                sb.append(UArraysKt.m10431contentToStringd6D3K8(uShortArray != null ? uShortArray.m10195unboximpl() : null));
             } else if (t instanceof UIntArray) {
                 UIntArray uIntArray = (UIntArray) t;
-                sb.append(UArraysKt.m9790contentToStringXUkPCBk(uIntArray != null ? uIntArray.m9371unboximpl() : null));
+                sb.append(UArraysKt.m10430contentToStringXUkPCBk(uIntArray != null ? uIntArray.m10011unboximpl() : null));
             } else if (t instanceof ULongArray) {
                 ULongArray uLongArray = (ULongArray) t;
-                sb.append(UArraysKt.m9792contentToStringuLth9ew(uLongArray != null ? uLongArray.m9450unboximpl() : null));
+                sb.append(UArraysKt.m10432contentToStringuLth9ew(uLongArray != null ? uLongArray.m10090unboximpl() : null));
             } else {
                 sb.append(t.toString());
             }

@@ -1,16 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Yj {
+public final class Yj implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f876a;
-    public final C0488p0 b;
-    public Zk c;
+    public final /* synthetic */ boolean f858a;
 
-    public Yj(Context context, C0488p0 c0488p0) {
-        this.f876a = context;
-        this.b = c0488p0;
+    public Yj(boolean z) {
+        this.f858a = z;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
+    public final void a(InterfaceC0506pb interfaceC0506pb) {
+        interfaceC0506pb.setDataSendingEnabled(this.f858a);
     }
 }

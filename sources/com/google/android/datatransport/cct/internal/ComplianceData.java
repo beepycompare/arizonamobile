@@ -2,10 +2,10 @@ package com.google.android.datatransport.cct.internal;
 
 import android.util.SparseArray;
 import com.google.android.datatransport.cct.internal.AutoValue_ComplianceData;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ComplianceData {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract ComplianceData build();
 
@@ -18,7 +18,7 @@ public abstract class ComplianceData {
 
     public abstract ProductIdOrigin getProductIdOrigin();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ProductIdOrigin {
         NOT_SET(0),
         EVENT_OVERRIDE(5);

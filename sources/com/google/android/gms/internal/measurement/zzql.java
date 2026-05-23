@@ -1,18 +1,55 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes4.dex */
-public final class zzql implements zzqk {
-    public static final zzkm zza;
 
-    static {
-        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zzb.zzd("measurement.sdk.collection.enable_extend_user_property_size", true);
-        zza = zzb.zzd("measurement.sdk.collection.last_deep_link_referrer_campaign2", false);
-        zzb.zzc("measurement.id.sdk.collection.last_deep_link_referrer2", 0L);
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.util.Log;
+import com.google.android.gms.common.util.PlatformVersion;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+public final class zzql extends BroadcastReceiver {
+    static volatile zzqj zza;
+    private static volatile zzqk zzb;
+
+    public static void zza(Context context, zzqk zzqkVar, zzqj zzqjVar) {
+        if (zzb == null) {
+            synchronized (zzql.class) {
+                if (zzb == null) {
+                    if (!Objects.equals(context.getPackageName(), "com.google.android.gms")) {
+                        if (PlatformVersion.isAtLeastT()) {
+                            context.registerReceiver(new zzql(), new IntentFilter("com.google.android.gms.phenotype.UPDATE"), 2);
+                        } else {
+                            context.registerReceiver(new zzql(), new IntentFilter("com.google.android.gms.phenotype.UPDATE"));
+                        }
+                    }
+                    zzb = zzqkVar;
+                    zza = zzqjVar;
+                }
+            }
+        }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqk
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        String stringExtra = intent.getStringExtra("com.google.android.gms.phenotype.PACKAGE_NAME");
+        if (stringExtra == null) {
+            return;
+        }
+        if (stringExtra.contains("../") || stringExtra.contains("/..")) {
+            StringBuilder sb = new StringBuilder(stringExtra.length() + 68);
+            sb.append("Got an invalid config package for P/H that includes '..': ");
+            sb.append(stringExtra);
+            sb.append(". Exiting.");
+            Log.w("PhUpdateBroadcastRecv", sb.toString());
+            return;
+        }
+        zzqk zzqkVar = zzb;
+        if (zzqkVar == null) {
+            Log.w("PhUpdateBroadcastRecv", "No callback registered for P/H UPDATE broadcast. Exiting.");
+        } else {
+            zzqkVar.zza(stringExtra);
+        }
     }
 }

@@ -264,16 +264,16 @@ public final class SheetState {
             return Saver(z, new Function0() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float mo405toPx0680j_4;
-                    mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1748getPositionalThresholdD9Ej5fM$material3());
-                    return Float.valueOf(mo405toPx0680j_4);
+                    float mo434toPx0680j_4;
+                    mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(BottomSheetDefaults.INSTANCE.m2193getPositionalThresholdD9Ej5fM$material3());
+                    return Float.valueOf(mo434toPx0680j_4);
                 }
             }, new Function0() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float mo405toPx0680j_4;
-                    mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1751getVelocityThresholdD9Ej5fM$material3());
-                    return Float.valueOf(mo405toPx0680j_4);
+                    float mo434toPx0680j_4;
+                    mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(BottomSheetDefaults.INSTANCE.m2196getVelocityThresholdD9Ej5fM$material3());
+                    return Float.valueOf(mo434toPx0680j_4);
                 }
             }, function1, z2);
         }
@@ -293,16 +293,16 @@ public final class SheetState {
         this(z, new Function0() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float mo405toPx0680j_4;
-                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1748getPositionalThresholdD9Ej5fM$material3());
-                return Float.valueOf(mo405toPx0680j_4);
+                float mo434toPx0680j_4;
+                mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(BottomSheetDefaults.INSTANCE.m2193getPositionalThresholdD9Ej5fM$material3());
+                return Float.valueOf(mo434toPx0680j_4);
             }
         }, new Function0() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float mo405toPx0680j_4;
-                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1751getVelocityThresholdD9Ej5fM$material3());
-                return Float.valueOf(mo405toPx0680j_4);
+                float mo434toPx0680j_4;
+                mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(BottomSheetDefaults.INSTANCE.m2196getVelocityThresholdD9Ej5fM$material3());
+                return Float.valueOf(mo434toPx0680j_4);
             }
         }, sheetValue, function1, z2);
     }

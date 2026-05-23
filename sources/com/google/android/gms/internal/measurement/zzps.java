@@ -1,10 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import java.util.concurrent.atomic.AtomicInteger;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzps {
-    boolean zza();
+public final class zzps {
+    private final AtomicInteger zza = new AtomicInteger();
 
-    boolean zzb();
+    public final int zza() {
+        return this.zza.get();
+    }
 
-    boolean zzc();
+    public final void zzb() {
+        this.zza.incrementAndGet();
+    }
 }

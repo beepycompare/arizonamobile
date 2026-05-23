@@ -8,6 +8,7 @@ import com.arkivanov.decompose.Child;
 import com.arkivanov.decompose.GenericComponentContext;
 import com.arkivanov.decompose.Relay;
 import com.arkivanov.decompose.backhandler.ChildBackHandlerKt;
+import com.arkivanov.decompose.router.children.ChildrenNavigator;
 import com.arkivanov.decompose.router.children.NavEvent;
 import com.arkivanov.decompose.value.Value;
 import com.arkivanov.essenty.backhandler.BackCallback;
@@ -199,7 +200,7 @@ public final class ChildrenFactoryKt {
     }
 
     private static final <Ctx extends GenericComponentContext<? extends Ctx>, C, T, N extends NavState<? extends C>> ChildrenNavigator<C, T, N> childrenNavigator(final Ctx ctx, final String str, Function0<? extends N> function0, final Function1<? super N, SerializableContainer> function1, Function1<? super SerializableContainer, ? extends N> function12, Function2<? super C, ? super Ctx, ? extends T> function2) {
-        List<SerializableContainer> childState;
+        List<ChildrenNavigator.SavedChildState> childState;
         SerializableContainer navState;
         Ctx ctx2 = ctx;
         SavedState savedState = (SavedState) ctx2.getStateKeeper().consume(str, SavedState.Companion.serializer());

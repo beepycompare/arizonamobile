@@ -2,7 +2,7 @@ package androidx.media3.common;
 
 import android.os.Bundle;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VideoSize {
     private static final int DEFAULT_HEIGHT = 0;
     private static final float DEFAULT_PIXEL_WIDTH_HEIGHT_RATIO = 1.0f;

@@ -1,7 +1,7 @@
 package com.miami.game.core.connection.resolver.data;
 
 import dagger.internal.Factory;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AvailabilityService_Factory implements Factory<AvailabilityService> {
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public AvailabilityService get() {
@@ -16,7 +16,7 @@ public final class AvailabilityService_Factory implements Factory<AvailabilitySe
         return new AvailabilityService();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class InstanceHolder {
         static final AvailabilityService_Factory INSTANCE = new AvailabilityService_Factory();
 

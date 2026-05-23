@@ -129,7 +129,7 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
             producerScope = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
+        SendChannel.close$default(producerScope, null, 1, null);
         return Unit.INSTANCE;
     }
 }

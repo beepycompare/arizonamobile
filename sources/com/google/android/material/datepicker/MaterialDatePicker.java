@@ -19,15 +19,15 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.activity.result.ActivityResultCaller;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.appcompat.widget.TooltipCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.util.Pair;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
 import com.google.android.material.R;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.dialog.InsetDialogOnTouchListener;
@@ -44,6 +44,7 @@ import java.util.LinkedHashSet;
 /* loaded from: classes4.dex */
 public class MaterialDatePicker<S> extends DialogFragment {
     private static final String CALENDAR_CONSTRAINTS_KEY = "CALENDAR_CONSTRAINTS_KEY";
+    private static final String CALENDAR_FRAGMENT_TAG = "CALENDAR_FRAGMENT_TAG";
     private static final String DATE_SELECTOR_KEY = "DATE_SELECTOR_KEY";
     private static final String DAY_VIEW_DECORATOR_KEY = "DAY_VIEW_DECORATOR_KEY";
     public static final int INPUT_MODE_CALENDAR = 0;
@@ -58,6 +59,7 @@ public class MaterialDatePicker<S> extends DialogFragment {
     private static final String POSITIVE_BUTTON_CONTENT_DESCRIPTION_RES_ID_KEY = "POSITIVE_BUTTON_CONTENT_DESCRIPTION_RES_ID_KEY";
     private static final String POSITIVE_BUTTON_TEXT_KEY = "POSITIVE_BUTTON_TEXT_KEY";
     private static final String POSITIVE_BUTTON_TEXT_RES_ID_KEY = "POSITIVE_BUTTON_TEXT_RES_ID_KEY";
+    private static final String TEXT_INPUT_FRAGMENT_TAG = "TEXT_INPUT_FRAGMENT_TAG";
     private static final String TITLE_TEXT_KEY = "TITLE_TEXT_KEY";
     private static final String TITLE_TEXT_RES_ID_KEY = "TITLE_TEXT_RES_ID_KEY";
     private MaterialShapeDrawable background;
@@ -392,21 +394,28 @@ public class MaterialDatePicker<S> extends DialogFragment {
         return getDateSelector().getSelectionContentDescription(requireContext());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v16 */
+    /* JADX WARN: Type inference failed for: r3v2 */
+    /* JADX WARN: Type inference failed for: r3v3 */
+    /* JADX WARN: Type inference failed for: r3v4, types: [com.google.android.material.datepicker.PickerFragment<S>, com.google.android.material.datepicker.PickerFragment] */
+    /* JADX WARN: Type inference failed for: r3v7, types: [com.google.android.material.datepicker.MaterialCalendar, com.google.android.material.datepicker.MaterialCalendar<S>] */
+    /* JADX WARN: Type inference failed for: r3v9, types: [com.google.android.material.datepicker.MaterialTextInputPicker] */
     private void startPickerFragment() {
         int themeResId = getThemeResId(requireContext());
-        MaterialCalendar<S> newInstance = MaterialCalendar.newInstance(getDateSelector(), themeResId, this.calendarConstraints, this.dayViewDecorator);
-        this.calendar = newInstance;
-        ActivityResultCaller activityResultCaller = newInstance;
-        if (this.inputMode == 1) {
-            activityResultCaller = MaterialTextInputPicker.newInstance(getDateSelector(), themeResId, this.calendarConstraints);
+        String str = this.inputMode == 1 ? TEXT_INPUT_FRAGMENT_TAG : CALENDAR_FRAGMENT_TAG;
+        Fragment findFragmentByTag = getChildFragmentManager().findFragmentByTag(str);
+        MaterialTextInputPicker materialTextInputPicker = findFragmentByTag instanceof PickerFragment ? (PickerFragment) findFragmentByTag : 0;
+        if (materialTextInputPicker == 0) {
+            if (this.inputMode == 1) {
+                materialTextInputPicker = MaterialTextInputPicker.newInstance(getDateSelector(), themeResId, this.calendarConstraints);
+            } else {
+                materialTextInputPicker = (MaterialCalendar<S>) MaterialCalendar.newInstance(getDateSelector(), themeResId, this.calendarConstraints, this.dayViewDecorator);
+                this.calendar = materialTextInputPicker;
+            }
         }
-        this.pickerFragment = (PickerFragment<S>) activityResultCaller;
-        updateTitle();
-        updateHeader(getHeaderText());
-        FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
-        beginTransaction.replace(R.id.mtrl_calendar_frame, this.pickerFragment);
-        beginTransaction.commitNow();
-        this.pickerFragment.addOnSelectionChangedListener(new OnSelectionChangedListener<S>() { // from class: com.google.android.material.datepicker.MaterialDatePicker.2
+        this.pickerFragment = (PickerFragment<S>) materialTextInputPicker;
+        ((PickerFragment) materialTextInputPicker).addOnSelectionChangedListener(new OnSelectionChangedListener<S>() { // from class: com.google.android.material.datepicker.MaterialDatePicker.2
             @Override // com.google.android.material.datepicker.OnSelectionChangedListener
             public void onSelectionChanged(S s) {
                 MaterialDatePicker materialDatePicker = MaterialDatePicker.this;
@@ -419,6 +428,9 @@ public class MaterialDatePicker<S> extends DialogFragment {
                 MaterialDatePicker.this.confirmButton.setEnabled(false);
             }
         });
+        updateTitle();
+        updateHeader(getHeaderText());
+        getChildFragmentManager().beginTransaction().replace(R.id.mtrl_calendar_frame, this.pickerFragment, str).commitNow();
     }
 
     private void initHeaderToggle(Context context) {
@@ -427,21 +439,23 @@ public class MaterialDatePicker<S> extends DialogFragment {
         this.headerToggleButton.setChecked(this.inputMode != 0);
         ViewCompat.setAccessibilityDelegate(this.headerToggleButton, null);
         updateToggleContentDescription(this.headerToggleButton);
+        updateToggleTooltip(this.headerToggleButton);
         this.headerToggleButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaterialDatePicker.this.m8905x8a93f18a(view);
+                MaterialDatePicker.this.m9521x8a93f18a(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initHeaderToggle$0$com-google-android-material-datepicker-MaterialDatePicker  reason: not valid java name */
-    public /* synthetic */ void m8905x8a93f18a(View view) {
+    public /* synthetic */ void m9521x8a93f18a(View view) {
         this.confirmButton.setEnabled(getDateSelector().isSelectionComplete());
         this.headerToggleButton.toggle();
         this.inputMode = this.inputMode == 1 ? 0 : 1;
         updateToggleContentDescription(this.headerToggleButton);
+        updateToggleTooltip(this.headerToggleButton);
         startPickerFragment();
     }
 
@@ -453,6 +467,16 @@ public class MaterialDatePicker<S> extends DialogFragment {
             string = checkableImageButton.getContext().getString(R.string.mtrl_picker_toggle_to_text_input_mode);
         }
         this.headerToggleButton.setContentDescription(string);
+    }
+
+    private void updateToggleTooltip(CheckableImageButton checkableImageButton) {
+        String string;
+        if (this.inputMode == 1) {
+            string = checkableImageButton.getContext().getString(R.string.mtrl_picker_toggle_to_calendar_input_mode_tooltip);
+        } else {
+            string = checkableImageButton.getContext().getString(R.string.mtrl_picker_toggle_to_text_input_mode_tooltip);
+        }
+        TooltipCompat.setTooltipText(this.headerToggleButton, string);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

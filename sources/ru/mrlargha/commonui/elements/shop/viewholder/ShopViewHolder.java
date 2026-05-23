@@ -54,7 +54,7 @@ public final class ShopViewHolder extends RecyclerView.ViewHolder {
         Object obj = null;
         boolean z = true;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             itemShopBinding.tvTitleText.setText(itemVal.getText());

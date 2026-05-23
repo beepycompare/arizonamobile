@@ -2,6 +2,8 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.Timeline;
+import androidx.media3.common.util.Log;
+import androidx.media3.exoplayer.image.ImageMetadataListener;
 import androidx.media3.exoplayer.metadata.MetadataRenderer;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.SampleStream;
@@ -12,7 +14,7 @@ import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 class RendererHolder {
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_PRIMARY = 0;
     static final int RENDERER_PREWARMING_STATE_NOT_PREWARMING_USING_SECONDARY = 1;
@@ -21,6 +23,7 @@ class RendererHolder {
     static final int RENDERER_PREWARMING_STATE_TRANSITIONING_TO_SECONDARY = 3;
     static final int REPLACE_STREAMS_DISABLE_RENDERERS_COMPLETED = 1;
     static final int REPLACE_STREAMS_DISABLE_RENDERERS_DISABLE_OFFLOAD_SCHEDULING = 2;
+    private static final String TAG = "RendererHolder";
     private final int index;
     private final Renderer primaryRenderer;
     private final Renderer secondaryRenderer;
@@ -304,8 +307,16 @@ class RendererHolder {
             int i = this.prewarmingState;
             boolean z = i == 4 || i == 2;
             int i2 = i == 4 ? 1 : 0;
-            disableRenderer(z ? this.primaryRenderer : (Renderer) Preconditions.checkNotNull(this.secondaryRenderer), defaultMediaClock);
-            maybeResetRenderer(z);
+            try {
+                disableRenderer(z ? this.primaryRenderer : (Renderer) Preconditions.checkNotNull(this.secondaryRenderer), defaultMediaClock);
+            } catch (RuntimeException e) {
+                Log.e(TAG, "Disable prewarming failed.", e);
+            }
+            try {
+                maybeResetRenderer(z);
+            } catch (RuntimeException e2) {
+                Log.e(TAG, "Reset prewarming failed.", e2);
+            }
             this.prewarmingState = i2;
         }
     }
@@ -435,12 +446,24 @@ class RendererHolder {
     }
 
     public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) throws ExoPlaybackException {
-        if (getTrackType() == 2 || getTrackType() == 4) {
-            this.primaryRenderer.handleMessage(7, videoFrameMetadataListener);
-            Renderer renderer = this.secondaryRenderer;
-            if (renderer != null) {
-                renderer.handleMessage(7, videoFrameMetadataListener);
-            }
+        if (getTrackType() != 2) {
+            return;
+        }
+        this.primaryRenderer.handleMessage(7, videoFrameMetadataListener);
+        Renderer renderer = this.secondaryRenderer;
+        if (renderer != null) {
+            renderer.handleMessage(7, videoFrameMetadataListener);
+        }
+    }
+
+    public void setImageMetadataListener(ImageMetadataListener imageMetadataListener) throws ExoPlaybackException {
+        if (getTrackType() != 4) {
+            return;
+        }
+        this.primaryRenderer.handleMessage(23, imageMetadataListener);
+        Renderer renderer = this.secondaryRenderer;
+        if (renderer != null) {
+            renderer.handleMessage(23, imageMetadataListener);
         }
     }
 

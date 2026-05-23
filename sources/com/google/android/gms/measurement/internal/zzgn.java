@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import okhttp3.internal.url._UrlKt;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgn {
     protected static final AtomicReference zza = new AtomicReference();
@@ -49,7 +49,7 @@ public final class zzgn {
         if (str == null) {
             return null;
         }
-        return !this.zzd.zza() ? str : zzg(str, zzjm.zzc, zzjm.zza, zza);
+        return !this.zzd.zza() ? str : zzg(str, zzjm.zzf, zzjm.zza, zza);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -75,24 +75,24 @@ public final class zzgn {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final String zzd(zzbg zzbgVar) {
+    public final String zzd(zzbh zzbhVar) {
         String zze;
         zzgm zzgmVar = this.zzd;
         if (!zzgmVar.zza()) {
-            return zzbgVar.toString();
+            return zzbhVar.toString();
         }
         StringBuilder sb = new StringBuilder("origin=");
-        sb.append(zzbgVar.zzc);
+        sb.append(zzbhVar.zzc);
         sb.append(",name=");
-        sb.append(zza(zzbgVar.zza));
+        sb.append(zza(zzbhVar.zza));
         sb.append(",params=");
-        zzbe zzbeVar = zzbgVar.zzb;
-        if (zzbeVar == null) {
+        zzbf zzbfVar = zzbhVar.zzb;
+        if (zzbfVar == null) {
             zze = null;
         } else if (!zzgmVar.zza()) {
-            zze = zzbeVar.toString();
+            zze = zzbfVar.toString();
         } else {
-            zze = zze(zzbeVar.zzf());
+            zze = zze(zzbfVar.zzf());
         }
         sb.append(zze);
         return sb.toString();

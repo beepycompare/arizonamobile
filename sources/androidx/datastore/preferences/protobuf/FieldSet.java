@@ -112,7 +112,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m8077clone() {
+    public FieldSet<T> m8682clone() {
         SmallSortedMap<T, Object> smallSortedMap;
         FieldSet<T> newFieldSet = newFieldSet();
         int numArrayEntries = this.fields.getNumArrayEntries();

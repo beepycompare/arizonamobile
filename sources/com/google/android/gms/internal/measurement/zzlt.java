@@ -1,10 +1,15 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import android.content.Context;
+import com.google.common.base.Supplier;
+import javax.annotation.Nullable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzlt extends zzls {
+abstract class zzlt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzls
-    public final void zza(Object obj) {
-        ((zzmc) obj).zzb.zzb();
-    }
+    public abstract Context zza();
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Nullable
+    public abstract Supplier zzb();
 }

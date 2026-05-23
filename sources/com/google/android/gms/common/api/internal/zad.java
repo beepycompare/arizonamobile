@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class zad extends zac {
     protected final TaskCompletionSource zaa;
@@ -15,8 +15,6 @@ public abstract class zad extends zac {
         super(i);
         this.zaa = taskCompletionSource;
     }
-
-    protected abstract void zac(zabq zabqVar) throws RemoteException;
 
     @Override // com.google.android.gms.common.api.internal.zai
     public final void zad(Status status) {
@@ -29,20 +27,22 @@ public abstract class zad extends zac {
     }
 
     @Override // com.google.android.gms.common.api.internal.zai
-    public final void zaf(zabq zabqVar) throws DeadObjectException {
+    public void zaf(zaaa zaaaVar, boolean z) {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zai
+    public final void zag(zabk zabkVar) throws DeadObjectException {
         try {
-            zac(zabqVar);
+            zah(zabkVar);
         } catch (DeadObjectException e) {
-            zad(zai.zah(e));
+            zad(zai.zai(e));
             throw e;
         } catch (RemoteException e2) {
-            zad(zai.zah(e2));
+            zad(zai.zai(e2));
         } catch (RuntimeException e3) {
             this.zaa.trySetException(e3);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.zai
-    public void zag(zaad zaadVar, boolean z) {
-    }
+    protected abstract void zah(zabk zabkVar) throws RemoteException;
 }

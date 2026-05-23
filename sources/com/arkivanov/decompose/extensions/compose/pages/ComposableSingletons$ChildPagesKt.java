@@ -21,7 +21,7 @@ public final class ComposableSingletons$ChildPagesKt {
     public static final ComposableSingletons$ChildPagesKt INSTANCE = new ComposableSingletons$ChildPagesKt();
 
     /* renamed from: lambda-1  reason: not valid java name */
-    private static Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f126lambda1 = ComposableLambdaKt.composableLambdaInstance(1649886492, false, new Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt$lambda-1$1
+    private static Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f46lambda1 = ComposableLambdaKt.composableLambdaInstance(1649886492, false, new Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt$lambda-1$1
         @Override // kotlin.jvm.functions.Function6
         public /* bridge */ /* synthetic */ Unit invoke(Modifier modifier, PagerState pagerState, Function1<? super Integer, ? extends Object> function1, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit> function4, Composer composer, Integer num) {
             invoke(modifier, pagerState, function1, (Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>) function4, composer, num.intValue());
@@ -50,10 +50,10 @@ public final class ComposableSingletons$ChildPagesKt {
             }
             if ((i2 & 9363) != 9362 || !composer.getSkipping()) {
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1649886492, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-1.<anonymous> (ChildPages.kt:109)");
+                    ComposerKt.traceEventStart(1649886492, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-1.<anonymous> (ChildPages.kt:203)");
                 }
                 int i3 = i2 << 3;
-                PagerKt.m1072HorizontalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
+                PagerKt.m1326HorizontalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -65,7 +65,7 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: lambda-2  reason: not valid java name */
-    private static Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f127lambda2 = ComposableLambdaKt.composableLambdaInstance(-896049490, false, new Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt$lambda-2$1
+    private static Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f47lambda2 = ComposableLambdaKt.composableLambdaInstance(-896049490, false, new Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt$lambda-2$1
         @Override // kotlin.jvm.functions.Function6
         public /* bridge */ /* synthetic */ Unit invoke(Modifier modifier, PagerState pagerState, Function1<? super Integer, ? extends Object> function1, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, ? extends Unit> function4, Composer composer, Integer num) {
             invoke(modifier, pagerState, function1, (Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>) function4, composer, num.intValue());
@@ -94,10 +94,10 @@ public final class ComposableSingletons$ChildPagesKt {
             }
             if ((i2 & 9363) != 9362 || !composer.getSkipping()) {
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-896049490, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-2.<anonymous> (ChildPages.kt:119)");
+                    ComposerKt.traceEventStart(-896049490, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-2.<anonymous> (ChildPages.kt:213)");
                 }
                 int i3 = i2 << 3;
-                PagerKt.m1074VerticalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
+                PagerKt.m1328VerticalPager8jOkeI(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, null, pageContent, composer, ((i2 >> 3) & 14) | (i3 & 112), ((i2 >> 6) & 14) | (57344 & i3), 15356);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -109,12 +109,12 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: getLambda-1$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8795getLambda1$extensions_compose_release() {
-        return f126lambda1;
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9404getLambda1$extensions_compose_release() {
+        return f46lambda1;
     }
 
     /* renamed from: getLambda-2$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8796getLambda2$extensions_compose_release() {
-        return f127lambda2;
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9405getLambda2$extensions_compose_release() {
+        return f47lambda2;
     }
 }

@@ -10,7 +10,6 @@ import android.view.WindowInsetsController;
 import android.view.animation.Interpolator;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.view.WindowInsetsControllerCompat;
-import androidx.media3.common.C;
 /* loaded from: classes2.dex */
 public final class WindowInsetsControllerCompat {
     public static final int BEHAVIOR_DEFAULT = 1;
@@ -284,7 +283,7 @@ public final class WindowInsetsControllerCompat {
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public void setAppearanceLightNavigationBars(boolean z) {
             if (z) {
-                unsetWindowFlag(C.BUFFER_FLAG_FIRST_SAMPLE);
+                unsetWindowFlag(134217728);
                 setWindowFlag(Integer.MIN_VALUE);
                 setSystemUiFlag(16);
                 return;
@@ -330,48 +329,51 @@ public final class WindowInsetsControllerCompat {
             this.mInsetsController.hide(i & (-9));
         }
 
-        @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
-        public boolean isAppearanceLightStatusBars() {
+        private boolean isAppearanceLight(int i, int i2) {
+            Window window = this.mWindow;
+            if (window != null) {
+                return (window.getDecorView().getSystemUiVisibility() & i) != 0;
+            }
             this.mInsetsController.setSystemBarsAppearance(0, 0);
-            return (this.mInsetsController.getSystemBarsAppearance() & 8) != 0;
+            return (this.mInsetsController.getSystemBarsAppearance() & i2) != 0;
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
-        public void setAppearanceLightStatusBars(boolean z) {
-            Window window = this.mWindow;
-            if (z) {
-                if (window != null) {
-                    setSystemUiFlag(8192);
-                }
-                this.mInsetsController.setSystemBarsAppearance(8, 8);
-                return;
-            }
-            if (window != null) {
-                unsetSystemUiFlag(8192);
-            }
-            this.mInsetsController.setSystemBarsAppearance(0, 8);
+        public boolean isAppearanceLightStatusBars() {
+            return isAppearanceLight(8192, 8);
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public boolean isAppearanceLightNavigationBars() {
-            this.mInsetsController.setSystemBarsAppearance(0, 0);
-            return (this.mInsetsController.getSystemBarsAppearance() & 16) != 0;
+            return isAppearanceLight(16, 16);
+        }
+
+        private void setAppearanceLight(boolean z, int i, int i2) {
+            if (this.mWindow != null) {
+                if (z) {
+                    setSystemUiFlag(i);
+                    return;
+                } else {
+                    unsetSystemUiFlag(i);
+                    return;
+                }
+            }
+            WindowInsetsController windowInsetsController = this.mInsetsController;
+            if (z) {
+                windowInsetsController.setSystemBarsAppearance(i2, i2);
+            } else {
+                windowInsetsController.setSystemBarsAppearance(0, i2);
+            }
+        }
+
+        @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
+        public void setAppearanceLightStatusBars(boolean z) {
+            setAppearanceLight(z, 8192, 8);
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public void setAppearanceLightNavigationBars(boolean z) {
-            Window window = this.mWindow;
-            if (z) {
-                if (window != null) {
-                    setSystemUiFlag(16);
-                }
-                this.mInsetsController.setSystemBarsAppearance(16, 16);
-                return;
-            }
-            if (window != null) {
-                unsetSystemUiFlag(16);
-            }
-            this.mInsetsController.setSystemBarsAppearance(0, 16);
+            setAppearanceLight(z, 16, 16);
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
@@ -442,7 +444,7 @@ public final class WindowInsetsControllerCompat {
             WindowInsetsController.OnControllableInsetsChangedListener onControllableInsetsChangedListener2 = new WindowInsetsController.OnControllableInsetsChangedListener() { // from class: androidx.core.view.WindowInsetsControllerCompat$Impl30$$ExternalSyntheticLambda0
                 @Override // android.view.WindowInsetsController.OnControllableInsetsChangedListener
                 public final void onControllableInsetsChanged(WindowInsetsController windowInsetsController, int i) {
-                    WindowInsetsControllerCompat.Impl30.this.m8066xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
+                    WindowInsetsControllerCompat.Impl30.this.m8671xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
                 }
             };
             this.mListeners.put(onControllableInsetsChangedListener, onControllableInsetsChangedListener2);
@@ -451,7 +453,7 @@ public final class WindowInsetsControllerCompat {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addOnControllableInsetsChangedListener$0$androidx-core-view-WindowInsetsControllerCompat$Impl30  reason: not valid java name */
-        public /* synthetic */ void m8066xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
+        public /* synthetic */ void m8671xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
             if (this.mInsetsController == windowInsetsController) {
                 onControllableInsetsChangedListener.onControllableInsetsChanged(this.mCompatController, i);
             }
@@ -515,6 +517,16 @@ public final class WindowInsetsControllerCompat {
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl30, androidx.core.view.WindowInsetsControllerCompat.Impl
         public boolean isAppearanceLightNavigationBars() {
             return (this.mInsetsController.getSystemBarsAppearance() & 16) != 0;
+        }
+
+        @Override // androidx.core.view.WindowInsetsControllerCompat.Impl30, androidx.core.view.WindowInsetsControllerCompat.Impl
+        public void setAppearanceLightStatusBars(boolean z) {
+            this.mInsetsController.setSystemBarsAppearance(z ? 8 : 0, 8);
+        }
+
+        @Override // androidx.core.view.WindowInsetsControllerCompat.Impl30, androidx.core.view.WindowInsetsControllerCompat.Impl
+        public void setAppearanceLightNavigationBars(boolean z) {
+            this.mInsetsController.setSystemBarsAppearance(z ? 16 : 0, 16);
         }
     }
 }

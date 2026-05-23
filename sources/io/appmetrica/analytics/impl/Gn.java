@@ -1,22 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import java.util.Map;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 /* loaded from: classes5.dex */
-public final class Gn {
+public final class Gn implements InterfaceC0623u {
+    public final C0675w b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f608a;
-    public final String b;
-    public final List c;
-    public final Gn d;
-    public final List e;
+    public final C0649v f566a = new C0649v();
+    public final Lazy c = LazyKt.lazy(new Fn(this));
 
-    public Gn(String str, String str2, ArrayList arrayList, Gn gn, ArrayList arrayList2) {
-        this.f608a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = gn;
-        this.e = arrayList2;
+    public Gn(Context context) {
+        this.b = new C0675w(context);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0623u
+    public final Map<String, String> a(Map<String, String> map) {
+        map.putAll((Map) this.c.getValue());
+        return map;
     }
 }

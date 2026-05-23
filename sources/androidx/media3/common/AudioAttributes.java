@@ -127,33 +127,13 @@ public final class AudioAttributes {
         return this.platformAudioAttributes;
     }
 
+    public int getVolumeControlStream() {
+        return getStreamTypeInternal();
+    }
+
+    @Deprecated
     public int getStreamType() {
-        if ((this.flags & 1) == 1) {
-            return 1;
-        }
-        switch (this.usage) {
-            case 2:
-                return 0;
-            case 3:
-                return 8;
-            case 4:
-                return 4;
-            case 5:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-                return 5;
-            case 6:
-                return 2;
-            case 11:
-                return 10;
-            case 12:
-            default:
-                return 3;
-            case 13:
-                return 1;
-        }
+        return getStreamTypeInternal();
     }
 
     public boolean equals(Object obj) {
@@ -237,6 +217,46 @@ public final class AudioAttributes {
             builder.setHapticChannelsMuted(bundle.getBoolean(str7));
         }
         return builder.build();
+    }
+
+    private int getStreamTypeInternal() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            try {
+                int volumeControlStream = getPlatformAudioAttributes().getVolumeControlStream();
+                if (volumeControlStream == Integer.MIN_VALUE) {
+                    return 3;
+                }
+                return volumeControlStream;
+            } catch (RuntimeException unused) {
+                return 3;
+            }
+        } else if ((this.flags & 1) == 1) {
+            return 1;
+        } else {
+            switch (this.usage) {
+                case 2:
+                    return 0;
+                case 3:
+                    return 8;
+                case 4:
+                    return 4;
+                case 5:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    return 5;
+                case 6:
+                    return 2;
+                case 11:
+                    return 10;
+                case 12:
+                default:
+                    return 3;
+                case 13:
+                    return 1;
+            }
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

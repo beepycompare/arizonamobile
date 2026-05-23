@@ -1,94 +1,116 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import io.appmetrica.analytics.coreutils.internal.parsing.RemoteConfigJsonUtils;
+import io.appmetrica.analytics.screenshot.internal.ServiceSideScreenshotConfigWrapper;
+import java.util.ArrayList;
+import java.util.Iterator;
+import kotlin.collections.ArraysKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.IntIterator;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.ranges.IntRange;
+import kotlin.ranges.RangesKt;
+import org.json.JSONArray;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class S extends MessageNano {
-    public static volatile S[] c;
+public final class S implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1460a;
-    public Q b;
+    public final E f1442a;
 
     public S() {
-        a();
+        this(null, 1, null);
     }
 
-    public static S[] b() {
-        if (c == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new S[0];
-                }
-            }
-        }
-        return c;
-    }
-
-    public final S a() {
-        this.f1460a = true;
-        this.b = null;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f1460a;
-        if (!z) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
-        }
-        Q q = this.b;
-        return q != null ? CodedOutputByteBufferNano.computeMessageSize(2, q) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f1460a;
-        if (!z) {
-            codedOutputByteBufferNano.writeBool(1, z);
-        }
-        Q q = this.b;
-        if (q != null) {
-            codedOutputByteBufferNano.writeMessage(2, q);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v4, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r6v5, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r6v7, types: [java.util.ArrayList] */
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
     /* renamed from: a */
-    public final S mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f1460a = codedInputByteBufferNano.readBool();
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
+    public final ServiceSideScreenshotConfigWrapper parse(JSONObject jSONObject) {
+        N n;
+        U u;
+        P p;
+        ?? list;
+        E e = this.f1442a;
+        e.getClass();
+        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0791m.f1452a);
+        JSONObject optJSONObject = jSONObject.optJSONObject("screenshot");
+        if (optJSONObject == null) {
+            p = new P(extractFeature, new N(new w().f1460a), new U(), new O());
+        } else {
+            e.f1431a.getClass();
+            JSONObject optJSONObject2 = optJSONObject.optJSONObject("api_captor_config");
+            O o = null;
+            if (optJSONObject2 == null) {
+                n = null;
             } else {
-                if (this.b == null) {
-                    this.b = new Q();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
+                w wVar = new w();
+                Boolean optBooleanOrNull = JsonUtils.optBooleanOrNull(optJSONObject2, "enabled");
+                n = new N(optBooleanOrNull != null ? optBooleanOrNull.booleanValue() : wVar.f1460a);
             }
+            if (n == null) {
+                n = new N(new w().f1460a);
+            }
+            e.b.getClass();
+            JSONObject optJSONObject3 = optJSONObject.optJSONObject("service_captor_config");
+            if (optJSONObject3 == null) {
+                u = null;
+            } else {
+                y yVar = new y();
+                Boolean optBooleanOrNull2 = JsonUtils.optBooleanOrNull(optJSONObject3, "enabled");
+                boolean booleanValue = optBooleanOrNull2 != null ? optBooleanOrNull2.booleanValue() : yVar.f1462a;
+                Long optLongOrNull = JsonUtils.optLongOrNull(optJSONObject3, "delay_seconds");
+                u = new U(booleanValue, optLongOrNull != null ? optLongOrNull.longValue() : yVar.b);
+            }
+            if (u == null) {
+                u = new U();
+            }
+            e.c.getClass();
+            JSONObject optJSONObject4 = optJSONObject.optJSONObject("content_observer_captor_config");
+            if (optJSONObject4 != null) {
+                x xVar = new x();
+                Boolean optBooleanOrNull3 = JsonUtils.optBooleanOrNull(optJSONObject4, "enabled");
+                boolean booleanValue2 = optBooleanOrNull3 != null ? optBooleanOrNull3.booleanValue() : xVar.f1461a;
+                JSONArray optJSONArray = optJSONObject4.optJSONArray("media_store_column_names");
+                if (optJSONArray != null) {
+                    IntRange until = RangesKt.until(0, optJSONArray.length());
+                    list = new ArrayList(CollectionsKt.collectionSizeOrDefault(until, 10));
+                    Iterator<Integer> it = until.iterator();
+                    while (it.hasNext()) {
+                        list.add(optJSONArray.getString(((IntIterator) it).nextInt()));
+                    }
+                } else {
+                    list = ArraysKt.toList(xVar.c);
+                }
+                Long optLongOrNull2 = JsonUtils.optLongOrNull(optJSONObject4, "detect_window_seconds");
+                o = new O(booleanValue2, list, optLongOrNull2 != null ? optLongOrNull2.longValue() : xVar.b);
+            }
+            if (o == null) {
+                o = new O();
+            }
+            p = new P(extractFeature, n, u, o);
         }
-        return this;
+        return ServiceSideScreenshotConfigWrapper.Companion.toWrapper$screenshot_release(p);
     }
 
-    public static S b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new S().mergeFrom(codedInputByteBufferNano);
+    public final ServiceSideScreenshotConfigWrapper b(JSONObject jSONObject) {
+        return (ServiceSideScreenshotConfigWrapper) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
     }
 
-    public static S a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (S) MessageNano.mergeFrom(new S(), bArr);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
+    public final Object parseOrNull(JSONObject jSONObject) {
+        return (ServiceSideScreenshotConfigWrapper) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
+    }
+
+    public S(E e) {
+        this.f1442a = e;
+    }
+
+    public /* synthetic */ S(E e, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new E() : e);
     }
 }

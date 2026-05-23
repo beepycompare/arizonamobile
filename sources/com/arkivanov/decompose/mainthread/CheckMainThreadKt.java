@@ -1,6 +1,7 @@
 package com.arkivanov.decompose.mainthread;
 
 import android.os.Looper;
+import com.arkivanov.decompose.DecomposeSettings;
 import com.arkivanov.decompose.errorhandler.ErrorHandlersKt;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -31,13 +32,14 @@ public final class CheckMainThreadKt {
     }
 
     public static final void checkMainThread() {
-        if (getMainThreadId() != null) {
-            long id = Thread.currentThread().getId();
-            Long mainThreadId = getMainThreadId();
-            if (mainThreadId != null && id == mainThreadId.longValue()) {
-                return;
-            }
-            ErrorHandlersKt.getOnDecomposeError().invoke(new NotOnMainThreadException(Thread.currentThread().getName()));
+        if (!DecomposeSettings.Companion.getSettings().getMainThreadCheckEnabled() || getMainThreadId() == null) {
+            return;
         }
+        long id = Thread.currentThread().getId();
+        Long mainThreadId = getMainThreadId();
+        if (mainThreadId != null && id == mainThreadId.longValue()) {
+            return;
+        }
+        ErrorHandlersKt.getOnDecomposeError().invoke(new NotOnMainThreadException(Thread.currentThread().getName()));
     }
 }

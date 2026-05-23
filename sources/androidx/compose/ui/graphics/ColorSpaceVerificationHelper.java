@@ -7,14 +7,15 @@ import androidx.compose.ui.graphics.colorspace.DoubleFunction;
 import androidx.compose.ui.graphics.colorspace.Rgb;
 import androidx.compose.ui.graphics.colorspace.TransferParameters;
 import androidx.compose.ui.graphics.colorspace.WhitePoint;
+import java.util.Arrays;
 import java.util.function.DoubleUnaryOperator;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidColorSpace.android.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0007J\f\u0010\u0007\u001a\u00020\u0006*\u00020\u0005H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;", "", "<init>", "()V", "androidColorSpace", "Landroid/graphics/ColorSpace;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "composeColorSpace", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\bÃ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0007J\f\u0010\u0007\u001a\u00020\u0006*\u00020\u0005H\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;", "", "<init>", "()V", "androidColorSpace", "Landroid/graphics/ColorSpace;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "composeColorSpace", "ui-graphics"}, k = 1, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 final class ColorSpaceVerificationHelper {
     public static final ColorSpaceVerificationHelper INSTANCE = new ColorSpaceVerificationHelper();
 
@@ -79,8 +80,12 @@ final class ColorSpaceVerificationHelper {
                 float[] xyz$ui_graphics = rgb2.getWhitePoint().toXyz$ui_graphics();
                 TransferParameters transferParameters = rgb2.getTransferParameters();
                 ColorSpace.Rgb.TransferParameters transferParameters2 = transferParameters != null ? new ColorSpace.Rgb.TransferParameters(transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getE(), transferParameters.getF(), transferParameters.getGamma()) : null;
+                float[] transform$ui_graphics = rgb2.getTransform$ui_graphics();
                 if (transferParameters2 != null) {
                     rgb = new ColorSpace.Rgb(colorSpace.getName(), rgb2.getPrimaries$ui_graphics(), xyz$ui_graphics, transferParameters2);
+                    if (!Float.isNaN(transform$ui_graphics[0]) && !Arrays.equals(rgb.getTransform(), transform$ui_graphics)) {
+                        rgb = new ColorSpace.Rgb(colorSpace.getName(), transform$ui_graphics, transferParameters2);
+                    }
                 } else {
                     String name = colorSpace.getName();
                     float[] primaries$ui_graphics = rgb2.getPrimaries$ui_graphics();

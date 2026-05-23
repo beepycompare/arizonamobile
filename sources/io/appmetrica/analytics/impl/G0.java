@@ -1,47 +1,117 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
-import kotlin.jvm.internal.Intrinsics;
+import android.location.Location;
+import android.os.Bundle;
+import io.appmetrica.analytics.AdvIdentifiersResult;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.StartupParamsCallback;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class G0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashSource f593a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final H0 f;
-
-    public G0(NativeCrashSource nativeCrashSource, String str, String str2, String str3, long j, H0 h0) {
-        this.f593a = nativeCrashSource;
-        this.b = str;
-        this.c = str2;
-        this.d = str3;
-        this.e = j;
-        this.f = h0;
+public final class G0 implements InterfaceC0221eb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.S6
+    public final void a(int i, Bundle bundle) {
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof G0) {
-            G0 g0 = (G0) obj;
-            return this.f593a == g0.f593a && Intrinsics.areEqual(this.b, g0.b) && Intrinsics.areEqual(this.c, g0.c) && Intrinsics.areEqual(this.d, g0.d) && this.e == g0.e && Intrinsics.areEqual(this.f, g0.f);
-        }
-        return false;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void a(Location location) {
     }
 
-    public final int hashCode() {
-        int hashCode = this.b.hashCode();
-        int hashCode2 = this.c.hashCode();
-        int hashCode3 = this.d.hashCode();
-        int hashCode4 = Long.hashCode(this.e);
-        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f593a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
     }
 
-    public final String toString() {
-        return "AppMetricaNativeCrash(source=" + this.f593a + ", handlerVersion=" + this.b + ", uuid=" + this.c + ", dumpFile=" + this.d + ", creationTime=" + this.e + ", metadata=" + this.f + ')';
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void a(DeferredDeeplinkListener deferredDeeplinkListener) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void a(ReporterConfig reporterConfig) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void a(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void a(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void a(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void a(boolean z, boolean z2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void b(AppMetricaConfig appMetricaConfig) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final InterfaceC0506pb c(ReporterConfig reporterConfig) {
+        return new Bi();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void clearAppEnvironment() {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final C0582sa d() {
+        return new C0582sa();
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final String e() {
+        return null;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final Map<String, String> g() {
+        return null;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final AdvIdentifiersResult h() {
+        AdvIdentifiersResult.Details details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+        return new AdvIdentifiersResult(new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"), new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"), new AdvIdentifiersResult.AdvId(null, details, "Device user is in locked state"));
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final Lc i() {
+        Yc yc = new Yc();
+        return new Lc(yc, new Q7(yc));
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void putAppEnvironmentValue(String str, String str2) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void setDataSendingEnabled(boolean z) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0327id
+    public final void setUserProfileID(String str) {
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb
+    public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
+        startupParamsCallback.onRequestError(StartupParamsCallback.Reason.UNKNOWN, null);
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0221eb, io.appmetrica.analytics.impl.InterfaceC0557rb
+    public final InterfaceC0532qb a() {
+        return new Ei();
     }
 }

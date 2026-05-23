@@ -3,7 +3,7 @@ package com.google.android.datatransport.cct.internal;
 import com.google.android.datatransport.cct.internal.LogRequest;
 import com.google.firebase.encoders.annotations.Encodable;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_LogRequest extends LogRequest {
     private final ClientInfo clientInfo;
     private final List<LogEvent> logEvents;
@@ -97,7 +97,7 @@ final class AutoValue_LogRequest extends LogRequest {
         return hashCode4 ^ (qosTier != null ? qosTier.hashCode() : 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends LogRequest.Builder {
         private ClientInfo clientInfo;
         private List<LogEvent> logEvents;

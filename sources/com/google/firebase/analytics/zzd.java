@@ -1,20 +1,20 @@
 package com.google.firebase.analytics;
 
 import android.os.Bundle;
-import com.google.android.gms.internal.measurement.zzfb;
+import com.google.android.gms.internal.measurement.zzez;
 import com.google.android.gms.measurement.internal.zzjp;
 import com.google.android.gms.measurement.internal.zzjq;
 import com.google.android.gms.measurement.internal.zzlk;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzd implements zzlk {
-    final /* synthetic */ zzfb zza;
+    final /* synthetic */ zzez zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzd(zzfb zzfbVar) {
-        this.zza = zzfbVar;
+    public zzd(zzez zzezVar) {
+        this.zza = zzezVar;
     }
 
     @Override // com.google.android.gms.measurement.internal.zzlk
@@ -23,8 +23,8 @@ final class zzd implements zzlk {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzlk
-    public final void zzb(String str, String str2, Bundle bundle, long j) {
-        this.zza.zzj(str, str2, bundle, j);
+    public final void zzb(String str, String str2, Bundle bundle, long j, long j2) {
+        this.zza.zzj(str, str2, bundle, j, 0L);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzlk

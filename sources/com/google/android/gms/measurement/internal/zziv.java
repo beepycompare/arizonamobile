@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import java.util.Objects;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zziv implements Callable {
     final /* synthetic */ zzr zza;
@@ -21,7 +21,7 @@ final class zziv implements Callable {
     @Override // java.util.concurrent.Callable
     public final /* bridge */ /* synthetic */ Object call() throws Exception {
         zzjd zzjdVar = this.zzc;
-        zzjdVar.zzL().zzZ();
-        return zzjdVar.zzL().zzaq(this.zza, this.zzb);
+        zzjdVar.zzL().zzaa();
+        return zzjdVar.zzL().zzar(this.zza, this.zzb);
     }
 }

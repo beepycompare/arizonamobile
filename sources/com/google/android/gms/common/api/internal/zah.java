@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.Feature;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zah extends zad {
     public final ListenerHolder.ListenerKey zab;
@@ -15,32 +15,41 @@ public final class zah extends zad {
     }
 
     @Override // com.google.android.gms.common.api.internal.zac
-    public final boolean zaa(zabq zabqVar) {
-        zaci zaciVar = (zaci) zabqVar.zah().get(this.zab);
-        return zaciVar != null && zaciVar.zaa.zab();
+    public final Feature[] zaa(zabk zabkVar) {
+        zacd zacdVar = (zacd) zabkVar.zag().get(this.zab);
+        if (zacdVar == null) {
+            return null;
+        }
+        return zacdVar.zaa.getRequiredFeatures();
     }
 
     @Override // com.google.android.gms.common.api.internal.zac
-    public final Feature[] zab(zabq zabqVar) {
-        zaci zaciVar = (zaci) zabqVar.zah().get(this.zab);
-        if (zaciVar == null) {
-            return null;
-        }
-        return zaciVar.zaa.getRequiredFeatures();
+    public final boolean zab(zabk zabkVar) {
+        zacd zacdVar = (zacd) zabkVar.zag().get(this.zab);
+        return zacdVar != null && zacdVar.zaa.zaa();
     }
 
-    @Override // com.google.android.gms.common.api.internal.zad
-    public final void zac(zabq zabqVar) throws RemoteException {
-        zaci zaciVar = (zaci) zabqVar.zah().remove(this.zab);
-        if (zaciVar != null) {
-            zaciVar.zab.unregisterListener(zabqVar.zaf(), this.zaa);
-            zaciVar.zaa.clearListener();
-            return;
+    @Override // com.google.android.gms.common.api.internal.zac
+    public final int zac(zabk zabkVar) {
+        zacd zacdVar = (zacd) zabkVar.zag().get(this.zab);
+        if (zacdVar != null) {
+            return zacdVar.zaa.zab();
         }
-        this.zaa.trySetResult(false);
+        return -1;
     }
 
     @Override // com.google.android.gms.common.api.internal.zad, com.google.android.gms.common.api.internal.zai
-    public final /* bridge */ /* synthetic */ void zag(zaad zaadVar, boolean z) {
+    public final /* bridge */ /* synthetic */ void zaf(zaaa zaaaVar, boolean z) {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zad
+    public final void zah(zabk zabkVar) throws RemoteException {
+        zacd zacdVar = (zacd) zabkVar.zag().remove(this.zab);
+        if (zacdVar != null) {
+            zacdVar.zab.unregisterListener(zabkVar.zaf(), this.zaa);
+            zacdVar.zaa.clearListener();
+            return;
+        }
+        this.zaa.trySetResult(false);
     }
 }

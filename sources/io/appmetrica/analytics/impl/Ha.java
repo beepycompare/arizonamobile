@@ -1,31 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.Set;
 /* loaded from: classes5.dex */
-public interface Ha {
-    Ha a(int i, String str);
-
-    Ha a(String str, float f);
-
-    Ha a(String str, long j);
-
-    Ha a(String str, String str2);
-
-    Ha a(String str, boolean z);
-
-    Set a();
-
-    boolean a(String str);
-
-    void b();
-
-    boolean getBoolean(String str, boolean z);
-
-    int getInt(String str, int i);
-
-    long getLong(String str, long j);
-
-    String getString(String str, String str2);
-
-    Ha remove(String str);
+public final class Ha implements InterfaceC0664ve {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0664ve
+    public final C0711x9 a(Integer num, String str) {
+        C0711x9 c0711x9 = new C0711x9();
+        if (num != null) {
+            c0711x9.f1277a = num.intValue();
+        }
+        if (str != null) {
+            c0711x9.b = str;
+        }
+        return c0711x9;
+    }
 }

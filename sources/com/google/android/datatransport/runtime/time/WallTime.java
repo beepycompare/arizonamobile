@@ -2,6 +2,6 @@ package com.google.android.datatransport.runtime.time;
 
 import javax.inject.Qualifier;
 @Qualifier
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface WallTime {
 }

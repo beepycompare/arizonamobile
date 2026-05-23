@@ -5,7 +5,7 @@ import com.google.android.datatransport.Transformer;
 import com.google.android.datatransport.Transport;
 import com.google.android.datatransport.TransportFactory;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class TransportFactoryImpl implements TransportFactory {
     private final Set<Encoding> supportedPayloadEncodings;
     private final TransportContext transportContext;

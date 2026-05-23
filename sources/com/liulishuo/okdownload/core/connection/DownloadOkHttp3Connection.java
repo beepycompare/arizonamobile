@@ -11,7 +11,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DownloadOkHttp3Connection implements DownloadConnection, DownloadConnection.Connected {
     final OkHttpClient client;
     private Request request;
@@ -123,7 +123,7 @@ public class DownloadOkHttp3Connection implements DownloadConnection, DownloadCo
         return null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes3.dex */
     public static class Factory implements DownloadConnection.Factory {
         private volatile OkHttpClient client;
         private OkHttpClient.Builder clientBuilder;

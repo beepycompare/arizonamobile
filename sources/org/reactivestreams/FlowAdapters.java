@@ -2,7 +2,7 @@ package org.reactivestreams;
 
 import java.util.Objects;
 import java.util.concurrent.Flow;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class FlowAdapters {
     private FlowAdapters() {
         throw new IllegalStateException("No instances!");
@@ -74,7 +74,7 @@ public final class FlowAdapters {
         return new ReactiveToFlowSubscriber(subscriber);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class FlowToReactiveSubscription implements Flow.Subscription {
         final Subscription reactiveStreams;
 
@@ -93,7 +93,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class ReactiveToFlowSubscription implements Subscription {
         final Flow.Subscription flow;
 
@@ -112,7 +112,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class FlowToReactiveSubscriber<T> implements Flow.Subscriber<T> {
         final Subscriber<? super T> reactiveStreams;
 
@@ -141,7 +141,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class ReactiveToFlowSubscriber<T> implements Subscriber<T> {
         final Flow.Subscriber<? super T> flow;
 
@@ -170,7 +170,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class ReactiveToFlowProcessor<T, U> implements Processor<T, U> {
         final Flow.Processor<? super T, ? extends U> flow;
 
@@ -204,7 +204,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class FlowToReactiveProcessor<T, U> implements Flow.Processor<T, U> {
         final Processor<? super T, ? extends U> reactiveStreams;
 
@@ -238,7 +238,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class ReactivePublisherFromFlow<T> implements Publisher<T> {
         final Flow.Publisher<? extends T> flow;
 
@@ -252,7 +252,7 @@ public final class FlowAdapters {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class FlowPublisherFromReactive<T> implements Flow.Publisher<T> {
         final Publisher<? extends T> reactiveStreams;
 

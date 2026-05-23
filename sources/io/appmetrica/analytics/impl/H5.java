@@ -1,8 +1,10 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes5.dex */
-public interface H5 extends ClientContext {
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
-    J5 getModuleAdRevenueContext();
+public abstract class H5 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final List f571a = CollectionUtils.createSortedListWithoutRepetitions("data_key", "value");
 }

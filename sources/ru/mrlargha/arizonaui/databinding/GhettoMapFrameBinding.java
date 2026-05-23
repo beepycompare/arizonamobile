@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class GhettoMapFrameBinding implements ViewBinding {
     public final TextView balance;
     public final CardView bandCard;

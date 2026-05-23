@@ -1,9 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public abstract class Hk {
+public final class Hk implements InterfaceC0476o7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f622a = TimeUnit.DAYS.toSeconds(1);
+    public final String f579a = "service_main.db";
+    public final String b = "metrica_data.db";
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
+    public final String a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
+    public final String b() {
+        return this.f579a;
+    }
 }

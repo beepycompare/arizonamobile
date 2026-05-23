@@ -14,7 +14,9 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
-@Metadata(d1 = {"kotlinx/coroutines/channels/ChannelsKt__ChannelsKt", "kotlinx/coroutines/channels/ChannelsKt__Channels_commonKt", "kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.Job;
+@Metadata(d1 = {"kotlinx/coroutines/channels/ChannelsKt__ChannelsKt", "kotlinx/coroutines/channels/ChannelsKt__Channels_commonKt", "kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt"}, k = 4, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ChannelsKt {
     public static final String DEFAULT_CLOSE_MESSAGE = "Channel was closed";
@@ -39,6 +41,10 @@ public final class ChannelsKt {
 
     public static final <E> Object consumeEach(ReceiveChannel<? extends E> receiveChannel, Function1<? super E, Unit> function1, Continuation<? super Unit> continuation) {
         return ChannelsKt__Channels_commonKt.consumeEach(receiveChannel, function1, continuation);
+    }
+
+    public static final <E, C extends Collection<E>> Object consumeTo(ReceiveChannel<? extends E> receiveChannel, C c, Continuation<? super C> continuation) {
+        return ChannelsKt__Channels_commonKt.consumeTo(receiveChannel, c, continuation);
     }
 
     public static final Function1<Throwable, Unit> consumes(ReceiveChannel<?> receiveChannel) {
@@ -67,6 +73,11 @@ public final class ChannelsKt {
 
     public static final <E, R> ReceiveChannel<R> mapIndexed(ReceiveChannel<? extends E> receiveChannel, CoroutineContext coroutineContext, Function3<? super Integer, ? super E, ? super Continuation<? super R>, ? extends Object> function3) {
         return ChannelsKt__DeprecatedKt.mapIndexed(receiveChannel, coroutineContext, function3);
+    }
+
+    @Deprecated(level = DeprecationLevel.WARNING, message = "Passing a Job to coroutine builders breaks structured concurrency, leading to hard-to-diagnose errors. This pattern should be avoided. This overload will be deprecated with an error in the future.")
+    public static final <E> ReceiveChannel<E> produce(CoroutineScope coroutineScope, Job job, int i, Function2<? super ProducerScope<? super E>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        return ChannelsKt__DeprecatedKt.produce(coroutineScope, job, i, function2);
     }
 
     public static final <E, C extends SendChannel<? super E>> Object toChannel(ReceiveChannel<? extends E> receiveChannel, C c, Continuation<? super C> continuation) {

@@ -216,7 +216,7 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
             } else {
                 o.timeUs = removeFirst.timeUs;
                 if (removeFirst.isFirstSample()) {
-                    o.addFlag(C.BUFFER_FLAG_FIRST_SAMPLE);
+                    o.addFlag(134217728);
                 }
                 if (!isAtLeastOutputStartTimeUs(removeFirst.timeUs)) {
                     o.shouldBeSkipped = true;

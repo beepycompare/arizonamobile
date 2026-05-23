@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NoNetworkErrorDialog.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$NoNetworkErrorDialogKt {
     public static final ComposableSingletons$NoNetworkErrorDialogKt INSTANCE = new ComposableSingletons$NoNetworkErrorDialogKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$286452819 = ComposableLambdaKt.composableLambdaInstance(286452819, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$NoNetworkErrorDialogKt$$ExternalSyntheticLambda0
@@ -36,7 +36,7 @@ public final class ComposableSingletons$NoNetworkErrorDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(286452819, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$NoNetworkErrorDialogKt.lambda$286452819.<anonymous> (NoNetworkErrorDialog.kt:74)");
             }
-            TextKt.m2712TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

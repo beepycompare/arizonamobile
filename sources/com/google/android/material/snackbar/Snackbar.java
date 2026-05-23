@@ -18,6 +18,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.R;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 /* loaded from: classes4.dex */
 public class Snackbar extends BaseTransientBottomBar<Snackbar> {
@@ -167,7 +168,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         actionView.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Snackbar.this.m8935lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
+                Snackbar.this.m9562lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
             }
         });
         return this;
@@ -175,9 +176,47 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAction$0$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
-    public /* synthetic */ void m8935lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
+    public /* synthetic */ void m9562lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
         onClickListener.onClick(view);
         dispatchDismiss(1);
+    }
+
+    public Snackbar setCloseIconVisible(boolean z) {
+        MaterialButton closeViewOrThrow = getCloseViewOrThrow();
+        closeViewOrThrow.setVisibility(z ? 0 : 8);
+        closeViewOrThrow.setOnClickListener(z ? new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                Snackbar.this.m9563x429a879c(view);
+            }
+        } : null);
+        getSnackbarLayout().removeOrRestorePaddingEnd(z);
+        return this;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$setCloseIconVisible$1$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
+    public /* synthetic */ void m9563x429a879c(View view) {
+        dismiss();
+    }
+
+    public Snackbar setCloseIconTint(int i) {
+        return setCloseIconTintList(ColorStateList.valueOf(i));
+    }
+
+    public Snackbar setCloseIconTintList(ColorStateList colorStateList) {
+        getCloseViewOrThrow().setIconTint(colorStateList);
+        return this;
+    }
+
+    public Snackbar setCloseIconDrawable(Drawable drawable) {
+        getCloseViewOrThrow().m9465x11712a47(drawable);
+        return this;
+    }
+
+    public Snackbar setCloseIconResource(int i) {
+        getCloseViewOrThrow().setIconResource(i);
+        return this;
     }
 
     @Override // com.google.android.material.snackbar.BaseTransientBottomBar
@@ -319,5 +358,16 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     private SnackbarContentLayout getContentLayout() {
         return (SnackbarContentLayout) this.view.getChildAt(0);
+    }
+
+    private MaterialButton getCloseViewOrThrow() {
+        if (!(getContentLayout().getCloseView() instanceof MaterialButton)) {
+            throw new IllegalStateException("The layout of this snackbar does not include a close MaterialButton. This might be because the context's theme is not a Material 3 or later theme or because the Snackbar's layout has been replaced with a custom layout.");
+        }
+        return (MaterialButton) getContentLayout().getCloseView();
+    }
+
+    private BaseTransientBottomBar.SnackbarBaseLayout getSnackbarLayout() {
+        return this.view;
     }
 }

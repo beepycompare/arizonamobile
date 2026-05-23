@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime.dagger.internal;
 
 import com.google.android.datatransport.runtime.dagger.Lazy;
 import javax.inject.Provider;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final Object UNINITIALIZED = new Object();

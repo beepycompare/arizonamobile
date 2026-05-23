@@ -4,7 +4,7 @@ import android.os.Build;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import javax.annotation.Nullable;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 class Reflection {
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean isDefaultMethod(Method method) {
@@ -22,7 +22,7 @@ class Reflection {
         return "parameter #" + (i + 1);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static class Java8 extends Reflection {
         @Override // retrofit2.Reflection
         boolean isDefaultMethod(Method method) {
@@ -44,7 +44,7 @@ class Reflection {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Android24 extends Reflection {
         @Override // retrofit2.Reflection
         boolean isDefaultMethod(Method method) {

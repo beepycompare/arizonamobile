@@ -15,18 +15,17 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.TransformedResult;
 import com.google.android.gms.common.internal.ICancelToken;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class BasePendingResult<R extends Result> extends PendingResult<R> {
     static final ThreadLocal zaa = new zaq();
     public static final /* synthetic */ int zad = 0;
-    private zas resultGuardian;
+    private zar resultGuardian;
     protected final CallbackHandler zab;
     protected final WeakReference zac;
     private final Object zae;
@@ -40,8 +39,50 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
     private boolean zam;
     private boolean zan;
     private ICancelToken zao;
-    private volatile zada zap;
+    private volatile zacs zap;
     private boolean zaq;
+
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
+    /* loaded from: classes4.dex */
+    public static class CallbackHandler<R extends Result> extends com.google.android.gms.internal.base.zao {
+        public CallbackHandler() {
+            this(Looper.getMainLooper());
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
+        @Override // android.os.Handler
+        public final void handleMessage(Message message) {
+            int i = message.what;
+            if (i == 1) {
+                Pair pair = (Pair) message.obj;
+                ResultCallback resultCallback = (ResultCallback) pair.first;
+                Result result = (Result) pair.second;
+                try {
+                    resultCallback.onResult(result);
+                } catch (RuntimeException e) {
+                    BasePendingResult.zal(result);
+                    throw e;
+                }
+            } else if (i == 2) {
+                ((BasePendingResult) message.obj).forceFailureUnlessReady(Status.RESULT_TIMEOUT);
+            } else {
+                int i2 = message.what;
+                StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 34);
+                sb.append("Don't know how to handle message: ");
+                sb.append(i2);
+                Log.wtf("BasePendingResult", sb.toString(), new Exception());
+            }
+        }
+
+        public final void zaa(ResultCallback resultCallback, Result result) {
+            int i = BasePendingResult.zad;
+            sendMessage(obtainMessage(1, new Pair((ResultCallback) Preconditions.checkNotNull(resultCallback), result)));
+        }
+
+        public CallbackHandler(Looper looper) {
+            super(looper);
+        }
+    }
 
     @Deprecated
     BasePendingResult() {
@@ -64,9 +105,9 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
             this.zah = null;
             this.zal = true;
         }
-        zadb zadbVar = (zadb) this.zai.getAndSet(null);
-        if (zadbVar != null) {
-            zadbVar.zaa.zab.remove(this);
+        zact zactVar = (zact) this.zai.getAndSet(null);
+        if (zactVar != null) {
+            zactVar.zaa.zab.remove(this);
         }
         return (Result) Preconditions.checkNotNull(result);
     }
@@ -82,11 +123,12 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
             ResultCallback resultCallback = this.zah;
             if (resultCallback == null) {
                 if (this.zaj instanceof Releasable) {
-                    this.resultGuardian = new zas(this, null);
+                    this.resultGuardian = new zar(this, null);
                 }
             } else {
-                this.zab.removeMessages(2);
-                this.zab.zaa(resultCallback, zaa());
+                CallbackHandler callbackHandler = this.zab;
+                callbackHandler.removeMessages(2);
+                callbackHandler.zaa(resultCallback, zaa());
             }
         }
         ArrayList arrayList = this.zag;
@@ -94,7 +136,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         for (int i = 0; i < size; i++) {
             ((PendingResult.StatusListener) arrayList.get(i)).onComplete(this.zak);
         }
-        this.zag.clear();
+        arrayList.clear();
     }
 
     public static void zal(Result result) {
@@ -102,7 +144,9 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
             try {
                 ((Releasable) result).release();
             } catch (RuntimeException e) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(String.valueOf(result))), e);
+                String valueOf = String.valueOf(result);
+                String.valueOf(valueOf);
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(valueOf)), e);
             }
         }
     }
@@ -120,7 +164,6 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
     }
 
     @Override // com.google.android.gms.common.api.PendingResult
-    @ResultIgnorabilityUnspecified
     public final R await() {
         Preconditions.checkNotMainThread("await must not be called on the UI thread");
         Preconditions.checkState(!this.zal, "Result has already been consumed");
@@ -152,6 +195,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     public abstract R createFailedResult(Status status);
 
     @Deprecated
@@ -216,7 +260,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
             Preconditions.checkState(this.zah == null, "Cannot call then() if callbacks are set.");
             Preconditions.checkState(!this.zam, "Cannot call then() if result was canceled.");
             this.zaq = true;
-            this.zap = new zada(this.zac);
+            this.zap = new zacs(this.zac);
             then = this.zap.then(resultTransform);
             if (isReady()) {
                 this.zab.zaa(this.zap, zaa());
@@ -227,15 +271,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         return then;
     }
 
-    public final void zak() {
-        boolean z = true;
-        if (!this.zaq && !((Boolean) zaa.get()).booleanValue()) {
-            z = false;
-        }
-        this.zaq = z;
-    }
-
-    public final boolean zam() {
+    public final boolean zaj() {
         boolean isCanceled;
         synchronized (this.zae) {
             if (((GoogleApiClient) this.zac.get()) == null || !this.zaq) {
@@ -246,49 +282,21 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         return isCanceled;
     }
 
-    public final void zan(zadb zadbVar) {
-        this.zai.set(zadbVar);
+    public final void zak() {
+        boolean z = true;
+        if (!this.zaq && !((Boolean) zaa.get()).booleanValue()) {
+            z = false;
+        }
+        this.zaq = z;
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-    /* loaded from: classes4.dex */
-    public static class CallbackHandler<R extends Result> extends com.google.android.gms.internal.base.zau {
-        public CallbackHandler() {
-            super(Looper.getMainLooper());
-        }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Result zam() {
+        return this.zaj;
+    }
 
-        /* JADX WARN: Multi-variable type inference failed */
-        @Override // android.os.Handler
-        public final void handleMessage(Message message) {
-            int i = message.what;
-            if (i != 1) {
-                if (i == 2) {
-                    ((BasePendingResult) message.obj).forceFailureUnlessReady(Status.RESULT_TIMEOUT);
-                    return;
-                }
-                int i2 = message.what;
-                Log.wtf("BasePendingResult", "Don't know how to handle message: " + i2, new Exception());
-                return;
-            }
-            Pair pair = (Pair) message.obj;
-            ResultCallback resultCallback = (ResultCallback) pair.first;
-            Result result = (Result) pair.second;
-            try {
-                resultCallback.onResult(result);
-            } catch (RuntimeException e) {
-                BasePendingResult.zal(result);
-                throw e;
-            }
-        }
-
-        public final void zaa(ResultCallback resultCallback, Result result) {
-            int i = BasePendingResult.zad;
-            sendMessage(obtainMessage(1, new Pair((ResultCallback) Preconditions.checkNotNull(resultCallback), result)));
-        }
-
-        public CallbackHandler(Looper looper) {
-            super(looper);
-        }
+    public final void zan(zact zactVar) {
+        this.zai.set(zactVar);
     }
 
     public final void setResult(R r) {
@@ -304,6 +312,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Deprecated
     public BasePendingResult(Looper looper) {
         this.zae = new Object();
@@ -316,7 +325,6 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
     }
 
     @Override // com.google.android.gms.common.api.PendingResult
-    @ResultIgnorabilityUnspecified
     public final R await(long j, TimeUnit timeUnit) {
         if (j > 0) {
             Preconditions.checkNotMainThread("await must not be called on the UI thread when time is greater than zero.");
@@ -360,6 +368,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     public BasePendingResult(GoogleApiClient googleApiClient) {
         this.zae = new Object();
         this.zaf = new CountDownLatch(1);
@@ -370,6 +379,7 @@ public abstract class BasePendingResult<R extends Result> extends PendingResult<
         this.zac = new WeakReference(googleApiClient);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     public BasePendingResult(CallbackHandler<R> callbackHandler) {
         this.zae = new Object();
         this.zaf = new CountDownLatch(1);

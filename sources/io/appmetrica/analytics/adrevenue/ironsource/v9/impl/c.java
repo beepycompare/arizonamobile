@@ -14,17 +14,17 @@ import java.util.Currency;
 public final class c implements LevelPlayImpressionDataListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f305a;
+    public final ClientContext f232a;
     public final b b = new b();
 
     public c(ClientContext clientContext) {
-        this.f305a = clientContext;
+        this.f232a = clientContext;
     }
 
     public final void onImpressionSuccess(LevelPlayImpressionData levelPlayImpressionData) {
         ModuleAdType moduleAdType;
         if (levelPlayImpressionData != null) {
-            InternalClientModuleFacade internalClientModuleFacade = this.f305a.getInternalClientModuleFacade();
+            InternalClientModuleFacade internalClientModuleFacade = this.f232a.getInternalClientModuleFacade();
             this.b.getClass();
             String adFormat = levelPlayImpressionData.getAdFormat();
             BigDecimal valueOf = BigDecimal.valueOf(WrapUtils.getFiniteDoubleOrDefaultNullable(levelPlayImpressionData.getRevenue(), FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE));

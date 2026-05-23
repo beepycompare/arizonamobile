@@ -13,49 +13,49 @@ public final class BaseRequestDelegate implements RequestDelegate {
     private final Job job;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BaseRequestDelegate m8605boximpl(Job job) {
+    public static final /* synthetic */ BaseRequestDelegate m9214boximpl(Job job) {
         return new BaseRequestDelegate(job);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Job m8606constructorimpl(Job job) {
+    public static Job m9215constructorimpl(Job job) {
         return job;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8608equalsimpl(Job job, Object obj) {
-        return (obj instanceof BaseRequestDelegate) && Intrinsics.areEqual(job, ((BaseRequestDelegate) obj).m8612unboximpl());
+    public static boolean m9217equalsimpl(Job job, Object obj) {
+        return (obj instanceof BaseRequestDelegate) && Intrinsics.areEqual(job, ((BaseRequestDelegate) obj).m9221unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8609equalsimpl0(Job job, Job job2) {
+    public static final boolean m9218equalsimpl0(Job job, Job job2) {
         return Intrinsics.areEqual(job, job2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8610hashCodeimpl(Job job) {
+    public static int m9219hashCodeimpl(Job job) {
         return job.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8611toStringimpl(Job job) {
+    public static String m9220toStringimpl(Job job) {
         return "BaseRequestDelegate(job=" + job + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8608equalsimpl(this.job, obj);
+        return m9217equalsimpl(this.job, obj);
     }
 
     public int hashCode() {
-        return m8610hashCodeimpl(this.job);
+        return m9219hashCodeimpl(this.job);
     }
 
     public String toString() {
-        return m8611toStringimpl(this.job);
+        return m9220toStringimpl(this.job);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Job m8612unboximpl() {
+    public final /* synthetic */ Job m9221unboximpl() {
         return this.job;
     }
 
@@ -65,11 +65,11 @@ public final class BaseRequestDelegate implements RequestDelegate {
 
     @Override // coil3.request.RequestDelegate
     public void dispose() {
-        m8607disposeimpl(this.job);
+        m9216disposeimpl(this.job);
     }
 
     /* renamed from: dispose-impl  reason: not valid java name */
-    public static void m8607disposeimpl(Job job) {
-        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+    public static void m9216disposeimpl(Job job) {
+        Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
     }
 }

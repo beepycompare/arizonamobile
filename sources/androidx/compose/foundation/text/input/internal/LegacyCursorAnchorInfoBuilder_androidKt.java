@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.ResolvedTextDirection;
 import kotlin.Metadata;
 import kotlin.ranges.RangesKt;
 /* compiled from: LegacyCursorAnchorInfoBuilder.android.kt */
-@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0002\u001ad\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\u000f2\b\b\u0002\u0010\u0012\u001a\u00020\u000fH\u0000\u001a,\u0010\u0013\u001a\u00020\u0002*\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a4\u0010\u0016\u001a\u00020\u0002*\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a\u001c\u0010\u0019\u001a\u00020\u000f*\u00020\f2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001bH\u0000¨\u0006\u001d"}, d2 = {"build", "Landroid/view/inputmethod/CursorAnchorInfo;", "Landroid/view/inputmethod/CursorAnchorInfo$Builder;", "textFieldValue", "Landroidx/compose/ui/text/input/TextFieldValue;", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "matrix", "Landroid/graphics/Matrix;", "innerTextFieldBounds", "Landroidx/compose/ui/geometry/Rect;", "decorationBoxBounds", "includeInsertionMarker", "", "includeCharacterBounds", "includeEditorBounds", "includeLineBounds", "setInsertionMarker", "selectionStart", "", "addCharacterBounds", "startOffset", "endOffset", "containsInclusive", "x", "", "y", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0002\u001ad\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\u000f2\b\b\u0002\u0010\u0012\u001a\u00020\u000fH\u0000\u001a,\u0010\u0013\u001a\u00020\u0002*\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a4\u0010\u0016\u001a\u00020\u0002*\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a\u001c\u0010\u0019\u001a\u00020\u000f*\u00020\f2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001bH\u0000¨\u0006\u001d"}, d2 = {"build", "Landroid/view/inputmethod/CursorAnchorInfo;", "Landroid/view/inputmethod/CursorAnchorInfo$Builder;", "textFieldValue", "Landroidx/compose/ui/text/input/TextFieldValue;", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "textLayoutResult", "Landroidx/compose/ui/text/TextLayoutResult;", "matrix", "Landroid/graphics/Matrix;", "innerTextFieldBounds", "Landroidx/compose/ui/geometry/Rect;", "decorationBoxBounds", "includeInsertionMarker", "", "includeCharacterBounds", "includeEditorBounds", "includeLineBounds", "setInsertionMarker", "selectionStart", "", "addCharacterBounds", "startOffset", "endOffset", "containsInclusive", "x", "", "y", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LegacyCursorAnchorInfoBuilder_androidKt {
     public static /* synthetic */ CursorAnchorInfo build$default(CursorAnchorInfo.Builder builder, TextFieldValue textFieldValue, OffsetMapping offsetMapping, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4, int i, Object obj) {
@@ -35,19 +35,19 @@ public final class LegacyCursorAnchorInfoBuilder_androidKt {
     public static final CursorAnchorInfo build(CursorAnchorInfo.Builder builder, TextFieldValue textFieldValue, OffsetMapping offsetMapping, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4) {
         builder.reset();
         builder.setMatrix(matrix);
-        int m7001getMinimpl = TextRange.m7001getMinimpl(textFieldValue.m7253getSelectiond9O1mEE());
-        builder.setSelectionRange(m7001getMinimpl, TextRange.m7000getMaximpl(textFieldValue.m7253getSelectiond9O1mEE()));
+        int m7606getMinimpl = TextRange.m7606getMinimpl(textFieldValue.m7858getSelectiond9O1mEE());
+        builder.setSelectionRange(m7606getMinimpl, TextRange.m7605getMaximpl(textFieldValue.m7858getSelectiond9O1mEE()));
         if (z) {
-            setInsertionMarker(builder, m7001getMinimpl, offsetMapping, textLayoutResult, rect);
+            setInsertionMarker(builder, m7606getMinimpl, offsetMapping, textLayoutResult, rect);
         }
         if (z2) {
-            TextRange m7252getCompositionMzsxiRA = textFieldValue.m7252getCompositionMzsxiRA();
-            int m7001getMinimpl2 = m7252getCompositionMzsxiRA != null ? TextRange.m7001getMinimpl(m7252getCompositionMzsxiRA.m7007unboximpl()) : -1;
-            TextRange m7252getCompositionMzsxiRA2 = textFieldValue.m7252getCompositionMzsxiRA();
-            int m7000getMaximpl = m7252getCompositionMzsxiRA2 != null ? TextRange.m7000getMaximpl(m7252getCompositionMzsxiRA2.m7007unboximpl()) : -1;
-            if (m7001getMinimpl2 >= 0 && m7001getMinimpl2 < m7000getMaximpl) {
-                builder.setComposingText(m7001getMinimpl2, textFieldValue.getText().subSequence(m7001getMinimpl2, m7000getMaximpl));
-                addCharacterBounds(builder, m7001getMinimpl2, m7000getMaximpl, offsetMapping, textLayoutResult, rect);
+            TextRange m7857getCompositionMzsxiRA = textFieldValue.m7857getCompositionMzsxiRA();
+            int m7606getMinimpl2 = m7857getCompositionMzsxiRA != null ? TextRange.m7606getMinimpl(m7857getCompositionMzsxiRA.m7612unboximpl()) : -1;
+            TextRange m7857getCompositionMzsxiRA2 = textFieldValue.m7857getCompositionMzsxiRA();
+            int m7605getMaximpl = m7857getCompositionMzsxiRA2 != null ? TextRange.m7605getMaximpl(m7857getCompositionMzsxiRA2.m7612unboximpl()) : -1;
+            if (m7606getMinimpl2 >= 0 && m7606getMinimpl2 < m7605getMaximpl) {
+                builder.setComposingText(m7606getMinimpl2, textFieldValue.getText().subSequence(m7606getMinimpl2, m7605getMaximpl));
+                addCharacterBounds(builder, m7606getMinimpl2, m7605getMaximpl, offsetMapping, textLayoutResult, rect);
             }
         }
         if (Build.VERSION.SDK_INT >= 33 && z3) {
@@ -65,7 +65,7 @@ public final class LegacyCursorAnchorInfoBuilder_androidKt {
         }
         int originalToTransformed = offsetMapping.originalToTransformed(i);
         Rect cursorRect = textLayoutResult.getCursorRect(originalToTransformed);
-        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m6974getSizeYbymL2g() >> 32));
+        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m7579getSizeYbymL2g() >> 32));
         boolean containsInclusive = containsInclusive(rect, coerceIn, cursorRect.getTop());
         boolean containsInclusive2 = containsInclusive(rect, coerceIn, cursorRect.getBottom());
         int i2 = 1;
@@ -90,7 +90,7 @@ public final class LegacyCursorAnchorInfoBuilder_androidKt {
         int originalToTransformed = offsetMapping.originalToTransformed(i);
         int originalToTransformed2 = offsetMapping.originalToTransformed(i2);
         float[] fArr = new float[(originalToTransformed2 - originalToTransformed) * 4];
-        textLayoutResult.getMultiParagraph().m6863fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(originalToTransformed, originalToTransformed2), fArr, 0);
+        textLayoutResult.getMultiParagraph().m7468fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(originalToTransformed, originalToTransformed2), fArr, 0);
         for (int i3 = i; i3 < i2; i3++) {
             int originalToTransformed3 = offsetMapping.originalToTransformed(i3);
             int i4 = (originalToTransformed3 - originalToTransformed) * 4;

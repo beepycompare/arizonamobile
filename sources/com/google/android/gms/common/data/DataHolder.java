@@ -18,23 +18,23 @@ import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class DataHolder extends AbstractSafeParcelable implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new zaf();
-    private static final Builder zaf = new zab(new String[0], null);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new zad();
+    private static final Builder zak = new zab(new String[0], null);
     final int zaa;
     Bundle zab;
     int[] zac;
     int zad;
     boolean zae;
-    private final String[] zag;
-    private final CursorWindow[] zah;
-    private final int zai;
-    private final Bundle zaj;
-    private boolean zak;
+    private final String[] zaf;
+    private final CursorWindow[] zag;
+    private final int zah;
+    private final Bundle zai;
+    private boolean zaj;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class Builder {
         private final String[] zaa;
@@ -42,12 +42,12 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         private final HashMap zac = new HashMap();
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public /* synthetic */ Builder(String[] strArr, String str, zac zacVar) {
+        public /* synthetic */ Builder(String[] strArr, String str, byte[] bArr) {
             this.zaa = (String[]) Preconditions.checkNotNull(strArr);
         }
 
         public DataHolder build(int i) {
-            return new DataHolder(this, i);
+            return new DataHolder(this, i, (Bundle) null, (byte[]) null);
         }
 
         public Builder withRow(ContentValues contentValues) {
@@ -65,31 +65,43 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
             return this;
         }
 
+        final /* synthetic */ String[] zab() {
+            return this.zaa;
+        }
+
+        final /* synthetic */ ArrayList zac() {
+            return this.zab;
+        }
+
         public DataHolder build(int i, Bundle bundle) {
-            return new DataHolder(this, i, bundle);
+            return new DataHolder(this, i, bundle, -1, (byte[]) null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DataHolder(int i, String[] strArr, CursorWindow[] cursorWindowArr, int i2, Bundle bundle) {
         this.zae = false;
-        this.zak = true;
+        this.zaj = true;
         this.zaa = i;
-        this.zag = strArr;
-        this.zah = cursorWindowArr;
-        this.zai = i2;
-        this.zaj = bundle;
+        this.zaf = strArr;
+        this.zag = cursorWindowArr;
+        this.zah = i2;
+        this.zai = bundle;
+    }
+
+    /* synthetic */ DataHolder(Builder builder, int i, Bundle bundle, byte[] bArr) {
+        this(builder, i, (Bundle) null);
     }
 
     public DataHolder(String[] strArr, CursorWindow[] cursorWindowArr, int i, Bundle bundle) {
         this.zae = false;
-        this.zak = true;
+        this.zaj = true;
         this.zaa = 1;
-        this.zag = (String[]) Preconditions.checkNotNull(strArr);
-        this.zah = (CursorWindow[]) Preconditions.checkNotNull(cursorWindowArr);
-        this.zai = i;
-        this.zaj = bundle;
-        zad();
+        this.zaf = (String[]) Preconditions.checkNotNull(strArr);
+        this.zag = (CursorWindow[]) Preconditions.checkNotNull(cursorWindowArr);
+        this.zah = i;
+        this.zai = bundle;
+        zaa();
     }
 
     public static Builder builder(String[] strArr) {
@@ -97,64 +109,120 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     public static DataHolder empty(int i) {
-        return new DataHolder(zaf, i, (Bundle) null);
+        return new DataHolder(zak, i, (Bundle) null);
     }
 
-    private final void zae(String str, int i) {
-        Bundle bundle = this.zab;
-        if (bundle == null || !bundle.containsKey(str)) {
-            throw new IllegalArgumentException("No such column: ".concat(String.valueOf(str)));
-        }
-        if (!isClosed()) {
-            if (i < 0 || i >= this.zad) {
-                throw new CursorIndexOutOfBoundsException(i, this.zad);
-            }
-            return;
-        }
-        throw new IllegalArgumentException("Buffer is closed.");
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0133, code lost:
-        if (r5 != false) goto L66;
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0137, code lost:
+        r0 = r0.toString();
+        r5 = new java.lang.StringBuilder((java.lang.String.valueOf(r15).length() + 32) + r0.length());
+        r5.append("Unsupported object for column ");
+        r5.append(r15);
+        r5.append(": ");
+        r5.append(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0135, code lost:
-        android.util.Log.d("DataHolder", "Couldn't populate window data for row " + r4 + " - allocating new window.");
-        r2.freeLastRow();
-        r2 = new android.database.CursorWindow(false);
-        r2.setStartPosition(r4);
-        r2.setNumColumns(r13.zaa.length);
-        r3.add(r2);
-        r4 = r4 - 1;
-        r5 = true;
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0164, code lost:
+        throw new java.lang.IllegalArgumentException(r5.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0167, code lost:
-        r4 = r4 + 1;
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0179, code lost:
+        if (r12 != false) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0171, code lost:
-        throw new com.google.android.gms.common.data.zad("Could not add the value to a new CursorWindow. The size of value may be larger than what a CursorWindow can handle.");
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x017b, code lost:
+        r5 = new java.lang.StringBuilder(java.lang.String.valueOf(r11).length() + 63);
+        r5.append("Couldn't populate window data for row ");
+        r5.append(r11);
+        r5.append(" - allocating new window.");
+        android.util.Log.d("DataHolder", r5.toString());
+        r9.freeLastRow();
      */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x019f, code lost:
+        r5 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x01a0, code lost:
+        r0 = new android.database.CursorWindow(false);
+        r0.setStartPosition(r11);
+        r0.setNumColumns(r21.zab().length);
+        r10.add(r0);
+        r11 = r11 - 1;
+        r9 = r0;
+        r12 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x01b6, code lost:
+        r11 = r11 + 1;
+        r7 = r5;
+        r0 = r18;
+        r5 = r19;
+        r6 = r20;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x01c1, code lost:
+        r5 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x01c9, code lost:
+        throw new com.google.android.gms.common.data.zac("Could not add the value to a new CursorWindow. The size of value may be larger than what a CursorWindow can handle.");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x01ca, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x01d1, code lost:
+        r1 = r10.size();
+        r7 = r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x01d6, code lost:
+        if (r7 < r1) goto L73;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x01d8, code lost:
+        ((android.database.CursorWindow) r10.get(r7)).close();
+        r7 = r7 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01e4, code lost:
+        throw r0;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v10 */
+    /* JADX WARN: Type inference failed for: r5v12 */
+    /* JADX WARN: Type inference failed for: r5v2 */
+    /* JADX WARN: Type inference failed for: r5v3 */
+    /* JADX WARN: Type inference failed for: r5v5 */
+    /* JADX WARN: Type inference failed for: r5v6 */
+    /* JADX WARN: Type inference failed for: r5v7 */
+    /* JADX WARN: Type inference failed for: r5v9 */
+    /* JADX WARN: Type inference failed for: r7v5, types: [int] */
+    /* JADX WARN: Type inference failed for: r7v8 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static CursorWindow[] zaf(Builder builder, int i) {
-        if (builder.zaa.length == 0) {
+    private static CursorWindow[] zae(Builder builder, int i) {
+        ?? r5;
+        ArrayList arrayList;
+        String str;
+        String str2;
+        String str3;
+        String str4;
+        boolean putDouble;
+        String str5 = ")";
+        String str6 = "Allocating additional cursor window for large data set (row ";
+        boolean z = false;
+        if (builder.zab().length == 0) {
             return new CursorWindow[0];
         }
-        ArrayList arrayList = builder.zab;
-        int size = arrayList.size();
+        ArrayList zac = builder.zac();
+        int size = zac.size();
         CursorWindow cursorWindow = new CursorWindow(false);
         ArrayList arrayList2 = new ArrayList();
         arrayList2.add(cursorWindow);
-        cursorWindow.setNumColumns(builder.zaa.length);
+        cursorWindow.setNumColumns(builder.zab().length);
         int i2 = 0;
-        boolean z = false;
-        while (i2 < size) {
+        boolean z2 = false;
+        loop0: while (i2 < size) {
             try {
                 if (!cursorWindow.allocRow()) {
-                    Log.d("DataHolder", "Allocating additional cursor window for large data set (row " + i2 + ")");
-                    cursorWindow = new CursorWindow(false);
+                    StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 61);
+                    sb.append(str6);
+                    sb.append(i2);
+                    sb.append(str5);
+                    Log.d("DataHolder", sb.toString());
+                    cursorWindow = new CursorWindow(z);
                     cursorWindow.setStartPosition(i2);
-                    cursorWindow.setNumColumns(builder.zaa.length);
+                    cursorWindow.setNumColumns(builder.zab().length);
                     arrayList2.add(cursorWindow);
                     if (!cursorWindow.allocRow()) {
                         Log.e("DataHolder", "Unable to allocate row to hold data.");
@@ -162,49 +230,93 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                         return (CursorWindow[]) arrayList2.toArray(new CursorWindow[arrayList2.size()]);
                     }
                 }
-                Map map = (Map) arrayList.get(i2);
-                int i3 = 0;
-                boolean z2 = true;
+                Map map = (Map) zac.get(i2);
+                boolean z3 = true;
+                int i3 = z;
                 while (true) {
-                    if (i3 < builder.zaa.length) {
-                        if (!z2) {
+                    try {
+                        if (i3 >= builder.zab().length) {
+                            arrayList = zac;
+                            str = str5;
+                            str2 = str6;
+                            if (z3) {
+                                r5 = 0;
+                                z2 = false;
+                            }
+                        } else if (!z3) {
+                            arrayList = zac;
+                            str = str5;
+                            str2 = str6;
                             break;
-                        }
-                        String str = builder.zaa[i3];
-                        Object obj = map.get(str);
-                        if (obj == null) {
-                            z2 = cursorWindow.putNull(i2, i3);
-                        } else if (obj instanceof String) {
-                            z2 = cursorWindow.putString((String) obj, i2, i3);
-                        } else if (obj instanceof Long) {
-                            z2 = cursorWindow.putLong(((Long) obj).longValue(), i2, i3);
-                        } else if (obj instanceof Integer) {
-                            z2 = cursorWindow.putLong(((Integer) obj).intValue(), i2, i3);
-                        } else if (obj instanceof Boolean) {
-                            z2 = cursorWindow.putLong(true != ((Boolean) obj).booleanValue() ? 0L : 1L, i2, i3);
-                        } else if (obj instanceof byte[]) {
-                            z2 = cursorWindow.putBlob((byte[]) obj, i2, i3);
-                        } else if (obj instanceof Double) {
-                            z2 = cursorWindow.putDouble(((Double) obj).doubleValue(), i2, i3);
-                        } else if (obj instanceof Float) {
-                            z2 = cursorWindow.putDouble(((Float) obj).floatValue(), i2, i3);
                         } else {
-                            throw new IllegalArgumentException("Unsupported object for column " + str + ": " + obj.toString());
+                            String str7 = builder.zab()[i3];
+                            ArrayList arrayList3 = zac;
+                            Object obj = map.get(str7);
+                            if (obj == null) {
+                                z3 = cursorWindow.putNull(i2, i3);
+                                str3 = str5;
+                            } else {
+                                str3 = str5;
+                                if (obj instanceof String) {
+                                    z3 = cursorWindow.putString((String) obj, i2, i3);
+                                } else {
+                                    if (obj instanceof Long) {
+                                        str4 = str6;
+                                        putDouble = cursorWindow.putLong(((Long) obj).longValue(), i2, i3);
+                                    } else {
+                                        str4 = str6;
+                                        if (obj instanceof Integer) {
+                                            putDouble = cursorWindow.putLong(((Integer) obj).intValue(), i2, i3);
+                                        } else if (obj instanceof Boolean) {
+                                            putDouble = cursorWindow.putLong(true != ((Boolean) obj).booleanValue() ? 0L : 1L, i2, i3);
+                                        } else if (obj instanceof byte[]) {
+                                            putDouble = cursorWindow.putBlob((byte[]) obj, i2, i3);
+                                        } else if (obj instanceof Double) {
+                                            putDouble = cursorWindow.putDouble(((Double) obj).doubleValue(), i2, i3);
+                                        } else if (!(obj instanceof Float)) {
+                                            break loop0;
+                                        } else {
+                                            putDouble = cursorWindow.putDouble(((Float) obj).floatValue(), i2, i3);
+                                        }
+                                    }
+                                    z3 = putDouble;
+                                    zac = arrayList3;
+                                    str5 = str3;
+                                    str6 = str4;
+                                    i3++;
+                                }
+                            }
+                            str4 = str6;
+                            zac = arrayList3;
+                            str5 = str3;
+                            str6 = str4;
+                            i3++;
                         }
-                        i3++;
-                    } else if (z2) {
-                        z = false;
+                    } catch (RuntimeException e) {
+                        e = e;
+                        r5 = 0;
                     }
                 }
-            } catch (RuntimeException e) {
-                int size2 = arrayList2.size();
-                for (int i4 = 0; i4 < size2; i4++) {
-                    ((CursorWindow) arrayList2.get(i4)).close();
-                }
-                throw e;
+            } catch (RuntimeException e2) {
+                e = e2;
+                r5 = z;
             }
         }
         return (CursorWindow[]) arrayList2.toArray(new CursorWindow[arrayList2.size()]);
+    }
+
+    private final void zaf(String str, int i) {
+        Bundle bundle = this.zab;
+        if (bundle == null || !bundle.containsKey(str)) {
+            String.valueOf(str);
+            throw new IllegalArgumentException("No such column: ".concat(String.valueOf(str)));
+        } else if (!isClosed()) {
+            if (i < 0 || i >= this.zad) {
+                throw new CursorIndexOutOfBoundsException(i, this.zad);
+            }
+        } else {
+            throw new IllegalArgumentException("Buffer is closed.");
+        }
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -214,7 +326,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                 this.zae = true;
                 int i = 0;
                 while (true) {
-                    CursorWindow[] cursorWindowArr = this.zah;
+                    CursorWindow[] cursorWindowArr = this.zag;
                     if (i >= cursorWindowArr.length) {
                         break;
                     }
@@ -227,10 +339,14 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
 
     protected final void finalize() throws Throwable {
         try {
-            if (this.zak && this.zah.length > 0 && !isClosed()) {
+            if (this.zaj && this.zag.length > 0 && !isClosed()) {
                 close();
                 String obj = toString();
-                Log.e("DataBuffer", "Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: " + obj + ")");
+                StringBuilder sb = new StringBuilder(String.valueOf(obj).length() + 178);
+                sb.append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ");
+                sb.append(obj);
+                sb.append(")");
+                Log.e("DataBuffer", sb.toString());
             }
         } finally {
             super.finalize();
@@ -238,13 +354,13 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     public boolean getBoolean(String str, int i, int i2) {
-        zae(str, i);
-        return Long.valueOf(this.zah[i2].getLong(i, this.zab.getInt(str))).longValue() == 1;
+        zaf(str, i);
+        return Long.valueOf(this.zag[i2].getLong(i, this.zab.getInt(str))).longValue() == 1;
     }
 
     public byte[] getByteArray(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getBlob(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].getBlob(i, this.zab.getInt(str));
     }
 
     public int getCount() {
@@ -252,26 +368,26 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     public int getInteger(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getInt(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].getInt(i, this.zab.getInt(str));
     }
 
     public long getLong(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getLong(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].getLong(i, this.zab.getInt(str));
     }
 
     public Bundle getMetadata() {
-        return this.zaj;
-    }
-
-    public int getStatusCode() {
         return this.zai;
     }
 
+    public int getStatusCode() {
+        return this.zah;
+    }
+
     public String getString(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getString(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].getString(i, this.zab.getInt(str));
     }
 
     public int getWindowIndex(int i) {
@@ -298,8 +414,8 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     public boolean hasNull(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].isNull(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].isNull(i, this.zab.getInt(str));
     }
 
     public boolean isClosed() {
@@ -312,10 +428,10 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        String[] strArr = this.zag;
+        String[] strArr = this.zaf;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeStringArray(parcel, 1, strArr, false);
-        SafeParcelWriter.writeTypedArray(parcel, 2, this.zah, i, false);
+        SafeParcelWriter.writeTypedArray(parcel, 2, this.zag, i, false);
         SafeParcelWriter.writeInt(parcel, 3, getStatusCode());
         SafeParcelWriter.writeBundle(parcel, 4, getMetadata(), false);
         SafeParcelWriter.writeInt(parcel, 1000, this.zaa);
@@ -325,45 +441,40 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         }
     }
 
-    public final double zaa(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getDouble(i, this.zab.getInt(str));
+    public final void zaa() {
+        this.zab = new Bundle();
+        int i = 0;
+        while (true) {
+            String[] strArr = this.zaf;
+            if (i >= strArr.length) {
+                break;
+            }
+            this.zab.putInt(strArr[i], i);
+            i++;
+        }
+        CursorWindow[] cursorWindowArr = this.zag;
+        this.zac = new int[cursorWindowArr.length];
+        int i2 = 0;
+        for (int i3 = 0; i3 < cursorWindowArr.length; i3++) {
+            this.zac[i3] = i2;
+            i2 += cursorWindowArr[i3].getNumRows() - (i2 - cursorWindowArr[i3].getStartPosition());
+        }
+        this.zad = i2;
     }
 
     public final float zab(String str, int i, int i2) {
-        zae(str, i);
-        return this.zah[i2].getFloat(i, this.zab.getInt(str));
+        zaf(str, i);
+        return this.zag[i2].getFloat(i, this.zab.getInt(str));
     }
 
-    public final void zac(String str, int i, int i2, CharArrayBuffer charArrayBuffer) {
-        zae(str, i);
-        this.zah[i2].copyStringToBuffer(i, this.zab.getInt(str), charArrayBuffer);
+    public final double zac(String str, int i, int i2) {
+        zaf(str, i);
+        return this.zag[i2].getDouble(i, this.zab.getInt(str));
     }
 
-    public final void zad() {
-        this.zab = new Bundle();
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            String[] strArr = this.zag;
-            if (i2 >= strArr.length) {
-                break;
-            }
-            this.zab.putInt(strArr[i2], i2);
-            i2++;
-        }
-        this.zac = new int[this.zah.length];
-        int i3 = 0;
-        while (true) {
-            CursorWindow[] cursorWindowArr = this.zah;
-            if (i >= cursorWindowArr.length) {
-                this.zad = i3;
-                return;
-            }
-            this.zac[i] = i3;
-            i3 += this.zah[i].getNumRows() - (i3 - cursorWindowArr[i].getStartPosition());
-            i++;
-        }
+    public final void zad(String str, int i, int i2, CharArrayBuffer charArrayBuffer) {
+        zaf(str, i);
+        this.zag[i2].copyStringToBuffer(i, this.zab.getInt(str), charArrayBuffer);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -414,6 +525,10 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     private DataHolder(Builder builder, int i, Bundle bundle) {
-        this(builder.zaa, zaf(builder, -1), i, (Bundle) null);
+        this(builder.zab(), zae(builder, -1), i, (Bundle) null);
+    }
+
+    /* synthetic */ DataHolder(Builder builder, int i, Bundle bundle, int i2, byte[] bArr) {
+        this(builder.zab(), zae(builder, -1), i, bundle);
     }
 }

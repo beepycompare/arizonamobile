@@ -1,21 +1,20 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Looper;
-import java.util.Map;
 /* loaded from: classes5.dex */
-public final class An implements Cn {
-    @Override // io.appmetrica.analytics.impl.Cn
-    public final Thread a() {
-        return Looper.getMainLooper().getThread();
+public final class An extends K4 {
+    public final InterfaceC0493oo g;
+
+    public An(String str, String str2, InterfaceC0493oo interfaceC0493oo, Vo vo, W2 w2) {
+        super(0, str, str2, vo, w2);
+        this.g = interfaceC0493oo;
     }
 
-    @Override // io.appmetrica.analytics.impl.Cn
-    public final StackTraceElement[] b() {
-        return null;
+    @Override // io.appmetrica.analytics.impl.K4
+    public final void a(Io io2) {
+        String str = (String) this.g.a((String) this.f);
+        io2.d.f633a = str == null ? new byte[0] : str.getBytes();
     }
 
-    @Override // io.appmetrica.analytics.impl.Cn
-    public final Map c() {
-        return Thread.getAllStackTraces();
+    public final InterfaceC0493oo h() {
+        return this.g;
     }
 }

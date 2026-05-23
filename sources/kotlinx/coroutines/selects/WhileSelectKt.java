@@ -1,78 +1,96 @@
 package kotlinx.coroutines.selects;
 
 import kotlin.Metadata;
+import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function1;
 /* compiled from: WhileSelect.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a/\u0010\u0000\u001a\u00020\u00012\u001f\b\u0004\u0010\u0002\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0006H\u0087H¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"whileSelect", "", "builder", "Lkotlin/Function1;", "Lkotlinx/coroutines/selects/SelectBuilder;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a/\u0010\u0000\u001a\u00020\u00012\u001f\b\u0004\u0010\u0002\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0006H\u0087H¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"whileSelect", "", "builder", "Lkotlin/Function1;", "Lkotlinx/coroutines/selects/SelectBuilder;", "", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-core"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class WhileSelectKt {
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:56)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:30)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:18)
-        */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004f A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0058  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x004d -> B:18:0x0050). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x006b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x007b  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x006c -> B:12:0x003b). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final java.lang.Object whileSelect(kotlin.jvm.functions.Function1<? super kotlinx.coroutines.selects.SelectBuilder<? super java.lang.Boolean>, kotlin.Unit> r4, kotlin.coroutines.Continuation<? super kotlin.Unit> r5) {
-        /*
-            boolean r0 = r5 instanceof kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1
-            if (r0 == 0) goto L14
-            r0 = r5
-            kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1 r0 = (kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1) r0
-            int r1 = r0.label
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r1 = r1 & r2
-            if (r1 == 0) goto L14
-            int r5 = r0.label
-            int r5 = r5 - r2
-            r0.label = r5
-            goto L19
-        L14:
-            kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1 r0 = new kotlinx.coroutines.selects.WhileSelectKt$whileSelect$1
-            r0.<init>(r5)
-        L19:
-            java.lang.Object r5 = r0.result
-            java.lang.Object r1 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()
-            int r2 = r0.label
-            r3 = 1
-            if (r2 == 0) goto L36
-            if (r2 != r3) goto L2e
-            java.lang.Object r4 = r0.L$0
-            kotlin.jvm.functions.Function1 r4 = (kotlin.jvm.functions.Function1) r4
-            kotlin.ResultKt.throwOnFailure(r5)
-            goto L50
-        L2e:
-            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
-            java.lang.String r5 = "call to 'resume' before 'invoke' with coroutine"
-            r4.<init>(r5)
-            throw r4
-        L36:
-            kotlin.ResultKt.throwOnFailure(r5)
-        L39:
-            kotlinx.coroutines.selects.SelectImplementation r5 = new kotlinx.coroutines.selects.SelectImplementation
-            kotlin.coroutines.CoroutineContext r2 = r0.getContext()
-            r5.<init>(r2)
-            r4.invoke(r5)
-            r0.L$0 = r4
-            r0.label = r3
-            java.lang.Object r5 = r5.doSelect(r0)
-            if (r5 != r1) goto L50
-            return r1
-        L50:
-            java.lang.Boolean r5 = (java.lang.Boolean) r5
-            boolean r5 = r5.booleanValue()
-            if (r5 != 0) goto L39
-            kotlin.Unit r4 = kotlin.Unit.INSTANCE
-            return r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.selects.WhileSelectKt.whileSelect(kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
+    public static final Object whileSelect(Function1<? super SelectBuilder<? super Boolean>, Unit> function1, Continuation<? super Unit> continuation) {
+        WhileSelectKt$whileSelect$1 whileSelectKt$whileSelect$1;
+        int i;
+        int i2;
+        Object doSelect;
+        if (continuation instanceof WhileSelectKt$whileSelect$1) {
+            whileSelectKt$whileSelect$1 = (WhileSelectKt$whileSelect$1) continuation;
+            if ((whileSelectKt$whileSelect$1.label & Integer.MIN_VALUE) != 0) {
+                whileSelectKt$whileSelect$1.label -= Integer.MIN_VALUE;
+                Object obj = whileSelectKt$whileSelect$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = whileSelectKt$whileSelect$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    i2 = 0;
+                    SelectImplementation selectImplementation = new SelectImplementation(whileSelectKt$whileSelect$1.getContext());
+                    function1.invoke(selectImplementation);
+                    whileSelectKt$whileSelect$1.L$0 = function1;
+                    whileSelectKt$whileSelect$1.L$1 = SpillingKt.nullOutSpilledVariable(selectImplementation);
+                    whileSelectKt$whileSelect$1.I$0 = i2;
+                    whileSelectKt$whileSelect$1.I$1 = 0;
+                    whileSelectKt$whileSelect$1.I$2 = 0;
+                    whileSelectKt$whileSelect$1.label = 1;
+                    doSelect = selectImplementation.doSelect(whileSelectKt$whileSelect$1);
+                    if (doSelect != coroutine_suspended) {
+                    }
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    int i3 = whileSelectKt$whileSelect$1.I$2;
+                    int i4 = whileSelectKt$whileSelect$1.I$1;
+                    int i5 = whileSelectKt$whileSelect$1.I$0;
+                    SelectImplementation selectImplementation2 = (SelectImplementation) whileSelectKt$whileSelect$1.L$1;
+                    ResultKt.throwOnFailure(obj);
+                    WhileSelectKt$whileSelect$1 whileSelectKt$whileSelect$12 = whileSelectKt$whileSelect$1;
+                    int i6 = i5;
+                    function1 = (Function1) whileSelectKt$whileSelect$1.L$0;
+                    WhileSelectKt$whileSelect$1 whileSelectKt$whileSelect$13 = whileSelectKt$whileSelect$12;
+                    if (((Boolean) obj).booleanValue()) {
+                        return Unit.INSTANCE;
+                    }
+                    i2 = i6;
+                    whileSelectKt$whileSelect$1 = whileSelectKt$whileSelect$13;
+                    SelectImplementation selectImplementation3 = new SelectImplementation(whileSelectKt$whileSelect$1.getContext());
+                    function1.invoke(selectImplementation3);
+                    whileSelectKt$whileSelect$1.L$0 = function1;
+                    whileSelectKt$whileSelect$1.L$1 = SpillingKt.nullOutSpilledVariable(selectImplementation3);
+                    whileSelectKt$whileSelect$1.I$0 = i2;
+                    whileSelectKt$whileSelect$1.I$1 = 0;
+                    whileSelectKt$whileSelect$1.I$2 = 0;
+                    whileSelectKt$whileSelect$1.label = 1;
+                    doSelect = selectImplementation3.doSelect(whileSelectKt$whileSelect$1);
+                    if (doSelect != coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    whileSelectKt$whileSelect$12 = whileSelectKt$whileSelect$1;
+                    i6 = i2;
+                    obj = doSelect;
+                    WhileSelectKt$whileSelect$1 whileSelectKt$whileSelect$132 = whileSelectKt$whileSelect$12;
+                    if (((Boolean) obj).booleanValue()) {
+                    }
+                }
+            }
+        }
+        whileSelectKt$whileSelect$1 = new WhileSelectKt$whileSelect$1(continuation);
+        Object obj2 = whileSelectKt$whileSelect$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = whileSelectKt$whileSelect$1.label;
+        if (i != 0) {
+        }
     }
 
     private static final Object whileSelect$$forInline(Function1<? super SelectBuilder<? super Boolean>, Unit> function1, Continuation<? super Unit> continuation) {

@@ -1,13 +1,14 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes5.dex */
-public abstract /* synthetic */ class G6 {
-    public static /* synthetic */ String a(int i) {
-        if (i != 1) {
-            if (i == 2) {
-                return "db_overflow";
-            }
-            throw null;
-        }
-        return "bad_request";
+public final class G6 implements InterfaceC0509pe {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final SystemTimeProvider f558a = new SystemTimeProvider();
+
+    public final long a(I0 i0) {
+        long j = i0.e;
+        return j > 0 ? j : this.f558a.currentTimeMillis();
     }
 }

@@ -13,6 +13,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
@@ -22,12 +23,14 @@ import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.channels.SendChannel;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: RxConvert.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.rx2.RxConvertKt$asFlow$1", f = "RxConvert.kt", i = {}, l = {91}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.rx2.RxConvertKt$asFlow$1", f = "RxConvert.kt", i = {0, 0, 0}, l = {94}, m = "invokeSuspend", n = {"$this$callbackFlow", "disposableRef", "observer"}, s = {"L$0", "L$1", "L$2"}, v = 1)
 /* loaded from: classes5.dex */
 final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ObservableSource<T> $this_asFlow;
     private /* synthetic */ Object L$0;
+    Object L$1;
+    Object L$2;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -55,16 +58,16 @@ final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<P
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        final ProducerScope producerScope = (ProducerScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            final ProducerScope producerScope = (ProducerScope) this.L$0;
             final AtomicReference atomicReference = new AtomicReference();
-            this.$this_asFlow.subscribe(new Observer<T>() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$observer$1
+            Observer<T> observer = new Observer<T>() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$observer$1
                 @Override // io.reactivex.Observer
                 public void onComplete() {
-                    SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
+                    SendChannel.close$default(producerScope, null, 1, null);
                 }
 
                 @Override // io.reactivex.Observer
@@ -87,7 +90,11 @@ final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<P
                 public void onError(Throwable th) {
                     producerScope.close(th);
                 }
-            });
+            };
+            this.$this_asFlow.subscribe(observer);
+            this.L$0 = SpillingKt.nullOutSpilledVariable(producerScope);
+            this.L$1 = SpillingKt.nullOutSpilledVariable(atomicReference);
+            this.L$2 = SpillingKt.nullOutSpilledVariable(observer);
             this.label = 1;
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
@@ -100,6 +107,8 @@ final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<P
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            RxConvertKt$asFlow$1$observer$1 rxConvertKt$asFlow$1$observer$1 = (RxConvertKt$asFlow$1$observer$1) this.L$2;
+            AtomicReference atomicReference2 = (AtomicReference) this.L$1;
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;

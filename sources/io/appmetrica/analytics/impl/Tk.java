@@ -1,10 +1,13 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Tk {
+public final class Tk implements InterfaceC0476o7 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
+    public final String a() {
+        return "metrica_aip.db";
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public long f807a;
-    public long b;
-    public long c;
-    public Vk d;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
+    public final String b() {
+        return "auto_inapp.db";
+    }
 }

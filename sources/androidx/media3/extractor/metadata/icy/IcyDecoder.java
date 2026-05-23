@@ -10,7 +10,7 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class IcyDecoder extends SimpleMetadataDecoder {
     private static final Pattern METADATA_ELEMENT = Pattern.compile("(.+?)='(.*?)';", 32);
     private static final String STREAM_KEY_NAME = "streamtitle";

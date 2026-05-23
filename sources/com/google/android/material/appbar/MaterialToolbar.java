@@ -17,6 +17,7 @@ import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ToolbarUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.MaterialShapeUtils;
+import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 /* loaded from: classes4.dex */
 public class MaterialToolbar extends Toolbar {
@@ -61,7 +62,7 @@ public class MaterialToolbar extends Toolbar {
             this.logoAdjustViewBounds = Boolean.valueOf(obtainStyledAttributes.getBoolean(R.styleable.MaterialToolbar_logoAdjustViewBounds, false));
         }
         obtainStyledAttributes.recycle();
-        initBackground(context2);
+        initBackground(context2, ShapeAppearanceModel.builder(context2, attributeSet, i, i2).build());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -222,7 +223,7 @@ public class MaterialToolbar extends Toolbar {
         return this.subtitleCentered;
     }
 
-    private void initBackground(Context context) {
+    private void initBackground(Context context, ShapeAppearanceModel shapeAppearanceModel) {
         ColorStateList colorStateListOrNull;
         Drawable background = getBackground();
         if (background == null) {
@@ -231,7 +232,7 @@ public class MaterialToolbar extends Toolbar {
             colorStateListOrNull = DrawableUtils.getColorStateListOrNull(background);
         }
         if (colorStateListOrNull != null) {
-            MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
+            MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(shapeAppearanceModel);
             materialShapeDrawable.setFillColor(colorStateListOrNull);
             materialShapeDrawable.initializeElevationOverlay(context);
             materialShapeDrawable.setElevation(getElevation());

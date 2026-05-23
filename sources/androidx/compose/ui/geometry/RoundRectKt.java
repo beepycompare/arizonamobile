@@ -5,7 +5,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 /* compiled from: RoundRect.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0013\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u0003\u001a5\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\f\u001a\u001e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u0003\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000f\u0010\u0010\u001a=\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u0011\u001a\u00020\n2\b\b\u0002\u0010\u0012\u001a\u00020\n2\b\b\u0002\u0010\u0013\u001a\u00020\n2\b\b\u0002\u0010\u0014\u001a\u00020\n¢\u0006\u0004\b\u0015\u0010\u0016\u001a\u0019\u0010\u0017\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\u001a\u0010\u001b\u001a\u001e\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020\u00012\u0006\u00103\u001a\u00020\u00012\u0006\u00104\u001a\u00020\u0003\"\u0015\u0010\u001c\u001a\u00020\u000e*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e\"\u0015\u0010\u001f\u001a\u00020\u000e*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b \u0010\u001e\"\u0015\u0010!\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b!\u0010#\"\u0015\u0010$\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b$\u0010#\"\u0015\u0010%\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b%\u0010#\"\u0015\u0010&\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b&\u0010#\"\u0015\u0010'\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b'\u0010#\"\u0015\u0010(\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b)\u0010*\"\u0015\u0010+\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b,\u0010*\"\u0015\u0010-\u001a\u00020\u0019*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b.\u0010/\"\u0015\u00100\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b0\u0010#¨\u00065"}, d2 = {"RoundRect", "Landroidx/compose/ui/geometry/RoundRect;", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "radiusX", "radiusY", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "RoundRect-gG7oq9Y", "(FFFFJ)Landroidx/compose/ui/geometry/RoundRect;", "rect", "Landroidx/compose/ui/geometry/Rect;", "RoundRect-sniSvfs", "(Landroidx/compose/ui/geometry/Rect;J)Landroidx/compose/ui/geometry/RoundRect;", "topLeft", "topRight", "bottomRight", "bottomLeft", "RoundRect-ZAM2FJo", "(Landroidx/compose/ui/geometry/Rect;JJJJ)Landroidx/compose/ui/geometry/RoundRect;", "translate", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "translate-Uv8p0NA", "(Landroidx/compose/ui/geometry/RoundRect;J)Landroidx/compose/ui/geometry/RoundRect;", "boundingRect", "getBoundingRect", "(Landroidx/compose/ui/geometry/RoundRect;)Landroidx/compose/ui/geometry/Rect;", "safeInnerRect", "getSafeInnerRect", "isEmpty", "", "(Landroidx/compose/ui/geometry/RoundRect;)Z", "isFinite", "isRect", "isEllipse", "isCircle", "minDimension", "getMinDimension", "(Landroidx/compose/ui/geometry/RoundRect;)F", "maxDimension", "getMaxDimension", TtmlNode.CENTER, "getCenter", "(Landroidx/compose/ui/geometry/RoundRect;)J", "isSimple", "lerp", TtmlNode.START, "stop", "fraction", "ui-geometry"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0013\u001a6\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u0003\u001a5\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\f\u001a\u001e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u0003\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000f\u0010\u0010\u001a=\u0010\u0000\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u0011\u001a\u00020\n2\b\b\u0002\u0010\u0012\u001a\u00020\n2\b\b\u0002\u0010\u0013\u001a\u00020\n2\b\b\u0002\u0010\u0014\u001a\u00020\n¢\u0006\u0004\b\u0015\u0010\u0016\u001a\u0019\u0010\u0017\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0018\u001a\u00020\u0019¢\u0006\u0004\b\u001a\u0010\u001b\u001a\u001e\u00101\u001a\u00020\u00012\u0006\u00102\u001a\u00020\u00012\u0006\u00103\u001a\u00020\u00012\u0006\u00104\u001a\u00020\u0003\"\u0015\u0010\u001c\u001a\u00020\u000e*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e\"\u0015\u0010\u001f\u001a\u00020\u000e*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b \u0010\u001e\"\u0015\u0010!\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b!\u0010#\"\u0015\u0010$\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b$\u0010#\"\u0015\u0010%\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b%\u0010#\"\u0015\u0010&\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b&\u0010#\"\u0015\u0010'\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b'\u0010#\"\u0015\u0010(\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b)\u0010*\"\u0015\u0010+\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b,\u0010*\"\u0015\u0010-\u001a\u00020\u0019*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b.\u0010/\"\u0015\u00100\u001a\u00020\"*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b0\u0010#¨\u00065"}, d2 = {"RoundRect", "Landroidx/compose/ui/geometry/RoundRect;", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "radiusX", "radiusY", "cornerRadius", "Landroidx/compose/ui/geometry/CornerRadius;", "RoundRect-gG7oq9Y", "(FFFFJ)Landroidx/compose/ui/geometry/RoundRect;", "rect", "Landroidx/compose/ui/geometry/Rect;", "RoundRect-sniSvfs", "(Landroidx/compose/ui/geometry/Rect;J)Landroidx/compose/ui/geometry/RoundRect;", "topLeft", "topRight", "bottomRight", "bottomLeft", "RoundRect-ZAM2FJo", "(Landroidx/compose/ui/geometry/Rect;JJJJ)Landroidx/compose/ui/geometry/RoundRect;", "translate", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/ui/geometry/Offset;", "translate-Uv8p0NA", "(Landroidx/compose/ui/geometry/RoundRect;J)Landroidx/compose/ui/geometry/RoundRect;", "boundingRect", "getBoundingRect", "(Landroidx/compose/ui/geometry/RoundRect;)Landroidx/compose/ui/geometry/Rect;", "safeInnerRect", "getSafeInnerRect", "isEmpty", "", "(Landroidx/compose/ui/geometry/RoundRect;)Z", "isFinite", "isRect", "isEllipse", "isCircle", "minDimension", "getMinDimension", "(Landroidx/compose/ui/geometry/RoundRect;)F", "maxDimension", "getMaxDimension", TtmlNode.CENTER, "getCenter", "(Landroidx/compose/ui/geometry/RoundRect;)J", "isSimple", "lerp", TtmlNode.START, "stop", "fraction", "ui-geometry"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RoundRectKt {
     public static final RoundRect RoundRect(Rect rect, float f, float f2) {
@@ -13,15 +13,15 @@ public final class RoundRectKt {
     }
 
     /* renamed from: RoundRect-ZAM2FJo  reason: not valid java name */
-    public static final RoundRect m4579RoundRectZAM2FJo(Rect rect, long j, long j2, long j3, long j4) {
+    public static final RoundRect m5155RoundRectZAM2FJo(Rect rect, long j, long j2, long j3, long j4) {
         return new RoundRect(rect.getLeft(), rect.getTop(), rect.getRight(), rect.getBottom(), j, j2, j3, j4, null);
     }
 
     /* renamed from: translate-Uv8p0NA  reason: not valid java name */
-    public static final RoundRect m4583translateUv8p0NA(RoundRect roundRect, long j) {
+    public static final RoundRect m5159translateUv8p0NA(RoundRect roundRect, long j) {
         int i = (int) (j >> 32);
         int i2 = (int) (4294967295L & j);
-        return new RoundRect(roundRect.getLeft() + Float.intBitsToFloat(i), roundRect.getTop() + Float.intBitsToFloat(i2), roundRect.getRight() + Float.intBitsToFloat(i), Float.intBitsToFloat(i2) + roundRect.getBottom(), roundRect.m4577getTopLeftCornerRadiuskKHJgLs(), roundRect.m4578getTopRightCornerRadiuskKHJgLs(), roundRect.m4576getBottomRightCornerRadiuskKHJgLs(), roundRect.m4575getBottomLeftCornerRadiuskKHJgLs(), null);
+        return new RoundRect(roundRect.getLeft() + Float.intBitsToFloat(i), roundRect.getTop() + Float.intBitsToFloat(i2), roundRect.getRight() + Float.intBitsToFloat(i), Float.intBitsToFloat(i2) + roundRect.getBottom(), roundRect.m5153getTopLeftCornerRadiuskKHJgLs(), roundRect.m5154getTopRightCornerRadiuskKHJgLs(), roundRect.m5152getBottomRightCornerRadiuskKHJgLs(), roundRect.m5151getBottomLeftCornerRadiuskKHJgLs(), null);
     }
 
     public static final Rect getBoundingRect(RoundRect roundRect) {
@@ -29,7 +29,7 @@ public final class RoundRectKt {
     }
 
     public static final Rect getSafeInnerRect(RoundRect roundRect) {
-        return new Rect(roundRect.getLeft() + (Math.max(Float.intBitsToFloat((int) (roundRect.m4575getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getTop() + (Math.max(Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m4578getTopRightCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f), roundRect.getRight() - (Math.max(Float.intBitsToFloat((int) (roundRect.m4578getTopRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m4576getBottomRightCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getBottom() - (Math.max(Float.intBitsToFloat((int) (roundRect.m4576getBottomRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m4575getBottomLeftCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f));
+        return new Rect(roundRect.getLeft() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5151getBottomLeftCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5153getTopLeftCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getTop() + (Math.max(Float.intBitsToFloat((int) (roundRect.m5153getTopLeftCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5154getTopRightCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f), roundRect.getRight() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5154getTopRightCornerRadiuskKHJgLs() >> 32)), Float.intBitsToFloat((int) (roundRect.m5152getBottomRightCornerRadiuskKHJgLs() >> 32))) * 0.29289323f), roundRect.getBottom() - (Math.max(Float.intBitsToFloat((int) (roundRect.m5152getBottomRightCornerRadiuskKHJgLs() & 4294967295L)), Float.intBitsToFloat((int) (roundRect.m5151getBottomLeftCornerRadiuskKHJgLs() & 4294967295L))) * 0.29289323f));
     }
 
     public static final boolean isEmpty(RoundRect roundRect) {
@@ -41,14 +41,14 @@ public final class RoundRectKt {
     }
 
     public static final boolean isRect(RoundRect roundRect) {
-        long m4577getTopLeftCornerRadiuskKHJgLs = roundRect.m4577getTopLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
-        if (((~m4577getTopLeftCornerRadiuskKHJgLs) & (m4577getTopLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-            long m4578getTopRightCornerRadiuskKHJgLs = roundRect.m4578getTopRightCornerRadiuskKHJgLs() & 9223372034707292159L;
-            if (((~m4578getTopRightCornerRadiuskKHJgLs) & (m4578getTopRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-                long m4575getBottomLeftCornerRadiuskKHJgLs = roundRect.m4575getBottomLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
-                if (((~m4575getBottomLeftCornerRadiuskKHJgLs) & (m4575getBottomLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
-                    long m4576getBottomRightCornerRadiuskKHJgLs = roundRect.m4576getBottomRightCornerRadiuskKHJgLs() & 9223372034707292159L;
-                    return (((~m4576getBottomRightCornerRadiuskKHJgLs) & (m4576getBottomRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) != 0;
+        long m5153getTopLeftCornerRadiuskKHJgLs = roundRect.m5153getTopLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
+        if (((~m5153getTopLeftCornerRadiuskKHJgLs) & (m5153getTopLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+            long m5154getTopRightCornerRadiuskKHJgLs = roundRect.m5154getTopRightCornerRadiuskKHJgLs() & 9223372034707292159L;
+            if (((~m5154getTopRightCornerRadiuskKHJgLs) & (m5154getTopRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+                long m5151getBottomLeftCornerRadiuskKHJgLs = roundRect.m5151getBottomLeftCornerRadiuskKHJgLs() & 9223372034707292159L;
+                if (((~m5151getBottomLeftCornerRadiuskKHJgLs) & (m5151getBottomLeftCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) != 0) {
+                    long m5152getBottomRightCornerRadiuskKHJgLs = roundRect.m5152getBottomRightCornerRadiuskKHJgLs() & 9223372034707292159L;
+                    return (((~m5152getBottomRightCornerRadiuskKHJgLs) & (m5152getBottomRightCornerRadiuskKHJgLs - InlineClassHelperKt.Uint64Low32)) & (-9223372034707292160L)) != 0;
                 }
                 return false;
             }
@@ -58,7 +58,7 @@ public final class RoundRectKt {
     }
 
     public static final boolean isEllipse(RoundRect roundRect) {
-        return roundRect.m4577getTopLeftCornerRadiuskKHJgLs() == roundRect.m4578getTopRightCornerRadiuskKHJgLs() && roundRect.m4578getTopRightCornerRadiuskKHJgLs() == roundRect.m4576getBottomRightCornerRadiuskKHJgLs() && roundRect.m4576getBottomRightCornerRadiuskKHJgLs() == roundRect.m4575getBottomLeftCornerRadiuskKHJgLs() && ((double) roundRect.getWidth()) <= ((double) Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() >> 32))) * 2.0d && ((double) roundRect.getHeight()) <= ((double) Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() & 4294967295L))) * 2.0d;
+        return roundRect.m5153getTopLeftCornerRadiuskKHJgLs() == roundRect.m5154getTopRightCornerRadiuskKHJgLs() && roundRect.m5154getTopRightCornerRadiuskKHJgLs() == roundRect.m5152getBottomRightCornerRadiuskKHJgLs() && roundRect.m5152getBottomRightCornerRadiuskKHJgLs() == roundRect.m5151getBottomLeftCornerRadiuskKHJgLs() && ((double) roundRect.getWidth()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5153getTopLeftCornerRadiuskKHJgLs() >> 32))) * 2.0d && ((double) roundRect.getHeight()) <= ((double) Float.intBitsToFloat((int) (roundRect.m5153getTopLeftCornerRadiuskKHJgLs() & 4294967295L))) * 2.0d;
     }
 
     public static final boolean isCircle(RoundRect roundRect) {
@@ -76,30 +76,30 @@ public final class RoundRectKt {
     public static final long getCenter(RoundRect roundRect) {
         float left = roundRect.getLeft() + (roundRect.getWidth() / 2.0f);
         float top = roundRect.getTop() + (roundRect.getHeight() / 2.0f);
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
     }
 
     public static final boolean isSimple(RoundRect roundRect) {
-        long m4577getTopLeftCornerRadiuskKHJgLs = roundRect.m4577getTopLeftCornerRadiuskKHJgLs();
-        return (m4577getTopLeftCornerRadiuskKHJgLs >>> 32) == (m4577getTopLeftCornerRadiuskKHJgLs & 4294967295L) && roundRect.m4577getTopLeftCornerRadiuskKHJgLs() == roundRect.m4578getTopRightCornerRadiuskKHJgLs() && roundRect.m4577getTopLeftCornerRadiuskKHJgLs() == roundRect.m4576getBottomRightCornerRadiuskKHJgLs() && roundRect.m4577getTopLeftCornerRadiuskKHJgLs() == roundRect.m4575getBottomLeftCornerRadiuskKHJgLs();
+        long m5153getTopLeftCornerRadiuskKHJgLs = roundRect.m5153getTopLeftCornerRadiuskKHJgLs();
+        return (m5153getTopLeftCornerRadiuskKHJgLs >>> 32) == (m5153getTopLeftCornerRadiuskKHJgLs & 4294967295L) && roundRect.m5153getTopLeftCornerRadiuskKHJgLs() == roundRect.m5154getTopRightCornerRadiuskKHJgLs() && roundRect.m5153getTopLeftCornerRadiuskKHJgLs() == roundRect.m5152getBottomRightCornerRadiuskKHJgLs() && roundRect.m5153getTopLeftCornerRadiuskKHJgLs() == roundRect.m5151getBottomLeftCornerRadiuskKHJgLs();
     }
 
     public static final RoundRect lerp(RoundRect roundRect, RoundRect roundRect2, float f) {
-        return new RoundRect(MathHelpersKt.lerp(roundRect.getLeft(), roundRect2.getLeft(), f), MathHelpersKt.lerp(roundRect.getTop(), roundRect2.getTop(), f), MathHelpersKt.lerp(roundRect.getRight(), roundRect2.getRight(), f), MathHelpersKt.lerp(roundRect.getBottom(), roundRect2.getBottom(), f), CornerRadiusKt.m4500lerp3Ry4LBc(roundRect.m4577getTopLeftCornerRadiuskKHJgLs(), roundRect2.m4577getTopLeftCornerRadiuskKHJgLs(), f), CornerRadiusKt.m4500lerp3Ry4LBc(roundRect.m4578getTopRightCornerRadiuskKHJgLs(), roundRect2.m4578getTopRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m4500lerp3Ry4LBc(roundRect.m4576getBottomRightCornerRadiuskKHJgLs(), roundRect2.m4576getBottomRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m4500lerp3Ry4LBc(roundRect.m4575getBottomLeftCornerRadiuskKHJgLs(), roundRect2.m4575getBottomLeftCornerRadiuskKHJgLs(), f), null);
+        return new RoundRect(MathHelpersKt.lerp(roundRect.getLeft(), roundRect2.getLeft(), f), MathHelpersKt.lerp(roundRect.getTop(), roundRect2.getTop(), f), MathHelpersKt.lerp(roundRect.getRight(), roundRect2.getRight(), f), MathHelpersKt.lerp(roundRect.getBottom(), roundRect2.getBottom(), f), CornerRadiusKt.m5076lerp3Ry4LBc(roundRect.m5153getTopLeftCornerRadiuskKHJgLs(), roundRect2.m5153getTopLeftCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5076lerp3Ry4LBc(roundRect.m5154getTopRightCornerRadiuskKHJgLs(), roundRect2.m5154getTopRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5076lerp3Ry4LBc(roundRect.m5152getBottomRightCornerRadiuskKHJgLs(), roundRect2.m5152getBottomRightCornerRadiuskKHJgLs(), f), CornerRadiusKt.m5076lerp3Ry4LBc(roundRect.m5151getBottomLeftCornerRadiuskKHJgLs(), roundRect2.m5151getBottomLeftCornerRadiuskKHJgLs(), f), null);
     }
 
     public static final RoundRect RoundRect(float f, float f2, float f3, float f4, float f5, float f6) {
-        long m4481constructorimpl = CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f6) & 4294967295L));
-        return new RoundRect(f, f2, f3, f4, m4481constructorimpl, m4481constructorimpl, m4481constructorimpl, m4481constructorimpl, null);
+        long m5057constructorimpl = CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(f5) << 32) | (Float.floatToRawIntBits(f6) & 4294967295L));
+        return new RoundRect(f, f2, f3, f4, m5057constructorimpl, m5057constructorimpl, m5057constructorimpl, m5057constructorimpl, null);
     }
 
     /* renamed from: RoundRect-gG7oq9Y  reason: not valid java name */
-    public static final RoundRect m4581RoundRectgG7oq9Y(float f, float f2, float f3, float f4, long j) {
+    public static final RoundRect m5157RoundRectgG7oq9Y(float f, float f2, float f3, float f4, long j) {
         return RoundRect(f, f2, f3, f4, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* renamed from: RoundRect-sniSvfs  reason: not valid java name */
-    public static final RoundRect m4582RoundRectsniSvfs(Rect rect, long j) {
+    public static final RoundRect m5158RoundRectsniSvfs(Rect rect, long j) {
         return RoundRect(rect, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 }

@@ -1,39 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
-import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
-import io.appmetrica.analytics.modulesapi.internal.network.SimpleNetworkApi;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint;
+import java.util.ArrayList;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Sd implements ServiceNetworkContext {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0239f5 f786a;
-    public final String b = new C0181co().a();
-    public final C0583sl c = new C0583sl();
-
-    public Sd(Context context) {
-        this.f786a = new C0239f5(new C0493p5(context), new C0506pi(C0448na.k().h()));
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final IExecutionPolicy getExecutionPolicy() {
-        return this.f786a;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final SimpleNetworkApi getNetworkApi() {
-        return this.c;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final SslSocketFactoryProvider getSslSocketFactoryProvider() {
-        return C0448na.I.z();
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
-    public final String getUserAgent() {
-        return this.b;
+public final class Sd {
+    public static ArrayList a() {
+        Bd bd;
+        List<String> a2 = C0576s4.l().m.a();
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(a2, 10));
+        for (String str : a2) {
+            ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+            Object loadAndInstantiateClassWithDefaultConstructor = ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(str, ModuleClientEntryPoint.class);
+            if (loadAndInstantiateClassWithDefaultConstructor == null) {
+                bd = new Bd(str, false);
+            } else {
+                C0576s4.l().m().b.add((ModuleClientEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
+                bd = new Bd(str, true);
+            }
+            arrayList.add(bd);
+        }
+        return arrayList;
     }
 }

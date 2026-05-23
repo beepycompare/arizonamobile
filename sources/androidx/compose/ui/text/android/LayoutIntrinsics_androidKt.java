@@ -7,11 +7,19 @@ import android.text.style.CharacterStyle;
 import android.text.style.MetricAffectingSpan;
 import androidx.compose.ui.text.android.style.LetterSpacingSpanEm;
 import androidx.compose.ui.text.android.style.LetterSpacingSpanPx;
+import java.util.Comparator;
 import kotlin.Metadata;
+import kotlin.ranges.IntRange;
 /* compiled from: LayoutIntrinsics.android.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002\u001a \u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0002\"\u0014\u0010\u0000\u001a\u00020\u0001X\u0082D¢\u0006\b\n\u0000\u0012\u0004\b\u0002\u0010\u0003¨\u0006\f"}, d2 = {"stripNonMetricAffectingCharSpans", "", "getStripNonMetricAffectingCharSpans$annotations", "()V", "stripNonMetricAffectingCharacterStyleSpans", "", "charSequence", "shouldIncreaseMaxIntrinsic", "desiredWidth", "", "textPaint", "Landroid/text/TextPaint;", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002\u001a \u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bH\u0002\"\u0014\u0010\u0000\u001a\u00020\u0001X\u0082D¢\u0006\b\n\u0000\u0012\u0004\b\u0002\u0010\u0003\"\u001e\u0010\f\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"stripNonMetricAffectingCharSpans", "", "getStripNonMetricAffectingCharSpans$annotations", "()V", "stripNonMetricAffectingCharacterStyleSpans", "", "charSequence", "shouldIncreaseMaxIntrinsic", "desiredWidth", "", "textPaint", "Landroid/text/TextPaint;", "IntRangeComparator", "Ljava/util/Comparator;", "Lkotlin/ranges/IntRange;", "Lkotlin/Comparator;", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayoutIntrinsics_androidKt {
+    private static final Comparator<IntRange> IntRangeComparator = new Comparator() { // from class: androidx.compose.ui.text.android.LayoutIntrinsics_androidKt$$ExternalSyntheticLambda0
+        @Override // java.util.Comparator
+        public final int compare(Object obj, Object obj2) {
+            return LayoutIntrinsics_androidKt.IntRangeComparator$lambda$0((IntRange) obj, (IntRange) obj2);
+        }
+    };
     private static final boolean stripNonMetricAffectingCharSpans = true;
 
     private static /* synthetic */ void getStripNonMetricAffectingCharSpans$annotations() {
@@ -54,5 +62,10 @@ public final class LayoutIntrinsics_androidKt {
             }
         }
         return textPaint.getLetterSpacing() != 0.0f;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final int IntRangeComparator$lambda$0(IntRange intRange, IntRange intRange2) {
+        return (intRange.getLast() - intRange.getFirst()) - (intRange2.getLast() - intRange2.getFirst());
     }
 }

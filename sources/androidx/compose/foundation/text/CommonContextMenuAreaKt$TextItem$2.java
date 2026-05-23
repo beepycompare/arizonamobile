@@ -6,7 +6,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 /* compiled from: CommonContextMenuArea.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class CommonContextMenuAreaKt$TextItem$2 implements Function0<Unit> {
     final /* synthetic */ Function0<Unit> $operation;

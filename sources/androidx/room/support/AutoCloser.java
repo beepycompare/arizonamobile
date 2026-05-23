@@ -120,7 +120,7 @@ public final class AutoCloser {
         Job job = this.autoCloseJob;
         SupportSQLiteOpenHelper supportSQLiteOpenHelper = null;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.autoCloseJob = null;
         this.referenceCount.incrementAndGet();
@@ -170,7 +170,7 @@ public final class AutoCloser {
             this.manuallyClosed = true;
             Job job = this.autoCloseJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             this.autoCloseJob = null;
             SupportSQLiteDatabase supportSQLiteDatabase = this.delegateDatabase;

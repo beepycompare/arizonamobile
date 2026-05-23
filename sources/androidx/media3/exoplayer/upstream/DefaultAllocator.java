@@ -4,7 +4,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.upstream.Allocator;
 import com.google.common.base.Preconditions;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultAllocator implements Allocator {
     private static final int AVAILABLE_EXTRA_CAPACITY = 100;
     private int allocatedCount;
@@ -79,7 +79,6 @@ public final class DefaultAllocator implements Allocator {
         this.availableCount = i + 1;
         allocationArr[i] = allocation;
         this.allocatedCount--;
-        notifyAll();
     }
 
     @Override // androidx.media3.exoplayer.upstream.Allocator
@@ -92,7 +91,6 @@ public final class DefaultAllocator implements Allocator {
             this.allocatedCount--;
             allocationNode = allocationNode.next();
         }
-        notifyAll();
     }
 
     @Override // androidx.media3.exoplayer.upstream.Allocator

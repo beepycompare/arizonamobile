@@ -8,6 +8,7 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.OpusUtil;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.window.core.layout.WindowSizeClass;
 import com.google.android.material.internal.ViewUtils;

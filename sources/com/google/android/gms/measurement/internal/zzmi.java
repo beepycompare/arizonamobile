@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzmi implements Runnable {
     final /* synthetic */ AtomicReference zza;
@@ -31,7 +31,7 @@ public final class zzmi implements Runnable {
                 zznlVar = this.zzc;
                 zzicVar = zznlVar.zzu;
             } catch (RemoteException e) {
-                this.zzc.zzu.zzaV().zzb().zzb("Failed to get app instance id", e);
+                this.zzc.zzu.zzaW().zzb().zzb("Failed to get app instance id", e);
                 atomicReference = this.zza;
             }
             if (zzicVar.zzd().zzl().zzo(zzjk.ANALYTICS_STORAGE)) {
@@ -42,7 +42,7 @@ public final class zzmi implements Runnable {
                     atomicReference2.set(zzZ.zzm(zzrVar));
                     String str = (String) atomicReference2.get();
                     if (str != null) {
-                        zznlVar.zzu.zzj().zzR(str);
+                        zznlVar.zzu.zzj().zzQ(str);
                         zzicVar.zzd().zze.zzb(str);
                     }
                     zznlVar.zzV();
@@ -50,10 +50,10 @@ public final class zzmi implements Runnable {
                     atomicReference.notify();
                     return;
                 }
-                zzicVar.zzaV().zzb().zza("Failed to get app instance id");
+                zzicVar.zzaW().zzb().zza("Failed to get app instance id");
             } else {
-                zzicVar.zzaV().zzh().zza("Analytics storage consent denied; will not get app instance id");
-                zznlVar.zzu.zzj().zzR(null);
+                zzicVar.zzaW().zzh().zza("Analytics storage consent denied; will not get app instance id");
+                zznlVar.zzu.zzj().zzQ(null);
                 zzicVar.zzd().zze.zzb(null);
                 atomicReference2.set(null);
             }

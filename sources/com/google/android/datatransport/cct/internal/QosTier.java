@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import android.util.SparseArray;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum QosTier {
     DEFAULT(0),
     UNMETERED_ONLY(1),

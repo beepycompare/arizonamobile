@@ -8,49 +8,49 @@ import kotlin.Metadata;
 public final class CircularProgressIndicatorTokens {
     public static final int $stable = 0;
     public static final CircularProgressIndicatorTokens INSTANCE = new CircularProgressIndicatorTokens();
-    private static final float ActiveThickness = Dp.m7555constructorimpl(4.0f);
-    private static final float ActiveWaveAmplitude = Dp.m7555constructorimpl(1.6f);
-    private static final float ActiveWaveWavelength = Dp.m7555constructorimpl(15.0f);
-    private static final float Size = Dp.m7555constructorimpl(40.0f);
-    private static final float TrackActiveSpace = Dp.m7555constructorimpl(4.0f);
-    private static final float TrackThickness = Dp.m7555constructorimpl(4.0f);
-    private static final float WaveSize = Dp.m7555constructorimpl(48.0f);
+    private static final float ActiveThickness = Dp.m8160constructorimpl(4.0f);
+    private static final float ActiveWaveAmplitude = Dp.m8160constructorimpl(1.6f);
+    private static final float ActiveWaveWavelength = Dp.m8160constructorimpl(15.0f);
+    private static final float Size = Dp.m8160constructorimpl(40.0f);
+    private static final float TrackActiveSpace = Dp.m8160constructorimpl(4.0f);
+    private static final float TrackThickness = Dp.m8160constructorimpl(4.0f);
+    private static final float WaveSize = Dp.m8160constructorimpl(48.0f);
 
     private CircularProgressIndicatorTokens() {
     }
 
     /* renamed from: getActiveThickness-D9Ej5fM  reason: not valid java name */
-    public final float m3202getActiveThicknessD9Ej5fM() {
+    public final float m3647getActiveThicknessD9Ej5fM() {
         return ActiveThickness;
     }
 
     /* renamed from: getActiveWaveAmplitude-D9Ej5fM  reason: not valid java name */
-    public final float m3203getActiveWaveAmplitudeD9Ej5fM() {
+    public final float m3648getActiveWaveAmplitudeD9Ej5fM() {
         return ActiveWaveAmplitude;
     }
 
     /* renamed from: getActiveWaveWavelength-D9Ej5fM  reason: not valid java name */
-    public final float m3204getActiveWaveWavelengthD9Ej5fM() {
+    public final float m3649getActiveWaveWavelengthD9Ej5fM() {
         return ActiveWaveWavelength;
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3205getSizeD9Ej5fM() {
+    public final float m3650getSizeD9Ej5fM() {
         return Size;
     }
 
     /* renamed from: getTrackActiveSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3206getTrackActiveSpaceD9Ej5fM() {
+    public final float m3651getTrackActiveSpaceD9Ej5fM() {
         return TrackActiveSpace;
     }
 
     /* renamed from: getTrackThickness-D9Ej5fM  reason: not valid java name */
-    public final float m3207getTrackThicknessD9Ej5fM() {
+    public final float m3652getTrackThicknessD9Ej5fM() {
         return TrackThickness;
     }
 
     /* renamed from: getWaveSize-D9Ej5fM  reason: not valid java name */
-    public final float m3208getWaveSizeD9Ej5fM() {
+    public final float m3653getWaveSizeD9Ej5fM() {
         return WaveSize;
     }
 }

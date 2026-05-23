@@ -8,6 +8,8 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.AnimatedStateListDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableWrapper;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -138,6 +140,9 @@ public class MaterialCheckBox extends AppCompatCheckBox {
         this.errorAccessibilityLabel = obtainTintedStyledAttributes.getText(R.styleable.MaterialCheckBox_errorAccessibilityLabel);
         if (obtainTintedStyledAttributes.hasValue(R.styleable.MaterialCheckBox_checkedState)) {
             setCheckedState(obtainTintedStyledAttributes.getInt(R.styleable.MaterialCheckBox_checkedState, 0));
+        }
+        if (obtainTintedStyledAttributes.hasValue(R.styleable.MaterialCheckBox_rippleColor)) {
+            setRippleColor(MaterialResources.getColorStateList(context2, obtainTintedStyledAttributes, R.styleable.MaterialCheckBox_rippleColor));
         }
         obtainTintedStyledAttributes.recycle();
         refreshButtonDrawable();
@@ -489,6 +494,19 @@ public class MaterialCheckBox extends AppCompatCheckBox {
             this.materialThemeColorsTintList = new ColorStateList(iArr, iArr2);
         }
         return this.materialThemeColorsTintList;
+    }
+
+    private void setRippleColor(ColorStateList colorStateList) {
+        if (colorStateList == null) {
+            return;
+        }
+        Drawable background = getBackground();
+        if (background instanceof DrawableWrapper) {
+            background = ((DrawableWrapper) background).getDrawable();
+        }
+        if (background instanceof RippleDrawable) {
+            ((RippleDrawable) background).setColor(colorStateList);
+        }
     }
 
     @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View

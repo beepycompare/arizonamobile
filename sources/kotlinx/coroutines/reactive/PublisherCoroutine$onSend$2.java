@@ -4,9 +4,9 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: Publish.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-/* synthetic */ class PublisherCoroutine$onSend$2 extends FunctionReferenceImpl implements Function3<PublisherCoroutine<?>, Object, Object, Object> {
+final /* synthetic */ class PublisherCoroutine$onSend$2 extends FunctionReferenceImpl implements Function3<PublisherCoroutine<?>, Object, Object, Object> {
     public static final PublisherCoroutine$onSend$2 INSTANCE = new PublisherCoroutine$onSend$2();
 
     PublisherCoroutine$onSend$2() {

@@ -5,7 +5,7 @@ import android.media.AudioTrack;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.AudioTrackPositionTracker;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class AudioTimestampPoller {
     private static final int ERROR_POLL_INTERVAL_US = 500000;
     private static final int FAST_POLL_INTERVAL_US = 10000;
@@ -156,7 +156,7 @@ final class AudioTimestampPoller {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AudioTimestampWrapper {
         private long accumulatedRawTimestampFramePosition;
         private final AudioTimestamp audioTimestamp = new AudioTimestamp();

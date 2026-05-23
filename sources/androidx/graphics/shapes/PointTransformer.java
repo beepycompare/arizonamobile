@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface PointTransformer {
     /* renamed from: transform-XgqJiTY  reason: not valid java name */
-    long mo8115transformXgqJiTY(float f, float f2);
+    long mo8720transformXgqJiTY(float f, float f2);
 }

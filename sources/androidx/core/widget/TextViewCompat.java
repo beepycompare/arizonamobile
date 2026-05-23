@@ -348,8 +348,8 @@ public final class TextViewCompat {
             return new PrecomputedTextCompat.Params(Api28Impl.getTextMetricsParams(textView));
         }
         PrecomputedTextCompat.Params.Builder builder = new PrecomputedTextCompat.Params.Builder(new TextPaint(textView.getPaint()));
-        builder.setBreakStrategy(Api23Impl.getBreakStrategy(textView));
-        builder.setHyphenationFrequency(Api23Impl.getHyphenationFrequency(textView));
+        builder.setBreakStrategy(textView.getBreakStrategy());
+        builder.setHyphenationFrequency(textView.getHyphenationFrequency());
         builder.setTextDirection(getTextDirectionHeuristic(textView));
         return builder.build();
     }
@@ -357,8 +357,8 @@ public final class TextViewCompat {
     public static void setTextMetricsParams(TextView textView, PrecomputedTextCompat.Params params) {
         textView.setTextDirection(getTextDirection(params.getTextDirection()));
         textView.getPaint().set(params.getTextPaint());
-        Api23Impl.setBreakStrategy(textView, params.getBreakStrategy());
-        Api23Impl.setHyphenationFrequency(textView, params.getHyphenationFrequency());
+        textView.setBreakStrategy(params.getBreakStrategy());
+        textView.setHyphenationFrequency(params.getHyphenationFrequency());
     }
 
     public static void setPrecomputedText(TextView textView, PrecomputedTextCompat precomputedTextCompat) {
@@ -428,22 +428,22 @@ public final class TextViewCompat {
 
     public static void setCompoundDrawableTintList(TextView textView, ColorStateList colorStateList) {
         Preconditions.checkNotNull(textView);
-        Api23Impl.setCompoundDrawableTintList(textView, colorStateList);
+        textView.setCompoundDrawableTintList(colorStateList);
     }
 
     public static ColorStateList getCompoundDrawableTintList(TextView textView) {
         Preconditions.checkNotNull(textView);
-        return Api23Impl.getCompoundDrawableTintList(textView);
+        return textView.getCompoundDrawableTintList();
     }
 
     public static void setCompoundDrawableTintMode(TextView textView, PorterDuff.Mode mode) {
         Preconditions.checkNotNull(textView);
-        Api23Impl.setCompoundDrawableTintMode(textView, mode);
+        textView.setCompoundDrawableTintMode(mode);
     }
 
     public static PorterDuff.Mode getCompoundDrawableTintMode(TextView textView) {
         Preconditions.checkNotNull(textView);
-        return Api23Impl.getCompoundDrawableTintMode(textView);
+        return textView.getCompoundDrawableTintMode();
     }
 
     /* loaded from: classes2.dex */
@@ -504,45 +504,6 @@ public final class TextViewCompat {
 
         static String[] getDigitStrings(DecimalFormatSymbols decimalFormatSymbols) {
             return decimalFormatSymbols.getDigitStrings();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static int getBreakStrategy(TextView textView) {
-            return textView.getBreakStrategy();
-        }
-
-        static void setBreakStrategy(TextView textView, int i) {
-            textView.setBreakStrategy(i);
-        }
-
-        static int getHyphenationFrequency(TextView textView) {
-            return textView.getHyphenationFrequency();
-        }
-
-        static void setHyphenationFrequency(TextView textView, int i) {
-            textView.setHyphenationFrequency(i);
-        }
-
-        static PorterDuff.Mode getCompoundDrawableTintMode(TextView textView) {
-            return textView.getCompoundDrawableTintMode();
-        }
-
-        static ColorStateList getCompoundDrawableTintList(TextView textView) {
-            return textView.getCompoundDrawableTintList();
-        }
-
-        static void setCompoundDrawableTintList(TextView textView, ColorStateList colorStateList) {
-            textView.setCompoundDrawableTintList(colorStateList);
-        }
-
-        static void setCompoundDrawableTintMode(TextView textView, PorterDuff.Mode mode) {
-            textView.setCompoundDrawableTintMode(mode);
         }
     }
 

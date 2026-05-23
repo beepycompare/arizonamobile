@@ -7,7 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PlatformSelectionBehaviors.android.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\t\u0010\u0011\u001a\u00020\u0003HÆ\u0003J\u0010\u0010\u0012\u001a\u00020\u0005HÆ\u0003¢\u0006\u0004\b\u0013\u0010\rJ\t\u0010\u0014\u001a\u00020\u0007HÆ\u0003J.\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007HÆ\u0001¢\u0006\u0004\b\u0016\u0010\u0017J\u0013\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001b\u001a\u00020\u001cHÖ\u0001J\t\u0010\u001d\u001a\u00020\u001eHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001f"}, d2 = {"Landroidx/compose/foundation/text/selection/TextClassificationResult;", "", "text", "", "selection", "Landroidx/compose/ui/text/TextRange;", "textClassification", "Landroid/view/textclassifier/TextClassification;", "<init>", "(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassification;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getText", "()Ljava/lang/CharSequence;", "getSelection-d9O1mEE", "()J", "J", "getTextClassification", "()Landroid/view/textclassifier/TextClassification;", "component1", "component2", "component2-d9O1mEE", "component3", "copy", "copy-Sb-Bc2M", "(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassification;)Landroidx/compose/foundation/text/selection/TextClassificationResult;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\t\u0010\u0011\u001a\u00020\u0003HÆ\u0003J\u0010\u0010\u0012\u001a\u00020\u0005HÆ\u0003¢\u0006\u0004\b\u0013\u0010\rJ\t\u0010\u0014\u001a\u00020\u0007HÆ\u0003J.\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007HÆ\u0001¢\u0006\u0004\b\u0016\u0010\u0017J\u0014\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001b\u001a\u00020\u001cHÖ\u0081\u0004J\n\u0010\u001d\u001a\u00020\u001eHÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001f"}, d2 = {"Landroidx/compose/foundation/text/selection/TextClassificationResult;", "", "text", "", "selection", "Landroidx/compose/ui/text/TextRange;", "textClassification", "Landroid/view/textclassifier/TextClassification;", "<init>", "(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassification;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getText", "()Ljava/lang/CharSequence;", "getSelection-d9O1mEE", "()J", "J", "getTextClassification", "()Landroid/view/textclassifier/TextClassification;", "component1", "component2", "component2-d9O1mEE", "component3", "copy", "copy-Sb-Bc2M", "(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassification;)Landroidx/compose/foundation/text/selection/TextClassificationResult;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextClassificationResult {
     private final long selection;
@@ -19,7 +19,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: copy-Sb-Bc2M$default  reason: not valid java name */
-    public static /* synthetic */ TextClassificationResult m1646copySbBc2M$default(TextClassificationResult textClassificationResult, CharSequence charSequence, long j, TextClassification textClassification, int i, Object obj) {
+    public static /* synthetic */ TextClassificationResult m2091copySbBc2M$default(TextClassificationResult textClassificationResult, CharSequence charSequence, long j, TextClassification textClassification, int i, Object obj) {
         if ((i & 1) != 0) {
             charSequence = textClassificationResult.text;
         }
@@ -29,7 +29,7 @@ public final class TextClassificationResult {
         if ((i & 4) != 0) {
             textClassification = textClassificationResult.textClassification;
         }
-        return textClassificationResult.m1648copySbBc2M(charSequence, j, textClassification);
+        return textClassificationResult.m2093copySbBc2M(charSequence, j, textClassification);
     }
 
     public final CharSequence component1() {
@@ -37,7 +37,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: component2-d9O1mEE  reason: not valid java name */
-    public final long m1647component2d9O1mEE() {
+    public final long m2092component2d9O1mEE() {
         return this.selection;
     }
 
@@ -46,7 +46,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: copy-Sb-Bc2M  reason: not valid java name */
-    public final TextClassificationResult m1648copySbBc2M(CharSequence charSequence, long j, TextClassification textClassification) {
+    public final TextClassificationResult m2093copySbBc2M(CharSequence charSequence, long j, TextClassification textClassification) {
         return new TextClassificationResult(charSequence, j, textClassification, null);
     }
 
@@ -56,17 +56,17 @@ public final class TextClassificationResult {
         }
         if (obj instanceof TextClassificationResult) {
             TextClassificationResult textClassificationResult = (TextClassificationResult) obj;
-            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m6996equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
+            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m7601equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.text.hashCode() * 31) + TextRange.m7004hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
+        return (((this.text.hashCode() * 31) + TextRange.m7609hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
     }
 
     public String toString() {
-        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m7006toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
+        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m7611toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
     }
 
     private TextClassificationResult(CharSequence charSequence, long j, TextClassification textClassification) {
@@ -80,7 +80,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1649getSelectiond9O1mEE() {
+    public final long m2094getSelectiond9O1mEE() {
         return this.selection;
     }
 

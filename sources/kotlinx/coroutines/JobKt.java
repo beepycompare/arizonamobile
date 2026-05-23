@@ -9,7 +9,7 @@ import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
-@Metadata(d1 = {"kotlinx/coroutines/JobKt__FutureKt", "kotlinx/coroutines/JobKt__JobKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"kotlinx/coroutines/JobKt__FutureKt", "kotlinx/coroutines/JobKt__JobKt"}, k = 4, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class JobKt {
     public static final CompletableJob Job(Job job) {

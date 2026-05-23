@@ -1,19 +1,19 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public enum zzou {
-    INT(0),
-    LONG(0L),
-    FLOAT(Float.valueOf(0.0f)),
-    DOUBLE(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)),
-    BOOLEAN(false),
-    STRING(""),
-    BYTE_STRING(zzlh.zzb),
-    ENUM(null),
-    MESSAGE(null);
+public final /* synthetic */ class zzou implements zzqc {
+    static final /* synthetic */ zzou zza = new zzou();
 
-    zzou(Object obj) {
+    private /* synthetic */ zzou() {
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzqc
+    public final /* synthetic */ boolean zza(List list) {
+        boolean zzb;
+        zzb = zzpg.zzc.zzb(list);
+        return zzb;
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.gms.measurement;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzdd;
+import com.google.android.gms.internal.measurement.zzdb;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.android.gms.measurement.internal.zzic;
 import com.google.android.gms.measurement.internal.zzjh;
@@ -14,7 +14,7 @@ import com.google.android.gms.measurement.internal.zzlt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public class AppMeasurement {
@@ -24,14 +24,14 @@ public class AppMeasurement {
     private static volatile AppMeasurement zza;
     private final zzc zzb;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
     /* loaded from: classes4.dex */
     public interface EventInterceptor extends zzjp {
         @Override // com.google.android.gms.measurement.internal.zzjp
         void interceptEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
     /* loaded from: classes4.dex */
     public interface OnEventListener extends zzjq {
         @Override // com.google.android.gms.measurement.internal.zzjq
@@ -54,7 +54,7 @@ public class AppMeasurement {
                         zzlkVar = null;
                     }
                     if (zzlkVar == null) {
-                        zza = new AppMeasurement(zzic.zzy(context, new zzdd(0L, 0L, true, null, null), null));
+                        zza = new AppMeasurement(zzic.zzy(context, new zzdb(0L, 0L, true, null, null), null, null));
                     } else {
                         zza = new AppMeasurement(zzlkVar);
                     }
@@ -138,7 +138,7 @@ public class AppMeasurement {
     }
 
     public void logEventInternalNoInterceptor(String str, String str2, Bundle bundle, long j) {
-        this.zzb.zzb(str, str2, bundle, j);
+        this.zzb.zzb(str, str2, bundle, j, 0L);
     }
 
     public void registerOnMeasurementEventListener(OnEventListener onEventListener) {
@@ -217,7 +217,7 @@ public class AppMeasurement {
         return this.zzb.zzc(z);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
     /* loaded from: classes4.dex */
     public static class ConditionalUserProperty {
         public boolean mActive;

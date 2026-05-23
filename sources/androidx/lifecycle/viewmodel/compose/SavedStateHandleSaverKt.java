@@ -42,11 +42,11 @@ public final class SavedStateHandleSaverKt {
         if ((i & 2) != 0) {
             saver = SaverKt.autoSaver();
         }
-        return m8148saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+        return m8753saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
     }
 
     /* renamed from: saveable  reason: collision with other method in class */
-    public static final <T> T m8148saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
+    public static final <T> T m8753saveable(SavedStateHandle savedStateHandle, String str, final Saver<T, ? extends Object> saver, Function0<? extends T> function0) {
         final T invoke;
         Object obj;
         Intrinsics.checkNotNull(saver, "null cannot be cast to non-null type androidx.compose.runtime.saveable.Saver<T of androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt.saveable, kotlin.Any>");
@@ -77,12 +77,12 @@ public final class SavedStateHandleSaverKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m8500constructorimpl(bundleOf);
+        SavedStateWriter.m9109constructorimpl(bundleOf);
         return bundleOf;
     }
 
     public static final <T> MutableState<T> saveable(SavedStateHandle savedStateHandle, String str, Saver<T, ? extends Object> saver, Function0<? extends MutableState<T>> function0) {
-        return (MutableState) m8148saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
+        return (MutableState) m8753saveable(savedStateHandle, str, (Saver<Object, ? extends Object>) mutableStateSaver(saver), (Function0<? extends Object>) function0);
     }
 
     public static /* synthetic */ PropertyDelegateProvider saveable$default(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, int i, Object obj) {
@@ -103,12 +103,12 @@ public final class SavedStateHandleSaverKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final ReadOnlyProperty saveable$lambda$1(SavedStateHandle savedStateHandle, Saver saver, Function0 function0, Object obj, KProperty kProperty) {
-        final Object m8148saveable = m8148saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
+        final Object m8753saveable = m8753saveable(savedStateHandle, (obj != null ? Reflection.getOrCreateKotlinClass(obj.getClass()).getQualifiedName() + '.' : "") + kProperty.getName(), (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) function0);
         return new ReadOnlyProperty() { // from class: androidx.lifecycle.viewmodel.compose.SavedStateHandleSaverKt$$ExternalSyntheticLambda4
             @Override // kotlin.properties.ReadOnlyProperty
             public final Object getValue(Object obj2, KProperty kProperty2) {
                 Object saveable$lambda$1$0;
-                saveable$lambda$1$0 = SavedStateHandleSaverKt.saveable$lambda$1$0(m8148saveable, obj2, kProperty2);
+                saveable$lambda$1$0 = SavedStateHandleSaverKt.saveable$lambda$1$0(m8753saveable, obj2, kProperty2);
                 return saveable$lambda$1$0;
             }
         };

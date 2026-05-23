@@ -13,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzal extends zzje {
     private Boolean zza;
@@ -53,16 +53,16 @@ public final class zzal extends zzje {
             Preconditions.checkNotNull(str3);
             return str3;
         } catch (ClassNotFoundException e) {
-            this.zzu.zzaV().zzb().zzb("Could not find SystemProperties class", e);
+            this.zzu.zzaW().zzb().zzb("Could not find SystemProperties class", e);
             return "";
         } catch (IllegalAccessException e2) {
-            this.zzu.zzaV().zzb().zzb("Could not access SystemProperties.get()", e2);
+            this.zzu.zzaW().zzb().zzb("Could not access SystemProperties.get()", e2);
             return "";
         } catch (NoSuchMethodException e3) {
-            this.zzu.zzaV().zzb().zzb("Could not find SystemProperties.get() method", e3);
+            this.zzu.zzaW().zzb().zzb("Could not find SystemProperties.get() method", e3);
             return "";
         } catch (InvocationTargetException e4) {
-            this.zzu.zzaV().zzb().zzb("SystemProperties.get() threw an exception", e4);
+            this.zzu.zzaW().zzb().zzb("SystemProperties.get() threw an exception", e4);
             return "";
         }
     }
@@ -76,6 +76,9 @@ public final class zzal extends zzje {
     }
 
     public final boolean zzC(String str) {
+        if (this.zzu.zzk().zzaa(str)) {
+            return true;
+        }
         return "1".equals(this.zzc.zza(str, "gaia_collection_enabled"));
     }
 
@@ -102,12 +105,12 @@ public final class zzal extends zzje {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String zzb() {
-        this.zzu.zzaU();
+        this.zzu.zzaV();
         return "FA";
     }
 
     public final int zzc() {
-        return this.zzu.zzk().zzag(201500000, true) ? 100 : 25;
+        return this.zzu.zzk().zzaj(201500000, true) ? 100 : 25;
     }
 
     public final int zzd(String str) {
@@ -116,7 +119,7 @@ public final class zzal extends zzje {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zze(String str, boolean z) {
-        return z ? zzn(str, zzfy.zzah, 100, ServiceStarter.ERROR_UNKNOWN) : ServiceStarter.ERROR_UNKNOWN;
+        return z ? zzn(str, zzfy.zzag, 100, ServiceStarter.ERROR_UNKNOWN) : ServiceStarter.ERROR_UNKNOWN;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -130,8 +133,8 @@ public final class zzal extends zzje {
     }
 
     public final long zzi() {
-        this.zzu.zzaU();
-        return 133005L;
+        this.zzu.zzaV();
+        return 161000L;
     }
 
     @EnsuresNonNull({"this.isMainProcess"})
@@ -140,7 +143,7 @@ public final class zzal extends zzje {
             synchronized (this) {
                 if (this.zzd == null) {
                     zzic zzicVar = this.zzu;
-                    ApplicationInfo applicationInfo = zzicVar.zzaY().getApplicationInfo();
+                    ApplicationInfo applicationInfo = zzicVar.zzaZ().getApplicationInfo();
                     String myProcessName = ProcessUtils.getMyProcessName();
                     if (applicationInfo != null) {
                         String str = applicationInfo.processName;
@@ -152,7 +155,7 @@ public final class zzal extends zzje {
                     }
                     if (this.zzd == null) {
                         this.zzd = true;
-                        zzicVar.zzaV().zzb().zza("My process not in the list of running processes");
+                        zzicVar.zzaW().zzb().zza("My process not in the list of running processes");
                     }
                 }
             }
@@ -230,18 +233,18 @@ public final class zzal extends zzje {
     final Bundle zzq() {
         try {
             zzic zzicVar = this.zzu;
-            if (zzicVar.zzaY().getPackageManager() != null) {
-                ApplicationInfo applicationInfo = Wrappers.packageManager(zzicVar.zzaY()).getApplicationInfo(zzicVar.zzaY().getPackageName(), 128);
+            if (zzicVar.zzaZ().getPackageManager() != null) {
+                ApplicationInfo applicationInfo = Wrappers.packageManager(zzicVar.zzaZ()).getApplicationInfo(zzicVar.zzaZ().getPackageName(), 128);
                 if (applicationInfo == null) {
-                    zzicVar.zzaV().zzb().zza("Failed to load metadata: ApplicationInfo is null");
+                    zzicVar.zzaW().zzb().zza("Failed to load metadata: ApplicationInfo is null");
                     return null;
                 }
                 return applicationInfo.metaData;
             }
-            zzicVar.zzaV().zzb().zza("Failed to load metadata: PackageManager is null");
+            zzicVar.zzaW().zzb().zza("Failed to load metadata: PackageManager is null");
             return null;
         } catch (PackageManager.NameNotFoundException e) {
-            this.zzu.zzaV().zzb().zzb("Failed to load metadata: Package name not found", e);
+            this.zzu.zzaW().zzb().zzb("Failed to load metadata: Package name not found", e);
             return null;
         }
     }
@@ -251,7 +254,7 @@ public final class zzal extends zzje {
         Preconditions.checkNotEmpty(str);
         Bundle zzq = zzq();
         if (zzq == null) {
-            this.zzu.zzaV().zzb().zza("Failed to load metadata: Metadata bundle is null");
+            this.zzu.zzaW().zzb().zza("Failed to load metadata: Metadata bundle is null");
             return null;
         } else if (zzq.containsKey(str)) {
             return Boolean.valueOf(zzq.getBoolean(str));
@@ -270,18 +273,18 @@ public final class zzal extends zzje {
         Preconditions.checkNotEmpty("analytics.safelisted_events");
         Bundle zzq = zzq();
         if (zzq == null) {
-            this.zzu.zzaV().zzb().zza("Failed to load metadata: Metadata bundle is null");
+            this.zzu.zzaW().zzb().zza("Failed to load metadata: Metadata bundle is null");
         } else if (zzq.containsKey("analytics.safelisted_events")) {
             valueOf = Integer.valueOf(zzq.getInt("analytics.safelisted_events"));
             if (valueOf != null) {
                 try {
-                    String[] stringArray = this.zzu.zzaY().getResources().getStringArray(valueOf.intValue());
+                    String[] stringArray = this.zzu.zzaZ().getResources().getStringArray(valueOf.intValue());
                     if (stringArray == null) {
                         return null;
                     }
                     return Arrays.asList(stringArray);
                 } catch (Resources.NotFoundException e) {
-                    this.zzu.zzaV().zzb().zzb("Failed to load string array from metadata: resource not found", e);
+                    this.zzu.zzaW().zzb().zzb("Failed to load string array from metadata: resource not found", e);
                 }
             }
             return null;
@@ -293,7 +296,7 @@ public final class zzal extends zzje {
     }
 
     public final boolean zzt() {
-        this.zzu.zzaU();
+        this.zzu.zzaV();
         Boolean zzr = zzr("firebase_analytics_collection_deactivated");
         return zzr != null && zzr.booleanValue();
     }
@@ -314,7 +317,7 @@ public final class zzal extends zzje {
         zzic zzicVar = this.zzu;
         Bundle zzq = zzq();
         if (zzq == null) {
-            zzicVar.zzaV().zzb().zza("Failed to load metadata: Metadata bundle is null");
+            zzicVar.zzaW().zzb().zza("Failed to load metadata: Metadata bundle is null");
             obj = null;
         } else {
             obj = zzq.get(str);
@@ -329,7 +332,7 @@ public final class zzal extends zzje {
             return zzji.DENIED;
         }
         if (!z || !"eu_consent_policy".equals(obj)) {
-            zzicVar.zzaV().zze().zzb("Invalid manifest metadata for", str);
+            zzicVar.zzaW().zze().zzb("Invalid manifest metadata for", str);
             return zzji.UNINITIALIZED;
         }
         return zzji.POLICY;

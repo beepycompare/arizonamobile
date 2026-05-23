@@ -110,7 +110,7 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
                 this.currentSubtitleParser.parse(this.sampleData, i4, i2, SubtitleParser.OutputOptions.allCues(), new Consumer() { // from class: androidx.media3.extractor.text.SubtitleTranscodingTrackOutput$$ExternalSyntheticLambda0
                     @Override // androidx.media3.common.util.Consumer
                     public final void accept(Object obj) {
-                        SubtitleTranscodingTrackOutput.this.m8359xa18018cd(j, i, (CuesWithTiming) obj);
+                        SubtitleTranscodingTrackOutput.this.m8968xa18018cd(j, i, (CuesWithTiming) obj);
                     }
                 });
             } catch (RuntimeException e) {
@@ -140,7 +140,7 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: outputSample */
-    public void m8359xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
+    public void m8968xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
         Preconditions.checkNotNull(this.currentFormat);
         byte[] encode = this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs);
         this.parsableScratch.reset(encode);

@@ -30,6 +30,6 @@ public final class OneShotDisposable implements Disposable {
         if (isDisposed()) {
             return;
         }
-        Job.DefaultImpls.cancel$default((Job) getJob(), (CancellationException) null, 1, (Object) null);
+        Job.cancel$default((Job) getJob(), (CancellationException) null, 1, (Object) null);
     }
 }

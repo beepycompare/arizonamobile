@@ -5,16 +5,16 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 /* compiled from: BaseProxy.java */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class a implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IBinder f276a;
+    private final IBinder f203a;
     private final String b = "com.google.android.finsky.externalreferrer.IGetInstallReferrerService";
 
     /* JADX INFO: Access modifiers changed from: protected */
     public a(IBinder iBinder) {
-        this.f276a = iBinder;
+        this.f203a = iBinder;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -26,7 +26,7 @@ public class a implements IInterface {
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f276a;
+        return this.f203a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -34,7 +34,7 @@ public class a implements IInterface {
         Parcel obtain = Parcel.obtain();
         try {
             try {
-                this.f276a.transact(1, parcel, obtain, 0);
+                this.f203a.transact(1, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
             } catch (RuntimeException e) {

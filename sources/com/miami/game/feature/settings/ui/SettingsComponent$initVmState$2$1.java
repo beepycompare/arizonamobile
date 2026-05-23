@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: SettingsComponent.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/core/design/system/component/background/LauncherBackgroundState;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.settings.ui.SettingsComponent$initVmState$2$1", f = "SettingsComponent.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class SettingsComponent$initVmState$2$1 extends SuspendLambda implements Function2<LauncherBackgroundState, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     int label;

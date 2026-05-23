@@ -21,7 +21,7 @@ import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionState.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2", f = "TextFieldSelectionState.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionState$selectionHandleGestures$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Job>, Object> {
@@ -54,7 +54,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$1", f = "TextFieldSelectionState.kt", i = {}, l = {TypedValues.PositionType.TYPE_PERCENT_X}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -124,7 +124,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2", f = "TextFieldSelectionState.kt", i = {}, l = {TypedValues.PositionType.TYPE_CURVE_FIT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -166,9 +166,9 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                 if (PressDownGestureKt.detectPressDownGesture(pointerInputScope, new TapOnPosition() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState.selectionHandleGestures.2.2.1
                     @Override // androidx.compose.foundation.text.input.internal.selection.TapOnPosition
                     /* renamed from: onEvent-k-4lQ0M */
-                    public final void mo1488onEventk4lQ0M(long j) {
+                    public final void mo1921onEventk4lQ0M(long j) {
                         Handle handle;
-                        long m1501getHandlePositiontuRUvjQ;
+                        long m1934getHandlePositiontuRUvjQ;
                         TextFieldSelectionState.this.markStartContentVisibleOffset();
                         TextFieldSelectionState textFieldSelectionState3 = TextFieldSelectionState.this;
                         if (z) {
@@ -176,8 +176,8 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                         } else {
                             handle = Handle.SelectionEnd;
                         }
-                        m1501getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1501getHandlePositiontuRUvjQ(z);
-                        textFieldSelectionState3.m1510updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1608getAdjustedCoordinatesk4lQ0M(m1501getHandlePositiontuRUvjQ));
+                        m1934getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1934getHandlePositiontuRUvjQ(z);
+                        textFieldSelectionState3.m1943updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m2053getAdjustedCoordinatesk4lQ0M(m1934getHandlePositiontuRUvjQ));
                     }
                 }, new Function0() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
@@ -204,7 +204,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TextFieldSelectionState.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$4", f = "TextFieldSelectionState.kt", i = {}, l = {526}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$4  reason: invalid class name */
     /* loaded from: classes.dex */

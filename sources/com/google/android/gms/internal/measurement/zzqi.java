@@ -1,17 +1,50 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes4.dex */
-public final class zzqi implements zzqh {
-    public static final zzkm zza;
 
-    static {
-        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zzb.zzd("measurement.gmscore_feature_tracking", true);
-        zza = zzb.zzd("measurement.gmscore_client_telemetry", false);
+import android.os.Process;
+import android.util.Log;
+import com.google.common.base.Supplier;
+import com.google.common.util.concurrent.ListeningScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+public final class zzqi implements zzqm {
+    private static boolean zza;
+    private final Supplier zzb;
+    private final int zzc;
+    private final Supplier zzd;
+
+    public zzqi(Supplier supplier, int i) {
+        zzqh zzqhVar = zzqh.zza;
+        this.zzb = supplier;
+        this.zzc = Math.max(5, 10);
+        this.zzd = zzqhVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqh
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    @Override // com.google.android.gms.internal.measurement.zzqm
+    public final void zza() {
+        synchronized (zzqi.class) {
+            if (!zza) {
+                Runnable runnable = new Runnable() { // from class: com.google.android.gms.internal.measurement.zzqg
+                    @Override // java.lang.Runnable
+                    public final /* synthetic */ void run() {
+                        zzqi.this.zzb();
+                    }
+                };
+                long j = this.zzc;
+                TimeUnit timeUnit = TimeUnit.MINUTES;
+                ListeningScheduledExecutorService listeningScheduledExecutorService = (ListeningScheduledExecutorService) this.zzb.get();
+                zzpx.zza(listeningScheduledExecutorService.schedule((Runnable) new zzqf(this, runnable, listeningScheduledExecutorService, j, timeUnit), j, timeUnit));
+                zza = true;
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzb() {
+        if (((Boolean) this.zzd.get()).booleanValue()) {
+            Log.i("PhenotypeProcessReaper", "Killing process to refresh experiment configuration");
+            Process.killProcess(Process.myPid());
+            System.exit(0);
+        }
     }
 }

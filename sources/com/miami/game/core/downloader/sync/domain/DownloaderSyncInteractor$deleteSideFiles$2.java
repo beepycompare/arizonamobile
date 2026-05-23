@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DownloaderSyncInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor$deleteSideFiles$2", f = "DownloaderSyncInteractor.kt", i = {}, l = {74}, m = "invokeSuspend", n = {}, nl = {MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DownloaderSyncInteractor$deleteSideFiles$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<File> $listFiles;
     int label;

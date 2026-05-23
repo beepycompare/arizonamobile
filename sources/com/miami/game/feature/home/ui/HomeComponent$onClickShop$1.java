@@ -22,8 +22,8 @@ import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HomeComponent.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$onClickShop$1", f = "HomeComponent.kt", i = {0, 0, 0}, l = {300}, m = "invokeSuspend", n = {"$this$launch", "$this$invokeSuspend_u24lambda_u240", "$i$a$-runCatching-HomeComponent$onClickShop$1$isShopAllowed$1"}, nl = {302}, s = {"L$0", "L$1", "I$0"}, v = 2)
-/* loaded from: classes4.dex */
+@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$onClickShop$1", f = "HomeComponent.kt", i = {0, 0, 0}, l = {299}, m = "invokeSuspend", n = {"$this$launch", "$this$invokeSuspend_u24lambda_u240", "$i$a$-runCatching-HomeComponent$onClickShop$1$isShopAllowed$1"}, nl = {301}, s = {"L$0", "L$1", "I$0"}, v = 2)
+/* loaded from: classes5.dex */
 public final class HomeComponent$onClickShop$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Context $context;
     int I$0;
@@ -54,7 +54,7 @@ public final class HomeComponent$onClickShop$1 extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9202constructorimpl;
+        Object m9842constructorimpl;
         MutableStateFlow mutableStateFlow;
         Object withContext;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
@@ -81,17 +81,17 @@ public final class HomeComponent$onClickShop$1 extends SuspendLambda implements 
                 ResultKt.throwOnFailure(obj);
                 withContext = obj;
             }
-            m9202constructorimpl = Result.m9202constructorimpl(Boxing.boxBoolean(((Boolean) withContext).booleanValue()));
+            m9842constructorimpl = Result.m9842constructorimpl(Boxing.boxBoolean(((Boolean) withContext).booleanValue()));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
+            m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9205exceptionOrNullimpl = Result.m9205exceptionOrNullimpl(m9202constructorimpl);
-        if (m9205exceptionOrNullimpl != null) {
-            Timber.Forest.e(m9205exceptionOrNullimpl, "Failed to check shop availability", new Object[0]);
-            m9202constructorimpl = Boxing.boxBoolean(false);
+        Throwable m9845exceptionOrNullimpl = Result.m9845exceptionOrNullimpl(m9842constructorimpl);
+        if (m9845exceptionOrNullimpl != null) {
+            Timber.Forest.e(m9845exceptionOrNullimpl, "Failed to check shop availability", new Object[0]);
+            m9842constructorimpl = Boxing.boxBoolean(false);
         }
-        boolean booleanValue = ((Boolean) m9202constructorimpl).booleanValue();
+        boolean booleanValue = ((Boolean) m9842constructorimpl).booleanValue();
         mutableStateFlow = this.this$0.stateStore;
         while (true) {
             Object value = mutableStateFlow.getValue();

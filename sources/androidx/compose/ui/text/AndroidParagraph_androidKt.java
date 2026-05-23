@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.TextUnit;
 import androidx.compose.ui.unit.TextUnitKt;
 import kotlin.Metadata;
 /* compiled from: AndroidParagraph.android.kt */
-@Metadata(d1 = {"\u0000T\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0002¢\u0006\u0004\b\u0004\u0010\u0005\u001a\u0017\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\bH\u0002¢\u0006\u0004\b\t\u0010\u0005\u001a\u0017\u0010\n\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\fH\u0002¢\u0006\u0004\b\r\u0010\u0005\u001a\u0017\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0011\u0010\u0005\u001a\u0017\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u0014H\u0002¢\u0006\u0004\b\u0015\u0010\u0005\u001a\u0014\u0010\u0016\u001a\u00020\u0001*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0001H\u0002\u001a\u0018\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001aH\u0002\u001a\f\u0010\u001e\u001a\u00020\u001f*\u00020\u001fH\u0002\u001a\u0013\u0010 \u001a\u00020\u0001*\u00020!H\u0002¢\u0006\u0004\b\"\u0010\u0005¨\u0006#"}, d2 = {"toLayoutAlign", "", "align", "Landroidx/compose/ui/text/style/TextAlign;", "toLayoutAlign-aXe7zB0", "(I)I", "toLayoutHyphenationFrequency", "hyphens", "Landroidx/compose/ui/text/style/Hyphens;", "toLayoutHyphenationFrequency--3fSNIE", "toLayoutBreakStrategy", "breakStrategy", "Landroidx/compose/ui/text/style/LineBreak$Strategy;", "toLayoutBreakStrategy-xImikfE", "toLayoutLineBreakStyle", "lineBreakStrictness", "Landroidx/compose/ui/text/style/LineBreak$Strictness;", "toLayoutLineBreakStyle-hpcqdu8", "toLayoutLineBreakWordStyle", "lineBreakWordStyle", "Landroidx/compose/ui/text/style/LineBreak$WordBreak;", "toLayoutLineBreakWordStyle-wPN0Rpw", "numberOfLinesThatFitMaxHeight", "Landroidx/compose/ui/text/android/TextLayout;", "maxHeight", "shouldAttachIndentationFixSpan", "", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "ellipsis", "attachIndentationFixSpan", "", "toLayoutTextGranularity", "Landroidx/compose/ui/text/TextGranularity;", "toLayoutTextGranularity-duNsdkg", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0002¢\u0006\u0004\b\u0004\u0010\u0005\u001a\u0017\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\bH\u0002¢\u0006\u0004\b\t\u0010\u0005\u001a\u0017\u0010\n\u001a\u00020\u00012\u0006\u0010\u000b\u001a\u00020\fH\u0002¢\u0006\u0004\b\r\u0010\u0005\u001a\u0017\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0011\u0010\u0005\u001a\u0017\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u0014H\u0002¢\u0006\u0004\b\u0015\u0010\u0005\u001a\u0014\u0010\u0016\u001a\u00020\u0001*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0001H\u0002\u001a\u0018\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001aH\u0002\u001a\f\u0010\u001e\u001a\u00020\u001f*\u00020\u001fH\u0002\u001a\u0013\u0010 \u001a\u00020\u0001*\u00020!H\u0002¢\u0006\u0004\b\"\u0010\u0005¨\u0006#"}, d2 = {"toLayoutAlign", "", "align", "Landroidx/compose/ui/text/style/TextAlign;", "toLayoutAlign-aXe7zB0", "(I)I", "toLayoutHyphenationFrequency", "hyphens", "Landroidx/compose/ui/text/style/Hyphens;", "toLayoutHyphenationFrequency--3fSNIE", "toLayoutBreakStrategy", "breakStrategy", "Landroidx/compose/ui/text/style/LineBreak$Strategy;", "toLayoutBreakStrategy-xImikfE", "toLayoutLineBreakStyle", "lineBreakStrictness", "Landroidx/compose/ui/text/style/LineBreak$Strictness;", "toLayoutLineBreakStyle-hpcqdu8", "toLayoutLineBreakWordStyle", "lineBreakWordStyle", "Landroidx/compose/ui/text/style/LineBreak$WordBreak;", "toLayoutLineBreakWordStyle-wPN0Rpw", "numberOfLinesThatFitMaxHeight", "Landroidx/compose/ui/text/android/TextLayout;", "maxHeight", "shouldAttachIndentationFixSpan", "", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "ellipsis", "attachIndentationFixSpan", "", "toLayoutTextGranularity", "Landroidx/compose/ui/text/TextGranularity;", "toLayoutTextGranularity-duNsdkg", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidParagraph_androidKt {
     public static final /* synthetic */ CharSequence access$attachIndentationFixSpan(CharSequence charSequence) {
@@ -30,91 +30,91 @@ public final class AndroidParagraph_androidKt {
     }
 
     /* renamed from: access$toLayoutAlign-aXe7zB0  reason: not valid java name */
-    public static final /* synthetic */ int m6826access$toLayoutAlignaXe7zB0(int i) {
-        return m6832toLayoutAlignaXe7zB0(i);
+    public static final /* synthetic */ int m7431access$toLayoutAlignaXe7zB0(int i) {
+        return m7437toLayoutAlignaXe7zB0(i);
     }
 
     /* renamed from: access$toLayoutBreakStrategy-xImikfE  reason: not valid java name */
-    public static final /* synthetic */ int m6827access$toLayoutBreakStrategyxImikfE(int i) {
-        return m6833toLayoutBreakStrategyxImikfE(i);
+    public static final /* synthetic */ int m7432access$toLayoutBreakStrategyxImikfE(int i) {
+        return m7438toLayoutBreakStrategyxImikfE(i);
     }
 
     /* renamed from: access$toLayoutHyphenationFrequency--3fSNIE  reason: not valid java name */
-    public static final /* synthetic */ int m6828access$toLayoutHyphenationFrequency3fSNIE(int i) {
-        return m6834toLayoutHyphenationFrequency3fSNIE(i);
+    public static final /* synthetic */ int m7433access$toLayoutHyphenationFrequency3fSNIE(int i) {
+        return m7439toLayoutHyphenationFrequency3fSNIE(i);
     }
 
     /* renamed from: access$toLayoutLineBreakStyle-hpcqdu8  reason: not valid java name */
-    public static final /* synthetic */ int m6829access$toLayoutLineBreakStylehpcqdu8(int i) {
-        return m6835toLayoutLineBreakStylehpcqdu8(i);
+    public static final /* synthetic */ int m7434access$toLayoutLineBreakStylehpcqdu8(int i) {
+        return m7440toLayoutLineBreakStylehpcqdu8(i);
     }
 
     /* renamed from: access$toLayoutLineBreakWordStyle-wPN0Rpw  reason: not valid java name */
-    public static final /* synthetic */ int m6830access$toLayoutLineBreakWordStylewPN0Rpw(int i) {
-        return m6836toLayoutLineBreakWordStylewPN0Rpw(i);
+    public static final /* synthetic */ int m7435access$toLayoutLineBreakWordStylewPN0Rpw(int i) {
+        return m7441toLayoutLineBreakWordStylewPN0Rpw(i);
     }
 
     /* renamed from: access$toLayoutTextGranularity-duNsdkg  reason: not valid java name */
-    public static final /* synthetic */ int m6831access$toLayoutTextGranularityduNsdkg(int i) {
-        return m6837toLayoutTextGranularityduNsdkg(i);
+    public static final /* synthetic */ int m7436access$toLayoutTextGranularityduNsdkg(int i) {
+        return m7442toLayoutTextGranularityduNsdkg(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutAlign-aXe7zB0  reason: not valid java name */
-    public static final int m6832toLayoutAlignaXe7zB0(int i) {
-        if (TextAlign.m7429equalsimpl0(i, TextAlign.Companion.m7436getLefte0LSkKk())) {
+    public static final int m7437toLayoutAlignaXe7zB0(int i) {
+        if (TextAlign.m8034equalsimpl0(i, TextAlign.Companion.m8041getLefte0LSkKk())) {
             return 3;
         }
-        if (TextAlign.m7429equalsimpl0(i, TextAlign.Companion.m7437getRighte0LSkKk())) {
+        if (TextAlign.m8034equalsimpl0(i, TextAlign.Companion.m8042getRighte0LSkKk())) {
             return 4;
         }
-        if (TextAlign.m7429equalsimpl0(i, TextAlign.Companion.m7433getCentere0LSkKk())) {
+        if (TextAlign.m8034equalsimpl0(i, TextAlign.Companion.m8038getCentere0LSkKk())) {
             return 2;
         }
-        return (!TextAlign.m7429equalsimpl0(i, TextAlign.Companion.m7438getStarte0LSkKk()) && TextAlign.m7429equalsimpl0(i, TextAlign.Companion.m7434getEnde0LSkKk())) ? 1 : 0;
+        return (!TextAlign.m8034equalsimpl0(i, TextAlign.Companion.m8043getStarte0LSkKk()) && TextAlign.m8034equalsimpl0(i, TextAlign.Companion.m8039getEnde0LSkKk())) ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutHyphenationFrequency--3fSNIE  reason: not valid java name */
-    public static final int m6834toLayoutHyphenationFrequency3fSNIE(int i) {
-        if (Hyphens.m7321equalsimpl0(i, Hyphens.Companion.m7325getAutovmbZdU8())) {
+    public static final int m7439toLayoutHyphenationFrequency3fSNIE(int i) {
+        if (Hyphens.m7926equalsimpl0(i, Hyphens.Companion.m7930getAutovmbZdU8())) {
             return Build.VERSION.SDK_INT <= 32 ? 2 : 4;
         }
-        Hyphens.m7321equalsimpl0(i, Hyphens.Companion.m7326getNonevmbZdU8());
+        Hyphens.m7926equalsimpl0(i, Hyphens.Companion.m7931getNonevmbZdU8());
         return 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutBreakStrategy-xImikfE  reason: not valid java name */
-    public static final int m6833toLayoutBreakStrategyxImikfE(int i) {
-        if (LineBreak.Strategy.m7355equalsimpl0(i, LineBreak.Strategy.Companion.m7361getSimplefcGXIks())) {
+    public static final int m7438toLayoutBreakStrategyxImikfE(int i) {
+        if (LineBreak.Strategy.m7960equalsimpl0(i, LineBreak.Strategy.Companion.m7966getSimplefcGXIks())) {
             return 0;
         }
-        if (LineBreak.Strategy.m7355equalsimpl0(i, LineBreak.Strategy.Companion.m7360getHighQualityfcGXIks())) {
+        if (LineBreak.Strategy.m7960equalsimpl0(i, LineBreak.Strategy.Companion.m7965getHighQualityfcGXIks())) {
             return 1;
         }
-        return LineBreak.Strategy.m7355equalsimpl0(i, LineBreak.Strategy.Companion.m7359getBalancedfcGXIks()) ? 2 : 0;
+        return LineBreak.Strategy.m7960equalsimpl0(i, LineBreak.Strategy.Companion.m7964getBalancedfcGXIks()) ? 2 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutLineBreakStyle-hpcqdu8  reason: not valid java name */
-    public static final int m6835toLayoutLineBreakStylehpcqdu8(int i) {
-        if (LineBreak.Strictness.m7366equalsimpl0(i, LineBreak.Strictness.Companion.m7370getDefaultusljTpc())) {
+    public static final int m7440toLayoutLineBreakStylehpcqdu8(int i) {
+        if (LineBreak.Strictness.m7971equalsimpl0(i, LineBreak.Strictness.Companion.m7975getDefaultusljTpc())) {
             return 0;
         }
-        if (LineBreak.Strictness.m7366equalsimpl0(i, LineBreak.Strictness.Companion.m7371getLooseusljTpc())) {
+        if (LineBreak.Strictness.m7971equalsimpl0(i, LineBreak.Strictness.Companion.m7976getLooseusljTpc())) {
             return 1;
         }
-        if (LineBreak.Strictness.m7366equalsimpl0(i, LineBreak.Strictness.Companion.m7372getNormalusljTpc())) {
+        if (LineBreak.Strictness.m7971equalsimpl0(i, LineBreak.Strictness.Companion.m7977getNormalusljTpc())) {
             return 2;
         }
-        return LineBreak.Strictness.m7366equalsimpl0(i, LineBreak.Strictness.Companion.m7373getStrictusljTpc()) ? 3 : 0;
+        return LineBreak.Strictness.m7971equalsimpl0(i, LineBreak.Strictness.Companion.m7978getStrictusljTpc()) ? 3 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutLineBreakWordStyle-wPN0Rpw  reason: not valid java name */
-    public static final int m6836toLayoutLineBreakWordStylewPN0Rpw(int i) {
-        return (!LineBreak.WordBreak.m7378equalsimpl0(i, LineBreak.WordBreak.Companion.m7382getDefaultjp8hJ3c()) && LineBreak.WordBreak.m7378equalsimpl0(i, LineBreak.WordBreak.Companion.m7383getPhrasejp8hJ3c())) ? 1 : 0;
+    public static final int m7441toLayoutLineBreakWordStylewPN0Rpw(int i) {
+        return (!LineBreak.WordBreak.m7983equalsimpl0(i, LineBreak.WordBreak.Companion.m7987getDefaultjp8hJ3c()) && LineBreak.WordBreak.m7983equalsimpl0(i, LineBreak.WordBreak.Companion.m7988getPhrasejp8hJ3c())) ? 1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -130,7 +130,7 @@ public final class AndroidParagraph_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean shouldAttachIndentationFixSpan(TextStyle textStyle, boolean z) {
-        return (!z || TextUnit.m7746equalsimpl0(textStyle.m7039getLetterSpacingXSAIIZE(), TextUnitKt.getSp(0)) || TextUnit.m7746equalsimpl0(textStyle.m7039getLetterSpacingXSAIIZE(), TextUnit.Companion.m7760getUnspecifiedXSAIIZE()) || TextAlign.m7429equalsimpl0(textStyle.m7044getTextAligne0LSkKk(), TextAlign.Companion.m7439getUnspecifiede0LSkKk()) || TextAlign.m7429equalsimpl0(textStyle.m7044getTextAligne0LSkKk(), TextAlign.Companion.m7438getStarte0LSkKk()) || TextAlign.m7429equalsimpl0(textStyle.m7044getTextAligne0LSkKk(), TextAlign.Companion.m7435getJustifye0LSkKk())) ? false : true;
+        return (!z || TextUnit.m8351equalsimpl0(textStyle.m7644getLetterSpacingXSAIIZE(), TextUnitKt.getSp(0)) || TextUnit.m8351equalsimpl0(textStyle.m7644getLetterSpacingXSAIIZE(), TextUnit.Companion.m8365getUnspecifiedXSAIIZE()) || TextAlign.m8034equalsimpl0(textStyle.m7649getTextAligne0LSkKk(), TextAlign.Companion.m8044getUnspecifiede0LSkKk()) || TextAlign.m8034equalsimpl0(textStyle.m7649getTextAligne0LSkKk(), TextAlign.Companion.m8043getStarte0LSkKk()) || TextAlign.m8034equalsimpl0(textStyle.m7649getTextAligne0LSkKk(), TextAlign.Companion.m8040getJustifye0LSkKk())) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -150,7 +150,7 @@ public final class AndroidParagraph_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toLayoutTextGranularity-duNsdkg  reason: not valid java name */
-    public static final int m6837toLayoutTextGranularityduNsdkg(int i) {
-        return (!TextGranularity.m6961equalsimpl0(i, TextGranularity.Companion.m6965getCharacterDRrd7Zo()) && TextGranularity.m6961equalsimpl0(i, TextGranularity.Companion.m6966getWordDRrd7Zo())) ? 1 : 0;
+    public static final int m7442toLayoutTextGranularityduNsdkg(int i) {
+        return (!TextGranularity.m7566equalsimpl0(i, TextGranularity.Companion.m7570getCharacterDRrd7Zo()) && TextGranularity.m7566equalsimpl0(i, TextGranularity.Companion.m7571getWordDRrd7Zo())) ? 1 : 0;
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.common.data;
 
 import android.os.Bundle;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class DataBufferUtils {
     public static final String KEY_NEXT_PAGE_TOKEN = "next_page_token";

@@ -4,7 +4,6 @@ import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -19,8 +18,8 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5", f = "DragGestureDetector.kt", i = {0, 1, 1}, l = {TypedValues.TransitionType.TYPE_TO, TypedValues.TransitionType.TYPE_INTERPOLATOR, 713}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "overSlop"}, s = {"L$0", "L$0", "L$1"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5", f = "DragGestureDetector.kt", i = {0, 1, 1}, l = {727, 730, 738}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "overSlop"}, s = {"L$0", "L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<Unit> $onDragCancel;
@@ -97,14 +96,14 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
             ResultKt.throwOnFailure(obj);
             pointerInputChange = (PointerInputChange) obj;
             if (pointerInputChange != null) {
-                this.$onDragStart.invoke(Offset.m4516boximpl(pointerInputChange.m6085getPositionF1C5BW0()));
+                this.$onDragStart.invoke(Offset.m5092boximpl(pointerInputChange.m6685getPositionF1C5BW0()));
                 this.$onHorizontalDrag.invoke(pointerInputChange, Boxing.boxFloat(floatRef.element));
-                long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
+                long m6682getIdJ3iCeTQ = pointerInputChange.m6682getIdJ3iCeTQ();
                 final Function2<PointerInputChange, Float, Unit> function2 = this.$onHorizontalDrag;
                 this.L$0 = null;
                 this.L$1 = null;
                 this.label = 3;
-                obj = DragGestureDetectorKt.m474horizontalDragjO51t88(awaitPointerEventScope2, m6083getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda1
+                obj = DragGestureDetectorKt.m507horizontalDragjO51t88(awaitPointerEventScope2, m6682getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
                         return DragGestureDetectorKt$detectHorizontalDragGestures$5.invokeSuspend$lambda$1(Function2.this, (PointerInputChange) obj2);
@@ -121,7 +120,7 @@ public final class DragGestureDetectorKt$detectHorizontalDragGestures$5 extends 
         this.L$0 = awaitPointerEventScope;
         this.L$1 = floatRef;
         this.label = 2;
-        obj = DragGestureDetectorKt.m461awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m6083getIdJ3iCeTQ(), pointerInputChange2.m6088getTypeT8wyACA(), new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda0
+        obj = DragGestureDetectorKt.m494awaitHorizontalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m6682getIdJ3iCeTQ(), pointerInputChange2.m6688getTypeT8wyACA(), new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectHorizontalDragGestures$5$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj2, Object obj3) {
                 return DragGestureDetectorKt$detectHorizontalDragGestures$5.invokeSuspend$lambda$0(Ref.FloatRef.this, (PointerInputChange) obj2, ((Float) obj3).floatValue());

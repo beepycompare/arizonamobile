@@ -2028,7 +2028,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         i4++;
                                     }
                                 }
-                                getSubCaseArmorList().set(i4, inventoryItem8);
+                                if (i4 >= 0) {
+                                    getSubCaseArmorList().set(i4, inventoryItem8);
+                                }
                                 BaseInventory.setSubCaseArmorSkinList$default(this, getSubCaseArmorList(), null, 2, null);
                                 this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                             }
@@ -2056,7 +2058,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                             i5++;
                                         }
                                     }
-                                    getSubSkinList().set(i5, inventoryItem9);
+                                    if (i5 >= 0) {
+                                        getSubSkinList().set(i5, inventoryItem9);
+                                    }
                                     BaseInventory.setSubCaseArmorSkinList$default(this, null, getSubSkinList(), 1, null);
                                     this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
                                 }

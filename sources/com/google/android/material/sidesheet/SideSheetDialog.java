@@ -66,6 +66,11 @@ public class SideSheetDialog extends SheetDialog<SideSheetCallback> {
     }
 
     @Override // com.google.android.material.sidesheet.SheetDialog
+    public /* bridge */ /* synthetic */ void setFitsSystemWindows(boolean z) {
+        super.setFitsSystemWindows(z);
+    }
+
+    @Override // com.google.android.material.sidesheet.SheetDialog
     public /* bridge */ /* synthetic */ void setSheetEdge(int i) {
         super.setSheetEdge(i);
     }

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public class zzal implements zzao, zzak {
     final Map zza = new HashMap();
@@ -48,11 +48,8 @@ public class zzal implements zzao, zzak {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao
-    public zzao zzcA(String str, zzg zzgVar, List list) {
-        if ("toString".equals(str)) {
-            return new zzas(toString());
-        }
-        return zzak.zzu(this, new zzas(str), zzgVar, list);
+    public zzao zzcG(String str, zzg zzgVar, List list) {
+        return "toString".equals(str) ? new zzas(toString()) : zzak.zzu(this, new zzas(str), zzgVar, list);
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao

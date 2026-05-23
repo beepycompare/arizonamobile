@@ -20,6 +20,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.insets.Protection;
+import androidx.core.view.insets.ProtectionLayout;
 import com.google.android.material.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.color.MaterialColors;
@@ -27,6 +29,7 @@ import com.google.android.material.internal.EdgeToEdgeUtils;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.motion.MaterialBackOrchestrator;
 import com.google.android.material.shape.MaterialShapeDrawable;
+import java.util.List;
 /* loaded from: classes4.dex */
 public class BottomSheetDialog extends AppCompatDialog {
     private MaterialBackOrchestrator backOrchestrator;
@@ -41,6 +44,8 @@ public class BottomSheetDialog extends AppCompatDialog {
     boolean dismissWithAnimation;
     private EdgeToEdgeCallback edgeToEdgeCallback;
     private boolean edgeToEdgeEnabled;
+    private ProtectionLayout protectionLayout;
+    private List<Protection> protectionsList;
 
     public BottomSheetDialog(Context context) {
         this(context, 0);
@@ -105,7 +110,7 @@ public class BottomSheetDialog extends AppCompatDialog {
         super.onCreate(bundle);
         Window window = getWindow();
         if (window != null) {
-            window.setStatusBarColor(0);
+            EdgeToEdgeUtils.setStatusBarColor(window, 0);
             window.addFlags(Integer.MIN_VALUE);
             window.setLayout(-1, -1);
         }
@@ -152,7 +157,7 @@ public class BottomSheetDialog extends AppCompatDialog {
         super.onAttachedToWindow();
         Window window = getWindow();
         if (window != null) {
-            boolean z = this.edgeToEdgeEnabled && Color.alpha(window.getNavigationBarColor()) < 255;
+            boolean z = this.edgeToEdgeEnabled && Color.alpha(EdgeToEdgeUtils.getNavigationBarColor(window)) < 255;
             FrameLayout frameLayout = this.container;
             if (frameLayout != null) {
                 frameLayout.setFitsSystemWindows(!z);
@@ -221,11 +226,25 @@ public class BottomSheetDialog extends AppCompatDialog {
         return this.edgeToEdgeEnabled;
     }
 
+    public void setProtections(List<Protection> list) {
+        this.protectionsList = list;
+        ProtectionLayout protectionLayout = this.protectionLayout;
+        if (protectionLayout != null) {
+            protectionLayout.setProtections(list);
+            this.protectionLayout.setVisibility(list.isEmpty() ? 8 : 0);
+        }
+    }
+
     private FrameLayout ensureContainerAndBehavior() {
         if (this.container == null) {
             FrameLayout frameLayout = (FrameLayout) View.inflate(getContext(), R.layout.design_bottom_sheet_dialog, null);
             this.container = frameLayout;
-            this.coordinator = (CoordinatorLayout) frameLayout.findViewById(R.id.coordinator);
+            this.protectionLayout = (ProtectionLayout) frameLayout.findViewById(R.id.protection_layout);
+            List<Protection> list = this.protectionsList;
+            if (list != null) {
+                setProtections(list);
+            }
+            this.coordinator = (CoordinatorLayout) this.container.findViewById(R.id.coordinator);
             FrameLayout frameLayout2 = (FrameLayout) this.container.findViewById(R.id.design_bottom_sheet);
             this.bottomSheet = frameLayout2;
             BottomSheetBehavior<FrameLayout> from = BottomSheetBehavior.from(frameLayout2);

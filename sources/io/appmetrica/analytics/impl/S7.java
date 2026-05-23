@@ -1,16 +1,15 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider;
 /* loaded from: classes5.dex */
-public enum S7 {
-    b("UNDEFINED"),
-    c("APP"),
-    d("SATELLITE"),
-    e("RETAIL");
-    
+public final class S7 implements AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f783a;
+    public final C0716xe f759a = new C0716xe();
 
-    S7(String str) {
-        this.f783a = str;
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
+    public final PermissionStrategy getAskForPermissionStrategy() {
+        return this.f759a;
     }
 }

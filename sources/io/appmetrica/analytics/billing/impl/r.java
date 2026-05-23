@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class r implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final g f324a;
+    public final g f270a;
 
     public r() {
         this(null, 1, null);
@@ -18,14 +18,14 @@ public final class r implements Converter {
     /* renamed from: a */
     public final t fromModel(RemoteBillingConfig remoteBillingConfig) {
         t tVar = new t();
-        tVar.f326a = remoteBillingConfig.getEnabled();
+        tVar.f272a = remoteBillingConfig.getEnabled();
         BillingConfig config = remoteBillingConfig.getConfig();
-        tVar.b = config != null ? this.f324a.fromModel(config) : null;
+        tVar.b = config != null ? this.f270a.fromModel(config) : null;
         return tVar;
     }
 
     public r(g gVar) {
-        this.f324a = gVar;
+        this.f270a = gVar;
     }
 
     public /* synthetic */ r(g gVar, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -35,10 +35,10 @@ public final class r implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final RemoteBillingConfig toModel(t tVar) {
-        boolean z = tVar.f326a;
-        g gVar = this.f324a;
+        boolean z = tVar.f272a;
+        g gVar = this.f270a;
         s sVar = tVar.b;
         gVar.getClass();
-        return new RemoteBillingConfig(z, new BillingConfig(sVar.f325a, sVar.b));
+        return new RemoteBillingConfig(z, new BillingConfig(sVar.f271a, sVar.b));
     }
 }

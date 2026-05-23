@@ -68,6 +68,11 @@ public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchLi
     }
 
     @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ int getContinuousModeTickCount() {
+        return super.getContinuousModeTickCount();
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ int getFocusedThumbIndex() {
         return super.getFocusedThumbIndex();
     }
@@ -315,6 +320,11 @@ public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchLi
     @Override // com.google.android.material.slider.BaseSlider
     public /* bridge */ /* synthetic */ void setCentered(boolean z) {
         super.setCentered(z);
+    }
+
+    @Override // com.google.android.material.slider.BaseSlider
+    public /* bridge */ /* synthetic */ void setContinuousModeTickCount(int i) {
+        super.setContinuousModeTickCount(i);
     }
 
     @Override // com.google.android.material.slider.BaseSlider, android.view.View

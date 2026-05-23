@@ -2,15 +2,10 @@ package androidx.core.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import java.lang.reflect.Field;
 /* loaded from: classes2.dex */
 public final class LayoutInflaterCompat {
-    private static final String TAG = "LayoutInflaterCompatHC";
-    private static boolean sCheckedField;
-    private static Field sLayoutInflaterFactory2Field;
 
     /* loaded from: classes2.dex */
     static class Factory2Wrapper implements LayoutInflater.Factory2 {
@@ -32,27 +27,6 @@ public final class LayoutInflaterCompat {
 
         public String toString() {
             return getClass().getName() + "{" + this.mDelegateFactory + "}";
-        }
-    }
-
-    private static void forceSetFactory2(LayoutInflater layoutInflater, LayoutInflater.Factory2 factory2) {
-        if (!sCheckedField) {
-            try {
-                Field declaredField = LayoutInflater.class.getDeclaredField("mFactory2");
-                sLayoutInflaterFactory2Field = declaredField;
-                declaredField.setAccessible(true);
-            } catch (NoSuchFieldException e) {
-                Log.e(TAG, "forceSetFactory2 Could not find field 'mFactory2' on class " + LayoutInflater.class.getName() + "; inflation may have unexpected results.", e);
-            }
-            sCheckedField = true;
-        }
-        Field field = sLayoutInflaterFactory2Field;
-        if (field != null) {
-            try {
-                field.set(layoutInflater, factory2);
-            } catch (IllegalAccessException e2) {
-                Log.e(TAG, "forceSetFactory2 could not set the Factory2 on LayoutInflater " + layoutInflater + "; inflation may have unexpected results.", e2);
-            }
         }
     }
 

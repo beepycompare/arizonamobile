@@ -1,21 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.Binder;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-interface zzjv {
-    static Object zzh(zzju zzjuVar) {
-        try {
-            return zzjuVar.zza();
-        } catch (SecurityException unused) {
-            long clearCallingIdentity = Binder.clearCallingIdentity();
-            try {
-                return zzjuVar.zza();
-            } finally {
-                Binder.restoreCallingIdentity(clearCallingIdentity);
+public final class zzjv implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        int i = 0;
+        int i2 = 0;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 1) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 2) {
+                i2 = SafeParcelReader.readInt(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzju(i, i2);
     }
 
-    Object zze(String str);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzju[i];
+    }
 }

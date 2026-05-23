@@ -15,7 +15,7 @@ public final class AppOpsManagerCompat {
     }
 
     public static String permissionToOp(String str) {
-        return Api23Impl.permissionToOp(str);
+        return AppOpsManager.permissionToOp(str);
     }
 
     public static int noteOp(Context context, String str, int i, String str2) {
@@ -27,11 +27,11 @@ public final class AppOpsManagerCompat {
     }
 
     public static int noteProxyOp(Context context, String str, String str2) {
-        return Api23Impl.noteProxyOp((AppOpsManager) Api23Impl.getSystemService(context, AppOpsManager.class), str, str2);
+        return ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOp(str, str2);
     }
 
     public static int noteProxyOpNoThrow(Context context, String str, String str2) {
-        return Api23Impl.noteProxyOpNoThrow((AppOpsManager) Api23Impl.getSystemService(context, AppOpsManager.class), str, str2);
+        return ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOpNoThrow(str, str2);
     }
 
     public static int checkOrNoteProxyOp(Context context, int i, String str, String str2) {
@@ -61,29 +61,6 @@ public final class AppOpsManagerCompat {
 
         static String getOpPackageName(Context context) {
             return context.getOpPackageName();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static String permissionToOp(String str) {
-            return AppOpsManager.permissionToOp(str);
-        }
-
-        static <T> T getSystemService(Context context, Class<T> cls) {
-            return (T) context.getSystemService(cls);
-        }
-
-        static int noteProxyOp(AppOpsManager appOpsManager, String str, String str2) {
-            return appOpsManager.noteProxyOp(str, str2);
-        }
-
-        static int noteProxyOpNoThrow(AppOpsManager appOpsManager, String str, String str2) {
-            return appOpsManager.noteProxyOpNoThrow(str, str2);
         }
     }
 }

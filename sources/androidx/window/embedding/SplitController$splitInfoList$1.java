@@ -61,7 +61,7 @@ final class SplitController$splitInfoList$1 extends SuspendLambda implements Fun
             final Consumer<List<SplitInfo>> consumer = new Consumer() { // from class: androidx.window.embedding.SplitController$splitInfoList$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo8396trySendJP2dKIU((List) obj2);
+                    ProducerScope.this.mo9005trySendJP2dKIU((List) obj2);
                 }
             };
             embeddingBackend = this.this$0.embeddingBackend;

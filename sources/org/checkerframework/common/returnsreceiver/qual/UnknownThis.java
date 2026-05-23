@@ -18,6 +18,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @InvisibleQualifier
 @DefaultFor({TypeUseLocation.LOWER_BOUND})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface UnknownThis {
 }

@@ -69,7 +69,7 @@ public final class PackageManagerCompat {
     }
 
     public static boolean areUnusedAppRestrictionsAvailable(PackageManager packageManager) {
-        return (Build.VERSION.SDK_INT >= 30) || ((Build.VERSION.SDK_INT < 30) && (getPermissionRevocationVerifierApp(packageManager) != null));
+        return (Build.VERSION.SDK_INT >= 30) || (getPermissionRevocationVerifierApp(packageManager) != null);
     }
 
     public static String getPermissionRevocationVerifierApp(PackageManager packageManager) {

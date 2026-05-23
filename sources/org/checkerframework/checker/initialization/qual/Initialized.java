@@ -15,6 +15,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({UnknownInitialization.class})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Initialized {
 }

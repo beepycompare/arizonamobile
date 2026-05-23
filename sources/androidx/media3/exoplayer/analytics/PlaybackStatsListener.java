@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PlaybackStatsListener implements AnalyticsListener, PlaybackSessionManager.Listener {
     private Format audioFormat;
     private long bandwidthBytes;
@@ -46,7 +46,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
     private Format videoFormat;
     private VideoSize videoSize;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Callback {
         void onPlaybackStatsReady(AnalyticsListener.EventTime eventTime, PlaybackStats playbackStats);
     }
@@ -234,7 +234,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
         return events.contains(i) && this.sessionManager.belongsToSession(events.getEventTime(i), str);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class PlaybackStatsTracker {
         private long audioFormatBitrateTimeProduct;
         private final List<PlaybackStats.EventTimeAndFormat> audioFormatHistory;

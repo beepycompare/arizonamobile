@@ -82,7 +82,7 @@ class TimePickerTextInputKeyController implements TextView.OnEditorActionListene
         if (text == null) {
             return false;
         }
-        if (i >= 7 && i <= 16 && keyEvent.getAction() == 1 && editText.getSelectionStart() == 2 && text.length() == 2) {
+        if (i >= 7 && i <= 16 && keyEvent.getAction() == 1 && editText.getSelectionStart() == 2 && text.length() == 2 && !this.hourLayoutComboView.hasError()) {
             moveSelection(12);
             return true;
         }

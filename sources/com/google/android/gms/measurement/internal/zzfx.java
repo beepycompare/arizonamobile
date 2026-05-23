@@ -1,20 +1,20 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzfx {
     private static final Object zze = new Object();
     private final String zza;
-    private final zzbn zzb;
+    private final zzbo zzb;
     private final Object zzc;
     private final Object zzd = new Object();
     private volatile Object zzf = null;
     private volatile Object zzg = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzfx(String str, Object obj, Object obj2, zzbn zzbnVar, byte[] bArr) {
+    public /* synthetic */ zzfx(String str, Object obj, Object obj2, zzbo zzboVar, byte[] bArr) {
         this.zza = str;
         this.zzc = obj;
-        this.zzb = zzbnVar;
+        this.zzb = zzboVar;
     }
 
     public final String zza() {
@@ -39,9 +39,9 @@ public final class zzfx {
                     if (!zzae.zza()) {
                         Object obj2 = null;
                         try {
-                            zzbn zzbnVar = zzfxVar.zzb;
-                            if (zzbnVar != null) {
-                                obj2 = zzbnVar.zza();
+                            zzbo zzboVar = zzfxVar.zzb;
+                            if (zzboVar != null) {
+                                obj2 = zzboVar.zza();
                             }
                         } catch (IllegalStateException unused) {
                         }
@@ -54,10 +54,10 @@ public final class zzfx {
                 }
             } catch (SecurityException unused2) {
             }
-            zzbn zzbnVar2 = this.zzb;
-            if (zzbnVar2 != null) {
+            zzbo zzboVar2 = this.zzb;
+            if (zzboVar2 != null) {
                 try {
-                    return zzbnVar2.zza();
+                    return zzboVar2.zza();
                 } catch (IllegalStateException | SecurityException unused3) {
                 }
             }

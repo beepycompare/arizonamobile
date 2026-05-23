@@ -6,7 +6,7 @@ import com.google.ads.AdSize;
 import com.google.ads.mediation.MediationServerParameters;
 import com.google.ads.mediation.NetworkExtras;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface MediationBannerAdapter<ADDITIONAL_PARAMETERS extends NetworkExtras, SERVER_PARAMETERS extends MediationServerParameters> extends MediationAdapter<ADDITIONAL_PARAMETERS, SERVER_PARAMETERS> {
     View getBannerView();
 

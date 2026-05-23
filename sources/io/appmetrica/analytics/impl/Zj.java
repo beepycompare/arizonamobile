@@ -1,19 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Zj implements ServiceComponentModuleConfig {
+public final class Zj implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0467o4 f895a;
+    public final /* synthetic */ C0622to f872a;
 
-    public Zj(C0467o4 c0467o4) {
-        this.f895a = c0467o4;
+    public Zj(C0622to c0622to) {
+        this.f872a = c0622to;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig
-    public final boolean isRevenueAutoTrackingEnabled() {
-        return ((Boolean) WrapUtils.getOrDefault(this.f895a.m, Boolean.TRUE)).booleanValue();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
+    public final void a(InterfaceC0506pb interfaceC0506pb) {
+        interfaceC0506pb.a(this.f872a);
     }
 }

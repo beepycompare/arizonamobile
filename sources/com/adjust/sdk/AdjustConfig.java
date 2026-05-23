@@ -10,10 +10,6 @@ public class AdjustConfig {
     public static final String ENVIRONMENT_SANDBOX = "sandbox";
     String appToken;
     String basePath;
-    ArrayList<OnAdidReadListener> cachedAdidReadCallbacks = new ArrayList<>();
-    ArrayList<AdjustTimeoutCallback> cachedAdidReadTimeoutCallbacks = new ArrayList<>();
-    ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
-    ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
     OnDeeplinkResolvedListener cachedDeeplinkResolutionCallback;
     Context context;
     boolean coppaComplianceEnabled;
@@ -27,6 +23,7 @@ public class AdjustConfig {
     Boolean isCostDataInAttributionEnabled;
     boolean isDataResidency;
     boolean isDeviceIdsReadingOnceEnabled;
+    boolean isFbIdReadingEnabled;
     boolean isFirstSessionDelayEnabled;
     boolean isPreinstallTrackingEnabled;
     boolean isSendingInBackgroundEnabled;
@@ -35,8 +32,10 @@ public class AdjustConfig {
     OnDeferredDeeplinkResponseListener onDeferredDeeplinkResponseListener;
     OnEventTrackingFailedListener onEventTrackingFailedListener;
     OnEventTrackingSucceededListener onEventTrackingSucceededListener;
+    OnRemoteTriggerListener onRemoteTriggerListener;
     OnSessionTrackingFailedListener onSessionTrackingFailedListener;
     OnSessionTrackingSucceededListener onSessionTrackingSucceededListener;
+    OnThirdPartySharingSettingsChangedListener onThirdPartySharingSettingsChangedListener;
     boolean playStoreKidsComplianceEnabled;
     AdjustInstance.PreLaunchActions preLaunchActions;
     String preinstallFilePath;
@@ -50,6 +49,11 @@ public class AdjustConfig {
     String subscriptionPath;
     List<String> urlStrategyDomains;
     boolean useSubdomains;
+    ArrayList<OnAdidReadListener> cachedAdidReadCallbacks = new ArrayList<>();
+    ArrayList<AdjustTimeoutCallback> cachedAdidReadTimeoutCallbacks = new ArrayList<>();
+    ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+    ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
+    ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacks = new ArrayList<>();
 
     public AdjustConfig(Context context, String str, String str2) {
         init(context, str, str2, false);
@@ -118,10 +122,15 @@ public class AdjustConfig {
         this.playStoreKidsComplianceEnabled = false;
         this.isFirstSessionDelayEnabled = false;
         this.isAppSetIdReadingEnabled = true;
+        this.isFbIdReadingEnabled = true;
     }
 
     public void disableAppSetIdReading() {
         this.isAppSetIdReadingEnabled = false;
+    }
+
+    public void disableFbIdReading() {
+        this.isFbIdReadingEnabled = false;
     }
 
     public void enableCoppaCompliance() {
@@ -204,12 +213,20 @@ public class AdjustConfig {
         return this.onEventTrackingSucceededListener;
     }
 
+    public OnRemoteTriggerListener getOnRemoteTriggerListener() {
+        return this.onRemoteTriggerListener;
+    }
+
     public OnSessionTrackingFailedListener getOnSessionTrackingFailedListener() {
         return this.onSessionTrackingFailedListener;
     }
 
     public OnSessionTrackingSucceededListener getOnSessionTrackingSucceededListener() {
         return this.onSessionTrackingSucceededListener;
+    }
+
+    public OnThirdPartySharingSettingsChangedListener getOnThirdPartySharingSettingsChangedListener() {
+        return this.onThirdPartySharingSettingsChangedListener;
     }
 
     public String getPreinstallFilePath() {
@@ -242,6 +259,10 @@ public class AdjustConfig {
 
     public boolean isDeviceIdsReadingOnceEnabled() {
         return this.isDeviceIdsReadingOnceEnabled;
+    }
+
+    public boolean isFbIdReadingEnabled() {
+        return this.isFbIdReadingEnabled;
     }
 
     public boolean isPlayStoreKidsComplianceEnabled() {
@@ -296,12 +317,20 @@ public class AdjustConfig {
         this.onEventTrackingSucceededListener = onEventTrackingSucceededListener;
     }
 
+    public void setOnRemoteTriggerListener(OnRemoteTriggerListener onRemoteTriggerListener) {
+        this.onRemoteTriggerListener = onRemoteTriggerListener;
+    }
+
     public void setOnSessionTrackingFailedListener(OnSessionTrackingFailedListener onSessionTrackingFailedListener) {
         this.onSessionTrackingFailedListener = onSessionTrackingFailedListener;
     }
 
     public void setOnSessionTrackingSucceededListener(OnSessionTrackingSucceededListener onSessionTrackingSucceededListener) {
         this.onSessionTrackingSucceededListener = onSessionTrackingSucceededListener;
+    }
+
+    public void setOnThirdPartySharingSettingsChangedListener(OnThirdPartySharingSettingsChangedListener onThirdPartySharingSettingsChangedListener) {
+        this.onThirdPartySharingSettingsChangedListener = onThirdPartySharingSettingsChangedListener;
     }
 
     public void setPreinstallFilePath(String str) {

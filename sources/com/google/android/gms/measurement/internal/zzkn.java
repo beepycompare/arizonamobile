@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzkn implements zzpo {
     final /* synthetic */ zzlj zza;
@@ -20,9 +20,9 @@ public final class zzkn implements zzpo {
         boolean isEmpty = TextUtils.isEmpty(str);
         zzlj zzljVar = this.zza;
         if (!isEmpty) {
-            zzljVar.zzI("auto", "_err", bundle, str);
+            zzljVar.zzH("auto", "_err", bundle, str);
         } else {
-            zzljVar.zzB("auto", "_err", bundle);
+            zzljVar.zzA("auto", "_err", bundle);
         }
     }
 }

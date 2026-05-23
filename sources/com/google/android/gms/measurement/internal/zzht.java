@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import androidx.collection.ArrayMap;
 import androidx.collection.LruCache;
 import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.internal.measurement.zzaeh;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
@@ -13,84 +14,95 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzht extends zzos implements zzak {
     final Map zza;
     final Map zzb;
     final Map zzc;
-    final LruCache zzd;
-    final com.google.android.gms.internal.measurement.zzr zze;
-    private final Map zzf;
+    final Map zzd;
+    final LruCache zze;
+    final com.google.android.gms.internal.measurement.zzr zzf;
     private final Map zzh;
     private final Map zzi;
     private final Map zzj;
     private final Map zzk;
     private final Map zzl;
+    private final Map zzm;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzht(zzpg zzpgVar) {
         super(zzpgVar);
-        this.zzf = new ArrayMap();
+        this.zzh = new ArrayMap();
         this.zza = new ArrayMap();
         this.zzb = new ArrayMap();
         this.zzc = new ArrayMap();
-        this.zzh = new ArrayMap();
-        this.zzj = new ArrayMap();
+        this.zzd = new ArrayMap();
+        this.zzi = new ArrayMap();
         this.zzk = new ArrayMap();
         this.zzl = new ArrayMap();
-        this.zzi = new ArrayMap();
-        this.zzd = new zzhm(this, 20);
-        this.zze = new zzhn(this);
+        this.zzm = new ArrayMap();
+        this.zzj = new ArrayMap();
+        this.zze = new zzhm(this, 20);
+        this.zzf = new zzhn(this);
     }
 
-    private final void zzE(String str) {
-        zzaw();
+    private final void zzF(String str) {
+        zzay();
         zzg();
         Preconditions.checkNotEmpty(str);
-        Map map = this.zzh;
+        Map map = this.zzi;
         if (map.get(str) == null) {
             zzaq zzy = this.zzg.zzj().zzy(str);
             if (zzy == null) {
-                this.zzf.put(str, null);
+                this.zzh.put(str, null);
                 this.zzb.put(str, null);
                 this.zza.put(str, null);
                 this.zzc.put(str, null);
+                this.zzd.put(str, null);
                 map.put(str, null);
-                this.zzj.put(str, null);
                 this.zzk.put(str, null);
                 this.zzl.put(str, null);
-                this.zzi.put(str, null);
+                this.zzm.put(str, null);
+                this.zzj.put(str, null);
                 return;
             }
-            com.google.android.gms.internal.measurement.zzgk zzgkVar = (com.google.android.gms.internal.measurement.zzgk) zzH(str, zzy.zza).zzcl();
-            zzF(str, zzgkVar);
-            this.zzf.put(str, zzI((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc()));
-            map.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc());
-            zzG(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc());
-            this.zzj.put(str, zzgkVar.zzh());
-            this.zzk.put(str, zzy.zzb);
-            this.zzl.put(str, zzy.zzc);
+            com.google.android.gms.internal.measurement.zzgk zzgkVar = (com.google.android.gms.internal.measurement.zzgk) zzI(str, zzy.zza).zzco();
+            zzG(str, zzgkVar);
+            this.zzh.put(str, zzJ((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd()));
+            map.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd());
+            zzH(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd());
+            this.zzk.put(str, zzgkVar.zzh());
+            this.zzl.put(str, zzy.zzb);
+            this.zzm.put(str, zzy.zzc);
         }
     }
 
-    private final void zzF(String str, com.google.android.gms.internal.measurement.zzgk zzgkVar) {
+    private final void zzG(String str, com.google.android.gms.internal.measurement.zzgk zzgkVar) {
         HashSet hashSet = new HashSet();
+        ArrayList arrayList = new ArrayList();
         ArrayMap arrayMap = new ArrayMap();
         ArrayMap arrayMap2 = new ArrayMap();
         ArrayMap arrayMap3 = new ArrayMap();
         for (com.google.android.gms.internal.measurement.zzgh zzghVar : zzgkVar.zzg()) {
             hashSet.add(zzghVar.zza());
         }
+        zzic zzicVar = this.zzu;
+        zzal zzc = zzicVar.zzc();
+        zzfx zzfxVar = zzfy.zzaV;
+        if (zzc.zzp(null, zzfxVar)) {
+            arrayList.addAll(zzgkVar.zzi());
+        }
         for (int i = 0; i < zzgkVar.zza(); i++) {
-            com.google.android.gms.internal.measurement.zzgi zzgiVar = (com.google.android.gms.internal.measurement.zzgi) zzgkVar.zzb(i).zzcl();
+            com.google.android.gms.internal.measurement.zzgi zzgiVar = (com.google.android.gms.internal.measurement.zzgi) zzgkVar.zzb(i).zzco();
             if (zzgiVar.zza().isEmpty()) {
-                this.zzu.zzaV().zze().zza("EventConfig contained null event name");
+                zzicVar.zzaW().zze().zza("EventConfig contained null event name");
             } else {
                 String zza = zzgiVar.zza();
                 String zzb = zzjm.zzb(zzgiVar.zza());
@@ -106,7 +118,7 @@ public final class zzht extends zzos implements zzak {
                 }
                 if (zzgiVar.zzg()) {
                     if (zzgiVar.zzh() < 2 || zzgiVar.zzh() > 65535) {
-                        this.zzu.zzaV().zze().zzc("Invalid sampling rate. Event name, sample rate", zzgiVar.zza(), Integer.valueOf(zzgiVar.zzh()));
+                        zzicVar.zzaW().zze().zzc("Invalid sampling rate. Event name, sample rate", zzgiVar.zza(), Integer.valueOf(zzgiVar.zzh()));
                     } else {
                         arrayMap3.put(zzgiVar.zza(), Integer.valueOf(zzgiVar.zzh()));
                     }
@@ -114,16 +126,19 @@ public final class zzht extends zzos implements zzak {
             }
         }
         this.zza.put(str, hashSet);
+        if (zzicVar.zzc().zzp(null, zzfxVar)) {
+            this.zzd.put(str, arrayList);
+        }
         this.zzb.put(str, arrayMap);
         this.zzc.put(str, arrayMap2);
-        this.zzi.put(str, arrayMap3);
+        this.zzj.put(str, arrayMap3);
     }
 
-    private final void zzG(final String str, com.google.android.gms.internal.measurement.zzgl zzglVar) {
-        if (zzglVar.zzj() != 0) {
+    private final void zzH(final String str, com.google.android.gms.internal.measurement.zzgl zzglVar) {
+        if (zzglVar.zzk() != 0) {
             zzic zzicVar = this.zzu;
-            zzicVar.zzaV().zzk().zzb("EES programs found", Integer.valueOf(zzglVar.zzj()));
-            com.google.android.gms.internal.measurement.zzja zzjaVar = (com.google.android.gms.internal.measurement.zzja) zzglVar.zzi().get(0);
+            zzicVar.zzaW().zzk().zzb("EES programs found", Integer.valueOf(zzglVar.zzk()));
+            com.google.android.gms.internal.measurement.zzja zzjaVar = (com.google.android.gms.internal.measurement.zzja) zzglVar.zzj().get(0);
             try {
                 com.google.android.gms.internal.measurement.zzc zzcVar = new com.google.android.gms.internal.measurement.zzc();
                 zzcVar.zza("internal.remoteConfig", new Callable() { // from class: com.google.android.gms.measurement.internal.zzhs
@@ -141,14 +156,14 @@ public final class zzht extends zzos implements zzak {
                             @Override // java.util.concurrent.Callable
                             public final /* synthetic */ Object call() {
                                 zzht zzhtVar2 = zzht.this;
-                                zzav zzj = zzhtVar2.zzg.zzj();
+                                zzaw zzj = zzhtVar2.zzg.zzj();
                                 String str3 = str2;
                                 zzh zzu = zzj.zzu(str3);
                                 HashMap hashMap = new HashMap();
                                 hashMap.put("platform", ConstantDeviceInfo.APP_PLATFORM);
                                 hashMap.put("package_name", str3);
                                 zzhtVar2.zzu.zzc().zzi();
-                                hashMap.put("gmp_version", 133005L);
+                                hashMap.put("gmp_version", 161000L);
                                 if (zzu != null) {
                                     String zzr = zzu.zzr();
                                     if (zzr != null) {
@@ -165,42 +180,42 @@ public final class zzht extends zzos implements zzak {
                 zzcVar.zza("internal.logger", new Callable() { // from class: com.google.android.gms.measurement.internal.zzhq
                     @Override // java.util.concurrent.Callable
                     public final /* synthetic */ Object call() {
-                        return new com.google.android.gms.internal.measurement.zzt(zzht.this.zze);
+                        return new com.google.android.gms.internal.measurement.zzt(zzht.this.zzf);
                     }
                 });
                 zzcVar.zzf(zzjaVar);
-                this.zzd.put(str, zzcVar);
-                zzicVar.zzaV().zzk().zzc("EES program loaded for appId, activities", str, Integer.valueOf(zzjaVar.zzb().zzb()));
+                this.zze.put(str, zzcVar);
+                zzicVar.zzaW().zzk().zzc("EES program loaded for appId, activities", str, Integer.valueOf(zzjaVar.zzb().zzb()));
                 for (com.google.android.gms.internal.measurement.zziy zziyVar : zzjaVar.zzb().zza()) {
-                    zzicVar.zzaV().zzk().zzb("EES program activity", zziyVar.zza());
+                    zzicVar.zzaW().zzk().zzb("EES program activity", zziyVar.zza());
                 }
                 return;
             } catch (com.google.android.gms.internal.measurement.zzd unused) {
-                this.zzu.zzaV().zzb().zzb("Failed to load EES program. appId", str);
+                this.zzu.zzaW().zzb().zzb("Failed to load EES program. appId", str);
                 return;
             }
         }
-        this.zzd.remove(str);
+        this.zze.remove(str);
     }
 
-    private final com.google.android.gms.internal.measurement.zzgl zzH(String str, byte[] bArr) {
+    private final com.google.android.gms.internal.measurement.zzgl zzI(String str, byte[] bArr) {
         if (bArr == null) {
-            return com.google.android.gms.internal.measurement.zzgl.zzs();
+            return com.google.android.gms.internal.measurement.zzgl.zzt();
         }
         try {
-            com.google.android.gms.internal.measurement.zzgl zzglVar = (com.google.android.gms.internal.measurement.zzgl) ((com.google.android.gms.internal.measurement.zzgk) zzpk.zzw(com.google.android.gms.internal.measurement.zzgl.zzr(), bArr)).zzbc();
-            this.zzu.zzaV().zzk().zzc("Parsed config. version, gmp_app_id", zzglVar.zza() ? Long.valueOf(zzglVar.zzb()) : null, zzglVar.zzc() ? zzglVar.zzd() : null);
+            com.google.android.gms.internal.measurement.zzgl zzglVar = (com.google.android.gms.internal.measurement.zzgl) ((com.google.android.gms.internal.measurement.zzgk) zzpk.zzw(com.google.android.gms.internal.measurement.zzgl.zzs(), bArr)).zzbd();
+            this.zzu.zzaW().zzk().zzc("Parsed config. version, gmp_app_id", zzglVar.zza() ? Long.valueOf(zzglVar.zzb()) : null, zzglVar.zzc() ? zzglVar.zzd() : null);
             return zzglVar;
-        } catch (com.google.android.gms.internal.measurement.zzmr e) {
-            this.zzu.zzaV().zze().zzc("Unable to merge remote config. appId", zzgu.zzl(str), e);
-            return com.google.android.gms.internal.measurement.zzgl.zzs();
+        } catch (zzaeh e) {
+            this.zzu.zzaW().zze().zzc("Unable to merge remote config. appId", zzgu.zzl(str), e);
+            return com.google.android.gms.internal.measurement.zzgl.zzt();
         } catch (RuntimeException e2) {
-            this.zzu.zzaV().zze().zzc("Unable to merge remote config. appId", zzgu.zzl(str), e2);
-            return com.google.android.gms.internal.measurement.zzgl.zzs();
+            this.zzu.zzaW().zze().zzc("Unable to merge remote config. appId", zzgu.zzl(str), e2);
+            return com.google.android.gms.internal.measurement.zzgl.zzt();
         }
     }
 
-    private static final Map zzI(com.google.android.gms.internal.measurement.zzgl zzglVar) {
+    private static final Map zzJ(com.google.android.gms.internal.measurement.zzgl zzglVar) {
         ArrayMap arrayMap = new ArrayMap();
         if (zzglVar != null) {
             for (com.google.android.gms.internal.measurement.zzgt zzgtVar : zzglVar.zze()) {
@@ -210,7 +225,7 @@ public final class zzht extends zzos implements zzak {
         return arrayMap;
     }
 
-    private static final zzjk zzJ(int i) {
+    private static final zzjk zzK(int i) {
         int i2 = i - 1;
         if (i2 != 1) {
             if (i2 != 2) {
@@ -228,15 +243,29 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzji zzA(String str, zzjk zzjkVar) {
+    public final SortedSet zzA(String str) {
         zzg();
-        zzE(str);
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        if (zzx == null) {
+        zzF(str);
+        TreeSet treeSet = new TreeSet();
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        if (zzy != null) {
+            for (com.google.android.gms.internal.measurement.zzgc zzgcVar : zzy.zzc()) {
+                treeSet.add(zzgcVar.zza());
+            }
+        }
+        return treeSet;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final zzji zzB(String str, zzjk zzjkVar) {
+        zzg();
+        zzF(str);
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        if (zzy == null) {
             return zzji.UNINITIALIZED;
         }
-        for (com.google.android.gms.internal.measurement.zzfu zzfuVar : zzx.zzf()) {
-            if (zzJ(zzfuVar.zzb()) == zzjkVar) {
+        for (com.google.android.gms.internal.measurement.zzfu zzfuVar : zzy.zzf()) {
+            if (zzK(zzfuVar.zzb()) == zzjkVar) {
                 int zzc = zzfuVar.zzc() - 1;
                 if (zzc != 1) {
                     if (zzc == 2) {
@@ -251,14 +280,14 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzB(String str) {
+    public final boolean zzC(String str) {
         zzg();
-        zzE(str);
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        if (zzx == null) {
+        zzF(str);
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        if (zzy == null) {
             return false;
         }
-        for (com.google.android.gms.internal.measurement.zzfu zzfuVar : zzx.zza()) {
+        for (com.google.android.gms.internal.measurement.zzfu zzfuVar : zzy.zza()) {
             if (zzfuVar.zzb() == 3 && zzfuVar.zzd() == 3) {
                 return true;
             }
@@ -267,28 +296,28 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ com.google.android.gms.internal.measurement.zzc zzC(String str) {
-        zzaw();
+    public final /* synthetic */ com.google.android.gms.internal.measurement.zzc zzD(String str) {
+        zzay();
         Preconditions.checkNotEmpty(str);
         zzaq zzy = this.zzg.zzj().zzy(str);
         if (zzy == null) {
             return null;
         }
-        this.zzu.zzaV().zzk().zzb("Populate EES config from database on cache miss. appId", str);
-        zzG(str, zzH(str, zzy.zza));
-        return (com.google.android.gms.internal.measurement.zzc) this.zzd.snapshot().get(str);
+        this.zzu.zzaW().zzk().zzb("Populate EES config from database on cache miss. appId", str);
+        zzH(str, zzI(str, zzy.zza));
+        return (com.google.android.gms.internal.measurement.zzc) this.zze.snapshot().get(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ Map zzD() {
-        return this.zzf;
+    public final /* synthetic */ Map zzE() {
+        return this.zzh;
     }
 
     @Override // com.google.android.gms.measurement.internal.zzak
     public final String zza(String str, String str2) {
         zzg();
-        zzE(str);
-        Map map = (Map) this.zzf.get(str);
+        zzF(str);
+        Map map = (Map) this.zzh.get(str);
         if (map != null) {
             return (String) map.get(str2);
         }
@@ -297,86 +326,86 @@ public final class zzht extends zzos implements zzak {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final com.google.android.gms.internal.measurement.zzgl zzb(String str) {
-        zzaw();
+        zzay();
         zzg();
         Preconditions.checkNotEmpty(str);
-        zzE(str);
-        return (com.google.android.gms.internal.measurement.zzgl) this.zzh.get(str);
+        zzF(str);
+        return (com.google.android.gms.internal.measurement.zzgl) this.zzi.get(str);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzos
-    protected final boolean zzbb() {
+    protected final boolean zzbc() {
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String zzc(String str) {
         zzg();
-        zzE(str);
-        return (String) this.zzj.get(str);
+        zzF(str);
+        return (String) this.zzk.get(str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final String zzd(String str) {
         zzg();
-        return (String) this.zzk.get(str);
+        return (String) this.zzl.get(str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final String zze(String str) {
         zzg();
-        return (String) this.zzl.get(str);
+        return (String) this.zzm.get(str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void zzf(String str) {
         zzg();
-        this.zzk.put(str, null);
+        this.zzl.put(str, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzh(String str) {
         zzg();
-        this.zzh.remove(str);
+        this.zzi.remove(str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean zzi(String str, byte[] bArr, String str2, String str3) {
-        zzaw();
+        zzay();
         zzg();
         Preconditions.checkNotEmpty(str);
-        com.google.android.gms.internal.measurement.zzgk zzgkVar = (com.google.android.gms.internal.measurement.zzgk) zzH(str, bArr).zzcl();
-        zzF(str, zzgkVar);
-        zzG(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc());
-        this.zzh.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc());
-        this.zzj.put(str, zzgkVar.zzh());
-        this.zzk.put(str, str2);
-        this.zzl.put(str, str3);
-        this.zzf.put(str, zzI((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc()));
-        this.zzg.zzj().zzae(str, new ArrayList(zzgkVar.zzd()));
+        com.google.android.gms.internal.measurement.zzgk zzgkVar = (com.google.android.gms.internal.measurement.zzgk) zzI(str, bArr).zzco();
+        zzG(str, zzgkVar);
+        zzH(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd());
+        this.zzi.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd());
+        this.zzk.put(str, zzgkVar.zzh());
+        this.zzl.put(str, str2);
+        this.zzm.put(str, str3);
+        this.zzh.put(str, zzJ((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd()));
+        this.zzg.zzj().zzag(str, new ArrayList(zzgkVar.zzd()));
         try {
             zzgkVar.zze();
-            bArr = ((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc()).zzcc();
+            bArr = ((com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd()).zzcd();
         } catch (RuntimeException e) {
-            this.zzu.zzaV().zze().zzc("Unable to serialize reduced-size config. Storing full config instead. appId", zzgu.zzl(str), e);
+            this.zzu.zzaW().zze().zzc("Unable to serialize reduced-size config. Storing full config instead. appId", zzgu.zzl(str), e);
         }
-        zzav zzj = this.zzg.zzj();
+        zzaw zzj = this.zzg.zzj();
         Preconditions.checkNotEmpty(str);
         zzj.zzg();
-        zzj.zzaw();
+        zzj.zzay();
         ContentValues contentValues = new ContentValues();
         contentValues.put("remote_config", bArr);
         contentValues.put("config_last_modified_time", str2);
         contentValues.put("e_tag", str3);
         try {
             if (zzj.zze().update("apps", contentValues, "app_id = ?", new String[]{str}) == 0) {
-                zzj.zzu.zzaV().zzb().zzb("Failed to update remote config (got 0). appId", zzgu.zzl(str));
+                zzj.zzu.zzaW().zzb().zzb("Failed to update remote config (got 0). appId", zzgu.zzl(str));
             }
         } catch (SQLiteException e2) {
-            zzj.zzu.zzaV().zzb().zzc("Error storing remote config. appId", zzgu.zzl(str), e2);
+            zzj.zzu.zzaW().zzb().zzc("Error storing remote config. appId", zzgu.zzl(str), e2);
         }
         zzgkVar.zzf();
-        this.zzh.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbc());
+        this.zzi.put(str, (com.google.android.gms.internal.measurement.zzgl) zzgkVar.zzbd());
         return true;
     }
 
@@ -384,11 +413,11 @@ public final class zzht extends zzos implements zzak {
     public final boolean zzj(String str, String str2) {
         Boolean bool;
         zzg();
-        zzE(str);
-        if (zzn(str) && zzpp.zzZ(str2)) {
+        zzF(str);
+        if (zzo(str) && zzpp.zzac(str2)) {
             return true;
         }
-        if (zzo(str) && zzpp.zzh(str2)) {
+        if (zzp(str) && zzpp.zzh(str2)) {
             return true;
         }
         Map map = (Map) this.zzb.get(str);
@@ -402,7 +431,7 @@ public final class zzht extends zzos implements zzak {
     public final boolean zzk(String str, String str2) {
         Boolean bool;
         zzg();
-        zzE(str);
+        zzF(str);
         if ("ecommerce_purchase".equals(str2) || FirebaseAnalytics.Event.PURCHASE.equals(str2) || FirebaseAnalytics.Event.REFUND.equals(str2)) {
             return true;
         }
@@ -416,16 +445,23 @@ public final class zzht extends zzos implements zzak {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final Set zzl(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         return (Set) this.zza.get(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final int zzm(String str, String str2) {
+    public final List zzm(String str) {
+        zzg();
+        zzF(str);
+        return (List) this.zzd.get(str);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final int zzn(String str, String str2) {
         Integer num;
         zzg();
-        zzE(str);
-        Map map = (Map) this.zzi.get(str);
+        zzF(str);
+        Map map = (Map) this.zzj.get(str);
         if (map == null || (num = (Integer) map.get(str2)) == null) {
             return 1;
         }
@@ -433,19 +469,19 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzn(String str) {
+    public final boolean zzo(String str) {
         return "1".equals(zza(str, "measurement.upload.blacklist_internal"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzo(String str) {
+    public final boolean zzp(String str) {
         return "1".equals(zza(str, "measurement.upload.blacklist_public"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzp(String str) {
+    public final boolean zzq(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         if (map.get(str) != null) {
             return ((Set) map.get(str)).contains("device_model") || ((Set) map.get(str)).contains("device_info");
@@ -454,9 +490,9 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzq(String str) {
+    public final boolean zzr(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         if (map.get(str) != null) {
             return ((Set) map.get(str)).contains(CommonUrlParts.OS_VERSION) || ((Set) map.get(str)).contains("device_info");
@@ -465,52 +501,52 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzr(String str) {
+    public final boolean zzs(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         return map.get(str) != null && ((Set) map.get(str)).contains("user_id");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzs(String str) {
+    public final boolean zzt(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         return map.get(str) != null && ((Set) map.get(str)).contains("google_signals");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzt(String str) {
+    public final boolean zzu(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         return map.get(str) != null && ((Set) map.get(str)).contains("app_instance_id");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzu(String str) {
+    public final boolean zzv(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         Map map = this.zza;
         return map.get(str) != null && ((Set) map.get(str)).contains("enhanced_user_id");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzv(String str, zzjk zzjkVar) {
+    public final boolean zzw(String str, zzjk zzjkVar) {
         zzg();
-        zzE(str);
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        if (zzx == null) {
+        zzF(str);
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        if (zzy == null) {
             return false;
         }
-        Iterator it = zzx.zza().iterator();
+        Iterator it = zzy.zza().iterator();
         while (true) {
             if (!it.hasNext()) {
                 break;
             }
             com.google.android.gms.internal.measurement.zzfu zzfuVar = (com.google.android.gms.internal.measurement.zzfu) it.next();
-            if (zzjkVar == zzJ(zzfuVar.zzb())) {
+            if (zzjkVar == zzK(zzfuVar.zzb())) {
                 if (zzfuVar.zzc() == 2) {
                     return true;
                 }
@@ -520,25 +556,25 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzjk zzw(String str, zzjk zzjkVar) {
+    public final zzjk zzx(String str, zzjk zzjkVar) {
         zzg();
-        zzE(str);
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        if (zzx == null) {
+        zzF(str);
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        if (zzy == null) {
             return null;
         }
-        for (com.google.android.gms.internal.measurement.zzfw zzfwVar : zzx.zzb()) {
-            if (zzjkVar == zzJ(zzfwVar.zzb())) {
-                return zzJ(zzfwVar.zzc());
+        for (com.google.android.gms.internal.measurement.zzfw zzfwVar : zzy.zzb()) {
+            if (zzjkVar == zzK(zzfwVar.zzb())) {
+                return zzK(zzfwVar.zzc());
             }
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final com.google.android.gms.internal.measurement.zzgf zzx(String str) {
+    public final com.google.android.gms.internal.measurement.zzgf zzy(String str) {
         zzg();
-        zzE(str);
+        zzF(str);
         com.google.android.gms.internal.measurement.zzgl zzb = zzb(str);
         if (zzb == null || !zzb.zzn()) {
             return null;
@@ -547,24 +583,10 @@ public final class zzht extends zzos implements zzak {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzy(String str) {
+    public final boolean zzz(String str) {
         zzg();
-        zzE(str);
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        return zzx == null || !zzx.zzd() || zzx.zze();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final SortedSet zzz(String str) {
-        zzg();
-        zzE(str);
-        TreeSet treeSet = new TreeSet();
-        com.google.android.gms.internal.measurement.zzgf zzx = zzx(str);
-        if (zzx != null) {
-            for (com.google.android.gms.internal.measurement.zzgc zzgcVar : zzx.zzc()) {
-                treeSet.add(zzgcVar.zza());
-            }
-        }
-        return treeSet;
+        zzF(str);
+        com.google.android.gms.internal.measurement.zzgf zzy = zzy(str);
+        return zzy == null || !zzy.zzd() || zzy.zze();
     }
 }

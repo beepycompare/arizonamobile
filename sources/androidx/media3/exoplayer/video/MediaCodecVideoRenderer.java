@@ -12,7 +12,7 @@ import android.os.Message;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
-import androidx.compose.runtime.ComposerImplKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
@@ -63,8 +63,9 @@ import kotlin.text.Typography;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MediaCodecVideoRenderer extends MediaCodecRenderer implements VideoFrameReleaseControl.FrameTimingEvaluator {
+    public static final long DEFAULT_LATE_THRESHOLD_TO_DROP_DECODER_INPUT_US = 15000;
     private static final int HEVC_MAX_INPUT_SIZE_THRESHOLD = 2097152;
     private static final float INITIAL_FORMAT_MAX_INPUT_SIZE_SCALE_FACTOR = 1.5f;
     private static final String KEY_CROP_BOTTOM = "crop-bottom";
@@ -72,6 +73,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private static final String KEY_CROP_RIGHT = "crop-right";
     private static final String KEY_CROP_TOP = "crop-top";
     private static final int MAX_CONSECUTIVE_DROPPED_INPUT_BUFFERS_COUNT_TO_DISCARD_HEADER = 0;
+    private static final float MAX_FRAME_RATE_RATIO_DIFF_TO_KEEP_CODEC = 0.01f;
     private static final long MIN_EARLY_US_LATE_THRESHOLD = -30000;
     private static final long MIN_EARLY_US_VERY_LATE_THRESHOLD = -500000;
     private static final long OFFSET_FROM_PERIOD_END_TO_TREAT_AS_LAST_US = 100000;
@@ -95,6 +97,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private final PriorityQueue<Long> droppedDecoderInputBufferTimestamps;
     private long droppedFrameAccumulationStartTimeMs;
     private int droppedFrames;
+    private final boolean enableDurationToProgressUs;
     private final boolean enableMediaCodecBufferDecodeOnlyFlag;
     private final VideoRendererEventListener.EventDispatcher eventDispatcher;
     private VideoFrameMetadataListener frameMetadataListener;
@@ -105,6 +108,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     private long lastResetToKeyFramePositionUs;
     private final int maxDroppedFramesToNotify;
     private final long minEarlyUsToDropDecoderInput;
+    private long nextOutputBufferToProcessPresentationTimeUs;
     private int nextVideoSinkFirstFrameReleaseInstruction;
     private Size outputResolution;
     private final boolean ownsVideoSink;
@@ -143,22 +147,23 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         return true;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private long allowedJoiningTimeMs;
         private boolean buildCalled;
         private MediaCodecAdapter.Factory codecAdapterFactory;
         private final Context context;
         private boolean enableDecoderFallback;
+        private boolean enableDurationToProgressUs;
         private boolean enableMediaCodecBufferDecodeOnlyFlag;
         private Handler eventHandler;
         private VideoRendererEventListener eventListener;
         private int maxDroppedFramesToNotify;
-        private boolean parseAv1SampleDependencies;
         private VideoSink videoSink;
         private MediaCodecSelector mediaCodecSelector = MediaCodecSelector.DEFAULT;
         private float assumedMinimumCodecOperatingRate = 30.0f;
-        private long lateThresholdToDropDecoderInputUs = C.TIME_UNSET;
+        private boolean parseAv1SampleDependencies = true;
+        private long lateThresholdToDropDecoderInputUs = 15000;
 
         public Builder(Context context) {
             this.context = context;
@@ -222,6 +227,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
         public Builder experimentalSetEnableMediaCodecBufferDecodeOnlyFlag(boolean z) {
             this.enableMediaCodecBufferDecodeOnlyFlag = z;
+            return this;
+        }
+
+        public Builder setEnableDurationToProgressUs(boolean z) {
+            this.enableDurationToProgressUs = z;
             return this;
         }
 
@@ -299,6 +309,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             this.videoFrameReleaseEarlyTimeForecaster = null;
         }
         this.enableMediaCodecBufferDecodeOnlyFlag = builder.enableMediaCodecBufferDecodeOnlyFlag;
+        this.enableDurationToProgressUs = builder.enableDurationToProgressUs;
+        this.nextOutputBufferToProcessPresentationTimeUs = C.TIME_UNSET;
         this.scrubbingModeParameters = null;
     }
 
@@ -404,7 +416,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api26 {
         private Api26() {
         }
@@ -596,6 +608,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         }
         maybeSetupTunnelingForFirstFrame();
         this.consecutiveDroppedFrameCount = 0;
+        this.nextOutputBufferToProcessPresentationTimeUs = C.TIME_UNSET;
     }
 
     @Override // androidx.media3.exoplayer.Renderer
@@ -669,6 +682,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.haveReportedFirstFrameRenderedForCurrentSurface = false;
         this.tunnelingOnFrameRenderedListener = null;
         this.isFlushRequired = true;
+        this.nextOutputBufferToProcessPresentationTimeUs = C.TIME_UNSET;
         try {
             super.onDisabled();
         } finally {
@@ -684,6 +698,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         } finally {
             this.hasSetVideoSink = false;
             this.startPositionUs = C.TIME_UNSET;
+            this.nextOutputBufferToProcessPresentationTimeUs = C.TIME_UNSET;
             releasePlaceholderSurface();
         }
     }
@@ -847,7 +862,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
-    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2) {
+    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2, boolean z) {
         DecoderReuseEvaluation canReuseCodec = mediaCodecInfo.canReuseCodec(format, format2);
         int i = canReuseCodec.discardReasons;
         CodecMaxValues codecMaxValues = (CodecMaxValues) Preconditions.checkNotNull(this.codecMaxValues);
@@ -857,7 +872,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         if (getMaxInputSize(mediaCodecInfo, format2) > codecMaxValues.inputSize) {
             i |= 64;
         }
-        if (this.changeFrameRateStrategy != Integer.MIN_VALUE && format.frameRate != -1.0f && format2.frameRate != -1.0f && Math.abs(format2.frameRate - format.frameRate) > 1.0f && cannotChangeSurfaceFrameRateMidPlayback()) {
+        if (shouldDiscardCodecForFrameRateChange(mediaCodecInfo, format, format2, z)) {
             i |= 65536;
         }
         int i2 = i;
@@ -884,6 +899,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         this.buffersInCodecCount = 0;
         this.consecutiveDroppedInputBufferCount = 0;
         this.isFlushRequired = false;
+        this.nextOutputBufferToProcessPresentationTimeUs = C.TIME_UNSET;
         Av1SampleDependencyParser av1SampleDependencyParser = this.av1SampleDependencyParser;
         if (av1SampleDependencyParser != null) {
             av1SampleDependencyParser.reset();
@@ -906,7 +922,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x008e, code lost:
         if (r3.equals(androidx.media3.common.MimeTypes.VIDEO_AV1) == false) goto L19;
      */
     /*
@@ -1000,6 +1016,30 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             default:
                 return -1;
         }
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
+    protected long getDurationToProgressUs(long j, long j2, boolean z) {
+        if (!this.enableDurationToProgressUs || !z) {
+            return super.getDurationToProgressUs(j, j2, z);
+        }
+        if (getState() != 2) {
+            return (isReady() || isEnded()) ? 1000000L : 10000L;
+        }
+        if (this.nextOutputBufferToProcessPresentationTimeUs != C.TIME_UNSET && this.videoSink == null) {
+            if (isEnded()) {
+                return Math.max(10000L, (((float) (this.nextOutputBufferToProcessPresentationTimeUs - j)) / getPlaybackSpeed()) / 2.0f);
+            }
+            try {
+                if (this.videoFrameReleaseControl.getFrameReleaseAction(this.nextOutputBufferToProcessPresentationTimeUs, j, j2, getOutputStreamStartPositionUs(), false, false, this.videoFrameReleaseInfo) != 5) {
+                    return 0L;
+                }
+                return Math.max(0L, (this.videoFrameReleaseInfo.getEarlyUs() + (Util.msToUs(getClock().elapsedRealtime()) - j2)) - 25000);
+            } catch (ExoPlaybackException unused) {
+                Log.w(TAG, "Error while evaluating frame release action");
+            }
+        }
+        return 10000L;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -1138,7 +1178,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a7  */
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1312,11 +1352,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                 }
             });
         }
-        int frameReleaseAction = this.videoFrameReleaseControl.getFrameReleaseAction(j3, j, j2, getOutputStreamStartPositionUs(), z, z2, this.videoFrameReleaseInfo);
+        long j4 = j3;
+        int frameReleaseAction = this.videoFrameReleaseControl.getFrameReleaseAction(j4, j, j2, getOutputStreamStartPositionUs(), z, z2, this.videoFrameReleaseInfo);
         VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = this.videoFrameReleaseEarlyTimeForecaster;
         if (videoFrameReleaseEarlyTimeForecaster != null && frameReleaseAction != 5 && frameReleaseAction != 4) {
-            videoFrameReleaseEarlyTimeForecaster.onVideoFrameProcessed(j3, this.videoFrameReleaseInfo.getEarlyUs());
+            videoFrameReleaseEarlyTimeForecaster.onVideoFrameProcessed(j4, this.videoFrameReleaseInfo.getEarlyUs());
         }
+        if (frameReleaseAction != 5) {
+            j4 = C.TIME_UNSET;
+        }
+        this.nextOutputBufferToProcessPresentationTimeUs = j4;
         if (frameReleaseAction == 0) {
             long nanoTime = getClock().nanoTime();
             notifyFrameMetadataListener(outputStreamOffsetUs, nanoTime, format);
@@ -1351,6 +1396,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         VideoSink videoSink = this.videoSink;
         if (videoSink != null) {
             videoSink.signalEndOfCurrentInputStream();
+        } else if (getLastBufferInStreamPresentationTimeUs() != C.TIME_UNSET) {
+            this.nextOutputBufferToProcessPresentationTimeUs = getLastBufferInStreamPresentationTimeUs();
         }
     }
 
@@ -1810,7 +1857,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CodecMaxValues {
         public final int height;
         public final int inputSize;
@@ -1856,15 +1903,16 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         return (i * 3) / (i2 * 2);
     }
 
-    private static boolean cannotChangeSurfaceFrameRateMidPlayback() {
-        if (Build.VERSION.SDK_INT >= 30) {
-            return Build.VERSION.SDK_INT == 30 && Build.MODEL.startsWith("MiTV");
+    private boolean shouldDiscardCodecForFrameRateChange(MediaCodecInfo mediaCodecInfo, Format format, Format format2, boolean z) {
+        if (this.changeFrameRateStrategy == Integer.MIN_VALUE || Build.VERSION.SDK_INT >= 31 || ((Build.VERSION.SDK_INT == 30 && !Build.MODEL.startsWith("MiTV")) || format.frameRate == -1.0f || format2.frameRate == -1.0f || (mediaCodecInfo.secure && z))) {
+            return false;
         }
-        return true;
+        float max = Math.max(format2.frameRate, format.frameRate) / Math.min(format2.frameRate, format.frameRate);
+        return Math.abs(max - ((float) Math.round(max))) > 0.01f;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x0848, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x0851, code lost:
         if (r0.equals("PGN528") == false) goto L46;
      */
     /*
@@ -3142,7 +3190,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'z':
                             case '{':
                             case '|':
-                            case ComposerImplKt.nodeKey /* 125 */:
+                            case GapComposerKt.nodeKey /* 125 */:
                             case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                             case 127:
                             case 128:
@@ -3174,7 +3222,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class OnFrameRenderedListener implements MediaCodecAdapter.OnFrameRenderedListener, Handler.Callback {
         private static final int HANDLE_FRAME_RENDERED = 0;
         private final Handler handler;

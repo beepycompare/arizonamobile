@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.ExternalPrivacyContext;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ExternalPrivacyContext extends ExternalPrivacyContext {
     private final ExternalPRequestContext prequest;
 
@@ -35,7 +35,7 @@ final class AutoValue_ExternalPrivacyContext extends ExternalPrivacyContext {
         return (externalPRequestContext == null ? 0 : externalPRequestContext.hashCode()) ^ 1000003;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends ExternalPrivacyContext.Builder {
         private ExternalPRequestContext prequest;
 

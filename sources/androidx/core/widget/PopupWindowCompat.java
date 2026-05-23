@@ -3,18 +3,8 @@ package androidx.core.widget;
 import android.view.View;
 import android.widget.PopupWindow;
 import androidx.annotation.ReplaceWith;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PopupWindowCompat {
-    private static final String TAG = "PopupWindowCompatApi21";
-    private static Method sGetWindowLayoutTypeMethod;
-    private static boolean sGetWindowLayoutTypeMethodAttempted;
-    private static Field sOverlapAnchorField;
-    private static boolean sOverlapAnchorFieldAttempted;
-    private static Method sSetWindowLayoutTypeMethod;
-    private static boolean sSetWindowLayoutTypeMethodAttempted;
-
     private PopupWindowCompat() {
     }
 
@@ -25,40 +15,18 @@ public final class PopupWindowCompat {
     }
 
     public static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
-        Api23Impl.setOverlapAnchor(popupWindow, z);
+        popupWindow.setOverlapAnchor(z);
     }
 
     public static boolean getOverlapAnchor(PopupWindow popupWindow) {
-        return Api23Impl.getOverlapAnchor(popupWindow);
+        return popupWindow.getOverlapAnchor();
     }
 
     public static void setWindowLayoutType(PopupWindow popupWindow, int i) {
-        Api23Impl.setWindowLayoutType(popupWindow, i);
+        popupWindow.setWindowLayoutType(i);
     }
 
     public static int getWindowLayoutType(PopupWindow popupWindow) {
-        return Api23Impl.getWindowLayoutType(popupWindow);
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
-            popupWindow.setOverlapAnchor(z);
-        }
-
-        static boolean getOverlapAnchor(PopupWindow popupWindow) {
-            return popupWindow.getOverlapAnchor();
-        }
-
-        static void setWindowLayoutType(PopupWindow popupWindow, int i) {
-            popupWindow.setWindowLayoutType(i);
-        }
-
-        static int getWindowLayoutType(PopupWindow popupWindow) {
-            return popupWindow.getWindowLayoutType();
-        }
+        return popupWindow.getWindowLayoutType();
     }
 }

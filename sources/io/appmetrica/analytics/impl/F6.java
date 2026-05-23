@@ -1,16 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.appmetrica.analytics.coreapi.internal.backport.Function;
 /* loaded from: classes5.dex */
-public final class F6 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final List f583a;
-    public final int b;
-
-    public F6(ArrayList arrayList, int i) {
-        this.f583a = arrayList;
-        this.b = i;
+public final class F6 implements Function {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
+    /* renamed from: a */
+    public final Zn apply(Thread thread) {
+        String name = thread.getName();
+        int priority = thread.getPriority();
+        long id = thread.getId();
+        ThreadGroup threadGroup = thread.getThreadGroup();
+        return new Zn(name, priority, id, threadGroup != null ? threadGroup.getName() : "", null, null);
     }
 }

@@ -1,7 +1,7 @@
 package androidx.media3.decoder;
 
 import androidx.media3.decoder.DecoderException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface Decoder<I, O, E extends DecoderException> {
     I dequeueInputBuffer() throws DecoderException;
 

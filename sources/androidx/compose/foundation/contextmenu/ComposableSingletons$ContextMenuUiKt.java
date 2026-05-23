@@ -18,13 +18,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function8;
 /* compiled from: ContextMenuUi.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$ContextMenuUiKt {
     public static final ComposableSingletons$ContextMenuUiKt INSTANCE = new ComposableSingletons$ContextMenuUiKt();
 
     /* renamed from: lambda$-1571120048  reason: not valid java name */
-    private static Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> f7lambda$1571120048 = ComposableLambdaKt.composableLambdaInstance(-1571120048, false, new Function8() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda0
+    private static Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> f1lambda$1571120048 = ComposableLambdaKt.composableLambdaInstance(-1571120048, false, new Function8() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function8
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, Object obj8) {
             return ComposableSingletons$ContextMenuUiKt.lambda__1571120048$lambda$0((Modifier) obj, (String) obj2, ((Boolean) obj3).booleanValue(), (ContextMenuColors) obj4, (Function3) obj5, (Function0) obj6, (Composer) obj7, ((Integer) obj8).intValue());
@@ -32,7 +32,7 @@ public final class ComposableSingletons$ContextMenuUiKt {
     });
 
     /* renamed from: lambda$-1455401925  reason: not valid java name */
-    private static Function3<ContextMenuColors, Composer, Integer, Unit> f6lambda$1455401925 = ComposableLambdaKt.composableLambdaInstance(-1455401925, false, new Function3() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda1
+    private static Function3<ContextMenuColors, Composer, Integer, Unit> f0lambda$1455401925 = ComposableLambdaKt.composableLambdaInstance(-1455401925, false, new Function3() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$ContextMenuUiKt.lambda__1455401925$lambda$0((ContextMenuColors) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -40,13 +40,13 @@ public final class ComposableSingletons$ContextMenuUiKt {
     });
 
     /* renamed from: getLambda$-1455401925$foundation  reason: not valid java name */
-    public final Function3<ContextMenuColors, Composer, Integer, Unit> m366getLambda$1455401925$foundation() {
-        return f6lambda$1455401925;
+    public final Function3<ContextMenuColors, Composer, Integer, Unit> m394getLambda$1455401925$foundation() {
+        return f0lambda$1455401925;
     }
 
     /* renamed from: getLambda$-1571120048$foundation  reason: not valid java name */
-    public final Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> m367getLambda$1571120048$foundation() {
-        return f7lambda$1571120048;
+    public final Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> m395getLambda$1571120048$foundation() {
+        return f1lambda$1571120048;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -99,7 +99,7 @@ public final class ComposableSingletons$ContextMenuUiKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1455401925, i, -1, "androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt.lambda$-1455401925.<anonymous> (ContextMenuUi.kt:305)");
             }
-            BoxKt.Box(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m820paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m378getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m377getDividerHeightD9Ej5fM()), contextMenuColors.m371getIconColor0d7_KjU(), null, 2, null), composer, 0);
+            BoxKt.Box(BackgroundKt.m288backgroundbw27NRU$default(SizeKt.m1103height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m1052paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m406getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m405getDividerHeightD9Ej5fM()), contextMenuColors.m399getIconColor0d7_KjU(), null, 2, null), composer, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

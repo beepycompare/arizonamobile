@@ -101,7 +101,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m297clickableXHw0xAI$default = ClickableKt.m297clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
+        Modifier m321clickableXHw0xAI$default = ClickableKt.m321clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
         ComposerKt.sourceInformationMarkerStart(composer, -2108914877, "CC(remember):BottomSheetScaffold.kt#9igjgp");
         boolean changed2 = composer.changed(this.$state) | composer.changed(this.$sheetSwipeEnabled) | composer.changed(this.$expandActionLabel) | composer.changedInstance(this.$scope) | composer.changed(this.$partialExpandActionLabel) | composer.changed(this.$dismissActionLabel);
         final SheetState sheetState2 = this.$state;
@@ -122,7 +122,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
             rememberedValue2 = function1;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics = SemanticsModifierKt.semantics(m297clickableXHw0xAI$default, true, (Function1) rememberedValue2);
+        Modifier semantics = SemanticsModifierKt.semantics(m321clickableXHw0xAI$default, true, (Function1) rememberedValue2);
         Function2<Composer, Integer, Unit> function2 = this.$dragHandle;
         ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -141,15 +141,15 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
         } else {
             composer.useNode();
         }
-        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 2015269861, "C395@19490L12:BottomSheetScaffold.kt#uh7d8r");

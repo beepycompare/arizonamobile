@@ -1,6 +1,7 @@
 package androidx.compose.foundation.text.modifiers;
 
 import android.os.Trace;
+import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Brush;
@@ -35,6 +36,7 @@ import androidx.compose.ui.text.font.FontFamily;
 import androidx.compose.ui.text.style.TextDecoration;
 import androidx.compose.ui.text.style.TextOverflow;
 import androidx.compose.ui.unit.Constraints;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +48,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextStringSimpleNode.kt */
-@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001PBS\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\b\b\u0002\u0010\r\u001a\u00020\u000e\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0010\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013¢\u0006\u0004\b\u0014\u0010\u0015J\f\u0010$\u001a\u00020 *\u00020%H\u0002J\r\u0010\"\u001a\u00020 H\u0003¢\u0006\u0002\b&J\u0018\u0010'\u001a\u00020\u000e2\b\u0010(\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0007\u001a\u00020\bJ\u000e\u0010)\u001a\u00020\u000e2\u0006\u0010\u0005\u001a\u00020\u0006J=\u0010*\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b+\u0010,J\u001e\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u000e2\u0006\u00101\u001a\u00020\u000eJ\u0010\u00108\u001a\u00020\u000e2\u0006\u00109\u001a\u00020\u0006H\u0002J\b\u0010:\u001a\u00020.H\u0002J\f\u0010;\u001a\u00020.*\u00020<H\u0016J\b\u0010=\u001a\u00020.H\u0002J#\u0010>\u001a\u00020?*\u00020@2\u0006\u0010A\u001a\u00020B2\u0006\u0010C\u001a\u00020DH\u0016¢\u0006\u0004\bE\u0010FJ\u001c\u0010G\u001a\u00020\u0010*\u00020%2\u0006\u0010A\u001a\u00020H2\u0006\u0010I\u001a\u00020\u0010H\u0016J\u001c\u0010J\u001a\u00020\u0010*\u00020%2\u0006\u0010A\u001a\u00020H2\u0006\u0010K\u001a\u00020\u0010H\u0016J\u001c\u0010L\u001a\u00020\u0010*\u00020%2\u0006\u0010A\u001a\u00020H2\u0006\u0010I\u001a\u00020\u0010H\u0016J\u001c\u0010M\u001a\u00020\u0010*\u00020%2\u0006\u0010A\u001a\u00020H2\u0006\u0010K\u001a\u00020\u0010H\u0016J\f\u0010N\u001a\u00020.*\u00020OH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\u00020\u000e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\"\u0010\u001a\u001a\u0010\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u0010\u0018\u00010\u001bX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u001d\u0010\u001eR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\u00020 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\"\u00102\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020504\u0012\u0004\u0012\u00020\u000e\u0018\u000103X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u0004\u0018\u000107X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "overrideColor", "Landroidx/compose/ui/graphics/ColorProducer;", "<init>", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZIILandroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "I", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "baselineCache", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getBaselineCache$annotations", "()V", "_layoutCache", "Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "layoutCache", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "getLayoutCacheForMeasure", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "getLayoutCacheOrSubstitute", "updateDraw", "color", "updateText", "updateLayoutRelatedArgs", "updateLayoutRelatedArgs-HuAbxIM", "(Landroidx/compose/ui/text/TextStyle;IIZLandroidx/compose/ui/text/font/FontFamily$Resolver;I)Z", "doInvalidations", "", "drawChanged", "textChanged", "layoutChanged", "semanticsTextLayoutResult", "Lkotlin/Function1;", "", "Landroidx/compose/ui/text/TextLayoutResult;", "textSubstitution", "Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode$TextSubstitutionValue;", "setSubstitution", "updatedText", "clearSubstitution", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "invalidateForTranslate", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "minIntrinsicHeight", "width", "maxIntrinsicWidth", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "TextSubstitutionValue", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¶\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001VBS\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\b\b\u0002\u0010\r\u001a\u00020\u000e\u0012\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0012\b\b\u0002\u0010\u0011\u001a\u00020\u0010\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013¢\u0006\u0004\b\u0014\u0010\u0015J\f\u0010%\u001a\u00020 *\u00020&H\u0002J\u0017\u0010'\u001a\u00020\u000e2\u0006\u0010(\u001a\u00020)H\u0002¢\u0006\u0004\b*\u0010+J\r\u0010\"\u001a\u00020 H\u0003¢\u0006\u0002\b,J\u0018\u0010-\u001a\u00020\u000e2\b\u0010.\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0007\u001a\u00020\bJ\u000e\u0010/\u001a\u00020\u000e2\u0006\u0010\u0005\u001a\u00020\u0006J=\u00100\u001a\u00020\u000e2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b1\u00102J\u001e\u00103\u001a\u0002042\u0006\u00105\u001a\u00020\u000e2\u0006\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u000eJ\u0010\u0010>\u001a\u00020\u000e2\u0006\u0010?\u001a\u00020\u0006H\u0002J\b\u0010@\u001a\u000204H\u0002J\f\u0010A\u001a\u000204*\u00020BH\u0016J\b\u0010C\u001a\u000204H\u0002J#\u0010D\u001a\u00020E*\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020JH\u0016¢\u0006\u0004\bK\u0010LJ\u001c\u0010M\u001a\u00020\u0010*\u00020&2\u0006\u0010G\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0010H\u0016J\u001c\u0010P\u001a\u00020\u0010*\u00020&2\u0006\u0010G\u001a\u00020N2\u0006\u0010Q\u001a\u00020\u0010H\u0016J\u001c\u0010R\u001a\u00020\u0010*\u00020&2\u0006\u0010G\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0010H\u0016J\u001c\u0010S\u001a\u00020\u0010*\u00020&2\u0006\u0010G\u001a\u00020N2\u0006\u0010Q\u001a\u00020\u0010H\u0016J\f\u0010T\u001a\u000204*\u00020UH\u0016R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0016R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\u00020\u000e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\"\u0010\u001a\u001a\u0010\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u0010\u0018\u00010\u001bX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u001d\u0010\u001eR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\u00020 8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0010\u0010$\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\"\u00108\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020;0:\u0012\u0004\u0012\u00020\u000e\u0018\u000109X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010<\u001a\u0004\u0018\u00010=X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006W"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/node/SemanticsModifierNode;", "text", "", "style", "Landroidx/compose/ui/text/TextStyle;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "softWrap", "", "maxLines", "", "minLines", "overrideColor", "Landroidx/compose/ui/graphics/ColorProducer;", "<init>", "(Ljava/lang/String;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/font/FontFamily$Resolver;IZIILandroidx/compose/ui/graphics/ColorProducer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "I", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "baselineCache", "", "Landroidx/compose/ui/layout/AlignmentLine;", "getBaselineCache$annotations", "()V", "_layoutCache", "Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "layoutCache", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "resolvedInheritedStyle", "getLayoutCacheForMeasure", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "resolveInheritedStyle", TypedValues.CycleType.S_WAVE_PHASE, "Landroidx/compose/foundation/text/modifiers/StylePhase;", "resolveInheritedStyle-uwmK9pY", "(I)Z", "getLayoutCacheOrSubstitute", "updateDraw", "color", "updateText", "updateLayoutRelatedArgs", "updateLayoutRelatedArgs-HuAbxIM", "(Landroidx/compose/ui/text/TextStyle;IIZLandroidx/compose/ui/text/font/FontFamily$Resolver;I)Z", "doInvalidations", "", "drawChanged", "textChanged", "layoutChanged", "semanticsTextLayoutResult", "Lkotlin/Function1;", "", "Landroidx/compose/ui/text/TextLayoutResult;", "textSubstitution", "Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode$TextSubstitutionValue;", "setSubstitution", "updatedText", "clearSubstitution", "applySemantics", "Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;", "invalidateForTranslate", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "minIntrinsicHeight", "width", "maxIntrinsicWidth", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "TextSubstitutionValue", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TextStringSimpleNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, SemanticsModifierNode {
     public static final int $stable = 8;
@@ -57,6 +59,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     private int minLines;
     private int overflow;
     private ColorProducer overrideColor;
+    private TextStyle resolvedInheritedStyle;
     private Function1<? super List<TextLayoutResult>, Boolean> semanticsTextLayoutResult;
     private boolean softWrap;
     private TextStyle style;
@@ -87,12 +90,22 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     public /* synthetic */ TextStringSimpleNode(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, ColorProducer colorProducer, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7490getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
+        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m8095getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
     }
 
     private final ParagraphLayoutCache getLayoutCache() {
+        TextStyle textStyle;
+        if (ComposeFoundationFlags.isInheritedTextStyleEnabled) {
+            textStyle = this.resolvedInheritedStyle;
+            if (textStyle == null) {
+                textStyle = this.style;
+            }
+        } else {
+            textStyle = this.style;
+        }
+        TextStyle textStyle2 = textStyle;
         if (this._layoutCache == null) {
-            this._layoutCache = new ParagraphLayoutCache(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, null);
+            this._layoutCache = new ParagraphLayoutCache(this.text, textStyle2, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines, null);
         }
         ParagraphLayoutCache paragraphLayoutCache = this._layoutCache;
         Intrinsics.checkNotNull(paragraphLayoutCache);
@@ -100,9 +113,27 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     private final ParagraphLayoutCache getLayoutCacheForMeasure(IntrinsicMeasureScope intrinsicMeasureScope) {
+        if (ComposeFoundationFlags.isInheritedTextStyleEnabled && m2020resolveInheritedStyleuwmK9pY(StylePhase.Companion.m2017getLayoutoWBPZag())) {
+            TextStyle textStyle = this.resolvedInheritedStyle;
+            if (textStyle == null) {
+                textStyle = this.style;
+            }
+            getLayoutCache().m2006updateL6sJoHM(this.text, textStyle, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
+        }
         ParagraphLayoutCache layoutCacheOrSubstitute = getLayoutCacheOrSubstitute();
         layoutCacheOrSubstitute.setDensity$foundation(intrinsicMeasureScope);
         return layoutCacheOrSubstitute;
+    }
+
+    /* renamed from: resolveInheritedStyle-uwmK9pY  reason: not valid java name */
+    private final boolean m2020resolveInheritedStyleuwmK9pY(int i) {
+        TextStyle textStyle = this.resolvedInheritedStyle;
+        TextStyle m2022inheritedTextStyleBh5OqGs = TextStyleProviderNodeKt.m2022inheritedTextStyleBh5OqGs(this, i, this.style);
+        this.resolvedInheritedStyle = m2022inheritedTextStyleBh5OqGs;
+        if (textStyle == null) {
+            return false;
+        }
+        return !Intrinsics.areEqual(textStyle, m2022inheritedTextStyleBh5OqGs);
     }
 
     private final ParagraphLayoutCache getLayoutCacheOrSubstitute() {
@@ -135,7 +166,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     /* renamed from: updateLayoutRelatedArgs-HuAbxIM  reason: not valid java name */
-    public final boolean m1577updateLayoutRelatedArgsHuAbxIM(TextStyle textStyle, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3) {
+    public final boolean m2021updateLayoutRelatedArgsHuAbxIM(TextStyle textStyle, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3) {
         boolean z2 = !this.style.hasSameLayoutAffectingAttributes(textStyle);
         this.style = textStyle;
         if (this.minLines != i) {
@@ -154,7 +185,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             this.fontFamilyResolver = resolver;
             z2 = true;
         }
-        if (TextOverflow.m7481equalsimpl0(this.overflow, i3)) {
+        if (TextOverflow.m8086equalsimpl0(this.overflow, i3)) {
             return z2;
         }
         this.overflow = i3;
@@ -162,8 +193,11 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     public final void doInvalidations(boolean z, boolean z2, boolean z3) {
+        if (z || z2 || z3) {
+            this.resolvedInheritedStyle = null;
+        }
         if (z2 || z3) {
-            getLayoutCache().m1573updateL6sJoHM(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
+            getLayoutCache().m2006updateL6sJoHM(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
         }
         if (isAttached()) {
             if (z2 || (z && this.semanticsTextLayoutResult != null)) {
@@ -180,7 +214,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     /* compiled from: TextStringSimpleNode.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0010\b\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\b\u0010\u0017\u001a\u00020\u0003H\u0016J\t\u0010\u0018\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\u0006HÆ\u0003J\u000b\u0010\u001b\u001a\u0004\u0018\u00010\bHÆ\u0003J3\u0010\u001c\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0013\u0010\u001d\u001a\u00020\u00062\b\u0010\u001e\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u001f\u001a\u00020 HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\f\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006!"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode$TextSubstitutionValue;", "", "original", "", "substitution", "isShowingSubstitution", "", "layoutCache", "Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "<init>", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;)V", "getOriginal", "()Ljava/lang/String;", "getSubstitution", "setSubstitution", "(Ljava/lang/String;)V", "()Z", "setShowingSubstitution", "(Z)V", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "setLayoutCache", "(Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;)V", "toString", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0010\b\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\b\u0010\u0017\u001a\u00020\u0003H\u0016J\t\u0010\u0018\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\u0006HÆ\u0003J\u000b\u0010\u001b\u001a\u0004\u0018\u00010\bHÆ\u0003J3\u0010\u001c\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0014\u0010\u001d\u001a\u00020\u00062\b\u0010\u001e\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001f\u001a\u00020 HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\f\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006!"}, d2 = {"Landroidx/compose/foundation/text/modifiers/TextStringSimpleNode$TextSubstitutionValue;", "", "original", "", "substitution", "isShowingSubstitution", "", "layoutCache", "Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "<init>", "(Ljava/lang/String;Ljava/lang/String;ZLandroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;)V", "getOriginal", "()Ljava/lang/String;", "getSubstitution", "setSubstitution", "(Ljava/lang/String;)V", "()Z", "setShowingSubstitution", "(Z)V", "getLayoutCache", "()Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;", "setLayoutCache", "(Landroidx/compose/foundation/text/modifiers/ParagraphLayoutCache;)V", "toString", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class TextSubstitutionValue {
         public static final int $stable = 8;
@@ -295,7 +329,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             textSubstitutionValue.setSubstitution(str);
             ParagraphLayoutCache layoutCache = textSubstitutionValue.getLayoutCache();
             if (layoutCache != null) {
-                layoutCache.m1573updateL6sJoHM(str, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
+                layoutCache.m2006updateL6sJoHM(str, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
                 return true;
             }
             return false;
@@ -356,7 +390,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         ParagraphLayoutCache layoutCache = textStringSimpleNode.getLayoutCache();
         TextStyle textStyle = textStringSimpleNode.style;
         ColorProducer colorProducer = textStringSimpleNode.overrideColor;
-        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m7023mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2027invoke0d7_KjU() : Color.Companion.m4808getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
+        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m7628mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2472invoke0d7_KjU() : Color.Companion.m5384getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
         if (slowCreateTextLayoutResultOrNull != null) {
             list.add(slowCreateTextLayoutResultOrNull);
         } else {
@@ -404,12 +438,12 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         Trace.beginSection("TextStringSimpleNode::measure");
         try {
             ParagraphLayoutCache layoutCacheForMeasure = getLayoutCacheForMeasure(measureScope);
-            boolean m1571layoutWithConstraintsK40F9xA = layoutCacheForMeasure.m1571layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
+            boolean m2004layoutWithConstraintsK40F9xA = layoutCacheForMeasure.m2004layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
             layoutCacheForMeasure.getObserveFontChanges$foundation();
             Paragraph paragraph$foundation = layoutCacheForMeasure.getParagraph$foundation();
             Intrinsics.checkNotNull(paragraph$foundation);
-            long m1569getLayoutSizeYbymL2g$foundation = layoutCacheForMeasure.m1569getLayoutSizeYbymL2g$foundation();
-            if (m1571layoutWithConstraintsK40F9xA) {
+            long m2002getLayoutSizeYbymL2g$foundation = layoutCacheForMeasure.m2002getLayoutSizeYbymL2g$foundation();
+            if (m2004layoutWithConstraintsK40F9xA) {
                 LayoutModifierNodeKt.invalidateLayer(this);
                 HashMap hashMap = this.baselineCache;
                 if (hashMap == null) {
@@ -419,9 +453,9 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
                 hashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(paragraph$foundation.getFirstBaseline())));
                 hashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(paragraph$foundation.getLastBaseline())));
             }
-            int i = (int) (m1569getLayoutSizeYbymL2g$foundation >> 32);
-            int i2 = (int) (m1569getLayoutSizeYbymL2g$foundation & 4294967295L);
-            final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
+            int i = (int) (m2002getLayoutSizeYbymL2g$foundation >> 32);
+            int i2 = (int) (m2002getLayoutSizeYbymL2g$foundation & 4294967295L);
+            final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(Constraints.Companion.m8122fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
             Map<AlignmentLine, Integer> map = this.baselineCache;
             Intrinsics.checkNotNull(map);
             return measureScope.layout(i, i2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda4
@@ -465,6 +499,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
+        TextStyle textStyle;
         if (isAttached()) {
             ParagraphLayoutCache layoutCacheOrSubstitute = getLayoutCacheOrSubstitute();
             Paragraph paragraph$foundation = layoutCacheOrSubstitute.getParagraph$foundation();
@@ -476,38 +511,47 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             boolean didOverflow$foundation = layoutCacheOrSubstitute.getDidOverflow$foundation();
             if (didOverflow$foundation) {
                 canvas.save();
-                Canvas.m4744clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m1569getLayoutSizeYbymL2g$foundation() >> 32), (int) (layoutCacheOrSubstitute.m1569getLayoutSizeYbymL2g$foundation() & 4294967295L), 0, 16, null);
+                Canvas.m5320clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m2002getLayoutSizeYbymL2g$foundation() >> 32), (int) (layoutCacheOrSubstitute.m2002getLayoutSizeYbymL2g$foundation() & 4294967295L), 0, 16, null);
             }
             try {
-                TextDecoration textDecoration = this.style.getTextDecoration();
+                if (ComposeFoundationFlags.isInheritedTextStyleEnabled) {
+                    m2020resolveInheritedStyleuwmK9pY(StylePhase.Companion.m2016getDrawoWBPZag());
+                    textStyle = this.resolvedInheritedStyle;
+                    if (textStyle == null) {
+                        textStyle = this.style;
+                    }
+                } else {
+                    textStyle = this.style;
+                }
+                TextDecoration textDecoration = textStyle.getTextDecoration();
                 if (textDecoration == null) {
                     textDecoration = TextDecoration.Companion.getNone();
                 }
                 TextDecoration textDecoration2 = textDecoration;
-                Shadow shadow = this.style.getShadow();
+                Shadow shadow = textStyle.getShadow();
                 if (shadow == null) {
                     shadow = Shadow.Companion.getNone();
                 }
                 Shadow shadow2 = shadow;
-                Fill drawStyle = this.style.getDrawStyle();
+                Fill drawStyle = textStyle.getDrawStyle();
                 if (drawStyle == null) {
                     drawStyle = Fill.INSTANCE;
                 }
                 DrawStyle drawStyle2 = drawStyle;
-                Brush brush = this.style.getBrush();
+                Brush brush = textStyle.getBrush();
                 if (brush != null) {
-                    Paragraph.m6873painthn5TExg$default(paragraph$foundation, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                    Paragraph.m7478painthn5TExg$default(paragraph$foundation, canvas, brush, textStyle.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
                 } else {
                     ColorProducer colorProducer = this.overrideColor;
-                    long mo2027invoke0d7_KjU = colorProducer != null ? colorProducer.mo2027invoke0d7_KjU() : Color.Companion.m4808getUnspecified0d7_KjU();
-                    if (mo2027invoke0d7_KjU == 16) {
-                        if (this.style.m7033getColor0d7_KjU() != 16) {
-                            mo2027invoke0d7_KjU = this.style.m7033getColor0d7_KjU();
+                    long mo2472invoke0d7_KjU = colorProducer != null ? colorProducer.mo2472invoke0d7_KjU() : Color.Companion.m5384getUnspecified0d7_KjU();
+                    if (mo2472invoke0d7_KjU == 16) {
+                        if (textStyle.m7638getColor0d7_KjU() != 16) {
+                            mo2472invoke0d7_KjU = textStyle.m7638getColor0d7_KjU();
                         } else {
-                            mo2027invoke0d7_KjU = Color.Companion.m4798getBlack0d7_KjU();
+                            mo2472invoke0d7_KjU = Color.Companion.m5374getBlack0d7_KjU();
                         }
                     }
-                    Paragraph.m6871paintLG529CI$default(paragraph$foundation, canvas, mo2027invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
+                    Paragraph.m7476paintLG529CI$default(paragraph$foundation, canvas, mo2472invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
                 }
                 if (didOverflow$foundation) {
                     canvas.restore();

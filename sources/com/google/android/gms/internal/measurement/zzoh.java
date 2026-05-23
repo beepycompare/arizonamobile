@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import java.util.Set;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzoh extends RuntimeException {
-    public zzoh(zznm zznmVar) {
-        super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
-    }
+public interface zzoh {
+    void zza(zzacr zzacrVar, Set set, String str);
 }

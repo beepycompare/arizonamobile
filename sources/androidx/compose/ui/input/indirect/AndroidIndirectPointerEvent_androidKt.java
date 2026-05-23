@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidIndirectPointerEvent.android.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0000\u001a-\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0007\u001a\u00020\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u0001H\u0007¢\u0006\u0004\b\n\u0010\u000b\u001a\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000¢\u0006\u0002\u0010\u0010\u001a\u0015\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0006\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\u0012\"\u0015\u0010\u0000\u001a\u00020\u0001*\u00020\u00028F¢\u0006\u0006\u001a\u0004\b\u0003\u0010\u0004\"\u000e\u0010\u0013\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"nativeEvent", "Landroid/view/MotionEvent;", "Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "getNativeEvent", "(Landroidx/compose/ui/input/indirect/IndirectPointerEvent;)Landroid/view/MotionEvent;", "IndirectPointerEvent", "motionEvent", "primaryDirectionalMotionAxis", "Landroidx/compose/ui/input/indirect/IndirectPointerEventPrimaryDirectionalMotionAxis;", "previousMotionEvent", "IndirectPointerEvent-eAXfkT4", "(Landroid/view/MotionEvent;ILandroid/view/MotionEvent;)Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "convertActionToIndirectPointerEventType", "Landroidx/compose/ui/input/indirect/IndirectPointerEventType;", "actionMasked", "", "(I)I", "indirectPrimaryDirectionalScrollAxis", "(Landroid/view/MotionEvent;)I", "RATIO_CUTOFF", "", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0000\u001a-\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0007\u001a\u00020\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u0001H\u0007¢\u0006\u0004\b\n\u0010\u000b\u001a\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000¢\u0006\u0002\u0010\u0010\u001a\u0015\u0010\u0011\u001a\u00020\b2\u0006\u0010\u0006\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\u0012\"\u0015\u0010\u0000\u001a\u00020\u0001*\u00020\u00028F¢\u0006\u0006\u001a\u0004\b\u0003\u0010\u0004\"\u000e\u0010\u0013\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"nativeEvent", "Landroid/view/MotionEvent;", "Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "getNativeEvent", "(Landroidx/compose/ui/input/indirect/IndirectPointerEvent;)Landroid/view/MotionEvent;", "IndirectPointerEvent", "motionEvent", "primaryDirectionalMotionAxis", "Landroidx/compose/ui/input/indirect/IndirectPointerEventPrimaryDirectionalMotionAxis;", "previousMotionEvent", "IndirectPointerEvent-eAXfkT4", "(Landroid/view/MotionEvent;ILandroid/view/MotionEvent;)Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "convertActionToIndirectPointerEventType", "Landroidx/compose/ui/input/indirect/IndirectPointerEventType;", "actionMasked", "", "(I)I", "indirectPrimaryDirectionalScrollAxis", "(Landroid/view/MotionEvent;)I", "RATIO_CUTOFF", "", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidIndirectPointerEvent_androidKt {
     private static final float RATIO_CUTOFF = 5.0f;
@@ -19,18 +19,18 @@ public final class AndroidIndirectPointerEvent_androidKt {
     }
 
     /* renamed from: IndirectPointerEvent-eAXfkT4$default  reason: not valid java name */
-    public static /* synthetic */ IndirectPointerEvent m5590IndirectPointerEventeAXfkT4$default(MotionEvent motionEvent, int i, MotionEvent motionEvent2, int i2, Object obj) {
+    public static /* synthetic */ IndirectPointerEvent m6167IndirectPointerEventeAXfkT4$default(MotionEvent motionEvent, int i, MotionEvent motionEvent2, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
+            i = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6175getNonenZO2Niw();
         }
         if ((i2 & 4) != 0) {
             motionEvent2 = null;
         }
-        return m5589IndirectPointerEventeAXfkT4(motionEvent, i, motionEvent2);
+        return m6166IndirectPointerEventeAXfkT4(motionEvent, i, motionEvent2);
     }
 
     /* renamed from: IndirectPointerEvent-eAXfkT4  reason: not valid java name */
-    public static final IndirectPointerEvent m5589IndirectPointerEventeAXfkT4(MotionEvent motionEvent, int i, MotionEvent motionEvent2) {
+    public static final IndirectPointerEvent m6166IndirectPointerEventeAXfkT4(MotionEvent motionEvent, int i, MotionEvent motionEvent2) {
         int i2;
         int i3;
         long j;
@@ -52,8 +52,8 @@ public final class AndroidIndirectPointerEvent_androidKt {
         int i4 = 0;
         while (i4 < pointerCount) {
             int pointerId = motionEvent3.getPointerId(i4);
-            long m6065constructorimpl = PointerId.m6065constructorimpl(pointerId);
-            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(motionEvent3.getX(i4)) << 32) | (Float.floatToRawIntBits(motionEvent3.getY(i4)) & 4294967295L));
+            long m6662constructorimpl = PointerId.m6662constructorimpl(pointerId);
+            long m5095constructorimpl = Offset.m5095constructorimpl((Float.floatToRawIntBits(motionEvent3.getX(i4)) << 32) | (Float.floatToRawIntBits(motionEvent3.getY(i4)) & 4294967295L));
             i2 = i2;
             boolean z3 = i4 != i2;
             int findPointerIndex = motionEvent4 != null ? motionEvent4.findPointerIndex(pointerId) : -1;
@@ -61,17 +61,17 @@ public final class AndroidIndirectPointerEvent_androidKt {
                 Intrinsics.checkNotNull(motionEvent4);
                 j2 = motionEvent4.getEventTime();
                 i3 = actionMasked;
-                j = Offset.m4519constructorimpl((Float.floatToRawIntBits(motionEvent4.getX(findPointerIndex)) << 32) | (Float.floatToRawIntBits(motionEvent4.getY(findPointerIndex)) & 4294967295L));
+                j = Offset.m5095constructorimpl((Float.floatToRawIntBits(motionEvent4.getX(findPointerIndex)) << 32) | (Float.floatToRawIntBits(motionEvent4.getY(findPointerIndex)) & 4294967295L));
                 z = z2;
             } else {
                 i3 = actionMasked;
-                j = m4519constructorimpl;
+                j = m5095constructorimpl;
                 j2 = eventTime;
                 z = false;
             }
             long j3 = j;
             ArrayList arrayList2 = arrayList;
-            arrayList2.add(new IndirectPointerInputChange(m6065constructorimpl, eventTime, m4519constructorimpl, z3, motionEvent.getPressure(i4), j2, j3, z, null));
+            arrayList2.add(new IndirectPointerInputChange(m6662constructorimpl, eventTime, m5095constructorimpl, z3, motionEvent.getPressure(i4), j2, j3, z, null));
             i4++;
             arrayList = arrayList2;
             pointerCount = pointerCount;
@@ -86,17 +86,17 @@ public final class AndroidIndirectPointerEvent_androidKt {
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
-                    return IndirectPointerEventType.Companion.m5608getMove4ZHQPSE();
+                    return IndirectPointerEventType.Companion.m6185getMove4ZHQPSE();
                 }
                 if (i != 5) {
                     if (i != 6) {
-                        return IndirectPointerEventType.Companion.m5611getUnknown4ZHQPSE();
+                        return IndirectPointerEventType.Companion.m6188getUnknown4ZHQPSE();
                     }
                 }
             }
-            return IndirectPointerEventType.Companion.m5610getRelease4ZHQPSE();
+            return IndirectPointerEventType.Companion.m6187getRelease4ZHQPSE();
         }
-        return IndirectPointerEventType.Companion.m5609getPress4ZHQPSE();
+        return IndirectPointerEventType.Companion.m6186getPress4ZHQPSE();
     }
 
     public static final int indirectPrimaryDirectionalScrollAxis(MotionEvent motionEvent) {
@@ -108,22 +108,22 @@ public final class AndroidIndirectPointerEvent_androidKt {
             InputDevice.MotionRange motionRange = device.getMotionRange(0);
             InputDevice.MotionRange motionRange2 = device.getMotionRange(1);
             if (motionRange != null && motionRange2 == null) {
-                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw();
+                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6176getXnZO2Niw();
             }
             if (motionRange2 != null && motionRange == null) {
-                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw();
+                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6177getYnZO2Niw();
             }
             if (motionRange != null && motionRange2 != null) {
                 float range = motionRange.getRange();
                 float range2 = motionRange2.getRange();
                 if (range > range2 && (range2 == 0.0f || range / range2 >= RATIO_CUTOFF)) {
-                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw();
+                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6176getXnZO2Niw();
                 }
                 if (range2 > range && (range == 0.0f || range2 / range >= RATIO_CUTOFF)) {
-                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw();
+                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6177getYnZO2Niw();
                 }
             }
         }
-        return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
+        return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6175getNonenZO2Niw();
     }
 }

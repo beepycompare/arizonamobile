@@ -1,44 +1,22 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* loaded from: classes5.dex */
-public final class K implements Converter {
+public abstract /* synthetic */ class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M f1453a;
+    public static final /* synthetic */ int[] f1435a;
 
-    public K() {
-        this(null, 1, null);
-    }
-
-    public final byte[] a(J j) {
-        return MessageNano.toByteArray(this.f1453a.fromModel(j));
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f1453a.fromModel((J) obj));
-    }
-
-    public K(M m) {
-        this.f1453a = m;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final J toModel(byte[] bArr) {
-        S s;
+    static {
+        int[] iArr = new int[ActivityEvent.values().length];
         try {
-            s = (S) MessageNano.mergeFrom(new S(), bArr);
-        } catch (Throwable unused) {
-            s = new S();
+            iArr[ActivityEvent.RESUMED.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        return this.f1453a.toModel(s);
-    }
-
-    public /* synthetic */ K(M m, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new M(null, 1, null) : m);
+        try {
+            iArr[ActivityEvent.PAUSED.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        f1435a = iArr;
     }
 }

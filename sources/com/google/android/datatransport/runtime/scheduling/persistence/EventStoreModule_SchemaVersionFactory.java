@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.scheduling.persistence;
 
 import com.google.android.datatransport.runtime.dagger.internal.Factory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EventStoreModule_SchemaVersionFactory implements Factory<Integer> {
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public Integer get() {
@@ -16,7 +16,7 @@ public final class EventStoreModule_SchemaVersionFactory implements Factory<Inte
         return EventStoreModule.schemaVersion();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class InstanceHolder {
         private static final EventStoreModule_SchemaVersionFactory INSTANCE = new EventStoreModule_SchemaVersionFactory();
 

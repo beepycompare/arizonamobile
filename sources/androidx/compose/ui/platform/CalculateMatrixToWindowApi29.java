@@ -6,7 +6,7 @@ import android.view.ViewParent;
 import androidx.compose.ui.graphics.AndroidMatrixConversions_androidKt;
 import kotlin.Metadata;
 /* compiled from: AndroidComposeView.android.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0017¢\u0006\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/platform/CalculateMatrixToWindowApi29;", "Landroidx/compose/ui/platform/CalculateMatrixToWindow;", "<init>", "()V", "tmpMatrix", "Landroid/graphics/Matrix;", "tmpPosition", "", "calculateMatrixToWindow", "", "view", "Landroid/view/View;", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "calculateMatrixToWindow-EL8BTi8", "(Landroid/view/View;[F)V", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0017¢\u0006\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/platform/CalculateMatrixToWindowApi29;", "Landroidx/compose/ui/platform/CalculateMatrixToWindow;", "<init>", "()V", "tmpMatrix", "Landroid/graphics/Matrix;", "tmpPosition", "", "calculateMatrixToWindow", "", "view", "Landroid/view/View;", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "calculateMatrixToWindow-EL8BTi8", "(Landroid/view/View;[F)V", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 final class CalculateMatrixToWindowApi29 implements CalculateMatrixToWindow {
     private final Matrix tmpMatrix = new Matrix();
@@ -14,7 +14,7 @@ final class CalculateMatrixToWindowApi29 implements CalculateMatrixToWindow {
 
     @Override // androidx.compose.ui.platform.CalculateMatrixToWindow
     /* renamed from: calculateMatrixToWindow-EL8BTi8 */
-    public void mo6677calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
+    public void mo7279calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
         this.tmpMatrix.reset();
         view.transformMatrixToGlobal(this.tmpMatrix);
         ViewParent parent = view.getParent();
@@ -29,6 +29,6 @@ final class CalculateMatrixToWindowApi29 implements CalculateMatrixToWindow {
         view.getLocationInWindow(iArr);
         int[] iArr2 = this.tmpPosition;
         this.tmpMatrix.postTranslate(iArr2[0] - i, iArr2[1] - i2);
-        AndroidMatrixConversions_androidKt.m4640setFromtUYjHk(fArr, this.tmpMatrix);
+        AndroidMatrixConversions_androidKt.m5216setFromtUYjHk(fArr, this.tmpMatrix);
     }
 }

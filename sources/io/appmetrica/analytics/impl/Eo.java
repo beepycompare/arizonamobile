@@ -1,15 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import androidx.fragment.app.FragmentTransaction;
+import java.util.Set;
+import kotlin.collections.SetsKt;
 /* loaded from: classes5.dex */
-public final class Eo implements Consumer {
+public abstract class Eo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f578a = "WebView interface setup is successful.";
+    public static final Set f533a;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).info(this.f578a, new Object[0]);
+    static {
+        Db db = Db.EVENT_TYPE_UNDEFINED;
+        f533a = SetsKt.setOf((Object[]) new Integer[]{42, 8224, 6145, 0, 40977, 41000, Integer.valueOf((int) FragmentTransaction.TRANSIT_FRAGMENT_OPEN), 40976});
+    }
+
+    public static final Set a() {
+        return f533a;
     }
 }

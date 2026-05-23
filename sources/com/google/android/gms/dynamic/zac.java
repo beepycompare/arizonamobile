@@ -1,7 +1,8 @@
 package com.google.android.gms.dynamic;
 
 import android.os.Bundle;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zac implements zah {
     final /* synthetic */ Bundle zaa;
@@ -9,8 +10,9 @@ final class zac implements zah {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zac(DeferredLifecycleHelper deferredLifecycleHelper, Bundle bundle) {
-        this.zab = deferredLifecycleHelper;
         this.zaa = bundle;
+        Objects.requireNonNull(deferredLifecycleHelper);
+        this.zab = deferredLifecycleHelper;
     }
 
     @Override // com.google.android.gms.dynamic.zah
@@ -20,8 +22,6 @@ final class zac implements zah {
 
     @Override // com.google.android.gms.dynamic.zah
     public final void zab(LifecycleDelegate lifecycleDelegate) {
-        LifecycleDelegate lifecycleDelegate2;
-        lifecycleDelegate2 = this.zab.zaa;
-        lifecycleDelegate2.onCreate(this.zaa);
+        this.zab.zaa().onCreate(this.zaa);
     }
 }

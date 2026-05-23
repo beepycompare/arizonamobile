@@ -210,13 +210,13 @@ public final class DamageFeedElement {
         for (ActiveDamageItem activeDamageItem : this.outgoingItems) {
             Job removeJob = activeDamageItem.getRemoveJob();
             if (removeJob != null) {
-                Job.DefaultImpls.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
             }
         }
         for (ActiveDamageItem activeDamageItem2 : this.incomingItems) {
             Job removeJob2 = activeDamageItem2.getRemoveJob();
             if (removeJob2 != null) {
-                Job.DefaultImpls.cancel$default(removeJob2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(removeJob2, (CancellationException) null, 1, (Object) null);
             }
         }
         this.outgoingItems.clear();
@@ -248,7 +248,7 @@ public final class DamageFeedElement {
         if (i != -1) {
             ActiveDamageItem activeDamageItem = (ActiveDamageItem) CollectionsKt.getOrNull(targetList, i);
             if (activeDamageItem != null && (removeJob = activeDamageItem.getRemoveJob()) != null) {
-                Job.DefaultImpls.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
             }
             targetList.remove(i);
         }
@@ -257,7 +257,7 @@ public final class DamageFeedElement {
         while (targetList.size() > 7) {
             Job removeJob2 = targetList.remove(CollectionsKt.getLastIndex(targetList)).getRemoveJob();
             if (removeJob2 != null) {
-                Job.DefaultImpls.cancel$default(removeJob2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(removeJob2, (CancellationException) null, 1, (Object) null);
             }
         }
         bindAll();
@@ -286,7 +286,7 @@ public final class DamageFeedElement {
         }
         ActiveDamageItem activeDamageItem = (ActiveDamageItem) CollectionsKt.getOrNull(targetList, i);
         if (activeDamageItem != null && (removeJob = activeDamageItem.getRemoveJob()) != null) {
-            Job.DefaultImpls.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(removeJob, (CancellationException) null, 1, (Object) null);
         }
         targetList.remove(i);
         bindAll();
@@ -483,7 +483,7 @@ public final class DamageFeedElement {
         Glide.with(imageView2).clear(imageView2);
         Job remove = this.imageJobs.remove(imageView);
         if (remove != null) {
-            Job.DefaultImpls.cancel$default(remove, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(remove, (CancellationException) null, 1, (Object) null);
         }
         imageView.setImageDrawable(null);
         imageView.setVisibility(4);

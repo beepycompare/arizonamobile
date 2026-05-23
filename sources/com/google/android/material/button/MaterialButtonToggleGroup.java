@@ -41,6 +41,11 @@ public class MaterialButtonToggleGroup extends MaterialButtonGroup {
         void onButtonChecked(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z);
     }
 
+    @Override // com.google.android.material.button.MaterialButtonGroup
+    boolean isOverflowMenuSupported() {
+        return false;
+    }
+
     public MaterialButtonToggleGroup(Context context) {
         this(context, null);
     }

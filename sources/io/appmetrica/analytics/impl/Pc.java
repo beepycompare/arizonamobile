@@ -1,25 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import android.location.Location;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.control.Toggle;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
-import java.util.List;
-import java.util.Map;
 /* loaded from: classes5.dex */
-public interface Pc extends InterfaceC0476od {
-    List<ModuleServicesDatabase> b();
+public final class Pc extends C0267g5 {
+    public Pc(String str, String str2) {
+        super(str, str2);
+    }
 
-    /* synthetic */ Map c();
+    @Override // io.appmetrica.analytics.impl.C0267g5
+    public final boolean d() {
+        return true;
+    }
 
-    /* synthetic */ Map d();
+    @Override // io.appmetrica.analytics.impl.C0267g5
+    public final String e() {
+        return this.f992a;
+    }
 
-    List<Consumer<Location>> e();
-
-    ModuleLocationSourcesServiceController f();
-
-    Toggle g();
-
-    /* synthetic */ List h();
+    @Override // io.appmetrica.analytics.impl.C0267g5
+    public final String toString() {
+        return this.f992a;
+    }
 }

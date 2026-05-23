@@ -1,29 +1,30 @@
 package com.google.android.gms.internal.measurement;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zziu extends zzmf implements zznn {
-    private static final zziu zzj;
+public final class zziu extends zzadu implements zzafd {
+    private static final zziu zzk;
+    private static volatile zzafj zzl;
     private int zzb;
-    private long zzd;
-    private String zze = "";
+    private long zze;
     private String zzf = "";
-    private long zzg;
-    private float zzh;
-    private double zzi;
+    private String zzg = "";
+    private long zzh;
+    private float zzi;
+    private double zzj;
 
     static {
         zziu zziuVar = new zziu();
-        zzj = zziuVar;
-        zzmf.zzcp(zziu.class, zziuVar);
+        zzk = zziuVar;
+        zzadu.zzcs(zziu.class, zziuVar);
     }
 
     private zziu() {
     }
 
     public static zzit zzm() {
-        return (zzit) zzj.zzck();
+        return (zzit) zzk.zzcn();
     }
 
     public final boolean zza() {
@@ -31,11 +32,11 @@ public final class zziu extends zzmf implements zznn {
     }
 
     public final long zzb() {
-        return this.zzd;
+        return this.zze;
     }
 
     public final String zzc() {
-        return this.zze;
+        return this.zzf;
     }
 
     public final boolean zzd() {
@@ -43,45 +44,102 @@ public final class zziu extends zzmf implements zznn {
     }
 
     public final String zze() {
-        return this.zzf;
+        return this.zzg;
     }
 
     public final boolean zzf() {
         return (this.zzb & 8) != 0;
     }
 
-    public final long zzg() {
-        return this.zzg;
-    }
-
-    public final boolean zzh() {
-        return (this.zzb & 16) != 0;
-    }
-
-    public final float zzi() {
+    public final long zzh() {
         return this.zzh;
     }
 
-    public final boolean zzj() {
-        return (this.zzb & 32) != 0;
+    public final boolean zzi() {
+        return (this.zzb & 16) != 0;
     }
 
-    public final double zzk() {
+    public final float zzj() {
         return this.zzi;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    public final boolean zzk() {
+        return (this.zzb & 32) != 0;
+    }
+
+    public final double zzl() {
+        return this.zzj;
+    }
+
+    public final /* synthetic */ void zzn(long j) {
+        this.zzb |= 1;
+        this.zze = j;
+    }
+
+    public final /* synthetic */ void zzo(String str) {
+        str.getClass();
+        this.zzb |= 2;
+        this.zzf = str;
+    }
+
+    public final /* synthetic */ void zzp(String str) {
+        str.getClass();
+        this.zzb |= 4;
+        this.zzg = str;
+    }
+
+    public final /* synthetic */ void zzq() {
+        this.zzb &= -5;
+        this.zzg = zzk.zzg;
+    }
+
+    public final /* synthetic */ void zzr(long j) {
+        this.zzb |= 8;
+        this.zzh = j;
+    }
+
+    public final /* synthetic */ void zzs() {
+        this.zzb &= -9;
+        this.zzh = 0L;
+    }
+
+    public final /* synthetic */ void zzt(double d) {
+        this.zzb |= 32;
+        this.zzj = d;
+    }
+
+    public final /* synthetic */ void zzu() {
+        this.zzb &= -33;
+        this.zzj = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzj, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001ဂ\u0000\u0002ဈ\u0001\u0003ဈ\u0002\u0004ဂ\u0003\u0005ခ\u0004\u0006က\u0005", new Object[]{"zzb", "zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+                return zzct(zzk, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001ဂ\u0000\u0002ဈ\u0001\u0003ဈ\u0002\u0004ဂ\u0003\u0005ခ\u0004\u0006က\u0005", new Object[]{"zzb", "zze", "zzf", "zzg", "zzh", "zzi", "zzj"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzj;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzl;
+                            if (zzafjVar2 == null) {
+                                synchronized (zziu.class) {
+                                    zzafjVar = zzl;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzk);
+                                        zzl = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzk;
                 }
                 return new zzit(null);
             } else {
@@ -89,47 +147,5 @@ public final class zziu extends zzmf implements zznn {
             }
         }
         return (byte) 1;
-    }
-
-    public final /* synthetic */ void zzn(long j) {
-        this.zzb |= 1;
-        this.zzd = j;
-    }
-
-    public final /* synthetic */ void zzo(String str) {
-        str.getClass();
-        this.zzb |= 2;
-        this.zze = str;
-    }
-
-    public final /* synthetic */ void zzp(String str) {
-        str.getClass();
-        this.zzb |= 4;
-        this.zzf = str;
-    }
-
-    public final /* synthetic */ void zzq() {
-        this.zzb &= -5;
-        this.zzf = zzj.zzf;
-    }
-
-    public final /* synthetic */ void zzr(long j) {
-        this.zzb |= 8;
-        this.zzg = j;
-    }
-
-    public final /* synthetic */ void zzs() {
-        this.zzb &= -9;
-        this.zzg = 0L;
-    }
-
-    public final /* synthetic */ void zzt(double d) {
-        this.zzb |= 32;
-        this.zzi = d;
-    }
-
-    public final /* synthetic */ void zzu() {
-        this.zzb &= -33;
-        this.zzi = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
     }
 }

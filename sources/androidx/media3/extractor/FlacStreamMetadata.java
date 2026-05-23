@@ -7,6 +7,7 @@ import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.OpusUtil;
 import androidx.media3.extractor.metadata.flac.PictureFrame;
 import java.util.ArrayList;
 import java.util.Collections;

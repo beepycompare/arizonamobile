@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: ReportDrawn.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\u001a\u001b\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a\r\u0010\u0006\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0007\u001a+\u0010\b\u001a\u00020\u00012\u001c\u0010\t\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\nH\u0007¢\u0006\u0002\u0010\r¨\u0006\u000e"}, d2 = {"ReportDrawnWhen", "", "predicate", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "ReportDrawn", "(Landroidx/compose/runtime/Composer;I)V", "ReportDrawnAfter", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "activity-compose"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\u001a\u001b\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a\r\u0010\u0006\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0007\u001a+\u0010\b\u001a\u00020\u00012\u001c\u0010\t\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\nH\u0007¢\u0006\u0002\u0010\r¨\u0006\u000e"}, d2 = {"ReportDrawnWhen", "", "predicate", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "ReportDrawn", "(Landroidx/compose/runtime/Composer;I)V", "ReportDrawnAfter", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "activity-compose"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ReportDrawnKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -60,7 +60,7 @@ public final class ReportDrawnKt {
         Function2<? super Composer, ? super Integer, Unit> function2;
         final FullyDrawnReporter fullyDrawnReporter;
         Composer startRestartGroup = composer.startRestartGroup(-2047119994);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawnWhen)N(predicate)117@4374L7,118@4464L263,118@4416L311:ReportDrawn.kt#q1dkbc");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawnWhen)N(predicate)117@4402L7,118@4492L263,118@4444L311:ReportDrawn.kt#q1dkbc");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function0) ? 4 : 2) | i;
         } else {
@@ -141,12 +141,12 @@ public final class ReportDrawnKt {
 
     public static final void ReportDrawn(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-1357012904);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawn)135@4998L8,135@4982L24:ReportDrawn.kt#q1dkbc");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawn)135@5039L8,135@5023L24:ReportDrawn.kt#q1dkbc");
         if (startRestartGroup.shouldExecute(i != 0, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1357012904, i, -1, "androidx.activity.compose.ReportDrawn (ReportDrawn.kt:135)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1580658400, "CC(remember):ReportDrawn.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1580658592, "CC(remember):ReportDrawn.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda3
@@ -184,7 +184,7 @@ public final class ReportDrawnKt {
         Function2<? super Composer, ? super Integer, Unit> function2;
         FullyDrawnReporter fullyDrawnReporter;
         Composer startRestartGroup = composer.startRestartGroup(945311272);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawnAfter)N(block)149@5496L7,150@5580L48,150@5538L90:ReportDrawn.kt#q1dkbc");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawnAfter)N(block)149@5544L7,150@5628L48,150@5586L90:ReportDrawn.kt#q1dkbc");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(function1) ? 4 : 2) | i;
         } else {

@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PointerEvent.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b&\n\u0002\u0010\u0002\n\u0002\b\u0018\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001Bc\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\b\u0013\u0010\u0014B]\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\b\u0013\u0010\u0015BS\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u0016\u001a\u00020\u0017\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0013\u0010\u0018Bw\b\u0010\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a\u0012\u0006\u0010\u0012\u001a\u00020\u0007\u0012\u0006\u0010\u001c\u001a\u00020\u0007¢\u0006\u0004\b\u0013\u0010\u001dJ\u0006\u0010A\u001a\u00020BJi\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0004\bN\u0010OJg\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\bP\u0010QJq\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007H\u0007¢\u0006\u0004\bR\u0010SJq\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\bT\u0010UJw\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\b\b\u0002\u0010\u0012\u001a\u00020\u0007H\u0007¢\u0006\u0004\bV\u0010WJ\u0081\u0001\u0010I\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010J\u001a\u00020\u00052\b\b\u0002\u0010K\u001a\u00020\u00072\b\b\u0002\u0010L\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010M\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u000e\b\u0002\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\bX\u0010YJ\b\u0010Z\u001a\u00020[H\u0016R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010 \u001a\u0004\b\u001e\u0010\u001fR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010 \u001a\u0004\b\"\u0010\u001fR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001fR\u0013\u0010\r\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010 \u001a\u0004\b(\u0010\u001fR\u0011\u0010\u000e\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b)\u0010$R\u0013\u0010\u0010\u001a\u00020\u0011¢\u0006\n\n\u0002\u0010,\u001a\u0004\b*\u0010+R\u0013\u0010\u0012\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010 \u001a\u0004\b-\u0010\u001fR\u0017\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a8F¢\u0006\u0006\u001a\u0004\b.\u0010/R\u0016\u00100\u001a\n\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u001c\u001a\u00020\u0007X\u0080\u000e¢\u0006\u0010\n\u0002\u0010 \u001a\u0004\b1\u0010\u001f\"\u0004\b2\u00103R\u0011\u00104\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b4\u0010$R\u001a\u00105\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u0010$\"\u0004\b7\u00108R\u001a\u00109\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010$\"\u0004\b;\u00108R\u001c\u0010<\u001a\u0004\u0018\u00010\u0000X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b=\u0010>\"\u0004\b?\u0010@R\u0016\u0010C\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\bD\u0010ER\u001a\u0010\u0016\u001a\u00020\u00178FX\u0087\u0004¢\u0006\f\u0012\u0004\bF\u0010E\u001a\u0004\bG\u0010H¨\u0006\\"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChange;", "", "id", "Landroidx/compose/ui/input/pointer/PointerId;", "uptimeMillis", "", "position", "Landroidx/compose/ui/geometry/Offset;", "pressed", "", "pressure", "", "previousUptimeMillis", "previousPosition", "previousPressed", "isInitiallyConsumed", "type", "Landroidx/compose/ui/input/pointer/PointerType;", "scrollDelta", "<init>", "(JJJZFJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(JJJZJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "consumed", "Landroidx/compose/ui/input/pointer/ConsumedData;", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "historical", "", "Landroidx/compose/ui/input/pointer/HistoricalChange;", "originalEventPosition", "(JJJZFJJZZILjava/util/List;JJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getId-J3iCeTQ", "()J", "J", "getUptimeMillis", "getPosition-F1C5BW0", "getPressed", "()Z", "getPressure", "()F", "getPreviousUptimeMillis", "getPreviousPosition-F1C5BW0", "getPreviousPressed", "getType-T8wyACA", "()I", "I", "getScrollDelta-F1C5BW0", "getHistorical", "()Ljava/util/List;", "_historical", "getOriginalEventPosition-F1C5BW0$ui", "setOriginalEventPosition-k-4lQ0M$ui", "(J)V", "isConsumed", "downChange", "getDownChange$ui", "setDownChange$ui", "(Z)V", "positionChange", "getPositionChange$ui", "setPositionChange$ui", "consumedDelegate", "getConsumedDelegate$ui", "()Landroidx/compose/ui/input/pointer/PointerInputChange;", "setConsumedDelegate$ui", "(Landroidx/compose/ui/input/pointer/PointerInputChange;)V", "consume", "", "_consumed", "get_consumed$annotations", "()V", "getConsumed$annotations", "getConsumed", "()Landroidx/compose/ui/input/pointer/ConsumedData;", "copy", "currentTime", "currentPosition", "currentPressed", "previousTime", "copy-Ezr-O64", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;I)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-JKmWfYY", "(JJJZJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-0GkPj7c", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-Tn9QgHE", "(JJJZFJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-OHpmEuE", "(JJJZJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-wbzehF4", "(JJJZFJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;", "toString", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b(\n\u0002\u0010\u0002\n\u0002\b\u001a\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001Bw\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u0013\u001a\u00020\u000b\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u0007¢\u0006\u0004\b\u0015\u0010\u0016Bq\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u0013\u001a\u00020\u000b\u0012\b\b\u0002\u0010\u0014\u001a\u00020\u0007¢\u0006\u0004\b\u0015\u0010\u0017Be\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\b\u0015\u0010\u0018B]\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011\u0012\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\b\u0015\u0010\u0019BS\b\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u001a\u001a\u00020\u001b\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u0011¢\u0006\u0004\b\u0015\u0010\u001cB\u0087\u0001\b\u0010\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u0005\u0012\u0006\u0010\r\u001a\u00020\u0007\u0012\u0006\u0010\u000e\u001a\u00020\t\u0012\u0006\u0010\u000f\u001a\u00020\t\u0012\u0006\u0010\u0010\u001a\u00020\u0011\u0012\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e\u0012\u0006\u0010\u0012\u001a\u00020\u0007\u0012\u0006\u0010\u0013\u001a\u00020\u000b\u0012\u0006\u0010\u0014\u001a\u00020\u0007\u0012\u0006\u0010 \u001a\u00020\u0007¢\u0006\u0004\b\u0015\u0010!J\u0006\u0010G\u001a\u00020HJi\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0007¢\u0006\u0004\bT\u0010UJg\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\bV\u0010WJq\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007H\u0007¢\u0006\u0004\bX\u0010YJq\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\bZ\u0010[Jw\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\b\b\u0002\u0010\u0012\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\\\u0010]J\u0081\u0001\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\b\b\u0002\u0010\u0012\u001a\u00020\u0007¢\u0006\u0004\b^\u0010_J\u0095\u0001\u0010O\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010P\u001a\u00020\u00052\b\b\u0002\u0010Q\u001a\u00020\u00072\b\b\u0002\u0010R\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010S\u001a\u00020\u00052\b\b\u0002\u0010\r\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\b\b\u0002\u0010\u0012\u001a\u00020\u00072\b\b\u0002\u0010\u0013\u001a\u00020\u000b2\b\b\u0002\u0010\u0014\u001a\u00020\u0007¢\u0006\u0004\b`\u0010aJ\b\u0010b\u001a\u00020cH\u0016R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b\"\u0010#R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b%\u0010#R\u0013\u0010\u0006\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010$\u001a\u0004\b&\u0010#R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b+\u0010#R\u0013\u0010\r\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010$\u001a\u0004\b,\u0010#R\u0011\u0010\u000e\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b-\u0010(R\u0013\u0010\u0010\u001a\u00020\u0011¢\u0006\n\n\u0002\u00100\u001a\u0004\b.\u0010/R\u0013\u0010\u0012\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010$\u001a\u0004\b1\u0010#R\u0011\u0010\u0013\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b2\u0010*R\u0013\u0010\u0014\u001a\u00020\u0007¢\u0006\n\n\u0002\u0010$\u001a\u0004\b3\u0010#R\u0017\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e8F¢\u0006\u0006\u001a\u0004\b4\u00105R\u0016\u00106\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010 \u001a\u00020\u0007X\u0080\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b7\u0010#\"\u0004\b8\u00109R\u0011\u0010:\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b:\u0010(R\u001a\u0010;\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b<\u0010(\"\u0004\b=\u0010>R\u001a\u0010?\u001a\u00020\tX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b@\u0010(\"\u0004\bA\u0010>R\u001c\u0010B\u001a\u0004\u0018\u00010\u0000X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bC\u0010D\"\u0004\bE\u0010FR\u0016\u0010I\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\bJ\u0010KR\u001a\u0010\u001a\u001a\u00020\u001b8FX\u0087\u0004¢\u0006\f\u0012\u0004\bL\u0010K\u001a\u0004\bM\u0010N¨\u0006d"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChange;", "", "id", "Landroidx/compose/ui/input/pointer/PointerId;", "uptimeMillis", "", "position", "Landroidx/compose/ui/geometry/Offset;", "pressed", "", "pressure", "", "previousUptimeMillis", "previousPosition", "previousPressed", "isInitiallyConsumed", "type", "Landroidx/compose/ui/input/pointer/PointerType;", "scrollDelta", "scaleFactor", "panOffset", "<init>", "(JJJZFJJZZIJFJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(JJJZJJZZIJFJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(JJJZFJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "(JJJZJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "consumed", "Landroidx/compose/ui/input/pointer/ConsumedData;", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "historical", "", "Landroidx/compose/ui/input/pointer/HistoricalChange;", "originalEventPosition", "(JJJZFJJZZILjava/util/List;JFJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getId-J3iCeTQ", "()J", "J", "getUptimeMillis", "getPosition-F1C5BW0", "getPressed", "()Z", "getPressure", "()F", "getPreviousUptimeMillis", "getPreviousPosition-F1C5BW0", "getPreviousPressed", "getType-T8wyACA", "()I", "I", "getScrollDelta-F1C5BW0", "getScaleFactor", "getPanOffset-F1C5BW0", "getHistorical", "()Ljava/util/List;", "_historical", "getOriginalEventPosition-F1C5BW0$ui", "setOriginalEventPosition-k-4lQ0M$ui", "(J)V", "isConsumed", "downChange", "getDownChange$ui", "setDownChange$ui", "(Z)V", "positionChange", "getPositionChange$ui", "setPositionChange$ui", "consumedDelegate", "getConsumedDelegate$ui", "()Landroidx/compose/ui/input/pointer/PointerInputChange;", "setConsumedDelegate$ui", "(Landroidx/compose/ui/input/pointer/PointerInputChange;)V", "consume", "", "_consumed", "get_consumed$annotations", "()V", "getConsumed$annotations", "getConsumed", "()Landroidx/compose/ui/input/pointer/ConsumedData;", "copy", "currentTime", "currentPosition", "currentPressed", "previousTime", "copy-Ezr-O64", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;I)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-JKmWfYY", "(JJJZJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-0GkPj7c", "(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-Tn9QgHE", "(JJJZFJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-OHpmEuE", "(JJJZJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-wbzehF4", "(JJJZFJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;", "copy-lGhnTh8", "(JJJZFJJZILjava/util/List;JFJ)Landroidx/compose/ui/input/pointer/PointerInputChange;", "toString", "", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PointerInputChange {
     public static final int $stable = 0;
@@ -20,6 +20,7 @@ public final class PointerInputChange {
     private boolean downChange;
     private final long id;
     private long originalEventPosition;
+    private final long panOffset;
     private final long position;
     private boolean positionChange;
     private final boolean pressed;
@@ -27,16 +28,22 @@ public final class PointerInputChange {
     private final long previousPosition;
     private final boolean previousPressed;
     private final long previousUptimeMillis;
+    private final float scaleFactor;
     private final long scrollDelta;
     private final int type;
     private final long uptimeMillis;
 
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f2, long j7, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, i, j6, f2, j7);
+    }
+
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, DefaultConstructorMarker defaultConstructorMarker) {
         this(j, j2, j3, z, f, j4, j5, z2, z3, i, j6);
     }
 
-    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, List list, long j6, long j7, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, f, j4, j5, z2, z3, i, list, j6, j7);
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, List list, long j6, float f2, long j7, long j8, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, i, list, j6, f2, j7, j8);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use another constructor with `scrollDelta` and without `ConsumedData` instead", replaceWith = @ReplaceWith(expression = "this(id, uptimeMillis, position, pressed, previousUptimeMillis, previousPosition, previousPressed, consumed.downChange || consumed.positionChange, type, Offset.Zero)", imports = {}))
@@ -44,6 +51,11 @@ public final class PointerInputChange {
         this(j, j2, j3, z, j4, j5, z2, consumedData, i);
     }
 
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f, long j7, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, j4, j5, z2, z3, i, j6, f, j7);
+    }
+
+    @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, DefaultConstructorMarker defaultConstructorMarker) {
         this(j, j2, j3, z, j4, j5, z2, z3, i, j6);
     }
@@ -55,7 +67,7 @@ public final class PointerInputChange {
     private static /* synthetic */ void get_consumed$annotations() {
     }
 
-    private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6) {
+    private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f2, long j7) {
         this.id = j;
         this.uptimeMillis = j2;
         this.position = j3;
@@ -66,13 +78,15 @@ public final class PointerInputChange {
         this.previousPressed = z2;
         this.type = i;
         this.scrollDelta = j6;
-        this.originalEventPosition = Offset.Companion.m4543getZeroF1C5BW0();
+        this.scaleFactor = f2;
+        this.panOffset = j7;
+        this.originalEventPosition = Offset.Companion.m5119getZeroF1C5BW0();
         this.downChange = z3;
         this.positionChange = z3;
     }
 
     /* renamed from: getId-J3iCeTQ  reason: not valid java name */
-    public final long m6083getIdJ3iCeTQ() {
+    public final long m6682getIdJ3iCeTQ() {
         return this.id;
     }
 
@@ -81,7 +95,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m6085getPositionF1C5BW0() {
+    public final long m6685getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -98,7 +112,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getPreviousPosition-F1C5BW0  reason: not valid java name */
-    public final long m6086getPreviousPositionF1C5BW0() {
+    public final long m6686getPreviousPositionF1C5BW0() {
         return this.previousPosition;
     }
 
@@ -106,40 +120,65 @@ public final class PointerInputChange {
         return this.previousPressed;
     }
 
-    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, f, j4, j5, z2, z3, (i2 & 512) != 0 ? PointerType.Companion.m6163getTouchT8wyACA() : i, (i2 & 1024) != 0 ? Offset.Companion.m4543getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f2, long j7, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, (i2 & 512) != 0 ? PointerType.Companion.m6765getTouchT8wyACA() : i, (i2 & 1024) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j6, (i2 & 2048) != 0 ? 1.0f : f2, (i2 & 4096) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j7, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getType-T8wyACA  reason: not valid java name */
-    public final int m6088getTypeT8wyACA() {
+    public final int m6688getTypeT8wyACA() {
         return this.type;
     }
 
     /* renamed from: getScrollDelta-F1C5BW0  reason: not valid java name */
-    public final long m6087getScrollDeltaF1C5BW0() {
+    public final long m6687getScrollDeltaF1C5BW0() {
         return this.scrollDelta;
     }
 
+    public final float getScaleFactor() {
+        return this.scaleFactor;
+    }
+
+    /* renamed from: getPanOffset-F1C5BW0  reason: not valid java name */
+    public final long m6684getPanOffsetF1C5BW0() {
+        return this.panOffset;
+    }
+
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f, long j7, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, j4, j5, z2, z3, (i2 & 256) != 0 ? PointerType.Companion.m6765getTouchT8wyACA() : i, (i2 & 512) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j6, (i2 & 1024) != 0 ? 1.0f : f, (i2 & 2048) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j7, (DefaultConstructorMarker) null);
+    }
+
+    private PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, float f, long j7) {
+        this(j, j2, j3, z, 1.0f, j4, j5, z2, z3, i, j6, f, j7, (DefaultConstructorMarker) null);
+    }
+
+    public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, (i2 & 512) != 0 ? PointerType.Companion.m6765getTouchT8wyACA() : i, (i2 & 1024) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
+    }
+
+    private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, i, j6, 0.0f, 0L, 6144, (DefaultConstructorMarker) null);
+    }
+
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, j4, j5, z2, z3, (i2 & 256) != 0 ? PointerType.Companion.m6163getTouchT8wyACA() : i, (i2 & 512) != 0 ? Offset.Companion.m4543getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, j4, j5, z2, z3, (i2 & 256) != 0 ? PointerType.Companion.m6765getTouchT8wyACA() : i, (i2 & 512) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j6, (DefaultConstructorMarker) null);
     }
 
     private PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, boolean z3, int i, long j6) {
-        this(j, j2, j3, z, 1.0f, j4, j5, z2, z3, i, j6, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, j4, j5, z2, z3, i, j6, 0.0f, 0L, 3072, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, z, j4, j5, z2, consumedData, (i2 & 256) != 0 ? PointerType.Companion.m6163getTouchT8wyACA() : i, (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, j4, j5, z2, consumedData, (i2 & 256) != 0 ? PointerType.Companion.m6765getTouchT8wyACA() : i, (DefaultConstructorMarker) null);
     }
 
     private PointerInputChange(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
-        this(j, j2, j3, z, 1.0f, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, Offset.Companion.m4543getZeroF1C5BW0(), (DefaultConstructorMarker) null);
+        this(j, j2, j3, z, 1.0f, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, Offset.Companion.m5119getZeroF1C5BW0(), 0.0f, 0L, 6144, (DefaultConstructorMarker) null);
     }
 
-    private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, List<HistoricalChange> list, long j6, long j7) {
-        this(j, j2, j3, z, f, j4, j5, z2, z3, i, j6, (DefaultConstructorMarker) null);
+    private PointerInputChange(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, List<HistoricalChange> list, long j6, float f2, long j7, long j8) {
+        this(j, j2, j3, z, f, j4, j5, z2, z3, i, j6, f2, j7, (DefaultConstructorMarker) null);
         this._historical = list;
-        this.originalEventPosition = j7;
+        this.originalEventPosition = j8;
     }
 
     public final List<HistoricalChange> getHistorical() {
@@ -148,12 +187,12 @@ public final class PointerInputChange {
     }
 
     /* renamed from: getOriginalEventPosition-F1C5BW0$ui  reason: not valid java name */
-    public final long m6084getOriginalEventPositionF1C5BW0$ui() {
+    public final long m6683getOriginalEventPositionF1C5BW0$ui() {
         return this.originalEventPosition;
     }
 
     /* renamed from: setOriginalEventPosition-k-4lQ0M$ui  reason: not valid java name */
-    public final void m6089setOriginalEventPositionk4lQ0M$ui(long j) {
+    public final void m6689setOriginalEventPositionk4lQ0M$ui(long j) {
         this.originalEventPosition = j;
     }
 
@@ -207,15 +246,15 @@ public final class PointerInputChange {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use another copy() method with scrollDelta parameter instead", replaceWith = @ReplaceWith(expression = "copy(id,currentTime, currentPosition, currentPressed, previousTime,previousPosition, previousPressed, consumed, type, this.scrollDelta)", imports = {}))
     /* renamed from: copy-Ezr-O64  reason: not valid java name */
-    public final /* synthetic */ PointerInputChange m6078copyEzrO64(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
-        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), this.scrollDelta, this.originalEventPosition, null);
+    public final /* synthetic */ PointerInputChange m6676copyEzrO64(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i) {
+        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), this.scrollDelta, this.scaleFactor, this.panOffset, this.originalEventPosition, null);
         pointerInputChange.positionChange = this.positionChange;
         pointerInputChange.downChange = this.downChange;
         return pointerInputChange;
     }
 
     /* renamed from: copy-JKmWfYY$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6073copyJKmWfYY$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6670copyJKmWfYY$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
         long j7;
         long j8;
         long j9 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -233,23 +272,23 @@ public final class PointerInputChange {
             j7 = j6;
             j8 = j9;
         }
-        return pointerInputChange.m6079copyJKmWfYY(j8, j10, j11, z3, j12, j13, z4, i3, j7);
+        return pointerInputChange.m6677copyJKmWfYY(j8, j10, j11, z3, j12, j13, z4, i3, j7);
     }
 
     /* renamed from: copy-JKmWfYY  reason: not valid java name */
-    public final PointerInputChange m6079copyJKmWfYY(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6) {
+    public final PointerInputChange m6677copyJKmWfYY(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, long j6) {
         PointerInputChange pointerInputChange = this;
-        PointerInputChange m6082copywbzehF4 = pointerInputChange.m6082copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, pointerInputChange.getHistorical(), j6);
+        PointerInputChange m6681copywbzehF4 = pointerInputChange.m6681copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, pointerInputChange.getHistorical(), j6);
         PointerInputChange pointerInputChange2 = pointerInputChange.consumedDelegate;
         if (pointerInputChange2 != null) {
             pointerInputChange = pointerInputChange2;
         }
-        m6082copywbzehF4.consumedDelegate = pointerInputChange;
-        return m6082copywbzehF4;
+        m6681copywbzehF4.consumedDelegate = pointerInputChange;
+        return m6681copywbzehF4;
     }
 
     /* renamed from: copy-0GkPj7c$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6071copy0GkPj7c$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6668copy0GkPj7c$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6, int i2, Object obj) {
         long j7;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
         long j9 = (i2 & 2) != 0 ? pointerInputChange.uptimeMillis : j2;
@@ -265,20 +304,20 @@ public final class PointerInputChange {
         } else {
             j7 = j6;
         }
-        return pointerInputChange.m6077copy0GkPj7c(j8, j9, j10, z3, j11, j12, z4, consumedData, i3, j7);
+        return pointerInputChange.m6675copy0GkPj7c(j8, j9, j10, z3, j11, j12, z4, consumedData, i3, j7);
     }
 
     @Deprecated(message = "Partial consumption has been deprecated. Use copy() instead without `consumed` parameter to create a shallow copy or a constructor to create a new PointerInputChange", replaceWith = @ReplaceWith(expression = "copy(id, currentTime, currentPosition, currentPressed, previousTime, previousPosition, previousPressed, type, scrollDelta)", imports = {}))
     /* renamed from: copy-0GkPj7c  reason: not valid java name */
-    public final PointerInputChange m6077copy0GkPj7c(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6) {
-        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), j6, this.originalEventPosition, null);
+    public final PointerInputChange m6675copy0GkPj7c(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, ConsumedData consumedData, int i, long j6) {
+        PointerInputChange pointerInputChange = new PointerInputChange(j, j2, j3, z, this.pressure, j4, j5, z2, consumedData.getDownChange() || consumedData.getPositionChange(), i, getHistorical(), j6, this.scaleFactor, this.panOffset, this.originalEventPosition, null);
         pointerInputChange.positionChange = this.positionChange;
         pointerInputChange.downChange = this.downChange;
         return pointerInputChange;
     }
 
     /* renamed from: copy-Tn9QgHE$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6075copyTn9QgHE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6672copyTn9QgHE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6, int i2, Object obj) {
         long j7;
         long j8;
         long j9 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -297,13 +336,13 @@ public final class PointerInputChange {
             j7 = j6;
             j8 = j9;
         }
-        return pointerInputChange.m6081copyTn9QgHE(j8, j10, j11, z3, f2, j12, j13, z4, i3, j7);
+        return pointerInputChange.m6679copyTn9QgHE(j8, j10, j11, z3, f2, j12, j13, z4, i3, j7);
     }
 
     /* renamed from: copy-Tn9QgHE  reason: not valid java name */
-    public final PointerInputChange m6081copyTn9QgHE(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6) {
+    public final PointerInputChange m6679copyTn9QgHE(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, long j6) {
         PointerInputChange pointerInputChange = this;
-        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, pointerInputChange.getHistorical(), j6, pointerInputChange.originalEventPosition, null);
+        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, pointerInputChange.getHistorical(), j6, pointerInputChange.scaleFactor, pointerInputChange.panOffset, pointerInputChange.originalEventPosition, null);
         PointerInputChange pointerInputChange3 = pointerInputChange.consumedDelegate;
         if (pointerInputChange3 != null) {
             pointerInputChange = pointerInputChange3;
@@ -313,7 +352,7 @@ public final class PointerInputChange {
     }
 
     /* renamed from: copy-OHpmEuE$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6074copyOHpmEuE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6671copyOHpmEuE$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
         long j7;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
         long j9 = (i2 & 2) != 0 ? pointerInputChange.uptimeMillis : j2;
@@ -329,23 +368,23 @@ public final class PointerInputChange {
         } else {
             j7 = j6;
         }
-        return pointerInputChange.m6080copyOHpmEuE(j8, j9, j10, z3, j11, j12, z4, i3, list, j7);
+        return pointerInputChange.m6678copyOHpmEuE(j8, j9, j10, z3, j11, j12, z4, i3, list, j7);
     }
 
     /* renamed from: copy-OHpmEuE  reason: not valid java name */
-    public final PointerInputChange m6080copyOHpmEuE(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
+    public final PointerInputChange m6678copyOHpmEuE(long j, long j2, long j3, boolean z, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
         PointerInputChange pointerInputChange = this;
-        PointerInputChange m6082copywbzehF4 = pointerInputChange.m6082copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, list, j6);
+        PointerInputChange m6681copywbzehF4 = pointerInputChange.m6681copywbzehF4(j, j2, j3, z, pointerInputChange.pressure, j4, j5, z2, i, list, j6);
         PointerInputChange pointerInputChange2 = pointerInputChange.consumedDelegate;
         if (pointerInputChange2 != null) {
             pointerInputChange = pointerInputChange2;
         }
-        m6082copywbzehF4.consumedDelegate = pointerInputChange;
-        return m6082copywbzehF4;
+        m6681copywbzehF4.consumedDelegate = pointerInputChange;
+        return m6681copywbzehF4;
     }
 
     /* renamed from: copy-wbzehF4$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputChange m6076copywbzehF4$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputChange m6674copywbzehF4$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List list, long j6, int i2, Object obj) {
         long j7;
         List list2;
         long j8 = (i2 & 1) != 0 ? pointerInputChange.id : j;
@@ -366,13 +405,53 @@ public final class PointerInputChange {
             j7 = j6;
             list2 = historical;
         }
-        return pointerInputChange.m6082copywbzehF4(j13, j9, j10, z3, f2, j11, j12, z4, i3, list2, j7);
+        return pointerInputChange.m6681copywbzehF4(j13, j9, j10, z3, f2, j11, j12, z4, i3, list2, j7);
     }
 
     /* renamed from: copy-wbzehF4  reason: not valid java name */
-    public final PointerInputChange m6082copywbzehF4(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
+    public final PointerInputChange m6681copywbzehF4(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6) {
         PointerInputChange pointerInputChange = this;
-        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, pointerInputChange.originalEventPosition, null);
+        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, pointerInputChange.scaleFactor, pointerInputChange.panOffset, pointerInputChange.originalEventPosition, null);
+        PointerInputChange pointerInputChange3 = pointerInputChange.consumedDelegate;
+        if (pointerInputChange3 != null) {
+            pointerInputChange = pointerInputChange3;
+        }
+        pointerInputChange2.consumedDelegate = pointerInputChange;
+        return pointerInputChange2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* renamed from: copy-lGhnTh8$default  reason: not valid java name */
+    public static /* synthetic */ PointerInputChange m6673copylGhnTh8$default(PointerInputChange pointerInputChange, long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List list, long j6, float f2, long j7, int i2, Object obj) {
+        long j8;
+        float f3;
+        long j9 = (i2 & 1) != 0 ? pointerInputChange.id : j;
+        long j10 = (i2 & 2) != 0 ? pointerInputChange.uptimeMillis : j2;
+        long j11 = (i2 & 4) != 0 ? pointerInputChange.position : j3;
+        boolean z3 = (i2 & 8) != 0 ? pointerInputChange.pressed : z;
+        float f4 = (i2 & 16) != 0 ? pointerInputChange.pressure : f;
+        long j12 = (i2 & 32) != 0 ? pointerInputChange.previousUptimeMillis : j4;
+        long j13 = (i2 & 64) != 0 ? pointerInputChange.previousPosition : j5;
+        boolean z4 = (i2 & 128) != 0 ? pointerInputChange.previousPressed : z2;
+        int i3 = (i2 & 256) != 0 ? pointerInputChange.type : i;
+        long j14 = j9;
+        List<HistoricalChange> historical = (i2 & 512) != 0 ? pointerInputChange.getHistorical() : list;
+        long j15 = (i2 & 1024) != 0 ? pointerInputChange.scrollDelta : j6;
+        float f5 = (i2 & 2048) != 0 ? pointerInputChange.scaleFactor : f2;
+        if ((i2 & 4096) != 0) {
+            f3 = f5;
+            j8 = pointerInputChange.panOffset;
+        } else {
+            j8 = j7;
+            f3 = f5;
+        }
+        return pointerInputChange.m6680copylGhnTh8(j14, j10, j11, z3, f4, j12, j13, z4, i3, historical, j15, f3, j8);
+    }
+
+    /* renamed from: copy-lGhnTh8  reason: not valid java name */
+    public final PointerInputChange m6680copylGhnTh8(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, int i, List<HistoricalChange> list, long j6, float f2, long j7) {
+        PointerInputChange pointerInputChange = this;
+        PointerInputChange pointerInputChange2 = new PointerInputChange(j, j2, j3, z, f, j4, j5, z2, false, i, list, j6, f2, j7, pointerInputChange.originalEventPosition, null);
         PointerInputChange pointerInputChange3 = pointerInputChange.consumedDelegate;
         if (pointerInputChange3 != null) {
             pointerInputChange = pointerInputChange3;
@@ -383,8 +462,8 @@ public final class PointerInputChange {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("PointerInputChange(id=");
-        sb.append((Object) PointerId.m6069toStringimpl(this.id)).append(", uptimeMillis=").append(this.uptimeMillis).append(", position=").append((Object) Offset.m4535toStringimpl(this.position)).append(", pressed=").append(this.pressed).append(", pressure=").append(this.pressure).append(", previousUptimeMillis=").append(this.previousUptimeMillis).append(", previousPosition=").append((Object) Offset.m4535toStringimpl(this.previousPosition)).append(", previousPressed=").append(this.previousPressed).append(", isConsumed=").append(isConsumed()).append(", type=").append((Object) PointerType.m6158toStringimpl(this.type)).append(", historical=").append(getHistorical()).append(",scrollDelta=");
-        sb.append((Object) Offset.m4535toStringimpl(this.scrollDelta)).append(')');
+        sb.append((Object) PointerId.m6666toStringimpl(this.id)).append(", uptimeMillis=").append(this.uptimeMillis).append(", position=").append((Object) Offset.m5111toStringimpl(this.position)).append(", pressed=").append(this.pressed).append(", pressure=").append(this.pressure).append(", previousUptimeMillis=").append(this.previousUptimeMillis).append(", previousPosition=").append((Object) Offset.m5111toStringimpl(this.previousPosition)).append(", previousPressed=").append(this.previousPressed).append(", isConsumed=").append(isConsumed()).append(", type=").append((Object) PointerType.m6760toStringimpl(this.type)).append(", historical=").append(getHistorical()).append(", scrollDelta=");
+        sb.append((Object) Offset.m5111toStringimpl(this.scrollDelta)).append(", scaleFactor=").append(this.scaleFactor).append(", panOffset=").append((Object) Offset.m5111toStringimpl(this.panOffset)).append(')');
         return sb.toString();
     }
 }

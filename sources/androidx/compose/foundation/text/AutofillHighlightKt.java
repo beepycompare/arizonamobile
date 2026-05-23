@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.ReplaceWith;
 import kotlin.jvm.functions.Function0;
 /* compiled from: AutofillHighlight.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\u001a'\u0010\n\u001a\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u00022\u0006\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020\u0006H\u0000¢\u0006\u0004\b\u000e\u0010\u000f\"\u0017\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\"\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u00018\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\b\u001a\u0004\b\t\u0010\u0004¨\u0006\u0010"}, d2 = {"LocalAutofillHighlightBrush", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/ui/graphics/Brush;", "getLocalAutofillHighlightBrush", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "LocalAutofillHighlightColor", "Landroidx/compose/ui/graphics/Color;", "getLocalAutofillHighlightColor$annotations", "()V", "getLocalAutofillHighlightColor", "resolveAutofillHighlight", "brush", "color", "defaultColor", "resolveAutofillHighlight-WkMS-hQ", "(Landroidx/compose/ui/graphics/Brush;JJ)Landroidx/compose/ui/graphics/Brush;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\u001a'\u0010\n\u001a\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u00022\u0006\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020\u0006H\u0000¢\u0006\u0004\b\u000e\u0010\u000f\"\u0017\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\"\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u00018\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\b\u001a\u0004\b\t\u0010\u0004¨\u0006\u0010"}, d2 = {"LocalAutofillHighlightBrush", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/compose/ui/graphics/Brush;", "getLocalAutofillHighlightBrush", "()Landroidx/compose/runtime/ProvidableCompositionLocal;", "LocalAutofillHighlightColor", "Landroidx/compose/ui/graphics/Color;", "getLocalAutofillHighlightColor$annotations", "()V", "getLocalAutofillHighlightColor", "resolveAutofillHighlight", "brush", "color", "defaultColor", "resolveAutofillHighlight-WkMS-hQ", "(Landroidx/compose/ui/graphics/Brush;JJ)Landroidx/compose/ui/graphics/Brush;", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AutofillHighlightKt {
     private static final ProvidableCompositionLocal<Brush> LocalAutofillHighlightBrush = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.text.AutofillHighlightKt$$ExternalSyntheticLambda0
@@ -23,11 +23,11 @@ public final class AutofillHighlightKt {
     private static final ProvidableCompositionLocal<Color> LocalAutofillHighlightColor = CompositionLocalKt.compositionLocalOf$default(null, new Function0<Color>() { // from class: androidx.compose.foundation.text.AutofillHighlightKt$LocalAutofillHighlightColor$1
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Color invoke() {
-            return Color.m4762boximpl(m1133invoke0d7_KjU());
+            return Color.m5338boximpl(m1478invoke0d7_KjU());
         }
 
         /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-        public final long m1133invoke0d7_KjU() {
+        public final long m1478invoke0d7_KjU() {
             return AutofillHighlight_androidKt.autofillHighlightColor();
         }
     }, 1, null);
@@ -50,7 +50,7 @@ public final class AutofillHighlightKt {
     }
 
     /* renamed from: resolveAutofillHighlight-WkMS-hQ  reason: not valid java name */
-    public static final Brush m1132resolveAutofillHighlightWkMShQ(Brush brush, long j, long j2) {
-        return !Color.m4773equalsimpl0(j, j2) ? new SolidColor(j, null) : brush;
+    public static final Brush m1477resolveAutofillHighlightWkMShQ(Brush brush, long j, long j2) {
+        return !Color.m5349equalsimpl0(j, j2) ? new SolidColor(j, null) : brush;
     }
 }

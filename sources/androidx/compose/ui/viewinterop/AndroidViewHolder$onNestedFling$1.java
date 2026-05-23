@@ -12,8 +12,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: AndroidViewHolder.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.viewinterop.AndroidViewHolder$onNestedFling$1", f = "AndroidViewHolder.android.kt", i = {}, l = {633, 635}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.viewinterop.AndroidViewHolder$onNestedFling$1", f = "AndroidViewHolder.android.kt", i = {}, l = {634, 636}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 final class AndroidViewHolder$onNestedFling$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ boolean $consumed;
@@ -62,21 +62,21 @@ final class AndroidViewHolder$onNestedFling$1 extends SuspendLambda implements F
             if (!z) {
                 nestedScrollDispatcher2 = androidViewHolder.dispatcher;
                 this.label = 1;
-                obj = nestedScrollDispatcher2.m5946dispatchPostFlingRZ2iAVY(Velocity.Companion.m7804getZero9UxMQ8M(), this.$viewVelocity, this);
+                obj = nestedScrollDispatcher2.m6535dispatchPostFlingRZ2iAVY(Velocity.Companion.m8409getZero9UxMQ8M(), this.$viewVelocity, this);
             } else {
                 nestedScrollDispatcher = androidViewHolder.dispatcher;
                 this.label = 2;
-                obj = nestedScrollDispatcher.m5946dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m7804getZero9UxMQ8M(), this);
+                obj = nestedScrollDispatcher.m6535dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m8409getZero9UxMQ8M(), this);
             }
             return coroutine_suspended;
         } else if (i == 1) {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m7802unboximpl();
+            ((Velocity) obj).m8407unboximpl();
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m7802unboximpl();
+            ((Velocity) obj).m8407unboximpl();
         }
         return Unit.INSTANCE;
     }

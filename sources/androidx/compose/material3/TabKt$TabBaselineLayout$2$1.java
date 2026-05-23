@@ -43,7 +43,7 @@ public final class TabKt$TabBaselineLayout$2$1 implements MeasurePolicy {
             for (int i = 0; i < size; i++) {
                 Measurable measurable = list.get(i);
                 if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "text")) {
-                    placeable = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
+                    placeable = measurable.mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null));
                 }
             }
             ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -55,7 +55,7 @@ public final class TabKt$TabBaselineLayout$2$1 implements MeasurePolicy {
             for (int i2 = 0; i2 < size2; i2++) {
                 Measurable measurable2 = list.get(i2);
                 if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "icon")) {
-                    placeable2 = measurable2.mo6216measureBRTryo0(j);
+                    placeable2 = measurable2.mo6818measureBRTryo0(j);
                 }
             }
             ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -63,11 +63,11 @@ public final class TabKt$TabBaselineLayout$2$1 implements MeasurePolicy {
         }
         placeable2 = null;
         final int max = Math.max(placeable != null ? placeable.getWidth() : 0, placeable2 != null ? placeable2.getWidth() : 0);
-        int i3 = measureScope.mo399roundToPx0680j_4((placeable == null || placeable2 == null) ? TabKt.SmallTabHeight : TabKt.LargeTabHeight);
+        int i3 = measureScope.mo428roundToPx0680j_4((placeable == null || placeable2 == null) ? TabKt.SmallTabHeight : TabKt.LargeTabHeight);
         int height = placeable2 != null ? placeable2.getHeight() : 0;
         int height2 = placeable != null ? placeable.getHeight() : 0;
         j2 = TabKt.IconDistanceFromBaseline;
-        final int max2 = Math.max(i3, height + height2 + measureScope.mo398roundToPxR2X_6o(j2));
+        final int max2 = Math.max(i3, height + height2 + measureScope.mo427roundToPxR2X_6o(j2));
         final Integer valueOf = placeable != null ? Integer.valueOf(placeable.get(AlignmentLineKt.getFirstBaseline())) : null;
         final Integer valueOf2 = placeable != null ? Integer.valueOf(placeable.get(AlignmentLineKt.getLastBaseline())) : null;
         final Placeable placeable3 = placeable;

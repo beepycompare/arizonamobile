@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Shadow.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B/\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n¢\u0006\u0004\b\f\u0010\rJ\u0019\u0010\u0019\u001a\u0013\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u001c0\u001a¢\u0006\u0002\b\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u0002H\u0016J\u0010\u0010\u001f\u001a\u00020\u001c2\u0006\u0010 \u001a\u00020\u0002H\u0016J\f\u0010!\u001a\u00020\u001c*\u00020\"H\u0016J\u0010\u0010#\u001a\u00020\u0004HÆ\u0003¢\u0006\u0004\b$\u0010\u000fJ\t\u0010%\u001a\u00020\u0006HÆ\u0003J\t\u0010&\u001a\u00020\bHÆ\u0003J\u0010\u0010'\u001a\u00020\nHÆ\u0003¢\u0006\u0004\b(\u0010\u0016J\u0010\u0010)\u001a\u00020\nHÆ\u0003¢\u0006\u0004\b*\u0010\u0016JB\u0010+\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\nHÆ\u0001¢\u0006\u0004\b,\u0010-J\u0013\u0010.\u001a\u00020\b2\b\u0010/\u001a\u0004\u0018\u000100HÖ\u0003J\t\u00101\u001a\u000202HÖ\u0001J\t\u00103\u001a\u000204HÖ\u0001R\u0013\u0010\u0003\u001a\u00020\u0004¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0013\u0010\t\u001a\u00020\n¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0015\u0010\u0016R\u0013\u0010\u000b\u001a\u00020\n¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0018\u0010\u0016¨\u00065"}, d2 = {"Landroidx/compose/ui/draw/ShadowGraphicsLayerElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/ui/graphics/BlockGraphicsLayerModifier;", "elevation", "Landroidx/compose/ui/unit/Dp;", "shape", "Landroidx/compose/ui/graphics/Shape;", "clip", "", "ambientColor", "Landroidx/compose/ui/graphics/Color;", "spotColor", "<init>", "(FLandroidx/compose/ui/graphics/Shape;ZJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getElevation-D9Ej5fM", "()F", "F", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "getClip", "()Z", "getAmbientColor-0d7_KjU", "()J", "J", "getSpotColor-0d7_KjU", "createBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "", "Lkotlin/ExtensionFunctionType;", "create", "update", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "component1", "component1-D9Ej5fM", "component2", "component3", "component4", "component4-0d7_KjU", "component5", "component5-0d7_KjU", "copy", "copy-gNMxBKI", "(FLandroidx/compose/ui/graphics/Shape;ZJJ)Landroidx/compose/ui/draw/ShadowGraphicsLayerElement;", "equals", "other", "", "hashCode", "", "toString", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B/\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n¢\u0006\u0004\b\f\u0010\rJ\u0019\u0010\u0019\u001a\u0013\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u001c0\u001a¢\u0006\u0002\b\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u0002H\u0016J\u0010\u0010\u001f\u001a\u00020\u001c2\u0006\u0010 \u001a\u00020\u0002H\u0016J\f\u0010!\u001a\u00020\u001c*\u00020\"H\u0016J\u0010\u0010#\u001a\u00020\u0004HÆ\u0003¢\u0006\u0004\b$\u0010\u000fJ\t\u0010%\u001a\u00020\u0006HÆ\u0003J\t\u0010&\u001a\u00020\bHÆ\u0003J\u0010\u0010'\u001a\u00020\nHÆ\u0003¢\u0006\u0004\b(\u0010\u0016J\u0010\u0010)\u001a\u00020\nHÆ\u0003¢\u0006\u0004\b*\u0010\u0016JB\u0010+\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\nHÆ\u0001¢\u0006\u0004\b,\u0010-J\u0014\u0010.\u001a\u00020\b2\b\u0010/\u001a\u0004\u0018\u000100HÖ\u0083\u0004J\n\u00101\u001a\u000202HÖ\u0081\u0004J\n\u00103\u001a\u000204HÖ\u0081\u0004R\u0013\u0010\u0003\u001a\u00020\u0004¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0013\u0010\t\u001a\u00020\n¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0015\u0010\u0016R\u0013\u0010\u000b\u001a\u00020\n¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0018\u0010\u0016¨\u00065"}, d2 = {"Landroidx/compose/ui/draw/ShadowGraphicsLayerElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/ui/graphics/BlockGraphicsLayerModifier;", "elevation", "Landroidx/compose/ui/unit/Dp;", "shape", "Landroidx/compose/ui/graphics/Shape;", "clip", "", "ambientColor", "Landroidx/compose/ui/graphics/Color;", "spotColor", "<init>", "(FLandroidx/compose/ui/graphics/Shape;ZJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getElevation-D9Ej5fM", "()F", "F", "getShape", "()Landroidx/compose/ui/graphics/Shape;", "getClip", "()Z", "getAmbientColor-0d7_KjU", "()J", "J", "getSpotColor-0d7_KjU", "createBlock", "Lkotlin/Function1;", "Landroidx/compose/ui/graphics/GraphicsLayerScope;", "", "Lkotlin/ExtensionFunctionType;", "create", "update", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "component1", "component1-D9Ej5fM", "component2", "component3", "component4", "component4-0d7_KjU", "component5", "component5-0d7_KjU", "copy", "copy-gNMxBKI", "(FLandroidx/compose/ui/graphics/Shape;ZJJ)Landroidx/compose/ui/draw/ShadowGraphicsLayerElement;", "equals", "other", "", "hashCode", "", "toString", "", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockGraphicsLayerModifier> {
     public static final int $stable = 0;
@@ -28,7 +28,7 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
     }
 
     /* renamed from: copy-gNMxBKI$default  reason: not valid java name */
-    public static /* synthetic */ ShadowGraphicsLayerElement m4361copygNMxBKI$default(ShadowGraphicsLayerElement shadowGraphicsLayerElement, float f, Shape shape, boolean z, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ ShadowGraphicsLayerElement m4937copygNMxBKI$default(ShadowGraphicsLayerElement shadowGraphicsLayerElement, float f, Shape shape, boolean z, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = shadowGraphicsLayerElement.elevation;
         }
@@ -46,11 +46,11 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
         }
         long j3 = j2;
         boolean z2 = z;
-        return shadowGraphicsLayerElement.m4365copygNMxBKI(f, shape, z2, j, j3);
+        return shadowGraphicsLayerElement.m4941copygNMxBKI(f, shape, z2, j, j3);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m4362component1D9Ej5fM() {
+    public final float m4938component1D9Ej5fM() {
         return this.elevation;
     }
 
@@ -63,17 +63,17 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
     }
 
     /* renamed from: component4-0d7_KjU  reason: not valid java name */
-    public final long m4363component40d7_KjU() {
+    public final long m4939component40d7_KjU() {
         return this.ambientColor;
     }
 
     /* renamed from: component5-0d7_KjU  reason: not valid java name */
-    public final long m4364component50d7_KjU() {
+    public final long m4940component50d7_KjU() {
         return this.spotColor;
     }
 
     /* renamed from: copy-gNMxBKI  reason: not valid java name */
-    public final ShadowGraphicsLayerElement m4365copygNMxBKI(float f, Shape shape, boolean z, long j, long j2) {
+    public final ShadowGraphicsLayerElement m4941copygNMxBKI(float f, Shape shape, boolean z, long j, long j2) {
         return new ShadowGraphicsLayerElement(f, shape, z, j, j2, null);
     }
 
@@ -84,18 +84,18 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
         }
         if (obj instanceof ShadowGraphicsLayerElement) {
             ShadowGraphicsLayerElement shadowGraphicsLayerElement = (ShadowGraphicsLayerElement) obj;
-            return Dp.m7560equalsimpl0(this.elevation, shadowGraphicsLayerElement.elevation) && Intrinsics.areEqual(this.shape, shadowGraphicsLayerElement.shape) && this.clip == shadowGraphicsLayerElement.clip && Color.m4773equalsimpl0(this.ambientColor, shadowGraphicsLayerElement.ambientColor) && Color.m4773equalsimpl0(this.spotColor, shadowGraphicsLayerElement.spotColor);
+            return Dp.m8165equalsimpl0(this.elevation, shadowGraphicsLayerElement.elevation) && Intrinsics.areEqual(this.shape, shadowGraphicsLayerElement.shape) && this.clip == shadowGraphicsLayerElement.clip && Color.m5349equalsimpl0(this.ambientColor, shadowGraphicsLayerElement.ambientColor) && Color.m5349equalsimpl0(this.spotColor, shadowGraphicsLayerElement.spotColor);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7561hashCodeimpl(this.elevation) * 31) + this.shape.hashCode()) * 31) + Boolean.hashCode(this.clip)) * 31) + Color.m4779hashCodeimpl(this.ambientColor)) * 31) + Color.m4779hashCodeimpl(this.spotColor);
+        return (((((((Dp.m8166hashCodeimpl(this.elevation) * 31) + this.shape.hashCode()) * 31) + Boolean.hashCode(this.clip)) * 31) + Color.m5355hashCodeimpl(this.ambientColor)) * 31) + Color.m5355hashCodeimpl(this.spotColor);
     }
 
     public String toString() {
-        return "ShadowGraphicsLayerElement(elevation=" + ((Object) Dp.m7566toStringimpl(this.elevation)) + ", shape=" + this.shape + ", clip=" + this.clip + ", ambientColor=" + ((Object) Color.m4780toStringimpl(this.ambientColor)) + ", spotColor=" + ((Object) Color.m4780toStringimpl(this.spotColor)) + ')';
+        return "ShadowGraphicsLayerElement(elevation=" + ((Object) Dp.m8171toStringimpl(this.elevation)) + ", shape=" + this.shape + ", clip=" + this.clip + ", ambientColor=" + ((Object) Color.m5356toStringimpl(this.ambientColor)) + ", spotColor=" + ((Object) Color.m5356toStringimpl(this.spotColor)) + ')';
     }
 
     private ShadowGraphicsLayerElement(float f, Shape shape, boolean z, long j, long j2) {
@@ -107,7 +107,7 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4367getElevationD9Ej5fM() {
+    public final float m4943getElevationD9Ej5fM() {
         return this.elevation;
     }
 
@@ -120,12 +120,12 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
     }
 
     /* renamed from: getAmbientColor-0d7_KjU  reason: not valid java name */
-    public final long m4366getAmbientColor0d7_KjU() {
+    public final long m4942getAmbientColor0d7_KjU() {
         return this.ambientColor;
     }
 
     /* renamed from: getSpotColor-0d7_KjU  reason: not valid java name */
-    public final long m4368getSpotColor0d7_KjU() {
+    public final long m4944getSpotColor0d7_KjU() {
         return this.spotColor;
     }
 
@@ -144,11 +144,11 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
-                graphicsLayerScope.setShadowElevation(graphicsLayerScope.mo405toPx0680j_4(ShadowGraphicsLayerElement.this.m4367getElevationD9Ej5fM()));
+                graphicsLayerScope.setShadowElevation(graphicsLayerScope.mo434toPx0680j_4(ShadowGraphicsLayerElement.this.m4943getElevationD9Ej5fM()));
                 graphicsLayerScope.setShape(ShadowGraphicsLayerElement.this.getShape());
                 graphicsLayerScope.setClip(ShadowGraphicsLayerElement.this.getClip());
-                graphicsLayerScope.mo4969setAmbientShadowColor8_81llA(ShadowGraphicsLayerElement.this.m4366getAmbientColor0d7_KjU());
-                graphicsLayerScope.mo4972setSpotShadowColor8_81llA(ShadowGraphicsLayerElement.this.m4368getSpotColor0d7_KjU());
+                graphicsLayerScope.mo5545setAmbientShadowColor8_81llA(ShadowGraphicsLayerElement.this.m4942getAmbientColor0d7_KjU());
+                graphicsLayerScope.mo5548setSpotShadowColor8_81llA(ShadowGraphicsLayerElement.this.m4944getSpotColor0d7_KjU());
             }
         };
     }
@@ -167,10 +167,10 @@ public final class ShadowGraphicsLayerElement extends ModifierNodeElement<BlockG
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void inspectableProperties(InspectorInfo inspectorInfo) {
         inspectorInfo.setName("shadow");
-        inspectorInfo.getProperties().set("elevation", Dp.m7553boximpl(this.elevation));
+        inspectorInfo.getProperties().set("elevation", Dp.m8158boximpl(this.elevation));
         inspectorInfo.getProperties().set("shape", this.shape);
         inspectorInfo.getProperties().set("clip", Boolean.valueOf(this.clip));
-        inspectorInfo.getProperties().set("ambientColor", Color.m4762boximpl(this.ambientColor));
-        inspectorInfo.getProperties().set("spotColor", Color.m4762boximpl(this.spotColor));
+        inspectorInfo.getProperties().set("ambientColor", Color.m5338boximpl(this.ambientColor));
+        inspectorInfo.getProperties().set("spotColor", Color.m5338boximpl(this.spotColor));
     }
 }

@@ -4,18 +4,18 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Async {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
     @Retention(RetentionPolicy.CLASS)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface Execute {
     }
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.PARAMETER})
     @Retention(RetentionPolicy.CLASS)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface Schedule {
     }
 

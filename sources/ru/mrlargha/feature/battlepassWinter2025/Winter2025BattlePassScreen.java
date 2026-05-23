@@ -1950,7 +1950,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         updateBlockTime(setLeftTime(j));
         Job job = this.blockTimerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new Winter2025BattlePassScreen$startLeftTimer$1(j, this, null), 3, null);
         this.blockTimerJob = launch$default;

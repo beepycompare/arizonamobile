@@ -1,62 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.content.Intent;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController;
+import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleObserver;
 /* loaded from: classes5.dex */
-public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
+public final class Ad implements ModuleServiceLifecycleController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f503a;
-    public final int b;
-    public final so c;
-    public final J2 d;
-    public PublicLogger e = PublicLogger.getAnonymousInstance();
+    public final W1 f456a;
 
-    public Ad(int i, String str, so soVar, J2 j2) {
-        this.b = i;
-        this.f503a = str;
-        this.c = soVar;
-        this.d = j2;
+    public Ad(W1 w1) {
+        this.f456a = w1;
     }
 
-    public final C0258fo a() {
-        C0258fo c0258fo = new C0258fo();
-        c0258fo.b = this.b;
-        c0258fo.f1006a = this.f503a.getBytes();
-        c0258fo.d = new C0310ho();
-        c0258fo.c = new C0284go();
-        return c0258fo;
+    public static final void a(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
+        moduleServiceLifecycleObserver.onFirstClientConnected();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
-    public abstract /* synthetic */ void a(Cdo cdo);
-
-    public final J2 b() {
-        return this.d;
+    public static final void b(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
+        moduleServiceLifecycleObserver.onAllClientsDisconnected();
     }
 
-    public final String c() {
-        return this.f503a;
-    }
-
-    public final so d() {
-        return this.c;
-    }
-
-    public final int e() {
-        return this.b;
-    }
-
-    public final boolean f() {
-        qo a2 = this.c.a(this.f503a);
-        if (a2.f1199a) {
-            return true;
-        }
-        this.e.warning("Attribute " + this.f503a + " of type " + ((String) On.f736a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
-        return false;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
-    public final void a(PublicLogger publicLogger) {
-        this.e = publicLogger;
+    @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController
+    public final void registerObserver(final ModuleServiceLifecycleObserver moduleServiceLifecycleObserver) {
+        this.f456a.b(new V1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.V1
+            public final void a(Intent intent) {
+                Ad.a(ModuleServiceLifecycleObserver.this, intent);
+            }
+        });
+        this.f456a.a(new V1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.impl.V1
+            public final void a(Intent intent) {
+                Ad.b(ModuleServiceLifecycleObserver.this, intent);
+            }
+        });
     }
 }

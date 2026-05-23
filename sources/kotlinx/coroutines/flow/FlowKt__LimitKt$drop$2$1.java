@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$drop$2$1<T> implements FlowCollector {
     final /* synthetic */ int $count;
@@ -24,7 +25,7 @@ public final class FlowKt__LimitKt$drop$2$1<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -47,6 +48,7 @@ public final class FlowKt__LimitKt$drop$2$1<T> implements FlowCollector {
                         return Unit.INSTANCE;
                     }
                     FlowCollector<T> flowCollector = this.$this_flow;
+                    flowKt__LimitKt$drop$2$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__LimitKt$drop$2$1$emit$1.label = 1;
                     if (flowCollector.emit(t, flowKt__LimitKt$drop$2$1$emit$1) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -54,13 +56,14 @@ public final class FlowKt__LimitKt$drop$2$1<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    Object obj2 = flowKt__LimitKt$drop$2$1$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return Unit.INSTANCE;
             }
         }
         flowKt__LimitKt$drop$2$1$emit$1 = new FlowKt__LimitKt$drop$2$1$emit$1(this, continuation);
-        Object obj2 = flowKt__LimitKt$drop$2$1$emit$1.result;
+        Object obj3 = flowKt__LimitKt$drop$2$1$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__LimitKt$drop$2$1$emit$1.label;
         if (i != 0) {

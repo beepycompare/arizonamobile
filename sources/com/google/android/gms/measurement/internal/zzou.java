@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Collections;
 import java.util.HashMap;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzou extends zzol {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -56,52 +56,50 @@ public final class zzou extends zzol {
         zzb.zza((com.google.android.gms.internal.measurement.zzin) Preconditions.checkNotNull(com.google.android.gms.internal.measurement.zzin.zzb(zzu2.zzaL())));
         String zzd = zzu2.zzd();
         com.google.android.gms.internal.measurement.zzgl zzb2 = zzpgVar.zzh().zzb(str);
-        if (zzb2 != null && (zzu = zzpgVar.zzj().zzu(str)) != null && ((zzb2.zzp() && zzb2.zzq().zzc() == 100) || this.zzu.zzk().zzaa(str, zzu.zzay()) || (!TextUtils.isEmpty(zzd) && Math.abs(zzd.hashCode() % 100) < zzb2.zzq().zzc()))) {
-            String zzc = zzu2.zzc();
-            zzb.zzb(2);
-            com.google.android.gms.internal.measurement.zzgl zzb3 = zzpgVar.zzh().zzb(zzu2.zzc());
-            if (zzb3 == null || !zzb3.zzp()) {
-                this.zzu.zzaV().zzk().zzb("[sgtm] Missing sgtm_setting in remote config. appId", zzc);
-                zzb.zzc(4);
-            } else {
-                HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(zzu2.zzay())) {
-                    hashMap.put("x-gtm-server-preview", zzu2.zzay());
-                }
-                String zzd2 = zzb3.zzq().zzd();
-                com.google.android.gms.internal.measurement.zzin zzb4 = com.google.android.gms.internal.measurement.zzin.zzb(zzu2.zzaL());
-                if (zzb4 == null || zzb4 == com.google.android.gms.internal.measurement.zzin.CLIENT_UPLOAD_ELIGIBLE) {
-                    if (zzf(zzu2.zzc())) {
-                        zzb.zza(com.google.android.gms.internal.measurement.zzin.PINNED_TO_SERVICE_UPLOAD);
-                    } else if (!TextUtils.isEmpty(zzd2)) {
-                        this.zzu.zzaV().zzk().zzb("[sgtm] Eligible for client side upload. appId", zzc);
-                        zzb.zzb(3);
-                        zzb.zza(com.google.android.gms.internal.measurement.zzin.CLIENT_UPLOAD_ELIGIBLE);
-                        zzotVar = new zzot(zzd2, hashMap, zzls.SGTM_CLIENT, (com.google.android.gms.internal.measurement.zzis) zzb.zzbc());
-                    } else {
-                        zzb.zza(com.google.android.gms.internal.measurement.zzin.MISSING_SGTM_SERVER_URL);
-                    }
-                } else {
-                    zzb.zza(zzb4);
-                }
-                zzb3.zzq().zza();
-                zzb3.zzq().zzb();
-                zzic zzicVar = this.zzu;
-                zzicVar.zzaU();
-                if (!TextUtils.isEmpty(zzd2)) {
-                    zzicVar.zzaV().zzk().zzb("[sgtm] Eligible for local service direct upload. appId", zzc);
-                    zzb.zzb(5);
-                    zzb.zzc(2);
-                    zzotVar = new zzot(zzd2, hashMap, zzls.SGTM, (com.google.android.gms.internal.measurement.zzis) zzb.zzbc());
-                } else {
-                    zzb.zzc(6);
-                    zzicVar.zzaV().zzk().zzb("[sgtm] Local service, missing sgtm_server_url", zzu2.zzc());
-                }
-            }
-            return zzotVar != null ? zzotVar : new zzot(zzd(str), Collections.emptyMap(), zzls.GOOGLE_ANALYTICS, (com.google.android.gms.internal.measurement.zzis) zzb.zzbc());
+        if (zzb2 == null || (zzu = zzpgVar.zzj().zzu(str)) == null || ((!zzb2.zzp() || zzb2.zzq().zzc() != 100) && !this.zzu.zzk().zzad(str, zzu.zzay()) && (TextUtils.isEmpty(zzd) || Math.abs(zzd.hashCode() % 100) >= zzb2.zzq().zzc()))) {
+            zzb.zzc(3);
+            return new zzot(zzd(str), Collections.emptyMap(), zzls.GOOGLE_ANALYTICS, (com.google.android.gms.internal.measurement.zzis) zzb.zzbd());
         }
-        zzb.zzc(3);
-        return new zzot(zzd(str), Collections.emptyMap(), zzls.GOOGLE_ANALYTICS, (com.google.android.gms.internal.measurement.zzis) zzb.zzbc());
+        String zzc = zzu2.zzc();
+        zzb.zzb(2);
+        com.google.android.gms.internal.measurement.zzgl zzb3 = zzpgVar.zzh().zzb(zzu2.zzc());
+        if (zzb3 == null || !zzb3.zzp()) {
+            this.zzu.zzaW().zzk().zzb("[sgtm] Missing sgtm_setting in remote config. appId", zzc);
+            zzb.zzc(4);
+        } else {
+            HashMap hashMap = new HashMap();
+            if (!TextUtils.isEmpty(zzu2.zzay())) {
+                hashMap.put("x-gtm-server-preview", zzu2.zzay());
+            }
+            String zzd2 = zzb3.zzq().zzd();
+            com.google.android.gms.internal.measurement.zzin zzb4 = com.google.android.gms.internal.measurement.zzin.zzb(zzu2.zzaL());
+            if (zzb4 != null && zzb4 != com.google.android.gms.internal.measurement.zzin.CLIENT_UPLOAD_ELIGIBLE) {
+                zzb.zza(zzb4);
+            } else if (zzf(zzu2.zzc())) {
+                zzb.zza(com.google.android.gms.internal.measurement.zzin.PINNED_TO_SERVICE_UPLOAD);
+            } else if (!TextUtils.isEmpty(zzd2)) {
+                this.zzu.zzaW().zzk().zzb("[sgtm] Eligible for client side upload. appId", zzc);
+                zzb.zzb(3);
+                zzb.zza(com.google.android.gms.internal.measurement.zzin.CLIENT_UPLOAD_ELIGIBLE);
+                zzotVar = new zzot(zzd2, hashMap, zzls.SGTM_CLIENT, (com.google.android.gms.internal.measurement.zzis) zzb.zzbd());
+            } else {
+                zzb.zza(com.google.android.gms.internal.measurement.zzin.MISSING_SGTM_SERVER_URL);
+            }
+            zzb3.zzq().zza();
+            zzb3.zzq().zzb();
+            zzic zzicVar = this.zzu;
+            zzicVar.zzaV();
+            if (!TextUtils.isEmpty(zzd2)) {
+                zzicVar.zzaW().zzk().zzb("[sgtm] Eligible for local service direct upload. appId", zzc);
+                zzb.zzb(5);
+                zzb.zzc(2);
+                zzotVar = new zzot(zzd2, hashMap, zzls.SGTM, (com.google.android.gms.internal.measurement.zzis) zzb.zzbd());
+            } else {
+                zzb.zzc(6);
+                zzicVar.zzaW().zzk().zzb("[sgtm] Local service, missing sgtm_server_url", zzu2.zzc());
+            }
+        }
+        return zzotVar != null ? zzotVar : new zzot(zzd(str), Collections.emptyMap(), zzls.GOOGLE_ANALYTICS, (com.google.android.gms.internal.measurement.zzis) zzb.zzbd());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

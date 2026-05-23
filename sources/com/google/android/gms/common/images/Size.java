@@ -1,5 +1,5 @@
 package com.google.android.gms.common.images;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class Size {
     private final int zaa;
@@ -11,7 +11,11 @@ public final class Size {
     }
 
     private static NumberFormatException zaa(String str) {
-        throw new NumberFormatException("Invalid Size: \"" + str + "\"");
+        StringBuilder sb = new StringBuilder(str.length() + 16);
+        sb.append("Invalid Size: \"");
+        sb.append(str);
+        sb.append("\"");
+        throw new NumberFormatException(sb.toString());
     }
 
     public boolean equals(Object obj) {
@@ -44,7 +48,14 @@ public final class Size {
     }
 
     public String toString() {
-        return this.zaa + "x" + this.zab;
+        int i = this.zaa;
+        int length = String.valueOf(i).length();
+        int i2 = this.zab;
+        StringBuilder sb = new StringBuilder(length + 1 + String.valueOf(i2).length());
+        sb.append(i);
+        sb.append("x");
+        sb.append(i2);
+        return sb.toString();
     }
 
     public static Size parseSize(String str) throws NumberFormatException {

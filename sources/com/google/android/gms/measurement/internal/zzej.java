@@ -1,15 +1,17 @@
 package com.google.android.gms.measurement.internal;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import com.google.android.gms.internal.measurement.zzags;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final /* synthetic */ class zzej implements zzbn {
+final /* synthetic */ class zzej implements zzbo {
     static final /* synthetic */ zzej zza = new zzej();
 
     private /* synthetic */ zzej() {
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzbn
+    @Override // com.google.android.gms.measurement.internal.zzbo
     public final /* synthetic */ Object zza() {
         zzfx zzfxVar = zzfy.zza;
-        return Long.valueOf(com.google.android.gms.internal.measurement.zzpc.zzZ());
+        return Long.valueOf(zzags.zzab());
     }
 }

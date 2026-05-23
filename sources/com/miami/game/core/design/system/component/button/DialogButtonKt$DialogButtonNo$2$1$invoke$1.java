@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: DialogButton.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonNo$2$1", f = "DialogButton.kt", i = {0}, l = {145}, m = "invoke", n = {"$this$pointerInput"}, nl = {-1}, s = {"L$0"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DialogButtonKt$DialogButtonNo$2$1$invoke$1 extends ContinuationImpl {
     Object L$0;
     int label;

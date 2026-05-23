@@ -40,6 +40,7 @@ public abstract class Mp4Box {
     public static final int TYPE_dac3 = 1684103987;
     public static final int TYPE_dac4 = 1684103988;
     public static final int TYPE_data = 1684108385;
+    public static final int TYPE_dav1 = 1684108849;
     public static final int TYPE_ddts = 1684305011;
     public static final int TYPE_dec3 = 1684366131;
     public static final int TYPE_dfLa = 1684425825;
@@ -155,6 +156,9 @@ public abstract class Mp4Box {
     public static final int TYPE_vp08 = 1987063864;
     public static final int TYPE_vp09 = 1987063865;
     public static final int TYPE_vpcC = 1987076931;
+    public static final int TYPE_vvc1 = 1987470129;
+    public static final int TYPE_vvcC = 1987470147;
+    public static final int TYPE_vvi1 = 1987471665;
     public static final int TYPE_wave = 2002876005;
     public static final int TYPE_wvtt = 2004251764;
     public static final int TYPE_xyz = -1451722374;

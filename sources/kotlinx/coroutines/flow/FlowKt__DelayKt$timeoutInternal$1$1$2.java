@@ -11,23 +11,25 @@ import kotlin.jvm.functions.Function1;
 import kotlin.time.Duration;
 import kotlinx.coroutines.TimeoutCancellationException;
 /* compiled from: Delay.kt */
-@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0001\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2", f = "Delay.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0001\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2", f = "Delay.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 final class FlowKt__DelayKt$timeoutInternal$1$1$2 extends SuspendLambda implements Function1<Continuation<?>, Object> {
-    final /* synthetic */ long $timeout;
+
+    /* renamed from: $$v$c$kotlin-time-Duration$-timeout$0  reason: not valid java name */
+    final /* synthetic */ long f77$$v$c$kotlintimeDuration$timeout$0;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FlowKt__DelayKt$timeoutInternal$1$1$2(long j, Continuation<? super FlowKt__DelayKt$timeoutInternal$1$1$2> continuation) {
         super(1, continuation);
-        this.$timeout = j;
+        this.f77$$v$c$kotlintimeDuration$timeout$0 = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Continuation<?> continuation) {
-        return new FlowKt__DelayKt$timeoutInternal$1$1$2(this.$timeout, continuation);
+        return new FlowKt__DelayKt$timeoutInternal$1$1$2(this.f77$$v$c$kotlintimeDuration$timeout$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -42,6 +44,6 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$2 extends SuspendLambda implemen
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        throw new TimeoutCancellationException("Timed out waiting for " + ((Object) Duration.m10598toStringimpl(this.$timeout)));
+        throw new TimeoutCancellationException("Timed out waiting for " + ((Object) Duration.m11238toStringimpl(this.f77$$v$c$kotlintimeDuration$timeout$0)));
     }
 }

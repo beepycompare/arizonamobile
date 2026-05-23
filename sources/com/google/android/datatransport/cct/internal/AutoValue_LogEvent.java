@@ -2,7 +2,7 @@ package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.LogEvent;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_LogEvent extends LogEvent {
     private final ComplianceData complianceData;
     private final Integer eventCode;
@@ -115,7 +115,7 @@ final class AutoValue_LogEvent extends LogEvent {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends LogEvent.Builder {
         private ComplianceData complianceData;
         private Integer eventCode;

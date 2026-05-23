@@ -14,6 +14,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({FenumTop.class})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface FenumUnqualified {
 }

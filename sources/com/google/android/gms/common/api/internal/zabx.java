@@ -1,37 +1,69 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.app.Activity;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.CancellationException;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zabx extends BroadcastReceiver {
-    Context zaa;
-    private final zabw zab;
+public final class zabx extends zap {
+    private TaskCompletionSource zad;
 
-    public zabx(zabw zabwVar) {
-        this.zab = zabwVar;
+    private zabx(LifecycleFragment lifecycleFragment) {
+        super(lifecycleFragment, GoogleApiAvailability.getInstance());
+        this.zad = new TaskCompletionSource();
+        this.mLifecycleFragment.addCallback("GmsAvailabilityHelper", this);
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        Uri data = intent.getData();
-        if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
-            this.zab.zaa();
-            zab();
+    public static zabx zaa(Activity activity) {
+        LifecycleFragment fragment = getFragment(activity);
+        zabx zabxVar = (zabx) fragment.getCallbackOrNull("GmsAvailabilityHelper", zabx.class);
+        if (zabxVar != null) {
+            if (zabxVar.zad.getTask().isComplete()) {
+                zabxVar.zad = new TaskCompletionSource();
+            }
+            return zabxVar;
         }
+        return new zabx(fragment);
     }
 
-    public final void zaa(Context context) {
-        this.zaa = context;
+    @Override // com.google.android.gms.common.api.internal.LifecycleCallback
+    public final void onDestroy() {
+        super.onDestroy();
+        this.zad.trySetException(new CancellationException("Host activity was destroyed before Google Play services could be made available."));
     }
 
-    public final synchronized void zab() {
-        Context context = this.zaa;
-        if (context != null) {
-            context.unregisterReceiver(this);
+    public final Task zab() {
+        return this.zad.getTask();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zap
+    protected final void zad(ConnectionResult connectionResult, int i) {
+        String errorMessage = connectionResult.getErrorMessage();
+        if (errorMessage == null) {
+            errorMessage = "Error connecting to Google Play services";
         }
-        this.zaa = null;
+        this.zad.setException(new ApiException(new Status(connectionResult, errorMessage, connectionResult.getErrorCode())));
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zap
+    protected final void zae() {
+        Activity lifecycleActivity = this.mLifecycleFragment.getLifecycleActivity();
+        if (lifecycleActivity == null) {
+            this.zad.trySetException(new ApiException(new Status(8)));
+            return;
+        }
+        int isGooglePlayServicesAvailable = this.zac.isGooglePlayServicesAvailable(lifecycleActivity);
+        TaskCompletionSource taskCompletionSource = this.zad;
+        if (isGooglePlayServicesAvailable == 0) {
+            taskCompletionSource.trySetResult(null);
+        } else if (taskCompletionSource.getTask().isComplete()) {
+        } else {
+            zaf(new ConnectionResult(isGooglePlayServicesAvailable, null), 0);
+        }
     }
 }

@@ -8,37 +8,37 @@ import kotlin.Metadata;
 public final class ExtendedFabMediumTokens {
     public static final int $stable = 0;
     public static final ExtendedFabMediumTokens INSTANCE = new ExtendedFabMediumTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(80.0f);
-    private static final float IconLabelSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(28.0f);
-    private static final float LeadingSpace = Dp.m7555constructorimpl(26.0f);
-    private static final float TrailingSpace = Dp.m7555constructorimpl(26.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(80.0f);
+    private static final float IconLabelSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(28.0f);
+    private static final float LeadingSpace = Dp.m8160constructorimpl(26.0f);
+    private static final float TrailingSpace = Dp.m8160constructorimpl(26.0f);
 
     private ExtendedFabMediumTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3370getContainerHeightD9Ej5fM() {
+    public final float m3815getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3371getIconLabelSpaceD9Ej5fM() {
+    public final float m3816getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3372getIconSizeD9Ej5fM() {
+    public final float m3817getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3373getLeadingSpaceD9Ej5fM() {
+    public final float m3818getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3374getTrailingSpaceD9Ej5fM() {
+    public final float m3819getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 }

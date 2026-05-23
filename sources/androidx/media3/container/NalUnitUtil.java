@@ -56,6 +56,9 @@ public final class NalUnitUtil {
     @Deprecated
     public static final int NAL_UNIT_TYPE_SPS = 7;
     private static final String TAG = "NalUnitUtil";
+    public static final int VVC_NAL_UNIT_TYPE_DCI = 13;
+    public static final int VVC_NAL_UNIT_TYPE_OPI = 12;
+    public static final int VVC_NAL_UNIT_TYPE_PREFIX_SEI = 23;
     public static final byte[] NAL_START_CODE = {0, 0, 0, 1};
     public static final float[] ASPECT_RATIO_IDC_VALUES = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 2.1818182f, 1.8181819f, 2.909091f, 2.4242425f, 1.6363636f, 1.3636364f, 1.939394f, 1.6161616f, 1.3333334f, 1.5f, 2.0f};
     private static final Object scratchEscapePositionsLock = new Object();
@@ -128,7 +131,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265NalHeader {
         public final int layerId;
         public final int nalUnitType;
@@ -141,7 +144,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265LayerInfo {
         public final int layerIdInVps;
         public final int viewId;
@@ -152,7 +155,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265ProfileTierLevel {
         public final int[] constraintBytes;
         public final int generalLevelIdc;
@@ -171,7 +174,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265ProfileTierLevelsAndIndices {
         public final int[] indices;
         public final ImmutableList<H265ProfileTierLevel> profileTierLevels;
@@ -182,7 +185,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265RepFormat {
         public final int bitDepthChromaMinus8;
         public final int bitDepthLumaMinus8;
@@ -199,7 +202,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265RepFormatsAndIndices {
         public final int[] indices;
         public final ImmutableList<H265RepFormat> repFormats;
@@ -210,7 +213,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265VideoSignalInfo {
         public final int colorRange;
         public final int colorSpace;
@@ -223,7 +226,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265VideoSignalInfosAndIndices {
         public final int[] indices;
         public final ImmutableList<H265VideoSignalInfo> videoSignalInfos;
@@ -234,7 +237,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265VpsData {
         public final ImmutableList<H265LayerInfo> layerInfos;
         public final H265NalHeader nalHeader;
@@ -303,7 +306,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265Sei3dRefDisplayInfoData {
         public final int exponentRefDisplayWidth;
         public final int exponentRefViewingDist;
@@ -403,9 +406,48 @@ public final class NalUnitUtil {
         return (MimeTypes.VIDEO_H264.equals(str) && (b & Ascii.US) == 6) || (MimeTypes.VIDEO_H265.equals(str) && ((b & 126) >> 1) == 39);
     }
 
+    @Deprecated
     public static boolean isNalUnitSei(Format format, byte b) {
+        return isNalUnitSei(format, new byte[]{b}, 0);
+    }
+
+    public static boolean isNalUnitSei(Format format, byte[] bArr, int i) {
         String nalStructureMimeType = getNalStructureMimeType(format);
-        return (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H264) && (b & Ascii.US) == 6) || (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H265) && ((b & 126) >> 1) == 39);
+        if (nalStructureMimeType == null) {
+            return false;
+        }
+        nalStructureMimeType.hashCode();
+        char c = 65535;
+        switch (nalStructureMimeType.hashCode()) {
+            case -1662541442:
+                if (nalStructureMimeType.equals(MimeTypes.VIDEO_H265)) {
+                    c = 0;
+                    break;
+                }
+                break;
+            case 1331836730:
+                if (nalStructureMimeType.equals(MimeTypes.VIDEO_H264)) {
+                    c = 1;
+                    break;
+                }
+                break;
+            case 1331856911:
+                if (nalStructureMimeType.equals(MimeTypes.VIDEO_H266)) {
+                    c = 2;
+                    break;
+                }
+                break;
+        }
+        switch (c) {
+            case 0:
+                return ((bArr[i] & 126) >> 1) == 39;
+            case 1:
+                return (bArr[i] & Ascii.US) == 6;
+            case 2:
+                return ((bArr[i + 1] & 248) >> 3) == 23;
+            default:
+                return false;
+        }
     }
 
     public static int getNalUnitType(byte[] bArr, int i) {
@@ -417,7 +459,7 @@ public final class NalUnitUtil {
         if (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H264)) {
             return 1;
         }
-        return Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H265) ? 2 : 0;
+        return (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H265) || Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H266)) ? 2 : 0;
     }
 
     public static boolean isDependedOn(byte[] bArr, int i, int i2, Format format) {

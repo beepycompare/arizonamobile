@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager", f = "TextFieldSelectionManager.kt", i = {}, l = {822}, m = "updateClipboardEntry$foundation", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager", f = "TextFieldSelectionManager.kt", i = {}, l = {827}, m = "updateClipboardEntry$foundation", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$updateClipboardEntry$1 extends ContinuationImpl {
     Object L$0;

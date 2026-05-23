@@ -9,16 +9,16 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 import java.util.Set;
 import javax.inject.Qualifier;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FragmentGetContextFix {
 
     @Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD})
     @Qualifier
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface DisableFragmentGetContextFix {
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface FragmentGetContextFixEntryPoint {
         Set<Boolean> getDisableFragmentGetContextFix();
     }
@@ -33,7 +33,7 @@ public final class FragmentGetContextFix {
     }
 
     @Module
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static abstract class FragmentGetContextFixModule {
         @Multibinds
         abstract Set<Boolean> disableFragmentGetContextFix();

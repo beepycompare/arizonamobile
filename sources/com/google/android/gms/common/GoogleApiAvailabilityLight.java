@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
 import androidx.core.app.PendingIntentCompat;
-import androidx.media3.common.C;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.vending.expansion.downloader.Constants;
@@ -123,7 +122,7 @@ public class GoogleApiAvailabilityLight {
         if (errorResolutionIntent == null) {
             return null;
         }
-        return PendingIntentCompat.getActivity(context, i2, errorResolutionIntent, C.BUFFER_FLAG_FIRST_SAMPLE, false);
+        return PendingIntentCompat.getActivity(context, i2, errorResolutionIntent, 134217728, false);
     }
 
     public int isGooglePlayServicesAvailable(Context context, int i) {

@@ -39,7 +39,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: AnimatedVisibility.kt */
-@Metadata(d1 = {"\u0000h\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u001a[\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0011\u001a_\u0010\u0000\u001a\u00020\u0001*\u00020\u00122\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0013\u001a_\u0010\u0000\u001a\u00020\u0001*\u00020\u00142\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0015\u001aa\u0010\u0000\u001a\u00020\u00012\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0018\u001ae\u0010\u0000\u001a\u00020\u0001*\u00020\u00122\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0019\u001ae\u0010\u0000\u001a\u00020\u0001*\u00020\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001a\u001am\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b*\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001d\u001ak\u0010\u001e\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010 \u001a\u0091\u0001\u0010!\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0018\u0010\"\u001a\u0014\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\u00030#2\n\b\u0002\u0010%\u001a\u0004\u0018\u00010&2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010'\u001a9\u0010+\u001a\u00020$\"\u0004\b\u0000\u0010\u001b*\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010,\u001a\u0002H\u001bH\u0003¢\u0006\u0002\u0010-\"\u001e\u0010(\u001a\u00020\u0003*\b\u0012\u0004\u0012\u00020$0\u001c8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*¨\u0006.²\u0006\u001c\u0010/\u001a\u0014\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\u00030#X\u008a\u0084\u0002²\u0006\n\u00100\u001a\u00020\u0003X\u008a\u0084\u0002"}, d2 = {"AnimatedVisibility", "", "visible", "", "modifier", "Landroidx/compose/ui/Modifier;", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", Constants.ScionAnalytics.PARAM_LABEL, "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/animation/AnimatedVisibilityScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/foundation/layout/RowScope;", "(Landroidx/compose/foundation/layout/RowScope;ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/foundation/layout/ColumnScope;", "(Landroidx/compose/foundation/layout/ColumnScope;ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "visibleState", "Landroidx/compose/animation/core/MutableTransitionState;", "(Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/foundation/layout/RowScope;Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/foundation/layout/ColumnScope;Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/animation/core/Transition;", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "AnimatedVisibilityImpl", "transition", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "AnimatedEnterExitImpl", "shouldDisposeBlock", "Lkotlin/Function2;", "Landroidx/compose/animation/EnterExitState;", "onLookaheadMeasured", "Landroidx/compose/animation/OnLookaheadMeasured;", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function2;Landroidx/compose/animation/OnLookaheadMeasured;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "exitFinished", "getExitFinished", "(Landroidx/compose/animation/core/Transition;)Z", "targetEnterExit", "targetState", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/animation/EnterExitState;", "animation", "shouldDisposeBlockUpdated", "shouldDisposeAfterExit"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u001a[\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0011\u001a_\u0010\u0000\u001a\u00020\u0001*\u00020\u00122\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0013\u001a_\u0010\u0000\u001a\u00020\u0001*\u00020\u00142\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0015\u001aa\u0010\u0000\u001a\u00020\u00012\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0018\u001ae\u0010\u0000\u001a\u00020\u0001*\u00020\u00122\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0019\u001ae\u0010\u0000\u001a\u00020\u0001*\u00020\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u00172\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001a\u001am\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b*\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001d\u001ak\u0010\u001e\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010 \u001a\u0091\u0001\u0010!\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0018\u0010\"\u001a\u0014\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\u00030#2\n\b\u0002\u0010%\u001a\u0004\u0018\u00010&2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010'\u001a9\u0010+\u001a\u00020$\"\u0004\b\u0000\u0010\u001b*\b\u0012\u0004\u0012\u0002H\u001b0\u001c2\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u0002H\u001b\u0012\u0004\u0012\u00020\u00030\r2\u0006\u0010,\u001a\u0002H\u001bH\u0003¢\u0006\u0002\u0010-\"\u001e\u0010(\u001a\u00020\u0003*\b\u0012\u0004\u0012\u00020$0\u001c8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b)\u0010*¨\u0006.²\u0006\u001c\u0010/\u001a\u0014\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020\u00030#X\u008a\u0084\u0002²\u0006\n\u00100\u001a\u00020\u0003X\u008a\u0084\u0002"}, d2 = {"AnimatedVisibility", "", "visible", "", "modifier", "Landroidx/compose/ui/Modifier;", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", Constants.ScionAnalytics.PARAM_LABEL, "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/animation/AnimatedVisibilityScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/foundation/layout/RowScope;", "(Landroidx/compose/foundation/layout/RowScope;ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/foundation/layout/ColumnScope;", "(Landroidx/compose/foundation/layout/ColumnScope;ZLandroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "visibleState", "Landroidx/compose/animation/core/MutableTransitionState;", "(Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/foundation/layout/RowScope;Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/foundation/layout/ColumnScope;Landroidx/compose/animation/core/MutableTransitionState;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/animation/core/Transition;", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "AnimatedVisibilityImpl", "transition", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "AnimatedEnterExitImpl", "shouldDisposeBlock", "Lkotlin/Function2;", "Landroidx/compose/animation/EnterExitState;", "onLookaheadMeasured", "Landroidx/compose/animation/OnLookaheadMeasured;", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;Lkotlin/jvm/functions/Function2;Landroidx/compose/animation/OnLookaheadMeasured;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "exitFinished", "getExitFinished", "(Landroidx/compose/animation/core/Transition;)Z", "targetEnterExit", "targetState", "(Landroidx/compose/animation/core/Transition;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/animation/EnterExitState;", "animation", "shouldDisposeBlockUpdated", "shouldDisposeAfterExit"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AnimatedVisibilityKt {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
@@ -75,7 +75,7 @@ public final class AnimatedVisibilityKt {
         int i7;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-1448730565);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)131@7032L32,132@7104L6,132@7069L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visible,modifier,enter,exit,label,content)132@7073L32,133@7145L6,133@7110L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 6) == 0) {
             z2 = z;
             i3 = (startRestartGroup.changed(z2) ? 4 : 2) | i;
@@ -127,7 +127,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus2 = i5 != 0 ? EnterExitTransitionKt.shrinkOut$default(null, null, false, null, 15, null).plus(EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null)) : obj3;
                             String str3 = i7 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-1448730565, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:130)");
+                                ComposerKt.traceEventStart(-1448730565, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:131)");
                             }
                             Transition updateTransition = androidx.compose.animation.core.TransitionKt.updateTransition(Boolean.valueOf(z2), str3, startRestartGroup, (i3 & 14) | ((i3 >> 9) & 112), 0);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -660656671, "CC(remember):AnimatedVisibility.kt#9igjgp");
@@ -267,7 +267,7 @@ public final class AnimatedVisibilityKt {
         final String str2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(234057107);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)205@11418L32,206@11490L6,206@11455L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visible,modifier,enter,exit,label,content)206@11459L32,207@11531L6,207@11496L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 48) == 0) {
             i3 = (startRestartGroup.changed(z) ? 32 : 16) | i;
         } else {
@@ -313,7 +313,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus = i5 != 0 ? EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null).plus(EnterExitTransitionKt.shrinkHorizontally$default(null, null, false, null, 15, null)) : obj3;
                             String str3 = i6 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(234057107, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:204)");
+                                ComposerKt.traceEventStart(234057107, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:205)");
                             }
                             int i8 = i3 >> 3;
                             Transition updateTransition = androidx.compose.animation.core.TransitionKt.updateTransition(Boolean.valueOf(z), str3, startRestartGroup, (i8 & 14) | ((i3 >> 12) & 112), 0);
@@ -454,7 +454,7 @@ public final class AnimatedVisibilityKt {
         final String str2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(1799879339);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)278@15785L32,279@15857L6,279@15822L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visible,modifier,enter,exit,label,content)279@15826L32,280@15898L6,280@15863L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 48) == 0) {
             i3 = (startRestartGroup.changed(z) ? 32 : 16) | i;
         } else {
@@ -500,7 +500,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus = i5 != 0 ? EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null).plus(EnterExitTransitionKt.shrinkVertically$default(null, null, false, null, 15, null)) : obj3;
                             String str3 = i6 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1799879339, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:277)");
+                                ComposerKt.traceEventStart(1799879339, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:278)");
                             }
                             int i8 = i3 >> 3;
                             Transition updateTransition = androidx.compose.animation.core.TransitionKt.updateTransition(Boolean.valueOf(z), str3, startRestartGroup, (i8 & 14) | ((i3 >> 12) & 112), 0);
@@ -643,7 +643,7 @@ public final class AnimatedVisibilityKt {
         int i7;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(657024243);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)377@21247L39,378@21326L6,378@21291L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visibleState,modifier,enter,exit,label,content)378@21288L39,379@21367L6,379@21332L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 6) == 0) {
             i3 = ((i & 8) == 0 ? startRestartGroup.changed(mutableTransitionState) : startRestartGroup.changedInstance(mutableTransitionState) ? 4 : 2) | i;
         } else {
@@ -693,7 +693,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus2 = i5 != 0 ? EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null).plus(EnterExitTransitionKt.shrinkOut$default(null, null, false, null, 15, null)) : obj3;
                             String str3 = i7 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(657024243, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:376)");
+                                ComposerKt.traceEventStart(657024243, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:377)");
                             }
                             Transition rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, str3, startRestartGroup, MutableTransitionState.$stable | (i3 & 14) | ((i3 >> 9) & 112), 0);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 40118553, "CC(remember):AnimatedVisibility.kt#9igjgp");
@@ -833,7 +833,7 @@ public final class AnimatedVisibilityKt {
         final String str2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(1763490971);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)449@25685L39,450@25764L6,450@25729L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visibleState,modifier,enter,exit,label,content)450@25726L39,451@25805L6,451@25770L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 48) == 0) {
             i3 = ((i & 64) == 0 ? startRestartGroup.changed(mutableTransitionState) : startRestartGroup.changedInstance(mutableTransitionState) ? 32 : 16) | i;
         } else {
@@ -879,7 +879,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus = i5 != 0 ? EnterExitTransitionKt.shrinkHorizontally$default(null, null, false, null, 15, null).plus(EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null)) : obj3;
                             String str3 = i6 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(1763490971, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:448)");
+                                ComposerKt.traceEventStart(1763490971, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:449)");
                             }
                             int i8 = i3 >> 3;
                             Transition rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, str3, startRestartGroup, MutableTransitionState.$stable | (i8 & 14) | ((i3 >> 12) & 112), 0);
@@ -1020,7 +1020,7 @@ public final class AnimatedVisibilityKt {
         final String str2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(-1238803325);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(5,4,1,2,3)523@30218L39,524@30297L6,524@30262L84:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visibleState,modifier,enter,exit,label,content)524@30259L39,525@30338L6,525@30303L84:AnimatedVisibility.kt#xbi5r1");
         if ((i & 48) == 0) {
             i3 = ((i & 64) == 0 ? startRestartGroup.changed(mutableTransitionState) : startRestartGroup.changedInstance(mutableTransitionState) ? 32 : 16) | i;
         } else {
@@ -1066,7 +1066,7 @@ public final class AnimatedVisibilityKt {
                             ExitTransition plus = i5 != 0 ? EnterExitTransitionKt.shrinkVertically$default(null, null, false, null, 15, null).plus(EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null)) : obj3;
                             String str3 = i6 != 0 ? "AnimatedVisibility" : str;
                             if (ComposerKt.isTraceInProgress()) {
-                                ComposerKt.traceEventStart(-1238803325, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:522)");
+                                ComposerKt.traceEventStart(-1238803325, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:523)");
                             }
                             int i8 = i3 >> 3;
                             Transition rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, str3, startRestartGroup, MutableTransitionState.$stable | (i8 & 14) | ((i3 >> 12) & 112), 0);
@@ -1201,7 +1201,7 @@ public final class AnimatedVisibilityKt {
         final ExitTransition exitTransition2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(-1699747442);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)P(4,3,1,2)593@34536L79:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibility)N(visible,modifier,enter,exit,content)594@34577L79:AnimatedVisibility.kt#xbi5r1");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(transition) ? 4 : 2) | i;
         } else {
@@ -1239,7 +1239,7 @@ public final class AnimatedVisibilityKt {
                         EnterTransition plus = i4 != 0 ? EnterExitTransitionKt.fadeIn$default(null, 0.0f, 3, null).plus(EnterExitTransitionKt.expandIn$default(null, null, false, null, 15, null)) : obj2;
                         ExitTransition plus2 = i5 != 0 ? EnterExitTransitionKt.shrinkOut$default(null, null, false, null, 15, null).plus(EnterExitTransitionKt.fadeOut$default(null, 0.0f, 3, null)) : exitTransition;
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(-1699747442, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:593)");
+                            ComposerKt.traceEventStart(-1699747442, i3, -1, "androidx.compose.animation.AnimatedVisibility (AnimatedVisibility.kt:594)");
                         }
                         EnterTransition enterTransition3 = plus;
                         AnimatedVisibilityImpl(transition, function1, companion, enterTransition3, plus2, function3, startRestartGroup, i3 & 524286);
@@ -1315,7 +1315,7 @@ public final class AnimatedVisibilityKt {
         int i2;
         Object obj;
         Composer startRestartGroup = composer.startRestartGroup(1706321816);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibilityImpl)P(4,5,3,1,2)682@38821L423,694@39319L62,678@38691L724:AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedVisibilityImpl)N(transition,visible,modifier,enter,exit,content)683@38862L423,695@39360L62,679@38732L724:AnimatedVisibility.kt#xbi5r1");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(transition) ? 4 : 2) | i;
         } else {
@@ -1343,7 +1343,7 @@ public final class AnimatedVisibilityKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1706321816, i2, -1, "androidx.compose.animation.AnimatedVisibilityImpl (AnimatedVisibility.kt:677)");
+                ComposerKt.traceEventStart(1706321816, i2, -1, "androidx.compose.animation.AnimatedVisibilityImpl (AnimatedVisibility.kt:678)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -902229601, "CC(remember):AnimatedVisibility.kt#9igjgp");
             int i3 = i2 & 112;
@@ -1361,19 +1361,19 @@ public final class AnimatedVisibilityKt {
 
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                        return m72invoke3p2s80s(measureScope, measurable, constraints.m7514unboximpl());
+                        return m72invoke3p2s80s(measureScope, measurable, constraints.m8119unboximpl());
                     }
 
                     /* renamed from: invoke-3p2s80s  reason: not valid java name */
                     public final MeasureResult m72invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                        long m7721constructorimpl;
-                        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+                        long m8326constructorimpl;
+                        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
                         if (measureScope.isLookingAhead() && !function1.invoke(transition.getTargetState()).booleanValue()) {
-                            m7721constructorimpl = IntSize.Companion.m7731getZeroYbymL2g();
+                            m8326constructorimpl = IntSize.Companion.m8336getZeroYbymL2g();
                         } else {
-                            m7721constructorimpl = IntSize.m7721constructorimpl((mo6216measureBRTryo0.getWidth() << 32) | (mo6216measureBRTryo0.getHeight() & 4294967295L));
+                            m8326constructorimpl = IntSize.m8326constructorimpl((mo6818measureBRTryo0.getWidth() << 32) | (mo6818measureBRTryo0.getHeight() & 4294967295L));
                         }
-                        return MeasureScope.layout$default(measureScope, (int) (m7721constructorimpl >> 32), (int) (m7721constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedVisibilityImpl$1$1.1
+                        return MeasureScope.layout$default(measureScope, (int) (m8326constructorimpl >> 32), (int) (m8326constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedVisibilityImpl$1$1.1
                             {
                                 super(1);
                             }
@@ -1435,13 +1435,13 @@ public final class AnimatedVisibilityKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:166:0x03b5  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x03bf  */
-    /* JADX WARN: Removed duplicated region for block: B:171:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x03c2  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x03cc  */
+    /* JADX WARN: Removed duplicated region for block: B:172:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:59:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1451,11 +1451,12 @@ public final class AnimatedVisibilityKt {
         Composer composer2;
         Object obj;
         ScopeUpdateScope endRestartGroup;
+        final OnLookaheadMeasured onLookaheadMeasured2;
         int i5;
         Modifier.Companion companion;
         Object obj2 = onLookaheadMeasured;
         Composer startRestartGroup = composer.startRestartGroup(1912839215);
-        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedEnterExitImpl)P(6,7,3,1,2,5,4):AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(AnimatedEnterExitImpl)N(transition,visible,modifier,enter,exit,shouldDisposeBlock,onLookaheadMeasured,content):AnimatedVisibility.kt#xbi5r1");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(transition) ? 4 : 2) | i;
         } else {
@@ -1487,7 +1488,7 @@ public final class AnimatedVisibilityKt {
             }
             i4 = i3;
             boolean z = true;
-            final Object obj3 = obj2;
+            Object obj3 = obj2;
             if (startRestartGroup.shouldExecute((4793491 & i4) == 4793490, i4 & 1)) {
                 composer2 = startRestartGroup;
                 composer2.skipToGroupEnd();
@@ -1497,18 +1498,14 @@ public final class AnimatedVisibilityKt {
                     obj3 = null;
                 }
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1912839215, i4, -1, "androidx.compose.animation.AnimatedEnterExitImpl (AnimatedVisibility.kt:715)");
+                    ComposerKt.traceEventStart(1912839215, i4, -1, "androidx.compose.animation.AnimatedEnterExitImpl (AnimatedVisibility.kt:716)");
                 }
-                if (!function1.invoke(transition.getTargetState()).booleanValue() && !function1.invoke(transition.getCurrentState()).booleanValue() && !transition.isSeeking() && !transition.getHasInitialValueAnimations()) {
-                    startRestartGroup.startReplaceGroup(-272333293);
-                    startRestartGroup.endReplaceGroup();
-                    composer2 = startRestartGroup;
-                } else {
-                    startRestartGroup.startReplaceGroup(-232413539);
-                    ComposerKt.sourceInformation(startRestartGroup, "723@40225L124,727@40392L40,733@40641L529,730@40484L686");
+                if (function1.invoke(transition.getTargetState()).booleanValue() || function1.invoke(transition.getCurrentState()).booleanValue() || transition.isSeeking() || transition.getHasInitialValueAnimations()) {
+                    startRestartGroup.startReplaceGroup(-232386135);
+                    ComposerKt.sourceInformation(startRestartGroup, "724@40266L124,734@40987L23,735@41052L21,737@41116L40,743@41365L529,740@41208L686");
                     int i8 = i4 & 14;
                     int i9 = i8 | 48;
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -539313577, "CC(createChildTransition)N(label,transformToChildState)1768@75281L36,1769@75341L74,1770@75438L39,1771@75489L63:Transition.kt#pdpnli");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -539313577, "CC(createChildTransition)N(label,transformToChildState)1788@75927L36,1789@75987L74,1790@76084L39,1791@76135L63:Transition.kt#pdpnli");
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1410701659, "CC(remember):Transition.kt#9igjgp");
                     int i10 = i9 & 14;
                     boolean z2 = ((i10 ^ 6) > 4 && startRestartGroup.changed(transition)) || (i9 & 6) == 4;
@@ -1522,11 +1519,11 @@ public final class AnimatedVisibilityKt {
                         rememberedValue = transition.getCurrentState();
                     }
                     startRestartGroup.startReplaceGroup(1844425648);
-                    ComposerKt.sourceInformation(startRestartGroup, "C724@40307L28:AnimatedVisibility.kt#xbi5r1");
-                    Object obj4 = obj3;
+                    ComposerKt.sourceInformation(startRestartGroup, "CN(it)725@40348L28:AnimatedVisibility.kt#xbi5r1");
+                    onLookaheadMeasured2 = obj3;
                     if (ComposerKt.isTraceInProgress()) {
                         i5 = i8;
-                        ComposerKt.traceEventStart(1844425648, 0, -1, "androidx.compose.animation.AnimatedEnterExitImpl.<anonymous> (AnimatedVisibility.kt:724)");
+                        ComposerKt.traceEventStart(1844425648, 0, -1, "androidx.compose.animation.AnimatedEnterExitImpl.<anonymous> (AnimatedVisibility.kt:725)");
                     } else {
                         i5 = i8;
                     }
@@ -1538,9 +1535,9 @@ public final class AnimatedVisibilityKt {
                     startRestartGroup.endReplaceGroup();
                     T targetState = transition.getTargetState();
                     startRestartGroup.startReplaceGroup(1844425648);
-                    ComposerKt.sourceInformation(startRestartGroup, "C724@40307L28:AnimatedVisibility.kt#xbi5r1");
+                    ComposerKt.sourceInformation(startRestartGroup, "CN(it)725@40348L28:AnimatedVisibility.kt#xbi5r1");
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(1844425648, 0, -1, "androidx.compose.animation.AnimatedEnterExitImpl.<anonymous> (AnimatedVisibility.kt:724)");
+                        ComposerKt.traceEventStart(1844425648, 0, -1, "androidx.compose.animation.AnimatedEnterExitImpl.<anonymous> (AnimatedVisibility.kt:725)");
                     }
                     EnterExitState targetEnterExit2 = targetEnterExit(transition, function1, targetState, startRestartGroup, i11);
                     if (ComposerKt.isTraceInProgress()) {
@@ -1550,9 +1547,11 @@ public final class AnimatedVisibilityKt {
                     int i12 = i5;
                     Transition createChildTransitionInternal = androidx.compose.animation.core.TransitionKt.createChildTransitionInternal(transition, targetEnterExit, targetEnterExit2, "EnterExitTransition", startRestartGroup, i10 | 3072);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                    EnterTransition trackActiveEnter = EnterExitTransitionKt.trackActiveEnter(createChildTransitionInternal, enterTransition, startRestartGroup, (i4 >> 6) & 112);
+                    ExitTransition trackActiveExit = EnterExitTransitionKt.trackActiveExit(createChildTransitionInternal, exitTransition, startRestartGroup, (i4 >> 9) & 112);
                     State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function2, startRestartGroup, (i4 >> 15) & 14);
                     Boolean invoke = function2.invoke(createChildTransitionInternal.getCurrentState(), createChildTransitionInternal.getTargetState());
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7483872, "CC(remember):AnimatedVisibility.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7462016, "CC(remember):AnimatedVisibility.kt#9igjgp");
                     boolean changed = startRestartGroup.changed(createChildTransitionInternal) | startRestartGroup.changed(rememberUpdatedState);
                     AnimatedVisibilityKt$AnimatedEnterExitImpl$shouldDisposeAfterExit$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
                     if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1561,15 +1560,10 @@ public final class AnimatedVisibilityKt {
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     State produceState = SnapshotStateKt.produceState(invoke, (Function2) rememberedValue2, startRestartGroup, 0);
-                    if (getExitFinished(createChildTransitionInternal) && AnimatedEnterExitImpl$lambda$3(produceState)) {
-                        startRestartGroup.startReplaceGroup(-272333293);
-                        startRestartGroup.endReplaceGroup();
-                        composer2 = startRestartGroup;
-                        obj3 = obj4;
-                    } else {
-                        startRestartGroup.startReplaceGroup(-231383533);
-                        ComposerKt.sourceInformation(startRestartGroup, "749@41268L69,755@41536L47,769@42351L50,750@41350L1066");
-                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7464268, "CC(remember):AnimatedVisibility.kt#9igjgp");
+                    if (!getExitFinished(createChildTransitionInternal) || !AnimatedEnterExitImpl$lambda$3(produceState)) {
+                        startRestartGroup.startReplaceGroup(-230699766);
+                        ComposerKt.sourceInformation(startRestartGroup, "759@41992L69,765@42260L248,784@43276L50,760@42074L1267");
+                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7442412, "CC(remember):AnimatedVisibility.kt#9igjgp");
                         boolean z3 = i12 == 4;
                         Object rememberedValue3 = startRestartGroup.rememberedValue();
                         if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -1578,16 +1572,14 @@ public final class AnimatedVisibilityKt {
                         }
                         AnimatedVisibilityScopeImpl animatedVisibilityScopeImpl = (AnimatedVisibilityScopeImpl) rememberedValue3;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        int i13 = i4 >> 6;
-                        obj3 = obj4;
-                        Modifier createModifier = EnterExitTransitionKt.createModifier(createChildTransitionInternal, enterTransition, exitTransition, null, "Built-in", startRestartGroup, (i13 & 112) | 24576 | (i13 & 896), 4);
+                        Modifier createModifier = EnterExitTransitionKt.createModifier(createChildTransitionInternal, trackActiveEnter, trackActiveExit, false, null, "Built-in", startRestartGroup, 199680, 8);
                         composer2 = startRestartGroup;
-                        if (obj3 != null) {
-                            composer2.startReplaceGroup(-230964196);
-                            ComposerKt.sourceInformation(composer2, "758@41738L479");
+                        if (onLookaheadMeasured2 != null) {
+                            composer2.startReplaceGroup(-230087268);
+                            ComposerKt.sourceInformation(composer2, "773@42663L479");
                             Modifier.Companion companion2 = Modifier.Companion;
-                            ComposerKt.sourceInformationMarkerStart(composer2, -7448818, "CC(remember):AnimatedVisibility.kt#9igjgp");
-                            if ((3670016 & i4) != 1048576 && ((i4 & 2097152) == 0 || !composer2.changedInstance(obj3))) {
+                            ComposerKt.sourceInformationMarkerStart(composer2, -7420530, "CC(remember):AnimatedVisibility.kt#9igjgp");
+                            if ((3670016 & i4) != 1048576 && ((i4 & 2097152) == 0 || !composer2.changedInstance(onLookaheadMeasured2))) {
                                 z = false;
                             }
                             Object rememberedValue4 = composer2.rememberedValue();
@@ -1600,18 +1592,18 @@ public final class AnimatedVisibilityKt {
 
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                        return m71invoke3p2s80s(measureScope, measurable, constraints.m7514unboximpl());
+                                        return m71invoke3p2s80s(measureScope, measurable, constraints.m8119unboximpl());
                                     }
 
                                     /* renamed from: invoke-3p2s80s  reason: not valid java name */
                                     public final MeasureResult m71invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                                        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-                                        OnLookaheadMeasured onLookaheadMeasured2 = OnLookaheadMeasured.this;
+                                        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
+                                        OnLookaheadMeasured onLookaheadMeasured3 = OnLookaheadMeasured.this;
                                         if (measureScope.isLookingAhead()) {
-                                            int width = mo6216measureBRTryo0.getWidth();
-                                            onLookaheadMeasured2.m113invokeozmzZPI(IntSize.m7721constructorimpl((mo6216measureBRTryo0.getHeight() & 4294967295L) | (width << 32)));
+                                            int width = mo6818measureBRTryo0.getWidth();
+                                            onLookaheadMeasured3.m137invokeozmzZPI(IntSize.m8326constructorimpl((mo6818measureBRTryo0.getHeight() & 4294967295L) | (width << 32)));
                                         }
-                                        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$2$1$1$1
+                                        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$2$1$1$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             {
                                                 super(1);
@@ -1636,12 +1628,12 @@ public final class AnimatedVisibilityKt {
                             companion = LayoutModifierKt.layout(companion2, (Function3) rememberedValue4);
                             composer2.endReplaceGroup();
                         } else {
-                            composer2.startReplaceGroup(-7432681);
+                            composer2.startReplaceGroup(-7404393);
                             composer2.endReplaceGroup();
                             companion = Modifier.Companion;
                         }
                         Modifier then = modifier.then(createModifier.then(companion));
-                        ComposerKt.sourceInformationMarkerStart(composer2, -7429631, "CC(remember):AnimatedVisibility.kt#9igjgp");
+                        ComposerKt.sourceInformationMarkerStart(composer2, -7401343, "CC(remember):AnimatedVisibility.kt#9igjgp");
                         Object rememberedValue5 = composer2.rememberedValue();
                         if (rememberedValue5 == Composer.Companion.getEmpty()) {
                             rememberedValue5 = new AnimatedEnterExitMeasurePolicy(animatedVisibilityScopeImpl);
@@ -1654,6 +1646,7 @@ public final class AnimatedVisibilityKt {
                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
                         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, then);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                        onLookaheadMeasured2 = onLookaheadMeasured2;
                         ComposerKt.sourceInformationMarkerStart(composer2, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
                             ComposablesKt.invalidApplier();
@@ -1664,31 +1657,39 @@ public final class AnimatedVisibilityKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
-                        Updater.m4049setimpl(m4041constructorimpl, animatedEnterExitMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                        ComposerKt.sourceInformationMarkerStart(composer2, -1766274760, "C751@41392L9:AnimatedVisibility.kt#xbi5r1");
+                        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer2);
+                        Updater.m4475setimpl(m4467constructorimpl, animatedEnterExitMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Updater.m4471initimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                        Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        ComposerKt.sourceInformationMarkerStart(composer2, -1766274760, "C761@42116L9:AnimatedVisibility.kt#xbi5r1");
                         function3.invoke(animatedVisibilityScopeImpl, composer2, Integer.valueOf((i4 >> 18) & 112));
                         ComposerKt.sourceInformationMarkerEnd(composer2);
                         composer2.endNode();
                         ComposerKt.sourceInformationMarkerEnd(composer2);
                         ComposerKt.sourceInformationMarkerEnd(composer2);
                         composer2.endReplaceGroup();
+                    } else {
+                        startRestartGroup.startReplaceGroup(-229368781);
+                        startRestartGroup.endReplaceGroup();
+                        composer2 = startRestartGroup;
                     }
                     composer2.endReplaceGroup();
+                } else {
+                    startRestartGroup.startReplaceGroup(-229362829);
+                    startRestartGroup.endReplaceGroup();
+                    onLookaheadMeasured2 = obj3;
+                    composer2 = startRestartGroup;
                 }
-                obj = obj3;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
-                    obj = obj3;
                 }
+                obj = onLookaheadMeasured2;
             }
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup == null) {
-                final OnLookaheadMeasured onLookaheadMeasured2 = obj;
+                final OnLookaheadMeasured onLookaheadMeasured3 = obj;
                 endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$4
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1703,8 +1704,8 @@ public final class AnimatedVisibilityKt {
                         return Unit.INSTANCE;
                     }
 
-                    public final void invoke(Composer composer3, int i14) {
-                        AnimatedVisibilityKt.AnimatedEnterExitImpl(transition, function1, modifier, enterTransition, exitTransition, function2, onLookaheadMeasured2, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                    public final void invoke(Composer composer3, int i13) {
+                        AnimatedVisibilityKt.AnimatedEnterExitImpl(transition, function1, modifier, enterTransition, exitTransition, function2, onLookaheadMeasured3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -1716,7 +1717,7 @@ public final class AnimatedVisibilityKt {
         }
         i4 = i3;
         boolean z4 = true;
-        final OnLookaheadMeasured obj32 = obj2;
+        Object obj32 = obj2;
         if (startRestartGroup.shouldExecute((4793491 & i4) == 4793490, i4 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
@@ -1732,9 +1733,9 @@ public final class AnimatedVisibilityKt {
     /* JADX WARN: Multi-variable type inference failed */
     private static final <T> EnterExitState targetEnterExit(Transition<T> transition, Function1<? super T, Boolean> function1, T t, Composer composer, int i) {
         EnterExitState enterExitState;
-        ComposerKt.sourceInformationMarkerStart(composer, 361571134, "C(targetEnterExit)P(1):AnimatedVisibility.kt#xbi5r1");
+        ComposerKt.sourceInformationMarkerStart(composer, 361571134, "C(targetEnterExit)N(visible,targetState):AnimatedVisibility.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(361571134, i, -1, "androidx.compose.animation.targetEnterExit (AnimatedVisibility.kt:833)");
+            ComposerKt.traceEventStart(361571134, i, -1, "androidx.compose.animation.targetEnterExit (AnimatedVisibility.kt:848)");
         }
         composer.startMovableGroup(-422486745, transition);
         ComposerKt.sourceInformation(composer, "");
@@ -1750,7 +1751,7 @@ public final class AnimatedVisibilityKt {
             }
         } else {
             composer.startReplaceGroup(-211892364);
-            ComposerKt.sourceInformation(composer, "845@44894L34");
+            ComposerKt.sourceInformation(composer, "860@45819L34");
             ComposerKt.sourceInformationMarkerStart(composer, -422476640, "CC(remember):AnimatedVisibility.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {

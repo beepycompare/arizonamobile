@@ -1,6 +1,7 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.MimeTypes;
+import androidx.media3.container.OpusUtil;
 /* loaded from: classes3.dex */
 public final class MpegAudioUtil {
     public static final int MAX_FRAME_SIZE_BYTES = 4096;

@@ -17,7 +17,7 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: KotlinExtensions.kt */
 @Metadata(d1 = {"\u00002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0001\n\u0002\u0010\u0003\n\u0002\b\u0002\u001a\u001e\u0010\u0000\u001a\u0002H\u0001\"\n\b\u0000\u0010\u0001\u0018\u0001*\u00020\u0002*\u00020\u0003H\u0086\b¢\u0006\u0002\u0010\u0004\u001a\"\u0010\u0005\u001a\u0002H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\b\u0012\u0004\u0012\u0002H\u00010\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a(\u0010\u0005\u001a\u0004\u0018\u0001H\u0001\"\b\b\u0000\u0010\u0001*\u00020\u0002*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00010\u0006H\u0087@¢\u0006\u0004\b\b\u0010\u0007\u001a\u001a\u0010\u0005\u001a\u00020\t*\b\u0012\u0004\u0012\u00020\t0\u0006H\u0087@¢\u0006\u0004\b\n\u0010\u0007\u001a$\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\u00010\f\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a\u0012\u0010\r\u001a\u00020\u000e*\u00020\u000fH\u0080@¢\u0006\u0002\u0010\u0010¨\u0006\u0011"}, d2 = {"create", ExifInterface.GPS_DIRECTION_TRUE, "", "Lretrofit2/Retrofit;", "(Lretrofit2/Retrofit;)Ljava/lang/Object;", "await", "Lretrofit2/Call;", "(Lretrofit2/Call;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitNullable", "", "awaitUnit", "awaitResponse", "Lretrofit2/Response;", "suspendAndThrow", "", "", "(Ljava/lang/Throwable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "retrofit"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class KotlinExtensions {
     public static final /* synthetic */ <T> T create(Retrofit retrofit) {
         Intrinsics.checkNotNullParameter(retrofit, "<this>");
@@ -52,12 +52,12 @@ public final class KotlinExtensions {
                     kotlinExtensions$suspendAndThrow$1.L$0 = th;
                     kotlinExtensions$suspendAndThrow$1.label = 1;
                     final KotlinExtensions$suspendAndThrow$1 kotlinExtensions$suspendAndThrow$12 = kotlinExtensions$suspendAndThrow$1;
-                    Dispatchers.getDefault().mo10778dispatch(kotlinExtensions$suspendAndThrow$12.getContext(), new Runnable() { // from class: retrofit2.KotlinExtensions$suspendAndThrow$2$1
+                    Dispatchers.getDefault().mo11417dispatch(kotlinExtensions$suspendAndThrow$12.getContext(), new Runnable() { // from class: retrofit2.KotlinExtensions$suspendAndThrow$2$1
                         @Override // java.lang.Runnable
                         public final void run() {
                             Continuation intercepted = IntrinsicsKt.intercepted(kotlinExtensions$suspendAndThrow$12);
                             Result.Companion companion = Result.Companion;
-                            intercepted.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(th)));
+                            intercepted.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
                         }
                     });
                     Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -114,15 +114,15 @@ public final class KotlinExtensions {
                         Invocation invocation = (Invocation) tag;
                         KotlinNullPointerException kotlinNullPointerException = new KotlinNullPointerException("Response from " + invocation.service().getName() + '.' + invocation.method().getName() + " was null but response body type was declared as non-null");
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(kotlinNullPointerException)));
+                        cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(kotlinNullPointerException)));
                         return;
                     }
                     Result.Companion companion2 = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(body));
+                    cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(body));
                     return;
                 }
                 Result.Companion companion3 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(new HttpException(response))));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(new HttpException(response))));
             }
 
             @Override // retrofit2.Callback
@@ -130,7 +130,7 @@ public final class KotlinExtensions {
                 Intrinsics.checkNotNullParameter(call2, "call");
                 Intrinsics.checkNotNullParameter(t, "t");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(t)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(t)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();
@@ -165,11 +165,11 @@ public final class KotlinExtensions {
                 CancellableContinuation<T> cancellableContinuation = cancellableContinuationImpl2;
                 if (isSuccessful) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9202constructorimpl(response.body()));
+                    cancellableContinuation.resumeWith(Result.m9842constructorimpl(response.body()));
                     return;
                 }
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(new HttpException(response))));
+                cancellableContinuation.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(new HttpException(response))));
             }
 
             @Override // retrofit2.Callback
@@ -177,7 +177,7 @@ public final class KotlinExtensions {
                 Intrinsics.checkNotNullParameter(call2, "call");
                 Intrinsics.checkNotNullParameter(t, "t");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(t)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(t)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();
@@ -209,7 +209,7 @@ public final class KotlinExtensions {
                 Intrinsics.checkNotNullParameter(call2, "call");
                 Intrinsics.checkNotNullParameter(response, "response");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(response));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(response));
             }
 
             @Override // retrofit2.Callback
@@ -217,7 +217,7 @@ public final class KotlinExtensions {
                 Intrinsics.checkNotNullParameter(call2, "call");
                 Intrinsics.checkNotNullParameter(t, "t");
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(t)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(t)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();

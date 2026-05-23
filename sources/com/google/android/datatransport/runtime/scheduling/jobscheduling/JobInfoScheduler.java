@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.zip.Adler32;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class JobInfoScheduler implements WorkScheduler {
     static final String ATTEMPT_NUMBER = "attemptNumber";
     static final String BACKEND_NAME = "backendName";

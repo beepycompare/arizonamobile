@@ -8,7 +8,7 @@ import kotlin.Metadata;
 public final class AppBarSmallTokens {
     public static final int $stable = 0;
     public static final AppBarSmallTokens INSTANCE = new AppBarSmallTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(64.0f);
     private static final TypographyKeyTokens SubtitleFont = TypographyKeyTokens.LabelMedium;
     private static final TypographyKeyTokens TitleFont = TypographyKeyTokens.TitleLarge;
 
@@ -16,7 +16,7 @@ public final class AppBarSmallTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3118getContainerHeightD9Ej5fM() {
+    public final float m3563getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 

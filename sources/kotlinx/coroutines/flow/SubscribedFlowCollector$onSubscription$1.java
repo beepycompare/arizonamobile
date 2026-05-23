@@ -1,18 +1,16 @@
 package kotlinx.coroutines.flow;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Share.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.SubscribedFlowCollector", f = "Share.kt", i = {0, 0}, l = {TypedValues.CycleType.TYPE_CUSTOM_WAVE_SHAPE, 426}, m = "onSubscription", n = {"this", "safeCollector"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.SubscribedFlowCollector", f = "Share.kt", i = {0, 1}, l = {475, 479}, m = "onSubscription", n = {"safeCollector", "safeCollector"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class SubscribedFlowCollector$onSubscription$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ SubscribedFlowCollector<T> this$0;

@@ -1,15 +1,15 @@
 package androidx.compose.runtime.tooling;
 
-import androidx.compose.runtime.Anchor;
 import androidx.compose.runtime.Composer;
-import androidx.compose.runtime.ComposerImpl;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionContext;
+import androidx.compose.runtime.GapComposer;
 import androidx.compose.runtime.RememberObserver;
 import androidx.compose.runtime.RememberObserverHolder;
-import androidx.compose.runtime.SlotReader;
-import androidx.compose.runtime.SlotTable;
-import androidx.compose.runtime.SlotWriter;
+import androidx.compose.runtime.composer.gapbuffer.GapAnchor;
+import androidx.compose.runtime.composer.gapbuffer.SlotReader;
+import androidx.compose.runtime.composer.gapbuffer.SlotTable;
+import androidx.compose.runtime.composer.gapbuffer.SlotWriter;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -17,7 +17,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComposeStackTraceBuilder.kt */
-@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a9\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0007H\u0000¢\u0006\u0002\u0010\t\u001a\u0012\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\nH\u0000\u001a$\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\n2\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u0000\u001a3\u0010\f\u001a\u0004\u0018\u00010\r*\u00020\u000e2#\u0010\u000f\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\u0004\u0012\u00020\u00140\u0010H\u0000\u001a\u001b\u0010\u0015\u001a\u0004\u0018\u00010\u0007*\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u0017H\u0000¢\u0006\u0002\u0010\u0018¨\u0006\u0019"}, d2 = {"buildTrace", "", "Landroidx/compose/runtime/tooling/ComposeStackTraceFrame;", "Landroidx/compose/runtime/SlotWriter;", "child", "", "group", "", "parent", "(Landroidx/compose/runtime/SlotWriter;Ljava/lang/Object;ILjava/lang/Integer;)Ljava/util/List;", "Landroidx/compose/runtime/SlotReader;", "traceForGroup", "findLocation", "Landroidx/compose/runtime/tooling/ObjectLocation;", "Landroidx/compose/runtime/SlotTable;", "filter", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "value", "", "findSubcompositionContextGroup", "context", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/SlotTable;Landroidx/compose/runtime/CompositionContext;)Ljava/lang/Integer;", "runtime"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a9\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0007H\u0000¢\u0006\u0002\u0010\t\u001a\u0012\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\nH\u0000\u001a$\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\n2\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u0000\u001a3\u0010\f\u001a\u0004\u0018\u00010\r*\u00020\u000e2#\u0010\u000f\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\u0004\u0012\u00020\u00140\u0010H\u0000\u001a\u001b\u0010\u0015\u001a\u0004\u0018\u00010\u0007*\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u0017H\u0000¢\u0006\u0002\u0010\u0018¨\u0006\u0019"}, d2 = {"buildTrace", "", "Landroidx/compose/runtime/tooling/ComposeStackTraceFrame;", "Landroidx/compose/runtime/composer/gapbuffer/SlotWriter;", "child", "", "group", "", "parent", "(Landroidx/compose/runtime/composer/gapbuffer/SlotWriter;Ljava/lang/Object;ILjava/lang/Integer;)Ljava/util/List;", "Landroidx/compose/runtime/composer/gapbuffer/SlotReader;", "traceForGroup", "findLocation", "Landroidx/compose/runtime/tooling/ObjectLocation;", "Landroidx/compose/runtime/composer/gapbuffer/SlotTable;", "filter", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "value", "", "findSubcompositionContextGroup", "context", "Landroidx/compose/runtime/CompositionContext;", "(Landroidx/compose/runtime/composer/gapbuffer/SlotTable;Landroidx/compose/runtime/CompositionContext;)Ljava/lang/Integer;", "runtime"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposeStackTraceBuilderKt {
     public static /* synthetic */ List buildTrace$default(SlotWriter slotWriter, Object obj, int i, Integer num, int i2, Object obj2) {
@@ -34,7 +34,7 @@ public final class ComposeStackTraceBuilderKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x004b  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x0071 -> B:22:0x0049). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x0073 -> B:22:0x0049). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -114,7 +114,7 @@ public final class ComposeStackTraceBuilderKt {
         Object empty;
         ReaderTraceBuilder readerTraceBuilder = new ReaderTraceBuilder(slotReader);
         int parent = slotReader.parent(i);
-        Anchor anchor = slotReader.anchor(i);
+        GapAnchor anchor = slotReader.anchor(i);
         while (i >= 0) {
             if (slotReader.hasObjectKey(i)) {
                 empty = slotReader.groupObjectKey(i);
@@ -123,11 +123,11 @@ public final class ComposeStackTraceBuilderKt {
             }
             readerTraceBuilder.processEdge(slotReader.groupKey(i), empty, slotReader.getTable$runtime().sourceInformationOf(i), obj);
             if (parent >= 0) {
-                Anchor anchor2 = anchor;
+                GapAnchor gapAnchor = anchor;
                 anchor = slotReader.anchor(parent);
                 i = parent;
                 parent = slotReader.parent(parent);
-                obj = anchor2;
+                obj = gapAnchor;
             } else {
                 i = parent;
                 obj = anchor;
@@ -147,7 +147,7 @@ public final class ComposeStackTraceBuilderKt {
                 Object groupGet = slotReader.groupGet(i, 0);
                 RememberObserverHolder rememberObserverHolder = groupGet instanceof RememberObserverHolder ? (RememberObserverHolder) groupGet : null;
                 RememberObserver wrapped = rememberObserverHolder != null ? rememberObserverHolder.getWrapped() : null;
-                ComposerImpl.CompositionContextHolder compositionContextHolder = wrapped instanceof ComposerImpl.CompositionContextHolder ? wrapped : null;
+                GapComposer.CompositionContextHolder compositionContextHolder = wrapped instanceof GapComposer.CompositionContextHolder ? wrapped : null;
                 if (compositionContextHolder != null && Intrinsics.areEqual(compositionContextHolder.getRef(), compositionContext)) {
                     return Integer.valueOf(i);
                 }

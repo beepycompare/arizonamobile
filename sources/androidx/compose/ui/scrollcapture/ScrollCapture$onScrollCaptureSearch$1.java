@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ScrollCapture.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ScrollCapture$onScrollCaptureSearch$1 extends AdaptedFunctionReference implements Function1<ScrollCaptureCandidate, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

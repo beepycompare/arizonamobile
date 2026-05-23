@@ -4,7 +4,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Iterator;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzam implements zzao {
     public final boolean equals(Object obj) {
@@ -24,7 +24,7 @@ public final class zzam implements zzao {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao
-    public final zzao zzcA(String str, zzg zzgVar, List list) {
+    public final zzao zzcG(String str, zzg zzgVar, List list) {
         throw new IllegalStateException(String.format("null has no function %s", str));
     }
 

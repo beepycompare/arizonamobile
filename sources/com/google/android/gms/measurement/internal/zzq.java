@@ -3,17 +3,17 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import android.os.RemoteException;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzq implements zzjq {
-    public final com.google.android.gms.internal.measurement.zzda zza;
+    public final com.google.android.gms.internal.measurement.zzcy zza;
     final /* synthetic */ AppMeasurementDynamiteService zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzq(AppMeasurementDynamiteService appMeasurementDynamiteService, com.google.android.gms.internal.measurement.zzda zzdaVar) {
+    public zzq(AppMeasurementDynamiteService appMeasurementDynamiteService, com.google.android.gms.internal.measurement.zzcy zzcyVar) {
         Objects.requireNonNull(appMeasurementDynamiteService);
         this.zzb = appMeasurementDynamiteService;
-        this.zza = zzdaVar;
+        this.zza = zzcyVar;
     }
 
     @Override // com.google.android.gms.measurement.internal.zzjq
@@ -23,7 +23,7 @@ final class zzq implements zzjq {
         } catch (RemoteException e) {
             zzic zzicVar = this.zzb.zza;
             if (zzicVar != null) {
-                zzicVar.zzaV().zze().zzb("Event listener threw exception", e);
+                zzicVar.zzaW().zze().zzb("Event listener threw exception", e);
             }
         }
     }

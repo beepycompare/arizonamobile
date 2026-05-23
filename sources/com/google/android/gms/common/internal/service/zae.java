@@ -1,11 +1,19 @@
 package com.google.android.gms.common.internal.service;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BaseImplementation;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zae {
-    public final PendingResult zaa(GoogleApiClient googleApiClient) {
-        return googleApiClient.execute(new zac(this, googleApiClient));
+final class zae extends zaa {
+    private final BaseImplementation.ResultHolder zaa;
+
+    public zae(BaseImplementation.ResultHolder resultHolder) {
+        this.zaa = resultHolder;
+    }
+
+    @Override // com.google.android.gms.common.internal.service.zaa, com.google.android.gms.common.internal.service.zam
+    public final void zab(int i) throws RemoteException {
+        this.zaa.setResult(new Status(i));
     }
 }

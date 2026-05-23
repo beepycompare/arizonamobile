@@ -4,7 +4,7 @@ import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.sessions.ApplicationInfo;
 import com.google.firebase.sessions.TimeProvider;
 import com.google.firebase.sessions.dagger.internal.Factory;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 /* loaded from: classes4.dex */
 public final class RemoteSettings_Factory implements Factory<RemoteSettings> {
     private final Provider<ApplicationInfo> appInfoProvider;
@@ -13,7 +13,7 @@ public final class RemoteSettings_Factory implements Factory<RemoteSettings> {
     private final Provider<SettingsCache> settingsCacheProvider;
     private final Provider<TimeProvider> timeProvider;
 
-    public RemoteSettings_Factory(Provider<TimeProvider> provider, Provider<FirebaseInstallationsApi> provider2, Provider<ApplicationInfo> provider3, Provider<CrashlyticsSettingsFetcher> provider4, Provider<SettingsCache> provider5) {
+    private RemoteSettings_Factory(Provider<TimeProvider> provider, Provider<FirebaseInstallationsApi> provider2, Provider<ApplicationInfo> provider3, Provider<CrashlyticsSettingsFetcher> provider4, Provider<SettingsCache> provider5) {
         this.timeProvider = provider;
         this.firebaseInstallationsApiProvider = provider2;
         this.appInfoProvider = provider3;

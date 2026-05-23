@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SingleRunner.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.SingleRunner$Holder", f = "SingleRunner.kt", i = {0, 0, 0, 1, 1, 1}, l = {120, 91}, m = "tryEnqueue", n = {"job", "$this$withLock_u24default$iv", "priority", "job", "$this$withLock_u24default$iv", "priority"}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class SingleRunner$Holder$tryEnqueue$1 extends ContinuationImpl {

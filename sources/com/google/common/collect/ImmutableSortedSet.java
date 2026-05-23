@@ -379,9 +379,8 @@ public abstract class ImmutableSortedSet<E> extends ImmutableSet<E> implements N
         return immutableSortedSet;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static class SerializedForm<E> implements Serializable {
+    private static class SerializedForm<E> implements Serializable {
         private static final long serialVersionUID = 0;
         final Comparator<? super E> comparator;
         final Object[] elements;

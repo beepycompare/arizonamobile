@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime.scheduling.persistence;
 
 import com.google.android.datatransport.runtime.scheduling.persistence.AutoValue_EventStoreConfig;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EventStoreConfig {
     private static final int LOAD_BATCH_SIZE = 200;
     private static final int LOCK_TIME_OUT_MS = 10000;
@@ -12,7 +12,7 @@ public abstract class EventStoreConfig {
     static final EventStoreConfig DEFAULT = builder().setMaxStorageSizeInBytes(MAX_DB_STORAGE_SIZE_IN_BYTES).setLoadBatchSize(200).setCriticalSectionEnterTimeoutMs(10000).setEventCleanUpAge(DURATION_ONE_WEEK_MS).setMaxBlobByteSizePerRow(MAX_BLOB_BYTE_SIZE_PER_ROW).build();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         abstract EventStoreConfig build();
 

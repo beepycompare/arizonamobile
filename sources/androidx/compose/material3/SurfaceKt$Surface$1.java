@@ -62,8 +62,8 @@ public final class SurfaceKt$Surface$1 implements Function2<Composer, Integer, U
     }
 
     public final void invoke(Composer composer, int i) {
-        long m2576surfaceColorAtElevationCLU3JFs;
-        Modifier m2575surfaceXOJAsU;
+        long m3021surfaceColorAtElevationCLU3JFs;
+        Modifier m3020surfaceXOJAsU;
         ComposerKt.sourceInformation(composer, "C116@5813L69,118@5985L7,120@6101L256,126@6398L2,110@5621L868:Surface.kt#uh7d8r");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -74,12 +74,12 @@ public final class SurfaceKt$Surface$1 implements Function2<Composer, Integer, U
         }
         Modifier modifier = this.$modifier;
         Shape shape = this.$shape;
-        m2576surfaceColorAtElevationCLU3JFs = SurfaceKt.m2576surfaceColorAtElevationCLU3JFs(this.$color, this.$absoluteElevation, composer, 0);
+        m3021surfaceColorAtElevationCLU3JFs = SurfaceKt.m3021surfaceColorAtElevationCLU3JFs(this.$color, this.$absoluteElevation, composer, 0);
         BorderStroke borderStroke = this.$border;
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        m2575surfaceXOJAsU = SurfaceKt.m2575surfaceXOJAsU(modifier, shape, m2576surfaceColorAtElevationCLU3JFs, borderStroke, ((Density) consume).mo405toPx0680j_4(this.$shadowElevation));
+        m3020surfaceXOJAsU = SurfaceKt.m3020surfaceXOJAsU(modifier, shape, m3021surfaceColorAtElevationCLU3JFs, borderStroke, ((Density) consume).mo434toPx0680j_4(this.$shadowElevation));
         ComposerKt.sourceInformationMarkerStart(composer, 1595987878, "CC(remember):Surface.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -92,7 +92,7 @@ public final class SurfaceKt$Surface$1 implements Function2<Composer, Integer, U
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics = SemanticsModifierKt.semantics(m2575surfaceXOJAsU, false, (Function1) rememberedValue);
+        Modifier semantics = SemanticsModifierKt.semantics(m3020surfaceXOJAsU, false, (Function1) rememberedValue);
         Unit unit = Unit.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 1595997128, "CC(remember):Surface.kt#9igjgp");
         SurfaceKt$Surface$1$3$1 rememberedValue2 = composer.rememberedValue();
@@ -125,15 +125,15 @@ public final class SurfaceKt$Surface$1 implements Function2<Composer, Integer, U
         } else {
             composer.useNode();
         }
-        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 258689390, "C129@6470L9:Surface.kt#uh7d8r");

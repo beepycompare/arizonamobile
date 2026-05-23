@@ -6,7 +6,7 @@ import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
 import retrofit2.CallAdapter;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
     @Override // retrofit2.CallAdapter.Factory
     @Nullable
@@ -27,7 +27,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         return new ResponseCallAdapter(getParameterUpperBound(0, (ParameterizedType) parameterUpperBound));
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static final class BodyCallAdapter<R> implements CallAdapter<R, CompletableFuture<R>> {
         private final Type responseType;
 
@@ -48,7 +48,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public class BodyCallback implements Callback<R> {
             private final CompletableFuture<R> future;
 
@@ -74,7 +74,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static final class ResponseCallAdapter<R> implements CallAdapter<R, CompletableFuture<Response<R>>> {
         private final Type responseType;
 
@@ -95,7 +95,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public class ResponseCallback implements Callback<R> {
             private final CompletableFuture<Response<R>> future;
 
@@ -116,7 +116,7 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class CallCancelCompletableFuture<T> extends CompletableFuture<T> {
         private final Call<?> call;
 

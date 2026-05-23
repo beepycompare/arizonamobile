@@ -1,6 +1,68 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import javax.annotation.Nullable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzju {
-    Object zza();
+public final class zzju extends AbstractSafeParcelable implements Comparable<zzju> {
+    public static final Parcelable.Creator<zzju> CREATOR = new zzjv();
+    public final int zza;
+    public final int zzb;
+
+    public zzju(int i, int i2) {
+        this.zza = i;
+        this.zzb = i2;
+    }
+
+    public final boolean equals(@Nullable Object obj) {
+        return (obj instanceof zzju) && compareTo((zzju) obj) == 0;
+    }
+
+    public final int hashCode() {
+        return (this.zza * 31) + this.zzb;
+    }
+
+    public final String toString() {
+        int i = this.zza;
+        int length = String.valueOf(i).length();
+        int i2 = this.zzb;
+        StringBuilder sb = new StringBuilder(length + 19 + String.valueOf(i2).length() + 1);
+        sb.append("GenericDimension(");
+        sb.append(i);
+        sb.append(", ");
+        sb.append(i2);
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zza;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
+        SafeParcelWriter.writeInt(parcel, 2, this.zzb);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    @Override // java.lang.Comparable
+    /* renamed from: zza */
+    public final int compareTo(zzju zzjuVar) {
+        int i = this.zza;
+        int i2 = zzjuVar.zza;
+        if (i < i2) {
+            return -1;
+        }
+        if (i > i2) {
+            return 1;
+        }
+        int i3 = this.zzb;
+        int i4 = zzjuVar.zzb;
+        if (i3 < i4) {
+            return -1;
+        }
+        return i3 > i4 ? 1 : 0;
+    }
 }

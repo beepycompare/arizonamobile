@@ -1,19 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Yh implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Qn f874a;
-    public final /* synthetic */ C0278gi b;
-
-    public Yh(C0278gi c0278gi, Qn qn) {
-        this.b = c0278gi;
-        this.f874a = qn;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0278gi c0278gi = this.b;
-        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).a(this.f874a);
+public final class Yh implements InterfaceC0474o5 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0474o5
+    /* renamed from: b */
+    public final Xh a(Context context, C0267g5 c0267g5, F4 f4, C0182cn c0182cn) {
+        return new Xh(context, c0267g5, f4, Na.I.h(), c0182cn.e(), new Vg(c0182cn), new C0241f5());
     }
 }

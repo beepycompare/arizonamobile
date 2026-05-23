@@ -15,12 +15,12 @@ import javax.inject.Singleton;
 /* JADX INFO: Access modifiers changed from: package-private */
 @Singleton
 @Component(modules = {BackendRegistryModule.class, EventStoreModule.class, ExecutionModule.class, SchedulingModule.class, SchedulingConfigModule.class, TimeModule.class})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TransportRuntimeComponent implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Component.Builder
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Builder {
         TransportRuntimeComponent build();
 

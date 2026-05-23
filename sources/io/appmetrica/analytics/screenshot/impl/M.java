@@ -1,38 +1,36 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import android.os.Handler;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 /* loaded from: classes5.dex */
-public final class M implements Converter {
+public final class M implements B {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f1455a;
+    public final ClientContext f1437a;
+    public final C b;
+    public final Handler c;
+    public volatile boolean d;
+    public volatile C0790l e;
+    public final J f = new J(this);
 
-    public M() {
-        this(null, 1, null);
+    public M(ClientContext clientContext, C c) {
+        this.f1437a = clientContext;
+        this.b = c;
+        this.c = clientContext.getClientExecutorProvider().getDefaultExecutor().getHandler();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final S fromModel(J j) {
-        S s = new S();
-        s.f1460a = j.f1452a;
-        W w = j.b;
-        s.b = w != null ? this.f1455a.fromModel(w) : null;
-        return s;
+    @Override // io.appmetrica.analytics.screenshot.impl.B
+    public final void a(C0789k c0789k) {
+        this.e = c0789k != null ? c0789k.c : null;
     }
 
-    public M(Y y) {
-        this.f1455a = y;
+    public final String b() {
+        return "ServiceScreenshotCaptor";
     }
 
-    public /* synthetic */ M(Y y, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? new Y(null, null, null, 7, null) : y);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final J toModel(S s) {
-        return new J(s.f1460a, this.f1455a.toModel(s.b));
+    @Override // io.appmetrica.analytics.screenshot.impl.B
+    public final void a() {
+        this.f1437a.getActivityLifecycleRegistry().registerListener(new L(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
     }
 }

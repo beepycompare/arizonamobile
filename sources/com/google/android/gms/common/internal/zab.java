@@ -1,14 +1,36 @@
 package com.google.android.gms.common.internal;
 
-import java.util.Collections;
-import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zab {
-    public final Set zaa;
+public final class zab extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zab> CREATOR = new zac();
+    private final int zaa;
+    private final String zab;
+    private final long zac;
+    private final int zad;
+    private final boolean zae;
 
-    public zab(Set set) {
-        Preconditions.checkNotNull(set);
-        this.zaa = Collections.unmodifiableSet(set);
+    public zab(int i, String str, long j, int i2, boolean z) {
+        this.zaa = i;
+        this.zab = str;
+        this.zac = j;
+        this.zad = i2;
+        this.zae = z;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zaa;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
+        SafeParcelWriter.writeString(parcel, 2, this.zab, false);
+        SafeParcelWriter.writeLong(parcel, 3, this.zac);
+        SafeParcelWriter.writeInt(parcel, 4, this.zad);
+        SafeParcelWriter.writeBoolean(parcel, 5, this.zae);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

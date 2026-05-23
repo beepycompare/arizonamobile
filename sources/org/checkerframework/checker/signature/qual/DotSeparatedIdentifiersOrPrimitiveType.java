@@ -10,6 +10,6 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({FullyQualifiedName.class, BinaryNameOrPrimitiveType.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface DotSeparatedIdentifiersOrPrimitiveType {
 }

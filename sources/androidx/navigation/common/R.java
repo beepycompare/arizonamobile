@@ -5,22 +5,22 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class attr {
         public static int action = 0x7f040002;
-        public static int argType = 0x7f040048;
-        public static int destination = 0x7f0401d2;
-        public static int enterAnim = 0x7f04023e;
-        public static int exitAnim = 0x7f04024e;
-        public static int launchSingleTop = 0x7f04036a;
-        public static int mimeType = 0x7f04046e;
-        public static int nullable = 0x7f0404bd;
-        public static int popEnterAnim = 0x7f0404f9;
-        public static int popExitAnim = 0x7f0404fa;
-        public static int popUpTo = 0x7f0404fb;
-        public static int popUpToInclusive = 0x7f0404fc;
-        public static int popUpToSaveState = 0x7f0404fd;
-        public static int restoreState = 0x7f04054c;
-        public static int route = 0x7f040553;
-        public static int startDestination = 0x7f0405cc;
-        public static int uri = 0x7f0406df;
+        public static int argType = 0x7f040049;
+        public static int destination = 0x7f0401d7;
+        public static int enterAnim = 0x7f040245;
+        public static int exitAnim = 0x7f040255;
+        public static int launchSingleTop = 0x7f04037a;
+        public static int mimeType = 0x7f040491;
+        public static int nullable = 0x7f0404e1;
+        public static int popEnterAnim = 0x7f040522;
+        public static int popExitAnim = 0x7f040523;
+        public static int popUpTo = 0x7f040524;
+        public static int popUpToInclusive = 0x7f040525;
+        public static int popUpToSaveState = 0x7f040526;
+        public static int restoreState = 0x7f040576;
+        public static int route = 0x7f04057d;
+        public static int startDestination = 0x7f0405fb;
+        public static int uri = 0x7f040713;
 
         private attr() {
         }

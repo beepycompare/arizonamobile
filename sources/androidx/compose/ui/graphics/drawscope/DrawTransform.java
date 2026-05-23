@@ -7,49 +7,49 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 /* compiled from: DrawTransform.kt */
 @DrawScopeMarker
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\bg\u0018\u00002\u00020\u0001J(\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\fH&JA\u0010\u0010\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\f2\b\b\u0002\u0010\u0011\u001a\u00020\u0012H&¢\u0006\u0004\b\u0013\u0010\u0014J!\u0010\u0015\u001a\u00020\n2\u0006\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0011\u001a\u00020\u0012H&¢\u0006\u0004\b\u0018\u0010\u0019J\u001c\u0010\u001a\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\fH&J!\u0010\u001b\u001a\u00020\n2\u0006\u0010\u001c\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\u0007H&¢\u0006\u0004\b\u001e\u0010\u001fJ)\u0010 \u001a\u00020\n2\u0006\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\u0007H&¢\u0006\u0004\b#\u0010$J\u0017\u0010%\u001a\u00020\n2\u0006\u0010&\u001a\u00020'H&¢\u0006\u0004\b(\u0010)R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006*À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/DrawTransform;", "", "size", "Landroidx/compose/ui/geometry/Size;", "getSize-NH-jbRc", "()J", TtmlNode.CENTER, "Landroidx/compose/ui/geometry/Offset;", "getCenter-F1C5BW0", "inset", "", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "clipRect", "clipOp", "Landroidx/compose/ui/graphics/ClipOp;", "clipRect-N_I0leg", "(FFFFI)V", "clipPath", "path", "Landroidx/compose/ui/graphics/Path;", "clipPath-mtrdD-E", "(Landroidx/compose/ui/graphics/Path;I)V", "translate", "rotate", "degrees", "pivot", "rotate-Uv8p0NA", "(FJ)V", "scale", "scaleX", "scaleY", "scale-0AR0LA0", "(FFJ)V", "transform", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "transform-58bKbWc", "([F)V", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0003\bg\u0018\u00002\u00020\u0001J(\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\fH&JA\u0010\u0010\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\f2\b\b\u0002\u0010\u0011\u001a\u00020\u0012H&¢\u0006\u0004\b\u0013\u0010\u0014J!\u0010\u0015\u001a\u00020\n2\u0006\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0011\u001a\u00020\u0012H&¢\u0006\u0004\b\u0018\u0010\u0019J\u001c\u0010\u001a\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\fH&J!\u0010\u001b\u001a\u00020\n2\u0006\u0010\u001c\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\u0007H&¢\u0006\u0004\b\u001e\u0010\u001fJ)\u0010 \u001a\u00020\n2\u0006\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\f2\b\b\u0002\u0010\u001d\u001a\u00020\u0007H&¢\u0006\u0004\b#\u0010$J\u0017\u0010%\u001a\u00020\n2\u0006\u0010&\u001a\u00020'H&¢\u0006\u0004\b(\u0010)R\u0012\u0010\u0002\u001a\u00020\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0006\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\b\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006*À\u0006\u0003"}, d2 = {"Landroidx/compose/ui/graphics/drawscope/DrawTransform;", "", "size", "Landroidx/compose/ui/geometry/Size;", "getSize-NH-jbRc", "()J", TtmlNode.CENTER, "Landroidx/compose/ui/geometry/Offset;", "getCenter-F1C5BW0", "inset", "", TtmlNode.LEFT, "", "top", TtmlNode.RIGHT, "bottom", "clipRect", "clipOp", "Landroidx/compose/ui/graphics/ClipOp;", "clipRect-N_I0leg", "(FFFFI)V", "clipPath", "path", "Landroidx/compose/ui/graphics/Path;", "clipPath-mtrdD-E", "(Landroidx/compose/ui/graphics/Path;I)V", "translate", "rotate", "degrees", "pivot", "rotate-Uv8p0NA", "(FJ)V", "scale", "scaleX", "scaleY", "scale-0AR0LA0", "(FFJ)V", "transform", "matrix", "Landroidx/compose/ui/graphics/Matrix;", "transform-58bKbWc", "([F)V", "ui-graphics"}, k = 1, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public interface DrawTransform {
     /* renamed from: clipPath-mtrdD-E */
-    void mo5269clipPathmtrdDE(Path path, int i);
+    void mo5845clipPathmtrdDE(Path path, int i);
 
     /* renamed from: clipRect-N_I0leg */
-    void mo5270clipRectN_I0leg(float f, float f2, float f3, float f4, int i);
+    void mo5846clipRectN_I0leg(float f, float f2, float f3, float f4, int i);
 
     /* renamed from: getSize-NH-jbRc */
-    long mo5272getSizeNHjbRc();
+    long mo5848getSizeNHjbRc();
 
     void inset(float f, float f2, float f3, float f4);
 
     /* renamed from: rotate-Uv8p0NA */
-    void mo5273rotateUv8p0NA(float f, long j);
+    void mo5849rotateUv8p0NA(float f, long j);
 
     /* renamed from: scale-0AR0LA0 */
-    void mo5274scale0AR0LA0(float f, float f2, long j);
+    void mo5850scale0AR0LA0(float f, float f2, long j);
 
     /* renamed from: transform-58bKbWc */
-    void mo5275transform58bKbWc(float[] fArr);
+    void mo5851transform58bKbWc(float[] fArr);
 
     void translate(float f, float f2);
 
     /* compiled from: DrawTransform.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-        public static long m5408getCenterF1C5BW0(DrawTransform drawTransform) {
-            return DrawTransform.super.mo5271getCenterF1C5BW0();
+        public static long m5984getCenterF1C5BW0(DrawTransform drawTransform) {
+            return DrawTransform.super.mo5847getCenterF1C5BW0();
         }
     }
 
     /* renamed from: getCenter-F1C5BW0 */
-    default long mo5271getCenterF1C5BW0() {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() >> 32)) / 2.0f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5272getSizeNHjbRc() & 4294967295L)) / 2.0f) & 4294967295L));
+    default long mo5847getCenterF1C5BW0() {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5848getSizeNHjbRc() >> 32)) / 2.0f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo5848getSizeNHjbRc() & 4294967295L)) / 2.0f) & 4294967295L));
     }
 
     /* renamed from: clipRect-N_I0leg$default  reason: not valid java name */
-    static /* synthetic */ void m5403clipRectN_I0leg$default(DrawTransform drawTransform, float f, float f2, float f3, float f4, int i, int i2, Object obj) {
+    static /* synthetic */ void m5979clipRectN_I0leg$default(DrawTransform drawTransform, float f, float f2, float f3, float f4, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: clipRect-N_I0leg");
         }
@@ -60,26 +60,26 @@ public interface DrawTransform {
             f2 = 0.0f;
         }
         if ((i2 & 4) != 0) {
-            f3 = Float.intBitsToFloat((int) (drawTransform.mo5272getSizeNHjbRc() >> 32));
+            f3 = Float.intBitsToFloat((int) (drawTransform.mo5848getSizeNHjbRc() >> 32));
         }
         if ((i2 & 8) != 0) {
-            f4 = Float.intBitsToFloat((int) (drawTransform.mo5272getSizeNHjbRc() & 4294967295L));
+            f4 = Float.intBitsToFloat((int) (drawTransform.mo5848getSizeNHjbRc() & 4294967295L));
         }
         if ((i2 & 16) != 0) {
-            i = ClipOp.Companion.m4761getIntersectrtfAjoo();
+            i = ClipOp.Companion.m5337getIntersectrtfAjoo();
         }
-        drawTransform.mo5270clipRectN_I0leg(f, f2, f3, f4, i);
+        drawTransform.mo5846clipRectN_I0leg(f, f2, f3, f4, i);
     }
 
     /* renamed from: clipPath-mtrdD-E$default  reason: not valid java name */
-    static /* synthetic */ void m5402clipPathmtrdDE$default(DrawTransform drawTransform, Path path, int i, int i2, Object obj) {
+    static /* synthetic */ void m5978clipPathmtrdDE$default(DrawTransform drawTransform, Path path, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: clipPath-mtrdD-E");
         }
         if ((i2 & 2) != 0) {
-            i = ClipOp.Companion.m4761getIntersectrtfAjoo();
+            i = ClipOp.Companion.m5337getIntersectrtfAjoo();
         }
-        drawTransform.mo5269clipPathmtrdDE(path, i);
+        drawTransform.mo5845clipPathmtrdDE(path, i);
     }
 
     static /* synthetic */ void translate$default(DrawTransform drawTransform, float f, float f2, int i, Object obj) {
@@ -96,24 +96,24 @@ public interface DrawTransform {
     }
 
     /* renamed from: rotate-Uv8p0NA$default  reason: not valid java name */
-    static /* synthetic */ void m5404rotateUv8p0NA$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
+    static /* synthetic */ void m5980rotateUv8p0NA$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: rotate-Uv8p0NA");
         }
         if ((i & 2) != 0) {
-            j = drawTransform.mo5271getCenterF1C5BW0();
+            j = drawTransform.mo5847getCenterF1C5BW0();
         }
-        drawTransform.mo5273rotateUv8p0NA(f, j);
+        drawTransform.mo5849rotateUv8p0NA(f, j);
     }
 
     /* renamed from: scale-0AR0LA0$default  reason: not valid java name */
-    static /* synthetic */ void m5405scale0AR0LA0$default(DrawTransform drawTransform, float f, float f2, long j, int i, Object obj) {
+    static /* synthetic */ void m5981scale0AR0LA0$default(DrawTransform drawTransform, float f, float f2, long j, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: scale-0AR0LA0");
         }
         if ((i & 4) != 0) {
-            j = drawTransform.mo5271getCenterF1C5BW0();
+            j = drawTransform.mo5847getCenterF1C5BW0();
         }
-        drawTransform.mo5274scale0AR0LA0(f, f2, j);
+        drawTransform.mo5850scale0AR0LA0(f, f2, j);
     }
 }

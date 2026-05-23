@@ -10,7 +10,7 @@ import com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkSch
 import com.google.android.datatransport.runtime.scheduling.persistence.EventStore;
 import com.google.android.datatransport.runtime.time.Clock;
 @Module
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SchedulingModule {
     @Binds
     abstract Scheduler scheduler(DefaultScheduler defaultScheduler);

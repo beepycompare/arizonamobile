@@ -10,7 +10,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgz extends zzos {
     public zzgz(zzpg zzpgVar) {
@@ -18,8 +18,8 @@ public final class zzgz extends zzos {
     }
 
     public final boolean zzb() {
-        zzaw();
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.zzu.zzaY().getSystemService("connectivity");
+        zzay();
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.zzu.zzaZ().getSystemService("connectivity");
         NetworkInfo networkInfo = null;
         if (connectivityManager != null) {
             try {
@@ -31,7 +31,7 @@ public final class zzgz extends zzos {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzos
-    protected final boolean zzbb() {
+    protected final boolean zzbc() {
         return false;
     }
 
@@ -39,13 +39,13 @@ public final class zzgz extends zzos {
         zzgz zzgzVar;
         String str2;
         URL url;
-        byte[] zzcc;
+        byte[] zzcd;
         zzg();
-        zzaw();
+        zzay();
         try {
             url = new URI(zzotVar.zza()).toURL();
             this.zzg.zzp();
-            zzcc = zzibVar.zzcc();
+            zzcd = zzibVar.zzcd();
             zzgzVar = this;
             str2 = str;
         } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused) {
@@ -53,9 +53,9 @@ public final class zzgz extends zzos {
             str2 = str;
         }
         try {
-            this.zzu.zzaW().zzm(new zzgy(zzgzVar, str2, url, zzcc, zzotVar.zzb(), zzgwVar));
+            this.zzu.zzaX().zzm(new zzgy(zzgzVar, str2, url, zzcd, zzotVar.zzb(), zzgwVar));
         } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzgzVar.zzu.zzaV().zzb().zzc("Failed to parse URL. Not uploading MeasurementBatch. appId", zzgu.zzl(str2), zzotVar.zza());
+            zzgzVar.zzu.zzaW().zzb().zzc("Failed to parse URL. Not uploading MeasurementBatch. appId", zzgu.zzl(str2), zzotVar.zza());
         }
     }
 
@@ -63,7 +63,7 @@ public final class zzgz extends zzos {
         zzgz zzgzVar;
         URL url;
         zzg();
-        zzaw();
+        zzay();
         Preconditions.checkNotNull(zzhVar);
         Preconditions.checkNotNull(zzgwVar);
         zzou zzf = this.zzg.zzf();
@@ -73,7 +73,7 @@ public final class zzgz extends zzos {
         String.valueOf(zzf2);
         Uri.Builder appendQueryParameter = encodedAuthority.path("config/app/".concat(String.valueOf(zzf2))).appendQueryParameter("platform", ConstantDeviceInfo.APP_PLATFORM);
         zzf.zzu.zzc().zzi();
-        appendQueryParameter.appendQueryParameter("gmp_version", String.valueOf(133005L)).appendQueryParameter("runtime_version", "0");
+        appendQueryParameter.appendQueryParameter("gmp_version", String.valueOf(161000L)).appendQueryParameter("runtime_version", "0");
         String uri = builder.build().toString();
         try {
             url = new URI(uri).toURL();
@@ -82,9 +82,9 @@ public final class zzgz extends zzos {
             zzgzVar = this;
         }
         try {
-            this.zzu.zzaW().zzm(new zzgy(zzgzVar, zzhVar.zzc(), url, null, map, zzgwVar));
+            this.zzu.zzaX().zzm(new zzgy(zzgzVar, zzhVar.zzc(), url, null, map, zzgwVar));
         } catch (IllegalArgumentException | MalformedURLException | URISyntaxException unused2) {
-            zzgzVar.zzu.zzaV().zzb().zzc("Failed to parse config URL. Not fetching. appId", zzgu.zzl(zzhVar.zzc()), uri);
+            zzgzVar.zzu.zzaW().zzb().zzc("Failed to parse config URL. Not fetching. appId", zzgu.zzl(zzhVar.zzc()), uri);
         }
     }
 }

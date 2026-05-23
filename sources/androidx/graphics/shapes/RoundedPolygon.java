@@ -119,7 +119,7 @@ public final class RoundedPolygon {
     }
 
     /* renamed from: getCenter-1ufDz9w$graphics_shapes  reason: not valid java name */
-    public final long m8125getCenter1ufDz9w$graphics_shapes() {
+    public final long m8730getCenter1ufDz9w$graphics_shapes() {
         return this.center;
     }
 
@@ -128,11 +128,11 @@ public final class RoundedPolygon {
     }
 
     public final float getCenterX() {
-        return PointKt.m8106getXDnnuFBc(this.center);
+        return PointKt.m8711getXDnnuFBc(this.center);
     }
 
     public final float getCenterY() {
-        return PointKt.m8107getYDnnuFBc(this.center);
+        return PointKt.m8712getYDnnuFBc(this.center);
     }
 
     public final List<Cubic> getCubics() {
@@ -141,13 +141,13 @@ public final class RoundedPolygon {
 
     public final RoundedPolygon transformed(PointTransformer f) {
         Intrinsics.checkNotNullParameter(f, "f");
-        long m8113transformedso9K2fw = PointKt.m8113transformedso9K2fw(this.center, f);
+        long m8718transformedso9K2fw = PointKt.m8718transformedso9K2fw(this.center, f);
         List createListBuilder = CollectionsKt.createListBuilder();
         int size = this.features.size();
         for (int i = 0; i < size; i++) {
             createListBuilder.add(this.features.get(i).transformed(f));
         }
-        return new RoundedPolygon(CollectionsKt.build(createListBuilder), m8113transformedso9K2fw, null);
+        return new RoundedPolygon(CollectionsKt.build(createListBuilder), m8718transformedso9K2fw, null);
     }
 
     public final RoundedPolygon normalized() {
@@ -160,7 +160,7 @@ public final class RoundedPolygon {
         return transformed(new PointTransformer() { // from class: androidx.graphics.shapes.RoundedPolygon$normalized$1
             @Override // androidx.graphics.shapes.PointTransformer
             /* renamed from: transform-XgqJiTY */
-            public final long mo8115transformXgqJiTY(float f5, float f6) {
+            public final long mo8720transformXgqJiTY(float f5, float f6) {
                 float f7 = f5 + f3;
                 float f8 = max;
                 return FloatFloatPair.m12constructorimpl(f7 / f8, (f6 + f4) / f8);
@@ -189,8 +189,8 @@ public final class RoundedPolygon {
         for (int i = 0; i < size; i++) {
             Cubic cubic = this.cubics.get(i);
             float distanceSquared = Utils.distanceSquared(cubic.getAnchor0X() - getCenterX(), cubic.getAnchor0Y() - getCenterY());
-            long m8095pointOnCurveOOQOV4g$graphics_shapes = cubic.m8095pointOnCurveOOQOV4g$graphics_shapes(0.5f);
-            f = Math.max(f, Math.max(distanceSquared, Utils.distanceSquared(PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes) - getCenterX(), PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes) - getCenterY())));
+            long m8700pointOnCurveOOQOV4g$graphics_shapes = cubic.m8700pointOnCurveOOQOV4g$graphics_shapes(0.5f);
+            f = Math.max(f, Math.max(distanceSquared, Utils.distanceSquared(PointKt.m8711getXDnnuFBc(m8700pointOnCurveOOQOV4g$graphics_shapes) - getCenterX(), PointKt.m8712getYDnnuFBc(m8700pointOnCurveOOQOV4g$graphics_shapes) - getCenterY())));
         }
         float sqrt = (float) Math.sqrt(f);
         bounds[0] = getCenterX() - sqrt;

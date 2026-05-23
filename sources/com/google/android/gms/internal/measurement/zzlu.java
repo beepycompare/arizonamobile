@@ -1,15 +1,9 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzlu {
-    private static final zzls zza = new zzlt();
+final /* synthetic */ class zzlu {
+    static final /* synthetic */ zzlu zza = new zzlu();
 
-    static {
-        int i = zznu.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzls zza() {
-        return zza;
+    private /* synthetic */ zzlu() {
     }
 }

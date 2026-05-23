@@ -2,7 +2,7 @@ package androidx.core.widget;
 
 import android.view.View;
 import android.widget.PopupMenu;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class PopupMenuCompat {
     private PopupMenuCompat() {
     }

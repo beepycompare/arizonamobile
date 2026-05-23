@@ -1,21 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import kotlin.collections.CollectionsKt;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.AdaptedFunctionReference;
 /* loaded from: classes5.dex */
-public abstract class Tn {
-    public static final Qn a(Throwable th, V v, List list, String str, Boolean bool) {
-        ArrayList arrayList = null;
-        Gn a2 = th != null ? Hn.a(th, 1, 0) : null;
-        if (list != null) {
-            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                arrayList.add(new Dl((StackTraceElement) it.next()));
-            }
-        }
-        return new Qn(a2, v, arrayList, null, null, null, str, bool);
+public final /* synthetic */ class Tn extends AdaptedFunctionReference implements Function1 {
+    public Tn(Object obj) {
+        super(1, obj, Un.class, "insertRecords", "insertRecords(Ljava/util/List;)J", 8);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        ((Un) this.receiver).a((List) obj);
+        return Unit.INSTANCE;
     }
 }

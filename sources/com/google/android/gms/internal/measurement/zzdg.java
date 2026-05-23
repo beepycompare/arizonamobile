@@ -1,37 +1,27 @@
 package com.google.android.gms.internal.measurement;
 
-import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import android.os.Bundle;
+import android.os.RemoteException;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzdg implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        String str = null;
-        int i = 0;
-        Intent intent = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 2) {
-                str = SafeParcelReader.createString(parcel, readHeader);
-            } else if (fieldId == 3) {
-                intent = (Intent) SafeParcelReader.createParcelable(parcel, readHeader, Intent.CREATOR);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzdf(i, str, intent);
+public final class zzdg extends zzeo {
+    final /* synthetic */ Bundle zza;
+    final /* synthetic */ zzez zzb;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzdg(zzez zzezVar, Bundle bundle) {
+        super(zzezVar, true);
+        this.zza = bundle;
+        Objects.requireNonNull(zzezVar);
+        this.zzb = zzezVar;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zzdf[i];
+    @Override // com.google.android.gms.internal.measurement.zzeo
+    final void zza() throws RemoteException {
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zzS())).setConditionalUserProperty(this.zza, this.zzi);
     }
 }

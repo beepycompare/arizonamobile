@@ -1,23 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.IReporter;
-import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Tg extends Rg {
-    public final IReporter b;
+public final class Tg {
 
-    public Tg(X4 x4, IReporter iReporter) {
-        super(x4);
-        this.b = iReporter;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public final String f777a;
+    public final C0622to b;
 
-    @Override // io.appmetrica.analytics.impl.Rg
-    public final boolean a(P5 p5) {
-        Gc gc = (Gc) Gc.c.get(p5.d);
-        HashMap hashMap = new HashMap();
-        hashMap.put("type", gc.f599a);
-        hashMap.put("delivery_method", gc.b);
-        this.b.reportEvent("crash_saved", hashMap);
-        return false;
+    public Tg(String str, C0622to c0622to) {
+        this.f777a = str;
+        this.b = c0622to;
     }
 }

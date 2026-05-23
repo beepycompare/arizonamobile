@@ -3,7 +3,7 @@ package com.google.common.base;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 @ElementTypesAreNonnullByDefault
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Charsets {
     public static final Charset US_ASCII = StandardCharsets.US_ASCII;
     public static final Charset ISO_8859_1 = StandardCharsets.ISO_8859_1;

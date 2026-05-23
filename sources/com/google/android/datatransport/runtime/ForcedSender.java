@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime;
 import com.google.android.datatransport.Priority;
 import com.google.android.datatransport.Transport;
 import com.google.android.datatransport.runtime.logging.Logging;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ForcedSender {
     private static final String LOG_TAG = "ForcedSender";
 

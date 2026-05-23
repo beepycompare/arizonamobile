@@ -20,6 +20,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
     private final boolean allowUnseekableMedia;
     private IllegalClippingException clippingError;
     private ClippingTimeline clippingTimeline;
+    private final boolean enableClippingInMediaPeriod;
     private final boolean enableInitialDiscontinuity;
     private final long endUs;
     private final ArrayList<ClippingMediaPeriod> mediaPeriods;
@@ -34,6 +35,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         private boolean allowDynamicClippingUpdates;
         private boolean allowUnseekableMedia;
         private boolean buildCalled;
+        private boolean enableClippingInMediaPeriod;
         private boolean enableInitialDiscontinuity = true;
         private long endPositionUs = Long.MIN_VALUE;
         private final MediaSource mediaSource;
@@ -86,6 +88,12 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         public Builder setAllowUnseekableMedia(boolean z) {
             Preconditions.checkState(!this.buildCalled);
             this.allowUnseekableMedia = z;
+            return this;
+        }
+
+        public Builder setEnableClippingInMediaPeriod(boolean z) {
+            Preconditions.checkState(!this.buildCalled);
+            this.enableClippingInMediaPeriod = z;
             return this;
         }
 
@@ -157,6 +165,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         this.allowDynamicClippingUpdates = builder.allowDynamicClippingUpdates;
         this.relativeToDefaultPosition = builder.relativeToDefaultPosition;
         this.allowUnseekableMedia = builder.allowUnseekableMedia;
+        this.enableClippingInMediaPeriod = builder.enableClippingInMediaPeriod;
         this.mediaPeriods = new ArrayList<>();
         this.window = new Timeline.Window();
     }
@@ -177,7 +186,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
 
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource, androidx.media3.exoplayer.source.MediaSource
     public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(this.mediaSource.createPeriod(mediaPeriodId, allocator, j), this.enableInitialDiscontinuity, this.periodStartUs, this.periodEndUs);
+        ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(this.mediaSource.createPeriod(mediaPeriodId, allocator, j), this.enableInitialDiscontinuity, this.periodStartUs, this.periodEndUs, this.enableClippingInMediaPeriod);
         this.mediaPeriods.add(clippingMediaPeriod);
         return clippingMediaPeriod;
     }

@@ -21,7 +21,7 @@ import okio.BufferedSource;
 import okio.Okio;
 import okio.Source;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BitmapHunter implements Runnable {
     Action action;
     List<Action> actions;

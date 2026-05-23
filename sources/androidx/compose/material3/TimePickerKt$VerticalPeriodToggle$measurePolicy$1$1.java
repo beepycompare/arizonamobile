@@ -42,7 +42,7 @@ public final class TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1 implement
         for (int i = 0; i < size; i++) {
             Measurable measurable = list.get(i);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "Spacer")) {
-                final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, measureScope.mo399roundToPx0680j_4(TimePickerTokens.INSTANCE.m3819getPeriodSelectorOutlineWidthD9Ej5fM()), 3, null));
+                final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, measureScope.mo428roundToPx0680j_4(TimePickerTokens.INSTANCE.m4264getPeriodSelectorOutlineWidthD9Ej5fM()), 3, null));
                 ArrayList arrayList = new ArrayList(list.size());
                 int size2 = list2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
@@ -55,13 +55,13 @@ public final class TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1 implement
                 ArrayList arrayList3 = new ArrayList(arrayList2.size());
                 int size3 = arrayList2.size();
                 for (int i3 = 0; i3 < size3; i3++) {
-                    arrayList3.add(((Measurable) arrayList2.get(i3)).mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, Constraints.m7507getMaxHeightimpl(j) / 2, 3, null)));
+                    arrayList3.add(((Measurable) arrayList2.get(i3)).mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, Constraints.m8112getMaxHeightimpl(j) / 2, 3, null)));
                 }
                 final ArrayList arrayList4 = arrayList3;
-                return MeasureScope.layout$default(measureScope, Constraints.m7508getMaxWidthimpl(j), Constraints.m7507getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1$$ExternalSyntheticLambda0
+                return MeasureScope.layout$default(measureScope, Constraints.m8113getMaxWidthimpl(j), Constraints.m8112getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        return TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1.measure_3p2s80s$lambda$3(arrayList4, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
+                        return TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1.measure_3p2s80s$lambda$3(arrayList4, mo6818measureBRTryo0, (Placeable.PlacementScope) obj);
                     }
                 }, 4, null);
             }

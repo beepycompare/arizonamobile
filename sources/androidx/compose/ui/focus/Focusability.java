@@ -9,56 +9,56 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Focusability.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0087@\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0017\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0000¢\u0006\u0004\b\u000e\u0010\u000fJ\u0013\u0010\u0010\u001a\u00020\u000b2\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0012\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/focus/Focusability;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "canFocus", "", "node", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "canFocus-impl$ui", "(ILandroidx/compose/ui/node/CompositionLocalConsumerModifierNode;)Z", "equals", "other", "hashCode", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0087@\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0017\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0000¢\u0006\u0004\b\u000e\u0010\u000fJ\u0014\u0010\u0010\u001a\u00020\u000b2\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0012\u001a\u00020\u0003HÖ\u0081\u0004R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/focus/Focusability;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "canFocus", "", "node", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "canFocus-impl$ui", "(ILandroidx/compose/ui/node/CompositionLocalConsumerModifierNode;)Z", "equals", "other", "hashCode", "Companion", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class Focusability {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Always = m4455constructorimpl(1);
-    private static final int SystemDefined = m4455constructorimpl(0);
-    private static final int Never = m4455constructorimpl(2);
+    private static final int Always = m5031constructorimpl(1);
+    private static final int SystemDefined = m5031constructorimpl(0);
+    private static final int Never = m5031constructorimpl(2);
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ Focusability m4453boximpl(int i) {
+    public static final /* synthetic */ Focusability m5029boximpl(int i) {
         return new Focusability(i);
     }
 
     /* renamed from: constructor-impl */
-    private static int m4455constructorimpl(int i) {
+    private static int m5031constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m4456equalsimpl(int i, Object obj) {
-        return (obj instanceof Focusability) && i == ((Focusability) obj).m4460unboximpl();
+    public static boolean m5032equalsimpl(int i, Object obj) {
+        return (obj instanceof Focusability) && i == ((Focusability) obj).m5036unboximpl();
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m4457equalsimpl0(int i, int i2) {
+    public static final boolean m5033equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl */
-    public static int m4458hashCodeimpl(int i) {
+    public static int m5034hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4456equalsimpl(this.value, obj);
+        return m5032equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4458hashCodeimpl(this.value);
+        return m5034hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ int m4460unboximpl() {
+    public final /* synthetic */ int m5036unboximpl() {
         return this.value;
     }
 
     /* compiled from: Focusability.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007¨\u0006\r"}, d2 = {"Landroidx/compose/ui/focus/Focusability$Companion;", "", "<init>", "()V", "Always", "Landroidx/compose/ui/focus/Focusability;", "getAlways-LCbbffg", "()I", "I", "SystemDefined", "getSystemDefined-LCbbffg", "Never", "getNever-LCbbffg", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007¨\u0006\r"}, d2 = {"Landroidx/compose/ui/focus/Focusability$Companion;", "", "<init>", "()V", "Always", "Landroidx/compose/ui/focus/Focusability;", "getAlways-LCbbffg", "()I", "I", "SystemDefined", "getSystemDefined-LCbbffg", "Never", "getNever-LCbbffg", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -69,17 +69,17 @@ public final class Focusability {
         }
 
         /* renamed from: getAlways-LCbbffg */
-        public final int m4461getAlwaysLCbbffg() {
+        public final int m5037getAlwaysLCbbffg() {
             return Focusability.Always;
         }
 
         /* renamed from: getSystemDefined-LCbbffg */
-        public final int m4463getSystemDefinedLCbbffg() {
+        public final int m5039getSystemDefinedLCbbffg() {
             return Focusability.SystemDefined;
         }
 
         /* renamed from: getNever-LCbbffg */
-        public final int m4462getNeverLCbbffg() {
+        public final int m5038getNeverLCbbffg() {
             return Focusability.Never;
         }
     }
@@ -89,32 +89,32 @@ public final class Focusability {
     }
 
     public String toString() {
-        return m4459toStringimpl(this.value);
+        return m5035toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl */
-    public static String m4459toStringimpl(int i) {
-        if (m4457equalsimpl0(i, Always)) {
+    public static String m5035toStringimpl(int i) {
+        if (m5033equalsimpl0(i, Always)) {
             return "Always";
         }
-        if (m4457equalsimpl0(i, SystemDefined)) {
+        if (m5033equalsimpl0(i, SystemDefined)) {
             return "SystemDefined";
         }
-        if (m4457equalsimpl0(i, Never)) {
+        if (m5033equalsimpl0(i, Never)) {
             return "Never";
         }
         throw new IllegalStateException("Unknown Focusability".toString());
     }
 
     /* renamed from: canFocus-impl$ui */
-    public static final boolean m4454canFocusimpl$ui(int i, CompositionLocalConsumerModifierNode compositionLocalConsumerModifierNode) {
-        if (m4457equalsimpl0(i, Always)) {
+    public static final boolean m5030canFocusimpl$ui(int i, CompositionLocalConsumerModifierNode compositionLocalConsumerModifierNode) {
+        if (m5033equalsimpl0(i, Always)) {
             return true;
         }
-        if (m4457equalsimpl0(i, SystemDefined)) {
-            return !InputMode.m5578equalsimpl0(((InputModeManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(compositionLocalConsumerModifierNode, CompositionLocalsKt.getLocalInputModeManager())).mo5584getInputModeaOaMEAU(), InputMode.Companion.m5583getTouchaOaMEAU());
+        if (m5033equalsimpl0(i, SystemDefined)) {
+            return !InputMode.m6154equalsimpl0(((InputModeManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(compositionLocalConsumerModifierNode, CompositionLocalsKt.getLocalInputModeManager())).mo6161getInputModeaOaMEAU(), InputMode.Companion.m6159getTouchaOaMEAU());
         }
-        if (m4457equalsimpl0(i, Never)) {
+        if (m5033equalsimpl0(i, Never)) {
             return false;
         }
         throw new IllegalStateException("Unknown Focusability".toString());

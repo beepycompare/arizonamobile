@@ -13,7 +13,7 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({GuardedByUnknown.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface GuardSatisfied {
     int value() default -1;
 }

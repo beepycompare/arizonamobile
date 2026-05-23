@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zznt {
     private final Context zza;
@@ -39,7 +39,7 @@ public final class zznt {
     }
 
     private final void zzk(zzpg zzpgVar, Runnable runnable) {
-        zzpgVar.zzaW().zzj(new zzno(this, zzpgVar, runnable));
+        zzpgVar.zzaX().zzj(new zzno(this, zzpgVar, runnable));
     }
 
     public final void zza() {
@@ -60,16 +60,16 @@ public final class zznt {
             return 2;
         }
         Context context = this.zza;
-        zzic zzy = zzic.zzy(context, null, null);
-        final zzgu zzaV = zzy.zzaV();
+        zzic zzy = zzic.zzy(context, null, null, null);
+        final zzgu zzaW = zzy.zzaW();
         String action = intent.getAction();
-        zzy.zzaU();
-        zzaV.zzk().zzc("Local AppMeasurementService called. startId, action", Integer.valueOf(i2), action);
+        zzy.zzaV();
+        zzaW.zzk().zzc("Local AppMeasurementService called. startId, action", Integer.valueOf(i2), action);
         if ("com.google.android.gms.measurement.UPLOAD".equals(action)) {
             zzk(zzpg.zza(context), new Runnable() { // from class: com.google.android.gms.measurement.internal.zzns
                 @Override // java.lang.Runnable
                 public final /* synthetic */ void run() {
-                    zznt.this.zzf(i2, zzaV, intent);
+                    zznt.this.zzf(i2, zzaW, intent);
                 }
             });
         }
@@ -96,19 +96,19 @@ public final class zznt {
         Log.v("FA", "onStartJob received action: ".concat(String.valueOf(string)));
         if (Objects.equals(string, "com.google.android.gms.measurement.UPLOAD")) {
             zzpg zza = zzpg.zza(this.zza);
-            final zzgu zzaV = zza.zzaV();
-            zza.zzaU();
-            zzaV.zzk().zzb("Local AppMeasurementJobService called. action", (String) Preconditions.checkNotNull(string));
+            final zzgu zzaW = zza.zzaW();
+            zza.zzaV();
+            zzaW.zzk().zzb("Local AppMeasurementJobService called. action", (String) Preconditions.checkNotNull(string));
             zzk(zza, new Runnable() { // from class: com.google.android.gms.measurement.internal.zznq
                 @Override // java.lang.Runnable
                 public final /* synthetic */ void run() {
-                    zznt.this.zzg(zzaV, jobParameters);
+                    zznt.this.zzg(zzaW, jobParameters);
                 }
             });
         }
         if (Objects.equals(string, "com.google.android.gms.measurement.SCION_UPLOAD")) {
             String str = (String) Preconditions.checkNotNull(string);
-            com.google.android.gms.internal.measurement.zzfb.zza(this.zza, null).zzw(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznr
+            com.google.android.gms.internal.measurement.zzez.zza(this.zza, null).zzw(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznr
                 @Override // java.lang.Runnable
                 public final /* synthetic */ void run() {
                     zznt.this.zzh(jobParameters);
@@ -125,7 +125,7 @@ public final class zznt {
         zznp zznpVar = (zznp) context;
         if (zznpVar.zza(i)) {
             zzguVar.zzk().zzb("Local AppMeasurementService processed last upload request. StartId", Integer.valueOf(i));
-            zzic.zzy(context, null, null).zzaV().zzk().zza("Completed wakeful intent.");
+            zzic.zzy(context, null, null, null).zzaW().zzk().zza("Completed wakeful intent.");
             zznpVar.zzc(intent);
         }
     }

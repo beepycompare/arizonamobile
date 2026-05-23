@@ -12,10 +12,12 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.PlaybackException;
+import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.OpusUtil;
 import androidx.media3.decoder.CryptoConfig;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.BaseRenderer;
@@ -32,7 +34,6 @@ import androidx.media3.exoplayer.drm.FrameworkCryptoConfig;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import androidx.media3.exoplayer.source.MediaSource;
-import androidx.media3.extractor.OpusUtil;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
@@ -46,7 +47,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class MediaCodecRenderer extends BaseRenderer {
     private static final byte[] ADAPTATION_WORKAROUND_BUFFER = {0, 0, 1, 103, 66, -64, Ascii.VT, -38, 37, -112, 0, 0, 1, 104, -50, Ascii.SI, 19, 32, 0, 0, 1, 101, -120, -124, Ascii.CR, -50, 113, Ascii.CAN, -96, 0, 47, -65, Ascii.FS, 49, -61, 39, 93, 120};
     private static final int ADAPTATION_WORKAROUND_MODE_ALWAYS = 2;
@@ -229,7 +230,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         return 8;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class DecoderInitializationException extends Exception {
         private static final int CUSTOM_ERROR_CODE_BASE = -50000;
         private static final int DECODER_QUERY_ERROR = -49998;
@@ -330,7 +331,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.experimentalEnableProcessedStreamChangedAtStart = true;
     }
 
-    protected long getDurationToProgressUs(long j, long j2, boolean z) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public long getDurationToProgressUs(long j, long j2, boolean z) {
         return super.getDurationToProgressUs(j, j2);
     }
 
@@ -378,12 +380,12 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void updateOutputFormatForTime(long j) throws ExoPlaybackException {
-        Format pollFloor = this.outputStreamInfo.formatQueue.pollFloor(j);
-        if (pollFloor == null && this.needToNotifyOutputFormatChangeAfterStreamChange && this.codecOutputMediaFormat != null) {
-            pollFloor = this.outputStreamInfo.formatQueue.pollFirst();
+        Format format = (Format) this.outputStreamInfo.formatQueue.pollFloor(j);
+        if (format == null && this.needToNotifyOutputFormatChangeAfterStreamChange && this.codecOutputMediaFormat != null) {
+            format = (Format) this.outputStreamInfo.formatQueue.pollFirst();
         }
-        if (pollFloor != null) {
-            this.outputFormat = pollFloor;
+        if (format != null) {
+            this.outputFormat = format;
         } else if (!this.codecOutputMediaFormatChanged || this.outputFormat == null) {
             return;
         }
@@ -419,7 +421,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003e, code lost:
         if (r4 >= r0) goto L17;
      */
     @Override // androidx.media3.exoplayer.BaseRenderer
@@ -472,6 +474,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 this.waitingForFirstSampleInFormat = true;
             }
             this.outputStreamInfo.formatQueue.clear();
+            this.outputStreamInfo.queuedBufferAfterReset = false;
         }
     }
 
@@ -1010,7 +1013,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 mediaCodecAdapter.useInputBuffer(new Runnable() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecRenderer$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaCodecRenderer.this.m8269xf3821a9d(formatHolder);
+                        MediaCodecRenderer.this.m8877xf3821a9d(formatHolder);
                     }
                 });
                 int i3 = this.readDataResultHolder.get();
@@ -1026,30 +1029,14 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     }
                     onInputFormatChanged(formatHolder);
                     return true;
-                } else if (this.buffer.isEndOfStream()) {
-                    getLastOutputStreamInfo().lastBufferTimeUs = this.largestQueuedPresentationTimeUs;
-                    if (this.codecReconfigurationState == 2) {
+                } else if (!this.buffer.isEndOfStream()) {
+                    if (!this.codecReceivedBuffers && !this.buffer.isKeyFrame()) {
                         this.buffer.clear();
-                        this.codecReconfigurationState = 1;
+                        if (this.codecReconfigurationState == 2) {
+                            this.codecReconfigurationState = 1;
+                        }
+                        return true;
                     }
-                    this.inputStreamEnded = true;
-                    if (!this.codecReceivedBuffers) {
-                        processEndOfStream();
-                        return false;
-                    }
-                    if (!this.codecNeedsEosPropagation) {
-                        this.codecReceivedEos = true;
-                        mediaCodecAdapter.queueInputBuffer(this.inputIndex, 0, 0, 0L, 4);
-                        resetInputBuffer();
-                    }
-                    return false;
-                } else if (!this.codecReceivedBuffers && !this.buffer.isKeyFrame()) {
-                    this.buffer.clear();
-                    if (this.codecReconfigurationState == 2) {
-                        this.codecReconfigurationState = 1;
-                    }
-                    return true;
-                } else {
                     long j = this.buffer.timeUs;
                     if (shouldDiscardDecoderInputBuffer(this.buffer)) {
                         return true;
@@ -1059,7 +1046,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                         this.buffer.cryptoInfo.increaseClearDataFirstSubSampleBy(position);
                     }
                     if (this.waitingForFirstSampleInFormat) {
-                        getLastOutputStreamInfo().formatQueue.add(j, (Format) Preconditions.checkNotNull(this.inputFormat));
+                        OutputStreamInfo lastOutputStreamInfo = getLastOutputStreamInfo();
+                        lastOutputStreamInfo.formatQueue.add(j, (Format) Preconditions.checkNotNull(this.inputFormat));
+                        lastOutputStreamInfo.queuedBufferAfterReset = true;
                         this.waitingForFirstSampleInFormat = false;
                     }
                     this.largestQueuedPresentationTimeUs = Math.max(this.largestQueuedPresentationTimeUs, j);
@@ -1091,6 +1080,23 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     this.codecReconfigurationState = 0;
                     this.decoderCounters.queuedInputBufferCount++;
                     return true;
+                } else {
+                    getLastOutputStreamInfo().lastBufferTimeUs = this.largestQueuedPresentationTimeUs;
+                    if (this.codecReconfigurationState == 2) {
+                        this.buffer.clear();
+                        this.codecReconfigurationState = 1;
+                    }
+                    this.inputStreamEnded = true;
+                    if (!this.codecReceivedBuffers) {
+                        processEndOfStream();
+                        return false;
+                    }
+                    if (!this.codecNeedsEosPropagation) {
+                        this.codecReceivedEos = true;
+                        mediaCodecAdapter.queueInputBuffer(this.inputIndex, 0, 0, 0L, 4);
+                        resetInputBuffer();
+                    }
+                    return false;
                 }
             } catch (DecoderInputBuffer.InsufficientCapacityException e) {
                 onCodecError(e);
@@ -1103,21 +1109,17 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$feedInputBuffer$0$androidx-media3-exoplayer-mediacodec-MediaCodecRenderer  reason: not valid java name */
-    public /* synthetic */ void m8269xf3821a9d(FormatHolder formatHolder) {
+    public /* synthetic */ void m8877xf3821a9d(FormatHolder formatHolder) {
         this.readDataResultHolder.set(readSource(formatHolder, this.buffer, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a5, code lost:
-        if (drainAndUpdateCodecDrmSession() == false) goto L35;
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00c4, code lost:
+        if (drainAndUpdateCodecDrmSession() == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00d7, code lost:
-        if (drainAndUpdateCodecDrmSession() == false) goto L35;
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00f6, code lost:
+        if (drainAndUpdateCodecDrmSession() == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f2, code lost:
-        r9 = 2;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00fc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1129,7 +1131,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         if (format.sampleMimeType == null) {
             throw createRendererException(new IllegalArgumentException("Sample MIME type is null."), format, 4005);
         }
-        if ((Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_AV1) || Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_VP9)) && !format.initializationData.isEmpty()) {
+        if ((Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_AV1) || Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_VP9) || (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_DOLBY_VISION) && Objects.equals(CodecSpecificDataUtil.getDolbyVisionBaseLayerMimeType(format), MimeTypes.VIDEO_AV1))) && !format.initializationData.isEmpty()) {
             format = format.buildUpon().setInitializationData(null).build();
         }
         Format format2 = format;
@@ -1152,29 +1154,18 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             return new DecoderReuseEvaluation(mediaCodecInfo.name, format3, format2, 0, 128);
         }
         boolean z2 = this.sourceDrmSession != this.codecDrmSession;
-        DecoderReuseEvaluation canReuseCodec = canReuseCodec(mediaCodecInfo, format3, format2);
+        DecoderReuseEvaluation canReuseCodec = canReuseCodec(mediaCodecInfo, format3, format2, getLastOutputStreamInfo().queuedBufferAfterReset);
         int i2 = canReuseCodec.result;
         if (i2 != 0) {
-            i = 16;
+            i = 2;
             if (i2 == 1) {
                 if (updateCodecOperatingRate(format2)) {
                     this.codecInputFormat = format2;
                     if (!z2) {
                     }
                 }
-                if (canReuseCodec.result != 0) {
-                }
-            } else if (i2 != 2) {
-                if (i2 == 3) {
-                    if (updateCodecOperatingRate(format2)) {
-                        this.codecInputFormat = format2;
-                        if (z2) {
-                        }
-                    }
-                    return (canReuseCodec.result != 0 || (this.codec == mediaCodecAdapter && this.codecDrainAction != 3)) ? canReuseCodec : new DecoderReuseEvaluation(mediaCodecInfo.name, format3, format2, 0, i);
-                }
-                throw new IllegalStateException();
-            } else {
+                i = 16;
+            } else if (i2 == 2) {
                 if (updateCodecOperatingRate(format2)) {
                     this.codecReconfigured = true;
                     this.codecReconfigurationState = 1;
@@ -1187,9 +1178,18 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     if (z2) {
                     }
                 }
-                if (canReuseCodec.result != 0) {
+                i = 16;
+            } else if (i2 == 3) {
+                if (updateCodecOperatingRate(format2)) {
+                    this.codecInputFormat = format2;
+                    if (z2) {
+                    }
                 }
+                i = 16;
+            } else {
+                throw new IllegalStateException();
             }
+            return (canReuseCodec.result != 0 || (this.codec == mediaCodecAdapter && this.codecDrainAction != 3)) ? canReuseCodec : new DecoderReuseEvaluation(mediaCodecInfo.name, format3, format2, 0, i);
         }
         drainAndReinitializeCodec();
         i = 0;
@@ -1220,7 +1220,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         }
     }
 
-    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2) {
+    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2, boolean z) {
         return new DecoderReuseEvaluation(mediaCodecInfo.name, format, format2, 0, 1);
     }
 
@@ -1637,24 +1637,27 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OutputStreamInfo {
-        public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET, C.TIME_UNSET);
-        public final TimedValueQueue<Format> formatQueue = new TimedValueQueue<>();
-        public long lastBufferTimeUs = C.TIME_UNSET;
-        public final long previousStreamLastBufferTimeUs;
-        public final long startPositionUs;
-        public final long streamOffsetUs;
+        private static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET, C.TIME_UNSET);
+        private final TimedValueQueue<Format> formatQueue;
+        private long lastBufferTimeUs;
+        private final long previousStreamLastBufferTimeUs;
+        private boolean queuedBufferAfterReset;
+        private final long startPositionUs;
+        private final long streamOffsetUs;
 
-        public OutputStreamInfo(long j, long j2, long j3) {
+        private OutputStreamInfo(long j, long j2, long j3) {
             this.previousStreamLastBufferTimeUs = j;
             this.startPositionUs = j2;
             this.streamOffsetUs = j3;
+            this.formatQueue = new TimedValueQueue<>();
+            this.lastBufferTimeUs = C.TIME_UNSET;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api31 {
         private Api31() {
         }
@@ -1669,7 +1672,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class MediaCodecRendererCodecAdapterListener implements MediaCodecAdapter.OnBufferAvailableListener {
         private MediaCodecRendererCodecAdapterListener() {
         }

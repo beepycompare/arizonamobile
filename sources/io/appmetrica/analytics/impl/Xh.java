@@ -1,23 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
+import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 /* loaded from: classes5.dex */
-public final class Xh implements Runnable {
+public final class Xh extends C0448n5 {
+    public final String w;
+    public final W6 x;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f860a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ C0278gi c;
-
-    public Xh(C0278gi c0278gi, AdRevenue adRevenue, boolean z) {
-        this.c = c0278gi;
-        this.f860a = adRevenue;
-        this.b = z;
+    public Xh(Context context, C0267g5 c0267g5, F4 f4, W6 w6, Hm hm, AbstractC0396l5 abstractC0396l5, M9 m9) {
+        this(context, c0267g5, new C0417m0(), new TimePassedChecker(), new C0577s5(context, c0267g5, f4, abstractC0396l5, hm, new Sh(w6), Na.k().w().d(), PackageManagerUtils.getAppVersionCodeInt(context), Na.k().l(), m9), w6, f4);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0278gi c0278gi = this.c;
-        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).reportAdRevenue(this.f860a, this.b);
+    @Override // io.appmetrica.analytics.impl.C0448n5, io.appmetrica.analytics.impl.InterfaceC0454nb, io.appmetrica.analytics.impl.InterfaceC0273gb
+    public final synchronized void a(F4 f4) {
+        super.a(f4);
+        this.x.a(this.w, f4.i);
+    }
+
+    public Xh(Context context, C0267g5 c0267g5, C0417m0 c0417m0, TimePassedChecker timePassedChecker, C0577s5 c0577s5, W6 w6, F4 f4) {
+        super(context, c0267g5, c0417m0, timePassedChecker, c0577s5, f4);
+        this.w = c0267g5.b();
+        this.x = w6;
     }
 }

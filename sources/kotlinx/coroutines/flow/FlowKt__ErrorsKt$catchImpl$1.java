@@ -7,11 +7,13 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Errors.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ErrorsKt", f = "Errors.kt", i = {0}, l = {BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER}, m = "catchImpl", n = {"fromDownstream"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ErrorsKt", f = "Errors.kt", i = {0, 0, 0}, l = {BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER}, m = "catchImpl", n = {"$this$catchImpl", "collector", "fromDownstream"}, s = {"L$0", "L$1", "L$2"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ErrorsKt$catchImpl$1<T> extends ContinuationImpl {
     Object L$0;
+    Object L$1;
+    Object L$2;
     int label;
     /* synthetic */ Object result;
 

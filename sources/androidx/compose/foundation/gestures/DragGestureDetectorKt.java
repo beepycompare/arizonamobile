@@ -17,6 +17,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
@@ -26,9 +27,10 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aV\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b\r\u0010\u000e\u001a0\u0010\u000f\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u001e\u0010\u0015\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\b\u0016\u0010\u0017\u001a\u0080\u0001\u0010\u0018\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aè\u0001\u0010\u0018\u001a\u00020\f*\u00020\u00192\b\u0010 \u001a\u0004\u0018\u00010!2M\b\u0002\u0010\u001a\u001aG\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(#\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b($\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\f0\"2#\b\u0002\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00100\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010'\u001a\u0080\u0001\u0010(\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aV\u0010)\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b+\u0010\u000e\u001a^\u0010,\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010-\u001a\u00020.26\u0010/\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b0\u00101\u001a0\u00102\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b3\u0010\u0014\u001a\u001e\u00104\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\b5\u0010\u0017\u001a\u0080\u0001\u00106\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u00107\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aV\u00108\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b9\u0010\u000e\u001a^\u0010:\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010-\u001a\u00020.26\u0010/\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b;\u00101\u001a0\u0010<\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b=\u0010\u0014\u001a\u001e\u0010>\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\b?\u0010\u0017\u001a\u0080\u0001\u0010@\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010A\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110*¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aP\u0010\u000f\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u00122\b\u0010B\u001a\u0004\u0018\u00010!2\u0012\u0010C\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00100\u0012H\u0080H¢\u0006\u0004\bD\u0010E\u001a2\u0010F\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010G\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00100\u0012H\u0082H¢\u0006\u0004\bH\u0010\u0014\u001aT\u0010I\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010-\u001a\u00020.2\b\u0010B\u001a\u0004\u0018\u00010!2\b\b\u0002\u0010J\u001a\u00020\n2\u0018\u0010/\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u0006H\u0080H¢\u0006\u0004\bK\u0010L\u001a$\u0010M\u001a\u00020\u0010*\u00020\u00022\u0006\u0010J\u001a\u00020\u00012\b\b\u0002\u0010N\u001a\u00020OH\u0080@¢\u0006\u0002\u0010P\u001a\u001e\u0010Q\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\bR\u0010\u0017\u001a\u001b\u0010S\u001a\u00020\u0010*\u00020T2\u0006\u0010\u0003\u001a\u00020\u0004H\u0002¢\u0006\u0004\bU\u0010V\u001a\u001b\u0010\\\u001a\u00020**\u00020]2\u0006\u0010-\u001a\u00020.H\u0000¢\u0006\u0004\b^\u0010_\"\u0010\u0010W\u001a\u00020XX\u0082\u0004¢\u0006\u0004\n\u0002\u0010Y\"\u0010\u0010Z\u001a\u00020XX\u0082\u0004¢\u0006\u0004\n\u0002\u0010Y\"\u000e\u0010[\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"awaitTouchSlopOrCancellation", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "pointerId", "Landroidx/compose/ui/input/pointer/PointerId;", "onTouchSlopReached", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "change", "Landroidx/compose/ui/geometry/Offset;", "overSlop", "", "awaitTouchSlopOrCancellation-jO51t88", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "drag", "", "onDrag", "Lkotlin/Function1;", "drag-jO51t88", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitDragOrCancellation", "awaitDragOrCancellation-rnUCldI", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectDragGestures", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "onDragStart", "onDragEnd", "Lkotlin/Function0;", "onDragCancel", "dragAmount", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "orientationLock", "Landroidx/compose/foundation/gestures/Orientation;", "Lkotlin/Function3;", "down", "slopTriggerChange", "overSlopOffset", "shouldAwaitTouchSlop", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/gestures/Orientation;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectDragGesturesAfterLongPress", "awaitVerticalTouchSlopOrCancellation", "", "awaitVerticalTouchSlopOrCancellation-jO51t88", "awaitVerticalPointerSlopOrCancellation", "pointerType", "Landroidx/compose/ui/input/pointer/PointerType;", "onPointerSlopReached", "awaitVerticalPointerSlopOrCancellation-gDDlDlE", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JILkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "verticalDrag", "verticalDrag-jO51t88", "awaitVerticalDragOrCancellation", "awaitVerticalDragOrCancellation-rnUCldI", "detectVerticalDragGestures", "onVerticalDrag", "awaitHorizontalTouchSlopOrCancellation", "awaitHorizontalTouchSlopOrCancellation-jO51t88", "awaitHorizontalPointerSlopOrCancellation", "awaitHorizontalPointerSlopOrCancellation-gDDlDlE", "horizontalDrag", "horizontalDrag-jO51t88", "awaitHorizontalDragOrCancellation", "awaitHorizontalDragOrCancellation-rnUCldI", "detectHorizontalDragGestures", "onHorizontalDrag", "orientation", "motionConsumed", "drag-VnAYq1g", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function1;Landroidx/compose/foundation/gestures/Orientation;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitDragOrUp", "hasDragged", "awaitDragOrUp-jO51t88", "awaitPointerSlopOrCancellation", "initialPositionChange", "awaitPointerSlopOrCancellation-6ksA65w", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JILandroidx/compose/foundation/gestures/Orientation;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitAllPointersUpWithSlopDetection", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerInputChange;Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLongPressOrCancellation", "awaitLongPressOrCancellation-rnUCldI", "isPointerUp", "Landroidx/compose/ui/input/pointer/PointerEvent;", "isPointerUp-DmW0f2w", "(Landroidx/compose/ui/input/pointer/PointerEvent;J)Z", "mouseSlop", "Landroidx/compose/ui/unit/Dp;", "F", "defaultTouchSlop", "mouseToTouchSlopRatio", "pointerSlop", "Landroidx/compose/ui/platform/ViewConfiguration;", "pointerSlop-E8SPZFQ", "(Landroidx/compose/ui/platform/ViewConfiguration;I)F", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008c\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\u001aV\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b\r\u0010\u000e\u001a0\u0010\u000f\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u001e\u0010\u0015\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\b\u0016\u0010\u0017\u001a\u0080\u0001\u0010\u0018\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aè\u0001\u0010\u0018\u001a\u00020\f*\u00020\u00192\b\u0010 \u001a\u0004\u0018\u00010!2M\b\u0002\u0010\u001a\u001aG\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(#\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b($\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\f0\"2#\b\u0002\u0010\u001b\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00100\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010'\u001a\u008e\u0001\u0010(\u001a\u00020\f*\u00020\u00022\u0006\u0010)\u001a\u00020\u00012\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00100\u001c2\b\u0010 \u001a\u0004\u0018\u00010!2\u001e\u0010\u001a\u001a\u001a\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\"2\u0018\u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00062\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u0012\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0080@¢\u0006\u0002\u0010*\u001a\u0080\u0001\u0010+\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aV\u0010,\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b.\u0010\u000e\u001a^\u0010/\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u00100\u001a\u00020126\u00102\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b3\u00104\u001a0\u00105\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b6\u0010\u0014\u001a\u001e\u00107\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\b8\u0010\u0017\u001a\u0080\u0001\u00109\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010:\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aV\u0010;\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u000426\u0010\u0005\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b<\u0010\u000e\u001a^\u0010=\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u00100\u001a\u00020126\u00102\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0004\b>\u00104\u001a0\u0010?\u001a\u00020\u0010*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u0012H\u0086@¢\u0006\u0004\b@\u0010\u0014\u001a\u001e\u0010A\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\bB\u0010\u0017\u001a\u0080\u0001\u0010C\u001a\u00020\f*\u00020\u00192\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u00122\u000e\b\u0002\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001c2\u000e\b\u0002\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001c26\u0010D\u001a2\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0013\u0012\u00110-¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0006H\u0086@¢\u0006\u0002\u0010\u001f\u001aP\u0010\u000f\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\f0\u00122\b\u0010E\u001a\u0004\u0018\u00010!2\u0012\u0010F\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00100\u0012H\u0080H¢\u0006\u0004\bG\u0010H\u001a2\u0010I\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0012\u0010J\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00100\u0012H\u0082H¢\u0006\u0004\bK\u0010\u0014\u001aT\u0010L\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u00100\u001a\u0002012\b\u0010E\u001a\u0004\u0018\u00010!2\b\b\u0002\u0010M\u001a\u00020\n2\u0018\u00102\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\f0\u0006H\u0080H¢\u0006\u0004\bN\u0010O\u001a$\u0010P\u001a\u00020\u0010*\u00020\u00022\u0006\u0010M\u001a\u00020\u00012\b\b\u0002\u0010Q\u001a\u00020RH\u0080@¢\u0006\u0002\u0010S\u001a\u001e\u0010T\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0086@¢\u0006\u0004\bU\u0010\u0017\u001a\u001b\u0010V\u001a\u00020\u0010*\u00020W2\u0006\u0010\u0003\u001a\u00020\u0004H\u0002¢\u0006\u0004\bX\u0010Y\u001a\u001b\u0010_\u001a\u00020-*\u00020`2\u0006\u00100\u001a\u000201H\u0000¢\u0006\u0004\ba\u0010b\"\u0010\u0010Z\u001a\u00020[X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\\\"\u0010\u0010]\u001a\u00020[X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\\\"\u000e\u0010^\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010c\u001a\u00020dX\u0082T¢\u0006\u0002\n\u0000¨\u0006e"}, d2 = {"awaitTouchSlopOrCancellation", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "pointerId", "Landroidx/compose/ui/input/pointer/PointerId;", "onTouchSlopReached", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "change", "Landroidx/compose/ui/geometry/Offset;", "overSlop", "", "awaitTouchSlopOrCancellation-jO51t88", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "drag", "", "onDrag", "Lkotlin/Function1;", "drag-jO51t88", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitDragOrCancellation", "awaitDragOrCancellation-rnUCldI", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectDragGestures", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "onDragStart", "onDragEnd", "Lkotlin/Function0;", "onDragCancel", "dragAmount", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "orientationLock", "Landroidx/compose/foundation/gestures/Orientation;", "Lkotlin/Function3;", "down", "slopTriggerChange", "overSlopOffset", "shouldAwaitTouchSlop", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/gestures/Orientation;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "processDragGesture", "initialDown", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerInputChange;Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/gestures/Orientation;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectDragGesturesAfterLongPress", "awaitVerticalTouchSlopOrCancellation", "", "awaitVerticalTouchSlopOrCancellation-jO51t88", "awaitVerticalPointerSlopOrCancellation", "pointerType", "Landroidx/compose/ui/input/pointer/PointerType;", "onPointerSlopReached", "awaitVerticalPointerSlopOrCancellation-gDDlDlE", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JILkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "verticalDrag", "verticalDrag-jO51t88", "awaitVerticalDragOrCancellation", "awaitVerticalDragOrCancellation-rnUCldI", "detectVerticalDragGestures", "onVerticalDrag", "awaitHorizontalTouchSlopOrCancellation", "awaitHorizontalTouchSlopOrCancellation-jO51t88", "awaitHorizontalPointerSlopOrCancellation", "awaitHorizontalPointerSlopOrCancellation-gDDlDlE", "horizontalDrag", "horizontalDrag-jO51t88", "awaitHorizontalDragOrCancellation", "awaitHorizontalDragOrCancellation-rnUCldI", "detectHorizontalDragGestures", "onHorizontalDrag", "orientation", "motionConsumed", "drag-VnAYq1g", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function1;Landroidx/compose/foundation/gestures/Orientation;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitDragOrUp", "hasDragged", "awaitDragOrUp-jO51t88", "awaitPointerSlopOrCancellation", "initialPositionChange", "awaitPointerSlopOrCancellation-6ksA65w", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JILandroidx/compose/foundation/gestures/Orientation;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitAllPointersUpWithSlopDetection", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerInputChange;Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLongPressOrCancellation", "awaitLongPressOrCancellation-rnUCldI", "isPointerUp", "Landroidx/compose/ui/input/pointer/PointerEvent;", "isPointerUp-DmW0f2w", "(Landroidx/compose/ui/input/pointer/PointerEvent;J)Z", "mouseSlop", "Landroidx/compose/ui/unit/Dp;", "F", "defaultTouchSlop", "mouseToTouchSlopRatio", "pointerSlop", "Landroidx/compose/ui/platform/ViewConfiguration;", "pointerSlop-E8SPZFQ", "(Landroidx/compose/ui/platform/ViewConfiguration;I)F", "GestureAngleThreshold", "", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt {
+    private static final int GestureAngleThreshold = 30;
     private static final float defaultTouchSlop;
     private static final float mouseSlop;
     private static final float mouseToTouchSlopRatio;
@@ -46,22 +48,22 @@ public final class DragGestureDetectorKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d3  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0132  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x018d A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x018a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x018b  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x00ef A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0163 -> B:20:0x00aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0181 -> B:61:0x0187). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0160 -> B:20:0x00aa). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x017f -> B:61:0x0184). Please submit an issue!!! */
     /* renamed from: awaitTouchSlopOrCancellation-jO51t88  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m467awaitTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m500awaitTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitTouchSlopOrCancellation$1;
         int i;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Function2<? super PointerInputChange, ? super Offset, Unit> function22;
         Ref.LongRef longRef;
         DragGestureDetectorKt$awaitTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitTouchSlopOrCancellation$12;
@@ -87,15 +89,15 @@ public final class DragGestureDetectorKt {
                 int i5 = 1;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    int m6163getTouchT8wyACA = PointerType.Companion.m6163getTouchT8wyACA();
-                    long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    int m6765getTouchT8wyACA = PointerType.Companion.m6765getTouchT8wyACA();
+                    long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6163getTouchT8wyACA);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6765getTouchT8wyACA);
                     Ref.LongRef longRef2 = new Ref.LongRef();
                     longRef2.element = j;
-                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(null, m4543getZeroF1C5BW0, null);
+                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(null, m5119getZeroF1C5BW0, null);
                     function22 = function2;
                     longRef = longRef2;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitTouchSlopOrCancellation$1;
@@ -106,7 +108,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$4 = null;
-                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitTouchSlopOrCancellation$12, i5, null);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -138,12 +140,13 @@ public final class DragGestureDetectorKt {
                     }
                     i5 = i3;
                     touchSlopDetector = touchSlopDetector2;
+                    m509pointerSlopE8SPZFQ = f;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$0 = function22;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$4 = null;
-                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitTouchSlopOrCancellation$12, i5, null);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -158,10 +161,10 @@ public final class DragGestureDetectorKt {
                     ResultKt.throwOnFailure(obj);
                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitTouchSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector4;
-                    m476pointerSlopE8SPZFQ = f3;
-                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitTouchSlopOrCancellation$1.L$1;
-                    int i6 = 1;
                     char c = 2;
+                    int i6 = 1;
+                    m509pointerSlopE8SPZFQ = f3;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitTouchSlopOrCancellation$1.L$1;
                     if (pointerInputChange4.isConsumed()) {
                         i5 = i6;
                         function22 = function23;
@@ -170,11 +173,11 @@ public final class DragGestureDetectorKt {
                         dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$2 = longRef;
                         dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                         dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$4 = null;
-                        dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                         dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.label = i5;
                         awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitTouchSlopOrCancellation$12, i5, null);
                         if (awaitPointerEvent$default != coroutine_suspended) {
-                            f = m476pointerSlopE8SPZFQ;
+                            f = m509pointerSlopE8SPZFQ;
                             touchSlopDetector2 = touchSlopDetector;
                             obj = awaitPointerEvent$default;
                             PointerEvent pointerEvent2 = (PointerEvent) obj;
@@ -188,7 +191,7 @@ public final class DragGestureDetectorKt {
                                 }
                                 pointerInputChange = changes2.get(i2);
                                 i4 = i2;
-                                if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)) {
+                                if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)) {
                                     break;
                                 }
                                 i2 = i4 + 1;
@@ -216,19 +219,17 @@ public final class DragGestureDetectorKt {
                                 if (pointerInputChange5 == null) {
                                     return null;
                                 }
-                                longRef.element = pointerInputChange5.m6083getIdJ3iCeTQ();
-                                m476pointerSlopE8SPZFQ = f;
+                                longRef.element = pointerInputChange5.m6682getIdJ3iCeTQ();
                                 i3 = 1;
                             } else {
-                                long m604addPositionsakrDWew = touchSlopDetector2.m604addPositionsakrDWew(pointerInputChange2.m6085getPositionF1C5BW0(), pointerInputChange2.m6086getPreviousPositionF1C5BW0(), f);
-                                m476pointerSlopE8SPZFQ = f;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function22.invoke(pointerInputChange2, Offset.m4516boximpl(m604addPositionsakrDWew));
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange2), f, false, 4, null);
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function22.invoke(pointerInputChange2, Offset.m5092boximpl(m635getPostSlopOffsetqto3Fdw$default));
                                     if (pointerInputChange2.isConsumed()) {
                                         return pointerInputChange2;
                                     }
                                     i3 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector2, 0L, 1, null);
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, null);
                                 } else {
                                     i6 = 1;
                                     PointerEventPass pointerEventPass = PointerEventPass.Final;
@@ -237,7 +238,7 @@ public final class DragGestureDetectorKt {
                                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$2 = longRef;
                                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$3 = touchSlopDetector2;
                                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$4 = pointerInputChange2;
-                                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                                    dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = f;
                                     c = 2;
                                     dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.label = 2;
                                     if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass, dragGestureDetectorKt$awaitTouchSlopOrCancellation$12) != coroutine_suspended) {
@@ -245,6 +246,7 @@ public final class DragGestureDetectorKt {
                                         function23 = function22;
                                         pointerInputChange4 = pointerInputChange2;
                                         touchSlopDetector = touchSlopDetector5;
+                                        m509pointerSlopE8SPZFQ = f;
                                         if (pointerInputChange4.isConsumed()) {
                                         }
                                     }
@@ -252,12 +254,13 @@ public final class DragGestureDetectorKt {
                             }
                             i5 = i3;
                             touchSlopDetector = touchSlopDetector2;
+                            m509pointerSlopE8SPZFQ = f;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$0 = function22;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$2 = longRef;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.L$4 = null;
-                            dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                             dragGestureDetectorKt$awaitTouchSlopOrCancellation$12.label = i5;
                             awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitTouchSlopOrCancellation$12, i5, null);
                             if (awaitPointerEvent$default != coroutine_suspended) {
@@ -290,7 +293,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m473dragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
+    public static final Object m506dragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
         DragGestureDetectorKt$drag$1 dragGestureDetectorKt$drag$1;
         int i;
         PointerInputChange pointerInputChange;
@@ -306,7 +309,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$drag$1.L$0 = awaitPointerEventScope;
                     dragGestureDetectorKt$drag$1.L$1 = function1;
                     dragGestureDetectorKt$drag$1.label = 1;
-                    obj = m458awaitDragOrCancellationrnUCldI(awaitPointerEventScope, j, dragGestureDetectorKt$drag$1);
+                    obj = m491awaitDragOrCancellationrnUCldI(awaitPointerEventScope, j, dragGestureDetectorKt$drag$1);
                     if (obj == coroutine_suspended) {
                     }
                     pointerInputChange = (PointerInputChange) obj;
@@ -324,11 +327,11 @@ public final class DragGestureDetectorKt {
                             return Boxing.boxBoolean(true);
                         }
                         function1.invoke(pointerInputChange);
-                        j = pointerInputChange.m6083getIdJ3iCeTQ();
+                        j = pointerInputChange.m6682getIdJ3iCeTQ();
                         dragGestureDetectorKt$drag$1.L$0 = awaitPointerEventScope;
                         dragGestureDetectorKt$drag$1.L$1 = function1;
                         dragGestureDetectorKt$drag$1.label = 1;
-                        obj = m458awaitDragOrCancellationrnUCldI(awaitPointerEventScope, j, dragGestureDetectorKt$drag$1);
+                        obj = m491awaitDragOrCancellationrnUCldI(awaitPointerEventScope, j, dragGestureDetectorKt$drag$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -364,7 +367,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m458awaitDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m491awaitDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitDragOrCancellation$1 dragGestureDetectorKt$awaitDragOrCancellation$1;
         int i;
         Ref.LongRef longRef;
@@ -396,7 +399,7 @@ public final class DragGestureDetectorKt {
                                 break;
                             }
                             pointerInputChange = changes.get(i3);
-                            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef2.element)) {
+                            if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef2.element)) {
                                 break;
                             }
                             i3++;
@@ -419,7 +422,7 @@ public final class DragGestureDetectorKt {
                                 }
                                 PointerInputChange pointerInputChange4 = pointerInputChange2;
                                 if (pointerInputChange4 != null) {
-                                    longRef2.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                                    longRef2.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                                     longRef = longRef2;
                                 }
                             }
@@ -456,7 +459,7 @@ public final class DragGestureDetectorKt {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 ResultKt.throwOnFailure(obj);
-                if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                     return null;
                 }
                 longRef = new Ref.LongRef();
@@ -536,7 +539,7 @@ public final class DragGestureDetectorKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit detectDragGestures$lambda$3(Function1 function1, PointerInputChange pointerInputChange, PointerInputChange pointerInputChange2, Offset offset) {
-        function1.invoke(Offset.m4516boximpl(pointerInputChange2.m6085getPositionF1C5BW0()));
+        function1.invoke(Offset.m5092boximpl(pointerInputChange2.m6685getPositionF1C5BW0()));
         return Unit.INSTANCE;
     }
 
@@ -596,8 +599,1178 @@ public final class DragGestureDetectorKt {
     }
 
     public static final Object detectDragGestures(PointerInputScope pointerInputScope, Orientation orientation, Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function3, Function1<? super PointerInputChange, Unit> function1, Function0<Unit> function0, Function0<Boolean> function02, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super Unit> continuation) {
-        Object awaitEachGesture = ForEachGestureKt.awaitEachGesture(pointerInputScope, new DragGestureDetectorKt$detectDragGestures$13(function02, new Ref.LongRef(), orientation, function3, function2, function0, function1, null), continuation);
+        Object awaitEachGesture = ForEachGestureKt.awaitEachGesture(pointerInputScope, new DragGestureDetectorKt$detectDragGestures$13(function02, orientation, function3, function2, function0, function1, null), continuation);
         return awaitEachGesture == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitEachGesture : Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x0723, code lost:
+        if (r1 == false) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x023b, code lost:
+        if (r2 == false) goto L74;
+     */
+    /* JADX WARN: Path cross not found for [B:188:0x06d0, B:199:0x06fd], limit reached: 235 */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x045d  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x04e3  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x04fd  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x054c  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x057c  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0608  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0615  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0636  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x069c  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x06c8  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x06ca  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x072b  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0738  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x073d  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0741  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0745  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x06be A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x044f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0525 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x02e4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:247:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:249:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:252:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02a0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x02bc  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x032e  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x03aa  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x03bd  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x03c5  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0422  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x0446 -> B:90:0x03ec). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:114:0x049a -> B:161:0x0610). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:130:0x053c -> B:162:0x0612). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:153:0x05c0 -> B:116:0x04ba). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:157:0x05fa -> B:158:0x0602). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:165:0x0621 -> B:84:0x03c3). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:174:0x0689 -> B:176:0x068c). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x0257 -> B:77:0x03a8). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x02ed -> B:76:0x03a7). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:66:0x0359 -> B:77:0x03a8). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:68:0x0367 -> B:32:0x0277). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:72:0x039e -> B:73:0x03a0). Please submit an issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object processDragGesture(AwaitPointerEventScope awaitPointerEventScope, PointerInputChange pointerInputChange, Function0<Boolean> function0, Orientation orientation, Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function3, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Function0<Unit> function02, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Unit> continuation) {
+        DragGestureDetectorKt$processDragGesture$1 dragGestureDetectorKt$processDragGesture$1;
+        DragGestureDetectorKt$processDragGesture$1 dragGestureDetectorKt$processDragGesture$12;
+        long j;
+        long j2;
+        PointerInputChange pointerInputChange2;
+        Orientation orientation2;
+        Function2<? super PointerInputChange, ? super Offset, Unit> function22;
+        Function0<Unit> function03;
+        Function1<? super PointerInputChange, Unit> function12;
+        boolean z;
+        Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function32;
+        AwaitPointerEventScope awaitPointerEventScope2;
+        PointerInputChange pointerInputChange3;
+        Ref.LongRef longRef;
+        float f;
+        Ref.LongRef longRef2;
+        Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function33;
+        Ref.LongRef longRef3;
+        AwaitPointerEventScope awaitPointerEventScope3;
+        Function1<? super PointerInputChange, Unit> function13;
+        Function0<Unit> function04;
+        Object obj;
+        TouchSlopDetector touchSlopDetector;
+        PointerInputChange pointerInputChange4;
+        PointerInputChange pointerInputChange5;
+        TouchSlopDetector touchSlopDetector2;
+        TouchSlopDetector touchSlopDetector3;
+        Ref.LongRef longRef4;
+        PointerInputChange pointerInputChange6;
+        int i;
+        int i2;
+        Ref.LongRef longRef5;
+        PointerInputChange pointerInputChange7;
+        PointerInputChange pointerInputChange8;
+        Function1<? super PointerInputChange, Unit> function14;
+        Function0<Unit> function05;
+        Function2<? super PointerInputChange, ? super Offset, Unit> function23;
+        Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function34;
+        Orientation orientation3;
+        AwaitPointerEventScope awaitPointerEventScope4;
+        float f2;
+        Ref.LongRef longRef6;
+        Function0<Unit> function06;
+        Orientation orientation4;
+        TouchSlopDetector touchSlopDetector4;
+        Ref.LongRef longRef7;
+        AwaitPointerEventScope awaitPointerEventScope5;
+        List<PointerInputChange> changes;
+        int size;
+        float f3;
+        int i3;
+        Object obj2;
+        TouchSlopDetector touchSlopDetector5;
+        PointerInputChange pointerInputChange9;
+        PointerInputChange pointerInputChange10;
+        TouchSlopDetector touchSlopDetector6;
+        Object obj3;
+        PointerInputChange pointerInputChange11;
+        float f4;
+        AwaitPointerEventScope awaitPointerEventScope6;
+        PointerInputChange pointerInputChange12;
+        PointerInputChange pointerInputChange13;
+        List<PointerInputChange> list;
+        int i4;
+        int size2;
+        int i5;
+        int size3;
+        int i6;
+        Function2<? super PointerInputChange, ? super Offset, Unit> function24;
+        Function0<Unit> function07;
+        Function1<? super PointerInputChange, Unit> function15;
+        AwaitPointerEventScope awaitPointerEventScope7;
+        AwaitPointerEventScope awaitPointerEventScope8;
+        Orientation orientation5;
+        Ref.LongRef longRef8;
+        PointerInputChange pointerInputChange14;
+        PointerEvent pointerEvent;
+        int size4;
+        int i7;
+        PointerEvent pointerEvent2;
+        Object obj4;
+        PointerInputChange pointerInputChange15;
+        PointerInputChange pointerInputChange16;
+        boolean z2;
+        PointerInputChange pointerInputChange17;
+        if (continuation instanceof DragGestureDetectorKt$processDragGesture$1) {
+            dragGestureDetectorKt$processDragGesture$1 = (DragGestureDetectorKt$processDragGesture$1) continuation;
+            if ((dragGestureDetectorKt$processDragGesture$1.label & Integer.MIN_VALUE) != 0) {
+                dragGestureDetectorKt$processDragGesture$1.label -= Integer.MIN_VALUE;
+                dragGestureDetectorKt$processDragGesture$12 = dragGestureDetectorKt$processDragGesture$1;
+                Object obj5 = dragGestureDetectorKt$processDragGesture$12.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                switch (dragGestureDetectorKt$processDragGesture$12.label) {
+                    case 0:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        ResultKt.throwOnFailure(obj5);
+                        boolean booleanValue = function0.invoke().booleanValue();
+                        if (!booleanValue) {
+                            pointerInputChange.consume();
+                        }
+                        dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope;
+                        pointerInputChange2 = pointerInputChange;
+                        dragGestureDetectorKt$processDragGesture$12.L$1 = pointerInputChange2;
+                        orientation2 = orientation;
+                        dragGestureDetectorKt$processDragGesture$12.L$2 = orientation2;
+                        dragGestureDetectorKt$processDragGesture$12.L$3 = function3;
+                        function22 = function2;
+                        dragGestureDetectorKt$processDragGesture$12.L$4 = function22;
+                        function03 = function02;
+                        dragGestureDetectorKt$processDragGesture$12.L$5 = function03;
+                        function12 = function1;
+                        dragGestureDetectorKt$processDragGesture$12.L$6 = function12;
+                        dragGestureDetectorKt$processDragGesture$12.Z$0 = booleanValue;
+                        dragGestureDetectorKt$processDragGesture$12.label = 1;
+                        Object awaitFirstDown$default = TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, null, dragGestureDetectorKt$processDragGesture$12, 2, null);
+                        if (awaitFirstDown$default != coroutine_suspended) {
+                            z = booleanValue;
+                            obj5 = awaitFirstDown$default;
+                            function32 = function3;
+                            awaitPointerEventScope2 = awaitPointerEventScope;
+                            pointerInputChange3 = (PointerInputChange) obj5;
+                            longRef = new Ref.LongRef();
+                            longRef.element = Offset.Companion.m5119getZeroF1C5BW0();
+                            break;
+                        } else {
+                            return coroutine_suspended;
+                        }
+                    case 1:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        z = dragGestureDetectorKt$processDragGesture$12.Z$0;
+                        function32 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        PointerInputChange pointerInputChange18 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj5);
+                        orientation2 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        pointerInputChange2 = pointerInputChange18;
+                        function12 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        function03 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        function22 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        pointerInputChange3 = (PointerInputChange) obj5;
+                        longRef = new Ref.LongRef();
+                        longRef.element = Offset.Companion.m5119getZeroF1C5BW0();
+                        break;
+                    case 2:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        f = dragGestureDetectorKt$processDragGesture$12.F$0;
+                        TouchSlopDetector touchSlopDetector7 = (TouchSlopDetector) dragGestureDetectorKt$processDragGesture$12.L$10;
+                        AwaitPointerEventScope awaitPointerEventScope9 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$8;
+                        longRef2 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$7;
+                        PointerInputChange pointerInputChange19 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        function22 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        function33 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        ResultKt.throwOnFailure(obj5);
+                        longRef3 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$9;
+                        awaitPointerEventScope3 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        function13 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        orientation2 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        function04 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        awaitPointerEventScope2 = awaitPointerEventScope9;
+                        PointerEvent pointerEvent3 = (PointerEvent) obj5;
+                        List<PointerInputChange> changes2 = pointerEvent3.getChanges();
+                        int size5 = changes2.size();
+                        float f5 = f;
+                        int i8 = 0;
+                        while (true) {
+                            if (i8 >= size5) {
+                                PointerInputChange pointerInputChange20 = changes2.get(i8);
+                                i = i8;
+                                touchSlopDetector = touchSlopDetector7;
+                                i2 = size5;
+                                obj = coroutine_suspended;
+                                if (PointerId.m6664equalsimpl0(pointerInputChange20.m6682getIdJ3iCeTQ(), longRef3.element)) {
+                                    pointerInputChange4 = pointerInputChange20;
+                                } else {
+                                    i8 = i + 1;
+                                    touchSlopDetector7 = touchSlopDetector;
+                                    size5 = i2;
+                                    coroutine_suspended = obj;
+                                }
+                            } else {
+                                obj = coroutine_suspended;
+                                touchSlopDetector = touchSlopDetector7;
+                                pointerInputChange4 = null;
+                            }
+                        }
+                        pointerInputChange5 = pointerInputChange4;
+                        if (pointerInputChange5 != null && !pointerInputChange5.isConsumed()) {
+                            if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange5)) {
+                                TouchSlopDetector touchSlopDetector8 = touchSlopDetector;
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector8, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange5), f5, false, 4, null);
+                                touchSlopDetector2 = touchSlopDetector8;
+                                f = f5;
+                                if ((m635getPostSlopOffsetqto3Fdw$default & j2) != j) {
+                                    pointerInputChange5.consume();
+                                    longRef2.element = m635getPostSlopOffsetqto3Fdw$default;
+                                    if (pointerInputChange5.isConsumed()) {
+                                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                                        pointerInputChange3 = pointerInputChange19;
+                                        coroutine_suspended = obj;
+                                        if (pointerInputChange5 != null || pointerInputChange5.isConsumed()) {
+                                            pointerInputChange2 = pointerInputChange5;
+                                            longRef = longRef2;
+                                            function32 = function33;
+                                            function03 = function04;
+                                            function12 = function13;
+                                            if (pointerInputChange2 == null) {
+                                                List<PointerInputChange> changes3 = awaitPointerEventScope2.getCurrentEvent().getChanges();
+                                                int size6 = changes3.size();
+                                                for (int i9 = 0; i9 < size6; i9++) {
+                                                    if (changes3.get(i9).getPressed()) {
+                                                        pointerInputChange8 = pointerInputChange3;
+                                                        longRef5 = longRef;
+                                                        pointerInputChange7 = pointerInputChange2;
+                                                        function23 = function22;
+                                                        function14 = function12;
+                                                        awaitPointerEventScope4 = awaitPointerEventScope2;
+                                                        orientation3 = orientation2;
+                                                        function34 = function32;
+                                                        function05 = function03;
+                                                        PointerEventPass pointerEventPass = PointerEventPass.Final;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope4;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$1 = orientation3;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$4 = function05;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$7 = pointerInputChange7;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$8 = longRef5;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$9 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$10 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.label = 4;
+                                                        obj5 = awaitPointerEventScope4.awaitPointerEvent(pointerEventPass, dragGestureDetectorKt$processDragGesture$12);
+                                                        if (obj5 == coroutine_suspended) {
+                                                            return coroutine_suspended;
+                                                        }
+                                                        PointerEvent pointerEvent4 = (PointerEvent) obj5;
+                                                        List<PointerInputChange> changes4 = pointerEvent4.getChanges();
+                                                        size2 = changes4.size();
+                                                        i5 = 0;
+                                                        while (true) {
+                                                            if (i5 < size2) {
+                                                                if (changes4.get(i5).isConsumed()) {
+                                                                    List<PointerInputChange> changes5 = pointerEvent4.getChanges();
+                                                                    int size7 = changes5.size();
+                                                                    for (int i10 = 0; i10 < size7; i10++) {
+                                                                        if (!changes5.get(i10).getPressed()) {
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    i5++;
+                                                                }
+                                                            }
+                                                        }
+                                                        List<PointerInputChange> changes6 = pointerEvent4.getChanges();
+                                                        size3 = changes6.size();
+                                                        for (i6 = 0; i6 < size3; i6++) {
+                                                            if (changes6.get(i6).getPressed()) {
+                                                                PointerInputChange pointerInputChange21 = (PointerInputChange) CollectionsKt.firstOrNull((List<? extends Object>) pointerEvent4.getChanges());
+                                                                long m5107minusMKHz9U = Offset.m5107minusMKHz9U(pointerInputChange21 != null ? pointerInputChange21.m6685getPositionF1C5BW0() : Offset.Companion.m5119getZeroF1C5BW0(), pointerInputChange8.m6685getPositionF1C5BW0());
+                                                                long m6682getIdJ3iCeTQ = pointerInputChange8.m6682getIdJ3iCeTQ();
+                                                                int m6688getTypeT8wyACA = pointerInputChange8.m6688getTypeT8wyACA();
+                                                                if (m508isPointerUpDmW0f2w(awaitPointerEventScope4.getCurrentEvent(), m6682getIdJ3iCeTQ)) {
+                                                                    obj3 = coroutine_suspended;
+                                                                    longRef = longRef5;
+                                                                    pointerInputChange3 = pointerInputChange8;
+                                                                    function12 = function14;
+                                                                    function03 = function05;
+                                                                    function32 = function34;
+                                                                    orientation2 = orientation3;
+                                                                    awaitPointerEventScope2 = awaitPointerEventScope4;
+                                                                    function22 = function23;
+                                                                    pointerInputChange2 = null;
+                                                                    coroutine_suspended = obj3;
+                                                                    if (pointerInputChange2 == null) {
+                                                                    }
+                                                                } else {
+                                                                    f4 = m509pointerSlopE8SPZFQ(awaitPointerEventScope4.getViewConfiguration(), m6688getTypeT8wyACA);
+                                                                    longRef7 = new Ref.LongRef();
+                                                                    longRef7.element = m6682getIdJ3iCeTQ;
+                                                                    touchSlopDetector4 = new TouchSlopDetector(orientation3, m5107minusMKHz9U, null);
+                                                                    awaitPointerEventScope5 = awaitPointerEventScope4;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope5;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$1 = orientation3;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$4 = function05;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$7 = longRef5;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope4;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$9 = longRef7;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector4;
+                                                                    dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                                    dragGestureDetectorKt$processDragGesture$12.F$0 = f4;
+                                                                    dragGestureDetectorKt$processDragGesture$12.label = 5;
+                                                                    float f6 = f4;
+                                                                    obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope4, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                                    if (obj5 != coroutine_suspended) {
+                                                                        return coroutine_suspended;
+                                                                    }
+                                                                    orientation4 = orientation3;
+                                                                    function06 = function05;
+                                                                    longRef6 = longRef5;
+                                                                    f2 = f6;
+                                                                    PointerEvent pointerEvent5 = (PointerEvent) obj5;
+                                                                    changes = pointerEvent5.getChanges();
+                                                                    size = changes.size();
+                                                                    f3 = f2;
+                                                                    i3 = 0;
+                                                                    while (true) {
+                                                                        if (i3 >= size) {
+                                                                            pointerInputChange9 = changes.get(i3);
+                                                                            touchSlopDetector5 = touchSlopDetector4;
+                                                                            list = changes;
+                                                                            i4 = size;
+                                                                            obj2 = coroutine_suspended;
+                                                                            if (!PointerId.m6664equalsimpl0(pointerInputChange9.m6682getIdJ3iCeTQ(), longRef7.element)) {
+                                                                                i3++;
+                                                                                touchSlopDetector4 = touchSlopDetector5;
+                                                                                changes = list;
+                                                                                size = i4;
+                                                                                coroutine_suspended = obj2;
+                                                                            }
+                                                                        } else {
+                                                                            obj2 = coroutine_suspended;
+                                                                            touchSlopDetector5 = touchSlopDetector4;
+                                                                            pointerInputChange9 = null;
+                                                                        }
+                                                                    }
+                                                                    pointerInputChange10 = pointerInputChange9;
+                                                                    if (pointerInputChange10 != null && !pointerInputChange10.isConsumed()) {
+                                                                        if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange10)) {
+                                                                            TouchSlopDetector touchSlopDetector9 = touchSlopDetector5;
+                                                                            touchSlopDetector6 = touchSlopDetector9;
+                                                                            if ((TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector9, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange10), f3, false, 4, null) & j2) != j) {
+                                                                                pointerInputChange10.consume();
+                                                                                longRef6.element = PointerEventKt.positionChange(pointerInputChange10);
+                                                                                if (pointerInputChange10.isConsumed()) {
+                                                                                    AwaitPointerEventScope awaitPointerEventScope10 = awaitPointerEventScope5;
+                                                                                    function03 = function06;
+                                                                                    awaitPointerEventScope2 = awaitPointerEventScope10;
+                                                                                    longRef = longRef6;
+                                                                                    function22 = function23;
+                                                                                    function32 = function34;
+                                                                                    orientation2 = orientation4;
+                                                                                    obj3 = obj2;
+                                                                                    pointerInputChange2 = pointerInputChange10;
+                                                                                    pointerInputChange3 = pointerInputChange8;
+                                                                                    function12 = function14;
+                                                                                    coroutine_suspended = obj3;
+                                                                                    if (pointerInputChange2 == null) {
+                                                                                    }
+                                                                                } else {
+                                                                                    f3 = f3;
+                                                                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector6, 0L, 1, null);
+                                                                                }
+                                                                            } else {
+                                                                                PointerEventPass pointerEventPass2 = PointerEventPass.Final;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope5;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$1 = orientation4;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$4 = function06;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$7 = longRef6;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope4;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$9 = longRef7;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector6;
+                                                                                dragGestureDetectorKt$processDragGesture$12.L$11 = pointerInputChange10;
+                                                                                dragGestureDetectorKt$processDragGesture$12.F$0 = f3;
+                                                                                dragGestureDetectorKt$processDragGesture$12.label = 6;
+                                                                                Object awaitPointerEvent = awaitPointerEventScope4.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$processDragGesture$12);
+                                                                                obj3 = obj2;
+                                                                                if (awaitPointerEvent == obj3) {
+                                                                                    return obj3;
+                                                                                }
+                                                                                PointerInputChange pointerInputChange22 = pointerInputChange8;
+                                                                                pointerInputChange11 = pointerInputChange10;
+                                                                                f4 = f3;
+                                                                                awaitPointerEventScope6 = awaitPointerEventScope4;
+                                                                                pointerInputChange12 = pointerInputChange22;
+                                                                                longRef5 = longRef6;
+                                                                                function05 = function06;
+                                                                                orientation3 = orientation4;
+                                                                                if (pointerInputChange11.isConsumed()) {
+                                                                                    pointerInputChange8 = pointerInputChange12;
+                                                                                    awaitPointerEventScope4 = awaitPointerEventScope6;
+                                                                                    coroutine_suspended = obj3;
+                                                                                    touchSlopDetector4 = touchSlopDetector6;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope5;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$1 = orientation3;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$4 = function05;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$7 = longRef5;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope4;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$9 = longRef7;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector4;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.F$0 = f4;
+                                                                                    dragGestureDetectorKt$processDragGesture$12.label = 5;
+                                                                                    float f62 = f4;
+                                                                                    obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope4, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                                                    if (obj5 != coroutine_suspended) {
+                                                                                    }
+                                                                                } else {
+                                                                                    AwaitPointerEventScope awaitPointerEventScope11 = awaitPointerEventScope5;
+                                                                                    function03 = function05;
+                                                                                    function32 = function34;
+                                                                                    orientation2 = orientation3;
+                                                                                    awaitPointerEventScope2 = awaitPointerEventScope11;
+                                                                                    longRef = longRef5;
+                                                                                    function12 = function14;
+                                                                                    pointerInputChange3 = pointerInputChange12;
+                                                                                    function22 = function23;
+                                                                                    pointerInputChange2 = null;
+                                                                                    coroutine_suspended = obj3;
+                                                                                    if (pointerInputChange2 == null) {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        } else {
+                                                                            List<PointerInputChange> changes7 = pointerEvent5.getChanges();
+                                                                            int size8 = changes7.size();
+                                                                            int i11 = 0;
+                                                                            while (true) {
+                                                                                if (i11 < size8) {
+                                                                                    pointerInputChange13 = changes7.get(i11);
+                                                                                    if (!pointerInputChange13.getPressed()) {
+                                                                                        i11++;
+                                                                                    }
+                                                                                } else {
+                                                                                    pointerInputChange13 = null;
+                                                                                }
+                                                                            }
+                                                                            PointerInputChange pointerInputChange23 = pointerInputChange13;
+                                                                            if (pointerInputChange23 != null) {
+                                                                                longRef7.element = pointerInputChange23.m6682getIdJ3iCeTQ();
+                                                                                touchSlopDetector6 = touchSlopDetector5;
+                                                                            }
+                                                                        }
+                                                                        f4 = f3;
+                                                                        longRef5 = longRef6;
+                                                                        function05 = function06;
+                                                                        orientation3 = orientation4;
+                                                                        touchSlopDetector4 = touchSlopDetector6;
+                                                                        coroutine_suspended = obj2;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope5;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$1 = orientation3;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$4 = function05;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$7 = longRef5;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope4;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$9 = longRef7;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector4;
+                                                                        dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                                        dragGestureDetectorKt$processDragGesture$12.F$0 = f4;
+                                                                        dragGestureDetectorKt$processDragGesture$12.label = 5;
+                                                                        float f622 = f4;
+                                                                        obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope4, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                                        if (obj5 != coroutine_suspended) {
+                                                                        }
+                                                                    }
+                                                                    AwaitPointerEventScope awaitPointerEventScope12 = awaitPointerEventScope5;
+                                                                    function03 = function06;
+                                                                    awaitPointerEventScope2 = awaitPointerEventScope12;
+                                                                    pointerInputChange3 = pointerInputChange8;
+                                                                    longRef = longRef6;
+                                                                    function22 = function23;
+                                                                    function32 = function34;
+                                                                    orientation2 = orientation4;
+                                                                    obj3 = obj2;
+                                                                    pointerInputChange2 = null;
+                                                                    function12 = function14;
+                                                                    coroutine_suspended = obj3;
+                                                                    if (pointerInputChange2 == null) {
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        pointerInputChange3 = pointerInputChange8;
+                                                        function12 = function14;
+                                                        function03 = function05;
+                                                        function32 = function34;
+                                                        orientation2 = orientation3;
+                                                        awaitPointerEventScope2 = awaitPointerEventScope4;
+                                                        function22 = function23;
+                                                        pointerInputChange2 = pointerInputChange7;
+                                                        longRef = longRef5;
+                                                        if (pointerInputChange2 == null) {
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            if (pointerInputChange2 != null) {
+                                                function32.invoke(pointerInputChange3, pointerInputChange2, Offset.m5092boximpl(longRef.element));
+                                                function22.invoke(pointerInputChange2, Offset.m5092boximpl(longRef.element));
+                                                long m6682getIdJ3iCeTQ2 = pointerInputChange2.m6682getIdJ3iCeTQ();
+                                                if (!m508isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6682getIdJ3iCeTQ2)) {
+                                                    Orientation orientation6 = null;
+                                                    Ref.LongRef longRef9 = new Ref.LongRef();
+                                                    longRef9.element = m6682getIdJ3iCeTQ2;
+                                                    orientation5 = orientation6;
+                                                    longRef8 = longRef9;
+                                                    awaitPointerEventScope8 = awaitPointerEventScope2;
+                                                    awaitPointerEventScope7 = awaitPointerEventScope8;
+                                                    function24 = function22;
+                                                    function07 = function03;
+                                                    function15 = function12;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$0 = function24;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$1 = function07;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$2 = function15;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$3 = awaitPointerEventScope7;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$4 = awaitPointerEventScope8;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$5 = longRef8;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$6 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$7 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$8 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$9 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$10 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                    dragGestureDetectorKt$processDragGesture$12.label = 7;
+                                                    obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope8, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                    if (obj5 == coroutine_suspended) {
+                                                        return coroutine_suspended;
+                                                    }
+                                                    pointerEvent = (PointerEvent) obj5;
+                                                    List<PointerInputChange> changes8 = pointerEvent.getChanges();
+                                                    size4 = changes8.size();
+                                                    i7 = 0;
+                                                    while (true) {
+                                                        if (i7 >= size4) {
+                                                            pointerInputChange15 = changes8.get(i7);
+                                                            pointerEvent2 = pointerEvent;
+                                                            obj4 = coroutine_suspended;
+                                                            if (!PointerId.m6664equalsimpl0(pointerInputChange15.m6682getIdJ3iCeTQ(), longRef8.element)) {
+                                                                i7++;
+                                                                pointerEvent = pointerEvent2;
+                                                                coroutine_suspended = obj4;
+                                                            }
+                                                        } else {
+                                                            pointerEvent2 = pointerEvent;
+                                                            obj4 = coroutine_suspended;
+                                                            pointerInputChange15 = null;
+                                                        }
+                                                    }
+                                                    pointerInputChange16 = pointerInputChange15;
+                                                    if (pointerInputChange16 == null) {
+                                                        if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange16)) {
+                                                            long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange16);
+                                                            if ((orientation5 != null ? Float.intBitsToFloat((int) (orientation5 == Orientation.Vertical ? positionChangeIgnoreConsumed & 4294967295L : positionChangeIgnoreConsumed >> 32)) : Offset.m5101getDistanceimpl(positionChangeIgnoreConsumed)) == 0.0f) {
+                                                                z2 = true;
+                                                                break;
+                                                            } else {
+                                                                z2 = false;
+                                                                break;
+                                                            }
+                                                        } else {
+                                                            List<PointerInputChange> changes9 = pointerEvent2.getChanges();
+                                                            int size9 = changes9.size();
+                                                            int i12 = 0;
+                                                            while (true) {
+                                                                if (i12 < size9) {
+                                                                    pointerInputChange17 = changes9.get(i12);
+                                                                    if (!pointerInputChange17.getPressed()) {
+                                                                        i12++;
+                                                                    }
+                                                                } else {
+                                                                    pointerInputChange17 = null;
+                                                                }
+                                                            }
+                                                            PointerInputChange pointerInputChange24 = pointerInputChange17;
+                                                            if (pointerInputChange24 != null) {
+                                                                longRef8.element = pointerInputChange24.m6682getIdJ3iCeTQ();
+                                                                coroutine_suspended = obj4;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$0 = function24;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$1 = function07;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$2 = function15;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$3 = awaitPointerEventScope7;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$4 = awaitPointerEventScope8;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$5 = longRef8;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$6 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$7 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$8 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$9 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$10 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                                dragGestureDetectorKt$processDragGesture$12.label = 7;
+                                                                obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope8, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                                if (obj5 == coroutine_suspended) {
+                                                                }
+                                                                pointerEvent = (PointerEvent) obj5;
+                                                                List<PointerInputChange> changes82 = pointerEvent.getChanges();
+                                                                size4 = changes82.size();
+                                                                i7 = 0;
+                                                                while (true) {
+                                                                    if (i7 >= size4) {
+                                                                    }
+                                                                    i7++;
+                                                                    pointerEvent = pointerEvent2;
+                                                                    coroutine_suspended = obj4;
+                                                                }
+                                                                pointerInputChange16 = pointerInputChange15;
+                                                                if (pointerInputChange16 == null) {
+                                                                    pointerInputChange16 = null;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    if (pointerInputChange16 == null || pointerInputChange16.isConsumed()) {
+                                                        function12 = function15;
+                                                        function03 = function07;
+                                                    } else if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange16)) {
+                                                        function24.invoke(pointerInputChange16, Offset.m5092boximpl(PointerEventKt.positionChange(pointerInputChange16)));
+                                                        pointerInputChange16.consume();
+                                                        long m6682getIdJ3iCeTQ3 = pointerInputChange16.m6682getIdJ3iCeTQ();
+                                                        orientation6 = orientation5;
+                                                        m6682getIdJ3iCeTQ2 = m6682getIdJ3iCeTQ3;
+                                                        awaitPointerEventScope2 = awaitPointerEventScope7;
+                                                        function12 = function15;
+                                                        function03 = function07;
+                                                        function22 = function24;
+                                                        coroutine_suspended = obj4;
+                                                        Ref.LongRef longRef92 = new Ref.LongRef();
+                                                        longRef92.element = m6682getIdJ3iCeTQ2;
+                                                        orientation5 = orientation6;
+                                                        longRef8 = longRef92;
+                                                        awaitPointerEventScope8 = awaitPointerEventScope2;
+                                                        awaitPointerEventScope7 = awaitPointerEventScope8;
+                                                        function24 = function22;
+                                                        function07 = function03;
+                                                        function15 = function12;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$0 = function24;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$1 = function07;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$2 = function15;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$3 = awaitPointerEventScope7;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$4 = awaitPointerEventScope8;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$5 = longRef8;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$6 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$7 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$8 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$9 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$10 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                                        dragGestureDetectorKt$processDragGesture$12.label = 7;
+                                                        obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope8, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                                        if (obj5 == coroutine_suspended) {
+                                                        }
+                                                        pointerEvent = (PointerEvent) obj5;
+                                                        List<PointerInputChange> changes822 = pointerEvent.getChanges();
+                                                        size4 = changes822.size();
+                                                        i7 = 0;
+                                                        while (true) {
+                                                            if (i7 >= size4) {
+                                                            }
+                                                            i7++;
+                                                            pointerEvent = pointerEvent2;
+                                                            coroutine_suspended = obj4;
+                                                        }
+                                                        pointerInputChange16 = pointerInputChange15;
+                                                        if (pointerInputChange16 == null) {
+                                                        }
+                                                        if (pointerInputChange16 == null) {
+                                                            if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange16)) {
+                                                            }
+                                                        }
+                                                        function12 = function15;
+                                                        function03 = function07;
+                                                    } else {
+                                                        pointerInputChange14 = pointerInputChange16;
+                                                        function12 = function15;
+                                                        function03 = function07;
+                                                        if (pointerInputChange14 == null) {
+                                                            function03.invoke();
+                                                        } else {
+                                                            function12.invoke(pointerInputChange14);
+                                                        }
+                                                    }
+                                                }
+                                                pointerInputChange14 = null;
+                                                if (pointerInputChange14 == null) {
+                                                }
+                                            }
+                                            return Unit.INSTANCE;
+                                        }
+                                        longRef = longRef2;
+                                        function32 = function33;
+                                        function03 = function04;
+                                        function12 = function13;
+                                        long m6682getIdJ3iCeTQ4 = pointerInputChange3.m6682getIdJ3iCeTQ();
+                                        int m6688getTypeT8wyACA2 = pointerInputChange3.m6688getTypeT8wyACA();
+                                        Ref.LongRef longRef10 = longRef;
+                                        long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                                        if (m508isPointerUpDmW0f2w(awaitPointerEventScope2.getCurrentEvent(), m6682getIdJ3iCeTQ4)) {
+                                            function13 = function12;
+                                            pointerInputChange5 = null;
+                                            function04 = function03;
+                                            function33 = function32;
+                                            longRef2 = longRef10;
+                                            if (pointerInputChange5 != null) {
+                                            }
+                                            pointerInputChange2 = pointerInputChange5;
+                                            longRef = longRef2;
+                                            function32 = function33;
+                                            function03 = function04;
+                                            function12 = function13;
+                                            if (pointerInputChange2 == null) {
+                                            }
+                                            if (pointerInputChange2 != null) {
+                                            }
+                                            return Unit.INSTANCE;
+                                        }
+                                        f = m509pointerSlopE8SPZFQ(awaitPointerEventScope2.getViewConfiguration(), m6688getTypeT8wyACA2);
+                                        longRef3 = new Ref.LongRef();
+                                        longRef3.element = m6682getIdJ3iCeTQ4;
+                                        touchSlopDetector3 = new TouchSlopDetector(orientation2, m5119getZeroF1C5BW0, null);
+                                        longRef4 = longRef10;
+                                        awaitPointerEventScope3 = awaitPointerEventScope2;
+                                        dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope3;
+                                        dragGestureDetectorKt$processDragGesture$12.L$1 = orientation2;
+                                        dragGestureDetectorKt$processDragGesture$12.L$2 = function32;
+                                        dragGestureDetectorKt$processDragGesture$12.L$3 = function22;
+                                        dragGestureDetectorKt$processDragGesture$12.L$4 = function03;
+                                        dragGestureDetectorKt$processDragGesture$12.L$5 = function12;
+                                        dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange3;
+                                        dragGestureDetectorKt$processDragGesture$12.L$7 = longRef4;
+                                        dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope2;
+                                        dragGestureDetectorKt$processDragGesture$12.L$9 = longRef3;
+                                        dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector3;
+                                        dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                        dragGestureDetectorKt$processDragGesture$12.F$0 = f;
+                                        dragGestureDetectorKt$processDragGesture$12.label = 2;
+                                        PointerInputChange pointerInputChange25 = pointerInputChange3;
+                                        obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                        if (obj5 == coroutine_suspended) {
+                                            return coroutine_suspended;
+                                        }
+                                        function13 = function12;
+                                        function04 = function03;
+                                        function33 = function32;
+                                        longRef2 = longRef4;
+                                        touchSlopDetector7 = touchSlopDetector3;
+                                        pointerInputChange19 = pointerInputChange25;
+                                        PointerEvent pointerEvent32 = (PointerEvent) obj5;
+                                        List<PointerInputChange> changes22 = pointerEvent32.getChanges();
+                                        int size52 = changes22.size();
+                                        float f52 = f;
+                                        int i82 = 0;
+                                        while (true) {
+                                            if (i82 >= size52) {
+                                            }
+                                            i82 = i + 1;
+                                            touchSlopDetector7 = touchSlopDetector;
+                                            size52 = i2;
+                                            coroutine_suspended = obj;
+                                        }
+                                        pointerInputChange5 = pointerInputChange4;
+                                        if (pointerInputChange5 != null) {
+                                            if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange5)) {
+                                            }
+                                        }
+                                    } else {
+                                        f52 = f;
+                                        TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, null);
+                                    }
+                                } else {
+                                    PointerEventPass pointerEventPass3 = PointerEventPass.Final;
+                                    dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$1 = orientation2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$2 = function33;
+                                    dragGestureDetectorKt$processDragGesture$12.L$3 = function22;
+                                    dragGestureDetectorKt$processDragGesture$12.L$4 = function04;
+                                    dragGestureDetectorKt$processDragGesture$12.L$5 = function13;
+                                    dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange19;
+                                    dragGestureDetectorKt$processDragGesture$12.L$7 = longRef2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$9 = longRef3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$11 = pointerInputChange5;
+                                    dragGestureDetectorKt$processDragGesture$12.F$0 = f;
+                                    dragGestureDetectorKt$processDragGesture$12.label = 3;
+                                    coroutine_suspended = obj;
+                                    if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass3, dragGestureDetectorKt$processDragGesture$12) == coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    pointerInputChange3 = pointerInputChange19;
+                                    touchSlopDetector3 = touchSlopDetector2;
+                                    if (!pointerInputChange5.isConsumed()) {
+                                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                                        pointerInputChange5 = null;
+                                        if (pointerInputChange5 != null) {
+                                        }
+                                        pointerInputChange2 = pointerInputChange5;
+                                        longRef = longRef2;
+                                        function32 = function33;
+                                        function03 = function04;
+                                        function12 = function13;
+                                        if (pointerInputChange2 == null) {
+                                        }
+                                        if (pointerInputChange2 != null) {
+                                        }
+                                        return Unit.INSTANCE;
+                                    }
+                                    longRef4 = longRef2;
+                                    function32 = function33;
+                                    function03 = function04;
+                                    function12 = function13;
+                                    dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$1 = orientation2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$2 = function32;
+                                    dragGestureDetectorKt$processDragGesture$12.L$3 = function22;
+                                    dragGestureDetectorKt$processDragGesture$12.L$4 = function03;
+                                    dragGestureDetectorKt$processDragGesture$12.L$5 = function12;
+                                    dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$7 = longRef4;
+                                    dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope2;
+                                    dragGestureDetectorKt$processDragGesture$12.L$9 = longRef3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector3;
+                                    dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                                    dragGestureDetectorKt$processDragGesture$12.F$0 = f;
+                                    dragGestureDetectorKt$processDragGesture$12.label = 2;
+                                    PointerInputChange pointerInputChange252 = pointerInputChange3;
+                                    obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                                    if (obj5 == coroutine_suspended) {
+                                    }
+                                }
+                            } else {
+                                List<PointerInputChange> changes10 = pointerEvent32.getChanges();
+                                int size10 = changes10.size();
+                                int i13 = 0;
+                                while (true) {
+                                    if (i13 < size10) {
+                                        pointerInputChange6 = changes10.get(i13);
+                                        if (!pointerInputChange6.getPressed()) {
+                                            i13++;
+                                        }
+                                    } else {
+                                        pointerInputChange6 = null;
+                                    }
+                                }
+                                PointerInputChange pointerInputChange26 = pointerInputChange6;
+                                if (pointerInputChange26 != null) {
+                                    longRef3.element = pointerInputChange26.m6682getIdJ3iCeTQ();
+                                    touchSlopDetector2 = touchSlopDetector;
+                                }
+                            }
+                            f = f52;
+                            longRef4 = longRef2;
+                            pointerInputChange3 = pointerInputChange19;
+                            function32 = function33;
+                            function03 = function04;
+                            function12 = function13;
+                            touchSlopDetector3 = touchSlopDetector2;
+                            coroutine_suspended = obj;
+                            dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope3;
+                            dragGestureDetectorKt$processDragGesture$12.L$1 = orientation2;
+                            dragGestureDetectorKt$processDragGesture$12.L$2 = function32;
+                            dragGestureDetectorKt$processDragGesture$12.L$3 = function22;
+                            dragGestureDetectorKt$processDragGesture$12.L$4 = function03;
+                            dragGestureDetectorKt$processDragGesture$12.L$5 = function12;
+                            dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange3;
+                            dragGestureDetectorKt$processDragGesture$12.L$7 = longRef4;
+                            dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope2;
+                            dragGestureDetectorKt$processDragGesture$12.L$9 = longRef3;
+                            dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector3;
+                            dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                            dragGestureDetectorKt$processDragGesture$12.F$0 = f;
+                            dragGestureDetectorKt$processDragGesture$12.label = 2;
+                            PointerInputChange pointerInputChange2522 = pointerInputChange3;
+                            obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                            if (obj5 == coroutine_suspended) {
+                            }
+                        }
+                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                        pointerInputChange3 = pointerInputChange19;
+                        coroutine_suspended = obj;
+                        pointerInputChange5 = null;
+                        if (pointerInputChange5 != null) {
+                        }
+                        pointerInputChange2 = pointerInputChange5;
+                        longRef = longRef2;
+                        function32 = function33;
+                        function03 = function04;
+                        function12 = function13;
+                        if (pointerInputChange2 == null) {
+                        }
+                        if (pointerInputChange2 != null) {
+                        }
+                        return Unit.INSTANCE;
+                    case 3:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        f = dragGestureDetectorKt$processDragGesture$12.F$0;
+                        pointerInputChange5 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$11;
+                        longRef3 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$9;
+                        Function3<? super PointerInputChange, ? super PointerInputChange, ? super Offset, Unit> function35 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        ResultKt.throwOnFailure(obj5);
+                        function04 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        function22 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        function33 = function35;
+                        pointerInputChange3 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        orientation2 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        function13 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$8;
+                        longRef2 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$7;
+                        touchSlopDetector3 = (TouchSlopDetector) dragGestureDetectorKt$processDragGesture$12.L$10;
+                        awaitPointerEventScope3 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        if (!pointerInputChange5.isConsumed()) {
+                        }
+                        break;
+                    case 4:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        longRef5 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$8;
+                        pointerInputChange7 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$7;
+                        pointerInputChange8 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        function14 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        function05 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        function23 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        function34 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        orientation3 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        awaitPointerEventScope4 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj5);
+                        PointerEvent pointerEvent42 = (PointerEvent) obj5;
+                        List<PointerInputChange> changes42 = pointerEvent42.getChanges();
+                        size2 = changes42.size();
+                        i5 = 0;
+                        while (true) {
+                            if (i5 < size2) {
+                            }
+                            i5++;
+                        }
+                        List<PointerInputChange> changes62 = pointerEvent42.getChanges();
+                        size3 = changes62.size();
+                        while (i6 < size3) {
+                        }
+                        pointerInputChange3 = pointerInputChange8;
+                        function12 = function14;
+                        function03 = function05;
+                        function32 = function34;
+                        orientation2 = orientation3;
+                        awaitPointerEventScope2 = awaitPointerEventScope4;
+                        function22 = function23;
+                        pointerInputChange2 = pointerInputChange7;
+                        longRef = longRef5;
+                        if (pointerInputChange2 == null) {
+                        }
+                        if (pointerInputChange2 != null) {
+                        }
+                        return Unit.INSTANCE;
+                    case 5:
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        j2 = 9223372034707292159L;
+                        f2 = dragGestureDetectorKt$processDragGesture$12.F$0;
+                        longRef6 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$7;
+                        function06 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        orientation4 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        AwaitPointerEventScope awaitPointerEventScope13 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj5);
+                        touchSlopDetector4 = (TouchSlopDetector) dragGestureDetectorKt$processDragGesture$12.L$10;
+                        longRef7 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$9;
+                        pointerInputChange8 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        function23 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        awaitPointerEventScope4 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$8;
+                        function14 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        function34 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        awaitPointerEventScope5 = awaitPointerEventScope13;
+                        PointerEvent pointerEvent52 = (PointerEvent) obj5;
+                        changes = pointerEvent52.getChanges();
+                        size = changes.size();
+                        f3 = f2;
+                        i3 = 0;
+                        while (true) {
+                            if (i3 >= size) {
+                            }
+                            i3++;
+                            touchSlopDetector4 = touchSlopDetector5;
+                            changes = list;
+                            size = i4;
+                            coroutine_suspended = obj2;
+                        }
+                        pointerInputChange10 = pointerInputChange9;
+                        if (pointerInputChange10 != null) {
+                            if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange10)) {
+                            }
+                            f4 = f3;
+                            longRef5 = longRef6;
+                            function05 = function06;
+                            orientation3 = orientation4;
+                            touchSlopDetector4 = touchSlopDetector6;
+                            coroutine_suspended = obj2;
+                            dragGestureDetectorKt$processDragGesture$12.L$0 = awaitPointerEventScope5;
+                            dragGestureDetectorKt$processDragGesture$12.L$1 = orientation3;
+                            dragGestureDetectorKt$processDragGesture$12.L$2 = function34;
+                            dragGestureDetectorKt$processDragGesture$12.L$3 = function23;
+                            dragGestureDetectorKt$processDragGesture$12.L$4 = function05;
+                            dragGestureDetectorKt$processDragGesture$12.L$5 = function14;
+                            dragGestureDetectorKt$processDragGesture$12.L$6 = pointerInputChange8;
+                            dragGestureDetectorKt$processDragGesture$12.L$7 = longRef5;
+                            dragGestureDetectorKt$processDragGesture$12.L$8 = awaitPointerEventScope4;
+                            dragGestureDetectorKt$processDragGesture$12.L$9 = longRef7;
+                            dragGestureDetectorKt$processDragGesture$12.L$10 = touchSlopDetector4;
+                            dragGestureDetectorKt$processDragGesture$12.L$11 = null;
+                            dragGestureDetectorKt$processDragGesture$12.F$0 = f4;
+                            dragGestureDetectorKt$processDragGesture$12.label = 5;
+                            float f6222 = f4;
+                            obj5 = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope4, null, dragGestureDetectorKt$processDragGesture$12, 1, null);
+                            if (obj5 != coroutine_suspended) {
+                            }
+                            break;
+                        }
+                        AwaitPointerEventScope awaitPointerEventScope122 = awaitPointerEventScope5;
+                        function03 = function06;
+                        awaitPointerEventScope2 = awaitPointerEventScope122;
+                        pointerInputChange3 = pointerInputChange8;
+                        longRef = longRef6;
+                        function22 = function23;
+                        function32 = function34;
+                        orientation2 = orientation4;
+                        obj3 = obj2;
+                        pointerInputChange2 = null;
+                        function12 = function14;
+                        coroutine_suspended = obj3;
+                        if (pointerInputChange2 == null) {
+                        }
+                        if (pointerInputChange2 != null) {
+                        }
+                        return Unit.INSTANCE;
+                    case 6:
+                        float f7 = dragGestureDetectorKt$processDragGesture$12.F$0;
+                        pointerInputChange11 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$11;
+                        j = InlineClassHelperKt.UnspecifiedPackedFloats;
+                        pointerInputChange12 = (PointerInputChange) dragGestureDetectorKt$processDragGesture$12.L$6;
+                        j2 = 9223372034707292159L;
+                        AwaitPointerEventScope awaitPointerEventScope14 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj5);
+                        touchSlopDetector6 = (TouchSlopDetector) dragGestureDetectorKt$processDragGesture$12.L$10;
+                        function14 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        awaitPointerEventScope5 = awaitPointerEventScope14;
+                        f4 = f7;
+                        longRef5 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$7;
+                        orientation3 = (Orientation) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        function34 = (Function3) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        function23 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        obj3 = coroutine_suspended;
+                        awaitPointerEventScope6 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$8;
+                        longRef7 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$9;
+                        function05 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        if (pointerInputChange11.isConsumed()) {
+                        }
+                        break;
+                    case 7:
+                        longRef8 = (Ref.LongRef) dragGestureDetectorKt$processDragGesture$12.L$5;
+                        awaitPointerEventScope8 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$4;
+                        awaitPointerEventScope7 = (AwaitPointerEventScope) dragGestureDetectorKt$processDragGesture$12.L$3;
+                        function15 = (Function1) dragGestureDetectorKt$processDragGesture$12.L$2;
+                        function07 = (Function0) dragGestureDetectorKt$processDragGesture$12.L$1;
+                        function24 = (Function2) dragGestureDetectorKt$processDragGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj5);
+                        orientation5 = null;
+                        pointerEvent = (PointerEvent) obj5;
+                        List<PointerInputChange> changes8222 = pointerEvent.getChanges();
+                        size4 = changes8222.size();
+                        i7 = 0;
+                        while (true) {
+                            if (i7 >= size4) {
+                            }
+                            i7++;
+                            pointerEvent = pointerEvent2;
+                            coroutine_suspended = obj4;
+                        }
+                        pointerInputChange16 = pointerInputChange15;
+                        if (pointerInputChange16 == null) {
+                        }
+                        if (pointerInputChange16 == null) {
+                        }
+                        function12 = function15;
+                        function03 = function07;
+                        pointerInputChange14 = null;
+                        if (pointerInputChange14 == null) {
+                        }
+                        return Unit.INSTANCE;
+                    default:
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+            }
+        }
+        dragGestureDetectorKt$processDragGesture$1 = new DragGestureDetectorKt$processDragGesture$1(continuation);
+        dragGestureDetectorKt$processDragGesture$12 = dragGestureDetectorKt$processDragGesture$1;
+        Object obj52 = dragGestureDetectorKt$processDragGesture$12.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (dragGestureDetectorKt$processDragGesture$12.label) {
+        }
     }
 
     public static /* synthetic */ Object detectDragGesturesAfterLongPress$default(PointerInputScope pointerInputScope, Function1 function1, Function0 function0, Function0 function02, Function2 function2, Continuation continuation, int i, Object obj) {
@@ -644,22 +1817,22 @@ public final class DragGestureDetectorKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d5  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x010e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x013b  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x01a6 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:64:0x01a7  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x00f7 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x017b -> B:20:0x00ab). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x019a -> B:61:0x019e). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0179 -> B:20:0x00ab). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0199 -> B:61:0x019e). Please submit an issue!!! */
     /* renamed from: awaitVerticalTouchSlopOrCancellation-jO51t88  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m470awaitVerticalTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m503awaitVerticalTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1;
         int i;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Ref.LongRef longRef;
         Function2<? super PointerInputChange, ? super Float, Unit> function22;
         DragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12;
@@ -687,16 +1860,16 @@ public final class DragGestureDetectorKt {
                 PointerEventPass pointerEventPass = null;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj4);
-                    int m6163getTouchT8wyACA = PointerType.Companion.m6163getTouchT8wyACA();
+                    int m6765getTouchT8wyACA = PointerType.Companion.m6765getTouchT8wyACA();
                     Orientation orientation = Orientation.Vertical;
-                    long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6163getTouchT8wyACA);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6765getTouchT8wyACA);
                     longRef = new Ref.LongRef();
                     longRef.element = j;
-                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(orientation, m4543getZeroF1C5BW0, null);
+                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(orientation, m5119getZeroF1C5BW0, null);
                     function22 = function2;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector3;
@@ -706,7 +1879,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12, i5, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -741,13 +1914,14 @@ public final class DragGestureDetectorKt {
                     }
                     i5 = i3;
                     touchSlopDetector = touchSlopDetector2;
+                    m509pointerSlopE8SPZFQ = f;
                     pointerEventPass = null;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$0 = function22;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12, i5, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -762,10 +1936,10 @@ public final class DragGestureDetectorKt {
                     ResultKt.throwOnFailure(obj4);
                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector4;
-                    m476pointerSlopE8SPZFQ = f3;
-                    int i7 = 1;
-                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1.L$1;
                     char c = 2;
+                    int i7 = 1;
+                    m509pointerSlopE8SPZFQ = f3;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$1.L$1;
                     if (pointerInputChange2.isConsumed()) {
                         i5 = i7;
                         function22 = function23;
@@ -776,11 +1950,11 @@ public final class DragGestureDetectorKt {
                         dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$2 = longRef;
                         dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                         dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                        dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                         dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.label = i5;
                         awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12, i5, pointerEventPass);
                         if (awaitPointerEvent$default != coroutine_suspended) {
-                            f = m476pointerSlopE8SPZFQ;
+                            f = m509pointerSlopE8SPZFQ;
                             touchSlopDetector2 = touchSlopDetector;
                             obj4 = awaitPointerEvent$default;
                             PointerEvent pointerEvent2 = (PointerEvent) obj4;
@@ -797,7 +1971,7 @@ public final class DragGestureDetectorKt {
                                 obj2 = changes2.get(i2);
                                 obj = pointerEventPass;
                                 i4 = size;
-                                if (PointerId.m6067equalsimpl0(((PointerInputChange) obj2).m6083getIdJ3iCeTQ(), longRef.element)) {
+                                if (PointerId.m6664equalsimpl0(((PointerInputChange) obj2).m6682getIdJ3iCeTQ(), longRef.element)) {
                                     break;
                                 }
                                 i2++;
@@ -826,19 +2000,17 @@ public final class DragGestureDetectorKt {
                                 if (pointerInputChange3 == null) {
                                     return obj;
                                 }
-                                longRef.element = pointerInputChange3.m6083getIdJ3iCeTQ();
-                                m476pointerSlopE8SPZFQ = f;
+                                longRef.element = pointerInputChange3.m6682getIdJ3iCeTQ();
                                 i3 = 1;
                             } else {
-                                long m604addPositionsakrDWew = touchSlopDetector2.m604addPositionsakrDWew(pointerInputChange.m6085getPositionF1C5BW0(), pointerInputChange.m6086getPreviousPositionF1C5BW0(), f);
-                                m476pointerSlopE8SPZFQ = f;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m604addPositionsakrDWew & 4294967295L))));
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange), f, false, 4, null);
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m635getPostSlopOffsetqto3Fdw$default & 4294967295L))));
                                     if (pointerInputChange.isConsumed()) {
                                         return pointerInputChange;
                                     }
                                     i3 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
                                 } else {
                                     i7 = 1;
                                     PointerEventPass pointerEventPass2 = PointerEventPass.Final;
@@ -847,11 +2019,12 @@ public final class DragGestureDetectorKt {
                                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$2 = longRef;
                                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$3 = touchSlopDetector2;
                                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$4 = pointerInputChange;
-                                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                                    dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = f;
                                     c = 2;
                                     dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.label = 2;
                                     if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12) != coroutine_suspended) {
                                         longRef2 = longRef;
+                                        m509pointerSlopE8SPZFQ = f;
                                         function23 = function22;
                                         pointerInputChange2 = pointerInputChange;
                                         touchSlopDetector = touchSlopDetector2;
@@ -862,13 +2035,14 @@ public final class DragGestureDetectorKt {
                             }
                             i5 = i3;
                             touchSlopDetector = touchSlopDetector2;
+                            m509pointerSlopE8SPZFQ = f;
                             pointerEventPass = null;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$0 = function22;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$2 = longRef;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                            dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                             dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12.label = i5;
                             awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalTouchSlopOrCancellation$12, i5, pointerEventPass);
                             if (awaitPointerEvent$default != coroutine_suspended) {
@@ -893,220 +2067,229 @@ public final class DragGestureDetectorKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0196 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00e7 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0170 -> B:20:0x00a0). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x018f -> B:61:0x0190). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x019c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00ee A[SYNTHETIC] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0170 -> B:20:0x00a2). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0190 -> B:61:0x0194). Please submit an issue!!! */
     /* renamed from: awaitVerticalPointerSlopOrCancellation-gDDlDlE  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m469awaitVerticalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m502awaitVerticalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1 dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1;
         int i2;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Ref.LongRef longRef;
         Function2<? super PointerInputChange, ? super Float, Unit> function22;
         TouchSlopDetector touchSlopDetector;
         AwaitPointerEventScope awaitPointerEventScope2;
-        Function2<? super PointerInputChange, ? super Float, Unit> function23;
-        AwaitPointerEventScope awaitPointerEventScope3;
-        TouchSlopDetector touchSlopDetector2;
         float f;
+        TouchSlopDetector touchSlopDetector2;
         int size;
         int i3;
+        Object obj;
+        Object obj2;
         PointerInputChange pointerInputChange;
-        PointerInputChange pointerInputChange2;
-        float f2;
-        PointerInputChange pointerInputChange3;
         int i4;
+        Object obj3;
+        int i5;
         Object awaitPointerEvent$default;
         if (continuation instanceof DragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1) {
             dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1 = (DragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1) continuation;
             if ((dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label & Integer.MIN_VALUE) != 0) {
                 dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label -= Integer.MIN_VALUE;
-                Object obj = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.result;
+                Object obj4 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i2 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label;
-                int i5 = 1;
+                int i6 = 1;
+                PointerEventPass pointerEventPass = null;
                 if (i2 != 0) {
-                    ResultKt.throwOnFailure(obj);
+                    ResultKt.throwOnFailure(obj4);
                     Orientation orientation = Orientation.Vertical;
-                    long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
                     longRef = new Ref.LongRef();
                     longRef.element = j;
                     function22 = function2;
-                    touchSlopDetector = new TouchSlopDetector(orientation, m4543getZeroF1C5BW0, null);
+                    touchSlopDetector = new TouchSlopDetector(orientation, m5119getZeroF1C5BW0, null);
                     awaitPointerEventScope2 = awaitPointerEventScope;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function22;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2 = longRef;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = null;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i5;
-                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i5, null);
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i6;
+                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i6, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i2 == 1) {
-                    f = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0;
+                    float f2 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0;
+                    ResultKt.throwOnFailure(obj4);
+                    f = f2;
                     touchSlopDetector2 = (TouchSlopDetector) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3;
-                    awaitPointerEventScope3 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1;
-                    function23 = (Function2) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0;
-                    ResultKt.throwOnFailure(obj);
                     longRef = (Ref.LongRef) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2;
-                    PointerEvent pointerEvent = (PointerEvent) obj;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1;
+                    function22 = (Function2) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0;
+                    PointerEvent pointerEvent = (PointerEvent) obj4;
                     List<PointerInputChange> changes = pointerEvent.getChanges();
                     size = changes.size();
+                    int i7 = 0;
                     i3 = 0;
                     while (true) {
                         if (i3 < size) {
                         }
-                        i3 = i4 + 1;
+                        i3++;
+                        size = i5;
+                        pointerEventPass = obj;
                     }
-                    pointerInputChange2 = pointerInputChange;
-                    if (pointerInputChange2 != null) {
-                        return null;
+                    pointerInputChange = (PointerInputChange) obj2;
+                    if (pointerInputChange != null) {
+                        return obj;
                     }
-                    if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange2)) {
+                    if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
                     }
-                    m476pointerSlopE8SPZFQ = f2;
-                    awaitPointerEventScope2 = awaitPointerEventScope3;
-                    function22 = function23;
+                    i6 = i4;
+                    touchSlopDetector = touchSlopDetector2;
+                    m509pointerSlopE8SPZFQ = f;
+                    pointerEventPass = null;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function22;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2 = longRef;
                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = null;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i5;
-                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i5, null);
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i6;
+                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i6, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i2 == 2) {
                     float f3 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0;
-                    ResultKt.throwOnFailure(obj);
-                    touchSlopDetector = (TouchSlopDetector) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3;
-                    pointerInputChange2 = (PointerInputChange) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4;
+                    PointerInputChange pointerInputChange2 = (PointerInputChange) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4;
+                    Ref.LongRef longRef2 = (Ref.LongRef) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2;
+                    Function2<? super PointerInputChange, ? super Float, Unit> function23 = (Function2) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0;
+                    ResultKt.throwOnFailure(obj4);
+                    touchSlopDetector2 = (TouchSlopDetector) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3;
+                    int i8 = 1;
+                    m509pointerSlopE8SPZFQ = f3;
                     char c = 2;
-                    f2 = f3;
                     awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1;
-                    function23 = (Function2) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0;
-                    longRef = (Ref.LongRef) dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2;
                     if (pointerInputChange2.isConsumed()) {
-                        m476pointerSlopE8SPZFQ = f2;
                         function22 = function23;
+                        pointerEventPass = null;
+                        i6 = i8;
+                        longRef = longRef2;
+                        touchSlopDetector = touchSlopDetector2;
                         dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function22;
                         dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                         dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2 = longRef;
                         dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = null;
-                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i5;
-                        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i5, null);
+                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i6;
+                        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i6, pointerEventPass);
                         if (awaitPointerEvent$default != coroutine_suspended) {
-                            function23 = function22;
                             touchSlopDetector2 = touchSlopDetector;
-                            obj = awaitPointerEvent$default;
-                            awaitPointerEventScope3 = awaitPointerEventScope2;
-                            f = m476pointerSlopE8SPZFQ;
-                            PointerEvent pointerEvent2 = (PointerEvent) obj;
+                            f = m509pointerSlopE8SPZFQ;
+                            obj4 = awaitPointerEvent$default;
+                            PointerEvent pointerEvent2 = (PointerEvent) obj4;
                             List<PointerInputChange> changes2 = pointerEvent2.getChanges();
                             size = changes2.size();
+                            int i72 = 0;
                             i3 = 0;
                             while (true) {
                                 if (i3 < size) {
-                                    pointerInputChange = null;
+                                    obj = pointerEventPass;
+                                    obj2 = obj;
                                     break;
                                 }
-                                pointerInputChange = changes2.get(i3);
-                                i4 = i3;
-                                if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)) {
+                                obj2 = changes2.get(i3);
+                                obj = pointerEventPass;
+                                i5 = size;
+                                if (PointerId.m6664equalsimpl0(((PointerInputChange) obj2).m6682getIdJ3iCeTQ(), longRef.element)) {
                                     break;
                                 }
-                                i3 = i4 + 1;
+                                i3++;
+                                size = i5;
+                                pointerEventPass = obj;
                             }
-                            pointerInputChange2 = pointerInputChange;
-                            if (pointerInputChange2 != null || pointerInputChange2.isConsumed()) {
-                                return null;
+                            pointerInputChange = (PointerInputChange) obj2;
+                            if (pointerInputChange != null || pointerInputChange.isConsumed()) {
+                                return obj;
                             }
-                            if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange2)) {
+                            if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
                                 List<PointerInputChange> changes3 = pointerEvent2.getChanges();
                                 int size2 = changes3.size();
-                                int i6 = 0;
                                 while (true) {
-                                    if (i6 >= size2) {
-                                        pointerInputChange3 = null;
+                                    if (i72 >= size2) {
+                                        obj3 = obj;
                                         break;
                                     }
-                                    pointerInputChange3 = changes3.get(i6);
-                                    if (pointerInputChange3.getPressed()) {
+                                    obj3 = changes3.get(i72);
+                                    if (((PointerInputChange) obj3).getPressed()) {
                                         break;
                                     }
-                                    i6++;
+                                    i72++;
                                 }
-                                PointerInputChange pointerInputChange4 = pointerInputChange3;
-                                if (pointerInputChange4 == null) {
-                                    return null;
+                                PointerInputChange pointerInputChange3 = (PointerInputChange) obj3;
+                                if (pointerInputChange3 == null) {
+                                    return obj;
                                 }
-                                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
-                                f2 = f;
-                                touchSlopDetector = touchSlopDetector2;
-                                i5 = 1;
+                                longRef.element = pointerInputChange3.m6682getIdJ3iCeTQ();
+                                i4 = 1;
                             } else {
-                                float f4 = f;
-                                TouchSlopDetector touchSlopDetector3 = touchSlopDetector2;
-                                long m604addPositionsakrDWew = touchSlopDetector3.m604addPositionsakrDWew(pointerInputChange2.m6085getPositionF1C5BW0(), pointerInputChange2.m6086getPreviousPositionF1C5BW0(), f4);
-                                touchSlopDetector = touchSlopDetector3;
-                                f2 = f4;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function23.invoke(pointerInputChange2, Boxing.boxFloat(Float.intBitsToFloat((int) (m604addPositionsakrDWew & 4294967295L))));
-                                    if (pointerInputChange2.isConsumed()) {
-                                        return pointerInputChange2;
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange), f, false, 4, null);
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m635getPostSlopOffsetqto3Fdw$default & 4294967295L))));
+                                    if (pointerInputChange.isConsumed()) {
+                                        return pointerInputChange;
                                     }
-                                    i5 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
+                                    i4 = 1;
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
                                 } else {
-                                    i5 = 1;
-                                    PointerEventPass pointerEventPass = PointerEventPass.Final;
-                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function23;
-                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope3;
+                                    i8 = 1;
+                                    PointerEventPass pointerEventPass2 = PointerEventPass.Final;
+                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function22;
+                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2 = longRef;
-                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerInputChange2;
-                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = f2;
+                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector2;
+                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerInputChange;
+                                    dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = f;
                                     c = 2;
                                     dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = 2;
-                                    if (awaitPointerEventScope3.awaitPointerEvent(pointerEventPass, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1) != coroutine_suspended) {
-                                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                                    if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1) != coroutine_suspended) {
+                                        longRef2 = longRef;
+                                        function23 = function22;
+                                        pointerInputChange2 = pointerInputChange;
+                                        m509pointerSlopE8SPZFQ = f;
                                         if (pointerInputChange2.isConsumed()) {
                                         }
                                     }
                                 }
                             }
-                            m476pointerSlopE8SPZFQ = f2;
-                            awaitPointerEventScope2 = awaitPointerEventScope3;
-                            function22 = function23;
+                            i6 = i4;
+                            touchSlopDetector = touchSlopDetector2;
+                            m509pointerSlopE8SPZFQ = f;
+                            pointerEventPass = null;
                             dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$0 = function22;
                             dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                             dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$2 = longRef;
                             dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = null;
-                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i5;
-                            awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i5, null);
+                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label = i6;
+                            awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1, i6, pointerEventPass);
                             if (awaitPointerEvent$default != coroutine_suspended) {
                             }
                         }
@@ -1119,10 +2302,11 @@ public final class DragGestureDetectorKt {
             }
         }
         dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1 = new DragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1(continuation);
-        Object obj2 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.result;
+        Object obj42 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i2 = dragGestureDetectorKt$awaitVerticalPointerSlopOrCancellation$1.label;
-        int i52 = 1;
+        int i62 = 1;
+        PointerEventPass pointerEventPass3 = null;
         if (i2 != 0) {
         }
     }
@@ -1146,7 +2330,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m477verticalDragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
+    public static final Object m510verticalDragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
         DragGestureDetectorKt$verticalDrag$1 dragGestureDetectorKt$verticalDrag$1;
         int i;
         long j2;
@@ -1175,7 +2359,7 @@ public final class DragGestureDetectorKt {
                     ResultKt.throwOnFailure(obj);
                     Orientation orientation3 = Orientation.Vertical;
                     j2 = j;
-                    if (!m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
+                    if (!m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
                         orientation = orientation3;
                         dragGestureDetectorKt$verticalDrag$12 = dragGestureDetectorKt$verticalDrag$1;
                         awaitPointerEventScope2 = awaitPointerEventScope;
@@ -1217,7 +2401,7 @@ public final class DragGestureDetectorKt {
                         }
                         pointerInputChange = changes.get(i3);
                         awaitPointerEventScope4 = awaitPointerEventScope3;
-                        if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)) {
+                        if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)) {
                             break;
                         }
                         i3++;
@@ -1242,7 +2426,7 @@ public final class DragGestureDetectorKt {
                             }
                             PointerInputChange pointerInputChange4 = pointerInputChange2;
                             if (pointerInputChange4 != null) {
-                                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                                longRef.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                                 awaitPointerEventScope3 = awaitPointerEventScope4;
                                 awaitPointerEventScope2 = awaitPointerEventScope5;
                                 dragGestureDetectorKt$verticalDrag$12 = dragGestureDetectorKt$verticalDrag$13;
@@ -1266,7 +2450,7 @@ public final class DragGestureDetectorKt {
                         } else {
                             long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3);
                             if (orientation2 == null) {
-                                intBitsToFloat = Offset.m4525getDistanceimpl(positionChangeIgnoreConsumed);
+                                intBitsToFloat = Offset.m5101getDistanceimpl(positionChangeIgnoreConsumed);
                             } else {
                                 intBitsToFloat = Float.intBitsToFloat((int) (orientation2 == Orientation.Vertical ? positionChangeIgnoreConsumed & 4294967295L : positionChangeIgnoreConsumed >> 32));
                             }
@@ -1293,7 +2477,7 @@ public final class DragGestureDetectorKt {
                     } else {
                         function12.invoke(pointerInputChange32);
                         orientation = orientation2;
-                        j2 = pointerInputChange32.m6083getIdJ3iCeTQ();
+                        j2 = pointerInputChange32.m6682getIdJ3iCeTQ();
                         awaitPointerEventScope2 = awaitPointerEventScope5;
                         dragGestureDetectorKt$verticalDrag$12 = dragGestureDetectorKt$verticalDrag$13;
                         i2 = 1;
@@ -1345,7 +2529,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m468awaitVerticalDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m501awaitVerticalDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitVerticalDragOrCancellation$1 dragGestureDetectorKt$awaitVerticalDragOrCancellation$1;
         int i;
         Ref.LongRef longRef;
@@ -1376,7 +2560,7 @@ public final class DragGestureDetectorKt {
                                 break;
                             }
                             pointerInputChange = changes.get(i2);
-                            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef2.element)) {
+                            if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef2.element)) {
                                 break;
                             }
                             i2++;
@@ -1399,7 +2583,7 @@ public final class DragGestureDetectorKt {
                                 }
                                 PointerInputChange pointerInputChange4 = pointerInputChange2;
                                 if (pointerInputChange4 != null) {
-                                    longRef2.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                                    longRef2.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                                     longRef = longRef2;
                                 }
                             }
@@ -1435,7 +2619,7 @@ public final class DragGestureDetectorKt {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 ResultKt.throwOnFailure(obj);
-                if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                     return null;
                 }
                 longRef = new Ref.LongRef();
@@ -1501,22 +2685,22 @@ public final class DragGestureDetectorKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d5  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x010e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x013d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x013b  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x01a3 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:64:0x01a4  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x00f7 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0178 -> B:20:0x00ab). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0197 -> B:61:0x019b). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0176 -> B:20:0x00ab). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0196 -> B:61:0x019b). Please submit an issue!!! */
     /* renamed from: awaitHorizontalTouchSlopOrCancellation-jO51t88  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m462awaitHorizontalTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m495awaitHorizontalTouchSlopOrCancellationjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1;
         int i;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Ref.LongRef longRef;
         Function2<? super PointerInputChange, ? super Float, Unit> function22;
         DragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1 dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12;
@@ -1544,16 +2728,16 @@ public final class DragGestureDetectorKt {
                 PointerEventPass pointerEventPass = null;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj4);
-                    int m6163getTouchT8wyACA = PointerType.Companion.m6163getTouchT8wyACA();
+                    int m6765getTouchT8wyACA = PointerType.Companion.m6765getTouchT8wyACA();
                     Orientation orientation = Orientation.Horizontal;
-                    long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6163getTouchT8wyACA);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), m6765getTouchT8wyACA);
                     longRef = new Ref.LongRef();
                     longRef.element = j;
-                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(orientation, m4543getZeroF1C5BW0, null);
+                    TouchSlopDetector touchSlopDetector3 = new TouchSlopDetector(orientation, m5119getZeroF1C5BW0, null);
                     function22 = function2;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector3;
@@ -1563,7 +2747,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12, i5, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -1598,13 +2782,14 @@ public final class DragGestureDetectorKt {
                     }
                     i5 = i3;
                     touchSlopDetector = touchSlopDetector2;
+                    m509pointerSlopE8SPZFQ = f;
                     pointerEventPass = null;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$0 = function22;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.label = i5;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12, i5, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -1619,10 +2804,10 @@ public final class DragGestureDetectorKt {
                     ResultKt.throwOnFailure(obj4);
                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12 = dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector4;
-                    m476pointerSlopE8SPZFQ = f3;
-                    int i7 = 1;
-                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1.L$1;
                     char c = 2;
+                    int i7 = 1;
+                    m509pointerSlopE8SPZFQ = f3;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$1.L$1;
                     if (pointerInputChange2.isConsumed()) {
                         i5 = i7;
                         function22 = function23;
@@ -1633,11 +2818,11 @@ public final class DragGestureDetectorKt {
                         dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$2 = longRef;
                         dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                         dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                        dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                         dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.label = i5;
                         awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12, i5, pointerEventPass);
                         if (awaitPointerEvent$default != coroutine_suspended) {
-                            f = m476pointerSlopE8SPZFQ;
+                            f = m509pointerSlopE8SPZFQ;
                             touchSlopDetector2 = touchSlopDetector;
                             obj4 = awaitPointerEvent$default;
                             PointerEvent pointerEvent2 = (PointerEvent) obj4;
@@ -1654,7 +2839,7 @@ public final class DragGestureDetectorKt {
                                 obj2 = changes2.get(i2);
                                 obj = pointerEventPass;
                                 i4 = size;
-                                if (PointerId.m6067equalsimpl0(((PointerInputChange) obj2).m6083getIdJ3iCeTQ(), longRef.element)) {
+                                if (PointerId.m6664equalsimpl0(((PointerInputChange) obj2).m6682getIdJ3iCeTQ(), longRef.element)) {
                                     break;
                                 }
                                 i2++;
@@ -1683,19 +2868,17 @@ public final class DragGestureDetectorKt {
                                 if (pointerInputChange3 == null) {
                                     return obj;
                                 }
-                                longRef.element = pointerInputChange3.m6083getIdJ3iCeTQ();
-                                m476pointerSlopE8SPZFQ = f;
+                                longRef.element = pointerInputChange3.m6682getIdJ3iCeTQ();
                                 i3 = 1;
                             } else {
-                                long m604addPositionsakrDWew = touchSlopDetector2.m604addPositionsakrDWew(pointerInputChange.m6085getPositionF1C5BW0(), pointerInputChange.m6086getPreviousPositionF1C5BW0(), f);
-                                m476pointerSlopE8SPZFQ = f;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m604addPositionsakrDWew >> 32))));
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange), f, false, 4, null);
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m635getPostSlopOffsetqto3Fdw$default >> 32))));
                                     if (pointerInputChange.isConsumed()) {
                                         return pointerInputChange;
                                     }
                                     i3 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
                                 } else {
                                     i7 = 1;
                                     PointerEventPass pointerEventPass2 = PointerEventPass.Final;
@@ -1704,11 +2887,12 @@ public final class DragGestureDetectorKt {
                                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$2 = longRef;
                                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$3 = touchSlopDetector2;
                                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$4 = pointerInputChange;
-                                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                                    dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = f;
                                     c = 2;
                                     dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.label = 2;
                                     if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12) != coroutine_suspended) {
                                         longRef2 = longRef;
+                                        m509pointerSlopE8SPZFQ = f;
                                         function23 = function22;
                                         pointerInputChange2 = pointerInputChange;
                                         touchSlopDetector = touchSlopDetector2;
@@ -1719,13 +2903,14 @@ public final class DragGestureDetectorKt {
                             }
                             i5 = i3;
                             touchSlopDetector = touchSlopDetector2;
+                            m509pointerSlopE8SPZFQ = f;
                             pointerEventPass = null;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$0 = function22;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$2 = longRef;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$3 = touchSlopDetector;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.L$4 = pointerEventPass;
-                            dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                             dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12.label = i5;
                             awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalTouchSlopOrCancellation$12, i5, pointerEventPass);
                             if (awaitPointerEvent$default != coroutine_suspended) {
@@ -1750,220 +2935,229 @@ public final class DragGestureDetectorKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0193 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0194  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00e7 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x016d -> B:20:0x00a0). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x018c -> B:61:0x018d). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0199 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00ee A[SYNTHETIC] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x016d -> B:20:0x00a2). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x018d -> B:61:0x0191). Please submit an issue!!! */
     /* renamed from: awaitHorizontalPointerSlopOrCancellation-gDDlDlE  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m461awaitHorizontalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m494awaitHorizontalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1 dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1;
         int i2;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Ref.LongRef longRef;
         Function2<? super PointerInputChange, ? super Float, Unit> function22;
         TouchSlopDetector touchSlopDetector;
         AwaitPointerEventScope awaitPointerEventScope2;
-        Function2<? super PointerInputChange, ? super Float, Unit> function23;
-        AwaitPointerEventScope awaitPointerEventScope3;
-        TouchSlopDetector touchSlopDetector2;
         float f;
+        TouchSlopDetector touchSlopDetector2;
         int size;
         int i3;
+        Object obj;
+        Object obj2;
         PointerInputChange pointerInputChange;
-        PointerInputChange pointerInputChange2;
-        float f2;
-        PointerInputChange pointerInputChange3;
         int i4;
+        Object obj3;
+        int i5;
         Object awaitPointerEvent$default;
         if (continuation instanceof DragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1) {
             dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1 = (DragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1) continuation;
             if ((dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label & Integer.MIN_VALUE) != 0) {
                 dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label -= Integer.MIN_VALUE;
-                Object obj = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.result;
+                Object obj4 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i2 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label;
-                int i5 = 1;
+                int i6 = 1;
+                PointerEventPass pointerEventPass = null;
                 if (i2 != 0) {
-                    ResultKt.throwOnFailure(obj);
+                    ResultKt.throwOnFailure(obj4);
                     Orientation orientation = Orientation.Horizontal;
-                    long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    long m5119getZeroF1C5BW0 = Offset.Companion.m5119getZeroF1C5BW0();
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
                     longRef = new Ref.LongRef();
                     longRef.element = j;
                     function22 = function2;
-                    touchSlopDetector = new TouchSlopDetector(orientation, m4543getZeroF1C5BW0, null);
+                    touchSlopDetector = new TouchSlopDetector(orientation, m5119getZeroF1C5BW0, null);
                     awaitPointerEventScope2 = awaitPointerEventScope;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function22;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2 = longRef;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = null;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i5;
-                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i5, null);
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i6;
+                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i6, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i2 == 1) {
-                    f = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0;
+                    float f2 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0;
+                    ResultKt.throwOnFailure(obj4);
+                    f = f2;
                     touchSlopDetector2 = (TouchSlopDetector) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3;
-                    awaitPointerEventScope3 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1;
-                    function23 = (Function2) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0;
-                    ResultKt.throwOnFailure(obj);
                     longRef = (Ref.LongRef) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2;
-                    PointerEvent pointerEvent = (PointerEvent) obj;
+                    awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1;
+                    function22 = (Function2) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0;
+                    PointerEvent pointerEvent = (PointerEvent) obj4;
                     List<PointerInputChange> changes = pointerEvent.getChanges();
                     size = changes.size();
+                    int i7 = 0;
                     i3 = 0;
                     while (true) {
                         if (i3 < size) {
                         }
-                        i3 = i4 + 1;
+                        i3++;
+                        size = i5;
+                        pointerEventPass = obj;
                     }
-                    pointerInputChange2 = pointerInputChange;
-                    if (pointerInputChange2 != null) {
-                        return null;
+                    pointerInputChange = (PointerInputChange) obj2;
+                    if (pointerInputChange != null) {
+                        return obj;
                     }
-                    if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange2)) {
+                    if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
                     }
-                    m476pointerSlopE8SPZFQ = f2;
-                    awaitPointerEventScope2 = awaitPointerEventScope3;
-                    function22 = function23;
+                    i6 = i4;
+                    touchSlopDetector = touchSlopDetector2;
+                    m509pointerSlopE8SPZFQ = f;
+                    pointerEventPass = null;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function22;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2 = longRef;
                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = null;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i5;
-                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i5, null);
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i6;
+                    awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i6, pointerEventPass);
                     if (awaitPointerEvent$default != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 } else if (i2 == 2) {
                     float f3 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0;
-                    ResultKt.throwOnFailure(obj);
-                    touchSlopDetector = (TouchSlopDetector) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3;
-                    pointerInputChange2 = (PointerInputChange) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4;
+                    PointerInputChange pointerInputChange2 = (PointerInputChange) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4;
+                    Ref.LongRef longRef2 = (Ref.LongRef) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2;
+                    Function2<? super PointerInputChange, ? super Float, Unit> function23 = (Function2) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0;
+                    ResultKt.throwOnFailure(obj4);
+                    touchSlopDetector2 = (TouchSlopDetector) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3;
+                    int i8 = 1;
+                    m509pointerSlopE8SPZFQ = f3;
                     char c = 2;
-                    f2 = f3;
                     awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1;
-                    function23 = (Function2) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0;
-                    longRef = (Ref.LongRef) dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2;
                     if (pointerInputChange2.isConsumed()) {
-                        m476pointerSlopE8SPZFQ = f2;
                         function22 = function23;
+                        pointerEventPass = null;
+                        i6 = i8;
+                        longRef = longRef2;
+                        touchSlopDetector = touchSlopDetector2;
                         dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function22;
                         dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                         dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2 = longRef;
                         dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = null;
-                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i5;
-                        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i5, null);
+                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i6;
+                        awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i6, pointerEventPass);
                         if (awaitPointerEvent$default != coroutine_suspended) {
-                            function23 = function22;
                             touchSlopDetector2 = touchSlopDetector;
-                            obj = awaitPointerEvent$default;
-                            awaitPointerEventScope3 = awaitPointerEventScope2;
-                            f = m476pointerSlopE8SPZFQ;
-                            PointerEvent pointerEvent2 = (PointerEvent) obj;
+                            f = m509pointerSlopE8SPZFQ;
+                            obj4 = awaitPointerEvent$default;
+                            PointerEvent pointerEvent2 = (PointerEvent) obj4;
                             List<PointerInputChange> changes2 = pointerEvent2.getChanges();
                             size = changes2.size();
+                            int i72 = 0;
                             i3 = 0;
                             while (true) {
                                 if (i3 < size) {
-                                    pointerInputChange = null;
+                                    obj = pointerEventPass;
+                                    obj2 = obj;
                                     break;
                                 }
-                                pointerInputChange = changes2.get(i3);
-                                i4 = i3;
-                                if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)) {
+                                obj2 = changes2.get(i3);
+                                obj = pointerEventPass;
+                                i5 = size;
+                                if (PointerId.m6664equalsimpl0(((PointerInputChange) obj2).m6682getIdJ3iCeTQ(), longRef.element)) {
                                     break;
                                 }
-                                i3 = i4 + 1;
+                                i3++;
+                                size = i5;
+                                pointerEventPass = obj;
                             }
-                            pointerInputChange2 = pointerInputChange;
-                            if (pointerInputChange2 != null || pointerInputChange2.isConsumed()) {
-                                return null;
+                            pointerInputChange = (PointerInputChange) obj2;
+                            if (pointerInputChange != null || pointerInputChange.isConsumed()) {
+                                return obj;
                             }
-                            if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange2)) {
+                            if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
                                 List<PointerInputChange> changes3 = pointerEvent2.getChanges();
                                 int size2 = changes3.size();
-                                int i6 = 0;
                                 while (true) {
-                                    if (i6 >= size2) {
-                                        pointerInputChange3 = null;
+                                    if (i72 >= size2) {
+                                        obj3 = obj;
                                         break;
                                     }
-                                    pointerInputChange3 = changes3.get(i6);
-                                    if (pointerInputChange3.getPressed()) {
+                                    obj3 = changes3.get(i72);
+                                    if (((PointerInputChange) obj3).getPressed()) {
                                         break;
                                     }
-                                    i6++;
+                                    i72++;
                                 }
-                                PointerInputChange pointerInputChange4 = pointerInputChange3;
-                                if (pointerInputChange4 == null) {
-                                    return null;
+                                PointerInputChange pointerInputChange3 = (PointerInputChange) obj3;
+                                if (pointerInputChange3 == null) {
+                                    return obj;
                                 }
-                                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
-                                f2 = f;
-                                touchSlopDetector = touchSlopDetector2;
-                                i5 = 1;
+                                longRef.element = pointerInputChange3.m6682getIdJ3iCeTQ();
+                                i4 = 1;
                             } else {
-                                float f4 = f;
-                                TouchSlopDetector touchSlopDetector3 = touchSlopDetector2;
-                                long m604addPositionsakrDWew = touchSlopDetector3.m604addPositionsakrDWew(pointerInputChange2.m6085getPositionF1C5BW0(), pointerInputChange2.m6086getPreviousPositionF1C5BW0(), f4);
-                                touchSlopDetector = touchSlopDetector3;
-                                f2 = f4;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function23.invoke(pointerInputChange2, Boxing.boxFloat(Float.intBitsToFloat((int) (m604addPositionsakrDWew >> 32))));
-                                    if (pointerInputChange2.isConsumed()) {
-                                        return pointerInputChange2;
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange), f, false, 4, null);
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function22.invoke(pointerInputChange, Boxing.boxFloat(Float.intBitsToFloat((int) (m635getPostSlopOffsetqto3Fdw$default >> 32))));
+                                    if (pointerInputChange.isConsumed()) {
+                                        return pointerInputChange;
                                     }
-                                    i5 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
+                                    i4 = 1;
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector2, 0L, 1, obj);
                                 } else {
-                                    i5 = 1;
-                                    PointerEventPass pointerEventPass = PointerEventPass.Final;
-                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function23;
-                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope3;
+                                    i8 = 1;
+                                    PointerEventPass pointerEventPass2 = PointerEventPass.Final;
+                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function22;
+                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2 = longRef;
-                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerInputChange2;
-                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = f2;
+                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector2;
+                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerInputChange;
+                                    dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = f;
                                     c = 2;
                                     dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = 2;
-                                    if (awaitPointerEventScope3.awaitPointerEvent(pointerEventPass, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1) != coroutine_suspended) {
-                                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                                    if (awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1) != coroutine_suspended) {
+                                        longRef2 = longRef;
+                                        function23 = function22;
+                                        pointerInputChange2 = pointerInputChange;
+                                        m509pointerSlopE8SPZFQ = f;
                                         if (pointerInputChange2.isConsumed()) {
                                         }
                                     }
                                 }
                             }
-                            m476pointerSlopE8SPZFQ = f2;
-                            awaitPointerEventScope2 = awaitPointerEventScope3;
-                            function22 = function23;
+                            i6 = i4;
+                            touchSlopDetector = touchSlopDetector2;
+                            m509pointerSlopE8SPZFQ = f;
+                            pointerEventPass = null;
                             dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$0 = function22;
                             dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$1 = awaitPointerEventScope2;
                             dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$2 = longRef;
                             dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$3 = touchSlopDetector;
-                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = null;
-                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m476pointerSlopE8SPZFQ;
-                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i5;
-                            awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i5, null);
+                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.L$4 = pointerEventPass;
+                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.F$0 = m509pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label = i6;
+                            awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, pointerEventPass, dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1, i6, pointerEventPass);
                             if (awaitPointerEvent$default != coroutine_suspended) {
                             }
                         }
@@ -1976,10 +3170,11 @@ public final class DragGestureDetectorKt {
             }
         }
         dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1 = new DragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1(continuation);
-        Object obj2 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.result;
+        Object obj42 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i2 = dragGestureDetectorKt$awaitHorizontalPointerSlopOrCancellation$1.label;
-        int i52 = 1;
+        int i62 = 1;
+        PointerEventPass pointerEventPass3 = null;
         if (i2 != 0) {
         }
     }
@@ -2003,7 +3198,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m474horizontalDragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
+    public static final Object m507horizontalDragjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Continuation<? super Boolean> continuation) {
         DragGestureDetectorKt$horizontalDrag$1 dragGestureDetectorKt$horizontalDrag$1;
         int i;
         long j2;
@@ -2032,7 +3227,7 @@ public final class DragGestureDetectorKt {
                     ResultKt.throwOnFailure(obj);
                     Orientation orientation3 = Orientation.Horizontal;
                     j2 = j;
-                    if (!m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
+                    if (!m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
                         orientation = orientation3;
                         dragGestureDetectorKt$horizontalDrag$12 = dragGestureDetectorKt$horizontalDrag$1;
                         awaitPointerEventScope2 = awaitPointerEventScope;
@@ -2074,7 +3269,7 @@ public final class DragGestureDetectorKt {
                         }
                         pointerInputChange = changes.get(i3);
                         awaitPointerEventScope4 = awaitPointerEventScope3;
-                        if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)) {
+                        if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)) {
                             break;
                         }
                         i3++;
@@ -2099,7 +3294,7 @@ public final class DragGestureDetectorKt {
                             }
                             PointerInputChange pointerInputChange4 = pointerInputChange2;
                             if (pointerInputChange4 != null) {
-                                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                                longRef.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                                 awaitPointerEventScope3 = awaitPointerEventScope4;
                                 awaitPointerEventScope2 = awaitPointerEventScope5;
                                 dragGestureDetectorKt$horizontalDrag$12 = dragGestureDetectorKt$horizontalDrag$13;
@@ -2123,7 +3318,7 @@ public final class DragGestureDetectorKt {
                         } else {
                             long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3);
                             if (orientation2 == null) {
-                                intBitsToFloat = Offset.m4525getDistanceimpl(positionChangeIgnoreConsumed);
+                                intBitsToFloat = Offset.m5101getDistanceimpl(positionChangeIgnoreConsumed);
                             } else {
                                 intBitsToFloat = Float.intBitsToFloat((int) (orientation2 == Orientation.Vertical ? positionChangeIgnoreConsumed & 4294967295L : positionChangeIgnoreConsumed >> 32));
                             }
@@ -2150,7 +3345,7 @@ public final class DragGestureDetectorKt {
                     } else {
                         function12.invoke(pointerInputChange32);
                         orientation = orientation2;
-                        j2 = pointerInputChange32.m6083getIdJ3iCeTQ();
+                        j2 = pointerInputChange32.m6682getIdJ3iCeTQ();
                         awaitPointerEventScope2 = awaitPointerEventScope5;
                         dragGestureDetectorKt$horizontalDrag$12 = dragGestureDetectorKt$horizontalDrag$13;
                         i2 = 1;
@@ -2202,7 +3397,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m460awaitHorizontalDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m493awaitHorizontalDragOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitHorizontalDragOrCancellation$1 dragGestureDetectorKt$awaitHorizontalDragOrCancellation$1;
         int i;
         Ref.LongRef longRef;
@@ -2233,7 +3428,7 @@ public final class DragGestureDetectorKt {
                                 break;
                             }
                             pointerInputChange = changes.get(i2);
-                            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef2.element)) {
+                            if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef2.element)) {
                                 break;
                             }
                             i2++;
@@ -2256,7 +3451,7 @@ public final class DragGestureDetectorKt {
                                 }
                                 PointerInputChange pointerInputChange4 = pointerInputChange2;
                                 if (pointerInputChange4 != null) {
-                                    longRef2.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                                    longRef2.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                                     longRef = longRef2;
                                 }
                             }
@@ -2292,7 +3487,7 @@ public final class DragGestureDetectorKt {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 ResultKt.throwOnFailure(obj);
-                if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                     return null;
                 }
                 longRef = new Ref.LongRef();
@@ -2372,7 +3567,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m471dragVnAYq1g(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Orientation orientation, Function1<? super PointerInputChange, Boolean> function12, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m504dragVnAYq1g(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Orientation orientation, Function1<? super PointerInputChange, Boolean> function12, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$drag$2 dragGestureDetectorKt$drag$2;
         int i;
         long j2;
@@ -2401,7 +3596,7 @@ public final class DragGestureDetectorKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj4);
                     j2 = j;
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
                         return null;
                     }
                     awaitPointerEventScope2 = awaitPointerEventScope;
@@ -2448,7 +3643,7 @@ public final class DragGestureDetectorKt {
                         obj2 = changes.get(i4);
                         obj = pointerEventPass;
                         i2 = i4;
-                        if (PointerId.m6067equalsimpl0(((PointerInputChange) obj2).m6083getIdJ3iCeTQ(), longRef2.element)) {
+                        if (PointerId.m6664equalsimpl0(((PointerInputChange) obj2).m6682getIdJ3iCeTQ(), longRef2.element)) {
                             break;
                         }
                         i4 = i2 + 1;
@@ -2459,7 +3654,7 @@ public final class DragGestureDetectorKt {
                         if (!PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange)) {
                             long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange);
                             if (orientation2 == null) {
-                                intBitsToFloat = Offset.m4525getDistanceimpl(positionChangeIgnoreConsumed);
+                                intBitsToFloat = Offset.m5101getDistanceimpl(positionChangeIgnoreConsumed);
                             } else if (orientation2 == Orientation.Vertical) {
                                 intBitsToFloat = Float.intBitsToFloat((int) (positionChangeIgnoreConsumed & 4294967295L));
                             } else {
@@ -2482,7 +3677,7 @@ public final class DragGestureDetectorKt {
                             }
                             PointerInputChange pointerInputChange2 = (PointerInputChange) obj3;
                             if (pointerInputChange2 != null) {
-                                longRef2.element = pointerInputChange2.m6083getIdJ3iCeTQ();
+                                longRef2.element = pointerInputChange2.m6682getIdJ3iCeTQ();
                                 awaitPointerEventScope2 = awaitPointerEventScope4;
                                 pointerEventPass = obj;
                                 i3 = 1;
@@ -2526,7 +3721,7 @@ public final class DragGestureDetectorKt {
                         return pointerInputChange3;
                     }
                     function14.invoke(pointerInputChange3);
-                    j2 = pointerInputChange3.m6083getIdJ3iCeTQ();
+                    j2 = pointerInputChange3.m6682getIdJ3iCeTQ();
                     awaitPointerEventScope2 = awaitPointerEventScope4;
                     pointerEventPass = obj;
                     i3 = 1;
@@ -2558,12 +3753,12 @@ public final class DragGestureDetectorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: drag-VnAYq1g$$forInline  reason: not valid java name */
-    private static final Object m472dragVnAYq1g$$forInline(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Orientation orientation, Function1<? super PointerInputChange, Boolean> function12, Continuation<? super PointerInputChange> continuation) {
+    private static final Object m505dragVnAYq1g$$forInline(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Unit> function1, Orientation orientation, Function1<? super PointerInputChange, Boolean> function12, Continuation<? super PointerInputChange> continuation) {
         PointerInputChange pointerInputChange;
         PointerInputChange pointerInputChange2;
         PointerInputChange pointerInputChange3;
         long j2 = j;
-        if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
+        if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j2)) {
             return null;
         }
         while (true) {
@@ -2580,7 +3775,7 @@ public final class DragGestureDetectorKt {
                         break;
                     }
                     pointerInputChange = changes.get(i);
-                    if (Boolean.valueOf(PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
+                    if (Boolean.valueOf(PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
                         break;
                     }
                     i++;
@@ -2607,10 +3802,10 @@ public final class DragGestureDetectorKt {
                     if (pointerInputChange4 == null) {
                         break;
                     }
-                    longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
+                    longRef.element = pointerInputChange4.m6682getIdJ3iCeTQ();
                 } else {
                     long positionChangeIgnoreConsumed = PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange2);
-                    if (Boolean.valueOf(1 ^ ((orientation == null ? Offset.m4525getDistanceimpl(positionChangeIgnoreConsumed) : orientation == Orientation.Vertical ? Float.intBitsToFloat((int) (positionChangeIgnoreConsumed & 4294967295L)) : Float.intBitsToFloat((int) (positionChangeIgnoreConsumed >> 32))) == 0.0f ? 1 : 0)).booleanValue()) {
+                    if (Boolean.valueOf(1 ^ ((orientation == null ? Offset.m5101getDistanceimpl(positionChangeIgnoreConsumed) : orientation == Orientation.Vertical ? Float.intBitsToFloat((int) (positionChangeIgnoreConsumed & 4294967295L)) : Float.intBitsToFloat((int) (positionChangeIgnoreConsumed >> 32))) == 0.0f ? 1 : 0)).booleanValue()) {
                         break;
                     }
                 }
@@ -2622,12 +3817,12 @@ public final class DragGestureDetectorKt {
                 return pointerInputChange2;
             }
             function1.invoke(pointerInputChange2);
-            j2 = pointerInputChange2.m6083getIdJ3iCeTQ();
+            j2 = pointerInputChange2.m6682getIdJ3iCeTQ();
         }
     }
 
     /* renamed from: awaitDragOrUp-jO51t88  reason: not valid java name */
-    private static final Object m459awaitDragOrUpjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Boolean> function1, Continuation<? super PointerInputChange> continuation) {
+    private static final Object m492awaitDragOrUpjO51t88(AwaitPointerEventScope awaitPointerEventScope, long j, Function1<? super PointerInputChange, Boolean> function1, Continuation<? super PointerInputChange> continuation) {
         PointerInputChange pointerInputChange;
         PointerInputChange pointerInputChange2;
         Ref.LongRef longRef = new Ref.LongRef();
@@ -2645,7 +3840,7 @@ public final class DragGestureDetectorKt {
                     break;
                 }
                 pointerInputChange = changes.get(i2);
-                if (Boolean.valueOf(PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
+                if (Boolean.valueOf(PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
                     break;
                 }
                 i2++;
@@ -2672,7 +3867,7 @@ public final class DragGestureDetectorKt {
                 if (pointerInputChange5 == null) {
                     break;
                 }
-                longRef.element = pointerInputChange5.m6083getIdJ3iCeTQ();
+                longRef.element = pointerInputChange5.m6682getIdJ3iCeTQ();
             } else if (function1.invoke(pointerInputChange2).booleanValue()) {
                 break;
             }
@@ -2686,19 +3881,19 @@ public final class DragGestureDetectorKt {
     /* JADX WARN: Removed duplicated region for block: B:27:0x00d7  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0107  */
     /* JADX WARN: Removed duplicated region for block: B:51:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x019a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x019b  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x019d A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x019e  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x00f3 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:57:0x0171 -> B:66:0x019e). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:61:0x0190 -> B:62:0x0194). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:57:0x0174 -> B:66:0x01a1). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:61:0x0193 -> B:62:0x0197). Please submit an issue!!! */
     /* renamed from: awaitPointerSlopOrCancellation-6ksA65w  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m464awaitPointerSlopOrCancellation6ksA65w(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m497awaitPointerSlopOrCancellation6ksA65w(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitPointerSlopOrCancellation$1 dragGestureDetectorKt$awaitPointerSlopOrCancellation$1;
         int i2;
-        float m476pointerSlopE8SPZFQ;
+        float m509pointerSlopE8SPZFQ;
         Function2<? super PointerInputChange, ? super Offset, Unit> function22;
         Ref.LongRef longRef;
         DragGestureDetectorKt$awaitPointerSlopOrCancellation$1 dragGestureDetectorKt$awaitPointerSlopOrCancellation$12;
@@ -2729,10 +3924,10 @@ public final class DragGestureDetectorKt {
                 int i6 = 1;
                 if (i2 != 0) {
                     ResultKt.throwOnFailure(obj);
-                    if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+                    m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
                     Ref.LongRef longRef4 = new Ref.LongRef();
                     longRef4.element = j;
                     function22 = function2;
@@ -2745,7 +3940,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$4 = null;
-                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.label = i6;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitPointerSlopOrCancellation$12, i6, null);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -2785,7 +3980,7 @@ public final class DragGestureDetectorKt {
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$2 = longRef;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$3 = touchSlopDetector;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$4 = null;
-                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.label = i6;
                     awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitPointerSlopOrCancellation$12, i6, null);
                     if (awaitPointerEvent$default != coroutine_suspended) {
@@ -2799,7 +3994,7 @@ public final class DragGestureDetectorKt {
                     char c = 2;
                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12 = dragGestureDetectorKt$awaitPointerSlopOrCancellation$1;
                     touchSlopDetector = touchSlopDetector4;
-                    m476pointerSlopE8SPZFQ = f2;
+                    m509pointerSlopE8SPZFQ = f2;
                     awaitPointerEventScope2 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitPointerSlopOrCancellation$1.L$0;
                     i4 = 1;
                     Ref.LongRef longRef5 = (Ref.LongRef) dragGestureDetectorKt$awaitPointerSlopOrCancellation$1.L$2;
@@ -2813,12 +4008,12 @@ public final class DragGestureDetectorKt {
                         dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$2 = longRef;
                         dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$3 = touchSlopDetector;
                         dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$4 = null;
-                        dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                        dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                         dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.label = i6;
                         awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitPointerSlopOrCancellation$12, i6, null);
                         if (awaitPointerEvent$default != coroutine_suspended) {
                             awaitPointerEventScope3 = awaitPointerEventScope2;
-                            f = m476pointerSlopE8SPZFQ;
+                            f = m509pointerSlopE8SPZFQ;
                             obj = awaitPointerEvent$default;
                             longRef2 = longRef;
                             function23 = function22;
@@ -2835,7 +4030,7 @@ public final class DragGestureDetectorKt {
                                 }
                                 pointerInputChange = changes2.get(i3);
                                 i5 = i3;
-                                if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef3.element)) {
+                                if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef3.element)) {
                                     break;
                                 }
                                 i3 = i5 + 1;
@@ -2863,23 +4058,23 @@ public final class DragGestureDetectorKt {
                                 if (pointerInputChange4 == null) {
                                     return null;
                                 }
-                                longRef3.element = pointerInputChange4.m6083getIdJ3iCeTQ();
-                                m476pointerSlopE8SPZFQ = f;
+                                longRef3.element = pointerInputChange4.m6682getIdJ3iCeTQ();
+                                m509pointerSlopE8SPZFQ = f;
                                 touchSlopDetector3 = touchSlopDetector2;
                                 i4 = 1;
                             } else {
                                 float f3 = f;
                                 TouchSlopDetector touchSlopDetector5 = touchSlopDetector2;
-                                long m604addPositionsakrDWew = touchSlopDetector5.m604addPositionsakrDWew(pointerInputChange2.m6085getPositionF1C5BW0(), pointerInputChange2.m6086getPreviousPositionF1C5BW0(), f3);
+                                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector5, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange2), f3, false, 4, null);
                                 touchSlopDetector3 = touchSlopDetector5;
-                                m476pointerSlopE8SPZFQ = f3;
-                                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                                    function23.invoke(pointerInputChange2, Offset.m4516boximpl(m604addPositionsakrDWew));
+                                m509pointerSlopE8SPZFQ = f3;
+                                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                    function23.invoke(pointerInputChange2, Offset.m5092boximpl(m635getPostSlopOffsetqto3Fdw$default));
                                     if (pointerInputChange2.isConsumed()) {
                                         return pointerInputChange2;
                                     }
                                     i4 = 1;
-                                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector3, 0L, 1, null);
+                                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector3, 0L, 1, null);
                                 } else {
                                     i4 = 1;
                                     PointerEventPass pointerEventPass = PointerEventPass.Final;
@@ -2888,7 +4083,7 @@ public final class DragGestureDetectorKt {
                                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$2 = longRef3;
                                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$3 = touchSlopDetector3;
                                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$4 = pointerInputChange2;
-                                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                                    dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                                     c = 2;
                                     dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.label = 2;
                                     if (awaitPointerEventScope3.awaitPointerEvent(pointerEventPass, dragGestureDetectorKt$awaitPointerSlopOrCancellation$12) != coroutine_suspended) {
@@ -2910,7 +4105,7 @@ public final class DragGestureDetectorKt {
                             dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$2 = longRef;
                             dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$3 = touchSlopDetector;
                             dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.L$4 = null;
-                            dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m476pointerSlopE8SPZFQ;
+                            dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.F$0 = m509pointerSlopE8SPZFQ;
                             dragGestureDetectorKt$awaitPointerSlopOrCancellation$12.label = i6;
                             awaitPointerEvent$default = AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope2, null, dragGestureDetectorKt$awaitPointerSlopOrCancellation$12, i6, null);
                             if (awaitPointerEvent$default != coroutine_suspended) {
@@ -2934,16 +4129,16 @@ public final class DragGestureDetectorKt {
     }
 
     /* renamed from: awaitPointerSlopOrCancellation-6ksA65w$default  reason: not valid java name */
-    public static /* synthetic */ Object m466awaitPointerSlopOrCancellation6ksA65w$default(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2 function2, Continuation continuation, int i2, Object obj) {
+    public static /* synthetic */ Object m499awaitPointerSlopOrCancellation6ksA65w$default(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2 function2, Continuation continuation, int i2, Object obj) {
         PointerInputChange pointerInputChange;
         PointerInputChange pointerInputChange2;
-        long m4543getZeroF1C5BW0 = (i2 & 8) != 0 ? Offset.Companion.m4543getZeroF1C5BW0() : j2;
+        long m5119getZeroF1C5BW0 = (i2 & 8) != 0 ? Offset.Companion.m5119getZeroF1C5BW0() : j2;
         long j3 = j;
-        if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j3)) {
+        if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j3)) {
             return null;
         }
-        float m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
-        TouchSlopDetector touchSlopDetector = new TouchSlopDetector(orientation, m4543getZeroF1C5BW0, null);
+        float m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+        TouchSlopDetector touchSlopDetector = new TouchSlopDetector(orientation, m5119getZeroF1C5BW0, null);
         while (true) {
             PointerEvent pointerEvent = (PointerEvent) AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, continuation, 1, null);
             List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -2956,7 +4151,7 @@ public final class DragGestureDetectorKt {
                     break;
                 }
                 pointerInputChange = changes.get(i4);
-                if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), j3)) {
+                if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), j3)) {
                     break;
                 }
                 i4++;
@@ -2983,42 +4178,36 @@ public final class DragGestureDetectorKt {
                 if (pointerInputChange4 == null) {
                     return null;
                 }
-                j3 = pointerInputChange4.m6083getIdJ3iCeTQ();
+                j3 = pointerInputChange4.m6682getIdJ3iCeTQ();
             } else {
-                float f = m476pointerSlopE8SPZFQ;
-                TouchSlopDetector touchSlopDetector2 = touchSlopDetector;
-                long m604addPositionsakrDWew = touchSlopDetector2.m604addPositionsakrDWew(pointerInputChange3.m6085getPositionF1C5BW0(), pointerInputChange3.m6086getPreviousPositionF1C5BW0(), f);
-                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    function2.invoke(pointerInputChange3, Offset.m4516boximpl(m604addPositionsakrDWew));
+                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3), m509pointerSlopE8SPZFQ, false, 4, null);
+                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    function2.invoke(pointerInputChange3, Offset.m5092boximpl(m635getPostSlopOffsetqto3Fdw$default));
                     if (pointerInputChange3.isConsumed()) {
                         return pointerInputChange3;
                     }
-                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector2, 0L, 1, null);
+                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
                 } else {
                     awaitPointerEventScope.awaitPointerEvent(PointerEventPass.Final, continuation);
                     if (pointerInputChange3.isConsumed()) {
-                        return null;
+                        break;
                     }
                 }
-                m476pointerSlopE8SPZFQ = f;
-                touchSlopDetector = touchSlopDetector2;
             }
         }
     }
 
     /* renamed from: awaitPointerSlopOrCancellation-6ksA65w$$forInline  reason: not valid java name */
-    private static final Object m465awaitPointerSlopOrCancellation6ksA65w$$forInline(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    private static final Object m498awaitPointerSlopOrCancellation6ksA65w$$forInline(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Orientation orientation, long j2, Function2<? super PointerInputChange, ? super Offset, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         PointerInputChange pointerInputChange;
-        TouchSlopDetector touchSlopDetector;
-        float f;
         PointerInputChange pointerInputChange2;
-        if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+        if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
             return null;
         }
-        float m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+        float m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
         Ref.LongRef longRef = new Ref.LongRef();
         longRef.element = j;
-        TouchSlopDetector touchSlopDetector2 = new TouchSlopDetector(orientation, j2, null);
+        TouchSlopDetector touchSlopDetector = new TouchSlopDetector(orientation, j2, null);
         while (true) {
             PointerEvent pointerEvent = (PointerEvent) AwaitPointerEventScope.awaitPointerEvent$default(awaitPointerEventScope, null, continuation, 1, null);
             List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -3031,7 +4220,7 @@ public final class DragGestureDetectorKt {
                 }
                 pointerInputChange = changes.get(i2);
                 int i3 = i2;
-                if (Boolean.valueOf(PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
+                if (Boolean.valueOf(PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
                     break;
                 }
                 i2 = i3 + 1;
@@ -3059,49 +4248,39 @@ public final class DragGestureDetectorKt {
                 if (pointerInputChange4 == null) {
                     return null;
                 }
-                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
-                float f2 = m476pointerSlopE8SPZFQ;
-                touchSlopDetector = touchSlopDetector2;
-                f = f2;
+                longRef.element = pointerInputChange4.m6682getIdJ3iCeTQ();
             } else {
-                TouchSlopDetector touchSlopDetector3 = touchSlopDetector2;
-                float f3 = m476pointerSlopE8SPZFQ;
-                long m604addPositionsakrDWew = touchSlopDetector3.m604addPositionsakrDWew(pointerInputChange3.m6085getPositionF1C5BW0(), pointerInputChange3.m6086getPreviousPositionF1C5BW0(), f3);
-                touchSlopDetector = touchSlopDetector3;
-                f = f3;
-                if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    function2.invoke(pointerInputChange3, Offset.m4516boximpl(m604addPositionsakrDWew));
+                long m635getPostSlopOffsetqto3Fdw$default = TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3), m509pointerSlopE8SPZFQ, false, 4, null);
+                if ((9223372034707292159L & m635getPostSlopOffsetqto3Fdw$default) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    function2.invoke(pointerInputChange3, Offset.m5092boximpl(m635getPostSlopOffsetqto3Fdw$default));
                     if (pointerInputChange3.isConsumed()) {
                         return pointerInputChange3;
                     }
-                    TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
+                    TouchSlopDetector.m636resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
                 } else {
                     awaitPointerEventScope.awaitPointerEvent(PointerEventPass.Final, continuation);
                     if (pointerInputChange3.isConsumed()) {
-                        return null;
+                        break;
                     }
                 }
             }
-            TouchSlopDetector touchSlopDetector4 = touchSlopDetector;
-            m476pointerSlopE8SPZFQ = f;
-            touchSlopDetector2 = touchSlopDetector4;
         }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0156  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00d0 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0119 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x009c -> B:23:0x00a3). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x009a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00cf A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x011f A[SYNTHETIC] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x009b -> B:23:0x00a1). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3116,7 +4295,9 @@ public final class DragGestureDetectorKt {
         DragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1 dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12;
         PointerEventPass pointerEventPass2;
         Object awaitPointerEvent;
+        float f2;
         PointerInputChange pointerInputChange2;
+        float f3;
         int size;
         int i3;
         PointerInputChange pointerInputChange3;
@@ -3134,11 +4315,11 @@ public final class DragGestureDetectorKt {
                 int i6 = 1;
                 if (i == 0) {
                     if (i == 1) {
-                        float f2 = dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.F$0;
+                        float f4 = dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.F$0;
                         int i7 = dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.I$0;
                         AwaitPointerEventScope awaitPointerEventScope3 = (AwaitPointerEventScope) dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        float f3 = f2;
+                        float f5 = f4;
                         TouchSlopDetector touchSlopDetector2 = (TouchSlopDetector) dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.L$3;
                         dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12 = dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1;
                         pointerEventPass2 = (PointerEventPass) dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1.L$1;
@@ -3149,18 +4330,21 @@ public final class DragGestureDetectorKt {
                         int i8 = i5;
                         while (true) {
                             if (i8 < size3) {
+                                f2 = f5;
                                 pointerInputChange2 = null;
                                 break;
                             }
-                            PointerInputChange pointerInputChange5 = changes.get(i8);
-                            if (PointerId.m6067equalsimpl0(pointerInputChange5.m6083getIdJ3iCeTQ(), longRef.element)) {
-                                pointerInputChange2 = pointerInputChange5;
+                            pointerInputChange2 = changes.get(i8);
+                            f2 = f5;
+                            if (PointerId.m6664equalsimpl0(pointerInputChange2.m6682getIdJ3iCeTQ(), longRef.element)) {
                                 break;
                             }
                             i8++;
+                            f5 = f2;
                         }
-                        PointerInputChange pointerInputChange6 = pointerInputChange2;
-                        if (pointerInputChange6 != null || PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange6)) {
+                        PointerInputChange pointerInputChange5 = pointerInputChange2;
+                        if (pointerInputChange5 != null || PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange5)) {
+                            f3 = f2;
                             List<PointerInputChange> changes2 = pointerEvent.getChanges();
                             size = changes2.size();
                             i3 = 0;
@@ -3169,9 +4353,9 @@ public final class DragGestureDetectorKt {
                                     pointerInputChange3 = null;
                                     break;
                                 }
-                                PointerInputChange pointerInputChange7 = changes2.get(i3);
-                                if (pointerInputChange7.getPressed()) {
-                                    pointerInputChange3 = pointerInputChange7;
+                                PointerInputChange pointerInputChange6 = changes2.get(i3);
+                                if (pointerInputChange6.getPressed()) {
+                                    pointerInputChange3 = pointerInputChange6;
                                     break;
                                 }
                                 i3++;
@@ -3180,60 +4364,65 @@ public final class DragGestureDetectorKt {
                             if (pointerInputChange4 != null) {
                                 return Boxing.boxBoolean(i7 != 0);
                             }
-                            longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
-                        } else if ((touchSlopDetector2.m604addPositionsakrDWew(pointerInputChange6.m6085getPositionF1C5BW0(), pointerInputChange6.m6086getPreviousPositionF1C5BW0(), f3) & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-                            i2 = 1;
-                            List<PointerInputChange> changes3 = pointerEvent.getChanges();
-                            size2 = changes3.size();
-                            for (i4 = 0; i4 < size2; i4++) {
-                                if (changes3.get(i4).getPressed()) {
-                                    awaitPointerEventScope2 = awaitPointerEventScope3;
-                                    touchSlopDetector = touchSlopDetector2;
-                                    f = f3;
-                                    i5 = 0;
-                                    i6 = 1;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$0 = awaitPointerEventScope2;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$1 = pointerEventPass2;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$2 = longRef;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$3 = touchSlopDetector;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.I$0 = i2;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.F$0 = f;
-                                    dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.label = i6;
-                                    awaitPointerEvent = awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12);
-                                    if (awaitPointerEvent != coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                    awaitPointerEventScope3 = awaitPointerEventScope2;
-                                    obj = awaitPointerEvent;
-                                    f3 = f;
-                                    i7 = i2;
-                                    touchSlopDetector2 = touchSlopDetector;
-                                    PointerEvent pointerEvent2 = (PointerEvent) obj;
-                                    List<PointerInputChange> changes4 = pointerEvent2.getChanges();
-                                    int size32 = changes4.size();
-                                    int i82 = i5;
-                                    while (true) {
-                                        if (i82 < size32) {
+                            longRef.element = pointerInputChange4.m6682getIdJ3iCeTQ();
+                        } else {
+                            f3 = f2;
+                            if ((TouchSlopDetector.m635getPostSlopOffsetqto3Fdw$default(touchSlopDetector2, PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange5), f3, false, 4, null) & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                                i2 = 1;
+                                List<PointerInputChange> changes3 = pointerEvent.getChanges();
+                                size2 = changes3.size();
+                                for (i4 = 0; i4 < size2; i4++) {
+                                    if (changes3.get(i4).getPressed()) {
+                                        awaitPointerEventScope2 = awaitPointerEventScope3;
+                                        touchSlopDetector = touchSlopDetector2;
+                                        f = f3;
+                                        i5 = 0;
+                                        i6 = 1;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$0 = awaitPointerEventScope2;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$1 = pointerEventPass2;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$2 = longRef;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$3 = touchSlopDetector;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.I$0 = i2;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.F$0 = f;
+                                        dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.label = i6;
+                                        awaitPointerEvent = awaitPointerEventScope2.awaitPointerEvent(pointerEventPass2, dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12);
+                                        if (awaitPointerEvent != coroutine_suspended) {
+                                            return coroutine_suspended;
                                         }
-                                        i82++;
-                                    }
-                                    PointerInputChange pointerInputChange62 = pointerInputChange2;
-                                    if (pointerInputChange62 != null) {
-                                    }
-                                    List<PointerInputChange> changes22 = pointerEvent2.getChanges();
-                                    size = changes22.size();
-                                    i3 = 0;
-                                    while (true) {
-                                        if (i3 < size) {
+                                        awaitPointerEventScope3 = awaitPointerEventScope2;
+                                        obj = awaitPointerEvent;
+                                        f5 = f;
+                                        i7 = i2;
+                                        touchSlopDetector2 = touchSlopDetector;
+                                        PointerEvent pointerEvent2 = (PointerEvent) obj;
+                                        List<PointerInputChange> changes4 = pointerEvent2.getChanges();
+                                        int size32 = changes4.size();
+                                        int i82 = i5;
+                                        while (true) {
+                                            if (i82 < size32) {
+                                            }
+                                            i82++;
+                                            f5 = f2;
                                         }
-                                        i3++;
-                                    }
-                                    pointerInputChange4 = pointerInputChange3;
-                                    if (pointerInputChange4 != null) {
+                                        PointerInputChange pointerInputChange52 = pointerInputChange2;
+                                        if (pointerInputChange52 != null) {
+                                        }
+                                        f3 = f2;
+                                        List<PointerInputChange> changes22 = pointerEvent2.getChanges();
+                                        size = changes22.size();
+                                        i3 = 0;
+                                        while (true) {
+                                            if (i3 < size) {
+                                            }
+                                            i3++;
+                                        }
+                                        pointerInputChange4 = pointerInputChange3;
+                                        if (pointerInputChange4 != null) {
+                                        }
                                     }
                                 }
+                                return Boxing.boxBoolean(i2 == 0);
                             }
-                            return Boxing.boxBoolean(i2 == 0);
                         }
                         i2 = i7;
                         List<PointerInputChange> changes32 = pointerEvent2.getChanges();
@@ -3249,13 +4438,13 @@ public final class DragGestureDetectorKt {
                     return Boxing.boxBoolean(false);
                 }
                 Ref.LongRef longRef2 = new Ref.LongRef();
-                longRef2.element = pointerInputChange.m6083getIdJ3iCeTQ();
-                float m476pointerSlopE8SPZFQ = m476pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), pointerInputChange.m6088getTypeT8wyACA());
+                longRef2.element = pointerInputChange.m6682getIdJ3iCeTQ();
+                float m509pointerSlopE8SPZFQ = m509pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), pointerInputChange.m6688getTypeT8wyACA());
                 longRef = longRef2;
                 i2 = 0;
                 touchSlopDetector = new TouchSlopDetector(null, 0L, 3, null);
                 awaitPointerEventScope2 = awaitPointerEventScope;
-                f = m476pointerSlopE8SPZFQ;
+                f = m509pointerSlopE8SPZFQ;
                 dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12 = dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$1;
                 pointerEventPass2 = pointerEventPass;
                 dragGestureDetectorKt$awaitAllPointersUpWithSlopDetection$12.L$0 = awaitPointerEventScope2;
@@ -3300,7 +4489,7 @@ public final class DragGestureDetectorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m463awaitLongPressOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m496awaitLongPressOrCancellationrnUCldI(AwaitPointerEventScope awaitPointerEventScope, long j, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorKt$awaitLongPressOrCancellation$1 dragGestureDetectorKt$awaitLongPressOrCancellation$1;
         int i;
         PointerInputChange pointerInputChange;
@@ -3316,7 +4505,7 @@ public final class DragGestureDetectorKt {
                     i = dragGestureDetectorKt$awaitLongPressOrCancellation$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        if (m475isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                        if (m508isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                             return null;
                         }
                         List<PointerInputChange> changes = awaitPointerEventScope.getCurrentEvent().getChanges();
@@ -3328,7 +4517,7 @@ public final class DragGestureDetectorKt {
                                 break;
                             }
                             pointerInputChange = changes.get(i2);
-                            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), j)) {
+                            if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), j)) {
                                 break;
                             }
                             i2++;
@@ -3385,7 +4574,7 @@ public final class DragGestureDetectorKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isPointerUp-DmW0f2w  reason: not valid java name */
-    public static final boolean m475isPointerUpDmW0f2w(PointerEvent pointerEvent, long j) {
+    public static final boolean m508isPointerUpDmW0f2w(PointerEvent pointerEvent, long j) {
         PointerInputChange pointerInputChange;
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
@@ -3397,7 +4586,7 @@ public final class DragGestureDetectorKt {
                 break;
             }
             pointerInputChange = changes.get(i);
-            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), j)) {
+            if (PointerId.m6664equalsimpl0(pointerInputChange.m6682getIdJ3iCeTQ(), j)) {
                 break;
             }
             i++;
@@ -3410,15 +4599,15 @@ public final class DragGestureDetectorKt {
     }
 
     /* renamed from: pointerSlop-E8SPZFQ  reason: not valid java name */
-    public static final float m476pointerSlopE8SPZFQ(ViewConfiguration viewConfiguration, int i) {
-        return PointerType.m6156equalsimpl0(i, PointerType.Companion.m6161getMouseT8wyACA()) ? viewConfiguration.getTouchSlop() * mouseToTouchSlopRatio : viewConfiguration.getTouchSlop();
+    public static final float m509pointerSlopE8SPZFQ(ViewConfiguration viewConfiguration, int i) {
+        return PointerType.m6758equalsimpl0(i, PointerType.Companion.m6763getMouseT8wyACA()) ? viewConfiguration.getTouchSlop() * mouseToTouchSlopRatio : viewConfiguration.getTouchSlop();
     }
 
     static {
-        float m7555constructorimpl = Dp.m7555constructorimpl(0.125f);
-        mouseSlop = m7555constructorimpl;
-        float m7555constructorimpl2 = Dp.m7555constructorimpl(18.0f);
-        defaultTouchSlop = m7555constructorimpl2;
-        mouseToTouchSlopRatio = m7555constructorimpl / m7555constructorimpl2;
+        float m8160constructorimpl = Dp.m8160constructorimpl(0.125f);
+        mouseSlop = m8160constructorimpl;
+        float m8160constructorimpl2 = Dp.m8160constructorimpl(18.0f);
+        defaultTouchSlop = m8160constructorimpl2;
+        mouseToTouchSlopRatio = m8160constructorimpl / m8160constructorimpl2;
     }
 }

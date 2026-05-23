@@ -3,12 +3,12 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.2.0 */
 /* loaded from: classes4.dex */
 public interface zzlk {
     void zza(String str, String str2, Bundle bundle);
 
-    void zzb(String str, String str2, Bundle bundle, long j);
+    void zzb(String str, String str2, Bundle bundle, long j, long j2);
 
     Map zzd(String str, String str2, boolean z);
 

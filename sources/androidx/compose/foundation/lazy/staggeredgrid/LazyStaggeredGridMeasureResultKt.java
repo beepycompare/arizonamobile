@@ -15,7 +15,7 @@ import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: LazyStaggeredGridMeasureResult.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u001a\u0016\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\u001a\f\u0010\u000b\u001a\u00020\u0004*\u00020\u0002H\u0000\u001a\u0014\u0010\f\u001a\u00020\u0004*\u00020\u00022\u0006\u0010\r\u001a\u00020\u0004H\u0000\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0014\u0010\u0007\u001a\u00020\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n\"\u0018\u0010\u000e\u001a\u00020\u0004*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"findVisibleItem", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridItemInfo;", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridLayoutInfo;", "itemIndex", "", "EmptyArray", "", "EmptyLazyStaggeredGridLayoutInfo", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridMeasureResult;", "getEmptyLazyStaggeredGridLayoutInfo", "()Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridMeasureResult;", "visibleItemsAverageSize", "calculateContentSize", "laneCount", "singleAxisViewportSize", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridLayoutInfo;)I", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u001a\u0016\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\u001a\f\u0010\u000b\u001a\u00020\u0004*\u00020\u0002H\u0000\u001a\u0014\u0010\f\u001a\u00020\u0004*\u00020\u00022\u0006\u0010\r\u001a\u00020\u0004H\u0000\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0014\u0010\u0007\u001a\u00020\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n\"\u0018\u0010\u000e\u001a\u00020\u0004*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"findVisibleItem", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridItemInfo;", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridLayoutInfo;", "itemIndex", "", "EmptyArray", "", "EmptyLazyStaggeredGridLayoutInfo", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridMeasureResult;", "getEmptyLazyStaggeredGridLayoutInfo", "()Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridMeasureResult;", "visibleItemsAverageSize", "calculateContentSize", "laneCount", "singleAxisViewportSize", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridLayoutInfo;)I", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridMeasureResultKt {
     private static final int[] EmptyArray;
@@ -73,7 +73,7 @@ public final class LazyStaggeredGridMeasureResultKt {
             }
         };
         MeasureResult measureResult2 = measureResult;
-        EmptyLazyStaggeredGridLayoutInfo = new LazyStaggeredGridMeasureResult(iArr, iArr, 0.0f, measureResult2, 0.0f, false, false, false, new LazyStaggeredGridSlots(iArr, iArr), new LazyStaggeredGridSpanProvider(new MutableIntervalList()), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, CollectionsKt.emptyList(), IntSize.Companion.m7731getZeroYbymL2g(), 0, 0, 0, 0, 0, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), null);
+        EmptyLazyStaggeredGridLayoutInfo = new LazyStaggeredGridMeasureResult(iArr, iArr, 0.0f, measureResult2, 0.0f, false, false, false, new LazyStaggeredGridSlots(iArr, iArr), new LazyStaggeredGridSpanProvider(new MutableIntervalList()), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, CollectionsKt.emptyList(), IntSize.Companion.m8336getZeroYbymL2g(), 0, 0, 0, 0, 0, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), null);
     }
 
     public static final LazyStaggeredGridMeasureResult getEmptyLazyStaggeredGridLayoutInfo() {
@@ -81,7 +81,7 @@ public final class LazyStaggeredGridMeasureResultKt {
     }
 
     public static final int visibleItemsAverageSize(LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo) {
-        long mo1031getSizeYbymL2g;
+        long mo1284getSizeYbymL2g;
         List<LazyStaggeredGridItemInfo> visibleItemsInfo = lazyStaggeredGridLayoutInfo.getVisibleItemsInfo();
         if (visibleItemsInfo.isEmpty()) {
             return 0;
@@ -91,11 +91,11 @@ public final class LazyStaggeredGridMeasureResultKt {
         for (int i2 = 0; i2 < size; i2++) {
             LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo = visibleItemsInfo.get(i2);
             if (lazyStaggeredGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-                mo1031getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1031getSizeYbymL2g() & 4294967295L;
+                mo1284getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1284getSizeYbymL2g() & 4294967295L;
             } else {
-                mo1031getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1031getSizeYbymL2g() >> 32;
+                mo1284getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1284getSizeYbymL2g() >> 32;
             }
-            i += (int) mo1031getSizeYbymL2g;
+            i += (int) mo1284getSizeYbymL2g;
         }
         return (i / visibleItemsInfo.size()) + lazyStaggeredGridLayoutInfo.getMainAxisItemSpacing();
     }
@@ -106,12 +106,12 @@ public final class LazyStaggeredGridMeasureResultKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo) {
-        long mo1034getViewportSizeYbymL2g;
+        long mo1287getViewportSizeYbymL2g;
         if (lazyStaggeredGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-            mo1034getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1034getViewportSizeYbymL2g() & 4294967295L;
+            mo1287getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1287getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1034getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1034getViewportSizeYbymL2g() >> 32;
+            mo1287getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1287getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1034getViewportSizeYbymL2g;
+        return (int) mo1287getViewportSizeYbymL2g;
     }
 }

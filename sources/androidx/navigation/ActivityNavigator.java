@@ -13,7 +13,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
-import androidx.media3.common.C;
 import androidx.navigation.Navigator;
 import androidx.savedstate.SavedStateReader;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
@@ -117,10 +116,10 @@ public class ActivityNavigator extends Navigator<Destination> {
                     StringBuffer stringBuffer = new StringBuffer();
                     Matcher matcher = Pattern.compile("\\{(.+?)\\}").matcher(str);
                     while (matcher.find()) {
-                        Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
+                        Bundle m9023constructorimpl = SavedStateReader.m9023constructorimpl(bundle);
                         String group = matcher.group(1);
                         Intrinsics.checkNotNull(group);
-                        if (!SavedStateReader.m8415containsimpl(m8414constructorimpl, group)) {
+                        if (!SavedStateReader.m9024containsimpl(m9023constructorimpl, group)) {
                             throw new IllegalArgumentException(("Could not find " + group + " in " + bundle + " to fill data pattern " + dataPattern).toString());
                         }
                         matcher.appendReplacement(stringBuffer, "");
@@ -143,7 +142,7 @@ public class ActivityNavigator extends Navigator<Destination> {
                 intent2.addFlags(268435456);
             }
             if (navOptions != null && navOptions.shouldLaunchSingleTop()) {
-                intent2.addFlags(C.BUFFER_FLAG_LAST_SAMPLE);
+                intent2.addFlags(536870912);
             }
             Activity activity = this.hostActivity;
             if (activity != null && (intent = activity.getIntent()) != null && (intExtra = intent.getIntExtra(EXTRA_NAV_CURRENT, 0)) != 0) {

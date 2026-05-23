@@ -28,6 +28,7 @@ import kotlinx.serialization.json.Json;
 import kotlinx.serialization.json.JsonArray;
 import kotlinx.serialization.json.JsonConfiguration;
 import kotlinx.serialization.json.JsonDecoder;
+import kotlinx.serialization.json.JsonDecodingException;
 import kotlinx.serialization.json.JsonElement;
 import kotlinx.serialization.json.JsonElementKt;
 import kotlinx.serialization.json.JsonLiteral;
@@ -38,7 +39,7 @@ import kotlinx.serialization.modules.SerializersModule;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TreeJsonDecoder.kt */
 @Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0001\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0005\n\u0000\n\u0002\u0010\n\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\f\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b2\u0018\u00002\u00020\u00012\u00020\u0002B%\bD\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\n\u0010\u0017\u001a\u00020\u0006H\u0084\u0080\u0004J\u0012\u0010\u0018\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\bH\u0086\u0080\u0004J\n\u0010\u001a\u001a\u00020\u0006H\u0096\u0080\u0004J#\u0010\u001b\u001a\u0002H\u001c\"\u0004\b\u0000\u0010\u001c2\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u001eH\u0096\u0080\u0004¢\u0006\u0002\u0010\u001fJ\u001a\u0010 \u001a\u00020\b2\u0006\u0010!\u001a\u00020\b2\u0006\u0010\"\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096\u0080\u0004J+\u0010'\u001a\u0002H\u001c\"\n\b\u0000\u0010\u001c\u0018\u0001*\u00020\u00062\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010%\u001a\u00020&H\u0086\u0088\u0004¢\u0006\u0002\u0010(J3\u0010'\u001a\u0002H\u001c\"\n\b\u0000\u0010\u001c\u0018\u0001*\u00020\u00062\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010)\u001a\u00020\b2\u0006\u0010*\u001a\u00020\bH\u0086\u0088\u0004¢\u0006\u0002\u0010+J\u0012\u0010,\u001a\u00020-2\u0006\u0010%\u001a\u00020&H\u0096\u0080\u0004J\n\u0010.\u001a\u00020/H\u0096\u0080\u0004J\u001a\u00100\u001a\u0002012\u0006\u0010*\u001a\u00020\b2\u0006\u0010%\u001a\u00020&H\u0084\u0088\u0004JD\u00100\u001a\u0002H\u001c\"\b\b\u0000\u0010\u001c*\u0002022\u0006\u0010*\u001a\u00020\b2\u0006\u00103\u001a\u00020\b2\u0019\u00104\u001a\u0015\u0012\u0004\u0012\u000201\u0012\u0006\u0012\u0004\u0018\u0001H\u001c05¢\u0006\u0002\b6H\u0082\u0088\u0004¢\u0006\u0002\u00107J\"\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002012\u0006\u0010;\u001a\u00020\b2\u0006\u0010*\u001a\u00020\bH\u0082\u0080\u0004J\u0012\u0010<\u001a\u00020\u00062\u0006\u0010*\u001a\u00020\bH¤\u0080\u0004J\u001a\u0010=\u001a\u00020>2\u0006\u0010*\u001a\u00020\b2\u0006\u0010?\u001a\u00020&H\u0094\u0080\u0004J\u0014\u0010@\u001a\u0004\u0018\u0001092\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010A\u001a\u00020/2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010B\u001a\u00020/2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010C\u001a\u00020D2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010E\u001a\u00020F2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010G\u001a\u00020>2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010H\u001a\u00020I2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010J\u001a\u00020K2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010L\u001a\u00020M2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010N\u001a\u00020O2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u0012\u0010P\u001a\u00020\b2\u0006\u0010*\u001a\u00020\bH\u0094\u0080\u0004J\u001a\u0010Q\u001a\u00020R2\u0006\u0010*\u001a\u00020\b2\u0006\u0010S\u001a\u00020&H\u0094\u0080\u0004J\u0012\u0010T\u001a\u00020R2\u0006\u0010%\u001a\u00020&H\u0096\u0080\u0004R\u0015\u0010\u0003\u001a\u00020\u0004X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0015\u0010\u0005\u001a\u00020\u0006X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0017\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0084\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0015\u0010\u0011\u001a\u00020\u00128VX\u0096\u0084\b¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0015\u001a\u00020\u00168\u0004X\u0085\u0084\b¢\u0006\u0002\n\u0000\u0082\u0001\u0003UVW¨\u0006X"}, d2 = {"Lkotlinx/serialization/json/internal/AbstractJsonTreeDecoder;", "Lkotlinx/serialization/internal/NamedValueDecoder;", "Lkotlinx/serialization/json/JsonDecoder;", "json", "Lkotlinx/serialization/json/Json;", "value", "Lkotlinx/serialization/json/JsonElement;", "polymorphicDiscriminator", "", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;)V", "getJson", "()Lkotlinx/serialization/json/Json;", "getValue", "()Lkotlinx/serialization/json/JsonElement;", "getPolymorphicDiscriminator", "()Ljava/lang/String;", "serializersModule", "Lkotlinx/serialization/modules/SerializersModule;", "getSerializersModule", "()Lkotlinx/serialization/modules/SerializersModule;", "configuration", "Lkotlinx/serialization/json/JsonConfiguration;", "currentObject", "renderTagStack", "currentTag", "decodeJsonElement", "decodeSerializableValue", ExifInterface.GPS_DIRECTION_TRUE, "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "(Lkotlinx/serialization/DeserializationStrategy;)Ljava/lang/Object;", "composeName", "parentName", "childName", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "cast", "(Lkotlinx/serialization/json/JsonElement;Lkotlinx/serialization/descriptors/SerialDescriptor;)Lkotlinx/serialization/json/JsonElement;", "serialName", "tag", "(Lkotlinx/serialization/json/JsonElement;Ljava/lang/String;Ljava/lang/String;)Lkotlinx/serialization/json/JsonElement;", "endStructure", "", "decodeNotNullMark", "", "getPrimitiveValue", "Lkotlinx/serialization/json/JsonPrimitive;", "", "primitiveName", "convert", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "unparsedPrimitive", "", "literal", TreeJsonEncoderKt.PRIMITIVE_TAG, "currentElement", "decodeTaggedEnum", "", "enumDescriptor", "decodeTaggedNull", "decodeTaggedNotNullMark", "decodeTaggedBoolean", "decodeTaggedByte", "", "decodeTaggedShort", "", "decodeTaggedInt", "decodeTaggedLong", "", "decodeTaggedFloat", "", "decodeTaggedDouble", "", "decodeTaggedChar", "", "decodeTaggedString", "decodeTaggedInline", "Lkotlinx/serialization/encoding/Decoder;", "inlineDescriptor", "decodeInline", "Lkotlinx/serialization/json/internal/JsonPrimitiveDecoder;", "Lkotlinx/serialization/json/internal/JsonTreeDecoder;", "Lkotlinx/serialization/json/internal/JsonTreeListDecoder;", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implements JsonDecoder {
     protected final JsonConfiguration configuration;
     private final Json json;
@@ -130,24 +131,29 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
         String classDiscriminator = PolymorphicKt.classDiscriminator(abstractPolymorphicSerializer.getDescriptor(), abstractJsonTreeDecoder.getJson());
         JsonElement decodeJsonElement = abstractJsonTreeDecoder.decodeJsonElement();
         String serialName = abstractPolymorphicSerializer.getDescriptor().getSerialName();
-        if (decodeJsonElement instanceof JsonObject) {
-            JsonObject jsonObject = (JsonObject) decodeJsonElement;
-            JsonElement jsonElement = (JsonElement) jsonObject.get((Object) classDiscriminator);
-            try {
-                DeserializationStrategy findPolymorphicSerializer = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, abstractJsonTreeDecoder, (jsonElement == null || (jsonPrimitive = JsonElementKt.getJsonPrimitive(jsonElement)) == null) ? null : JsonElementKt.getContentOrNull(jsonPrimitive));
-                Intrinsics.checkNotNull(findPolymorphicSerializer, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.decodeSerializableValuePolymorphic>");
-                return (T) TreeJsonDecoderKt.readPolymorphicJson(abstractJsonTreeDecoder.getJson(), classDiscriminator, jsonObject, findPolymorphicSerializer);
-            } catch (SerializationException e) {
-                String message = e.getMessage();
-                Intrinsics.checkNotNull(message);
-                throw JsonExceptionsKt.JsonDecodingException(-1, message, jsonObject.toString());
-            }
+        if (!(decodeJsonElement instanceof JsonObject)) {
+            String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(decodeJsonElement.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+            String renderTagStack = renderTagStack();
+            String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(decodeJsonElement.toString(), 0, 1, null).toString() : null;
+            throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(decodeJsonElement.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + renderTagStack(), decodeJsonElement.toString());
+        JsonObject jsonObject = (JsonObject) decodeJsonElement;
+        JsonElement jsonElement = (JsonElement) jsonObject.get((Object) classDiscriminator);
+        try {
+            DeserializationStrategy findPolymorphicSerializer = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, abstractJsonTreeDecoder, (jsonElement == null || (jsonPrimitive = JsonElementKt.getJsonPrimitive(jsonElement)) == null) ? null : JsonElementKt.getContentOrNull(jsonPrimitive));
+            Intrinsics.checkNotNull(findPolymorphicSerializer, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.decodeSerializableValuePolymorphic>");
+            return (T) TreeJsonDecoderKt.readPolymorphicJson(abstractJsonTreeDecoder.getJson(), classDiscriminator, jsonObject, findPolymorphicSerializer);
+        } catch (SerializationException e) {
+            String message = e.getMessage();
+            Intrinsics.checkNotNull(message);
+            String obj2 = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(jsonObject.toString(), 0, 1, null).toString() : null;
+            throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, message, null, null, obj2), message, -1, null, obj2, null);
+        }
     }
 
     @Override // kotlinx.serialization.internal.TaggedDecoder, kotlinx.serialization.encoding.Decoder
     public CompositeDecoder beginStructure(SerialDescriptor descriptor) {
+        String obj;
         CompositeDecoder jsonTreeMapDecoder;
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         JsonElement currentObject = currentObject();
@@ -159,19 +165,27 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 SerialKind kind2 = carrierDescriptor.getKind();
                 if ((kind2 instanceof PrimitiveKind) || Intrinsics.areEqual(kind2, SerialKind.ENUM.INSTANCE)) {
                     Json json2 = getJson();
+                    AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
                     String serialName = descriptor.getSerialName();
                     if (currentObject instanceof JsonObject) {
                         jsonTreeMapDecoder = new JsonTreeMapDecoder(json2, (JsonObject) currentObject);
                     } else {
-                        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + renderTagStack(), currentObject.toString());
+                        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+                        String renderTagStack = renderTagStack();
+                        obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject.toString(), 0, 1, null).toString() : null;
+                        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
                     }
                 } else if (json.getConfiguration().getAllowStructuredMapKeys()) {
                     Json json3 = getJson();
+                    AbstractJsonTreeDecoder abstractJsonTreeDecoder2 = this;
                     String serialName2 = descriptor.getSerialName();
                     if (currentObject instanceof JsonArray) {
                         jsonTreeMapDecoder = new JsonTreeListDecoder(json3, (JsonArray) currentObject);
                     } else {
-                        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonArray.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName2 + " at element: " + renderTagStack(), currentObject.toString());
+                        String str2 = "Expected " + Reflection.getOrCreateKotlinClass(JsonArray.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName2;
+                        String renderTagStack2 = renderTagStack();
+                        obj = abstractJsonTreeDecoder2.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject.toString(), 0, 1, null).toString() : null;
+                        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str2, renderTagStack2, null, obj), str2, -1, renderTagStack2, obj, null);
                     }
                 } else {
                     throw JsonExceptionsKt.InvalidKeyKindException(carrierDescriptor);
@@ -179,24 +193,33 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 return jsonTreeMapDecoder;
             }
             Json json4 = getJson();
+            AbstractJsonTreeDecoder abstractJsonTreeDecoder3 = this;
             String serialName3 = descriptor.getSerialName();
             if (currentObject instanceof JsonObject) {
                 return new JsonTreeDecoder(json4, (JsonObject) currentObject, this.polymorphicDiscriminator, null, 8, null);
             }
-            throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName3 + " at element: " + renderTagStack(), currentObject.toString());
+            String str3 = "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName3;
+            String renderTagStack3 = renderTagStack();
+            obj = abstractJsonTreeDecoder3.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject.toString(), 0, 1, null).toString() : null;
+            throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str3, renderTagStack3, null, obj), str3, -1, renderTagStack3, obj, null);
         }
         Json json5 = getJson();
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder4 = this;
         String serialName4 = descriptor.getSerialName();
         if (currentObject instanceof JsonArray) {
             return new JsonTreeListDecoder(json5, (JsonArray) currentObject);
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonArray.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName4 + " at element: " + renderTagStack(), currentObject.toString());
+        String str4 = "Expected " + Reflection.getOrCreateKotlinClass(JsonArray.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName4;
+        String renderTagStack4 = renderTagStack();
+        obj = abstractJsonTreeDecoder4.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str4, renderTagStack4, null, obj), str4, -1, renderTagStack4, obj, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final /* synthetic */ <T extends JsonElement> T cast(JsonElement value, SerialDescriptor descriptor) {
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         String serialName = descriptor.getSerialName();
         Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
         if (value instanceof JsonElement) {
@@ -204,7 +227,28 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
         }
         StringBuilder sb = new StringBuilder("Expected ");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        throw JsonExceptionsKt.JsonDecodingException(-1, sb.append(Reflection.getOrCreateKotlinClass(JsonElement.class).getSimpleName()).append(", but had ").append(Reflection.getOrCreateKotlinClass(value.getClass()).getSimpleName()).append(" as the serialized body of ").append(serialName).append(" at element: ").append(renderTagStack()).toString(), value.toString());
+        String sb2 = sb.append(Reflection.getOrCreateKotlinClass(JsonElement.class).getSimpleName()).append(", but had ").append(Reflection.getOrCreateKotlinClass(value.getClass()).getSimpleName()).append(" as the serialized body of ").append(serialName).toString();
+        String renderTagStack = renderTagStack();
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(value.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, sb2, renderTagStack, null, obj), sb2, -1, renderTagStack, obj, null);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final /* synthetic */ <T extends JsonElement> T cast(JsonElement value, String serialName, String tag) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        Intrinsics.checkNotNullParameter(serialName, "serialName");
+        Intrinsics.checkNotNullParameter(tag, "tag");
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
+        Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
+        if (value instanceof JsonElement) {
+            return value;
+        }
+        StringBuilder sb = new StringBuilder("Expected ");
+        Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
+        String sb2 = sb.append(Reflection.getOrCreateKotlinClass(JsonElement.class).getSimpleName()).append(", but had ").append(Reflection.getOrCreateKotlinClass(value.getClass()).getSimpleName()).append(" as the serialized body of ").append(serialName).toString();
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(value.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, sb2, renderTagStack, null, obj), sb2, -1, renderTagStack, obj, null);
     }
 
     @Override // kotlinx.serialization.internal.TaggedDecoder, kotlinx.serialization.encoding.Decoder
@@ -217,14 +261,19 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         JsonElement currentElement = currentElement(tag);
         String serialName = descriptor.getSerialName();
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             return (JsonPrimitive) currentElement;
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     private final <T> T getPrimitiveValue(String str, String str2, Function1<? super JsonPrimitive, ? extends T> function1) {
         JsonElement currentElement = currentElement(str);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -239,11 +288,17 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + str2 + " at element: " + renderTagStack(str), currentElement.toString());
+        String str3 = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + str2;
+        String renderTagStack = renderTagStack(str);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str3, renderTagStack, null, obj), str3, -1, renderTagStack, obj, null);
     }
 
     private final Void unparsedPrimitive(JsonPrimitive jsonPrimitive, String str, String str2) {
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Failed to parse literal '" + jsonPrimitive + "' as " + (StringsKt.startsWith$default(str, CmcdData.OBJECT_TYPE_INIT_SEGMENT, false, 2, (Object) null) ? new StringBuilder("an ") : new StringBuilder("a ")).append(str).toString() + " value at element: " + renderTagStack(str2), currentObject().toString());
+        String str3 = "Failed to parse literal '" + jsonPrimitive + "' as " + (StringsKt.startsWith$default(str, CmcdData.OBJECT_TYPE_INIT_SEGMENT, false, 2, (Object) null) ? new StringBuilder("an ") : new StringBuilder("a ")).append(str).toString() + " value";
+        String renderTagStack = renderTagStack(str2);
+        String obj = getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject().toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str3, renderTagStack, null, obj), str3, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -254,10 +309,14 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
         Json json = getJson();
         JsonElement currentElement = currentElement(tag);
         String serialName = enumDescriptor.getSerialName();
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             return JsonNamesMapKt.getJsonNameIndexOrThrow$default(enumDescriptor, json, ((JsonPrimitive) currentElement).getContent(), null, 4, null);
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -272,6 +331,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public boolean decodeTaggedBoolean(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -286,7 +346,10 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of boolean at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of boolean";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -294,22 +357,30 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public byte decodeTaggedByte(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
+        Byte b = null;
+        b = null;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
                 long parseLongImpl = JsonElementKt.parseLongImpl(jsonPrimitive);
-                Byte valueOf = (-128 > parseLongImpl || parseLongImpl > 127) ? null : Byte.valueOf((byte) parseLongImpl);
-                if (valueOf == null) {
+                if (-128 <= parseLongImpl && parseLongImpl <= 127) {
+                    b = Byte.valueOf((byte) parseLongImpl);
+                }
+                if (b == null) {
                     unparsedPrimitive(jsonPrimitive, "byte", tag);
                     throw new KotlinNothingValueException();
                 }
-                return valueOf.byteValue();
+                return b.byteValue();
             } catch (IllegalArgumentException unused) {
                 unparsedPrimitive(jsonPrimitive, "byte", tag);
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of byte at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of byte";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -317,22 +388,30 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public short decodeTaggedShort(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
+        Short sh = null;
+        sh = null;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
                 long parseLongImpl = JsonElementKt.parseLongImpl(jsonPrimitive);
-                Short valueOf = (-32768 > parseLongImpl || parseLongImpl > 32767) ? null : Short.valueOf((short) parseLongImpl);
-                if (valueOf == null) {
+                if (-32768 <= parseLongImpl && parseLongImpl <= 32767) {
+                    sh = Short.valueOf((short) parseLongImpl);
+                }
+                if (sh == null) {
                     unparsedPrimitive(jsonPrimitive, "short", tag);
                     throw new KotlinNothingValueException();
                 }
-                return valueOf.shortValue();
+                return sh.shortValue();
             } catch (IllegalArgumentException unused) {
                 unparsedPrimitive(jsonPrimitive, "short", tag);
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of short at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of short";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -340,22 +419,30 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public int decodeTaggedInt(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
+        Integer num = null;
+        num = null;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
                 long parseLongImpl = JsonElementKt.parseLongImpl(jsonPrimitive);
-                Integer valueOf = (SieveCacheKt.NodeMetaAndPreviousMask > parseLongImpl || parseLongImpl > SieveCacheKt.NodeLinkMask) ? null : Integer.valueOf((int) parseLongImpl);
-                if (valueOf == null) {
+                if (SieveCacheKt.NodeMetaAndPreviousMask <= parseLongImpl && parseLongImpl <= SieveCacheKt.NodeLinkMask) {
+                    num = Integer.valueOf((int) parseLongImpl);
+                }
+                if (num == null) {
                     unparsedPrimitive(jsonPrimitive, "int", tag);
                     throw new KotlinNothingValueException();
                 }
-                return valueOf.intValue();
+                return num.intValue();
             } catch (IllegalArgumentException unused) {
                 unparsedPrimitive(jsonPrimitive, "int", tag);
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of int at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of int";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -363,18 +450,28 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public String decodeTaggedString(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             if (!(jsonPrimitive instanceof JsonLiteral)) {
-                throw JsonExceptionsKt.JsonDecodingException(-1, "Expected string value for a non-null key '" + tag + "', got null literal instead at element: " + renderTagStack(tag), currentObject().toString());
+                String str = "Expected string value for a non-null key '" + tag + "', got null literal instead";
+                String renderTagStack = renderTagStack(tag);
+                String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject().toString(), 0, 1, null).toString() : null;
+                throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, AbstractJsonLexerKt.coerceInputValuesHint, obj), str, -1, renderTagStack, obj, AbstractJsonLexerKt.coerceInputValuesHint);
             }
             JsonLiteral jsonLiteral = (JsonLiteral) jsonPrimitive;
             if (!jsonLiteral.isString() && !getJson().getConfiguration().isLenient()) {
-                throw JsonExceptionsKt.JsonDecodingException(-1, "String literal for key '" + tag + "' should be quoted at element: " + renderTagStack(tag) + ".\nUse 'isLenient = true' in 'Json {}' builder to accept non-compliant JSON.", currentObject().toString());
+                String str2 = "String literal for value of key '" + tag + "' should be quoted";
+                String renderTagStack2 = renderTagStack(tag);
+                String obj2 = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject().toString(), 0, 1, null).toString() : null;
+                throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str2, renderTagStack2, AbstractJsonLexerKt.lenientHint, obj2), str2, -1, renderTagStack2, obj2, AbstractJsonLexerKt.lenientHint);
             }
             return jsonLiteral.getContent();
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of string at element: " + renderTagStack(tag), currentElement.toString());
+        String str3 = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of string";
+        String renderTagStack3 = renderTagStack(tag);
+        String obj3 = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str3, renderTagStack3, null, obj3), str3, -1, renderTagStack3, obj3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -386,10 +483,14 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
             Json json = getJson();
             JsonElement currentElement = currentElement(tag);
             String serialName = inlineDescriptor.getSerialName();
+            AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
             if (currentElement instanceof JsonPrimitive) {
                 return new JsonDecoderForUnsignedTypes(StringJsonLexerKt.StringJsonLexer(json, ((JsonPrimitive) currentElement).getContent()), getJson());
             }
-            throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + renderTagStack(tag), currentElement.toString());
+            String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+            String renderTagStack = renderTagStack(tag);
+            String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+            throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
         }
         return super.decodeTaggedInline((AbstractJsonTreeDecoder) tag, inlineDescriptor);
     }
@@ -400,25 +501,12 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
         return getCurrentTagOrNull() != null ? super.decodeInline(descriptor) : new JsonPrimitiveDecoder(getJson(), getValue(), this.polymorphicDiscriminator).decodeInline(descriptor);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final /* synthetic */ <T extends JsonElement> T cast(JsonElement value, String serialName, String tag) {
-        Intrinsics.checkNotNullParameter(value, "value");
-        Intrinsics.checkNotNullParameter(serialName, "serialName");
-        Intrinsics.checkNotNullParameter(tag, "tag");
-        Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
-        if (value instanceof JsonElement) {
-            return value;
-        }
-        StringBuilder sb = new StringBuilder("Expected ");
-        Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
-        throw JsonExceptionsKt.JsonDecodingException(-1, sb.append(Reflection.getOrCreateKotlinClass(JsonElement.class).getSimpleName()).append(", but had ").append(Reflection.getOrCreateKotlinClass(value.getClass()).getSimpleName()).append(" as the serialized body of ").append(serialName).append(" at element: ").append(renderTagStack(tag)).toString(), value.toString());
-    }
-
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.serialization.internal.TaggedDecoder
     public long decodeTaggedLong(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -428,7 +516,10 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of long at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of long";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -436,6 +527,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public float decodeTaggedFloat(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -443,13 +535,18 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 if (getJson().getConfiguration().getAllowSpecialFloatingPointValues() || Math.abs(f) <= Float.MAX_VALUE) {
                     return f;
                 }
-                throw JsonExceptionsKt.InvalidFloatingPointDecoded(Float.valueOf(f), tag, currentObject().toString());
+                String nonFiniteFpMessage = JsonExceptionsKt.nonFiniteFpMessage(Float.valueOf(f), tag);
+                String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject().toString(), 0, 1, null).toString() : null;
+                throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, nonFiniteFpMessage, null, AbstractJsonLexerKt.specialFlowingValuesHint, obj), nonFiniteFpMessage, -1, null, obj, AbstractJsonLexerKt.specialFlowingValuesHint);
             } catch (IllegalArgumentException unused) {
                 unparsedPrimitive(jsonPrimitive, TypedValues.Custom.S_FLOAT, tag);
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of float at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of float";
+        String renderTagStack = renderTagStack(tag);
+        String obj2 = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj2), str, -1, renderTagStack, obj2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -457,6 +554,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public double decodeTaggedDouble(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -464,13 +562,18 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 if (getJson().getConfiguration().getAllowSpecialFloatingPointValues() || Math.abs(d) <= Double.MAX_VALUE) {
                     return d;
                 }
-                throw JsonExceptionsKt.InvalidFloatingPointDecoded(Double.valueOf(d), tag, currentObject().toString());
+                String nonFiniteFpMessage = JsonExceptionsKt.nonFiniteFpMessage(Double.valueOf(d), tag);
+                String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject().toString(), 0, 1, null).toString() : null;
+                throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, nonFiniteFpMessage, null, AbstractJsonLexerKt.specialFlowingValuesHint, obj), nonFiniteFpMessage, -1, null, obj, AbstractJsonLexerKt.specialFlowingValuesHint);
             } catch (IllegalArgumentException unused) {
                 unparsedPrimitive(jsonPrimitive, "double", tag);
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of double at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of double";
+        String renderTagStack = renderTagStack(tag);
+        String obj2 = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj2), str, -1, renderTagStack, obj2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -478,6 +581,7 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
     public char decodeTaggedChar(String tag) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         JsonElement currentElement = currentElement(tag);
+        AbstractJsonTreeDecoder abstractJsonTreeDecoder = this;
         if (currentElement instanceof JsonPrimitive) {
             JsonPrimitive jsonPrimitive = (JsonPrimitive) currentElement;
             try {
@@ -487,6 +591,9 @@ public abstract class AbstractJsonTreeDecoder extends NamedValueDecoder implemen
                 throw new KotlinNothingValueException();
             }
         }
-        throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of char at element: " + renderTagStack(tag), currentElement.toString());
+        String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonPrimitive.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentElement.getClass()).getSimpleName() + " as the serialized body of char";
+        String renderTagStack = renderTagStack(tag);
+        String obj = abstractJsonTreeDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentElement.toString(), 0, 1, null).toString() : null;
+        throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
     }
 }

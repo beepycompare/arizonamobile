@@ -30,7 +30,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt;
-import kotlinx.coroutines.BuildersKt__BuildersKt;
+import kotlinx.coroutines.BuildersKt__Builders_concurrentKt;
 import kotlinx.coroutines.Dispatchers;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -69,10 +69,10 @@ public final class FilesChek {
     }
 
     public final boolean isAllFilesOk(boolean z, boolean z2, boolean z3, boolean z4, JSONArray mDataInfo) {
-        Object runBlocking$default;
+        Object runBlockingK$default;
         Intrinsics.checkNotNullParameter(mDataInfo, "mDataInfo");
-        runBlocking$default = BuildersKt__BuildersKt.runBlocking$default(null, new FilesChek$isAllFilesOk$1(this, mDataInfo, z, z2, z3, z4, null), 1, null);
-        return ((Boolean) runBlocking$default).booleanValue();
+        runBlockingK$default = BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new FilesChek$isAllFilesOk$1(this, mDataInfo, z, z2, z3, z4, null), 1, null);
+        return ((Boolean) runBlockingK$default).booleanValue();
     }
 
     public static /* synthetic */ Object getFilesToDownload$default(FilesChek filesChek, JSONArray jSONArray, String str, String str2, boolean z, Continuation continuation, int i, Object obj) {

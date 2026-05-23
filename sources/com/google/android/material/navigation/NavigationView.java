@@ -38,7 +38,9 @@ import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.canvas.CanvasCompat;
 import com.google.android.material.drawable.DrawableUtils;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ContextUtils;
+import com.google.android.material.internal.EdgeToEdgeUtils;
 import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.internal.NavigationMenuPresenter;
 import com.google.android.material.internal.ScrimInsetsFrameLayout;
@@ -54,6 +56,7 @@ import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.ShapeableDelegate;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
+import java.lang.ref.WeakReference;
 import java.util.Objects;
 /* loaded from: classes4.dex */
 public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBackHandler {
@@ -65,6 +68,8 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     private final boolean drawerLayoutCornerSizeBackAnimationEnabled;
     private final int drawerLayoutCornerSizeBackAnimationMax;
     private boolean endInsetScrimEnabled;
+    private final FocusDrawerListener focusDrawerListener;
+    private ShapeAppearanceModel itemShapeAppearanceModel;
     OnNavigationItemSelectedListener listener;
     private final int maxWidth;
     private final NavigationMenu menu;
@@ -139,6 +144,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
                 }
             }
         };
+        this.focusDrawerListener = new FocusDrawerListener();
         Context context2 = getContext();
         NavigationMenu navigationMenu = new NavigationMenu(context2);
         this.menu = navigationMenu;
@@ -189,7 +195,12 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
             drawable = createDefaultItemBackground(obtainTintedStyledAttributes);
             ColorStateList colorStateList3 = MaterialResources.getColorStateList(context2, obtainTintedStyledAttributes, R.styleable.NavigationView_itemRippleColor);
             if (colorStateList3 != null) {
-                navigationMenuPresenter.setItemForeground(new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(colorStateList3), null, createDefaultItemDrawable(obtainTintedStyledAttributes, null)));
+                RippleDrawable rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(colorStateList3), null, createDefaultItemDrawable(obtainTintedStyledAttributes, null));
+                FocusRingDrawable layer = FocusRingDrawable.layer(context2, rippleDrawable);
+                if (layer != null) {
+                    layer.setFocusRingShapeAppearance(this.itemShapeAppearanceModel);
+                }
+                navigationMenuPresenter.setItemForeground(rippleDrawable);
             }
         }
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationView_itemHorizontalPadding)) {
@@ -305,12 +316,17 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this);
         ViewParent parent = getParent();
-        if ((parent instanceof DrawerLayout) && this.backOrchestrator.shouldListenForBackCallbacks()) {
+        if (parent instanceof DrawerLayout) {
             DrawerLayout drawerLayout = (DrawerLayout) parent;
-            drawerLayout.removeDrawerListener(this.backDrawerListener);
-            drawerLayout.addDrawerListener(this.backDrawerListener);
-            if (drawerLayout.isDrawerOpen(this)) {
-                this.backOrchestrator.startListeningForBackCallbacksWithPriorityOverlay();
+            this.focusDrawerListener.clearLastFocusedView();
+            drawerLayout.removeDrawerListener(this.focusDrawerListener);
+            drawerLayout.addDrawerListener(this.focusDrawerListener);
+            if (this.backOrchestrator.shouldListenForBackCallbacks()) {
+                drawerLayout.removeDrawerListener(this.backDrawerListener);
+                drawerLayout.addDrawerListener(this.backDrawerListener);
+                if (drawerLayout.isDrawerOpen(this)) {
+                    this.backOrchestrator.startListeningForBackCallbacksWithPriorityOverlay();
+                }
             }
         }
     }
@@ -322,7 +338,9 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         getViewTreeObserver().removeOnGlobalLayoutListener(this.onGlobalLayoutListener);
         ViewParent parent = getParent();
         if (parent instanceof DrawerLayout) {
-            ((DrawerLayout) parent).removeDrawerListener(this.backDrawerListener);
+            DrawerLayout drawerLayout = (DrawerLayout) parent;
+            drawerLayout.removeDrawerListener(this.backDrawerListener);
+            drawerLayout.removeDrawerListener(this.focusDrawerListener);
         }
         this.backOrchestrator.stopListeningForBackCallbacks();
     }
@@ -344,7 +362,8 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
     }
 
     private Drawable createDefaultItemDrawable(TintTypedArray tintTypedArray, ColorStateList colorStateList) {
-        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(ShapeAppearanceModel.builder(getContext(), tintTypedArray.getResourceId(R.styleable.NavigationView_itemShapeAppearance, 0), tintTypedArray.getResourceId(R.styleable.NavigationView_itemShapeAppearanceOverlay, 0)).build());
+        this.itemShapeAppearanceModel = ShapeAppearanceModel.builder(getContext(), tintTypedArray.getResourceId(R.styleable.NavigationView_itemShapeAppearance, 0), tintTypedArray.getResourceId(R.styleable.NavigationView_itemShapeAppearanceOverlay, 0)).build();
+        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(this.itemShapeAppearanceModel);
         materialShapeDrawable.setFillColor(colorStateList);
         return new InsetDrawable((Drawable) materialShapeDrawable, tintTypedArray.getDimensionPixelSize(R.styleable.NavigationView_itemShapeInsetStart, 0), tintTypedArray.getDimensionPixelSize(R.styleable.NavigationView_itemShapeInsetTop, 0), tintTypedArray.getDimensionPixelSize(R.styleable.NavigationView_itemShapeInsetEnd, 0), tintTypedArray.getDimensionPixelSize(R.styleable.NavigationView_itemShapeInsetBottom, 0));
     }
@@ -388,14 +407,14 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
         this.shapeableDelegate.maybeClip(canvas, new CanvasCompat.CanvasOperation() { // from class: com.google.android.material.navigation.NavigationView$$ExternalSyntheticLambda0
             @Override // com.google.android.material.canvas.CanvasCompat.CanvasOperation
             public final void run(Canvas canvas2) {
-                NavigationView.this.m8909xb790515(canvas2);
+                NavigationView.this.m9528xb790515(canvas2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchDraw$0$com-google-android-material-navigation-NavigationView  reason: not valid java name */
-    public /* synthetic */ void m8909xb790515(Canvas canvas) {
+    public /* synthetic */ void m9528xb790515(Canvas canvas) {
         super.dispatchDraw(canvas);
     }
 
@@ -691,7 +710,7 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
                 if (activity != null) {
                     Rect currentWindowBounds = WindowUtils.getCurrentWindowBounds(activity);
                     boolean z5 = currentWindowBounds.height() - NavigationView.this.getHeight() == NavigationView.this.tmpLocation[1];
-                    boolean z6 = Color.alpha(activity.getWindow().getNavigationBarColor()) != 0;
+                    boolean z6 = Color.alpha(EdgeToEdgeUtils.getNavigationBarColor(activity.getWindow())) != 0;
                     NavigationView navigationView4 = NavigationView.this;
                     navigationView4.setDrawBottomInsetForeground(z5 && z6 && navigationView4.isBottomInsetScrimEnabled());
                     boolean z7 = currentWindowBounds.width() == NavigationView.this.tmpLocation[0] || currentWindowBounds.width() - NavigationView.this.getWidth() == NavigationView.this.tmpLocation[0];
@@ -704,6 +723,73 @@ public class NavigationView extends ScrimInsetsFrameLayout implements MaterialBa
             }
         };
         getViewTreeObserver().addOnGlobalLayoutListener(this.onGlobalLayoutListener);
+    }
+
+    /* loaded from: classes4.dex */
+    private class FocusDrawerListener extends DrawerLayout.SimpleDrawerListener {
+        private WeakReference<View> lastFocusedView;
+
+        private FocusDrawerListener() {
+            this.lastFocusedView = null;
+        }
+
+        private void saveLastFocusedView() {
+            if (this.lastFocusedView == null) {
+                this.lastFocusedView = new WeakReference<>(getCurrentFocus());
+            }
+        }
+
+        private View getCurrentFocus() {
+            Activity activity;
+            if (NavigationView.this.hasFocus() || (activity = ContextUtils.getActivity(NavigationView.this.getContext())) == null) {
+                return null;
+            }
+            return activity.getCurrentFocus();
+        }
+
+        void clearLastFocusedView() {
+            this.lastFocusedView = null;
+        }
+
+        @Override // androidx.drawerlayout.widget.DrawerLayout.SimpleDrawerListener, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+        public void onDrawerSlide(View view, float f) {
+            if (view != NavigationView.this) {
+                return;
+            }
+            if ((view.getParent() instanceof DrawerLayout) && ((DrawerLayout) view.getParent()).isDrawerOpen(view)) {
+                return;
+            }
+            saveLastFocusedView();
+        }
+
+        @Override // androidx.drawerlayout.widget.DrawerLayout.SimpleDrawerListener, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+        public void onDrawerOpened(View view) {
+            if (view != NavigationView.this) {
+                return;
+            }
+            saveLastFocusedView();
+            if (shouldAutoRequestFocus(view)) {
+                view.requestFocus();
+            }
+        }
+
+        @Override // androidx.drawerlayout.widget.DrawerLayout.SimpleDrawerListener, androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+        public void onDrawerClosed(View view) {
+            WeakReference<View> weakReference;
+            if (view == NavigationView.this && (weakReference = this.lastFocusedView) != null) {
+                View view2 = weakReference.get();
+                if (view2 == null || !shouldAutoRequestFocus(view2)) {
+                    clearLastFocusedView();
+                    return;
+                }
+                view2.requestFocus();
+                clearLastFocusedView();
+            }
+        }
+
+        private boolean shouldAutoRequestFocus(View view) {
+            return view.isAttachedToWindow() && !view.isInTouchMode();
+        }
     }
 
     /* loaded from: classes4.dex */

@@ -80,29 +80,29 @@ public final class ThumbNode extends Modifier.Node implements LayoutModifierNode
         float f;
         float f2;
         float f3;
-        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7508getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j)) == 0) ? false : true;
+        boolean z = (measurable.maxIntrinsicHeight(Constraints.m8113getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m8112getMaxHeightimpl(j)) == 0) ? false : true;
         if (this.isPressed) {
-            thumbDiameter = SwitchTokens.INSTANCE.m3794getPressedHandleWidthD9Ej5fM();
+            thumbDiameter = SwitchTokens.INSTANCE.m4239getPressedHandleWidthD9Ej5fM();
         } else if (z || this.checked) {
             thumbDiameter = SwitchKt.getThumbDiameter();
         } else {
             thumbDiameter = SwitchKt.getUncheckedThumbDiameter();
         }
-        float f4 = measureScope.mo405toPx0680j_4(thumbDiameter);
+        float f4 = measureScope.mo434toPx0680j_4(thumbDiameter);
         Animatable<Float, AnimationVector1D> animatable = this.sizeAnim;
         int floatValue = (int) (animatable != null ? animatable.getValue().floatValue() : f4);
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(floatValue, floatValue));
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(Constraints.Companion.m8123fixedJhjzzOo(floatValue, floatValue));
         f = SwitchKt.SwitchHeight;
-        final float f5 = measureScope.mo405toPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(f - measureScope.mo401toDpu2uoSUM(f4)) / 2.0f));
+        final float f5 = measureScope.mo434toPx0680j_4(Dp.m8160constructorimpl(Dp.m8160constructorimpl(f - measureScope.mo430toDpu2uoSUM(f4)) / 2.0f));
         f2 = SwitchKt.SwitchWidth;
-        float m7555constructorimpl = Dp.m7555constructorimpl(f2 - SwitchKt.getThumbDiameter());
+        float m8160constructorimpl = Dp.m8160constructorimpl(f2 - SwitchKt.getThumbDiameter());
         f3 = SwitchKt.ThumbPadding;
-        float f6 = measureScope.mo405toPx0680j_4(Dp.m7555constructorimpl(m7555constructorimpl - f3));
+        float f6 = measureScope.mo434toPx0680j_4(Dp.m8160constructorimpl(m8160constructorimpl - f3));
         boolean z2 = this.isPressed;
         if (z2 && this.checked) {
-            f5 = f6 - measureScope.mo405toPx0680j_4(SwitchTokens.INSTANCE.m3800getTrackOutlineWidthD9Ej5fM());
+            f5 = f6 - measureScope.mo434toPx0680j_4(SwitchTokens.INSTANCE.m4245getTrackOutlineWidthD9Ej5fM());
         } else if (z2 && !this.checked) {
-            f5 = measureScope.mo405toPx0680j_4(SwitchTokens.INSTANCE.m3800getTrackOutlineWidthD9Ej5fM());
+            f5 = measureScope.mo434toPx0680j_4(SwitchTokens.INSTANCE.m4245getTrackOutlineWidthD9Ej5fM());
         } else if (this.checked) {
             f5 = f6;
         }

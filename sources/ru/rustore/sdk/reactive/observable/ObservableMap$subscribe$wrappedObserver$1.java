@@ -45,32 +45,32 @@ public final class ObservableMap$subscribe$wrappedObserver$1<T> implements Obser
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onNext(T t) {
-        Object m9202constructorimpl;
+        Object m9842constructorimpl;
         Function1 function1;
         ObservableMap<T, R> observableMap = this.this$0;
         try {
             Result.Companion companion = Result.Companion;
             ObservableMap$subscribe$wrappedObserver$1<T> observableMap$subscribe$wrappedObserver$1 = this;
             function1 = ((ObservableMap) observableMap).block;
-            m9202constructorimpl = Result.m9202constructorimpl(function1.invoke(t));
+            m9842constructorimpl = Result.m9842constructorimpl(function1.invoke(t));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
+            m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
         }
         ObservableObserver<R> observableObserver = this.$downstream;
-        if (Result.m9209isSuccessimpl(m9202constructorimpl) && !isDisposed()) {
-            observableObserver.onNext(m9202constructorimpl);
+        if (Result.m9849isSuccessimpl(m9842constructorimpl) && !isDisposed()) {
+            observableObserver.onNext(m9842constructorimpl);
         }
         ObservableObserver<R> observableObserver2 = this.$downstream;
-        Throwable m9205exceptionOrNullimpl = Result.m9205exceptionOrNullimpl(m9202constructorimpl);
-        if (m9205exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
+        Throwable m9845exceptionOrNullimpl = Result.m9845exceptionOrNullimpl(m9842constructorimpl);
+        if (m9845exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
             return;
         }
         Disposable andSet = this.upstreamDisposable.getAndSet(null);
         if (andSet != null) {
             andSet.dispose();
         }
-        observableObserver2.onError(m9205exceptionOrNullimpl);
+        observableObserver2.onError(m9845exceptionOrNullimpl);
     }
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver

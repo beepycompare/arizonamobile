@@ -1,6 +1,5 @@
 package androidx.compose.foundation.gestures;
 
-import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.gestures.LongPressResult;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
@@ -17,7 +16,7 @@ import java.util.List;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
 import kotlin.Metadata;
-import kotlin.ReplaceWith;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -25,6 +24,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
@@ -32,17 +32,10 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 /* compiled from: TapGestureDetector.kt */
-@Metadata(d1 = {"\u0000|\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u008b\u0001\u0010\t\u001a\u00020\u0005*\u00020\n2\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2\u0016\b\u0002\u0010\r\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2/\b\u0002\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u00072\u0016\b\u0002\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u0012\u0010\u0011\u001a\u00020\u0005*\u00020\u0012H\u0082@¢\u0006\u0002\u0010\u0013\u001a\u001c\u0010\u0014\u001a\u0004\u0018\u00010\u0015*\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u0015H\u0082@¢\u0006\u0002\u0010\u0017\u001a[\u0010\u0018\u001a\u00020\u0005*\u00020\n2/\b\u0002\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u00072\u0016\b\u0002\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\fH\u0080@¢\u0006\u0002\u0010\u0019\u001a\u001c\u0010\u001a\u001a\u00020\u0015*\u00020\u00122\b\b\u0002\u0010\u001b\u001a\u00020\u001cH\u0087@¢\u0006\u0002\u0010\u001d\u001a&\u0010\u001a\u001a\u00020\u0015*\u00020\u00122\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0086@¢\u0006\u0002\u0010 \u001a&\u0010!\u001a\u00020\u0015*\u00020\u00122\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0080@¢\u0006\u0002\u0010 \u001a\u001e\u0010\"\u001a\u00020\u001c*\u00020#2\u0006\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010$\u001a\u00020\u001cH\u0000\u001a\u0014\u0010%\u001a\u0004\u0018\u00010\u0015*\u00020\u0012H\u0087@¢\u0006\u0002\u0010\u0013\u001a\u001e\u0010%\u001a\u0004\u0018\u00010\u0015*\u00020\u00122\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0086@¢\u0006\u0002\u0010&\u001a\u001c\u0010'\u001a\u00020(*\u00020\u00122\b\b\u0002\u0010\u001e\u001a\u00020\u001fH\u0080@¢\u0006\u0002\u0010&\u001aL\u00106\u001a\u000207*\u0002082\u0006\u00109\u001a\u0002072\b\b\u0002\u0010:\u001a\u0002022'\u0010;\u001a#\b\u0001\u0012\u0004\u0012\u000208\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060<¢\u0006\u0002\b\u0007H\u0002¢\u0006\u0002\u0010=\"7\u0010\u0000\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\b\"*\u0010*\u001a\u00020\u001c2\u0006\u0010)\u001a\u00020\u001c8F@FX\u0087\u000e¢\u0006\u0012\u0012\u0004\b+\u0010,\u001a\u0004\b-\u0010.\"\u0004\b/\u00100\"\u001a\u00101\u001a\u0002028BX\u0082\u0004¢\u0006\f\u0012\u0004\b3\u0010,\u001a\u0004\b4\u00105¨\u0006>"}, d2 = {"NoPressGesture", "Lkotlin/Function3;", "Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/geometry/Offset;", "Lkotlin/coroutines/Continuation;", "", "", "Lkotlin/ExtensionFunctionType;", "Lkotlin/jvm/functions/Function3;", "detectTapGestures", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "onDoubleTap", "Lkotlin/Function1;", "onLongPress", "onPress", "onTap", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeUntilUp", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSecondDown", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "firstUp", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerInputChange;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectTapAndPress", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstDown", "requireUnconsumed", "", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLandroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitPrimaryFirstDown", "isChangedToDown", "Landroidx/compose/ui/input/pointer/PointerEvent;", "onlyPrimaryMouseButton", "waitForUpOrCancellation", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "waitForLongPress", "Landroidx/compose/foundation/gestures/LongPressResult;", "value", "DetectTapGesturesEnableNewDispatchingBehavior", "getDetectTapGesturesEnableNewDispatchingBehavior$annotations", "()V", "getDetectTapGesturesEnableNewDispatchingBehavior", "()Z", "setDetectTapGesturesEnableNewDispatchingBehavior", "(Z)V", "coroutineStartForCurrentDispatchBehavior", "Lkotlinx/coroutines/CoroutineStart;", "getCoroutineStartForCurrentDispatchBehavior$annotations", "getCoroutineStartForCurrentDispatchBehavior", "()Lkotlinx/coroutines/CoroutineStart;", "launchAwaitingReset", "Lkotlinx/coroutines/Job;", "Lkotlinx/coroutines/CoroutineScope;", "resetJob", TtmlNode.START, "block", "Lkotlin/Function2;", "(Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/Job;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/Job;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u008b\u0001\u0010\t\u001a\u00020\u0005*\u00020\n2\u0016\b\u0002\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2\u0016\b\u0002\u0010\r\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2/\b\u0002\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u00072\u0016\b\u0002\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u0093\u0001\u0010\u0011\u001a\u00020\u0005*\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2\u0014\u0010\r\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\f2-\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u00072\u0014\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\fH\u0080@¢\u0006\u0002\u0010\u0017\u001a\u0012\u0010\u0018\u001a\u00020\u0005*\u00020\u0012H\u0082@¢\u0006\u0002\u0010\u0019\u001a\u001c\u0010\u001a\u001a\u0004\u0018\u00010\u001b*\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u001bH\u0082@¢\u0006\u0002\u0010\u001d\u001a[\u0010\u001e\u001a\u00020\u0005*\u00020\n2/\b\u0002\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u00072\u0016\b\u0002\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0005\u0018\u00010\fH\u0080@¢\u0006\u0002\u0010\u001f\u001a\u001c\u0010 \u001a\u00020\u001b*\u00020\u00122\b\b\u0002\u0010!\u001a\u00020\"H\u0087@¢\u0006\u0002\u0010#\u001a&\u0010 \u001a\u00020\u001b*\u00020\u00122\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010$\u001a\u00020%H\u0086@¢\u0006\u0002\u0010&\u001a&\u0010'\u001a\u00020\u001b*\u00020\u00122\b\b\u0002\u0010!\u001a\u00020\"2\b\b\u0002\u0010$\u001a\u00020%H\u0080@¢\u0006\u0002\u0010&\u001a\u001e\u0010(\u001a\u00020\"*\u00020)2\u0006\u0010!\u001a\u00020\"2\b\b\u0002\u0010*\u001a\u00020\"H\u0000\u001a\u0014\u0010+\u001a\u0004\u0018\u00010\u001b*\u00020\u0012H\u0087@¢\u0006\u0002\u0010\u0019\u001a\u001e\u0010+\u001a\u0004\u0018\u00010\u001b*\u00020\u00122\b\b\u0002\u0010$\u001a\u00020%H\u0086@¢\u0006\u0002\u0010,\u001a\u001c\u0010-\u001a\u00020.*\u00020\u00122\b\b\u0002\u0010$\u001a\u00020%H\u0080@¢\u0006\u0002\u0010,\u001aL\u0010/\u001a\u000200*\u00020\u00142\u0006\u00101\u001a\u0002002\b\b\u0002\u00102\u001a\u0002032'\u00104\u001a#\b\u0001\u0012\u0004\u0012\u00020\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u000605¢\u0006\u0002\b\u0007H\u0002¢\u0006\u0002\u00106\"7\u0010\u0000\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0001¢\u0006\u0002\b\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\b¨\u00067"}, d2 = {"NoPressGesture", "Lkotlin/Function3;", "Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/geometry/Offset;", "Lkotlin/coroutines/Continuation;", "", "", "Lkotlin/ExtensionFunctionType;", "Lkotlin/jvm/functions/Function3;", "detectTapGestures", "Landroidx/compose/ui/input/pointer/PointerInputScope;", "onDoubleTap", "Lkotlin/Function1;", "onLongPress", "onPress", "onTap", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "processTapGesture", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "pressScope", "Landroidx/compose/foundation/gestures/PressGestureScopeImpl;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/foundation/gestures/PressGestureScopeImpl;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeUntilUp", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSecondDown", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "firstUp", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerInputChange;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "detectTapAndPress", "(Landroidx/compose/ui/input/pointer/PointerInputScope;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstDown", "requireUnconsumed", "", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "pass", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;ZLandroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitPrimaryFirstDown", "isChangedToDown", "Landroidx/compose/ui/input/pointer/PointerEvent;", "onlyPrimaryMouseButton", "waitForUpOrCancellation", "(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "waitForLongPress", "Landroidx/compose/foundation/gestures/LongPressResult;", "launchAwaitingReset", "Lkotlinx/coroutines/Job;", "resetJob", TtmlNode.START, "Lkotlinx/coroutines/CoroutineStart;", "block", "Lkotlin/Function2;", "(Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/Job;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/Job;", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TapGestureDetectorKt {
     private static final Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> NoPressGesture = new TapGestureDetectorKt$NoPressGesture$1(null);
-
-    private static /* synthetic */ void getCoroutineStartForCurrentDispatchBehavior$annotations() {
-    }
-
-    @Deprecated(message = "This flag has been moved to ComposeFoundationFlags and renamed to isDetectTapGesturesImmediateCoroutineDispatchEnabled. For compatibility,  DetectTapGesturesEnableNewDispatchingBehavior controls the new flag (isDetectTapGesturesImmediateCoroutineDispatchEnabled). Please use  isDetectTapGesturesImmediateCoroutineDispatchEnabled instead.", replaceWith = @ReplaceWith(expression = "isDetectTapGesturesImmediateCoroutineDispatchEnabled", imports = {"androidx.compose.foundation.ComposeFoundationFlags.isDetectTapGesturesImmediateCoroutineDispatchEnabled"}))
-    public static /* synthetic */ void getDetectTapGesturesEnableNewDispatchingBehavior$annotations() {
-    }
 
     public static /* synthetic */ Object detectTapGestures$default(PointerInputScope pointerInputScope, Function1 function1, Function1 function12, Function3 function3, Function1 function13, Continuation continuation, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -61,8 +54,477 @@ public final class TapGestureDetectorKt {
     }
 
     public static final Object detectTapGestures(PointerInputScope pointerInputScope, Function1<? super Offset, Unit> function1, Function1<? super Offset, Unit> function12, Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function3, Function1<? super Offset, Unit> function13, Continuation<? super Unit> continuation) {
-        Object coroutineScope = CoroutineScopeKt.coroutineScope(new TapGestureDetectorKt$detectTapGestures$2(pointerInputScope, function3, function12, function1, function13, null), continuation);
+        Object coroutineScope = CoroutineScopeKt.coroutineScope(new TapGestureDetectorKt$detectTapGestures$2(pointerInputScope, function1, function12, function3, function13, null), continuation);
         return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x01a0  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x025c  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x02b2  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x02f2  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0395  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x03dc  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x03f7  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x041f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object processTapGesture(AwaitPointerEventScope awaitPointerEventScope, CoroutineScope coroutineScope, PressGestureScopeImpl pressGestureScopeImpl, Function1<? super Offset, Unit> function1, Function1<? super Offset, Unit> function12, Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function3, Function1<? super Offset, Unit> function13, Continuation<? super Unit> continuation) {
+        TapGestureDetectorKt$processTapGesture$1 tapGestureDetectorKt$processTapGesture$1;
+        TapGestureDetectorKt$processTapGesture$1 tapGestureDetectorKt$processTapGesture$12;
+        Function1<? super Offset, Unit> function14;
+        Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function32;
+        Function1<? super Offset, Unit> function15;
+        PressGestureScopeImpl pressGestureScopeImpl2;
+        Function1<? super Offset, Unit> function16;
+        AwaitPointerEventScope awaitPointerEventScope2;
+        CoroutineScope coroutineScope2;
+        PointerInputChange pointerInputChange;
+        Job launch$default;
+        Job job;
+        Function1<? super Offset, Unit> function17;
+        Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function33;
+        AwaitPointerEventScope awaitPointerEventScope3;
+        PressGestureScopeImpl pressGestureScopeImpl3;
+        Function1<? super Offset, Unit> function18;
+        Function1<? super Offset, Unit> function19;
+        Function1<? super Offset, Unit> function110;
+        Function1<? super Offset, Unit> function111;
+        AwaitPointerEventScope awaitPointerEventScope4;
+        CoroutineScope coroutineScope3;
+        PressGestureScopeImpl pressGestureScopeImpl4;
+        Function3<? super PressGestureScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function34;
+        Function1<? super Offset, Unit> function112;
+        PointerInputChange pointerInputChange2;
+        Job launchAwaitingReset$default;
+        PointerInputChange pointerInputChange3;
+        AwaitPointerEventScope awaitPointerEventScope5;
+        CoroutineScope coroutineScope4;
+        Function1<? super Offset, Unit> function113;
+        Function1<? super Offset, Unit> function114;
+        Function1<? super Offset, Unit> function115;
+        PressGestureScopeImpl pressGestureScopeImpl5;
+        LongPressResult longPressResult;
+        Job job2;
+        CoroutineScope coroutineScope5;
+        PressGestureScopeImpl pressGestureScopeImpl6;
+        PointerInputChange pointerInputChange4;
+        Job launch$default2;
+        PointerInputChange pointerInputChange5;
+        PointerInputChange pointerInputChange6;
+        PressGestureScopeImpl pressGestureScopeImpl7;
+        Function1<? super Offset, Unit> function116;
+        Function1<? super Offset, Unit> function117;
+        Function1<? super Offset, Unit> function118;
+        CoroutineScope coroutineScope6;
+        AwaitPointerEventScope awaitPointerEventScope6;
+        PointerInputChange pointerInputChange7;
+        Function1<? super Offset, Unit> function119;
+        Function1<? super Offset, Unit> function120;
+        CoroutineScope coroutineScope7;
+        PointerInputChange pointerInputChange8;
+        LongPressResult longPressResult2;
+        Job job3;
+        PressGestureScopeImpl pressGestureScopeImpl8;
+        CoroutineScope coroutineScope8;
+        if (continuation instanceof TapGestureDetectorKt$processTapGesture$1) {
+            tapGestureDetectorKt$processTapGesture$1 = (TapGestureDetectorKt$processTapGesture$1) continuation;
+            if ((tapGestureDetectorKt$processTapGesture$1.label & Integer.MIN_VALUE) != 0) {
+                tapGestureDetectorKt$processTapGesture$1.label -= Integer.MIN_VALUE;
+                tapGestureDetectorKt$processTapGesture$12 = tapGestureDetectorKt$processTapGesture$1;
+                Object obj = tapGestureDetectorKt$processTapGesture$12.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                switch (tapGestureDetectorKt$processTapGesture$12.label) {
+                    case 0:
+                        ResultKt.throwOnFailure(obj);
+                        tapGestureDetectorKt$processTapGesture$12.L$0 = awaitPointerEventScope;
+                        tapGestureDetectorKt$processTapGesture$12.L$1 = coroutineScope;
+                        tapGestureDetectorKt$processTapGesture$12.L$2 = pressGestureScopeImpl;
+                        tapGestureDetectorKt$processTapGesture$12.L$3 = function1;
+                        function14 = function12;
+                        tapGestureDetectorKt$processTapGesture$12.L$4 = function14;
+                        function32 = function3;
+                        tapGestureDetectorKt$processTapGesture$12.L$5 = function32;
+                        function15 = function13;
+                        tapGestureDetectorKt$processTapGesture$12.L$6 = function15;
+                        tapGestureDetectorKt$processTapGesture$12.label = 1;
+                        Object awaitFirstDown$default = awaitFirstDown$default(awaitPointerEventScope, false, null, tapGestureDetectorKt$processTapGesture$12, 3, null);
+                        if (awaitFirstDown$default != coroutine_suspended) {
+                            pressGestureScopeImpl2 = pressGestureScopeImpl;
+                            function16 = function1;
+                            awaitPointerEventScope2 = awaitPointerEventScope;
+                            coroutineScope2 = coroutineScope;
+                            obj = awaitFirstDown$default;
+                            pointerInputChange = (PointerInputChange) obj;
+                            pointerInputChange.consume();
+                            launch$default = BuildersKt__Builders_commonKt.launch$default(coroutineScope2, null, CoroutineStart.UNDISPATCHED, new TapGestureDetectorKt$processTapGesture$resetJob$1(pressGestureScopeImpl2, null), 1, null);
+                            if (function32 == NoPressGesture) {
+                                launchAwaitingReset$default(coroutineScope2, launch$default, null, new TapGestureDetectorKt$processTapGesture$2(function32, pressGestureScopeImpl2, pointerInputChange, null), 2, null);
+                                job = launch$default;
+                            } else {
+                                job = launch$default;
+                            }
+                            if (function14 != null) {
+                                tapGestureDetectorKt$processTapGesture$12.L$0 = awaitPointerEventScope2;
+                                tapGestureDetectorKt$processTapGesture$12.L$1 = coroutineScope2;
+                                tapGestureDetectorKt$processTapGesture$12.L$2 = pressGestureScopeImpl2;
+                                tapGestureDetectorKt$processTapGesture$12.L$3 = function16;
+                                tapGestureDetectorKt$processTapGesture$12.L$4 = function14;
+                                tapGestureDetectorKt$processTapGesture$12.L$5 = function32;
+                                tapGestureDetectorKt$processTapGesture$12.L$6 = function15;
+                                tapGestureDetectorKt$processTapGesture$12.L$7 = job;
+                                tapGestureDetectorKt$processTapGesture$12.label = 2;
+                                obj = waitForUpOrCancellation$default(awaitPointerEventScope2, null, tapGestureDetectorKt$processTapGesture$12, 1, null);
+                                if (obj != coroutine_suspended) {
+                                    PressGestureScopeImpl pressGestureScopeImpl9 = pressGestureScopeImpl2;
+                                    function110 = function16;
+                                    function111 = function14;
+                                    awaitPointerEventScope4 = awaitPointerEventScope2;
+                                    coroutineScope3 = coroutineScope2;
+                                    pressGestureScopeImpl4 = pressGestureScopeImpl9;
+                                    function34 = function32;
+                                    function112 = function15;
+                                    pointerInputChange2 = (PointerInputChange) obj;
+                                    if (pointerInputChange2 == null) {
+                                        launchAwaitingReset$default = launchAwaitingReset$default(coroutineScope3, job, null, new TapGestureDetectorKt$processTapGesture$4(pressGestureScopeImpl4, null), 2, null);
+                                    } else {
+                                        pointerInputChange2.consume();
+                                        launchAwaitingReset$default = launchAwaitingReset$default(coroutineScope3, job, null, new TapGestureDetectorKt$processTapGesture$5(pressGestureScopeImpl4, null), 2, null);
+                                    }
+                                    if (pointerInputChange2 != null) {
+                                        if (function110 != null) {
+                                            tapGestureDetectorKt$processTapGesture$12.L$0 = awaitPointerEventScope4;
+                                            tapGestureDetectorKt$processTapGesture$12.L$1 = coroutineScope3;
+                                            tapGestureDetectorKt$processTapGesture$12.L$2 = pressGestureScopeImpl4;
+                                            tapGestureDetectorKt$processTapGesture$12.L$3 = function110;
+                                            tapGestureDetectorKt$processTapGesture$12.L$4 = function111;
+                                            tapGestureDetectorKt$processTapGesture$12.L$5 = function34;
+                                            tapGestureDetectorKt$processTapGesture$12.L$6 = function112;
+                                            tapGestureDetectorKt$processTapGesture$12.L$7 = pointerInputChange2;
+                                            tapGestureDetectorKt$processTapGesture$12.L$8 = launchAwaitingReset$default;
+                                            tapGestureDetectorKt$processTapGesture$12.label = 5;
+                                            Object awaitSecondDown = awaitSecondDown(awaitPointerEventScope4, pointerInputChange2, tapGestureDetectorKt$processTapGesture$12);
+                                            if (awaitSecondDown != coroutine_suspended) {
+                                                Function1<? super Offset, Unit> function121 = function112;
+                                                pointerInputChange3 = pointerInputChange2;
+                                                obj = awaitSecondDown;
+                                                awaitPointerEventScope5 = awaitPointerEventScope4;
+                                                coroutineScope4 = coroutineScope3;
+                                                function113 = function110;
+                                                function114 = function121;
+                                                PressGestureScopeImpl pressGestureScopeImpl10 = pressGestureScopeImpl4;
+                                                function115 = function111;
+                                                pressGestureScopeImpl5 = pressGestureScopeImpl10;
+                                                pointerInputChange4 = (PointerInputChange) obj;
+                                                if (pointerInputChange4 == null) {
+                                                    launch$default2 = BuildersKt__Builders_commonKt.launch$default(coroutineScope4, null, CoroutineStart.UNDISPATCHED, new TapGestureDetectorKt$processTapGesture$6(launchAwaitingReset$default, pressGestureScopeImpl5, null), 1, null);
+                                                    if (function34 != NoPressGesture) {
+                                                        launchAwaitingReset$default(coroutineScope4, launch$default2, null, new TapGestureDetectorKt$processTapGesture$7(function34, pressGestureScopeImpl5, pointerInputChange4, null), 2, null);
+                                                    }
+                                                    if (function115 == null) {
+                                                        tapGestureDetectorKt$processTapGesture$12.L$0 = coroutineScope4;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$1 = pressGestureScopeImpl5;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$2 = function113;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$3 = function114;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$4 = launch$default2;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$5 = pointerInputChange3;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$6 = null;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$7 = null;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$8 = null;
+                                                        tapGestureDetectorKt$processTapGesture$12.label = 6;
+                                                        obj = waitForUpOrCancellation$default(awaitPointerEventScope5, null, tapGestureDetectorKt$processTapGesture$12, 1, null);
+                                                        if (obj != coroutine_suspended) {
+                                                            pointerInputChange7 = pointerInputChange3;
+                                                            function119 = function114;
+                                                            function120 = function113;
+                                                            coroutineScope7 = coroutineScope4;
+                                                            pointerInputChange8 = (PointerInputChange) obj;
+                                                            if (pointerInputChange8 != null) {
+                                                                pointerInputChange8.consume();
+                                                                launchAwaitingReset$default(coroutineScope7, launch$default2, null, new TapGestureDetectorKt$processTapGesture$8(pressGestureScopeImpl5, null), 2, null);
+                                                                function120.invoke(Offset.m5092boximpl(pointerInputChange8.m6685getPositionF1C5BW0()));
+                                                            } else {
+                                                                launchAwaitingReset$default(coroutineScope7, launch$default2, null, new TapGestureDetectorKt$processTapGesture$9(pressGestureScopeImpl5, null), 2, null);
+                                                                if (function119 != null) {
+                                                                    function119.invoke(Offset.m5092boximpl(pointerInputChange7.m6685getPositionF1C5BW0()));
+                                                                }
+                                                            }
+                                                        }
+                                                    } else {
+                                                        tapGestureDetectorKt$processTapGesture$12.L$0 = awaitPointerEventScope5;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$1 = coroutineScope4;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$2 = pressGestureScopeImpl5;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$3 = function113;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$4 = function115;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$5 = function114;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$6 = launch$default2;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$7 = pointerInputChange3;
+                                                        tapGestureDetectorKt$processTapGesture$12.L$8 = pointerInputChange4;
+                                                        tapGestureDetectorKt$processTapGesture$12.label = 7;
+                                                        Object waitForLongPress$default = waitForLongPress$default(awaitPointerEventScope5, null, tapGestureDetectorKt$processTapGesture$12, 1, null);
+                                                        if (waitForLongPress$default != coroutine_suspended) {
+                                                            PointerInputChange pointerInputChange9 = pointerInputChange3;
+                                                            pointerInputChange5 = pointerInputChange4;
+                                                            obj = waitForLongPress$default;
+                                                            pointerInputChange6 = pointerInputChange9;
+                                                            Function1<? super Offset, Unit> function122 = function115;
+                                                            pressGestureScopeImpl7 = pressGestureScopeImpl5;
+                                                            function116 = function114;
+                                                            function117 = function122;
+                                                            function118 = function113;
+                                                            coroutineScope6 = coroutineScope4;
+                                                            awaitPointerEventScope6 = awaitPointerEventScope5;
+                                                            longPressResult2 = (LongPressResult) obj;
+                                                            if (Intrinsics.areEqual(longPressResult2, LongPressResult.Success.INSTANCE)) {
+                                                                if (longPressResult2 instanceof LongPressResult.Released) {
+                                                                    pointerInputChange8 = ((LongPressResult.Released) longPressResult2).getFinalUpChange();
+                                                                    pointerInputChange7 = pointerInputChange6;
+                                                                    function119 = function116;
+                                                                    function120 = function118;
+                                                                } else if (!(longPressResult2 instanceof LongPressResult.Canceled)) {
+                                                                    throw new NoWhenBranchMatchedException();
+                                                                } else {
+                                                                    pointerInputChange7 = pointerInputChange6;
+                                                                    function119 = function116;
+                                                                    function120 = function118;
+                                                                    pointerInputChange8 = null;
+                                                                }
+                                                                pressGestureScopeImpl5 = pressGestureScopeImpl7;
+                                                                coroutineScope7 = coroutineScope6;
+                                                                if (pointerInputChange8 != null) {
+                                                                }
+                                                            } else {
+                                                                function117.invoke(Offset.m5092boximpl(pointerInputChange5.m6685getPositionF1C5BW0()));
+                                                                tapGestureDetectorKt$processTapGesture$12.L$0 = coroutineScope6;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$1 = pressGestureScopeImpl7;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$2 = launch$default2;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$3 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$4 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$5 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$6 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$7 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.L$8 = null;
+                                                                tapGestureDetectorKt$processTapGesture$12.label = 8;
+                                                                if (consumeUntilUp(awaitPointerEventScope6, tapGestureDetectorKt$processTapGesture$12) != coroutine_suspended) {
+                                                                    job3 = launch$default2;
+                                                                    pressGestureScopeImpl8 = pressGestureScopeImpl7;
+                                                                    coroutineScope8 = coroutineScope6;
+                                                                    launchAwaitingReset$default(coroutineScope8, job3, null, new TapGestureDetectorKt$processTapGesture$secondUp$1(pressGestureScopeImpl8, null), 2, null);
+                                                                    return Unit.INSTANCE;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (function114 != null) {
+                                                    function114.invoke(Offset.m5092boximpl(pointerInputChange3.m6685getPositionF1C5BW0()));
+                                                }
+                                            }
+                                        } else if (function112 != null) {
+                                            function112.invoke(Offset.m5092boximpl(pointerInputChange2.m6685getPositionF1C5BW0()));
+                                        }
+                                    }
+                                    return Unit.INSTANCE;
+                                }
+                            } else {
+                                tapGestureDetectorKt$processTapGesture$12.L$0 = awaitPointerEventScope2;
+                                tapGestureDetectorKt$processTapGesture$12.L$1 = coroutineScope2;
+                                tapGestureDetectorKt$processTapGesture$12.L$2 = pressGestureScopeImpl2;
+                                tapGestureDetectorKt$processTapGesture$12.L$3 = function16;
+                                tapGestureDetectorKt$processTapGesture$12.L$4 = function14;
+                                tapGestureDetectorKt$processTapGesture$12.L$5 = function32;
+                                tapGestureDetectorKt$processTapGesture$12.L$6 = function15;
+                                tapGestureDetectorKt$processTapGesture$12.L$7 = pointerInputChange;
+                                tapGestureDetectorKt$processTapGesture$12.L$8 = job;
+                                tapGestureDetectorKt$processTapGesture$12.label = 3;
+                                obj = waitForLongPress$default(awaitPointerEventScope2, null, tapGestureDetectorKt$processTapGesture$12, 1, null);
+                                if (obj != coroutine_suspended) {
+                                    Function1<? super Offset, Unit> function123 = function14;
+                                    function17 = function16;
+                                    function33 = function32;
+                                    awaitPointerEventScope3 = awaitPointerEventScope2;
+                                    pressGestureScopeImpl3 = pressGestureScopeImpl2;
+                                    function18 = function123;
+                                    function19 = function15;
+                                    longPressResult = (LongPressResult) obj;
+                                    if (Intrinsics.areEqual(longPressResult, LongPressResult.Success.INSTANCE)) {
+                                        if (longPressResult instanceof LongPressResult.Released) {
+                                            pointerInputChange2 = ((LongPressResult.Released) longPressResult).getFinalUpChange();
+                                        } else if (!(longPressResult instanceof LongPressResult.Canceled)) {
+                                            throw new NoWhenBranchMatchedException();
+                                        } else {
+                                            pointerInputChange2 = null;
+                                        }
+                                        PressGestureScopeImpl pressGestureScopeImpl11 = pressGestureScopeImpl3;
+                                        coroutineScope3 = coroutineScope2;
+                                        pressGestureScopeImpl4 = pressGestureScopeImpl11;
+                                        function112 = function19;
+                                        function34 = function33;
+                                        function111 = function18;
+                                        function110 = function17;
+                                        awaitPointerEventScope4 = awaitPointerEventScope3;
+                                        if (pointerInputChange2 == null) {
+                                        }
+                                        if (pointerInputChange2 != null) {
+                                        }
+                                        return Unit.INSTANCE;
+                                    }
+                                    function18.invoke(Offset.m5092boximpl(pointerInputChange.m6685getPositionF1C5BW0()));
+                                    tapGestureDetectorKt$processTapGesture$12.L$0 = coroutineScope2;
+                                    tapGestureDetectorKt$processTapGesture$12.L$1 = pressGestureScopeImpl3;
+                                    tapGestureDetectorKt$processTapGesture$12.L$2 = job;
+                                    tapGestureDetectorKt$processTapGesture$12.L$3 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.L$4 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.L$5 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.L$6 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.L$7 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.L$8 = null;
+                                    tapGestureDetectorKt$processTapGesture$12.label = 4;
+                                    if (consumeUntilUp(awaitPointerEventScope3, tapGestureDetectorKt$processTapGesture$12) != coroutine_suspended) {
+                                        job2 = job;
+                                        coroutineScope5 = coroutineScope2;
+                                        pressGestureScopeImpl6 = pressGestureScopeImpl3;
+                                        launchAwaitingReset$default(coroutineScope5, job2, null, new TapGestureDetectorKt$processTapGesture$3(pressGestureScopeImpl6, null), 2, null);
+                                        return Unit.INSTANCE;
+                                    }
+                                }
+                            }
+                        }
+                        return coroutine_suspended;
+                    case 1:
+                        function16 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        pressGestureScopeImpl2 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        coroutineScope2 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        awaitPointerEventScope2 = (AwaitPointerEventScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        function15 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$6;
+                        function32 = (Function3) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        function14 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        pointerInputChange = (PointerInputChange) obj;
+                        pointerInputChange.consume();
+                        launch$default = BuildersKt__Builders_commonKt.launch$default(coroutineScope2, null, CoroutineStart.UNDISPATCHED, new TapGestureDetectorKt$processTapGesture$resetJob$1(pressGestureScopeImpl2, null), 1, null);
+                        if (function32 == NoPressGesture) {
+                        }
+                        if (function14 != null) {
+                        }
+                        return coroutine_suspended;
+                    case 2:
+                        job = (Job) tapGestureDetectorKt$processTapGesture$12.L$7;
+                        function112 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$6;
+                        function34 = (Function3) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        function111 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        function110 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        pressGestureScopeImpl4 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        coroutineScope3 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        awaitPointerEventScope4 = (AwaitPointerEventScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        pointerInputChange2 = (PointerInputChange) obj;
+                        if (pointerInputChange2 == null) {
+                        }
+                        if (pointerInputChange2 != null) {
+                        }
+                        return Unit.INSTANCE;
+                    case 3:
+                        job = (Job) tapGestureDetectorKt$processTapGesture$12.L$8;
+                        pointerInputChange = (PointerInputChange) tapGestureDetectorKt$processTapGesture$12.L$7;
+                        function19 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$6;
+                        function33 = (Function3) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        function18 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        pressGestureScopeImpl3 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        CoroutineScope coroutineScope9 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        awaitPointerEventScope3 = (AwaitPointerEventScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        function17 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        coroutineScope2 = coroutineScope9;
+                        longPressResult = (LongPressResult) obj;
+                        if (Intrinsics.areEqual(longPressResult, LongPressResult.Success.INSTANCE)) {
+                        }
+                        break;
+                    case 4:
+                        job2 = (Job) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        pressGestureScopeImpl6 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        coroutineScope5 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        launchAwaitingReset$default(coroutineScope5, job2, null, new TapGestureDetectorKt$processTapGesture$3(pressGestureScopeImpl6, null), 2, null);
+                        return Unit.INSTANCE;
+                    case 5:
+                        launchAwaitingReset$default = (Job) tapGestureDetectorKt$processTapGesture$12.L$8;
+                        pointerInputChange3 = (PointerInputChange) tapGestureDetectorKt$processTapGesture$12.L$7;
+                        Function1<? super Offset, Unit> function124 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        coroutineScope4 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        awaitPointerEventScope5 = (AwaitPointerEventScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        function114 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$6;
+                        function34 = (Function3) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        pressGestureScopeImpl5 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        function113 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        function115 = function124;
+                        pointerInputChange4 = (PointerInputChange) obj;
+                        if (pointerInputChange4 == null) {
+                        }
+                        break;
+                    case 6:
+                        pointerInputChange7 = (PointerInputChange) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        launch$default2 = (Job) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        function119 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        function120 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        pressGestureScopeImpl5 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        coroutineScope7 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        pointerInputChange8 = (PointerInputChange) obj;
+                        if (pointerInputChange8 != null) {
+                        }
+                        return Unit.INSTANCE;
+                    case 7:
+                        PointerInputChange pointerInputChange10 = (PointerInputChange) tapGestureDetectorKt$processTapGesture$12.L$7;
+                        function116 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$5;
+                        function117 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$4;
+                        function118 = (Function1) tapGestureDetectorKt$processTapGesture$12.L$3;
+                        pressGestureScopeImpl7 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        coroutineScope6 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        awaitPointerEventScope6 = (AwaitPointerEventScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        pointerInputChange5 = (PointerInputChange) tapGestureDetectorKt$processTapGesture$12.L$8;
+                        launch$default2 = (Job) tapGestureDetectorKt$processTapGesture$12.L$6;
+                        pointerInputChange6 = pointerInputChange10;
+                        longPressResult2 = (LongPressResult) obj;
+                        if (Intrinsics.areEqual(longPressResult2, LongPressResult.Success.INSTANCE)) {
+                        }
+                        break;
+                    case 8:
+                        job3 = (Job) tapGestureDetectorKt$processTapGesture$12.L$2;
+                        pressGestureScopeImpl8 = (PressGestureScopeImpl) tapGestureDetectorKt$processTapGesture$12.L$1;
+                        coroutineScope8 = (CoroutineScope) tapGestureDetectorKt$processTapGesture$12.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        launchAwaitingReset$default(coroutineScope8, job3, null, new TapGestureDetectorKt$processTapGesture$secondUp$1(pressGestureScopeImpl8, null), 2, null);
+                        return Unit.INSTANCE;
+                    default:
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+            }
+        }
+        tapGestureDetectorKt$processTapGesture$1 = new TapGestureDetectorKt$processTapGesture$1(continuation);
+        tapGestureDetectorKt$processTapGesture$12 = tapGestureDetectorKt$processTapGesture$1;
+        Object obj2 = tapGestureDetectorKt$processTapGesture$12.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (tapGestureDetectorKt$processTapGesture$12.label) {
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -371,11 +833,11 @@ public final class TapGestureDetectorKt {
             int i = 0;
             while (true) {
                 if (i < size) {
-                    if (!PointerType.m6156equalsimpl0(changes.get(i).m6088getTypeT8wyACA(), PointerType.Companion.m6161getMouseT8wyACA())) {
+                    if (!PointerType.m6758equalsimpl0(changes.get(i).m6688getTypeT8wyACA(), PointerType.Companion.m6763getMouseT8wyACA())) {
                         break;
                     }
                     i++;
-                } else if (!PointerEvent_androidKt.m6058isPrimaryPressedaHzCxE(pointerEvent.m6025getButtonsry648PA())) {
+                } else if (!PointerEvent_androidKt.m6655isPrimaryPressedaHzCxE(pointerEvent.m6616getButtonsry648PA())) {
                     return false;
                 }
             }
@@ -479,7 +941,7 @@ public final class TapGestureDetectorKt {
                                 int size3 = changes4.size();
                                 for (int i4 = 0; i4 < size3; i4++) {
                                     PointerInputChange pointerInputChange = changes4.get(i4);
-                                    if (pointerInputChange.isConsumed() || PointerEventKt.m6030isOutOfBoundsjwHxaWs(pointerInputChange, awaitPointerEventScope3.mo5981getSizeYbymL2g(), awaitPointerEventScope3.mo5980getExtendedTouchPaddingNHjbRc())) {
+                                    if (pointerInputChange.isConsumed() || PointerEventKt.m6621isOutOfBoundsjwHxaWs(pointerInputChange, awaitPointerEventScope3.mo6570getSizeYbymL2g(), awaitPointerEventScope3.mo6569getExtendedTouchPaddingNHjbRc())) {
                                         break;
                                     }
                                 }
@@ -569,27 +1031,10 @@ public final class TapGestureDetectorKt {
         return waitForLongPress(awaitPointerEventScope, pointerEventPass, continuation);
     }
 
-    public static final void setDetectTapGesturesEnableNewDispatchingBehavior(boolean z) {
-        ComposeFoundationFlags composeFoundationFlags = ComposeFoundationFlags.INSTANCE;
-        ComposeFoundationFlags.isDetectTapGesturesImmediateCoroutineDispatchEnabled = z;
-    }
-
-    public static final boolean getDetectTapGesturesEnableNewDispatchingBehavior() {
-        return ComposeFoundationFlags.isDetectTapGesturesImmediateCoroutineDispatchEnabled;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CoroutineStart getCoroutineStartForCurrentDispatchBehavior() {
-        if (ComposeFoundationFlags.isDetectTapGesturesImmediateCoroutineDispatchEnabled) {
-            return CoroutineStart.UNDISPATCHED;
-        }
-        return CoroutineStart.DEFAULT;
-    }
-
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ Job launchAwaitingReset$default(CoroutineScope coroutineScope, Job job, CoroutineStart coroutineStart, Function2 function2, int i, Object obj) {
         if ((i & 2) != 0) {
-            coroutineStart = getCoroutineStartForCurrentDispatchBehavior();
+            coroutineStart = CoroutineStart.UNDISPATCHED;
         }
         return launchAwaitingReset(coroutineScope, job, coroutineStart, function2);
     }

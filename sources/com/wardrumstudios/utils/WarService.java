@@ -15,7 +15,7 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import androidx.core.app.NotificationCompat;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarService {
     private static final String TAG = "WarService";
     public static WarService myWarService;
@@ -30,7 +30,7 @@ public class WarService {
     public Activity warActivity;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class WarNotification {
         public long epochTime;
         public int icon;

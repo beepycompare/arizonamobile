@@ -1,7 +1,9 @@
 package com.google.android.material.timepicker;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextUtils;
@@ -17,8 +19,10 @@ import android.widget.TextView;
 import androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.textfield.TextInputLayout;
@@ -27,8 +31,17 @@ import java.util.Arrays;
 /* loaded from: classes4.dex */
 public class ChipTextInputComboView extends FrameLayout implements Checkable {
     private final Chip chip;
+    private CharSequence chipText;
     private final EditText editText;
+    private final AccessibilityDelegateCompat editTextAccessibilityDelegate;
+    private boolean hasError;
     private TextView label;
+    private ColorStateList originalChipBackgroundColor;
+    private int originalChipStrokeColor;
+    private ColorStateList originalChipTextColor;
+    private ColorStateList originalEditTextColor;
+    private ColorStateList originalEditTextCursorColor;
+    private ColorStateList originalLabelColor;
     private final TextInputLayout textInputLayout;
     private TextWatcher watcher;
 
@@ -42,6 +55,8 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
 
     public ChipTextInputComboView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
+        this.chipText = "";
+        this.hasError = false;
         LayoutInflater from = LayoutInflater.from(context);
         Chip chip = (Chip) from.inflate(R.layout.material_time_chip, (ViewGroup) this, false);
         this.chip = chip;
@@ -62,6 +77,15 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
         this.label.setLabelFor(editText.getId());
         editText.setSaveEnabled(false);
         editText.setLongClickable(false);
+        this.editTextAccessibilityDelegate = new AccessibilityDelegateCompat() { // from class: com.google.android.material.timepicker.ChipTextInputComboView.1
+            @Override // androidx.core.view.AccessibilityDelegateCompat
+            public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
+                accessibilityNodeInfoCompat.setText(((EditText) view).getText());
+                accessibilityNodeInfoCompat.setHintText(ChipTextInputComboView.this.label.getText());
+                accessibilityNodeInfoCompat.setMaxTextLength(2);
+            }
+        };
     }
 
     private void updateHintLocales() {
@@ -76,8 +100,15 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
     @Override // android.widget.Checkable
     public void setChecked(boolean z) {
         this.chip.setChecked(z);
+        Chip chip = this.chip;
+        if (z) {
+            chip.setText("");
+            this.chip.setImportantForAccessibility(2);
+        } else {
+            chip.setText(this.chipText);
+            this.chip.setImportantForAccessibility(1);
+        }
         this.editText.setVisibility(z ? 0 : 4);
-        this.chip.setVisibility(z ? 8 : 0);
         if (isChecked()) {
             ViewUtils.requestFocusAndShowKeyboard(this.editText, false);
         }
@@ -90,17 +121,28 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
 
     public void setText(CharSequence charSequence) {
         String formatText = formatText(charSequence);
+        this.chipText = formatText;
         this.chip.setText(formatText);
         if (TextUtils.isEmpty(formatText)) {
             return;
         }
         this.editText.removeTextChangedListener(this.watcher);
         this.editText.setText(formatText);
+        ViewCompat.setAccessibilityDelegate(this.editText, this.editTextAccessibilityDelegate);
         this.editText.addTextChangedListener(this.watcher);
     }
 
     CharSequence getChipText() {
-        return this.chip.getText();
+        return this.chipText;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void requestAccessibilityFocus() {
+        if (this.editText.getVisibility() == 0) {
+            this.editText.sendAccessibilityEvent(8);
+        } else {
+            this.chip.sendAccessibilityEvent(8);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -141,6 +183,56 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
         ViewCompat.setAccessibilityDelegate(this.chip, accessibilityDelegateCompat);
     }
 
+    public void setError(boolean z) {
+        if (this.hasError == z) {
+            return;
+        }
+        this.hasError = z;
+        if (z) {
+            applyErrorColors();
+        } else {
+            clearErrorColors();
+        }
+    }
+
+    private void applyErrorColors() {
+        this.originalChipBackgroundColor = this.chip.getChipBackgroundColor();
+        this.originalChipTextColor = this.chip.getTextColors();
+        this.originalEditTextColor = this.editText.getTextColors();
+        this.originalLabelColor = this.label.getTextColors();
+        this.originalChipStrokeColor = this.textInputLayout.getBoxStrokeColor();
+        int color = MaterialColors.getColor(this, androidx.appcompat.R.attr.colorError);
+        ColorStateList colorStateListOrNull = MaterialColors.getColorStateListOrNull(getContext(), R.attr.colorErrorContainer);
+        ColorStateList colorStateListOrNull2 = MaterialColors.getColorStateListOrNull(getContext(), R.attr.colorOnErrorContainer);
+        if (colorStateListOrNull == null || colorStateListOrNull2 == null) {
+            return;
+        }
+        this.chip.setChipBackgroundColor(colorStateListOrNull);
+        this.chip.setTextColor(colorStateListOrNull2);
+        this.editText.setTextColor(colorStateListOrNull2);
+        this.textInputLayout.setBoxStrokeColor(color);
+        this.label.setTextColor(color);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.originalEditTextCursorColor = this.textInputLayout.getCursorColor();
+            this.textInputLayout.setCursorColor(colorStateListOrNull2);
+        }
+    }
+
+    private void clearErrorColors() {
+        this.chip.setChipBackgroundColor(this.originalChipBackgroundColor);
+        this.chip.setTextColor(this.originalChipTextColor);
+        this.editText.setTextColor(this.originalEditTextColor);
+        this.textInputLayout.setBoxStrokeColor(this.originalChipStrokeColor);
+        this.label.setTextColor(this.originalLabelColor);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.textInputLayout.setCursorColor(this.originalEditTextCursorColor);
+        }
+    }
+
+    public boolean hasError() {
+        return this.hasError;
+    }
+
     /* loaded from: classes4.dex */
     private class TextFormatter extends TextWatcherAdapter {
         private static final String DEFAULT_TEXT = "00";
@@ -153,15 +245,15 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
             boolean isEmpty = TextUtils.isEmpty(editable);
             ChipTextInputComboView chipTextInputComboView = ChipTextInputComboView.this;
             if (isEmpty) {
-                chipTextInputComboView.chip.setText(ChipTextInputComboView.this.formatText(DEFAULT_TEXT));
+                chipTextInputComboView.chipText = chipTextInputComboView.formatText(DEFAULT_TEXT);
                 return;
             }
             String formatText = chipTextInputComboView.formatText(editable);
-            Chip chip = ChipTextInputComboView.this.chip;
+            ChipTextInputComboView chipTextInputComboView2 = ChipTextInputComboView.this;
             if (TextUtils.isEmpty(formatText)) {
                 formatText = ChipTextInputComboView.this.formatText(DEFAULT_TEXT);
             }
-            chip.setText(formatText);
+            chipTextInputComboView2.chipText = formatText;
         }
     }
 

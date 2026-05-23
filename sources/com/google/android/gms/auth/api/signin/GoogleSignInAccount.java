@@ -18,47 +18,44 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public class GoogleSignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new zab();
     public static final Clock zaa = DefaultClock.getInstance();
-    final int zab;
-    final List zac;
+    final List zab;
+    private final String zac;
     private final String zad;
     private final String zae;
     private final String zaf;
-    private final String zag;
-    private final Uri zah;
-    private String zai;
-    private final long zaj;
+    private final Uri zag;
+    private String zah;
+    private final long zai;
+    private final String zaj;
     private final String zak;
     private final String zal;
-    private final String zam;
-    private final Set zan = new HashSet();
+    private final Set zam = new HashSet();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public GoogleSignInAccount(int i, String str, String str2, String str3, String str4, Uri uri, String str5, long j, String str6, List list, String str7, String str8) {
-        this.zab = i;
-        this.zad = str;
-        this.zae = str2;
-        this.zaf = str3;
-        this.zag = str4;
-        this.zah = uri;
-        this.zai = str5;
-        this.zaj = j;
-        this.zak = str6;
-        this.zac = list;
-        this.zal = str7;
-        this.zam = str8;
+    public GoogleSignInAccount(String str, String str2, String str3, String str4, Uri uri, String str5, long j, String str6, List list, String str7, String str8) {
+        this.zac = str;
+        this.zad = str2;
+        this.zae = str3;
+        this.zaf = str4;
+        this.zag = uri;
+        this.zah = str5;
+        this.zai = j;
+        this.zaj = str6;
+        this.zab = list;
+        this.zak = str7;
+        this.zal = str8;
     }
 
     public static GoogleSignInAccount createDefault() {
@@ -78,11 +75,7 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
         return zae(account, hashSet);
     }
 
-    public static GoogleSignInAccount zaa(String str, String str2, String str3, String str4, String str5, String str6, Uri uri, Long l, String str7, Set set) {
-        return new GoogleSignInAccount(3, str, str2, str3, str4, uri, null, l.longValue(), Preconditions.checkNotEmpty(str7), new ArrayList((Collection) Preconditions.checkNotNull(set)), str5, str6);
-    }
-
-    public static GoogleSignInAccount zab(String str) throws JSONException {
+    public static GoogleSignInAccount zaa(String str) throws JSONException {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -96,13 +89,17 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
         for (int i = 0; i < length; i++) {
             hashSet.add(new Scope(jSONArray.getString(i)));
         }
-        GoogleSignInAccount zaa2 = zaa(jSONObject.optString("id"), jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null, jSONObject.has("email") ? jSONObject.optString("email") : null, jSONObject.has("displayName") ? jSONObject.optString("displayName") : null, jSONObject.has("givenName") ? jSONObject.optString("givenName") : null, jSONObject.has("familyName") ? jSONObject.optString("familyName") : null, parse, Long.valueOf(parseLong), jSONObject.getString("obfuscatedIdentifier"), hashSet);
-        zaa2.zai = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
-        return zaa2;
+        GoogleSignInAccount zab = zab(jSONObject.optString("id"), jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null, jSONObject.has("email") ? jSONObject.optString("email") : null, jSONObject.has("displayName") ? jSONObject.optString("displayName") : null, jSONObject.has("givenName") ? jSONObject.optString("givenName") : null, jSONObject.has("familyName") ? jSONObject.optString("familyName") : null, parse, Long.valueOf(parseLong), jSONObject.getString("obfuscatedIdentifier"), hashSet);
+        zab.zah = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
+        return zab;
+    }
+
+    public static GoogleSignInAccount zab(String str, String str2, String str3, String str4, String str5, String str6, Uri uri, Long l, String str7, Set set) {
+        return new GoogleSignInAccount(str, str2, str3, str4, uri, null, l.longValue(), Preconditions.checkNotEmpty(str7), new ArrayList((Collection) Preconditions.checkNotNull(set)), str5, str6);
     }
 
     private static GoogleSignInAccount zae(Account account, Set set) {
-        return zaa(null, null, account.name, null, null, null, null, 0L, account.name, set);
+        return zab(null, null, account.name, null, null, null, null, 0L, account.name, set);
     }
 
     public boolean equals(Object obj) {
@@ -114,13 +111,13 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
         }
         if (obj instanceof GoogleSignInAccount) {
             GoogleSignInAccount googleSignInAccount = (GoogleSignInAccount) obj;
-            return googleSignInAccount.zak.equals(this.zak) && googleSignInAccount.getRequestedScopes().equals(getRequestedScopes());
+            return googleSignInAccount.zaj.equals(this.zaj) && googleSignInAccount.getRequestedScopes().equals(getRequestedScopes());
         }
         return false;
     }
 
     public Account getAccount() {
-        String str = this.zaf;
+        String str = this.zae;
         if (str == null) {
             return null;
         }
@@ -128,58 +125,58 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
     }
 
     public String getDisplayName() {
-        return this.zag;
-    }
-
-    public String getEmail() {
         return this.zaf;
     }
 
-    public String getFamilyName() {
-        return this.zam;
-    }
-
-    public String getGivenName() {
-        return this.zal;
-    }
-
-    public Set<Scope> getGrantedScopes() {
-        return new HashSet(this.zac);
-    }
-
-    public String getId() {
-        return this.zad;
-    }
-
-    public String getIdToken() {
+    public String getEmail() {
         return this.zae;
     }
 
+    public String getFamilyName() {
+        return this.zal;
+    }
+
+    public String getGivenName() {
+        return this.zak;
+    }
+
+    public Set<Scope> getGrantedScopes() {
+        return new HashSet(this.zab);
+    }
+
+    public String getId() {
+        return this.zac;
+    }
+
+    public String getIdToken() {
+        return this.zad;
+    }
+
     public Uri getPhotoUrl() {
-        return this.zah;
+        return this.zag;
     }
 
     public Set<Scope> getRequestedScopes() {
-        HashSet hashSet = new HashSet(this.zac);
-        hashSet.addAll(this.zan);
+        HashSet hashSet = new HashSet(this.zab);
+        hashSet.addAll(this.zam);
         return hashSet;
     }
 
     public String getServerAuthCode() {
-        return this.zai;
+        return this.zah;
     }
 
     public int hashCode() {
-        return ((this.zak.hashCode() + 527) * 31) + getRequestedScopes().hashCode();
+        return ((this.zaj.hashCode() + 527) * 31) + getRequestedScopes().hashCode();
     }
 
     public boolean isExpired() {
-        return zaa.currentTimeMillis() / 1000 >= this.zaj + (-300);
+        return zaa.currentTimeMillis() / 1000 >= this.zai + (-300);
     }
 
     public GoogleSignInAccount requestExtraScopes(Scope... scopeArr) {
         if (scopeArr != null) {
-            Collections.addAll(this.zan, scopeArr);
+            Collections.addAll(this.zam, scopeArr);
         }
         return this;
     }
@@ -187,23 +184,22 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeInt(parcel, 1, this.zab);
         SafeParcelWriter.writeString(parcel, 2, getId(), false);
         SafeParcelWriter.writeString(parcel, 3, getIdToken(), false);
         SafeParcelWriter.writeString(parcel, 4, getEmail(), false);
         SafeParcelWriter.writeString(parcel, 5, getDisplayName(), false);
         SafeParcelWriter.writeParcelable(parcel, 6, getPhotoUrl(), i, false);
         SafeParcelWriter.writeString(parcel, 7, getServerAuthCode(), false);
-        SafeParcelWriter.writeLong(parcel, 8, this.zaj);
-        SafeParcelWriter.writeString(parcel, 9, this.zak, false);
-        SafeParcelWriter.writeTypedList(parcel, 10, this.zac, false);
+        SafeParcelWriter.writeLong(parcel, 8, this.zai);
+        SafeParcelWriter.writeString(parcel, 9, this.zaj, false);
+        SafeParcelWriter.writeTypedList(parcel, 10, this.zab, false);
         SafeParcelWriter.writeString(parcel, 11, getGivenName(), false);
         SafeParcelWriter.writeString(parcel, 12, getFamilyName(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
     public final String zac() {
-        return this.zak;
+        return this.zaj;
     }
 
     public final String zad() {
@@ -234,18 +230,12 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
             if (getServerAuthCode() != null) {
                 jSONObject.put("serverAuthCode", getServerAuthCode());
             }
-            jSONObject.put("expirationTime", this.zaj);
-            jSONObject.put("obfuscatedIdentifier", this.zak);
+            jSONObject.put("expirationTime", this.zai);
+            jSONObject.put("obfuscatedIdentifier", this.zaj);
             JSONArray jSONArray = new JSONArray();
-            List list = this.zac;
+            List list = this.zab;
             Scope[] scopeArr = (Scope[]) list.toArray(new Scope[list.size()]);
-            Arrays.sort(scopeArr, new Comparator() { // from class: com.google.android.gms.auth.api.signin.zaa
-                @Override // java.util.Comparator
-                public final int compare(Object obj, Object obj2) {
-                    Parcelable.Creator<GoogleSignInAccount> creator = GoogleSignInAccount.CREATOR;
-                    return ((Scope) obj).getScopeUri().compareTo(((Scope) obj2).getScopeUri());
-                }
-            });
+            Arrays.sort(scopeArr, zaa.zaa);
             for (Scope scope : scopeArr) {
                 jSONArray.put(scope.getScopeUri());
             }

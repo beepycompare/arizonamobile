@@ -7,15 +7,16 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Process;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import com.google.android.vending.expansion.downloader.Helpers;
 import com.wardrumstudios.utils.WarDownloaderService;
 import com.wardrumstudios.utils.WarMedia;
 import java.io.File;
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class GTASAInternal extends WarMedia {
     private static final int LEGACY_TOTAL_MEMORY_MB = 256;
     private static final String TAG = "GTASAInternal";
@@ -37,15 +38,16 @@ public abstract class GTASAInternal extends WarMedia {
             vmVersion = System.getProperty("java.vm.version");
             System.out.println("vmVersion " + vmVersion);
             String str = Build.CPU_ABI;
-            System.out.println("Abi: " + str + " was loaded!");
-            if (Objects.equals(str, "arm64-v8a")) {
+            boolean is64Bit = Process.is64Bit();
+            System.out.println("Abi: " + str + ", supported ABIs: " + Arrays.toString(Build.SUPPORTED_ABIS) + ", is64BitProcess: " + is64Bit + " was loaded!");
+            if (is64Bit) {
                 System.loadLibrary("SCAnd");
             } else {
                 System.loadLibrary("ImmEmulatorJ");
             }
             System.loadLibrary("GTASA");
             System.loadLibrary("samp");
-            if (Objects.equals(str, "arm64-v8a")) {
+            if (is64Bit) {
                 System.loadLibrary("bass");
                 System.loadLibrary("bass_fx");
                 System.loadLibrary("bass_ssl");
@@ -58,6 +60,30 @@ public abstract class GTASAInternal extends WarMedia {
     @Override // com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, android.app.Activity
     public void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent) {
         super.onActivityResult(paramInt1, paramInt2, paramIntent);
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        try {
+            return super.dispatchKeyEvent(event);
+        } catch (NullPointerException e) {
+            if (this.isWarGamepadNullDeviceCrash(e, event)) {
+                Log.w(TAG, "Dropped key event without InputDevice to avoid WarGamepad crash: keyCode=" + event.getKeyCode() + ", action=" + event.getAction() + ", source=" + event.getSource(), e);
+                return true;
+            }
+            throw e;
+        }
+    }
+
+    private boolean isWarGamepadNullDeviceCrash(NullPointerException e, KeyEvent event) {
+        if (event != null && event.getDevice() == null) {
+            for (StackTraceElement stackTraceElement : e.getStackTrace()) {
+                if ("com.wardrumstudios.utils.WarGamepad".equals(stackTraceElement.getClassName())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override // com.wardrumstudios.utils.WarMedia
@@ -148,7 +174,7 @@ public abstract class GTASAInternal extends WarMedia {
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onCreate(Bundle paramBundle) {
         System.out.println("Build Type: release");
-        System.out.println("Version: v17.1.7");
+        System.out.println("Version: v17.2.0");
         this.HELLO_ID = 123324;
         this.appIntent = new Intent(this, GTASA.class);
         this.appTickerText = "GTA3 San Andreas";

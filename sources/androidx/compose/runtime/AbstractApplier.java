@@ -9,13 +9,13 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 /* compiled from: Applier.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010!\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\b'\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0005J\b\u0010\u0013\u001a\u00020\u0011H\u0016J\u0006\u0010\u0014\u001a\u00020\u0011J\b\u0010\u0015\u001a\u00020\u0011H$J\"\u0010\u0016\u001a\u00020\u0011*\b\u0012\u0004\u0012\u00028\u00000\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019H\u0004J*\u0010\u001b\u001a\u00020\u0011*\b\u0012\u0004\u0012\u00028\u00000\u00172\u0006\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019H\u0004R\u0013\u0010\u0003\u001a\u00028\u0000¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\t\u001a\b\u0012\u0004\u0012\u00028\u00000\nX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR&\u0010\r\u001a\u00028\u00002\u0006\u0010\f\u001a\u00028\u0000@TX\u0096\u000e¢\u0006\u0010\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\u0005¨\u0006\u001e"}, d2 = {"Landroidx/compose/runtime/AbstractApplier;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/Applier;", "root", "<init>", "(Ljava/lang/Object;)V", "getRoot", "()Ljava/lang/Object;", "Ljava/lang/Object;", "stack", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "value", "current", "getCurrent", "setCurrent", "down", "", "node", "up", "clear", "onClear", "remove", "", FirebaseAnalytics.Param.INDEX, "", "count", "move", "from", TypedValues.TransitionType.S_TO, "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010!\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\b'\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00028\u0000¢\u0006\u0004\b\u0004\u0010\u0005J\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0005J\b\u0010\u0013\u001a\u00020\u0011H\u0016J\u0006\u0010\u0014\u001a\u00020\u0011J\b\u0010\u0015\u001a\u00020\u0011H$J\"\u0010\u0016\u001a\u00020\u0011*\b\u0012\u0004\u0012\u00028\u00000\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019H\u0004J*\u0010\u001b\u001a\u00020\u0011*\b\u0012\u0004\u0012\u00028\u00000\u00172\u0006\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0019H\u0004R\u0013\u0010\u0003\u001a\u00028\u0000¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\t\u001a\b\u0012\u0004\u0012\u00028\u00000\nX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR&\u0010\r\u001a\u00028\u00002\u0006\u0010\f\u001a\u00028\u0000@TX\u0096\u000e¢\u0006\u0010\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\u0005¨\u0006\u001e"}, d2 = {"Landroidx/compose/runtime/AbstractApplier;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/Applier;", "root", "<init>", "(Ljava/lang/Object;)V", "getRoot", "()Ljava/lang/Object;", "Ljava/lang/Object;", "stack", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "value", "current", "getCurrent", "setCurrent", "down", "", "node", "up", "clear", "onClear", "remove", "", FirebaseAnalytics.Param.INDEX, "", "count", "move", "from", TypedValues.TransitionType.S_TO, "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class AbstractApplier<T> implements Applier<T> {
     public static final int $stable = 8;
     private T current;
     private final T root;
-    private final ArrayList<T> stack = Stack.m4026constructorimpl$default(null, 1, null);
+    private final ArrayList<T> stack = Stack.m4452constructorimpl$default(null, 1, null);
 
     protected abstract void onClear();
 
@@ -39,19 +39,19 @@ public abstract class AbstractApplier<T> implements Applier<T> {
 
     @Override // androidx.compose.runtime.Applier
     public void down(T t) {
-        Stack.m4036pushimpl(this.stack, getCurrent());
+        Stack.m4462pushimpl(this.stack, getCurrent());
         setCurrent(t);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.compose.runtime.Applier
     public void up() {
-        setCurrent(Stack.m4035popimpl(this.stack));
+        setCurrent(Stack.m4461popimpl(this.stack));
     }
 
     @Override // androidx.compose.runtime.Applier
     public final void clear() {
-        Stack.m4024clearimpl(this.stack);
+        Stack.m4450clearimpl(this.stack);
         setCurrent(this.root);
         onClear();
     }

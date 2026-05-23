@@ -10,12 +10,13 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.CoroutineExceptionHandlerKt;
 import org.reactivestreams.Publisher;
 /* compiled from: Await.kt */
-@Metadata(d1 = {"\u00000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001e\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a&\u0010\u0004\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0005\u001a\u0002H\u0001H\u0086@¢\u0006\u0002\u0010\u0006\u001a \u0010\u0007\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a,\u0010\b\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00010\nH\u0086@¢\u0006\u0002\u0010\u000b\u001a\u001e\u0010\f\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a\u001e\u0010\r\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a&\u0010\u000e\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0005\u001a\u0002H\u0001H\u0087@¢\u0006\u0002\u0010\u0006\u001a \u0010\u000f\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0087@¢\u0006\u0002\u0010\u0003\u001a,\u0010\u0010\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00010\nH\u0087@¢\u0006\u0002\u0010\u000b\u001a2\u0010\u0011\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0012\u001a\u00020\u00132\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u0001H\u0001H\u0082@¢\u0006\u0002\u0010\u0014\u001a\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002\u001a\u0018\u0010\u001b\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¨\u0006\u001c"}, d2 = {"awaitFirst", ExifInterface.GPS_DIRECTION_TRUE, "Lorg/reactivestreams/Publisher;", "(Lorg/reactivestreams/Publisher;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrDefault", "default", "(Lorg/reactivestreams/Publisher;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrNull", "awaitFirstOrElse", "defaultValue", "Lkotlin/Function0;", "(Lorg/reactivestreams/Publisher;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLast", "awaitSingle", "awaitSingleOrDefault", "awaitSingleOrNull", "awaitSingleOrElse", "awaitOne", UpdateActivity.UPDATE_MODE, "Lkotlinx/coroutines/reactive/Mode;", "(Lorg/reactivestreams/Publisher;Lkotlinx/coroutines/reactive/Mode;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "gotSignalInTerminalStateException", "", "context", "Lkotlin/coroutines/CoroutineContext;", "signalName", "", "moreThanOneValueProvidedException", "kotlinx-coroutines-reactive"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a\u001e\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a&\u0010\u0004\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0005\u001a\u0002H\u0001H\u0086@¢\u0006\u0002\u0010\u0006\u001a \u0010\u0007\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a,\u0010\b\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00010\nH\u0086@¢\u0006\u0002\u0010\u000b\u001a\u001e\u0010\f\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a\u001e\u0010\r\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a&\u0010\u000e\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0005\u001a\u0002H\u0001H\u0087@¢\u0006\u0002\u0010\u0006\u001a \u0010\u000f\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\u0087@¢\u0006\u0002\u0010\u0003\u001a,\u0010\u0010\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00010\nH\u0087@¢\u0006\u0002\u0010\u000b\u001a2\u0010\u0011\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u00022\u0006\u0010\u0012\u001a\u00020\u00132\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u0001H\u0001H\u0082@¢\u0006\u0002\u0010\u0014\u001a\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002\u001a\u0018\u0010\u001b\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0012\u001a\u00020\u0013H\u0002¨\u0006\u001c"}, d2 = {"awaitFirst", ExifInterface.GPS_DIRECTION_TRUE, "Lorg/reactivestreams/Publisher;", "(Lorg/reactivestreams/Publisher;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrDefault", "default", "(Lorg/reactivestreams/Publisher;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrNull", "awaitFirstOrElse", "defaultValue", "Lkotlin/Function0;", "(Lorg/reactivestreams/Publisher;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLast", "awaitSingle", "awaitSingleOrDefault", "awaitSingleOrNull", "awaitSingleOrElse", "awaitOne", UpdateActivity.UPDATE_MODE, "Lkotlinx/coroutines/reactive/Mode;", "(Lorg/reactivestreams/Publisher;Lkotlinx/coroutines/reactive/Mode;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "gotSignalInTerminalStateException", "", "context", "Lkotlin/coroutines/CoroutineContext;", "signalName", "", "moreThanOneValueProvidedException", "kotlinx-coroutines-reactive"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class AwaitKt {
     public static final <T> Object awaitFirst(Publisher<T> publisher, Continuation<? super T> continuation) {
@@ -31,9 +32,9 @@ public final class AwaitKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0054 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x005e A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -51,7 +52,8 @@ public final class AwaitKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Mode mode = Mode.FIRST_OR_DEFAULT;
-                    awaitKt$awaitFirstOrElse$12.L$0 = function0;
+                    awaitKt$awaitFirstOrElse$12.L$0 = SpillingKt.nullOutSpilledVariable(publisher);
+                    awaitKt$awaitFirstOrElse$12.L$1 = function0;
                     awaitKt$awaitFirstOrElse$12.label = 1;
                     obj = awaitOne$default(publisher, mode, null, awaitKt$awaitFirstOrElse$12, 2, null);
                     if (obj == coroutine_suspended) {
@@ -60,7 +62,8 @@ public final class AwaitKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    function0 = (Function0) awaitKt$awaitFirstOrElse$12.L$0;
+                    function0 = (Function0) awaitKt$awaitFirstOrElse$12.L$1;
+                    Publisher publisher2 = (Publisher) awaitKt$awaitFirstOrElse$12.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return obj != null ? function0.invoke() : obj;
@@ -86,9 +89,9 @@ public final class AwaitKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0054 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x005e A[RETURN] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Deprecated without a replacement due to its name incorrectly conveying the behavior. Please consider using awaitFirstOrElse().")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -107,7 +110,8 @@ public final class AwaitKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Mode mode = Mode.SINGLE_OR_DEFAULT;
-                    awaitKt$awaitSingleOrElse$12.L$0 = function0;
+                    awaitKt$awaitSingleOrElse$12.L$0 = SpillingKt.nullOutSpilledVariable(publisher);
+                    awaitKt$awaitSingleOrElse$12.L$1 = function0;
                     awaitKt$awaitSingleOrElse$12.label = 1;
                     obj = awaitOne$default(publisher, mode, null, awaitKt$awaitSingleOrElse$12, 2, null);
                     if (obj == coroutine_suspended) {
@@ -116,7 +120,8 @@ public final class AwaitKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    function0 = (Function0) awaitKt$awaitSingleOrElse$12.L$0;
+                    function0 = (Function0) awaitKt$awaitSingleOrElse$12.L$1;
+                    Publisher publisher2 = (Publisher) awaitKt$awaitSingleOrElse$12.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return obj != null ? function0.invoke() : obj;

@@ -94,6 +94,14 @@ public final class StringUtils {
         return str == null ? str2 : str;
     }
 
+    public static boolean isNotNullOrEmpty(String str) {
+        return !isNullOrEmpty(str);
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+
     public static byte[] stringToBytesForProtobuf(String str) {
         return str == null ? new byte[0] : str.getBytes();
     }

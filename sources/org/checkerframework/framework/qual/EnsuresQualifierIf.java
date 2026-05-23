@@ -12,14 +12,14 @@ import java.lang.annotation.Target;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresQualifierIf {
 
     @Target({ElementType.METHOD})
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresQualifierIf[] value();
     }

@@ -1,19 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.PlatformIdentifiers;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
-import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class L5 extends BaseRequestConfig.DataSource {
+public abstract class L5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0256fm f676a;
-    public final SdkEnvironmentProvider b;
+    public static final Map f640a;
 
-    public L5(C0256fm c0256fm, SdkEnvironmentProvider sdkEnvironmentProvider, PlatformIdentifiers platformIdentifiers, Object obj) {
-        super(new SdkIdentifiers(c0256fm.c(), c0256fm.a(), c0256fm.b()), sdkEnvironmentProvider, platformIdentifiers, obj);
-        this.f676a = c0256fm;
-        this.b = sdkEnvironmentProvider;
+    static {
+        HashMap hashMap = new HashMap();
+        hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
+        hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
+        hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
+        f640a = Collections.unmodifiableMap(hashMap);
     }
 }

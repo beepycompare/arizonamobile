@@ -1,7 +1,7 @@
 package com.google.android.gms.common.internal;
 
 import android.content.Context;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class TelemetryLogging {
     private TelemetryLogging() {
@@ -12,6 +12,6 @@ public class TelemetryLogging {
     }
 
     public static TelemetryLoggingClient getClient(Context context, TelemetryLoggingOptions telemetryLoggingOptions) {
-        return new com.google.android.gms.common.internal.service.zao(context, telemetryLoggingOptions);
+        return new com.google.android.gms.common.internal.service.zat(context, telemetryLoggingOptions);
     }
 }

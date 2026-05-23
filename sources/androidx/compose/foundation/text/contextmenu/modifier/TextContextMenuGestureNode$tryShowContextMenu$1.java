@@ -14,14 +14,12 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextContextMenuGesturesModifier.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuGestureNode$tryShowContextMenu$1", f = "TextContextMenuGesturesModifier.kt", i = {}, l = {107, 108}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextContextMenuGestureNode$tryShowContextMenu$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-localClickOffset$0  reason: not valid java name */
-    final /* synthetic */ long f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0;
     final /* synthetic */ TextContextMenuGestureNode.ClickTextContextMenuDataProvider $dataProvider;
+    final /* synthetic */ long $localClickOffset;
     final /* synthetic */ TextContextMenuProvider $provider;
     int label;
     final /* synthetic */ TextContextMenuGestureNode this$0;
@@ -31,14 +29,14 @@ public final class TextContextMenuGestureNode$tryShowContextMenu$1 extends Suspe
     public TextContextMenuGestureNode$tryShowContextMenu$1(TextContextMenuGestureNode textContextMenuGestureNode, long j, TextContextMenuProvider textContextMenuProvider, TextContextMenuGestureNode.ClickTextContextMenuDataProvider clickTextContextMenuDataProvider, Continuation<? super TextContextMenuGestureNode$tryShowContextMenu$1> continuation) {
         super(2, continuation);
         this.this$0 = textContextMenuGestureNode;
-        this.f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0 = j;
+        this.$localClickOffset = j;
         this.$provider = textContextMenuProvider;
         this.$dataProvider = clickTextContextMenuDataProvider;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new TextContextMenuGestureNode$tryShowContextMenu$1(this.this$0, this.f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0, this.$provider, this.$dataProvider, continuation);
+        return new TextContextMenuGestureNode$tryShowContextMenu$1(this.this$0, this.$localClickOffset, this.$provider, this.$dataProvider, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -67,7 +65,7 @@ public final class TextContextMenuGestureNode$tryShowContextMenu$1 extends Suspe
             ResultKt.throwOnFailure(obj);
             function2 = this.this$0.onPreShowContextMenu;
             if (function2 != null) {
-                Offset m4516boximpl = Offset.m4516boximpl(this.f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0);
+                Offset m5092boximpl = Offset.m5092boximpl(this.$localClickOffset);
                 this.label = 1;
             }
         } else if (i != 1) {

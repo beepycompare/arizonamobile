@@ -1,5 +1,5 @@
 package com.google.android.datatransport.runtime.firebase.transport;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StorageMetrics {
     private static final StorageMetrics DEFAULT_INSTANCE = new Builder().build();
     private final long current_cache_size_bytes_;
@@ -26,7 +26,7 @@ public final class StorageMetrics {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long current_cache_size_bytes_ = 0;
         private long max_cache_size_bytes_ = 0;

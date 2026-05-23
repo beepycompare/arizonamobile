@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: LazyStaggeredGridSemantics.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyStaggeredGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"rememberLazyStaggeredGridSemanticState", "Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;", "reverseScrolling", "", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/lazy/layout/LazyLayoutSemanticState;", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridSemanticsKt {
     public static final LazyLayoutSemanticState rememberLazyStaggeredGridSemanticState(final LazyStaggeredGridState lazyStaggeredGridState, boolean z, Composer composer, int i) {
@@ -48,16 +48,16 @@ public final class LazyStaggeredGridSemanticsKt {
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
                 public int getViewport() {
-                    long mo1034getViewportSizeYbymL2g;
+                    long mo1287getViewportSizeYbymL2g;
                     Orientation orientation = LazyStaggeredGridState.this.getLayoutInfo().getOrientation();
                     Orientation orientation2 = Orientation.Vertical;
                     LazyStaggeredGridState lazyStaggeredGridState2 = LazyStaggeredGridState.this;
                     if (orientation == orientation2) {
-                        mo1034getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1034getViewportSizeYbymL2g() & 4294967295L;
+                        mo1287getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1287getViewportSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo1034getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1034getViewportSizeYbymL2g() >> 32;
+                        mo1287getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1287getViewportSizeYbymL2g() >> 32;
                     }
-                    return (int) mo1034getViewportSizeYbymL2g;
+                    return (int) mo1287getViewportSizeYbymL2g;
                 }
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

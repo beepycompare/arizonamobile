@@ -13,7 +13,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
-import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -803,7 +802,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                     public final void run() {
                         PotionsScreen.onBackendMessageHandled$lambda$0(PotionsScreen.this);
                     }
-                }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+                }, 2000L);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
                 if (selectColorAdapter == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("colorsAdapter");

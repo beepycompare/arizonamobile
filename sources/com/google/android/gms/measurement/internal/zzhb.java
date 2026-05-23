@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import com.google.android.gms.common.internal.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhb extends BroadcastReceiver {
     private final zzpg zza;
@@ -24,44 +24,44 @@ public final class zzhb extends BroadcastReceiver {
         zzpg zzpgVar = this.zza;
         zzpgVar.zzu();
         String action = intent.getAction();
-        zzpgVar.zzaV().zzk().zzb("NetworkBroadcastReceiver received action", action);
+        zzpgVar.zzaW().zzk().zzb("NetworkBroadcastReceiver received action", action);
         if (!"android.net.conn.CONNECTIVITY_CHANGE".equals(action)) {
-            zzpgVar.zzaV().zze().zzb("NetworkBroadcastReceiver received unknown action", action);
+            zzpgVar.zzaW().zze().zzb("NetworkBroadcastReceiver received unknown action", action);
             return;
         }
         boolean zzb = zzpgVar.zzi().zzb();
         if (this.zzc != zzb) {
             this.zzc = zzb;
-            zzpgVar.zzaW().zzj(new zzha(this, zzb));
+            zzpgVar.zzaX().zzj(new zzha(this, zzb));
         }
     }
 
     public final void zza() {
         zzpg zzpgVar = this.zza;
         zzpgVar.zzu();
-        zzpgVar.zzaW().zzg();
+        zzpgVar.zzaX().zzg();
         if (this.zzb) {
             return;
         }
-        zzpgVar.zzaY().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        zzpgVar.zzaZ().registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
         this.zzc = zzpgVar.zzi().zzb();
-        zzpgVar.zzaV().zzk().zzb("Registering connectivity change receiver. Network connected", Boolean.valueOf(this.zzc));
+        zzpgVar.zzaW().zzk().zzb("Registering connectivity change receiver. Network connected", Boolean.valueOf(this.zzc));
         this.zzb = true;
     }
 
     public final void zzb() {
         zzpg zzpgVar = this.zza;
         zzpgVar.zzu();
-        zzpgVar.zzaW().zzg();
-        zzpgVar.zzaW().zzg();
+        zzpgVar.zzaX().zzg();
+        zzpgVar.zzaX().zzg();
         if (this.zzb) {
-            zzpgVar.zzaV().zzk().zza("Unregistering connectivity change receiver");
+            zzpgVar.zzaW().zzk().zza("Unregistering connectivity change receiver");
             this.zzb = false;
             this.zzc = false;
             try {
-                zzpgVar.zzaY().unregisterReceiver(this);
+                zzpgVar.zzaZ().unregisterReceiver(this);
             } catch (IllegalArgumentException e) {
-                this.zza.zzaV().zzb().zzb("Failed to unregister the network broadcast receiver", e);
+                this.zza.zzaW().zzb().zzb("Failed to unregister the network broadcast receiver", e);
             }
         }
     }

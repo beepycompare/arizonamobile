@@ -3,7 +3,7 @@ package androidx.core.view;
 import android.view.ViewGroup;
 import androidx.annotation.ReplaceWith;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class MarginLayoutParamsCompat {
     @ReplaceWith(expression = "lp.getMarginStart()")
     @Deprecated

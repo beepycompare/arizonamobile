@@ -34,8 +34,17 @@ public final class MediaStoreUtil {
         return MediaStore.openAssetFileDescriptor(contentResolver, uri, "r", null);
     }
 
+    @Deprecated
     public static boolean isAndroidPickerUri(Uri uri) {
-        return isMediaStoreUri(uri) && uri.getPathSegments().contains("picker");
+        if (isMediaStoreUri(uri)) {
+            for (String str : uri.getPathSegments()) {
+                if (str != null && str.startsWith("picker")) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
     }
 
     private static boolean isVideoUri(Uri uri) {

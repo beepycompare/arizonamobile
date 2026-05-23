@@ -22,16 +22,16 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface GraphObject {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Factory {
         private static final HashSet<Class<?>> verifiedGraphObjectClasses = new HashSet<>();
         private static final SimpleDateFormat[] dateFormats = {new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.US), new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US), new SimpleDateFormat("yyyy-MM-dd", Locale.US)};
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         public static final class GraphObjectListImpl<T> extends AbstractList<T> implements GraphObjectList<T> {
             private final Class<?> itemType;
             private final JSONArray state;
@@ -146,7 +146,7 @@ public interface GraphObject {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         public static final class GraphObjectProxy extends ProxyBase<JSONObject> {
             private static final String CASTTOMAP_METHOD = "asMap";
             private static final String CAST_METHOD = "cast";
@@ -328,7 +328,7 @@ public interface GraphObject {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         public static abstract class ProxyBase<STATE> implements InvocationHandler {
             private static final String EQUALS_METHOD = "equals";
             private static final String TOSTRING_METHOD = "toString";

@@ -35,37 +35,37 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4782unboximpl = ((Color) consume).m4782unboximpl();
-        IconButtonColors m2131defaultIconButtonColors4WTKRHQ$material3 = m2131defaultIconButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m4782unboximpl);
-        if (!Color.m4773equalsimpl0(m2131defaultIconButtonColors4WTKRHQ$material3.m2127getContentColor0d7_KjU(), m4782unboximpl)) {
-            m2131defaultIconButtonColors4WTKRHQ$material3 = IconButtonColors.m2122copyjRlVdoo$default(m2131defaultIconButtonColors4WTKRHQ$material3, 0L, m4782unboximpl, 0L, Color.m4771copywmQWz5c$default(m4782unboximpl, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 5, null);
+        long m5358unboximpl = ((Color) consume).m5358unboximpl();
+        IconButtonColors m2576defaultIconButtonColors4WTKRHQ$material3 = m2576defaultIconButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m5358unboximpl);
+        if (!Color.m5349equalsimpl0(m2576defaultIconButtonColors4WTKRHQ$material3.m2572getContentColor0d7_KjU(), m5358unboximpl)) {
+            m2576defaultIconButtonColors4WTKRHQ$material3 = IconButtonColors.m2567copyjRlVdoo$default(m2576defaultIconButtonColors4WTKRHQ$material3, 0L, m5358unboximpl, 0L, Color.m5347copywmQWz5c$default(m5358unboximpl, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 5, null);
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2131defaultIconButtonColors4WTKRHQ$material3;
+        return m2576defaultIconButtonColors4WTKRHQ$material3;
     }
 
     /* renamed from: iconButtonColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2139iconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2584iconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         long j5;
         long j6;
         long j7;
         ComposerKt.sourceInformationMarkerStart(composer, -1639168605, "C(iconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)73@3133L7,78@3368L11,79@3435L7:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
         if ((i2 & 2) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            j5 = ((Color) consume).m4782unboximpl();
+            j5 = ((Color) consume).m5358unboximpl();
         } else {
             j5 = j2;
         }
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
             long j8 = j5;
-            j7 = Color.m4771copywmQWz5c$default(j8, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j7 = Color.m5347copywmQWz5c$default(j8, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j6 = j8;
         } else {
             j6 = j5;
@@ -78,19 +78,19 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        IconButtonColors m2125copyjRlVdoo = m2131defaultIconButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j6, m4808getUnspecified0d7_KjU2, j7);
+        IconButtonColors m2570copyjRlVdoo = m2576defaultIconButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m5358unboximpl()).m2570copyjRlVdoo(m5384getUnspecified0d7_KjU, j6, m5384getUnspecified0d7_KjU2, j7);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     /* renamed from: defaultIconButtonColors-4WTKRHQ$material3  reason: not valid java name */
-    public final IconButtonColors m2131defaultIconButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
+    public final IconButtonColors m2576defaultIconButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
         IconButtonColors defaultIconButtonColorsCached$material3 = colorScheme.getDefaultIconButtonColorsCached$material3();
         if (defaultIconButtonColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), j, Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(j, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), j, Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(j, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultIconButtonColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -111,36 +111,36 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: iconButtonVibrantColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2140iconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2585iconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         long j5;
         long j6;
         ComposerKt.sourceInformationMarkerStart(composer, 1036440437, "C(iconButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)132@5742L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
-            long j7 = m4808getUnspecified0d7_KjU2;
-            j6 = Color.m4771copywmQWz5c$default(j7, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            long j7 = m5384getUnspecified0d7_KjU2;
+            j6 = Color.m5347copywmQWz5c$default(j7, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j5 = j7;
         } else {
-            j5 = m4808getUnspecified0d7_KjU2;
+            j5 = m5384getUnspecified0d7_KjU2;
             j6 = j4;
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1036440437, i, -1, "androidx.compose.material3.IconButtonDefaults.iconButtonVibrantColors (IconButtonDefaults.kt:132)");
         }
-        IconButtonColors m2125copyjRlVdoo = defaultIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU3, j6);
+        IconButtonColors m2570copyjRlVdoo = defaultIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2570copyjRlVdoo(m5384getUnspecified0d7_KjU, j5, m5384getUnspecified0d7_KjU3, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     public final IconButtonColors defaultIconButtonVibrantColors$material3(ColorScheme colorScheme) {
         IconButtonColors defaultIconButtonVibrantColorsCached$material3 = colorScheme.getDefaultIconButtonVibrantColorsCached$material3();
         if (defaultIconButtonVibrantColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getColor()), Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getDisabledColor()), StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getColor()), Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getDisabledColor()), StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultIconButtonVibrantColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -156,74 +156,74 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4782unboximpl = ((Color) consume).m4782unboximpl();
-        IconToggleButtonColors m2132defaultIconToggleButtonColors4WTKRHQ$material3 = m2132defaultIconToggleButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m4782unboximpl);
-        if (Color.m4773equalsimpl0(m2132defaultIconToggleButtonColors4WTKRHQ$material3.m2167getContentColor0d7_KjU(), m4782unboximpl)) {
+        long m5358unboximpl = ((Color) consume).m5358unboximpl();
+        IconToggleButtonColors m2577defaultIconToggleButtonColors4WTKRHQ$material3 = m2577defaultIconToggleButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m5358unboximpl);
+        if (Color.m5349equalsimpl0(m2577defaultIconToggleButtonColors4WTKRHQ$material3.m2612getContentColor0d7_KjU(), m5358unboximpl)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
             composer.endReplaceGroup();
-            return m2132defaultIconToggleButtonColors4WTKRHQ$material3;
+            return m2577defaultIconToggleButtonColors4WTKRHQ$material3;
         }
-        IconToggleButtonColors m2162copytNS2XkQ$default = IconToggleButtonColors.m2162copytNS2XkQ$default(m2132defaultIconToggleButtonColors4WTKRHQ$material3, 0L, m4782unboximpl, 0L, Color.m4771copywmQWz5c$default(m4782unboximpl, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 53, null);
+        IconToggleButtonColors m2607copytNS2XkQ$default = IconToggleButtonColors.m2607copytNS2XkQ$default(m2577defaultIconToggleButtonColors4WTKRHQ$material3, 0L, m5358unboximpl, 0L, Color.m5347copywmQWz5c$default(m5358unboximpl, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 53, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m2162copytNS2XkQ$default;
+        return m2607copytNS2XkQ$default;
     }
 
     /* renamed from: iconToggleButtonColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2141iconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2586iconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         long j8;
         long j9;
         long j10;
         ComposerKt.sourceInformationMarkerStart(composer, 1402082449, "C(iconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)196@8713L7,203@9068L11,204@9141L7:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
         if ((i2 & 2) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            j7 = ((Color) consume).m4782unboximpl();
+            j7 = ((Color) consume).m5358unboximpl();
         } else {
             j7 = j2;
         }
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
             long j11 = j7;
-            j9 = Color.m4771copywmQWz5c$default(j11, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j9 = Color.m5347copywmQWz5c$default(j11, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j8 = j11;
         } else {
             j8 = j7;
             j9 = j4;
         }
-        long m4808getUnspecified0d7_KjU3 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m4808getUnspecified0d7_KjU4 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m5384getUnspecified0d7_KjU4 = (i2 & 32) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
-            j10 = m4808getUnspecified0d7_KjU;
+            j10 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(1402082449, i, -1, "androidx.compose.material3.IconButtonDefaults.iconToggleButtonColors (IconButtonDefaults.kt:203)");
         } else {
-            j10 = m4808getUnspecified0d7_KjU;
+            j10 = m5384getUnspecified0d7_KjU;
         }
         ColorScheme colorScheme = MaterialTheme.INSTANCE.getColorScheme(composer, 6);
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
         long j12 = j10;
-        IconToggleButtonColors m2163copytNS2XkQ = m2132defaultIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2163copytNS2XkQ(j12, j8, m4808getUnspecified0d7_KjU2, j9, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4);
+        IconToggleButtonColors m2608copytNS2XkQ = m2577defaultIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m5358unboximpl()).m2608copytNS2XkQ(j12, j8, m5384getUnspecified0d7_KjU2, j9, m5384getUnspecified0d7_KjU3, m5384getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     /* renamed from: defaultIconToggleButtonColors-4WTKRHQ$material3  reason: not valid java name */
-    public final IconToggleButtonColors m2132defaultIconToggleButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
+    public final IconToggleButtonColors m2577defaultIconToggleButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
         IconToggleButtonColors defaultIconToggleButtonColorsCached$material3 = colorScheme.getDefaultIconToggleButtonColorsCached$material3();
         if (defaultIconToggleButtonColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), j, Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(j, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getSelectedColor()), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), j, Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(j, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getSelectedColor()), null);
             colorScheme.setDefaultIconToggleButtonColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -244,42 +244,42 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: iconToggleButtonVibrantColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2142iconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2587iconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         long j8;
         long j9;
         ComposerKt.sourceInformationMarkerStart(composer, -1027328773, "C(iconToggleButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)267@12180L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
-            long j10 = m4808getUnspecified0d7_KjU2;
-            j8 = Color.m4771copywmQWz5c$default(j10, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            long j10 = m5384getUnspecified0d7_KjU2;
+            j8 = Color.m5347copywmQWz5c$default(j10, StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j7 = j10;
         } else {
-            j7 = m4808getUnspecified0d7_KjU2;
+            j7 = m5384getUnspecified0d7_KjU2;
             j8 = j4;
         }
-        long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m4808getUnspecified0d7_KjU5 = (i2 & 32) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j6;
+        long m5384getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m5384getUnspecified0d7_KjU5 = (i2 & 32) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j6;
         if (ComposerKt.isTraceInProgress()) {
-            j9 = m4808getUnspecified0d7_KjU;
+            j9 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-1027328773, i, -1, "androidx.compose.material3.IconButtonDefaults.iconToggleButtonVibrantColors (IconButtonDefaults.kt:267)");
         } else {
-            j9 = m4808getUnspecified0d7_KjU;
+            j9 = m5384getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = defaultIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j9, j7, m4808getUnspecified0d7_KjU3, j8, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5);
+        IconToggleButtonColors m2608copytNS2XkQ = defaultIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2608copytNS2XkQ(j9, j7, m5384getUnspecified0d7_KjU3, j8, m5384getUnspecified0d7_KjU4, m5384getUnspecified0d7_KjU5);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     public final IconToggleButtonColors defaultIconToggleButtonVibrantColors$material3(ColorScheme colorScheme) {
         IconToggleButtonColors defaultIconToggleButtonVibrantColorsCached$material3 = colorScheme.getDefaultIconToggleButtonVibrantColorsCached$material3();
         if (defaultIconToggleButtonVibrantColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getUnselectedColor()), Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getDisabledColor()), StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getSelectedColor()), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getUnselectedColor()), Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getDisabledColor()), StandardIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, StandardIconButtonTokens.INSTANCE.getSelectedColor()), null);
             colorScheme.setDefaultIconToggleButtonVibrantColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -300,30 +300,30 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: filledIconButtonColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2135filledIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2580filledIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -245481051, "C(filledIconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)313@14404L31,317@14601L11:IconButtonDefaults.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            j = Color.Companion.m4808getUnspecified0d7_KjU();
+            j = Color.Companion.m5384getUnspecified0d7_KjU();
         }
         long j5 = j;
-        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(j5, composer, i & 14) : j2;
-        long m4808getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
+        long m2347contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(j5, composer, i & 14) : j2;
+        long m5384getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-245481051, i, -1, "androidx.compose.material3.IconButtonDefaults.filledIconButtonColors (IconButtonDefaults.kt:317)");
         }
-        IconButtonColors m2125copyjRlVdoo = getDefaultFilledIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(j5, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2);
+        IconButtonColors m2570copyjRlVdoo = getDefaultFilledIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2570copyjRlVdoo(j5, m2347contentColorForek8zF_U, m5384getUnspecified0d7_KjU, m5384getUnspecified0d7_KjU2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     public final IconButtonColors getDefaultFilledIconButtonColors$material3(ColorScheme colorScheme) {
         IconButtonColors defaultFilledIconButtonColorsCached$material3 = colorScheme.getDefaultFilledIconButtonColorsCached$material3();
         if (defaultFilledIconButtonColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledColor()), FilledIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledColor()), FilledIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultFilledIconButtonColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -344,33 +344,33 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: filledIconToggleButtonColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2136filledIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2581filledIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         ComposerKt.sourceInformationMarkerStart(composer, 1473292947, "C(filledIconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)368@17217L38,370@17311L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
-        long m4808getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m1902contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU5, composer, (i >> 12) & 14) : j6;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j4;
+        long m5384getUnspecified0d7_KjU5 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m2347contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(m5384getUnspecified0d7_KjU5, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
-            j7 = m4808getUnspecified0d7_KjU;
+            j7 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(1473292947, i, -1, "androidx.compose.material3.IconButtonDefaults.filledIconToggleButtonColors (IconButtonDefaults.kt:370)");
         } else {
-            j7 = m4808getUnspecified0d7_KjU;
+            j7 = m5384getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j7, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m4808getUnspecified0d7_KjU5, m1902contentColorForek8zF_U);
+        IconToggleButtonColors m2608copytNS2XkQ = getDefaultFilledIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2608copytNS2XkQ(j7, m5384getUnspecified0d7_KjU2, m5384getUnspecified0d7_KjU3, m5384getUnspecified0d7_KjU4, m5384getUnspecified0d7_KjU5, m2347contentColorForek8zF_U);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     public final IconToggleButtonColors getDefaultFilledIconToggleButtonColors$material3(ColorScheme colorScheme) {
         IconToggleButtonColors defaultFilledIconToggleButtonColorsCached$material3 = colorScheme.getDefaultFilledIconToggleButtonColorsCached$material3();
         if (defaultFilledIconToggleButtonColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getUnselectedColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledColor()), FilledIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getSelectedColor()), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getUnselectedColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getDisabledColor()), FilledIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledIconButtonTokens.INSTANCE.getSelectedColor()), null);
             colorScheme.setDefaultFilledIconToggleButtonColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -391,30 +391,30 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: filledTonalIconButtonColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2137filledTonalIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2582filledTonalIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 562762851, "C(filledTonalIconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)421@19956L31,425@20153L11:IconButtonDefaults.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            j = Color.Companion.m4808getUnspecified0d7_KjU();
+            j = Color.Companion.m5384getUnspecified0d7_KjU();
         }
         long j5 = j;
-        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(j5, composer, i & 14) : j2;
-        long m4808getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
+        long m2347contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(j5, composer, i & 14) : j2;
+        long m5384getUnspecified0d7_KjU = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 8) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(562762851, i, -1, "androidx.compose.material3.IconButtonDefaults.filledTonalIconButtonColors (IconButtonDefaults.kt:425)");
         }
-        IconButtonColors m2125copyjRlVdoo = getDefaultFilledTonalIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(j5, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2);
+        IconButtonColors m2570copyjRlVdoo = getDefaultFilledTonalIconButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2570copyjRlVdoo(j5, m2347contentColorForek8zF_U, m5384getUnspecified0d7_KjU, m5384getUnspecified0d7_KjU2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     public final IconButtonColors getDefaultFilledTonalIconButtonColors$material3(ColorScheme colorScheme) {
         IconButtonColors defaultFilledTonalIconButtonColorsCached$material3 = colorScheme.getDefaultFilledTonalIconButtonColorsCached$material3();
         if (defaultFilledTonalIconButtonColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultFilledTonalIconButtonColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -435,33 +435,33 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: filledTonalIconToggleButtonColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2138filledTonalIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2583filledTonalIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         ComposerKt.sourceInformationMarkerStart(composer, 2130748241, "C(filledTonalIconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)470@22481L31,474@22725L38,476@22819L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m1902contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
-        long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m1902contentColorForek8zF_U2 = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m2347contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(m5384getUnspecified0d7_KjU, composer, i & 14) : j2;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 8) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j4;
+        long m5384getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m2347contentColorForek8zF_U2 = (i2 & 32) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(m5384getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
-            j7 = m4808getUnspecified0d7_KjU;
+            j7 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(2130748241, i, -1, "androidx.compose.material3.IconButtonDefaults.filledTonalIconToggleButtonColors (IconButtonDefaults.kt:476)");
         } else {
-            j7 = m4808getUnspecified0d7_KjU;
+            j7 = m5384getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = getDefaultFilledTonalIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j7, m1902contentColorForek8zF_U, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U2);
+        IconToggleButtonColors m2608copytNS2XkQ = getDefaultFilledTonalIconToggleButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2608copytNS2XkQ(j7, m2347contentColorForek8zF_U, m5384getUnspecified0d7_KjU2, m5384getUnspecified0d7_KjU3, m5384getUnspecified0d7_KjU4, m2347contentColorForek8zF_U2);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     public final IconToggleButtonColors getDefaultFilledTonalIconToggleButtonColors$material3(ColorScheme colorScheme) {
         IconToggleButtonColors defaultFilledTonalIconToggleButtonColorsCached$material3 = colorScheme.getDefaultFilledTonalIconToggleButtonColorsCached$material3();
         if (defaultFilledTonalIconToggleButtonColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getUnselectedColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getSelectedColor()), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getUnselectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getUnselectedColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getDisabledColor()), FilledTonalIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, FilledTonalIconButtonTokens.INSTANCE.getSelectedColor()), null);
             colorScheme.setDefaultFilledTonalIconToggleButtonColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -477,42 +477,42 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4782unboximpl = ((Color) consume).m4782unboximpl();
-        IconButtonColors m2133defaultOutlinedIconButtonColors4WTKRHQ$material3 = m2133defaultOutlinedIconButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m4782unboximpl);
-        if (Color.m4773equalsimpl0(m2133defaultOutlinedIconButtonColors4WTKRHQ$material3.m2127getContentColor0d7_KjU(), m4782unboximpl)) {
+        long m5358unboximpl = ((Color) consume).m5358unboximpl();
+        IconButtonColors m2578defaultOutlinedIconButtonColors4WTKRHQ$material3 = m2578defaultOutlinedIconButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m5358unboximpl);
+        if (Color.m5349equalsimpl0(m2578defaultOutlinedIconButtonColors4WTKRHQ$material3.m2572getContentColor0d7_KjU(), m5358unboximpl)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
             composer.endReplaceGroup();
-            return m2133defaultOutlinedIconButtonColors4WTKRHQ$material3;
+            return m2578defaultOutlinedIconButtonColors4WTKRHQ$material3;
         }
-        IconButtonColors m2122copyjRlVdoo$default = IconButtonColors.m2122copyjRlVdoo$default(m2133defaultOutlinedIconButtonColors4WTKRHQ$material3, 0L, m4782unboximpl, 0L, Color.m4771copywmQWz5c$default(m4782unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 5, null);
+        IconButtonColors m2567copyjRlVdoo$default = IconButtonColors.m2567copyjRlVdoo$default(m2578defaultOutlinedIconButtonColors4WTKRHQ$material3, 0L, m5358unboximpl, 0L, Color.m5347copywmQWz5c$default(m5358unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 5, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m2122copyjRlVdoo$default;
+        return m2567copyjRlVdoo$default;
     }
 
     /* renamed from: outlinedIconButtonColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2143outlinedIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2588outlinedIconButtonColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         long j5;
         long j6;
         long j7;
         ComposerKt.sourceInformationMarkerStart(composer, -1335916251, "C(outlinedIconButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)542@26100L7,547@26335L11,548@26410L7:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
         if ((i2 & 2) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            j5 = ((Color) consume).m4782unboximpl();
+            j5 = ((Color) consume).m5358unboximpl();
         } else {
             j5 = j2;
         }
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
             long j8 = j5;
-            j7 = Color.m4771copywmQWz5c$default(j8, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j7 = Color.m5347copywmQWz5c$default(j8, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j6 = j8;
         } else {
             j6 = j5;
@@ -525,19 +525,19 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        IconButtonColors m2125copyjRlVdoo = m2133defaultOutlinedIconButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j6, m4808getUnspecified0d7_KjU2, j7);
+        IconButtonColors m2570copyjRlVdoo = m2578defaultOutlinedIconButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m5358unboximpl()).m2570copyjRlVdoo(m5384getUnspecified0d7_KjU, j6, m5384getUnspecified0d7_KjU2, j7);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     /* renamed from: defaultOutlinedIconButtonColors-4WTKRHQ$material3  reason: not valid java name */
-    public final IconButtonColors m2133defaultOutlinedIconButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
+    public final IconButtonColors m2578defaultOutlinedIconButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
         IconButtonColors defaultOutlinedIconButtonColorsCached$material3 = colorScheme.getDefaultOutlinedIconButtonColorsCached$material3();
         if (defaultOutlinedIconButtonColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), j, Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(j, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), j, Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(j, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultOutlinedIconButtonColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -558,36 +558,36 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: outlinedIconButtonVibrantColors-ro_MJ88  reason: not valid java name */
-    public final IconButtonColors m2144outlinedIconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final IconButtonColors m2589outlinedIconButtonVibrantColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         long j5;
         long j6;
         ComposerKt.sourceInformationMarkerStart(composer, -278201933, "C(outlinedIconButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color)603@28773L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
-            long j7 = m4808getUnspecified0d7_KjU2;
-            j6 = Color.m4771copywmQWz5c$default(j7, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            long j7 = m5384getUnspecified0d7_KjU2;
+            j6 = Color.m5347copywmQWz5c$default(j7, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j5 = j7;
         } else {
-            j5 = m4808getUnspecified0d7_KjU2;
+            j5 = m5384getUnspecified0d7_KjU2;
             j6 = j4;
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-278201933, i, -1, "androidx.compose.material3.IconButtonDefaults.outlinedIconButtonVibrantColors (IconButtonDefaults.kt:603)");
         }
-        IconButtonColors m2125copyjRlVdoo = defaultOutlinedIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2125copyjRlVdoo(m4808getUnspecified0d7_KjU, j5, m4808getUnspecified0d7_KjU3, j6);
+        IconButtonColors m2570copyjRlVdoo = defaultOutlinedIconButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2570copyjRlVdoo(m5384getUnspecified0d7_KjU, j5, m5384getUnspecified0d7_KjU3, j6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2125copyjRlVdoo;
+        return m2570copyjRlVdoo;
     }
 
     public final IconButtonColors defaultOutlinedIconButtonVibrantColors$material3(ColorScheme colorScheme) {
         IconButtonColors defaultOutlinedIconButtonVibrantColorsCached$material3 = colorScheme.getDefaultOutlinedIconButtonVibrantColorsCached$material3();
         if (defaultOutlinedIconButtonVibrantColorsCached$material3 == null) {
-            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getColor()), Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getDisabledColor()), OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            IconButtonColors iconButtonColors = new IconButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getColor()), Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getDisabledColor()), OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultOutlinedIconButtonVibrantColorsCached$material3(iconButtonColors);
             return iconButtonColors;
         }
@@ -603,49 +603,49 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4782unboximpl = ((Color) consume).m4782unboximpl();
-        IconToggleButtonColors m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3 = m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m4782unboximpl);
-        if (Color.m4773equalsimpl0(m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3.m2167getContentColor0d7_KjU(), m4782unboximpl)) {
+        long m5358unboximpl = ((Color) consume).m5358unboximpl();
+        IconToggleButtonColors m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3 = m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6), m5358unboximpl);
+        if (Color.m5349equalsimpl0(m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3.m2612getContentColor0d7_KjU(), m5358unboximpl)) {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
             composer.endReplaceGroup();
-            return m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3;
+            return m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3;
         }
-        IconToggleButtonColors m2162copytNS2XkQ$default = IconToggleButtonColors.m2162copytNS2XkQ$default(m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3, 0L, m4782unboximpl, 0L, Color.m4771copywmQWz5c$default(m4782unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 53, null);
+        IconToggleButtonColors m2607copytNS2XkQ$default = IconToggleButtonColors.m2607copytNS2XkQ$default(m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3, 0L, m5358unboximpl, 0L, Color.m5347copywmQWz5c$default(m5358unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 53, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m2162copytNS2XkQ$default;
+        return m2607copytNS2XkQ$default;
     }
 
     /* renamed from: outlinedIconToggleButtonColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2145outlinedIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2590outlinedIconToggleButtonColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         long j8;
         long j9;
         ComposerKt.sourceInformationMarkerStart(composer, -514625005, "C(outlinedIconToggleButtonColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)668@31784L7,673@32066L38,675@32160L11,676@32241L7:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
         if ((i2 & 2) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            j7 = ((Color) consume).m4782unboximpl();
+            j7 = ((Color) consume).m5358unboximpl();
         } else {
             j7 = j2;
         }
-        long m4808getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
             long j10 = j7;
-            j9 = Color.m4771copywmQWz5c$default(j10, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            j9 = Color.m5347copywmQWz5c$default(j10, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j8 = j10;
         } else {
             j8 = j7;
             j9 = j4;
         }
-        long m4808getUnspecified0d7_KjU3 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m1902contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU3, composer, (i >> 12) & 14) : j6;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m2347contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(m5384getUnspecified0d7_KjU3, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-514625005, i, -1, "androidx.compose.material3.IconButtonDefaults.outlinedIconToggleButtonColors (IconButtonDefaults.kt:675)");
         }
@@ -653,19 +653,19 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        IconToggleButtonColors m2163copytNS2XkQ = m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m4782unboximpl()).m2163copytNS2XkQ(m4808getUnspecified0d7_KjU, j8, m4808getUnspecified0d7_KjU2, j9, m4808getUnspecified0d7_KjU3, m1902contentColorForek8zF_U);
+        IconToggleButtonColors m2608copytNS2XkQ = m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(colorScheme, ((Color) consume2).m5358unboximpl()).m2608copytNS2XkQ(m5384getUnspecified0d7_KjU, j8, m5384getUnspecified0d7_KjU2, j9, m5384getUnspecified0d7_KjU3, m2347contentColorForek8zF_U);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     /* renamed from: defaultOutlinedIconToggleButtonColors-4WTKRHQ$material3  reason: not valid java name */
-    public final IconToggleButtonColors m2134defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
+    public final IconToggleButtonColors m2579defaultOutlinedIconToggleButtonColors4WTKRHQ$material3(ColorScheme colorScheme, long j) {
         IconToggleButtonColors defaultIconToggleButtonColorsCached$material3 = colorScheme.getDefaultIconToggleButtonColorsCached$material3();
         if (defaultIconToggleButtonColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), j, Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(j, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.m1901contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor())), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), j, Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(j, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.m2346contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor())), null);
             colorScheme.setDefaultOutlinedIconToggleButtonColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -686,42 +686,42 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: outlinedIconToggleButtonVibrantColors-5tl4gsc  reason: not valid java name */
-    public final IconToggleButtonColors m2146outlinedIconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
+    public final IconToggleButtonColors m2591outlinedIconToggleButtonVibrantColors5tl4gsc(long j, long j2, long j3, long j4, long j5, long j6, Composer composer, int i, int i2) {
         long j7;
         long j8;
         long j9;
         ComposerKt.sourceInformationMarkerStart(composer, -142016199, "C(outlinedIconToggleButtonVibrantColors)N(containerColor:c#ui.graphics.Color,contentColor:c#ui.graphics.Color,disabledContainerColor:c#ui.graphics.Color,disabledContentColor:c#ui.graphics.Color,checkedContainerColor:c#ui.graphics.Color,checkedContentColor:c#ui.graphics.Color)743@35442L38,745@35536L11:IconButtonDefaults.kt#uh7d8r");
-        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
-        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
-        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m5384getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j;
+        long m5384getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
+        long m5384getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j3;
         if ((i2 & 8) != 0) {
-            long j10 = m4808getUnspecified0d7_KjU2;
-            j8 = Color.m4771copywmQWz5c$default(j10, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            long j10 = m5384getUnspecified0d7_KjU2;
+            j8 = Color.m5347copywmQWz5c$default(j10, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
             j7 = j10;
         } else {
-            j7 = m4808getUnspecified0d7_KjU2;
+            j7 = m5384getUnspecified0d7_KjU2;
             j8 = j4;
         }
-        long m4808getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j5;
-        long m1902contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m1902contentColorForek8zF_U(m4808getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
+        long m5384getUnspecified0d7_KjU4 = (i2 & 16) != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j5;
+        long m2347contentColorForek8zF_U = (i2 & 32) != 0 ? ColorSchemeKt.m2347contentColorForek8zF_U(m5384getUnspecified0d7_KjU4, composer, (i >> 12) & 14) : j6;
         if (ComposerKt.isTraceInProgress()) {
-            j9 = m4808getUnspecified0d7_KjU;
+            j9 = m5384getUnspecified0d7_KjU;
             ComposerKt.traceEventStart(-142016199, i, -1, "androidx.compose.material3.IconButtonDefaults.outlinedIconToggleButtonVibrantColors (IconButtonDefaults.kt:745)");
         } else {
-            j9 = m4808getUnspecified0d7_KjU;
+            j9 = m5384getUnspecified0d7_KjU;
         }
-        IconToggleButtonColors m2163copytNS2XkQ = defaultOutlinedIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2163copytNS2XkQ(j9, j7, m4808getUnspecified0d7_KjU3, j8, m4808getUnspecified0d7_KjU4, m1902contentColorForek8zF_U);
+        IconToggleButtonColors m2608copytNS2XkQ = defaultOutlinedIconToggleButtonVibrantColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2608copytNS2XkQ(j9, j7, m5384getUnspecified0d7_KjU3, j8, m5384getUnspecified0d7_KjU4, m2347contentColorForek8zF_U);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2163copytNS2XkQ;
+        return m2608copytNS2XkQ;
     }
 
     public final IconToggleButtonColors defaultOutlinedIconToggleButtonVibrantColors$material3(ColorScheme colorScheme) {
         IconToggleButtonColors defaultOutlinedIconToggleButtonVibrantColorsCached$material3 = colorScheme.getDefaultOutlinedIconToggleButtonVibrantColorsCached$material3();
         if (defaultOutlinedIconToggleButtonVibrantColorsCached$material3 == null) {
-            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m4807getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getUnselectedColor()), Color.Companion.m4807getTransparent0d7_KjU(), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getDisabledColor()), OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedColor()), null);
+            IconToggleButtonColors iconToggleButtonColors = new IconToggleButtonColors(Color.Companion.m5383getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getUnselectedColor()), Color.Companion.m5383getTransparent0d7_KjU(), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getDisabledColor()), OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedContainerColor()), ColorSchemeKt.fromToken(colorScheme, OutlinedIconButtonTokens.INSTANCE.getSelectedColor()), null);
             colorScheme.setDefaultOutlinedIconToggleButtonColorsCached$material3(iconToggleButtonColors);
             return iconToggleButtonColors;
         }
@@ -778,15 +778,15 @@ public final class IconButtonDefaults {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(ContentColorKt.getLocalContentColor());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        long m4782unboximpl = ((Color) consume).m4782unboximpl();
+        long m5358unboximpl = ((Color) consume).m5358unboximpl();
         if (!z) {
-            m4782unboximpl = Color.m4771copywmQWz5c$default(m4782unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            m5358unboximpl = Color.m5347copywmQWz5c$default(m5358unboximpl, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
         }
         ComposerKt.sourceInformationMarkerStart(composer, -1314785653, "CC(remember):IconButtonDefaults.kt#9igjgp");
-        boolean changed = composer.changed(m4782unboximpl);
+        boolean changed = composer.changed(m5358unboximpl);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = BorderStrokeKt.m290BorderStrokecXLIe8U(SmallIconButtonTokens.INSTANCE.m3739getOutlinedOutlineWidthD9Ej5fM(), m4782unboximpl);
+            rememberedValue = BorderStrokeKt.m314BorderStrokecXLIe8U(SmallIconButtonTokens.INSTANCE.m4184getOutlinedOutlineWidthD9Ej5fM(), m5358unboximpl);
             composer.updateRememberedValue(rememberedValue);
         }
         BorderStroke borderStroke = (BorderStroke) rememberedValue;
@@ -805,13 +805,13 @@ public final class IconButtonDefaults {
         }
         long value = ColorSchemeKt.getValue(OutlinedIconButtonTokens.INSTANCE.getOutlineColor(), composer, 6);
         if (!z) {
-            value = Color.m4771copywmQWz5c$default(value, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
+            value = Color.m5347copywmQWz5c$default(value, OutlinedIconButtonTokens.INSTANCE.getDisabledOpacity(), 0.0f, 0.0f, 0.0f, 14, null);
         }
         ComposerKt.sourceInformationMarkerStart(composer, 1009914297, "CC(remember):IconButtonDefaults.kt#9igjgp");
         boolean changed = composer.changed(value);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = BorderStrokeKt.m290BorderStrokecXLIe8U(SmallIconButtonTokens.INSTANCE.m3739getOutlinedOutlineWidthD9Ej5fM(), value);
+            rememberedValue = BorderStrokeKt.m314BorderStrokecXLIe8U(SmallIconButtonTokens.INSTANCE.m4184getOutlinedOutlineWidthD9Ej5fM(), value);
             composer.updateRememberedValue(rememberedValue);
         }
         BorderStroke borderStroke = (BorderStroke) rememberedValue;
@@ -863,30 +863,30 @@ public final class IconButtonDefaults {
     }
 
     /* renamed from: smallContainerSize-N-wlBFI$material3$default  reason: not valid java name */
-    public static /* synthetic */ long m2130smallContainerSizeNwlBFI$material3$default(IconButtonDefaults iconButtonDefaults, int i, int i2, Object obj) {
+    public static /* synthetic */ long m2575smallContainerSizeNwlBFI$material3$default(IconButtonDefaults iconButtonDefaults, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = IconButtonWidthOption.Companion.m2156getUniformrc6NtMs();
+            i = IconButtonWidthOption.Companion.m2601getUniformrc6NtMs();
         }
-        return iconButtonDefaults.m2147smallContainerSizeNwlBFI$material3(i);
+        return iconButtonDefaults.m2592smallContainerSizeNwlBFI$material3(i);
     }
 
     /* renamed from: smallContainerSize-N-wlBFI$material3  reason: not valid java name */
-    public final long m2147smallContainerSizeNwlBFI$material3(int i) {
-        float m7555constructorimpl;
-        if (!IconButtonWidthOption.m2151equalsimpl0(i, IconButtonWidthOption.Companion.m2155getNarrowrc6NtMs())) {
-            if (!IconButtonWidthOption.m2151equalsimpl0(i, IconButtonWidthOption.Companion.m2156getUniformrc6NtMs())) {
-                if (IconButtonWidthOption.m2151equalsimpl0(i, IconButtonWidthOption.Companion.m2157getWiderc6NtMs())) {
-                    m7555constructorimpl = Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3740getWideLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m3741getWideTrailingSpaceD9Ej5fM());
+    public final long m2592smallContainerSizeNwlBFI$material3(int i) {
+        float m8160constructorimpl;
+        if (!IconButtonWidthOption.m2596equalsimpl0(i, IconButtonWidthOption.Companion.m2600getNarrowrc6NtMs())) {
+            if (!IconButtonWidthOption.m2596equalsimpl0(i, IconButtonWidthOption.Companion.m2601getUniformrc6NtMs())) {
+                if (IconButtonWidthOption.m2596equalsimpl0(i, IconButtonWidthOption.Companion.m2602getWiderc6NtMs())) {
+                    m8160constructorimpl = Dp.m8160constructorimpl(SmallIconButtonTokens.INSTANCE.m4185getWideLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m4186getWideTrailingSpaceD9Ej5fM());
                 } else {
-                    m7555constructorimpl = Dp.m7555constructorimpl(0.0f);
+                    m8160constructorimpl = Dp.m8160constructorimpl(0.0f);
                 }
             } else {
-                m7555constructorimpl = Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3734getDefaultLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m3734getDefaultLeadingSpaceD9Ej5fM());
+                m8160constructorimpl = Dp.m8160constructorimpl(SmallIconButtonTokens.INSTANCE.m4179getDefaultLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m4179getDefaultLeadingSpaceD9Ej5fM());
             }
         } else {
-            m7555constructorimpl = Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3737getNarrowLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m3738getNarrowTrailingSpaceD9Ej5fM());
+            m8160constructorimpl = Dp.m8160constructorimpl(SmallIconButtonTokens.INSTANCE.m4182getNarrowLeadingSpaceD9Ej5fM() + SmallIconButtonTokens.INSTANCE.m4183getNarrowTrailingSpaceD9Ej5fM());
         }
-        return DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(SmallIconButtonTokens.INSTANCE.m3736getIconSizeD9Ej5fM() + m7555constructorimpl), SmallIconButtonTokens.INSTANCE.m3733getContainerHeightD9Ej5fM());
+        return DpKt.m8182DpSizeYgX7TsA(Dp.m8160constructorimpl(SmallIconButtonTokens.INSTANCE.m4181getIconSizeD9Ej5fM() + m8160constructorimpl), SmallIconButtonTokens.INSTANCE.m4178getContainerHeightD9Ej5fM());
     }
 
     /* compiled from: IconButtonDefaults.kt */
@@ -895,46 +895,46 @@ public final class IconButtonDefaults {
     /* loaded from: classes.dex */
     public static final class IconButtonWidthOption {
         public static final Companion Companion = new Companion(null);
-        private static final int Narrow = m2149constructorimpl(0);
-        private static final int Uniform = m2149constructorimpl(1);
-        private static final int Wide = m2149constructorimpl(2);
+        private static final int Narrow = m2594constructorimpl(0);
+        private static final int Uniform = m2594constructorimpl(1);
+        private static final int Wide = m2594constructorimpl(2);
         private final int value;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ IconButtonWidthOption m2148boximpl(int i) {
+        public static final /* synthetic */ IconButtonWidthOption m2593boximpl(int i) {
             return new IconButtonWidthOption(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        private static int m2149constructorimpl(int i) {
+        private static int m2594constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m2150equalsimpl(int i, Object obj) {
-            return (obj instanceof IconButtonWidthOption) && i == ((IconButtonWidthOption) obj).m2154unboximpl();
+        public static boolean m2595equalsimpl(int i, Object obj) {
+            return (obj instanceof IconButtonWidthOption) && i == ((IconButtonWidthOption) obj).m2599unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m2151equalsimpl0(int i, int i2) {
+        public static final boolean m2596equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m2152hashCodeimpl(int i) {
+        public static int m2597hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m2150equalsimpl(this.value, obj);
+            return m2595equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m2152hashCodeimpl(this.value);
+            return m2597hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m2154unboximpl() {
+        public final /* synthetic */ int m2599unboximpl() {
             return this.value;
         }
 
@@ -950,17 +950,17 @@ public final class IconButtonDefaults {
             }
 
             /* renamed from: getNarrow-rc6NtMs  reason: not valid java name */
-            public final int m2155getNarrowrc6NtMs() {
+            public final int m2600getNarrowrc6NtMs() {
                 return IconButtonWidthOption.Narrow;
             }
 
             /* renamed from: getUniform-rc6NtMs  reason: not valid java name */
-            public final int m2156getUniformrc6NtMs() {
+            public final int m2601getUniformrc6NtMs() {
                 return IconButtonWidthOption.Uniform;
             }
 
             /* renamed from: getWide-rc6NtMs  reason: not valid java name */
-            public final int m2157getWiderc6NtMs() {
+            public final int m2602getWiderc6NtMs() {
                 return IconButtonWidthOption.Wide;
             }
         }
@@ -970,12 +970,12 @@ public final class IconButtonDefaults {
         }
 
         public String toString() {
-            return m2153toStringimpl(this.value);
+            return m2598toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m2153toStringimpl(int i) {
-            return m2151equalsimpl0(i, Narrow) ? "Narrow" : m2151equalsimpl0(i, Uniform) ? "Uniform" : m2151equalsimpl0(i, Wide) ? "Wide" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        public static String m2598toStringimpl(int i) {
+            return m2596equalsimpl0(i, Narrow) ? "Narrow" : m2596equalsimpl0(i, Uniform) ? "Uniform" : m2596equalsimpl0(i, Wide) ? "Wide" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
         }
     }
 }

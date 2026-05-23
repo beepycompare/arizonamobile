@@ -52,673 +52,673 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
 public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     /* renamed from: asByteArray-GBYM_sE  reason: not valid java name */
-    private static final byte[] m9749asByteArrayGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$asByteArray$0");
-        return bArr;
+    private static final byte[] m10389asByteArrayGBYM_sE(byte[] asByteArray) {
+        Intrinsics.checkNotNullParameter(asByteArray, "$this$asByteArray");
+        return asByteArray;
     }
 
     /* renamed from: asIntArray--ajY-9A  reason: not valid java name */
-    private static final int[] m9750asIntArrayajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$asIntArray$0");
-        return iArr;
+    private static final int[] m10390asIntArrayajY9A(int[] asIntArray) {
+        Intrinsics.checkNotNullParameter(asIntArray, "$this$asIntArray");
+        return asIntArray;
     }
 
     /* renamed from: asLongArray-QwZRm1k  reason: not valid java name */
-    private static final long[] m9751asLongArrayQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$asLongArray$0");
-        return jArr;
+    private static final long[] m10391asLongArrayQwZRm1k(long[] asLongArray) {
+        Intrinsics.checkNotNullParameter(asLongArray, "$this$asLongArray");
+        return asLongArray;
     }
 
     /* renamed from: asShortArray-rL5Bavg  reason: not valid java name */
-    private static final short[] m9752asShortArrayrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$asShortArray$0");
-        return sArr;
+    private static final short[] m10392asShortArrayrL5Bavg(short[] asShortArray) {
+        Intrinsics.checkNotNullParameter(asShortArray, "$this$asShortArray");
+        return asShortArray;
     }
 
     /* renamed from: getIndices--ajY-9A$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9942getIndicesajY9A$annotations(int[] iArr) {
+    public static /* synthetic */ void m10582getIndicesajY9A$annotations(int[] iArr) {
     }
 
     /* renamed from: getIndices-GBYM_sE$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9944getIndicesGBYM_sE$annotations(byte[] bArr) {
+    public static /* synthetic */ void m10584getIndicesGBYM_sE$annotations(byte[] bArr) {
     }
 
     /* renamed from: getIndices-QwZRm1k$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9946getIndicesQwZRm1k$annotations(long[] jArr) {
+    public static /* synthetic */ void m10586getIndicesQwZRm1k$annotations(long[] jArr) {
     }
 
     /* renamed from: getIndices-rL5Bavg$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9948getIndicesrL5Bavg$annotations(short[] sArr) {
+    public static /* synthetic */ void m10588getIndicesrL5Bavg$annotations(short[] sArr) {
     }
 
     /* renamed from: getLastIndex--ajY-9A$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9950getLastIndexajY9A$annotations(int[] iArr) {
+    public static /* synthetic */ void m10590getLastIndexajY9A$annotations(int[] iArr) {
     }
 
     /* renamed from: getLastIndex-GBYM_sE$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9952getLastIndexGBYM_sE$annotations(byte[] bArr) {
+    public static /* synthetic */ void m10592getLastIndexGBYM_sE$annotations(byte[] bArr) {
     }
 
     /* renamed from: getLastIndex-QwZRm1k$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9954getLastIndexQwZRm1k$annotations(long[] jArr) {
+    public static /* synthetic */ void m10594getLastIndexQwZRm1k$annotations(long[] jArr) {
     }
 
     /* renamed from: getLastIndex-rL5Bavg$annotations  reason: not valid java name */
-    public static /* synthetic */ void m9956getLastIndexrL5Bavg$annotations(short[] sArr) {
+    public static /* synthetic */ void m10596getLastIndexrL5Bavg$annotations(short[] sArr) {
     }
 
     /* renamed from: component1--ajY-9A  reason: not valid java name */
-    private static final int m9761component1ajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$component1$0");
-        return UIntArray.m9362getpVg5ArA(iArr, 0);
+    private static final int m10401component1ajY9A(int[] component1) {
+        Intrinsics.checkNotNullParameter(component1, "$this$component1");
+        return UIntArray.m10002getpVg5ArA(component1, 0);
     }
 
     /* renamed from: component1-QwZRm1k  reason: not valid java name */
-    private static final long m9763component1QwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$component1$0");
-        return ULongArray.m9441getsVKNKU(jArr, 0);
+    private static final long m10403component1QwZRm1k(long[] component1) {
+        Intrinsics.checkNotNullParameter(component1, "$this$component1");
+        return ULongArray.m10081getsVKNKU(component1, 0);
     }
 
     /* renamed from: component1-GBYM_sE  reason: not valid java name */
-    private static final byte m9762component1GBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$component1$0");
-        return UByteArray.m9283getw2LRezQ(bArr, 0);
+    private static final byte m10402component1GBYM_sE(byte[] component1) {
+        Intrinsics.checkNotNullParameter(component1, "$this$component1");
+        return UByteArray.m9923getw2LRezQ(component1, 0);
     }
 
     /* renamed from: component1-rL5Bavg  reason: not valid java name */
-    private static final short m9764component1rL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$component1$0");
-        return UShortArray.m9546getMh2AYeg(sArr, 0);
+    private static final short m10404component1rL5Bavg(short[] component1) {
+        Intrinsics.checkNotNullParameter(component1, "$this$component1");
+        return UShortArray.m10186getMh2AYeg(component1, 0);
     }
 
     /* renamed from: component2--ajY-9A  reason: not valid java name */
-    private static final int m9765component2ajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$component2$0");
-        return UIntArray.m9362getpVg5ArA(iArr, 1);
+    private static final int m10405component2ajY9A(int[] component2) {
+        Intrinsics.checkNotNullParameter(component2, "$this$component2");
+        return UIntArray.m10002getpVg5ArA(component2, 1);
     }
 
     /* renamed from: component2-QwZRm1k  reason: not valid java name */
-    private static final long m9767component2QwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$component2$0");
-        return ULongArray.m9441getsVKNKU(jArr, 1);
+    private static final long m10407component2QwZRm1k(long[] component2) {
+        Intrinsics.checkNotNullParameter(component2, "$this$component2");
+        return ULongArray.m10081getsVKNKU(component2, 1);
     }
 
     /* renamed from: component2-GBYM_sE  reason: not valid java name */
-    private static final byte m9766component2GBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$component2$0");
-        return UByteArray.m9283getw2LRezQ(bArr, 1);
+    private static final byte m10406component2GBYM_sE(byte[] component2) {
+        Intrinsics.checkNotNullParameter(component2, "$this$component2");
+        return UByteArray.m9923getw2LRezQ(component2, 1);
     }
 
     /* renamed from: component2-rL5Bavg  reason: not valid java name */
-    private static final short m9768component2rL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$component2$0");
-        return UShortArray.m9546getMh2AYeg(sArr, 1);
+    private static final short m10408component2rL5Bavg(short[] component2) {
+        Intrinsics.checkNotNullParameter(component2, "$this$component2");
+        return UShortArray.m10186getMh2AYeg(component2, 1);
     }
 
     /* renamed from: component3--ajY-9A  reason: not valid java name */
-    private static final int m9769component3ajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$component3$0");
-        return UIntArray.m9362getpVg5ArA(iArr, 2);
+    private static final int m10409component3ajY9A(int[] component3) {
+        Intrinsics.checkNotNullParameter(component3, "$this$component3");
+        return UIntArray.m10002getpVg5ArA(component3, 2);
     }
 
     /* renamed from: component3-QwZRm1k  reason: not valid java name */
-    private static final long m9771component3QwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$component3$0");
-        return ULongArray.m9441getsVKNKU(jArr, 2);
+    private static final long m10411component3QwZRm1k(long[] component3) {
+        Intrinsics.checkNotNullParameter(component3, "$this$component3");
+        return ULongArray.m10081getsVKNKU(component3, 2);
     }
 
     /* renamed from: component3-GBYM_sE  reason: not valid java name */
-    private static final byte m9770component3GBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$component3$0");
-        return UByteArray.m9283getw2LRezQ(bArr, 2);
+    private static final byte m10410component3GBYM_sE(byte[] component3) {
+        Intrinsics.checkNotNullParameter(component3, "$this$component3");
+        return UByteArray.m9923getw2LRezQ(component3, 2);
     }
 
     /* renamed from: component3-rL5Bavg  reason: not valid java name */
-    private static final short m9772component3rL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$component3$0");
-        return UShortArray.m9546getMh2AYeg(sArr, 2);
+    private static final short m10412component3rL5Bavg(short[] component3) {
+        Intrinsics.checkNotNullParameter(component3, "$this$component3");
+        return UShortArray.m10186getMh2AYeg(component3, 2);
     }
 
     /* renamed from: component4--ajY-9A  reason: not valid java name */
-    private static final int m9773component4ajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$component4$0");
-        return UIntArray.m9362getpVg5ArA(iArr, 3);
+    private static final int m10413component4ajY9A(int[] component4) {
+        Intrinsics.checkNotNullParameter(component4, "$this$component4");
+        return UIntArray.m10002getpVg5ArA(component4, 3);
     }
 
     /* renamed from: component4-QwZRm1k  reason: not valid java name */
-    private static final long m9775component4QwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$component4$0");
-        return ULongArray.m9441getsVKNKU(jArr, 3);
+    private static final long m10415component4QwZRm1k(long[] component4) {
+        Intrinsics.checkNotNullParameter(component4, "$this$component4");
+        return ULongArray.m10081getsVKNKU(component4, 3);
     }
 
     /* renamed from: component4-GBYM_sE  reason: not valid java name */
-    private static final byte m9774component4GBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$component4$0");
-        return UByteArray.m9283getw2LRezQ(bArr, 3);
+    private static final byte m10414component4GBYM_sE(byte[] component4) {
+        Intrinsics.checkNotNullParameter(component4, "$this$component4");
+        return UByteArray.m9923getw2LRezQ(component4, 3);
     }
 
     /* renamed from: component4-rL5Bavg  reason: not valid java name */
-    private static final short m9776component4rL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$component4$0");
-        return UShortArray.m9546getMh2AYeg(sArr, 3);
+    private static final short m10416component4rL5Bavg(short[] component4) {
+        Intrinsics.checkNotNullParameter(component4, "$this$component4");
+        return UShortArray.m10186getMh2AYeg(component4, 3);
     }
 
     /* renamed from: component5--ajY-9A  reason: not valid java name */
-    private static final int m9777component5ajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$component5$0");
-        return UIntArray.m9362getpVg5ArA(iArr, 4);
+    private static final int m10417component5ajY9A(int[] component5) {
+        Intrinsics.checkNotNullParameter(component5, "$this$component5");
+        return UIntArray.m10002getpVg5ArA(component5, 4);
     }
 
     /* renamed from: component5-QwZRm1k  reason: not valid java name */
-    private static final long m9779component5QwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$component5$0");
-        return ULongArray.m9441getsVKNKU(jArr, 4);
+    private static final long m10419component5QwZRm1k(long[] component5) {
+        Intrinsics.checkNotNullParameter(component5, "$this$component5");
+        return ULongArray.m10081getsVKNKU(component5, 4);
     }
 
     /* renamed from: component5-GBYM_sE  reason: not valid java name */
-    private static final byte m9778component5GBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$component5$0");
-        return UByteArray.m9283getw2LRezQ(bArr, 4);
+    private static final byte m10418component5GBYM_sE(byte[] component5) {
+        Intrinsics.checkNotNullParameter(component5, "$this$component5");
+        return UByteArray.m9923getw2LRezQ(component5, 4);
     }
 
     /* renamed from: component5-rL5Bavg  reason: not valid java name */
-    private static final short m9780component5rL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$component5$0");
-        return UShortArray.m9546getMh2AYeg(sArr, 4);
+    private static final short m10420component5rL5Bavg(short[] component5) {
+        Intrinsics.checkNotNullParameter(component5, "$this$component5");
+        return UShortArray.m10186getMh2AYeg(component5, 4);
     }
 
     /* renamed from: elementAtOrElse-QxvSvLU  reason: not valid java name */
-    private static final int m9838elementAtOrElseQxvSvLU(int[] iArr, int i, Function1<? super Integer, UInt> defaultValue) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$elementAtOrElse$0");
+    private static final int m10478elementAtOrElseQxvSvLU(int[] elementAtOrElse, int i, Function1<? super Integer, UInt> defaultValue) {
+        Intrinsics.checkNotNullParameter(elementAtOrElse, "$this$elementAtOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UIntArray.m9363getSizeimpl(iArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9354unboximpl() : UIntArray.m9362getpVg5ArA(iArr, i);
+        return (i < 0 || i >= UIntArray.m10003getSizeimpl(elementAtOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m9994unboximpl() : UIntArray.m10002getpVg5ArA(elementAtOrElse, i);
     }
 
     /* renamed from: elementAtOrElse-Xw8i6dc  reason: not valid java name */
-    private static final long m9839elementAtOrElseXw8i6dc(long[] jArr, int i, Function1<? super Integer, ULong> defaultValue) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$elementAtOrElse$0");
+    private static final long m10479elementAtOrElseXw8i6dc(long[] elementAtOrElse, int i, Function1<? super Integer, ULong> defaultValue) {
+        Intrinsics.checkNotNullParameter(elementAtOrElse, "$this$elementAtOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= ULongArray.m9442getSizeimpl(jArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9433unboximpl() : ULongArray.m9441getsVKNKU(jArr, i);
+        return (i < 0 || i >= ULongArray.m10082getSizeimpl(elementAtOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m10073unboximpl() : ULongArray.m10081getsVKNKU(elementAtOrElse, i);
     }
 
     /* renamed from: elementAtOrElse-cO-VybQ  reason: not valid java name */
-    private static final byte m9840elementAtOrElsecOVybQ(byte[] bArr, int i, Function1<? super Integer, UByte> defaultValue) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$elementAtOrElse$0");
+    private static final byte m10480elementAtOrElsecOVybQ(byte[] elementAtOrElse, int i, Function1<? super Integer, UByte> defaultValue) {
+        Intrinsics.checkNotNullParameter(elementAtOrElse, "$this$elementAtOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UByteArray.m9284getSizeimpl(bArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9270unboximpl() : UByteArray.m9283getw2LRezQ(bArr, i);
+        return (i < 0 || i >= UByteArray.m9924getSizeimpl(elementAtOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m9910unboximpl() : UByteArray.m9923getw2LRezQ(elementAtOrElse, i);
     }
 
     /* renamed from: elementAtOrElse-CVVdw08  reason: not valid java name */
-    private static final short m9837elementAtOrElseCVVdw08(short[] sArr, int i, Function1<? super Integer, UShort> defaultValue) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$elementAtOrElse$0");
+    private static final short m10477elementAtOrElseCVVdw08(short[] elementAtOrElse, int i, Function1<? super Integer, UShort> defaultValue) {
+        Intrinsics.checkNotNullParameter(elementAtOrElse, "$this$elementAtOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UShortArray.m9547getSizeimpl(sArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9538unboximpl() : UShortArray.m9546getMh2AYeg(sArr, i);
+        return (i < 0 || i >= UShortArray.m10187getSizeimpl(elementAtOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m10178unboximpl() : UShortArray.m10186getMh2AYeg(elementAtOrElse, i);
     }
 
     /* renamed from: elementAtOrNull-qFRl0hI  reason: not valid java name */
-    private static final UInt m9843elementAtOrNullqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$elementAtOrNull$0");
-        return UArraysKt.m9963getOrNullqFRl0hI(iArr, i);
+    private static final UInt m10483elementAtOrNullqFRl0hI(int[] elementAtOrNull, int i) {
+        Intrinsics.checkNotNullParameter(elementAtOrNull, "$this$elementAtOrNull");
+        return UArraysKt.m10603getOrNullqFRl0hI(elementAtOrNull, i);
     }
 
     /* renamed from: elementAtOrNull-r7IrZao  reason: not valid java name */
-    private static final ULong m9844elementAtOrNullr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$elementAtOrNull$0");
-        return UArraysKt.m9964getOrNullr7IrZao(jArr, i);
+    private static final ULong m10484elementAtOrNullr7IrZao(long[] elementAtOrNull, int i) {
+        Intrinsics.checkNotNullParameter(elementAtOrNull, "$this$elementAtOrNull");
+        return UArraysKt.m10604getOrNullr7IrZao(elementAtOrNull, i);
     }
 
     /* renamed from: elementAtOrNull-PpDY95g  reason: not valid java name */
-    private static final UByte m9841elementAtOrNullPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$elementAtOrNull$0");
-        return UArraysKt.m9961getOrNullPpDY95g(bArr, i);
+    private static final UByte m10481elementAtOrNullPpDY95g(byte[] elementAtOrNull, int i) {
+        Intrinsics.checkNotNullParameter(elementAtOrNull, "$this$elementAtOrNull");
+        return UArraysKt.m10601getOrNullPpDY95g(elementAtOrNull, i);
     }
 
     /* renamed from: elementAtOrNull-nggk6HY  reason: not valid java name */
-    private static final UShort m9842elementAtOrNullnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$elementAtOrNull$0");
-        return UArraysKt.m9962getOrNullnggk6HY(sArr, i);
+    private static final UShort m10482elementAtOrNullnggk6HY(short[] elementAtOrNull, int i) {
+        Intrinsics.checkNotNullParameter(elementAtOrNull, "$this$elementAtOrNull");
+        return UArraysKt.m10602getOrNullnggk6HY(elementAtOrNull, i);
     }
 
     /* renamed from: find-jgv0xPQ  reason: not valid java name */
-    private static final UInt m9879findjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$find$0");
+    private static final UInt m10519findjgv0xPQ(int[] find, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(find, "$this$find");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                return UInt.m9296boximpl(m9362getpVg5ArA);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(find);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(find, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                return UInt.m9936boximpl(m10002getpVg5ArA);
             }
         }
         return null;
     }
 
     /* renamed from: find-MShoTSo  reason: not valid java name */
-    private static final ULong m9878findMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$find$0");
+    private static final ULong m10518findMShoTSo(long[] find, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(find, "$this$find");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                return ULong.m9375boximpl(m9441getsVKNKU);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(find);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(find, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                return ULong.m10015boximpl(m10081getsVKNKU);
             }
         }
         return null;
     }
 
     /* renamed from: find-JOV_ifY  reason: not valid java name */
-    private static final UByte m9877findJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$find$0");
+    private static final UByte m10517findJOV_ifY(byte[] find, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(find, "$this$find");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                return UByte.m9214boximpl(m9283getw2LRezQ);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(find);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(find, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                return UByte.m9854boximpl(m9923getw2LRezQ);
             }
         }
         return null;
     }
 
     /* renamed from: find-xTcfx_M  reason: not valid java name */
-    private static final UShort m9880findxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$find$0");
+    private static final UShort m10520findxTcfx_M(short[] find, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(find, "$this$find");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                return UShort.m9482boximpl(m9546getMh2AYeg);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(find);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(find, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                return UShort.m10122boximpl(m10186getMh2AYeg);
             }
         }
         return null;
     }
 
     /* renamed from: findLast-jgv0xPQ  reason: not valid java name */
-    private static final UInt m9883findLastjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$findLast$0");
+    private static final UInt m10523findLastjgv0xPQ(int[] findLast, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(findLast, "$this$findLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr) - 1;
-        if (m9363getSizeimpl < 0) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(findLast) - 1;
+        if (m10003getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9363getSizeimpl - 1;
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, m9363getSizeimpl);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                return UInt.m9296boximpl(m9362getpVg5ArA);
+            int i = m10003getSizeimpl - 1;
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(findLast, m10003getSizeimpl);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                return UInt.m9936boximpl(m10002getpVg5ArA);
             }
             if (i < 0) {
                 return null;
             }
-            m9363getSizeimpl = i;
+            m10003getSizeimpl = i;
         }
     }
 
     /* renamed from: findLast-MShoTSo  reason: not valid java name */
-    private static final ULong m9882findLastMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$findLast$0");
+    private static final ULong m10522findLastMShoTSo(long[] findLast, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(findLast, "$this$findLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr) - 1;
-        if (m9442getSizeimpl < 0) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(findLast) - 1;
+        if (m10082getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9442getSizeimpl - 1;
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, m9442getSizeimpl);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                return ULong.m9375boximpl(m9441getsVKNKU);
+            int i = m10082getSizeimpl - 1;
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(findLast, m10082getSizeimpl);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                return ULong.m10015boximpl(m10081getsVKNKU);
             }
             if (i < 0) {
                 return null;
             }
-            m9442getSizeimpl = i;
+            m10082getSizeimpl = i;
         }
     }
 
     /* renamed from: findLast-JOV_ifY  reason: not valid java name */
-    private static final UByte m9881findLastJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$findLast$0");
+    private static final UByte m10521findLastJOV_ifY(byte[] findLast, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(findLast, "$this$findLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr) - 1;
-        if (m9284getSizeimpl < 0) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(findLast) - 1;
+        if (m9924getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9284getSizeimpl - 1;
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, m9284getSizeimpl);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                return UByte.m9214boximpl(m9283getw2LRezQ);
+            int i = m9924getSizeimpl - 1;
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(findLast, m9924getSizeimpl);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                return UByte.m9854boximpl(m9923getw2LRezQ);
             }
             if (i < 0) {
                 return null;
             }
-            m9284getSizeimpl = i;
+            m9924getSizeimpl = i;
         }
     }
 
     /* renamed from: findLast-xTcfx_M  reason: not valid java name */
-    private static final UShort m9884findLastxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$findLast$0");
+    private static final UShort m10524findLastxTcfx_M(short[] findLast, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(findLast, "$this$findLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr) - 1;
-        if (m9547getSizeimpl < 0) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(findLast) - 1;
+        if (m10187getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9547getSizeimpl - 1;
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, m9547getSizeimpl);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                return UShort.m9482boximpl(m9546getMh2AYeg);
+            int i = m10187getSizeimpl - 1;
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(findLast, m10187getSizeimpl);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                return UShort.m10122boximpl(m10186getMh2AYeg);
             }
             if (i < 0) {
                 return null;
             }
-            m9547getSizeimpl = i;
+            m10187getSizeimpl = i;
         }
     }
 
     /* renamed from: first--ajY-9A  reason: not valid java name */
-    private static final int m9885firstajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$first$0");
-        return UInt.m9302constructorimpl(ArraysKt.first(iArr));
+    private static final int m10525firstajY9A(int[] first) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
+        return UInt.m9942constructorimpl(ArraysKt.first(first));
     }
 
     /* renamed from: first-QwZRm1k  reason: not valid java name */
-    private static final long m9889firstQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$first$0");
-        return ULong.m9381constructorimpl(ArraysKt.first(jArr));
+    private static final long m10529firstQwZRm1k(long[] first) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
+        return ULong.m10021constructorimpl(ArraysKt.first(first));
     }
 
     /* renamed from: first-GBYM_sE  reason: not valid java name */
-    private static final byte m9886firstGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$first$0");
-        return UByte.m9220constructorimpl(ArraysKt.first(bArr));
+    private static final byte m10526firstGBYM_sE(byte[] first) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
+        return UByte.m9860constructorimpl(ArraysKt.first(first));
     }
 
     /* renamed from: first-rL5Bavg  reason: not valid java name */
-    private static final short m9891firstrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$first$0");
-        return UShort.m9488constructorimpl(ArraysKt.first(sArr));
+    private static final short m10531firstrL5Bavg(short[] first) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
+        return UShort.m10128constructorimpl(ArraysKt.first(first));
     }
 
     /* renamed from: first-jgv0xPQ  reason: not valid java name */
-    private static final int m9890firstjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$first$0");
+    private static final int m10530firstjgv0xPQ(int[] first, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                return m9362getpVg5ArA;
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(first);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(first, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                return m10002getpVg5ArA;
             }
         }
         throw new NoSuchElementException("Array contains no element matching the predicate.");
     }
 
     /* renamed from: first-MShoTSo  reason: not valid java name */
-    private static final long m9888firstMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$first$0");
+    private static final long m10528firstMShoTSo(long[] first, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                return m9441getsVKNKU;
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(first);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(first, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                return m10081getsVKNKU;
             }
         }
         throw new NoSuchElementException("Array contains no element matching the predicate.");
     }
 
     /* renamed from: first-JOV_ifY  reason: not valid java name */
-    private static final byte m9887firstJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$first$0");
+    private static final byte m10527firstJOV_ifY(byte[] first, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                return m9283getw2LRezQ;
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(first);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(first, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                return m9923getw2LRezQ;
             }
         }
         throw new NoSuchElementException("Array contains no element matching the predicate.");
     }
 
     /* renamed from: first-xTcfx_M  reason: not valid java name */
-    private static final short m9892firstxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$first$0");
+    private static final short m10532firstxTcfx_M(short[] first, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(first, "$this$first");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                return m9546getMh2AYeg;
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(first);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(first, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                return m10186getMh2AYeg;
             }
         }
         throw new NoSuchElementException("Array contains no element matching the predicate.");
     }
 
     /* renamed from: firstOrNull--ajY-9A  reason: not valid java name */
-    public static final UInt m9893firstOrNullajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$firstOrNull$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+    public static final UInt m10533firstOrNullajY9A(int[] firstOrNull) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
+        if (UIntArray.m10005isEmptyimpl(firstOrNull)) {
             return null;
         }
-        return UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0));
+        return UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(firstOrNull, 0));
     }
 
     /* renamed from: firstOrNull-QwZRm1k  reason: not valid java name */
-    public static final ULong m9897firstOrNullQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$firstOrNull$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+    public static final ULong m10537firstOrNullQwZRm1k(long[] firstOrNull) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
+        if (ULongArray.m10084isEmptyimpl(firstOrNull)) {
             return null;
         }
-        return ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0));
+        return ULong.m10015boximpl(ULongArray.m10081getsVKNKU(firstOrNull, 0));
     }
 
     /* renamed from: firstOrNull-GBYM_sE  reason: not valid java name */
-    public static final UByte m9894firstOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$firstOrNull$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final UByte m10534firstOrNullGBYM_sE(byte[] firstOrNull) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
+        if (UByteArray.m9926isEmptyimpl(firstOrNull)) {
             return null;
         }
-        return UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0));
+        return UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(firstOrNull, 0));
     }
 
     /* renamed from: firstOrNull-rL5Bavg  reason: not valid java name */
-    public static final UShort m9899firstOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$firstOrNull$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final UShort m10539firstOrNullrL5Bavg(short[] firstOrNull) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
+        if (UShortArray.m10189isEmptyimpl(firstOrNull)) {
             return null;
         }
-        return UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0));
+        return UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(firstOrNull, 0));
     }
 
     /* renamed from: firstOrNull-jgv0xPQ  reason: not valid java name */
-    private static final UInt m9898firstOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$firstOrNull$0");
+    private static final UInt m10538firstOrNulljgv0xPQ(int[] firstOrNull, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                return UInt.m9296boximpl(m9362getpVg5ArA);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(firstOrNull);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(firstOrNull, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                return UInt.m9936boximpl(m10002getpVg5ArA);
             }
         }
         return null;
     }
 
     /* renamed from: firstOrNull-MShoTSo  reason: not valid java name */
-    private static final ULong m9896firstOrNullMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$firstOrNull$0");
+    private static final ULong m10536firstOrNullMShoTSo(long[] firstOrNull, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                return ULong.m9375boximpl(m9441getsVKNKU);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(firstOrNull);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(firstOrNull, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                return ULong.m10015boximpl(m10081getsVKNKU);
             }
         }
         return null;
     }
 
     /* renamed from: firstOrNull-JOV_ifY  reason: not valid java name */
-    private static final UByte m9895firstOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$firstOrNull$0");
+    private static final UByte m10535firstOrNullJOV_ifY(byte[] firstOrNull, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                return UByte.m9214boximpl(m9283getw2LRezQ);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(firstOrNull);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(firstOrNull, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                return UByte.m9854boximpl(m9923getw2LRezQ);
             }
         }
         return null;
     }
 
     /* renamed from: firstOrNull-xTcfx_M  reason: not valid java name */
-    private static final UShort m9900firstOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$firstOrNull$0");
+    private static final UShort m10540firstOrNullxTcfx_M(short[] firstOrNull, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(firstOrNull, "$this$firstOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                return UShort.m9482boximpl(m9546getMh2AYeg);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(firstOrNull);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(firstOrNull, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                return UShort.m10122boximpl(m10186getMh2AYeg);
             }
         }
         return null;
     }
 
     /* renamed from: getOrElse-QxvSvLU  reason: not valid java name */
-    private static final int m9958getOrElseQxvSvLU(int[] iArr, int i, Function1<? super Integer, UInt> defaultValue) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$getOrElse$0");
+    private static final int m10598getOrElseQxvSvLU(int[] getOrElse, int i, Function1<? super Integer, UInt> defaultValue) {
+        Intrinsics.checkNotNullParameter(getOrElse, "$this$getOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UIntArray.m9363getSizeimpl(iArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9354unboximpl() : UIntArray.m9362getpVg5ArA(iArr, i);
+        return (i < 0 || i >= UIntArray.m10003getSizeimpl(getOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m9994unboximpl() : UIntArray.m10002getpVg5ArA(getOrElse, i);
     }
 
     /* renamed from: getOrElse-Xw8i6dc  reason: not valid java name */
-    private static final long m9959getOrElseXw8i6dc(long[] jArr, int i, Function1<? super Integer, ULong> defaultValue) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$getOrElse$0");
+    private static final long m10599getOrElseXw8i6dc(long[] getOrElse, int i, Function1<? super Integer, ULong> defaultValue) {
+        Intrinsics.checkNotNullParameter(getOrElse, "$this$getOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= ULongArray.m9442getSizeimpl(jArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9433unboximpl() : ULongArray.m9441getsVKNKU(jArr, i);
+        return (i < 0 || i >= ULongArray.m10082getSizeimpl(getOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m10073unboximpl() : ULongArray.m10081getsVKNKU(getOrElse, i);
     }
 
     /* renamed from: getOrElse-cO-VybQ  reason: not valid java name */
-    private static final byte m9960getOrElsecOVybQ(byte[] bArr, int i, Function1<? super Integer, UByte> defaultValue) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$getOrElse$0");
+    private static final byte m10600getOrElsecOVybQ(byte[] getOrElse, int i, Function1<? super Integer, UByte> defaultValue) {
+        Intrinsics.checkNotNullParameter(getOrElse, "$this$getOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UByteArray.m9284getSizeimpl(bArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9270unboximpl() : UByteArray.m9283getw2LRezQ(bArr, i);
+        return (i < 0 || i >= UByteArray.m9924getSizeimpl(getOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m9910unboximpl() : UByteArray.m9923getw2LRezQ(getOrElse, i);
     }
 
     /* renamed from: getOrElse-CVVdw08  reason: not valid java name */
-    private static final short m9957getOrElseCVVdw08(short[] sArr, int i, Function1<? super Integer, UShort> defaultValue) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$getOrElse$0");
+    private static final short m10597getOrElseCVVdw08(short[] getOrElse, int i, Function1<? super Integer, UShort> defaultValue) {
+        Intrinsics.checkNotNullParameter(getOrElse, "$this$getOrElse");
         Intrinsics.checkNotNullParameter(defaultValue, "defaultValue");
-        return (i < 0 || i >= UShortArray.m9547getSizeimpl(sArr)) ? defaultValue.invoke(Integer.valueOf(i)).m9538unboximpl() : UShortArray.m9546getMh2AYeg(sArr, i);
+        return (i < 0 || i >= UShortArray.m10187getSizeimpl(getOrElse)) ? defaultValue.invoke(Integer.valueOf(i)).m10178unboximpl() : UShortArray.m10186getMh2AYeg(getOrElse, i);
     }
 
     /* renamed from: getOrNull-qFRl0hI  reason: not valid java name */
-    public static final UInt m9963getOrNullqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$getOrNull$0");
-        if (i < 0 || i >= UIntArray.m9363getSizeimpl(iArr)) {
+    public static final UInt m10603getOrNullqFRl0hI(int[] getOrNull, int i) {
+        Intrinsics.checkNotNullParameter(getOrNull, "$this$getOrNull");
+        if (i < 0 || i >= UIntArray.m10003getSizeimpl(getOrNull)) {
             return null;
         }
-        return UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i));
+        return UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(getOrNull, i));
     }
 
     /* renamed from: getOrNull-r7IrZao  reason: not valid java name */
-    public static final ULong m9964getOrNullr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$getOrNull$0");
-        if (i < 0 || i >= ULongArray.m9442getSizeimpl(jArr)) {
+    public static final ULong m10604getOrNullr7IrZao(long[] getOrNull, int i) {
+        Intrinsics.checkNotNullParameter(getOrNull, "$this$getOrNull");
+        if (i < 0 || i >= ULongArray.m10082getSizeimpl(getOrNull)) {
             return null;
         }
-        return ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i));
+        return ULong.m10015boximpl(ULongArray.m10081getsVKNKU(getOrNull, i));
     }
 
     /* renamed from: getOrNull-PpDY95g  reason: not valid java name */
-    public static final UByte m9961getOrNullPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$getOrNull$0");
-        if (i < 0 || i >= UByteArray.m9284getSizeimpl(bArr)) {
+    public static final UByte m10601getOrNullPpDY95g(byte[] getOrNull, int i) {
+        Intrinsics.checkNotNullParameter(getOrNull, "$this$getOrNull");
+        if (i < 0 || i >= UByteArray.m9924getSizeimpl(getOrNull)) {
             return null;
         }
-        return UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i));
+        return UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(getOrNull, i));
     }
 
     /* renamed from: getOrNull-nggk6HY  reason: not valid java name */
-    public static final UShort m9962getOrNullnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$getOrNull$0");
-        if (i < 0 || i >= UShortArray.m9547getSizeimpl(sArr)) {
+    public static final UShort m10602getOrNullnggk6HY(short[] getOrNull, int i) {
+        Intrinsics.checkNotNullParameter(getOrNull, "$this$getOrNull");
+        if (i < 0 || i >= UShortArray.m10187getSizeimpl(getOrNull)) {
             return null;
         }
-        return UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i));
+        return UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(getOrNull, i));
     }
 
     /* renamed from: indexOf-uWY9BYg  reason: not valid java name */
-    private static final int m9984indexOfuWY9BYg(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$indexOf$0");
-        return ArraysKt.indexOf(iArr, i);
+    private static final int m10624indexOfuWY9BYg(int[] indexOf, int i) {
+        Intrinsics.checkNotNullParameter(indexOf, "$this$indexOf");
+        return ArraysKt.indexOf(indexOf, i);
     }
 
     /* renamed from: indexOf-3uqUaXg  reason: not valid java name */
-    private static final int m9981indexOf3uqUaXg(long[] jArr, long j) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$indexOf$0");
-        return ArraysKt.indexOf(jArr, j);
+    private static final int m10621indexOf3uqUaXg(long[] indexOf, long j) {
+        Intrinsics.checkNotNullParameter(indexOf, "$this$indexOf");
+        return ArraysKt.indexOf(indexOf, j);
     }
 
     /* renamed from: indexOf-gMuBH34  reason: not valid java name */
-    private static final int m9983indexOfgMuBH34(byte[] bArr, byte b) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$indexOf$0");
-        return ArraysKt.indexOf(bArr, b);
+    private static final int m10623indexOfgMuBH34(byte[] indexOf, byte b) {
+        Intrinsics.checkNotNullParameter(indexOf, "$this$indexOf");
+        return ArraysKt.indexOf(indexOf, b);
     }
 
     /* renamed from: indexOf-XzdR7RA  reason: not valid java name */
-    private static final int m9982indexOfXzdR7RA(short[] sArr, short s) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$indexOf$0");
-        return ArraysKt.indexOf(sArr, s);
+    private static final int m10622indexOfXzdR7RA(short[] indexOf, short s) {
+        Intrinsics.checkNotNullParameter(indexOf, "$this$indexOf");
+        return ArraysKt.indexOf(indexOf, s);
     }
 
     /* renamed from: last--ajY-9A  reason: not valid java name */
-    private static final int m9993lastajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$last$0");
-        return UInt.m9302constructorimpl(ArraysKt.last(iArr));
+    private static final int m10633lastajY9A(int[] last) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
+        return UInt.m9942constructorimpl(ArraysKt.last(last));
     }
 
     /* renamed from: last-QwZRm1k  reason: not valid java name */
-    private static final long m9997lastQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$last$0");
-        return ULong.m9381constructorimpl(ArraysKt.last(jArr));
+    private static final long m10637lastQwZRm1k(long[] last) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
+        return ULong.m10021constructorimpl(ArraysKt.last(last));
     }
 
     /* renamed from: last-GBYM_sE  reason: not valid java name */
-    private static final byte m9994lastGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$last$0");
-        return UByte.m9220constructorimpl(ArraysKt.last(bArr));
+    private static final byte m10634lastGBYM_sE(byte[] last) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
+        return UByte.m9860constructorimpl(ArraysKt.last(last));
     }
 
     /* renamed from: last-rL5Bavg  reason: not valid java name */
-    private static final short m9999lastrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$last$0");
-        return UShort.m9488constructorimpl(ArraysKt.last(sArr));
+    private static final short m10639lastrL5Bavg(short[] last) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
+        return UShort.m10128constructorimpl(ArraysKt.last(last));
     }
 
     /* renamed from: last-jgv0xPQ  reason: not valid java name */
-    private static final int m9998lastjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$last$0");
+    private static final int m10638lastjgv0xPQ(int[] last, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr) - 1;
-        if (m9363getSizeimpl >= 0) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(last) - 1;
+        if (m10003getSizeimpl >= 0) {
             while (true) {
-                int i = m9363getSizeimpl - 1;
-                int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, m9363getSizeimpl);
-                if (!predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
+                int i = m10003getSizeimpl - 1;
+                int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(last, m10003getSizeimpl);
+                if (!predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
                     if (i < 0) {
                         break;
                     }
-                    m9363getSizeimpl = i;
+                    m10003getSizeimpl = i;
                 } else {
-                    return m9362getpVg5ArA;
+                    return m10002getpVg5ArA;
                 }
             }
         }
@@ -726,21 +726,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: last-MShoTSo  reason: not valid java name */
-    private static final long m9996lastMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$last$0");
+    private static final long m10636lastMShoTSo(long[] last, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr) - 1;
-        if (m9442getSizeimpl >= 0) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(last) - 1;
+        if (m10082getSizeimpl >= 0) {
             while (true) {
-                int i = m9442getSizeimpl - 1;
-                long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, m9442getSizeimpl);
-                if (!predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
+                int i = m10082getSizeimpl - 1;
+                long m10081getsVKNKU = ULongArray.m10081getsVKNKU(last, m10082getSizeimpl);
+                if (!predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
                     if (i < 0) {
                         break;
                     }
-                    m9442getSizeimpl = i;
+                    m10082getSizeimpl = i;
                 } else {
-                    return m9441getsVKNKU;
+                    return m10081getsVKNKU;
                 }
             }
         }
@@ -748,21 +748,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: last-JOV_ifY  reason: not valid java name */
-    private static final byte m9995lastJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$last$0");
+    private static final byte m10635lastJOV_ifY(byte[] last, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr) - 1;
-        if (m9284getSizeimpl >= 0) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(last) - 1;
+        if (m9924getSizeimpl >= 0) {
             while (true) {
-                int i = m9284getSizeimpl - 1;
-                byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, m9284getSizeimpl);
-                if (!predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
+                int i = m9924getSizeimpl - 1;
+                byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(last, m9924getSizeimpl);
+                if (!predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
                     if (i < 0) {
                         break;
                     }
-                    m9284getSizeimpl = i;
+                    m9924getSizeimpl = i;
                 } else {
-                    return m9283getw2LRezQ;
+                    return m9923getw2LRezQ;
                 }
             }
         }
@@ -770,21 +770,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: last-xTcfx_M  reason: not valid java name */
-    private static final short m10000lastxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$last$0");
+    private static final short m10640lastxTcfx_M(short[] last, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(last, "$this$last");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr) - 1;
-        if (m9547getSizeimpl >= 0) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(last) - 1;
+        if (m10187getSizeimpl >= 0) {
             while (true) {
-                int i = m9547getSizeimpl - 1;
-                short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, m9547getSizeimpl);
-                if (!predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
+                int i = m10187getSizeimpl - 1;
+                short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(last, m10187getSizeimpl);
+                if (!predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
                     if (i < 0) {
                         break;
                     }
-                    m9547getSizeimpl = i;
+                    m10187getSizeimpl = i;
                 } else {
-                    return m9546getMh2AYeg;
+                    return m10186getMh2AYeg;
                 }
             }
         }
@@ -792,443 +792,443 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: lastIndexOf-uWY9BYg  reason: not valid java name */
-    private static final int m10004lastIndexOfuWY9BYg(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$lastIndexOf$0");
-        return ArraysKt.lastIndexOf(iArr, i);
+    private static final int m10644lastIndexOfuWY9BYg(int[] lastIndexOf, int i) {
+        Intrinsics.checkNotNullParameter(lastIndexOf, "$this$lastIndexOf");
+        return ArraysKt.lastIndexOf(lastIndexOf, i);
     }
 
     /* renamed from: lastIndexOf-3uqUaXg  reason: not valid java name */
-    private static final int m10001lastIndexOf3uqUaXg(long[] jArr, long j) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$lastIndexOf$0");
-        return ArraysKt.lastIndexOf(jArr, j);
+    private static final int m10641lastIndexOf3uqUaXg(long[] lastIndexOf, long j) {
+        Intrinsics.checkNotNullParameter(lastIndexOf, "$this$lastIndexOf");
+        return ArraysKt.lastIndexOf(lastIndexOf, j);
     }
 
     /* renamed from: lastIndexOf-gMuBH34  reason: not valid java name */
-    private static final int m10003lastIndexOfgMuBH34(byte[] bArr, byte b) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$lastIndexOf$0");
-        return ArraysKt.lastIndexOf(bArr, b);
+    private static final int m10643lastIndexOfgMuBH34(byte[] lastIndexOf, byte b) {
+        Intrinsics.checkNotNullParameter(lastIndexOf, "$this$lastIndexOf");
+        return ArraysKt.lastIndexOf(lastIndexOf, b);
     }
 
     /* renamed from: lastIndexOf-XzdR7RA  reason: not valid java name */
-    private static final int m10002lastIndexOfXzdR7RA(short[] sArr, short s) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$lastIndexOf$0");
-        return ArraysKt.lastIndexOf(sArr, s);
+    private static final int m10642lastIndexOfXzdR7RA(short[] lastIndexOf, short s) {
+        Intrinsics.checkNotNullParameter(lastIndexOf, "$this$lastIndexOf");
+        return ArraysKt.lastIndexOf(lastIndexOf, s);
     }
 
     /* renamed from: lastOrNull--ajY-9A  reason: not valid java name */
-    public static final UInt m10005lastOrNullajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$lastOrNull$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+    public static final UInt m10645lastOrNullajY9A(int[] lastOrNull) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
+        if (UIntArray.m10005isEmptyimpl(lastOrNull)) {
             return null;
         }
-        return UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, UIntArray.m9363getSizeimpl(iArr) - 1));
+        return UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(lastOrNull, UIntArray.m10003getSizeimpl(lastOrNull) - 1));
     }
 
     /* renamed from: lastOrNull-QwZRm1k  reason: not valid java name */
-    public static final ULong m10009lastOrNullQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$lastOrNull$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+    public static final ULong m10649lastOrNullQwZRm1k(long[] lastOrNull) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
+        if (ULongArray.m10084isEmptyimpl(lastOrNull)) {
             return null;
         }
-        return ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, ULongArray.m9442getSizeimpl(jArr) - 1));
+        return ULong.m10015boximpl(ULongArray.m10081getsVKNKU(lastOrNull, ULongArray.m10082getSizeimpl(lastOrNull) - 1));
     }
 
     /* renamed from: lastOrNull-GBYM_sE  reason: not valid java name */
-    public static final UByte m10006lastOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$lastOrNull$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final UByte m10646lastOrNullGBYM_sE(byte[] lastOrNull) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
+        if (UByteArray.m9926isEmptyimpl(lastOrNull)) {
             return null;
         }
-        return UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, UByteArray.m9284getSizeimpl(bArr) - 1));
+        return UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(lastOrNull, UByteArray.m9924getSizeimpl(lastOrNull) - 1));
     }
 
     /* renamed from: lastOrNull-rL5Bavg  reason: not valid java name */
-    public static final UShort m10011lastOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$lastOrNull$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final UShort m10651lastOrNullrL5Bavg(short[] lastOrNull) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
+        if (UShortArray.m10189isEmptyimpl(lastOrNull)) {
             return null;
         }
-        return UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, UShortArray.m9547getSizeimpl(sArr) - 1));
+        return UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(lastOrNull, UShortArray.m10187getSizeimpl(lastOrNull) - 1));
     }
 
     /* renamed from: lastOrNull-jgv0xPQ  reason: not valid java name */
-    private static final UInt m10010lastOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$lastOrNull$0");
+    private static final UInt m10650lastOrNulljgv0xPQ(int[] lastOrNull, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr) - 1;
-        if (m9363getSizeimpl < 0) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(lastOrNull) - 1;
+        if (m10003getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9363getSizeimpl - 1;
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, m9363getSizeimpl);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                return UInt.m9296boximpl(m9362getpVg5ArA);
+            int i = m10003getSizeimpl - 1;
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(lastOrNull, m10003getSizeimpl);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                return UInt.m9936boximpl(m10002getpVg5ArA);
             }
             if (i < 0) {
                 return null;
             }
-            m9363getSizeimpl = i;
+            m10003getSizeimpl = i;
         }
     }
 
     /* renamed from: lastOrNull-MShoTSo  reason: not valid java name */
-    private static final ULong m10008lastOrNullMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$lastOrNull$0");
+    private static final ULong m10648lastOrNullMShoTSo(long[] lastOrNull, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr) - 1;
-        if (m9442getSizeimpl < 0) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(lastOrNull) - 1;
+        if (m10082getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9442getSizeimpl - 1;
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, m9442getSizeimpl);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                return ULong.m9375boximpl(m9441getsVKNKU);
+            int i = m10082getSizeimpl - 1;
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(lastOrNull, m10082getSizeimpl);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                return ULong.m10015boximpl(m10081getsVKNKU);
             }
             if (i < 0) {
                 return null;
             }
-            m9442getSizeimpl = i;
+            m10082getSizeimpl = i;
         }
     }
 
     /* renamed from: lastOrNull-JOV_ifY  reason: not valid java name */
-    private static final UByte m10007lastOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$lastOrNull$0");
+    private static final UByte m10647lastOrNullJOV_ifY(byte[] lastOrNull, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr) - 1;
-        if (m9284getSizeimpl < 0) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(lastOrNull) - 1;
+        if (m9924getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9284getSizeimpl - 1;
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, m9284getSizeimpl);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                return UByte.m9214boximpl(m9283getw2LRezQ);
+            int i = m9924getSizeimpl - 1;
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(lastOrNull, m9924getSizeimpl);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                return UByte.m9854boximpl(m9923getw2LRezQ);
             }
             if (i < 0) {
                 return null;
             }
-            m9284getSizeimpl = i;
+            m9924getSizeimpl = i;
         }
     }
 
     /* renamed from: lastOrNull-xTcfx_M  reason: not valid java name */
-    private static final UShort m10012lastOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$lastOrNull$0");
+    private static final UShort m10652lastOrNullxTcfx_M(short[] lastOrNull, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(lastOrNull, "$this$lastOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr) - 1;
-        if (m9547getSizeimpl < 0) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(lastOrNull) - 1;
+        if (m10187getSizeimpl < 0) {
             return null;
         }
         while (true) {
-            int i = m9547getSizeimpl - 1;
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, m9547getSizeimpl);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                return UShort.m9482boximpl(m9546getMh2AYeg);
+            int i = m10187getSizeimpl - 1;
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(lastOrNull, m10187getSizeimpl);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                return UShort.m10122boximpl(m10186getMh2AYeg);
             }
             if (i < 0) {
                 return null;
             }
-            m9547getSizeimpl = i;
+            m10187getSizeimpl = i;
         }
     }
 
     /* renamed from: random--ajY-9A  reason: not valid java name */
-    private static final int m10169randomajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$random$0");
-        return UArraysKt.m10170random2D5oskM(iArr, Random.Default);
+    private static final int m10809randomajY9A(int[] random) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        return UArraysKt.m10810random2D5oskM(random, Random.Default);
     }
 
     /* renamed from: random-QwZRm1k  reason: not valid java name */
-    private static final long m10173randomQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$random$0");
-        return UArraysKt.m10172randomJzugnMA(jArr, Random.Default);
+    private static final long m10813randomQwZRm1k(long[] random) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        return UArraysKt.m10812randomJzugnMA(random, Random.Default);
     }
 
     /* renamed from: random-GBYM_sE  reason: not valid java name */
-    private static final byte m10171randomGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$random$0");
-        return UArraysKt.m10174randomoSF2wD8(bArr, Random.Default);
+    private static final byte m10811randomGBYM_sE(byte[] random) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        return UArraysKt.m10814randomoSF2wD8(random, Random.Default);
     }
 
     /* renamed from: random-rL5Bavg  reason: not valid java name */
-    private static final short m10175randomrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$random$0");
-        return UArraysKt.m10176randoms5X_as8(sArr, Random.Default);
+    private static final short m10815randomrL5Bavg(short[] random) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        return UArraysKt.m10816randoms5X_as8(random, Random.Default);
     }
 
     /* renamed from: random-2D5oskM  reason: not valid java name */
-    public static final int m10170random2D5oskM(int[] iArr, Random random) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$random$0");
-        Intrinsics.checkNotNullParameter(random, "random");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+    public static final int m10810random2D5oskM(int[] random, Random random2) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        Intrinsics.checkNotNullParameter(random2, "random");
+        if (UIntArray.m10005isEmptyimpl(random)) {
             throw new NoSuchElementException("Array is empty.");
         }
-        return UIntArray.m9362getpVg5ArA(iArr, random.nextInt(UIntArray.m9363getSizeimpl(iArr)));
+        return UIntArray.m10002getpVg5ArA(random, random2.nextInt(UIntArray.m10003getSizeimpl(random)));
     }
 
     /* renamed from: random-JzugnMA  reason: not valid java name */
-    public static final long m10172randomJzugnMA(long[] jArr, Random random) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$random$0");
-        Intrinsics.checkNotNullParameter(random, "random");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+    public static final long m10812randomJzugnMA(long[] random, Random random2) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        Intrinsics.checkNotNullParameter(random2, "random");
+        if (ULongArray.m10084isEmptyimpl(random)) {
             throw new NoSuchElementException("Array is empty.");
         }
-        return ULongArray.m9441getsVKNKU(jArr, random.nextInt(ULongArray.m9442getSizeimpl(jArr)));
+        return ULongArray.m10081getsVKNKU(random, random2.nextInt(ULongArray.m10082getSizeimpl(random)));
     }
 
     /* renamed from: random-oSF2wD8  reason: not valid java name */
-    public static final byte m10174randomoSF2wD8(byte[] bArr, Random random) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$random$0");
-        Intrinsics.checkNotNullParameter(random, "random");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final byte m10814randomoSF2wD8(byte[] random, Random random2) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        Intrinsics.checkNotNullParameter(random2, "random");
+        if (UByteArray.m9926isEmptyimpl(random)) {
             throw new NoSuchElementException("Array is empty.");
         }
-        return UByteArray.m9283getw2LRezQ(bArr, random.nextInt(UByteArray.m9284getSizeimpl(bArr)));
+        return UByteArray.m9923getw2LRezQ(random, random2.nextInt(UByteArray.m9924getSizeimpl(random)));
     }
 
     /* renamed from: random-s5X_as8  reason: not valid java name */
-    public static final short m10176randoms5X_as8(short[] sArr, Random random) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$random$0");
-        Intrinsics.checkNotNullParameter(random, "random");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final short m10816randoms5X_as8(short[] random, Random random2) {
+        Intrinsics.checkNotNullParameter(random, "$this$random");
+        Intrinsics.checkNotNullParameter(random2, "random");
+        if (UShortArray.m10189isEmptyimpl(random)) {
             throw new NoSuchElementException("Array is empty.");
         }
-        return UShortArray.m9546getMh2AYeg(sArr, random.nextInt(UShortArray.m9547getSizeimpl(sArr)));
+        return UShortArray.m10186getMh2AYeg(random, random2.nextInt(UShortArray.m10187getSizeimpl(random)));
     }
 
     /* renamed from: randomOrNull--ajY-9A  reason: not valid java name */
-    private static final UInt m10177randomOrNullajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$randomOrNull$0");
-        return UArraysKt.m10178randomOrNull2D5oskM(iArr, Random.Default);
+    private static final UInt m10817randomOrNullajY9A(int[] randomOrNull) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
+        return UArraysKt.m10818randomOrNull2D5oskM(randomOrNull, Random.Default);
     }
 
     /* renamed from: randomOrNull-QwZRm1k  reason: not valid java name */
-    private static final ULong m10181randomOrNullQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$randomOrNull$0");
-        return UArraysKt.m10180randomOrNullJzugnMA(jArr, Random.Default);
+    private static final ULong m10821randomOrNullQwZRm1k(long[] randomOrNull) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
+        return UArraysKt.m10820randomOrNullJzugnMA(randomOrNull, Random.Default);
     }
 
     /* renamed from: randomOrNull-GBYM_sE  reason: not valid java name */
-    private static final UByte m10179randomOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$randomOrNull$0");
-        return UArraysKt.m10182randomOrNulloSF2wD8(bArr, Random.Default);
+    private static final UByte m10819randomOrNullGBYM_sE(byte[] randomOrNull) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
+        return UArraysKt.m10822randomOrNulloSF2wD8(randomOrNull, Random.Default);
     }
 
     /* renamed from: randomOrNull-rL5Bavg  reason: not valid java name */
-    private static final UShort m10183randomOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$randomOrNull$0");
-        return UArraysKt.m10184randomOrNulls5X_as8(sArr, Random.Default);
+    private static final UShort m10823randomOrNullrL5Bavg(short[] randomOrNull) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
+        return UArraysKt.m10824randomOrNulls5X_as8(randomOrNull, Random.Default);
     }
 
     /* renamed from: randomOrNull-2D5oskM  reason: not valid java name */
-    public static final UInt m10178randomOrNull2D5oskM(int[] iArr, Random random) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$randomOrNull$0");
+    public static final UInt m10818randomOrNull2D5oskM(int[] randomOrNull, Random random) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
         Intrinsics.checkNotNullParameter(random, "random");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(randomOrNull)) {
             return null;
         }
-        return UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, random.nextInt(UIntArray.m9363getSizeimpl(iArr))));
+        return UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(randomOrNull, random.nextInt(UIntArray.m10003getSizeimpl(randomOrNull))));
     }
 
     /* renamed from: randomOrNull-JzugnMA  reason: not valid java name */
-    public static final ULong m10180randomOrNullJzugnMA(long[] jArr, Random random) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$randomOrNull$0");
+    public static final ULong m10820randomOrNullJzugnMA(long[] randomOrNull, Random random) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
         Intrinsics.checkNotNullParameter(random, "random");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(randomOrNull)) {
             return null;
         }
-        return ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, random.nextInt(ULongArray.m9442getSizeimpl(jArr))));
+        return ULong.m10015boximpl(ULongArray.m10081getsVKNKU(randomOrNull, random.nextInt(ULongArray.m10082getSizeimpl(randomOrNull))));
     }
 
     /* renamed from: randomOrNull-oSF2wD8  reason: not valid java name */
-    public static final UByte m10182randomOrNulloSF2wD8(byte[] bArr, Random random) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$randomOrNull$0");
+    public static final UByte m10822randomOrNulloSF2wD8(byte[] randomOrNull, Random random) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
         Intrinsics.checkNotNullParameter(random, "random");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(randomOrNull)) {
             return null;
         }
-        return UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, random.nextInt(UByteArray.m9284getSizeimpl(bArr))));
+        return UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(randomOrNull, random.nextInt(UByteArray.m9924getSizeimpl(randomOrNull))));
     }
 
     /* renamed from: randomOrNull-s5X_as8  reason: not valid java name */
-    public static final UShort m10184randomOrNulls5X_as8(short[] sArr, Random random) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$randomOrNull$0");
+    public static final UShort m10824randomOrNulls5X_as8(short[] randomOrNull, Random random) {
+        Intrinsics.checkNotNullParameter(randomOrNull, "$this$randomOrNull");
         Intrinsics.checkNotNullParameter(random, "random");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(randomOrNull)) {
             return null;
         }
-        return UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, random.nextInt(UShortArray.m9547getSizeimpl(sArr))));
+        return UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(randomOrNull, random.nextInt(UShortArray.m10187getSizeimpl(randomOrNull))));
     }
 
     /* renamed from: single--ajY-9A  reason: not valid java name */
-    private static final int m10265singleajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$single$0");
-        return UInt.m9302constructorimpl(ArraysKt.single(iArr));
+    private static final int m10905singleajY9A(int[] single) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
+        return UInt.m9942constructorimpl(ArraysKt.single(single));
     }
 
     /* renamed from: single-QwZRm1k  reason: not valid java name */
-    private static final long m10269singleQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$single$0");
-        return ULong.m9381constructorimpl(ArraysKt.single(jArr));
+    private static final long m10909singleQwZRm1k(long[] single) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
+        return ULong.m10021constructorimpl(ArraysKt.single(single));
     }
 
     /* renamed from: single-GBYM_sE  reason: not valid java name */
-    private static final byte m10266singleGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$single$0");
-        return UByte.m9220constructorimpl(ArraysKt.single(bArr));
+    private static final byte m10906singleGBYM_sE(byte[] single) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
+        return UByte.m9860constructorimpl(ArraysKt.single(single));
     }
 
     /* renamed from: single-rL5Bavg  reason: not valid java name */
-    private static final short m10271singlerL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$single$0");
-        return UShort.m9488constructorimpl(ArraysKt.single(sArr));
+    private static final short m10911singlerL5Bavg(short[] single) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
+        return UShort.m10128constructorimpl(ArraysKt.single(single));
     }
 
     /* renamed from: single-jgv0xPQ  reason: not valid java name */
-    private static final int m10270singlejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$single$0");
+    private static final int m10910singlejgv0xPQ(int[] single, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(single);
         UInt uInt = null;
         boolean z = false;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(single, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
                 if (z) {
                     throw new IllegalArgumentException("Array contains more than one matching element.");
                 }
-                uInt = UInt.m9296boximpl(m9362getpVg5ArA);
+                uInt = UInt.m9936boximpl(m10002getpVg5ArA);
                 z = true;
             }
         }
         if (!z) {
             throw new NoSuchElementException("Array contains no element matching the predicate.");
         }
-        return uInt.m9354unboximpl();
+        return uInt.m9994unboximpl();
     }
 
     /* renamed from: single-MShoTSo  reason: not valid java name */
-    private static final long m10268singleMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$single$0");
+    private static final long m10908singleMShoTSo(long[] single, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(single);
         ULong uLong = null;
         boolean z = false;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(single, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
                 if (z) {
                     throw new IllegalArgumentException("Array contains more than one matching element.");
                 }
-                uLong = ULong.m9375boximpl(m9441getsVKNKU);
+                uLong = ULong.m10015boximpl(m10081getsVKNKU);
                 z = true;
             }
         }
         if (!z) {
             throw new NoSuchElementException("Array contains no element matching the predicate.");
         }
-        return uLong.m9433unboximpl();
+        return uLong.m10073unboximpl();
     }
 
     /* renamed from: single-JOV_ifY  reason: not valid java name */
-    private static final byte m10267singleJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$single$0");
+    private static final byte m10907singleJOV_ifY(byte[] single, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(single);
         UByte uByte = null;
         boolean z = false;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(single, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
                 if (z) {
                     throw new IllegalArgumentException("Array contains more than one matching element.");
                 }
-                uByte = UByte.m9214boximpl(m9283getw2LRezQ);
+                uByte = UByte.m9854boximpl(m9923getw2LRezQ);
                 z = true;
             }
         }
         if (!z) {
             throw new NoSuchElementException("Array contains no element matching the predicate.");
         }
-        return uByte.m9270unboximpl();
+        return uByte.m9910unboximpl();
     }
 
     /* renamed from: single-xTcfx_M  reason: not valid java name */
-    private static final short m10272singlexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$single$0");
+    private static final short m10912singlexTcfx_M(short[] single, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(single, "$this$single");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(single);
         UShort uShort = null;
         boolean z = false;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(single, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
                 if (z) {
                     throw new IllegalArgumentException("Array contains more than one matching element.");
                 }
-                uShort = UShort.m9482boximpl(m9546getMh2AYeg);
+                uShort = UShort.m10122boximpl(m10186getMh2AYeg);
                 z = true;
             }
         }
         if (!z) {
             throw new NoSuchElementException("Array contains no element matching the predicate.");
         }
-        return uShort.m9538unboximpl();
+        return uShort.m10178unboximpl();
     }
 
     /* renamed from: singleOrNull--ajY-9A  reason: not valid java name */
-    public static final UInt m10273singleOrNullajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$singleOrNull$0");
-        if (UIntArray.m9363getSizeimpl(iArr) == 1) {
-            return UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0));
+    public static final UInt m10913singleOrNullajY9A(int[] singleOrNull) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
+        if (UIntArray.m10003getSizeimpl(singleOrNull) == 1) {
+            return UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(singleOrNull, 0));
         }
         return null;
     }
 
     /* renamed from: singleOrNull-QwZRm1k  reason: not valid java name */
-    public static final ULong m10277singleOrNullQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$singleOrNull$0");
-        if (ULongArray.m9442getSizeimpl(jArr) == 1) {
-            return ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0));
+    public static final ULong m10917singleOrNullQwZRm1k(long[] singleOrNull) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
+        if (ULongArray.m10082getSizeimpl(singleOrNull) == 1) {
+            return ULong.m10015boximpl(ULongArray.m10081getsVKNKU(singleOrNull, 0));
         }
         return null;
     }
 
     /* renamed from: singleOrNull-GBYM_sE  reason: not valid java name */
-    public static final UByte m10274singleOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$singleOrNull$0");
-        if (UByteArray.m9284getSizeimpl(bArr) == 1) {
-            return UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0));
+    public static final UByte m10914singleOrNullGBYM_sE(byte[] singleOrNull) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
+        if (UByteArray.m9924getSizeimpl(singleOrNull) == 1) {
+            return UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(singleOrNull, 0));
         }
         return null;
     }
 
     /* renamed from: singleOrNull-rL5Bavg  reason: not valid java name */
-    public static final UShort m10279singleOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$singleOrNull$0");
-        if (UShortArray.m9547getSizeimpl(sArr) == 1) {
-            return UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0));
+    public static final UShort m10919singleOrNullrL5Bavg(short[] singleOrNull) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
+        if (UShortArray.m10187getSizeimpl(singleOrNull) == 1) {
+            return UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(singleOrNull, 0));
         }
         return null;
     }
 
     /* renamed from: singleOrNull-jgv0xPQ  reason: not valid java name */
-    private static final UInt m10278singleOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$singleOrNull$0");
+    private static final UInt m10918singleOrNulljgv0xPQ(int[] singleOrNull, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(singleOrNull);
         UInt uInt = null;
         boolean z = false;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(singleOrNull, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
                 if (z) {
                     return null;
                 }
-                uInt = UInt.m9296boximpl(m9362getpVg5ArA);
+                uInt = UInt.m9936boximpl(m10002getpVg5ArA);
                 z = true;
             }
         }
@@ -1239,19 +1239,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: singleOrNull-MShoTSo  reason: not valid java name */
-    private static final ULong m10276singleOrNullMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$singleOrNull$0");
+    private static final ULong m10916singleOrNullMShoTSo(long[] singleOrNull, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(singleOrNull);
         ULong uLong = null;
         boolean z = false;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(singleOrNull, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
                 if (z) {
                     return null;
                 }
-                uLong = ULong.m9375boximpl(m9441getsVKNKU);
+                uLong = ULong.m10015boximpl(m10081getsVKNKU);
                 z = true;
             }
         }
@@ -1262,19 +1262,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: singleOrNull-JOV_ifY  reason: not valid java name */
-    private static final UByte m10275singleOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$singleOrNull$0");
+    private static final UByte m10915singleOrNullJOV_ifY(byte[] singleOrNull, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(singleOrNull);
         UByte uByte = null;
         boolean z = false;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(singleOrNull, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
                 if (z) {
                     return null;
                 }
-                uByte = UByte.m9214boximpl(m9283getw2LRezQ);
+                uByte = UByte.m9854boximpl(m9923getw2LRezQ);
                 z = true;
             }
         }
@@ -1285,19 +1285,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: singleOrNull-xTcfx_M  reason: not valid java name */
-    private static final UShort m10280singleOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$singleOrNull$0");
+    private static final UShort m10920singleOrNullxTcfx_M(short[] singleOrNull, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(singleOrNull, "$this$singleOrNull");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(singleOrNull);
         UShort uShort = null;
         boolean z = false;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(singleOrNull, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
                 if (z) {
                     return null;
                 }
-                uShort = UShort.m9482boximpl(m9546getMh2AYeg);
+                uShort = UShort.m10122boximpl(m10186getMh2AYeg);
                 z = true;
             }
         }
@@ -1308,90 +1308,90 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: drop-qFRl0hI  reason: not valid java name */
-    public static final List<UInt> m9823dropqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$drop$0");
+    public static final List<UInt> m10463dropqFRl0hI(int[] drop, int i) {
+        Intrinsics.checkNotNullParameter(drop, "$this$drop");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10351takeLastqFRl0hI(iArr, RangesKt.coerceAtLeast(UIntArray.m9363getSizeimpl(iArr) - i, 0));
+        return UArraysKt.m10991takeLastqFRl0hI(drop, RangesKt.coerceAtLeast(UIntArray.m10003getSizeimpl(drop) - i, 0));
     }
 
     /* renamed from: drop-r7IrZao  reason: not valid java name */
-    public static final List<ULong> m9824dropr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$drop$0");
+    public static final List<ULong> m10464dropr7IrZao(long[] drop, int i) {
+        Intrinsics.checkNotNullParameter(drop, "$this$drop");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10352takeLastr7IrZao(jArr, RangesKt.coerceAtLeast(ULongArray.m9442getSizeimpl(jArr) - i, 0));
+        return UArraysKt.m10992takeLastr7IrZao(drop, RangesKt.coerceAtLeast(ULongArray.m10082getSizeimpl(drop) - i, 0));
     }
 
     /* renamed from: drop-PpDY95g  reason: not valid java name */
-    public static final List<UByte> m9821dropPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$drop$0");
+    public static final List<UByte> m10461dropPpDY95g(byte[] drop, int i) {
+        Intrinsics.checkNotNullParameter(drop, "$this$drop");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10349takeLastPpDY95g(bArr, RangesKt.coerceAtLeast(UByteArray.m9284getSizeimpl(bArr) - i, 0));
+        return UArraysKt.m10989takeLastPpDY95g(drop, RangesKt.coerceAtLeast(UByteArray.m9924getSizeimpl(drop) - i, 0));
     }
 
     /* renamed from: drop-nggk6HY  reason: not valid java name */
-    public static final List<UShort> m9822dropnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$drop$0");
+    public static final List<UShort> m10462dropnggk6HY(short[] drop, int i) {
+        Intrinsics.checkNotNullParameter(drop, "$this$drop");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10350takeLastnggk6HY(sArr, RangesKt.coerceAtLeast(UShortArray.m9547getSizeimpl(sArr) - i, 0));
+        return UArraysKt.m10990takeLastnggk6HY(drop, RangesKt.coerceAtLeast(UShortArray.m10187getSizeimpl(drop) - i, 0));
     }
 
     /* renamed from: dropLast-qFRl0hI  reason: not valid java name */
-    public static final List<UInt> m9827dropLastqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$dropLast$0");
+    public static final List<UInt> m10467dropLastqFRl0hI(int[] dropLast, int i) {
+        Intrinsics.checkNotNullParameter(dropLast, "$this$dropLast");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10347takeqFRl0hI(iArr, RangesKt.coerceAtLeast(UIntArray.m9363getSizeimpl(iArr) - i, 0));
+        return UArraysKt.m10987takeqFRl0hI(dropLast, RangesKt.coerceAtLeast(UIntArray.m10003getSizeimpl(dropLast) - i, 0));
     }
 
     /* renamed from: dropLast-r7IrZao  reason: not valid java name */
-    public static final List<ULong> m9828dropLastr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$dropLast$0");
+    public static final List<ULong> m10468dropLastr7IrZao(long[] dropLast, int i) {
+        Intrinsics.checkNotNullParameter(dropLast, "$this$dropLast");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10348taker7IrZao(jArr, RangesKt.coerceAtLeast(ULongArray.m9442getSizeimpl(jArr) - i, 0));
+        return UArraysKt.m10988taker7IrZao(dropLast, RangesKt.coerceAtLeast(ULongArray.m10082getSizeimpl(dropLast) - i, 0));
     }
 
     /* renamed from: dropLast-PpDY95g  reason: not valid java name */
-    public static final List<UByte> m9825dropLastPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$dropLast$0");
+    public static final List<UByte> m10465dropLastPpDY95g(byte[] dropLast, int i) {
+        Intrinsics.checkNotNullParameter(dropLast, "$this$dropLast");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10345takePpDY95g(bArr, RangesKt.coerceAtLeast(UByteArray.m9284getSizeimpl(bArr) - i, 0));
+        return UArraysKt.m10985takePpDY95g(dropLast, RangesKt.coerceAtLeast(UByteArray.m9924getSizeimpl(dropLast) - i, 0));
     }
 
     /* renamed from: dropLast-nggk6HY  reason: not valid java name */
-    public static final List<UShort> m9826dropLastnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$dropLast$0");
+    public static final List<UShort> m10466dropLastnggk6HY(short[] dropLast, int i) {
+        Intrinsics.checkNotNullParameter(dropLast, "$this$dropLast");
         if (i < 0) {
             throw new IllegalArgumentException(("Requested element count " + i + " is less than zero.").toString());
         }
-        return UArraysKt.m10346takenggk6HY(sArr, RangesKt.coerceAtLeast(UShortArray.m9547getSizeimpl(sArr) - i, 0));
+        return UArraysKt.m10986takenggk6HY(dropLast, RangesKt.coerceAtLeast(UShortArray.m10187getSizeimpl(dropLast) - i, 0));
     }
 
     /* renamed from: dropWhile-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m9835dropWhilejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$dropWhile$0");
+    private static final List<UInt> m10475dropWhilejgv0xPQ(int[] dropWhile, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropWhile, "$this$dropWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(dropWhile);
         boolean z = false;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(dropWhile, i);
             if (z) {
-                arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
-            } else if (!predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+                arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
+            } else if (!predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
                 z = true;
             }
         }
@@ -1399,18 +1399,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: dropWhile-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m9834dropWhileMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$dropWhile$0");
+    private static final List<ULong> m10474dropWhileMShoTSo(long[] dropWhile, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropWhile, "$this$dropWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(dropWhile);
         boolean z = false;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(dropWhile, i);
             if (z) {
-                arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
-            } else if (!predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+                arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
+            } else if (!predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
                 z = true;
             }
         }
@@ -1418,18 +1418,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: dropWhile-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m9833dropWhileJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$dropWhile$0");
+    private static final List<UByte> m10473dropWhileJOV_ifY(byte[] dropWhile, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropWhile, "$this$dropWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(dropWhile);
         boolean z = false;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(dropWhile, i);
             if (z) {
-                arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
-            } else if (!predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+                arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
+            } else if (!predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
                 z = true;
             }
         }
@@ -1437,18 +1437,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: dropWhile-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m9836dropWhilexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$dropWhile$0");
+    private static final List<UShort> m10476dropWhilexTcfx_M(short[] dropWhile, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropWhile, "$this$dropWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(dropWhile);
         boolean z = false;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(dropWhile, i);
             if (z) {
-                arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
-            } else if (!predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+                arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
+            } else if (!predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
                 z = true;
             }
         }
@@ -1456,78 +1456,78 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: filter-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m9855filterjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filter$0");
+    private static final List<UInt> m10495filterjgv0xPQ(int[] filter, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filter, "$this$filter");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filter);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filter, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filter-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m9854filterMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filter$0");
+    private static final List<ULong> m10494filterMShoTSo(long[] filter, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filter, "$this$filter");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filter);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filter, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filter-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m9853filterJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filter$0");
+    private static final List<UByte> m10493filterJOV_ifY(byte[] filter, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filter, "$this$filter");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filter);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filter, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filter-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m9856filterxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filter$0");
+    private static final List<UShort> m10496filterxTcfx_M(short[] filter, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filter, "$this$filter");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filter);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filter, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filterIndexed-WyvcNBI  reason: not valid java name */
-    private static final List<UInt> m9858filterIndexedWyvcNBI(int[] iArr, Function2<? super Integer, ? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filterIndexed$0");
+    private static final List<UInt> m10498filterIndexedWyvcNBI(int[] filterIndexed, Function2<? super Integer, ? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexed, "$this$filterIndexed");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filterIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
+        while (i < m10003getSizeimpl) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filterIndexed, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+            if (predicate.invoke(Integer.valueOf(i2), UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
             i++;
             i2 = i3;
@@ -1536,18 +1536,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: filterIndexed-s8dVfGU  reason: not valid java name */
-    private static final List<ULong> m9859filterIndexeds8dVfGU(long[] jArr, Function2<? super Integer, ? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filterIndexed$0");
+    private static final List<ULong> m10499filterIndexeds8dVfGU(long[] filterIndexed, Function2<? super Integer, ? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexed, "$this$filterIndexed");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filterIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
+        while (i < m10082getSizeimpl) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filterIndexed, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+            if (predicate.invoke(Integer.valueOf(i2), ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
             i++;
             i2 = i3;
@@ -1556,18 +1556,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: filterIndexed-ELGow60  reason: not valid java name */
-    private static final List<UByte> m9857filterIndexedELGow60(byte[] bArr, Function2<? super Integer, ? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filterIndexed$0");
+    private static final List<UByte> m10497filterIndexedELGow60(byte[] filterIndexed, Function2<? super Integer, ? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexed, "$this$filterIndexed");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filterIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
+        while (i < m9924getSizeimpl) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filterIndexed, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+            if (predicate.invoke(Integer.valueOf(i2), UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
             i++;
             i2 = i3;
@@ -1576,18 +1576,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: filterIndexed-xzaTVY8  reason: not valid java name */
-    private static final List<UShort> m9860filterIndexedxzaTVY8(short[] sArr, Function2<? super Integer, ? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filterIndexed$0");
+    private static final List<UShort> m10500filterIndexedxzaTVY8(short[] filterIndexed, Function2<? super Integer, ? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexed, "$this$filterIndexed");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filterIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
+        while (i < m10187getSizeimpl) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filterIndexed, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+            if (predicate.invoke(Integer.valueOf(i2), UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
             i++;
             i2 = i3;
@@ -1597,18 +1597,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterIndexedTo--6EtJGI  reason: not valid java name */
-    private static final <C extends Collection<? super UInt>> C m9861filterIndexedTo6EtJGI(int[] iArr, C destination, Function2<? super Integer, ? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filterIndexedTo$0");
+    private static final <C extends Collection<? super UInt>> C m10501filterIndexedTo6EtJGI(int[] filterIndexedTo, C destination, Function2<? super Integer, ? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexedTo, "$this$filterIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filterIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
+        while (i < m10003getSizeimpl) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filterIndexedTo, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                destination.add(UInt.m9296boximpl(m9362getpVg5ArA));
+            if (predicate.invoke(Integer.valueOf(i2), UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                destination.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
             i++;
             i2 = i3;
@@ -1618,18 +1618,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterIndexedTo-pe2Q0Dw  reason: not valid java name */
-    private static final <C extends Collection<? super ULong>> C m9864filterIndexedTope2Q0Dw(long[] jArr, C destination, Function2<? super Integer, ? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filterIndexedTo$0");
+    private static final <C extends Collection<? super ULong>> C m10504filterIndexedTope2Q0Dw(long[] filterIndexedTo, C destination, Function2<? super Integer, ? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexedTo, "$this$filterIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filterIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
+        while (i < m10082getSizeimpl) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filterIndexedTo, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                destination.add(ULong.m9375boximpl(m9441getsVKNKU));
+            if (predicate.invoke(Integer.valueOf(i2), ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                destination.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
             i++;
             i2 = i3;
@@ -1639,18 +1639,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterIndexedTo-eNpIKz8  reason: not valid java name */
-    private static final <C extends Collection<? super UByte>> C m9863filterIndexedToeNpIKz8(byte[] bArr, C destination, Function2<? super Integer, ? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filterIndexedTo$0");
+    private static final <C extends Collection<? super UByte>> C m10503filterIndexedToeNpIKz8(byte[] filterIndexedTo, C destination, Function2<? super Integer, ? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexedTo, "$this$filterIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filterIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
+        while (i < m9924getSizeimpl) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filterIndexedTo, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                destination.add(UByte.m9214boximpl(m9283getw2LRezQ));
+            if (predicate.invoke(Integer.valueOf(i2), UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                destination.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
             i++;
             i2 = i3;
@@ -1660,18 +1660,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterIndexedTo-QqktQ3k  reason: not valid java name */
-    private static final <C extends Collection<? super UShort>> C m9862filterIndexedToQqktQ3k(short[] sArr, C destination, Function2<? super Integer, ? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filterIndexedTo$0");
+    private static final <C extends Collection<? super UShort>> C m10502filterIndexedToQqktQ3k(short[] filterIndexedTo, C destination, Function2<? super Integer, ? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterIndexedTo, "$this$filterIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filterIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
+        while (i < m10187getSizeimpl) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filterIndexedTo, i);
             int i3 = i2 + 1;
-            if (predicate.invoke(Integer.valueOf(i2), UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                destination.add(UShort.m9482boximpl(m9546getMh2AYeg));
+            if (predicate.invoke(Integer.valueOf(i2), UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                destination.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
             i++;
             i2 = i3;
@@ -1680,60 +1680,60 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: filterNot-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m9867filterNotjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filterNot$0");
+    private static final List<UInt> m10507filterNotjgv0xPQ(int[] filterNot, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNot, "$this$filterNot");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (!predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filterNot);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filterNot, i);
+            if (!predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filterNot-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m9866filterNotMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filterNot$0");
+    private static final List<ULong> m10506filterNotMShoTSo(long[] filterNot, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNot, "$this$filterNot");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (!predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filterNot);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filterNot, i);
+            if (!predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filterNot-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m9865filterNotJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filterNot$0");
+    private static final List<UByte> m10505filterNotJOV_ifY(byte[] filterNot, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNot, "$this$filterNot");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (!predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filterNot);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filterNot, i);
+            if (!predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
         }
         return arrayList;
     }
 
     /* renamed from: filterNot-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m9868filterNotxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filterNot$0");
+    private static final List<UShort> m10508filterNotxTcfx_M(short[] filterNot, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNot, "$this$filterNot");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (!predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filterNot);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filterNot, i);
+            if (!predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
         }
         return arrayList;
@@ -1741,15 +1741,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterNotTo-wU5IKMo  reason: not valid java name */
-    private static final <C extends Collection<? super UInt>> C m9871filterNotTowU5IKMo(int[] iArr, C destination, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filterNotTo$0");
+    private static final <C extends Collection<? super UInt>> C m10511filterNotTowU5IKMo(int[] filterNotTo, C destination, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNotTo, "$this$filterNotTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (!predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                destination.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filterNotTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filterNotTo, i);
+            if (!predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                destination.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
         }
         return destination;
@@ -1757,15 +1757,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterNotTo-HqK1JgA  reason: not valid java name */
-    private static final <C extends Collection<? super ULong>> C m9869filterNotToHqK1JgA(long[] jArr, C destination, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filterNotTo$0");
+    private static final <C extends Collection<? super ULong>> C m10509filterNotToHqK1JgA(long[] filterNotTo, C destination, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNotTo, "$this$filterNotTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (!predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                destination.add(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filterNotTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filterNotTo, i);
+            if (!predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                destination.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
         }
         return destination;
@@ -1773,15 +1773,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterNotTo-wzUQCXU  reason: not valid java name */
-    private static final <C extends Collection<? super UByte>> C m9872filterNotTowzUQCXU(byte[] bArr, C destination, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filterNotTo$0");
+    private static final <C extends Collection<? super UByte>> C m10512filterNotTowzUQCXU(byte[] filterNotTo, C destination, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNotTo, "$this$filterNotTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (!predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                destination.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filterNotTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filterNotTo, i);
+            if (!predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                destination.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
         }
         return destination;
@@ -1789,15 +1789,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterNotTo-oEOeDjA  reason: not valid java name */
-    private static final <C extends Collection<? super UShort>> C m9870filterNotTooEOeDjA(short[] sArr, C destination, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filterNotTo$0");
+    private static final <C extends Collection<? super UShort>> C m10510filterNotTooEOeDjA(short[] filterNotTo, C destination, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterNotTo, "$this$filterNotTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (!predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                destination.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filterNotTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filterNotTo, i);
+            if (!predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                destination.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
         }
         return destination;
@@ -1805,15 +1805,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterTo-wU5IKMo  reason: not valid java name */
-    private static final <C extends Collection<? super UInt>> C m9875filterTowU5IKMo(int[] iArr, C destination, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$filterTo$0");
+    private static final <C extends Collection<? super UInt>> C m10515filterTowU5IKMo(int[] filterTo, C destination, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterTo, "$this$filterTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
-                destination.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(filterTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(filterTo, i);
+            if (predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
+                destination.add(UInt.m9936boximpl(m10002getpVg5ArA));
             }
         }
         return destination;
@@ -1821,15 +1821,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterTo-HqK1JgA  reason: not valid java name */
-    private static final <C extends Collection<? super ULong>> C m9873filterToHqK1JgA(long[] jArr, C destination, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$filterTo$0");
+    private static final <C extends Collection<? super ULong>> C m10513filterToHqK1JgA(long[] filterTo, C destination, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterTo, "$this$filterTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
-                destination.add(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(filterTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(filterTo, i);
+            if (predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
+                destination.add(ULong.m10015boximpl(m10081getsVKNKU));
             }
         }
         return destination;
@@ -1837,15 +1837,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterTo-wzUQCXU  reason: not valid java name */
-    private static final <C extends Collection<? super UByte>> C m9876filterTowzUQCXU(byte[] bArr, C destination, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$filterTo$0");
+    private static final <C extends Collection<? super UByte>> C m10516filterTowzUQCXU(byte[] filterTo, C destination, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterTo, "$this$filterTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
-                destination.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(filterTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(filterTo, i);
+            if (predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
+                destination.add(UByte.m9854boximpl(m9923getw2LRezQ));
             }
         }
         return destination;
@@ -1853,51 +1853,51 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: filterTo-oEOeDjA  reason: not valid java name */
-    private static final <C extends Collection<? super UShort>> C m9874filterTooEOeDjA(short[] sArr, C destination, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$filterTo$0");
+    private static final <C extends Collection<? super UShort>> C m10514filterTooEOeDjA(short[] filterTo, C destination, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(filterTo, "$this$filterTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
-                destination.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(filterTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(filterTo, i);
+            if (predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
+                destination.add(UShort.m10122boximpl(m10186getMh2AYeg));
             }
         }
         return destination;
     }
 
     /* renamed from: slice-tAntMlw  reason: not valid java name */
-    public static final List<UInt> m10288slicetAntMlw(int[] iArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$slice$0");
+    public static final List<UInt> m10928slicetAntMlw(int[] slice, IntRange indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m9678asListajY9A(UIntArray.m9357constructorimpl(ArraysKt.copyOfRange(iArr, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
+        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m10318asListajY9A(UIntArray.m9997constructorimpl(ArraysKt.copyOfRange(slice, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
     }
 
     /* renamed from: slice-ZRhS8yI  reason: not valid java name */
-    public static final List<ULong> m10286sliceZRhS8yI(long[] jArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$slice$0");
+    public static final List<ULong> m10926sliceZRhS8yI(long[] slice, IntRange indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m9680asListQwZRm1k(ULongArray.m9436constructorimpl(ArraysKt.copyOfRange(jArr, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
+        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m10320asListQwZRm1k(ULongArray.m10076constructorimpl(ArraysKt.copyOfRange(slice, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
     }
 
     /* renamed from: slice-c0bezYM  reason: not valid java name */
-    public static final List<UByte> m10287slicec0bezYM(byte[] bArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$slice$0");
+    public static final List<UByte> m10927slicec0bezYM(byte[] slice, IntRange indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m9679asListGBYM_sE(UByteArray.m9278constructorimpl(ArraysKt.copyOfRange(bArr, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
+        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m10319asListGBYM_sE(UByteArray.m9918constructorimpl(ArraysKt.copyOfRange(slice, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
     }
 
     /* renamed from: slice-Q6IL4kU  reason: not valid java name */
-    public static final List<UShort> m10285sliceQ6IL4kU(short[] sArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$slice$0");
+    public static final List<UShort> m10925sliceQ6IL4kU(short[] slice, IntRange indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m9681asListrL5Bavg(UShortArray.m9541constructorimpl(ArraysKt.copyOfRange(sArr, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
+        return indices.isEmpty() ? CollectionsKt.emptyList() : UArraysKt.m10321asListrL5Bavg(UShortArray.m10181constructorimpl(ArraysKt.copyOfRange(slice, indices.getStart().intValue(), indices.getEndInclusive().intValue() + 1)));
     }
 
     /* renamed from: slice-HwE9HBo  reason: not valid java name */
-    public static final List<UInt> m10282sliceHwE9HBo(int[] iArr, Iterable<Integer> indices) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$slice$0");
+    public static final List<UInt> m10922sliceHwE9HBo(int[] slice, Iterable<Integer> indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
         int collectionSizeOrDefault = CollectionsKt.collectionSizeOrDefault(indices, 10);
         if (collectionSizeOrDefault == 0) {
@@ -1905,14 +1905,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         }
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (Integer num : indices) {
-            arrayList.add(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, num.intValue())));
+            arrayList.add(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(slice, num.intValue())));
         }
         return arrayList;
     }
 
     /* renamed from: slice-F7u83W8  reason: not valid java name */
-    public static final List<ULong> m10281sliceF7u83W8(long[] jArr, Iterable<Integer> indices) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$slice$0");
+    public static final List<ULong> m10921sliceF7u83W8(long[] slice, Iterable<Integer> indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
         int collectionSizeOrDefault = CollectionsKt.collectionSizeOrDefault(indices, 10);
         if (collectionSizeOrDefault == 0) {
@@ -1920,14 +1920,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         }
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (Integer num : indices) {
-            arrayList.add(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, num.intValue())));
+            arrayList.add(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(slice, num.intValue())));
         }
         return arrayList;
     }
 
     /* renamed from: slice-JQknh5Q  reason: not valid java name */
-    public static final List<UByte> m10284sliceJQknh5Q(byte[] bArr, Iterable<Integer> indices) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$slice$0");
+    public static final List<UByte> m10924sliceJQknh5Q(byte[] slice, Iterable<Integer> indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
         int collectionSizeOrDefault = CollectionsKt.collectionSizeOrDefault(indices, 10);
         if (collectionSizeOrDefault == 0) {
@@ -1935,14 +1935,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         }
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (Integer num : indices) {
-            arrayList.add(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, num.intValue())));
+            arrayList.add(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(slice, num.intValue())));
         }
         return arrayList;
     }
 
     /* renamed from: slice-JGPC0-M  reason: not valid java name */
-    public static final List<UShort> m10283sliceJGPC0M(short[] sArr, Iterable<Integer> indices) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$slice$0");
+    public static final List<UShort> m10923sliceJGPC0M(short[] slice, Iterable<Integer> indices) {
+        Intrinsics.checkNotNullParameter(slice, "$this$slice");
         Intrinsics.checkNotNullParameter(indices, "indices");
         int collectionSizeOrDefault = CollectionsKt.collectionSizeOrDefault(indices, 10);
         if (collectionSizeOrDefault == 0) {
@@ -1950,85 +1950,85 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         }
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (Integer num : indices) {
-            arrayList.add(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, num.intValue())));
+            arrayList.add(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(slice, num.intValue())));
         }
         return arrayList;
     }
 
     /* renamed from: sliceArray-CFIt9YE  reason: not valid java name */
-    public static final int[] m10289sliceArrayCFIt9YE(int[] iArr, Collection<Integer> indices) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sliceArray$0");
+    public static final int[] m10929sliceArrayCFIt9YE(int[] sliceArray, Collection<Integer> indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UIntArray.m9357constructorimpl(ArraysKt.sliceArray(iArr, indices));
+        return UIntArray.m9997constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-kzHmqpY  reason: not valid java name */
-    public static final long[] m10293sliceArraykzHmqpY(long[] jArr, Collection<Integer> indices) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sliceArray$0");
+    public static final long[] m10933sliceArraykzHmqpY(long[] sliceArray, Collection<Integer> indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return ULongArray.m9436constructorimpl(ArraysKt.sliceArray(jArr, indices));
+        return ULongArray.m10076constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-xo_DsdI  reason: not valid java name */
-    public static final byte[] m10296sliceArrayxo_DsdI(byte[] bArr, Collection<Integer> indices) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sliceArray$0");
+    public static final byte[] m10936sliceArrayxo_DsdI(byte[] sliceArray, Collection<Integer> indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UByteArray.m9278constructorimpl(ArraysKt.sliceArray(bArr, indices));
+        return UByteArray.m9918constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-ojwP5H8  reason: not valid java name */
-    public static final short[] m10294sliceArrayojwP5H8(short[] sArr, Collection<Integer> indices) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sliceArray$0");
+    public static final short[] m10934sliceArrayojwP5H8(short[] sliceArray, Collection<Integer> indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UShortArray.m9541constructorimpl(ArraysKt.sliceArray(sArr, indices));
+        return UShortArray.m10181constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-tAntMlw  reason: not valid java name */
-    public static final int[] m10295sliceArraytAntMlw(int[] iArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sliceArray$0");
+    public static final int[] m10935sliceArraytAntMlw(int[] sliceArray, IntRange indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UIntArray.m9357constructorimpl(ArraysKt.sliceArray(iArr, indices));
+        return UIntArray.m9997constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-ZRhS8yI  reason: not valid java name */
-    public static final long[] m10291sliceArrayZRhS8yI(long[] jArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sliceArray$0");
+    public static final long[] m10931sliceArrayZRhS8yI(long[] sliceArray, IntRange indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return ULongArray.m9436constructorimpl(ArraysKt.sliceArray(jArr, indices));
+        return ULongArray.m10076constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-c0bezYM  reason: not valid java name */
-    public static final byte[] m10292sliceArrayc0bezYM(byte[] bArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sliceArray$0");
+    public static final byte[] m10932sliceArrayc0bezYM(byte[] sliceArray, IntRange indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UByteArray.m9278constructorimpl(ArraysKt.sliceArray(bArr, indices));
+        return UByteArray.m9918constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: sliceArray-Q6IL4kU  reason: not valid java name */
-    public static final short[] m10290sliceArrayQ6IL4kU(short[] sArr, IntRange indices) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sliceArray$0");
+    public static final short[] m10930sliceArrayQ6IL4kU(short[] sliceArray, IntRange indices) {
+        Intrinsics.checkNotNullParameter(sliceArray, "$this$sliceArray");
         Intrinsics.checkNotNullParameter(indices, "indices");
-        return UShortArray.m9541constructorimpl(ArraysKt.sliceArray(sArr, indices));
+        return UShortArray.m10181constructorimpl(ArraysKt.sliceArray(sliceArray, indices));
     }
 
     /* renamed from: take-qFRl0hI  reason: not valid java name */
-    public static final List<UInt> m10347takeqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$take$0");
+    public static final List<UInt> m10987takeqFRl0hI(int[] take, int i) {
+        Intrinsics.checkNotNullParameter(take, "$this$take");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            if (i >= UIntArray.m9363getSizeimpl(iArr)) {
-                return CollectionsKt.toList(UIntArray.m9355boximpl(iArr));
+            if (i >= UIntArray.m10003getSizeimpl(take)) {
+                return CollectionsKt.toList(UIntArray.m9995boximpl(take));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
+                return CollectionsKt.listOf(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(take, 0)));
             }
             ArrayList arrayList = new ArrayList(i);
-            int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+            int m10003getSizeimpl = UIntArray.m10003getSizeimpl(take);
             int i2 = 0;
-            for (int i3 = 0; i3 < m9363getSizeimpl; i3++) {
-                arrayList.add(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i3)));
+            for (int i3 = 0; i3 < m10003getSizeimpl; i3++) {
+                arrayList.add(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(take, i3)));
                 i2++;
                 if (i2 == i) {
                     break;
@@ -2040,23 +2040,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: take-r7IrZao  reason: not valid java name */
-    public static final List<ULong> m10348taker7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$take$0");
+    public static final List<ULong> m10988taker7IrZao(long[] take, int i) {
+        Intrinsics.checkNotNullParameter(take, "$this$take");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            if (i >= ULongArray.m9442getSizeimpl(jArr)) {
-                return CollectionsKt.toList(ULongArray.m9434boximpl(jArr));
+            if (i >= ULongArray.m10082getSizeimpl(take)) {
+                return CollectionsKt.toList(ULongArray.m10074boximpl(take));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
+                return CollectionsKt.listOf(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(take, 0)));
             }
             ArrayList arrayList = new ArrayList(i);
-            int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+            int m10082getSizeimpl = ULongArray.m10082getSizeimpl(take);
             int i2 = 0;
-            for (int i3 = 0; i3 < m9442getSizeimpl; i3++) {
-                arrayList.add(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i3)));
+            for (int i3 = 0; i3 < m10082getSizeimpl; i3++) {
+                arrayList.add(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(take, i3)));
                 i2++;
                 if (i2 == i) {
                     break;
@@ -2068,23 +2068,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: take-PpDY95g  reason: not valid java name */
-    public static final List<UByte> m10345takePpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$take$0");
+    public static final List<UByte> m10985takePpDY95g(byte[] take, int i) {
+        Intrinsics.checkNotNullParameter(take, "$this$take");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            if (i >= UByteArray.m9284getSizeimpl(bArr)) {
-                return CollectionsKt.toList(UByteArray.m9276boximpl(bArr));
+            if (i >= UByteArray.m9924getSizeimpl(take)) {
+                return CollectionsKt.toList(UByteArray.m9916boximpl(take));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
+                return CollectionsKt.listOf(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(take, 0)));
             }
             ArrayList arrayList = new ArrayList(i);
-            int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+            int m9924getSizeimpl = UByteArray.m9924getSizeimpl(take);
             int i2 = 0;
-            for (int i3 = 0; i3 < m9284getSizeimpl; i3++) {
-                arrayList.add(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i3)));
+            for (int i3 = 0; i3 < m9924getSizeimpl; i3++) {
+                arrayList.add(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(take, i3)));
                 i2++;
                 if (i2 == i) {
                     break;
@@ -2096,23 +2096,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: take-nggk6HY  reason: not valid java name */
-    public static final List<UShort> m10346takenggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$take$0");
+    public static final List<UShort> m10986takenggk6HY(short[] take, int i) {
+        Intrinsics.checkNotNullParameter(take, "$this$take");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            if (i >= UShortArray.m9547getSizeimpl(sArr)) {
-                return CollectionsKt.toList(UShortArray.m9539boximpl(sArr));
+            if (i >= UShortArray.m10187getSizeimpl(take)) {
+                return CollectionsKt.toList(UShortArray.m10179boximpl(take));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
+                return CollectionsKt.listOf(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(take, 0)));
             }
             ArrayList arrayList = new ArrayList(i);
-            int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+            int m10187getSizeimpl = UShortArray.m10187getSizeimpl(take);
             int i2 = 0;
-            for (int i3 = 0; i3 < m9547getSizeimpl; i3++) {
-                arrayList.add(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i3)));
+            for (int i3 = 0; i3 < m10187getSizeimpl; i3++) {
+                arrayList.add(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(take, i3)));
                 i2++;
                 if (i2 == i) {
                     break;
@@ -2124,22 +2124,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: takeLast-qFRl0hI  reason: not valid java name */
-    public static final List<UInt> m10351takeLastqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$takeLast$0");
+    public static final List<UInt> m10991takeLastqFRl0hI(int[] takeLast, int i) {
+        Intrinsics.checkNotNullParameter(takeLast, "$this$takeLast");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-            if (i >= m9363getSizeimpl) {
-                return CollectionsKt.toList(UIntArray.m9355boximpl(iArr));
+            int m10003getSizeimpl = UIntArray.m10003getSizeimpl(takeLast);
+            if (i >= m10003getSizeimpl) {
+                return CollectionsKt.toList(UIntArray.m9995boximpl(takeLast));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, m9363getSizeimpl - 1)));
+                return CollectionsKt.listOf(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(takeLast, m10003getSizeimpl - 1)));
             }
             ArrayList arrayList = new ArrayList(i);
-            for (int i2 = m9363getSizeimpl - i; i2 < m9363getSizeimpl; i2++) {
-                arrayList.add(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i2)));
+            for (int i2 = m10003getSizeimpl - i; i2 < m10003getSizeimpl; i2++) {
+                arrayList.add(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(takeLast, i2)));
             }
             return arrayList;
         }
@@ -2147,22 +2147,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: takeLast-r7IrZao  reason: not valid java name */
-    public static final List<ULong> m10352takeLastr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$takeLast$0");
+    public static final List<ULong> m10992takeLastr7IrZao(long[] takeLast, int i) {
+        Intrinsics.checkNotNullParameter(takeLast, "$this$takeLast");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-            if (i >= m9442getSizeimpl) {
-                return CollectionsKt.toList(ULongArray.m9434boximpl(jArr));
+            int m10082getSizeimpl = ULongArray.m10082getSizeimpl(takeLast);
+            if (i >= m10082getSizeimpl) {
+                return CollectionsKt.toList(ULongArray.m10074boximpl(takeLast));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, m9442getSizeimpl - 1)));
+                return CollectionsKt.listOf(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(takeLast, m10082getSizeimpl - 1)));
             }
             ArrayList arrayList = new ArrayList(i);
-            for (int i2 = m9442getSizeimpl - i; i2 < m9442getSizeimpl; i2++) {
-                arrayList.add(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i2)));
+            for (int i2 = m10082getSizeimpl - i; i2 < m10082getSizeimpl; i2++) {
+                arrayList.add(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(takeLast, i2)));
             }
             return arrayList;
         }
@@ -2170,22 +2170,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: takeLast-PpDY95g  reason: not valid java name */
-    public static final List<UByte> m10349takeLastPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$takeLast$0");
+    public static final List<UByte> m10989takeLastPpDY95g(byte[] takeLast, int i) {
+        Intrinsics.checkNotNullParameter(takeLast, "$this$takeLast");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-            if (i >= m9284getSizeimpl) {
-                return CollectionsKt.toList(UByteArray.m9276boximpl(bArr));
+            int m9924getSizeimpl = UByteArray.m9924getSizeimpl(takeLast);
+            if (i >= m9924getSizeimpl) {
+                return CollectionsKt.toList(UByteArray.m9916boximpl(takeLast));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, m9284getSizeimpl - 1)));
+                return CollectionsKt.listOf(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(takeLast, m9924getSizeimpl - 1)));
             }
             ArrayList arrayList = new ArrayList(i);
-            for (int i2 = m9284getSizeimpl - i; i2 < m9284getSizeimpl; i2++) {
-                arrayList.add(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i2)));
+            for (int i2 = m9924getSizeimpl - i; i2 < m9924getSizeimpl; i2++) {
+                arrayList.add(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(takeLast, i2)));
             }
             return arrayList;
         }
@@ -2193,22 +2193,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: takeLast-nggk6HY  reason: not valid java name */
-    public static final List<UShort> m10350takeLastnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$takeLast$0");
+    public static final List<UShort> m10990takeLastnggk6HY(short[] takeLast, int i) {
+        Intrinsics.checkNotNullParameter(takeLast, "$this$takeLast");
         if (i >= 0) {
             if (i == 0) {
                 return CollectionsKt.emptyList();
             }
-            int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-            if (i >= m9547getSizeimpl) {
-                return CollectionsKt.toList(UShortArray.m9539boximpl(sArr));
+            int m10187getSizeimpl = UShortArray.m10187getSizeimpl(takeLast);
+            if (i >= m10187getSizeimpl) {
+                return CollectionsKt.toList(UShortArray.m10179boximpl(takeLast));
             }
             if (i == 1) {
-                return CollectionsKt.listOf(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, m9547getSizeimpl - 1)));
+                return CollectionsKt.listOf(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(takeLast, m10187getSizeimpl - 1)));
             }
             ArrayList arrayList = new ArrayList(i);
-            for (int i2 = m9547getSizeimpl - i; i2 < m9547getSizeimpl; i2++) {
-                arrayList.add(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i2)));
+            for (int i2 = m10187getSizeimpl - i; i2 < m10187getSizeimpl; i2++) {
+                arrayList.add(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(takeLast, i2)));
             }
             return arrayList;
         }
@@ -2216,451 +2216,451 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: takeWhile-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m10359takeWhilejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$takeWhile$0");
+    private static final List<UInt> m10999takeWhilejgv0xPQ(int[] takeWhile, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeWhile, "$this$takeWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            if (!predicate.invoke(UInt.m9296boximpl(m9362getpVg5ArA)).booleanValue()) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(takeWhile);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(takeWhile, i);
+            if (!predicate.invoke(UInt.m9936boximpl(m10002getpVg5ArA)).booleanValue()) {
                 break;
             }
-            arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+            arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
         }
         return arrayList;
     }
 
     /* renamed from: takeWhile-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m10358takeWhileMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$takeWhile$0");
+    private static final List<ULong> m10998takeWhileMShoTSo(long[] takeWhile, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeWhile, "$this$takeWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            if (!predicate.invoke(ULong.m9375boximpl(m9441getsVKNKU)).booleanValue()) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(takeWhile);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(takeWhile, i);
+            if (!predicate.invoke(ULong.m10015boximpl(m10081getsVKNKU)).booleanValue()) {
                 break;
             }
-            arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+            arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
         }
         return arrayList;
     }
 
     /* renamed from: takeWhile-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m10357takeWhileJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$takeWhile$0");
+    private static final List<UByte> m10997takeWhileJOV_ifY(byte[] takeWhile, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeWhile, "$this$takeWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            if (!predicate.invoke(UByte.m9214boximpl(m9283getw2LRezQ)).booleanValue()) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(takeWhile);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(takeWhile, i);
+            if (!predicate.invoke(UByte.m9854boximpl(m9923getw2LRezQ)).booleanValue()) {
                 break;
             }
-            arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+            arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
         }
         return arrayList;
     }
 
     /* renamed from: takeWhile-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m10360takeWhilexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$takeWhile$0");
+    private static final List<UShort> m11000takeWhilexTcfx_M(short[] takeWhile, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeWhile, "$this$takeWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            if (!predicate.invoke(UShort.m9482boximpl(m9546getMh2AYeg)).booleanValue()) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(takeWhile);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(takeWhile, i);
+            if (!predicate.invoke(UShort.m10122boximpl(m10186getMh2AYeg)).booleanValue()) {
                 break;
             }
-            arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+            arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
         }
         return arrayList;
     }
 
     /* renamed from: reverse--ajY-9A  reason: not valid java name */
-    private static final void m10217reverseajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reverse$0");
-        ArraysKt.reverse(iArr);
+    private static final void m10857reverseajY9A(int[] reverse) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse);
     }
 
     /* renamed from: reverse-QwZRm1k  reason: not valid java name */
-    private static final void m10222reverseQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reverse$0");
-        ArraysKt.reverse(jArr);
+    private static final void m10862reverseQwZRm1k(long[] reverse) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse);
     }
 
     /* renamed from: reverse-GBYM_sE  reason: not valid java name */
-    private static final void m10221reverseGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reverse$0");
-        ArraysKt.reverse(bArr);
+    private static final void m10861reverseGBYM_sE(byte[] reverse) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse);
     }
 
     /* renamed from: reverse-rL5Bavg  reason: not valid java name */
-    private static final void m10224reverserL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reverse$0");
-        ArraysKt.reverse(sArr);
+    private static final void m10864reverserL5Bavg(short[] reverse) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse);
     }
 
     /* renamed from: reverse-oBK06Vg  reason: not valid java name */
-    private static final void m10223reverseoBK06Vg(int[] iArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reverse$0");
-        ArraysKt.reverse(iArr, i, i2);
+    private static final void m10863reverseoBK06Vg(int[] reverse, int i, int i2) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse, i, i2);
     }
 
     /* renamed from: reverse--nroSd4  reason: not valid java name */
-    private static final void m10218reversenroSd4(long[] jArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reverse$0");
-        ArraysKt.reverse(jArr, i, i2);
+    private static final void m10858reversenroSd4(long[] reverse, int i, int i2) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse, i, i2);
     }
 
     /* renamed from: reverse-4UcCI2c  reason: not valid java name */
-    private static final void m10219reverse4UcCI2c(byte[] bArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reverse$0");
-        ArraysKt.reverse(bArr, i, i2);
+    private static final void m10859reverse4UcCI2c(byte[] reverse, int i, int i2) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse, i, i2);
     }
 
     /* renamed from: reverse-Aa5vz7o  reason: not valid java name */
-    private static final void m10220reverseAa5vz7o(short[] sArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reverse$0");
-        ArraysKt.reverse(sArr, i, i2);
+    private static final void m10860reverseAa5vz7o(short[] reverse, int i, int i2) {
+        Intrinsics.checkNotNullParameter(reverse, "$this$reverse");
+        ArraysKt.reverse(reverse, i, i2);
     }
 
     /* renamed from: reversed--ajY-9A  reason: not valid java name */
-    public static final List<UInt> m10225reversedajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reversed$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+    public static final List<UInt> m10865reversedajY9A(int[] reversed) {
+        Intrinsics.checkNotNullParameter(reversed, "$this$reversed");
+        if (UIntArray.m10005isEmptyimpl(reversed)) {
             return CollectionsKt.emptyList();
         }
-        List<UInt> mutableList = CollectionsKt.toMutableList((Collection) UIntArray.m9355boximpl(iArr));
+        List<UInt> mutableList = CollectionsKt.toMutableList((Collection) UIntArray.m9995boximpl(reversed));
         CollectionsKt.reverse(mutableList);
         return mutableList;
     }
 
     /* renamed from: reversed-QwZRm1k  reason: not valid java name */
-    public static final List<ULong> m10227reversedQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reversed$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+    public static final List<ULong> m10867reversedQwZRm1k(long[] reversed) {
+        Intrinsics.checkNotNullParameter(reversed, "$this$reversed");
+        if (ULongArray.m10084isEmptyimpl(reversed)) {
             return CollectionsKt.emptyList();
         }
-        List<ULong> mutableList = CollectionsKt.toMutableList((Collection) ULongArray.m9434boximpl(jArr));
+        List<ULong> mutableList = CollectionsKt.toMutableList((Collection) ULongArray.m10074boximpl(reversed));
         CollectionsKt.reverse(mutableList);
         return mutableList;
     }
 
     /* renamed from: reversed-GBYM_sE  reason: not valid java name */
-    public static final List<UByte> m10226reversedGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reversed$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final List<UByte> m10866reversedGBYM_sE(byte[] reversed) {
+        Intrinsics.checkNotNullParameter(reversed, "$this$reversed");
+        if (UByteArray.m9926isEmptyimpl(reversed)) {
             return CollectionsKt.emptyList();
         }
-        List<UByte> mutableList = CollectionsKt.toMutableList((Collection) UByteArray.m9276boximpl(bArr));
+        List<UByte> mutableList = CollectionsKt.toMutableList((Collection) UByteArray.m9916boximpl(reversed));
         CollectionsKt.reverse(mutableList);
         return mutableList;
     }
 
     /* renamed from: reversed-rL5Bavg  reason: not valid java name */
-    public static final List<UShort> m10228reversedrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reversed$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final List<UShort> m10868reversedrL5Bavg(short[] reversed) {
+        Intrinsics.checkNotNullParameter(reversed, "$this$reversed");
+        if (UShortArray.m10189isEmptyimpl(reversed)) {
             return CollectionsKt.emptyList();
         }
-        List<UShort> mutableList = CollectionsKt.toMutableList((Collection) UShortArray.m9539boximpl(sArr));
+        List<UShort> mutableList = CollectionsKt.toMutableList((Collection) UShortArray.m10179boximpl(reversed));
         CollectionsKt.reverse(mutableList);
         return mutableList;
     }
 
     /* renamed from: reversedArray--ajY-9A  reason: not valid java name */
-    private static final int[] m10229reversedArrayajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reversedArray$0");
-        return UIntArray.m9357constructorimpl(ArraysKt.reversedArray(iArr));
+    private static final int[] m10869reversedArrayajY9A(int[] reversedArray) {
+        Intrinsics.checkNotNullParameter(reversedArray, "$this$reversedArray");
+        return UIntArray.m9997constructorimpl(ArraysKt.reversedArray(reversedArray));
     }
 
     /* renamed from: reversedArray-QwZRm1k  reason: not valid java name */
-    private static final long[] m10231reversedArrayQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reversedArray$0");
-        return ULongArray.m9436constructorimpl(ArraysKt.reversedArray(jArr));
+    private static final long[] m10871reversedArrayQwZRm1k(long[] reversedArray) {
+        Intrinsics.checkNotNullParameter(reversedArray, "$this$reversedArray");
+        return ULongArray.m10076constructorimpl(ArraysKt.reversedArray(reversedArray));
     }
 
     /* renamed from: reversedArray-GBYM_sE  reason: not valid java name */
-    private static final byte[] m10230reversedArrayGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reversedArray$0");
-        return UByteArray.m9278constructorimpl(ArraysKt.reversedArray(bArr));
+    private static final byte[] m10870reversedArrayGBYM_sE(byte[] reversedArray) {
+        Intrinsics.checkNotNullParameter(reversedArray, "$this$reversedArray");
+        return UByteArray.m9918constructorimpl(ArraysKt.reversedArray(reversedArray));
     }
 
     /* renamed from: reversedArray-rL5Bavg  reason: not valid java name */
-    private static final short[] m10232reversedArrayrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reversedArray$0");
-        return UShortArray.m9541constructorimpl(ArraysKt.reversedArray(sArr));
+    private static final short[] m10872reversedArrayrL5Bavg(short[] reversedArray) {
+        Intrinsics.checkNotNullParameter(reversedArray, "$this$reversedArray");
+        return UShortArray.m10181constructorimpl(ArraysKt.reversedArray(reversedArray));
     }
 
     /* renamed from: shuffle--ajY-9A  reason: not valid java name */
-    public static final void m10257shuffleajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$shuffle$0");
-        UArraysKt.m10258shuffle2D5oskM(iArr, Random.Default);
+    public static final void m10897shuffleajY9A(int[] shuffle) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
+        UArraysKt.m10898shuffle2D5oskM(shuffle, Random.Default);
     }
 
     /* renamed from: shuffle-QwZRm1k  reason: not valid java name */
-    public static final void m10261shuffleQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$shuffle$0");
-        UArraysKt.m10260shuffleJzugnMA(jArr, Random.Default);
+    public static final void m10901shuffleQwZRm1k(long[] shuffle) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
+        UArraysKt.m10900shuffleJzugnMA(shuffle, Random.Default);
     }
 
     /* renamed from: shuffle-GBYM_sE  reason: not valid java name */
-    public static final void m10259shuffleGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$shuffle$0");
-        UArraysKt.m10262shuffleoSF2wD8(bArr, Random.Default);
+    public static final void m10899shuffleGBYM_sE(byte[] shuffle) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
+        UArraysKt.m10902shuffleoSF2wD8(shuffle, Random.Default);
     }
 
     /* renamed from: shuffle-rL5Bavg  reason: not valid java name */
-    public static final void m10263shufflerL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$shuffle$0");
-        UArraysKt.m10264shuffles5X_as8(sArr, Random.Default);
+    public static final void m10903shufflerL5Bavg(short[] shuffle) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
+        UArraysKt.m10904shuffles5X_as8(shuffle, Random.Default);
     }
 
     /* renamed from: sortDescending--ajY-9A  reason: not valid java name */
-    public static final void m10309sortDescendingajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sortDescending$0");
-        if (UIntArray.m9363getSizeimpl(iArr) > 1) {
-            UArraysKt.m10297sortajY9A(iArr);
-            ArraysKt.reverse(iArr);
+    public static final void m10949sortDescendingajY9A(int[] sortDescending) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        if (UIntArray.m10003getSizeimpl(sortDescending) > 1) {
+            UArraysKt.m10937sortajY9A(sortDescending);
+            ArraysKt.reverse(sortDescending);
         }
     }
 
     /* renamed from: sortDescending-QwZRm1k  reason: not valid java name */
-    public static final void m10314sortDescendingQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sortDescending$0");
-        if (ULongArray.m9442getSizeimpl(jArr) > 1) {
-            UArraysKt.m10305sortQwZRm1k(jArr);
-            ArraysKt.reverse(jArr);
+    public static final void m10954sortDescendingQwZRm1k(long[] sortDescending) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        if (ULongArray.m10082getSizeimpl(sortDescending) > 1) {
+            UArraysKt.m10945sortQwZRm1k(sortDescending);
+            ArraysKt.reverse(sortDescending);
         }
     }
 
     /* renamed from: sortDescending-GBYM_sE  reason: not valid java name */
-    public static final void m10313sortDescendingGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sortDescending$0");
-        if (UByteArray.m9284getSizeimpl(bArr) > 1) {
-            UArraysKt.m10304sortGBYM_sE(bArr);
-            ArraysKt.reverse(bArr);
+    public static final void m10953sortDescendingGBYM_sE(byte[] sortDescending) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        if (UByteArray.m9924getSizeimpl(sortDescending) > 1) {
+            UArraysKt.m10944sortGBYM_sE(sortDescending);
+            ArraysKt.reverse(sortDescending);
         }
     }
 
     /* renamed from: sortDescending-rL5Bavg  reason: not valid java name */
-    public static final void m10316sortDescendingrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sortDescending$0");
-        if (UShortArray.m9547getSizeimpl(sArr) > 1) {
-            UArraysKt.m10308sortrL5Bavg(sArr);
-            ArraysKt.reverse(sArr);
+    public static final void m10956sortDescendingrL5Bavg(short[] sortDescending) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        if (UShortArray.m10187getSizeimpl(sortDescending) > 1) {
+            UArraysKt.m10948sortrL5Bavg(sortDescending);
+            ArraysKt.reverse(sortDescending);
         }
     }
 
     /* renamed from: sorted--ajY-9A  reason: not valid java name */
-    public static final List<UInt> m10317sortedajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sorted$0");
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+    public static final List<UInt> m10957sortedajY9A(int[] sorted) {
+        Intrinsics.checkNotNullParameter(sorted, "$this$sorted");
+        int[] copyOf = Arrays.copyOf(sorted, sorted.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        int[] m9357constructorimpl = UIntArray.m9357constructorimpl(copyOf);
-        UArraysKt.m10297sortajY9A(m9357constructorimpl);
-        return UArraysKt.m9678asListajY9A(m9357constructorimpl);
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(copyOf);
+        UArraysKt.m10937sortajY9A(m9997constructorimpl);
+        return UArraysKt.m10318asListajY9A(m9997constructorimpl);
     }
 
     /* renamed from: sorted-QwZRm1k  reason: not valid java name */
-    public static final List<ULong> m10319sortedQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sorted$0");
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
+    public static final List<ULong> m10959sortedQwZRm1k(long[] sorted) {
+        Intrinsics.checkNotNullParameter(sorted, "$this$sorted");
+        long[] copyOf = Arrays.copyOf(sorted, sorted.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        long[] m9436constructorimpl = ULongArray.m9436constructorimpl(copyOf);
-        UArraysKt.m10305sortQwZRm1k(m9436constructorimpl);
-        return UArraysKt.m9680asListQwZRm1k(m9436constructorimpl);
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(copyOf);
+        UArraysKt.m10945sortQwZRm1k(m10076constructorimpl);
+        return UArraysKt.m10320asListQwZRm1k(m10076constructorimpl);
     }
 
     /* renamed from: sorted-GBYM_sE  reason: not valid java name */
-    public static final List<UByte> m10318sortedGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sorted$0");
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+    public static final List<UByte> m10958sortedGBYM_sE(byte[] sorted) {
+        Intrinsics.checkNotNullParameter(sorted, "$this$sorted");
+        byte[] copyOf = Arrays.copyOf(sorted, sorted.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        byte[] m9278constructorimpl = UByteArray.m9278constructorimpl(copyOf);
-        UArraysKt.m10304sortGBYM_sE(m9278constructorimpl);
-        return UArraysKt.m9679asListGBYM_sE(m9278constructorimpl);
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(copyOf);
+        UArraysKt.m10944sortGBYM_sE(m9918constructorimpl);
+        return UArraysKt.m10319asListGBYM_sE(m9918constructorimpl);
     }
 
     /* renamed from: sorted-rL5Bavg  reason: not valid java name */
-    public static final List<UShort> m10320sortedrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sorted$0");
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
+    public static final List<UShort> m10960sortedrL5Bavg(short[] sorted) {
+        Intrinsics.checkNotNullParameter(sorted, "$this$sorted");
+        short[] copyOf = Arrays.copyOf(sorted, sorted.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        short[] m9541constructorimpl = UShortArray.m9541constructorimpl(copyOf);
-        UArraysKt.m10308sortrL5Bavg(m9541constructorimpl);
-        return UArraysKt.m9681asListrL5Bavg(m9541constructorimpl);
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(copyOf);
+        UArraysKt.m10948sortrL5Bavg(m10181constructorimpl);
+        return UArraysKt.m10321asListrL5Bavg(m10181constructorimpl);
     }
 
     /* renamed from: sortedArray--ajY-9A  reason: not valid java name */
-    public static final int[] m10321sortedArrayajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sortedArray$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
-            return iArr;
+    public static final int[] m10961sortedArrayajY9A(int[] sortedArray) {
+        Intrinsics.checkNotNullParameter(sortedArray, "$this$sortedArray");
+        if (UIntArray.m10005isEmptyimpl(sortedArray)) {
+            return sortedArray;
         }
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+        int[] copyOf = Arrays.copyOf(sortedArray, sortedArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        int[] m9357constructorimpl = UIntArray.m9357constructorimpl(copyOf);
-        UArraysKt.m10297sortajY9A(m9357constructorimpl);
-        return m9357constructorimpl;
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(copyOf);
+        UArraysKt.m10937sortajY9A(m9997constructorimpl);
+        return m9997constructorimpl;
     }
 
     /* renamed from: sortedArray-QwZRm1k  reason: not valid java name */
-    public static final long[] m10323sortedArrayQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sortedArray$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
-            return jArr;
+    public static final long[] m10963sortedArrayQwZRm1k(long[] sortedArray) {
+        Intrinsics.checkNotNullParameter(sortedArray, "$this$sortedArray");
+        if (ULongArray.m10084isEmptyimpl(sortedArray)) {
+            return sortedArray;
         }
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
+        long[] copyOf = Arrays.copyOf(sortedArray, sortedArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        long[] m9436constructorimpl = ULongArray.m9436constructorimpl(copyOf);
-        UArraysKt.m10305sortQwZRm1k(m9436constructorimpl);
-        return m9436constructorimpl;
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(copyOf);
+        UArraysKt.m10945sortQwZRm1k(m10076constructorimpl);
+        return m10076constructorimpl;
     }
 
     /* renamed from: sortedArray-GBYM_sE  reason: not valid java name */
-    public static final byte[] m10322sortedArrayGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sortedArray$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
-            return bArr;
+    public static final byte[] m10962sortedArrayGBYM_sE(byte[] sortedArray) {
+        Intrinsics.checkNotNullParameter(sortedArray, "$this$sortedArray");
+        if (UByteArray.m9926isEmptyimpl(sortedArray)) {
+            return sortedArray;
         }
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+        byte[] copyOf = Arrays.copyOf(sortedArray, sortedArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        byte[] m9278constructorimpl = UByteArray.m9278constructorimpl(copyOf);
-        UArraysKt.m10304sortGBYM_sE(m9278constructorimpl);
-        return m9278constructorimpl;
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(copyOf);
+        UArraysKt.m10944sortGBYM_sE(m9918constructorimpl);
+        return m9918constructorimpl;
     }
 
     /* renamed from: sortedArray-rL5Bavg  reason: not valid java name */
-    public static final short[] m10324sortedArrayrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sortedArray$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
-            return sArr;
+    public static final short[] m10964sortedArrayrL5Bavg(short[] sortedArray) {
+        Intrinsics.checkNotNullParameter(sortedArray, "$this$sortedArray");
+        if (UShortArray.m10189isEmptyimpl(sortedArray)) {
+            return sortedArray;
         }
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
+        short[] copyOf = Arrays.copyOf(sortedArray, sortedArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        short[] m9541constructorimpl = UShortArray.m9541constructorimpl(copyOf);
-        UArraysKt.m10308sortrL5Bavg(m9541constructorimpl);
-        return m9541constructorimpl;
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(copyOf);
+        UArraysKt.m10948sortrL5Bavg(m10181constructorimpl);
+        return m10181constructorimpl;
     }
 
     /* renamed from: sortedArrayDescending--ajY-9A  reason: not valid java name */
-    public static final int[] m10325sortedArrayDescendingajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sortedArrayDescending$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
-            return iArr;
+    public static final int[] m10965sortedArrayDescendingajY9A(int[] sortedArrayDescending) {
+        Intrinsics.checkNotNullParameter(sortedArrayDescending, "$this$sortedArrayDescending");
+        if (UIntArray.m10005isEmptyimpl(sortedArrayDescending)) {
+            return sortedArrayDescending;
         }
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+        int[] copyOf = Arrays.copyOf(sortedArrayDescending, sortedArrayDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        int[] m9357constructorimpl = UIntArray.m9357constructorimpl(copyOf);
-        UArraysKt.m10309sortDescendingajY9A(m9357constructorimpl);
-        return m9357constructorimpl;
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(copyOf);
+        UArraysKt.m10949sortDescendingajY9A(m9997constructorimpl);
+        return m9997constructorimpl;
     }
 
     /* renamed from: sortedArrayDescending-QwZRm1k  reason: not valid java name */
-    public static final long[] m10327sortedArrayDescendingQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sortedArrayDescending$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
-            return jArr;
+    public static final long[] m10967sortedArrayDescendingQwZRm1k(long[] sortedArrayDescending) {
+        Intrinsics.checkNotNullParameter(sortedArrayDescending, "$this$sortedArrayDescending");
+        if (ULongArray.m10084isEmptyimpl(sortedArrayDescending)) {
+            return sortedArrayDescending;
         }
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
+        long[] copyOf = Arrays.copyOf(sortedArrayDescending, sortedArrayDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        long[] m9436constructorimpl = ULongArray.m9436constructorimpl(copyOf);
-        UArraysKt.m10314sortDescendingQwZRm1k(m9436constructorimpl);
-        return m9436constructorimpl;
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(copyOf);
+        UArraysKt.m10954sortDescendingQwZRm1k(m10076constructorimpl);
+        return m10076constructorimpl;
     }
 
     /* renamed from: sortedArrayDescending-GBYM_sE  reason: not valid java name */
-    public static final byte[] m10326sortedArrayDescendingGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sortedArrayDescending$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
-            return bArr;
+    public static final byte[] m10966sortedArrayDescendingGBYM_sE(byte[] sortedArrayDescending) {
+        Intrinsics.checkNotNullParameter(sortedArrayDescending, "$this$sortedArrayDescending");
+        if (UByteArray.m9926isEmptyimpl(sortedArrayDescending)) {
+            return sortedArrayDescending;
         }
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+        byte[] copyOf = Arrays.copyOf(sortedArrayDescending, sortedArrayDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        byte[] m9278constructorimpl = UByteArray.m9278constructorimpl(copyOf);
-        UArraysKt.m10313sortDescendingGBYM_sE(m9278constructorimpl);
-        return m9278constructorimpl;
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(copyOf);
+        UArraysKt.m10953sortDescendingGBYM_sE(m9918constructorimpl);
+        return m9918constructorimpl;
     }
 
     /* renamed from: sortedArrayDescending-rL5Bavg  reason: not valid java name */
-    public static final short[] m10328sortedArrayDescendingrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sortedArrayDescending$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
-            return sArr;
+    public static final short[] m10968sortedArrayDescendingrL5Bavg(short[] sortedArrayDescending) {
+        Intrinsics.checkNotNullParameter(sortedArrayDescending, "$this$sortedArrayDescending");
+        if (UShortArray.m10189isEmptyimpl(sortedArrayDescending)) {
+            return sortedArrayDescending;
         }
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
+        short[] copyOf = Arrays.copyOf(sortedArrayDescending, sortedArrayDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        short[] m9541constructorimpl = UShortArray.m9541constructorimpl(copyOf);
-        UArraysKt.m10316sortDescendingrL5Bavg(m9541constructorimpl);
-        return m9541constructorimpl;
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(copyOf);
+        UArraysKt.m10956sortDescendingrL5Bavg(m10181constructorimpl);
+        return m10181constructorimpl;
     }
 
     /* renamed from: sortedDescending--ajY-9A  reason: not valid java name */
-    public static final List<UInt> m10329sortedDescendingajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sortedDescending$0");
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+    public static final List<UInt> m10969sortedDescendingajY9A(int[] sortedDescending) {
+        Intrinsics.checkNotNullParameter(sortedDescending, "$this$sortedDescending");
+        int[] copyOf = Arrays.copyOf(sortedDescending, sortedDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        int[] m9357constructorimpl = UIntArray.m9357constructorimpl(copyOf);
-        UArraysKt.m10297sortajY9A(m9357constructorimpl);
-        return UArraysKt.m10225reversedajY9A(m9357constructorimpl);
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(copyOf);
+        UArraysKt.m10937sortajY9A(m9997constructorimpl);
+        return UArraysKt.m10865reversedajY9A(m9997constructorimpl);
     }
 
     /* renamed from: sortedDescending-QwZRm1k  reason: not valid java name */
-    public static final List<ULong> m10331sortedDescendingQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sortedDescending$0");
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
+    public static final List<ULong> m10971sortedDescendingQwZRm1k(long[] sortedDescending) {
+        Intrinsics.checkNotNullParameter(sortedDescending, "$this$sortedDescending");
+        long[] copyOf = Arrays.copyOf(sortedDescending, sortedDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        long[] m9436constructorimpl = ULongArray.m9436constructorimpl(copyOf);
-        UArraysKt.m10305sortQwZRm1k(m9436constructorimpl);
-        return UArraysKt.m10227reversedQwZRm1k(m9436constructorimpl);
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(copyOf);
+        UArraysKt.m10945sortQwZRm1k(m10076constructorimpl);
+        return UArraysKt.m10867reversedQwZRm1k(m10076constructorimpl);
     }
 
     /* renamed from: sortedDescending-GBYM_sE  reason: not valid java name */
-    public static final List<UByte> m10330sortedDescendingGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sortedDescending$0");
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+    public static final List<UByte> m10970sortedDescendingGBYM_sE(byte[] sortedDescending) {
+        Intrinsics.checkNotNullParameter(sortedDescending, "$this$sortedDescending");
+        byte[] copyOf = Arrays.copyOf(sortedDescending, sortedDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        byte[] m9278constructorimpl = UByteArray.m9278constructorimpl(copyOf);
-        UArraysKt.m10304sortGBYM_sE(m9278constructorimpl);
-        return UArraysKt.m10226reversedGBYM_sE(m9278constructorimpl);
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(copyOf);
+        UArraysKt.m10944sortGBYM_sE(m9918constructorimpl);
+        return UArraysKt.m10866reversedGBYM_sE(m9918constructorimpl);
     }
 
     /* renamed from: sortedDescending-rL5Bavg  reason: not valid java name */
-    public static final List<UShort> m10332sortedDescendingrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sortedDescending$0");
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
+    public static final List<UShort> m10972sortedDescendingrL5Bavg(short[] sortedDescending) {
+        Intrinsics.checkNotNullParameter(sortedDescending, "$this$sortedDescending");
+        short[] copyOf = Arrays.copyOf(sortedDescending, sortedDescending.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        short[] m9541constructorimpl = UShortArray.m9541constructorimpl(copyOf);
-        UArraysKt.m10308sortrL5Bavg(m9541constructorimpl);
-        return UArraysKt.m10228reversedrL5Bavg(m9541constructorimpl);
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(copyOf);
+        UArraysKt.m10948sortrL5Bavg(m10181constructorimpl);
+        return UArraysKt.m10868reversedrL5Bavg(m10181constructorimpl);
     }
 
     private static final byte[] asUByteArray(byte[] bArr) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
-        return UByteArray.m9278constructorimpl(bArr);
+        return UByteArray.m9918constructorimpl(bArr);
     }
 
     private static final int[] asUIntArray(int[] iArr) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
-        return UIntArray.m9357constructorimpl(iArr);
+        return UIntArray.m9997constructorimpl(iArr);
     }
 
     private static final long[] asULongArray(long[] jArr) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
-        return ULongArray.m9436constructorimpl(jArr);
+        return ULongArray.m10076constructorimpl(jArr);
     }
 
     private static final short[] asUShortArray(short[] sArr) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
-        return UShortArray.m9541constructorimpl(sArr);
+        return UShortArray.m10181constructorimpl(sArr);
     }
 
     /* renamed from: contentEquals-KJPZfPQ  reason: not valid java name */
-    public static final boolean m9782contentEqualsKJPZfPQ(int[] iArr, int[] iArr2) {
+    public static final boolean m10422contentEqualsKJPZfPQ(int[] iArr, int[] iArr2) {
         if (iArr == null) {
             iArr = null;
         }
@@ -2671,7 +2671,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentEquals-lec5QzE  reason: not valid java name */
-    public static final boolean m9784contentEqualslec5QzE(long[] jArr, long[] jArr2) {
+    public static final boolean m10424contentEqualslec5QzE(long[] jArr, long[] jArr2) {
         if (jArr == null) {
             jArr = null;
         }
@@ -2682,7 +2682,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentEquals-kV0jMPg  reason: not valid java name */
-    public static final boolean m9783contentEqualskV0jMPg(byte[] bArr, byte[] bArr2) {
+    public static final boolean m10423contentEqualskV0jMPg(byte[] bArr, byte[] bArr2) {
         if (bArr == null) {
             bArr = null;
         }
@@ -2693,7 +2693,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentEquals-FGO6Aew  reason: not valid java name */
-    public static final boolean m9781contentEqualsFGO6Aew(short[] sArr, short[] sArr2) {
+    public static final boolean m10421contentEqualsFGO6Aew(short[] sArr, short[] sArr2) {
         if (sArr == null) {
             sArr = null;
         }
@@ -2704,7 +2704,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentHashCode-XUkPCBk  reason: not valid java name */
-    public static final int m9786contentHashCodeXUkPCBk(int[] iArr) {
+    public static final int m10426contentHashCodeXUkPCBk(int[] iArr) {
         if (iArr == null) {
             iArr = null;
         }
@@ -2712,7 +2712,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentHashCode-uLth9ew  reason: not valid java name */
-    public static final int m9788contentHashCodeuLth9ew(long[] jArr) {
+    public static final int m10428contentHashCodeuLth9ew(long[] jArr) {
         if (jArr == null) {
             jArr = null;
         }
@@ -2720,7 +2720,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentHashCode-2csIQuQ  reason: not valid java name */
-    public static final int m9785contentHashCode2csIQuQ(byte[] bArr) {
+    public static final int m10425contentHashCode2csIQuQ(byte[] bArr) {
         if (bArr == null) {
             bArr = null;
         }
@@ -2728,7 +2728,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentHashCode-d-6D3K8  reason: not valid java name */
-    public static final int m9787contentHashCoded6D3K8(short[] sArr) {
+    public static final int m10427contentHashCoded6D3K8(short[] sArr) {
         if (sArr == null) {
             sArr = null;
         }
@@ -2736,31 +2736,31 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: contentToString-XUkPCBk  reason: not valid java name */
-    public static final String m9790contentToStringXUkPCBk(int[] iArr) {
+    public static final String m10430contentToStringXUkPCBk(int[] iArr) {
         String joinToString$default;
-        return (iArr == null || (joinToString$default = CollectionsKt.joinToString$default(UIntArray.m9355boximpl(iArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
+        return (iArr == null || (joinToString$default = CollectionsKt.joinToString$default(UIntArray.m9995boximpl(iArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
     }
 
     /* renamed from: contentToString-uLth9ew  reason: not valid java name */
-    public static final String m9792contentToStringuLth9ew(long[] jArr) {
+    public static final String m10432contentToStringuLth9ew(long[] jArr) {
         String joinToString$default;
-        return (jArr == null || (joinToString$default = CollectionsKt.joinToString$default(ULongArray.m9434boximpl(jArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
+        return (jArr == null || (joinToString$default = CollectionsKt.joinToString$default(ULongArray.m10074boximpl(jArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
     }
 
     /* renamed from: contentToString-2csIQuQ  reason: not valid java name */
-    public static final String m9789contentToString2csIQuQ(byte[] bArr) {
+    public static final String m10429contentToString2csIQuQ(byte[] bArr) {
         String joinToString$default;
-        return (bArr == null || (joinToString$default = CollectionsKt.joinToString$default(UByteArray.m9276boximpl(bArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
+        return (bArr == null || (joinToString$default = CollectionsKt.joinToString$default(UByteArray.m9916boximpl(bArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
     }
 
     /* renamed from: contentToString-d-6D3K8  reason: not valid java name */
-    public static final String m9791contentToStringd6D3K8(short[] sArr) {
+    public static final String m10431contentToStringd6D3K8(short[] sArr) {
         String joinToString$default;
-        return (sArr == null || (joinToString$default = CollectionsKt.joinToString$default(UShortArray.m9539boximpl(sArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
+        return (sArr == null || (joinToString$default = CollectionsKt.joinToString$default(UShortArray.m10179boximpl(sArr), ", ", "[", "]", 0, null, null, 56, null)) == null) ? AbstractJsonLexerKt.NULL : joinToString$default;
     }
 
     /* renamed from: copyInto-sIZ3KeM$default  reason: not valid java name */
-    static /* synthetic */ int[] m9800copyIntosIZ3KeM$default(int[] iArr, int[] iArr2, int i, int i2, int i3, int i4, Object obj) {
+    static /* synthetic */ int[] m10440copyIntosIZ3KeM$default(int[] copyInto, int[] destination, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             i = 0;
         }
@@ -2768,25 +2768,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
             i2 = 0;
         }
         if ((i4 & 8) != 0) {
-            i3 = UIntArray.m9363getSizeimpl(iArr);
+            i3 = UIntArray.m10003getSizeimpl(copyInto);
         }
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(iArr2, "$v$c$kotlin-UIntArray$-destination$0");
-        ArraysKt.copyInto(iArr, iArr2, i, i2, i3);
-        return iArr2;
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: copyInto-sIZ3KeM  reason: not valid java name */
-    private static final int[] m9799copyIntosIZ3KeM(int[] iArr, int[] iArr2, int i, int i2, int i3) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(iArr2, "$v$c$kotlin-UIntArray$-destination$0");
-        ArraysKt.copyInto(iArr, iArr2, i, i2, i3);
-        return iArr2;
+    private static final int[] m10439copyIntosIZ3KeM(int[] copyInto, int[] destination, int i, int i2, int i3) {
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     /* renamed from: copyInto--B0-L2c$default  reason: not valid java name */
-    static /* synthetic */ long[] m9794copyIntoB0L2c$default(long[] jArr, long[] jArr2, int i, int i2, int i3, int i4, Object obj) {
+    static /* synthetic */ long[] m10434copyIntoB0L2c$default(long[] copyInto, long[] destination, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             i = 0;
         }
@@ -2794,25 +2794,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
             i2 = 0;
         }
         if ((i4 & 8) != 0) {
-            i3 = ULongArray.m9442getSizeimpl(jArr);
+            i3 = ULongArray.m10082getSizeimpl(copyInto);
         }
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(jArr2, "$v$c$kotlin-ULongArray$-destination$0");
-        ArraysKt.copyInto(jArr, jArr2, i, i2, i3);
-        return jArr2;
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: copyInto--B0-L2c  reason: not valid java name */
-    private static final long[] m9793copyIntoB0L2c(long[] jArr, long[] jArr2, int i, int i2, int i3) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(jArr2, "$v$c$kotlin-ULongArray$-destination$0");
-        ArraysKt.copyInto(jArr, jArr2, i, i2, i3);
-        return jArr2;
+    private static final long[] m10433copyIntoB0L2c(long[] copyInto, long[] destination, int i, int i2, int i3) {
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     /* renamed from: copyInto-FUQE5sA$default  reason: not valid java name */
-    static /* synthetic */ byte[] m9798copyIntoFUQE5sA$default(byte[] bArr, byte[] bArr2, int i, int i2, int i3, int i4, Object obj) {
+    static /* synthetic */ byte[] m10438copyIntoFUQE5sA$default(byte[] copyInto, byte[] destination, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             i = 0;
         }
@@ -2820,25 +2820,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
             i2 = 0;
         }
         if ((i4 & 8) != 0) {
-            i3 = UByteArray.m9284getSizeimpl(bArr);
+            i3 = UByteArray.m9924getSizeimpl(copyInto);
         }
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(bArr2, "$v$c$kotlin-UByteArray$-destination$0");
-        ArraysKt.copyInto(bArr, bArr2, i, i2, i3);
-        return bArr2;
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: copyInto-FUQE5sA  reason: not valid java name */
-    private static final byte[] m9797copyIntoFUQE5sA(byte[] bArr, byte[] bArr2, int i, int i2, int i3) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(bArr2, "$v$c$kotlin-UByteArray$-destination$0");
-        ArraysKt.copyInto(bArr, bArr2, i, i2, i3);
-        return bArr2;
+    private static final byte[] m10437copyIntoFUQE5sA(byte[] copyInto, byte[] destination, int i, int i2, int i3) {
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     /* renamed from: copyInto-9-ak10g$default  reason: not valid java name */
-    static /* synthetic */ short[] m9796copyInto9ak10g$default(short[] sArr, short[] sArr2, int i, int i2, int i3, int i4, Object obj) {
+    static /* synthetic */ short[] m10436copyInto9ak10g$default(short[] copyInto, short[] destination, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             i = 0;
         }
@@ -2846,611 +2846,611 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
             i2 = 0;
         }
         if ((i4 & 8) != 0) {
-            i3 = UShortArray.m9547getSizeimpl(sArr);
+            i3 = UShortArray.m10187getSizeimpl(copyInto);
         }
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(sArr2, "$v$c$kotlin-UShortArray$-destination$0");
-        ArraysKt.copyInto(sArr, sArr2, i, i2, i3);
-        return sArr2;
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: copyInto-9-ak10g  reason: not valid java name */
-    private static final short[] m9795copyInto9ak10g(short[] sArr, short[] sArr2, int i, int i2, int i3) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyInto$0");
-        Intrinsics.checkNotNullParameter(sArr2, "$v$c$kotlin-UShortArray$-destination$0");
-        ArraysKt.copyInto(sArr, sArr2, i, i2, i3);
-        return sArr2;
+    private static final short[] m10435copyInto9ak10g(short[] copyInto, short[] destination, int i, int i2, int i3) {
+        Intrinsics.checkNotNullParameter(copyInto, "$this$copyInto");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        ArraysKt.copyInto(copyInto, destination, i, i2, i3);
+        return destination;
     }
 
     /* renamed from: copyOf--ajY-9A  reason: not valid java name */
-    private static final int[] m9801copyOfajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyOf$0");
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UIntArray.m9357constructorimpl(copyOf);
+    private static final int[] m10441copyOfajY9A(int[] copyOf) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        int[] copyOf2 = Arrays.copyOf(copyOf, copyOf.length);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UIntArray.m9997constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-QwZRm1k  reason: not valid java name */
-    private static final long[] m9805copyOfQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyOf$0");
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return ULongArray.m9436constructorimpl(copyOf);
+    private static final long[] m10445copyOfQwZRm1k(long[] copyOf) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        long[] copyOf2 = Arrays.copyOf(copyOf, copyOf.length);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return ULongArray.m10076constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-GBYM_sE  reason: not valid java name */
-    private static final byte[] m9803copyOfGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyOf$0");
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UByteArray.m9278constructorimpl(copyOf);
+    private static final byte[] m10443copyOfGBYM_sE(byte[] copyOf) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        byte[] copyOf2 = Arrays.copyOf(copyOf, copyOf.length);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UByteArray.m9918constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-rL5Bavg  reason: not valid java name */
-    private static final short[] m9812copyOfrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyOf$0");
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UShortArray.m9541constructorimpl(copyOf);
+    private static final short[] m10452copyOfrL5Bavg(short[] copyOf) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        short[] copyOf2 = Arrays.copyOf(copyOf, copyOf.length);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UShortArray.m10181constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-qFRl0hI  reason: not valid java name */
-    private static final int[] m9810copyOfqFRl0hI(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyOf$0");
-        int[] copyOf = Arrays.copyOf(iArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UIntArray.m9357constructorimpl(copyOf);
+    private static final int[] m10450copyOfqFRl0hI(int[] copyOf, int i) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        int[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UIntArray.m9997constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-r7IrZao  reason: not valid java name */
-    private static final long[] m9811copyOfr7IrZao(long[] jArr, int i) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyOf$0");
-        long[] copyOf = Arrays.copyOf(jArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return ULongArray.m9436constructorimpl(copyOf);
+    private static final long[] m10451copyOfr7IrZao(long[] copyOf, int i) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        long[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return ULongArray.m10076constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-PpDY95g  reason: not valid java name */
-    private static final byte[] m9804copyOfPpDY95g(byte[] bArr, int i) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyOf$0");
-        byte[] copyOf = Arrays.copyOf(bArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UByteArray.m9278constructorimpl(copyOf);
+    private static final byte[] m10444copyOfPpDY95g(byte[] copyOf, int i) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        byte[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UByteArray.m9918constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-nggk6HY  reason: not valid java name */
-    private static final short[] m9809copyOfnggk6HY(short[] sArr, int i) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyOf$0");
-        short[] copyOf = Arrays.copyOf(sArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UShortArray.m9541constructorimpl(copyOf);
+    private static final short[] m10449copyOfnggk6HY(short[] copyOf, int i) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
+        short[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        return UShortArray.m10181constructorimpl(copyOf2);
     }
 
     /* renamed from: copyOf-QxvSvLU  reason: not valid java name */
-    private static final int[] m9806copyOfQxvSvLU(int[] iArr, int i, Function1<? super Integer, UInt> init) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyOf$0");
+    private static final int[] m10446copyOfQxvSvLU(int[] copyOf, int i, Function1<? super Integer, UInt> init) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
         Intrinsics.checkNotNullParameter(init, "init");
         if (i < 0) {
             throw new IllegalArgumentException(("Invalid new array size: " + i + '.').toString());
         }
-        int[] copyOf = Arrays.copyOf(iArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        int[] m9357constructorimpl = UIntArray.m9357constructorimpl(copyOf);
-        for (int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr); m9363getSizeimpl < i; m9363getSizeimpl++) {
-            UIntArray.m9367setVXSXFK8(m9357constructorimpl, m9363getSizeimpl, init.invoke(Integer.valueOf(m9363getSizeimpl)).m9354unboximpl());
+        int[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        int[] m9997constructorimpl = UIntArray.m9997constructorimpl(copyOf2);
+        for (int m10003getSizeimpl = UIntArray.m10003getSizeimpl(copyOf); m10003getSizeimpl < i; m10003getSizeimpl++) {
+            UIntArray.m10007setVXSXFK8(m9997constructorimpl, m10003getSizeimpl, init.invoke(Integer.valueOf(m10003getSizeimpl)).m9994unboximpl());
         }
-        return m9357constructorimpl;
+        return m9997constructorimpl;
     }
 
     /* renamed from: copyOf-Xw8i6dc  reason: not valid java name */
-    private static final long[] m9807copyOfXw8i6dc(long[] jArr, int i, Function1<? super Integer, ULong> init) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyOf$0");
+    private static final long[] m10447copyOfXw8i6dc(long[] copyOf, int i, Function1<? super Integer, ULong> init) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
         Intrinsics.checkNotNullParameter(init, "init");
         if (i < 0) {
             throw new IllegalArgumentException(("Invalid new array size: " + i + '.').toString());
         }
-        long[] copyOf = Arrays.copyOf(jArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        long[] m9436constructorimpl = ULongArray.m9436constructorimpl(copyOf);
-        for (int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr); m9442getSizeimpl < i; m9442getSizeimpl++) {
-            ULongArray.m9446setk8EXiF4(m9436constructorimpl, m9442getSizeimpl, init.invoke(Integer.valueOf(m9442getSizeimpl)).m9433unboximpl());
+        long[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        long[] m10076constructorimpl = ULongArray.m10076constructorimpl(copyOf2);
+        for (int m10082getSizeimpl = ULongArray.m10082getSizeimpl(copyOf); m10082getSizeimpl < i; m10082getSizeimpl++) {
+            ULongArray.m10086setk8EXiF4(m10076constructorimpl, m10082getSizeimpl, init.invoke(Integer.valueOf(m10082getSizeimpl)).m10073unboximpl());
         }
-        return m9436constructorimpl;
+        return m10076constructorimpl;
     }
 
     /* renamed from: copyOf-cO-VybQ  reason: not valid java name */
-    private static final byte[] m9808copyOfcOVybQ(byte[] bArr, int i, Function1<? super Integer, UByte> init) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyOf$0");
+    private static final byte[] m10448copyOfcOVybQ(byte[] copyOf, int i, Function1<? super Integer, UByte> init) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
         Intrinsics.checkNotNullParameter(init, "init");
         if (i < 0) {
             throw new IllegalArgumentException(("Invalid new array size: " + i + '.').toString());
         }
-        byte[] copyOf = Arrays.copyOf(bArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        byte[] m9278constructorimpl = UByteArray.m9278constructorimpl(copyOf);
-        for (int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr); m9284getSizeimpl < i; m9284getSizeimpl++) {
-            UByteArray.m9288setVurrAj0(m9278constructorimpl, m9284getSizeimpl, init.invoke(Integer.valueOf(m9284getSizeimpl)).m9270unboximpl());
+        byte[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        byte[] m9918constructorimpl = UByteArray.m9918constructorimpl(copyOf2);
+        for (int m9924getSizeimpl = UByteArray.m9924getSizeimpl(copyOf); m9924getSizeimpl < i; m9924getSizeimpl++) {
+            UByteArray.m9928setVurrAj0(m9918constructorimpl, m9924getSizeimpl, init.invoke(Integer.valueOf(m9924getSizeimpl)).m9910unboximpl());
         }
-        return m9278constructorimpl;
+        return m9918constructorimpl;
     }
 
     /* renamed from: copyOf-CVVdw08  reason: not valid java name */
-    private static final short[] m9802copyOfCVVdw08(short[] sArr, int i, Function1<? super Integer, UShort> init) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyOf$0");
+    private static final short[] m10442copyOfCVVdw08(short[] copyOf, int i, Function1<? super Integer, UShort> init) {
+        Intrinsics.checkNotNullParameter(copyOf, "$this$copyOf");
         Intrinsics.checkNotNullParameter(init, "init");
         if (i < 0) {
             throw new IllegalArgumentException(("Invalid new array size: " + i + '.').toString());
         }
-        short[] copyOf = Arrays.copyOf(sArr, i);
-        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        short[] m9541constructorimpl = UShortArray.m9541constructorimpl(copyOf);
-        for (int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr); m9547getSizeimpl < i; m9547getSizeimpl++) {
-            UShortArray.m9551set01HTLdE(m9541constructorimpl, m9547getSizeimpl, init.invoke(Integer.valueOf(m9547getSizeimpl)).m9538unboximpl());
+        short[] copyOf2 = Arrays.copyOf(copyOf, i);
+        Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(...)");
+        short[] m10181constructorimpl = UShortArray.m10181constructorimpl(copyOf2);
+        for (int m10187getSizeimpl = UShortArray.m10187getSizeimpl(copyOf); m10187getSizeimpl < i; m10187getSizeimpl++) {
+            UShortArray.m10191set01HTLdE(m10181constructorimpl, m10187getSizeimpl, init.invoke(Integer.valueOf(m10187getSizeimpl)).m10178unboximpl());
         }
-        return m9541constructorimpl;
+        return m10181constructorimpl;
     }
 
     /* renamed from: copyOfRange-oBK06Vg  reason: not valid java name */
-    private static final int[] m9816copyOfRangeoBK06Vg(int[] iArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$copyOfRange$0");
-        return UIntArray.m9357constructorimpl(ArraysKt.copyOfRange(iArr, i, i2));
+    private static final int[] m10456copyOfRangeoBK06Vg(int[] copyOfRange, int i, int i2) {
+        Intrinsics.checkNotNullParameter(copyOfRange, "$this$copyOfRange");
+        return UIntArray.m9997constructorimpl(ArraysKt.copyOfRange(copyOfRange, i, i2));
     }
 
     /* renamed from: copyOfRange--nroSd4  reason: not valid java name */
-    private static final long[] m9813copyOfRangenroSd4(long[] jArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$copyOfRange$0");
-        return ULongArray.m9436constructorimpl(ArraysKt.copyOfRange(jArr, i, i2));
+    private static final long[] m10453copyOfRangenroSd4(long[] copyOfRange, int i, int i2) {
+        Intrinsics.checkNotNullParameter(copyOfRange, "$this$copyOfRange");
+        return ULongArray.m10076constructorimpl(ArraysKt.copyOfRange(copyOfRange, i, i2));
     }
 
     /* renamed from: copyOfRange-4UcCI2c  reason: not valid java name */
-    private static final byte[] m9814copyOfRange4UcCI2c(byte[] bArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$copyOfRange$0");
-        return UByteArray.m9278constructorimpl(ArraysKt.copyOfRange(bArr, i, i2));
+    private static final byte[] m10454copyOfRange4UcCI2c(byte[] copyOfRange, int i, int i2) {
+        Intrinsics.checkNotNullParameter(copyOfRange, "$this$copyOfRange");
+        return UByteArray.m9918constructorimpl(ArraysKt.copyOfRange(copyOfRange, i, i2));
     }
 
     /* renamed from: copyOfRange-Aa5vz7o  reason: not valid java name */
-    private static final short[] m9815copyOfRangeAa5vz7o(short[] sArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$copyOfRange$0");
-        return UShortArray.m9541constructorimpl(ArraysKt.copyOfRange(sArr, i, i2));
+    private static final short[] m10455copyOfRangeAa5vz7o(short[] copyOfRange, int i, int i2) {
+        Intrinsics.checkNotNullParameter(copyOfRange, "$this$copyOfRange");
+        return UShortArray.m10181constructorimpl(ArraysKt.copyOfRange(copyOfRange, i, i2));
     }
 
     /* renamed from: fill-2fe2U9s$default  reason: not valid java name */
-    public static /* synthetic */ void m9846fill2fe2U9s$default(int[] iArr, int i, int i2, int i3, int i4, Object obj) {
+    public static /* synthetic */ void m10486fill2fe2U9s$default(int[] iArr, int i, int i2, int i3, int i4, Object obj) {
         if ((i4 & 2) != 0) {
             i2 = 0;
         }
         if ((i4 & 4) != 0) {
-            i3 = UIntArray.m9363getSizeimpl(iArr);
+            i3 = UIntArray.m10003getSizeimpl(iArr);
         }
-        UArraysKt.m9845fill2fe2U9s(iArr, i, i2, i3);
+        UArraysKt.m10485fill2fe2U9s(iArr, i, i2, i3);
     }
 
     /* renamed from: fill-2fe2U9s  reason: not valid java name */
-    public static final void m9845fill2fe2U9s(int[] iArr, int i, int i2, int i3) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$fill$0");
-        ArraysKt.fill(iArr, i, i2, i3);
+    public static final void m10485fill2fe2U9s(int[] fill, int i, int i2, int i3) {
+        Intrinsics.checkNotNullParameter(fill, "$this$fill");
+        ArraysKt.fill(fill, i, i2, i3);
     }
 
     /* renamed from: fill-K6DWlUc$default  reason: not valid java name */
-    public static /* synthetic */ void m9850fillK6DWlUc$default(long[] jArr, long j, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10490fillK6DWlUc$default(long[] jArr, long j, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             i = 0;
         }
         if ((i3 & 4) != 0) {
-            i2 = ULongArray.m9442getSizeimpl(jArr);
+            i2 = ULongArray.m10082getSizeimpl(jArr);
         }
-        UArraysKt.m9849fillK6DWlUc(jArr, j, i, i2);
+        UArraysKt.m10489fillK6DWlUc(jArr, j, i, i2);
     }
 
     /* renamed from: fill-K6DWlUc  reason: not valid java name */
-    public static final void m9849fillK6DWlUc(long[] jArr, long j, int i, int i2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$fill$0");
-        ArraysKt.fill(jArr, j, i, i2);
+    public static final void m10489fillK6DWlUc(long[] fill, long j, int i, int i2) {
+        Intrinsics.checkNotNullParameter(fill, "$this$fill");
+        ArraysKt.fill(fill, j, i, i2);
     }
 
     /* renamed from: fill-WpHrYlw$default  reason: not valid java name */
-    public static /* synthetic */ void m9852fillWpHrYlw$default(byte[] bArr, byte b, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10492fillWpHrYlw$default(byte[] bArr, byte b, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             i = 0;
         }
         if ((i3 & 4) != 0) {
-            i2 = UByteArray.m9284getSizeimpl(bArr);
+            i2 = UByteArray.m9924getSizeimpl(bArr);
         }
-        UArraysKt.m9851fillWpHrYlw(bArr, b, i, i2);
+        UArraysKt.m10491fillWpHrYlw(bArr, b, i, i2);
     }
 
     /* renamed from: fill-WpHrYlw  reason: not valid java name */
-    public static final void m9851fillWpHrYlw(byte[] bArr, byte b, int i, int i2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$fill$0");
-        ArraysKt.fill(bArr, b, i, i2);
+    public static final void m10491fillWpHrYlw(byte[] fill, byte b, int i, int i2) {
+        Intrinsics.checkNotNullParameter(fill, "$this$fill");
+        ArraysKt.fill(fill, b, i, i2);
     }
 
     /* renamed from: fill-EtDCXyQ$default  reason: not valid java name */
-    public static /* synthetic */ void m9848fillEtDCXyQ$default(short[] sArr, short s, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10488fillEtDCXyQ$default(short[] sArr, short s, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             i = 0;
         }
         if ((i3 & 4) != 0) {
-            i2 = UShortArray.m9547getSizeimpl(sArr);
+            i2 = UShortArray.m10187getSizeimpl(sArr);
         }
-        UArraysKt.m9847fillEtDCXyQ(sArr, s, i, i2);
+        UArraysKt.m10487fillEtDCXyQ(sArr, s, i, i2);
     }
 
     /* renamed from: fill-EtDCXyQ  reason: not valid java name */
-    public static final void m9847fillEtDCXyQ(short[] sArr, short s, int i, int i2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$fill$0");
-        ArraysKt.fill(sArr, s, i, i2);
+    public static final void m10487fillEtDCXyQ(short[] fill, short s, int i, int i2) {
+        Intrinsics.checkNotNullParameter(fill, "$this$fill");
+        ArraysKt.fill(fill, s, i, i2);
     }
 
     /* renamed from: getIndices--ajY-9A  reason: not valid java name */
-    public static final IntRange m9941getIndicesajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$indices$0");
-        return ArraysKt.getIndices(iArr);
+    public static final IntRange m10581getIndicesajY9A(int[] indices) {
+        Intrinsics.checkNotNullParameter(indices, "$this$indices");
+        return ArraysKt.getIndices(indices);
     }
 
     /* renamed from: getIndices-QwZRm1k  reason: not valid java name */
-    public static final IntRange m9945getIndicesQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$indices$0");
-        return ArraysKt.getIndices(jArr);
+    public static final IntRange m10585getIndicesQwZRm1k(long[] indices) {
+        Intrinsics.checkNotNullParameter(indices, "$this$indices");
+        return ArraysKt.getIndices(indices);
     }
 
     /* renamed from: getIndices-GBYM_sE  reason: not valid java name */
-    public static final IntRange m9943getIndicesGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$indices$0");
-        return ArraysKt.getIndices(bArr);
+    public static final IntRange m10583getIndicesGBYM_sE(byte[] indices) {
+        Intrinsics.checkNotNullParameter(indices, "$this$indices");
+        return ArraysKt.getIndices(indices);
     }
 
     /* renamed from: getIndices-rL5Bavg  reason: not valid java name */
-    public static final IntRange m9947getIndicesrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$indices$0");
-        return ArraysKt.getIndices(sArr);
+    public static final IntRange m10587getIndicesrL5Bavg(short[] indices) {
+        Intrinsics.checkNotNullParameter(indices, "$this$indices");
+        return ArraysKt.getIndices(indices);
     }
 
     /* renamed from: getLastIndex--ajY-9A  reason: not valid java name */
-    public static final int m9949getLastIndexajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$lastIndex$0");
-        return ArraysKt.getLastIndex(iArr);
+    public static final int m10589getLastIndexajY9A(int[] lastIndex) {
+        Intrinsics.checkNotNullParameter(lastIndex, "$this$lastIndex");
+        return ArraysKt.getLastIndex(lastIndex);
     }
 
     /* renamed from: getLastIndex-QwZRm1k  reason: not valid java name */
-    public static final int m9953getLastIndexQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$lastIndex$0");
-        return ArraysKt.getLastIndex(jArr);
+    public static final int m10593getLastIndexQwZRm1k(long[] lastIndex) {
+        Intrinsics.checkNotNullParameter(lastIndex, "$this$lastIndex");
+        return ArraysKt.getLastIndex(lastIndex);
     }
 
     /* renamed from: getLastIndex-GBYM_sE  reason: not valid java name */
-    public static final int m9951getLastIndexGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$lastIndex$0");
-        return ArraysKt.getLastIndex(bArr);
+    public static final int m10591getLastIndexGBYM_sE(byte[] lastIndex) {
+        Intrinsics.checkNotNullParameter(lastIndex, "$this$lastIndex");
+        return ArraysKt.getLastIndex(lastIndex);
     }
 
     /* renamed from: getLastIndex-rL5Bavg  reason: not valid java name */
-    public static final int m9955getLastIndexrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$lastIndex$0");
-        return ArraysKt.getLastIndex(sArr);
+    public static final int m10595getLastIndexrL5Bavg(short[] lastIndex) {
+        Intrinsics.checkNotNullParameter(lastIndex, "$this$lastIndex");
+        return ArraysKt.getLastIndex(lastIndex);
     }
 
     /* renamed from: plus-uWY9BYg  reason: not valid java name */
-    private static final int[] m10166plusuWY9BYg(int[] iArr, int i) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$plus$0");
-        return UIntArray.m9357constructorimpl(ArraysKt.plus(iArr, i));
+    private static final int[] m10806plusuWY9BYg(int[] plus, int i) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        return UIntArray.m9997constructorimpl(ArraysKt.plus(plus, i));
     }
 
     /* renamed from: plus-3uqUaXg  reason: not valid java name */
-    private static final long[] m10157plus3uqUaXg(long[] jArr, long j) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$plus$0");
-        return ULongArray.m9436constructorimpl(ArraysKt.plus(jArr, j));
+    private static final long[] m10797plus3uqUaXg(long[] plus, long j) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        return ULongArray.m10076constructorimpl(ArraysKt.plus(plus, j));
     }
 
     /* renamed from: plus-gMuBH34  reason: not valid java name */
-    private static final byte[] m10161plusgMuBH34(byte[] bArr, byte b) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$plus$0");
-        return UByteArray.m9278constructorimpl(ArraysKt.plus(bArr, b));
+    private static final byte[] m10801plusgMuBH34(byte[] plus, byte b) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        return UByteArray.m9918constructorimpl(ArraysKt.plus(plus, b));
     }
 
     /* renamed from: plus-XzdR7RA  reason: not valid java name */
-    private static final short[] m10159plusXzdR7RA(short[] sArr, short s) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$plus$0");
-        return UShortArray.m9541constructorimpl(ArraysKt.plus(sArr, s));
+    private static final short[] m10799plusXzdR7RA(short[] plus, short s) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        return UShortArray.m10181constructorimpl(ArraysKt.plus(plus, s));
     }
 
     /* renamed from: plus-CFIt9YE  reason: not valid java name */
-    public static final int[] m10158plusCFIt9YE(int[] iArr, Collection<UInt> elements) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$plus$0");
+    public static final int[] m10798plusCFIt9YE(int[] plus, Collection<UInt> elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
         Intrinsics.checkNotNullParameter(elements, "elements");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        int[] copyOf = Arrays.copyOf(iArr, UIntArray.m9363getSizeimpl(iArr) + elements.size());
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(plus);
+        int[] copyOf = Arrays.copyOf(plus, UIntArray.m10003getSizeimpl(plus) + elements.size());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         for (UInt uInt : elements) {
-            copyOf[m9363getSizeimpl] = uInt.m9354unboximpl();
-            m9363getSizeimpl++;
+            copyOf[m10003getSizeimpl] = uInt.m9994unboximpl();
+            m10003getSizeimpl++;
         }
-        return UIntArray.m9357constructorimpl(copyOf);
+        return UIntArray.m9997constructorimpl(copyOf);
     }
 
     /* renamed from: plus-kzHmqpY  reason: not valid java name */
-    public static final long[] m10163pluskzHmqpY(long[] jArr, Collection<ULong> elements) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$plus$0");
+    public static final long[] m10803pluskzHmqpY(long[] plus, Collection<ULong> elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
         Intrinsics.checkNotNullParameter(elements, "elements");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        long[] copyOf = Arrays.copyOf(jArr, ULongArray.m9442getSizeimpl(jArr) + elements.size());
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(plus);
+        long[] copyOf = Arrays.copyOf(plus, ULongArray.m10082getSizeimpl(plus) + elements.size());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         for (ULong uLong : elements) {
-            copyOf[m9442getSizeimpl] = uLong.m9433unboximpl();
-            m9442getSizeimpl++;
+            copyOf[m10082getSizeimpl] = uLong.m10073unboximpl();
+            m10082getSizeimpl++;
         }
-        return ULongArray.m9436constructorimpl(copyOf);
+        return ULongArray.m10076constructorimpl(copyOf);
     }
 
     /* renamed from: plus-xo_DsdI  reason: not valid java name */
-    public static final byte[] m10168plusxo_DsdI(byte[] bArr, Collection<UByte> elements) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$plus$0");
+    public static final byte[] m10808plusxo_DsdI(byte[] plus, Collection<UByte> elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
         Intrinsics.checkNotNullParameter(elements, "elements");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        byte[] copyOf = Arrays.copyOf(bArr, UByteArray.m9284getSizeimpl(bArr) + elements.size());
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(plus);
+        byte[] copyOf = Arrays.copyOf(plus, UByteArray.m9924getSizeimpl(plus) + elements.size());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         for (UByte uByte : elements) {
-            copyOf[m9284getSizeimpl] = uByte.m9270unboximpl();
-            m9284getSizeimpl++;
+            copyOf[m9924getSizeimpl] = uByte.m9910unboximpl();
+            m9924getSizeimpl++;
         }
-        return UByteArray.m9278constructorimpl(copyOf);
+        return UByteArray.m9918constructorimpl(copyOf);
     }
 
     /* renamed from: plus-ojwP5H8  reason: not valid java name */
-    public static final short[] m10165plusojwP5H8(short[] sArr, Collection<UShort> elements) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$plus$0");
+    public static final short[] m10805plusojwP5H8(short[] plus, Collection<UShort> elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
         Intrinsics.checkNotNullParameter(elements, "elements");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        short[] copyOf = Arrays.copyOf(sArr, UShortArray.m9547getSizeimpl(sArr) + elements.size());
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(plus);
+        short[] copyOf = Arrays.copyOf(plus, UShortArray.m10187getSizeimpl(plus) + elements.size());
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         for (UShort uShort : elements) {
-            copyOf[m9547getSizeimpl] = uShort.m9538unboximpl();
-            m9547getSizeimpl++;
+            copyOf[m10187getSizeimpl] = uShort.m10178unboximpl();
+            m10187getSizeimpl++;
         }
-        return UShortArray.m9541constructorimpl(copyOf);
+        return UShortArray.m10181constructorimpl(copyOf);
     }
 
     /* renamed from: plus-ctEhBpI  reason: not valid java name */
-    private static final int[] m10160plusctEhBpI(int[] iArr, int[] iArr2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$plus$0");
-        Intrinsics.checkNotNullParameter(iArr2, "$v$c$kotlin-UIntArray$-elements$0");
-        return UIntArray.m9357constructorimpl(ArraysKt.plus(iArr, iArr2));
+    private static final int[] m10800plusctEhBpI(int[] plus, int[] elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return UIntArray.m9997constructorimpl(ArraysKt.plus(plus, elements));
     }
 
     /* renamed from: plus-us8wMrg  reason: not valid java name */
-    private static final long[] m10167plusus8wMrg(long[] jArr, long[] jArr2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$plus$0");
-        Intrinsics.checkNotNullParameter(jArr2, "$v$c$kotlin-ULongArray$-elements$0");
-        return ULongArray.m9436constructorimpl(ArraysKt.plus(jArr, jArr2));
+    private static final long[] m10807plusus8wMrg(long[] plus, long[] elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return ULongArray.m10076constructorimpl(ArraysKt.plus(plus, elements));
     }
 
     /* renamed from: plus-kdPth3s  reason: not valid java name */
-    private static final byte[] m10162pluskdPth3s(byte[] bArr, byte[] bArr2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$plus$0");
-        Intrinsics.checkNotNullParameter(bArr2, "$v$c$kotlin-UByteArray$-elements$0");
-        return UByteArray.m9278constructorimpl(ArraysKt.plus(bArr, bArr2));
+    private static final byte[] m10802pluskdPth3s(byte[] plus, byte[] elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return UByteArray.m9918constructorimpl(ArraysKt.plus(plus, elements));
     }
 
     /* renamed from: plus-mazbYpA  reason: not valid java name */
-    private static final short[] m10164plusmazbYpA(short[] sArr, short[] sArr2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$plus$0");
-        Intrinsics.checkNotNullParameter(sArr2, "$v$c$kotlin-UShortArray$-elements$0");
-        return UShortArray.m9541constructorimpl(ArraysKt.plus(sArr, sArr2));
+    private static final short[] m10804plusmazbYpA(short[] plus, short[] elements) {
+        Intrinsics.checkNotNullParameter(plus, "$this$plus");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return UShortArray.m10181constructorimpl(ArraysKt.plus(plus, elements));
     }
 
     /* renamed from: sort--ajY-9A  reason: not valid java name */
-    public static final void m10297sortajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sort$0");
-        if (UIntArray.m9363getSizeimpl(iArr) > 1) {
-            UArraySortingKt.m9676sortArrayoBK06Vg(iArr, 0, UIntArray.m9363getSizeimpl(iArr));
+    public static final void m10937sortajY9A(int[] sort) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        if (UIntArray.m10003getSizeimpl(sort) > 1) {
+            UArraySortingKt.m10316sortArrayoBK06Vg(sort, 0, UIntArray.m10003getSizeimpl(sort));
         }
     }
 
     /* renamed from: sort-QwZRm1k  reason: not valid java name */
-    public static final void m10305sortQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sort$0");
-        if (ULongArray.m9442getSizeimpl(jArr) > 1) {
-            UArraySortingKt.m9673sortArraynroSd4(jArr, 0, ULongArray.m9442getSizeimpl(jArr));
+    public static final void m10945sortQwZRm1k(long[] sort) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        if (ULongArray.m10082getSizeimpl(sort) > 1) {
+            UArraySortingKt.m10313sortArraynroSd4(sort, 0, ULongArray.m10082getSizeimpl(sort));
         }
     }
 
     /* renamed from: sort-GBYM_sE  reason: not valid java name */
-    public static final void m10304sortGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sort$0");
-        if (UByteArray.m9284getSizeimpl(bArr) > 1) {
-            UArraySortingKt.m9674sortArray4UcCI2c(bArr, 0, UByteArray.m9284getSizeimpl(bArr));
+    public static final void m10944sortGBYM_sE(byte[] sort) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        if (UByteArray.m9924getSizeimpl(sort) > 1) {
+            UArraySortingKt.m10314sortArray4UcCI2c(sort, 0, UByteArray.m9924getSizeimpl(sort));
         }
     }
 
     /* renamed from: sort-rL5Bavg  reason: not valid java name */
-    public static final void m10308sortrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sort$0");
-        if (UShortArray.m9547getSizeimpl(sArr) > 1) {
-            UArraySortingKt.m9675sortArrayAa5vz7o(sArr, 0, UShortArray.m9547getSizeimpl(sArr));
+    public static final void m10948sortrL5Bavg(short[] sort) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        if (UShortArray.m10187getSizeimpl(sort) > 1) {
+            UArraySortingKt.m10315sortArrayAa5vz7o(sort, 0, UShortArray.m10187getSizeimpl(sort));
         }
     }
 
     /* renamed from: sort-oBK06Vg$default  reason: not valid java name */
-    public static /* synthetic */ void m10307sortoBK06Vg$default(int[] iArr, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10947sortoBK06Vg$default(int[] iArr, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
-            i2 = UIntArray.m9363getSizeimpl(iArr);
+            i2 = UIntArray.m10003getSizeimpl(iArr);
         }
-        UArraysKt.m10306sortoBK06Vg(iArr, i, i2);
+        UArraysKt.m10946sortoBK06Vg(iArr, i, i2);
     }
 
     /* renamed from: sort-oBK06Vg  reason: not valid java name */
-    public static final void m10306sortoBK06Vg(int[] iArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sort$0");
-        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UIntArray.m9363getSizeimpl(iArr));
+    public static final void m10946sortoBK06Vg(int[] sort, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UIntArray.m10003getSizeimpl(sort));
         if (i < i2 - 1) {
-            UArraySortingKt.m9676sortArrayoBK06Vg(iArr, i, i2);
+            UArraySortingKt.m10316sortArrayoBK06Vg(sort, i, i2);
         }
     }
 
     /* renamed from: sort--nroSd4$default  reason: not valid java name */
-    public static /* synthetic */ void m10299sortnroSd4$default(long[] jArr, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10939sortnroSd4$default(long[] jArr, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
-            i2 = ULongArray.m9442getSizeimpl(jArr);
+            i2 = ULongArray.m10082getSizeimpl(jArr);
         }
-        UArraysKt.m10298sortnroSd4(jArr, i, i2);
+        UArraysKt.m10938sortnroSd4(jArr, i, i2);
     }
 
     /* renamed from: sort--nroSd4  reason: not valid java name */
-    public static final void m10298sortnroSd4(long[] jArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sort$0");
-        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, ULongArray.m9442getSizeimpl(jArr));
+    public static final void m10938sortnroSd4(long[] sort, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, ULongArray.m10082getSizeimpl(sort));
         if (i < i2 - 1) {
-            UArraySortingKt.m9673sortArraynroSd4(jArr, i, i2);
+            UArraySortingKt.m10313sortArraynroSd4(sort, i, i2);
         }
     }
 
     /* renamed from: sort-4UcCI2c$default  reason: not valid java name */
-    public static /* synthetic */ void m10301sort4UcCI2c$default(byte[] bArr, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10941sort4UcCI2c$default(byte[] bArr, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
-            i2 = UByteArray.m9284getSizeimpl(bArr);
+            i2 = UByteArray.m9924getSizeimpl(bArr);
         }
-        UArraysKt.m10300sort4UcCI2c(bArr, i, i2);
+        UArraysKt.m10940sort4UcCI2c(bArr, i, i2);
     }
 
     /* renamed from: sort-4UcCI2c  reason: not valid java name */
-    public static final void m10300sort4UcCI2c(byte[] bArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sort$0");
-        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UByteArray.m9284getSizeimpl(bArr));
+    public static final void m10940sort4UcCI2c(byte[] sort, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UByteArray.m9924getSizeimpl(sort));
         if (i < i2 - 1) {
-            UArraySortingKt.m9674sortArray4UcCI2c(bArr, i, i2);
+            UArraySortingKt.m10314sortArray4UcCI2c(sort, i, i2);
         }
     }
 
     /* renamed from: sort-Aa5vz7o$default  reason: not valid java name */
-    public static /* synthetic */ void m10303sortAa5vz7o$default(short[] sArr, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ void m10943sortAa5vz7o$default(short[] sArr, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = 0;
         }
         if ((i3 & 2) != 0) {
-            i2 = UShortArray.m9547getSizeimpl(sArr);
+            i2 = UShortArray.m10187getSizeimpl(sArr);
         }
-        UArraysKt.m10302sortAa5vz7o(sArr, i, i2);
+        UArraysKt.m10942sortAa5vz7o(sArr, i, i2);
     }
 
     /* renamed from: sort-Aa5vz7o  reason: not valid java name */
-    public static final void m10302sortAa5vz7o(short[] sArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sort$0");
-        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UShortArray.m9547getSizeimpl(sArr));
+    public static final void m10942sortAa5vz7o(short[] sort, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sort, "$this$sort");
+        AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(i, i2, UShortArray.m10187getSizeimpl(sort));
         if (i < i2 - 1) {
-            UArraySortingKt.m9675sortArrayAa5vz7o(sArr, i, i2);
+            UArraySortingKt.m10315sortArrayAa5vz7o(sort, i, i2);
         }
     }
 
     /* renamed from: sortDescending-oBK06Vg  reason: not valid java name */
-    public static final void m10315sortDescendingoBK06Vg(int[] iArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sortDescending$0");
-        UArraysKt.m10306sortoBK06Vg(iArr, i, i2);
-        ArraysKt.reverse(iArr, i, i2);
+    public static final void m10955sortDescendingoBK06Vg(int[] sortDescending, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        UArraysKt.m10946sortoBK06Vg(sortDescending, i, i2);
+        ArraysKt.reverse(sortDescending, i, i2);
     }
 
     /* renamed from: sortDescending--nroSd4  reason: not valid java name */
-    public static final void m10310sortDescendingnroSd4(long[] jArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sortDescending$0");
-        UArraysKt.m10298sortnroSd4(jArr, i, i2);
-        ArraysKt.reverse(jArr, i, i2);
+    public static final void m10950sortDescendingnroSd4(long[] sortDescending, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        UArraysKt.m10938sortnroSd4(sortDescending, i, i2);
+        ArraysKt.reverse(sortDescending, i, i2);
     }
 
     /* renamed from: sortDescending-4UcCI2c  reason: not valid java name */
-    public static final void m10311sortDescending4UcCI2c(byte[] bArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sortDescending$0");
-        UArraysKt.m10300sort4UcCI2c(bArr, i, i2);
-        ArraysKt.reverse(bArr, i, i2);
+    public static final void m10951sortDescending4UcCI2c(byte[] sortDescending, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        UArraysKt.m10940sort4UcCI2c(sortDescending, i, i2);
+        ArraysKt.reverse(sortDescending, i, i2);
     }
 
     /* renamed from: sortDescending-Aa5vz7o  reason: not valid java name */
-    public static final void m10312sortDescendingAa5vz7o(short[] sArr, int i, int i2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sortDescending$0");
-        UArraysKt.m10302sortAa5vz7o(sArr, i, i2);
-        ArraysKt.reverse(sArr, i, i2);
+    public static final void m10952sortDescendingAa5vz7o(short[] sortDescending, int i, int i2) {
+        Intrinsics.checkNotNullParameter(sortDescending, "$this$sortDescending");
+        UArraysKt.m10942sortAa5vz7o(sortDescending, i, i2);
+        ArraysKt.reverse(sortDescending, i, i2);
     }
 
     /* renamed from: toByteArray-GBYM_sE  reason: not valid java name */
-    private static final byte[] m10361toByteArrayGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$toByteArray$0");
-        byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+    private static final byte[] m11001toByteArrayGBYM_sE(byte[] toByteArray) {
+        Intrinsics.checkNotNullParameter(toByteArray, "$this$toByteArray");
+        byte[] copyOf = Arrays.copyOf(toByteArray, toByteArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         return copyOf;
     }
 
     /* renamed from: toIntArray--ajY-9A  reason: not valid java name */
-    private static final int[] m10362toIntArrayajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$toIntArray$0");
-        int[] copyOf = Arrays.copyOf(iArr, iArr.length);
+    private static final int[] m11002toIntArrayajY9A(int[] toIntArray) {
+        Intrinsics.checkNotNullParameter(toIntArray, "$this$toIntArray");
+        int[] copyOf = Arrays.copyOf(toIntArray, toIntArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         return copyOf;
     }
 
     /* renamed from: toLongArray-QwZRm1k  reason: not valid java name */
-    private static final long[] m10363toLongArrayQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$toLongArray$0");
-        long[] copyOf = Arrays.copyOf(jArr, jArr.length);
+    private static final long[] m11003toLongArrayQwZRm1k(long[] toLongArray) {
+        Intrinsics.checkNotNullParameter(toLongArray, "$this$toLongArray");
+        long[] copyOf = Arrays.copyOf(toLongArray, toLongArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         return copyOf;
     }
 
     /* renamed from: toShortArray-rL5Bavg  reason: not valid java name */
-    private static final short[] m10364toShortArrayrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$toShortArray$0");
-        short[] copyOf = Arrays.copyOf(sArr, sArr.length);
+    private static final short[] m11004toShortArrayrL5Bavg(short[] toShortArray) {
+        Intrinsics.checkNotNullParameter(toShortArray, "$this$toShortArray");
+        short[] copyOf = Arrays.copyOf(toShortArray, toShortArray.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         return copyOf;
     }
 
     /* renamed from: toTypedArray--ajY-9A  reason: not valid java name */
-    public static final UInt[] m10365toTypedArrayajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$toTypedArray$0");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        UInt[] uIntArr = new UInt[m9363getSizeimpl];
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            uIntArr[i] = UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i));
+    public static final UInt[] m11005toTypedArrayajY9A(int[] toTypedArray) {
+        Intrinsics.checkNotNullParameter(toTypedArray, "$this$toTypedArray");
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(toTypedArray);
+        UInt[] uIntArr = new UInt[m10003getSizeimpl];
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            uIntArr[i] = UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(toTypedArray, i));
         }
         return uIntArr;
     }
 
     /* renamed from: toTypedArray-QwZRm1k  reason: not valid java name */
-    public static final ULong[] m10367toTypedArrayQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$toTypedArray$0");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        ULong[] uLongArr = new ULong[m9442getSizeimpl];
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            uLongArr[i] = ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i));
+    public static final ULong[] m11007toTypedArrayQwZRm1k(long[] toTypedArray) {
+        Intrinsics.checkNotNullParameter(toTypedArray, "$this$toTypedArray");
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(toTypedArray);
+        ULong[] uLongArr = new ULong[m10082getSizeimpl];
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            uLongArr[i] = ULong.m10015boximpl(ULongArray.m10081getsVKNKU(toTypedArray, i));
         }
         return uLongArr;
     }
 
     /* renamed from: toTypedArray-GBYM_sE  reason: not valid java name */
-    public static final UByte[] m10366toTypedArrayGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$toTypedArray$0");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        UByte[] uByteArr = new UByte[m9284getSizeimpl];
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            uByteArr[i] = UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i));
+    public static final UByte[] m11006toTypedArrayGBYM_sE(byte[] toTypedArray) {
+        Intrinsics.checkNotNullParameter(toTypedArray, "$this$toTypedArray");
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(toTypedArray);
+        UByte[] uByteArr = new UByte[m9924getSizeimpl];
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            uByteArr[i] = UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(toTypedArray, i));
         }
         return uByteArr;
     }
 
     /* renamed from: toTypedArray-rL5Bavg  reason: not valid java name */
-    public static final UShort[] m10368toTypedArrayrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$toTypedArray$0");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        UShort[] uShortArr = new UShort[m9547getSizeimpl];
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            uShortArr[i] = UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i));
+    public static final UShort[] m11008toTypedArrayrL5Bavg(short[] toTypedArray) {
+        Intrinsics.checkNotNullParameter(toTypedArray, "$this$toTypedArray");
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(toTypedArray);
+        UShort[] uShortArr = new UShort[m10187getSizeimpl];
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            uShortArr[i] = UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(toTypedArray, i));
         }
         return uShortArr;
     }
@@ -3460,16 +3460,16 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         int length = uByteArr.length;
         byte[] bArr = new byte[length];
         for (int i = 0; i < length; i++) {
-            bArr[i] = uByteArr[i].m9270unboximpl();
+            bArr[i] = uByteArr[i].m9910unboximpl();
         }
-        return UByteArray.m9278constructorimpl(bArr);
+        return UByteArray.m9918constructorimpl(bArr);
     }
 
     private static final byte[] toUByteArray(byte[] bArr) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UByteArray.m9278constructorimpl(copyOf);
+        return UByteArray.m9918constructorimpl(copyOf);
     }
 
     public static final int[] toUIntArray(UInt[] uIntArr) {
@@ -3477,16 +3477,16 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         int length = uIntArr.length;
         int[] iArr = new int[length];
         for (int i = 0; i < length; i++) {
-            iArr[i] = uIntArr[i].m9354unboximpl();
+            iArr[i] = uIntArr[i].m9994unboximpl();
         }
-        return UIntArray.m9357constructorimpl(iArr);
+        return UIntArray.m9997constructorimpl(iArr);
     }
 
     private static final int[] toUIntArray(int[] iArr) {
         Intrinsics.checkNotNullParameter(iArr, "<this>");
         int[] copyOf = Arrays.copyOf(iArr, iArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UIntArray.m9357constructorimpl(copyOf);
+        return UIntArray.m9997constructorimpl(copyOf);
     }
 
     public static final long[] toULongArray(ULong[] uLongArr) {
@@ -3494,16 +3494,16 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         int length = uLongArr.length;
         long[] jArr = new long[length];
         for (int i = 0; i < length; i++) {
-            jArr[i] = uLongArr[i].m9433unboximpl();
+            jArr[i] = uLongArr[i].m10073unboximpl();
         }
-        return ULongArray.m9436constructorimpl(jArr);
+        return ULongArray.m10076constructorimpl(jArr);
     }
 
     private static final long[] toULongArray(long[] jArr) {
         Intrinsics.checkNotNullParameter(jArr, "<this>");
         long[] copyOf = Arrays.copyOf(jArr, jArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return ULongArray.m9436constructorimpl(copyOf);
+        return ULongArray.m10076constructorimpl(copyOf);
     }
 
     public static final short[] toUShortArray(UShort[] uShortArr) {
@@ -3511,184 +3511,184 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         int length = uShortArr.length;
         short[] sArr = new short[length];
         for (int i = 0; i < length; i++) {
-            sArr[i] = uShortArr[i].m9538unboximpl();
+            sArr[i] = uShortArr[i].m10178unboximpl();
         }
-        return UShortArray.m9541constructorimpl(sArr);
+        return UShortArray.m10181constructorimpl(sArr);
     }
 
     private static final short[] toUShortArray(short[] sArr) {
         Intrinsics.checkNotNullParameter(sArr, "<this>");
         short[] copyOf = Arrays.copyOf(sArr, sArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-        return UShortArray.m9541constructorimpl(copyOf);
+        return UShortArray.m10181constructorimpl(copyOf);
     }
 
     /* renamed from: associateWith-jgv0xPQ  reason: not valid java name */
-    private static final <V> Map<UInt, V> m9755associateWithjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$associateWith$0");
+    private static final <V> Map<UInt, V> m10395associateWithjgv0xPQ(int[] associateWith, Function1<? super UInt, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWith, "$this$associateWith");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UIntArray.m9363getSizeimpl(iArr)), 16));
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            linkedHashMap.put(UInt.m9296boximpl(m9362getpVg5ArA), valueSelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA)));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UIntArray.m10003getSizeimpl(associateWith)), 16));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(associateWith);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(associateWith, i);
+            linkedHashMap.put(UInt.m9936boximpl(m10002getpVg5ArA), valueSelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: associateWith-MShoTSo  reason: not valid java name */
-    private static final <V> Map<ULong, V> m9754associateWithMShoTSo(long[] jArr, Function1<? super ULong, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$associateWith$0");
+    private static final <V> Map<ULong, V> m10394associateWithMShoTSo(long[] associateWith, Function1<? super ULong, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWith, "$this$associateWith");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(ULongArray.m9442getSizeimpl(jArr)), 16));
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            linkedHashMap.put(ULong.m9375boximpl(m9441getsVKNKU), valueSelector.invoke(ULong.m9375boximpl(m9441getsVKNKU)));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(ULongArray.m10082getSizeimpl(associateWith)), 16));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(associateWith);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(associateWith, i);
+            linkedHashMap.put(ULong.m10015boximpl(m10081getsVKNKU), valueSelector.invoke(ULong.m10015boximpl(m10081getsVKNKU)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: associateWith-JOV_ifY  reason: not valid java name */
-    private static final <V> Map<UByte, V> m9753associateWithJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$associateWith$0");
+    private static final <V> Map<UByte, V> m10393associateWithJOV_ifY(byte[] associateWith, Function1<? super UByte, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWith, "$this$associateWith");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UByteArray.m9284getSizeimpl(bArr)), 16));
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            linkedHashMap.put(UByte.m9214boximpl(m9283getw2LRezQ), valueSelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ)));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UByteArray.m9924getSizeimpl(associateWith)), 16));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(associateWith);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(associateWith, i);
+            linkedHashMap.put(UByte.m9854boximpl(m9923getw2LRezQ), valueSelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: associateWith-xTcfx_M  reason: not valid java name */
-    private static final <V> Map<UShort, V> m9756associateWithxTcfx_M(short[] sArr, Function1<? super UShort, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$associateWith$0");
+    private static final <V> Map<UShort, V> m10396associateWithxTcfx_M(short[] associateWith, Function1<? super UShort, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWith, "$this$associateWith");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UShortArray.m9547getSizeimpl(sArr)), 16));
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            linkedHashMap.put(UShort.m9482boximpl(m9546getMh2AYeg), valueSelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg)));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(UShortArray.m10187getSizeimpl(associateWith)), 16));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(associateWith);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(associateWith, i);
+            linkedHashMap.put(UShort.m10122boximpl(m10186getMh2AYeg), valueSelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg)));
         }
         return linkedHashMap;
     }
 
     @IgnorableReturnValue
     /* renamed from: associateWithTo-4D70W2E  reason: not valid java name */
-    private static final <V, M extends Map<? super UInt, ? super V>> M m9757associateWithTo4D70W2E(int[] iArr, M destination, Function1<? super UInt, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$associateWithTo$0");
+    private static final <V, M extends Map<? super UInt, ? super V>> M m10397associateWithTo4D70W2E(int[] associateWithTo, M destination, Function1<? super UInt, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWithTo, "$this$associateWithTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            destination.put(UInt.m9296boximpl(m9362getpVg5ArA), valueSelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(associateWithTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(associateWithTo, i);
+            destination.put(UInt.m9936boximpl(m10002getpVg5ArA), valueSelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA)));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: associateWithTo-X6OPwNk  reason: not valid java name */
-    private static final <V, M extends Map<? super ULong, ? super V>> M m9759associateWithToX6OPwNk(long[] jArr, M destination, Function1<? super ULong, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$associateWithTo$0");
+    private static final <V, M extends Map<? super ULong, ? super V>> M m10399associateWithToX6OPwNk(long[] associateWithTo, M destination, Function1<? super ULong, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWithTo, "$this$associateWithTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            destination.put(ULong.m9375boximpl(m9441getsVKNKU), valueSelector.invoke(ULong.m9375boximpl(m9441getsVKNKU)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(associateWithTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(associateWithTo, i);
+            destination.put(ULong.m10015boximpl(m10081getsVKNKU), valueSelector.invoke(ULong.m10015boximpl(m10081getsVKNKU)));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: associateWithTo-H21X9dk  reason: not valid java name */
-    private static final <V, M extends Map<? super UByte, ? super V>> M m9758associateWithToH21X9dk(byte[] bArr, M destination, Function1<? super UByte, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$associateWithTo$0");
+    private static final <V, M extends Map<? super UByte, ? super V>> M m10398associateWithToH21X9dk(byte[] associateWithTo, M destination, Function1<? super UByte, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWithTo, "$this$associateWithTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            destination.put(UByte.m9214boximpl(m9283getw2LRezQ), valueSelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(associateWithTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(associateWithTo, i);
+            destination.put(UByte.m9854boximpl(m9923getw2LRezQ), valueSelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ)));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: associateWithTo-ciTST-8  reason: not valid java name */
-    private static final <V, M extends Map<? super UShort, ? super V>> M m9760associateWithTociTST8(short[] sArr, M destination, Function1<? super UShort, ? extends V> valueSelector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$associateWithTo$0");
+    private static final <V, M extends Map<? super UShort, ? super V>> M m10400associateWithTociTST8(short[] associateWithTo, M destination, Function1<? super UShort, ? extends V> valueSelector) {
+        Intrinsics.checkNotNullParameter(associateWithTo, "$this$associateWithTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(valueSelector, "valueSelector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            destination.put(UShort.m9482boximpl(m9546getMh2AYeg), valueSelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(associateWithTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(associateWithTo, i);
+            destination.put(UShort.m10122boximpl(m10186getMh2AYeg), valueSelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg)));
         }
         return destination;
     }
 
     /* renamed from: flatMap-jgv0xPQ  reason: not valid java name */
-    private static final <R> List<R> m9903flatMapjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$flatMap$0");
+    private static final <R> List<R> m10543flatMapjgv0xPQ(int[] flatMap, Function1<? super UInt, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMap, "$this$flatMap");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            CollectionsKt.addAll(arrayList, transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(flatMap);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            CollectionsKt.addAll(arrayList, transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(flatMap, i))));
         }
         return arrayList;
     }
 
     /* renamed from: flatMap-MShoTSo  reason: not valid java name */
-    private static final <R> List<R> m9902flatMapMShoTSo(long[] jArr, Function1<? super ULong, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$flatMap$0");
+    private static final <R> List<R> m10542flatMapMShoTSo(long[] flatMap, Function1<? super ULong, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMap, "$this$flatMap");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            CollectionsKt.addAll(arrayList, transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(flatMap);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            CollectionsKt.addAll(arrayList, transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(flatMap, i))));
         }
         return arrayList;
     }
 
     /* renamed from: flatMap-JOV_ifY  reason: not valid java name */
-    private static final <R> List<R> m9901flatMapJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$flatMap$0");
+    private static final <R> List<R> m10541flatMapJOV_ifY(byte[] flatMap, Function1<? super UByte, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMap, "$this$flatMap");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            CollectionsKt.addAll(arrayList, transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(flatMap);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            CollectionsKt.addAll(arrayList, transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(flatMap, i))));
         }
         return arrayList;
     }
 
     /* renamed from: flatMap-xTcfx_M  reason: not valid java name */
-    private static final <R> List<R> m9904flatMapxTcfx_M(short[] sArr, Function1<? super UShort, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$flatMap$0");
+    private static final <R> List<R> m10544flatMapxTcfx_M(short[] flatMap, Function1<? super UShort, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMap, "$this$flatMap");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            CollectionsKt.addAll(arrayList, transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(flatMap);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            CollectionsKt.addAll(arrayList, transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(flatMap, i))));
         }
         return arrayList;
     }
 
     /* renamed from: flatMapIndexed-WyvcNBI  reason: not valid java name */
-    private static final <R> List<R> m9906flatMapIndexedWyvcNBI(int[] iArr, Function2<? super Integer, ? super UInt, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$flatMapIndexed$0");
+    private static final <R> List<R> m10546flatMapIndexedWyvcNBI(int[] flatMapIndexed, Function2<? super Integer, ? super UInt, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexed, "$this$flatMapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(flatMapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        while (i < m10003getSizeimpl) {
+            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(flatMapIndexed, i))));
             i++;
             i2++;
         }
@@ -3696,15 +3696,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: flatMapIndexed-s8dVfGU  reason: not valid java name */
-    private static final <R> List<R> m9907flatMapIndexeds8dVfGU(long[] jArr, Function2<? super Integer, ? super ULong, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$flatMapIndexed$0");
+    private static final <R> List<R> m10547flatMapIndexeds8dVfGU(long[] flatMapIndexed, Function2<? super Integer, ? super ULong, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexed, "$this$flatMapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(flatMapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        while (i < m10082getSizeimpl) {
+            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(flatMapIndexed, i))));
             i++;
             i2++;
         }
@@ -3712,15 +3712,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: flatMapIndexed-ELGow60  reason: not valid java name */
-    private static final <R> List<R> m9905flatMapIndexedELGow60(byte[] bArr, Function2<? super Integer, ? super UByte, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$flatMapIndexed$0");
+    private static final <R> List<R> m10545flatMapIndexedELGow60(byte[] flatMapIndexed, Function2<? super Integer, ? super UByte, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexed, "$this$flatMapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(flatMapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        while (i < m9924getSizeimpl) {
+            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(flatMapIndexed, i))));
             i++;
             i2++;
         }
@@ -3728,15 +3728,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: flatMapIndexed-xzaTVY8  reason: not valid java name */
-    private static final <R> List<R> m9908flatMapIndexedxzaTVY8(short[] sArr, Function2<? super Integer, ? super UShort, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$flatMapIndexed$0");
+    private static final <R> List<R> m10548flatMapIndexedxzaTVY8(short[] flatMapIndexed, Function2<? super Integer, ? super UShort, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexed, "$this$flatMapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
         ArrayList arrayList = new ArrayList();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(flatMapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        while (i < m10187getSizeimpl) {
+            CollectionsKt.addAll(arrayList, transform.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(flatMapIndexed, i))));
             i++;
             i2++;
         }
@@ -3745,15 +3745,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: flatMapIndexedTo--6EtJGI  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9909flatMapIndexedTo6EtJGI(int[] iArr, C destination, Function2<? super Integer, ? super UInt, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$flatMapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10549flatMapIndexedTo6EtJGI(int[] flatMapIndexedTo, C destination, Function2<? super Integer, ? super UInt, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexedTo, "$this$flatMapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(flatMapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        while (i < m10003getSizeimpl) {
+            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(flatMapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -3762,15 +3762,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: flatMapIndexedTo-pe2Q0Dw  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9912flatMapIndexedTope2Q0Dw(long[] jArr, C destination, Function2<? super Integer, ? super ULong, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$flatMapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10552flatMapIndexedTope2Q0Dw(long[] flatMapIndexedTo, C destination, Function2<? super Integer, ? super ULong, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexedTo, "$this$flatMapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(flatMapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        while (i < m10082getSizeimpl) {
+            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(flatMapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -3779,15 +3779,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: flatMapIndexedTo-eNpIKz8  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9911flatMapIndexedToeNpIKz8(byte[] bArr, C destination, Function2<? super Integer, ? super UByte, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$flatMapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10551flatMapIndexedToeNpIKz8(byte[] flatMapIndexedTo, C destination, Function2<? super Integer, ? super UByte, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexedTo, "$this$flatMapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(flatMapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        while (i < m9924getSizeimpl) {
+            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(flatMapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -3796,15 +3796,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: flatMapIndexedTo-QqktQ3k  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9910flatMapIndexedToQqktQ3k(short[] sArr, C destination, Function2<? super Integer, ? super UShort, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$flatMapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10550flatMapIndexedToQqktQ3k(short[] flatMapIndexedTo, C destination, Function2<? super Integer, ? super UShort, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapIndexedTo, "$this$flatMapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(flatMapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        while (i < m10187getSizeimpl) {
+            CollectionsKt.addAll(destination, transform.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(flatMapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -3813,288 +3813,288 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: flatMapTo-wU5IKMo  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9915flatMapTowU5IKMo(int[] iArr, C destination, Function1<? super UInt, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$flatMapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10555flatMapTowU5IKMo(int[] flatMapTo, C destination, Function1<? super UInt, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapTo, "$this$flatMapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            CollectionsKt.addAll(destination, transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(flatMapTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            CollectionsKt.addAll(destination, transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(flatMapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: flatMapTo-HqK1JgA  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9913flatMapToHqK1JgA(long[] jArr, C destination, Function1<? super ULong, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$flatMapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10553flatMapToHqK1JgA(long[] flatMapTo, C destination, Function1<? super ULong, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapTo, "$this$flatMapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            CollectionsKt.addAll(destination, transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(flatMapTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            CollectionsKt.addAll(destination, transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(flatMapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: flatMapTo-wzUQCXU  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9916flatMapTowzUQCXU(byte[] bArr, C destination, Function1<? super UByte, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$flatMapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10556flatMapTowzUQCXU(byte[] flatMapTo, C destination, Function1<? super UByte, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapTo, "$this$flatMapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            CollectionsKt.addAll(destination, transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(flatMapTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            CollectionsKt.addAll(destination, transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(flatMapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: flatMapTo-oEOeDjA  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m9914flatMapTooEOeDjA(short[] sArr, C destination, Function1<? super UShort, ? extends Iterable<? extends R>> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$flatMapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10554flatMapTooEOeDjA(short[] flatMapTo, C destination, Function1<? super UShort, ? extends Iterable<? extends R>> transform) {
+        Intrinsics.checkNotNullParameter(flatMapTo, "$this$flatMapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            CollectionsKt.addAll(destination, transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(flatMapTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            CollectionsKt.addAll(destination, transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(flatMapTo, i))));
         }
         return destination;
     }
 
     /* renamed from: groupBy-jgv0xPQ  reason: not valid java name */
-    private static final <K> Map<K, List<UInt>> m9971groupByjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$groupBy$0");
+    private static final <K> Map<K, List<UInt>> m10611groupByjgv0xPQ(int[] groupBy, Function1<? super UInt, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            K invoke = keySelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(groupBy);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(groupBy, i);
+            K invoke = keySelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             Object obj = linkedHashMap.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 linkedHashMap.put(invoke, obj);
             }
-            ((List) obj).add(UInt.m9296boximpl(m9362getpVg5ArA));
+            ((List) obj).add(UInt.m9936boximpl(m10002getpVg5ArA));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-MShoTSo  reason: not valid java name */
-    private static final <K> Map<K, List<ULong>> m9969groupByMShoTSo(long[] jArr, Function1<? super ULong, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$groupBy$0");
+    private static final <K> Map<K, List<ULong>> m10609groupByMShoTSo(long[] groupBy, Function1<? super ULong, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            K invoke = keySelector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(groupBy);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(groupBy, i);
+            K invoke = keySelector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             Object obj = linkedHashMap.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 linkedHashMap.put(invoke, obj);
             }
-            ((List) obj).add(ULong.m9375boximpl(m9441getsVKNKU));
+            ((List) obj).add(ULong.m10015boximpl(m10081getsVKNKU));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-JOV_ifY  reason: not valid java name */
-    private static final <K> Map<K, List<UByte>> m9967groupByJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$groupBy$0");
+    private static final <K> Map<K, List<UByte>> m10607groupByJOV_ifY(byte[] groupBy, Function1<? super UByte, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            K invoke = keySelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(groupBy);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(groupBy, i);
+            K invoke = keySelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             Object obj = linkedHashMap.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 linkedHashMap.put(invoke, obj);
             }
-            ((List) obj).add(UByte.m9214boximpl(m9283getw2LRezQ));
+            ((List) obj).add(UByte.m9854boximpl(m9923getw2LRezQ));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-xTcfx_M  reason: not valid java name */
-    private static final <K> Map<K, List<UShort>> m9972groupByxTcfx_M(short[] sArr, Function1<? super UShort, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$groupBy$0");
+    private static final <K> Map<K, List<UShort>> m10612groupByxTcfx_M(short[] groupBy, Function1<? super UShort, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            K invoke = keySelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(groupBy);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(groupBy, i);
+            K invoke = keySelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             Object obj = linkedHashMap.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 linkedHashMap.put(invoke, obj);
             }
-            ((List) obj).add(UShort.m9482boximpl(m9546getMh2AYeg));
+            ((List) obj).add(UShort.m10122boximpl(m10186getMh2AYeg));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-L4rlFek  reason: not valid java name */
-    private static final <K, V> Map<K, List<V>> m9968groupByL4rlFek(int[] iArr, Function1<? super UInt, ? extends K> keySelector, Function1<? super UInt, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$groupBy$0");
+    private static final <K, V> Map<K, List<V>> m10608groupByL4rlFek(int[] groupBy, Function1<? super UInt, ? extends K> keySelector, Function1<? super UInt, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            K invoke = keySelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(groupBy);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(groupBy, i);
+            K invoke = keySelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             ArrayList arrayList = linkedHashMap.get(invoke);
             if (arrayList == null) {
                 arrayList = new ArrayList();
                 linkedHashMap.put(invoke, arrayList);
             }
-            arrayList.add(valueTransform.invoke(UInt.m9296boximpl(m9362getpVg5ArA)));
+            arrayList.add(valueTransform.invoke(UInt.m9936boximpl(m10002getpVg5ArA)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy--_j2Y-Q  reason: not valid java name */
-    private static final <K, V> Map<K, List<V>> m9965groupBy_j2YQ(long[] jArr, Function1<? super ULong, ? extends K> keySelector, Function1<? super ULong, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$groupBy$0");
+    private static final <K, V> Map<K, List<V>> m10605groupBy_j2YQ(long[] groupBy, Function1<? super ULong, ? extends K> keySelector, Function1<? super ULong, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            K invoke = keySelector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(groupBy);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(groupBy, i);
+            K invoke = keySelector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             ArrayList arrayList = linkedHashMap.get(invoke);
             if (arrayList == null) {
                 arrayList = new ArrayList();
                 linkedHashMap.put(invoke, arrayList);
             }
-            arrayList.add(valueTransform.invoke(ULong.m9375boximpl(m9441getsVKNKU)));
+            arrayList.add(valueTransform.invoke(ULong.m10015boximpl(m10081getsVKNKU)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-bBsjw1Y  reason: not valid java name */
-    private static final <K, V> Map<K, List<V>> m9970groupBybBsjw1Y(byte[] bArr, Function1<? super UByte, ? extends K> keySelector, Function1<? super UByte, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$groupBy$0");
+    private static final <K, V> Map<K, List<V>> m10610groupBybBsjw1Y(byte[] groupBy, Function1<? super UByte, ? extends K> keySelector, Function1<? super UByte, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            K invoke = keySelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(groupBy);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(groupBy, i);
+            K invoke = keySelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             ArrayList arrayList = linkedHashMap.get(invoke);
             if (arrayList == null) {
                 arrayList = new ArrayList();
                 linkedHashMap.put(invoke, arrayList);
             }
-            arrayList.add(valueTransform.invoke(UByte.m9214boximpl(m9283getw2LRezQ)));
+            arrayList.add(valueTransform.invoke(UByte.m9854boximpl(m9923getw2LRezQ)));
         }
         return linkedHashMap;
     }
 
     /* renamed from: groupBy-3bBvP4M  reason: not valid java name */
-    private static final <K, V> Map<K, List<V>> m9966groupBy3bBvP4M(short[] sArr, Function1<? super UShort, ? extends K> keySelector, Function1<? super UShort, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$groupBy$0");
+    private static final <K, V> Map<K, List<V>> m10606groupBy3bBvP4M(short[] groupBy, Function1<? super UShort, ? extends K> keySelector, Function1<? super UShort, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupBy, "$this$groupBy");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            K invoke = keySelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(groupBy);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(groupBy, i);
+            K invoke = keySelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             ArrayList arrayList = linkedHashMap.get(invoke);
             if (arrayList == null) {
                 arrayList = new ArrayList();
                 linkedHashMap.put(invoke, arrayList);
             }
-            arrayList.add(valueTransform.invoke(UShort.m9482boximpl(m9546getMh2AYeg)));
+            arrayList.add(valueTransform.invoke(UShort.m10122boximpl(m10186getMh2AYeg)));
         }
         return linkedHashMap;
     }
 
     @IgnorableReturnValue
     /* renamed from: groupByTo-4D70W2E  reason: not valid java name */
-    private static final <K, M extends Map<? super K, List<UInt>>> M m9973groupByTo4D70W2E(int[] iArr, M destination, Function1<? super UInt, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$groupByTo$0");
+    private static final <K, M extends Map<? super K, List<UInt>>> M m10613groupByTo4D70W2E(int[] groupByTo, M destination, Function1<? super UInt, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            K invoke = keySelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(groupByTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(groupByTo, i);
+            K invoke = keySelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(UInt.m9296boximpl(m9362getpVg5ArA));
+            ((List) obj).add(UInt.m9936boximpl(m10002getpVg5ArA));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: groupByTo-X6OPwNk  reason: not valid java name */
-    private static final <K, M extends Map<? super K, List<ULong>>> M m9977groupByToX6OPwNk(long[] jArr, M destination, Function1<? super ULong, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$groupByTo$0");
+    private static final <K, M extends Map<? super K, List<ULong>>> M m10617groupByToX6OPwNk(long[] groupByTo, M destination, Function1<? super ULong, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            K invoke = keySelector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(groupByTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(groupByTo, i);
+            K invoke = keySelector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(ULong.m9375boximpl(m9441getsVKNKU));
+            ((List) obj).add(ULong.m10015boximpl(m10081getsVKNKU));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: groupByTo-H21X9dk  reason: not valid java name */
-    private static final <K, M extends Map<? super K, List<UByte>>> M m9974groupByToH21X9dk(byte[] bArr, M destination, Function1<? super UByte, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$groupByTo$0");
+    private static final <K, M extends Map<? super K, List<UByte>>> M m10614groupByToH21X9dk(byte[] groupByTo, M destination, Function1<? super UByte, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            K invoke = keySelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(groupByTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(groupByTo, i);
+            K invoke = keySelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(UByte.m9214boximpl(m9283getw2LRezQ));
+            ((List) obj).add(UByte.m9854boximpl(m9923getw2LRezQ));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: groupByTo-ciTST-8  reason: not valid java name */
-    private static final <K, M extends Map<? super K, List<UShort>>> M m9978groupByTociTST8(short[] sArr, M destination, Function1<? super UShort, ? extends K> keySelector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$groupByTo$0");
+    private static final <K, M extends Map<? super K, List<UShort>>> M m10618groupByTociTST8(short[] groupByTo, M destination, Function1<? super UShort, ? extends K> keySelector) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            K invoke = keySelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(groupByTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(groupByTo, i);
+            K invoke = keySelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(UShort.m9482boximpl(m9546getMh2AYeg));
+            ((List) obj).add(UShort.m10122boximpl(m10186getMh2AYeg));
         }
         return destination;
     }
@@ -4102,21 +4102,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     /* JADX WARN: Multi-variable type inference failed */
     @IgnorableReturnValue
     /* renamed from: groupByTo-JM6gNCM  reason: not valid java name */
-    private static final <K, V, M extends Map<? super K, List<V>>> M m9975groupByToJM6gNCM(int[] iArr, M destination, Function1<? super UInt, ? extends K> keySelector, Function1<? super UInt, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$groupByTo$0");
+    private static final <K, V, M extends Map<? super K, List<V>>> M m10615groupByToJM6gNCM(int[] groupByTo, M destination, Function1<? super UInt, ? extends K> keySelector, Function1<? super UInt, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            K invoke = keySelector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(groupByTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(groupByTo, i);
+            K invoke = keySelector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(valueTransform.invoke(UInt.m9296boximpl(m9362getpVg5ArA)));
+            ((List) obj).add(valueTransform.invoke(UInt.m9936boximpl(m10002getpVg5ArA)));
         }
         return destination;
     }
@@ -4124,21 +4124,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     /* JADX WARN: Multi-variable type inference failed */
     @IgnorableReturnValue
     /* renamed from: groupByTo-QxgOkWg  reason: not valid java name */
-    private static final <K, V, M extends Map<? super K, List<V>>> M m9976groupByToQxgOkWg(long[] jArr, M destination, Function1<? super ULong, ? extends K> keySelector, Function1<? super ULong, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$groupByTo$0");
+    private static final <K, V, M extends Map<? super K, List<V>>> M m10616groupByToQxgOkWg(long[] groupByTo, M destination, Function1<? super ULong, ? extends K> keySelector, Function1<? super ULong, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            K invoke = keySelector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(groupByTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(groupByTo, i);
+            K invoke = keySelector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(valueTransform.invoke(ULong.m9375boximpl(m9441getsVKNKU)));
+            ((List) obj).add(valueTransform.invoke(ULong.m10015boximpl(m10081getsVKNKU)));
         }
         return destination;
     }
@@ -4146,21 +4146,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     /* JADX WARN: Multi-variable type inference failed */
     @IgnorableReturnValue
     /* renamed from: groupByTo-qOZmbk8  reason: not valid java name */
-    private static final <K, V, M extends Map<? super K, List<V>>> M m9980groupByToqOZmbk8(byte[] bArr, M destination, Function1<? super UByte, ? extends K> keySelector, Function1<? super UByte, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$groupByTo$0");
+    private static final <K, V, M extends Map<? super K, List<V>>> M m10620groupByToqOZmbk8(byte[] groupByTo, M destination, Function1<? super UByte, ? extends K> keySelector, Function1<? super UByte, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            K invoke = keySelector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(groupByTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(groupByTo, i);
+            K invoke = keySelector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(valueTransform.invoke(UByte.m9214boximpl(m9283getw2LRezQ)));
+            ((List) obj).add(valueTransform.invoke(UByte.m9854boximpl(m9923getw2LRezQ)));
         }
         return destination;
     }
@@ -4168,83 +4168,83 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     /* JADX WARN: Multi-variable type inference failed */
     @IgnorableReturnValue
     /* renamed from: groupByTo-q8RuPII  reason: not valid java name */
-    private static final <K, V, M extends Map<? super K, List<V>>> M m9979groupByToq8RuPII(short[] sArr, M destination, Function1<? super UShort, ? extends K> keySelector, Function1<? super UShort, ? extends V> valueTransform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$groupByTo$0");
+    private static final <K, V, M extends Map<? super K, List<V>>> M m10619groupByToq8RuPII(short[] groupByTo, M destination, Function1<? super UShort, ? extends K> keySelector, Function1<? super UShort, ? extends V> valueTransform) {
+        Intrinsics.checkNotNullParameter(groupByTo, "$this$groupByTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(keySelector, "keySelector");
         Intrinsics.checkNotNullParameter(valueTransform, "valueTransform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            K invoke = keySelector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(groupByTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(groupByTo, i);
+            K invoke = keySelector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             Object obj = destination.get(invoke);
             if (obj == null) {
                 obj = (List) new ArrayList();
                 destination.put(invoke, obj);
             }
-            ((List) obj).add(valueTransform.invoke(UShort.m9482boximpl(m9546getMh2AYeg)));
+            ((List) obj).add(valueTransform.invoke(UShort.m10122boximpl(m10186getMh2AYeg)));
         }
         return destination;
     }
 
     /* renamed from: map-jgv0xPQ  reason: not valid java name */
-    private static final <R> List<R> m10015mapjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$map$0");
+    private static final <R> List<R> m10655mapjgv0xPQ(int[] map, Function1<? super UInt, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(map, "$this$map");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr));
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            arrayList.add(transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(map));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(map);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            arrayList.add(transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(map, i))));
         }
         return arrayList;
     }
 
     /* renamed from: map-MShoTSo  reason: not valid java name */
-    private static final <R> List<R> m10014mapMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$map$0");
+    private static final <R> List<R> m10654mapMShoTSo(long[] map, Function1<? super ULong, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(map, "$this$map");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr));
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            arrayList.add(transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(map));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(map);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            arrayList.add(transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(map, i))));
         }
         return arrayList;
     }
 
     /* renamed from: map-JOV_ifY  reason: not valid java name */
-    private static final <R> List<R> m10013mapJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$map$0");
+    private static final <R> List<R> m10653mapJOV_ifY(byte[] map, Function1<? super UByte, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(map, "$this$map");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr));
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            arrayList.add(transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(map));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(map);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            arrayList.add(transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(map, i))));
         }
         return arrayList;
     }
 
     /* renamed from: map-xTcfx_M  reason: not valid java name */
-    private static final <R> List<R> m10016mapxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$map$0");
+    private static final <R> List<R> m10656mapxTcfx_M(short[] map, Function1<? super UShort, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(map, "$this$map");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr));
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            arrayList.add(transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(map));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(map);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            arrayList.add(transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(map, i))));
         }
         return arrayList;
     }
 
     /* renamed from: mapIndexed-WyvcNBI  reason: not valid java name */
-    private static final <R> List<R> m10018mapIndexedWyvcNBI(int[] iArr, Function2<? super Integer, ? super UInt, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$mapIndexed$0");
+    private static final <R> List<R> m10658mapIndexedWyvcNBI(int[] mapIndexed, Function2<? super Integer, ? super UInt, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexed, "$this$mapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr));
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(mapIndexed));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(mapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            arrayList.add(transform.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        while (i < m10003getSizeimpl) {
+            arrayList.add(transform.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(mapIndexed, i))));
             i++;
             i2++;
         }
@@ -4252,15 +4252,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: mapIndexed-s8dVfGU  reason: not valid java name */
-    private static final <R> List<R> m10019mapIndexeds8dVfGU(long[] jArr, Function2<? super Integer, ? super ULong, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$mapIndexed$0");
+    private static final <R> List<R> m10659mapIndexeds8dVfGU(long[] mapIndexed, Function2<? super Integer, ? super ULong, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexed, "$this$mapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr));
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(mapIndexed));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(mapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            arrayList.add(transform.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        while (i < m10082getSizeimpl) {
+            arrayList.add(transform.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(mapIndexed, i))));
             i++;
             i2++;
         }
@@ -4268,15 +4268,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: mapIndexed-ELGow60  reason: not valid java name */
-    private static final <R> List<R> m10017mapIndexedELGow60(byte[] bArr, Function2<? super Integer, ? super UByte, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$mapIndexed$0");
+    private static final <R> List<R> m10657mapIndexedELGow60(byte[] mapIndexed, Function2<? super Integer, ? super UByte, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexed, "$this$mapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr));
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(mapIndexed));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(mapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            arrayList.add(transform.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        while (i < m9924getSizeimpl) {
+            arrayList.add(transform.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(mapIndexed, i))));
             i++;
             i2++;
         }
@@ -4284,15 +4284,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: mapIndexed-xzaTVY8  reason: not valid java name */
-    private static final <R> List<R> m10020mapIndexedxzaTVY8(short[] sArr, Function2<? super Integer, ? super UShort, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$mapIndexed$0");
+    private static final <R> List<R> m10660mapIndexedxzaTVY8(short[] mapIndexed, Function2<? super Integer, ? super UShort, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexed, "$this$mapIndexed");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr));
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(mapIndexed));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(mapIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            arrayList.add(transform.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        while (i < m10187getSizeimpl) {
+            arrayList.add(transform.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(mapIndexed, i))));
             i++;
             i2++;
         }
@@ -4301,15 +4301,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: mapIndexedTo--6EtJGI  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10021mapIndexedTo6EtJGI(int[] iArr, C destination, Function2<? super Integer, ? super UInt, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$mapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10661mapIndexedTo6EtJGI(int[] mapIndexedTo, C destination, Function2<? super Integer, ? super UInt, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexedTo, "$this$mapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(mapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            destination.add(transform.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        while (i < m10003getSizeimpl) {
+            destination.add(transform.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(mapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -4318,15 +4318,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: mapIndexedTo-pe2Q0Dw  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10024mapIndexedTope2Q0Dw(long[] jArr, C destination, Function2<? super Integer, ? super ULong, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$mapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10664mapIndexedTope2Q0Dw(long[] mapIndexedTo, C destination, Function2<? super Integer, ? super ULong, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexedTo, "$this$mapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(mapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            destination.add(transform.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        while (i < m10082getSizeimpl) {
+            destination.add(transform.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(mapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -4335,15 +4335,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: mapIndexedTo-eNpIKz8  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10023mapIndexedToeNpIKz8(byte[] bArr, C destination, Function2<? super Integer, ? super UByte, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$mapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10663mapIndexedToeNpIKz8(byte[] mapIndexedTo, C destination, Function2<? super Integer, ? super UByte, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexedTo, "$this$mapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(mapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            destination.add(transform.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        while (i < m9924getSizeimpl) {
+            destination.add(transform.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(mapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -4352,15 +4352,15 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: mapIndexedTo-QqktQ3k  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10022mapIndexedToQqktQ3k(short[] sArr, C destination, Function2<? super Integer, ? super UShort, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$mapIndexedTo$0");
+    private static final <R, C extends Collection<? super R>> C m10662mapIndexedToQqktQ3k(short[] mapIndexedTo, C destination, Function2<? super Integer, ? super UShort, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapIndexedTo, "$this$mapIndexedTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(mapIndexedTo);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            destination.add(transform.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        while (i < m10187getSizeimpl) {
+            destination.add(transform.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(mapIndexedTo, i))));
             i++;
             i2++;
         }
@@ -4369,115 +4369,115 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     @IgnorableReturnValue
     /* renamed from: mapTo-wU5IKMo  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10027mapTowU5IKMo(int[] iArr, C destination, Function1<? super UInt, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$mapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10667mapTowU5IKMo(int[] mapTo, C destination, Function1<? super UInt, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapTo, "$this$mapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            destination.add(transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(mapTo);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            destination.add(transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(mapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: mapTo-HqK1JgA  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10025mapToHqK1JgA(long[] jArr, C destination, Function1<? super ULong, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$mapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10665mapToHqK1JgA(long[] mapTo, C destination, Function1<? super ULong, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapTo, "$this$mapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            destination.add(transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(mapTo);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            destination.add(transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(mapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: mapTo-wzUQCXU  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10028mapTowzUQCXU(byte[] bArr, C destination, Function1<? super UByte, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$mapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10668mapTowzUQCXU(byte[] mapTo, C destination, Function1<? super UByte, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapTo, "$this$mapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            destination.add(transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(mapTo);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            destination.add(transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(mapTo, i))));
         }
         return destination;
     }
 
     @IgnorableReturnValue
     /* renamed from: mapTo-oEOeDjA  reason: not valid java name */
-    private static final <R, C extends Collection<? super R>> C m10026mapTooEOeDjA(short[] sArr, C destination, Function1<? super UShort, ? extends R> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$mapTo$0");
+    private static final <R, C extends Collection<? super R>> C m10666mapTooEOeDjA(short[] mapTo, C destination, Function1<? super UShort, ? extends R> transform) {
+        Intrinsics.checkNotNullParameter(mapTo, "$this$mapTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            destination.add(transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(mapTo);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            destination.add(transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(mapTo, i))));
         }
         return destination;
     }
 
     /* renamed from: withIndex--ajY-9A  reason: not valid java name */
-    public static final Iterable<IndexedValue<UInt>> m10369withIndexajY9A(final int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$withIndex$0");
+    public static final Iterable<IndexedValue<UInt>> m11009withIndexajY9A(final int[] withIndex) {
+        Intrinsics.checkNotNullParameter(withIndex, "$this$withIndex");
         return new IndexingIterable(new Function0() { // from class: kotlin.collections.unsigned.UArraysKt___UArraysKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Iterator m9366iteratorimpl;
-                m9366iteratorimpl = UIntArray.m9366iteratorimpl(iArr);
-                return m9366iteratorimpl;
+                Iterator m10006iteratorimpl;
+                m10006iteratorimpl = UIntArray.m10006iteratorimpl(withIndex);
+                return m10006iteratorimpl;
             }
         });
     }
 
     /* renamed from: withIndex-QwZRm1k  reason: not valid java name */
-    public static final Iterable<IndexedValue<ULong>> m10371withIndexQwZRm1k(final long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$withIndex$0");
+    public static final Iterable<IndexedValue<ULong>> m11011withIndexQwZRm1k(final long[] withIndex) {
+        Intrinsics.checkNotNullParameter(withIndex, "$this$withIndex");
         return new IndexingIterable(new Function0() { // from class: kotlin.collections.unsigned.UArraysKt___UArraysKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Iterator m9445iteratorimpl;
-                m9445iteratorimpl = ULongArray.m9445iteratorimpl(jArr);
-                return m9445iteratorimpl;
+                Iterator m10085iteratorimpl;
+                m10085iteratorimpl = ULongArray.m10085iteratorimpl(withIndex);
+                return m10085iteratorimpl;
             }
         });
     }
 
     /* renamed from: withIndex-GBYM_sE  reason: not valid java name */
-    public static final Iterable<IndexedValue<UByte>> m10370withIndexGBYM_sE(final byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$withIndex$0");
+    public static final Iterable<IndexedValue<UByte>> m11010withIndexGBYM_sE(final byte[] withIndex) {
+        Intrinsics.checkNotNullParameter(withIndex, "$this$withIndex");
         return new IndexingIterable(new Function0() { // from class: kotlin.collections.unsigned.UArraysKt___UArraysKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Iterator m9287iteratorimpl;
-                m9287iteratorimpl = UByteArray.m9287iteratorimpl(bArr);
-                return m9287iteratorimpl;
+                Iterator m9927iteratorimpl;
+                m9927iteratorimpl = UByteArray.m9927iteratorimpl(withIndex);
+                return m9927iteratorimpl;
             }
         });
     }
 
     /* renamed from: withIndex-rL5Bavg  reason: not valid java name */
-    public static final Iterable<IndexedValue<UShort>> m10372withIndexrL5Bavg(final short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$withIndex$0");
+    public static final Iterable<IndexedValue<UShort>> m11012withIndexrL5Bavg(final short[] withIndex) {
+        Intrinsics.checkNotNullParameter(withIndex, "$this$withIndex");
         return new IndexingIterable(new Function0() { // from class: kotlin.collections.unsigned.UArraysKt___UArraysKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Iterator m9550iteratorimpl;
-                m9550iteratorimpl = UShortArray.m9550iteratorimpl(sArr);
-                return m9550iteratorimpl;
+                Iterator m10190iteratorimpl;
+                m10190iteratorimpl = UShortArray.m10190iteratorimpl(withIndex);
+                return m10190iteratorimpl;
             }
         });
     }
 
     /* renamed from: all-jgv0xPQ  reason: not valid java name */
-    private static final boolean m9739alljgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$all$0");
+    private static final boolean m10379alljgv0xPQ(int[] all, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(all, "$this$all");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            if (!predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).booleanValue()) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(all);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            if (!predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(all, i))).booleanValue()) {
                 return false;
             }
         }
@@ -4485,12 +4485,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: all-MShoTSo  reason: not valid java name */
-    private static final boolean m9738allMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$all$0");
+    private static final boolean m10378allMShoTSo(long[] all, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(all, "$this$all");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            if (!predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).booleanValue()) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(all);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            if (!predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(all, i))).booleanValue()) {
                 return false;
             }
         }
@@ -4498,12 +4498,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: all-JOV_ifY  reason: not valid java name */
-    private static final boolean m9737allJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$all$0");
+    private static final boolean m10377allJOV_ifY(byte[] all, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(all, "$this$all");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            if (!predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).booleanValue()) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(all);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            if (!predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(all, i))).booleanValue()) {
                 return false;
             }
         }
@@ -4511,12 +4511,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: all-xTcfx_M  reason: not valid java name */
-    private static final boolean m9740allxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$all$0");
+    private static final boolean m10380allxTcfx_M(short[] all, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(all, "$this$all");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            if (!predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).booleanValue()) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(all);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            if (!predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(all, i))).booleanValue()) {
                 return false;
             }
         }
@@ -4524,36 +4524,36 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: any--ajY-9A  reason: not valid java name */
-    private static final boolean m9741anyajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$any$0");
-        return ArraysKt.any(iArr);
+    private static final boolean m10381anyajY9A(int[] any) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
+        return ArraysKt.any(any);
     }
 
     /* renamed from: any-QwZRm1k  reason: not valid java name */
-    private static final boolean m9745anyQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$any$0");
-        return ArraysKt.any(jArr);
+    private static final boolean m10385anyQwZRm1k(long[] any) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
+        return ArraysKt.any(any);
     }
 
     /* renamed from: any-GBYM_sE  reason: not valid java name */
-    private static final boolean m9742anyGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$any$0");
-        return ArraysKt.any(bArr);
+    private static final boolean m10382anyGBYM_sE(byte[] any) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
+        return ArraysKt.any(any);
     }
 
     /* renamed from: any-rL5Bavg  reason: not valid java name */
-    private static final boolean m9747anyrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$any$0");
-        return ArraysKt.any(sArr);
+    private static final boolean m10387anyrL5Bavg(short[] any) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
+        return ArraysKt.any(any);
     }
 
     /* renamed from: any-jgv0xPQ  reason: not valid java name */
-    private static final boolean m9746anyjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$any$0");
+    private static final boolean m10386anyjgv0xPQ(int[] any, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            if (predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).booleanValue()) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(any);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            if (predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(any, i))).booleanValue()) {
                 return true;
             }
         }
@@ -4561,12 +4561,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: any-MShoTSo  reason: not valid java name */
-    private static final boolean m9744anyMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$any$0");
+    private static final boolean m10384anyMShoTSo(long[] any, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            if (predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).booleanValue()) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(any);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            if (predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(any, i))).booleanValue()) {
                 return true;
             }
         }
@@ -4574,12 +4574,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: any-JOV_ifY  reason: not valid java name */
-    private static final boolean m9743anyJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$any$0");
+    private static final boolean m10383anyJOV_ifY(byte[] any, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            if (predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).booleanValue()) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(any);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            if (predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(any, i))).booleanValue()) {
                 return true;
             }
         }
@@ -4587,12 +4587,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: any-xTcfx_M  reason: not valid java name */
-    private static final boolean m9748anyxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$any$0");
+    private static final boolean m10388anyxTcfx_M(short[] any, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(any, "$this$any");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            if (predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).booleanValue()) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(any);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            if (predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(any, i))).booleanValue()) {
                 return true;
             }
         }
@@ -4600,13 +4600,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: count-jgv0xPQ  reason: not valid java name */
-    private static final int m9819countjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$count$0");
+    private static final int m10459countjgv0xPQ(int[] count, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(count, "$this$count");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(count);
         int i = 0;
-        for (int i2 = 0; i2 < m9363getSizeimpl; i2++) {
-            if (predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i2))).booleanValue()) {
+        for (int i2 = 0; i2 < m10003getSizeimpl; i2++) {
+            if (predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(count, i2))).booleanValue()) {
                 i++;
             }
         }
@@ -4614,13 +4614,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: count-MShoTSo  reason: not valid java name */
-    private static final int m9818countMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$count$0");
+    private static final int m10458countMShoTSo(long[] count, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(count, "$this$count");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(count);
         int i = 0;
-        for (int i2 = 0; i2 < m9442getSizeimpl; i2++) {
-            if (predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i2))).booleanValue()) {
+        for (int i2 = 0; i2 < m10082getSizeimpl; i2++) {
+            if (predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(count, i2))).booleanValue()) {
                 i++;
             }
         }
@@ -4628,13 +4628,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: count-JOV_ifY  reason: not valid java name */
-    private static final int m9817countJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$count$0");
+    private static final int m10457countJOV_ifY(byte[] count, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(count, "$this$count");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(count);
         int i = 0;
-        for (int i2 = 0; i2 < m9284getSizeimpl; i2++) {
-            if (predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i2))).booleanValue()) {
+        for (int i2 = 0; i2 < m9924getSizeimpl; i2++) {
+            if (predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(count, i2))).booleanValue()) {
                 i++;
             }
         }
@@ -4642,13 +4642,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: count-xTcfx_M  reason: not valid java name */
-    private static final int m9820countxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$count$0");
+    private static final int m10460countxTcfx_M(short[] count, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(count, "$this$count");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(count);
         int i = 0;
-        for (int i2 = 0; i2 < m9547getSizeimpl; i2++) {
-            if (predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i2))).booleanValue()) {
+        for (int i2 = 0; i2 < m10187getSizeimpl; i2++) {
+            if (predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(count, i2))).booleanValue()) {
                 i++;
             }
         }
@@ -4656,58 +4656,58 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: fold-zi1B2BA  reason: not valid java name */
-    private static final <R> R m9919foldzi1B2BA(int[] iArr, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$fold$0");
+    private static final <R> R m10559foldzi1B2BA(int[] fold, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(fold, "$this$fold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            r = operation.invoke(r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(fold);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            r = operation.invoke(r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(fold, i)));
         }
         return r;
     }
 
     /* renamed from: fold-A8wKCXQ  reason: not valid java name */
-    private static final <R> R m9917foldA8wKCXQ(long[] jArr, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$fold$0");
+    private static final <R> R m10557foldA8wKCXQ(long[] fold, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(fold, "$this$fold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            r = operation.invoke(r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(fold);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            r = operation.invoke(r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(fold, i)));
         }
         return r;
     }
 
     /* renamed from: fold-yXmHNn8  reason: not valid java name */
-    private static final <R> R m9918foldyXmHNn8(byte[] bArr, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$fold$0");
+    private static final <R> R m10558foldyXmHNn8(byte[] fold, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(fold, "$this$fold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            r = operation.invoke(r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(fold);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            r = operation.invoke(r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(fold, i)));
         }
         return r;
     }
 
     /* renamed from: fold-zww5nb8  reason: not valid java name */
-    private static final <R> R m9920foldzww5nb8(short[] sArr, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$fold$0");
+    private static final <R> R m10560foldzww5nb8(short[] fold, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(fold, "$this$fold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            r = operation.invoke(r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(fold);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            r = operation.invoke(r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(fold, i)));
         }
         return r;
     }
 
     /* renamed from: foldIndexed-yVwIW0Q  reason: not valid java name */
-    private static final <R> R m9924foldIndexedyVwIW0Q(int[] iArr, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$foldIndexed$0");
+    private static final <R> R m10564foldIndexedyVwIW0Q(int[] foldIndexed, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldIndexed, "$this$foldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(foldIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            r = operation.invoke(Integer.valueOf(i2), r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        while (i < m10003getSizeimpl) {
+            r = operation.invoke(Integer.valueOf(i2), r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(foldIndexed, i)));
             i++;
             i2++;
         }
@@ -4715,14 +4715,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: foldIndexed-mwnnOCs  reason: not valid java name */
-    private static final <R> R m9923foldIndexedmwnnOCs(long[] jArr, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$foldIndexed$0");
+    private static final <R> R m10563foldIndexedmwnnOCs(long[] foldIndexed, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldIndexed, "$this$foldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(foldIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            r = operation.invoke(Integer.valueOf(i2), r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        while (i < m10082getSizeimpl) {
+            r = operation.invoke(Integer.valueOf(i2), r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(foldIndexed, i)));
             i++;
             i2++;
         }
@@ -4730,14 +4730,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: foldIndexed-3iWJZGE  reason: not valid java name */
-    private static final <R> R m9921foldIndexed3iWJZGE(byte[] bArr, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$foldIndexed$0");
+    private static final <R> R m10561foldIndexed3iWJZGE(byte[] foldIndexed, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldIndexed, "$this$foldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(foldIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            r = operation.invoke(Integer.valueOf(i2), r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        while (i < m9924getSizeimpl) {
+            r = operation.invoke(Integer.valueOf(i2), r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(foldIndexed, i)));
             i++;
             i2++;
         }
@@ -4745,14 +4745,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: foldIndexed-bzxtMww  reason: not valid java name */
-    private static final <R> R m9922foldIndexedbzxtMww(short[] sArr, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$foldIndexed$0");
+    private static final <R> R m10562foldIndexedbzxtMww(short[] foldIndexed, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldIndexed, "$this$foldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(foldIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            r = operation.invoke(Integer.valueOf(i2), r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        while (i < m10187getSizeimpl) {
+            r = operation.invoke(Integer.valueOf(i2), r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(foldIndexed, i)));
             i++;
             i2++;
         }
@@ -4760,117 +4760,117 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: forEach-jgv0xPQ  reason: not valid java name */
-    private static final void m9935forEachjgv0xPQ(int[] iArr, Function1<? super UInt, Unit> action) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$forEach$0");
+    private static final void m10575forEachjgv0xPQ(int[] forEach, Function1<? super UInt, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEach, "$this$forEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            action.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(forEach);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            action.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(forEach, i)));
         }
     }
 
     /* renamed from: forEach-MShoTSo  reason: not valid java name */
-    private static final void m9934forEachMShoTSo(long[] jArr, Function1<? super ULong, Unit> action) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$forEach$0");
+    private static final void m10574forEachMShoTSo(long[] forEach, Function1<? super ULong, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEach, "$this$forEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            action.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(forEach);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            action.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(forEach, i)));
         }
     }
 
     /* renamed from: forEach-JOV_ifY  reason: not valid java name */
-    private static final void m9933forEachJOV_ifY(byte[] bArr, Function1<? super UByte, Unit> action) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$forEach$0");
+    private static final void m10573forEachJOV_ifY(byte[] forEach, Function1<? super UByte, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEach, "$this$forEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            action.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(forEach);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            action.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(forEach, i)));
         }
     }
 
     /* renamed from: forEach-xTcfx_M  reason: not valid java name */
-    private static final void m9936forEachxTcfx_M(short[] sArr, Function1<? super UShort, Unit> action) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$forEach$0");
+    private static final void m10576forEachxTcfx_M(short[] forEach, Function1<? super UShort, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEach, "$this$forEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            action.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(forEach);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            action.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(forEach, i)));
         }
     }
 
     /* renamed from: forEachIndexed-WyvcNBI  reason: not valid java name */
-    private static final void m9938forEachIndexedWyvcNBI(int[] iArr, Function2<? super Integer, ? super UInt, Unit> action) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$forEachIndexed$0");
+    private static final void m10578forEachIndexedWyvcNBI(int[] forEachIndexed, Function2<? super Integer, ? super UInt, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEachIndexed, "$this$forEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(forEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        while (i < m10003getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(forEachIndexed, i)));
             i++;
             i2++;
         }
     }
 
     /* renamed from: forEachIndexed-s8dVfGU  reason: not valid java name */
-    private static final void m9939forEachIndexeds8dVfGU(long[] jArr, Function2<? super Integer, ? super ULong, Unit> action) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$forEachIndexed$0");
+    private static final void m10579forEachIndexeds8dVfGU(long[] forEachIndexed, Function2<? super Integer, ? super ULong, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEachIndexed, "$this$forEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(forEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        while (i < m10082getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(forEachIndexed, i)));
             i++;
             i2++;
         }
     }
 
     /* renamed from: forEachIndexed-ELGow60  reason: not valid java name */
-    private static final void m9937forEachIndexedELGow60(byte[] bArr, Function2<? super Integer, ? super UByte, Unit> action) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$forEachIndexed$0");
+    private static final void m10577forEachIndexedELGow60(byte[] forEachIndexed, Function2<? super Integer, ? super UByte, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEachIndexed, "$this$forEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(forEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        while (i < m9924getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(forEachIndexed, i)));
             i++;
             i2++;
         }
     }
 
     /* renamed from: forEachIndexed-xzaTVY8  reason: not valid java name */
-    private static final void m9940forEachIndexedxzaTVY8(short[] sArr, Function2<? super Integer, ? super UShort, Unit> action) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$forEachIndexed$0");
+    private static final void m10580forEachIndexedxzaTVY8(short[] forEachIndexed, Function2<? super Integer, ? super UShort, Unit> action) {
+        Intrinsics.checkNotNullParameter(forEachIndexed, "$this$forEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(forEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        while (i < m10187getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(forEachIndexed, i)));
             i++;
             i2++;
         }
     }
 
     /* renamed from: maxOrThrow-U  reason: not valid java name */
-    public static final int m10074maxOrThrowU(int[] iArr) {
+    public static final int m10714maxOrThrowU(int[] max) {
         int compare;
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$max$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        Intrinsics.checkNotNullParameter(max, "$this$max");
+        if (UIntArray.m10005isEmptyimpl(max)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(max, 0);
+        int lastIndex = ArraysKt.getLastIndex(max);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                compare = Integer.compare(m9362getpVg5ArA ^ Integer.MIN_VALUE, m9362getpVg5ArA2 ^ Integer.MIN_VALUE);
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(max, i);
+                compare = Integer.compare(m10002getpVg5ArA ^ Integer.MIN_VALUE, m10002getpVg5ArA2 ^ Integer.MIN_VALUE);
                 if (compare < 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -4878,25 +4878,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: maxOrThrow-U  reason: not valid java name */
-    public static final long m10075maxOrThrowU(long[] jArr) {
+    public static final long m10715maxOrThrowU(long[] max) {
         int compare;
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$max$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        Intrinsics.checkNotNullParameter(max, "$this$max");
+        if (ULongArray.m10084isEmptyimpl(max)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(max, 0);
+        int lastIndex = ArraysKt.getLastIndex(max);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                compare = Long.compare(m9441getsVKNKU ^ Long.MIN_VALUE, m9441getsVKNKU2 ^ Long.MIN_VALUE);
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(max, i);
+                compare = Long.compare(m10081getsVKNKU ^ Long.MIN_VALUE, m10081getsVKNKU2 ^ Long.MIN_VALUE);
                 if (compare < 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -4904,23 +4904,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: maxOrThrow-U  reason: not valid java name */
-    public static final byte m10073maxOrThrowU(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$max$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final byte m10713maxOrThrowU(byte[] max) {
+        Intrinsics.checkNotNullParameter(max, "$this$max");
+        if (UByteArray.m9926isEmptyimpl(max)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(max, 0);
+        int lastIndex = ArraysKt.getLastIndex(max);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (Intrinsics.compare(m9283getw2LRezQ & 255, m9283getw2LRezQ2 & 255) < 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(max, i);
+                if (Intrinsics.compare(m9923getw2LRezQ & 255, m9923getw2LRezQ2 & 255) < 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -4928,23 +4928,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: maxOrThrow-U  reason: not valid java name */
-    public static final short m10076maxOrThrowU(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$max$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final short m10716maxOrThrowU(short[] max) {
+        Intrinsics.checkNotNullParameter(max, "$this$max");
+        if (UShortArray.m10189isEmptyimpl(max)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(max, 0);
+        int lastIndex = ArraysKt.getLastIndex(max);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (Intrinsics.compare(m9546getMh2AYeg & UShort.MAX_VALUE, 65535 & m9546getMh2AYeg2) < 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(max, i);
+                if (Intrinsics.compare(m10186getMh2AYeg & UShort.MAX_VALUE, 65535 & m10186getMh2AYeg2) < 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -4952,27 +4952,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: maxByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> int m10034maxByOrThrowU(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxBy$0");
+    private static final <R extends Comparable<? super R>> int m10674maxByOrThrowU(int[] maxBy, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxBy, "$this$maxBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxBy)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(maxBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+            R invoke = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                    R invoke2 = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA2));
+                    int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(maxBy, i);
+                    R invoke2 = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA2));
                     if (invoke.compareTo(invoke2) < 0) {
-                        m9362getpVg5ArA = m9362getpVg5ArA2;
+                        m10002getpVg5ArA = m10002getpVg5ArA2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -4982,27 +4982,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: maxByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> long m10035maxByOrThrowU(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxBy$0");
+    private static final <R extends Comparable<? super R>> long m10675maxByOrThrowU(long[] maxBy, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxBy, "$this$maxBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxBy)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(maxBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+            R invoke = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                    R invoke2 = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU2));
+                    long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(maxBy, i);
+                    R invoke2 = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU2));
                     if (invoke.compareTo(invoke2) < 0) {
-                        m9441getsVKNKU = m9441getsVKNKU2;
+                        m10081getsVKNKU = m10081getsVKNKU2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -5012,27 +5012,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: maxByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> byte m10033maxByOrThrowU(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxBy$0");
+    private static final <R extends Comparable<? super R>> byte m10673maxByOrThrowU(byte[] maxBy, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxBy, "$this$maxBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxBy)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(maxBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+            R invoke = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                    R invoke2 = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ2));
+                    byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(maxBy, i);
+                    R invoke2 = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ2));
                     if (invoke.compareTo(invoke2) < 0) {
-                        m9283getw2LRezQ = m9283getw2LRezQ2;
+                        m9923getw2LRezQ = m9923getw2LRezQ2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -5042,27 +5042,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: maxByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> short m10036maxByOrThrowU(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxBy$0");
+    private static final <R extends Comparable<? super R>> short m10676maxByOrThrowU(short[] maxBy, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxBy, "$this$maxBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxBy)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(maxBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+            R invoke = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                    R invoke2 = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg2));
+                    short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(maxBy, i);
+                    R invoke2 = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg2));
                     if (invoke.compareTo(invoke2) < 0) {
-                        m9546getMh2AYeg = m9546getMh2AYeg2;
+                        m10186getMh2AYeg = m10186getMh2AYeg2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -5072,29 +5072,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: maxByOrNull-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UInt m10031maxByOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxByOrNull$0");
+    private static final <R extends Comparable<? super R>> UInt m10671maxByOrNulljgv0xPQ(int[] maxByOrNull, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxByOrNull, "$this$maxByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxByOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(maxByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxByOrNull);
         if (lastIndex == 0) {
-            return UInt.m9296boximpl(m9362getpVg5ArA);
+            return UInt.m9936boximpl(m10002getpVg5ArA);
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        R invoke = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                R invoke2 = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA2));
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(maxByOrNull, i);
+                R invoke2 = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA2));
                 if (invoke.compareTo(invoke2) < 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -5103,29 +5103,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: maxByOrNull-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> ULong m10030maxByOrNullMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxByOrNull$0");
+    private static final <R extends Comparable<? super R>> ULong m10670maxByOrNullMShoTSo(long[] maxByOrNull, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxByOrNull, "$this$maxByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxByOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(maxByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxByOrNull);
         if (lastIndex == 0) {
-            return ULong.m9375boximpl(m9441getsVKNKU);
+            return ULong.m10015boximpl(m10081getsVKNKU);
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        R invoke = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                R invoke2 = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU2));
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(maxByOrNull, i);
+                R invoke2 = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU2));
                 if (invoke.compareTo(invoke2) < 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -5134,29 +5134,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: maxByOrNull-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UByte m10029maxByOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxByOrNull$0");
+    private static final <R extends Comparable<? super R>> UByte m10669maxByOrNullJOV_ifY(byte[] maxByOrNull, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxByOrNull, "$this$maxByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxByOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(maxByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxByOrNull);
         if (lastIndex == 0) {
-            return UByte.m9214boximpl(m9283getw2LRezQ);
+            return UByte.m9854boximpl(m9923getw2LRezQ);
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        R invoke = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                R invoke2 = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ2));
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(maxByOrNull, i);
+                R invoke2 = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ2));
                 if (invoke.compareTo(invoke2) < 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -5165,29 +5165,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: maxByOrNull-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UShort m10032maxByOrNullxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxByOrNull$0");
+    private static final <R extends Comparable<? super R>> UShort m10672maxByOrNullxTcfx_M(short[] maxByOrNull, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxByOrNull, "$this$maxByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxByOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(maxByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxByOrNull);
         if (lastIndex == 0) {
-            return UShort.m9482boximpl(m9546getMh2AYeg);
+            return UShort.m10122boximpl(m10186getMh2AYeg);
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        R invoke = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                R invoke2 = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg2));
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(maxByOrNull, i);
+                R invoke2 = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg2));
                 if (invoke.compareTo(invoke2) < 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -5196,22 +5196,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: maxOf-jgv0xPQ  reason: not valid java name */
-    private static final double m10043maxOfjgv0xPQ(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOf$0");
+    private static final double m10683maxOfjgv0xPQ(int[] maxOf, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        double doubleValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5222,18 +5222,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-MShoTSo  reason: not valid java name */
-    private static final double m10040maxOfMShoTSo(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOf$0");
+    private static final double m10680maxOfMShoTSo(long[] maxOf, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        double doubleValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5244,18 +5244,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-JOV_ifY  reason: not valid java name */
-    private static final double m10037maxOfJOV_ifY(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOf$0");
+    private static final double m10677maxOfJOV_ifY(byte[] maxOf, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        double doubleValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5266,18 +5266,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-xTcfx_M  reason: not valid java name */
-    private static final double m10046maxOfxTcfx_M(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOf$0");
+    private static final double m10686maxOfxTcfx_M(short[] maxOf, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        double doubleValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5288,18 +5288,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-jgv0xPQ  reason: not valid java name */
-    private static final float m10044maxOfjgv0xPQ(int[] iArr, Function1<? super UInt, Float> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOf$0");
+    private static final float m10684maxOfjgv0xPQ(int[] maxOf, Function1<? super UInt, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        float floatValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5310,18 +5310,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-MShoTSo  reason: not valid java name */
-    private static final float m10041maxOfMShoTSo(long[] jArr, Function1<? super ULong, Float> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOf$0");
+    private static final float m10681maxOfMShoTSo(long[] maxOf, Function1<? super ULong, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        float floatValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5332,18 +5332,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-JOV_ifY  reason: not valid java name */
-    private static final float m10038maxOfJOV_ifY(byte[] bArr, Function1<? super UByte, Float> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOf$0");
+    private static final float m10678maxOfJOV_ifY(byte[] maxOf, Function1<? super UByte, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        float floatValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5354,18 +5354,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-xTcfx_M  reason: not valid java name */
-    private static final float m10047maxOfxTcfx_M(short[] sArr, Function1<? super UShort, Float> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOf$0");
+    private static final float m10687maxOfxTcfx_M(short[] maxOf, Function1<? super UShort, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        float floatValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5376,18 +5376,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10045maxOfjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOf$0");
+    private static final <R extends Comparable<? super R>> R m10685maxOfjgv0xPQ(int[] maxOf, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke2 = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOf, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5401,18 +5401,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10042maxOfMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOf$0");
+    private static final <R extends Comparable<? super R>> R m10682maxOfMShoTSo(long[] maxOf, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke2 = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOf, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5426,18 +5426,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10039maxOfJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOf$0");
+    private static final <R extends Comparable<? super R>> R m10679maxOfJOV_ifY(byte[] maxOf, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke2 = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOf, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5451,18 +5451,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOf-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10048maxOfxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOf$0");
+    private static final <R extends Comparable<? super R>> R m10688maxOfxTcfx_M(short[] maxOf, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOf, "$this$maxOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke2 = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOf, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5476,18 +5476,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final Double m10056maxOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOfOrNull$0");
+    private static final Double m10696maxOfOrNulljgv0xPQ(int[] maxOfOrNull, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        double doubleValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5498,18 +5498,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-MShoTSo  reason: not valid java name */
-    private static final Double m10053maxOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOfOrNull$0");
+    private static final Double m10693maxOfOrNullMShoTSo(long[] maxOfOrNull, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        double doubleValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5520,18 +5520,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final Double m10050maxOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOfOrNull$0");
+    private static final Double m10690maxOfOrNullJOV_ifY(byte[] maxOfOrNull, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        double doubleValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5542,18 +5542,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final Double m10059maxOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOfOrNull$0");
+    private static final Double m10699maxOfOrNullxTcfx_M(short[] maxOfOrNull, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        double doubleValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.max(doubleValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue());
+                doubleValue = Math.max(doubleValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5564,18 +5564,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final Float m10057maxOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Float> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOfOrNull$0");
+    private static final Float m10697maxOfOrNulljgv0xPQ(int[] maxOfOrNull, Function1<? super UInt, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        float floatValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5586,18 +5586,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-MShoTSo  reason: not valid java name */
-    private static final Float m10054maxOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, Float> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOfOrNull$0");
+    private static final Float m10694maxOfOrNullMShoTSo(long[] maxOfOrNull, Function1<? super ULong, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        float floatValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5608,18 +5608,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final Float m10051maxOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Float> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOfOrNull$0");
+    private static final Float m10691maxOfOrNullJOV_ifY(byte[] maxOfOrNull, Function1<? super UByte, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        float floatValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5630,18 +5630,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final Float m10060maxOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Float> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOfOrNull$0");
+    private static final Float m10700maxOfOrNullxTcfx_M(short[] maxOfOrNull, Function1<? super UShort, Float> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        float floatValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.max(floatValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).floatValue());
+                floatValue = Math.max(floatValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -5652,18 +5652,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10055maxOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10695maxOfOrNulljgv0xPQ(int[] maxOfOrNull, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke2 = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfOrNull, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5677,18 +5677,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10052maxOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10692maxOfOrNullMShoTSo(long[] maxOfOrNull, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke2 = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfOrNull, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5702,18 +5702,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10049maxOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10689maxOfOrNullJOV_ifY(byte[] maxOfOrNull, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke2 = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfOrNull, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5727,18 +5727,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10058maxOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10698maxOfOrNullxTcfx_M(short[] maxOfOrNull, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfOrNull, "$this$maxOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke2 = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfOrNull, i)));
                 if (invoke.compareTo(invoke2) < 0) {
                     invoke = invoke2;
                 }
@@ -5753,19 +5753,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWith-myNOsp4  reason: not valid java name */
-    private static final <R> R m10064maxOfWithmyNOsp4(int[] iArr, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOfWith$0");
+    private static final <R> R m10704maxOfWithmyNOsp4(int[] maxOfWith, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWith, "$this$maxOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        Object obj = (R) selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfWith, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5780,19 +5780,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWith-5NtCtWE  reason: not valid java name */
-    private static final <R> R m10061maxOfWith5NtCtWE(long[] jArr, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOfWith$0");
+    private static final <R> R m10701maxOfWith5NtCtWE(long[] maxOfWith, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWith, "$this$maxOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        Object obj = (R) selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfWith, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5807,19 +5807,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWith-LTi4i_s  reason: not valid java name */
-    private static final <R> R m10062maxOfWithLTi4i_s(byte[] bArr, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOfWith$0");
+    private static final <R> R m10702maxOfWithLTi4i_s(byte[] maxOfWith, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWith, "$this$maxOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        Object obj = (R) selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfWith, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5834,19 +5834,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWith-l8EHGbQ  reason: not valid java name */
-    private static final <R> R m10063maxOfWithl8EHGbQ(short[] sArr, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOfWith$0");
+    private static final <R> R m10703maxOfWithl8EHGbQ(short[] maxOfWith, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWith, "$this$maxOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        Object obj = (R) selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfWith, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5861,19 +5861,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWithOrNull-myNOsp4  reason: not valid java name */
-    private static final <R> R m10068maxOfWithOrNullmyNOsp4(int[] iArr, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOfWithOrNull$0");
+    private static final <R> R m10708maxOfWithOrNullmyNOsp4(int[] maxOfWithOrNull, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWithOrNull, "$this$maxOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        Object obj = (R) selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(maxOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5888,19 +5888,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWithOrNull-5NtCtWE  reason: not valid java name */
-    private static final <R> R m10065maxOfWithOrNull5NtCtWE(long[] jArr, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOfWithOrNull$0");
+    private static final <R> R m10705maxOfWithOrNull5NtCtWE(long[] maxOfWithOrNull, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWithOrNull, "$this$maxOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        Object obj = (R) selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(maxOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5915,19 +5915,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWithOrNull-LTi4i_s  reason: not valid java name */
-    private static final <R> R m10066maxOfWithOrNullLTi4i_s(byte[] bArr, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOfWithOrNull$0");
+    private static final <R> R m10706maxOfWithOrNullLTi4i_s(byte[] maxOfWithOrNull, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWithOrNull, "$this$maxOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        Object obj = (R) selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(maxOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5942,19 +5942,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: maxOfWithOrNull-l8EHGbQ  reason: not valid java name */
-    private static final <R> R m10067maxOfWithOrNulll8EHGbQ(short[] sArr, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOfWithOrNull$0");
+    private static final <R> R m10707maxOfWithOrNulll8EHGbQ(short[] maxOfWithOrNull, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(maxOfWithOrNull, "$this$maxOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        Object obj = (R) selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(maxOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(maxOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) < 0) {
                     obj = invoke;
                 }
@@ -5968,21 +5968,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: maxOrNull--ajY-9A  reason: not valid java name */
-    public static final UInt m10069maxOrNullajY9A(int[] iArr) {
+    public static final UInt m10709maxOrNullajY9A(int[] maxOrNull) {
         int compare;
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxOrNull$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        Intrinsics.checkNotNullParameter(maxOrNull, "$this$maxOrNull");
+        if (UIntArray.m10005isEmptyimpl(maxOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(maxOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                compare = Integer.compare(m9362getpVg5ArA ^ Integer.MIN_VALUE, m9362getpVg5ArA2 ^ Integer.MIN_VALUE);
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(maxOrNull, i);
+                compare = Integer.compare(m10002getpVg5ArA ^ Integer.MIN_VALUE, m10002getpVg5ArA2 ^ Integer.MIN_VALUE);
                 if (compare < 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -5990,25 +5990,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: maxOrNull-QwZRm1k  reason: not valid java name */
-    public static final ULong m10071maxOrNullQwZRm1k(long[] jArr) {
+    public static final ULong m10711maxOrNullQwZRm1k(long[] maxOrNull) {
         int compare;
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxOrNull$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        Intrinsics.checkNotNullParameter(maxOrNull, "$this$maxOrNull");
+        if (ULongArray.m10084isEmptyimpl(maxOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(maxOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                compare = Long.compare(m9441getsVKNKU ^ Long.MIN_VALUE, m9441getsVKNKU2 ^ Long.MIN_VALUE);
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(maxOrNull, i);
+                compare = Long.compare(m10081getsVKNKU ^ Long.MIN_VALUE, m10081getsVKNKU2 ^ Long.MIN_VALUE);
                 if (compare < 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6016,23 +6016,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: maxOrNull-GBYM_sE  reason: not valid java name */
-    public static final UByte m10070maxOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxOrNull$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final UByte m10710maxOrNullGBYM_sE(byte[] maxOrNull) {
+        Intrinsics.checkNotNullParameter(maxOrNull, "$this$maxOrNull");
+        if (UByteArray.m9926isEmptyimpl(maxOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(maxOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (Intrinsics.compare(m9283getw2LRezQ & 255, m9283getw2LRezQ2 & 255) < 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(maxOrNull, i);
+                if (Intrinsics.compare(m9923getw2LRezQ & 255, m9923getw2LRezQ2 & 255) < 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6040,23 +6040,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: maxOrNull-rL5Bavg  reason: not valid java name */
-    public static final UShort m10072maxOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxOrNull$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final UShort m10712maxOrNullrL5Bavg(short[] maxOrNull) {
+        Intrinsics.checkNotNullParameter(maxOrNull, "$this$maxOrNull");
+        if (UShortArray.m10189isEmptyimpl(maxOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(maxOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (Intrinsics.compare(m9546getMh2AYeg & UShort.MAX_VALUE, 65535 & m9546getMh2AYeg2) < 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(maxOrNull, i);
+                if (Intrinsics.compare(m10186getMh2AYeg & UShort.MAX_VALUE, 65535 & m10186getMh2AYeg2) < 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6064,24 +6064,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: maxWithOrThrow-U  reason: not valid java name */
-    public static final int m10082maxWithOrThrowU(int[] iArr, Comparator<? super UInt> comparator) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxWith$0");
+    public static final int m10722maxWithOrThrowU(int[] maxWith, Comparator<? super UInt> comparator) {
+        Intrinsics.checkNotNullParameter(maxWith, "$this$maxWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxWith)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(maxWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                if (comparator.compare(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(m9362getpVg5ArA2)) < 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(maxWith, i);
+                if (comparator.compare(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(m10002getpVg5ArA2)) < 0) {
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6089,24 +6089,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: maxWithOrThrow-U  reason: not valid java name */
-    public static final long m10083maxWithOrThrowU(long[] jArr, Comparator<? super ULong> comparator) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxWith$0");
+    public static final long m10723maxWithOrThrowU(long[] maxWith, Comparator<? super ULong> comparator) {
+        Intrinsics.checkNotNullParameter(maxWith, "$this$maxWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxWith)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(maxWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                if (comparator.compare(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(m9441getsVKNKU2)) < 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(maxWith, i);
+                if (comparator.compare(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(m10081getsVKNKU2)) < 0) {
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6114,24 +6114,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: maxWithOrThrow-U  reason: not valid java name */
-    public static final byte m10081maxWithOrThrowU(byte[] bArr, Comparator<? super UByte> comparator) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxWith$0");
+    public static final byte m10721maxWithOrThrowU(byte[] maxWith, Comparator<? super UByte> comparator) {
+        Intrinsics.checkNotNullParameter(maxWith, "$this$maxWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxWith)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(maxWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (comparator.compare(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(m9283getw2LRezQ2)) < 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(maxWith, i);
+                if (comparator.compare(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(m9923getw2LRezQ2)) < 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6139,24 +6139,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: maxWithOrThrow-U  reason: not valid java name */
-    public static final short m10084maxWithOrThrowU(short[] sArr, Comparator<? super UShort> comparator) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxWith$0");
+    public static final short m10724maxWithOrThrowU(short[] maxWith, Comparator<? super UShort> comparator) {
+        Intrinsics.checkNotNullParameter(maxWith, "$this$maxWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxWith)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(maxWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (comparator.compare(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(m9546getMh2AYeg2)) < 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(maxWith, i);
+                if (comparator.compare(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(m10186getMh2AYeg2)) < 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6164,24 +6164,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: maxWithOrNull-YmdZ_VM  reason: not valid java name */
-    public static final UInt m10078maxWithOrNullYmdZ_VM(int[] iArr, Comparator<? super UInt> comparator) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$maxWithOrNull$0");
+    public static final UInt m10718maxWithOrNullYmdZ_VM(int[] maxWithOrNull, Comparator<? super UInt> comparator) {
+        Intrinsics.checkNotNullParameter(maxWithOrNull, "$this$maxWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(maxWithOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(maxWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                if (comparator.compare(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(m9362getpVg5ArA2)) < 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(maxWithOrNull, i);
+                if (comparator.compare(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(m10002getpVg5ArA2)) < 0) {
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6189,24 +6189,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: maxWithOrNull-zrEWJaI  reason: not valid java name */
-    public static final ULong m10080maxWithOrNullzrEWJaI(long[] jArr, Comparator<? super ULong> comparator) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$maxWithOrNull$0");
+    public static final ULong m10720maxWithOrNullzrEWJaI(long[] maxWithOrNull, Comparator<? super ULong> comparator) {
+        Intrinsics.checkNotNullParameter(maxWithOrNull, "$this$maxWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(maxWithOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(maxWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                if (comparator.compare(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(m9441getsVKNKU2)) < 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(maxWithOrNull, i);
+                if (comparator.compare(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(m10081getsVKNKU2)) < 0) {
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6214,24 +6214,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: maxWithOrNull-XMRcp5o  reason: not valid java name */
-    public static final UByte m10077maxWithOrNullXMRcp5o(byte[] bArr, Comparator<? super UByte> comparator) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$maxWithOrNull$0");
+    public static final UByte m10717maxWithOrNullXMRcp5o(byte[] maxWithOrNull, Comparator<? super UByte> comparator) {
+        Intrinsics.checkNotNullParameter(maxWithOrNull, "$this$maxWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(maxWithOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(maxWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (comparator.compare(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(m9283getw2LRezQ2)) < 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(maxWithOrNull, i);
+                if (comparator.compare(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(m9923getw2LRezQ2)) < 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6239,24 +6239,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: maxWithOrNull-eOHTfZs  reason: not valid java name */
-    public static final UShort m10079maxWithOrNulleOHTfZs(short[] sArr, Comparator<? super UShort> comparator) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$maxWithOrNull$0");
+    public static final UShort m10719maxWithOrNulleOHTfZs(short[] maxWithOrNull, Comparator<? super UShort> comparator) {
+        Intrinsics.checkNotNullParameter(maxWithOrNull, "$this$maxWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(maxWithOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(maxWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(maxWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (comparator.compare(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(m9546getMh2AYeg2)) < 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(maxWithOrNull, i);
+                if (comparator.compare(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(m10186getMh2AYeg2)) < 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6264,25 +6264,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: minOrThrow-U  reason: not valid java name */
-    public static final int m10130minOrThrowU(int[] iArr) {
+    public static final int m10770minOrThrowU(int[] min) {
         int compare;
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$min$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        Intrinsics.checkNotNullParameter(min, "$this$min");
+        if (UIntArray.m10005isEmptyimpl(min)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(min, 0);
+        int lastIndex = ArraysKt.getLastIndex(min);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                compare = Integer.compare(m9362getpVg5ArA ^ Integer.MIN_VALUE, m9362getpVg5ArA2 ^ Integer.MIN_VALUE);
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(min, i);
+                compare = Integer.compare(m10002getpVg5ArA ^ Integer.MIN_VALUE, m10002getpVg5ArA2 ^ Integer.MIN_VALUE);
                 if (compare > 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6290,25 +6290,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: minOrThrow-U  reason: not valid java name */
-    public static final long m10131minOrThrowU(long[] jArr) {
+    public static final long m10771minOrThrowU(long[] min) {
         int compare;
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$min$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        Intrinsics.checkNotNullParameter(min, "$this$min");
+        if (ULongArray.m10084isEmptyimpl(min)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(min, 0);
+        int lastIndex = ArraysKt.getLastIndex(min);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                compare = Long.compare(m9441getsVKNKU ^ Long.MIN_VALUE, m9441getsVKNKU2 ^ Long.MIN_VALUE);
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(min, i);
+                compare = Long.compare(m10081getsVKNKU ^ Long.MIN_VALUE, m10081getsVKNKU2 ^ Long.MIN_VALUE);
                 if (compare > 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6316,23 +6316,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: minOrThrow-U  reason: not valid java name */
-    public static final byte m10129minOrThrowU(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$min$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final byte m10769minOrThrowU(byte[] min) {
+        Intrinsics.checkNotNullParameter(min, "$this$min");
+        if (UByteArray.m9926isEmptyimpl(min)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(min, 0);
+        int lastIndex = ArraysKt.getLastIndex(min);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (Intrinsics.compare(m9283getw2LRezQ & 255, m9283getw2LRezQ2 & 255) > 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(min, i);
+                if (Intrinsics.compare(m9923getw2LRezQ & 255, m9923getw2LRezQ2 & 255) > 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6340,23 +6340,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: minOrThrow-U  reason: not valid java name */
-    public static final short m10132minOrThrowU(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$min$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final short m10772minOrThrowU(short[] min) {
+        Intrinsics.checkNotNullParameter(min, "$this$min");
+        if (UShortArray.m10189isEmptyimpl(min)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(min, 0);
+        int lastIndex = ArraysKt.getLastIndex(min);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (Intrinsics.compare(m9546getMh2AYeg & UShort.MAX_VALUE, 65535 & m9546getMh2AYeg2) > 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(min, i);
+                if (Intrinsics.compare(m10186getMh2AYeg & UShort.MAX_VALUE, 65535 & m10186getMh2AYeg2) > 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -6364,27 +6364,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: minByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> int m10090minByOrThrowU(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minBy$0");
+    private static final <R extends Comparable<? super R>> int m10730minByOrThrowU(int[] minBy, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minBy, "$this$minBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minBy)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(minBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(minBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+            R invoke = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                    R invoke2 = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA2));
+                    int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(minBy, i);
+                    R invoke2 = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA2));
                     if (invoke.compareTo(invoke2) > 0) {
-                        m9362getpVg5ArA = m9362getpVg5ArA2;
+                        m10002getpVg5ArA = m10002getpVg5ArA2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -6394,27 +6394,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: minByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> long m10091minByOrThrowU(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minBy$0");
+    private static final <R extends Comparable<? super R>> long m10731minByOrThrowU(long[] minBy, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minBy, "$this$minBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minBy)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(minBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(minBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+            R invoke = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                    R invoke2 = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU2));
+                    long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(minBy, i);
+                    R invoke2 = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU2));
                     if (invoke.compareTo(invoke2) > 0) {
-                        m9441getsVKNKU = m9441getsVKNKU2;
+                        m10081getsVKNKU = m10081getsVKNKU2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -6424,27 +6424,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: minByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> byte m10089minByOrThrowU(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minBy$0");
+    private static final <R extends Comparable<? super R>> byte m10729minByOrThrowU(byte[] minBy, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minBy, "$this$minBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minBy)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(minBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(minBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+            R invoke = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                    R invoke2 = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ2));
+                    byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(minBy, i);
+                    R invoke2 = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ2));
                     if (invoke.compareTo(invoke2) > 0) {
-                        m9283getw2LRezQ = m9283getw2LRezQ2;
+                        m9923getw2LRezQ = m9923getw2LRezQ2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -6454,27 +6454,27 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: minByOrThrow-U  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> short m10092minByOrThrowU(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minBy$0");
+    private static final <R extends Comparable<? super R>> short m10732minByOrThrowU(short[] minBy, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minBy, "$this$minBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minBy)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(minBy, 0);
+        int lastIndex = ArraysKt.getLastIndex(minBy);
         if (lastIndex != 0) {
-            R invoke = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+            R invoke = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
             int i = 1;
             if (1 <= lastIndex) {
                 while (true) {
-                    short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                    R invoke2 = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg2));
+                    short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(minBy, i);
+                    R invoke2 = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg2));
                     if (invoke.compareTo(invoke2) > 0) {
-                        m9546getMh2AYeg = m9546getMh2AYeg2;
+                        m10186getMh2AYeg = m10186getMh2AYeg2;
                         invoke = invoke2;
                     }
                     if (i == lastIndex) {
@@ -6484,29 +6484,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 }
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: minByOrNull-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UInt m10087minByOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minByOrNull$0");
+    private static final <R extends Comparable<? super R>> UInt m10727minByOrNulljgv0xPQ(int[] minByOrNull, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minByOrNull, "$this$minByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minByOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(minByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minByOrNull);
         if (lastIndex == 0) {
-            return UInt.m9296boximpl(m9362getpVg5ArA);
+            return UInt.m9936boximpl(m10002getpVg5ArA);
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA));
+        R invoke = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                R invoke2 = selector.invoke(UInt.m9296boximpl(m9362getpVg5ArA2));
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(minByOrNull, i);
+                R invoke2 = selector.invoke(UInt.m9936boximpl(m10002getpVg5ArA2));
                 if (invoke.compareTo(invoke2) > 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -6515,29 +6515,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: minByOrNull-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> ULong m10086minByOrNullMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minByOrNull$0");
+    private static final <R extends Comparable<? super R>> ULong m10726minByOrNullMShoTSo(long[] minByOrNull, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minByOrNull, "$this$minByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minByOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(minByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minByOrNull);
         if (lastIndex == 0) {
-            return ULong.m9375boximpl(m9441getsVKNKU);
+            return ULong.m10015boximpl(m10081getsVKNKU);
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU));
+        R invoke = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                R invoke2 = selector.invoke(ULong.m9375boximpl(m9441getsVKNKU2));
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(minByOrNull, i);
+                R invoke2 = selector.invoke(ULong.m10015boximpl(m10081getsVKNKU2));
                 if (invoke.compareTo(invoke2) > 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -6546,29 +6546,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: minByOrNull-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UByte m10085minByOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minByOrNull$0");
+    private static final <R extends Comparable<? super R>> UByte m10725minByOrNullJOV_ifY(byte[] minByOrNull, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minByOrNull, "$this$minByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minByOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(minByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minByOrNull);
         if (lastIndex == 0) {
-            return UByte.m9214boximpl(m9283getw2LRezQ);
+            return UByte.m9854boximpl(m9923getw2LRezQ);
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ));
+        R invoke = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                R invoke2 = selector.invoke(UByte.m9214boximpl(m9283getw2LRezQ2));
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(minByOrNull, i);
+                R invoke2 = selector.invoke(UByte.m9854boximpl(m9923getw2LRezQ2));
                 if (invoke.compareTo(invoke2) > 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -6577,29 +6577,29 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: minByOrNull-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> UShort m10088minByOrNullxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minByOrNull$0");
+    private static final <R extends Comparable<? super R>> UShort m10728minByOrNullxTcfx_M(short[] minByOrNull, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minByOrNull, "$this$minByOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minByOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(minByOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minByOrNull);
         if (lastIndex == 0) {
-            return UShort.m9482boximpl(m9546getMh2AYeg);
+            return UShort.m10122boximpl(m10186getMh2AYeg);
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg));
+        R invoke = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg));
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                R invoke2 = selector.invoke(UShort.m9482boximpl(m9546getMh2AYeg2));
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(minByOrNull, i);
+                R invoke2 = selector.invoke(UShort.m10122boximpl(m10186getMh2AYeg2));
                 if (invoke.compareTo(invoke2) > 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                     invoke = invoke2;
                 }
                 if (i == lastIndex) {
@@ -6608,22 +6608,22 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: minOf-jgv0xPQ  reason: not valid java name */
-    private static final double m10099minOfjgv0xPQ(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOf$0");
+    private static final double m10739minOfjgv0xPQ(int[] minOf, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        double doubleValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6634,18 +6634,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-MShoTSo  reason: not valid java name */
-    private static final double m10096minOfMShoTSo(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOf$0");
+    private static final double m10736minOfMShoTSo(long[] minOf, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        double doubleValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6656,18 +6656,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-JOV_ifY  reason: not valid java name */
-    private static final double m10093minOfJOV_ifY(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOf$0");
+    private static final double m10733minOfJOV_ifY(byte[] minOf, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        double doubleValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6678,18 +6678,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-xTcfx_M  reason: not valid java name */
-    private static final double m10102minOfxTcfx_M(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOf$0");
+    private static final double m10742minOfxTcfx_M(short[] minOf, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        double doubleValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        double doubleValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6700,18 +6700,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-jgv0xPQ  reason: not valid java name */
-    private static final float m10100minOfjgv0xPQ(int[] iArr, Function1<? super UInt, Float> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOf$0");
+    private static final float m10740minOfjgv0xPQ(int[] minOf, Function1<? super UInt, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        float floatValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6722,18 +6722,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-MShoTSo  reason: not valid java name */
-    private static final float m10097minOfMShoTSo(long[] jArr, Function1<? super ULong, Float> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOf$0");
+    private static final float m10737minOfMShoTSo(long[] minOf, Function1<? super ULong, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        float floatValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6744,18 +6744,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-JOV_ifY  reason: not valid java name */
-    private static final float m10094minOfJOV_ifY(byte[] bArr, Function1<? super UByte, Float> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOf$0");
+    private static final float m10734minOfJOV_ifY(byte[] minOf, Function1<? super UByte, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        float floatValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6766,18 +6766,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-xTcfx_M  reason: not valid java name */
-    private static final float m10103minOfxTcfx_M(short[] sArr, Function1<? super UShort, Float> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOf$0");
+    private static final float m10743minOfxTcfx_M(short[] minOf, Function1<? super UShort, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        float floatValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        float floatValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6788,18 +6788,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10101minOfjgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOf$0");
+    private static final <R extends Comparable<? super R>> R m10741minOfjgv0xPQ(int[] minOf, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke2 = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOf, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -6813,18 +6813,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10098minOfMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOf$0");
+    private static final <R extends Comparable<? super R>> R m10738minOfMShoTSo(long[] minOf, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke2 = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOf, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -6838,18 +6838,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10095minOfJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOf$0");
+    private static final <R extends Comparable<? super R>> R m10735minOfJOV_ifY(byte[] minOf, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke2 = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOf, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -6863,18 +6863,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOf-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10104minOfxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOf$0");
+    private static final <R extends Comparable<? super R>> R m10744minOfxTcfx_M(short[] minOf, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOf, "$this$minOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOf)) {
             throw new NoSuchElementException();
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOf);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke2 = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOf, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -6888,18 +6888,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final Double m10112minOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOfOrNull$0");
+    private static final Double m10752minOfOrNulljgv0xPQ(int[] minOfOrNull, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        double doubleValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6910,18 +6910,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-MShoTSo  reason: not valid java name */
-    private static final Double m10109minOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOfOrNull$0");
+    private static final Double m10749minOfOrNullMShoTSo(long[] minOfOrNull, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        double doubleValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6932,18 +6932,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final Double m10106minOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOfOrNull$0");
+    private static final Double m10746minOfOrNullJOV_ifY(byte[] minOfOrNull, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        double doubleValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6954,18 +6954,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final Double m10115minOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOfOrNull$0");
+    private static final Double m10755minOfOrNullxTcfx_M(short[] minOfOrNull, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        double doubleValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).doubleValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        double doubleValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, 0))).doubleValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                doubleValue = Math.min(doubleValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue());
+                doubleValue = Math.min(doubleValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, i))).doubleValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6976,18 +6976,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final Float m10113minOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, Float> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOfOrNull$0");
+    private static final Float m10753minOfOrNulljgv0xPQ(int[] minOfOrNull, Function1<? super UInt, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        float floatValue = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -6998,18 +6998,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-MShoTSo  reason: not valid java name */
-    private static final Float m10110minOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, Float> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOfOrNull$0");
+    private static final Float m10750minOfOrNullMShoTSo(long[] minOfOrNull, Function1<? super ULong, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        float floatValue = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -7020,18 +7020,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final Float m10107minOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, Float> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOfOrNull$0");
+    private static final Float m10747minOfOrNullJOV_ifY(byte[] minOfOrNull, Function1<? super UByte, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        float floatValue = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -7042,18 +7042,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final Float m10116minOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, Float> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOfOrNull$0");
+    private static final Float m10756minOfOrNullxTcfx_M(short[] minOfOrNull, Function1<? super UShort, Float> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        float floatValue = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0))).floatValue();
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        float floatValue = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, 0))).floatValue();
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                floatValue = Math.min(floatValue, selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).floatValue());
+                floatValue = Math.min(floatValue, selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, i))).floatValue());
                 if (i == lastIndex) {
                     break;
                 }
@@ -7064,18 +7064,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-jgv0xPQ  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10111minOfOrNulljgv0xPQ(int[] iArr, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10751minOfOrNulljgv0xPQ(int[] minOfOrNull, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke2 = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfOrNull, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -7089,18 +7089,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-MShoTSo  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10108minOfOrNullMShoTSo(long[] jArr, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10748minOfOrNullMShoTSo(long[] minOfOrNull, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke2 = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfOrNull, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -7114,18 +7114,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-JOV_ifY  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10105minOfOrNullJOV_ifY(byte[] bArr, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10745minOfOrNullJOV_ifY(byte[] minOfOrNull, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke2 = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfOrNull, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -7139,18 +7139,18 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOfOrNull-xTcfx_M  reason: not valid java name */
-    private static final <R extends Comparable<? super R>> R m10114minOfOrNullxTcfx_M(short[] sArr, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOfOrNull$0");
+    private static final <R extends Comparable<? super R>> R m10754minOfOrNullxTcfx_M(short[] minOfOrNull, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfOrNull, "$this$minOfOrNull");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOfOrNull)) {
             return null;
         }
-        R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke2 = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke2 = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfOrNull, i)));
                 if (invoke.compareTo(invoke2) > 0) {
                     invoke = invoke2;
                 }
@@ -7165,19 +7165,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWith-myNOsp4  reason: not valid java name */
-    private static final <R> R m10120minOfWithmyNOsp4(int[] iArr, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOfWith$0");
+    private static final <R> R m10760minOfWithmyNOsp4(int[] minOfWith, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWith, "$this$minOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        Object obj = (R) selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfWith, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7192,19 +7192,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWith-5NtCtWE  reason: not valid java name */
-    private static final <R> R m10117minOfWith5NtCtWE(long[] jArr, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOfWith$0");
+    private static final <R> R m10757minOfWith5NtCtWE(long[] minOfWith, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWith, "$this$minOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        Object obj = (R) selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfWith, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7219,19 +7219,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWith-LTi4i_s  reason: not valid java name */
-    private static final <R> R m10118minOfWithLTi4i_s(byte[] bArr, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOfWith$0");
+    private static final <R> R m10758minOfWithLTi4i_s(byte[] minOfWith, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWith, "$this$minOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        Object obj = (R) selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfWith, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7246,19 +7246,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWith-l8EHGbQ  reason: not valid java name */
-    private static final <R> R m10119minOfWithl8EHGbQ(short[] sArr, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOfWith$0");
+    private static final <R> R m10759minOfWithl8EHGbQ(short[] minOfWith, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWith, "$this$minOfWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOfWith)) {
             throw new NoSuchElementException();
         }
-        Object obj = (R) selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        Object obj = (R) selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfWith, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfWith, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7273,19 +7273,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWithOrNull-myNOsp4  reason: not valid java name */
-    private static final <R> R m10124minOfWithOrNullmyNOsp4(int[] iArr, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOfWithOrNull$0");
+    private static final <R> R m10764minOfWithOrNullmyNOsp4(int[] minOfWithOrNull, Comparator<? super R> comparator, Function1<? super UInt, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWithOrNull, "$this$minOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        Object obj = (R) selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+                R invoke = selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(minOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7300,19 +7300,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWithOrNull-5NtCtWE  reason: not valid java name */
-    private static final <R> R m10121minOfWithOrNull5NtCtWE(long[] jArr, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOfWithOrNull$0");
+    private static final <R> R m10761minOfWithOrNull5NtCtWE(long[] minOfWithOrNull, Comparator<? super R> comparator, Function1<? super ULong, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWithOrNull, "$this$minOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        Object obj = (R) selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+                R invoke = selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(minOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7327,19 +7327,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWithOrNull-LTi4i_s  reason: not valid java name */
-    private static final <R> R m10122minOfWithOrNullLTi4i_s(byte[] bArr, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOfWithOrNull$0");
+    private static final <R> R m10762minOfWithOrNullLTi4i_s(byte[] minOfWithOrNull, Comparator<? super R> comparator, Function1<? super UByte, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWithOrNull, "$this$minOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        Object obj = (R) selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+                R invoke = selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(minOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7354,19 +7354,19 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: minOfWithOrNull-l8EHGbQ  reason: not valid java name */
-    private static final <R> R m10123minOfWithOrNulll8EHGbQ(short[] sArr, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOfWithOrNull$0");
+    private static final <R> R m10763minOfWithOrNulll8EHGbQ(short[] minOfWithOrNull, Comparator<? super R> comparator, Function1<? super UShort, ? extends R> selector) {
+        Intrinsics.checkNotNullParameter(minOfWithOrNull, "$this$minOfWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minOfWithOrNull)) {
             return null;
         }
-        Object obj = (R) selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, 0)));
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        Object obj = (R) selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfWithOrNull, 0)));
+        int lastIndex = ArraysKt.getLastIndex(minOfWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                R invoke = selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+                R invoke = selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(minOfWithOrNull, i)));
                 if (comparator.compare(obj, invoke) > 0) {
                     obj = invoke;
                 }
@@ -7380,21 +7380,21 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: minOrNull--ajY-9A  reason: not valid java name */
-    public static final UInt m10125minOrNullajY9A(int[] iArr) {
+    public static final UInt m10765minOrNullajY9A(int[] minOrNull) {
         int compare;
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minOrNull$0");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        Intrinsics.checkNotNullParameter(minOrNull, "$this$minOrNull");
+        if (UIntArray.m10005isEmptyimpl(minOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(minOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                compare = Integer.compare(m9362getpVg5ArA ^ Integer.MIN_VALUE, m9362getpVg5ArA2 ^ Integer.MIN_VALUE);
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(minOrNull, i);
+                compare = Integer.compare(m10002getpVg5ArA ^ Integer.MIN_VALUE, m10002getpVg5ArA2 ^ Integer.MIN_VALUE);
                 if (compare > 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7402,25 +7402,25 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: minOrNull-QwZRm1k  reason: not valid java name */
-    public static final ULong m10127minOrNullQwZRm1k(long[] jArr) {
+    public static final ULong m10767minOrNullQwZRm1k(long[] minOrNull) {
         int compare;
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minOrNull$0");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        Intrinsics.checkNotNullParameter(minOrNull, "$this$minOrNull");
+        if (ULongArray.m10084isEmptyimpl(minOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(minOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                compare = Long.compare(m9441getsVKNKU ^ Long.MIN_VALUE, m9441getsVKNKU2 ^ Long.MIN_VALUE);
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(minOrNull, i);
+                compare = Long.compare(m10081getsVKNKU ^ Long.MIN_VALUE, m10081getsVKNKU2 ^ Long.MIN_VALUE);
                 if (compare > 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7428,23 +7428,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: minOrNull-GBYM_sE  reason: not valid java name */
-    public static final UByte m10126minOrNullGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minOrNull$0");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+    public static final UByte m10766minOrNullGBYM_sE(byte[] minOrNull) {
+        Intrinsics.checkNotNullParameter(minOrNull, "$this$minOrNull");
+        if (UByteArray.m9926isEmptyimpl(minOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(minOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (Intrinsics.compare(m9283getw2LRezQ & 255, m9283getw2LRezQ2 & 255) > 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(minOrNull, i);
+                if (Intrinsics.compare(m9923getw2LRezQ & 255, m9923getw2LRezQ2 & 255) > 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7452,23 +7452,23 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: minOrNull-rL5Bavg  reason: not valid java name */
-    public static final UShort m10128minOrNullrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minOrNull$0");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+    public static final UShort m10768minOrNullrL5Bavg(short[] minOrNull) {
+        Intrinsics.checkNotNullParameter(minOrNull, "$this$minOrNull");
+        if (UShortArray.m10189isEmptyimpl(minOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(minOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (Intrinsics.compare(m9546getMh2AYeg & UShort.MAX_VALUE, 65535 & m9546getMh2AYeg2) > 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(minOrNull, i);
+                if (Intrinsics.compare(m10186getMh2AYeg & UShort.MAX_VALUE, 65535 & m10186getMh2AYeg2) > 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7476,24 +7476,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: minWithOrThrow-U  reason: not valid java name */
-    public static final int m10138minWithOrThrowU(int[] iArr, Comparator<? super UInt> comparator) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minWith$0");
+    public static final int m10778minWithOrThrowU(int[] minWith, Comparator<? super UInt> comparator) {
+        Intrinsics.checkNotNullParameter(minWith, "$this$minWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minWith)) {
             throw new NoSuchElementException();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(minWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                if (comparator.compare(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(m9362getpVg5ArA2)) > 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(minWith, i);
+                if (comparator.compare(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(m10002getpVg5ArA2)) > 0) {
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7501,24 +7501,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: minWithOrThrow-U  reason: not valid java name */
-    public static final long m10139minWithOrThrowU(long[] jArr, Comparator<? super ULong> comparator) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minWith$0");
+    public static final long m10779minWithOrThrowU(long[] minWith, Comparator<? super ULong> comparator) {
+        Intrinsics.checkNotNullParameter(minWith, "$this$minWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minWith)) {
             throw new NoSuchElementException();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(minWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                if (comparator.compare(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(m9441getsVKNKU2)) > 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(minWith, i);
+                if (comparator.compare(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(m10081getsVKNKU2)) > 0) {
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7526,24 +7526,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: minWithOrThrow-U  reason: not valid java name */
-    public static final byte m10137minWithOrThrowU(byte[] bArr, Comparator<? super UByte> comparator) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minWith$0");
+    public static final byte m10777minWithOrThrowU(byte[] minWith, Comparator<? super UByte> comparator) {
+        Intrinsics.checkNotNullParameter(minWith, "$this$minWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minWith)) {
             throw new NoSuchElementException();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(minWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (comparator.compare(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(m9283getw2LRezQ2)) > 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(minWith, i);
+                if (comparator.compare(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(m9923getw2LRezQ2)) > 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7551,24 +7551,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: minWithOrThrow-U  reason: not valid java name */
-    public static final short m10140minWithOrThrowU(short[] sArr, Comparator<? super UShort> comparator) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minWith$0");
+    public static final short m10780minWithOrThrowU(short[] minWith, Comparator<? super UShort> comparator) {
+        Intrinsics.checkNotNullParameter(minWith, "$this$minWith");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minWith)) {
             throw new NoSuchElementException();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(minWith, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWith);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (comparator.compare(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(m9546getMh2AYeg2)) > 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(minWith, i);
+                if (comparator.compare(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(m10186getMh2AYeg2)) > 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7576,24 +7576,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: minWithOrNull-YmdZ_VM  reason: not valid java name */
-    public static final UInt m10134minWithOrNullYmdZ_VM(int[] iArr, Comparator<? super UInt> comparator) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$minWithOrNull$0");
+    public static final UInt m10774minWithOrNullYmdZ_VM(int[] minWithOrNull, Comparator<? super UInt> comparator) {
+        Intrinsics.checkNotNullParameter(minWithOrNull, "$this$minWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(minWithOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(minWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                int m9362getpVg5ArA2 = UIntArray.m9362getpVg5ArA(iArr, i);
-                if (comparator.compare(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(m9362getpVg5ArA2)) > 0) {
-                    m9362getpVg5ArA = m9362getpVg5ArA2;
+                int m10002getpVg5ArA2 = UIntArray.m10002getpVg5ArA(minWithOrNull, i);
+                if (comparator.compare(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(m10002getpVg5ArA2)) > 0) {
+                    m10002getpVg5ArA = m10002getpVg5ArA2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7601,24 +7601,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: minWithOrNull-zrEWJaI  reason: not valid java name */
-    public static final ULong m10136minWithOrNullzrEWJaI(long[] jArr, Comparator<? super ULong> comparator) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$minWithOrNull$0");
+    public static final ULong m10776minWithOrNullzrEWJaI(long[] minWithOrNull, Comparator<? super ULong> comparator) {
+        Intrinsics.checkNotNullParameter(minWithOrNull, "$this$minWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(minWithOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(minWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                long m9441getsVKNKU2 = ULongArray.m9441getsVKNKU(jArr, i);
-                if (comparator.compare(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(m9441getsVKNKU2)) > 0) {
-                    m9441getsVKNKU = m9441getsVKNKU2;
+                long m10081getsVKNKU2 = ULongArray.m10081getsVKNKU(minWithOrNull, i);
+                if (comparator.compare(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(m10081getsVKNKU2)) > 0) {
+                    m10081getsVKNKU = m10081getsVKNKU2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7626,24 +7626,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: minWithOrNull-XMRcp5o  reason: not valid java name */
-    public static final UByte m10133minWithOrNullXMRcp5o(byte[] bArr, Comparator<? super UByte> comparator) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$minWithOrNull$0");
+    public static final UByte m10773minWithOrNullXMRcp5o(byte[] minWithOrNull, Comparator<? super UByte> comparator) {
+        Intrinsics.checkNotNullParameter(minWithOrNull, "$this$minWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(minWithOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(minWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                byte m9283getw2LRezQ2 = UByteArray.m9283getw2LRezQ(bArr, i);
-                if (comparator.compare(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(m9283getw2LRezQ2)) > 0) {
-                    m9283getw2LRezQ = m9283getw2LRezQ2;
+                byte m9923getw2LRezQ2 = UByteArray.m9923getw2LRezQ(minWithOrNull, i);
+                if (comparator.compare(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(m9923getw2LRezQ2)) > 0) {
+                    m9923getw2LRezQ = m9923getw2LRezQ2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7651,24 +7651,24 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: minWithOrNull-eOHTfZs  reason: not valid java name */
-    public static final UShort m10135minWithOrNulleOHTfZs(short[] sArr, Comparator<? super UShort> comparator) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$minWithOrNull$0");
+    public static final UShort m10775minWithOrNulleOHTfZs(short[] minWithOrNull, Comparator<? super UShort> comparator) {
+        Intrinsics.checkNotNullParameter(minWithOrNull, "$this$minWithOrNull");
         Intrinsics.checkNotNullParameter(comparator, "comparator");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(minWithOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(minWithOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(minWithOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                short m9546getMh2AYeg2 = UShortArray.m9546getMh2AYeg(sArr, i);
-                if (comparator.compare(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(m9546getMh2AYeg2)) > 0) {
-                    m9546getMh2AYeg = m9546getMh2AYeg2;
+                short m10186getMh2AYeg2 = UShortArray.m10186getMh2AYeg(minWithOrNull, i);
+                if (comparator.compare(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(m10186getMh2AYeg2)) > 0) {
+                    m10186getMh2AYeg = m10186getMh2AYeg2;
                 }
                 if (i == lastIndex) {
                     break;
@@ -7676,40 +7676,40 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: none--ajY-9A  reason: not valid java name */
-    private static final boolean m10141noneajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$none$0");
-        return UIntArray.m9365isEmptyimpl(iArr);
+    private static final boolean m10781noneajY9A(int[] none) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
+        return UIntArray.m10005isEmptyimpl(none);
     }
 
     /* renamed from: none-QwZRm1k  reason: not valid java name */
-    private static final boolean m10145noneQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$none$0");
-        return ULongArray.m9444isEmptyimpl(jArr);
+    private static final boolean m10785noneQwZRm1k(long[] none) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
+        return ULongArray.m10084isEmptyimpl(none);
     }
 
     /* renamed from: none-GBYM_sE  reason: not valid java name */
-    private static final boolean m10142noneGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$none$0");
-        return UByteArray.m9286isEmptyimpl(bArr);
+    private static final boolean m10782noneGBYM_sE(byte[] none) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
+        return UByteArray.m9926isEmptyimpl(none);
     }
 
     /* renamed from: none-rL5Bavg  reason: not valid java name */
-    private static final boolean m10147nonerL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$none$0");
-        return UShortArray.m9549isEmptyimpl(sArr);
+    private static final boolean m10787nonerL5Bavg(short[] none) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
+        return UShortArray.m10189isEmptyimpl(none);
     }
 
     /* renamed from: none-jgv0xPQ  reason: not valid java name */
-    private static final boolean m10146nonejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$none$0");
+    private static final boolean m10786nonejgv0xPQ(int[] none, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            if (predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).booleanValue()) {
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(none);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            if (predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(none, i))).booleanValue()) {
                 return false;
             }
         }
@@ -7717,12 +7717,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: none-MShoTSo  reason: not valid java name */
-    private static final boolean m10144noneMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$none$0");
+    private static final boolean m10784noneMShoTSo(long[] none, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            if (predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).booleanValue()) {
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(none);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            if (predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(none, i))).booleanValue()) {
                 return false;
             }
         }
@@ -7730,12 +7730,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: none-JOV_ifY  reason: not valid java name */
-    private static final boolean m10143noneJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$none$0");
+    private static final boolean m10783noneJOV_ifY(byte[] none, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            if (predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).booleanValue()) {
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(none);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            if (predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(none, i))).booleanValue()) {
                 return false;
             }
         }
@@ -7743,12 +7743,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: none-xTcfx_M  reason: not valid java name */
-    private static final boolean m10148nonexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$none$0");
+    private static final boolean m10788nonexTcfx_M(short[] none, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(none, "$this$none");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            if (predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).booleanValue()) {
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(none);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            if (predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(none, i))).booleanValue()) {
                 return false;
             }
         }
@@ -7756,872 +7756,872 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: onEach-jgv0xPQ  reason: not valid java name */
-    private static final int[] m10151onEachjgv0xPQ(int[] iArr, Function1<? super UInt, Unit> action) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$onEach$0");
+    private static final int[] m10791onEachjgv0xPQ(int[] onEach, Function1<? super UInt, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEach, "$this$onEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            action.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(onEach);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            action.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(onEach, i)));
         }
-        return iArr;
+        return onEach;
     }
 
     /* renamed from: onEach-MShoTSo  reason: not valid java name */
-    private static final long[] m10150onEachMShoTSo(long[] jArr, Function1<? super ULong, Unit> action) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$onEach$0");
+    private static final long[] m10790onEachMShoTSo(long[] onEach, Function1<? super ULong, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEach, "$this$onEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            action.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(onEach);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            action.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(onEach, i)));
         }
-        return jArr;
+        return onEach;
     }
 
     /* renamed from: onEach-JOV_ifY  reason: not valid java name */
-    private static final byte[] m10149onEachJOV_ifY(byte[] bArr, Function1<? super UByte, Unit> action) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$onEach$0");
+    private static final byte[] m10789onEachJOV_ifY(byte[] onEach, Function1<? super UByte, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEach, "$this$onEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            action.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(onEach);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            action.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(onEach, i)));
         }
-        return bArr;
+        return onEach;
     }
 
     /* renamed from: onEach-xTcfx_M  reason: not valid java name */
-    private static final short[] m10152onEachxTcfx_M(short[] sArr, Function1<? super UShort, Unit> action) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$onEach$0");
+    private static final short[] m10792onEachxTcfx_M(short[] onEach, Function1<? super UShort, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEach, "$this$onEach");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            action.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(onEach);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            action.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(onEach, i)));
         }
-        return sArr;
+        return onEach;
     }
 
     /* renamed from: onEachIndexed-WyvcNBI  reason: not valid java name */
-    private static final int[] m10154onEachIndexedWyvcNBI(int[] iArr, Function2<? super Integer, ? super UInt, Unit> action) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$onEachIndexed$0");
+    private static final int[] m10794onEachIndexedWyvcNBI(int[] onEachIndexed, Function2<? super Integer, ? super UInt, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEachIndexed, "$this$onEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(onEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9363getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        while (i < m10003getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(onEachIndexed, i)));
             i++;
             i2++;
         }
-        return iArr;
+        return onEachIndexed;
     }
 
     /* renamed from: onEachIndexed-s8dVfGU  reason: not valid java name */
-    private static final long[] m10155onEachIndexeds8dVfGU(long[] jArr, Function2<? super Integer, ? super ULong, Unit> action) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$onEachIndexed$0");
+    private static final long[] m10795onEachIndexeds8dVfGU(long[] onEachIndexed, Function2<? super Integer, ? super ULong, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEachIndexed, "$this$onEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(onEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9442getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        while (i < m10082getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(onEachIndexed, i)));
             i++;
             i2++;
         }
-        return jArr;
+        return onEachIndexed;
     }
 
     /* renamed from: onEachIndexed-ELGow60  reason: not valid java name */
-    private static final byte[] m10153onEachIndexedELGow60(byte[] bArr, Function2<? super Integer, ? super UByte, Unit> action) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$onEachIndexed$0");
+    private static final byte[] m10793onEachIndexedELGow60(byte[] onEachIndexed, Function2<? super Integer, ? super UByte, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEachIndexed, "$this$onEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(onEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9284getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        while (i < m9924getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(onEachIndexed, i)));
             i++;
             i2++;
         }
-        return bArr;
+        return onEachIndexed;
     }
 
     /* renamed from: onEachIndexed-xzaTVY8  reason: not valid java name */
-    private static final short[] m10156onEachIndexedxzaTVY8(short[] sArr, Function2<? super Integer, ? super UShort, Unit> action) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$onEachIndexed$0");
+    private static final short[] m10796onEachIndexedxzaTVY8(short[] onEachIndexed, Function2<? super Integer, ? super UShort, Unit> action) {
+        Intrinsics.checkNotNullParameter(onEachIndexed, "$this$onEachIndexed");
         Intrinsics.checkNotNullParameter(action, "action");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(onEachIndexed);
         int i = 0;
         int i2 = 0;
-        while (i < m9547getSizeimpl) {
-            action.invoke(Integer.valueOf(i2), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        while (i < m10187getSizeimpl) {
+            action.invoke(Integer.valueOf(i2), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(onEachIndexed, i)));
             i++;
             i2++;
         }
-        return sArr;
+        return onEachIndexed;
     }
 
     /* renamed from: reduce-WyvcNBI  reason: not valid java name */
-    private static final int m10186reduceWyvcNBI(int[] iArr, Function2<? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduce$0");
+    private static final int m10826reduceWyvcNBI(int[] reduce, Function2<? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(reduce)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduce, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduce);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9362getpVg5ArA = operation.invoke(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
+                m10002getpVg5ArA = operation.invoke(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduce, i))).m9994unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: reduce-s8dVfGU  reason: not valid java name */
-    private static final long m10187reduces8dVfGU(long[] jArr, Function2<? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduce$0");
+    private static final long m10827reduces8dVfGU(long[] reduce, Function2<? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(reduce)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduce, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduce);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9441getsVKNKU = operation.invoke(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
+                m10081getsVKNKU = operation.invoke(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduce, i))).m10073unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: reduce-ELGow60  reason: not valid java name */
-    private static final byte m10185reduceELGow60(byte[] bArr, Function2<? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduce$0");
+    private static final byte m10825reduceELGow60(byte[] reduce, Function2<? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(reduce)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduce, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduce);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9283getw2LRezQ = operation.invoke(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
+                m9923getw2LRezQ = operation.invoke(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduce, i))).m9910unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: reduce-xzaTVY8  reason: not valid java name */
-    private static final short m10188reducexzaTVY8(short[] sArr, Function2<? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduce$0");
+    private static final short m10828reducexzaTVY8(short[] reduce, Function2<? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(reduce)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduce, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduce);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9546getMh2AYeg = operation.invoke(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
+                m10186getMh2AYeg = operation.invoke(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduce, i))).m10178unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: reduceIndexed-D40WMg8  reason: not valid java name */
-    private static final int m10189reduceIndexedD40WMg8(int[] iArr, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceIndexed$0");
+    private static final int m10829reduceIndexedD40WMg8(int[] reduceIndexed, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexed, "$this$reduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(reduceIndexed)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceIndexed, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexed);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9362getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
+                m10002getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceIndexed, i))).m9994unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: reduceIndexed-z1zDJgo  reason: not valid java name */
-    private static final long m10192reduceIndexedz1zDJgo(long[] jArr, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceIndexed$0");
+    private static final long m10832reduceIndexedz1zDJgo(long[] reduceIndexed, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexed, "$this$reduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(reduceIndexed)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceIndexed, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexed);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9441getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
+                m10081getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceIndexed, i))).m10073unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: reduceIndexed-EOyYB1Y  reason: not valid java name */
-    private static final byte m10190reduceIndexedEOyYB1Y(byte[] bArr, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceIndexed$0");
+    private static final byte m10830reduceIndexedEOyYB1Y(byte[] reduceIndexed, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexed, "$this$reduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(reduceIndexed)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceIndexed, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexed);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9283getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
+                m9923getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceIndexed, i))).m9910unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: reduceIndexed-aLgx1Fo  reason: not valid java name */
-    private static final short m10191reduceIndexedaLgx1Fo(short[] sArr, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceIndexed$0");
+    private static final short m10831reduceIndexedaLgx1Fo(short[] reduceIndexed, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexed, "$this$reduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(reduceIndexed)) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceIndexed, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexed);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9546getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
+                m10186getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceIndexed, i))).m10178unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: reduceIndexedOrNull-D40WMg8  reason: not valid java name */
-    private static final UInt m10193reduceIndexedOrNullD40WMg8(int[] iArr, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceIndexedOrNull$0");
+    private static final UInt m10833reduceIndexedOrNullD40WMg8(int[] reduceIndexedOrNull, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexedOrNull, "$this$reduceIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(reduceIndexedOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceIndexedOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexedOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9362getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
+                m10002getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceIndexedOrNull, i))).m9994unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: reduceIndexedOrNull-z1zDJgo  reason: not valid java name */
-    private static final ULong m10196reduceIndexedOrNullz1zDJgo(long[] jArr, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceIndexedOrNull$0");
+    private static final ULong m10836reduceIndexedOrNullz1zDJgo(long[] reduceIndexedOrNull, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexedOrNull, "$this$reduceIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(reduceIndexedOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceIndexedOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexedOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9441getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
+                m10081getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceIndexedOrNull, i))).m10073unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: reduceIndexedOrNull-EOyYB1Y  reason: not valid java name */
-    private static final UByte m10194reduceIndexedOrNullEOyYB1Y(byte[] bArr, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceIndexedOrNull$0");
+    private static final UByte m10834reduceIndexedOrNullEOyYB1Y(byte[] reduceIndexedOrNull, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexedOrNull, "$this$reduceIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(reduceIndexedOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceIndexedOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexedOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9283getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
+                m9923getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceIndexedOrNull, i))).m9910unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: reduceIndexedOrNull-aLgx1Fo  reason: not valid java name */
-    private static final UShort m10195reduceIndexedOrNullaLgx1Fo(short[] sArr, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceIndexedOrNull$0");
+    private static final UShort m10835reduceIndexedOrNullaLgx1Fo(short[] reduceIndexedOrNull, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceIndexedOrNull, "$this$reduceIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(reduceIndexedOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceIndexedOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceIndexedOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9546getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
+                m10186getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceIndexedOrNull, i))).m10178unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: reduceOrNull-WyvcNBI  reason: not valid java name */
-    private static final UInt m10198reduceOrNullWyvcNBI(int[] iArr, Function2<? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceOrNull$0");
+    private static final UInt m10838reduceOrNullWyvcNBI(int[] reduceOrNull, Function2<? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceOrNull, "$this$reduceOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(reduceOrNull)) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9362getpVg5ArA = operation.invoke(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
+                m10002getpVg5ArA = operation.invoke(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceOrNull, i))).m9994unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: reduceOrNull-s8dVfGU  reason: not valid java name */
-    private static final ULong m10199reduceOrNulls8dVfGU(long[] jArr, Function2<? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceOrNull$0");
+    private static final ULong m10839reduceOrNulls8dVfGU(long[] reduceOrNull, Function2<? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceOrNull, "$this$reduceOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(reduceOrNull)) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9441getsVKNKU = operation.invoke(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
+                m10081getsVKNKU = operation.invoke(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceOrNull, i))).m10073unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: reduceOrNull-ELGow60  reason: not valid java name */
-    private static final UByte m10197reduceOrNullELGow60(byte[] bArr, Function2<? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceOrNull$0");
+    private static final UByte m10837reduceOrNullELGow60(byte[] reduceOrNull, Function2<? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceOrNull, "$this$reduceOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(reduceOrNull)) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9283getw2LRezQ = operation.invoke(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
+                m9923getw2LRezQ = operation.invoke(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceOrNull, i))).m9910unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: reduceOrNull-xzaTVY8  reason: not valid java name */
-    private static final UShort m10200reduceOrNullxzaTVY8(short[] sArr, Function2<? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceOrNull$0");
+    private static final UShort m10840reduceOrNullxzaTVY8(short[] reduceOrNull, Function2<? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceOrNull, "$this$reduceOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(reduceOrNull)) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceOrNull, 0);
+        int lastIndex = ArraysKt.getLastIndex(reduceOrNull);
         int i = 1;
         if (1 <= lastIndex) {
             while (true) {
-                m9546getMh2AYeg = operation.invoke(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
+                m10186getMh2AYeg = operation.invoke(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceOrNull, i))).m10178unboximpl();
                 if (i == lastIndex) {
                     break;
                 }
                 i++;
             }
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: runningFold-zi1B2BA  reason: not valid java name */
-    private static final <R> List<R> m10235runningFoldzi1B2BA(int[] iArr, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$runningFold$0");
+    private static final <R> List<R> m10875runningFoldzi1B2BA(int[] runningFold, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFold, "$this$runningFold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(runningFold)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr) + 1);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(runningFold) + 1);
         arrayList.add(r);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            r = operation.invoke(r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(runningFold);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            r = operation.invoke(r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(runningFold, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFold-A8wKCXQ  reason: not valid java name */
-    private static final <R> List<R> m10233runningFoldA8wKCXQ(long[] jArr, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$runningFold$0");
+    private static final <R> List<R> m10873runningFoldA8wKCXQ(long[] runningFold, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFold, "$this$runningFold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(runningFold)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr) + 1);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(runningFold) + 1);
         arrayList.add(r);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            r = operation.invoke(r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(runningFold);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            r = operation.invoke(r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(runningFold, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFold-yXmHNn8  reason: not valid java name */
-    private static final <R> List<R> m10234runningFoldyXmHNn8(byte[] bArr, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$runningFold$0");
+    private static final <R> List<R> m10874runningFoldyXmHNn8(byte[] runningFold, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFold, "$this$runningFold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(runningFold)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr) + 1);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(runningFold) + 1);
         arrayList.add(r);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            r = operation.invoke(r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(runningFold);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            r = operation.invoke(r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(runningFold, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFold-zww5nb8  reason: not valid java name */
-    private static final <R> List<R> m10236runningFoldzww5nb8(short[] sArr, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$runningFold$0");
+    private static final <R> List<R> m10876runningFoldzww5nb8(short[] runningFold, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFold, "$this$runningFold");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(runningFold)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr) + 1);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(runningFold) + 1);
         arrayList.add(r);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            r = operation.invoke(r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(runningFold);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            r = operation.invoke(r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(runningFold, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFoldIndexed-yVwIW0Q  reason: not valid java name */
-    private static final <R> List<R> m10240runningFoldIndexedyVwIW0Q(int[] iArr, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$runningFoldIndexed$0");
+    private static final <R> List<R> m10880runningFoldIndexedyVwIW0Q(int[] runningFoldIndexed, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFoldIndexed, "$this$runningFoldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(runningFoldIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr) + 1);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(runningFoldIndexed) + 1);
         arrayList.add(r);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(runningFoldIndexed);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(runningFoldIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFoldIndexed-mwnnOCs  reason: not valid java name */
-    private static final <R> List<R> m10239runningFoldIndexedmwnnOCs(long[] jArr, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$runningFoldIndexed$0");
+    private static final <R> List<R> m10879runningFoldIndexedmwnnOCs(long[] runningFoldIndexed, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFoldIndexed, "$this$runningFoldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(runningFoldIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr) + 1);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(runningFoldIndexed) + 1);
         arrayList.add(r);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(runningFoldIndexed);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(runningFoldIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFoldIndexed-3iWJZGE  reason: not valid java name */
-    private static final <R> List<R> m10237runningFoldIndexed3iWJZGE(byte[] bArr, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$runningFoldIndexed$0");
+    private static final <R> List<R> m10877runningFoldIndexed3iWJZGE(byte[] runningFoldIndexed, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFoldIndexed, "$this$runningFoldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(runningFoldIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr) + 1);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(runningFoldIndexed) + 1);
         arrayList.add(r);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(runningFoldIndexed);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(runningFoldIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningFoldIndexed-bzxtMww  reason: not valid java name */
-    private static final <R> List<R> m10238runningFoldIndexedbzxtMww(short[] sArr, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$runningFoldIndexed$0");
+    private static final <R> List<R> m10878runningFoldIndexedbzxtMww(short[] runningFoldIndexed, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(runningFoldIndexed, "$this$runningFoldIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(runningFoldIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr) + 1);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(runningFoldIndexed) + 1);
         arrayList.add(r);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(runningFoldIndexed);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(runningFoldIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: runningReduce-WyvcNBI  reason: not valid java name */
-    private static final List<UInt> m10242runningReduceWyvcNBI(int[] iArr, Function2<? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$runningReduce$0");
+    private static final List<UInt> m10882runningReduceWyvcNBI(int[] runningReduce, Function2<? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(runningReduce, "$this$runningReduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(runningReduce)) {
             return CollectionsKt.emptyList();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr));
-        arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 1; i < m9363getSizeimpl; i++) {
-            m9362getpVg5ArA = operation.invoke(UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
-            arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(runningReduce, 0);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(runningReduce));
+        arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(runningReduce);
+        for (int i = 1; i < m10003getSizeimpl; i++) {
+            m10002getpVg5ArA = operation.invoke(UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(runningReduce, i))).m9994unboximpl();
+            arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduce-s8dVfGU  reason: not valid java name */
-    private static final List<ULong> m10243runningReduces8dVfGU(long[] jArr, Function2<? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$runningReduce$0");
+    private static final List<ULong> m10883runningReduces8dVfGU(long[] runningReduce, Function2<? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(runningReduce, "$this$runningReduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(runningReduce)) {
             return CollectionsKt.emptyList();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr));
-        arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 1; i < m9442getSizeimpl; i++) {
-            m9441getsVKNKU = operation.invoke(ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
-            arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(runningReduce, 0);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(runningReduce));
+        arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(runningReduce);
+        for (int i = 1; i < m10082getSizeimpl; i++) {
+            m10081getsVKNKU = operation.invoke(ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(runningReduce, i))).m10073unboximpl();
+            arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduce-ELGow60  reason: not valid java name */
-    private static final List<UByte> m10241runningReduceELGow60(byte[] bArr, Function2<? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$runningReduce$0");
+    private static final List<UByte> m10881runningReduceELGow60(byte[] runningReduce, Function2<? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(runningReduce, "$this$runningReduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(runningReduce)) {
             return CollectionsKt.emptyList();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr));
-        arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 1; i < m9284getSizeimpl; i++) {
-            m9283getw2LRezQ = operation.invoke(UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
-            arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(runningReduce, 0);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(runningReduce));
+        arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(runningReduce);
+        for (int i = 1; i < m9924getSizeimpl; i++) {
+            m9923getw2LRezQ = operation.invoke(UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(runningReduce, i))).m9910unboximpl();
+            arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduce-xzaTVY8  reason: not valid java name */
-    private static final List<UShort> m10244runningReducexzaTVY8(short[] sArr, Function2<? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$runningReduce$0");
+    private static final List<UShort> m10884runningReducexzaTVY8(short[] runningReduce, Function2<? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(runningReduce, "$this$runningReduce");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(runningReduce)) {
             return CollectionsKt.emptyList();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr));
-        arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 1; i < m9547getSizeimpl; i++) {
-            m9546getMh2AYeg = operation.invoke(UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
-            arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(runningReduce, 0);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(runningReduce));
+        arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(runningReduce);
+        for (int i = 1; i < m10187getSizeimpl; i++) {
+            m10186getMh2AYeg = operation.invoke(UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(runningReduce, i))).m10178unboximpl();
+            arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduceIndexed-D40WMg8  reason: not valid java name */
-    private static final List<UInt> m10245runningReduceIndexedD40WMg8(int[] iArr, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$runningReduceIndexed$0");
+    private static final List<UInt> m10885runningReduceIndexedD40WMg8(int[] runningReduceIndexed, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(runningReduceIndexed, "$this$runningReduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(runningReduceIndexed)) {
             return CollectionsKt.emptyList();
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, 0);
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr));
-        arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 1; i < m9363getSizeimpl; i++) {
-            m9362getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9296boximpl(m9362getpVg5ArA), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl();
-            arrayList.add(UInt.m9296boximpl(m9362getpVg5ArA));
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(runningReduceIndexed, 0);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(runningReduceIndexed));
+        arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(runningReduceIndexed);
+        for (int i = 1; i < m10003getSizeimpl; i++) {
+            m10002getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9936boximpl(m10002getpVg5ArA), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(runningReduceIndexed, i))).m9994unboximpl();
+            arrayList.add(UInt.m9936boximpl(m10002getpVg5ArA));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduceIndexed-z1zDJgo  reason: not valid java name */
-    private static final List<ULong> m10248runningReduceIndexedz1zDJgo(long[] jArr, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$runningReduceIndexed$0");
+    private static final List<ULong> m10888runningReduceIndexedz1zDJgo(long[] runningReduceIndexed, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(runningReduceIndexed, "$this$runningReduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(runningReduceIndexed)) {
             return CollectionsKt.emptyList();
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, 0);
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr));
-        arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 1; i < m9442getSizeimpl; i++) {
-            m9441getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m9375boximpl(m9441getsVKNKU), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl();
-            arrayList.add(ULong.m9375boximpl(m9441getsVKNKU));
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(runningReduceIndexed, 0);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(runningReduceIndexed));
+        arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(runningReduceIndexed);
+        for (int i = 1; i < m10082getSizeimpl; i++) {
+            m10081getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m10015boximpl(m10081getsVKNKU), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(runningReduceIndexed, i))).m10073unboximpl();
+            arrayList.add(ULong.m10015boximpl(m10081getsVKNKU));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduceIndexed-EOyYB1Y  reason: not valid java name */
-    private static final List<UByte> m10246runningReduceIndexedEOyYB1Y(byte[] bArr, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$runningReduceIndexed$0");
+    private static final List<UByte> m10886runningReduceIndexedEOyYB1Y(byte[] runningReduceIndexed, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(runningReduceIndexed, "$this$runningReduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(runningReduceIndexed)) {
             return CollectionsKt.emptyList();
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, 0);
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr));
-        arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 1; i < m9284getSizeimpl; i++) {
-            m9283getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9214boximpl(m9283getw2LRezQ), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9270unboximpl();
-            arrayList.add(UByte.m9214boximpl(m9283getw2LRezQ));
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(runningReduceIndexed, 0);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(runningReduceIndexed));
+        arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(runningReduceIndexed);
+        for (int i = 1; i < m9924getSizeimpl; i++) {
+            m9923getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9854boximpl(m9923getw2LRezQ), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(runningReduceIndexed, i))).m9910unboximpl();
+            arrayList.add(UByte.m9854boximpl(m9923getw2LRezQ));
         }
         return arrayList;
     }
 
     /* renamed from: runningReduceIndexed-aLgx1Fo  reason: not valid java name */
-    private static final List<UShort> m10247runningReduceIndexedaLgx1Fo(short[] sArr, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$runningReduceIndexed$0");
+    private static final List<UShort> m10887runningReduceIndexedaLgx1Fo(short[] runningReduceIndexed, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(runningReduceIndexed, "$this$runningReduceIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(runningReduceIndexed)) {
             return CollectionsKt.emptyList();
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, 0);
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr));
-        arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 1; i < m9547getSizeimpl; i++) {
-            m9546getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m9482boximpl(m9546getMh2AYeg), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9538unboximpl();
-            arrayList.add(UShort.m9482boximpl(m9546getMh2AYeg));
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(runningReduceIndexed, 0);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(runningReduceIndexed));
+        arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(runningReduceIndexed);
+        for (int i = 1; i < m10187getSizeimpl; i++) {
+            m10186getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m10122boximpl(m10186getMh2AYeg), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(runningReduceIndexed, i))).m10178unboximpl();
+            arrayList.add(UShort.m10122boximpl(m10186getMh2AYeg));
         }
         return arrayList;
     }
 
     /* renamed from: scan-zi1B2BA  reason: not valid java name */
-    private static final <R> List<R> m10251scanzi1B2BA(int[] iArr, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$scan$0");
+    private static final <R> List<R> m10891scanzi1B2BA(int[] scan, R r, Function2<? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scan, "$this$scan");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(scan)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr) + 1);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(scan) + 1);
         arrayList.add(r);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            r = operation.invoke(r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(scan);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            r = operation.invoke(r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(scan, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scan-A8wKCXQ  reason: not valid java name */
-    private static final <R> List<R> m10249scanA8wKCXQ(long[] jArr, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$scan$0");
+    private static final <R> List<R> m10889scanA8wKCXQ(long[] scan, R r, Function2<? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scan, "$this$scan");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(scan)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr) + 1);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(scan) + 1);
         arrayList.add(r);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            r = operation.invoke(r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(scan);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            r = operation.invoke(r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(scan, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scan-yXmHNn8  reason: not valid java name */
-    private static final <R> List<R> m10250scanyXmHNn8(byte[] bArr, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$scan$0");
+    private static final <R> List<R> m10890scanyXmHNn8(byte[] scan, R r, Function2<? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scan, "$this$scan");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(scan)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr) + 1);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(scan) + 1);
         arrayList.add(r);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            r = operation.invoke(r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(scan);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            r = operation.invoke(r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(scan, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scan-zww5nb8  reason: not valid java name */
-    private static final <R> List<R> m10252scanzww5nb8(short[] sArr, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$scan$0");
+    private static final <R> List<R> m10892scanzww5nb8(short[] scan, R r, Function2<? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scan, "$this$scan");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(scan)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr) + 1);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(scan) + 1);
         arrayList.add(r);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            r = operation.invoke(r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(scan);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            r = operation.invoke(r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(scan, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scanIndexed-yVwIW0Q  reason: not valid java name */
-    private static final <R> List<R> m10256scanIndexedyVwIW0Q(int[] iArr, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$scanIndexed$0");
+    private static final <R> List<R> m10896scanIndexedyVwIW0Q(int[] scanIndexed, R r, Function3<? super Integer, ? super R, ? super UInt, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scanIndexed, "$this$scanIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UIntArray.m9365isEmptyimpl(iArr)) {
+        if (UIntArray.m10005isEmptyimpl(scanIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UIntArray.m9363getSizeimpl(iArr) + 1);
+        ArrayList arrayList = new ArrayList(UIntArray.m10003getSizeimpl(scanIndexed) + 1);
         arrayList.add(r);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(scanIndexed);
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(scanIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scanIndexed-mwnnOCs  reason: not valid java name */
-    private static final <R> List<R> m10255scanIndexedmwnnOCs(long[] jArr, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$scanIndexed$0");
+    private static final <R> List<R> m10895scanIndexedmwnnOCs(long[] scanIndexed, R r, Function3<? super Integer, ? super R, ? super ULong, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scanIndexed, "$this$scanIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (ULongArray.m9444isEmptyimpl(jArr)) {
+        if (ULongArray.m10084isEmptyimpl(scanIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(ULongArray.m9442getSizeimpl(jArr) + 1);
+        ArrayList arrayList = new ArrayList(ULongArray.m10082getSizeimpl(scanIndexed) + 1);
         arrayList.add(r);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(scanIndexed);
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, ULong.m10015boximpl(ULongArray.m10081getsVKNKU(scanIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scanIndexed-3iWJZGE  reason: not valid java name */
-    private static final <R> List<R> m10253scanIndexed3iWJZGE(byte[] bArr, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$scanIndexed$0");
+    private static final <R> List<R> m10893scanIndexed3iWJZGE(byte[] scanIndexed, R r, Function3<? super Integer, ? super R, ? super UByte, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scanIndexed, "$this$scanIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UByteArray.m9286isEmptyimpl(bArr)) {
+        if (UByteArray.m9926isEmptyimpl(scanIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UByteArray.m9284getSizeimpl(bArr) + 1);
+        ArrayList arrayList = new ArrayList(UByteArray.m9924getSizeimpl(scanIndexed) + 1);
         arrayList.add(r);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(scanIndexed);
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(scanIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
     }
 
     /* renamed from: scanIndexed-bzxtMww  reason: not valid java name */
-    private static final <R> List<R> m10254scanIndexedbzxtMww(short[] sArr, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$scanIndexed$0");
+    private static final <R> List<R> m10894scanIndexedbzxtMww(short[] scanIndexed, R r, Function3<? super Integer, ? super R, ? super UShort, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(scanIndexed, "$this$scanIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        if (UShortArray.m9549isEmptyimpl(sArr)) {
+        if (UShortArray.m10189isEmptyimpl(scanIndexed)) {
             return CollectionsKt.listOf(r);
         }
-        ArrayList arrayList = new ArrayList(UShortArray.m9547getSizeimpl(sArr) + 1);
+        ArrayList arrayList = new ArrayList(UShortArray.m10187getSizeimpl(scanIndexed) + 1);
         arrayList.add(r);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            r = operation.invoke(Integer.valueOf(i), r, UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(scanIndexed);
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            r = operation.invoke(Integer.valueOf(i), r, UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(scanIndexed, i)));
             arrayList.add(r);
         }
         return arrayList;
@@ -8630,13 +8630,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumBy-jgv0xPQ  reason: not valid java name */
-    private static final int m10339sumByjgv0xPQ(int[] iArr, Function1<? super UInt, UInt> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumBy$0");
+    private static final int m10979sumByjgv0xPQ(int[] sumBy, Function1<? super UInt, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumBy, "$this$sumBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumBy);
         int i = 0;
-        for (int i2 = 0; i2 < m9363getSizeimpl; i2++) {
-            i = UInt.m9302constructorimpl(i + selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i2))).m9354unboximpl());
+        for (int i2 = 0; i2 < m10003getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumBy, i2))).m9994unboximpl());
         }
         return i;
     }
@@ -8644,13 +8644,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumBy-MShoTSo  reason: not valid java name */
-    private static final int m10338sumByMShoTSo(long[] jArr, Function1<? super ULong, UInt> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumBy$0");
+    private static final int m10978sumByMShoTSo(long[] sumBy, Function1<? super ULong, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumBy, "$this$sumBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumBy);
         int i = 0;
-        for (int i2 = 0; i2 < m9442getSizeimpl; i2++) {
-            i = UInt.m9302constructorimpl(i + selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i2))).m9354unboximpl());
+        for (int i2 = 0; i2 < m10082getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumBy, i2))).m9994unboximpl());
         }
         return i;
     }
@@ -8658,13 +8658,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumBy-JOV_ifY  reason: not valid java name */
-    private static final int m10337sumByJOV_ifY(byte[] bArr, Function1<? super UByte, UInt> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumBy$0");
+    private static final int m10977sumByJOV_ifY(byte[] sumBy, Function1<? super UByte, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumBy, "$this$sumBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumBy);
         int i = 0;
-        for (int i2 = 0; i2 < m9284getSizeimpl; i2++) {
-            i = UInt.m9302constructorimpl(i + selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i2))).m9354unboximpl());
+        for (int i2 = 0; i2 < m9924getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumBy, i2))).m9994unboximpl());
         }
         return i;
     }
@@ -8672,13 +8672,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumBy-xTcfx_M  reason: not valid java name */
-    private static final int m10340sumByxTcfx_M(short[] sArr, Function1<? super UShort, UInt> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumBy$0");
+    private static final int m10980sumByxTcfx_M(short[] sumBy, Function1<? super UShort, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumBy, "$this$sumBy");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumBy);
         int i = 0;
-        for (int i2 = 0; i2 < m9547getSizeimpl; i2++) {
-            i = UInt.m9302constructorimpl(i + selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i2))).m9354unboximpl());
+        for (int i2 = 0; i2 < m10187getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumBy, i2))).m9994unboximpl());
         }
         return i;
     }
@@ -8686,13 +8686,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumByDouble-jgv0xPQ  reason: not valid java name */
-    private static final double m10343sumByDoublejgv0xPQ(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumByDouble$0");
+    private static final double m10983sumByDoublejgv0xPQ(int[] sumByDouble, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumByDouble, "$this$sumByDouble");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumByDouble);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            d += selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue();
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            d += selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumByDouble, i))).doubleValue();
         }
         return d;
     }
@@ -8700,13 +8700,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumByDouble-MShoTSo  reason: not valid java name */
-    private static final double m10342sumByDoubleMShoTSo(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumByDouble$0");
+    private static final double m10982sumByDoubleMShoTSo(long[] sumByDouble, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumByDouble, "$this$sumByDouble");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumByDouble);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            d += selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue();
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            d += selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumByDouble, i))).doubleValue();
         }
         return d;
     }
@@ -8714,13 +8714,13 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumByDouble-JOV_ifY  reason: not valid java name */
-    private static final double m10341sumByDoubleJOV_ifY(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumByDouble$0");
+    private static final double m10981sumByDoubleJOV_ifY(byte[] sumByDouble, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumByDouble, "$this$sumByDouble");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumByDouble);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            d += selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue();
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            d += selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumByDouble, i))).doubleValue();
         }
         return d;
     }
@@ -8728,585 +8728,585 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     @Deprecated(message = "Use sumOf instead.", replaceWith = @ReplaceWith(expression = "this.sumOf(selector)", imports = {}))
     @DeprecatedSinceKotlin(warningSince = "1.5")
     /* renamed from: sumByDouble-xTcfx_M  reason: not valid java name */
-    private static final double m10344sumByDoublexTcfx_M(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumByDouble$0");
+    private static final double m10984sumByDoublexTcfx_M(short[] sumByDouble, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumByDouble, "$this$sumByDouble");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumByDouble);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            d += selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue();
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            d += selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumByDouble, i))).doubleValue();
         }
         return d;
     }
 
-    private static final double sumOfDouble(int[] iArr, Function1<? super UInt, Double> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumOf$0");
+    private static final double sumOfDouble(int[] sumOf, Function1<? super UInt, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumOf);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            d += selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).doubleValue();
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            d += selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumOf, i))).doubleValue();
         }
         return d;
     }
 
-    private static final double sumOfDouble(long[] jArr, Function1<? super ULong, Double> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumOf$0");
+    private static final double sumOfDouble(long[] sumOf, Function1<? super ULong, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumOf);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            d += selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).doubleValue();
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            d += selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumOf, i))).doubleValue();
         }
         return d;
     }
 
-    private static final double sumOfDouble(byte[] bArr, Function1<? super UByte, Double> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumOf$0");
+    private static final double sumOfDouble(byte[] sumOf, Function1<? super UByte, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumOf);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            d += selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).doubleValue();
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            d += selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumOf, i))).doubleValue();
         }
         return d;
     }
 
-    private static final double sumOfDouble(short[] sArr, Function1<? super UShort, Double> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumOf$0");
+    private static final double sumOfDouble(short[] sumOf, Function1<? super UShort, Double> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumOf);
         double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            d += selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).doubleValue();
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            d += selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumOf, i))).doubleValue();
         }
         return d;
     }
 
-    private static final int sumOfInt(int[] iArr, Function1<? super UInt, Integer> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumOf$0");
+    private static final int sumOfInt(int[] sumOf, Function1<? super UInt, Integer> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumOf);
         int i = 0;
-        for (int i2 = 0; i2 < m9363getSizeimpl; i2++) {
-            i += selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i2))).intValue();
+        for (int i2 = 0; i2 < m10003getSizeimpl; i2++) {
+            i += selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumOf, i2))).intValue();
         }
         return i;
     }
 
-    private static final int sumOfInt(long[] jArr, Function1<? super ULong, Integer> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumOf$0");
+    private static final int sumOfInt(long[] sumOf, Function1<? super ULong, Integer> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumOf);
         int i = 0;
-        for (int i2 = 0; i2 < m9442getSizeimpl; i2++) {
-            i += selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i2))).intValue();
+        for (int i2 = 0; i2 < m10082getSizeimpl; i2++) {
+            i += selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumOf, i2))).intValue();
         }
         return i;
     }
 
-    private static final int sumOfInt(byte[] bArr, Function1<? super UByte, Integer> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumOf$0");
+    private static final int sumOfInt(byte[] sumOf, Function1<? super UByte, Integer> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumOf);
         int i = 0;
-        for (int i2 = 0; i2 < m9284getSizeimpl; i2++) {
-            i += selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i2))).intValue();
+        for (int i2 = 0; i2 < m9924getSizeimpl; i2++) {
+            i += selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumOf, i2))).intValue();
         }
         return i;
     }
 
-    private static final int sumOfInt(short[] sArr, Function1<? super UShort, Integer> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumOf$0");
+    private static final int sumOfInt(short[] sumOf, Function1<? super UShort, Integer> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumOf);
         int i = 0;
-        for (int i2 = 0; i2 < m9547getSizeimpl; i2++) {
-            i += selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i2))).intValue();
+        for (int i2 = 0; i2 < m10187getSizeimpl; i2++) {
+            i += selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumOf, i2))).intValue();
         }
         return i;
     }
 
-    private static final long sumOfLong(int[] iArr, Function1<? super UInt, Long> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumOf$0");
+    private static final long sumOfLong(int[] sumOf, Function1<? super UInt, Long> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumOf);
         long j = 0;
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            j += selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).longValue();
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            j += selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumOf, i))).longValue();
         }
         return j;
     }
 
-    private static final long sumOfLong(long[] jArr, Function1<? super ULong, Long> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumOf$0");
+    private static final long sumOfLong(long[] sumOf, Function1<? super ULong, Long> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumOf);
         long j = 0;
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            j += selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).longValue();
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            j += selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumOf, i))).longValue();
         }
         return j;
     }
 
-    private static final long sumOfLong(byte[] bArr, Function1<? super UByte, Long> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumOf$0");
+    private static final long sumOfLong(byte[] sumOf, Function1<? super UByte, Long> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumOf);
         long j = 0;
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            j += selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).longValue();
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            j += selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumOf, i))).longValue();
         }
         return j;
     }
 
-    private static final long sumOfLong(short[] sArr, Function1<? super UShort, Long> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumOf$0");
+    private static final long sumOfLong(short[] sumOf, Function1<? super UShort, Long> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumOf);
         long j = 0;
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            j += selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).longValue();
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            j += selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumOf, i))).longValue();
         }
         return j;
     }
 
-    private static final int sumOfUInt(int[] iArr, Function1<? super UInt, UInt> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumOf$0");
+    private static final int sumOfUInt(int[] sumOf, Function1<? super UInt, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9354unboximpl());
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumOf);
+        int i = 0;
+        for (int i2 = 0; i2 < m10003getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumOf, i2))).m9994unboximpl());
         }
-        return m9302constructorimpl;
+        return i;
     }
 
-    private static final int sumOfUInt(long[] jArr, Function1<? super ULong, UInt> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumOf$0");
+    private static final int sumOfUInt(long[] sumOf, Function1<? super ULong, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9354unboximpl());
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumOf);
+        int i = 0;
+        for (int i2 = 0; i2 < m10082getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumOf, i2))).m9994unboximpl());
         }
-        return m9302constructorimpl;
+        return i;
     }
 
-    private static final int sumOfUInt(byte[] bArr, Function1<? super UByte, UInt> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumOf$0");
+    private static final int sumOfUInt(byte[] sumOf, Function1<? super UByte, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9354unboximpl());
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumOf);
+        int i = 0;
+        for (int i2 = 0; i2 < m9924getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumOf, i2))).m9994unboximpl());
         }
-        return m9302constructorimpl;
+        return i;
     }
 
-    private static final int sumOfUInt(short[] sArr, Function1<? super UShort, UInt> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumOf$0");
+    private static final int sumOfUInt(short[] sumOf, Function1<? super UShort, UInt> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9354unboximpl());
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumOf);
+        int i = 0;
+        for (int i2 = 0; i2 < m10187getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumOf, i2))).m9994unboximpl());
         }
-        return m9302constructorimpl;
+        return i;
     }
 
-    private static final long sumOfULong(int[] iArr, Function1<? super UInt, ULong> selector) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sumOf$0");
+    private static final long sumOfULong(int[] sumOf, Function1<? super UInt, ULong> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m9381constructorimpl = ULong.m9381constructorimpl(0L);
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        for (int i = 0; i < m9363getSizeimpl; i++) {
-            m9381constructorimpl = ULong.m9381constructorimpl(m9381constructorimpl + selector.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i))).m9433unboximpl());
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(sumOf);
+        long j = 0;
+        for (int i = 0; i < m10003getSizeimpl; i++) {
+            j = ULong.m10021constructorimpl(j + selector.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(sumOf, i))).m10073unboximpl());
         }
-        return m9381constructorimpl;
+        return j;
     }
 
-    private static final long sumOfULong(long[] jArr, Function1<? super ULong, ULong> selector) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sumOf$0");
+    private static final long sumOfULong(long[] sumOf, Function1<? super ULong, ULong> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m9381constructorimpl = ULong.m9381constructorimpl(0L);
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        for (int i = 0; i < m9442getSizeimpl; i++) {
-            m9381constructorimpl = ULong.m9381constructorimpl(m9381constructorimpl + selector.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i))).m9433unboximpl());
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(sumOf);
+        long j = 0;
+        for (int i = 0; i < m10082getSizeimpl; i++) {
+            j = ULong.m10021constructorimpl(j + selector.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(sumOf, i))).m10073unboximpl());
         }
-        return m9381constructorimpl;
+        return j;
     }
 
-    private static final long sumOfULong(byte[] bArr, Function1<? super UByte, ULong> selector) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sumOf$0");
+    private static final long sumOfULong(byte[] sumOf, Function1<? super UByte, ULong> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m9381constructorimpl = ULong.m9381constructorimpl(0L);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            m9381constructorimpl = ULong.m9381constructorimpl(m9381constructorimpl + selector.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i))).m9433unboximpl());
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sumOf);
+        long j = 0;
+        for (int i = 0; i < m9924getSizeimpl; i++) {
+            j = ULong.m10021constructorimpl(j + selector.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(sumOf, i))).m10073unboximpl());
         }
-        return m9381constructorimpl;
+        return j;
     }
 
-    private static final long sumOfULong(short[] sArr, Function1<? super UShort, ULong> selector) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sumOf$0");
+    private static final long sumOfULong(short[] sumOf, Function1<? super UShort, ULong> selector) {
+        Intrinsics.checkNotNullParameter(sumOf, "$this$sumOf");
         Intrinsics.checkNotNullParameter(selector, "selector");
-        long m9381constructorimpl = ULong.m9381constructorimpl(0L);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            m9381constructorimpl = ULong.m9381constructorimpl(m9381constructorimpl + selector.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i))).m9433unboximpl());
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sumOf);
+        long j = 0;
+        for (int i = 0; i < m10187getSizeimpl; i++) {
+            j = ULong.m10021constructorimpl(j + selector.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(sumOf, i))).m10073unboximpl());
         }
-        return m9381constructorimpl;
+        return j;
     }
 
     /* renamed from: zip-C-E_24M  reason: not valid java name */
-    public static final <R> List<Pair<UInt, R>> m10375zipCE_24M(int[] iArr, R[] other) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
+    public static final <R> List<Pair<UInt, R>> m11015zipCE_24M(int[] zip, R[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int min = Math.min(UIntArray.m9363getSizeimpl(iArr), other.length);
+        int min = Math.min(UIntArray.m10003getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, i);
-            arrayList.add(TuplesKt.to(UInt.m9296boximpl(m9362getpVg5ArA), other[i]));
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(zip, i);
+            arrayList.add(TuplesKt.to(UInt.m9936boximpl(m10002getpVg5ArA), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-f7H3mmw  reason: not valid java name */
-    public static final <R> List<Pair<ULong, R>> m10389zipf7H3mmw(long[] jArr, R[] other) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
+    public static final <R> List<Pair<ULong, R>> m11029zipf7H3mmw(long[] zip, R[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int min = Math.min(ULongArray.m9442getSizeimpl(jArr), other.length);
+        int min = Math.min(ULongArray.m10082getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, i);
-            arrayList.add(TuplesKt.to(ULong.m9375boximpl(m9441getsVKNKU), other[i]));
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(zip, i);
+            arrayList.add(TuplesKt.to(ULong.m10015boximpl(m10081getsVKNKU), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-nl983wc  reason: not valid java name */
-    public static final <R> List<Pair<UByte, R>> m10394zipnl983wc(byte[] bArr, R[] other) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
+    public static final <R> List<Pair<UByte, R>> m11034zipnl983wc(byte[] zip, R[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int min = Math.min(UByteArray.m9284getSizeimpl(bArr), other.length);
+        int min = Math.min(UByteArray.m9924getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, i);
-            arrayList.add(TuplesKt.to(UByte.m9214boximpl(m9283getw2LRezQ), other[i]));
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(zip, i);
+            arrayList.add(TuplesKt.to(UByte.m9854boximpl(m9923getw2LRezQ), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-uaTIQ5s  reason: not valid java name */
-    public static final <R> List<Pair<UShort, R>> m10395zipuaTIQ5s(short[] sArr, R[] other) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
+    public static final <R> List<Pair<UShort, R>> m11035zipuaTIQ5s(short[] zip, R[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int min = Math.min(UShortArray.m9547getSizeimpl(sArr), other.length);
+        int min = Math.min(UShortArray.m10187getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, i);
-            arrayList.add(TuplesKt.to(UShort.m9482boximpl(m9546getMh2AYeg), other[i]));
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(zip, i);
+            arrayList.add(TuplesKt.to(UShort.m10122boximpl(m10186getMh2AYeg), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-ZjwqOic  reason: not valid java name */
-    private static final <R, V> List<V> m10386zipZjwqOic(int[] iArr, R[] other, Function2<? super UInt, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
+    private static final <R, V> List<V> m11026zipZjwqOic(int[] zip, R[] other, Function2<? super UInt, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UIntArray.m9363getSizeimpl(iArr), other.length);
+        int min = Math.min(UIntArray.m10003getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), other[i]));
+            arrayList.add(transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(zip, i)), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-8LME4QE  reason: not valid java name */
-    private static final <R, V> List<V> m10374zip8LME4QE(long[] jArr, R[] other, Function2<? super ULong, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
+    private static final <R, V> List<V> m11014zip8LME4QE(long[] zip, R[] other, Function2<? super ULong, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(ULongArray.m9442getSizeimpl(jArr), other.length);
+        int min = Math.min(ULongArray.m10082getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), other[i]));
+            arrayList.add(transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(zip, i)), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-LuipOMY  reason: not valid java name */
-    private static final <R, V> List<V> m10382zipLuipOMY(byte[] bArr, R[] other, Function2<? super UByte, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
+    private static final <R, V> List<V> m11022zipLuipOMY(byte[] zip, R[] other, Function2<? super UByte, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UByteArray.m9284getSizeimpl(bArr), other.length);
+        int min = Math.min(UByteArray.m9924getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), other[i]));
+            arrayList.add(transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(zip, i)), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-ePBmRWY  reason: not valid java name */
-    private static final <R, V> List<V> m10388zipePBmRWY(short[] sArr, R[] other, Function2<? super UShort, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
+    private static final <R, V> List<V> m11028zipePBmRWY(short[] zip, R[] other, Function2<? super UShort, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UShortArray.m9547getSizeimpl(sArr), other.length);
+        int min = Math.min(UShortArray.m10187getSizeimpl(zip), other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), other[i]));
+            arrayList.add(transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(zip, i)), other[i]));
         }
         return arrayList;
     }
 
     /* renamed from: zip-HwE9HBo  reason: not valid java name */
-    public static final <R> List<Pair<UInt, R>> m10377zipHwE9HBo(int[] iArr, Iterable<? extends R> other) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
+    public static final <R> List<Pair<UInt, R>> m11017zipHwE9HBo(int[] zip, Iterable<? extends R> other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9363getSizeimpl));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10003getSizeimpl));
         int i = 0;
         for (R r : other) {
-            if (i >= m9363getSizeimpl) {
+            if (i >= m10003getSizeimpl) {
                 break;
             }
-            arrayList.add(TuplesKt.to(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), r));
+            arrayList.add(TuplesKt.to(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(zip, i)), r));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-F7u83W8  reason: not valid java name */
-    public static final <R> List<Pair<ULong, R>> m10376zipF7u83W8(long[] jArr, Iterable<? extends R> other) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
+    public static final <R> List<Pair<ULong, R>> m11016zipF7u83W8(long[] zip, Iterable<? extends R> other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9442getSizeimpl));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10082getSizeimpl));
         int i = 0;
         for (R r : other) {
-            if (i >= m9442getSizeimpl) {
+            if (i >= m10082getSizeimpl) {
                 break;
             }
-            arrayList.add(TuplesKt.to(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), r));
+            arrayList.add(TuplesKt.to(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(zip, i)), r));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-JQknh5Q  reason: not valid java name */
-    public static final <R> List<Pair<UByte, R>> m10380zipJQknh5Q(byte[] bArr, Iterable<? extends R> other) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
+    public static final <R> List<Pair<UByte, R>> m11020zipJQknh5Q(byte[] zip, Iterable<? extends R> other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9284getSizeimpl));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9924getSizeimpl));
         int i = 0;
         for (R r : other) {
-            if (i >= m9284getSizeimpl) {
+            if (i >= m9924getSizeimpl) {
                 break;
             }
-            arrayList.add(TuplesKt.to(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), r));
+            arrayList.add(TuplesKt.to(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(zip, i)), r));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-JGPC0-M  reason: not valid java name */
-    public static final <R> List<Pair<UShort, R>> m10379zipJGPC0M(short[] sArr, Iterable<? extends R> other) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
+    public static final <R> List<Pair<UShort, R>> m11019zipJGPC0M(short[] zip, Iterable<? extends R> other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9547getSizeimpl));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10187getSizeimpl));
         int i = 0;
         for (R r : other) {
-            if (i >= m9547getSizeimpl) {
+            if (i >= m10187getSizeimpl) {
                 break;
             }
-            arrayList.add(TuplesKt.to(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), r));
+            arrayList.add(TuplesKt.to(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(zip, i)), r));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-7znnbtw  reason: not valid java name */
-    private static final <R, V> List<V> m10373zip7znnbtw(int[] iArr, Iterable<? extends R> other, Function2<? super UInt, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
+    private static final <R, V> List<V> m11013zip7znnbtw(int[] zip, Iterable<? extends R> other, Function2<? super UInt, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9363getSizeimpl = UIntArray.m9363getSizeimpl(iArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9363getSizeimpl));
+        int m10003getSizeimpl = UIntArray.m10003getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10003getSizeimpl));
         Iterator<? extends R> it = other.iterator();
         int i = 0;
         while (it.hasNext()) {
             Object obj = (R) it.next();
-            if (i >= m9363getSizeimpl) {
+            if (i >= m10003getSizeimpl) {
                 break;
             }
-            arrayList.add(transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), obj));
+            arrayList.add(transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(zip, i)), obj));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-TUPTUsU  reason: not valid java name */
-    private static final <R, V> List<V> m10384zipTUPTUsU(long[] jArr, Iterable<? extends R> other, Function2<? super ULong, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
+    private static final <R, V> List<V> m11024zipTUPTUsU(long[] zip, Iterable<? extends R> other, Function2<? super ULong, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9442getSizeimpl = ULongArray.m9442getSizeimpl(jArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9442getSizeimpl));
+        int m10082getSizeimpl = ULongArray.m10082getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10082getSizeimpl));
         Iterator<? extends R> it = other.iterator();
         int i = 0;
         while (it.hasNext()) {
             Object obj = (R) it.next();
-            if (i >= m9442getSizeimpl) {
+            if (i >= m10082getSizeimpl) {
                 break;
             }
-            arrayList.add(transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), obj));
+            arrayList.add(transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(zip, i)), obj));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-UCnP4_w  reason: not valid java name */
-    private static final <R, V> List<V> m10385zipUCnP4_w(byte[] bArr, Iterable<? extends R> other, Function2<? super UByte, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
+    private static final <R, V> List<V> m11025zipUCnP4_w(byte[] zip, Iterable<? extends R> other, Function2<? super UByte, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9284getSizeimpl));
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9924getSizeimpl));
         Iterator<? extends R> it = other.iterator();
         int i = 0;
         while (it.hasNext()) {
             Object obj = (R) it.next();
-            if (i >= m9284getSizeimpl) {
+            if (i >= m9924getSizeimpl) {
                 break;
             }
-            arrayList.add(transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), obj));
+            arrayList.add(transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(zip, i)), obj));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-kBb4a-s  reason: not valid java name */
-    private static final <R, V> List<V> m10391zipkBb4as(short[] sArr, Iterable<? extends R> other, Function2<? super UShort, ? super R, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
+    private static final <R, V> List<V> m11031zipkBb4as(short[] zip, Iterable<? extends R> other, Function2<? super UShort, ? super R, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m9547getSizeimpl));
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(zip);
+        ArrayList arrayList = new ArrayList(Math.min(CollectionsKt.collectionSizeOrDefault(other, 10), m10187getSizeimpl));
         Iterator<? extends R> it = other.iterator();
         int i = 0;
         while (it.hasNext()) {
             Object obj = (R) it.next();
-            if (i >= m9547getSizeimpl) {
+            if (i >= m10187getSizeimpl) {
                 break;
             }
-            arrayList.add(transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), obj));
+            arrayList.add(transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(zip, i)), obj));
             i++;
         }
         return arrayList;
     }
 
     /* renamed from: zip-ctEhBpI  reason: not valid java name */
-    public static final List<Pair<UInt, UInt>> m10387zipctEhBpI(int[] iArr, int[] iArr2) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(iArr2, "$v$c$kotlin-UIntArray$-other$0");
-        int min = Math.min(UIntArray.m9363getSizeimpl(iArr), UIntArray.m9363getSizeimpl(iArr2));
+    public static final List<Pair<UInt, UInt>> m11027zipctEhBpI(int[] zip, int[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
+        int min = Math.min(UIntArray.m10003getSizeimpl(zip), UIntArray.m10003getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(TuplesKt.to(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr2, i))));
+            arrayList.add(TuplesKt.to(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(zip, i)), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-us8wMrg  reason: not valid java name */
-    public static final List<Pair<ULong, ULong>> m10396zipus8wMrg(long[] jArr, long[] jArr2) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(jArr2, "$v$c$kotlin-ULongArray$-other$0");
-        int min = Math.min(ULongArray.m9442getSizeimpl(jArr), ULongArray.m9442getSizeimpl(jArr2));
+    public static final List<Pair<ULong, ULong>> m11036zipus8wMrg(long[] zip, long[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
+        int min = Math.min(ULongArray.m10082getSizeimpl(zip), ULongArray.m10082getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(TuplesKt.to(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr2, i))));
+            arrayList.add(TuplesKt.to(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(zip, i)), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-kdPth3s  reason: not valid java name */
-    public static final List<Pair<UByte, UByte>> m10392zipkdPth3s(byte[] bArr, byte[] bArr2) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(bArr2, "$v$c$kotlin-UByteArray$-other$0");
-        int min = Math.min(UByteArray.m9284getSizeimpl(bArr), UByteArray.m9284getSizeimpl(bArr2));
+    public static final List<Pair<UByte, UByte>> m11032zipkdPth3s(byte[] zip, byte[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
+        int min = Math.min(UByteArray.m9924getSizeimpl(zip), UByteArray.m9924getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(TuplesKt.to(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr2, i))));
+            arrayList.add(TuplesKt.to(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(zip, i)), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-mazbYpA  reason: not valid java name */
-    public static final List<Pair<UShort, UShort>> m10393zipmazbYpA(short[] sArr, short[] sArr2) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(sArr2, "$v$c$kotlin-UShortArray$-other$0");
-        int min = Math.min(UShortArray.m9547getSizeimpl(sArr), UShortArray.m9547getSizeimpl(sArr2));
+    public static final List<Pair<UShort, UShort>> m11033zipmazbYpA(short[] zip, short[] other) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
+        int min = Math.min(UShortArray.m10187getSizeimpl(zip), UShortArray.m10187getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(TuplesKt.to(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr2, i))));
+            arrayList.add(TuplesKt.to(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(zip, i)), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-L83TJbI  reason: not valid java name */
-    private static final <V> List<V> m10381zipL83TJbI(int[] iArr, int[] iArr2, Function2<? super UInt, ? super UInt, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(iArr2, "$v$c$kotlin-UIntArray$-other$0");
+    private static final <V> List<V> m11021zipL83TJbI(int[] zip, int[] other, Function2<? super UInt, ? super UInt, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UIntArray.m9363getSizeimpl(iArr), UIntArray.m9363getSizeimpl(iArr2));
+        int min = Math.min(UIntArray.m10003getSizeimpl(zip), UIntArray.m10003getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr2, i))));
+            arrayList.add(transform.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(zip, i)), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-PabeH-Q  reason: not valid java name */
-    private static final <V> List<V> m10383zipPabeHQ(long[] jArr, long[] jArr2, Function2<? super ULong, ? super ULong, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(jArr2, "$v$c$kotlin-ULongArray$-other$0");
+    private static final <V> List<V> m11023zipPabeHQ(long[] zip, long[] other, Function2<? super ULong, ? super ULong, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(ULongArray.m9442getSizeimpl(jArr), ULongArray.m9442getSizeimpl(jArr2));
+        int min = Math.min(ULongArray.m10082getSizeimpl(zip), ULongArray.m10082getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr2, i))));
+            arrayList.add(transform.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(zip, i)), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-JAKpvQM  reason: not valid java name */
-    private static final <V> List<V> m10378zipJAKpvQM(byte[] bArr, byte[] bArr2, Function2<? super UByte, ? super UByte, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(bArr2, "$v$c$kotlin-UByteArray$-other$0");
+    private static final <V> List<V> m11018zipJAKpvQM(byte[] zip, byte[] other, Function2<? super UByte, ? super UByte, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UByteArray.m9284getSizeimpl(bArr), UByteArray.m9284getSizeimpl(bArr2));
+        int min = Math.min(UByteArray.m9924getSizeimpl(zip), UByteArray.m9924getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr2, i))));
+            arrayList.add(transform.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(zip, i)), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(other, i))));
         }
         return arrayList;
     }
 
     /* renamed from: zip-gVVukQo  reason: not valid java name */
-    private static final <V> List<V> m10390zipgVVukQo(short[] sArr, short[] sArr2, Function2<? super UShort, ? super UShort, ? extends V> transform) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$zip$0");
-        Intrinsics.checkNotNullParameter(sArr2, "$v$c$kotlin-UShortArray$-other$0");
+    private static final <V> List<V> m11030zipgVVukQo(short[] zip, short[] other, Function2<? super UShort, ? super UShort, ? extends V> transform) {
+        Intrinsics.checkNotNullParameter(zip, "$this$zip");
+        Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        int min = Math.min(UShortArray.m9547getSizeimpl(sArr), UShortArray.m9547getSizeimpl(sArr2));
+        int min = Math.min(UShortArray.m10187getSizeimpl(zip), UShortArray.m10187getSizeimpl(other));
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(transform.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr2, i))));
+            arrayList.add(transform.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(zip, i)), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(other, i))));
         }
         return arrayList;
     }
@@ -9315,7 +9315,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         Intrinsics.checkNotNullParameter(uIntArr, "<this>");
         int i = 0;
         for (UInt uInt : uIntArr) {
-            i = UInt.m9302constructorimpl(i + uInt.m9354unboximpl());
+            i = UInt.m9942constructorimpl(i + uInt.m9994unboximpl());
         }
         return i;
     }
@@ -9324,7 +9324,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         Intrinsics.checkNotNullParameter(uLongArr, "<this>");
         long j = 0;
         for (ULong uLong : uLongArr) {
-            j = ULong.m9381constructorimpl(j + uLong.m9433unboximpl());
+            j = ULong.m10021constructorimpl(j + uLong.m10073unboximpl());
         }
         return j;
     }
@@ -9333,7 +9333,7 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         Intrinsics.checkNotNullParameter(uByteArr, "<this>");
         int i = 0;
         for (UByte uByte : uByteArr) {
-            i = UInt.m9302constructorimpl(i + UInt.m9302constructorimpl(uByte.m9270unboximpl() & 255));
+            i = UInt.m9942constructorimpl(i + UInt.m9942constructorimpl(uByte.m9910unboximpl() & 255));
         }
         return i;
     }
@@ -9342,52 +9342,52 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
         Intrinsics.checkNotNullParameter(uShortArr, "<this>");
         int i = 0;
         for (UShort uShort : uShortArr) {
-            i = UInt.m9302constructorimpl(i + UInt.m9302constructorimpl(uShort.m9538unboximpl() & UShort.MAX_VALUE));
+            i = UInt.m9942constructorimpl(i + UInt.m9942constructorimpl(uShort.m10178unboximpl() & UShort.MAX_VALUE));
         }
         return i;
     }
 
     /* renamed from: sum--ajY-9A  reason: not valid java name */
-    private static final int m10333sumajY9A(int[] iArr) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$sum$0");
-        return UInt.m9302constructorimpl(ArraysKt.sum(iArr));
+    private static final int m10973sumajY9A(int[] sum) {
+        Intrinsics.checkNotNullParameter(sum, "$this$sum");
+        return UInt.m9942constructorimpl(ArraysKt.sum(sum));
     }
 
     /* renamed from: sum-QwZRm1k  reason: not valid java name */
-    private static final long m10335sumQwZRm1k(long[] jArr) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$sum$0");
-        return ULong.m9381constructorimpl(ArraysKt.sum(jArr));
+    private static final long m10975sumQwZRm1k(long[] sum) {
+        Intrinsics.checkNotNullParameter(sum, "$this$sum");
+        return ULong.m10021constructorimpl(ArraysKt.sum(sum));
     }
 
     /* renamed from: sum-GBYM_sE  reason: not valid java name */
-    private static final int m10334sumGBYM_sE(byte[] bArr) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$sum$0");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9284getSizeimpl = UByteArray.m9284getSizeimpl(bArr);
-        for (int i = 0; i < m9284getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + UInt.m9302constructorimpl(UByteArray.m9283getw2LRezQ(bArr, i) & 255));
+    private static final int m10974sumGBYM_sE(byte[] sum) {
+        Intrinsics.checkNotNullParameter(sum, "$this$sum");
+        int m9924getSizeimpl = UByteArray.m9924getSizeimpl(sum);
+        int i = 0;
+        for (int i2 = 0; i2 < m9924getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + UInt.m9942constructorimpl(UByteArray.m9923getw2LRezQ(sum, i2) & 255));
         }
-        return m9302constructorimpl;
+        return i;
     }
 
     /* renamed from: sum-rL5Bavg  reason: not valid java name */
-    private static final int m10336sumrL5Bavg(short[] sArr) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$sum$0");
-        int m9302constructorimpl = UInt.m9302constructorimpl(0);
-        int m9547getSizeimpl = UShortArray.m9547getSizeimpl(sArr);
-        for (int i = 0; i < m9547getSizeimpl; i++) {
-            m9302constructorimpl = UInt.m9302constructorimpl(m9302constructorimpl + UInt.m9302constructorimpl(UShortArray.m9546getMh2AYeg(sArr, i) & UShort.MAX_VALUE));
+    private static final int m10976sumrL5Bavg(short[] sum) {
+        Intrinsics.checkNotNullParameter(sum, "$this$sum");
+        int m10187getSizeimpl = UShortArray.m10187getSizeimpl(sum);
+        int i = 0;
+        for (int i2 = 0; i2 < m10187getSizeimpl; i2++) {
+            i = UInt.m9942constructorimpl(i + UInt.m9942constructorimpl(UShortArray.m10186getMh2AYeg(sum, i2) & UShort.MAX_VALUE));
         }
-        return m9302constructorimpl;
+        return i;
     }
 
     /* renamed from: indexOfFirst-jgv0xPQ  reason: not valid java name */
-    private static final int m9987indexOfFirstjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$indexOfFirst$0");
+    private static final int m10627indexOfFirstjgv0xPQ(int[] indexOfFirst, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfFirst, "$this$indexOfFirst");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = iArr.length;
+        int length = indexOfFirst.length;
         for (int i = 0; i < length; i++) {
-            if (predicate.invoke(UInt.m9296boximpl(UInt.m9302constructorimpl(iArr[i]))).booleanValue()) {
+            if (predicate.invoke(UInt.m9936boximpl(UInt.m9942constructorimpl(indexOfFirst[i]))).booleanValue()) {
                 return i;
             }
         }
@@ -9395,12 +9395,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfFirst-MShoTSo  reason: not valid java name */
-    private static final int m9986indexOfFirstMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$indexOfFirst$0");
+    private static final int m10626indexOfFirstMShoTSo(long[] indexOfFirst, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfFirst, "$this$indexOfFirst");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = jArr.length;
+        int length = indexOfFirst.length;
         for (int i = 0; i < length; i++) {
-            if (predicate.invoke(ULong.m9375boximpl(ULong.m9381constructorimpl(jArr[i]))).booleanValue()) {
+            if (predicate.invoke(ULong.m10015boximpl(ULong.m10021constructorimpl(indexOfFirst[i]))).booleanValue()) {
                 return i;
             }
         }
@@ -9408,12 +9408,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfFirst-JOV_ifY  reason: not valid java name */
-    private static final int m9985indexOfFirstJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$indexOfFirst$0");
+    private static final int m10625indexOfFirstJOV_ifY(byte[] indexOfFirst, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfFirst, "$this$indexOfFirst");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = bArr.length;
+        int length = indexOfFirst.length;
         for (int i = 0; i < length; i++) {
-            if (predicate.invoke(UByte.m9214boximpl(UByte.m9220constructorimpl(bArr[i]))).booleanValue()) {
+            if (predicate.invoke(UByte.m9854boximpl(UByte.m9860constructorimpl(indexOfFirst[i]))).booleanValue()) {
                 return i;
             }
         }
@@ -9421,12 +9421,12 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfFirst-xTcfx_M  reason: not valid java name */
-    private static final int m9988indexOfFirstxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$indexOfFirst$0");
+    private static final int m10628indexOfFirstxTcfx_M(short[] indexOfFirst, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfFirst, "$this$indexOfFirst");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = sArr.length;
+        int length = indexOfFirst.length;
         for (int i = 0; i < length; i++) {
-            if (predicate.invoke(UShort.m9482boximpl(UShort.m9488constructorimpl(sArr[i]))).booleanValue()) {
+            if (predicate.invoke(UShort.m10122boximpl(UShort.m10128constructorimpl(indexOfFirst[i]))).booleanValue()) {
                 return i;
             }
         }
@@ -9434,14 +9434,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfLast-jgv0xPQ  reason: not valid java name */
-    private static final int m9991indexOfLastjgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$indexOfLast$0");
+    private static final int m10631indexOfLastjgv0xPQ(int[] indexOfLast, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfLast, "$this$indexOfLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = iArr.length - 1;
+        int length = indexOfLast.length - 1;
         if (length >= 0) {
             while (true) {
                 int i = length - 1;
-                if (predicate.invoke(UInt.m9296boximpl(UInt.m9302constructorimpl(iArr[length]))).booleanValue()) {
+                if (predicate.invoke(UInt.m9936boximpl(UInt.m9942constructorimpl(indexOfLast[length]))).booleanValue()) {
                     return length;
                 }
                 if (i < 0) {
@@ -9454,14 +9454,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfLast-MShoTSo  reason: not valid java name */
-    private static final int m9990indexOfLastMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$indexOfLast$0");
+    private static final int m10630indexOfLastMShoTSo(long[] indexOfLast, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfLast, "$this$indexOfLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = jArr.length - 1;
+        int length = indexOfLast.length - 1;
         if (length >= 0) {
             while (true) {
                 int i = length - 1;
-                if (predicate.invoke(ULong.m9375boximpl(ULong.m9381constructorimpl(jArr[length]))).booleanValue()) {
+                if (predicate.invoke(ULong.m10015boximpl(ULong.m10021constructorimpl(indexOfLast[length]))).booleanValue()) {
                     return length;
                 }
                 if (i < 0) {
@@ -9474,14 +9474,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfLast-JOV_ifY  reason: not valid java name */
-    private static final int m9989indexOfLastJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$indexOfLast$0");
+    private static final int m10629indexOfLastJOV_ifY(byte[] indexOfLast, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfLast, "$this$indexOfLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = bArr.length - 1;
+        int length = indexOfLast.length - 1;
         if (length >= 0) {
             while (true) {
                 int i = length - 1;
-                if (predicate.invoke(UByte.m9214boximpl(UByte.m9220constructorimpl(bArr[length]))).booleanValue()) {
+                if (predicate.invoke(UByte.m9854boximpl(UByte.m9860constructorimpl(indexOfLast[length]))).booleanValue()) {
                     return length;
                 }
                 if (i < 0) {
@@ -9494,14 +9494,14 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: indexOfLast-xTcfx_M  reason: not valid java name */
-    private static final int m9992indexOfLastxTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$indexOfLast$0");
+    private static final int m10632indexOfLastxTcfx_M(short[] indexOfLast, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(indexOfLast, "$this$indexOfLast");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        int length = sArr.length - 1;
+        int length = indexOfLast.length - 1;
         if (length >= 0) {
             while (true) {
                 int i = length - 1;
-                if (predicate.invoke(UShort.m9482boximpl(UShort.m9488constructorimpl(sArr[length]))).booleanValue()) {
+                if (predicate.invoke(UShort.m10122boximpl(UShort.m10128constructorimpl(indexOfLast[length]))).booleanValue()) {
                     return length;
                 }
                 if (i < 0) {
@@ -9514,466 +9514,466 @@ public class UArraysKt___UArraysKt extends UArraysKt___UArraysJvmKt {
     }
 
     /* renamed from: dropLastWhile-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m9831dropLastWhilejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$dropLastWhile$0");
+    private static final List<UInt> m10471dropLastWhilejgv0xPQ(int[] dropLastWhile, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropLastWhile, "$this$dropLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(iArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m10347takeqFRl0hI(iArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(dropLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(dropLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10987takeqFRl0hI(dropLastWhile, lastIndex + 1);
             }
         }
         return CollectionsKt.emptyList();
     }
 
     /* renamed from: dropLastWhile-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m9830dropLastWhileMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$dropLastWhile$0");
+    private static final List<ULong> m10470dropLastWhileMShoTSo(long[] dropLastWhile, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropLastWhile, "$this$dropLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(jArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m10348taker7IrZao(jArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(dropLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(dropLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10988taker7IrZao(dropLastWhile, lastIndex + 1);
             }
         }
         return CollectionsKt.emptyList();
     }
 
     /* renamed from: dropLastWhile-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m9829dropLastWhileJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$dropLastWhile$0");
+    private static final List<UByte> m10469dropLastWhileJOV_ifY(byte[] dropLastWhile, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropLastWhile, "$this$dropLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(bArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m10345takePpDY95g(bArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(dropLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(dropLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10985takePpDY95g(dropLastWhile, lastIndex + 1);
             }
         }
         return CollectionsKt.emptyList();
     }
 
     /* renamed from: dropLastWhile-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m9832dropLastWhilexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$dropLastWhile$0");
+    private static final List<UShort> m10472dropLastWhilexTcfx_M(short[] dropLastWhile, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(dropLastWhile, "$this$dropLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(sArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m10346takenggk6HY(sArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(dropLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(dropLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10986takenggk6HY(dropLastWhile, lastIndex + 1);
             }
         }
         return CollectionsKt.emptyList();
     }
 
     /* renamed from: takeLastWhile-jgv0xPQ  reason: not valid java name */
-    private static final List<UInt> m10355takeLastWhilejgv0xPQ(int[] iArr, Function1<? super UInt, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$takeLastWhile$0");
+    private static final List<UInt> m10995takeLastWhilejgv0xPQ(int[] takeLastWhile, Function1<? super UInt, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeLastWhile, "$this$takeLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(iArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m9823dropqFRl0hI(iArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(takeLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(takeLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10463dropqFRl0hI(takeLastWhile, lastIndex + 1);
             }
         }
-        return CollectionsKt.toList(UIntArray.m9355boximpl(iArr));
+        return CollectionsKt.toList(UIntArray.m9995boximpl(takeLastWhile));
     }
 
     /* renamed from: takeLastWhile-MShoTSo  reason: not valid java name */
-    private static final List<ULong> m10354takeLastWhileMShoTSo(long[] jArr, Function1<? super ULong, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$takeLastWhile$0");
+    private static final List<ULong> m10994takeLastWhileMShoTSo(long[] takeLastWhile, Function1<? super ULong, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeLastWhile, "$this$takeLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(jArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m9824dropr7IrZao(jArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(takeLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(takeLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10464dropr7IrZao(takeLastWhile, lastIndex + 1);
             }
         }
-        return CollectionsKt.toList(ULongArray.m9434boximpl(jArr));
+        return CollectionsKt.toList(ULongArray.m10074boximpl(takeLastWhile));
     }
 
     /* renamed from: takeLastWhile-JOV_ifY  reason: not valid java name */
-    private static final List<UByte> m10353takeLastWhileJOV_ifY(byte[] bArr, Function1<? super UByte, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$takeLastWhile$0");
+    private static final List<UByte> m10993takeLastWhileJOV_ifY(byte[] takeLastWhile, Function1<? super UByte, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeLastWhile, "$this$takeLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(bArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m9821dropPpDY95g(bArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(takeLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(takeLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10461dropPpDY95g(takeLastWhile, lastIndex + 1);
             }
         }
-        return CollectionsKt.toList(UByteArray.m9276boximpl(bArr));
+        return CollectionsKt.toList(UByteArray.m9916boximpl(takeLastWhile));
     }
 
     /* renamed from: takeLastWhile-xTcfx_M  reason: not valid java name */
-    private static final List<UShort> m10356takeLastWhilexTcfx_M(short[] sArr, Function1<? super UShort, Boolean> predicate) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$takeLastWhile$0");
+    private static final List<UShort> m10996takeLastWhilexTcfx_M(short[] takeLastWhile, Function1<? super UShort, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(takeLastWhile, "$this$takeLastWhile");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        for (int lastIndex = ArraysKt.getLastIndex(sArr); -1 < lastIndex; lastIndex--) {
-            if (!predicate.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, lastIndex))).booleanValue()) {
-                return UArraysKt.m9822dropnggk6HY(sArr, lastIndex + 1);
+        for (int lastIndex = ArraysKt.getLastIndex(takeLastWhile); -1 < lastIndex; lastIndex--) {
+            if (!predicate.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(takeLastWhile, lastIndex))).booleanValue()) {
+                return UArraysKt.m10462dropnggk6HY(takeLastWhile, lastIndex + 1);
             }
         }
-        return CollectionsKt.toList(UShortArray.m9539boximpl(sArr));
+        return CollectionsKt.toList(UShortArray.m10179boximpl(takeLastWhile));
     }
 
     /* renamed from: shuffle-2D5oskM  reason: not valid java name */
-    public static final void m10258shuffle2D5oskM(int[] iArr, Random random) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$shuffle$0");
+    public static final void m10898shuffle2D5oskM(int[] shuffle, Random random) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
         Intrinsics.checkNotNullParameter(random, "random");
-        for (int lastIndex = ArraysKt.getLastIndex(iArr); lastIndex > 0; lastIndex--) {
+        for (int lastIndex = ArraysKt.getLastIndex(shuffle); lastIndex > 0; lastIndex--) {
             int nextInt = random.nextInt(lastIndex + 1);
-            int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, lastIndex);
-            UIntArray.m9367setVXSXFK8(iArr, lastIndex, UIntArray.m9362getpVg5ArA(iArr, nextInt));
-            UIntArray.m9367setVXSXFK8(iArr, nextInt, m9362getpVg5ArA);
+            int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(shuffle, lastIndex);
+            UIntArray.m10007setVXSXFK8(shuffle, lastIndex, UIntArray.m10002getpVg5ArA(shuffle, nextInt));
+            UIntArray.m10007setVXSXFK8(shuffle, nextInt, m10002getpVg5ArA);
         }
     }
 
     /* renamed from: shuffle-JzugnMA  reason: not valid java name */
-    public static final void m10260shuffleJzugnMA(long[] jArr, Random random) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$shuffle$0");
+    public static final void m10900shuffleJzugnMA(long[] shuffle, Random random) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
         Intrinsics.checkNotNullParameter(random, "random");
-        for (int lastIndex = ArraysKt.getLastIndex(jArr); lastIndex > 0; lastIndex--) {
+        for (int lastIndex = ArraysKt.getLastIndex(shuffle); lastIndex > 0; lastIndex--) {
             int nextInt = random.nextInt(lastIndex + 1);
-            long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, lastIndex);
-            ULongArray.m9446setk8EXiF4(jArr, lastIndex, ULongArray.m9441getsVKNKU(jArr, nextInt));
-            ULongArray.m9446setk8EXiF4(jArr, nextInt, m9441getsVKNKU);
+            long m10081getsVKNKU = ULongArray.m10081getsVKNKU(shuffle, lastIndex);
+            ULongArray.m10086setk8EXiF4(shuffle, lastIndex, ULongArray.m10081getsVKNKU(shuffle, nextInt));
+            ULongArray.m10086setk8EXiF4(shuffle, nextInt, m10081getsVKNKU);
         }
     }
 
     /* renamed from: shuffle-oSF2wD8  reason: not valid java name */
-    public static final void m10262shuffleoSF2wD8(byte[] bArr, Random random) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$shuffle$0");
+    public static final void m10902shuffleoSF2wD8(byte[] shuffle, Random random) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
         Intrinsics.checkNotNullParameter(random, "random");
-        for (int lastIndex = ArraysKt.getLastIndex(bArr); lastIndex > 0; lastIndex--) {
+        for (int lastIndex = ArraysKt.getLastIndex(shuffle); lastIndex > 0; lastIndex--) {
             int nextInt = random.nextInt(lastIndex + 1);
-            byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, lastIndex);
-            UByteArray.m9288setVurrAj0(bArr, lastIndex, UByteArray.m9283getw2LRezQ(bArr, nextInt));
-            UByteArray.m9288setVurrAj0(bArr, nextInt, m9283getw2LRezQ);
+            byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(shuffle, lastIndex);
+            UByteArray.m9928setVurrAj0(shuffle, lastIndex, UByteArray.m9923getw2LRezQ(shuffle, nextInt));
+            UByteArray.m9928setVurrAj0(shuffle, nextInt, m9923getw2LRezQ);
         }
     }
 
     /* renamed from: shuffle-s5X_as8  reason: not valid java name */
-    public static final void m10264shuffles5X_as8(short[] sArr, Random random) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$shuffle$0");
+    public static final void m10904shuffles5X_as8(short[] shuffle, Random random) {
+        Intrinsics.checkNotNullParameter(shuffle, "$this$shuffle");
         Intrinsics.checkNotNullParameter(random, "random");
-        for (int lastIndex = ArraysKt.getLastIndex(sArr); lastIndex > 0; lastIndex--) {
+        for (int lastIndex = ArraysKt.getLastIndex(shuffle); lastIndex > 0; lastIndex--) {
             int nextInt = random.nextInt(lastIndex + 1);
-            short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, lastIndex);
-            UShortArray.m9551set01HTLdE(sArr, lastIndex, UShortArray.m9546getMh2AYeg(sArr, nextInt));
-            UShortArray.m9551set01HTLdE(sArr, nextInt, m9546getMh2AYeg);
+            short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(shuffle, lastIndex);
+            UShortArray.m10191set01HTLdE(shuffle, lastIndex, UShortArray.m10186getMh2AYeg(shuffle, nextInt));
+            UShortArray.m10191set01HTLdE(shuffle, nextInt, m10186getMh2AYeg);
         }
     }
 
     /* renamed from: foldRight-zi1B2BA  reason: not valid java name */
-    private static final <R> R m9927foldRightzi1B2BA(int[] iArr, R r, Function2<? super UInt, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$foldRight$0");
+    private static final <R> R m10567foldRightzi1B2BA(int[] foldRight, R r, Function2<? super UInt, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRight, "$this$foldRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(iArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRight); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(foldRight, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRight-A8wKCXQ  reason: not valid java name */
-    private static final <R> R m9925foldRightA8wKCXQ(long[] jArr, R r, Function2<? super ULong, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$foldRight$0");
+    private static final <R> R m10565foldRightA8wKCXQ(long[] foldRight, R r, Function2<? super ULong, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRight, "$this$foldRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(jArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRight); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(foldRight, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRight-yXmHNn8  reason: not valid java name */
-    private static final <R> R m9926foldRightyXmHNn8(byte[] bArr, R r, Function2<? super UByte, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$foldRight$0");
+    private static final <R> R m10566foldRightyXmHNn8(byte[] foldRight, R r, Function2<? super UByte, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRight, "$this$foldRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(bArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRight); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(foldRight, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRight-zww5nb8  reason: not valid java name */
-    private static final <R> R m9928foldRightzww5nb8(short[] sArr, R r, Function2<? super UShort, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$foldRight$0");
+    private static final <R> R m10568foldRightzww5nb8(short[] foldRight, R r, Function2<? super UShort, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRight, "$this$foldRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(sArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRight); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(foldRight, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRightIndexed-yVwIW0Q  reason: not valid java name */
-    private static final <R> R m9932foldRightIndexedyVwIW0Q(int[] iArr, R r, Function3<? super Integer, ? super UInt, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$foldRightIndexed$0");
+    private static final <R> R m10572foldRightIndexedyVwIW0Q(int[] foldRightIndexed, R r, Function3<? super Integer, ? super UInt, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRightIndexed, "$this$foldRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(iArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(Integer.valueOf(lastIndex), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRightIndexed); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(Integer.valueOf(lastIndex), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(foldRightIndexed, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRightIndexed-mwnnOCs  reason: not valid java name */
-    private static final <R> R m9931foldRightIndexedmwnnOCs(long[] jArr, R r, Function3<? super Integer, ? super ULong, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$foldRightIndexed$0");
+    private static final <R> R m10571foldRightIndexedmwnnOCs(long[] foldRightIndexed, R r, Function3<? super Integer, ? super ULong, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRightIndexed, "$this$foldRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(jArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(Integer.valueOf(lastIndex), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRightIndexed); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(Integer.valueOf(lastIndex), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(foldRightIndexed, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRightIndexed-3iWJZGE  reason: not valid java name */
-    private static final <R> R m9929foldRightIndexed3iWJZGE(byte[] bArr, R r, Function3<? super Integer, ? super UByte, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$foldRightIndexed$0");
+    private static final <R> R m10569foldRightIndexed3iWJZGE(byte[] foldRightIndexed, R r, Function3<? super Integer, ? super UByte, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRightIndexed, "$this$foldRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(bArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(Integer.valueOf(lastIndex), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRightIndexed); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(Integer.valueOf(lastIndex), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(foldRightIndexed, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: foldRightIndexed-bzxtMww  reason: not valid java name */
-    private static final <R> R m9930foldRightIndexedbzxtMww(short[] sArr, R r, Function3<? super Integer, ? super UShort, ? super R, ? extends R> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$foldRightIndexed$0");
+    private static final <R> R m10570foldRightIndexedbzxtMww(short[] foldRightIndexed, R r, Function3<? super Integer, ? super UShort, ? super R, ? extends R> operation) {
+        Intrinsics.checkNotNullParameter(foldRightIndexed, "$this$foldRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        for (int lastIndex = ArraysKt.getLastIndex(sArr); lastIndex >= 0; lastIndex--) {
-            r = operation.invoke(Integer.valueOf(lastIndex), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, lastIndex)), r);
+        for (int lastIndex = ArraysKt.getLastIndex(foldRightIndexed); lastIndex >= 0; lastIndex--) {
+            r = operation.invoke(Integer.valueOf(lastIndex), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(foldRightIndexed, lastIndex)), r);
         }
         return r;
     }
 
     /* renamed from: reduceRight-WyvcNBI  reason: not valid java name */
-    private static final int m10202reduceRightWyvcNBI(int[] iArr, Function2<? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceRight$0");
+    private static final int m10842reduceRightWyvcNBI(int[] reduceRight, Function2<? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceRight, "$this$reduceRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRight);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, lastIndex);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceRight, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9362getpVg5ArA = operation.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(m9362getpVg5ArA)).m9354unboximpl();
+            m10002getpVg5ArA = operation.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceRight, i)), UInt.m9936boximpl(m10002getpVg5ArA)).m9994unboximpl();
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: reduceRight-s8dVfGU  reason: not valid java name */
-    private static final long m10203reduceRights8dVfGU(long[] jArr, Function2<? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceRight$0");
+    private static final long m10843reduceRights8dVfGU(long[] reduceRight, Function2<? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceRight, "$this$reduceRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRight);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, lastIndex);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceRight, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9441getsVKNKU = operation.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(m9441getsVKNKU)).m9433unboximpl();
+            m10081getsVKNKU = operation.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceRight, i)), ULong.m10015boximpl(m10081getsVKNKU)).m10073unboximpl();
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: reduceRight-ELGow60  reason: not valid java name */
-    private static final byte m10201reduceRightELGow60(byte[] bArr, Function2<? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceRight$0");
+    private static final byte m10841reduceRightELGow60(byte[] reduceRight, Function2<? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceRight, "$this$reduceRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRight);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, lastIndex);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceRight, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9283getw2LRezQ = operation.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(m9283getw2LRezQ)).m9270unboximpl();
+            m9923getw2LRezQ = operation.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceRight, i)), UByte.m9854boximpl(m9923getw2LRezQ)).m9910unboximpl();
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: reduceRight-xzaTVY8  reason: not valid java name */
-    private static final short m10204reduceRightxzaTVY8(short[] sArr, Function2<? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceRight$0");
+    private static final short m10844reduceRightxzaTVY8(short[] reduceRight, Function2<? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceRight, "$this$reduceRight");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRight);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, lastIndex);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceRight, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9546getMh2AYeg = operation.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(m9546getMh2AYeg)).m9538unboximpl();
+            m10186getMh2AYeg = operation.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceRight, i)), UShort.m10122boximpl(m10186getMh2AYeg)).m10178unboximpl();
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: reduceRightIndexed-D40WMg8  reason: not valid java name */
-    private static final int m10205reduceRightIndexedD40WMg8(int[] iArr, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceRightIndexed$0");
+    private static final int m10845reduceRightIndexedD40WMg8(int[] reduceRightIndexed, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexed, "$this$reduceRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexed);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, lastIndex);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceRightIndexed, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9362getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(m9362getpVg5ArA)).m9354unboximpl();
+            m10002getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceRightIndexed, i)), UInt.m9936boximpl(m10002getpVg5ArA)).m9994unboximpl();
         }
-        return m9362getpVg5ArA;
+        return m10002getpVg5ArA;
     }
 
     /* renamed from: reduceRightIndexed-z1zDJgo  reason: not valid java name */
-    private static final long m10208reduceRightIndexedz1zDJgo(long[] jArr, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceRightIndexed$0");
+    private static final long m10848reduceRightIndexedz1zDJgo(long[] reduceRightIndexed, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexed, "$this$reduceRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexed);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, lastIndex);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceRightIndexed, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9441getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(m9441getsVKNKU)).m9433unboximpl();
+            m10081getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceRightIndexed, i)), ULong.m10015boximpl(m10081getsVKNKU)).m10073unboximpl();
         }
-        return m9441getsVKNKU;
+        return m10081getsVKNKU;
     }
 
     /* renamed from: reduceRightIndexed-EOyYB1Y  reason: not valid java name */
-    private static final byte m10206reduceRightIndexedEOyYB1Y(byte[] bArr, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceRightIndexed$0");
+    private static final byte m10846reduceRightIndexedEOyYB1Y(byte[] reduceRightIndexed, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexed, "$this$reduceRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexed);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, lastIndex);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceRightIndexed, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9283getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(m9283getw2LRezQ)).m9270unboximpl();
+            m9923getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceRightIndexed, i)), UByte.m9854boximpl(m9923getw2LRezQ)).m9910unboximpl();
         }
-        return m9283getw2LRezQ;
+        return m9923getw2LRezQ;
     }
 
     /* renamed from: reduceRightIndexed-aLgx1Fo  reason: not valid java name */
-    private static final short m10207reduceRightIndexedaLgx1Fo(short[] sArr, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceRightIndexed$0");
+    private static final short m10847reduceRightIndexedaLgx1Fo(short[] reduceRightIndexed, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexed, "$this$reduceRightIndexed");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexed);
         if (lastIndex < 0) {
             throw new UnsupportedOperationException("Empty array can't be reduced.");
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, lastIndex);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceRightIndexed, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9546getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(m9546getMh2AYeg)).m9538unboximpl();
+            m10186getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceRightIndexed, i)), UShort.m10122boximpl(m10186getMh2AYeg)).m10178unboximpl();
         }
-        return m9546getMh2AYeg;
+        return m10186getMh2AYeg;
     }
 
     /* renamed from: reduceRightIndexedOrNull-D40WMg8  reason: not valid java name */
-    private static final UInt m10209reduceRightIndexedOrNullD40WMg8(int[] iArr, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceRightIndexedOrNull$0");
+    private static final UInt m10849reduceRightIndexedOrNullD40WMg8(int[] reduceRightIndexedOrNull, Function3<? super Integer, ? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexedOrNull, "$this$reduceRightIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexedOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, lastIndex);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceRightIndexedOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9362getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(m9362getpVg5ArA)).m9354unboximpl();
+            m10002getpVg5ArA = operation.invoke(Integer.valueOf(i), UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceRightIndexedOrNull, i)), UInt.m9936boximpl(m10002getpVg5ArA)).m9994unboximpl();
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: reduceRightIndexedOrNull-z1zDJgo  reason: not valid java name */
-    private static final ULong m10212reduceRightIndexedOrNullz1zDJgo(long[] jArr, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceRightIndexedOrNull$0");
+    private static final ULong m10852reduceRightIndexedOrNullz1zDJgo(long[] reduceRightIndexedOrNull, Function3<? super Integer, ? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexedOrNull, "$this$reduceRightIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexedOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, lastIndex);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceRightIndexedOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9441getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(m9441getsVKNKU)).m9433unboximpl();
+            m10081getsVKNKU = operation.invoke(Integer.valueOf(i), ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceRightIndexedOrNull, i)), ULong.m10015boximpl(m10081getsVKNKU)).m10073unboximpl();
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: reduceRightIndexedOrNull-EOyYB1Y  reason: not valid java name */
-    private static final UByte m10210reduceRightIndexedOrNullEOyYB1Y(byte[] bArr, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceRightIndexedOrNull$0");
+    private static final UByte m10850reduceRightIndexedOrNullEOyYB1Y(byte[] reduceRightIndexedOrNull, Function3<? super Integer, ? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexedOrNull, "$this$reduceRightIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexedOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, lastIndex);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceRightIndexedOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9283getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(m9283getw2LRezQ)).m9270unboximpl();
+            m9923getw2LRezQ = operation.invoke(Integer.valueOf(i), UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceRightIndexedOrNull, i)), UByte.m9854boximpl(m9923getw2LRezQ)).m9910unboximpl();
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: reduceRightIndexedOrNull-aLgx1Fo  reason: not valid java name */
-    private static final UShort m10211reduceRightIndexedOrNullaLgx1Fo(short[] sArr, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceRightIndexedOrNull$0");
+    private static final UShort m10851reduceRightIndexedOrNullaLgx1Fo(short[] reduceRightIndexedOrNull, Function3<? super Integer, ? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightIndexedOrNull, "$this$reduceRightIndexedOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightIndexedOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, lastIndex);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceRightIndexedOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9546getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(m9546getMh2AYeg)).m9538unboximpl();
+            m10186getMh2AYeg = operation.invoke(Integer.valueOf(i), UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceRightIndexedOrNull, i)), UShort.m10122boximpl(m10186getMh2AYeg)).m10178unboximpl();
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 
     /* renamed from: reduceRightOrNull-WyvcNBI  reason: not valid java name */
-    private static final UInt m10214reduceRightOrNullWyvcNBI(int[] iArr, Function2<? super UInt, ? super UInt, UInt> operation) {
-        Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-$this$reduceRightOrNull$0");
+    private static final UInt m10854reduceRightOrNullWyvcNBI(int[] reduceRightOrNull, Function2<? super UInt, ? super UInt, UInt> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightOrNull, "$this$reduceRightOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(iArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        int m9362getpVg5ArA = UIntArray.m9362getpVg5ArA(iArr, lastIndex);
+        int m10002getpVg5ArA = UIntArray.m10002getpVg5ArA(reduceRightOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9362getpVg5ArA = operation.invoke(UInt.m9296boximpl(UIntArray.m9362getpVg5ArA(iArr, i)), UInt.m9296boximpl(m9362getpVg5ArA)).m9354unboximpl();
+            m10002getpVg5ArA = operation.invoke(UInt.m9936boximpl(UIntArray.m10002getpVg5ArA(reduceRightOrNull, i)), UInt.m9936boximpl(m10002getpVg5ArA)).m9994unboximpl();
         }
-        return UInt.m9296boximpl(m9362getpVg5ArA);
+        return UInt.m9936boximpl(m10002getpVg5ArA);
     }
 
     /* renamed from: reduceRightOrNull-s8dVfGU  reason: not valid java name */
-    private static final ULong m10215reduceRightOrNulls8dVfGU(long[] jArr, Function2<? super ULong, ? super ULong, ULong> operation) {
-        Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-$this$reduceRightOrNull$0");
+    private static final ULong m10855reduceRightOrNulls8dVfGU(long[] reduceRightOrNull, Function2<? super ULong, ? super ULong, ULong> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightOrNull, "$this$reduceRightOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(jArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        long m9441getsVKNKU = ULongArray.m9441getsVKNKU(jArr, lastIndex);
+        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(reduceRightOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9441getsVKNKU = operation.invoke(ULong.m9375boximpl(ULongArray.m9441getsVKNKU(jArr, i)), ULong.m9375boximpl(m9441getsVKNKU)).m9433unboximpl();
+            m10081getsVKNKU = operation.invoke(ULong.m10015boximpl(ULongArray.m10081getsVKNKU(reduceRightOrNull, i)), ULong.m10015boximpl(m10081getsVKNKU)).m10073unboximpl();
         }
-        return ULong.m9375boximpl(m9441getsVKNKU);
+        return ULong.m10015boximpl(m10081getsVKNKU);
     }
 
     /* renamed from: reduceRightOrNull-ELGow60  reason: not valid java name */
-    private static final UByte m10213reduceRightOrNullELGow60(byte[] bArr, Function2<? super UByte, ? super UByte, UByte> operation) {
-        Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-$this$reduceRightOrNull$0");
+    private static final UByte m10853reduceRightOrNullELGow60(byte[] reduceRightOrNull, Function2<? super UByte, ? super UByte, UByte> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightOrNull, "$this$reduceRightOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(bArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        byte m9283getw2LRezQ = UByteArray.m9283getw2LRezQ(bArr, lastIndex);
+        byte m9923getw2LRezQ = UByteArray.m9923getw2LRezQ(reduceRightOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9283getw2LRezQ = operation.invoke(UByte.m9214boximpl(UByteArray.m9283getw2LRezQ(bArr, i)), UByte.m9214boximpl(m9283getw2LRezQ)).m9270unboximpl();
+            m9923getw2LRezQ = operation.invoke(UByte.m9854boximpl(UByteArray.m9923getw2LRezQ(reduceRightOrNull, i)), UByte.m9854boximpl(m9923getw2LRezQ)).m9910unboximpl();
         }
-        return UByte.m9214boximpl(m9283getw2LRezQ);
+        return UByte.m9854boximpl(m9923getw2LRezQ);
     }
 
     /* renamed from: reduceRightOrNull-xzaTVY8  reason: not valid java name */
-    private static final UShort m10216reduceRightOrNullxzaTVY8(short[] sArr, Function2<? super UShort, ? super UShort, UShort> operation) {
-        Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-$this$reduceRightOrNull$0");
+    private static final UShort m10856reduceRightOrNullxzaTVY8(short[] reduceRightOrNull, Function2<? super UShort, ? super UShort, UShort> operation) {
+        Intrinsics.checkNotNullParameter(reduceRightOrNull, "$this$reduceRightOrNull");
         Intrinsics.checkNotNullParameter(operation, "operation");
-        int lastIndex = ArraysKt.getLastIndex(sArr);
+        int lastIndex = ArraysKt.getLastIndex(reduceRightOrNull);
         if (lastIndex < 0) {
             return null;
         }
-        short m9546getMh2AYeg = UShortArray.m9546getMh2AYeg(sArr, lastIndex);
+        short m10186getMh2AYeg = UShortArray.m10186getMh2AYeg(reduceRightOrNull, lastIndex);
         for (int i = lastIndex - 1; i >= 0; i--) {
-            m9546getMh2AYeg = operation.invoke(UShort.m9482boximpl(UShortArray.m9546getMh2AYeg(sArr, i)), UShort.m9482boximpl(m9546getMh2AYeg)).m9538unboximpl();
+            m10186getMh2AYeg = operation.invoke(UShort.m10122boximpl(UShortArray.m10186getMh2AYeg(reduceRightOrNull, i)), UShort.m10122boximpl(m10186getMh2AYeg)).m10178unboximpl();
         }
-        return UShort.m9482boximpl(m9546getMh2AYeg);
+        return UShort.m10122boximpl(m10186getMh2AYeg);
     }
 }

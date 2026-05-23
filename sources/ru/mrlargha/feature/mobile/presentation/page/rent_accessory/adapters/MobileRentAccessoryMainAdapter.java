@@ -220,7 +220,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
             long currentTimeMillis = (j * 1000) - System.currentTimeMillis();
             Job job = this.rentTimerJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1(currentTimeMillis, mobileRentAccessoryItemBinding, this, null), 3, null);
             this.rentTimerJob = launch$default;

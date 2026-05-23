@@ -1,6 +1,7 @@
 package androidx.media3.extractor.mp3;
 
 import androidx.media3.common.C;
+import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
@@ -17,12 +18,20 @@ final class XingSeeker implements Seeker {
     private final long[] tableOfContents;
     private final int xingFrameSize;
 
-    public static XingSeeker create(XingFrame xingFrame, long j) {
+    public static XingSeeker create(XingFrame xingFrame, long j, long j2) {
+        long j3;
         long computeDurationUs = xingFrame.computeDurationUs();
         if (computeDurationUs == C.TIME_UNSET) {
             return null;
         }
-        return new XingSeeker(j, xingFrame.header.frameSize, computeDurationUs, xingFrame.header.bitrate, xingFrame.dataSize, xingFrame.tableOfContents);
+        if (xingFrame.dataSize != -1 && j2 != -1 && xingFrame.dataSize + j != j2) {
+            long j4 = j2 - j;
+            Log.i(TAG, "Data size mismatch between stream (" + j4 + ") and Xing frame (" + xingFrame.dataSize + "), using smaller value.");
+            j3 = Math.min(xingFrame.dataSize, j4);
+        } else {
+            j3 = xingFrame.dataSize;
+        }
+        return new XingSeeker(j, xingFrame.header.frameSize, computeDurationUs, xingFrame.header.bitrate, j3, xingFrame.tableOfContents);
     }
 
     private XingSeeker(long j, int i, long j2, int i2, long j3, long[] jArr) {

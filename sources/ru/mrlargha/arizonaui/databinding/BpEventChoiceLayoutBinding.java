@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class BpEventChoiceLayoutBinding implements ViewBinding {
     public final ConstraintLayout documents;
     private final ConstraintLayout rootView;

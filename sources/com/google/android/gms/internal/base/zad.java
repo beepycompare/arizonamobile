@@ -1,14 +1,18 @@
 package com.google.android.gms.internal.base;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-@Inherited
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.SOURCE)
+import com.google.android.gms.common.Feature;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public @interface zad {
+public final class zad {
+    public static final Feature zaa;
+    public static final Feature zab;
+    public static final Feature[] zac;
+
+    static {
+        Feature feature = new Feature("CLIENT_TELEMETRY", 1L);
+        zaa = feature;
+        Feature feature2 = new Feature("CLIENT_NOTIFICATION_TELEMETRY", 1L);
+        zab = feature2;
+        zac = new Feature[]{feature, feature2};
+    }
 }

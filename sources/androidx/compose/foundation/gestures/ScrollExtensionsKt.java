@@ -12,7 +12,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.jvm.internal.Ref;
 /* compiled from: ScrollExtensions.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a,\u0010\u0000\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u00072\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00070\u0005H\u0086@¢\u0006\u0004\b\t\u0010\n\u001a\u001a\u0010\u000b\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0001H\u0086@¢\u0006\u0002\u0010\f\u001a\u001c\u0010\u000b\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0007H\u0086@¢\u0006\u0004\b\r\u0010\u000e\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\u00022\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0013\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"animateScrollBy", "", "Landroidx/compose/foundation/gestures/ScrollableState;", "value", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(Landroidx/compose/foundation/gestures/ScrollableState;FLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/gestures/Scrollable2DState;", "animateScrollBy-ubNVwUQ", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy", "(Landroidx/compose/foundation/gestures/ScrollableState;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy-d-4ec7I", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopScroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "(Landroidx/compose/foundation/gestures/Scrollable2DState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0086@¢\u0006\u0002\u0010\u0006\u001a,\u0010\u0000\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u00072\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00070\u0005H\u0086@¢\u0006\u0004\b\t\u0010\n\u001a\u001a\u0010\u000b\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0001H\u0086@¢\u0006\u0002\u0010\f\u001a\u001c\u0010\u000b\u001a\u00020\u0007*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0007H\u0086@¢\u0006\u0004\b\r\u0010\u000e\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\u00022\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0013\u001a\u001c\u0010\u000f\u001a\u00020\u0010*\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\u0012H\u0086@¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"animateScrollBy", "", "Landroidx/compose/foundation/gestures/ScrollableState;", "value", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "(Landroidx/compose/foundation/gestures/ScrollableState;FLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/foundation/gestures/Scrollable2DState;", "animateScrollBy-ubNVwUQ", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy", "(Landroidx/compose/foundation/gestures/ScrollableState;FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "scrollBy-d-4ec7I", "(Landroidx/compose/foundation/gestures/Scrollable2DState;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopScroll", "", "scrollPriority", "Landroidx/compose/foundation/MutatePriority;", "(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "(Landroidx/compose/foundation/gestures/Scrollable2DState;Landroidx/compose/foundation/MutatePriority;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScrollExtensionsKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -73,7 +73,7 @@ public final class ScrollExtensionsKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m558animateScrollByubNVwUQ(Scrollable2DState scrollable2DState, long j, AnimationSpec<Offset> animationSpec, Continuation<? super Offset> continuation) {
+    public static final Object m588animateScrollByubNVwUQ(Scrollable2DState scrollable2DState, long j, AnimationSpec<Offset> animationSpec, Continuation<? super Offset> continuation) {
         ScrollExtensionsKt$animateScrollBy$3 scrollExtensionsKt$animateScrollBy$3;
         int i;
         Ref.LongRef longRef;
@@ -88,7 +88,7 @@ public final class ScrollExtensionsKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m4543getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m5119getZeroF1C5BW0();
                     scrollExtensionsKt$animateScrollBy$32.L$0 = longRef2;
                     scrollExtensionsKt$animateScrollBy$32.label = 1;
                     if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$animateScrollBy$4(j, animationSpec, longRef2, null), scrollExtensionsKt$animateScrollBy$32, 1, null) == coroutine_suspended) {
@@ -101,7 +101,7 @@ public final class ScrollExtensionsKt {
                     longRef = (Ref.LongRef) scrollExtensionsKt$animateScrollBy$32.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m4516boximpl(longRef.element);
+                return Offset.m5092boximpl(longRef.element);
             }
         }
         scrollExtensionsKt$animateScrollBy$3 = new ScrollExtensionsKt$animateScrollBy$3(continuation);
@@ -111,15 +111,15 @@ public final class ScrollExtensionsKt {
         i = scrollExtensionsKt$animateScrollBy$322.label;
         if (i != 0) {
         }
-        return Offset.m4516boximpl(longRef.element);
+        return Offset.m5092boximpl(longRef.element);
     }
 
     /* renamed from: animateScrollBy-ubNVwUQ$default  reason: not valid java name */
-    public static /* synthetic */ Object m559animateScrollByubNVwUQ$default(Scrollable2DState scrollable2DState, long j, AnimationSpec animationSpec, Continuation continuation, int i, Object obj) {
+    public static /* synthetic */ Object m589animateScrollByubNVwUQ$default(Scrollable2DState scrollable2DState, long j, AnimationSpec animationSpec, Continuation continuation, int i, Object obj) {
         if ((i & 2) != 0) {
             animationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null);
         }
-        return m558animateScrollByubNVwUQ(scrollable2DState, j, animationSpec, continuation);
+        return m588animateScrollByubNVwUQ(scrollable2DState, j, animationSpec, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -173,7 +173,7 @@ public final class ScrollExtensionsKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m560scrollByd4ec7I(Scrollable2DState scrollable2DState, long j, Continuation<? super Offset> continuation) {
+    public static final Object m590scrollByd4ec7I(Scrollable2DState scrollable2DState, long j, Continuation<? super Offset> continuation) {
         ScrollExtensionsKt$scrollBy$3 scrollExtensionsKt$scrollBy$3;
         int i;
         Ref.LongRef longRef;
@@ -188,7 +188,7 @@ public final class ScrollExtensionsKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m4543getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m5119getZeroF1C5BW0();
                     scrollExtensionsKt$scrollBy$32.L$0 = longRef2;
                     scrollExtensionsKt$scrollBy$32.label = 1;
                     if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$scrollBy$4(longRef2, j, null), scrollExtensionsKt$scrollBy$32, 1, null) == coroutine_suspended) {
@@ -201,7 +201,7 @@ public final class ScrollExtensionsKt {
                     longRef = (Ref.LongRef) scrollExtensionsKt$scrollBy$32.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m4516boximpl(longRef.element);
+                return Offset.m5092boximpl(longRef.element);
             }
         }
         scrollExtensionsKt$scrollBy$3 = new ScrollExtensionsKt$scrollBy$3(continuation);
@@ -211,7 +211,7 @@ public final class ScrollExtensionsKt {
         i = scrollExtensionsKt$scrollBy$322.label;
         if (i != 0) {
         }
-        return Offset.m4516boximpl(longRef.element);
+        return Offset.m5092boximpl(longRef.element);
     }
 
     public static /* synthetic */ Object stopScroll$default(ScrollableState scrollableState, MutatePriority mutatePriority, Continuation continuation, int i, Object obj) {

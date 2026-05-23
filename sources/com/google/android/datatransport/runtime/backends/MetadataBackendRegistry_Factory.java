@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime.backends;
 import android.content.Context;
 import com.google.android.datatransport.runtime.dagger.internal.Factory;
 import javax.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MetadataBackendRegistry_Factory implements Factory<MetadataBackendRegistry> {
     private final Provider<Context> applicationContextProvider;
     private final Provider<CreationContextFactory> creationContextFactoryProvider;

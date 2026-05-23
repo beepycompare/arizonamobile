@@ -80,9 +80,11 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
                 while (jsonReader.hasNext()) {
                     jsonReader.beginArray();
                     K read = this.keyTypeAdapter.read(jsonReader);
-                    if (construct.put(read, this.valueTypeAdapter.read(jsonReader)) != null) {
+                    V read2 = this.valueTypeAdapter.read(jsonReader);
+                    if (construct.containsKey(read)) {
                         throw new JsonSyntaxException("duplicate key: " + read);
                     }
+                    construct.put(read, read2);
                     jsonReader.endArray();
                 }
                 jsonReader.endArray();
@@ -91,10 +93,12 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
             jsonReader.beginObject();
             while (jsonReader.hasNext()) {
                 JsonReaderInternalAccess.INSTANCE.promoteNameToValue(jsonReader);
-                K read2 = this.keyTypeAdapter.read(jsonReader);
-                if (construct.put(read2, this.valueTypeAdapter.read(jsonReader)) != null) {
-                    throw new JsonSyntaxException("duplicate key: " + read2);
+                K read3 = this.keyTypeAdapter.read(jsonReader);
+                V read4 = this.valueTypeAdapter.read(jsonReader);
+                if (construct.containsKey(read3)) {
+                    throw new JsonSyntaxException("duplicate key: " + read3);
                 }
+                construct.put(read3, read4);
             }
             jsonReader.endObject();
             return construct;

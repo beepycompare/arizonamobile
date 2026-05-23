@@ -14,7 +14,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.channels.SendChannel;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: CancelableChannelFlow.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.CancelableChannelFlowKt$cancelableChannelFlow$1", f = "CancelableChannelFlow.kt", i = {}, l = {31}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 final class CancelableChannelFlowKt$cancelableChannelFlow$1<T> extends SuspendLambda implements Function2<SimpleProducerScope<T>, Continuation<? super Unit>, Object> {
@@ -76,7 +76,7 @@ final class CancelableChannelFlowKt$cancelableChannelFlow$1<T> extends SuspendLa
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(SimpleProducerScope simpleProducerScope, Throwable th) {
-        SendChannel.DefaultImpls.close$default(simpleProducerScope, null, 1, null);
+        SendChannel.close$default(simpleProducerScope, null, 1, null);
         return Unit.INSTANCE;
     }
 }

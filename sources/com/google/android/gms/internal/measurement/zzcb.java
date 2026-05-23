@@ -1,6 +1,15 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzcb {
-    public static final zzca zza = zzca.zza;
+public abstract class zzcb extends SQLiteOpenHelper {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzcb(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory, int i) {
+        super(context, true == str.equals("") ? null : str, (SQLiteDatabase.CursorFactory) null, 1);
+        int i2 = zzcd.zza;
+        zzby.zza();
+    }
 }

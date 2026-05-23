@@ -12,7 +12,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.AudioOffloadSupport;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSink.AudioOffloadSupportProvider {
     private static final String OFFLOAD_VARIABLE_RATE_SUPPORTED_KEY = "offloadVariableRateSupported";
     private final Context context;
@@ -44,10 +44,13 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
         }
         try {
             AudioFormat audioFormat = Util.getAudioFormat(format.sampleRate, audioTrackChannelConfig, encoding);
-            if (Build.VERSION.SDK_INT >= 31) {
-                return Api31.getOffloadedPlaybackSupport(audioFormat, audioAttributes.getPlatformAudioAttributes(), isOffloadVariableRateSupported);
+            if (Build.VERSION.SDK_INT >= 33) {
+                return getOffloadedPlaybackSupportV33(audioFormat, audioAttributes.getPlatformAudioAttributes(), isOffloadVariableRateSupported);
             }
-            return Api29.getOffloadedPlaybackSupport(audioFormat, audioAttributes.getPlatformAudioAttributes(), isOffloadVariableRateSupported);
+            if (Build.VERSION.SDK_INT >= 31) {
+                return getOffloadedPlaybackSupportV31(audioFormat, audioAttributes.getPlatformAudioAttributes(), isOffloadVariableRateSupported);
+            }
+            return getOffloadedPlaybackSupportV29(audioFormat, audioAttributes.getPlatformAudioAttributes(), isOffloadVariableRateSupported);
         } catch (IllegalArgumentException unused) {
             return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
@@ -71,30 +74,26 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
         return this.isOffloadVariableRateSupported.booleanValue();
     }
 
-    /* loaded from: classes2.dex */
-    private static final class Api29 {
-        private Api29() {
+    private static AudioOffloadSupport getOffloadedPlaybackSupportV29(AudioFormat audioFormat, android.media.AudioAttributes audioAttributes, boolean z) {
+        if (!AudioManager.isOffloadedPlaybackSupported(audioFormat, audioAttributes)) {
+            return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
-
-        public static AudioOffloadSupport getOffloadedPlaybackSupport(AudioFormat audioFormat, android.media.AudioAttributes audioAttributes, boolean z) {
-            if (!AudioManager.isOffloadedPlaybackSupported(audioFormat, audioAttributes)) {
-                return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
-            }
-            return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsSpeedChangeSupported(z).build();
-        }
+        return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsSpeedChangeSupported(z).build();
     }
 
-    /* loaded from: classes2.dex */
-    private static final class Api31 {
-        private Api31() {
+    private static AudioOffloadSupport getOffloadedPlaybackSupportV31(AudioFormat audioFormat, android.media.AudioAttributes audioAttributes, boolean z) {
+        int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(audioFormat, audioAttributes);
+        if (playbackOffloadSupport == 0) {
+            return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
+        return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsGaplessSupported(Build.VERSION.SDK_INT > 32 && playbackOffloadSupport == 2).setIsSpeedChangeSupported(z).build();
+    }
 
-        public static AudioOffloadSupport getOffloadedPlaybackSupport(AudioFormat audioFormat, android.media.AudioAttributes audioAttributes, boolean z) {
-            int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(audioFormat, audioAttributes);
-            if (playbackOffloadSupport == 0) {
-                return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
-            }
-            return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsGaplessSupported(Build.VERSION.SDK_INT > 32 && playbackOffloadSupport == 2).setIsSpeedChangeSupported(z).build();
+    private static AudioOffloadSupport getOffloadedPlaybackSupportV33(AudioFormat audioFormat, android.media.AudioAttributes audioAttributes, boolean z) {
+        int directPlaybackSupport = AudioManager.getDirectPlaybackSupport(audioFormat, audioAttributes);
+        if ((directPlaybackSupport & 1) == 0) {
+            return AudioOffloadSupport.DEFAULT_UNSUPPORTED;
         }
+        return new AudioOffloadSupport.Builder().setIsFormatSupported(true).setIsGaplessSupported((directPlaybackSupport & 3) == 3).setIsSpeedChangeSupported(z).build();
     }
 }

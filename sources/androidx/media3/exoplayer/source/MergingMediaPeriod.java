@@ -2,6 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
+import androidx.media3.common.StreamKey;
 import androidx.media3.common.TrackGroup;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
@@ -10,6 +11,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.ForwardingTrackSelection;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
@@ -30,6 +32,11 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private final HashMap<TrackGroup, TrackGroup> childTrackGroupByMergedTrackGroup = new HashMap<>();
     private final IdentityHashMap<SampleStream, Integer> streamPeriodIndices = new IdentityHashMap<>();
     private MediaPeriod[] enabledPeriods = new MediaPeriod[0];
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public /* bridge */ /* synthetic */ List getStreamKeys(List list) {
+        return getStreamKeys((List<ExoTrackSelection>) list);
+    }
 
     public MergingMediaPeriod(CompositeSequenceableLoaderFactory compositeSequenceableLoaderFactory, long[] jArr, MediaPeriod... mediaPeriodArr) {
         this.compositeSequenceableLoaderFactory = compositeSequenceableLoaderFactory;
@@ -67,6 +74,11 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         for (MediaPeriod mediaPeriod : this.periods) {
             mediaPeriod.maybeThrowPrepareError();
         }
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public ImmutableList<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
+        return ImmutableList.of();
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
@@ -234,6 +246,20 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         return (mediaPeriodArr.length > 0 ? mediaPeriodArr[0] : this.periods[0]).getAdjustedSeekPositionUs(j, seekParameters);
     }
 
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public long setEndPositionUs(long j) {
+        MediaPeriod[] mediaPeriodArr = this.periods;
+        int length = mediaPeriodArr.length;
+        boolean z = true;
+        for (int i = 0; i < length; i++) {
+            z &= mediaPeriodArr[i].setEndPositionUs(j) == j;
+        }
+        if (z) {
+            return j;
+        }
+        return Long.MIN_VALUE;
+    }
+
     @Override // androidx.media3.exoplayer.source.MediaPeriod.Callback
     public void onPrepared(MediaPeriod mediaPeriod) {
         this.childrenPendingPreparation.remove(mediaPeriod);
@@ -258,7 +284,12 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                     Format[] formatArr = new Format[trackGroup.length];
                     for (int i6 = 0; i6 < trackGroup.length; i6++) {
                         Format format = trackGroup.getFormat(i6);
-                        formatArr[i6] = format.buildUpon().setId(i2 + StringUtils.PROCESS_POSTFIX_DELIMITER + (format.id == null ? "" : format.id)).build();
+                        Format.Builder buildUpon = format.buildUpon();
+                        buildUpon.setId(i2 + StringUtils.PROCESS_POSTFIX_DELIMITER + (format.id == null ? "" : format.id));
+                        if (format.primaryTrackGroupId != null) {
+                            buildUpon.setPrimaryTrackGroupId(i2 + StringUtils.PROCESS_POSTFIX_DELIMITER + format.primaryTrackGroupId);
+                        }
+                        formatArr[i6] = buildUpon.build();
                     }
                     TrackGroup trackGroup2 = new TrackGroup(i2 + StringUtils.PROCESS_POSTFIX_DELIMITER + trackGroup.id, formatArr);
                     this.childTrackGroupByMergedTrackGroup.put(trackGroup2, trackGroup);

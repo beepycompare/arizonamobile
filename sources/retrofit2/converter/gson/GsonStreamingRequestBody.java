@@ -6,7 +6,7 @@ import java.io.IOException;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okio.BufferedSink;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class GsonStreamingRequestBody<T> extends RequestBody {
     private final TypeAdapter<T> adapter;
     private final Gson gson;

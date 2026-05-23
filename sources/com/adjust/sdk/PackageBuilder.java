@@ -5,7 +5,7 @@ import com.adjust.sdk.ActivityHandler;
 import com.facebook.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.appmetrica.analytics.impl.C0739z2;
+import io.appmetrica.analytics.impl.M2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class PackageBuilder {
     public static class ActivityStateCopy {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f240a;
+        public final int f168a;
         public final int b;
         public final int c;
         public final long d;
@@ -53,7 +53,7 @@ public class PackageBuilder {
         public final String g;
 
         public ActivityStateCopy(ActivityState activityState) {
-            this.f240a = -1;
+            this.f168a = -1;
             this.b = -1;
             this.c = -1;
             this.d = -1L;
@@ -63,7 +63,7 @@ public class PackageBuilder {
             if (activityState == null) {
                 return;
             }
-            this.f240a = activityState.eventCount;
+            this.f168a = activityState.eventCount;
             this.b = activityState.sessionCount;
             this.c = activityState.subsessionCount;
             this.d = activityState.timeSpent;
@@ -737,7 +737,7 @@ public class PackageBuilder {
         addDuration(hashMap, "time_spent", this.activityStateCopy.d);
         addString(hashMap, "updated_at", this.deviceInfo.appUpdateTime);
         addString(hashMap, FirebaseAnalytics.Param.CURRENCY, adjustPlayStoreSubscription.getCurrency());
-        addString(hashMap, "product_id", adjustPlayStoreSubscription.getSku());
+        addString(hashMap, FirebaseAnalytics.Param.PRODUCT_ID, adjustPlayStoreSubscription.getSku());
         addString(hashMap, "purchase_token", adjustPlayStoreSubscription.getPurchaseToken());
         addString(hashMap, "receipt", adjustPlayStoreSubscription.getSignature());
         addLong(hashMap, "revenue", adjustPlayStoreSubscription.getPrice());
@@ -873,7 +873,7 @@ public class PackageBuilder {
         addLong(hashMap, "subsession_count", this.activityStateCopy.c);
         addDuration(hashMap, "time_spent", this.activityStateCopy.d);
         addString(hashMap, "updated_at", this.deviceInfo.appUpdateTime);
-        addString(hashMap, "product_id", adjustPlayStorePurchase.getProductId());
+        addString(hashMap, FirebaseAnalytics.Param.PRODUCT_ID, adjustPlayStorePurchase.getProductId());
         addString(hashMap, "purchase_token", adjustPlayStorePurchase.getPurchaseToken());
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
@@ -895,7 +895,7 @@ public class PackageBuilder {
             if (this.internalState.isInForeground()) {
                 addBoolean(map, "foreground", Boolean.TRUE);
             } else {
-                addBoolean(map, C0739z2.g, Boolean.TRUE);
+                addBoolean(map, M2.g, Boolean.TRUE);
             }
         }
         if (this.adjustConfig.playStoreKidsComplianceEnabled) {
@@ -905,10 +905,15 @@ public class PackageBuilder {
         if (i != 2 && i != 0) {
             addBoolean(map, "ff_first_session_delay", Boolean.TRUE);
         }
-        if (this.adjustConfig.isAppSetIdReadingEnabled) {
-            return;
+        if (!this.adjustConfig.isAppSetIdReadingEnabled) {
+            addBoolean(map, "ff_app_set_id_disabled", Boolean.TRUE);
         }
-        addBoolean(map, "ff_app_set_id_disabled", Boolean.TRUE);
+        if (!this.adjustConfig.isFbIdReadingEnabled) {
+            addBoolean(map, "ff_fb_id_disabled", Boolean.TRUE);
+        }
+        if (this.adjustConfig.onRemoteTriggerListener != null) {
+            addBoolean(map, "ff_remote_triggers_callback", Boolean.TRUE);
+        }
     }
 
     private void injectStoreInfoToParameters(Map<String, String> map) {
@@ -920,6 +925,8 @@ public class PackageBuilder {
         addString(map, "store_name_from_system", this.deviceInfo.storeIdFromSystem);
         addString(map, "initiating_package_name", this.deviceInfo.initiatingPackageName);
         addString(map, "originating_package_name", this.deviceInfo.originatingPackageName);
+        addBoolean(map, "is_system_app", this.deviceInfo.isSystemApp);
+        addBoolean(map, "is_updated_system_app", this.deviceInfo.isUpdatedSystemApp);
     }
 
     public ActivityPackage buildAdRevenuePackage(AdjustAdRevenue adjustAdRevenue) {
@@ -1080,7 +1087,7 @@ public class PackageBuilder {
         addString(hashMap, "display_width", this.deviceInfo.displayWidth);
         addString(hashMap, "environment", this.adjustConfig.environment);
         addString(hashMap, "event_callback_id", adjustEvent.callbackId);
-        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f240a);
+        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f168a);
         addString(hashMap, "event_token", adjustEvent.eventToken);
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
@@ -1093,7 +1100,7 @@ public class PackageBuilder {
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
         addString(hashMap, "package_name", this.deviceInfo.packageName);
-        addString(hashMap, "product_id", adjustEvent.productId);
+        addString(hashMap, FirebaseAnalytics.Param.PRODUCT_ID, adjustEvent.productId);
         addString(hashMap, "purchase_token", adjustEvent.purchaseToken);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addDouble(hashMap, "revenue", adjustEvent.revenue);
@@ -1197,7 +1204,7 @@ public class PackageBuilder {
         addLong(hashMap, "subsession_count", this.activityStateCopy.c);
         addDuration(hashMap, "time_spent", this.activityStateCopy.d);
         addString(hashMap, "updated_at", this.deviceInfo.appUpdateTime);
-        addString(hashMap, "product_id", adjustEvent.getProductId());
+        addString(hashMap, FirebaseAnalytics.Param.PRODUCT_ID, adjustEvent.getProductId());
         addString(hashMap, "purchase_token", adjustEvent.getPurchaseToken());
         addString(hashMap, "event_token", adjustEvent.getEventToken());
         addString(hashMap, FirebaseAnalytics.Param.CURRENCY, adjustEvent.getCurrency());

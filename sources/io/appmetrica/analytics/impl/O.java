@@ -1,34 +1,69 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.coreutils.internal.toggle.ConjunctiveCompositeThreadSafeToggle;
+import io.appmetrica.analytics.coreutils.internal.toggle.OuterStateToggle;
+import io.appmetrica.analytics.coreutils.internal.toggle.SavableToggle;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public abstract /* synthetic */ class O {
+public final class O {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f721a;
+    public final C0769zf f691a = Na.k().y();
+    public final SavableToggle b;
+    public final OuterStateToggle c;
+    public final OuterStateToggle d;
+    public final ConjunctiveCompositeThreadSafeToggle e;
+    public final ConjunctiveCompositeThreadSafeToggle f;
+    public final SavableToggle g;
 
-    static {
-        int[] iArr = new int[IdentifierStatus.values().length];
-        f721a = iArr;
-        try {
-            iArr[IdentifierStatus.OK.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public O(Hm hm) {
+        SavableToggle savableToggle = new SavableToggle("advIdsFromClientApi", new N(this));
+        this.b = savableToggle;
+        OuterStateToggle outerStateToggle = new OuterStateToggle(false, "GAID-remote-config");
+        this.c = outerStateToggle;
+        OuterStateToggle outerStateToggle2 = new OuterStateToggle(false, "HOAID-remote-config");
+        this.d = outerStateToggle2;
+        this.e = new ConjunctiveCompositeThreadSafeToggle(CollectionsKt.listOf((Object[]) new SimpleThreadSafeToggle[]{savableToggle, outerStateToggle}), "GAID");
+        this.f = new ConjunctiveCompositeThreadSafeToggle(CollectionsKt.listOf((Object[]) new SimpleThreadSafeToggle[]{savableToggle, outerStateToggle2}), "HOAID");
+        this.g = savableToggle;
+        a(hm);
+    }
+
+    public final void a(Hm hm) {
+        boolean z = hm.p;
+        boolean z2 = false;
+        this.c.update(!z || hm.n.c);
+        OuterStateToggle outerStateToggle = this.d;
+        if (!z || hm.n.e) {
+            z2 = true;
         }
-        try {
-            f721a[IdentifierStatus.FEATURE_DISABLED.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        outerStateToggle.update(z2);
+    }
+
+    public final L a() {
+        M m;
+        M m2;
+        M m3;
+        if (this.e.getActualState()) {
+            m = M.f653a;
+        } else if (this.b.getActualState()) {
+            m = !this.c.getActualState() ? M.c : M.d;
+        } else {
+            m = M.b;
         }
-        try {
-            f721a[IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        if (this.f.getActualState()) {
+            m2 = M.f653a;
+        } else if (this.b.getActualState()) {
+            m2 = !this.d.getActualState() ? M.c : M.d;
+        } else {
+            m2 = M.b;
         }
-        try {
-            f721a[IdentifierStatus.INVALID_ADV_ID.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
+        if (this.g.getActualState()) {
+            m3 = M.f653a;
+        } else {
+            m3 = !this.b.getActualState() ? M.b : M.d;
         }
-        try {
-            f721a[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
+        return new L(m, m2, m3);
     }
 }

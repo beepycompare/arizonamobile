@@ -57,9 +57,9 @@ final class ChipLayoutMeasurePolicy implements MeasurePolicy {
             i++;
         }
         Measurable measurable3 = measurable;
-        final Placeable mo6216measureBRTryo0 = measurable3 != null ? measurable3.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
-        final int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo0);
-        final int heightOrZero = LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo0);
+        final Placeable mo6818measureBRTryo0 = measurable3 != null ? measurable3.mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
+        final int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6818measureBRTryo0);
+        final int heightOrZero = LayoutUtilKt.getHeightOrZero(mo6818measureBRTryo0);
         int size2 = list2.size();
         int i2 = 0;
         while (true) {
@@ -74,20 +74,20 @@ final class ChipLayoutMeasurePolicy implements MeasurePolicy {
             i2++;
         }
         Measurable measurable4 = measurable2;
-        Placeable mo6216measureBRTryo02 = measurable4 != null ? measurable4.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
-        int widthOrZero2 = LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo02);
-        final int heightOrZero2 = LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo02);
+        Placeable mo6818measureBRTryo02 = measurable4 != null ? measurable4.mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null)) : null;
+        int widthOrZero2 = LayoutUtilKt.getWidthOrZero(mo6818measureBRTryo02);
+        final int heightOrZero2 = LayoutUtilKt.getHeightOrZero(mo6818measureBRTryo02);
         int size3 = list2.size();
         for (int i3 = 0; i3 < size3; i3++) {
             Measurable measurable5 = list.get(i3);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable5), Constants.ScionAnalytics.PARAM_LABEL)) {
-                final Placeable mo6216measureBRTryo03 = measurable5.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(j, -(widthOrZero + widthOrZero2), 0, 2, null));
-                final int max = Math.max(heightOrZero, Math.max(mo6216measureBRTryo03.getHeight(), heightOrZero2));
-                final Placeable placeable = mo6216measureBRTryo02;
-                return MeasureScope.layout$default(measureScope, mo6216measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1() { // from class: androidx.compose.material3.ChipLayoutMeasurePolicy$$ExternalSyntheticLambda0
+                final Placeable mo6818measureBRTryo03 = measurable5.mo6818measureBRTryo0(ConstraintsKt.m8133offsetNN6EwU$default(j, -(widthOrZero + widthOrZero2), 0, 2, null));
+                final int max = Math.max(heightOrZero, Math.max(mo6818measureBRTryo03.getHeight(), heightOrZero2));
+                final Placeable placeable = mo6818measureBRTryo02;
+                return MeasureScope.layout$default(measureScope, mo6818measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1() { // from class: androidx.compose.material3.ChipLayoutMeasurePolicy$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        return ChipLayoutMeasurePolicy.measure_3p2s80s$lambda$3(Placeable.this, heightOrZero, max, mo6216measureBRTryo03, widthOrZero, placeable, heightOrZero2, (Placeable.PlacementScope) obj);
+                        return ChipLayoutMeasurePolicy.measure_3p2s80s$lambda$3(Placeable.this, heightOrZero, max, mo6818measureBRTryo03, widthOrZero, placeable, heightOrZero2, (Placeable.PlacementScope) obj);
                     }
                 }, 4, null);
             }

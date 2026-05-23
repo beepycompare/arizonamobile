@@ -4,10 +4,10 @@ import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.window.DialogProperties;
-import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
 import kotlin.Metadata;
@@ -21,7 +21,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class AndroidAlertDialog_androidKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit AlertDialog_Oix01E0$lambda$0(Function0 function0, Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, int i, int i2, int i3, Composer composer, int i4) {
-        m1705AlertDialogOix01E0(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2150AlertDialogOix01E0(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -58,7 +58,7 @@ public final class AndroidAlertDialog_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1705AlertDialogOix01E0(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2150AlertDialogOix01E0(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         int i5;
         Modifier.Companion companion;
@@ -175,10 +175,10 @@ public final class AndroidAlertDialog_androidKt {
                             obj4 = shape;
                         }
                         if ((i & 100663296) == 0) {
-                            i4 |= ((i3 & 256) == 0 && startRestartGroup.changed(j)) ? 67108864 : 33554432;
+                            i4 |= ((i3 & 256) == 0 && startRestartGroup.changed(j)) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                         if ((805306368 & i) == 0) {
-                            i4 |= ((i3 & 512) == 0 && startRestartGroup.changed(j2)) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i4 |= ((i3 & 512) == 0 && startRestartGroup.changed(j2)) ? 536870912 : 268435456;
                         }
                         if ((i2 & 6) == 0) {
                             i10 = i2 | (((i3 & 1024) == 0 && startRestartGroup.changed(j3)) ? 4 : 2);
@@ -249,13 +249,13 @@ public final class AndroidAlertDialog_androidKt {
                                             } else {
                                                 j13 = j5;
                                             }
-                                            float m1697getTonalElevationD9Ej5fM = i11 != 0 ? AlertDialogDefaults.INSTANCE.m1697getTonalElevationD9Ej5fM() : f;
+                                            float m2142getTonalElevationD9Ej5fM = i11 != 0 ? AlertDialogDefaults.INSTANCE.m2142getTonalElevationD9Ej5fM() : f;
                                             if (i13 != 0) {
-                                                f3 = m1697getTonalElevationD9Ej5fM;
+                                                f3 = m2142getTonalElevationD9Ej5fM;
                                                 dialogProperties3 = new DialogProperties(false, false, false, 7, (DefaultConstructorMarker) null);
                                             } else {
                                                 dialogProperties3 = dialogProperties;
-                                                f3 = m1697getTonalElevationD9Ej5fM;
+                                                f3 = m2142getTonalElevationD9Ej5fM;
                                             }
                                             function210 = obj2;
                                             function211 = obj3;
@@ -310,7 +310,7 @@ public final class AndroidAlertDialog_androidKt {
                                             ComposerKt.traceEventStart(i14, i15, i16, "androidx.compose.material3.AlertDialog (AndroidAlertDialog.android.kt:46)");
                                         }
                                         composer2 = startRestartGroup;
-                                        AlertDialogKt.m1700AlertDialogImplwrnwzgE(function0, function2, modifier3, function213, function212, function210, function211, shape3, j14, j16, j15, j17, f3, dialogProperties3, composer2, i15 & 2147483646, i16 & 8190);
+                                        AlertDialogKt.m2145AlertDialogImplwrnwzgE(function0, function2, modifier3, function213, function212, function210, function211, shape3, j14, j16, j15, j17, f3, dialogProperties3, composer2, i15 & 2147483646, i16 & 8190);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }

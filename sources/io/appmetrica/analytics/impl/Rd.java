@@ -1,5 +1,7 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public interface Rd {
-    InterfaceC0126al a(G0 g0);
+public final class Rd {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Zk f744a = Na.k().p();
 }

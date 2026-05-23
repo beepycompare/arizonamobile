@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public abstract class zzgd extends com.google.android.gms.internal.measurement.zzbm implements zzge {
     public zzgd() {

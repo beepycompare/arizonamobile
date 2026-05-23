@@ -2,7 +2,7 @@ package com.google.android.datatransport.cct.internal;
 
 import com.google.firebase.encoders.annotations.Encodable;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_BatchedLogRequest extends BatchedLogRequest {
     private final List<LogRequest> logRequests;
 

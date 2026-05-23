@@ -2,8 +2,8 @@ package androidx.compose.foundation.text.selection;
 
 import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.internal.ClipboardUtils_androidKt;
-import androidx.compose.foundation.text.ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$1;
-import androidx.compose.foundation.text.ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$3;
+import androidx.compose.foundation.text.ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$1;
+import androidx.compose.foundation.text.ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$3;
 import androidx.compose.foundation.text.ContextMenu_androidKt;
 import androidx.compose.foundation.text.LongPressTextDragObserverKt;
 import androidx.compose.foundation.text.TextDragObserver;
@@ -48,7 +48,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineStart;
 /* compiled from: SelectionContainer.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u0007\u001a \u0010\b\u001a\u00020\u00012\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\t\u001aJ\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0014\u0010\f\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u000b\u0012\u0004\u0012\u00020\u00010\r2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u000f¨\u0006\u0010²\u0006\f\u0010\n\u001a\u0004\u0018\u00010\u000bX\u008a\u008e\u0002"}, d2 = {"SelectionContainer", "", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "DisableSelection", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "selection", "Landroidx/compose/foundation/text/selection/Selection;", "onSelectionChange", "Lkotlin/Function1;", "children", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/text/selection/Selection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u0007\u001a \u0010\b\u001a\u00020\u00012\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\t\u001aJ\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0014\u0010\f\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u000b\u0012\u0004\u0012\u00020\u00010\r2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u000f¨\u0006\u0010²\u0006\f\u0010\n\u001a\u0004\u0018\u00010\u000bX\u008a\u008e\u0002"}, d2 = {"SelectionContainer", "", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "DisableSelection", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "selection", "Landroidx/compose/foundation/text/selection/Selection;", "onSelectionChange", "Lkotlin/Function1;", "children", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/text/selection/Selection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionContainerKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -184,7 +184,7 @@ public final class SelectionContainerKt {
         int i3;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-917932944);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SelectionContainer)N(modifier,selection,onSelectionChange,children)95@3856L28,95@3801L83,97@3904L44,99@3985L7,100@4018L24,101@4092L7,103@4136L345,112@4525L7,122@4906L136,134@5420L2468,134@5363L2525,190@7920L106,190@7894L132:SelectionContainer.kt#eksfi3");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SelectionContainer)N(modifier,selection,onSelectionChange,children)95@3856L28,95@3801L83,97@3904L44,99@3985L7,100@4018L24,101@4092L7,103@4136L345,112@4525L7,123@4949L148,135@5475L2468,135@5418L2525,191@7975L106,191@7949L132:SelectionContainer.kt#eksfi3");
         int i4 = i2 & 1;
         if (i4 != 0) {
             i3 = i | 6;
@@ -229,7 +229,7 @@ public final class SelectionContainerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m4739rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665248388, "CC(remember):SelectionContainer.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -242,7 +242,7 @@ public final class SelectionContainerKt {
             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalClipboard());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final Clipboard clipboard = (Clipboard) consume;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)616@28039L68:Effects.kt#9igjgp");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
             Object rememberedValue3 = startRestartGroup.rememberedValue();
             if (rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -278,15 +278,16 @@ public final class SelectionContainerKt {
             selectionManager.setTextToolbar((TextToolbar) consume3);
             selectionManager.setOnSelectionChange(function1);
             selectionManager.setSelection(selection);
-            if (!ComposeFoundationFlags.isSmartSelectionEnabled) {
-                startRestartGroup.startReplaceGroup(-86967598);
-            } else {
+            if (ComposeFoundationFlags.isSmartSelectionEnabled) {
                 startRestartGroup.startReplaceGroup(-82280708);
                 ComposerKt.sourceInformation(startRestartGroup, "118@4777L69");
                 selectionManager.setPlatformSelectionBehaviors$foundation(PlatformSelectionBehaviors_androidKt.rememberPlatformSelectionBehaviors(SelectedTextType.StaticText, null, startRestartGroup, 54));
                 selectionManager.setCoroutineScope$foundation(coroutineScope);
+                startRestartGroup.endReplaceGroup();
+            } else {
+                startRestartGroup.startReplaceGroup(-82105806);
+                startRestartGroup.endReplaceGroup();
             }
-            startRestartGroup.endReplaceGroup();
             new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
@@ -296,17 +297,18 @@ public final class SelectionContainerKt {
                 }
             };
             selectionManager.isNonEmptySelection$foundation();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1197772674, "CC(rememberClipboardEventsHandler)N(onPaste,onCopy,onCut,isEnabled):ClipboardEventsHandler.jvm.kt#423gt5");
-            ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$1 clipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$1 = ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$1.INSTANCE;
-            ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$3 clipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$3 = ClipboardEventsHandler_jvmKt$rememberClipboardEventsHandler$3.INSTANCE;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1264411026, "CC(rememberClipboardEventsHandler)N(onPaste,onCopy,onCut,isEnabled):ClipboardEventsHandler.jvmAndAndroid.kt#423gt5");
+            ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$1 clipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$1 = ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$1.INSTANCE;
+            ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$3 clipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$3 = ClipboardEventsHandler_jvmAndAndroidKt$rememberClipboardEventsHandler$3.INSTANCE;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            selectionManager.setShouldIgnoreCopyKeyEvent$foundation(false);
             SimpleLayoutKt.SimpleLayout(companion.then(selectionManager.getModifier()), ComposableLambdaKt.rememberComposableLambda(-1799563674, true, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     return SelectionContainerKt.SelectionContainer$lambda$9(SelectionManager.this, selectionRegistrarImpl, function2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, 48, 0);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665119814, "CC(remember):SelectionContainer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665118054, "CC(remember):SelectionContainer.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(selectionManager);
             Object rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -351,12 +353,12 @@ public final class SelectionContainerKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectionContainer$lambda$9(final SelectionManager selectionManager, final SelectionRegistrarImpl selectionRegistrarImpl, final Function2 function2, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C135@5455L2427,135@5430L2452:SelectionContainer.kt#eksfi3");
+        ComposerKt.sourceInformation(composer, "C136@5510L2427,136@5485L2452:SelectionContainer.kt#eksfi3");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1799563674, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous> (SelectionContainer.kt:135)");
+                ComposerKt.traceEventStart(-1799563674, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous> (SelectionContainer.kt:136)");
             }
             ContextMenu_androidKt.ContextMenuArea(selectionManager, ComposableLambdaKt.rememberComposableLambda(-284825865, true, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function2
@@ -375,12 +377,12 @@ public final class SelectionContainerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit SelectionContainer$lambda$9$0(SelectionRegistrarImpl selectionRegistrarImpl, final Function2 function2, final SelectionManager selectionManager, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C136@5542L2330,136@5469L2403:SelectionContainer.kt#eksfi3");
+        ComposerKt.sourceInformation(composer, "C137@5597L2330,137@5524L2403:SelectionContainer.kt#eksfi3");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-284825865, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous>.<anonymous> (SelectionContainer.kt:136)");
+                ComposerKt.traceEventStart(-284825865, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous>.<anonymous> (SelectionContainer.kt:137)");
             }
             CompositionLocalKt.CompositionLocalProvider(SelectionRegistrarKt.getLocalSelectionRegistrar().provides(selectionRegistrarImpl), ComposableLambdaKt.rememberComposableLambda(610483127, true, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
@@ -402,27 +404,23 @@ public final class SelectionContainerKt {
         Object obj;
         ResolvedTextDirection direction;
         float endHandleLineHeight;
-        ComposerKt.sourceInformation(composer, "C137@5560L10:SelectionContainer.kt#eksfi3");
+        ComposerKt.sourceInformation(composer, "C138@5615L10:SelectionContainer.kt#eksfi3");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(610483127, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous>.<anonymous>.<anonymous> (SelectionContainer.kt:137)");
+                ComposerKt.traceEventStart(610483127, i, -1, "androidx.compose.foundation.text.selection.SelectionContainer.<anonymous>.<anonymous>.<anonymous> (SelectionContainer.kt:138)");
             }
             function2.invoke(composer, 0);
-            if (!selectionManager.isInTouchMode() || !selectionManager.getHasFocus() || selectionManager.isTriviallyCollapsedSelection$foundation()) {
-                composer.startReplaceGroup(2005806539);
-            } else {
+            if (selectionManager.isInTouchMode() && selectionManager.getHasFocus() && !selectionManager.isTriviallyCollapsedSelection$foundation()) {
                 composer.startReplaceGroup(-1736224054);
                 ComposerKt.sourceInformation(composer, "");
                 Selection selection = selectionManager.getSelection();
-                if (selection == null) {
-                    composer.startReplaceGroup(2011629175);
-                } else {
+                if (selection != null) {
                     composer.startReplaceGroup(2011629176);
                     ComposerKt.sourceInformation(composer, "");
                     composer.startReplaceGroup(-1736222526);
-                    ComposerKt.sourceInformation(composer, "*146@5961L137,151@6197L385,179@7634L127,172@7196L596");
+                    ComposerKt.sourceInformation(composer, "*147@6016L137,152@6252L385,180@7689L127,173@7251L596");
                     List listOf = CollectionsKt.listOf((Object[]) new Boolean[]{true, false});
                     int size = listOf.size();
                     for (int i2 = 0; i2 < size; i2++) {
@@ -492,13 +490,19 @@ public final class SelectionContainerKt {
                             composer.updateRememberedValue(rememberedValue3);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer);
-                        AndroidSelectionHandles_androidKt.m1579SelectionHandlewLIcFTc(selectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0, booleanValue, direction, handlesCrossed, 0L, f, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), composer, 0, 16);
+                        AndroidSelectionHandles_androidKt.m2024SelectionHandlewLIcFTc(selectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0, booleanValue, direction, handlesCrossed, 0L, f, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), composer, 0, 16);
                     }
+                    composer.endReplaceGroup();
+                    composer.endReplaceGroup();
+                } else {
+                    composer.startReplaceGroup(2011629175);
                     composer.endReplaceGroup();
                 }
                 composer.endReplaceGroup();
+            } else {
+                composer.startReplaceGroup(2013602667);
+                composer.endReplaceGroup();
             }
-            composer.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -508,14 +512,14 @@ public final class SelectionContainerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset SelectionContainer$lambda$9$0$0$0$0$1$0(SelectionManager selectionManager) {
-        Offset m1628getStartHandlePosition_m7T9E = selectionManager.m1628getStartHandlePosition_m7T9E();
-        return Offset.m4516boximpl(m1628getStartHandlePosition_m7T9E != null ? m1628getStartHandlePosition_m7T9E.m4537unboximpl() : Offset.Companion.m4542getUnspecifiedF1C5BW0());
+        Offset m2073getStartHandlePosition_m7T9E = selectionManager.m2073getStartHandlePosition_m7T9E();
+        return Offset.m5092boximpl(m2073getStartHandlePosition_m7T9E != null ? m2073getStartHandlePosition_m7T9E.m5113unboximpl() : Offset.Companion.m5118getUnspecifiedF1C5BW0());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset SelectionContainer$lambda$9$0$0$0$0$1$1(SelectionManager selectionManager) {
-        Offset m1627getEndHandlePosition_m7T9E = selectionManager.m1627getEndHandlePosition_m7T9E();
-        return Offset.m4516boximpl(m1627getEndHandlePosition_m7T9E != null ? m1627getEndHandlePosition_m7T9E.m4537unboximpl() : Offset.Companion.m4542getUnspecifiedF1C5BW0());
+        Offset m2072getEndHandlePosition_m7T9E = selectionManager.m2072getEndHandlePosition_m7T9E();
+        return Offset.m5092boximpl(m2072getEndHandlePosition_m7T9E != null ? m2072getEndHandlePosition_m7T9E.m5113unboximpl() : Offset.Companion.m5118getUnspecifiedF1C5BW0());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

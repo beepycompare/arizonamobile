@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: CoroutineFeatureExtensions.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$initVmState$$inlined$launchSafe$default$1", f = "HomeComponent.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {32, 33}, m = "invokeSuspend", n = {"$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1", "$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1"}, nl = {31, 31}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
     int I$1;

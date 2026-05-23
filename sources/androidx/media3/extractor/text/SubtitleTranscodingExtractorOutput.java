@@ -8,7 +8,7 @@ import androidx.media3.extractor.text.SubtitleParser;
 /* loaded from: classes3.dex */
 public final class SubtitleTranscodingExtractorOutput implements ExtractorOutput {
     private final ExtractorOutput delegate;
-    private boolean hasNonTextTracks;
+    private boolean hasTracksOtherThanTextAndMetadata;
     private final SubtitleParser.Factory subtitleParserFactory;
     private final SparseArray<SubtitleTranscodingTrackOutput> textTrackOutputs = new SparseArray<>();
 
@@ -25,8 +25,10 @@ public final class SubtitleTranscodingExtractorOutput implements ExtractorOutput
 
     @Override // androidx.media3.extractor.ExtractorOutput
     public TrackOutput track(int i, int i2) {
+        if (i2 != 3 && i2 != 5) {
+            this.hasTracksOtherThanTextAndMetadata = true;
+        }
         if (i2 != 3) {
-            this.hasNonTextTracks = true;
             return this.delegate.track(i, i2);
         }
         SubtitleTranscodingTrackOutput subtitleTranscodingTrackOutput = this.textTrackOutputs.get(i);
@@ -41,7 +43,7 @@ public final class SubtitleTranscodingExtractorOutput implements ExtractorOutput
     @Override // androidx.media3.extractor.ExtractorOutput
     public void endTracks() {
         this.delegate.endTracks();
-        if (this.hasNonTextTracks) {
+        if (this.hasTracksOtherThanTextAndMetadata) {
             for (int i = 0; i < this.textTrackOutputs.size(); i++) {
                 this.textTrackOutputs.valueAt(i).shouldSuppressParsingErrors(true);
             }

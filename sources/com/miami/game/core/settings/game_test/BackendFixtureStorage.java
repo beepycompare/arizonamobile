@@ -25,7 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 /* compiled from: BackendFixtureStorage.kt */
 @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007J\u0010\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\tH\u0007J\u0016\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0002J\u0018\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u001e\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\r2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u0014\u0010\u0014\u001a\u00020\t*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\tH\u0002R\u000e\u0010\u0017\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/miami/game/core/settings/game_test/BackendFixtureStorage;", "", "<init>", "()V", "load", "Lcom/miami/game/core/settings/game_test/BackendFixture;", "context", "Landroid/content/Context;", "path", "", "parse", "rawFixture", "parseEvents", "", "Lcom/miami/game/core/settings/game_test/BackendFixtureEvent;", "array", "Lorg/json/JSONArray;", "resolveRawFixture", "resolveCandidateFiles", "Ljava/io/File;", "extractRawMessage", "Lorg/json/JSONObject;", "key", "TAG", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class BackendFixtureStorage {
     public static final BackendFixtureStorage INSTANCE = new BackendFixtureStorage();
     private static final String TAG = "BackendFixtureStorage";
@@ -124,7 +124,7 @@ public final class BackendFixtureStorage {
 
     private final String resolveRawFixture(Context context, String str) {
         Object obj;
-        Object m9202constructorimpl;
+        Object m9842constructorimpl;
         Iterator<T> it = resolveCandidateFiles(context, str).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -153,16 +153,16 @@ public final class BackendFixtureStorage {
             BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
             String readText = TextStreamsKt.readText(bufferedReader);
             CloseableKt.closeFinally(bufferedReader, null);
-            m9202constructorimpl = Result.m9202constructorimpl(readText);
+            m9842constructorimpl = Result.m9842constructorimpl(readText);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
+            m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9205exceptionOrNullimpl = Result.m9205exceptionOrNullimpl(m9202constructorimpl);
-        if (m9205exceptionOrNullimpl != null) {
-            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9205exceptionOrNullimpl);
+        Throwable m9845exceptionOrNullimpl = Result.m9845exceptionOrNullimpl(m9842constructorimpl);
+        if (m9845exceptionOrNullimpl != null) {
+            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9845exceptionOrNullimpl);
         }
-        String str2 = Result.m9208isFailureimpl(m9202constructorimpl) ? null : m9202constructorimpl;
+        String str2 = Result.m9848isFailureimpl(m9842constructorimpl) ? null : m9842constructorimpl;
         if (str2 != null) {
             return str2;
         }

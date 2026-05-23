@@ -3,12 +3,12 @@ package androidx.media3.common.audio;
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ToInt16PcmAudioProcessor extends BaseAudioProcessor {
     @Override // androidx.media3.common.audio.BaseAudioProcessor
     public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {
         int i = audioFormat.encoding;
-        if (i == 3 || i == 2 || i == 268435456 || i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4) {
+        if (i == 3 || i == 2 || i == 268435456 || i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4 || i == 1879048192) {
             if (i != 2) {
                 return new AudioProcessor.AudioFormat(audioFormat.sampleRate, audioFormat.channelCount, 2);
             }
@@ -17,9 +17,9 @@ public final class ToInt16PcmAudioProcessor extends BaseAudioProcessor {
         throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e5 A[LOOP:6: B:38:0x00e5->B:39:0x00e7, LOOP_START, PHI: r0 
-      PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:17:0x003f, B:39:0x00e7] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0114 A[LOOP:7: B:42:0x0114->B:43:0x0116, LOOP_START, PHI: r0 
+      PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:18:0x0045, B:43:0x0116] A[DONT_GENERATE, DONT_INLINE]] */
     @Override // androidx.media3.common.audio.AudioProcessor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -37,7 +37,11 @@ public final class ToInt16PcmAudioProcessor extends BaseAudioProcessor {
                         if (i3 != 268435456) {
                             if (i3 != 1342177280) {
                                 if (i3 != 1610612736) {
-                                    throw new IllegalStateException();
+                                    if (i3 == 1879048192) {
+                                        i2 /= 4;
+                                    } else {
+                                        throw new IllegalStateException();
+                                    }
                                 }
                             }
                         }
@@ -80,13 +84,20 @@ public final class ToInt16PcmAudioProcessor extends BaseAudioProcessor {
                                 replaceOutputBuffer.put(byteBuffer.get(position));
                                 position += 3;
                             }
-                        } else if (i != 1610612736) {
-                            throw new IllegalStateException();
-                        } else {
+                        } else if (i == 1610612736) {
                             while (position < limit) {
                                 replaceOutputBuffer.put(byteBuffer.get(position + 1));
                                 replaceOutputBuffer.put(byteBuffer.get(position));
                                 position += 4;
+                            }
+                        } else if (i != 1879048192) {
+                            throw new IllegalStateException();
+                        } else {
+                            while (position < limit) {
+                                short constrainValue2 = (short) (Util.constrainValue(byteBuffer.getDouble(position), -1.0d, 1.0d) * 32767.0d);
+                                replaceOutputBuffer.put((byte) (constrainValue2 & 255));
+                                replaceOutputBuffer.put((byte) ((constrainValue2 >> 8) & 255));
+                                position += 8;
                             }
                         }
                         byteBuffer.position(byteBuffer.limit());

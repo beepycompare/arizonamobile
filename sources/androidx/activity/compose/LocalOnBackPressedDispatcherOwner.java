@@ -14,7 +14,7 @@ import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* compiled from: BackHandler.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0019\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b2\u0006\u0010\f\u001a\u00020\u0006H\u0086\u0004R\u0016\u0010\u0004\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u00068G¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006\r"}, d2 = {"Landroidx/activity/compose/LocalOnBackPressedDispatcherOwner;", "", "<init>", "()V", "LocalOnBackPressedDispatcherOwner", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "current", "getCurrent", "(Landroidx/compose/runtime/Composer;I)Landroidx/activity/OnBackPressedDispatcherOwner;", "provides", "Landroidx/compose/runtime/ProvidedValue;", "dispatcherOwner", "activity-compose"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0019\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b2\u0006\u0010\f\u001a\u00020\u0006H\u0086\u0004R\u0016\u0010\u0004\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u00068G¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006\r"}, d2 = {"Landroidx/activity/compose/LocalOnBackPressedDispatcherOwner;", "", "<init>", "()V", "LocalOnBackPressedDispatcherOwner", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/activity/OnBackPressedDispatcherOwner;", "current", "getCurrent", "(Landroidx/compose/runtime/Composer;I)Landroidx/activity/OnBackPressedDispatcherOwner;", "provides", "Landroidx/compose/runtime/ProvidedValue;", "dispatcherOwner", "activity-compose"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LocalOnBackPressedDispatcherOwner {
     public static final int $stable = 0;
@@ -50,11 +50,10 @@ public final class LocalOnBackPressedDispatcherOwner {
             Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
             ComposerKt.sourceInformationMarkerEnd(composer);
             onBackPressedDispatcherOwner = ViewTreeOnBackPressedDispatcherOwner.get((View) consume2);
-            composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(1208423708);
-            composer.endReplaceGroup();
         }
+        composer.endReplaceGroup();
         if (onBackPressedDispatcherOwner == null) {
             composer.startReplaceGroup(1208428160);
             ComposerKt.sourceInformation(composer, "61@2767L7");
@@ -73,11 +72,10 @@ public final class LocalOnBackPressedDispatcherOwner {
                 }
             }
             onBackPressedDispatcherOwner = (OnBackPressedDispatcherOwner) context;
-            composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(1208423789);
-            composer.endReplaceGroup();
         }
+        composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

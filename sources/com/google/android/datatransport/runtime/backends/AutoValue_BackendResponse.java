@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.backends;
 
 import com.google.android.datatransport.runtime.backends.BackendResponse;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_BackendResponse extends BackendResponse {
     private final long nextRequestWaitMillis;
     private final BackendResponse.Status status;

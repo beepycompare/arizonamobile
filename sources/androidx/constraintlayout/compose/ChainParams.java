@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ChainParams implements HelperParams {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final ChainParams Default = new ChainParams(Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Dp.m7555constructorimpl(0.0f), Float.NaN, null);
+    private static final ChainParams Default = new ChainParams(Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Dp.m8160constructorimpl(0.0f), Float.NaN, null);
     private final float bottomGoneMargin;
     private final float bottomMargin;
     private final float endGoneMargin;
@@ -37,42 +37,42 @@ public final class ChainParams implements HelperParams {
     }
 
     /* renamed from: getStartMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7826getStartMarginD9Ej5fM() {
+    public final float m8431getStartMarginD9Ej5fM() {
         return this.startMargin;
     }
 
     /* renamed from: getTopMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7828getTopMarginD9Ej5fM() {
+    public final float m8433getTopMarginD9Ej5fM() {
         return this.topMargin;
     }
 
     /* renamed from: getEndMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7824getEndMarginD9Ej5fM() {
+    public final float m8429getEndMarginD9Ej5fM() {
         return this.endMargin;
     }
 
     /* renamed from: getBottomMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7822getBottomMarginD9Ej5fM() {
+    public final float m8427getBottomMarginD9Ej5fM() {
         return this.bottomMargin;
     }
 
     /* renamed from: getStartGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7825getStartGoneMarginD9Ej5fM() {
+    public final float m8430getStartGoneMarginD9Ej5fM() {
         return this.startGoneMargin;
     }
 
     /* renamed from: getTopGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7827getTopGoneMarginD9Ej5fM() {
+    public final float m8432getTopGoneMarginD9Ej5fM() {
         return this.topGoneMargin;
     }
 
     /* renamed from: getEndGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7823getEndGoneMarginD9Ej5fM() {
+    public final float m8428getEndGoneMarginD9Ej5fM() {
         return this.endGoneMargin;
     }
 
     /* renamed from: getBottomGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m7821getBottomGoneMarginD9Ej5fM() {
+    public final float m8426getBottomGoneMarginD9Ej5fM() {
         return this.bottomGoneMargin;
     }
 

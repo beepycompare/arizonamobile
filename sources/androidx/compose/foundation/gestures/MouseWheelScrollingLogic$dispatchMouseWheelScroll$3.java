@@ -3,7 +3,6 @@ package androidx.compose.foundation.gestures;
 import androidx.compose.animation.core.AnimationState;
 import androidx.compose.animation.core.AnimationStateKt;
 import androidx.compose.animation.core.AnimationVector1D;
-import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.gestures.MouseWheelScrollingLogic;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -19,9 +18,9 @@ import kotlin.math.MathKt;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: MouseWheelScrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3", f = "MouseWheelScrollable.kt", i = {0, 0, 1, 1, 1, 2, 2}, l = {297, 310, 334}, m = "invokeSuspend", n = {"$this$userScroll", "requiredAnimation", "$this$userScroll", "requiredAnimation", "durationMillis", "$this$userScroll", "requiredAnimation"}, s = {"L$0", "L$1", "L$0", "L$1", "I$0", "L$0", "L$1"}, v = 1)
+/* compiled from: MouseWheelScrollingLogic.kt */
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3", f = "MouseWheelScrollingLogic.kt", i = {0, 0, 1, 1, 1, 2, 2}, l = {228, 241, 261}, m = "invokeSuspend", n = {"$this$userScroll", "requiredAnimation", "$this$userScroll", "requiredAnimation", "durationMillis", "$this$userScroll", "requiredAnimation"}, s = {"L$0", "L$1", "L$0", "L$1", "I$0", "L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Ref.ObjectRef<AnimationState<Float, AnimationVector1D>> $animationState;
@@ -187,20 +186,14 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
     public static final boolean invokeSuspend$lambda$0(MouseWheelScrollingLogic mouseWheelScrollingLogic, Ref.ObjectRef objectRef, Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, Ref.BooleanRef booleanRef, float f) {
         Channel channel;
         MouseWheelScrollingLogic.MouseWheelScrollDelta sumOrNull;
-        float m589toFloatk4lQ0M;
         boolean isLowScrollingDelta;
         channel = mouseWheelScrollingLogic.channel;
         sumOrNull = mouseWheelScrollingLogic.sumOrNull(channel);
         if (sumOrNull != null) {
             mouseWheelScrollingLogic.trackVelocity(sumOrNull);
             objectRef.element = ((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).plus(sumOrNull);
-            if (ComposeFoundationFlags.isMouseWheel1DAxisLockingEnabled) {
-                m589toFloatk4lQ0M = scrollingLogic.m591toSingleAxisDeltaFromAnglek4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m527getValueF1C5BW0()));
-            } else {
-                m589toFloatk4lQ0M = scrollingLogic.m589toFloatk4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m527getValueF1C5BW0()));
-            }
-            floatRef.element = m589toFloatk4lQ0M;
-            isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef.element - f);
+            floatRef.element = scrollingLogic.m623toSingleAxisDeltaFromAnglek4lQ0M(scrollingLogic.m619reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m559getValueF1C5BW0()));
+            isLowScrollingDelta = MouseWheelScrollingLogicKt.isLowScrollingDelta(floatRef.element - f);
             booleanRef.element = !isLowScrollingDelta;
         }
         return sumOrNull != null;

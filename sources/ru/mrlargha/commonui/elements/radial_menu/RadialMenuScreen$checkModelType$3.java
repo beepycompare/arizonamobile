@@ -62,13 +62,13 @@ public final class RadialMenuScreen$checkModelType$3 extends SuspendLambda imple
                 @DebugMetadata(c = "ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$checkModelType$3$1$1", f = "RadialMenuScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
                 /* renamed from: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$checkModelType$3$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes6.dex */
-                public static final class C00841 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C00861 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ int $listSize;
                     int label;
                     final /* synthetic */ RadialMenuScreen this$0;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00841(RadialMenuScreen radialMenuScreen, int i, Continuation<? super C00841> continuation) {
+                    C00861(RadialMenuScreen radialMenuScreen, int i, Continuation<? super C00861> continuation) {
                         super(2, continuation);
                         this.this$0 = radialMenuScreen;
                         this.$listSize = i;
@@ -76,12 +76,12 @@ public final class RadialMenuScreen$checkModelType$3 extends SuspendLambda imple
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C00841(this.this$0, this.$listSize, continuation);
+                        return new C00861(this.this$0, this.$listSize, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C00841) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00861) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -96,14 +96,14 @@ public final class RadialMenuScreen$checkModelType$3 extends SuspendLambda imple
                         Function0 function0 = new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$checkModelType$3$1$1$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                return RadialMenuScreen$checkModelType$3.AnonymousClass1.C00841.invokeSuspend$lambda$0(RadialMenuScreen.this);
+                                return RadialMenuScreen$checkModelType$3.AnonymousClass1.C00861.invokeSuspend$lambda$0(RadialMenuScreen.this);
                             }
                         };
                         final RadialMenuScreen radialMenuScreen2 = this.this$0;
                         radialMenuScreen.setOnBottomBtnListener(i, function0, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$checkModelType$3$1$1$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                return RadialMenuScreen$checkModelType$3.AnonymousClass1.C00841.invokeSuspend$lambda$1(RadialMenuScreen.this);
+                                return RadialMenuScreen$checkModelType$3.AnonymousClass1.C00861.invokeSuspend$lambda$1(RadialMenuScreen.this);
                             }
                         });
                         return Unit.INSTANCE;
@@ -150,7 +150,7 @@ public final class RadialMenuScreen$checkModelType$3 extends SuspendLambda imple
                 }
 
                 public final Object emit(int i2, Continuation<? super Unit> continuation) {
-                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00841(RadialMenuScreen.this, i2, null), continuation);
+                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00861(RadialMenuScreen.this, i2, null), continuation);
                     return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
                 }
             }, this) == coroutine_suspended) {

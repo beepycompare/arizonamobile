@@ -1,71 +1,110 @@
 package io.appmetrica.analytics.networkokhttp.impl;
 
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.coreutils.internal.system.SystemPropertiesHelper;
-import io.appmetrica.analytics.networkapi.NetworkClientSettings;
-import io.appmetrica.analytics.networkokhttp.internal.InterceptorSupplier;
-import java.security.KeyStore;
-import java.util.ArrayList;
+import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
-import kotlin.collections.CollectionsKt;
-import kotlin.text.StringsKt;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
+import okhttp3.Call;
+import okhttp3.Connection;
+import okhttp3.EventListener;
+import okhttp3.Handshake;
 import okhttp3.Protocol;
-/* loaded from: classes5.dex */
-public abstract class d {
-    public static OkHttpClient a(NetworkClientSettings networkClientSettings) {
-        Integer readTimeout;
-        Integer connectTimeout;
-        Interceptor interceptor;
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.protocols(CollectionsKt.listOf((Object[]) new Protocol[]{Protocol.HTTP_2, Protocol.HTTP_1_1}));
-        if (networkClientSettings.getReadTimeout() != null) {
-            builder.readTimeout(readTimeout.intValue(), TimeUnit.MILLISECONDS);
+import okhttp3.Request;
+/* loaded from: classes6.dex */
+public final class d extends EventListener {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final TimeProvider f1380a;
+    public long b;
+    public long c;
+    public long d;
+    public long e;
+    public long f;
+    public long g;
+    public long h;
+    public long i;
+    public long j;
+    public String k;
+    public boolean l;
+
+    public d(TimeProvider timeProvider) {
+        this.f1380a = timeProvider;
+    }
+
+    public static Long a(long j, long j2) {
+        if (j <= 0 || j2 <= 0) {
+            return null;
         }
-        if (networkClientSettings.getConnectTimeout() != null) {
-            builder.connectTimeout(connectTimeout.intValue(), TimeUnit.MILLISECONDS);
+        return Long.valueOf(j2 - j);
+    }
+
+    @Override // okhttp3.EventListener
+    public final void callFailed(Call call, IOException iOException) {
+        long currentTimeMillis = this.f1380a.currentTimeMillis();
+        if (this.b > 0 && this.c == 0) {
+            this.c = currentTimeMillis;
         }
-        Boolean instanceFollowRedirects = networkClientSettings.getInstanceFollowRedirects();
-        if (instanceFollowRedirects != null) {
-            builder.followRedirects(instanceFollowRedirects.booleanValue());
+        if (this.d > 0 && this.e == 0) {
+            this.e = currentTimeMillis;
         }
-        try {
-            String readSystemProperty = SystemPropertiesHelper.readSystemProperty("debug.yndx.iaa.okhttp.mock");
-            InterceptorSupplier interceptorSupplier = StringsKt.isBlank(readSystemProperty) ? null : (InterceptorSupplier) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor(readSystemProperty, InterceptorSupplier.class);
-            if (interceptorSupplier != null && (interceptor = interceptorSupplier.get()) != null) {
-                builder.addInterceptor(interceptor);
-            }
-        } catch (Throwable unused) {
+        if (this.f > 0 && this.g == 0) {
+            this.g = currentTimeMillis;
         }
-        SSLSocketFactory sslSocketFactory = networkClientSettings.getSslSocketFactory();
-        if (sslSocketFactory != null) {
-            try {
-                TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-                trustManagerFactory.init((KeyStore) null);
-                TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
-                ArrayList arrayList = new ArrayList();
-                for (TrustManager trustManager : trustManagers) {
-                    if (trustManager instanceof X509TrustManager) {
-                        arrayList.add(trustManager);
-                    }
-                }
-                X509TrustManager x509TrustManager = (X509TrustManager) CollectionsKt.firstOrNull((List<? extends Object>) arrayList);
-                if (x509TrustManager != null) {
-                    builder.sslSocketFactory(sslSocketFactory, x509TrustManager);
-                }
-            } catch (Throwable unused2) {
-            }
+        if (this.i <= 0 || this.j != 0) {
+            return;
         }
-        Boolean useCaches = networkClientSettings.getUseCaches();
-        if (useCaches != null && !useCaches.booleanValue()) {
-            builder.cache(null);
-        }
-        return builder.build();
+        this.j = currentTimeMillis;
+    }
+
+    @Override // okhttp3.EventListener
+    public final void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
+        this.e = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void connectStart(Call call, InetSocketAddress inetSocketAddress, Proxy proxy) {
+        this.d = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void connectionAcquired(Call call, Connection connection) {
+        this.l = this.d == 0;
+        this.k = connection.protocol().toString();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void dnsEnd(Call call, String str, List list) {
+        this.c = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void dnsStart(Call call, String str) {
+        this.b = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void requestHeadersEnd(Call call, Request request) {
+        this.h = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void responseBodyEnd(Call call, long j) {
+        this.j = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void responseHeadersStart(Call call) {
+        this.i = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void secureConnectEnd(Call call, Handshake handshake) {
+        this.g = this.f1380a.currentTimeMillis();
+    }
+
+    @Override // okhttp3.EventListener
+    public final void secureConnectStart(Call call) {
+        this.f = this.f1380a.currentTimeMillis();
     }
 }

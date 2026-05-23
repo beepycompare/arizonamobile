@@ -28,14 +28,14 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ScrollBar.kt */
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0007\u001aC\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\tH\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a&\u0010\r\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u000e\u001a\u00020\t2\b\b\u0002\u0010\u000f\u001a\u00020\t¨\u0006\u0010"}, d2 = {"verticalColumnScrollbar", "Landroidx/compose/ui/Modifier;", "scrollState", "Landroidx/compose/foundation/ScrollState;", "width", "Landroidx/compose/ui/unit/Dp;", "showScrollBarTrack", "", "scrollBarCornerRadius", "", "endPadding", "verticalColumnScrollbar-osbwsH8", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;FZFFLandroidx/compose/runtime/Composer;II)Landroidx/compose/ui/Modifier;", "fadingTopBottomEdgesSimplified", "topFadePercentage", "bottomFadePercentage", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes5.dex */
 public final class ScrollBarKt {
     /* renamed from: verticalColumnScrollbar-osbwsH8  reason: not valid java name */
-    public static final Modifier m9084verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
+    public static final Modifier m9722verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
         Intrinsics.checkNotNullParameter(verticalColumnScrollbar, "$this$verticalColumnScrollbar");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
         ComposerKt.sourceInformationMarkerStart(composer, 2015743295, "C(verticalColumnScrollbar)N(scrollState,width:c#ui.unit.Dp,showScrollBarTrack,scrollBarCornerRadius,endPadding)27@975L1364:ScrollBar.kt#8aq8qr");
-        final float m7555constructorimpl = (i2 & 2) != 0 ? Dp.m7555constructorimpl(4.0f) : f;
+        final float m8160constructorimpl = (i2 & 2) != 0 ? Dp.m8160constructorimpl(4.0f) : f;
         boolean z2 = true;
         final boolean z3 = (i2 & 4) != 0 ? true : z;
         final float f4 = (i2 & 8) != 0 ? 4.0f : f2;
@@ -45,7 +45,7 @@ public final class ScrollBarKt {
         }
         ComposerKt.sourceInformationMarkerStart(composer, 99064979, "CC(remember):ScrollBar.kt#9igjgp");
         boolean z4 = ((((i & 112) ^ 48) > 32 && composer.changed(scrollState)) || (i & 48) == 32) | ((((i & 7168) ^ 3072) > 2048 && composer.changed(z3)) || (i & 3072) == 2048) | ((((57344 & i) ^ 24576) > 16384 && composer.changed(f4)) || (i & 24576) == 16384) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(f5)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
-        if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(m7555constructorimpl)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
+        if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(m8160constructorimpl)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
             z2 = false;
         }
         boolean z5 = z4 | z2;
@@ -55,7 +55,7 @@ public final class ScrollBarKt {
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit verticalColumnScrollbar_osbwsH8$lambda$0$0;
-                    verticalColumnScrollbar_osbwsH8$lambda$0$0 = ScrollBarKt.verticalColumnScrollbar_osbwsH8$lambda$0$0(ScrollState.this, z3, f4, f5, m7555constructorimpl, (ContentDrawScope) obj);
+                    verticalColumnScrollbar_osbwsH8$lambda$0$0 = ScrollBarKt.verticalColumnScrollbar_osbwsH8$lambda$0$0(ScrollState.this, z3, f4, f5, m8160constructorimpl, (ContentDrawScope) obj);
                     return verticalColumnScrollbar_osbwsH8$lambda$0$0;
                 }
             };
@@ -77,7 +77,7 @@ public final class ScrollBarKt {
         long j;
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawWithContent.mo5346getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawWithContent.mo5922getSizeNHjbRc() & 4294967295L));
         float maxValue = scrollState.getMaxValue() + intBitsToFloat;
         if (maxValue <= intBitsToFloat) {
             return Unit.INSTANCE;
@@ -87,17 +87,17 @@ public final class ScrollBarKt {
         if (z) {
             c = 1;
             j = 4294967295L;
-            DrawScope.m5341drawRoundRectZuiqVtQ$default(drawWithContent, Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(ColorKt.Color(2570671230L)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null), Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawWithContent.mo5346getSizeNHjbRc() >> 32)) - f2) << 32)), Size.m4587constructorimpl((Float.floatToRawIntBits(drawWithContent.mo405toPx0680j_4(f3)) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 240, null);
+            DrawScope.m5917drawRoundRectZuiqVtQ$default(drawWithContent, Brush.Companion.m5297linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5338boximpl(ColorKt.Color(2570671230L)), Color.m5338boximpl(Color.Companion.m5383getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null), Offset.m5095constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawWithContent.mo5922getSizeNHjbRc() >> 32)) - f2) << 32)), Size.m5163constructorimpl((Float.floatToRawIntBits(drawWithContent.mo434toPx0680j_4(f3)) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 240, null);
         } else {
             c = 1;
             j = 4294967295L;
         }
-        long m4481constructorimpl = CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & j));
+        long m5057constructorimpl = CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & j));
         Brush.Companion companion = Brush.Companion;
         Color[] colorArr = new Color[2];
-        colorArr[0] = Color.m4762boximpl(ColorKt.Color(4293206357L));
-        colorArr[c] = Color.m4762boximpl(ColorKt.Color(4294474909L));
-        DrawScope.m5341drawRoundRectZuiqVtQ$default(drawWithContent, Brush.Companion.m4721linearGradientmHitzGk$default(companion, CollectionsKt.listOf((Object[]) colorArr), 0L, 0L, 0, 14, (Object) null), Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawWithContent.mo5346getSizeNHjbRc() >> 32)) - f2) << 32) | (Float.floatToRawIntBits(value) & j)), Size.m4587constructorimpl((Float.floatToRawIntBits(drawWithContent.mo405toPx0680j_4(f3)) << 32) | (Float.floatToRawIntBits(f4) & j)), m4481constructorimpl, 0.0f, null, null, 0, 240, null);
+        colorArr[0] = Color.m5338boximpl(ColorKt.Color(4293206357L));
+        colorArr[c] = Color.m5338boximpl(ColorKt.Color(4294474909L));
+        DrawScope.m5917drawRoundRectZuiqVtQ$default(drawWithContent, Brush.Companion.m5297linearGradientmHitzGk$default(companion, CollectionsKt.listOf((Object[]) colorArr), 0L, 0L, 0, 14, (Object) null), Offset.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (drawWithContent.mo5922getSizeNHjbRc() >> 32)) - f2) << 32) | (Float.floatToRawIntBits(value) & j)), Size.m5163constructorimpl((Float.floatToRawIntBits(drawWithContent.mo434toPx0680j_4(f3)) << 32) | (Float.floatToRawIntBits(f4) & j)), m5057constructorimpl, 0.0f, null, null, 0, 240, null);
         return Unit.INSTANCE;
     }
 
@@ -114,7 +114,7 @@ public final class ScrollBarKt {
     public static final Modifier fadingTopBottomEdgesSimplified(Modifier modifier, final ScrollState scrollState, final float f, final float f2) {
         Intrinsics.checkNotNullParameter(modifier, "<this>");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
-        return DrawModifierKt.drawWithContent(GraphicsLayerModifierKt.m4937graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, CompositingStrategy.Companion.m4863getOffscreenNrFUSI(), 0, null, 458751, null), new Function1() { // from class: com.miami.game.core.design.system.component.other.ScrollBarKt$$ExternalSyntheticLambda1
+        return DrawModifierKt.drawWithContent(GraphicsLayerModifierKt.m5513graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, CompositingStrategy.Companion.m5439getOffscreenNrFUSI(), 0, null, 458751, null), new Function1() { // from class: com.miami.game.core.design.system.component.other.ScrollBarKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ScrollBarKt.fadingTopBottomEdgesSimplified$lambda$0(ScrollState.this, f, f2, (ContentDrawScope) obj);
@@ -126,15 +126,15 @@ public final class ScrollBarKt {
     public static final Unit fadingTopBottomEdgesSimplified$lambda$0(ScrollState scrollState, float f, float f2, ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawWithContent.mo5346getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawWithContent.mo5922getSizeNHjbRc() & 4294967295L));
         if (scrollState.getMaxValue() + intBitsToFloat <= intBitsToFloat) {
             return Unit.INSTANCE;
         }
         if (f > 0.0f) {
-            DrawScope.m5339drawRectAsUm42w$default(drawWithContent, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(0.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(f), Color.m4762boximpl(Color.Companion.m4798getBlack0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4693getDstIn0nO6VwU(), 62, null);
+            DrawScope.m5915drawRectAsUm42w$default(drawWithContent, Brush.Companion.m5304verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(0.0f), Color.m5338boximpl(Color.Companion.m5383getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(f), Color.m5338boximpl(Color.Companion.m5374getBlack0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5269getDstIn0nO6VwU(), 62, null);
         }
         if (f2 > 0.0f) {
-            DrawScope.m5339drawRectAsUm42w$default(drawWithContent, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(1.0f - f2), Color.m4762boximpl(Color.Companion.m4798getBlack0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4693getDstIn0nO6VwU(), 62, null);
+            DrawScope.m5915drawRectAsUm42w$default(drawWithContent, Brush.Companion.m5304verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(1.0f - f2), Color.m5338boximpl(Color.Companion.m5374getBlack0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m5338boximpl(Color.Companion.m5383getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5269getDstIn0nO6VwU(), 62, null);
         }
         return Unit.INSTANCE;
     }

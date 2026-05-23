@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function4;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyGridDslKt$items$5 implements Function4<LazyGridItemScope, Integer, Composer, Integer, Unit> {
     final /* synthetic */ Function4<LazyGridItemScope, T, Composer, Integer, Unit> $itemContent;

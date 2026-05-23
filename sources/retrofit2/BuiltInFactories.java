@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 class BuiltInFactories {
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<? extends CallAdapter.Factory> createDefaultCallAdapterFactories(@Nullable Executor executor) {
@@ -19,7 +19,7 @@ class BuiltInFactories {
         return Collections.emptyList();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Java8 extends BuiltInFactories {
         @Override // retrofit2.BuiltInFactories
         List<? extends CallAdapter.Factory> createDefaultCallAdapterFactories(@Nullable Executor executor) {

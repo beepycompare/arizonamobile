@@ -1,5 +1,6 @@
 package androidx.media3.exoplayer.source.preload;
 
+import androidx.media3.common.StreamKey;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
@@ -8,6 +9,7 @@ import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
@@ -66,6 +68,11 @@ public final class PreloadMediaPeriod implements MediaPeriod {
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public List<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
+        return this.mediaPeriod.getStreamKeys(list);
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
     public TrackGroupArray getTrackGroups() {
         return this.mediaPeriod.getTrackGroups();
     }
@@ -108,6 +115,11 @@ public final class PreloadMediaPeriod implements MediaPeriod {
         System.arraycopy(zArr3, 0, zArr2, 0, zArr3.length);
         this.preloadTrackSelectionHolder = null;
         return j2;
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public long setEndPositionUs(long j) {
+        return this.mediaPeriod.setEndPositionUs(j);
     }
 
     private static boolean maybeUpdatePreloadTrackSelectionHolderForReselection(ExoTrackSelection[] exoTrackSelectionArr, PreloadTrackSelectionHolder preloadTrackSelectionHolder) {

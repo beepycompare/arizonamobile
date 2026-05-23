@@ -12,12 +12,12 @@ import androidx.media3.extractor.DefaultExtractorsFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MetadataRetriever implements AutoCloseable {
     public static final int DEFAULT_MAXIMUM_PARALLEL_RETRIEVALS = 5;
     private final MetadataRetrieverInternal internalRetriever;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private Clock clock;
         private final Context context;

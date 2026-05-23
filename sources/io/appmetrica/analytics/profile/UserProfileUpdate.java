@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.InterfaceC0232eo;
+import io.appmetrica.analytics.impl.Ho;
 /* loaded from: classes5.dex */
-public class UserProfileUpdate<T extends InterfaceC0232eo> {
+public class UserProfileUpdate<T extends Ho> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InterfaceC0232eo f1438a;
+    private final Ho f1420a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public UserProfileUpdate(InterfaceC0232eo interfaceC0232eo) {
-        this.f1438a = interfaceC0232eo;
+    public UserProfileUpdate(Ho ho) {
+        this.f1420a = ho;
     }
 
     public T getUserProfileUpdatePatcher() {
-        return (T) this.f1438a;
+        return (T) this.f1420a;
     }
 }

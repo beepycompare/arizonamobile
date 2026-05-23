@@ -2,8 +2,8 @@ package androidx.media3.exoplayer.upstream;
 
 import android.content.Context;
 import android.os.Handler;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
@@ -15,7 +15,6 @@ import androidx.media3.container.MdtaMetadataEntry;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.TransferListener;
-import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import androidx.media3.extractor.ts.PsExtractor;
@@ -252,7 +251,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                     this.totalBytesTransferred = j + j2;
                     if (i > 0) {
                         this.slidingPercentile.addSample((int) Math.sqrt(j2), (((float) j2) * 8000.0f) / i);
-                        if (this.totalElapsedTimeMs < ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS) {
+                        if (this.totalElapsedTimeMs < 2000) {
                             try {
                             } catch (Throwable th2) {
                                 th = th2;
@@ -1991,7 +1990,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 'C':
                 return new int[]{3, 2, 2, 3, 2, 2};
             case 'D':
-            case ModuleDescriptor.MODULE_VERSION /* 155 */:
+            case 155:
             case 192:
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
@@ -2088,7 +2087,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case '|':
             case 168:
                 return new int[]{4, 3, 3, 3, 2, 2};
-            case ComposerImplKt.nodeKey /* 125 */:
+            case GapComposerKt.nodeKey /* 125 */:
                 return new int[]{0, 1, 0, 1, 0, 2};
             case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                 return new int[]{4, 0, 3, 2, 1, 3};
@@ -2173,7 +2172,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{3, 3, 2, 0, 2, 2};
             case 184:
                 return new int[]{3, 1, 1, 2, 2, 0};
-            case 185:
+            case ModuleDescriptor.MODULE_VERSION /* 185 */:
             case 238:
                 return new int[]{4, 2, 4, 3, 2, 2};
             case PsExtractor.PRIVATE_STREAM_1 /* 189 */:

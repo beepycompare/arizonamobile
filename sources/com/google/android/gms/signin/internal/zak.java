@@ -5,20 +5,20 @@ import android.os.Parcelable;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-import com.google.android.gms.common.internal.zav;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.internal.zay;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zak extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zak> CREATOR = new zal();
     final int zaa;
     private final ConnectionResult zab;
-    private final zav zac;
+    private final zay zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zak(int i, ConnectionResult connectionResult, zav zavVar) {
+    public zak(int i, ConnectionResult connectionResult, zay zayVar) {
         this.zaa = i;
         this.zab = connectionResult;
-        this.zac = zavVar;
+        this.zac = zayVar;
     }
 
     @Override // android.os.Parcelable
@@ -34,7 +34,7 @@ public final class zak extends AbstractSafeParcelable {
         return this.zab;
     }
 
-    public final zav zab() {
+    public final zay zab() {
         return this.zac;
     }
 }

@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -82,6 +83,7 @@ public final class ShareCompat {
         private CharSequence mChooserTitle;
         private final Context mContext;
         private final Intent mIntent;
+        private IntentSender mIntentSender;
         private ArrayList<Uri> mStreams;
         private ArrayList<String> mToAddresses;
 
@@ -181,7 +183,7 @@ public final class ShareCompat {
         }
 
         public Intent createChooserIntent() {
-            return Intent.createChooser(getIntent(), this.mChooserTitle);
+            return Intent.createChooser(getIntent(), this.mChooserTitle, this.mIntentSender);
         }
 
         public void startChooser() {
@@ -195,6 +197,11 @@ public final class ShareCompat {
 
         public IntentBuilder setChooserTitle(int i) {
             return setChooserTitle(this.mContext.getText(i));
+        }
+
+        public IntentBuilder setIntentSender(IntentSender intentSender) {
+            this.mIntentSender = intentSender;
+            return this;
         }
 
         public IntentBuilder setType(String str) {

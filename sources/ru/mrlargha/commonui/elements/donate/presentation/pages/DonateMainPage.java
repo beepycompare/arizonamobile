@@ -143,7 +143,7 @@ public final class DonateMainPage extends DonatePage {
         Job launch$default;
         Job job = this.scrollThroughViewPagerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateMainPage$scrollThroughViewPager$1(viewPager2, null), 3, null);
         this.scrollThroughViewPagerJob = launch$default;

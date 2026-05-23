@@ -1,21 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi;
+import java.util.List;
 /* loaded from: classes5.dex */
-public interface Kb extends Nb, LocationServiceApi {
-    @Override // io.appmetrica.analytics.impl.Nb
-    /* synthetic */ void a(Location location);
+public class Kb extends Ra {
+    public Kb(Li li) {
+        super(li);
+    }
 
-    @Override // io.appmetrica.analytics.impl.Nb
-    /* synthetic */ void a(Object obj);
-
-    @Override // io.appmetrica.analytics.impl.Nb
-    /* synthetic */ void a(boolean z);
-
-    @Override // io.appmetrica.analytics.impl.Nb
-    /* synthetic */ void b(Object obj);
-
-    @Override // io.appmetrica.analytics.impl.Nb
-    /* synthetic */ void init();
+    @Override // io.appmetrica.analytics.impl.Ra
+    public void a(List<AbstractC0305hh> list) {
+        list.add(this.f742a.b);
+    }
 }

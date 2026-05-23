@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.comparisons.ComparisonsKt;
 import kotlinx.coroutines.debug.internal.DebugProbesImpl;
 /* compiled from: Comparisons.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DebugProbesImpl$dumpCoroutinesInfoImpl$$inlined$sortedBy$1<T> implements Comparator {
     @Override // java.util.Comparator

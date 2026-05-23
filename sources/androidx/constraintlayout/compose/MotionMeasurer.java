@@ -48,9 +48,9 @@ public final class MotionMeasurer extends Measurer2 {
         this.transition = new androidx.constraintlayout.core.state.Transition(new CorePixelDp() { // from class: androidx.constraintlayout.compose.MotionMeasurer$$ExternalSyntheticLambda0
             @Override // androidx.constraintlayout.core.state.CorePixelDp
             public final float toPixels(float f) {
-                float mo405toPx0680j_4;
-                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl(f));
-                return mo405toPx0680j_4;
+                float mo434toPx0680j_4;
+                mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(Dp.m8160constructorimpl(f));
+                return mo434toPx0680j_4;
             }
         });
     }
@@ -60,7 +60,7 @@ public final class MotionMeasurer extends Measurer2 {
     }
 
     /* renamed from: measureConstraintSet--hBUhpc  reason: not valid java name */
-    private final void m7992measureConstraintSethBUhpc(int i, ConstraintSet constraintSet, List<? extends Measurable> list, long j) {
+    private final void m8597measureConstraintSethBUhpc(int i, ConstraintSet constraintSet, List<? extends Measurable> list, long j) {
         String str;
         Object layoutId;
         getState().reset();
@@ -72,7 +72,7 @@ public final class MotionMeasurer extends Measurer2 {
         for (int i2 = 0; i2 < size; i2++) {
             children.get(i2).setAnimated(true);
         }
-        m7954applyRootSizeBRTryo0(j);
+        m8559applyRootSizeBRTryo0(j);
         getRoot().updateHierarchy();
         if (this.DEBUG) {
             getRoot().setDebugName("ConstraintLayout");
@@ -93,37 +93,37 @@ public final class MotionMeasurer extends Measurer2 {
     }
 
     /* renamed from: performInterpolationMeasure-LzAeyeM  reason: not valid java name */
-    public final long m7996performInterpolationMeasureLzAeyeM(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, ConstraintSet constraintSet2, TransitionImpl transitionImpl, List<? extends Measurable> list, Map<Measurable, Placeable> map, int i, float f, CompositionSource compositionSource, ShouldInvalidateCallback shouldInvalidateCallback) {
+    public final long m8601performInterpolationMeasureLzAeyeM(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, ConstraintSet constraintSet2, TransitionImpl transitionImpl, List<? extends Measurable> list, Map<Measurable, Placeable> map, int i, float f, CompositionSource compositionSource, ShouldInvalidateCallback shouldInvalidateCallback) {
         LayoutInformationReceiver layoutInformationReceiver;
         LayoutInformationReceiver layoutInformationReceiver2;
         setPlaceables(map);
-        boolean m7993needsRemeasureNN6EwU = m7993needsRemeasureNN6EwU(j, compositionSource, shouldInvalidateCallback);
-        if (this.lastProgressInInterpolation != f || ((((layoutInformationReceiver = getLayoutInformationReceiver()) == null || layoutInformationReceiver.getForcedWidth() != Integer.MIN_VALUE) && ((layoutInformationReceiver2 = getLayoutInformationReceiver()) == null || layoutInformationReceiver2.getForcedHeight() != Integer.MIN_VALUE)) || m7993needsRemeasureNN6EwU)) {
-            m7994recalculateInterpolation36Wf7g4(j, layoutDirection, constraintSet, constraintSet2, transitionImpl, list, i, f, m7993needsRemeasureNN6EwU);
+        boolean m8598needsRemeasureNN6EwU = m8598needsRemeasureNN6EwU(j, compositionSource, shouldInvalidateCallback);
+        if (this.lastProgressInInterpolation != f || ((((layoutInformationReceiver = getLayoutInformationReceiver()) == null || layoutInformationReceiver.getForcedWidth() != Integer.MIN_VALUE) && ((layoutInformationReceiver2 = getLayoutInformationReceiver()) == null || layoutInformationReceiver2.getForcedHeight() != Integer.MIN_VALUE)) || m8598needsRemeasureNN6EwU)) {
+            m8599recalculateInterpolation36Wf7g4(j, layoutDirection, constraintSet, constraintSet2, transitionImpl, list, i, f, m8598needsRemeasureNN6EwU);
         }
-        this.oldConstraints = Constraints.m7495boximpl(j);
+        this.oldConstraints = Constraints.m8100boximpl(j);
         return IntSizeKt.IntSize(getRoot().getWidth(), getRoot().getHeight());
     }
 
     /* renamed from: needsRemeasure-NN6Ew-U  reason: not valid java name */
-    private final boolean m7993needsRemeasureNN6EwU(long j, CompositionSource compositionSource, ShouldInvalidateCallback shouldInvalidateCallback) {
+    private final boolean m8598needsRemeasureNN6EwU(long j, CompositionSource compositionSource, ShouldInvalidateCallback shouldInvalidateCallback) {
         if (this.transition.isEmpty() || getFrameCache().isEmpty()) {
             return true;
         }
         Constraints constraints = this.oldConstraints;
         if (constraints != null && shouldInvalidateCallback != null) {
             Intrinsics.checkNotNull(constraints);
-            if (shouldInvalidateCallback.mo7933invokeN9IONVI(constraints.m7514unboximpl(), j)) {
+            if (shouldInvalidateCallback.mo8538invokeN9IONVI(constraints.m8119unboximpl(), j)) {
                 return true;
             }
-        } else if ((Constraints.m7505getHasFixedHeightimpl(j) && !getState().sameFixedHeight(Constraints.m7507getMaxHeightimpl(j))) || (Constraints.m7506getHasFixedWidthimpl(j) && !getState().sameFixedWidth(Constraints.m7508getMaxWidthimpl(j)))) {
+        } else if ((Constraints.m8110getHasFixedHeightimpl(j) && !getState().sameFixedHeight(Constraints.m8112getMaxHeightimpl(j))) || (Constraints.m8111getHasFixedWidthimpl(j) && !getState().sameFixedWidth(Constraints.m8113getMaxWidthimpl(j)))) {
             return true;
         }
         return compositionSource == CompositionSource.Content;
     }
 
     /* renamed from: recalculateInterpolation-36Wf7g4  reason: not valid java name */
-    private final void m7994recalculateInterpolation36Wf7g4(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, ConstraintSet constraintSet2, TransitionImpl transitionImpl, List<? extends Measurable> list, int i, float f, boolean z) {
+    private final void m8599recalculateInterpolation36Wf7g4(long j, LayoutDirection layoutDirection, ConstraintSet constraintSet, ConstraintSet constraintSet2, TransitionImpl transitionImpl, List<? extends Measurable> list, int i, float f, boolean z) {
         WidgetFrame interpolated;
         androidx.constraintlayout.core.state.Dimension min;
         androidx.constraintlayout.core.state.Dimension min2;
@@ -133,24 +133,24 @@ public final class MotionMeasurer extends Measurer2 {
             this.transition.clear();
             resetMeasureState$constraintlayout_compose_release();
             State state = getState();
-            if (Constraints.m7506getHasFixedWidthimpl(j)) {
-                min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7508getMaxWidthimpl(j));
+            if (Constraints.m8111getHasFixedWidthimpl(j)) {
+                min = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m8113getMaxWidthimpl(j));
             } else {
-                min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7510getMinWidthimpl(j));
+                min = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m8115getMinWidthimpl(j));
             }
             state.width(min);
             State state2 = getState();
-            if (Constraints.m7505getHasFixedHeightimpl(j)) {
-                min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m7507getMaxHeightimpl(j));
+            if (Constraints.m8110getHasFixedHeightimpl(j)) {
+                min2 = androidx.constraintlayout.core.state.Dimension.createFixed(Constraints.m8112getMaxHeightimpl(j));
             } else {
-                min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m7509getMinHeightimpl(j));
+                min2 = androidx.constraintlayout.core.state.Dimension.createWrap().min(Constraints.m8114getMinHeightimpl(j));
             }
             state2.height(min2);
-            getState().m8023setRootIncomingConstraintsBRTryo0(j);
+            getState().m8628setRootIncomingConstraintsBRTryo0(j);
             getState().setRtl(layoutDirection == LayoutDirection.Rtl);
-            m7992measureConstraintSethBUhpc(i, constraintSet, list, j);
+            m8597measureConstraintSethBUhpc(i, constraintSet, list, j);
             this.transition.updateFrom(getRoot(), 0);
-            m7992measureConstraintSethBUhpc(i, constraintSet2, list, j);
+            m8597measureConstraintSethBUhpc(i, constraintSet2, list, j);
             this.transition.updateFrom(getRoot(), 1);
             if (transitionImpl != null) {
                 transitionImpl.applyKeyFramesTo(this.transition);
@@ -171,7 +171,7 @@ public final class MotionMeasurer extends Measurer2 {
             Object companionWidget = constraintWidget.getCompanionWidget();
             Measurable measurable = companionWidget instanceof Measurable ? (Measurable) companionWidget : null;
             if (measurable != null && (interpolated = this.transition.getInterpolated(constraintWidget)) != null) {
-                getPlaceables().put(measurable, measurable.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(interpolated.width(), interpolated.height())));
+                getPlaceables().put(measurable, measurable.mo6818measureBRTryo0(Constraints.Companion.m8123fixedJhjzzOo(interpolated.width(), interpolated.height())));
                 getFrameCache().put(MeasurerKt.getAnyOrNullId(measurable), interpolated);
             }
             i2++;
@@ -282,13 +282,13 @@ public final class MotionMeasurer extends Measurer2 {
             WidgetFrame start = this.transition.getStart(constraintWidget);
             WidgetFrame end = this.transition.getEnd(constraintWidget);
             if (z) {
-                m7990drawFrameg2O1Hgs(drawScope, start, dashPathEffect, Color.Companion.m4799getBlue0d7_KjU());
-                m7990drawFrameg2O1Hgs(drawScope, end, dashPathEffect, Color.Companion.m4799getBlue0d7_KjU());
+                m8595drawFrameg2O1Hgs(drawScope, start, dashPathEffect, Color.Companion.m5375getBlue0d7_KjU());
+                m8595drawFrameg2O1Hgs(drawScope, end, dashPathEffect, Color.Companion.m5375getBlue0d7_KjU());
                 drawScope.getDrawContext().getTransform().translate(2.0f, 2.0f);
                 try {
-                    m7990drawFrameg2O1Hgs(drawScope, start, dashPathEffect, Color.Companion.m4809getWhite0d7_KjU());
+                    m8595drawFrameg2O1Hgs(drawScope, start, dashPathEffect, Color.Companion.m5385getWhite0d7_KjU());
                     widgetFrame = start;
-                    m7990drawFrameg2O1Hgs(drawScope, end, dashPathEffect, Color.Companion.m4809getWhite0d7_KjU());
+                    m8595drawFrameg2O1Hgs(drawScope, end, dashPathEffect, Color.Companion.m5385getWhite0d7_KjU());
                     pathEffect = dashPathEffect;
                 } finally {
                     drawScope.getDrawContext().getTransform().translate(-2.0f, -2.0f);
@@ -297,7 +297,7 @@ public final class MotionMeasurer extends Measurer2 {
                 widgetFrame = start;
                 pathEffect = dashPathEffect;
             }
-            drawPaths(drawScope, Size.m4596getWidthimpl(drawScope.mo5346getSizeNHjbRc()), Size.m4593getHeightimpl(drawScope.mo5346getSizeNHjbRc()), widgetFrame, z2, z3);
+            drawPaths(drawScope, Size.m5172getWidthimpl(drawScope.mo5922getSizeNHjbRc()), Size.m5169getHeightimpl(drawScope.mo5922getSizeNHjbRc()), widgetFrame, z2, z3);
             i++;
             dashPathEffect = pathEffect;
         }
@@ -308,9 +308,9 @@ public final class MotionMeasurer extends Measurer2 {
     }
 
     /* renamed from: drawFrameDebug-PE3pjmc  reason: not valid java name */
-    private final void m7991drawFrameDebugPE3pjmc(DrawScope drawScope, float f, float f2, WidgetFrame widgetFrame, WidgetFrame widgetFrame2, PathEffect pathEffect, long j) {
-        m7990drawFrameg2O1Hgs(drawScope, widgetFrame, pathEffect, j);
-        m7990drawFrameg2O1Hgs(drawScope, widgetFrame2, pathEffect, j);
+    private final void m8596drawFrameDebugPE3pjmc(DrawScope drawScope, float f, float f2, WidgetFrame widgetFrame, WidgetFrame widgetFrame2, PathEffect pathEffect, long j) {
+        m8595drawFrameg2O1Hgs(drawScope, widgetFrame, pathEffect, j);
+        m8595drawFrameg2O1Hgs(drawScope, widgetFrame2, pathEffect, j);
         int numberKeyPositions = this.transition.getNumberKeyPositions(widgetFrame);
         new MotionRenderDebug(23.0f).draw(AndroidCanvas_androidKt.getNativeCanvas(drawScope.getDrawContext().getCanvas()), this.transition.getMotion(widgetFrame.widget.stringId), 1000, 1, (int) f, (int) f2);
         if (numberKeyPositions == 0) {
@@ -338,7 +338,7 @@ public final class MotionMeasurer extends Measurer2 {
             Path.lineTo(f5 + 20.0f, f6);
             Path.lineTo(f5, f6 - 20.0f);
             Path.close();
-            DrawScope.m5336drawPathLG529CI$default(drawScope, Path, j, 1.0f, new Stroke(3.0f, 0.0f, 0, 0, null, 30, null), null, 0, 48, null);
+            DrawScope.m5912drawPathLG529CI$default(drawScope, Path, j, 1.0f, new Stroke(3.0f, 0.0f, 0, 0, null, 30, null), null, 0, 48, null);
             if (i2 == i) {
                 return;
             }
@@ -347,9 +347,9 @@ public final class MotionMeasurer extends Measurer2 {
     }
 
     /* renamed from: drawFrame-g2O1Hgs  reason: not valid java name */
-    private final void m7990drawFrameg2O1Hgs(DrawScope drawScope, WidgetFrame widgetFrame, PathEffect pathEffect, long j) {
+    private final void m8595drawFrameg2O1Hgs(DrawScope drawScope, WidgetFrame widgetFrame, PathEffect pathEffect, long j) {
         if (widgetFrame.isDefaultTransform()) {
-            DrawScope.m5340drawRectnJ9OG0$default(drawScope, j, OffsetKt.Offset(widgetFrame.left, widgetFrame.top), SizeKt.Size(widgetFrame.width(), widgetFrame.height()), 0.0f, new Stroke(3.0f, 0.0f, 0, 0, pathEffect, 14, null), null, 0, 104, null);
+            DrawScope.m5916drawRectnJ9OG0$default(drawScope, j, OffsetKt.Offset(widgetFrame.left, widgetFrame.top), SizeKt.Size(widgetFrame.width(), widgetFrame.height()), 0.0f, new Stroke(3.0f, 0.0f, 0, 0, pathEffect, 14, null), null, 0, 104, null);
             return;
         }
         Matrix matrix = new Matrix();
@@ -359,21 +359,21 @@ public final class MotionMeasurer extends Measurer2 {
         matrix.preScale(Float.isNaN(widgetFrame.scaleX) ? 1.0f : widgetFrame.scaleX, Float.isNaN(widgetFrame.scaleY) ? 1.0f : widgetFrame.scaleY, widgetFrame.centerX(), widgetFrame.centerY());
         float[] fArr = {widgetFrame.left, widgetFrame.top, widgetFrame.right, widgetFrame.top, widgetFrame.right, widgetFrame.bottom, widgetFrame.left, widgetFrame.bottom};
         matrix.mapPoints(fArr);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[0], fArr[1]), OffsetKt.Offset(fArr[2], fArr[3]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[2], fArr[3]), OffsetKt.Offset(fArr[4], fArr[5]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[4], fArr[5]), OffsetKt.Offset(fArr[6], fArr[7]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
-        DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[6], fArr[7]), OffsetKt.Offset(fArr[0], fArr[1]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
+        DrawScope.m5908drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[0], fArr[1]), OffsetKt.Offset(fArr[2], fArr[3]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
+        DrawScope.m5908drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[2], fArr[3]), OffsetKt.Offset(fArr[4], fArr[5]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
+        DrawScope.m5908drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[4], fArr[5]), OffsetKt.Offset(fArr[6], fArr[7]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
+        DrawScope.m5908drawLineNGM6Ib0$default(drawScope, j, OffsetKt.Offset(fArr[6], fArr[7]), OffsetKt.Offset(fArr[0], fArr[1]), 3.0f, 0, pathEffect, 0.0f, null, 0, 464, null);
     }
 
     /* renamed from: getCustomColor-XeAY9LY  reason: not valid java name */
-    public final long m7995getCustomColorXeAY9LY(String str, String str2, float f) {
+    public final long m8600getCustomColorXeAY9LY(String str, String str2, float f) {
         if (!this.transition.contains(str)) {
-            return Color.Companion.m4808getUnspecified0d7_KjU();
+            return Color.Companion.m5384getUnspecified0d7_KjU();
         }
         this.transition.interpolate(getRoot().getWidth(), getRoot().getHeight(), f);
         WidgetFrame interpolated = this.transition.getInterpolated(str);
         if (!interpolated.containsCustom(str2)) {
-            return Color.Companion.m4808getUnspecified0d7_KjU();
+            return Color.Companion.m5384getUnspecified0d7_KjU();
         }
         return ColorKt.Color(interpolated.getCustomColor(str2));
     }

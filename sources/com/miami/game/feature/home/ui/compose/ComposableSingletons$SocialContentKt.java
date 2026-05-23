@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialContent.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$SocialContentKt {
     public static final ComposableSingletons$SocialContentKt INSTANCE = new ComposableSingletons$SocialContentKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$1688114711 = ComposableLambdaKt.composableLambdaInstance(1688114711, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda0
@@ -27,7 +27,7 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: lambda$-2110633905  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f142lambda$2110633905 = ComposableLambdaKt.composableLambdaInstance(-2110633905, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda2
+    private static Function3<BoxScope, Composer, Integer, Unit> f62lambda$2110633905 = ComposableLambdaKt.composableLambdaInstance(-2110633905, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$SocialContentKt.lambda__2110633905$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -35,8 +35,8 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: getLambda$-2110633905$home  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9118getLambda$2110633905$home() {
-        return f142lambda$2110633905;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9756getLambda$2110633905$home() {
+        return f62lambda$2110633905;
     }
 
     public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1688114711$home() {

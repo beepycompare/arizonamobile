@@ -4,16 +4,22 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Build;
-import androidx.core.app.NotificationCompat;
 import androidx.media3.exoplayer.R;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class DownloadNotificationHelper {
     private static final int NULL_STRING_ID = 0;
-    private final NotificationCompat.Builder notificationBuilder;
+    private final Notification.Builder notificationBuilder;
 
     public DownloadNotificationHelper(Context context, String str) {
-        this.notificationBuilder = new NotificationCompat.Builder(context.getApplicationContext(), str);
+        Notification.Builder builder;
+        Context applicationContext = context.getApplicationContext();
+        if (Build.VERSION.SDK_INT >= 26) {
+            builder = new Notification.Builder(applicationContext, str);
+        } else {
+            builder = new Notification.Builder(applicationContext);
+        }
+        this.notificationBuilder = builder;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:43:0x0071  */
@@ -122,24 +128,13 @@ public final class DownloadNotificationHelper {
         this.notificationBuilder.setSmallIcon(i);
         this.notificationBuilder.setContentTitle(i2 == 0 ? null : context.getResources().getString(i2));
         this.notificationBuilder.setContentIntent(pendingIntent);
-        this.notificationBuilder.setStyle(str != null ? new NotificationCompat.BigTextStyle().bigText(str) : null);
+        this.notificationBuilder.setStyle(str != null ? new Notification.BigTextStyle().bigText(str) : null);
         this.notificationBuilder.setProgress(i3, i4, z);
         this.notificationBuilder.setOngoing(z2);
         this.notificationBuilder.setShowWhen(z3);
         if (Build.VERSION.SDK_INT >= 31) {
-            Api31.setForegroundServiceBehavior(this.notificationBuilder);
+            this.notificationBuilder.setForegroundServiceBehavior(1);
         }
         return this.notificationBuilder.build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
-    public static final class Api31 {
-        private Api31() {
-        }
-
-        public static void setForegroundServiceBehavior(NotificationCompat.Builder builder) {
-            builder.setForegroundServiceBehavior(1);
-        }
     }
 }

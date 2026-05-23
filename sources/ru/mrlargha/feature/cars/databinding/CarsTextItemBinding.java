@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.cars.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CarsTextItemBinding implements ViewBinding {
     public final ConstraintLayout carsTextItem;
     public final TextView itemTitle;

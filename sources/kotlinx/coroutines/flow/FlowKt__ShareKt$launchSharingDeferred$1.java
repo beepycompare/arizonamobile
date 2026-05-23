@@ -9,6 +9,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
@@ -17,13 +18,14 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.JobKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Share.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1", f = "Share.kt", i = {0}, l = {337}, m = "invokeSuspend", n = {RemoteConfigConstants.ResponseFieldKey.STATE}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1", f = "Share.kt", i = {0, 0}, l = {337}, m = "invokeSuspend", n = {"$this$launch", RemoteConfigConstants.ResponseFieldKey.STATE}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ CompletableDeferred<Result<StateFlow<T>>> $result;
     final /* synthetic */ Flow<T> $upstream;
     private /* synthetic */ Object L$0;
+    Object L$1;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,16 +52,17 @@ public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Ref.ObjectRef objectRef;
+        final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                final CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                 final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
                 Flow<T> flow = this.$upstream;
                 final CompletableDeferred<Result<StateFlow<T>>> completableDeferred = this.$result;
-                this.L$0 = objectRef2;
+                this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
+                this.L$1 = objectRef2;
                 this.label = 1;
                 if (flow.collect(new FlowCollector() { // from class: kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1.1
                     @Override // kotlinx.coroutines.flow.FlowCollector
@@ -73,7 +76,7 @@ public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda
                             CompletableDeferred<Result<StateFlow<T>>> completableDeferred2 = completableDeferred;
                             T t2 = (T) StateFlowKt.MutableStateFlow(t);
                             Result.Companion companion = Result.Companion;
-                            completableDeferred2.complete(Result.m9201boximpl(Result.m9202constructorimpl(new ReadonlyStateFlow((StateFlow) t2, JobKt.getJob(coroutineScope2.getCoroutineContext())))));
+                            completableDeferred2.complete(Result.m9841boximpl(Result.m9842constructorimpl(new ReadonlyStateFlow((StateFlow) t2, JobKt.getJob(coroutineScope2.getCoroutineContext())))));
                             objectRef3.element = t2;
                         }
                         return Unit.INSTANCE;
@@ -85,13 +88,13 @@ public final class FlowKt__ShareKt$launchSharingDeferred$1 extends SuspendLambda
             } else if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
-                objectRef = (Ref.ObjectRef) this.L$0;
+                objectRef = (Ref.ObjectRef) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
             if (objectRef.element == 0) {
                 CompletableDeferred<Result<StateFlow<T>>> completableDeferred2 = this.$result;
                 Result.Companion companion = Result.Companion;
-                completableDeferred2.complete(Result.m9201boximpl(Result.m9202constructorimpl(ResultKt.createFailure(new NoSuchElementException("Flow is empty")))));
+                completableDeferred2.complete(Result.m9841boximpl(Result.m9842constructorimpl(ResultKt.createFailure(new NoSuchElementException("Flow is empty")))));
             }
             return Unit.INSTANCE;
         } catch (Throwable th) {

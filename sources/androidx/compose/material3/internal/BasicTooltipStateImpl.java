@@ -65,7 +65,7 @@ public final class BasicTooltipStateImpl implements TooltipState {
     public void onDispose() {
         CancellableContinuation<? super Unit> cancellableContinuation = this.job;
         if (cancellableContinuation != null) {
-            CancellableContinuation.DefaultImpls.cancel$default(cancellableContinuation, null, 1, null);
+            CancellableContinuation.cancel$default(cancellableContinuation, null, 1, null);
         }
     }
 }

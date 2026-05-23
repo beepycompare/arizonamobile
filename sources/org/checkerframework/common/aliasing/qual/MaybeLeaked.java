@@ -13,6 +13,6 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({LeakedToResult.class})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface MaybeLeaked {
 }

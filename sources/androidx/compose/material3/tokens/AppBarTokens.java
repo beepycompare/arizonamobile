@@ -8,26 +8,26 @@ import kotlin.Metadata;
 public final class AppBarTokens {
     public static final int $stable = 0;
     public static final AppBarTokens INSTANCE = new AppBarTokens();
-    private static final float AvatarSize = Dp.m7555constructorimpl(32.0f);
+    private static final float AvatarSize = Dp.m8160constructorimpl(32.0f);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float IconButtonSpace = Dp.m7555constructorimpl(0.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float IconButtonSpace = Dp.m8160constructorimpl(0.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens LeadingIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float LeadingSpace = Dp.m7555constructorimpl(4.0f);
+    private static final float LeadingSpace = Dp.m8160constructorimpl(4.0f);
     private static final ColorSchemeKeyTokens OnScrollContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
+    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3806getLevel2D9Ej5fM();
     private static final ColorSchemeKeyTokens SubtitleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TitleColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens TrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float TrailingSpace = Dp.m7555constructorimpl(4.0f);
+    private static final float TrailingSpace = Dp.m8160constructorimpl(4.0f);
 
     private AppBarTokens() {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3119getAvatarSizeD9Ej5fM() {
+    public final float m3564getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -36,7 +36,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3120getContainerElevationD9Ej5fM() {
+    public final float m3565getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -45,12 +45,12 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getIconButtonSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3121getIconButtonSpaceD9Ej5fM() {
+    public final float m3566getIconButtonSpaceD9Ej5fM() {
         return IconButtonSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3122getIconSizeD9Ej5fM() {
+    public final float m3567getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -59,7 +59,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3123getLeadingSpaceD9Ej5fM() {
+    public final float m3568getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
@@ -68,7 +68,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getOnScrollContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3124getOnScrollContainerElevationD9Ej5fM() {
+    public final float m3569getOnScrollContainerElevationD9Ej5fM() {
         return OnScrollContainerElevation;
     }
 
@@ -85,7 +85,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3125getTrailingSpaceD9Ej5fM() {
+    public final float m3570getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 }

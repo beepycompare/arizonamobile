@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime;
 
 import com.google.android.datatransport.Encoding;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EncodedPayload {
     private final byte[] bytes;
     private final Encoding encoding;

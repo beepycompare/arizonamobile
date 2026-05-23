@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzfc extends zzmb implements zznn {
+public final class zzfc extends zzadp implements zzafd {
     private zzfc() {
         throw null;
     }
@@ -14,7 +14,7 @@ public final class zzfc extends zzmb implements zznn {
     public /* synthetic */ zzfc(byte[] bArr) {
         super(r1);
         zzfd zzfdVar;
-        zzfdVar = zzfd.zzi;
+        zzfdVar = zzfd.zzj;
     }
 
     public final int zza() {
@@ -26,22 +26,22 @@ public final class zzfc extends zzmb implements zznn {
     }
 
     public final zzfc zzc(int i, zzfm zzfmVar) {
-        zzaX();
-        ((zzfd) this.zza).zzi(i, (zzfn) zzfmVar.zzbc());
+        zzaY();
+        ((zzfd) this.zza).zzj(i, (zzfn) zzfmVar.zzbd());
         return this;
     }
 
     public final int zzd() {
-        return ((zzfd) this.zza).zzg();
+        return ((zzfd) this.zza).zzh();
     }
 
     public final zzff zze(int i) {
-        return ((zzfd) this.zza).zzh(i);
+        return ((zzfd) this.zza).zzi(i);
     }
 
     public final zzfc zzf(int i, zzfe zzfeVar) {
-        zzaX();
-        ((zzfd) this.zza).zzj(i, (zzff) zzfeVar.zzbc());
+        zzaY();
+        ((zzfd) this.zza).zzk(i, (zzff) zzfeVar.zzbd());
         return this;
     }
 }

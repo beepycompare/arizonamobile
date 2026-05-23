@@ -4,7 +4,7 @@ import com.google.android.datatransport.Encoding;
 import com.google.android.datatransport.Event;
 import com.google.android.datatransport.Transformer;
 import com.google.android.datatransport.runtime.SendRequest;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_SendRequest extends SendRequest {
     private final Encoding encoding;
     private final Event<?> event;
@@ -66,7 +66,7 @@ final class AutoValue_SendRequest extends SendRequest {
         return this.encoding.hashCode() ^ ((((((((this.transportContext.hashCode() ^ 1000003) * 1000003) ^ this.transportName.hashCode()) * 1000003) ^ this.event.hashCode()) * 1000003) ^ this.transformer.hashCode()) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends SendRequest.Builder {
         private Encoding encoding;
         private Event<?> event;

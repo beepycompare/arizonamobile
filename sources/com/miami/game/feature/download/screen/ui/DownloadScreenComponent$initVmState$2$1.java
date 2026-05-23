@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: DownloadScreenComponent.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.download.screen.ui.DownloadScreenComponent$initVmState$2$1", f = "DownloadScreenComponent.kt", i = {0, 0, 0}, l = {179}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, nl = {70}, s = {"L$0", "L$1", "I$0"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class DownloadScreenComponent$initVmState$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
     Object L$0;

@@ -5,7 +5,7 @@ import com.google.android.datatransport.Event;
 import com.google.android.datatransport.Transformer;
 import com.google.android.datatransport.runtime.AutoValue_SendRequest;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SendRequest {
     public abstract Encoding getEncoding();
 
@@ -27,7 +27,7 @@ public abstract class SendRequest {
         return new AutoValue_SendRequest.Builder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract SendRequest build();
 

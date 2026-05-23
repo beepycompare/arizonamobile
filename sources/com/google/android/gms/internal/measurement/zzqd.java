@@ -1,22 +1,34 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import java.util.Iterator;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzqd implements Supplier {
-    private static final zzqd zza = new zzqd();
-    private final Supplier zzb = Suppliers.ofInstance(new zzqf());
+public final class zzqd implements zzpm {
+    final /* synthetic */ zzqe zza;
+    private final zzqm zzb;
 
-    @SideEffectFree
-    public static boolean zza() {
-        return zza.get().zza();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzqd(zzqe zzqeVar, zzqm zzqmVar) {
+        Objects.requireNonNull(zzqeVar);
+        this.zza = zzqeVar;
+        this.zzb = zzqmVar;
     }
 
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzb */
-    public final zzqe get() {
-        return (zzqe) this.zzb.get();
+    @Override // com.google.android.gms.internal.measurement.zzpm
+    public final void zza(zzpl zzplVar) {
+        Iterator it = this.zza.zzc().iterator();
+        boolean z = false;
+        while (it.hasNext()) {
+            if (((zzqc) it.next()).zza(zzplVar.zza()) && !z) {
+                this.zzb.zza();
+                z = true;
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzpm
+    public final void zzb(Throwable th) {
     }
 }

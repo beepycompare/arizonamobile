@@ -5,7 +5,7 @@ import com.google.android.datatransport.runtime.dagger.internal.Preconditions;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig;
 import com.google.android.datatransport.runtime.time.Clock;
 import javax.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SchedulingConfigModule_ConfigFactory implements Factory<SchedulerConfig> {
     private final Provider<Clock> clockProvider;
 

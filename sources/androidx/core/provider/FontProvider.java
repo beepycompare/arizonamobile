@@ -169,8 +169,10 @@ public class FontProvider {
                                 arrayList = arrayList2;
                                 withAppendedId = ContentUris.withAppendedId(build2, query.getLong(columnIndex3));
                             }
-                            arrayList2 = arrayList;
-                            arrayList2.add(FontsContractCompat.FontInfo.create(withAppendedId, i3, columnIndex5 != -1 ? query.getInt(columnIndex5) : 400, columnIndex6 != -1 && query.getInt(columnIndex6) == 1, i2));
+                            Uri uri = withAppendedId;
+                            ArrayList arrayList3 = arrayList;
+                            arrayList3.add(new FontsContractCompat.FontInfo(uri, i3, columnIndex5 != -1 ? query.getInt(columnIndex5) : 400, columnIndex6 != -1 && query.getInt(columnIndex6) == 1, fontRequest.getVariationSettings(), i2));
+                            arrayList2 = arrayList3;
                             i = 0;
                         }
                     }

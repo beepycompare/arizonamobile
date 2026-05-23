@@ -5,32 +5,32 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TextUnit.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000b\b\u0087@\u0018\u0000 ,2\u00020\u0001:\u0001,B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u0000H\u0086\n¢\u0006\u0004\b\u0007\u0010\u0005J\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH\u0086\n¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\rH\u0086\n¢\u0006\u0004\b\u000b\u0010\u000eJ\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u000fH\u0086\n¢\u0006\u0004\b\u000b\u0010\u0010J\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH\u0086\n¢\u0006\u0004\b\u0012\u0010\fJ\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\rH\u0086\n¢\u0006\u0004\b\u0012\u0010\u000eJ\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u000fH\u0086\n¢\u0006\u0004\b\u0012\u0010\u0010J\u0018\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\t\u001a\u00020\u0000H\u0086\n¢\u0006\u0004\b\u0014\u0010\u0015J\u000f\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J\u0013\u0010*\u001a\u00020\"2\b\u0010\t\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010+\u001a\u00020\u000fHÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u00020\u00038@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u001d\u0010\u0005R\u0011\u0010\u001e\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b \u0010\u0005R\u0011\u0010!\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b&\u0010$R\u0011\u0010'\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b(\u0010)\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006-"}, d2 = {"Landroidx/compose/ui/unit/TextUnit;", "", "packedValue", "", "constructor-impl", "(J)J", "unaryMinus", "unaryMinus-XSAIIZE", TtmlNode.TAG_DIV, "other", "", "div-kPz2Gy4", "(JF)J", "", "(JD)J", "", "(JI)J", "times", "times-kPz2Gy4", "compareTo", "compareTo--R2X_6o", "(JJ)I", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "rawType", "getRawType$annotations", "()V", "getRawType-impl", "type", "Landroidx/compose/ui/unit/TextUnitType;", "getType-UIouoOA", "isSp", "", "isSp-impl", "(J)Z", "isEm", "isEm-impl", "value", "getValue-impl", "(J)F", "equals", "hashCode", "Companion", "ui-unit"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000b\b\u0087@\u0018\u0000 ,2\u00020\u0001:\u0001,B\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u0000H\u0086\n¢\u0006\u0004\b\u0007\u0010\u0005J\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH\u0086\n¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\rH\u0086\n¢\u0006\u0004\b\u000b\u0010\u000eJ\u0018\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u000fH\u0086\n¢\u0006\u0004\b\u000b\u0010\u0010J\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH\u0086\n¢\u0006\u0004\b\u0012\u0010\fJ\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\rH\u0086\n¢\u0006\u0004\b\u0012\u0010\u000eJ\u0018\u0010\u0011\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u000fH\u0086\n¢\u0006\u0004\b\u0012\u0010\u0010J\u0018\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\t\u001a\u00020\u0000H\u0086\n¢\u0006\u0004\b\u0014\u0010\u0015J\u000f\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J\u0014\u0010*\u001a\u00020\"2\b\u0010\t\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010+\u001a\u00020\u000fHÖ\u0081\u0004R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u00020\u00038@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u001b\u0010\u001c\u001a\u0004\b\u001d\u0010\u0005R\u0011\u0010\u001e\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b \u0010\u0005R\u0011\u0010!\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020\"8F¢\u0006\u0006\u001a\u0004\b&\u0010$R\u0011\u0010'\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b(\u0010)\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006-"}, d2 = {"Landroidx/compose/ui/unit/TextUnit;", "", "packedValue", "", "constructor-impl", "(J)J", "unaryMinus", "unaryMinus-XSAIIZE", TtmlNode.TAG_DIV, "other", "", "div-kPz2Gy4", "(JF)J", "", "(JD)J", "", "(JI)J", "times", "times-kPz2Gy4", "compareTo", "compareTo--R2X_6o", "(JJ)I", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "rawType", "getRawType$annotations", "()V", "getRawType-impl", "type", "Landroidx/compose/ui/unit/TextUnitType;", "getType-UIouoOA", "isSp", "", "isSp-impl", "(J)Z", "isEm", "isEm-impl", "value", "getValue-impl", "(J)F", "equals", "hashCode", "Companion", "ui-unit"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class TextUnit {
     public static final Companion Companion = new Companion(null);
-    private static final TextUnitType[] TextUnitTypes = {TextUnitType.m7774boximpl(TextUnitType.Companion.m7783getUnspecifiedUIouoOA()), TextUnitType.m7774boximpl(TextUnitType.Companion.m7782getSpUIouoOA()), TextUnitType.m7774boximpl(TextUnitType.Companion.m7781getEmUIouoOA())};
+    private static final TextUnitType[] TextUnitTypes = {TextUnitType.m8379boximpl(TextUnitType.Companion.m8388getUnspecifiedUIouoOA()), TextUnitType.m8379boximpl(TextUnitType.Companion.m8387getSpUIouoOA()), TextUnitType.m8379boximpl(TextUnitType.Companion.m8386getEmUIouoOA())};
     private static final long Unspecified = TextUnitKt.pack(0, Float.NaN);
     private final long packedValue;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ TextUnit m7739boximpl(long j) {
+    public static final /* synthetic */ TextUnit m8344boximpl(long j) {
         return new TextUnit(j);
     }
 
     /* renamed from: constructor-impl */
-    public static long m7741constructorimpl(long j) {
+    public static long m8346constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m7745equalsimpl(long j, Object obj) {
-        return (obj instanceof TextUnit) && j == ((TextUnit) obj).m7758unboximpl();
+    public static boolean m8350equalsimpl(long j, Object obj) {
+        return (obj instanceof TextUnit) && j == ((TextUnit) obj).m8363unboximpl();
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m7746equalsimpl0(long j, long j2) {
+    public static final boolean m8351equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -38,25 +38,25 @@ public final class TextUnit {
     }
 
     /* renamed from: getRawType-impl */
-    public static final long m7747getRawTypeimpl(long j) {
+    public static final long m8352getRawTypeimpl(long j) {
         return j & 1095216660480L;
     }
 
     /* renamed from: hashCode-impl */
-    public static int m7750hashCodeimpl(long j) {
+    public static int m8355hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m7745equalsimpl(this.packedValue, obj);
+        return m8350equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7750hashCodeimpl(this.packedValue);
+        return m8355hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ long m7758unboximpl() {
+    public final /* synthetic */ long m8363unboximpl() {
         return this.packedValue;
     }
 
@@ -65,65 +65,65 @@ public final class TextUnit {
     }
 
     /* renamed from: unaryMinus-XSAIIZE */
-    public static final long m7757unaryMinusXSAIIZE(long j) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), -m7749getValueimpl(j));
+    public static final long m8362unaryMinusXSAIIZE(long j) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), -m8354getValueimpl(j));
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m7743divkPz2Gy4(long j, float f) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), m7749getValueimpl(j) / f);
+    public static final long m8348divkPz2Gy4(long j, float f) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), m8354getValueimpl(j) / f);
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m7742divkPz2Gy4(long j, double d) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), (float) (m7749getValueimpl(j) / d));
+    public static final long m8347divkPz2Gy4(long j, double d) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), (float) (m8354getValueimpl(j) / d));
     }
 
     /* renamed from: div-kPz2Gy4 */
-    public static final long m7744divkPz2Gy4(long j, int i) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), m7749getValueimpl(j) / i);
+    public static final long m8349divkPz2Gy4(long j, int i) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), m8354getValueimpl(j) / i);
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m7754timeskPz2Gy4(long j, float f) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), m7749getValueimpl(j) * f);
+    public static final long m8359timeskPz2Gy4(long j, float f) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), m8354getValueimpl(j) * f);
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m7753timeskPz2Gy4(long j, double d) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), (float) (m7749getValueimpl(j) * d));
+    public static final long m8358timeskPz2Gy4(long j, double d) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), (float) (m8354getValueimpl(j) * d));
     }
 
     /* renamed from: times-kPz2Gy4 */
-    public static final long m7755timeskPz2Gy4(long j, int i) {
-        TextUnitKt.m7762checkArithmeticR2X_6o(j);
-        return TextUnitKt.pack(m7747getRawTypeimpl(j), m7749getValueimpl(j) * i);
+    public static final long m8360timeskPz2Gy4(long j, int i) {
+        TextUnitKt.m8367checkArithmeticR2X_6o(j);
+        return TextUnitKt.pack(m8352getRawTypeimpl(j), m8354getValueimpl(j) * i);
     }
 
     /* renamed from: compareTo--R2X_6o */
-    public static final int m7740compareToR2X_6o(long j, long j2) {
-        TextUnitKt.m7763checkArithmeticNB67dxo(j, j2);
-        return Float.compare(m7749getValueimpl(j), m7749getValueimpl(j2));
+    public static final int m8345compareToR2X_6o(long j, long j2) {
+        TextUnitKt.m8368checkArithmeticNB67dxo(j, j2);
+        return Float.compare(m8354getValueimpl(j), m8354getValueimpl(j2));
     }
 
     public String toString() {
-        return m7756toStringimpl(this.packedValue);
+        return m8361toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl */
-    public static String m7756toStringimpl(long j) {
-        long m7748getTypeUIouoOA = m7748getTypeUIouoOA(j);
-        return TextUnitType.m7777equalsimpl0(m7748getTypeUIouoOA, TextUnitType.Companion.m7783getUnspecifiedUIouoOA()) ? "Unspecified" : TextUnitType.m7777equalsimpl0(m7748getTypeUIouoOA, TextUnitType.Companion.m7782getSpUIouoOA()) ? m7749getValueimpl(j) + ".sp" : TextUnitType.m7777equalsimpl0(m7748getTypeUIouoOA, TextUnitType.Companion.m7781getEmUIouoOA()) ? m7749getValueimpl(j) + ".em" : "Invalid";
+    public static String m8361toStringimpl(long j) {
+        long m8353getTypeUIouoOA = m8353getTypeUIouoOA(j);
+        return TextUnitType.m8382equalsimpl0(m8353getTypeUIouoOA, TextUnitType.Companion.m8388getUnspecifiedUIouoOA()) ? "Unspecified" : TextUnitType.m8382equalsimpl0(m8353getTypeUIouoOA, TextUnitType.Companion.m8387getSpUIouoOA()) ? m8354getValueimpl(j) + ".sp" : TextUnitType.m8382equalsimpl0(m8353getTypeUIouoOA, TextUnitType.Companion.m8386getEmUIouoOA()) ? m8354getValueimpl(j) + ".em" : "Invalid";
     }
 
     /* compiled from: TextUnit.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\t\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u000b8\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\u000f\u0012\u0004\b\f\u0010\u0003\u001a\u0004\b\r\u0010\u000e¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/unit/TextUnit$Companion;", "", "<init>", "()V", "TextUnitTypes", "", "Landroidx/compose/ui/unit/TextUnitType;", "getTextUnitTypes$ui_unit", "()[Landroidx/compose/ui/unit/TextUnitType;", "[Landroidx/compose/ui/unit/TextUnitType;", "Unspecified", "Landroidx/compose/ui/unit/TextUnit;", "getUnspecified-XSAIIZE$annotations", "getUnspecified-XSAIIZE", "()J", "J", "ui-unit"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\n\n\u0002\u0010\t\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u000b8\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\u000f\u0012\u0004\b\f\u0010\u0003\u001a\u0004\b\r\u0010\u000e¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/unit/TextUnit$Companion;", "", "<init>", "()V", "TextUnitTypes", "", "Landroidx/compose/ui/unit/TextUnitType;", "getTextUnitTypes$ui_unit", "()[Landroidx/compose/ui/unit/TextUnitType;", "[Landroidx/compose/ui/unit/TextUnitType;", "Unspecified", "Landroidx/compose/ui/unit/TextUnit;", "getUnspecified-XSAIIZE$annotations", "getUnspecified-XSAIIZE", "()J", "J", "ui-unit"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -131,7 +131,7 @@ public final class TextUnit {
         }
 
         /* renamed from: getUnspecified-XSAIIZE$annotations */
-        public static /* synthetic */ void m7759getUnspecifiedXSAIIZE$annotations() {
+        public static /* synthetic */ void m8364getUnspecifiedXSAIIZE$annotations() {
         }
 
         private Companion() {
@@ -142,28 +142,28 @@ public final class TextUnit {
         }
 
         /* renamed from: getUnspecified-XSAIIZE */
-        public final long m7760getUnspecifiedXSAIIZE() {
+        public final long m8365getUnspecifiedXSAIIZE() {
             return TextUnit.Unspecified;
         }
     }
 
     /* renamed from: getType-UIouoOA */
-    public static final long m7748getTypeUIouoOA(long j) {
-        return TextUnitTypes[(int) (m7747getRawTypeimpl(j) >>> 32)].m7780unboximpl();
+    public static final long m8353getTypeUIouoOA(long j) {
+        return TextUnitTypes[(int) (m8352getRawTypeimpl(j) >>> 32)].m8385unboximpl();
     }
 
     /* renamed from: isSp-impl */
-    public static final boolean m7752isSpimpl(long j) {
-        return m7747getRawTypeimpl(j) == 4294967296L;
+    public static final boolean m8357isSpimpl(long j) {
+        return m8352getRawTypeimpl(j) == 4294967296L;
     }
 
     /* renamed from: isEm-impl */
-    public static final boolean m7751isEmimpl(long j) {
-        return m7747getRawTypeimpl(j) == 8589934592L;
+    public static final boolean m8356isEmimpl(long j) {
+        return m8352getRawTypeimpl(j) == 8589934592L;
     }
 
     /* renamed from: getValue-impl */
-    public static final float m7749getValueimpl(long j) {
+    public static final float m8354getValueimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

@@ -76,7 +76,7 @@ public final class ViewTargetRequestDelegate implements RequestDelegate, Default
     @Override // coil3.request.RequestDelegate
     public void dispose() {
         Lifecycle lifecycle;
-        Job.DefaultImpls.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
         ViewTarget<?> viewTarget = this.target;
         if ((viewTarget instanceof LifecycleObserver) && (lifecycle = this.lifecycle) != null) {
             lifecycle.removeObserver((LifecycleObserver) viewTarget);

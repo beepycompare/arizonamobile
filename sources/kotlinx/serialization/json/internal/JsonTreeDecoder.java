@@ -16,6 +16,7 @@ import kotlinx.serialization.descriptors.SerialKind;
 import kotlinx.serialization.encoding.CompositeDecoder;
 import kotlinx.serialization.internal.JsonInternalDependenciesKt;
 import kotlinx.serialization.json.Json;
+import kotlinx.serialization.json.JsonDecodingException;
 import kotlinx.serialization.json.JsonElement;
 import kotlinx.serialization.json.JsonElementKt;
 import kotlinx.serialization.json.JsonNamingStrategy;
@@ -26,7 +27,7 @@ import kotlinx.serialization.json.JsonSchemaCacheKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TreeJsonDecoder.kt */
 @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\b\u0012\u0018\u00002\u00020\u0001B1\bF\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\u0012\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004J\u001a\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u000fH\u0082\u0080\u0004J\n\u0010\u0016\u001a\u00020\u0011H\u0096\u0080\u0004J\u001a\u0010\u0017\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u000fH\u0094\u0080\u0004J\u0012\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0007H\u0094\u0080\u0004J\u0014\u0010\u001b\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u001a\u001a\u00020\u0007H\u0086\u0080\u0004J\u0012\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004J\u0012\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004R\u0015\u0010\u0004\u001a\u00020\u0005X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0084\b¢\u0006\u0002\n\u0000R\u000f\u0010\u000e\u001a\u00020\u000fX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u000f\u0010\u0010\u001a\u00020\u0011X\u0082\u008e\b¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lkotlinx/serialization/json/internal/JsonTreeDecoder;", "Lkotlinx/serialization/json/internal/AbstractJsonTreeDecoder;", "json", "Lkotlinx/serialization/json/Json;", "value", "Lkotlinx/serialization/json/JsonObject;", "polymorphicDiscriminator", "", "polyDescriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;Lkotlinx/serialization/descriptors/SerialDescriptor;)V", "getValue", "()Lkotlinx/serialization/json/JsonObject;", "position", "", "forceNull", "", "decodeElementIndex", "descriptor", "setForceNull", FirebaseAnalytics.Param.INDEX, "decodeNotNullMark", "elementName", "currentElement", "Lkotlinx/serialization/json/JsonElement;", "tag", "currentElementOrNull", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
     private boolean forceNull;
     private final SerialDescriptor polyDescriptor;
@@ -152,11 +153,15 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
             Json json = getJson();
             JsonTreeDecoder jsonTreeDecoder = this;
             JsonElement currentObject = currentObject();
+            JsonTreeDecoder jsonTreeDecoder2 = jsonTreeDecoder;
             String serialName = this.polyDescriptor.getSerialName();
             if (currentObject instanceof JsonObject) {
                 return new JsonTreeDecoder(json, (JsonObject) currentObject, getPolymorphicDiscriminator(), this.polyDescriptor);
             }
-            throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + jsonTreeDecoder.renderTagStack(), currentObject.toString());
+            String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(currentObject.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+            String renderTagStack = jsonTreeDecoder.renderTagStack();
+            String obj = jsonTreeDecoder2.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(currentObject.toString(), 0, 1, null).toString() : null;
+            throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, renderTagStack, null, obj), str, -1, renderTagStack, obj, null);
         }
         return super.beginStructure(descriptor);
     }
@@ -184,7 +189,10 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
         }
         for (String str : getValue().keySet()) {
             if (!plus.contains(str) && !Intrinsics.areEqual(str, getPolymorphicDiscriminator())) {
-                throw JsonExceptionsKt.JsonDecodingException(-1, "Encountered an unknown key '" + str + "' at element: " + renderTagStack() + "\nUse 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.\nJSON input: " + ((Object) JsonExceptionsKt.minify$default(getValue().toString(), 0, 1, null)));
+                String str2 = "Encountered an unknown key '" + str + '\'';
+                String renderTagStack = renderTagStack();
+                String obj = getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(getValue().toString(), 0, 1, null).toString() : null;
+                throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str2, renderTagStack, AbstractJsonLexerKt.ignoreUnknownKeysHint, obj), str2, -1, renderTagStack, obj, AbstractJsonLexerKt.ignoreUnknownKeysHint);
             }
         }
     }

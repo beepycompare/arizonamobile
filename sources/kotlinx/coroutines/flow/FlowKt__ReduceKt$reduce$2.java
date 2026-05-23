@@ -5,12 +5,13 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Reduce.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
     final /* synthetic */ Ref.ObjectRef<Object> $accumulator;
@@ -25,7 +26,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -48,7 +49,8 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
                     if (objectRef.element != NullSurrogateKt.NULL) {
                         Function3<S, T, Continuation<? super S>, Object> function3 = this.$operation;
                         Object obj2 = this.$accumulator.element;
-                        flowKt__ReduceKt$reduce$2$emit$1.L$0 = objectRef;
+                        flowKt__ReduceKt$reduce$2$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                        flowKt__ReduceKt$reduce$2$emit$1.L$1 = objectRef;
                         flowKt__ReduceKt$reduce$2$emit$1.label = 1;
                         Object invoke = function3.invoke(obj2, t, flowKt__ReduceKt$reduce$2$emit$1);
                         if (invoke == coroutine_suspended) {
@@ -62,7 +64,8 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    objectRef2 = (Ref.ObjectRef) flowKt__ReduceKt$reduce$2$emit$1.L$0;
+                    objectRef2 = (Ref.ObjectRef) flowKt__ReduceKt$reduce$2$emit$1.L$1;
+                    Object obj3 = flowKt__ReduceKt$reduce$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     t = obj;
                 }
@@ -72,7 +75,7 @@ public final class FlowKt__ReduceKt$reduce$2<T> implements FlowCollector {
             }
         }
         flowKt__ReduceKt$reduce$2$emit$1 = new FlowKt__ReduceKt$reduce$2$emit$1(this, continuation);
-        Object obj3 = flowKt__ReduceKt$reduce$2$emit$1.result;
+        Object obj4 = flowKt__ReduceKt$reduce$2$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__ReduceKt$reduce$2$emit$1.label;
         if (i != 0) {

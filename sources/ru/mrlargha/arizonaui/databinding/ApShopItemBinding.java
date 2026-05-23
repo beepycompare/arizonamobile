@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.Group;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ApShopItemBinding implements ViewBinding {
     public final AppCompatImageView buyButton;
     public final Group group;

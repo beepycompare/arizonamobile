@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TimelineWithUpdatedMediaItem extends ForwardingTimeline {
     private final MediaItem updatedMediaItem;
 

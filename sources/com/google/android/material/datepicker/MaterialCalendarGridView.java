@@ -3,6 +3,7 @@ package com.google.android.material.datepicker;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
+import com.google.android.material.datepicker.MaterialCalendar;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ViewUtils;
 import java.util.Calendar;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,6 +23,7 @@ import java.util.Calendar;
 public final class MaterialCalendarGridView extends GridView {
     private final Calendar dayCompute;
     private final boolean nestedScrollable;
+    private MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener;
 
     public MaterialCalendarGridView(Context context) {
         this(context, null);
@@ -50,31 +54,134 @@ public final class MaterialCalendarGridView extends GridView {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getAdapter2().notifyDataSetChanged();
+        post(new Runnable() { // from class: com.google.android.material.datepicker.MaterialCalendarGridView$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                MaterialCalendarGridView.this.m9520x267001b4();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$onAttachedToWindow$0$com-google-android-material-datepicker-MaterialCalendarGridView  reason: not valid java name */
+    public /* synthetic */ void m9520x267001b4() {
+        ensureFocusRingSelector(getAdapter2());
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void setOnMonthNavigationListener(MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener) {
+        this.onMonthNavigationListener = onMonthNavigationListener;
     }
 
     @Override // android.widget.GridView, android.widget.AdapterView
     public void setSelection(int i) {
-        if (i < getAdapter2().firstPositionInMonth()) {
-            super.setSelection(getAdapter2().firstPositionInMonth());
-        } else {
-            super.setSelection(i);
-        }
+        super.setSelection(Math.max(i, getAdapter2().findFirstValidDayPosition()));
     }
 
     @Override // android.widget.GridView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
-        if (super.onKeyDown(i, keyEvent)) {
-            int selectedItemPosition = getSelectedItemPosition();
-            if (selectedItemPosition == -1 || (selectedItemPosition >= getAdapter2().firstPositionInMonth() && selectedItemPosition <= getAdapter2().lastPositionInMonth())) {
-                return true;
+        int selectedItemPosition = getSelectedItemPosition();
+        if (selectedItemPosition == -1) {
+            return super.onKeyDown(i, keyEvent);
+        }
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        if (i != 21) {
+            if (i != 22) {
+                if (i == 61) {
+                    return handleTabNavigation(selectedItemPosition, keyEvent);
+                }
+                if (super.onKeyDown(i, keyEvent)) {
+                    MonthAdapter adapter2 = getAdapter2();
+                    int selectedItemPosition2 = getSelectedItemPosition();
+                    if (selectedItemPosition2 == -1 || adapter2.isDayPositionValid(selectedItemPosition2)) {
+                        return true;
+                    }
+                    return handleVerticalNavigationOnDisabledDay(i, selectedItemPosition2);
+                }
+                return false;
             }
-            if (19 == i) {
-                setSelection(getAdapter2().firstPositionInMonth());
-                return true;
+            return handleHorizontalNavigation(selectedItemPosition, !isLayoutRtl);
+        }
+        return handleHorizontalNavigation(selectedItemPosition, isLayoutRtl);
+    }
+
+    boolean handleVerticalNavigationOnDisabledDay(int i, int i2) {
+        MonthAdapter adapter2 = getAdapter2();
+        if (trySelectNearestValidDayPosition(i2)) {
+            return true;
+        }
+        if (19 == i) {
+            int numColumns = getNumColumns();
+            while (true) {
+                i2 -= numColumns;
+                if (i2 < adapter2.firstPositionInMonth()) {
+                    return false;
+                }
+                if (trySelectNearestValidDayPosition(i2)) {
+                    return true;
+                }
+                numColumns = getNumColumns();
             }
+        } else if (i != 20) {
             return false;
+        } else {
+            int numColumns2 = getNumColumns();
+            while (true) {
+                i2 += numColumns2;
+                if (i2 > adapter2.lastPositionInMonth()) {
+                    return false;
+                }
+                if (trySelectNearestValidDayPosition(i2)) {
+                    return true;
+                }
+                numColumns2 = getNumColumns();
+            }
+        }
+    }
+
+    private boolean trySelectNearestValidDayPosition(int i) {
+        int findNearestValidDayPositionInRow = getAdapter2().findNearestValidDayPositionInRow(i);
+        if (findNearestValidDayPositionInRow != -1) {
+            setSelection(findNearestValidDayPositionInRow);
+            return true;
         }
         return false;
+    }
+
+    private boolean handleHorizontalNavigation(int i, boolean z) {
+        int findPreviousValidDayPosition;
+        MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener;
+        MaterialCalendar.OnMonthNavigationListener onMonthNavigationListener2;
+        if (z) {
+            findPreviousValidDayPosition = getAdapter2().findNextValidDayPosition(i);
+        } else {
+            findPreviousValidDayPosition = getAdapter2().findPreviousValidDayPosition(i);
+        }
+        if (findPreviousValidDayPosition != -1) {
+            setSelection(findPreviousValidDayPosition);
+            return true;
+        } else if (z || (onMonthNavigationListener2 = this.onMonthNavigationListener) == null) {
+            if (!z || (onMonthNavigationListener = this.onMonthNavigationListener) == null) {
+                return true;
+            }
+            return onMonthNavigationListener.onMonthNavigationNext();
+        } else {
+            return onMonthNavigationListener2.onMonthNavigationPrevious();
+        }
+    }
+
+    private boolean handleTabNavigation(int i, KeyEvent keyEvent) {
+        int findNextValidDayPosition;
+        if (keyEvent.isShiftPressed()) {
+            findNextValidDayPosition = getAdapter2().findPreviousValidDayPosition(i);
+        } else {
+            findNextValidDayPosition = getAdapter2().findNextValidDayPosition(i);
+        }
+        if (findNextValidDayPosition == -1) {
+            return false;
+        }
+        setSelection(findNextValidDayPosition);
+        return true;
     }
 
     @Override // android.widget.GridView, android.widget.AdapterView
@@ -89,6 +196,22 @@ public final class MaterialCalendarGridView extends GridView {
             throw new IllegalArgumentException(String.format("%1$s must have its Adapter set to a %2$s", MaterialCalendarGridView.class.getCanonicalName(), MonthAdapter.class.getCanonicalName()));
         }
         super.setAdapter(listAdapter);
+    }
+
+    private void ensureFocusRingSelector(MonthAdapter monthAdapter) {
+        Drawable selector = getSelector();
+        if (selector instanceof FocusRingDrawable) {
+            return;
+        }
+        Drawable wrap = FocusRingDrawable.wrap(getContext(), selector);
+        if (wrap instanceof FocusRingDrawable) {
+            FocusRingDrawable focusRingDrawable = (FocusRingDrawable) wrap;
+            if (monthAdapter.calendarStyle != null) {
+                focusRingDrawable.setFocusRingShapeAppearance(monthAdapter.calendarStyle.day.getItemShapeAppearanceModel());
+            }
+            setDrawSelectorOnTop(true);
+            setSelector(focusRingDrawable);
+        }
     }
 
     @Override // android.view.View
@@ -200,10 +323,14 @@ public final class MaterialCalendarGridView extends GridView {
     }
 
     private void gainFocus(int i, Rect rect) {
-        if (i == 33) {
-            setSelection(getAdapter2().lastPositionInMonth());
-        } else if (i == 130) {
-            setSelection(getAdapter2().firstPositionInMonth());
+        int findLastValidDayPosition;
+        if (i == 33 || i == 1) {
+            findLastValidDayPosition = getAdapter2().findLastValidDayPosition();
+        } else {
+            findLastValidDayPosition = (i == 130 || i == 2) ? getAdapter2().findFirstValidDayPosition() : -1;
+        }
+        if (findLastValidDayPosition != -1) {
+            setSelection(findLastValidDayPosition);
         } else {
             super.onFocusChanged(true, i, rect);
         }

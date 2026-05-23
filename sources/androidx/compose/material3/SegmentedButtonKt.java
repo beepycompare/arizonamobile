@@ -31,6 +31,7 @@ import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotIntStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Alignment;
@@ -77,11 +78,11 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes.dex */
 public final class SegmentedButtonKt {
     private static final float CheckedZIndexFactor = 5.0f;
-    private static final float IconSpacing = Dp.m7555constructorimpl(8.0f);
+    private static final float IconSpacing = Dp.m8160constructorimpl(8.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MultiChoiceSegmentedButtonRow_uFdPcIQ$lambda$13(Modifier modifier, float f, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2462MultiChoiceSegmentedButtonRowuFdPcIQ(modifier, f, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2907MultiChoiceSegmentedButtonRowuFdPcIQ(modifier, f, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -117,7 +118,7 @@ public final class SegmentedButtonKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SingleChoiceSegmentedButtonRow_uFdPcIQ$lambda$10(Modifier modifier, float f, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2463SingleChoiceSegmentedButtonRowuFdPcIQ(modifier, f, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2908SingleChoiceSegmentedButtonRowuFdPcIQ(modifier, f, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -236,14 +237,14 @@ public final class SegmentedButtonKt {
                     if (i7 == 0) {
                         i4 |= 100663296;
                     } else if ((i & 100663296) == 0) {
-                        i4 |= startRestartGroup.changed(paddingValues) ? 67108864 : 33554432;
+                        i4 |= startRestartGroup.changed(paddingValues) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     }
                     i8 = i3 & 256;
                     if (i8 == 0) {
                         i4 |= 805306368;
                     } else if ((i & 805306368) == 0) {
                         i9 = i8;
-                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? 536870912 : 268435456;
                         i10 = i3 & 512;
                         if (i10 != 0) {
                             i12 = i2 | 6;
@@ -286,7 +287,7 @@ public final class SegmentedButtonKt {
                                     i4 &= -3670017;
                                 }
                                 if ((i3 & 64) != 0) {
-                                    borderStroke2 = SegmentedButtonDefaults.m2457borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors2.m2441borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
+                                    borderStroke2 = SegmentedButtonDefaults.m2902borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors2.m2886borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
                                     i4 &= -29360129;
                                 }
                                 PaddingValues contentPadding = i7 != 0 ? SegmentedButtonDefaults.INSTANCE.getContentPadding() : paddingValues;
@@ -341,11 +342,11 @@ public final class SegmentedButtonKt {
                                         startRestartGroup.endReplaceGroup();
                                         mutableInteractionSource4 = mutableInteractionSource3;
                                     }
-                                    long m2442containerColorWaAFU9c$material3 = segmentedButtonColors4.m2442containerColorWaAFU9c$material3(z3, z);
+                                    long m2887containerColorWaAFU9c$material3 = segmentedButtonColors4.m2887containerColorWaAFU9c$material3(z3, z);
                                     int i15 = i14;
-                                    long m2443contentColorWaAFU9c$material3 = segmentedButtonColors4.m2443contentColorWaAFU9c$material3(z3, z);
+                                    long m2888contentColorWaAFU9c$material3 = segmentedButtonColors4.m2888contentColorWaAFU9c$material3(z3, z);
                                     Modifier modifier3 = obj;
-                                    Modifier m848defaultMinSizeVpY3zN4 = SizeKt.m848defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(multiChoiceSegmentedButtonRowScope, modifier3, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m1772getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1771getMinHeightD9Ej5fM());
+                                    Modifier m1101defaultMinSizeVpY3zN4 = SizeKt.m1101defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(multiChoiceSegmentedButtonRowScope, modifier3, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m2217getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m2216getMinHeightD9Ej5fM());
                                     ComposableLambda rememberComposableLambda2 = ComposableLambdaKt.rememberComposableLambda(1717860164, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$2
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -375,7 +376,7 @@ public final class SegmentedButtonKt {
                                     SegmentedButtonColors segmentedButtonColors5 = segmentedButtonColors4;
                                     PaddingValues paddingValues4 = paddingValues3;
                                     composer2 = startRestartGroup;
-                                    SurfaceKt.m2571Surfaced85dljk(z, function1, m848defaultMinSizeVpY3zN4, z5, shape, m2442containerColorWaAFU9c$material3, m2443contentColorWaAFU9c$material3, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, rememberComposableLambda2, composer2, i16, 48, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+                                    SurfaceKt.m3016Surfaced85dljk(z, function1, m1101defaultMinSizeVpY3zN4, z5, shape, m2887containerColorWaAFU9c$material3, m2888contentColorWaAFU9c$material3, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, rememberComposableLambda2, composer2, i16, 48, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -401,11 +402,11 @@ public final class SegmentedButtonKt {
                             }
                             if (mutableInteractionSource3 != null) {
                             }
-                            long m2442containerColorWaAFU9c$material32 = segmentedButtonColors4.m2442containerColorWaAFU9c$material3(z3, z);
+                            long m2887containerColorWaAFU9c$material32 = segmentedButtonColors4.m2887containerColorWaAFU9c$material3(z3, z);
                             int i152 = i14;
-                            long m2443contentColorWaAFU9c$material32 = segmentedButtonColors4.m2443contentColorWaAFU9c$material3(z3, z);
+                            long m2888contentColorWaAFU9c$material32 = segmentedButtonColors4.m2888contentColorWaAFU9c$material3(z3, z);
                             Modifier modifier32 = obj;
-                            Modifier m848defaultMinSizeVpY3zN42 = SizeKt.m848defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(multiChoiceSegmentedButtonRowScope, modifier32, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m1772getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1771getMinHeightD9Ej5fM());
+                            Modifier m1101defaultMinSizeVpY3zN42 = SizeKt.m1101defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(multiChoiceSegmentedButtonRowScope, modifier32, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m2217getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m2216getMinHeightD9Ej5fM());
                             ComposableLambda rememberComposableLambda22 = ComposableLambdaKt.rememberComposableLambda(1717860164, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
@@ -435,7 +436,7 @@ public final class SegmentedButtonKt {
                             SegmentedButtonColors segmentedButtonColors52 = segmentedButtonColors4;
                             PaddingValues paddingValues42 = paddingValues3;
                             composer2 = startRestartGroup;
-                            SurfaceKt.m2571Surfaced85dljk(z, function1, m848defaultMinSizeVpY3zN42, z52, shape, m2442containerColorWaAFU9c$material32, m2443contentColorWaAFU9c$material32, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, rememberComposableLambda22, composer2, i162, 48, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+                            SurfaceKt.m3016Surfaced85dljk(z, function1, m1101defaultMinSizeVpY3zN42, z52, shape, m2887containerColorWaAFU9c$material32, m2888contentColorWaAFU9c$material32, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, rememberComposableLambda22, composer2, i162, 48, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             segmentedButtonColors3 = segmentedButtonColors52;
@@ -688,14 +689,14 @@ public final class SegmentedButtonKt {
                     if (i7 == 0) {
                         i4 |= 100663296;
                     } else if ((i & 100663296) == 0) {
-                        i4 |= startRestartGroup.changed(paddingValues) ? 67108864 : 33554432;
+                        i4 |= startRestartGroup.changed(paddingValues) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     }
                     i8 = i3 & 256;
                     if (i8 == 0) {
                         i4 |= 805306368;
                     } else if ((i & 805306368) == 0) {
                         i9 = i8;
-                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i4 |= startRestartGroup.changed(mutableInteractionSource) ? 536870912 : 268435456;
                         i10 = i3 & 512;
                         if (i10 != 0) {
                             i12 = i2 | 6;
@@ -738,7 +739,7 @@ public final class SegmentedButtonKt {
                                     i4 &= -3670017;
                                 }
                                 if ((i3 & 64) != 0) {
-                                    borderStroke2 = SegmentedButtonDefaults.m2457borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors2.m2441borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
+                                    borderStroke2 = SegmentedButtonDefaults.m2902borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors2.m2886borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
                                     i4 &= -29360129;
                                 }
                                 PaddingValues contentPadding = i7 != 0 ? SegmentedButtonDefaults.INSTANCE.getContentPadding() : paddingValues;
@@ -795,12 +796,12 @@ public final class SegmentedButtonKt {
                                         startRestartGroup.endReplaceGroup();
                                         mutableInteractionSource4 = mutableInteractionSource3;
                                     }
-                                    long m2442containerColorWaAFU9c$material3 = segmentedButtonColors4.m2442containerColorWaAFU9c$material3(z3, z);
+                                    long m2887containerColorWaAFU9c$material3 = segmentedButtonColors4.m2887containerColorWaAFU9c$material3(z3, z);
                                     int i16 = i14;
-                                    long m2443contentColorWaAFU9c$material3 = segmentedButtonColors4.m2443contentColorWaAFU9c$material3(z3, z);
+                                    long m2888contentColorWaAFU9c$material3 = segmentedButtonColors4.m2888contentColorWaAFU9c$material3(z3, z);
                                     SegmentedButtonColors segmentedButtonColors5 = segmentedButtonColors4;
                                     Modifier modifier4 = obj;
-                                    Modifier m848defaultMinSizeVpY3zN4 = SizeKt.m848defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(singleChoiceSegmentedButtonRowScope, modifier4, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m1772getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1771getMinHeightD9Ej5fM());
+                                    Modifier m1101defaultMinSizeVpY3zN4 = SizeKt.m1101defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(singleChoiceSegmentedButtonRowScope, modifier4, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m2217getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m2216getMinHeightD9Ej5fM());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -882219167, "CC(remember):SegmentedButton.kt#9igjgp");
                                     rememberedValue = startRestartGroup.rememberedValue();
                                     if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -817,7 +818,7 @@ public final class SegmentedButtonKt {
                                     boolean z5 = z3;
                                     PaddingValues paddingValues4 = paddingValues3;
                                     composer2 = startRestartGroup;
-                                    SurfaceKt.m2570Surfaced85dljk(z, function0, SemanticsModifierKt.semantics$default(m848defaultMinSizeVpY3zN4, false, (Function1) rememberedValue, 1, null), z5, shape, m2442containerColorWaAFU9c$material3, m2443contentColorWaAFU9c$material3, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1208080836, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$6
+                                    SurfaceKt.m3015Surfaced85dljk(z, function0, SemanticsModifierKt.semantics$default(m1101defaultMinSizeVpY3zN4, false, (Function1) rememberedValue, 1, null), z5, shape, m2887containerColorWaAFU9c$material3, m2888contentColorWaAFU9c$material3, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1208080836, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$6
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
@@ -865,12 +866,12 @@ public final class SegmentedButtonKt {
                             }
                             if (mutableInteractionSource3 != null) {
                             }
-                            long m2442containerColorWaAFU9c$material32 = segmentedButtonColors4.m2442containerColorWaAFU9c$material3(z3, z);
+                            long m2887containerColorWaAFU9c$material32 = segmentedButtonColors4.m2887containerColorWaAFU9c$material3(z3, z);
                             int i162 = i14;
-                            long m2443contentColorWaAFU9c$material32 = segmentedButtonColors4.m2443contentColorWaAFU9c$material3(z3, z);
+                            long m2888contentColorWaAFU9c$material32 = segmentedButtonColors4.m2888contentColorWaAFU9c$material3(z3, z);
                             SegmentedButtonColors segmentedButtonColors52 = segmentedButtonColors4;
                             Modifier modifier42 = obj;
-                            Modifier m848defaultMinSizeVpY3zN42 = SizeKt.m848defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(singleChoiceSegmentedButtonRowScope, modifier42, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m1772getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m1771getMinHeightD9Ej5fM());
+                            Modifier m1101defaultMinSizeVpY3zN42 = SizeKt.m1101defaultMinSizeVpY3zN4(interactionZIndex(RowScope.weight$default(singleChoiceSegmentedButtonRowScope, modifier42, 1.0f, false, 2, null), z, interactionCountAsState(mutableInteractionSource4, startRestartGroup, 0)), ButtonDefaults.INSTANCE.m2217getMinWidthD9Ej5fM(), ButtonDefaults.INSTANCE.m2216getMinHeightD9Ej5fM());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -882219167, "CC(remember):SegmentedButton.kt#9igjgp");
                             rememberedValue = startRestartGroup.rememberedValue();
                             if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -880,7 +881,7 @@ public final class SegmentedButtonKt {
                             boolean z52 = z3;
                             PaddingValues paddingValues42 = paddingValues3;
                             composer2 = startRestartGroup;
-                            SurfaceKt.m2570Surfaced85dljk(z, function0, SemanticsModifierKt.semantics$default(m848defaultMinSizeVpY3zN42, false, (Function1) rememberedValue, 1, null), z52, shape, m2442containerColorWaAFU9c$material32, m2443contentColorWaAFU9c$material32, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1208080836, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$6
+                            SurfaceKt.m3015Surfaced85dljk(z, function0, SemanticsModifierKt.semantics$default(m1101defaultMinSizeVpY3zN42, false, (Function1) rememberedValue, 1, null), z52, shape, m2887containerColorWaAFU9c$material32, m2888contentColorWaAFU9c$material32, 0.0f, 0.0f, borderStroke4, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1208080836, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SegmentedButtonKt$SegmentedButton$6
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -1040,7 +1041,7 @@ public final class SegmentedButtonKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SegmentedButton$lambda$4$lambda$3(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6779getRadioButtono7Vup1c());
+        SemanticsPropertiesKt.m7397setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7383getRadioButtono7Vup1c());
         return Unit.INSTANCE;
     }
 
@@ -1158,7 +1159,7 @@ public final class SegmentedButtonKt {
                         } else {
                             obj4 = mutableInteractionSource;
                             if ((i & 100663296) == 0) {
-                                i4 |= startRestartGroup.changed(obj4) ? 67108864 : 33554432;
+                                i4 |= startRestartGroup.changed(obj4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                             }
                         }
                         i8 = i3 & 256;
@@ -1166,7 +1167,7 @@ public final class SegmentedButtonKt {
                             i4 |= 805306368;
                         } else if ((i & 805306368) == 0) {
                             i9 = i8;
-                            i4 |= startRestartGroup.changedInstance(function2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i4 |= startRestartGroup.changedInstance(function2) ? 536870912 : 268435456;
                             if ((i3 & 512) == 0) {
                                 i10 = i2 | 6;
                             } else if ((i2 & 6) == 0) {
@@ -1202,7 +1203,7 @@ public final class SegmentedButtonKt {
                                         segmentedButtonColors3 = obj3;
                                     }
                                     if ((i3 & 64) != 0) {
-                                        borderStroke2 = SegmentedButtonDefaults.m2457borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors3.m2441borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
+                                        borderStroke2 = SegmentedButtonDefaults.m2902borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors3.m2886borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
                                         i4 = (-29360129) & i4;
                                     }
                                     MutableInteractionSource mutableInteractionSource3 = i7 != 0 ? null : obj4;
@@ -1247,7 +1248,7 @@ public final class SegmentedButtonKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(2065856961, i11, i10, "androidx.compose.material3.SegmentedButton (SegmentedButton.kt:266)");
                                 }
-                                SegmentedButton(multiChoiceSegmentedButtonRowScope, z, obj, shape, modifier3, z5, segmentedButtonColors4, borderStroke4, SegmentedButtonDefaults.INSTANCE.getContentPadding(), mutableInteractionSource2, composableLambda, function22, startRestartGroup, ((i11 << 3) & 1879048192) | (i11 & 14) | 100663296 | (i11 & 112) | (i11 & 896) | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11), ((i11 >> 27) & 14) | ((i10 << 3) & 112), 0);
+                                SegmentedButton(multiChoiceSegmentedButtonRowScope, z, obj, shape, modifier3, z5, segmentedButtonColors4, borderStroke4, SegmentedButtonDefaults.INSTANCE.getContentPadding(), mutableInteractionSource2, composableLambda, function22, startRestartGroup, ((i11 << 3) & C.ENCODING_PCM_DOUBLE) | (i11 & 14) | 100663296 | (i11 & 112) | (i11 & 896) | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11), ((i11 >> 27) & 14) | ((i10 << 3) & 112), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1501,7 +1502,7 @@ public final class SegmentedButtonKt {
                         } else {
                             obj4 = mutableInteractionSource;
                             if ((i & 100663296) == 0) {
-                                i4 |= startRestartGroup.changed(obj4) ? 67108864 : 33554432;
+                                i4 |= startRestartGroup.changed(obj4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                             }
                         }
                         i8 = i3 & 256;
@@ -1509,7 +1510,7 @@ public final class SegmentedButtonKt {
                             i4 |= 805306368;
                         } else if ((i & 805306368) == 0) {
                             i9 = i8;
-                            i4 |= startRestartGroup.changedInstance(function2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i4 |= startRestartGroup.changedInstance(function2) ? 536870912 : 268435456;
                             if ((i3 & 512) == 0) {
                                 i10 = i2 | 6;
                             } else if ((i2 & 6) == 0) {
@@ -1545,7 +1546,7 @@ public final class SegmentedButtonKt {
                                         segmentedButtonColors3 = obj3;
                                     }
                                     if ((i3 & 64) != 0) {
-                                        borderStroke2 = SegmentedButtonDefaults.m2457borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors3.m2441borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
+                                        borderStroke2 = SegmentedButtonDefaults.m2902borderStrokel07J4OM$default(SegmentedButtonDefaults.INSTANCE, segmentedButtonColors3.m2886borderColorWaAFU9c$material3(z3, z), 0.0f, 2, null);
                                         i4 = (-29360129) & i4;
                                     }
                                     MutableInteractionSource mutableInteractionSource3 = i7 != 0 ? null : obj4;
@@ -1590,7 +1591,7 @@ public final class SegmentedButtonKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(1723786701, i11, i10, "androidx.compose.material3.SegmentedButton (SegmentedButton.kt:296)");
                                 }
-                                SegmentedButton(singleChoiceSegmentedButtonRowScope, z, obj, shape, modifier3, z5, segmentedButtonColors4, borderStroke4, SegmentedButtonDefaults.INSTANCE.getContentPadding(), mutableInteractionSource2, composableLambda, function22, startRestartGroup, ((i11 << 3) & 1879048192) | (i11 & 14) | 100663296 | (i11 & 112) | (i11 & 896) | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11), ((i11 >> 27) & 14) | ((i10 << 3) & 112), 0);
+                                SegmentedButton(singleChoiceSegmentedButtonRowScope, z, obj, shape, modifier3, z5, segmentedButtonColors4, borderStroke4, SegmentedButtonDefaults.INSTANCE.getContentPadding(), mutableInteractionSource2, composableLambda, function22, startRestartGroup, ((i11 << 3) & C.ENCODING_PCM_DOUBLE) | (i11 & 14) | 100663296 | (i11 & 112) | (i11 & 896) | (i11 & 7168) | (57344 & i11) | (458752 & i11) | (3670016 & i11) | (29360128 & i11), ((i11 >> 27) & 14) | ((i10 << 3) & 112), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1731,7 +1732,7 @@ public final class SegmentedButtonKt {
     }
 
     /* renamed from: SingleChoiceSegmentedButtonRow-uFdPcIQ  reason: not valid java name */
-    public static final void m2463SingleChoiceSegmentedButtonRowuFdPcIQ(Modifier modifier, float f, final Function3<? super SingleChoiceSegmentedButtonRowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2908SingleChoiceSegmentedButtonRowuFdPcIQ(Modifier modifier, float f, final Function3<? super SingleChoiceSegmentedButtonRowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(2041406825);
         ComposerKt.sourceInformation(startRestartGroup, "C(SingleChoiceSegmentedButtonRow)N(modifier,space:c#ui.unit.Dp,content)332@14963L448:SegmentedButton.kt#uh7d8r");
@@ -1759,15 +1760,15 @@ public final class SegmentedButtonKt {
                 modifier = Modifier.Companion;
             }
             if (i5 != 0) {
-                f = SegmentedButtonDefaults.INSTANCE.m2460getBorderWidthD9Ej5fM();
+                f = SegmentedButtonDefaults.INSTANCE.m2905getBorderWidthD9Ej5fM();
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2041406825, i3, -1, "androidx.compose.material3.SingleChoiceSegmentedButtonRow (SegmentedButton.kt:331)");
             }
-            Modifier width = IntrinsicKt.width(SizeKt.m849defaultMinSizeVpY3zN4$default(SelectableGroupKt.selectableGroup(modifier), 0.0f, OutlinedSegmentedButtonTokens.INSTANCE.m3594getContainerHeightD9Ej5fM(), 1, null), IntrinsicSize.Min);
+            Modifier width = IntrinsicKt.width(SizeKt.m1102defaultMinSizeVpY3zN4$default(SelectableGroupKt.selectableGroup(modifier), 0.0f, OutlinedSegmentedButtonTokens.INSTANCE.m4039getContainerHeightD9Ej5fM(), 1, null), IntrinsicSize.Min);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-f)), centerVertically, startRestartGroup, 48);
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-f)), centerVertically, startRestartGroup, 48);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -1783,15 +1784,15 @@ public final class SegmentedButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1183792256, "C341@15323L58,342@15396L9:SegmentedButton.kt#uh7d8r");
@@ -1829,7 +1830,7 @@ public final class SegmentedButtonKt {
     }
 
     /* renamed from: MultiChoiceSegmentedButtonRow-uFdPcIQ  reason: not valid java name */
-    public static final void m2462MultiChoiceSegmentedButtonRowuFdPcIQ(Modifier modifier, float f, final Function3<? super MultiChoiceSegmentedButtonRowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2907MultiChoiceSegmentedButtonRowuFdPcIQ(Modifier modifier, float f, final Function3<? super MultiChoiceSegmentedButtonRowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(1844783038);
         ComposerKt.sourceInformation(startRestartGroup, "C(MultiChoiceSegmentedButtonRow)N(modifier,space:c#ui.unit.Dp,content)368@16414L412:SegmentedButton.kt#uh7d8r");
@@ -1857,15 +1858,15 @@ public final class SegmentedButtonKt {
                 modifier = Modifier.Companion;
             }
             if (i5 != 0) {
-                f = SegmentedButtonDefaults.INSTANCE.m2460getBorderWidthD9Ej5fM();
+                f = SegmentedButtonDefaults.INSTANCE.m2905getBorderWidthD9Ej5fM();
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1844783038, i3, -1, "androidx.compose.material3.MultiChoiceSegmentedButtonRow (SegmentedButton.kt:367)");
             }
-            Modifier width = IntrinsicKt.width(SizeKt.m849defaultMinSizeVpY3zN4$default(modifier, 0.0f, OutlinedSegmentedButtonTokens.INSTANCE.m3594getContainerHeightD9Ej5fM(), 1, null), IntrinsicSize.Min);
+            Modifier width = IntrinsicKt.width(SizeKt.m1102defaultMinSizeVpY3zN4$default(modifier, 0.0f, OutlinedSegmentedButtonTokens.INSTANCE.m4039getContainerHeightD9Ej5fM(), 1, null), IntrinsicSize.Min);
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(-f)), centerVertically, startRestartGroup, 48);
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-f)), centerVertically, startRestartGroup, 48);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -1881,15 +1882,15 @@ public final class SegmentedButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 714807460, "C376@16739L57,377@16811L9:SegmentedButton.kt#uh7d8r");
@@ -1967,15 +1968,15 @@ public final class SegmentedButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 314731321, "C388@17149L5,390@17293L12,391@17343L386,391@17314L415:SegmentedButton.kt#uh7d8r");
@@ -2043,15 +2044,15 @@ public final class SegmentedButtonKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer2);
-                    Updater.m4049setimpl(m4041constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl2 = Updater.m4467constructorimpl(composer2);
+                    Updater.m4475setimpl(m4467constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                        m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                        m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                    if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                        m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                        m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(composer2, 0);
                     composer2.endNode();
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -2124,11 +2125,11 @@ public final class SegmentedButtonKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult interactionZIndex$lambda$19(final State state, final boolean z, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.SegmentedButtonKt$$ExternalSyntheticLambda7
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(constraints.m8119unboximpl());
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.SegmentedButtonKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return SegmentedButtonKt.interactionZIndex$lambda$19$lambda$18(State.this, z, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
+                return SegmentedButtonKt.interactionZIndex$lambda$19$lambda$18(State.this, z, mo6818measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }

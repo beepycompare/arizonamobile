@@ -18,6 +18,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @SubtypeOf({GuardedBy.class, GuardSatisfied.class})
 @DefaultFor({TypeUseLocation.CONSTRUCTOR_RESULT})
 @Documented
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface NewObject {
 }

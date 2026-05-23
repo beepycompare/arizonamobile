@@ -1,7 +1,7 @@
 package com.squareup.picasso;
 
 import android.graphics.Bitmap;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public interface Cache {
     public static final Cache NONE = new Cache() { // from class: com.squareup.picasso.Cache.1
         @Override // com.squareup.picasso.Cache

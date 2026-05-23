@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.util.Clock;
 import androidx.media3.exoplayer.audio.AudioOutputProvider;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ForwardingAudioOutputProvider implements AudioOutputProvider {
     private final AudioOutputProvider audioOutputProvider;
 

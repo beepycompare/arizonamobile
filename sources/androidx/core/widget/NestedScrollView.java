@@ -1501,15 +1501,13 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             int width = getWidth();
             int height = getHeight();
             int min = Math.min(0, scrollY);
-            if (Api21Impl.getClipToPadding(this)) {
+            if (getClipToPadding()) {
                 width -= getPaddingLeft() + getPaddingRight();
                 i = getPaddingLeft();
-            } else {
-                i = 0;
-            }
-            if (Api21Impl.getClipToPadding(this)) {
                 height -= getPaddingTop() + getPaddingBottom();
                 min += getPaddingTop();
+            } else {
+                i = 0;
             }
             canvas.translate(i, min);
             this.mEdgeGlowTop.setSize(width, height);
@@ -1525,11 +1523,11 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         int width2 = getWidth();
         int height2 = getHeight();
         int max = Math.max(getScrollRange(), scrollY) + height2;
-        if (Api21Impl.getClipToPadding(this)) {
+        if (getClipToPadding()) {
             width2 -= getPaddingLeft() + getPaddingRight();
             i2 = getPaddingLeft();
         }
-        if (Api21Impl.getClipToPadding(this)) {
+        if (getClipToPadding()) {
             height2 -= getPaddingTop() + getPaddingBottom();
             max -= getPaddingBottom();
         }
@@ -1701,16 +1699,6 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         @Override // androidx.core.view.DifferentialMotionFlingTarget
         public float getScaledScrollFactor() {
             return -NestedScrollView.this.getVerticalScrollFactorCompat();
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static boolean getClipToPadding(ViewGroup viewGroup) {
-            return viewGroup.getClipToPadding();
         }
     }
 

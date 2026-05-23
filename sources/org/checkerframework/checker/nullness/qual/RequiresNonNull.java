@@ -12,14 +12,14 @@ import org.checkerframework.framework.qual.PreconditionAnnotation;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface RequiresNonNull {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
     @PreconditionAnnotation(qualifier = NonNull.class)
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         RequiresNonNull[] value();
     }

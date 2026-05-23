@@ -20,12 +20,12 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ServerTopBar.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$ServerTopBarKt {
     public static final ComposableSingletons$ServerTopBarKt INSTANCE = new ComposableSingletons$ServerTopBarKt();
 
     /* renamed from: lambda$-1484463318  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f144lambda$1484463318 = ComposableLambdaKt.composableLambdaInstance(-1484463318, false, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f64lambda$1484463318 = ComposableLambdaKt.composableLambdaInstance(-1484463318, false, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$ServerTopBarKt.lambda__1484463318$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -33,8 +33,8 @@ public final class ComposableSingletons$ServerTopBarKt {
     });
 
     /* renamed from: getLambda$-1484463318$select_server  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9125getLambda$1484463318$select_server() {
-        return f144lambda$1484463318;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9763getLambda$1484463318$select_server() {
+        return f64lambda$1484463318;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,7 +47,7 @@ public final class ComposableSingletons$ServerTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1484463318, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt.lambda$-1484463318.<anonymous> (ServerTopBar.kt:51)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72.0f)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m1103height3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(72.0f)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

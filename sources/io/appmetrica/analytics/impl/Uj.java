@@ -1,11 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Uj implements Y4 {
-    @Override // io.appmetrica.analytics.impl.Y4
-    /* renamed from: b */
-    public final Vj a(Context context, Q4 q4, C0467o4 c0467o4, Am am) {
-        return new Vj(context, am.e(), q4, c0467o4, new Rj(C0448na.I.h()), new C0128an(), new P4());
+public final class Uj implements InterfaceC0480ob {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ String f795a;
+
+    public Uj(String str) {
+        this.f795a = str;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
+    public final void a(InterfaceC0506pb interfaceC0506pb) {
+        interfaceC0506pb.setUserProfileID(this.f795a);
     }
 }

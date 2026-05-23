@@ -2,9 +2,9 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhr extends zzmb implements zznn {
+public final class zzhr extends zzadp implements zzafd {
     private zzhr() {
         throw null;
     }
@@ -17,7 +17,7 @@ public final class zzhr extends zzmb implements zznn {
     public /* synthetic */ zzhr(byte[] bArr) {
         super(r1);
         zzhs zzhsVar;
-        zzhsVar = zzhs.zzj;
+        zzhsVar = zzhs.zzm;
     }
 
     public final List zza() {
@@ -33,44 +33,44 @@ public final class zzhr extends zzmb implements zznn {
     }
 
     public final zzhr zzd(int i, zzhw zzhwVar) {
-        zzaX();
-        ((zzhs) this.zza).zzm(i, zzhwVar);
+        zzaY();
+        ((zzhs) this.zza).zzq(i, zzhwVar);
         return this;
     }
 
     public final zzhr zze(int i, zzhv zzhvVar) {
-        zzaX();
-        ((zzhs) this.zza).zzm(i, (zzhw) zzhvVar.zzbc());
+        zzaY();
+        ((zzhs) this.zza).zzq(i, (zzhw) zzhvVar.zzbd());
         return this;
     }
 
     public final zzhr zzf(zzhw zzhwVar) {
-        zzaX();
-        ((zzhs) this.zza).zzn(zzhwVar);
+        zzaY();
+        ((zzhs) this.zza).zzr(zzhwVar);
         return this;
     }
 
     public final zzhr zzg(zzhv zzhvVar) {
-        zzaX();
-        ((zzhs) this.zza).zzn((zzhw) zzhvVar.zzbc());
+        zzaY();
+        ((zzhs) this.zza).zzr((zzhw) zzhvVar.zzbd());
         return this;
     }
 
     public final zzhr zzh(Iterable iterable) {
-        zzaX();
-        ((zzhs) this.zza).zzo(iterable);
+        zzaY();
+        ((zzhs) this.zza).zzs(iterable);
         return this;
     }
 
     public final zzhr zzi() {
-        zzaX();
-        ((zzhs) this.zza).zzp();
+        zzaY();
+        ((zzhs) this.zza).zzt();
         return this;
     }
 
     public final zzhr zzj(int i) {
-        zzaX();
-        ((zzhs) this.zza).zzq(i);
+        zzaY();
+        ((zzhs) this.zza).zzu(i);
         return this;
     }
 
@@ -79,8 +79,8 @@ public final class zzhr extends zzmb implements zznn {
     }
 
     public final zzhr zzl(String str) {
-        zzaX();
-        ((zzhs) this.zza).zzr(str);
+        zzaY();
+        ((zzhs) this.zza).zzv(str);
         return this;
     }
 
@@ -93,24 +93,48 @@ public final class zzhr extends zzmb implements zznn {
     }
 
     public final zzhr zzo(long j) {
-        zzaX();
-        ((zzhs) this.zza).zzs(j);
+        zzaY();
+        ((zzhs) this.zza).zzw(j);
         return this;
     }
 
     public final long zzp() {
-        return ((zzhs) this.zza).zzh();
+        return ((zzhs) this.zza).zzi();
     }
 
     public final zzhr zzq(long j) {
-        zzaX();
-        ((zzhs) this.zza).zzt(j);
+        zzaY();
+        ((zzhs) this.zza).zzx(j);
         return this;
     }
 
     public final zzhr zzr(long j) {
-        zzaX();
-        ((zzhs) this.zza).zzu(j);
+        zzaY();
+        ((zzhs) this.zza).zzy(j);
+        return this;
+    }
+
+    public final boolean zzs() {
+        return ((zzhs) this.zza).zzl();
+    }
+
+    public final zzhr zzt(long j) {
+        zzaY();
+        ((zzhs) this.zza).zzz(j);
+        return this;
+    }
+
+    public final boolean zzu() {
+        return ((zzhs) this.zza).zzn();
+    }
+
+    public final long zzv() {
+        return ((zzhs) this.zza).zzo();
+    }
+
+    public final zzhr zzw(long j) {
+        zzaY();
+        ((zzhs) this.zza).zzA(j);
         return this;
     }
 }

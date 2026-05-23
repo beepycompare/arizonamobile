@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.os.Build;
-import androidx.media3.common.C;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class PackageInfoCompat {
     public static long getLongVersionCode(PackageInfo packageInfo) {
         if (Build.VERSION.SDK_INT >= 28) {
@@ -26,7 +25,7 @@ public final class PackageInfoCompat {
     public static List<Signature> getSignatures(PackageManager packageManager, String str) throws PackageManager.NameNotFoundException {
         Signature[] signatureArr;
         if (Build.VERSION.SDK_INT >= 28) {
-            SigningInfo signingInfo = packageManager.getPackageInfo(str, C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
+            SigningInfo signingInfo = packageManager.getPackageInfo(str, 134217728).signingInfo;
             if (Api28Impl.hasMultipleSigners(signingInfo)) {
                 signatureArr = Api28Impl.getApkContentsSigners(signingInfo);
             } else {
@@ -121,7 +120,7 @@ public final class PackageInfoCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static class Api28Impl {
         private Api28Impl() {
         }

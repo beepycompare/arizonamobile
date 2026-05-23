@@ -13,7 +13,6 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.LinearLayout;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.common.C;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,7 +25,7 @@ import java.net.Proxy;
 import java.net.URL;
 import java.util.Calendar;
 import org.apache.commons.net.ftp.FTPClient;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarDownloader {
     public String ACCEPT_EULA_BUTTON;
     public String ADDITIONAL_DATA_NEEDED;
@@ -124,7 +123,7 @@ public class WarDownloader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarDownloader$14  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass14 implements Runnable {
         final /* synthetic */ String val$mess;
 
@@ -191,7 +190,7 @@ public class WarDownloader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarDownloader$7  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass7 implements Runnable {
         final /* synthetic */ String val$fTitle;
 
@@ -222,7 +221,7 @@ public class WarDownloader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarDownloader$8  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass8 implements Runnable {
         AnonymousClass8() {
         }
@@ -251,7 +250,7 @@ public class WarDownloader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarDownloader$9  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass9 implements Runnable {
         AnonymousClass9() {
         }
@@ -279,7 +278,7 @@ public class WarDownloader {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class CDownloadFileList {
         boolean downloaded;
         int downloadsize;
@@ -292,7 +291,7 @@ public class WarDownloader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class progressFileOutputStream extends FileOutputStream {
         public boolean doCheck;
         int outputCount;
@@ -516,26 +515,26 @@ public class WarDownloader {
         this.IsDisplayingSpash = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0123, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0122, code lost:
         java.lang.System.out.println("Failed Downloading 3 times read " + r0 + " expected " + r16.downloadFileList[r2].size);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0149, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0148, code lost:
         if (r5 == null) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x014b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x014a, code lost:
         r5.release();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x014e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x014d, code lost:
         return false;
      */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0259 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0231 A[EDGE_INSN: B:116:0x0231->B:70:0x0231 ?: BREAK  , SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0225 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0206 A[Catch: all -> 0x022a, Exception -> 0x022c, TryCatch #1 {Exception -> 0x022c, blocks: (B:12:0x0045, B:14:0x0049, B:16:0x006f, B:18:0x00b0, B:19:0x00b6, B:21:0x00ba, B:23:0x0102, B:25:0x0106, B:27:0x010e, B:28:0x0114, B:33:0x0123, B:39:0x0153, B:40:0x0187, B:48:0x01d3, B:54:0x01e5, B:57:0x0206, B:60:0x0216, B:61:0x021c, B:55:0x01fb, B:43:0x0196, B:45:0x01a9), top: B:103:0x0045, outer: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0214  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x024b  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0263  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0258 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0230 A[EDGE_INSN: B:116:0x0230->B:70:0x0230 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0224 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0205 A[Catch: all -> 0x0229, Exception -> 0x022b, TryCatch #2 {Exception -> 0x022b, blocks: (B:12:0x0044, B:14:0x0048, B:16:0x006e, B:18:0x00af, B:19:0x00b5, B:21:0x00b9, B:23:0x0101, B:25:0x0105, B:27:0x010d, B:28:0x0113, B:33:0x0122, B:39:0x0152, B:40:0x0186, B:48:0x01d2, B:54:0x01e4, B:57:0x0205, B:60:0x0215, B:61:0x021b, B:55:0x01fa, B:43:0x0195, B:45:0x01a8), top: B:105:0x0044, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0213  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0262  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -553,8 +552,8 @@ public class WarDownloader {
                 WarDownloader.this.mBuilder = new NotificationCompat.Builder(WarDownloader.this.myWarMedia);
                 WarDownloader.this.mBuilder.setContentTitle(WarDownloader.this.downloadTitle).setContentText(WarDownloader.this.DOWNLOADING_FILES_TEXT + ", " + WarDownloader.this.PLEASE_WAIT_TEXT).setSmallIcon(WarDownloader.this.myWarMedia.appStatusIcon);
                 Intent intent = warMedia.appIntent;
-                intent.addFlags(C.BUFFER_FLAG_LAST_SAMPLE);
-                WarDownloader.this.mBuilder.setContentIntent(PendingIntent.getActivity(WarDownloader.this.myWarMedia, 0, intent, C.BUFFER_FLAG_FIRST_SAMPLE));
+                intent.addFlags(536870912);
+                WarDownloader.this.mBuilder.setContentIntent(PendingIntent.getActivity(WarDownloader.this.myWarMedia, 0, intent, 134217728));
                 WarDownloader.this.DownloadProgress = new ProgressDialog(warMedia);
                 WarDownloader.this.DownloadProgress.setProgressStyle(1);
                 WarDownloader.this.DownloadProgress.setMessage(WarDownloader.this.DOWNLOADING_FILES_TEXT + ", " + WarDownloader.this.PLEASE_WAIT_TEXT);

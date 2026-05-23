@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection;
@@ -37,30 +38,30 @@ import kotlin.math.MathKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Pager.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001aë\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b'\u0010(\u001aß\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b)\u0010*\u001aë\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b.\u0010/\u001aß\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b0\u00101\u001aL\u00102\u001a\u00020\u000b*\u00020\u001e2\u0006\u00103\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u000b2\u0006\u00104\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u00106\u001a\u00020\u000b2\u0006\u00107\u001a\u00020\u000b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u000bH\u0000\u001a,\u0010;\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00132\u0006\u0010=\u001a\u00020>2\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a\u0017\u0010?\u001a\u00020\u00012\f\u0010@\u001a\b\u0012\u0004\u0012\u00020B0AH\u0082\b¨\u0006C"}, d2 = {"HorizontalPager", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "", "reverseLayout", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "HorizontalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "HorizontalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "VerticalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "currentPageOffset", "layoutSize", "spaceBetweenPages", "beforeContentPadding", "afterContentPadding", "currentPage", "currentPageOffsetFraction", "", "pageCount", "pagerSemantics", "isVertical", "scope", "Lkotlinx/coroutines/CoroutineScope;", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\u001aë\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b'\u0010(\u001aß\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b)\u0010*\u001aë\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b.\u0010/\u001aß\u0001\u0010+\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010,\u001a\u00020-2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132%\b\u0002\u0010\u0015\u001a\u001f\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00162\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\b\b\u0002\u0010\u001d\u001a\u00020\u001e21\u0010!\u001a-\u0012\u0004\u0012\u00020#\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u00010\"¢\u0006\u0002\b%¢\u0006\u0002\b&H\u0007¢\u0006\u0004\b0\u00101\u001aL\u00102\u001a\u00020\u000b*\u00020\u001e2\u0006\u00103\u001a\u00020\u000b2\u0006\u0010\b\u001a\u00020\u000b2\u0006\u00104\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u00106\u001a\u00020\u000b2\u0006\u00107\u001a\u00020\u000b2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u000bH\u0000\u001a,\u0010;\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010<\u001a\u00020\u00132\u0006\u0010=\u001a\u00020>2\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a\u0017\u0010?\u001a\u00020\u00012\f\u0010@\u001a\b\u0012\u0004\u0012\u00020B0AH\u0082\b¨\u0006C"}, d2 = {"HorizontalPager", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "", "reverseLayout", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "HorizontalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "HorizontalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "VerticalPager--8jOkeI", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/foundation/OverscrollEffect;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "VerticalPager-oI3XNZo", "(Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/pager/PageSize;IFLandroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "currentPageOffset", "layoutSize", "spaceBetweenPages", "beforeContentPadding", "afterContentPadding", "currentPage", "currentPageOffsetFraction", "", "pageCount", "pagerSemantics", "isVertical", "scope", "Lkotlinx/coroutines/CoroutineScope;", "debugLog", "generateMsg", "Lkotlin/Function0;", "", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PagerKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1072HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1326HorizontalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalPager_oI3XNZo$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1073HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1327HorizontalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, vertical, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalPager__8jOkeI$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1074VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1328VerticalPager8jOkeI(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, overscrollEffect, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalPager_oI3XNZo$lambda$0(PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1075VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1329VerticalPageroI3XNZo(pagerState, modifier, paddingValues, pageSize, i, f, horizontal, targetedFlingBehavior, z, z2, function1, nestedScrollConnection, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
@@ -106,7 +107,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1072HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1326HorizontalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -167,7 +168,7 @@ public final class PagerKt {
         int i29;
         Object obj4;
         Composer startRestartGroup = composer.startRestartGroup(1860873769);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)131@7501L707:Pager.kt#g6yjnt");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)133@7675L707:Pager.kt#g6yjnt");
         if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
@@ -241,7 +242,7 @@ public final class PagerKt {
                         if (i12 != 0) {
                             i5 |= 100663296;
                         } else if ((i2 & 100663296) == 0) {
-                            i5 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                            i5 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                         i13 = i4 & 512;
                         if (i13 != 0) {
@@ -250,7 +251,7 @@ public final class PagerKt {
                         } else {
                             if ((i2 & 805306368) == 0) {
                                 i14 = i13;
-                                i5 |= startRestartGroup.changed(z2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i5 |= startRestartGroup.changed(z2) ? 536870912 : 268435456;
                             } else {
                                 i14 = i13;
                             }
@@ -295,7 +296,7 @@ public final class PagerKt {
                                 i21 = i20;
                                 if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "121@7026L28,126@7250L57,128@7404L26");
+                                    ComposerKt.sourceInformation(startRestartGroup, "123@7200L28,128@7424L57,130@7578L26");
                                     if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                         startRestartGroup.skipToGroupEnd();
                                         if ((i4 & 128) != 0) {
@@ -324,10 +325,10 @@ public final class PagerKt {
                                         snapPosition3 = snapPosition;
                                     } else {
                                         Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
+                                        PaddingValues m1043PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         int i33 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                                        float m8160constructorimpl = i10 != 0 ? Dp.m8160constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             vertical2 = Alignment.Companion.getCenterVertically();
                                         }
@@ -366,11 +367,11 @@ public final class PagerKt {
                                             function13 = function14;
                                             nestedScrollConnection4 = nestedScrollConnection3;
                                             composer2 = startRestartGroup;
-                                            paddingValues3 = m811PaddingValues0680j_4;
+                                            paddingValues3 = m1043PaddingValues0680j_4;
                                             pageSize3 = fill;
                                             z5 = z7;
                                             i26 = i33;
-                                            f4 = m7555constructorimpl;
+                                            f4 = m8160constructorimpl;
                                             i27 = i15;
                                             z6 = z8;
                                             modifier3 = companion;
@@ -379,12 +380,12 @@ public final class PagerKt {
                                             nestedScrollConnection4 = nestedScrollConnection3;
                                             i25 = i24;
                                             composer2 = startRestartGroup;
-                                            paddingValues3 = m811PaddingValues0680j_4;
+                                            paddingValues3 = m1043PaddingValues0680j_4;
                                             targetedFlingBehavior3 = obj2;
                                             pageSize3 = fill;
                                             z5 = z7;
                                             i26 = i33;
-                                            f4 = m7555constructorimpl;
+                                            f4 = m8160constructorimpl;
                                             i27 = i15;
                                             z6 = z8;
                                             snapPosition3 = start;
@@ -395,15 +396,17 @@ public final class PagerKt {
                                     composer2.endDefaults();
                                     Modifier modifier4 = modifier3;
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(1860873769, i27, i25, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:130)");
+                                        ComposerKt.traceEventStart(1860873769, i27, i25, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:132)");
                                     }
                                     int i35 = i25;
+                                    Orientation orientation = Orientation.Horizontal;
+                                    Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
                                     int i36 = i27 >> 6;
                                     int i37 = i27 << 12;
-                                    int i38 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i36 & 458752) | (i36 & 3670016) | ((i35 << 12) & 29360128) | (i37 & 234881024) | (i37 & 1879048192);
+                                    int i38 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i36 & 458752) | (i36 & 3670016) | ((i35 << 12) & 29360128) | (i37 & 234881024) | (i37 & C.ENCODING_PCM_DOUBLE);
                                     int i39 = ((i27 >> 9) & 14) | 3072 | (i35 & 112);
                                     int i40 = i35 << 6;
-                                    LazyLayoutPagerKt.m1067PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, Orientation.Horizontal, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, Alignment.Companion.getCenterHorizontally(), vertical2, snapPosition3, function4, composer2, i38, i39 | (i40 & 896) | (i36 & 57344) | ((i35 << 9) & 458752) | (i40 & 3670016), 0);
+                                    LazyLayoutPagerKt.m1321PagereLwUrMk(modifier4, pagerState, paddingValues3, z6, orientation, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, centerHorizontally, vertical2, snapPosition3, function4, composer2, i38, i39 | (i40 & 896) | (i36 & 57344) | ((i35 << 9) & 458752) | (i40 & 3670016), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -660,7 +663,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1073HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1327HorizontalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Vertical vertical, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -713,7 +716,7 @@ public final class PagerKt {
         int i26;
         int i27;
         Composer startRestartGroup = composer.startRestartGroup(1163833967);
-        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)185@9669L26,171@9116L621:Pager.kt#g6yjnt");
+        ComposerKt.sourceInformation(startRestartGroup, "C(HorizontalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,verticalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)187@9843L26,173@9290L621:Pager.kt#g6yjnt");
         if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
@@ -780,7 +783,7 @@ public final class PagerKt {
                         if (i12 != 0) {
                             i5 |= 100663296;
                         } else if ((i2 & 100663296) == 0) {
-                            i5 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                            i5 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                         i13 = i4 & 512;
                         if (i13 != 0) {
@@ -789,7 +792,7 @@ public final class PagerKt {
                         } else {
                             if ((i2 & 805306368) == 0) {
                                 i14 = i13;
-                                i5 |= startRestartGroup.changed(z2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i5 |= startRestartGroup.changed(z2) ? 536870912 : 268435456;
                             } else {
                                 i14 = i13;
                             }
@@ -828,7 +831,7 @@ public final class PagerKt {
                                 i21 = i20;
                                 if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "162@8711L28,167@8935L57");
+                                    ComposerKt.sourceInformation(startRestartGroup, "164@8885L28,169@9109L57");
                                     if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                         startRestartGroup.skipToGroupEnd();
                                         if ((i4 & 128) != 0) {
@@ -855,10 +858,10 @@ public final class PagerKt {
                                         paddingValues3 = paddingValues;
                                     } else {
                                         companion = i28 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
+                                        PaddingValues m1043PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         i22 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                                        float m8160constructorimpl = i10 != 0 ? Dp.m8160constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterVertically();
                                         }
@@ -900,13 +903,13 @@ public final class PagerKt {
                                         targetedFlingBehavior3 = obj3;
                                         pageSize3 = fill;
                                         z6 = z7;
-                                        f3 = m7555constructorimpl;
-                                        paddingValues3 = m811PaddingValues0680j_4;
+                                        f3 = m8160constructorimpl;
+                                        paddingValues3 = m1043PaddingValues0680j_4;
                                         i25 = i15;
                                     }
                                     composer2.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(1163833967, i25, i24, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:170)");
+                                        ComposerKt.traceEventStart(1163833967, i25, i24, "androidx.compose.foundation.pager.HorizontalPager (Pager.kt:172)");
                                         i23 = 0;
                                     }
                                     OverscrollEffect rememberOverscrollEffect = OverscrollKt.rememberOverscrollEffect(composer2, i23);
@@ -917,7 +920,7 @@ public final class PagerKt {
                                     Alignment.Vertical vertical3 = obj2;
                                     Modifier modifier3 = companion;
                                     int i33 = i22;
-                                    m1072HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
+                                    m1326HorizontalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, vertical3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1159,7 +1162,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1074VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1328VerticalPager8jOkeI(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1<? super Integer, ? extends Object> function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, OverscrollEffect overscrollEffect, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1221,7 +1224,7 @@ public final class PagerKt {
         int i29;
         Object obj5;
         Composer startRestartGroup = composer.startRestartGroup(-1590376023);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)261@14430L705:Pager.kt#g6yjnt");
+        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,overscrollEffect,pageContent)263@14604L705:Pager.kt#g6yjnt");
         if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
@@ -1295,7 +1298,7 @@ public final class PagerKt {
                         if (i12 != 0) {
                             i5 |= 100663296;
                         } else if ((i2 & 100663296) == 0) {
-                            i5 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                            i5 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                         i13 = i4 & 512;
                         if (i13 != 0) {
@@ -1304,7 +1307,7 @@ public final class PagerKt {
                         } else {
                             if ((i2 & 805306368) == 0) {
                                 i14 = i13;
-                                i5 |= startRestartGroup.changed(z2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i5 |= startRestartGroup.changed(z2) ? 536870912 : 268435456;
                             } else {
                                 i14 = i13;
                             }
@@ -1349,7 +1352,7 @@ public final class PagerKt {
                                 i21 = i20;
                                 if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 9363) != 9362, i15 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "251@13957L28,256@14181L55,258@14333L26");
+                                    ComposerKt.sourceInformation(startRestartGroup, "253@14131L28,258@14355L55,260@14507L26");
                                     if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                         startRestartGroup.skipToGroupEnd();
                                         if ((i4 & 128) != 0) {
@@ -1379,10 +1382,10 @@ public final class PagerKt {
                                         snapPosition3 = snapPosition;
                                     } else {
                                         Modifier.Companion companion = i30 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
+                                        PaddingValues m1043PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         int i33 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                                        float m8160constructorimpl = i10 != 0 ? Dp.m8160constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterHorizontally();
                                         }
@@ -1421,12 +1424,12 @@ public final class PagerKt {
                                             function13 = function14;
                                             nestedScrollConnection4 = nestedScrollConnection3;
                                             composer2 = startRestartGroup;
-                                            paddingValues3 = m811PaddingValues0680j_4;
+                                            paddingValues3 = m1043PaddingValues0680j_4;
                                             horizontal3 = obj2;
                                             pageSize3 = fill;
                                             z5 = z7;
                                             i26 = i33;
-                                            f4 = m7555constructorimpl;
+                                            f4 = m8160constructorimpl;
                                             i27 = i15;
                                             z6 = z8;
                                             modifier3 = companion;
@@ -1435,13 +1438,13 @@ public final class PagerKt {
                                             nestedScrollConnection4 = nestedScrollConnection3;
                                             i25 = i24;
                                             composer2 = startRestartGroup;
-                                            paddingValues3 = m811PaddingValues0680j_4;
+                                            paddingValues3 = m1043PaddingValues0680j_4;
                                             horizontal3 = obj2;
                                             targetedFlingBehavior3 = obj3;
                                             pageSize3 = fill;
                                             z5 = z7;
                                             i26 = i33;
-                                            f4 = m7555constructorimpl;
+                                            f4 = m8160constructorimpl;
                                             i27 = i15;
                                             z6 = z8;
                                             snapPosition3 = start;
@@ -1452,17 +1455,19 @@ public final class PagerKt {
                                     composer2.endDefaults();
                                     Modifier modifier4 = modifier3;
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1590376023, i27, i25, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:260)");
+                                        ComposerKt.traceEventStart(-1590376023, i27, i25, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:262)");
                                     }
                                     int i35 = i25;
+                                    Orientation orientation = Orientation.Vertical;
+                                    Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                     int i36 = i27 >> 6;
                                     int i37 = ((i27 >> 3) & 14) | 24576 | ((i27 << 3) & 112) | (i27 & 896) | ((i27 >> 18) & 7168) | (i36 & 458752) | (i36 & 3670016) | ((i35 << 12) & 29360128);
                                     int i38 = i27 << 12;
-                                    int i39 = i37 | (i38 & 234881024) | (i38 & 1879048192);
+                                    int i39 = i37 | (i38 & 234881024) | (i38 & C.ENCODING_PCM_DOUBLE);
                                     int i40 = i27 >> 9;
                                     int i41 = i35 << 6;
                                     PaddingValues paddingValues4 = paddingValues3;
-                                    LazyLayoutPagerKt.m1067PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, Orientation.Vertical, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, Alignment.Companion.getCenterVertically(), snapPosition3, function4, composer2, i39, (i40 & 7168) | (i41 & 896) | (i40 & 14) | 24576 | (i35 & 112) | ((i35 << 9) & 458752) | (i41 & 3670016), 0);
+                                    LazyLayoutPagerKt.m1321PagereLwUrMk(modifier4, pagerState, paddingValues4, z6, orientation, targetedFlingBehavior3, z5, overscrollEffect3, i26, f4, pageSize3, nestedScrollConnection4, function13, horizontal3, centerVertically, snapPosition3, function4, composer2, i39, (i40 & 7168) | (i41 & 896) | (i40 & 14) | 24576 | (i35 & 112) | ((i35 << 9) & 458752) | (i41 & 3670016), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1718,7 +1723,7 @@ public final class PagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1075VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1329VerticalPageroI3XNZo(final PagerState pagerState, Modifier modifier, PaddingValues paddingValues, PageSize pageSize, int i, float f, Alignment.Horizontal horizontal, TargetedFlingBehavior targetedFlingBehavior, boolean z, boolean z2, Function1 function1, NestedScrollConnection nestedScrollConnection, SnapPosition snapPosition, final Function4 function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -1771,7 +1776,7 @@ public final class PagerKt {
         int i26;
         int i27;
         Composer startRestartGroup = composer.startRestartGroup(-1474550033);
-        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)315@16600L26,301@16045L623:Pager.kt#g6yjnt");
+        ComposerKt.sourceInformation(startRestartGroup, "C(VerticalPager)N(state,modifier,contentPadding,pageSize,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,horizontalAlignment,flingBehavior,userScrollEnabled,reverseLayout,key,pageNestedScrollConnection,snapPosition,pageContent)317@16774L26,303@16219L623:Pager.kt#g6yjnt");
         if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(pagerState) ? 4 : 2) | i2;
         } else {
@@ -1838,7 +1843,7 @@ public final class PagerKt {
                         if (i12 != 0) {
                             i5 |= 100663296;
                         } else if ((i2 & 100663296) == 0) {
-                            i5 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                            i5 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                         i13 = i4 & 512;
                         if (i13 != 0) {
@@ -1847,7 +1852,7 @@ public final class PagerKt {
                         } else {
                             if ((i2 & 805306368) == 0) {
                                 i14 = i13;
-                                i5 |= startRestartGroup.changed(z2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i5 |= startRestartGroup.changed(z2) ? 536870912 : 268435456;
                             } else {
                                 i14 = i13;
                             }
@@ -1886,7 +1891,7 @@ public final class PagerKt {
                                 i21 = i20;
                                 if (!startRestartGroup.shouldExecute((i15 & 306783379) == 306783378 || (i21 & 1171) != 1170, i15 & 1)) {
                                     startRestartGroup.startDefaults();
-                                    ComposerKt.sourceInformation(startRestartGroup, "292@15642L28,297@15866L55");
+                                    ComposerKt.sourceInformation(startRestartGroup, "294@15816L28,299@16040L55");
                                     if ((i2 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                                         startRestartGroup.skipToGroupEnd();
                                         if ((i4 & 128) != 0) {
@@ -1913,10 +1918,10 @@ public final class PagerKt {
                                         paddingValues3 = paddingValues;
                                     } else {
                                         companion = i28 != 0 ? Modifier.Companion : obj;
-                                        PaddingValues m811PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f)) : paddingValues;
+                                        PaddingValues m1043PaddingValues0680j_4 = i6 != 0 ? PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f)) : paddingValues;
                                         PageSize.Fill fill = i7 != 0 ? PageSize.Fill.INSTANCE : pageSize;
                                         i22 = i8 != 0 ? 0 : i9;
-                                        float m7555constructorimpl = i10 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                                        float m8160constructorimpl = i10 != 0 ? Dp.m8160constructorimpl(0.0f) : f2;
                                         if (i11 != 0) {
                                             obj2 = Alignment.Companion.getCenterHorizontally();
                                         }
@@ -1958,13 +1963,13 @@ public final class PagerKt {
                                         targetedFlingBehavior3 = obj3;
                                         pageSize3 = fill;
                                         z6 = z7;
-                                        f3 = m7555constructorimpl;
-                                        paddingValues3 = m811PaddingValues0680j_4;
+                                        f3 = m8160constructorimpl;
+                                        paddingValues3 = m1043PaddingValues0680j_4;
                                         i25 = i15;
                                     }
                                     composer2.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
-                                        ComposerKt.traceEventStart(-1474550033, i25, i24, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:300)");
+                                        ComposerKt.traceEventStart(-1474550033, i25, i24, "androidx.compose.foundation.pager.VerticalPager (Pager.kt:302)");
                                         i23 = 0;
                                     }
                                     OverscrollEffect rememberOverscrollEffect = OverscrollKt.rememberOverscrollEffect(composer2, i23);
@@ -1975,7 +1980,7 @@ public final class PagerKt {
                                     Alignment.Horizontal horizontal3 = obj2;
                                     Modifier modifier3 = companion;
                                     int i33 = i22;
-                                    m1074VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
+                                    m1328VerticalPager8jOkeI(pagerState3, modifier3, paddingValues3, pageSize3, i33, f3, horizontal3, targetedFlingBehavior3, z6, z5, function13, nestedScrollConnection4, start, rememberOverscrollEffect, function4, startRestartGroup, i31, i32, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }

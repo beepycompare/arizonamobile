@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Pair;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhf {
     final String zza;
@@ -28,7 +28,7 @@ public final class zzhf {
     private final void zzc() {
         zzhh zzhhVar = this.zzb;
         zzhhVar.zzg();
-        long currentTimeMillis = zzhhVar.zzu.zzaZ().currentTimeMillis();
+        long currentTimeMillis = zzhhVar.zzu.zzba().currentTimeMillis();
         SharedPreferences.Editor edit = zzhhVar.zzd().edit();
         edit.remove(this.zzc);
         edit.remove(this.zzd);
@@ -78,7 +78,7 @@ public final class zzhf {
             zzc();
             abs = 0;
         } else {
-            abs = Math.abs(zzd - zzhhVar.zzu.zzaZ().currentTimeMillis());
+            abs = Math.abs(zzd - zzhhVar.zzu.zzba().currentTimeMillis());
         }
         long j = this.zze;
         if (abs < j) {

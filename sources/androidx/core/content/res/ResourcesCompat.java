@@ -44,15 +44,15 @@ public final class ResourcesCompat {
     }
 
     public static Drawable getDrawable(Resources resources, int i, Resources.Theme theme) throws Resources.NotFoundException {
-        return Api21Impl.getDrawable(resources, i, theme);
+        return resources.getDrawable(i, theme);
     }
 
     public static Drawable getDrawableForDensity(Resources resources, int i, int i2, Resources.Theme theme) throws Resources.NotFoundException {
-        return Api21Impl.getDrawableForDensity(resources, i, i2, theme);
+        return resources.getDrawableForDensity(i, i2, theme);
     }
 
     public static int getColor(Resources resources, int i, Resources.Theme theme) throws Resources.NotFoundException {
-        return Api23Impl.getColor(resources, i, theme);
+        return resources.getColor(i, theme);
     }
 
     public static ColorStateList getColorStateList(Resources resources, int i, Resources.Theme theme) throws Resources.NotFoundException {
@@ -66,7 +66,7 @@ public final class ResourcesCompat {
             addColorStateListToCache(colorStateListCacheKey, i, inflateColorStateList, theme);
             return inflateColorStateList;
         }
-        return Api23Impl.getColorStateList(resources, i, theme);
+        return resources.getColorStateList(i, theme);
     }
 
     private static ColorStateList inflateColorStateList(Resources resources, int i, Resources.Theme theme) {
@@ -196,16 +196,16 @@ public final class ResourcesCompat {
     /* loaded from: classes2.dex */
     public static abstract class FontCallback {
         /* renamed from: onFontRetrievalFailed */
-        public abstract void m8045xb24343b7(int i);
+        public abstract void m8650xb24343b7(int i);
 
         /* renamed from: onFontRetrieved */
-        public abstract void m8046x46c88379(Typeface typeface);
+        public abstract void m8651x46c88379(Typeface typeface);
 
         public final void callbackSuccessAsync(final Typeface typeface, Handler handler) {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.m8046x46c88379(typeface);
+                    ResourcesCompat.FontCallback.this.m8651x46c88379(typeface);
                 }
             });
         }
@@ -214,7 +214,7 @@ public final class ResourcesCompat {
             getHandler(handler).post(new Runnable() { // from class: androidx.core.content.res.ResourcesCompat$FontCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ResourcesCompat.FontCallback.this.m8045xb24343b7(i);
+                    ResourcesCompat.FontCallback.this.m8650xb24343b7(i);
                 }
             });
         }
@@ -327,34 +327,6 @@ public final class ResourcesCompat {
 
         static float getFloat(Resources resources, int i) {
             return resources.getFloat(i);
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static ColorStateList getColorStateList(Resources resources, int i, Resources.Theme theme) {
-            return resources.getColorStateList(i, theme);
-        }
-
-        static int getColor(Resources resources, int i, Resources.Theme theme) {
-            return resources.getColor(i, theme);
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static Drawable getDrawable(Resources resources, int i, Resources.Theme theme) {
-            return resources.getDrawable(i, theme);
-        }
-
-        static Drawable getDrawableForDensity(Resources resources, int i, int i2, Resources.Theme theme) {
-            return resources.getDrawableForDensity(i, i2, theme);
         }
     }
 

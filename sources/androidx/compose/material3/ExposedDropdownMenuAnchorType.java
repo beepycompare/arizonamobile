@@ -11,50 +11,50 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ExposedDropdownMenuAnchorType {
     private final String name;
     public static final Companion Companion = new Companion(null);
-    private static final String PrimaryNotEditable = m2055constructorimpl("PrimaryNotEditable");
-    private static final String PrimaryEditable = m2055constructorimpl("PrimaryEditable");
-    private static final String SecondaryEditable = m2055constructorimpl("SecondaryEditable");
+    private static final String PrimaryNotEditable = m2500constructorimpl("PrimaryNotEditable");
+    private static final String PrimaryEditable = m2500constructorimpl("PrimaryEditable");
+    private static final String SecondaryEditable = m2500constructorimpl("SecondaryEditable");
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ExposedDropdownMenuAnchorType m2054boximpl(String str) {
+    public static final /* synthetic */ ExposedDropdownMenuAnchorType m2499boximpl(String str) {
         return new ExposedDropdownMenuAnchorType(str);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static String m2055constructorimpl(String str) {
+    private static String m2500constructorimpl(String str) {
         return str;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2056equalsimpl(String str, Object obj) {
-        return (obj instanceof ExposedDropdownMenuAnchorType) && Intrinsics.areEqual(str, ((ExposedDropdownMenuAnchorType) obj).m2060unboximpl());
+    public static boolean m2501equalsimpl(String str, Object obj) {
+        return (obj instanceof ExposedDropdownMenuAnchorType) && Intrinsics.areEqual(str, ((ExposedDropdownMenuAnchorType) obj).m2505unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2057equalsimpl0(String str, String str2) {
+    public static final boolean m2502equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2058hashCodeimpl(String str) {
+    public static int m2503hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2059toStringimpl(String str) {
+    public static String m2504toStringimpl(String str) {
         return str;
     }
 
     public boolean equals(Object obj) {
-        return m2056equalsimpl(this.name, obj);
+        return m2501equalsimpl(this.name, obj);
     }
 
     public int hashCode() {
-        return m2058hashCodeimpl(this.name);
+        return m2503hashCodeimpl(this.name);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m2060unboximpl() {
+    public final /* synthetic */ String m2505unboximpl() {
         return this.name;
     }
 
@@ -70,17 +70,17 @@ public final class ExposedDropdownMenuAnchorType {
         }
 
         /* renamed from: getPrimaryNotEditable-oYjWRB4  reason: not valid java name */
-        public final String m2062getPrimaryNotEditableoYjWRB4() {
+        public final String m2507getPrimaryNotEditableoYjWRB4() {
             return ExposedDropdownMenuAnchorType.PrimaryNotEditable;
         }
 
         /* renamed from: getPrimaryEditable-oYjWRB4  reason: not valid java name */
-        public final String m2061getPrimaryEditableoYjWRB4() {
+        public final String m2506getPrimaryEditableoYjWRB4() {
             return ExposedDropdownMenuAnchorType.PrimaryEditable;
         }
 
         /* renamed from: getSecondaryEditable-oYjWRB4  reason: not valid java name */
-        public final String m2063getSecondaryEditableoYjWRB4() {
+        public final String m2508getSecondaryEditableoYjWRB4() {
             return ExposedDropdownMenuAnchorType.SecondaryEditable;
         }
     }
@@ -90,6 +90,6 @@ public final class ExposedDropdownMenuAnchorType {
     }
 
     public String toString() {
-        return m2059toStringimpl(this.name);
+        return m2504toStringimpl(this.name);
     }
 }

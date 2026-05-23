@@ -36,11 +36,11 @@ public final class NavigationRailDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1546379058, i, -1, "androidx.compose.material3.NavigationRailDefaults.<get-windowInsets> (NavigationRail.kt:335)");
         }
-        WindowInsets m891onlybOOhFvg = WindowInsetsKt.m891onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m903plusgK_yJZ4(WindowInsetsSides.Companion.m918getVerticalJoeWqyM(), WindowInsetsSides.Companion.m916getStartJoeWqyM()));
+        WindowInsets m1145onlybOOhFvg = WindowInsetsKt.m1145onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m1157plusgK_yJZ4(WindowInsetsSides.Companion.m1172getVerticalJoeWqyM(), WindowInsetsSides.Companion.m1170getStartJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m891onlybOOhFvg;
+        return m1145onlybOOhFvg;
     }
 }

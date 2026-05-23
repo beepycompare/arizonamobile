@@ -4,6 +4,8 @@ import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
+import androidx.compose.ui.graphics.Color;
+import androidx.compose.ui.graphics.drawscope.ContentDrawScope;
 import androidx.compose.ui.layout.ApproachLayoutModifierNode;
 import androidx.compose.ui.layout.ApproachMeasureScope;
 import androidx.compose.ui.layout.LayoutCoordinates;
@@ -12,23 +14,36 @@ import androidx.compose.ui.layout.Measurable;
 import androidx.compose.ui.layout.MeasureResult;
 import androidx.compose.ui.layout.MeasureScope;
 import androidx.compose.ui.layout.Placeable;
+import androidx.compose.ui.node.CompositionLocalConsumerModifierNode;
+import androidx.compose.ui.node.CompositionLocalConsumerModifierNodeKt;
+import androidx.compose.ui.node.DrawModifierNode;
+import androidx.compose.ui.text.TextMeasurer;
+import androidx.compose.ui.text.font.FontFamily;
 import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.ConstraintsKt;
+import androidx.compose.ui.unit.Density;
+import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.IntSizeKt;
+import androidx.compose.ui.unit.LayoutDirection;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AnimateBoundsModifier.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002BW\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00126\u0010\u0007\u001a2\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0013\u0012\u00110\r¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\r0\b\u0012\u0006\u0010\u000f\u001a\u00020\u0010¢\u0006\u0004\b\u0011\u0010\u0012J\u0017\u0010&\u001a\u00020\u00102\u0006\u0010'\u001a\u00020\tH\u0016¢\u0006\u0004\b(\u0010)J\b\u0010*\u001a\u00020+H\u0016J\u0014\u0010,\u001a\u00020\u0010*\u00020-2\u0006\u0010.\u001a\u00020/H\u0016J#\u00100\u001a\u000201*\u0002022\u0006\u00103\u001a\u0002042\u0006\u0010\u000e\u001a\u00020\rH\u0016¢\u0006\u0004\b5\u00106R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aRJ\u0010\u0007\u001a2\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0013\u0012\u00110\r¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\r0\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001f\u0010 \"\u0004\b!\u0010\"R\u000e\u0010#\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00067"}, d2 = {"Landroidx/compose/animation/BoundsAnimationModifierNode;", "Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "lookaheadScope", "Landroidx/compose/ui/layout/LookaheadScope;", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "onChooseMeasureConstraints", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/IntSize;", "Lkotlin/ParameterName;", "name", "animatedSize", "Landroidx/compose/ui/unit/Constraints;", "constraints", "animateMotionFrameOfReference", "", "<init>", "(Landroidx/compose/ui/layout/LookaheadScope;Landroidx/compose/animation/BoundsTransform;Lkotlin/jvm/functions/Function2;Z)V", "getLookaheadScope", "()Landroidx/compose/ui/layout/LookaheadScope;", "setLookaheadScope", "(Landroidx/compose/ui/layout/LookaheadScope;)V", "getBoundsTransform", "()Landroidx/compose/animation/BoundsTransform;", "setBoundsTransform", "(Landroidx/compose/animation/BoundsTransform;)V", "getOnChooseMeasureConstraints", "()Lkotlin/jvm/functions/Function2;", "setOnChooseMeasureConstraints", "(Lkotlin/jvm/functions/Function2;)V", "getAnimateMotionFrameOfReference", "()Z", "setAnimateMotionFrameOfReference", "(Z)V", "directManipulationParentsDirty", "boundsAnimation", "Landroidx/compose/animation/BoundsTransformDeferredAnimation;", "isMeasurementApproachInProgress", "lookaheadSize", "isMeasurementApproachInProgress-ozmzZPI", "(J)Z", "onAttach", "", "isPlacementApproachInProgress", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "lookaheadCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "approachMeasure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "approachMeasure-3p2s80s", "(Landroidx/compose/ui/layout/ApproachMeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004BW\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u00126\u0010\t\u001a2\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u000e\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000f0\n\u0012\u0006\u0010\u0011\u001a\u00020\u0012¢\u0006\u0004\b\u0013\u0010\u0014J\u0017\u0010<\u001a\u00020\u00122\u0006\u0010=\u001a\u00020\u000bH\u0016¢\u0006\u0004\b>\u0010?J\b\u0010@\u001a\u00020AH\u0016J\u0014\u0010B\u001a\u00020\u0012*\u00020C2\u0006\u0010D\u001a\u00020EH\u0016J#\u0010F\u001a\u00020G*\u00020H2\u0006\u0010I\u001a\u00020J2\u0006\u0010\u0010\u001a\u00020\u000fH\u0016¢\u0006\u0004\bK\u0010LJ\f\u0010M\u001a\u00020A*\u00020NH\u0016J\u0010\u0010O\u001a\u00020A2\u0006\u0010P\u001a\u00020+H\u0002R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cRJ\u0010\t\u001a2\u0012\u0013\u0012\u00110\u000b¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u000e\u0012\u0013\u0012\u00110\u000f¢\u0006\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u000f0\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\"\"\u0004\b#\u0010$R\u000e\u0010%\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010*\u001a\u0004\u0018\u00010+X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R\u001c\u00100\u001a\u0004\u0018\u000101X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b2\u00103\"\u0004\b4\u00105R\u001c\u00106\u001a\u0004\u0018\u000107X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b8\u00109\"\u0004\b:\u0010;¨\u0006Q"}, d2 = {"Landroidx/compose/animation/BoundsAnimationModifierNode;", "Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "lookaheadScope", "Landroidx/compose/ui/layout/LookaheadScope;", "boundsTransform", "Landroidx/compose/animation/BoundsTransform;", "onChooseMeasureConstraints", "Lkotlin/Function2;", "Landroidx/compose/ui/unit/IntSize;", "Lkotlin/ParameterName;", "name", "animatedSize", "Landroidx/compose/ui/unit/Constraints;", "constraints", "animateMotionFrameOfReference", "", "<init>", "(Landroidx/compose/ui/layout/LookaheadScope;Landroidx/compose/animation/BoundsTransform;Lkotlin/jvm/functions/Function2;Z)V", "getLookaheadScope", "()Landroidx/compose/ui/layout/LookaheadScope;", "setLookaheadScope", "(Landroidx/compose/ui/layout/LookaheadScope;)V", "getBoundsTransform", "()Landroidx/compose/animation/BoundsTransform;", "setBoundsTransform", "(Landroidx/compose/animation/BoundsTransform;)V", "getOnChooseMeasureConstraints", "()Lkotlin/jvm/functions/Function2;", "setOnChooseMeasureConstraints", "(Lkotlin/jvm/functions/Function2;)V", "getAnimateMotionFrameOfReference", "()Z", "setAnimateMotionFrameOfReference", "(Z)V", "directManipulationParentsDirty", "boundsAnimation", "Landroidx/compose/animation/BoundsTransformDeferredAnimation;", "textMeasurer", "Landroidx/compose/ui/text/TextMeasurer;", "currentResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "getCurrentResolver", "()Landroidx/compose/ui/text/font/FontFamily$Resolver;", "setCurrentResolver", "(Landroidx/compose/ui/text/font/FontFamily$Resolver;)V", "currentDensity", "Landroidx/compose/ui/unit/Density;", "getCurrentDensity", "()Landroidx/compose/ui/unit/Density;", "setCurrentDensity", "(Landroidx/compose/ui/unit/Density;)V", "currentLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getCurrentLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setCurrentLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "isMeasurementApproachInProgress", "lookaheadSize", "isMeasurementApproachInProgress-ozmzZPI", "(J)Z", "onAttach", "", "isPlacementApproachInProgress", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "lookaheadCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "approachMeasure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "approachMeasure-3p2s80s", "(Landroidx/compose/ui/layout/ApproachMeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "updateTextMeasurer", "fontFamilyResolver", "animation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class BoundsAnimationModifierNode extends Modifier.Node implements ApproachLayoutModifierNode {
+public final class BoundsAnimationModifierNode extends Modifier.Node implements ApproachLayoutModifierNode, CompositionLocalConsumerModifierNode, DrawModifierNode {
     public static final int $stable = 8;
     private boolean animateMotionFrameOfReference;
     private BoundsTransform boundsTransform;
+    private Density currentDensity;
+    private LayoutDirection currentLayoutDirection;
+    private FontFamily.Resolver currentResolver;
     private LookaheadScope lookaheadScope;
     private Function2<? super IntSize, ? super Constraints, Constraints> onChooseMeasureConstraints;
+    private TextMeasurer textMeasurer;
     private boolean directManipulationParentsDirty = true;
     private final BoundsTransformDeferredAnimation boundsAnimation = new BoundsTransformDeferredAnimation();
 
@@ -71,10 +86,34 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
         this.animateMotionFrameOfReference = z;
     }
 
+    public final FontFamily.Resolver getCurrentResolver() {
+        return this.currentResolver;
+    }
+
+    public final void setCurrentResolver(FontFamily.Resolver resolver) {
+        this.currentResolver = resolver;
+    }
+
+    public final Density getCurrentDensity() {
+        return this.currentDensity;
+    }
+
+    public final void setCurrentDensity(Density density) {
+        this.currentDensity = density;
+    }
+
+    public final LayoutDirection getCurrentLayoutDirection() {
+        return this.currentLayoutDirection;
+    }
+
+    public final void setCurrentLayoutDirection(LayoutDirection layoutDirection) {
+        this.currentLayoutDirection = layoutDirection;
+    }
+
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: isMeasurementApproachInProgress-ozmzZPI  reason: not valid java name */
     public boolean mo75isMeasurementApproachInProgressozmzZPI(long j) {
-        this.boundsAnimation.m80updateTargetSizeuvyYCjk(IntSizeKt.m7738toSizeozmzZPI(j));
+        this.boundsAnimation.m82updateTargetSizeuvyYCjk(IntSizeKt.m8343toSizeozmzZPI(j));
         return !this.boundsAnimation.isIdle();
     }
 
@@ -85,6 +124,9 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     public boolean isPlacementApproachInProgress(Placeable.PlacementScope placementScope, LayoutCoordinates layoutCoordinates) {
+        if (IsLookaheadAnimationVisualDebuggingEnabledKt.isLookaheadAnimationVisualDebuggingEnabled() && this.boundsAnimation.getLookaheadAnimationVisualDebugHelper() == null) {
+            this.boundsAnimation.setLookaheadAnimationVisualDebugHelper(new LookaheadAnimationVisualDebugHelper());
+        }
         this.boundsAnimation.updateTargetOffsetAndAnimate(this.lookaheadScope, placementScope, getCoroutineScope(), this.directManipulationParentsDirty, this.animateMotionFrameOfReference, this.boundsTransform);
         this.directManipulationParentsDirty = this.animateMotionFrameOfReference;
         return !this.boundsAnimation.isIdle();
@@ -95,19 +137,19 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
     public MeasureResult mo74approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
         long m77getCurrentSizeNHjbRc;
         if (this.boundsAnimation.m77getCurrentSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m77getCurrentSizeNHjbRc = IntSizeKt.m7738toSizeozmzZPI(approachMeasureScope.mo6194getLookaheadSizeYbymL2g());
+            m77getCurrentSizeNHjbRc = IntSizeKt.m8343toSizeozmzZPI(approachMeasureScope.mo6796getLookaheadSizeYbymL2g());
         } else {
             m77getCurrentSizeNHjbRc = this.boundsAnimation.m77getCurrentSizeNHjbRc();
         }
         Rect value = this.boundsAnimation.getValue();
         if (value != null) {
-            m77getCurrentSizeNHjbRc = value.m4560getSizeNHjbRc();
+            m77getCurrentSizeNHjbRc = value.m5136getSizeNHjbRc();
         }
-        long m7734roundToIntSizeuvyYCjk = IntSizeKt.m7734roundToIntSizeuvyYCjk(m77getCurrentSizeNHjbRc);
-        long m7514unboximpl = this.onChooseMeasureConstraints.invoke(IntSize.m7718boximpl(m7734roundToIntSizeuvyYCjk), Constraints.m7495boximpl(j)).m7514unboximpl();
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7514unboximpl);
-        long m7522constrain4WqzIAM = ConstraintsKt.m7522constrain4WqzIAM(m7514unboximpl, m7734roundToIntSizeuvyYCjk);
-        return MeasureScope.layout$default(approachMeasureScope, (int) (m7522constrain4WqzIAM >> 32), (int) (m7522constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.BoundsAnimationModifierNode$approachMeasure$1
+        long m8339roundToIntSizeuvyYCjk = IntSizeKt.m8339roundToIntSizeuvyYCjk(m77getCurrentSizeNHjbRc);
+        long m8119unboximpl = this.onChooseMeasureConstraints.invoke(IntSize.m8323boximpl(m8339roundToIntSizeuvyYCjk), Constraints.m8100boximpl(j)).m8119unboximpl();
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(m8119unboximpl);
+        long m8127constrain4WqzIAM = ConstraintsKt.m8127constrain4WqzIAM(m8119unboximpl, m8339roundToIntSizeuvyYCjk);
+        return MeasureScope.layout$default(approachMeasureScope, (int) (m8127constrain4WqzIAM >> 32), (int) (m8127constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.BoundsAnimationModifierNode$approachMeasure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -124,27 +166,75 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
             public final void invoke2(Placeable.PlacementScope placementScope) {
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation;
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation2;
-                long m4562getTopLeftF1C5BW0;
+                long m5138getTopLeftF1C5BW0;
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation3;
                 boundsTransformDeferredAnimation = BoundsAnimationModifierNode.this.boundsAnimation;
                 Rect value2 = boundsTransformDeferredAnimation.getValue();
                 LookaheadScope lookaheadScope = BoundsAnimationModifierNode.this.getLookaheadScope();
                 BoundsAnimationModifierNode boundsAnimationModifierNode = BoundsAnimationModifierNode.this;
                 LayoutCoordinates coordinates = placementScope.getCoordinates();
-                Offset m4516boximpl = coordinates != null ? Offset.m4516boximpl(lookaheadScope.getLookaheadScopeCoordinates(placementScope).mo6226localPositionOfS_NoaFU(coordinates, Offset.Companion.m4543getZeroF1C5BW0(), boundsAnimationModifierNode.getAnimateMotionFrameOfReference())) : null;
+                Offset m5092boximpl = coordinates != null ? Offset.m5092boximpl(lookaheadScope.getLookaheadScopeCoordinates(placementScope).mo6828localPositionOfS_NoaFU(coordinates, Offset.Companion.m5119getZeroF1C5BW0(), boundsAnimationModifierNode.getAnimateMotionFrameOfReference())) : null;
                 BoundsAnimationModifierNode boundsAnimationModifierNode2 = BoundsAnimationModifierNode.this;
                 if (value2 != null) {
                     boundsTransformDeferredAnimation3 = boundsAnimationModifierNode2.boundsAnimation;
-                    boundsTransformDeferredAnimation3.m79updateCurrentBoundstz77jQw(value2.m4562getTopLeftF1C5BW0(), value2.m4560getSizeNHjbRc());
-                    m4562getTopLeftF1C5BW0 = value2.m4562getTopLeftF1C5BW0();
+                    boundsTransformDeferredAnimation3.m81updateCurrentBoundstz77jQw(value2.m5138getTopLeftF1C5BW0(), value2.m5136getSizeNHjbRc());
+                    m5138getTopLeftF1C5BW0 = value2.m5138getTopLeftF1C5BW0();
                 } else {
                     boundsTransformDeferredAnimation2 = boundsAnimationModifierNode2.boundsAnimation;
                     Rect currentBounds = boundsTransformDeferredAnimation2.getCurrentBounds();
-                    m4562getTopLeftF1C5BW0 = currentBounds != null ? currentBounds.m4562getTopLeftF1C5BW0() : Offset.Companion.m4543getZeroF1C5BW0();
+                    m5138getTopLeftF1C5BW0 = currentBounds != null ? currentBounds.m5138getTopLeftF1C5BW0() : Offset.Companion.m5119getZeroF1C5BW0();
                 }
-                long m4531minusMKHz9U = m4516boximpl != null ? Offset.m4531minusMKHz9U(m4562getTopLeftF1C5BW0, m4516boximpl.m4537unboximpl()) : Offset.Companion.m4543getZeroF1C5BW0();
-                Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, Math.round(Float.intBitsToFloat((int) (m4531minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m4531minusMKHz9U & 4294967295L))), 0.0f, 4, null);
+                long m5107minusMKHz9U = m5092boximpl != null ? Offset.m5107minusMKHz9U(m5138getTopLeftF1C5BW0, m5092boximpl.m5113unboximpl()) : Offset.Companion.m5119getZeroF1C5BW0();
+                Placeable.PlacementScope.place$default(placementScope, mo6818measureBRTryo0, Math.round(Float.intBitsToFloat((int) (m5107minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m5107minusMKHz9U & 4294967295L))), 0.0f, 4, null);
             }
         }, 4, null);
+    }
+
+    @Override // androidx.compose.ui.node.DrawModifierNode
+    public void draw(ContentDrawScope contentDrawScope) {
+        contentDrawScope.drawContent();
+        if (IsLookaheadAnimationVisualDebuggingEnabledKt.isLookaheadAnimationVisualDebuggingEnabled() && Constraints.m8111getHasFixedWidthimpl(this.onChooseMeasureConstraints.invoke(IntSize.m8323boximpl(IntSize.Companion.m8336getZeroYbymL2g()), Constraints.m8100boximpl(ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null))).m8119unboximpl())) {
+            BoundsAnimationModifierNode boundsAnimationModifierNode = this;
+            LookaheadAnimationVisualDebugConfig lookaheadAnimationVisualDebugConfig = (LookaheadAnimationVisualDebugConfig) CompositionLocalConsumerModifierNodeKt.currentValueOf(boundsAnimationModifierNode, CompositionLocalsKt.getLocalLookaheadAnimationVisualDebugConfig());
+            if (lookaheadAnimationVisualDebugConfig.isEnabled()) {
+                if (this.currentDensity == null) {
+                    this.currentDensity = (Density) CompositionLocalConsumerModifierNodeKt.currentValueOf(boundsAnimationModifierNode, androidx.compose.ui.platform.CompositionLocalsKt.getLocalDensity());
+                    this.currentLayoutDirection = (LayoutDirection) CompositionLocalConsumerModifierNodeKt.currentValueOf(boundsAnimationModifierNode, androidx.compose.ui.platform.CompositionLocalsKt.getLocalLayoutDirection());
+                }
+                LookaheadAnimationVisualDebugHelper lookaheadAnimationVisualDebugHelper = this.boundsAnimation.getLookaheadAnimationVisualDebugHelper();
+                Intrinsics.checkNotNull(lookaheadAnimationVisualDebugHelper);
+                long m5358unboximpl = ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(boundsAnimationModifierNode, CompositionLocalsKt.getLocalLookaheadAnimationVisualDebugColor())).m5358unboximpl();
+                updateTextMeasurer((FontFamily.Resolver) CompositionLocalConsumerModifierNodeKt.currentValueOf(boundsAnimationModifierNode, androidx.compose.ui.platform.CompositionLocalsKt.getLocalFontFamilyResolver()));
+                if (this.boundsAnimation.isIdle()) {
+                    boolean isShowKeyLabelEnabled = lookaheadAnimationVisualDebugConfig.isShowKeyLabelEnabled();
+                    float f = contentDrawScope.mo434toPx0680j_4(Dp.m8160constructorimpl(2.5f));
+                    String substring = this.boundsAnimation.toString().substring(60);
+                    Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+                    lookaheadAnimationVisualDebugHelper.m123drawInactiveVisualizations3IgeMak$animation(contentDrawScope, m5358unboximpl, isShowKeyLabelEnabled, f, substring, this.textMeasurer);
+                    return;
+                }
+                long m78getTargetOffsetF1C5BW0 = this.boundsAnimation.m78getTargetOffsetF1C5BW0();
+                long m79getTargetSizeNHjbRc = this.boundsAnimation.m79getTargetSizeNHjbRc();
+                Rect value = this.boundsAnimation.getValue();
+                Intrinsics.checkNotNull(value);
+                long j = contentDrawScope.mo5921getCenterF1C5BW0();
+                boolean isShowKeyLabelEnabled2 = lookaheadAnimationVisualDebugConfig.isShowKeyLabelEnabled();
+                float f2 = contentDrawScope.mo434toPx0680j_4(Dp.m8160constructorimpl(2.5f));
+                String substring2 = this.boundsAnimation.toString().substring(60);
+                Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
+                lookaheadAnimationVisualDebugHelper.m124drawLocalVisualizations0XenJco$animation(contentDrawScope, m5358unboximpl, m78getTargetOffsetF1C5BW0, m79getTargetSizeNHjbRc, value, j, isShowKeyLabelEnabled2, f2, substring2, this.textMeasurer);
+            }
+        }
+    }
+
+    private final void updateTextMeasurer(FontFamily.Resolver resolver) {
+        if (this.textMeasurer == null || !Intrinsics.areEqual(this.currentResolver, resolver)) {
+            Density density = this.currentDensity;
+            Intrinsics.checkNotNull(density);
+            LayoutDirection layoutDirection = this.currentLayoutDirection;
+            Intrinsics.checkNotNull(layoutDirection);
+            this.textMeasurer = new TextMeasurer(resolver, density, layoutDirection, 0, 8, null);
+            this.currentResolver = resolver;
+        }
     }
 }

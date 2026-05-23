@@ -3,7 +3,7 @@ package com.miami.game.core.gamefiles.info.domain;
 import com.miami.game.core.gamefiles.info.data.GamefilesInfoRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GamefilesInfoInteractor_Factory implements Factory<GamefilesInfoInteractor> {
     private final Provider<GamefilesInfoRepository> repositoryProvider;
 

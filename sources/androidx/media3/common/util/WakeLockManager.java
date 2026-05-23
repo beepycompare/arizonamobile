@@ -50,7 +50,7 @@ public final class WakeLockManager {
             this.wakeLockHandler.post(new Runnable() { // from class: androidx.media3.common.util.WakeLockManager$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WakeLockManager.this.m8171xe56dff98(z, z2);
+                    WakeLockManager.this.m8776xe56dff98(z, z2);
                 }
             });
             return;
@@ -59,32 +59,32 @@ public final class WakeLockManager {
         this.mainHandler.postDelayed(new Runnable() { // from class: androidx.media3.common.util.WakeLockManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WakeLockManager.this.m8172x800ec219(atomicBoolean);
+                WakeLockManager.this.m8777x800ec219(atomicBoolean);
             }
         }, 1000L);
         this.wakeLockHandler.post(new Runnable() { // from class: androidx.media3.common.util.WakeLockManager$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                WakeLockManager.this.m8173x1aaf849a(atomicBoolean, z, z2);
+                WakeLockManager.this.m8778x1aaf849a(atomicBoolean, z, z2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWakeLock$0$androidx-media3-common-util-WakeLockManager  reason: not valid java name */
-    public /* synthetic */ void m8171xe56dff98(boolean z, boolean z2) {
+    public /* synthetic */ void m8776xe56dff98(boolean z, boolean z2) {
         this.wakeLockManagerInternal.updateWakeLock(z, z2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWakeLock$1$androidx-media3-common-util-WakeLockManager  reason: not valid java name */
-    public /* synthetic */ void m8172x800ec219(AtomicBoolean atomicBoolean) {
+    public /* synthetic */ void m8777x800ec219(AtomicBoolean atomicBoolean) {
         this.wakeLockManagerInternal.forceReleaseWakeLock(atomicBoolean);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWakeLock$2$androidx-media3-common-util-WakeLockManager  reason: not valid java name */
-    public /* synthetic */ void m8173x1aaf849a(AtomicBoolean atomicBoolean, boolean z, boolean z2) {
+    public /* synthetic */ void m8778x1aaf849a(AtomicBoolean atomicBoolean, boolean z, boolean z2) {
         atomicBoolean.set(false);
         this.wakeLockManagerInternal.updateWakeLock(z, z2);
     }
@@ -135,7 +135,7 @@ public final class WakeLockManager {
                 new Thread(new Runnable() { // from class: androidx.media3.common.util.WakeLockManager$WakeLockManagerInternal$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WakeLockManager.WakeLockManagerInternal.this.m8174x41613802(atomicBoolean);
+                        WakeLockManager.WakeLockManagerInternal.this.m8779x41613802(atomicBoolean);
                     }
                 }, WakeLockManager.WAKE_LOCK_TAG).start();
             }
@@ -143,7 +143,7 @@ public final class WakeLockManager {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: forceReleaseWakeLockInternal */
-        public synchronized void m8174x41613802(AtomicBoolean atomicBoolean) {
+        public synchronized void m8779x41613802(AtomicBoolean atomicBoolean) {
             PowerManager.WakeLock wakeLock;
             if (atomicBoolean.get() && (wakeLock = this.wakeLock) != null) {
                 wakeLock.release();

@@ -101,7 +101,7 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
             if (Environment.isExternalStorageLegacy()) {
                 return this.fileDelegate.buildLoadData(queryForFilePath(this.uri), this.width, this.height, this.options);
             }
-            if (MediaStoreUtil.isAndroidPickerUri(this.uri)) {
+            if (Build.VERSION.SDK_INT >= 30 || MediaStoreUtil.isAndroidPickerUri(this.uri)) {
                 return this.uriDelegate.buildLoadData(this.uri, this.width, this.height, this.options);
             }
             boolean isAccessMediaLocationGranted = isAccessMediaLocationGranted();

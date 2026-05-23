@@ -14,6 +14,7 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
+import java.io.InvalidClassException;
 import java.io.NotSerializableException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -81,6 +82,13 @@ public class Util {
     public static boolean canReadAppSetId(AdjustConfig adjustConfig) {
         if (adjustConfig.isAppSetIdReadingEnabled) {
             return canReadPlayIds(adjustConfig);
+        }
+        return false;
+    }
+
+    public static boolean canReadFbId(AdjustConfig adjustConfig) {
+        if (adjustConfig.isFbIdReadingEnabled) {
+            return canReadNonPlayIds(adjustConfig);
         }
         return false;
     }
@@ -482,9 +490,9 @@ public class Util {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0092 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00a6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r3v10, types: [java.io.Closeable] */
-    /* JADX WARN: Type inference failed for: r3v19, types: [java.io.ObjectInputStream] */
+    /* JADX WARN: Type inference failed for: r3v19, types: [java.io.ObjectInputStream, com.adjust.sdk.ObjectInputFilterStream] */
     /* JADX WARN: Type inference failed for: r3v8 */
     /* JADX WARN: Type inference failed for: r4v10, types: [java.io.BufferedInputStream, java.io.InputStream] */
     /* JADX WARN: Type inference failed for: r4v3 */
@@ -512,16 +520,18 @@ public class Util {
         try {
             r4 = new BufferedInputStream(context.openFileInput(str));
             try {
-                r3 = new ObjectInputStream(r4);
+                r3 = new ObjectInputFilterStream(r4);
                 try {
                     t3 = cls.cast(r3.readObject());
                     getLogger().debug("Read %s: %s", str2, t3);
-                } catch (ClassCastException e3) {
-                    getLogger().error("Failed to cast %s object (%s)", str2, e3.getMessage());
-                } catch (ClassNotFoundException e4) {
-                    getLogger().error("Failed to find %s class (%s)", str2, e4.getMessage());
-                } catch (Exception e5) {
-                    getLogger().error("Failed to read %s object (%s)", str2, e5.getMessage());
+                } catch (InvalidClassException e3) {
+                    getLogger().error("Failed to validate %s class (%s)", str2, e3.getMessage());
+                } catch (ClassCastException e4) {
+                    getLogger().error("Failed to cast %s object (%s)", str2, e4.getMessage());
+                } catch (ClassNotFoundException e5) {
+                    getLogger().error("Failed to find %s class (%s)", str2, e5.getMessage());
+                } catch (Exception e6) {
+                    getLogger().error("Failed to read %s object (%s)", str2, e6.getMessage());
                 }
             } catch (FileNotFoundException unused2) {
                 getLogger().debug("%s file not found", str2);
@@ -530,8 +540,8 @@ public class Util {
                 if (r3 != 0) {
                 }
                 return t3;
-            } catch (Exception e6) {
-                e = e6;
+            } catch (Exception e7) {
+                e = e7;
                 getLogger().error("Failed to open %s file for reading (%s)", str2, e);
                 obj = r4;
                 r3 = obj;
@@ -551,8 +561,8 @@ public class Util {
             if (r3 != 0) {
             }
             return t3;
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e8) {
+            e = e8;
             T t5 = t3;
             t3 = r3;
             t = t5;
@@ -570,8 +580,8 @@ public class Util {
         if (r3 != 0) {
             try {
                 r3.close();
-            } catch (Exception e8) {
-                getLogger().error("Failed to close %s file for reading (%s)", str2, e8);
+            } catch (Exception e9) {
+                getLogger().error("Failed to close %s file for reading (%s)", str2, e9);
             }
         }
         return t3;

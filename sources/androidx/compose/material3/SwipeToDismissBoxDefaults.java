@@ -35,11 +35,11 @@ public final class SwipeToDismissBoxDefaults {
             rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxDefaults$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    float mo405toPx0680j_4;
+                    float mo434toPx0680j_4;
                     Density density2 = Density.this;
                     ((Float) obj).floatValue();
-                    mo405toPx0680j_4 = density2.mo405toPx0680j_4(Dp.m7555constructorimpl(56.0f));
-                    return Float.valueOf(mo405toPx0680j_4);
+                    mo434toPx0680j_4 = density2.mo434toPx0680j_4(Dp.m8160constructorimpl(56.0f));
+                    return Float.valueOf(mo434toPx0680j_4);
                 }
             };
             composer.updateRememberedValue(rememberedValue);

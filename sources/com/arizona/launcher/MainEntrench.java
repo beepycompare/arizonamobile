@@ -388,7 +388,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.1.7 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.2.0 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -509,12 +509,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -524,12 +524,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C266@10263L8,270@10388L43,268@10293L160:MainEntrench.kt#5ji0rp");
@@ -622,7 +622,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7555constructorimpl(1.0f)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m1103height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m8160constructorimpl(1.0f)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1596,9 +1596,8 @@ public final class MainEntrench extends Hilt_MainEntrench {
         boolean z = sharedPreferences.getBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime());
         boolean z2 = sharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds());
         boolean z3 = sharedPreferences.getBoolean(SettingsConstants.SHOW_FPS, ConnectionHolder.INSTANCE.getSettingsData().getShowFps());
-        boolean z4 = sharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, ConnectionHolder.INSTANCE.getSettingsData().getUpdatedGraphics());
-        boolean z5 = sharedPreferences.getBoolean(SettingsConstants.USE_FULLSCREEN, ConnectionHolder.INSTANCE.getSettingsData().getFullScreen());
-        boolean z6 = sharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode());
+        boolean z4 = sharedPreferences.getBoolean(SettingsConstants.USE_FULLSCREEN, ConnectionHolder.INSTANCE.getSettingsData().getFullScreen());
+        boolean z5 = sharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode());
         String string = sharedPreferences.getString(SettingsConstants.DEBUG_TEST_SERVER_IP, ConnectionHolder.INSTANCE.getSettingsData().getIp());
         if (string == null) {
             string = "";
@@ -1618,7 +1617,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         String str4 = str3;
         String string3 = sharedPreferences.getString(SettingsConstants.DEBUG_TEST_SERVER_PASSWORD, ConnectionHolder.INSTANCE.getSettingsData().getPassword());
-        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, i, f, false, z6, z, z2, z3, z4, z5, str2, str4, string3 == null ? "" : string3, 4, null));
+        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, i, f, false, z5, z, z2, z3, z4, str2, str4, string3 == null ? "" : string3, 4, null));
     }
 
     private final void shareLogs() {

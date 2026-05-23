@@ -7,12 +7,15 @@ import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.R;
 import com.google.android.material.animation.MotionSpec;
@@ -41,7 +44,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
     private boolean animationEnabled;
     private final CoordinatorLayout.Behavior<ExtendedFloatingActionButton> behavior;
     private final AnimatorTracker changeVisibilityTracker;
-    private final int collapsedSize;
+    private int collapsedSize;
     private final MotionStrategy extendStrategy;
     private final int extendStrategyType;
     private int extendedPaddingEnd;
@@ -343,6 +346,16 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         this.originalTextCsl = getTextColors();
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public ColorStateList getOriginalTextColor() {
+        return this.originalTextCsl;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int getCurrentOriginalTextColor() {
+        return this.originalTextCsl.getColorForState(getDrawableState(), 0);
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     public void silentlyUpdateTextColor(ColorStateList colorStateList) {
         super.setTextColor(colorStateList);
@@ -355,7 +368,47 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         if (this.isExtended && TextUtils.isEmpty(getText()) && getIcon() != null) {
             this.isExtended = false;
             this.shrinkStrategy.performNow();
+            return;
         }
+        updateTooltip();
+    }
+
+    @Override // android.view.View
+    public void setContentDescription(CharSequence charSequence) {
+        super.setContentDescription(charSequence);
+        updateTooltip();
+    }
+
+    @Override // com.google.android.material.button.MaterialButton, android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        updateTooltip();
+    }
+
+    @Override // android.view.View
+    public void setClickable(boolean z) {
+        super.setClickable(z);
+        updateTooltip();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateTooltip() {
+        CharSequence charSequence;
+        if (Build.VERSION.SDK_INT < 26) {
+            return;
+        }
+        if (this.isExtended || !isClickable()) {
+            charSequence = null;
+        } else {
+            charSequence = getText();
+            if (TextUtils.isEmpty(charSequence)) {
+                charSequence = getContentDescription();
+            }
+        }
+        if (TextUtils.equals(getTooltipText(), charSequence)) {
+            return;
+        }
+        setTooltipText(charSequence);
     }
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.AttachedBehavior
@@ -612,13 +665,17 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
         return false;
     }
 
-    int getCollapsedSize() {
+    int getCollapsedPadding() {
+        return (getCollapsedSize() - getIconSize()) / 2;
+    }
+
+    public int getCollapsedSize() {
         int i = this.collapsedSize;
         return i < 0 ? (Math.min(getPaddingStart(), getPaddingEnd()) * 2) + getIconSize() : i;
     }
 
-    int getCollapsedPadding() {
-        return (getCollapsedSize() - getIconSize()) / 2;
+    public void setCollapsedSize(int i) {
+        this.collapsedSize = i;
     }
 
     /* loaded from: classes4.dex */
@@ -810,6 +867,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             }
             ExtendedFloatingActionButton.this.setPaddingRelative(this.size.getPaddingStart(), ExtendedFloatingActionButton.this.getPaddingTop(), this.size.getPaddingEnd(), ExtendedFloatingActionButton.this.getPaddingBottom());
             ExtendedFloatingActionButton.this.requestLayout();
+            ExtendedFloatingActionButton.this.updateTooltip();
         }
 
         @Override // com.google.android.material.floatingactionbutton.MotionStrategy
@@ -859,8 +917,8 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             }
             if (currentMotionSpec.hasPropertyValues("labelOpacity")) {
                 PropertyValuesHolder[] propertyValues5 = currentMotionSpec.getPropertyValues("labelOpacity");
-                boolean z = this.extending;
-                propertyValues5[0].setFloatValues(z ? 0.0f : 1.0f, z ? 1.0f : 0.0f);
+                int alpha = Color.alpha(ExtendedFloatingActionButton.this.getCurrentOriginalTextColor());
+                propertyValues5[0].setFloatValues(alpha != 0 ? Color.alpha(ExtendedFloatingActionButton.this.getCurrentTextColor()) / alpha : 0.0f, this.extending ? 1.0f : 0.0f);
                 currentMotionSpec.setPropertyValues("labelOpacity", propertyValues5);
             }
             return super.createAnimator(currentMotionSpec);
@@ -872,6 +930,7 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             ExtendedFloatingActionButton.this.isExtended = this.extending;
             ExtendedFloatingActionButton.this.isTransforming = true;
             ExtendedFloatingActionButton.this.setHorizontallyScrolling(true);
+            ExtendedFloatingActionButton.this.updateTooltip();
         }
 
         @Override // com.google.android.material.floatingactionbutton.BaseMotionStrategy, com.google.android.material.floatingactionbutton.MotionStrategy

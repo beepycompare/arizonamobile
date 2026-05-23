@@ -243,9 +243,8 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
         final transient int length;
         final transient int offset;
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        public boolean isPartialView() {
+        boolean isPartialView() {
             return true;
         }
 
@@ -274,22 +273,19 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return this.length;
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
         @CheckForNull
-        public Object[] internalArray() {
+        Object[] internalArray() {
             return ImmutableList.this.internalArray();
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        public int internalArrayStart() {
+        int internalArrayStart() {
             return ImmutableList.this.internalArrayStart() + this.offset;
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        public int internalArrayEnd() {
+        int internalArrayEnd() {
             return ImmutableList.this.internalArrayStart() + this.offset + this.length;
         }
 
@@ -428,9 +424,8 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return this.forwardList.size();
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        public boolean isPartialView() {
+        boolean isPartialView() {
             return this.forwardList.isPartialView();
         }
 

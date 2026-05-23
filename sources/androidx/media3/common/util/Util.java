@@ -2,6 +2,8 @@ package androidx.media3.common.util;
 
 import android.app.Activity;
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
@@ -32,10 +34,11 @@ import android.util.SparseArray;
 import android.util.SparseLongArray;
 import android.view.Display;
 import android.view.WindowManager;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.core.view.MotionEventCompat;
 import androidx.media3.common.C;
+import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
@@ -44,6 +47,7 @@ import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Player;
 import androidx.media3.common.audio.AudioManagerCompat;
 import androidx.media3.common.audio.AudioProcessor;
+import androidx.media3.exoplayer.audio.IamfUtil;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -136,7 +140,7 @@ public final class Util {
     private static final int[] CRC32_BYTES_MSBF = {0, 79764919, 159529838, 222504665, 319059676, 398814059, 445009330, 507990021, 638119352, 583659535, 797628118, 726387553, 890018660, 835552979, 1015980042, 944750013, 1276238704, 1221641927, 1167319070, 1095957929, 1595256236, 1540665371, 1452775106, 1381403509, 1780037320, 1859660671, 1671105958, 1733955601, 2031960084, 2111593891, 1889500026, 1952343757, -1742489888, -1662866601, -1851683442, -1788833735, -1960329156, -1880695413, -2103051438, -2040207643, -1104454824, -1159051537, -1213636554, -1284997759, -1389417084, -1444007885, -1532160278, -1603531939, -734892656, -789352409, -575645954, -646886583, -952755380, -1007220997, -827056094, -898286187, -231047128, -151282273, -71779514, -8804623, -515967244, -436212925, -390279782, -327299027, 881225847, 809987520, 1023691545, 969234094, 662832811, 591600412, 771767749, 717299826, 311336399, 374308984, 453813921, 533576470, 25881363, 88864420, 134795389, 214552010, 2023205639, 2086057648, 1897238633, 1976864222, 1804852699, 1867694188, 1645340341, 1724971778, 1587496639, 1516133128, 1461550545, 1406951526, 1302016099, 1230646740, 1142491917, 1087903418, -1398421865, -1469785312, -1524105735, -1578704818, -1079922613, -1151291908, -1239184603, -1293773166, -1968362705, -1905510760, -2094067647, -2014441994, -1716953613, -1654112188, -1876203875, -1796572374, -525066777, -462094256, -382327159, -302564546, -206542021, -143559028, -97365931, -17609246, -960696225, -1031934488, -817968335, -872425850, -709327229, -780559564, -600130067, -654598054, 1762451694, 1842216281, 1619975040, 1682949687, 2047383090, 2127137669, 1938468188, 2001449195, 1325665622, 1271206113, 1183200824, 1111960463, 1543535498, 1489069629, 1434599652, 1363369299, 622672798, 568075817, 748617968, 677256519, 907627842, 853037301, 1067152940, 995781531, 51762726, 131386257, 177728840, 240578815, 269590778, 349224269, 429104020, 491947555, -248556018, -168932423, -122852000, -60002089, -500490030, -420856475, -341238852, -278395381, -685261898, -739858943, -559578920, -630940305, -1004286614, -1058877219, -845023740, -916395085, -1119974018, -1174433591, -1262701040, -1333941337, -1371866206, -1426332139, -1481064244, -1552294533, -1690935098, -1611170447, -1833673816, -1770699233, -2009983462, -1930228819, -2119160460, -2056179517, 1569362073, 1498123566, 1409854455, 1355396672, 1317987909, 1246755826, 1192025387, 1137557660, 2072149281, 2135122070, 1912620623, 1992383480, 1753615357, 1816598090, 1627664531, 1707420964, 295390185, 358241886, 404320391, 483945776, 43990325, 106832002, 186451547, 266083308, 932423249, 861060070, 1041341759, 986742920, 613929101, 542559546, 756411363, 701822548, -978770311, -1050133554, -869589737, -924188512, -693284699, -764654318, -550540341, -605129092, -475935807, -413084042, -366743377, -287118056, -257573603, -194731862, -114850189, -35218492, -1984365303, -1921392450, -2143631769, -2063868976, -1698919467, -1635936670, -1824608069, -1744851700, -1347415887, -1418654458, -1506661409, -1561119128, -1129027987, -1200260134, -1254728445, -1309196108};
     private static final int[] CRC16_BYTES_MSBF = {0, 4129, 8258, 12387, 16516, 20645, 24774, 28903, 33032, 37161, 41290, 45419, 49548, 53677, 57806, 61935};
     private static final int ZLIB_INFLATE_HEADER = 120;
-    private static final int[] CRC8_BYTES_MSBF = {0, 7, 14, 9, 28, 27, 18, 21, 56, 63, 54, 49, 36, 35, 42, 45, 112, 119, WebSocketProtocol.PAYLOAD_SHORT, 121, 108, 107, 98, 101, 72, 79, 70, 65, 84, 83, 90, 93, 224, 231, 238, 233, 252, 251, 242, 245, 216, 223, 214, 209, DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION, DownloaderService.STATUS_WAITING_FOR_NETWORK, ComposerKt.compositionLocalMapKey, 205, 144, 151, 158, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 140, TsExtractor.TS_STREAM_TYPE_DTS_UHD, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 133, 168, 175, 166, 161, 180, 179, 186, PsExtractor.PRIVATE_STREAM_1, 199, 192, ComposerKt.providerKey, ComposerKt.referenceKey, 219, 220, 213, 210, 255, 248, 241, 246, 227, 228, 237, 234, 183, 176, 185, DownloaderService.STATUS_PENDING, 171, TsExtractor.TS_STREAM_TYPE_AC4, 165, 162, 143, TsExtractor.TS_STREAM_TYPE_DTS_HD, TsExtractor.TS_STREAM_TYPE_AC3, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, 147, 148, 157, 154, 39, 32, 41, 46, 59, 60, 53, 50, 31, 24, 17, 22, 3, 4, 13, 10, 87, 80, 89, 94, 75, 76, 69, 66, 111, 104, 97, 102, 115, 116, ComposerImplKt.nodeKey, 122, 137, 142, TsExtractor.TS_STREAM_TYPE_E_AC3, 128, 149, 146, ModuleDescriptor.MODULE_VERSION, 156, 177, 182, 191, 184, 173, 170, 163, 164, 249, 254, 247, 240, 229, 226, 235, 236, DownloaderService.STATUS_PAUSED_BY_APP, 198, ComposerKt.reuseKey, 200, 221, 218, 211, 212, 105, 110, 103, 96, 117, 114, 123, 124, 81, 86, 95, 88, 77, 74, 67, 68, 25, 30, 23, 16, 5, 2, 11, 12, 33, 38, 47, 40, 61, 58, 51, 52, 78, 73, 64, 71, 82, 85, 92, 91, 118, 113, ZLIB_INFLATE_HEADER, 127, 106, 109, 100, 99, 62, 57, 48, 55, 34, 37, 44, 43, 6, 1, 8, 15, 26, 29, 20, 19, 174, 169, 160, 167, 178, 181, TsExtractor.TS_PACKET_SIZE, 187, 150, 145, BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 159, TsExtractor.TS_STREAM_TYPE_DTS, 141, 132, 131, 222, 217, 208, 215, DownloaderService.STATUS_WAITING_TO_RETRY, DownloaderService.STATUS_QUEUED_FOR_WIFI, ComposerKt.providerMapsKey, ComposerKt.providerValuesKey, 230, 225, 232, 239, 250, 253, 244, 243};
+    private static final int[] CRC8_BYTES_MSBF = {0, 7, 14, 9, 28, 27, 18, 21, 56, 63, 54, 49, 36, 35, 42, 45, 112, 119, WebSocketProtocol.PAYLOAD_SHORT, 121, 108, 107, 98, 101, 72, 79, 70, 65, 84, 83, 90, 93, 224, 231, 238, 233, 252, 251, 242, 245, 216, 223, 214, 209, DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION, DownloaderService.STATUS_WAITING_FOR_NETWORK, ComposerKt.compositionLocalMapKey, 205, 144, 151, 158, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 140, TsExtractor.TS_STREAM_TYPE_DTS_UHD, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 133, 168, 175, 166, 161, 180, 179, 186, PsExtractor.PRIVATE_STREAM_1, 199, 192, ComposerKt.providerKey, ComposerKt.referenceKey, 219, 220, 213, 210, 255, 248, 241, 246, 227, 228, 237, 234, 183, 176, ModuleDescriptor.MODULE_VERSION, DownloaderService.STATUS_PENDING, 171, TsExtractor.TS_STREAM_TYPE_AC4, 165, 162, 143, TsExtractor.TS_STREAM_TYPE_DTS_HD, TsExtractor.TS_STREAM_TYPE_AC3, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, 147, 148, 157, 154, 39, 32, 41, 46, 59, 60, 53, 50, 31, 24, 17, 22, 3, 4, 13, 10, 87, 80, 89, 94, 75, 76, 69, 66, 111, 104, 97, 102, 115, 116, GapComposerKt.nodeKey, 122, 137, 142, TsExtractor.TS_STREAM_TYPE_E_AC3, 128, 149, 146, 155, 156, 177, 182, 191, 184, 173, 170, 163, 164, 249, 254, 247, 240, 229, 226, 235, 236, DownloaderService.STATUS_PAUSED_BY_APP, 198, ComposerKt.reuseKey, 200, 221, 218, 211, 212, 105, 110, 103, 96, 117, 114, 123, 124, 81, 86, 95, 88, 77, 74, 67, 68, 25, 30, 23, 16, 5, 2, 11, 12, 33, 38, 47, 40, 61, 58, 51, 52, 78, 73, 64, 71, 82, 85, 92, 91, 118, 113, ZLIB_INFLATE_HEADER, 127, 106, 109, 100, 99, 62, 57, 48, 55, 34, 37, 44, 43, 6, 1, 8, 15, 26, 29, 20, 19, 174, 169, 160, 167, 178, 181, TsExtractor.TS_PACKET_SIZE, 187, 150, 145, BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 159, TsExtractor.TS_STREAM_TYPE_DTS, 141, 132, 131, 222, 217, 208, 215, DownloaderService.STATUS_WAITING_TO_RETRY, DownloaderService.STATUS_QUEUED_FOR_WIFI, ComposerKt.providerMapsKey, ComposerKt.providerValuesKey, 230, 225, 232, 239, 250, 253, 244, 243};
 
     @EnsuresNonNull({"#1"})
     public static <T> T castNonNull(T t) {
@@ -149,46 +153,48 @@ public final class Util {
     }
 
     public static int getApiLevelThatAudioFormatIntroducedAudioEncoding(int i) {
-        if (i != 30) {
-            switch (i) {
-                case 2:
-                case 3:
-                    return 3;
-                case 4:
-                case 5:
-                case 6:
-                    return 21;
-                case 7:
-                case 8:
-                    return 23;
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                    return 28;
-                default:
-                    switch (i) {
-                        case 14:
-                            return 25;
-                        case 15:
-                        case 16:
-                        case 17:
-                        case 18:
-                            return 28;
-                        default:
-                            switch (i) {
-                                case 20:
-                                    return 30;
-                                case 21:
-                                case 22:
-                                    return 31;
-                                default:
-                                    return Integer.MAX_VALUE;
-                            }
-                    }
-            }
+        switch (i) {
+            case 2:
+            case 3:
+                return 3;
+            case 4:
+            case 5:
+            case 6:
+                return 21;
+            case 7:
+            case 8:
+                return 23;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+                return 28;
+            case 13:
+            case 19:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            default:
+                return Integer.MAX_VALUE;
+            case 14:
+                return 25;
+            case 20:
+                return 30;
+            case 21:
+            case 22:
+                return 31;
+            case 30:
+            case 31:
+                return 34;
         }
-        return 34;
     }
 
     @Deprecated
@@ -299,11 +305,11 @@ public final class Util {
     }
 
     public static boolean isEncodingHighResolutionPcm(int i) {
-        return i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4;
+        return i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4 || i == 1879048192;
     }
 
     public static boolean isEncodingLinearPcm(int i) {
-        return i == 3 || i == 2 || i == 268435456 || i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4;
+        return i == 3 || i == 2 || i == 268435456 || i == 21 || i == 1342177280 || i == 22 || i == 1610612736 || i == 4 || i == 1879048192;
     }
 
     public static boolean isLinebreak(int i) {
@@ -375,6 +381,17 @@ public final class Util {
         } else {
             service.startForeground(i, notification);
         }
+    }
+
+    public static void stopForeground(Service service, boolean z) {
+        Api24.stopForeground(service, z);
+    }
+
+    public static void ensureNotificationChannel(NotificationManager notificationManager, String str, String str2) {
+        if (Build.VERSION.SDK_INT < 26 || notificationManager.getNotificationChannel(str) != null) {
+            return;
+        }
+        Api26.createNotificationChannel(notificationManager, str, str2);
     }
 
     @Deprecated
@@ -784,6 +801,16 @@ public final class Util {
         }
     }
 
+    public static String loadRawResource(Context context, int i) throws IOException {
+        InputStream inputStream = null;
+        try {
+            inputStream = context.getResources().openRawResource(i);
+            return fromUtf8Bytes(ByteStreams.toByteArray(inputStream));
+        } finally {
+            closeQuietly(inputStream);
+        }
+    }
+
     public static String fromUtf8Bytes(byte[] bArr) {
         return new String(bArr, StandardCharsets.UTF_8);
     }
@@ -826,6 +853,10 @@ public final class Util {
 
     public static float constrainValue(float f, float f2, float f3) {
         return Math.max(f2, Math.min(f, f3));
+    }
+
+    public static double constrainValue(double d, double d2, double d3) {
+        return Math.max(d2, Math.min(d, d3));
     }
 
     public static long addWithOverflowDefault(long j, long j2, long j3) {
@@ -1285,7 +1316,7 @@ public final class Util {
         } catch (PackageManager.NameNotFoundException unused) {
             str2 = "?";
         }
-        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.9.2";
+        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.10.1";
     }
 
     public static int getCodecCountOfType(String str, int i) {
@@ -1316,6 +1347,44 @@ public final class Util {
             return sb.toString();
         }
         return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0044 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0045  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ColorInfo getColorInfoForDolbyVision(String str, String str2, String str3) {
+        int i;
+        int i2;
+        if (str == null || !MimeTypes.isDolbyVisionCodec(str, str2)) {
+            return null;
+        }
+        int i3 = 6;
+        if (str.startsWith("dvhe") || str.startsWith("dvh1") || str.startsWith("dav1")) {
+            i = 1;
+        } else {
+            if (str3 != null) {
+                i = 2;
+                if (!str3.equals("db1p")) {
+                    if (str3.startsWith("db4")) {
+                        i2 = 7;
+                        if (i3 == -1) {
+                            return null;
+                        }
+                        return new ColorInfo.Builder().setColorSpace(i3).setColorRange(i).setColorTransfer(i2).build();
+                    }
+                }
+            }
+            i2 = -1;
+            i = -1;
+            i3 = -1;
+            if (i3 == -1) {
+            }
+        }
+        i2 = 6;
+        if (i3 == -1) {
+        }
     }
 
     public static String getCodecsWithoutType(String str, int i) {
@@ -1384,7 +1453,10 @@ public final class Util {
         } else if (i == 16) {
             return Build.VERSION.SDK_INT >= 32 ? 205215996 : 0;
         } else if (i == 24) {
-            return Build.VERSION.SDK_INT >= 32 ? 67108860 : 0;
+            if (Build.VERSION.SDK_INT >= 32) {
+                return IamfUtil.CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_H_9_10_3;
+            }
+            return 0;
         } else {
             switch (i) {
                 case 1:
@@ -1435,6 +1507,9 @@ public final class Util {
                             if (i != 268435456) {
                                 if (i != 1342177280) {
                                     if (i != 1610612736) {
+                                        if (i == 1879048192) {
+                                            return 8;
+                                        }
                                         throw new IllegalArgumentException();
                                     }
                                 }
@@ -2222,10 +2297,11 @@ public final class Util {
 
     @EnsuresNonNullIf(expression = {"#1"}, result = true)
     public static boolean shouldEnablePlayPauseButton(Player player) {
-        if (player == null || !player.isCommandAvailable(1)) {
+        if (player == null) {
             return false;
         }
-        return (player.isCommandAvailable(17) && player.getCurrentTimeline().isEmpty()) ? false : true;
+        int playbackState = player.getPlaybackState();
+        return (!player.isCommandAvailable(16) || player.getCurrentMediaItem() != null) && (player.isCommandAvailable(1) || (playbackState == 1 && player.isCommandAvailable(2)) || (playbackState == 4 && player.isCommandAvailable(4)));
     }
 
     @EnsuresNonNullIf(expression = {"#1"}, result = false)
@@ -2378,6 +2454,32 @@ public final class Util {
                 return strArr[i + 1] + str.substring(strArr[i].length());
             }
             i += 2;
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private static class Api24 {
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void stopForeground(Service service, boolean z) {
+            service.stopForeground(z ? 1 : 2);
+        }
+
+        private Api24() {
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    private static class Api26 {
+        private Api26() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void createNotificationChannel(NotificationManager notificationManager, String str, String str2) {
+            NotificationChannel notificationChannel = new NotificationChannel(str, str2, 2);
+            if (Build.VERSION.SDK_INT <= 27) {
+                notificationChannel.setShowBadge(false);
+            }
+            notificationManager.createNotificationChannel(notificationChannel);
         }
     }
 

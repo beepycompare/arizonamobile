@@ -4,7 +4,7 @@ import android.os.Bundle;
 import androidx.collection.ArrayMap;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzd extends zzf {
     private final Map zza;
@@ -19,28 +19,28 @@ public final class zzd extends zzf {
 
     private final void zzh(long j, zzlu zzluVar) {
         if (zzluVar == null) {
-            this.zzu.zzaV().zzk().zza("Not logging ad exposure. No active activity");
+            this.zzu.zzaW().zzk().zza("Not logging ad exposure. No active activity");
         } else if (j < 1000) {
-            this.zzu.zzaV().zzk().zzb("Not logging ad exposure. Less than 1000 ms. exposure", Long.valueOf(j));
+            this.zzu.zzaW().zzk().zzb("Not logging ad exposure. Less than 1000 ms. exposure", Long.valueOf(j));
         } else {
             Bundle bundle = new Bundle();
             bundle.putLong("_xt", j);
-            zzpp.zzav(zzluVar, bundle, true);
-            this.zzu.zzj().zzF("am", "_xa", bundle);
+            zzpp.zzay(zzluVar, bundle, true);
+            this.zzu.zzj().zzE("am", "_xa", bundle);
         }
     }
 
     private final void zzi(String str, long j, zzlu zzluVar) {
         if (zzluVar == null) {
-            this.zzu.zzaV().zzk().zza("Not logging ad unit exposure. No active activity");
+            this.zzu.zzaW().zzk().zza("Not logging ad unit exposure. No active activity");
         } else if (j < 1000) {
-            this.zzu.zzaV().zzk().zzb("Not logging ad unit exposure. Less than 1000 ms. exposure", Long.valueOf(j));
+            this.zzu.zzaW().zzk().zzb("Not logging ad unit exposure. Less than 1000 ms. exposure", Long.valueOf(j));
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("_ai", str);
             bundle.putLong("_xt", j);
-            zzpp.zzav(zzluVar, bundle, true);
-            this.zzu.zzj().zzF("am", "_xu", bundle);
+            zzpp.zzay(zzluVar, bundle, true);
+            this.zzu.zzj().zzE("am", "_xu", bundle);
         }
     }
 
@@ -59,17 +59,17 @@ public final class zzd extends zzf {
 
     public final void zza(String str, long j) {
         if (str == null || str.length() == 0) {
-            this.zzu.zzaV().zzb().zza("Ad unit id must be a non-empty string");
+            this.zzu.zzaW().zzb().zza("Ad unit id must be a non-empty string");
         } else {
-            this.zzu.zzaW().zzj(new zza(this, str, j));
+            this.zzu.zzaX().zzj(new zza(this, str, j));
         }
     }
 
     public final void zzb(String str, long j) {
         if (str == null || str.length() == 0) {
-            this.zzu.zzaV().zzb().zza("Ad unit id must be a non-empty string");
+            this.zzu.zzaW().zzb().zza("Ad unit id must be a non-empty string");
         } else {
-            this.zzu.zzaW().zzj(new zzb(this, str, j));
+            this.zzu.zzaX().zzj(new zzb(this, str, j));
         }
     }
 
@@ -97,7 +97,7 @@ public final class zzd extends zzf {
         if (num != null) {
             map.put(str, Integer.valueOf(num.intValue() + 1));
         } else if (map.size() >= 100) {
-            this.zzu.zzaV().zze().zza("Too many ads visible");
+            this.zzu.zzaW().zze().zza("Too many ads visible");
         } else {
             map.put(str, 1);
             this.zza.put(str, Long.valueOf(j));
@@ -111,7 +111,7 @@ public final class zzd extends zzf {
         Map map = this.zzb;
         Integer num = (Integer) map.get(str);
         if (num == null) {
-            this.zzu.zzaV().zzb().zzb("Call to endAdUnitExposure for unknown ad unit id", str);
+            this.zzu.zzaW().zzb().zzb("Call to endAdUnitExposure for unknown ad unit id", str);
             return;
         }
         zzlu zzh = this.zzu.zzs().zzh(false);
@@ -121,7 +121,7 @@ public final class zzd extends zzf {
             Map map2 = this.zza;
             Long l = (Long) map2.get(str);
             if (l == null) {
-                this.zzu.zzaV().zzb().zza("First ad unit exposure time was never set");
+                this.zzu.zzaW().zzb().zza("First ad unit exposure time was never set");
             } else {
                 map2.remove(str);
                 zzi(str, j - l.longValue(), zzh);
@@ -129,7 +129,7 @@ public final class zzd extends zzf {
             if (map.isEmpty()) {
                 long j2 = this.zzc;
                 if (j2 == 0) {
-                    this.zzu.zzaV().zzb().zza("First ad exposure time was never set");
+                    this.zzu.zzaW().zzb().zza("First ad exposure time was never set");
                     return;
                 }
                 zzh(j - j2, zzh);

@@ -1,41 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import kotlin.text.Charsets;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycle;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycleListener;
+import java.util.concurrent.CopyOnWriteArrayList;
 /* loaded from: classes5.dex */
-public final class Yk {
+public final class Yk implements ServiceModuleReporterComponentLifecycle, ServiceModuleReporterComponentLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0365k2 f877a;
+    public final CopyOnWriteArrayList f859a = new CopyOnWriteArrayList();
 
-    public Yk(InterfaceC0365k2 interfaceC0365k2) {
-        this.f877a = interfaceC0365k2;
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycleListener
+    public final void onMainReporterCreated(ServiceModuleReporterComponentContext serviceModuleReporterComponentContext) {
+        for (ServiceModuleReporterComponentLifecycleListener serviceModuleReporterComponentLifecycleListener : this.f859a) {
+            serviceModuleReporterComponentLifecycleListener.onMainReporterCreated(serviceModuleReporterComponentContext);
+        }
     }
 
-    public final ArrayList a(Iterable iterable) {
-        String str;
-        String a2;
-        ArrayList arrayList = new ArrayList();
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
-            try {
-                a2 = this.f877a.a(str2);
-            } catch (NoSuchAlgorithmException unused) {
-            }
-            if (a2 == null || (str = StringUtils.toHexString(MessageDigest.getInstance("SHA-256").digest(a2.getBytes(Charsets.UTF_8)))) == null) {
-                PublicLogger.Companion.getAnonymousInstance().info("Input " + str2 + " is not a valid data", new Object[0]);
-                str = null;
-            }
-            if (str != null) {
-                arrayList.add(str);
-            }
-        }
-        return arrayList;
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentLifecycle
+    public final void subscribe(ServiceModuleReporterComponentLifecycleListener serviceModuleReporterComponentLifecycleListener) {
+        this.f859a.add(serviceModuleReporterComponentLifecycleListener);
     }
 }

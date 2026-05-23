@@ -7,15 +7,15 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.util.Property;
 import android.view.View;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.util.Preconditions;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.animation.AnimatorSetCompat;
 import com.google.android.material.animation.MotionSpec;
 import java.util.ArrayList;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-public abstract class BaseMotionStrategy implements MotionStrategy {
+abstract class BaseMotionStrategy implements MotionStrategy {
     private final Context context;
     private MotionSpec defaultMotionSpec;
     private final ExtendedFloatingActionButton fab;
@@ -113,18 +113,18 @@ public abstract class BaseMotionStrategy implements MotionStrategy {
             arrayList.add(motionSpec.getAnimator("labelOpacity", this.fab, new Property<ExtendedFloatingActionButton, Float>(Float.class, "LABEL_OPACITY_PROPERTY") { // from class: com.google.android.material.floatingactionbutton.BaseMotionStrategy.1
                 @Override // android.util.Property
                 public Float get(ExtendedFloatingActionButton extendedFloatingActionButton) {
-                    return Float.valueOf(AnimationUtils.lerp(0.0f, 1.0f, (Color.alpha(extendedFloatingActionButton.getCurrentTextColor()) / 255.0f) / Color.alpha(extendedFloatingActionButton.originalTextCsl.getColorForState(extendedFloatingActionButton.getDrawableState(), BaseMotionStrategy.this.fab.originalTextCsl.getDefaultColor()))));
+                    int alpha = Color.alpha(extendedFloatingActionButton.getCurrentOriginalTextColor());
+                    return Float.valueOf(alpha != 0 ? Color.alpha(extendedFloatingActionButton.getCurrentTextColor()) / alpha : 0.0f);
                 }
 
                 @Override // android.util.Property
                 public void set(ExtendedFloatingActionButton extendedFloatingActionButton, Float f) {
-                    int colorForState = extendedFloatingActionButton.originalTextCsl.getColorForState(extendedFloatingActionButton.getDrawableState(), BaseMotionStrategy.this.fab.originalTextCsl.getDefaultColor());
-                    ColorStateList valueOf = ColorStateList.valueOf(Color.argb((int) (AnimationUtils.lerp(0.0f, Color.alpha(colorForState) / 255.0f, f.floatValue()) * 255.0f), Color.red(colorForState), Color.green(colorForState), Color.blue(colorForState)));
                     if (f.floatValue() == 1.0f) {
-                        extendedFloatingActionButton.silentlyUpdateTextColor(extendedFloatingActionButton.originalTextCsl);
-                    } else {
-                        extendedFloatingActionButton.silentlyUpdateTextColor(valueOf);
+                        extendedFloatingActionButton.silentlyUpdateTextColor(extendedFloatingActionButton.getOriginalTextColor());
+                        return;
                     }
+                    int currentOriginalTextColor = extendedFloatingActionButton.getCurrentOriginalTextColor();
+                    extendedFloatingActionButton.silentlyUpdateTextColor(ColorStateList.valueOf(ColorUtils.setAlphaComponent(currentOriginalTextColor, Math.round(AnimationUtils.lerp(0.0f, Color.alpha(currentOriginalTextColor), f.floatValue())))));
                 }
             }));
         }

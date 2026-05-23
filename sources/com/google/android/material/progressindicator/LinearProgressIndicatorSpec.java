@@ -31,7 +31,7 @@ public final class LinearProgressIndicatorSpec extends BaseProgressIndicatorSpec
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.LinearProgressIndicator, R.attr.linearProgressIndicatorStyle, LinearProgressIndicator.DEF_STYLE_RES, new int[0]);
         this.indeterminateAnimationType = obtainStyledAttributes.getInt(R.styleable.LinearProgressIndicator_indeterminateAnimationType, 1);
         this.indicatorDirection = obtainStyledAttributes.getInt(R.styleable.LinearProgressIndicator_indicatorDirectionLinear, 0);
-        this.trackStopIndicatorSize = Math.min(obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearProgressIndicator_trackStopIndicatorSize, 0), this.trackThickness);
+        this.trackStopIndicatorSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearProgressIndicator_trackStopIndicatorSize, 0);
         if (obtainStyledAttributes.hasValue(R.styleable.LinearProgressIndicator_trackStopIndicatorPadding)) {
             this.trackStopIndicatorPadding = Integer.valueOf(obtainStyledAttributes.getDimensionPixelSize(R.styleable.LinearProgressIndicator_trackStopIndicatorPadding, 0));
         }
@@ -60,6 +60,11 @@ public final class LinearProgressIndicatorSpec extends BaseProgressIndicatorSpec
             return (int) (this.trackThickness * this.trackInnerCornerRadiusFraction);
         }
         return this.trackInnerCornerRadius;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int getActualTrackStopIndicatorSize() {
+        return Math.min(this.trackStopIndicatorSize, this.trackThickness);
     }
 
     @Override // com.google.android.material.progressindicator.BaseProgressIndicatorSpec

@@ -28,13 +28,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: SelectionManager.kt */
-@Metadata(d1 = {"\u0000d\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u001e\u0010\u0000\u001a\u0004\u0018\u00010\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u00012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0001H\u0000\u001a%\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0002\b\b*\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000\u001a\u001e\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00100\u000f\"\u0004\b\u0000\u0010\u0010*\b\u0012\u0004\u0012\u0002H\u00100\u000fH\u0002\u001a*\u0010\u0011\u001a\u00020\r2\u0018\u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00010\u00130\u000f2\u0006\u0010\u0015\u001a\u00020\u0016H\u0001\u001a\u001f\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0004\b\u001c\u0010\u001d\u001a'\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020 H\u0002¢\u0006\u0004\b!\u0010\"\u001a\f\u0010#\u001a\u00020\r*\u00020\u0016H\u0000\u001a\u001b\u0010$\u001a\u00020%*\u00020\r2\u0006\u0010&\u001a\u00020\u0018H\u0000¢\u0006\u0004\b'\u0010(\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"merge", "Landroidx/compose/foundation/text/selection/Selection;", "lhs", "rhs", "contextMenuBuilder", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "", "Lkotlin/ExtensionFunctionType;", "Landroidx/compose/foundation/text/selection/SelectionManager;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/contextmenu/ContextMenuState;", "invertedInfiniteRect", "Landroidx/compose/ui/geometry/Rect;", "firstAndLast", "", ExifInterface.GPS_DIRECTION_TRUE, "getSelectedRegionRect", "selectableSubSelectionPairs", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/selection/Selectable;", "containerCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "calculateSelectionMagnifierCenterAndroid", "Landroidx/compose/ui/geometry/Offset;", "manager", "magnifierSize", "Landroidx/compose/ui/unit/IntSize;", "calculateSelectionMagnifierCenterAndroid-O0kMr_c", "(Landroidx/compose/foundation/text/selection/SelectionManager;J)J", "getMagnifierCenter", "anchor", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "getMagnifierCenter-JVtK1S4", "(Landroidx/compose/foundation/text/selection/SelectionManager;JLandroidx/compose/foundation/text/selection/Selection$AnchorInfo;)J", "visibleBounds", "containsInclusive", "", TypedValues.CycleType.S_WAVE_OFFSET, "containsInclusive-Uv8p0NA", "(Landroidx/compose/ui/geometry/Rect;J)Z", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000d\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u001e\u0010\u0000\u001a\u0004\u0018\u00010\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u00012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0001H\u0000\u001a%\u0010\u0004\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0002\b\b*\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0000\u001a\u001e\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00100\u000f\"\u0004\b\u0000\u0010\u0010*\b\u0012\u0004\u0012\u0002H\u00100\u000fH\u0002\u001a*\u0010\u0011\u001a\u00020\r2\u0018\u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00010\u00130\u000f2\u0006\u0010\u0015\u001a\u00020\u0016H\u0001\u001a\u001f\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001bH\u0000¢\u0006\u0004\b\u001c\u0010\u001d\u001a'\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001f\u001a\u00020 H\u0002¢\u0006\u0004\b!\u0010\"\u001a\f\u0010#\u001a\u00020\r*\u00020\u0016H\u0000\u001a\u001b\u0010$\u001a\u00020%*\u00020\r2\u0006\u0010&\u001a\u00020\u0018H\u0000¢\u0006\u0004\b'\u0010(\"\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"merge", "Landroidx/compose/foundation/text/selection/Selection;", "lhs", "rhs", "contextMenuBuilder", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "", "Lkotlin/ExtensionFunctionType;", "Landroidx/compose/foundation/text/selection/SelectionManager;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/contextmenu/ContextMenuState;", "invertedInfiniteRect", "Landroidx/compose/ui/geometry/Rect;", "firstAndLast", "", ExifInterface.GPS_DIRECTION_TRUE, "getSelectedRegionRect", "selectableSubSelectionPairs", "Lkotlin/Pair;", "Landroidx/compose/foundation/text/selection/Selectable;", "containerCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "calculateSelectionMagnifierCenterAndroid", "Landroidx/compose/ui/geometry/Offset;", "manager", "magnifierSize", "Landroidx/compose/ui/unit/IntSize;", "calculateSelectionMagnifierCenterAndroid-O0kMr_c", "(Landroidx/compose/foundation/text/selection/SelectionManager;J)J", "getMagnifierCenter", "anchor", "Landroidx/compose/foundation/text/selection/Selection$AnchorInfo;", "getMagnifierCenter-JVtK1S4", "(Landroidx/compose/foundation/text/selection/SelectionManager;JLandroidx/compose/foundation/text/selection/Selection$AnchorInfo;)J", "visibleBounds", "containsInclusive", "", TypedValues.CycleType.S_WAVE_OFFSET, "containsInclusive-Uv8p0NA", "(Landroidx/compose/ui/geometry/Rect;J)Z", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionManagerKt {
     private static final Rect invertedInfiniteRect = new Rect(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY);
 
     /* compiled from: SelectionManager.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -161,14 +161,14 @@ public final class SelectionManagerKt {
                     component42 = Math.max(component42, boundingBox.getBottom());
                     i2 = i3 + 1;
                 }
-                long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
-                long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
-                long mo6225localPositionOfR5De75A = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates2, m4519constructorimpl);
-                long mo6225localPositionOfR5De75A2 = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates2, m4519constructorimpl2);
-                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A >> 32)));
-                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A & 4294967295L)));
-                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A2 >> 32)));
-                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A2 & 4294967295L)));
+                long m5095constructorimpl = Offset.m5095constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
+                long m5095constructorimpl2 = Offset.m5095constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
+                long mo6827localPositionOfR5De75A = layoutCoordinates.mo6827localPositionOfR5De75A(layoutCoordinates2, m5095constructorimpl);
+                long mo6827localPositionOfR5De75A2 = layoutCoordinates.mo6827localPositionOfR5De75A(layoutCoordinates2, m5095constructorimpl2);
+                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6827localPositionOfR5De75A >> 32)));
+                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6827localPositionOfR5De75A & 4294967295L)));
+                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6827localPositionOfR5De75A2 >> 32)));
+                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6827localPositionOfR5De75A2 & 4294967295L)));
             }
             i++;
             list2 = list;
@@ -178,10 +178,10 @@ public final class SelectionManagerKt {
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-O0kMr_c  reason: not valid java name */
-    public static final long m1634calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
+    public static final long m2079calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
         Selection selection = selectionManager.getSelection();
         if (selection == null) {
-            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+            return Offset.Companion.m5118getUnspecifiedF1C5BW0();
         }
         Handle draggingHandle = selectionManager.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
@@ -193,54 +193,54 @@ public final class SelectionManagerKt {
                     }
                     throw new IllegalStateException("SelectionContainer does not support cursor".toString());
                 }
-                return m1636getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
+                return m2081getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
             }
-            return m1636getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
+            return m2081getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
         }
-        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5118getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: getMagnifierCenter-JVtK1S4  reason: not valid java name */
-    private static final long m1636getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
+    private static final long m2081getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
         LayoutCoordinates containerLayoutCoordinates;
         LayoutCoordinates layoutCoordinates;
         int offset;
         float coerceIn;
         Selectable anchorSelectable$foundation = selectionManager.getAnchorSelectable$foundation(anchorInfo);
         if (anchorSelectable$foundation != null && (containerLayoutCoordinates = selectionManager.getContainerLayoutCoordinates()) != null && (layoutCoordinates = anchorSelectable$foundation.getLayoutCoordinates()) != null && (offset = anchorInfo.getOffset()) <= anchorSelectable$foundation.getLastVisibleOffset()) {
-            Offset m1624getCurrentDragPosition_m7T9E = selectionManager.m1624getCurrentDragPosition_m7T9E();
-            Intrinsics.checkNotNull(m1624getCurrentDragPosition_m7T9E);
-            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6225localPositionOfR5De75A(containerLayoutCoordinates, m1624getCurrentDragPosition_m7T9E.m4537unboximpl()) >> 32));
-            long mo1585getRangeOfLineContainingjx7JFs = anchorSelectable$foundation.mo1585getRangeOfLineContainingjx7JFs(offset);
-            if (TextRange.m6997getCollapsedimpl(mo1585getRangeOfLineContainingjx7JFs)) {
+            Offset m2069getCurrentDragPosition_m7T9E = selectionManager.m2069getCurrentDragPosition_m7T9E();
+            Intrinsics.checkNotNull(m2069getCurrentDragPosition_m7T9E);
+            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6827localPositionOfR5De75A(containerLayoutCoordinates, m2069getCurrentDragPosition_m7T9E.m5113unboximpl()) >> 32));
+            long mo2030getRangeOfLineContainingjx7JFs = anchorSelectable$foundation.mo2030getRangeOfLineContainingjx7JFs(offset);
+            if (TextRange.m7602getCollapsedimpl(mo2030getRangeOfLineContainingjx7JFs)) {
                 coerceIn = anchorSelectable$foundation.getLineLeft(offset);
             } else {
-                float lineLeft = anchorSelectable$foundation.getLineLeft(TextRange.m7003getStartimpl(mo1585getRangeOfLineContainingjx7JFs));
-                float lineRight = anchorSelectable$foundation.getLineRight(TextRange.m6998getEndimpl(mo1585getRangeOfLineContainingjx7JFs) - 1);
+                float lineLeft = anchorSelectable$foundation.getLineLeft(TextRange.m7608getStartimpl(mo2030getRangeOfLineContainingjx7JFs));
+                float lineRight = anchorSelectable$foundation.getLineRight(TextRange.m7603getEndimpl(mo2030getRangeOfLineContainingjx7JFs) - 1);
                 coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
             }
             if (coerceIn == -1.0f) {
-                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+                return Offset.Companion.m5118getUnspecifiedF1C5BW0();
             }
-            if (!IntSize.m7724equalsimpl0(j, IntSize.Companion.m7731getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+            if (!IntSize.m8329equalsimpl0(j, IntSize.Companion.m8336getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+                return Offset.Companion.m5118getUnspecifiedF1C5BW0();
             }
             float centerYForOffset = anchorSelectable$foundation.getCenterYForOffset(offset);
             if (centerYForOffset == -1.0f) {
-                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+                return Offset.Companion.m5118getUnspecifiedF1C5BW0();
             }
-            return containerLayoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
+            return containerLayoutCoordinates.mo6827localPositionOfR5De75A(layoutCoordinates, Offset.m5095constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
         }
-        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
+        return Offset.Companion.m5118getUnspecifiedF1C5BW0();
     }
 
     public static final Rect visibleBounds(LayoutCoordinates layoutCoordinates) {
         Rect boundsInWindow$default = LayoutCoordinatesKt.boundsInWindow$default(layoutCoordinates, false, 1, null);
-        return RectKt.m4565Rect0a9Yr6o(layoutCoordinates.mo6233windowToLocalMKHz9U(boundsInWindow$default.m4562getTopLeftF1C5BW0()), layoutCoordinates.mo6233windowToLocalMKHz9U(boundsInWindow$default.m4556getBottomRightF1C5BW0()));
+        return RectKt.m5141Rect0a9Yr6o(layoutCoordinates.mo6835windowToLocalMKHz9U(boundsInWindow$default.m5138getTopLeftF1C5BW0()), layoutCoordinates.mo6835windowToLocalMKHz9U(boundsInWindow$default.m5132getBottomRightF1C5BW0()));
     }
 
     /* renamed from: containsInclusive-Uv8p0NA  reason: not valid java name */
-    public static final boolean m1635containsInclusiveUv8p0NA(Rect rect, long j) {
+    public static final boolean m2080containsInclusiveUv8p0NA(Rect rect, long j) {
         float left = rect.getLeft();
         float right = rect.getRight();
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

@@ -149,7 +149,7 @@ public final class HudGathersCountAdapter extends ListAdapter<HudGathersCountBon
             HudGathersCountItemBinding hudGathersCountItemBinding = this.binding;
             Job job = this.jobTimer;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new HudGathersCountAdapter$GathersCountViewHolder$startTimer$1$1(i, hudGathersCountItemBinding, this, null), 3, null);
             this.jobTimer = launch$default;
@@ -159,7 +159,7 @@ public final class HudGathersCountAdapter extends ListAdapter<HudGathersCountBon
         public final void stopTimer() {
             Job job = this.jobTimer;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             this.jobTimer = null;
         }

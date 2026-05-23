@@ -3,16 +3,18 @@ package androidx.activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
+import androidx.core.view.ViewGroupKt;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.core.view.insets.ColorProtection;
 import androidx.core.view.insets.ProtectionLayout;
+import java.util.Iterator;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EdgeToEdge.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J8\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u000eH\u0017¨\u0006\u0010"}, d2 = {"Landroidx/activity/EdgeToEdgeApi35;", "Landroidx/activity/EdgeToEdgeApi30;", "<init>", "()V", "setUp", "", "statusBarStyle", "Landroidx/activity/SystemBarStyle;", "navigationBarStyle", "window", "Landroid/view/Window;", "view", "Landroid/view/View;", "statusBarIsDark", "", "navigationBarIsDark", "activity"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J8\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u000eH\u0017¨\u0006\u0010"}, d2 = {"Landroidx/activity/EdgeToEdgeApi35;", "Landroidx/activity/EdgeToEdgeApi30;", "<init>", "()V", "setUp", "", "statusBarStyle", "Landroidx/activity/SystemBarStyle;", "navigationBarStyle", "window", "Landroid/view/Window;", "view", "Landroid/view/View;", "statusBarIsDark", "", "navigationBarIsDark", "activity"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class EdgeToEdgeApi35 extends EdgeToEdgeApi30 {
     @Override // androidx.activity.EdgeToEdgeApi29, androidx.activity.EdgeToEdgeApi26, androidx.activity.EdgeToEdgeImpl
@@ -22,14 +24,43 @@ final class EdgeToEdgeApi35 extends EdgeToEdgeApi30 {
         Intrinsics.checkNotNullParameter(window, "window");
         Intrinsics.checkNotNullParameter(view, "view");
         WindowCompat.setDecorFitsSystemWindows(window, false);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        if ((attributes.flags & 256) != 0 || attributes.width != -2 || attributes.height != -2) {
-            window.setStatusBarColor(0);
-            window.setNavigationBarColor(0);
-            int scrimWithEnforcedContrast$activity = statusBarStyle.getScrimWithEnforcedContrast$activity(z);
-            int scrimWithEnforcedContrast$activity2 = navigationBarStyle.getScrimWithEnforcedContrast$activity(z2);
-            ViewGroup viewGroup = (ViewGroup) view;
-            viewGroup.addView(new ProtectionLayout(viewGroup.getContext(), CollectionsKt.listOf((Object[]) new ColorProtection[]{new ColorProtection(2, scrimWithEnforcedContrast$activity), new ColorProtection(1, scrimWithEnforcedContrast$activity2), new ColorProtection(4, scrimWithEnforcedContrast$activity2), new ColorProtection(8, scrimWithEnforcedContrast$activity2)})));
+        window.setStatusBarColor(0);
+        window.setNavigationBarColor(0);
+        int scrimWithEnforcedContrast$activity = statusBarStyle.getScrimWithEnforcedContrast$activity(z);
+        int scrimWithEnforcedContrast$activity2 = navigationBarStyle.getScrimWithEnforcedContrast$activity(z2);
+        ViewGroup viewGroup = view instanceof ViewGroup ? (ViewGroup) view : null;
+        if (viewGroup != null) {
+            Iterator<View> it = ViewGroupKt.getChildren(viewGroup).iterator();
+            while (true) {
+                if (it.hasNext()) {
+                    Object tag = it.next().getTag();
+                    if (tag instanceof List) {
+                        List list = (List) tag;
+                        if (list.size() == 4 && (list.get(0) instanceof ColorProtection)) {
+                            for (Object obj : (Iterable) tag) {
+                                if ((obj instanceof ColorProtection ? (ColorProtection) obj : null) != null) {
+                                    ColorProtection colorProtection = (ColorProtection) obj;
+                                    int side = colorProtection.getSide();
+                                    if (side == 1) {
+                                        colorProtection.setColor(scrimWithEnforcedContrast$activity2);
+                                    } else if (side == 2) {
+                                        colorProtection.setColor(scrimWithEnforcedContrast$activity);
+                                    } else if (side == 4) {
+                                        colorProtection.setColor(scrimWithEnforcedContrast$activity2);
+                                    } else if (side == 8) {
+                                        colorProtection.setColor(scrimWithEnforcedContrast$activity2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if (scrimWithEnforcedContrast$activity != 0 || scrimWithEnforcedContrast$activity2 != 0) {
+                    List listOf = CollectionsKt.listOf((Object[]) new ColorProtection[]{new ColorProtection(2, scrimWithEnforcedContrast$activity), new ColorProtection(1, scrimWithEnforcedContrast$activity2), new ColorProtection(4, scrimWithEnforcedContrast$activity2), new ColorProtection(8, scrimWithEnforcedContrast$activity2)});
+                    ProtectionLayout protectionLayout = new ProtectionLayout(((ViewGroup) view).getContext(), listOf);
+                    protectionLayout.setTag(listOf);
+                    viewGroup.addView(protectionLayout);
+                }
+            }
         }
         window.setNavigationBarContrastEnforced(navigationBarStyle.getNightMode$activity() == 0);
         WindowInsetsControllerCompat windowInsetsControllerCompat = new WindowInsetsControllerCompat(window, view);

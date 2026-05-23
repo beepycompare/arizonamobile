@@ -1,256 +1,300 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.AppMetricaConfig;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import androidx.media3.extractor.ts.TsExtractor;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes5.dex */
-public final class D7 implements Hc {
+public final class D7 extends MessageNano {
+    public static volatile D7[] s;
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f550a;
-    public Boolean b;
-    public Boolean c;
-    public Boolean e;
-    public boolean h;
-    public String i;
-    public boolean k;
-    public C0680wi l;
-    public Boolean d = Boolean.FALSE;
-    public final LinkedHashMap f = new LinkedHashMap();
-    public final LinkedHashMap g = new LinkedHashMap();
-    public List<String> j = new ArrayList();
+    public int f507a;
+    public String b;
+    public String c;
+    public long d;
+    public E7 e;
+    public String f;
+    public String g;
+    public long h;
+    public int i;
+    public int j;
+    public String k;
+    public int l;
+    public String m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public byte[] r;
 
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void a(boolean z) {
-        Boolean valueOf = Boolean.valueOf(z);
-        this.b = valueOf;
-        C0680wi c0680wi = this.l;
-        if (c0680wi != null) {
-            c0680wi.a(valueOf, this.e, this.c, this.d);
-        }
+    public D7() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void clearAppEnvironment() {
-        this.h = true;
-        this.f.clear();
-    }
-
-    public final C0388l0 j() {
-        return new C0388l0(this.j, this.h);
-    }
-
-    public final Location k() {
-        return this.f550a;
-    }
-
-    public final Boolean l() {
-        return this.c;
-    }
-
-    public final Boolean m() {
-        return this.e;
-    }
-
-    public final Boolean n() {
-        return this.b;
-    }
-
-    public final boolean o() {
-        return this.h;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void putAppEnvironmentValue(String str, String str2) {
-        this.f.put(str, str2);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void setDataSendingEnabled(boolean z) {
-        Boolean valueOf = Boolean.valueOf(z);
-        this.e = valueOf;
-        C0680wi c0680wi = this.l;
-        if (c0680wi != null) {
-            c0680wi.a(this.b, valueOf, this.c, this.d);
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void setUserProfileID(String str) {
-        this.i = str;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void a(boolean z, boolean z2) {
-        boolean z3 = this.c == null;
-        boolean booleanValue = this.d.booleanValue();
-        if (z2 || z3 || !booleanValue) {
-            this.c = Boolean.valueOf(z);
-            Boolean valueOf = Boolean.valueOf(z2);
-            this.d = valueOf;
-            C0680wi c0680wi = this.l;
-            if (c0680wi != null) {
-                c0680wi.a(this.b, this.e, this.c, valueOf);
+    public static D7[] b() {
+        if (s == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (s == null) {
+                    s = new D7[0];
+                }
             }
         }
+        return s;
     }
 
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void a(Location location) {
-        this.f550a = location;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void a(String str, String str2) {
-        this.g.put(str, str2);
-    }
-
-    public final AppMetricaConfig a(AppMetricaConfig appMetricaConfig) {
-        if (this.k) {
-            return appMetricaConfig;
-        }
-        AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder(appMetricaConfig.apiKey);
-        newConfigBuilder.withDeviceType(appMetricaConfig.deviceType);
-        newConfigBuilder.withPreloadInfo(appMetricaConfig.preloadInfo);
-        newConfigBuilder.withLocation(appMetricaConfig.location);
-        if (lo.a(appMetricaConfig.appVersion)) {
-            newConfigBuilder.withAppVersion(appMetricaConfig.appVersion);
-        }
-        if (lo.a(appMetricaConfig.dispatchPeriodSeconds)) {
-            newConfigBuilder.withDispatchPeriodSeconds(appMetricaConfig.dispatchPeriodSeconds.intValue());
-        }
-        if (lo.a(appMetricaConfig.appBuildNumber)) {
-            newConfigBuilder.withAppBuildNumber(appMetricaConfig.appBuildNumber.intValue());
-        }
-        if (lo.a(appMetricaConfig.maxReportsCount)) {
-            newConfigBuilder.withMaxReportsCount(appMetricaConfig.maxReportsCount.intValue());
-        }
-        if (lo.a(appMetricaConfig.logs) && appMetricaConfig.logs.booleanValue()) {
-            newConfigBuilder.withLogs();
-        }
-        if (lo.a(appMetricaConfig.sessionTimeout)) {
-            newConfigBuilder.withSessionTimeout(appMetricaConfig.sessionTimeout.intValue());
-        }
-        if (lo.a(appMetricaConfig.sessionsAutoTrackingEnabled)) {
-            newConfigBuilder.withSessionsAutoTrackingEnabled(appMetricaConfig.sessionsAutoTrackingEnabled.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.crashReporting)) {
-            newConfigBuilder.withCrashReporting(appMetricaConfig.crashReporting.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.nativeCrashReporting)) {
-            newConfigBuilder.withNativeCrashReporting(appMetricaConfig.nativeCrashReporting.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.locationTracking)) {
-            newConfigBuilder.withLocationTracking(appMetricaConfig.locationTracking.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.advIdentifiersTracking)) {
-            newConfigBuilder.withAdvIdentifiersTracking(appMetricaConfig.advIdentifiersTracking.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.firstActivationAsUpdate)) {
-            newConfigBuilder.handleFirstActivationAsUpdate(appMetricaConfig.firstActivationAsUpdate.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.dataSendingEnabled)) {
-            newConfigBuilder.withDataSendingEnabled(appMetricaConfig.dataSendingEnabled.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.anrMonitoring)) {
-            newConfigBuilder.withAnrMonitoring(appMetricaConfig.anrMonitoring.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.anrMonitoringTimeout)) {
-            newConfigBuilder.withAnrMonitoringTimeout(appMetricaConfig.anrMonitoringTimeout.intValue());
-        }
-        if (lo.a(appMetricaConfig.maxReportsInDatabaseCount)) {
-            newConfigBuilder.withMaxReportsInDatabaseCount(appMetricaConfig.maxReportsInDatabaseCount.intValue());
-        }
-        if (lo.a(appMetricaConfig.crashTransformer)) {
-            newConfigBuilder.withCrashTransformer(appMetricaConfig.crashTransformer);
-        }
-        if (lo.a(appMetricaConfig.userProfileID)) {
-            newConfigBuilder.withUserProfileID(appMetricaConfig.userProfileID);
-        }
-        if (lo.a(appMetricaConfig.revenueAutoTrackingEnabled)) {
-            newConfigBuilder.withRevenueAutoTrackingEnabled(appMetricaConfig.revenueAutoTrackingEnabled.booleanValue());
-        }
-        if (lo.a(appMetricaConfig.appOpenTrackingEnabled)) {
-            newConfigBuilder.withAppOpenTrackingEnabled(appMetricaConfig.appOpenTrackingEnabled.booleanValue());
-        }
-        if (lo.a((Object) appMetricaConfig.customHosts)) {
-            newConfigBuilder.withCustomHosts(appMetricaConfig.customHosts);
-        }
-        LinkedHashMap linkedHashMap = this.f;
-        if (!lo.a((Map) linkedHashMap)) {
-            for (Map.Entry entry : linkedHashMap.entrySet()) {
-                newConfigBuilder.withAppEnvironmentValue((String) entry.getKey(), (String) entry.getValue());
-            }
-        }
-        Map<String, String> map = appMetricaConfig.appEnvironment;
-        if (!lo.a((Map) map)) {
-            for (Map.Entry<String, String> entry2 : map.entrySet()) {
-                newConfigBuilder.withAppEnvironmentValue(entry2.getKey(), entry2.getValue());
-            }
-        }
-        LinkedHashMap linkedHashMap2 = this.g;
-        if (!lo.a((Map) linkedHashMap2)) {
-            for (Map.Entry entry3 : linkedHashMap2.entrySet()) {
-                newConfigBuilder.withErrorEnvironmentValue((String) entry3.getKey(), (String) entry3.getValue());
-            }
-        }
-        Map<String, String> map2 = appMetricaConfig.errorEnvironment;
-        if (!lo.a((Map) map2)) {
-            for (Map.Entry<String, String> entry4 : map2.entrySet()) {
-                newConfigBuilder.withErrorEnvironmentValue(entry4.getKey(), entry4.getValue());
-            }
-        }
-        Map<String, Object> map3 = appMetricaConfig.additionalConfig;
-        if (!lo.a((Map) map3)) {
-            for (Map.Entry<String, Object> entry5 : map3.entrySet()) {
-                newConfigBuilder.withAdditionalConfig(entry5.getKey(), entry5.getValue());
-            }
-        }
-        Boolean bool = this.b;
-        if (appMetricaConfig.locationTracking == null && lo.a(bool)) {
-            newConfigBuilder.withLocationTracking(bool.booleanValue());
-        }
-        Location location = this.f550a;
-        if (appMetricaConfig.location == null && lo.a(location)) {
-            newConfigBuilder.withLocation(location);
-        }
-        Boolean bool2 = this.e;
-        if (appMetricaConfig.dataSendingEnabled == null && lo.a(bool2)) {
-            newConfigBuilder.withDataSendingEnabled(bool2.booleanValue());
-        }
-        if (!lo.a(appMetricaConfig.userProfileID) && lo.a(this.i)) {
-            newConfigBuilder.withUserProfileID(this.i);
-        }
-        Boolean bool3 = this.c;
-        if (appMetricaConfig.advIdentifiersTracking == null && lo.a(bool3)) {
-            newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
-        }
-        this.k = true;
-        this.f550a = null;
-        this.b = null;
-        this.c = null;
-        this.d = Boolean.FALSE;
+    public final D7 a() {
+        this.f507a = -1;
+        this.b = "";
+        this.c = "";
+        this.d = -1L;
         this.e = null;
-        this.f.clear();
-        this.g.clear();
-        this.h = false;
-        this.i = null;
-        return newConfigBuilder.build();
+        this.f = "";
+        this.g = "";
+        this.h = -1L;
+        this.i = -1;
+        this.j = -1;
+        this.k = "";
+        this.l = -1;
+        this.m = "";
+        this.n = -1;
+        this.o = -1;
+        this.p = -1;
+        this.q = -1;
+        this.r = WireFormatNano.EMPTY_BYTES;
+        this.cachedSize = -1;
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.Hc
-    public final void a(String str) {
-        this.j.add(str);
-    }
-
-    public final void a(C0680wi c0680wi) {
-        Boolean bool = this.b;
-        if (bool != null || this.e != null || this.c != null) {
-            c0680wi.a(bool, this.e, this.c, this.d);
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        int i = this.f507a;
+        if (i != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
         }
-        this.l = c0680wi;
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
+        }
+        if (!this.c.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(3, this.c);
+        }
+        long j = this.d;
+        if (j != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(4, j);
+        }
+        E7 e7 = this.e;
+        if (e7 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, e7);
+        }
+        if (!this.f.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(6, this.f);
+        }
+        if (!this.g.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(7, this.g);
+        }
+        long j2 = this.h;
+        if (j2 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(8, j2);
+        }
+        int i2 = this.i;
+        if (i2 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(9, i2);
+        }
+        int i3 = this.j;
+        if (i3 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(10, i3);
+        }
+        if (!this.k.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(11, this.k);
+        }
+        int i4 = this.l;
+        if (i4 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(12, i4);
+        }
+        if (!this.m.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(13, this.m);
+        }
+        int i5 = this.n;
+        if (i5 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(14, i5);
+        }
+        int i6 = this.o;
+        if (i6 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(15, i6);
+        }
+        int i7 = this.p;
+        if (i7 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(16, i7);
+        }
+        int i8 = this.q;
+        if (i8 != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(17, i8);
+        }
+        return !Arrays.equals(this.r, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(18, this.r) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        int i = this.f507a;
+        if (i != -1) {
+            codedOutputByteBufferNano.writeInt32(1, i);
+        }
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
+        }
+        if (!this.c.equals("")) {
+            codedOutputByteBufferNano.writeString(3, this.c);
+        }
+        long j = this.d;
+        if (j != -1) {
+            codedOutputByteBufferNano.writeInt64(4, j);
+        }
+        E7 e7 = this.e;
+        if (e7 != null) {
+            codedOutputByteBufferNano.writeMessage(5, e7);
+        }
+        if (!this.f.equals("")) {
+            codedOutputByteBufferNano.writeString(6, this.f);
+        }
+        if (!this.g.equals("")) {
+            codedOutputByteBufferNano.writeString(7, this.g);
+        }
+        long j2 = this.h;
+        if (j2 != -1) {
+            codedOutputByteBufferNano.writeInt64(8, j2);
+        }
+        int i2 = this.i;
+        if (i2 != -1) {
+            codedOutputByteBufferNano.writeInt32(9, i2);
+        }
+        int i3 = this.j;
+        if (i3 != -1) {
+            codedOutputByteBufferNano.writeInt32(10, i3);
+        }
+        if (!this.k.equals("")) {
+            codedOutputByteBufferNano.writeString(11, this.k);
+        }
+        int i4 = this.l;
+        if (i4 != -1) {
+            codedOutputByteBufferNano.writeInt32(12, i4);
+        }
+        if (!this.m.equals("")) {
+            codedOutputByteBufferNano.writeString(13, this.m);
+        }
+        int i5 = this.n;
+        if (i5 != -1) {
+            codedOutputByteBufferNano.writeInt32(14, i5);
+        }
+        int i6 = this.o;
+        if (i6 != -1) {
+            codedOutputByteBufferNano.writeInt32(15, i6);
+        }
+        int i7 = this.p;
+        if (i7 != -1) {
+            codedOutputByteBufferNano.writeInt32(16, i7);
+        }
+        int i8 = this.q;
+        if (i8 != -1) {
+            codedOutputByteBufferNano.writeInt32(17, i8);
+        }
+        if (!Arrays.equals(this.r, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(18, this.r);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    public static D7 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new D7().mergeFrom(codedInputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final D7 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            switch (readTag) {
+                case 0:
+                    break;
+                case 8:
+                    this.f507a = codedInputByteBufferNano.readInt32();
+                    break;
+                case 18:
+                    this.b = codedInputByteBufferNano.readString();
+                    break;
+                case 26:
+                    this.c = codedInputByteBufferNano.readString();
+                    break;
+                case 32:
+                    this.d = codedInputByteBufferNano.readInt64();
+                    break;
+                case 42:
+                    if (this.e == null) {
+                        this.e = new E7();
+                    }
+                    codedInputByteBufferNano.readMessage(this.e);
+                    break;
+                case 50:
+                    this.f = codedInputByteBufferNano.readString();
+                    break;
+                case 58:
+                    this.g = codedInputByteBufferNano.readString();
+                    break;
+                case 64:
+                    this.h = codedInputByteBufferNano.readInt64();
+                    break;
+                case 72:
+                    this.i = codedInputByteBufferNano.readInt32();
+                    break;
+                case 80:
+                    this.j = codedInputByteBufferNano.readInt32();
+                    break;
+                case 90:
+                    this.k = codedInputByteBufferNano.readString();
+                    break;
+                case 96:
+                    this.l = codedInputByteBufferNano.readInt32();
+                    break;
+                case 106:
+                    this.m = codedInputByteBufferNano.readString();
+                    break;
+                case 112:
+                    this.n = codedInputByteBufferNano.readInt32();
+                    break;
+                case 120:
+                    this.o = codedInputByteBufferNano.readInt32();
+                    break;
+                case 128:
+                    int readInt32 = codedInputByteBufferNano.readInt32();
+                    if (readInt32 != -1 && readInt32 != 0 && readInt32 != 1) {
+                        break;
+                    } else {
+                        this.p = readInt32;
+                        break;
+                    }
+                case TsExtractor.TS_STREAM_TYPE_DTS_HD /* 136 */:
+                    this.q = codedInputByteBufferNano.readInt32();
+                    break;
+                case 146:
+                    this.r = codedInputByteBufferNano.readBytes();
+                    break;
+                default:
+                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                        break;
+                    } else {
+                        break;
+                    }
+            }
+        }
+        return this;
+    }
+
+    public static D7 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (D7) MessageNano.mergeFrom(new D7(), bArr);
     }
 }

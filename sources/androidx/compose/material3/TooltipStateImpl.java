@@ -52,14 +52,14 @@ public final class TooltipStateImpl implements TooltipState {
         if (!isPersistent() || (cancellableContinuation = this.job) == null) {
             return;
         }
-        CancellableContinuation.DefaultImpls.cancel$default(cancellableContinuation, null, 1, null);
+        CancellableContinuation.cancel$default(cancellableContinuation, null, 1, null);
     }
 
     @Override // androidx.compose.material3.TooltipState
     public void onDispose() {
         CancellableContinuation<? super Unit> cancellableContinuation = this.job;
         if (cancellableContinuation != null) {
-            CancellableContinuation.DefaultImpls.cancel$default(cancellableContinuation, null, 1, null);
+            CancellableContinuation.cancel$default(cancellableContinuation, null, 1, null);
         }
     }
 }

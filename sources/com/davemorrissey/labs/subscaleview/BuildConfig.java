@@ -1,5 +1,5 @@
 package com.davemorrissey.labs.subscaleview;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BuildConfig {
     public static final String APPLICATION_ID = "com.davemorrissey.labs.subscaleview";
     public static final String BUILD_TYPE = "release";

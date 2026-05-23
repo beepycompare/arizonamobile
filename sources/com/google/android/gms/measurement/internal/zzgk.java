@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgk {
     public final AbstractSafeParcelable zza;

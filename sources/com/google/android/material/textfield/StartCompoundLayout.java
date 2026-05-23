@@ -51,6 +51,18 @@ public class StartCompoundLayout extends LinearLayout {
         initPrefixTextView(tintTypedArray);
         addView(checkableImageButton);
         addView(appCompatTextView);
+        checkableImageButton.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.StartCompoundLayout$$ExternalSyntheticLambda0
+            @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
+            public final void onFocusableChanged(View view, boolean z) {
+                StartCompoundLayout.this.m9579xfae35022(view, z);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$0$com-google-android-material-textfield-StartCompoundLayout  reason: not valid java name */
+    public /* synthetic */ void m9579xfae35022(View view, boolean z) {
+        IconHelper.updateIconTooltip(this.startIconView, this.startIconOnLongClickListener, getStartIconContentDescription());
     }
 
     private void initStartIconView(TintTypedArray tintTypedArray) {
@@ -161,7 +173,11 @@ public class StartCompoundLayout extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setStartIconVisible(boolean z) {
+        EditText editText;
         if (isStartIconVisible() != z) {
+            if (!z && this.startIconView.hasFocus() && (editText = this.textInputLayout.getEditText()) != null) {
+                editText.requestFocus();
+            }
             this.startIconView.setVisibility(z ? 0 : 8);
             updatePrefixTextViewPadding();
             updateVisibility();
@@ -192,6 +208,7 @@ public class StartCompoundLayout extends LinearLayout {
     public void setStartIconContentDescription(CharSequence charSequence) {
         if (getStartIconContentDescription() != charSequence) {
             this.startIconView.setContentDescription(charSequence);
+            IconHelper.updateIconTooltip(this.startIconView, this.startIconOnLongClickListener, charSequence);
         }
     }
 

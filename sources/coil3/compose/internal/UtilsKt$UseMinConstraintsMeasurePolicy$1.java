@@ -22,7 +22,7 @@ final class UtilsKt$UseMinConstraintsMeasurePolicy$1 implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
     public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7510getMinWidthimpl(j), Constraints.m7509getMinHeightimpl(j), null, new Function1() { // from class: coil3.compose.internal.UtilsKt$UseMinConstraintsMeasurePolicy$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, Constraints.m8115getMinWidthimpl(j), Constraints.m8114getMinHeightimpl(j), null, new Function1() { // from class: coil3.compose.internal.UtilsKt$UseMinConstraintsMeasurePolicy$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit unit;

@@ -20,7 +20,7 @@ import com.facebook.internal.ImageResponse;
 import com.facebook.internal.Logger;
 import com.facebook.internal.Utility;
 import java.net.URISyntaxException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ProfilePictureView extends FrameLayout {
     private static final String BITMAP_HEIGHT_KEY = "ProfilePictureView_height";
     private static final String BITMAP_KEY = "ProfilePictureView_bitmap";
@@ -48,7 +48,7 @@ public class ProfilePictureView extends FrameLayout {
     private int queryHeight;
     private int queryWidth;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface OnErrorListener {
         void onError(FacebookException facebookException);
     }

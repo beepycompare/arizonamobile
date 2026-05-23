@@ -1,47 +1,12 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
 /* loaded from: classes5.dex */
-public final class Z3 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f882a;
-    public final Integer b;
-    public final String c;
-
-    public Z3(String str, Integer num, String str2) {
-        this.f882a = str;
-        this.b = num;
-        this.c = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && Z3.class == obj.getClass()) {
-            Z3 z3 = (Z3) obj;
-            if (!this.f882a.equals(z3.f882a)) {
-                return false;
-            }
-            Integer num = this.b;
-            if (num == null ? z3.b != null : !num.equals(z3.b)) {
-                return false;
-            }
-            String str = this.c;
-            if (str != null) {
-                return str.equals(z3.c);
-            }
-            if (z3.c == null) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int hashCode = this.f882a.hashCode() * 31;
-        Integer num = this.b;
-        int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
-        String str = this.c;
-        return hashCode2 + (str != null ? str.hashCode() : 0);
+public final class Z3 implements ModuleClientActivator {
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator
+    public final void activate(Context context) {
+        C0185d0 b = C0576s4.l().b();
+        b.c.a().executeDelayed(new C0159c0(b, context), b.d);
     }
 }

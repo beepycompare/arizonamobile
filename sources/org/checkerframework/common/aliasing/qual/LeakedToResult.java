@@ -10,6 +10,6 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({NonLeaked.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface LeakedToResult {
 }

@@ -1,16 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zznh {
-    public static final Object zza(Object obj, Object obj2) {
-        zzng zzngVar = (zzng) obj;
-        zzng zzngVar2 = (zzng) obj2;
-        if (!zzngVar2.isEmpty()) {
-            if (!zzngVar.zze()) {
-                zzngVar = zzngVar.zzc();
-            }
-            zzngVar.zzb(zzngVar2);
-        }
-        return zzngVar;
+public final class zznh extends zzadp implements zzafd {
+    private zznh() {
+        throw null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zznh(byte[] bArr) {
+        super(zzni.zzr());
+    }
+
+    public final zznh zza(long j) {
+        zzaY();
+        ((zzni) this.zza).zzq(j);
+        return this;
     }
 }

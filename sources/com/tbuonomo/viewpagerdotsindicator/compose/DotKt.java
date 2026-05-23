@@ -17,11 +17,11 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Dot.kt */
 @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0001¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Dot", "", "graphic", "Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;", "modifier", "Landroidx/compose/ui/Modifier;", "(Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V", "viewpagerdotsindicator_release"}, k = 2, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class DotKt {
     public static final void Dot(final DotGraphic graphic, final Modifier modifier, Composer composer, final int i) {
         int i2;
-        Modifier m275borderxT4_qwU;
+        Modifier m299borderxT4_qwU;
         Intrinsics.checkNotNullParameter(graphic, "graphic");
         Intrinsics.checkNotNullParameter(modifier, "modifier");
         Composer startRestartGroup = composer.startRestartGroup(1695287159);
@@ -37,12 +37,12 @@ public final class DotKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1695287159, i2, -1, "com.tbuonomo.viewpagerdotsindicator.compose.Dot (Dot.kt:14)");
             }
-            Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(BackgroundKt.m263backgroundbw27NRU(modifier, graphic.m9179getColor0d7_KjU(), graphic.getShape()), graphic.m9180getSizeD9Ej5fM());
-            Dp m9178getBorderWidthlTKBWiU = graphic.m9178getBorderWidthlTKBWiU();
-            if (m9178getBorderWidthlTKBWiU != null && (m275borderxT4_qwU = BorderKt.m275borderxT4_qwU(m864size3ABfNKs, m9178getBorderWidthlTKBWiU.m7569unboximpl(), graphic.m9177getBorderColor0d7_KjU(), graphic.getShape())) != null) {
-                m864size3ABfNKs = m275borderxT4_qwU;
+            Modifier m1117size3ABfNKs = SizeKt.m1117size3ABfNKs(BackgroundKt.m287backgroundbw27NRU(modifier, graphic.m9818getColor0d7_KjU(), graphic.getShape()), graphic.m9819getSizeD9Ej5fM());
+            Dp m9817getBorderWidthlTKBWiU = graphic.m9817getBorderWidthlTKBWiU();
+            if (m9817getBorderWidthlTKBWiU != null && (m299borderxT4_qwU = BorderKt.m299borderxT4_qwU(m1117size3ABfNKs, m9817getBorderWidthlTKBWiU.m8174unboximpl(), graphic.m9816getBorderColor0d7_KjU(), graphic.getShape())) != null) {
+                m1117size3ABfNKs = m299borderxT4_qwU;
             }
-            BoxKt.Box(m864size3ABfNKs, startRestartGroup, 0);
+            BoxKt.Box(m1117size3ABfNKs, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

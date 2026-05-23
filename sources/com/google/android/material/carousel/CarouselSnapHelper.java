@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CarouselSnapHelper extends SnapHelper {
     private static final float HORIZONTAL_SNAP_SPEED = 100.0f;
     private static final float VERTICAL_SNAP_SPEED = 50.0f;

@@ -1,49 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import com.facebook.internal.NativeProtocol;
-import org.json.JSONObject;
+import android.content.Context;
+import java.util.concurrent.locks.ReentrantLock;
 /* loaded from: classes5.dex */
 public final class R9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f769a;
-    public final int b;
-    public final boolean c;
+    public final ReentrantLock f741a;
+    public final C0634ua b;
 
-    public R9(JSONObject jSONObject) {
-        this.f769a = jSONObject.getString("name");
-        this.c = jSONObject.getBoolean("required");
-        this.b = jSONObject.optInt(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, -1);
+    public R9(Context context, String str) {
+        this(new ReentrantLock(), new C0634ua(context, str));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        this.f741a.lock();
+        this.b.a();
+    }
+
+    public final void b() {
+        this.b.b();
+        this.f741a.unlock();
+    }
+
+    public final void c() {
+        C0634ua c0634ua = this.b;
+        synchronized (c0634ua) {
+            c0634ua.b();
+            c0634ua.f1228a.delete();
         }
-        if (obj != null && R9.class == obj.getClass()) {
-            R9 r9 = (R9) obj;
-            if (this.b != r9.b || this.c != r9.c) {
-                return false;
-            }
-            String str = this.f769a;
-            if (str != null) {
-                return str.equals(r9.f769a);
-            }
-            if (r9.f769a == null) {
-                return true;
-            }
-        }
-        return false;
+        this.f741a.unlock();
     }
 
-    public final int hashCode() {
-        String str = this.f769a;
-        return ((((str != null ? str.hashCode() : 0) * 31) + this.b) * 31) + (this.c ? 1 : 0);
-    }
-
-    public R9(String str, int i, boolean z) {
-        this.f769a = str;
-        this.b = i;
-        this.c = z;
+    public R9(ReentrantLock reentrantLock, C0634ua c0634ua) {
+        this.f741a = reentrantLock;
+        this.b = c0634ua;
     }
 }

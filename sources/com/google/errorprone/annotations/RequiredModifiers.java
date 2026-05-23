@@ -11,7 +11,4 @@ import java.lang.annotation.Target;
 /* loaded from: classes4.dex */
 public @interface RequiredModifiers {
     Modifier[] modifier() default {};
-
-    @Deprecated
-    javax.lang.model.element.Modifier[] value() default {};
 }

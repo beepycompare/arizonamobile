@@ -9,7 +9,7 @@ import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyLayout.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutKt$sam$androidx_compose_foundation_lazy_layout_LazyLayoutMeasurePolicy$0 implements LazyLayoutMeasurePolicy, FunctionAdapter {
     private final /* synthetic */ Function2 function;
@@ -37,7 +37,7 @@ public final class LazyLayoutKt$sam$androidx_compose_foundation_lazy_layout_Lazy
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy
     /* renamed from: measure-0kLqBqw */
-    public final /* synthetic */ MeasureResult mo920measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j) {
-        return (MeasureResult) this.function.invoke(lazyLayoutMeasureScope, Constraints.m7495boximpl(j));
+    public final /* synthetic */ MeasureResult mo1174measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j) {
+        return (MeasureResult) this.function.invoke(lazyLayoutMeasureScope, Constraints.m8100boximpl(j));
     }
 }

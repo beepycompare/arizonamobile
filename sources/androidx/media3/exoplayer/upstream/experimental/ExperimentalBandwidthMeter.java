@@ -2,8 +2,8 @@ package androidx.media3.exoplayer.upstream.experimental;
 
 import android.content.Context;
 import android.os.Handler;
-import androidx.compose.runtime.ComposerImplKt;
 import androidx.compose.runtime.ComposerKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
@@ -1896,7 +1896,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case 'C':
                 return new int[]{3, 2, 2, 3, 2, 2};
             case 'D':
-            case ModuleDescriptor.MODULE_VERSION /* 155 */:
+            case 155:
             case 192:
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
@@ -1993,7 +1993,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '|':
             case 168:
                 return new int[]{4, 3, 3, 3, 2, 2};
-            case ComposerImplKt.nodeKey /* 125 */:
+            case GapComposerKt.nodeKey /* 125 */:
                 return new int[]{0, 1, 0, 1, 0, 2};
             case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                 return new int[]{4, 0, 3, 2, 1, 3};
@@ -2078,7 +2078,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{3, 3, 2, 0, 2, 2};
             case 184:
                 return new int[]{3, 1, 1, 2, 2, 0};
-            case 185:
+            case ModuleDescriptor.MODULE_VERSION /* 185 */:
             case 238:
                 return new int[]{4, 2, 4, 3, 2, 2};
             case PsExtractor.PRIVATE_STREAM_1 /* 189 */:

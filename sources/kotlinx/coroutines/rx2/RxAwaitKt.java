@@ -2,6 +2,7 @@ package kotlinx.coroutines.rx2;
 
 import androidx.exifinterface.media.ExifInterface;
 import com.arizona.launcher.UpdateActivity;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import io.reactivex.CompletableObserver;
 import io.reactivex.CompletableSource;
 import io.reactivex.MaybeObserver;
@@ -23,19 +24,20 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImpl;
 /* compiled from: RxAwait.kt */
-@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a \u0010\u0004\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a\u001e\u0010\b\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a \u0010\u0000\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0087@¢\u0006\u0002\u0010\u0007\u001a&\u0010\t\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u00062\u0006\u0010\n\u001a\u0002H\u0005H\u0087@¢\u0006\u0002\u0010\u000b\u001a\u001e\u0010\u0000\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\fH\u0086@¢\u0006\u0002\u0010\r\u001a\u001e\u0010\u000e\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a&\u0010\u0011\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\u0006\u0010\n\u001a\u0002H\u0005H\u0086@¢\u0006\u0002\u0010\u0012\u001a \u0010\u0013\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a,\u0010\u0014\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0016H\u0086@¢\u0006\u0002\u0010\u0017\u001a\u001e\u0010\u0018\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u001e\u0010\b\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u0018\u0010\u0019\u001a\u00020\u0001*\u0006\u0012\u0002\b\u00030\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0000\u001a2\u0010\u001d\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\u0006\u0010\u001e\u001a\u00020\u001f2\n\b\u0002\u0010\n\u001a\u0004\u0018\u0001H\u0005H\u0082@¢\u0006\u0002\u0010 ¨\u0006!"}, d2 = {"await", "", "Lio/reactivex/CompletableSource;", "(Lio/reactivex/CompletableSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSingleOrNull", ExifInterface.GPS_DIRECTION_TRUE, "Lio/reactivex/MaybeSource;", "(Lio/reactivex/MaybeSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSingle", "awaitOrDefault", "default", "(Lio/reactivex/MaybeSource;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lio/reactivex/SingleSource;", "(Lio/reactivex/SingleSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirst", "Lio/reactivex/ObservableSource;", "(Lio/reactivex/ObservableSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrDefault", "(Lio/reactivex/ObservableSource;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrNull", "awaitFirstOrElse", "defaultValue", "Lkotlin/Function0;", "(Lio/reactivex/ObservableSource;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLast", "disposeOnCancellation", "Lkotlinx/coroutines/CancellableContinuation;", "d", "Lio/reactivex/disposables/Disposable;", "awaitOne", UpdateActivity.UPDATE_MODE, "Lkotlinx/coroutines/rx2/Mode;", "(Lio/reactivex/ObservableSource;Lkotlinx/coroutines/rx2/Mode;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-rx2"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086@¢\u0006\u0002\u0010\u0003\u001a \u0010\u0004\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a\u001e\u0010\b\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0086@¢\u0006\u0002\u0010\u0007\u001a \u0010\u0000\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u0006H\u0087@¢\u0006\u0002\u0010\u0007\u001a&\u0010\t\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u00062\u0006\u0010\n\u001a\u0002H\u0005H\u0087@¢\u0006\u0002\u0010\u000b\u001a\u001e\u0010\u0000\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\fH\u0086@¢\u0006\u0002\u0010\r\u001a\u001e\u0010\u000e\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a&\u0010\u0011\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\u0006\u0010\n\u001a\u0002H\u0005H\u0086@¢\u0006\u0002\u0010\u0012\u001a \u0010\u0013\u001a\u0004\u0018\u0001H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a,\u0010\u0014\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0016H\u0086@¢\u0006\u0002\u0010\u0017\u001a\u001e\u0010\u0018\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u001e\u0010\b\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000fH\u0086@¢\u0006\u0002\u0010\u0010\u001a\u0018\u0010\u0019\u001a\u00020\u0001*\u0006\u0012\u0002\b\u00030\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0000\u001a2\u0010\u001d\u001a\u0002H\u0005\"\u0004\b\u0000\u0010\u0005*\b\u0012\u0004\u0012\u0002H\u00050\u000f2\u0006\u0010\u001e\u001a\u00020\u001f2\n\b\u0002\u0010\n\u001a\u0004\u0018\u0001H\u0005H\u0082@¢\u0006\u0002\u0010 ¨\u0006!"}, d2 = {"await", "", "Lio/reactivex/CompletableSource;", "(Lio/reactivex/CompletableSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSingleOrNull", ExifInterface.GPS_DIRECTION_TRUE, "Lio/reactivex/MaybeSource;", "(Lio/reactivex/MaybeSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitSingle", "awaitOrDefault", "default", "(Lio/reactivex/MaybeSource;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lio/reactivex/SingleSource;", "(Lio/reactivex/SingleSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirst", "Lio/reactivex/ObservableSource;", "(Lio/reactivex/ObservableSource;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrDefault", "(Lio/reactivex/ObservableSource;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitFirstOrNull", "awaitFirstOrElse", "defaultValue", "Lkotlin/Function0;", "(Lio/reactivex/ObservableSource;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitLast", "disposeOnCancellation", "Lkotlinx/coroutines/CancellableContinuation;", "d", "Lio/reactivex/disposables/Disposable;", "awaitOne", UpdateActivity.UPDATE_MODE, "Lkotlinx/coroutines/rx2/Mode;", "(Lio/reactivex/ObservableSource;Lkotlinx/coroutines/rx2/Mode;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx-coroutines-rx2"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RxAwaitKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0040 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,6 +54,7 @@ public final class RxAwaitKt {
                 i = rxAwaitKt$awaitSingle$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
+                    rxAwaitKt$awaitSingle$1.L$0 = SpillingKt.nullOutSpilledVariable(maybeSource);
                     rxAwaitKt$awaitSingle$1.label = 1;
                     obj = awaitSingleOrNull(maybeSource, rxAwaitKt$awaitSingle$1);
                     if (obj == coroutine_suspended) {
@@ -60,6 +63,7 @@ public final class RxAwaitKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    MaybeSource maybeSource2 = (MaybeSource) rxAwaitKt$awaitSingle$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (obj == null) {
@@ -79,9 +83,9 @@ public final class RxAwaitKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0044 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0045 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004e A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004f A[RETURN] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Deprecated in favor of awaitSingleOrNull()", replaceWith = @ReplaceWith(expression = "this.awaitSingleOrNull() ?: default", imports = {}))
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -98,7 +102,8 @@ public final class RxAwaitKt {
                 i = rxAwaitKt$awaitOrDefault$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj2);
-                    rxAwaitKt$awaitOrDefault$1.L$0 = obj;
+                    rxAwaitKt$awaitOrDefault$1.L$0 = SpillingKt.nullOutSpilledVariable(maybeSource);
+                    rxAwaitKt$awaitOrDefault$1.L$1 = obj;
                     rxAwaitKt$awaitOrDefault$1.label = 1;
                     obj2 = awaitSingleOrNull(maybeSource, rxAwaitKt$awaitOrDefault$1);
                     if (obj2 == coroutine_suspended) {
@@ -107,7 +112,8 @@ public final class RxAwaitKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    obj = rxAwaitKt$awaitOrDefault$1.L$0;
+                    obj = rxAwaitKt$awaitOrDefault$1.L$1;
+                    MaybeSource maybeSource2 = (MaybeSource) rxAwaitKt$awaitOrDefault$1.L$0;
                     ResultKt.throwOnFailure(obj2);
                 }
                 return obj2 != null ? obj : obj2;
@@ -136,9 +142,9 @@ public final class RxAwaitKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0054 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x005e A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -156,7 +162,8 @@ public final class RxAwaitKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Mode mode = Mode.FIRST_OR_DEFAULT;
-                    rxAwaitKt$awaitFirstOrElse$12.L$0 = function0;
+                    rxAwaitKt$awaitFirstOrElse$12.L$0 = SpillingKt.nullOutSpilledVariable(observableSource);
+                    rxAwaitKt$awaitFirstOrElse$12.L$1 = function0;
                     rxAwaitKt$awaitFirstOrElse$12.label = 1;
                     obj = awaitOne$default(observableSource, mode, null, rxAwaitKt$awaitFirstOrElse$12, 2, null);
                     if (obj == coroutine_suspended) {
@@ -165,7 +172,8 @@ public final class RxAwaitKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    function0 = (Function0) rxAwaitKt$awaitFirstOrElse$12.L$0;
+                    function0 = (Function0) rxAwaitKt$awaitFirstOrElse$12.L$1;
+                    ObservableSource observableSource2 = (ObservableSource) rxAwaitKt$awaitFirstOrElse$12.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return obj != null ? function0.invoke() : obj;
@@ -194,13 +202,13 @@ public final class RxAwaitKt {
         cancellableContinuation.invokeOnCancellation(new Function1() { // from class: kotlinx.coroutines.rx2.RxAwaitKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return RxAwaitKt.disposeOnCancellation$lambda$3(Disposable.this, (Throwable) obj);
+                return RxAwaitKt.disposeOnCancellation$lambda$0(Disposable.this, (Throwable) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit disposeOnCancellation$lambda$3(Disposable disposable, Throwable th) {
+    public static final Unit disposeOnCancellation$lambda$0(Disposable disposable, Throwable th) {
         disposable.dispose();
         return Unit.INSTANCE;
     }
@@ -225,13 +233,13 @@ public final class RxAwaitKt {
             @Override // io.reactivex.CompletableObserver, io.reactivex.MaybeObserver
             public void onComplete() {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(Unit.INSTANCE));
             }
 
             @Override // io.reactivex.CompletableObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();
@@ -254,19 +262,19 @@ public final class RxAwaitKt {
             @Override // io.reactivex.MaybeObserver
             public void onComplete() {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(null));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(null));
             }
 
             @Override // io.reactivex.MaybeObserver
             public void onSuccess(T t) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(t));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(t));
             }
 
             @Override // io.reactivex.MaybeObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();
@@ -289,13 +297,13 @@ public final class RxAwaitKt {
             @Override // io.reactivex.SingleObserver
             public void onSuccess(T t) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(t));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(t));
             }
 
             @Override // io.reactivex.SingleObserver
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();
@@ -316,9 +324,9 @@ public final class RxAwaitKt {
             private T value;
 
             /* compiled from: RxAwait.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* loaded from: classes5.dex */
-            public /* synthetic */ class WhenMappings {
+            public static final /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
                 static {
@@ -370,10 +378,10 @@ public final class RxAwaitKt {
                     }
                     this.seenValue = true;
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(t2));
+                    cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(t2));
                     Disposable disposable2 = this.subscription;
                     if (disposable2 == null) {
-                        Intrinsics.throwUninitializedPropertyAccessException("subscription");
+                        Intrinsics.throwUninitializedPropertyAccessException(FirebaseAnalytics.Param.SUBSCRIPTION);
                     } else {
                         disposable = disposable2;
                     }
@@ -384,11 +392,11 @@ public final class RxAwaitKt {
                     if (mode == Mode.SINGLE && this.seenValue) {
                         if (cancellableContinuationImpl2.isActive()) {
                             Result.Companion companion2 = Result.Companion;
-                            cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + mode))));
+                            cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + mode))));
                         }
                         Disposable disposable3 = this.subscription;
                         if (disposable3 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("subscription");
+                            Intrinsics.throwUninitializedPropertyAccessException(FirebaseAnalytics.Param.SUBSCRIPTION);
                         } else {
                             disposable = disposable3;
                         }
@@ -405,7 +413,7 @@ public final class RxAwaitKt {
                 if (this.seenValue) {
                     if (cancellableContinuationImpl2.isActive()) {
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(this.value));
+                        cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(this.value));
                         return;
                     }
                     return;
@@ -415,17 +423,17 @@ public final class RxAwaitKt {
                 CancellableContinuation<T> cancellableContinuation = cancellableContinuationImpl2;
                 if (mode2 == mode3) {
                     Result.Companion companion2 = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9202constructorimpl(t));
+                    cancellableContinuation.resumeWith(Result.m9842constructorimpl(t));
                 } else if (cancellableContinuation.isActive()) {
                     Result.Companion companion3 = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + mode))));
+                    cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + mode))));
                 }
             }
 
             @Override // io.reactivex.Observer
             public void onError(Throwable th) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
             }
         }));
         Object result = cancellableContinuationImpl.getResult();

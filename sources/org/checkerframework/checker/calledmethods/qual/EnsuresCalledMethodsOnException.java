@@ -11,14 +11,14 @@ import org.checkerframework.framework.qual.InheritedAnnotation;
 @InheritedAnnotation
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresCalledMethodsOnException {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresCalledMethodsOnException[] value();
     }

@@ -52,27 +52,27 @@ public final class MotionLayoutScope {
         }
 
         /* renamed from: color-vNxB06k  reason: not valid java name */
-        public final long m7980colorvNxB06k(String str) {
-            return MotionLayoutScope.this.measurer.m7995getCustomColorXeAY9LY(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue());
+        public final long m8585colorvNxB06k(String str) {
+            return MotionLayoutScope.this.measurer.m8600getCustomColorXeAY9LY(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: float  reason: not valid java name */
-        public final float m7982float(String str) {
+        public final float m8587float(String str) {
             return MotionLayoutScope.this.measurer.getCustomFloat(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: int  reason: not valid java name */
-        public final int m7984int(String str) {
+        public final int m8589int(String str) {
             return (int) MotionLayoutScope.this.measurer.getCustomFloat(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: distance-u2uoSUM  reason: not valid java name */
-        public final float m7981distanceu2uoSUM(String str) {
-            return Dp.m7555constructorimpl(MotionLayoutScope.this.measurer.getCustomFloat(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
+        public final float m8586distanceu2uoSUM(String str) {
+            return Dp.m8160constructorimpl(MotionLayoutScope.this.measurer.getCustomFloat(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
         }
 
         /* renamed from: fontSize-kPz2Gy4  reason: not valid java name */
-        public final long m7983fontSizekPz2Gy4(String str) {
+        public final long m8588fontSizekPz2Gy4(String str) {
             return TextUnitKt.getSp(MotionLayoutScope.this.measurer.getCustomFloat(this.id, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
         }
     }
@@ -98,27 +98,27 @@ public final class MotionLayoutScope {
         }
 
         /* renamed from: color-vNxB06k  reason: not valid java name */
-        public final long m7985colorvNxB06k(String str) {
-            return MotionLayoutScope.this.measurer.m7995getCustomColorXeAY9LY(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue());
+        public final long m8590colorvNxB06k(String str) {
+            return MotionLayoutScope.this.measurer.m8600getCustomColorXeAY9LY(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: float  reason: not valid java name */
-        public final float m7987float(String str) {
+        public final float m8592float(String str) {
             return MotionLayoutScope.this.measurer.getCustomFloat(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: int  reason: not valid java name */
-        public final int m7989int(String str) {
+        public final int m8594int(String str) {
             return (int) MotionLayoutScope.this.measurer.getCustomFloat(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue());
         }
 
         /* renamed from: distance-u2uoSUM  reason: not valid java name */
-        public final float m7986distanceu2uoSUM(String str) {
-            return Dp.m7555constructorimpl(MotionLayoutScope.this.measurer.getCustomFloat(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
+        public final float m8591distanceu2uoSUM(String str) {
+            return Dp.m8160constructorimpl(MotionLayoutScope.this.measurer.getCustomFloat(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
         }
 
         /* renamed from: fontSize-kPz2Gy4  reason: not valid java name */
-        public final long m7988fontSizekPz2Gy4(String str) {
+        public final long m8593fontSizekPz2Gy4(String str) {
             return TextUnitKt.getSp(MotionLayoutScope.this.measurer.getCustomFloat(this.myId, str, MotionLayoutScope.this.motionProgress.getFloatValue()));
         }
     }
@@ -152,8 +152,8 @@ public final class MotionLayoutScope {
 
     @Deprecated(message = "Deprecated for naming consistency", replaceWith = @ReplaceWith(expression = "customColor(id, name)", imports = {}))
     /* renamed from: motionColor-WaAFU9c  reason: not valid java name */
-    public final long m7977motionColorWaAFU9c(String str, String str2) {
-        return this.measurer.m7995getCustomColorXeAY9LY(str, str2, this.motionProgress.getFloatValue());
+    public final long m8582motionColorWaAFU9c(String str, String str2) {
+        return this.measurer.m8600getCustomColorXeAY9LY(str, str2, this.motionProgress.getFloatValue());
     }
 
     @Deprecated(message = "Deprecated for naming consistency", replaceWith = @ReplaceWith(expression = "customFloat(id, name)", imports = {}))
@@ -168,13 +168,13 @@ public final class MotionLayoutScope {
 
     @Deprecated(message = "Deprecated for naming consistency", replaceWith = @ReplaceWith(expression = "customDistance(id, name)", imports = {}))
     /* renamed from: motionDistance-chRvn1I  reason: not valid java name */
-    public final float m7978motionDistancechRvn1I(String str, String str2) {
-        return Dp.m7555constructorimpl(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
+    public final float m8583motionDistancechRvn1I(String str, String str2) {
+        return Dp.m8160constructorimpl(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
     }
 
     @Deprecated(message = "Deprecated for naming consistency", replaceWith = @ReplaceWith(expression = "customFontSize(id, name)", imports = {}))
     /* renamed from: motionFontSize-5XXgJZs  reason: not valid java name */
-    public final long m7979motionFontSize5XXgJZs(String str, String str2) {
+    public final long m8584motionFontSize5XXgJZs(String str, String str2) {
         return TextUnitKt.getSp(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
     }
 
@@ -183,8 +183,8 @@ public final class MotionLayoutScope {
     }
 
     /* renamed from: customColor-WaAFU9c  reason: not valid java name */
-    public final long m7974customColorWaAFU9c(String str, String str2) {
-        return this.measurer.m7995getCustomColorXeAY9LY(str, str2, this.motionProgress.getFloatValue());
+    public final long m8579customColorWaAFU9c(String str, String str2) {
+        return this.measurer.m8600getCustomColorXeAY9LY(str, str2, this.motionProgress.getFloatValue());
     }
 
     public final float customFloat(String str, String str2) {
@@ -196,12 +196,12 @@ public final class MotionLayoutScope {
     }
 
     /* renamed from: customDistance-chRvn1I  reason: not valid java name */
-    public final float m7975customDistancechRvn1I(String str, String str2) {
-        return Dp.m7555constructorimpl(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
+    public final float m8580customDistancechRvn1I(String str, String str2) {
+        return Dp.m8160constructorimpl(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
     }
 
     /* renamed from: customFontSize-5XXgJZs  reason: not valid java name */
-    public final long m7976customFontSize5XXgJZs(String str, String str2) {
+    public final long m8581customFontSize5XXgJZs(String str, String str2) {
         return TextUnitKt.getSp(this.measurer.getCustomFloat(str, str2, this.motionProgress.getFloatValue()));
     }
 

@@ -5,7 +5,7 @@ import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     private static final int AVOID_TRUNCATION_FACTOR = 1000;
     public static final long DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US = 2000000;
@@ -111,7 +111,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor
-    public void onFlush() {
+    public void onFlush(AudioProcessor.StreamMetadata streamMetadata) {
         if (isActive()) {
             this.bytesPerFrame = this.inputAudioFormat.channelCount * 2;
             int alignToBytePerFrameBoundary = alignToBytePerFrameBoundary(durationUsToFrames(this.minimumSilenceDurationUs) / 2) * 2;

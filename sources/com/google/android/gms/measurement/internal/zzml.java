@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzml implements Runnable {
     final /* synthetic */ zzr zza;
@@ -22,7 +22,7 @@ public final class zzml implements Runnable {
         zznl zznlVar = this.zzb;
         zzgb zzZ = zznlVar.zzZ();
         if (zzZ == null) {
-            zznlVar.zzu.zzaV().zze().zza("Failed to send app backgrounded");
+            zznlVar.zzu.zzaW().zze().zza("Failed to send app backgrounded");
             return;
         }
         try {
@@ -31,7 +31,7 @@ public final class zzml implements Runnable {
             zzZ.zzA(zzrVar);
             zznlVar.zzV();
         } catch (RemoteException e) {
-            this.zzb.zzu.zzaV().zzb().zzb("Failed to send app backgrounded to the service", e);
+            this.zzb.zzu.zzaW().zzb().zzb("Failed to send app backgrounded to the service", e);
         }
     }
 }

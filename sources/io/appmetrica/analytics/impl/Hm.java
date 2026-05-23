@@ -1,27 +1,88 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Hm implements ProtobufConverter {
-    public final C0659vm a(Gm gm) {
-        C0659vm c0659vm = new C0659vm();
-        c0659vm.f1280a = gm.f607a;
-        return c0659vm;
+public final class Hm {
+    public final Map A;
+    public final W9 B;
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f581a;
+    public final String b;
+    public final Lm c;
+    public final String d;
+    public final List e;
+    public final List f;
+    public final List g;
+    public final Map h;
+    public final String i;
+    public final String j;
+    public final String k;
+    public final String l;
+    public final String m;
+    public final C4 n;
+    public final long o;
+    public final boolean p;
+    public final boolean q;
+    public final String r;
+    public final Ye s;
+    public final RetryPolicyConfig t;
+    public final long u;
+    public final long v;
+    public final boolean w;
+    public final C0601t3 x;
+    public final C0756z2 y;
+    public final C0233en z;
+
+    public Hm(String str, String str2, Lm lm) {
+        this.f581a = str;
+        this.b = str2;
+        this.c = lm;
+        this.d = lm.f650a;
+        this.e = lm.b;
+        this.f = lm.f;
+        this.g = lm.g;
+        List list = lm.h;
+        this.h = lm.i;
+        this.i = lm.c;
+        this.j = lm.d;
+        String str3 = lm.e;
+        this.k = lm.j;
+        this.l = lm.k;
+        this.m = lm.l;
+        this.n = lm.m;
+        this.o = lm.n;
+        this.p = lm.o;
+        this.q = lm.p;
+        this.r = lm.q;
+        C0336in c0336in = lm.r;
+        this.s = lm.s;
+        this.t = lm.t;
+        this.u = lm.u;
+        this.v = lm.v;
+        this.w = lm.w;
+        this.x = lm.x;
+        this.y = lm.y;
+        this.z = lm.z;
+        this.A = lm.A;
+        this.B = lm.B;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object fromModel(Object obj) {
-        C0659vm c0659vm = new C0659vm();
-        c0659vm.f1280a = ((Gm) obj).f607a;
-        return c0659vm;
+    public final String a() {
+        return this.f581a;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new Gm(((C0659vm) obj).f1280a);
+    public final String b() {
+        return this.b;
     }
 
-    public final Gm a(C0659vm c0659vm) {
-        return new Gm(c0659vm.f1280a);
+    public final String c() {
+        return this.d;
+    }
+
+    public final String toString() {
+        return "StartupState(deviceId=" + this.f581a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
     }
 }

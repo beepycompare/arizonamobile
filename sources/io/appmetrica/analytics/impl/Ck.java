@@ -1,62 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import io.appmetrica.analytics.internal.AppMetricaService;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
-import java.util.HashMap;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleReporter;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleCounterReport;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes5.dex */
-public final class Ck implements ServiceWakeLock {
+public final class Ck implements ServiceComponentModuleReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f543a;
-    public final Bk b;
-    public final HashMap c = new HashMap();
+    public final C0448n5 f500a;
+    public final Vk b;
 
-    public Ck(Context context, Bk bk) {
-        this.f543a = context;
-        this.b = bk;
+    public Ck(C0448n5 c0448n5, Vk vk) {
+        this.f500a = c0448n5;
+        this.b = vk;
     }
 
-    public final String a(String str) {
-        return "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK." + str;
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleReporter
+    public final void handleReport(ServiceModuleCounterReport serviceModuleCounterReport) {
+        this.b.getClass();
+        this.f500a.a(Vk.a(serviceModuleCounterReport));
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized boolean acquireWakeLock(String str) {
-        if (this.c.get(str) == null) {
-            HashMap hashMap = this.c;
-            Bk bk = this.b;
-            Context context = this.f543a;
-            String a2 = a(str);
-            bk.f528a.getClass();
-            Intent intent = new Intent(context, AppMetricaService.class);
-            intent.setAction(a2);
-            Ak ak = new Ak();
-            try {
-                context.bindService(intent, ak, 1);
-            } catch (Throwable unused) {
-                ak = null;
-            }
-            hashMap.put(str, ak);
-        }
-        return this.c.get(str) != null;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized void releaseWakeLock(String str) {
-        ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
-        if (serviceConnection != null) {
-            Bk bk = this.b;
-            a(str);
-            Context context = this.f543a;
-            bk.getClass();
-            try {
-                context.unbindService(serviceConnection);
-            } catch (Throwable unused) {
-            }
-            ServiceConnection serviceConnection2 = (ServiceConnection) this.c.remove(str);
-        }
+    public /* synthetic */ Ck(C0448n5 c0448n5, Vk vk, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(c0448n5, (i & 2) != 0 ? new Vk() : vk);
     }
 }

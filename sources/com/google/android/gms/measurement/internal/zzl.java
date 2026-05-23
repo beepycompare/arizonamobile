@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzl implements Runnable {
     final /* synthetic */ zzp zza;
@@ -16,6 +16,6 @@ final class zzl implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.zzb.zza.zzj().zzV(this.zza);
+        this.zzb.zza.zzj().zzU(this.zza);
     }
 }

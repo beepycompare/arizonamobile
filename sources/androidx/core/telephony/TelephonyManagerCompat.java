@@ -6,7 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 /* loaded from: classes2.dex */
 public class TelephonyManagerCompat {
-    private static Method sGetDeviceIdMethod;
     private static Method sGetSubIdMethod;
 
     public static String getImei(TelephonyManager telephonyManager) {
@@ -15,7 +14,7 @@ public class TelephonyManagerCompat {
         }
         int subscriptionId = getSubscriptionId(telephonyManager);
         if (subscriptionId != Integer.MAX_VALUE && subscriptionId != -1) {
-            return Api23Impl.getDeviceId(telephonyManager, SubscriptionManagerCompat.getSlotIndex(subscriptionId));
+            return telephonyManager.getDeviceId(SubscriptionManagerCompat.getSlotIndex(subscriptionId));
         }
         return telephonyManager.getDeviceId();
     }
@@ -61,16 +60,6 @@ public class TelephonyManagerCompat {
 
         static String getImei(TelephonyManager telephonyManager) {
             return telephonyManager.getImei();
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static String getDeviceId(TelephonyManager telephonyManager, int i) {
-            return telephonyManager.getDeviceId(i);
         }
     }
 }

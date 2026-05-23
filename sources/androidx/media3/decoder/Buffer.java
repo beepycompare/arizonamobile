@@ -1,6 +1,4 @@
 package androidx.media3.decoder;
-
-import androidx.media3.common.C;
 /* loaded from: classes2.dex */
 public abstract class Buffer {
     private int flags;
@@ -10,7 +8,7 @@ public abstract class Buffer {
     }
 
     public final boolean isFirstSample() {
-        return getFlag(C.BUFFER_FLAG_FIRST_SAMPLE);
+        return getFlag(134217728);
     }
 
     public final boolean isEndOfStream() {
@@ -22,7 +20,7 @@ public abstract class Buffer {
     }
 
     public final boolean isLastSample() {
-        return getFlag(C.BUFFER_FLAG_LAST_SAMPLE);
+        return getFlag(536870912);
     }
 
     public final boolean hasSupplementalData() {

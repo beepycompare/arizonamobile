@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt;
 
-import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -15,7 +14,7 @@ import ru.mrlargha.commonui.databinding.HudCaptBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HudCapt.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$closeListAfterFiveSecond$1", f = "HudCapt.kt", i = {0, 1}, l = {ModuleDescriptor.MODULE_VERSION, 160}, m = "invokeSuspend", n = {"pastTime", "pastTime"}, nl = {160, 162}, s = {"I$0", "I$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$closeListAfterFiveSecond$1", f = "HudCapt.kt", i = {0, 1}, l = {155, 160}, m = "invokeSuspend", n = {"pastTime", "pastTime"}, nl = {160, 162}, s = {"I$0", "I$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class HudCapt$closeListAfterFiveSecond$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ HudCaptBinding $binding;

@@ -1,37 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.util.Collection;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Yf implements Wf {
+public final class Yf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0224eg f873a;
+    public final C0107a0 f856a;
+    public final Zf b;
 
-    public Yf(C0224eg c0224eg) {
-        this.f873a = c0224eg;
+    public Yf() {
+        this(new C0107a0(), new Zf(30));
     }
 
-    @Override // io.appmetrica.analytics.impl.Wf
-    public final void a() {
-        C0224eg c0224eg = this.f873a;
-        C0747za c0747za = c0224eg.b;
-        Xf xf = new Xf(c0224eg);
-        c0747za.getClass();
-        try {
-            FutureTask futureTask = new FutureTask(new CallableC0722ya(c0747za));
-            C0448na.I.d.f1089a.getClass();
-            new InterruptionSafeThread(futureTask, "IAA-SHMSR-" + ThreadFactoryC0750zd.f1337a.incrementAndGet()).start();
-            C0454ng c0454ng = (C0454ng) futureTask.get(5L, TimeUnit.SECONDS);
-            lo.a(c0747za.b);
-            C0224eg.a(c0224eg, c0454ng, C0224eg.a(c0224eg));
-        } catch (Throwable th) {
-            try {
-                xf.a(th);
-            } finally {
-                lo.a(c0747za.b);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Xi fromModel(C0123ag c0123ag) {
+        int i;
+        F8 f8 = new F8();
+        Xi fromModel = this.f856a.fromModel(c0123ag.f886a);
+        f8.f540a = (C0658v8) fromModel.f838a;
+        C0519po a2 = this.b.a(c0123ag.b);
+        if (Oo.a((Collection) a2.f1152a)) {
+            i = 0;
+        } else {
+            f8.b = new C0658v8[((List) a2.f1152a).size()];
+            i = 0;
+            for (int i2 = 0; i2 < ((List) a2.f1152a).size(); i2++) {
+                Xi fromModel2 = this.f856a.fromModel((C0133b0) ((List) a2.f1152a).get(i2));
+                f8.b[i2] = (C0658v8) fromModel2.f838a;
+                i += fromModel2.b.getBytesTruncated();
             }
         }
+        return new Xi(f8, new C0524q3(C0524q3.b(fromModel, a2, new C0524q3(i))));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Xi xi = (Xi) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Yf(C0107a0 c0107a0, Zf zf) {
+        this.f856a = c0107a0;
+        this.b = zf;
+    }
+
+    public final C0123ag a(Xi xi) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -3,7 +3,7 @@ package androidx.compose.foundation.lazy.grid;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyGridDslKt$items$8 implements Function2<LazyGridItemSpanScope, Integer, GridItemSpan> {
     final /* synthetic */ T[] $items;
@@ -17,11 +17,11 @@ public final class LazyGridDslKt$items$8 implements Function2<LazyGridItemSpanSc
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ GridItemSpan invoke(LazyGridItemSpanScope lazyGridItemSpanScope, Integer num) {
-        return GridItemSpan.m938boximpl(m948invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
+        return GridItemSpan.m1191boximpl(m1201invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
     }
 
     /* renamed from: invoke-_-orMbw  reason: not valid java name */
-    public final long m948invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
-        return this.$span.invoke(lazyGridItemSpanScope, this.$items[i]).m945unboximpl();
+    public final long m1201invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
+        return this.$span.invoke(lazyGridItemSpanScope, this.$items[i]).m1198unboximpl();
     }
 }

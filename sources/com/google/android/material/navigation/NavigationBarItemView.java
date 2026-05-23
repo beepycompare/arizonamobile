@@ -27,10 +27,12 @@ import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.BaselineLayout;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.ripple.RippleUtils;
+import com.google.android.material.shape.MaterialShapeDrawable;
 /* loaded from: classes4.dex */
 public abstract class NavigationBarItemView extends FrameLayout implements NavigationBarMenuItemView {
     private static final int INVALID_ITEM_POSITION = -1;
@@ -168,14 +170,14 @@ public abstract class NavigationBarItemView extends FrameLayout implements Navig
         linearLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.google.android.material.navigation.NavigationBarItemView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                NavigationBarItemView.this.m8908xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
+                NavigationBarItemView.this.m9527xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-navigation-NavigationBarItemView  reason: not valid java name */
-    public /* synthetic */ void m8908xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+    public /* synthetic */ void m9527xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         boolean z;
         if (this.icon.getVisibility() == 0) {
             tryUpdateBadgeBounds(this.icon);
@@ -844,29 +846,32 @@ public abstract class NavigationBarItemView extends FrameLayout implements Navig
         refreshItemBackground();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v2, types: [android.graphics.drawable.LayerDrawable, android.graphics.drawable.RippleDrawable] */
     private void refreshItemBackground() {
         Drawable drawable = this.itemBackground;
-        RippleDrawable rippleDrawable = null;
         boolean z = true;
         if (this.itemRippleColor != null) {
             Drawable activeIndicatorDrawable = getActiveIndicatorDrawable();
-            if (this.activeIndicatorEnabled && getActiveIndicatorDrawable() != null && activeIndicatorDrawable != null) {
-                rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.itemRippleColor), null, activeIndicatorDrawable);
+            if (this.activeIndicatorEnabled && activeIndicatorDrawable != null) {
+                ?? rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.itemRippleColor), null, activeIndicatorDrawable);
+                FocusRingDrawable.layer(getContext(), rippleDrawable, activeIndicatorDrawable instanceof MaterialShapeDrawable ? (MaterialShapeDrawable) activeIndicatorDrawable : null);
+                r3 = rippleDrawable;
                 z = false;
             } else if (drawable == null) {
                 drawable = createItemBackgroundCompat(this.itemRippleColor);
             }
         }
         this.iconContainer.setPadding(0, 0, 0, 0);
-        this.iconContainer.setForeground(rippleDrawable);
+        this.iconContainer.setForeground(r3);
         setBackground(drawable);
         if (Build.VERSION.SDK_INT >= 26) {
             setDefaultFocusHighlightEnabled(z);
         }
     }
 
-    private static Drawable createItemBackgroundCompat(ColorStateList colorStateList) {
-        return new RippleDrawable(RippleUtils.convertToRippleDrawableColor(colorStateList), null, null);
+    private Drawable createItemBackgroundCompat(ColorStateList colorStateList) {
+        return FocusRingDrawable.wrap(getContext(), new RippleDrawable(RippleUtils.convertToRippleDrawableColor(colorStateList), null, null));
     }
 
     public void setItemPaddingTop(int i) {

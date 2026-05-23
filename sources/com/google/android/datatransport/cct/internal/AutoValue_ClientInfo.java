@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.ClientInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ClientInfo extends ClientInfo {
     private final AndroidClientInfo androidClientInfo;
     private final ClientInfo.ClientType clientType;
@@ -49,7 +49,7 @@ final class AutoValue_ClientInfo extends ClientInfo {
         return hashCode ^ (androidClientInfo != null ? androidClientInfo.hashCode() : 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends ClientInfo.Builder {
         private AndroidClientInfo androidClientInfo;
         private ClientInfo.ClientType clientType;

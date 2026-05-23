@@ -14,13 +14,11 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SharedElement.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.SharedElement$updateExitVelocity$1", f = "SharedElement.kt", i = {}, l = {77}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.SharedElement$updateExitVelocity$1", f = "SharedElement.kt", i = {}, l = {94}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class SharedElement$updateExitVelocity$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: $$v$c$androidx-compose-ui-unit-Velocity$-velocity$0  reason: not valid java name */
-    final /* synthetic */ long f0$$v$c$androidxcomposeuiunitVelocity$velocity$0;
+    final /* synthetic */ long $velocity;
     int label;
     final /* synthetic */ SharedElement this$0;
 
@@ -29,12 +27,12 @@ public final class SharedElement$updateExitVelocity$1 extends SuspendLambda impl
     public SharedElement$updateExitVelocity$1(SharedElement sharedElement, long j, Continuation<? super SharedElement$updateExitVelocity$1> continuation) {
         super(2, continuation);
         this.this$0 = sharedElement;
-        this.f0$$v$c$androidxcomposeuiunitVelocity$velocity$0 = j;
+        this.$velocity = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new SharedElement$updateExitVelocity$1(this.this$0, this.f0$$v$c$androidxcomposeuiunitVelocity$velocity$0, continuation);
+        return new SharedElement$updateExitVelocity$1(this.this$0, this.$velocity, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -51,10 +49,10 @@ public final class SharedElement$updateExitVelocity$1 extends SuspendLambda impl
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.momentumAnimation;
-            Offset m4516boximpl = Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0());
+            Offset m5092boximpl = Offset.m5092boximpl(Offset.Companion.m5119getZeroF1C5BW0());
             springSpec = SharedElementKt.DefaultMomentumSpring;
             this.label = 1;
-            if (Animatable.animateTo$default(animatable, m4516boximpl, springSpec, Offset.m4516boximpl(SharedElementKt.m122toOffsetTH1AsA0(this.f0$$v$c$androidxcomposeuiunitVelocity$velocity$0)), null, this, 8, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(animatable, m5092boximpl, springSpec, Offset.m5092boximpl(SharedElementKt.m146toOffsetTH1AsA0(this.$velocity)), null, this, 8, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

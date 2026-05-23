@@ -1,70 +1,43 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import android.os.Bundle;
-import io.appmetrica.analytics.AdvIdentifiersResult;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.StartupParamsCallback;
-import java.util.List;
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes5.dex */
-public interface Ca extends Hc, A6, Ta {
-    /* synthetic */ Sa a();
+public final class Ca implements ProtobufConverter {
 
-    /* synthetic */ void a(int i, Bundle bundle);
+    /* renamed from: a  reason: collision with root package name */
+    public final Ne f492a;
 
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void a(Location location);
+    public Ca() {
+        this(new C0646um());
+    }
 
-    void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Tm fromModel(C4 c4) {
+        Tm tm = new Tm();
+        tm.b = c4.b;
+        tm.f780a = c4.f486a;
+        tm.c = c4.c;
+        tm.d = c4.d;
+        tm.e = c4.e;
+        tm.f = this.f492a.a(c4.f);
+        return tm;
+    }
 
-    void a(DeferredDeeplinkListener deferredDeeplinkListener);
+    public Ca(C0646um c0646um) {
+        this.f492a = c0646um;
+    }
 
-    void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener);
-
-    void a(ReporterConfig reporterConfig);
-
-    void a(StartupParamsCallback startupParamsCallback, List<String> list);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void a(String str);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void a(String str, String str2);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void a(boolean z);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void a(boolean z, boolean z2);
-
-    void b(AppMetricaConfig appMetricaConfig);
-
-    Ra c(ReporterConfig reporterConfig);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void clearAppEnvironment();
-
-    X9 d();
-
-    String e();
-
-    Map<String, String> g();
-
-    AdvIdentifiersResult h();
-
-    C0349jc i();
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void putAppEnvironmentValue(String str, String str2);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void setDataSendingEnabled(boolean z);
-
-    @Override // io.appmetrica.analytics.impl.Hc
-    /* synthetic */ void setUserProfileID(String str);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C4 toModel(Tm tm) {
+        A4 a4 = new A4();
+        a4.d = tm.d;
+        a4.c = tm.c;
+        a4.b = tm.b;
+        a4.f449a = tm.f780a;
+        a4.e = tm.e;
+        a4.f = this.f492a.a(tm.f);
+        return new C4(a4);
+    }
 }

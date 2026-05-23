@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageFetcher.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcher", f = "PageFetcher.kt", i = {0}, l = {212}, m = "generateNewPagingSource", n = {"previousPagingSource"}, s = {"L$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcher", f = "PageFetcher.kt", i = {0}, l = {322}, m = "generateNewPagingSource", n = {"currentPagingSource"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcher$generateNewPagingSource$1 extends ContinuationImpl {
     Object L$0;

@@ -53,7 +53,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: FlowLayout.kt */
-@Metadata(d1 = {"\u0000â\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aq\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000e2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001ag\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0015\u001aq\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u001a2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001c\u001ag\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001d\u001a%\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010!\u001a=\u0010\"\u001a\u00020#2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010&\u001a%\u0010'\u001a\u00020\u001f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010(\u001a=\u0010)\u001a\u00020#2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010*\u001aT\u0010+\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000bH\u0082\b\u001a\u0091\u0001\u00103\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0083\b\u001a[\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0002¢\u0006\u0002\u0010<\u001a\u0096\u0001\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0082\b¢\u0006\u0002\u0010=\u001aY\u0010>\u001a\u00020?*\u00020@2\u0006\u0010A\u001a\u00020B2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020E0D2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020G2\u0006\u0010I\u001a\u00020J2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0000¢\u0006\u0004\bK\u0010L\u001a\u001e\u0010M\u001a\u0004\u0018\u00010E*\b\u0012\u0004\u0012\u00020E0D2\b\u0010N\u001a\u0004\u0018\u00010OH\u0002\u001a\u001c\u0010P\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u00104\u001a\u00020\u000bH\u0000\u001a\u001c\u0010S\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u0010/\u001a\u00020\u000bH\u0000\u001a9\u0010Z\u001a\u000207*\u00020E2\u0006\u0010A\u001a\u00020B2\u0006\u0010I\u001a\u00020[2\u0014\u0010\\\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010]\u0012\u0004\u0012\u00020\u00010\u0010H\u0000¢\u0006\u0004\b^\u0010_\u001aQ\u0010`\u001a\u00020?*\u00020@2\u0006\u0010I\u001a\u00020J2\u0006\u0010a\u001a\u00020\u000b2\u0006\u0010b\u001a\u00020\u000b2\u0006\u0010:\u001a\u0002092\f\u0010c\u001a\b\u0012\u0004\u0012\u00020?0d2\u0006\u0010e\u001a\u00020B2\u0006\u0010f\u001a\u000209H\u0000¢\u0006\u0004\bg\u0010h\"\u0014\u0010T\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bV\u0010W\"\u0014\u0010X\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bY\u0010W¨\u0006i"}, d2 = {"FlowRow", "", "modifier", "Landroidx/compose/ui/Modifier;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "itemVerticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "maxItemsInEachRow", "", "maxLines", "overflow", "Landroidx/compose/foundation/layout/FlowRowOverflow;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowRowOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "FlowColumn", "itemHorizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "maxItemsInEachColumn", "Landroidx/compose/foundation/layout/FlowColumnOverflow;", "Landroidx/compose/foundation/layout/FlowColumnScope;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowColumnOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rowMeasurementHelper", "Landroidx/compose/ui/layout/MeasurePolicy;", "maxItemsInMainAxis", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "rowMeasurementMultiContentHelper", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "overflowState", "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "columnMeasurementHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "columnMeasurementMultiContentHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "maxIntrinsicMainAxisSize", "children", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "mainAxisSize", "Lkotlin/Function3;", "crossAxisAvailable", "mainAxisSpacing", "minIntrinsicMainAxisSize", "crossAxisSize", "crossAxisSpacing", "intrinsicCrossAxisSize", "Landroidx/collection/IntIntPair;", "mainAxisSizes", "", "crossAxisSizes", "mainAxisAvailable", "(Ljava/util/List;[I[IIIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "breakDownItems", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurePolicy", "Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;", "measurablesIterator", "", "Landroidx/compose/ui/layout/Measurable;", "mainAxisSpacingDp", "Landroidx/compose/ui/unit/Dp;", "crossAxisSpacingDp", "constraints", "Landroidx/compose/foundation/layout/OrientationIndependentConstraints;", "breakDownItems-di9J0FM", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;Ljava/util/Iterator;FFJIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)Landroidx/compose/ui/layout/MeasureResult;", "safeNext", "info", "Landroidx/compose/foundation/layout/FlowLineInfo;", "mainAxisMin", "isHorizontal", "", "crossAxisMin", "CROSS_AXIS_ALIGNMENT_TOP", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "getCROSS_AXIS_ALIGNMENT_TOP", "()Landroidx/compose/foundation/layout/CrossAxisAlignment;", "CROSS_AXIS_ALIGNMENT_START", "getCROSS_AXIS_ALIGNMENT_START", "measureAndCache", "Landroidx/compose/ui/unit/Constraints;", "storePlaceable", "Landroidx/compose/ui/layout/Placeable;", "measureAndCache-rqJ1uqs", "(Landroidx/compose/ui/layout/Measurable;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;JLkotlin/jvm/functions/Function1;)J", "placeHelper", "mainAxisTotalSize", "crossAxisTotalSize", "items", "Landroidx/compose/runtime/collection/MutableVector;", "measureHelper", "outPosition", "placeHelper-BmaY500", "(Landroidx/compose/ui/layout/MeasureScope;JII[ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;[I)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000â\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aq\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u000e2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001ag\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u0015\u001aq\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\b\b\u0002\u0010\r\u001a\u00020\u001a2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001c\u001ag\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\u001c\u0010\u000f\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00010\u0010¢\u0006\u0002\b\u0012¢\u0006\u0002\b\u0013H\u0007¢\u0006\u0002\u0010\u001d\u001a%\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010!\u001a=\u0010\"\u001a\u00020#2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010&\u001a%\u0010'\u001a\u00020\u001f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u000bH\u0001¢\u0006\u0002\u0010(\u001a=\u0010)\u001a\u00020#2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020%H\u0001¢\u0006\u0002\u0010*\u001aT\u0010+\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000bH\u0082\b\u001a\u0091\u0001\u00103\u001a\u00020\u000b2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u00101\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0083\b\u001a[\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u0002092\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0002¢\u0006\u0002\u0010<\u001a\u0096\u0001\u00106\u001a\u0002072\f\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2#\u0010/\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132#\u00104\u001a\u001f\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u000b00¢\u0006\u0002\b\u00132\u0006\u0010;\u001a\u00020\u000b2\u0006\u00102\u001a\u00020\u000b2\u0006\u00105\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0082\b¢\u0006\u0002\u0010=\u001aY\u0010>\u001a\u00020?*\u00020@2\u0006\u0010A\u001a\u00020B2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020E0D2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020G2\u0006\u0010I\u001a\u00020J2\u0006\u0010 \u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020%H\u0000¢\u0006\u0004\bK\u0010L\u001a\u001e\u0010M\u001a\u0004\u0018\u00010E*\b\u0012\u0004\u0012\u00020E0D2\b\u0010N\u001a\u0004\u0018\u00010OH\u0002\u001a\u001c\u0010P\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u00104\u001a\u00020\u000bH\u0000\u001a\u001c\u0010S\u001a\u00020\u000b*\u00020.2\u0006\u0010Q\u001a\u00020R2\u0006\u0010/\u001a\u00020\u000bH\u0000\u001a9\u0010Z\u001a\u000207*\u00020E2\u0006\u0010A\u001a\u00020B2\u0006\u0010I\u001a\u00020[2\u0014\u0010\\\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010]\u0012\u0004\u0012\u00020\u00010\u0010H\u0000¢\u0006\u0004\b^\u0010_\u001aQ\u0010`\u001a\u00020?*\u00020@2\u0006\u0010I\u001a\u00020J2\u0006\u0010a\u001a\u00020\u000b2\u0006\u0010b\u001a\u00020\u000b2\u0006\u0010:\u001a\u0002092\f\u0010c\u001a\b\u0012\u0004\u0012\u00020?0d2\u0006\u0010e\u001a\u00020B2\u0006\u0010f\u001a\u000209H\u0000¢\u0006\u0004\bg\u0010h\"\u0014\u0010T\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bV\u0010W\"\u0014\u0010X\u001a\u00020UX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bY\u0010W¨\u0006i"}, d2 = {"FlowRow", "", "modifier", "Landroidx/compose/ui/Modifier;", "horizontalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "verticalArrangement", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "itemVerticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "maxItemsInEachRow", "", "maxLines", "overflow", "Landroidx/compose/foundation/layout/FlowRowOverflow;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/FlowRowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowRowOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "FlowColumn", "itemHorizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "maxItemsInEachColumn", "Landroidx/compose/foundation/layout/FlowColumnOverflow;", "Landroidx/compose/foundation/layout/FlowColumnScope;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowColumnOverflow;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rowMeasurementHelper", "Landroidx/compose/ui/layout/MeasurePolicy;", "maxItemsInMainAxis", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "rowMeasurementMultiContentHelper", "Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "overflowState", "Landroidx/compose/foundation/layout/FlowLayoutOverflowState;", "(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Vertical;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "columnMeasurementHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;", "columnMeasurementMultiContentHelper", "(Landroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Horizontal;IILandroidx/compose/foundation/layout/FlowLayoutOverflowState;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MultiContentMeasurePolicy;", "maxIntrinsicMainAxisSize", "children", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "mainAxisSize", "Lkotlin/Function3;", "crossAxisAvailable", "mainAxisSpacing", "minIntrinsicMainAxisSize", "crossAxisSize", "crossAxisSpacing", "intrinsicCrossAxisSize", "Landroidx/collection/IntIntPair;", "mainAxisSizes", "", "crossAxisSizes", "mainAxisAvailable", "(Ljava/util/List;[I[IIIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIIIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)J", "breakDownItems", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurePolicy", "Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;", "measurablesIterator", "", "Landroidx/compose/ui/layout/Measurable;", "mainAxisSpacingDp", "Landroidx/compose/ui/unit/Dp;", "crossAxisSpacingDp", "constraints", "Landroidx/compose/foundation/layout/OrientationIndependentConstraints;", "breakDownItems-di9J0FM", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;Ljava/util/Iterator;FFJIILandroidx/compose/foundation/layout/FlowLayoutOverflowState;)Landroidx/compose/ui/layout/MeasureResult;", "safeNext", "info", "Landroidx/compose/foundation/layout/FlowLineInfo;", "mainAxisMin", "isHorizontal", "", "crossAxisMin", "CROSS_AXIS_ALIGNMENT_TOP", "Landroidx/compose/foundation/layout/CrossAxisAlignment;", "getCROSS_AXIS_ALIGNMENT_TOP", "()Landroidx/compose/foundation/layout/CrossAxisAlignment;", "CROSS_AXIS_ALIGNMENT_START", "getCROSS_AXIS_ALIGNMENT_START", "measureAndCache", "Landroidx/compose/ui/unit/Constraints;", "storePlaceable", "Landroidx/compose/ui/layout/Placeable;", "measureAndCache-rqJ1uqs", "(Landroidx/compose/ui/layout/Measurable;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;JLkotlin/jvm/functions/Function1;)J", "placeHelper", "mainAxisTotalSize", "crossAxisTotalSize", "items", "Landroidx/compose/runtime/collection/MutableVector;", "measureHelper", "outPosition", "placeHelper-BmaY500", "(Landroidx/compose/ui/layout/MeasureScope;JII[ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/foundation/layout/FlowLineMeasurePolicy;[I)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FlowLayoutKt {
     private static final CrossAxisAlignment CROSS_AXIS_ALIGNMENT_TOP = CrossAxisAlignment.Companion.vertical$foundation_layout(Alignment.Companion.getTop());
@@ -235,7 +235,7 @@ public final class FlowLayoutKt {
                             startRestartGroup.updateRememberedValue(arrayList2);
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)172@7176L62,169@7062L183:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)N(contents,modifier,measurePolicy)172@7174L62,169@7060L183:Layout.kt#80mrfh");
                             Function2<Composer, Integer, Unit> combineAsVirtualLayouts = LayoutKt.combineAsVirtualLayouts((List) arrayList);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292526026, "CC(remember):Layout.kt#9igjgp");
                             boolean changed = startRestartGroup.changed(rowMeasurementMultiContentHelper);
@@ -246,13 +246,13 @@ public final class FlowLayoutKt {
                             }
                             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue3;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
                             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, companion);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             Modifier modifier3 = companion;
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
                             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                                 ComposablesKt.invalidApplier();
                             }
@@ -262,12 +262,12 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                            Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -778,7 +778,7 @@ public final class FlowLayoutKt {
                             startRestartGroup.updateRememberedValue(arrayList2);
                             arrayList = arrayList2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)P(!1,2)172@7176L62,169@7062L183:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1399185516, "CC(Layout)N(contents,modifier,measurePolicy)172@7174L62,169@7060L183:Layout.kt#80mrfh");
                             Function2<Composer, Integer, Unit> combineAsVirtualLayouts = LayoutKt.combineAsVirtualLayouts((List) arrayList);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 292526026, "CC(remember):Layout.kt#9igjgp");
                             boolean changed = startRestartGroup.changed(columnMeasurementMultiContentHelper);
@@ -789,13 +789,13 @@ public final class FlowLayoutKt {
                             }
                             MeasurePolicy measurePolicy = (MeasurePolicy) rememberedValue3;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
                             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
                             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, companion);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             Modifier modifier3 = companion;
-                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
                             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                                 ComposablesKt.invalidApplier();
                             }
@@ -805,12 +805,12 @@ public final class FlowLayoutKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                            Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                             startRestartGroup.endNode();
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1178,12 +1178,12 @@ public final class FlowLayoutKt {
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo694getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo694getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo748getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_TOP, vertical.mo748getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$rowMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
                 public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return MultiContentMeasurePolicy.this.mo762measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                    return MultiContentMeasurePolicy.this.mo924measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1206,7 +1206,7 @@ public final class FlowLayoutKt {
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(horizontal)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(vertical)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(vertical2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo694getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo694getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(true, horizontal, vertical, horizontal.mo748getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.vertical$foundation_layout(vertical2), vertical.mo748getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1228,12 +1228,12 @@ public final class FlowLayoutKt {
         boolean z = ((((i2 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i2 & 6) == 4) | ((((i2 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i2 & 48) == 32) | ((((i2 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(i)) || (i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         MeasurePolicy rememberedValue = composer.rememberedValue();
         if (z || rememberedValue == Composer.Companion.getEmpty()) {
-            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo694getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo694getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
+            final FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo748getSpacingD9Ej5fM(), CROSS_AXIS_ALIGNMENT_START, horizontal.mo748getSpacingD9Ej5fM(), i, Integer.MAX_VALUE, FlowRowOverflow.Companion.getVisible().createOverflowState$foundation_layout(), null);
             rememberedValue = new MeasurePolicy() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$columnMeasurementHelper$1$1
                 @Override // androidx.compose.ui.layout.MeasurePolicy
                 /* renamed from: measure-3p2s80s */
                 public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-                    return FlowMeasurePolicy.this.mo762measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
+                    return FlowMeasurePolicy.this.mo924measure3p2s80s(measureScope, CollectionsKt.listOf(list), j);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -1256,7 +1256,7 @@ public final class FlowLayoutKt {
         boolean changed = ((((i3 & 14) ^ 6) > 4 && composer.changed(vertical)) || (i3 & 6) == 4) | ((((i3 & 112) ^ 48) > 32 && composer.changed(horizontal)) || (i3 & 48) == 32) | ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(horizontal2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | ((((i3 & 7168) ^ 3072) > 2048 && composer.changed(i)) || (i3 & 3072) == 2048) | ((((57344 & i3) ^ 24576) > 16384 && composer.changed(i2)) || (i3 & 24576) == 16384) | composer.changed(flowLayoutOverflowState);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo694getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo694getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
+            FlowMeasurePolicy flowMeasurePolicy = new FlowMeasurePolicy(false, horizontal, vertical, vertical.mo748getSpacingD9Ej5fM(), CrossAxisAlignment.Companion.horizontal$foundation_layout(horizontal2), horizontal.mo748getSpacingD9Ej5fM(), i, i2, flowLayoutOverflowState, null);
             composer.updateRememberedValue(flowMeasurePolicy);
             rememberedValue = flowMeasurePolicy;
         }
@@ -1359,15 +1359,15 @@ public final class FlowLayoutKt {
         if (list.isEmpty()) {
             return IntIntPair.m24constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m785constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m1017constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int intValue = intrinsicMeasurable != null ? function32.invoke(intrinsicMeasurable, 0, Integer.valueOf(i)).intValue() : 0;
         int intValue2 = intrinsicMeasurable != null ? function3.invoke(intrinsicMeasurable, 0, Integer.valueOf(intValue)).intValue() : 0;
         int i7 = 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m24constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m743ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m743ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m24constructorimpl(m743ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m29getSecondimpl(m743ellipsisSizeF35zmw$foundation_layout.m32unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m24constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(intValue2, intValue)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m905ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m905ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m24constructorimpl(m905ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m29getSecondimpl(m905ellipsisSizeF35zmw$foundation_layout.m32unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1390,17 +1390,17 @@ public final class FlowLayoutKt {
             int i17 = i16 - i12;
             i6 = i16;
             int i18 = i13;
-            FlowLayoutBuildingBlocks.WrapInfo m735getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m24constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
-            if (m735getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m897getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(i10 + 2 < list.size(), i17, IntIntPair.m24constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(intValue4, intValue3)), i18, i7, i8, false, false);
+            if (m897getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i19 = i7 + i8 + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m735getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m897getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i18, i19, i15, i17);
                 intValue4 -= i2;
                 i13 = i18 + 1;
-                if (m735getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m897getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m736getEllipsisSizeOO21N7I = wrapEllipsisInfo.m736getEllipsisSizeOO21N7I();
+                        long m898getEllipsisSizeOO21N7I = wrapEllipsisInfo.m898getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i19 += IntIntPair.m29getSecondimpl(m736getEllipsisSizeOO21N7I) + i3;
+                            i19 += IntIntPair.m29getSecondimpl(m898getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i7 = i19;
@@ -1471,15 +1471,15 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: measureAndCache-rqJ1uqs  reason: not valid java name */
-    public static final long m739measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
+    public static final long m901measureAndCacherqJ1uqs(Measurable measurable, FlowLineMeasurePolicy flowLineMeasurePolicy, long j, Function1<? super Placeable, Unit> function1) {
         FlowLayoutData flowLayoutData;
         Measurable measurable2 = measurable;
         if (RowColumnImplKt.getWeight(RowColumnImplKt.getRowColumnParentData(measurable2)) == 0.0f) {
             RowColumnParentData rowColumnParentData = RowColumnImplKt.getRowColumnParentData(measurable2);
             if (((rowColumnParentData == null || (flowLayoutData = rowColumnParentData.getFlowLayoutData()) == null) ? null : Float.valueOf(flowLayoutData.getFillCrossAxisFraction())) == null) {
-                Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-                function1.invoke(mo6216measureBRTryo0);
-                return IntIntPair.m24constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6216measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6216measureBRTryo0));
+                Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
+                function1.invoke(mo6818measureBRTryo0);
+                return IntIntPair.m24constructorimpl(flowLineMeasurePolicy.mainAxisSize(mo6818measureBRTryo0), flowLineMeasurePolicy.crossAxisSize(mo6818measureBRTryo0));
             }
         }
         int mainAxisMin = mainAxisMin(measurable2, flowLineMeasurePolicy.isHorizontal(), Integer.MAX_VALUE);
@@ -1487,7 +1487,7 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: placeHelper-BmaY500  reason: not valid java name */
-    public static final MeasureResult m740placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
+    public static final MeasureResult m902placeHelperBmaY500(MeasureScope measureScope, long j, int i, int i2, int[] iArr, final MutableVector<MeasureResult> mutableVector, FlowLineMeasurePolicy flowLineMeasurePolicy, int[] iArr2) {
         int i3;
         int i4;
         int i5;
@@ -1495,40 +1495,40 @@ public final class FlowLayoutKt {
         Arrangement.Vertical verticalArrangement = flowLineMeasurePolicy.getVerticalArrangement();
         Arrangement.Horizontal horizontalArrangement = flowLineMeasurePolicy.getHorizontalArrangement();
         if (isHorizontal) {
-            int i6 = i2 + (measureScope.mo399roundToPx0680j_4(verticalArrangement.mo694getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
-            i3 = Constraints.m7507getMaxHeightimpl(j);
-            if (i6 < m7509getMinHeightimpl) {
-                i6 = m7509getMinHeightimpl;
+            int i6 = i2 + (measureScope.mo428roundToPx0680j_4(verticalArrangement.mo748getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m8114getMinHeightimpl = Constraints.m8114getMinHeightimpl(j);
+            i3 = Constraints.m8112getMaxHeightimpl(j);
+            if (i6 < m8114getMinHeightimpl) {
+                i6 = m8114getMinHeightimpl;
             }
             if (i6 <= i3) {
                 i3 = i6;
             }
             verticalArrangement.arrange(measureScope, i3, iArr, iArr2);
         } else {
-            int i7 = i2 + (measureScope.mo399roundToPx0680j_4(horizontalArrangement.mo694getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
-            int m7509getMinHeightimpl2 = Constraints.m7509getMinHeightimpl(j);
-            int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
-            if (i7 < m7509getMinHeightimpl2) {
-                i7 = m7509getMinHeightimpl2;
+            int i7 = i2 + (measureScope.mo428roundToPx0680j_4(horizontalArrangement.mo748getSpacingD9Ej5fM()) * (mutableVector.getSize() - 1));
+            int m8114getMinHeightimpl2 = Constraints.m8114getMinHeightimpl(j);
+            int m8112getMaxHeightimpl = Constraints.m8112getMaxHeightimpl(j);
+            if (i7 < m8114getMinHeightimpl2) {
+                i7 = m8114getMinHeightimpl2;
             }
-            int i8 = i7 > m7507getMaxHeightimpl ? m7507getMaxHeightimpl : i7;
+            int i8 = i7 > m8112getMaxHeightimpl ? m8112getMaxHeightimpl : i7;
             horizontalArrangement.arrange(measureScope, i8, iArr, measureScope.getLayoutDirection(), iArr2);
             i3 = i8;
         }
-        int m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
-        int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
-        if (i < m7510getMinWidthimpl) {
-            i = m7510getMinWidthimpl;
+        int m8115getMinWidthimpl = Constraints.m8115getMinWidthimpl(j);
+        int m8113getMaxWidthimpl = Constraints.m8113getMaxWidthimpl(j);
+        if (i < m8115getMinWidthimpl) {
+            i = m8115getMinWidthimpl;
         }
-        if (i <= m7508getMaxWidthimpl) {
-            m7508getMaxWidthimpl = i;
+        if (i <= m8113getMaxWidthimpl) {
+            m8113getMaxWidthimpl = i;
         }
         if (isHorizontal) {
-            i5 = m7508getMaxWidthimpl;
+            i5 = m8113getMaxWidthimpl;
             i4 = i3;
         } else {
-            i4 = m7508getMaxWidthimpl;
+            i4 = m8113getMaxWidthimpl;
             i5 = i3;
         }
         return MeasureScope.layout$default(measureScope, i5, i4, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda3
@@ -1565,14 +1565,14 @@ public final class FlowLayoutKt {
         if (list.isEmpty()) {
             return IntIntPair.m24constructorimpl(0, 0);
         }
-        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m785constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
+        FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i4, flowLayoutOverflowState, OrientationIndependentConstraints.m1017constructorimpl(0, i, 0, Integer.MAX_VALUE), i5, i2, i3, null);
         IntrinsicMeasurable intrinsicMeasurable = (IntrinsicMeasurable) CollectionsKt.getOrNull(list, 0);
         int i6 = intrinsicMeasurable != null ? iArr2[0] : 0;
         int i7 = intrinsicMeasurable != null ? iArr[0] : 0;
         int i8 = 0;
-        if (flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m24constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
-            IntIntPair m743ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m743ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
-            return IntIntPair.m24constructorimpl(m743ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m29getSecondimpl(m743ellipsisSizeF35zmw$foundation_layout.m32unboximpl()) : 0, 0);
+        if (flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(list.size() > 1, 0, IntIntPair.m24constructorimpl(i, Integer.MAX_VALUE), intrinsicMeasurable == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(i7, i6)), 0, 0, 0, false, false).isLastItemInContainer()) {
+            IntIntPair m905ellipsisSizeF35zmw$foundation_layout = flowLayoutOverflowState.m905ellipsisSizeF35zmw$foundation_layout(intrinsicMeasurable != null, 0, 0);
+            return IntIntPair.m24constructorimpl(m905ellipsisSizeF35zmw$foundation_layout != null ? IntIntPair.m29getSecondimpl(m905ellipsisSizeF35zmw$foundation_layout.m32unboximpl()) : 0, 0);
         }
         int size = list.size();
         int i9 = i;
@@ -1595,17 +1595,17 @@ public final class FlowLayoutKt {
             int i20 = i13;
             int i21 = i17;
             int i22 = i18;
-            FlowLayoutBuildingBlocks.WrapInfo m735getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m24constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(i18, i17)), i20, i8, max, false, false);
-            if (m735getWrapInfoOpUlnko.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m897getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(i10 + 2 < list.size(), i19, IntIntPair.m24constructorimpl(i15, Integer.MAX_VALUE), intrinsicMeasurable2 == null ? null : IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(i18, i17)), i20, i8, max, false, false);
+            if (m897getWrapInfoOpUlnko.isLastItemInLine()) {
                 int i23 = i8 + max + i3;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m735getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m897getWrapInfoOpUlnko, intrinsicMeasurable2 != null, i20, i23, i15, i19);
                 int i24 = i22 - i2;
                 i13 = i20 + 1;
-                if (m735getWrapInfoOpUlnko.isLastItemInContainer()) {
+                if (m897getWrapInfoOpUlnko.isLastItemInContainer()) {
                     if (wrapEllipsisInfo != null) {
-                        long m736getEllipsisSizeOO21N7I = wrapEllipsisInfo.m736getEllipsisSizeOO21N7I();
+                        long m898getEllipsisSizeOO21N7I = wrapEllipsisInfo.m898getEllipsisSizeOO21N7I();
                         if (!wrapEllipsisInfo.getPlaceEllipsisOnLastContentLine()) {
-                            i23 += IntIntPair.m29getSecondimpl(m736getEllipsisSizeOO21N7I) + i3;
+                            i23 += IntIntPair.m29getSecondimpl(m898getEllipsisSizeOO21N7I) + i3;
                         }
                     }
                     i8 = i23;
@@ -1631,7 +1631,7 @@ public final class FlowLayoutKt {
     }
 
     /* renamed from: breakDownItems-di9J0FM  reason: not valid java name */
-    public static final MeasureResult m738breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
+    public static final MeasureResult m900breakDownItemsdi9J0FM(MeasureScope measureScope, FlowLineMeasurePolicy flowLineMeasurePolicy, Iterator<? extends Measurable> it, float f, float f2, long j, int i, int i2, FlowLayoutOverflowState flowLayoutOverflowState) {
         int i3;
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo;
         MutableIntObjectMap mutableIntObjectMap;
@@ -1661,19 +1661,19 @@ public final class FlowLayoutKt {
         MeasureScope measureScope3 = measureScope;
         Iterator<? extends Measurable> it2 = it;
         MutableVector mutableVector = new MutableVector(new MeasureResult[16], 0);
-        int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
-        int m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
-        int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+        int m8113getMaxWidthimpl = Constraints.m8113getMaxWidthimpl(j);
+        int m8115getMinWidthimpl = Constraints.m8115getMinWidthimpl(j);
+        int m8112getMaxHeightimpl = Constraints.m8112getMaxHeightimpl(j);
         MutableIntObjectMap mutableIntObjectMapOf = IntObjectMapKt.mutableIntObjectMapOf();
         ArrayList arrayList = new ArrayList();
-        int ceil = (int) Math.ceil(measureScope3.mo405toPx0680j_4(f));
-        int ceil2 = (int) Math.ceil(measureScope3.mo405toPx0680j_4(f2));
-        long m785constructorimpl = OrientationIndependentConstraints.m785constructorimpl(0, m7508getMaxWidthimpl, 0, m7507getMaxHeightimpl);
-        long m800toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m800toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m789copyyUG9Ft0$default(m785constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
+        int ceil = (int) Math.ceil(measureScope3.mo434toPx0680j_4(f));
+        int ceil2 = (int) Math.ceil(measureScope3.mo434toPx0680j_4(f2));
+        long m1017constructorimpl = OrientationIndependentConstraints.m1017constructorimpl(0, m8113getMaxWidthimpl, 0, m8112getMaxHeightimpl);
+        long m1032toBoxConstraintsOenEA2s = OrientationIndependentConstraints.m1032toBoxConstraintsOenEA2s(OrientationIndependentConstraints.m1021copyyUG9Ft0$default(m1017constructorimpl, 0, 0, 0, 0, 14, null), flowLineMeasurePolicy.isHorizontal() ? LayoutOrientation.Horizontal : LayoutOrientation.Vertical);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo402toDpu2uoSUM(m7508getMaxWidthimpl), measureScope3.mo402toDpu2uoSUM(m7507getMaxHeightimpl), null) : null;
+        FlowLineInfo flowLineInfo = it2 instanceof ContextualFlowItemIterator ? new FlowLineInfo(0, 0, measureScope3.mo431toDpu2uoSUM(m8113getMaxWidthimpl), measureScope3.mo431toDpu2uoSUM(m8112getMaxHeightimpl), null) : null;
         Measurable safeNext = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
-        IntIntPair m21boximpl2 = safeNext != null ? IntIntPair.m21boximpl(m739measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m800toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
+        IntIntPair m21boximpl2 = safeNext != null ? IntIntPair.m21boximpl(m901measureAndCacherqJ1uqs(safeNext, flowLineMeasurePolicy, m1032toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit breakDownItems_di9J0FM$lambda$0$0;
@@ -1689,19 +1689,19 @@ public final class FlowLayoutKt {
         MutableIntList mutableIntList5 = new MutableIntList(0, 1, null);
         MutableIntSet mutableIntSetOf = IntSetKt.mutableIntSetOf();
         FlowLayoutBuildingBlocks flowLayoutBuildingBlocks = new FlowLayoutBuildingBlocks(i, flowLayoutOverflowState, j, i2, ceil, ceil2, null);
-        FlowLayoutBuildingBlocks.WrapInfo m735getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m24constructorimpl(m7508getMaxWidthimpl, m7507getMaxHeightimpl), m21boximpl2, 0, 0, 0, false, false);
-        if (m735getWrapInfoOpUlnko.isLastItemInContainer()) {
-            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m735getWrapInfoOpUlnko, m21boximpl2 != null, -1, 0, m7508getMaxWidthimpl, 0);
-            i3 = m7508getMaxWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo m897getWrapInfoOpUlnko = flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(it2.hasNext(), 0, IntIntPair.m24constructorimpl(m8113getMaxWidthimpl, m8112getMaxHeightimpl), m21boximpl2, 0, 0, 0, false, false);
+        if (m897getWrapInfoOpUlnko.isLastItemInContainer()) {
+            wrapEllipsisInfo = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m897getWrapInfoOpUlnko, m21boximpl2 != null, -1, 0, m8113getMaxWidthimpl, 0);
+            i3 = m8113getMaxWidthimpl;
         } else {
-            i3 = m7508getMaxWidthimpl;
+            i3 = m8113getMaxWidthimpl;
             wrapEllipsisInfo = null;
         }
         FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo3 = wrapEllipsisInfo;
         MutableIntList mutableIntList6 = mutableIntList4;
         int i12 = i3;
-        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m735getWrapInfoOpUlnko;
-        int i13 = m7510getMinWidthimpl;
+        FlowLayoutBuildingBlocks.WrapInfo wrapInfo = m897getWrapInfoOpUlnko;
+        int i13 = m8115getMinWidthimpl;
         int i14 = 0;
         int i15 = 0;
         int i16 = 0;
@@ -1709,7 +1709,7 @@ public final class FlowLayoutKt {
         int i17 = 0;
         int i18 = 0;
         MutableIntSet mutableIntSet = mutableIntSetOf;
-        int i19 = m7507getMaxHeightimpl;
+        int i19 = m8112getMaxHeightimpl;
         Measurable measurable2 = measurable;
         int i20 = 0;
         while (!wrapInfo.isLastItemInContainer() && measurable2 != null) {
@@ -1750,7 +1750,7 @@ public final class FlowLayoutKt {
                     z = z3;
                     i10 = i21;
                 }
-                float f3 = measureScope3.mo402toDpu2uoSUM(i10);
+                float f3 = measureScope3.mo431toDpu2uoSUM(i10);
                 if (z) {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i19;
@@ -1759,7 +1759,7 @@ public final class FlowLayoutKt {
                     mutableIntObjectMap2 = mutableIntObjectMapOf;
                     i11 = i29 < 0 ? 0 : i29;
                 }
-                flowLineInfo.m751update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo402toDpu2uoSUM(i11));
+                flowLineInfo.m913update4j6BHR0$foundation_layout(i9, i27, f3, measureScope3.mo431toDpu2uoSUM(i11));
                 Unit unit = Unit.INSTANCE;
             } else {
                 i6 = i26;
@@ -1767,7 +1767,7 @@ public final class FlowLayoutKt {
             }
             measurable2 = !it2.hasNext() ? null : safeNext(it2, flowLineInfo);
             objectRef.element = null;
-            IntIntPair m21boximpl3 = measurable2 != null ? IntIntPair.m21boximpl(m739measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m800toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda5
+            IntIntPair m21boximpl3 = measurable2 != null ? IntIntPair.m21boximpl(m901measureAndCacherqJ1uqs(measurable2, flowLineMeasurePolicy, m1032toBoxConstraintsOenEA2s, new Function1() { // from class: androidx.compose.foundation.layout.FlowLayoutKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit breakDownItems_di9J0FM$lambda$2$0;
@@ -1788,18 +1788,18 @@ public final class FlowLayoutKt {
                 Intrinsics.checkNotNull(valueOf2);
                 m21boximpl = IntIntPair.m21boximpl(IntIntPair.m24constructorimpl(intValue2, valueOf2.intValue()));
             }
-            FlowLayoutBuildingBlocks.WrapInfo m735getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m735getWrapInfoOpUlnko(hasNext, i6, m24constructorimpl, m21boximpl, i30, i18, max, false, false);
-            if (m735getWrapInfoOpUlnko2.isLastItemInLine()) {
+            FlowLayoutBuildingBlocks.WrapInfo m897getWrapInfoOpUlnko2 = flowLayoutBuildingBlocks.m897getWrapInfoOpUlnko(hasNext, i6, m24constructorimpl, m21boximpl, i30, i18, max, false, false);
+            if (m897getWrapInfoOpUlnko2.isLastItemInLine()) {
                 int min = Math.min(Math.max(i25, i22), i21);
                 int i31 = i18 + max;
-                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m735getWrapInfoOpUlnko2, m21boximpl3 != null, i30, i31, i23, i6);
+                FlowLayoutBuildingBlocks.WrapEllipsisInfo wrapEllipsisInfo4 = flowLayoutBuildingBlocks.getWrapEllipsisInfo(m897getWrapInfoOpUlnko2, m21boximpl3 != null, i30, i31, i23, i6);
                 mutableIntList3 = mutableIntList7;
                 mutableIntList3.add(max);
                 MutableIntSet mutableIntSet2 = mutableIntSet;
                 if (z2) {
                     mutableIntSet2.plusAssign(i30);
                 }
-                int i32 = (m7507getMaxHeightimpl - i31) - ceil2;
+                int i32 = (m8112getMaxHeightimpl - i31) - ceil2;
                 mutableIntSet = mutableIntSet2;
                 mutableIntList2 = mutableIntList6;
                 mutableIntList2.add(i24);
@@ -1831,7 +1831,7 @@ public final class FlowLayoutKt {
             i13 = i8;
             i14 = i24;
             mutableIntObjectMapOf = mutableIntObjectMap2;
-            wrapInfo = m735getWrapInfoOpUlnko2;
+            wrapInfo = m897getWrapInfoOpUlnko2;
             it2 = it;
             mutableIntList5 = mutableIntList3;
             i16 = i22;
@@ -1848,11 +1848,11 @@ public final class FlowLayoutKt {
             mutableIntObjectMap.set(arrayList.size() - 1, wrapEllipsisInfo3.getPlaceable());
             int i33 = mutableIntList9._size - 1;
             if (wrapEllipsisInfo3.getPlaceEllipsisOnLastContentLine()) {
-                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m29getSecondimpl(wrapEllipsisInfo3.m736getEllipsisSizeOO21N7I())));
+                mutableIntList8.set(i33, Math.max(mutableIntList8.get(i33), IntIntPair.m29getSecondimpl(wrapEllipsisInfo3.m898getEllipsisSizeOO21N7I())));
                 mutableIntList9.set(mutableIntList._size - 1, mutableIntList9.last() + 1);
                 Unit unit2 = Unit.INSTANCE;
             } else {
-                mutableIntList8.add(IntIntPair.m29getSecondimpl(wrapEllipsisInfo3.m736getEllipsisSizeOO21N7I()));
+                mutableIntList8.add(IntIntPair.m29getSecondimpl(wrapEllipsisInfo3.m898getEllipsisSizeOO21N7I()));
                 Boolean.valueOf(mutableIntList9.add(mutableIntList9.last() + 1));
             }
         } else {
@@ -1875,14 +1875,14 @@ public final class FlowLayoutKt {
             int i39 = iArr5[i37];
             int i40 = mutableIntList8.get(i37);
             if (!mutableIntSet3.contains(i37)) {
-                i40 = Constraints.m7507getMaxHeightimpl(m785constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m7507getMaxHeightimpl(m785constructorimpl) - i38;
+                i40 = Constraints.m8112getMaxHeightimpl(m1017constructorimpl) == Integer.MAX_VALUE ? Integer.MAX_VALUE : Constraints.m8112getMaxHeightimpl(m1017constructorimpl) - i38;
             }
             int i41 = i35;
             MutableIntSet mutableIntSet4 = mutableIntSet3;
             int[] iArr6 = iArr3;
             Placeable[] placeableArr2 = placeableArr;
             MutableIntList mutableIntList11 = mutableIntList8;
-            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m7509getMinHeightimpl(m785constructorimpl), Constraints.m7508getMaxWidthimpl(m785constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
+            MeasureResult measure = RowColumnMeasurePolicyKt.measure(flowLineMeasurePolicy, i13, Constraints.m8114getMinHeightimpl(m1017constructorimpl), Constraints.m8113getMaxWidthimpl(m1017constructorimpl), i40, ceil, measureScope3, arrayList, placeableArr2, i36, i39, iArr6, i37);
             if (flowLineMeasurePolicy.isHorizontal()) {
                 height = measure.getWidth();
                 width = measure.getHeight();
@@ -1921,7 +1921,7 @@ public final class FlowLayoutKt {
             iArr2 = iArr4;
             j2 = j;
         }
-        return m740placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
+        return m902placeHelperBmaY500(measureScope2, j2, i4, i5, iArr2, mutableVector, flowLineMeasurePolicy2, iArr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

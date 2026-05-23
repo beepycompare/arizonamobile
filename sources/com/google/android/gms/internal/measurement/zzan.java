@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzan extends zzai implements zzak {
     protected final List zza;

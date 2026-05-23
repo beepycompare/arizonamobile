@@ -12,7 +12,7 @@ import android.os.PersistableBundle;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class PlatformScheduler implements Scheduler {
     private static final String KEY_REQUIREMENTS = "requirements";
     private static final String KEY_SERVICE_ACTION = "service_action";
@@ -75,7 +75,7 @@ public final class PlatformScheduler implements Scheduler {
         return builder.build();
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class PlatformSchedulerService extends JobService {
         @Override // android.app.job.JobService
         public boolean onStopJob(JobParameters jobParameters) {

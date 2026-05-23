@@ -1,9 +1,9 @@
 package com.google.android.gms.common.data;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public interface DataBufferObserver {
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface Observable {
         void addObserver(DataBufferObserver dataBufferObserver);

@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: ContextAware.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class ContextAwareKt$withContextAvailable$2$1 implements Function1<Throwable, Unit> {
     final /* synthetic */ ContextAwareKt$withContextAvailable$2$listener$1 $listener;

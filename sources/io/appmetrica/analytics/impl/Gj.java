@@ -1,18 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import android.text.TextUtils;
+import io.appmetrica.analytics.BuildConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* loaded from: classes5.dex */
-public final class Gj implements Qa {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f604a;
-    public final /* synthetic */ byte[] b;
-
-    public Gj(String str, byte[] bArr) {
-        this.f604a = str;
-        this.b = bArr;
+public abstract class Gj {
+    public static void a(String str, Object... objArr) {
+        ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format(str, objArr), new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.setSessionExtra(this.f604a, this.b);
+    public static String a() {
+        StringBuilder sb = new StringBuilder(BuildConfig.SDK_BUILD_FLAVOR);
+        if (!TextUtils.isEmpty("binary")) {
+            sb.append("_binary");
+        }
+        if (!TextUtils.isEmpty("")) {
+            sb.append("_");
+        }
+        return sb.toString();
     }
 }

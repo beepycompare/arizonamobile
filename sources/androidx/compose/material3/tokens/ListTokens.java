@@ -8,11 +8,11 @@ import kotlin.Metadata;
 public final class ListTokens {
     public static final int $stable = 0;
     public static final ListTokens INSTANCE = new ListTokens();
-    private static final float DividerLeadingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float DividerTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float DividerLeadingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float DividerTrailingSpace = Dp.m8160constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens ListItemContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ListItemContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens ListItemDisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float ListItemDisabledLabelTextOpacity = 0.38f;
@@ -20,7 +20,7 @@ public final class ListTokens {
     private static final float ListItemDisabledLeadingIconOpacity = 0.38f;
     private static final ColorSchemeKeyTokens ListItemDisabledTrailingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float ListItemDisabledTrailingIconOpacity = 0.38f;
-    private static final float ListItemDraggedContainerElevation = ElevationTokens.INSTANCE.m3363getLevel4D9Ej5fM();
+    private static final float ListItemDraggedContainerElevation = ElevationTokens.INSTANCE.m3808getLevel4D9Ej5fM();
     private static final ColorSchemeKeyTokens ListItemDraggedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ListItemDraggedLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemDraggedTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -32,49 +32,49 @@ public final class ListTokens {
     private static final ColorSchemeKeyTokens ListItemHoverTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens ListItemLabelTextFont = TypographyKeyTokens.BodyLarge;
-    private static final float ListItemLargeLeadingVideoHeight = Dp.m7555constructorimpl(69.0f);
+    private static final float ListItemLargeLeadingVideoHeight = Dp.m8160constructorimpl(69.0f);
     private static final ColorSchemeKeyTokens ListItemLeadingAvatarColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens ListItemLeadingAvatarLabelColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final TypographyKeyTokens ListItemLeadingAvatarLabelFont = TypographyKeyTokens.TitleMedium;
     private static final ShapeKeyTokens ListItemLeadingAvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float ListItemLeadingAvatarSize = Dp.m7555constructorimpl(40.0f);
+    private static final float ListItemLeadingAvatarSize = Dp.m8160constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens ListItemLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float ListItemLeadingIconSize = Dp.m7555constructorimpl(24.0f);
-    private static final float ListItemLeadingImageHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float ListItemLeadingIconSize = Dp.m8160constructorimpl(24.0f);
+    private static final float ListItemLeadingImageHeight = Dp.m8160constructorimpl(56.0f);
     private static final ShapeKeyTokens ListItemLeadingImageShape = ShapeKeyTokens.CornerNone;
-    private static final float ListItemLeadingImageWidth = Dp.m7555constructorimpl(56.0f);
-    private static final float ListItemLeadingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ListItemLeadingImageWidth = Dp.m8160constructorimpl(56.0f);
+    private static final float ListItemLeadingSpace = Dp.m8160constructorimpl(16.0f);
     private static final ShapeKeyTokens ListItemLeadingVideoShape = ShapeKeyTokens.CornerNone;
-    private static final float ListItemLeadingVideoWidth = Dp.m7555constructorimpl(100.0f);
-    private static final float ListItemOneLineContainerHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float ListItemLeadingVideoWidth = Dp.m8160constructorimpl(100.0f);
+    private static final float ListItemOneLineContainerHeight = Dp.m8160constructorimpl(56.0f);
     private static final ColorSchemeKeyTokens ListItemOverlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemOverlineFont = TypographyKeyTokens.LabelSmall;
     private static final ColorSchemeKeyTokens ListItemPressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ListItemPressedLeadingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemPressedTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ListItemSelectedTrailingIconColor = ColorSchemeKeyTokens.Primary;
-    private static final float ListItemSmallLeadingVideoHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float ListItemSmallLeadingVideoHeight = Dp.m8160constructorimpl(56.0f);
     private static final ColorSchemeKeyTokens ListItemSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemSupportingTextFont = TypographyKeyTokens.BodyMedium;
-    private static final float ListItemThreeLineContainerHeight = Dp.m7555constructorimpl(88.0f);
+    private static final float ListItemThreeLineContainerHeight = Dp.m8160constructorimpl(88.0f);
     private static final ColorSchemeKeyTokens ListItemTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float ListItemTrailingIconSize = Dp.m7555constructorimpl(24.0f);
-    private static final float ListItemTrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ListItemTrailingIconSize = Dp.m8160constructorimpl(24.0f);
+    private static final float ListItemTrailingSpace = Dp.m8160constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens ListItemTrailingSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens ListItemTrailingSupportingTextFont = TypographyKeyTokens.LabelSmall;
-    private static final float ListItemTwoLineContainerHeight = Dp.m7555constructorimpl(72.0f);
+    private static final float ListItemTwoLineContainerHeight = Dp.m8160constructorimpl(72.0f);
     private static final ColorSchemeKeyTokens ListItemUnselectedTrailingIconColor = ColorSchemeKeyTokens.OnSurface;
 
     private ListTokens() {
     }
 
     /* renamed from: getDividerLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3503getDividerLeadingSpaceD9Ej5fM() {
+    public final float m3948getDividerLeadingSpaceD9Ej5fM() {
         return DividerLeadingSpace;
     }
 
     /* renamed from: getDividerTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3504getDividerTrailingSpaceD9Ej5fM() {
+    public final float m3949getDividerTrailingSpaceD9Ej5fM() {
         return DividerTrailingSpace;
     }
 
@@ -87,7 +87,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3505getListItemContainerElevationD9Ej5fM() {
+    public final float m3950getListItemContainerElevationD9Ej5fM() {
         return ListItemContainerElevation;
     }
 
@@ -120,7 +120,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3506getListItemDraggedContainerElevationD9Ej5fM() {
+    public final float m3951getListItemDraggedContainerElevationD9Ej5fM() {
         return ListItemDraggedContainerElevation;
     }
 
@@ -169,7 +169,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemLargeLeadingVideoHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3507getListItemLargeLeadingVideoHeightD9Ej5fM() {
+    public final float m3952getListItemLargeLeadingVideoHeightD9Ej5fM() {
         return ListItemLargeLeadingVideoHeight;
     }
 
@@ -190,7 +190,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemLeadingAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3508getListItemLeadingAvatarSizeD9Ej5fM() {
+    public final float m3953getListItemLeadingAvatarSizeD9Ej5fM() {
         return ListItemLeadingAvatarSize;
     }
 
@@ -199,12 +199,12 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3509getListItemLeadingIconSizeD9Ej5fM() {
+    public final float m3954getListItemLeadingIconSizeD9Ej5fM() {
         return ListItemLeadingIconSize;
     }
 
     /* renamed from: getListItemLeadingImageHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3510getListItemLeadingImageHeightD9Ej5fM() {
+    public final float m3955getListItemLeadingImageHeightD9Ej5fM() {
         return ListItemLeadingImageHeight;
     }
 
@@ -213,12 +213,12 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemLeadingImageWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3511getListItemLeadingImageWidthD9Ej5fM() {
+    public final float m3956getListItemLeadingImageWidthD9Ej5fM() {
         return ListItemLeadingImageWidth;
     }
 
     /* renamed from: getListItemLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3512getListItemLeadingSpaceD9Ej5fM() {
+    public final float m3957getListItemLeadingSpaceD9Ej5fM() {
         return ListItemLeadingSpace;
     }
 
@@ -227,12 +227,12 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemLeadingVideoWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3513getListItemLeadingVideoWidthD9Ej5fM() {
+    public final float m3958getListItemLeadingVideoWidthD9Ej5fM() {
         return ListItemLeadingVideoWidth;
     }
 
     /* renamed from: getListItemOneLineContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3514getListItemOneLineContainerHeightD9Ej5fM() {
+    public final float m3959getListItemOneLineContainerHeightD9Ej5fM() {
         return ListItemOneLineContainerHeight;
     }
 
@@ -261,7 +261,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemSmallLeadingVideoHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3515getListItemSmallLeadingVideoHeightD9Ej5fM() {
+    public final float m3960getListItemSmallLeadingVideoHeightD9Ej5fM() {
         return ListItemSmallLeadingVideoHeight;
     }
 
@@ -274,7 +274,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemThreeLineContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3516getListItemThreeLineContainerHeightD9Ej5fM() {
+    public final float m3961getListItemThreeLineContainerHeightD9Ej5fM() {
         return ListItemThreeLineContainerHeight;
     }
 
@@ -283,12 +283,12 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3517getListItemTrailingIconSizeD9Ej5fM() {
+    public final float m3962getListItemTrailingIconSizeD9Ej5fM() {
         return ListItemTrailingIconSize;
     }
 
     /* renamed from: getListItemTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3518getListItemTrailingSpaceD9Ej5fM() {
+    public final float m3963getListItemTrailingSpaceD9Ej5fM() {
         return ListItemTrailingSpace;
     }
 
@@ -301,7 +301,7 @@ public final class ListTokens {
     }
 
     /* renamed from: getListItemTwoLineContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3519getListItemTwoLineContainerHeightD9Ej5fM() {
+    public final float m3964getListItemTwoLineContainerHeightD9Ej5fM() {
         return ListItemTwoLineContainerHeight;
     }
 

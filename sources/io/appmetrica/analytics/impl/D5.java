@@ -1,26 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import android.app.Activity;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class D5 implements ActivityLifecycleListener {
+public final class D5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ E5 f548a;
+    public final PublicLogger f506a;
 
-    public D5(E5 e5) {
-        this.f548a = e5;
+    public D5(String str) {
+        this.f506a = LoggerStorage.getOrCreatePublicLogger(str);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
-    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = C5.f535a[activityEvent.ordinal()];
-        if (i == 1) {
-            this.f548a.b.resumeSession();
-        } else if (i != 2) {
+    public final int a(int i) {
+        if (i < 100) {
+            this.f506a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be greater than or equal to 100, but was: " + i + ". Default value (100) will be used", new Object[0]);
+            return 100;
+        } else if (i > 10000) {
+            this.f506a.warning("Value passed as maxReportsInDatabaseCount is invalid. Should be less than or equal to 10000, but was: " + i + ". Default value (10000) will be used", new Object[0]);
+            return 10000;
         } else {
-            this.f548a.b.pauseSession();
+            return i;
         }
     }
 }

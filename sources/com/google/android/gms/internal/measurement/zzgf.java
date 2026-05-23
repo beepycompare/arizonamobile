@@ -1,40 +1,41 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgf extends zzmf implements zznn {
-    private static final zzgf zzi;
+public final class zzgf extends zzadu implements zzafd {
+    private static final zzgf zzj;
+    private static volatile zzafj zzk;
     private int zzb;
-    private boolean zzg;
-    private zzmo zzd = zzcv();
-    private zzmo zze = zzcv();
-    private zzmo zzf = zzcv();
-    private zzmo zzh = zzcv();
+    private boolean zzh;
+    private zzaef zze = zzcy();
+    private zzaef zzf = zzcy();
+    private zzaef zzg = zzcy();
+    private zzaef zzi = zzcy();
 
     static {
         zzgf zzgfVar = new zzgf();
-        zzi = zzgfVar;
-        zzmf.zzcp(zzgf.class, zzgfVar);
+        zzj = zzgfVar;
+        zzadu.zzcs(zzgf.class, zzgfVar);
     }
 
     private zzgf() {
     }
 
-    public static zzgf zzg() {
-        return zzi;
+    public static zzgf zzh() {
+        return zzj;
     }
 
     public final List zza() {
-        return this.zzd;
-    }
-
-    public final List zzb() {
         return this.zze;
     }
 
-    public final List zzc() {
+    public final List zzb() {
         return this.zzf;
+    }
+
+    public final List zzc() {
+        return this.zzg;
     }
 
     public final boolean zzd() {
@@ -42,25 +43,40 @@ public final class zzgf extends zzmf implements zznn {
     }
 
     public final boolean zze() {
-        return this.zzg;
-    }
-
-    public final List zzf() {
         return this.zzh;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    public final List zzf() {
+        return this.zzi;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzi, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0004\u0000\u0001\u001b\u0002\u001b\u0003\u001b\u0004ဇ\u0000\u0005\u001b", new Object[]{"zzb", "zzd", zzfu.class, "zze", zzfw.class, "zzf", zzgc.class, "zzg", "zzh", zzfu.class});
+                return zzct(zzj, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0004\u0000\u0001\u001b\u0002\u001b\u0003\u001b\u0004ဇ\u0000\u0005\u001b", new Object[]{"zzb", "zze", zzfu.class, "zzf", zzfw.class, "zzg", zzgc.class, "zzh", "zzi", zzfu.class});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzi;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzk;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzgf.class) {
+                                    zzafjVar = zzk;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzj);
+                                        zzk = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzj;
                 }
                 return new zzfs(null);
             } else {

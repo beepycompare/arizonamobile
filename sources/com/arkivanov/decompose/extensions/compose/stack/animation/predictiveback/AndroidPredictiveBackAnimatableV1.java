@@ -13,10 +13,7 @@ import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.CompositingStrategy;
 import androidx.compose.ui.graphics.GraphicsLayerModifierKt;
-import androidx.compose.ui.graphics.GraphicsLayerScopeKt;
-import androidx.compose.ui.graphics.RectangleShapeKt;
 import androidx.compose.ui.graphics.Shape;
-import androidx.compose.ui.graphics.TransformOrigin;
 import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.layout.OnPlacedModifierKt;
 import androidx.compose.ui.unit.IntSize;
@@ -467,7 +464,6 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
 
             /* JADX INFO: Access modifiers changed from: private */
             public final Modifier exitModifier(Modifier modifier, Function2<? super Float, ? super BackEvent.SwipeEdge, ? extends Shape> function2, Composer composer, int i) {
-                Modifier m4934graphicsLayerAp8cVGQ;
                 composer.startReplaceGroup(1234344324);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1234344324, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.exitModifier (AndroidPredictiveBackAnimatableV1.kt:65)");
@@ -475,7 +471,7 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                 composer.startReplaceGroup(-733879619);
                 Object rememberedValue = composer.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7718boximpl(IntSize.Companion.m7731getZeroYbymL2g()), null, 2, null);
+                    rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8323boximpl(IntSize.Companion.m8336getZeroYbymL2g()), null, 2, null);
                     composer.updateRememberedValue(rememberedValue);
                 }
                 final MutableState mutableState = (MutableState) rememberedValue;
@@ -493,32 +489,31 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                     composer.updateRememberedValue(rememberedValue2);
                 }
                 composer.endReplaceGroup();
-                m4934graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m4934graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : exitProgress, (r41 & 2) != 0 ? 1.0f : exitProgress, (r41 & 4) == 0 ? 1.0f - getExitProgress() : 1.0f, (r41 & 8) != 0 ? 0.0f : ((int) (exitModifier$lambda$4(mutableState) >> 32)) * 0.5f * getExitProgress(), (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5185getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : function2.invoke(Float.valueOf(getExitProgress()), getEdge()), (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m4861getAutoNrFUSI() : CompositingStrategy.Companion.m4863getOffscreenNrFUSI());
+                Modifier m5513graphicsLayer_6ThJ44$default = GraphicsLayerModifierKt.m5513graphicsLayer_6ThJ44$default(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), exitProgress, exitProgress, 1.0f - getExitProgress(), ((int) (exitModifier$lambda$4(mutableState) >> 32)) * 0.5f * getExitProgress(), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, function2.invoke(Float.valueOf(getExitProgress()), getEdge()), true, null, 0L, 0L, CompositingStrategy.Companion.m5439getOffscreenNrFUSI(), 0, null, 452592, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m4934graphicsLayerAp8cVGQ;
+                return m5513graphicsLayer_6ThJ44$default;
             }
 
             private static final long exitModifier$lambda$4(MutableState<IntSize> mutableState) {
-                return mutableState.getValue().m7730unboximpl();
+                return mutableState.getValue().m8335unboximpl();
             }
 
             private static final void exitModifier$lambda$5(MutableState<IntSize> mutableState, long j) {
-                mutableState.setValue(IntSize.m7718boximpl(j));
+                mutableState.setValue(IntSize.m8323boximpl(j));
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             public static final Unit exitModifier$lambda$7$lambda$6(MutableState mutableState, LayoutCoordinates it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                exitModifier$lambda$5(mutableState, it.mo6224getSizeYbymL2g());
+                exitModifier$lambda$5(mutableState, it.mo6826getSizeYbymL2g());
                 return Unit.INSTANCE;
             }
 
             /* JADX INFO: Access modifiers changed from: private */
             public final Modifier enterModifier(Modifier modifier, Function2<? super Float, ? super BackEvent.SwipeEdge, ? extends Shape> function2, Composer composer, int i) {
-                Modifier m4934graphicsLayerAp8cVGQ;
                 composer.startReplaceGroup(738318140);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(738318140, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1.enterModifier (AndroidPredictiveBackAnimatableV1.kt:83)");
@@ -527,7 +522,7 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                 composer.startReplaceGroup(-1308646823);
                 Object rememberedValue = composer.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7718boximpl(IntSize.Companion.m7731getZeroYbymL2g()), null, 2, null);
+                    rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8323boximpl(IntSize.Companion.m8336getZeroYbymL2g()), null, 2, null);
                     composer.updateRememberedValue(rememberedValue);
                 }
                 final MutableState mutableState = (MutableState) rememberedValue;
@@ -545,26 +540,26 @@ public final class AndroidPredictiveBackAnimatableV1 implements PredictiveBackAn
                     composer.updateRememberedValue(rememberedValue2);
                 }
                 composer.endReplaceGroup();
-                m4934graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m4934graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : lerp2, (r41 & 2) != 0 ? 1.0f : lerp2, (r41 & 4) == 0 ? lerp : 1.0f, (r41 & 8) != 0 ? 0.0f : MathHelpersKt.lerp((-((int) (enterModifier$lambda$9(mutableState) >> 32))) * 0.15f, 0.0f, lerp), (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5185getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : function2.invoke(Float.valueOf(MathHelpersKt.lerp(getEnterProgress(), 0.0f, getFinishProgress())), getEdge()), (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m4861getAutoNrFUSI() : CompositingStrategy.Companion.m4863getOffscreenNrFUSI());
+                Modifier m5513graphicsLayer_6ThJ44$default = GraphicsLayerModifierKt.m5513graphicsLayer_6ThJ44$default(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), lerp2, lerp2, lerp, MathHelpersKt.lerp((-((int) (enterModifier$lambda$9(mutableState) >> 32))) * 0.15f, 0.0f, lerp), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, function2.invoke(Float.valueOf(MathHelpersKt.lerp(getEnterProgress(), 0.0f, getFinishProgress())), getEdge()), true, null, 0L, 0L, CompositingStrategy.Companion.m5439getOffscreenNrFUSI(), 0, null, 452592, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m4934graphicsLayerAp8cVGQ;
+                return m5513graphicsLayer_6ThJ44$default;
             }
 
             private static final void enterModifier$lambda$10(MutableState<IntSize> mutableState, long j) {
-                mutableState.setValue(IntSize.m7718boximpl(j));
+                mutableState.setValue(IntSize.m8323boximpl(j));
             }
 
             private static final long enterModifier$lambda$9(MutableState<IntSize> mutableState) {
-                return mutableState.getValue().m7730unboximpl();
+                return mutableState.getValue().m8335unboximpl();
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             public static final Unit enterModifier$lambda$12$lambda$11(MutableState mutableState, LayoutCoordinates it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                enterModifier$lambda$10(mutableState, it.mo6224getSizeYbymL2g());
+                enterModifier$lambda$10(mutableState, it.mo6826getSizeYbymL2g());
                 return Unit.INSTANCE;
             }
 

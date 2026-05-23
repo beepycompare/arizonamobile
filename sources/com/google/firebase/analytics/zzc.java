@@ -2,7 +2,7 @@ package com.google.firebase.analytics;
 
 import java.util.Objects;
 import java.util.concurrent.Callable;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzc implements Callable {
     final /* synthetic */ FirebaseAnalytics zza;

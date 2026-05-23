@@ -2,6 +2,7 @@ package androidx.media3.common.util;
 
 import android.content.Context;
 import android.opengl.GLES20;
+import android.os.Build;
 import androidx.media3.common.C;
 import androidx.media3.common.util.GlUtil;
 import com.google.common.base.Preconditions;
@@ -18,6 +19,10 @@ public final class GlProgram {
     private final int programId;
     private final Map<String, Uniform> uniformByName;
     private final Uniform[] uniforms;
+
+    public GlProgram(Context context, int i, int i2) throws IOException, GlUtil.GlException {
+        this(Util.loadRawResource(context, i), Util.loadRawResource(context, i2));
+    }
 
     public GlProgram(Context context, String str, String str2) throws IOException, GlUtil.GlException {
         this(Util.loadAsset(context, str), Util.loadAsset(context, str2));
@@ -91,6 +96,9 @@ public final class GlProgram {
     }
 
     public void delete() throws GlUtil.GlException {
+        if (Build.VERSION.SDK_INT == 28) {
+            return;
+        }
         GLES20.glDeleteProgram(this.programId);
         GlUtil.checkGlError();
     }

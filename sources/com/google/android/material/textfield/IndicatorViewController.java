@@ -11,7 +11,6 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -389,20 +388,10 @@ public final class IndicatorViewController {
                 this.helperTextView.setTypeface(typeface);
             }
             this.helperTextView.setVisibility(4);
-            this.helperTextView.setAccessibilityLiveRegion(1);
+            this.helperTextView.setImportantForAccessibility(2);
             setHelperTextAppearance(this.helperTextTextAppearance);
             setHelperTextViewTextColor(this.helperTextViewTextColor);
             addIndicator(this.helperTextView, 1);
-            this.helperTextView.setAccessibilityDelegate(new View.AccessibilityDelegate() { // from class: com.google.android.material.textfield.IndicatorViewController.2
-                @Override // android.view.View.AccessibilityDelegate
-                public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-                    super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                    EditText editText = IndicatorViewController.this.textInputView.getEditText();
-                    if (editText != null) {
-                        accessibilityNodeInfo.setLabeledBy(editText);
-                    }
-                }
-            });
         } else {
             hideHelperText();
             removeIndicator(this.helperTextView, 1);
@@ -413,8 +402,7 @@ public final class IndicatorViewController {
         this.helperTextEnabled = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public View getHelperTextView() {
+    View getHelperTextView() {
         return this.helperTextView;
     }
 
@@ -436,7 +424,8 @@ public final class IndicatorViewController {
         return isCaptionStateHelperText(this.captionDisplayed);
     }
 
-    boolean helperTextShouldBeShown() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean helperTextShouldBeShown() {
         return isCaptionStateHelperText(this.captionToShow);
     }
 

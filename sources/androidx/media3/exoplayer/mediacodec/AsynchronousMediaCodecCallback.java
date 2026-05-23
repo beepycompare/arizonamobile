@@ -4,13 +4,13 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import androidx.collection.CircularIntArray;
+import androidx.media3.common.util.CircularIntArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AsynchronousMediaCodecCallback extends MediaCodec.Callback {
     private final HandlerThread callbackThread;
     private MediaFormat currentFormat;

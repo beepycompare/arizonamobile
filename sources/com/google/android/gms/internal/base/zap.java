@@ -1,12 +1,15 @@
 package com.google.android.gms.internal.base;
 
-import android.os.Build;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.Feature;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zap {
-    public static final int zaa;
+    public static final Feature zaa;
+    public static final Feature[] zab;
 
     static {
-        zaa = Build.VERSION.SDK_INT >= 31 ? 33554432 : 0;
+        Feature feature = new Feature("moduleinstall", 7L);
+        zaa = feature;
+        zab = new Feature[]{feature};
     }
 }

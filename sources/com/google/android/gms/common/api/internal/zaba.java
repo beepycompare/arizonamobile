@@ -1,20 +1,25 @@
 package com.google.android.gms.common.api.internal;
 
+import android.os.Bundle;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Status;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.api.Api;
+import com.google.android.gms.common.api.internal.BaseImplementation;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zaba implements GoogleApiClient.OnConnectionFailedListener {
-    final /* synthetic */ StatusPendingResult zaa;
+public interface zaba {
+    void zaa();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zaba(zabe zabeVar, StatusPendingResult statusPendingResult) {
-        this.zaa = statusPendingResult;
-    }
+    BaseImplementation.ApiMethodImpl zab(BaseImplementation.ApiMethodImpl apiMethodImpl);
 
-    @Override // com.google.android.gms.common.api.internal.OnConnectionFailedListener
-    public final void onConnectionFailed(ConnectionResult connectionResult) {
-        this.zaa.setResult(new Status(8));
-    }
+    BaseImplementation.ApiMethodImpl zac(BaseImplementation.ApiMethodImpl apiMethodImpl);
+
+    boolean zad();
+
+    void zae();
+
+    void zaf(Bundle bundle);
+
+    void zag(ConnectionResult connectionResult, Api api, boolean z);
+
+    void zah(int i);
 }

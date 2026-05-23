@@ -86,6 +86,9 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* loaded from: classes3.dex */
     public interface Listener {
+        default void onEnded(long j) {
+        }
+
         default void onError(VideoFrameProcessingException videoFrameProcessingException) {
         }
 
@@ -104,10 +107,6 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void lambda$static$0(Runnable runnable) {
-    }
-
-    @Override // androidx.media3.common.VideoGraph.Listener
-    public void onEnded(long j) {
     }
 
     /* loaded from: classes3.dex */
@@ -336,6 +335,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     @Override // androidx.media3.common.VideoGraph.Listener
+    public void onEnded(long j) {
+        Iterator<Listener> it = this.listeners.iterator();
+        while (it.hasNext()) {
+            it.next().onEnded(j);
+        }
+    }
+
+    @Override // androidx.media3.common.VideoGraph.Listener
     public void onError(VideoFrameProcessingException videoFrameProcessingException) {
         Iterator<Listener> it = this.listeners.iterator();
         while (it.hasNext()) {
@@ -474,7 +481,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             ((HandlerWrapper) Preconditions.checkNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m8337x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m8946x92e2e5d9();
                 }
             });
         }
@@ -482,7 +489,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m8337x92e2e5d9() {
+    public /* synthetic */ void m8946x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
@@ -841,14 +848,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8338x167f068a(listener, videoFrameProcessingException);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8947x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m8338x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+        public /* synthetic */ void m8947x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
             listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Preconditions.checkNotNull(this.inputFormat)));
         }
 

@@ -1,40 +1,12 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.internal.Intrinsics;
+import io.appmetrica.analytics.AdType;
+import java.util.Map;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
 /* loaded from: classes5.dex */
-public final class G {
+public abstract class G {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f592a;
-    public final int b;
-    public final int c;
-
-    public G(int i, int i2, int i3) {
-        this.f592a = i;
-        this.b = i2;
-        this.c = i3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (Intrinsics.areEqual(G.class, obj != null ? obj.getClass() : null)) {
-            if (obj != null) {
-                G g = (G) obj;
-                return this.f592a == g.f592a && this.b == g.b && this.c == g.c;
-            }
-            throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.impl.id.AdvIdGetterController.CanTrackIdentifiers");
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int a2 = K7.a(this.b);
-        return K7.a(this.c) + ((a2 + (K7.a(this.f592a) * 31)) * 31);
-    }
-
-    public final String toString() {
-        return "CanTrackIdentifiers(canTrackGaid=" + H.a(this.f592a) + ", canTrackHoaid=" + H.a(this.b) + ", canTrackYandexAdvId=" + H.a(this.c) + ')';
-    }
+    public static final Map f553a = MapsKt.mapOf(TuplesKt.to(AdType.NATIVE, 1), TuplesKt.to(AdType.BANNER, 2), TuplesKt.to(AdType.REWARDED, 3), TuplesKt.to(AdType.INTERSTITIAL, 4), TuplesKt.to(AdType.MREC, 5), TuplesKt.to(AdType.APP_OPEN, 7), TuplesKt.to(AdType.OTHER, 6));
 }

@@ -1,18 +1,27 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
-public final class Kj implements Qa {
+public final class Kj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f667a;
-    public final /* synthetic */ String b;
+    public final String f629a;
+    public final Context b;
+    public final CounterConfigurationReporterType c;
+    public final Nj d;
 
-    public Kj(String str, String str2) {
-        this.f667a = str;
-        this.b = str2;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.putAppEnvironmentValue(this.f667a, this.b);
+    public Kj(String str, Context context, CounterConfigurationReporterType counterConfigurationReporterType, Nj nj) {
+        this.f629a = str;
+        this.b = context;
+        int i = Jj.f614a[counterConfigurationReporterType.ordinal()];
+        if (i == 1) {
+            this.c = CounterConfigurationReporterType.SELF_DIAGNOSTIC_MAIN;
+        } else if (i != 2) {
+            this.c = null;
+        } else {
+            this.c = CounterConfigurationReporterType.SELF_DIAGNOSTIC_MANUAL;
+        }
+        this.d = nj;
     }
 }

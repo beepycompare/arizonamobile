@@ -18,7 +18,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.common.C;
 import com.adjust.sdk.GooglePlayServicesClient;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
@@ -52,7 +51,9 @@ public class DeviceInfo {
     Map<String, String> imeiParameters;
     String initiatingPackageName;
     boolean isGooglePlayGamesForPC;
+    Boolean isSystemApp;
     Boolean isTrackingEnabled;
+    Boolean isUpdatedSystemApp;
     String language;
     String mcc;
     String mnc;
@@ -99,7 +100,9 @@ public class DeviceInfo {
         this.displayWidth = getDisplayWidth(displayMetrics);
         this.displayHeight = getDisplayHeight(displayMetrics);
         this.clientSdk = getClientSdk(adjustConfig.sdkPrefix);
-        this.fbAttributionId = getFacebookAttributionId(context);
+        if (Util.canReadFbId(adjustConfig)) {
+            this.fbAttributionId = getFacebookAttributionId(context);
+        }
         this.hardwareName = getHardwareName();
         this.abi = getABI();
         this.buildName = getBuildName();
@@ -113,6 +116,8 @@ public class DeviceInfo {
         this.storeIdFromSystem = StoreInfoUtil.getStoreIdFromSystem(context);
         this.initiatingPackageName = StoreInfoUtil.getInitiatingPackageName(context);
         this.originatingPackageName = StoreInfoUtil.getOriginatingPackageName(context);
+        this.isSystemApp = StoreInfoUtil.getIsSystemApp(context);
+        this.isUpdatedSystemApp = StoreInfoUtil.getIsUpdatedSystemApp(context);
     }
 
     private String getABI() {
@@ -203,7 +208,7 @@ public class DeviceInfo {
         Cursor query;
         try {
             if (Build.VERSION.SDK_INT >= 28) {
-                SigningInfo signingInfo = context.getPackageManager().getPackageInfo("com.facebook.katana", C.BUFFER_FLAG_FIRST_SAMPLE).signingInfo;
+                SigningInfo signingInfo = context.getPackageManager().getPackageInfo("com.facebook.katana", 134217728).signingInfo;
                 signatureArr = signingInfo != null ? signingInfo.getApkContentsSigners() : null;
             } else {
                 signatureArr = context.getPackageManager().getPackageInfo("com.facebook.katana", 64).signatures;

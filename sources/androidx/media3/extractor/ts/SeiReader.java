@@ -18,7 +18,7 @@ public final class SeiReader {
     private final ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.SeiReader$$ExternalSyntheticLambda0
         @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
         public final void consume(long j, ParsableByteArray parsableByteArray) {
-            SeiReader.this.m8360lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
+            SeiReader.this.m8969lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
         }
     });
 
@@ -30,7 +30,7 @@ public final class SeiReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-SeiReader  reason: not valid java name */
-    public /* synthetic */ void m8360lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8969lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.outputs);
     }
 

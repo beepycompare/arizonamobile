@@ -9,30 +9,30 @@ public final class TimePickerTokens {
     public static final int $stable = 0;
     public static final TimePickerTokens INSTANCE = new TimePickerTokens();
     private static final ColorSchemeKeyTokens ClockDialColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
-    private static final float ClockDialContainerSize = Dp.m7555constructorimpl(256.0f);
+    private static final float ClockDialContainerSize = Dp.m8160constructorimpl(256.0f);
     private static final TypographyKeyTokens ClockDialLabelTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens ClockDialSelectedLabelTextColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens ClockDialSelectorCenterContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens ClockDialSelectorCenterContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ClockDialSelectorCenterContainerSize = Dp.m7555constructorimpl(8.0f);
+    private static final float ClockDialSelectorCenterContainerSize = Dp.m8160constructorimpl(8.0f);
     private static final ColorSchemeKeyTokens ClockDialSelectorHandleContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens ClockDialSelectorHandleContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ClockDialSelectorHandleContainerSize = Dp.m7555constructorimpl(48.0f);
+    private static final float ClockDialSelectorHandleContainerSize = Dp.m8160constructorimpl(48.0f);
     private static final ColorSchemeKeyTokens ClockDialSelectorTrackContainerColor = ColorSchemeKeyTokens.Primary;
-    private static final float ClockDialSelectorTrackContainerWidth = Dp.m7555constructorimpl(2.0f);
+    private static final float ClockDialSelectorTrackContainerWidth = Dp.m8160constructorimpl(2.0f);
     private static final ShapeKeyTokens ClockDialShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens ClockDialUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3807getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.LabelMedium;
     private static final ShapeKeyTokens PeriodSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float PeriodSelectorHorizontalContainerHeight = Dp.m7555constructorimpl(38.0f);
-    private static final float PeriodSelectorHorizontalContainerWidth = Dp.m7555constructorimpl(216.0f);
+    private static final float PeriodSelectorHorizontalContainerHeight = Dp.m8160constructorimpl(38.0f);
+    private static final float PeriodSelectorHorizontalContainerWidth = Dp.m8160constructorimpl(216.0f);
     private static final TypographyKeyTokens PeriodSelectorLabelTextFont = TypographyKeyTokens.TitleMedium;
     private static final ColorSchemeKeyTokens PeriodSelectorOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl(1.0f);
+    private static final float PeriodSelectorOutlineWidth = Dp.m8160constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedContainerColor = ColorSchemeKeyTokens.TertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
@@ -42,12 +42,12 @@ public final class TimePickerTokens {
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-    private static final float PeriodSelectorVerticalContainerHeight = Dp.m7555constructorimpl(80.0f);
-    private static final float PeriodSelectorVerticalContainerWidth = Dp.m7555constructorimpl(52.0f);
-    private static final float TimeSelector24HVerticalContainerWidth = Dp.m7555constructorimpl(114.0f);
-    private static final float TimeSelectorContainerHeight = Dp.m7555constructorimpl(80.0f);
+    private static final float PeriodSelectorVerticalContainerHeight = Dp.m8160constructorimpl(80.0f);
+    private static final float PeriodSelectorVerticalContainerWidth = Dp.m8160constructorimpl(52.0f);
+    private static final float TimeSelector24HVerticalContainerWidth = Dp.m8160constructorimpl(114.0f);
+    private static final float TimeSelectorContainerHeight = Dp.m8160constructorimpl(80.0f);
     private static final ShapeKeyTokens TimeSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float TimeSelectorContainerWidth = Dp.m7555constructorimpl(96.0f);
+    private static final float TimeSelectorContainerWidth = Dp.m8160constructorimpl(96.0f);
     private static final TypographyKeyTokens TimeSelectorLabelTextFont = TypographyKeyTokens.DisplayLarge;
     private static final ColorSchemeKeyTokens TimeSelectorSelectedContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens TimeSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
@@ -70,7 +70,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getClockDialContainerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3812getClockDialContainerSizeD9Ej5fM() {
+    public final float m4257getClockDialContainerSizeD9Ej5fM() {
         return ClockDialContainerSize;
     }
 
@@ -91,7 +91,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getClockDialSelectorCenterContainerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3813getClockDialSelectorCenterContainerSizeD9Ej5fM() {
+    public final float m4258getClockDialSelectorCenterContainerSizeD9Ej5fM() {
         return ClockDialSelectorCenterContainerSize;
     }
 
@@ -104,7 +104,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getClockDialSelectorHandleContainerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3814getClockDialSelectorHandleContainerSizeD9Ej5fM() {
+    public final float m4259getClockDialSelectorHandleContainerSizeD9Ej5fM() {
         return ClockDialSelectorHandleContainerSize;
     }
 
@@ -113,7 +113,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getClockDialSelectorTrackContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3815getClockDialSelectorTrackContainerWidthD9Ej5fM() {
+    public final float m4260getClockDialSelectorTrackContainerWidthD9Ej5fM() {
         return ClockDialSelectorTrackContainerWidth;
     }
 
@@ -130,7 +130,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3816getContainerElevationD9Ej5fM() {
+    public final float m4261getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -151,12 +151,12 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getPeriodSelectorHorizontalContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3817getPeriodSelectorHorizontalContainerHeightD9Ej5fM() {
+    public final float m4262getPeriodSelectorHorizontalContainerHeightD9Ej5fM() {
         return PeriodSelectorHorizontalContainerHeight;
     }
 
     /* renamed from: getPeriodSelectorHorizontalContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3818getPeriodSelectorHorizontalContainerWidthD9Ej5fM() {
+    public final float m4263getPeriodSelectorHorizontalContainerWidthD9Ej5fM() {
         return PeriodSelectorHorizontalContainerWidth;
     }
 
@@ -169,7 +169,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getPeriodSelectorOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3819getPeriodSelectorOutlineWidthD9Ej5fM() {
+    public final float m4264getPeriodSelectorOutlineWidthD9Ej5fM() {
         return PeriodSelectorOutlineWidth;
     }
 
@@ -210,22 +210,22 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getPeriodSelectorVerticalContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3820getPeriodSelectorVerticalContainerHeightD9Ej5fM() {
+    public final float m4265getPeriodSelectorVerticalContainerHeightD9Ej5fM() {
         return PeriodSelectorVerticalContainerHeight;
     }
 
     /* renamed from: getPeriodSelectorVerticalContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3821getPeriodSelectorVerticalContainerWidthD9Ej5fM() {
+    public final float m4266getPeriodSelectorVerticalContainerWidthD9Ej5fM() {
         return PeriodSelectorVerticalContainerWidth;
     }
 
     /* renamed from: getTimeSelector24HVerticalContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3822getTimeSelector24HVerticalContainerWidthD9Ej5fM() {
+    public final float m4267getTimeSelector24HVerticalContainerWidthD9Ej5fM() {
         return TimeSelector24HVerticalContainerWidth;
     }
 
     /* renamed from: getTimeSelectorContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3823getTimeSelectorContainerHeightD9Ej5fM() {
+    public final float m4268getTimeSelectorContainerHeightD9Ej5fM() {
         return TimeSelectorContainerHeight;
     }
 
@@ -234,7 +234,7 @@ public final class TimePickerTokens {
     }
 
     /* renamed from: getTimeSelectorContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3824getTimeSelectorContainerWidthD9Ej5fM() {
+    public final float m4269getTimeSelectorContainerWidthD9Ej5fM() {
         return TimeSelectorContainerWidth;
     }
 

@@ -3,6 +3,8 @@ package com.google.android.material.datepicker;
 import android.content.res.Resources;
 import android.icu.text.DateFormat;
 import android.icu.text.DisplayContext;
+import android.text.SpannableString;
+import android.text.style.TtsSpan;
 import androidx.compose.material3.DatePickerDefaults;
 import com.google.android.material.R;
 import java.text.SimpleDateFormat;
@@ -114,6 +116,13 @@ class UtcDates {
             pattern = pattern.replaceAll("d+", "d").replaceAll("M+", "M").replaceAll("y+", "y");
         }
         return pattern.replace("d", string3).replace("M", string2).replace("y", string);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static SpannableString getVerbatimTextInputHint(String str) {
+        SpannableString spannableString = new SpannableString(str);
+        spannableString.setSpan(new TtsSpan.Builder("android.type.verbatim").build(), 0, spannableString.length(), 33);
+        return spannableString;
     }
 
     static String getDatePatternAsInputFormat(String str) {

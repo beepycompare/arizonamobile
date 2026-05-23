@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.exoplayer.ExoPlayer;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -642,7 +641,7 @@ public final class Authorization implements InterfaceController {
 
                         /* JADX INFO: Access modifiers changed from: package-private */
                         {
-                            super(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, 1000L);
+                            super(2000L, 1000L);
                         }
 
                         @Override // android.os.CountDownTimer

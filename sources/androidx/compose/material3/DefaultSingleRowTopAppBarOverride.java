@@ -93,7 +93,7 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2137486921, i2, -1, "androidx.compose.material3.DefaultSingleRowTopAppBarOverride.SingleRowTopAppBar (AppBar.kt:2510)");
             }
-            if (Float.isNaN(singleRowTopAppBarOverrideScope.m2495getExpandedHeightD9Ej5fM()) || (Float.floatToRawIntBits(singleRowTopAppBarOverrideScope.m2495getExpandedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
+            if (Float.isNaN(singleRowTopAppBarOverrideScope.m2940getExpandedHeightD9Ej5fM()) || (Float.floatToRawIntBits(singleRowTopAppBarOverrideScope.m2940getExpandedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
                 throw new IllegalArgumentException("The expandedHeight is expected to be specified and finite".toString());
             }
             TopAppBarColors colors = singleRowTopAppBarOverrideScope.getColors();
@@ -105,20 +105,20 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
                 rememberedValue = SnapshotStateKt.derivedStateOf(new Function0<Color>() { // from class: androidx.compose.material3.DefaultSingleRowTopAppBarOverride$SingleRowTopAppBar$targetColor$2$1
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Color invoke() {
-                        return Color.m4762boximpl(m2024invoke0d7_KjU());
+                        return Color.m5338boximpl(m2469invoke0d7_KjU());
                     }
 
                     /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-                    public final long m2024invoke0d7_KjU() {
+                    public final long m2469invoke0d7_KjU() {
                         TopAppBarState state;
                         TopAppBarScrollBehavior scrollBehavior2 = SingleRowTopAppBarOverrideScope.this.getScrollBehavior();
-                        return SingleRowTopAppBarOverrideScope.this.getColors().m2907containerColorvNxB06k$material3(((scrollBehavior2 == null || (state = scrollBehavior2.getState()) == null) ? 0.0f : state.getOverlappedFraction()) > 0.01f ? 1.0f : 0.0f);
+                        return SingleRowTopAppBarOverrideScope.this.getColors().m3352containerColorvNxB06k$material3(((scrollBehavior2 == null || (state = scrollBehavior2.getState()) == null) ? 0.0f : state.getOverlappedFraction()) > 0.01f ? 1.0f : 0.0f);
                     }
                 });
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final State<Color> m134animateColorAsStateeuL9pac = SingleValueAnimationKt.m134animateColorAsStateeuL9pac(SingleRowTopAppBar$lambda$2((State) rememberedValue), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), null, null, startRestartGroup, 0, 12);
+            final State<Color> m158animateColorAsStateeuL9pac = SingleValueAnimationKt.m158animateColorAsStateeuL9pac(SingleRowTopAppBar$lambda$2((State) rememberedValue), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), null, null, startRestartGroup, 0, 12);
             ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-1658896622, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultSingleRowTopAppBarOverride$SingleRowTopAppBar$actionsRow$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
@@ -155,15 +155,15 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
-                    Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer2);
+                    Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                     actions.invoke(RowScopeInstance.INSTANCE, composer2, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -214,7 +214,7 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
             }
             Modifier then = singleRowTopAppBarOverrideScope.getModifier().then(companion);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1130656391, "CC(remember):AppBar.kt#9igjgp");
-            boolean changed2 = startRestartGroup.changed(m134animateColorAsStateeuL9pac);
+            boolean changed2 = startRestartGroup.changed(m158animateColorAsStateeuL9pac);
             Object rememberedValue4 = startRestartGroup.rememberedValue();
             if (changed2 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new Function1() { // from class: androidx.compose.material3.DefaultSingleRowTopAppBarOverride$$ExternalSyntheticLambda1
@@ -271,15 +271,15 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1199733554, "C2589@121570L45,2598@122100L6,2583@121231L1234:AppBar.kt#uh7d8r");
@@ -298,10 +298,10 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
             }
             FloatProducer floatProducer = rememberedValue7;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            long m2911getNavigationIconContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m2911getNavigationIconContentColor0d7_KjU();
-            long m2914getTitleContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m2914getTitleContentColor0d7_KjU();
-            long m2909getActionIconContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m2909getActionIconContentColor0d7_KjU();
-            long m2913getSubtitleContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m2913getSubtitleContentColor0d7_KjU();
+            long m3356getNavigationIconContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m3356getNavigationIconContentColor0d7_KjU();
+            long m3359getTitleContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m3359getTitleContentColor0d7_KjU();
+            long m3354getActionIconContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m3354getActionIconContentColor0d7_KjU();
+            long m3358getSubtitleContentColor0d7_KjU = singleRowTopAppBarOverrideScope.getColors().m3358getSubtitleContentColor0d7_KjU();
             Function2<Composer, Integer, Unit> title = singleRowTopAppBarOverrideScope.getTitle();
             TextStyle titleTextStyle = singleRowTopAppBarOverrideScope.getTitleTextStyle();
             Function2<Composer, Integer, Unit> subtitle = singleRowTopAppBarOverrideScope.getSubtitle();
@@ -309,7 +309,7 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
             Arrangement.HorizontalOrVertical center = Arrangement.INSTANCE.getCenter();
             Alignment.Horizontal titleHorizontalAlignment = singleRowTopAppBarOverrideScope.getTitleHorizontalAlignment();
             Function2<Composer, Integer, Unit> navigationIcon = singleRowTopAppBarOverrideScope.getNavigationIcon();
-            float m2495getExpandedHeightD9Ej5fM = singleRowTopAppBarOverrideScope.m2495getExpandedHeightD9Ej5fM();
+            float m2940getExpandedHeightD9Ej5fM = singleRowTopAppBarOverrideScope.m2940getExpandedHeightD9Ej5fM();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -592863831, "CC(remember):AppBar.kt#9igjgp");
             Object rememberedValue8 = startRestartGroup.rememberedValue();
             if (rememberedValue8 == Composer.Companion.getEmpty()) {
@@ -322,7 +322,7 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
                 startRestartGroup.updateRememberedValue(rememberedValue8);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AppBarKt.m1731TopAppBarLayoutlyUyIHI(adjustHeightOffsetLimit, floatProducer, m2911getNavigationIconContentColor0d7_KjU, m2914getTitleContentColor0d7_KjU, m2913getSubtitleContentColor0d7_KjU, m2909getActionIconContentColor0d7_KjU, title, titleTextStyle, subtitle, subtitleTextStyle, (Function0) rememberedValue8, center, titleHorizontalAlignment, 0, false, navigationIcon, rememberComposableLambda, m2495getExpandedHeightD9Ej5fM, startRestartGroup, 0, 1600566);
+            AppBarKt.m2176TopAppBarLayoutlyUyIHI(adjustHeightOffsetLimit, floatProducer, m3356getNavigationIconContentColor0d7_KjU, m3359getTitleContentColor0d7_KjU, m3358getSubtitleContentColor0d7_KjU, m3354getActionIconContentColor0d7_KjU, title, titleTextStyle, subtitle, subtitleTextStyle, (Function0) rememberedValue8, center, titleHorizontalAlignment, 0, false, navigationIcon, rememberComposableLambda, m2940getExpandedHeightD9Ej5fM, startRestartGroup, 0, 1600566);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -354,9 +354,9 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SingleRowTopAppBar$lambda$7$lambda$6(State state, DrawScope drawScope) {
-        long m4782unboximpl = ((Color) state.getValue()).m4782unboximpl();
-        if (!Color.m4773equalsimpl0(m4782unboximpl, Color.Companion.m4808getUnspecified0d7_KjU())) {
-            DrawScope.m5340drawRectnJ9OG0$default(drawScope, m4782unboximpl, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        long m5358unboximpl = ((Color) state.getValue()).m5358unboximpl();
+        if (!Color.m5349equalsimpl0(m5358unboximpl, Color.Companion.m5384getUnspecified0d7_KjU())) {
+            DrawScope.m5916drawRectnJ9OG0$default(drawScope, m5358unboximpl, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
         return Unit.INSTANCE;
     }
@@ -378,6 +378,6 @@ public final class DefaultSingleRowTopAppBarOverride implements SingleRowTopAppB
     }
 
     private static final long SingleRowTopAppBar$lambda$2(State<Color> state) {
-        return state.getValue().m4782unboximpl();
+        return state.getValue().m5358unboximpl();
     }
 }

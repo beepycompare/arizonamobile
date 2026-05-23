@@ -117,11 +117,6 @@ public abstract class BaseMediaSource implements MediaSource {
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSource
-    public final void prepareSource(MediaSource.MediaSourceCaller mediaSourceCaller, TransferListener transferListener) {
-        prepareSource(mediaSourceCaller, transferListener, PlayerId.UNSET);
-    }
-
-    @Override // androidx.media3.exoplayer.source.MediaSource
     public final void prepareSource(MediaSource.MediaSourceCaller mediaSourceCaller, TransferListener transferListener, PlayerId playerId) {
         Looper myLooper = Looper.myLooper();
         Looper looper = this.looper;

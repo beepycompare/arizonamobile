@@ -353,14 +353,14 @@ public class CrashlyticsController {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsController.this.m9001xe0c67ca9(str);
+                CrashlyticsController.this.m9637xe0c67ca9(str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$openSession$1$com-google-firebase-crashlytics-internal-common-CrashlyticsController  reason: not valid java name */
-    public /* synthetic */ void m9001xe0c67ca9(String str) {
+    public /* synthetic */ void m9637xe0c67ca9(String str) {
         doOpenSession(str, false);
     }
 
@@ -588,6 +588,10 @@ public class CrashlyticsController {
 
     UserMetadata getUserMetadata() {
         return this.userMetadata;
+    }
+
+    String getLogString() {
+        return this.logFileManager.getLogString();
     }
 
     boolean isHandlingException() {

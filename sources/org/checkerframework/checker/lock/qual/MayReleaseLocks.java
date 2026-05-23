@@ -10,6 +10,6 @@ import org.checkerframework.framework.qual.InheritedAnnotation;
 @InheritedAnnotation
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface MayReleaseLocks {
 }

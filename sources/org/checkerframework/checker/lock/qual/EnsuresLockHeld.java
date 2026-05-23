@@ -14,7 +14,7 @@ import org.checkerframework.framework.qual.PostconditionAnnotation;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresLockHeld {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
@@ -22,7 +22,7 @@ public @interface EnsuresLockHeld {
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresLockHeld[] value();
     }

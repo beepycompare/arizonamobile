@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.vending.expansion.downloader.Constants;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgu extends zzjf {
     private char zza;
@@ -237,6 +237,6 @@ public final class zzgu extends zzjf {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzu(long j) {
-        this.zzb = 133005L;
+        this.zzb = 161000L;
     }
 }

@@ -5,7 +5,7 @@ import androidx.exifinterface.media.ExifInterface;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgr implements Runnable {
     final /* synthetic */ int zza;
@@ -34,16 +34,16 @@ public final class zzgr implements Runnable {
             if (zzguVar.zzr() == 0) {
                 zzic zzicVar = zzguVar.zzu;
                 if (zzicVar.zzc().zzj()) {
-                    zzicVar.zzaU();
+                    zzicVar.zzaV();
                     zzguVar.zzs('C');
                 } else {
-                    zzicVar.zzaU();
+                    zzicVar.zzaV();
                     zzguVar.zzs('c');
                 }
             }
             if (zzguVar.zzt() < 0) {
                 zzguVar.zzu.zzc().zzi();
-                zzguVar.zzu(133005L);
+                zzguVar.zzu(161000L);
             }
             int i = this.zza;
             char zzr = zzguVar.zzr();

@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class ListenerHolders {
     private final Set zaa = Collections.newSetFromMap(new WeakHashMap());
@@ -34,10 +34,11 @@ public class ListenerHolders {
     }
 
     public final void zab() {
-        for (ListenerHolder listenerHolder : this.zaa) {
+        Set<ListenerHolder> set = this.zaa;
+        for (ListenerHolder listenerHolder : set) {
             listenerHolder.clear();
         }
-        this.zaa.clear();
+        set.clear();
     }
 
     public static <L> ListenerHolder<L> createListenerHolder(L l, Executor executor, String str) {

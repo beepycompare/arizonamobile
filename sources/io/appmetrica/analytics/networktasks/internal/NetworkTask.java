@@ -10,7 +10,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class NetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f1415a = 1;
+    private int f1397a = 1;
     private final Executor b;
     private final IExecutionPolicy c;
     private final ExponentialBackoffPolicy d;
@@ -40,7 +40,7 @@ public class NetworkTask {
 
     private synchronized boolean a(int i) {
         if (a(i)) {
-            this.f1415a = i;
+            this.f1397a = i;
             return true;
         }
         return false;
@@ -91,7 +91,7 @@ public class NetworkTask {
     }
 
     public boolean isRemoved() {
-        return this.f1415a == 9;
+        return this.f1397a == 9;
     }
 
     public boolean onCreateNetworkTask() {
@@ -118,9 +118,9 @@ public class NetworkTask {
             if (a(5, 6)) {
                 z = this.e.onRequestComplete();
                 if (z) {
-                    this.f1415a = 5;
+                    this.f1397a = 5;
                 } else {
-                    this.f1415a = 6;
+                    this.f1397a = 6;
                 }
                 z2 = true;
             } else {
@@ -158,7 +158,7 @@ public class NetworkTask {
         int i;
         boolean a2;
         synchronized (this) {
-            i = this.f1415a;
+            i = this.f1397a;
             a2 = a(8);
         }
         if (a2) {
@@ -193,7 +193,7 @@ public class NetworkTask {
                 break;
             }
         }
-        int i = this.f1415a;
+        int i = this.f1397a;
         if (i != 9 && i != 8 && hasMoreHosts && z2) {
             z = true;
         }
@@ -211,7 +211,7 @@ public class NetworkTask {
         Boolean bool2;
         Boolean bool3;
         bool = Boolean.TRUE;
-        int i = this.f1415a;
+        int i = this.f1397a;
         int length = iArr.length;
         int i2 = 0;
         while (true) {

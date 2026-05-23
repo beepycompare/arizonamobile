@@ -1,7 +1,7 @@
 package androidx.media3.common.audio;
 
 import androidx.media3.common.PlaybackParameters;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface AudioProcessorChain {
     PlaybackParameters applyPlaybackParameters(PlaybackParameters playbackParameters);
 

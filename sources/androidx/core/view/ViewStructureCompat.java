@@ -3,14 +3,14 @@ package androidx.core.view;
 import android.view.ViewStructure;
 /* loaded from: classes2.dex */
 public class ViewStructureCompat {
-    private final Object mWrappedObj;
+    private final ViewStructure mWrappedObj;
 
     public static ViewStructureCompat toViewStructureCompat(ViewStructure viewStructure) {
         return new ViewStructureCompat(viewStructure);
     }
 
     public ViewStructure toViewStructure() {
-        return (ViewStructure) this.mWrappedObj;
+        return this.mWrappedObj;
     }
 
     private ViewStructureCompat(ViewStructure viewStructure) {
@@ -18,40 +18,18 @@ public class ViewStructureCompat {
     }
 
     public void setText(CharSequence charSequence) {
-        Api23Impl.setText((ViewStructure) this.mWrappedObj, charSequence);
+        this.mWrappedObj.setText(charSequence);
     }
 
     public void setClassName(String str) {
-        Api23Impl.setClassName((ViewStructure) this.mWrappedObj, str);
+        this.mWrappedObj.setClassName(str);
     }
 
     public void setContentDescription(CharSequence charSequence) {
-        Api23Impl.setContentDescription((ViewStructure) this.mWrappedObj, charSequence);
+        this.mWrappedObj.setContentDescription(charSequence);
     }
 
     public void setDimens(int i, int i2, int i3, int i4, int i5, int i6) {
-        Api23Impl.setDimens((ViewStructure) this.mWrappedObj, i, i2, i3, i4, i5, i6);
-    }
-
-    /* loaded from: classes2.dex */
-    private static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static void setDimens(ViewStructure viewStructure, int i, int i2, int i3, int i4, int i5, int i6) {
-            viewStructure.setDimens(i, i2, i3, i4, i5, i6);
-        }
-
-        static void setText(ViewStructure viewStructure, CharSequence charSequence) {
-            viewStructure.setText(charSequence);
-        }
-
-        static void setClassName(ViewStructure viewStructure, String str) {
-            viewStructure.setClassName(str);
-        }
-
-        static void setContentDescription(ViewStructure viewStructure, CharSequence charSequence) {
-            viewStructure.setContentDescription(charSequence);
-        }
+        this.mWrappedObj.setDimens(i, i2, i3, i4, i5, i6);
     }
 }

@@ -1,46 +1,75 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.HashMap;
-import java.util.Set;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Ug {
+public final class Ug implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f818a;
-    public final InterfaceC0126al b;
-    public final C0449nb c = new C0449nb();
-    public final C0492p4 d = new C0492p4(new Zl(), new C0467o4(), null);
-    public final Consumer e;
+    public final C0337io f793a;
+    public final Y b;
+    public final C0708x6 c;
+    public final C0207dm d;
+    public final Cif e;
+    public final C0354jf f;
 
-    public Ug(Context context, final InterfaceC0189d6 interfaceC0189d6, final EnumC0142bb enumC0142bb, InterfaceC0126al interfaceC0126al) {
-        this.f818a = context;
-        this.b = interfaceC0126al;
-        this.e = new Consumer() { // from class: io.appmetrica.analytics.impl.Ug$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-            public final void consume(Object obj) {
-                Ug.a(EnumC0142bb.this, interfaceC0189d6, this, (C0348jb) obj);
-            }
-        };
+    public Ug() {
+        this(new C0337io(), new Y(new C0131ao()), new C0708x6(), new C0207dm(), new Cif(), new C0354jf());
     }
 
-    public static final void a(EnumC0142bb enumC0142bb, InterfaceC0189d6 interfaceC0189d6, Ug ug, C0348jb c0348jb) {
-        String str = c0348jb.h;
-        P3 p3 = new P3(str, c0348jb.e, c0348jb.f, c0348jb.g, c0348jb.i);
-        String str2 = c0348jb.b;
-        byte[] bArr = c0348jb.f1066a;
-        int i = c0348jb.c;
-        HashMap hashMap = c0348jb.d;
-        String str3 = c0348jb.j;
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str);
-        Set set = AbstractC0671w9.f1289a;
-        M3 m3 = new M3(bArr, str2, enumC0142bb.f922a, orCreatePublicLogger);
-        m3.q = hashMap;
-        m3.g = i;
-        m3.c = str3;
-        ((Sg) interfaceC0189d6).a(p3, m3, ug.d);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0449n6 fromModel(Tg tg) {
+        C0449n6 c0449n6 = new C0449n6();
+        c0449n6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(tg.f777a, c0449n6.f));
+        C0622to c0622to = tg.b;
+        if (c0622to != null) {
+            C0363jo c0363jo = c0622to.f1220a;
+            if (c0363jo != null) {
+                c0449n6.f1109a = this.f793a.fromModel(c0363jo);
+            }
+            X x = c0622to.b;
+            if (x != null) {
+                c0449n6.b = this.b.fromModel(x);
+            }
+            List<C0258fm> list = c0622to.c;
+            if (list != null) {
+                c0449n6.e = this.d.fromModel(list);
+            }
+            c0449n6.c = (String) WrapUtils.getOrDefault(c0622to.g, c0449n6.c);
+            c0449n6.d = this.c.a(c0622to.h);
+            if (!TextUtils.isEmpty(c0622to.d)) {
+                c0449n6.i = this.e.fromModel(c0622to.d);
+            }
+            if (!TextUtils.isEmpty(c0622to.e)) {
+                c0449n6.j = c0622to.e.getBytes();
+            }
+            if (!Oo.a(c0622to.f)) {
+                c0449n6.k = this.f.fromModel(c0622to.f);
+            }
+        }
+        return c0449n6;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        C0449n6 c0449n6 = (C0449n6) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Ug(C0337io c0337io, Y y, C0708x6 c0708x6, C0207dm c0207dm, Cif cif, C0354jf c0354jf) {
+        this.f793a = c0337io;
+        this.b = y;
+        this.c = c0708x6;
+        this.d = c0207dm;
+        this.e = cif;
+        this.f = c0354jf;
+    }
+
+    public final Tg a(C0449n6 c0449n6) {
+        throw new UnsupportedOperationException();
     }
 }

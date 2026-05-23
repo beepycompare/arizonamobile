@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.cars.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CarsSwitchableItemBinding implements ViewBinding {
     public final Switch carSwitch;
     public final ConstraintLayout carsSwitchableItem;

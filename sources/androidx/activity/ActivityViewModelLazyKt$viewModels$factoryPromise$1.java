@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModelProvider;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ActivityViewModelLazy.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class ActivityViewModelLazyKt$viewModels$factoryPromise$1 implements Function0<ViewModelProvider.Factory> {
     final /* synthetic */ ComponentActivity $this_viewModels;

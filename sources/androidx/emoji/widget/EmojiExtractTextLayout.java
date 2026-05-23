@@ -12,7 +12,6 @@ import android.view.inputmethod.InputConnection;
 import android.widget.LinearLayout;
 import androidx.core.view.ViewCompat;
 import androidx.emoji.R;
-import androidx.media3.common.C;
 /* loaded from: classes2.dex */
 public class EmojiExtractTextLayout extends LinearLayout {
     private View.OnClickListener mButtonOnClickListener;
@@ -69,7 +68,7 @@ public class EmojiExtractTextLayout extends LinearLayout {
 
     public void onUpdateExtractingViews(InputMethodService inputMethodService, EditorInfo editorInfo) {
         if (inputMethodService.isExtractViewShown() && this.mExtractAccessories != null) {
-            if (editorInfo.actionLabel != null || ((editorInfo.imeOptions & 255) != 1 && (editorInfo.imeOptions & C.BUFFER_FLAG_LAST_SAMPLE) == 0 && editorInfo.inputType != 0)) {
+            if (editorInfo.actionLabel != null || ((editorInfo.imeOptions & 255) != 1 && (editorInfo.imeOptions & 536870912) == 0 && editorInfo.inputType != 0)) {
                 this.mExtractAccessories.setVisibility(0);
                 if (this.mExtractAction != null) {
                     CharSequence charSequence = editorInfo.actionLabel;

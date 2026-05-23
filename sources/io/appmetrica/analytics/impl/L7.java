@@ -1,100 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.DeferredDeeplinkListener;
-import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import java.util.Map;
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class L7 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final boolean f678a;
-    public DeferredDeeplinkListener b;
-    public DeferredDeeplinkParametersListener c;
-    public J7 d;
-
-    public L7(boolean z) {
-        this.f678a = z;
-    }
-
-    public final void a(int i) {
-        DeferredDeeplinkParametersListener.Error error;
-        DeferredDeeplinkListener.Error error2;
-        J7 j7 = this.d;
-        String str = j7 == null ? null : j7.c;
-        DeferredDeeplinkListener deferredDeeplinkListener = this.b;
-        if (deferredDeeplinkListener != null) {
-            if (i != 0) {
-                int i2 = i - 1;
-                if (i2 == 0) {
-                    error2 = DeferredDeeplinkListener.Error.NOT_A_FIRST_LAUNCH;
-                } else if (i2 == 1) {
-                    error2 = DeferredDeeplinkListener.Error.PARSE_ERROR;
-                } else if (i2 != 2) {
-                    error2 = DeferredDeeplinkListener.Error.UNKNOWN;
-                } else {
-                    error2 = DeferredDeeplinkListener.Error.NO_REFERRER;
-                }
-                deferredDeeplinkListener.onError(error2, (String) WrapUtils.getOrDefault(str, ""));
-                this.b = null;
-            } else {
-                throw null;
-            }
+public abstract class L7 {
+    public static final String a(Eh eh) {
+        JSONObject jSONObject;
+        try {
+            jSONObject = new JSONObject().put("dId", eh.getDeviceId()).put("uId", eh.getUuid()).put("appVer", eh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, eh.getAppBuildNumber()).put("kitBuildType", eh.getAnalyticsSdkBuildType()).put("osVer", eh.getOsVersion()).put("osApiLev", eh.getOsApiLevel()).put("lang", eh.getLocale()).put("root", eh.getDeviceRootStatus()).put("app_debuggable", ((C0191d6) eh).f938a).put(CommonUrlParts.APP_FRAMEWORK, eh.getAppFramework()).put("attribution_id", eh.r).put("analyticsSdkVersionName", eh.getAnalyticsSdkVersionName()).put("kitBuildNumber", eh.getAnalyticsSdkBuildNumber());
+        } catch (Throwable unused) {
+            jSONObject = new JSONObject();
         }
-        DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
-        if (deferredDeeplinkParametersListener != null) {
-            if (i != 0) {
-                int i3 = i - 1;
-                if (i3 == 0) {
-                    error = DeferredDeeplinkParametersListener.Error.NOT_A_FIRST_LAUNCH;
-                } else if (i3 == 1) {
-                    error = DeferredDeeplinkParametersListener.Error.PARSE_ERROR;
-                } else if (i3 != 2) {
-                    error = DeferredDeeplinkParametersListener.Error.UNKNOWN;
-                } else {
-                    error = DeferredDeeplinkParametersListener.Error.NO_REFERRER;
-                }
-                deferredDeeplinkParametersListener.onError(error, (String) WrapUtils.getOrDefault(str, ""));
-                this.c = null;
-                return;
-            }
-            throw null;
-        }
-    }
-
-    public final void a() {
-        J7 j7 = this.d;
-        if (j7 != null) {
-            String str = j7.b;
-            if (str != null) {
-                DeferredDeeplinkListener deferredDeeplinkListener = this.b;
-                if (deferredDeeplinkListener != null) {
-                    deferredDeeplinkListener.onDeeplinkLoaded(str);
-                    this.b = null;
-                }
-                boolean a2 = lo.a(this.d.f645a);
-                J7 j72 = this.d;
-                if (!a2) {
-                    Map<String, String> map = j72.f645a;
-                    DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
-                    if (deferredDeeplinkParametersListener != null) {
-                        deferredDeeplinkParametersListener.onParametersLoaded(map);
-                        this.c = null;
-                        return;
-                    }
-                    return;
-                }
-                String str2 = j72.c;
-                DeferredDeeplinkParametersListener deferredDeeplinkParametersListener2 = this.c;
-                if (deferredDeeplinkParametersListener2 != null) {
-                    deferredDeeplinkParametersListener2.onError(DeferredDeeplinkParametersListener.Error.PARSE_ERROR, (String) WrapUtils.getOrDefault(str2, ""));
-                    this.c = null;
-                }
-            } else if (j7.c != null) {
-                a(2);
-            } else {
-                a(3);
-            }
-        }
+        return jSONObject.toString();
     }
 }

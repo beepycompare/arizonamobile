@@ -7,12 +7,13 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TickerChannels.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00010\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.TickerChannelsKt$ticker$3", f = "TickerChannels.kt", i = {}, l = {68, 69}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00010\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.TickerChannelsKt$ticker$3", f = "TickerChannels.kt", i = {0, 1}, l = {68, 69}, m = "invokeSuspend", n = {"$this$produce", "$this$produce"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $delayMillis;
@@ -22,9 +23,9 @@ public final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Fu
     int label;
 
     /* compiled from: TickerChannels.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -62,14 +63,14 @@ public final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Fu
         return ((TickerChannelsKt$ticker$3) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0040, code lost:
-        if (r10 == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0046, code lost:
+        if (r11 == r1) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x005c, code lost:
-        if (r10 == r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0067, code lost:
+        if (r11 == r1) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x005e, code lost:
-        return r0;
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0069, code lost:
+        return r1;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -78,16 +79,18 @@ public final class TickerChannelsKt$ticker$3 extends SuspendLambda implements Fu
     public final Object invokeSuspend(Object obj) {
         Object fixedPeriodTicker;
         Object fixedDelayTicker;
+        ProducerScope producerScope = (ProducerScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            ProducerScope producerScope = (ProducerScope) this.L$0;
             int i2 = WhenMappings.$EnumSwitchMapping$0[this.$mode.ordinal()];
             if (i2 == 1) {
+                this.L$0 = SpillingKt.nullOutSpilledVariable(producerScope);
                 this.label = 1;
                 fixedPeriodTicker = TickerChannelsKt.fixedPeriodTicker(this.$delayMillis, this.$initialDelayMillis, producerScope.getChannel(), this);
             } else if (i2 == 2) {
+                this.L$0 = SpillingKt.nullOutSpilledVariable(producerScope);
                 this.label = 2;
                 fixedDelayTicker = TickerChannelsKt.fixedDelayTicker(this.$delayMillis, this.$initialDelayMillis, producerScope.getChannel(), this);
             } else {

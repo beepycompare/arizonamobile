@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionMagnifier.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1", f = "SelectionMagnifier.kt", i = {}, l = {83}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -69,42 +69,40 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             if (snapshotFlow.collect(new FlowCollector() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.2
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                    return m1612emit3MmeM6k(((Offset) obj2).m4537unboximpl(), continuation);
+                    return m2057emit3MmeM6k(((Offset) obj2).m5113unboximpl(), continuation);
                 }
 
                 /* renamed from: emit-3MmeM6k  reason: not valid java name */
-                public final Object m1612emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
-                    if ((animatable.getValue().m4537unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m4537unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
+                public final Object m2057emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
+                    if ((animatable.getValue().m5113unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m5113unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
                         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(animatable, j, null), 3, null);
                         return Unit.INSTANCE;
                     }
-                    Object snapTo = animatable.snapTo(Offset.m4516boximpl(j), continuation);
+                    Object snapTo = animatable.snapTo(Offset.m5092boximpl(j), continuation);
                     return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                 }
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: SelectionMagnifier.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
                 @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$2$1", f = "SelectionMagnifier.kt", i = {}, l = {96}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$2$1  reason: invalid class name */
                 /* loaded from: classes.dex */
                 public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-                    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-targetValue$0  reason: not valid java name */
-                    final /* synthetic */ long f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0;
                     final /* synthetic */ Animatable<Offset, AnimationVector2D> $animatable;
+                    final /* synthetic */ long $targetValue;
                     int label;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     AnonymousClass1(Animatable<Offset, AnimationVector2D> animatable, long j, Continuation<? super AnonymousClass1> continuation) {
                         super(2, continuation);
                         this.$animatable = animatable;
-                        this.f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0 = j;
+                        this.$targetValue = j;
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new AnonymousClass1(this.$animatable, this.f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0, continuation);
+                        return new AnonymousClass1(this.$animatable, this.$targetValue, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
@@ -119,7 +117,7 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
                         if (i == 0) {
                             ResultKt.throwOnFailure(obj);
                             this.label = 1;
-                            if (Animatable.animateTo$default(this.$animatable, Offset.m4516boximpl(this.f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
+                            if (Animatable.animateTo$default(this.$animatable, Offset.m5092boximpl(this.$targetValue), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -145,6 +143,6 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
     public static final Offset invokeSuspend$lambda$0(State state) {
         long rememberAnimatedMagnifierPosition$lambda$1;
         rememberAnimatedMagnifierPosition$lambda$1 = SelectionMagnifierKt.rememberAnimatedMagnifierPosition$lambda$1(state);
-        return Offset.m4516boximpl(rememberAnimatedMagnifierPosition$lambda$1);
+        return Offset.m5092boximpl(rememberAnimatedMagnifierPosition$lambda$1);
     }
 }

@@ -39,16 +39,20 @@ import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface ExoPlayer extends Player {
+    @Deprecated
     public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
+    @Deprecated
     public static final long DEFAULT_RELEASE_TIMEOUT_MS = 500;
+    @Deprecated
     public static final int DEFAULT_STUCK_BUFFERING_DETECTION_TIMEOUT_MS = 600000;
-    public static final int DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS;
+    @Deprecated
     public static final int DEFAULT_STUCK_PLAYING_NOT_ENDING_TIMEOUT_MS = 60000;
+    @Deprecated
     public static final int DEFAULT_STUCK_SUPPRESSED_DETECTION_TIMEOUT_MS = 600000;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioOffloadListener {
         default void onOffloadedPlayback(boolean z) {
         }
@@ -227,7 +231,7 @@ public interface ExoPlayer extends Player {
 
     void setWakeMode(int i);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class PreloadConfiguration {
         public static final PreloadConfiguration DEFAULT = new PreloadConfiguration(C.TIME_UNSET);
         public final long targetPreloadDurationUs;
@@ -237,9 +241,15 @@ public interface ExoPlayer extends Player {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
-        public static boolean experimentalEnableStuckPlayingDetection = true;
+        public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
+        public static final long DEFAULT_RELEASE_TIMEOUT_MS = 500;
+        public static final int DEFAULT_STUCK_BUFFERING_DETECTION_TIMEOUT_MS = 600000;
+        public static final int DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS;
+        public static final int DEFAULT_STUCK_PLAYING_NOT_ENDING_TIMEOUT_MS = 60000;
+        public static final int DEFAULT_STUCK_SUPPRESSED_DETECTION_TIMEOUT_MS = 600000;
+        public static boolean experimentalEnableStuckPlayingDetection;
         Function<Clock, AnalyticsCollector> analyticsCollectorFunction;
         AudioAttributes audioAttributes;
         AudioOutputProvider audioOutputProvider;
@@ -363,6 +373,11 @@ public interface ExoPlayer extends Player {
         /* JADX INFO: Access modifiers changed from: package-private */
         public static /* synthetic */ TrackSelector lambda$setTrackSelector$18(TrackSelector trackSelector) {
             return trackSelector;
+        }
+
+        static {
+            DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS = Util.isRunningOnEmulator() ? Constants.CONNECTION_TIMEOUT_VERIFY : 10000;
+            experimentalEnableStuckPlayingDetection = true;
         }
 
         public Builder(final Context context) {
@@ -532,10 +547,11 @@ public interface ExoPlayer extends Player {
             this.livePlaybackSpeedControl = new DefaultLivePlaybackSpeedControl.Builder().build();
             this.clock = Clock.DEFAULT;
             this.releaseTimeoutMs = 500L;
-            this.detachSurfaceTimeoutMs = ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS;
+            this.detachSurfaceTimeoutMs = 2000L;
             this.stuckBufferingDetectionTimeoutMs = 600000;
-            this.stuckPlayingDetectionTimeoutMs = experimentalEnableStuckPlayingDetection ? ExoPlayer.DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS : Integer.MAX_VALUE;
-            this.stuckPlayingNotEndingTimeoutMs = experimentalEnableStuckPlayingDetection ? 60000 : Integer.MAX_VALUE;
+            boolean z = experimentalEnableStuckPlayingDetection;
+            this.stuckPlayingDetectionTimeoutMs = z ? DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS : Integer.MAX_VALUE;
+            this.stuckPlayingNotEndingTimeoutMs = z ? 60000 : Integer.MAX_VALUE;
             this.stuckSuppressedDetectionTimeoutMs = 600000;
             this.usePlatformDiagnostics = true;
             this.playerName = "";
@@ -849,9 +865,5 @@ public interface ExoPlayer extends Player {
             this.buildCalled = true;
             return new SimpleExoPlayer(this);
         }
-    }
-
-    static {
-        DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS = Util.isRunningOnEmulator() ? Constants.CONNECTION_TIMEOUT_VERIFY : 10000;
     }
 }

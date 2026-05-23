@@ -123,7 +123,7 @@ final class SecureTextFieldKt$OutlinedSecureTextField$1 implements Function2<Com
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            companion = PaddingKt.m822paddingqDBjuR0$default(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue), 0.0f, TextFieldImplKt.minimizedLabelHalfHeight(composer, 0), 0.0f, 0.0f, 13, null);
+            companion = PaddingKt.m1054paddingqDBjuR0$default(SemanticsModifierKt.semantics(companion2, true, (Function1) rememberedValue), 0.0f, TextFieldImplKt.minimizedLabelHalfHeight(composer, 0), 0.0f, 0.0f, 13, null);
             composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(1530795410);
@@ -133,8 +133,8 @@ final class SecureTextFieldKt$OutlinedSecureTextField$1 implements Function2<Com
         Modifier then = modifier.then(companion);
         boolean z = this.$isError;
         Strings.Companion companion3 = Strings.Companion;
-        Modifier m848defaultMinSizeVpY3zN4 = SizeKt.m848defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(then, z, Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.default_error_message), composer, 0)), OutlinedTextFieldDefaults.INSTANCE.m2352getMinWidthD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2351getMinHeightD9Ej5fM());
-        SolidColor solidColor = new SolidColor(this.$colors.m2629cursorColorvNxB06k$material3(this.$isError), null);
+        Modifier m1101defaultMinSizeVpY3zN4 = SizeKt.m1101defaultMinSizeVpY3zN4(TextFieldImplKt.defaultErrorSemantics(then, z, Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(androidx.compose.ui.R.string.default_error_message), composer, 0)), OutlinedTextFieldDefaults.INSTANCE.m2797getMinWidthD9Ej5fM(), OutlinedTextFieldDefaults.INSTANCE.m2796getMinHeightD9Ej5fM());
+        SolidColor solidColor = new SolidColor(this.$colors.m3074cursorColorvNxB06k$material3(this.$isError), null);
         MutableInteractionSource mutableInteractionSource = this.$interactionSource;
         TextFieldLabelPosition textFieldLabelPosition = this.$labelPosition;
         Function3<TextFieldLabelScope, Composer, Integer, Unit> function3 = this.$label;
@@ -152,7 +152,7 @@ final class SecureTextFieldKt$OutlinedSecureTextField$1 implements Function2<Com
         final MutableInteractionSource mutableInteractionSource2 = this.$interactionSource;
         final TextFieldColors textFieldColors2 = this.$colors;
         final Shape shape = this.$shape;
-        BasicSecureTextFieldKt.m1136BasicSecureTextFieldegD4TGM(this.$state, m848defaultMinSizeVpY3zN4, this.$enabled, false, this.$inputTransformation, this.$mergedTextStyle, this.$keyboardOptions, this.$onKeyboardAction, this.$onTextLayout, this.$interactionSource, solidColor, OutlinedTextFieldDefaults.INSTANCE.decorator(this.$state, this.$enabled, TextFieldLineLimits.SingleLine.INSTANCE, null, mutableInteractionSource, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, textFieldColors, paddingValues, ComposableLambdaKt.rememberComposableLambda(-1406782897, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SecureTextFieldKt$OutlinedSecureTextField$1.2
+        BasicSecureTextFieldKt.m1481BasicSecureTextFieldegD4TGM(this.$state, m1101defaultMinSizeVpY3zN4, this.$enabled, false, this.$inputTransformation, this.$mergedTextStyle, this.$keyboardOptions, this.$onKeyboardAction, this.$onTextLayout, this.$interactionSource, solidColor, OutlinedTextFieldDefaults.INSTANCE.decorator(this.$state, this.$enabled, TextFieldLineLimits.SingleLine.INSTANCE, null, mutableInteractionSource, textFieldLabelPosition, function3, function2, function22, function23, function24, function25, function26, z2, textFieldColors, paddingValues, ComposableLambdaKt.rememberComposableLambda(-1406782897, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SecureTextFieldKt$OutlinedSecureTextField$1.2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                 invoke(composer2, num.intValue());
@@ -168,7 +168,7 @@ final class SecureTextFieldKt$OutlinedSecureTextField$1 implements Function2<Com
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1406782897, i2, -1, "androidx.compose.material3.OutlinedSecureTextField.<anonymous>.<anonymous> (SecureTextField.kt:376)");
                 }
-                OutlinedTextFieldDefaults.INSTANCE.m2346Container4EFweAY(z3, z4, mutableInteractionSource2, null, textFieldColors2, shape, 0.0f, 0.0f, composer2, 100663296, 200);
+                OutlinedTextFieldDefaults.INSTANCE.m2791Container4EFweAY(z3, z4, mutableInteractionSource2, null, textFieldColors2, shape, 0.0f, 0.0f, composer2, 100663296, 200);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

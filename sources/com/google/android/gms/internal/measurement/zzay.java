@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzay extends zzav {
     /* JADX INFO: Access modifiers changed from: protected */
@@ -53,7 +53,7 @@ public final class zzay extends zzav {
             if (zzc.isEmpty()) {
                 throw new IllegalArgumentException("Function name for apply is undefined");
             }
-            return zza.zzcA(zzc, zzgVar, ((zzae) zza2).zzb());
+            return zza.zzcG(zzc, zzgVar, ((zzae) zza2).zzb());
         } else if (ordinal == 15) {
             zzh.zza(zzbk.BREAK.name(), 0, list);
             return zzao.zzh;

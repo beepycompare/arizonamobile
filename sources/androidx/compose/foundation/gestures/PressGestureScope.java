@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 /* compiled from: TapGestureDetector.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\bf\u0018\u00002\u00020\u0001J\u000e\u0010\u0002\u001a\u00020\u0003H¦@¢\u0006\u0002\u0010\u0004J\u000e\u0010\u0005\u001a\u00020\u0006H¦@¢\u0006\u0002\u0010\u0004ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/unit/Density;", "awaitRelease", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryAwaitRelease", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\bf\u0018\u00002\u00020\u0001J\u000e\u0010\u0002\u001a\u00020\u0003H¦@¢\u0006\u0002\u0010\u0004J\u000e\u0010\u0005\u001a\u00020\u0006H¦@¢\u0006\u0002\u0010\u0004ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/unit/Density;", "awaitRelease", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tryAwaitRelease", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public interface PressGestureScope extends Density {
     Object awaitRelease(Continuation<? super Unit> continuation);
@@ -15,55 +15,55 @@ public interface PressGestureScope extends Density {
     Object tryAwaitRelease(Continuation<? super Boolean> continuation);
 
     /* compiled from: TapGestureDetector.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m546roundToPxR2X_6o(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo398roundToPxR2X_6o(j);
+        public static int m576roundToPxR2X_6o(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo427roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m547roundToPx0680j_4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo399roundToPx0680j_4(f);
+        public static int m577roundToPx0680j_4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo428roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m548toDpGaN1DYA(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo400toDpGaN1DYA(j);
+        public static float m578toDpGaN1DYA(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo429toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m549toDpu2uoSUM(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo401toDpu2uoSUM(f);
+        public static float m579toDpu2uoSUM(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo430toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m550toDpu2uoSUM(PressGestureScope pressGestureScope, int i) {
-            return PressGestureScope.super.mo402toDpu2uoSUM(i);
+        public static float m580toDpu2uoSUM(PressGestureScope pressGestureScope, int i) {
+            return PressGestureScope.super.mo431toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m551toDpSizekrfVVM(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo403toDpSizekrfVVM(j);
+        public static long m581toDpSizekrfVVM(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo432toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m552toPxR2X_6o(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo404toPxR2X_6o(j);
+        public static float m582toPxR2X_6o(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo433toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m553toPx0680j_4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo405toPx0680j_4(f);
+        public static float m583toPx0680j_4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo434toPx0680j_4(f);
         }
 
         @Deprecated
@@ -73,26 +73,26 @@ public interface PressGestureScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m554toSizeXkaWNTQ(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo406toSizeXkaWNTQ(j);
+        public static long m584toSizeXkaWNTQ(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo435toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m555toSp0xMU5do(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo407toSp0xMU5do(f);
+        public static long m585toSp0xMU5do(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo436toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m556toSpkPz2Gy4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo408toSpkPz2Gy4(f);
+        public static long m586toSpkPz2Gy4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo437toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m557toSpkPz2Gy4(PressGestureScope pressGestureScope, int i) {
-            return PressGestureScope.super.mo409toSpkPz2Gy4(i);
+        public static long m587toSpkPz2Gy4(PressGestureScope pressGestureScope, int i) {
+            return PressGestureScope.super.mo438toSpkPz2Gy4(i);
         }
     }
 }

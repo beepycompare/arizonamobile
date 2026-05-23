@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TextFieldSelectionManager.kt */
-@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.selection.TextFieldSelectionManager$contextMenuAreaModifier$2", f = "TextFieldSelectionManager.kt", i = {}, l = {241, 243}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
@@ -40,7 +40,7 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         if (r7.this$0.updateClipboardEntry$foundation(r7) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0057, code lost:
-        if (r8.mo1591onShowSelectionToolbarSbBc2M(r4, r5, r7) == r0) goto L18;
+        if (r8.mo2036onShowSelectionToolbarSbBc2M(r4, r5, r7) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0059, code lost:
         return r0;
@@ -70,7 +70,7 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         if (contextTextAndSelection != null) {
             TextFieldSelectionManager textFieldSelectionManager = this.this$0;
             String str = (String) contextTextAndSelection.component1();
-            long m7007unboximpl = ((TextRange) contextTextAndSelection.component2()).m7007unboximpl();
+            long m7612unboximpl = ((TextRange) contextTextAndSelection.component2()).m7612unboximpl();
             PlatformSelectionBehaviors platformSelectionBehaviors$foundation = textFieldSelectionManager.getPlatformSelectionBehaviors$foundation();
             if (platformSelectionBehaviors$foundation != null) {
                 this.label = 2;

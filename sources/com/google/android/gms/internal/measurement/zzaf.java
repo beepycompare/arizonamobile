@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Iterator;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzaf implements zzao {
     private final boolean zza;
@@ -33,16 +33,6 @@ public final class zzaf implements zzao {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao
-    public final zzao zzcA(String str, zzg zzgVar, List list) {
-        boolean equals = "toString".equals(str);
-        boolean z = this.zza;
-        if (!equals) {
-            throw new IllegalArgumentException(String.format("%s.%s is not a function.", Boolean.toString(z), str));
-        }
-        return new zzas(Boolean.toString(z));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzao
     public final Double zzd() {
         return Double.valueOf(true != this.zza ? FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE : 1.0d);
     }
@@ -60,5 +50,15 @@ public final class zzaf implements zzao {
     @Override // com.google.android.gms.internal.measurement.zzao
     public final zzao zzt() {
         return new zzaf(Boolean.valueOf(this.zza));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzao
+    public final zzao zzcG(String str, zzg zzgVar, List list) {
+        boolean equals = "toString".equals(str);
+        boolean z = this.zza;
+        if (equals) {
+            return new zzas(Boolean.toString(z));
+        }
+        throw new IllegalArgumentException(String.format("%s.%s is not a function.", Boolean.toString(z), str));
     }
 }

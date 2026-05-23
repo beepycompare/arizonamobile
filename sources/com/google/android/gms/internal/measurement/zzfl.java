@@ -1,26 +1,27 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzfl extends zzmf implements zznn {
-    private static final zzfl zzi;
+public final class zzfl extends zzadu implements zzafd {
+    private static final zzfl zzj;
+    private static volatile zzafj zzk;
     private int zzb;
-    private int zzd;
-    private boolean zze;
-    private String zzf = "";
+    private int zze;
+    private boolean zzf;
     private String zzg = "";
     private String zzh = "";
+    private String zzi = "";
 
     static {
         zzfl zzflVar = new zzfl();
-        zzi = zzflVar;
-        zzmf.zzcp(zzfl.class, zzflVar);
+        zzj = zzflVar;
+        zzadu.zzcs(zzfl.class, zzflVar);
     }
 
     private zzfl() {
     }
 
-    public static zzfl zzj() {
-        return zzi;
+    public static zzfl zzk() {
+        return zzj;
     }
 
     public final boolean zza() {
@@ -32,7 +33,7 @@ public final class zzfl extends zzmf implements zznn {
     }
 
     public final boolean zzc() {
-        return this.zze;
+        return this.zzf;
     }
 
     public final boolean zzd() {
@@ -40,38 +41,60 @@ public final class zzfl extends zzmf implements zznn {
     }
 
     public final String zze() {
-        return this.zzf;
+        return this.zzg;
     }
 
     public final boolean zzf() {
         return (this.zzb & 8) != 0;
     }
 
-    public final String zzg() {
-        return this.zzg;
-    }
-
-    public final boolean zzh() {
-        return (this.zzb & 16) != 0;
-    }
-
-    public final String zzi() {
+    public final String zzh() {
         return this.zzh;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    public final boolean zzi() {
+        return (this.zzb & 16) != 0;
+    }
+
+    public final String zzj() {
+        return this.zzi;
+    }
+
+    public final int zzm() {
+        int zza = zzfk.zza(this.zze);
+        if (zza == 0) {
+            return 1;
+        }
+        return zza;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzi, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003ဈ\u0002\u0004ဈ\u0003\u0005ဈ\u0004", new Object[]{"zzb", "zzd", zzfj.zza, "zze", "zzf", "zzg", "zzh"});
+                return zzct(zzj, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003ဈ\u0002\u0004ဈ\u0003\u0005ဈ\u0004", new Object[]{"zzb", "zze", zzfj.zza, "zzf", "zzg", "zzh", "zzi"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzi;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzk;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzfl.class) {
+                                    zzafjVar = zzk;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzj);
+                                        zzk = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzj;
                 }
                 return new zzfi(null);
             } else {
@@ -79,13 +102,5 @@ public final class zzfl extends zzmf implements zznn {
             }
         }
         return (byte) 1;
-    }
-
-    public final int zzm() {
-        int zza = zzfk.zza(this.zzd);
-        if (zza == 0) {
-            return 1;
-        }
-        return zza;
     }
 }

@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Size.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001BP\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0004\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\b\u0010\u0012\u001a\u00020\u0002H\u0016J\u0010\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u0002H\u0016J\f\u0010\u0015\u001a\u00020\r*\u00020\fH\u0016J\u0013\u0010\u0016\u001a\u00020\t2\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0096\u0002J\b\u0010\u0019\u001a\u00020\u001aH\u0016R\u0010\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0005\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0006\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0007\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001f\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/SizeElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/layout/SizeNode;", "minWidth", "Landroidx/compose/ui/unit/Dp;", "minHeight", "maxWidth", "maxHeight", "enforceIncoming", "", "inspectorInfo", "Lkotlin/Function1;", "Landroidx/compose/ui/platform/InspectorInfo;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(FFFFZLkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "create", "update", "node", "inspectableProperties", "equals", "other", "", "hashCode", "", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001BP\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0004\u0012\b\b\u0002\u0010\u0007\u001a\u00020\u0004\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0017\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\b\u0010\u0012\u001a\u00020\u0002H\u0016J\u0010\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\u0002H\u0016J\f\u0010\u0015\u001a\u00020\r*\u00020\fH\u0016J\u0013\u0010\u0016\u001a\u00020\t2\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0096\u0002J\b\u0010\u0019\u001a\u00020\u001aH\u0016R\u0010\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0005\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0006\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u0010\u0010\u0007\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0011R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001f\u0010\n\u001a\u0013\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\r0\u000b¢\u0006\u0002\b\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Landroidx/compose/foundation/layout/SizeElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/layout/SizeNode;", "minWidth", "Landroidx/compose/ui/unit/Dp;", "minHeight", "maxWidth", "maxHeight", "enforceIncoming", "", "inspectorInfo", "Lkotlin/Function1;", "Landroidx/compose/ui/platform/InspectorInfo;", "", "Lkotlin/ExtensionFunctionType;", "<init>", "(FFFFZLkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "create", "update", "node", "inspectableProperties", "equals", "other", "", "hashCode", "", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SizeElement extends ModifierNodeElement<SizeNode> {
     private final boolean enforceIncoming;
@@ -34,7 +34,7 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
     }
 
     public /* synthetic */ SizeElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.Companion.m8180getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m8180getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m8180getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m8180getUnspecifiedD9Ej5fM() : f4, z, function1, null);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -45,10 +45,10 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(SizeNode sizeNode) {
-        sizeNode.m880setMinWidth0680j_4(this.minWidth);
-        sizeNode.m879setMinHeight0680j_4(this.minHeight);
-        sizeNode.m878setMaxWidth0680j_4(this.maxWidth);
-        sizeNode.m877setMaxHeight0680j_4(this.maxHeight);
+        sizeNode.m1133setMinWidth0680j_4(this.minWidth);
+        sizeNode.m1132setMinHeight0680j_4(this.minHeight);
+        sizeNode.m1131setMaxWidth0680j_4(this.maxWidth);
+        sizeNode.m1130setMaxHeight0680j_4(this.maxHeight);
         sizeNode.setEnforceIncoming(this.enforceIncoming);
     }
 
@@ -64,13 +64,13 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
         }
         if (obj instanceof SizeElement) {
             SizeElement sizeElement = (SizeElement) obj;
-            return Dp.m7560equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m7560equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m7560equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m7560equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
+            return Dp.m8165equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m8165equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m8165equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m8165equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7561hashCodeimpl(this.minWidth) * 31) + Dp.m7561hashCodeimpl(this.minHeight)) * 31) + Dp.m7561hashCodeimpl(this.maxWidth)) * 31) + Dp.m7561hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
+        return (((((((Dp.m8166hashCodeimpl(this.minWidth) * 31) + Dp.m8166hashCodeimpl(this.minHeight)) * 31) + Dp.m8166hashCodeimpl(this.maxWidth)) * 31) + Dp.m8166hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
     }
 }

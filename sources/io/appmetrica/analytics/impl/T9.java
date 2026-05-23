@@ -1,42 +1,58 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.internal.IdentifiersResult;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.NoWhenBranchMatchedException;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class T9 {
+public final class T9 implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Tl f801a = new Tl();
-    public V9 b = new V9();
+    public final Hg f773a;
+    public final ICommonExecutor b;
 
-    public final synchronized void a(V9 v9) {
-        this.b = v9;
+    public T9(Hg hg, ICommonExecutor iCommonExecutor) {
+        this.f773a = hg;
+        this.b = iCommonExecutor;
     }
 
-    public final synchronized void a(List list, HashMap hashMap) {
-        Boolean bool;
-        String str;
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            if (Intrinsics.areEqual((String) it.next(), "appmetrica_lib_ssl_enabled") && (bool = this.b.f830a) != null) {
-                boolean booleanValue = bool.booleanValue();
-                V9 v9 = this.b;
-                IdentifierStatus identifierStatus = v9.b;
-                String str2 = v9.c;
-                if (booleanValue) {
-                    str = "true";
-                } else if (!booleanValue) {
-                    str = "false";
-                } else {
-                    throw new NoWhenBranchMatchedException();
-                }
-                hashMap.put("appmetrica_lib_ssl_enabled", this.f801a.a(new IdentifiersResult(str, identifierStatus, str2)));
+    @Override // io.appmetrica.analytics.impl.Hg
+    public final String a() {
+        return this.f773a.a();
+    }
+
+    @Override // io.appmetrica.analytics.impl.Hg
+    public final void a(final Dg dg) {
+        this.b.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.T9$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                T9.a(T9.this, dg);
             }
+        });
+    }
+
+    public static final void a(final T9 t9, final Dg dg) {
+        final Thread currentThread = Thread.currentThread();
+        t9.f773a.a(new Dg() { // from class: io.appmetrica.analytics.impl.T9$$ExternalSyntheticLambda1
+            @Override // io.appmetrica.analytics.impl.Dg
+            public final void a(Lg lg) {
+                T9.a(currentThread, dg, t9, lg);
+            }
+        });
+    }
+
+    public static final void a(Thread thread, final Dg dg, T9 t9, final Lg lg) {
+        if (Intrinsics.areEqual(Thread.currentThread(), thread)) {
+            dg.a(lg);
+        } else {
+            t9.b.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.T9$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    T9.a(Dg.this, lg);
+                }
+            });
         }
+    }
+
+    public static final void a(Dg dg, Lg lg) {
+        dg.a(lg);
     }
 }

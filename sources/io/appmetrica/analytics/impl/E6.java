@@ -1,67 +1,97 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
-import java.util.HashSet;
+import android.content.Context;
+import com.google.android.vending.expansion.downloader.Constants;
+import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 /* loaded from: classes5.dex */
-public final class E6 implements DataSendingRestrictionController {
+public final class E6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C6 f567a;
-    public Boolean b;
-    public final HashSet c = new HashSet();
-    public final HashSet d = new HashSet();
+    public final C0686wa f521a;
+    public final C0656v6 b;
+    public final Context c;
+    public final C0660va d;
 
-    public E6(C6 c6) {
-        this.f567a = c6;
-        this.b = ((D6) c6).a();
+    public E6(Context context) {
+        this(context, new C0686wa(), new C0656v6(), C0660va.a(context));
     }
 
-    public final synchronized void a(Boolean bool) {
-        if (lo.a(bool) || this.b == null) {
-            Boolean valueOf = Boolean.valueOf(Boolean.FALSE.equals(bool));
-            this.b = valueOf;
-            C6 c6 = this.f567a;
-            ((D6) c6).f549a.c(valueOf.booleanValue()).b();
+    /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00a6, code lost:
+        r0 = null;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Ph ph) {
+        boolean mkdir;
+        C0175cg c0175cg;
+        String str;
+        R9 b;
+        PrintWriter printWriter;
+        C0660va c0660va;
+        File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
+        this.b.getClass();
+        if (crashesDirectory == null) {
+            return;
         }
-    }
-
-    public final synchronized void b(Boolean bool) {
-        if (this.b == null) {
-            a(bool);
-        }
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final synchronized boolean isRestrictedForMainReporter() {
-        return Boolean.TRUE.equals(this.b);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final synchronized boolean isRestrictedForReporter(String str) {
-        boolean z;
-        if (!this.c.contains(str)) {
-            z = Boolean.TRUE.equals(this.b);
-        }
-        return z;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController
-    public final synchronized boolean isRestrictedForSdk() {
-        Boolean bool;
-        bool = this.b;
-        return bool == null ? this.d.isEmpty() : bool.booleanValue();
-    }
-
-    public final synchronized void a(String str, Boolean bool) {
-        if (lo.a(bool) || (!this.d.contains(str) && !this.c.contains(str))) {
-            if (((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue()) {
-                this.d.add(str);
-                this.c.remove(str);
-            } else {
-                this.c.add(str);
-                this.d.remove(str);
+        try {
+            if (crashesDirectory.exists()) {
+                if (!crashesDirectory.isDirectory()) {
+                    if (!crashesDirectory.delete()) {
+                        return;
+                    }
+                    mkdir = crashesDirectory.mkdir();
+                }
+                str = ph.e.f849a.f927a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0175cg.f927a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                b = this.d.b(str);
+                b.f741a.lock();
+                b.b.a();
+                this.f521a.getClass();
+                printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
+                printWriter.write(new Lb(ph.f717a, ph.e, ph.d).l());
+                Oo.a((Closeable) printWriter);
+                b.c();
+                c0660va = this.d;
+                synchronized (c0660va) {
+                    c0660va.b.remove(str);
+                }
+                return;
             }
+            mkdir = crashesDirectory.mkdir();
+            printWriter.write(new Lb(ph.f717a, ph.e, ph.d).l());
+            Oo.a((Closeable) printWriter);
+            b.c();
+            c0660va = this.d;
+            synchronized (c0660va) {
+            }
+        } catch (Throwable unused) {
+            Oo.a((Closeable) printWriter);
+            b.c();
+            this.d.a(str);
+            return;
         }
+        if (!mkdir) {
+            return;
+        }
+        str = ph.e.f849a.f927a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0175cg.f927a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        b = this.d.b(str);
+        b.f741a.lock();
+        b.b.a();
+        this.f521a.getClass();
+        printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
+    }
+
+    public E6(Context context, C0686wa c0686wa, C0656v6 c0656v6, C0660va c0660va) {
+        this.c = context;
+        this.f521a = c0686wa;
+        this.b = c0656v6;
+        this.d = c0660va;
     }
 }

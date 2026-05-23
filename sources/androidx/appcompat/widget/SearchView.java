@@ -43,6 +43,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.R;
 import androidx.appcompat.view.CollapsibleActionView;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.core.view.ViewCompat;
 import androidx.cursoradapter.widget.CursorAdapter;
 import androidx.customview.view.AbsSavedState;
@@ -881,7 +882,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         this.mExpandedInActionView = true;
         int imeOptions = this.mSearchSrcTextView.getImeOptions();
         this.mCollapsedImeOptions = imeOptions;
-        this.mSearchSrcTextView.setImeOptions(imeOptions | 33554432);
+        this.mSearchSrcTextView.setImeOptions(imeOptions | GroupFlagsKt.HasAuxSlotFlag);
         this.mSearchSrcTextView.setText("");
         setIconified(false);
     }

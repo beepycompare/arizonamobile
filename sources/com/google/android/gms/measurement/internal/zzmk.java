@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzmk implements Runnable {
     final /* synthetic */ zzr zza;
@@ -22,7 +22,7 @@ public final class zzmk implements Runnable {
         zznl zznlVar = this.zzb;
         zzgb zzZ = zznlVar.zzZ();
         if (zzZ == null) {
-            zznlVar.zzu.zzaV().zzb().zza("Discarding data. Failed to send app launch");
+            zznlVar.zzu.zzaW().zzb().zza("Discarding data. Failed to send app launch");
             return;
         }
         try {
@@ -30,7 +30,7 @@ public final class zzmk implements Runnable {
             Preconditions.checkNotNull(zzrVar);
             zzic zzicVar = zznlVar.zzu;
             zzal zzc = zzicVar.zzc();
-            zzfx zzfxVar = zzfy.zzbb;
+            zzfx zzfxVar = zzfy.zzaW;
             if (zzc.zzp(null, zzfxVar)) {
                 zznlVar.zzm(zzZ, null, zzrVar);
             }
@@ -40,7 +40,7 @@ public final class zzmk implements Runnable {
             zznlVar.zzm(zzZ, null, zzrVar);
             zznlVar.zzV();
         } catch (RemoteException e) {
-            this.zzb.zzu.zzaV().zzb().zzb("Failed to send app launch to the service", e);
+            this.zzb.zzu.zzaW().zzb().zzb("Failed to send app launch to the service", e);
         }
     }
 }

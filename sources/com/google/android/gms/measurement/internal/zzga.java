@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public abstract class zzga extends com.google.android.gms.internal.measurement.zzbm implements zzgb {
     public zzga() {
@@ -20,7 +20,7 @@ public abstract class zzga extends com.google.android.gms.internal.measurement.z
         switch (i) {
             case 1:
                 com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
-                zze((zzbg) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbg.CREATOR), (zzr) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzr.CREATOR));
+                zze((zzbh) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbh.CREATOR), (zzr) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzr.CREATOR));
                 parcel2.writeNoException();
                 break;
             case 2:
@@ -44,7 +44,7 @@ public abstract class zzga extends com.google.android.gms.internal.measurement.z
                 String readString = parcel.readString();
                 String readString2 = parcel.readString();
                 com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
-                zzh((zzbg) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbg.CREATOR), readString, readString2);
+                zzh((zzbh) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbh.CREATOR), readString, readString2);
                 parcel2.writeNoException();
                 break;
             case 6:
@@ -62,7 +62,7 @@ public abstract class zzga extends com.google.android.gms.internal.measurement.z
             case 9:
                 String readString3 = parcel.readString();
                 com.google.android.gms.internal.measurement.zzbn.zzf(parcel);
-                byte[] zzk = zzk((zzbg) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbg.CREATOR), readString3);
+                byte[] zzk = zzk((zzbh) com.google.android.gms.internal.measurement.zzbn.zzb(parcel, zzbh.CREATOR), readString3);
                 parcel2.writeNoException();
                 parcel2.writeByteArray(zzk);
                 break;

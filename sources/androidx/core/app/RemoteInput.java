@@ -179,12 +179,12 @@ public final class RemoteInput {
     }
 
     public static Bundle getResultsFromIntent(Intent intent) {
-        return Api20Impl.getResultsFromIntent(intent);
+        return android.app.RemoteInput.getResultsFromIntent(intent);
     }
 
     public static void addResultsToIntent(RemoteInput[] remoteInputArr, Intent intent, Bundle bundle) {
         if (Build.VERSION.SDK_INT >= 26) {
-            Api20Impl.addResultsToIntent(fromCompat(remoteInputArr), intent, bundle);
+            android.app.RemoteInput.addResultsToIntent(fromCompat(remoteInputArr), intent, bundle);
             return;
         }
         Bundle resultsFromIntent = getResultsFromIntent(intent);
@@ -195,7 +195,7 @@ public final class RemoteInput {
         }
         for (RemoteInput remoteInput : remoteInputArr) {
             Map<String, Uri> dataResultsFromIntent = getDataResultsFromIntent(intent, remoteInput.getResultKey());
-            Api20Impl.addResultsToIntent(fromCompat(new RemoteInput[]{remoteInput}), intent, bundle);
+            android.app.RemoteInput.addResultsToIntent(fromCompat(new RemoteInput[]{remoteInput}), intent, bundle);
             if (dataResultsFromIntent != null) {
                 addDataResultToIntent(remoteInput, intent, dataResultsFromIntent);
             }
@@ -315,14 +315,6 @@ public final class RemoteInput {
     /* loaded from: classes2.dex */
     public static class Api20Impl {
         private Api20Impl() {
-        }
-
-        static Bundle getResultsFromIntent(Intent intent) {
-            return android.app.RemoteInput.getResultsFromIntent(intent);
-        }
-
-        static void addResultsToIntent(Object obj, Intent intent, Bundle bundle) {
-            android.app.RemoteInput.addResultsToIntent((android.app.RemoteInput[]) obj, intent, bundle);
         }
 
         static RemoteInput fromPlatform(Object obj) {

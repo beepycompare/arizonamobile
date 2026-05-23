@@ -87,7 +87,6 @@ public class FragmentedMp4Extractor implements Extractor {
     private ExtractorOutput extractorOutput;
     private final int flags;
     private boolean haveOutputSeekMap;
-    private boolean haveOutputSeekMapFromMultipleSidx;
     private boolean isSampleDependedOn;
     private ImmutableList<SniffFailure> lastSniffFailures;
     private final ParsableByteArray nalPrefix;
@@ -110,6 +109,7 @@ public class FragmentedMp4Extractor implements Extractor {
     private final SubtitleParser.Factory subtitleParserFactory;
     private final TimestampAdjuster timestampAdjuster;
     private final SparseArray<TrackBundle> trackBundles;
+    private boolean upfrontSidxScanComplete;
     @Deprecated
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda1
         @Override // androidx.media3.extractor.ExtractorsFactory
@@ -234,7 +234,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda3
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                FragmentedMp4Extractor.this.m8355x40e97494(j, parsableByteArray);
+                FragmentedMp4Extractor.this.m8964x40e97494(j, parsableByteArray);
             }
         });
         this.chunkIndexMerger = new ChunkIndexMerger();
@@ -243,7 +243,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-extractor-mp4-FragmentedMp4Extractor  reason: not valid java name */
-    public /* synthetic */ void m8355x40e97494(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8964x40e97494(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.ceaTrackOutputs);
     }
 
@@ -305,7 +305,7 @@ public class FragmentedMp4Extractor implements Extractor {
                     positionHolder.position = j;
                     this.seekPositionBeforeSidxProcessing = -1L;
                     this.extractorOutput.seekMap(this.chunkIndexMerger.merge());
-                    this.haveOutputSeekMapFromMultipleSidx = true;
+                    this.upfrontSidxScanComplete = true;
                     return 1;
                 }
                 this.reorderingBufferQueue.flush();
@@ -452,14 +452,15 @@ public class FragmentedMp4Extractor implements Extractor {
         } else if (leafBox.type == 1936286840) {
             Pair<Long, ChunkIndex> parseSidx = parseSidx(leafBox.data, extractorInput.getPosition());
             this.chunkIndexMerger.add((ChunkIndex) parseSidx.second);
-            if (!this.haveOutputSeekMap) {
-                this.segmentIndexEarliestPresentationTimeUs = ((Long) parseSidx.first).longValue();
-                this.extractorOutput.seekMap((SeekMap) parseSidx.second);
+            this.segmentIndexEarliestPresentationTimeUs = ((Long) parseSidx.first).longValue();
+            if (!this.upfrontSidxScanComplete) {
+                this.extractorOutput.seekMap(this.chunkIndexMerger.size() == 1 ? (SeekMap) parseSidx.second : this.chunkIndexMerger.merge());
                 this.haveOutputSeekMap = true;
-            } else if ((this.flags & 256) == 0 || this.haveOutputSeekMapFromMultipleSidx || this.chunkIndexMerger.size() <= 1) {
-            } else {
-                this.seekPositionBeforeSidxProcessing = extractorInput.getPosition();
             }
+            if ((this.flags & 256) == 0 || this.upfrontSidxScanComplete || this.chunkIndexMerger.size() <= 1) {
+                return;
+            }
+            this.seekPositionBeforeSidxProcessing = extractorInput.getPosition();
         } else if (leafBox.type == 1701671783) {
             onEmsgLeafAtomRead(leafBox.data);
         }
@@ -1237,7 +1238,7 @@ public class FragmentedMp4Extractor implements Extractor {
                     trackOutput.sampleData(this.nalStartCode, 4);
                     this.sampleBytesWritten += 4;
                     this.sampleSize += i4;
-                    this.processSeiNalUnitPayload = this.ceaTrackOutputs.length > 0 && numberOfBytesInNalUnitHeader > 0 && NalUnitUtil.isNalUnitSei(track.format, data[4]);
+                    this.processSeiNalUnitPayload = this.ceaTrackOutputs.length > 0 && numberOfBytesInNalUnitHeader > 0 && NalUnitUtil.isNalUnitSei(track.format, data, 4);
                     trackOutput.sampleData(this.nalPrefix, numberOfBytesInNalUnitHeader);
                     this.sampleBytesWritten += numberOfBytesInNalUnitHeader;
                     if (numberOfBytesInNalUnitHeader > 0 && !this.isSampleDependedOn && NalUnitUtil.isDependedOn(data, 4, numberOfBytesInNalUnitHeader, track.format)) {

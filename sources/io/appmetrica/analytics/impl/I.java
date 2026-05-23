@@ -1,28 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Savable;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.backport.Provider;
 /* loaded from: classes5.dex */
-public final class I implements Savable {
+public final class I implements Provider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ J f625a;
+    public final /* synthetic */ Context f583a;
+    public final /* synthetic */ K b;
 
-    public I(J j) {
-        this.f625a = j;
+    public I(K k, Context context) {
+        this.b = k;
+        this.f583a = context;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
-    /* renamed from: a */
-    public final Boolean getValue() {
-        return Boolean.valueOf(this.f625a.f639a.a(false));
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
-    public final /* bridge */ /* synthetic */ void setValue(Object obj) {
-        a(((Boolean) obj).booleanValue());
-    }
-
-    public final void a(boolean z) {
-        this.f625a.f639a.e(z);
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
+    public final Object get() {
+        return this.b.f620a.a(this.f583a);
     }
 }

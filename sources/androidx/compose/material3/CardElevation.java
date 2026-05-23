@@ -61,7 +61,7 @@ public final class CardElevation {
             ComposerKt.sourceInformationMarkerStart(composer, 1806527288, "CC(remember):Card.kt#9igjgp");
             Object rememberedValue = composer.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(this.defaultElevation), null, 2, null);
+                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m8158boximpl(this.defaultElevation), null, 2, null);
                 composer.updateRememberedValue(rememberedValue);
             }
             MutableState mutableState = (MutableState) rememberedValue;
@@ -123,13 +123,13 @@ public final class CardElevation {
         ComposerKt.sourceInformationMarkerStart(composer, -637333511, "CC(remember):Card.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
         if (rememberedValue3 == Composer.Companion.getEmpty()) {
-            Object animatable2 = new Animatable(Dp.m7553boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+            Object animatable2 = new Animatable(Dp.m8158boximpl(f), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
             composer.updateRememberedValue(animatable2);
             rememberedValue3 = animatable2;
         }
         Object obj = (Animatable) rememberedValue3;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Dp m7553boximpl = Dp.m7553boximpl(f);
+        Dp m8158boximpl = Dp.m8158boximpl(f);
         ComposerKt.sourceInformationMarkerStart(composer, -637329937, "CC(remember):Card.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(obj) | composer.changed(f) | ((((i & 14) ^ 6) > 4 && composer.changed(z)) || (i & 6) == 4);
         if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(this)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
@@ -145,7 +145,7 @@ public final class CardElevation {
             animatable = obj;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(m7553boximpl, (Function2) rememberedValue4, composer, 0);
+        EffectsKt.LaunchedEffect(m8158boximpl, (Function2) rememberedValue4, composer, 0);
         State<Dp> asState = animatable.asState();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -162,10 +162,10 @@ public final class CardElevation {
             return false;
         }
         CardElevation cardElevation = (CardElevation) obj;
-        return Dp.m7560equalsimpl0(this.defaultElevation, cardElevation.defaultElevation) && Dp.m7560equalsimpl0(this.pressedElevation, cardElevation.pressedElevation) && Dp.m7560equalsimpl0(this.focusedElevation, cardElevation.focusedElevation) && Dp.m7560equalsimpl0(this.hoveredElevation, cardElevation.hoveredElevation) && Dp.m7560equalsimpl0(this.disabledElevation, cardElevation.disabledElevation);
+        return Dp.m8165equalsimpl0(this.defaultElevation, cardElevation.defaultElevation) && Dp.m8165equalsimpl0(this.pressedElevation, cardElevation.pressedElevation) && Dp.m8165equalsimpl0(this.focusedElevation, cardElevation.focusedElevation) && Dp.m8165equalsimpl0(this.hoveredElevation, cardElevation.hoveredElevation) && Dp.m8165equalsimpl0(this.disabledElevation, cardElevation.disabledElevation);
     }
 
     public int hashCode() {
-        return (((((((Dp.m7561hashCodeimpl(this.defaultElevation) * 31) + Dp.m7561hashCodeimpl(this.pressedElevation)) * 31) + Dp.m7561hashCodeimpl(this.focusedElevation)) * 31) + Dp.m7561hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m7561hashCodeimpl(this.disabledElevation);
+        return (((((((Dp.m8166hashCodeimpl(this.defaultElevation) * 31) + Dp.m8166hashCodeimpl(this.pressedElevation)) * 31) + Dp.m8166hashCodeimpl(this.focusedElevation)) * 31) + Dp.m8166hashCodeimpl(this.hoveredElevation)) * 31) + Dp.m8166hashCodeimpl(this.disabledElevation);
     }
 }

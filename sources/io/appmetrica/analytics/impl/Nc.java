@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
+import android.content.Context;
 /* loaded from: classes5.dex */
-public abstract /* synthetic */ class Nc {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f713a;
-
-    static {
-        int[] iArr = new int[ModuleAdType.values().length];
-        iArr[ModuleAdType.NATIVE.ordinal()] = 1;
-        iArr[ModuleAdType.BANNER.ordinal()] = 2;
-        iArr[ModuleAdType.REWARDED.ordinal()] = 3;
-        iArr[ModuleAdType.INTERSTITIAL.ordinal()] = 4;
-        iArr[ModuleAdType.MREC.ordinal()] = 5;
-        iArr[ModuleAdType.APP_OPEN.ordinal()] = 6;
-        iArr[ModuleAdType.OTHER.ordinal()] = 7;
-        f713a = iArr;
+public final class Nc implements InterfaceC0706x4 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0706x4
+    /* renamed from: b */
+    public final Oc a(Context context, C0603t5 c0603t5, C0266g4 c0266g4, G4 g4) {
+        Rg rg;
+        Pc pc = new Pc(c0266g4.b, c0266g4.f991a);
+        Sg sg = new Sg(new Rc());
+        synchronized (c0603t5) {
+            rg = (Rg) c0603t5.a(pc, g4, sg, c0603t5.f1209a);
+        }
+        return new Oc(context, rg);
     }
 }

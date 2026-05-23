@@ -17,7 +17,7 @@ import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaCodecInfo {
     public static final int MAX_SUPPORTED_INSTANCES_UNKNOWN = -1;
     public static final String TAG = "MediaCodecInfo";

@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Inherited
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface ReturnsReceiver {
 }

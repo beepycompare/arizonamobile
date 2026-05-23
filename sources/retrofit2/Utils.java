@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 import okhttp3.internal.url._UrlKt;
 import okio.Buffer;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Utils {
     static final Type[] EMPTY_TYPE_ARRAY = new Type[0];
     private static boolean checkForKotlinUnit = true;
@@ -319,7 +319,7 @@ public final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class ParameterizedTypeImpl implements ParameterizedType {
         @Nullable
         private final Type ownerType;
@@ -383,7 +383,7 @@ public final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class GenericArrayTypeImpl implements GenericArrayType {
         private final Type componentType;
 
@@ -410,7 +410,7 @@ public final class Utils {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class WildcardTypeImpl implements WildcardType {
         @Nullable
         private final Type lowerBound;

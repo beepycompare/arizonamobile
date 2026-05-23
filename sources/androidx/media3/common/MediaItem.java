@@ -1442,7 +1442,7 @@ public final class MediaItem {
         return ((((((((hashCode + (localConfiguration != null ? localConfiguration.hashCode() : 0)) * 31) + this.liveConfiguration.hashCode()) * 31) + this.clippingConfiguration.hashCode()) * 31) + this.mediaMetadata.hashCode()) * 31) + this.requestMetadata.hashCode();
     }
 
-    private Bundle toBundle(boolean z) {
+    private Bundle toBundle(boolean z, int i) {
         LocalConfiguration localConfiguration;
         Bundle bundle = new Bundle();
         if (!this.mediaId.equals("")) {
@@ -1452,7 +1452,7 @@ public final class MediaItem {
             bundle.putBundle(FIELD_LIVE_CONFIGURATION, this.liveConfiguration.toBundle());
         }
         if (!this.mediaMetadata.equals(MediaMetadata.EMPTY)) {
-            bundle.putBundle(FIELD_MEDIA_METADATA, this.mediaMetadata.toBundle());
+            bundle.putBundle(FIELD_MEDIA_METADATA, this.mediaMetadata.toBundle(i));
         }
         if (!this.clippingConfiguration.equals(ClippingConfiguration.UNSET)) {
             bundle.putBundle(FIELD_CLIPPING_PROPERTIES, this.clippingConfiguration.toBundle());
@@ -1466,15 +1466,30 @@ public final class MediaItem {
         return bundle;
     }
 
+    @Deprecated
     public Bundle toBundle() {
-        return toBundle(false);
+        return toBundle(9);
     }
 
+    public Bundle toBundle(int i) {
+        return toBundle(false, i);
+    }
+
+    @Deprecated
     public Bundle toBundleIncludeLocalConfiguration() {
-        return toBundle(true);
+        return toBundleIncludeLocalConfiguration(9);
     }
 
+    public Bundle toBundleIncludeLocalConfiguration(int i) {
+        return toBundle(true, i);
+    }
+
+    @Deprecated
     public static MediaItem fromBundle(Bundle bundle) {
+        return fromBundle(bundle, 9);
+    }
+
+    public static MediaItem fromBundle(Bundle bundle, int i) {
         LiveConfiguration fromBundle;
         MediaMetadata fromBundle2;
         ClippingProperties fromBundle3;
@@ -1491,7 +1506,7 @@ public final class MediaItem {
         if (bundle3 == null) {
             fromBundle2 = MediaMetadata.EMPTY;
         } else {
-            fromBundle2 = MediaMetadata.fromBundle(bundle3);
+            fromBundle2 = MediaMetadata.fromBundle(bundle3, i);
         }
         MediaMetadata mediaMetadata = fromBundle2;
         Bundle bundle4 = bundle.getBundle(FIELD_CLIPPING_PROPERTIES);

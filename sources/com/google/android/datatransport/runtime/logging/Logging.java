@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime.logging;
 
 import android.os.Build;
 import android.util.Log;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Logging {
     private static final String LOG_PREFIX = "TRuntime.";
     private static final int MAX_LOG_TAG_SIZE_IN_SDK_N = 23;

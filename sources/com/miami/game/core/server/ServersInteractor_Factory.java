@@ -6,7 +6,7 @@ import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.core.server.data.FavoriteServerDatabase;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ServersInteractor_Factory implements Factory<ServersInteractor> {
     private final Provider<BuildConfigRepository> buildConfigProvider;
     private final Provider<NetworkDataSource> dataSourceProvider;

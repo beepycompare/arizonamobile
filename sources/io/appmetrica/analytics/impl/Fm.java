@@ -1,65 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
-import java.util.HashMap;
+import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
+import java.util.List;
 import java.util.Map;
 /* loaded from: classes5.dex */
-public abstract class Fm {
-    public static HashMap b(Map map) {
-        HashMap hashMap = new HashMap();
-        if (map != null) {
-            for (Map.Entry entry : map.entrySet()) {
-                String str = (String) entry.getKey();
-                if (!TextUtils.isEmpty(str) && !str.contains(StringUtils.PROCESS_POSTFIX_DELIMITER) && !str.contains(StringUtils.COMMA) && !str.contains("&")) {
-                    String str2 = (String) entry.getValue();
-                    if (!TextUtils.isEmpty(str2) && ParseUtils.parseLong(str2, -1L) != -1) {
-                        hashMap.put((String) entry.getKey(), (String) entry.getValue());
-                    }
-                }
-            }
-        }
-        return hashMap;
-    }
+public final class Fm {
 
-    public static String a(Map map) {
-        if (lo.a(map)) {
-            return "";
-        }
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry entry : map.entrySet()) {
-            sb.append((String) entry.getKey()).append(StringUtils.PROCESS_POSTFIX_DELIMITER).append((String) entry.getValue()).append(StringUtils.COMMA);
-        }
-        sb.setLength(sb.length() - 1);
-        return sb.toString();
-    }
-
-    public static HashMap a(String str) {
-        String[] split;
-        HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
-            for (String str2 : str.split(StringUtils.COMMA)) {
-                int indexOf = str2.indexOf(StringUtils.PROCESS_POSTFIX_DELIMITER);
-                if (indexOf != -1) {
-                    hashMap.put(str2.substring(0, indexOf), str2.substring(indexOf + 1));
-                }
-            }
-        }
-        return hashMap;
-    }
-
-    public static boolean a(HashMap hashMap) {
-        if (hashMap == null || hashMap.isEmpty()) {
-            return false;
-        }
-        for (Map.Entry entry : hashMap.entrySet()) {
-            try {
-                Integer.parseInt((String) entry.getValue());
-            } catch (Throwable unused) {
-                return false;
-            }
-        }
-        return true;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public int f550a;
+    public List c;
+    public List e;
+    public String g;
+    public String h;
+    public String i;
+    public String j;
+    public Long l;
+    public String m;
+    public List n;
+    public Map o;
+    public C0336in p;
+    public RetryPolicyConfig q;
+    public C0601t3 r;
+    public C0756z2 s;
+    public C0233en t;
+    public Map u;
+    public W9 v;
+    public C4 b = new A4().a();
+    public String d = "";
+    public String f = "";
+    public Ye k = null;
 }

@@ -29,6 +29,39 @@ public final class ConstructorConstructor {
     private final List<ReflectionAccessFilter> reflectionFilters;
     private final boolean useJdkUnsafe;
 
+    public static /* synthetic */ TreeSet $r8$lambda$6G_sB8re23KKWp7UuO_MRI6S3Rs() {
+        return new TreeSet();
+    }
+
+    public static /* synthetic */ ArrayDeque $r8$lambda$KHjHxHfrAPBZynycoYlophKpIMg() {
+        return new ArrayDeque();
+    }
+
+    public static /* synthetic */ LinkedHashSet $r8$lambda$NLbwqHqQAQIhtHnJWSp_k5iVcGo() {
+        return new LinkedHashSet();
+    }
+
+    public static /* synthetic */ ArrayList $r8$lambda$b6MTbXibNZrv5TLwP3JJEywfPpE() {
+        return new ArrayList();
+    }
+
+    /* renamed from: $r8$lambda$emGBdOG-cRs8pZGsKocRtr0g63Q  reason: not valid java name */
+    public static /* synthetic */ TreeMap m9710$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q() {
+        return new TreeMap();
+    }
+
+    public static /* synthetic */ LinkedHashMap $r8$lambda$j13nCw3K6fbdcbbgKDegSiMMiok() {
+        return new LinkedHashMap();
+    }
+
+    public static /* synthetic */ ConcurrentHashMap $r8$lambda$sV1DPvrAnITRCFBfNIkaohezawA() {
+        return new ConcurrentHashMap();
+    }
+
+    public static /* synthetic */ ConcurrentSkipListMap $r8$lambda$xY5KcoCSsEftucjS_xdJVQ7kgJo() {
+        return new ConcurrentSkipListMap();
+    }
+
     public ConstructorConstructor(Map<Type, InstanceCreator<?>> map, boolean z, List<ReflectionAccessFilter> list) {
         this.instanceCreators = map;
         this.useJdkUnsafe = z;
@@ -52,29 +85,15 @@ public final class ConstructorConstructor {
     }
 
     public <T> ObjectConstructor<T> get(TypeToken<T> typeToken, boolean z) {
-        final Type type = typeToken.getType();
+        Type type = typeToken.getType();
         Class<? super T> rawType = typeToken.getRawType();
-        final InstanceCreator<?> instanceCreator = this.instanceCreators.get(type);
+        InstanceCreator<?> instanceCreator = this.instanceCreators.get(type);
         if (instanceCreator != null) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda0
-                @Override // com.google.gson.internal.ObjectConstructor
-                public final Object construct() {
-                    Object createInstance;
-                    createInstance = InstanceCreator.this.createInstance(type);
-                    return createInstance;
-                }
-            };
+            return new InstanceCreatorConstructor(instanceCreator, type);
         }
-        final InstanceCreator<?> instanceCreator2 = this.instanceCreators.get(rawType);
+        InstanceCreator<?> instanceCreator2 = this.instanceCreators.get(rawType);
         if (instanceCreator2 != null) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda11
-                @Override // com.google.gson.internal.ObjectConstructor
-                public final Object construct() {
-                    Object createInstance;
-                    createInstance = InstanceCreator.this.createInstance(type);
-                    return createInstance;
-                }
-            };
+            return new InstanceCreatorConstructor(instanceCreator2, type);
         }
         ObjectConstructor<T> newSpecialCollectionConstructor = newSpecialCollectionConstructor(type, rawType);
         if (newSpecialCollectionConstructor != null) {
@@ -89,65 +108,33 @@ public final class ConstructorConstructor {
         if (newDefaultImplementationConstructor != null) {
             return newDefaultImplementationConstructor;
         }
-        final String checkInstantiable = checkInstantiable(rawType);
+        String checkInstantiable = checkInstantiable(rawType);
         if (checkInstantiable != null) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda13
-                @Override // com.google.gson.internal.ObjectConstructor
-                public final Object construct() {
-                    return ConstructorConstructor.lambda$get$2(checkInstantiable);
-                }
-            };
+            return new ThrowingObjectConstructor(checkInstantiable);
         }
         if (!z) {
-            final String str = "Unable to create instance of " + rawType + "; Register an InstanceCreator or a TypeAdapter for this type.";
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda14
-                @Override // com.google.gson.internal.ObjectConstructor
-                public final Object construct() {
-                    return ConstructorConstructor.lambda$get$3(str);
-                }
-            };
-        } else if (filterResult != ReflectionAccessFilter.FilterResult.ALLOW) {
-            final String str2 = "Unable to create instance of " + rawType + "; ReflectionAccessFilter does not permit using reflection or Unsafe. Register an InstanceCreator or a TypeAdapter for this type or adjust the access filter to allow using reflection.";
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda15
-                @Override // com.google.gson.internal.ObjectConstructor
-                public final Object construct() {
-                    return ConstructorConstructor.lambda$get$4(str2);
-                }
-            };
-        } else {
-            return newUnsafeAllocator(rawType);
+            return new ThrowingObjectConstructor("Unable to create instance of " + rawType + "; Register an InstanceCreator or a TypeAdapter for this type.");
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$get$2(String str) {
-        throw new JsonIOException(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$get$3(String str) {
-        throw new JsonIOException(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$get$4(String str) {
-        throw new JsonIOException(str);
+        if (filterResult != ReflectionAccessFilter.FilterResult.ALLOW) {
+            return new ThrowingObjectConstructor("Unable to create instance of " + rawType + "; ReflectionAccessFilter does not permit using reflection or Unsafe. Register an InstanceCreator or a TypeAdapter for this type or adjust the access filter to allow using reflection.");
+        }
+        return newUnsafeAllocator(rawType);
     }
 
     private static <T> ObjectConstructor<T> newSpecialCollectionConstructor(final Type type, Class<? super T> cls) {
         if (EnumSet.class.isAssignableFrom(cls)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda2
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda8
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newSpecialCollectionConstructor$5(type);
+                    return ConstructorConstructor.lambda$newSpecialCollectionConstructor$0(type);
                 }
             };
         }
         if (cls == EnumMap.class) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda3
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda9
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newSpecialCollectionConstructor$6(type);
+                    return ConstructorConstructor.lambda$newSpecialCollectionConstructor$1(type);
                 }
             };
         }
@@ -155,76 +142,55 @@ public final class ConstructorConstructor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newSpecialCollectionConstructor$5(Type type) {
+    public static /* synthetic */ Object lambda$newSpecialCollectionConstructor$0(Type type) {
         if (type instanceof ParameterizedType) {
             Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
             if (type2 instanceof Class) {
                 return EnumSet.noneOf((Class) type2);
             }
-            throw new JsonIOException("Invalid EnumSet type: " + type.toString());
+            throw new JsonIOException("Invalid EnumSet type: " + type);
         }
-        throw new JsonIOException("Invalid EnumSet type: " + type.toString());
+        throw new JsonIOException("Invalid EnumSet type: " + type);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newSpecialCollectionConstructor$6(Type type) {
+    public static /* synthetic */ Object lambda$newSpecialCollectionConstructor$1(Type type) {
         if (type instanceof ParameterizedType) {
             Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
             if (type2 instanceof Class) {
                 return new EnumMap((Class) type2);
             }
-            throw new JsonIOException("Invalid EnumMap type: " + type.toString());
+            throw new JsonIOException("Invalid EnumMap type: " + type);
         }
-        throw new JsonIOException("Invalid EnumMap type: " + type.toString());
+        throw new JsonIOException("Invalid EnumMap type: " + type);
     }
 
     private static <T> ObjectConstructor<T> newDefaultConstructor(Class<? super T> cls, ReflectionAccessFilter.FilterResult filterResult) {
-        final String tryMakeAccessible;
+        String tryMakeAccessible;
         if (Modifier.isAbstract(cls.getModifiers())) {
             return null;
         }
         try {
             final Constructor<? super T> declaredConstructor = cls.getDeclaredConstructor(new Class[0]);
             if (filterResult != ReflectionAccessFilter.FilterResult.ALLOW && (!ReflectionAccessFilterHelper.canAccess(declaredConstructor, null) || (filterResult == ReflectionAccessFilter.FilterResult.BLOCK_ALL && !Modifier.isPublic(declaredConstructor.getModifiers())))) {
-                final String str = "Unable to invoke no-args constructor of " + cls + "; constructor is not accessible and ReflectionAccessFilter does not permit making it accessible. Register an InstanceCreator or a TypeAdapter for this type, change the visibility of the constructor or adjust the access filter.";
-                return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda9
-                    @Override // com.google.gson.internal.ObjectConstructor
-                    public final Object construct() {
-                        return ConstructorConstructor.lambda$newDefaultConstructor$7(str);
-                    }
-                };
-            } else if (filterResult == ReflectionAccessFilter.FilterResult.ALLOW && (tryMakeAccessible = ReflectionHelper.tryMakeAccessible(declaredConstructor)) != null) {
-                return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda10
-                    @Override // com.google.gson.internal.ObjectConstructor
-                    public final Object construct() {
-                        return ConstructorConstructor.lambda$newDefaultConstructor$8(tryMakeAccessible);
-                    }
-                };
-            } else {
-                return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda12
-                    @Override // com.google.gson.internal.ObjectConstructor
-                    public final Object construct() {
-                        return ConstructorConstructor.lambda$newDefaultConstructor$9(declaredConstructor);
-                    }
-                };
+                return new ThrowingObjectConstructor("Unable to invoke no-args constructor of " + cls + "; constructor is not accessible and ReflectionAccessFilter does not permit making it accessible. Register an InstanceCreator or a TypeAdapter for this type, change the visibility of the constructor or adjust the access filter.");
             }
+            if (filterResult == ReflectionAccessFilter.FilterResult.ALLOW && (tryMakeAccessible = ReflectionHelper.tryMakeAccessible(declaredConstructor)) != null) {
+                return new ThrowingObjectConstructor(tryMakeAccessible);
+            }
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda3
+                @Override // com.google.gson.internal.ObjectConstructor
+                public final Object construct() {
+                    return ConstructorConstructor.lambda$newDefaultConstructor$2(declaredConstructor);
+                }
+            };
         } catch (NoSuchMethodException unused) {
             return null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newDefaultConstructor$7(String str) {
-        throw new JsonIOException(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newDefaultConstructor$8(String str) {
-        throw new JsonIOException(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newDefaultConstructor$9(Constructor constructor) {
+    public static /* synthetic */ Object lambda$newDefaultConstructor$2(Constructor constructor) {
         try {
             return constructor.newInstance(new Object[0]);
         } catch (IllegalAccessException e) {
@@ -246,60 +212,40 @@ public final class ConstructorConstructor {
         return null;
     }
 
-    private static ObjectConstructor<? extends Collection<? extends Object>> newCollectionConstructor(Class<?> cls) {
+    private static ObjectConstructor<? extends Collection<?>> newCollectionConstructor(Class<?> cls) {
         if (cls.isAssignableFrom(ArrayList.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda16
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda0
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newCollectionConstructor$10();
+                    return ConstructorConstructor.$r8$lambda$b6MTbXibNZrv5TLwP3JJEywfPpE();
                 }
             };
         }
         if (cls.isAssignableFrom(LinkedHashSet.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda17
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda4
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newCollectionConstructor$11();
+                    return ConstructorConstructor.$r8$lambda$NLbwqHqQAQIhtHnJWSp_k5iVcGo();
                 }
             };
         }
         if (cls.isAssignableFrom(TreeSet.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda18
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda5
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newCollectionConstructor$12();
+                    return ConstructorConstructor.$r8$lambda$6G_sB8re23KKWp7UuO_MRI6S3Rs();
                 }
             };
         }
         if (cls.isAssignableFrom(ArrayDeque.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda19
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda6
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newCollectionConstructor$13();
+                    return ConstructorConstructor.$r8$lambda$KHjHxHfrAPBZynycoYlophKpIMg();
                 }
             };
         }
         return null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Collection lambda$newCollectionConstructor$10() {
-        return new ArrayList();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Collection lambda$newCollectionConstructor$11() {
-        return new LinkedHashSet();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Collection lambda$newCollectionConstructor$12() {
-        return new TreeSet();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Collection lambda$newCollectionConstructor$13() {
-        return new ArrayDeque();
     }
 
     private static boolean hasStringKeyType(Type type) {
@@ -310,44 +256,44 @@ public final class ConstructorConstructor {
         return true;
     }
 
-    private static ObjectConstructor<? extends Map<? extends Object, Object>> newMapConstructor(Type type, Class<?> cls) {
+    private static ObjectConstructor<? extends Map<?, Object>> newMapConstructor(Type type, Class<?> cls) {
         if (cls.isAssignableFrom(LinkedTreeMap.class) && hasStringKeyType(type)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda4
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda10
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newMapConstructor$14();
+                    return ConstructorConstructor.lambda$newMapConstructor$3();
                 }
             };
         }
         if (cls.isAssignableFrom(LinkedHashMap.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda5
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda11
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newMapConstructor$15();
+                    return ConstructorConstructor.$r8$lambda$j13nCw3K6fbdcbbgKDegSiMMiok();
                 }
             };
         }
         if (cls.isAssignableFrom(TreeMap.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda6
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda12
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newMapConstructor$16();
+                    return ConstructorConstructor.m9710$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q();
                 }
             };
         }
         if (cls.isAssignableFrom(ConcurrentHashMap.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda7
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda1
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newMapConstructor$17();
+                    return ConstructorConstructor.$r8$lambda$sV1DPvrAnITRCFBfNIkaohezawA();
                 }
             };
         }
         if (cls.isAssignableFrom(ConcurrentSkipListMap.class)) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda8
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda2
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newMapConstructor$18();
+                    return ConstructorConstructor.$r8$lambda$xY5KcoCSsEftucjS_xdJVQ7kgJo();
                 }
             };
         }
@@ -355,53 +301,28 @@ public final class ConstructorConstructor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Map lambda$newMapConstructor$14() {
+    public static /* synthetic */ Map lambda$newMapConstructor$3() {
         return new LinkedTreeMap();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Map lambda$newMapConstructor$15() {
-        return new LinkedHashMap();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Map lambda$newMapConstructor$16() {
-        return new TreeMap();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Map lambda$newMapConstructor$17() {
-        return new ConcurrentHashMap();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Map lambda$newMapConstructor$18() {
-        return new ConcurrentSkipListMap();
     }
 
     private <T> ObjectConstructor<T> newUnsafeAllocator(final Class<? super T> cls) {
         if (this.useJdkUnsafe) {
-            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda20
+            return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda7
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.lambda$newUnsafeAllocator$19(cls);
+                    return ConstructorConstructor.lambda$newUnsafeAllocator$4(cls);
                 }
             };
         }
-        final String str = "Unable to create instance of " + cls + "; usage of JDK Unsafe is disabled. Registering an InstanceCreator or a TypeAdapter for this type, adding a no-args constructor, or enabling usage of JDK Unsafe may fix this problem.";
+        String str = "Unable to create instance of " + cls + "; usage of JDK Unsafe is disabled. Registering an InstanceCreator or a TypeAdapter for this type, adding a no-args constructor, or enabling usage of JDK Unsafe may fix this problem.";
         if (cls.getDeclaredConstructors().length == 0) {
             str = str + " Or adjust your R8 configuration to keep the no-args constructor of the class.";
         }
-        return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda1
-            @Override // com.google.gson.internal.ObjectConstructor
-            public final Object construct() {
-                return ConstructorConstructor.lambda$newUnsafeAllocator$20(str);
-            }
-        };
+        return new ThrowingObjectConstructor(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newUnsafeAllocator$19(Class cls) {
+    public static /* synthetic */ Object lambda$newUnsafeAllocator$4(Class cls) {
         try {
             return UnsafeAllocator.INSTANCE.newInstance(cls);
         } catch (Exception e) {
@@ -409,12 +330,39 @@ public final class ConstructorConstructor {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Object lambda$newUnsafeAllocator$20(String str) {
-        throw new JsonIOException(str);
-    }
-
     public String toString() {
         return this.instanceCreators.toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes4.dex */
+    public static final class ThrowingObjectConstructor<T> implements ObjectConstructor<T> {
+        private final String exceptionMessage;
+
+        ThrowingObjectConstructor(String str) {
+            this.exceptionMessage = str;
+        }
+
+        @Override // com.google.gson.internal.ObjectConstructor
+        public T construct() {
+            throw new JsonIOException(this.exceptionMessage);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes4.dex */
+    public static final class InstanceCreatorConstructor<T> implements ObjectConstructor<T> {
+        private final InstanceCreator<T> instanceCreator;
+        private final Type type;
+
+        InstanceCreatorConstructor(InstanceCreator<T> instanceCreator, Type type) {
+            this.instanceCreator = instanceCreator;
+            this.type = type;
+        }
+
+        @Override // com.google.gson.internal.ObjectConstructor
+        public T construct() {
+            return this.instanceCreator.createInstance(this.type);
+        }
     }
 }

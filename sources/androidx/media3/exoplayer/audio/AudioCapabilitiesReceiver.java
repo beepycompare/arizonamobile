@@ -8,13 +8,17 @@ import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.media.AudioDeviceInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.audio.AudioManagerCompat;
 import androidx.media3.common.util.Util;
+import androidx.media3.exoplayer.util.SpatializerWrapper;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AudioCapabilitiesReceiver {
     private AudioAttributes audioAttributes;
     private AudioCapabilities audioCapabilities;
@@ -26,8 +30,9 @@ public final class AudioCapabilitiesReceiver {
     private final Listener listener;
     private boolean registered;
     private AudioDeviceInfo routedDevice;
+    private SpatializerWrapper spatializer;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onAudioCapabilitiesChanged(AudioCapabilities audioCapabilities);
     }
@@ -60,7 +65,7 @@ public final class AudioCapabilitiesReceiver {
             return;
         }
         this.audioAttributes = audioAttributes;
-        onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(this.context, audioAttributes, this.routedDevice));
+        onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(this.context, audioAttributes, this.routedDevice, getSpatializerChannelMasks()));
     }
 
     public void setRoutedDevice(AudioDeviceInfo audioDeviceInfo) {
@@ -68,7 +73,7 @@ public final class AudioCapabilitiesReceiver {
             return;
         }
         this.routedDevice = audioDeviceInfo;
-        onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(this.context, this.audioAttributes, audioDeviceInfo));
+        onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(this.context, this.audioAttributes, audioDeviceInfo, getSpatializerChannelMasks()));
     }
 
     public AudioCapabilities register() {
@@ -81,15 +86,28 @@ public final class AudioCapabilitiesReceiver {
             externalSurroundSoundSettingObserver.register();
         }
         AudioManagerCompat.getAudioManager(this.context).registerAudioDeviceCallback(this.audioDeviceCallback, this.handler);
-        AudioCapabilities capabilitiesInternal = AudioCapabilities.getCapabilitiesInternal(this.context, this.context.registerReceiver(this.hdmiAudioPlugBroadcastReceiver, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, this.handler), this.audioAttributes, this.routedDevice);
+        if (Build.VERSION.SDK_INT >= 32 && this.spatializer == null) {
+            this.spatializer = new SpatializerWrapper(this.context, new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioCapabilitiesReceiver$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AudioCapabilitiesReceiver.this.updateCurrentAudioCapabilities();
+                }
+            }, Boolean.valueOf(Util.isTv(this.context)));
+        }
+        AudioCapabilities capabilitiesInternal = AudioCapabilities.getCapabilitiesInternal(this.context, this.context.registerReceiver(this.hdmiAudioPlugBroadcastReceiver, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, this.handler), this.audioAttributes, this.routedDevice, getSpatializerChannelMasks());
         this.audioCapabilities = capabilitiesInternal;
         return capabilitiesInternal;
     }
 
     public void unregister() {
+        SpatializerWrapper spatializerWrapper;
         if (this.registered) {
             this.audioCapabilities = null;
             AudioManagerCompat.getAudioManager(this.context).unregisterAudioDeviceCallback(this.audioDeviceCallback);
+            if (Build.VERSION.SDK_INT >= 32 && (spatializerWrapper = this.spatializer) != null) {
+                spatializerWrapper.release();
+                this.spatializer = null;
+            }
             this.context.unregisterReceiver(this.hdmiAudioPlugBroadcastReceiver);
             ExternalSurroundSoundSettingObserver externalSurroundSoundSettingObserver = this.externalSurroundSoundSettingObserver;
             if (externalSurroundSoundSettingObserver != null) {
@@ -97,6 +115,15 @@ public final class AudioCapabilitiesReceiver {
             }
             this.registered = false;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public List<Integer> getSpatializerChannelMasks() {
+        SpatializerWrapper spatializerWrapper;
+        if (Build.VERSION.SDK_INT >= 32 && (spatializerWrapper = this.spatializer) != null) {
+            return spatializerWrapper.getSpatializedChannelMasks();
+        }
+        return ImmutableList.of();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -108,7 +135,12 @@ public final class AudioCapabilitiesReceiver {
         this.listener.onAudioCapabilitiesChanged(audioCapabilities);
     }
 
-    /* loaded from: classes2.dex */
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateCurrentAudioCapabilities() {
+        onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(this.context, this.audioAttributes, this.routedDevice, getSpatializerChannelMasks()));
+    }
+
+    /* loaded from: classes3.dex */
     private final class HdmiAudioPlugBroadcastReceiver extends BroadcastReceiver {
         private HdmiAudioPlugBroadcastReceiver() {
         }
@@ -118,12 +150,13 @@ public final class AudioCapabilitiesReceiver {
             if (isInitialStickyBroadcast()) {
                 return;
             }
+            List spatializerChannelMasks = AudioCapabilitiesReceiver.this.getSpatializerChannelMasks();
             AudioCapabilitiesReceiver audioCapabilitiesReceiver = AudioCapabilitiesReceiver.this;
-            audioCapabilitiesReceiver.onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(context, intent, audioCapabilitiesReceiver.audioAttributes, AudioCapabilitiesReceiver.this.routedDevice));
+            audioCapabilitiesReceiver.onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(context, intent, audioCapabilitiesReceiver.audioAttributes, AudioCapabilitiesReceiver.this.routedDevice, spatializerChannelMasks));
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class ExternalSurroundSoundSettingObserver extends ContentObserver {
         private final ContentResolver resolver;
         private final Uri settingUri;
@@ -144,20 +177,18 @@ public final class AudioCapabilitiesReceiver {
 
         @Override // android.database.ContentObserver
         public void onChange(boolean z) {
-            AudioCapabilitiesReceiver audioCapabilitiesReceiver = AudioCapabilitiesReceiver.this;
-            audioCapabilitiesReceiver.onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(audioCapabilitiesReceiver.context, AudioCapabilitiesReceiver.this.audioAttributes, AudioCapabilitiesReceiver.this.routedDevice));
+            AudioCapabilitiesReceiver.this.updateCurrentAudioCapabilities();
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class AudioDeviceCallback extends android.media.AudioDeviceCallback {
         private AudioDeviceCallback() {
         }
 
         @Override // android.media.AudioDeviceCallback
         public void onAudioDevicesAdded(AudioDeviceInfo[] audioDeviceInfoArr) {
-            AudioCapabilitiesReceiver audioCapabilitiesReceiver = AudioCapabilitiesReceiver.this;
-            audioCapabilitiesReceiver.onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(audioCapabilitiesReceiver.context, AudioCapabilitiesReceiver.this.audioAttributes, AudioCapabilitiesReceiver.this.routedDevice));
+            AudioCapabilitiesReceiver.this.updateCurrentAudioCapabilities();
         }
 
         @Override // android.media.AudioDeviceCallback
@@ -165,8 +196,7 @@ public final class AudioCapabilitiesReceiver {
             if (Util.contains(audioDeviceInfoArr, AudioCapabilitiesReceiver.this.routedDevice)) {
                 AudioCapabilitiesReceiver.this.routedDevice = null;
             }
-            AudioCapabilitiesReceiver audioCapabilitiesReceiver = AudioCapabilitiesReceiver.this;
-            audioCapabilitiesReceiver.onNewAudioCapabilities(AudioCapabilities.getCapabilitiesInternal(audioCapabilitiesReceiver.context, AudioCapabilitiesReceiver.this.audioAttributes, AudioCapabilitiesReceiver.this.routedDevice));
+            AudioCapabilitiesReceiver.this.updateCurrentAudioCapabilities();
         }
     }
 }

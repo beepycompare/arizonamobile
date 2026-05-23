@@ -4,66 +4,66 @@ import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: BaselineShift.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0013\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u000b\u001a\u00020\fHÖ\u0001J\t\u0010\r\u001a\u00020\u000eHÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/text/style/BaselineShift;", "", "multiplier", "", "constructor-impl", "(F)F", "getMultiplier", "()F", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087@\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0014\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u000b\u001a\u00020\fHÖ\u0081\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/text/style/BaselineShift;", "", "multiplier", "", "constructor-impl", "(F)F", "getMultiplier", "()F", "equals", "", "other", "hashCode", "", "toString", "", "Companion", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes2.dex */
 public final class BaselineShift {
     private final float multiplier;
     public static final Companion Companion = new Companion(null);
-    private static final float Superscript = m7296constructorimpl(0.5f);
-    private static final float Subscript = m7296constructorimpl(-0.5f);
-    private static final float None = m7296constructorimpl(0.0f);
-    private static final float Unspecified = m7296constructorimpl(Float.NaN);
+    private static final float Superscript = m7901constructorimpl(0.5f);
+    private static final float Subscript = m7901constructorimpl(-0.5f);
+    private static final float None = m7901constructorimpl(0.0f);
+    private static final float Unspecified = m7901constructorimpl(Float.NaN);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BaselineShift m7295boximpl(float f) {
+    public static final /* synthetic */ BaselineShift m7900boximpl(float f) {
         return new BaselineShift(f);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float m7296constructorimpl(float f) {
+    public static float m7901constructorimpl(float f) {
         return f;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7297equalsimpl(float f, Object obj) {
-        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m7301unboximpl()) == 0;
+    public static boolean m7902equalsimpl(float f, Object obj) {
+        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m7906unboximpl()) == 0;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7298equalsimpl0(float f, float f2) {
+    public static final boolean m7903equalsimpl0(float f, float f2) {
         return Float.compare(f, f2) == 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7299hashCodeimpl(float f) {
+    public static int m7904hashCodeimpl(float f) {
         return Float.hashCode(f);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7300toStringimpl(float f) {
+    public static String m7905toStringimpl(float f) {
         return "BaselineShift(multiplier=" + f + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7297equalsimpl(this.multiplier, obj);
+        return m7902equalsimpl(this.multiplier, obj);
     }
 
     public int hashCode() {
-        return m7299hashCodeimpl(this.multiplier);
+        return m7904hashCodeimpl(this.multiplier);
     }
 
     public String toString() {
-        return m7300toStringimpl(this.multiplier);
+        return m7905toStringimpl(this.multiplier);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float m7301unboximpl() {
+    public final /* synthetic */ float m7906unboximpl() {
         return this.multiplier;
     }
 
     /* compiled from: BaselineShift.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001e\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000b\u0010\u0003\u001a\u0004\b\f\u0010\bR\u001e\u0010\r\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\bR\u001e\u0010\u0010\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0011\u0010\u0003\u001a\u0004\b\u0012\u0010\b¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/text/style/BaselineShift$Companion;", "", "<init>", "()V", "Superscript", "Landroidx/compose/ui/text/style/BaselineShift;", "getSuperscript-y9eOQZs$annotations", "getSuperscript-y9eOQZs", "()F", "F", "Subscript", "getSubscript-y9eOQZs$annotations", "getSubscript-y9eOQZs", "None", "getNone-y9eOQZs$annotations", "getNone-y9eOQZs", "Unspecified", "getUnspecified-y9eOQZs$annotations", "getUnspecified-y9eOQZs", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001e\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001e\u0010\n\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000b\u0010\u0003\u001a\u0004\b\f\u0010\bR\u001e\u0010\r\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\bR\u001e\u0010\u0010\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0010\n\u0002\u0010\t\u0012\u0004\b\u0011\u0010\u0003\u001a\u0004\b\u0012\u0010\b¨\u0006\u0013"}, d2 = {"Landroidx/compose/ui/text/style/BaselineShift$Companion;", "", "<init>", "()V", "Superscript", "Landroidx/compose/ui/text/style/BaselineShift;", "getSuperscript-y9eOQZs$annotations", "getSuperscript-y9eOQZs", "()F", "F", "Subscript", "getSubscript-y9eOQZs$annotations", "getSubscript-y9eOQZs", "None", "getNone-y9eOQZs$annotations", "getNone-y9eOQZs", "Unspecified", "getUnspecified-y9eOQZs$annotations", "getUnspecified-y9eOQZs", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -71,41 +71,41 @@ public final class BaselineShift {
         }
 
         /* renamed from: getNone-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7302getNoney9eOQZs$annotations() {
+        public static /* synthetic */ void m7907getNoney9eOQZs$annotations() {
         }
 
         /* renamed from: getSubscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7303getSubscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7908getSubscripty9eOQZs$annotations() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7304getSuperscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7909getSuperscripty9eOQZs$annotations() {
         }
 
         /* renamed from: getUnspecified-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m7305getUnspecifiedy9eOQZs$annotations() {
+        public static /* synthetic */ void m7910getUnspecifiedy9eOQZs$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs  reason: not valid java name */
-        public final float m7308getSuperscripty9eOQZs() {
+        public final float m7913getSuperscripty9eOQZs() {
             return BaselineShift.Superscript;
         }
 
         /* renamed from: getSubscript-y9eOQZs  reason: not valid java name */
-        public final float m7307getSubscripty9eOQZs() {
+        public final float m7912getSubscripty9eOQZs() {
             return BaselineShift.Subscript;
         }
 
         /* renamed from: getNone-y9eOQZs  reason: not valid java name */
-        public final float m7306getNoney9eOQZs() {
+        public final float m7911getNoney9eOQZs() {
             return BaselineShift.None;
         }
 
         /* renamed from: getUnspecified-y9eOQZs  reason: not valid java name */
-        public final float m7309getUnspecifiedy9eOQZs() {
+        public final float m7914getUnspecifiedy9eOQZs() {
             return BaselineShift.Unspecified;
         }
     }

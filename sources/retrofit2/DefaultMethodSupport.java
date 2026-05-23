@@ -4,7 +4,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import javax.annotation.Nullable;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 final class DefaultMethodSupport {
     @Nullable
     private static Constructor<MethodHandles.Lookup> lookupConstructor;

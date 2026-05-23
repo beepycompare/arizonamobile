@@ -1,57 +1,42 @@
 package com.google.android.gms.internal.measurement;
 
-import sun.misc.Unsafe;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import android.content.Context;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableSet;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzon extends zzoo {
+public final class zzon {
+    private final Function zza;
+    private final boolean zzb;
+    private final ImmutableSet zzc;
+    private volatile String zzd = null;
+
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzon(Unsafe unsafe) {
-        super(unsafe);
+    public zzon(Function function, boolean z, boolean z2, boolean z3, boolean z4, ImmutableSet immutableSet) {
+        this.zza = function;
+        this.zzb = z3;
+        this.zzc = immutableSet;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final void zza(Object obj, long j, byte b) {
-        if (zzop.zzb) {
-            zzop.zzD(obj, j, b);
-        } else {
-            zzop.zzE(obj, j, b);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final String zza(Context context) {
+        String str = this.zzd;
+        if (str == null) {
+            String str2 = (String) this.zza.apply(context);
+            this.zzd = str2;
+            return str2;
         }
+        return str;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final boolean zzb(Object obj, long j) {
-        if (zzop.zzb) {
-            return zzop.zzu(obj, j);
-        }
-        return zzop.zzv(obj, j);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final boolean zzb() {
+        return this.zzb;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzop.zzb) {
-            zzop.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
-        } else {
-            zzop.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final float zzd(Object obj, long j) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final void zze(Object obj, long j, float f) {
-        this.zza.putInt(obj, j, Float.floatToIntBits(f));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final double zzf(Object obj, long j) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j));
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzoo
-    public final void zzg(Object obj, long j, double d) {
-        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final ImmutableSet zzc() {
+        return this.zzc;
     }
 }

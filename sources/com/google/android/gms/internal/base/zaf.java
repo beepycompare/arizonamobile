@@ -1,15 +1,36 @@
 package com.google.android.gms.internal.base;
 
-import com.google.android.gms.common.Feature;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaf {
-    public static final Feature zaa;
-    public static final Feature[] zab;
+final class zaf extends Drawable {
+    private static final zaf zaa = new zaf();
+    private static final zae zab = new zae(null);
 
-    static {
-        Feature feature = new Feature("CLIENT_TELEMETRY", 1L);
-        zaa = feature;
-        zab = new Feature[]{feature};
+    private zaf() {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final Drawable.ConstantState getConstantState() {
+        return zab;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

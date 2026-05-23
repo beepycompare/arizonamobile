@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import com.google.android.gms.common.internal.Preconditions;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzpe {
     private final zzpg zza;
@@ -24,7 +24,7 @@ public final class zzpe {
                 break;
             }
         }
-        return zzpgVar.zzaZ().currentTimeMillis() + Math.min(longValue, longValue2);
+        return zzpgVar.zzba().currentTimeMillis() + Math.min(longValue, longValue2);
     }
 
     public final void zza() {
@@ -33,7 +33,7 @@ public final class zzpe {
     }
 
     public final boolean zzb() {
-        return this.zza.zzaZ().currentTimeMillis() >= this.zzc;
+        return this.zza.zzba().currentTimeMillis() >= this.zzc;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

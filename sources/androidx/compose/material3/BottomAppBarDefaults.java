@@ -32,7 +32,7 @@ public final class BottomAppBarDefaults {
     private static final Arrangement.Horizontal FlexibleFixedHorizontalArrangement;
     private static final Arrangement.Horizontal FlexibleHorizontalArrangement;
     public static final BottomAppBarDefaults INSTANCE = new BottomAppBarDefaults();
-    private static final float ContainerElevation = Dp.m7555constructorimpl(0.0f);
+    private static final float ContainerElevation = Dp.m8160constructorimpl(0.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean exitAlwaysScrollBehavior$lambda$1$lambda$0() {
@@ -56,7 +56,7 @@ public final class BottomAppBarDefaults {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1744getContainerElevationD9Ej5fM() {
+    public final float m2189getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -69,12 +69,12 @@ public final class BottomAppBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(688896409, i, -1, "androidx.compose.material3.BottomAppBarDefaults.<get-windowInsets> (AppBar.kt:2147)");
         }
-        WindowInsets m891onlybOOhFvg = WindowInsetsKt.m891onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m903plusgK_yJZ4(WindowInsetsSides.Companion.m913getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m911getBottomJoeWqyM()));
+        WindowInsets m1145onlybOOhFvg = WindowInsetsKt.m1145onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m1157plusgK_yJZ4(WindowInsetsSides.Companion.m1167getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m1165getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m891onlybOOhFvg;
+        return m1145onlybOOhFvg;
     }
 
     public final long getBottomAppBarFabColor(Composer composer, int i) {
@@ -95,7 +95,7 @@ public final class BottomAppBarDefaults {
     }
 
     /* renamed from: getFlexibleBottomAppBarHeight-D9Ej5fM$material3  reason: not valid java name */
-    public final float m1745getFlexibleBottomAppBarHeightD9Ej5fM$material3() {
+    public final float m2190getFlexibleBottomAppBarHeightD9Ej5fM$material3() {
         return FlexibleBottomAppBarHeight;
     }
 
@@ -162,10 +162,10 @@ public final class BottomAppBarDefaults {
         f = AppBarKt.BottomAppBarHorizontalPadding;
         float bottomAppBarVerticalPadding = AppBarKt.getBottomAppBarVerticalPadding();
         f2 = AppBarKt.BottomAppBarHorizontalPadding;
-        ContentPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(f, bottomAppBarVerticalPadding, f2, 0.0f, 8, null);
-        FlexibleContentPadding = PaddingKt.m815PaddingValuesa9UjIt4$default(DockedToolbarTokens.INSTANCE.m3333getContainerLeadingSpaceD9Ej5fM(), 0.0f, DockedToolbarTokens.INSTANCE.m3336getContainerTrailingSpaceD9Ej5fM(), 0.0f, 10, null);
-        FlexibleBottomAppBarHeight = DockedToolbarTokens.INSTANCE.m3332getContainerHeightD9Ej5fM();
+        ContentPadding = PaddingKt.m1047PaddingValuesa9UjIt4$default(f, bottomAppBarVerticalPadding, f2, 0.0f, 8, null);
+        FlexibleContentPadding = PaddingKt.m1047PaddingValuesa9UjIt4$default(DockedToolbarTokens.INSTANCE.m3778getContainerLeadingSpaceD9Ej5fM(), 0.0f, DockedToolbarTokens.INSTANCE.m3781getContainerTrailingSpaceD9Ej5fM(), 0.0f, 10, null);
+        FlexibleBottomAppBarHeight = DockedToolbarTokens.INSTANCE.m3777getContainerHeightD9Ej5fM();
         FlexibleHorizontalArrangement = Arrangement.INSTANCE.getSpaceBetween();
-        FlexibleFixedHorizontalArrangement = Arrangement.INSTANCE.m689spacedByD5KLDUw(DockedToolbarTokens.INSTANCE.m3334getContainerMaxSpacingD9Ej5fM(), Alignment.Companion.getCenterHorizontally());
+        FlexibleFixedHorizontalArrangement = Arrangement.INSTANCE.m743spacedByD5KLDUw(DockedToolbarTokens.INSTANCE.m3779getContainerMaxSpacingD9Ej5fM(), Alignment.Companion.getCenterHorizontally());
     }
 }

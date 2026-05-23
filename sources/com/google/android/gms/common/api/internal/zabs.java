@@ -1,35 +1,37 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.Feature;
-import com.google.android.gms.common.internal.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zabs {
-    private final ApiKey zaa;
-    private final Feature zab;
+public final class zabs extends BroadcastReceiver {
+    Context zaa;
+    private final zabr zab;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zabs(ApiKey apiKey, Feature feature, zabr zabrVar) {
-        this.zaa = apiKey;
-        this.zab = feature;
+    public zabs(zabr zabrVar) {
+        this.zab = zabrVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj != null && (obj instanceof zabs)) {
-            zabs zabsVar = (zabs) obj;
-            if (Objects.equal(this.zaa, zabsVar.zaa) && Objects.equal(this.zab, zabsVar.zab)) {
-                return true;
-            }
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        Uri data = intent.getData();
+        if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
+            this.zab.zaa();
+            zab();
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return Objects.hashCode(this.zaa, this.zab);
+    public final void zaa(Context context) {
+        this.zaa = context;
     }
 
-    public final String toString() {
-        return Objects.toStringHelper(this).add("key", this.zaa).add("feature", this.zab).toString();
+    public final synchronized void zab() {
+        Context context = this.zaa;
+        if (context != null) {
+            context.unregisterReceiver(this);
+        }
+        this.zaa = null;
     }
 }

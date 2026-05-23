@@ -7,7 +7,7 @@ import androidx.media3.exoplayer.upstream.CmcdData;
 import java.util.Map;
 import kotlin.Metadata;
 /* compiled from: NodeCoordinator.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a,\u0010\u0000\u001a\u00020\u00012\u000e\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00070\u0006H\u0002\u001a-\u0010\b\u001a\u0004\u0018\u00010\t*\u00020\n2\n\u0010\u000b\u001a\u0006\u0012\u0002\b\u00030\f2\n\u0010\r\u001a\u0006\u0012\u0002\b\u00030\fH\u0002¢\u0006\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"compareEquals", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Landroidx/collection/MutableObjectIntMap;", "Landroidx/compose/ui/layout/AlignmentLine;", "b", "", "", "nextUntil", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DelegatableNode;", "type", "Landroidx/compose/ui/node/NodeKind;", "stopType", "nextUntil-hw7D004", "(Landroidx/compose/ui/node/DelegatableNode;II)Landroidx/compose/ui/Modifier$Node;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a,\u0010\u0000\u001a\u00020\u00012\u000e\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00070\u0006H\u0002\u001a-\u0010\b\u001a\u0004\u0018\u00010\t*\u00020\n2\n\u0010\u000b\u001a\u0006\u0012\u0002\b\u00030\f2\n\u0010\r\u001a\u0006\u0012\u0002\b\u00030\fH\u0002¢\u0006\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"compareEquals", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Landroidx/collection/MutableObjectIntMap;", "Landroidx/compose/ui/layout/AlignmentLine;", "b", "", "", "nextUntil", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DelegatableNode;", "type", "Landroidx/compose/ui/node/NodeKind;", "stopType", "nextUntil-hw7D004", "(Landroidx/compose/ui/node/DelegatableNode;II)Landroidx/compose/ui/Modifier$Node;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class NodeCoordinatorKt {
     public static final /* synthetic */ boolean access$compareEquals(MutableObjectIntMap mutableObjectIntMap, Map map) {
@@ -15,8 +15,8 @@ public final class NodeCoordinatorKt {
     }
 
     /* renamed from: access$nextUntil-hw7D004  reason: not valid java name */
-    public static final /* synthetic */ Modifier.Node m6532access$nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
-        return m6533nextUntilhw7D004(delegatableNode, i, i2);
+    public static final /* synthetic */ Modifier.Node m7132access$nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
+        return m7133nextUntilhw7D004(delegatableNode, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -67,7 +67,7 @@ public final class NodeCoordinatorKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: nextUntil-hw7D004  reason: not valid java name */
-    public static final Modifier.Node m6533nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
+    public static final Modifier.Node m7133nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
         Modifier.Node child$ui = delegatableNode.getNode().getChild$ui();
         if (child$ui == null || (child$ui.getAggregateChildKindSet$ui() & i) == 0) {
             return null;

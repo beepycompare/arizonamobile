@@ -44,23 +44,23 @@ public final class ClockDialNode$pointerInputTapNode$1$2$1 extends SuspendLambda
         AnalogTimePickerState analogTimePickerState;
         float maxDist;
         boolean z;
-        long m1841getCenternOccac;
+        long m2286getCenternOccac;
         AnimationSpec animationSpec;
-        Object m2762onTapuYHVD98;
+        Object m3207onTapuYHVD98;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             analogTimePickerState = this.this$0.state;
-            float intBitsToFloat = Float.intBitsToFloat((int) (this.$it.m4537unboximpl() >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (this.$it.m4537unboximpl() & 4294967295L));
+            float intBitsToFloat = Float.intBitsToFloat((int) (this.$it.m5113unboximpl() >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (this.$it.m5113unboximpl() & 4294967295L));
             maxDist = this.this$0.getMaxDist();
             z = this.this$0.autoSwitchToMinute;
-            m1841getCenternOccac = this.this$0.m1841getCenternOccac();
+            m2286getCenternOccac = this.this$0.m2286getCenternOccac();
             animationSpec = this.this$0.animationSpec;
             this.label = 1;
-            m2762onTapuYHVD98 = TimePickerKt.m2762onTapuYHVD98(analogTimePickerState, intBitsToFloat, intBitsToFloat2, maxDist, z, m1841getCenternOccac, animationSpec, this);
-            if (m2762onTapuYHVD98 == coroutine_suspended) {
+            m3207onTapuYHVD98 = TimePickerKt.m3207onTapuYHVD98(analogTimePickerState, intBitsToFloat, intBitsToFloat2, maxDist, z, m2286getCenternOccac, animationSpec, this);
+            if (m3207onTapuYHVD98 == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

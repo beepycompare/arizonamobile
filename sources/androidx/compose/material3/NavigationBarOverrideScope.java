@@ -44,17 +44,17 @@ public final class NavigationBarOverrideScope {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2279getContainerColor0d7_KjU() {
+    public final long m2724getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2280getContentColor0d7_KjU() {
+    public final long m2725getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getTonalElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2281getTonalElevationD9Ej5fM() {
+    public final float m2726getTonalElevationD9Ej5fM() {
         return this.tonalElevation;
     }
 

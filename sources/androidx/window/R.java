@@ -6,34 +6,34 @@ public final class R {
     public static final class attr {
         public static int activityAction = 0x7f040028;
         public static int activityName = 0x7f04002a;
-        public static int alwaysExpand = 0x7f04003c;
-        public static int animationBackgroundColor = 0x7f040042;
-        public static int clearTop = 0x7f040109;
-        public static int dragRangeMaxRatio = 0x7f040208;
-        public static int dragRangeMinRatio = 0x7f040209;
-        public static int embeddingDividerColor = 0x7f040228;
-        public static int embeddingDividerType = 0x7f040229;
-        public static int embeddingDividerWidthDp = 0x7f04022a;
-        public static int finishPrimaryWithPlaceholder = 0x7f040281;
-        public static int finishPrimaryWithSecondary = 0x7f040282;
-        public static int finishSecondaryWithPrimary = 0x7f040283;
-        public static int isDraggingToFullscreenAllowed = 0x7f040334;
-        public static int placeholderActivityName = 0x7f0404ef;
-        public static int primaryActivityName = 0x7f040515;
-        public static int secondaryActivityAction = 0x7f040564;
-        public static int secondaryActivityName = 0x7f040565;
-        public static int splitChangeAnimation = 0x7f0405b7;
-        public static int splitCloseAnimation = 0x7f0405b8;
-        public static int splitLayoutDirection = 0x7f0405b9;
-        public static int splitMaxAspectRatioInLandscape = 0x7f0405ba;
-        public static int splitMaxAspectRatioInPortrait = 0x7f0405bb;
-        public static int splitMinHeightDp = 0x7f0405bc;
-        public static int splitMinSmallestWidthDp = 0x7f0405bd;
-        public static int splitMinWidthDp = 0x7f0405be;
-        public static int splitOpenAnimation = 0x7f0405bf;
-        public static int splitRatio = 0x7f0405c0;
-        public static int stickyPlaceholder = 0x7f0405e2;
-        public static int tag = 0x7f040622;
+        public static int alwaysExpand = 0x7f04003d;
+        public static int animationBackgroundColor = 0x7f040043;
+        public static int clearTop = 0x7f04010c;
+        public static int dragRangeMaxRatio = 0x7f04020e;
+        public static int dragRangeMinRatio = 0x7f04020f;
+        public static int embeddingDividerColor = 0x7f04022e;
+        public static int embeddingDividerType = 0x7f04022f;
+        public static int embeddingDividerWidthDp = 0x7f040230;
+        public static int finishPrimaryWithPlaceholder = 0x7f040288;
+        public static int finishPrimaryWithSecondary = 0x7f040289;
+        public static int finishSecondaryWithPrimary = 0x7f04028a;
+        public static int isDraggingToFullscreenAllowed = 0x7f040344;
+        public static int placeholderActivityName = 0x7f040518;
+        public static int primaryActivityName = 0x7f04053f;
+        public static int secondaryActivityAction = 0x7f04058e;
+        public static int secondaryActivityName = 0x7f04058f;
+        public static int splitChangeAnimation = 0x7f0405e6;
+        public static int splitCloseAnimation = 0x7f0405e7;
+        public static int splitLayoutDirection = 0x7f0405e8;
+        public static int splitMaxAspectRatioInLandscape = 0x7f0405e9;
+        public static int splitMaxAspectRatioInPortrait = 0x7f0405ea;
+        public static int splitMinHeightDp = 0x7f0405eb;
+        public static int splitMinSmallestWidthDp = 0x7f0405ec;
+        public static int splitMinWidthDp = 0x7f0405ed;
+        public static int splitOpenAnimation = 0x7f0405ee;
+        public static int splitRatio = 0x7f0405ef;
+        public static int stickyPlaceholder = 0x7f040613;
+        public static int tag = 0x7f040654;
 
         private attr() {
         }
@@ -45,17 +45,17 @@ public final class R {
         public static int always = 0x7f0a00d4;
         public static int alwaysAllow = 0x7f0a00d5;
         public static int alwaysDisallow = 0x7f0a00d6;
-        public static int androidx_window_activity_scope = 0x7f0a00db;
-        public static int bottomToTop = 0x7f0a01e5;
-        public static int draggable = 0x7f0a04a0;
-        public static int fixed = 0x7f0a058f;
-        public static int jumpCut = 0x7f0a0816;
-        public static int locale = 0x7f0a08a1;
-        public static int ltr = 0x7f0a08b4;
-        public static int never = 0x7f0a0a34;
-        public static int rtl = 0x7f0a0c7a;
-        public static int systemDefault = 0x7f0a0df4;
-        public static int topToBottom = 0x7f0a0eb5;
+        public static int androidx_window_activity_scope = 0x7f0a00dc;
+        public static int bottomToTop = 0x7f0a01e6;
+        public static int draggable = 0x7f0a04a1;
+        public static int fixed = 0x7f0a0590;
+        public static int jumpCut = 0x7f0a0818;
+        public static int locale = 0x7f0a08a3;
+        public static int ltr = 0x7f0a08b6;
+        public static int never = 0x7f0a0a3a;
+        public static int rtl = 0x7f0a0c83;
+        public static int systemDefault = 0x7f0a0dfd;
+        public static int topToBottom = 0x7f0a0ebe;
 
         private id() {
         }

@@ -26,7 +26,7 @@ import kotlin.math.MathKt;
 import kotlin.ranges.RangesKt;
 /* compiled from: DrawablePainter.kt */
 @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\b\u0010\"\u001a\u00020 H\u0016J\u0010\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0014J\u0012\u0010'\u001a\u00020$2\b\u0010(\u001a\u0004\u0018\u00010)H\u0014J\u0010\u0010*\u001a\u00020$2\u0006\u0010+\u001a\u00020,H\u0014J\f\u0010/\u001a\u00020 *\u000200H\u0014R\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR+\u0010\u000b\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\n8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR+\u0010\u0013\u001a\u00020\u00122\u0006\u0010\t\u001a\u00020\u00128B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0018\u0010\u0011\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001b\u0010\u0019\u001a\u00020\u001a8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001d\u0010\u001e\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010-\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b.\u0010\u0015¨\u00061"}, d2 = {"Lcom/google/accompanist/drawablepainter/DrawablePainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "Landroidx/compose/runtime/RememberObserver;", "drawable", "Landroid/graphics/drawable/Drawable;", "<init>", "(Landroid/graphics/drawable/Drawable;)V", "getDrawable", "()Landroid/graphics/drawable/Drawable;", "<set-?>", "", "drawInvalidateTick", "getDrawInvalidateTick", "()I", "setDrawInvalidateTick", "(I)V", "drawInvalidateTick$delegate", "Landroidx/compose/runtime/MutableState;", "Landroidx/compose/ui/geometry/Size;", "drawableIntrinsicSize", "getDrawableIntrinsicSize-NH-jbRc", "()J", "setDrawableIntrinsicSize-uvyYCjk", "(J)V", "drawableIntrinsicSize$delegate", "callback", "Landroid/graphics/drawable/Drawable$Callback;", "getCallback", "()Landroid/graphics/drawable/Drawable$Callback;", "callback$delegate", "Lkotlin/Lazy;", "onRemembered", "", "onAbandoned", "onForgotten", "applyAlpha", "", "alpha", "", "applyColorFilter", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "applyLayoutDirection", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "intrinsicSize", "getIntrinsicSize-NH-jbRc", "onDraw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "drawablepainter_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class DrawablePainter extends Painter implements RememberObserver {
     public static final int $stable = 8;
     private final Lazy callback$delegate;
@@ -36,7 +36,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
 
     /* compiled from: DrawablePainter.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -65,7 +65,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
         this.drawable = drawable;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(0, null, 2, null);
         this.drawInvalidateTick$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m4584boximpl(DrawablePainterKt.access$getIntrinsicSize(drawable)), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5160boximpl(DrawablePainterKt.access$getIntrinsicSize(drawable)), null, 2, null);
         this.drawableIntrinsicSize$delegate = mutableStateOf$default2;
         this.callback$delegate = LazyKt.lazy(new Function0() { // from class: com.google.accompanist.drawablepainter.DrawablePainter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
@@ -90,14 +90,14 @@ public final class DrawablePainter extends Painter implements RememberObserver {
     }
 
     /* renamed from: getDrawableIntrinsicSize-NH-jbRc  reason: not valid java name */
-    private final long m8818getDrawableIntrinsicSizeNHjbRc() {
-        return ((Size) this.drawableIntrinsicSize$delegate.getValue()).m4601unboximpl();
+    private final long m9428getDrawableIntrinsicSizeNHjbRc() {
+        return ((Size) this.drawableIntrinsicSize$delegate.getValue()).m5177unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setDrawableIntrinsicSize-uvyYCjk  reason: not valid java name */
-    public final void m8819setDrawableIntrinsicSizeuvyYCjk(long j) {
-        this.drawableIntrinsicSize$delegate.setValue(Size.m4584boximpl(j));
+    public final void m9429setDrawableIntrinsicSizeuvyYCjk(long j) {
+        this.drawableIntrinsicSize$delegate.setValue(Size.m5160boximpl(j));
     }
 
     private final Drawable.Callback getCallback() {
@@ -117,7 +117,7 @@ public final class DrawablePainter extends Painter implements RememberObserver {
                 DrawablePainter.this.setDrawInvalidateTick(drawInvalidateTick + 1);
                 DrawablePainter drawablePainter2 = DrawablePainter.this;
                 intrinsicSize = DrawablePainterKt.getIntrinsicSize(drawablePainter2.getDrawable());
-                drawablePainter2.m8819setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
+                drawablePainter2.m9429setDrawableIntrinsicSizeuvyYCjk(intrinsicSize);
             }
 
             @Override // android.graphics.drawable.Drawable.Callback
@@ -193,8 +193,8 @@ public final class DrawablePainter extends Painter implements RememberObserver {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5466getIntrinsicSizeNHjbRc() {
-        return m8818getDrawableIntrinsicSizeNHjbRc();
+    public long mo6042getIntrinsicSizeNHjbRc() {
+        return m9428getDrawableIntrinsicSizeNHjbRc();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -206,9 +206,9 @@ public final class DrawablePainter extends Painter implements RememberObserver {
         try {
             canvas.save();
             if (Build.VERSION.SDK_INT >= 28 && Build.VERSION.SDK_INT < 31 && (this.drawable instanceof AnimatedImageDrawable)) {
-                canvas.scale(Size.m4596getWidthimpl(drawScope.mo5346getSizeNHjbRc()) / Size.m4596getWidthimpl(mo5466getIntrinsicSizeNHjbRc()), Size.m4593getHeightimpl(drawScope.mo5346getSizeNHjbRc()) / Size.m4593getHeightimpl(mo5466getIntrinsicSizeNHjbRc()));
+                canvas.scale(Size.m5172getWidthimpl(drawScope.mo5922getSizeNHjbRc()) / Size.m5172getWidthimpl(mo6042getIntrinsicSizeNHjbRc()), Size.m5169getHeightimpl(drawScope.mo5922getSizeNHjbRc()) / Size.m5169getHeightimpl(mo6042getIntrinsicSizeNHjbRc()));
             } else {
-                this.drawable.setBounds(0, 0, MathKt.roundToInt(Size.m4596getWidthimpl(drawScope.mo5346getSizeNHjbRc())), MathKt.roundToInt(Size.m4593getHeightimpl(drawScope.mo5346getSizeNHjbRc())));
+                this.drawable.setBounds(0, 0, MathKt.roundToInt(Size.m5172getWidthimpl(drawScope.mo5922getSizeNHjbRc())), MathKt.roundToInt(Size.m5169getHeightimpl(drawScope.mo5922getSizeNHjbRc())));
             }
             this.drawable.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         } finally {

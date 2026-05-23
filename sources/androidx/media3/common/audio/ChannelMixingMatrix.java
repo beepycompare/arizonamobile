@@ -10,11 +10,6 @@ public final class ChannelMixingMatrix {
     private final boolean isZero;
     private final int outputChannelCount;
 
-    @Deprecated
-    public static ChannelMixingMatrix create(int i, int i2) {
-        return createForConstantGain(i, i2);
-    }
-
     public static ChannelMixingMatrix createForConstantGain(int i, int i2) {
         return new ChannelMixingMatrix(i, i2, createConstantGainMixingCoefficients(i, i2));
     }

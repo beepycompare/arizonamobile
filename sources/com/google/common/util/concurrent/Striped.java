@@ -1,5 +1,6 @@
 package com.google.common.util.concurrent;
 
+import com.google.android.gms.internal.measurement.zzah$$ExternalSyntheticBackportWithForwarding0;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
@@ -289,7 +290,7 @@ public abstract class Striped<L> {
             }
             L l3 = this.supplier.get();
             ArrayReference arrayReference2 = new ArrayReference(l3, index, this.queue);
-            while (!Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(this.locks, index, arrayReference, arrayReference2)) {
+            while (!zzah$$ExternalSyntheticBackportWithForwarding0.m(this.locks, index, arrayReference, arrayReference2)) {
                 arrayReference = this.locks.get(index);
                 if (arrayReference == null) {
                     l = null;
@@ -313,7 +314,7 @@ public abstract class Striped<L> {
                     return;
                 }
                 ArrayReference arrayReference = (ArrayReference) poll;
-                Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(this.locks, arrayReference.index, arrayReference, null);
+                zzah$$ExternalSyntheticBackportWithForwarding0.m(this.locks, arrayReference.index, arrayReference, null);
             }
         }
 

@@ -1,24 +1,35 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Ne implements Runnable {
+public abstract class Ne {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f714a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ PluginErrorDetails c;
-    public final /* synthetic */ Oe d;
+    public final int f683a = -1;
+    public final int b = 0;
+    public final int c = 1;
 
-    public Ne(Oe oe, String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.d = oe;
-        this.f714a = str;
-        this.b = str2;
-        this.c = pluginErrorDetails;
+    public final int a(Boolean bool) {
+        if (bool == null) {
+            return this.f683a;
+        }
+        if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
+            return this.b;
+        }
+        if (Intrinsics.areEqual(bool, Boolean.TRUE)) {
+            return this.c;
+        }
+        throw new NoWhenBranchMatchedException();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ((Ra) this.d.d.get()).getPluginExtension().reportError(this.f714a, this.b, this.c);
+    public final Boolean a(int i) {
+        if (i == this.b) {
+            return Boolean.FALSE;
+        }
+        if (i == this.c) {
+            return Boolean.TRUE;
+        }
+        return null;
     }
 }

@@ -9,7 +9,7 @@ import com.google.android.datatransport.runtime.synchronization.SynchronizationG
 import com.google.android.datatransport.runtime.time.Clock;
 import java.util.concurrent.Executor;
 import javax.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Uploader_Factory implements Factory<Uploader> {
     private final Provider<BackendRegistry> backendRegistryProvider;
     private final Provider<ClientHealthMetricsStore> clientHealthMetricsStoreProvider;

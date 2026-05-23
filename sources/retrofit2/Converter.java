@@ -7,12 +7,12 @@ import java.lang.reflect.Type;
 import javax.annotation.Nullable;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Converter<F, T> {
     @Nullable
     T convert(F f) throws IOException;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Factory {
         @Nullable
         public Converter<?, RequestBody> requestBodyConverter(Type type, Annotation[] annotationArr, Annotation[] annotationArr2, Retrofit retrofit) {

@@ -4,30 +4,28 @@ import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzef extends zzeq {
-    final /* synthetic */ String zza;
-    final /* synthetic */ zzco zzb;
-    final /* synthetic */ zzfb zzc;
+public final class zzef extends zzeo {
+    final /* synthetic */ zzcm zza;
+    final /* synthetic */ zzez zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzef(zzfb zzfbVar, String str, zzco zzcoVar) {
-        super(zzfbVar, true);
-        this.zza = str;
-        this.zzb = zzcoVar;
-        Objects.requireNonNull(zzfbVar);
-        this.zzc = zzfbVar;
+    public zzef(zzez zzezVar, zzcm zzcmVar) {
+        super(zzezVar, true);
+        this.zza = zzcmVar;
+        Objects.requireNonNull(zzezVar);
+        this.zzb = zzezVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     final void zza() throws RemoteException {
-        ((zzcr) Preconditions.checkNotNull(this.zzc.zzQ())).getMaxUserProperties(this.zza, this.zzb);
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zzS())).getSessionId(this.zza);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     protected final void zzb() {
-        this.zzb.zzb(null);
+        this.zza.zzb(null);
     }
 }

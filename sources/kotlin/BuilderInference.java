@@ -8,10 +8,12 @@ import kotlin.annotation.AnnotationRetention;
 import kotlin.annotation.AnnotationTarget;
 /* compiled from: Inference.kt */
 @Target({ElementType.METHOD, ElementType.PARAMETER})
-@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0002\bF¨\u0006\u0002"}, d2 = {"Lkotlin/BuilderInference;", "", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Deprecated(message = "BuilderInference annotation must not be used anymore. Builder inference is enabled automatically for builder calls if needed.")
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY})
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0002\bF¨\u0006\u0002"}, d2 = {"Lkotlin/BuilderInference;", "", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@DeprecatedSinceKotlin(errorSince = "2.5", hiddenSince = "2.6", warningSince = "2.0")
 /* loaded from: classes5.dex */
 public @interface BuilderInference {
 }

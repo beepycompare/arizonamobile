@@ -1,22 +1,29 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+import java.util.concurrent.ExecutionException;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzpx implements Supplier {
-    private static final zzpx zza = new zzpx();
-    private final Supplier zzb = Suppliers.ofInstance(new zzpz());
-
-    @SideEffectFree
-    public static boolean zza() {
-        return zza.get().zza();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzb */
-    public final zzpy get() {
-        return (zzpy) this.zzb.get();
+public final class zzpx {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void zza(final ListenableFuture listenableFuture) {
+        listenableFuture.addListener(new Runnable() { // from class: com.google.android.gms.internal.measurement.zzpw
+            @Override // java.lang.Runnable
+            public final /* synthetic */ void run() {
+                try {
+                    Futures.getDone(ListenableFuture.this);
+                } catch (ExecutionException e) {
+                    zzrn.zzb().post(new Runnable() { // from class: com.google.android.gms.internal.measurement.zzpv
+                        @Override // java.lang.Runnable
+                        public final /* synthetic */ void run() {
+                            throw new RuntimeException(e.getCause());
+                        }
+                    });
+                }
+            }
+        }, MoreExecutors.directExecutor());
     }
 }

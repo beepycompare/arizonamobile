@@ -1,37 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.nio.charset.Charset;
-import java.util.Map;
-import kotlin.text.Charsets;
+import androidx.media3.exoplayer.upstream.CmcdConfiguration;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Ie implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final T5[] fromModel(Map<String, String> map) {
-        int size = map.size();
-        T5[] t5Arr = new T5[size];
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            t5Arr[i2] = new T5();
-        }
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            T5 t5 = t5Arr[i];
-            Charset charset = Charsets.UTF_8;
-            t5.f799a = entry.getKey().getBytes(charset);
-            t5Arr[i].b = entry.getValue().getBytes(charset);
-            i++;
-        }
-        return t5Arr;
+public final class Ie {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final HashMap f594a;
+
+    public Ie() {
+        HashMap hashMap = new HashMap();
+        this.f594a = hashMap;
+        hashMap.put("google_aid", "g");
+        hashMap.put("huawei_oaid", CmcdData.STREAMING_FORMAT_HLS);
+        hashMap.put("sim_info", "si");
+        hashMap.put("features_collecting", "fc");
+        hashMap.put("permissions_collecting", "pc");
+        hashMap.put("retry_policy", "rp");
+        hashMap.put("cache_control", "cc");
+        hashMap.put("attribution", "at");
+        hashMap.put("startup_update", CmcdConfiguration.KEY_STARTUP);
+        hashMap.put("ssl_pinning", "sp");
+        hashMap.put("external_attribution", "exta");
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        T5[] t5Arr = (T5[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final Map<String, String> a(T5[] t5Arr) {
-        throw new UnsupportedOperationException();
+    public final String a(String str) {
+        return this.f594a.containsKey(str) ? (String) this.f594a.get(str) : str;
     }
 }

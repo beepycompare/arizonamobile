@@ -34,7 +34,7 @@ public final class ComposableSingletons$SnackbarKt {
             }
             ImageVector close$material3 = Icons.Filled.INSTANCE.getClose$material3();
             Strings.Companion companion = Strings.Companion;
-            IconKt.m2160Iconww6aTOc(close$material3, Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+            IconKt.m2605Iconww6aTOc(close$material3, Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

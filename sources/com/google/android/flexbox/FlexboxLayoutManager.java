@@ -16,7 +16,7 @@ import com.google.android.flexbox.FlexboxHelper;
 import java.util.ArrayList;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FlexboxLayoutManager extends RecyclerView.LayoutManager implements FlexContainer, RecyclerView.SmoothScroller.ScrollVectorProvider {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final boolean DEBUG = false;
@@ -1764,7 +1764,7 @@ public class FlexboxLayoutManager extends RecyclerView.LayoutManager implements 
         return this.mFlexboxHelper.mIndexToFlexLine[position];
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LayoutParams extends RecyclerView.LayoutParams implements FlexItem {
         public static final Parcelable.Creator<LayoutParams> CREATOR = new Parcelable.Creator<LayoutParams>() { // from class: com.google.android.flexbox.FlexboxLayoutManager.LayoutParams.1
             /* JADX WARN: Can't rename method to resolve collision */
@@ -2049,7 +2049,7 @@ public class FlexboxLayoutManager extends RecyclerView.LayoutManager implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class AnchorInfo {
         static final /* synthetic */ boolean $assertionsDisabled = false;
         private boolean mAssignedFromSavedState;
@@ -2148,7 +2148,7 @@ public class FlexboxLayoutManager extends RecyclerView.LayoutManager implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LayoutState {
         private static final int ITEM_DIRECTION_TAIL = 1;
         private static final int LAYOUT_END = 1;
@@ -2237,7 +2237,7 @@ public class FlexboxLayoutManager extends RecyclerView.LayoutManager implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SavedState implements Parcelable {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() { // from class: com.google.android.flexbox.FlexboxLayoutManager.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */

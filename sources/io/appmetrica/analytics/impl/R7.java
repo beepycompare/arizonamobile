@@ -1,22 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
 /* loaded from: classes5.dex */
-public abstract class R7 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Dc f767a;
-
-    public R7() {
-        Dc dc = new Dc(0);
-        dc.a(S7.b, 0);
-        dc.a(S7.c, 1);
-        dc.a(S7.d, 2);
-        dc.a(S7.e, 3);
-        this.f767a = dc;
+public abstract class R7 implements Application.ActivityLifecycleCallbacks {
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
-
-    public final Dc a() {
-        return this.f767a;
-    }
-
-    public abstract boolean a(Object obj, Object obj2);
 }

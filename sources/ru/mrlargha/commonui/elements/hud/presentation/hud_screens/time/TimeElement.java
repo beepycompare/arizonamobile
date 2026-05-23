@@ -154,7 +154,7 @@ public final class TimeElement {
         this.timesLeft = 0L;
         Job job = this.clockJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.clockJob = null;
     }

@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.paging.LoadState;
 import androidx.paging.internal.CopyOnWriteArrayList;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -13,7 +12,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: MutableCombinedLoadStateCollection.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0011J\u001e\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u0004\u0018\u00010\u00182\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u001a\u0010\u001a\u001a\u00020\b2\u0012\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006J\u001a\u0010\u001c\u001a\u00020\b2\u0012\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006J-\u0010\u001d\u001a\u00020\b2#\u0010\u001e\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0007¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(!\u0012\u0004\u0012\u00020\u00070\u0006H\u0002J$\u0010\u001e\u001a\u00020\u00072\b\u0010\"\u001a\u0004\u0018\u00010\u00072\u0006\u0010#\u001a\u00020\u00112\b\u0010$\u001a\u0004\u0018\u00010\u0011H\u0002J*\u0010%\u001a\u00020\u00182\u0006\u0010\"\u001a\u00020\u00182\u0006\u0010&\u001a\u00020\u00182\u0006\u0010'\u001a\u00020\u00182\b\u0010(\u001a\u0004\u0018\u00010\u0018H\u0002R \u0010\u0004\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u000b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006)"}, d2 = {"Landroidx/paging/MutableCombinedLoadStateCollection;", "", "<init>", "()V", "listeners", "Landroidx/paging/internal/CopyOnWriteArrayList;", "Lkotlin/Function1;", "Landroidx/paging/CombinedLoadStates;", "", "_stateFlow", "Lkotlinx/coroutines/flow/MutableStateFlow;", "stateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "set", "sourceLoadStates", "Landroidx/paging/LoadStates;", "remoteLoadStates", "type", "Landroidx/paging/LoadType;", "remote", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/paging/LoadState;", "get", "addListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "removeListener", "dispatchNewState", "computeNewState", "Lkotlin/ParameterName;", "name", "currState", "previousState", "newSource", "newRemote", "computeHelperState", "sourceRefreshState", "sourceState", "remoteState", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0011J\u001e\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u0004\u0018\u00010\u00182\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u001a\u0010\u001a\u001a\u00020\b2\u0012\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006J\u001a\u0010\u001c\u001a\u00020\b2\u0012\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006J-\u0010\u001d\u001a\u00020\b2#\u0010\u001e\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0007¢\u0006\f\b\u001f\u0012\b\b \u0012\u0004\b\b(!\u0012\u0004\u0012\u00020\u00070\u0006H\u0002R \u0010\u0004\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u000b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00070\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\""}, d2 = {"Landroidx/paging/MutableCombinedLoadStateCollection;", "", "<init>", "()V", "listeners", "Landroidx/paging/internal/CopyOnWriteArrayList;", "Lkotlin/Function1;", "Landroidx/paging/CombinedLoadStates;", "", "_stateFlow", "Lkotlinx/coroutines/flow/MutableStateFlow;", "stateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "set", "sourceLoadStates", "Landroidx/paging/LoadStates;", "remoteLoadStates", "type", "Landroidx/paging/LoadType;", "remote", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/paging/LoadState;", "get", "addListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "removeListener", "dispatchNewState", "computeNewState", "Lkotlin/ParameterName;", "name", "currState", "paging-common"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class MutableCombinedLoadStateCollection {
     private final MutableStateFlow<CombinedLoadStates> _stateFlow;
@@ -36,7 +35,7 @@ public final class MutableCombinedLoadStateCollection {
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 CombinedLoadStates computeNewState;
-                computeNewState = MutableCombinedLoadStateCollection.this.computeNewState((CombinedLoadStates) obj, sourceLoadStates, loadStates);
+                computeNewState = MutableCombinedLoadStateCollectionKt.computeNewState((CombinedLoadStates) obj, LoadStates.this, loadStates);
                 return computeNewState;
             }
         });
@@ -48,13 +47,13 @@ public final class MutableCombinedLoadStateCollection {
         dispatchNewState(new Function1() { // from class: androidx.paging.MutableCombinedLoadStateCollection$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return MutableCombinedLoadStateCollection.set$lambda$1(z, type, state, this, (CombinedLoadStates) obj);
+                return MutableCombinedLoadStateCollection.set$lambda$1(z, type, state, (CombinedLoadStates) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final CombinedLoadStates set$lambda$1(boolean z, LoadType loadType, LoadState loadState, MutableCombinedLoadStateCollection mutableCombinedLoadStateCollection, CombinedLoadStates combinedLoadStates) {
+    public static final CombinedLoadStates set$lambda$1(boolean z, LoadType loadType, LoadState loadState, CombinedLoadStates combinedLoadStates) {
         LoadStates idle;
         if (combinedLoadStates == null || (idle = combinedLoadStates.getSource()) == null) {
             idle = LoadStates.Companion.getIDLE();
@@ -65,7 +64,7 @@ public final class MutableCombinedLoadStateCollection {
         } else {
             idle = idle.modifyState$paging_common(loadType, loadState);
         }
-        return mutableCombinedLoadStateCollection.computeNewState(combinedLoadStates, idle, mediator);
+        return MutableCombinedLoadStateCollectionKt.computeNewState(combinedLoadStates, idle, mediator);
     }
 
     public final LoadState get(LoadType type, boolean z) {
@@ -120,28 +119,5 @@ public final class MutableCombinedLoadStateCollection {
                 function12.invoke(invoke);
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final CombinedLoadStates computeNewState(CombinedLoadStates combinedLoadStates, LoadStates loadStates, LoadStates loadStates2) {
-        LoadState.NotLoading incomplete$paging_common;
-        LoadState.NotLoading incomplete$paging_common2;
-        LoadState.NotLoading incomplete$paging_common3;
-        if (combinedLoadStates == null || (incomplete$paging_common = combinedLoadStates.getRefresh()) == null) {
-            incomplete$paging_common = LoadState.NotLoading.Companion.getIncomplete$paging_common();
-        }
-        LoadState computeHelperState = computeHelperState(incomplete$paging_common, loadStates.getRefresh(), loadStates.getRefresh(), loadStates2 != null ? loadStates2.getRefresh() : null);
-        if (combinedLoadStates == null || (incomplete$paging_common2 = combinedLoadStates.getPrepend()) == null) {
-            incomplete$paging_common2 = LoadState.NotLoading.Companion.getIncomplete$paging_common();
-        }
-        LoadState computeHelperState2 = computeHelperState(incomplete$paging_common2, loadStates.getRefresh(), loadStates.getPrepend(), loadStates2 != null ? loadStates2.getPrepend() : null);
-        if (combinedLoadStates == null || (incomplete$paging_common3 = combinedLoadStates.getAppend()) == null) {
-            incomplete$paging_common3 = LoadState.NotLoading.Companion.getIncomplete$paging_common();
-        }
-        return new CombinedLoadStates(computeHelperState, computeHelperState2, computeHelperState(incomplete$paging_common3, loadStates.getRefresh(), loadStates.getAppend(), loadStates2 != null ? loadStates2.getAppend() : null), loadStates, loadStates2);
-    }
-
-    private final LoadState computeHelperState(LoadState loadState, LoadState loadState2, LoadState loadState3, LoadState loadState4) {
-        return loadState4 == null ? loadState3 : (!(loadState instanceof LoadState.Loading) || ((loadState2 instanceof LoadState.NotLoading) && (loadState4 instanceof LoadState.NotLoading)) || (loadState4 instanceof LoadState.Error)) ? loadState4 : loadState;
     }
 }

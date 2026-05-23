@@ -19,7 +19,7 @@ import kotlinx.coroutines.JobKt__JobKt;
 import kotlinx.coroutines.flow.Flow;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 176)
 @DebugMetadata(c = "androidx.paging.FlowExtKt$combineWithoutBatching$2", f = "FlowExt.kt", i = {}, l = {146}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlowExtKt$combineWithoutBatching$2<R> extends SuspendLambda implements Function2<SimpleProducerScope<R>, Continuation<? super Unit>, Object> {
@@ -105,7 +105,7 @@ public final class FlowExtKt$combineWithoutBatching$2<R> extends SuspendLambda i
     }
 
     /* compiled from: FlowExt.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
     /* renamed from: androidx.paging.FlowExtKt$combineWithoutBatching$2$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2 implements Function0<Unit> {
@@ -123,7 +123,7 @@ public final class FlowExtKt$combineWithoutBatching$2<R> extends SuspendLambda i
 
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            Job.DefaultImpls.cancel$default((Job) this.$parentJob, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default((Job) this.$parentJob, (CancellationException) null, 1, (Object) null);
         }
     }
 }

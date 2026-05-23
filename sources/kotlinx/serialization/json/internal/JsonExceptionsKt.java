@@ -3,38 +3,88 @@ package kotlinx.serialization.json.internal;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
+import kotlin.text.StringsKt;
 import kotlinx.serialization.descriptors.SerialDescriptor;
+import kotlinx.serialization.json.JsonConfiguration;
+import kotlinx.serialization.json.JsonDecoder;
+import kotlinx.serialization.json.JsonDecodingException;
+import kotlinx.serialization.json.JsonEncodingException;
 /* compiled from: JsonExceptions.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0004\n\u0002\b\u0002\n\u0002\u0010\u0001\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a\u001a\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0080\u0080\u0004\u001a\"\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0080\u0080\u0004\u001a\u001a\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u0005H\u0080\u0080\u0004\u001a\u0016\u0010\r\u001a\u00020\u000e*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000bH\u0080\u0080\u0004\u001a\u0018\u0010\u0011\u001a\u00020\u000e*\u00020\u000f2\b\b\u0002\u0010\u0012\u001a\u00020\u0005H\u0080\u0080\u0004\u001a\u0012\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u0015H\u0080\u0080\u0004\u001a\"\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u0005H\u0080\u0080\u0004\u001a\"\u0010\u0017\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u0005H\u0080\u0080\u0004\u001a\"\u0010\u0018\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u0005H\u0082\u0080\u0004\u001a\u0018\u0010\u0019\u001a\u00020\u0007*\u00020\u00072\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0080\u0080\u0004¨\u0006\u001a"}, d2 = {"JsonDecodingException", "Lkotlinx/serialization/json/internal/JsonDecodingException;", TypedValues.CycleType.S_WAVE_OFFSET, "", "message", "", "input", "", "InvalidFloatingPointEncoded", "Lkotlinx/serialization/json/internal/JsonEncodingException;", "value", "", "output", "throwInvalidFloatingPointDecoded", "", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "result", "invalidTrailingComma", "entity", "InvalidKeyKindException", "keyDescriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "key", "InvalidFloatingPointDecoded", "unexpectedFpErrorMessage", "minify", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000N\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0001\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0004\n\u0002\b\u0007\u001a\u0012\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0080\u0080\u0004\u001a?\u0010\u0000\u001a\u00020\u0001*\u00020\u00042\u0006\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00032\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bH\u0080\u0088\u0004ø\u0001\u0000\u001a8\u0010\u0000\u001a\u00020\u0001*\u00020\n2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0005\u001a\u00020\u00032\b\u0010\u0006\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u0007\u001a\u00020\tH\u0080\u0080\u0004\u001a\u001e\u0010\r\u001a\u0004\u0018\u00010\u0003*\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00030\bH\u0082\u0088\u0004\u001a\u001c\u0010\u0010\u001a\u00020\u00032\u0006\u0010\u0002\u001a\u00020\u00032\b\u0010\u0006\u001a\u0004\u0018\u00010\u0003H\u0080\u0080\u0004\u001a8\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0002\u001a\u00020\u00032\b\u0010\u0005\u001a\u0004\u0018\u00010\u00032\b\u0010\u0006\u001a\u0004\u0018\u00010\u00032\b\u0010\u0007\u001a\u0004\u0018\u00010\u0003H\u0082\u0080\u0004\u001a\u0018\u0010\u0012\u001a\u00020\u0013*\u00020\n2\b\b\u0002\u0010\u0014\u001a\u00020\u0003H\u0080\u0080\u0004\u001a\u0012\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0080\u0080\u0004\u001a\u0016\u0010\u0019\u001a\u00020\u0013*\u00020\n2\u0006\u0010\u001a\u001a\u00020\u001bH\u0080\u0080\u0004\u001a\u001e\u0010\u001c\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u001b2\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u0003H\u0080\u0080\u0004\u001a/\u0010\u001f\u001a\u00020\u0001*\u00020\u00042\u0006\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\u00032\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bH\u0080\u0088\u0004ø\u0001\u0000\u001a\u001c\u0010 \u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u001b2\b\u0010\u001e\u001a\u0004\u0018\u00010\u0003H\u0082\u0080\u0004\u001a\u0018\u0010!\u001a\u00020\t*\u00020\t2\b\b\u0002\u0010\u000b\u001a\u00020\fH\u0080\u0080\u0004\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\""}, d2 = {"decodingExceptionOf", "Lkotlinx/serialization/json/JsonDecodingException;", "shortMessage", "", "Lkotlinx/serialization/json/JsonDecoder;", "path", "hint", "input", "Lkotlin/Function0;", "", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", TypedValues.CycleType.S_WAVE_OFFSET, "", "ifDebugInput", "Lkotlinx/serialization/json/JsonConfiguration;", "block", "formatEncodingException", "formatDecodingException", "invalidTrailingComma", "", "entity", "InvalidKeyKindException", "Lkotlinx/serialization/json/JsonEncodingException;", "keyDescriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "throwInvalidFloatingPointDecoded", "result", "", "InvalidFloatingPointEncoded", "value", "key", "InvalidFloatingPointDecoded", "nonFiniteFpMessage", "minify", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
+/* loaded from: classes4.dex */
 public final class JsonExceptionsKt {
-    public static final JsonDecodingException JsonDecodingException(int i, String message) {
-        Intrinsics.checkNotNullParameter(message, "message");
-        if (i >= 0) {
-            message = "Unexpected JSON token at offset " + i + ": " + message;
-        }
-        return new JsonDecodingException(message);
+    public static final /* synthetic */ String access$formatDecodingException(int i, String str, String str2, String str3, String str4) {
+        return formatDecodingException(i, str, str2, str3, str4);
     }
 
-    public static final JsonDecodingException JsonDecodingException(int i, String message, CharSequence input) {
-        Intrinsics.checkNotNullParameter(message, "message");
+    public static final JsonDecodingException decodingExceptionOf(String shortMessage) {
+        Intrinsics.checkNotNullParameter(shortMessage, "shortMessage");
+        return new JsonDecodingException(formatDecodingException(-1, shortMessage, null, null, null), shortMessage, -1, null, null, null);
+    }
+
+    public static /* synthetic */ JsonDecodingException decodingExceptionOf$default(JsonDecoder jsonDecoder, String shortMessage, String str, String str2, Function0 input, int i, Object obj) {
+        String str3 = (i & 2) != 0 ? null : str;
+        String str4 = (i & 4) != 0 ? null : str2;
+        Intrinsics.checkNotNullParameter(jsonDecoder, "<this>");
+        Intrinsics.checkNotNullParameter(shortMessage, "shortMessage");
         Intrinsics.checkNotNullParameter(input, "input");
-        return JsonDecodingException(i, message + "\nJSON input: " + ((Object) minify(input, i)));
+        String obj2 = jsonDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? minify$default((CharSequence) input.invoke(), 0, 1, null).toString() : null;
+        return new JsonDecodingException(formatDecodingException(-1, shortMessage, str3, str4, obj2), shortMessage, -1, str3, obj2, str4);
     }
 
-    public static final JsonEncodingException InvalidFloatingPointEncoded(Number value, String output) {
-        Intrinsics.checkNotNullParameter(value, "value");
-        Intrinsics.checkNotNullParameter(output, "output");
-        return new JsonEncodingException("Unexpected special floating-point value " + value + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\nCurrent output: " + ((Object) minify$default(output, 0, 1, null)));
+    public static final JsonDecodingException decodingExceptionOf(JsonDecoder jsonDecoder, String shortMessage, String str, String str2, Function0<? extends CharSequence> input) {
+        Intrinsics.checkNotNullParameter(jsonDecoder, "<this>");
+        Intrinsics.checkNotNullParameter(shortMessage, "shortMessage");
+        Intrinsics.checkNotNullParameter(input, "input");
+        String obj = jsonDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? minify$default(input.invoke(), 0, 1, null).toString() : null;
+        return new JsonDecodingException(formatDecodingException(-1, shortMessage, str, str2, obj), shortMessage, -1, str, obj, str2);
     }
 
-    public static final Void throwInvalidFloatingPointDecoded(AbstractJsonLexer abstractJsonLexer, Number result) {
+    public static final JsonDecodingException decodingExceptionOf(AbstractJsonLexer abstractJsonLexer, String shortMessage, int i, String path, String str, CharSequence input) {
         Intrinsics.checkNotNullParameter(abstractJsonLexer, "<this>");
-        Intrinsics.checkNotNullParameter(result, "result");
-        AbstractJsonLexer.fail$default(abstractJsonLexer, "Unexpected special floating-point value " + result + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification", 0, AbstractJsonLexerKt.specialFlowingValuesHint, 2, null);
-        throw new KotlinNothingValueException();
+        Intrinsics.checkNotNullParameter(shortMessage, "shortMessage");
+        Intrinsics.checkNotNullParameter(path, "path");
+        Intrinsics.checkNotNullParameter(input, "input");
+        String obj = abstractJsonLexer.getConfiguration$kotlinx_serialization_json().getExceptionsWithDebugInfo() ? minify(input, i).toString() : null;
+        return new JsonDecodingException(formatDecodingException(i, shortMessage, path, str, obj), shortMessage, i, path, obj, str);
+    }
+
+    private static final String ifDebugInput(JsonConfiguration jsonConfiguration, Function0<String> function0) {
+        if (jsonConfiguration.getExceptionsWithDebugInfo()) {
+            return function0.invoke();
+        }
+        return null;
+    }
+
+    public static final String formatEncodingException(String shortMessage, String str) {
+        Intrinsics.checkNotNullParameter(shortMessage, "shortMessage");
+        String str2 = str;
+        return shortMessage + ((str2 == null || StringsKt.isBlank(str2)) ? "" : "\n" + str);
+    }
+
+    public static final String formatDecodingException(int i, String str, String str2, String str3, String str4) {
+        StringBuilder sb = new StringBuilder();
+        if (i >= 0) {
+            sb.append("Unexpected JSON token at offset " + i + ": ");
+        }
+        sb.append(str);
+        String str5 = str2;
+        if (str5 != null && !StringsKt.isBlank(str5)) {
+            sb.append(" at path: ");
+            sb.append(str2);
+        }
+        String str6 = str3;
+        if (str6 != null && !StringsKt.isBlank(str6)) {
+            sb.append("\n" + str3);
+        }
+        if (str4 != null) {
+            sb.append("\nJSON input: ");
+            sb.append(str4);
+        }
+        return sb.toString();
     }
 
     public static /* synthetic */ Void invalidTrailingComma$default(AbstractJsonLexer abstractJsonLexer, String str, int i, Object obj) {
@@ -53,25 +103,40 @@ public final class JsonExceptionsKt {
 
     public static final JsonEncodingException InvalidKeyKindException(SerialDescriptor keyDescriptor) {
         Intrinsics.checkNotNullParameter(keyDescriptor, "keyDescriptor");
-        return new JsonEncodingException("Value of type '" + keyDescriptor.getSerialName() + "' can't be used in JSON as a key in the map. It should have either primitive or enum kind, but its kind is '" + keyDescriptor.getKind() + "'.\nUse 'allowStructuredMapKeys = true' in 'Json {}' builder to convert such maps to [key1, value1, key2, value2,...] arrays.");
+        return new JsonEncodingException("Value of type '" + keyDescriptor.getSerialName() + "' can't be used in JSON as a key in the map. It should have either primitive or enum kind, but its kind is '" + keyDescriptor.getKind() + '\'', keyDescriptor.getSerialName(), AbstractJsonLexerKt.allowStructuredMapKeysHint);
     }
 
-    public static final JsonEncodingException InvalidFloatingPointEncoded(Number value, String key, String output) {
+    public static final Void throwInvalidFloatingPointDecoded(AbstractJsonLexer abstractJsonLexer, Number result) {
+        Intrinsics.checkNotNullParameter(abstractJsonLexer, "<this>");
+        Intrinsics.checkNotNullParameter(result, "result");
+        AbstractJsonLexer.fail$default(abstractJsonLexer, nonFiniteFpMessage(result, null), 0, AbstractJsonLexerKt.specialFlowingValuesHint, 2, null);
+        throw new KotlinNothingValueException();
+    }
+
+    public static /* synthetic */ JsonEncodingException InvalidFloatingPointEncoded$default(Number number, String str, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str = null;
+        }
+        return InvalidFloatingPointEncoded(number, str);
+    }
+
+    public static final JsonEncodingException InvalidFloatingPointEncoded(Number value, String str) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        return new JsonEncodingException(nonFiniteFpMessage(value, str), null, AbstractJsonLexerKt.specialFlowingValuesHint, 2, null);
+    }
+
+    public static final JsonDecodingException InvalidFloatingPointDecoded(JsonDecoder jsonDecoder, Number value, String key, Function0<? extends CharSequence> input) {
+        Intrinsics.checkNotNullParameter(jsonDecoder, "<this>");
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(key, "key");
-        Intrinsics.checkNotNullParameter(output, "output");
-        return new JsonEncodingException(unexpectedFpErrorMessage(value, key, output));
+        Intrinsics.checkNotNullParameter(input, "input");
+        String nonFiniteFpMessage = nonFiniteFpMessage(value, key);
+        String obj = jsonDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? minify$default(input.invoke(), 0, 1, null).toString() : null;
+        return new JsonDecodingException(formatDecodingException(-1, nonFiniteFpMessage, null, AbstractJsonLexerKt.specialFlowingValuesHint, obj), nonFiniteFpMessage, -1, null, obj, AbstractJsonLexerKt.specialFlowingValuesHint);
     }
 
-    public static final JsonDecodingException InvalidFloatingPointDecoded(Number value, String key, String output) {
-        Intrinsics.checkNotNullParameter(value, "value");
-        Intrinsics.checkNotNullParameter(key, "key");
-        Intrinsics.checkNotNullParameter(output, "output");
-        return JsonDecodingException(-1, unexpectedFpErrorMessage(value, key, output));
-    }
-
-    private static final String unexpectedFpErrorMessage(Number number, String str, String str2) {
-        return "Unexpected special floating-point value " + number + " with key " + str + ". By default, non-finite floating point values are prohibited because they do not conform JSON specification. It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\nCurrent output: " + ((Object) minify$default(str2, 0, 1, null));
+    public static final String nonFiniteFpMessage(Number number, String str) {
+        return "Unexpected special floating-point value " + number + (str != null ? " with key " + str + ". " : ". ") + "By default, non-finite floating point values are prohibited because they do not conform JSON specification.";
     }
 
     public static /* synthetic */ CharSequence minify$default(CharSequence charSequence, int i, int i2, Object obj) {

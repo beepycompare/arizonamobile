@@ -1,8 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import com.google.android.gms.common.api.ApiException;
+import com.google.common.util.concurrent.AsyncFunction;
+import com.google.common.util.concurrent.ListenableFuture;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzml extends zzmo {
-    @Override // com.google.android.gms.internal.measurement.zzmo, com.google.android.gms.internal.measurement.zzmh
-    /* renamed from: zzd */
-    zzml zzg(int i);
+final /* synthetic */ class zzml implements AsyncFunction {
+    static final /* synthetic */ zzml zza = new zzml();
+
+    private /* synthetic */ zzml() {
+    }
+
+    @Override // com.google.common.util.concurrent.AsyncFunction
+    public final /* synthetic */ ListenableFuture apply(Object obj) {
+        ApiException apiException = (ApiException) obj;
+        throw new zzmk(apiException.getStatusCode(), apiException.getMessage(), apiException);
+    }
 }

@@ -1,20 +1,98 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import android.app.Activity;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import java.lang.ref.WeakReference;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Cj implements Qa {
+public final class Cj implements InterfaceC0390l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f542a;
-    public final /* synthetic */ String b;
+    public C0665vf f499a;
+    public ScreenInfo b;
+    public boolean c;
+    public boolean d;
+    public final Bj e = new Bj();
+    public WeakReference f = new WeakReference(null);
 
-    public Cj(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f542a = pluginErrorDetails;
-        this.b = str;
+    public final synchronized void a(Activity activity) {
+        this.f = new WeakReference(activity);
+        if (!this.d) {
+            if (this.f499a == null) {
+                this.f499a = C0576s4.l().b(activity);
+            }
+            C0665vf c0665vf = this.f499a;
+            Intrinsics.checkNotNull(c0665vf);
+            this.b = c0665vf.p();
+            if (this.f499a == null) {
+                this.f499a = C0576s4.l().b(activity);
+            }
+            C0665vf c0665vf2 = this.f499a;
+            Intrinsics.checkNotNull(c0665vf2);
+            this.c = c0665vf2.t();
+            this.d = true;
+        }
+        if (this.b == null) {
+            b(activity);
+        }
     }
 
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.getPluginExtension().reportError(this.f542a, this.b);
+    public final void b(Context context) {
+        if (context != null) {
+            this.e.getClass();
+            ScreenInfo a2 = Bj.a(context);
+            if (a2 == null || Intrinsics.areEqual(a2, this.b)) {
+                return;
+            }
+            this.b = a2;
+            if (this.f499a == null) {
+                this.f499a = C0576s4.l().b(context);
+            }
+            C0665vf c0665vf = this.f499a;
+            Intrinsics.checkNotNull(c0665vf);
+            c0665vf.a(this.b);
+        }
+    }
+
+    public final synchronized ScreenInfo a(Context context) {
+        if (!this.d) {
+            if (this.f499a == null) {
+                this.f499a = C0576s4.l().b(context);
+            }
+            C0665vf c0665vf = this.f499a;
+            Intrinsics.checkNotNull(c0665vf);
+            this.b = c0665vf.p();
+            if (this.f499a == null) {
+                this.f499a = C0576s4.l().b(context);
+            }
+            C0665vf c0665vf2 = this.f499a;
+            Intrinsics.checkNotNull(c0665vf2);
+            this.c = c0665vf2.t();
+            this.d = true;
+        }
+        b((Context) this.f.get());
+        if (this.b == null) {
+            if (AndroidUtils.isApiAchieved(30)) {
+                if (!this.c) {
+                    b(context);
+                    this.c = true;
+                    if (this.f499a == null) {
+                        this.f499a = C0576s4.l().b(context);
+                    }
+                    C0665vf c0665vf3 = this.f499a;
+                    Intrinsics.checkNotNull(c0665vf3);
+                    c0665vf3.v();
+                }
+            } else {
+                b(context);
+            }
+        }
+        return this.b;
+    }
+
+    public final void a(C0665vf c0665vf) {
+        this.f499a = c0665vf;
     }
 }

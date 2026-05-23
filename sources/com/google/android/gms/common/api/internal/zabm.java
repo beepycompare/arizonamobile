@@ -1,16 +1,44 @@
 package com.google.android.gms.common.api.internal;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+
+import android.util.Log;
+import com.google.android.gms.common.ConnectionResult;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zabm implements Runnable {
-    final /* synthetic */ zabq zaa;
+    final /* synthetic */ ConnectionResult zaa;
+    final /* synthetic */ zabn zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zabm(zabq zabqVar) {
-        this.zaa = zabqVar;
+    public zabm(zabn zabnVar, ConnectionResult connectionResult) {
+        this.zaa = connectionResult;
+        Objects.requireNonNull(zabnVar);
+        this.zab = zabnVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.zaa.zaH();
+        zabn zabnVar = this.zab;
+        zabk zabkVar = (zabk) zabnVar.zaa.zaC().get(zabnVar.zaf());
+        if (zabkVar == null) {
+            return;
+        }
+        if (this.zaa.isSuccess()) {
+            zabnVar.zag(true);
+            if (!zabnVar.zae().requiresSignIn()) {
+                try {
+                    zabnVar.zae().getRemoteService(null, zabnVar.zae().getScopesForConnectionlessNonSignIn());
+                    return;
+                } catch (SecurityException e) {
+                    Log.e("GoogleApiManager", "Failed to get service from broker. ", e);
+                    this.zab.zae().disconnect("Failed to get service from broker.");
+                    zabkVar.zac(new ConnectionResult(10), null);
+                    return;
+                }
+            }
+            zabnVar.zad();
+            return;
+        }
+        zabkVar.zac(this.zaa, null);
     }
 }

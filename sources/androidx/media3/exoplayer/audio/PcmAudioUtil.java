@@ -1,9 +1,10 @@
 package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.util.Util;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PcmAudioUtil {
     public static ByteBuffer rampUpVolume(ByteBuffer byteBuffer, int i, int i2, int i3, int i4) {
         ByteBuffer order = ByteBuffer.allocateDirect(byteBuffer.remaining()).order(ByteOrder.nativeOrder());
@@ -37,6 +38,9 @@ public final class PcmAudioUtil {
                 return ((byteBuffer.get() & 255) << 8) | ((byteBuffer.get() & 255) << 24) | ((byteBuffer.get() & 255) << 16);
             } else if (i == 1610612736) {
                 return (byteBuffer.get() & 255) | ((byteBuffer.get() & 255) << 24) | ((byteBuffer.get() & 255) << 16) | ((byteBuffer.get() & 255) << 8);
+            } else if (i == 1879048192) {
+                double constrainValue2 = Util.constrainValue(byteBuffer.getDouble(), -1.0d, 1.0d);
+                return constrainValue2 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? (int) ((-constrainValue2) * (-2.147483648E9d)) : (int) (constrainValue2 * 2.147483647E9d);
             } else {
                 throw new IllegalStateException();
             }
@@ -78,8 +82,14 @@ public final class PcmAudioUtil {
             byteBuffer.put((byte) (i >> 16));
             byteBuffer.put((byte) (i >> 8));
             byteBuffer.put((byte) i);
-        } else {
+        } else if (i2 != 1879048192) {
             throw new IllegalStateException();
+        } else {
+            if (i < 0) {
+                byteBuffer.putDouble((-i) / (-2.147483648E9d));
+            } else {
+                byteBuffer.putDouble(i / 2.147483647E9d);
+            }
         }
     }
 

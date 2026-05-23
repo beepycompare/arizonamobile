@@ -25,7 +25,7 @@ import ru.mrlargha.commonui.databinding.InputDialogBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomEditText;
 /* compiled from: UserInputDialog.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eBO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\n\u0010\u0019\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u000fH\u0002J\u0010\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u0017\u001a\u00020\u000fH\u0016R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InputDialogBinding;", "text", "isKeyboardShowing", "getPassword", "savePassword", "", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "consumeUserInput", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\b\u0018\u0000 '2\u00020\u0001:\u0001'BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\n\u0010\u001e\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u000fH\u0002J\u0010\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020\fH\u0016J\b\u0010$\u001a\u00020 H\u0002J\b\u0010%\u001a\u00020 H\u0002J\u0010\u0010&\u001a\u00020 2\u0006\u0010\u0017\u001a\u00020\u000fH\u0016R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InputDialogBinding;", "text", "isKeyboardShowing", "keyboardLayoutListenerAttached", "dialogRect", "Landroid/graphics/Rect;", "keyboardLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "getPassword", "savePassword", "", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "setVisibility", "visible", "addKeyboardLayoutListener", "removeKeyboardLayoutListener", "consumeUserInput", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UserInputDialog extends AbstractDialog {
     private static final int PASSWORD_SEND_RETRY_COUNT = 2;
@@ -34,7 +34,10 @@ public final class UserInputDialog extends AbstractDialog {
     private static int passwordDialogShowTimes;
     private final InputDialogBinding binding;
     private final View dialogLayout;
+    private final Rect dialogRect;
     private boolean isKeyboardShowing;
+    private final ViewTreeObserver.OnGlobalLayoutListener keyboardLayoutListener;
+    private boolean keyboardLayoutListenerAttached;
     private final boolean passwordMode;
     private String text;
     public static final Companion Companion = new Companion(null);
@@ -57,15 +60,16 @@ public final class UserInputDialog extends AbstractDialog {
         this.binding = bind;
         String str = "";
         this.text = "";
+        this.dialogRect = new Rect();
+        this.keyboardLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda0
+            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+            public final void onGlobalLayout() {
+                UserInputDialog.keyboardLayoutListener$lambda$0(UserInputDialog.this);
+            }
+        };
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
         addViewToConstraintLayout(dialogLayout, -2, -2);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
-        dialogLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda0
-            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-            public final void onGlobalLayout() {
-                UserInputDialog.lambda$0$0(UserInputDialog.this);
-            }
-        });
         bind.infoText.setText(info);
         bind.infoText.setMovementMethod(new ScrollingMovementMethod());
         bind.caption.setText(caption);
@@ -95,7 +99,7 @@ public final class UserInputDialog extends AbstractDialog {
             bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    UserInputDialog.lambda$0$2(targetActivity, this, i2, bind, view);
+                    UserInputDialog.lambda$0$1(targetActivity, this, i2, bind, view);
                 }
             });
         }
@@ -107,14 +111,14 @@ public final class UserInputDialog extends AbstractDialog {
             bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    UserInputDialog.lambda$0$3(targetActivity, this, i2, bind, view);
+                    UserInputDialog.lambda$0$2(targetActivity, this, i2, bind, view);
                 }
             });
         }
         bind.userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda3
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-                return UserInputDialog.lambda$0$4(targetActivity, bind, textView, i3, keyEvent);
+                return UserInputDialog.lambda$0$3(targetActivity, bind, textView, i3, keyEvent);
             }
         });
         try {
@@ -125,27 +129,33 @@ public final class UserInputDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$0(UserInputDialog userInputDialog) {
-        Rect rect = new Rect();
-        userInputDialog.dialogLayout.getWindowVisibleDisplayFrame(rect);
-        int height = userInputDialog.dialogLayout.getRootView().getRootView().getHeight();
-        int i = height - rect.bottom;
-        if (i > height * 0.15d) {
-            if (userInputDialog.isKeyboardShowing) {
+    public static final void keyboardLayoutListener$lambda$0(UserInputDialog userInputDialog) {
+        try {
+            userInputDialog.dialogLayout.getWindowVisibleDisplayFrame(userInputDialog.dialogRect);
+            int height = userInputDialog.dialogLayout.getRootView().getRootView().getHeight();
+            if (height <= 0) {
                 return;
             }
-            Log.d(TAG, "Keyboard was shown");
-            userInputDialog.isKeyboardShowing = true;
-            userInputDialog.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, (height - i) - userInputDialog.dialogLayout.getHeight());
-        } else if (userInputDialog.isKeyboardShowing) {
-            Log.d(TAG, "Keyboard was closed");
-            userInputDialog.isKeyboardShowing = false;
-            userInputDialog.setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
+            int i = height - userInputDialog.dialogRect.bottom;
+            if (i > height * 0.15d) {
+                if (userInputDialog.isKeyboardShowing) {
+                    return;
+                }
+                Log.d(TAG, "Keyboard was shown");
+                userInputDialog.isKeyboardShowing = true;
+                userInputDialog.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, (height - i) - userInputDialog.dialogLayout.getHeight());
+            } else if (userInputDialog.isKeyboardShowing) {
+                Log.d(TAG, "Keyboard was closed");
+                userInputDialog.isKeyboardShowing = false;
+                userInputDialog.setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
+            }
+        } catch (OutOfMemoryError e) {
+            Log.e(TAG, "Unable to update dialog keyboard layout due to low memory", e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$2(Activity activity, UserInputDialog userInputDialog, int i, InputDialogBinding inputDialogBinding, View view) {
+    public static final void lambda$0$1(Activity activity, UserInputDialog userInputDialog, int i, InputDialogBinding inputDialogBinding, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         if (!userInputDialog.passwordMode) {
             Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider");
@@ -161,14 +171,14 @@ public final class UserInputDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$3(Activity activity, UserInputDialog userInputDialog, int i, InputDialogBinding inputDialogBinding, View view) {
+    public static final void lambda$0$2(Activity activity, UserInputDialog userInputDialog, int i, InputDialogBinding inputDialogBinding, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         userInputDialog.getNotifier().onDialogResponseWrapper(i, 0, -1, StringsKt.encodeToByteArray(String.valueOf(inputDialogBinding.userInput.getText())));
         userInputDialog.getNotifier().destroyDialog();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$0$4(Activity activity, InputDialogBinding inputDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean lambda$0$3(Activity activity, InputDialogBinding inputDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
             SAMPUIElement.Companion.hideKeyboard(activity);
             inputDialogBinding.buttons.button1.requestFocus();
@@ -188,6 +198,37 @@ public final class UserInputDialog extends AbstractDialog {
             return;
         }
         getSharedPreferences().edit().putString("PASSWORD_SP_FIELD", str).apply();
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void setVisibility(boolean z) {
+        if (z) {
+            addKeyboardLayoutListener();
+        } else {
+            removeKeyboardLayoutListener();
+        }
+        super.setVisibility(z);
+    }
+
+    private final void addKeyboardLayoutListener() {
+        if (this.keyboardLayoutListenerAttached) {
+            return;
+        }
+        ViewTreeObserver viewTreeObserver = this.dialogLayout.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnGlobalLayoutListener(this.keyboardLayoutListener);
+            this.keyboardLayoutListenerAttached = true;
+        }
+    }
+
+    private final void removeKeyboardLayoutListener() {
+        if (this.keyboardLayoutListenerAttached) {
+            ViewTreeObserver viewTreeObserver = this.dialogLayout.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.removeOnGlobalLayoutListener(this.keyboardLayoutListener);
+            }
+            this.keyboardLayoutListenerAttached = false;
+        }
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement

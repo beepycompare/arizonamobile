@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class IronSourceClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ClientContext f303a = null;
+    private ClientContext f230a = null;
     private final AtomicBoolean b = new AtomicBoolean(false);
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
@@ -26,13 +26,13 @@ public class IronSourceClientModuleEntryPoint extends ModuleClientEntryPoint<Obj
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
-        this.f303a = clientContext;
+        this.f230a = clientContext;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void onActivated() {
         ClientContext clientContext;
-        if (!ReflectionUtils.detectClassExists("com.ironsource.mediationsdk.IronSource") || (clientContext = this.f303a) == null) {
+        if (!ReflectionUtils.detectClassExists("com.ironsource.mediationsdk.IronSource") || (clientContext = this.f230a) == null) {
             return;
         }
         IronSource.addImpressionDataListener(new c(clientContext));

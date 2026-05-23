@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime.util;
 import android.util.SparseArray;
 import com.google.android.datatransport.Priority;
 import java.util.HashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PriorityMapping {
     private static HashMap<Priority, Integer> PRIORITY_INT_MAP;
     private static SparseArray<Priority> PRIORITY_MAP = new SparseArray<>();

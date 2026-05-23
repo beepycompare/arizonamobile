@@ -43,7 +43,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultDrmSessionManager implements DrmSessionManager {
     public static final long DEFAULT_SESSION_KEEPALIVE_MS = 300000;
     public static final int INITIAL_DRM_REQUEST_RETRY_COUNT = 3;
@@ -81,11 +81,11 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Mode {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean multiSession;
         private final HashMap<String, String> keyRequestParameters = new HashMap<>();
@@ -148,7 +148,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MissingSchemeDataException extends Exception {
         private MissingSchemeDataException(UUID uuid) {
             super("Media does not support uuid: " + uuid);
@@ -442,7 +442,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class MediaDrmHandler extends Handler {
         public MediaDrmHandler(Looper looper) {
             super(looper);
@@ -464,7 +464,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ProvisioningManagerImpl implements DefaultDrmSession.ProvisioningManager {
         private DefaultDrmSession provisioningSession;
         private final Set<DefaultDrmSession> sessionsAwaitingProvisioning = new HashSet();
@@ -519,7 +519,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ReferenceCountListenerImpl implements DefaultDrmSession.ReferenceCountListener {
         private ReferenceCountListenerImpl() {
         }
@@ -560,7 +560,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private class MediaDrmEventListener implements ExoMediaDrm.OnEventListener {
         private MediaDrmEventListener() {
         }
@@ -572,7 +572,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class PreacquiredSessionReference implements DrmSessionManager.DrmSessionReference {
         private final DrmSessionEventListener.EventDispatcher eventDispatcher;
         private boolean isReleased;
@@ -586,14 +586,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8250x937f548e(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8858x937f548e(format);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8250x937f548e(Format format) {
+        public /* synthetic */ void m8858x937f548e(Format format) {
             if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
                 return;
             }
@@ -607,14 +607,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             Util.postOrRun((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8251xce10c5c();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8859xce10c5c();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8251xce10c5c() {
+        public /* synthetic */ void m8859xce10c5c() {
             if (this.isReleased) {
                 return;
             }

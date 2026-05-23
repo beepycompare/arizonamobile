@@ -14,7 +14,7 @@ import org.checkerframework.framework.qual.InheritedAnnotation;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresLockHeldIf {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
@@ -22,7 +22,7 @@ public @interface EnsuresLockHeldIf {
     @ConditionalPostconditionAnnotation(qualifier = LockHeld.class)
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresLockHeldIf[] value();
     }

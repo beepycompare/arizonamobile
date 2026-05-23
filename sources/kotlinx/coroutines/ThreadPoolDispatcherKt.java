@@ -1,7 +1,7 @@
 package kotlinx.coroutines;
 
 import kotlin.Metadata;
-@Metadata(d1 = {"kotlinx/coroutines/ThreadPoolDispatcherKt__MultithreadedDispatchers_commonKt", "kotlinx/coroutines/ThreadPoolDispatcherKt__ThreadPoolDispatcherKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"kotlinx/coroutines/ThreadPoolDispatcherKt__MultithreadedDispatchers_commonKt", "kotlinx/coroutines/ThreadPoolDispatcherKt__ThreadPoolDispatcherKt"}, k = 4, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ThreadPoolDispatcherKt {
     public static final ExecutorCoroutineDispatcher newFixedThreadPoolContext(int i, String str) {

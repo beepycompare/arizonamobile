@@ -69,6 +69,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
             public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
                 accessibilityNodeInfoCompat.setCheckable(NavigationMenuItemView.this.checkable);
+                accessibilityNodeInfoCompat.setRoleDescription(NavigationMenuItemView.this.getResources().getString(R.string.item_view_role_description));
             }
         };
         this.accessibilityDelegate = accessibilityDelegateCompat;

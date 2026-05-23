@@ -12,7 +12,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Size.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ#\u0010\u0011\u001a\u00020\u0012*\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/layout/FillNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "direction", "Landroidx/compose/foundation/layout/Direction;", "fraction", "", "<init>", "(Landroidx/compose/foundation/layout/Direction;F)V", "getDirection", "()Landroidx/compose/foundation/layout/Direction;", "setDirection", "(Landroidx/compose/foundation/layout/Direction;)V", "getFraction", "()F", "setFraction", "(F)V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ#\u0010\u0011\u001a\u00020\u0012*\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/layout/FillNode;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "direction", "Landroidx/compose/foundation/layout/Direction;", "fraction", "", "<init>", "(Landroidx/compose/foundation/layout/Direction;F)V", "getDirection", "()Landroidx/compose/foundation/layout/Direction;", "setDirection", "(Landroidx/compose/foundation/layout/Direction;)V", "getFraction", "()F", "setFraction", "(F)V", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class FillNode extends Modifier.Node implements LayoutModifierNode {
     private Direction direction;
@@ -42,44 +42,44 @@ final class FillNode extends Modifier.Node implements LayoutModifierNode {
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int m7510getMinWidthimpl;
-        int m7508getMaxWidthimpl;
+        int m8115getMinWidthimpl;
+        int m8113getMaxWidthimpl;
         int i;
         int i2;
-        if (!Constraints.m7504getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
-            m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
-            m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
+        if (!Constraints.m8109getHasBoundedWidthimpl(j) || this.direction == Direction.Vertical) {
+            m8115getMinWidthimpl = Constraints.m8115getMinWidthimpl(j);
+            m8113getMaxWidthimpl = Constraints.m8113getMaxWidthimpl(j);
         } else {
-            int round = Math.round(Constraints.m7508getMaxWidthimpl(j) * this.fraction);
-            int m7510getMinWidthimpl2 = Constraints.m7510getMinWidthimpl(j);
-            m7510getMinWidthimpl = Constraints.m7508getMaxWidthimpl(j);
-            if (round < m7510getMinWidthimpl2) {
-                round = m7510getMinWidthimpl2;
+            int round = Math.round(Constraints.m8113getMaxWidthimpl(j) * this.fraction);
+            int m8115getMinWidthimpl2 = Constraints.m8115getMinWidthimpl(j);
+            m8115getMinWidthimpl = Constraints.m8113getMaxWidthimpl(j);
+            if (round < m8115getMinWidthimpl2) {
+                round = m8115getMinWidthimpl2;
             }
-            if (round <= m7510getMinWidthimpl) {
-                m7510getMinWidthimpl = round;
+            if (round <= m8115getMinWidthimpl) {
+                m8115getMinWidthimpl = round;
             }
-            m7508getMaxWidthimpl = m7510getMinWidthimpl;
+            m8113getMaxWidthimpl = m8115getMinWidthimpl;
         }
-        if (!Constraints.m7503getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
-            int m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
-            int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
-            i = m7509getMinHeightimpl;
-            i2 = m7507getMaxHeightimpl;
+        if (!Constraints.m8108getHasBoundedHeightimpl(j) || this.direction == Direction.Horizontal) {
+            int m8114getMinHeightimpl = Constraints.m8114getMinHeightimpl(j);
+            int m8112getMaxHeightimpl = Constraints.m8112getMaxHeightimpl(j);
+            i = m8114getMinHeightimpl;
+            i2 = m8112getMaxHeightimpl;
         } else {
-            int round2 = Math.round(Constraints.m7507getMaxHeightimpl(j) * this.fraction);
-            int m7509getMinHeightimpl2 = Constraints.m7509getMinHeightimpl(j);
-            i = Constraints.m7507getMaxHeightimpl(j);
-            if (round2 < m7509getMinHeightimpl2) {
-                round2 = m7509getMinHeightimpl2;
+            int round2 = Math.round(Constraints.m8112getMaxHeightimpl(j) * this.fraction);
+            int m8114getMinHeightimpl2 = Constraints.m8114getMinHeightimpl(j);
+            i = Constraints.m8112getMaxHeightimpl(j);
+            if (round2 < m8114getMinHeightimpl2) {
+                round2 = m8114getMinHeightimpl2;
             }
             if (round2 <= i) {
                 i = round2;
             }
             i2 = i;
         }
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7510getMinWidthimpl, m7508getMaxWidthimpl, i, i2));
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(ConstraintsKt.Constraints(m8115getMinWidthimpl, m8113getMaxWidthimpl, i, i2));
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.FillNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return FillNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);

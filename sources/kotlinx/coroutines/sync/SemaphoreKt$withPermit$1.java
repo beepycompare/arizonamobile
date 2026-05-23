@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Semaphore.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-@DebugMetadata(c = "kotlinx.coroutines.sync.SemaphoreKt", f = "Semaphore.kt", i = {0, 0}, l = {81}, m = "withPermit", n = {"$this$withPermit", "action"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
+@DebugMetadata(c = "kotlinx.coroutines.sync.SemaphoreKt", f = "Semaphore.kt", i = {0, 0, 0}, l = {81}, m = "withPermit", n = {"$this$withPermit", "action", "$i$f$withPermit"}, s = {"L$0", "L$1", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class SemaphoreKt$withPermit$1<T> extends ContinuationImpl {
+    int I$0;
     Object L$0;
     Object L$1;
     int label;

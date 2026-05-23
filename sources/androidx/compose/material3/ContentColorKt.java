@@ -12,12 +12,12 @@ public final class ContentColorKt {
     private static final ProvidableCompositionLocal<Color> LocalContentColor = CompositionLocalKt.compositionLocalOf$default(null, new Function0<Color>() { // from class: androidx.compose.material3.ContentColorKt$LocalContentColor$1
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Color invoke() {
-            return Color.m4762boximpl(m1953invoke0d7_KjU());
+            return Color.m5338boximpl(m2398invoke0d7_KjU());
         }
 
         /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-        public final long m1953invoke0d7_KjU() {
-            return Color.Companion.m4798getBlack0d7_KjU();
+        public final long m2398invoke0d7_KjU() {
+            return Color.Companion.m5374getBlack0d7_KjU();
         }
     }, 1, null);
 

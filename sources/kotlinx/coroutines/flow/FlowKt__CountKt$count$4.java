@@ -5,11 +5,12 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Count.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
     final /* synthetic */ Ref.IntRef $i;
@@ -23,8 +24,8 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0050  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -43,7 +44,7 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Function2<T, Continuation<? super Boolean>, Object> function2 = this.$predicate;
-                    flowKt__CountKt$count$4$emit$1.L$0 = this;
+                    flowKt__CountKt$count$4$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__CountKt$count$4$emit$1.label = 1;
                     obj = function2.invoke(t, flowKt__CountKt$count$4$emit$1);
                     if (obj == coroutine_suspended) {
@@ -52,7 +53,7 @@ public final class FlowKt__CountKt$count$4<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    this = (FlowKt__CountKt$count$4) flowKt__CountKt$count$4$emit$1.L$0;
+                    Object obj2 = flowKt__CountKt$count$4$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 if (((Boolean) obj).booleanValue()) {

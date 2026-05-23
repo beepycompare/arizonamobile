@@ -13,8 +13,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$drag$2$1", f = "Scrollable.kt", i = {}, l = {371}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNode$drag$2$1", f = "Scrollable.kt", i = {}, l = {370}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> $forEachDelta;
@@ -72,7 +72,7 @@ final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<N
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(NestedScrollScope nestedScrollScope, ScrollingLogic scrollingLogic, DragEvent.DragDelta dragDelta) {
-        nestedScrollScope.mo531scrollByWithOverscrollOzD1aCk(Offset.m4534timestuRUvjQ(scrollingLogic.m588singleAxisOffsetMKHz9U(dragDelta.m454getDeltaF1C5BW0()), dragDelta.isIndirectPointerEvent() ? -1.0f : 1.0f), NestedScrollSource.Companion.m5965getUserInputWNlRxjI());
+        nestedScrollScope.mo561scrollByWithOverscrollOzD1aCk(Offset.m5110timestuRUvjQ(scrollingLogic.m620singleAxisOffsetMKHz9U(dragDelta.m487getDeltaF1C5BW0()), dragDelta.isIndirectPointerEvent() ? -1.0f : 1.0f), NestedScrollSource.Companion.m6554getUserInputWNlRxjI());
         return Unit.INSTANCE;
     }
 }

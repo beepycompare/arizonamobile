@@ -1,18 +1,18 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzj implements Runnable {
-    final /* synthetic */ com.google.android.gms.internal.measurement.zzcu zza;
-    final /* synthetic */ zzbg zzb;
+    final /* synthetic */ com.google.android.gms.internal.measurement.zzcs zza;
+    final /* synthetic */ zzbh zzb;
     final /* synthetic */ String zzc;
     final /* synthetic */ AppMeasurementDynamiteService zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzj(AppMeasurementDynamiteService appMeasurementDynamiteService, com.google.android.gms.internal.measurement.zzcu zzcuVar, zzbg zzbgVar, String str) {
-        this.zza = zzcuVar;
-        this.zzb = zzbgVar;
+    public zzj(AppMeasurementDynamiteService appMeasurementDynamiteService, com.google.android.gms.internal.measurement.zzcs zzcsVar, zzbh zzbhVar, String str) {
+        this.zza = zzcsVar;
+        this.zzb = zzbhVar;
         this.zzc = str;
         Objects.requireNonNull(appMeasurementDynamiteService);
         this.zzd = appMeasurementDynamiteService;

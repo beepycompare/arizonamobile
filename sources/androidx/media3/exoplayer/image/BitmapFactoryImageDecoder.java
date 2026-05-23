@@ -14,7 +14,7 @@ import androidx.media3.exoplayer.image.ImageDecoder;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BitmapFactoryImageDecoder extends SimpleDecoder<DecoderInputBuffer, ImageOutputBuffer, ImageDecoderException> implements ImageDecoder {
     private final Context context;
     private final int maxOutputSize;
@@ -24,7 +24,7 @@ public final class BitmapFactoryImageDecoder extends SimpleDecoder<DecoderInputB
         return (ImageOutputBuffer) super.dequeueOutputBuffer();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ImageDecoder.Factory {
         private final Context context;
         private int maxOutputSize;

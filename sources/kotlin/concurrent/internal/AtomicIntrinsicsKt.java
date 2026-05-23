@@ -2,7 +2,7 @@ package kotlin.concurrent.internal;
 
 import androidx.compose.animation.core.MutatorMutex$$ExternalSyntheticBackportWithForwarding0;
 import androidx.exifinterface.media.ExifInterface;
-import com.google.common.util.concurrent.Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0;
+import com.google.android.gms.internal.measurement.zzah$$ExternalSyntheticBackportWithForwarding0;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -90,7 +90,7 @@ public final class AtomicIntrinsicsKt {
             if (t != t3) {
                 return t3;
             }
-        } while (!Striped$SmallLazyStriped$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, t2));
+        } while (!zzah$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceArray, i, t, t2));
         return t;
     }
 }

@@ -257,7 +257,7 @@ public final class MaterialThemeKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(904511636, i3, -1, "androidx.compose.material3.MaterialTheme (MaterialTheme.kt:95)");
                 }
-                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ColorSchemeKt.getLocalColorScheme().provides(colorScheme2), _localMotionScheme.provides(motionScheme2), IndicationKt.getLocalIndication().provides(RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), ShapesKt.getLocalShapes().provides(shapes2), TextSelectionColorsKt.getLocalTextSelectionColors().provides(rememberTextSelectionColors(colorScheme2, startRestartGroup, i3 & 14)), TypographyKt.getLocalTypography().provides(typography2)}, ComposableLambdaKt.rememberComposableLambda(-1750539308, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.MaterialThemeKt$MaterialTheme$2
+                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ColorSchemeKt.getLocalColorScheme().provides(colorScheme2), _localMotionScheme.provides(motionScheme2), IndicationKt.getLocalIndication().provides(RippleKt.m2847rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), ShapesKt.getLocalShapes().provides(shapes2), TextSelectionColorsKt.getLocalTextSelectionColors().provides(rememberTextSelectionColors(colorScheme2, startRestartGroup, i3 & 14)), TypographyKt.getLocalTypography().provides(typography2)}, ComposableLambdaKt.rememberComposableLambda(-1750539308, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.MaterialThemeKt$MaterialTheme$2
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                         invoke(composer2, num.intValue());
@@ -575,12 +575,12 @@ public final class MaterialThemeKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1866455512, i, -1, "androidx.compose.material3.rememberTextSelectionColors (MaterialTheme.kt:217)");
         }
-        long m1877getPrimary0d7_KjU = colorScheme.m1877getPrimary0d7_KjU();
+        long m2322getPrimary0d7_KjU = colorScheme.m2322getPrimary0d7_KjU();
         ComposerKt.sourceInformationMarkerStart(composer, -1632576770, "CC(remember):MaterialTheme.kt#9igjgp");
-        boolean changed = composer.changed(m1877getPrimary0d7_KjU);
+        boolean changed = composer.changed(m2322getPrimary0d7_KjU);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            TextSelectionColors textSelectionColors = new TextSelectionColors(m1877getPrimary0d7_KjU, Color.m4771copywmQWz5c$default(m1877getPrimary0d7_KjU, 0.4f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            TextSelectionColors textSelectionColors = new TextSelectionColors(m2322getPrimary0d7_KjU, Color.m5347copywmQWz5c$default(m2322getPrimary0d7_KjU, 0.4f, 0.0f, 0.0f, 0.0f, 14, null), null);
             composer.updateRememberedValue(textSelectionColors);
             rememberedValue = textSelectionColors;
         }

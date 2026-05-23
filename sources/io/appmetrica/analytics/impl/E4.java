@@ -1,11 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class E4 extends F2 {
-    public E4(Ff ff, C0691x4 c0691x4) {
-        super(ff, c0691x4);
+public final class E4 extends C0524q3 {
+    public final int b;
+
+    public E4(int i, int i2) {
+        super(i2);
+        this.b = i;
     }
 
-    public final boolean a(P5 p5, C0616u4 c0616u4) {
-        return a(p5, new D4(c0616u4));
+    @Override // io.appmetrica.analytics.impl.C0524q3
+    public final String toString() {
+        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f1157a + AbstractJsonLexerKt.END_OBJ;
     }
 }

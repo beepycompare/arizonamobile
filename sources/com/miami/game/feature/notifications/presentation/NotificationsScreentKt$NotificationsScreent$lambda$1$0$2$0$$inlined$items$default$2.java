@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: LazyGridDsl.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$2 implements Function1<Integer, Object> {
     final /* synthetic */ List $items;
     final /* synthetic */ Function1 $key;

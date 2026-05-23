@@ -41,7 +41,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
 /* compiled from: SnapshotStateObserver.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0001\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0012\b\u0007\u0018\u00002\u00020\u0001:\u0001<B0\u0012'\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\t\u0010\nJ\b\u0010\u0015\u001a\u00020\u0010H\u0002J\b\u0010\u0016\u001a\u00020\u0005H\u0002J\u0016\u0010\u0017\u001a\u00020\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u0013H\u0002J\u0010\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013H\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0002J\u001d\u0010#\u001a\u00020\u00052\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u00050\u0003H\u0082\bJ\u001d\u0010%\u001a\u00020\u00052\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u00100\u0003H\u0082\bJ?\u0010,\u001a\u00020\u0005\"\b\b\u0000\u0010-*\u00020\u00012\u0006\u0010.\u001a\u0002H-2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u0002H-\u0012\u0004\u0012\u00020\u00050\u00032\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\u00100J\u0016\u00101\u001a\u00020\u00052\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0007J\u000e\u00102\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u0001J)\u00103\u001a\u00020\u00052!\u00104\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(.\u0012\u0004\u0012\u00020\u00100\u0003J\u0006\u00105\u001a\u00020\u0005J\u0006\u00106\u001a\u00020\u0005J\u001e\u00107\u001a\u00020\u00052\f\u00108\u001a\b\u0012\u0004\u0012\u00020\u00010\u00132\u0006\u00109\u001a\u00020\u0014H\u0007J\u0006\u00102\u001a\u00020\u0005J&\u0010:\u001a\u00020\u001f\"\b\b\u0000\u0010-*\u00020\u00012\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u0002H-\u0012\u0004\u0012\u00020\u00050\u0003H\u0002R/\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u000b\u001a\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00010\fj\n\u0012\u0006\u0012\u0004\u0018\u00010\u0001`\rX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R&\u0010\u0011\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00050\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00060\u0001j\u0002`!X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\"R\u0010\u0010&\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010)\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006="}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "", "onChangedExecutor", "Lkotlin/Function1;", "Lkotlin/Function0;", "", "Lkotlin/ParameterName;", "name", "callback", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "pendingChanges", "Ljava/util/concurrent/atomic/AtomicReference;", "Landroidx/compose/runtime/internal/AtomicReference;", "Ljava/util/concurrent/atomic/AtomicReference;", "sendingNotifications", "", "applyObserver", "Lkotlin/Function2;", "", "Landroidx/compose/runtime/snapshots/Snapshot;", "drainChanges", "sendNotifications", "addChanges", "set", "removeChanges", "report", "", "readObserver", "observedScopeMaps", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "observedScopeMapsLock", "Landroidx/compose/runtime/platform/SynchronizedObject;", "Ljava/lang/Object;", "forEachScopeMap", "block", "removeScopeMapIf", "applyUnsubscribe", "Landroidx/compose/runtime/snapshots/ObserverHandle;", "isPaused", "currentMap", "currentMapThreadId", "", "observeReads", ExifInterface.GPS_DIRECTION_TRUE, "scope", "onValueChangedForScope", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "withNoObservations", "clear", "clearIf", "predicate", TtmlNode.START, "stop", "notifyChanges", "changes", "snapshot", "ensureMap", "onChanged", "ObservedScopeMap", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0001\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0014\b\u0007\u0018\u00002\u00020\u0001:\u0001>B0\u0012'\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\t\u0010\nJ\b\u0010\u0015\u001a\u00020\u0010H\u0002J\b\u0010\u0016\u001a\u00020\u0005H\u0002J\u0016\u0010\u0017\u001a\u00020\u00052\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00010\u0013H\u0002J\u0010\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013H\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0002J\u001d\u0010#\u001a\u00020\u00052\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u00050\u0003H\u0082\bJ\u001d\u0010%\u001a\u00020\u00052\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u001f\u0012\u0004\u0012\u00020\u00100\u0003H\u0082\bJ?\u0010,\u001a\u00020\u0005\"\b\b\u0000\u0010-*\u00020\u00012\u0006\u0010.\u001a\u0002H-2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u0002H-\u0012\u0004\u0012\u00020\u00050\u00032\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0002\u00100J/\u00101\u001a\u0002H-\"\u0004\b\u0000\u0010-2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H-0\u0004H\u0082\b\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u00102J\u0016\u00103\u001a\u00020\u00052\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004H\u0007J\u000e\u00104\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u0001J)\u00105\u001a\u00020\u00052!\u00106\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(.\u0012\u0004\u0012\u00020\u00100\u0003J\u0006\u00107\u001a\u00020\u0005J\u0006\u00108\u001a\u00020\u0005J\u001e\u00109\u001a\u00020\u00052\f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00010\u00132\u0006\u0010;\u001a\u00020\u0014H\u0007J\u0006\u00104\u001a\u00020\u0005J&\u0010<\u001a\u00020\u001f\"\b\b\u0000\u0010-*\u00020\u00012\u0012\u0010=\u001a\u000e\u0012\u0004\u0012\u0002H-\u0012\u0004\u0012\u00020\u00050\u0003H\u0002R/\u0010\u0002\u001a#\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R$\u0010\u000b\u001a\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00010\fj\n\u0012\u0006\u0012\u0004\u0018\u00010\u0001`\rX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R&\u0010\u0011\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00050\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00060\u0001j\u0002`!X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\"R\u0010\u0010&\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010)\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006?"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "", "onChangedExecutor", "Lkotlin/Function1;", "Lkotlin/Function0;", "", "Lkotlin/ParameterName;", "name", "callback", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "pendingChanges", "Ljava/util/concurrent/atomic/AtomicReference;", "Landroidx/compose/runtime/internal/AtomicReference;", "Ljava/util/concurrent/atomic/AtomicReference;", "sendingNotifications", "", "applyObserver", "Lkotlin/Function2;", "", "Landroidx/compose/runtime/snapshots/Snapshot;", "drainChanges", "sendNotifications", "addChanges", "set", "removeChanges", "report", "", "readObserver", "observedScopeMaps", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "observedScopeMapsLock", "Landroidx/compose/runtime/platform/SynchronizedObject;", "Ljava/lang/Object;", "forEachScopeMap", "block", "removeScopeMapIf", "applyUnsubscribe", "Landroidx/compose/runtime/snapshots/ObserverHandle;", "isPaused", "currentMap", "currentMapThreadId", "", "observeReads", ExifInterface.GPS_DIRECTION_TRUE, "scope", "onValueChangedForScope", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "withScopeMapLock", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "withNoObservations", "clear", "clearIf", "predicate", TtmlNode.START, "stop", "notifyChanges", "changes", "snapshot", "ensureMap", "onChanged", "ObservedScopeMap", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotStateObserver {
     public static final int $stable = 8;
@@ -236,172 +236,204 @@ public final class SnapshotStateObserver {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r11v0 */
+    /* JADX WARN: Type inference failed for: r11v10 */
+    /* JADX WARN: Type inference failed for: r11v3 */
+    /* JADX WARN: Type inference failed for: r11v5 */
+    /* JADX WARN: Type inference failed for: r11v6 */
+    /* JADX WARN: Type inference failed for: r11v9 */
     public final <T> void observeReads(T t, Function1<? super T, Unit> function1, Function0<Unit> function0) {
         ObservedScopeMap ensureMap;
+        boolean z;
+        ObservedScopeMap observedScopeMap;
         long j;
+        Function1<Object, Unit> function12;
+        Object obj;
+        MutableObjectIntMap mutableObjectIntMap;
+        int i;
+        DerivedStateObserver derivedStateObserver;
+        MutableVector<DerivedStateObserver> derivedStateObservers;
         MutableVector<DerivedStateObserver> mutableVector;
         SnapshotThreadLocal snapshotThreadLocal;
         long j2;
         TransparentObserverMutableSnapshot transparentObserverMutableSnapshot;
         Snapshot snapshot;
         Snapshot makeCurrent;
+        long currentThreadId = Thread_jvmKt.currentThreadId();
         synchronized (this.observedScopeMapsLock) {
             ensureMap = ensureMap(function1);
+            z = this.isPaused;
+            observedScopeMap = this.currentMap;
+            j = this.currentMapThreadId;
+            Unit unit = Unit.INSTANCE;
         }
-        boolean z = this.isPaused;
-        ObservedScopeMap observedScopeMap = this.currentMap;
-        long j3 = this.currentMapThreadId;
-        if (j3 != -1) {
-            if (!(j3 == Thread_jvmKt.currentThreadId())) {
-                PreconditionsKt.throwIllegalArgumentException("Detected multithreaded access to SnapshotStateObserver: previousThreadId=" + j3 + "), currentThread={id=" + Thread_jvmKt.currentThreadId() + ", name=" + Thread_jvmKt.currentThreadName() + "}. Note that observation on multiple threads in layout/draw is not supported. Make sure your measure/layout/draw for each Owner (AndroidComposeView) is executed on the same thread.");
+        long j3 = 0;
+        if (j != -1) {
+            if (!(j == currentThreadId)) {
+                PreconditionsKt.throwIllegalArgumentException("Detected multithreaded access to SnapshotStateObserver: previousThreadId=" + j + "), currentThread={id=" + currentThreadId + ", name=" + Thread_jvmKt.currentThreadName() + "}. Note that observation on multiple threads in layout/draw is not supported. Make sure your measure/layout/draw for each Owner (AndroidComposeView) is executed on the same thread.");
             }
         }
         try {
-            this.isPaused = false;
-            this.currentMap = ensureMap;
-            this.currentMapThreadId = Thread_jvmKt.currentThreadId();
-            Function1<Object, Unit> function12 = this.readObserver;
-            Object obj = ensureMap.currentScope;
-            MutableObjectIntMap mutableObjectIntMap = ensureMap.currentScopeReads;
-            int i = ensureMap.currentToken;
+            synchronized (this.observedScopeMapsLock) {
+                try {
+                    this.isPaused = false;
+                    this.currentMap = ensureMap;
+                    this.currentMapThreadId = currentThreadId;
+                    Unit unit2 = Unit.INSTANCE;
+                } catch (Throwable th) {
+                    th = th;
+                }
+            }
+            function12 = this.readObserver;
+            obj = ensureMap.currentScope;
+            mutableObjectIntMap = ensureMap.currentScopeReads;
+            i = ensureMap.currentToken;
             ensureMap.currentScope = t;
             ensureMap.currentScopeReads = (MutableObjectIntMap) ensureMap.scopeToValues.get(t);
             if (ensureMap.currentToken == -1) {
                 ensureMap.currentToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
             }
-            DerivedStateObserver derivedStateObserver = ensureMap.getDerivedStateObserver();
-            MutableVector<DerivedStateObserver> derivedStateObservers = SnapshotStateKt.derivedStateObservers();
-            try {
-                derivedStateObservers.add(derivedStateObserver);
-                Snapshot.Companion companion = Snapshot.Companion;
-                if (function12 == null) {
-                    function0.invoke();
-                    j2 = j3;
-                    mutableVector = derivedStateObservers;
-                } else {
-                    snapshotThreadLocal = SnapshotKt.threadSnapshot;
-                    Snapshot snapshot2 = (Snapshot) snapshotThreadLocal.get();
-                    try {
-                        if (snapshot2 instanceof TransparentObserverMutableSnapshot) {
-                            try {
-                                if (((TransparentObserverMutableSnapshot) snapshot2).getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
-                                    Function1<Object, Unit> readObserver = ((TransparentObserverMutableSnapshot) snapshot2).getReadObserver();
-                                    Function1<Object, Unit> writeObserver$runtime = ((TransparentObserverMutableSnapshot) snapshot2).getWriteObserver$runtime();
-                                    try {
-                                        j2 = j3;
-                                        try {
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(SnapshotKt.mergedReadObserver$default(function12, readObserver, false, 4, null));
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(SnapshotKt.mergedWriteObserver(null, writeObserver$runtime));
-                                            function0.invoke();
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
-                                            mutableVector = derivedStateObservers;
-                                        } catch (Throwable th) {
-                                            th = th;
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
-                                            ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
-                                            throw th;
-                                        }
-                                    } catch (Throwable th2) {
-                                        th = th2;
-                                    }
-                                }
-                            } catch (Throwable th3) {
-                                th = th3;
-                                j2 = j3;
-                                mutableVector = derivedStateObservers;
-                                j = j2;
+            derivedStateObserver = ensureMap.getDerivedStateObserver();
+            derivedStateObservers = SnapshotStateKt.derivedStateObservers();
+        } catch (Throwable th2) {
+            th = th2;
+            j3 = j;
+        }
+        try {
+            derivedStateObservers.add(derivedStateObserver);
+            Snapshot.Companion companion = Snapshot.Companion;
+            if (function12 == null) {
+                function0.invoke();
+                j2 = j;
+                mutableVector = derivedStateObservers;
+            } else {
+                snapshotThreadLocal = SnapshotKt.threadSnapshot;
+                Snapshot snapshot2 = (Snapshot) snapshotThreadLocal.get();
+                try {
+                    if (snapshot2 instanceof TransparentObserverMutableSnapshot) {
+                        try {
+                            if (((TransparentObserverMutableSnapshot) snapshot2).getThreadId$runtime() == Thread_jvmKt.currentThreadId()) {
+                                Function1<Object, Unit> readObserver = ((TransparentObserverMutableSnapshot) snapshot2).getReadObserver();
+                                Function1<Object, Unit> writeObserver$runtime = ((TransparentObserverMutableSnapshot) snapshot2).getWriteObserver$runtime();
                                 try {
-                                    mutableVector.removeAt(mutableVector.getSize() - 1);
-                                    throw th;
+                                    j2 = j;
+                                    try {
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(SnapshotKt.mergedReadObserver$default(function12, readObserver, false, 4, null));
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(SnapshotKt.mergedWriteObserver(null, writeObserver$runtime));
+                                        function0.invoke();
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
+                                        mutableVector = derivedStateObservers;
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setReadObserver$runtime(readObserver);
+                                        ((TransparentObserverMutableSnapshot) snapshot2).setWriteObserver$runtime(writeObserver$runtime);
+                                        throw th;
+                                    }
                                 } catch (Throwable th4) {
                                     th = th4;
-                                    this.currentMap = observedScopeMap;
-                                    this.isPaused = z;
-                                    this.currentMapThreadId = j;
-                                    throw th;
                                 }
                             }
-                        }
-                        j2 = j3;
-                        try {
-                            try {
-                                try {
-                                    if (snapshot2 != null && !(snapshot2 instanceof MutableSnapshot)) {
-                                        transparentObserverMutableSnapshot = snapshot2.takeNestedSnapshot(function12);
-                                        mutableVector = derivedStateObservers;
-                                        snapshot = transparentObserverMutableSnapshot;
-                                        makeCurrent = snapshot.makeCurrent();
-                                        function0.invoke();
-                                        snapshot.restoreCurrent(makeCurrent);
-                                        snapshot.dispose();
-                                    }
-                                    function0.invoke();
-                                    snapshot.restoreCurrent(makeCurrent);
-                                    snapshot.dispose();
-                                } catch (Throwable th5) {
-                                    j = j2;
-                                    try {
-                                        snapshot.restoreCurrent(makeCurrent);
-                                        throw th5;
-                                    } catch (Throwable th6) {
-                                        th = th6;
-                                        try {
-                                            snapshot.dispose();
-                                            throw th;
-                                        } catch (Throwable th7) {
-                                            th = th7;
-                                            mutableVector.removeAt(mutableVector.getSize() - 1);
-                                            throw th;
-                                        }
-                                    }
-                                }
-                                makeCurrent = snapshot.makeCurrent();
-                            } catch (Throwable th8) {
-                                th = th8;
-                                j = j2;
-                            }
-                            transparentObserverMutableSnapshot = new TransparentObserverMutableSnapshot(snapshot2 instanceof MutableSnapshot ? (MutableSnapshot) snapshot2 : null, function12, null, true, false);
-                            snapshot = transparentObserverMutableSnapshot;
-                        } catch (Throwable th9) {
-                            th = th9;
-                            j = j2;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            j2 = j;
+                            mutableVector = derivedStateObservers;
+                            j3 = j2;
                             mutableVector.removeAt(mutableVector.getSize() - 1);
                             throw th;
                         }
-                        mutableVector = derivedStateObservers;
+                    }
+                    j2 = j;
+                    try {
+                        try {
+                            try {
+                                if (snapshot2 != null && !(snapshot2 instanceof MutableSnapshot)) {
+                                    transparentObserverMutableSnapshot = snapshot2.takeNestedSnapshot(function12);
+                                    mutableVector = derivedStateObservers;
+                                    snapshot = transparentObserverMutableSnapshot;
+                                    makeCurrent = snapshot.makeCurrent();
+                                    function0.invoke();
+                                    snapshot.restoreCurrent(makeCurrent);
+                                    snapshot.dispose();
+                                }
+                                function0.invoke();
+                                snapshot.restoreCurrent(makeCurrent);
+                                snapshot.dispose();
+                            } catch (Throwable th6) {
+                                j3 = j2;
+                                try {
+                                    snapshot.restoreCurrent(makeCurrent);
+                                    throw th6;
+                                } catch (Throwable th7) {
+                                    th = th7;
+                                    try {
+                                        snapshot.dispose();
+                                        throw th;
+                                    } catch (Throwable th8) {
+                                        th = th8;
+                                        mutableVector.removeAt(mutableVector.getSize() - 1);
+                                        throw th;
+                                    }
+                                }
+                            }
+                            makeCurrent = snapshot.makeCurrent();
+                        } catch (Throwable th9) {
+                            th = th9;
+                            j3 = j2;
+                        }
+                        transparentObserverMutableSnapshot = new TransparentObserverMutableSnapshot(snapshot2 instanceof MutableSnapshot ? (MutableSnapshot) snapshot2 : null, function12, null, true, false);
+                        snapshot = transparentObserverMutableSnapshot;
                     } catch (Throwable th10) {
                         th = th10;
+                        j3 = j2;
+                        mutableVector.removeAt(mutableVector.getSize() - 1);
+                        throw th;
                     }
+                    mutableVector = derivedStateObservers;
+                } catch (Throwable th11) {
+                    th = th11;
                 }
-                try {
-                    mutableVector.removeAt(mutableVector.getSize() - 1);
-                    Object obj2 = ensureMap.currentScope;
-                    Intrinsics.checkNotNull(obj2);
-                    ensureMap.clearObsoleteStateReads(obj2);
-                    ensureMap.currentScope = obj;
-                    ensureMap.currentScopeReads = mutableObjectIntMap;
-                    ensureMap.currentToken = i;
+            }
+            try {
+                mutableVector.removeAt(mutableVector.getSize() - 1);
+                Object obj2 = ensureMap.currentScope;
+                Intrinsics.checkNotNull(obj2);
+                ensureMap.clearObsoleteStateReads(obj2);
+                ensureMap.currentScope = obj;
+                ensureMap.currentScopeReads = mutableObjectIntMap;
+                ensureMap.currentToken = i;
+                synchronized (this.observedScopeMapsLock) {
                     this.currentMap = observedScopeMap;
                     this.isPaused = z;
                     this.currentMapThreadId = j2;
-                } catch (Throwable th11) {
-                    th = th11;
-                    j = j2;
-                    this.currentMap = observedScopeMap;
-                    this.isPaused = z;
-                    this.currentMapThreadId = j;
-                    throw th;
+                    Unit unit3 = Unit.INSTANCE;
                 }
             } catch (Throwable th12) {
                 th = th12;
-                j = j3;
-                mutableVector = derivedStateObservers;
+                j3 = j2;
+                synchronized (this.observedScopeMapsLock) {
+                    ObservedScopeMap observedScopeMap2 = observedScopeMap;
+                    this.currentMap = observedScopeMap;
+                    this.isPaused = z;
+                    this.currentMapThreadId = j3;
+                    Unit unit4 = Unit.INSTANCE;
+                }
+                throw th;
             }
         } catch (Throwable th13) {
             th = th13;
-            j = j3;
+            mutableVector = derivedStateObservers;
+            j3 = j;
         }
+    }
+
+    private final <T> T withScopeMapLock(Function0<? extends T> function0) {
+        T invoke;
+        synchronized (this.observedScopeMapsLock) {
+            invoke = function0.invoke();
+        }
+        return invoke;
     }
 
     @Deprecated(message = "Replace with Snapshot.withoutReadObservation()", replaceWith = @ReplaceWith(expression = "Snapshot.withoutReadObservation(block)", imports = {"androidx.compose.runtime.snapshots.Snapshot"}))
@@ -459,7 +491,7 @@ public final class SnapshotStateObserver {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SnapshotStateObserver.kt */
-    @Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u0001J.\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\u00012\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00010\u000bH\u0002J7\u0010*\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0014\b\b\u0010,\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u00032\u000e\b\b\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00040.H\u0086\bJ\u0010\u0010/\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001H\u0002J\u000e\u00100\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001J)\u00101\u001a\u00020\u00042!\u00102\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b3\u0012\b\b4\u0012\u0004\b\b(+\u0012\u0004\u0012\u00020\u001d0\u0003J\u0006\u00105\u001a\u00020\u001dJ\u0018\u00106\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0006\u0010(\u001a\u00020\u0001H\u0002J\u0006\u00107\u001a\u00020\u0004J\u0014\u00108\u001a\u00020\u001d2\f\u00109\u001a\b\u0012\u0004\u0012\u00020\u00010:J\u0012\u0010;\u001a\u00020\u00042\n\u0010<\u001a\u0006\u0012\u0002\b\u00030\u0017J\u0006\u0010=\u001a\u00020\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0010\u0010\t\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R \u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b0\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00010\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0015\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u001a\u0010\u001c\u001a\u00020\u001dX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u000e\u0010\"\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010#\u001a\u0012\u0012\u0004\u0012\u00020\u0001\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R6\u0010$\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u00010%j\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u0001`&X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "", "onChanged", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnChanged", "()Lkotlin/jvm/functions/Function1;", "currentScope", "currentScopeReads", "Landroidx/collection/MutableObjectIntMap;", "currentToken", "", "valueToScopes", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/collection/MutableScatterMap;", "scopeToValues", "Landroidx/collection/MutableScatterMap;", "invalidated", "Landroidx/collection/MutableScatterSet;", "statesToReread", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/DerivedState;", "derivedStateObserver", "Landroidx/compose/runtime/DerivedStateObserver;", "getDerivedStateObserver", "()Landroidx/compose/runtime/DerivedStateObserver;", "readingDerivedStates", "", "getReadingDerivedStates", "()Z", "setReadingDerivedStates", "(Z)V", "deriveStateScopeCount", "dependencyToDerivedStates", "recordedDerivedStateValues", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "recordRead", "value", "recordedValues", "observe", "scope", "readObserver", "block", "Lkotlin/Function0;", "clearObsoleteStateReads", "clearScopeObservations", "removeScopeIf", "predicate", "Lkotlin/ParameterName;", "name", "hasScopeObservations", "removeObservation", "clear", "recordInvalidation", "changes", "", "rereadDerivedState", "derivedState", "notifyInvalidatedScopes", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u0001J.\u0010'\u001a\u00020\u00042\u0006\u0010(\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\t\u001a\u00020\u00012\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00010\u000bH\u0002J7\u0010*\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0014\b\b\u0010,\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u00032\u000e\b\b\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00040.H\u0086\bJ\u0010\u0010/\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001H\u0002J\u000e\u00100\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0001J)\u00101\u001a\u00020\u00042!\u00102\u001a\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b3\u0012\b\b4\u0012\u0004\b\b(+\u0012\u0004\u0012\u00020\u001d0\u0003J\u0006\u00105\u001a\u00020\u001dJ\u0018\u00106\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u00012\u0006\u0010(\u001a\u00020\u0001H\u0002J\u0006\u00107\u001a\u00020\u0004J\u0014\u00108\u001a\u00020\u001d2\f\u00109\u001a\b\u0012\u0004\u0012\u00020\u00010:J\u0012\u0010;\u001a\u00020\u00042\n\u0010<\u001a\u0006\u0012\u0002\b\u00030\u0017J\u0006\u0010=\u001a\u00020\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0010\u0010\t\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R \u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b0\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00010\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\u0015\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u001a\u0010\u001c\u001a\u00020\u001dX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u000e\u0010\"\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010#\u001a\u0012\u0012\u0004\u0012\u00020\u0001\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00170\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R6\u0010$\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u00010%j\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u0017\u0012\u0006\u0012\u0004\u0018\u00010\u0001`&X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;", "", "onChanged", "Lkotlin/Function1;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnChanged", "()Lkotlin/jvm/functions/Function1;", "currentScope", "currentScopeReads", "Landroidx/collection/MutableObjectIntMap;", "currentToken", "", "valueToScopes", "Landroidx/compose/runtime/collection/ScopeMap;", "Landroidx/collection/MutableScatterMap;", "scopeToValues", "Landroidx/collection/MutableScatterMap;", "invalidated", "Landroidx/collection/MutableScatterSet;", "statesToReread", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/DerivedState;", "derivedStateObserver", "Landroidx/compose/runtime/DerivedStateObserver;", "getDerivedStateObserver", "()Landroidx/compose/runtime/DerivedStateObserver;", "readingDerivedStates", "", "getReadingDerivedStates", "()Z", "setReadingDerivedStates", "(Z)V", "deriveStateScopeCount", "dependencyToDerivedStates", "recordedDerivedStateValues", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "recordRead", "value", "recordedValues", "observe", "scope", "readObserver", "block", "Lkotlin/Function0;", "clearObsoleteStateReads", "clearScopeObservations", "removeScopeIf", "predicate", "Lkotlin/ParameterName;", "name", "hasScopeObservations", "removeObservation", "clear", "recordInvalidation", "changes", "", "rereadDerivedState", "derivedState", "notifyInvalidatedScopes", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class ObservedScopeMap {
         private Object currentScope;
@@ -468,7 +500,7 @@ public final class SnapshotStateObserver {
         private final Function1<Object, Unit> onChanged;
         private boolean readingDerivedStates;
         private int currentToken = -1;
-        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m4143constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m4507constructorimpl$default(null, 1, null);
         private final MutableScatterMap<Object, MutableObjectIntMap<Object>> scopeToValues = new MutableScatterMap<>(0, 1, null);
         private final MutableScatterSet<Object> invalidated = new MutableScatterSet<>(0, 1, null);
         private final MutableVector<DerivedState<?>> statesToReread = new MutableVector<>(new DerivedState[16], 0);
@@ -487,7 +519,7 @@ public final class SnapshotStateObserver {
                 SnapshotStateObserver.ObservedScopeMap.this.deriveStateScopeCount = i - 1;
             }
         };
-        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m4143constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m4507constructorimpl$default(null, 1, null);
         private final HashMap<DerivedState<?>, Object> recordedDerivedStateValues = new HashMap<>();
 
         public ObservedScopeMap(Function1<Object, Unit> function1) {
@@ -541,7 +573,7 @@ public final class SnapshotStateObserver {
                 this.recordedDerivedStateValues.put(obj, currentRecord.getCurrentValue());
                 ObjectIntMap<StateObject> dependencies = currentRecord.getDependencies();
                 MutableScatterMap<Object, Object> mutableScatterMap = this.dependencyToDerivedStates;
-                ScopeMap.m4152removeScopeimpl(mutableScatterMap, obj);
+                ScopeMap.m4522removeScopeimpl(mutableScatterMap, obj);
                 Object[] objArr = dependencies.keys;
                 long[] jArr = dependencies.metadata;
                 int length = jArr.length - 2;
@@ -558,9 +590,9 @@ public final class SnapshotStateObserver {
                                     StateObject stateObject = (StateObject) objArr[(i6 << 3) + i8];
                                     if (stateObject instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
-                                        ((StateObjectImpl) stateObject).m4234recordReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(i4));
+                                        ((StateObjectImpl) stateObject).m4759recordReadInh_f27i8$runtime(ReaderKind.m4747constructorimpl(i4));
                                     }
-                                    ScopeMap.m4137addimpl(mutableScatterMap, stateObject, obj);
+                                    ScopeMap.m4500addimpl(mutableScatterMap, stateObject, obj);
                                 } else {
                                     i4 = i5;
                                 }
@@ -589,9 +621,9 @@ public final class SnapshotStateObserver {
             if (put == i3) {
                 if (obj instanceof StateObjectImpl) {
                     ReaderKind.Companion companion2 = ReaderKind.Companion;
-                    ((StateObjectImpl) obj).m4234recordReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(i2));
+                    ((StateObjectImpl) obj).m4759recordReadInh_f27i8$runtime(ReaderKind.m4747constructorimpl(i2));
                 }
-                ScopeMap.m4137addimpl(this.valueToScopes, obj, obj2);
+                ScopeMap.m4500addimpl(this.valueToScopes, obj, obj2);
             }
         }
 
@@ -851,18 +883,18 @@ public final class SnapshotStateObserver {
         }
 
         private final void removeObservation(Object obj, Object obj2) {
-            ScopeMap.m4150removeimpl(this.valueToScopes, obj2, obj);
-            if (!(obj2 instanceof DerivedState) || ScopeMap.m4144containsimpl(this.valueToScopes, obj2)) {
+            ScopeMap.m4520removeimpl(this.valueToScopes, obj2, obj);
+            if (!(obj2 instanceof DerivedState) || ScopeMap.m4508containsimpl(this.valueToScopes, obj2)) {
                 return;
             }
-            ScopeMap.m4152removeScopeimpl(this.dependencyToDerivedStates, obj2);
+            ScopeMap.m4522removeScopeimpl(this.dependencyToDerivedStates, obj2);
             this.recordedDerivedStateValues.remove(obj2);
         }
 
         public final void clear() {
-            ScopeMap.m4141clearimpl(this.valueToScopes);
+            ScopeMap.m4505clearimpl(this.valueToScopes);
             this.scopeToValues.clear();
-            ScopeMap.m4141clearimpl(this.dependencyToDerivedStates);
+            ScopeMap.m4505clearimpl(this.dependencyToDerivedStates);
             this.recordedDerivedStateValues.clear();
         }
 
@@ -929,7 +961,7 @@ public final class SnapshotStateObserver {
                                     int i17 = i12;
                                     if (obj instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
-                                        if (!((StateObjectImpl) obj).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(2))) {
+                                        if (!((StateObjectImpl) obj).m4758isReadInh_f27i8$runtime(ReaderKind.m4747constructorimpl(2))) {
                                             jArr4 = jArr5;
                                             objArr4 = objArr5;
                                             i3 = i15;
@@ -939,7 +971,7 @@ public final class SnapshotStateObserver {
                                             i6 = 8;
                                         }
                                     }
-                                    if (this.readingDerivedStates || !ScopeMap.m4144containsimpl(mutableScatterMap3, obj)) {
+                                    if (this.readingDerivedStates || !ScopeMap.m4508containsimpl(mutableScatterMap3, obj)) {
                                         jArr4 = jArr5;
                                         objArr4 = objArr5;
                                         i3 = i15;
@@ -1222,7 +1254,7 @@ public final class SnapshotStateObserver {
                     Object next = it3.next();
                     if (next instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (!((StateObjectImpl) next).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(2))) {
+                        if (!((StateObjectImpl) next).m4758isReadInh_f27i8$runtime(ReaderKind.m4747constructorimpl(2))) {
                             it = it3;
                             mutableScatterMap = mutableScatterMap3;
                             str = str3;
@@ -1231,7 +1263,7 @@ public final class SnapshotStateObserver {
                             str3 = str;
                         }
                     }
-                    if (this.readingDerivedStates || !ScopeMap.m4144containsimpl(mutableScatterMap3, next)) {
+                    if (this.readingDerivedStates || !ScopeMap.m4508containsimpl(mutableScatterMap3, next)) {
                         it = it3;
                         mutableScatterMap = mutableScatterMap3;
                         str = str3;

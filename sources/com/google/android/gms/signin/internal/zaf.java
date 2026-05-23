@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.IAccountAccessor;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zaf extends com.google.android.gms.internal.base.zaa implements IInterface {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -21,7 +21,7 @@ public final class zaf extends com.google.android.gms.internal.base.zaa implemen
 
     public final void zaf(IAccountAccessor iAccountAccessor, int i, boolean z) throws RemoteException {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zad(zaa, iAccountAccessor);
+        com.google.android.gms.internal.base.zac.zac(zaa, iAccountAccessor);
         zaa.writeInt(i);
         zaa.writeInt(z ? 1 : 0);
         zac(9, zaa);
@@ -29,8 +29,8 @@ public final class zaf extends com.google.android.gms.internal.base.zaa implemen
 
     public final void zag(zai zaiVar, zae zaeVar) throws RemoteException {
         Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zac(zaa, zaiVar);
-        com.google.android.gms.internal.base.zac.zad(zaa, zaeVar);
+        com.google.android.gms.internal.base.zac.zab(zaa, zaiVar);
+        com.google.android.gms.internal.base.zac.zac(zaa, zaeVar);
         zac(12, zaa);
     }
 }

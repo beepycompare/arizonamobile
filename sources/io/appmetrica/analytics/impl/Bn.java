@@ -1,16 +1,14 @@
 package io.appmetrica.analytics.impl;
 
+import android.text.TextUtils;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Comparator;
 /* loaded from: classes5.dex */
-public final class Bn implements Comparator {
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Thread thread = (Thread) obj;
-        Thread thread2 = (Thread) obj2;
-        if (thread == thread2) {
-            return 0;
+public final class Bn implements Wo {
+    @Override // io.appmetrica.analytics.impl.Wo
+    public final byte[] a(C0297h9 c0297h9, Eh eh) {
+        if (!TextUtils.isEmpty(c0297h9.b)) {
+            return StringUtils.getUTF8Bytes(c0297h9.b);
         }
-        return StringUtils.compare(thread.getName(), thread2.getName());
+        return new byte[0];
     }
 }

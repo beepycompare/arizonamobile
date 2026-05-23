@@ -1,28 +1,4 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
 /* loaded from: classes5.dex */
-public final class Qh implements Provider {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0737z0 f757a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ ReporterConfig c;
-
-    public Qh(C0737z0 c0737z0, Context context, ReporterConfig reporterConfig) {
-        this.f757a = c0737z0;
-        this.b = context;
-        this.c = reporterConfig;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
-    public final Object get() {
-        C0737z0 c0737z0 = this.f757a;
-        Context context = this.b;
-        ReporterConfig reporterConfig = this.c;
-        c0737z0.getClass();
-        return C0712y0.a(context).f().c(reporterConfig);
-    }
+public final class Qh {
 }

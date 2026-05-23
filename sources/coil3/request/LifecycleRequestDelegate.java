@@ -41,7 +41,7 @@ public final class LifecycleRequestDelegate implements RequestDelegate, DefaultL
 
     @Override // coil3.request.RequestDelegate
     public void dispose() {
-        Job.DefaultImpls.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver

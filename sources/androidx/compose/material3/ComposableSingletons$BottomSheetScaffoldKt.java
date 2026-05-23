@@ -29,7 +29,7 @@ public final class ComposableSingletons$BottomSheetScaffoldKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1392012807, i, -1, "androidx.compose.material3.ComposableSingletons$BottomSheetScaffoldKt.lambda$1392012807.<anonymous> (BottomSheetScaffold.kt:128)");
             }
-            BottomSheetDefaults.INSTANCE.m1746DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m2191DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -62,7 +62,7 @@ public final class ComposableSingletons$BottomSheetScaffoldKt {
     });
 
     /* renamed from: lambda$-788244078  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f81lambda$788244078 = ComposableLambdaKt.composableLambdaInstance(-788244078, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$BottomSheetScaffoldKt$lambda$-788244078$1
+    private static Function2<Composer, Integer, Unit> f24lambda$788244078 = ComposableLambdaKt.composableLambdaInstance(-788244078, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$BottomSheetScaffoldKt$lambda$-788244078$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -85,8 +85,8 @@ public final class ComposableSingletons$BottomSheetScaffoldKt {
     });
 
     /* renamed from: getLambda$-788244078$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1936getLambda$788244078$material3() {
-        return f81lambda$788244078;
+    public final Function2<Composer, Integer, Unit> m2381getLambda$788244078$material3() {
+        return f24lambda$788244078;
     }
 
     public final Function2<Composer, Integer, Unit> getLambda$1392012807$material3() {

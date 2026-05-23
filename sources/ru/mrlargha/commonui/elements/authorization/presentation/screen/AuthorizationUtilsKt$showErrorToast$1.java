@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.authorization.presentation.screen;
 
 import android.widget.Toast;
-import androidx.media3.exoplayer.ExoPlayer;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -43,7 +42,7 @@ public final class AuthorizationUtilsKt$showErrorToast$1 extends SuspendLambda i
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (DelayKt.delay(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, this) == coroutine_suspended) {
+            if (DelayKt.delay(2000L, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

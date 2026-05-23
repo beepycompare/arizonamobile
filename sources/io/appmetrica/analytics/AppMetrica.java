@@ -7,9 +7,9 @@ import android.content.Intent;
 import android.location.Location;
 import android.webkit.WebView;
 import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.impl.AbstractC0613u1;
-import io.appmetrica.analytics.impl.C0588t1;
-import io.appmetrica.analytics.impl.K0;
+import io.appmetrica.analytics.impl.AbstractC0677w1;
+import io.appmetrica.analytics.impl.C0651v1;
+import io.appmetrica.analytics.impl.M0;
 import io.appmetrica.analytics.plugins.AppMetricaPlugins;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Arrays;
@@ -18,23 +18,23 @@ import java.util.Map;
 /* loaded from: classes5.dex */
 public final class AppMetrica {
     public static void activate(Context context, AppMetricaConfig appMetricaConfig) {
-        AbstractC0613u1.f1250a.a(context, appMetricaConfig);
+        AbstractC0677w1.f1255a.a(context, appMetricaConfig);
     }
 
     public static void activateReporter(Context context, ReporterConfig reporterConfig) {
-        AbstractC0613u1.f1250a.a(context, reporterConfig);
+        AbstractC0677w1.f1255a.a(context, reporterConfig);
     }
 
     public static void clearAppEnvironment() {
-        AbstractC0613u1.f1250a.a();
+        AbstractC0677w1.f1255a.a();
     }
 
     public static void enableActivityAutoTracking(Application application) {
-        AbstractC0613u1.f1250a.a(application);
+        AbstractC0677w1.f1255a.a(application);
     }
 
     public static String getDeviceId(Context context) {
-        return AbstractC0613u1.f1250a.b();
+        return AbstractC0677w1.f1255a.a(context);
     }
 
     public static int getLibraryApiLevel() {
@@ -42,150 +42,150 @@ public final class AppMetrica {
     }
 
     public static String getLibraryVersion() {
-        return "8.0.0";
+        return "8.2.0";
     }
 
     public static AppMetricaPlugins getPluginExtension() {
-        return K0.f655a;
+        return M0.f654a;
     }
 
     public static IReporter getReporter(Context context, String str) {
-        return AbstractC0613u1.f1250a.a(context, str);
+        return AbstractC0677w1.f1255a.a(context, str);
     }
 
     public static String getUuid(Context context) {
-        return AbstractC0613u1.f1250a.a(context).id;
+        return AbstractC0677w1.f1255a.b(context).id;
     }
 
     public static void initWebViewReporting(WebView webView) {
-        AbstractC0613u1.f1250a.a(webView);
+        AbstractC0677w1.f1255a.a(webView);
     }
 
     public static void pauseSession(Activity activity) {
-        AbstractC0613u1.f1250a.a(activity);
+        AbstractC0677w1.f1255a.a(activity);
     }
 
     public static void putAppEnvironmentValue(String str, String str2) {
-        AbstractC0613u1.f1250a.a(str, str2);
+        AbstractC0677w1.f1255a.a(str, str2);
     }
 
     public static void putErrorEnvironmentValue(String str, String str2) {
-        AbstractC0613u1.f1250a.b(str, str2);
+        AbstractC0677w1.f1255a.b(str, str2);
     }
 
     public static void registerAnrListener(AnrListener anrListener) {
-        AbstractC0613u1.f1250a.a(anrListener);
+        AbstractC0677w1.f1255a.a(anrListener);
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue) {
-        AbstractC0613u1.f1250a.a(adRevenue);
+        AbstractC0677w1.f1255a.a(adRevenue);
     }
 
     public static void reportAnr(Map<Thread, StackTraceElement[]> map) {
-        AbstractC0613u1.f1250a.a(map);
+        AbstractC0677w1.f1255a.a(map);
     }
 
     public static void reportAppOpen(Activity activity) {
-        AbstractC0613u1.f1250a.b(activity);
+        AbstractC0677w1.f1255a.b(activity);
     }
 
     public static void reportECommerce(ECommerceEvent eCommerceEvent) {
-        AbstractC0613u1.f1250a.a(eCommerceEvent);
+        AbstractC0677w1.f1255a.a(eCommerceEvent);
     }
 
     public static void reportError(String str, String str2) {
-        AbstractC0613u1.f1250a.a(str, str2, (Throwable) null);
+        AbstractC0677w1.f1255a.a(str, str2, (Throwable) null);
     }
 
     public static void reportEvent(String str) {
-        AbstractC0613u1.f1250a.b(str);
+        AbstractC0677w1.f1255a.b(str);
     }
 
     public static void reportExternalAdRevenue(Object... objArr) {
-        AbstractC0613u1.f1250a.b(objArr);
+        AbstractC0677w1.f1255a.b(objArr);
     }
 
     public static void reportExternalAttribution(ExternalAttribution externalAttribution) {
-        AbstractC0613u1.f1250a.a(externalAttribution);
+        AbstractC0677w1.f1255a.a(externalAttribution);
     }
 
     public static void reportRevenue(Revenue revenue) {
-        AbstractC0613u1.f1250a.a(revenue);
+        AbstractC0677w1.f1255a.a(revenue);
     }
 
     public static void reportUnhandledException(Throwable th) {
-        AbstractC0613u1.f1250a.a(th);
+        AbstractC0677w1.f1255a.a(th);
     }
 
     public static void reportUserProfile(UserProfile userProfile) {
-        AbstractC0613u1.f1250a.a(userProfile);
+        AbstractC0677w1.f1255a.a(userProfile);
     }
 
     public static void requestDeferredDeeplink(DeferredDeeplinkListener deferredDeeplinkListener) {
-        AbstractC0613u1.f1250a.a(deferredDeeplinkListener);
+        AbstractC0677w1.f1255a.a(deferredDeeplinkListener);
     }
 
     public static void requestDeferredDeeplinkParameters(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
-        AbstractC0613u1.f1250a.a(deferredDeeplinkParametersListener);
+        AbstractC0677w1.f1255a.a(deferredDeeplinkParametersListener);
     }
 
     public static void requestStartupParams(Context context, StartupParamsCallback startupParamsCallback, List<String> list) {
-        C0588t1 c0588t1 = AbstractC0613u1.f1250a;
+        C0651v1 c0651v1 = AbstractC0677w1.f1255a;
         if (list.isEmpty()) {
             list = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH);
         }
-        c0588t1.a(context, startupParamsCallback, list);
+        c0651v1.a(context, startupParamsCallback, list);
     }
 
     public static void resumeSession(Activity activity) {
-        AbstractC0613u1.f1250a.c(activity);
+        AbstractC0677w1.f1255a.c(activity);
     }
 
     public static void sendEventsBuffer() {
-        AbstractC0613u1.f1250a.f();
+        AbstractC0677w1.f1255a.e();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        AbstractC0613u1.f1250a.a(z);
+        AbstractC0677w1.f1255a.a(z);
     }
 
     public static void setDataSendingEnabled(boolean z) {
-        AbstractC0613u1.f1250a.b(z);
+        AbstractC0677w1.f1255a.b(z);
     }
 
     public static void setLocation(Location location) {
-        AbstractC0613u1.f1250a.a(location);
+        AbstractC0677w1.f1255a.a(location);
     }
 
     public static void setLocationTracking(boolean z) {
-        AbstractC0613u1.f1250a.c(z);
+        AbstractC0677w1.f1255a.c(z);
     }
 
     public static void setUserProfileID(String str) {
-        AbstractC0613u1.f1250a.d(str);
+        AbstractC0677w1.f1255a.d(str);
     }
 
     public static void reportAppOpen(Intent intent) {
-        AbstractC0613u1.f1250a.a(intent);
+        AbstractC0677w1.f1255a.a(intent);
     }
 
     public static void reportError(String str, String str2, Throwable th) {
-        AbstractC0613u1.f1250a.a(str, str2, th);
+        AbstractC0677w1.f1255a.a(str, str2, th);
     }
 
     public static void reportEvent(String str, String str2) {
-        AbstractC0613u1.f1250a.c(str, str2);
+        AbstractC0677w1.f1255a.c(str, str2);
     }
 
     public static void reportAppOpen(String str) {
-        AbstractC0613u1.f1250a.a(str);
+        AbstractC0677w1.f1255a.a(str);
     }
 
     public static void reportError(String str, Throwable th) {
-        AbstractC0613u1.f1250a.a(str, th);
+        AbstractC0677w1.f1255a.a(str, th);
     }
 
     public static void reportEvent(String str, Map<String, Object> map) {
-        AbstractC0613u1.f1250a.a(str, map);
+        AbstractC0677w1.f1255a.a(str, map);
     }
 }

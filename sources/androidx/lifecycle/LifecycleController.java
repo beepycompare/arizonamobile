@@ -33,7 +33,7 @@ public final class LifecycleController {
             lifecycle.addObserver(lifecycleEventObserver);
             return;
         }
-        Job.DefaultImpls.cancel$default(parentJob, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(parentJob, (CancellationException) null, 1, (Object) null);
         finish();
     }
 
@@ -50,12 +50,12 @@ public final class LifecycleController {
                 return;
             }
         }
-        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         lifecycleController.finish();
     }
 
     private final void handleDestroy(Job job) {
-        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         finish();
     }
 

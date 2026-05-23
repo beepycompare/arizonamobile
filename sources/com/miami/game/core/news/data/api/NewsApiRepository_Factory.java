@@ -3,7 +3,7 @@ package com.miami.game.core.news.data.api;
 import com.miami.game.core.api.network.NetworkDataSource;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NewsApiRepository_Factory implements Factory<NewsApiRepository> {
     private final Provider<NetworkDataSource> networkDataSourceProvider;
 

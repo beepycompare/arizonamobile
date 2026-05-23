@@ -1,18 +1,13 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class W2 extends Ci {
-    public W2(Context context, String str) {
-        super(context, str, "bool");
+public abstract class W2 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0678w2 f817a;
+
+    public W2(InterfaceC0678w2 interfaceC0678w2) {
+        this.f817a = interfaceC0678w2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ci
-    public final Object a(int i) {
-        return Boolean.valueOf(this.f541a.getResources().getBoolean(i));
-    }
-
-    public final Boolean b(int i) {
-        return Boolean.valueOf(this.f541a.getResources().getBoolean(i));
-    }
+    public abstract Io a(Go go, Io io2, InterfaceC0652v2 interfaceC0652v2);
 }

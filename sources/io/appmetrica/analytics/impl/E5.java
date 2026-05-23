@@ -1,41 +1,59 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.IReporter;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes5.dex */
-public final class E5 {
+public abstract class E5 implements Ej {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0462o f566a;
-    public final IReporter b;
-    public Context c;
-    public final D5 d;
+    public BaseRequestConfig f520a;
+    public final BaseRequestConfig.RequestConfigLoader b;
+    public C0139b6 c;
 
-    public E5(C0462o c0462o) {
-        this(c0462o, 0);
+    public E5(BaseRequestConfig.RequestConfigLoader<Object, C0139b6> requestConfigLoader, Hm hm, ArgumentsMerger<Object, Object> argumentsMerger) {
+        this.b = requestConfigLoader;
+        Na.k().v().a(this);
+        a(new C0139b6(hm, Na.k().v(), Na.k().s(), argumentsMerger));
     }
 
-    public final synchronized void a(Context context) {
-        if (this.c == null) {
-            Context applicationContext = context.getApplicationContext();
-            this.f566a.a(applicationContext);
-            this.f566a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
-            this.c = applicationContext;
+    public final synchronized void a(C0139b6 c0139b6) {
+        this.c = c0139b6;
+    }
+
+    public final synchronized ArgumentsMerger<Object, Object> b() {
+        return (ArgumentsMerger) this.c.componentArguments;
+    }
+
+    public final synchronized Hm c() {
+        return this.c.f901a;
+    }
+
+    public final void d() {
+        synchronized (this) {
+            this.f520a = null;
         }
     }
 
-    public E5(C0462o c0462o, IReporter iReporter) {
-        this.f566a = c0462o;
-        this.b = iReporter;
-        this.d = new D5(this);
+    public final synchronized void e() {
+        this.f520a = null;
     }
 
-    public /* synthetic */ E5(C0462o c0462o, int i) {
-        this(c0462o, AbstractC0688x1.a());
+    public synchronized void a(Object obj) {
+        if (!((ArgumentsMerger) this.c.componentArguments).compareWithOtherArguments(obj)) {
+            a(new C0139b6(c(), Na.I.v(), Na.I.s(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
+            e();
+        }
     }
 
-    public final synchronized Context a() {
-        return this.c;
+    public final synchronized void a(Hm hm) {
+        a(new C0139b6(hm, Na.I.v(), Na.I.s(), b()));
+        e();
+    }
+
+    public final synchronized BaseRequestConfig a() {
+        if (this.f520a == null) {
+            this.f520a = this.b.load(this.c);
+        }
+        return this.f520a;
     }
 }

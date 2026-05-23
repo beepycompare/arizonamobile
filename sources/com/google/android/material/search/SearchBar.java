@@ -31,6 +31,7 @@ import androidx.customview.view.AbsSavedState;
 import com.google.android.material.R;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ToolbarUtils;
 import com.google.android.material.resources.MaterialResources;
@@ -40,15 +41,20 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 /* loaded from: classes4.dex */
 public class SearchBar extends Toolbar {
+    private static final float ADAPTIVE_MAX_WIDTH_PERCENT_AFTER_BREAKPOINT = 0.5f;
     private static final int DEFAULT_SCROLL_FLAGS = 53;
     private static final int DEF_STYLE_RES = R.style.Widget_Material3_SearchBar;
     private static final String NAMESPACE_APP = "http://schemas.android.com/apk/res-auto";
+    static final int NO_RES_ID = -1;
+    private final boolean adaptiveMaxWidthEnabled;
+    private final int adaptiveMaxWidthParentBreakpoint;
     private final int backgroundColor;
     private MaterialShapeDrawable backgroundShape;
     private View centerView;
     private final boolean defaultMarginsEnabled;
     private final Drawable defaultNavigationIcon;
     private boolean defaultScrollFlagsEnabled;
+    private int endSiblingViewId;
     private final boolean forceDefaultNavigationOnClickListener;
     private final boolean layoutInflated;
     private final AppBarLayout.LiftOnScrollProgressListener liftColorListener;
@@ -62,6 +68,7 @@ public class SearchBar extends Toolbar {
     private Drawable originalNavigationIconBackground;
     private final TextView placeholderTextView;
     private final SearchBarAnimationHelper searchBarAnimationHelper;
+    private int startSiblingViewId;
     private boolean textCentered;
     private final TextView textView;
     private final FrameLayout textViewContainer;
@@ -114,6 +121,7 @@ public class SearchBar extends Toolbar {
         };
         Context context2 = getContext();
         validateAttributes(attributeSet);
+        this.adaptiveMaxWidthParentBreakpoint = getResources().getDimensionPixelSize(R.dimen.m3_searchbar_parent_width_breakpoint);
         this.defaultNavigationIcon = AppCompatResources.getDrawable(context2, getDefaultNavigationIconResource());
         this.searchBarAnimationHelper = new SearchBarAnimationHelper();
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.SearchBar, i, i2, new int[0]);
@@ -138,6 +146,9 @@ public class SearchBar extends Toolbar {
         this.textCentered = obtainStyledAttributes.getBoolean(R.styleable.SearchBar_textCentered, false);
         this.liftOnScroll = obtainStyledAttributes.getBoolean(R.styleable.SearchBar_liftOnScroll, false);
         this.maxWidth = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SearchBar_android_maxWidth, -1);
+        this.adaptiveMaxWidthEnabled = obtainStyledAttributes.getBoolean(R.styleable.SearchBar_adaptiveMaxWidthEnabled, false);
+        this.startSiblingViewId = obtainStyledAttributes.getResourceId(R.styleable.SearchBar_startSiblingViewId, -1);
+        this.endSiblingViewId = obtainStyledAttributes.getResourceId(R.styleable.SearchBar_endSiblingViewId, -1);
         obtainStyledAttributes.recycle();
         if (!z) {
             initNavigationIcon();
@@ -171,7 +182,8 @@ public class SearchBar extends Toolbar {
         }
     }
 
-    private AppBarLayout getAppBarLayoutParentIfExists() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public AppBarLayout getAppBarLayoutParentIfExists() {
         for (ViewParent parent = getParent(); parent != null; parent = parent.getParent()) {
             if (parent instanceof AppBarLayout) {
                 return (AppBarLayout) parent;
@@ -207,7 +219,9 @@ public class SearchBar extends Toolbar {
         this.backgroundShape.setFillColor(ColorStateList.valueOf(i));
         ColorStateList valueOf = ColorStateList.valueOf(color);
         MaterialShapeDrawable materialShapeDrawable2 = this.backgroundShape;
-        setBackground(new RippleDrawable(valueOf, materialShapeDrawable2, materialShapeDrawable2));
+        RippleDrawable rippleDrawable = new RippleDrawable(valueOf, materialShapeDrawable2, materialShapeDrawable2);
+        FocusRingDrawable.layer(getContext(), rippleDrawable, this.backgroundShape);
+        setBackground(rippleDrawable);
     }
 
     @Override // android.view.ViewGroup
@@ -305,9 +319,14 @@ public class SearchBar extends Toolbar {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.widget.Toolbar, android.view.View
     public void onMeasure(int i, int i2) {
-        int i3 = this.maxWidth;
-        if (i3 >= 0 && i3 < View.MeasureSpec.getSize(i)) {
-            i = View.MeasureSpec.makeMeasureSpec(this.maxWidth, View.MeasureSpec.getMode(i));
+        int i3;
+        int size = View.MeasureSpec.getSize(i);
+        int mode = View.MeasureSpec.getMode(i);
+        int i4 = this.maxWidth;
+        if (i4 >= 0 && size > i4) {
+            i = View.MeasureSpec.makeMeasureSpec(i4, mode);
+        } else if (this.adaptiveMaxWidthEnabled && size > (i3 = this.adaptiveMaxWidthParentBreakpoint)) {
+            i = View.MeasureSpec.makeMeasureSpec(Math.max(i3, Math.round(size * 0.5f)), mode);
         }
         super.onMeasure(i, i2);
         measureCenterView(i, i2);
@@ -569,6 +588,22 @@ public class SearchBar extends Toolbar {
         return this.textView.getHint();
     }
 
+    public int getStartSiblingViewId() {
+        return this.startSiblingViewId;
+    }
+
+    public void setStartSiblingViewId(int i) {
+        this.startSiblingViewId = i;
+    }
+
+    public int getEndSiblingViewId() {
+        return this.endSiblingViewId;
+    }
+
+    public void setEndSiblingViewId(int i) {
+        this.endSiblingViewId = i;
+    }
+
     public void setHint(CharSequence charSequence) {
         this.textView.setHint(charSequence);
     }
@@ -612,7 +647,7 @@ public class SearchBar extends Toolbar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startOnLoadAnimation$0$com-google-android-material-search-SearchBar  reason: not valid java name */
-    public /* synthetic */ void m8912x9ebe9dc4() {
+    public /* synthetic */ void m9533x9ebe9dc4() {
         this.searchBarAnimationHelper.startOnLoadAnimation(this);
     }
 
@@ -620,7 +655,7 @@ public class SearchBar extends Toolbar {
         post(new Runnable() { // from class: com.google.android.material.search.SearchBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBar.this.m8912x9ebe9dc4();
+                SearchBar.this.m9533x9ebe9dc4();
             }
         });
     }
@@ -746,7 +781,9 @@ public class SearchBar extends Toolbar {
             boolean onDependentViewChanged = super.onDependentViewChanged(coordinatorLayout, view, view2);
             if (!this.initialized && (view2 instanceof AppBarLayout)) {
                 this.initialized = true;
-                setAppBarLayoutTransparent((AppBarLayout) view2);
+                AppBarLayout appBarLayout = (AppBarLayout) view2;
+                appBarLayout.setTouchscreenBlocksFocus(false);
+                setAppBarLayoutTransparent(appBarLayout);
             }
             return onDependentViewChanged;
         }

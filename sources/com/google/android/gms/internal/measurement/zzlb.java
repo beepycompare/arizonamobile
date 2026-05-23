@@ -1,14 +1,33 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes4.dex */
-abstract class zzlb implements zzld {
-    @Override // java.util.Iterator
-    public final /* synthetic */ Object next() {
-        return Byte.valueOf(zza());
-    }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+import com.google.android.gms.tasks.CancellationTokenSource;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+public final class zzlb {
+    public static ListenableFuture zza(Task task, CancellationTokenSource cancellationTokenSource) {
+        final zzkz zzkzVar = new zzkz(task, null);
+        task.addOnCompleteListener(MoreExecutors.directExecutor(), new OnCompleteListener() { // from class: com.google.android.gms.internal.measurement.zzla
+            @Override // com.google.android.gms.tasks.OnCompleteListener
+            public final /* synthetic */ void onComplete(Task task2) {
+                zzkz zzkzVar2 = zzkz.this;
+                if (task2.isCanceled()) {
+                    zzkzVar2.cancel(false);
+                } else if (task2.isSuccessful()) {
+                    zzkzVar2.set(task2.getResult());
+                } else {
+                    Exception exception = task2.getException();
+                    if (exception != null) {
+                        zzkzVar2.setException(exception);
+                        return;
+                    }
+                    throw new IllegalStateException();
+                }
+            }
+        });
+        return zzkzVar;
     }
 }

@@ -37,42 +37,42 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
     }
 
     /* renamed from: getSelectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2018getSelectedIconColor0d7_KjU() {
+    public final long m2463getSelectedIconColor0d7_KjU() {
         return this.selectedIconColor;
     }
 
     /* renamed from: getUnselectedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2022getUnselectedIconColor0d7_KjU() {
+    public final long m2467getUnselectedIconColor0d7_KjU() {
         return this.unselectedIconColor;
     }
 
     /* renamed from: getSelectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2019getSelectedTextColor0d7_KjU() {
+    public final long m2464getSelectedTextColor0d7_KjU() {
         return this.selectedTextColor;
     }
 
     /* renamed from: getUnselectedTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2023getUnselectedTextColor0d7_KjU() {
+    public final long m2468getUnselectedTextColor0d7_KjU() {
         return this.unselectedTextColor;
     }
 
     /* renamed from: getSelectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2017getSelectedContainerColor0d7_KjU() {
+    public final long m2462getSelectedContainerColor0d7_KjU() {
         return this.selectedContainerColor;
     }
 
     /* renamed from: getUnselectedContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2021getUnselectedContainerColor0d7_KjU() {
+    public final long m2466getUnselectedContainerColor0d7_KjU() {
         return this.unselectedContainerColor;
     }
 
     /* renamed from: getSelectedBadgeColor-0d7_KjU  reason: not valid java name */
-    public final long m2016getSelectedBadgeColor0d7_KjU() {
+    public final long m2461getSelectedBadgeColor0d7_KjU() {
         return this.selectedBadgeColor;
     }
 
     /* renamed from: getUnselectedBadgeColor-0d7_KjU  reason: not valid java name */
-    public final long m2020getUnselectedBadgeColor0d7_KjU() {
+    public final long m2465getUnselectedBadgeColor0d7_KjU() {
         return this.unselectedBadgeColor;
     }
 
@@ -83,7 +83,7 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1141354218, i, -1, "androidx.compose.material3.DefaultDrawerItemsColor.iconColor (NavigationDrawer.kt:1232)");
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(z ? this.selectedIconColor : this.unselectedIconColor), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(z ? this.selectedIconColor : this.unselectedIconColor), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -98,7 +98,7 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1275109558, i, -1, "androidx.compose.material3.DefaultDrawerItemsColor.textColor (NavigationDrawer.kt:1237)");
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(z ? this.selectedTextColor : this.unselectedTextColor), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(z ? this.selectedTextColor : this.unselectedTextColor), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -113,7 +113,7 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-433512770, i, -1, "androidx.compose.material3.DefaultDrawerItemsColor.containerColor (NavigationDrawer.kt:1242)");
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(z ? this.selectedContainerColor : this.unselectedContainerColor), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(z ? this.selectedContainerColor : this.unselectedContainerColor), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -128,7 +128,7 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-561675044, i, -1, "androidx.compose.material3.DefaultDrawerItemsColor.badgeColor (NavigationDrawer.kt:1249)");
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(z ? this.selectedBadgeColor : this.unselectedBadgeColor), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(z ? this.selectedBadgeColor : this.unselectedBadgeColor), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -142,8 +142,8 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
         }
         if (obj instanceof DefaultDrawerItemsColor) {
             DefaultDrawerItemsColor defaultDrawerItemsColor = (DefaultDrawerItemsColor) obj;
-            if (Color.m4773equalsimpl0(this.selectedIconColor, defaultDrawerItemsColor.selectedIconColor) && Color.m4773equalsimpl0(this.unselectedIconColor, defaultDrawerItemsColor.unselectedIconColor) && Color.m4773equalsimpl0(this.selectedTextColor, defaultDrawerItemsColor.selectedTextColor) && Color.m4773equalsimpl0(this.unselectedTextColor, defaultDrawerItemsColor.unselectedTextColor) && Color.m4773equalsimpl0(this.selectedContainerColor, defaultDrawerItemsColor.selectedContainerColor) && Color.m4773equalsimpl0(this.unselectedContainerColor, defaultDrawerItemsColor.unselectedContainerColor) && Color.m4773equalsimpl0(this.selectedBadgeColor, defaultDrawerItemsColor.selectedBadgeColor)) {
-                return Color.m4773equalsimpl0(this.unselectedBadgeColor, defaultDrawerItemsColor.unselectedBadgeColor);
+            if (Color.m5349equalsimpl0(this.selectedIconColor, defaultDrawerItemsColor.selectedIconColor) && Color.m5349equalsimpl0(this.unselectedIconColor, defaultDrawerItemsColor.unselectedIconColor) && Color.m5349equalsimpl0(this.selectedTextColor, defaultDrawerItemsColor.selectedTextColor) && Color.m5349equalsimpl0(this.unselectedTextColor, defaultDrawerItemsColor.unselectedTextColor) && Color.m5349equalsimpl0(this.selectedContainerColor, defaultDrawerItemsColor.selectedContainerColor) && Color.m5349equalsimpl0(this.unselectedContainerColor, defaultDrawerItemsColor.unselectedContainerColor) && Color.m5349equalsimpl0(this.selectedBadgeColor, defaultDrawerItemsColor.selectedBadgeColor)) {
+                return Color.m5349equalsimpl0(this.unselectedBadgeColor, defaultDrawerItemsColor.unselectedBadgeColor);
             }
             return false;
         }
@@ -151,6 +151,6 @@ public final class DefaultDrawerItemsColor implements NavigationDrawerItemColors
     }
 
     public int hashCode() {
-        return (((((((((((((Color.m4779hashCodeimpl(this.selectedIconColor) * 31) + Color.m4779hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m4779hashCodeimpl(this.selectedTextColor)) * 31) + Color.m4779hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m4779hashCodeimpl(this.selectedContainerColor)) * 31) + Color.m4779hashCodeimpl(this.unselectedContainerColor)) * 31) + Color.m4779hashCodeimpl(this.selectedBadgeColor)) * 31) + Color.m4779hashCodeimpl(this.unselectedBadgeColor);
+        return (((((((((((((Color.m5355hashCodeimpl(this.selectedIconColor) * 31) + Color.m5355hashCodeimpl(this.unselectedIconColor)) * 31) + Color.m5355hashCodeimpl(this.selectedTextColor)) * 31) + Color.m5355hashCodeimpl(this.unselectedTextColor)) * 31) + Color.m5355hashCodeimpl(this.selectedContainerColor)) * 31) + Color.m5355hashCodeimpl(this.unselectedContainerColor)) * 31) + Color.m5355hashCodeimpl(this.selectedBadgeColor)) * 31) + Color.m5355hashCodeimpl(this.unselectedBadgeColor);
     }
 }

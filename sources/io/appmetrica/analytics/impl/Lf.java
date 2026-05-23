@@ -1,19 +1,122 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import android.util.Base64;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class Lf implements to, InterfaceC0720y8 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0720y8
-    public final int a(I8 i8) {
-        return 2;
+public final class Lf extends MessageNano {
+    public static volatile Lf[] f;
+
+    /* renamed from: a  reason: collision with root package name */
+    public String f646a;
+    public String b;
+    public boolean c;
+    public boolean d;
+    public int e;
+
+    public Lf() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0380kh c0380kh) {
-        if (TextUtils.isEmpty(n8.b)) {
-            return new byte[0];
+    public static Lf[] b() {
+        if (f == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (f == null) {
+                    f = new Lf[0];
+                }
+            }
         }
-        return Base64.decode(n8.b, 0);
+        return f;
+    }
+
+    public final Lf a() {
+        this.f646a = "";
+        this.b = "";
+        this.c = false;
+        this.d = false;
+        this.e = 0;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f646a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f646a);
+        }
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
+        }
+        boolean z = this.c;
+        if (z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(3, z);
+        }
+        boolean z2 = this.d;
+        if (z2) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(4, z2);
+        }
+        return CodedOutputByteBufferNano.computeInt32Size(5, this.e) + computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f646a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f646a);
+        }
+        if (!this.b.equals("")) {
+            codedOutputByteBufferNano.writeString(2, this.b);
+        }
+        boolean z = this.c;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(3, z);
+        }
+        boolean z2 = this.d;
+        if (z2) {
+            codedOutputByteBufferNano.writeBool(4, z2);
+        }
+        codedOutputByteBufferNano.writeInt32(5, this.e);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Lf mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f646a = codedInputByteBufferNano.readString();
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readBool();
+            } else if (readTag == 32) {
+                this.d = codedInputByteBufferNano.readBool();
+            } else if (readTag != 40) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                int readInt32 = codedInputByteBufferNano.readInt32();
+                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
+                    this.e = readInt32;
+                }
+            }
+        }
+        return this;
+    }
+
+    public static Lf b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Lf().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Lf a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Lf) MessageNano.mergeFrom(new Lf(), bArr);
     }
 }

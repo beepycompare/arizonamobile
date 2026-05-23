@@ -87,7 +87,7 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-519581786, i2, -1, "androidx.compose.material3.BottomSheetScaffold.<anonymous>.<anonymous>.<anonymous> (BottomSheetScaffold.kt:142)");
                 }
-                function3.invoke(PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, f, 7, null), composer2, 0);
+                function3.invoke(PaddingKt.m1047PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, f, 7, null), composer2, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -117,7 +117,7 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-815624571, i2, -1, "androidx.compose.material3.BottomSheetScaffold.<anonymous>.<anonymous>.<anonymous> (BottomSheetScaffold.kt:147)");
                     }
-                    BottomSheetScaffoldKt.m1753StandardBottomSheetw7I5h1o(BottomSheetScaffoldState.this.getBottomSheetState(), f2, f3, z, shape, j, j2, f4, f5, function22, function32, composer2, 0, 0);
+                    BottomSheetScaffoldKt.m2198StandardBottomSheetw7I5h1o(BottomSheetScaffoldState.this.getBottomSheetState(), f2, f3, z, shape, j, j2, f4, f5, function22, function32, composer2, 0, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                         return;

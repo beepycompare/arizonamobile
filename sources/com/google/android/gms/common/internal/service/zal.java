@@ -1,20 +1,22 @@
 package com.google.android.gms.common.internal.service;
 
-import android.os.IBinder;
-import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zal extends com.google.android.gms.internal.base.zaa implements IInterface {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zal(IBinder iBinder) {
-        super(iBinder, "com.google.android.gms.common.internal.service.ICommonService");
+public abstract class zal extends com.google.android.gms.internal.base.zab implements zam {
+    public zal() {
+        super("com.google.android.gms.common.internal.service.ICommonCallbacks");
     }
 
-    public final void zae(zak zakVar) throws RemoteException {
-        Parcel zaa = zaa();
-        com.google.android.gms.internal.base.zac.zad(zaa, zakVar);
-        zad(1, zaa);
+    @Override // com.google.android.gms.internal.base.zab
+    protected final boolean zaa(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
+        if (i == 1) {
+            int readInt = parcel.readInt();
+            com.google.android.gms.internal.base.zac.zad(parcel);
+            zab(readInt);
+            return true;
+        }
+        return false;
     }
 }

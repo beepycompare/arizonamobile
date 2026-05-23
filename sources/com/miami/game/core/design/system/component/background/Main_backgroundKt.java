@@ -28,7 +28,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: main_background.kt */
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a9\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"BackgroundImage", "", "default", "", "isBlur", "", "imageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", "file", "Ljava/io/File;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "(IZLandroidx/compose/ui/graphics/ImageBitmap;Ljava/io/File;ILandroidx/compose/runtime/Composer;I)V", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Main_backgroundKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BackgroundImage$lambda$0(int i, boolean z, ImageBitmap imageBitmap, File file, int i2, int i3, Composer composer, int i4) {
@@ -74,7 +74,7 @@ public final class Main_backgroundKt {
             if (file != null) {
                 startRestartGroup.startReplaceGroup(1722561634);
                 ComposerKt.sourceInformation(startRestartGroup, "28@1015L418");
-                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                SingletonAsyncImageKt.m9167AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
                 context = context2;
                 str = "_";
@@ -91,7 +91,7 @@ public final class Main_backgroundKt {
                 context = context2;
                 str = "_";
                 i5 = 1;
-                ImageKt.m321Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
+                ImageKt.m345Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
                 startRestartGroup.endReplaceGroup();
             }
             if (z && file != null) {
@@ -100,7 +100,7 @@ public final class Main_backgroundKt {
                 ImageRequest.Builder diskCacheKey = new ImageRequest.Builder(context).data(file).memoryCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2).diskCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2);
                 Transformation[] transformationArr = new Transformation[i5];
                 transformationArr[0] = new CoilBlurTransformation(0, 0, 3, null);
-                SingletonAsyncImageKt.m8558AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                SingletonAsyncImageKt.m9167AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(1723727668);

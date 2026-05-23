@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.sync.Semaphore;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Merge.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
     final /* synthetic */ SendingCollector<T> $collector;
@@ -42,7 +42,7 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -63,8 +63,7 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
                         JobKt.ensureActive(job);
                     }
                     Semaphore semaphore = this.$semaphore;
-                    channelFlowMerge$collectTo$2$emit$1.L$0 = this;
-                    channelFlowMerge$collectTo$2$emit$1.L$1 = flow;
+                    channelFlowMerge$collectTo$2$emit$1.L$0 = flow;
                     channelFlowMerge$collectTo$2$emit$1.label = 1;
                     if (semaphore.acquire(channelFlowMerge$collectTo$2$emit$1) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -72,8 +71,7 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    flow = (Flow) channelFlowMerge$collectTo$2$emit$1.L$1;
-                    this = (ChannelFlowMerge$collectTo$2) channelFlowMerge$collectTo$2$emit$1.L$0;
+                    flow = (Flow) channelFlowMerge$collectTo$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 BuildersKt__Builders_commonKt.launch$default(this.$scope, null, null, new AnonymousClass1(flow, this.$collector, this.$semaphore, null), 3, null);
@@ -92,8 +90,8 @@ public final class ChannelFlowMerge$collectTo$2<T> implements FlowCollector {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Merge.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2$1", f = "Merge.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+    @DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2$1", f = "Merge.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

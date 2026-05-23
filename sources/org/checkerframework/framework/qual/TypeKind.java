@@ -1,5 +1,5 @@
 package org.checkerframework.framework.qual;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public enum TypeKind {
     BOOLEAN,
     BYTE,

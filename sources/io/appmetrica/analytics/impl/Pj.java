@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Pj implements Qa {
+public final class Pj implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f746a;
-    public final /* synthetic */ Map b;
+    public final /* synthetic */ String f718a;
+    public final /* synthetic */ Throwable b;
 
-    public Pj(String str, Map map) {
-        this.f746a = str;
-        this.b = map;
+    public Pj(String str, Throwable th) {
+        this.f718a = str;
+        this.b = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.reportEvent(this.f746a, this.b);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
+    public final void a(InterfaceC0506pb interfaceC0506pb) {
+        interfaceC0506pb.reportError(this.f718a, this.b);
     }
 }

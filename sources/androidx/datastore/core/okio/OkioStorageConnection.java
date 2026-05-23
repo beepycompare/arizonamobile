@@ -69,6 +69,7 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
     public <R> Object readScope(Function3<? super ReadScope<T>, ? super Boolean, ? super Continuation<? super R>, ? extends Object> function3, Continuation<? super R> continuation) {
         OkioStorageConnection$readScope$1 okioStorageConnection$readScope$1;
         int i;
+        boolean tryLock$default;
         Throwable th;
         Closeable closeable;
         boolean z;
@@ -83,7 +84,7 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         checkNotClosed();
-                        boolean tryLock$default = Mutex.DefaultImpls.tryLock$default(this.transactionMutex, null, 1, null);
+                        tryLock$default = Mutex.tryLock$default(this.transactionMutex, null, 1, null);
                         try {
                             OkioReadScope okioReadScope = new OkioReadScope(this.fileSystem, this.path, this.serializer);
                             try {
@@ -108,7 +109,7 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                             th = th3;
                             function3 = tryLock$default;
                             if (function3 != null) {
-                                Mutex.DefaultImpls.unlock$default(this.transactionMutex, null, 1, null);
+                                Mutex.unlock$default(this.transactionMutex, null, 1, null);
                             }
                             throw th;
                         }
@@ -129,7 +130,7 @@ public final class OkioStorageConnection<T> implements StorageConnection<T> {
                     th = null;
                     if (th != null) {
                         if (z) {
-                            Mutex.DefaultImpls.unlock$default(this.transactionMutex, null, 1, null);
+                            Mutex.unlock$default(this.transactionMutex, null, 1, null);
                         }
                         return obj;
                     }

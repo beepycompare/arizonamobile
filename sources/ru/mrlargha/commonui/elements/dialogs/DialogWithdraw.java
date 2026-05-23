@@ -338,7 +338,7 @@ public final class DialogWithdraw extends AbstractDialog {
             booleanRef.element = false;
             Job job = dialogWithdraw.plusJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(dialogWithdraw.scope, null, null, new DialogWithdraw$onClickPlus$1$1(booleanRef, dialogWithdraw, editText, z, customCardView, null), 3, null);
             dialogWithdraw.plusJob = launch$default;
@@ -349,13 +349,13 @@ public final class DialogWithdraw extends AbstractDialog {
             }
             Job job2 = dialogWithdraw.plusJob;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
             }
             return true;
         } else {
             Job job3 = dialogWithdraw.plusJob;
             if (job3 != null) {
-                Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job3, (CancellationException) null, 1, (Object) null);
             }
             if (!booleanRef.element) {
                 dialogWithdraw.plusOne(editText, 1, z);
@@ -393,7 +393,7 @@ public final class DialogWithdraw extends AbstractDialog {
             booleanRef.element = false;
             Job job = dialogWithdraw.minusJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(dialogWithdraw.scope, null, null, new DialogWithdraw$onClickMinus$1$1(booleanRef, dialogWithdraw, editText, z, customCardView, null), 3, null);
             dialogWithdraw.minusJob = launch$default;
@@ -404,13 +404,13 @@ public final class DialogWithdraw extends AbstractDialog {
             }
             Job job2 = dialogWithdraw.minusJob;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
             }
             return true;
         } else {
             Job job3 = dialogWithdraw.minusJob;
             if (job3 != null) {
-                Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job3, (CancellationException) null, 1, (Object) null);
             }
             if (!booleanRef.element) {
                 dialogWithdraw.minusOne(editText, 1, z);
@@ -447,11 +447,11 @@ public final class DialogWithdraw extends AbstractDialog {
                         editText.setText(format);
                         Job job = this.plusJob;
                         if (job != null) {
-                            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
                         }
                         Job job2 = this.minusJob;
                         if (job2 != null) {
-                            Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
                             return;
                         }
                         return;
@@ -473,11 +473,11 @@ public final class DialogWithdraw extends AbstractDialog {
                     editText.setText("0");
                     Job job3 = this.plusJob;
                     if (job3 != null) {
-                        Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+                        Job.cancel$default(job3, (CancellationException) null, 1, (Object) null);
                     }
                     Job job4 = this.minusJob;
                     if (job4 != null) {
-                        Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
+                        Job.cancel$default(job4, (CancellationException) null, 1, (Object) null);
                         return;
                     }
                     return;
@@ -527,11 +527,11 @@ public final class DialogWithdraw extends AbstractDialog {
             editText.setText(format2);
             Job job = this.plusJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             Job job2 = this.minusJob;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
                 return;
             }
             return;
@@ -549,11 +549,11 @@ public final class DialogWithdraw extends AbstractDialog {
         editText.setText("999");
         Job job3 = this.plusJob;
         if (job3 != null) {
-            Job.DefaultImpls.cancel$default(job3, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job3, (CancellationException) null, 1, (Object) null);
         }
         Job job4 = this.minusJob;
         if (job4 != null) {
-            Job.DefaultImpls.cancel$default(job4, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job4, (CancellationException) null, 1, (Object) null);
         }
     }
 
@@ -706,11 +706,11 @@ public final class DialogWithdraw extends AbstractDialog {
             linearLayout2.setVisibility(8);
             Job job = dialogWithdraw.plusJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             Job job2 = dialogWithdraw.minusJob;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
                 return;
             }
             return;
@@ -737,11 +737,11 @@ public final class DialogWithdraw extends AbstractDialog {
             dialogWithdraw.checkEtValidates();
             Job job = dialogWithdraw.plusJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             Job job2 = dialogWithdraw.minusJob;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
             }
             Object systemService = textView.getContext().getSystemService("input_method");
             Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");

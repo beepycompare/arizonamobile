@@ -9,29 +9,29 @@ import kotlin.Metadata;
 public final class SplitButtonMediumTokens {
     public static final int $stable = 0;
     public static final SplitButtonMediumTokens INSTANCE = new SplitButtonMediumTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
-    private static final float ContainerHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float BetweenSpace = Dp.m8160constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(56.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
     private static final CornerSize InnerHoveredCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
     private static final CornerSize InnerPressedCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueMedium();
-    private static final float LeadingButtonLeadingSpace = Dp.m7555constructorimpl(24.0f);
-    private static final float LeadingButtonTrailingSpace = Dp.m7555constructorimpl(24.0f);
-    private static final float TrailingIconSize = Dp.m7555constructorimpl(26.0f);
+    private static final float LeadingButtonLeadingSpace = Dp.m8160constructorimpl(24.0f);
+    private static final float LeadingButtonTrailingSpace = Dp.m8160constructorimpl(24.0f);
+    private static final float TrailingIconSize = Dp.m8160constructorimpl(26.0f);
     private static final float TrailingInnerSelectedCornerCornerSizePercent = 50.0f;
-    private static final float TrailingButtonLeadingSpace = Dp.m7555constructorimpl(15.0f);
-    private static final float TrailingButtonTrailingSpace = Dp.m7555constructorimpl(15.0f);
+    private static final float TrailingButtonLeadingSpace = Dp.m8160constructorimpl(15.0f);
+    private static final float TrailingButtonTrailingSpace = Dp.m8160constructorimpl(15.0f);
 
     private SplitButtonMediumTokens() {
     }
 
     /* renamed from: getBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3753getBetweenSpaceD9Ej5fM() {
+    public final float m4198getBetweenSpaceD9Ej5fM() {
         return BetweenSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3754getContainerHeightD9Ej5fM() {
+    public final float m4199getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -52,17 +52,17 @@ public final class SplitButtonMediumTokens {
     }
 
     /* renamed from: getLeadingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3755getLeadingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4200getLeadingButtonLeadingSpaceD9Ej5fM() {
         return LeadingButtonLeadingSpace;
     }
 
     /* renamed from: getLeadingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3756getLeadingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4201getLeadingButtonTrailingSpaceD9Ej5fM() {
         return LeadingButtonTrailingSpace;
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3759getTrailingIconSizeD9Ej5fM() {
+    public final float m4204getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 
@@ -71,12 +71,12 @@ public final class SplitButtonMediumTokens {
     }
 
     /* renamed from: getTrailingButtonLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3757getTrailingButtonLeadingSpaceD9Ej5fM() {
+    public final float m4202getTrailingButtonLeadingSpaceD9Ej5fM() {
         return TrailingButtonLeadingSpace;
     }
 
     /* renamed from: getTrailingButtonTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3758getTrailingButtonTrailingSpaceD9Ej5fM() {
+    public final float m4203getTrailingButtonTrailingSpaceD9Ej5fM() {
         return TrailingButtonTrailingSpace;
     }
 }

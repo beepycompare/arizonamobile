@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzmd implements Runnable {
     final /* synthetic */ AtomicReference zza;
@@ -33,11 +33,11 @@ public final class zzmd implements Runnable {
                 zznlVar = this.zzd;
                 zzZ = zznlVar.zzZ();
             } catch (RemoteException e) {
-                this.zzd.zzu.zzaV().zzb().zzb("Failed to get all user properties; remote exception", e);
+                this.zzd.zzu.zzaW().zzb().zzb("Failed to get all user properties; remote exception", e);
                 atomicReference = this.zza;
             }
             if (zzZ == null) {
-                zznlVar.zzu.zzaV().zzb().zza("Failed to get all user properties; not connected to service");
+                zznlVar.zzu.zzaW().zzb().zza("Failed to get all user properties; not connected to service");
                 atomicReference2.notify();
                 return;
             }

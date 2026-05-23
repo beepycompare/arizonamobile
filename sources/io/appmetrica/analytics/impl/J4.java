@@ -1,91 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
-import java.util.ArrayList;
-import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class J4 extends DatabaseScript {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f643a = "sessions";
-    public final int b = 200;
-    public final String c = "id";
-    public final String d = "start_time";
-    public final String e = "report_request_parameters";
-    public final String f = "server_time_offset";
-    public final String g = "type";
-    public final String h = "obtained_before_first_sync";
-    public final C0594t7 i = new C0594t7(null, 1, null);
-
-    public final C0569s7 a(Cursor cursor) {
-        try {
-            Long valueOf = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.c)));
-            int i = cursor.getInt(cursor.getColumnIndexOrThrow(this.g));
-            Vk vk = Vk.FOREGROUND;
-            boolean z = true;
-            if (i != 0) {
-                vk = Vk.BACKGROUND;
-                if (i != 1) {
-                    vk = null;
-                }
-            }
-            String string = cursor.getString(cursor.getColumnIndexOrThrow(this.e));
-            Long valueOf2 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.d)));
-            Long valueOf3 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.f)));
-            if (cursor.getInt(cursor.getColumnIndexOrThrow(this.h)) != 1) {
-                z = false;
-            }
-            return new C0569s7(valueOf, vk, string, new C0544r7(valueOf2, valueOf3, Boolean.valueOf(z)));
-        } catch (Throwable unused) {
-            return null;
-        }
+public final class J4 extends W2 {
+    public J4(InterfaceC0678w2 interfaceC0678w2) {
+        super(interfaceC0678w2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x005c, code lost:
-        if (r12 != null) goto L49;
-     */
-    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void runScript(SQLiteDatabase sQLiteDatabase) {
-        SQLiteDatabase sQLiteDatabase2;
-        Cursor cursor;
-        Long l;
-        String str;
-        Long l2;
-        ArrayList arrayList = new ArrayList();
-        try {
-            sQLiteDatabase2 = sQLiteDatabase;
-        } catch (Throwable unused) {
-            sQLiteDatabase2 = sQLiteDatabase;
+    @Override // io.appmetrica.analytics.impl.W2
+    public final Io a(Go go, Io io2, InterfaceC0652v2 interfaceC0652v2) {
+        if (io2 != null && !io2.c.b) {
+            io2.c = new Jo();
+            return io2;
         }
-        try {
-            cursor = sQLiteDatabase2.query(this.f643a, null, null, null, null, null, null, String.valueOf(this.b));
-            while (cursor.moveToNext()) {
-                try {
-                    C0569s7 a2 = a(cursor);
-                    if (a2 != null && (l = a2.f1223a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f1208a) != null && l2.longValue() > 0) {
-                        arrayList.add(this.i.fromModel(a2));
-                    }
-                } catch (Throwable unused2) {
-                }
-            }
-        } catch (Throwable unused3) {
-            cursor = null;
-        }
-        cursor.close();
-        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f643a);
-        sQLiteDatabase2.execSQL("CREATE TABLE IF NOT EXISTS sessions (id INTEGER,type INTEGER,report_request_parameters TEXT,session_description BLOB )");
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            try {
-                sQLiteDatabase2.insertOrThrow("sessions", null, (ContentValues) it.next());
-            } catch (Throwable unused4) {
-            }
-        }
+        return this.f817a.a(go, ((AbstractC0121ae) interfaceC0652v2).a());
     }
 }

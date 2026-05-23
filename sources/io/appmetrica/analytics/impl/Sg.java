@@ -1,30 +1,23 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 /* loaded from: classes5.dex */
-public final class Sg implements InterfaceC0189d6 {
+public final class Sg implements InterfaceC0270g8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f787a;
-    public final C0109a4 b;
-    public final IHandlerExecutor c = C0448na.k().w().d();
+    public final InterfaceC0474o5 f763a;
 
-    public Sg(Context context, C0109a4 c0109a4) {
-        this.f787a = context;
-        this.b = c0109a4;
+    public Sg(InterfaceC0474o5 interfaceC0474o5) {
+        this.f763a = interfaceC0474o5;
     }
 
-    public final void a(P5 p5, Bundle bundle) {
-        if (p5.m()) {
-            return;
-        }
-        this.c.execute(new RunnableC0405lh(this.f787a, p5, bundle, this.b));
+    @Override // io.appmetrica.analytics.impl.InterfaceC0270g8
+    /* renamed from: b */
+    public final Rg a(Context context, C0267g5 c0267g5, G4 g4) {
+        return new Rg(context, c0267g5, g4, this.f763a, new C0293h5(), C0361jm.a());
     }
 
-    public final void a(P3 p3, P5 p5, C0492p4 c0492p4) {
-        this.b.a(p3, c0492p4).a(p5, c0492p4);
-        this.b.a(p3.b, p3.c, p3.d);
+    public final InterfaceC0474o5 a() {
+        return this.f763a;
     }
 }

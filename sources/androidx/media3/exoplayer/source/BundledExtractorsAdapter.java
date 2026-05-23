@@ -143,4 +143,13 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
     public int read(PositionHolder positionHolder) throws IOException {
         return ((Extractor) Preconditions.checkNotNull(this.extractor)).read((ExtractorInput) Preconditions.checkNotNull(this.extractorInput), positionHolder);
     }
+
+    @Override // androidx.media3.exoplayer.source.ProgressiveMediaExtractor
+    public String getUnderlyingImplementationName() {
+        Extractor extractor = this.extractor;
+        if (extractor != null) {
+            return extractor.getUnderlyingImplementation().getClass().getSimpleName();
+        }
+        return null;
+    }
 }

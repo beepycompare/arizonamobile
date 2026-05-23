@@ -19,7 +19,7 @@ import org.checkerframework.framework.qual.UpperBoundFor;
 @Documented
 @UpperBoundFor(typeKinds = {TypeKind.BOOLEAN, TypeKind.BYTE, TypeKind.CHAR, TypeKind.DOUBLE, TypeKind.FLOAT, TypeKind.INT, TypeKind.LONG, TypeKind.SHORT}, types = {String.class})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface GuardedBy {
     @JavaExpression
     String[] value() default {};

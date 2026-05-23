@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ClientMetrics {
     private static final ClientMetrics DEFAULT_INSTANCE = new Builder().build();
     private final String app_namespace_;
@@ -69,7 +69,7 @@ public final class ClientMetrics {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private TimeWindow window_ = null;
         private List<LogSourceMetrics> log_source_metrics_ = new ArrayList();

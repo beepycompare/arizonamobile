@@ -2,7 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzax extends zzav {
     public zzax() {
@@ -51,26 +51,26 @@ public final class zzax extends zzav {
             return true;
         } else {
             boolean z = zzaoVar instanceof zzah;
-            if (!z || !(zzaoVar2 instanceof zzas)) {
-                boolean z2 = zzaoVar instanceof zzas;
-                if (!z2 || !(zzaoVar2 instanceof zzah)) {
-                    if (zzaoVar instanceof zzaf) {
-                        return zzd(new zzah(zzaoVar.zzd()), zzaoVar2);
-                    }
-                    if (zzaoVar2 instanceof zzaf) {
-                        return zzd(zzaoVar, new zzah(zzaoVar2.zzd()));
-                    }
-                    if ((z2 || z) && (zzaoVar2 instanceof zzak)) {
-                        return zzd(zzaoVar, new zzas(zzaoVar2.zzc()));
-                    }
-                    if ((zzaoVar instanceof zzak) && ((zzaoVar2 instanceof zzas) || (zzaoVar2 instanceof zzah))) {
-                        return zzd(new zzas(zzaoVar.zzc()), zzaoVar2);
-                    }
-                    return false;
-                }
+            if (z && (zzaoVar2 instanceof zzas)) {
+                return zzd(zzaoVar, new zzah(zzaoVar2.zzd()));
+            }
+            boolean z2 = zzaoVar instanceof zzas;
+            if (z2 && (zzaoVar2 instanceof zzah)) {
                 return zzd(new zzah(zzaoVar.zzd()), zzaoVar2);
             }
-            return zzd(zzaoVar, new zzah(zzaoVar2.zzd()));
+            if (zzaoVar instanceof zzaf) {
+                return zzd(new zzah(zzaoVar.zzd()), zzaoVar2);
+            }
+            if (zzaoVar2 instanceof zzaf) {
+                return zzd(zzaoVar, new zzah(zzaoVar2.zzd()));
+            }
+            if ((z2 || z) && (zzaoVar2 instanceof zzak)) {
+                return zzd(zzaoVar, new zzas(zzaoVar2.zzc()));
+            }
+            if ((zzaoVar instanceof zzak) && ((zzaoVar2 instanceof zzas) || (zzaoVar2 instanceof zzah))) {
+                return zzd(new zzas(zzaoVar.zzc()), zzaoVar2);
+            }
+            return false;
         }
     }
 

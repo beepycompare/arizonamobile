@@ -8,7 +8,7 @@ import com.arizona.launcher.UpdateActivity;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: LineHeightStyleSpan.android.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001BA\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\b\b\u0001\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ8\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0016J\u0010\u0010)\u001a\u00020!2\u0006\u0010'\u001a\u00020(H\u0002J'\u0010*\u001a\u00020\u00002\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\bH\u0000¢\u0006\u0002\b+R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\t\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u000e\u0010\n\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0015R\u001e\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0015¨\u0006,"}, d2 = {"Landroidx/compose/ui/text/android/style/LineHeightStyleSpan;", "Landroid/text/style/LineHeightSpan;", "lineHeight", "", "startIndex", "", "endIndex", "trimFirstLineTop", "", "trimLastLineBottom", "topRatio", UpdateActivity.UPDATE_MODE, "Landroidx/compose/ui/text/style/LineHeightStyle$Mode;", "<init>", "(FIIZZFILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLineHeight", "()F", "getTrimFirstLineTop", "()Z", "getTrimLastLineBottom", "getMode-lzQqcRY", "()I", "I", "firstAscent", "ascent", "descent", "lastDescent", "value", "firstAscentDiff", "getFirstAscentDiff", "lastDescentDiff", "getLastDescentDiff", "chooseHeight", "", "text", "", TtmlNode.START, TtmlNode.END, "spanStartVertical", "fontMetricsInt", "Landroid/graphics/Paint$FontMetricsInt;", "calculateTargetMetrics", "copy", "copy$ui_text", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u0001BA\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\b\b\u0001\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ8\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0016J\u0010\u0010)\u001a\u00020!2\u0006\u0010'\u001a\u00020(H\u0002J'\u0010*\u001a\u00020\u00002\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\bH\u0000¢\u0006\u0002\b+R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\t\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u000e\u0010\n\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\u0010\u0016\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0015R\u001e\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0015¨\u0006,"}, d2 = {"Landroidx/compose/ui/text/android/style/LineHeightStyleSpan;", "Landroid/text/style/LineHeightSpan;", "lineHeight", "", "startIndex", "", "endIndex", "trimFirstLineTop", "", "trimLastLineBottom", "topRatio", UpdateActivity.UPDATE_MODE, "Landroidx/compose/ui/text/style/LineHeightStyle$Mode;", "<init>", "(FIIZZFILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getLineHeight", "()F", "getTrimFirstLineTop", "()Z", "getTrimLastLineBottom", "getMode-lzQqcRY", "()I", "I", "firstAscent", "ascent", "descent", "lastDescent", "value", "firstAscentDiff", "getFirstAscentDiff", "lastDescentDiff", "getLastDescentDiff", "chooseHeight", "", "text", "", TtmlNode.START, TtmlNode.END, "spanStartVertical", "fontMetricsInt", "Landroid/graphics/Paint$FontMetricsInt;", "calculateTargetMetrics", "copy", "copy$ui_text", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LineHeightStyleSpan implements android.text.style.LineHeightSpan {
     public static final int $stable = 8;
@@ -61,7 +61,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
     }
 
     /* renamed from: getMode-lzQqcRY  reason: not valid java name */
-    public final int m7059getModelzQqcRY() {
+    public final int m7664getModelzQqcRY() {
         return this.mode;
     }
 
@@ -80,7 +80,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         }
         boolean z = i == this.startIndex;
         boolean z2 = i2 == this.endIndex;
-        if (z && z2 && this.trimFirstLineTop && this.trimLastLineBottom && !LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) {
+        if (z && z2 && this.trimFirstLineTop && this.trimLastLineBottom && !LineHeightStyle.Mode.m8011equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8017getTightlzQqcRY())) {
             return;
         }
         if (this.firstAscent == Integer.MIN_VALUE) {
@@ -97,7 +97,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         int lineHeight = LineHeightStyleSpan_androidKt.lineHeight(fontMetricsInt);
         int ceil2 = (int) Math.ceil(this.lineHeight);
         int i = ceil2 - lineHeight;
-        if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7411getMinimumlzQqcRY()) && i <= 0) {
+        if (LineHeightStyle.Mode.m8011equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8016getMinimumlzQqcRY()) && i <= 0) {
             this.ascent = fontMetricsInt.ascent;
             int i2 = fontMetricsInt.descent;
             this.descent = i2;
@@ -119,12 +119,12 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         int i3 = fontMetricsInt.descent + ((int) ceil);
         this.descent = i3;
         this.ascent = i3 - ceil2;
-        if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7410getFixedlzQqcRY()) || i >= 0) {
+        if (LineHeightStyle.Mode.m8011equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8015getFixedlzQqcRY()) || i >= 0) {
             this.firstAscent = this.trimFirstLineTop ? fontMetricsInt.ascent : this.ascent;
             this.lastDescent = this.trimLastLineBottom ? fontMetricsInt.descent : this.descent;
             this.firstAscentDiff = fontMetricsInt.ascent - this.firstAscent;
             this.lastDescentDiff = this.lastDescent - fontMetricsInt.descent;
-        } else if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) {
+        } else if (LineHeightStyle.Mode.m8011equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8017getTightlzQqcRY())) {
             if (this.trimFirstLineTop) {
                 min = Math.max(fontMetricsInt.ascent, this.ascent);
             } else {

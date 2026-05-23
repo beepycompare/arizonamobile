@@ -14,9 +14,9 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
 import java.util.Map;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk@@23.2.0 */
 /* loaded from: classes4.dex */
-public class AppMeasurementDynamiteService extends com.google.android.gms.internal.measurement.zzcq {
+public class AppMeasurementDynamiteService extends com.google.android.gms.internal.measurement.zzco {
     zzic zza = null;
     private final Map zzb = new ArrayMap();
 
@@ -27,107 +27,107 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
         }
     }
 
-    private final void zzc(com.google.android.gms.internal.measurement.zzcu zzcuVar, String str) {
+    private final void zzc(com.google.android.gms.internal.measurement.zzcs zzcsVar, String str) {
         zzb();
-        this.zza.zzk().zzal(zzcuVar, str);
+        this.zza.zzk().zzao(zzcsVar, str);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void beginAdUnitExposure(String str, long j) throws RemoteException {
         zzb();
         this.zza.zzw().zza(str, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void clearConditionalUserProperty(String str, String str2, Bundle bundle) throws RemoteException {
         zzb();
-        this.zza.zzj().zzab(str, str2, bundle);
+        this.zza.zzj().zzaa(str, str2, bundle);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void clearMeasurementEnabled(long j) throws RemoteException {
         zzb();
         this.zza.zzj().zzn(null);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void endAdUnitExposure(String str, long j) throws RemoteException {
         zzb();
         this.zza.zzw().zzb(str, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void generateEventId(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void generateEventId(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
         long zzd = this.zza.zzk().zzd();
         zzb();
-        this.zza.zzk().zzam(zzcuVar, zzd);
+        this.zza.zzk().zzap(zzcsVar, zzd);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getAppInstanceId(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getAppInstanceId(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        this.zza.zzaW().zzj(new zzi(this, zzcuVar));
+        this.zza.zzaX().zzj(new zzi(this, zzcsVar));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getCachedAppInstanceId(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getCachedAppInstanceId(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        zzc(zzcuVar, this.zza.zzj().zzQ());
+        zzc(zzcsVar, this.zza.zzj().zzP());
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getConditionalUserProperties(String str, String str2, com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getConditionalUserProperties(String str, String str2, com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        this.zza.zzaW().zzj(new zzm(this, zzcuVar, str, str2));
+        this.zza.zzaX().zzj(new zzm(this, zzcsVar, str, str2));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getCurrentScreenClass(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getCurrentScreenClass(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        zzc(zzcuVar, this.zza.zzj().zzae());
+        zzc(zzcsVar, this.zza.zzj().zzad());
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getCurrentScreenName(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getCurrentScreenName(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        zzc(zzcuVar, this.zza.zzj().zzad());
+        zzc(zzcsVar, this.zza.zzj().zzac());
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getGmpAppId(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getGmpAppId(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        zzc(zzcuVar, this.zza.zzj().zzaf());
+        zzc(zzcsVar, this.zza.zzj().zzae());
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getMaxUserProperties(String str, com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getMaxUserProperties(String str, com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        this.zza.zzj().zzY(str);
+        this.zza.zzj().zzX(str);
         zzb();
-        this.zza.zzk().zzan(zzcuVar, 25);
+        this.zza.zzk().zzaq(zzcsVar, 25);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getSessionId(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getSessionId(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
         zzlj zzj = this.zza.zzj();
-        zzj.zzu.zzaW().zzj(new zzkm(zzj, zzcuVar));
+        zzj.zzu.zzaX().zzj(new zzkm(zzj, zzcsVar));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getTestFlag(com.google.android.gms.internal.measurement.zzcu zzcuVar, int i) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getTestFlag(com.google.android.gms.internal.measurement.zzcs zzcsVar, int i) throws RemoteException {
         zzb();
         if (i == 0) {
-            this.zza.zzk().zzal(zzcuVar, this.zza.zzj().zzj());
+            this.zza.zzk().zzao(zzcsVar, this.zza.zzj().zzj());
         } else if (i == 1) {
-            this.zza.zzk().zzam(zzcuVar, this.zza.zzj().zzk().longValue());
+            this.zza.zzk().zzap(zzcsVar, this.zza.zzj().zzk().longValue());
         } else if (i != 2) {
             if (i == 3) {
-                this.zza.zzk().zzan(zzcuVar, this.zza.zzj().zzl().intValue());
+                this.zza.zzk().zzaq(zzcsVar, this.zza.zzj().zzl().intValue());
             } else if (i != 4) {
             } else {
-                this.zza.zzk().zzap(zzcuVar, this.zza.zzj().zzi().booleanValue());
+                this.zza.zzk().zzas(zzcsVar, this.zza.zzj().zzi().booleanValue());
             }
         } else {
             zzpp zzk = this.zza.zzk();
@@ -135,321 +135,345 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
             Bundle bundle = new Bundle();
             bundle.putDouble("r", doubleValue);
             try {
-                zzcuVar.zzb(bundle);
+                zzcsVar.zzb(bundle);
             } catch (RemoteException e) {
-                zzk.zzu.zzaV().zze().zzb("Error returning double value to wrapper", e);
+                zzk.zzu.zzaW().zze().zzb("Error returning double value to wrapper", e);
             }
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void getUserProperties(String str, String str2, boolean z, com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void getUserProperties(String str, String str2, boolean z, com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
         zzb();
-        this.zza.zzaW().zzj(new zzk(this, zzcuVar, str, str2, z));
+        this.zza.zzaX().zzj(new zzk(this, zzcsVar, str, str2, z));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void initForTests(Map map) throws RemoteException {
         zzb();
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void initialize(IObjectWrapper iObjectWrapper, com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void initialize(IObjectWrapper iObjectWrapper, com.google.android.gms.internal.measurement.zzdb zzdbVar, long j) throws RemoteException {
         zzic zzicVar = this.zza;
         if (zzicVar == null) {
-            this.zza = zzic.zzy((Context) Preconditions.checkNotNull((Context) ObjectWrapper.unwrap(iObjectWrapper)), zzddVar, Long.valueOf(j));
+            this.zza = zzic.zzy((Context) Preconditions.checkNotNull((Context) ObjectWrapper.unwrap(iObjectWrapper)), zzdbVar, Long.valueOf(j), null);
         } else {
-            zzicVar.zzaV().zze().zza("Attempting to initialize multiple times");
+            zzicVar.zzaW().zze().zza("Attempting to initialize multiple times");
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void isDataCollectionEnabled(com.google.android.gms.internal.measurement.zzcu zzcuVar) throws RemoteException {
-        zzb();
-        this.zza.zzaW().zzj(new zzn(this, zzcuVar));
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void initializeWithElapsedTime(IObjectWrapper iObjectWrapper, com.google.android.gms.internal.measurement.zzdb zzdbVar, long j, long j2) {
+        zzic zzicVar = this.zza;
+        if (zzicVar == null) {
+            this.zza = zzic.zzy((Context) Preconditions.checkNotNull((Context) ObjectWrapper.unwrap(iObjectWrapper)), zzdbVar, Long.valueOf(j), Long.valueOf(j2));
+        } else {
+            zzicVar.zzaW().zze().zza("Attempting to initialize multiple times");
+        }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void isDataCollectionEnabled(com.google.android.gms.internal.measurement.zzcs zzcsVar) throws RemoteException {
+        zzb();
+        this.zza.zzaX().zzj(new zzn(this, zzcsVar));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void logEvent(String str, String str2, Bundle bundle, boolean z, boolean z2, long j) throws RemoteException {
         zzb();
-        this.zza.zzj().zzC(str, str2, bundle, z, z2, j);
+        this.zza.zzj().zzB(str, str2, bundle, z, z2, j, 0L);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void logEventAndBundle(String str, String str2, Bundle bundle, com.google.android.gms.internal.measurement.zzcu zzcuVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void logEventAndBundle(String str, String str2, Bundle bundle, com.google.android.gms.internal.measurement.zzcs zzcsVar, long j) throws RemoteException {
         zzb();
         Preconditions.checkNotEmpty(str2);
-        (bundle != null ? new Bundle(bundle) : new Bundle()).putString("_o", "app");
-        this.zza.zzaW().zzj(new zzj(this, zzcuVar, new zzbg(str2, new zzbe(bundle), "app", j), str));
+        String str3 = true != this.zza.zzc().zzp(null, zzfy.zzbf) ? "app" : "auto";
+        (bundle != null ? new Bundle(bundle) : new Bundle()).putString("_o", str3);
+        this.zza.zzaX().zzj(new zzj(this, zzcsVar, new zzbh(str2, new zzbf(bundle), str3, j, 0L), str));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void logEventWithElapsedTime(String str, String str2, Bundle bundle, boolean z, boolean z2, long j, long j2) throws RemoteException {
+        zzb();
+        this.zza.zzj().zzB(str, str2, bundle, z, z2, j, j2);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void logHealthData(int i, String str, IObjectWrapper iObjectWrapper, IObjectWrapper iObjectWrapper2, IObjectWrapper iObjectWrapper3) throws RemoteException {
         zzb();
-        this.zza.zzaV().zzm(i, true, false, str, iObjectWrapper == null ? null : ObjectWrapper.unwrap(iObjectWrapper), iObjectWrapper2 == null ? null : ObjectWrapper.unwrap(iObjectWrapper2), iObjectWrapper3 != null ? ObjectWrapper.unwrap(iObjectWrapper3) : null);
+        this.zza.zzaW().zzm(i, true, false, str, iObjectWrapper == null ? null : ObjectWrapper.unwrap(iObjectWrapper), iObjectWrapper2 == null ? null : ObjectWrapper.unwrap(iObjectWrapper2), iObjectWrapper3 != null ? ObjectWrapper.unwrap(iObjectWrapper3) : null);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityCreated(IObjectWrapper iObjectWrapper, Bundle bundle, long j) throws RemoteException {
         zzb();
-        onActivityCreatedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), bundle, j);
+        onActivityCreatedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), bundle, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityCreatedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, Bundle bundle, long j) {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityCreatedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, Bundle bundle, long j) {
         zzb();
         zzky zzkyVar = this.zza.zzj().zza;
         if (zzkyVar != null) {
             this.zza.zzj().zzh();
-            zzkyVar.zza(zzdfVar, bundle);
+            zzkyVar.zza(zzddVar, bundle);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityDestroyed(IObjectWrapper iObjectWrapper, long j) throws RemoteException {
         zzb();
-        onActivityDestroyedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
+        onActivityDestroyedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityDestroyedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityDestroyedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
         zzb();
         zzky zzkyVar = this.zza.zzj().zza;
         if (zzkyVar != null) {
             this.zza.zzj().zzh();
-            zzkyVar.zzb(zzdfVar);
+            zzkyVar.zzb(zzddVar);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityPaused(IObjectWrapper iObjectWrapper, long j) throws RemoteException {
         zzb();
-        onActivityPausedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
+        onActivityPausedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityPausedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityPausedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
         zzb();
         zzky zzkyVar = this.zza.zzj().zza;
         if (zzkyVar != null) {
             this.zza.zzj().zzh();
-            zzkyVar.zzc(zzdfVar);
+            zzkyVar.zzc(zzddVar);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityResumed(IObjectWrapper iObjectWrapper, long j) throws RemoteException {
         zzb();
-        onActivityResumedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
+        onActivityResumedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityResumedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityResumedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
         zzb();
         zzky zzkyVar = this.zza.zzj().zza;
         if (zzkyVar != null) {
             this.zza.zzj().zzh();
-            zzkyVar.zzd(zzdfVar);
+            zzkyVar.zzd(zzddVar);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivitySaveInstanceState(IObjectWrapper iObjectWrapper, com.google.android.gms.internal.measurement.zzcu zzcuVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivitySaveInstanceState(IObjectWrapper iObjectWrapper, com.google.android.gms.internal.measurement.zzcs zzcsVar, long j) throws RemoteException {
         zzb();
-        onActivitySaveInstanceStateByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), zzcuVar, j);
+        onActivitySaveInstanceStateByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), zzcsVar, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivitySaveInstanceStateByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, com.google.android.gms.internal.measurement.zzcu zzcuVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivitySaveInstanceStateByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, com.google.android.gms.internal.measurement.zzcs zzcsVar, long j) throws RemoteException {
         zzb();
         zzky zzkyVar = this.zza.zzj().zza;
         Bundle bundle = new Bundle();
         if (zzkyVar != null) {
             this.zza.zzj().zzh();
-            zzkyVar.zze(zzdfVar, bundle);
+            zzkyVar.zze(zzddVar, bundle);
         }
         try {
-            zzcuVar.zzb(bundle);
+            zzcsVar.zzb(bundle);
         } catch (RemoteException e) {
-            this.zza.zzaV().zze().zzb("Error returning bundle value to wrapper", e);
+            this.zza.zzaW().zze().zzb("Error returning bundle value to wrapper", e);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityStarted(IObjectWrapper iObjectWrapper, long j) throws RemoteException {
         zzb();
-        onActivityStartedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
+        onActivityStartedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityStartedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityStartedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
         zzb();
         if (this.zza.zzj().zza != null) {
             this.zza.zzj().zzh();
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void onActivityStopped(IObjectWrapper iObjectWrapper, long j) throws RemoteException {
         zzb();
-        onActivityStoppedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
+        onActivityStoppedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void onActivityStoppedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void onActivityStoppedByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, long j) throws RemoteException {
         zzb();
         if (this.zza.zzj().zza != null) {
             this.zza.zzj().zzh();
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void performAction(Bundle bundle, com.google.android.gms.internal.measurement.zzcu zzcuVar, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void performAction(Bundle bundle, com.google.android.gms.internal.measurement.zzcs zzcsVar, long j) throws RemoteException {
         zzb();
-        zzcuVar.zzb(null);
+        zzcsVar.zzb(null);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void registerOnMeasurementEventListener(com.google.android.gms.internal.measurement.zzda zzdaVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void registerOnMeasurementEventListener(com.google.android.gms.internal.measurement.zzcy zzcyVar) throws RemoteException {
         zzjq zzjqVar;
         zzb();
         Map map = this.zzb;
         synchronized (map) {
-            zzjqVar = (zzjq) map.get(Integer.valueOf(zzdaVar.zzf()));
+            zzjqVar = (zzjq) map.get(Integer.valueOf(zzcyVar.zzf()));
             if (zzjqVar == null) {
-                zzjqVar = new zzq(this, zzdaVar);
-                map.put(Integer.valueOf(zzdaVar.zzf()), zzjqVar);
+                zzjqVar = new zzq(this, zzcyVar);
+                map.put(Integer.valueOf(zzcyVar.zzf()), zzjqVar);
             }
         }
-        this.zza.zzj().zzW(zzjqVar);
+        this.zza.zzj().zzV(zzjqVar);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    @Deprecated
     public void resetAnalyticsData(long j) throws RemoteException {
         zzb();
-        this.zza.zzj().zzT(j);
+        this.zza.zzj().zzS(j, 0L);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void retrieveAndUploadBatches(final com.google.android.gms.internal.measurement.zzcx zzcxVar) {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void resetAnalyticsDataWithElapsedTime(long j, long j2) throws RemoteException {
+        zzb();
+        this.zza.zzj().zzS(j, j2);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void retrieveAndUploadBatches(final com.google.android.gms.internal.measurement.zzcv zzcvVar) {
         zzb();
         this.zza.zzj().zzt(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzo
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
                 try {
-                    zzcxVar.zze();
+                    zzcvVar.zze();
                 } catch (RemoteException e) {
-                    ((zzic) Preconditions.checkNotNull(AppMeasurementDynamiteService.this.zza)).zzaV().zze().zzb("Failed to call IDynamiteUploadBatchesCallback", e);
+                    ((zzic) Preconditions.checkNotNull(AppMeasurementDynamiteService.this.zza)).zzaW().zze().zzb("Failed to call IDynamiteUploadBatchesCallback", e);
                 }
             }
         });
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setConditionalUserProperty(Bundle bundle, long j) throws RemoteException {
         zzb();
         zzic zzicVar = this.zza;
         if (bundle == null) {
-            zzicVar.zzaV().zzb().zza("Conditional user property must not be null");
+            zzicVar.zzaW().zzb().zza("Conditional user property must not be null");
         } else {
-            zzicVar.zzj().zzaa(bundle, j);
+            zzicVar.zzj().zzZ(bundle, j);
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setConsent(Bundle bundle, long j) throws RemoteException {
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setConsentThirdParty(Bundle bundle, long j) throws RemoteException {
         zzb();
         this.zza.zzj().zzp(bundle, -20, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setCurrentScreen(IObjectWrapper iObjectWrapper, String str, String str2, long j) throws RemoteException {
         zzb();
-        setCurrentScreenByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), str, str2, j);
+        setCurrentScreenByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd.zza((Activity) Preconditions.checkNotNull((Activity) ObjectWrapper.unwrap(iObjectWrapper))), str, str2, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void setCurrentScreenByScionActivityInfo(com.google.android.gms.internal.measurement.zzdf zzdfVar, String str, String str2, long j) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void setCurrentScreenByScionActivityInfo(com.google.android.gms.internal.measurement.zzdd zzddVar, String str, String str2, long j) throws RemoteException {
         zzb();
-        this.zza.zzs().zzk(zzdfVar, str, str2);
+        this.zza.zzs().zzk(zzddVar, str, str2);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setDataCollectionEnabled(boolean z) throws RemoteException {
         zzb();
         zzlj zzj = this.zza.zzj();
         zzj.zzb();
         zzic zzicVar = zzj.zzu;
-        zzj.zzu.zzaW().zzj(new zzjy(zzj, z));
+        zzj.zzu.zzaX().zzj(new zzjy(zzj, z));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setDefaultEventParameters(Bundle bundle) {
         zzb();
         final zzlj zzj = this.zza.zzj();
         final Bundle bundle2 = bundle == null ? new Bundle() : new Bundle(bundle);
-        zzj.zzu.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlf
+        zzj.zzu.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlf
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
-                zzlj.this.zzah(bundle2);
+                zzlj.this.zzag(bundle2);
             }
         });
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void setEventInterceptor(com.google.android.gms.internal.measurement.zzda zzdaVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void setEventInterceptor(com.google.android.gms.internal.measurement.zzcy zzcyVar) throws RemoteException {
         zzb();
-        zzp zzpVar = new zzp(this, zzdaVar);
-        boolean zze = this.zza.zzaW().zze();
+        zzp zzpVar = new zzp(this, zzcyVar);
+        boolean zze = this.zza.zzaX().zze();
         zzic zzicVar = this.zza;
         if (zze) {
-            zzicVar.zzj().zzV(zzpVar);
+            zzicVar.zzj().zzU(zzpVar);
         } else {
-            zzicVar.zzaW().zzj(new zzl(this, zzpVar));
+            zzicVar.zzaX().zzj(new zzl(this, zzpVar));
         }
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void setInstanceIdProvider(com.google.android.gms.internal.measurement.zzdc zzdcVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void setInstanceIdProvider(com.google.android.gms.internal.measurement.zzda zzdaVar) throws RemoteException {
         zzb();
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setMeasurementEnabled(boolean z, long j) throws RemoteException {
         zzb();
         this.zza.zzj().zzn(Boolean.valueOf(z));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setMinimumSessionDuration(long j) throws RemoteException {
         zzb();
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setSessionTimeoutDuration(long j) throws RemoteException {
         zzb();
         zzlj zzj = this.zza.zzj();
         zzic zzicVar = zzj.zzu;
-        zzj.zzu.zzaW().zzj(new zzka(zzj, j));
+        zzj.zzu.zzaX().zzj(new zzka(zzj, j));
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setSgtmDebugInfo(Intent intent) throws RemoteException {
         zzb();
         zzlj zzj = this.zza.zzj();
         Uri data = intent.getData();
         if (data == null) {
-            zzj.zzu.zzaV().zzi().zza("Activity intent has no data. Preview Mode was not enabled.");
+            zzj.zzu.zzaW().zzi().zza("Activity intent has no data. Preview Mode was not enabled.");
             return;
         }
         String queryParameter = data.getQueryParameter("sgtm_debug_enable");
         if (queryParameter == null || !queryParameter.equals("1")) {
             zzic zzicVar = zzj.zzu;
-            zzicVar.zzaV().zzi().zza("[sgtm] Preview Mode was not enabled.");
+            zzicVar.zzaW().zzi().zza("[sgtm] Preview Mode was not enabled.");
             zzicVar.zzc().zzy(null);
             return;
         }
@@ -458,47 +482,47 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
             return;
         }
         zzic zzicVar2 = zzj.zzu;
-        zzicVar2.zzaV().zzi().zzb("[sgtm] Preview Mode was enabled. Using the sgtmPreviewKey: ", queryParameter2);
+        zzicVar2.zzaW().zzi().zzb("[sgtm] Preview Mode was enabled. Using the sgtmPreviewKey: ", queryParameter2);
         zzicVar2.zzc().zzy(queryParameter2);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setUserId(final String str, long j) throws RemoteException {
         zzb();
         final zzlj zzj = this.zza.zzj();
-        if (str == null || !TextUtils.isEmpty(str)) {
-            zzj.zzu.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlg
-                @Override // java.lang.Runnable
-                public final /* synthetic */ void run() {
-                    zzic zzicVar = zzlj.this.zzu;
-                    if (zzicVar.zzv().zzq(str)) {
-                        zzicVar.zzv().zzi();
-                    }
-                }
-            });
-            zzj.zzL(null, APEZProvider.FILEID, str, true, j);
+        if (str != null && TextUtils.isEmpty(str)) {
+            zzj.zzu.zzaW().zze().zza("User ID must be non-empty or null");
             return;
         }
-        zzj.zzu.zzaV().zze().zza("User ID must be non-empty or null");
+        zzj.zzu.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlg
+            @Override // java.lang.Runnable
+            public final /* synthetic */ void run() {
+                zzic zzicVar = zzlj.this.zzu;
+                if (zzicVar.zzv().zzq(str)) {
+                    zzicVar.zzv().zzi();
+                }
+            }
+        });
+        zzj.zzK(null, APEZProvider.FILEID, str, true, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
+    @Override // com.google.android.gms.internal.measurement.zzcp
     public void setUserProperty(String str, String str2, IObjectWrapper iObjectWrapper, boolean z, long j) throws RemoteException {
         zzb();
-        this.zza.zzj().zzL(str, str2, ObjectWrapper.unwrap(iObjectWrapper), z, j);
+        this.zza.zzj().zzK(str, str2, ObjectWrapper.unwrap(iObjectWrapper), z, j);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzcr
-    public void unregisterOnMeasurementEventListener(com.google.android.gms.internal.measurement.zzda zzdaVar) throws RemoteException {
+    @Override // com.google.android.gms.internal.measurement.zzcp
+    public void unregisterOnMeasurementEventListener(com.google.android.gms.internal.measurement.zzcy zzcyVar) throws RemoteException {
         zzjq zzjqVar;
         zzb();
         Map map = this.zzb;
         synchronized (map) {
-            zzjqVar = (zzjq) map.remove(Integer.valueOf(zzdaVar.zzf()));
+            zzjqVar = (zzjq) map.remove(Integer.valueOf(zzcyVar.zzf()));
         }
         if (zzjqVar == null) {
-            zzjqVar = new zzq(this, zzdaVar);
+            zzjqVar = new zzq(this, zzcyVar);
         }
-        this.zza.zzj().zzX(zzjqVar);
+        this.zza.zzj().zzW(zzjqVar);
     }
 }

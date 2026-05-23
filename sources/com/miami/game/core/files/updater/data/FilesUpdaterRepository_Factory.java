@@ -3,7 +3,7 @@ package com.miami.game.core.files.updater.data;
 import android.content.ContentResolver;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FilesUpdaterRepository_Factory implements Factory<FilesUpdaterRepository> {
     private final Provider<ContentResolver> contentResolverProvider;
 

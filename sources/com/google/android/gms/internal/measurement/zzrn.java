@@ -1,28 +1,29 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
-import org.checkerframework.dataflow.qual.SideEffectFree;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import android.os.Handler;
+import android.os.Looper;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzrn implements Supplier {
-    private static final zzrn zza = new zzrn();
-    private final Supplier zzb = Suppliers.ofInstance(new zzrp());
+public final class zzrn {
+    private static final Object zza = new Object();
+    private static Thread zzb;
+    private static volatile Handler zzc;
 
-    @SideEffectFree
-    public static boolean zza() {
-        zza.get().zza();
-        return true;
+    public static boolean zza(Thread thread) {
+        if (zzb == null) {
+            zzb = Looper.getMainLooper().getThread();
+        }
+        return thread == zzb;
     }
 
-    @SideEffectFree
-    public static boolean zzb() {
-        return zza.get().zzb();
-    }
-
-    @Override // com.google.common.base.Supplier
-    /* renamed from: zzc */
-    public final zzro get() {
-        return (zzro) this.zzb.get();
+    public static Handler zzb() {
+        if (zzc == null) {
+            synchronized (zza) {
+                if (zzc == null) {
+                    zzc = new Handler(Looper.getMainLooper());
+                }
+            }
+        }
+        return zzc;
     }
 }

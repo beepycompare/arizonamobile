@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.IInterface;
 import android.os.RemoteException;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public interface zzgb extends IInterface {
     void zzA(zzr zzrVar) throws RemoteException;
@@ -15,19 +15,19 @@ public interface zzgb extends IInterface {
 
     void zzD(zzr zzrVar, Bundle bundle, zzge zzgeVar) throws RemoteException;
 
-    void zze(zzbg zzbgVar, zzr zzrVar) throws RemoteException;
+    void zze(zzbh zzbhVar, zzr zzrVar) throws RemoteException;
 
     void zzf(zzpl zzplVar, zzr zzrVar) throws RemoteException;
 
     void zzg(zzr zzrVar) throws RemoteException;
 
-    void zzh(zzbg zzbgVar, String str, String str2) throws RemoteException;
+    void zzh(zzbh zzbhVar, String str, String str2) throws RemoteException;
 
     void zzi(zzr zzrVar) throws RemoteException;
 
     List zzj(zzr zzrVar, boolean z) throws RemoteException;
 
-    byte[] zzk(zzbg zzbgVar, String str) throws RemoteException;
+    byte[] zzk(zzbh zzbhVar, String str) throws RemoteException;
 
     void zzl(long j, String str, String str2, String str3) throws RemoteException;
 

@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.firebase.transport;
 
 import com.google.firebase.encoders.proto.ProtoEnum;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LogEventDropped {
     private static final LogEventDropped DEFAULT_INSTANCE = new Builder().build();
     private final long events_dropped_count_;
@@ -28,7 +28,7 @@ public final class LogEventDropped {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long events_dropped_count_ = 0;
         private Reason reason_ = Reason.REASON_UNKNOWN;
@@ -51,7 +51,7 @@ public final class LogEventDropped {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Reason implements ProtoEnum {
         REASON_UNKNOWN(0),
         MESSAGE_TOO_OLD(1),

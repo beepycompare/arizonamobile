@@ -6,12 +6,16 @@ import androidx.collection.ScatterMapKt;
 import androidx.collection.ScatterSet;
 import androidx.collection.ScatterSetKt;
 import androidx.compose.runtime.ComposeNodeLifecycleCallback;
+import androidx.compose.runtime.ComposeRuntimeFlags;
+import androidx.compose.runtime.GapRememberObserverHolder;
+import androidx.compose.runtime.LinkRememberObserverHolder;
 import androidx.compose.runtime.RecomposeScopeImpl;
-import androidx.compose.runtime.RememberManager;
 import androidx.compose.runtime.RememberObserver;
 import androidx.compose.runtime.RememberObserverHolder;
 import androidx.compose.runtime.Stack;
 import androidx.compose.runtime.collection.MutableVector;
+import androidx.compose.runtime.composer.RememberManager;
+import androidx.compose.runtime.composer.linkbuffer.LinkAnchorKt;
 import androidx.compose.runtime.tooling.CompositionErrorContext;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.ArrayList;
@@ -22,7 +26,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: RememberEventDispatcher.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0018\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001f\u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ:\u0010 \u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0017\u0010!\u001a\u0013\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u00130\"¢\u0006\u0002\b#H\u0086\bJ\u0006\u0010$\u001a\u00020\u0013J\u0010\u0010\t\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0010\u0010&\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0016\u0010'\u001a\u00020\u00132\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012H\u0016J\u0010\u0010)\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010\u0014\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010*\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010,\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010-\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0006\u0010.\u001a\u00020\u0013J\u000e\u0010/\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015J\u0014\u00100\u001a\u00020\u00132\f\u00101\u001a\b\u0012\u0004\u0012\u00020\u000b0\u001eJ\u000e\u00102\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eJ\u0016\u00103\u001a\u00020\u00132\f\u00104\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u0006\u00105\u001a\u00020\u0013J\u0006\u00106\u001a\u00020\u0013J\u0010\u00107\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0010H\u0002J*\u00108\u001a\u0002H9\"\u0004\b\u0000\u001092\u0006\u0010%\u001a\u00020\u00102\f\u0010!\u001a\b\u0012\u0004\u0012\u0002H90\u0012H\u0082\b¢\u0006\u0002\u0010:R\u0016\u0010\u0004\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00100\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\u00120\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n\u0012\u0004\u0012\u00020\u0015\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001cR\u0016\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Landroidx/compose/runtime/internal/RememberEventDispatcher;", "Landroidx/compose/runtime/RememberManager;", "<init>", "()V", "abandoning", "", "Landroidx/compose/runtime/RememberObserver;", "traceContext", "Landroidx/compose/runtime/tooling/CompositionErrorContext;", "remembering", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/RememberObserverHolder;", "rememberSet", "Landroidx/collection/MutableScatterSet;", "currentRememberingList", "leaving", "", "sideEffects", "Lkotlin/Function0;", "", "releasing", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "pausedPlaceholders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/compose/runtime/internal/PausedCompositionRemembers;", "nestedRemembersLists", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "ignoreLeavingSet", "Landroidx/collection/ScatterSet;", "prepare", "use", "block", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "clear", "instance", "forgetting", "sideEffect", "effect", "deactivating", "rememberPausingScope", "scope", "startResumingScope", "endResumingScope", "dispatchRememberObservers", "dispatchOnDeactivateIfNecessary", "ignoreForgotten", "ignoreSet", "extractRememberSet", "dispatchRememberList", "list", "dispatchSideEffects", "dispatchAbandons", "recordLeaving", "withComposeStackTrace", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0018\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001f\u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\bJ:\u0010 \u001a\u00020\u00132\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\b2\u0017\u0010!\u001a\u0013\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u00130\"¢\u0006\u0002\b#H\u0086\bJ\u0006\u0010$\u001a\u00020\u0013J\u0010\u0010\t\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0010\u0010&\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u000bH\u0016J\u0016\u0010'\u001a\u00020\u00132\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012H\u0016J\u0010\u0010)\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010\u0014\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015H\u0016J\u0010\u0010*\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010,\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0010\u0010-\u001a\u00020\u00132\u0006\u0010+\u001a\u00020\u0018H\u0016J\u0006\u0010.\u001a\u00020\u0013J\u000e\u0010/\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0015J\u0014\u00100\u001a\u00020\u00132\f\u00101\u001a\b\u0012\u0004\u0012\u00020\u000b0\u001eJ\u000e\u00102\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eJ\u0016\u00103\u001a\u00020\u00132\f\u00104\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH\u0002J\u0006\u00105\u001a\u00020\u0013J\u0006\u00106\u001a\u00020\u0013J\u0010\u00107\u001a\u00020\u00132\u0006\u0010%\u001a\u00020\u0010H\u0002J*\u00108\u001a\u0002H9\"\u0004\b\u0000\u001092\u0006\u0010%\u001a\u00020\u00102\f\u0010!\u001a\b\u0012\u0004\u0012\u0002H90\u0012H\u0082\b¢\u0006\u0002\u0010:R\u0016\u0010\u0004\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00100\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00130\u00120\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n\u0012\u0004\u0012\u00020\u0015\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u0016\u001a\u0010\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001cR\u0016\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Landroidx/compose/runtime/internal/RememberEventDispatcher;", "Landroidx/compose/runtime/composer/RememberManager;", "<init>", "()V", "abandoning", "", "Landroidx/compose/runtime/RememberObserver;", "traceContext", "Landroidx/compose/runtime/tooling/CompositionErrorContext;", "remembering", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/runtime/RememberObserverHolder;", "rememberSet", "Landroidx/collection/MutableScatterSet;", "currentRememberingList", "leaving", "", "sideEffects", "Lkotlin/Function0;", "", "releasing", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "pausedPlaceholders", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/runtime/RecomposeScopeImpl;", "Landroidx/compose/runtime/internal/PausedCompositionRemembers;", "nestedRemembersLists", "Landroidx/compose/runtime/Stack;", "Ljava/util/ArrayList;", "ignoreLeavingSet", "Landroidx/collection/ScatterSet;", "prepare", "use", "block", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "clear", "instance", "forgetting", "sideEffect", "effect", "deactivating", "rememberPausingScope", "scope", "startResumingScope", "endResumingScope", "dispatchRememberObservers", "dispatchOnDeactivateIfNecessary", "ignoreForgotten", "ignoreSet", "extractRememberSet", "dispatchRememberList", "list", "dispatchSideEffects", "dispatchAbandons", "recordLeaving", "withComposeStackTrace", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RememberEventDispatcher implements RememberManager {
     public static final int $stable = 8;
@@ -75,13 +79,13 @@ public final class RememberEventDispatcher implements RememberManager {
         this.nestedRemembersLists = null;
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void remembering(RememberObserverHolder rememberObserverHolder) {
         this.currentRememberingList.add(rememberObserverHolder);
         this.rememberSet.add(rememberObserverHolder);
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void forgetting(RememberObserverHolder rememberObserverHolder) {
         if (this.rememberSet.contains(rememberObserverHolder)) {
             this.rememberSet.remove(rememberObserverHolder);
@@ -101,17 +105,17 @@ public final class RememberEventDispatcher implements RememberManager {
         }
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void sideEffect(Function0<Unit> function0) {
         this.sideEffects.add(function0);
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void deactivating(ComposeNodeLifecycleCallback composeNodeLifecycleCallback) {
         recordLeaving(composeNodeLifecycleCallback);
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void releasing(ComposeNodeLifecycleCallback composeNodeLifecycleCallback) {
         MutableScatterSet<ComposeNodeLifecycleCallback> mutableScatterSet = this.releasing;
         if (mutableScatterSet == null) {
@@ -122,8 +126,9 @@ public final class RememberEventDispatcher implements RememberManager {
         recordLeaving(composeNodeLifecycleCallback);
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void rememberPausingScope(RecomposeScopeImpl recomposeScopeImpl) {
+        GapRememberObserverHolder gapRememberObserverHolder;
         Set<RememberObserver> set = this.abandoning;
         if (set == null) {
             return;
@@ -135,25 +140,31 @@ public final class RememberEventDispatcher implements RememberManager {
             this.pausedPlaceholders = mutableScatterMap;
         }
         mutableScatterMap.set(recomposeScopeImpl, pausedCompositionRemembers);
-        this.currentRememberingList.add(new RememberObserverHolder(pausedCompositionRemembers, -1));
+        MutableVector<RememberObserverHolder> mutableVector = this.currentRememberingList;
+        if (ComposeRuntimeFlags.isLinkBufferComposerEnabled) {
+            gapRememberObserverHolder = new LinkRememberObserverHolder(pausedCompositionRemembers, LinkAnchorKt.getNullAnchor());
+        } else {
+            gapRememberObserverHolder = new GapRememberObserverHolder(pausedCompositionRemembers, -1);
+        }
+        mutableVector.add(gapRememberObserverHolder);
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void startResumingScope(RecomposeScopeImpl recomposeScopeImpl) {
         MutableScatterMap<RecomposeScopeImpl, PausedCompositionRemembers> mutableScatterMap = this.pausedPlaceholders;
         PausedCompositionRemembers pausedCompositionRemembers = mutableScatterMap != null ? mutableScatterMap.get(recomposeScopeImpl) : null;
         if (pausedCompositionRemembers != null) {
             ArrayList<MutableVector<RememberObserverHolder>> arrayList = this.nestedRemembersLists;
             if (arrayList == null) {
-                arrayList = Stack.m4026constructorimpl$default(null, 1, null);
+                arrayList = Stack.m4452constructorimpl$default(null, 1, null);
                 this.nestedRemembersLists = arrayList;
             }
-            Stack.m4036pushimpl(arrayList, this.currentRememberingList);
+            Stack.m4462pushimpl(arrayList, this.currentRememberingList);
             this.currentRememberingList = pausedCompositionRemembers.getPausedRemembers();
         }
     }
 
-    @Override // androidx.compose.runtime.RememberManager
+    @Override // androidx.compose.runtime.composer.RememberManager
     public void endResumingScope(RecomposeScopeImpl recomposeScopeImpl) {
         MutableVector<RememberObserverHolder> mutableVector;
         MutableScatterMap<RecomposeScopeImpl, PausedCompositionRemembers> mutableScatterMap = this.pausedPlaceholders;
@@ -161,7 +172,7 @@ public final class RememberEventDispatcher implements RememberManager {
             return;
         }
         ArrayList<MutableVector<RememberObserverHolder>> arrayList = this.nestedRemembersLists;
-        if (arrayList != null && (mutableVector = (MutableVector) Stack.m4035popimpl(arrayList)) != null) {
+        if (arrayList != null && (mutableVector = (MutableVector) Stack.m4461popimpl(arrayList)) != null) {
             this.currentRememberingList = mutableVector;
         }
         mutableScatterMap.remove(recomposeScopeImpl);

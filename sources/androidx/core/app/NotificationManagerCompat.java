@@ -52,7 +52,6 @@ public final class NotificationManagerCompat {
     public static final int INTERRUPTION_FILTER_NONE = 3;
     public static final int INTERRUPTION_FILTER_PRIORITY = 2;
     public static final int INTERRUPTION_FILTER_UNKNOWN = 0;
-    static final int MAX_SIDE_CHANNEL_SDK_VERSION = 19;
     private static final String OP_POST_NOTIFICATION = "OP_POST_NOTIFICATION";
     private static final String SETTING_ENABLED_NOTIFICATION_LISTENERS = "enabled_notification_listeners";
     private static final int SIDE_CHANNEL_RETRY_BASE_INTERVAL_MS = 1000;
@@ -386,7 +385,7 @@ public final class NotificationManagerCompat {
     }
 
     public int getCurrentInterruptionFilter() {
-        return Api23Impl.getCurrentInterruptionFilter(this.mNotificationManager);
+        return this.mNotificationManager.getCurrentInterruptionFilter();
     }
 
     private void pushSideChannelQueue(Task task) {
@@ -662,49 +661,6 @@ public final class NotificationManagerCompat {
     }
 
     /* loaded from: classes2.dex */
-    private static class CancelTask implements Task {
-        final boolean all;
-        final int id;
-        final String packageName;
-        final String tag;
-
-        CancelTask(String str) {
-            this.packageName = str;
-            this.id = 0;
-            this.tag = null;
-            this.all = true;
-        }
-
-        CancelTask(String str, int i, String str2) {
-            this.packageName = str;
-            this.id = i;
-            this.tag = str2;
-            this.all = false;
-        }
-
-        @Override // androidx.core.app.NotificationManagerCompat.Task
-        public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
-            boolean z = this.all;
-            String str = this.packageName;
-            if (z) {
-                iNotificationSideChannel.cancelAll(str);
-            } else {
-                iNotificationSideChannel.cancel(str, this.id, this.tag);
-            }
-        }
-
-        public String toString() {
-            StringBuilder sb = new StringBuilder("CancelTask[packageName:");
-            sb.append(this.packageName);
-            sb.append(", id:").append(this.id);
-            sb.append(", tag:").append(this.tag);
-            sb.append(", all:").append(this.all);
-            sb.append("]");
-            return sb.toString();
-        }
-    }
-
-    /* loaded from: classes2.dex */
     static class Api23Impl {
         private Api23Impl() {
         }
@@ -715,10 +671,6 @@ public final class NotificationManagerCompat {
                 return new ArrayList();
             }
             return Arrays.asList(activeNotifications);
-        }
-
-        static int getCurrentInterruptionFilter(NotificationManager notificationManager) {
-            return notificationManager.getCurrentInterruptionFilter();
         }
     }
 

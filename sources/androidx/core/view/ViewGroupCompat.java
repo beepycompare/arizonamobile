@@ -42,15 +42,15 @@ public final class ViewGroupCompat {
     }
 
     public static void setTransitionGroup(ViewGroup viewGroup, boolean z) {
-        Api21Impl.setTransitionGroup(viewGroup, z);
+        viewGroup.setTransitionGroup(z);
     }
 
     public static boolean isTransitionGroup(ViewGroup viewGroup) {
-        return Api21Impl.isTransitionGroup(viewGroup);
+        return viewGroup.isTransitionGroup();
     }
 
     public static int getNestedScrollAxes(ViewGroup viewGroup) {
-        return Api21Impl.getNestedScrollAxes(viewGroup);
+        return viewGroup.getNestedScrollAxes();
     }
 
     public static void installCompatInsetsDispatch(View view) {
@@ -119,23 +119,5 @@ public final class ViewGroupCompat {
         }
         windowInsetsArr[0] = onApplyWindowInsets;
         return CONSUMED;
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static void setTransitionGroup(ViewGroup viewGroup, boolean z) {
-            viewGroup.setTransitionGroup(z);
-        }
-
-        static boolean isTransitionGroup(ViewGroup viewGroup) {
-            return viewGroup.isTransitionGroup();
-        }
-
-        static int getNestedScrollAxes(ViewGroup viewGroup) {
-            return viewGroup.getNestedScrollAxes();
-        }
     }
 }

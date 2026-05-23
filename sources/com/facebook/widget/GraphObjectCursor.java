@@ -1,7 +1,7 @@
 package com.facebook.widget;
 
 import com.facebook.model.GraphObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 interface GraphObjectCursor<T extends GraphObject> {
     boolean areMoreObjectsAvailable();
 

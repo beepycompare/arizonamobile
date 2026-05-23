@@ -1,6 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import com.google.common.util.concurrent.ListenableFuture;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public interface zzmj {
-    int zza();
+    ListenableFuture zza(String str, String str2);
+
+    ListenableFuture zzb(String str);
+
+    ListenableFuture zzc(zzme zzmeVar);
+
+    ListenableFuture zzd();
+
+    ListenableFuture zze(zzpm zzpmVar);
 }

@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlinx.coroutines.JobKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Context.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CancellableFlowImpl$collect$2<T> implements FlowCollector {
     final /* synthetic */ FlowCollector<T> $collector;
@@ -20,7 +21,7 @@ public final class CancellableFlowImpl$collect$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -39,6 +40,7 @@ public final class CancellableFlowImpl$collect$2<T> implements FlowCollector {
                     ResultKt.throwOnFailure(obj);
                     JobKt.ensureActive(cancellableFlowImpl$collect$2$emit$1.getContext());
                     FlowCollector<T> flowCollector = this.$collector;
+                    cancellableFlowImpl$collect$2$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     cancellableFlowImpl$collect$2$emit$1.label = 1;
                     if (flowCollector.emit(t, cancellableFlowImpl$collect$2$emit$1) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -46,13 +48,14 @@ public final class CancellableFlowImpl$collect$2<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    Object obj2 = cancellableFlowImpl$collect$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return Unit.INSTANCE;
             }
         }
         cancellableFlowImpl$collect$2$emit$1 = new CancellableFlowImpl$collect$2$emit$1(this, continuation);
-        Object obj2 = cancellableFlowImpl$collect$2$emit$1.result;
+        Object obj3 = cancellableFlowImpl$collect$2$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = cancellableFlowImpl$collect$2$emit$1.label;
         if (i != 0) {

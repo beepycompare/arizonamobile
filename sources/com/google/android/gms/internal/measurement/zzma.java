@@ -1,35 +1,30 @@
 package com.google.android.gms.internal.measurement;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import android.content.SharedPreferences;
+import androidx.collection.ArrayMap;
+import com.google.common.base.Preconditions;
+import java.util.Iterator;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzma implements zznk {
-    private static final zzma zza = new zzma();
+public final class zzma {
+    private static final Map zza = new ArrayMap();
+    private final SharedPreferences zzb;
+    private SharedPreferences.OnSharedPreferenceChangeListener zzc;
 
-    private zzma() {
-    }
-
-    public static zzma zza() {
-        return zza;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final boolean zzb(Class cls) {
-        return zzmf.class.isAssignableFrom(cls);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final zznj zzc(Class cls) {
-        if (!zzmf.class.isAssignableFrom(cls)) {
-            String name = cls.getName();
-            String.valueOf(name);
-            throw new IllegalArgumentException("Unsupported message type: ".concat(String.valueOf(name)));
-        }
-        try {
-            return (zznj) zzmf.zzco(cls.asSubclass(zzmf.class)).zzl(3, null, null);
-        } catch (Exception e) {
-            String name2 = cls.getName();
-            String.valueOf(name2);
-            throw new RuntimeException("Unable to get message info for ".concat(String.valueOf(name2)), e);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static synchronized void zza() {
+        synchronized (zzma.class) {
+            Map map = zza;
+            Iterator it = map.values().iterator();
+            if (it.hasNext()) {
+                zzma zzmaVar = (zzma) it.next();
+                SharedPreferences sharedPreferences = zzmaVar.zzb;
+                SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener = zzmaVar.zzc;
+                SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener2 = (SharedPreferences.OnSharedPreferenceChangeListener) Preconditions.checkNotNull(null);
+                throw null;
+            }
+            map.clear();
         }
     }
 }

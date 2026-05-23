@@ -6,13 +6,14 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: Emitters.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 1, 0}, xi = 176)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$transform$1", f = "Emitters.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 2, 0}, xi = 176)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$transform$1", f = "Emitters.kt", i = {0}, l = {36}, m = "invokeSuspend", n = {"$this$flow"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda implements Function2<FlowCollector<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Flow<T> $this_transform;
@@ -45,7 +46,7 @@ public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda imple
     }
 
     /* compiled from: Emitters.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
     /* renamed from: kotlinx.coroutines.flow.FlowKt__EmittersKt$transform$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
@@ -59,7 +60,7 @@ public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda imple
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -77,6 +78,7 @@ public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda imple
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         FlowCollector<R> flowCollector = this.$$this$flow;
+                        flowKt__EmittersKt$transform$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                         flowKt__EmittersKt$transform$1$1$emit$1.label = 1;
                         if (this.$transform.invoke(flowCollector, t, flowKt__EmittersKt$transform$1$1$emit$1) == coroutine_suspended) {
                             return coroutine_suspended;
@@ -84,13 +86,14 @@ public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda imple
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
+                        Object obj2 = flowKt__EmittersKt$transform$1$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     return Unit.INSTANCE;
                 }
             }
             flowKt__EmittersKt$transform$1$1$emit$1 = new FlowKt__EmittersKt$transform$1$1$emit$1(this, continuation);
-            Object obj2 = flowKt__EmittersKt$transform$1$1$emit$1.result;
+            Object obj3 = flowKt__EmittersKt$transform$1$1$emit$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = flowKt__EmittersKt$transform$1$1$emit$1.label;
             if (i != 0) {
@@ -107,14 +110,14 @@ public final class FlowKt__EmittersKt$transform$1<R> extends SuspendLambda imple
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        FlowCollector flowCollector = (FlowCollector) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            Flow<T> flow = this.$this_transform;
-            Function3<FlowCollector<? super R>, T, Continuation<? super Unit>, Object> function3 = this.$transform;
+            this.L$0 = SpillingKt.nullOutSpilledVariable(flowCollector);
             this.label = 1;
-            if (flow.collect(new AnonymousClass1(function3, (FlowCollector) this.L$0), this) == coroutine_suspended) {
+            if (this.$this_transform.collect(new AnonymousClass1(this.$transform, flowCollector), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

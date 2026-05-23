@@ -2,8 +2,8 @@ package com.google.firebase.sessions;
 
 import androidx.datastore.core.DataStore;
 import com.google.firebase.sessions.dagger.internal.Factory;
+import com.google.firebase.sessions.dagger.internal.Provider;
 import com.google.firebase.sessions.settings.SessionsSettings;
-import javax.inject.Provider;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class SharedSessionRepositoryImpl_Factory implements Factory<SharedSessionRepositoryImpl> {
@@ -15,7 +15,7 @@ public final class SharedSessionRepositoryImpl_Factory implements Factory<Shared
     private final Provider<SessionsSettings> sessionsSettingsProvider;
     private final Provider<TimeProvider> timeProvider;
 
-    public SharedSessionRepositoryImpl_Factory(Provider<SessionsSettings> provider, Provider<SessionGenerator> provider2, Provider<SessionFirelogPublisher> provider3, Provider<TimeProvider> provider4, Provider<DataStore<SessionData>> provider5, Provider<ProcessDataManager> provider6, Provider<CoroutineContext> provider7) {
+    private SharedSessionRepositoryImpl_Factory(Provider<SessionsSettings> provider, Provider<SessionGenerator> provider2, Provider<SessionFirelogPublisher> provider3, Provider<TimeProvider> provider4, Provider<DataStore<SessionData>> provider5, Provider<ProcessDataManager> provider6, Provider<CoroutineContext> provider7) {
         this.sessionsSettingsProvider = provider;
         this.sessionGeneratorProvider = provider2;
         this.sessionFirelogPublisherProvider = provider3;

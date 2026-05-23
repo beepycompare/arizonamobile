@@ -9,6 +9,8 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.view.View;
 import android.view.ViewParent;
+import androidx.collection.MutableScatterMap;
+import androidx.collection.ScatterMapKt;
 import androidx.compose.runtime.CompositionContext;
 import androidx.compose.runtime.MonotonicFrameClock;
 import androidx.compose.runtime.PausableMonotonicFrameClock;
@@ -22,8 +24,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewTreeLifecycleOwner;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -42,10 +42,10 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.SharingStarted;
 import kotlinx.coroutines.flow.StateFlow;
 /* compiled from: WindowRecomposer.android.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u0003\u001a\u0016\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\r0\f2\u0006\u0010\u000f\u001a\u00020\u000bH\u0002\u001a \u0010\u0019\u001a\u00020\u0014*\u00020\u00032\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u001d\",\u0010\u0002\u001a\u0004\u0018\u00010\u0001*\u00020\u00032\b\u0010\u0000\u001a\u0004\u0018\u00010\u00018F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u0004\u0010\u0005\"\u0004\b\u0006\u0010\u0007\" \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0018\u0010\u0010\u001a\u00020\u0003*\u00020\u00038BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012\"\u001e\u0010\u0013\u001a\u00020\u0014*\u00020\u00038@X\u0080\u0004¢\u0006\f\u0012\u0004\b\u0015\u0010\u0016\u001a\u0004\b\u0017\u0010\u0018¨\u0006\u001e"}, d2 = {"value", "Landroidx/compose/runtime/CompositionContext;", "compositionContext", "Landroid/view/View;", "getCompositionContext", "(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V", "findViewTreeCompositionContext", "animationScale", "", "Landroid/content/Context;", "Lkotlinx/coroutines/flow/StateFlow;", "", "getAnimationScaleFlowFor", "applicationContext", "contentChild", "getContentChild", "(Landroid/view/View;)Landroid/view/View;", "windowRecomposer", "Landroidx/compose/runtime/Recomposer;", "getWindowRecomposer$annotations", "(Landroid/view/View;)V", "getWindowRecomposer", "(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;", "createLifecycleAwareWindowRecomposer", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\f\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u0003\u001a\f\u0010\u000e\u001a\u00020\r*\u00020\u000bH\u0002\u001a\u0016\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\r0\f2\u0006\u0010\u0010\u001a\u00020\u000bH\u0002\u001a \u0010\u001a\u001a\u00020\u0015*\u00020\u00032\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u001e\",\u0010\u0002\u001a\u0004\u0018\u00010\u0001*\u00020\u00032\b\u0010\u0000\u001a\u0004\u0018\u00010\u00018F@FX\u0086\u000e¢\u0006\f\u001a\u0004\b\u0004\u0010\u0005\"\u0004\b\u0006\u0010\u0007\" \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000\"\u0018\u0010\u0011\u001a\u00020\u0003*\u00020\u00038@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013\"\u001e\u0010\u0014\u001a\u00020\u0015*\u00020\u00038@X\u0080\u0004¢\u0006\f\u0012\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0018\u0010\u0019¨\u0006\u001f"}, d2 = {"value", "Landroidx/compose/runtime/CompositionContext;", "compositionContext", "Landroid/view/View;", "getCompositionContext", "(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;", "setCompositionContext", "(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V", "findViewTreeCompositionContext", "animationScale", "Landroidx/collection/MutableScatterMap;", "Landroid/content/Context;", "Lkotlinx/coroutines/flow/StateFlow;", "", "readAnimationScale", "getAnimationScaleFlowFor", "applicationContext", "contentChild", "getContentChild", "(Landroid/view/View;)Landroid/view/View;", "windowRecomposer", "Landroidx/compose/runtime/Recomposer;", "getWindowRecomposer$annotations", "(Landroid/view/View;)V", "getWindowRecomposer", "(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;", "createLifecycleAwareWindowRecomposer", "coroutineContext", "Lkotlin/coroutines/CoroutineContext;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class WindowRecomposer_androidKt {
-    private static final Map<Context, StateFlow<Float>> animationScale = new LinkedHashMap();
+    private static final MutableScatterMap<Context, StateFlow<Float>> animationScale = ScatterMapKt.mutableScatterMapOf();
 
     public static /* synthetic */ void getWindowRecomposer$annotations(View view) {
     }
@@ -77,12 +77,17 @@ public final class WindowRecomposer_androidKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final float readAnimationScale(Context context) {
+        return Settings.Global.getFloat(context.getContentResolver(), "animator_duration_scale", 1.0f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r5v1, types: [androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1] */
     public static final StateFlow<Float> getAnimationScaleFlowFor(Context context) {
         StateFlow<Float> stateFlow;
-        Map<Context, StateFlow<Float>> map = animationScale;
-        synchronized (map) {
-            StateFlow<Float> stateFlow2 = map.get(context);
+        MutableScatterMap<Context, StateFlow<Float>> mutableScatterMap = animationScale;
+        synchronized (mutableScatterMap) {
+            StateFlow<Float> stateFlow2 = mutableScatterMap.get(context);
             if (stateFlow2 == null) {
                 ContentResolver contentResolver = context.getContentResolver();
                 Uri uriFor = Settings.Global.getUriFor("animator_duration_scale");
@@ -91,24 +96,24 @@ public final class WindowRecomposer_androidKt {
                 stateFlow2 = FlowKt.stateIn(FlowKt.flow(new WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1(contentResolver, uriFor, new ContentObserver(createAsync) { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1
                     @Override // android.database.ContentObserver
                     public void onChange(boolean z, Uri uri) {
-                        Channel$default.mo8396trySendJP2dKIU(Unit.INSTANCE);
+                        Channel$default.mo9005trySendJP2dKIU(Unit.INSTANCE);
                     }
-                }, Channel$default, context, null)), CoroutineScopeKt.MainScope(), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.Companion, 0L, 0L, 3, null), Float.valueOf(Settings.Global.getFloat(context.getContentResolver(), "animator_duration_scale", 1.0f)));
-                map.put(context, stateFlow2);
+                }, Channel$default, context, null)), CoroutineScopeKt.MainScope(), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.Companion, 0L, 0L, 3, null), Float.valueOf(readAnimationScale(context)));
+                mutableScatterMap.set(context, stateFlow2);
             }
             stateFlow = stateFlow2;
         }
         return stateFlow;
     }
 
-    private static final View getContentChild(View view) {
-        ViewParent parent = view.getParent();
-        while (parent instanceof View) {
-            View view2 = (View) parent;
+    public static final View getContentChild(View view) {
+        ViewParent parentOrViewTreeDisjointParent = ViewTree.getParentOrViewTreeDisjointParent(view);
+        while (parentOrViewTreeDisjointParent instanceof View) {
+            View view2 = (View) parentOrViewTreeDisjointParent;
             if (view2.getId() == 16908290) {
                 break;
             }
-            parent = view2.getParent();
+            parentOrViewTreeDisjointParent = view2.getParent();
             view = view2;
         }
         return view;
@@ -139,7 +144,7 @@ public final class WindowRecomposer_androidKt {
         return createLifecycleAwareWindowRecomposer(view, coroutineContext, lifecycle);
     }
 
-    /* JADX WARN: Type inference failed for: r0v15, types: [T, androidx.compose.ui.platform.MotionDurationScaleImpl] */
+    /* JADX WARN: Type inference failed for: r3v7, types: [T, androidx.compose.ui.platform.MotionDurationScaleImpl] */
     public static final Recomposer createLifecycleAwareWindowRecomposer(final View view, CoroutineContext coroutineContext, Lifecycle lifecycle) {
         final PausableMonotonicFrameClock pausableMonotonicFrameClock;
         if (coroutineContext.get(ContinuationInterceptor.Key) == null || coroutineContext.get(MonotonicFrameClock.Key) == null) {
@@ -147,16 +152,15 @@ public final class WindowRecomposer_androidKt {
         }
         MonotonicFrameClock monotonicFrameClock = (MonotonicFrameClock) coroutineContext.get(MonotonicFrameClock.Key);
         if (monotonicFrameClock != null) {
-            PausableMonotonicFrameClock pausableMonotonicFrameClock2 = new PausableMonotonicFrameClock(monotonicFrameClock);
-            pausableMonotonicFrameClock2.pause();
-            pausableMonotonicFrameClock = pausableMonotonicFrameClock2;
+            pausableMonotonicFrameClock = new PausableMonotonicFrameClock(monotonicFrameClock);
+            pausableMonotonicFrameClock.pause();
         } else {
             pausableMonotonicFrameClock = null;
         }
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
         MotionDurationScale motionDurationScale = (MotionDurationScale) coroutineContext.get(MotionDurationScale.Key);
         if (motionDurationScale == null) {
-            ?? motionDurationScaleImpl = new MotionDurationScaleImpl();
+            ?? motionDurationScaleImpl = new MotionDurationScaleImpl(view.getContext().getApplicationContext());
             objectRef.element = motionDurationScaleImpl;
             motionDurationScale = (MotionDurationScale) motionDurationScaleImpl;
         }
@@ -183,7 +187,7 @@ public final class WindowRecomposer_androidKt {
             lifecycle.addObserver(new LifecycleEventObserver() { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2
 
                 /* compiled from: WindowRecomposer.android.kt */
-                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
                 /* loaded from: classes2.dex */
                 public static final /* synthetic */ class WhenMappings {
                     public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -226,12 +230,12 @@ public final class WindowRecomposer_androidKt {
                 public void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
                     switch (WhenMappings.$EnumSwitchMapping$0[event.ordinal()]) {
                         case 1:
-                            BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, CoroutineStart.UNDISPATCHED, new WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1(objectRef, recomposer, lifecycleOwner2, this, view, null), 1, null);
+                            BuildersKt__Builders_commonKt.launch$default(CoroutineScope.this, null, CoroutineStart.UNDISPATCHED, new WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1(objectRef, recomposer, lifecycleOwner2, this, null), 1, null);
                             return;
                         case 2:
-                            PausableMonotonicFrameClock pausableMonotonicFrameClock3 = pausableMonotonicFrameClock;
-                            if (pausableMonotonicFrameClock3 != null) {
-                                pausableMonotonicFrameClock3.resume();
+                            PausableMonotonicFrameClock pausableMonotonicFrameClock2 = pausableMonotonicFrameClock;
+                            if (pausableMonotonicFrameClock2 != null) {
+                                pausableMonotonicFrameClock2.resume();
                             }
                             recomposer.resumeCompositionFrameClock();
                             return;

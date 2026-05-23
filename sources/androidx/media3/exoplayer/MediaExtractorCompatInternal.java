@@ -27,16 +27,12 @@ import androidx.media3.datasource.MediaDataSourceAdapter;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
+import androidx.media3.exoplayer.source.ProgressiveMediaExtractor;
 import androidx.media3.exoplayer.source.SampleQueue;
-import androidx.media3.exoplayer.source.UnrecognizedInputFormatException;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.DefaultAllocator;
-import androidx.media3.extractor.DefaultExtractorInput;
 import androidx.media3.extractor.DiscardingTrackOutput;
-import androidx.media3.extractor.Extractor;
-import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorOutput;
-import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
@@ -44,13 +40,8 @@ import androidx.media3.extractor.TrackAwareSeekMap;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.mp4.PsshAtomUtil;
 import com.google.android.gms.common.Scopes;
-import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import java.io.EOFException;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -64,20 +55,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MediaExtractorCompatInternal {
     private static final long DEFAULT_LAST_SAMPLE_DURATION_US = 10000;
     private static final String TAG = "MediaExtractorCompatInt";
     private DataSource currentDataSource;
-    private Extractor currentExtractor;
-    private ExtractorInput currentExtractorInput;
     private final DataSource.Factory dataSourceFactory;
-    private final ExtractorsFactory extractorsFactory;
     private boolean hasBeenPrepared;
     private Map<String, String> httpRequestHeaders;
     private LogSessionId logSessionId;
     private long offsetInCurrentFile;
     private SeekPoint pendingSeek;
+    private final ProgressiveMediaExtractor progressiveMediaExtractor;
     private SeekMap seekMap;
     private boolean tracksEnded;
     private int upstreamFormatsCount;
@@ -91,8 +80,8 @@ public class MediaExtractorCompatInternal {
     private final DecoderInputBuffer sampleHolderWithBufferReplacementEnabled = new DecoderInputBuffer(2);
     private final Set<Integer> selectedTrackIndices = new HashSet();
 
-    public MediaExtractorCompatInternal(ExtractorsFactory extractorsFactory, DataSource.Factory factory) {
-        this.extractorsFactory = extractorsFactory;
+    public MediaExtractorCompatInternal(ProgressiveMediaExtractor progressiveMediaExtractor, DataSource.Factory factory) {
+        this.progressiveMediaExtractor = progressiveMediaExtractor;
         this.dataSourceFactory = factory;
     }
 
@@ -160,59 +149,53 @@ public class MediaExtractorCompatInternal {
         this.hasBeenPrepared = true;
         this.offsetInCurrentFile = dataSpec.position;
         this.currentDataSource = dataSource;
-        ExtractorInput defaultExtractorInput = new DefaultExtractorInput(this.currentDataSource, 0L, dataSource.open(dataSpec));
-        Extractor selectExtractor = selectExtractor(defaultExtractorInput);
-        Throwable e = null;
-        selectExtractor.init(new ExtractorOutputImpl());
+        long open = dataSource.open(dataSpec);
+        ProgressiveMediaExtractor progressiveMediaExtractor = this.progressiveMediaExtractor;
+        DataSource dataSource2 = this.currentDataSource;
+        Throwable th = null;
+        progressiveMediaExtractor.init(dataSource2, (Uri) Preconditions.checkNotNull(dataSource2.getUri()), this.currentDataSource.getResponseHeaders(), 0L, open, new ExtractorOutputImpl());
         boolean z = true;
         while (z) {
             try {
-                i = selectExtractor.read(defaultExtractorInput, this.positionHolder);
-            } catch (Exception | OutOfMemoryError e2) {
-                e = e2;
+                i = this.progressiveMediaExtractor.read(this.positionHolder);
+            } catch (Exception | OutOfMemoryError e) {
+                th = e;
                 i = -1;
             }
             boolean z2 = !this.tracksEnded || this.upstreamFormatsCount < this.sampleQueues.size() || this.seekMap == null;
-            if (e != null || (z2 && i == -1)) {
+            if (th != null || (z2 && i == -1)) {
                 release();
-                if (e != null) {
+                if (th != null) {
                     str = "Exception encountered while parsing input media.";
                 } else {
                     str = "Reached end of input before preparation completed.";
                 }
-                throw ParserException.createForMalformedContainer(str, e);
+                throw ParserException.createForMalformedContainer(str, th);
             }
             if (i == 1) {
-                defaultExtractorInput = reopenCurrentDataSource(this.positionHolder.position);
+                reopenCurrentDataSource(this.positionHolder.position);
             }
             z = z2;
         }
-        this.currentExtractorInput = defaultExtractorInput;
-        this.currentExtractor = selectExtractor;
     }
 
     public void release() {
-        SparseArray<MediaExtractorSampleQueue> sparseArray;
         int i = 0;
         while (true) {
             int size = this.sampleQueues.size();
-            sparseArray = this.sampleQueues;
-            if (i >= size) {
-                break;
+            SparseArray<MediaExtractorSampleQueue> sparseArray = this.sampleQueues;
+            if (i < size) {
+                sparseArray.valueAt(i).release();
+                i++;
+            } else {
+                sparseArray.clear();
+                this.progressiveMediaExtractor.release();
+                this.pendingSeek = null;
+                DataSourceUtil.closeQuietly(this.currentDataSource);
+                this.currentDataSource = null;
+                return;
             }
-            sparseArray.valueAt(i).release();
-            i++;
         }
-        sparseArray.clear();
-        Extractor extractor = this.currentExtractor;
-        if (extractor != null) {
-            extractor.release();
-            this.currentExtractor = null;
-        }
-        this.currentExtractorInput = null;
-        this.pendingSeek = null;
-        DataSourceUtil.closeQuietly(this.currentDataSource);
-        this.currentDataSource = null;
     }
 
     public int getTrackCount() {
@@ -413,9 +396,9 @@ public class MediaExtractorCompatInternal {
 
     public PersistableBundle getMetrics() {
         PersistableBundle persistableBundle = new PersistableBundle();
-        Extractor extractor = this.currentExtractor;
-        if (extractor != null) {
-            persistableBundle.putString("android.media.mediaextractor.fmt", extractor.getUnderlyingImplementation().getClass().getSimpleName());
+        String underlyingImplementationName = this.progressiveMediaExtractor.getUnderlyingImplementationName();
+        if (underlyingImplementationName != null) {
+            persistableBundle.putString("android.media.mediaextractor.fmt", underlyingImplementationName);
         }
         if (!this.tracks.isEmpty()) {
             Format format = this.tracks.get(0).getFormat(this.formatHolder, this.sampleHolderWithBufferReplacementDisabled);
@@ -460,43 +443,6 @@ public class MediaExtractorCompatInternal {
         Preconditions.checkState(read == -4);
     }
 
-    private Extractor selectExtractor(ExtractorInput extractorInput) throws IOException {
-        Extractor extractor;
-        Extractor[] createExtractors = this.extractorsFactory.createExtractors();
-        int length = createExtractors.length;
-        int i = 0;
-        while (true) {
-            if (i >= length) {
-                extractor = null;
-                break;
-            }
-            extractor = createExtractors[i];
-            try {
-            } catch (EOFException unused) {
-            } catch (Throwable th) {
-                extractorInput.resetPeekPosition();
-                throw th;
-            }
-            if (extractor.sniff(extractorInput)) {
-                extractorInput.resetPeekPosition();
-                break;
-            }
-            extractorInput.resetPeekPosition();
-            i++;
-        }
-        if (extractor != null) {
-            return extractor;
-        }
-        throw new UnrecognizedInputFormatException("None of the available extractors (" + Joiner.on(", ").join(Lists.transform(ImmutableList.copyOf(createExtractors), new Function() { // from class: androidx.media3.exoplayer.MediaExtractorCompatInternal$$ExternalSyntheticLambda0
-            @Override // com.google.common.base.Function
-            public final Object apply(Object obj) {
-                String simpleName;
-                simpleName = ((Extractor) obj).getUnderlyingImplementation().getClass().getSimpleName();
-                return simpleName;
-            }
-        })) + ") could read the stream.", (Uri) Preconditions.checkNotNull(((DataSource) Preconditions.checkNotNull(this.currentDataSource)).getUri()), ImmutableList.of());
-    }
-
     @EnsuresNonNullIf(expression = {"sampleMetadataQueue.peekFirst()"}, result = true)
     private boolean advanceToSampleOrEndOfInput() {
         int read;
@@ -509,14 +455,14 @@ public class MediaExtractorCompatInternal {
                         return false;
                     }
                     try {
-                        read = ((Extractor) Preconditions.checkNotNull(this.currentExtractor)).read((ExtractorInput) Preconditions.checkNotNull(this.currentExtractorInput), this.positionHolder);
+                        read = this.progressiveMediaExtractor.read(this.positionHolder);
                     } catch (Exception | OutOfMemoryError e) {
                         Log.w(TAG, "Treating exception as the end of input.", e);
                     }
                     if (read == -1) {
                         z = true;
                     } else if (read == 1) {
-                        this.currentExtractorInput = reopenCurrentDataSource(this.positionHolder.position);
+                        reopenCurrentDataSource(this.positionHolder.position);
                     }
                 } else if (this.selectedTrackIndices.contains(Integer.valueOf(((SampleMetadataQueue.SampleMetadata) Preconditions.checkNotNull(this.sampleMetadataQueue.peekFirst())).trackIndex))) {
                     return true;
@@ -538,14 +484,15 @@ public class MediaExtractorCompatInternal {
         mediaExtractorTrack.discardFrontSample();
     }
 
-    private ExtractorInput reopenCurrentDataSource(long j) throws IOException {
+    private void reopenCurrentDataSource(long j) throws IOException {
         DataSource dataSource = (DataSource) Preconditions.checkNotNull(this.currentDataSource);
+        Uri uri = (Uri) Preconditions.checkNotNull(dataSource.getUri());
         DataSourceUtil.closeQuietly(dataSource);
-        long open = dataSource.open(buildDataSpec((Uri) Preconditions.checkNotNull(dataSource.getUri()), this.offsetInCurrentFile + j));
+        long open = dataSource.open(buildDataSpec(uri, this.offsetInCurrentFile + j));
         if (open != -1) {
             open += j;
         }
-        return new DefaultExtractorInput(dataSource, j, open);
+        this.progressiveMediaExtractor.init(dataSource, uri, dataSource.getResponseHeaders(), j, open, new ExtractorOutputImpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -566,8 +513,8 @@ public class MediaExtractorCompatInternal {
             return;
         }
         SeekPoint seekPoint2 = (SeekPoint) Preconditions.checkNotNull(seekPoint);
-        ((Extractor) Preconditions.checkNotNull(this.currentExtractor)).seek(seekPoint2.position, seekPoint2.timeUs);
-        this.currentExtractorInput = reopenCurrentDataSource(seekPoint2.position);
+        this.progressiveMediaExtractor.seek(seekPoint2.position, seekPoint2.timeUs);
+        reopenCurrentDataSource(seekPoint2.position);
         this.pendingSeek = null;
     }
 
@@ -581,7 +528,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class ExtractorOutputImpl implements ExtractorOutput {
         private ExtractorOutputImpl() {
         }
@@ -613,7 +560,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaExtractorTrack {
         public final String compatibilityTrackMimeType;
         public final boolean isCompatibilityTrack;
@@ -666,7 +613,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class MediaExtractorSampleQueue extends SampleQueue {
         private int compatibilityTrackIndex;
         private int mainTrackIndex;
@@ -728,7 +675,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SampleMetadataQueue {
         private final ArrayDeque<SampleMetadata> sampleMetadataPool = new ArrayDeque<>();
         private final ArrayDeque<SampleMetadata> sampleMetadataQueue = new ArrayDeque<>();
@@ -771,7 +718,7 @@ public class MediaExtractorCompatInternal {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static final class SampleMetadata {
             public int flags;
             public long timeUs;

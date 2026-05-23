@@ -1,88 +1,89 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import kotlin.text.Charsets;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public abstract class Qf {
-    public static final String a(C0217e9 c0217e9) {
-        String str;
-        StringBuilder sb = new StringBuilder("Event sent: ");
-        int i = c0217e9.c;
-        String str2 = c0217e9.d;
-        byte[] bArr = c0217e9.e;
-        if (i == 1) {
-            str = "Attribution";
-        } else if (i == 2) {
-            str = "Session start";
-        } else if (i == 4) {
-            if (str2 == null) {
-                str2 = AbstractJsonLexerKt.NULL;
-            }
-            StringBuilder sb2 = new StringBuilder(str2);
-            if (bArr != null) {
-                String str3 = new String(bArr, Charsets.UTF_8);
-                if (!TextUtils.isEmpty(str3)) {
-                    sb2.append(" with value ");
-                    sb2.append(str3);
-                }
-            }
-            str = sb2.toString();
-        } else if (i == 5) {
-            str = "Referrer";
-        } else if (i == 7) {
-            str = "Session heartbeat";
-        } else if (i == 13) {
-            str = "The very first event";
-        } else if (i == 35) {
-            str = "E-Commerce";
-        } else if (i == 40) {
-            str = "Ad revenue (ILRD)";
-        } else if (i == 42) {
-            str = "External attribution";
-        } else if (i == 16) {
-            str = "Open";
-        } else if (i == 17) {
-            str = "Update";
-        } else if (i == 20) {
-            str = "User profile update";
-        } else if (i != 21) {
-            switch (i) {
-                case 25:
-                    str = "ANR";
-                    break;
-                case 26:
-                    str = "Crash: " + str2;
-                    break;
-                case 27:
-                    str = "Error: " + str2;
-                    break;
-                default:
-                    str = "type=" + i;
-                    break;
-            }
-        } else {
-            str = "Revenue";
-        }
-        return sb.append(str).toString();
+public final class Qf implements InterfaceC0425m8 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f732a;
+    public final JSONObject b;
+    public final boolean c;
+    public final boolean d;
+    public final EnumC0399l8 e;
+
+    public Qf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0399l8 enumC0399l8) {
+        this.f732a = str;
+        this.b = jSONObject;
+        this.c = z;
+        this.d = z2;
+        this.e = enumC0399l8;
     }
 
-    public static final String a(String str, EnumC0142bb enumC0142bb, String str2, String str3) {
-        if (AbstractC0671w9.d.contains(EnumC0142bb.a(enumC0142bb.f922a))) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(str);
-            sb.append(": ");
-            sb.append(enumC0142bb.name());
-            if (AbstractC0671w9.f.contains(enumC0142bb) && !TextUtils.isEmpty(str2)) {
-                sb.append(" with name ");
-                sb.append(str2);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0425m8
+    public final EnumC0399l8 a() {
+        return this.e;
+    }
+
+    public final JSONObject b() {
+        if (this.c) {
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("trackingId", this.f732a);
+                if (this.b.length() > 0) {
+                    jSONObject.put("additionalParams", this.b);
+                }
+            } catch (Throwable unused) {
             }
-            if (AbstractC0671w9.e.contains(enumC0142bb) && !TextUtils.isEmpty(str3)) {
-                sb.append(" with value ");
-                sb.append(str3);
-            }
-            return sb.toString();
+            return jSONObject;
         }
         return null;
+    }
+
+    public final JSONObject c() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("trackingId", this.f732a);
+            jSONObject.put("additionalParams", this.b);
+            jSONObject.put("wasSet", this.c);
+            jSONObject.put("autoTracking", this.d);
+            jSONObject.put("source", this.e.f1075a);
+        } catch (Throwable unused) {
+        }
+        return jSONObject;
+    }
+
+    public final String toString() {
+        return "PreloadInfoState{trackingId='" + this.f732a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public static Qf a(JSONObject jSONObject) {
+        EnumC0399l8 enumC0399l8;
+        String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
+        JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
+        int i = 0;
+        boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
+        boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
+        String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
+        EnumC0399l8.b.getClass();
+        EnumC0399l8[] values = EnumC0399l8.values();
+        int length = values.length;
+        while (true) {
+            if (i >= length) {
+                enumC0399l8 = null;
+                break;
+            }
+            enumC0399l8 = values[i];
+            if (Intrinsics.areEqual(enumC0399l8.f1075a, optStringOrNull2)) {
+                break;
+            }
+            i++;
+        }
+        if (enumC0399l8 == null) {
+            enumC0399l8 = EnumC0399l8.c;
+        }
+        return new Qf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0399l8);
     }
 }

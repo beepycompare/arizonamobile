@@ -1,12 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.appsetid.internal.AppSetIdListener;
-import io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever;
+import io.appmetrica.analytics.AppMetricaConfig;
+import java.util.Map;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class U7 implements IAppSetIdRetriever {
-    @Override // io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever
-    public final void retrieveAppSetId(Context context, AppSetIdListener appSetIdListener) {
-        appSetIdListener.onFailure(new IllegalStateException("No App Set ID library"));
+public final class U7 {
+    public final void a(JSONObject jSONObject, AppMetricaConfig.Builder builder) {
+    }
+
+    public final JSONObject a(Map<String, ? extends Object> map) {
+        return new JSONObject();
     }
 }

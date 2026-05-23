@@ -9,7 +9,7 @@ import org.checkerframework.framework.qual.JavaExpression;
 @Target({ElementType.FIELD})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface HasSubsequence {
     @JavaExpression
     String from();

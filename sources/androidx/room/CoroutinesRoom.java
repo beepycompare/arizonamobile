@@ -196,7 +196,7 @@ public final class CoroutinesRoom {
                             if (cancellationSignal3 != null) {
                                 cancellationSignal3.cancel();
                             }
-                            Job.DefaultImpls.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
+                            Job.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
                         }
                     });
                     result = cancellableContinuationImpl.getResult();
@@ -236,7 +236,7 @@ public final class CoroutinesRoom {
                     if (cancellationSignal3 != null) {
                         cancellationSignal3.cancel();
                     }
-                    Job.DefaultImpls.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
+                    Job.cancel$default(launch$default, (CancellationException) null, 1, (Object) null);
                 }
             });
             result = cancellableContinuationImpl3.getResult();

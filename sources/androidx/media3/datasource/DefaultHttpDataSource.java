@@ -2,6 +2,7 @@ package androidx.media3.datasource;
 
 import android.net.TrafficStats;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Log;
@@ -474,7 +475,8 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     }
 
     private static long getCurrentThreadId() {
-        return Thread.currentThread().getId();
+        Thread currentThread = Thread.currentThread();
+        return Build.VERSION.SDK_INT < 36 ? currentThread.getId() : currentThread.threadId();
     }
 
     /* loaded from: classes4.dex */

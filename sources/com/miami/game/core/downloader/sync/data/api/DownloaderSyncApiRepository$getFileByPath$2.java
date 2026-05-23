@@ -16,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DownloaderSyncApiRepository.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Ljava/io/File;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository$getFileByPath$2", f = "DownloaderSyncApiRepository.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DownloaderSyncApiRepository$getFileByPath$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super File>, Object> {
     final /* synthetic */ Uri $uri;
     int label;

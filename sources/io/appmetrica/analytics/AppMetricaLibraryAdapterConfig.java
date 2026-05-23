@@ -9,14 +9,14 @@ public class AppMetricaLibraryAdapterConfig {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Boolean f282a;
+        private Boolean f209a;
 
         public AppMetricaLibraryAdapterConfig build() {
             return new AppMetricaLibraryAdapterConfig(this, 0);
         }
 
         public Builder withAdvIdentifiersTracking(boolean z) {
-            this.f282a = Boolean.valueOf(z);
+            this.f209a = Boolean.valueOf(z);
             return this;
         }
     }
@@ -34,6 +34,6 @@ public class AppMetricaLibraryAdapterConfig {
     }
 
     private AppMetricaLibraryAdapterConfig(Builder builder) {
-        this.advIdentifiersTracking = builder.f282a;
+        this.advIdentifiersTracking = builder.f209a;
     }
 }

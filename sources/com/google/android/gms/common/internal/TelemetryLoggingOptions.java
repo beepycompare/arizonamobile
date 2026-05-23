@@ -2,21 +2,22 @@ package com.google.android.gms.common.internal;
 
 import android.os.Bundle;
 import com.google.android.gms.common.api.Api;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class TelemetryLoggingOptions implements Api.ApiOptions.Optional {
     public static final TelemetryLoggingOptions zaa = builder().build();
     private final String zab;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class Builder {
         private String zaa;
 
         private Builder() {
+            throw null;
         }
 
-        /* synthetic */ Builder(zaac zaacVar) {
+        /* synthetic */ Builder(byte[] bArr) {
         }
 
         public TelemetryLoggingOptions build() {
@@ -29,7 +30,7 @@ public class TelemetryLoggingOptions implements Api.ApiOptions.Optional {
         }
     }
 
-    /* synthetic */ TelemetryLoggingOptions(String str, zaad zaadVar) {
+    /* synthetic */ TelemetryLoggingOptions(String str, byte[] bArr) {
         this.zab = str;
     }
 

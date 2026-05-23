@@ -96,7 +96,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.ServerSideAdInsertionMediaSource$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ServerSideAdInsertionMediaSource.this.m8301x8b1696bf(immutableMap, timeline);
+                        ServerSideAdInsertionMediaSource.this.m8909x8b1696bf(immutableMap, timeline);
                     }
                 });
             }
@@ -105,7 +105,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAdPlaybackStates$0$androidx-media3-exoplayer-source-ads-ServerSideAdInsertionMediaSource  reason: not valid java name */
-    public /* synthetic */ void m8301x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
+    public /* synthetic */ void m8909x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
         AdPlaybackState adPlaybackState;
         for (SharedMediaPeriod sharedMediaPeriod : this.mediaPeriods.values()) {
             AdPlaybackState adPlaybackState2 = (AdPlaybackState) immutableMap.get(sharedMediaPeriod.periodUid);
@@ -801,7 +801,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes3.dex */
     public static final class MediaPeriodImpl implements MediaPeriod {
         public MediaPeriod.Callback callback;
@@ -812,6 +812,11 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         public final MediaSource.MediaPeriodId mediaPeriodId;
         public final MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcher;
         public final SharedMediaPeriod sharedPeriod;
+
+        @Override // androidx.media3.exoplayer.source.MediaPeriod
+        public long setEndPositionUs(long j) {
+            return Long.MIN_VALUE;
+        }
 
         public MediaPeriodImpl(SharedMediaPeriod sharedMediaPeriod, MediaSource.MediaPeriodId mediaPeriodId, MediaSourceEventListener.EventDispatcher eventDispatcher, DrmSessionEventListener.EventDispatcher eventDispatcher2) {
             this.sharedPeriod = sharedMediaPeriod;

@@ -1,90 +1,42 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import com.google.android.gms.common.internal.Preconditions;
-import java.util.Iterator;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import com.google.android.vending.expansion.downloader.Constants;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzbb {
-    final String zza;
-    final String zzb;
-    final String zzc;
-    final long zzd;
-    final long zze;
-    final zzbe zzf;
+public final class zzbb extends zzjf {
+    private long zza;
+    private String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzbb(zzic zzicVar, String str, String str2, String str3, long j, long j2, Bundle bundle) {
-        zzbe zzbeVar;
-        Preconditions.checkNotEmpty(str2);
-        Preconditions.checkNotEmpty(str3);
-        this.zza = str2;
-        this.zzb = str3;
-        this.zzc = true == TextUtils.isEmpty(str) ? null : str;
-        this.zzd = j;
-        this.zze = j2;
-        if (j2 != 0 && j2 > j) {
-            zzicVar.zzaV().zze().zzb("Event created with reverse previous/current timestamps. appId", zzgu.zzl(str2));
-        }
-        if (bundle == null || bundle.isEmpty()) {
-            zzbeVar = new zzbe(new Bundle());
-        } else {
-            Bundle bundle2 = new Bundle(bundle);
-            Iterator<String> it = bundle2.keySet().iterator();
-            while (it.hasNext()) {
-                String next = it.next();
-                if (next == null) {
-                    zzicVar.zzaV().zzb().zza("Param name can't be null");
-                    it.remove();
-                } else {
-                    Object zzE = zzicVar.zzk().zzE(next, bundle2.get(next));
-                    if (zzE == null) {
-                        zzicVar.zzaV().zze().zzb("Param value can't be null", zzicVar.zzl().zzb(next));
-                        it.remove();
-                    } else {
-                        zzicVar.zzk().zzM(bundle2, next, zzE);
-                    }
-                }
-            }
-            zzbeVar = new zzbe(bundle2);
-        }
-        this.zzf = zzbeVar;
+    public zzbb(zzic zzicVar) {
+        super(zzicVar);
     }
 
-    public final String toString() {
-        String obj = this.zzf.toString();
-        String str = this.zza;
-        int length = String.valueOf(str).length();
-        String str2 = this.zzb;
-        StringBuilder sb = new StringBuilder(length + 22 + String.valueOf(str2).length() + 10 + obj.length() + 1);
-        sb.append("Event{appId='");
-        sb.append(str);
-        sb.append("', name='");
-        sb.append(str2);
-        sb.append("', params=");
-        sb.append(obj);
-        sb.append("}");
-        return sb.toString();
+    @Override // com.google.android.gms.measurement.internal.zzjf
+    protected final boolean zza() {
+        Calendar calendar = Calendar.getInstance();
+        this.zza = TimeUnit.MINUTES.convert(calendar.get(15) + calendar.get(16), TimeUnit.MILLISECONDS);
+        Locale locale = Locale.getDefault();
+        String lowerCase = locale.getLanguage().toLowerCase(Locale.ENGLISH);
+        String lowerCase2 = locale.getCountry().toLowerCase(Locale.ENGLISH);
+        StringBuilder sb = new StringBuilder(String.valueOf(lowerCase).length() + 1 + String.valueOf(lowerCase2).length());
+        sb.append(lowerCase);
+        sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+        sb.append(lowerCase2);
+        this.zzb = sb.toString();
+        return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbb zza(zzic zzicVar, long j) {
-        return new zzbb(zzicVar, this.zzc, this.zza, this.zzb, this.zzd, j, this.zzf);
+    public final long zzb() {
+        zzw();
+        return this.zza;
     }
 
-    private zzbb(zzic zzicVar, String str, String str2, String str3, long j, long j2, zzbe zzbeVar) {
-        Preconditions.checkNotEmpty(str2);
-        Preconditions.checkNotEmpty(str3);
-        Preconditions.checkNotNull(zzbeVar);
-        this.zza = str2;
-        this.zzb = str3;
-        this.zzc = true == TextUtils.isEmpty(str) ? null : str;
-        this.zzd = j;
-        this.zze = j2;
-        if (j2 != 0 && j2 > j) {
-            zzicVar.zzaV().zze().zzc("Event created with reverse previous/current timestamps. appId, name", zzgu.zzl(str2), zzgu.zzl(str3));
-        }
-        this.zzf = zzbeVar;
+    public final String zzc() {
+        zzw();
+        return this.zzb;
     }
 }

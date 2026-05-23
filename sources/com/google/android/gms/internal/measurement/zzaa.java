@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import com.google.common.collect.ImmutableSet;
 import java.util.HashMap;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzaa {
     private static final ImmutableSet zza = ImmutableSet.of("_syn", "_err", "_el");
@@ -22,22 +22,22 @@ public final class zzaa {
     }
 
     public static Object zzh(String str, Object obj, Object obj2) {
-        if (!zza.contains(str) || !(obj2 instanceof Double)) {
-            if (str.startsWith("_")) {
-                if (!(obj instanceof String) && obj != null) {
-                    return obj;
-                }
-            } else if (!(obj instanceof Double)) {
-                if (obj instanceof Long) {
-                    return Long.valueOf(Math.round(((Double) obj2).doubleValue()));
-                }
-                if (obj instanceof String) {
-                    return obj2.toString();
-                }
-            }
-            return obj2;
+        if (zza.contains(str) && (obj2 instanceof Double)) {
+            return Long.valueOf(Math.round(((Double) obj2).doubleValue()));
         }
-        return Long.valueOf(Math.round(((Double) obj2).doubleValue()));
+        if (str.startsWith("_")) {
+            if (!(obj instanceof String) && obj != null) {
+                return obj;
+            }
+        } else if (!(obj instanceof Double)) {
+            if (obj instanceof Long) {
+                return Long.valueOf(Math.round(((Double) obj2).doubleValue()));
+            }
+            if (obj instanceof String) {
+                return obj2.toString();
+            }
+        }
+        return obj2;
     }
 
     public final boolean equals(Object obj) {

@@ -77,67 +77,67 @@ public final class CheckboxColors {
     }
 
     /* renamed from: getCheckedCheckmarkColor-0d7_KjU  reason: not valid java name */
-    public final long m1793getCheckedCheckmarkColor0d7_KjU() {
+    public final long m2238getCheckedCheckmarkColor0d7_KjU() {
         return this.checkedCheckmarkColor;
     }
 
     /* renamed from: getUncheckedCheckmarkColor-0d7_KjU  reason: not valid java name */
-    public final long m1802getUncheckedCheckmarkColor0d7_KjU() {
+    public final long m2247getUncheckedCheckmarkColor0d7_KjU() {
         return this.uncheckedCheckmarkColor;
     }
 
     /* renamed from: getCheckedBoxColor-0d7_KjU  reason: not valid java name */
-    public final long m1792getCheckedBoxColor0d7_KjU() {
+    public final long m2237getCheckedBoxColor0d7_KjU() {
         return this.checkedBoxColor;
     }
 
     /* renamed from: getUncheckedBoxColor-0d7_KjU  reason: not valid java name */
-    public final long m1801getUncheckedBoxColor0d7_KjU() {
+    public final long m2246getUncheckedBoxColor0d7_KjU() {
         return this.uncheckedBoxColor;
     }
 
     /* renamed from: getDisabledCheckedBoxColor-0d7_KjU  reason: not valid java name */
-    public final long m1795getDisabledCheckedBoxColor0d7_KjU() {
+    public final long m2240getDisabledCheckedBoxColor0d7_KjU() {
         return this.disabledCheckedBoxColor;
     }
 
     /* renamed from: getDisabledUncheckedBoxColor-0d7_KjU  reason: not valid java name */
-    public final long m1799getDisabledUncheckedBoxColor0d7_KjU() {
+    public final long m2244getDisabledUncheckedBoxColor0d7_KjU() {
         return this.disabledUncheckedBoxColor;
     }
 
     /* renamed from: getDisabledIndeterminateBoxColor-0d7_KjU  reason: not valid java name */
-    public final long m1797getDisabledIndeterminateBoxColor0d7_KjU() {
+    public final long m2242getDisabledIndeterminateBoxColor0d7_KjU() {
         return this.disabledIndeterminateBoxColor;
     }
 
     /* renamed from: getCheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m1791getCheckedBorderColor0d7_KjU() {
+    public final long m2236getCheckedBorderColor0d7_KjU() {
         return this.checkedBorderColor;
     }
 
     /* renamed from: getUncheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m1800getUncheckedBorderColor0d7_KjU() {
+    public final long m2245getUncheckedBorderColor0d7_KjU() {
         return this.uncheckedBorderColor;
     }
 
     /* renamed from: getDisabledBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m1794getDisabledBorderColor0d7_KjU() {
+    public final long m2239getDisabledBorderColor0d7_KjU() {
         return this.disabledBorderColor;
     }
 
     /* renamed from: getDisabledUncheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m1798getDisabledUncheckedBorderColor0d7_KjU() {
+    public final long m2243getDisabledUncheckedBorderColor0d7_KjU() {
         return this.disabledUncheckedBorderColor;
     }
 
     /* renamed from: getDisabledIndeterminateBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m1796getDisabledIndeterminateBorderColor0d7_KjU() {
+    public final long m2241getDisabledIndeterminateBorderColor0d7_KjU() {
         return this.disabledIndeterminateBorderColor;
     }
 
     /* renamed from: copy-2qZNXz8$default  reason: not valid java name */
-    public static /* synthetic */ CheckboxColors m1789copy2qZNXz8$default(CheckboxColors checkboxColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
+    public static /* synthetic */ CheckboxColors m2234copy2qZNXz8$default(CheckboxColors checkboxColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, int i, Object obj) {
         long j13;
         long j14;
         long j15 = (i & 1) != 0 ? checkboxColors.checkedCheckmarkColor : j;
@@ -159,11 +159,11 @@ public final class CheckboxColors {
             j13 = j12;
             j14 = j26;
         }
-        return checkboxColors.m1790copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
+        return checkboxColors.m2235copy2qZNXz8(j22, j16, j17, j18, j19, j20, j21, j23, j24, j25, j14, j13);
     }
 
     /* renamed from: copy-2qZNXz8  reason: not valid java name */
-    public final CheckboxColors m1790copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
+    public final CheckboxColors m2235copy2qZNXz8(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12) {
         return new CheckboxColors(j != 16 ? j : this.checkedCheckmarkColor, j2 != 16 ? j2 : this.uncheckedCheckmarkColor, j3 != 16 ? j3 : this.checkedBoxColor, j4 != 16 ? j4 : this.uncheckedBoxColor, j5 != 16 ? j5 : this.disabledCheckedBoxColor, j6 != 16 ? j6 : this.disabledUncheckedBoxColor, j7 != 16 ? j7 : this.disabledIndeterminateBoxColor, j8 != 16 ? j8 : this.checkedBorderColor, j9 != 16 ? j9 : this.uncheckedBorderColor, j10 != 16 ? j10 : this.disabledBorderColor, j11 != 16 ? j11 : this.disabledUncheckedBorderColor, j12 != 16 ? j12 : this.disabledIndeterminateBorderColor, null);
     }
 
@@ -178,12 +178,12 @@ public final class CheckboxColors {
         } else {
             j = this.checkedCheckmarkColor;
         }
-        State<Color> m134animateColorAsStateeuL9pac = SingleValueAnimationKt.m134animateColorAsStateeuL9pac(j, colorAnimationSpecForState(toggleableState, composer, i & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer, 0, 12);
+        State<Color> m158animateColorAsStateeuL9pac = SingleValueAnimationKt.m158animateColorAsStateeuL9pac(j, colorAnimationSpecForState(toggleableState, composer, i & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer, 0, 12);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m134animateColorAsStateeuL9pac;
+        return m158animateColorAsStateeuL9pac;
     }
 
     public final State<Color> boxColor$material3(boolean z, ToggleableState toggleableState, Composer composer, int i) {
@@ -220,13 +220,13 @@ public final class CheckboxColors {
             composer.startReplaceGroup(496051715);
             ComposerKt.sourceInformation(composer, "644@29378L33,644@29350L62");
             composer2 = composer;
-            rememberUpdatedState = SingleValueAnimationKt.m134animateColorAsStateeuL9pac(j2, colorAnimationSpecForState(toggleableState, composer, (i >> 3) & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer2, 0, 12);
+            rememberUpdatedState = SingleValueAnimationKt.m158animateColorAsStateeuL9pac(j2, colorAnimationSpecForState(toggleableState, composer, (i >> 3) & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer2, 0, 12);
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;
             composer2.startReplaceGroup(496141925);
             ComposerKt.sourceInformation(composer2, "646@29442L28");
-            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(j2), composer2, 0);
+            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(j2), composer2, 0);
             composer2.endReplaceGroup();
         }
         if (ComposerKt.isTraceInProgress()) {
@@ -270,13 +270,13 @@ public final class CheckboxColors {
             composer.startReplaceGroup(633231558);
             ComposerKt.sourceInformation(composer, "676@30610L33,676@30582L62");
             composer2 = composer;
-            rememberUpdatedState = SingleValueAnimationKt.m134animateColorAsStateeuL9pac(j2, colorAnimationSpecForState(toggleableState, composer, (i >> 3) & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer2, 0, 12);
+            rememberUpdatedState = SingleValueAnimationKt.m158animateColorAsStateeuL9pac(j2, colorAnimationSpecForState(toggleableState, composer, (i >> 3) & WebSocketProtocol.PAYLOAD_SHORT), null, null, composer2, 0, 12);
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;
             composer2.startReplaceGroup(633321768);
             ComposerKt.sourceInformation(composer2, "678@30674L28");
-            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(j2), composer2, 0);
+            rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(j2), composer2, 0);
             composer2.endReplaceGroup();
         }
         if (ComposerKt.isTraceInProgress()) {
@@ -320,10 +320,10 @@ public final class CheckboxColors {
             return false;
         }
         CheckboxColors checkboxColors = (CheckboxColors) obj;
-        return Color.m4773equalsimpl0(this.checkedCheckmarkColor, checkboxColors.checkedCheckmarkColor) && Color.m4773equalsimpl0(this.uncheckedCheckmarkColor, checkboxColors.uncheckedCheckmarkColor) && Color.m4773equalsimpl0(this.checkedBoxColor, checkboxColors.checkedBoxColor) && Color.m4773equalsimpl0(this.uncheckedBoxColor, checkboxColors.uncheckedBoxColor) && Color.m4773equalsimpl0(this.disabledCheckedBoxColor, checkboxColors.disabledCheckedBoxColor) && Color.m4773equalsimpl0(this.disabledUncheckedBoxColor, checkboxColors.disabledUncheckedBoxColor) && Color.m4773equalsimpl0(this.disabledIndeterminateBoxColor, checkboxColors.disabledIndeterminateBoxColor) && Color.m4773equalsimpl0(this.checkedBorderColor, checkboxColors.checkedBorderColor) && Color.m4773equalsimpl0(this.uncheckedBorderColor, checkboxColors.uncheckedBorderColor) && Color.m4773equalsimpl0(this.disabledBorderColor, checkboxColors.disabledBorderColor) && Color.m4773equalsimpl0(this.disabledUncheckedBorderColor, checkboxColors.disabledUncheckedBorderColor) && Color.m4773equalsimpl0(this.disabledIndeterminateBorderColor, checkboxColors.disabledIndeterminateBorderColor);
+        return Color.m5349equalsimpl0(this.checkedCheckmarkColor, checkboxColors.checkedCheckmarkColor) && Color.m5349equalsimpl0(this.uncheckedCheckmarkColor, checkboxColors.uncheckedCheckmarkColor) && Color.m5349equalsimpl0(this.checkedBoxColor, checkboxColors.checkedBoxColor) && Color.m5349equalsimpl0(this.uncheckedBoxColor, checkboxColors.uncheckedBoxColor) && Color.m5349equalsimpl0(this.disabledCheckedBoxColor, checkboxColors.disabledCheckedBoxColor) && Color.m5349equalsimpl0(this.disabledUncheckedBoxColor, checkboxColors.disabledUncheckedBoxColor) && Color.m5349equalsimpl0(this.disabledIndeterminateBoxColor, checkboxColors.disabledIndeterminateBoxColor) && Color.m5349equalsimpl0(this.checkedBorderColor, checkboxColors.checkedBorderColor) && Color.m5349equalsimpl0(this.uncheckedBorderColor, checkboxColors.uncheckedBorderColor) && Color.m5349equalsimpl0(this.disabledBorderColor, checkboxColors.disabledBorderColor) && Color.m5349equalsimpl0(this.disabledUncheckedBorderColor, checkboxColors.disabledUncheckedBorderColor) && Color.m5349equalsimpl0(this.disabledIndeterminateBorderColor, checkboxColors.disabledIndeterminateBorderColor);
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((Color.m4779hashCodeimpl(this.checkedCheckmarkColor) * 31) + Color.m4779hashCodeimpl(this.uncheckedCheckmarkColor)) * 31) + Color.m4779hashCodeimpl(this.checkedBoxColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedBoxColor)) * 31) + Color.m4779hashCodeimpl(this.disabledCheckedBoxColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedBoxColor)) * 31) + Color.m4779hashCodeimpl(this.disabledIndeterminateBoxColor)) * 31) + Color.m4779hashCodeimpl(this.checkedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.disabledBorderColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.disabledIndeterminateBorderColor);
+        return (((((((((((((((((((((Color.m5355hashCodeimpl(this.checkedCheckmarkColor) * 31) + Color.m5355hashCodeimpl(this.uncheckedCheckmarkColor)) * 31) + Color.m5355hashCodeimpl(this.checkedBoxColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedBoxColor)) * 31) + Color.m5355hashCodeimpl(this.disabledCheckedBoxColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedBoxColor)) * 31) + Color.m5355hashCodeimpl(this.disabledIndeterminateBoxColor)) * 31) + Color.m5355hashCodeimpl(this.checkedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.disabledBorderColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.disabledIndeterminateBorderColor);
     }
 }

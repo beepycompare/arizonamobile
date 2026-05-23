@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.FrameLayout;
 import androidx.core.math.MathUtils;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.canvas.CanvasCompat;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.shape.AbsoluteCornerSize;
 import com.google.android.material.shape.ClampedCornerSize;
 import com.google.android.material.shape.CornerSize;
@@ -89,11 +91,20 @@ public class MaskableFrameLayout extends FrameLayout implements Maskable, Shapea
         });
         this.shapeAppearanceModel = withTransformedCornerSizes;
         this.shapeableDelegate.onShapeAppearanceChanged(this, withTransformedCornerSizes);
+        maybeUpdateFocusRingDrawableShapeAppearance(getBackground(), this.shapeAppearanceModel);
+        maybeUpdateFocusRingDrawableShapeAppearance(getForeground(), this.shapeAppearanceModel);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ CornerSize lambda$setShapeAppearanceModel$0(CornerSize cornerSize) {
         return cornerSize instanceof AbsoluteCornerSize ? ClampedCornerSize.createFromCornerSize((AbsoluteCornerSize) cornerSize) : cornerSize;
+    }
+
+    private void maybeUpdateFocusRingDrawableShapeAppearance(Drawable drawable, ShapeAppearanceModel shapeAppearanceModel) {
+        FocusRingDrawable findAndMutate = FocusRingDrawable.findAndMutate(drawable);
+        if (findAndMutate != null) {
+            findAndMutate.setFocusRingShapeAppearance(shapeAppearanceModel);
+        }
     }
 
     @Override // com.google.android.material.shape.Shapeable
@@ -177,14 +188,14 @@ public class MaskableFrameLayout extends FrameLayout implements Maskable, Shapea
         this.shapeableDelegate.maybeClip(canvas, new CanvasCompat.CanvasOperation() { // from class: com.google.android.material.carousel.MaskableFrameLayout$$ExternalSyntheticLambda1
             @Override // com.google.android.material.canvas.CanvasCompat.CanvasOperation
             public final void run(Canvas canvas2) {
-                MaskableFrameLayout.this.m8856x418c47c0(canvas2);
+                MaskableFrameLayout.this.m9471x418c47c0(canvas2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchDraw$1$com-google-android-material-carousel-MaskableFrameLayout  reason: not valid java name */
-    public /* synthetic */ void m8856x418c47c0(Canvas canvas) {
+    public /* synthetic */ void m9471x418c47c0(Canvas canvas) {
         super.dispatchDraw(canvas);
     }
 

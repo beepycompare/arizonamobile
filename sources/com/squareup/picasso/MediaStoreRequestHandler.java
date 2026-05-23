@@ -15,7 +15,7 @@ import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
 import okio.Okio;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaStoreRequestHandler extends ContentStreamRequestHandler {
     private static final String[] CONTENT_ORIENTATION = {"orientation"};
 
@@ -104,7 +104,7 @@ public class MediaStoreRequestHandler extends ContentStreamRequestHandler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public enum PicassoKind {
         MICRO(3, 96, 96),
         MINI(1, 512, RendererCapabilities.DECODER_SUPPORT_MASK),

@@ -3,10 +3,10 @@ package io.appmetrica.analytics.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.impl.Ya;
+import io.appmetrica.analytics.impl.C0713xb;
 /* loaded from: classes5.dex */
 public class IdentifiersResult implements Parcelable {
-    public static final Parcelable.Creator<IdentifiersResult> CREATOR = new Ya();
+    public static final Parcelable.Creator<IdentifiersResult> CREATOR = new C0713xb();
     public final String errorExplanation;
     public final String id;
     public final IdentifierStatus status;

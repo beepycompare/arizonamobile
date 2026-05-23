@@ -1,48 +1,37 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import android.os.Looper;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.GoogleApi;
-import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.internal.BaseImplementation;
-import org.checkerframework.checker.initialization.qual.NotOnlyInitialized;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zabv extends zaag {
-    @NotOnlyInitialized
-    private final GoogleApi zaa;
+public interface zabv {
+    BaseImplementation.ApiMethodImpl zab(BaseImplementation.ApiMethodImpl apiMethodImpl);
 
-    public zabv(GoogleApi googleApi) {
-        super("Method is not supported by connectionless client. APIs supporting connectionless client must not call this method.");
-        this.zaa = googleApi;
-    }
+    BaseImplementation.ApiMethodImpl zac(BaseImplementation.ApiMethodImpl apiMethodImpl);
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final <A extends Api.AnyClient, R extends Result, T extends BaseImplementation.ApiMethodImpl<R, A>> T enqueue(T t) {
-        return (T) this.zaa.doRead((GoogleApi) t);
-    }
+    ConnectionResult zad(Api api);
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final <A extends Api.AnyClient, T extends BaseImplementation.ApiMethodImpl<? extends Result, A>> T execute(T t) {
-        return (T) this.zaa.doWrite((GoogleApi) t);
-    }
+    void zae();
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final Context getContext() {
-        return this.zaa.getApplicationContext();
-    }
+    ConnectionResult zaf();
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final Looper getLooper() {
-        return this.zaa.getLooper();
-    }
+    ConnectionResult zag(long j, TimeUnit timeUnit);
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void zao(zada zadaVar) {
-    }
+    void zah();
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void zap(zada zadaVar) {
-    }
+    boolean zai();
+
+    boolean zaj();
+
+    boolean zak(SignInConnectionListener signInConnectionListener);
+
+    void zal();
+
+    void zam();
+
+    void zan(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
 }

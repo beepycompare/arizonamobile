@@ -1,14 +1,13 @@
 package androidx.compose.ui.contentcapture;
 
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidContentCaptureManager.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.contentcapture.AndroidContentCaptureManager", f = "AndroidContentCaptureManager.android.kt", i = {}, l = {187, DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION}, m = "boundsUpdatesEventLoop$ui", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.contentcapture.AndroidContentCaptureManager", f = "AndroidContentCaptureManager.android.kt", i = {}, l = {205, 215}, m = "boundsUpdatesEventLoop$ui", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class AndroidContentCaptureManager$boundsUpdatesEventLoop$1 extends ContinuationImpl {
     Object L$0;

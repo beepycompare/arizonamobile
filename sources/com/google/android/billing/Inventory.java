@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Inventory {
     Map<String, SkuDetails> mSkuMap = new HashMap();
     Map<String, Purchase> mPurchaseMap = new HashMap();

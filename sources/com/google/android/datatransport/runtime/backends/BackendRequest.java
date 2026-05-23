@@ -2,10 +2,10 @@ package com.google.android.datatransport.runtime.backends;
 
 import com.google.android.datatransport.runtime.EventInternal;
 import com.google.android.datatransport.runtime.backends.AutoValue_BackendRequest;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BackendRequest {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract BackendRequest build();
 

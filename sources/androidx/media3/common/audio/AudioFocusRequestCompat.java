@@ -12,6 +12,7 @@ import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class AudioFocusRequestCompat {
+    private final boolean acceptsDelayedFocusGain;
     private final AudioAttributes audioAttributes;
     private final Handler focusChangeHandler;
     private final int focusGain;
@@ -19,18 +20,19 @@ public final class AudioFocusRequestCompat {
     private final AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener;
     private final boolean pauseOnDuck;
 
-    AudioFocusRequestCompat(int i, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, AudioAttributes audioAttributes, boolean z) {
+    AudioFocusRequestCompat(int i, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, AudioAttributes audioAttributes, boolean z, boolean z2) {
         this.focusGain = i;
         this.focusChangeHandler = handler;
         this.audioAttributes = audioAttributes;
         this.pauseOnDuck = z;
+        this.acceptsDelayedFocusGain = z2;
         if (Build.VERSION.SDK_INT < 26) {
             this.onAudioFocusChangeListener = new OnAudioFocusChangeListenerHandlerCompat(onAudioFocusChangeListener, handler);
         } else {
             this.onAudioFocusChangeListener = onAudioFocusChangeListener;
         }
         if (Build.VERSION.SDK_INT >= 26) {
-            this.frameworkAudioFocusRequest = new AudioFocusRequest.Builder(i).setAudioAttributes(audioAttributes.getPlatformAudioAttributes()).setWillPauseWhenDucked(z).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).build();
+            this.frameworkAudioFocusRequest = new AudioFocusRequest.Builder(i).setAudioAttributes(audioAttributes.getPlatformAudioAttributes()).setWillPauseWhenDucked(z).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).setAcceptsDelayedFocusGain(z2).build();
         } else {
             this.frameworkAudioFocusRequest = null;
         }
@@ -46,6 +48,10 @@ public final class AudioFocusRequestCompat {
 
     public boolean willPauseWhenDucked() {
         return this.pauseOnDuck;
+    }
+
+    public boolean acceptsDelayedFocusGain() {
+        return this.acceptsDelayedFocusGain;
     }
 
     public AudioManager.OnAudioFocusChangeListener getOnAudioFocusChangeListener() {
@@ -82,6 +88,7 @@ public final class AudioFocusRequestCompat {
 
     /* loaded from: classes2.dex */
     public static final class Builder {
+        private boolean acceptsDelayedFocusGain;
         private AudioAttributes audioAttributes;
         private Handler focusChangeHandler;
         private int focusGain;
@@ -134,11 +141,16 @@ public final class AudioFocusRequestCompat {
             return this;
         }
 
+        public Builder setAcceptsDelayedFocusGain(boolean z) {
+            this.acceptsDelayedFocusGain = z;
+            return this;
+        }
+
         public AudioFocusRequestCompat build() {
             if (this.onAudioFocusChangeListener == null) {
                 throw new IllegalStateException("Can't build an AudioFocusRequestCompat instance without a listener");
             }
-            return new AudioFocusRequestCompat(this.focusGain, this.onAudioFocusChangeListener, (Handler) Preconditions.checkNotNull(this.focusChangeHandler), this.audioAttributes, this.pauseOnDuck);
+            return new AudioFocusRequestCompat(this.focusGain, this.onAudioFocusChangeListener, (Handler) Preconditions.checkNotNull(this.focusChangeHandler), this.audioAttributes, this.pauseOnDuck, this.acceptsDelayedFocusGain);
         }
     }
 
@@ -155,7 +167,7 @@ public final class AudioFocusRequestCompat {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onAudioFocusChange$0$androidx-media3-common-audio-AudioFocusRequestCompat$OnAudioFocusChangeListenerHandlerCompat  reason: not valid java name */
-        public /* synthetic */ void m8163xd2a61c9d(int i) {
+        public /* synthetic */ void m8768xd2a61c9d(int i) {
             this.listener.onAudioFocusChange(i);
         }
 
@@ -164,7 +176,7 @@ public final class AudioFocusRequestCompat {
             Util.postOrRun(this.handler, new Runnable() { // from class: androidx.media3.common.audio.AudioFocusRequestCompat$OnAudioFocusChangeListenerHandlerCompat$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioFocusRequestCompat.OnAudioFocusChangeListenerHandlerCompat.this.m8163xd2a61c9d(i);
+                    AudioFocusRequestCompat.OnAudioFocusChangeListenerHandlerCompat.this.m8768xd2a61c9d(i);
                 }
             });
         }

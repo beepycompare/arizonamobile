@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import androidx.collection.ArrayMap;
-import com.google.android.gms.internal.measurement.zzpu;
+import com.google.android.gms.internal.measurement.zzahn;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzy {
     final /* synthetic */ zzad zza;
@@ -72,7 +72,7 @@ public final class zzy {
             if (zzabVar.zzb()) {
                 list.clear();
             }
-            zzpu.zza();
+            zzahn.zza();
             zzic zzicVar = this.zza.zzu;
             zzal zzc = zzicVar.zzc();
             String str = this.zzb;
@@ -80,16 +80,16 @@ public final class zzy {
             if (zzc.zzp(str, zzfxVar) && zzabVar.zzc()) {
                 list.clear();
             }
-            zzpu.zza();
-            if (!zzicVar.zzc().zzp(this.zzb, zzfxVar)) {
-                list.add(Long.valueOf(zzabVar.zzg.longValue() / 1000));
+            zzahn.zza();
+            if (zzicVar.zzc().zzp(this.zzb, zzfxVar)) {
+                Long valueOf3 = Long.valueOf(zzabVar.zzg.longValue() / 1000);
+                if (list.contains(valueOf3)) {
+                    return;
+                }
+                list.add(valueOf3);
                 return;
             }
-            Long valueOf3 = Long.valueOf(zzabVar.zzg.longValue() / 1000);
-            if (list.contains(valueOf3)) {
-                return;
-            }
-            list.add(valueOf3);
+            list.add(Long.valueOf(zzabVar.zzg.longValue() / 1000));
         }
     }
 
@@ -97,16 +97,16 @@ public final class zzy {
     public final com.google.android.gms.internal.measurement.zzhg zzb(int i) {
         ArrayList arrayList;
         List list;
-        com.google.android.gms.internal.measurement.zzhf zzh = com.google.android.gms.internal.measurement.zzhg.zzh();
-        zzh.zza(i);
-        zzh.zzd(this.zzc);
+        com.google.android.gms.internal.measurement.zzhf zzi = com.google.android.gms.internal.measurement.zzhg.zzi();
+        zzi.zza(i);
+        zzi.zzd(this.zzc);
         com.google.android.gms.internal.measurement.zzii zziiVar = this.zzd;
         if (zziiVar != null) {
-            zzh.zzc(zziiVar);
+            zzi.zzc(zziiVar);
         }
-        com.google.android.gms.internal.measurement.zzih zzi = com.google.android.gms.internal.measurement.zzii.zzi();
-        zzi.zzc(zzpk.zzp(this.zze));
-        zzi.zza(zzpk.zzp(this.zzf));
+        com.google.android.gms.internal.measurement.zzih zzj = com.google.android.gms.internal.measurement.zzii.zzj();
+        zzj.zzc(zzpk.zzp(this.zze));
+        zzj.zza(zzpk.zzp(this.zzf));
         Map map = this.zzg;
         if (map == null) {
             arrayList = null;
@@ -119,13 +119,13 @@ public final class zzy {
                     com.google.android.gms.internal.measurement.zzhp zze = com.google.android.gms.internal.measurement.zzhq.zze();
                     zze.zza(intValue);
                     zze.zzb(l.longValue());
-                    arrayList2.add((com.google.android.gms.internal.measurement.zzhq) zze.zzbc());
+                    arrayList2.add((com.google.android.gms.internal.measurement.zzhq) zze.zzbd());
                 }
             }
             arrayList = arrayList2;
         }
         if (arrayList != null) {
-            zzi.zze(arrayList);
+            zzj.zze(arrayList);
         }
         Map map2 = this.zzh;
         if (map2 == null) {
@@ -140,13 +140,13 @@ public final class zzy {
                     Collections.sort(list2);
                     zzf.zzb(list2);
                 }
-                arrayList3.add((com.google.android.gms.internal.measurement.zzik) zzf.zzbc());
+                arrayList3.add((com.google.android.gms.internal.measurement.zzik) zzf.zzbd());
             }
             list = arrayList3;
         }
-        zzi.zzg(list);
-        zzh.zzb(zzi);
-        return (com.google.android.gms.internal.measurement.zzhg) zzh.zzbc();
+        zzj.zzg(list);
+        zzi.zzb(zzj);
+        return (com.google.android.gms.internal.measurement.zzhg) zzi.zzbd();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

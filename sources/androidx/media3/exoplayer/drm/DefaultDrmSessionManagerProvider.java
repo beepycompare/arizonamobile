@@ -10,7 +10,7 @@ import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.primitives.Ints;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultDrmSessionManagerProvider implements DrmSessionManagerProvider {
     private MediaItem.DrmConfiguration drmConfiguration;
     private DataSource.Factory drmHttpDataSourceFactory;

@@ -45,6 +45,7 @@ import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.drawable.DrawableUtils;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.motion.MotionUtils;
@@ -1352,8 +1353,9 @@ public class TabLayout extends HorizontalScrollView {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v0, types: [android.graphics.drawable.RippleDrawable] */
+        /* JADX WARN: Type inference failed for: r1v1, types: [android.graphics.drawable.LayerDrawable, android.graphics.drawable.RippleDrawable] */
         /* JADX WARN: Type inference failed for: r5v0, types: [com.google.android.material.tabs.TabLayout$TabView] */
+        /* JADX WARN: Type inference failed for: r6v1, types: [android.graphics.drawable.Drawable] */
         public void updateBackgroundDrawable(Context context) {
             if (TabLayout.this.tabBackgroundResId != 0) {
                 Drawable drawable = AppCompatResources.getDrawable(context, TabLayout.this.tabBackgroundResId);
@@ -1372,9 +1374,12 @@ public class TabLayout extends HorizontalScrollView {
                 gradientDrawable2.setColor(-1);
                 ColorStateList convertToRippleDrawableColor = RippleUtils.convertToRippleDrawableColor(TabLayout.this.tabRippleColorStateList);
                 if (TabLayout.this.unboundedRipple) {
-                    gradientDrawable = null;
+                    gradientDrawable = FocusRingDrawable.wrap(context, new RippleDrawable(convertToRippleDrawableColor, null, null));
+                } else {
+                    ?? rippleDrawable = new RippleDrawable(convertToRippleDrawableColor, gradientDrawable, gradientDrawable2);
+                    FocusRingDrawable.layer(context, rippleDrawable);
+                    gradientDrawable = rippleDrawable;
                 }
-                gradientDrawable = new RippleDrawable(convertToRippleDrawableColor, gradientDrawable, TabLayout.this.unboundedRipple ? null : gradientDrawable2);
             }
             setBackground(gradientDrawable);
             TabLayout.this.invalidate();

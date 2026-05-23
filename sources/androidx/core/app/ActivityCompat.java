@@ -18,7 +18,6 @@ import android.text.TextUtils;
 import android.view.Display;
 import android.view.DragEvent;
 import android.view.View;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.SharedElementCallback;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.LocusIdCompat;
@@ -28,6 +27,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 /* loaded from: classes2.dex */
 public class ActivityCompat extends ContextCompat {
     private static PermissionCompatDelegate sDelegate;
@@ -39,6 +39,7 @@ public class ActivityCompat extends ContextCompat {
 
     /* loaded from: classes2.dex */
     public interface PermissionCompatDelegate {
+        @Deprecated
         boolean onActivityResult(Activity activity, int i, int i2, Intent intent);
 
         boolean requestPermissions(Activity activity, String[] strArr, int i);
@@ -79,11 +80,11 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static void finishAfterTransition(Activity activity) {
-        Api21Impl.finishAfterTransition(activity);
+        activity.finishAfterTransition();
     }
 
     public static Uri getReferrer(Activity activity) {
-        return Api22Impl.getReferrer(activity);
+        return activity.getReferrer();
     }
 
     public static <T extends View> T requireViewById(Activity activity, int i) {
@@ -98,19 +99,19 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static void setEnterSharedElementCallback(Activity activity, SharedElementCallback sharedElementCallback) {
-        Api21Impl.setEnterSharedElementCallback(activity, sharedElementCallback != null ? new SharedElementCallback21Impl(sharedElementCallback) : null);
+        activity.setEnterSharedElementCallback(sharedElementCallback != null ? new SharedElementCallback21Impl(sharedElementCallback) : null);
     }
 
     public static void setExitSharedElementCallback(Activity activity, SharedElementCallback sharedElementCallback) {
-        Api21Impl.setExitSharedElementCallback(activity, sharedElementCallback != null ? new SharedElementCallback21Impl(sharedElementCallback) : null);
+        activity.setExitSharedElementCallback(sharedElementCallback != null ? new SharedElementCallback21Impl(sharedElementCallback) : null);
     }
 
     public static void postponeEnterTransition(Activity activity) {
-        Api21Impl.postponeEnterTransition(activity);
+        activity.postponeEnterTransition();
     }
 
     public static void startPostponedEnterTransition(Activity activity) {
-        Api21Impl.startPostponedEnterTransition(activity);
+        activity.startPostponedEnterTransition();
     }
 
     public static void requestPermissions(Activity activity, String[] strArr, int i) {
@@ -142,33 +143,7 @@ public class ActivityCompat extends ContextCompat {
             if (activity instanceof RequestPermissionsRequestCodeValidator) {
                 ((RequestPermissionsRequestCodeValidator) activity).validateRequestPermissionsRequestCode(i);
             }
-            Api23Impl.requestPermissions(activity, strArr, i);
-        }
-    }
-
-    /* renamed from: androidx.core.app.ActivityCompat$1  reason: invalid class name */
-    /* loaded from: classes2.dex */
-    class AnonymousClass1 implements Runnable {
-        final /* synthetic */ Activity val$activity;
-        final /* synthetic */ String[] val$permissionsArray;
-        final /* synthetic */ int val$requestCode;
-
-        AnonymousClass1(String[] strArr, Activity activity, int i) {
-            this.val$permissionsArray = strArr;
-            this.val$activity = activity;
-            this.val$requestCode = i;
-        }
-
-        @Override // java.lang.Runnable
-        public void run() {
-            int[] iArr = new int[this.val$permissionsArray.length];
-            PackageManager packageManager = this.val$activity.getPackageManager();
-            String packageName = this.val$activity.getPackageName();
-            int length = this.val$permissionsArray.length;
-            for (int i = 0; i < length; i++) {
-                iArr[i] = packageManager.checkPermission(this.val$permissionsArray[i], packageName);
-            }
-            ((OnRequestPermissionsResultCallback) this.val$activity).onRequestPermissionsResult(this.val$requestCode, this.val$permissionsArray, iArr);
+            activity.requestPermissions(strArr, i);
         }
     }
 
@@ -180,7 +155,7 @@ public class ActivityCompat extends ContextCompat {
             if (Build.VERSION.SDK_INT == 31) {
                 return Api31Impl.shouldShowRequestPermissionRationale(activity, str);
             }
-            return Api23Impl.shouldShowRequestPermissionRationale(activity, str);
+            return activity.shouldShowRequestPermissionRationale(str);
         }
         return false;
     }
@@ -264,10 +239,12 @@ public class ActivityCompat extends ContextCompat {
 
         @Override // android.app.SharedElementCallback
         public void onSharedElementsArrived(List<String> list, List<View> list2, final SharedElementCallback.OnSharedElementsReadyListener onSharedElementsReadyListener) {
-            this.mCallback.onSharedElementsArrived(list, list2, new SharedElementCallback.OnSharedElementsReadyListener() { // from class: androidx.core.app.ActivityCompat$SharedElementCallback21Impl$$ExternalSyntheticLambda0
+            SharedElementCallback sharedElementCallback = this.mCallback;
+            Objects.requireNonNull(onSharedElementsReadyListener);
+            sharedElementCallback.onSharedElementsArrived(list, list2, new SharedElementCallback.OnSharedElementsReadyListener() { // from class: androidx.core.app.ActivityCompat$SharedElementCallback21Impl$$ExternalSyntheticLambda0
                 @Override // androidx.core.app.SharedElementCallback.OnSharedElementsReadyListener
                 public final void onSharedElementsReady() {
-                    ActivityCompat.Api23Impl.onSharedElementsReady(onSharedElementsReadyListener);
+                    onSharedElementsReadyListener.onSharedElementsReady();
                 }
             });
         }
@@ -317,43 +294,6 @@ public class ActivityCompat extends ContextCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static void finishAfterTransition(Activity activity) {
-            activity.finishAfterTransition();
-        }
-
-        static void setEnterSharedElementCallback(Activity activity, android.app.SharedElementCallback sharedElementCallback) {
-            activity.setEnterSharedElementCallback(sharedElementCallback);
-        }
-
-        static void setExitSharedElementCallback(Activity activity, android.app.SharedElementCallback sharedElementCallback) {
-            activity.setExitSharedElementCallback(sharedElementCallback);
-        }
-
-        static void postponeEnterTransition(Activity activity) {
-            activity.postponeEnterTransition();
-        }
-
-        static void startPostponedEnterTransition(Activity activity) {
-            activity.startPostponedEnterTransition();
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api22Impl {
-        private Api22Impl() {
-        }
-
-        static Uri getReferrer(Activity activity) {
-            return activity.getReferrer();
-        }
-    }
-
     /* loaded from: classes2.dex */
     static class Api28Impl {
         private Api28Impl() {
@@ -361,26 +301,6 @@ public class ActivityCompat extends ContextCompat {
 
         static <T> T requireViewById(Activity activity, int i) {
             return (T) activity.requireViewById(i);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static void requestPermissions(Activity activity, String[] strArr, int i) {
-            activity.requestPermissions(strArr, i);
-        }
-
-        static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {
-            return activity.shouldShowRequestPermissionRationale(str);
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public static void onSharedElementsReady(Object obj) {
-            ((SharedElementCallback.OnSharedElementsReadyListener) obj).onSharedElementsReady();
         }
     }
 }

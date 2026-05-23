@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.zip.GZIPOutputStream;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzln implements Runnable {
     final /* synthetic */ zzlo zza;
@@ -38,7 +38,7 @@ public final class zzln implements Runnable {
     }
 
     private final void zzb(final int i, final Exception exc, final byte[] bArr, final Map map) {
-        this.zza.zzu.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlm
+        this.zza.zzu.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlm
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
                 zzln.this.zza(i, exc, bArr, map);
@@ -75,11 +75,11 @@ public final class zzln implements Runnable {
         int responseCode;
         InputStream inputStream;
         zzlo zzloVar = this.zza;
-        zzloVar.zzaX();
+        zzloVar.zzaY();
         int i = 0;
         try {
             URL url = this.zzb;
-            int i2 = com.google.android.gms.internal.measurement.zzcj.zzb;
+            int i2 = com.google.android.gms.internal.measurement.zzch.zzb;
             URLConnection openConnection = url.openConnection();
             if (!(openConnection instanceof HttpURLConnection)) {
                 throw new IOException("Failed to obtain HTTP connection");
@@ -105,14 +105,14 @@ public final class zzln implements Runnable {
                     byte[] bArr = this.zzc;
                     if (bArr != null) {
                         try {
-                            zzicVar.zzaU();
+                            zzicVar.zzaV();
                             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                             GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(byteArrayOutputStream);
                             gZIPOutputStream.write(bArr);
                             gZIPOutputStream.close();
                             byteArrayOutputStream.close();
                             byte[] byteArray = byteArrayOutputStream.toByteArray();
-                            zzgs zzk = this.zza.zzu.zzaV().zzk();
+                            zzgs zzk = this.zza.zzu.zzaW().zzk();
                             int length = byteArray.length;
                             zzk.zzb("Uploading data. size", Integer.valueOf(length));
                             httpURLConnection.setDoOutput(true);
@@ -145,7 +145,7 @@ public final class zzln implements Runnable {
                                 throw th;
                             }
                         } catch (IOException e2) {
-                            this.zza.zzu.zzaV().zzb().zzb("Failed to gzip post request content", e2);
+                            this.zza.zzu.zzaW().zzb().zzb("Failed to gzip post request content", e2);
                             throw e2;
                         }
                     }
@@ -199,7 +199,7 @@ public final class zzln implements Runnable {
                         try {
                             outputStream2.close();
                         } catch (IOException e5) {
-                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e5);
+                            this.zza.zzu.zzaW().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e5);
                         }
                     }
                     if (httpURLConnection != null) {
@@ -215,7 +215,7 @@ public final class zzln implements Runnable {
                         try {
                             outputStream.close();
                         } catch (IOException e6) {
-                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e6);
+                            this.zza.zzu.zzaW().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e6);
                         }
                     }
                     if (httpURLConnection != null) {

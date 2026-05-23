@@ -6,22 +6,16 @@ import android.graphics.Outline;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableContainer;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.util.Log;
 import java.lang.reflect.Method;
 /* loaded from: classes2.dex */
 class WrappedDrawableApi21 extends WrappedDrawableApi14 {
     private static final String TAG = "WrappedDrawableApi21";
     private static Method sIsProjectedDrawableMethod;
-
-    @Override // androidx.core.graphics.drawable.WrappedDrawableApi14
-    protected boolean isCompatTintEnabled() {
-        return false;
-    }
-
-    WrappedDrawableApi21(Drawable drawable) {
-        super(drawable);
-        findAndCacheIsProjectedDrawableMethod();
-    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public WrappedDrawableApi21(WrappedDrawableState wrappedDrawableState, Resources resources) {
@@ -83,6 +77,12 @@ class WrappedDrawableApi21 extends WrappedDrawableApi14 {
             return true;
         }
         return false;
+    }
+
+    @Override // androidx.core.graphics.drawable.WrappedDrawableApi14
+    protected boolean isCompatTintEnabled() {
+        Drawable drawable = this.mDrawable;
+        return (drawable instanceof GradientDrawable) || (drawable instanceof DrawableContainer) || (drawable instanceof InsetDrawable) || (drawable instanceof RippleDrawable);
     }
 
     @Override // android.graphics.drawable.Drawable

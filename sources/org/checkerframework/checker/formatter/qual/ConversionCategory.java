@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringJoiner;
 import org.checkerframework.dataflow.qual.Pure;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public enum ConversionCategory {
     GENERAL("bBhHsS", null),
     CHAR("cC", Character.class, Byte.class, Short.class, Integer.class),

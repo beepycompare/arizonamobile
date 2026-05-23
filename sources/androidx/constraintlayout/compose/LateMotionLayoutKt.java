@@ -11,6 +11,7 @@ import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotIntStateKt;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.layout.LayoutKt;
 import androidx.compose.ui.layout.Measurable;
@@ -26,7 +27,6 @@ import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.constraintlayout.motion.widget.Key;
-import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -84,10 +84,10 @@ public final class LateMotionLayoutKt {
             i3 |= startRestartGroup.changedInstance(function0) ? 8388608 : 4194304;
         }
         if ((i2 & 100663296) == 0) {
-            i3 |= startRestartGroup.changed(modifier) ? 67108864 : 33554432;
+            i3 |= startRestartGroup.changed(modifier) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
         }
         if ((i2 & 805306368) == 0) {
-            i3 |= startRestartGroup.changedInstance(function2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+            i3 |= startRestartGroup.changedInstance(function2) ? 536870912 : 268435456;
         }
         if ((i3 & 306783379) != 306783378 || !startRestartGroup.getSkipping()) {
             if (ComposerKt.isTraceInProgress()) {
@@ -261,12 +261,12 @@ public final class LateMotionLayoutKt {
                 if (value == null) {
                     value = CompositionSource.Unknown;
                 }
-                long m7996performInterpolationMeasureLzAeyeM = motionMeasurer2.m7996performInterpolationMeasureLzAeyeM(j, layoutDirection, invoke, invoke2, eMPTY$constraintlayout_compose_release, list, linkedHashMap, i2, floatValue, value, null);
+                long m8601performInterpolationMeasureLzAeyeM = motionMeasurer2.m8601performInterpolationMeasureLzAeyeM(j, layoutDirection, invoke, invoke2, eMPTY$constraintlayout_compose_release, list, linkedHashMap, i2, floatValue, value, null);
                 ref.setValue(CompositionSource.Unknown);
-                int m7726getWidthimpl = IntSize.m7726getWidthimpl(m7996performInterpolationMeasureLzAeyeM);
-                int m7725getHeightimpl = IntSize.m7725getHeightimpl(m7996performInterpolationMeasureLzAeyeM);
+                int m8331getWidthimpl = IntSize.m8331getWidthimpl(m8601performInterpolationMeasureLzAeyeM);
+                int m8330getHeightimpl = IntSize.m8330getHeightimpl(m8601performInterpolationMeasureLzAeyeM);
                 final MotionMeasurer motionMeasurer3 = motionMeasurer;
-                return MeasureScope.layout$default(measureScope, m7726getWidthimpl, m7725getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.LateMotionLayoutKt$lateMotionLayoutMeasurePolicy$1.1
+                return MeasureScope.layout$default(measureScope, m8331getWidthimpl, m8330getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.LateMotionLayoutKt$lateMotionLayoutMeasurePolicy$1.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
                     {

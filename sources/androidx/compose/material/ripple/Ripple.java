@@ -17,7 +17,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Ripple.kt */
 @Deprecated(message = "Replaced by the new RippleNode implementation")
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b!\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0002\u0010\u0010JC\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u0007H'¢\u0006\u0004\b\u0015\u0010\u0016J\u0013\u0010\u0017\u001a\u00020\u00032\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Landroidx/compose/material/ripple/Ripple;", "Landroidx/compose/foundation/Indication;", "bounded", "", "radius", "Landroidx/compose/ui/unit/Dp;", "color", "Landroidx/compose/runtime/State;", "Landroidx/compose/ui/graphics/Color;", "<init>", "(ZFLandroidx/compose/runtime/State;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "rememberUpdatedInstance", "Landroidx/compose/foundation/IndicationInstance;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "(Landroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/IndicationInstance;", "rememberUpdatedRippleInstance", "Landroidx/compose/material/ripple/RippleIndicationInstance;", "rippleAlpha", "Landroidx/compose/material/ripple/RippleAlpha;", "rememberUpdatedRippleInstance-942rkJo", "(Landroidx/compose/foundation/interaction/InteractionSource;ZFLandroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/Composer;I)Landroidx/compose/material/ripple/RippleIndicationInstance;", "equals", "other", "", "hashCode", "", "material-ripple"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\b!\u0018\u00002\u00020\u0001B%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0002\u0010\u0010JC\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u0007H'¢\u0006\u0004\b\u0015\u0010\u0016J\u0013\u0010\u0017\u001a\u00020\u00032\b\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0096\u0002J\b\u0010\u001a\u001a\u00020\u001bH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000bR\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Landroidx/compose/material/ripple/Ripple;", "Landroidx/compose/foundation/Indication;", "bounded", "", "radius", "Landroidx/compose/ui/unit/Dp;", "color", "Landroidx/compose/runtime/State;", "Landroidx/compose/ui/graphics/Color;", "<init>", "(ZFLandroidx/compose/runtime/State;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "rememberUpdatedInstance", "Landroidx/compose/foundation/IndicationInstance;", "interactionSource", "Landroidx/compose/foundation/interaction/InteractionSource;", "(Landroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/IndicationInstance;", "rememberUpdatedRippleInstance", "Landroidx/compose/material/ripple/RippleIndicationInstance;", "rippleAlpha", "Landroidx/compose/material/ripple/RippleAlpha;", "rememberUpdatedRippleInstance-942rkJo", "(Landroidx/compose/foundation/interaction/InteractionSource;ZFLandroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/Composer;I)Landroidx/compose/material/ripple/RippleIndicationInstance;", "equals", "other", "", "hashCode", "", "material-ripple"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class Ripple implements Indication {
     public static final int $stable = 0;
@@ -30,7 +30,7 @@ public abstract class Ripple implements Indication {
     }
 
     /* renamed from: rememberUpdatedRippleInstance-942rkJo */
-    public abstract RippleIndicationInstance mo1678rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i);
+    public abstract RippleIndicationInstance mo2123rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i);
 
     private Ripple(boolean z, float f, State<Color> state) {
         this.bounded = z;
@@ -41,7 +41,7 @@ public abstract class Ripple implements Indication {
     @Override // androidx.compose.foundation.Indication
     @Deprecated(message = "Super method is deprecated")
     public final IndicationInstance rememberUpdatedInstance(InteractionSource interactionSource, Composer composer, int i) {
-        long mo1680defaultColorWaAFU9c;
+        long mo2125defaultColorWaAFU9c;
         composer.startReplaceGroup(988743187);
         ComposerKt.sourceInformation(composer, "C(rememberUpdatedInstance)N(interactionSource)191@9517L7,193@9557L229,200@9871L13,200@9844L41,203@9922L85,205@10061L491,205@10017L535:Ripple.kt#vhb33q");
         if (ComposerKt.isTraceInProgress()) {
@@ -51,34 +51,34 @@ public abstract class Ripple implements Indication {
         Object consume = composer.consume(RippleThemeKt.getLocalRippleTheme());
         ComposerKt.sourceInformationMarkerEnd(composer);
         RippleTheme rippleTheme = (RippleTheme) consume;
-        if (this.color.getValue().m4782unboximpl() != 16) {
+        if (this.color.getValue().m5358unboximpl() != 16) {
             composer.startReplaceGroup(762841340);
             composer.endReplaceGroup();
-            mo1680defaultColorWaAFU9c = this.color.getValue().m4782unboximpl();
+            mo2125defaultColorWaAFU9c = this.color.getValue().m5358unboximpl();
         } else {
             composer.startReplaceGroup(762899124);
             ComposerKt.sourceInformation(composer, "197@9740L14");
-            mo1680defaultColorWaAFU9c = rippleTheme.mo1680defaultColorWaAFU9c(composer, 0);
+            mo2125defaultColorWaAFU9c = rippleTheme.mo2125defaultColorWaAFU9c(composer, 0);
             composer.endReplaceGroup();
         }
-        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m4762boximpl(mo1680defaultColorWaAFU9c), composer, 0);
+        State<Color> rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Color.m5338boximpl(mo2125defaultColorWaAFU9c), composer, 0);
         State<RippleAlpha> rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(rippleTheme.rippleAlpha(composer, 0), composer, 0);
         int i2 = i & 14;
-        RippleIndicationInstance mo1678rememberUpdatedRippleInstance942rkJo = mo1678rememberUpdatedRippleInstance942rkJo(interactionSource, this.bounded, this.radius, rememberUpdatedState, rememberUpdatedState2, composer, i2 | ((i << 12) & 458752));
+        RippleIndicationInstance mo2123rememberUpdatedRippleInstance942rkJo = mo2123rememberUpdatedRippleInstance942rkJo(interactionSource, this.bounded, this.radius, rememberUpdatedState, rememberUpdatedState2, composer, i2 | ((i << 12) & 458752));
         ComposerKt.sourceInformationMarkerStart(composer, 994453534, "CC(remember):Ripple.kt#9igjgp");
-        boolean changedInstance = composer.changedInstance(mo1678rememberUpdatedRippleInstance942rkJo) | (((i2 ^ 6) > 4 && composer.changed(interactionSource)) || (i & 6) == 4);
+        boolean changedInstance = composer.changedInstance(mo2123rememberUpdatedRippleInstance942rkJo) | (((i2 ^ 6) > 4 && composer.changed(interactionSource)) || (i & 6) == 4);
         Ripple$rememberUpdatedInstance$1$1 rememberedValue = composer.rememberedValue();
         if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = new Ripple$rememberUpdatedInstance$1$1(interactionSource, mo1678rememberUpdatedRippleInstance942rkJo, null);
+            rememberedValue = new Ripple$rememberUpdatedInstance$1$1(interactionSource, mo2123rememberUpdatedRippleInstance942rkJo, null);
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        EffectsKt.LaunchedEffect(mo1678rememberUpdatedRippleInstance942rkJo, interactionSource, (Function2) rememberedValue, composer, (i << 3) & 112);
+        EffectsKt.LaunchedEffect(mo2123rememberUpdatedRippleInstance942rkJo, interactionSource, (Function2) rememberedValue, composer, (i << 3) & 112);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return mo1678rememberUpdatedRippleInstance942rkJo;
+        return mo2123rememberUpdatedRippleInstance942rkJo;
     }
 
     public boolean equals(Object obj) {
@@ -87,12 +87,12 @@ public abstract class Ripple implements Indication {
         }
         if (obj instanceof Ripple) {
             Ripple ripple = (Ripple) obj;
-            return this.bounded == ripple.bounded && Dp.m7560equalsimpl0(this.radius, ripple.radius) && Intrinsics.areEqual(this.color, ripple.color);
+            return this.bounded == ripple.bounded && Dp.m8165equalsimpl0(this.radius, ripple.radius) && Intrinsics.areEqual(this.color, ripple.color);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Boolean.hashCode(this.bounded) * 31) + Dp.m7561hashCodeimpl(this.radius)) * 31) + this.color.hashCode();
+        return (((Boolean.hashCode(this.bounded) * 31) + Dp.m8166hashCodeimpl(this.radius)) * 31) + this.color.hashCode();
     }
 }

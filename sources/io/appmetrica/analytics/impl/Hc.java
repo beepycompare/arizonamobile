@@ -1,23 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
+import io.appmetrica.analytics.AppMetricaConfig;
 /* loaded from: classes5.dex */
-public interface Hc {
-    void a(Location location);
+public final class Hc extends AbstractC0778zo {
+    public final AppMetricaConfig b;
 
-    void a(String str);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public Hc(InterfaceC0557rb interfaceC0557rb, AppMetricaConfig appMetricaConfig) {
+        super(interfaceC0557rb);
+        String str = appMetricaConfig.apiKey;
+        this.b = appMetricaConfig;
+    }
 
-    void a(String str, String str2);
-
-    void a(boolean z);
-
-    void a(boolean z, boolean z2);
-
-    void clearAppEnvironment();
-
-    void putAppEnvironmentValue(String str, String str2);
-
-    void setDataSendingEnabled(boolean z);
-
-    void setUserProfileID(String str);
+    public final InterfaceC0609tb a() {
+        return this.f1322a.a().a(this.b);
+    }
 }

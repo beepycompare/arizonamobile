@@ -293,18 +293,23 @@ public final class CustomKeyboard extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void globalLayoutListener$lambda$0(CustomKeyboard customKeyboard) {
         int height;
-        customKeyboard.mKeyboardView.getWindowVisibleDisplayFrame(customKeyboard.viewRect);
-        int height2 = customKeyboard.mKeyboardView.getRootView().getHeight();
-        if (height2 <= 0) {
-            return;
+        try {
+            customKeyboard.mKeyboardView.getWindowVisibleDisplayFrame(customKeyboard.viewRect);
+            int height2 = customKeyboard.mKeyboardView.getRootView().getHeight();
+            if (height2 <= 0) {
+                return;
+            }
+            int i = height2 - customKeyboard.viewRect.bottom;
+            if (customKeyboard.getImm().isAcceptingText() && i > 300 && customKeyboard.lastHeightKeyboard != (height = (height2 - i) - customKeyboard.inputArea.getHeight())) {
+                customKeyboard.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, height);
+                customKeyboard.lastHeightKeyboard = height;
+            }
+            customKeyboard.mainHandler.removeCallbacks(customKeyboard.showKeyboardRunnable);
+            customKeyboard.mainHandler.postDelayed(customKeyboard.showKeyboardRunnable, 100L);
+        } catch (OutOfMemoryError e) {
+            Log.e(customKeyboard.getCLASS_TAG(), "Unable to update keyboard layout due to low memory", e);
+            customKeyboard.mainHandler.removeCallbacks(customKeyboard.showKeyboardRunnable);
         }
-        int i = height2 - customKeyboard.viewRect.bottom;
-        if (customKeyboard.getImm().isAcceptingText() && i > 300 && customKeyboard.lastHeightKeyboard != (height = (height2 - i) - customKeyboard.inputArea.getHeight())) {
-            customKeyboard.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, height);
-            customKeyboard.lastHeightKeyboard = height;
-        }
-        customKeyboard.mainHandler.removeCallbacks(customKeyboard.showKeyboardRunnable);
-        customKeyboard.mainHandler.postDelayed(customKeyboard.showKeyboardRunnable, 100L);
     }
 
     public final void showKeyboard() {

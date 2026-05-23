@@ -1,26 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
-public final class He implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final byte[] fromModel(String str) {
-        if (Intrinsics.areEqual("native", str)) {
-            str = "JVM";
-        }
-        return str.getBytes(Charsets.UTF_8);
+public final class He extends K4 {
+    public He(String str, double d, Vo vo, W2 w2) {
+        super(1, str, Double.valueOf(d), vo, w2);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        byte[] bArr = (byte[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final String a(byte[] bArr) {
-        throw new UnsupportedOperationException();
+    @Override // io.appmetrica.analytics.impl.K4
+    public final void a(Io io2) {
+        io2.d.b = ((Double) this.f).doubleValue();
     }
 }

@@ -15,6 +15,6 @@ import org.checkerframework.framework.qual.UpperBoundFor;
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({UnknownSignedness.class})
 @UpperBoundFor(typeKinds = {TypeKind.CHAR}, types = {Character.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Unsigned {
 }

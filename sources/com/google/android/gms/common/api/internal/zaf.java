@@ -4,36 +4,43 @@ import android.os.RemoteException;
 import com.google.android.gms.common.Feature;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zaf extends zad {
-    public final zaci zab;
+    public final zacd zab;
 
-    public zaf(zaci zaciVar, TaskCompletionSource taskCompletionSource) {
+    public zaf(zacd zacdVar, TaskCompletionSource taskCompletionSource) {
         super(3, taskCompletionSource);
-        this.zab = zaciVar;
+        this.zab = zacdVar;
     }
 
     @Override // com.google.android.gms.common.api.internal.zac
-    public final boolean zaa(zabq zabqVar) {
-        return this.zab.zaa.zab();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zac
-    public final Feature[] zab(zabq zabqVar) {
+    public final Feature[] zaa(zabk zabkVar) {
         return this.zab.zaa.getRequiredFeatures();
     }
 
-    @Override // com.google.android.gms.common.api.internal.zad
-    public final void zac(zabq zabqVar) throws RemoteException {
-        this.zab.zaa.registerListener(zabqVar.zaf(), this.zaa);
-        ListenerHolder.ListenerKey listenerKey = this.zab.zaa.getListenerKey();
-        if (listenerKey != null) {
-            zabqVar.zah().put(listenerKey, this.zab);
-        }
+    @Override // com.google.android.gms.common.api.internal.zac
+    public final boolean zab(zabk zabkVar) {
+        return this.zab.zaa.zaa();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zac
+    public final int zac(zabk zabkVar) {
+        return this.zab.zaa.zab();
     }
 
     @Override // com.google.android.gms.common.api.internal.zad, com.google.android.gms.common.api.internal.zai
-    public final /* bridge */ /* synthetic */ void zag(zaad zaadVar, boolean z) {
+    public final /* bridge */ /* synthetic */ void zaf(zaaa zaaaVar, boolean z) {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zad
+    public final void zah(zabk zabkVar) throws RemoteException {
+        zacd zacdVar = this.zab;
+        RegisterListenerMethod registerListenerMethod = zacdVar.zaa;
+        registerListenerMethod.registerListener(zabkVar.zaf(), this.zaa);
+        ListenerHolder.ListenerKey listenerKey = registerListenerMethod.getListenerKey();
+        if (listenerKey != null) {
+            zabkVar.zag().put(listenerKey, zacdVar);
+        }
     }
 }

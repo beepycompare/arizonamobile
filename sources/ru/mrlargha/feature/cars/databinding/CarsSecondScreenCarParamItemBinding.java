@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.cars.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CarsSecondScreenCarParamItemBinding implements ViewBinding {
     public final CustomCardView bg;
     public final ConstraintLayout carsFirstScreenCarParamItem;

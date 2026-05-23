@@ -1,11 +1,29 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes4.dex */
-public final class zzrj implements zzri {
-    public static final zzkm zza = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb().zzd("measurement.sgtm.client.upload_on_backgrounded.dev", false);
 
-    @Override // com.google.android.gms.internal.measurement.zzri
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+import android.os.StrictMode;
+import com.google.common.base.Preconditions;
+import java.util.Iterator;
+import java.util.ServiceLoader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+final class zzrj {
+    static final zzrl zza;
+
+    static {
+        zzrl zzrhVar;
+        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+        try {
+            Iterator it = ServiceLoader.load(zzrl.class, zzrl.class.getClassLoader()).iterator();
+            if (it.hasNext()) {
+                zzrhVar = (zzrl) it.next();
+                Preconditions.checkState(!it.hasNext(), "Expected at most one FlagsService");
+            } else {
+                StrictMode.setThreadPolicy(allowThreadDiskReads);
+                zzrhVar = new zzrh();
+            }
+            zza = zzrhVar;
+        } finally {
+            StrictMode.setThreadPolicy(allowThreadDiskReads);
+        }
     }
 }

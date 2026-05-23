@@ -1,24 +1,44 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Handler;
-import com.google.android.gms.common.api.internal.BackgroundDetector;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.Feature;
+import com.google.android.gms.common.internal.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zabl implements BackgroundDetector.BackgroundStateChangeListener {
-    final /* synthetic */ GoogleApiManager zaa;
+final class zabl {
+    private final ApiKey zaa;
+    private final Feature zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zabl(GoogleApiManager googleApiManager) {
-        this.zaa = googleApiManager;
+    public /* synthetic */ zabl(ApiKey apiKey, Feature feature, byte[] bArr) {
+        this.zaa = apiKey;
+        this.zab = feature;
     }
 
-    @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
-    public final void onBackgroundStateChanged(boolean z) {
-        Handler handler;
-        Handler handler2;
-        GoogleApiManager googleApiManager = this.zaa;
-        handler = googleApiManager.zar;
-        handler2 = googleApiManager.zar;
-        handler.sendMessage(handler2.obtainMessage(1, Boolean.valueOf(z)));
+    public final boolean equals(Object obj) {
+        if (obj instanceof zabl) {
+            zabl zablVar = (zabl) obj;
+            if (Objects.equal(this.zaa, zablVar.zaa) && Objects.equal(this.zab, zablVar.zab)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hashCode(this.zaa, this.zab);
+    }
+
+    public final String toString() {
+        return Objects.toStringHelper(this).add("key", this.zaa).add("feature", this.zab).toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ ApiKey zaa() {
+        return this.zaa;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Feature zab() {
+        return this.zab;
     }
 }

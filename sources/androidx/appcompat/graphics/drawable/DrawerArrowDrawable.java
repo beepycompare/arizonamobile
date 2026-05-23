@@ -12,7 +12,7 @@ import androidx.appcompat.R;
 import androidx.core.graphics.drawable.DrawableCompat;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class DrawerArrowDrawable extends Drawable {
     public static final int ARROW_DIRECTION_END = 3;
     public static final int ARROW_DIRECTION_LEFT = 0;
@@ -33,7 +33,7 @@ public class DrawerArrowDrawable extends Drawable {
     private boolean mVerticalMirror;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public @interface ArrowDirection {
     }
 

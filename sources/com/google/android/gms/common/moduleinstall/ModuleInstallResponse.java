@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class ModuleInstallResponse extends AbstractSafeParcelable {
-    public static final Parcelable.Creator<ModuleInstallResponse> CREATOR = new zad();
+    public static final Parcelable.Creator<ModuleInstallResponse> CREATOR = new zac();
     private final int zaa;
     private final boolean zab;
 

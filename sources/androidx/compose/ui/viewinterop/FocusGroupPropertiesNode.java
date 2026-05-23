@@ -28,7 +28,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FocusGroupNode.android.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\u001dH\u0016J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\u001c\u0010 \u001a\u00020\u00152\b\u0010!\u001a\u0004\u0018\u00010\u00072\b\u0010\"\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010#\u001a\u00020\u0015H\u0016J\b\u0010$\u001a\u00020\u0015H\u0016R\u001c\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001c\u0010\f\u001a\u0004\u0018\u00010\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\"\u0010\u0012\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013¢\u0006\u0002\b\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\"\u0010\u0019\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013¢\u0006\u0002\b\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0018¨\u0006%"}, d2 = {"Landroidx/compose/ui/viewinterop/FocusGroupPropertiesNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/focus/FocusPropertiesModifierNode;", "Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;", "<init>", "()V", "focusedChild", "Landroid/view/View;", "getFocusedChild", "()Landroid/view/View;", "setFocusedChild", "(Landroid/view/View;)V", "attachedViewTreeObserver", "Landroid/view/ViewTreeObserver;", "getAttachedViewTreeObserver", "()Landroid/view/ViewTreeObserver;", "setAttachedViewTreeObserver", "(Landroid/view/ViewTreeObserver;)V", "onEnter", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusEnterExitScope;", "", "Lkotlin/ExtensionFunctionType;", "getOnEnter", "()Lkotlin/jvm/functions/Function1;", "onExit", "getOnExit", "applyFocusProperties", "focusProperties", "Landroidx/compose/ui/focus/FocusProperties;", "getFocusTargetOfEmbeddedViewWrapper", "Landroidx/compose/ui/focus/FocusTargetNode;", "onGlobalFocusChanged", "oldFocus", "newFocus", "onAttach", "onDetach", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\u001dH\u0016J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\u001c\u0010 \u001a\u00020\u00152\b\u0010!\u001a\u0004\u0018\u00010\u00072\b\u0010\"\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010#\u001a\u00020\u0015H\u0016J\b\u0010$\u001a\u00020\u0015H\u0016R\u001c\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001c\u0010\f\u001a\u0004\u0018\u00010\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\"\u0010\u0012\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013¢\u0006\u0002\b\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\"\u0010\u0019\u001a\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013¢\u0006\u0002\b\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0018¨\u0006%"}, d2 = {"Landroidx/compose/ui/viewinterop/FocusGroupPropertiesNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/focus/FocusPropertiesModifierNode;", "Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;", "<init>", "()V", "focusedChild", "Landroid/view/View;", "getFocusedChild", "()Landroid/view/View;", "setFocusedChild", "(Landroid/view/View;)V", "attachedViewTreeObserver", "Landroid/view/ViewTreeObserver;", "getAttachedViewTreeObserver", "()Landroid/view/ViewTreeObserver;", "setAttachedViewTreeObserver", "(Landroid/view/ViewTreeObserver;)V", "onEnter", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusEnterExitScope;", "", "Lkotlin/ExtensionFunctionType;", "getOnEnter", "()Lkotlin/jvm/functions/Function1;", "onExit", "getOnExit", "applyFocusProperties", "focusProperties", "Landroidx/compose/ui/focus/FocusProperties;", "getFocusTargetOfEmbeddedViewWrapper", "Landroidx/compose/ui/focus/FocusTargetNode;", "onGlobalFocusChanged", "oldFocus", "newFocus", "onAttach", "onDetach", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPropertiesModifierNode, ViewTreeObserver.OnGlobalFocusChangeListener {
     private ViewTreeObserver attachedViewTreeObserver;
@@ -55,9 +55,9 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
             }
             FocusOwner focusOwner = DelegatableNodeKt.requireOwner(FocusGroupPropertiesNode.this).getFocusOwner();
             View requireView = DelegatableNode_androidKt.requireView(FocusGroupPropertiesNode.this);
-            Integer m4414toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4414toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4398getRequestedFocusDirectiondhqQ8s());
+            Integer m4990toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4990toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4974getRequestedFocusDirectiondhqQ8s());
             currentlyFocusedRect = FocusGroupNode_androidKt.getCurrentlyFocusedRect(focusOwner, requireView, embeddedView);
-            if (FocusInteropUtils_androidKt.requestInteropFocus(embeddedView, m4414toAndroidFocusDirection3ESFkO8, currentlyFocusedRect)) {
+            if (FocusInteropUtils_androidKt.requestInteropFocus(embeddedView, m4990toAndroidFocusDirection3ESFkO8, currentlyFocusedRect)) {
                 return;
             }
             focusEnterExitScope.cancelFocusChange();
@@ -92,8 +92,8 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
                 View requireView = DelegatableNode_androidKt.requireView(FocusGroupPropertiesNode.this);
                 if (embeddedView instanceof ViewGroup) {
                     currentlyFocusedRect = FocusGroupNode_androidKt.getCurrentlyFocusedRect(focusOwner, requireView, embeddedView);
-                    Integer m4414toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4414toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4398getRequestedFocusDirectiondhqQ8s());
-                    int intValue = m4414toAndroidFocusDirection3ESFkO8 != null ? m4414toAndroidFocusDirection3ESFkO8.intValue() : TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
+                    Integer m4990toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4990toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4974getRequestedFocusDirectiondhqQ8s());
+                    int intValue = m4990toAndroidFocusDirection3ESFkO8 != null ? m4990toAndroidFocusDirection3ESFkO8.intValue() : TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
                     FocusFinder focusFinder = FocusFinder.getInstance();
                     FocusGroupPropertiesNode focusGroupPropertiesNode = FocusGroupPropertiesNode.this;
                     if (focusGroupPropertiesNode.getFocusedChild() != null) {
@@ -153,29 +153,34 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
     }
 
     private final FocusTargetNode getFocusTargetOfEmbeddedViewWrapper() {
+        boolean z;
         FocusGroupPropertiesNode focusGroupPropertiesNode = this;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         if (!focusGroupPropertiesNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
         Modifier.Node node = focusGroupPropertiesNode.getNode();
-        if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
-            boolean z = false;
+        if ((node.getAggregateChildKindSet$ui() & m7135constructorimpl) != 0) {
+            boolean z2 = false;
             for (Modifier.Node child$ui = node.getChild$ui(); child$ui != null; child$ui = child$ui.getChild$ui()) {
-                if ((child$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((child$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node2 = child$ui;
                     MutableVector mutableVector = null;
                     while (node2 != null) {
                         if (node2 instanceof FocusTargetNode) {
                             FocusTargetNode focusTargetNode = (FocusTargetNode) node2;
-                            if (z) {
+                            if (z2) {
                                 return focusTargetNode;
                             }
+                            z = false;
+                            z2 = true;
+                        } else {
                             z = true;
-                        } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                        }
+                        if (z && (node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node2 = delegate$ui;
@@ -250,7 +255,7 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
                         } else if (z) {
                             this.focusedChild = null;
                             if (getFocusTargetOfEmbeddedViewWrapper().getFocusState().isFocused()) {
-                                focusOwner.mo4418clearFocusI7lrPNg(false, true, false, FocusDirection.Companion.m4408getExitdhqQ8s());
+                                focusOwner.mo4994clearFocusI7lrPNg(false, true, false, FocusDirection.Companion.m4984getExitdhqQ8s());
                                 return;
                             }
                             return;

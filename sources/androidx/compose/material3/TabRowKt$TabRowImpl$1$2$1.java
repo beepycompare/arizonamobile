@@ -27,16 +27,16 @@ final class TabRowKt$TabRowImpl$1$2$1 implements MultiContentMeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo762measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public final MeasureResult mo924measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         MeasureScope measureScope2 = measureScope;
         List<? extends Measurable> list2 = list.get(0);
         List<? extends Measurable> list3 = list.get(1);
         List<? extends Measurable> list4 = list.get(2);
-        int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
+        int m8113getMaxWidthimpl = Constraints.m8113getMaxWidthimpl(j);
         int size = list2.size();
         final Ref.IntRef intRef = new Ref.IntRef();
         if (size > 0) {
-            intRef.element = m7508getMaxWidthimpl / size;
+            intRef.element = m8113getMaxWidthimpl / size;
         }
         int i = 0;
         List<? extends Measurable> list5 = list2;
@@ -49,7 +49,7 @@ final class TabRowKt$TabRowImpl$1$2$1 implements MultiContentMeasurePolicy {
         ArrayList arrayList = new ArrayList(size);
         int i3 = 0;
         while (i3 < size) {
-            arrayList.add(new TabPosition(Dp.m7555constructorimpl(measureScope2.mo402toDpu2uoSUM(intRef.element) * i3), measureScope2.mo402toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(measureScope2.mo402toDpu2uoSUM(Math.min(list2.get(i3).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m7553boximpl(Dp.m7555constructorimpl(24.0f)))).m7569unboximpl(), null));
+            arrayList.add(new TabPosition(Dp.m8160constructorimpl(measureScope2.mo431toDpu2uoSUM(intRef.element) * i3), measureScope2.mo431toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m8158boximpl(Dp.m8160constructorimpl(measureScope2.mo431toDpu2uoSUM(Math.min(list2.get(i3).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m8160constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m8158boximpl(Dp.m8160constructorimpl(24.0f)))).m8174unboximpl(), null));
             i3++;
             measureScope2 = measureScope;
         }
@@ -59,13 +59,13 @@ final class TabRowKt$TabRowImpl$1$2$1 implements MultiContentMeasurePolicy {
         for (int i4 = 0; i4 < size3; i4++) {
             int i5 = intValue;
             intValue = i5;
-            arrayList2.add(list2.get(i4).mo6216measureBRTryo0(Constraints.m7497copyZbe2FdA(j, intRef.element, intRef.element, i5, intValue)));
+            arrayList2.add(list2.get(i4).mo6818measureBRTryo0(Constraints.m8102copyZbe2FdA(j, intRef.element, intRef.element, i5, intValue)));
         }
         final ArrayList arrayList3 = arrayList2;
         ArrayList arrayList4 = new ArrayList(list3.size());
         int size4 = list3.size();
         for (int i6 = 0; i6 < size4; i6++) {
-            arrayList4.add(list3.get(i6).mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null)));
+            arrayList4.add(list3.get(i6).mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null)));
         }
         final ArrayList arrayList5 = arrayList4;
         ArrayList arrayList6 = new ArrayList(list4.size());
@@ -73,10 +73,10 @@ final class TabRowKt$TabRowImpl$1$2$1 implements MultiContentMeasurePolicy {
         for (int i7 = 0; i7 < size5; i7++) {
             int i8 = intValue;
             intValue = i8;
-            arrayList6.add(list4.get(i7).mo6216measureBRTryo0(Constraints.m7497copyZbe2FdA(j, intRef.element, intRef.element, 0, i8)));
+            arrayList6.add(list4.get(i7).mo6818measureBRTryo0(Constraints.m8102copyZbe2FdA(j, intRef.element, intRef.element, 0, i8)));
         }
         final ArrayList arrayList7 = arrayList6;
-        return MeasureScope.layout$default(measureScope, m7508getMaxWidthimpl, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1$2$1$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, m8113getMaxWidthimpl, intValue, null, new Function1() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return TabRowKt$TabRowImpl$1$2$1.measure_3p2s80s$lambda$8(arrayList3, arrayList5, arrayList7, intRef, intValue, (Placeable.PlacementScope) obj);

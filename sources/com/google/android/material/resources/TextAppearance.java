@@ -195,6 +195,7 @@ public class TextAppearance {
         textPaint.setTextSkewX((i & 2) != 0 ? -0.25f : 0.0f);
         textPaint.setTextSize(this.textSize);
         if (Build.VERSION.SDK_INT >= 26) {
+            textPaint.setFontVariationSettings(null);
             textPaint.setFontVariationSettings(this.fontVariationSettings);
         }
         if (this.hasLetterSpacing) {

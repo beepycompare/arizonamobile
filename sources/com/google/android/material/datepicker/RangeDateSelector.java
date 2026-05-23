@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.Editable;
+import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -211,6 +213,10 @@ public class RangeDateSelector implements DateSelector<Pair<Long, Long>> {
         if (l != null) {
             editText.setText(simpleDateFormat2.format(l));
             this.proposedTextStart = this.selectedStartItem;
+            Editable text = editText.getText();
+            if (text != null) {
+                editText.setSelection(text.length());
+            }
         }
         Long l2 = this.selectedEndItem;
         if (l2 != null) {
@@ -223,8 +229,9 @@ public class RangeDateSelector implements DateSelector<Pair<Long, Long>> {
             defaultTextInputHint = UtcDates.getDefaultTextInputHint(inflate.getResources(), simpleDateFormat2);
         }
         String str = defaultTextInputHint;
-        textInputLayout.setPlaceholderText(str);
-        textInputLayout2.setPlaceholderText(str);
+        SpannableString verbatimTextInputHint = UtcDates.getVerbatimTextInputHint(str);
+        textInputLayout.setPlaceholderText(verbatimTextInputHint);
+        textInputLayout2.setPlaceholderText(verbatimTextInputHint);
         editText.addTextChangedListener(new DateFormatTextWatcher(str, simpleDateFormat2, textInputLayout, calendarConstraints) { // from class: com.google.android.material.datepicker.RangeDateSelector.1
             @Override // com.google.android.material.datepicker.DateFormatTextWatcher
             void onValidDate(Long l3) {

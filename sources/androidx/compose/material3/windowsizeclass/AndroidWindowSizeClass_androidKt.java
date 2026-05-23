@@ -12,7 +12,7 @@ import androidx.window.layout.WindowMetricsCalculator;
 import kotlin.Metadata;
 /* compiled from: AndroidWindowSizeClass.android.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"calculateWindowSizeClass", "Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "activity", "Landroid/app/Activity;", "(Landroid/app/Activity;Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "material3-window-size-class"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AndroidWindowSizeClass_androidKt {
     public static final WindowSizeClass calculateWindowSizeClass(Activity activity, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 866044206, "C(calculateWindowSizeClass)41@1807L7,42@1846L7:AndroidWindowSizeClass.android.kt#hkqeis");
@@ -25,11 +25,11 @@ public final class AndroidWindowSizeClass_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        WindowSizeClass m3955calculateFromSizeqzXmJYc$default = WindowSizeClass.Companion.m3955calculateFromSizeqzXmJYc$default(WindowSizeClass.Companion, ((Density) consume).mo403toDpSizekrfVVM(RectHelper_androidKt.toComposeRect(WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(activity).getBounds()).m4560getSizeNHjbRc()), null, null, 6, null);
+        WindowSizeClass m4400calculateFromSizeqzXmJYc$default = WindowSizeClass.Companion.m4400calculateFromSizeqzXmJYc$default(WindowSizeClass.Companion, ((Density) consume).mo432toDpSizekrfVVM(RectHelper_androidKt.toComposeRect(WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(activity).getBounds()).m5136getSizeNHjbRc()), null, null, 6, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3955calculateFromSizeqzXmJYc$default;
+        return m4400calculateFromSizeqzXmJYc$default;
     }
 }

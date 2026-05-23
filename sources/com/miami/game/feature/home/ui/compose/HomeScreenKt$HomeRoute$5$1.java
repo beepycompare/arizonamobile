@@ -8,7 +8,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HomeScreen.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final /* synthetic */ class HomeScreenKt$HomeRoute$5$1 extends FunctionReferenceImpl implements Function1<String, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public HomeScreenKt$HomeRoute$5$1(Object obj) {

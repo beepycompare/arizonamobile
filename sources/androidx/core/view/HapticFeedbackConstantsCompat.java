@@ -42,7 +42,7 @@ public final class HapticFeedbackConstantsCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0029, code lost:
-        if (r5 != 17) goto L36;
+        if (r5 != 17) goto L33;
      */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0037  */
     /*

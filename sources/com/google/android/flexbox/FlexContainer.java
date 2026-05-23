@@ -2,7 +2,7 @@ package com.google.android.flexbox;
 
 import android.view.View;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 interface FlexContainer {
     public static final int NOT_SET = -1;
 

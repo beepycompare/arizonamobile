@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzf implements AppMeasurementSdk.OnEventListener {
     final /* synthetic */ zzg zza;

@@ -1,17 +1,28 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
-/* loaded from: classes4.dex */
-public final class zzqf implements zzqe {
-    public static final zzkm zza;
 
-    static {
-        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zzb.zzd("measurement.gbraid_campaign.gbraid.client", true);
-        zza = zzb.zzd("measurement.gbraid_campaign.stop_lgclid", false);
+import com.google.common.util.concurrent.ListeningScheduledExecutorService;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+final class zzqf implements Runnable {
+    final /* synthetic */ Runnable zza;
+    final /* synthetic */ ListeningScheduledExecutorService zzb;
+    final /* synthetic */ long zzc;
+    final /* synthetic */ TimeUnit zzd;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzqf(zzqi zzqiVar, Runnable runnable, ListeningScheduledExecutorService listeningScheduledExecutorService, long j, TimeUnit timeUnit) {
+        this.zza = runnable;
+        this.zzb = listeningScheduledExecutorService;
+        this.zzc = j;
+        this.zzd = timeUnit;
+        Objects.requireNonNull(zzqiVar);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqe
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.zza.run();
+        zzpx.zza(this.zzb.schedule((Runnable) this, this.zzc, this.zzd));
     }
 }

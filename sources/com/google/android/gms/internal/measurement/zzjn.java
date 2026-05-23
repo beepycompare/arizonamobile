@@ -1,64 +1,39 @@
 package com.google.android.gms.internal.measurement;
 
-import android.content.Context;
-import com.google.common.base.Supplier;
-import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import com.google.android.gms.common.Feature;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzjn extends zzkh {
-    private final Context zza;
-    @Nullable
-    private final Supplier zzb;
+public final class zzjn {
+    public static final Feature zza;
+    public static final Feature zzb;
+    public static final Feature zzc;
+    public static final Feature zzd;
+    public static final Feature zze;
+    public static final Feature zzf;
+    public static final Feature zzg;
+    public static final Feature zzh;
+    public static final Feature zzi;
+    public static final Feature[] zzj;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzjn(Context context, @Nullable Supplier supplier) {
-        this.zza = context;
-        this.zzb = supplier;
-    }
-
-    public final boolean equals(Object obj) {
-        Supplier supplier;
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof zzkh) {
-            zzkh zzkhVar = (zzkh) obj;
-            if (this.zza.equals(zzkhVar.zza()) && ((supplier = this.zzb) != null ? supplier.equals(zzkhVar.zzb()) : zzkhVar.zzb() == null)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int hashCode = this.zza.hashCode() ^ 1000003;
-        Supplier supplier = this.zzb;
-        return (supplier == null ? 0 : supplier.hashCode()) ^ (hashCode * 1000003);
-    }
-
-    public final String toString() {
-        String obj = this.zza.toString();
-        int length = obj.length();
-        String valueOf = String.valueOf(this.zzb);
-        StringBuilder sb = new StringBuilder(length + 45 + String.valueOf(valueOf).length() + 1);
-        sb.append("FlagsContext{context=");
-        sb.append(obj);
-        sb.append(", hermeticFileOverrides=");
-        sb.append(valueOf);
-        sb.append("}");
-        return sb.toString();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzkh
-    public final Context zza() {
-        return this.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Override // com.google.android.gms.internal.measurement.zzkh
-    @Nullable
-    public final Supplier zzb() {
-        return this.zzb;
+    static {
+        Feature feature = new Feature("commit_to_configuration_v2_api", 1L, true);
+        zza = feature;
+        Feature feature2 = new Feature("get_serving_version_api", 1L, true);
+        zzb = feature2;
+        Feature feature3 = new Feature("get_experiment_tokens_api", 1L, true);
+        zzc = feature3;
+        Feature feature4 = new Feature("register_flag_update_listener_api", 2L, true);
+        zzd = feature4;
+        Feature feature5 = new Feature("sync_after_api", 1L, true);
+        zze = feature5;
+        Feature feature6 = new Feature("sync_after_for_application_api", 1L, true);
+        zzf = feature6;
+        Feature feature7 = new Feature("set_app_wide_properties_api", 1L, true);
+        zzg = feature7;
+        Feature feature8 = new Feature("set_runtime_properties_api", 1L, true);
+        zzh = feature8;
+        Feature feature9 = new Feature("get_storage_info_api", 1L, true);
+        zzi = feature9;
+        zzj = new Feature[]{feature, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9};
     }
 }

@@ -1,41 +1,57 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
+import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
+import java.util.concurrent.CopyOnWriteArrayList;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Jm extends Rm {
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
-        byte[] bArr;
-        byte[] bArr2;
-        C0709xm c0709xm = new C0709xm();
-        try {
-            bArr = AbstractC0279gj.a(context.getPackageName());
-        } catch (Throwable unused) {
-            bArr = new byte[16];
+public final class Jm implements Mm {
+
+    /* renamed from: a  reason: collision with root package name */
+    public volatile Hm f617a;
+    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
+
+    @Override // io.appmetrica.analytics.impl.Mm
+    public final void a(Hm hm) {
+        this.f617a = hm;
+        for (Mm mm : this.b) {
+            mm.a(hm);
         }
-        try {
-            bArr2 = AbstractC0279gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
-        } catch (Throwable unused2) {
-            bArr2 = new byte[16];
-        }
-        return new Mf("startup_state", iBinaryDataHelper, new A8(c0709xm, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new C0282gm());
     }
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper b(Context context) {
-        IBinaryDataHelper a2;
-        C0732yk B = C0448na.I.B();
-        synchronized (B) {
-            a2 = B.a(context);
-        }
-        return a2;
+    public final void b(Mm mm) {
+        this.b.remove(mm);
     }
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper a(Context context) {
-        return C0448na.I.B().b(context);
+    public final Hm a() {
+        Hm hm = this.f617a;
+        if (hm == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("startupState");
+            return null;
+        }
+        return hm;
+    }
+
+    public final void a(Mm mm) {
+        this.b.add(mm);
+        if (this.f617a != null) {
+            Hm hm = this.f617a;
+            if (hm == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("startupState");
+                hm = null;
+            }
+            mm.a(hm);
+        }
+    }
+
+    public final void a(Context context) {
+        String optStringOrNull;
+        ProtobufStateStorage<Object> create = ((AbstractC0621tn) C0569rn.a(Lm.class)).create(context);
+        Zo a2 = Na.k().D().a();
+        synchronized (a2) {
+            optStringOrNull = JsonUtils.optStringOrNull(a2.f875a.a(), "device_id");
+        }
+        a(new Hm(optStringOrNull, a2.a(), (Lm) create.read()));
     }
 }

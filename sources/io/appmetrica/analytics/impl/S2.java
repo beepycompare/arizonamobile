@@ -1,98 +1,30 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 /* loaded from: classes5.dex */
-public final class S2 implements IBinaryDataHelper {
+public abstract class S2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0718y6 f780a;
-    public final String b;
+    public final AbstractC0278gg f755a;
+    public final InterfaceC0273gb b;
 
-    public S2(InterfaceC0718y6 interfaceC0718y6, String str) {
-        this.f780a = interfaceC0718y6;
-        this.b = str;
+    public S2(AbstractC0278gg abstractC0278gg, InterfaceC0273gb interfaceC0273gb) {
+        this.f755a = abstractC0278gg;
+        this.b = interfaceC0273gb;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
-    public final byte[] get(String str) {
-        Cursor cursor;
-        SQLiteDatabase sQLiteDatabase;
-        try {
-            sQLiteDatabase = this.f780a.a();
-        } catch (Throwable unused) {
-            cursor = null;
-            sQLiteDatabase = null;
-        }
-        if (sQLiteDatabase != null) {
-            try {
-                cursor = sQLiteDatabase.query(this.b, null, "data_key = ?", new String[]{str}, null, null, null);
-                if (cursor != null) {
-                    try {
-                        if (cursor.getCount() == 1 && cursor.moveToFirst()) {
-                            byte[] blob = cursor.getBlob(cursor.getColumnIndexOrThrow("value"));
-                            lo.a(cursor);
-                            this.f780a.a(sQLiteDatabase);
-                            return blob;
-                        }
-                    } catch (Throwable unused2) {
-                    }
-                }
-                if (cursor != null) {
-                    cursor.getCount();
-                }
-            } catch (Throwable unused3) {
+    public final boolean a(C0242f6 c0242f6, R2 r2) {
+        for (Object obj : ((C0504p9) this.f755a.a(c0242f6.d)).f1144a) {
+            if (r2.a(obj, c0242f6)) {
+                return true;
             }
-            lo.a(cursor);
-            this.f780a.a(sQLiteDatabase);
-            return null;
         }
-        cursor = null;
-        lo.a(cursor);
-        this.f780a.a(sQLiteDatabase);
-        return null;
+        return false;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
-    public final void insert(String str, byte[] bArr) {
-        SQLiteDatabase sQLiteDatabase;
-        SQLiteDatabase sQLiteDatabase2 = null;
-        try {
-            sQLiteDatabase = this.f780a.a();
-            if (sQLiteDatabase != null) {
-                try {
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("data_key", str);
-                    contentValues.put("value", bArr);
-                    sQLiteDatabase.insertWithOnConflict(this.b, null, contentValues, 5);
-                } catch (Throwable unused) {
-                    sQLiteDatabase2 = sQLiteDatabase;
-                    sQLiteDatabase = sQLiteDatabase2;
-                    this.f780a.a(sQLiteDatabase);
-                }
-            }
-        } catch (Throwable unused2) {
-        }
-        this.f780a.a(sQLiteDatabase);
+    public final AbstractC0278gg b() {
+        return this.f755a;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
-    public final void remove(String str) {
-        SQLiteDatabase sQLiteDatabase;
-        try {
-            sQLiteDatabase = this.f780a.a();
-            if (sQLiteDatabase != null) {
-                try {
-                    new ContentValues().put("data_key", str);
-                    sQLiteDatabase.delete(this.b, "data_key = ?", new String[]{str});
-                } catch (Throwable unused) {
-                }
-            }
-        } catch (Throwable unused2) {
-            sQLiteDatabase = null;
-        }
-        this.f780a.a(sQLiteDatabase);
+    public final InterfaceC0273gb a() {
+        return this.b;
     }
 }

@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: SimpleLayout.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class SimpleLayoutKt$SimpleLayout$1$1 implements MeasurePolicy {
     public static final SimpleLayoutKt$SimpleLayout$1$1 INSTANCE = new SimpleLayoutKt$SimpleLayout$1$1();
@@ -27,10 +27,10 @@ final class SimpleLayoutKt$SimpleLayout$1$1 implements MeasurePolicy {
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            Placeable mo6216measureBRTryo0 = list.get(i3).mo6216measureBRTryo0(j);
-            i = Math.max(i, mo6216measureBRTryo0.getWidth());
-            i2 = Math.max(i2, mo6216measureBRTryo0.getHeight());
-            arrayList.add(mo6216measureBRTryo0);
+            Placeable mo6818measureBRTryo0 = list.get(i3).mo6818measureBRTryo0(j);
+            i = Math.max(i, mo6818measureBRTryo0.getWidth());
+            i2 = Math.max(i2, mo6818measureBRTryo0.getHeight());
+            arrayList.add(mo6818measureBRTryo0);
         }
         final ArrayList arrayList2 = arrayList;
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1() { // from class: androidx.compose.foundation.text.selection.SimpleLayoutKt$SimpleLayout$1$1$$ExternalSyntheticLambda0

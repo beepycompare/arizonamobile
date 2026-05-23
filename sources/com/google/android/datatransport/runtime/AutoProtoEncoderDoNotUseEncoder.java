@@ -13,7 +13,7 @@ import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.encoders.proto.AtProtobuf;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoProtoEncoderDoNotUseEncoder();
@@ -32,7 +32,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         encoderConfig.registerEncoder(StorageMetrics.class, StorageMetricsEncoder.INSTANCE);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder<ProtoEncoderDoNotUse> {
         static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
         private static final FieldDescriptor CLIENTMETRICS_DESCRIPTOR = FieldDescriptor.of("clientMetrics");
@@ -46,7 +46,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ClientMetricsEncoder implements ObjectEncoder<ClientMetrics> {
         static final ClientMetricsEncoder INSTANCE = new ClientMetricsEncoder();
         private static final FieldDescriptor WINDOW_DESCRIPTOR = FieldDescriptor.builder("window").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -66,7 +66,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class TimeWindowEncoder implements ObjectEncoder<TimeWindow> {
         static final TimeWindowEncoder INSTANCE = new TimeWindowEncoder();
         private static final FieldDescriptor STARTMS_DESCRIPTOR = FieldDescriptor.builder("startMs").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -82,7 +82,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LogSourceMetricsEncoder implements ObjectEncoder<LogSourceMetrics> {
         static final LogSourceMetricsEncoder INSTANCE = new LogSourceMetricsEncoder();
         private static final FieldDescriptor LOGSOURCE_DESCRIPTOR = FieldDescriptor.builder("logSource").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -98,7 +98,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LogEventDroppedEncoder implements ObjectEncoder<LogEventDropped> {
         static final LogEventDroppedEncoder INSTANCE = new LogEventDroppedEncoder();
         private static final FieldDescriptor EVENTSDROPPEDCOUNT_DESCRIPTOR = FieldDescriptor.builder("eventsDroppedCount").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -114,7 +114,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class GlobalMetricsEncoder implements ObjectEncoder<GlobalMetrics> {
         static final GlobalMetricsEncoder INSTANCE = new GlobalMetricsEncoder();
         private static final FieldDescriptor STORAGEMETRICS_DESCRIPTOR = FieldDescriptor.builder("storageMetrics").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -128,7 +128,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class StorageMetricsEncoder implements ObjectEncoder<StorageMetrics> {
         static final StorageMetricsEncoder INSTANCE = new StorageMetricsEncoder();
         private static final FieldDescriptor CURRENTCACHESIZEBYTES_DESCRIPTOR = FieldDescriptor.builder("currentCacheSizeBytes").withProperty(AtProtobuf.builder().tag(1).build()).build();

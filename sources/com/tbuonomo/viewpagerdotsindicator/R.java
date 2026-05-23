@@ -1,60 +1,60 @@
 package com.tbuonomo.viewpagerdotsindicator;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class attr {
-        public static int dampingRatio = 0x7f0401bf;
-        public static int dotsClickable = 0x7f0401fe;
-        public static int dotsColor = 0x7f0401ff;
-        public static int dotsCornerRadius = 0x7f040200;
-        public static int dotsElevation = 0x7f040201;
-        public static int dotsSize = 0x7f040202;
-        public static int dotsSpacing = 0x7f040203;
-        public static int dotsStrokeColor = 0x7f040204;
-        public static int dotsStrokeWidth = 0x7f040205;
-        public static int dotsWidthFactor = 0x7f040206;
-        public static int progressMode = 0x7f04051a;
-        public static int selectedDotColor = 0x7f04056c;
-        public static int stiffness = 0x7f0405e3;
+        public static int dampingRatio = 0x7f0401c4;
+        public static int dotsClickable = 0x7f040204;
+        public static int dotsColor = 0x7f040205;
+        public static int dotsCornerRadius = 0x7f040206;
+        public static int dotsElevation = 0x7f040207;
+        public static int dotsSize = 0x7f040208;
+        public static int dotsSpacing = 0x7f040209;
+        public static int dotsStrokeColor = 0x7f04020a;
+        public static int dotsStrokeWidth = 0x7f04020b;
+        public static int dotsWidthFactor = 0x7f04020c;
+        public static int progressMode = 0x7f040544;
+        public static int selectedDotColor = 0x7f04059a;
+        public static int stiffness = 0x7f040614;
 
         private attr() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class drawable {
         public static int dot_background = 0x7f080761;
-        public static int spring_dot_background = 0x7f080f1c;
-        public static int spring_dot_stroke_background = 0x7f080f1d;
-        public static int worm_dot_background = 0x7f080f83;
-        public static int worm_dot_stroke_background = 0x7f080f84;
+        public static int spring_dot_background = 0x7f080f57;
+        public static int spring_dot_stroke_background = 0x7f080f58;
+        public static int worm_dot_background = 0x7f080fbe;
+        public static int worm_dot_stroke_background = 0x7f080fbf;
 
         private drawable() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class id {
-        public static int dot = 0x7f0a0492;
-        public static int spring_dot = 0x7f0a0d98;
-        public static int worm_dot = 0x7f0a108a;
+        public static int dot = 0x7f0a0493;
+        public static int spring_dot = 0x7f0a0da1;
+        public static int worm_dot = 0x7f0a1093;
 
         private id() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class layout {
         public static int dot_layout = 0x7f0d00b1;
-        public static int spring_dot_layout = 0x7f0d026d;
-        public static int worm_dot_layout = 0x7f0d0298;
+        public static int spring_dot_layout = 0x7f0d0271;
+        public static int worm_dot_layout = 0x7f0d029c;
 
         private layout() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class styleable {
         public static int DotsIndicator_dotsClickable = 0x00000000;
         public static int DotsIndicator_dotsColor = 0x00000001;

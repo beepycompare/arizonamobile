@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 @Qualifier
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface Named {
     String value() default "";
 }

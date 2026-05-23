@@ -88,7 +88,7 @@ final class AppUpdateManagerKtxKt$requestUpdateFlow$1 extends SuspendLambda impl
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(AppUpdatePassthroughListener $receiver) {
                     Intrinsics.checkNotNullParameter($receiver, "$this$$receiver");
-                    SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
+                    SendChannel.close$default(producerScope, null, 1, null);
                 }
             });
             Task<AppUpdateInfo> appUpdateInfo = this.$this_requestUpdateFlow.getAppUpdateInfo();
@@ -101,12 +101,12 @@ final class AppUpdateManagerKtxKt$requestUpdateFlow$1 extends SuspendLambda impl
                         producerScope.close(new InstallException(-2));
                     } else if (updateAvailability == 1) {
                         AppUpdateManagerKtxKt.tryOffer(producerScope, AppUpdateResult.NotAvailable.INSTANCE);
-                        SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
+                        SendChannel.close$default(producerScope, null, 1, null);
                     } else if (updateAvailability == 2 || updateAvailability == 3) {
                         Intrinsics.checkNotNullExpressionValue(updateInfo, "updateInfo");
                         if (updateInfo.installStatus() == 11) {
                             AppUpdateManagerKtxKt.tryOffer(producerScope, new AppUpdateResult.Downloaded(appUpdateManager2));
-                            SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
+                            SendChannel.close$default(producerScope, null, 1, null);
                             return;
                         }
                         appUpdateManager2.registerListener(appUpdatePassthroughListener);

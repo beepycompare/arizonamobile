@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.connection.RoutePlanner;
 /* compiled from: SequentialExchangeFinder.kt */
 @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\b\u0000\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\b\u001a\u00020\tH\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\n"}, d2 = {"Lokhttp3/internal/connection/SequentialExchangeFinder;", "Lokhttp3/internal/connection/ExchangeFinder;", "routePlanner", "Lokhttp3/internal/connection/RoutePlanner;", "<init>", "(Lokhttp3/internal/connection/RoutePlanner;)V", "getRoutePlanner", "()Lokhttp3/internal/connection/RoutePlanner;", "find", "Lokhttp3/internal/connection/RealConnection;", "okhttp"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class SequentialExchangeFinder implements ExchangeFinder {
     private final RoutePlanner routePlanner;
 
@@ -39,12 +39,12 @@ public final class SequentialExchangeFinder implements ExchangeFinder {
                 }
             }
             if (!plan.isReady()) {
-                RoutePlanner.ConnectResult mo11052connectTcp = plan.mo11052connectTcp();
-                if (mo11052connectTcp.isSuccess()) {
-                    mo11052connectTcp = plan.mo11053connectTlsEtc();
+                RoutePlanner.ConnectResult mo11692connectTcp = plan.mo11692connectTcp();
+                if (mo11692connectTcp.isSuccess()) {
+                    mo11692connectTcp = plan.mo11693connectTlsEtc();
                 }
-                RoutePlanner.Plan component2 = mo11052connectTcp.component2();
-                Throwable component3 = mo11052connectTcp.component3();
+                RoutePlanner.Plan component2 = mo11692connectTcp.component2();
+                Throwable component3 = mo11692connectTcp.component3();
                 if (component3 != null) {
                     throw component3;
                 }
@@ -52,7 +52,7 @@ public final class SequentialExchangeFinder implements ExchangeFinder {
                     getRoutePlanner().getDeferredPlans().addFirst(component2);
                 }
             }
-            return plan.mo11049handleSuccess();
+            return plan.mo11689handleSuccess();
         }
         throw new IOException("Canceled");
     }

@@ -1,13 +1,13 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes5.dex */
-public interface Pa extends Ql {
-    @Override // io.appmetrica.analytics.impl.Ql
-    /* synthetic */ void a(Jl jl, C0256fm c0256fm);
+public final class Pa {
 
-    void a(P5 p5);
+    /* renamed from: a  reason: collision with root package name */
+    public final ICommonExecutor f714a;
 
-    @Override // io.appmetrica.analytics.impl.Ql
-    /* synthetic */ void a(C0256fm c0256fm);
-
-    void a(C0467o4 c0467o4);
+    public Pa(ICommonExecutor iCommonExecutor) {
+        this.f714a = iCommonExecutor;
+    }
 }

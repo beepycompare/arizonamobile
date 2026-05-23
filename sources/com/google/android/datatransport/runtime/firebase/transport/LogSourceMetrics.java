@@ -4,7 +4,7 @@ import com.google.firebase.encoders.annotations.Encodable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LogSourceMetrics {
     private static final LogSourceMetrics DEFAULT_INSTANCE = new Builder().build();
     private final List<LogEventDropped> log_event_dropped_;
@@ -32,7 +32,7 @@ public final class LogSourceMetrics {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private String log_source_ = "";
         private List<LogEventDropped> log_event_dropped_ = new ArrayList();

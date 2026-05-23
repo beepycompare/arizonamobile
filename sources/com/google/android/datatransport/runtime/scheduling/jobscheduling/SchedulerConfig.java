@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SchedulerConfig {
     private static final long BACKOFF_LOG_BASE = 10000;
     private static final long ONE_SECOND = 1000;
     private static final long THIRTY_SECONDS = 30000;
     private static final long TWENTY_FOUR_HOURS = 86400000;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Flag {
         NETWORK_UNMETERED,
         DEVICE_IDLE,
@@ -30,10 +30,10 @@ public abstract class SchedulerConfig {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract Map<Priority, ConfigValue> getValues();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ConfigValue {
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Builder {
             public abstract ConfigValue build();
 
@@ -70,7 +70,7 @@ public abstract class SchedulerConfig {
         return new AutoValue_SchedulerConfig(clock, map);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private Clock clock;
         private Map<Priority, ConfigValue> values = new HashMap();

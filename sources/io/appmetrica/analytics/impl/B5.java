@@ -1,17 +1,26 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class B5 {
+public final class B5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0717y5 f516a;
-    public final InterfaceC0742z5 b;
-    public final C0218ea c;
-    public final String d;
+    public final /* synthetic */ Be f467a;
+    public final /* synthetic */ C5 b;
 
-    public B5(InterfaceC0717y5 interfaceC0717y5, InterfaceC0742z5 interfaceC0742z5, C0218ea c0218ea, String str) {
-        this.f516a = interfaceC0717y5;
-        this.b = interfaceC0742z5;
-        this.c = c0218ea;
-        this.d = str;
+    public B5(C5 c5, Be be) {
+        this.b = c5;
+        this.f467a = be;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        synchronized (this.b) {
+            C5 c5 = this.b;
+            Object obj = c5.f487a;
+            if (obj == null) {
+                c5.b.add(this.f467a);
+            } else {
+                this.f467a.consume(obj);
+            }
+        }
     }
 }

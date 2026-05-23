@@ -1,8 +1,8 @@
 package com.miami.game.core.drawable.resources;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class drawable {
         public static int arizona_backgournd_home = 0x7f080355;
         public static int btn_back_launcher = 0x7f080502;
@@ -26,18 +26,18 @@ public final class R {
         public static int ic_play_home_screen_inactive = 0x7f080b1c;
         public static int ic_setting = 0x7f080b2e;
         public static int icon_close = 0x7f080bb0;
-        public static int news_background = 0x7f080d0c;
-        public static int repair_game_btn = 0x7f080e5b;
-        public static int rodina_backgournd_home = 0x7f080e63;
-        public static int select_server_favorite_false = 0x7f080e92;
-        public static int select_server_favorite_true = 0x7f080e93;
-        public static int setup_image = 0x7f080ea7;
+        public static int news_background = 0x7f080d47;
+        public static int repair_game_btn = 0x7f080e96;
+        public static int rodina_backgournd_home = 0x7f080e9e;
+        public static int select_server_favorite_false = 0x7f080ecd;
+        public static int select_server_favorite_true = 0x7f080ece;
+        public static int setup_image = 0x7f080ee2;
 
         private drawable() {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class mipmap {
         public static int ic_launcher = 0x7f0f0000;
         public static int ic_launcher_foreground = 0x7f0f0001;

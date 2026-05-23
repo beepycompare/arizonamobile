@@ -1,40 +1,23 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.RemoteException;
-import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+import android.os.Bundle;
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-abstract class zzeq implements Runnable {
-    final long zzh;
-    final long zzi;
-    final boolean zzj;
-    final /* synthetic */ zzfb zzk;
+final class zzeq extends zzcx {
+    private final com.google.android.gms.measurement.internal.zzjq zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzeq(zzfb zzfbVar, boolean z) {
-        Objects.requireNonNull(zzfbVar);
-        this.zzk = zzfbVar;
-        this.zzh = zzfbVar.zza.currentTimeMillis();
-        this.zzi = zzfbVar.zza.elapsedRealtime();
-        this.zzj = z;
+    public zzeq(com.google.android.gms.measurement.internal.zzjq zzjqVar) {
+        this.zza = zzjqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.zzk.zzP()) {
-            zzb();
-            return;
-        }
-        try {
-            zza();
-        } catch (Exception e) {
-            this.zzk.zzN(e, false, this.zzj);
-            zzb();
-        }
+    @Override // com.google.android.gms.internal.measurement.zzcy
+    public final void zze(String str, String str2, Bundle bundle, long j) {
+        this.zza.onEvent(str, str2, bundle, j);
     }
 
-    abstract void zza() throws RemoteException;
-
-    protected void zzb() {
+    @Override // com.google.android.gms.internal.measurement.zzcy
+    public final int zzf() {
+        return System.identityHashCode(this.zza);
     }
 }

@@ -46,21 +46,21 @@ final class AlertDialogKt$AlertDialogFlowRow$1$1 implements MeasurePolicy {
         int i2 = 0;
         while (i2 < size) {
             int i3 = size;
-            Placeable mo6216measureBRTryo0 = list2.get(i2).mo6216measureBRTryo0(j);
+            Placeable mo6818measureBRTryo0 = list2.get(i2).mo6818measureBRTryo0(j);
             Ref.IntRef intRef5 = intRef3;
             intRef3 = intRef5;
-            if (measure_3p2s80s$canAddToCurrentSequence(arrayList4, intRef5, measureScope, f, j, mo6216measureBRTryo0)) {
+            if (measure_3p2s80s$canAddToCurrentSequence(arrayList4, intRef5, measureScope, f, j, mo6818measureBRTryo0)) {
                 i = i2;
             } else {
                 i = i2;
                 measure_3p2s80s$startNewSequence(arrayList, intRef2, measureScope, f2, arrayList4, arrayList2, intRef4, arrayList3, intRef, intRef3);
             }
             if (!arrayList4.isEmpty()) {
-                intRef3.element += measureScope.mo399roundToPx0680j_4(f);
+                intRef3.element += measureScope.mo428roundToPx0680j_4(f);
             }
-            arrayList4.add(mo6216measureBRTryo0);
-            intRef3.element += mo6216measureBRTryo0.getWidth();
-            intRef4.element = Math.max(intRef4.element, mo6216measureBRTryo0.getHeight());
+            arrayList4.add(mo6818measureBRTryo0);
+            intRef3.element += mo6818measureBRTryo0.getWidth();
+            intRef4.element = Math.max(intRef4.element, mo6818measureBRTryo0.getHeight());
             i2 = i + 1;
             list2 = list;
             size = i3;
@@ -68,8 +68,8 @@ final class AlertDialogKt$AlertDialogFlowRow$1$1 implements MeasurePolicy {
         if (!arrayList4.isEmpty()) {
             measure_3p2s80s$startNewSequence(arrayList, intRef2, measureScope, this.$crossAxisSpacing, arrayList4, arrayList2, intRef4, arrayList3, intRef, intRef3);
         }
-        final int max = Math.max(intRef.element, Constraints.m7510getMinWidthimpl(j));
-        int max2 = Math.max(intRef2.element, Constraints.m7509getMinHeightimpl(j));
+        final int max = Math.max(intRef.element, Constraints.m8115getMinWidthimpl(j));
+        int max2 = Math.max(intRef2.element, Constraints.m8114getMinHeightimpl(j));
         final float f3 = this.$mainAxisSpacing;
         return MeasureScope.layout$default(measureScope, max, max2, null, new Function1() { // from class: androidx.compose.material3.AlertDialogKt$AlertDialogFlowRow$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -80,12 +80,12 @@ final class AlertDialogKt$AlertDialogFlowRow$1$1 implements MeasurePolicy {
     }
 
     private static final boolean measure_3p2s80s$canAddToCurrentSequence(List<Placeable> list, Ref.IntRef intRef, MeasureScope measureScope, float f, long j, Placeable placeable) {
-        return list.isEmpty() || (intRef.element + measureScope.mo399roundToPx0680j_4(f)) + placeable.getWidth() <= Constraints.m7508getMaxWidthimpl(j);
+        return list.isEmpty() || (intRef.element + measureScope.mo428roundToPx0680j_4(f)) + placeable.getWidth() <= Constraints.m8113getMaxWidthimpl(j);
     }
 
     private static final void measure_3p2s80s$startNewSequence(List<List<Placeable>> list, Ref.IntRef intRef, MeasureScope measureScope, float f, List<Placeable> list2, List<Integer> list3, Ref.IntRef intRef2, List<Integer> list4, Ref.IntRef intRef3, Ref.IntRef intRef4) {
         if (!list.isEmpty()) {
-            intRef.element += measureScope.mo399roundToPx0680j_4(f);
+            intRef.element += measureScope.mo428roundToPx0680j_4(f);
         }
         list.add(0, CollectionsKt.toList(list2));
         list3.add(Integer.valueOf(intRef2.element));
@@ -106,7 +106,7 @@ final class AlertDialogKt$AlertDialogFlowRow$1$1 implements MeasurePolicy {
             int[] iArr = new int[size2];
             int i3 = 0;
             while (i3 < size2) {
-                iArr[i3] = ((Placeable) list3.get(i3)).getWidth() + (i3 < CollectionsKt.getLastIndex(list3) ? measureScope.mo399roundToPx0680j_4(f) : 0);
+                iArr[i3] = ((Placeable) list3.get(i3)).getWidth() + (i3 < CollectionsKt.getLastIndex(list3) ? measureScope.mo428roundToPx0680j_4(f) : 0);
                 i3++;
             }
             int[] iArr2 = new int[size2];

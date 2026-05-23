@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzg {
     public final zzg zza;
@@ -50,19 +50,16 @@ public final class zzg {
     public final void zze(String str, zzao zzaoVar) {
         zzg zzgVar;
         Map map = this.zzc;
-        if (map.containsKey(str) || (zzgVar = this.zza) == null || !zzgVar.zzd(str)) {
-            if (this.zzd.containsKey(str)) {
-                return;
-            }
+        if (!map.containsKey(str) && (zzgVar = this.zza) != null && zzgVar.zzd(str)) {
+            zzgVar.zze(str, zzaoVar);
+        } else if (this.zzd.containsKey(str)) {
+        } else {
             if (zzaoVar == null) {
                 map.remove(str);
-                return;
             } else {
                 map.put(str, zzaoVar);
-                return;
             }
         }
-        zzgVar.zze(str, zzaoVar);
     }
 
     public final void zzf(String str, zzao zzaoVar) {

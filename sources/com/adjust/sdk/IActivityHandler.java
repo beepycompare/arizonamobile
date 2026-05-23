@@ -36,6 +36,8 @@ public interface IActivityHandler {
 
     ActivityHandler.InternalState getInternalState();
 
+    void getThirdPartySharingSettingsWithTimeout(long j, OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener);
+
     void gotOptOutResponse();
 
     void init(AdjustConfig adjustConfig);
@@ -61,6 +63,8 @@ public interface IActivityHandler {
     void processAndResolveDeeplink(AdjustDeeplink adjustDeeplink, long j, OnDeeplinkResolvedListener onDeeplinkResolvedListener);
 
     void processDeeplink(AdjustDeeplink adjustDeeplink, long j);
+
+    void processRemoteTriggers(ResponseData responseData);
 
     void removeGlobalCallbackParameter(String str);
 

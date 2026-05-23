@@ -1,9 +1,12 @@
 package com.google.android.gms.common.images;
 
+import android.app.BroadcastOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -12,69 +15,87 @@ import android.os.ResultReceiver;
 import android.widget.ImageView;
 import com.google.android.gms.common.internal.Asserts;
 import com.google.android.gms.common.internal.Constants;
-import com.google.android.gms.internal.base.zam;
-import com.google.android.gms.internal.base.zat;
-import com.google.android.gms.internal.base.zau;
+import com.google.android.gms.internal.base.zaj;
+import com.google.android.gms.internal.base.zan;
+import com.google.android.gms.internal.base.zao;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ImageManager {
     private static final Object zaa = new Object();
     private static final HashSet zab = new HashSet();
     private static ImageManager zac;
     private final Context zad;
-    private final Handler zae = new zau(Looper.getMainLooper());
-    private final ExecutorService zaf = zat.zaa().zab(4, 2);
-    private final zam zag = new zam();
+    private final Handler zae = new zao(Looper.getMainLooper());
+    private final ExecutorService zaf = zan.zaa().zaa(4, 2);
+    private final zaj zag = new zaj();
     private final Map zah = new HashMap();
     private final Map zai = new HashMap();
     private final Map zaj = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public final class ImageReceiver extends ResultReceiver {
+        final /* synthetic */ ImageManager zaa;
         private final Uri zab;
         private final ArrayList zac;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public ImageReceiver(Uri uri) {
-            super(new zau(Looper.getMainLooper()));
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public ImageReceiver(ImageManager imageManager, Uri uri) {
+            super(new zao(Looper.getMainLooper()));
+            Objects.requireNonNull(imageManager);
+            this.zaa = imageManager;
             this.zab = uri;
             this.zac = new ArrayList();
         }
 
         @Override // android.os.ResultReceiver
         public final void onReceiveResult(int i, Bundle bundle) {
-            ImageManager imageManager = ImageManager.this;
-            imageManager.zaf.execute(new zaa(imageManager, this.zab, (ParcelFileDescriptor) bundle.getParcelable("com.google.android.gms.extra.fileDescriptor")));
+            ParcelFileDescriptor parcelFileDescriptor = (ParcelFileDescriptor) bundle.getParcelable("com.google.android.gms.extra.fileDescriptor");
+            AssetFileDescriptor assetFileDescriptor = parcelFileDescriptor != null ? new AssetFileDescriptor(parcelFileDescriptor, bundle.getLong("assetFdStartOffset", 0L), bundle.getLong("assetFdLength", -1L)) : null;
+            ImageManager imageManager = this.zaa;
+            imageManager.zaf().execute(new zaa(imageManager, this.zab, assetFileDescriptor));
         }
 
-        public final void zab(zag zagVar) {
+        public final void zaa(zag zagVar) {
             Asserts.checkMainThread("ImageReceiver.addImageRequest() must be called in the main thread");
             this.zac.add(zagVar);
         }
 
-        public final void zac(zag zagVar) {
+        public final void zab(zag zagVar) {
             Asserts.checkMainThread("ImageReceiver.removeImageRequest() must be called in the main thread");
             this.zac.remove(zagVar);
         }
 
-        public final void zad() {
+        public final void zac() {
             Intent intent = new Intent(Constants.ACTION_LOAD_IMAGE);
             intent.setPackage("com.google.android.gms");
             intent.putExtra(Constants.EXTRA_URI, this.zab);
             intent.putExtra(Constants.EXTRA_RESULT_RECEIVER, this);
             intent.putExtra(Constants.EXTRA_PRIORITY, 3);
-            ImageManager.this.zad.sendBroadcast(intent);
+            int i = Build.VERSION.SDK_INT;
+            Context zad = this.zaa.zad();
+            if (i < 34) {
+                zad.sendBroadcast(intent);
+            } else {
+                zad.sendBroadcast(intent, null, BroadcastOptions.makeBasic().setShareIdentityEnabled(true).toBundle());
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public final /* synthetic */ ArrayList zad() {
+            return this.zac;
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface OnImageLoadedListener {
         void onImageLoaded(Uri uri, Drawable drawable, boolean z);
@@ -92,31 +113,65 @@ public final class ImageManager {
     }
 
     public void loadImage(ImageView imageView, int i) {
-        zaj(new zae(imageView, i));
+        zaa(new zae(imageView, i));
     }
 
-    public final void zaj(zag zagVar) {
+    public final void zaa(zag zagVar) {
         Asserts.checkMainThread("ImageManager.loadImage() must be called in the main thread");
         new zab(this, zagVar).run();
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Context zad() {
+        return this.zad;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Handler zae() {
+        return this.zae;
+    }
+
+    final /* synthetic */ ExecutorService zaf() {
+        return this.zaf;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zaj zag() {
+        return this.zag;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Map zah() {
+        return this.zah;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Map zai() {
+        return this.zai;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Map zaj() {
+        return this.zaj;
+    }
+
     public void loadImage(ImageView imageView, Uri uri) {
-        zaj(new zae(imageView, uri));
+        zaa(new zae(imageView, uri));
     }
 
     public void loadImage(ImageView imageView, Uri uri, int i) {
         zae zaeVar = new zae(imageView, uri);
         zaeVar.zab = i;
-        zaj(zaeVar);
+        zaa(zaeVar);
     }
 
     public void loadImage(OnImageLoadedListener onImageLoadedListener, Uri uri) {
-        zaj(new zaf(onImageLoadedListener, uri));
+        zaa(new zaf(onImageLoadedListener, uri));
     }
 
     public void loadImage(OnImageLoadedListener onImageLoadedListener, Uri uri, int i) {
         zaf zafVar = new zaf(onImageLoadedListener, uri);
         zafVar.zab = i;
-        zaj(zafVar);
+        zaa(zafVar);
     }
 }

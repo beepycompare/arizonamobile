@@ -1,15 +1,19 @@
 package kotlin.reflect;
 
+import java.lang.reflect.GenericDeclaration;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.JvmClassMappingKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.KTypeBase;
+import kotlin.jvm.internal.KTypeParameterBase;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt;
 import kotlin.text.StringsKt;
@@ -64,11 +68,36 @@ public final class TypesJVMKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Type computeJavaType(KType kType, boolean z) {
+        TypeVariable<?>[] typeVariableArr;
         KClassifier classifier = kType.getClassifier();
+        TypeVariable<?> typeVariable = null;
         if (classifier instanceof KTypeParameter) {
-            return new TypeVariableImpl((KTypeParameter) classifier);
-        }
-        if (classifier instanceof KClass) {
+            if (classifier instanceof KTypeParameterBase) {
+                KTypeParameterBase kTypeParameterBase = (KTypeParameterBase) classifier;
+                GenericDeclaration javaContainingDeclaration$kotlin_stdlib = kTypeParameterBase.getJavaContainingDeclaration$kotlin_stdlib();
+                if (javaContainingDeclaration$kotlin_stdlib == null) {
+                    throw new UnsupportedOperationException("javaType is not supported for this type: " + kType);
+                }
+                TypeVariable<?>[] typeParameters = javaContainingDeclaration$kotlin_stdlib.getTypeParameters();
+                Intrinsics.checkNotNullExpressionValue(typeParameters, "getTypeParameters(...)");
+                boolean z2 = false;
+                for (TypeVariable<?> typeVariable2 : typeParameters) {
+                    if (Intrinsics.areEqual(typeVariable2.getName(), kTypeParameterBase.getName())) {
+                        if (z2) {
+                            throw new IllegalArgumentException("Array contains more than one matching element.");
+                        }
+                        z2 = true;
+                        typeVariable = typeVariable2;
+                    }
+                }
+                if (z2) {
+                    Intrinsics.checkNotNullExpressionValue(typeVariable, "single(...)");
+                    return typeVariable;
+                }
+                throw new NoSuchElementException("Array contains no element matching the predicate.");
+            }
+            return new ObsoleteFallbackTypeVariableImpl((KTypeParameter) classifier);
+        } else if (classifier instanceof KClass) {
             KClass kClass = (KClass) classifier;
             Class javaObjectType = z ? JvmClassMappingKt.getJavaObjectType(kClass) : JvmClassMappingKt.getJavaClass(kClass);
             List<KTypeProjection> arguments = kType.getArguments();
@@ -97,8 +126,9 @@ public final class TypesJVMKt {
                 throw new NoWhenBranchMatchedException();
             }
             return createPossiblyInnerType(javaObjectType, arguments);
+        } else {
+            throw new UnsupportedOperationException("Unsupported type classifier: " + kType);
         }
-        throw new UnsupportedOperationException("Unsupported type classifier: " + kType);
     }
 
     private static final Type createPossiblyInnerType(Class<?> cls, List<KTypeProjection> list) {

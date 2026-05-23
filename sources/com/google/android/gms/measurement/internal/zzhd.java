@@ -4,13 +4,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzqp;
+import com.google.android.gms.internal.measurement.zzaif;
 import java.util.Arrays;
 import java.util.Objects;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhd {
     final /* synthetic */ zzhh zza;
@@ -47,40 +47,42 @@ public final class zzhd {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("n", str2);
-                        zzqp.zza();
+                        zzaif.zza();
                         zzic zzicVar = zzhhVar.zzu;
-                        if (!zzicVar.zzc().zzp(null, zzfy.zzaQ)) {
+                        if (zzicVar.zzc().zzp(null, zzfy.zzaP)) {
+                            if (obj instanceof String) {
+                                jSONObject.put("v", obj.toString());
+                                jSONObject.put("t", CmcdData.STREAMING_FORMAT_SS);
+                            } else if (obj instanceof Long) {
+                                jSONObject.put("v", obj.toString());
+                                jSONObject.put("t", CmcdData.STREAM_TYPE_LIVE);
+                            } else if (obj instanceof int[]) {
+                                jSONObject.put("v", Arrays.toString((int[]) obj));
+                                jSONObject.put("t", "ia");
+                            } else if (obj instanceof long[]) {
+                                jSONObject.put("v", Arrays.toString((long[]) obj));
+                                jSONObject.put("t", "la");
+                            } else if (!(obj instanceof Double)) {
+                                zzicVar.zzaW().zzb().zzb("Cannot serialize bundle value to SharedPreferences. Type", obj.getClass());
+                            } else {
+                                jSONObject.put("v", obj.toString());
+                                jSONObject.put("t", "d");
+                            }
+                        } else {
                             jSONObject.put("v", obj.toString());
                             if (obj instanceof String) {
                                 jSONObject.put("t", CmcdData.STREAMING_FORMAT_SS);
                             } else if (obj instanceof Long) {
                                 jSONObject.put("t", CmcdData.STREAM_TYPE_LIVE);
                             } else if (!(obj instanceof Double)) {
-                                zzicVar.zzaV().zzb().zzb("Cannot serialize bundle value to SharedPreferences. Type", obj.getClass());
+                                zzicVar.zzaW().zzb().zzb("Cannot serialize bundle value to SharedPreferences. Type", obj.getClass());
                             } else {
                                 jSONObject.put("t", "d");
                             }
-                        } else if (obj instanceof String) {
-                            jSONObject.put("v", obj.toString());
-                            jSONObject.put("t", CmcdData.STREAMING_FORMAT_SS);
-                        } else if (obj instanceof Long) {
-                            jSONObject.put("v", obj.toString());
-                            jSONObject.put("t", CmcdData.STREAM_TYPE_LIVE);
-                        } else if (obj instanceof int[]) {
-                            jSONObject.put("v", Arrays.toString((int[]) obj));
-                            jSONObject.put("t", "ia");
-                        } else if (obj instanceof long[]) {
-                            jSONObject.put("v", Arrays.toString((long[]) obj));
-                            jSONObject.put("t", "la");
-                        } else if (!(obj instanceof Double)) {
-                            zzicVar.zzaV().zzb().zzb("Cannot serialize bundle value to SharedPreferences. Type", obj.getClass());
-                        } else {
-                            jSONObject.put("v", obj.toString());
-                            jSONObject.put("t", "d");
                         }
                         jSONArray.put(jSONObject);
                     } catch (JSONException e) {
-                        this.zza.zzu.zzaV().zzb().zzb("Cannot serialize bundle value to SharedPreferences", e);
+                        this.zza.zzu.zzaW().zzb().zzb("Cannot serialize bundle value to SharedPreferences", e);
                     }
                 }
             }
@@ -109,15 +111,15 @@ public final class zzhd {
                             string2 = jSONObject.getString("t");
                             hashCode = string2.hashCode();
                         } catch (NumberFormatException | JSONException unused) {
-                            this.zza.zzu.zzaV().zzb().zza("Error reading value from SharedPreferences. Value dropped");
+                            this.zza.zzu.zzaW().zzb().zza("Error reading value from SharedPreferences. Value dropped");
                         }
                         if (hashCode != 100) {
                             if (hashCode != 108) {
                                 if (hashCode != 115) {
                                     if (hashCode != 3352) {
                                         if (hashCode == 3445 && string2.equals("la")) {
-                                            zzqp.zza();
-                                            if (zzhhVar.zzu.zzc().zzp(null, zzfy.zzaQ)) {
+                                            zzaif.zza();
+                                            if (zzhhVar.zzu.zzc().zzp(null, zzfy.zzaP)) {
                                                 JSONArray jSONArray2 = new JSONArray(jSONObject.getString("v"));
                                                 int length = jSONArray2.length();
                                                 long[] jArr = new long[length];
@@ -128,8 +130,8 @@ public final class zzhd {
                                             }
                                         }
                                     } else if (string2.equals("ia")) {
-                                        zzqp.zza();
-                                        if (zzhhVar.zzu.zzc().zzp(null, zzfy.zzaQ)) {
+                                        zzaif.zza();
+                                        if (zzhhVar.zzu.zzc().zzp(null, zzfy.zzaP)) {
                                             JSONArray jSONArray3 = new JSONArray(jSONObject.getString("v"));
                                             int length2 = jSONArray3.length();
                                             int[] iArr = new int[length2];
@@ -148,11 +150,11 @@ public final class zzhd {
                         } else if (string2.equals("d")) {
                             bundle.putDouble(string, Double.parseDouble(jSONObject.getString("v")));
                         }
-                        zzhhVar.zzu.zzaV().zzb().zzb("Unrecognized persisted bundle type. Type", string2);
+                        zzhhVar.zzu.zzaW().zzb().zzb("Unrecognized persisted bundle type. Type", string2);
                     }
                     this.zzd = bundle;
                 } catch (JSONException unused2) {
-                    this.zza.zzu.zzaV().zzb().zza("Error loading bundle from SharedPreferences. Values will be lost");
+                    this.zza.zzu.zzaW().zzb().zza("Error loading bundle from SharedPreferences. Values will be lost");
                 }
             }
             if (this.zzd == null) {

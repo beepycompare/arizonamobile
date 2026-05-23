@@ -1,39 +1,63 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zznf {
-    private final zzne zza;
+public final class zznf extends zzadu implements zzafd {
+    private static final zznf zzf;
+    private static volatile zzafj zzg;
+    private int zzb;
+    private boolean zze;
 
-    private zznf(zzot zzotVar, Object obj, zzot zzotVar2, Object obj2) {
-        this.zza = new zzne(zzotVar, "", zzotVar2, "");
+    static {
+        zznf zznfVar = new zznf();
+        zzf = zznfVar;
+        zzadu.zzcs(zznf.class, zznfVar);
     }
 
-    public static zznf zza(zzot zzotVar, Object obj, zzot zzotVar2, Object obj2) {
-        return new zznf(zzotVar, "", zzotVar2, "");
+    private zznf() {
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static void zzb(zzlm zzlmVar, zzne zzneVar, Object obj, Object obj2) throws IOException {
-        zzlw.zzf(zzlmVar, zzneVar.zza, 1, obj);
-        zzlw.zzf(zzlmVar, zzneVar.zzc, 2, obj2);
+    public static zznf zzb() {
+        return zzf;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static int zzc(zzne zzneVar, Object obj, Object obj2) {
-        return zzlw.zzh(zzneVar.zza, 1, obj) + zzlw.zzh(zzneVar.zzc, 2, obj2);
+    public final boolean zza() {
+        return this.zze;
     }
 
-    public final int zzd(int i, Object obj, Object obj2) {
-        zzne zzneVar = this.zza;
-        int zzz = zzlm.zzz(i << 3);
-        int zzc = zzc(zzneVar, obj, obj2);
-        return zzz + zzlm.zzz(zzc) + zzc;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzne zze() {
-        return this.zza;
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                return zzct(zzf, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဇ\u0000", new Object[]{"zzb", "zze"});
+            } else if (i2 != 3) {
+                if (i2 != 4) {
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzg;
+                            if (zzafjVar2 == null) {
+                                synchronized (zznf.class) {
+                                    zzafjVar = zzg;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzf);
+                                        zzg = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
+                    }
+                    return zzf;
+                }
+                return new zzne(null);
+            } else {
+                return new zznf();
+            }
+        }
+        return (byte) 1;
     }
 }

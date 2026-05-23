@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.content.ComponentName;
 import android.content.Context;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zznb implements Runnable {
     final /* synthetic */ zznf zza;
@@ -18,8 +18,8 @@ final class zznb implements Runnable {
     public final void run() {
         zznl zznlVar = this.zza.zza;
         zzic zzicVar = zznlVar.zzu;
-        Context zzaY = zzicVar.zzaY();
-        zzicVar.zzaU();
-        zznlVar.zzW(new ComponentName(zzaY, "com.google.android.gms.measurement.AppMeasurementService"));
+        Context zzaZ = zzicVar.zzaZ();
+        zzicVar.zzaV();
+        zznlVar.zzW(new ComponentName(zzaZ, "com.google.android.gms.measurement.AppMeasurementService"));
     }
 }

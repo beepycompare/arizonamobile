@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zad implements zah {
     final /* synthetic */ FrameLayout zaa;
@@ -15,11 +16,12 @@ final class zad implements zah {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zad(DeferredLifecycleHelper deferredLifecycleHelper, FrameLayout frameLayout, LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.zae = deferredLifecycleHelper;
         this.zaa = frameLayout;
         this.zab = layoutInflater;
         this.zac = viewGroup;
         this.zad = bundle;
+        Objects.requireNonNull(deferredLifecycleHelper);
+        this.zae = deferredLifecycleHelper;
     }
 
     @Override // com.google.android.gms.dynamic.zah
@@ -29,9 +31,8 @@ final class zad implements zah {
 
     @Override // com.google.android.gms.dynamic.zah
     public final void zab(LifecycleDelegate lifecycleDelegate) {
-        LifecycleDelegate lifecycleDelegate2;
-        this.zaa.removeAllViews();
-        lifecycleDelegate2 = this.zae.zaa;
-        this.zaa.addView(lifecycleDelegate2.onCreateView(this.zab, this.zac, this.zad));
+        FrameLayout frameLayout = this.zaa;
+        frameLayout.removeAllViews();
+        frameLayout.addView(this.zae.zaa().onCreateView(this.zab, this.zac, this.zad));
     }
 }

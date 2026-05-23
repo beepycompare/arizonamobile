@@ -70,7 +70,7 @@ public final class AudioManagerCompat {
         if (Build.VERSION.SDK_INT >= 26) {
             return audioManager2.requestAudioFocus(audioFocusRequestCompat.getAudioFocusRequest());
         }
-        return audioManager2.requestAudioFocus(audioFocusRequestCompat.getOnAudioFocusChangeListener(), audioFocusRequestCompat.getAudioAttributes().getStreamType(), audioFocusRequestCompat.getFocusGain());
+        return audioManager2.requestAudioFocus(audioFocusRequestCompat.getOnAudioFocusChangeListener(), audioFocusRequestCompat.getAudioAttributes().getVolumeControlStream(), audioFocusRequestCompat.getFocusGain());
     }
 
     public static int abandonAudioFocusRequest(AudioManager audioManager2, AudioFocusRequestCompat audioFocusRequestCompat) {

@@ -1,21 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
 /* loaded from: classes5.dex */
-public final class Ee extends Dc {
-    public Ee(Integer num) {
-        super(num);
-        a(NetworkType.CELL, 0);
-        a(NetworkType.WIFI, 1);
-        a(NetworkType.BLUETOOTH, 3);
-        a(NetworkType.ETHERNET, 4);
-        a(NetworkType.MOBILE_DUN, 5);
-        a(NetworkType.MOBILE_HIPRI, 6);
-        a(NetworkType.MOBILE_MMS, 7);
-        a(NetworkType.MOBILE_SUPL, 8);
-        a(NetworkType.VPN, 9);
-        a(NetworkType.WIMAX, 10);
-        a(NetworkType.LOWPAN, 11);
-        a(NetworkType.WIFI_AWARE, 12);
+public final class Ee implements Hg {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f528a;
+    public final String b;
+
+    public Ee(String str) {
+        this.f528a = str;
+        this.b = str == null ? "<unknown-package-installer>" : str;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Hg
+    public final String a() {
+        return this.b;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Hg
+    public final void a(Dg dg) {
+        dg.a(new Jg("Package installer " + this.f528a + " is not supported", null, 2, null));
     }
 }

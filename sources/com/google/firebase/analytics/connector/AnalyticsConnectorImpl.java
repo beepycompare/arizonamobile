@@ -3,7 +3,7 @@ package com.google.firebase.analytics.connector;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzfb;
+import com.google.android.gms.internal.measurement.zzez;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.android.gms.measurement.internal.zzjh;
 import com.google.android.gms.measurement.internal.zzlt;
@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public class AnalyticsConnectorImpl implements AnalyticsConnector {
     private static volatile AnalyticsConnector zzc;
@@ -251,7 +251,7 @@ public class AnalyticsConnectorImpl implements AnalyticsConnector {
                         subscriber.subscribe(DataCollectionDefaultChange.class, zzb.zza, zza.zza);
                         bundle.putBoolean("dataCollectionDefaultEnabled", firebaseApp.isDataCollectionDefaultEnabled());
                     }
-                    zzc = new AnalyticsConnectorImpl(zzfb.zza(context, bundle).zzb());
+                    zzc = new AnalyticsConnectorImpl(zzez.zza(context, bundle).zzb());
                 }
             }
         }

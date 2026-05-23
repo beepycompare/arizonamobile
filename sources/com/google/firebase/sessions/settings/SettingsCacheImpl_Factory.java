@@ -3,7 +3,7 @@ package com.google.firebase.sessions.settings;
 import androidx.datastore.core.DataStore;
 import com.google.firebase.sessions.TimeProvider;
 import com.google.firebase.sessions.dagger.internal.Factory;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class SettingsCacheImpl_Factory implements Factory<SettingsCacheImpl> {
@@ -11,7 +11,7 @@ public final class SettingsCacheImpl_Factory implements Factory<SettingsCacheImp
     private final Provider<DataStore<SessionConfigs>> sessionConfigsDataStoreProvider;
     private final Provider<TimeProvider> timeProvider;
 
-    public SettingsCacheImpl_Factory(Provider<CoroutineContext> provider, Provider<TimeProvider> provider2, Provider<DataStore<SessionConfigs>> provider3) {
+    private SettingsCacheImpl_Factory(Provider<CoroutineContext> provider, Provider<TimeProvider> provider2, Provider<DataStore<SessionConfigs>> provider3) {
         this.backgroundDispatcherProvider = provider;
         this.timeProvider = provider2;
         this.sessionConfigsDataStoreProvider = provider3;

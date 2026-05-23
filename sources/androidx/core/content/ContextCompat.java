@@ -1,86 +1,33 @@
 package androidx.core.content;
 
-import android.accounts.AccountManager;
-import android.app.ActivityManager;
-import android.app.AlarmManager;
-import android.app.AppOpsManager;
-import android.app.DownloadManager;
-import android.app.KeyguardManager;
-import android.app.NotificationManager;
-import android.app.SearchManager;
-import android.app.UiModeManager;
-import android.app.WallpaperManager;
-import android.app.admin.DevicePolicyManager;
-import android.app.job.JobScheduler;
-import android.app.usage.UsageStatsManager;
-import android.appwidget.AppWidgetManager;
-import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
-import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.RestrictionsManager;
-import android.content.pm.LauncherApps;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
-import android.hardware.ConsumerIrManager;
-import android.hardware.SensorManager;
-import android.hardware.camera2.CameraManager;
 import android.hardware.display.DisplayManager;
-import android.hardware.input.InputManager;
-import android.hardware.usb.UsbManager;
-import android.location.LocationManager;
-import android.media.AudioManager;
-import android.media.MediaRouter;
-import android.media.projection.MediaProjectionManager;
-import android.media.session.MediaSessionManager;
-import android.media.tv.TvInputManager;
-import android.net.ConnectivityManager;
-import android.net.nsd.NsdManager;
-import android.net.wifi.WifiManager;
-import android.net.wifi.p2p.WifiP2pManager;
-import android.nfc.NfcManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.DropBoxManager;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.Process;
-import android.os.UserManager;
-import android.os.Vibrator;
-import android.os.storage.StorageManager;
-import android.print.PrintManager;
-import android.telecom.TelecomManager;
-import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.CaptioningManager;
-import android.view.inputmethod.InputMethodManager;
-import android.view.textservice.TextServicesManager;
 import androidx.annotation.ReplaceWith;
 import androidx.core.app.LocaleManagerCompat;
-import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.os.ConfigurationCompat;
 import androidx.core.os.ExecutorCompat;
 import androidx.core.os.LocaleListCompat;
 import androidx.core.util.ObjectsCompat;
-import androidx.media3.common.MimeTypes;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.File;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.HashMap;
 import java.util.concurrent.Executor;
 /* loaded from: classes2.dex */
 public class ContextCompat {
@@ -89,7 +36,6 @@ public class ContextCompat {
     public static final int RECEIVER_NOT_EXPORTED = 4;
     public static final int RECEIVER_VISIBLE_TO_INSTANT_APPS = 1;
     private static final String TAG = "ContextCompat";
-    private static final Object sSync = new Object();
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes2.dex */
@@ -134,7 +80,7 @@ public class ContextCompat {
     }
 
     public static Drawable getDrawable(Context context, int i) {
-        return Api21Impl.getDrawable(context, i);
+        return context.getDrawable(i);
     }
 
     public static ColorStateList getColorStateList(Context context, int i) {
@@ -142,7 +88,7 @@ public class ContextCompat {
     }
 
     public static int getColor(Context context, int i) {
-        return Api23Impl.getColor(context, i);
+        return context.getColor(i);
     }
 
     public static int checkSelfPermission(Context context, String str) {
@@ -154,23 +100,11 @@ public class ContextCompat {
     }
 
     public static File getNoBackupFilesDir(Context context) {
-        return Api21Impl.getNoBackupFilesDir(context);
+        return context.getNoBackupFilesDir();
     }
 
     public static File getCodeCacheDir(Context context) {
-        return Api21Impl.getCodeCacheDir(context);
-    }
-
-    private static File createFilesDir(File file) {
-        synchronized (sSync) {
-            if (!file.exists()) {
-                if (file.mkdirs()) {
-                    return file;
-                }
-                Log.w(TAG, "Unable to create files subdir " + file.getPath());
-            }
-            return file;
-        }
+        return context.getCodeCacheDir();
     }
 
     public static Context createDeviceProtectedStorageContext(Context context) {
@@ -204,7 +138,7 @@ public class ContextCompat {
     }
 
     public static <T> T getSystemService(Context context, Class<T> cls) {
-        return (T) Api23Impl.getSystemService(context, cls);
+        return (T) context.getSystemService(cls);
     }
 
     public static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, int i) {
@@ -240,7 +174,7 @@ public class ContextCompat {
     }
 
     public static String getSystemServiceName(Context context, Class<?> cls) {
-        return Api23Impl.getSystemServiceName(context, cls);
+        return context.getSystemServiceName(cls);
     }
 
     public static String getString(Context context, int i) {
@@ -280,108 +214,6 @@ public class ContextCompat {
             throw new RuntimeException("Permission " + str + " is required by your application to receive broadcasts, please add it to your manifest");
         }
         return str;
-    }
-
-    /* loaded from: classes3.dex */
-    private static final class LegacyServiceMapHolder {
-        static final HashMap<Class<?>, String> SERVICES;
-
-        private LegacyServiceMapHolder() {
-        }
-
-        static {
-            HashMap<Class<?>, String> hashMap = new HashMap<>();
-            SERVICES = hashMap;
-            hashMap.put(SubscriptionManager.class, "telephony_subscription_service");
-            hashMap.put(UsageStatsManager.class, "usagestats");
-            hashMap.put(AppWidgetManager.class, "appwidget");
-            hashMap.put(BatteryManager.class, "batterymanager");
-            hashMap.put(CameraManager.class, "camera");
-            hashMap.put(JobScheduler.class, "jobscheduler");
-            hashMap.put(LauncherApps.class, "launcherapps");
-            hashMap.put(MediaProjectionManager.class, "media_projection");
-            hashMap.put(MediaSessionManager.class, "media_session");
-            hashMap.put(RestrictionsManager.class, "restrictions");
-            hashMap.put(TelecomManager.class, "telecom");
-            hashMap.put(TvInputManager.class, "tv_input");
-            hashMap.put(AppOpsManager.class, "appops");
-            hashMap.put(CaptioningManager.class, "captioning");
-            hashMap.put(ConsumerIrManager.class, "consumer_ir");
-            hashMap.put(PrintManager.class, "print");
-            hashMap.put(BluetoothManager.class, "bluetooth");
-            hashMap.put(DisplayManager.class, "display");
-            hashMap.put(UserManager.class, "user");
-            hashMap.put(InputManager.class, "input");
-            hashMap.put(MediaRouter.class, "media_router");
-            hashMap.put(NsdManager.class, "servicediscovery");
-            hashMap.put(AccessibilityManager.class, "accessibility");
-            hashMap.put(AccountManager.class, "account");
-            hashMap.put(ActivityManager.class, "activity");
-            hashMap.put(AlarmManager.class, NotificationCompat.CATEGORY_ALARM);
-            hashMap.put(AudioManager.class, MimeTypes.BASE_TYPE_AUDIO);
-            hashMap.put(ClipboardManager.class, "clipboard");
-            hashMap.put(ConnectivityManager.class, "connectivity");
-            hashMap.put(DevicePolicyManager.class, "device_policy");
-            hashMap.put(DownloadManager.class, "download");
-            hashMap.put(DropBoxManager.class, "dropbox");
-            hashMap.put(InputMethodManager.class, "input_method");
-            hashMap.put(KeyguardManager.class, "keyguard");
-            hashMap.put(LayoutInflater.class, "layout_inflater");
-            hashMap.put(LocationManager.class, FirebaseAnalytics.Param.LOCATION);
-            hashMap.put(NfcManager.class, "nfc");
-            hashMap.put(NotificationManager.class, "notification");
-            hashMap.put(PowerManager.class, "power");
-            hashMap.put(SearchManager.class, FirebaseAnalytics.Event.SEARCH);
-            hashMap.put(SensorManager.class, "sensor");
-            hashMap.put(StorageManager.class, "storage");
-            hashMap.put(TelephonyManager.class, "phone");
-            hashMap.put(TextServicesManager.class, "textservices");
-            hashMap.put(UiModeManager.class, "uimode");
-            hashMap.put(UsbManager.class, "usb");
-            hashMap.put(Vibrator.class, "vibrator");
-            hashMap.put(WallpaperManager.class, "wallpaper");
-            hashMap.put(WifiP2pManager.class, "wifip2p");
-            hashMap.put(WifiManager.class, "wifi");
-            hashMap.put(WindowManager.class, "window");
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static Drawable getDrawable(Context context, int i) {
-            return context.getDrawable(i);
-        }
-
-        static File getNoBackupFilesDir(Context context) {
-            return context.getNoBackupFilesDir();
-        }
-
-        static File getCodeCacheDir(Context context) {
-            return context.getCodeCacheDir();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static int getColor(Context context, int i) {
-            return context.getColor(i);
-        }
-
-        static <T> T getSystemService(Context context, Class<T> cls) {
-            return (T) context.getSystemService(cls);
-        }
-
-        static String getSystemServiceName(Context context, Class<?> cls) {
-            return context.getSystemServiceName(cls);
-        }
     }
 
     /* loaded from: classes2.dex */

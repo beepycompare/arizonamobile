@@ -15,9 +15,9 @@ import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> implements Api.Client, zaj {
+public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> implements Api.Client, zam {
     private static volatile Executor zaa;
     private final ClientSettings zab;
     private final Set zac;
@@ -27,10 +27,10 @@ public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> i
         super(context, handler, GmsClientSupervisor.getInstance(context), GoogleApiAvailability.getInstance(), i, null, null);
         this.zab = (ClientSettings) Preconditions.checkNotNull(clientSettings);
         this.zad = clientSettings.getAccount();
-        this.zac = zaa(clientSettings.getAllRequestedScopes());
+        this.zac = zab(clientSettings.getAllRequestedScopes());
     }
 
-    private final Set zaa(Set set) {
+    private final Set zab(Set set) {
         Set<Scope> validateScopes = validateScopes(set);
         for (Scope scope : validateScopes) {
             if (!set.contains(scope)) {
@@ -40,6 +40,10 @@ public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> i
         return validateScopes;
     }
 
+    public static void zag(Executor executor) {
+        zaa = executor;
+    }
+
     @Override // com.google.android.gms.common.internal.BaseGmsClient
     public final Account getAccount() {
         return this.zad;
@@ -47,7 +51,7 @@ public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> i
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient
     protected Executor getBindServiceExecutor() {
-        return null;
+        return zaa;
     }
 
     protected final ClientSettings getClientSettings() {
@@ -89,9 +93,9 @@ public abstract class GmsClient<T extends IInterface> extends BaseGmsClient<T> i
     }
 
     protected GmsClient(Context context, Looper looper, GmsClientSupervisor gmsClientSupervisor, GoogleApiAvailability googleApiAvailability, int i, ClientSettings clientSettings, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
-        super(context, looper, gmsClientSupervisor, googleApiAvailability, i, connectionCallbacks == null ? null : new zah(connectionCallbacks), onConnectionFailedListener != null ? new zai(onConnectionFailedListener) : null, clientSettings.zac());
+        super(context, looper, gmsClientSupervisor, googleApiAvailability, i, connectionCallbacks == null ? null : new zak(connectionCallbacks), onConnectionFailedListener != null ? new zal(onConnectionFailedListener) : null, clientSettings.zab());
         this.zab = clientSettings;
         this.zad = clientSettings.getAccount();
-        this.zac = zaa(clientSettings.getAllRequestedScopes());
+        this.zac = zab(clientSettings.getAllRequestedScopes());
     }
 }

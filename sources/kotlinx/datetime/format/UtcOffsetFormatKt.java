@@ -141,7 +141,7 @@ public final class UtcOffsetFormatKt {
     public static final Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3(final boolean z, WhenToOutput whenToOutput, DateTimeFormatBuilder.WithUtcOffset outputIfNeeded) {
         Intrinsics.checkNotNullParameter(outputIfNeeded, "$this$outputIfNeeded");
         if (z) {
-            DateTimeFormatBuilderKt.m10809char(outputIfNeeded, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11449char(outputIfNeeded, AbstractJsonLexerKt.COLON);
         }
         DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(outputIfNeeded, null, 1, null);
         outputIfNeeded(outputIfNeeded, whenToOutput, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda16
@@ -157,7 +157,7 @@ public final class UtcOffsetFormatKt {
     public static final Unit isoOffset$appendIsoOffsetWithoutZOnZero$lambda$3$lambda$2(boolean z, DateTimeFormatBuilder.WithUtcOffset outputIfNeeded) {
         Intrinsics.checkNotNullParameter(outputIfNeeded, "$this$outputIfNeeded");
         if (z) {
-            DateTimeFormatBuilderKt.m10809char(outputIfNeeded, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11449char(outputIfNeeded, AbstractJsonLexerKt.COLON);
         }
         DateTimeFormatBuilder.WithUtcOffset.offsetSecondsOfMinute$default(outputIfNeeded, null, 1, null);
         return Unit.INSTANCE;
@@ -183,7 +183,7 @@ public final class UtcOffsetFormatKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit isoOffset$lambda$6$lambda$4(DateTimeFormatBuilder.WithUtcOffset alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-        DateTimeFormatBuilderKt.m10809char(alternativeParsing, 'z');
+        DateTimeFormatBuilderKt.m11449char(alternativeParsing, 'z');
         return Unit.INSTANCE;
     }
 
@@ -239,7 +239,7 @@ public final class UtcOffsetFormatKt {
         Intrinsics.checkNotNullParameter(optional, "$this$optional");
         DateTimeFormatBuilder.WithUtcOffset.offsetHours$default(optional, null, 1, null);
         DateTimeFormatBuilder.WithUtcOffset withUtcOffset = optional;
-        DateTimeFormatBuilderKt.m10809char(withUtcOffset, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m11449char(withUtcOffset, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithUtcOffset.offsetMinutesOfHour$default(optional, null, 1, null);
         DateTimeFormatBuilderKt.optional$default(withUtcOffset, null, new Function1() { // from class: kotlinx.datetime.format.UtcOffsetFormatKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
@@ -253,7 +253,7 @@ public final class UtcOffsetFormatKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ISO_OFFSET_delegate$lambda$12$lambda$11$lambda$10$lambda$9$lambda$8(DateTimeFormatBuilder.WithUtcOffset optional) {
         Intrinsics.checkNotNullParameter(optional, "$this$optional");
-        DateTimeFormatBuilderKt.m10809char(optional, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m11449char(optional, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithUtcOffset.offsetSecondsOfMinute$default(optional, null, 1, null);
         return Unit.INSTANCE;
     }

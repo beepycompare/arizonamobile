@@ -1,14 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Rj extends AbstractC0277gh {
-    public Rj(E6 e6) {
-        super(e6);
+public final class Rj implements InterfaceC0480ob {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ Throwable f749a;
+
+    public Rj(Throwable th) {
+        this.f749a = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0277gh, io.appmetrica.analytics.impl.InterfaceC0303hh
-    public final boolean a(Boolean bool) {
-        return !this.f1019a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
+    public final void a(InterfaceC0506pb interfaceC0506pb) {
+        interfaceC0506pb.reportUnhandledException(this.f749a);
     }
 }

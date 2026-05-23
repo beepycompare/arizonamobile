@@ -7,9 +7,9 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlinx.coroutines.selects.SelectInstance;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JobSupport.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public /* synthetic */ class JobSupport$onAwaitInternal$1 extends FunctionReferenceImpl implements Function3<JobSupport, SelectInstance<?>, Object, Unit> {
+public final /* synthetic */ class JobSupport$onAwaitInternal$1 extends FunctionReferenceImpl implements Function3<JobSupport, SelectInstance<?>, Object, Unit> {
     public static final JobSupport$onAwaitInternal$1 INSTANCE = new JobSupport$onAwaitInternal$1();
 
     JobSupport$onAwaitInternal$1() {

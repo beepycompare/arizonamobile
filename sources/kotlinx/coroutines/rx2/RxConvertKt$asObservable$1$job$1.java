@@ -15,8 +15,8 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RxConvert.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.rx2.RxConvertKt$asObservable$1$job$1", f = "RxConvert.kt", i = {0}, l = {110}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.rx2.RxConvertKt$asObservable$1$job$1", f = "RxConvert.kt", i = {0}, l = {113}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ObservableEmitter<T> $emitter;
@@ -45,25 +45,17 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
         return ((RxConvertKt$asObservable$1$job$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final Object invokeSuspend(Object obj) {
-        CoroutineScope coroutineScope;
-        Throwable th;
-        boolean z;
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            CoroutineScope coroutineScope2 = (CoroutineScope) this.L$0;
-            try {
+        try {
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
                 Flow<T> flow = this.$this_asObservable;
                 final ObservableEmitter<T> observableEmitter = this.$emitter;
-                this.L$0 = coroutineScope2;
+                this.L$0 = coroutineScope;
                 this.label = 1;
                 if (flow.collect(new FlowCollector() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asObservable$1$job$1.1
                     @Override // kotlinx.coroutines.flow.FlowCollector
@@ -74,37 +66,23 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                coroutineScope = coroutineScope2;
-            } catch (Throwable th2) {
-                coroutineScope = coroutineScope2;
-                th = th2;
-                z = th instanceof CancellationException;
-                ObservableEmitter<T> observableEmitter2 = this.$emitter;
-                if (z) {
-                }
-                return Unit.INSTANCE;
-            }
-        } else if (i != 1) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        } else {
-            coroutineScope = (CoroutineScope) this.L$0;
-            try {
+            } else if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            } else {
                 ResultKt.throwOnFailure(obj);
-            } catch (Throwable th3) {
-                th = th3;
-                z = th instanceof CancellationException;
-                ObservableEmitter<T> observableEmitter22 = this.$emitter;
-                if (z) {
-                    if (!observableEmitter22.tryOnError(th)) {
-                        RxCancellableKt.handleUndeliverableException(th, coroutineScope.getCoroutineContext());
-                    }
-                } else {
-                    observableEmitter22.onComplete();
+            }
+            this.$emitter.onComplete();
+        } catch (Throwable th) {
+            boolean z = th instanceof CancellationException;
+            ObservableEmitter<T> observableEmitter2 = this.$emitter;
+            if (!z) {
+                if (!observableEmitter2.tryOnError(th)) {
+                    RxCancellableKt.handleUndeliverableException(th, coroutineScope.getCoroutineContext());
                 }
-                return Unit.INSTANCE;
+            } else {
+                observableEmitter2.onComplete();
             }
         }
-        this.$emitter.onComplete();
         return Unit.INSTANCE;
     }
 }

@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Iterator;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zal {
     private int zad;
@@ -22,30 +22,32 @@ public final class zal {
         while (it.hasNext()) {
             this.zaa.put(((HasApiKey) it.next()).getApiKey(), null);
         }
-        this.zad = this.zaa.keySet().size();
+        this.zad = this.zaa.size();
     }
 
-    public final Task zaa() {
-        return this.zac.getTask();
-    }
-
-    public final Set zab() {
+    public final Set zaa() {
         return this.zaa.keySet();
     }
 
+    public final Task zab() {
+        return this.zac.getTask();
+    }
+
     public final void zac(ApiKey apiKey, ConnectionResult connectionResult, String str) {
-        this.zaa.put(apiKey, connectionResult);
-        this.zab.put(apiKey, str);
+        ArrayMap arrayMap = this.zaa;
+        arrayMap.put(apiKey, connectionResult);
+        ArrayMap arrayMap2 = this.zab;
+        arrayMap2.put(apiKey, str);
         this.zad--;
         if (!connectionResult.isSuccess()) {
             this.zae = true;
         }
         if (this.zad == 0) {
             if (this.zae) {
-                this.zac.setException(new AvailabilityException(this.zaa));
+                this.zac.setException(new AvailabilityException(arrayMap));
                 return;
             }
-            this.zac.setResult(this.zab);
+            this.zac.setResult(arrayMap2);
         }
     }
 }

@@ -1,17 +1,13 @@
 package com.google.android.gms.internal.base;
 
-import android.graphics.Canvas;
-import android.widget.ImageView;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadFactory;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zal extends ImageView {
-    @Override // android.widget.ImageView, android.view.View
-    protected final void onDraw(Canvas canvas) {
-        throw null;
-    }
+public interface zal {
+    ExecutorService zaa(int i, int i2);
 
-    @Override // android.widget.ImageView, android.view.View
-    protected final void onMeasure(int i, int i2) {
-        throw null;
-    }
+    ExecutorService zab(int i, ThreadFactory threadFactory, int i2);
+
+    ExecutorService zac(ThreadFactory threadFactory, int i);
 }

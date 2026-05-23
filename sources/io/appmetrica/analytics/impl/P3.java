@@ -1,67 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes5.dex */
-public final class P3 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f740a;
-    public final String b;
-    public final Integer c;
-    public final String d;
-    public final CounterConfigurationReporterType e;
-
-    public P3(String str, String str2, Integer num, String str3, CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f740a = str;
-        this.b = str2;
-        this.c = num;
-        this.d = str3;
-        this.e = counterConfigurationReporterType;
+public final class P3 extends BaseProtobufStateSerializer {
+    public final O3 a() {
+        return new O3();
     }
 
-    public static P3 a(H3 h3) {
-        return new P3(h3.b.getApiKey(), h3.f612a.f525a.getAsString("PROCESS_CFG_PACKAGE_NAME"), h3.f612a.f525a.getAsInteger("PROCESS_CFG_PROCESS_ID"), h3.f612a.f525a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), h3.b.getReporterType());
+    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final MessageNano defaultValue() {
+        return new O3();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && P3.class == obj.getClass()) {
-            P3 p3 = (P3) obj;
-            String str = this.f740a;
-            if (str == null ? p3.f740a != null : !str.equals(p3.f740a)) {
-                return false;
-            }
-            if (!this.b.equals(p3.b)) {
-                return false;
-            }
-            Integer num = this.c;
-            if (num == null ? p3.c != null : !num.equals(p3.c)) {
-                return false;
-            }
-            String str2 = this.d;
-            if (str2 == null ? p3.d != null : !str2.equals(p3.d)) {
-                return false;
-            }
-            if (this.e == p3.e) {
-                return true;
-            }
-        }
-        return false;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    /* renamed from: a */
+    public final O3 toState(byte[] bArr) {
+        return (O3) MessageNano.mergeFrom(new O3(), bArr);
     }
 
-    public final int hashCode() {
-        String str = this.f740a;
-        int hashCode = (this.b.hashCode() + ((str != null ? str.hashCode() : 0) * 31)) * 31;
-        Integer num = this.c;
-        int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
-        String str2 = this.d;
-        return this.e.hashCode() + ((hashCode2 + (str2 != null ? str2.hashCode() : 0)) * 31);
-    }
-
-    public final String toString() {
-        return "ClientDescription{mApiKey='" + this.f740a + "', mPackageName='" + this.b + "', mProcessID=" + this.c + ", mProcessSessionID='" + this.d + "', mReporterType=" + this.e + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object defaultValue() {
+        return new O3();
     }
 }

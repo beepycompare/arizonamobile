@@ -9,7 +9,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: NestedScrollModifier.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 2\u0006\u0010\"\u001a\u00020#¢\u0006\u0004\b$\u0010%J%\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020 2\u0006\u0010!\u001a\u00020 2\u0006\u0010\"\u001a\u00020#¢\u0006\u0004\b(\u0010)J\u0018\u0010*\u001a\u00020+2\u0006\u0010!\u001a\u00020+H\u0086@¢\u0006\u0004\b,\u0010-J \u0010.\u001a\u00020+2\u0006\u0010'\u001a\u00020+2\u0006\u0010!\u001a\u00020+H\u0086@¢\u0006\u0004\b/\u00100R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\"\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001c\u0010\u0014\u001a\u0004\u0018\u00010\u000fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u000f8F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0016R\u0016\u0010\u001b\u001a\u0004\u0018\u00010\u001c8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u00061"}, d2 = {"Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "", "<init>", "()V", "nestedScrollNode", "Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;", "getNestedScrollNode$ui", "()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;", "setNestedScrollNode$ui", "(Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;)V", "lastKnownParentNode", "getLastKnownParentNode$ui", "setLastKnownParentNode$ui", "calculateNestedScrollScope", "Lkotlin/Function0;", "Lkotlinx/coroutines/CoroutineScope;", "getCalculateNestedScrollScope$ui", "()Lkotlin/jvm/functions/Function0;", "setCalculateNestedScrollScope$ui", "(Lkotlin/jvm/functions/Function0;)V", "scope", "getScope$ui", "()Lkotlinx/coroutines/CoroutineScope;", "setScope$ui", "(Lkotlinx/coroutines/CoroutineScope;)V", "coroutineScope", "getCoroutineScope", "parent", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "getParent$ui", "()Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "dispatchPreScroll", "Landroidx/compose/ui/geometry/Offset;", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "dispatchPreScroll-OzD1aCk", "(JI)J", "dispatchPostScroll", "consumed", "dispatchPostScroll-DzOQY0M", "(JJI)J", "dispatchPreFling", "Landroidx/compose/ui/unit/Velocity;", "dispatchPreFling-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchPostFling", "dispatchPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001d\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 2\u0006\u0010\"\u001a\u00020#¢\u0006\u0004\b$\u0010%J%\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020 2\u0006\u0010!\u001a\u00020 2\u0006\u0010\"\u001a\u00020#¢\u0006\u0004\b(\u0010)J\u0018\u0010*\u001a\u00020+2\u0006\u0010!\u001a\u00020+H\u0086@¢\u0006\u0004\b,\u0010-J \u0010.\u001a\u00020+2\u0006\u0010'\u001a\u00020+2\u0006\u0010!\u001a\u00020+H\u0086@¢\u0006\u0004\b/\u00100R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001c\u0010\n\u001a\u0004\u0018\u00010\u0005X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\"\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001c\u0010\u0014\u001a\u0004\u0018\u00010\u000fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u000f8F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0016R\u0016\u0010\u001b\u001a\u0004\u0018\u00010\u001c8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u00061"}, d2 = {"Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;", "", "<init>", "()V", "nestedScrollNode", "Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;", "getNestedScrollNode$ui", "()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;", "setNestedScrollNode$ui", "(Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;)V", "lastKnownParentNode", "getLastKnownParentNode$ui", "setLastKnownParentNode$ui", "calculateNestedScrollScope", "Lkotlin/Function0;", "Lkotlinx/coroutines/CoroutineScope;", "getCalculateNestedScrollScope$ui", "()Lkotlin/jvm/functions/Function0;", "setCalculateNestedScrollScope$ui", "(Lkotlin/jvm/functions/Function0;)V", "scope", "getScope$ui", "()Lkotlinx/coroutines/CoroutineScope;", "setScope$ui", "(Lkotlinx/coroutines/CoroutineScope;)V", "coroutineScope", "getCoroutineScope", "parent", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "getParent$ui", "()Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "dispatchPreScroll", "Landroidx/compose/ui/geometry/Offset;", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "dispatchPreScroll-OzD1aCk", "(JI)J", "dispatchPostScroll", "consumed", "dispatchPostScroll-DzOQY0M", "(JJI)J", "dispatchPreFling", "Landroidx/compose/ui/unit/Velocity;", "dispatchPreFling-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatchPostFling", "dispatchPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class NestedScrollDispatcher {
     public static final int $stable = 8;
@@ -74,15 +74,15 @@ public final class NestedScrollDispatcher {
     }
 
     /* renamed from: dispatchPreScroll-OzD1aCk  reason: not valid java name */
-    public final long m5949dispatchPreScrollOzD1aCk(long j, int i) {
+    public final long m6538dispatchPreScrollOzD1aCk(long j, int i) {
         NestedScrollConnection parent$ui = getParent$ui();
-        return parent$ui != null ? parent$ui.mo896onPreScrollOzD1aCk(j, i) : Offset.Companion.m4543getZeroF1C5BW0();
+        return parent$ui != null ? parent$ui.mo1150onPreScrollOzD1aCk(j, i) : Offset.Companion.m5119getZeroF1C5BW0();
     }
 
     /* renamed from: dispatchPostScroll-DzOQY0M  reason: not valid java name */
-    public final long m5947dispatchPostScrollDzOQY0M(long j, long j2, int i) {
+    public final long m6536dispatchPostScrollDzOQY0M(long j, long j2, int i) {
         NestedScrollConnection parent$ui = getParent$ui();
-        return parent$ui != null ? parent$ui.mo573onPostScrollDzOQY0M(j, j2, i) : Offset.Companion.m4543getZeroF1C5BW0();
+        return parent$ui != null ? parent$ui.mo603onPostScrollDzOQY0M(j, j2, i) : Offset.Companion.m5119getZeroF1C5BW0();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -91,10 +91,10 @@ public final class NestedScrollDispatcher {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m5948dispatchPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public final Object m6537dispatchPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         NestedScrollDispatcher$dispatchPreFling$1 nestedScrollDispatcher$dispatchPreFling$1;
         int i;
-        long m7804getZero9UxMQ8M;
+        long m8409getZero9UxMQ8M;
         if (continuation instanceof NestedScrollDispatcher$dispatchPreFling$1) {
             nestedScrollDispatcher$dispatchPreFling$1 = (NestedScrollDispatcher$dispatchPreFling$1) continuation;
             if ((nestedScrollDispatcher$dispatchPreFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -106,11 +106,11 @@ public final class NestedScrollDispatcher {
                     ResultKt.throwOnFailure(obj);
                     NestedScrollConnection parent$ui = getParent$ui();
                     if (parent$ui == null) {
-                        m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
-                        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                        m8409getZero9UxMQ8M = Velocity.Companion.m8409getZero9UxMQ8M();
+                        return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
                     }
                     nestedScrollDispatcher$dispatchPreFling$1.label = 1;
-                    obj = parent$ui.mo895onPreFlingQWom1Mo(j, nestedScrollDispatcher$dispatchPreFling$1);
+                    obj = parent$ui.mo1149onPreFlingQWom1Mo(j, nestedScrollDispatcher$dispatchPreFling$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -119,8 +119,8 @@ public final class NestedScrollDispatcher {
                 } else {
                     ResultKt.throwOnFailure(obj);
                 }
-                m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
-                return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                m8409getZero9UxMQ8M = ((Velocity) obj).m8407unboximpl();
+                return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
             }
         }
         nestedScrollDispatcher$dispatchPreFling$1 = new NestedScrollDispatcher$dispatchPreFling$1(this, continuation);
@@ -129,8 +129,8 @@ public final class NestedScrollDispatcher {
         i = nestedScrollDispatcher$dispatchPreFling$1.label;
         if (i != 0) {
         }
-        m7804getZero9UxMQ8M = ((Velocity) obj2).m7802unboximpl();
-        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+        m8409getZero9UxMQ8M = ((Velocity) obj2).m8407unboximpl();
+        return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x004d, code lost:
@@ -148,10 +148,10 @@ public final class NestedScrollDispatcher {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m5946dispatchPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public final Object m6535dispatchPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         NestedScrollDispatcher$dispatchPostFling$1 nestedScrollDispatcher$dispatchPostFling$1;
         int i;
-        long m7804getZero9UxMQ8M;
+        long m8409getZero9UxMQ8M;
         if (continuation instanceof NestedScrollDispatcher$dispatchPostFling$1) {
             nestedScrollDispatcher$dispatchPostFling$1 = (NestedScrollDispatcher$dispatchPostFling$1) continuation;
             if ((nestedScrollDispatcher$dispatchPostFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -166,29 +166,29 @@ public final class NestedScrollDispatcher {
                         NestedScrollNode nestedScrollNode = this.lastKnownParentNode;
                         if (nestedScrollNode != null) {
                             nestedScrollDispatcher$dispatchPostFling$12.label = 1;
-                            obj = nestedScrollNode.mo572onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
+                            obj = nestedScrollNode.mo602onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
                         } else {
-                            m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
+                            m8409getZero9UxMQ8M = Velocity.Companion.m8409getZero9UxMQ8M();
                         }
                     } else {
                         NestedScrollConnection parent$ui = getParent$ui();
                         if (parent$ui != null) {
                             nestedScrollDispatcher$dispatchPostFling$12.label = 2;
-                            obj = parent$ui.mo572onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
+                            obj = parent$ui.mo602onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
                         } else {
-                            m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
+                            m8409getZero9UxMQ8M = Velocity.Companion.m8409getZero9UxMQ8M();
                         }
                     }
                 } else if (i == 1) {
                     ResultKt.throwOnFailure(obj);
-                    m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
+                    m8409getZero9UxMQ8M = ((Velocity) obj).m8407unboximpl();
                 } else if (i != 2) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     ResultKt.throwOnFailure(obj);
-                    m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
+                    m8409getZero9UxMQ8M = ((Velocity) obj).m8407unboximpl();
                 }
-                return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
             }
         }
         nestedScrollDispatcher$dispatchPostFling$1 = new NestedScrollDispatcher$dispatchPostFling$1(this, continuation);
@@ -198,6 +198,6 @@ public final class NestedScrollDispatcher {
         i = nestedScrollDispatcher$dispatchPostFling$122.label;
         if (i != 0) {
         }
-        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+        return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
     }
 }

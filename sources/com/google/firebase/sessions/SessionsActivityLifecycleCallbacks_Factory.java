@@ -1,12 +1,12 @@
 package com.google.firebase.sessions;
 
 import com.google.firebase.sessions.dagger.internal.Factory;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 /* loaded from: classes4.dex */
 public final class SessionsActivityLifecycleCallbacks_Factory implements Factory<SessionsActivityLifecycleCallbacks> {
     private final Provider<SharedSessionRepository> sharedSessionRepositoryProvider;
 
-    public SessionsActivityLifecycleCallbacks_Factory(Provider<SharedSessionRepository> provider) {
+    private SessionsActivityLifecycleCallbacks_Factory(Provider<SharedSessionRepository> provider) {
         this.sharedSessionRepositoryProvider = provider;
     }
 

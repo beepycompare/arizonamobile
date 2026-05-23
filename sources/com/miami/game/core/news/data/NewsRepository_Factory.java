@@ -4,7 +4,7 @@ import com.miami.game.core.news.data.api.NewsApiRepository;
 import com.miami.game.core.news.data.store.NewsPrefRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NewsRepository_Factory implements Factory<NewsRepository> {
     private final Provider<NewsApiRepository> apiRepositoryProvider;
     private final Provider<NewsPrefRepository> prefRepositoryProvider;

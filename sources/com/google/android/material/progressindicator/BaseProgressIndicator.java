@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.ProgressBar;
+import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import com.google.android.material.R;
 import com.google.android.material.color.MaterialColors;
@@ -34,6 +35,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
     AnimatorDurationScaleProvider animatorDurationScaleProvider;
     private final Runnable delayedHide;
     private final Runnable delayedShow;
+    private final DynamicAnimation.OnAnimationEndListener hideAfterMaxProgressListener;
     private final Animatable2Compat.AnimationCallback hideAnimationCallback;
     boolean initialized;
     private boolean isIndeterminateModeChangeRequested;
@@ -65,6 +67,12 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         this.lastShowStartTime = -1L;
         this.isIndeterminateModeChangeRequested = false;
         this.visibilityAfterHide = 4;
+        this.hideAfterMaxProgressListener = new DynamicAnimation.OnAnimationEndListener() { // from class: com.google.android.material.progressindicator.BaseProgressIndicator$$ExternalSyntheticLambda0
+            @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
+            public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+                BaseProgressIndicator.this.m9530x4b14d911(dynamicAnimation, z, f, f2);
+            }
+        };
         this.delayedShow = new Runnable() { // from class: com.google.android.material.progressindicator.BaseProgressIndicator.1
             @Override // java.lang.Runnable
             public void run() {
@@ -492,6 +500,16 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         getProgressDrawable().setEnforcedDrawing(this.spec.waveSpeed != 0);
     }
 
+    public void setWaveAmplitudeRampProgressMin(float f) {
+        getProgressDrawable().setWaveAmplitudeRampProgressMin(f);
+        invalidate();
+    }
+
+    public void setWaveAmplitudeRampProgressMax(float f) {
+        getProgressDrawable().setWaveAmplitudeRampProgressMax(f);
+        invalidate();
+    }
+
     public int getShowAnimationBehavior() {
         return this.spec.showAnimationBehavior;
     }
@@ -546,6 +564,26 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
             throw new IllegalArgumentException("The component's visibility must be one of VISIBLE, INVISIBLE, and GONE defined in View.");
         }
         this.visibilityAfterHide = i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$0$com-google-android-material-progressindicator-BaseProgressIndicator  reason: not valid java name */
+    public /* synthetic */ void m9530x4b14d911(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        if (getProgressDrawable() == null || getProgressDrawable().getLevel() != 10000) {
+            return;
+        }
+        hide();
+    }
+
+    public void setHideAfterMaxProgress(boolean z) {
+        if (getProgressDrawable() == null) {
+            return;
+        }
+        if (z) {
+            getProgressDrawable().addSpringAnimationEndListener(this.hideAfterMaxProgressListener);
+        } else {
+            getProgressDrawable().removeSpringAnimationEndListener(this.hideAfterMaxProgressListener);
+        }
     }
 
     public void setIndeterminateAnimatorDurationScale(float f) {

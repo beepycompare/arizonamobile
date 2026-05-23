@@ -21,6 +21,8 @@ public abstract class BaseProgressIndicatorSpec {
     public int trackThickness;
     public boolean useRelativeTrackCornerRadius;
     public int waveAmplitude;
+    public float waveAmplitudeRampProgressMax;
+    public float waveAmplitudeRampProgressMin;
     public int waveSpeed;
     public int wavelengthDeterminate;
     public int wavelengthIndeterminate;
@@ -49,6 +51,8 @@ public abstract class BaseProgressIndicatorSpec {
         this.waveAmplitude = Math.abs(obtainStyledAttributes.getDimensionPixelSize(R.styleable.BaseProgressIndicator_waveAmplitude, 0));
         this.waveSpeed = obtainStyledAttributes.getDimensionPixelSize(R.styleable.BaseProgressIndicator_waveSpeed, 0);
         this.indeterminateAnimatorDurationScale = obtainStyledAttributes.getFloat(R.styleable.BaseProgressIndicator_indeterminateAnimatorDurationScale, 1.0f);
+        this.waveAmplitudeRampProgressMin = obtainStyledAttributes.getFloat(R.styleable.BaseProgressIndicator_waveAmplitudeRampProgressMin, 0.1f);
+        this.waveAmplitudeRampProgressMax = obtainStyledAttributes.getFloat(R.styleable.BaseProgressIndicator_waveAmplitudeRampProgressMax, 0.9f);
         loadIndicatorColors(context, obtainStyledAttributes);
         loadTrackColor(context, obtainStyledAttributes);
         obtainStyledAttributes.recycle();

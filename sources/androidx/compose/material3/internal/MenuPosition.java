@@ -20,7 +20,7 @@ public final class MenuPosition {
     /* loaded from: classes.dex */
     public interface Horizontal {
         /* renamed from: position-95KtPRI */
-        int mo2982position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection);
+        int mo3427position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection);
     }
 
     /* compiled from: MenuPosition.kt */
@@ -28,7 +28,7 @@ public final class MenuPosition {
     /* loaded from: classes.dex */
     public interface Vertical {
         /* renamed from: position-JVtK1S4 */
-        int mo2983positionJVtK1S4(IntRect intRect, long j, int i);
+        int mo3428positionJVtK1S4(IntRect intRect, long j, int i);
     }
 
     private MenuPosition() {

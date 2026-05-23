@@ -13,7 +13,7 @@ public final class ComposableSingletons$ScaffoldKt {
     public static final ComposableSingletons$ScaffoldKt INSTANCE = new ComposableSingletons$ScaffoldKt();
 
     /* renamed from: lambda$-39202156  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f88lambda$39202156 = ComposableLambdaKt.composableLambdaInstance(-39202156, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ScaffoldKt$lambda$-39202156$1
+    private static Function2<Composer, Integer, Unit> f31lambda$39202156 = ComposableLambdaKt.composableLambdaInstance(-39202156, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ScaffoldKt$lambda$-39202156$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -78,7 +78,7 @@ public final class ComposableSingletons$ScaffoldKt {
     });
 
     /* renamed from: lambda$-1514016380  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f87lambda$1514016380 = ComposableLambdaKt.composableLambdaInstance(-1514016380, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ScaffoldKt$lambda$-1514016380$1
+    private static Function2<Composer, Integer, Unit> f30lambda$1514016380 = ComposableLambdaKt.composableLambdaInstance(-1514016380, false, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$ScaffoldKt$lambda$-1514016380$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
             invoke(composer, num.intValue());
@@ -101,13 +101,13 @@ public final class ComposableSingletons$ScaffoldKt {
     });
 
     /* renamed from: getLambda$-1514016380$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1942getLambda$1514016380$material3() {
-        return f87lambda$1514016380;
+    public final Function2<Composer, Integer, Unit> m2387getLambda$1514016380$material3() {
+        return f30lambda$1514016380;
     }
 
     /* renamed from: getLambda$-39202156$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m1943getLambda$39202156$material3() {
-        return f88lambda$39202156;
+    public final Function2<Composer, Integer, Unit> m2388getLambda$39202156$material3() {
+        return f31lambda$39202156;
     }
 
     public final Function2<Composer, Integer, Unit> getLambda$1582488484$material3() {

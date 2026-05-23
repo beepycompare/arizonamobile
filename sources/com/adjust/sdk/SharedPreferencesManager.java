@@ -3,6 +3,7 @@ package com.adjust.sdk;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.text.TextUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +24,7 @@ public class SharedPreferencesManager {
     private static final String PREFS_KEY_PREINSTALL_SYSTEM_INSTALLER_REFERRER = "preinstall_system_installer_referrer";
     private static final String PREFS_KEY_PUSH_TOKEN = "push_token";
     private static final String PREFS_KEY_RAW_REFERRERS = "raw_referrers";
+    private static final String PREFS_KEY_TPS_RESULT_SETTINGS = "tps_result_settings";
     private static final String PREFS_NAME = "adjust_preferences";
     private static final int REFERRERS_COUNT = 10;
     private static SharedPreferencesManager defaultInstance;
@@ -232,6 +234,14 @@ public class SharedPreferencesManager {
         return new JSONArray();
     }
 
+    public synchronized AdjustThirdPartySharingResult getThirdPartySharingResult() {
+        String string = getString(PREFS_KEY_TPS_RESULT_SETTINGS);
+        if (TextUtils.isEmpty(string)) {
+            return null;
+        }
+        return new AdjustThirdPartySharingResult(string);
+    }
+
     public synchronized void removeDeeplink() {
         remove(PREFS_KEY_DEEPLINK_URL);
         remove(PREFS_KEY_DEEPLINK_REFERRER);
@@ -320,6 +330,13 @@ public class SharedPreferencesManager {
             saveString(PREFS_KEY_RAW_REFERRERS, jSONArray.toString());
         } catch (Throwable unused) {
             remove(PREFS_KEY_RAW_REFERRERS);
+        }
+    }
+
+    public synchronized void saveThirdPartySharingResult(AdjustThirdPartySharingResult adjustThirdPartySharingResult) {
+        try {
+            saveString(PREFS_KEY_TPS_RESULT_SETTINGS, adjustThirdPartySharingResult.getThirdPartySharingSettingsJson());
+        } catch (Throwable unused) {
         }
     }
 

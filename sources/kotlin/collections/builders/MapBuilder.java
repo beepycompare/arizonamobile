@@ -421,11 +421,9 @@ public final class MapBuilder<K, V> implements Map<K, V>, Serializable, KMutable
             if (i2 == 0) {
                 return -1;
             }
-            if (i2 > 0) {
-                int i3 = i2 - 1;
-                if (Intrinsics.areEqual(this.keysArray[i3], k)) {
-                    return i3;
-                }
+            int i3 = i2 - 1;
+            if (Intrinsics.areEqual(this.keysArray[i3], k)) {
+                return i3;
             }
             i--;
             if (i < 0) {
@@ -460,7 +458,7 @@ public final class MapBuilder<K, V> implements Map<K, V>, Serializable, KMutable
             int i = 0;
             while (true) {
                 int i2 = this.hashArray[hash];
-                if (i2 <= 0) {
+                if (i2 == 0) {
                     if (this.length >= getCapacity$kotlin_stdlib()) {
                         ensureExtraCapacity(1);
                     } else {
@@ -515,38 +513,29 @@ public final class MapBuilder<K, V> implements Map<K, V>, Serializable, KMutable
     }
 
     private final void removeHashAt(int i) {
-        int coerceAtMost = RangesKt.coerceAtMost(this.maxProbeDistance * 2, getHashSize() / 2);
-        int i2 = 0;
-        int i3 = i;
-        do {
-            i = i == 0 ? getHashSize() - 1 : i - 1;
-            i2++;
-            int i4 = this.maxProbeDistance;
-            int[] iArr = this.hashArray;
-            if (i2 > i4) {
-                iArr[i3] = 0;
-                return;
-            }
-            int i5 = iArr[i];
-            if (i5 == 0) {
-                iArr[i3] = 0;
-                return;
-            }
-            if (i5 < 0) {
-                iArr[i3] = -1;
-            } else {
-                int i6 = i5 - 1;
-                if (((hash(this.keysArray[i6]) - i) & (getHashSize() - 1)) >= i2) {
-                    this.hashArray[i3] = i5;
-                    this.presenceArray[i6] = i3;
+        int i2;
+        int i3;
+        while (true) {
+            int i4 = i;
+            int i5 = 0;
+            do {
+                i = i == 0 ? getHashSize() - 1 : i - 1;
+                int[] iArr = this.hashArray;
+                i2 = iArr[i];
+                i5++;
+                if (i5 > this.maxProbeDistance) {
+                    iArr[i4] = 0;
+                    return;
+                } else if (i2 == 0) {
+                    iArr[i4] = 0;
+                    return;
+                } else {
+                    i3 = i2 - 1;
                 }
-                coerceAtMost--;
-            }
-            i3 = i;
-            i2 = 0;
-            coerceAtMost--;
-        } while (coerceAtMost >= 0);
-        this.hashArray[i3] = -1;
+            } while (((hash(this.keysArray[i3]) - i) & (getHashSize() - 1)) < i5);
+            this.hashArray[i4] = i2;
+            this.presenceArray[i3] = i4;
+        }
     }
 
     public final boolean containsEntry$kotlin_stdlib(Map.Entry<? extends K, ? extends V> entry) {

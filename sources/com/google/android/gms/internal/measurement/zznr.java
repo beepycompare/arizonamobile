@@ -1,5 +1,81 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zznr {
+public final class zznr extends zzadu implements zzafd {
+    private static final zznr zzg;
+    private static volatile zzafj zzh;
+    private int zzb;
+    private zzaef zze = zzcy();
+    private String zzf = "";
+
+    static {
+        zznr zznrVar = new zznr();
+        zzg = zznrVar;
+        zzadu.zzcs(zznr.class, zznrVar);
+    }
+
+    private zznr() {
+    }
+
+    public static zznr zzb() {
+        return zzg;
+    }
+
+    public final List zza() {
+        return this.zze;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzc(String str) {
+        zzaef zzaefVar = this.zze;
+        if (!zzaefVar.zza()) {
+            this.zze = zzadu.zzcz(zzaefVar);
+        }
+        this.zze.add("");
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzd(String str) {
+        this.zzb |= 1;
+        this.zzf = "";
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                return zzct(zzg, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001\u001a\u0002ဈ\u0000", new Object[]{"zzb", "zze", "zzf"});
+            } else if (i2 != 3) {
+                if (i2 != 4) {
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzh;
+                            if (zzafjVar2 == null) {
+                                synchronized (zznr.class) {
+                                    zzafjVar = zzh;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzg);
+                                        zzh = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
+                    }
+                    return zzg;
+                }
+                return new zznq(null);
+            } else {
+                return new zznr();
+            }
+        }
+        return (byte) 1;
+    }
 }

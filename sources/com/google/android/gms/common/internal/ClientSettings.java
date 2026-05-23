@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ClientSettings {
     @Nullable
@@ -30,7 +30,7 @@ public final class ClientSettings {
     private final SignInOptions zai;
     private Integer zaj;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static final class Builder {
         @Nullable
@@ -49,16 +49,16 @@ public final class ClientSettings {
             return this;
         }
 
-        public final Builder zaa(Collection collection) {
+        public final Builder zaa(@Nullable Account account) {
+            this.zaa = account;
+            return this;
+        }
+
+        public final Builder zab(Collection collection) {
             if (this.zab == null) {
                 this.zab = new ArraySet();
             }
             this.zab.addAll(collection);
-            return this;
-        }
-
-        public final Builder zab(@Nullable Account account) {
-            this.zaa = account;
             return this;
         }
 
@@ -68,7 +68,7 @@ public final class ClientSettings {
         }
     }
 
-    public ClientSettings(Account account, Set<Scope> set, Map<Api<?>, zab> map, int i, @Nullable View view, String str, String str2, @Nullable SignInOptions signInOptions) {
+    public ClientSettings(Account account, Set<Scope> set, Map<Api<?>, zae> map, int i, @Nullable View view, String str, String str2, @Nullable SignInOptions signInOptions) {
         this(account, set, map, i, view, str, str2, signInOptions, false);
     }
 
@@ -99,13 +99,16 @@ public final class ClientSettings {
     }
 
     public Set<Scope> getApplicableScopes(Api<?> api) {
-        zab zabVar = (zab) this.zad.get(api);
-        if (zabVar == null || zabVar.zaa.isEmpty()) {
-            return this.zab;
+        zae zaeVar = (zae) this.zad.get(api);
+        if (zaeVar != null) {
+            Set set = zaeVar.zaa;
+            if (!set.isEmpty()) {
+                HashSet hashSet = new HashSet(this.zab);
+                hashSet.addAll(set);
+                return hashSet;
+            }
         }
-        HashSet hashSet = new HashSet(this.zab);
-        hashSet.addAll(zabVar.zaa);
-        return hashSet;
+        return this.zab;
     }
 
     public int getGravityForPopups() {
@@ -124,20 +127,20 @@ public final class ClientSettings {
         return this.zaf;
     }
 
-    public final SignInOptions zaa() {
-        return this.zai;
+    public final Map zaa() {
+        return this.zad;
     }
 
-    public final Integer zab() {
-        return this.zaj;
-    }
-
-    public final String zac() {
+    public final String zab() {
         return this.zah;
     }
 
-    public final Map zad() {
-        return this.zad;
+    public final SignInOptions zac() {
+        return this.zai;
+    }
+
+    public final Integer zad() {
+        return this.zaj;
     }
 
     public final void zae(Integer num) {
@@ -156,8 +159,8 @@ public final class ClientSettings {
         this.zah = str2;
         this.zai = signInOptions == null ? SignInOptions.zaa : signInOptions;
         HashSet hashSet = new HashSet(emptySet);
-        for (zab zabVar : map.values()) {
-            hashSet.addAll(zabVar.zaa);
+        for (zae zaeVar : map.values()) {
+            hashSet.addAll(zaeVar.zaa);
         }
         this.zac = Collections.unmodifiableSet(hashSet);
     }

@@ -1,32 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class Fb {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final O2 f584a;
-    public final C0262g2 b;
-    public final ArrayList c;
-
-    public Fb(O2 o2, C0262g2 c0262g2) {
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.f584a = o2;
-        arrayList.add(o2);
-        this.b = c0262g2;
-        arrayList.add(c0262g2);
-    }
-
-    public final synchronized void a() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            ((InterfaceC0408lk) it.next()).onCreate();
+    public static final V9 a(Fb fb, EnumC0220ea enumC0220ea, JSONObject jSONObject) {
+        int i;
+        fb.getClass();
+        V9 v9 = new V9();
+        switch (enumC0220ea.ordinal()) {
+            case 0:
+                i = 0;
+                break;
+            case 1:
+                i = 1;
+                break;
+            case 2:
+                i = 2;
+                break;
+            case 3:
+                i = 3;
+                break;
+            case 4:
+                i = 4;
+                break;
+            case 5:
+                i = 5;
+                break;
+            case 6:
+                i = 6;
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
         }
-    }
-
-    public final synchronized void a(C0423ma c0423ma) {
-        this.c.add(c0423ma);
+        v9.f806a = i;
+        v9.b = jSONObject.toString().getBytes(Charsets.UTF_8);
+        return v9;
     }
 }

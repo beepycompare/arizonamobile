@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import androidx.compose.runtime.ComposerImplKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.container.MdtaMetadataEntry;
@@ -123,7 +123,7 @@ public enum zzjd implements zzfw {
     FIRST_PARTY_CLIENT_MISSING_1P_LISTENER(122),
     FIRST_PARTY_CLIENT_MISSING_3P_LISTENER(123),
     NULL_DATA_WITH_OK_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT(124),
-    NULL_DATA_WITH_CANCELLED_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT(ComposerImplKt.nodeKey),
+    NULL_DATA_WITH_CANCELLED_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT(GapComposerKt.nodeKey),
     NULL_DATA_WITH_PLAY_CANCELED_RESULT_CODE(145),
     NULL_DATA_WITH_PLAY_CANCELED_WITHOUT_COMPLETE_ACTION_RESULT_CODE(146),
     NULL_DATA_WITH_OTHER_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT(WebSocketProtocol.PAYLOAD_SHORT),
@@ -384,7 +384,7 @@ public enum zzjd implements zzfw {
                                         return FIRST_PARTY_CLIENT_MISSING_3P_LISTENER;
                                     case 124:
                                         return NULL_DATA_WITH_OK_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT;
-                                    case ComposerImplKt.nodeKey /* 125 */:
+                                    case GapComposerKt.nodeKey /* 125 */:
                                         return NULL_DATA_WITH_CANCELLED_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT;
                                     case WebSocketProtocol.PAYLOAD_SHORT /* 126 */:
                                         return NULL_DATA_WITH_OTHER_RESULT_CODE_IN_PROXY_BILLING_ACTIVITY_RESULT;

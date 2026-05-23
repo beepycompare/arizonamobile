@@ -3,16 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Ye {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f872a;
-    public final String b;
+    public final long f855a;
+    public final long b;
 
-    public Ye(String str, String str2) {
-        this.f872a = str;
-        this.b = a(str2);
-    }
-
-    public final String a(String str) {
-        String str2 = this.f872a;
-        return str != null ? str2 + str : str2;
+    public Ye(long j, long j2) {
+        this.f855a = j;
+        this.b = j2;
     }
 }

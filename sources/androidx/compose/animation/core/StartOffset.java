@@ -5,56 +5,56 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: AnimationSpec.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u00002\u00020\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u001b\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\u0004\u0010\nJ\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\u0011\u001a\u00020\u0007HÖ\u0001J\t\u0010\u0012\u001a\u00020\u0013HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\r\u0010\f\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0014"}, d2 = {"Landroidx/compose/animation/core/StartOffset;", "", "value", "", "constructor-impl", "(J)J", "offsetMillis", "", "offsetType", "Landroidx/compose/animation/core/StartOffsetType;", "(II)J", "getOffsetMillis-impl", "(J)I", "getOffsetType-Eo1U57Q", "equals", "", "other", "hashCode", "toString", "", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0087@\u0018\u00002\u00020\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\u001b\b\u0016\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\u0004\u0010\nJ\u0014\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0011\u001a\u00020\u0007HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\r\u0010\f\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u0014"}, d2 = {"Landroidx/compose/animation/core/StartOffset;", "", "value", "", "constructor-impl", "(J)J", "offsetMillis", "", "offsetType", "Landroidx/compose/animation/core/StartOffsetType;", "(II)J", "getOffsetMillis-impl", "(J)I", "getOffsetType-Eo1U57Q", "equals", "", "other", "hashCode", "toString", "", "animation-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class StartOffset {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StartOffset m201boximpl(long j) {
+    public static final /* synthetic */ StartOffset m225boximpl(long j) {
         return new StartOffset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m203constructorimpl(long j) {
+    private static long m227constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m205equalsimpl(long j, Object obj) {
-        return (obj instanceof StartOffset) && j == ((StartOffset) obj).m211unboximpl();
+    public static boolean m229equalsimpl(long j, Object obj) {
+        return (obj instanceof StartOffset) && j == ((StartOffset) obj).m235unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m206equalsimpl0(long j, long j2) {
+    public static final boolean m230equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m209hashCodeimpl(long j) {
+    public static int m233hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m210toStringimpl(long j) {
+    public static String m234toStringimpl(long j) {
         return "StartOffset(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m205equalsimpl(this.value, obj);
+        return m229equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m209hashCodeimpl(this.value);
+        return m233hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m210toStringimpl(this.value);
+        return m234toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m211unboximpl() {
+    public final /* synthetic */ long m235unboximpl() {
         return this.value;
     }
 
@@ -63,32 +63,32 @@ public final class StartOffset {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ long m204constructorimpl$default(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ long m228constructorimpl$default(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i3 & 2) != 0) {
-            i2 = StartOffsetType.Companion.m219getDelayEo1U57Q();
+            i2 = StartOffsetType.Companion.m243getDelayEo1U57Q();
         }
-        return m202constructorimpl(i, i2);
+        return m226constructorimpl(i, i2);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m202constructorimpl(int i, int i2) {
-        return m203constructorimpl(i * i2);
+    public static long m226constructorimpl(int i, int i2) {
+        return m227constructorimpl(i * i2);
     }
 
     /* renamed from: getOffsetMillis-impl  reason: not valid java name */
-    public static final int m207getOffsetMillisimpl(long j) {
+    public static final int m231getOffsetMillisimpl(long j) {
         return Math.abs((int) j);
     }
 
     /* renamed from: getOffsetType-Eo1U57Q  reason: not valid java name */
-    public static final int m208getOffsetTypeEo1U57Q(long j) {
+    public static final int m232getOffsetTypeEo1U57Q(long j) {
         boolean z = j > 0;
         if (z) {
-            return StartOffsetType.Companion.m220getFastForwardEo1U57Q();
+            return StartOffsetType.Companion.m244getFastForwardEo1U57Q();
         }
         if (z) {
             throw new NoWhenBranchMatchedException();
         }
-        return StartOffsetType.Companion.m219getDelayEo1U57Q();
+        return StartOffsetType.Companion.m243getDelayEo1U57Q();
     }
 }

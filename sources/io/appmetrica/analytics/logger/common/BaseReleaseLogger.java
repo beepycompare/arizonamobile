@@ -12,13 +12,13 @@ public abstract class BaseReleaseLogger {
     private static volatile String d = "";
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1371a;
+    private final String f1350a;
     private volatile boolean b = false;
     private final c c;
 
     public BaseReleaseLogger(String str, String str2) {
         this.c = new c(new d(str), new a(), new b());
-        this.f1371a = str2;
+        this.f1350a = str2;
     }
 
     public static void init(Context context) {
@@ -33,7 +33,7 @@ public abstract class BaseReleaseLogger {
             Iterator it = cVar.c.a(a.a(prefix, str, objArr)).iterator();
             while (it.hasNext()) {
                 String str2 = (String) it.next();
-                String str3 = cVar.f1373a.f1374a;
+                String str3 = cVar.f1352a.f1353a;
                 if (str2 == null) {
                     str2 = "";
                 }
@@ -43,7 +43,7 @@ public abstract class BaseReleaseLogger {
     }
 
     public String getPrefix() {
-        return d + this.f1371a;
+        return d + this.f1350a;
     }
 
     public void info(String str, Object... objArr) {
@@ -54,7 +54,7 @@ public abstract class BaseReleaseLogger {
             Iterator it = cVar.c.a(a.a(prefix, str, objArr)).iterator();
             while (it.hasNext()) {
                 String str2 = (String) it.next();
-                String str3 = cVar.f1373a.f1374a;
+                String str3 = cVar.f1352a.f1353a;
                 if (str2 == null) {
                     str2 = "";
                 }
@@ -75,7 +75,7 @@ public abstract class BaseReleaseLogger {
             Iterator it = cVar.c.a(a.a(prefix, str, objArr)).iterator();
             while (it.hasNext()) {
                 String str2 = (String) it.next();
-                String str3 = cVar.f1373a.f1374a;
+                String str3 = cVar.f1352a.f1353a;
                 if (str2 == null) {
                     str2 = "";
                 }
@@ -96,7 +96,7 @@ public abstract class BaseReleaseLogger {
             Iterator it = cVar.c.a(a.a(prefix, sb.append(str).append("\n").append(Log.getStackTraceString(th)).toString(), objArr)).iterator();
             while (it.hasNext()) {
                 String str2 = (String) it.next();
-                String str3 = cVar.f1373a.f1374a;
+                String str3 = cVar.f1352a.f1353a;
                 if (str2 == null) {
                     str2 = "";
                 }

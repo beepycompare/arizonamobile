@@ -1,19 +1,16 @@
 package com.google.android.gms.common.internal.service;
 
-import android.os.RemoteException;
+import android.content.Context;
+import android.os.Looper;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.internal.ClientSettings;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zac extends zaf {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zac(zae zaeVar, GoogleApiClient googleApiClient) {
-        super(googleApiClient);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.BaseImplementation.ApiMethodImpl
-    protected final /* bridge */ /* synthetic */ void doExecute(Api.AnyClient anyClient) throws RemoteException {
-        ((zal) ((zah) anyClient).getService()).zae(new zad(this));
+final class zac extends Api.AbstractClientBuilder {
+    @Override // com.google.android.gms.common.api.Api.AbstractClientBuilder
+    public final /* synthetic */ Api.Client buildClient(Context context, Looper looper, ClientSettings clientSettings, Object obj, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+        Api.ApiOptions.NoOptions noOptions = (Api.ApiOptions.NoOptions) obj;
+        return new zai(context, looper, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 }

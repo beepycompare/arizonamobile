@@ -1,6 +1,5 @@
 package androidx.media3.extractor.mp4;
 
-import androidx.media3.common.C;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
@@ -32,71 +31,81 @@ public final class TrackSampleTable {
         this.sampleCount = i2;
         if (iArr2.length > 0) {
             int length = iArr2.length - 1;
-            iArr2[length] = iArr2[length] | C.BUFFER_FLAG_LAST_SAMPLE;
+            iArr2[length] = iArr2[length] | 536870912;
         }
+    }
+
+    public boolean hasSampleTableData() {
+        return this.timestampsUs.length > 0;
     }
 
     public int getIndexOfEarlierOrEqualSynchronizationSample(long j) {
-        int i = 0;
-        if (this.hasOnlySyncSamples) {
-            return Util.binarySearchFloor(this.timestampsUs, j, true, false);
-        }
-        int length = this.syncSampleIndices.length - 1;
-        int i2 = -1;
-        while (i <= length) {
-            int i3 = ((length - i) / 2) + i;
-            if (this.timestampsUs[this.syncSampleIndices[i3]] <= j) {
-                i = i3 + 1;
-                i2 = i3;
-            } else {
-                length = i3 - 1;
+        if (hasSampleTableData()) {
+            int i = 0;
+            if (this.hasOnlySyncSamples) {
+                return Util.binarySearchFloor(this.timestampsUs, j, true, false);
             }
-        }
-        if (i2 == -1) {
-            return -1;
-        }
-        long j2 = this.timestampsUs[this.syncSampleIndices[i2]];
-        if (j2 == j) {
-            while (i2 > 0 && this.timestampsUs[this.syncSampleIndices[i2 - 1]] == j2) {
-                i2--;
+            int length = this.syncSampleIndices.length - 1;
+            int i2 = -1;
+            while (i <= length) {
+                int i3 = ((length - i) / 2) + i;
+                if (this.timestampsUs[this.syncSampleIndices[i3]] <= j) {
+                    i = i3 + 1;
+                    i2 = i3;
+                } else {
+                    length = i3 - 1;
+                }
             }
+            if (i2 == -1) {
+                return -1;
+            }
+            long j2 = this.timestampsUs[this.syncSampleIndices[i2]];
+            if (j2 == j) {
+                while (i2 > 0 && this.timestampsUs[this.syncSampleIndices[i2 - 1]] == j2) {
+                    i2--;
+                }
+            }
+            return this.syncSampleIndices[i2];
         }
-        return this.syncSampleIndices[i2];
+        return -1;
     }
 
     public int getIndexOfLaterOrEqualSynchronizationSample(long j) {
-        int i = 0;
-        if (this.hasOnlySyncSamples) {
-            return Util.binarySearchCeil(this.timestampsUs, j, true, false);
-        }
-        int length = this.syncSampleIndices.length - 1;
-        int i2 = -1;
-        while (i <= length) {
-            int i3 = ((length - i) / 2) + i;
-            if (this.timestampsUs[this.syncSampleIndices[i3]] >= j) {
-                length = i3 - 1;
-                i2 = i3;
-            } else {
-                i = i3 + 1;
+        if (hasSampleTableData()) {
+            int i = 0;
+            if (this.hasOnlySyncSamples) {
+                return Util.binarySearchCeil(this.timestampsUs, j, true, false);
             }
-        }
-        if (i2 == -1) {
-            return -1;
-        }
-        long j2 = this.timestampsUs[this.syncSampleIndices[i2]];
-        if (j2 == j) {
-            while (true) {
-                int[] iArr = this.syncSampleIndices;
-                if (i2 >= iArr.length - 1) {
-                    break;
+            int length = this.syncSampleIndices.length - 1;
+            int i2 = -1;
+            while (i <= length) {
+                int i3 = ((length - i) / 2) + i;
+                if (this.timestampsUs[this.syncSampleIndices[i3]] >= j) {
+                    length = i3 - 1;
+                    i2 = i3;
+                } else {
+                    i = i3 + 1;
                 }
-                int i4 = i2 + 1;
-                if (this.timestampsUs[iArr[i4]] != j2) {
-                    break;
-                }
-                i2 = i4;
             }
+            if (i2 == -1) {
+                return -1;
+            }
+            long j2 = this.timestampsUs[this.syncSampleIndices[i2]];
+            if (j2 == j) {
+                while (true) {
+                    int[] iArr = this.syncSampleIndices;
+                    if (i2 >= iArr.length - 1) {
+                        break;
+                    }
+                    int i4 = i2 + 1;
+                    if (this.timestampsUs[iArr[i4]] != j2) {
+                        break;
+                    }
+                    i2 = i4;
+                }
+            }
+            return this.syncSampleIndices[i2];
         }
-        return this.syncSampleIndices[i2];
+        return -1;
     }
 }

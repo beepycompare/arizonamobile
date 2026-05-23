@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: NewsInteractor.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor", f = "NewsInteractor.kt", i = {}, l = {58}, m = "getNews", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NewsInteractor$getNews$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

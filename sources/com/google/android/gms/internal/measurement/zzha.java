@@ -1,86 +1,108 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzha extends zzmf implements zznn {
-    private static final zzha zzn;
+public final class zzha extends zzadu implements zzafd {
+    private static final zzha zzp;
+    private static volatile zzafj zzq;
     private int zzb;
-    private long zzg;
-    private long zzk;
-    private zzng zzl = zzng.zza();
-    private zzng zzm = zzng.zza();
-    private String zzd = "";
+    private long zzh;
+    private long zzl;
+    private zzaew zzm = zzaew.zza();
+    private zzaew zzn = zzaew.zza();
     private String zze = "";
     private String zzf = "";
-    private String zzh = "";
+    private String zzg = "";
     private String zzi = "";
     private String zzj = "";
+    private String zzk = "";
+    private String zzo = "";
 
     static {
         zzha zzhaVar = new zzha();
-        zzn = zzhaVar;
-        zzmf.zzcp(zzha.class, zzhaVar);
+        zzp = zzhaVar;
+        zzadu.zzcs(zzha.class, zzhaVar);
     }
 
     private zzha() {
     }
 
-    public static zzgx zzr() {
-        return (zzgx) zzn.zzck();
+    public static zzgx zzt() {
+        return (zzgx) zzp.zzcn();
     }
 
-    public static zzha zzs() {
-        return zzn;
+    public static zzha zzu() {
+        return zzp;
     }
 
-    public final /* synthetic */ void zzA(String str) {
-        this.zzb |= 16;
-        this.zzh = str;
+    public final /* synthetic */ void zzA() {
+        this.zzb &= -5;
+        this.zzg = zzp.zzg;
     }
 
-    public final /* synthetic */ void zzB() {
-        this.zzb &= -17;
-        this.zzh = zzn.zzh;
+    public final /* synthetic */ void zzB(long j) {
+        this.zzb |= 8;
+        this.zzh = j;
     }
 
     public final /* synthetic */ void zzC(String str) {
-        this.zzb |= 32;
+        this.zzb |= 16;
         this.zzi = str;
     }
 
     public final /* synthetic */ void zzD() {
-        this.zzb &= -33;
-        this.zzi = zzn.zzi;
+        this.zzb &= -17;
+        this.zzi = zzp.zzi;
     }
 
     public final /* synthetic */ void zzE(String str) {
-        this.zzb |= 64;
+        this.zzb |= 32;
         this.zzj = str;
     }
 
     public final /* synthetic */ void zzF() {
+        this.zzb &= -33;
+        this.zzj = zzp.zzj;
+    }
+
+    public final /* synthetic */ void zzG(String str) {
+        this.zzb |= 64;
+        this.zzk = str;
+    }
+
+    public final /* synthetic */ void zzH() {
         this.zzb &= -65;
-        this.zzj = zzn.zzj;
+        this.zzk = zzp.zzk;
     }
 
-    public final /* synthetic */ void zzG(long j) {
+    public final /* synthetic */ void zzI(long j) {
         this.zzb |= 128;
-        this.zzk = j;
+        this.zzl = j;
     }
 
-    public final /* synthetic */ Map zzH() {
-        if (!this.zzl.zze()) {
-            this.zzl = this.zzl.zzc();
-        }
-        return this.zzl;
-    }
-
-    public final /* synthetic */ Map zzI() {
+    public final /* synthetic */ Map zzJ() {
         if (!this.zzm.zze()) {
             this.zzm = this.zzm.zzc();
         }
         return this.zzm;
+    }
+
+    public final /* synthetic */ Map zzK() {
+        if (!this.zzn.zze()) {
+            this.zzn = this.zzn.zzc();
+        }
+        return this.zzn;
+    }
+
+    public final /* synthetic */ void zzL(String str) {
+        this.zzb |= 256;
+        this.zzo = str;
+    }
+
+    public final /* synthetic */ void zzM() {
+        this.zzb &= -257;
+        this.zzo = zzp.zzo;
     }
 
     public final boolean zza() {
@@ -88,7 +110,7 @@ public final class zzha extends zzmf implements zznn {
     }
 
     public final String zzb() {
-        return this.zzd;
+        return this.zze;
     }
 
     public final boolean zzc() {
@@ -96,7 +118,7 @@ public final class zzha extends zzmf implements zznn {
     }
 
     public final String zzd() {
-        return this.zze;
+        return this.zzf;
     }
 
     public final boolean zze() {
@@ -104,52 +126,31 @@ public final class zzha extends zzmf implements zznn {
     }
 
     public final String zzf() {
-        return this.zzf;
-    }
-
-    public final boolean zzg() {
-        return (this.zzb & 8) != 0;
-    }
-
-    public final long zzh() {
         return this.zzg;
     }
 
-    public final boolean zzi() {
-        return (this.zzb & 16) != 0;
+    public final boolean zzh() {
+        return (this.zzb & 8) != 0;
     }
 
-    public final String zzj() {
+    public final long zzi() {
         return this.zzh;
     }
 
-    public final boolean zzk() {
+    public final boolean zzj() {
+        return (this.zzb & 16) != 0;
+    }
+
+    public final String zzk() {
+        return this.zzi;
+    }
+
+    public final boolean zzl() {
         return (this.zzb & 32) != 0;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzn, "\u0004\n\u0000\u0001\u0001\n\n\u0002\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001\u0003ဈ\u0002\u0004ဂ\u0003\u0005ဈ\u0004\u0006ဈ\u0005\u0007ဈ\u0006\bဂ\u0007\t2\n2", new Object[]{"zzb", "zzd", "zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk", "zzl", zzgy.zza, "zzm", zzgz.zza});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzn;
-                    }
-                    throw null;
-                }
-                return new zzgx(null);
-            } else {
-                return new zzha();
-            }
-        }
-        return (byte) 1;
-    }
-
     public final String zzm() {
-        return this.zzi;
+        return this.zzj;
     }
 
     public final boolean zzn() {
@@ -157,7 +158,7 @@ public final class zzha extends zzmf implements zznn {
     }
 
     public final String zzo() {
-        return this.zzj;
+        return this.zzk;
     }
 
     public final boolean zzp() {
@@ -165,41 +166,75 @@ public final class zzha extends zzmf implements zznn {
     }
 
     public final long zzq() {
-        return this.zzk;
+        return this.zzl;
     }
 
-    public final /* synthetic */ void zzt(String str) {
-        this.zzb |= 1;
-        this.zzd = str;
+    public final boolean zzr() {
+        return (this.zzb & 256) != 0;
     }
 
-    public final /* synthetic */ void zzu() {
-        this.zzb &= -2;
-        this.zzd = zzn.zzd;
+    public final String zzs() {
+        return this.zzo;
     }
 
     public final /* synthetic */ void zzv(String str) {
-        this.zzb |= 2;
+        this.zzb |= 1;
         this.zze = str;
     }
 
     public final /* synthetic */ void zzw() {
-        this.zzb &= -3;
-        this.zze = zzn.zze;
+        this.zzb &= -2;
+        this.zze = zzp.zze;
     }
 
     public final /* synthetic */ void zzx(String str) {
-        this.zzb |= 4;
+        this.zzb |= 2;
         this.zzf = str;
     }
 
     public final /* synthetic */ void zzy() {
-        this.zzb &= -5;
-        this.zzf = zzn.zzf;
+        this.zzb &= -3;
+        this.zzf = zzp.zzf;
     }
 
-    public final /* synthetic */ void zzz(long j) {
-        this.zzb |= 8;
-        this.zzg = j;
+    public final /* synthetic */ void zzz(String str) {
+        this.zzb |= 4;
+        this.zzg = str;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                return zzct(zzp, "\u0004\u000b\u0000\u0001\u0001\u000b\u000b\u0002\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001\u0003ဈ\u0002\u0004ဂ\u0003\u0005ဈ\u0004\u0006ဈ\u0005\u0007ဈ\u0006\bဂ\u0007\t2\n2\u000bဈ\b", new Object[]{"zzb", "zze", "zzf", "zzg", "zzh", "zzi", "zzj", "zzk", "zzl", "zzm", zzgy.zza, "zzn", zzgz.zza, "zzo"});
+            } else if (i2 != 3) {
+                if (i2 != 4) {
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzq;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzha.class) {
+                                    zzafjVar = zzq;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzp);
+                                        zzq = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
+                    }
+                    return zzp;
+                }
+                return new zzgx(null);
+            } else {
+                return new zzha();
+            }
+        }
+        return (byte) 1;
     }
 }

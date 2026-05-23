@@ -26,6 +26,6 @@ final class zzj implements BaseImplementation.ResultHolder<Status> {
 
     @Override // com.google.android.gms.common.api.internal.BaseImplementation.ResultHolder
     public final /* bridge */ /* synthetic */ void setResult(Status status) {
-        TaskUtil.setResultOrApiException(status, null, this.zza);
+        TaskUtil.setResultOrApiException(status, (Object) null, this.zza);
     }
 }

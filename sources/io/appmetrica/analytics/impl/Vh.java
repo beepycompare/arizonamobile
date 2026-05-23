@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ModuleEvent;
+import android.content.Context;
+import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes5.dex */
-public final class Vh implements Runnable {
+public final class Vh extends AbstractC0760z6 {
+    public final AbstractC0778zo d;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f834a;
-    public final /* synthetic */ C0278gi b;
-
-    public Vh(C0278gi c0278gi, ModuleEvent moduleEvent) {
-        this.b = c0278gi;
-        this.f834a = moduleEvent;
+    public Vh(Context context, AbstractC0778zo abstractC0778zo, InterfaceC0734y6 interfaceC0734y6, ICrashTransformer iCrashTransformer) {
+        this(abstractC0778zo, interfaceC0734y6, iCrashTransformer, new C0298ha(context));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        C0278gi c0278gi = this.b;
-        C0278gi.a(c0278gi.f1020a, c0278gi.d, c0278gi.e).reportEvent(this.f834a);
+    public Vh(AbstractC0778zo abstractC0778zo, InterfaceC0734y6 interfaceC0734y6, ICrashTransformer iCrashTransformer, C0298ha c0298ha) {
+        super(interfaceC0734y6, iCrashTransformer, c0298ha);
+        this.d = abstractC0778zo;
     }
 }

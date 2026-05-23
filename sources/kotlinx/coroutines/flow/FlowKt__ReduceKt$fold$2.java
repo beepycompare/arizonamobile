@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 /* compiled from: Reduce.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
 /* loaded from: classes5.dex */
 public final class FlowKt__ReduceKt$fold$2<T> implements FlowCollector {
     final /* synthetic */ Ref.ObjectRef<R> $accumulator;
@@ -21,7 +22,7 @@ public final class FlowKt__ReduceKt$fold$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -42,7 +43,8 @@ public final class FlowKt__ReduceKt$fold$2<T> implements FlowCollector {
                     Ref.ObjectRef objectRef2 = this.$accumulator;
                     Function3<R, T, Continuation<? super R>, Object> function3 = this.$operation;
                     T t3 = objectRef2.element;
-                    flowKt__ReduceKt$fold$2$emit$1.L$0 = objectRef2;
+                    flowKt__ReduceKt$fold$2$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                    flowKt__ReduceKt$fold$2$emit$1.L$1 = objectRef2;
                     flowKt__ReduceKt$fold$2$emit$1.label = 1;
                     Object invoke = function3.invoke(t3, t, flowKt__ReduceKt$fold$2$emit$1);
                     if (invoke == coroutine_suspended) {
@@ -53,7 +55,8 @@ public final class FlowKt__ReduceKt$fold$2<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    objectRef = (Ref.ObjectRef) flowKt__ReduceKt$fold$2$emit$1.L$0;
+                    objectRef = (Ref.ObjectRef) flowKt__ReduceKt$fold$2$emit$1.L$1;
+                    Object obj = flowKt__ReduceKt$fold$2$emit$1.L$0;
                     ResultKt.throwOnFailure(t2);
                 }
                 objectRef.element = t2;

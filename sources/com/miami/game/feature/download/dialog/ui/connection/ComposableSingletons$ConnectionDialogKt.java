@@ -12,12 +12,12 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ConnectionDialog.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$ConnectionDialogKt {
     public static final ComposableSingletons$ConnectionDialogKt INSTANCE = new ComposableSingletons$ConnectionDialogKt();
 
     /* renamed from: lambda$-751471044  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f132lambda$751471044 = ComposableLambdaKt.composableLambdaInstance(-751471044, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f52lambda$751471044 = ComposableLambdaKt.composableLambdaInstance(-751471044, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$ConnectionDialogKt.lambda__751471044$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -25,7 +25,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
     });
 
     /* renamed from: lambda$-1711092251  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f131lambda$1711092251 = ComposableLambdaKt.composableLambdaInstance(-1711092251, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f51lambda$1711092251 = ComposableLambdaKt.composableLambdaInstance(-1711092251, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$ConnectionDialogKt.lambda__1711092251$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -33,13 +33,13 @@ public final class ComposableSingletons$ConnectionDialogKt {
     });
 
     /* renamed from: getLambda$-1711092251$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9091getLambda$1711092251$dialogs() {
-        return f131lambda$1711092251;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9729getLambda$1711092251$dialogs() {
+        return f51lambda$1711092251;
     }
 
     /* renamed from: getLambda$-751471044$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9092getLambda$751471044$dialogs() {
-        return f132lambda$751471044;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9730getLambda$751471044$dialogs() {
+        return f52lambda$751471044;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -52,7 +52,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-751471044, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt.lambda$-751471044.<anonymous> (ConnectionDialog.kt:51)");
             }
-            TextKt.m2712TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -70,7 +70,7 @@ public final class ComposableSingletons$ConnectionDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1711092251, i, -1, "com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$ConnectionDialogKt.lambda$-1711092251.<anonymous> (ConnectionDialog.kt:63)");
             }
-            TextKt.m2712TextNvy7gAk("ПОДКЛЮЧИТЬСЯ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ПОДКЛЮЧИТЬСЯ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

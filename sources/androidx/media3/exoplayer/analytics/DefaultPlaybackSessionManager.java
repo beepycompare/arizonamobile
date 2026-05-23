@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultPlaybackSessionManager implements PlaybackSessionManager {
     public static final Supplier<String> DEFAULT_SESSION_ID_GENERATOR = new Supplier() { // from class: androidx.media3.exoplayer.analytics.DefaultPlaybackSessionManager$$ExternalSyntheticLambda0
         @Override // com.google.common.base.Supplier
@@ -241,7 +241,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class SessionDescriptor {
         private MediaSource.MediaPeriodId adMediaPeriodId;
         private boolean isActive;

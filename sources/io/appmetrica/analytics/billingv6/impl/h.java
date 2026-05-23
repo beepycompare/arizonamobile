@@ -9,21 +9,21 @@ import kotlin.jvm.internal.Lambda;
 public final class h extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f349a;
+    public final /* synthetic */ Map f295a;
     public final /* synthetic */ Map b;
     public final /* synthetic */ i c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public h(LinkedHashMap linkedHashMap, Map map, i iVar) {
         super(0);
-        this.f349a = linkedHashMap;
+        this.f295a = linkedHashMap;
         this.b = map;
         this.c = iVar;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        Map map = this.f349a;
+        Map map = this.f295a;
         Map map2 = this.b;
         i iVar = this.c;
         m.a(map, map2, iVar.d, iVar.c.getBillingInfoManager());

@@ -3,7 +3,7 @@ package com.miami.game.core.local.repository.di;
 import com.google.gson.Gson;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class LocalRepositoryModule_ProvideGsonFactory implements Factory<Gson> {
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public Gson get() {
@@ -18,7 +18,7 @@ public final class LocalRepositoryModule_ProvideGsonFactory implements Factory<G
         return (Gson) Preconditions.checkNotNullFromProvides(LocalRepositoryModule.INSTANCE.provideGson());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class InstanceHolder {
         static final LocalRepositoryModule_ProvideGsonFactory INSTANCE = new LocalRepositoryModule_ProvideGsonFactory();
 

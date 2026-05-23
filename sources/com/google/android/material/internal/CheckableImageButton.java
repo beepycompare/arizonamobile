@@ -18,7 +18,13 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
     private static final int[] DRAWABLE_STATE_CHECKED = {16842912};
     private boolean checkable;
     private boolean checked;
+    private OnFocusableChangedListener onFocusableChangedListener;
     private boolean pressable;
+
+    /* loaded from: classes4.dex */
+    public interface OnFocusableChangedListener {
+        void onFocusableChanged(View view, boolean z);
+    }
 
     public CheckableImageButton(Context context) {
         this(context, null);
@@ -75,6 +81,17 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
         }
     }
 
+    @Override // android.view.View
+    public void setFocusable(boolean z) {
+        OnFocusableChangedListener onFocusableChangedListener;
+        boolean isFocusable = isFocusable();
+        super.setFocusable(z);
+        if (isFocusable == z || (onFocusableChangedListener = this.onFocusableChangedListener) == null) {
+            return;
+        }
+        onFocusableChangedListener.onFocusableChanged(this, z);
+    }
+
     @Override // android.widget.ImageView, android.view.View
     public int[] onCreateDrawableState(int i) {
         if (this.checked) {
@@ -102,6 +119,12 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
         setChecked(savedState.checked);
     }
 
+    @Override // android.widget.ImageView, android.view.View
+    protected void onDetachedFromWindow() {
+        this.onFocusableChangedListener = null;
+        super.onDetachedFromWindow();
+    }
+
     public void setCheckable(boolean z) {
         if (this.checkable != z) {
             this.checkable = z;
@@ -119,6 +142,10 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
 
     public boolean isPressable() {
         return this.pressable;
+    }
+
+    public void setOnFocusableChangedListener(OnFocusableChangedListener onFocusableChangedListener) {
+        this.onFocusableChangedListener = onFocusableChangedListener;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

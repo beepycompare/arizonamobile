@@ -142,6 +142,15 @@ final class TimeOffsetMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public long setEndPositionUs(long j) {
+        long endPositionUs = this.mediaPeriod.setEndPositionUs(j == Long.MIN_VALUE ? Long.MIN_VALUE : j - this.timeOffsetUs);
+        if (endPositionUs == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return endPositionUs + this.timeOffsetUs;
+    }
+
     /* loaded from: classes3.dex */
     private static final class TimeOffsetSampleStream implements SampleStream {
         private final SampleStream sampleStream;

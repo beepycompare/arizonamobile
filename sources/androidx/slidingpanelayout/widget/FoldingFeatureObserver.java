@@ -47,7 +47,7 @@ public final class FoldingFeatureObserver {
         Intrinsics.checkNotNullParameter(activity, "activity");
         Job job = this.job;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(ExecutorsKt.from(this.executor)), null, null, new FoldingFeatureObserver$registerLayoutStateChangeCallback$1(this, activity, null), 3, null);
         this.job = launch$default;
@@ -58,7 +58,7 @@ public final class FoldingFeatureObserver {
         if (job == null) {
             return;
         }
-        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

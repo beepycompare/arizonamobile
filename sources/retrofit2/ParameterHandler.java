@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public abstract class ParameterHandler<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void apply(RequestBuilder requestBuilder, @Nullable T t) throws IOException;
@@ -53,7 +53,7 @@ public abstract class ParameterHandler<T> {
         };
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class RelativeUrl extends ParameterHandler<Object> {
         private final Method method;
         private final int p;
@@ -73,7 +73,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Header<T> extends ParameterHandler<T> {
         private final boolean allowUnsafeNonAsciiValues;
         private final String name;
@@ -96,7 +96,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Path<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final Method method;
@@ -122,7 +122,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Query<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final String name;
@@ -145,7 +145,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class QueryName<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final Converter<T, String> nameConverter;
@@ -165,7 +165,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class QueryMap<T> extends ParameterHandler<Map<String, T>> {
         private final boolean encoded;
         private final Method method;
@@ -207,7 +207,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class HeaderMap<T> extends ParameterHandler<Map<String, T>> {
         private final boolean allowUnsafeNonAsciiValues;
         private final Method method;
@@ -245,7 +245,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Headers extends ParameterHandler<okhttp3.Headers> {
         private final Method method;
         private final int p;
@@ -266,7 +266,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Field<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final String name;
@@ -289,7 +289,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class FieldMap<T> extends ParameterHandler<Map<String, T>> {
         private final boolean encoded;
         private final Method method;
@@ -331,7 +331,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Part<T> extends ParameterHandler<T> {
         private final Converter<T, RequestBody> converter;
         private final okhttp3.Headers headers;
@@ -359,7 +359,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class RawPart extends ParameterHandler<MultipartBody.Part> {
         static final RawPart INSTANCE = new RawPart();
 
@@ -375,7 +375,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class PartMap<T> extends ParameterHandler<Map<String, T>> {
         private final Method method;
         private final int p;
@@ -413,7 +413,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Body<T> extends ParameterHandler<T> {
         private final Converter<T, RequestBody> converter;
         private final Method method;
@@ -439,7 +439,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class Tag<T> extends ParameterHandler<T> {
         final Class<T> cls;
 

@@ -2,7 +2,10 @@ package androidx.compose.ui.text.platform;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import androidx.collection.MutableScatterMap;
 import androidx.collection.MutableScatterSet;
+import androidx.collection.ScatterMap;
+import androidx.collection.ScatterMapKt;
 import androidx.compose.ui.text.font.Font;
 import androidx.compose.ui.text.font.FontFamily;
 import androidx.compose.ui.text.font.FontListFontFamily;
@@ -15,9 +18,7 @@ import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import androidx.compose.ui.util.ListUtilsKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import kotlin.Deprecated;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -27,19 +28,19 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidFontListTypeface.android.kt */
 @Deprecated(message = "This is not supported after downloadable fonts.")
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u0000  2\u00020\u0001:\u0001 B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u001c\b\u0002\u0010\u0006\u001a\u0016\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b\u0018\u00010\u0007\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ'\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\t2\u0006\u0010\u001b\u001a\u00020\n2\u0006\u0010\u001c\u001a\u00020\u001dH\u0016¢\u0006\u0004\b\u001e\u0010\u001fR\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\b\u0011\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\u00020\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018¨\u0006!"}, d2 = {"Landroidx/compose/ui/text/platform/AndroidFontListTypeface;", "Landroidx/compose/ui/text/platform/AndroidTypeface;", TtmlNode.ATTR_TTS_FONT_FAMILY, "Landroidx/compose/ui/text/font/FontListFontFamily;", "context", "Landroid/content/Context;", "necessaryStyles", "", "Lkotlin/Pair;", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontStyle;", "fontMatcher", "Landroidx/compose/ui/text/font/FontMatcher;", "<init>", "(Landroidx/compose/ui/text/font/FontListFontFamily;Landroid/content/Context;Ljava/util/List;Landroidx/compose/ui/text/font/FontMatcher;)V", "getFontMatcher", "()Landroidx/compose/ui/text/font/FontMatcher;", "fontMatcher$1", "loadedTypefaces", "", "Landroidx/compose/ui/text/font/Font;", "Landroid/graphics/Typeface;", "Landroidx/compose/ui/text/font/FontFamily;", "getFontFamily", "()Landroidx/compose/ui/text/font/FontFamily;", "getNativeTypeface", TtmlNode.ATTR_TTS_FONT_WEIGHT, TtmlNode.ATTR_TTS_FONT_STYLE, "synthesis", "Landroidx/compose/ui/text/font/FontSynthesis;", "getNativeTypeface-PYhJU0U", "(Landroidx/compose/ui/text/font/FontWeight;II)Landroid/graphics/Typeface;", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u0000  2\u00020\u0001:\u0001 B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u001c\b\u0002\u0010\u0006\u001a\u0016\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b\u0018\u00010\u0007\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ'\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\t2\u0006\u0010\u001b\u001a\u00020\n2\u0006\u0010\u001c\u001a\u00020\u001dH\u0016¢\u0006\u0004\b\u001e\u0010\u001fR\u0013\u0010\u000b\u001a\u00020\f¢\u0006\n\n\u0002\b\u0011\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\u00020\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018¨\u0006!"}, d2 = {"Landroidx/compose/ui/text/platform/AndroidFontListTypeface;", "Landroidx/compose/ui/text/platform/AndroidTypeface;", TtmlNode.ATTR_TTS_FONT_FAMILY, "Landroidx/compose/ui/text/font/FontListFontFamily;", "context", "Landroid/content/Context;", "necessaryStyles", "", "Lkotlin/Pair;", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontStyle;", "fontMatcher", "Landroidx/compose/ui/text/font/FontMatcher;", "<init>", "(Landroidx/compose/ui/text/font/FontListFontFamily;Landroid/content/Context;Ljava/util/List;Landroidx/compose/ui/text/font/FontMatcher;)V", "getFontMatcher", "()Landroidx/compose/ui/text/font/FontMatcher;", "fontMatcher$1", "loadedTypefaces", "Landroidx/collection/ScatterMap;", "Landroidx/compose/ui/text/font/Font;", "Landroid/graphics/Typeface;", "Landroidx/compose/ui/text/font/FontFamily;", "getFontFamily", "()Landroidx/compose/ui/text/font/FontFamily;", "getNativeTypeface", TtmlNode.ATTR_TTS_FONT_WEIGHT, TtmlNode.ATTR_TTS_FONT_STYLE, "synthesis", "Landroidx/compose/ui/text/font/FontSynthesis;", "getNativeTypeface-PYhJU0U", "(Landroidx/compose/ui/text/font/FontWeight;II)Landroid/graphics/Typeface;", "Companion", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidFontListTypeface implements AndroidTypeface {
     private final FontFamily fontFamily;
     private final FontMatcher fontMatcher$1;
-    private final Map<Font, Typeface> loadedTypefaces;
+    private final ScatterMap<Font, Typeface> loadedTypefaces;
     private static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
     private static final FontMatcher fontMatcher = new FontMatcher();
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00c0  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00d9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,7 +54,7 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
         int size2 = fonts.size();
         for (int i = 0; i < size2; i++) {
             Font font = fonts.get(i);
-            if (FontLoadingStrategy.m7102equalsimpl0(font.mo7060getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m7107getBlockingPKNRLFQ())) {
+            if (FontLoadingStrategy.m7707equalsimpl0(font.mo7665getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m7712getBlockingPKNRLFQ())) {
                 arrayList3.add(font);
             }
         }
@@ -63,7 +64,7 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
             int size3 = list.size();
             for (int i2 = 0; i2 < size3; i2++) {
                 Pair<FontWeight, FontStyle> pair = list.get(i2);
-                arrayList5.add((Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7111matchFontRetOiIg(arrayList4, pair.component1(), pair.component2().m7118unboximpl())));
+                arrayList5.add((Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7716matchFontRetOiIg(arrayList4, pair.component1(), pair.component2().m7723unboximpl())));
             }
             List fastFilterNotNull = ListUtilsKt.fastFilterNotNull(arrayList5);
             if (fastFilterNotNull != null) {
@@ -82,17 +83,17 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
                 if (arrayList2.isEmpty()) {
                     InlineClassHelperKt.throwIllegalStateException("Could not match font");
                 }
-                LinkedHashMap linkedHashMap = new LinkedHashMap();
+                MutableScatterMap mutableScatterMapOf = ScatterMapKt.mutableScatterMapOf();
                 size = arrayList2.size();
                 for (int i4 = 0; i4 < size; i4++) {
                     Font font2 = (Font) arrayList4.get(i4);
                     try {
-                        linkedHashMap.put(font2, AndroidTypefaceCache.INSTANCE.getOrCreate(context, font2));
+                        mutableScatterMapOf.set(font2, AndroidTypefaceCache.INSTANCE.getOrCreate(context, font2));
                     } catch (Exception unused) {
                         InlineClassHelperKt.throwIllegalStateException("Cannot create Typeface from " + font2);
                     }
                 }
-                this.loadedTypefaces = linkedHashMap;
+                this.loadedTypefaces = mutableScatterMapOf;
                 this.fontFamily = fontListFontFamily;
             }
         }
@@ -102,11 +103,11 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
         arrayList2 = arrayList4;
         if (arrayList2.isEmpty()) {
         }
-        LinkedHashMap linkedHashMap2 = new LinkedHashMap();
+        MutableScatterMap mutableScatterMapOf2 = ScatterMapKt.mutableScatterMapOf();
         size = arrayList2.size();
         while (i4 < size) {
         }
-        this.loadedTypefaces = linkedHashMap2;
+        this.loadedTypefaces = mutableScatterMapOf2;
         this.fontFamily = fontListFontFamily;
     }
 
@@ -119,7 +120,7 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
     }
 
     /* compiled from: AndroidFontListTypeface.android.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/platform/AndroidFontListTypeface$Companion;", "", "<init>", "()V", "fontMatcher", "Landroidx/compose/ui/text/font/FontMatcher;", "getFontMatcher", "()Landroidx/compose/ui/text/font/FontMatcher;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Landroidx/compose/ui/text/platform/AndroidFontListTypeface$Companion;", "", "<init>", "()V", "fontMatcher", "Landroidx/compose/ui/text/font/FontMatcher;", "getFontMatcher", "()Landroidx/compose/ui/text/font/FontMatcher;", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -141,14 +142,41 @@ public final class AndroidFontListTypeface implements AndroidTypeface {
 
     @Override // androidx.compose.ui.text.platform.AndroidTypeface
     /* renamed from: getNativeTypeface-PYhJU0U */
-    public Typeface mo7256getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
-        Font font = (Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7111matchFontRetOiIg(new ArrayList(this.loadedTypefaces.keySet()), fontWeight, i));
+    public Typeface mo7861getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
+        ArrayList arrayList = new ArrayList();
+        ScatterMap<Font, Typeface> scatterMap = this.loadedTypefaces;
+        Object[] objArr = scatterMap.keys;
+        long[] jArr = scatterMap.metadata;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i3 = 0;
+            while (true) {
+                long j = jArr[i3];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i4 = 8 - ((~(i3 - length)) >>> 31);
+                    for (int i5 = 0; i5 < i4; i5++) {
+                        if ((255 & j) < 128) {
+                            arrayList.add((Font) objArr[(i3 << 3) + i5]);
+                        }
+                        j >>= 8;
+                    }
+                    if (i4 != 8) {
+                        break;
+                    }
+                }
+                if (i3 == length) {
+                    break;
+                }
+                i3++;
+            }
+        }
+        Font font = (Font) CollectionsKt.firstOrNull((List<? extends Object>) this.fontMatcher$1.m7716matchFontRetOiIg(arrayList, fontWeight, i));
         if (font != null) {
             Typeface typeface = this.loadedTypefaces.get(font);
             if (typeface != null) {
-                Object m7137synthesizeTypefaceFxwP2eA = FontSynthesis_androidKt.m7137synthesizeTypefaceFxwP2eA(i2, typeface, font, fontWeight, i);
-                Intrinsics.checkNotNull(m7137synthesizeTypefaceFxwP2eA, "null cannot be cast to non-null type android.graphics.Typeface");
-                return (Typeface) m7137synthesizeTypefaceFxwP2eA;
+                Object m7742synthesizeTypefaceFxwP2eA = FontSynthesis_androidKt.m7742synthesizeTypefaceFxwP2eA(i2, typeface, font, fontWeight, i);
+                Intrinsics.checkNotNull(m7742synthesizeTypefaceFxwP2eA, "null cannot be cast to non-null type android.graphics.Typeface");
+                return (Typeface) m7742synthesizeTypefaceFxwP2eA;
             }
             InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("Could not load typeface");
             throw new KotlinNothingValueException();

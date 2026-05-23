@@ -1,48 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.Set;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executor;
 /* loaded from: classes5.dex */
-public final class Cd implements Consumer {
+public final class Cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sg f538a;
-    public final H0 b;
-    public final Ld c;
+    public final Executor f494a;
+    public final Zl b;
+    public final String c;
+    public final SystemTimeProvider d;
 
-    public Cd(Sg sg, H0 h0, Ld ld) {
-        this.f538a = sg;
-        this.b = h0;
-        this.c = ld;
+    public Cd(IHandlerExecutor iHandlerExecutor, Yd yd, String str, SystemTimeProvider systemTimeProvider) {
+        this.f494a = iHandlerExecutor;
+        this.b = yd;
+        this.c = str;
+        this.d = systemTimeProvider;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    /* renamed from: a */
-    public final void consume(String str) {
-        Sg sg = this.f538a;
-        H0 h0 = this.b;
-        String str2 = h0.f610a;
-        String str3 = h0.b;
-        Integer valueOf = Integer.valueOf(h0.d);
-        H0 h02 = this.b;
-        P3 p3 = new P3(str2, str3, valueOf, h02.e, h02.c);
-        Ld ld = this.c;
-        EnumC0142bb enumC0142bb = ld.b;
-        G0 g0 = ld.f682a;
-        String str4 = g0.c;
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(g0.f.f610a);
-        Set set = AbstractC0671w9.f1289a;
-        Bundle bundle = new Bundle();
-        bundle.putString("payload_crash_id", str4);
-        M3 m3 = new M3("", "", enumC0142bb.f922a, orCreatePublicLogger);
-        if (str != null) {
-            m3.f(str);
-        }
-        m3.m = bundle;
-        m3.c = ld.f682a.f.f;
-        sg.a(p3, m3, new C0492p4(new Zl(), new C0467o4(), null));
+    public static final void a(Cd cd, List list) {
+        C0541qk c0541qk = Oj.f705a;
+        Ed ed = new Ed(cd.b, cd.c, cd.d, list);
+        c0541qk.getClass();
+        c0541qk.a(new C0230ek(ed));
+    }
+
+    public final void a(final ArrayList arrayList) {
+        this.f494a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Cd$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Cd.a(Cd.this, arrayList);
+            }
+        });
     }
 }

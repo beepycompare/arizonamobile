@@ -5,7 +5,7 @@ import com.miami.game.core.downloader.Downloader;
 import com.miami.game.core.files.Files;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DownloaderSyncApiRepository_Factory implements Factory<DownloaderSyncApiRepository> {
     private final Provider<ConnectionResolver> connectionResolverProvider;
     private final Provider<Downloader> downloaderProvider;

@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SharedElement.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.animation.SharedElement$momentumAnimationOffset$1$2$1", f = "SharedElement.kt", i = {}, l = {102}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.animation.SharedElement$momentumAnimationOffset$1$2$1", f = "SharedElement.kt", i = {}, l = {119}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class SharedElement$momentumAnimationOffset$1$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ SpringSpec<Offset> $spring;
@@ -49,7 +49,7 @@ public final class SharedElement$momentumAnimationOffset$1$2$1 extends SuspendLa
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.momentumAnimation;
             this.label = 1;
-            if (Animatable.animateTo$default(animatable, Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0()), this.$spring, null, null, this, 12, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(animatable, Offset.m5092boximpl(Offset.Companion.m5119getZeroF1C5BW0()), this.$spring, null, null, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

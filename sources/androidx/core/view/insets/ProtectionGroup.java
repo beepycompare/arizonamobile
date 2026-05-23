@@ -32,7 +32,7 @@ class ProtectionGroup implements SystemBarStateMonitor.Callback {
                     protection.setController(this);
                     this.mProtections.add(protection);
                 } else {
-                    throw new IllegalStateException(protection + " is already controlled by " + controller);
+                    throw new IllegalStateException(protection + " (" + (i + 1) + "/" + size + ") is already controlled by " + controller + " but is still added to " + this);
                 }
             }
         }

@@ -5,7 +5,7 @@ import com.google.firebase.encoders.annotations.Encodable;
 import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import java.util.List;
 @Encodable
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BatchedLogRequest {
     @Encodable.Field(name = "logRequest")
     public abstract List<LogRequest> getLogRequests();

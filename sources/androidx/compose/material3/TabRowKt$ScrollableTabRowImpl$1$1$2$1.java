@@ -36,10 +36,10 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo762measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public final MeasureResult mo924measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         List<? extends Measurable> list2 = list.get(0);
         List<? extends Measurable> list3 = list.get(1);
-        final int i = measureScope.mo399roundToPx0680j_4(this.$edgePadding);
+        final int i = measureScope.mo428roundToPx0680j_4(this.$edgePadding);
         int size = list2.size();
         int i2 = 0;
         List<? extends Measurable> list4 = list2;
@@ -49,13 +49,13 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
         }
         int intValue = i2.intValue();
         int i4 = i * 2;
-        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, measureScope.mo399roundToPx0680j_4(this.$minTabWidth), 0, intValue, intValue, 2, null);
+        long m8103copyZbe2FdA$default = Constraints.m8103copyZbe2FdA$default(j, measureScope.mo428roundToPx0680j_4(this.$minTabWidth), 0, intValue, intValue, 2, null);
         Ref.FloatRef floatRef = new Ref.FloatRef();
         floatRef.element = this.$edgePadding;
         ArrayList arrayList = new ArrayList(list2.size());
         int size3 = list4.size();
         for (int i5 = 0; i5 < size3; i5++) {
-            arrayList.add(list2.get(i5).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
+            arrayList.add(list2.get(i5).mo6818measureBRTryo0(m8103copyZbe2FdA$default));
         }
         ArrayList arrayList2 = arrayList;
         MutableIntList mutableIntList = new MutableIntList(0, 1, null);
@@ -68,10 +68,10 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
         int i7 = i4;
         int i8 = 0;
         while (i8 < size) {
-            float m7569unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(f), Dp.m7553boximpl(measureScope.mo402toDpu2uoSUM(((Placeable) arrayList2.get(i8)).getWidth())))).m7569unboximpl();
-            i7 += measureScope.mo399roundToPx0680j_4(m7569unboximpl);
-            TabPosition tabPosition = new TabPosition(floatRef.element, m7569unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m7553boximpl(Dp.m7555constructorimpl(measureScope.mo402toDpu2uoSUM(mutableIntList.get(i8)) - Dp.m7555constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m7553boximpl(Dp.m7555constructorimpl(24.0f)))).m7569unboximpl(), null);
-            floatRef.element = Dp.m7555constructorimpl(floatRef.element + m7569unboximpl);
+            float m8174unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m8158boximpl(f), Dp.m8158boximpl(measureScope.mo431toDpu2uoSUM(((Placeable) arrayList2.get(i8)).getWidth())))).m8174unboximpl();
+            i7 += measureScope.mo428roundToPx0680j_4(m8174unboximpl);
+            TabPosition tabPosition = new TabPosition(floatRef.element, m8174unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m8158boximpl(Dp.m8160constructorimpl(measureScope.mo431toDpu2uoSUM(mutableIntList.get(i8)) - Dp.m8160constructorimpl(TabKt.getHorizontalTextPadding() * 2.0f))), Dp.m8158boximpl(Dp.m8160constructorimpl(24.0f)))).m8174unboximpl(), null);
+            floatRef.element = Dp.m8160constructorimpl(floatRef.element + m8174unboximpl);
             arrayList3.add(tabPosition);
             i8++;
             arrayList2 = arrayList2;
@@ -86,7 +86,7 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
         while (i10 < size5) {
             int i11 = intValue;
             intValue = i11;
-            arrayList6.add(list3.get(i10).mo6216measureBRTryo0(Constraints.m7497copyZbe2FdA(j, 0, measureScope.mo399roundToPx0680j_4(((TabPosition) arrayList5.get(i9)).m2605getContentWidthD9Ej5fM()), 0, i11)));
+            arrayList6.add(list3.get(i10).mo6818measureBRTryo0(Constraints.m8102copyZbe2FdA(j, 0, measureScope.mo428roundToPx0680j_4(((TabPosition) arrayList5.get(i9)).m3050getContentWidthD9Ej5fM()), 0, i11)));
             i10++;
             floatRef = floatRef;
             list3 = list3;
@@ -111,13 +111,13 @@ final class TabRowKt$ScrollableTabRowImpl$1$1$2$1 implements MultiContentMeasure
         floatRef.element = f;
         int size = list.size();
         for (int i4 = 0; i4 < size; i4++) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, (Placeable) list.get(i4), measureScope.mo399roundToPx0680j_4(floatRef.element), 0, 0.0f, 4, null);
-            floatRef.element = Dp.m7555constructorimpl(floatRef.element + ((TabPosition) list3.get(i4)).m2608getWidthD9Ej5fM());
+            Placeable.PlacementScope.placeRelative$default(placementScope, (Placeable) list.get(i4), measureScope.mo428roundToPx0680j_4(floatRef.element), 0, 0.0f, 4, null);
+            floatRef.element = Dp.m8160constructorimpl(floatRef.element + ((TabPosition) list3.get(i4)).m3053getWidthD9Ej5fM());
         }
         int size2 = list2.size();
         for (int i5 = 0; i5 < size2; i5++) {
             Placeable placeable = (Placeable) list2.get(i5);
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, Math.max(0, (measureScope.mo399roundToPx0680j_4(((TabPosition) list3.get(i2)).m2608getWidthD9Ej5fM()) - placeable.getWidth()) / 2), i3 - placeable.getHeight(), 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, Math.max(0, (measureScope.mo428roundToPx0680j_4(((TabPosition) list3.get(i2)).m3053getWidthD9Ej5fM()) - placeable.getWidth()) / 2), i3 - placeable.getHeight(), 0.0f, 4, null);
         }
         scrollableTabData.onLaidOut(measureScope, i, list3, i2);
         return Unit.INSTANCE;

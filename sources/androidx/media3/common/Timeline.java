@@ -179,10 +179,15 @@ public abstract class Timeline {
             return ((((((((((((((((((((((hashCode2 + hashCode3) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31) + (this.isSeekable ? 1 : 0)) * 31) + (this.isDynamic ? 1 : 0)) * 31) + (this.isPlaceholder ? 1 : 0)) * 31) + ((int) (j4 ^ (j4 >>> 32)))) * 31) + ((int) (j5 ^ (j5 >>> 32)))) * 31) + this.firstPeriodIndex) * 31) + this.lastPeriodIndex) * 31) + ((int) (j6 ^ (j6 >>> 32)));
         }
 
+        @Deprecated
         public Bundle toBundle() {
+            return toBundle(9);
+        }
+
+        public Bundle toBundle(int i) {
             Bundle bundle = new Bundle();
             if (!MediaItem.EMPTY.equals(this.mediaItem)) {
-                bundle.putBundle(FIELD_MEDIA_ITEM, this.mediaItem.toBundle());
+                bundle.putBundle(FIELD_MEDIA_ITEM, this.mediaItem.toBundle(i));
             }
             long j = this.presentationStartTimeMs;
             if (j != C.TIME_UNSET) {
@@ -220,13 +225,13 @@ public abstract class Timeline {
             if (j5 != C.TIME_UNSET) {
                 bundle.putLong(FIELD_DURATION_US, j5);
             }
-            int i = this.firstPeriodIndex;
-            if (i != 0) {
-                bundle.putInt(FIELD_FIRST_PERIOD_INDEX, i);
-            }
-            int i2 = this.lastPeriodIndex;
+            int i2 = this.firstPeriodIndex;
             if (i2 != 0) {
-                bundle.putInt(FIELD_LAST_PERIOD_INDEX, i2);
+                bundle.putInt(FIELD_FIRST_PERIOD_INDEX, i2);
+            }
+            int i3 = this.lastPeriodIndex;
+            if (i3 != 0) {
+                bundle.putInt(FIELD_LAST_PERIOD_INDEX, i3);
             }
             long j6 = this.positionInFirstPeriodUs;
             if (j6 != 0) {
@@ -235,30 +240,41 @@ public abstract class Timeline {
             return bundle;
         }
 
+        @Deprecated
         public static Window fromBundle(Bundle bundle) {
+            return fromBundle(bundle, 9);
+        }
+
+        public static Window fromBundle(Bundle bundle, int i) {
+            MediaItem mediaItem;
             Bundle bundle2 = bundle.getBundle(FIELD_MEDIA_ITEM);
-            MediaItem fromBundle = bundle2 != null ? MediaItem.fromBundle(bundle2) : MediaItem.EMPTY;
+            if (bundle2 != null) {
+                mediaItem = MediaItem.fromBundle(bundle2, i);
+            } else {
+                mediaItem = MediaItem.EMPTY;
+            }
+            MediaItem mediaItem2 = mediaItem;
             long j = bundle.getLong(FIELD_PRESENTATION_START_TIME_MS, C.TIME_UNSET);
             long j2 = bundle.getLong(FIELD_WINDOW_START_TIME_MS, C.TIME_UNSET);
             long j3 = bundle.getLong(FIELD_ELAPSED_REALTIME_EPOCH_OFFSET_MS, C.TIME_UNSET);
             boolean z = bundle.getBoolean(FIELD_IS_SEEKABLE, false);
             boolean z2 = bundle.getBoolean(FIELD_IS_DYNAMIC, false);
             Bundle bundle3 = bundle.getBundle(FIELD_LIVE_CONFIGURATION);
-            MediaItem.LiveConfiguration fromBundle2 = bundle3 != null ? MediaItem.LiveConfiguration.fromBundle(bundle3) : null;
+            MediaItem.LiveConfiguration fromBundle = bundle3 != null ? MediaItem.LiveConfiguration.fromBundle(bundle3) : null;
             boolean z3 = bundle.getBoolean(FIELD_IS_PLACEHOLDER, false);
             long j4 = bundle.getLong(FIELD_DEFAULT_POSITION_US, 0L);
             long j5 = bundle.getLong(FIELD_DURATION_US, C.TIME_UNSET);
-            int i = bundle.getInt(FIELD_FIRST_PERIOD_INDEX, 0);
-            int i2 = bundle.getInt(FIELD_LAST_PERIOD_INDEX, 0);
+            int i2 = bundle.getInt(FIELD_FIRST_PERIOD_INDEX, 0);
+            int i3 = bundle.getInt(FIELD_LAST_PERIOD_INDEX, 0);
             long j6 = bundle.getLong(FIELD_POSITION_IN_FIRST_PERIOD_US, 0L);
             Window window = new Window();
-            window.set(FAKE_WINDOW_UID, fromBundle, null, j, j2, j3, z, z2, fromBundle2, j4, j5, i, i2, j6);
+            window.set(FAKE_WINDOW_UID, mediaItem2, null, j, j2, j3, z, z2, fromBundle, j4, j5, i2, i3, j6);
             window.isPlaceholder = z3;
             return window;
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Period {
         public AdPlaybackState adPlaybackState = AdPlaybackState.NONE;
         public long durationUs;
@@ -396,11 +412,16 @@ public abstract class Timeline {
             return ((((((((((hashCode + hashCode2) * 31) + this.windowIndex) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + (this.isPlaceholder ? 1 : 0)) * 31) + this.adPlaybackState.hashCode();
         }
 
+        @Deprecated
         public Bundle toBundle() {
+            return toBundle(9);
+        }
+
+        public Bundle toBundle(int i) {
             Bundle bundle = new Bundle();
-            int i = this.windowIndex;
-            if (i != 0) {
-                bundle.putInt(FIELD_WINDOW_INDEX, i);
+            int i2 = this.windowIndex;
+            if (i2 != 0) {
+                bundle.putInt(FIELD_WINDOW_INDEX, i2);
             }
             long j = this.durationUs;
             if (j != C.TIME_UNSET) {
@@ -415,25 +436,30 @@ public abstract class Timeline {
                 bundle.putBoolean(FIELD_PLACEHOLDER, z);
             }
             if (!this.adPlaybackState.equals(AdPlaybackState.NONE)) {
-                bundle.putBundle(FIELD_AD_PLAYBACK_STATE, this.adPlaybackState.toBundle());
+                bundle.putBundle(FIELD_AD_PLAYBACK_STATE, this.adPlaybackState.toBundle(i));
             }
             return bundle;
         }
 
+        @Deprecated
         public static Period fromBundle(Bundle bundle) {
+            return fromBundle(bundle, 9);
+        }
+
+        public static Period fromBundle(Bundle bundle, int i) {
             AdPlaybackState adPlaybackState;
-            int i = bundle.getInt(FIELD_WINDOW_INDEX, 0);
+            int i2 = bundle.getInt(FIELD_WINDOW_INDEX, 0);
             long j = bundle.getLong(FIELD_DURATION_US, C.TIME_UNSET);
             long j2 = bundle.getLong(FIELD_POSITION_IN_WINDOW_US, 0L);
             boolean z = bundle.getBoolean(FIELD_PLACEHOLDER, false);
             Bundle bundle2 = bundle.getBundle(FIELD_AD_PLAYBACK_STATE);
             if (bundle2 != null) {
-                adPlaybackState = AdPlaybackState.fromBundle(bundle2);
+                adPlaybackState = AdPlaybackState.fromBundle(bundle2, i);
             } else {
                 adPlaybackState = AdPlaybackState.NONE;
             }
             Period period = new Period();
-            period.set(null, null, i, j, j2, adPlaybackState, z);
+            period.set(null, null, i2, j, j2, adPlaybackState, z);
             return period;
         }
     }
@@ -612,25 +638,30 @@ public abstract class Timeline {
         return periodCount;
     }
 
+    @Deprecated
     public final Bundle toBundle() {
+        return toBundle(9);
+    }
+
+    public final Bundle toBundle(int i) {
         ArrayList arrayList = new ArrayList();
         int windowCount = getWindowCount();
         Window window = new Window();
-        for (int i = 0; i < windowCount; i++) {
-            arrayList.add(getWindow(i, window, 0L).toBundle());
+        for (int i2 = 0; i2 < windowCount; i2++) {
+            arrayList.add(getWindow(i2, window, 0L).toBundle(i));
         }
         ArrayList arrayList2 = new ArrayList();
         int periodCount = getPeriodCount();
         Period period = new Period();
-        for (int i2 = 0; i2 < periodCount; i2++) {
-            arrayList2.add(getPeriod(i2, period, false).toBundle());
+        for (int i3 = 0; i3 < periodCount; i3++) {
+            arrayList2.add(getPeriod(i3, period, false).toBundle(i));
         }
         int[] iArr = new int[windowCount];
         if (windowCount > 0) {
             iArr[0] = getFirstWindowIndex(true);
         }
-        for (int i3 = 1; i3 < windowCount; i3++) {
-            iArr[i3] = getNextWindowIndex(iArr[i3 - 1], 0, true);
+        for (int i4 = 1; i4 < windowCount; i4++) {
+            iArr[i4] = getNextWindowIndex(iArr[i4 - 1], 0, true);
         }
         Bundle bundle = new Bundle();
         bundle.putBinder(FIELD_WINDOWS, new BundleListRetriever(arrayList));
@@ -655,17 +686,26 @@ public abstract class Timeline {
         return new RemotableTimeline(ImmutableList.of(window), builder.build(), new int[]{0});
     }
 
+    @Deprecated
     public static Timeline fromBundle(Bundle bundle) {
+        return fromBundle(bundle, 9);
+    }
+
+    public static Timeline fromBundle(Bundle bundle, final int i) {
         ImmutableList fromBundleListRetriever = fromBundleListRetriever(new Function() { // from class: androidx.media3.common.Timeline$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return Timeline.Window.fromBundle((Bundle) obj);
+                Timeline.Window fromBundle;
+                fromBundle = Timeline.Window.fromBundle((Bundle) obj, i);
+                return fromBundle;
             }
         }, bundle.getBinder(FIELD_WINDOWS));
         ImmutableList fromBundleListRetriever2 = fromBundleListRetriever(new Function() { // from class: androidx.media3.common.Timeline$$ExternalSyntheticLambda1
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return Timeline.Period.fromBundle((Bundle) obj);
+                Timeline.Period fromBundle;
+                fromBundle = Timeline.Period.fromBundle((Bundle) obj, i);
+                return fromBundle;
             }
         }, bundle.getBinder(FIELD_PERIODS));
         int[] intArray = bundle.getIntArray(FIELD_SHUFFLED_WINDOW_INDICES);

@@ -7,7 +7,7 @@ import com.google.firebase.analytics.connector.AnalyticsConnector;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zze implements zza {
     final Set zza;
@@ -51,33 +51,31 @@ public final class zze implements zza {
                 int length = str.length();
                 int charCount = Character.charCount(codePointAt);
                 while (true) {
-                    if (charCount >= length) {
-                        if (str.length() != 0) {
-                            int codePointAt2 = str.codePointAt(0);
-                            if (Character.isLetter(codePointAt2)) {
-                                int length2 = str.length();
-                                int charCount2 = Character.charCount(codePointAt2);
-                                while (true) {
-                                    if (charCount2 < length2) {
-                                        int codePointAt3 = str.codePointAt(charCount2);
-                                        if (codePointAt3 == 95 || Character.isLetterOrDigit(codePointAt3)) {
-                                            charCount2 += Character.charCount(codePointAt3);
-                                        }
-                                    } else {
-                                        String zzb = zzjm.zzb(str);
-                                        if (zzb != null) {
-                                            str = zzb;
-                                        }
-                                        Preconditions.checkNotNull(str);
-                                        hashSet.add(str);
+                    if (charCount < length) {
+                        int codePointAt2 = str.codePointAt(charCount);
+                        if (codePointAt2 == 95 || Character.isLetterOrDigit(codePointAt2)) {
+                            charCount += Character.charCount(codePointAt2);
+                        }
+                    } else if (str != null && str.length() != 0) {
+                        int codePointAt3 = str.codePointAt(0);
+                        if (Character.isLetter(codePointAt3)) {
+                            int length2 = str.length();
+                            int charCount2 = Character.charCount(codePointAt3);
+                            while (true) {
+                                if (charCount2 < length2) {
+                                    int codePointAt4 = str.codePointAt(charCount2);
+                                    if (codePointAt4 == 95 || Character.isLetterOrDigit(codePointAt4)) {
+                                        charCount2 += Character.charCount(codePointAt4);
                                     }
+                                } else {
+                                    String zzb = zzjm.zzb(str);
+                                    if (zzb != null) {
+                                        str = zzb;
+                                    }
+                                    Preconditions.checkNotNull(str);
+                                    hashSet.add(str);
                                 }
                             }
-                        }
-                    } else {
-                        int codePointAt4 = str.codePointAt(charCount);
-                        if (codePointAt4 == 95 || Character.isLetterOrDigit(codePointAt4)) {
-                            charCount += Character.charCount(codePointAt4);
                         }
                     }
                 }

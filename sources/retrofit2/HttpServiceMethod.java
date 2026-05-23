@@ -11,7 +11,7 @@ import okhttp3.Call;
 import okhttp3.ResponseBody;
 import retrofit2.Utils;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<ReturnT> {
     private final Call.Factory callFactory;
     private final RequestFactory requestFactory;
@@ -102,7 +102,7 @@ public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMetho
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class CallAdapted<ResponseT, ReturnT> extends HttpServiceMethod<ResponseT, ReturnT> {
         private final CallAdapter<ResponseT, ReturnT> callAdapter;
 
@@ -118,7 +118,7 @@ public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMetho
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class SuspendForResponse<ResponseT> extends HttpServiceMethod<ResponseT, Object> {
         private final CallAdapter<ResponseT, Call<ResponseT>> callAdapter;
 
@@ -140,7 +140,7 @@ public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMetho
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class SuspendForBody<ResponseT> extends HttpServiceMethod<ResponseT, Object> {
         private final CallAdapter<ResponseT, Call<ResponseT>> callAdapter;
         private final boolean isNullable;

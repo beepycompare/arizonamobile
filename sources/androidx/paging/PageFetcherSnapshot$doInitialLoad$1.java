@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageFetcherSnapshot.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot", f = "PageFetcherSnapshot.kt", i = {0, 0, 1, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 8}, l = {647, 300, 306, 669, 691, 333, 713, 735, 361}, m = "doInitialLoad", n = {"this_$iv", "$this$withLock_u24default$iv$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "$this$withLock_u24default$iv$iv"}, s = {"L$0", "L$1", "L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot", f = "PageFetcherSnapshot.kt", i = {0, 0, 1, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 8}, l = {694, 302, 308, 716, 738, 335, 760, 782, 363}, m = "doInitialLoad", n = {"this_$iv", "$this$withLock_u24default$iv$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "result", "this_$iv", "$this$withLock_u24default$iv$iv", "$this$withLock_u24default$iv$iv"}, s = {"L$0", "L$1", "L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcherSnapshot$doInitialLoad$1 extends ContinuationImpl {
     Object L$0;

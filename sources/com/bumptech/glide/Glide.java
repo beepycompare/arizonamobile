@@ -1,13 +1,16 @@
 package com.bumptech.glide;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.ComponentCallbacks2;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.Engine;
 import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
@@ -26,6 +29,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.ImageViewTargetFactory;
 import com.bumptech.glide.request.target.Target;
+import com.bumptech.glide.util.GlideSuppliers;
 import com.bumptech.glide.util.Preconditions;
 import com.bumptech.glide.util.Util;
 import java.io.File;
@@ -51,9 +55,18 @@ public class Glide implements ComponentCallbacks2 {
     private final Engine engine;
     private final GlideContext glideContext;
     private final MemoryCache memoryCache;
+    private MemoryCategory memoryCategoryInBackground;
     private final RequestManagerRetriever requestManagerRetriever;
     private final List<RequestManager> managers = new ArrayList();
     private MemoryCategory memoryCategory = MemoryCategory.NORMAL;
+    private boolean inBackground = false;
+    private MemoryCategory memoryCategoryInForeground = MemoryCategory.NORMAL;
+    private final GlideSuppliers.GlideSupplier<SetMemoryCategoryOnLifecycleCallbacks> setMemoryCategoryCallbacks = GlideSuppliers.memorize(new GlideSuppliers.GlideSupplier() { // from class: com.bumptech.glide.Glide$$ExternalSyntheticLambda0
+        @Override // com.bumptech.glide.util.GlideSuppliers.GlideSupplier
+        public final Object get() {
+            return Glide.this.m9424lambda$new$0$combumptechglideGlide();
+        }
+    });
 
     /* loaded from: classes3.dex */
     public interface RequestOptionsFactory {
@@ -62,6 +75,12 @@ public class Glide implements ComponentCallbacks2 {
 
     @Override // android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$new$0$com-bumptech-glide-Glide  reason: not valid java name */
+    public /* synthetic */ SetMemoryCategoryOnLifecycleCallbacks m9424lambda$new$0$combumptechglideGlide() {
+        return new SetMemoryCategoryOnLifecycleCallbacks();
     }
 
     public static File getPhotoCacheDir(Context context) {
@@ -143,6 +162,7 @@ public class Glide implements ComponentCallbacks2 {
         synchronized (Glide.class) {
             if (glide != null) {
                 glide.getContext().getApplicationContext().unregisterComponentCallbacks(glide);
+                glide.unregisterActivityLifecycleCallbacks();
                 glide.engine.shutdown();
             }
             glide = null;
@@ -187,6 +207,7 @@ public class Glide implements ComponentCallbacks2 {
         }
         Glide build = glideBuilder.build(applicationContext, emptyList, generatedAppGlideModule);
         applicationContext.registerComponentCallbacks(build);
+        build.registerActivityLifecycleCallbacks();
         glide = build;
     }
 
@@ -220,6 +241,7 @@ public class Glide implements ComponentCallbacks2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Glide(Context context, Engine engine, MemoryCache memoryCache, BitmapPool bitmapPool, ArrayPool arrayPool, RequestManagerRetriever requestManagerRetriever, ConnectivityMonitorFactory connectivityMonitorFactory, int i, RequestOptionsFactory requestOptionsFactory, Map<Class<?>, TransitionOptions<?, ?>> map, List<RequestListener<Object>> list, List<GlideModule> list2, AppGlideModule appGlideModule, GlideExperiments glideExperiments) {
+        this.memoryCategoryInBackground = null;
         this.engine = engine;
         this.bitmapPool = bitmapPool;
         this.arrayPool = arrayPool;
@@ -227,6 +249,10 @@ public class Glide implements ComponentCallbacks2 {
         this.requestManagerRetriever = requestManagerRetriever;
         this.connectivityMonitorFactory = connectivityMonitorFactory;
         this.defaultRequestOptionsFactory = requestOptionsFactory;
+        GlideBuilder.MemoryCategoryInBackground memoryCategoryInBackground = (GlideBuilder.MemoryCategoryInBackground) glideExperiments.get(GlideBuilder.MemoryCategoryInBackground.class);
+        if (memoryCategoryInBackground != null) {
+            this.memoryCategoryInBackground = memoryCategoryInBackground.value();
+        }
         this.glideContext = new GlideContext(context, arrayPool, RegistryFactory.lazilyCreateAndInitializeRegistry(this, list2, appGlideModule), new ImageViewTargetFactory(), requestOptionsFactory, map, list, engine, glideExperiments, i);
     }
 
@@ -368,10 +394,87 @@ public class Glide implements ComponentCallbacks2 {
     @Override // android.content.ComponentCallbacks2
     public void onTrimMemory(int i) {
         trimMemory(i);
+        if (i > 20) {
+            setMemoryCategoryWhenInBackground();
+        }
     }
 
     @Override // android.content.ComponentCallbacks
     public void onLowMemory() {
         clearMemory();
+    }
+
+    private void registerActivityLifecycleCallbacks() {
+        if (this.memoryCategoryInBackground != null) {
+            Context applicationContext = getContext().getApplicationContext();
+            if (!(applicationContext instanceof Application) && Log.isLoggable(TAG, 5)) {
+                Log.w(TAG, "Glide requires an Application Context. You passed: " + applicationContext + ". This will disable setting memory category in background.");
+            } else {
+                ((Application) applicationContext).registerActivityLifecycleCallbacks(this.setMemoryCategoryCallbacks.get());
+            }
+        }
+    }
+
+    private void unregisterActivityLifecycleCallbacks() {
+        if (this.memoryCategoryInBackground != null) {
+            Context applicationContext = getContext().getApplicationContext();
+            if (applicationContext instanceof Application) {
+                ((Application) applicationContext).unregisterActivityLifecycleCallbacks(this.setMemoryCategoryCallbacks.get());
+            }
+        }
+    }
+
+    private void setMemoryCategoryWhenInBackground() {
+        MemoryCategory memoryCategory = this.memoryCategoryInBackground;
+        if (memoryCategory == null || this.inBackground) {
+            return;
+        }
+        this.inBackground = true;
+        this.memoryCategoryInForeground = setMemoryCategory(memoryCategory);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setMemoryCategoryWhenInForeground() {
+        if (this.memoryCategoryInBackground == null || !this.inBackground) {
+            return;
+        }
+        this.inBackground = false;
+        setMemoryCategory(this.memoryCategoryInForeground);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
+    public final class SetMemoryCategoryOnLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityCreated(Activity activity, Bundle bundle) {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityDestroyed(Activity activity) {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPaused(Activity activity) {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityStarted(Activity activity) {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityStopped(Activity activity) {
+        }
+
+        private SetMemoryCategoryOnLifecycleCallbacks() {
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityResumed(Activity activity) {
+            Glide.this.setMemoryCategoryWhenInForeground();
+        }
     }
 }

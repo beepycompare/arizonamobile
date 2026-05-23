@@ -5,6 +5,7 @@ import com.adjust.sdk.scheduler.TimerOnce;
 public class AdjustTimeoutCallback {
     private OnAdidReadListener onAdidReadListener;
     private OnAttributionReadListener onAttributionReadListener;
+    private OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener;
     private TimerOnce timeoutTimer;
 
     public AdjustTimeoutCallback(OnAdidReadListener onAdidReadListener) {
@@ -19,6 +20,10 @@ public class AdjustTimeoutCallback {
         return this.onAttributionReadListener;
     }
 
+    public OnThirdPartySharingSettingsReadListener getOnThirdPartySharingSettingsReadListener() {
+        return this.onThirdPartySharingSettingsReadListener;
+    }
+
     public TimerOnce getTimeoutTimer() {
         return this.timeoutTimer;
     }
@@ -31,11 +36,19 @@ public class AdjustTimeoutCallback {
         this.onAttributionReadListener = onAttributionReadListener;
     }
 
+    public void setOnThirdPartySharingSettingsReadListener(OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener) {
+        this.onThirdPartySharingSettingsReadListener = onThirdPartySharingSettingsReadListener;
+    }
+
     public void setTimer(TimerOnce timerOnce) {
         this.timeoutTimer = timerOnce;
     }
 
     public AdjustTimeoutCallback(OnAttributionReadListener onAttributionReadListener) {
         this.onAttributionReadListener = onAttributionReadListener;
+    }
+
+    public AdjustTimeoutCallback(OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener) {
+        this.onThirdPartySharingSettingsReadListener = onThirdPartySharingSettingsReadListener;
     }
 }

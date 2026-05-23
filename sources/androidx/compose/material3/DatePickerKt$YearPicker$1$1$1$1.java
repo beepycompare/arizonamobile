@@ -70,14 +70,14 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         }
         final int first = i + this.$yearRange.getFirst();
         String localString$default = CalendarLocale_jvmKt.toLocalString$default(first, 0, 0, false, this.$calendarModel.getLocale(), 7, null);
-        Modifier m858requiredSizeVpY3zN4 = SizeKt.m858requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3326getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3325getSelectionYearContainerHeightD9Ej5fM());
+        Modifier m1111requiredSizeVpY3zN4 = SizeKt.m1111requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3771getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3770getSelectionYearContainerHeightD9Ej5fM());
         if (first == this.$displayedYear) {
             str = localString$default;
-            modifier = m858requiredSizeVpY3zN4;
+            modifier = m1111requiredSizeVpY3zN4;
             z = true;
         } else {
             str = localString$default;
-            modifier = m858requiredSizeVpY3zN4;
+            modifier = m1111requiredSizeVpY3zN4;
             z = false;
         }
         if (first == this.$currentYear) {
@@ -103,7 +103,7 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         ComposerKt.sourceInformationMarkerEnd(composer);
         boolean isSelectableYear = this.$selectableDates.isSelectableYear(first);
         Strings.Companion companion = Strings.Companion;
-        String format = String.format(Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{str2}, 1));
+        String format = String.format(Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{str2}, 1));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         DatePickerKt.Year(str2, modifier, z, z2, (Function0) rememberedValue, isSelectableYear, format, this.$colors, composer, 48);
         if (ComposerKt.isTraceInProgress()) {

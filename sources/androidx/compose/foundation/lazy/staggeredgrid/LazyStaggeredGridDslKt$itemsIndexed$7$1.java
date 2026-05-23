@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LazyStaggeredGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridDslKt$itemsIndexed$7$1 implements Function1<Integer, Object> {
     final /* synthetic */ T[] $items;

@@ -68,7 +68,7 @@ public final class LocaleListCompat {
         int length = split.length;
         Locale[] localeArr = new Locale[length];
         for (int i = 0; i < length; i++) {
-            localeArr[i] = Api21Impl.forLanguageTag(split[i]);
+            localeArr[i] = Locale.forLanguageTag(split[i]);
         }
         return create(localeArr);
     }
@@ -147,10 +147,6 @@ public final class LocaleListCompat {
                 }
             }
             return false;
-        }
-
-        static Locale forLanguageTag(String str) {
-            return Locale.forLanguageTag(str);
         }
     }
 

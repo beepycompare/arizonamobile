@@ -8,7 +8,7 @@ import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J'\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0016¢\u0006\u0004\b\u0014\u0010\u0015J \u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0010\u001a\u00020\u00172\u0006\u0010\u0011\u001a\u00020\u0017H\u0096@¢\u0006\u0004\b\u0018\u0010\u0019R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\r¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/gestures/ScrollableNestedScrollConnection;", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "scrollingLogic", "Landroidx/compose/foundation/gestures/ScrollLogic;", "enabled", "", "<init>", "(Landroidx/compose/foundation/gestures/ScrollLogic;Z)V", "getScrollingLogic", "()Landroidx/compose/foundation/gestures/ScrollLogic;", "getEnabled", "()Z", "setEnabled", "(Z)V", "onPostScroll", "Landroidx/compose/ui/geometry/Offset;", "consumed", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "onPostScroll-DzOQY0M", "(JJI)J", "onPostFling", "Landroidx/compose/ui/unit/Velocity;", "onPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J'\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\u0013H\u0016¢\u0006\u0004\b\u0014\u0010\u0015J \u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0010\u001a\u00020\u00172\u0006\u0010\u0011\u001a\u00020\u0017H\u0096@¢\u0006\u0004\b\u0018\u0010\u0019R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\r¨\u0006\u001a"}, d2 = {"Landroidx/compose/foundation/gestures/ScrollableNestedScrollConnection;", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "scrollingLogic", "Landroidx/compose/foundation/gestures/ScrollLogic;", "enabled", "", "<init>", "(Landroidx/compose/foundation/gestures/ScrollLogic;Z)V", "getScrollingLogic", "()Landroidx/compose/foundation/gestures/ScrollLogic;", "getEnabled", "()Z", "setEnabled", "(Z)V", "onPostScroll", "Landroidx/compose/ui/geometry/Offset;", "consumed", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "onPostScroll-DzOQY0M", "(JJI)J", "onPostFling", "Landroidx/compose/ui/unit/Velocity;", "onPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ScrollableNestedScrollConnection implements NestedScrollConnection {
     public static final int $stable = 8;
@@ -34,11 +34,11 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M  reason: not valid java name */
-    public long mo573onPostScrollDzOQY0M(long j, long j2, int i) {
+    public long mo603onPostScrollDzOQY0M(long j, long j2, int i) {
         if (this.enabled) {
-            return this.scrollingLogic.mo562performRawScrollMKHz9U(j2);
+            return this.scrollingLogic.mo592performRawScrollMKHz9U(j2);
         }
-        return Offset.Companion.m4543getZeroF1C5BW0();
+        return Offset.Companion.m5119getZeroF1C5BW0();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -48,11 +48,11 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo572onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public Object mo602onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         ScrollableNestedScrollConnection$onPostFling$1 scrollableNestedScrollConnection$onPostFling$1;
         int i;
-        long m7804getZero9UxMQ8M;
-        long m7804getZero9UxMQ8M2;
+        long m8409getZero9UxMQ8M;
+        long m8409getZero9UxMQ8M2;
         if (continuation instanceof ScrollableNestedScrollConnection$onPostFling$1) {
             scrollableNestedScrollConnection$onPostFling$1 = (ScrollableNestedScrollConnection$onPostFling$1) continuation;
             if ((scrollableNestedScrollConnection$onPostFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -64,20 +64,20 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
                     ResultKt.throwOnFailure(obj);
                     if (this.enabled) {
                         if (this.scrollingLogic.isFlinging()) {
-                            m7804getZero9UxMQ8M2 = Velocity.Companion.m7804getZero9UxMQ8M();
-                            m7804getZero9UxMQ8M = Velocity.m7796minusAH228Gc(j2, m7804getZero9UxMQ8M2);
-                            return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                            m8409getZero9UxMQ8M2 = Velocity.Companion.m8409getZero9UxMQ8M();
+                            m8409getZero9UxMQ8M = Velocity.m8401minusAH228Gc(j2, m8409getZero9UxMQ8M2);
+                            return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
                         }
                         ScrollLogic scrollLogic = this.scrollingLogic;
                         scrollableNestedScrollConnection$onPostFling$1.J$0 = j2;
                         scrollableNestedScrollConnection$onPostFling$1.label = 1;
-                        obj = scrollLogic.mo561doFlingAnimationQWom1Mo(j2, scrollableNestedScrollConnection$onPostFling$1);
+                        obj = scrollLogic.mo591doFlingAnimationQWom1Mo(j2, scrollableNestedScrollConnection$onPostFling$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                     } else {
-                        m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
-                        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                        m8409getZero9UxMQ8M = Velocity.Companion.m8409getZero9UxMQ8M();
+                        return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -86,9 +86,9 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
                     ResultKt.throwOnFailure(obj);
                     j2 = j3;
                 }
-                m7804getZero9UxMQ8M2 = ((Velocity) obj).m7802unboximpl();
-                m7804getZero9UxMQ8M = Velocity.m7796minusAH228Gc(j2, m7804getZero9UxMQ8M2);
-                return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+                m8409getZero9UxMQ8M2 = ((Velocity) obj).m8407unboximpl();
+                m8409getZero9UxMQ8M = Velocity.m8401minusAH228Gc(j2, m8409getZero9UxMQ8M2);
+                return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
             }
         }
         scrollableNestedScrollConnection$onPostFling$1 = new ScrollableNestedScrollConnection$onPostFling$1(this, continuation);
@@ -97,8 +97,8 @@ public final class ScrollableNestedScrollConnection implements NestedScrollConne
         i = scrollableNestedScrollConnection$onPostFling$1.label;
         if (i != 0) {
         }
-        m7804getZero9UxMQ8M2 = ((Velocity) obj2).m7802unboximpl();
-        m7804getZero9UxMQ8M = Velocity.m7796minusAH228Gc(j2, m7804getZero9UxMQ8M2);
-        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
+        m8409getZero9UxMQ8M2 = ((Velocity) obj2).m8407unboximpl();
+        m8409getZero9UxMQ8M = Velocity.m8401minusAH228Gc(j2, m8409getZero9UxMQ8M2);
+        return Velocity.m8389boximpl(m8409getZero9UxMQ8M);
     }
 }

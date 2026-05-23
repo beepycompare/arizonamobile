@@ -31,7 +31,7 @@ public final class NavigationRailItemDefaults {
     }
 
     /* renamed from: colors-69fazGs  reason: not valid java name */
-    public final NavigationRailItemColors m2336colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
+    public final NavigationRailItemColors m2781colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
         long j8;
         long j9;
         long j10;
@@ -45,7 +45,7 @@ public final class NavigationRailItemDefaults {
         long value5 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText(), composer, 6) : j5;
         if ((i2 & 32) != 0) {
             long j13 = value4;
-            j9 = Color.m4771copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j9 = Color.m5347copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j8 = j13;
         } else {
             j8 = value4;
@@ -53,7 +53,7 @@ public final class NavigationRailItemDefaults {
         }
         if ((i2 & 64) != 0) {
             long j14 = value5;
-            j11 = Color.m4771copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j11 = Color.m5347copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j10 = j14;
         } else {
             j10 = value5;
@@ -65,18 +65,18 @@ public final class NavigationRailItemDefaults {
         } else {
             j12 = value;
         }
-        NavigationRailItemColors m2325copy4JmcsL4 = getDefaultNavigationRailItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2325copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
+        NavigationRailItemColors m2770copy4JmcsL4 = getDefaultNavigationRailItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2770copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2325copy4JmcsL4;
+        return m2770copy4JmcsL4;
     }
 
     public final NavigationRailItemColors getDefaultNavigationRailItemColors$material3(ColorScheme colorScheme) {
         NavigationRailItemColors defaultNavigationRailItemColorsCached$material3 = colorScheme.getDefaultNavigationRailItemColorsCached$material3();
         if (defaultNavigationRailItemColorsCached$material3 == null) {
-            NavigationRailItemColors navigationRailItemColors = new NavigationRailItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveLabelText()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIndicator()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            NavigationRailItemColors navigationRailItemColors = new NavigationRailItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveLabelText()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIndicator()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultNavigationRailItemColorsCached$material3(navigationRailItemColors);
             return navigationRailItemColors;
         }
@@ -85,7 +85,7 @@ public final class NavigationRailItemDefaults {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use overload with disabledIconColor and disabledTextColor")
     /* renamed from: colors-zjMxDiM  reason: not valid java name */
-    public final /* synthetic */ NavigationRailItemColors m2337colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
+    public final /* synthetic */ NavigationRailItemColors m2782colorszjMxDiM(long j, long j2, long j3, long j4, long j5, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1621601574, "C(colors)N(selectedIconColor:c#ui.graphics.Color,selectedTextColor:c#ui.graphics.Color,indicatorColor:c#ui.graphics.Color,unselectedIconColor:c#ui.graphics.Color,unselectedTextColor:c#ui.graphics.Color)409@18612L5,410@18700L5,411@18785L5,412@18872L5,413@18964L5:NavigationRail.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemActiveIcon(), composer, 6) : j;
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemActiveLabelText(), composer, 6) : j2;
@@ -95,7 +95,7 @@ public final class NavigationRailItemDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1621601574, i, -1, "androidx.compose.material3.NavigationRailItemDefaults.colors (NavigationRail.kt:415)");
         }
-        NavigationRailItemColors navigationRailItemColors = new NavigationRailItemColors(value, value2, value3, value4, value5, Color.m4771copywmQWz5c$default(value4, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(value5, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+        NavigationRailItemColors navigationRailItemColors = new NavigationRailItemColors(value, value2, value3, value4, value5, Color.m5347copywmQWz5c$default(value4, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(value5, 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

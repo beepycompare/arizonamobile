@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgy implements Runnable {
     final /* synthetic */ zzgz zza;
@@ -59,11 +59,11 @@ public final class zzgy implements Runnable {
         Map map4;
         InputStream inputStream;
         zzgz zzgzVar = this.zza;
-        zzgzVar.zzaX();
+        zzgzVar.zzaY();
         OutputStream outputStream = null;
         try {
             URL url = this.zzb;
-            int i3 = com.google.android.gms.internal.measurement.zzcj.zzb;
+            int i3 = com.google.android.gms.internal.measurement.zzch.zzb;
             URLConnection openConnection = url.openConnection();
             if (!(openConnection instanceof HttpURLConnection)) {
                 throw new IOException("Failed to obtain HTTP connection");
@@ -87,7 +87,7 @@ public final class zzgy implements Runnable {
                 byte[] bArr = this.zzc;
                 if (bArr != null) {
                     byte[] zzv = zzgzVar.zzg.zzp().zzv(bArr);
-                    zzgs zzk = zzicVar.zzaV().zzk();
+                    zzgs zzk = zzicVar.zzaW().zzk();
                     int length = zzv.length;
                     zzk.zzb("Uploading data. size", Integer.valueOf(length));
                     httpURLConnection.setDoOutput(true);
@@ -107,7 +107,7 @@ public final class zzgy implements Runnable {
                         }
                         if (httpURLConnection != null) {
                         }
-                        this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+                        this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
                     } catch (Throwable th2) {
                         th = th2;
                         i = 0;
@@ -118,7 +118,7 @@ public final class zzgy implements Runnable {
                         }
                         if (httpURLConnection != null) {
                         }
-                        this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                        this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
                         throw th;
                     }
                 }
@@ -154,7 +154,7 @@ public final class zzgy implements Runnable {
                             if (httpURLConnection != null) {
                                 httpURLConnection.disconnect();
                             }
-                            this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, responseCode, null, byteArray, headerFields, null));
+                            this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, responseCode, null, byteArray, headerFields, null));
                         } catch (Throwable th4) {
                             th = th4;
                             if (inputStream != null) {
@@ -175,13 +175,13 @@ public final class zzgy implements Runnable {
                         try {
                             outputStream.close();
                         } catch (IOException e4) {
-                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e4);
+                            this.zza.zzu.zzaW().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e4);
                         }
                     }
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                     }
-                    this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+                    this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
                 } catch (Throwable th6) {
                     th = th6;
                     i = responseCode;
@@ -190,13 +190,13 @@ public final class zzgy implements Runnable {
                         try {
                             outputStream.close();
                         } catch (IOException e5) {
-                            this.zza.zzu.zzaV().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e5);
+                            this.zza.zzu.zzaW().zzb().zzc("Error closing HTTP compressed POST connection output stream. appId", zzgu.zzl(this.zze), e5);
                         }
                     }
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                     }
-                    this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                    this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
                     throw th;
                 }
             } catch (IOException e6) {
@@ -208,7 +208,7 @@ public final class zzgy implements Runnable {
                 }
                 if (httpURLConnection != null) {
                 }
-                this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
+                this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i2, iOException, null, map2, null));
             } catch (Throwable th7) {
                 th = th7;
                 map = null;
@@ -217,7 +217,7 @@ public final class zzgy implements Runnable {
                 }
                 if (httpURLConnection != null) {
                 }
-                this.zza.zzu.zzaW().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
+                this.zza.zzu.zzaX().zzj(new zzgx(this.zze, this.zzd, i, null, null, map, null));
                 throw th;
             }
         } catch (IOException e7) {

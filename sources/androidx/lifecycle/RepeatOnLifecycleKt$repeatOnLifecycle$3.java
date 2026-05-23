@@ -151,13 +151,13 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                             if (event == downFrom) {
                                 Job job2 = objectRef3.element;
                                 if (job2 != null) {
-                                    Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                                    Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
                                 }
                                 objectRef3.element = null;
                             }
                             if (event == Lifecycle.Event.ON_DESTROY) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9202constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(Unit.INSTANCE));
                             }
                         }
 
@@ -290,7 +290,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                     th = th3;
                     job = (Job) objectRef2.element;
                     if (job != null) {
-                        Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                        Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
                     }
                     lifecycleEventObserver = (LifecycleEventObserver) objectRef.element;
                     if (lifecycleEventObserver != null) {
@@ -301,7 +301,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
             }
             Job job2 = (Job) objectRef2.element;
             if (job2 != null) {
-                Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
             }
             LifecycleEventObserver lifecycleEventObserver2 = (LifecycleEventObserver) objectRef.element;
             if (lifecycleEventObserver2 != null) {

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.item.rating.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class RatingFullscreenItemBinding implements ViewBinding {
     public final TextView bonusTitle;
     public final CustomCardView cardInfo;

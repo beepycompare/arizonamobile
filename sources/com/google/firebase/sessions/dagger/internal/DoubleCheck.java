@@ -14,48 +14,46 @@ public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
 
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public T get() {
-        T t;
-        T t2 = (T) this.instance;
-        Object obj = UNINITIALIZED;
-        if (t2 == obj) {
-            synchronized (this) {
-                t = (T) this.instance;
-                if (t == obj) {
-                    t = this.provider.get();
-                    this.instance = reentrantCheck(this.instance, t);
-                    this.provider = null;
-                }
-            }
-            return t;
-        }
-        return t2;
+        T t = (T) this.instance;
+        return t == UNINITIALIZED ? (T) getSynchronized() : t;
     }
 
-    private static Object reentrantCheck(Object obj, Object obj2) {
-        if (obj == UNINITIALIZED || obj == obj2) {
-            return obj2;
+    private synchronized Object getSynchronized() {
+        Object obj;
+        obj = this.instance;
+        if (obj == UNINITIALIZED) {
+            obj = this.provider.get();
+            this.instance = reentrantCheck(this.instance, obj);
+            this.provider = null;
         }
-        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj + " & " + obj2 + ". This is likely due to a circular dependency.");
+        return obj;
     }
 
-    public static <P extends Provider<T>, T> Provider<T> provider(P p) {
-        Preconditions.checkNotNull(p);
-        return p instanceof DoubleCheck ? p : new DoubleCheck(p);
+    private static Object reentrantCheck(Object currentInstance, Object newInstance) {
+        if (currentInstance == UNINITIALIZED || currentInstance == newInstance) {
+            return newInstance;
+        }
+        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + currentInstance + " & " + newInstance + ". This is likely due to a circular dependency.");
+    }
+
+    public static <T> Provider<T> provider(Provider<T> delegate) {
+        Preconditions.checkNotNull(delegate);
+        return delegate instanceof DoubleCheck ? delegate : new DoubleCheck(delegate);
     }
 
     @Deprecated
-    public static <P extends javax.inject.Provider<T>, T> javax.inject.Provider<T> provider(P p) {
-        return provider(Providers.asDaggerProvider(p));
+    public static <P extends javax.inject.Provider<T>, T> javax.inject.Provider<T> provider(P delegate) {
+        return provider(Providers.asDaggerProvider(delegate));
     }
 
-    public static <P extends Provider<T>, T> Lazy<T> lazy(P p) {
-        if (p instanceof Lazy) {
-            return (Lazy) p;
+    public static <T> Lazy<T> lazy(Provider<T> provider) {
+        if (provider instanceof Lazy) {
+            return (Lazy) provider;
         }
-        return new DoubleCheck((Provider) Preconditions.checkNotNull(p));
+        return new DoubleCheck((Provider) Preconditions.checkNotNull(provider));
     }
 
-    public static <P extends javax.inject.Provider<T>, T> Lazy<T> lazy(P p) {
-        return lazy(Providers.asDaggerProvider(p));
+    public static <P extends javax.inject.Provider<T>, T> Lazy<T> lazy(P provider) {
+        return lazy(Providers.asDaggerProvider(provider));
     }
 }

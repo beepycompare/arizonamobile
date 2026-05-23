@@ -1,19 +1,99 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import android.content.Context;
+import android.content.pm.PackageManager;
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import java.util.ArrayList;
+import java.util.Collections;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public class zzlj {
-    public static final /* synthetic */ int zza = 0;
-    private static volatile int zzb = 100;
+public final class zzlj {
+    private Context zza;
+    private Supplier zzb;
+    private Supplier zzc;
+    private Supplier zzd;
+    private Supplier zze;
+    private Supplier zzf;
+
+    private zzlj() {
+        throw null;
+    }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzlj(byte[] bArr) {
     }
 
-    public static int zzb(int i) {
-        return (i >>> 1) ^ (-(i & 1));
+    public final zzlj zza(Context context) {
+        this.zza = context;
+        return this;
     }
 
-    public static long zzc(long j) {
-        return (j >>> 1) ^ (-(1 & j));
+    public final zzlk zzb() {
+        Supplier supplier;
+        Preconditions.checkNotNull(this.zza);
+        if (this.zzb == null) {
+            supplier = zzlk.zzf;
+            this.zzb = supplier;
+        }
+        if (this.zzc == null) {
+            final Context context = this.zza;
+            int i = zzlk.zza;
+            this.zzc = Suppliers.memoize(new Supplier() { // from class: com.google.android.gms.internal.measurement.zzln
+                @Override // com.google.common.base.Supplier
+                public final /* synthetic */ Object get() {
+                    int i2 = zzlk.zza;
+                    return new zzmn(zzjx.zza(context));
+                }
+            });
+        }
+        if (this.zzd == null) {
+            this.zzd = new Supplier() { // from class: com.google.android.gms.internal.measurement.zzli
+                @Override // com.google.common.base.Supplier
+                public final /* synthetic */ Object get() {
+                    return zzlj.this.zzc();
+                }
+            };
+        }
+        if (this.zze == null) {
+            Context context2 = this.zza;
+            int i2 = zzlk.zza;
+            final ArrayList arrayList = new ArrayList();
+            Collections.addAll(arrayList, zzrx.zza(context2).zza(), new zzsd());
+            this.zze = Suppliers.memoize(new Supplier() { // from class: com.google.android.gms.internal.measurement.zzlm
+                @Override // com.google.common.base.Supplier
+                public final /* synthetic */ Object get() {
+                    int i3 = zzlk.zza;
+                    return new zzru(arrayList);
+                }
+            });
+        }
+        if (this.zzf == null) {
+            this.zzf = new Supplier() { // from class: com.google.android.gms.internal.measurement.zzlh
+                @Override // com.google.common.base.Supplier
+                public final /* synthetic */ Object get() {
+                    return zzlj.this.zzd();
+                }
+            };
+        }
+        return new zzlk(this.zza, this.zzb, this.zzc, this.zzd, this.zze, this.zzf, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Optional zzc() {
+        return Optional.of(new zzqi(this.zzb, 10));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Optional zzd() {
+        Context context = this.zza;
+        int i = zzlk.zza;
+        try {
+            return Optional.of(context.getPackageManager().getApplicationInfo("com.google.android.gms", 0));
+        } catch (PackageManager.NameNotFoundException unused) {
+            return Optional.absent();
+        }
     }
 }

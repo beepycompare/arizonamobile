@@ -42,7 +42,7 @@ public final class BlockRunner<T> {
         Job launch$default;
         Job job = this.cancellationJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.cancellationJob = null;
         if (this.runningJob != null) {

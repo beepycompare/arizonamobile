@@ -1,120 +1,86 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.android.gms.internal.measurement.zzkr;
-import com.google.android.gms.internal.measurement.zzks;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public abstract class zzkr<MessageType extends zzks<MessageType, BuilderType>, BuilderType extends zzkr<MessageType, BuilderType>> implements zznl {
-    private static void zza(List list, int i) {
-        int size = list.size() - i;
-        StringBuilder sb = new StringBuilder(String.valueOf(size).length() + 26);
-        sb.append("Element at index ");
-        sb.append(size);
-        sb.append(" is null.");
-        String sb2 = sb.toString();
-        int size2 = list.size();
-        while (true) {
-            size2--;
-            if (size2 >= i) {
-                list.remove(size2);
-            } else {
-                throw new NullPointerException(sb2);
-            }
+public abstract class zzkr extends zzbm implements zzks {
+    public zzkr() {
+        super("com.google.android.gms.phenotype.internal.IPhenotypeCallbacks");
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzbm
+    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
+        switch (i) {
+            case 1:
+                zzbn.zzf(parcel);
+                zzb((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 2:
+                zzbn.zzf(parcel);
+                zzc((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 3:
+                zzbn.zzf(parcel);
+                zze((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 4:
+                zzbn.zzf(parcel);
+                zzf((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjh) zzbn.zzb(parcel, zzjh.CREATOR));
+                return true;
+            case 5:
+                zzbn.zzf(parcel);
+                zzg((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 6:
+                zzbn.zzf(parcel);
+                zzh((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjl) zzbn.zzb(parcel, zzjl.CREATOR));
+                return true;
+            case 7:
+                zzbn.zzf(parcel);
+                zzi((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjj) zzbn.zzb(parcel, zzjj.CREATOR));
+                return true;
+            case 8:
+                zzbn.zzf(parcel);
+                zzj((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 9:
+                zzbn.zzf(parcel);
+                zzk((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjo) zzbn.zzb(parcel, zzjo.CREATOR));
+                return true;
+            case 10:
+                zzbn.zzf(parcel);
+                zzl((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjh) zzbn.zzb(parcel, zzjh.CREATOR));
+                return true;
+            case 11:
+                long readLong = parcel.readLong();
+                zzbn.zzf(parcel);
+                zzm((Status) zzbn.zzb(parcel, Status.CREATOR), readLong);
+                return true;
+            case 12:
+                zzbn.zzf(parcel);
+                zzn((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 13:
+                zzbn.zzf(parcel);
+                zzo((Status) zzbn.zzb(parcel, Status.CREATOR), (zzjs) zzbn.zzb(parcel, zzjs.CREATOR));
+                return true;
+            case 14:
+                zzbn.zzf(parcel);
+                zzd((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 15:
+                zzbn.zzf(parcel);
+                zzp((Status) zzbn.zzb(parcel, Status.CREATOR));
+                return true;
+            case 16:
+                long readLong2 = parcel.readLong();
+                zzbn.zzf(parcel);
+                zzq((Status) zzbn.zzb(parcel, Status.CREATOR), readLong2);
+                return true;
+            default:
+                return false;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public static void zzaU(Iterable iterable, List list) {
-        byte[] bArr = zzmp.zzb;
-        iterable.getClass();
-        if (iterable instanceof zzmx) {
-            List zza = ((zzmx) iterable).zza();
-            zzmx zzmxVar = (zzmx) list;
-            int size = list.size();
-            for (Object obj : zza) {
-                if (obj == null) {
-                    int size2 = zzmxVar.size() - size;
-                    StringBuilder sb = new StringBuilder(String.valueOf(size2).length() + 26);
-                    sb.append("Element at index ");
-                    sb.append(size2);
-                    sb.append(" is null.");
-                    String sb2 = sb.toString();
-                    int size3 = zzmxVar.size();
-                    while (true) {
-                        size3--;
-                        if (size3 < size) {
-                            break;
-                        }
-                        zzmxVar.remove(size3);
-                    }
-                    throw new NullPointerException(sb2);
-                } else if (obj instanceof zzlh) {
-                    zzlh zzlhVar = (zzlh) obj;
-                    zzmxVar.zzb();
-                } else if (obj instanceof byte[]) {
-                    byte[] bArr2 = (byte[]) obj;
-                    zzlh.zzh(bArr2, 0, bArr2.length);
-                    zzmxVar.zzb();
-                } else {
-                    zzmxVar.add((String) obj);
-                }
-            }
-        } else if (!(iterable instanceof zznt)) {
-            if (iterable instanceof Collection) {
-                int size4 = ((Collection) iterable).size();
-                if (list instanceof ArrayList) {
-                    ((ArrayList) list).ensureCapacity(list.size() + size4);
-                } else if (list instanceof zznv) {
-                    ((zznv) list).zze(list.size() + size4);
-                }
-            }
-            int size5 = list.size();
-            if (!(iterable instanceof List) || !(iterable instanceof RandomAccess)) {
-                for (Object obj2 : iterable) {
-                    if (obj2 == null) {
-                        zza(list, size5);
-                    }
-                    list.add(obj2);
-                }
-                return;
-            }
-            List list2 = (List) iterable;
-            int size6 = list2.size();
-            for (int i = 0; i < size6; i++) {
-                Object obj3 = list2.get(i);
-                if (obj3 == null) {
-                    zza(list, size5);
-                }
-                list.add(obj3);
-            }
-        } else {
-            list.addAll((Collection) iterable);
-        }
-    }
-
-    @Override // 
-    /* renamed from: zzaR */
-    public abstract zzkr clone();
-
-    public zzkr zzaS(byte[] bArr, int i, int i2) throws zzmr {
-        throw null;
-    }
-
-    public zzkr zzaT(byte[] bArr, int i, int i2, zzlr zzlrVar) throws zzmr {
-        throw null;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznl
-    public final /* synthetic */ zznl zzaV(byte[] bArr, zzlr zzlrVar) throws zzmr {
-        return zzaT(bArr, 0, bArr.length, zzlrVar);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznl
-    public final /* synthetic */ zznl zzaW(byte[] bArr) throws zzmr {
-        return zzaS(bArr, 0, bArr.length);
     }
 }

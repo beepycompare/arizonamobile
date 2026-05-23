@@ -1,5 +1,6 @@
 package kotlinx.coroutines.channels;
 
+import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
@@ -7,10 +8,22 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BufferedChannel.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.BufferedChannel", f = "BufferedChannel.kt", i = {}, l = {759}, m = "receiveCatching-JP2dKIU$suspendImpl", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.BufferedChannel", f = "BufferedChannel.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {736}, m = "receiveCatching-JP2dKIU$suspendImpl", n = {"$this", "this_$iv", "segment$iv", "updCellResult$iv", "segm", "$i$f$receiveImpl", "r$iv", "id$iv", "i$iv", "r", CmcdData.OBJECT_TYPE_INIT_SEGMENT, "$i$a$-receiveImpl-BufferedChannel$receiveCatching$5"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "J$0", "J$1", "I$1", "J$2", "I$2", "I$3"}, v = 1)
 /* loaded from: classes5.dex */
 public final class BufferedChannel$receiveCatching$1<E> extends ContinuationImpl {
+    int I$0;
+    int I$1;
+    int I$2;
+    int I$3;
+    long J$0;
+    long J$1;
+    long J$2;
+    Object L$0;
+    Object L$1;
+    Object L$2;
+    Object L$3;
+    Object L$4;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ BufferedChannel<E> this$0;
@@ -26,7 +39,7 @@ public final class BufferedChannel$receiveCatching$1<E> extends ContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        Object m10719receiveCatchingJP2dKIU$suspendImpl = BufferedChannel.m10719receiveCatchingJP2dKIU$suspendImpl(this.this$0, this);
-        return m10719receiveCatchingJP2dKIU$suspendImpl == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m10719receiveCatchingJP2dKIU$suspendImpl : ChannelResult.m10729boximpl(m10719receiveCatchingJP2dKIU$suspendImpl);
+        Object m11360receiveCatchingJP2dKIU$suspendImpl = BufferedChannel.m11360receiveCatchingJP2dKIU$suspendImpl(this.this$0, this);
+        return m11360receiveCatchingJP2dKIU$suspendImpl == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m11360receiveCatchingJP2dKIU$suspendImpl : ChannelResult.m11369boximpl(m11360receiveCatchingJP2dKIU$suspendImpl);
     }
 }

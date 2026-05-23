@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import org.json.JSONException;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class Storage {
     private static final Lock zaa = new ReentrantLock();
@@ -40,7 +40,11 @@ public class Storage {
     }
 
     private static final String zae(String str, String str2) {
-        return str + StringUtils.PROCESS_POSTFIX_DELIMITER + str2;
+        StringBuilder sb = new StringBuilder(str.length() + 1 + String.valueOf(str2).length());
+        sb.append(str);
+        sb.append(StringUtils.PROCESS_POSTFIX_DELIMITER);
+        sb.append(str2);
+        return sb.toString();
     }
 
     public void clear() {
@@ -53,11 +57,11 @@ public class Storage {
     }
 
     public GoogleSignInAccount getSavedDefaultGoogleSignInAccount() {
-        String zaa2;
-        String zaa3 = zaa("defaultGoogleSignInAccount");
-        if (!TextUtils.isEmpty(zaa3) && (zaa2 = zaa(zae("googleSignInAccount", zaa3))) != null) {
+        String zab2;
+        String zab3 = zab("defaultGoogleSignInAccount");
+        if (!TextUtils.isEmpty(zab3) && (zab2 = zab(zae("googleSignInAccount", zab3))) != null) {
             try {
-                return GoogleSignInAccount.zab(zaa2);
+                return GoogleSignInAccount.zaa(zab2);
             } catch (JSONException unused) {
             }
         }
@@ -65,11 +69,11 @@ public class Storage {
     }
 
     public GoogleSignInOptions getSavedDefaultGoogleSignInOptions() {
-        String zaa2;
-        String zaa3 = zaa("defaultGoogleSignInAccount");
-        if (!TextUtils.isEmpty(zaa3) && (zaa2 = zaa(zae("googleSignInOptions", zaa3))) != null) {
+        String zab2;
+        String zab3 = zab("defaultGoogleSignInAccount");
+        if (!TextUtils.isEmpty(zab3) && (zab2 = zab(zae("googleSignInOptions", zab3))) != null) {
             try {
-                return GoogleSignInOptions.zab(zaa2);
+                return GoogleSignInOptions.zaa(zab2);
             } catch (JSONException unused) {
             }
         }
@@ -77,21 +81,30 @@ public class Storage {
     }
 
     public String getSavedRefreshToken() {
-        return zaa("refreshToken");
+        return zab("refreshToken");
     }
 
     public void saveDefaultGoogleSignInAccount(GoogleSignInAccount googleSignInAccount, GoogleSignInOptions googleSignInOptions) {
         Preconditions.checkNotNull(googleSignInAccount);
         Preconditions.checkNotNull(googleSignInOptions);
-        zad("defaultGoogleSignInAccount", googleSignInAccount.zac());
+        zaa("defaultGoogleSignInAccount", googleSignInAccount.zac());
         Preconditions.checkNotNull(googleSignInAccount);
         Preconditions.checkNotNull(googleSignInOptions);
         String zac = googleSignInAccount.zac();
-        zad(zae("googleSignInAccount", zac), googleSignInAccount.zad());
-        zad(zae("googleSignInOptions", zac), googleSignInOptions.zaf());
+        zaa(zae("googleSignInAccount", zac), googleSignInAccount.zad());
+        zaa(zae("googleSignInOptions", zac), googleSignInOptions.zab());
     }
 
-    protected final String zaa(String str) {
+    protected final void zaa(String str, String str2) {
+        this.zac.lock();
+        try {
+            this.zad.edit().putString(str, str2).apply();
+        } finally {
+            this.zac.unlock();
+        }
+    }
+
+    protected final String zab(String str) {
         this.zac.lock();
         try {
             return this.zad.getString(str, null);
@@ -100,29 +113,20 @@ public class Storage {
         }
     }
 
-    protected final void zab(String str) {
+    public final void zac() {
+        String zab2 = zab("defaultGoogleSignInAccount");
+        zad("defaultGoogleSignInAccount");
+        if (TextUtils.isEmpty(zab2)) {
+            return;
+        }
+        zad(zae("googleSignInAccount", zab2));
+        zad(zae("googleSignInOptions", zab2));
+    }
+
+    protected final void zad(String str) {
         this.zac.lock();
         try {
             this.zad.edit().remove(str).apply();
-        } finally {
-            this.zac.unlock();
-        }
-    }
-
-    public final void zac() {
-        String zaa2 = zaa("defaultGoogleSignInAccount");
-        zab("defaultGoogleSignInAccount");
-        if (TextUtils.isEmpty(zaa2)) {
-            return;
-        }
-        zab(zae("googleSignInAccount", zaa2));
-        zab(zae("googleSignInOptions", zaa2));
-    }
-
-    protected final void zad(String str, String str2) {
-        this.zac.lock();
-        try {
-            this.zad.edit().putString(str, str2).apply();
         } finally {
             this.zac.unlock();
         }

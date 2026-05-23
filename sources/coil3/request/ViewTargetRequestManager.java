@@ -37,7 +37,7 @@ public final class ViewTargetRequestManager implements View.OnAttachStateChangeL
         }
         Job job = this.pendingClear;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.pendingClear = null;
         ViewTargetDisposable viewTargetDisposable2 = new ViewTargetDisposable(this.view, deferred);
@@ -49,7 +49,7 @@ public final class ViewTargetRequestManager implements View.OnAttachStateChangeL
         Job launch$default;
         Job job = this.pendingClear;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getMain().getImmediate(), null, new ViewTargetRequestManager$dispose$1(this, null), 2, null);
         this.pendingClear = launch$default;

@@ -1,47 +1,43 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Hl {
+public final class Hl implements InterfaceC0632u8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0498pa f623a = new C0498pa();
-    public final HashMap b = new HashMap();
-    public C0256fm c = null;
-    public final Fl d = new Fl(this);
+    public final C0773zj f580a;
+    public final C0304hg b;
 
-    public static final Hl a() {
-        return Gl.f606a;
+    public Hl() {
+        this(new C0773zj(), new C0304hg());
     }
 
-    public final Am a(Context context, Q4 q4, Zl zl) {
-        Am am = (Am) this.b.get(q4.f753a);
-        boolean z = true;
-        if (am == null) {
-            synchronized (this.b) {
-                am = (Am) this.b.get(q4.f753a);
-                if (am == null) {
-                    am = new Am(new Bm(context, q4.f753a, zl, this.d));
-                    am.f();
-                    this.b.put(q4.f753a, am);
-                    z = false;
-                }
-            }
-        }
-        if (z) {
-            am.a(zl);
-        }
-        return am;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final List<Xi> fromModel(Gl gl) {
+        N8 n8 = new N8();
+        n8.f679a = 2;
+        n8.c = new K8();
+        Xi fromModel = this.f580a.fromModel(gl.b);
+        n8.c.b = (J8) fromModel.f838a;
+        Xi fromModel2 = this.b.fromModel(gl.f564a);
+        n8.c.f625a = (G8) fromModel2.f838a;
+        return Collections.singletonList(new Xi(n8, new C0524q3(C0524q3.b(fromModel, fromModel2))));
     }
 
-    public final void a(Q4 q4, Ql ql) {
-        synchronized (this.b) {
-            this.f623a.a(q4.f753a, ql);
-            C0256fm c0256fm = this.c;
-            if (c0256fm != null) {
-                ql.a(c0256fm);
-            }
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        List list = (List) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Hl(C0773zj c0773zj, C0304hg c0304hg) {
+        this.f580a = c0773zj;
+        this.b = c0304hg;
+    }
+
+    public final Gl a(List<Xi> list) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -10,7 +10,7 @@ import com.google.android.billing.Purchase;
 import com.google.android.billing.SkuDetails;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarBilling extends WarBase {
     private static final int OS_Cached = 4;
     private static final int OS_Cancelled = 2;
@@ -185,7 +185,7 @@ public class WarBilling extends WarBase {
     };
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class SkuEntry {
         SkuDetails cachedDetails;
         String id;

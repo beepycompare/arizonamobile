@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.ExternalPRequestContext;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ExternalPRequestContext extends ExternalPRequestContext {
     private final Integer originAssociatedProductId;
 
@@ -35,7 +35,7 @@ final class AutoValue_ExternalPRequestContext extends ExternalPRequestContext {
         return (num == null ? 0 : num.hashCode()) ^ 1000003;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends ExternalPRequestContext.Builder {
         private Integer originAssociatedProductId;
 

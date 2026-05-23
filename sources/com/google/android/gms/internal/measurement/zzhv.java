@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhv extends zzmb implements zznn {
+public final class zzhv extends zzadp implements zzafd {
     private zzhv() {
         throw null;
     }
@@ -14,7 +14,7 @@ public final class zzhv extends zzmb implements zznn {
     public /* synthetic */ zzhv(byte[] bArr) {
         super(r1);
         zzhw zzhwVar;
-        zzhwVar = zzhw.zzj;
+        zzhwVar = zzhw.zzk;
     }
 
     public final String zza() {
@@ -22,7 +22,7 @@ public final class zzhv extends zzmb implements zznn {
     }
 
     public final zzhv zzb(String str) {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzo(str);
         return this;
     }
@@ -32,37 +32,37 @@ public final class zzhv extends zzmb implements zznn {
     }
 
     public final zzhv zzd(String str) {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzp(str);
         return this;
     }
 
     public final zzhv zze() {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzq();
         return this;
     }
 
     public final zzhv zzf(long j) {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzr(j);
         return this;
     }
 
     public final zzhv zzg() {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzs();
         return this;
     }
 
     public final zzhv zzh(double d) {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzt(d);
         return this;
     }
 
     public final zzhv zzi() {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzu();
         return this;
     }
@@ -72,19 +72,19 @@ public final class zzhv extends zzmb implements zznn {
     }
 
     public final zzhv zzk(zzhv zzhvVar) {
-        zzaX();
-        ((zzhw) this.zza).zzv((zzhw) zzhvVar.zzbc());
+        zzaY();
+        ((zzhw) this.zza).zzv((zzhw) zzhvVar.zzbd());
         return this;
     }
 
     public final zzhv zzl(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzw(iterable);
         return this;
     }
 
     public final zzhv zzm() {
-        zzaX();
+        zzaY();
         ((zzhw) this.zza).zzx();
         return this;
     }

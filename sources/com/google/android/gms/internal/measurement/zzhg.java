@@ -1,25 +1,26 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhg extends zzmf implements zznn {
-    private static final zzhg zzh;
+public final class zzhg extends zzadu implements zzafd {
+    private static final zzhg zzi;
+    private static volatile zzafj zzj;
     private int zzb;
-    private int zzd;
-    private zzii zze;
+    private int zze;
     private zzii zzf;
-    private boolean zzg;
+    private zzii zzg;
+    private boolean zzh;
 
     static {
         zzhg zzhgVar = new zzhg();
-        zzh = zzhgVar;
-        zzmf.zzcp(zzhg.class, zzhgVar);
+        zzi = zzhgVar;
+        zzadu.zzcs(zzhg.class, zzhgVar);
     }
 
     private zzhg() {
     }
 
-    public static zzhf zzh() {
-        return (zzhf) zzh.zzck();
+    public static zzhf zzi() {
+        return (zzhf) zzi.zzcn();
     }
 
     public final boolean zza() {
@@ -27,12 +28,12 @@ public final class zzhg extends zzmf implements zznn {
     }
 
     public final int zzb() {
-        return this.zzd;
+        return this.zze;
     }
 
     public final zzii zzc() {
-        zzii zziiVar = this.zze;
-        return zziiVar == null ? zzii.zzj() : zziiVar;
+        zzii zziiVar = this.zzf;
+        return zziiVar == null ? zzii.zzk() : zziiVar;
     }
 
     public final boolean zzd() {
@@ -40,50 +41,66 @@ public final class zzhg extends zzmf implements zznn {
     }
 
     public final zzii zze() {
-        zzii zziiVar = this.zzf;
-        return zziiVar == null ? zzii.zzj() : zziiVar;
+        zzii zziiVar = this.zzg;
+        return zziiVar == null ? zzii.zzk() : zziiVar;
     }
 
     public final boolean zzf() {
         return (this.zzb & 8) != 0;
     }
 
-    public final boolean zzg() {
-        return this.zzg;
+    public final boolean zzh() {
+        return this.zzh;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzi(int i) {
+    public final /* synthetic */ void zzj(int i) {
         this.zzb |= 1;
-        this.zzd = i;
+        this.zze = i;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzj(zzii zziiVar) {
+    public final /* synthetic */ void zzk(zzii zziiVar) {
         zziiVar.getClass();
-        this.zze = zziiVar;
+        this.zzf = zziiVar;
         this.zzb |= 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzk(zzii zziiVar) {
-        this.zzf = zziiVar;
+    public final /* synthetic */ void zzl(zzii zziiVar) {
+        this.zzg = zziiVar;
         this.zzb |= 4;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    public final /* synthetic */ void zzm(boolean z) {
+        this.zzb |= 8;
+        this.zzh = z;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzh, "\u0004\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001င\u0000\u0002ဉ\u0001\u0003ဉ\u0002\u0004ဇ\u0003", new Object[]{"zzb", "zzd", "zze", "zzf", "zzg"});
+                return zzct(zzi, "\u0004\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001င\u0000\u0002ဉ\u0001\u0003ဉ\u0002\u0004ဇ\u0003", new Object[]{"zzb", "zze", "zzf", "zzg", "zzh"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzh;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzj;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzhg.class) {
+                                    zzafjVar = zzj;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzi);
+                                        zzj = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzi;
                 }
                 return new zzhf(null);
             } else {
@@ -91,11 +108,5 @@ public final class zzhg extends zzmf implements zznn {
             }
         }
         return (byte) 1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzm(boolean z) {
-        this.zzb |= 8;
-        this.zzg = z;
     }
 }

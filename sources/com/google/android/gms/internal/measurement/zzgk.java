@@ -2,16 +2,16 @@ package com.google.android.gms.internal.measurement;
 
 import java.util.Collections;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgk extends zzmb implements zznn {
+public final class zzgk extends zzadp implements zzafd {
     private zzgk() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzgk(byte[] bArr) {
-        super(zzgl.zzw());
+        super(zzgl.zzx());
     }
 
     public final int zza() {
@@ -19,36 +19,40 @@ public final class zzgk extends zzmb implements zznn {
     }
 
     public final zzgj zzb(int i) {
-        return ((zzgl) this.zza).zzg(i);
+        return ((zzgl) this.zza).zzh(i);
     }
 
     public final zzgk zzc(int i, zzgi zzgiVar) {
-        zzaX();
-        ((zzgl) this.zza).zzt(i, (zzgj) zzgiVar.zzbc());
+        zzaY();
+        ((zzgl) this.zza).zzu(i, (zzgj) zzgiVar.zzbd());
         return this;
     }
 
     public final List zzd() {
-        return Collections.unmodifiableList(((zzgl) this.zza).zzh());
+        return Collections.unmodifiableList(((zzgl) this.zza).zzi());
     }
 
     public final zzgk zze() {
-        zzaX();
-        ((zzgl) this.zza).zzu();
-        return this;
-    }
-
-    public final zzgk zzf() {
-        zzaX();
+        zzaY();
         ((zzgl) this.zza).zzv();
         return this;
     }
 
+    public final zzgk zzf() {
+        zzaY();
+        ((zzgl) this.zza).zzw();
+        return this;
+    }
+
     public final List zzg() {
-        return Collections.unmodifiableList(((zzgl) this.zza).zzk());
+        return Collections.unmodifiableList(((zzgl) this.zza).zzl());
     }
 
     public final String zzh() {
         return ((zzgl) this.zza).zzm();
+    }
+
+    public final List zzi() {
+        return Collections.unmodifiableList(((zzgl) this.zza).zzr());
     }
 }

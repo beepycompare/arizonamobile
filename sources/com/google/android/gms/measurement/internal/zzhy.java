@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhy extends Thread {
     final /* synthetic */ zzhz zza;
@@ -33,7 +33,7 @@ public final class zzhy extends Thread {
                 if (this == zzhzVar.zzn()) {
                     zzhzVar.zzo(null);
                 } else if (this != zzhzVar.zzp()) {
-                    zzhzVar.zzu.zzaV().zzb().zza("Current scheduler thread is neither worker nor network");
+                    zzhzVar.zzu.zzaW().zzb().zza("Current scheduler thread is neither worker nor network");
                 } else {
                     zzhzVar.zzq(null);
                 }
@@ -43,7 +43,7 @@ public final class zzhy extends Thread {
     }
 
     private final void zzc(InterruptedException interruptedException) {
-        zzgs zze = this.zza.zzu.zzaV().zze();
+        zzgs zze = this.zza.zzu.zzaW().zze();
         String name = getName();
         String.valueOf(name);
         zze.zzb(String.valueOf(name).concat(" was interrupted"), interruptedException);

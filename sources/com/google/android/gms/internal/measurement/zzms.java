@@ -1,27 +1,41 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import androidx.collection.SieveCacheKt;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public enum zzms {
-    VOID(Void.class, Void.class, null),
-    INT(Integer.TYPE, Integer.class, 0),
-    LONG(Long.TYPE, Long.class, 0L),
-    FLOAT(Float.TYPE, Float.class, Float.valueOf(0.0f)),
-    DOUBLE(Double.TYPE, Double.class, Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)),
-    BOOLEAN(Boolean.TYPE, Boolean.class, false),
-    STRING(String.class, String.class, ""),
-    BYTE_STRING(zzlh.class, zzlh.class, zzlh.zzb),
-    ENUM(Integer.TYPE, Integer.class, null),
-    MESSAGE(Object.class, Object.class, null);
-    
-    private final Class zzk;
+final class zzms extends InputStream {
+    final /* synthetic */ zzacv zza;
 
-    zzms(Class cls, Class cls2, Object obj) {
-        this.zzk = cls2;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzms(zzmu zzmuVar, zzacv zzacvVar) {
+        this.zza = zzacvVar;
+        Objects.requireNonNull(zzmuVar);
     }
 
-    public final Class zza() {
-        return this.zzk;
+    @Override // java.io.InputStream
+    public final int read() throws IOException {
+        byte[] bArr = new byte[1];
+        if (this.zza.zzK(bArr, 0, 1) == -1) {
+            return -1;
+        }
+        return bArr[0];
+    }
+
+    @Override // java.io.InputStream
+    public final long skip(long j) throws IOException {
+        if (j <= 0) {
+            return 0L;
+        }
+        int i = j > SieveCacheKt.NodeLinkMask ? Integer.MAX_VALUE : (int) j;
+        this.zza.zzL(i);
+        return i;
+    }
+
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i, int i2) throws IOException {
+        return this.zza.zzK(bArr, i, i2);
     }
 }

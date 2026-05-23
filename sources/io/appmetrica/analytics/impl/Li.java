@@ -1,135 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
-import java.util.Arrays;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes5.dex */
-public final class Li extends MessageNano {
-    public static final int f = 0;
-    public static final int g = 1;
-    public static final int h = 2;
-    public static volatile Li[] i;
+public final class Li {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f685a;
-    public long b;
-    public int c;
-    public byte[] d;
-    public long e;
+    public final C0745yh f648a;
+    public final Hh b;
+    public final Jh c;
+    public final Kh d;
+    public final C0176ch e;
+    public final C0150bh f;
+    public final C0460nh g;
+    public final C0693wh h;
+    public final C0667vh i;
+    public final C0434mh j;
+    public final Co k;
+    public final C0227eh l;
+    public final C0486oh m;
+    public final C0356jh n;
+    public final C0721xj o;
+    public final C0626u2 p;
+    public final C0722xk q;
+    public final C0695wj r;
+    public final Gd s;
+    public final C0747yj t;
+    public final C0169ca u;
 
-    public Li() {
-        a();
-    }
-
-    public static Li[] b() {
-        if (i == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (i == null) {
-                    i = new Li[0];
-                }
-            }
-        }
-        return i;
-    }
-
-    public final Li a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f685a = bArr;
-        this.b = 0L;
-        this.c = 0;
-        this.d = bArr;
-        this.e = 0L;
-        this.cachedSize = -1;
-        return this;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f685a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f685a);
-        }
-        long j = this.b;
-        if (j != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(2, j);
-        }
-        int i2 = this.c;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(3, i2);
-        }
-        if (!Arrays.equals(this.d, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(4, this.d);
-        }
-        long j2 = this.e;
-        return j2 != 0 ? CodedOutputByteBufferNano.computeUInt64Size(5, j2) + computeSerializedSize : computeSerializedSize;
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f685a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f685a);
-        }
-        long j = this.b;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeUInt64(2, j);
-        }
-        int i2 = this.c;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(3, i2);
-        }
-        if (!Arrays.equals(this.d, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(4, this.d);
-        }
-        long j2 = this.e;
-        if (j2 != 0) {
-            codedOutputByteBufferNano.writeUInt64(5, j2);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final Li mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f685a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt64();
-            } else if (readTag == 24) {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2) {
-                    this.c = readInt32;
-                }
-            } else if (readTag == 34) {
-                this.d = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 40) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                this.e = codedInputByteBufferNano.readUInt64();
-            }
-        }
-        return this;
-    }
-
-    public static Li b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Li().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Li a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Li) MessageNano.mergeFrom(new Li(), bArr);
+    public Li(C0448n5 c0448n5) {
+        this.f648a = new C0745yh(c0448n5);
+        this.b = new Hh(c0448n5);
+        this.c = new Jh(c0448n5);
+        this.d = new Kh(c0448n5);
+        this.e = new C0176ch(c0448n5);
+        this.f = new C0150bh(c0448n5);
+        this.g = new C0460nh(c0448n5);
+        this.h = new C0693wh(c0448n5);
+        this.i = new C0667vh(c0448n5, new Xe());
+        this.j = new C0434mh(c0448n5);
+        this.k = new Co(c0448n5);
+        this.l = new C0227eh(c0448n5);
+        this.m = new C0486oh(c0448n5);
+        this.n = new C0356jh(c0448n5, AbstractC0755z1.a());
+        this.o = new C0721xj(c0448n5);
+        this.p = new C0626u2(c0448n5);
+        this.q = new C0722xk(c0448n5);
+        this.r = new C0695wj(c0448n5);
+        this.s = new Gd(c0448n5);
+        this.t = new C0747yj(c0448n5);
+        this.u = new C0169ca(c0448n5, new SystemTimeProvider());
     }
 }

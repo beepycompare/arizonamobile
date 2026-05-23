@@ -3,30 +3,32 @@ package com.google.android.gms.measurement.internal;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzjs {
     final Context zza;
     Boolean zzb;
     long zzc;
-    com.google.android.gms.internal.measurement.zzdd zzd;
+    com.google.android.gms.internal.measurement.zzdb zzd;
     boolean zze;
     final Long zzf;
-    String zzg;
+    final Long zzg;
+    String zzh;
 
-    public zzjs(Context context, com.google.android.gms.internal.measurement.zzdd zzddVar, Long l) {
+    public zzjs(Context context, com.google.android.gms.internal.measurement.zzdb zzdbVar, Long l, Long l2) {
         this.zze = true;
         Preconditions.checkNotNull(context);
         Context applicationContext = context.getApplicationContext();
         Preconditions.checkNotNull(applicationContext);
         this.zza = applicationContext;
         this.zzf = l;
-        if (zzddVar != null) {
-            this.zzd = zzddVar;
-            this.zze = zzddVar.zzc;
-            this.zzc = zzddVar.zzb;
-            this.zzg = zzddVar.zze;
-            Bundle bundle = zzddVar.zzd;
+        this.zzg = l2;
+        if (zzdbVar != null) {
+            this.zzd = zzdbVar;
+            this.zze = zzdbVar.zzc;
+            this.zzc = zzdbVar.zzb;
+            this.zzh = zzdbVar.zze;
+            Bundle bundle = zzdbVar.zzd;
             if (bundle != null) {
                 this.zzb = Boolean.valueOf(bundle.getBoolean("dataCollectionDefaultEnabled", true));
             }

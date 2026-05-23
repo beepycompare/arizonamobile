@@ -13,7 +13,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function5;
 /* compiled from: DefaultTextContextMenuDropdownProvider.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt {
     public static final ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt INSTANCE = new ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt();
@@ -31,7 +31,7 @@ public final class ComposableSingletons$DefaultTextContextMenuDropdownProvider_a
     });
 
     /* renamed from: lambda$-1357803046  reason: not valid java name */
-    private static Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> f55lambda$1357803046 = ComposableLambdaKt.composableLambdaInstance(-1357803046, false, new Function5() { // from class: androidx.compose.foundation.text.contextmenu.internal.ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda2
+    private static Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> f3lambda$1357803046 = ComposableLambdaKt.composableLambdaInstance(-1357803046, false, new Function5() { // from class: androidx.compose.foundation.text.contextmenu.internal.ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function5
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
             return ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt.lambda__1357803046$lambda$0((TextContextMenuSession) obj, (TextContextMenuDataProvider) obj2, (Function0) obj3, (Composer) obj4, ((Integer) obj5).intValue());
@@ -39,8 +39,8 @@ public final class ComposableSingletons$DefaultTextContextMenuDropdownProvider_a
     });
 
     /* renamed from: getLambda$-1357803046$foundation  reason: not valid java name */
-    public final Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> m1301getLambda$1357803046$foundation() {
-        return f55lambda$1357803046;
+    public final Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> m1689getLambda$1357803046$foundation() {
+        return f3lambda$1357803046;
     }
 
     public final Function5<TextContextMenuSession, TextContextMenuDataProvider, Function0<? extends LayoutCoordinates>, Composer, Integer, Unit> getLambda$129995601$foundation() {

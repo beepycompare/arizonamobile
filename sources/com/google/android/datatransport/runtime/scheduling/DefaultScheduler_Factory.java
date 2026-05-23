@@ -7,7 +7,7 @@ import com.google.android.datatransport.runtime.scheduling.persistence.EventStor
 import com.google.android.datatransport.runtime.synchronization.SynchronizationGuard;
 import java.util.concurrent.Executor;
 import javax.inject.Provider;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DefaultScheduler_Factory implements Factory<DefaultScheduler> {
     private final Provider<BackendRegistry> backendRegistryProvider;
     private final Provider<EventStore> eventStoreProvider;

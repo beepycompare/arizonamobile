@@ -1,5 +1,8 @@
 package androidx.compose.ui.node;
 
+import androidx.collection.MutableScatterSet;
+import androidx.collection.ScatterSet;
+import androidx.collection.ScatterSetKt;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.GraphicsContext;
@@ -14,22 +17,16 @@ import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DelegatableNode.kt */
-@Metadata(d1 = {"\u0000\u009a\u0001\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a3\u0010\u0004\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a\u0016\u0010\f\u001a\u0004\u0018\u00010\u000b*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u001a\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0001H\u0002\u001a\"\u0010\u0011\u001a\u00020\u0005*\b\u0012\u0004\u0012\u00020\u000b0\u000e2\u0006\u0010\u0012\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u0001H\u0002\u001a1\u0010\u0013\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a1\u0010\u0014\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\nH\u0080\b\u001a)\u0010\u0015\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a3\u0010\u0015\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a)\u0010\u0016\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a>\u0010\u0017\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001b\u0010\u001c\u001a>\u0010\u0015\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001d\u0010\u001c\u001a>\u0010\u0016\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001e\u0010\u001c\u001aH\u0010\u0004\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001f\u0010 \u001aJ\u0010!\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\n\u0010\"\u001a\u0006\u0012\u0002\b\u00030\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b#\u0010$\u001a<\u0010%\u001a\n\u0012\u0004\u0012\u0002H\u0018\u0018\u00010&\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u0001H\u0080\b¢\u0006\u0004\b'\u0010(\u001a<\u0010)\u001a\n\u0012\u0004\u0012\u0002H\u0018\u0018\u00010*\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u0001H\u0080\b¢\u0006\u0004\b+\u0010,\u001a0\u0010\f\u001a\u0004\u0018\u0001H\u0018\"\n\b\u0000\u0010\u0018\u0018\u0001*\u00020-*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001aH\u0080\b¢\u0006\u0004\b.\u0010/\u001aH\u0010\u0013\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b0\u0010 \u001aH\u00101\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b2\u0010 \u001aH\u0010\u0014\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00010\nH\u0080\b¢\u0006\u0004\b3\u0010 \u001aH\u00104\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b5\u0010 \u001a\u001f\u00106\u001a\u00020\u0001*\u00020\u00022\n\u0010\u0019\u001a\u0006\u0012\u0002\b\u00030\u001aH\u0000¢\u0006\u0004\b7\u00108\u001a\u001f\u00109\u001a\u00020:*\u00020\u00022\n\u0010;\u001a\u0006\u0012\u0002\b\u00030\u001aH\u0000¢\u0006\u0004\b<\u0010=\u001a\f\u0010>\u001a\u00020\u000f*\u00020\u0002H\u0000\u001a\f\u0010?\u001a\u00020@*\u00020\u0002H\u0000\u001a\f\u0010A\u001a\u00020B*\u00020\u0002H\u0000\u001a\n\u0010C\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010D\u001a\u00020E*\u00020\u0002\u001a\n\u0010F\u001a\u00020G*\u00020\u0002\u001a\n\u0010H\u001a\u00020I*\u00020\u0002\u001a\n\u0010J\u001a\u00020K*\u00020\u0002\u001a\n\u0010L\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010M\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010N\u001a\u00020\u0005*\u00020\u0002\u001a\u0019\u0010O\u001a\u00020\u0005*\u00020\u00022\u0006\u0010P\u001a\u00020Q¢\u0006\u0004\bR\u0010S\u001a\f\u0010T\u001a\u0004\u0018\u00010U*\u00020\u0002\u001a\u000e\u0010V\u001a\u0004\u0018\u00010W*\u00020\u000bH\u0000\u001a>\u0010X\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u000b2\f\u0010;\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\bY\u0010Z\u001a\u0016\u0010[\u001a\u0004\u0018\u00010\u000b*\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u000eH\u0002\"\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0003¨\u0006\\"}, d2 = {"isDelegationRoot", "", "Landroidx/compose/ui/node/DelegatableNode;", "(Landroidx/compose/ui/node/DelegatableNode;)Z", "visitAncestors", "", "mask", "", "includeSelf", "block", "Lkotlin/Function1;", "Landroidx/compose/ui/Modifier$Node;", "nearestAncestor", "getChildren", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/node/LayoutNode;", "zOrder", "addLayoutNodeChildren", "node", "visitChildren", "visitSubtreeIf", "visitLocalDescendants", "visitLocalAncestors", "visitSelfAndLocalDescendants", ExifInterface.GPS_DIRECTION_TRUE, "type", "Landroidx/compose/ui/node/NodeKind;", "visitSelfAndLocalDescendants-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;ILkotlin/jvm/functions/Function1;)V", "visitLocalDescendants-6rFNWt0", "visitLocalAncestors-6rFNWt0", "visitAncestors-Y-YKmho", "(Landroidx/compose/ui/node/DelegatableNode;IZLkotlin/jvm/functions/Function1;)V", "visitSelfAndAncestors", "untilType", "visitSelfAndAncestors-5BbP62I", "(Landroidx/compose/ui/node/DelegatableNode;IILkotlin/jvm/functions/Function1;)V", "ancestors", "", "ancestors-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;IZ)Ljava/util/List;", "setOfAncestors", "", "setOfAncestors-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;IZ)Ljava/util/Set;", "", "nearestAncestor-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Ljava/lang/Object;", "visitChildren-Y-YKmho", "visitSelfAndChildren", "visitSelfAndChildren-Y-YKmho", "visitSubtreeIf-Y-YKmho", "visitSubtree", "visitSubtree-Y-YKmho", "has", "has-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Z", "requireCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "kind", "requireCoordinator-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Landroidx/compose/ui/node/NodeCoordinator;", "requireLayoutNode", "requireSemanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "requireOwner", "Landroidx/compose/ui/node/Owner;", "requestAutofill", "requireDensity", "Landroidx/compose/ui/unit/Density;", "requireGraphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "requireLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "requireLayoutCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "invalidateSubtree", "invalidateMeasurementForSubtree", "invalidateDrawForSubtree", "dispatchOnScrollChanged", "delta", "Landroidx/compose/ui/geometry/Offset;", "dispatchOnScrollChanged-Uv8p0NA", "(Landroidx/compose/ui/node/DelegatableNode;J)V", "findNearestBeyondBoundsLayoutAncestor", "Landroidx/compose/ui/layout/BeyondBoundsLayout;", "asLayoutModifierNode", "Landroidx/compose/ui/node/LayoutModifierNode;", "dispatchForKind", "dispatchForKind-6rFNWt0", "(Landroidx/compose/ui/Modifier$Node;ILkotlin/jvm/functions/Function1;)V", "pop", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009a\u0001\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\u001a3\u0010\u0004\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a\u0016\u0010\f\u001a\u0004\u0018\u00010\u000b*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u001a\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0001H\u0002\u001a\"\u0010\u0011\u001a\u00020\u0005*\b\u0012\u0004\u0012\u00020\u000b0\u000e2\u0006\u0010\u0012\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u0001H\u0002\u001a1\u0010\u0013\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a1\u0010\u0014\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\nH\u0080\b\u001a)\u0010\u0015\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a3\u0010\u0015\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a)\u0010\u0016\u001a\u00020\u0005*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\nH\u0080\b\u001a>\u0010\u0017\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001b\u0010\u001c\u001a>\u0010\u0015\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001d\u0010\u001c\u001a>\u0010\u0016\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b\u001e\u0010\u001c\u001aR\u0010\u0004\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u00012\b\b\u0002\u0010\u001f\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b \u0010!\u001aJ\u0010\"\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\n\u0010#\u001a\u0006\u0012\u0002\b\u00030\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b$\u0010%\u001a<\u0010&\u001a\n\u0012\u0004\u0012\u0002H\u0018\u0018\u00010'\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u0001H\u0080\b¢\u0006\u0004\b(\u0010)\u001a<\u0010*\u001a\n\u0012\u0004\u0012\u0002H\u0018\u0018\u00010+\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\b\u001a\u00020\u0001H\u0080\b¢\u0006\u0004\b,\u0010-\u001a0\u0010\f\u001a\u0004\u0018\u0001H\u0018\"\n\b\u0000\u0010\u0018\u0018\u0001*\u00020.*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001aH\u0080\b¢\u0006\u0004\b/\u00100\u001aH\u0010\u0013\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b1\u00102\u001aH\u00103\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b4\u00102\u001aH\u0010\u0014\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00010\nH\u0080\b¢\u0006\u0004\b5\u00102\u001aH\u00106\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u00022\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\b\b\u0002\u0010\u0010\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b7\u00102\u001a\u001f\u00108\u001a\u00020\u0001*\u00020\u00022\n\u0010\u0019\u001a\u0006\u0012\u0002\b\u00030\u001aH\u0000¢\u0006\u0004\b9\u0010:\u001a\u001f\u0010;\u001a\u00020<*\u00020\u00022\n\u0010=\u001a\u0006\u0012\u0002\b\u00030\u001aH\u0000¢\u0006\u0004\b>\u0010?\u001a\f\u0010@\u001a\u00020\u000f*\u00020\u0002H\u0000\u001a\f\u0010A\u001a\u00020B*\u00020\u0002H\u0000\u001a\f\u0010C\u001a\u00020D*\u00020\u0002H\u0000\u001a\n\u0010E\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010F\u001a\u00020G*\u00020\u0002\u001a\n\u0010H\u001a\u00020I*\u00020\u0002\u001a\n\u0010J\u001a\u00020K*\u00020\u0002\u001a\n\u0010L\u001a\u00020M*\u00020\u0002\u001a\n\u0010N\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010O\u001a\u00020\u0005*\u00020\u0002\u001a\n\u0010P\u001a\u00020\u0005*\u00020\u0002\u001a\u0019\u0010Q\u001a\u00020\u0005*\u00020\u00022\u0006\u0010R\u001a\u00020S¢\u0006\u0004\bT\u0010U\u001a\f\u0010V\u001a\u0004\u0018\u00010W*\u00020\u0002\u001a\u000e\u0010X\u001a\u0004\u0018\u00010Y*\u00020\u000bH\u0000\u001a>\u0010Z\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u000b2\f\u0010=\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b[\u0010\\\u001aF\u0010Z\u001a\u00020\u0005\"\u0006\b\u0000\u0010\u0018\u0018\u0001*\u00020\u000b2\f\u0010=\u001a\b\u0012\u0004\u0012\u0002H\u00180\u001a2\u0006\u0010]\u001a\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0018\u0012\u0004\u0012\u00020\u00050\nH\u0080\b¢\u0006\u0004\b^\u0010_\u001a\u0016\u0010`\u001a\u0004\u0018\u00010\u000b*\n\u0012\u0004\u0012\u00020\u000b\u0018\u00010\u000eH\u0002\"\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00028@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0000\u0010\u0003¨\u0006a"}, d2 = {"isDelegationRoot", "", "Landroidx/compose/ui/node/DelegatableNode;", "(Landroidx/compose/ui/node/DelegatableNode;)Z", "visitAncestors", "", "mask", "", "includeSelf", "block", "Lkotlin/Function1;", "Landroidx/compose/ui/Modifier$Node;", "nearestAncestor", "getChildren", "Landroidx/compose/runtime/collection/MutableVector;", "Landroidx/compose/ui/node/LayoutNode;", "zOrder", "addLayoutNodeChildren", "node", "visitChildren", "visitSubtreeIf", "visitLocalDescendants", "visitLocalAncestors", "visitSelfAndLocalDescendants", ExifInterface.GPS_DIRECTION_TRUE, "type", "Landroidx/compose/ui/node/NodeKind;", "visitSelfAndLocalDescendants-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;ILkotlin/jvm/functions/Function1;)V", "visitLocalDescendants-6rFNWt0", "visitLocalAncestors-6rFNWt0", "includeDelegates", "visitAncestors-QFhIj7k", "(Landroidx/compose/ui/node/DelegatableNode;IZZLkotlin/jvm/functions/Function1;)V", "visitSelfAndAncestors", "untilType", "visitSelfAndAncestors-5BbP62I", "(Landroidx/compose/ui/node/DelegatableNode;IILkotlin/jvm/functions/Function1;)V", "ancestors", "", "ancestors-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;IZ)Ljava/util/List;", "setOfAncestors", "Landroidx/collection/ScatterSet;", "setOfAncestors-6rFNWt0", "(Landroidx/compose/ui/node/DelegatableNode;IZ)Landroidx/collection/ScatterSet;", "", "nearestAncestor-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Ljava/lang/Object;", "visitChildren-Y-YKmho", "(Landroidx/compose/ui/node/DelegatableNode;IZLkotlin/jvm/functions/Function1;)V", "visitSelfAndChildren", "visitSelfAndChildren-Y-YKmho", "visitSubtreeIf-Y-YKmho", "visitSubtree", "visitSubtree-Y-YKmho", "has", "has-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Z", "requireCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "kind", "requireCoordinator-64DMado", "(Landroidx/compose/ui/node/DelegatableNode;I)Landroidx/compose/ui/node/NodeCoordinator;", "requireLayoutNode", "requireSemanticsInfo", "Landroidx/compose/ui/semantics/SemanticsInfo;", "requireOwner", "Landroidx/compose/ui/node/Owner;", "requestAutofill", "requireDensity", "Landroidx/compose/ui/unit/Density;", "requireGraphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "requireLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "requireLayoutCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "invalidateSubtree", "invalidateMeasurementForSubtree", "invalidateDrawForSubtree", "dispatchOnScrollChanged", "delta", "Landroidx/compose/ui/geometry/Offset;", "dispatchOnScrollChanged-Uv8p0NA", "(Landroidx/compose/ui/node/DelegatableNode;J)V", "findNearestBeyondBoundsLayoutAncestor", "Landroidx/compose/ui/layout/BeyondBoundsLayout;", "asLayoutModifierNode", "Landroidx/compose/ui/node/LayoutModifierNode;", "dispatchForKind", "dispatchForKind-6rFNWt0", "(Landroidx/compose/ui/Modifier$Node;ILkotlin/jvm/functions/Function1;)V", "dispatchToDelegates", "dispatchForKind-Y-YKmho", "(Landroidx/compose/ui/Modifier$Node;IZLkotlin/jvm/functions/Function1;)V", "pop", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class DelegatableNodeKt {
-    public static final /* synthetic */ void access$addLayoutNodeChildren(MutableVector mutableVector, Modifier.Node node, boolean z) {
-        addLayoutNodeChildren(mutableVector, node, z);
-    }
-
     public static final /* synthetic */ Modifier.Node access$pop(MutableVector mutableVector) {
         return pop(mutableVector);
     }
@@ -230,7 +227,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndAncestors-5BbP62I */
-    public static final /* synthetic */ <T> void m6396visitSelfAndAncestors5BbP62I(DelegatableNode delegatableNode, int i, int i2, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6999visitSelfAndAncestors5BbP62I(DelegatableNode delegatableNode, int i, int i2, Function1<? super T, Unit> function1) {
         NodeChain nodes$ui;
         Modifier.Node node = delegatableNode.getNode();
         int i3 = i | i2;
@@ -292,7 +289,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndChildren-Y-YKmho */
-    public static final /* synthetic */ <T> void m6397visitSelfAndChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m7000visitSelfAndChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         Modifier.Node node = delegatableNode.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -388,7 +385,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndChildren-Y-YKmho$default */
-    public static /* synthetic */ void m6398visitSelfAndChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m7001visitSelfAndChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -487,15 +484,15 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: has-64DMado */
-    public static final boolean m6385has64DMado(DelegatableNode delegatableNode, int i) {
+    public static final boolean m6988has64DMado(DelegatableNode delegatableNode, int i) {
         return (delegatableNode.getNode().getAggregateChildKindSet$ui() & i) != 0;
     }
 
     /* renamed from: requireCoordinator-64DMado */
-    public static final NodeCoordinator m6387requireCoordinator64DMado(DelegatableNode delegatableNode, int i) {
+    public static final NodeCoordinator m6990requireCoordinator64DMado(DelegatableNode delegatableNode, int i) {
         NodeCoordinator coordinator$ui = delegatableNode.getNode().getCoordinator$ui();
         Intrinsics.checkNotNull(coordinator$ui);
-        if (coordinator$ui.getTail() == delegatableNode && NodeKindKt.m6544getIncludeSelfInTraversalH91voCI(i)) {
+        if (coordinator$ui.getTail() == delegatableNode && NodeKindKt.m7144getIncludeSelfInTraversalH91voCI(i)) {
             NodeCoordinator wrapped$ui = coordinator$ui.getWrapped$ui();
             Intrinsics.checkNotNull(wrapped$ui);
             return wrapped$ui;
@@ -545,7 +542,7 @@ public final class DelegatableNodeKt {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("Cannot get LayoutCoordinates, Modifier.Node is not attached.");
         }
-        LayoutCoordinates coordinates = m6387requireCoordinator64DMado(delegatableNode, NodeKind.m6535constructorimpl(2)).getCoordinates();
+        LayoutCoordinates coordinates = m6990requireCoordinator64DMado(delegatableNode, NodeKind.m7135constructorimpl(2)).getCoordinates();
         if (!coordinates.isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("LayoutCoordinates is not attached.");
         }
@@ -571,18 +568,22 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: dispatchOnScrollChanged-Uv8p0NA */
-    public static final void m6384dispatchOnScrollChangedUv8p0NA(DelegatableNode delegatableNode, long j) {
-        requireOwner(delegatableNode).mo6601dispatchOnScrollChangedk4lQ0M(j);
+    public static final void m6987dispatchOnScrollChangedUv8p0NA(DelegatableNode delegatableNode, long j) {
+        requireOwner(delegatableNode).mo7201dispatchOnScrollChangedk4lQ0M(j);
     }
 
-    /* renamed from: dispatchForKind-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6383dispatchForKind6rFNWt0(Modifier.Node node, int i, Function1<? super T, Unit> function1) {
+    /* renamed from: dispatchForKind-Y-YKmho */
+    public static final /* synthetic */ <T> void m6986dispatchForKindYYKmho(Modifier.Node node, int i, boolean z, Function1<? super T, Unit> function1) {
         MutableVector mutableVector = null;
         while (node != null) {
             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
             if (node instanceof Object) {
                 function1.invoke(node);
-            } else if ((node.getKindSet$ui() & i) != 0 && (node instanceof DelegatingNode)) {
+                if (!z) {
+                    node = pop(mutableVector);
+                }
+            }
+            if ((node.getKindSet$ui() & i) != 0 && (node instanceof DelegatingNode)) {
                 int i2 = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -627,7 +628,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndLocalDescendants-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6399visitSelfAndLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m7002visitSelfAndLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
@@ -676,7 +677,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitLocalDescendants-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6395visitLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6998visitLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
@@ -724,7 +725,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitLocalAncestors-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6394visitLocalAncestors6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6997visitLocalAncestors6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalAncestors called on an unattached node");
         }
@@ -768,8 +769,8 @@ public final class DelegatableNodeKt {
         }
     }
 
-    /* renamed from: visitAncestors-Y-YKmho */
-    public static final /* synthetic */ <T> void m6390visitAncestorsYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    /* renamed from: visitAncestors-QFhIj7k */
+    public static final /* synthetic */ <T> void m6993visitAncestorsQFhIj7k(DelegatableNode delegatableNode, int i, boolean z, boolean z2, Function1<? super T, Unit> function1) {
         NodeChain nodes$ui;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -786,7 +787,11 @@ public final class DelegatableNodeKt {
                             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
                             if (node2 instanceof Object) {
                                 function1.invoke(node2);
-                            } else if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                if (!z2) {
+                                    node2 = pop(mutableVector);
+                                }
+                            }
+                            if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -823,11 +828,14 @@ public final class DelegatableNodeKt {
         }
     }
 
-    /* renamed from: visitAncestors-Y-YKmho$default */
-    public static /* synthetic */ void m6391visitAncestorsYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    /* renamed from: visitAncestors-QFhIj7k$default */
+    public static /* synthetic */ void m6994visitAncestorsQFhIj7k$default(DelegatableNode delegatableNode, int i, boolean z, boolean z2, Function1 function1, int i2, Object obj) {
         NodeChain nodes$ui;
         if ((i2 & 2) != 0) {
             z = false;
+        }
+        if ((i2 & 4) != 0) {
+            z2 = false;
         }
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -842,35 +850,37 @@ public final class DelegatableNodeKt {
                         MutableVector mutableVector = null;
                         while (node2 != null) {
                             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
-                            if (!(node2 instanceof Object)) {
-                                if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
-                                    int i3 = 0;
-                                    for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & i) != 0) {
-                                            i3++;
-                                            if (i3 == 1) {
-                                                node2 = delegate$ui;
-                                            } else {
-                                                if (mutableVector == null) {
-                                                    mutableVector = new MutableVector(new Modifier.Node[16], 0);
-                                                }
-                                                if (node2 != null) {
-                                                    if (mutableVector != null) {
-                                                        mutableVector.add(node2);
-                                                    }
-                                                    node2 = null;
-                                                }
+                            if (node2 instanceof Object) {
+                                function1.invoke(node2);
+                                if (!z2) {
+                                    node2 = pop(mutableVector);
+                                }
+                            }
+                            if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                int i3 = 0;
+                                for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                                    if ((delegate$ui.getKindSet$ui() & i) != 0) {
+                                        i3++;
+                                        if (i3 == 1) {
+                                            node2 = delegate$ui;
+                                        } else {
+                                            if (mutableVector == null) {
+                                                mutableVector = new MutableVector(new Modifier.Node[16], 0);
+                                            }
+                                            if (node2 != null) {
                                                 if (mutableVector != null) {
-                                                    mutableVector.add(delegate$ui);
+                                                    mutableVector.add(node2);
                                                 }
+                                                node2 = null;
+                                            }
+                                            if (mutableVector != null) {
+                                                mutableVector.add(delegate$ui);
                                             }
                                         }
                                     }
-                                    if (i3 == 1) {
-                                    }
                                 }
-                            } else {
-                                function1.invoke(node2);
+                                if (i3 == 1) {
+                                }
                             }
                             node2 = pop(mutableVector);
                         }
@@ -884,8 +894,9 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: ancestors-6rFNWt0 */
-    public static final /* synthetic */ <T> List<T> m6381ancestors6rFNWt0(DelegatableNode delegatableNode, int i, boolean z) {
+    public static final /* synthetic */ <T> List<T> m6983ancestors6rFNWt0(DelegatableNode delegatableNode, int i, boolean z) {
         NodeChain nodes$ui;
+        boolean z2;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
@@ -905,7 +916,11 @@ public final class DelegatableNodeKt {
                                     arrayList = new ArrayList();
                                 }
                                 arrayList.add(node2);
-                            } else if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                z2 = false;
+                            } else {
+                                z2 = true;
+                            }
+                            if (z2 && (node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -944,8 +959,9 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: ancestors-6rFNWt0$default */
-    public static /* synthetic */ List m6382ancestors6rFNWt0$default(DelegatableNode delegatableNode, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ List m6984ancestors6rFNWt0$default(DelegatableNode delegatableNode, int i, boolean z, int i2, Object obj) {
         NodeChain nodes$ui;
+        boolean z2;
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -968,7 +984,11 @@ public final class DelegatableNodeKt {
                                     arrayList = new ArrayList();
                                 }
                                 arrayList.add(node2);
-                            } else if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                z2 = false;
+                            } else {
+                                z2 = true;
+                            }
+                            if (z2 && (node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i3 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -1007,14 +1027,15 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: setOfAncestors-6rFNWt0 */
-    public static final /* synthetic */ <T> Set<T> m6388setOfAncestors6rFNWt0(DelegatableNode delegatableNode, int i, boolean z) {
+    public static final /* synthetic */ <T> ScatterSet<T> m6991setOfAncestors6rFNWt0(DelegatableNode delegatableNode, int i, boolean z) {
         NodeChain nodes$ui;
+        boolean z2;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node node = z ? delegatableNode.getNode() : delegatableNode.getNode().getParent$ui();
         LayoutNode requireLayoutNode = requireLayoutNode(delegatableNode);
-        LinkedHashSet linkedHashSet = null;
+        MutableScatterSet mutableScatterSet = null;
         while (requireLayoutNode != null) {
             if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & i) != 0) {
                 while (node != null) {
@@ -1024,11 +1045,15 @@ public final class DelegatableNodeKt {
                         while (node2 != null) {
                             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
                             if (node2 instanceof Object) {
-                                if (linkedHashSet == null) {
-                                    linkedHashSet = new LinkedHashSet();
+                                if (mutableScatterSet == null) {
+                                    mutableScatterSet = ScatterSetKt.mutableScatterSetOf();
                                 }
-                                linkedHashSet.add(node2);
-                            } else if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                mutableScatterSet.add(node2);
+                                z2 = false;
+                            } else {
+                                z2 = true;
+                            }
+                            if (z2 && (node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -1063,12 +1088,13 @@ public final class DelegatableNodeKt {
             requireLayoutNode = requireLayoutNode.getParent$ui();
             node = (requireLayoutNode == null || (nodes$ui = requireLayoutNode.getNodes$ui()) == null) ? null : nodes$ui.getTail$ui();
         }
-        return linkedHashSet;
+        return mutableScatterSet;
     }
 
     /* renamed from: setOfAncestors-6rFNWt0$default */
-    public static /* synthetic */ Set m6389setOfAncestors6rFNWt0$default(DelegatableNode delegatableNode, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ ScatterSet m6992setOfAncestors6rFNWt0$default(DelegatableNode delegatableNode, int i, boolean z, int i2, Object obj) {
         NodeChain nodes$ui;
+        boolean z2;
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1077,7 +1103,7 @@ public final class DelegatableNodeKt {
         }
         Modifier.Node node = z ? delegatableNode.getNode() : delegatableNode.getNode().getParent$ui();
         LayoutNode requireLayoutNode = requireLayoutNode(delegatableNode);
-        LinkedHashSet linkedHashSet = null;
+        MutableScatterSet mutableScatterSet = null;
         while (requireLayoutNode != null) {
             if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & i) != 0) {
                 while (node != null) {
@@ -1087,11 +1113,15 @@ public final class DelegatableNodeKt {
                         while (node2 != null) {
                             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
                             if (node2 instanceof Object) {
-                                if (linkedHashSet == null) {
-                                    linkedHashSet = new LinkedHashSet();
+                                if (mutableScatterSet == null) {
+                                    mutableScatterSet = ScatterSetKt.mutableScatterSetOf();
                                 }
-                                linkedHashSet.add(node2);
-                            } else if ((node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
+                                mutableScatterSet.add(node2);
+                                z2 = false;
+                            } else {
+                                z2 = true;
+                            }
+                            if (z2 && (node2.getKindSet$ui() & i) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i3 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
                                     if ((delegate$ui.getKindSet$ui() & i) != 0) {
@@ -1126,7 +1156,7 @@ public final class DelegatableNodeKt {
             requireLayoutNode = requireLayoutNode.getParent$ui();
             node = (requireLayoutNode == null || (nodes$ui = requireLayoutNode.getNodes$ui()) == null) ? null : nodes$ui.getTail$ui();
         }
-        return linkedHashSet;
+        return mutableScatterSet;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1134,7 +1164,7 @@ public final class DelegatableNodeKt {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: nearestAncestor-64DMado */
-    public static final /* synthetic */ <T> T m6386nearestAncestor64DMado(DelegatableNode delegatableNode, int i) {
+    public static final /* synthetic */ <T> T m6989nearestAncestor64DMado(DelegatableNode delegatableNode, int i) {
         NodeChain nodes$ui;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -1194,7 +1224,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitChildren-Y-YKmho */
-    public static final /* synthetic */ <T> void m6392visitChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6995visitChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -1256,7 +1286,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitChildren-Y-YKmho$default */
-    public static /* synthetic */ void m6393visitChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6996visitChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1323,7 +1353,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtreeIf-Y-YKmho */
-    public static final /* synthetic */ <T> void m6402visitSubtreeIfYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Boolean> function1) {
+    public static final /* synthetic */ <T> void m7005visitSubtreeIfYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Boolean> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -1384,7 +1414,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtreeIf-Y-YKmho$default */
-    public static /* synthetic */ void m6403visitSubtreeIfYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m7006visitSubtreeIfYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1448,7 +1478,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtree-Y-YKmho */
-    public static final /* synthetic */ <T> void m6400visitSubtreeYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m7003visitSubtreeYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -1506,7 +1536,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtree-Y-YKmho$default */
-    public static /* synthetic */ void m6401visitSubtreeYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m7004visitSubtreeYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1571,17 +1601,17 @@ public final class DelegatableNodeKt {
     public static final BeyondBoundsLayout findNearestBeyondBoundsLayoutAncestor(DelegatableNode delegatableNode) {
         NodeChain nodes$ui;
         ModifierLocalModifierNode modifierLocalModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(8388608) | NodeKind.m6535constructorimpl(32);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(8388608) | NodeKind.m7135constructorimpl(32);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui = delegatableNode.getNode().getParent$ui();
         LayoutNode requireLayoutNode = requireLayoutNode(delegatableNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7135constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
-                        if ((NodeKind.m6535constructorimpl(8388608) & parent$ui.getKindSet$ui()) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
+                        if ((NodeKind.m7135constructorimpl(8388608) & parent$ui.getKindSet$ui()) != 0) {
                             if (!(parent$ui instanceof BeyondBoundsLayoutProviderModifierNode)) {
                                 if (parent$ui instanceof DelegatingNode) {
                                     parent$ui = null;
@@ -1599,7 +1629,7 @@ public final class DelegatableNodeKt {
                                 return beyondBoundsLayoutProviderModifierNode.getBeyondBoundsLayout();
                             }
                             return null;
-                        } else if ((NodeKind.m6535constructorimpl(32) & parent$ui.getKindSet$ui()) == 0) {
+                        } else if ((NodeKind.m7135constructorimpl(32) & parent$ui.getKindSet$ui()) == 0) {
                             continue;
                         } else {
                             if (parent$ui instanceof ModifierLocalModifierNode) {
@@ -1630,7 +1660,7 @@ public final class DelegatableNodeKt {
     }
 
     public static final LayoutModifierNode asLayoutModifierNode(Modifier.Node node) {
-        if ((NodeKind.m6535constructorimpl(2) & node.getKindSet$ui()) != 0) {
+        if ((NodeKind.m7135constructorimpl(2) & node.getKindSet$ui()) != 0) {
             if (node instanceof LayoutModifierNode) {
                 return (LayoutModifierNode) node;
             }
@@ -1640,7 +1670,7 @@ public final class DelegatableNodeKt {
                     if (delegate$ui instanceof LayoutModifierNode) {
                         return (LayoutModifierNode) delegate$ui;
                     }
-                    if ((delegate$ui instanceof DelegatingNode) && (NodeKind.m6535constructorimpl(2) & delegate$ui.getKindSet$ui()) != 0) {
+                    if ((delegate$ui instanceof DelegatingNode) && (NodeKind.m7135constructorimpl(2) & delegate$ui.getKindSet$ui()) != 0) {
                         delegate$ui = ((DelegatingNode) delegate$ui).getDelegate$ui();
                     } else {
                         delegate$ui = delegate$ui.getChild$ui();
@@ -1649,6 +1679,43 @@ public final class DelegatableNodeKt {
             }
         }
         return null;
+    }
+
+    /* renamed from: dispatchForKind-6rFNWt0 */
+    public static final /* synthetic */ <T> void m6985dispatchForKind6rFNWt0(Modifier.Node node, int i, Function1<? super T, Unit> function1) {
+        MutableVector mutableVector = null;
+        while (node != null) {
+            Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
+            if (node instanceof Object) {
+                function1.invoke(node);
+            } else if ((node.getKindSet$ui() & i) != 0 && (node instanceof DelegatingNode)) {
+                int i2 = 0;
+                for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
+                    if ((delegate$ui.getKindSet$ui() & i) != 0) {
+                        i2++;
+                        if (i2 == 1) {
+                            node = delegate$ui;
+                        } else {
+                            if (mutableVector == null) {
+                                mutableVector = new MutableVector(new Modifier.Node[16], 0);
+                            }
+                            if (node != null) {
+                                if (mutableVector != null) {
+                                    mutableVector.add(node);
+                                }
+                                node = null;
+                            }
+                            if (mutableVector != null) {
+                                mutableVector.add(delegate$ui);
+                            }
+                        }
+                    }
+                }
+                if (i2 == 1) {
+                }
+            }
+            node = pop(mutableVector);
+        }
     }
 
     public static final Modifier.Node pop(MutableVector<Modifier.Node> mutableVector) {

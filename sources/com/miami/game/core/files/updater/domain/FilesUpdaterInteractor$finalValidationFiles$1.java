@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: FilesUpdaterInteractor.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor", f = "FilesUpdaterInteractor.kt", i = {2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4}, l = {178, 179, TsExtractor.TS_PACKET_SIZE, PsExtractor.PRIVATE_STREAM_1, ComposerKt.reuseKey}, m = "finalValidationFiles", n = {"files", "setFiles", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-FilesUpdaterInteractor$finalValidationFiles$3", "files", "setFiles", "$this$forEach$iv", "element$iv", "it", "destinationUri", "$i$f$forEach", "$i$a$-forEach-FilesUpdaterInteractor$finalValidationFiles$3", "files", "setFiles", "filesToDelete"}, nl = {179, 180, PsExtractor.PRIVATE_STREAM_1, DownloaderService.STATUS_PENDING, 209}, s = {"L$0", "L$1", "L$2", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$4", "L$5", "L$6", "I$0", "I$1", "L$0", "L$1", "L$2"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FilesUpdaterInteractor$finalValidationFiles$1 extends ContinuationImpl {
     int I$0;
     int I$1;

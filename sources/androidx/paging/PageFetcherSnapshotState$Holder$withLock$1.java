@@ -7,8 +7,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageFetcherSnapshotState.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
-@DebugMetadata(c = "androidx.paging.PageFetcherSnapshotState$Holder", f = "PageFetcherSnapshotState.kt", i = {0, 0}, l = {431}, m = "withLock", n = {"block", "$this$withLock_u24default$iv"}, s = {"L$0", "L$1"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@DebugMetadata(c = "androidx.paging.PageFetcherSnapshotState$Holder", f = "PageFetcherSnapshotState.kt", i = {0, 0}, l = {481}, m = "withLock", n = {"block", "$this$withLock_u24default$iv"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcherSnapshotState$Holder$withLock$1<T> extends ContinuationImpl {
     Object L$0;

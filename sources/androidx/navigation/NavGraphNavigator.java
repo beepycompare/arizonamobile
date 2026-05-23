@@ -82,7 +82,7 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
             if (!Intrinsics.areEqual(startDestinationRoute, navDestination.getRoute())) {
                 NavDestination.DeepLinkMatch matchRoute = navDestination.matchRoute(startDestinationRoute);
                 Bundle matchingArgs = matchRoute != null ? matchRoute.getMatchingArgs() : null;
-                if (matchingArgs != null && !SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(matchingArgs))) {
+                if (matchingArgs != null && !SavedStateReader.m9101isEmptyimpl(SavedStateReader.m9023constructorimpl(matchingArgs))) {
                     Map emptyMap = MapsKt.emptyMap();
                     if (emptyMap.isEmpty()) {
                         pairArr = new Pair[0];
@@ -94,11 +94,11 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
                         pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                     }
                     ?? bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                    Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
-                    SavedStateWriter.m8504putAllimpl(m8500constructorimpl, matchingArgs);
+                    Bundle m9109constructorimpl = SavedStateWriter.m9109constructorimpl(bundleOf);
+                    SavedStateWriter.m9113putAllimpl(m9109constructorimpl, matchingArgs);
                     Bundle bundle = (Bundle) objectRef.element;
                     if (bundle != null) {
-                        SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundle);
+                        SavedStateWriter.m9113putAllimpl(m9109constructorimpl, bundle);
                     }
                     objectRef.element = bundleOf;
                 }
@@ -121,7 +121,7 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean navigate$lambda$6(Ref.ObjectRef objectRef, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return objectRef.element == 0 || !SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl((Bundle) objectRef.element), key);
+        return objectRef.element == 0 || !SavedStateReader.m9024containsimpl(SavedStateReader.m9023constructorimpl((Bundle) objectRef.element), key);
     }
 
     /* compiled from: NavGraphNavigator.kt */

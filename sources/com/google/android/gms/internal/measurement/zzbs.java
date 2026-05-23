@@ -1,5 +1,10 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.os.Bundle;
+import android.os.IInterface;
+import android.os.RemoteException;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzbs {
+public interface zzbs extends IInterface {
+    Bundle zze(Bundle bundle) throws RemoteException;
 }

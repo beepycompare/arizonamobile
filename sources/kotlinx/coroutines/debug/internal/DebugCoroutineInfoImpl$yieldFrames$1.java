@@ -7,13 +7,15 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DebugCoroutineInfoImpl.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl", f = "DebugCoroutineInfoImpl.kt", i = {0, 0}, l = {169}, m = "yieldFrames", n = {"$this$yieldFrames", TypedValues.AttributesType.S_FRAME}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl", f = "DebugCoroutineInfoImpl.kt", i = {0, 0, 0, 0}, l = {170}, m = "yieldFrames", n = {"$this$yieldFrames", TypedValues.AttributesType.S_FRAME, "it", "$i$a$-let-DebugCoroutineInfoImpl$yieldFrames$2"}, s = {"L$0", "L$1", "L$3", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class DebugCoroutineInfoImpl$yieldFrames$1 extends ContinuationImpl {
+    int I$0;
     Object L$0;
     Object L$1;
     Object L$2;
+    Object L$3;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ DebugCoroutineInfoImpl this$0;

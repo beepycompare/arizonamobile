@@ -145,20 +145,20 @@ public final class ModalBottomSheetKt$ModalBottomSheet$4 implements Function2<Co
         } else {
             composer.useNode();
         }
-        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 824032392, "C186@9391L242,192@9646L498:ModalBottomSheet.kt#uh7d8r");
-        ModalBottomSheetKt.m2253ScrimKTwxG1Y(j, function0, sheetState.getTargetValue() != SheetValue.Hidden, modalBottomSheetProperties.shouldDismissOnClickOutside(), composer, 0);
-        ModalBottomSheetKt.m2252ModalBottomSheetContent7e2Q(boxScopeInstance, animatable, coroutineScope, function0, function1, modifier, sheetState, f, z, shape, j2, j3, f2, function2, function22, function3, composer, (Animatable.$stable << 3) | 6, 0, 0);
+        ModalBottomSheetKt.m2698ScrimKTwxG1Y(j, function0, sheetState.getTargetValue() != SheetValue.Hidden, modalBottomSheetProperties.shouldDismissOnClickOutside(), composer, 0);
+        ModalBottomSheetKt.m2697ModalBottomSheetContent7e2Q(boxScopeInstance, animatable, coroutineScope, function0, function1, modifier, sheetState, f, z, shape, j2, j3, f2, function2, function22, function3, composer, (Animatable.$stable << 3) | 6, 0, 0);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();

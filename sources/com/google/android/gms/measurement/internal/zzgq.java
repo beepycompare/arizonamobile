@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.TelemetryLoggingOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicLong;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgq {
     private static zzgq zza;
@@ -25,13 +25,13 @@ public final class zzgq {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static zzgq zza(zzic zzicVar) {
         if (zza == null) {
-            zza = new zzgq(zzicVar.zzaY(), zzicVar);
+            zza = new zzgq(zzicVar.zzaZ(), zzicVar);
         }
         return zza;
     }
 
     public final synchronized void zzb(int i, int i2, long j, long j2, int i3) {
-        final long elapsedRealtime = this.zzb.zzaZ().elapsedRealtime();
+        final long elapsedRealtime = this.zzb.zzba().elapsedRealtime();
         AtomicLong atomicLong = this.zzd;
         if (atomicLong.get() != -1 && elapsedRealtime - atomicLong.get() <= 1800000) {
             return;

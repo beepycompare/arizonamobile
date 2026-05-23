@@ -31,7 +31,7 @@ import com.google.android.datatransport.runtime.time.TimeModule_UptimeClockFacto
 import java.util.concurrent.Executor;
 import javax.inject.Provider;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DaggerTransportRuntimeComponent {
     private DaggerTransportRuntimeComponent() {
     }
@@ -41,7 +41,7 @@ public final class DaggerTransportRuntimeComponent {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder implements TransportRuntimeComponent.Builder {
         private Context setApplicationContext;
 
@@ -61,7 +61,7 @@ public final class DaggerTransportRuntimeComponent {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class TransportRuntimeComponentImpl extends TransportRuntimeComponent {
         private Provider<SchedulerConfig> configProvider;
         private Provider creationContextFactoryProvider;

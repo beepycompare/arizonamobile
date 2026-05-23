@@ -1,40 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import kotlin.jvm.functions.Function1;
+import io.appmetrica.analytics.ModuleEvent;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes5.dex */
-public final class Id {
+public final class Id extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f632a;
+    public final /* synthetic */ Nd f593a;
+    public final /* synthetic */ ModuleEvent b;
 
-    public Id(Nd nd) {
-        this.f632a = nd;
+    public Id(Nd nd, ModuleEvent moduleEvent) {
+        this.f593a = nd;
+        this.b = moduleEvent;
     }
 
-    public final Jd a(Context context, Sg sg) {
-        return new Jd(context, sg, this.f632a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.Rd
-            public final InterfaceC0126al a(G0 g0) {
-                return Id.a(g0);
-            }
-        }, EnumC0142bb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, "actual");
-    }
-
-    public final Jd b(Context context, Sg sg) {
-        return new Jd(context, sg, this.f632a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda1
-            @Override // io.appmetrica.analytics.impl.Rd
-            public final InterfaceC0126al a(G0 g0) {
-                return Id.b(g0);
-            }
-        }, EnumC0142bb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, "prev session");
-    }
-
-    public static final InterfaceC0126al a(G0 g0) {
-        return new Gd(g0.f.d);
-    }
-
-    public static final InterfaceC0126al b(G0 g0) {
-        return new X();
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        Nd.a(this.f593a).reportEvent(this.b);
     }
 }

@@ -57,7 +57,7 @@ import java.util.TimeZone;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CctTransportBackend implements TransportBackend {
     private static final String ACCEPT_ENCODING_HEADER_KEY = "Accept-Encoding";
     static final String API_KEY_HEADER_KEY = "X-Goog-Api-Key";
@@ -367,7 +367,7 @@ public final class CctTransportBackend implements TransportBackend {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class HttpResponse {
         final int code;
         final long nextRequestMillis;
@@ -381,7 +381,7 @@ public final class CctTransportBackend implements TransportBackend {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class HttpRequest {
         final String apiKey;
         final BatchedLogRequest requestBody;

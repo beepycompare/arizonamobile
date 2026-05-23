@@ -1,47 +1,40 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
 import android.os.Bundle;
-import io.appmetrica.analytics.internal.CounterConfiguration;
-import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public class Fh extends H3 {
-    protected D8 c;
-    protected C0627uf d;
-    public boolean e;
-    public String f;
+public final class Fh implements Runnable {
 
-    public Fh(Bf bf, CounterConfiguration counterConfiguration, D8 d8) {
-        this(bf, counterConfiguration, d8, null);
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f547a;
+    public final C0242f6 b;
+    public final Bundle c;
+    public final C0550r4 d;
+
+    public Fh(Context context, C0242f6 c0242f6, Bundle bundle, C0550r4 c0550r4) {
+        this.f547a = context;
+        this.b = c0242f6;
+        this.c = bundle;
+        this.d = c0550r4;
     }
 
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        this.b.toBundle(bundle);
-        Bf bf = this.f612a;
-        synchronized (bf) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", bf);
+    @Override // java.lang.Runnable
+    public final void run() {
+        try {
+            Y3 a2 = Y3.a(this.f547a, this.c);
+            if (a2 == null) {
+                return;
+            }
+            C0266g4 a3 = C0266g4.a(a2);
+            Fj v = Na.I.v();
+            v.a(a2.b.getAppVersion(), a2.b.getAppBuildNumber());
+            v.a(a2.b.getDeviceType());
+            G4 g4 = new G4(new Bm(a2), new F4(a2.b, Ib.c(a2.f849a.f927a.getAsString("PROCESS_CFG_CLIDS"))), a2.f849a.b);
+            this.d.a(a3, g4).a(this.b, g4);
+        } catch (Throwable th) {
+            C0541qk c0541qk = Oj.f705a;
+            c0541qk.getClass();
+            c0541qk.a(new Pj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
         }
-        return bundle;
-    }
-
-    public final synchronized String d() {
-        D8 d8;
-        d8 = this.c;
-        return d8.f551a.isEmpty() ? null : new JSONObject(d8.f551a).toString();
-    }
-
-    public final synchronized String e() {
-        return this.f;
-    }
-
-    public boolean f() {
-        return this.e;
-    }
-
-    public Fh(Bf bf, CounterConfiguration counterConfiguration, D8 d8, String str) {
-        super(bf, counterConfiguration);
-        this.e = true;
-        this.f = str;
-        this.c = d8;
     }
 }

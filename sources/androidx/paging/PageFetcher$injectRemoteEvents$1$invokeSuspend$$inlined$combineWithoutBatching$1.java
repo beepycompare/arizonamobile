@@ -27,7 +27,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* JADX INFO: Add missing generic type declarations: [Value] */
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Landroidx/paging/SimpleProducerScope;", "androidx/paging/FlowExtKt$combineWithoutBatching$2"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Landroidx/paging/SimpleProducerScope;", "androidx/paging/FlowExtKt$combineWithoutBatching$2"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1", f = "PageFetcher.kt", i = {}, l = {146}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1<Value> extends SuspendLambda implements Function2<SimpleProducerScope<PageEvent<Value>>, Continuation<? super Unit>, Object> {
@@ -62,7 +62,7 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
     }
 
     /* compiled from: FlowExt.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "androidx/paging/FlowExtKt$combineWithoutBatching$2$1$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "androidx/paging/FlowExtKt$combineWithoutBatching$2$1$1"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.paging.FlowExtKt$combineWithoutBatching$2$1$1", f = "FlowExt.kt", i = {}, l = {132}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
@@ -112,18 +112,18 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
                     ResultKt.throwOnFailure(obj);
                 }
                 if (atomicInteger.decrementAndGet() == 0) {
-                    SendChannel.DefaultImpls.close$default(this.$$this$simpleChannelFlow, null, 1, null);
+                    SendChannel.close$default(this.$$this$simpleChannelFlow, null, 1, null);
                 }
                 return Unit.INSTANCE;
             } finally {
                 if (this.$incompleteFlows.decrementAndGet() == 0) {
-                    SendChannel.DefaultImpls.close$default(this.$$this$simpleChannelFlow, null, 1, null);
+                    SendChannel.close$default(this.$$this$simpleChannelFlow, null, 1, null);
                 }
             }
         }
 
         /* compiled from: FlowExt.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* renamed from: androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$2$1  reason: invalid class name */
         /* loaded from: classes3.dex */
         public static final class AnonymousClass1<T> implements FlowCollector {
@@ -131,14 +131,14 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
             final /* synthetic */ UnbatchedFlowCombiner $unbatchedFlowCombiner;
 
             /* JADX INFO: Access modifiers changed from: package-private */
-            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
             /* renamed from: androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$2$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes3.dex */
-            public static final class C00351 extends ContinuationImpl {
+            public static final class C00361 extends ContinuationImpl {
                 int label;
                 /* synthetic */ Object result;
 
-                C00351(Continuation continuation) {
+                C00361(Continuation continuation) {
                     super(continuation);
                 }
 
@@ -171,20 +171,20 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final Object emit(Object obj, Continuation<? super Unit> continuation) {
-                C00351 c00351;
+                C00361 c00361;
                 int i;
-                if (continuation instanceof C00351) {
-                    c00351 = (C00351) continuation;
-                    if ((c00351.label & Integer.MIN_VALUE) != 0) {
-                        c00351.label -= Integer.MIN_VALUE;
-                        Object obj2 = c00351.result;
+                if (continuation instanceof C00361) {
+                    c00361 = (C00361) continuation;
+                    if ((c00361.label & Integer.MIN_VALUE) != 0) {
+                        c00361.label -= Integer.MIN_VALUE;
+                        Object obj2 = c00361.result;
                         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        i = c00351.label;
+                        i = c00361.label;
                         if (i != 0) {
                             ResultKt.throwOnFailure(obj2);
                             UnbatchedFlowCombiner unbatchedFlowCombiner = this.$unbatchedFlowCombiner;
                             int i2 = this.$index;
-                            c00351.label = 1;
+                            c00361.label = 1;
                         } else if (i != 1) {
                             if (i == 2) {
                                 ResultKt.throwOnFailure(obj2);
@@ -194,22 +194,22 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
                         } else {
                             ResultKt.throwOnFailure(obj2);
                         }
-                        c00351.label = 2;
+                        c00361.label = 2;
                     }
                 }
-                c00351 = new C00351(continuation);
-                Object obj22 = c00351.result;
+                c00361 = new C00361(continuation);
+                Object obj22 = c00361.result;
                 Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = c00351.label;
+                i = c00361.label;
                 if (i != 0) {
                 }
-                c00351.label = 2;
+                c00361.label = 2;
             }
         }
     }
 
     /* compiled from: FlowExt.kt */
-    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u00022\u0006\u0010\u0005\u001a\u0002H\u00032\u0006\u0010\u0006\u001a\u00020\u0007H\n¨\u0006\b"}, d2 = {"<anonymous>", "", "T1", "T2", "t1", "t2", "updateFrom", "Landroidx/paging/CombineSource;", "androidx/paging/FlowExtKt$combineWithoutBatching$2$unbatchedFlowCombiner$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u00022\u0006\u0010\u0005\u001a\u0002H\u00032\u0006\u0010\u0006\u001a\u00020\u0007H\n¨\u0006\b"}, d2 = {"<anonymous>", "", "T1", "T2", "t1", "t2", "updateFrom", "Landroidx/paging/CombineSource;", "androidx/paging/FlowExtKt$combineWithoutBatching$2$unbatchedFlowCombiner$1"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$1", f = "PageFetcher.kt", i = {}, l = {WebSocketProtocol.PAYLOAD_SHORT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combineWithoutBatching$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
@@ -311,7 +311,7 @@ public final class PageFetcher$injectRemoteEvents$1$invokeSuspend$$inlined$combi
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    Job.DefaultImpls.cancel$default((Job) CompletableJob.this, (CancellationException) null, 1, (Object) null);
+                    Job.cancel$default((Job) CompletableJob.this, (CancellationException) null, 1, (Object) null);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;

@@ -1,39 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import io.appmetrica.analytics.plugins.StackTraceItem;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import kotlin.collections.CollectionsKt;
+import java.lang.reflect.Field;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.text.Charsets;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class Je {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final M9 f648a;
-
-    public Je(M9 m9) {
-        this.f648a = m9;
-    }
-
-    public final Qn a(PluginErrorDetails pluginErrorDetails) {
-        ArrayList arrayList;
-        String exceptionClass = pluginErrorDetails.getExceptionClass();
-        String message = pluginErrorDetails.getMessage();
-        List<StackTraceItem> stacktrace = pluginErrorDetails.getStacktrace();
-        String platform = pluginErrorDetails.getPlatform();
-        String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
-        Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f648a.b.a();
-        Boolean bool = (Boolean) this.f648a.c.a();
-        if (stacktrace != null) {
-            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
-            for (StackTraceItem stackTraceItem : stacktrace) {
-                arrayList.add(new Dl(stackTraceItem.getClassName(), stackTraceItem.getFileName(), stackTraceItem.getLine(), stackTraceItem.getColumn(), stackTraceItem.getMethodName(), null));
-            }
-        } else {
-            arrayList = null;
+    public static final V9 a(Je je, EnumC0220ea enumC0220ea, Object obj) {
+        int i;
+        Field[] fields;
+        je.getClass();
+        V9 v9 = new V9();
+        switch (enumC0220ea.ordinal()) {
+            case 0:
+                i = 0;
+                break;
+            case 1:
+                i = 1;
+                break;
+            case 2:
+                i = 2;
+                break;
+            case 3:
+                i = 3;
+                break;
+            case 4:
+                i = 4;
+                break;
+            case 5:
+                i = 5;
+                break;
+            case 6:
+                i = 6;
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
         }
-        return new Qn(new Gn(exceptionClass, message, arrayList, null, null), null, null, platform, virtualMachineVersion, pluginEnvironment, str, bool);
+        v9.f806a = i;
+        Ke.b.getClass();
+        JSONObject jSONObject = new JSONObject();
+        for (Field field : obj.getClass().getFields()) {
+            try {
+                jSONObject.put(field.getName(), field.get(obj));
+            } catch (Throwable unused) {
+            }
+        }
+        v9.b = jSONObject.toString().getBytes(Charsets.UTF_8);
+        return v9;
     }
 }

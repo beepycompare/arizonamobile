@@ -1,46 +1,20 @@
 package io.appmetrica.analytics.remotepermissions.impl;
 
-import android.text.TextUtils;
-import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
-import java.util.HashSet;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import java.util.Set;
+import kotlin.collections.SetsKt;
 /* loaded from: classes5.dex */
-public final class d implements JsonParser {
+public final class d implements PermissionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1441a = "permissions";
-    public final String b = "name";
-    public final String c = "list";
-    public final String d = "enabled";
+    public Set f1423a = SetsKt.emptySet();
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
-    /* renamed from: a */
-    public final a parse(JSONObject jSONObject) {
-        JSONArray optJSONArray;
-        HashSet hashSet = new HashSet();
-        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1441a);
-        if (optJSONObject != null && (optJSONArray = optJSONObject.optJSONArray(this.c)) != null) {
-            int length = optJSONArray.length();
-            for (int i = 0; i < length; i++) {
-                JSONObject optJSONObject2 = optJSONArray.optJSONObject(i);
-                if (optJSONObject2 != null && optJSONObject2.optBoolean(this.d)) {
-                    String optString = optJSONObject2.optString(this.b);
-                    if (!TextUtils.isEmpty(optString)) {
-                        hashSet.add(optString);
-                    }
-                }
-            }
-        }
-        return new a(hashSet);
+    public final synchronized void a(Set<String> set) {
+        this.f1423a = set;
     }
 
-    public final a b(JSONObject jSONObject) {
-        return (a) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
-    public final Object parseOrNull(JSONObject jSONObject) {
-        return (a) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
+    @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
+    public final synchronized boolean forbidUsePermission(String str) {
+        return !this.f1423a.contains(str);
     }
 }

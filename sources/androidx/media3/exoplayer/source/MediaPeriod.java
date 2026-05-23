@@ -47,6 +47,10 @@ public interface MediaPeriod extends SequenceableLoader {
 
     long selectTracks(ExoTrackSelection[] exoTrackSelectionArr, boolean[] zArr, SampleStream[] sampleStreamArr, boolean[] zArr2, long j);
 
+    default long setEndPositionUs(long j) {
+        return Long.MIN_VALUE;
+    }
+
     default List<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
         return Collections.emptyList();
     }

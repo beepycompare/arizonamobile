@@ -5,10 +5,9 @@ import android.net.Uri;
 import android.widget.ImageView;
 import com.google.android.gms.common.internal.Asserts;
 import com.google.android.gms.common.internal.Objects;
-import com.google.android.gms.internal.base.zak;
-import com.google.android.gms.internal.base.zal;
+import com.google.android.gms.internal.base.zai;
 import java.lang.ref.WeakReference;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zae extends zag {
     private final WeakReference zac;
@@ -40,7 +39,7 @@ public final class zae extends zag {
     public final void zaa(Drawable drawable, boolean z, boolean z2, boolean z3) {
         ImageView imageView = (ImageView) this.zac.get();
         if (imageView != null) {
-            if (z2 || z3 || !(imageView instanceof zal)) {
+            if (z2 || z3 || !(imageView instanceof zai)) {
                 boolean z4 = false;
                 if (!z2 && !z) {
                     z4 = true;
@@ -49,23 +48,23 @@ public final class zae extends zag {
                     Drawable drawable2 = imageView.getDrawable();
                     if (drawable2 == null) {
                         drawable2 = null;
-                    } else if (drawable2 instanceof zak) {
-                        drawable2 = ((zak) drawable2).zaa();
+                    } else if (drawable2 instanceof com.google.android.gms.internal.base.zah) {
+                        drawable2 = ((com.google.android.gms.internal.base.zah) drawable2).zab();
                     }
-                    drawable = new zak(drawable2, drawable);
+                    drawable = new com.google.android.gms.internal.base.zah(drawable2, drawable);
                 }
                 imageView.setImageDrawable(drawable);
-                if (imageView instanceof zal) {
-                    zal zalVar = (zal) imageView;
+                if (imageView instanceof zai) {
+                    zai zaiVar = (zai) imageView;
                     throw null;
                 } else if (drawable == null || !z4) {
                     return;
                 } else {
-                    ((zak) drawable).zab(250);
+                    ((com.google.android.gms.internal.base.zah) drawable).zac(250);
                     return;
                 }
             }
-            zal zalVar2 = (zal) imageView;
+            zai zaiVar2 = (zai) imageView;
             throw null;
         }
     }

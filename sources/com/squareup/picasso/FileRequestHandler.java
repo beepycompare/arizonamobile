@@ -8,7 +8,7 @@ import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
 import okio.Okio;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FileRequestHandler extends ContentStreamRequestHandler {
     /* JADX INFO: Access modifiers changed from: package-private */
     public FileRequestHandler(Context context) {

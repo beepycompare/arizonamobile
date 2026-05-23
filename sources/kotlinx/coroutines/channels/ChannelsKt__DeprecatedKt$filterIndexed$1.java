@@ -9,13 +9,14 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 /* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: Deprecated.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterIndexed$1", f = "Deprecated.kt", i = {0, 0, 1, 1, 1, 2, 2}, l = {241, 242, 242}, m = "invokeSuspend", n = {"$this$produce", FirebaseAnalytics.Param.INDEX, "$this$produce", "e", FirebaseAnalytics.Param.INDEX, "$this$produce", FirebaseAnalytics.Param.INDEX}, s = {"L$0", "I$0", "L$0", "L$2", "I$0", "L$0", "I$0"})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterIndexed$1", f = "Deprecated.kt", i = {0, 0, 1, 1, 1, 2, 2, 2}, l = {241, 242, 242}, m = "invokeSuspend", n = {"$this$produce", FirebaseAnalytics.Param.INDEX, "$this$produce", "e", FirebaseAnalytics.Param.INDEX, "$this$produce", "e", FirebaseAnalytics.Param.INDEX}, s = {"L$0", "I$0", "L$0", "L$2", "I$0", "L$0", "L$2", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda implements Function2<ProducerScope<? super E>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<Integer, E, Continuation<? super Boolean>, Object> $predicate;
@@ -51,36 +52,34 @@ final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda im
         return ((ChannelsKt__DeprecatedKt$filterIndexed$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x006c, code lost:
-        if (r12 == r0) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x005d, code lost:
+        if (r11 == r1) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00b1, code lost:
-        if (r8.send(r7, r11) == r0) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00a5, code lost:
+        if (r0.send(r7, r10) == r1) goto L21;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a0  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x00b4 -> B:13:0x005b). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0090  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x008e -> B:13:0x004b). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x00a5 -> B:13:0x004b). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        ChannelIterator<E> it;
         int i;
-        ProducerScope producerScope;
-        ProducerScope producerScope2;
+        ChannelIterator<E> it;
         E e;
+        ProducerScope producerScope = (ProducerScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i2 = this.label;
         if (i2 == 0) {
             ResultKt.throwOnFailure(obj);
-            it = this.$this_filterIndexed.iterator();
             i = 0;
-            producerScope = (ProducerScope) this.L$0;
+            it = this.$this_filterIndexed.iterator();
         } else if (i2 == 1) {
             i = this.I$0;
             it = (ChannelIterator) this.L$1;
-            producerScope = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 E next = it.next();
@@ -94,13 +93,11 @@ final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda im
                 this.label = 2;
                 Object invoke = function3.invoke(boxInt, next, this);
                 if (invoke != coroutine_suspended) {
-                    producerScope2 = producerScope;
                     e = next;
                     obj = invoke;
                     i = i3;
                     if (((Boolean) obj).booleanValue()) {
                     }
-                    producerScope = producerScope2;
                 }
                 return coroutine_suspended;
             }
@@ -109,24 +106,21 @@ final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda im
             i = this.I$0;
             Object obj2 = this.L$2;
             ChannelIterator<E> channelIterator = (ChannelIterator) this.L$1;
-            producerScope2 = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
             e = obj2;
             it = channelIterator;
             if (((Boolean) obj).booleanValue()) {
-                this.L$0 = producerScope2;
+                this.L$0 = producerScope;
                 this.L$1 = it;
-                this.L$2 = null;
+                this.L$2 = SpillingKt.nullOutSpilledVariable(e);
                 this.I$0 = i;
                 this.label = 3;
             }
-            producerScope = producerScope2;
         } else if (i2 != 3) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             i = this.I$0;
             it = (ChannelIterator) this.L$1;
-            producerScope = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         this.L$0 = producerScope;

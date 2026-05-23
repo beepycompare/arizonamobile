@@ -89,4 +89,9 @@ final class CalendarItemStyle {
     public int getBottomInset() {
         return this.insets.bottom;
     }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public ShapeAppearanceModel getItemShapeAppearanceModel() {
+        return this.itemShape;
+    }
 }

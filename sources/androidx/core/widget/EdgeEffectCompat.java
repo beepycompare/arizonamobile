@@ -56,7 +56,7 @@ public final class EdgeEffectCompat {
     }
 
     public static void onPull(EdgeEffect edgeEffect, float f, float f2) {
-        Api21Impl.onPull(edgeEffect, f, f2);
+        edgeEffect.onPull(f, f2);
     }
 
     public static float onPullDistance(EdgeEffect edgeEffect, float f, float f2) {
@@ -112,17 +112,6 @@ public final class EdgeEffectCompat {
             } catch (Throwable unused) {
                 return 0.0f;
             }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static void onPull(EdgeEffect edgeEffect, float f, float f2) {
-            edgeEffect.onPull(f, f2);
         }
     }
 }

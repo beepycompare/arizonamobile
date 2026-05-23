@@ -11,12 +11,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: NextFrameEndCallbackQueue.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001:\u0001\u001aB\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0014\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003J\u0006\u0010\u0014\u001a\u00020\u0004J\u0006\u0010\u0015\u001a\u00020\u0004J\u0014\u0010\u0016\u001a\u00020\u00042\f\b\u0002\u0010\u0017\u001a\u00060\u0018j\u0002`\u0019R\u0010\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\r\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001b"}, d2 = {"Landroidx/compose/runtime/NextFrameEndCallbackQueue;", "", "onNewAwaiters", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", "isFrameOngoing", "Landroidx/compose/runtime/internal/AtomicBoolean;", "Landroidx/compose/runtime/internal/AtomicInt;", "frameEndQueue", "Landroidx/compose/runtime/internal/AwaiterQueue;", "Landroidx/compose/runtime/NextFrameEndCallbackQueue$NextFrameEndAwaiter;", "hasAwaiters", "", "getHasAwaiters", "()Z", "scheduleFrameEndCallback", "Landroidx/compose/runtime/CancellationHandle;", "action", "markFrameStarted", "markFrameComplete", FacebookDialog.COMPLETION_GESTURE_CANCEL, "cancellationException", "Ljava/util/concurrent/CancellationException;", "Lkotlinx/coroutines/CancellationException;", "NextFrameEndAwaiter", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0001\u0018\u00002\u00020\u0001:\u0001\u001aB\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0014\u0010\u0011\u001a\u00020\u00122\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003J\u0006\u0010\u0014\u001a\u00020\u0004J\u0006\u0010\u0015\u001a\u00020\u0004J\u0014\u0010\u0016\u001a\u00020\u00042\f\b\u0002\u0010\u0017\u001a\u00060\u0018j\u0002`\u0019R\u0010\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\tR\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\r\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001b"}, d2 = {"Landroidx/compose/runtime/NextFrameEndCallbackQueue;", "", "onNewAwaiters", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", "isFrameOngoing", "Landroidx/compose/runtime/internal/AtomicBoolean;", "Landroidx/compose/runtime/internal/AtomicInt;", "frameEndQueue", "Landroidx/compose/runtime/internal/AwaiterQueue;", "Landroidx/compose/runtime/NextFrameEndCallbackQueue$NextFrameEndAwaiter;", "hasAwaiters", "", "getHasAwaiters", "()Z", "scheduleFrameEndCallback", "Landroidx/compose/runtime/CancellationHandle;", "action", "markFrameStarted", "markFrameComplete", FacebookDialog.COMPLETION_GESTURE_CANCEL, "cancellationException", "Ljava/util/concurrent/CancellationException;", "Lkotlinx/coroutines/CancellationException;", "NextFrameEndAwaiter", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class NextFrameEndCallbackQueue {
     public static final int $stable = 8;
     private final Function0<Unit> onNewAwaiters;
-    private final AtomicInt isFrameOngoing = AtomicBoolean.m4177constructorimpl(false);
+    private final AtomicInt isFrameOngoing = AtomicBoolean.m4703constructorimpl(false);
     private final AwaiterQueue<NextFrameEndAwaiter> frameEndQueue = new AwaiterQueue<>();
 
     public NextFrameEndCallbackQueue(final Function0<Unit> function0) {
@@ -30,7 +30,7 @@ public final class NextFrameEndCallbackQueue {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onNewAwaiters$lambda$0(NextFrameEndCallbackQueue nextFrameEndCallbackQueue, Function0 function0) {
-        if (!AtomicBoolean.m4181getimpl(nextFrameEndCallbackQueue.isFrameOngoing)) {
+        if (!AtomicBoolean.m4707getimpl(nextFrameEndCallbackQueue.isFrameOngoing)) {
             function0.invoke();
         }
         return Unit.INSTANCE;
@@ -45,11 +45,11 @@ public final class NextFrameEndCallbackQueue {
     }
 
     public final void markFrameStarted() {
-        AtomicBoolean.m4184setimpl(this.isFrameOngoing, true);
+        AtomicBoolean.m4710setimpl(this.isFrameOngoing, true);
     }
 
     public final void markFrameComplete() {
-        AtomicBoolean.m4184setimpl(this.isFrameOngoing, false);
+        AtomicBoolean.m4710setimpl(this.isFrameOngoing, false);
         this.frameEndQueue.flushAndDispatchAwaiters(new Function1() { // from class: androidx.compose.runtime.NextFrameEndCallbackQueue$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -77,7 +77,7 @@ public final class NextFrameEndCallbackQueue {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: NextFrameEndCallbackQueue.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\u0003\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u0007\u001a\u00020\u0004H\u0016J\u0006\u0010\b\u001a\u00020\u0004J\u0010\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0016\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Landroidx/compose/runtime/NextFrameEndCallbackQueue$NextFrameEndAwaiter;", "Landroidx/compose/runtime/internal/AwaiterQueue$Awaiter;", "onNextFrameEnd", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", FacebookDialog.COMPLETION_GESTURE_CANCEL, "resume", "resumeWithException", "exception", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\u0003\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u0007\u001a\u00020\u0004H\u0016J\u0006\u0010\b\u001a\u00020\u0004J\u0010\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u000bH\u0016R\u0016\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Landroidx/compose/runtime/NextFrameEndCallbackQueue$NextFrameEndAwaiter;", "Landroidx/compose/runtime/internal/AwaiterQueue$Awaiter;", "onNextFrameEnd", "Lkotlin/Function0;", "", "<init>", "(Lkotlin/jvm/functions/Function0;)V", FacebookDialog.COMPLETION_GESTURE_CANCEL, "resume", "resumeWithException", "exception", "", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class NextFrameEndAwaiter extends AwaiterQueue.Awaiter {
         private Function0<Unit> onNextFrameEnd;

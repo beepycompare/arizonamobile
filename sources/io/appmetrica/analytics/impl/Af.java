@@ -1,20 +1,48 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.ContentValues;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Af implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(B6.class.getClassLoader());
-        return new Bf((ContentValues) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT"), (ResultReceiver) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER"));
+public final class Af implements ProtobufConverter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Pf f458a;
+
+    public Af() {
+        this(new Pf());
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new Bf[i];
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Mf fromModel(Cf cf) {
+        Mf mf = new Mf();
+        if (!StringUtils.isNullOrEmpty(cf.f496a)) {
+            mf.f663a = cf.f496a;
+        }
+        mf.b = cf.b.toString();
+        mf.c = this.f458a.fromModel(cf.c).intValue();
+        return mf;
+    }
+
+    public Af(Pf pf) {
+        this.f458a = pf;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Cf toModel(Mf mf) {
+        JSONObject jSONObject;
+        String str = mf.f663a;
+        String str2 = mf.b;
+        if (!StringUtils.isNullOrEmpty(str2)) {
+            try {
+                jSONObject = new JSONObject(str2);
+            } catch (Throwable unused) {
+            }
+            return new Cf(str, jSONObject, this.f458a.toModel(Integer.valueOf(mf.c)));
+        }
+        jSONObject = new JSONObject();
+        return new Cf(str, jSONObject, this.f458a.toModel(Integer.valueOf(mf.c)));
     }
 }

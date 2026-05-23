@@ -1,27 +1,30 @@
 package com.miami.game.feature.settings.ui.compose;
 
+import com.miami.game.feature.download.dialog.ui.connection.ConnectionData;
 import com.miami.game.feature.settings.ui.SettingsComponent;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsScreen.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
-final /* synthetic */ class SettingsScreenKt$SettingsRoute$26$1 extends FunctionReferenceImpl implements Function0<Unit> {
+/* loaded from: classes5.dex */
+final /* synthetic */ class SettingsScreenKt$SettingsRoute$26$1 extends FunctionReferenceImpl implements Function1<ConnectionData, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SettingsScreenKt$SettingsRoute$26$1(Object obj) {
-        super(0, obj, SettingsComponent.class, "closeTech", "closeTech()V", 0);
+        super(1, obj, SettingsComponent.class, "onConnectGame", "onConnectGame(Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;)V", 0);
     }
 
-    @Override // kotlin.jvm.functions.Function0
-    public /* bridge */ /* synthetic */ Unit invoke() {
-        invoke2();
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(ConnectionData connectionData) {
+        invoke2(connectionData);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2() {
-        ((SettingsComponent) this.receiver).closeTech();
+    public final void invoke2(ConnectionData p0) {
+        Intrinsics.checkNotNullParameter(p0, "p0");
+        ((SettingsComponent) this.receiver).onConnectGame(p0);
     }
 }

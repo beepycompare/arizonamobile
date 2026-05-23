@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public @interface SideEffectFree {
 }

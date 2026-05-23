@@ -34,9 +34,9 @@ public final class KeyAttributeScope extends BaseKeyFrameScope {
         this.rotationX$delegate = addOnPropertyChange(valueOf2, "rotationX");
         this.rotationY$delegate = addOnPropertyChange(valueOf2, "rotationY");
         this.rotationZ$delegate = addOnPropertyChange(valueOf2, "rotationZ");
-        this.translationX$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationX");
-        this.translationY$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationY");
-        this.translationZ$delegate = addOnPropertyChange(Dp.m7553boximpl(Dp.m7555constructorimpl(0.0f)), "translationZ");
+        this.translationX$delegate = addOnPropertyChange(Dp.m8158boximpl(Dp.m8160constructorimpl(0.0f)), "translationX");
+        this.translationY$delegate = addOnPropertyChange(Dp.m8158boximpl(Dp.m8160constructorimpl(0.0f)), "translationY");
+        this.translationZ$delegate = addOnPropertyChange(Dp.m8158boximpl(Dp.m8160constructorimpl(0.0f)), "translationZ");
     }
 
     public final float getAlpha() {
@@ -88,32 +88,32 @@ public final class KeyAttributeScope extends BaseKeyFrameScope {
     }
 
     /* renamed from: getTranslationX-D9Ej5fM  reason: not valid java name */
-    public final float m7936getTranslationXD9Ej5fM() {
-        return ((Dp) this.translationX$delegate.getValue(this, $$delegatedProperties[6])).m7569unboximpl();
+    public final float m8541getTranslationXD9Ej5fM() {
+        return ((Dp) this.translationX$delegate.getValue(this, $$delegatedProperties[6])).m8174unboximpl();
     }
 
     /* renamed from: setTranslationX-0680j_4  reason: not valid java name */
-    public final void m7939setTranslationX0680j_4(float f) {
-        this.translationX$delegate.setValue(this, $$delegatedProperties[6], Dp.m7553boximpl(f));
+    public final void m8544setTranslationX0680j_4(float f) {
+        this.translationX$delegate.setValue(this, $$delegatedProperties[6], Dp.m8158boximpl(f));
     }
 
     /* renamed from: getTranslationY-D9Ej5fM  reason: not valid java name */
-    public final float m7937getTranslationYD9Ej5fM() {
-        return ((Dp) this.translationY$delegate.getValue(this, $$delegatedProperties[7])).m7569unboximpl();
+    public final float m8542getTranslationYD9Ej5fM() {
+        return ((Dp) this.translationY$delegate.getValue(this, $$delegatedProperties[7])).m8174unboximpl();
     }
 
     /* renamed from: setTranslationY-0680j_4  reason: not valid java name */
-    public final void m7940setTranslationY0680j_4(float f) {
-        this.translationY$delegate.setValue(this, $$delegatedProperties[7], Dp.m7553boximpl(f));
+    public final void m8545setTranslationY0680j_4(float f) {
+        this.translationY$delegate.setValue(this, $$delegatedProperties[7], Dp.m8158boximpl(f));
     }
 
     /* renamed from: getTranslationZ-D9Ej5fM  reason: not valid java name */
-    public final float m7938getTranslationZD9Ej5fM() {
-        return ((Dp) this.translationZ$delegate.getValue(this, $$delegatedProperties[8])).m7569unboximpl();
+    public final float m8543getTranslationZD9Ej5fM() {
+        return ((Dp) this.translationZ$delegate.getValue(this, $$delegatedProperties[8])).m8174unboximpl();
     }
 
     /* renamed from: setTranslationZ-0680j_4  reason: not valid java name */
-    public final void m7941setTranslationZ0680j_4(float f) {
-        this.translationZ$delegate.setValue(this, $$delegatedProperties[8], Dp.m7553boximpl(f));
+    public final void m8546setTranslationZ0680j_4(float f) {
+        this.translationZ$delegate.setValue(this, $$delegatedProperties[8], Dp.m8158boximpl(f));
     }
 }

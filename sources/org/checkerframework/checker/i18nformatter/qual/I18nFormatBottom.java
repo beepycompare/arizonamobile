@@ -15,6 +15,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({I18nFormat.class, I18nInvalidFormat.class, I18nFormatFor.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface I18nFormatBottom {
 }

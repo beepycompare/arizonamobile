@@ -10,21 +10,21 @@ public final class DragHandleTokens {
     public static final int $stable = 0;
     public static final DragHandleTokens INSTANCE = new DragHandleTokens();
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.Outline;
-    private static final float ContainerWidth = Dp.m7555constructorimpl(24.0f);
+    private static final float ContainerWidth = Dp.m8160constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens DraggedColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float DraggedElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float DraggedHeight = Dp.m7555constructorimpl(52.0f);
+    private static final float DraggedElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
+    private static final float DraggedHeight = Dp.m8160constructorimpl(52.0f);
     private static final ShapeKeyTokens DraggedShape = ShapeKeyTokens.CornerMedium;
-    private static final float DraggedWidth = Dp.m7555constructorimpl(12.0f);
-    private static final float Elevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float Height = Dp.m7555constructorimpl(48.0f);
+    private static final float DraggedWidth = Dp.m8160constructorimpl(12.0f);
+    private static final float Elevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
+    private static final float Height = Dp.m8160constructorimpl(48.0f);
     private static final ColorSchemeKeyTokens PressedColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float PressedElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float PressedHeight = Dp.m7555constructorimpl(52.0f);
+    private static final float PressedElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
+    private static final float PressedHeight = Dp.m8160constructorimpl(52.0f);
     private static final ShapeKeyTokens PressedShape = ShapeKeyTokens.CornerMedium;
-    private static final float PressedWidth = Dp.m7555constructorimpl(12.0f);
+    private static final float PressedWidth = Dp.m8160constructorimpl(12.0f);
     private static final ShapeKeyTokens Shape = ShapeKeyTokens.CornerFull;
-    private static final float Width = Dp.m7555constructorimpl(4.0f);
+    private static final float Width = Dp.m8160constructorimpl(4.0f);
 
     private DragHandleTokens() {
     }
@@ -34,7 +34,7 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3337getContainerWidthD9Ej5fM() {
+    public final float m3782getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
@@ -43,12 +43,12 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getDraggedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3338getDraggedElevationD9Ej5fM() {
+    public final float m3783getDraggedElevationD9Ej5fM() {
         return DraggedElevation;
     }
 
     /* renamed from: getDraggedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3339getDraggedHeightD9Ej5fM() {
+    public final float m3784getDraggedHeightD9Ej5fM() {
         return DraggedHeight;
     }
 
@@ -57,17 +57,17 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getDraggedWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3340getDraggedWidthD9Ej5fM() {
+    public final float m3785getDraggedWidthD9Ej5fM() {
         return DraggedWidth;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3341getElevationD9Ej5fM() {
+    public final float m3786getElevationD9Ej5fM() {
         return Elevation;
     }
 
     /* renamed from: getHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3342getHeightD9Ej5fM() {
+    public final float m3787getHeightD9Ej5fM() {
         return Height;
     }
 
@@ -76,12 +76,12 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getPressedElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3343getPressedElevationD9Ej5fM() {
+    public final float m3788getPressedElevationD9Ej5fM() {
         return PressedElevation;
     }
 
     /* renamed from: getPressedHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3344getPressedHeightD9Ej5fM() {
+    public final float m3789getPressedHeightD9Ej5fM() {
         return PressedHeight;
     }
 
@@ -90,7 +90,7 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getPressedWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3345getPressedWidthD9Ej5fM() {
+    public final float m3790getPressedWidthD9Ej5fM() {
         return PressedWidth;
     }
 
@@ -99,7 +99,7 @@ public final class DragHandleTokens {
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3346getWidthD9Ej5fM() {
+    public final float m3791getWidthD9Ej5fM() {
         return Width;
     }
 }

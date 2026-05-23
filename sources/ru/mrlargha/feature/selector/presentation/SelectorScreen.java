@@ -163,7 +163,7 @@ public final class SelectorScreen extends SAMPUIElement {
         Job launch$default;
         Job job = this.timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new SelectorScreen$startTimer$1(this, null), 3, null);
         this.timerJob = launch$default;
@@ -174,7 +174,7 @@ public final class SelectorScreen extends SAMPUIElement {
         this.maxId = 0;
         Job job = this.timerJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.timerJob = null;
         this.timerCount = 0;

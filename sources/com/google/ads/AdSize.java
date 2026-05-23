@@ -2,7 +2,7 @@ package com.google.ads;
 
 import android.content.Context;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AdSize {
     public static final int AUTO_HEIGHT = -2;
     public static final int FULL_WIDTH = -1;

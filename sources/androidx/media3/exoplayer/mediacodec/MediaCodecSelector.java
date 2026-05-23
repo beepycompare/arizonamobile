@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.mediacodec;
 
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface MediaCodecSelector {
     public static final MediaCodecSelector DEFAULT = new MediaCodecSelector() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecSelector$$ExternalSyntheticLambda0
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecSelector

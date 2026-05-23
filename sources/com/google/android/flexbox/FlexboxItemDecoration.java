@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FlexboxItemDecoration extends RecyclerView.ItemDecoration {
     public static final int BOTH = 3;
     public static final int HORIZONTAL = 1;

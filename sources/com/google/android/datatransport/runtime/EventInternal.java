@@ -4,7 +4,7 @@ import com.google.android.datatransport.runtime.AutoValue_EventInternal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EventInternal {
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract Map<String, String> getAutoMetadata();
@@ -70,7 +70,7 @@ public abstract class EventInternal {
         return new AutoValue_EventInternal.Builder().setAutoMetadata(new HashMap());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract EventInternal build();
 

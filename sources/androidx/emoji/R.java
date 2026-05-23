@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
-        public static int emojiReplaceStrategy = 0x7f04022c;
-        public static int maxEmojiCount = 0x7f040460;
+        public static int emojiReplaceStrategy = 0x7f040232;
+        public static int maxEmojiCount = 0x7f040483;
 
         private attr() {
         }
@@ -14,10 +14,10 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class id {
         public static int all = 0x7f0a00d2;
-        public static int defaultStrategy = 0x7f0a0422;
-        public static int inputExtractAccessories = 0x7f0a0750;
-        public static int inputExtractAction = 0x7f0a0751;
-        public static int nonExistent = 0x7f0a0a44;
+        public static int defaultStrategy = 0x7f0a0423;
+        public static int inputExtractAccessories = 0x7f0a0752;
+        public static int inputExtractAction = 0x7f0a0753;
+        public static int nonExistent = 0x7f0a0a4a;
 
         private id() {
         }

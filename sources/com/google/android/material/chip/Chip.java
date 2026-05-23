@@ -34,6 +34,7 @@ import androidx.customview.widget.ExploreByTouchHelper;
 import com.google.android.material.R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.chip.ChipDrawable;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.MaterialCheckable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.navigation.NavigationBarView;
@@ -45,7 +46,7 @@ import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-import io.appmetrica.analytics.impl.C0739z2;
+import io.appmetrica.analytics.impl.M2;
 import java.util.List;
 /* loaded from: classes4.dex */
 public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Shapeable, MaterialCheckable<Chip> {
@@ -143,14 +144,14 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         super.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.google.android.material.chip.Chip$$ExternalSyntheticLambda0
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                Chip.this.m8857lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
+                Chip.this.m9472lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-chip-Chip  reason: not valid java name */
-    public /* synthetic */ void m8857lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
+    public /* synthetic */ void m9472lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
         MaterialCheckable.OnCheckedChangeListener<Chip> onCheckedChangeListener = this.onCheckedChangeListenerInternal;
         if (onCheckedChangeListener != null) {
             onCheckedChangeListener.onCheckedChanged(this, z);
@@ -234,7 +235,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         if (attributeSet == null) {
             return;
         }
-        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, C0739z2.g) != null) {
+        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, M2.g) != null) {
             Log.w(TAG, "Do not set the background; Chip manages its own background drawable.");
         }
         if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, "drawableLeft") != null) {
@@ -295,7 +296,9 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     }
 
     private void updateFrameworkRippleBackground() {
-        this.ripple = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.chipDrawable.getRippleColor()), getBackgroundDrawable(), null);
+        RippleDrawable rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(this.chipDrawable.getRippleColor()), getBackgroundDrawable(), null);
+        FocusRingDrawable.layer(getContext(), rippleDrawable, this.chipDrawable);
+        this.ripple = rippleDrawable;
         this.chipDrawable.setUseCompatRipple(false);
         setBackground(this.ripple);
         updatePaddingInternal();
@@ -652,7 +655,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     private int[] createCloseIconDrawableState() {
         ?? isEnabled = isEnabled();
         int i = isEnabled;
@@ -1034,6 +1037,27 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             chipDrawable.setTextSize(TypedValue.applyDimension(i, f, getResources().getDisplayMetrics()));
         }
         updateTextPaintDrawState();
+    }
+
+    @Override // android.widget.TextView
+    public String getFontVariationSettings() {
+        ChipDrawable chipDrawable = this.chipDrawable;
+        if (chipDrawable != null) {
+            return chipDrawable.getFontVariationSettings();
+        }
+        return super.getFontVariationSettings();
+    }
+
+    @Override // android.widget.TextView
+    public boolean setFontVariationSettings(String str) {
+        super.setFontVariationSettings(str);
+        ChipDrawable chipDrawable = this.chipDrawable;
+        if (chipDrawable != null) {
+            chipDrawable.setFontVariationSettings(str);
+            updateTextPaintDrawState();
+            return true;
+        }
+        return false;
     }
 
     private void updateTextPaintDrawState() {

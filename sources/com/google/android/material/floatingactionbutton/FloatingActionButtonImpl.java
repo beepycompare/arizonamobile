@@ -30,6 +30,7 @@ import com.google.android.material.animation.AnimatorSetCompat;
 import com.google.android.material.animation.ImageMatrixProperty;
 import com.google.android.material.animation.MatrixEvaluator;
 import com.google.android.material.animation.MotionSpec;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.ripple.RippleUtils;
 import com.google.android.material.shadow.ShadowViewDelegate;
@@ -137,6 +138,7 @@ public class FloatingActionButtonImpl {
         }
         RippleDrawable rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(colorStateList2), drawable, null);
         this.rippleDrawable = rippleDrawable;
+        FocusRingDrawable.layer(this.view.getContext(), rippleDrawable, this.shapeDrawable);
         this.contentBackground = rippleDrawable;
     }
 
@@ -578,7 +580,7 @@ public class FloatingActionButtonImpl {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.floatingactionbutton.FloatingActionButtonImpl$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FloatingActionButtonImpl.this.m8906x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
+                FloatingActionButtonImpl.this.m9523x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
             }
         });
         arrayList.add(ofFloat);
@@ -590,7 +592,7 @@ public class FloatingActionButtonImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createDefaultAnimator$0$com-google-android-material-floatingactionbutton-FloatingActionButtonImpl  reason: not valid java name */
-    public /* synthetic */ void m8906x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9523x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.view.setAlpha(AnimationUtils.lerp(f, f2, 0.0f, 0.2f, floatValue));
         this.view.setScaleX(AnimationUtils.lerp(f3, f4, floatValue));

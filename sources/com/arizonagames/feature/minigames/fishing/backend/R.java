@@ -21,15 +21,15 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int accept_mask = 0x7f0a001e;
-        public static int description = 0x7f0a0432;
-        public static int exit_button = 0x7f0a051d;
-        public static int fishing_item = 0x7f0a0586;
-        public static int fishing_layout = 0x7f0a0587;
-        public static int fishing_rc = 0x7f0a0588;
-        public static int item_img = 0x7f0a0778;
-        public static int left_line = 0x7f0a0865;
-        public static int main_title = 0x7f0a08e9;
-        public static int rc_container = 0x7f0a0b7c;
+        public static int description = 0x7f0a0433;
+        public static int exit_button = 0x7f0a051e;
+        public static int fishing_item = 0x7f0a0587;
+        public static int fishing_layout = 0x7f0a0588;
+        public static int fishing_rc = 0x7f0a0589;
+        public static int item_img = 0x7f0a077a;
+        public static int left_line = 0x7f0a0867;
+        public static int main_title = 0x7f0a08eb;
+        public static int rc_container = 0x7f0a0b85;
 
         private id() {
         }

@@ -6,14 +6,14 @@ import com.google.android.gms.common.api.Api.AnyClient;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class RegistrationMethods<A extends Api.AnyClient, L> {
     public final RegisterListenerMethod<A, L> register;
     public final UnregisterListenerMethod zaa;
     public final Runnable zab;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class Builder<A extends Api.AnyClient, L> {
         private RemoteCall zaa;
@@ -21,20 +21,20 @@ public class RegistrationMethods<A extends Api.AnyClient, L> {
         private ListenerHolder zad;
         private Feature[] zae;
         private int zag;
-        private Runnable zac = zacj.zaa;
+        private Runnable zac = zacg.zaa;
         private boolean zaf = true;
 
         private Builder() {
         }
 
-        /* synthetic */ Builder(zacm zacmVar) {
+        /* synthetic */ Builder(byte[] bArr) {
         }
 
         public RegistrationMethods<A, L> build() {
             Preconditions.checkArgument(this.zaa != null, "Must set register function");
             Preconditions.checkArgument(this.zab != null, "Must set unregister function");
             Preconditions.checkArgument(this.zad != null, "Must set holder");
-            return new RegistrationMethods<>(new zack(this, this.zad, this.zae, this.zaf, this.zag), new zacl(this, (ListenerHolder.ListenerKey) Preconditions.checkNotNull(this.zad.getListenerKey(), "Key must not be null")), this.zac, null);
+            return new RegistrationMethods<>(new zace(this, this.zad, this.zae, this.zaf, this.zag), new zacf(this, (ListenerHolder.ListenerKey) Preconditions.checkNotNull(this.zad.getListenerKey(), "Key must not be null")), this.zac, null);
         }
 
         public Builder<A, L> onConnectionSuspended(Runnable runnable) {
@@ -71,9 +71,19 @@ public class RegistrationMethods<A extends Api.AnyClient, L> {
             this.zad = listenerHolder;
             return this;
         }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public final /* synthetic */ RemoteCall zaa() {
+            return this.zaa;
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public final /* synthetic */ RemoteCall zab() {
+            return this.zab;
+        }
     }
 
-    /* synthetic */ RegistrationMethods(RegisterListenerMethod registerListenerMethod, UnregisterListenerMethod unregisterListenerMethod, Runnable runnable, zacn zacnVar) {
+    /* synthetic */ RegistrationMethods(RegisterListenerMethod registerListenerMethod, UnregisterListenerMethod unregisterListenerMethod, Runnable runnable, byte[] bArr) {
         this.register = registerListenerMethod;
         this.zaa = unregisterListenerMethod;
         this.zab = runnable;

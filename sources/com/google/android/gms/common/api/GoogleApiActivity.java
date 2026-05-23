@@ -15,7 +15,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.internal.GoogleApiManager;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     protected int zaa = 0;
@@ -51,13 +51,18 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                     e = e;
                     ActivityNotFoundException activityNotFoundException = e;
                     if (!extras.getBoolean("notify_manager", true)) {
-                        String str = "Activity not found while launching " + pendingIntent.toString() + ".";
+                        String obj = pendingIntent.toString();
+                        StringBuilder sb = new StringBuilder(obj.length() + 36);
+                        sb.append("Activity not found while launching ");
+                        sb.append(obj);
+                        sb.append(".");
+                        String sb2 = sb.toString();
                         if (Build.FINGERPRINT.contains("generic")) {
-                            str = str.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                            sb2 = sb2.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                         }
-                        Log.e("GoogleApiActivity", str, activityNotFoundException);
+                        Log.e("GoogleApiActivity", sb2, activityNotFoundException);
                     } else {
-                        GoogleApiManager.zak(googleApiActivity).zax(new ConnectionResult(22, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
+                        GoogleApiManager.zaa(googleApiActivity).zaq(new ConnectionResult(22, null), googleApiActivity.getIntent().getIntExtra("failing_client_id", -1));
                     }
                     googleApiActivity.zaa = 1;
                     googleApiActivity.finish();
@@ -87,11 +92,11 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             this.zaa = 0;
             setResult(i2, intent);
             if (booleanExtra) {
-                GoogleApiManager zak = GoogleApiManager.zak(this);
+                GoogleApiManager zaa = GoogleApiManager.zaa(this);
                 if (i2 == -1) {
-                    zak.zay();
+                    zaa.zai();
                 } else if (i2 == 0) {
-                    zak.zax(new ConnectionResult(13, null), getIntent().getIntExtra("failing_client_id", -1));
+                    zaa.zaq(new ConnectionResult(13, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
         } else if (i == 2) {

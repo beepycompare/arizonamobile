@@ -1,63 +1,32 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Handler;
-import com.google.android.gms.common.internal.Preconditions;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public abstract class zzay {
-    private static volatile Handler zzb;
-    private final zzjg zza;
-    private final Runnable zzc;
-    private volatile long zzd;
+final class zzay implements Runnable {
+    final /* synthetic */ zzjg zza;
+    final /* synthetic */ zzaz zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzay(zzjg zzjgVar) {
-        Preconditions.checkNotNull(zzjgVar);
+    public zzay(zzaz zzazVar, zzjg zzjgVar) {
         this.zza = zzjgVar;
-        this.zzc = new zzax(this, zzjgVar);
+        Objects.requireNonNull(zzazVar);
+        this.zzb = zzazVar;
     }
 
-    private final Handler zzf() {
-        Handler handler;
-        if (zzb != null) {
-            return zzb;
+    @Override // java.lang.Runnable
+    public final void run() {
+        zzjg zzjgVar = this.zza;
+        zzjgVar.zzaV();
+        if (zzae.zza()) {
+            zzjgVar.zzaX().zzj(this);
+            return;
         }
-        synchronized (zzay.class) {
-            if (zzb == null) {
-                zzb = new com.google.android.gms.internal.measurement.zzcn(this.zza.zzaY().getMainLooper());
-            }
-            handler = zzb;
+        zzaz zzazVar = this.zzb;
+        boolean zzc = zzazVar.zzc();
+        zzazVar.zze(0L);
+        if (zzc) {
+            zzazVar.zza();
         }
-        return handler;
-    }
-
-    public abstract void zza();
-
-    public final void zzb(long j) {
-        zzd();
-        if (j >= 0) {
-            zzjg zzjgVar = this.zza;
-            this.zzd = zzjgVar.zzaZ().currentTimeMillis();
-            if (zzf().postDelayed(this.zzc, j)) {
-                return;
-            }
-            zzjgVar.zzaV().zzb().zzb("Failed to schedule delayed post. time", Long.valueOf(j));
-        }
-    }
-
-    public final boolean zzc() {
-        return this.zzd != 0;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzd() {
-        this.zzd = 0L;
-        zzf().removeCallbacks(this.zzc);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zze(long j) {
-        this.zzd = 0L;
     }
 }

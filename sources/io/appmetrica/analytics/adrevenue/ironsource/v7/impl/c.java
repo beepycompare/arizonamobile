@@ -14,17 +14,17 @@ import java.util.Currency;
 public final class c implements ImpressionDataListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f302a;
+    public final ClientContext f229a;
     public final b b = new b();
 
     public c(ClientContext clientContext) {
-        this.f302a = clientContext;
+        this.f229a = clientContext;
     }
 
     public final void onImpressionSuccess(ImpressionData impressionData) {
         ModuleAdType moduleAdType;
         if (impressionData != null) {
-            InternalClientModuleFacade internalClientModuleFacade = this.f302a.getInternalClientModuleFacade();
+            InternalClientModuleFacade internalClientModuleFacade = this.f229a.getInternalClientModuleFacade();
             this.b.getClass();
             String adUnit = impressionData.getAdUnit();
             BigDecimal valueOf = BigDecimal.valueOf(WrapUtils.getFiniteDoubleOrDefault(impressionData.getRevenue().doubleValue(), FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE));

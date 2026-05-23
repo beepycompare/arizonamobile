@@ -65,18 +65,18 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0047, code lost:
         if (r8 == r1) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x008a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x007e, code lost:
         if (r8.updateSettings(r0) == r1) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x008c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0080, code lost:
         return r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x006a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,17 +94,15 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     FirebaseSessionsDependencies firebaseSessionsDependencies = FirebaseSessionsDependencies.INSTANCE;
-                    sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
                     sessionFirelogPublisherImpl$shouldLogSession$1.label = 1;
                     obj = firebaseSessionsDependencies.getRegisteredSubscribers$com_google_firebase_firebase_sessions(sessionFirelogPublisherImpl$shouldLogSession$1);
                 } else if (i != 1) {
                     if (i == 2) {
-                        this = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         if (!this.sessionSettings.getSessionsEnabled()) {
                             Log.d(FirebaseSessions.TAG, "Sessions SDK disabled through settings API. Events will not be sent.");
                             return Boxing.boxBoolean(false);
-                        } else if (!this.shouldCollectEvents()) {
+                        } else if (!shouldCollectEvents()) {
                             Log.d(FirebaseSessions.TAG, "Sessions SDK has dropped this session due to sampling.");
                             return Boxing.boxBoolean(false);
                         } else {
@@ -113,7 +111,6 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    this = (SessionFirelogPublisherImpl) sessionFirelogPublisherImpl$shouldLogSession$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 values = ((Map) obj).values();
@@ -121,7 +118,6 @@ public final class SessionFirelogPublisherImpl implements SessionFirelogPublishe
                     for (SessionSubscriber sessionSubscriber : values) {
                         if (sessionSubscriber.isDataCollectionEnabled()) {
                             SessionsSettings sessionsSettings = this.sessionSettings;
-                            sessionFirelogPublisherImpl$shouldLogSession$1.L$0 = this;
                             sessionFirelogPublisherImpl$shouldLogSession$1.label = 2;
                         }
                     }

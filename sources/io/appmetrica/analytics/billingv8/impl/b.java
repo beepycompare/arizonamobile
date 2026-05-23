@@ -10,14 +10,14 @@ import io.appmetrica.analytics.billingv8.internal.BillingLibraryMonitor$updateBi
 public final class b implements BillingClientStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BillingConfig f357a;
+    public final BillingConfig f303a;
     public final BillingClient b;
     public final UtilsProvider c;
     public final d d;
     public final n e;
 
     public b(BillingConfig billingConfig, BillingClient billingClient, BillingLibraryMonitor$updateBilling$1 billingLibraryMonitor$updateBilling$1, d dVar, n nVar) {
-        this.f357a = billingConfig;
+        this.f303a = billingConfig;
         this.b = billingClient;
         this.c = billingLibraryMonitor$updateBilling$1;
         this.d = dVar;

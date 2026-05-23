@@ -98,6 +98,10 @@ public final class Tracks {
             return this.mediaTrackGroup.type;
         }
 
+        public Group copyWithMediaTrackGroup(TrackGroup trackGroup) {
+            return new Group(trackGroup, this.adaptiveSupported, this.trackSupport, this.trackSelected);
+        }
+
         public Group copyWithId(String str) {
             return new Group(this.mediaTrackGroup.copyWithId(str), this.adaptiveSupported, this.trackSupport, this.trackSelected);
         }

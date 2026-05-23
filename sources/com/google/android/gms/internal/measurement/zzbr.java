@@ -1,5 +1,12 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.os.IBinder;
+import android.os.IInterface;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzbr {
+public abstract class zzbr extends zzbm implements zzbs {
+    public static zzbs zzb(IBinder iBinder) {
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.finsky.externalreferrer.IGetInstallReferrerService");
+        return queryLocalInterface instanceof zzbs ? (zzbs) queryLocalInterface : new zzbq(iBinder);
+    }
 }

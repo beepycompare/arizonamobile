@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyGridDslKt$itemsIndexed$9 implements Function1<Integer, Object> {
     final /* synthetic */ Function2<Integer, T, Object> $contentType;

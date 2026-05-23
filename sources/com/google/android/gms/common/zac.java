@@ -1,33 +1,21 @@
 package com.google.android.gms.common;
 
-import android.app.Activity;
-import android.app.PendingIntent;
-import android.content.DialogInterface;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.IntentSenderRequest;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.Map;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zac implements DialogInterface.OnClickListener {
-    final /* synthetic */ Activity zaa;
-    final /* synthetic */ int zab;
-    final /* synthetic */ ActivityResultLauncher zac;
-    final /* synthetic */ GoogleApiAvailability zad;
+final /* synthetic */ class zac implements SuccessContinuation {
+    static final /* synthetic */ zac zaa = new zac();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zac(GoogleApiAvailability googleApiAvailability, Activity activity, int i, ActivityResultLauncher activityResultLauncher) {
-        this.zad = googleApiAvailability;
-        this.zaa = activity;
-        this.zab = i;
-        this.zac = activityResultLauncher;
+    private /* synthetic */ zac() {
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        dialogInterface.dismiss();
-        PendingIntent errorResolutionPendingIntent = this.zad.getErrorResolutionPendingIntent(this.zaa, this.zab, 0);
-        if (errorResolutionPendingIntent == null) {
-            return;
-        }
-        this.zac.launch(new IntentSenderRequest.Builder(errorResolutionPendingIntent.getIntentSender()).build());
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public final /* synthetic */ Task then(Object obj) {
+        Map map = (Map) obj;
+        int i = GoogleApiAvailability.GOOGLE_PLAY_SERVICES_VERSION_CODE;
+        return Tasks.forResult(null);
     }
 }

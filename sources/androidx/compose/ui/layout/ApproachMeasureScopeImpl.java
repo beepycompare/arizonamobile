@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ApproachMeasureScope.kt */
-@Metadata(d1 = {"\u0000ª\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0017\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\f\u0010\u001d\u001a\u00020\u001e*\u00020\u001eH\u0016J`\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020&2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020&0)2\u0019\u0010+\u001a\u0015\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0018\u00010,¢\u0006\u0002\b/2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020.0,¢\u0006\u0002\b/H\u0016JF\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020&2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020&0)2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020.0,¢\u0006\u0002\b/H\u0096\u0001J\u0014\u00102\u001a\u00020&*\u000203H\u0097\u0001¢\u0006\u0004\b4\u00105J\u0014\u00102\u001a\u00020&*\u000206H\u0097\u0001¢\u0006\u0004\b7\u00108J\u0014\u00109\u001a\u000203*\u00020&H\u0097\u0001¢\u0006\u0004\b:\u0010;J\u0014\u00109\u001a\u000203*\u00020<H\u0097\u0001¢\u0006\u0004\b:\u0010=J\u0014\u00109\u001a\u000203*\u000206H\u0097\u0001¢\u0006\u0004\b>\u0010?J\u0014\u0010@\u001a\u00020A*\u00020BH\u0097\u0001¢\u0006\u0004\bC\u0010DJ\u0014\u0010E\u001a\u00020<*\u000203H\u0097\u0001¢\u0006\u0004\bF\u0010=J\u0014\u0010E\u001a\u00020<*\u000206H\u0097\u0001¢\u0006\u0004\bG\u0010?J\r\u0010H\u001a\u00020I*\u00020JH\u0097\u0001J\u0014\u0010K\u001a\u00020B*\u00020AH\u0097\u0001¢\u0006\u0004\bL\u0010DJ\u0014\u0010M\u001a\u000206*\u00020&H\u0097\u0001¢\u0006\u0004\bN\u0010OJ\u0014\u0010M\u001a\u000206*\u00020<H\u0097\u0001¢\u0006\u0004\bN\u0010PJ\u0014\u0010M\u001a\u000206*\u000203H\u0097\u0001¢\u0006\u0004\bQ\u0010PR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0013R\u001a\u0010\u0017\u001a\u00020\u0018X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u0018\u0010\u001f\u001a\u00020\u001e*\u00020 8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0014\u00101\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u0010\u001aR\u0014\u0010R\u001a\u00020<8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bS\u0010TR\u0014\u0010U\u001a\u00020<8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bV\u0010TR\u0012\u0010W\u001a\u00020XX\u0096\u0005¢\u0006\u0006\u001a\u0004\bY\u0010Z¨\u0006["}, d2 = {"Landroidx/compose/ui/layout/ApproachMeasureScopeImpl;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/LookaheadScope;", "coordinator", "Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "approachNode", "Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "<init>", "(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;Landroidx/compose/ui/layout/ApproachLayoutModifierNode;)V", "getCoordinator", "()Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "getApproachNode", "()Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "setApproachNode", "(Landroidx/compose/ui/layout/ApproachLayoutModifierNode;)V", "lookaheadConstraints", "Landroidx/compose/ui/unit/Constraints;", "getLookaheadConstraints-msEJaDk", "()J", "lookaheadSize", "Landroidx/compose/ui/unit/IntSize;", "getLookaheadSize-YbymL2g", "approachMeasureRequired", "", "getApproachMeasureRequired$ui", "()Z", "setApproachMeasureRequired$ui", "(Z)V", "toLookaheadCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadScopeCoordinates", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getLookaheadScopeCoordinates", "(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;", "layout", "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "rulers", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/RulerScope;", "", "Lkotlin/ExtensionFunctionType;", "placementBlock", "isLookingAhead", "roundToPx", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "fontScale", "getFontScale", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ª\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003B\u0017\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\f\u0010\u001d\u001a\u00020\u001e*\u00020\u001eH\u0016J`\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020&2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020&0)2\u0019\u0010+\u001a\u0015\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0018\u00010,¢\u0006\u0002\b/2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020.0,¢\u0006\u0002\b/H\u0016JF\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020&2\u0012\u0010(\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020&0)2\u0017\u00100\u001a\u0013\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020.0,¢\u0006\u0002\b/H\u0096\u0001J\u0014\u00102\u001a\u00020&*\u000203H\u0097\u0001¢\u0006\u0004\b4\u00105J\u0014\u00102\u001a\u00020&*\u000206H\u0097\u0001¢\u0006\u0004\b7\u00108J\u0014\u00109\u001a\u000203*\u00020&H\u0097\u0001¢\u0006\u0004\b:\u0010;J\u0014\u00109\u001a\u000203*\u00020<H\u0097\u0001¢\u0006\u0004\b:\u0010=J\u0014\u00109\u001a\u000203*\u000206H\u0097\u0001¢\u0006\u0004\b>\u0010?J\u0014\u0010@\u001a\u00020A*\u00020BH\u0097\u0001¢\u0006\u0004\bC\u0010DJ\u0014\u0010E\u001a\u00020<*\u000203H\u0097\u0001¢\u0006\u0004\bF\u0010=J\u0014\u0010E\u001a\u00020<*\u000206H\u0097\u0001¢\u0006\u0004\bG\u0010?J\r\u0010H\u001a\u00020I*\u00020JH\u0097\u0001J\u0014\u0010K\u001a\u00020B*\u00020AH\u0097\u0001¢\u0006\u0004\bL\u0010DJ\u0014\u0010M\u001a\u000206*\u00020&H\u0097\u0001¢\u0006\u0004\bN\u0010OJ\u0014\u0010M\u001a\u000206*\u00020<H\u0097\u0001¢\u0006\u0004\bN\u0010PJ\u0014\u0010M\u001a\u000206*\u000203H\u0097\u0001¢\u0006\u0004\bQ\u0010PR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001a\u0010\u0006\u001a\u00020\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u00118VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u00158VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0013R\u001a\u0010\u0017\u001a\u00020\u0018X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR\u0018\u0010\u001f\u001a\u00020\u001e*\u00020 8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0014\u00101\u001a\u00020\u00188VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u0010\u001aR\u0014\u0010R\u001a\u00020<8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bS\u0010TR\u0014\u0010U\u001a\u00020<8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\bV\u0010TR\u0012\u0010W\u001a\u00020XX\u0096\u0005¢\u0006\u0006\u001a\u0004\bY\u0010Z¨\u0006["}, d2 = {"Landroidx/compose/ui/layout/ApproachMeasureScopeImpl;", "Landroidx/compose/ui/layout/ApproachMeasureScope;", "Landroidx/compose/ui/layout/MeasureScope;", "Landroidx/compose/ui/layout/LookaheadScope;", "coordinator", "Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "approachNode", "Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "<init>", "(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;Landroidx/compose/ui/layout/ApproachLayoutModifierNode;)V", "getCoordinator", "()Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "getApproachNode", "()Landroidx/compose/ui/layout/ApproachLayoutModifierNode;", "setApproachNode", "(Landroidx/compose/ui/layout/ApproachLayoutModifierNode;)V", "lookaheadConstraints", "Landroidx/compose/ui/unit/Constraints;", "getLookaheadConstraints-msEJaDk", "()J", "lookaheadSize", "Landroidx/compose/ui/unit/IntSize;", "getLookaheadSize-YbymL2g", "approachMeasureRequired", "", "getApproachMeasureRequired$ui", "()Z", "setApproachMeasureRequired$ui", "(Z)V", "toLookaheadCoordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "lookaheadScopeCoordinates", "Landroidx/compose/ui/layout/Placeable$PlacementScope;", "getLookaheadScopeCoordinates", "(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;", "layout", "Landroidx/compose/ui/layout/MeasureResult;", "width", "", "height", "alignmentLines", "", "Landroidx/compose/ui/layout/AlignmentLine;", "rulers", "Lkotlin/Function1;", "Landroidx/compose/ui/layout/RulerScope;", "", "Lkotlin/ExtensionFunctionType;", "placementBlock", "isLookingAhead", "roundToPx", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "density", "getDensity", "()F", "fontScale", "getFontScale", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ApproachMeasureScopeImpl implements ApproachMeasureScope, MeasureScope, LookaheadScope {
     public static final int $stable = 0;
@@ -53,50 +53,50 @@ public final class ApproachMeasureScopeImpl implements ApproachMeasureScope, Mea
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx--R2X_6o */
-    public int mo398roundToPxR2X_6o(long j) {
-        return this.coordinator.mo398roundToPxR2X_6o(j);
+    public int mo427roundToPxR2X_6o(long j) {
+        return this.coordinator.mo427roundToPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx-0680j_4 */
-    public int mo399roundToPx0680j_4(float f) {
-        return this.coordinator.mo399roundToPx0680j_4(f);
+    public int mo428roundToPx0680j_4(float f) {
+        return this.coordinator.mo428roundToPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo400toDpGaN1DYA(long j) {
-        return this.coordinator.mo400toDpGaN1DYA(j);
+    public float mo429toDpGaN1DYA(long j) {
+        return this.coordinator.mo429toDpGaN1DYA(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo401toDpu2uoSUM(float f) {
-        return this.coordinator.mo401toDpu2uoSUM(f);
+    public float mo430toDpu2uoSUM(float f) {
+        return this.coordinator.mo430toDpu2uoSUM(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo402toDpu2uoSUM(int i) {
-        return this.coordinator.mo402toDpu2uoSUM(i);
+    public float mo431toDpu2uoSUM(int i) {
+        return this.coordinator.mo431toDpu2uoSUM(i);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDpSize-k-rfVVM */
-    public long mo403toDpSizekrfVVM(long j) {
-        return this.coordinator.mo403toDpSizekrfVVM(j);
+    public long mo432toDpSizekrfVVM(long j) {
+        return this.coordinator.mo432toDpSizekrfVVM(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx--R2X_6o */
-    public float mo404toPxR2X_6o(long j) {
-        return this.coordinator.mo404toPxR2X_6o(j);
+    public float mo433toPxR2X_6o(long j) {
+        return this.coordinator.mo433toPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx-0680j_4 */
-    public float mo405toPx0680j_4(float f) {
-        return this.coordinator.mo405toPx0680j_4(f);
+    public float mo434toPx0680j_4(float f) {
+        return this.coordinator.mo434toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -106,26 +106,26 @@ public final class ApproachMeasureScopeImpl implements ApproachMeasureScope, Mea
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSize-XkaWNTQ */
-    public long mo406toSizeXkaWNTQ(long j) {
-        return this.coordinator.mo406toSizeXkaWNTQ(j);
+    public long mo435toSizeXkaWNTQ(long j) {
+        return this.coordinator.mo435toSizeXkaWNTQ(j);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo407toSp0xMU5do(float f) {
-        return this.coordinator.mo407toSp0xMU5do(f);
+    public long mo436toSp0xMU5do(float f) {
+        return this.coordinator.mo436toSp0xMU5do(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo408toSpkPz2Gy4(float f) {
-        return this.coordinator.mo408toSpkPz2Gy4(f);
+    public long mo437toSpkPz2Gy4(float f) {
+        return this.coordinator.mo437toSpkPz2Gy4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo409toSpkPz2Gy4(int i) {
-        return this.coordinator.mo409toSpkPz2Gy4(i);
+    public long mo438toSpkPz2Gy4(int i) {
+        return this.coordinator.mo438toSpkPz2Gy4(i);
     }
 
     public ApproachMeasureScopeImpl(LayoutModifierNodeCoordinator layoutModifierNodeCoordinator, ApproachLayoutModifierNode approachLayoutModifierNode) {
@@ -147,22 +147,22 @@ public final class ApproachMeasureScopeImpl implements ApproachMeasureScope, Mea
 
     @Override // androidx.compose.ui.layout.ApproachIntrinsicMeasureScope
     /* renamed from: getLookaheadConstraints-msEJaDk */
-    public long mo6193getLookaheadConstraintsmsEJaDk() {
-        Constraints m6435getLookaheadConstraintsDWUhwKw$ui = this.coordinator.m6435getLookaheadConstraintsDWUhwKw$ui();
-        if (m6435getLookaheadConstraintsDWUhwKw$ui == null) {
+    public long mo6795getLookaheadConstraintsmsEJaDk() {
+        Constraints m7038getLookaheadConstraintsDWUhwKw$ui = this.coordinator.m7038getLookaheadConstraintsDWUhwKw$ui();
+        if (m7038getLookaheadConstraintsDWUhwKw$ui == null) {
             InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("Error: Lookahead constraints requested before lookahead measure.");
             throw new KotlinNothingValueException();
         }
-        return m6435getLookaheadConstraintsDWUhwKw$ui.m7514unboximpl();
+        return m7038getLookaheadConstraintsDWUhwKw$ui.m8119unboximpl();
     }
 
     @Override // androidx.compose.ui.layout.ApproachIntrinsicMeasureScope
     /* renamed from: getLookaheadSize-YbymL2g */
-    public long mo6194getLookaheadSizeYbymL2g() {
+    public long mo6796getLookaheadSizeYbymL2g() {
         LookaheadDelegate lookaheadDelegate = this.coordinator.getLookaheadDelegate();
         Intrinsics.checkNotNull(lookaheadDelegate);
         MeasureResult measureResult$ui = lookaheadDelegate.getMeasureResult$ui();
-        return IntSize.m7721constructorimpl((measureResult$ui.getWidth() << 32) | (measureResult$ui.getHeight() & 4294967295L));
+        return IntSize.m8326constructorimpl((measureResult$ui.getWidth() << 32) | (measureResult$ui.getHeight() & 4294967295L));
     }
 
     public final boolean getApproachMeasureRequired$ui() {

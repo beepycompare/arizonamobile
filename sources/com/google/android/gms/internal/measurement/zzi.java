@@ -3,7 +3,7 @@ package com.google.android.gms.internal.measurement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzi {
     public static zzao zza(Object obj) {
@@ -53,23 +53,23 @@ public final class zzi {
         if (zzjeVar == null) {
             return zzao.zzf;
         }
-        int zzj = zzjeVar.zzj() - 1;
-        if (zzj == 1) {
+        int zzk = zzjeVar.zzk() - 1;
+        if (zzk == 1) {
             if (zzjeVar.zzc()) {
                 return new zzas(zzjeVar.zzd());
             }
             return zzao.zzm;
-        } else if (zzj == 2) {
-            if (zzjeVar.zzg()) {
-                return new zzah(Double.valueOf(zzjeVar.zzh()));
+        } else if (zzk == 2) {
+            if (zzjeVar.zzh()) {
+                return new zzah(Double.valueOf(zzjeVar.zzi()));
             }
             return new zzah(null);
-        } else if (zzj == 3) {
+        } else if (zzk == 3) {
             if (zzjeVar.zze()) {
                 return new zzaf(Boolean.valueOf(zzjeVar.zzf()));
             }
             return new zzaf(null);
-        } else if (zzj == 4) {
+        } else if (zzk == 4) {
             List<zzje> zza = zzjeVar.zza();
             ArrayList arrayList = new ArrayList();
             for (zzje zzjeVar2 : zza) {

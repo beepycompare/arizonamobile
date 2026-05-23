@@ -1,147 +1,60 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.common.base.Ascii;
-import java.util.Arrays;
-import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zznv extends zzku implements RandomAccess {
-    private static final Object[] zza;
-    private static final zznv zzb;
-    private Object[] zzc;
-    private int zzd;
+public final class zznv extends zzqo {
+    private final zznd zza;
+    private final zzqr zzb;
 
-    static {
-        Object[] objArr = new Object[0];
-        zza = objArr;
-        zzb = new zznv(objArr, 0, false);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zznv(zznd zzndVar, zzqr zzqrVar) {
+        this.zza = zzndVar;
+        this.zzb = zzqrVar;
     }
 
-    zznv() {
-        this(zza, 0, true);
-    }
-
-    public static zznv zzd() {
-        return zzb;
-    }
-
-    private static int zzf(int i) {
-        return Math.max(((i * 3) / 2) + 1, 10);
-    }
-
-    private final void zzh(int i) {
-        if (i < 0 || i >= this.zzd) {
-            throw new IndexOutOfBoundsException(zzi(i));
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-    }
-
-    private final String zzi(int i) {
-        return zzkw.zza(this.zzd, i, Ascii.CR, "Index:", ", Size:");
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzku, java.util.AbstractList, java.util.List
-    public final void add(int i, Object obj) {
-        int i2;
-        zzcF();
-        if (i < 0 || i > (i2 = this.zzd)) {
-            throw new IndexOutOfBoundsException(zzi(i));
+        if (obj instanceof zzqo) {
+            zzqo zzqoVar = (zzqo) obj;
+            zznd zzndVar = this.zza;
+            if (zzndVar != null ? zzndVar.equals(zzqoVar.zza()) : zzqoVar.zza() == null) {
+                if (this.zzb.equals(zzqoVar.zzb())) {
+                    return true;
+                }
+            }
         }
-        int i3 = i + 1;
-        Object[] objArr = this.zzc;
-        int length = objArr.length;
-        if (i2 < length) {
-            System.arraycopy(objArr, i, objArr, i3, i2 - i);
-        } else {
-            Object[] objArr2 = new Object[zzf(length)];
-            System.arraycopy(this.zzc, 0, objArr2, 0, i);
-            System.arraycopy(this.zzc, i, objArr2, i3, this.zzd - i);
-            this.zzc = objArr2;
-        }
-        this.zzc[i] = obj;
-        this.zzd++;
-        this.modCount++;
+        return false;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i) {
-        zzh(i);
-        return this.zzc[i];
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzku, java.util.AbstractList, java.util.List
-    public final Object remove(int i) {
-        int i2;
-        zzcF();
-        zzh(i);
-        Object[] objArr = this.zzc;
-        Object obj = objArr[i];
-        if (i < this.zzd - 1) {
-            System.arraycopy(objArr, i + 1, objArr, i, (i2 - i) - 1);
-        }
-        this.zzd--;
-        this.modCount++;
-        return obj;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzku, java.util.AbstractList, java.util.List
-    public final Object set(int i, Object obj) {
-        zzcF();
-        zzh(i);
-        Object[] objArr = this.zzc;
-        Object obj2 = objArr[i];
-        objArr[i] = obj;
-        this.modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.zzd;
+    public final String toString() {
+        zzqr zzqrVar = this.zzb;
+        String valueOf = String.valueOf(this.zza);
+        String obj = zzqrVar.toString();
+        StringBuilder sb = new StringBuilder(String.valueOf(valueOf).length() + 52 + obj.length() + 1);
+        sb.append("SnapshotBlobAndResult{snapshotBlob=");
+        sb.append(valueOf);
+        sb.append(", snapshotResult=");
+        sb.append(obj);
+        sb.append("}");
+        return sb.toString();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zze(int i) {
-        int length = this.zzc.length;
-        if (i <= length) {
-            return;
-        }
-        if (length != 0) {
-            while (length < i) {
-                length = zzf(length);
-            }
-            this.zzc = Arrays.copyOf(this.zzc, length);
-            return;
-        }
-        this.zzc = new Object[Math.max(i, 10)];
+    @Override // com.google.android.gms.internal.measurement.zzqo
+    public final zznd zza() {
+        return this.zza;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmo, com.google.android.gms.internal.measurement.zzmh
-    public final /* bridge */ /* synthetic */ zzmo zzg(int i) {
-        if (i < this.zzd) {
-            throw new IllegalArgumentException();
-        }
-        return new zznv(i == 0 ? zza : Arrays.copyOf(this.zzc, i), this.zzd, true);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzqo
+    public final zzqr zzb() {
+        return this.zzb;
     }
 
-    private zznv(Object[] objArr, int i, boolean z) {
-        super(z);
-        this.zzc = objArr;
-        this.zzd = i;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzku, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        zzcF();
-        int i = this.zzd;
-        int length = this.zzc.length;
-        if (i == length) {
-            this.zzc = Arrays.copyOf(this.zzc, zzf(length));
-        }
-        Object[] objArr = this.zzc;
-        int i2 = this.zzd;
-        this.zzd = i2 + 1;
-        objArr[i2] = obj;
-        this.modCount++;
-        return true;
+    public final int hashCode() {
+        zznd zzndVar = this.zza;
+        return this.zzb.hashCode() ^ (((zzndVar == null ? 0 : zzndVar.hashCode()) ^ 1000003) * 1000003);
     }
 }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.arizona.promo.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class RewardItemBinding implements ViewBinding {
     public final View colorBottom;
     public final ImageView image;

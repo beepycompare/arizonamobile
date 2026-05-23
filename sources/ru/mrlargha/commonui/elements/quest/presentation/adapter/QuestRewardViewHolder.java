@@ -31,7 +31,7 @@ public final class QuestRewardViewHolder extends RecyclerView.ViewHolder {
         itemQuestRewardBinding.tvRewardDesc.setText(item.getTitle());
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new QuestRewardViewHolder$bind$1$1(itemQuestRewardBinding, this, item, null), 3, null);
         this.loadImageJob = launch$default;

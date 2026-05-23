@@ -15,7 +15,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.reflect.KProperty;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.StateFlow;
-@Metadata(d1 = {"androidx/compose/runtime/SnapshotStateKt__DerivedStateKt", "androidx/compose/runtime/SnapshotStateKt__ProduceStateKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotMutationPolicyKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotStateKt"}, k = 4, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"androidx/compose/runtime/SnapshotStateKt__DerivedStateKt", "androidx/compose/runtime/SnapshotStateKt__ProduceStateKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotMutationPolicyKt", "androidx/compose/runtime/SnapshotStateKt__SnapshotStateKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SnapshotStateKt {
     public static final <T extends R, R> State<R> collectAsState(Flow<? extends T> flow, R r, CoroutineContext coroutineContext, Composer composer, int i, int i2) {
@@ -112,6 +112,10 @@ public final class SnapshotStateKt {
 
     public static final <T> void setValue(MutableState<T> mutableState, Object obj, KProperty<?> kProperty, T t) {
         SnapshotStateKt__SnapshotStateKt.setValue(mutableState, obj, kProperty, t);
+    }
+
+    public static final <T> Flow<T> snapshotFlow(SnapshotFlowManager snapshotFlowManager, Function0<? extends T> function0) {
+        return SnapshotStateKt__SnapshotFlowKt.snapshotFlow(snapshotFlowManager, function0);
     }
 
     public static final <T> Flow<T> snapshotFlow(Function0<? extends T> function0) {

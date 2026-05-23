@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 import retrofit2.Call;
 import retrofit2.Response;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class CallExecuteObservable<T> extends Observable<Response<T>> {
     private final Call<T> originalCall;
 
@@ -20,14 +20,14 @@ final class CallExecuteObservable<T> extends Observable<Response<T>> {
     @Override // io.reactivex.Observable
     protected void subscribeActual(Observer<? super Response<T>> observer) {
         boolean z;
-        Call<T> mo9087clone = this.originalCall.mo9087clone();
-        CallDisposable callDisposable = new CallDisposable(mo9087clone);
+        Call<T> mo9725clone = this.originalCall.mo9725clone();
+        CallDisposable callDisposable = new CallDisposable(mo9725clone);
         observer.onSubscribe(callDisposable);
         if (callDisposable.isDisposed()) {
             return;
         }
         try {
-            Response<T> execute = mo9087clone.execute();
+            Response<T> execute = mo9725clone.execute();
             if (!callDisposable.isDisposed()) {
                 observer.onNext(execute);
             }
@@ -58,7 +58,7 @@ final class CallExecuteObservable<T> extends Observable<Response<T>> {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static final class CallDisposable implements Disposable {
         private final Call<?> call;
         private volatile boolean disposed;

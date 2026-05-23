@@ -40,12 +40,12 @@ public final class State extends androidx.constraintlayout.core.state.State {
     }
 
     /* renamed from: getRootIncomingConstraints-msEJaDk  reason: not valid java name */
-    public final long m8022getRootIncomingConstraintsmsEJaDk() {
+    public final long m8627getRootIncomingConstraintsmsEJaDk() {
         return this.rootIncomingConstraints;
     }
 
     /* renamed from: setRootIncomingConstraints-BRTryo0  reason: not valid java name */
-    public final void m8023setRootIncomingConstraintsBRTryo0(long j) {
+    public final void m8628setRootIncomingConstraintsBRTryo0(long j) {
         this.rootIncomingConstraints = j;
     }
 
@@ -65,7 +65,7 @@ public final class State extends androidx.constraintlayout.core.state.State {
     @Override // androidx.constraintlayout.core.state.State
     public int convertDimension(Object obj) {
         if (obj instanceof Dp) {
-            return this.density.mo399roundToPx0680j_4(((Dp) obj).m7569unboximpl());
+            return this.density.mo428roundToPx0680j_4(((Dp) obj).m8174unboximpl());
         }
         return super.convertDimension(obj);
     }

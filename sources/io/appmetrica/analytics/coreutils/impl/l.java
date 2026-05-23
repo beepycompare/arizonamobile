@@ -8,16 +8,16 @@ import kotlin.jvm.internal.Lambda;
 public final class l extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UtilityServiceProvider f399a;
+    public final /* synthetic */ UtilityServiceProvider f345a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l(UtilityServiceProvider utilityServiceProvider) {
         super(0);
-        this.f399a = utilityServiceProvider;
+        this.f345a = utilityServiceProvider;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return new FirstExecutionConditionServiceImpl(this.f399a);
+        return new FirstExecutionConditionServiceImpl(this.f345a);
     }
 }

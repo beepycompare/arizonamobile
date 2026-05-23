@@ -1,42 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
+import java.util.List;
+import java.util.Map;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Bm {
+public final class Bm extends BaseRequestConfig.BaseRequestArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f530a;
+    public final String f481a;
     public final String b;
-    public final Zl c;
-    public final Fl d;
-    public final C0308hm e;
-    public final C0641v4 f;
-    public final C0230em g;
-    public final M7 h;
-    public final SystemTimeProvider i;
-    public final C0740z3 j;
-    public final C3 k;
-    public final Il l;
-    public final C0650vd m;
-    public final po n;
+    public final Map<String, String> c;
+    public final boolean d;
+    public final List<String> e;
 
-    public Bm(Context context, String str, Zl zl, Fl fl) {
-        this.f530a = context;
-        this.b = str;
-        this.c = zl;
-        this.d = fl;
-        C0308hm A = C0448na.k().A();
-        this.e = A;
-        C0256fm b = A.b();
-        this.f = new C0641v4(str);
-        this.g = new C0230em(context);
-        this.h = new M7();
-        this.i = new SystemTimeProvider();
-        this.j = C0448na.k().f();
-        this.k = new C3();
-        this.l = new Il(new C0127am(context, str), b, zl);
-        this.m = C0448na.k().q();
-        this.n = new po();
+    public Bm(Y3 y3) {
+        this(y3.a().c(), y3.a().d(), y3.a().a(), y3.a().h(), y3.a().b());
+    }
+
+    public final boolean a(Bm bm) {
+        return false;
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    /* renamed from: b */
+    public final Bm mergeFrom(Bm bm) {
+        return new Bm((String) WrapUtils.getOrDefaultNullable(this.f481a, bm.f481a), (String) WrapUtils.getOrDefaultNullable(this.b, bm.b), (Map) WrapUtils.getOrDefaultNullable(this.c, bm.c), this.d || bm.d, bm.d ? bm.e : this.e);
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
+    public final boolean compareWithOtherArguments(Object obj) {
+        Bm bm = (Bm) obj;
+        return false;
+    }
+
+    public final String toString() {
+        return "Arguments{distributionReferrer='" + this.f481a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
+    }
+
+    public Bm(String str, String str2, Map<String, String> map, boolean z, List<String> list) {
+        this.f481a = str;
+        this.b = str2;
+        this.c = map;
+        this.d = z;
+        this.e = list;
+    }
+
+    public Bm() {
+        this(null, null, null, false, null);
     }
 }

@@ -12,8 +12,8 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Brush.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a2\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a8\u0010\n\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u000e\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u000e\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a2\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a'\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u0017\u0010\u0010\u001a\u00020\u00012\n\u0010\u0011\u001a\u00060\u0012j\u0002`\u0013¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"toShaderBrush", "Landroidx/compose/ui/graphics/ShaderBrush;", "Landroidx/compose/ui/graphics/Brush;", "lerpColorList", "", "Landroidx/compose/ui/graphics/Color;", TtmlNode.LEFT, TtmlNode.RIGHT, "t", "", "lerpNullableFloatList", "lerpFloatList", "lerpSafe", "Landroidx/compose/ui/geometry/Offset;", "lerpSafe-Wko1d7g", "(JJF)J", "ShaderBrush", "shader", "Landroid/graphics/Shader;", "Landroidx/compose/ui/graphics/Shader;", "(Landroid/graphics/Shader;)Landroidx/compose/ui/graphics/ShaderBrush;", "ui-graphics"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0000\u001a2\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a8\u0010\n\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u000e\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u000e\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a2\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\u00042\u0006\u0010\b\u001a\u00020\tH\u0000\u001a'\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u0017\u0010\u0010\u001a\u00020\u00012\n\u0010\u0011\u001a\u00060\u0012j\u0002`\u0013¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"toShaderBrush", "Landroidx/compose/ui/graphics/ShaderBrush;", "Landroidx/compose/ui/graphics/Brush;", "lerpColorList", "", "Landroidx/compose/ui/graphics/Color;", TtmlNode.LEFT, TtmlNode.RIGHT, "t", "", "lerpNullableFloatList", "lerpFloatList", "lerpSafe", "Landroidx/compose/ui/geometry/Offset;", "lerpSafe-Wko1d7g", "(JJF)J", "ShaderBrush", "shader", "Landroid/graphics/Shader;", "Landroidx/compose/ui/graphics/Shader;", "(Landroid/graphics/Shader;)Landroidx/compose/ui/graphics/ShaderBrush;", "ui-graphics"}, k = 2, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class BrushKt {
     public static final ShaderBrush toShaderBrush(Brush brush) {
         if (brush instanceof ShaderBrush) {
@@ -21,9 +21,9 @@ public final class BrushKt {
         }
         if (brush instanceof SolidColor) {
             SolidColor solidColor = (SolidColor) brush;
-            Brush m4727verticalGradient8A3gB4$default = Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(solidColor.m5128getValue0d7_KjU()), Color.m4762boximpl(solidColor.m5128getValue0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null);
-            Intrinsics.checkNotNull(m4727verticalGradient8A3gB4$default, "null cannot be cast to non-null type androidx.compose.ui.graphics.ShaderBrush");
-            return (ShaderBrush) m4727verticalGradient8A3gB4$default;
+            Brush m5303verticalGradient8A3gB4$default = Brush.Companion.m5303verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5338boximpl(solidColor.m5704getValue0d7_KjU()), Color.m5338boximpl(solidColor.m5704getValue0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null);
+            Intrinsics.checkNotNull(m5303verticalGradient8A3gB4$default, "null cannot be cast to non-null type androidx.compose.ui.graphics.ShaderBrush");
+            return (ShaderBrush) m5303verticalGradient8A3gB4$default;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -32,7 +32,7 @@ public final class BrushKt {
         int max = Math.max(list.size(), list2.size());
         ArrayList arrayList = new ArrayList(max);
         for (int i = 0; i < max; i++) {
-            arrayList.add(Color.m4762boximpl(ColorKt.m4823lerpjxsXWHM(list.get(Math.min(i, list.size() - 1)).m4782unboximpl(), list2.get(Math.min(i, list2.size() - 1)).m4782unboximpl(), f)));
+            arrayList.add(Color.m5338boximpl(ColorKt.m5399lerpjxsXWHM(list.get(Math.min(i, list.size() - 1)).m5358unboximpl(), list2.get(Math.min(i, list2.size() - 1)).m5358unboximpl(), f)));
         }
         return arrayList;
     }
@@ -54,9 +54,9 @@ public final class BrushKt {
     }
 
     /* renamed from: lerpSafe-Wko1d7g  reason: not valid java name */
-    public static final long m4740lerpSafeWko1d7g(long j, long j2, float f) {
+    public static final long m5316lerpSafeWko1d7g(long j, long j2, float f) {
         if (((((j & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) ^ androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0 && (((androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase ^ (j2 & androidx.compose.ui.geometry.InlineClassHelperKt.DualFloatInfinityBase)) - androidx.compose.ui.geometry.InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0) {
-            return OffsetKt.m4550lerpWko1d7g(j, j2, f);
+            return OffsetKt.m5126lerpWko1d7g(j, j2, f);
         }
         return f < 0.5f ? j : j2;
     }
@@ -65,7 +65,7 @@ public final class BrushKt {
         return new ShaderBrush() { // from class: androidx.compose.ui.graphics.BrushKt$ShaderBrush$1
             @Override // androidx.compose.ui.graphics.ShaderBrush
             /* renamed from: createShader-uvyYCjk  reason: not valid java name */
-            public Shader mo4741createShaderuvyYCjk(long j) {
+            public Shader mo5317createShaderuvyYCjk(long j) {
                 return shader;
             }
         };

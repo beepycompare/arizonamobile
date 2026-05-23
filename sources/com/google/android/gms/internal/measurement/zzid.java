@@ -1,123 +1,126 @@
 package com.google.android.gms.internal.measurement;
 
-import androidx.media3.common.C;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzid extends zzmf implements zznn {
-    private static final zzid zzat;
-    private int zzA;
-    private boolean zzD;
-    private int zzG;
+public final class zzid extends zzadu implements zzafd {
+    private static final zzid zzaw;
+    private static volatile zzafj zzax;
+    private long zzA;
+    private int zzB;
+    private boolean zzE;
     private int zzH;
     private int zzI;
-    private long zzK;
+    private int zzJ;
     private long zzL;
-    private int zzO;
-    private zzig zzQ;
-    private long zzS;
+    private long zzM;
+    private int zzP;
+    private zzig zzR;
     private long zzT;
-    private int zzW;
-    private boolean zzX;
-    private boolean zzZ;
-    private zzhy zzaa;
-    private long zzae;
-    private boolean zzaf;
-    private boolean zzah;
-    private int zzaj;
-    private zzhe zzal;
-    private int zzam;
-    private zzha zzan;
-    private zzis zzap;
-    private long zzaq;
-    private zzho zzas;
+    private long zzU;
+    private int zzX;
+    private boolean zzY;
+    private boolean zzaa;
+    private zzhy zzab;
+    private long zzaf;
+    private boolean zzag;
+    private boolean zzai;
+    private int zzak;
+    private zzhe zzam;
+    private int zzan;
+    private zzha zzao;
+    private zzis zzaq;
+    private long zzar;
+    private zzho zzat;
     private int zzb;
-    private int zzd;
     private int zze;
-    private long zzh;
+    private int zzf;
     private long zzi;
     private long zzj;
     private long zzk;
     private long zzl;
-    private int zzq;
-    private long zzu;
+    private long zzm;
+    private int zzr;
     private long zzv;
-    private boolean zzx;
-    private long zzz;
-    private zzmo zzf = zzcv();
-    private zzmo zzg = zzcv();
-    private String zzm = "";
+    private long zzw;
+    private boolean zzy;
+    private zzaef zzg = zzcy();
+    private zzaef zzh = zzcy();
     private String zzn = "";
     private String zzo = "";
     private String zzp = "";
-    private String zzr = "";
+    private String zzq = "";
     private String zzs = "";
     private String zzt = "";
-    private String zzw = "";
-    private String zzy = "";
-    private String zzB = "";
+    private String zzu = "";
+    private String zzx = "";
+    private String zzz = "";
     private String zzC = "";
-    private zzmo zzE = zzcv();
-    private String zzF = "";
-    private String zzJ = "";
-    private String zzM = "";
+    private String zzD = "";
+    private zzaef zzF = zzcy();
+    private String zzG = "";
+    private String zzK = "";
     private String zzN = "";
-    private String zzP = "";
-    private zzmm zzR = zzcs();
-    private String zzU = "";
+    private String zzO = "";
+    private String zzQ = "";
+    private zzaeb zzS = zzcv();
     private String zzV = "";
-    private String zzY = "";
-    private String zzab = "";
-    private zzmo zzac = zzmf.zzcv();
-    private String zzad = "";
-    private String zzag = "";
-    private String zzai = "";
-    private String zzak = "";
-    private String zzao = "";
-    private String zzar = "";
+    private String zzW = "";
+    private String zzZ = "";
+    private String zzac = "";
+    private zzaef zzad = zzcy();
+    private String zzae = "";
+    private String zzah = "";
+    private String zzaj = "";
+    private String zzal = "";
+    private String zzap = "";
+    private String zzas = "";
+    private String zzau = "";
+    private zzaef zzav = zzcy();
 
     static {
         zzid zzidVar = new zzid();
-        zzat = zzidVar;
-        zzmf.zzcp(zzid.class, zzidVar);
+        zzaw = zzidVar;
+        zzadu.zzcs(zzid.class, zzidVar);
     }
 
     private zzid() {
     }
 
     public static zzic zzaE() {
-        return (zzic) zzat.zzck();
+        return (zzic) zzaw.zzcn();
     }
 
     public static zzic zzaF(zzid zzidVar) {
-        zzmb zzck = zzat.zzck();
-        zzck.zzbd(zzidVar);
-        return (zzic) zzck;
+        zzadp zzcn = zzaw.zzcn();
+        zzcn.zzbe(zzidVar);
+        return (zzic) zzcn;
     }
 
-    private final void zzcy() {
-        zzmo zzmoVar = this.zzf;
-        if (zzmoVar.zza()) {
+    private final void zzcE() {
+        zzaef zzaefVar = this.zzg;
+        if (zzaefVar.zza()) {
             return;
         }
-        this.zzf = zzmf.zzcw(zzmoVar);
+        this.zzg = zzadu.zzcz(zzaefVar);
     }
 
-    private final void zzcz() {
-        zzmo zzmoVar = this.zzg;
-        if (zzmoVar.zza()) {
+    private final void zzcF() {
+        zzaef zzaefVar = this.zzh;
+        if (zzaefVar.zza()) {
             return;
         }
-        this.zzg = zzmf.zzcw(zzmoVar);
+        this.zzh = zzadu.zzcz(zzaefVar);
     }
 
     public final String zzA() {
-        return this.zzs;
+        return this.zzt;
     }
 
     public final String zzB() {
-        return this.zzt;
+        return this.zzu;
     }
 
     public final boolean zzC() {
@@ -125,7 +128,7 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzD() {
-        return this.zzu;
+        return this.zzv;
     }
 
     public final boolean zzE() {
@@ -133,11 +136,11 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzF() {
-        return this.zzv;
+        return this.zzw;
     }
 
     public final String zzG() {
-        return this.zzw;
+        return this.zzx;
     }
 
     public final boolean zzH() {
@@ -145,11 +148,11 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final boolean zzI() {
-        return this.zzx;
+        return this.zzy;
     }
 
     public final String zzJ() {
-        return this.zzy;
+        return this.zzz;
     }
 
     public final boolean zzK() {
@@ -157,7 +160,7 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzL() {
-        return this.zzz;
+        return this.zzA;
     }
 
     public final boolean zzM() {
@@ -165,15 +168,15 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final int zzN() {
-        return this.zzA;
-    }
-
-    public final String zzO() {
         return this.zzB;
     }
 
-    public final String zzP() {
+    public final String zzO() {
         return this.zzC;
+    }
+
+    public final String zzP() {
+        return this.zzD;
     }
 
     public final boolean zzQ() {
@@ -181,31 +184,31 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final boolean zzR() {
-        return this.zzD;
-    }
-
-    public final List zzS() {
         return this.zzE;
     }
 
-    public final String zzT() {
+    public final List zzS() {
         return this.zzF;
     }
 
-    public final boolean zzU() {
-        return (this.zzb & 33554432) != 0;
-    }
-
-    public final int zzV() {
+    public final String zzT() {
         return this.zzG;
     }
 
+    public final boolean zzU() {
+        return (this.zzb & GroupFlagsKt.HasAuxSlotFlag) != 0;
+    }
+
+    public final int zzV() {
+        return this.zzH;
+    }
+
     public final boolean zzW() {
-        return (this.zzb & C.BUFFER_FLAG_LAST_SAMPLE) != 0;
+        return (this.zzb & 536870912) != 0;
     }
 
     public final long zzX() {
-        return this.zzK;
+        return this.zzL;
     }
 
     public final boolean zzY() {
@@ -213,7 +216,7 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final String zzZ() {
-        return this.zzM;
+        return this.zzN;
     }
 
     public final boolean zza() {
@@ -221,655 +224,643 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final boolean zzaA() {
-        return (this.zzd & C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
+        return (this.zze & 134217728) != 0;
     }
 
     public final long zzaB() {
-        return this.zzaq;
+        return this.zzar;
     }
 
     public final boolean zzaC() {
-        return (this.zzd & C.BUFFER_FLAG_LAST_SAMPLE) != 0;
+        return (this.zze & 536870912) != 0;
     }
 
     public final zzho zzaD() {
-        zzho zzhoVar = this.zzas;
+        zzho zzhoVar = this.zzat;
         return zzhoVar == null ? zzho.zzc() : zzhoVar;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaG(int i) {
         this.zzb |= 1;
-        this.zze = 1;
+        this.zzf = 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaH(int i, zzhs zzhsVar) {
         zzhsVar.getClass();
-        zzcy();
-        this.zzf.set(i, zzhsVar);
+        zzcE();
+        this.zzg.set(i, zzhsVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaI(zzhs zzhsVar) {
         zzhsVar.getClass();
-        zzcy();
-        this.zzf.add(zzhsVar);
+        zzcE();
+        this.zzg.add(zzhsVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaJ(Iterable iterable) {
-        zzcy();
-        zzks.zzce(iterable, this.zzf);
+        zzcE();
+        zzacb.zzcg(iterable, this.zzg);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaK() {
-        this.zzf = zzcv();
+        this.zzg = zzcy();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaL(int i) {
-        zzcy();
-        this.zzf.remove(i);
+        zzcE();
+        this.zzg.remove(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaM(int i, zziu zziuVar) {
         zziuVar.getClass();
-        zzcz();
-        this.zzg.set(i, zziuVar);
+        zzcF();
+        this.zzh.set(i, zziuVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaN(zziu zziuVar) {
         zziuVar.getClass();
-        zzcz();
-        this.zzg.add(zziuVar);
+        zzcF();
+        this.zzh.add(zziuVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaO(Iterable iterable) {
-        zzcz();
-        zzks.zzce(iterable, this.zzg);
+        zzcF();
+        zzacb.zzcg(iterable, this.zzh);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaP(int i) {
-        zzcz();
-        this.zzg.remove(i);
+        zzcF();
+        this.zzh.remove(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaQ(long j) {
         this.zzb |= 2;
-        this.zzh = j;
+        this.zzi = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaR() {
         this.zzb &= -3;
-        this.zzh = 0L;
+        this.zzi = 0L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaS(long j) {
         this.zzb |= 4;
-        this.zzi = j;
+        this.zzj = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaT(long j) {
         this.zzb |= 8;
-        this.zzj = j;
+        this.zzk = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaU(long j) {
         this.zzb |= 16;
-        this.zzk = j;
+        this.zzl = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaV() {
         this.zzb &= -17;
-        this.zzk = 0L;
+        this.zzl = 0L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaW(long j) {
         this.zzb |= 32;
-        this.zzl = j;
+        this.zzm = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaX() {
         this.zzb &= -33;
-        this.zzl = 0L;
+        this.zzm = 0L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaY(String str) {
         this.zzb |= 64;
-        this.zzm = ConstantDeviceInfo.APP_PLATFORM;
+        this.zzn = ConstantDeviceInfo.APP_PLATFORM;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzaZ(String str) {
         str.getClass();
         this.zzb |= 128;
-        this.zzn = str;
+        this.zzo = str;
     }
 
     public final boolean zzaa() {
-        return (this.zzd & 2) != 0;
+        return (this.zze & 2) != 0;
     }
 
     public final int zzab() {
-        return this.zzO;
+        return this.zzP;
     }
 
     public final boolean zzac() {
-        return (this.zzd & 16) != 0;
+        return (this.zze & 16) != 0;
     }
 
     public final long zzad() {
-        return this.zzS;
+        return this.zzT;
     }
 
     public final boolean zzae() {
-        return (this.zzd & 128) != 0;
+        return (this.zze & 128) != 0;
     }
 
     public final String zzaf() {
-        return this.zzV;
+        return this.zzW;
     }
 
     public final boolean zzag() {
-        return (this.zzd & 8192) != 0;
+        return (this.zze & 8192) != 0;
     }
 
     public final String zzah() {
-        return this.zzab;
+        return this.zzac;
     }
 
     public final boolean zzai() {
-        return (this.zzd & 32768) != 0;
+        return (this.zze & 32768) != 0;
     }
 
     public final long zzaj() {
-        return this.zzae;
-    }
-
-    public final boolean zzak() {
         return this.zzaf;
     }
 
-    public final boolean zzal() {
-        return (this.zzd & 131072) != 0;
-    }
-
-    public final String zzam() {
+    public final boolean zzak() {
         return this.zzag;
     }
 
-    public final boolean zzan() {
-        return (this.zzd & 262144) != 0;
+    public final boolean zzal() {
+        return (this.zze & 131072) != 0;
     }
 
-    public final boolean zzao() {
+    public final String zzam() {
         return this.zzah;
     }
 
-    public final boolean zzap() {
-        return (this.zzd & 524288) != 0;
+    public final boolean zzan() {
+        return (this.zze & 262144) != 0;
     }
 
-    public final String zzaq() {
+    public final boolean zzao() {
         return this.zzai;
     }
 
-    public final int zzar() {
+    public final boolean zzap() {
+        return (this.zze & 524288) != 0;
+    }
+
+    public final String zzaq() {
         return this.zzaj;
     }
 
+    public final int zzar() {
+        return this.zzak;
+    }
+
     public final boolean zzas() {
-        return (this.zzd & 4194304) != 0;
+        return (this.zze & 4194304) != 0;
     }
 
     public final zzhe zzat() {
-        zzhe zzheVar = this.zzal;
-        return zzheVar == null ? zzhe.zzi() : zzheVar;
+        zzhe zzheVar = this.zzam;
+        return zzheVar == null ? zzhe.zzj() : zzheVar;
     }
 
     public final boolean zzau() {
-        return (this.zzd & 8388608) != 0;
+        return (this.zze & 8388608) != 0;
     }
 
     public final int zzav() {
-        return this.zzam;
+        return this.zzan;
     }
 
     public final boolean zzaw() {
-        return (this.zzd & 16777216) != 0;
+        return (this.zze & 16777216) != 0;
     }
 
     public final zzha zzax() {
-        zzha zzhaVar = this.zzan;
-        return zzhaVar == null ? zzha.zzs() : zzhaVar;
+        zzha zzhaVar = this.zzao;
+        return zzhaVar == null ? zzha.zzu() : zzhaVar;
     }
 
     public final boolean zzay() {
-        return (this.zzd & 67108864) != 0;
+        return (this.zze & 67108864) != 0;
     }
 
     public final zzis zzaz() {
-        zzis zzisVar = this.zzap;
+        zzis zzisVar = this.zzaq;
         return zzisVar == null ? zzis.zzc() : zzisVar;
     }
 
     public final int zzb() {
-        return this.zze;
+        return this.zzf;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbA(long j) {
-        this.zzb |= C.BUFFER_FLAG_LAST_SAMPLE;
-        this.zzK = j;
+        this.zzb |= 536870912;
+        this.zzL = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbB(String str) {
         str.getClass();
         this.zzb |= Integer.MIN_VALUE;
-        this.zzM = str;
+        this.zzN = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbC() {
         this.zzb &= Integer.MAX_VALUE;
-        this.zzM = zzat.zzM;
+        this.zzN = zzaw.zzN;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbD(int i) {
-        this.zzd |= 2;
-        this.zzO = i;
+        this.zze |= 2;
+        this.zzP = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbE(zzig zzigVar) {
         zzigVar.getClass();
-        this.zzQ = zzigVar;
-        this.zzd |= 8;
+        this.zzR = zzigVar;
+        this.zze |= 8;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbF(Iterable iterable) {
-        zzmm zzmmVar = this.zzR;
-        if (!zzmmVar.zza()) {
-            int size = zzmmVar.size();
-            this.zzR = zzmmVar.zzg(size + size);
+        zzaeb zzaebVar = this.zzS;
+        if (!zzaebVar.zza()) {
+            int size = zzaebVar.size();
+            this.zzS = zzaebVar.zzg(size + size);
         }
-        zzks.zzce(iterable, this.zzR);
+        zzacb.zzcg(iterable, this.zzS);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbG(long j) {
-        this.zzd |= 16;
-        this.zzS = j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzbH(long j) {
-        this.zzd |= 32;
+        this.zze |= 16;
         this.zzT = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzbH(long j) {
+        this.zze |= 32;
+        this.zzU = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbI(String str) {
-        this.zzd |= 128;
-        this.zzV = str;
+        this.zze |= 128;
+        this.zzW = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbJ(String str) {
         str.getClass();
-        this.zzd |= 8192;
-        this.zzab = str;
+        this.zze |= 8192;
+        this.zzac = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbK() {
-        this.zzd &= -8193;
-        this.zzab = zzat.zzab;
+        this.zze &= -8193;
+        this.zzac = zzaw.zzac;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbL(Iterable iterable) {
-        zzmo zzmoVar = this.zzac;
-        if (!zzmoVar.zza()) {
-            this.zzac = zzmf.zzcw(zzmoVar);
+        zzaef zzaefVar = this.zzad;
+        if (!zzaefVar.zza()) {
+            this.zzad = zzadu.zzcz(zzaefVar);
         }
-        zzks.zzce(iterable, this.zzac);
+        zzacb.zzcg(iterable, this.zzad);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbM(String str) {
         str.getClass();
-        this.zzd |= 16384;
-        this.zzad = str;
+        this.zze |= 16384;
+        this.zzae = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbN(long j) {
-        this.zzd |= 32768;
-        this.zzae = j;
+        this.zze |= 32768;
+        this.zzaf = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbO(boolean z) {
-        this.zzd |= 65536;
-        this.zzaf = z;
+        this.zze |= 65536;
+        this.zzag = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbP(String str) {
-        this.zzd |= 131072;
-        this.zzag = str;
+        this.zze |= 131072;
+        this.zzah = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbQ(boolean z) {
-        this.zzd |= 262144;
-        this.zzah = z;
+        this.zze |= 262144;
+        this.zzai = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbR(String str) {
         str.getClass();
-        this.zzd |= 524288;
-        this.zzai = str;
+        this.zze |= 524288;
+        this.zzaj = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbS(int i) {
-        this.zzd |= 1048576;
-        this.zzaj = i;
+        this.zze |= 1048576;
+        this.zzak = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbT(zzhe zzheVar) {
         zzheVar.getClass();
-        this.zzal = zzheVar;
-        this.zzd |= 4194304;
+        this.zzam = zzheVar;
+        this.zze |= 4194304;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbU(int i) {
-        this.zzd |= 8388608;
-        this.zzam = i;
+        this.zze |= 8388608;
+        this.zzan = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbV(zzha zzhaVar) {
         zzhaVar.getClass();
-        this.zzan = zzhaVar;
-        this.zzd |= 16777216;
+        this.zzao = zzhaVar;
+        this.zze |= 16777216;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbW(zzis zzisVar) {
-        this.zzap = zzisVar;
-        this.zzd |= 67108864;
+        this.zzaq = zzisVar;
+        this.zze |= 67108864;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbX(long j) {
-        this.zzd |= C.BUFFER_FLAG_FIRST_SAMPLE;
-        this.zzaq = j;
+        this.zze |= 134217728;
+        this.zzar = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzbY(String str) {
-        this.zzd |= 268435456;
-        this.zzar = "";
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzbZ(zzho zzhoVar) {
+    public final /* synthetic */ void zzbY(zzho zzhoVar) {
         zzhoVar.getClass();
-        this.zzas = zzhoVar;
-        this.zzd |= C.BUFFER_FLAG_LAST_SAMPLE;
+        this.zzat = zzhoVar;
+        this.zze |= 536870912;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzbZ(String str) {
+        str.getClass();
+        this.zze |= 1073741824;
+        this.zzau = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzba(String str) {
         str.getClass();
         this.zzb |= 256;
-        this.zzo = str;
+        this.zzp = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbb() {
         this.zzb &= -257;
-        this.zzo = zzat.zzo;
+        this.zzp = zzaw.zzp;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbc(String str) {
         str.getClass();
         this.zzb |= 512;
-        this.zzp = str;
+        this.zzq = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbd(int i) {
         this.zzb |= 1024;
-        this.zzq = i;
+        this.zzr = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbe(String str) {
         str.getClass();
         this.zzb |= 2048;
-        this.zzr = str;
+        this.zzs = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbf(String str) {
         str.getClass();
         this.zzb |= 4096;
-        this.zzs = str;
+        this.zzt = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbg(String str) {
         str.getClass();
         this.zzb |= 8192;
-        this.zzt = str;
+        this.zzu = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbh(long j) {
         this.zzb |= 16384;
-        this.zzu = j;
+        this.zzv = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbi(long j) {
         this.zzb |= 32768;
-        this.zzv = 133005L;
+        this.zzw = 161000L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbj(String str) {
         str.getClass();
         this.zzb |= 65536;
-        this.zzw = str;
+        this.zzx = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbk() {
         this.zzb &= -65537;
-        this.zzw = zzat.zzw;
+        this.zzx = zzaw.zzx;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbl(boolean z) {
         this.zzb |= 131072;
-        this.zzx = z;
+        this.zzy = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbm() {
         this.zzb &= -131073;
-        this.zzx = false;
+        this.zzy = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbn(String str) {
         str.getClass();
         this.zzb |= 262144;
-        this.zzy = str;
+        this.zzz = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbo() {
         this.zzb &= -262145;
-        this.zzy = zzat.zzy;
+        this.zzz = zzaw.zzz;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbp(long j) {
         this.zzb |= 524288;
-        this.zzz = j;
+        this.zzA = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbq(int i) {
         this.zzb |= 1048576;
-        this.zzA = i;
+        this.zzB = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbr(String str) {
         this.zzb |= 2097152;
-        this.zzB = str;
+        this.zzC = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbs() {
         this.zzb &= -2097153;
-        this.zzB = zzat.zzB;
+        this.zzC = zzaw.zzC;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbt(String str) {
         str.getClass();
         this.zzb |= 4194304;
-        this.zzC = str;
+        this.zzD = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbu(boolean z) {
         this.zzb |= 8388608;
-        this.zzD = z;
+        this.zzE = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbv(Iterable iterable) {
-        zzmo zzmoVar = this.zzE;
-        if (!zzmoVar.zza()) {
-            this.zzE = zzmf.zzcw(zzmoVar);
+        zzaef zzaefVar = this.zzF;
+        if (!zzaefVar.zza()) {
+            this.zzF = zzadu.zzcz(zzaefVar);
         }
-        zzks.zzce(iterable, this.zzE);
+        zzacb.zzcg(iterable, this.zzF);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbw() {
-        this.zzE = zzcv();
+        this.zzF = zzcy();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbx(String str) {
         str.getClass();
         this.zzb |= 16777216;
-        this.zzF = str;
+        this.zzG = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzby(int i) {
-        this.zzb |= 33554432;
-        this.zzG = i;
+        this.zzb |= GroupFlagsKt.HasAuxSlotFlag;
+        this.zzH = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzbz() {
         this.zzb &= -268435457;
-        this.zzJ = zzat.zzJ;
+        this.zzK = zzaw.zzK;
     }
 
     public final List zzc() {
-        return this.zzf;
-    }
-
-    public final int zzd() {
-        return this.zzf.size();
-    }
-
-    public final zzhs zze(int i) {
-        return (zzhs) this.zzf.get(i);
-    }
-
-    public final List zzf() {
         return this.zzg;
     }
 
-    public final int zzg() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzca(Iterable iterable) {
+        zzaef zzaefVar = this.zzav;
+        if (!zzaefVar.zza()) {
+            this.zzav = zzadu.zzcz(zzaefVar);
+        }
+        zzacb.zzcg(iterable, this.zzav);
+    }
+
+    public final int zzd() {
         return this.zzg.size();
     }
 
-    public final zziu zzh(int i) {
-        return (zziu) this.zzg.get(i);
+    public final zzhs zze(int i) {
+        return (zzhs) this.zzg.get(i);
     }
 
-    public final boolean zzi() {
-        return (this.zzb & 2) != 0;
-    }
-
-    public final long zzj() {
+    public final List zzf() {
         return this.zzh;
     }
 
-    public final boolean zzk() {
+    public final int zzh() {
+        return this.zzh.size();
+    }
+
+    public final zziu zzi(int i) {
+        return (zziu) this.zzh.get(i);
+    }
+
+    public final boolean zzj() {
+        return (this.zzb & 2) != 0;
+    }
+
+    public final long zzk() {
+        return this.zzi;
+    }
+
+    public final boolean zzl() {
         return (this.zzb & 4) != 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                return zzcq(zzat, "\u0004C\u0000\u0002\u0001VC\u0000\u0005\u0000\u0001င\u0000\u0002\u001b\u0003\u001b\u0004ဂ\u0001\u0005ဂ\u0002\u0006ဂ\u0003\u0007ဂ\u0005\bဈ\u0006\tဈ\u0007\nဈ\b\u000bဈ\t\fင\n\rဈ\u000b\u000eဈ\f\u0010ဈ\r\u0011ဂ\u000e\u0012ဂ\u000f\u0013ဈ\u0010\u0014ဇ\u0011\u0015ဈ\u0012\u0016ဂ\u0013\u0017င\u0014\u0018ဈ\u0015\u0019ဈ\u0016\u001aဂ\u0004\u001cဇ\u0017\u001d\u001b\u001eဈ\u0018\u001fင\u0019 င\u001a!င\u001b\"ဈ\u001c#ဂ\u001d$ဂ\u001e%ဈ\u001f&ဈ 'င!)ဈ\",ဉ#-\u001d.ဂ$/ဂ%2ဈ&4ဈ'5᠌(7ဇ)9ဈ*:ဇ+;ဉ,?ဈ-@\u001aAဈ.Cဂ/Dဇ0Gဈ1Hဇ2Iဈ3Jင4Kဈ5Lဉ6Mင7Oဉ8Pဈ9Qဉ:Rဂ;Sဈ<Vဉ=", new Object[]{"zzb", "zzd", "zze", "zzf", zzhs.class, "zzg", zziu.class, "zzh", "zzi", "zzj", "zzl", "zzm", "zzn", "zzo", "zzp", "zzq", "zzr", "zzs", "zzt", "zzu", "zzv", "zzw", "zzx", "zzy", "zzz", "zzA", "zzB", "zzC", "zzk", "zzD", "zzE", zzhg.class, "zzF", "zzG", "zzH", "zzI", "zzJ", "zzK", "zzL", "zzM", "zzN", "zzO", "zzP", "zzQ", "zzR", "zzS", "zzT", "zzU", "zzV", "zzW", zzgw.zza, "zzX", "zzY", "zzZ", "zzaa", "zzab", "zzac", "zzad", "zzae", "zzaf", "zzag", "zzah", "zzai", "zzaj", "zzak", "zzal", "zzam", "zzan", "zzao", "zzap", "zzaq", "zzar", "zzas"});
-            } else if (i2 != 3) {
-                if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzat;
-                    }
-                    throw null;
-                }
-                return new zzic(null);
-            } else {
-                return new zzid();
-            }
-        }
-        return (byte) 1;
-    }
-
     public final long zzm() {
-        return this.zzi;
+        return this.zzj;
     }
 
     public final boolean zzn() {
@@ -877,7 +868,7 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzo() {
-        return this.zzj;
+        return this.zzk;
     }
 
     public final boolean zzp() {
@@ -885,7 +876,7 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzq() {
-        return this.zzk;
+        return this.zzl;
     }
 
     public final boolean zzr() {
@@ -893,23 +884,23 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final long zzs() {
-        return this.zzl;
-    }
-
-    public final String zzt() {
         return this.zzm;
     }
 
-    public final String zzu() {
+    public final String zzt() {
         return this.zzn;
     }
 
-    public final String zzv() {
+    public final String zzu() {
         return this.zzo;
     }
 
-    public final String zzw() {
+    public final String zzv() {
         return this.zzp;
+    }
+
+    public final String zzw() {
+        return this.zzq;
     }
 
     public final boolean zzx() {
@@ -917,10 +908,47 @@ public final class zzid extends zzmf implements zznn {
     }
 
     public final int zzy() {
-        return this.zzq;
+        return this.zzr;
     }
 
     public final String zzz() {
-        return this.zzr;
+        return this.zzs;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
+        int i2 = i - 1;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                return zzct(zzaw, "\u0004E\u0000\u0002\u0001YE\u0000\u0006\u0000\u0001င\u0000\u0002\u001b\u0003\u001b\u0004ဂ\u0001\u0005ဂ\u0002\u0006ဂ\u0003\u0007ဂ\u0005\bဈ\u0006\tဈ\u0007\nဈ\b\u000bဈ\t\fင\n\rဈ\u000b\u000eဈ\f\u0010ဈ\r\u0011ဂ\u000e\u0012ဂ\u000f\u0013ဈ\u0010\u0014ဇ\u0011\u0015ဈ\u0012\u0016ဂ\u0013\u0017င\u0014\u0018ဈ\u0015\u0019ဈ\u0016\u001aဂ\u0004\u001cဇ\u0017\u001d\u001b\u001eဈ\u0018\u001fင\u0019 င\u001a!င\u001b\"ဈ\u001c#ဂ\u001d$ဂ\u001e%ဈ\u001f&ဈ 'င!)ဈ\",ဉ#-\u001d.ဂ$/ဂ%2ဈ&4ဈ'5᠌(7ဇ)9ဈ*:ဇ+;ဉ,?ဈ-@\u001aAဈ.Cဂ/Dဇ0Gဈ1Hဇ2Iဈ3Jင4Kဈ5Lဉ6Mင7Oဉ8Pဈ9Qဉ:Rဂ;Sဈ<Vဉ=Xဈ>Y\u001b", new Object[]{"zzb", "zze", "zzf", "zzg", zzhs.class, "zzh", zziu.class, "zzi", "zzj", "zzk", "zzm", "zzn", "zzo", "zzp", "zzq", "zzr", "zzs", "zzt", "zzu", "zzv", "zzw", "zzx", "zzy", "zzz", "zzA", "zzB", "zzC", "zzD", "zzl", "zzE", "zzF", zzhg.class, "zzG", "zzH", "zzI", "zzJ", "zzK", "zzL", "zzM", "zzN", "zzO", "zzP", "zzQ", "zzR", "zzS", "zzT", "zzU", "zzV", "zzW", "zzX", zzgw.zza, "zzY", "zzZ", "zzaa", "zzab", "zzac", "zzad", "zzae", "zzaf", "zzag", "zzah", "zzai", "zzaj", "zzak", "zzal", "zzam", "zzan", "zzao", "zzap", "zzaq", "zzar", "zzas", "zzat", "zzau", "zzav", zzfb.class});
+            } else if (i2 != 3) {
+                if (i2 != 4) {
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzax;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzid.class) {
+                                    zzafjVar = zzax;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzaw);
+                                        zzax = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
+                    }
+                    return zzaw;
+                }
+                return new zzic(null);
+            } else {
+                return new zzid();
+            }
+        }
+        return (byte) 1;
     }
 }

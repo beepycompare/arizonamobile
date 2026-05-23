@@ -1,23 +1,131 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public abstract class Rm implements Qm {
-    public abstract IBinaryDataHelper a(Context context);
+public final class Rm extends MessageNano {
+    public static volatile Rm[] c;
 
-    public abstract ProtobufStateStorage<Object> a(Context context, IBinaryDataHelper iBinaryDataHelper);
+    /* renamed from: a  reason: collision with root package name */
+    public String f751a;
+    public String[] b;
 
-    public abstract IBinaryDataHelper b(Context context);
-
-    @Override // io.appmetrica.analytics.impl.Qm, io.appmetrica.analytics.coreapi.internal.data.ProtobufBinaryStateStorageFactory
-    public final ProtobufStateStorage<Object> create(Context context) {
-        return a(context, a(context));
+    public Rm() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.Qm, io.appmetrica.analytics.coreapi.internal.data.ProtobufBinaryStateStorageFactory
-    public final ProtobufStateStorage<Object> createForMigration(Context context) {
-        return a(context, b(context));
+    public static Rm[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new Rm[0];
+                }
+            }
+        }
+        return c;
+    }
+
+    public final Rm a() {
+        this.f751a = "";
+        this.b = WireFormatNano.EMPTY_STRING_ARRAY;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        if (!this.f751a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f751a);
+        }
+        String[] strArr = this.b;
+        if (strArr == null || strArr.length <= 0) {
+            return computeSerializedSize;
+        }
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        while (true) {
+            String[] strArr2 = this.b;
+            if (i >= strArr2.length) {
+                return computeSerializedSize + i2 + i3;
+            }
+            String str = strArr2[i];
+            if (str != null) {
+                i3++;
+                i2 = CodedOutputByteBufferNano.computeStringSizeNoTag(str) + i2;
+            }
+            i++;
+        }
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f751a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f751a);
+        }
+        String[] strArr = this.b;
+        if (strArr != null && strArr.length > 0) {
+            int i = 0;
+            while (true) {
+                String[] strArr2 = this.b;
+                if (i >= strArr2.length) {
+                    break;
+                }
+                String str = strArr2[i];
+                if (str != null) {
+                    codedOutputByteBufferNano.writeString(2, str);
+                }
+                i++;
+            }
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Rm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f751a = codedInputByteBufferNano.readString();
+            } else if (readTag != 18) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
+                String[] strArr = this.b;
+                int length = strArr == null ? 0 : strArr.length;
+                int i = repeatedFieldArrayLength + length;
+                String[] strArr2 = new String[i];
+                if (length != 0) {
+                    System.arraycopy(strArr, 0, strArr2, 0, length);
+                }
+                while (length < i - 1) {
+                    strArr2[length] = codedInputByteBufferNano.readString();
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                strArr2[length] = codedInputByteBufferNano.readString();
+                this.b = strArr2;
+            }
+        }
+        return this;
+    }
+
+    public static Rm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Rm().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Rm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Rm) MessageNano.mergeFrom(new Rm(), bArr);
     }
 }

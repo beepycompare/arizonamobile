@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.ColorKt;
 import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import kotlin.Metadata;
 /* compiled from: ContextMenuUi.android.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0001¢\u0006\u0002\u0010\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\b\b\u0001\u0010\u0003\u001a\u00020\u00042\b\b\u0001\u0010\u0005\u001a\u00020\u0004H\u0001¢\u0006\u0002\u0010\u0006\u001a/\u0010\u0007\u001a\u00020\b*\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u00042\b\b\u0001\u0010\u000b\u001a\u00020\u00042\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\r\u0010\u000e\u001a\"\u0010\u000f\u001a\u0004\u0018\u00010\u0010*\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u00042\b\b\u0001\u0010\u000b\u001a\u00020\u0004H\u0002\u001a\u001d\u0010\u0011\u001a\u00020\b*\u0004\u0018\u00010\u00102\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\u0012\u0010\u0013\u001a\u001d\u0010\u0014\u001a\u00020\b*\u0004\u0018\u00010\u00102\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\u0015\u0010\u0013¨\u0006\u0016"}, d2 = {"computeContextMenuColors", "Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "backgroundStyleId", "", "foregroundStyleId", "(IILandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "resolveColor", "Landroidx/compose/ui/graphics/Color;", "Landroid/content/Context;", "resId", "attrId", "defaultColor", "resolveColor-g2O1Hgs", "(Landroid/content/Context;IIJ)J", "resolveColorStateList", "Landroid/content/res/ColorStateList;", "enabledColor", "enabledColor-4WTKRHQ", "(Landroid/content/res/ColorStateList;J)J", "disabledColor", "disabledColor-4WTKRHQ", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0001¢\u0006\u0002\u0010\u0002\u001a!\u0010\u0000\u001a\u00020\u00012\b\b\u0001\u0010\u0003\u001a\u00020\u00042\b\b\u0001\u0010\u0005\u001a\u00020\u0004H\u0001¢\u0006\u0002\u0010\u0006\u001a/\u0010\u0007\u001a\u00020\b*\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u00042\b\b\u0001\u0010\u000b\u001a\u00020\u00042\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\r\u0010\u000e\u001a\"\u0010\u000f\u001a\u0004\u0018\u00010\u0010*\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u00042\b\b\u0001\u0010\u000b\u001a\u00020\u0004H\u0002\u001a\u001d\u0010\u0011\u001a\u00020\b*\u0004\u0018\u00010\u00102\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\u0012\u0010\u0013\u001a\u001d\u0010\u0014\u001a\u00020\b*\u0004\u0018\u00010\u00102\u0006\u0010\f\u001a\u00020\bH\u0002¢\u0006\u0004\b\u0015\u0010\u0013¨\u0006\u0016"}, d2 = {"computeContextMenuColors", "Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "backgroundStyleId", "", "foregroundStyleId", "(IILandroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/contextmenu/ContextMenuColors;", "resolveColor", "Landroidx/compose/ui/graphics/Color;", "Landroid/content/Context;", "resId", "attrId", "defaultColor", "resolveColor-g2O1Hgs", "(Landroid/content/Context;IIJ)J", "resolveColorStateList", "Landroid/content/res/ColorStateList;", "enabledColor", "enabledColor-4WTKRHQ", "(Landroid/content/res/ColorStateList;J)J", "disabledColor", "disabledColor-4WTKRHQ", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ContextMenuUi_androidKt {
     public static final ContextMenuColors computeContextMenuColors(Composer composer, int i) {
@@ -42,11 +42,11 @@ public final class ContextMenuUi_androidKt {
         boolean changed = composer.changed((Configuration) consume2) | composer.changed(context);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            long m392resolveColorg2O1Hgs = m392resolveColorg2O1Hgs(context, i, 16842801, ContextMenuUiKt.getDefaultContextMenuColors().m368getBackgroundColor0d7_KjU());
+            long m420resolveColorg2O1Hgs = m420resolveColorg2O1Hgs(context, i, 16842801, ContextMenuUiKt.getDefaultContextMenuColors().m396getBackgroundColor0d7_KjU());
             ColorStateList resolveColorStateList = resolveColorStateList(context, i2, 16842806);
-            long m391enabledColor4WTKRHQ = m391enabledColor4WTKRHQ(resolveColorStateList, ContextMenuUiKt.getDefaultContextMenuColors().m372getTextColor0d7_KjU());
-            long m390disabledColor4WTKRHQ = m390disabledColor4WTKRHQ(resolveColorStateList, ContextMenuUiKt.getDefaultContextMenuColors().m370getDisabledTextColor0d7_KjU());
-            Object contextMenuColors = new ContextMenuColors(m392resolveColorg2O1Hgs, m391enabledColor4WTKRHQ, m391enabledColor4WTKRHQ, m390disabledColor4WTKRHQ, m390disabledColor4WTKRHQ, null);
+            long m419enabledColor4WTKRHQ = m419enabledColor4WTKRHQ(resolveColorStateList, ContextMenuUiKt.getDefaultContextMenuColors().m400getTextColor0d7_KjU());
+            long m418disabledColor4WTKRHQ = m418disabledColor4WTKRHQ(resolveColorStateList, ContextMenuUiKt.getDefaultContextMenuColors().m398getDisabledTextColor0d7_KjU());
+            Object contextMenuColors = new ContextMenuColors(m420resolveColorg2O1Hgs, m419enabledColor4WTKRHQ, m419enabledColor4WTKRHQ, m418disabledColor4WTKRHQ, m418disabledColor4WTKRHQ, null);
             composer.updateRememberedValue(contextMenuColors);
             rememberedValue = contextMenuColors;
         }
@@ -60,12 +60,12 @@ public final class ContextMenuUi_androidKt {
     }
 
     /* renamed from: resolveColor-g2O1Hgs  reason: not valid java name */
-    private static final long m392resolveColorg2O1Hgs(Context context, int i, int i2, long j) {
+    private static final long m420resolveColorg2O1Hgs(Context context, int i, int i2, long j) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, new int[]{i2});
-        int m4826toArgb8_81llA = ColorKt.m4826toArgb8_81llA(j);
-        int color = obtainStyledAttributes.getColor(0, m4826toArgb8_81llA);
+        int m5402toArgb8_81llA = ColorKt.m5402toArgb8_81llA(j);
+        int color = obtainStyledAttributes.getColor(0, m5402toArgb8_81llA);
         obtainStyledAttributes.recycle();
-        return color == m4826toArgb8_81llA ? j : ColorKt.Color(color);
+        return color == m5402toArgb8_81llA ? j : ColorKt.Color(color);
     }
 
     private static final ColorStateList resolveColorStateList(Context context, int i, int i2) {
@@ -76,16 +76,16 @@ public final class ContextMenuUi_androidKt {
     }
 
     /* renamed from: enabledColor-4WTKRHQ  reason: not valid java name */
-    private static final long m391enabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
-        int m4826toArgb8_81llA = ColorKt.m4826toArgb8_81llA(j);
-        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{16842910}, m4826toArgb8_81llA)) : null;
-        return (valueOf == null || valueOf.intValue() == m4826toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
+    private static final long m419enabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
+        int m5402toArgb8_81llA = ColorKt.m5402toArgb8_81llA(j);
+        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{16842910}, m5402toArgb8_81llA)) : null;
+        return (valueOf == null || valueOf.intValue() == m5402toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
     }
 
     /* renamed from: disabledColor-4WTKRHQ  reason: not valid java name */
-    private static final long m390disabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
-        int m4826toArgb8_81llA = ColorKt.m4826toArgb8_81llA(j);
-        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{-16842910}, m4826toArgb8_81llA)) : null;
-        return (valueOf == null || valueOf.intValue() == m4826toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
+    private static final long m418disabledColor4WTKRHQ(ColorStateList colorStateList, long j) {
+        int m5402toArgb8_81llA = ColorKt.m5402toArgb8_81llA(j);
+        Integer valueOf = colorStateList != null ? Integer.valueOf(colorStateList.getColorForState(new int[]{-16842910}, m5402toArgb8_81llA)) : null;
+        return (valueOf == null || valueOf.intValue() == m5402toArgb8_81llA) ? j : ColorKt.Color(valueOf.intValue());
     }
 }

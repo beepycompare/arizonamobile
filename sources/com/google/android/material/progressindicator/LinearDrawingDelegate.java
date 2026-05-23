@@ -178,7 +178,8 @@ final class LinearDrawingDelegate extends DrawingDelegate<LinearProgressIndicato
         float f;
         int compositeARGBWithAlpha = MaterialColors.compositeARGBWithAlpha(i, i2);
         this.drawingDeterminateIndicator = false;
-        if (((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize <= 0 || compositeARGBWithAlpha == 0) {
+        int actualTrackStopIndicatorSize = ((LinearProgressIndicatorSpec) this.spec).getActualTrackStopIndicatorSize();
+        if (actualTrackStopIndicatorSize <= 0 || compositeARGBWithAlpha == 0) {
             return;
         }
         paint.setStyle(Paint.Style.FILL);
@@ -188,7 +189,8 @@ final class LinearDrawingDelegate extends DrawingDelegate<LinearProgressIndicato
         } else {
             f = this.displayedTrackThickness / 2.0f;
         }
-        drawRoundedBlock(canvas, paint, new DrawingDelegate.PathPoint(new float[]{(this.trackLength / 2.0f) - f, 0.0f}, new float[]{1.0f, 0.0f}), ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize, ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize, (this.displayedCornerRadius * ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize) / this.displayedTrackThickness);
+        float f2 = actualTrackStopIndicatorSize;
+        drawRoundedBlock(canvas, paint, new DrawingDelegate.PathPoint(new float[]{(this.trackLength / 2.0f) - f, 0.0f}, new float[]{1.0f, 0.0f}), f2, f2, (this.displayedCornerRadius * f2) / this.displayedTrackThickness);
     }
 
     private void drawRoundedBlock(Canvas canvas, Paint paint, DrawingDelegate<LinearProgressIndicatorSpec>.PathPoint pathPoint, float f, float f2, float f3) {

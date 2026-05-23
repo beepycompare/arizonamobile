@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RepairGameError.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$RepairGameErrorKt {
     public static final ComposableSingletons$RepairGameErrorKt INSTANCE = new ComposableSingletons$RepairGameErrorKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$2144985598 = ComposableLambdaKt.composableLambdaInstance(2144985598, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameErrorKt$$ExternalSyntheticLambda0
@@ -36,7 +36,7 @@ public final class ComposableSingletons$RepairGameErrorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2144985598, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameErrorKt.lambda$2144985598.<anonymous> (RepairGameError.kt:84)");
             }
-            TextKt.m2712TextNvy7gAk("НАЗАД", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("НАЗАД", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

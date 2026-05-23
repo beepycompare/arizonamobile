@@ -1,17 +1,14 @@
 package androidx.compose.foundation.gestures;
 
-import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.internal.InlineClassHelperKt;
 import androidx.compose.foundation.relocation.BringIntoViewResponder;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.geometry.Rect;
-import androidx.compose.ui.layout.LayoutCoordinates;
 import androidx.compose.ui.node.CompositionLocalConsumerModifierNode;
 import androidx.compose.ui.node.CompositionLocalConsumerModifierNodeKt;
-import androidx.compose.ui.node.DelegatableNodeKt;
-import androidx.compose.ui.node.LayoutAwareModifierNode;
+import androidx.compose.ui.node.MeasuredSizeAwareModifierNode;
 import androidx.compose.ui.unit.IntOffset;
 import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.IntSizeKt;
@@ -30,13 +27,11 @@ import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.CoroutineName;
 import kotlinx.coroutines.CoroutineStart;
 /* compiled from: ContentInViewNode.kt */
-@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001MB9\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\f\u0012\u000e\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\u0010\u0010\"\u001a\u00020\u000f2\u0006\u0010#\u001a\u00020\u000fH\u0016J\b\u0010$\u001a\u00020\fH\u0002J\u001e\u0010%\u001a\u00020&2\u000e\u0010#\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eH\u0096@¢\u0006\u0002\u0010'J\u0010\u0010(\u001a\u00020&2\b\u0010)\u001a\u0004\u0018\u00010\u0018J\u0017\u0010*\u001a\u00020&2\u0006\u0010+\u001a\u00020\u001cH\u0016¢\u0006\u0004\b,\u0010-J\u0017\u0010.\u001a\u00020&2\u0006\u0010+\u001a\u00020\u001cH\u0002¢\u0006\u0004\b/\u0010-J\n\u00100\u001a\u0004\u0018\u00010\u000fH\u0002J\u0019\u00101\u001a\u00020&2\b\b\u0002\u00102\u001a\u000203H\u0002¢\u0006\u0004\b4\u0010-J\u001f\u00105\u001a\u0002062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u00102\u001a\u000203H\u0002¢\u0006\u0004\b7\u00108J\n\u00109\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u0010:\u001a\u00020\u000f2\u0006\u0010;\u001a\u00020\u000fH\u0002J'\u0010<\u001a\u00020\n*\u00020\u000f2\b\b\u0002\u0010+\u001a\u00020\u001c2\b\b\u0002\u0010=\u001a\u000203H\u0002¢\u0006\u0004\b>\u0010?J'\u0010@\u001a\u00020A2\u0006\u0010;\u001a\u00020\u000f2\u0006\u0010B\u001a\u00020\u001c2\u0006\u0010=\u001a\u000203H\u0002¢\u0006\u0004\bC\u0010DJ\u001c\u0010E\u001a\u00020F*\u00020\u001c2\u0006\u0010G\u001a\u00020\u001cH\u0082\u0002¢\u0006\u0004\bH\u0010IJ\u001c\u0010E\u001a\u00020F*\u00020J2\u0006\u0010G\u001a\u00020JH\u0082\u0002¢\u0006\u0004\bK\u0010IJ \u0010L\u001a\u00020&2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\nX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u001d\u001a\u00020\u001c2\u0006\u0010\u001b\u001a\u00020\u001c@BX\u0080\u000e¢\u0006\n\n\u0002\u0010 \u001a\u0004\b\u001e\u0010\u001fR\u000e\u0010!\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006N"}, d2 = {"Landroidx/compose/foundation/gestures/ContentInViewNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/foundation/relocation/BringIntoViewResponder;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/LayoutAwareModifierNode;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "scrollingLogic", "Landroidx/compose/foundation/gestures/ScrollingLogic;", "reverseDirection", "", "bringIntoViewSpec", "Landroidx/compose/foundation/gestures/BringIntoViewSpec;", "getFocusedRect", "Lkotlin/Function0;", "Landroidx/compose/ui/geometry/Rect;", "<init>", "(Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/ScrollingLogic;ZLandroidx/compose/foundation/gestures/BringIntoViewSpec;Lkotlin/jvm/functions/Function0;)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "bringIntoViewRequests", "Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;", "focusedChild", "Landroidx/compose/ui/layout/LayoutCoordinates;", "trackingFocusedChild", "childWasMaxVisibleBeforeViewportShrunk", "value", "Landroidx/compose/ui/unit/IntSize;", "viewportSize", "getViewportSize-YbymL2g$foundation", "()J", "J", "isAnimationRunning", "calculateRectForParent", "localRect", "requireBringIntoViewSpec", "bringChildIntoView", "", "(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onFocusBoundsChanged", "newBounds", "onRemeasured", "size", "onRemeasured-ozmzZPI", "(J)V", "onRemeasuredLegacy", "onRemeasuredLegacy-ozmzZPI", "getFocusedChildBounds", "launchAnimation", "viewportAdjustmentForReverseScroll", "Landroidx/compose/ui/unit/IntOffset;", "launchAnimation--gyyYBs", "calculateScrollDelta", "", "calculateScrollDelta-I_oMVgE", "(Landroidx/compose/foundation/gestures/BringIntoViewSpec;J)F", "findBringIntoViewRequest", "computeDestination", "childBounds", "isMaxVisible", "containerOffset", "isMaxVisible--EQwtKw", "(Landroidx/compose/ui/geometry/Rect;JJ)Z", "relocationOffset", "Landroidx/compose/ui/geometry/Offset;", "containerSize", "relocationOffset-fbGrOKE", "(Landroidx/compose/ui/geometry/Rect;JJ)J", "compareTo", "", "other", "compareTo-TemP2vQ", "(JJ)I", "Landroidx/compose/ui/geometry/Size;", "compareTo-iLBOSCw", "update", "Request", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0001\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004:\u0001GB9\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\f\u0012\u000e\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000e¢\u0006\u0004\b\u0010\u0010\u0011J\u0010\u0010!\u001a\u00020\u000f2\u0006\u0010\"\u001a\u00020\u000fH\u0016J\b\u0010#\u001a\u00020\fH\u0002J\u001e\u0010$\u001a\u00020%2\u000e\u0010\"\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eH\u0096@¢\u0006\u0002\u0010&J\u0017\u0010'\u001a\u00020%2\u0006\u0010(\u001a\u00020\u0019H\u0016¢\u0006\u0004\b)\u0010*J\u0019\u0010+\u001a\u00020%2\b\b\u0002\u0010,\u001a\u00020-H\u0002¢\u0006\u0004\b.\u0010*J\u001f\u0010/\u001a\u0002002\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010,\u001a\u00020-H\u0002¢\u0006\u0004\b1\u00102J\n\u00103\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u00104\u001a\u00020\u000f2\u0006\u00105\u001a\u00020\u000fH\u0002J'\u00106\u001a\u00020\n*\u00020\u000f2\b\b\u0002\u0010(\u001a\u00020\u00192\b\b\u0002\u00107\u001a\u00020-H\u0002¢\u0006\u0004\b8\u00109J'\u0010:\u001a\u00020;2\u0006\u00105\u001a\u00020\u000f2\u0006\u0010<\u001a\u00020\u00192\u0006\u00107\u001a\u00020-H\u0002¢\u0006\u0004\b=\u0010>J\u001c\u0010?\u001a\u00020@*\u00020\u00192\u0006\u0010A\u001a\u00020\u0019H\u0082\u0002¢\u0006\u0004\bB\u0010CJ\u001c\u0010?\u001a\u00020@*\u00020D2\u0006\u0010A\u001a\u00020DH\u0082\u0002¢\u0006\u0004\bE\u0010CJ \u0010F\u001a\u00020%2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000f0\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\nX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0018\u001a\u00020\u0019@BX\u0080\u000e¢\u0006\n\n\u0002\u0010\u001d\u001a\u0004\b\u001b\u0010\u001cR\u0014\u0010\u001e\u001a\u00020\u00198@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001f\u0010\u001cR\u000e\u0010 \u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Landroidx/compose/foundation/gestures/ContentInViewNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/foundation/relocation/BringIntoViewResponder;", "Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;", "Landroidx/compose/ui/node/MeasuredSizeAwareModifierNode;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "scrollingLogic", "Landroidx/compose/foundation/gestures/ScrollingLogic;", "reverseDirection", "", "bringIntoViewSpec", "Landroidx/compose/foundation/gestures/BringIntoViewSpec;", "getFocusedRect", "Lkotlin/Function0;", "Landroidx/compose/ui/geometry/Rect;", "<init>", "(Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/ScrollingLogic;ZLandroidx/compose/foundation/gestures/BringIntoViewSpec;Lkotlin/jvm/functions/Function0;)V", "shouldAutoInvalidate", "getShouldAutoInvalidate", "()Z", "bringIntoViewRequests", "Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;", "trackingFocusedChild", "value", "Landroidx/compose/ui/unit/IntSize;", "viewportSize", "getViewportSize-YbymL2g$foundation", "()J", "J", "viewportSizeOrZero", "getViewportSizeOrZero-YbymL2g$foundation", "isAnimationRunning", "calculateRectForParent", "localRect", "requireBringIntoViewSpec", "bringChildIntoView", "", "(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onRemeasured", "size", "onRemeasured-ozmzZPI", "(J)V", "launchAnimation", "viewportAdjustmentForReverseScroll", "Landroidx/compose/ui/unit/IntOffset;", "launchAnimation--gyyYBs", "calculateScrollDelta", "", "calculateScrollDelta-I_oMVgE", "(Landroidx/compose/foundation/gestures/BringIntoViewSpec;J)F", "findBringIntoViewRequest", "computeDestination", "childBounds", "isMaxVisible", "containerOffset", "isMaxVisible--EQwtKw", "(Landroidx/compose/ui/geometry/Rect;JJ)Z", "relocationOffset", "Landroidx/compose/ui/geometry/Offset;", "containerSize", "relocationOffset-fbGrOKE", "(Landroidx/compose/ui/geometry/Rect;JJ)J", "compareTo", "", "other", "compareTo-TemP2vQ", "(JJ)I", "Landroidx/compose/ui/geometry/Size;", "compareTo-iLBOSCw", "update", "Request", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class ContentInViewNode extends Modifier.Node implements BringIntoViewResponder, CompositionLocalConsumerModifierNode, LayoutAwareModifierNode {
+public final class ContentInViewNode extends Modifier.Node implements BringIntoViewResponder, CompositionLocalConsumerModifierNode, MeasuredSizeAwareModifierNode {
     public static final int $stable = 8;
     private BringIntoViewSpec bringIntoViewSpec;
-    private boolean childWasMaxVisibleBeforeViewportShrunk;
-    private LayoutCoordinates focusedChild;
     private Function0<Rect> getFocusedRect;
     private boolean isAnimationRunning;
     private Orientation orientation;
@@ -45,10 +40,10 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     private final boolean shouldAutoInvalidate;
     private boolean trackingFocusedChild;
     private final BringIntoViewRequestPriorityQueue bringIntoViewRequests = new BringIntoViewRequestPriorityQueue();
-    private long viewportSize = IntSize.Companion.m7731getZeroYbymL2g();
+    private long viewportSize = ContentInViewNodeKt.UnspecifiedIntSize;
 
     /* compiled from: ContentInViewNode.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -81,13 +76,19 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     }
 
     /* renamed from: getViewportSize-YbymL2g$foundation  reason: not valid java name */
-    public final long m441getViewportSizeYbymL2g$foundation() {
+    public final long m469getViewportSizeYbymL2g$foundation() {
         return this.viewportSize;
+    }
+
+    /* renamed from: getViewportSizeOrZero-YbymL2g$foundation  reason: not valid java name */
+    public final long m470getViewportSizeOrZeroYbymL2g$foundation() {
+        long j = this.viewportSize;
+        return IntSize.m8329equalsimpl0(j, ContentInViewNodeKt.UnspecifiedIntSize) ? IntSize.Companion.m8336getZeroYbymL2g() : j;
     }
 
     @Override // androidx.compose.foundation.relocation.BringIntoViewResponder
     public Rect calculateRectForParent(Rect rect) {
-        if (IntSize.m7724equalsimpl0(this.viewportSize, IntSize.Companion.m7731getZeroYbymL2g())) {
+        if (IntSize.m8329equalsimpl0(this.viewportSize, ContentInViewNodeKt.UnspecifiedIntSize)) {
             InlineClassHelperKt.throwIllegalStateException("Expected BringIntoViewRequester to not be used before parents are placed.");
         }
         return computeDestination(rect);
@@ -101,13 +102,13 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     @Override // androidx.compose.foundation.relocation.BringIntoViewResponder
     public Object bringChildIntoView(Function0<Rect> function0, Continuation<? super Unit> continuation) {
         Rect invoke = function0.invoke();
-        if (invoke == null || m436isMaxVisibleEQwtKw$default(this, invoke, 0L, 0L, 3, null)) {
+        if (invoke == null || m465isMaxVisibleEQwtKw$default(this, invoke, 0L, 0L, 3, null)) {
             return Unit.INSTANCE;
         }
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
         cancellableContinuationImpl.initCancellability();
         if (this.bringIntoViewRequests.enqueue(new Request(function0, cancellableContinuationImpl)) && !this.isAnimationRunning) {
-            m438launchAnimationgyyYBs$default(this, 0L, 1, null);
+            m467launchAnimationgyyYBs$default(this, 0L, 1, null);
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -116,95 +117,43 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
         return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
     }
 
-    public final void onFocusBoundsChanged(LayoutCoordinates layoutCoordinates) {
-        ContentInViewNode contentInViewNode;
-        Rect focusedChildBounds;
-        this.focusedChild = layoutCoordinates;
-        if (!this.childWasMaxVisibleBeforeViewportShrunk || (focusedChildBounds = getFocusedChildBounds()) == null) {
-            contentInViewNode = this;
-        } else {
-            contentInViewNode = this;
-            if (!m436isMaxVisibleEQwtKw$default(contentInViewNode, focusedChildBounds, this.viewportSize, 0L, 2, null)) {
-                contentInViewNode.trackingFocusedChild = true;
-                m438launchAnimationgyyYBs$default(contentInViewNode, 0L, 1, null);
-            }
-        }
-        contentInViewNode.childWasMaxVisibleBeforeViewportShrunk = false;
-    }
-
-    @Override // androidx.compose.ui.node.LayoutAwareModifierNode
+    @Override // androidx.compose.ui.node.MeasuredSizeAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo394onRemeasuredozmzZPI(long j) {
-        long m7694getZeronOccac;
-        if (!ComposeFoundationFlags.isKeepInViewFocusObservationChangeEnabled) {
-            m439onRemeasuredLegacyozmzZPI(j);
-            return;
-        }
-        long j2 = this.viewportSize;
+    public void mo423onRemeasuredozmzZPI(long j) {
+        long m8299getZeronOccac;
+        long m470getViewportSizeOrZeroYbymL2g$foundation = m470getViewportSizeOrZeroYbymL2g$foundation();
         this.viewportSize = j;
-        if (m433compareToTemP2vQ(j, j2) >= 0) {
+        if (m462compareToTemP2vQ(j, m470getViewportSizeOrZeroYbymL2g$foundation) >= 0) {
             return;
         }
         if (!this.reverseDirection) {
             if (this.orientation == Orientation.Vertical) {
-                m7694getZeronOccac = IntOffset.m7677constructorimpl((((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L);
+                m8299getZeronOccac = IntOffset.m8282constructorimpl((((int) (m470getViewportSizeOrZeroYbymL2g$foundation & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L);
             } else {
-                m7694getZeronOccac = IntOffset.m7677constructorimpl((((int) (j2 >> 32)) - ((int) (j >> 32))) << 32);
+                m8299getZeronOccac = IntOffset.m8282constructorimpl((((int) (m470getViewportSizeOrZeroYbymL2g$foundation >> 32)) - ((int) (j >> 32))) << 32);
             }
         } else {
-            m7694getZeronOccac = IntOffset.Companion.m7694getZeronOccac();
+            m8299getZeronOccac = IntOffset.Companion.m8299getZeronOccac();
         }
-        long j3 = m7694getZeronOccac;
+        long j2 = m8299getZeronOccac;
         Rect invoke = this.getFocusedRect.invoke();
-        if (invoke == null || this.isAnimationRunning || this.trackingFocusedChild || !m436isMaxVisibleEQwtKw$default(this, invoke, j2, 0L, 2, null) || m436isMaxVisibleEQwtKw$default(this, invoke, 0L, j3, 1, null)) {
+        if (invoke == null || this.isAnimationRunning || this.trackingFocusedChild || !m465isMaxVisibleEQwtKw$default(this, invoke, m470getViewportSizeOrZeroYbymL2g$foundation, 0L, 2, null) || m465isMaxVisibleEQwtKw$default(this, invoke, 0L, j2, 1, null)) {
             return;
         }
         this.trackingFocusedChild = true;
-        m437launchAnimationgyyYBs(j3);
-    }
-
-    /* renamed from: onRemeasuredLegacy-ozmzZPI  reason: not valid java name */
-    private final void m439onRemeasuredLegacyozmzZPI(long j) {
-        Rect focusedChildBounds;
-        long j2 = this.viewportSize;
-        this.viewportSize = j;
-        if (m433compareToTemP2vQ(j, j2) >= 0 || this.isAnimationRunning || this.trackingFocusedChild || (focusedChildBounds = getFocusedChildBounds()) == null || !m436isMaxVisibleEQwtKw$default(this, focusedChildBounds, j2, 0L, 2, null)) {
-            return;
-        }
-        this.childWasMaxVisibleBeforeViewportShrunk = true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Rect getFocusedChildBounds() {
-        if (ComposeFoundationFlags.isKeepInViewFocusObservationChangeEnabled) {
-            return this.getFocusedRect.invoke();
-        }
-        if (isAttached()) {
-            LayoutCoordinates requireLayoutCoordinates = DelegatableNodeKt.requireLayoutCoordinates(this);
-            LayoutCoordinates layoutCoordinates = this.focusedChild;
-            if (layoutCoordinates != null) {
-                if (!layoutCoordinates.isAttached()) {
-                    layoutCoordinates = null;
-                }
-                if (layoutCoordinates != null) {
-                    return requireLayoutCoordinates.localBoundingBoxOf(layoutCoordinates, false);
-                }
-            }
-            return null;
-        }
-        return null;
+        m466launchAnimationgyyYBs(j2);
     }
 
     /* renamed from: launchAnimation--gyyYBs$default  reason: not valid java name */
-    static /* synthetic */ void m438launchAnimationgyyYBs$default(ContentInViewNode contentInViewNode, long j, int i, Object obj) {
+    static /* synthetic */ void m467launchAnimationgyyYBs$default(ContentInViewNode contentInViewNode, long j, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = IntOffset.Companion.m7694getZeronOccac();
+            j = IntOffset.Companion.m8299getZeronOccac();
         }
-        contentInViewNode.m437launchAnimationgyyYBs(j);
+        contentInViewNode.m466launchAnimationgyyYBs(j);
     }
 
     /* renamed from: launchAnimation--gyyYBs  reason: not valid java name */
-    private final void m437launchAnimationgyyYBs(long j) {
+    private final void m466launchAnimationgyyYBs(long j) {
         BringIntoViewSpec requireBringIntoViewSpec = requireBringIntoViewSpec();
         if (this.isAnimationRunning) {
             InlineClassHelperKt.throwIllegalStateException("launchAnimation called when previous animation was running");
@@ -214,26 +163,24 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculateScrollDelta-I_oMVgE  reason: not valid java name */
-    public final float m432calculateScrollDeltaI_oMVgE(BringIntoViewSpec bringIntoViewSpec, long j) {
-        if (IntSize.m7724equalsimpl0(this.viewportSize, IntSize.Companion.m7731getZeroYbymL2g())) {
-            return 0.0f;
-        }
+    public final float m461calculateScrollDeltaI_oMVgE(BringIntoViewSpec bringIntoViewSpec, long j) {
+        long j2 = this.viewportSize;
         Rect findBringIntoViewRequest = findBringIntoViewRequest();
         if (findBringIntoViewRequest == null) {
-            findBringIntoViewRequest = this.trackingFocusedChild ? getFocusedChildBounds() : null;
+            findBringIntoViewRequest = this.trackingFocusedChild ? this.getFocusedRect.invoke() : null;
             if (findBringIntoViewRequest == null) {
                 return 0.0f;
             }
         }
-        long m7738toSizeozmzZPI = IntSizeKt.m7738toSizeozmzZPI(this.viewportSize);
+        long m8343toSizeozmzZPI = IntSizeKt.m8343toSizeozmzZPI(j2);
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getLeft() - IntOffset.m7683getXimpl(j), findBringIntoViewRequest.getRight() - findBringIntoViewRequest.getLeft(), Float.intBitsToFloat((int) (m7738toSizeozmzZPI >> 32)));
+            return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getLeft() - IntOffset.m8288getXimpl(j), findBringIntoViewRequest.getRight() - findBringIntoViewRequest.getLeft(), Float.intBitsToFloat((int) (m8343toSizeozmzZPI >> 32)));
         }
-        return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getTop() - IntOffset.m7684getYimpl(j), findBringIntoViewRequest.getBottom() - findBringIntoViewRequest.getTop(), Float.intBitsToFloat((int) (m7738toSizeozmzZPI & 4294967295L)));
+        return bringIntoViewSpec.calculateScrollDistance(findBringIntoViewRequest.getTop() - IntOffset.m8289getYimpl(j), findBringIntoViewRequest.getBottom() - findBringIntoViewRequest.getTop(), Float.intBitsToFloat((int) (m8343toSizeozmzZPI & 4294967295L)));
     }
 
     private final Rect findBringIntoViewRequest() {
@@ -248,7 +195,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
                 }
                 Rect invoke = ((Request) objArr[size]).getCurrentBounds().invoke();
                 if (invoke != null) {
-                    if (m434compareToiLBOSCw(invoke.m4560getSizeNHjbRc(), IntSizeKt.m7738toSizeozmzZPI(this.viewportSize)) <= 0) {
+                    if (m463compareToiLBOSCw(invoke.m5136getSizeNHjbRc(), IntSizeKt.m8343toSizeozmzZPI(m470getViewportSizeOrZeroYbymL2g$foundation())) <= 0) {
                         rect = invoke;
                     } else if (rect == null) {
                         return invoke;
@@ -261,43 +208,43 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     }
 
     private final Rect computeDestination(Rect rect) {
-        return rect.m4564translatek4lQ0M(Offset.m4519constructorimpl(m440relocationOffsetfbGrOKE(rect, this.viewportSize, IntOffset.Companion.m7694getZeronOccac()) ^ (-9223372034707292160L)));
+        return rect.m5140translatek4lQ0M(Offset.m5095constructorimpl(m468relocationOffsetfbGrOKE(rect, m470getViewportSizeOrZeroYbymL2g$foundation(), IntOffset.Companion.m8299getZeronOccac()) ^ (-9223372034707292160L)));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: isMaxVisible--EQwtKw$default  reason: not valid java name */
-    public static /* synthetic */ boolean m436isMaxVisibleEQwtKw$default(ContentInViewNode contentInViewNode, Rect rect, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ boolean m465isMaxVisibleEQwtKw$default(ContentInViewNode contentInViewNode, Rect rect, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = contentInViewNode.viewportSize;
+            j = contentInViewNode.m470getViewportSizeOrZeroYbymL2g$foundation();
         }
         long j3 = j;
         if ((i & 2) != 0) {
-            j2 = IntOffset.Companion.m7694getZeronOccac();
+            j2 = IntOffset.Companion.m8299getZeronOccac();
         }
-        return contentInViewNode.m435isMaxVisibleEQwtKw(rect, j3, j2);
+        return contentInViewNode.m464isMaxVisibleEQwtKw(rect, j3, j2);
     }
 
     /* renamed from: isMaxVisible--EQwtKw  reason: not valid java name */
-    private final boolean m435isMaxVisibleEQwtKw(Rect rect, long j, long j2) {
-        long m440relocationOffsetfbGrOKE = m440relocationOffsetfbGrOKE(rect, j, j2);
-        return Math.abs(Float.intBitsToFloat((int) (m440relocationOffsetfbGrOKE >> 32))) <= 0.5f && Math.abs(Float.intBitsToFloat((int) (m440relocationOffsetfbGrOKE & 4294967295L))) <= 0.5f;
+    private final boolean m464isMaxVisibleEQwtKw(Rect rect, long j, long j2) {
+        long m468relocationOffsetfbGrOKE = m468relocationOffsetfbGrOKE(rect, j, j2);
+        return Math.abs(Float.intBitsToFloat((int) (m468relocationOffsetfbGrOKE >> 32))) <= 0.5f && Math.abs(Float.intBitsToFloat((int) (m468relocationOffsetfbGrOKE & 4294967295L))) <= 0.5f;
     }
 
     /* renamed from: relocationOffset-fbGrOKE  reason: not valid java name */
-    private final long m440relocationOffsetfbGrOKE(Rect rect, long j, long j2) {
-        long m7738toSizeozmzZPI = IntSizeKt.m7738toSizeozmzZPI(j);
+    private final long m468relocationOffsetfbGrOKE(Rect rect, long j, long j2) {
+        long m8343toSizeozmzZPI = IntSizeKt.m8343toSizeozmzZPI(j);
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return Offset.m4519constructorimpl((Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getLeft() - IntOffset.m7683getXimpl(j2), rect.getRight() - rect.getLeft(), Float.intBitsToFloat((int) (m7738toSizeozmzZPI >> 32)))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m5095constructorimpl((Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getLeft() - IntOffset.m8288getXimpl(j2), rect.getRight() - rect.getLeft(), Float.intBitsToFloat((int) (m8343toSizeozmzZPI >> 32)))) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getTop() - IntOffset.m7684getYimpl(j2), rect.getBottom() - rect.getTop(), Float.intBitsToFloat((int) (m7738toSizeozmzZPI & 4294967295L)))) & 4294967295L));
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(requireBringIntoViewSpec().calculateScrollDistance(rect.getTop() - IntOffset.m8289getYimpl(j2), rect.getBottom() - rect.getTop(), Float.intBitsToFloat((int) (m8343toSizeozmzZPI & 4294967295L)))) & 4294967295L));
     }
 
     /* renamed from: compareTo-TemP2vQ  reason: not valid java name */
-    private final int m433compareToTemP2vQ(long j, long j2) {
+    private final int m462compareToTemP2vQ(long j, long j2) {
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
@@ -309,7 +256,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     }
 
     /* renamed from: compareTo-iLBOSCw  reason: not valid java name */
-    private final int m434compareToiLBOSCw(long j, long j2) {
+    private final int m463compareToiLBOSCw(long j, long j2) {
         int i = WhenMappings.$EnumSwitchMapping$0[this.orientation.ordinal()];
         if (i != 1) {
             if (i != 2) {
@@ -327,7 +274,7 @@ public final class ContentInViewNode extends Modifier.Node implements BringIntoV
     }
 
     /* compiled from: ContentInViewNode.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B%\u0012\u000e\u0010\u0002\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0003\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0004\b\b\u0010\tJ\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u0019\u0010\u0002\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/gestures/ContentInViewNode$Request;", "", "currentBounds", "Lkotlin/Function0;", "Landroidx/compose/ui/geometry/Rect;", "continuation", "Lkotlinx/coroutines/CancellableContinuation;", "", "<init>", "(Lkotlin/jvm/functions/Function0;Lkotlinx/coroutines/CancellableContinuation;)V", "getCurrentBounds", "()Lkotlin/jvm/functions/Function0;", "getContinuation", "()Lkotlinx/coroutines/CancellableContinuation;", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\b\u0001\u0018\u00002\u00020\u0001B%\u0012\u000e\u0010\u0002\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0003\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0004\b\b\u0010\tJ\b\u0010\u000e\u001a\u00020\u000fH\u0016R\u0019\u0010\u0002\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0010"}, d2 = {"Landroidx/compose/foundation/gestures/ContentInViewNode$Request;", "", "currentBounds", "Lkotlin/Function0;", "Landroidx/compose/ui/geometry/Rect;", "continuation", "Lkotlinx/coroutines/CancellableContinuation;", "", "<init>", "(Lkotlin/jvm/functions/Function0;Lkotlinx/coroutines/CancellableContinuation;)V", "getCurrentBounds", "()Lkotlin/jvm/functions/Function0;", "getContinuation", "()Lkotlinx/coroutines/CancellableContinuation;", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Request {
         public static final int $stable = 8;

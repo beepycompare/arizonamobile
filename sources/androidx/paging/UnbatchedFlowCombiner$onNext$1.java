@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FlowExt.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.UnbatchedFlowCombiner", f = "FlowExt.kt", i = {0, 0, 1, 1, 1, 2}, l = {174, 214, 191}, m = "onNext", n = {"value", FirebaseAnalytics.Param.INDEX, "value", "$this$withLock_u24default$iv", FirebaseAnalytics.Param.INDEX, "$this$withLock_u24default$iv"}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class UnbatchedFlowCombiner$onNext$1 extends ContinuationImpl {

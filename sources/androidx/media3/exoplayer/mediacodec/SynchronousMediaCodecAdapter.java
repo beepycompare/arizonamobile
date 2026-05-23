@@ -14,7 +14,7 @@ import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     private final MediaCodec codec;
     private final LoudnessCodecController loudnessCodecController;
@@ -24,7 +24,7 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         return false;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Factory implements MediaCodecAdapter.Factory {
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter.Factory
         public MediaCodecAdapter createAdapter(MediaCodecAdapter.Configuration configuration) throws IOException {
@@ -148,14 +148,14 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: androidx.media3.exoplayer.mediacodec.SynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                SynchronousMediaCodecAdapter.this.m8270xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
+                SynchronousMediaCodecAdapter.this.m8878xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnFrameRenderedListener$0$androidx-media3-exoplayer-mediacodec-SynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m8270xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+    public /* synthetic */ void m8878xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
         onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 

@@ -1,54 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import com.google.android.vending.expansion.downloader.Constants;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Locale;
-import java.util.UUID;
-import kotlin.text.StringsKt;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes5.dex */
-public final class Ae {
+public final class Ae implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f504a;
-    public final oo b;
-    public final po c;
+    public final String f457a;
 
-    public Ae(Context context) {
-        this(context, new oo(), new po());
+    public Ae(String str) {
+        this.f457a = str;
     }
 
-    public final String a(String str) {
-        try {
-            this.c.getClass();
-            if (!po.a(str)) {
-                this.b.getClass();
-                str = StringsKt.replace$default(UUID.randomUUID().toString(), Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.US);
-            }
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f504a, "uuid.dat");
-            if (fileFromSdkStorage != null && str != null) {
-                Ja.a(str, new FileOutputStream(fileFromSdkStorage));
-            }
-            return str;
-        } catch (Throwable unused) {
-            return null;
+    @Override // io.appmetrica.analytics.impl.Vo
+    public final To a(String str) {
+        if (StringUtils.isNullOrEmpty(str)) {
+            return new To(this, false, this.f457a + " is empty.");
         }
-    }
-
-    public Ae(Context context, oo ooVar, po poVar) {
-        this.f504a = context;
-        this.b = ooVar;
-        this.c = poVar;
-    }
-
-    public final void a() {
-        File fileFromAppStorage;
-        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f504a, "uuid.dat");
-        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f504a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
-            return;
-        }
-        FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
+        return new To(this, true, "");
     }
 }

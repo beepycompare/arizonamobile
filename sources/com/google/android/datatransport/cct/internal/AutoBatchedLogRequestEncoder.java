@@ -8,7 +8,7 @@ import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AutoBatchedLogRequestEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoBatchedLogRequestEncoder();
@@ -40,7 +40,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         encoderConfig.registerEncoder(AutoValue_ExperimentIds.class, ExperimentIdsEncoder.INSTANCE);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class BatchedLogRequestEncoder implements ObjectEncoder<BatchedLogRequest> {
         static final BatchedLogRequestEncoder INSTANCE = new BatchedLogRequestEncoder();
         private static final FieldDescriptor LOGREQUEST_DESCRIPTOR = FieldDescriptor.of("logRequest");
@@ -54,7 +54,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LogRequestEncoder implements ObjectEncoder<LogRequest> {
         static final LogRequestEncoder INSTANCE = new LogRequestEncoder();
         private static final FieldDescriptor REQUESTTIMEMS_DESCRIPTOR = FieldDescriptor.of("requestTimeMs");
@@ -80,7 +80,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ClientInfoEncoder implements ObjectEncoder<ClientInfo> {
         static final ClientInfoEncoder INSTANCE = new ClientInfoEncoder();
         private static final FieldDescriptor CLIENTTYPE_DESCRIPTOR = FieldDescriptor.of("clientType");
@@ -96,7 +96,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class AndroidClientInfoEncoder implements ObjectEncoder<AndroidClientInfo> {
         static final AndroidClientInfoEncoder INSTANCE = new AndroidClientInfoEncoder();
         private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.of(RemoteConfigConstants.RequestFieldKey.SDK_VERSION);
@@ -132,7 +132,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LogEventEncoder implements ObjectEncoder<LogEvent> {
         static final LogEventEncoder INSTANCE = new LogEventEncoder();
         private static final FieldDescriptor EVENTTIMEMS_DESCRIPTOR = FieldDescriptor.of("eventTimeMs");
@@ -162,7 +162,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ComplianceDataEncoder implements ObjectEncoder<ComplianceData> {
         static final ComplianceDataEncoder INSTANCE = new ComplianceDataEncoder();
         private static final FieldDescriptor PRIVACYCONTEXT_DESCRIPTOR = FieldDescriptor.of("privacyContext");
@@ -178,7 +178,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ExternalPrivacyContextEncoder implements ObjectEncoder<ExternalPrivacyContext> {
         static final ExternalPrivacyContextEncoder INSTANCE = new ExternalPrivacyContextEncoder();
         private static final FieldDescriptor PREQUEST_DESCRIPTOR = FieldDescriptor.of("prequest");
@@ -192,7 +192,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ExternalPRequestContextEncoder implements ObjectEncoder<ExternalPRequestContext> {
         static final ExternalPRequestContextEncoder INSTANCE = new ExternalPRequestContextEncoder();
         private static final FieldDescriptor ORIGINASSOCIATEDPRODUCTID_DESCRIPTOR = FieldDescriptor.of("originAssociatedProductId");
@@ -206,7 +206,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class NetworkConnectionInfoEncoder implements ObjectEncoder<NetworkConnectionInfo> {
         static final NetworkConnectionInfoEncoder INSTANCE = new NetworkConnectionInfoEncoder();
         private static final FieldDescriptor NETWORKTYPE_DESCRIPTOR = FieldDescriptor.of("networkType");
@@ -222,7 +222,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ExperimentIdsEncoder implements ObjectEncoder<ExperimentIds> {
         static final ExperimentIdsEncoder INSTANCE = new ExperimentIdsEncoder();
         private static final FieldDescriptor CLEARBLOB_DESCRIPTOR = FieldDescriptor.of("clearBlob");

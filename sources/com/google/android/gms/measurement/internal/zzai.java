@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzai implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
@@ -13,9 +13,9 @@ public final class zzai implements Parcelable.Creator {
         String str2 = null;
         zzpl zzplVar = null;
         String str3 = null;
-        zzbg zzbgVar = null;
-        zzbg zzbgVar2 = null;
-        zzbg zzbgVar3 = null;
+        zzbh zzbhVar = null;
+        zzbh zzbhVar2 = null;
+        zzbh zzbhVar3 = null;
         long j = 0;
         long j2 = 0;
         long j3 = 0;
@@ -42,19 +42,19 @@ public final class zzai implements Parcelable.Creator {
                     str3 = SafeParcelReader.createString(parcel, readHeader);
                     break;
                 case 8:
-                    zzbgVar = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    zzbhVar = (zzbh) SafeParcelReader.createParcelable(parcel, readHeader, zzbh.CREATOR);
                     break;
                 case 9:
                     j2 = SafeParcelReader.readLong(parcel, readHeader);
                     break;
                 case 10:
-                    zzbgVar2 = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    zzbhVar2 = (zzbh) SafeParcelReader.createParcelable(parcel, readHeader, zzbh.CREATOR);
                     break;
                 case 11:
                     j3 = SafeParcelReader.readLong(parcel, readHeader);
                     break;
                 case 12:
-                    zzbgVar3 = (zzbg) SafeParcelReader.createParcelable(parcel, readHeader, zzbg.CREATOR);
+                    zzbhVar3 = (zzbh) SafeParcelReader.createParcelable(parcel, readHeader, zzbh.CREATOR);
                     break;
                 default:
                     SafeParcelReader.skipUnknownField(parcel, readHeader);
@@ -62,7 +62,7 @@ public final class zzai implements Parcelable.Creator {
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zzah(str, str2, zzplVar, j, z, str3, zzbgVar, j2, zzbgVar2, j3, zzbgVar3);
+        return new zzah(str, str2, zzplVar, j, z, str3, zzbhVar, j2, zzbhVar2, j3, zzbhVar3);
     }
 
     @Override // android.os.Parcelable.Creator

@@ -1,7 +1,6 @@
 package androidx.compose.ui.focus;
 
 import androidx.compose.runtime.collection.MutableVector;
-import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.layout.PinnableContainer;
@@ -9,12 +8,11 @@ import androidx.compose.ui.node.DelegatableNodeKt;
 import androidx.compose.ui.node.DelegatingNode;
 import androidx.compose.ui.node.NodeKind;
 import kotlin.Metadata;
-import kotlin.jvm.functions.Function1;
 /* compiled from: FocusRequesterModifierNode.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0004\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0005\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0002\u001a\u000e\u0010\u0007\u001a\u0004\u0018\u00010\b*\u00020\u0002H\u0000¨\u0006\t"}, d2 = {"requestFocus", "", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "captureFocus", "freeFocus", "saveFocusedChild", "restoreFocusedChild", "pinFocusedChild", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0004\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0005\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0002\u001a\u000e\u0010\u0007\u001a\u0004\u0018\u00010\b*\u00020\u0002H\u0000¨\u0006\t"}, d2 = {"requestFocus", "", "Landroidx/compose/ui/focus/FocusRequesterModifierNode;", "captureFocus", "freeFocus", "saveFocusedChild", "restoreFocusedChild", "pinFocusedChild", "Landroidx/compose/ui/layout/PinnableContainer$PinnedHandle;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FocusRequesterModifierNodeKt {
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x00b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0092, code lost:
         continue;
      */
     /*
@@ -22,23 +20,17 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final boolean requestFocus(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
             if (node instanceof FocusTargetNode) {
-                FocusTargetNode focusTargetNode = (FocusTargetNode) node;
-                return ComposeUiFlags.isRequestFocusOnNonFocusableFocusTargetEnabled ? FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode, 0, 1, null) : focusTargetNode.fetchFocusProperties$ui().getCanFocus() ? FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode, 0, 1, null) : TwoDimensionalFocusSearchKt.m4473findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, FocusDirection.Companion.m4407getEnterdhqQ8s(), new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusRequesterModifierNodeKt$requestFocus$1$1
-                    @Override // kotlin.jvm.functions.Function1
-                    public final Boolean invoke(FocusTargetNode focusTargetNode2) {
-                        return Boolean.valueOf(FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode2, 0, 1, null));
-                    }
-                });
+                return FocusTargetModifierNode.m5010requestFocus3ESFkO8$default((FocusTargetNode) node, 0, 1, null);
             }
-            if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -75,28 +67,22 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
-                                FocusTargetNode focusTargetNode2 = (FocusTargetNode) node2;
-                                return ComposeUiFlags.isRequestFocusOnNonFocusableFocusTargetEnabled ? FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode2, 0, 1, null) : focusTargetNode2.fetchFocusProperties$ui().getCanFocus() ? FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode2, 0, 1, null) : TwoDimensionalFocusSearchKt.m4473findChildCorrespondingToFocusEnterOMvw8(focusTargetNode2, FocusDirection.Companion.m4407getEnterdhqQ8s(), new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusRequesterModifierNodeKt$requestFocus$1$1
-                                    @Override // kotlin.jvm.functions.Function1
-                                    public final Boolean invoke(FocusTargetNode focusTargetNode22) {
-                                        return Boolean.valueOf(FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(focusTargetNode22, 0, 1, null));
-                                    }
-                                });
+                                return FocusTargetModifierNode.m5010requestFocus3ESFkO8$default((FocusTargetNode) node2, 0, 1, null);
                             }
-                            if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;
@@ -139,7 +125,7 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final boolean captureFocus(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -147,10 +133,10 @@ public final class FocusRequesterModifierNodeKt {
                 if (FocusTransactionsKt.captureFocus((FocusTargetNode) node)) {
                     return true;
                 }
-            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -187,23 +173,23 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
                                 if (FocusTransactionsKt.captureFocus((FocusTargetNode) node2)) {
                                     return true;
                                 }
-                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;
@@ -246,7 +232,7 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final boolean freeFocus(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -254,10 +240,10 @@ public final class FocusRequesterModifierNodeKt {
                 if (FocusTransactionsKt.freeFocus((FocusTargetNode) node)) {
                     return true;
                 }
-            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -294,23 +280,23 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
                                 if (FocusTransactionsKt.freeFocus((FocusTargetNode) node2)) {
                                     return true;
                                 }
-                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;
@@ -353,7 +339,7 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final boolean saveFocusedChild(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -361,10 +347,10 @@ public final class FocusRequesterModifierNodeKt {
                 if (FocusRestorerKt.saveFocusedChild((FocusTargetNode) node)) {
                     return true;
                 }
-            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -401,23 +387,23 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
                                 if (FocusRestorerKt.saveFocusedChild((FocusTargetNode) node2)) {
                                     return true;
                                 }
-                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;
@@ -460,7 +446,7 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final boolean restoreFocusedChild(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -468,10 +454,10 @@ public final class FocusRequesterModifierNodeKt {
                 if (FocusRestorerKt.restoreFocusedChild((FocusTargetNode) node)) {
                     return true;
                 }
-            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -508,23 +494,23 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
                                 if (FocusRestorerKt.restoreFocusedChild((FocusTargetNode) node2)) {
                                     return true;
                                 }
-                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;
@@ -567,7 +553,7 @@ public final class FocusRequesterModifierNodeKt {
     */
     public static final PinnableContainer.PinnedHandle pinFocusedChild(FocusRequesterModifierNode focusRequesterModifierNode) {
         FocusRequesterModifierNode focusRequesterModifierNode2 = focusRequesterModifierNode;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(1024);
         Modifier.Node node = focusRequesterModifierNode2.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -576,10 +562,10 @@ public final class FocusRequesterModifierNodeKt {
                 if (pinFocusedChild != null) {
                     return pinFocusedChild;
                 }
-            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;
@@ -616,13 +602,13 @@ public final class FocusRequesterModifierNodeKt {
         }
         while (mutableVector2.getSize() != 0) {
             Modifier.Node node2 = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-            if ((node2.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+            if ((node2.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node2, false);
             } else {
                 while (true) {
                     if (node2 == null) {
                         break;
-                    } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0) {
                         MutableVector mutableVector3 = null;
                         while (node2 != null) {
                             if (node2 instanceof FocusTargetNode) {
@@ -630,10 +616,10 @@ public final class FocusRequesterModifierNodeKt {
                                 if (pinFocusedChild2 != null) {
                                     return pinFocusedChild2;
                                 }
-                            } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                            } else if ((node2.getKindSet$ui() & m7135constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui2 = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                    if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                    if ((delegate$ui2.getKindSet$ui() & m7135constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             node2 = delegate$ui2;

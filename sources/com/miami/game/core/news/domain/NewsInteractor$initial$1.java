@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: NewsInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor$initial$1", f = "NewsInteractor.kt", i = {}, l = {39}, m = "invokeSuspend", n = {}, nl = {40}, s = {}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NewsInteractor$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ NewsInteractor this$0;
@@ -78,7 +78,7 @@ public final class NewsInteractor$initial$1 extends SuspendLambda implements Fun
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor$initial$1$3", f = "NewsInteractor.kt", i = {}, l = {46}, m = "invokeSuspend", n = {}, nl = {47}, s = {}, v = 2)
     /* renamed from: com.miami.game.core.news.domain.NewsInteractor$initial$1$3  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
         final /* synthetic */ NewsInteractor this$0;

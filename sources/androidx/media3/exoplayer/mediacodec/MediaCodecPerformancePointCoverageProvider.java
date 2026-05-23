@@ -7,7 +7,7 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaCodecPerformancePointCoverageProvider {
     static final int COVERAGE_RESULT_NO = 1;
     static final int COVERAGE_RESULT_NO_PERFORMANCE_POINTS_UNSUPPORTED = 0;
@@ -29,7 +29,7 @@ public final class MediaCodecPerformancePointCoverageProvider {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api29 {
         private Api29() {
         }
@@ -50,12 +50,11 @@ public final class MediaCodecPerformancePointCoverageProvider {
         }
 
         private static boolean shouldIgnorePerformancePoints() {
-            int evaluateH264RequiredSupport = Build.VERSION.SDK_INT >= 35 ? 2 : evaluateH264RequiredSupport(false);
-            int evaluateH264RequiredSupport2 = evaluateH264RequiredSupport(true);
-            if (evaluateH264RequiredSupport == 0) {
-                return true;
+            if (Build.VERSION.SDK_INT >= 37) {
+                return false;
             }
-            return evaluateH264RequiredSupport2 == 0 ? evaluateH264RequiredSupport != 2 : (evaluateH264RequiredSupport == 2 && evaluateH264RequiredSupport2 == 2) ? false : true;
+            int evaluateH264RequiredSupport = evaluateH264RequiredSupport(true);
+            return Build.VERSION.SDK_INT >= 35 ? evaluateH264RequiredSupport == 1 : evaluateH264RequiredSupport(false) != 2 || evaluateH264RequiredSupport == 1;
         }
 
         private static int evaluateH264RequiredSupport(boolean z) {

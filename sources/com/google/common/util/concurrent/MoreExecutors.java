@@ -268,9 +268,8 @@ public final class MoreExecutors {
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.common.util.concurrent.AbstractFuture
-            public String pendingToString() {
+            protected String pendingToString() {
                 return "task=[" + this.delegate + "]";
             }
         }

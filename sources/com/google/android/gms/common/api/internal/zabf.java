@@ -1,25 +1,22 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.internal.BaseImplementation;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.api.internal.BackgroundDetector;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public interface zabf {
-    BaseImplementation.ApiMethodImpl zaa(BaseImplementation.ApiMethodImpl apiMethodImpl);
+final class zabf implements BackgroundDetector.BackgroundStateChangeListener {
+    final /* synthetic */ GoogleApiManager zaa;
 
-    BaseImplementation.ApiMethodImpl zab(BaseImplementation.ApiMethodImpl apiMethodImpl);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zabf(GoogleApiManager googleApiManager) {
+        Objects.requireNonNull(googleApiManager);
+        this.zaa = googleApiManager;
+    }
 
-    void zad();
-
-    void zae();
-
-    void zag(Bundle bundle);
-
-    void zah(ConnectionResult connectionResult, Api api, boolean z);
-
-    void zai(int i);
-
-    boolean zaj();
+    @Override // com.google.android.gms.common.api.internal.BackgroundDetector.BackgroundStateChangeListener
+    public final void onBackgroundStateChanged(boolean z) {
+        Boolean valueOf = Boolean.valueOf(z);
+        GoogleApiManager googleApiManager = this.zaa;
+        googleApiManager.zaF().sendMessage(googleApiManager.zaF().obtainMessage(1, valueOf));
+    }
 }

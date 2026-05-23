@@ -1,20 +1,38 @@
 package com.google.android.gms.internal.measurement;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzof implements zznj {
-    @Override // com.google.android.gms.internal.measurement.zznj
-    public final boolean zza() {
-        throw null;
+abstract class zzof extends zznp implements zznw {
+    private volatile int zza;
+    private zzps zzb;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzof(String str, String str2, zzph zzphVar) {
+        super("com.google.android.gms.measurement", str2, zzphVar);
+        this.zza = -1;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zznj
-    public final zznm zzb() {
-        throw null;
+    @Override // com.google.android.gms.internal.measurement.zznp
+    protected final Object zzb(zzlk zzlkVar) {
+        return zzaA(this, zzlkVar, "");
     }
 
-    @Override // com.google.android.gms.internal.measurement.zznj
-    public final int zzc() {
-        throw null;
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final int zzf() {
+        return this.zza;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final zzps zzg() {
+        return this.zzb;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final void zzi(int i) {
+        this.zza = i;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final void zzj(zzps zzpsVar) {
+        this.zzb = zzpsVar;
     }
 }

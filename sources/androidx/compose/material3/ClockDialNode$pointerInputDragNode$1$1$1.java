@@ -49,7 +49,7 @@ public final class ClockDialNode$pointerInputDragNode$1$1$1 extends SuspendLambd
             z = this.this$0.autoSwitchToMinute;
             if (z) {
                 analogTimePickerState2 = this.this$0.state;
-                analogTimePickerState2.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
+                analogTimePickerState2.mo2149setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3228getMinuteyecRtBI());
             }
             analogTimePickerState = this.this$0.state;
             animationSpec = this.this$0.animationSpec;

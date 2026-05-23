@@ -12,14 +12,14 @@ import org.checkerframework.framework.qual.JavaExpression;
 @InheritedAnnotation
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface CreatesMustCallFor {
 
     @Target({ElementType.METHOD})
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         CreatesMustCallFor[] value();
     }

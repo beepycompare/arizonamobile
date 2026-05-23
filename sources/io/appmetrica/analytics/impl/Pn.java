@@ -1,32 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 /* loaded from: classes5.dex */
-public final class Pn implements to {
+public final class Pn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H8 f749a;
+    public final Rn f721a;
+    public final Rn b;
 
-    public Pn() {
-        this(new H8());
-    }
-
-    @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0380kh c0380kh) {
-        byte[] bArr = new byte[0];
-        try {
-            bArr = Base64Utils.decompressBase64GzipAsBytes(n8.b);
-        } catch (Throwable unused) {
+    public Pn(Context context) {
+        if (new SafePackageManager().hasSystemFeature(context, "android.hardware.telephony")) {
+            this.f721a = new Y2(new Sl(context));
+            this.b = new Y2(new C0430md(context));
+            return;
         }
-        byte[] a2 = ((G8) this.f749a.f616a.a(n8.o)).a(bArr);
-        return a2 == null ? new byte[0] : a2;
-    }
-
-    public Pn(H8 h8) {
-        this.f749a = h8;
-    }
-
-    public final H8 a() {
-        return this.f749a;
+        this.f721a = new C0554r8();
+        this.b = new C0554r8();
     }
 }

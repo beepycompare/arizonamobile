@@ -1,0 +1,15 @@
+package com.google.android.gms.internal.measurement;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.2.0 */
+/* loaded from: classes4.dex */
+final class zzaeu {
+    public final zzagm zza;
+    public final Object zzb = "";
+    public final zzagm zzc;
+    public final Object zzd;
+
+    public zzaeu(zzagm zzagmVar, Object obj, zzagm zzagmVar2, Object obj2) {
+        this.zza = zzagmVar;
+        this.zzc = zzagmVar2;
+        this.zzd = obj2;
+    }
+}

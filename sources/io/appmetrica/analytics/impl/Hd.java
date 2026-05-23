@@ -1,15 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
+import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes5.dex */
-public final class Hd {
+public final class Hd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashSource f617a;
-    public final String b;
+    public final /* synthetic */ Nd f576a;
+    public final /* synthetic */ AdRevenue b;
+    public final /* synthetic */ boolean c;
 
-    public Hd(NativeCrashSource nativeCrashSource, String str) {
-        this.f617a = nativeCrashSource;
-        this.b = str;
+    public Hd(Nd nd, AdRevenue adRevenue, boolean z) {
+        this.f576a = nd;
+        this.b = adRevenue;
+        this.c = z;
+    }
+
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        Nd.a(this.f576a).reportAdRevenue(this.b, this.c);
     }
 }

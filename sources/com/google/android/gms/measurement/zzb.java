@@ -7,7 +7,7 @@ import com.google.android.gms.measurement.internal.zzjq;
 import com.google.android.gms.measurement.internal.zzlk;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzb extends zzc {
     private final zzlk zza;
@@ -24,8 +24,8 @@ final class zzb extends zzc {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzlk
-    public final void zzb(String str, String str2, Bundle bundle, long j) {
-        this.zza.zzb(str, str2, bundle, j);
+    public final void zzb(String str, String str2, Bundle bundle, long j, long j2) {
+        this.zza.zzb(str, str2, bundle, j, 0L);
     }
 
     @Override // com.google.android.gms.measurement.zzc

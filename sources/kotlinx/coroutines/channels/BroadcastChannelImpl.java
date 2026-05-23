@@ -14,12 +14,13 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.selects.SelectInstance;
 /* compiled from: BroadcastChannel.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u000267B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0012\u001a\b\u0012\u0004\u0012\u00028\u00000\u0013H\u0016J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00028\u00000\u0013H\u0002J\u0016\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0019J\u001d\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00150\u001b2\u0006\u0010\u0018\u001a\u00028\u0000H\u0016¢\u0006\u0004\b\u001c\u0010\u001dJ\u001e\u0010\u001e\u001a\u00020\u00152\n\u0010\u001f\u001a\u0006\u0012\u0002\b\u00030 2\b\u0010\u0018\u001a\u0004\u0018\u00010\u0011H\u0014J\u0012\u0010$\u001a\u00020%2\b\u0010&\u001a\u0004\u0018\u00010'H\u0016J\u0017\u0010(\u001a\u00020%2\b\u0010&\u001a\u0004\u0018\u00010'H\u0010¢\u0006\u0002\b)J\b\u00104\u001a\u000205H\u0016R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00060\u000bj\u0002`\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\rR\u001a\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R6\u0010!\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030 \u0012\u0006\u0012\u0004\u0018\u00010\u00110\"j\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030 \u0012\u0006\u0012\u0004\u0018\u00010\u0011`#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b*\u0010+R\u0017\u0010,\u001a\u00028\u00008F¢\u0006\f\u0012\u0004\b-\u0010.\u001a\u0004\b/\u00100R\u0019\u00101\u001a\u0004\u0018\u00018\u00008F¢\u0006\f\u0012\u0004\b2\u0010.\u001a\u0004\b3\u00100¨\u00068"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl;", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/BufferedChannel;", "Lkotlinx/coroutines/channels/BroadcastChannel;", "capacity", "", "<init>", "(I)V", "getCapacity", "()I", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Lkotlinx/coroutines/internal/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "subscribers", "", "lastConflatedElement", "", "openSubscription", "Lkotlinx/coroutines/channels/ReceiveChannel;", "removeSubscriber", "", CmcdData.STREAMING_FORMAT_SS, "send", "element", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "trySend", "Lkotlinx/coroutines/channels/ChannelResult;", "trySend-JP2dKIU", "(Ljava/lang/Object;)Ljava/lang/Object;", "registerSelectForSend", "select", "Lkotlinx/coroutines/selects/SelectInstance;", "onSendInternalResult", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "close", "", "cause", "", "cancelImpl", "cancelImpl$kotlinx_coroutines_core", "isClosedForSend", "()Z", "value", "getValue$annotations", "()V", "getValue", "()Ljava/lang/Object;", "valueOrNull", "getValueOrNull$annotations", "getValueOrNull", "toString", "", "SubscriberBuffered", "SubscriberConflated", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u0002H\u00010\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u000267B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0012\u001a\b\u0012\u0004\u0012\u00028\u00000\u0013H\u0016J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00028\u00000\u0013H\u0002J\u0016\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010\u0019J\u001d\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00150\u001b2\u0006\u0010\u0018\u001a\u00028\u0000H\u0016¢\u0006\u0004\b\u001c\u0010\u001dJ\u001e\u0010\u001e\u001a\u00020\u00152\n\u0010\u001f\u001a\u0006\u0012\u0002\b\u00030 2\b\u0010\u0018\u001a\u0004\u0018\u00010\u0011H\u0014J\u0012\u0010$\u001a\u00020%2\b\u0010&\u001a\u0004\u0018\u00010'H\u0016J\u0017\u0010(\u001a\u00020%2\b\u0010&\u001a\u0004\u0018\u00010'H\u0010¢\u0006\u0002\b)J\b\u00104\u001a\u000205H\u0016R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00060\u000bj\u0002`\fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\rR\u001a\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R6\u0010!\u001a*\u0012\b\u0012\u0006\u0012\u0002\b\u00030 \u0012\u0006\u0012\u0004\u0018\u00010\u00110\"j\u0014\u0012\b\u0012\u0006\u0012\u0002\b\u00030 \u0012\u0006\u0012\u0004\u0018\u00010\u0011`#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\u00020%8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b*\u0010+R\u0017\u0010,\u001a\u00028\u00008F¢\u0006\f\u0012\u0004\b-\u0010.\u001a\u0004\b/\u00100R\u0019\u00101\u001a\u0004\u0018\u00018\u00008F¢\u0006\f\u0012\u0004\b2\u0010.\u001a\u0004\b3\u00100¨\u00068"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl;", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/BufferedChannel;", "Lkotlinx/coroutines/channels/BroadcastChannel;", "capacity", "", "<init>", "(I)V", "getCapacity", "()I", "lock", "Ljava/util/concurrent/locks/ReentrantLock;", "Lkotlinx/coroutines/internal/ReentrantLock;", "Ljava/util/concurrent/locks/ReentrantLock;", "subscribers", "", "lastConflatedElement", "", "openSubscription", "Lkotlinx/coroutines/channels/ReceiveChannel;", "removeSubscriber", "", CmcdData.STREAMING_FORMAT_SS, "send", "element", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "trySend", "Lkotlinx/coroutines/channels/ChannelResult;", "trySend-JP2dKIU", "(Ljava/lang/Object;)Ljava/lang/Object;", "registerSelectForSend", "select", "Lkotlinx/coroutines/selects/SelectInstance;", "onSendInternalResult", "Ljava/util/HashMap;", "Lkotlin/collections/HashMap;", "close", "", "cause", "", "cancelImpl", "cancelImpl$kotlinx_coroutines_core", "isClosedForSend", "()Z", "value", "getValue$annotations", "()V", "getValue", "()Ljava/lang/Object;", "valueOrNull", "getValueOrNull$annotations", "getValueOrNull", "toString", "", "SubscriberBuffered", "SubscriberConflated", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements BroadcastChannel<E> {
     private final int capacity;
@@ -34,10 +35,6 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     public static /* synthetic */ void getValueOrNull$annotations() {
     }
 
-    public final int getCapacity() {
-        return this.capacity;
-    }
-
     public BroadcastChannelImpl(int i) {
         super(0, null);
         this.capacity = i;
@@ -48,6 +45,10 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
         this.subscribers = CollectionsKt.emptyList();
         this.lastConflatedElement = BroadcastChannelKt.access$getNO_ELEMENT$p();
         this.onSendInternalResult = new HashMap<>();
+    }
+
+    public final int getCapacity() {
+        return this.capacity;
     }
 
     @Override // kotlinx.coroutines.channels.BroadcastChannel
@@ -61,7 +62,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                 return subscriberConflated;
             }
             if (this.lastConflatedElement != BroadcastChannelKt.access$getNO_ELEMENT$p()) {
-                subscriberConflated.mo8396trySendJP2dKIU(getValue());
+                subscriberConflated.mo9005trySendJP2dKIU(getValue());
             }
             this.subscribers = CollectionsKt.plus((Collection<? extends BufferedChannel>) this.subscribers, subscriberConflated);
             reentrantLock.unlock();
@@ -90,11 +91,11 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x009c  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0081 -> B:12:0x0036). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00ce  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x00b0 -> B:12:0x0045). Please submit an issue!!! */
     @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -102,18 +103,19 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     public Object send(E e, Continuation<? super Unit> continuation) {
         BroadcastChannelImpl$send$1 broadcastChannelImpl$send$1;
         int i;
-        BroadcastChannelImpl<E> broadcastChannelImpl;
+        List<? extends BufferedChannel<E>> list;
         Iterator it;
-        E e2;
+        Object obj;
+        int i2;
         if (continuation instanceof BroadcastChannelImpl$send$1) {
             broadcastChannelImpl$send$1 = (BroadcastChannelImpl$send$1) continuation;
             if ((broadcastChannelImpl$send$1.label & Integer.MIN_VALUE) != 0) {
                 broadcastChannelImpl$send$1.label -= Integer.MIN_VALUE;
-                Object obj = broadcastChannelImpl$send$1.result;
+                Object obj2 = broadcastChannelImpl$send$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = broadcastChannelImpl$send$1.label;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
+                    ResultKt.throwOnFailure(obj2);
                     ReentrantLock reentrantLock = this.lock;
                     reentrantLock.lock();
                     try {
@@ -123,11 +125,13 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                         if (this.capacity == -1) {
                             this.lastConflatedElement = e;
                         }
-                        List<? extends BufferedChannel<E>> list = this.subscribers;
+                        List<? extends BufferedChannel<E>> list2 = this.subscribers;
                         reentrantLock.unlock();
-                        broadcastChannelImpl = this;
-                        it = list.iterator();
-                        e2 = e;
+                        List<? extends BufferedChannel<E>> list3 = list2;
+                        list = list2;
+                        it = list3.iterator();
+                        obj = list3;
+                        i2 = 0;
                         if (it.hasNext()) {
                         }
                     } catch (Throwable th) {
@@ -137,35 +141,60 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    it = (Iterator) broadcastChannelImpl$send$1.L$2;
-                    Object obj2 = broadcastChannelImpl$send$1.L$1;
-                    ResultKt.throwOnFailure(obj);
+                    int i3 = broadcastChannelImpl$send$1.I$1;
+                    int i4 = broadcastChannelImpl$send$1.I$0;
+                    BufferedChannel bufferedChannel = (BufferedChannel) broadcastChannelImpl$send$1.L$5;
+                    Object obj3 = broadcastChannelImpl$send$1.L$4;
+                    it = (Iterator) broadcastChannelImpl$send$1.L$3;
+                    obj = (Iterable) broadcastChannelImpl$send$1.L$2;
+                    list = (List) broadcastChannelImpl$send$1.L$1;
+                    Object obj4 = broadcastChannelImpl$send$1.L$0;
+                    ResultKt.throwOnFailure(obj2);
                     BroadcastChannelImpl$send$1 broadcastChannelImpl$send$12 = broadcastChannelImpl$send$1;
-                    E e3 = obj2;
-                    broadcastChannelImpl = (BroadcastChannelImpl) broadcastChannelImpl$send$1.L$0;
+                    int i5 = i4;
+                    e = obj4;
+                    List<? extends BufferedChannel<E>> list4 = list;
+                    Object obj5 = obj;
+                    Iterator it2 = it;
                     BroadcastChannelImpl$send$1 broadcastChannelImpl$send$13 = broadcastChannelImpl$send$12;
-                    if (((Boolean) obj).booleanValue() && broadcastChannelImpl.isClosedForSend()) {
-                        throw broadcastChannelImpl.getSendException();
+                    if (((Boolean) obj2).booleanValue() && isClosedForSend()) {
+                        throw getSendException();
                     }
-                    e2 = e3;
+                    i2 = i5;
                     broadcastChannelImpl$send$1 = broadcastChannelImpl$send$13;
+                    it = it2;
+                    obj = obj5;
+                    list = list4;
                     if (it.hasNext()) {
-                        broadcastChannelImpl$send$1.L$0 = broadcastChannelImpl;
-                        broadcastChannelImpl$send$1.L$1 = e2;
-                        broadcastChannelImpl$send$1.L$2 = it;
+                        Object next = it.next();
+                        BufferedChannel bufferedChannel2 = (BufferedChannel) next;
+                        broadcastChannelImpl$send$1.L$0 = e;
+                        broadcastChannelImpl$send$1.L$1 = SpillingKt.nullOutSpilledVariable(list);
+                        broadcastChannelImpl$send$1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                        broadcastChannelImpl$send$1.L$3 = it;
+                        broadcastChannelImpl$send$1.L$4 = SpillingKt.nullOutSpilledVariable(next);
+                        broadcastChannelImpl$send$1.L$5 = SpillingKt.nullOutSpilledVariable(bufferedChannel2);
+                        broadcastChannelImpl$send$1.I$0 = i2;
+                        broadcastChannelImpl$send$1.I$1 = 0;
                         broadcastChannelImpl$send$1.label = 1;
-                        Object sendBroadcast$kotlinx_coroutines_core = ((BufferedChannel) it.next()).sendBroadcast$kotlinx_coroutines_core(e2, broadcastChannelImpl$send$1);
+                        Object sendBroadcast$kotlinx_coroutines_core = bufferedChannel2.sendBroadcast$kotlinx_coroutines_core(e, broadcastChannelImpl$send$1);
                         if (sendBroadcast$kotlinx_coroutines_core == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         broadcastChannelImpl$send$12 = broadcastChannelImpl$send$1;
-                        e3 = e2;
-                        obj = sendBroadcast$kotlinx_coroutines_core;
+                        i5 = i2;
+                        obj2 = sendBroadcast$kotlinx_coroutines_core;
+                        List<? extends BufferedChannel<E>> list42 = list;
+                        Object obj52 = obj;
+                        Iterator it22 = it;
                         BroadcastChannelImpl$send$1 broadcastChannelImpl$send$132 = broadcastChannelImpl$send$12;
-                        if (((Boolean) obj).booleanValue()) {
+                        if (((Boolean) obj2).booleanValue()) {
                         }
-                        e2 = e3;
+                        i2 = i5;
                         broadcastChannelImpl$send$1 = broadcastChannelImpl$send$132;
+                        it = it22;
+                        obj = obj52;
+                        list = list42;
                         if (it.hasNext()) {
                             return Unit.INSTANCE;
                         }
@@ -174,7 +203,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
             }
         }
         broadcastChannelImpl$send$1 = new BroadcastChannelImpl$send$1(this, continuation);
-        Object obj3 = broadcastChannelImpl$send$1.result;
+        Object obj22 = broadcastChannelImpl$send$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = broadcastChannelImpl$send$1.label;
         if (i != 0) {
@@ -183,19 +212,19 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
 
     @Override // kotlinx.coroutines.channels.BufferedChannel, kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo8396trySendJP2dKIU(E e) {
+    public Object mo9005trySendJP2dKIU(E e) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
         try {
             if (isClosedForSend()) {
-                return super.mo8396trySendJP2dKIU(e);
+                return super.mo9005trySendJP2dKIU(e);
             }
             List<? extends BufferedChannel<E>> list = this.subscribers;
             if (!(list instanceof Collection) || !list.isEmpty()) {
                 Iterator<T> it = list.iterator();
                 while (it.hasNext()) {
                     if (((BufferedChannel) it.next()).shouldSendSuspend$kotlinx_coroutines_core()) {
-                        return ChannelResult.Companion.m10743failurePtdJZtk();
+                        return ChannelResult.Companion.m11383failurePtdJZtk();
                     }
                 }
             }
@@ -204,9 +233,9 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
             }
             Iterator<T> it2 = this.subscribers.iterator();
             while (it2.hasNext()) {
-                ((BufferedChannel) it2.next()).mo8396trySendJP2dKIU(e);
+                ((BufferedChannel) it2.next()).mo9005trySendJP2dKIU(e);
             }
-            return ChannelResult.Companion.m10744successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m11384successJP2dKIU(Unit.INSTANCE);
         } finally {
             reentrantLock.unlock();
         }
@@ -281,7 +310,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     }
 
     /* compiled from: BroadcastChannel.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0000\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;", "Lkotlinx/coroutines/channels/BufferedChannel;", "<init>", "(Lkotlinx/coroutines/channels/BroadcastChannelImpl;)V", "cancelImpl", "", "cause", "", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0000\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;", "Lkotlinx/coroutines/channels/BufferedChannel;", "<init>", "(Lkotlinx/coroutines/channels/BroadcastChannelImpl;)V", "cancelImpl", "", "cause", "", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     private final class SubscriberBuffered extends BufferedChannel<E> {
         public SubscriberBuffered() {
@@ -305,7 +334,7 @@ public final class BroadcastChannelImpl<E> extends BufferedChannel<E> implements
     }
 
     /* compiled from: BroadcastChannel.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0000\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberConflated;", "Lkotlinx/coroutines/channels/ConflatedBufferedChannel;", "<init>", "(Lkotlinx/coroutines/channels/BroadcastChannelImpl;)V", "cancelImpl", "", "cause", "", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0003\n\u0000\b\u0082\u0004\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberConflated;", "Lkotlinx/coroutines/channels/ConflatedBufferedChannel;", "<init>", "(Lkotlinx/coroutines/channels/BroadcastChannelImpl;)V", "cancelImpl", "", "cause", "", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     private final class SubscriberConflated extends ConflatedBufferedChannel<E> {
         public SubscriberConflated() {

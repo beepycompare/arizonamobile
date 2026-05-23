@@ -13,13 +13,11 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic$doFlingAnimation$2", f = "Scrollable.kt", i = {}, l = {890}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic$doFlingAnimation$2", f = "Scrollable.kt", i = {}, l = {921}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: $$v$c$androidx-compose-ui-unit-Velocity$-available$0  reason: not valid java name */
-    final /* synthetic */ long f16$$v$c$androidxcomposeuiunitVelocity$available$0;
+    final /* synthetic */ long $available;
     final /* synthetic */ Ref.LongRef $result;
     long J$0;
     private /* synthetic */ Object L$0;
@@ -34,12 +32,12 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
         super(2, continuation);
         this.this$0 = scrollingLogic;
         this.$result = longRef;
-        this.f16$$v$c$androidxcomposeuiunitVelocity$available$0 = j;
+        this.$available = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ScrollingLogic$doFlingAnimation$2 scrollingLogic$doFlingAnimation$2 = new ScrollingLogic$doFlingAnimation$2(this.this$0, this.$result, this.f16$$v$c$androidxcomposeuiunitVelocity$available$0, continuation);
+        ScrollingLogic$doFlingAnimation$2 scrollingLogic$doFlingAnimation$2 = new ScrollingLogic$doFlingAnimation$2(this.this$0, this.$result, this.$available, continuation);
         scrollingLogic$doFlingAnimation$2.L$0 = obj;
         return scrollingLogic$doFlingAnimation$2;
     }
@@ -53,11 +51,11 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic scrollingLogic;
         FlingBehavior flingBehavior;
-        float m584toFloatTH1AsA0;
+        float m616toFloatTH1AsA0;
         Ref.LongRef longRef;
         long j;
         ScrollingLogic scrollingLogic2;
-        long m585updateQWom1Mo;
+        long m617updateQWom1Mo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -75,16 +73,16 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
                         }
                     }
                     ScrollingLogic scrollingLogic4 = ScrollingLogic.this;
-                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m589toFloatk4lQ0M(nestedScrollScope.mo531scrollByWithOverscrollOzD1aCk(scrollingLogic4.m587reverseIfNeededMKHz9U(scrollingLogic4.m590toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5964getSideEffectWNlRxjI())));
+                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m621toFloatk4lQ0M(nestedScrollScope.mo561scrollByWithOverscrollOzD1aCk(scrollingLogic4.m619reverseIfNeededMKHz9U(scrollingLogic4.m622toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m6553getSideEffectWNlRxjI())));
                 }
             };
             scrollingLogic = this.this$0;
             Ref.LongRef longRef2 = this.$result;
-            long j2 = this.f16$$v$c$androidxcomposeuiunitVelocity$available$0;
+            long j2 = this.$available;
             flingBehavior = scrollingLogic.flingBehavior;
             long j3 = longRef2.element;
-            m584toFloatTH1AsA0 = scrollingLogic.m584toFloatTH1AsA0(j2);
-            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m584toFloatTH1AsA0);
+            m616toFloatTH1AsA0 = scrollingLogic.m616toFloatTH1AsA0(j2);
+            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m616toFloatTH1AsA0);
             this.L$0 = scrollingLogic;
             this.L$1 = scrollingLogic;
             this.L$2 = longRef2;
@@ -107,8 +105,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
             scrollingLogic2 = (ScrollingLogic) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        m585updateQWom1Mo = scrollingLogic.m585updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
-        longRef.element = m585updateQWom1Mo;
+        m617updateQWom1Mo = scrollingLogic.m617updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
+        longRef.element = m617updateQWom1Mo;
         return Unit.INSTANCE;
     }
 }

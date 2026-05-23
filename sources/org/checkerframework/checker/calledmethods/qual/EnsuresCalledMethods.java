@@ -13,7 +13,7 @@ import org.checkerframework.framework.qual.QualifierArgument;
 @PostconditionAnnotation(qualifier = CalledMethods.class)
 @InheritedAnnotation
 @Repeatable(List.class)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresCalledMethods {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
@@ -21,7 +21,7 @@ public @interface EnsuresCalledMethods {
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresCalledMethods[] value();
     }

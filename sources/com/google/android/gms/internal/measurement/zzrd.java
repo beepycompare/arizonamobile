@@ -1,22 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import java.util.concurrent.Callable;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzrd implements zzrc {
-    public static final zzkm zza;
+final /* synthetic */ class zzrd implements Callable {
+    static final /* synthetic */ zzrd zza = new zzrd();
 
-    static {
-        zzkg zzb = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zza = zzb.zzd("measurement.session_stitching_token_enabled", false);
-        zzb.zzd("measurement.link_sst_to_sid", true);
+    private /* synthetic */ zzrd() {
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzrc
-    public final boolean zza() {
-        return true;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzrc
-    public final boolean zzb() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    @Override // java.util.concurrent.Callable
+    public final /* synthetic */ Object call() {
+        return null;
     }
 }

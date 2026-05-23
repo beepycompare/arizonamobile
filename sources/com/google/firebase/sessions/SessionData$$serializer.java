@@ -3,8 +3,10 @@ package com.google.firebase.sessions;
 import java.util.Map;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
+import kotlin.Lazy;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import kotlinx.serialization.DeserializationStrategy;
 import kotlinx.serialization.KSerializer;
 import kotlinx.serialization.UnknownFieldException;
 import kotlinx.serialization.builtins.BuiltinSerializersKt;
@@ -44,14 +46,14 @@ public /* synthetic */ class SessionData$$serializer implements GeneratedSeriali
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer
     public final KSerializer<?>[] childSerializers() {
-        KSerializer[] kSerializerArr;
-        kSerializerArr = SessionData.$childSerializers;
-        return new KSerializer[]{SessionDetails$$serializer.INSTANCE, BuiltinSerializersKt.getNullable(Time$$serializer.INSTANCE), BuiltinSerializersKt.getNullable(kSerializerArr[2])};
+        Lazy[] lazyArr;
+        lazyArr = SessionData.$childSerializers;
+        return new KSerializer[]{SessionDetails$$serializer.INSTANCE, BuiltinSerializersKt.getNullable(Time$$serializer.INSTANCE), BuiltinSerializersKt.getNullable((KSerializer) lazyArr[2].getValue())};
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public final SessionData deserialize(Decoder decoder) {
-        KSerializer[] kSerializerArr;
+        Lazy[] lazyArr;
         int i;
         SessionDetails sessionDetails;
         Time time;
@@ -59,10 +61,10 @@ public /* synthetic */ class SessionData$$serializer implements GeneratedSeriali
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         SerialDescriptor serialDescriptor = descriptor;
         CompositeDecoder beginStructure = decoder.beginStructure(serialDescriptor);
-        kSerializerArr = SessionData.$childSerializers;
+        lazyArr = SessionData.$childSerializers;
         SessionDetails sessionDetails2 = null;
         if (beginStructure.decodeSequentially()) {
-            map = (Map) beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, kSerializerArr[2], null);
+            map = (Map) beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, (DeserializationStrategy) lazyArr[2].getValue(), null);
             sessionDetails = (SessionDetails) beginStructure.decodeSerializableElement(serialDescriptor, 0, SessionDetails$$serializer.INSTANCE, null);
             i = 7;
             time = (Time) beginStructure.decodeNullableSerializableElement(serialDescriptor, 1, Time$$serializer.INSTANCE, null);
@@ -84,7 +86,7 @@ public /* synthetic */ class SessionData$$serializer implements GeneratedSeriali
                 } else if (decodeElementIndex != 2) {
                     throw new UnknownFieldException(decodeElementIndex);
                 } else {
-                    map2 = (Map) beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, kSerializerArr[2], map2);
+                    map2 = (Map) beginStructure.decodeNullableSerializableElement(serialDescriptor, 2, (DeserializationStrategy) lazyArr[2].getValue(), map2);
                     i2 |= 4;
                 }
             }

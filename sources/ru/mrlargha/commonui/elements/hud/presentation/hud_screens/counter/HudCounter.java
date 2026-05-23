@@ -1093,13 +1093,7 @@ public final class HudCounter {
     }
 
     private final List<TextView> getCounterTextList(HudCounterItemBinding hudCounterItemBinding) {
-        TextView tvSimpleTime = hudCounterItemBinding.tvSimpleTime;
-        Intrinsics.checkNotNullExpressionValue(tvSimpleTime, "tvSimpleTime");
-        TextView tvTitleWithIc = hudCounterItemBinding.tvTitleWithIc;
-        Intrinsics.checkNotNullExpressionValue(tvTitleWithIc, "tvTitleWithIc");
-        TextView tvProgress = hudCounterItemBinding.tvProgress;
-        Intrinsics.checkNotNullExpressionValue(tvProgress, "tvProgress");
-        return CollectionsKt.listOf((Object[]) new TextView[]{tvSimpleTime, tvTitleWithIc, tvProgress});
+        return CollectionsKt.listOf((Object[]) new TextView[]{hudCounterItemBinding.tvSimpleTime, hudCounterItemBinding.tvTitleWithIc, hudCounterItemBinding.tvProgress});
     }
 
     public final int dpToPx(int i) {

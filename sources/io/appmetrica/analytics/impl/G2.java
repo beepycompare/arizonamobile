@@ -1,12 +1,24 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import io.appmetrica.analytics.coreapi.internal.backport.BiConsumer;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes5.dex */
-public final class G2 implements so {
-    @Override // io.appmetrica.analytics.impl.so
-    public final qo a(Object obj) {
-        C0258fo[] c0258foArr = ((C0335io) obj).f1056a;
-        if (c0258foArr != null && c0258foArr.length != 0) {
-            return new qo(this, true, "");
-        }
-        return new qo(this, false, "attributes list is empty");
+public final class G2 extends BroadcastReceiver {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final BiConsumer f555a;
+    public final ICommonExecutor b;
+
+    public G2(C0110a3 c0110a3, ICommonExecutor iCommonExecutor) {
+        this.f555a = c0110a3;
+        this.b = iCommonExecutor;
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        this.b.execute(new F2(this, context, intent));
     }
 }

@@ -9,12 +9,12 @@ public final class LoadingIndicatorTokens {
     public static final int $stable = 0;
     public static final LoadingIndicatorTokens INSTANCE = new LoadingIndicatorTokens();
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.Primary;
-    private static final float ActiveSize = Dp.m7555constructorimpl(38.0f);
+    private static final float ActiveSize = Dp.m8160constructorimpl(38.0f);
     private static final ColorSchemeKeyTokens ContainedActiveColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens ContainedContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
-    private static final float ContainerHeight = Dp.m7555constructorimpl(48.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(48.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ContainerWidth = Dp.m7555constructorimpl(48.0f);
+    private static final float ContainerWidth = Dp.m8160constructorimpl(48.0f);
 
     private LoadingIndicatorTokens() {
     }
@@ -24,7 +24,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getActiveSize-D9Ej5fM  reason: not valid java name */
-    public final float m3520getActiveSizeD9Ej5fM() {
+    public final float m3965getActiveSizeD9Ej5fM() {
         return ActiveSize;
     }
 
@@ -37,7 +37,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3521getContainerHeightD9Ej5fM() {
+    public final float m3966getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -46,7 +46,7 @@ public final class LoadingIndicatorTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3522getContainerWidthD9Ej5fM() {
+    public final float m3967getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 }

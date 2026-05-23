@@ -10,21 +10,21 @@ public final class OutlinedCardTokens {
     public static final float DisabledOutlineOpacity = 0.12f;
     public static final OutlinedCardTokens INSTANCE = new OutlinedCardTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerMedium;
-    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float DisabledContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens DisabledOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3807getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens DraggedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float FocusContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float FocusContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusOutlineColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3360getLevel1D9Ej5fM();
+    private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3805getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens HoverOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens OutlineColor = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float OutlineWidth = Dp.m7555constructorimpl(1.0f);
-    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float OutlineWidth = Dp.m8160constructorimpl(1.0f);
+    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ColorSchemeKeyTokens PressedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
 
     private OutlinedCardTokens() {
@@ -35,7 +35,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3586getContainerElevationD9Ej5fM() {
+    public final float m4031getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -44,7 +44,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getDisabledContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3587getDisabledContainerElevationD9Ej5fM() {
+    public final float m4032getDisabledContainerElevationD9Ej5fM() {
         return DisabledContainerElevation;
     }
 
@@ -53,7 +53,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3588getDraggedContainerElevationD9Ej5fM() {
+    public final float m4033getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
@@ -62,7 +62,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3589getFocusContainerElevationD9Ej5fM() {
+    public final float m4034getFocusContainerElevationD9Ej5fM() {
         return FocusContainerElevation;
     }
 
@@ -71,7 +71,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3590getHoverContainerElevationD9Ej5fM() {
+    public final float m4035getHoverContainerElevationD9Ej5fM() {
         return HoverContainerElevation;
     }
 
@@ -84,7 +84,7 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3591getIconSizeD9Ej5fM() {
+    public final float m4036getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -93,12 +93,12 @@ public final class OutlinedCardTokens {
     }
 
     /* renamed from: getOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3592getOutlineWidthD9Ej5fM() {
+    public final float m4037getOutlineWidthD9Ej5fM() {
         return OutlineWidth;
     }
 
     /* renamed from: getPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3593getPressedContainerElevationD9Ej5fM() {
+    public final float m4038getPressedContainerElevationD9Ej5fM() {
         return PressedContainerElevation;
     }
 

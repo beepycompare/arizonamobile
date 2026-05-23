@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AwaiterQueue.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0083@\u0018\u0000 ,2\u00020\u0001:\u0001,B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\t\b\u0016¢\u0006\u0004\b\u0004\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\bH\u0086\b¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\fH\u0086\b¢\u0006\u0004\b\r\u0010\u000eJ+\u0010\u000f\u001a\u00020\u00102\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\f0\u0012H\u0086\b\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0000¢\u0006\u0004\b\u0013\u0010\u0014J\u0018\u0010\u0015\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\u0010H\u0086\b¢\u0006\u0004\b\u0017\u0010\u0018J$\u0010\u0019\u001a\u00020\u00102\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00100\u001bH\u0082\b¢\u0006\u0004\b\u001c\u0010\u001dJ\u001f\u0010\u001e\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u00102\u0006\u0010\u001f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b \u0010!J\u000f\u0010%\u001a\u00020&H\u0016¢\u0006\u0004\b'\u0010(J\u0013\u0010)\u001a\u00020\b2\b\u0010*\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010+\u001a\u00020\u0010HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u0016\u001a\u00020\u0010*\u00020\u00108Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0019\u0010\u001f\u001a\u00020\u0010*\u00020\u00108Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b$\u0010#\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006-"}, d2 = {"Landroidx/compose/runtime/internal/AtomicAwaitersCount;", "", "value", "Landroidx/compose/runtime/internal/AtomicInt;", "constructor-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Landroidx/compose/runtime/internal/AtomicInt;", "()Landroidx/compose/runtime/internal/AtomicInt;", "hasAwaiters", "", "hasAwaiters-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Z", "incrementVersionAndResetCount", "", "incrementVersionAndResetCount-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)V", "incrementCountAndGetVersion", "", "ifFirstAwaiter", "Lkotlin/Function0;", "incrementCountAndGetVersion-impl", "(Landroidx/compose/runtime/internal/AtomicInt;Lkotlin/jvm/functions/Function0;)I", "decrementCount", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "decrementCount-impl", "(Landroidx/compose/runtime/internal/AtomicInt;I)V", "update", "calculation", "Lkotlin/Function1;", "update-impl", "(Landroidx/compose/runtime/internal/AtomicInt;Lkotlin/jvm/functions/Function1;)I", "pack", "count", "pack-impl", "(Landroidx/compose/runtime/internal/AtomicInt;II)I", "getVersion-impl", "(Landroidx/compose/runtime/internal/AtomicInt;I)I", "getCount-impl", "toString", "", "toString-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Ljava/lang/String;", "equals", "other", "hashCode", "Companion", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0083@\u0018\u0000 ,2\u00020\u0001:\u0001,B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B\t\b\u0016¢\u0006\u0004\b\u0004\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\bH\u0086\b¢\u0006\u0004\b\t\u0010\nJ\u0010\u0010\u000b\u001a\u00020\fH\u0086\b¢\u0006\u0004\b\r\u0010\u000eJ+\u0010\u000f\u001a\u00020\u00102\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\f0\u0012H\u0086\b\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0000¢\u0006\u0004\b\u0013\u0010\u0014J\u0018\u0010\u0015\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\u0010H\u0086\b¢\u0006\u0004\b\u0017\u0010\u0018J$\u0010\u0019\u001a\u00020\u00102\u0012\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00100\u001bH\u0082\b¢\u0006\u0004\b\u001c\u0010\u001dJ\u001f\u0010\u001e\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u00102\u0006\u0010\u001f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b \u0010!J\u000f\u0010%\u001a\u00020&H\u0016¢\u0006\u0004\b'\u0010(J\u0014\u0010)\u001a\u00020\b2\b\u0010*\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010+\u001a\u00020\u0010HÖ\u0081\u0004R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u0016\u001a\u00020\u0010*\u00020\u00108Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u0019\u0010\u001f\u001a\u00020\u0010*\u00020\u00108Â\u0002X\u0082\u0004¢\u0006\u0006\u001a\u0004\b$\u0010#\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006-"}, d2 = {"Landroidx/compose/runtime/internal/AtomicAwaitersCount;", "", "value", "Landroidx/compose/runtime/internal/AtomicInt;", "constructor-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Landroidx/compose/runtime/internal/AtomicInt;", "()Landroidx/compose/runtime/internal/AtomicInt;", "hasAwaiters", "", "hasAwaiters-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Z", "incrementVersionAndResetCount", "", "incrementVersionAndResetCount-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)V", "incrementCountAndGetVersion", "", "ifFirstAwaiter", "Lkotlin/Function0;", "incrementCountAndGetVersion-impl", "(Landroidx/compose/runtime/internal/AtomicInt;Lkotlin/jvm/functions/Function0;)I", "decrementCount", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "decrementCount-impl", "(Landroidx/compose/runtime/internal/AtomicInt;I)V", "update", "calculation", "Lkotlin/Function1;", "update-impl", "(Landroidx/compose/runtime/internal/AtomicInt;Lkotlin/jvm/functions/Function1;)I", "pack", "count", "pack-impl", "(Landroidx/compose/runtime/internal/AtomicInt;II)I", "getVersion-impl", "(Landroidx/compose/runtime/internal/AtomicInt;I)I", "getCount-impl", "toString", "", "toString-impl", "(Landroidx/compose/runtime/internal/AtomicInt;)Ljava/lang/String;", "equals", "other", "hashCode", "Companion", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 final class AtomicAwaitersCount {
@@ -19,56 +19,56 @@ final class AtomicAwaitersCount {
     private final AtomicInt value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AtomicAwaitersCount m4159boximpl(AtomicInt atomicInt) {
+    public static final /* synthetic */ AtomicAwaitersCount m4685boximpl(AtomicInt atomicInt) {
         return new AtomicAwaitersCount(atomicInt);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static AtomicInt m4161constructorimpl(AtomicInt atomicInt) {
+    private static AtomicInt m4687constructorimpl(AtomicInt atomicInt) {
         return atomicInt;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4163equalsimpl(AtomicInt atomicInt, Object obj) {
-        return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m4174unboximpl());
+    public static boolean m4689equalsimpl(AtomicInt atomicInt, Object obj) {
+        return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m4700unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4164equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
+    public static final boolean m4690equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
         return Intrinsics.areEqual(atomicInt, atomicInt2);
     }
 
     /* renamed from: getCount-impl  reason: not valid java name */
-    private static final int m4165getCountimpl(AtomicInt atomicInt, int i) {
+    private static final int m4691getCountimpl(AtomicInt atomicInt, int i) {
         return 134217727 & i;
     }
 
     /* renamed from: getVersion-impl  reason: not valid java name */
-    private static final int m4166getVersionimpl(AtomicInt atomicInt, int i) {
+    private static final int m4692getVersionimpl(AtomicInt atomicInt, int i) {
         return (i >>> 27) & 15;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4168hashCodeimpl(AtomicInt atomicInt) {
+    public static int m4694hashCodeimpl(AtomicInt atomicInt) {
         return atomicInt.hashCode();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: pack-impl  reason: not valid java name */
-    public static final int m4171packimpl(AtomicInt atomicInt, int i, int i2) {
+    public static final int m4697packimpl(AtomicInt atomicInt, int i, int i2) {
         return ((i & 15) << 27) | (134217727 & i2);
     }
 
     public boolean equals(Object obj) {
-        return m4163equalsimpl(this.value, obj);
+        return m4689equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4168hashCodeimpl(this.value);
+        return m4694hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ AtomicInt m4174unboximpl() {
+    public final /* synthetic */ AtomicInt m4700unboximpl() {
         return this.value;
     }
 
@@ -77,17 +77,17 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static AtomicInt m4160constructorimpl() {
-        return m4161constructorimpl(new AtomicInt(0));
+    public static AtomicInt m4686constructorimpl() {
+        return m4687constructorimpl(new AtomicInt(0));
     }
 
     /* renamed from: hasAwaiters-impl  reason: not valid java name */
-    public static final boolean m4167hasAwaitersimpl(AtomicInt atomicInt) {
+    public static final boolean m4693hasAwaitersimpl(AtomicInt atomicInt) {
         return (atomicInt.get() & 134217727) > 0;
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    private static final int m4173updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
+    private static final int m4699updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
         int i;
         int intValue;
         do {
@@ -98,17 +98,17 @@ final class AtomicAwaitersCount {
     }
 
     public String toString() {
-        return m4172toStringimpl(this.value);
+        return m4698toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4172toStringimpl(AtomicInt atomicInt) {
+    public static String m4698toStringimpl(AtomicInt atomicInt) {
         int i = atomicInt.get();
         return "AtomicAwaitersCount(version = " + ((i >>> 27) & 15) + ", count = " + (i & 134217727) + ')';
     }
 
     /* compiled from: AwaiterQueue.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/runtime/internal/AtomicAwaitersCount$Companion;", "", "<init>", "()V", "VERSION_BITS", "", "COUNT_BITS", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Landroidx/compose/runtime/internal/AtomicAwaitersCount$Companion;", "", "<init>", "()V", "VERSION_BITS", "", "COUNT_BITS", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -120,15 +120,15 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: incrementVersionAndResetCount-impl  reason: not valid java name */
-    public static final void m4170incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
+    public static final void m4696incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
         int i;
         do {
             i = atomicInt.get();
-        } while (!atomicInt.compareAndSet(i, m4171packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+        } while (!atomicInt.compareAndSet(i, m4697packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
     }
 
     /* renamed from: incrementCountAndGetVersion-impl  reason: not valid java name */
-    public static final int m4169incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
+    public static final int m4695incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
         int i;
         int i2;
         do {
@@ -142,7 +142,7 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: decrementCount-impl  reason: not valid java name */
-    public static final void m4162decrementCountimpl(AtomicInt atomicInt, int i) {
+    public static final void m4688decrementCountimpl(AtomicInt atomicInt, int i) {
         int i2;
         do {
             i2 = atomicInt.get();

@@ -6,12 +6,12 @@ import androidx.compose.ui.layout.HorizontalAlignmentLine;
 import androidx.compose.ui.unit.IntOffset;
 import kotlin.Metadata;
 /* compiled from: LayoutModifierNodeCoordinator.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0002¨\u0006\u0005"}, d2 = {"calculateAlignmentAndPlaceChildAsNeeded", "", "Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0002¨\u0006\u0005"}, d2 = {"calculateAlignmentAndPlaceChildAsNeeded", "", "Landroidx/compose/ui/node/LookaheadCapablePlaceable;", "alignmentLine", "Landroidx/compose/ui/layout/AlignmentLine;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayoutModifierNodeCoordinatorKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final int calculateAlignmentAndPlaceChildAsNeeded(LookaheadCapablePlaceable lookaheadCapablePlaceable, AlignmentLine alignmentLine) {
-        int m7683getXimpl;
+        int m8288getXimpl;
         LookaheadCapablePlaceable child = lookaheadCapablePlaceable.getChild();
         if (!(child != null)) {
             InlineClassHelperKt.throwIllegalStateException("Child of " + lookaheadCapablePlaceable + " cannot be null when calculating alignment line");
@@ -33,10 +33,10 @@ public final class LayoutModifierNodeCoordinatorKt {
         child.setShallowPlacing$ui(false);
         lookaheadCapablePlaceable.setPlacingForAlignment$ui(false);
         if (alignmentLine instanceof HorizontalAlignmentLine) {
-            m7683getXimpl = IntOffset.m7684getYimpl(child.mo6464getPositionnOccac());
+            m8288getXimpl = IntOffset.m8289getYimpl(child.mo7063getPositionnOccac());
         } else {
-            m7683getXimpl = IntOffset.m7683getXimpl(child.mo6464getPositionnOccac());
+            m8288getXimpl = IntOffset.m8288getXimpl(child.mo7063getPositionnOccac());
         }
-        return i + m7683getXimpl;
+        return i + m8288getXimpl;
     }
 }

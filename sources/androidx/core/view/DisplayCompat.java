@@ -7,6 +7,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.view.Display;
 import androidx.core.util.Preconditions;
+import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class DisplayCompat {
     private static final int DISPLAY_SIZE_4K_HEIGHT = 2160;
@@ -17,16 +18,6 @@ public final class DisplayCompat {
 
     public static ModeCompat getMode(Context context, Display display) {
         return Api23Impl.getMode(context, display);
-    }
-
-    private static Point getDisplaySize(Context context, Display display) {
-        Point currentDisplaySizeFromWorkarounds = getCurrentDisplaySizeFromWorkarounds(context, display);
-        if (currentDisplaySizeFromWorkarounds != null) {
-            return currentDisplaySizeFromWorkarounds;
-        }
-        Point point = new Point();
-        display.getRealSize(point);
-        return point;
     }
 
     public static ModeCompat[] getSupportedModes(Context context, Display display) {
@@ -102,6 +93,20 @@ public final class DisplayCompat {
             return RoundedCornerCompat.toRoundedCornerCompat(display.getRoundedCorner(i));
         }
         return null;
+    }
+
+    public static DisplayShapeCompat getShape(Context context, Display display) {
+        Objects.requireNonNull(context);
+        Objects.requireNonNull(display);
+        if (Build.VERSION.SDK_INT >= 34) {
+            return DisplayShapeCompat.toDisplayShapeCompat(display.getShape());
+        }
+        Point currentDisplaySizeFromWorkarounds = getCurrentDisplaySizeFromWorkarounds(context, display);
+        RoundedCornerCompat roundedCorner = getRoundedCorner(display, 0);
+        RoundedCornerCompat roundedCorner2 = getRoundedCorner(display, 1);
+        RoundedCornerCompat roundedCorner3 = getRoundedCorner(display, 2);
+        RoundedCornerCompat roundedCorner4 = getRoundedCorner(display, 3);
+        return DisplayShapeCompat.create(currentDisplaySizeFromWorkarounds.x, currentDisplaySizeFromWorkarounds.y, false, roundedCorner != null ? roundedCorner.getRadius() : 0, roundedCorner2 != null ? roundedCorner2.getRadius() : 0, roundedCorner3 != null ? roundedCorner3.getRadius() : 0, roundedCorner4 != null ? roundedCorner4.getRadius() : 0);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -180,7 +185,7 @@ public final class DisplayCompat {
 
         ModeCompat(Display.Mode mode, boolean z) {
             Preconditions.checkNotNull(mode, "mode == null, can't wrap a null reference");
-            this.mPhysicalSize = new Point(Api23Impl.getPhysicalWidth(mode), Api23Impl.getPhysicalHeight(mode));
+            this.mPhysicalSize = new Point(mode.getPhysicalWidth(), mode.getPhysicalHeight());
             this.mMode = mode;
             this.mIsNative = z;
         }
@@ -208,20 +213,6 @@ public final class DisplayCompat {
 
         public Display.Mode toMode() {
             return this.mMode;
-        }
-
-        /* loaded from: classes2.dex */
-        static class Api23Impl {
-            private Api23Impl() {
-            }
-
-            static int getPhysicalWidth(Display.Mode mode) {
-                return mode.getPhysicalWidth();
-            }
-
-            static int getPhysicalHeight(Display.Mode mode) {
-                return mode.getPhysicalHeight();
-            }
         }
     }
 }

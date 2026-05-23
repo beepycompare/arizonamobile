@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BoxWithConstraints.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\u0016\u001a\u00020\u0004HÂ\u0003J\u0010\u0010\u0017\u001a\u00020\u0006HÆ\u0003¢\u0006\u0004\b\u0018\u0010\nJ$\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u0006HÆ\u0001¢\u0006\u0004\b\u001a\u0010\u001bJ\u0015\u0010\u001c\u001a\u00020\u001d*\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0097\u0001J\u0013\u0010 \u001a\u00020!2\b\u0010\"\u001a\u0004\u0018\u00010#HÖ\u0003J\t\u0010$\u001a\u00020%HÖ\u0001J\r\u0010&\u001a\u00020\u001d*\u00020\u001dH\u0097\u0001J\t\u0010'\u001a\u00020(HÖ\u0001R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000fR\u0014\u0010\u0012\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000fR\u0014\u0010\u0014\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u000f¨\u0006)"}, d2 = {"Landroidx/compose/foundation/layout/BoxWithConstraintsScopeImpl;", "Landroidx/compose/foundation/layout/BoxWithConstraintsScope;", "Landroidx/compose/foundation/layout/BoxScope;", "density", "Landroidx/compose/ui/unit/Density;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "<init>", "(Landroidx/compose/ui/unit/Density;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getConstraints-msEJaDk", "()J", "J", "minWidth", "Landroidx/compose/ui/unit/Dp;", "getMinWidth-D9Ej5fM", "()F", "maxWidth", "getMaxWidth-D9Ej5fM", "minHeight", "getMinHeight-D9Ej5fM", "maxHeight", "getMaxHeight-D9Ej5fM", "component1", "component2", "component2-msEJaDk", "copy", "copy-0kLqBqw", "(Landroidx/compose/ui/unit/Density;J)Landroidx/compose/foundation/layout/BoxWithConstraintsScopeImpl;", "align", "Landroidx/compose/ui/Modifier;", "alignment", "Landroidx/compose/ui/Alignment;", "equals", "", "other", "", "hashCode", "", "matchParentSize", "toString", "", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u00012\u00020\u0002B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\u0016\u001a\u00020\u0004HÂ\u0003J\u0010\u0010\u0017\u001a\u00020\u0006HÆ\u0003¢\u0006\u0004\b\u0018\u0010\nJ$\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u0006HÆ\u0001¢\u0006\u0004\b\u001a\u0010\u001bJ\u0015\u0010\u001c\u001a\u00020\u001d*\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0097\u0001J\u0014\u0010 \u001a\u00020!2\b\u0010\"\u001a\u0004\u0018\u00010#HÖ\u0083\u0004J\n\u0010$\u001a\u00020%HÖ\u0081\u0004J\r\u0010&\u001a\u00020\u001d*\u00020\u001dH\u0097\u0001J\n\u0010'\u001a\u00020(HÖ\u0081\u0004R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nR\u0014\u0010\f\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000fR\u0014\u0010\u0012\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000fR\u0014\u0010\u0014\u001a\u00020\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u000f¨\u0006)"}, d2 = {"Landroidx/compose/foundation/layout/BoxWithConstraintsScopeImpl;", "Landroidx/compose/foundation/layout/BoxWithConstraintsScope;", "Landroidx/compose/foundation/layout/BoxScope;", "density", "Landroidx/compose/ui/unit/Density;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "<init>", "(Landroidx/compose/ui/unit/Density;JLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getConstraints-msEJaDk", "()J", "J", "minWidth", "Landroidx/compose/ui/unit/Dp;", "getMinWidth-D9Ej5fM", "()F", "maxWidth", "getMaxWidth-D9Ej5fM", "minHeight", "getMinHeight-D9Ej5fM", "maxHeight", "getMaxHeight-D9Ej5fM", "component1", "component2", "component2-msEJaDk", "copy", "copy-0kLqBqw", "(Landroidx/compose/ui/unit/Density;J)Landroidx/compose/foundation/layout/BoxWithConstraintsScopeImpl;", "align", "Landroidx/compose/ui/Modifier;", "alignment", "Landroidx/compose/ui/Alignment;", "equals", "", "other", "", "hashCode", "", "matchParentSize", "toString", "", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScope, BoxScope {
     private final /* synthetic */ BoxScopeInstance $$delegate_0;
@@ -26,14 +26,14 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
     }
 
     /* renamed from: copy-0kLqBqw$default  reason: not valid java name */
-    public static /* synthetic */ BoxWithConstraintsScopeImpl m717copy0kLqBqw$default(BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl, Density density, long j, int i, Object obj) {
+    public static /* synthetic */ BoxWithConstraintsScopeImpl m771copy0kLqBqw$default(BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl, Density density, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             density = boxWithConstraintsScopeImpl.density;
         }
         if ((i & 2) != 0) {
             j = boxWithConstraintsScopeImpl.constraints;
         }
-        return boxWithConstraintsScopeImpl.m719copy0kLqBqw(density, j);
+        return boxWithConstraintsScopeImpl.m773copy0kLqBqw(density, j);
     }
 
     @Override // androidx.compose.foundation.layout.BoxScope
@@ -42,12 +42,12 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
     }
 
     /* renamed from: component2-msEJaDk  reason: not valid java name */
-    public final long m718component2msEJaDk() {
+    public final long m772component2msEJaDk() {
         return this.constraints;
     }
 
     /* renamed from: copy-0kLqBqw  reason: not valid java name */
-    public final BoxWithConstraintsScopeImpl m719copy0kLqBqw(Density density, long j) {
+    public final BoxWithConstraintsScopeImpl m773copy0kLqBqw(Density density, long j) {
         return new BoxWithConstraintsScopeImpl(density, j, null);
     }
 
@@ -57,13 +57,13 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
         }
         if (obj instanceof BoxWithConstraintsScopeImpl) {
             BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = (BoxWithConstraintsScopeImpl) obj;
-            return Intrinsics.areEqual(this.density, boxWithConstraintsScopeImpl.density) && Constraints.m7501equalsimpl0(this.constraints, boxWithConstraintsScopeImpl.constraints);
+            return Intrinsics.areEqual(this.density, boxWithConstraintsScopeImpl.density) && Constraints.m8106equalsimpl0(this.constraints, boxWithConstraintsScopeImpl.constraints);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.density.hashCode() * 31) + Constraints.m7511hashCodeimpl(this.constraints);
+        return (this.density.hashCode() * 31) + Constraints.m8116hashCodeimpl(this.constraints);
     }
 
     @Override // androidx.compose.foundation.layout.BoxScope
@@ -72,7 +72,7 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
     }
 
     public String toString() {
-        return "BoxWithConstraintsScopeImpl(density=" + this.density + ", constraints=" + ((Object) Constraints.m7513toStringimpl(this.constraints)) + ')';
+        return "BoxWithConstraintsScopeImpl(density=" + this.density + ", constraints=" + ((Object) Constraints.m8118toStringimpl(this.constraints)) + ')';
     }
 
     private BoxWithConstraintsScopeImpl(Density density, long j) {
@@ -83,31 +83,31 @@ public final class BoxWithConstraintsScopeImpl implements BoxWithConstraintsScop
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getConstraints-msEJaDk */
-    public long mo712getConstraintsmsEJaDk() {
+    public long mo766getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMinWidth-D9Ej5fM */
-    public float mo716getMinWidthD9Ej5fM() {
-        return this.density.mo402toDpu2uoSUM(Constraints.m7510getMinWidthimpl(mo712getConstraintsmsEJaDk()));
+    public float mo770getMinWidthD9Ej5fM() {
+        return this.density.mo431toDpu2uoSUM(Constraints.m8115getMinWidthimpl(mo766getConstraintsmsEJaDk()));
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMaxWidth-D9Ej5fM */
-    public float mo714getMaxWidthD9Ej5fM() {
-        return Constraints.m7504getHasBoundedWidthimpl(mo712getConstraintsmsEJaDk()) ? this.density.mo402toDpu2uoSUM(Constraints.m7508getMaxWidthimpl(mo712getConstraintsmsEJaDk())) : Dp.Companion.m7574getInfinityD9Ej5fM();
+    public float mo768getMaxWidthD9Ej5fM() {
+        return Constraints.m8109getHasBoundedWidthimpl(mo766getConstraintsmsEJaDk()) ? this.density.mo431toDpu2uoSUM(Constraints.m8113getMaxWidthimpl(mo766getConstraintsmsEJaDk())) : Dp.Companion.m8179getInfinityD9Ej5fM();
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMinHeight-D9Ej5fM */
-    public float mo715getMinHeightD9Ej5fM() {
-        return this.density.mo402toDpu2uoSUM(Constraints.m7509getMinHeightimpl(mo712getConstraintsmsEJaDk()));
+    public float mo769getMinHeightD9Ej5fM() {
+        return this.density.mo431toDpu2uoSUM(Constraints.m8114getMinHeightimpl(mo766getConstraintsmsEJaDk()));
     }
 
     @Override // androidx.compose.foundation.layout.BoxWithConstraintsScope
     /* renamed from: getMaxHeight-D9Ej5fM */
-    public float mo713getMaxHeightD9Ej5fM() {
-        return Constraints.m7503getHasBoundedHeightimpl(mo712getConstraintsmsEJaDk()) ? this.density.mo402toDpu2uoSUM(Constraints.m7507getMaxHeightimpl(mo712getConstraintsmsEJaDk())) : Dp.Companion.m7574getInfinityD9Ej5fM();
+    public float mo767getMaxHeightD9Ej5fM() {
+        return Constraints.m8108getHasBoundedHeightimpl(mo766getConstraintsmsEJaDk()) ? this.density.mo431toDpu2uoSUM(Constraints.m8112getMaxHeightimpl(mo766getConstraintsmsEJaDk())) : Dp.Companion.m8179getInfinityD9Ej5fM();
     }
 }

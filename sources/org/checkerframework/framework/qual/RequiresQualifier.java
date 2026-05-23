@@ -11,13 +11,13 @@ import java.lang.annotation.Target;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface RequiresQualifier {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         RequiresQualifier[] value();
     }

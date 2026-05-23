@@ -8,14 +8,15 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Errors.kt */
-@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\t\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;", "cause", "", "attempt", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$3", f = "Errors.kt", i = {}, l = {91}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\t\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;", "cause", "", "attempt", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$3", f = "Errors.kt", i = {0, 0}, l = {91}, m = "invokeSuspend", n = {"cause", "attempt"}, s = {"L$0", "J$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Function4<FlowCollector<? super T>, Throwable, Long, Continuation<? super Boolean>, Object> {
     final /* synthetic */ Function2<Throwable, Continuation<? super Boolean>, Object> $predicate;
@@ -45,22 +46,25 @@ public final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements 
         return flowKt__ErrorsKt$retry$3.invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0037, code lost:
-        if (((java.lang.Boolean) r8).booleanValue() != false) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003f, code lost:
+        if (((java.lang.Boolean) r9).booleanValue() != false) goto L8;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
+        Throwable th = (Throwable) this.L$0;
+        long j = this.J$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         boolean z = true;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            Throwable th = (Throwable) this.L$0;
-            if (this.J$0 < this.$retries) {
+            if (j < this.$retries) {
                 Function2<Throwable, Continuation<? super Boolean>, Object> function2 = this.$predicate;
+                this.L$0 = SpillingKt.nullOutSpilledVariable(th);
+                this.J$0 = j;
                 this.label = 1;
                 obj = function2.invoke(th, this);
                 if (obj == coroutine_suspended) {

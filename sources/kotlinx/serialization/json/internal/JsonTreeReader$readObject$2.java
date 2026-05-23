@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: JsonTreeReader.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader", f = "JsonTreeReader.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {22}, m = "readObject", n = {"$this$readObject", "this_$iv", "result$iv", "key$iv", "$i$f$readObjectImpl", "lastToken$iv", "$i$a$-readObjectImpl-JsonTreeReader$readObject$3"}, nl = {127}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "B$0", "I$1"}, v = 2)
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class JsonTreeReader$readObject$2 extends ContinuationImpl {
     byte B$0;
     int I$0;

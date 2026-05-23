@@ -3,7 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzpa implements Runnable {
     final /* synthetic */ String zza;
@@ -24,8 +24,11 @@ final class zzpa implements Runnable {
     public final void run() {
         zzpg zzpgVar = this.zzd.zza;
         zzpp zzt = zzpgVar.zzt();
-        long currentTimeMillis = zzpgVar.zzaZ().currentTimeMillis();
-        String str = this.zza;
-        zzpgVar.zzD((zzbg) Preconditions.checkNotNull(zzt.zzac(str, this.zzb, this.zzc, "auto", currentTimeMillis, false, true)), str);
+        long currentTimeMillis = zzpgVar.zzba().currentTimeMillis();
+        long elapsedRealtime = zzpgVar.zzd().zzp(null, zzfy.zzbe) ? zzpgVar.zzba().elapsedRealtime() : 0L;
+        Bundle bundle = this.zzc;
+        String str = this.zzb;
+        String str2 = this.zza;
+        zzpgVar.zzD((zzbh) Preconditions.checkNotNull(zzt.zzaf(str2, str, bundle, "auto", currentTimeMillis, elapsedRealtime, false, true)), str2);
     }
 }

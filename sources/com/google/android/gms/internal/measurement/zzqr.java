@@ -1,76 +1,51 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzqr implements zzqq {
-    public static final zzkm zza;
-    public static final zzkm zzb;
-    public static final zzkm zzc;
-    public static final zzkm zzd;
-    public static final zzkm zze;
-    public static final zzkm zzf;
-    public static final zzkm zzg;
-    public static final zzkm zzh;
+public final class zzqr {
+    private final boolean zza;
+    private final int zzb;
+    private final int zzc;
 
-    static {
-        zzkg zzb2 = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
-        zzb2.zzd("measurement.rb.attribution.ad_campaign_info", true);
-        zzb2.zzd("measurement.rb.attribution.service.bundle_on_backgrounded", true);
-        zza = zzb2.zzd("measurement.rb.attribution.client2", true);
-        zzb = zzb2.zzd("measurement.rb.attribution.followup1.service", false);
-        zzb2.zzd("measurement.rb.attribution.client.get_trigger_uris_async", true);
-        zzc = zzb2.zzd("measurement.rb.attribution.service.trigger_uris_high_priority", true);
-        zzb2.zzd("measurement.rb.attribution.index_out_of_bounds_fix", true);
-        zzd = zzb2.zzd("measurement.rb.attribution.service.enable_max_trigger_uris_queried_at_once", true);
-        zze = zzb2.zzd("measurement.rb.attribution.retry_disposition", false);
-        zzf = zzb2.zzd("measurement.rb.attribution.service", true);
-        zzg = zzb2.zzd("measurement.rb.attribution.enable_trigger_redaction", true);
-        zzh = zzb2.zzd("measurement.rb.attribution.uuid_generation", true);
-        zzb2.zzc("measurement.id.rb.attribution.retry_disposition", 0L);
-        zzb2.zzd("measurement.rb.attribution.improved_retry", true);
+    zzqr() {
+        this.zzb = 2;
+        this.zzc = 2;
+        this.zza = true;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zza() {
-        return true;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzqr(int i) {
+        this.zzb = 2;
+        this.zzc = i;
+        this.zza = false;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzb() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zzqr(int i, int i2) {
+        this.zzb = i;
+        this.zzc = i2;
+        this.zza = false;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzc() {
-        return ((Boolean) zzb.zzd()).booleanValue();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final zzmd zza() {
+        if (this.zza) {
+            return zzmd.zzb();
+        }
+        int i = this.zzb;
+        zzmc zza = zzmd.zza();
+        zza.zza(i);
+        zza.zzb(this.zzc);
+        return (zzmd) zza.zzbd();
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzd() {
-        return ((Boolean) zzc.zzd()).booleanValue();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final int zzb() {
+        return this.zzc;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zze() {
-        return ((Boolean) zzd.zzd()).booleanValue();
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzf() {
-        return ((Boolean) zze.zzd()).booleanValue();
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzg() {
-        return ((Boolean) zzf.zzd()).booleanValue();
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzh() {
-        return ((Boolean) zzg.zzd()).booleanValue();
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzqq
-    public final boolean zzi() {
-        return ((Boolean) zzh.zzd()).booleanValue();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ int zzc() {
+        return this.zzb;
     }
 }

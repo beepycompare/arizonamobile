@@ -17,6 +17,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @InvisibleQualifier
 @Documented
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface I18nUnknownFormat {
 }

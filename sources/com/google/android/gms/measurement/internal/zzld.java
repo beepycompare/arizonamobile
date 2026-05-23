@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import java.util.Comparator;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 final /* synthetic */ class zzld implements Comparator {
     static final /* synthetic */ zzld zza = new zzld();

@@ -6,13 +6,15 @@ import android.os.Parcelable;
 import android.util.Size;
 import android.util.SizeF;
 import java.io.Serializable;
+import kotlin.Deprecated;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Bundle.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\b\u0002\u001a;\u0010\u0000\u001a\u00020\u00012.\u0010\u0002\u001a\u0018\u0012\u0014\b\u0001\u0012\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00040\u0003\"\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0004¢\u0006\u0002\u0010\u0007\u001a\u0006\u0010\u0000\u001a\u00020\u0001¨\u0006\b"}, d2 = {"bundleOf", "Landroid/os/Bundle;", "pairs", "", "Lkotlin/Pair;", "", "", "([Lkotlin/Pair;)Landroid/os/Bundle;", "core-ktx_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\b\u0002\u001a=\u0010\u0000\u001a\u00020\u00012.\u0010\u0002\u001a\u0018\u0012\u0014\b\u0001\u0012\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00040\u0003\"\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0004H\u0007¢\u0006\u0002\u0010\u0007\u001a\u0006\u0010\u0000\u001a\u00020\u0001¨\u0006\b"}, d2 = {"bundleOf", "Landroid/os/Bundle;", "pairs", "", "Lkotlin/Pair;", "", "", "([Lkotlin/Pair;)Landroid/os/Bundle;", "core-ktx"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BundleKt {
+    @Deprecated(message = "This method does not provide type safety at compile time. Use the platform `Bundle` class directly instead.")
     public static final Bundle bundleOf(Pair<String, ? extends Object>... pairArr) {
         Bundle bundle = new Bundle(pairArr.length);
         for (Pair<String, ? extends Object> pair : pairArr) {
@@ -80,9 +82,9 @@ public final class BundleKt {
             } else if (component2 instanceof IBinder) {
                 bundle.putBinder(component1, (IBinder) component2);
             } else if (component2 instanceof Size) {
-                BundleApi21ImplKt.putSize(bundle, component1, (Size) component2);
+                bundle.putSize(component1, (Size) component2);
             } else if (component2 instanceof SizeF) {
-                BundleApi21ImplKt.putSizeF(bundle, component1, (SizeF) component2);
+                bundle.putSizeF(component1, (SizeF) component2);
             } else {
                 throw new IllegalArgumentException("Illegal value type " + component2.getClass().getCanonicalName() + " for key \"" + component1 + '\"');
             }

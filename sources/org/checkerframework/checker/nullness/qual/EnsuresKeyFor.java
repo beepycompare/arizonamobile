@@ -16,7 +16,7 @@ import org.checkerframework.framework.qual.QualifierArgument;
 @Documented
 @Repeatable(List.class)
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresKeyFor {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
@@ -24,7 +24,7 @@ public @interface EnsuresKeyFor {
     @InheritedAnnotation
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresKeyFor[] value();
     }

@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 import retrofit2.BuiltInFactories;
 import retrofit2.Reflection;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class Platform {
     static final BuiltInFactories builtInFactories;
     @Nullable

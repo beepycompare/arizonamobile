@@ -21,7 +21,7 @@ import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
 public final class VobsubParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
-    private static final int DEFAULT_DURATION_US = 5000000;
+    public static final CuesWithTiming EMPTY_CUES = new CuesWithTiming(ImmutableList.of(), C.TIME_UNSET, C.TIME_UNSET);
     private static final String TAG = "VobsubParser";
     private final CueBuilder cueBuilder;
     private Inflater inflater;
@@ -43,11 +43,10 @@ public final class VobsubParser implements SubtitleParser {
     public void parse(byte[] bArr, int i, int i2, SubtitleParser.OutputOptions outputOptions, Consumer<CuesWithTiming> consumer) {
         this.scratch.reset(bArr, i2 + i);
         this.scratch.setPosition(i);
-        Cue parse = parse();
-        consumer.accept(new CuesWithTiming(parse != null ? ImmutableList.of(parse) : ImmutableList.of(), C.TIME_UNSET, 5000000L));
+        consumer.accept(parse());
     }
 
-    private Cue parse() {
+    private CuesWithTiming parse() {
         if (this.inflater == null) {
             this.inflater = new Inflater();
         }
@@ -57,10 +56,16 @@ public final class VobsubParser implements SubtitleParser {
         this.cueBuilder.reset();
         int bytesLeft = this.scratch.bytesLeft();
         if (bytesLeft < 2 || this.scratch.readUnsignedShort() != bytesLeft) {
-            return null;
+            return EMPTY_CUES;
         }
         this.cueBuilder.parseSpuControlSequenceTable(this.scratch);
-        return this.cueBuilder.build(this.scratch);
+        Cue build = this.cueBuilder.build(this.scratch);
+        long j = this.cueBuilder.endTimeUs;
+        long j2 = C.TIME_UNSET;
+        if (j != C.TIME_UNSET) {
+            j2 = (this.cueBuilder.startTimeUs == C.TIME_UNSET || this.cueBuilder.endTimeUs <= this.cueBuilder.startTimeUs) ? this.cueBuilder.endTimeUs : this.cueBuilder.endTimeUs - this.cueBuilder.startTimeUs;
+        }
+        return new CuesWithTiming(build != null ? ImmutableList.of(build) : ImmutableList.of(), this.cueBuilder.startTimeUs, j2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -75,14 +80,16 @@ public final class VobsubParser implements SubtitleParser {
         private static final int CMD_START = 1;
         private static final int CMD_STOP = 2;
         private Rect boundingBox;
-        private final int[] colors = new int[4];
-        private int dataOffset0 = -1;
-        private int dataOffset1 = -1;
         private boolean hasColors;
         private boolean hasPlane;
         private int[] palette;
         private int planeHeight;
         private int planeWidth;
+        private long startTimeUs = C.TIME_UNSET;
+        private long endTimeUs = C.TIME_UNSET;
+        private final int[] colors = new int[4];
+        private int dataOffset0 = -1;
+        private int dataOffset1 = -1;
 
         private static int setAlpha(int i, int i2) {
             return (i & 16777215) | ((i2 * 17) << 24);
@@ -144,30 +151,35 @@ public final class VobsubParser implements SubtitleParser {
                 return false;
             }
             int position = parsableByteArray.getPosition();
-            parsableByteArray.skipBytes(2);
-            int readUnsignedShort = i + parsableByteArray.readUnsignedShort();
+            int readUnsignedShort = parsableByteArray.readUnsignedShort() * 10000;
+            int readUnsignedShort2 = i + parsableByteArray.readUnsignedShort();
             boolean z2 = true;
-            if (readUnsignedShort != position && readUnsignedShort < parsableByteArray.limit()) {
+            if (readUnsignedShort2 != position && readUnsignedShort2 < parsableByteArray.limit()) {
                 z = true;
             }
-            int limit = z ? readUnsignedShort : parsableByteArray.limit();
+            int limit = z ? readUnsignedShort2 : parsableByteArray.limit();
             while (parsableByteArray.getPosition() < limit && z2) {
-                z2 = parseCommand(parsableByteArray);
+                z2 = parseCommand(readUnsignedShort, parsableByteArray);
             }
             if (z) {
-                parsableByteArray.setPosition(readUnsignedShort);
+                parsableByteArray.setPosition(readUnsignedShort2);
             }
             return z;
         }
 
+        /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
         @RequiresNonNull({"this.palette"})
-        private boolean parseCommand(ParsableByteArray parsableByteArray) {
+        private boolean parseCommand(long j, ParsableByteArray parsableByteArray) {
             int readUnsignedByte = parsableByteArray.readUnsignedByte();
             if (readUnsignedByte != 255) {
                 switch (readUnsignedByte) {
                     case 0:
+                        break;
                     case 1:
+                        this.startTimeUs = j;
+                        break;
                     case 2:
+                        this.endTimeUs = j;
                         return true;
                     case 3:
                         return parseControlColors(parsableByteArray);
@@ -181,6 +193,7 @@ public final class VobsubParser implements SubtitleParser {
                         Log.w(VobsubParser.TAG, "Unrecognized command: " + readUnsignedByte);
                         return false;
                 }
+                return true;
             }
             return false;
         }
@@ -315,6 +328,8 @@ public final class VobsubParser implements SubtitleParser {
         }
 
         public void reset() {
+            this.startTimeUs = C.TIME_UNSET;
+            this.endTimeUs = C.TIME_UNSET;
             this.hasColors = false;
             this.boundingBox = null;
             this.dataOffset0 = -1;

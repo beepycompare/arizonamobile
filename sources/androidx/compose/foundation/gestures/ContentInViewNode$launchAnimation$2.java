@@ -24,15 +24,13 @@ import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.JobKt__JobKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ContentInViewNode.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2", f = "ContentInViewNode.kt", i = {}, l = {282}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2", f = "ContentInViewNode.kt", i = {}, l = {212}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: $$v$c$androidx-compose-ui-unit-IntOffset$-viewportAdjustmentForReverseScroll$0  reason: not valid java name */
-    final /* synthetic */ long f8x677d03b0;
     final /* synthetic */ UpdatableAnimationState $animationState;
     final /* synthetic */ BringIntoViewSpec $bringIntoViewSpec;
+    final /* synthetic */ long $viewportAdjustmentForReverseScroll;
     private /* synthetic */ Object L$0;
     int label;
     final /* synthetic */ ContentInViewNode this$0;
@@ -44,12 +42,12 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
         this.this$0 = contentInViewNode;
         this.$animationState = updatableAnimationState;
         this.$bringIntoViewSpec = bringIntoViewSpec;
-        this.f8x677d03b0 = j;
+        this.$viewportAdjustmentForReverseScroll = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ContentInViewNode$launchAnimation$2 contentInViewNode$launchAnimation$2 = new ContentInViewNode$launchAnimation$2(this.this$0, this.$animationState, this.$bringIntoViewSpec, this.f8x677d03b0, continuation);
+        ContentInViewNode$launchAnimation$2 contentInViewNode$launchAnimation$2 = new ContentInViewNode$launchAnimation$2(this.this$0, this.$animationState, this.$bringIntoViewSpec, this.$viewportAdjustmentForReverseScroll, continuation);
         contentInViewNode$launchAnimation$2.L$0 = obj;
         return contentInViewNode$launchAnimation$2;
     }
@@ -72,7 +70,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                     this.this$0.isAnimationRunning = true;
                     scrollingLogic = this.this$0.scrollingLogic;
                     this.label = 1;
-                    if (scrollingLogic.scroll(MutatePriority.Default, new AnonymousClass1(this.$animationState, this.this$0, this.$bringIntoViewSpec, this.f8x677d03b0, job, null), this) == coroutine_suspended) {
+                    if (scrollingLogic.scroll(MutatePriority.Default, new AnonymousClass1(this.$animationState, this.this$0, this.$bringIntoViewSpec, this.$viewportAdjustmentForReverseScroll, job, null), this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -98,17 +96,15 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ContentInViewNode.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2$1", f = "ContentInViewNode.kt", i = {}, l = {289}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/NestedScrollScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2$1", f = "ContentInViewNode.kt", i = {}, l = {219}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<NestedScrollScope, Continuation<? super Unit>, Object> {
-
-        /* renamed from: $$v$c$androidx-compose-ui-unit-IntOffset$-viewportAdjustmentForReverseScroll$0  reason: not valid java name */
-        final /* synthetic */ long f9x677d03b0;
         final /* synthetic */ Job $animationJob;
         final /* synthetic */ UpdatableAnimationState $animationState;
         final /* synthetic */ BringIntoViewSpec $bringIntoViewSpec;
+        final /* synthetic */ long $viewportAdjustmentForReverseScroll;
         private /* synthetic */ Object L$0;
         int label;
         final /* synthetic */ ContentInViewNode this$0;
@@ -119,13 +115,13 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             this.$animationState = updatableAnimationState;
             this.this$0 = contentInViewNode;
             this.$bringIntoViewSpec = bringIntoViewSpec;
-            this.f9x677d03b0 = j;
+            this.$viewportAdjustmentForReverseScroll = j;
             this.$animationJob = job;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$animationState, this.this$0, this.$bringIntoViewSpec, this.f9x677d03b0, this.$animationJob, continuation);
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$animationState, this.this$0, this.$bringIntoViewSpec, this.$viewportAdjustmentForReverseScroll, this.$animationJob, continuation);
             anonymousClass1.L$0 = obj;
             return anonymousClass1;
         }
@@ -137,15 +133,15 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            float m432calculateScrollDeltaI_oMVgE;
+            float m461calculateScrollDeltaI_oMVgE;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
                 UpdatableAnimationState updatableAnimationState = this.$animationState;
-                m432calculateScrollDeltaI_oMVgE = this.this$0.m432calculateScrollDeltaI_oMVgE(this.$bringIntoViewSpec, this.f9x677d03b0);
-                updatableAnimationState.setValue(m432calculateScrollDeltaI_oMVgE);
+                m461calculateScrollDeltaI_oMVgE = this.this$0.m461calculateScrollDeltaI_oMVgE(this.$bringIntoViewSpec, this.$viewportAdjustmentForReverseScroll);
+                updatableAnimationState.setValue(m461calculateScrollDeltaI_oMVgE);
                 final UpdatableAnimationState updatableAnimationState2 = this.$animationState;
                 final ContentInViewNode contentInViewNode = this.this$0;
                 final Job job = this.$animationJob;
@@ -182,26 +178,20 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             z = contentInViewNode.reverseDirection;
             float f2 = z ? 1.0f : -1.0f;
             scrollingLogic = contentInViewNode.scrollingLogic;
-            float m589toFloatk4lQ0M = f2 * scrollingLogic.m589toFloatk4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(nestedScrollScope.mo530scrollByOzD1aCk(scrollingLogic.m587reverseIfNeededMKHz9U(scrollingLogic.m590toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m5965getUserInputWNlRxjI())));
-            if (Math.abs(m589toFloatk4lQ0M) < Math.abs(f)) {
-                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m589toFloatk4lQ0M + " < " + f + ')', null, 2, null);
+            float m621toFloatk4lQ0M = f2 * scrollingLogic.m621toFloatk4lQ0M(scrollingLogic.m619reverseIfNeededMKHz9U(nestedScrollScope.mo560scrollByOzD1aCk(scrollingLogic.m619reverseIfNeededMKHz9U(scrollingLogic.m622toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m6554getUserInputWNlRxjI())));
+            if (Math.abs(m621toFloatk4lQ0M) < Math.abs(f)) {
+                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m621toFloatk4lQ0M + " < " + f + ')', null, 2, null);
             }
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* JADX WARN: Code restructure failed: missing block: B:14:0x0063, code lost:
-            r4 = r3.getFocusedChildBounds();
-         */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
         public static final Unit invokeSuspend$lambda$1(ContentInViewNode contentInViewNode, UpdatableAnimationState updatableAnimationState, BringIntoViewSpec bringIntoViewSpec) {
             ContentInViewNode contentInViewNode2;
             boolean z;
-            float m432calculateScrollDeltaI_oMVgE;
-            Rect focusedChildBounds;
-            boolean m436isMaxVisibleEQwtKw$default;
+            float m461calculateScrollDeltaI_oMVgE;
+            Function0 function0;
+            boolean m465isMaxVisibleEQwtKw$default;
             BringIntoViewRequestPriorityQueue bringIntoViewRequestPriorityQueue = contentInViewNode.bringIntoViewRequests;
             while (true) {
                 if (bringIntoViewRequestPriorityQueue.requests.getSize() == 0) {
@@ -211,25 +201,29 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 Rect invoke = ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.last()).getCurrentBounds().invoke();
                 if (invoke == null) {
                     contentInViewNode2 = contentInViewNode;
-                    m436isMaxVisibleEQwtKw$default = true;
+                    m465isMaxVisibleEQwtKw$default = true;
                 } else {
                     contentInViewNode2 = contentInViewNode;
-                    m436isMaxVisibleEQwtKw$default = ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, invoke, 0L, 0L, 3, null);
+                    m465isMaxVisibleEQwtKw$default = ContentInViewNode.m465isMaxVisibleEQwtKw$default(contentInViewNode2, invoke, 0L, 0L, 3, null);
                 }
-                if (!m436isMaxVisibleEQwtKw$default) {
+                if (!m465isMaxVisibleEQwtKw$default) {
                     break;
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9202constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9842constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
             z = contentInViewNode2.trackingFocusedChild;
-            if (z && focusedChildBounds != null && ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, focusedChildBounds, 0L, 0L, 3, null)) {
-                contentInViewNode2.trackingFocusedChild = false;
+            if (z) {
+                function0 = contentInViewNode2.getFocusedRect;
+                Rect rect = (Rect) function0.invoke();
+                if (rect != null && ContentInViewNode.m465isMaxVisibleEQwtKw$default(contentInViewNode2, rect, 0L, 0L, 3, null)) {
+                    contentInViewNode2.trackingFocusedChild = false;
+                }
             }
-            m432calculateScrollDeltaI_oMVgE = contentInViewNode2.m432calculateScrollDeltaI_oMVgE(bringIntoViewSpec, IntOffset.Companion.m7694getZeronOccac());
-            updatableAnimationState.setValue(m432calculateScrollDeltaI_oMVgE);
+            m461calculateScrollDeltaI_oMVgE = contentInViewNode2.m461calculateScrollDeltaI_oMVgE(bringIntoViewSpec, IntOffset.Companion.m8299getZeronOccac());
+            updatableAnimationState.setValue(m461calculateScrollDeltaI_oMVgE);
             return Unit.INSTANCE;
         }
     }

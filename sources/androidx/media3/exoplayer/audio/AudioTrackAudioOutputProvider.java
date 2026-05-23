@@ -25,7 +25,7 @@ import java.util.function.BiConsumer;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AudioTrackAudioOutputProvider implements AudioOutputProvider {
     private static final String TAG = "ATAudioOutputProvider";
     public static boolean failOnSpuriousAudioTimestamp = false;
@@ -40,9 +40,10 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
     private final Context context;
     private Context contextWithDeviceId;
     private ListenerSet<AudioOutputProvider.Listener> listeners;
+    private final float maxPlaybackSpeed;
     private Looper playbackLooper;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private AudioCapabilities audioCapabilities;
         private DefaultAudioSink.AudioOffloadSupportProvider audioOffloadSupportProvider;
@@ -50,6 +51,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
         private DefaultAudioSink.AudioTrackProvider audioTrackProvider;
         private DefaultAudioSink.AudioTrackBufferSizeProvider bufferSizeProvider;
         private final Context context;
+        private float maxPlaybackSpeed;
 
         public Builder(Context context) {
             this.context = context != null ? context.getApplicationContext() : null;
@@ -57,6 +59,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
             if (context == null) {
                 this.audioCapabilities = AudioCapabilities.DEFAULT_AUDIO_CAPABILITIES;
             }
+            this.maxPlaybackSpeed = 8.0f;
         }
 
         public Builder setAudioTrackBuilderModifier(BiConsumer<AudioTrack.Builder, AudioOutputProvider.OutputConfig> biConsumer) {
@@ -71,6 +74,12 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
 
         public Builder setAudioTrackBufferSizeProvider(DefaultAudioSink.AudioTrackBufferSizeProvider audioTrackBufferSizeProvider) {
             this.bufferSizeProvider = audioTrackBufferSizeProvider;
+            return this;
+        }
+
+        public Builder setMaxPlaybackSpeed(float f) {
+            Preconditions.checkArgument(f >= 1.0f);
+            this.maxPlaybackSpeed = f;
             return this;
         }
 
@@ -104,6 +113,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
         this.audioCapabilities = builder.audioCapabilities;
         this.audioTrackProvider = builder.audioTrackProvider;
         this.capabilityChangeListener = builder.context != null ? new CapabilityChangeListener() : null;
+        this.maxPlaybackSpeed = builder.maxPlaybackSpeed;
         this.clock = Clock.DEFAULT;
     }
 
@@ -124,17 +134,19 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
         int i4;
         int i5;
         boolean z2;
+        int i6;
+        double d;
         int bufferSizeInBytes;
         Format format = formatConfig.format;
         updateAudioCapabilitiesReceiver(formatConfig);
         if (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_RAW)) {
             Preconditions.checkArgument(Util.isEncodingLinearPcm(format.pcmEncoding));
-            int i6 = format.pcmEncoding;
+            int i7 = format.pcmEncoding;
             i = format.sampleRate;
             i4 = getAudioOutputChannelConfig(format.channelCount);
-            i5 = Util.getPcmFrameSize(i6, format.channelCount);
+            i5 = Util.getPcmFrameSize(i7, format.channelCount);
             z = formatConfig.enablePlaybackParameters;
-            i2 = i6;
+            i2 = i7;
             z2 = false;
             i3 = 0;
         } else {
@@ -168,17 +180,26 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
                 z2 = false;
             }
         }
-        int i7 = format.bitrate;
-        if (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_DTS_EXPRESS) && i7 == -1) {
-            i7 = 768000;
+        int i8 = format.bitrate;
+        if (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_DTS_EXPRESS) && i8 == -1) {
+            i8 = 768000;
         }
-        int i8 = i7;
+        int i9 = i8;
         if (formatConfig.preferredBufferSize != -1) {
             bufferSizeInBytes = formatConfig.preferredBufferSize;
         } else {
-            int i9 = i;
-            bufferSizeInBytes = this.audioTrackBufferSizeProvider.getBufferSizeInBytes(getAudioTrackMinBufferSize(i, i4, i2), i2, i3, i5 != -1 ? i5 : 1, i9, i8, z ? 8.0d : 1.0d);
-            i = i9;
+            DefaultAudioSink.AudioTrackBufferSizeProvider audioTrackBufferSizeProvider = this.audioTrackBufferSizeProvider;
+            int audioTrackMinBufferSize = getAudioTrackMinBufferSize(i, i4, i2);
+            int i10 = i5 != -1 ? i5 : 1;
+            if (z) {
+                i6 = i;
+                d = this.maxPlaybackSpeed;
+            } else {
+                i6 = i;
+                d = 1.0d;
+            }
+            bufferSizeInBytes = audioTrackBufferSizeProvider.getBufferSizeInBytes(audioTrackMinBufferSize, i2, i3, i10, i6, i9, d);
+            i = i6;
         }
         return new AudioOutputProvider.OutputConfig.Builder().setSampleRate(i).setChannelMask(i4).setEncoding(i2).setBufferSize(bufferSizeInBytes).setAudioSessionId(formatConfig.audioSessionId).setAudioAttributes(formatConfig.audioAttributes).setIsOffload(i3 == 1).setIsTunneling(formatConfig.enableTunneling).setUsePlaybackParameters(z).setUseOffloadGapless(z2).setVirtualDeviceId(formatConfig.virtualDeviceId).build();
     }
@@ -214,14 +235,15 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
                 }
                 build = sessionId.build();
             }
-            if (build.getState() != 1) {
+            AudioTrack audioTrack = build;
+            if (audioTrack.getState() != 1) {
                 try {
-                    build.release();
+                    audioTrack.release();
                 } catch (Exception unused) {
                 }
                 throw new AudioOutputProvider.InitializationException();
             }
-            return new AudioTrackAudioOutput(build, outputConfig, this.capabilityChangeListener, this.clock);
+            return new AudioTrackAudioOutput(audioTrack, outputConfig, this.capabilityChangeListener, this.maxPlaybackSpeed, this.clock);
         } catch (IllegalArgumentException | UnsupportedOperationException e) {
             throw new AudioOutputProvider.InitializationException(e);
         }
@@ -231,9 +253,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
     public void addListener(AudioOutputProvider.Listener listener) {
         verifySinglePlaybackLooper();
         if (this.listeners == null) {
-            ListenerSet<AudioOutputProvider.Listener> listenerSet = new ListenerSet<>(Thread.currentThread());
-            this.listeners = listenerSet;
-            listenerSet.setThrowsWhenUsingWrongThread(false);
+            this.listeners = new ListenerSet<>(Thread.currentThread());
         }
         this.listeners.add(listener);
     }
@@ -261,6 +281,10 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
         if (audioCapabilitiesReceiver != null) {
             audioCapabilitiesReceiver.unregister();
         }
+    }
+
+    public AudioCapabilities getAudioCapabilities() {
+        return this.audioCapabilities;
     }
 
     private AudioAttributes getAudioTrackAttributes(androidx.media3.common.AudioAttributes audioAttributes, boolean z) {
@@ -367,7 +391,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class CapabilityChangeListener implements AudioTrackAudioOutput.CapabilityChangeListener {
         private CapabilityChangeListener() {
         }

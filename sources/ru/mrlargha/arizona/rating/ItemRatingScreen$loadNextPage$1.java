@@ -14,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* compiled from: ItemRatingScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$loadNextPage$1", f = "ItemRatingScreen.kt", i = {}, l = {403, 404}, m = "invokeSuspend", n = {}, nl = {404, 407}, s = {}, v = 2)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ItemRatingScreen$loadNextPage$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $page;
     final /* synthetic */ int $quality;
@@ -88,7 +88,7 @@ public final class ItemRatingScreen$loadNextPage$1 extends SuspendLambda impleme
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.arizona.rating.ItemRatingScreen$loadNextPage$1$1", f = "ItemRatingScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.arizona.rating.ItemRatingScreen$loadNextPage$1$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
         final /* synthetic */ ItemRatingScreen this$0;

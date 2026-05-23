@@ -5,7 +5,6 @@ import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
 import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.DiscardingTrackOutput;
@@ -432,12 +431,9 @@ public final class Mp3Extractor implements Extractor {
         }
         this.xingMetadata = parse.getMetadata();
         long position = extractorInput.getPosition();
-        if (extractorInput.getLength() != -1 && parse.dataSize != -1 && extractorInput.getLength() != parse.dataSize + position) {
-            Log.i(TAG, "Data size mismatch between stream (" + extractorInput.getLength() + ") and Xing frame (" + (parse.dataSize + position) + "), using Xing value.");
-        }
         extractorInput.skipFully(this.synchronizedHeader.frameSize);
         if (seekFrameHeader == SEEK_HEADER_XING) {
-            return XingSeeker.create(parse, position);
+            return XingSeeker.create(parse, position, extractorInput.getLength());
         }
         return getConstantBitrateSeeker(position, parse, extractorInput.getLength());
     }

@@ -12,27 +12,38 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 /* loaded from: classes2.dex */
 public final class SpeedChangingAudioProcessor implements AudioProcessor {
+    private final boolean areInputTimestampsAdjusted;
     private float currentSpeed;
     private boolean endOfStreamQueuedToSonic;
     private long framesRead;
+    private AudioProcessor.AudioFormat inputAudioFormat;
     private boolean inputEnded;
     private final Object lock;
     private final LongArrayQueue pendingCallbackInputTimesUs;
     private final Queue<TimestampConsumer> pendingCallbacks;
+    private AudioProcessor.AudioFormat pendingInputAudioFormat;
+    private AudioProcessor.AudioFormat pendingOutputAudioFormat;
     private final SynchronizedSonicAudioProcessor sonicAudioProcessor;
     private final SpeedProvider speedProvider;
-    private AudioProcessor.AudioFormat pendingInputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
-    private AudioProcessor.AudioFormat pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
-    private AudioProcessor.AudioFormat inputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
+    private final SpeedProviderUtil.SpeedProviderMapper speedProviderMapper;
 
     public SpeedChangingAudioProcessor(SpeedProvider speedProvider) {
+        this(speedProvider, false);
+    }
+
+    public SpeedChangingAudioProcessor(SpeedProvider speedProvider, boolean z) {
+        this.pendingInputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
+        this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
+        this.inputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.speedProvider = speedProvider;
+        this.speedProviderMapper = new SpeedProviderUtil.SpeedProviderMapper(speedProvider);
         Object obj = new Object();
         this.lock = obj;
         this.sonicAudioProcessor = new SynchronizedSonicAudioProcessor(obj, true);
         this.pendingCallbackInputTimesUs = new LongArrayQueue();
         this.pendingCallbacks = new ArrayDeque();
         this.currentSpeed = 1.0f;
+        this.areInputTimestampsAdjusted = z;
     }
 
     public static long getSampleCountAfterProcessorApplied(SpeedProvider speedProvider, int i, long j) {
@@ -68,7 +79,7 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public long getDurationAfterProcessorApplied(long j) {
-        return SpeedProviderUtil.getDurationAfterSpeedProviderApplied(this.speedProvider, j);
+        return this.areInputTimestampsAdjusted ? j : SpeedProviderUtil.getDurationAfterSpeedProviderApplied(this.speedProvider, j);
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
@@ -128,7 +139,11 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
             this.inputAudioFormat = this.pendingInputAudioFormat;
             this.sonicAudioProcessor.flush(streamMetadata);
             processPendingCallbacks();
-            this.framesRead = Util.durationUsToSampleCount(streamMetadata.positionOffsetUs, this.inputAudioFormat.sampleRate);
+            long j = streamMetadata.positionOffsetUs;
+            if (this.areInputTimestampsAdjusted) {
+                j = this.speedProviderMapper.getOriginalTimeUs(streamMetadata.positionOffsetUs);
+            }
+            this.framesRead = Util.durationUsToSampleCount(j, this.inputAudioFormat.sampleRate);
         }
     }
 

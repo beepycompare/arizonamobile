@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DownloadService extends Service {
     public static final String ACTION_ADD_DOWNLOAD = "androidx.media3.exoplayer.downloadService.action.ADD_DOWNLOAD";
     public static final String ACTION_INIT = "androidx.media3.exoplayer.downloadService.action.INIT";
@@ -427,7 +427,7 @@ public abstract class DownloadService extends Service {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public final class ForegroundNotificationUpdater {
         private final Handler handler = new Handler(Looper.getMainLooper());
         private boolean notificationDisplayed;
@@ -488,7 +488,7 @@ public abstract class DownloadService extends Service {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class DownloadManagerHelper implements DownloadManager.Listener {
         private final Context context;
         private final DownloadManager downloadManager;
@@ -515,7 +515,7 @@ public abstract class DownloadService extends Service {
                 Util.createHandlerForCurrentOrMainLooper().postAtFrontOfQueue(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadService$DownloadManagerHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DownloadService.DownloadManagerHelper.this.m8277xee6ee963(downloadService);
+                        DownloadService.DownloadManagerHelper.this.m8885xee6ee963(downloadService);
                     }
                 });
             }
@@ -523,7 +523,7 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper  reason: not valid java name */
-        public /* synthetic */ void m8277xee6ee963(DownloadService downloadService) {
+        public /* synthetic */ void m8885xee6ee963(DownloadService downloadService) {
             downloadService.notifyDownloads(this.downloadManager.getCurrentDownloads());
         }
 

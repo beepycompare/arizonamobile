@@ -1,18 +1,53 @@
 package com.google.android.gms.common.api.internal;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
-/* loaded from: classes4.dex */
-final class zacr implements Runnable {
-    final /* synthetic */ com.google.android.gms.signin.internal.zak zaa;
-    final /* synthetic */ zact zab;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zacr(zact zactVar, com.google.android.gms.signin.internal.zak zakVar) {
-        this.zab = zactVar;
-        this.zaa = zakVar;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
+/* loaded from: classes4.dex */
+public final class zacr extends com.google.android.gms.internal.base.zao {
+    final /* synthetic */ zacs zaa;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zacr(zacs zacsVar, Looper looper) {
+        super(looper);
+        Objects.requireNonNull(zacsVar);
+        this.zaa = zacsVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zact.zad(this.zab, this.zaa);
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        int i = message.what;
+        if (i == 0) {
+            PendingResult pendingResult = (PendingResult) message.obj;
+            zacs zacsVar = this.zaa;
+            synchronized (zacsVar.zaf()) {
+                zacs zacsVar2 = (zacs) Preconditions.checkNotNull(zacsVar.zae());
+                if (pendingResult == null) {
+                    zacsVar2.zac(new Status(13, "Transform returned null"));
+                } else if (pendingResult instanceof zaci) {
+                    zacsVar2.zac(((zaci) pendingResult).zaa());
+                } else {
+                    zacsVar2.zaa(pendingResult);
+                }
+            }
+        } else if (i == 1) {
+            RuntimeException runtimeException = (RuntimeException) message.obj;
+            String message2 = runtimeException.getMessage();
+            String.valueOf(message2);
+            Log.e("TransformedResultImpl", "Runtime exception on the transformation worker thread: ".concat(String.valueOf(message2)));
+            throw runtimeException;
+        } else {
+            int i2 = message.what;
+            StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 59);
+            sb.append("TransformationResultHandler received unknown message type: ");
+            sb.append(i2);
+            Log.e("TransformedResultImpl", sb.toString());
+        }
     }
 }

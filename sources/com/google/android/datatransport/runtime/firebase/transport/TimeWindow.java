@@ -1,5 +1,5 @@
 package com.google.android.datatransport.runtime.firebase.transport;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TimeWindow {
     private static final TimeWindow DEFAULT_INSTANCE = new Builder().build();
     private final long end_ms_;
@@ -26,7 +26,7 @@ public final class TimeWindow {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long start_ms_ = 0;
         private long end_ms_ = 0;

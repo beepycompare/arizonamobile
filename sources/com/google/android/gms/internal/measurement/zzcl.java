@@ -1,12 +1,16 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+
+import android.os.Handler;
+import android.os.Looper;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzcl implements zzck {
-    private zzcl() {
-        throw null;
+public final class zzcl extends Handler {
+    public zzcl() {
+        Looper.getMainLooper();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public /* synthetic */ zzcl(byte[] bArr) {
+    public zzcl(Looper looper) {
+        super(looper);
+        Looper.getMainLooper();
     }
 }

@@ -8,20 +8,20 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public @interface Component {
 
     @Target({ElementType.TYPE})
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public @interface Builder {
     }
 
     @Target({ElementType.TYPE})
     @Documented
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public @interface Factory {
     }
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.core.app.PendingIntentCompat;
 import java.io.Closeable;
 import java.lang.annotation.Retention;
@@ -70,7 +71,7 @@ public final class PendingIntentCompat {
     public static void send(PendingIntent pendingIntent, Context context, int i, Intent intent, PendingIntent.OnFinished onFinished, Handler handler, String str, Bundle bundle) throws PendingIntent.CanceledException {
         GatedCallback gatedCallback = new GatedCallback(onFinished);
         try {
-            Api23Impl.send(pendingIntent, context, i, intent, onFinished, handler, str, bundle);
+            pendingIntent.send(context, i, intent, onFinished, handler, str, bundle);
             gatedCallback.complete();
             gatedCallback.close();
         } catch (Throwable th) {
@@ -91,23 +92,12 @@ public final class PendingIntentCompat {
         } else if (Build.VERSION.SDK_INT < 31) {
             return i;
         } else {
-            i2 = 33554432;
+            i2 = GroupFlagsKt.HasAuxSlotFlag;
         }
         return i2 | i;
     }
 
     private PendingIntentCompat() {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        public static void send(PendingIntent pendingIntent, Context context, int i, Intent intent, PendingIntent.OnFinished onFinished, Handler handler, String str, Bundle bundle) throws PendingIntent.CanceledException {
-            pendingIntent.send(context, i, intent, onFinished, handler, str, bundle);
-        }
     }
 
     /* loaded from: classes2.dex */

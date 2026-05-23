@@ -8,15 +8,15 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class SizeKt {
     public static final Size Size(int i, Dimension dimension) {
-        return new Size(Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(i)), dimension);
+        return new Size(Dimension.Pixels.m9222boximpl(DimensionKt.Dimension(i)), dimension);
     }
 
     public static final Size Size(Dimension dimension, int i) {
-        return new Size(dimension, Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(i)));
+        return new Size(dimension, Dimension.Pixels.m9222boximpl(DimensionKt.Dimension(i)));
     }
 
     public static final Size Size(int i, int i2) {
-        return new Size(Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(i)), Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(i2)));
+        return new Size(Dimension.Pixels.m9222boximpl(DimensionKt.Dimension(i)), Dimension.Pixels.m9222boximpl(DimensionKt.Dimension(i2)));
     }
 
     public static final boolean isOriginal(Size size) {

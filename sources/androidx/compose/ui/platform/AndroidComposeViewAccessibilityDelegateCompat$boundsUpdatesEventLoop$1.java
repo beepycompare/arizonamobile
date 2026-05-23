@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidComposeViewAccessibilityDelegateCompat.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat", f = "AndroidComposeViewAccessibilityDelegateCompat.android.kt", i = {0, 1}, l = {2196, 2231}, m = "boundsUpdatesEventLoop$ui", n = {"subtreeChangedSemanticsNodesIds", "subtreeChangedSemanticsNodesIds"}, s = {"L$0", "L$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.platform.AndroidComposeViewAccessibilityDelegateCompat", f = "AndroidComposeViewAccessibilityDelegateCompat.android.kt", i = {0, 1}, l = {2374, 2410}, m = "boundsUpdatesEventLoop$ui", n = {"subtreeChangedSemanticsNodesIds", "subtreeChangedSemanticsNodesIds"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class AndroidComposeViewAccessibilityDelegateCompat$boundsUpdatesEventLoop$1 extends ContinuationImpl {
     Object L$0;

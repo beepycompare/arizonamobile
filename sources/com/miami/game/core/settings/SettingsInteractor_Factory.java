@@ -3,7 +3,7 @@ package com.miami.game.core.settings;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SettingsInteractor_Factory implements Factory<SettingsInteractor> {
     private final Provider<LocalRepository> localRepositoryProvider;
 

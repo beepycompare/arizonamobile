@@ -7,7 +7,6 @@ import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.snapshots.SnapshotStateObserver;
 import androidx.compose.runtime.tooling.CompositionErrorContext;
 import androidx.compose.runtime.tooling.CompositionErrorContextKt;
-import androidx.compose.ui.ComposeUiFlags;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Canvas;
 import androidx.compose.ui.graphics.layer.GraphicsLayer;
@@ -37,7 +36,6 @@ import androidx.compose.ui.unit.Constraints;
 import androidx.compose.ui.unit.Density;
 import androidx.compose.ui.unit.DpSize;
 import androidx.compose.ui.unit.IntOffset;
-import androidx.compose.ui.unit.IntSize;
 import androidx.compose.ui.unit.LayoutDirection;
 import androidx.compose.ui.viewinterop.AndroidViewHolder;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
@@ -58,7 +56,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: LayoutNode.kt */
-@Metadata(d1 = {"\u0000\u008c\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0016\b\u0001\u0018\u0000 ¦\u00032\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b:\b¥\u0003¦\u0003§\u0003¨\u0003B\u001b\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ\b\u0010C\u001a\u00020DH\u0002J\b\u0010K\u001a\u00020DH\u0002J\r\u0010O\u001a\u00020DH\u0000¢\u0006\u0002\bPJ\u001d\u0010Q\u001a\u00020D2\u0012\u0010R\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020D0SH\u0086\bJ#\u0010T\u001a\u00020D2\u0018\u0010R\u001a\u0014\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020D0UH\u0086\bJ\u0015\u0010h\u001a\n\u0018\u00010ij\u0004\u0018\u0001`jH\u0017¢\u0006\u0002\u0010kJ\u001e\u0010}\u001a\u00020D2\u0006\u0010~\u001a\u00020\f2\u0006\u0010\u007f\u001a\u00020\u0000H\u0000¢\u0006\u0003\b\u0080\u0001J\u0012\u0010\u0081\u0001\u001a\u00030\u0082\u00012\u0006\u0010\u007f\u001a\u00020\u0000H\u0002J\u000f\u0010\u0083\u0001\u001a\u00020DH\u0000¢\u0006\u0003\b\u0084\u0001J \u0010\u0085\u0001\u001a\u00020D2\u0006\u0010~\u001a\u00020\f2\u0007\u0010\u0086\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b\u0087\u0001J\u000f\u0010\u0088\u0001\u001a\u00020DH\u0000¢\u0006\u0003\b\u0089\u0001J\u0012\u0010\u008a\u0001\u001a\u00020D2\u0007\u0010\u008b\u0001\u001a\u00020\u0000H\u0002J*\u0010\u008c\u0001\u001a\u00020D2\u0007\u0010\u008d\u0001\u001a\u00020\f2\u0007\u0010\u008e\u0001\u001a\u00020\f2\u0007\u0010\u0086\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b\u008f\u0001J\t\u0010\u0090\u0001\u001a\u00020\nH\u0016J\u000f\u0010\u0094\u0001\u001a\u00020DH\u0000¢\u0006\u0003\b\u0095\u0001J\u000f\u0010\u0096\u0001\u001a\u00020DH\u0000¢\u0006\u0003\b\u0097\u0001J\n\u0010\u009e\u0001\u001a\u00030\u0099\u0001H\u0002J\u0017\u0010\u009f\u0001\u001a\u00020D2\u0006\u0010]\u001a\u00020\\H\u0000¢\u0006\u0003\b \u0001J\u000f\u0010¡\u0001\u001a\u00020DH\u0000¢\u0006\u0003\b¢\u0001J\n\u0010ª\u0001\u001a\u00030\u0082\u0001H\u0016J\u0014\u0010\u00ad\u0001\u001a\u00030\u0082\u00012\b\b\u0002\u0010m\u001a\u00020\fH\u0002J\n\u0010¶\u0001\u001a\u00030µ\u0001H\u0002J\u0010\u0010·\u0001\u001a\u00020\f2\u0007\u0010¸\u0001\u001a\u00020\fJ\u0010\u0010¹\u0001\u001a\u00020\f2\u0007\u0010º\u0001\u001a\u00020\fJ\u0010\u0010»\u0001\u001a\u00020\f2\u0007\u0010¸\u0001\u001a\u00020\fJ\u0010\u0010¼\u0001\u001a\u00020\f2\u0007\u0010º\u0001\u001a\u00020\fJ\u0010\u0010½\u0001\u001a\u00020\f2\u0007\u0010¸\u0001\u001a\u00020\fJ\u0010\u0010¾\u0001\u001a\u00020\f2\u0007\u0010º\u0001\u001a\u00020\fJ\u0010\u0010¿\u0001\u001a\u00020\f2\u0007\u0010¸\u0001\u001a\u00020\fJ\u0010\u0010À\u0001\u001a\u00020\f2\u0007\u0010º\u0001\u001a\u00020\fJ\u0012\u0010Ý\u0001\u001a\u00030Þ\u00012\b\u0010ß\u0001\u001a\u00030à\u0001J\t\u0010á\u0001\u001a\u00020DH\u0002J\u000f\u0010\u009b\u0002\u001a\u00020DH\u0000¢\u0006\u0003\b\u009c\u0002J\u0013\u0010§\u0002\u001a\u00020D2\b\u0010¢\u0002\u001a\u00030\u009e\u0002H\u0002J\t\u0010¨\u0002\u001a\u00020DH\u0002J\u000f\u0010©\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bª\u0002J!\u0010½\u0002\u001a\u00020D2\u0007\u0010¾\u0002\u001a\u00020\f2\u0007\u0010¿\u0002\u001a\u00020\fH\u0000¢\u0006\u0003\bÀ\u0002J\u000f\u0010Á\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bÂ\u0002J\u000f\u0010Ã\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bÄ\u0002J%\u0010Å\u0002\u001a\u00020D2\b\u0010Æ\u0002\u001a\u00030Ç\u00022\n\u0010È\u0002\u001a\u0005\u0018\u00010É\u0002H\u0000¢\u0006\u0003\bÊ\u0002J=\u0010Ë\u0002\u001a\u00020D2\b\u0010Ì\u0002\u001a\u00030Í\u00022\b\u0010Î\u0002\u001a\u00030Ï\u00022\n\b\u0002\u0010Ð\u0002\u001a\u00030Ñ\u00022\t\b\u0002\u0010Ò\u0002\u001a\u00020\nH\u0000¢\u0006\u0006\bÓ\u0002\u0010Ô\u0002J=\u0010Õ\u0002\u001a\u00020D2\b\u0010Ì\u0002\u001a\u00030Í\u00022\b\u0010Ö\u0002\u001a\u00030Ï\u00022\n\b\u0002\u0010Ð\u0002\u001a\u00030Ñ\u00022\t\b\u0002\u0010Ò\u0002\u001a\u00020\nH\u0000¢\u0006\u0006\b×\u0002\u0010Ô\u0002J\u0018\u0010Ø\u0002\u001a\u00020D2\u0007\u0010Ù\u0002\u001a\u00020\u0000H\u0000¢\u0006\u0003\bÚ\u0002J0\u0010Û\u0002\u001a\u00020D2\t\b\u0002\u0010Ü\u0002\u001a\u00020\n2\t\b\u0002\u0010Ý\u0002\u001a\u00020\n2\t\b\u0002\u0010Þ\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bß\u0002J0\u0010à\u0002\u001a\u00020D2\t\b\u0002\u0010Ü\u0002\u001a\u00020\n2\t\b\u0002\u0010Ý\u0002\u001a\u00020\n2\t\b\u0002\u0010Þ\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bá\u0002J\u000f\u0010â\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bã\u0002J\u000f\u0010ä\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bå\u0002J\u000f\u0010æ\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bç\u0002J*\u0010|\u001a\u0003Hè\u0002\"\u0005\b\u0000\u0010è\u00022\u000e\u0010R\u001a\n\u0012\u0005\u0012\u0003Hè\u00020é\u0002H\u0080\b¢\u0006\u0006\bê\u0002\u0010ë\u0002J\u001a\u0010ì\u0002\u001a\u00020D2\t\b\u0002\u0010Ü\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bí\u0002J\u001a\u0010î\u0002\u001a\u00020D2\t\b\u0002\u0010Ü\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bï\u0002J\u000f\u0010ð\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bñ\u0002J\u0010\u0010ò\u0002\u001a\t\u0012\u0005\u0012\u00030ó\u00020>H\u0016J\u000f\u0010ô\u0002\u001a\u00020DH\u0000¢\u0006\u0003\bõ\u0002J\u001d\u0010ö\u0002\u001a\u00020\n2\f\b\u0002\u0010÷\u0002\u001a\u0005\u0018\u00010ø\u0002H\u0000¢\u0006\u0003\bù\u0002J\u001d\u0010ú\u0002\u001a\u00020\n2\f\b\u0002\u0010÷\u0002\u001a\u0005\u0018\u00010ø\u0002H\u0000¢\u0006\u0003\bû\u0002J\u000f\u0010\u0084\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u0085\u0003J\u000f\u0010\u0086\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u0087\u0003J\u000f\u0010\u0088\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u0089\u0003J\u0012\u0010\u008a\u0003\u001a\u00020D2\t\b\u0002\u0010\u008b\u0003\u001a\u00020\nJ\u0007\u0010\u008c\u0003\u001a\u00020DJ\u0012\u0010\u008d\u0003\u001a\u00020D2\t\b\u0002\u0010\u008b\u0003\u001a\u00020\nJ\u000f\u0010\u008e\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u008f\u0003J\t\u0010\u0090\u0003\u001a\u00020DH\u0016J\t\u0010\u0091\u0003\u001a\u00020DH\u0016J%\u0010\u0092\u0003\u001a\u00020D2\u0013\u0010R\u001a\u000f\u0012\u0005\u0012\u00030\u0093\u0003\u0012\u0004\u0012\u00020D0SH\u0080\b¢\u0006\u0003\b\u0094\u0003J%\u0010\u0095\u0003\u001a\u00020D2\u0013\u0010R\u001a\u000f\u0012\u0005\u0012\u00030\u0082\u0002\u0012\u0004\u0012\u00020D0SH\u0080\b¢\u0006\u0003\b\u0096\u0003J\u000f\u0010\u0097\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u0098\u0003J\t\u0010\u0099\u0003\u001a\u00020DH\u0002J\u000f\u0010\u009a\u0003\u001a\u00020DH\u0000¢\u0006\u0003\b\u009b\u0003J\t\u0010¢\u0003\u001a\u00020DH\u0016J\t\u0010£\u0003\u001a\u00020DH\u0016J\t\u0010¤\u0003\u001a\u00020DH\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\fX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001c\u0010\u0018\u001a\u00020\u0019X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u001e\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001c\u0010\u001f\u001a\u00020 X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u001e\u001a\u0004\b!\u0010\u001b\"\u0004\b\"\u0010\u001dR\u001c\u0010#\u001a\u00020\u0019X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u001e\u001a\u0004\b$\u0010\u001b\"\u0004\b%\u0010\u001dR\u001a\u0010&\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010\u0015\"\u0004\b(\u0010\u0017R\u001a\u0010)\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\u0015\"\u0004\b+\u0010\u0017R\u001a\u0010,\u001a\u00020\fX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010\u0010\"\u0004\b.\u0010\u0012R\u001a\u0010/\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010\u0015\"\u0004\b1\u0010\u0017R(\u00103\u001a\u0004\u0018\u00010\u00002\b\u00102\u001a\u0004\u0018\u00010\u0000@BX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u0013\u00108\u001a\u0004\u0018\u00010\n8F¢\u0006\u0006\u001a\u0004\b8\u00109R\u000e\u0010:\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\b\u0012\u0004\u0012\u00020\u00000<X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010=\u001a\b\u0012\u0004\u0012\u00020\u00000>8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b?\u0010@R\u0016\u0010A\u001a\n\u0012\u0004\u0012\u00020\u0000\u0018\u00010BX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010E\u001a\b\u0012\u0004\u0012\u00020F0>8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bG\u0010@R\u001a\u0010H\u001a\b\u0012\u0004\u0012\u00020F0>8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bI\u0010@R\u000e\u0010J\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010L\u001a\b\u0012\u0004\u0012\u00020\u00000B8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bM\u0010NR\u001a\u0010V\u001a\b\u0012\u0004\u0012\u00020\u00000>8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bW\u0010@R\u0010\u0010X\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010Y\u001a\u0004\u0018\u00010\u00008@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bZ\u00105R\"\u0010]\u001a\u0004\u0018\u00010\\2\b\u0010[\u001a\u0004\u0018\u00010\\@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b^\u0010_R$\u0010`\u001a\n\u0018\u00010aj\u0004\u0018\u0001`bX\u0080\u000e¢\u0006\u0010\n\u0002\u0010g\u001a\u0004\bc\u0010d\"\u0004\be\u0010fR\u0014\u0010l\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bl\u0010\u0015R\u001a\u0010m\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bn\u0010\u0010\"\u0004\bo\u0010\u0012R\u0014\u0010p\u001a\u00020q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\br\u0010sR\u0016\u0010t\u001a\u0004\u0018\u00010u8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bv\u0010wR\u0014\u0010x\u001a\u00020y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bz\u0010{R\u000e\u0010|\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0091\u0001\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b\u0092\u0001\u0010\u0015\"\u0005\b\u0093\u0001\u0010\u0017R\u0012\u0010\u0098\u0001\u001a\u0005\u0018\u00010\u0099\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u009a\u0001\u001a\u0005\u0018\u00010\u0099\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u009b\u0001\u0010\u009c\u0001R\u000f\u0010\u009d\u0001\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0015\u0010£\u0001\u001a\b\u0012\u0004\u0012\u00020\u00000BX\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010¤\u0001\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010¥\u0001\u001a\b\u0012\u0004\u0012\u00020\u00000B8@X\u0081\u0004¢\u0006\u000f\u0012\u0006\b¦\u0001\u0010§\u0001\u001a\u0005\b¨\u0001\u0010NR\u0016\u0010©\u0001\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b©\u0001\u0010\u0015R\u0016\u0010«\u0001\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b¬\u0001\u0010\u0015R+\u0010¯\u0001\u001a\u00030®\u00012\u0007\u0010[\u001a\u00030®\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b°\u0001\u0010±\u0001\"\u0006\b²\u0001\u0010³\u0001R\u0012\u0010´\u0001\u001a\u0005\u0018\u00010µ\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010Â\u0001\u001a\u00030Á\u00012\u0007\u0010[\u001a\u00030Á\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÃ\u0001\u0010Ä\u0001\"\u0006\bÅ\u0001\u0010Æ\u0001R+\u0010È\u0001\u001a\u00030Ç\u00012\u0007\u0010[\u001a\u00030Ç\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÉ\u0001\u0010Ê\u0001\"\u0006\bË\u0001\u0010Ì\u0001R+\u0010Î\u0001\u001a\u00030Í\u00012\u0007\u0010[\u001a\u00030Í\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÏ\u0001\u0010Ð\u0001\"\u0006\bÑ\u0001\u0010Ò\u0001R+\u0010Ô\u0001\u001a\u00030Ó\u00012\u0007\u0010[\u001a\u00030Ó\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÕ\u0001\u0010Ö\u0001\"\u0006\b×\u0001\u0010Ø\u0001R\u001a\u0010Ù\u0001\u001a\u0005\u0018\u00010Ú\u00018BX\u0082\u0004¢\u0006\b\u001a\u0006\bÛ\u0001\u0010Ü\u0001R\u0016\u0010º\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bâ\u0001\u0010\u0010R\u0016\u0010¸\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bã\u0001\u0010\u0010R\u0016\u0010ä\u0001\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bå\u0001\u0010\u0015R\u0018\u0010æ\u0001\u001a\u00030ç\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bè\u0001\u0010é\u0001R\u0016\u0010ê\u0001\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bê\u0001\u0010\u0015R\u0013\u0010ë\u0001\u001a\u00020\n8F¢\u0006\u0007\u001a\u0005\bë\u0001\u0010\u0015R\u0016\u0010ì\u0001\u001a\u00020\f8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bí\u0001\u0010\u0010R\u0018\u0010î\u0001\u001a\u00030ï\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bð\u0001\u0010ñ\u0001R\u0018\u0010ò\u0001\u001a\u00030ï\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bó\u0001\u0010ñ\u0001R \u0010ô\u0001\u001a\u00030ï\u0001X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bõ\u0001\u0010ñ\u0001\"\u0006\bö\u0001\u0010÷\u0001R\u0010\u0010ø\u0001\u001a\u00030ï\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R)\u0010ù\u0001\u001a\u00020\n8\u0000@\u0000X\u0081\u000e¢\u0006\u0018\n\u0000\u0012\u0006\bú\u0001\u0010§\u0001\u001a\u0005\bû\u0001\u0010\u0015\"\u0005\bü\u0001\u0010\u0017R\u0018\u0010ý\u0001\u001a\u00030þ\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\bÿ\u0001\u0010\u0080\u0002R\u0018\u0010\u0081\u0002\u001a\u00030\u0082\u00028@X\u0080\u0004¢\u0006\b\u001a\u0006\b\u0083\u0002\u0010\u0084\u0002R\u0018\u0010\u0085\u0002\u001a\u00030\u0086\u0002X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0087\u0002\u0010\u0088\u0002R\u0018\u0010\u0089\u0002\u001a\u00030\u0082\u00028@X\u0080\u0004¢\u0006\b\u001a\u0006\b\u008a\u0002\u0010\u0084\u0002R\u0018\u0010\u008b\u0002\u001a\u00030\u008c\u00028BX\u0082\u0004¢\u0006\b\u001a\u0006\b\u008d\u0002\u0010\u008e\u0002R\"\u0010\u008f\u0002\u001a\u0005\u0018\u00010\u0090\u0002X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b\u0091\u0002\u0010\u0092\u0002\"\u0006\b\u0093\u0002\u0010\u0094\u0002R\u0012\u0010\u0095\u0002\u001a\u0005\u0018\u00010\u0082\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0096\u0002\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b\u0097\u0002\u0010\u0015\"\u0005\b\u0098\u0002\u0010\u0017R\u001a\u0010\u0099\u0002\u001a\u0005\u0018\u00010\u0082\u00028@X\u0080\u0004¢\u0006\b\u001a\u0006\b\u009a\u0002\u0010\u0084\u0002R\u0010\u0010\u009d\u0002\u001a\u00030\u009e\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u009f\u0002\u001a\u0005\u0018\u00010\u009e\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010 \u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b¡\u0002\u0010\u0015R+\u0010¢\u0002\u001a\u00030\u009e\u00022\u0007\u0010[\u001a\u00030\u009e\u00028V@VX\u0096\u000e¢\u0006\u0010\u001a\u0006\b£\u0002\u0010¤\u0002\"\u0006\b¥\u0002\u0010¦\u0002R\u0018\u0010«\u0002\u001a\u00030¬\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u00ad\u0002\u0010®\u0002R-\u0010¯\u0002\u001a\u0010\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020D\u0018\u00010SX\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b°\u0002\u0010±\u0002\"\u0006\b²\u0002\u0010³\u0002R-\u0010´\u0002\u001a\u0010\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020D\u0018\u00010SX\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bµ\u0002\u0010±\u0002\"\u0006\b¶\u0002\u0010³\u0002R\u001d\u0010·\u0002\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b¸\u0002\u0010\u0015\"\u0005\b¹\u0002\u0010\u0017R'\u0010º\u0002\u001a\u00020\f2\u0006\u0010[\u001a\u00020\f@FX\u0086\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b»\u0002\u0010\u0010\"\u0005\b¼\u0002\u0010\u0012R\u0016\u0010ü\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bý\u0002\u0010\u0015R\u0016\u0010þ\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bÿ\u0002\u0010\u0015R\u0016\u0010\u0080\u0003\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b\u0081\u0003\u0010\u0015R\u0016\u0010\u0082\u0003\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b\u0083\u0003\u0010\u0015R\u0019\u0010\u009c\u0003\u001a\u0004\u0018\u00010\u00058VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u009d\u0003\u0010\u009e\u0003R\u001c\u0010\u009f\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050>8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b \u0003\u0010@R \u0010¡\u0003\u001a\u00020\n2\u0006\u0010[\u001a\u00020\n@RX\u0096\u000e¢\u0006\t\n\u0000\u001a\u0005\b¡\u0003\u0010\u0015¨\u0006©\u0003"}, d2 = {"Landroidx/compose/ui/node/LayoutNode;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "Landroidx/compose/ui/layout/Remeasurement;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/compose/ui/layout/LayoutInfo;", "Landroidx/compose/ui/semantics/SemanticsInfo;", "Landroidx/compose/ui/node/ComposeUiNode;", "Landroidx/compose/ui/node/InteroperableComposeUiNode;", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "isVirtual", "", "semanticsId", "", "<init>", "(ZI)V", "getSemanticsId", "()I", "setSemanticsId", "(I)V", "hasPositionalLayerTransformationsInOffsetFromRoot", "getHasPositionalLayerTransformationsInOffsetFromRoot$ui", "()Z", "setHasPositionalLayerTransformationsInOffsetFromRoot$ui", "(Z)V", "lastOffsetFromParent", "Landroidx/compose/ui/unit/IntOffset;", "getLastOffsetFromParent-nOcc-ac$ui", "()J", "setLastOffsetFromParent--gyyYBs$ui", "(J)V", "J", "lastSize", "Landroidx/compose/ui/unit/IntSize;", "getLastSize-YbymL2g$ui", "setLastSize-ozmzZPI$ui", "outerToInnerOffset", "getOuterToInnerOffset-nOcc-ac$ui", "setOuterToInnerOffset--gyyYBs$ui", "outerToInnerOffsetDirty", "getOuterToInnerOffsetDirty$ui", "setOuterToInnerOffsetDirty$ui", "addedToRectList", "getAddedToRectList$ui", "setAddedToRectList$ui", "compositeKeyHash", "getCompositeKeyHash", "setCompositeKeyHash", "isVirtualLookaheadRoot", "isVirtualLookaheadRoot$ui", "setVirtualLookaheadRoot$ui", "newRoot", "lookaheadRoot", "getLookaheadRoot$ui", "()Landroidx/compose/ui/node/LayoutNode;", "setLookaheadRoot", "(Landroidx/compose/ui/node/LayoutNode;)V", "isPlacedInLookahead", "()Ljava/lang/Boolean;", "virtualChildrenCount", "_foldedChildren", "Landroidx/compose/ui/node/MutableVectorWithMutationTracking;", "foldedChildren", "", "getFoldedChildren$ui", "()Ljava/util/List;", "_unfoldedChildren", "Landroidx/compose/runtime/collection/MutableVector;", "recreateUnfoldedChildrenIfDirty", "", "childMeasurables", "Landroidx/compose/ui/layout/Measurable;", "getChildMeasurables$ui", "childLookaheadMeasurables", "getChildLookaheadMeasurables$ui", "unfoldedVirtualChildrenListDirty", "invalidateUnfoldedVirtualChildren", "_children", "get_children$ui", "()Landroidx/compose/runtime/collection/MutableVector;", "updateChildrenIfDirty", "updateChildrenIfDirty$ui", "forEachChild", "block", "Lkotlin/Function1;", "forEachChildIndexed", "Lkotlin/Function2;", "children", "getChildren$ui", "_foldedParent", "parent", "getParent$ui", "value", "Landroidx/compose/ui/node/Owner;", "owner", "getOwner$ui", "()Landroidx/compose/ui/node/Owner;", "interopViewFactoryHolder", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "Landroidx/compose/ui/viewinterop/InteropViewFactoryHolder;", "getInteropViewFactoryHolder$ui", "()Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "setInteropViewFactoryHolder$ui", "(Landroidx/compose/ui/viewinterop/AndroidViewHolder;)V", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "getInteropView", "Landroid/view/View;", "Landroidx/compose/ui/viewinterop/InteropView;", "()Landroid/view/View;", "isAttached", "depth", "getDepth$ui", "setDepth$ui", "layoutState", "Landroidx/compose/ui/node/LayoutNode$LayoutState;", "getLayoutState$ui", "()Landroidx/compose/ui/node/LayoutNode$LayoutState;", "lookaheadPassDelegate", "Landroidx/compose/ui/node/LookaheadPassDelegate;", "getLookaheadPassDelegate$ui", "()Landroidx/compose/ui/node/LookaheadPassDelegate;", "measurePassDelegate", "Landroidx/compose/ui/node/MeasurePassDelegate;", "getMeasurePassDelegate$ui", "()Landroidx/compose/ui/node/MeasurePassDelegate;", "ignoreRemeasureRequests", "insertAt", FirebaseAnalytics.Param.INDEX, "instance", "insertAt$ui", "exceptionMessageForParentingOrOwnership", "", "onZSortedChildrenInvalidated", "onZSortedChildrenInvalidated$ui", "removeAt", "count", "removeAt$ui", "removeAll", "removeAll$ui", "onChildRemoved", "child", "move", "from", TypedValues.TransitionType.S_TO, "move$ui", "isTransparent", "isSemanticsInvalidated", "isSemanticsInvalidated$ui", "setSemanticsInvalidated$ui", "requestAutofill", "requestAutofill$ui", "invalidateSemantics", "invalidateSemantics$ui", "_semanticsConfiguration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "semanticsConfiguration", "getSemanticsConfiguration", "()Landroidx/compose/ui/semantics/SemanticsConfiguration;", "isCurrentlyCalculatingSemanticsConfiguration", "calculateSemanticsConfiguration", "attach", "attach$ui", "detach", "detach$ui", "_zSortedChildren", "zSortedChildrenInvalidated", "zSortedChildren", "getZSortedChildren$annotations", "()V", "getZSortedChildren", "isValidOwnerScope", "toString", "hasFixedInnerContentConstraints", "getHasFixedInnerContentConstraints$ui", "debugTreeToString", "Landroidx/compose/ui/layout/MeasurePolicy;", "measurePolicy", "getMeasurePolicy", "()Landroidx/compose/ui/layout/MeasurePolicy;", "setMeasurePolicy", "(Landroidx/compose/ui/layout/MeasurePolicy;)V", "intrinsicsPolicy", "Landroidx/compose/ui/node/IntrinsicsPolicy;", "getOrCreateIntrinsicsPolicy", "minLookaheadIntrinsicWidth", "height", "minLookaheadIntrinsicHeight", "width", "maxLookaheadIntrinsicWidth", "maxLookaheadIntrinsicHeight", "minIntrinsicWidth", "minIntrinsicHeight", "maxIntrinsicWidth", "maxIntrinsicHeight", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "Landroidx/compose/ui/unit/LayoutDirection;", "layoutDirection", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "Landroidx/compose/ui/platform/ViewConfiguration;", "viewConfiguration", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "setViewConfiguration", "(Landroidx/compose/ui/platform/ViewConfiguration;)V", "Landroidx/compose/runtime/CompositionLocalMap;", "compositionLocalMap", "getCompositionLocalMap", "()Landroidx/compose/runtime/CompositionLocalMap;", "setCompositionLocalMap", "(Landroidx/compose/runtime/CompositionLocalMap;)V", "traceContext", "Landroidx/compose/runtime/tooling/CompositionErrorContext;", "getTraceContext", "()Landroidx/compose/runtime/tooling/CompositionErrorContext;", "rethrowWithComposeStackTrace", "", "e", "", "onDensityOrLayoutDirectionChanged", "getWidth", "getHeight", "alignmentLinesRequired", "getAlignmentLinesRequired$ui", "mDrawScope", "Landroidx/compose/ui/node/LayoutNodeDrawScope;", "getMDrawScope$ui", "()Landroidx/compose/ui/node/LayoutNodeDrawScope;", "isPlaced", "isPlacedByParent", "placeOrder", "getPlaceOrder$ui", "measuredByParent", "Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "getMeasuredByParent$ui", "()Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "measuredByParentInLookahead", "getMeasuredByParentInLookahead$ui", "intrinsicsUsageByParent", "getIntrinsicsUsageByParent$ui", "setIntrinsicsUsageByParent$ui", "(Landroidx/compose/ui/node/LayoutNode$UsageByParent;)V", "previousIntrinsicsUsageByParent", "canMultiMeasure", "getCanMultiMeasure$ui$annotations", "getCanMultiMeasure$ui", "setCanMultiMeasure$ui", "nodes", "Landroidx/compose/ui/node/NodeChain;", "getNodes$ui", "()Landroidx/compose/ui/node/NodeChain;", "innerCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getInnerCoordinator$ui", "()Landroidx/compose/ui/node/NodeCoordinator;", "layoutDelegate", "Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "getLayoutDelegate$ui", "()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "outerCoordinator", "getOuterCoordinator$ui", "zIndex", "", "getZIndex", "()F", "subcompositionsState", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "getSubcompositionsState$ui", "()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "setSubcompositionsState$ui", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "_innerLayerCoordinator", "innerLayerCoordinatorIsDirty", "getInnerLayerCoordinatorIsDirty$ui", "setInnerLayerCoordinatorIsDirty$ui", "innerLayerCoordinator", "getInnerLayerCoordinator$ui", "invalidateLayer", "invalidateLayer$ui", "_modifier", "Landroidx/compose/ui/Modifier;", "pendingModifier", "applyingModifierOnAttach", "getApplyingModifierOnAttach$ui", "modifier", "getModifier", "()Landroidx/compose/ui/Modifier;", "setModifier", "(Landroidx/compose/ui/Modifier;)V", "applyModifier", "resetModifierState", "invalidateParentData", "invalidateParentData$ui", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "onAttach", "getOnAttach$ui", "()Lkotlin/jvm/functions/Function1;", "setOnAttach$ui", "(Lkotlin/jvm/functions/Function1;)V", "onDetach", "getOnDetach$ui", "setOnDetach$ui", "needsOnGloballyPositionedDispatch", "getNeedsOnGloballyPositionedDispatch$ui", "setNeedsOnGloballyPositionedDispatch$ui", "globallyPositionedObservers", "getGloballyPositionedObservers", "setGloballyPositionedObservers", "place", "x", "y", "place$ui", "replace", "replace$ui", "lookaheadReplace", "lookaheadReplace$ui", "draw", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "draw$ui", "hitTest", "pointerPosition", "Landroidx/compose/ui/geometry/Offset;", "hitTestResult", "Landroidx/compose/ui/node/HitTestResult;", "pointerType", "Landroidx/compose/ui/input/pointer/PointerType;", "isInLayer", "hitTest-6fMxITs$ui", "(JLandroidx/compose/ui/node/HitTestResult;IZ)V", "hitTestSemantics", "hitSemanticsEntities", "hitTestSemantics-6fMxITs$ui", "rescheduleRemeasureOrRelayout", "it", "rescheduleRemeasureOrRelayout$ui", "requestRemeasure", "forceRequest", "scheduleMeasureAndLayout", "invalidateIntrinsics", "requestRemeasure$ui", "requestLookaheadRemeasure", "requestLookaheadRemeasure$ui", "invalidateMeasurements", "invalidateMeasurements$ui", "invalidateOnPositioned", "invalidateOnPositioned$ui", "onCoordinatorPositionChanged", "onCoordinatorPositionChanged$ui", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/Function0;", "ignoreRemeasureRequests$ui", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "requestRelayout", "requestRelayout$ui", "requestLookaheadRelayout", "requestLookaheadRelayout$ui", "dispatchOnPositionedCallbacks", "dispatchOnPositionedCallbacks$ui", "getModifierInfo", "Landroidx/compose/ui/layout/ModifierInfo;", "invalidateLayers", "invalidateLayers$ui", "lookaheadRemeasure", "constraints", "Landroidx/compose/ui/unit/Constraints;", "lookaheadRemeasure-_Sx5XlM$ui", "remeasure", "remeasure-_Sx5XlM$ui", "measurePending", "getMeasurePending$ui", "layoutPending", "getLayoutPending$ui", "lookaheadMeasurePending", "getLookaheadMeasurePending$ui", "lookaheadLayoutPending", "getLookaheadLayoutPending$ui", "markLayoutPending", "markLayoutPending$ui", "markMeasurePending", "markMeasurePending$ui", "markLookaheadLayoutPending", "markLookaheadLayoutPending$ui", "invalidateSubtree", "isRootOfInvalidation", "invalidateMeasurementForSubtree", "invalidateDrawForSubtree", "markLookaheadMeasurePending", "markLookaheadMeasurePending$ui", "forceRemeasure", "onLayoutComplete", "forEachCoordinator", "Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "forEachCoordinator$ui", "forEachCoordinatorIncludingInner", "forEachCoordinatorIncludingInner$ui", "clearSubtreeIntrinsicsUsage", "clearSubtreeIntrinsicsUsage$ui", "clearSubtreePlacementIntrinsicsUsage", "resetSubtreeIntrinsicsUsage", "resetSubtreeIntrinsicsUsage$ui", "parentInfo", "getParentInfo", "()Landroidx/compose/ui/semantics/SemanticsInfo;", "childrenInfo", "getChildrenInfo", "isDeactivated", "onReuse", "onDeactivate", "onRelease", "NoIntrinsicsMeasurePolicy", "Companion", "LayoutState", "UsageByParent", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0016\b\u0001\u0018\u0000 £\u00032\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b:\b¢\u0003£\u0003¤\u0003¥\u0003B\u001b\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ\b\u0010?\u001a\u00020@H\u0002J\b\u0010G\u001a\u00020@H\u0002J\r\u0010K\u001a\u00020@H\u0000¢\u0006\u0002\bLJ\u001d\u0010M\u001a\u00020@2\u0012\u0010N\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020@0OH\u0086\bJ#\u0010P\u001a\u00020@2\u0018\u0010N\u001a\u0014\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020@0QH\u0086\bJ\u0015\u0010d\u001a\n\u0018\u00010ej\u0004\u0018\u0001`fH\u0017¢\u0006\u0002\u0010gJ\u001d\u0010y\u001a\u00020@2\u0006\u0010z\u001a\u00020\f2\u0006\u0010{\u001a\u00020\u0000H\u0000¢\u0006\u0002\b|J\u0010\u0010}\u001a\u00020~2\u0006\u0010{\u001a\u00020\u0000H\u0002J\u000e\u0010\u007f\u001a\u00020@H\u0000¢\u0006\u0003\b\u0080\u0001J \u0010\u0081\u0001\u001a\u00020@2\u0006\u0010z\u001a\u00020\f2\u0007\u0010\u0082\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b\u0083\u0001J\u000f\u0010\u0084\u0001\u001a\u00020@H\u0000¢\u0006\u0003\b\u0085\u0001J\u0012\u0010\u0086\u0001\u001a\u00020@2\u0007\u0010\u0087\u0001\u001a\u00020\u0000H\u0002J*\u0010\u0088\u0001\u001a\u00020@2\u0007\u0010\u0089\u0001\u001a\u00020\f2\u0007\u0010\u008a\u0001\u001a\u00020\f2\u0007\u0010\u0082\u0001\u001a\u00020\fH\u0000¢\u0006\u0003\b\u008b\u0001J\t\u0010\u008c\u0001\u001a\u00020\nH\u0016J\u000f\u0010\u0090\u0001\u001a\u00020@H\u0000¢\u0006\u0003\b\u0091\u0001J\u000f\u0010\u0092\u0001\u001a\u00020@H\u0000¢\u0006\u0003\b\u0093\u0001J\n\u0010\u009a\u0001\u001a\u00030\u0095\u0001H\u0002J\u0017\u0010\u009b\u0001\u001a\u00020@2\u0006\u0010Y\u001a\u00020XH\u0000¢\u0006\u0003\b\u009c\u0001J\u000f\u0010\u009d\u0001\u001a\u00020@H\u0000¢\u0006\u0003\b\u009e\u0001J\t\u0010¦\u0001\u001a\u00020~H\u0016J\u0013\u0010©\u0001\u001a\u00020~2\b\b\u0002\u0010i\u001a\u00020\fH\u0002J\n\u0010²\u0001\u001a\u00030±\u0001H\u0002J\u0010\u0010³\u0001\u001a\u00020\f2\u0007\u0010´\u0001\u001a\u00020\fJ\u0010\u0010µ\u0001\u001a\u00020\f2\u0007\u0010¶\u0001\u001a\u00020\fJ\u0010\u0010·\u0001\u001a\u00020\f2\u0007\u0010´\u0001\u001a\u00020\fJ\u0010\u0010¸\u0001\u001a\u00020\f2\u0007\u0010¶\u0001\u001a\u00020\fJ\u0010\u0010¹\u0001\u001a\u00020\f2\u0007\u0010´\u0001\u001a\u00020\fJ\u0010\u0010º\u0001\u001a\u00020\f2\u0007\u0010¶\u0001\u001a\u00020\fJ\u0010\u0010»\u0001\u001a\u00020\f2\u0007\u0010´\u0001\u001a\u00020\fJ\u0010\u0010¼\u0001\u001a\u00020\f2\u0007\u0010¶\u0001\u001a\u00020\fJ\u0012\u0010Ù\u0001\u001a\u00030Ú\u00012\b\u0010Û\u0001\u001a\u00030Ü\u0001J\t\u0010Ý\u0001\u001a\u00020@H\u0002J\u000f\u0010\u0097\u0002\u001a\u00020@H\u0000¢\u0006\u0003\b\u0098\u0002J\u0013\u0010£\u0002\u001a\u00020@2\b\u0010\u009e\u0002\u001a\u00030\u009a\u0002H\u0002J\t\u0010¤\u0002\u001a\u00020@H\u0002J\u000f\u0010¥\u0002\u001a\u00020@H\u0000¢\u0006\u0003\b¦\u0002J!\u0010¹\u0002\u001a\u00020@2\u0007\u0010º\u0002\u001a\u00020\f2\u0007\u0010»\u0002\u001a\u00020\fH\u0000¢\u0006\u0003\b¼\u0002J\u000f\u0010½\u0002\u001a\u00020@H\u0000¢\u0006\u0003\b¾\u0002J\u000f\u0010¿\u0002\u001a\u00020@H\u0000¢\u0006\u0003\bÀ\u0002J%\u0010Á\u0002\u001a\u00020@2\b\u0010Â\u0002\u001a\u00030Ã\u00022\n\u0010Ä\u0002\u001a\u0005\u0018\u00010Å\u0002H\u0000¢\u0006\u0003\bÆ\u0002J=\u0010Ç\u0002\u001a\u00020@2\b\u0010È\u0002\u001a\u00030É\u00022\b\u0010Ê\u0002\u001a\u00030Ë\u00022\n\b\u0002\u0010Ì\u0002\u001a\u00030Í\u00022\t\b\u0002\u0010Î\u0002\u001a\u00020\nH\u0000¢\u0006\u0006\bÏ\u0002\u0010Ð\u0002J=\u0010Ñ\u0002\u001a\u00020@2\b\u0010È\u0002\u001a\u00030É\u00022\b\u0010Ò\u0002\u001a\u00030Ë\u00022\n\b\u0002\u0010Ì\u0002\u001a\u00030Í\u00022\t\b\u0002\u0010Î\u0002\u001a\u00020\nH\u0000¢\u0006\u0006\bÓ\u0002\u0010Ð\u0002J\u0018\u0010Ô\u0002\u001a\u00020@2\u0007\u0010Õ\u0002\u001a\u00020\u0000H\u0000¢\u0006\u0003\bÖ\u0002J0\u0010×\u0002\u001a\u00020@2\t\b\u0002\u0010Ø\u0002\u001a\u00020\n2\t\b\u0002\u0010Ù\u0002\u001a\u00020\n2\t\b\u0002\u0010Ú\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bÛ\u0002J0\u0010Ü\u0002\u001a\u00020@2\t\b\u0002\u0010Ø\u0002\u001a\u00020\n2\t\b\u0002\u0010Ù\u0002\u001a\u00020\n2\t\b\u0002\u0010Ú\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bÝ\u0002J\u000f\u0010Þ\u0002\u001a\u00020@H\u0000¢\u0006\u0003\bß\u0002J\u000f\u0010à\u0002\u001a\u00020@H\u0000¢\u0006\u0003\bá\u0002J\u0019\u0010â\u0002\u001a\u00020@2\b\u0010ã\u0002\u001a\u00030þ\u0001H\u0000¢\u0006\u0003\bä\u0002J*\u0010x\u001a\u0003Hå\u0002\"\u0005\b\u0000\u0010å\u00022\u000e\u0010N\u001a\n\u0012\u0005\u0012\u0003Hå\u00020æ\u0002H\u0080\b¢\u0006\u0006\bç\u0002\u0010è\u0002J\u001a\u0010é\u0002\u001a\u00020@2\t\b\u0002\u0010Ø\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bê\u0002J\u001a\u0010ë\u0002\u001a\u00020@2\t\b\u0002\u0010Ø\u0002\u001a\u00020\nH\u0000¢\u0006\u0003\bì\u0002J\u000f\u0010í\u0002\u001a\u00020@H\u0000¢\u0006\u0003\bî\u0002J\u0010\u0010ï\u0002\u001a\t\u0012\u0005\u0012\u00030ð\u00020:H\u0016J\u000f\u0010ñ\u0002\u001a\u00020@H\u0000¢\u0006\u0003\bò\u0002J\u001d\u0010ó\u0002\u001a\u00020\n2\f\b\u0002\u0010ô\u0002\u001a\u0005\u0018\u00010õ\u0002H\u0000¢\u0006\u0003\bö\u0002J\u001d\u0010÷\u0002\u001a\u00020\n2\f\b\u0002\u0010ô\u0002\u001a\u0005\u0018\u00010õ\u0002H\u0000¢\u0006\u0003\bø\u0002J\u000f\u0010\u0081\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u0082\u0003J\u000f\u0010\u0083\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u0084\u0003J\u000f\u0010\u0085\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u0086\u0003J\u0012\u0010\u0087\u0003\u001a\u00020@2\t\b\u0002\u0010\u0088\u0003\u001a\u00020\nJ\u0007\u0010\u0089\u0003\u001a\u00020@J\u0012\u0010\u008a\u0003\u001a\u00020@2\t\b\u0002\u0010\u0088\u0003\u001a\u00020\nJ\u000f\u0010\u008b\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u008c\u0003J\t\u0010\u008d\u0003\u001a\u00020@H\u0016J\t\u0010\u008e\u0003\u001a\u00020@H\u0016J%\u0010\u008f\u0003\u001a\u00020@2\u0013\u0010N\u001a\u000f\u0012\u0005\u0012\u00030\u0090\u0003\u0012\u0004\u0012\u00020@0OH\u0080\b¢\u0006\u0003\b\u0091\u0003J%\u0010\u0092\u0003\u001a\u00020@2\u0013\u0010N\u001a\u000f\u0012\u0005\u0012\u00030þ\u0001\u0012\u0004\u0012\u00020@0OH\u0080\b¢\u0006\u0003\b\u0093\u0003J\u000f\u0010\u0094\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u0095\u0003J\t\u0010\u0096\u0003\u001a\u00020@H\u0002J\u000f\u0010\u0097\u0003\u001a\u00020@H\u0000¢\u0006\u0003\b\u0098\u0003J\t\u0010\u009f\u0003\u001a\u00020@H\u0016J\t\u0010 \u0003\u001a\u00020@H\u0016J\t\u0010¡\u0003\u001a\u00020@H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\fX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001c\u0010\u0018\u001a\u00020\u0019X\u0080\u000e¢\u0006\u0010\n\u0002\u0010\u001e\u001a\u0004\b\u001a\u0010\u001b\"\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001f\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u0015\"\u0004\b!\u0010\u0017R\u001a\u0010\"\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u0015\"\u0004\b$\u0010\u0017R\u001a\u0010%\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b&\u0010\u0015\"\u0004\b'\u0010\u0017R\u001a\u0010(\u001a\u00020\fX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b)\u0010\u0010\"\u0004\b*\u0010\u0012R\u001a\u0010+\u001a\u00020\nX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b,\u0010\u0015\"\u0004\b-\u0010\u0017R(\u0010/\u001a\u0004\u0018\u00010\u00002\b\u0010.\u001a\u0004\u0018\u00010\u0000@BX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R\u0013\u00104\u001a\u0004\u0018\u00010\n8F¢\u0006\u0006\u001a\u0004\b4\u00105R\u000e\u00106\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020\u000008X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00109\u001a\b\u0012\u0004\u0012\u00020\u00000:8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b;\u0010<R\u0016\u0010=\u001a\n\u0012\u0004\u0012\u00020\u0000\u0018\u00010>X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010A\u001a\b\u0012\u0004\u0012\u00020B0:8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bC\u0010<R\u001a\u0010D\u001a\b\u0012\u0004\u0012\u00020B0:8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bE\u0010<R\u000e\u0010F\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010H\u001a\b\u0012\u0004\u0012\u00020\u00000>8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bI\u0010JR\u001a\u0010R\u001a\b\u0012\u0004\u0012\u00020\u00000:8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bS\u0010<R\u0010\u0010T\u001a\u0004\u0018\u00010\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010U\u001a\u0004\u0018\u00010\u00008@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bV\u00101R\"\u0010Y\u001a\u0004\u0018\u00010X2\b\u0010W\u001a\u0004\u0018\u00010X@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010[R$\u0010\\\u001a\n\u0018\u00010]j\u0004\u0018\u0001`^X\u0080\u000e¢\u0006\u0010\n\u0002\u0010c\u001a\u0004\b_\u0010`\"\u0004\ba\u0010bR\u0014\u0010h\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bh\u0010\u0015R\u001a\u0010i\u001a\u00020\fX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bj\u0010\u0010\"\u0004\bk\u0010\u0012R\u0014\u0010l\u001a\u00020m8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bn\u0010oR\u0016\u0010p\u001a\u0004\u0018\u00010q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\br\u0010sR\u0014\u0010t\u001a\u00020u8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\bv\u0010wR\u000e\u0010x\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u008d\u0001\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b\u008e\u0001\u0010\u0015\"\u0005\b\u008f\u0001\u0010\u0017R\u0012\u0010\u0094\u0001\u001a\u0005\u0018\u00010\u0095\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0096\u0001\u001a\u0005\u0018\u00010\u0095\u00018VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u0097\u0001\u0010\u0098\u0001R\u000f\u0010\u0099\u0001\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0015\u0010\u009f\u0001\u001a\b\u0012\u0004\u0012\u00020\u00000>X\u0082\u0004¢\u0006\u0002\n\u0000R\u000f\u0010 \u0001\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010¡\u0001\u001a\b\u0012\u0004\u0012\u00020\u00000>8@X\u0081\u0004¢\u0006\u000f\u0012\u0006\b¢\u0001\u0010£\u0001\u001a\u0005\b¤\u0001\u0010JR\u0016\u0010¥\u0001\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b¥\u0001\u0010\u0015R\u0016\u0010§\u0001\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b¨\u0001\u0010\u0015R+\u0010«\u0001\u001a\u00030ª\u00012\u0007\u0010W\u001a\u00030ª\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b¬\u0001\u0010\u00ad\u0001\"\u0006\b®\u0001\u0010¯\u0001R\u0012\u0010°\u0001\u001a\u0005\u0018\u00010±\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010¾\u0001\u001a\u00030½\u00012\u0007\u0010W\u001a\u00030½\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b¿\u0001\u0010À\u0001\"\u0006\bÁ\u0001\u0010Â\u0001R+\u0010Ä\u0001\u001a\u00030Ã\u00012\u0007\u0010W\u001a\u00030Ã\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÅ\u0001\u0010Æ\u0001\"\u0006\bÇ\u0001\u0010È\u0001R+\u0010Ê\u0001\u001a\u00030É\u00012\u0007\u0010W\u001a\u00030É\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bË\u0001\u0010Ì\u0001\"\u0006\bÍ\u0001\u0010Î\u0001R+\u0010Ð\u0001\u001a\u00030Ï\u00012\u0007\u0010W\u001a\u00030Ï\u0001@VX\u0096\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bÑ\u0001\u0010Ò\u0001\"\u0006\bÓ\u0001\u0010Ô\u0001R\u001a\u0010Õ\u0001\u001a\u0005\u0018\u00010Ö\u00018BX\u0082\u0004¢\u0006\b\u001a\u0006\b×\u0001\u0010Ø\u0001R\u0016\u0010¶\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bÞ\u0001\u0010\u0010R\u0016\u0010´\u0001\u001a\u00020\f8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bß\u0001\u0010\u0010R\u0016\u0010à\u0001\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bá\u0001\u0010\u0015R\u0018\u0010â\u0001\u001a\u00030ã\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bä\u0001\u0010å\u0001R\u0016\u0010æ\u0001\u001a\u00020\n8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\bæ\u0001\u0010\u0015R\u0013\u0010ç\u0001\u001a\u00020\n8F¢\u0006\u0007\u001a\u0005\bç\u0001\u0010\u0015R\u0016\u0010è\u0001\u001a\u00020\f8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bé\u0001\u0010\u0010R\u0018\u0010ê\u0001\u001a\u00030ë\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bì\u0001\u0010í\u0001R\u0018\u0010î\u0001\u001a\u00030ë\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bï\u0001\u0010í\u0001R \u0010ð\u0001\u001a\u00030ë\u0001X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\bñ\u0001\u0010í\u0001\"\u0006\bò\u0001\u0010ó\u0001R\u0010\u0010ô\u0001\u001a\u00030ë\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R)\u0010õ\u0001\u001a\u00020\n8\u0000@\u0000X\u0081\u000e¢\u0006\u0018\n\u0000\u0012\u0006\bö\u0001\u0010£\u0001\u001a\u0005\b÷\u0001\u0010\u0015\"\u0005\bø\u0001\u0010\u0017R\u0018\u0010ù\u0001\u001a\u00030ú\u0001X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\bû\u0001\u0010ü\u0001R\u0018\u0010ý\u0001\u001a\u00030þ\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\bÿ\u0001\u0010\u0080\u0002R\u0018\u0010\u0081\u0002\u001a\u00030\u0082\u0002X\u0080\u0004¢\u0006\n\n\u0000\u001a\u0006\b\u0083\u0002\u0010\u0084\u0002R\u0018\u0010\u0085\u0002\u001a\u00030þ\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\b\u0086\u0002\u0010\u0080\u0002R\u0018\u0010\u0087\u0002\u001a\u00030\u0088\u00028BX\u0082\u0004¢\u0006\b\u001a\u0006\b\u0089\u0002\u0010\u008a\u0002R\"\u0010\u008b\u0002\u001a\u0005\u0018\u00010\u008c\u0002X\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b\u008d\u0002\u0010\u008e\u0002\"\u0006\b\u008f\u0002\u0010\u0090\u0002R\u0012\u0010\u0091\u0002\u001a\u0005\u0018\u00010þ\u0001X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0092\u0002\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b\u0093\u0002\u0010\u0015\"\u0005\b\u0094\u0002\u0010\u0017R\u001a\u0010\u0095\u0002\u001a\u0005\u0018\u00010þ\u00018@X\u0080\u0004¢\u0006\b\u001a\u0006\b\u0096\u0002\u0010\u0080\u0002R\u0010\u0010\u0099\u0002\u001a\u00030\u009a\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u009b\u0002\u001a\u0005\u0018\u00010\u009a\u0002X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u009c\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b\u009d\u0002\u0010\u0015R+\u0010\u009e\u0002\u001a\u00030\u009a\u00022\u0007\u0010W\u001a\u00030\u009a\u00028V@VX\u0096\u000e¢\u0006\u0010\u001a\u0006\b\u009f\u0002\u0010 \u0002\"\u0006\b¡\u0002\u0010¢\u0002R\u0018\u0010§\u0002\u001a\u00030¨\u00028VX\u0096\u0004¢\u0006\b\u001a\u0006\b©\u0002\u0010ª\u0002R-\u0010«\u0002\u001a\u0010\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020@\u0018\u00010OX\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b¬\u0002\u0010\u00ad\u0002\"\u0006\b®\u0002\u0010¯\u0002R-\u0010°\u0002\u001a\u0010\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020@\u0018\u00010OX\u0080\u000e¢\u0006\u0012\n\u0000\u001a\u0006\b±\u0002\u0010\u00ad\u0002\"\u0006\b²\u0002\u0010¯\u0002R\u001d\u0010³\u0002\u001a\u00020\nX\u0080\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b´\u0002\u0010\u0015\"\u0005\bµ\u0002\u0010\u0017R'\u0010¶\u0002\u001a\u00020\f2\u0006\u0010W\u001a\u00020\f@FX\u0086\u000e¢\u0006\u0010\n\u0000\u001a\u0005\b·\u0002\u0010\u0010\"\u0005\b¸\u0002\u0010\u0012R\u0016\u0010ù\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bú\u0002\u0010\u0015R\u0016\u0010û\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bü\u0002\u0010\u0015R\u0016\u0010ý\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\bþ\u0002\u0010\u0015R\u0016\u0010ÿ\u0002\u001a\u00020\n8@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b\u0080\u0003\u0010\u0015R\u0019\u0010\u0099\u0003\u001a\u0004\u0018\u00010\u00058VX\u0096\u0004¢\u0006\b\u001a\u0006\b\u009a\u0003\u0010\u009b\u0003R\u001c\u0010\u009c\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050:8VX\u0096\u0004¢\u0006\u0007\u001a\u0005\b\u009d\u0003\u0010<R \u0010\u009e\u0003\u001a\u00020\n2\u0006\u0010W\u001a\u00020\n@RX\u0096\u000e¢\u0006\t\n\u0000\u001a\u0005\b\u009e\u0003\u0010\u0015¨\u0006¦\u0003"}, d2 = {"Landroidx/compose/ui/node/LayoutNode;", "Landroidx/compose/runtime/ComposeNodeLifecycleCallback;", "Landroidx/compose/ui/layout/Remeasurement;", "Landroidx/compose/ui/node/OwnerScope;", "Landroidx/compose/ui/layout/LayoutInfo;", "Landroidx/compose/ui/semantics/SemanticsInfo;", "Landroidx/compose/ui/node/ComposeUiNode;", "Landroidx/compose/ui/node/InteroperableComposeUiNode;", "Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;", "isVirtual", "", "semanticsId", "", "<init>", "(ZI)V", "getSemanticsId", "()I", "setSemanticsId", "(I)V", "hasPositionalLayerTransformationsInOffsetFromRoot", "getHasPositionalLayerTransformationsInOffsetFromRoot$ui", "()Z", "setHasPositionalLayerTransformationsInOffsetFromRoot$ui", "(Z)V", "outerToInnerOffset", "Landroidx/compose/ui/unit/IntOffset;", "getOuterToInnerOffset-nOcc-ac$ui", "()J", "setOuterToInnerOffset--gyyYBs$ui", "(J)V", "J", "outerToInnerOffsetDirty", "getOuterToInnerOffsetDirty$ui", "setOuterToInnerOffsetDirty$ui", "rectInParentDirty", "getRectInParentDirty$ui", "setRectInParentDirty$ui", "addedToRectList", "getAddedToRectList$ui", "setAddedToRectList$ui", "compositeKeyHash", "getCompositeKeyHash", "setCompositeKeyHash", "isVirtualLookaheadRoot", "isVirtualLookaheadRoot$ui", "setVirtualLookaheadRoot$ui", "newRoot", "lookaheadRoot", "getLookaheadRoot$ui", "()Landroidx/compose/ui/node/LayoutNode;", "setLookaheadRoot", "(Landroidx/compose/ui/node/LayoutNode;)V", "isPlacedInLookahead", "()Ljava/lang/Boolean;", "virtualChildrenCount", "_foldedChildren", "Landroidx/compose/ui/node/MutableVectorWithMutationTracking;", "foldedChildren", "", "getFoldedChildren$ui", "()Ljava/util/List;", "_unfoldedChildren", "Landroidx/compose/runtime/collection/MutableVector;", "recreateUnfoldedChildrenIfDirty", "", "childMeasurables", "Landroidx/compose/ui/layout/Measurable;", "getChildMeasurables$ui", "childLookaheadMeasurables", "getChildLookaheadMeasurables$ui", "unfoldedVirtualChildrenListDirty", "invalidateUnfoldedVirtualChildren", "_children", "get_children$ui", "()Landroidx/compose/runtime/collection/MutableVector;", "updateChildrenIfDirty", "updateChildrenIfDirty$ui", "forEachChild", "block", "Lkotlin/Function1;", "forEachChildIndexed", "Lkotlin/Function2;", "children", "getChildren$ui", "_foldedParent", "parent", "getParent$ui", "value", "Landroidx/compose/ui/node/Owner;", "owner", "getOwner$ui", "()Landroidx/compose/ui/node/Owner;", "interopViewFactoryHolder", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "Landroidx/compose/ui/viewinterop/InteropViewFactoryHolder;", "getInteropViewFactoryHolder$ui", "()Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "setInteropViewFactoryHolder$ui", "(Landroidx/compose/ui/viewinterop/AndroidViewHolder;)V", "Landroidx/compose/ui/viewinterop/AndroidViewHolder;", "getInteropView", "Landroid/view/View;", "Landroidx/compose/ui/viewinterop/InteropView;", "()Landroid/view/View;", "isAttached", "depth", "getDepth$ui", "setDepth$ui", "layoutState", "Landroidx/compose/ui/node/LayoutNode$LayoutState;", "getLayoutState$ui", "()Landroidx/compose/ui/node/LayoutNode$LayoutState;", "lookaheadPassDelegate", "Landroidx/compose/ui/node/LookaheadPassDelegate;", "getLookaheadPassDelegate$ui", "()Landroidx/compose/ui/node/LookaheadPassDelegate;", "measurePassDelegate", "Landroidx/compose/ui/node/MeasurePassDelegate;", "getMeasurePassDelegate$ui", "()Landroidx/compose/ui/node/MeasurePassDelegate;", "ignoreRemeasureRequests", "insertAt", FirebaseAnalytics.Param.INDEX, "instance", "insertAt$ui", "exceptionMessageForParentingOrOwnership", "", "onZSortedChildrenInvalidated", "onZSortedChildrenInvalidated$ui", "removeAt", "count", "removeAt$ui", "removeAll", "removeAll$ui", "onChildRemoved", "child", "move", "from", TypedValues.TransitionType.S_TO, "move$ui", "isTransparent", "isSemanticsInvalidated", "isSemanticsInvalidated$ui", "setSemanticsInvalidated$ui", "requestAutofill", "requestAutofill$ui", "invalidateSemantics", "invalidateSemantics$ui", "_semanticsConfiguration", "Landroidx/compose/ui/semantics/SemanticsConfiguration;", "semanticsConfiguration", "getSemanticsConfiguration", "()Landroidx/compose/ui/semantics/SemanticsConfiguration;", "isCurrentlyCalculatingSemanticsConfiguration", "calculateSemanticsConfiguration", "attach", "attach$ui", "detach", "detach$ui", "_zSortedChildren", "zSortedChildrenInvalidated", "zSortedChildren", "getZSortedChildren$annotations", "()V", "getZSortedChildren", "isValidOwnerScope", "toString", "hasFixedInnerContentConstraints", "getHasFixedInnerContentConstraints$ui", "debugTreeToString", "Landroidx/compose/ui/layout/MeasurePolicy;", "measurePolicy", "getMeasurePolicy", "()Landroidx/compose/ui/layout/MeasurePolicy;", "setMeasurePolicy", "(Landroidx/compose/ui/layout/MeasurePolicy;)V", "intrinsicsPolicy", "Landroidx/compose/ui/node/IntrinsicsPolicy;", "getOrCreateIntrinsicsPolicy", "minLookaheadIntrinsicWidth", "height", "minLookaheadIntrinsicHeight", "width", "maxLookaheadIntrinsicWidth", "maxLookaheadIntrinsicHeight", "minIntrinsicWidth", "minIntrinsicHeight", "maxIntrinsicWidth", "maxIntrinsicHeight", "Landroidx/compose/ui/unit/Density;", "density", "getDensity", "()Landroidx/compose/ui/unit/Density;", "setDensity", "(Landroidx/compose/ui/unit/Density;)V", "Landroidx/compose/ui/unit/LayoutDirection;", "layoutDirection", "getLayoutDirection", "()Landroidx/compose/ui/unit/LayoutDirection;", "setLayoutDirection", "(Landroidx/compose/ui/unit/LayoutDirection;)V", "Landroidx/compose/ui/platform/ViewConfiguration;", "viewConfiguration", "getViewConfiguration", "()Landroidx/compose/ui/platform/ViewConfiguration;", "setViewConfiguration", "(Landroidx/compose/ui/platform/ViewConfiguration;)V", "Landroidx/compose/runtime/CompositionLocalMap;", "compositionLocalMap", "getCompositionLocalMap", "()Landroidx/compose/runtime/CompositionLocalMap;", "setCompositionLocalMap", "(Landroidx/compose/runtime/CompositionLocalMap;)V", "traceContext", "Landroidx/compose/runtime/tooling/CompositionErrorContext;", "getTraceContext", "()Landroidx/compose/runtime/tooling/CompositionErrorContext;", "rethrowWithComposeStackTrace", "", "e", "", "onDensityOrLayoutDirectionChanged", "getWidth", "getHeight", "alignmentLinesRequired", "getAlignmentLinesRequired$ui", "mDrawScope", "Landroidx/compose/ui/node/LayoutNodeDrawScope;", "getMDrawScope$ui", "()Landroidx/compose/ui/node/LayoutNodeDrawScope;", "isPlaced", "isPlacedByParent", "placeOrder", "getPlaceOrder$ui", "measuredByParent", "Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "getMeasuredByParent$ui", "()Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "measuredByParentInLookahead", "getMeasuredByParentInLookahead$ui", "intrinsicsUsageByParent", "getIntrinsicsUsageByParent$ui", "setIntrinsicsUsageByParent$ui", "(Landroidx/compose/ui/node/LayoutNode$UsageByParent;)V", "previousIntrinsicsUsageByParent", "canMultiMeasure", "getCanMultiMeasure$ui$annotations", "getCanMultiMeasure$ui", "setCanMultiMeasure$ui", "nodes", "Landroidx/compose/ui/node/NodeChain;", "getNodes$ui", "()Landroidx/compose/ui/node/NodeChain;", "innerCoordinator", "Landroidx/compose/ui/node/NodeCoordinator;", "getInnerCoordinator$ui", "()Landroidx/compose/ui/node/NodeCoordinator;", "layoutDelegate", "Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "getLayoutDelegate$ui", "()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;", "outerCoordinator", "getOuterCoordinator$ui", "zIndex", "", "getZIndex", "()F", "subcompositionsState", "Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "getSubcompositionsState$ui", "()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;", "setSubcompositionsState$ui", "(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V", "_innerLayerCoordinator", "innerLayerCoordinatorIsDirty", "getInnerLayerCoordinatorIsDirty$ui", "setInnerLayerCoordinatorIsDirty$ui", "innerLayerCoordinator", "getInnerLayerCoordinator$ui", "invalidateLayer", "invalidateLayer$ui", "_modifier", "Landroidx/compose/ui/Modifier;", "pendingModifier", "applyingModifierOnAttach", "getApplyingModifierOnAttach$ui", "modifier", "getModifier", "()Landroidx/compose/ui/Modifier;", "setModifier", "(Landroidx/compose/ui/Modifier;)V", "applyModifier", "resetModifierState", "invalidateParentData", "invalidateParentData$ui", "coordinates", "Landroidx/compose/ui/layout/LayoutCoordinates;", "getCoordinates", "()Landroidx/compose/ui/layout/LayoutCoordinates;", "onAttach", "getOnAttach$ui", "()Lkotlin/jvm/functions/Function1;", "setOnAttach$ui", "(Lkotlin/jvm/functions/Function1;)V", "onDetach", "getOnDetach$ui", "setOnDetach$ui", "needsOnGloballyPositionedDispatch", "getNeedsOnGloballyPositionedDispatch$ui", "setNeedsOnGloballyPositionedDispatch$ui", "globallyPositionedObservers", "getGloballyPositionedObservers", "setGloballyPositionedObservers", "place", "x", "y", "place$ui", "replace", "replace$ui", "lookaheadReplace", "lookaheadReplace$ui", "draw", "canvas", "Landroidx/compose/ui/graphics/Canvas;", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "draw$ui", "hitTest", "pointerPosition", "Landroidx/compose/ui/geometry/Offset;", "hitTestResult", "Landroidx/compose/ui/node/HitTestResult;", "pointerType", "Landroidx/compose/ui/input/pointer/PointerType;", "isInLayer", "hitTest-6fMxITs$ui", "(JLandroidx/compose/ui/node/HitTestResult;IZ)V", "hitTestSemantics", "hitSemanticsEntities", "hitTestSemantics-6fMxITs$ui", "rescheduleRemeasureOrRelayout", "it", "rescheduleRemeasureOrRelayout$ui", "requestRemeasure", "forceRequest", "scheduleMeasureAndLayout", "invalidateIntrinsics", "requestRemeasure$ui", "requestLookaheadRemeasure", "requestLookaheadRemeasure$ui", "invalidateMeasurements", "invalidateMeasurements$ui", "invalidateOnPositioned", "invalidateOnPositioned$ui", "onCoordinatorRectChanged", "coordinator", "onCoordinatorRectChanged$ui", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlin/Function0;", "ignoreRemeasureRequests$ui", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "requestRelayout", "requestRelayout$ui", "requestLookaheadRelayout", "requestLookaheadRelayout$ui", "dispatchOnPositionedCallbacks", "dispatchOnPositionedCallbacks$ui", "getModifierInfo", "Landroidx/compose/ui/layout/ModifierInfo;", "invalidateLayers", "invalidateLayers$ui", "lookaheadRemeasure", "constraints", "Landroidx/compose/ui/unit/Constraints;", "lookaheadRemeasure-_Sx5XlM$ui", "remeasure", "remeasure-_Sx5XlM$ui", "measurePending", "getMeasurePending$ui", "layoutPending", "getLayoutPending$ui", "lookaheadMeasurePending", "getLookaheadMeasurePending$ui", "lookaheadLayoutPending", "getLookaheadLayoutPending$ui", "markLayoutPending", "markLayoutPending$ui", "markMeasurePending", "markMeasurePending$ui", "markLookaheadLayoutPending", "markLookaheadLayoutPending$ui", "invalidateSubtree", "isRootOfInvalidation", "invalidateMeasurementForSubtree", "invalidateDrawForSubtree", "markLookaheadMeasurePending", "markLookaheadMeasurePending$ui", "forceRemeasure", "onLayoutComplete", "forEachCoordinator", "Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;", "forEachCoordinator$ui", "forEachCoordinatorIncludingInner", "forEachCoordinatorIncludingInner$ui", "clearSubtreeIntrinsicsUsage", "clearSubtreeIntrinsicsUsage$ui", "clearSubtreePlacementIntrinsicsUsage", "resetSubtreeIntrinsicsUsage", "resetSubtreeIntrinsicsUsage$ui", "parentInfo", "getParentInfo", "()Landroidx/compose/ui/semantics/SemanticsInfo;", "childrenInfo", "getChildrenInfo", "isDeactivated", "onReuse", "onDeactivate", "onRelease", "NoIntrinsicsMeasurePolicy", "Companion", "LayoutState", "UsageByParent", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasurement, OwnerScope, LayoutInfo, SemanticsInfo, ComposeUiNode, InteroperableComposeUiNode, Owner.OnLayoutCompletedListener {
     public static final int NotPlacedPlaceOrder = Integer.MAX_VALUE;
@@ -87,8 +85,6 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     private boolean isSemanticsInvalidated;
     private final boolean isVirtual;
     private boolean isVirtualLookaheadRoot;
-    private long lastOffsetFromParent;
-    private long lastSize;
     private final LayoutNodeLayoutDelegate layoutDelegate;
     private LayoutDirection layoutDirection;
     private LayoutNode lookaheadRoot;
@@ -102,6 +98,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     private Owner owner;
     private Modifier pendingModifier;
     private UsageByParent previousIntrinsicsUsageByParent;
+    private boolean rectInParentDirty;
     private int semanticsId;
     private LayoutNodeSubcompositionsState subcompositionsState;
     private boolean unfoldedVirtualChildrenListDirty;
@@ -114,11 +111,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         @Override // androidx.compose.ui.layout.MeasurePolicy
         /* renamed from: measure-3p2s80s */
         public /* bridge */ /* synthetic */ MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List list, long j) {
-            return (MeasureResult) m6452measure3p2s80s(measureScope, (List<? extends Measurable>) list, j);
+            return (MeasureResult) m7051measure3p2s80s(measureScope, (List<? extends Measurable>) list, j);
         }
 
         /* renamed from: measure-3p2s80s  reason: not valid java name */
-        public Void m6452measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        public Void m7051measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
             throw new IllegalStateException("Undefined measure and it is required".toString());
         }
     };
@@ -152,8 +149,8 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
         @Override // androidx.compose.ui.platform.ViewConfiguration
         /* renamed from: getMinimumTouchTargetSize-MYxV2XQ  reason: not valid java name */
-        public long mo6451getMinimumTouchTargetSizeMYxV2XQ() {
-            return DpSize.Companion.m7663getZeroMYxV2XQ();
+        public long mo7050getMinimumTouchTargetSizeMYxV2XQ() {
+            return DpSize.Companion.m8268getZeroMYxV2XQ();
         }
     };
     private static final Comparator<LayoutNode> ZComparator = new Comparator() { // from class: androidx.compose.ui.node.LayoutNode$$ExternalSyntheticLambda0
@@ -164,7 +161,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     };
 
     /* compiled from: LayoutNode.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -194,10 +191,9 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         Density density;
         this.isVirtual = z;
         this.semanticsId = i;
-        this.lastOffsetFromParent = IntOffset.Companion.m7693getMaxnOccac();
-        this.lastSize = IntSize.Companion.m7731getZeroYbymL2g();
-        this.outerToInnerOffset = IntOffset.Companion.m7693getMaxnOccac();
+        this.outerToInnerOffset = IntOffset.Companion.m8298getMaxnOccac();
         this.outerToInnerOffsetDirty = true;
+        this.rectInParentDirty = true;
         this._foldedChildren = new MutableVectorWithMutationTracking<>(new MutableVector(new LayoutNode[16], 0), new Function0<Unit>() { // from class: androidx.compose.ui.node.LayoutNode$_foldedChildren$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -252,33 +248,13 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         this.hasPositionalLayerTransformationsInOffsetFromRoot = z;
     }
 
-    /* renamed from: getLastOffsetFromParent-nOcc-ac$ui */
-    public final long m6441getLastOffsetFromParentnOccac$ui() {
-        return this.lastOffsetFromParent;
-    }
-
-    /* renamed from: setLastOffsetFromParent--gyyYBs$ui */
-    public final void m6448setLastOffsetFromParentgyyYBs$ui(long j) {
-        this.lastOffsetFromParent = j;
-    }
-
-    /* renamed from: getLastSize-YbymL2g$ui */
-    public final long m6442getLastSizeYbymL2g$ui() {
-        return this.lastSize;
-    }
-
-    /* renamed from: setLastSize-ozmzZPI$ui */
-    public final void m6449setLastSizeozmzZPI$ui(long j) {
-        this.lastSize = j;
-    }
-
     /* renamed from: getOuterToInnerOffset-nOcc-ac$ui */
-    public final long m6443getOuterToInnerOffsetnOccac$ui() {
+    public final long m7044getOuterToInnerOffsetnOccac$ui() {
         return this.outerToInnerOffset;
     }
 
     /* renamed from: setOuterToInnerOffset--gyyYBs$ui */
-    public final void m6450setOuterToInnerOffsetgyyYBs$ui(long j) {
+    public final void m7049setOuterToInnerOffsetgyyYBs$ui(long j) {
         this.outerToInnerOffset = j;
     }
 
@@ -288,6 +264,14 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
     public final void setOuterToInnerOffsetDirty$ui(boolean z) {
         this.outerToInnerOffsetDirty = z;
+    }
+
+    public final boolean getRectInParentDirty$ui() {
+        return this.rectInParentDirty;
+    }
+
+    public final void setRectInParentDirty$ui(boolean z) {
+        this.rectInParentDirty = z;
     }
 
     public final boolean getAddedToRectList$ui() {
@@ -624,27 +608,21 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (this.isCurrentlyCalculatingSemanticsConfiguration) {
             return;
         }
-        if (!ComposeUiFlags.isSemanticAutofillEnabled) {
-            this._semanticsConfiguration = null;
-            LayoutNodeKt.requireOwner(this).onSemanticsChange();
-        } else if (this.nodes.isUpdating$ui() || getApplyingModifierOnAttach$ui()) {
+        if (this.nodes.isUpdating$ui() || getApplyingModifierOnAttach$ui()) {
             this.isSemanticsInvalidated = true;
-        } else {
-            SemanticsConfiguration semanticsConfiguration = this._semanticsConfiguration;
-            this._semanticsConfiguration = calculateSemanticsConfiguration();
-            this.isSemanticsInvalidated = false;
-            Owner requireOwner = LayoutNodeKt.requireOwner(this);
-            requireOwner.getSemanticsOwner().notifySemanticsChange$ui(this, semanticsConfiguration);
-            requireOwner.onSemanticsChange();
+            return;
         }
+        SemanticsConfiguration semanticsConfiguration = this._semanticsConfiguration;
+        this._semanticsConfiguration = calculateSemanticsConfiguration();
+        this.isSemanticsInvalidated = false;
+        Owner requireOwner = LayoutNodeKt.requireOwner(this);
+        requireOwner.getSemanticsOwner().notifySemanticsChange$ui(this, semanticsConfiguration);
+        requireOwner.onSemanticsChange();
     }
 
     @Override // androidx.compose.ui.semantics.SemanticsInfo
     public SemanticsConfiguration getSemanticsConfiguration() {
-        if (isAttached() && !isDeactivated() && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
-            if (!ComposeUiFlags.isSemanticAutofillEnabled && this._semanticsConfiguration == null) {
-                this._semanticsConfiguration = calculateSemanticsConfiguration();
-            }
+        if (isAttached() && !isDeactivated() && this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(8))) {
             return this._semanticsConfiguration;
         }
         return null;
@@ -675,11 +653,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 NodeChain nodes$ui = LayoutNode.this.getNodes$ui();
-                int m6535constructorimpl = NodeKind.m6535constructorimpl(8);
+                int m7135constructorimpl = NodeKind.m7135constructorimpl(8);
                 Ref.ObjectRef<SemanticsConfiguration> objectRef2 = objectRef;
-                if ((nodes$ui.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+                if ((nodes$ui.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
                     for (Modifier.Node tail$ui = nodes$ui.getTail$ui(); tail$ui != null; tail$ui = tail$ui.getParent$ui()) {
-                        if ((tail$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                        if ((tail$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                             Modifier.Node node = tail$ui;
                             MutableVector mutableVector = null;
                             while (node != null) {
@@ -693,10 +671,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                                         objectRef2.element.setMergingSemanticsOfDescendants(true);
                                     }
                                     semanticsModifierNode.applySemantics(objectRef2.element);
-                                } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node = delegate$ui;
@@ -730,20 +708,20 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         return (SemanticsConfiguration) objectRef.element;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0042  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0113  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0126 A[LOOP:0: B:155:0x0124->B:156:0x0126, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0090  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0110 A[LOOP:0: B:143:0x010e->B:144:0x0110, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0131  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -771,7 +749,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                 parent$ui = getParent$ui();
                 if (parent$ui == null) {
                     getMeasurePassDelegate$ui().setPlaced$ui(true);
-                    RectManager.onLayoutPositionChanged$default(owner.getRectManager(), this, false, 2, null);
+                    owner.getRectManager().recalculateRectIfDirty(this);
                     LookaheadPassDelegate lookaheadPassDelegate$ui = getLookaheadPassDelegate$ui();
                     if (lookaheadPassDelegate$ui != null) {
                         lookaheadPassDelegate$ui.onAttachedToNullParent();
@@ -785,9 +763,6 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                     applyModifier(modifier);
                 }
                 this.pendingModifier = null;
-                if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
-                    invalidateSemantics$ui();
-                }
                 owner.onPreAttach(this);
                 if (this.isVirtualLookaheadRoot) {
                     LayoutNode layoutNode4 = this._foldedParent;
@@ -795,7 +770,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         layoutNode = this.lookaheadRoot;
                     }
                     setLookaheadRoot(layoutNode);
-                    if (this.lookaheadRoot == null && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(512))) {
+                    if (this.lookaheadRoot == null && this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(512))) {
                         setLookaheadRoot(this);
                     }
                 } else {
@@ -822,7 +797,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                     function1.invoke(owner);
                 }
                 this.layoutDelegate.updateParentData();
-                if (ComposeUiFlags.isSemanticAutofillEnabled && !isDeactivated() && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
+                if (!isDeactivated() && this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(8))) {
                     invalidateSemantics$ui();
                 }
                 owner.onPostAttach(this);
@@ -841,9 +816,6 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (modifier != null) {
         }
         this.pendingModifier = null;
-        if (!ComposeUiFlags.isSemanticAutofillEnabled) {
-            invalidateSemantics$ui();
-        }
         owner.onPreAttach(this);
         if (this.isVirtualLookaheadRoot) {
         }
@@ -863,7 +835,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (function1 != null) {
         }
         this.layoutDelegate.updateParentData();
-        if (ComposeUiFlags.isSemanticAutofillEnabled) {
+        if (!isDeactivated()) {
             invalidateSemantics$ui();
         }
         owner.onPostAttach(this);
@@ -896,9 +868,6 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (function1 != null) {
             function1.invoke(owner);
         }
-        if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
-            invalidateSemantics$ui();
-        }
         this.nodes.runDetachLifecycle$ui();
         this.ignoreRemeasureRequests = true;
         MutableVector<LayoutNode> vector = this._foldedChildren.getVector();
@@ -920,7 +889,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (lookaheadPassDelegate$ui2 != null) {
             lookaheadPassDelegate$ui2.onNodeDetached();
         }
-        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
+        if (this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(8))) {
             SemanticsConfiguration semanticsConfiguration = this._semanticsConfiguration;
             this._semanticsConfiguration = null;
             this.isSemanticsInvalidated = false;
@@ -950,8 +919,8 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     public final boolean getHasFixedInnerContentConstraints$ui() {
-        long m6519getLastMeasurementConstraintsmsEJaDk$ui = getInnerCoordinator$ui().m6519getLastMeasurementConstraintsmsEJaDk$ui();
-        return Constraints.m7506getHasFixedWidthimpl(m6519getLastMeasurementConstraintsmsEJaDk$ui) && Constraints.m7505getHasFixedHeightimpl(m6519getLastMeasurementConstraintsmsEJaDk$ui);
+        long m7119getLastMeasurementConstraintsmsEJaDk$ui = getInnerCoordinator$ui().m7119getLastMeasurementConstraintsmsEJaDk$ui();
+        return Constraints.m8111getHasFixedWidthimpl(m7119getLastMeasurementConstraintsmsEJaDk$ui) && Constraints.m8110getHasFixedHeightimpl(m7119getLastMeasurementConstraintsmsEJaDk$ui);
     }
 
     static /* synthetic */ String debugTreeToString$default(LayoutNode layoutNode, int i, int i2, Object obj) {
@@ -985,7 +954,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* compiled from: LayoutNode.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\b!\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\"\u0010\u0006\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0016J\"\u0010\u000e\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\u000f\u001a\u00020\rH\u0016J\"\u0010\u0010\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0016J\"\u0010\u0011\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\u000f\u001a\u00020\rH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$NoIntrinsicsMeasurePolicy;", "Landroidx/compose/ui/layout/MeasurePolicy;", "error", "", "<init>", "(Ljava/lang/String;)V", "minIntrinsicWidth", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "", "minIntrinsicHeight", "width", "maxIntrinsicWidth", "maxIntrinsicHeight", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\b!\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\"\u0010\u0006\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0016J\"\u0010\u000e\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\u000f\u001a\u00020\rH\u0016J\"\u0010\u0010\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0016J\"\u0010\u0011\u001a\u00020\u0007*\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\u000f\u001a\u00020\rH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$NoIntrinsicsMeasurePolicy;", "Landroidx/compose/ui/layout/MeasurePolicy;", "error", "", "<init>", "(Ljava/lang/String;)V", "minIntrinsicWidth", "", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "", "minIntrinsicHeight", "width", "maxIntrinsicWidth", "maxIntrinsicHeight", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static abstract class NoIntrinsicsMeasurePolicy implements MeasurePolicy {
         public static final int $stable = 0;
@@ -997,41 +966,41 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m6453maxIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m7052maxIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m6454maxIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m7053maxIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m6455minIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m7054minIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m6456minIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m7055minIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         /* renamed from: minIntrinsicWidth */
-        public Void m6456minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m7055minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: minIntrinsicHeight */
-        public Void m6455minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m7054minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: maxIntrinsicWidth */
-        public Void m6454maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m7053maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: maxIntrinsicHeight */
-        public Void m6453maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m7052maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
     }
@@ -1141,19 +1110,19 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         }
         this.viewConfiguration = viewConfiguration;
         NodeChain nodeChain = this.nodes;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(16);
-        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(16);
+        if ((nodeChain.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof PointerInputModifierNode) {
                             ((PointerInputModifierNode) node).onViewConfigurationChange();
-                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1179,7 +1148,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1198,10 +1167,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         setLayoutDirection((LayoutDirection) compositionLocalMap.get(CompositionLocalsKt.getLocalLayoutDirection()));
         setViewConfiguration((ViewConfiguration) compositionLocalMap.get(CompositionLocalsKt.getLocalViewConfiguration()));
         NodeChain nodeChain = this.nodes;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(32768);
-        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(32768);
+        if ((nodeChain.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
@@ -1212,10 +1181,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                             } else {
                                 node2.setUpdatedNodeAwaitingAttachForInvalidation$ui(true);
                             }
-                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1241,7 +1210,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1265,6 +1234,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         LayoutNode parent$ui = getParent$ui();
         if (parent$ui != null) {
             parent$ui.invalidateLayer$ui();
+        } else {
+            Owner owner = this.owner;
+            if (owner != null) {
+                owner.invalidateRootLayer();
+            }
         }
         invalidateLayers$ui();
     }
@@ -1380,12 +1354,13 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                 }
                 innerCoordinator$ui = innerCoordinator$ui != null ? innerCoordinator$ui.getWrappedBy$ui() : null;
             }
+            this.innerLayerCoordinatorIsDirty = false;
         }
         NodeCoordinator nodeCoordinator = this._innerLayerCoordinator;
         if (nodeCoordinator == null || nodeCoordinator.getLayer() != null) {
             return nodeCoordinator;
         }
-        InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("layer was not set");
+        InlineClassHelperKt.throwIllegalStateExceptionForNullCheck("layer was not set. This error is usually caused by operating off of the UI thread. Did you call invalidate() instead of postInvalidate()?");
         throw new KotlinNothingValueException();
     }
 
@@ -1398,6 +1373,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         LayoutNode parent$ui = getParent$ui();
         if (parent$ui != null) {
             parent$ui.invalidateLayer$ui();
+            return;
+        }
+        Owner owner = this.owner;
+        if (owner != null) {
+            owner.invalidateRootLayer();
         }
     }
 
@@ -1430,20 +1410,20 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     private final void applyModifier(Modifier modifier) {
-        boolean m6496hasH91voCI$ui = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(16));
-        boolean m6496hasH91voCI$ui2 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(1024));
+        boolean m7095hasH91voCI$ui = this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(16));
+        boolean m7095hasH91voCI$ui2 = this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(1024));
         this._modifier = modifier;
         this.nodes.updateFrom$ui(modifier);
-        boolean m6496hasH91voCI$ui3 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(16));
-        boolean m6496hasH91voCI$ui4 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(1024));
+        boolean m7095hasH91voCI$ui3 = this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(16));
+        boolean m7095hasH91voCI$ui4 = this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(1024));
         this.layoutDelegate.updateParentData();
-        if (this.lookaheadRoot == null && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(512))) {
+        if (this.lookaheadRoot == null && this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(512))) {
             setLookaheadRoot(this);
         }
-        if (m6496hasH91voCI$ui == m6496hasH91voCI$ui3 && m6496hasH91voCI$ui2 == m6496hasH91voCI$ui4) {
+        if (m7095hasH91voCI$ui == m7095hasH91voCI$ui3 && m7095hasH91voCI$ui2 == m7095hasH91voCI$ui4) {
             return;
         }
-        LayoutNodeKt.requireOwner(this).getRectManager().updateFlagsFor(this, m6496hasH91voCI$ui4, m6496hasH91voCI$ui3);
+        LayoutNodeKt.requireOwner(this).getRectManager().updateFlagsFor(this, m7095hasH91voCI$ui4, m7095hasH91voCI$ui3);
     }
 
     private final void resetModifierState() {
@@ -1542,37 +1522,37 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* renamed from: hitTest-6fMxITs$ui$default */
-    public static /* synthetic */ void m6437hitTest6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ void m7040hitTest6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
         if ((i2 & 4) != 0) {
-            i = PointerType.Companion.m6164getUnknownT8wyACA();
+            i = PointerType.Companion.m6766getUnknownT8wyACA();
         }
         int i3 = i;
         if ((i2 & 8) != 0) {
             z = true;
         }
-        layoutNode.m6444hitTest6fMxITs$ui(j, hitTestResult, i3, z);
+        layoutNode.m7045hitTest6fMxITs$ui(j, hitTestResult, i3, z);
     }
 
     /* renamed from: hitTest-6fMxITs$ui */
-    public final void m6444hitTest6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
-        getOuterCoordinator$ui().m6522hitTestqzLsGqo(NodeCoordinator.Companion.getPointerInputSource(), NodeCoordinator.m6504fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, i, z);
+    public final void m7045hitTest6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
+        getOuterCoordinator$ui().m7122hitTestqzLsGqo(NodeCoordinator.Companion.getPointerInputSource(), NodeCoordinator.m7103fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, i, z);
     }
 
     /* renamed from: hitTestSemantics-6fMxITs$ui$default */
-    public static /* synthetic */ void m6438hitTestSemantics6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ void m7041hitTestSemantics6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
         if ((i2 & 4) != 0) {
-            i = PointerType.Companion.m6163getTouchT8wyACA();
+            i = PointerType.Companion.m6765getTouchT8wyACA();
         }
         int i3 = i;
         if ((i2 & 8) != 0) {
             z = true;
         }
-        layoutNode.m6445hitTestSemantics6fMxITs$ui(j, hitTestResult, i3, z);
+        layoutNode.m7046hitTestSemantics6fMxITs$ui(j, hitTestResult, i3, z);
     }
 
     /* renamed from: hitTestSemantics-6fMxITs$ui */
-    public final void m6445hitTestSemantics6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
-        getOuterCoordinator$ui().m6522hitTestqzLsGqo(NodeCoordinator.Companion.getSemanticsSource(), NodeCoordinator.m6504fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, PointerType.Companion.m6163getTouchT8wyACA(), z);
+    public final void m7046hitTestSemantics6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
+        getOuterCoordinator$ui().m7122hitTestqzLsGqo(NodeCoordinator.Companion.getSemanticsSource(), NodeCoordinator.m7103fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, PointerType.Companion.m6765getTouchT8wyACA(), z);
     }
 
     public final void rescheduleRemeasureOrRelayout$ui(LayoutNode layoutNode) {
@@ -1670,14 +1650,32 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         LayoutNodeKt.requireOwner(this).requestOnPositionedCallback(this);
     }
 
-    public final void onCoordinatorPositionChanged$ui() {
-        RectManager rectManager;
-        this.outerToInnerOffsetDirty = true;
+    public final void onCoordinatorRectChanged$ui(NodeCoordinator nodeCoordinator) {
         Owner owner = this.owner;
-        if (owner == null || (rectManager = owner.getRectManager()) == null) {
-            return;
+        RectManager rectManager = owner != null ? owner.getRectManager() : null;
+        boolean z = getLayoutState$ui() != LayoutState.Idle || getMeasurePending$ui() || getLayoutPending$ui();
+        if (this.addedToRectList && rectManager != null) {
+            if (nodeCoordinator == getOuterCoordinator$ui()) {
+                this.rectInParentDirty = true;
+                if (!z) {
+                    rectManager.recalculateRectIfDirty(this);
+                }
+            } else {
+                this.outerToInnerOffsetDirty = true;
+                MutableVector<LayoutNode> mutableVector = get_children$ui();
+                LayoutNode[] layoutNodeArr = mutableVector.content;
+                int size = mutableVector.getSize();
+                for (int i = 0; i < size; i++) {
+                    LayoutNode layoutNode = layoutNodeArr[i];
+                    layoutNode.rectInParentDirty = true;
+                    if (!z) {
+                        rectManager.recalculateRectIfDirty(layoutNode);
+                    }
+                }
+                rectManager.invalidateCallbacksFor(this);
+            }
         }
-        rectManager.invalidateCallbacksFor(this);
+        this.layoutDelegate.getMeasurePassDelegate$ui().requestLayoutIfCoordinatesAreUsedAndNotifyChildren();
     }
 
     public final <T> T ignoreRemeasureRequests$ui(Function0<? extends T> function0) {
@@ -1722,20 +1720,20 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             return;
         }
         NodeChain nodeChain = this.nodes;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(256);
-        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(256);
+        if ((nodeChain.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof GlobalPositionAwareModifierNode) {
                             GlobalPositionAwareModifierNode globalPositionAwareModifierNode = (GlobalPositionAwareModifierNode) node;
-                            globalPositionAwareModifierNode.onGloballyPositioned(DelegatableNodeKt.m6387requireCoordinator64DMado(globalPositionAwareModifierNode, NodeKind.m6535constructorimpl(256)));
-                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            globalPositionAwareModifierNode.onGloballyPositioned(DelegatableNodeKt.m6990requireCoordinator64DMado(globalPositionAwareModifierNode, NodeKind.m7135constructorimpl(256)));
+                        } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1761,7 +1759,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1774,38 +1772,38 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* renamed from: lookaheadRemeasure-_Sx5XlM$ui$default */
-    public static /* synthetic */ boolean m6439lookaheadRemeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
+    public static /* synthetic */ boolean m7042lookaheadRemeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
         if ((i & 1) != 0) {
-            constraints = layoutNode.layoutDelegate.m6460getLastLookaheadConstraintsDWUhwKw();
+            constraints = layoutNode.layoutDelegate.m7059getLastLookaheadConstraintsDWUhwKw();
         }
-        return layoutNode.m6446lookaheadRemeasure_Sx5XlM$ui(constraints);
+        return layoutNode.m7047lookaheadRemeasure_Sx5XlM$ui(constraints);
     }
 
     /* renamed from: lookaheadRemeasure-_Sx5XlM$ui */
-    public final boolean m6446lookaheadRemeasure_Sx5XlM$ui(Constraints constraints) {
+    public final boolean m7047lookaheadRemeasure_Sx5XlM$ui(Constraints constraints) {
         if (constraints == null || this.lookaheadRoot == null) {
             return false;
         }
         LookaheadPassDelegate lookaheadPassDelegate$ui = getLookaheadPassDelegate$ui();
         Intrinsics.checkNotNull(lookaheadPassDelegate$ui);
-        return lookaheadPassDelegate$ui.m6480remeasureBRTryo0(constraints.m7514unboximpl());
+        return lookaheadPassDelegate$ui.m7079remeasureBRTryo0(constraints.m8119unboximpl());
     }
 
     /* renamed from: remeasure-_Sx5XlM$ui$default */
-    public static /* synthetic */ boolean m6440remeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
+    public static /* synthetic */ boolean m7043remeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
         if ((i & 1) != 0) {
-            constraints = layoutNode.layoutDelegate.m6459getLastConstraintsDWUhwKw();
+            constraints = layoutNode.layoutDelegate.m7058getLastConstraintsDWUhwKw();
         }
-        return layoutNode.m6447remeasure_Sx5XlM$ui(constraints);
+        return layoutNode.m7048remeasure_Sx5XlM$ui(constraints);
     }
 
     /* renamed from: remeasure-_Sx5XlM$ui */
-    public final boolean m6447remeasure_Sx5XlM$ui(Constraints constraints) {
+    public final boolean m7048remeasure_Sx5XlM$ui(Constraints constraints) {
         if (constraints != null) {
             if (this.intrinsicsUsageByParent == UsageByParent.NotUsed) {
                 clearSubtreeIntrinsicsUsage$ui();
             }
-            return getMeasurePassDelegate$ui().m6491remeasureBRTryo0(constraints.m7514unboximpl());
+            return getMeasurePassDelegate$ui().m7090remeasureBRTryo0(constraints.m8119unboximpl());
         }
         return false;
     }
@@ -1846,29 +1844,36 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     public final void invalidateSubtree(boolean z) {
-        LayoutNode parent$ui;
-        if (z && (parent$ui = getParent$ui()) != null) {
-            parent$ui.invalidateLayer$ui();
+        if (z) {
+            LayoutNode parent$ui = getParent$ui();
+            if (parent$ui != null) {
+                parent$ui.invalidateLayer$ui();
+            } else {
+                Owner owner = this.owner;
+                if (owner != null) {
+                    owner.invalidateRootLayer();
+                }
+            }
         }
         invalidateSemantics$ui();
         requestRemeasure$ui$default(this, false, false, false, 7, null);
         NodeChain nodeChain = this.nodes;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(2);
-        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(2);
+        if ((nodeChain.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof LayoutModifierNode) {
-                            OwnedLayer layer = DelegatableNodeKt.m6387requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m6535constructorimpl(2)).getLayer();
+                            OwnedLayer layer = DelegatableNodeKt.m6990requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m7135constructorimpl(2)).getLayer();
                             if (layer != null) {
                                 layer.invalidate();
                             }
-                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1894,7 +1899,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                     break;
                 }
             }
@@ -1925,27 +1930,34 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     public final void invalidateDrawForSubtree(boolean z) {
-        LayoutNode parent$ui;
-        if (z && (parent$ui = getParent$ui()) != null) {
-            parent$ui.invalidateLayer$ui();
+        if (z) {
+            LayoutNode parent$ui = getParent$ui();
+            if (parent$ui != null) {
+                parent$ui.invalidateLayer$ui();
+            } else {
+                Owner owner = this.owner;
+                if (owner != null) {
+                    owner.invalidateRootLayer();
+                }
+            }
         }
         NodeChain nodeChain = this.nodes;
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(2);
-        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(2);
+        if ((nodeChain.getAggregateChildKindSet() & m7135constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof LayoutModifierNode) {
-                            OwnedLayer layer = DelegatableNodeKt.m6387requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m6535constructorimpl(2)).getLayer();
+                            OwnedLayer layer = DelegatableNodeKt.m6990requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m7135constructorimpl(2)).getLayer();
                             if (layer != null) {
                                 layer.invalidate();
                             }
-                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1971,7 +1983,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m7135constructorimpl) == 0) {
                     break;
                 }
             }
@@ -1998,11 +2010,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             layoutNode = this;
             requestRemeasure$ui$default(layoutNode, false, false, false, 5, null);
         }
-        Constraints m6459getLastConstraintsDWUhwKw = layoutNode.layoutDelegate.m6459getLastConstraintsDWUhwKw();
+        Constraints m7058getLastConstraintsDWUhwKw = layoutNode.layoutDelegate.m7058getLastConstraintsDWUhwKw();
         Owner owner = layoutNode.owner;
-        if (m6459getLastConstraintsDWUhwKw != null) {
+        if (m7058getLastConstraintsDWUhwKw != null) {
             if (owner != null) {
-                owner.mo6602measureAndLayout0kLqBqw(layoutNode, m6459getLastConstraintsDWUhwKw.m7514unboximpl());
+                owner.mo7202measureAndLayout0kLqBqw(layoutNode, m7058getLastConstraintsDWUhwKw.m8119unboximpl());
             }
         } else if (owner != null) {
             Owner.measureAndLayout$default(owner, false, 1, null);
@@ -2012,23 +2024,23 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     @Override // androidx.compose.ui.node.Owner.OnLayoutCompletedListener
     public void onLayoutComplete() {
         NodeCoordinator innerCoordinator$ui = getInnerCoordinator$ui();
-        int m6535constructorimpl = NodeKind.m6535constructorimpl(4194304);
-        boolean m6544getIncludeSelfInTraversalH91voCI = NodeKindKt.m6544getIncludeSelfInTraversalH91voCI(m6535constructorimpl);
+        int m7135constructorimpl = NodeKind.m7135constructorimpl(4194304);
+        boolean m7144getIncludeSelfInTraversalH91voCI = NodeKindKt.m7144getIncludeSelfInTraversalH91voCI(m7135constructorimpl);
         Modifier.Node tail = innerCoordinator$ui.getTail();
-        if (!m6544getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui()) == null) {
+        if (!m7144getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui()) == null) {
             return;
         }
-        for (Modifier.Node headNode = innerCoordinator$ui.headNode(m6544getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0; headNode = headNode.getChild$ui()) {
-            if ((headNode.getKindSet$ui() & m6535constructorimpl) != 0) {
+        for (Modifier.Node headNode = innerCoordinator$ui.headNode(m7144getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui() & m7135constructorimpl) != 0; headNode = headNode.getChild$ui()) {
+            if ((headNode.getKindSet$ui() & m7135constructorimpl) != 0) {
                 Modifier.Node node = headNode;
                 MutableVector mutableVector = null;
                 while (node != null) {
                     if (node instanceof LayoutAwareModifierNode) {
                         ((LayoutAwareModifierNode) node).onPlaced(getInnerCoordinator$ui());
-                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                    } else if ((node.getKindSet$ui() & m7135constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                         int i = 0;
                         for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                            if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                            if ((delegate$ui.getKindSet$ui() & m7135constructorimpl) != 0) {
                                 i++;
                                 if (i == 1) {
                                     node = delegate$ui;
@@ -2139,9 +2151,6 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         this.isCurrentlyCalculatingSemanticsConfiguration = false;
         if (isDeactivated()) {
             this.isDeactivated = false;
-            if (!ComposeUiFlags.isSemanticAutofillEnabled) {
-                invalidateSemantics$ui();
-            }
         } else {
             resetModifierState();
         }
@@ -2157,7 +2166,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         }
         this.nodes.markAsAttached();
         this.nodes.runAttachLifecycle();
-        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
+        if (this.nodes.m7095hasH91voCI$ui(NodeKind.m7135constructorimpl(8))) {
             invalidateSemantics$ui();
         }
         rescheduleRemeasureOrRelayout$ui(this);
@@ -2169,7 +2178,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (owner4 == null || (rectManager = owner4.getRectManager()) == null) {
             return;
         }
-        rectManager.onLayoutPositionChanged(this, true);
+        rectManager.recalculateRectIfDirty(this);
     }
 
     @Override // androidx.compose.runtime.ComposeNodeLifecycleCallback
@@ -2185,12 +2194,8 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         this.isDeactivated = true;
         resetModifierState();
         if (isAttached()) {
-            if (!ComposeUiFlags.isSemanticAutofillEnabled) {
-                invalidateSemantics$ui();
-            } else {
-                this._semanticsConfiguration = null;
-                this.isSemanticsInvalidated = false;
-            }
+            this._semanticsConfiguration = null;
+            this.isSemanticsInvalidated = false;
         }
         Owner owner = this.owner;
         if (owner != null) {
@@ -2215,7 +2220,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* compiled from: LayoutNode.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u0007X\u0080T¢\u0006\b\n\u0000\u0012\u0004\b\b\u0010\u0003R\u001a\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R$\u0010\u0012\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0013j\b\u0012\u0004\u0012\u00020\u000b`\u0014X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$Companion;", "", "<init>", "()V", "ErrorMeasurePolicy", "Landroidx/compose/ui/node/LayoutNode$NoIntrinsicsMeasurePolicy;", "NotPlacedPlaceOrder", "", "getNotPlacedPlaceOrder$ui$annotations", "Constructor", "Lkotlin/Function0;", "Landroidx/compose/ui/node/LayoutNode;", "getConstructor$ui", "()Lkotlin/jvm/functions/Function0;", "DummyViewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getDummyViewConfiguration$ui", "()Landroidx/compose/ui/platform/ViewConfiguration;", "ZComparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "getZComparator$ui", "()Ljava/util/Comparator;", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\u00020\u0007X\u0080T¢\u0006\b\n\u0000\u0012\u0004\b\b\u0010\u0003R\u001a\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R$\u0010\u0012\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0013j\b\u0012\u0004\u0012\u00020\u000b`\u0014X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u0017"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$Companion;", "", "<init>", "()V", "ErrorMeasurePolicy", "Landroidx/compose/ui/node/LayoutNode$NoIntrinsicsMeasurePolicy;", "NotPlacedPlaceOrder", "", "getNotPlacedPlaceOrder$ui$annotations", "Constructor", "Lkotlin/Function0;", "Landroidx/compose/ui/node/LayoutNode;", "getConstructor$ui", "()Lkotlin/jvm/functions/Function0;", "DummyViewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "getDummyViewConfiguration$ui", "()Landroidx/compose/ui/platform/ViewConfiguration;", "ZComparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "getZComparator$ui", "()Ljava/util/Comparator;", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -2249,7 +2254,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* compiled from: LayoutNode.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$LayoutState;", "", "<init>", "(Ljava/lang/String;I)V", "Measuring", "LookaheadMeasuring", "LayingOut", "LookaheadLayingOut", "Idle", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$LayoutState;", "", "<init>", "(Ljava/lang/String;I)V", "Measuring", "LookaheadMeasuring", "LayingOut", "LookaheadLayingOut", "Idle", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class LayoutState {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -2288,7 +2293,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* compiled from: LayoutNode.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "", "<init>", "(Ljava/lang/String;I)V", "InMeasureBlock", "InLayoutBlock", "NotUsed", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0080\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Landroidx/compose/ui/node/LayoutNode$UsageByParent;", "", "<init>", "(Ljava/lang/String;I)V", "InMeasureBlock", "InLayoutBlock", "NotUsed", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class UsageByParent {
         private static final /* synthetic */ EnumEntries $ENTRIES;

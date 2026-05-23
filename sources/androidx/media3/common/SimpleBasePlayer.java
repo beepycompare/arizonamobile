@@ -24,6 +24,7 @@ import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.AsyncFunction;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -33,6 +34,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.Executor;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
@@ -42,7 +44,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     private final HandlerWrapper applicationHandler;
     private final Looper applicationLooper;
     private final ListenerSet<Player.Listener> listeners;
-    private final HashSet<ListenableFuture<?>> pendingOperations;
+    private final Set<ListenableFuture<?>> pendingOperations;
     private final Timeline.Period period;
     private boolean released;
     private State state;
@@ -1213,19 +1215,19 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     protected SimpleBasePlayer(Looper looper, Clock clock) {
         this.applicationLooper = looper;
         this.applicationHandler = clock.createHandler(looper, null);
-        this.pendingOperations = new HashSet<>();
+        this.pendingOperations = Sets.newIdentityHashSet();
         this.period = new Timeline.Period();
-        this.listeners = new ListenerSet<>(looper, clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda40
+        this.listeners = new ListenerSet<>(looper, clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda41
             @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                SimpleBasePlayer.this.m8152lambda$new$0$androidxmedia3commonSimpleBasePlayer((Player.Listener) obj, flagSet);
+                SimpleBasePlayer.this.m8757lambda$new$0$androidxmedia3commonSimpleBasePlayer((Player.Listener) obj, flagSet);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ void m8152lambda$new$0$androidxmedia3commonSimpleBasePlayer(Player.Listener listener, FlagSet flagSet) {
+    public /* synthetic */ void m8757lambda$new$0$androidxmedia3commonSimpleBasePlayer(Player.Listener listener, FlagSet flagSet) {
         listener.onEvents(this, new Player.Events(flagSet));
     }
 
@@ -1294,10 +1296,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         Preconditions.checkArgument(i == -1 || i >= 0);
         final State state = this.state;
         if (shouldHandleCommand(20) || (list.size() == 1 && shouldHandleCommand(31))) {
-            updateStateForPendingOperation(handleSetMediaItems(list, i, j), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda30
+            updateStateForPendingOperation(handleSetMediaItems(list, i, j), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda31
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    return SimpleBasePlayer.this.m8156x396b5ff4(list, state, i, j);
+                    return SimpleBasePlayer.this.m8761x396b5ff4(list, state, i, j);
                 }
             });
         }
@@ -1305,7 +1307,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setMediaItemsInternal$2$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8156x396b5ff4(List list, State state, int i, long j) {
+    public /* synthetic */ State m8761x396b5ff4(List list, State state, int i, long j) {
         ArrayList arrayList = new ArrayList();
         for (int i2 = 0; i2 < list.size(); i2++) {
             arrayList.add(getPlaceholderMediaItemData((MediaItem) list.get(i2)));
@@ -1323,17 +1325,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             return;
         }
         final int min = Math.min(i, windowCount);
-        updateStateForPendingOperation(handleAddMediaItems(min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda36
+        updateStateForPendingOperation(handleAddMediaItems(min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda37
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return SimpleBasePlayer.this.m8150lambda$addMediaItems$3$androidxmedia3commonSimpleBasePlayer(state, list, min);
+                return SimpleBasePlayer.this.m8755lambda$addMediaItems$3$androidxmedia3commonSimpleBasePlayer(state, list, min);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addMediaItems$3$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8150lambda$addMediaItems$3$androidxmedia3commonSimpleBasePlayer(State state, List list, int i) {
+    public /* synthetic */ State m8755lambda$addMediaItems$3$androidxmedia3commonSimpleBasePlayer(State state, List list, int i) {
         List<MediaItemData> buildMutablePlaylistFromState = buildMutablePlaylistFromState(state, this.period, this.window);
         for (int i2 = 0; i2 < list.size(); i2++) {
             buildMutablePlaylistFromState.add(i2 + i, getPlaceholderMediaItemData((MediaItem) list.get(i2)));
@@ -1358,17 +1360,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         if (i == min || min2 == i) {
             return;
         }
-        updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
+        updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda51
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return SimpleBasePlayer.this.m8151lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(state, i, min, min2);
+                return SimpleBasePlayer.this.m8756lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(state, i, min, min2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$moveMediaItems$4$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8151lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(State state, int i, int i2, int i3) {
+    public /* synthetic */ State m8756lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(State state, int i, int i2, int i3) {
         List<MediaItemData> buildMutablePlaylistFromState = buildMutablePlaylistFromState(state, this.period, this.window);
         Util.moveItems(buildMutablePlaylistFromState, i, i2, i3);
         return getStateWithNewPlaylist(state, buildMutablePlaylistFromState, this.period, this.window);
@@ -1384,17 +1386,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             return;
         }
         final int min = Math.min(i2, windowCount);
-        updateStateForPendingOperation(handleReplaceMediaItems(i, min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda28
+        updateStateForPendingOperation(handleReplaceMediaItems(i, min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda29
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return SimpleBasePlayer.this.m8154x7bc5132c(state, list, min, i);
+                return SimpleBasePlayer.this.m8759x7bc5132c(state, list, min, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$replaceMediaItems$5$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8154x7bc5132c(State state, List list, int i, int i2) {
+    public /* synthetic */ State m8759x7bc5132c(State state, List list, int i, int i2) {
         State stateWithNewPlaylistAndPosition;
         List<MediaItemData> buildMutablePlaylistFromState = buildMutablePlaylistFromState(state, this.period, this.window);
         for (int i3 = 0; i3 < list.size(); i3++) {
@@ -1422,17 +1424,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         if (!shouldHandleCommand(20) || windowCount == 0 || i >= windowCount || i == (min = Math.min(i2, windowCount))) {
             return;
         }
-        updateStateForPendingOperation(handleRemoveMediaItems(i, min), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda54
+        updateStateForPendingOperation(handleRemoveMediaItems(i, min), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda56
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return SimpleBasePlayer.this.m8153x3b22ba57(state, i, min);
+                return SimpleBasePlayer.this.m8758x3b22ba57(state, i, min);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$removeMediaItems$6$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8153x3b22ba57(State state, int i, int i2) {
+    public /* synthetic */ State m8758x3b22ba57(State state, int i, int i2) {
         List<MediaItemData> buildMutablePlaylistFromState = buildMutablePlaylistFromState(state, this.period, this.window);
         Util.removeRange(buildMutablePlaylistFromState, i, i2);
         return getStateWithNewPlaylist(state, buildMutablePlaylistFromState, this.period, this.window);
@@ -1443,7 +1445,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(2)) {
-            updateStateForPendingOperation(handlePrepare(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda58
+            updateStateForPendingOperation(handlePrepare(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda59
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1477,7 +1479,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(15)) {
-            updateStateForPendingOperation(handleSetRepeatMode(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda42
+            updateStateForPendingOperation(handleSetRepeatMode(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda43
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1499,7 +1501,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(14)) {
-            updateStateForPendingOperation(handleSetShuffleModeEnabled(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda37
+            updateStateForPendingOperation(handleSetShuffleModeEnabled(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda38
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1529,10 +1531,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         final State state = this.state;
         if (shouldHandleCommand(i2)) {
             final boolean z2 = i == -1 || isPlayingAd() || (!state.timeline.isEmpty() && i >= state.timeline.getWindowCount());
-            updateStateForPendingOperation(handleSeek(i, j, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda53
+            updateStateForPendingOperation(handleSeek(i, j, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda54
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    return SimpleBasePlayer.this.m8155lambda$seekTo$10$androidxmedia3commonSimpleBasePlayer(z2, state, i, j);
+                    return SimpleBasePlayer.this.m8760lambda$seekTo$10$androidxmedia3commonSimpleBasePlayer(z2, state, i, j);
                 }
             }, !z2, z);
         }
@@ -1540,7 +1542,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$seekTo$10$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8155lambda$seekTo$10$androidxmedia3commonSimpleBasePlayer(boolean z, State state, int i, long j) {
+    public /* synthetic */ State m8760lambda$seekTo$10$androidxmedia3commonSimpleBasePlayer(boolean z, State state, int i, long j) {
         return z ? state : getStateWithNewPlaylistAndPosition(state, null, i, j, this.window);
     }
 
@@ -1567,7 +1569,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(13)) {
-            updateStateForPendingOperation(handleSetPlaybackParameters(playbackParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda60
+            updateStateForPendingOperation(handleSetPlaybackParameters(playbackParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda61
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1589,10 +1591,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(3)) {
-            updateStateForPendingOperation(handleStop(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda57
+            updateStateForPendingOperation(handleStop(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda58
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
-                    return SimpleBasePlayer.this.m8157lambda$stop$12$androidxmedia3commonSimpleBasePlayer(state);
+                    return SimpleBasePlayer.this.m8762lambda$stop$12$androidxmedia3commonSimpleBasePlayer(state);
                 }
             });
         }
@@ -1600,7 +1602,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$stop$12$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ State m8157lambda$stop$12$androidxmedia3commonSimpleBasePlayer(State state) {
+    public /* synthetic */ State m8762lambda$stop$12$androidxmedia3commonSimpleBasePlayer(State state) {
         return state.buildUpon().setPlaybackState(1).setTotalBufferedDurationMs(PositionSupplier.ZERO).setContentBufferedPositionMs(PositionSupplier.getConstant(getContentPositionMsInternal(state, this.window))).setAdBufferedPositionMs(state.adPositionMsSupplier).setIsLoading(false).build();
     }
 
@@ -1609,7 +1611,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(32)) {
-            updateStateForPendingOperation(handleRelease(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda46
+            updateStateForPendingOperation(handleRelease(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda47
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     return SimpleBasePlayer.lambda$release$13(SimpleBasePlayer.State.this);
@@ -1638,7 +1640,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(29)) {
-            updateStateForPendingOperation(handleSetTrackSelectionParameters(trackSelectionParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda62
+            updateStateForPendingOperation(handleSetTrackSelectionParameters(trackSelectionParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda63
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1666,7 +1668,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(19)) {
-            updateStateForPendingOperation(handleSetPlaylistMetadata(mediaMetadata), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda41
+            updateStateForPendingOperation(handleSetPlaylistMetadata(mediaMetadata), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda42
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1773,7 +1775,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(24)) {
-            updateStateForPendingOperation(handleSetVolume(f, 0), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda43
+            updateStateForPendingOperation(handleSetVolume(f, 0), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda45
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1795,7 +1797,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(24) && this.state.volume != 0.0f) {
-            updateStateForPendingOperation(handleSetVolume(0.0f, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda29
+            updateStateForPendingOperation(handleSetVolume(0.0f, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda30
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1830,7 +1832,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surface == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surface), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda31
+                updateStateForPendingOperation(handleSetVideoOutput(surface), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda32
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1850,7 +1852,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surfaceHolder == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surfaceHolder), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda45
+                updateStateForPendingOperation(handleSetVideoOutput(surfaceHolder), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda46
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1870,7 +1872,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surfaceView == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surfaceView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda47
+                updateStateForPendingOperation(handleSetVideoOutput(surfaceView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda48
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1937,7 +1939,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(27)) {
-            updateStateForPendingOperation(handleClearVideoOutput(obj), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda49
+            updateStateForPendingOperation(handleClearVideoOutput(obj), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2006,7 +2008,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(33)) {
-            updateStateForPendingOperation(handleSetDeviceVolume(i, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda38
+            updateStateForPendingOperation(handleSetDeviceVolume(i, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda39
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2023,7 +2025,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleIncreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda51
+            updateStateForPendingOperation(handleIncreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda52
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2039,7 +2041,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleIncreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda35
+            updateStateForPendingOperation(handleIncreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda36
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2056,7 +2058,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleDecreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda39
+            updateStateForPendingOperation(handleDecreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda40
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2073,7 +2075,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleDecreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda59
+            updateStateForPendingOperation(handleDecreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda60
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2091,7 +2093,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleSetDeviceMuted(z, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda48
+            updateStateForPendingOperation(handleSetDeviceMuted(z, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda49
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2107,7 +2109,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleSetDeviceMuted(z, i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda61
+            updateStateForPendingOperation(handleSetDeviceMuted(z, i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda62
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2123,7 +2125,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(35)) {
-            updateStateForPendingOperation(handleSetAudioAttributes(audioAttributes, z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda52
+            updateStateForPendingOperation(handleSetAudioAttributes(audioAttributes, z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda53
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2238,7 +2240,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             return handleAddMediaItems;
         }
         final ListenableFuture<?> handleRemoveMediaItems = handleRemoveMediaItems(i, i2);
-        return Util.transformFutureAsync(handleAddMediaItems, new AsyncFunction() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda56
+        return Util.transformFutureAsync(handleAddMediaItems, new AsyncFunction() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda57
             @Override // com.google.common.util.concurrent.AsyncFunction
             public final ListenableFuture apply(Object obj) {
                 return SimpleBasePlayer.lambda$handleReplaceMediaItems$33(ListenableFuture.this, obj);
@@ -2307,14 +2309,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!Objects.equals(state2.playerError, state.playerError)) {
-            this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda20
+            this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda21
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayerErrorChanged(SimpleBasePlayer.State.this.playerError);
                 }
             });
             if (state.playerError != null) {
-                this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda21
+                this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda23
                     @Override // androidx.media3.common.util.ListenerSet.Event
                     public final void invoke(Object obj) {
                         ((Player.Listener) obj).onPlayerError((PlaybackException) Util.castNonNull(SimpleBasePlayer.State.this.playerError));
@@ -2323,7 +2325,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
         }
         if (!state2.trackSelectionParameters.equals(state.trackSelectionParameters)) {
-            this.listeners.queueEvent(19, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda23
+            this.listeners.queueEvent(19, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda24
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onTrackSelectionParametersChanged(SimpleBasePlayer.State.this.trackSelectionParameters);
@@ -2331,7 +2333,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentTracks.equals(state.currentTracks)) {
-            this.listeners.queueEvent(2, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda24
+            this.listeners.queueEvent(2, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda25
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onTracksChanged(SimpleBasePlayer.State.this.currentTracks);
@@ -2339,7 +2341,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentMetadata.equals(state.currentMetadata)) {
-            this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda25
+            this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda26
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMediaMetadataChanged(SimpleBasePlayer.State.this.currentMetadata);
@@ -2347,7 +2349,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.isLoading != state.isLoading) {
-            this.listeners.queueEvent(3, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda26
+            this.listeners.queueEvent(3, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda27
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     SimpleBasePlayer.lambda$updateStateAndInformListeners$42(SimpleBasePlayer.State.this, (Player.Listener) obj);
@@ -2355,7 +2357,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (z3 || z4) {
-            this.listeners.queueEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda27
+            this.listeners.queueEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda28
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayerStateChanged(r0.playWhenReady, SimpleBasePlayer.State.this.playbackState);
@@ -2371,7 +2373,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (z3 || state2.playWhenReadyChangeReason != state.playWhenReadyChangeReason) {
-            this.listeners.queueEvent(5, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda63
+            this.listeners.queueEvent(5, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda64
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayWhenReadyChanged(r0.playWhenReady, SimpleBasePlayer.State.this.playWhenReadyChangeReason);
@@ -2379,7 +2381,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.playbackSuppressionReason != state.playbackSuppressionReason) {
-            this.listeners.queueEvent(6, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda64
+            this.listeners.queueEvent(6, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda65
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaybackSuppressionReasonChanged(SimpleBasePlayer.State.this.playbackSuppressionReason);
@@ -2387,7 +2389,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (isPlaying(state2) != isPlaying(state)) {
-            this.listeners.queueEvent(7, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda65
+            this.listeners.queueEvent(7, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda66
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onIsPlayingChanged(SimpleBasePlayer.isPlaying(SimpleBasePlayer.State.this));
@@ -2395,7 +2397,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.playbackParameters.equals(state.playbackParameters)) {
-            this.listeners.queueEvent(12, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda66
+            this.listeners.queueEvent(12, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda67
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaybackParametersChanged(SimpleBasePlayer.State.this.playbackParameters);
@@ -2450,8 +2452,16 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 }
             });
         }
+        if (state2.audioSessionId != state.audioSessionId) {
+            this.listeners.queueEvent(21, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda8
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((Player.Listener) obj).onAudioSessionIdChanged(SimpleBasePlayer.State.this.audioSessionId);
+                }
+            });
+        }
         if (!state2.videoSize.equals(state.videoSize)) {
-            this.listeners.queueEvent(25, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda8
+            this.listeners.queueEvent(25, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda9
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onVideoSizeChanged(SimpleBasePlayer.State.this.videoSize);
@@ -2459,7 +2469,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.deviceInfo.equals(state.deviceInfo)) {
-            this.listeners.queueEvent(29, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda9
+            this.listeners.queueEvent(29, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda10
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceInfoChanged(SimpleBasePlayer.State.this.deviceInfo);
@@ -2467,7 +2477,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.playlistMetadata.equals(state.playlistMetadata)) {
-            this.listeners.queueEvent(15, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda10
+            this.listeners.queueEvent(15, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda12
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaylistMetadataChanged(SimpleBasePlayer.State.this.playlistMetadata);
@@ -2475,10 +2485,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state.newlyRenderedFirstFrame) {
-            this.listeners.queueEvent(26, new SimpleBasePlayer$$ExternalSyntheticLambda12());
+            this.listeners.queueEvent(26, new SimpleBasePlayer$$ExternalSyntheticLambda13());
         }
         if (!state2.surfaceSize.equals(state.surfaceSize)) {
-            this.listeners.queueEvent(24, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda13
+            this.listeners.queueEvent(24, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda14
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onSurfaceSizeChanged(r0.surfaceSize.getWidth(), SimpleBasePlayer.State.this.surfaceSize.getHeight());
@@ -2486,7 +2496,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.volume != state.volume) {
-            this.listeners.queueEvent(22, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda14
+            this.listeners.queueEvent(22, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda15
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onVolumeChanged(SimpleBasePlayer.State.this.volume);
@@ -2494,7 +2504,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.deviceVolume != state.deviceVolume || state2.isDeviceMuted != state.isDeviceMuted) {
-            this.listeners.queueEvent(30, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda15
+            this.listeners.queueEvent(30, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda16
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceVolumeChanged(r0.deviceVolume, SimpleBasePlayer.State.this.isDeviceMuted);
@@ -2502,15 +2512,15 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentCues.equals(state.currentCues)) {
-            this.listeners.queueEvent(27, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda16
+            this.listeners.queueEvent(27, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda17
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
-                    SimpleBasePlayer.lambda$updateStateAndInformListeners$61(SimpleBasePlayer.State.this, (Player.Listener) obj);
+                    SimpleBasePlayer.lambda$updateStateAndInformListeners$62(SimpleBasePlayer.State.this, (Player.Listener) obj);
                 }
             });
         }
         if (!state2.timedMetadata.equals(state.timedMetadata) && state.timedMetadata.presentationTimeUs != C.TIME_UNSET) {
-            this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda17
+            this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda19
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMetadata(SimpleBasePlayer.State.this.timedMetadata);
@@ -2518,7 +2528,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.availableCommands.equals(state.availableCommands)) {
-            this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda19
+            this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda20
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onAvailableCommandsChanged(SimpleBasePlayer.State.this.availableCommands);
@@ -2541,7 +2551,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$updateStateAndInformListeners$61(State state, Player.Listener listener) {
+    public static /* synthetic */ void lambda$updateStateAndInformListeners$62(State state, Player.Listener listener) {
         listener.onCues(state.currentCues.cues);
         listener.onCues(state.currentCues);
     }
@@ -2567,12 +2577,12 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         }
         this.pendingOperations.add(listenableFuture);
         updateStateAndInformListeners(getPlaceholderState(supplier.get()), z, z2);
-        listenableFuture.addListener(new Runnable() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda32
+        listenableFuture.addListener(new Runnable() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                SimpleBasePlayer.this.m8158xb533777c(listenableFuture);
+                SimpleBasePlayer.this.m8763x41d3a27d(listenableFuture);
             }
-        }, new Executor() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda34
+        }, new Executor() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda35
             @Override // java.util.concurrent.Executor
             public final void execute(Runnable runnable) {
                 SimpleBasePlayer.this.postOrRunOnApplicationHandler(runnable);
@@ -2581,8 +2591,8 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$updateStateForPendingOperation$64$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ void m8158xb533777c(ListenableFuture listenableFuture) {
+    /* renamed from: lambda$updateStateForPendingOperation$65$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
+    public /* synthetic */ void m8763x41d3a27d(ListenableFuture listenableFuture) {
         Util.castNonNull(this.state);
         this.pendingOperations.remove(listenableFuture);
         if (!this.pendingOperations.isEmpty() || this.released) {

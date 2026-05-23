@@ -42,7 +42,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Savers.kt */
-@Metadata(d1 = {"\u0000\u0080\u0003\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aI\u0010\u0000\u001a\u00020\u0001\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u00052\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00042\u0006\u0010\u0007\u001a\u0002H\u00022\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0002\u0010\n\u001aL\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\u0004\b\u0002\u0010\u0005\"\u0006\b\u0003\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00052\u0006\u0010\u0007\u001a\u0002H\u0002H\u0080\b¢\u0006\u0002\u0010\r\u001ay\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u000f\"\u0004\b\u0000\u0010\u0004\"\b\b\u0001\u0010\u0005*\u00020\u00012.\u0010\u0000\u001a*\u0012\u0004\u0012\u00020\t\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00050\u0010¢\u0006\u0002\b\u00132#\u0010\u000b\u001a\u001f\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00040\u0014H\u0002\u001a\u001f\u0010\u0000\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u00022\b\u0010\u0006\u001a\u0004\u0018\u0001H\u0002H\u0000¢\u0006\u0002\u0010\u0015\u001a\"\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0006\b\u0000\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0001H\u0080\b¢\u0006\u0002\u0010\u0015\" \u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"(\u0010\u001a\u001a\u001c\u0012\u0012\u0012\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c0\u001b\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"(\u0010\u001d\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001e\u0010\u001f\"\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010\"\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b$\u0010\u001f\"\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010)\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019\" \u0010,\u001a\u000e\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0019\" \u0010/\u001a\u000e\u0012\u0004\u0012\u000200\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003*\u0002048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u00106\"\u001a\u00107\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003*\u0002098@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010:\"\u001a\u0010;\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003*\u00020=8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010>\"\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003*\u00020A8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010B\"\u001a\u0010C\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003*\u00020E8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010F\"\u001a\u0010G\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003*\u00020I8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010J\"\u001a\u0010K\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003*\u00020M8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010N\"\u001a\u0010O\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010R\"\u001a\u0010S\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u0003*\u00020U8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010V\"\u001a\u0010W\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010Z\"\u001a\u0010[\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u0003*\u00020]8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010^\"\u001a\u0010_\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003*\u00020a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010b\" \u0010c\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bd\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003*\u00020f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010g\" \u0010h\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bi\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u0003*\u00020k8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010l\"\u001a\u0010m\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u0003*\u00020o8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010p\" \u0010q\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\br\u0010s\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u0003*\u00020u8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010v\"\u001a\u0010w\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003*\u00020y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010z\"\u001a\u0010{\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003*\u00020}8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010~\"\u001a\u0010\u007f\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0081\u00018@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0082\u0001\"\u001c\u0010\u0083\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0085\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0086\u0001\"\u001c\u0010\u0087\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0089\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008a\u0001\"\u001c\u0010\u008b\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u008d\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008e\u0001\"\u001c\u0010\u008f\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0090\u0001"}, d2 = {"save", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/saveable/Saver;", "Original", "Saveable", "value", "saver", "scope", "Landroidx/compose/runtime/saveable/SaverScope;", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Landroidx/compose/runtime/saveable/SaverScope;)Ljava/lang/Object;", "restore", "Result", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;)Ljava/lang/Object;", "NonNullValueClassSaver", "Landroidx/compose/ui/text/NonNullValueClassSaver;", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "Lkotlin/Function1;", "(Ljava/lang/Object;)Ljava/lang/Object;", "AnnotatedStringSaver", "Landroidx/compose/ui/text/AnnotatedString;", "getAnnotatedStringSaver", "()Landroidx/compose/runtime/saveable/Saver;", "AnnotationRangeListSaver", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "AnnotationRangeSaver", "getAnnotationRangeSaver$annotations", "()V", "VerbatimTtsAnnotationSaver", "Landroidx/compose/ui/text/VerbatimTtsAnnotation;", "UrlAnnotationSaver", "Landroidx/compose/ui/text/UrlAnnotation;", "getUrlAnnotationSaver$annotations", "LinkSaver", "Landroidx/compose/ui/text/LinkAnnotation$Url;", "ClickableSaver", "Landroidx/compose/ui/text/LinkAnnotation$Clickable;", "ParagraphStyleSaver", "Landroidx/compose/ui/text/ParagraphStyle;", "getParagraphStyleSaver", "SpanStyleSaver", "Landroidx/compose/ui/text/SpanStyle;", "getSpanStyleSaver", "TextLinkStylesSaver", "Landroidx/compose/ui/text/TextLinkStyles;", "getTextLinkStylesSaver", "Saver", "Landroidx/compose/ui/text/style/TextDecoration;", "Landroidx/compose/ui/text/style/TextDecoration$Companion;", "getSaver", "(Landroidx/compose/ui/text/style/TextDecoration$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDecorationSaver", "Landroidx/compose/ui/text/style/TextGeometricTransform;", "Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;", "(Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextGeometricTransformSaver", "Landroidx/compose/ui/text/style/TextIndent;", "Landroidx/compose/ui/text/style/TextIndent$Companion;", "(Landroidx/compose/ui/text/style/TextIndent$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextIndentSaver", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontWeight$Companion;", "(Landroidx/compose/ui/text/font/FontWeight$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontWeightSaver", "Landroidx/compose/ui/text/style/BaselineShift;", "Landroidx/compose/ui/text/style/BaselineShift$Companion;", "(Landroidx/compose/ui/text/style/BaselineShift$Companion;)Landroidx/compose/runtime/saveable/Saver;", "BaselineShiftSaver", "Landroidx/compose/ui/text/TextRange;", "Landroidx/compose/ui/text/TextRange$Companion;", "(Landroidx/compose/ui/text/TextRange$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextRangeSaver", "Landroidx/compose/ui/graphics/Shadow;", "Landroidx/compose/ui/graphics/Shadow$Companion;", "(Landroidx/compose/ui/graphics/Shadow$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ShadowSaver", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/ui/graphics/Color$Companion;", "(Landroidx/compose/ui/graphics/Color$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ColorSaver", "Landroidx/compose/ui/text/style/TextAlign;", "Landroidx/compose/ui/text/style/TextAlign$Companion;", "(Landroidx/compose/ui/text/style/TextAlign$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextAlignSaver", "Landroidx/compose/ui/text/style/TextDirection;", "Landroidx/compose/ui/text/style/TextDirection$Companion;", "(Landroidx/compose/ui/text/style/TextDirection$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDirectionSaver", "Landroidx/compose/ui/text/style/Hyphens;", "Landroidx/compose/ui/text/style/Hyphens$Companion;", "(Landroidx/compose/ui/text/style/Hyphens$Companion;)Landroidx/compose/runtime/saveable/Saver;", "HyphensSaver", "Landroidx/compose/ui/text/font/FontStyle;", "Landroidx/compose/ui/text/font/FontStyle$Companion;", "(Landroidx/compose/ui/text/font/FontStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontStyleSaver", "getFontStyleSaver", "Landroidx/compose/ui/text/font/FontSynthesis;", "Landroidx/compose/ui/text/font/FontSynthesis$Companion;", "(Landroidx/compose/ui/text/font/FontSynthesis$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontSynthesisSaver", "getFontSynthesisSaver", "Landroidx/compose/ui/unit/TextUnit;", "Landroidx/compose/ui/unit/TextUnit$Companion;", "(Landroidx/compose/ui/unit/TextUnit$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitSaver", "Landroidx/compose/ui/unit/TextUnitType;", "Landroidx/compose/ui/unit/TextUnitType$Companion;", "(Landroidx/compose/ui/unit/TextUnitType$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitTypeSaver", "getTextUnitTypeSaver", "()Landroidx/compose/ui/text/NonNullValueClassSaver;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/geometry/Offset$Companion;", "(Landroidx/compose/ui/geometry/Offset$Companion;)Landroidx/compose/runtime/saveable/Saver;", "OffsetSaver", "Landroidx/compose/ui/text/intl/LocaleList;", "Landroidx/compose/ui/text/intl/LocaleList$Companion;", "(Landroidx/compose/ui/text/intl/LocaleList$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleListSaver", "Landroidx/compose/ui/text/intl/Locale;", "Landroidx/compose/ui/text/intl/Locale$Companion;", "(Landroidx/compose/ui/text/intl/Locale$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle;", "Landroidx/compose/ui/text/style/LineHeightStyle$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment;", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleAlignmentSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim;", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleTrimSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode;", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleModeSaver", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0003\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aM\u0010\u0000\u001a\u00020\u0001\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\b\b\u0002\u0010\u0005*\u00020\u00012\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00042\u0006\u0010\u0007\u001a\u0002H\u00022\u0006\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0002\u0010\n\u001aP\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0014\b\u0000\u0010\u0002*\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u0003\"\u0004\b\u0001\u0010\u0004\"\b\b\u0002\u0010\u0005*\u00020\u0001\"\u0006\b\u0003\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u0001H\u00052\u0006\u0010\u0007\u001a\u0002H\u0002H\u0080\b¢\u0006\u0002\u0010\r\u001ay\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\u000f\"\u0004\b\u0000\u0010\u0004\"\b\b\u0001\u0010\u0005*\u00020\u00012.\u0010\u0000\u001a*\u0012\u0004\u0012\u00020\t\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00050\u0010¢\u0006\u0002\b\u00132#\u0010\u000b\u001a\u001f\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0006\u0012\u0006\u0012\u0004\u0018\u0001H\u00040\u0014H\u0002\u001a\u001f\u0010\u0000\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u00022\b\u0010\u0006\u001a\u0004\u0018\u0001H\u0002H\u0000¢\u0006\u0002\u0010\u0015\u001a\"\u0010\u000b\u001a\u0004\u0018\u0001H\f\"\u0006\b\u0000\u0010\f\u0018\u00012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0001H\u0080\b¢\u0006\u0002\u0010\u0015\" \u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"(\u0010\u001a\u001a\u001c\u0012\u0012\u0012\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c0\u001b\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"(\u0010\u001d\u001a\u0016\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u00010\u001c\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u001e\u0010\u001f\"\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010\"\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\b\n\u0000\u0012\u0004\b$\u0010\u001f\"\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\" \u0010)\u001a\u000e\u0012\u0004\u0012\u00020*\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u0019\" \u0010,\u001a\u000e\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u0019\" \u0010/\u001a\u000e\u0012\u0004\u0012\u000200\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003*\u0002048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u00106\"\u001a\u00107\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003*\u0002098@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010:\"\u001a\u0010;\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003*\u00020=8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010>\"\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003*\u00020A8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010B\"\u001a\u0010C\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003*\u00020E8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010F\"\u001a\u0010G\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003*\u00020I8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010J\"\u001a\u0010K\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003*\u00020M8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010N\"\u001a\u0010O\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Q8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010R\"\u001a\u0010S\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u0003*\u00020U8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010V\"\u001a\u0010W\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u0003*\u00020Y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010Z\"\u001a\u0010[\u001a\u000e\u0012\u0004\u0012\u00020X\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u0003*\u00020]8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010^\"\u001a\u0010_\u001a\u000e\u0012\u0004\u0012\u00020\\\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003*\u00020a8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010b\" \u0010c\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bd\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003*\u00020f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010g\" \u0010h\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u00020\u00010\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bi\u0010\u0019\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u0003*\u00020k8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010l\"\u001a\u0010m\u001a\u000e\u0012\u0004\u0012\u00020j\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u0003*\u00020o8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010p\" \u0010q\u001a\u000e\u0012\u0004\u0012\u00020n\u0012\u0004\u0012\u00020\u00010\u000fX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\br\u0010s\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u0003*\u00020u8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010v\"\u001a\u0010w\u001a\u000e\u0012\u0004\u0012\u00020t\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003*\u00020y8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010z\"\u001a\u0010{\u001a\u000e\u0012\u0004\u0012\u00020x\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u00102\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003*\u00020}8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b5\u0010~\"\u001a\u0010\u007f\u001a\u000e\u0012\u0004\u0012\u00020|\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0081\u00018@X\u0080\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0082\u0001\"\u001c\u0010\u0083\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0080\u0001\u0012\u0004\u0012\u00020\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0085\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u0086\u0001\"\u001c\u0010\u0087\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0084\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u0089\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008a\u0001\"\u001c\u0010\u008b\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u0088\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000\"'\u00102\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u0003*\u00030\u008d\u00018BX\u0082\u0004¢\u0006\u0007\u001a\u0005\b5\u0010\u008e\u0001\"\u001c\u0010\u008f\u0001\u001a\u000f\u0012\u0005\u0012\u00030\u008c\u0001\u0012\u0004\u0012\u00020\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0090\u0001"}, d2 = {"save", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/runtime/saveable/Saver;", "Original", "Saveable", "value", "saver", "scope", "Landroidx/compose/runtime/saveable/SaverScope;", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Landroidx/compose/runtime/saveable/SaverScope;)Ljava/lang/Object;", "restore", "Result", "(Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;)Ljava/lang/Object;", "NonNullValueClassSaver", "Landroidx/compose/ui/text/NonNullValueClassSaver;", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "Lkotlin/ExtensionFunctionType;", "Lkotlin/Function1;", "(Ljava/lang/Object;)Ljava/lang/Object;", "AnnotatedStringSaver", "Landroidx/compose/ui/text/AnnotatedString;", "getAnnotatedStringSaver", "()Landroidx/compose/runtime/saveable/Saver;", "AnnotationRangeListSaver", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "AnnotationRangeSaver", "getAnnotationRangeSaver$annotations", "()V", "VerbatimTtsAnnotationSaver", "Landroidx/compose/ui/text/VerbatimTtsAnnotation;", "UrlAnnotationSaver", "Landroidx/compose/ui/text/UrlAnnotation;", "getUrlAnnotationSaver$annotations", "LinkSaver", "Landroidx/compose/ui/text/LinkAnnotation$Url;", "ClickableSaver", "Landroidx/compose/ui/text/LinkAnnotation$Clickable;", "ParagraphStyleSaver", "Landroidx/compose/ui/text/ParagraphStyle;", "getParagraphStyleSaver", "SpanStyleSaver", "Landroidx/compose/ui/text/SpanStyle;", "getSpanStyleSaver", "TextLinkStylesSaver", "Landroidx/compose/ui/text/TextLinkStyles;", "getTextLinkStylesSaver", "Saver", "Landroidx/compose/ui/text/style/TextDecoration;", "Landroidx/compose/ui/text/style/TextDecoration$Companion;", "getSaver", "(Landroidx/compose/ui/text/style/TextDecoration$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDecorationSaver", "Landroidx/compose/ui/text/style/TextGeometricTransform;", "Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;", "(Landroidx/compose/ui/text/style/TextGeometricTransform$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextGeometricTransformSaver", "Landroidx/compose/ui/text/style/TextIndent;", "Landroidx/compose/ui/text/style/TextIndent$Companion;", "(Landroidx/compose/ui/text/style/TextIndent$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextIndentSaver", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontWeight$Companion;", "(Landroidx/compose/ui/text/font/FontWeight$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontWeightSaver", "Landroidx/compose/ui/text/style/BaselineShift;", "Landroidx/compose/ui/text/style/BaselineShift$Companion;", "(Landroidx/compose/ui/text/style/BaselineShift$Companion;)Landroidx/compose/runtime/saveable/Saver;", "BaselineShiftSaver", "Landroidx/compose/ui/text/TextRange;", "Landroidx/compose/ui/text/TextRange$Companion;", "(Landroidx/compose/ui/text/TextRange$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextRangeSaver", "Landroidx/compose/ui/graphics/Shadow;", "Landroidx/compose/ui/graphics/Shadow$Companion;", "(Landroidx/compose/ui/graphics/Shadow$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ShadowSaver", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/ui/graphics/Color$Companion;", "(Landroidx/compose/ui/graphics/Color$Companion;)Landroidx/compose/runtime/saveable/Saver;", "ColorSaver", "Landroidx/compose/ui/text/style/TextAlign;", "Landroidx/compose/ui/text/style/TextAlign$Companion;", "(Landroidx/compose/ui/text/style/TextAlign$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextAlignSaver", "Landroidx/compose/ui/text/style/TextDirection;", "Landroidx/compose/ui/text/style/TextDirection$Companion;", "(Landroidx/compose/ui/text/style/TextDirection$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextDirectionSaver", "Landroidx/compose/ui/text/style/Hyphens;", "Landroidx/compose/ui/text/style/Hyphens$Companion;", "(Landroidx/compose/ui/text/style/Hyphens$Companion;)Landroidx/compose/runtime/saveable/Saver;", "HyphensSaver", "Landroidx/compose/ui/text/font/FontStyle;", "Landroidx/compose/ui/text/font/FontStyle$Companion;", "(Landroidx/compose/ui/text/font/FontStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontStyleSaver", "getFontStyleSaver", "Landroidx/compose/ui/text/font/FontSynthesis;", "Landroidx/compose/ui/text/font/FontSynthesis$Companion;", "(Landroidx/compose/ui/text/font/FontSynthesis$Companion;)Landroidx/compose/runtime/saveable/Saver;", "FontSynthesisSaver", "getFontSynthesisSaver", "Landroidx/compose/ui/unit/TextUnit;", "Landroidx/compose/ui/unit/TextUnit$Companion;", "(Landroidx/compose/ui/unit/TextUnit$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitSaver", "Landroidx/compose/ui/unit/TextUnitType;", "Landroidx/compose/ui/unit/TextUnitType$Companion;", "(Landroidx/compose/ui/unit/TextUnitType$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextUnitTypeSaver", "getTextUnitTypeSaver", "()Landroidx/compose/ui/text/NonNullValueClassSaver;", "Landroidx/compose/ui/geometry/Offset;", "Landroidx/compose/ui/geometry/Offset$Companion;", "(Landroidx/compose/ui/geometry/Offset$Companion;)Landroidx/compose/runtime/saveable/Saver;", "OffsetSaver", "Landroidx/compose/ui/text/intl/LocaleList;", "Landroidx/compose/ui/text/intl/LocaleList$Companion;", "(Landroidx/compose/ui/text/intl/LocaleList$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleListSaver", "Landroidx/compose/ui/text/intl/Locale;", "Landroidx/compose/ui/text/intl/Locale$Companion;", "(Landroidx/compose/ui/text/intl/Locale$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LocaleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle;", "Landroidx/compose/ui/text/style/LineHeightStyle$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment;", "Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Alignment$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleAlignmentSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim;", "Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Trim$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleTrimSaver", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode;", "Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;", "(Landroidx/compose/ui/text/style/LineHeightStyle$Mode$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineHeightStyleModeSaver", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class SaversKt {
     private static final Saver<AnnotatedString, Object> AnnotatedStringSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda0
@@ -138,7 +138,7 @@ public final class SaversKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextAlign.m7426boximpl(r2.m6908getTextAligne0LSkKk()), SaversKt.getSaver(TextAlign.Companion), r1), SaversKt.save(TextDirection.m7443boximpl(r2.m6910getTextDirections_7Xco()), SaversKt.getSaver(TextDirection.Companion), r1), SaversKt.save(TextUnit.m7739boximpl(r2.m6906getLineHeightXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.getTextIndent(), SaversKt.getSaver(TextIndent.Companion), r1), SaversKt.save(r2.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), r1), SaversKt.save(r2.getLineHeightStyle(), SaversKt.getSaver(LineHeightStyle.Companion), r1), SaversKt.save(LineBreak.m7331boximpl(r2.m6905getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), r1), SaversKt.save(Hyphens.m7318boximpl(r2.m6903getHyphensvmbZdU8()), SaversKt.getSaver(Hyphens.Companion), r1), SaversKt.save(((ParagraphStyle) obj2).getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextAlign.m8031boximpl(r2.m7513getTextAligne0LSkKk()), SaversKt.getSaver(TextAlign.Companion), r1), SaversKt.save(TextDirection.m8048boximpl(r2.m7515getTextDirections_7Xco()), SaversKt.getSaver(TextDirection.Companion), r1), SaversKt.save(TextUnit.m8344boximpl(r2.m7511getLineHeightXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.getTextIndent(), SaversKt.getSaver(TextIndent.Companion), r1), SaversKt.save(r2.getPlatformStyle(), Savers_androidKt.getSaver(PlatformParagraphStyle.Companion), r1), SaversKt.save(r2.getLineHeightStyle(), SaversKt.getSaver(LineHeightStyle.Companion), r1), SaversKt.save(LineBreak.m7936boximpl(r2.m7510getLineBreakrAG3T2k()), Savers_androidKt.getSaver(LineBreak.Companion), r1), SaversKt.save(Hyphens.m7923boximpl(r2.m7508getHyphensvmbZdU8()), SaversKt.getSaver(Hyphens.Companion), r1), SaversKt.save(((ParagraphStyle) obj2).getTextMotion(), Savers_androidKt.getSaver(TextMotion.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda58
@@ -151,7 +151,7 @@ public final class SaversKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Color.m4762boximpl(r2.m6944getColor0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(TextUnit.m7739boximpl(r2.m6945getFontSizeXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.getFontWeight(), SaversKt.getSaver(FontWeight.Companion), r1), SaversKt.save(r2.m6946getFontStyle4Lr2A7w(), SaversKt.getSaver(FontStyle.Companion), r1), SaversKt.save(r2.m6947getFontSynthesisZQGJjVo(), SaversKt.getSaver(FontSynthesis.Companion), r1), SaversKt.save(-1), SaversKt.save(r2.getFontFeatureSettings()), SaversKt.save(TextUnit.m7739boximpl(r2.m6948getLetterSpacingXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.m6943getBaselineShift5SSeXJ0(), SaversKt.getSaver(BaselineShift.Companion), r1), SaversKt.save(r2.getTextGeometricTransform(), SaversKt.getSaver(TextGeometricTransform.Companion), r1), SaversKt.save(r2.getLocaleList(), SaversKt.getSaver(LocaleList.Companion), r1), SaversKt.save(Color.m4762boximpl(r2.m6942getBackground0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(r2.getTextDecoration(), SaversKt.getSaver(TextDecoration.Companion), r1), SaversKt.save(((SpanStyle) obj2).getShadow(), SaversKt.getSaver(Shadow.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Color.m5338boximpl(r2.m7549getColor0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(TextUnit.m8344boximpl(r2.m7550getFontSizeXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.getFontWeight(), SaversKt.getSaver(FontWeight.Companion), r1), SaversKt.save(r2.m7551getFontStyle4Lr2A7w(), SaversKt.getSaver(FontStyle.Companion), r1), SaversKt.save(r2.m7552getFontSynthesisZQGJjVo(), SaversKt.getSaver(FontSynthesis.Companion), r1), SaversKt.save(-1), SaversKt.save(r2.getFontFeatureSettings()), SaversKt.save(TextUnit.m8344boximpl(r2.m7553getLetterSpacingXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(r2.m7548getBaselineShift5SSeXJ0(), SaversKt.getSaver(BaselineShift.Companion), r1), SaversKt.save(r2.getTextGeometricTransform(), SaversKt.getSaver(TextGeometricTransform.Companion), r1), SaversKt.save(r2.getLocaleList(), SaversKt.getSaver(LocaleList.Companion), r1), SaversKt.save(Color.m5338boximpl(r2.m7547getBackground0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(r2.getTextDecoration(), SaversKt.getSaver(TextDecoration.Companion), r1), SaversKt.save(((SpanStyle) obj2).getShadow(), SaversKt.getSaver(Shadow.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda60
@@ -203,7 +203,7 @@ public final class SaversKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextUnit.m7739boximpl(r2.m7463getFirstLineXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(TextUnit.m7739boximpl(((TextIndent) obj2).m7464getRestLineXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextUnit.m8344boximpl(r2.m8068getFirstLineXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), r1), SaversKt.save(TextUnit.m8344boximpl(((TextIndent) obj2).m8069getRestLineXSAIIZE()), SaversKt.getSaver(TextUnit.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda8
@@ -231,7 +231,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Float.valueOf(((BaselineShift) obj2).m7301unboximpl());
+            valueOf = Float.valueOf(((BaselineShift) obj2).m7906unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda13
@@ -245,7 +245,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
             SaverScope saverScope = (SaverScope) obj;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Integer.valueOf(TextRange.m7003getStartimpl(r2.m7007unboximpl()))), SaversKt.save(Integer.valueOf(TextRange.m6998getEndimpl(((TextRange) obj2).m7007unboximpl()))));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Integer.valueOf(TextRange.m7608getStartimpl(r2.m7612unboximpl()))), SaversKt.save(Integer.valueOf(TextRange.m7603getEndimpl(((TextRange) obj2).m7612unboximpl()))));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda16
@@ -258,7 +258,7 @@ public final class SaversKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Color.m4762boximpl(r2.m5116getColor0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(Offset.m4516boximpl(r2.m5117getOffsetF1C5BW0()), SaversKt.getSaver(Offset.Companion), (SaverScope) obj), SaversKt.save(Float.valueOf(((Shadow) obj2).getBlurRadius())));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Color.m5338boximpl(r2.m5692getColor0d7_KjU()), SaversKt.getSaver(Color.Companion), r1), SaversKt.save(Offset.m5092boximpl(r2.m5693getOffsetF1C5BW0()), SaversKt.getSaver(Offset.Companion), (SaverScope) obj), SaversKt.save(Float.valueOf(((Shadow) obj2).getBlurRadius())));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda18
@@ -270,25 +270,25 @@ public final class SaversKt {
     private static final NonNullValueClassSaver<Color, Object> ColorSaver = NonNullValueClassSaver(new Function2<SaverScope, Color, Object>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$1
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Object invoke(SaverScope saverScope, Color color) {
-            return m6932invoke4WTKRHQ(saverScope, color.m4782unboximpl());
+            return m7537invoke4WTKRHQ(saverScope, color.m5358unboximpl());
         }
 
         /* renamed from: invoke-4WTKRHQ  reason: not valid java name */
-        public final Object m6932invoke4WTKRHQ(SaverScope saverScope, long j) {
+        public final Object m7537invoke4WTKRHQ(SaverScope saverScope, long j) {
             if (j == 16) {
                 return false;
             }
-            return Integer.valueOf(ColorKt.m4826toArgb8_81llA(j));
+            return Integer.valueOf(ColorKt.m5402toArgb8_81llA(j));
         }
     }, new Function1<Object, Color>() { // from class: androidx.compose.ui.text.SaversKt$ColorSaver$2
         @Override // kotlin.jvm.functions.Function1
         /* renamed from: invoke-ijrfgN4  reason: not valid java name */
         public final Color invoke(Object obj) {
             if (Intrinsics.areEqual(obj, (Object) false)) {
-                return Color.m4762boximpl(Color.Companion.m4808getUnspecified0d7_KjU());
+                return Color.m5338boximpl(Color.Companion.m5384getUnspecified0d7_KjU());
             }
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-            return Color.m4762boximpl(ColorKt.Color(((Integer) obj).intValue()));
+            return Color.m5338boximpl(ColorKt.Color(((Integer) obj).intValue()));
         }
     });
     private static final NonNullValueClassSaver<TextAlign, Object> TextAlignSaver = NonNullValueClassSaver(new Function2() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda19
@@ -296,7 +296,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((TextAlign) obj2).m7432unboximpl());
+            valueOf = Integer.valueOf(((TextAlign) obj2).m8037unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda20
@@ -310,7 +310,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((TextDirection) obj2).m7449unboximpl());
+            valueOf = Integer.valueOf(((TextDirection) obj2).m8054unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda23
@@ -324,7 +324,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((Hyphens) obj2).m7324unboximpl());
+            valueOf = Integer.valueOf(((Hyphens) obj2).m7929unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda25
@@ -338,7 +338,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object save;
             SaverScope saverScope = (SaverScope) obj;
-            save = SaversKt.save(Integer.valueOf(((FontStyle) obj2).m7118unboximpl()));
+            save = SaversKt.save(Integer.valueOf(((FontStyle) obj2).m7723unboximpl()));
             return save;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda28
@@ -352,7 +352,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((FontSynthesis) obj2).m7131unboximpl());
+            valueOf = Integer.valueOf(((FontSynthesis) obj2).m7736unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda30
@@ -423,7 +423,7 @@ public final class SaversKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(LineHeightStyle.Alignment.m7392boximpl(r2.m7389getAlignmentPIaL0Z0()), SaversKt.getSaver(LineHeightStyle.Alignment.Companion), r1), SaversKt.save(LineHeightStyle.Trim.m7413boximpl(r2.m7391getTrimEVpEnUU()), SaversKt.getSaver(LineHeightStyle.Trim.Companion), r1), SaversKt.save(LineHeightStyle.Mode.m7403boximpl(((LineHeightStyle) obj2).m7390getModelzQqcRY()), SaversKt.getSaver(LineHeightStyle.Mode.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(LineHeightStyle.Alignment.m7997boximpl(r2.m7994getAlignmentPIaL0Z0()), SaversKt.getSaver(LineHeightStyle.Alignment.Companion), r1), SaversKt.save(LineHeightStyle.Trim.m8018boximpl(r2.m7996getTrimEVpEnUU()), SaversKt.getSaver(LineHeightStyle.Trim.Companion), r1), SaversKt.save(LineHeightStyle.Mode.m8008boximpl(((LineHeightStyle) obj2).m7995getModelzQqcRY()), SaversKt.getSaver(LineHeightStyle.Mode.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda45
@@ -437,7 +437,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Float.valueOf(((LineHeightStyle.Alignment) obj2).m7398unboximpl());
+            valueOf = Float.valueOf(((LineHeightStyle.Alignment) obj2).m8003unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda47
@@ -451,7 +451,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((LineHeightStyle.Trim) obj2).m7421unboximpl());
+            valueOf = Integer.valueOf(((LineHeightStyle.Trim) obj2).m8026unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda49
@@ -465,7 +465,7 @@ public final class SaversKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((LineHeightStyle.Mode) obj2).m7409unboximpl());
+            valueOf = Integer.valueOf(((LineHeightStyle.Mode) obj2).m8014unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.SaversKt$$ExternalSyntheticLambda52
@@ -476,7 +476,7 @@ public final class SaversKt {
     });
 
     /* compiled from: Savers.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -658,7 +658,7 @@ public final class SaversKt {
             case 7:
                 Object item8 = range.getItem();
                 Intrinsics.checkNotNull(item8, "null cannot be cast to non-null type androidx.compose.ui.text.StringAnnotation");
-                save = save(((StringAnnotation) item8).m6957unboximpl());
+                save = save(((StringAnnotation) item8).m7562unboximpl());
                 break;
             default:
                 throw new NoWhenBranchMatchedException();
@@ -749,7 +749,7 @@ public final class SaversKt {
                 Object obj12 = list.get(1);
                 String str2 = obj12 != null ? (String) obj12 : null;
                 Intrinsics.checkNotNull(str2);
-                return new AnnotatedString.Range(StringAnnotation.m6951boximpl(StringAnnotation.m6952constructorimpl(str2)), intValue, intValue2, str);
+                return new AnnotatedString.Range(StringAnnotation.m7556boximpl(StringAnnotation.m7557constructorimpl(str2)), intValue, intValue2, str);
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -810,17 +810,17 @@ public final class SaversKt {
         TextMotion textMotion = null;
         TextAlign restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        int m7432unboximpl = restore.m7432unboximpl();
+        int m8037unboximpl = restore.m8037unboximpl();
         Object obj3 = list.get(1);
         Saver<TextDirection, Object> saver2 = getSaver(TextDirection.Companion);
         TextDirection restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
         Intrinsics.checkNotNull(restore2);
-        int m7449unboximpl = restore2.m7449unboximpl();
+        int m8054unboximpl = restore2.m8054unboximpl();
         Object obj4 = list.get(2);
         Saver<TextUnit, Object> saver3 = getSaver(TextUnit.Companion);
         TextUnit restore3 = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj4 != null) ? saver3.restore(obj4) : null;
         Intrinsics.checkNotNull(restore3);
-        long m7758unboximpl = restore3.m7758unboximpl();
+        long m8363unboximpl = restore3.m8363unboximpl();
         Object obj5 = list.get(3);
         Saver<TextIndent, Object> saver4 = getSaver(TextIndent.Companion);
         TextIndent restore4 = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver4 instanceof NonNullValueClassSaver)) && obj5 != null) ? saver4.restore(obj5) : null;
@@ -834,18 +834,18 @@ public final class SaversKt {
         Saver<LineBreak, Object> saver7 = Savers_androidKt.getSaver(LineBreak.Companion);
         LineBreak restore7 = ((!Intrinsics.areEqual(obj8, (Object) false) || (saver7 instanceof NonNullValueClassSaver)) && obj8 != null) ? saver7.restore(obj8) : null;
         Intrinsics.checkNotNull(restore7);
-        int m7343unboximpl = restore7.m7343unboximpl();
+        int m7948unboximpl = restore7.m7948unboximpl();
         Object obj9 = list.get(7);
         Saver<Hyphens, Object> saver8 = getSaver(Hyphens.Companion);
         Hyphens restore8 = ((!Intrinsics.areEqual(obj9, (Object) false) || (saver8 instanceof NonNullValueClassSaver)) && obj9 != null) ? saver8.restore(obj9) : null;
         Intrinsics.checkNotNull(restore8);
-        int m7324unboximpl = restore8.m7324unboximpl();
+        int m7929unboximpl = restore8.m7929unboximpl();
         Object obj10 = list.get(8);
         Saver<TextMotion, Object> saver9 = Savers_androidKt.getSaver(TextMotion.Companion);
         if ((!Intrinsics.areEqual(obj10, (Object) false) || (saver9 instanceof NonNullValueClassSaver)) && obj10 != null) {
             textMotion = saver9.restore(obj10);
         }
-        return new ParagraphStyle(m7432unboximpl, m7449unboximpl, m7758unboximpl, restore4, restore5, restore6, m7343unboximpl, m7324unboximpl, textMotion, (DefaultConstructorMarker) null);
+        return new ParagraphStyle(m8037unboximpl, m8054unboximpl, m8363unboximpl, restore4, restore5, restore6, m7948unboximpl, m7929unboximpl, textMotion, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<SpanStyle, Object> getSpanStyleSaver() {
@@ -897,12 +897,12 @@ public final class SaversKt {
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj5, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj5 != null) ? saver.restore(obj5) : null;
         Intrinsics.checkNotNull(restore);
-        long m4782unboximpl = restore.m4782unboximpl();
+        long m5358unboximpl = restore.m5358unboximpl();
         Object obj6 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         TextUnit restore2 = ((!Intrinsics.areEqual(obj6, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj6 != null) ? saver2.restore(obj6) : null;
         Intrinsics.checkNotNull(restore2);
-        long m7758unboximpl = restore2.m7758unboximpl();
+        long m8363unboximpl = restore2.m8363unboximpl();
         Object obj7 = list.get(2);
         Saver<FontWeight, Object> saver3 = getSaver(FontWeight.Companion);
         FontWeight restore3 = ((!Intrinsics.areEqual(obj7, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj7 != null) ? saver3.restore(obj7) : null;
@@ -918,7 +918,7 @@ public final class SaversKt {
         Saver<TextUnit, Object> saver6 = getSaver(TextUnit.Companion);
         TextUnit restore6 = ((!Intrinsics.areEqual(obj11, (Object) false) || (saver6 instanceof NonNullValueClassSaver)) && obj11 != null) ? saver6.restore(obj11) : null;
         Intrinsics.checkNotNull(restore6);
-        long m7758unboximpl2 = restore6.m7758unboximpl();
+        long m8363unboximpl2 = restore6.m8363unboximpl();
         Object obj12 = list.get(8);
         Saver<BaselineShift, Object> saver7 = getSaver(BaselineShift.Companion);
         BaselineShift restore7 = ((!Intrinsics.areEqual(obj12, (Object) false) || (saver7 instanceof NonNullValueClassSaver)) && obj12 != null) ? saver7.restore(obj12) : null;
@@ -943,37 +943,37 @@ public final class SaversKt {
                 obj3 = list.get(11);
                 Saver<Color, Object> saver10 = getSaver(Color.Companion);
                 if (Intrinsics.areEqual(obj3, (Object) false)) {
-                    j = m4782unboximpl;
+                    j = m5358unboximpl;
                 } else {
-                    j = m4782unboximpl;
+                    j = m5358unboximpl;
                 }
                 if (obj3 != null) {
                     color = saver10.restore(obj3);
                     Intrinsics.checkNotNull(color);
-                    long m4782unboximpl2 = color.m4782unboximpl();
+                    long m5358unboximpl2 = color.m5358unboximpl();
                     obj4 = list.get(12);
                     Saver<TextDecoration, Object> saver11 = getSaver(TextDecoration.Companion);
                     if (Intrinsics.areEqual(obj4, (Object) false)) {
-                        j2 = m4782unboximpl2;
+                        j2 = m5358unboximpl2;
                     } else {
-                        j2 = m4782unboximpl2;
+                        j2 = m5358unboximpl2;
                     }
                     if (obj4 != null) {
                         textDecoration = saver11.restore(obj4);
                         Object obj14 = list.get(13);
                         Saver<Shadow, Object> saver12 = getSaver(Shadow.Companion);
-                        return new SpanStyle(j, m7758unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m7758unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver12 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver12.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                        return new SpanStyle(j, m8363unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8363unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14, (Object) false) || (saver12 instanceof NonNullValueClassSaver)) && obj14 != null) ? saver12.restore(obj14) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                     }
                     textDecoration = null;
                     Object obj142 = list.get(13);
                     Saver<Shadow, Object> saver122 = getSaver(Shadow.Companion);
                     if (Intrinsics.areEqual(obj142, (Object) false)) {
                     }
-                    return new SpanStyle(j, m7758unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m7758unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver122 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver122.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                    return new SpanStyle(j, m8363unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8363unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142, (Object) false) || (saver122 instanceof NonNullValueClassSaver)) && obj142 != null) ? saver122.restore(obj142) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
                 }
                 color = null;
                 Intrinsics.checkNotNull(color);
-                long m4782unboximpl22 = color.m4782unboximpl();
+                long m5358unboximpl22 = color.m5358unboximpl();
                 obj4 = list.get(12);
                 Saver<TextDecoration, Object> saver112 = getSaver(TextDecoration.Companion);
                 if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -985,7 +985,7 @@ public final class SaversKt {
                 Saver<Shadow, Object> saver1222 = getSaver(Shadow.Companion);
                 if (Intrinsics.areEqual(obj1422, (Object) false)) {
                 }
-                return new SpanStyle(j, m7758unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m7758unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1222 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1222.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+                return new SpanStyle(j, m8363unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8363unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj1422, (Object) false) || (saver1222 instanceof NonNullValueClassSaver)) && obj1422 != null) ? saver1222.restore(obj1422) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
             }
             localeList = null;
             obj3 = list.get(11);
@@ -996,7 +996,7 @@ public final class SaversKt {
             }
             color = null;
             Intrinsics.checkNotNull(color);
-            long m4782unboximpl222 = color.m4782unboximpl();
+            long m5358unboximpl222 = color.m5358unboximpl();
             obj4 = list.get(12);
             Saver<TextDecoration, Object> saver1122 = getSaver(TextDecoration.Companion);
             if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -1008,7 +1008,7 @@ public final class SaversKt {
             Saver<Shadow, Object> saver12222 = getSaver(Shadow.Companion);
             if (Intrinsics.areEqual(obj14222, (Object) false)) {
             }
-            return new SpanStyle(j, m7758unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m7758unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver12222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver12222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+            return new SpanStyle(j, m8363unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8363unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj14222, (Object) false) || (saver12222 instanceof NonNullValueClassSaver)) && obj14222 != null) ? saver12222.restore(obj14222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
         }
         textGeometricTransform = null;
         obj2 = list.get(10);
@@ -1026,7 +1026,7 @@ public final class SaversKt {
         }
         color = null;
         Intrinsics.checkNotNull(color);
-        long m4782unboximpl2222 = color.m4782unboximpl();
+        long m5358unboximpl2222 = color.m5358unboximpl();
         obj4 = list.get(12);
         Saver<TextDecoration, Object> saver11222 = getSaver(TextDecoration.Companion);
         if (Intrinsics.areEqual(obj4, (Object) false)) {
@@ -1038,7 +1038,7 @@ public final class SaversKt {
         Saver<Shadow, Object> saver122222 = getSaver(Shadow.Companion);
         if (Intrinsics.areEqual(obj142222, (Object) false)) {
         }
-        return new SpanStyle(j, m7758unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m7758unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver122222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver122222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
+        return new SpanStyle(j, m8363unboximpl, fontWeight, restore4, restore5, (FontFamily) null, str, m8363unboximpl2, restore7, textGeometricTransform, localeList, j2, textDecoration, ((Intrinsics.areEqual(obj142222, (Object) false) || (saver122222 instanceof NonNullValueClassSaver)) && obj142222 != null) ? saver122222.restore(obj142222) : null, (PlatformSpanStyle) null, (DrawStyle) null, 49184, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<TextLinkStyles, Object> getTextLinkStylesSaver() {
@@ -1105,14 +1105,14 @@ public final class SaversKt {
         TextUnit textUnit = null;
         TextUnit restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m7758unboximpl = restore.m7758unboximpl();
+        long m8363unboximpl = restore.m8363unboximpl();
         Object obj3 = list.get(1);
         Saver<TextUnit, Object> saver2 = getSaver(TextUnit.Companion);
         if ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) {
             textUnit = saver2.restore(obj3);
         }
         Intrinsics.checkNotNull(textUnit);
-        return new TextIndent(m7758unboximpl, textUnit.m7758unboximpl(), null);
+        return new TextIndent(m8363unboximpl, textUnit.m8363unboximpl(), null);
     }
 
     public static final Saver<FontWeight, Object> getSaver(FontWeight.Companion companion) {
@@ -1132,7 +1132,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final BaselineShift BaselineShiftSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
-        return BaselineShift.m7295boximpl(BaselineShift.m7296constructorimpl(((Float) obj).floatValue()));
+        return BaselineShift.m7900boximpl(BaselineShift.m7901constructorimpl(((Float) obj).floatValue()));
     }
 
     public static final Saver<TextRange, Object> getSaver(TextRange.Companion companion) {
@@ -1150,7 +1150,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Integer num2 = obj3 != null ? (Integer) obj3 : null;
         Intrinsics.checkNotNull(num2);
-        return TextRange.m6991boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
+        return TextRange.m7596boximpl(TextRangeKt.TextRange(intValue, num2.intValue()));
     }
 
     public static final Saver<Shadow, Object> getSaver(Shadow.Companion companion) {
@@ -1165,16 +1165,16 @@ public final class SaversKt {
         Saver<Color, Object> saver = getSaver(Color.Companion);
         Color restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        long m4782unboximpl = restore.m4782unboximpl();
+        long m5358unboximpl = restore.m5358unboximpl();
         Object obj3 = list.get(1);
         Saver<Offset, Object> saver2 = getSaver(Offset.Companion);
         Offset restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
         Intrinsics.checkNotNull(restore2);
-        long m4537unboximpl = restore2.m4537unboximpl();
+        long m5113unboximpl = restore2.m5113unboximpl();
         Object obj4 = list.get(2);
         Float f = obj4 != null ? (Float) obj4 : null;
         Intrinsics.checkNotNull(f);
-        return new Shadow(m4782unboximpl, m4537unboximpl, f.floatValue(), null);
+        return new Shadow(m5358unboximpl, m5113unboximpl, f.floatValue(), null);
     }
 
     public static final Saver<Color, Object> getSaver(Color.Companion companion) {
@@ -1188,7 +1188,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextAlign TextAlignSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return TextAlign.m7426boximpl(TextAlign.m7427constructorimpl(((Integer) obj).intValue()));
+        return TextAlign.m8031boximpl(TextAlign.m8032constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<TextDirection, Object> getSaver(TextDirection.Companion companion) {
@@ -1198,7 +1198,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextDirection TextDirectionSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return TextDirection.m7443boximpl(TextDirection.m7444constructorimpl(((Integer) obj).intValue()));
+        return TextDirection.m8048boximpl(TextDirection.m8049constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<Hyphens, Object> getSaver(Hyphens.Companion companion) {
@@ -1208,7 +1208,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Hyphens HyphensSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return Hyphens.m7318boximpl(Hyphens.m7319constructorimpl(((Integer) obj).intValue()));
+        return Hyphens.m7923boximpl(Hyphens.m7924constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<FontStyle, Object> getSaver(FontStyle.Companion companion) {
@@ -1222,7 +1222,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final FontStyle FontStyleSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return FontStyle.m7112boximpl(FontStyle.m7113constructorimpl(((Integer) obj).intValue()));
+        return FontStyle.m7717boximpl(FontStyle.m7718constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<FontSynthesis, Object> getSaver(FontSynthesis.Companion companion) {
@@ -1236,7 +1236,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final FontSynthesis FontSynthesisSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return FontSynthesis.m7123boximpl(FontSynthesis.m7124constructorimpl(((Integer) obj).intValue()));
+        return FontSynthesis.m7728boximpl(FontSynthesis.m7729constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<TextUnit, Object> getSaver(TextUnit.Companion companion) {
@@ -1245,16 +1245,16 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object TextUnitSaver$lambda$0(SaverScope saverScope, TextUnit textUnit) {
-        if (textUnit == null ? false : TextUnit.m7746equalsimpl0(textUnit.m7758unboximpl(), TextUnit.Companion.m7760getUnspecifiedXSAIIZE())) {
+        if (textUnit == null ? false : TextUnit.m8351equalsimpl0(textUnit.m8363unboximpl(), TextUnit.Companion.m8365getUnspecifiedXSAIIZE())) {
             return (Serializable) false;
         }
-        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m7749getValueimpl(textUnit.m7758unboximpl()))), save(TextUnitType.m7774boximpl(TextUnit.m7748getTypeUIouoOA(textUnit.m7758unboximpl())), getSaver(TextUnitType.Companion), saverScope));
+        return CollectionsKt.arrayListOf(save(Float.valueOf(TextUnit.m8354getValueimpl(textUnit.m8363unboximpl()))), save(TextUnitType.m8379boximpl(TextUnit.m8353getTypeUIouoOA(textUnit.m8363unboximpl())), getSaver(TextUnitType.Companion), saverScope));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextUnit TextUnitSaver$lambda$1(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return TextUnit.m7739boximpl(TextUnit.Companion.m7760getUnspecifiedXSAIIZE());
+            return TextUnit.m8344boximpl(TextUnit.Companion.m8365getUnspecifiedXSAIIZE());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
         List list = (List) obj;
@@ -1269,7 +1269,7 @@ public final class SaversKt {
             textUnitType = saver.restore(obj3);
         }
         Intrinsics.checkNotNull(textUnitType);
-        return TextUnit.m7739boximpl(TextUnitKt.m7761TextUnitanM5pPY(floatValue, textUnitType.m7780unboximpl()));
+        return TextUnit.m8344boximpl(TextUnitKt.m8366TextUnitanM5pPY(floatValue, textUnitType.m8385unboximpl()));
     }
 
     public static final Saver<TextUnitType, Object> getSaver(TextUnitType.Companion companion) {
@@ -1282,16 +1282,16 @@ public final class SaversKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object TextUnitTypeSaver$lambda$0(SaverScope saverScope, TextUnitType textUnitType) {
-        long m7780unboximpl = textUnitType.m7780unboximpl();
-        if (TextUnitType.m7777equalsimpl0(m7780unboximpl, TextUnitType.Companion.m7781getEmUIouoOA())) {
+        long m8385unboximpl = textUnitType.m8385unboximpl();
+        if (TextUnitType.m8382equalsimpl0(m8385unboximpl, TextUnitType.Companion.m8386getEmUIouoOA())) {
             return 0;
         }
-        return TextUnitType.m7777equalsimpl0(m7780unboximpl, TextUnitType.Companion.m7782getSpUIouoOA()) ? 1 : false;
+        return TextUnitType.m8382equalsimpl0(m8385unboximpl, TextUnitType.Companion.m8387getSpUIouoOA()) ? 1 : false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextUnitType TextUnitTypeSaver$lambda$1(Object obj) {
-        return Intrinsics.areEqual(obj, (Object) 0) ? TextUnitType.m7774boximpl(TextUnitType.Companion.m7781getEmUIouoOA()) : Intrinsics.areEqual(obj, (Object) 1) ? TextUnitType.m7774boximpl(TextUnitType.Companion.m7782getSpUIouoOA()) : TextUnitType.m7774boximpl(TextUnitType.Companion.m7783getUnspecifiedUIouoOA());
+        return Intrinsics.areEqual(obj, (Object) 0) ? TextUnitType.m8379boximpl(TextUnitType.Companion.m8386getEmUIouoOA()) : Intrinsics.areEqual(obj, (Object) 1) ? TextUnitType.m8379boximpl(TextUnitType.Companion.m8387getSpUIouoOA()) : TextUnitType.m8379boximpl(TextUnitType.Companion.m8388getUnspecifiedUIouoOA());
     }
 
     public static final Saver<Offset, Object> getSaver(Offset.Companion companion) {
@@ -1301,13 +1301,13 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Object OffsetSaver$lambda$0(SaverScope saverScope, Offset offset) {
-        return offset == null ? false : Offset.m4524equalsimpl0(offset.m4537unboximpl(), Offset.Companion.m4542getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m4537unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m4537unboximpl() & 4294967295L)))));
+        return offset == null ? false : Offset.m5100equalsimpl0(offset.m5113unboximpl(), Offset.Companion.m5118getUnspecifiedF1C5BW0()) ? (Serializable) false : CollectionsKt.arrayListOf(save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5113unboximpl() >> 32)))), save(Float.valueOf(Float.intBitsToFloat((int) (offset.m5113unboximpl() & 4294967295L)))));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Offset OffsetSaver$lambda$1(Object obj) {
         if (Intrinsics.areEqual(obj, (Object) false)) {
-            return Offset.m4516boximpl(Offset.Companion.m4542getUnspecifiedF1C5BW0());
+            return Offset.m5092boximpl(Offset.Companion.m5118getUnspecifiedF1C5BW0());
         }
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Any?>");
         List list = (List) obj;
@@ -1318,7 +1318,7 @@ public final class SaversKt {
         Object obj3 = list.get(1);
         Float f2 = obj3 != null ? (Float) obj3 : null;
         Intrinsics.checkNotNull(f2);
-        return Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
+        return Offset.m5092boximpl(Offset.m5095constructorimpl((Float.floatToRawIntBits(floatValue) << 32) | (Float.floatToRawIntBits(f2.floatValue()) & 4294967295L)));
     }
 
     public static final Saver<LocaleList, Object> getSaver(LocaleList.Companion companion) {
@@ -1378,17 +1378,17 @@ public final class SaversKt {
         Saver<LineHeightStyle.Alignment, Object> saver = getSaver(LineHeightStyle.Alignment.Companion);
         LineHeightStyle.Alignment restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        float m7398unboximpl = restore.m7398unboximpl();
+        float m8003unboximpl = restore.m8003unboximpl();
         Object obj3 = list.get(1);
         Saver<LineHeightStyle.Trim, Object> saver2 = getSaver(LineHeightStyle.Trim.Companion);
         LineHeightStyle.Trim restore2 = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver2 instanceof NonNullValueClassSaver)) && obj3 != null) ? saver2.restore(obj3) : null;
         Intrinsics.checkNotNull(restore2);
-        int m7421unboximpl = restore2.m7421unboximpl();
+        int m8026unboximpl = restore2.m8026unboximpl();
         Object obj4 = list.get(2);
         Saver<LineHeightStyle.Mode, Object> saver3 = getSaver(LineHeightStyle.Mode.Companion);
         LineHeightStyle.Mode restore3 = ((!Intrinsics.areEqual(obj4, (Object) false) || (saver3 instanceof NonNullValueClassSaver)) && obj4 != null) ? saver3.restore(obj4) : null;
         Intrinsics.checkNotNull(restore3);
-        return new LineHeightStyle(m7398unboximpl, m7421unboximpl, restore3.m7409unboximpl(), null);
+        return new LineHeightStyle(m8003unboximpl, m8026unboximpl, restore3.m8014unboximpl(), null);
     }
 
     private static final Saver<LineHeightStyle.Alignment, Object> getSaver(LineHeightStyle.Alignment.Companion companion) {
@@ -1398,7 +1398,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final LineHeightStyle.Alignment LineHeightStyleAlignmentSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");
-        return LineHeightStyle.Alignment.m7392boximpl(LineHeightStyle.Alignment.m7393constructorimpl(((Float) obj).floatValue()));
+        return LineHeightStyle.Alignment.m7997boximpl(LineHeightStyle.Alignment.m7998constructorimpl(((Float) obj).floatValue()));
     }
 
     private static final Saver<LineHeightStyle.Trim, Object> getSaver(LineHeightStyle.Trim.Companion companion) {
@@ -1408,7 +1408,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final LineHeightStyle.Trim LineHeightStyleTrimSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return LineHeightStyle.Trim.m7413boximpl(LineHeightStyle.Trim.m7414constructorimpl(((Integer) obj).intValue()));
+        return LineHeightStyle.Trim.m8018boximpl(LineHeightStyle.Trim.m8019constructorimpl(((Integer) obj).intValue()));
     }
 
     private static final Saver<LineHeightStyle.Mode, Object> getSaver(LineHeightStyle.Mode.Companion companion) {
@@ -1418,7 +1418,7 @@ public final class SaversKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final LineHeightStyle.Mode LineHeightStyleModeSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return LineHeightStyle.Mode.m7403boximpl(LineHeightStyle.Mode.m7404constructorimpl(((Integer) obj).intValue()));
+        return LineHeightStyle.Mode.m8008boximpl(LineHeightStyle.Mode.m8009constructorimpl(((Integer) obj).intValue()));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

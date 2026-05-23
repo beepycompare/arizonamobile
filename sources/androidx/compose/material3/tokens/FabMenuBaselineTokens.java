@@ -8,36 +8,36 @@ import kotlin.Metadata;
 public final class FabMenuBaselineTokens {
     public static final int $stable = 0;
     public static final FabMenuBaselineTokens INSTANCE = new FabMenuBaselineTokens();
-    private static final float CloseButtonBetweenSpace = Dp.m7555constructorimpl(8.0f);
-    private static final float CloseButtonContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float CloseButtonContainerHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float CloseButtonBetweenSpace = Dp.m8160constructorimpl(8.0f);
+    private static final float CloseButtonContainerElevation = ElevationTokens.INSTANCE.m3807getLevel3D9Ej5fM();
+    private static final float CloseButtonContainerHeight = Dp.m8160constructorimpl(56.0f);
     private static final ShapeKeyTokens CloseButtonContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float CloseButtonContainerWidth = Dp.m7555constructorimpl(56.0f);
-    private static final float CloseButtonIconSize = Dp.m7555constructorimpl(20.0f);
-    private static final float ListItemBetweenSpace = Dp.m7555constructorimpl(4.0f);
-    private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
-    private static final float ListItemContainerHeight = Dp.m7555constructorimpl(56.0f);
+    private static final float CloseButtonContainerWidth = Dp.m8160constructorimpl(56.0f);
+    private static final float CloseButtonIconSize = Dp.m8160constructorimpl(20.0f);
+    private static final float ListItemBetweenSpace = Dp.m8160constructorimpl(4.0f);
+    private static final float ListItemContainerElevation = ElevationTokens.INSTANCE.m3807getLevel3D9Ej5fM();
+    private static final float ListItemContainerHeight = Dp.m8160constructorimpl(56.0f);
     private static final ShapeKeyTokens ListItemContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ListItemIconLabelSpace = Dp.m7555constructorimpl(8.0f);
-    private static final float ListItemIconSize = Dp.m7555constructorimpl(24.0f);
-    private static final float ListItemLeadingSpace = Dp.m7555constructorimpl(24.0f);
-    private static final float ListItemTrailingSpace = Dp.m7555constructorimpl(24.0f);
+    private static final float ListItemIconLabelSpace = Dp.m8160constructorimpl(8.0f);
+    private static final float ListItemIconSize = Dp.m8160constructorimpl(24.0f);
+    private static final float ListItemLeadingSpace = Dp.m8160constructorimpl(24.0f);
+    private static final float ListItemTrailingSpace = Dp.m8160constructorimpl(24.0f);
 
     private FabMenuBaselineTokens() {
     }
 
     /* renamed from: getCloseButtonBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3399getCloseButtonBetweenSpaceD9Ej5fM() {
+    public final float m3844getCloseButtonBetweenSpaceD9Ej5fM() {
         return CloseButtonBetweenSpace;
     }
 
     /* renamed from: getCloseButtonContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3400getCloseButtonContainerElevationD9Ej5fM() {
+    public final float m3845getCloseButtonContainerElevationD9Ej5fM() {
         return CloseButtonContainerElevation;
     }
 
     /* renamed from: getCloseButtonContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3401getCloseButtonContainerHeightD9Ej5fM() {
+    public final float m3846getCloseButtonContainerHeightD9Ej5fM() {
         return CloseButtonContainerHeight;
     }
 
@@ -46,27 +46,27 @@ public final class FabMenuBaselineTokens {
     }
 
     /* renamed from: getCloseButtonContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3402getCloseButtonContainerWidthD9Ej5fM() {
+    public final float m3847getCloseButtonContainerWidthD9Ej5fM() {
         return CloseButtonContainerWidth;
     }
 
     /* renamed from: getCloseButtonIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3403getCloseButtonIconSizeD9Ej5fM() {
+    public final float m3848getCloseButtonIconSizeD9Ej5fM() {
         return CloseButtonIconSize;
     }
 
     /* renamed from: getListItemBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3404getListItemBetweenSpaceD9Ej5fM() {
+    public final float m3849getListItemBetweenSpaceD9Ej5fM() {
         return ListItemBetweenSpace;
     }
 
     /* renamed from: getListItemContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3405getListItemContainerElevationD9Ej5fM() {
+    public final float m3850getListItemContainerElevationD9Ej5fM() {
         return ListItemContainerElevation;
     }
 
     /* renamed from: getListItemContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3406getListItemContainerHeightD9Ej5fM() {
+    public final float m3851getListItemContainerHeightD9Ej5fM() {
         return ListItemContainerHeight;
     }
 
@@ -75,22 +75,22 @@ public final class FabMenuBaselineTokens {
     }
 
     /* renamed from: getListItemIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3407getListItemIconLabelSpaceD9Ej5fM() {
+    public final float m3852getListItemIconLabelSpaceD9Ej5fM() {
         return ListItemIconLabelSpace;
     }
 
     /* renamed from: getListItemIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3408getListItemIconSizeD9Ej5fM() {
+    public final float m3853getListItemIconSizeD9Ej5fM() {
         return ListItemIconSize;
     }
 
     /* renamed from: getListItemLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3409getListItemLeadingSpaceD9Ej5fM() {
+    public final float m3854getListItemLeadingSpaceD9Ej5fM() {
         return ListItemLeadingSpace;
     }
 
     /* renamed from: getListItemTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3410getListItemTrailingSpaceD9Ej5fM() {
+    public final float m3855getListItemTrailingSpaceD9Ej5fM() {
         return ListItemTrailingSpace;
     }
 }

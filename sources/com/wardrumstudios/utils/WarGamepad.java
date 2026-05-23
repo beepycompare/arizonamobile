@@ -23,7 +23,7 @@ import com.bda.controller.StateEvent;
 import com.google.common.base.Ascii;
 import java.io.PrintStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarGamepad extends WarBilling implements ControllerListener {
     private static final int COMMAND_DOWN = 2;
     private static final int COMMAND_FIRE = 16;
@@ -76,7 +76,7 @@ public class WarGamepad extends WarBilling implements ControllerListener {
     protected boolean IsAndroidTV = false;
     Controller mogaController = null;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class GamePad {
         public boolean GamepadTouchReversed;
         int deviceId;

@@ -6,18 +6,20 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: Deprecated.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$flatMap$1", f = "Deprecated.kt", i = {0, 1, 2}, l = {351, 352, 352}, m = "invokeSuspend", n = {"$this$produce", "$this$produce", "$this$produce"}, s = {"L$0", "L$0", "L$0"})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$flatMap$1", f = "Deprecated.kt", i = {0, 1, 1, 2, 2}, l = {351, 352, 352}, m = "invokeSuspend", n = {"$this$produce", "$this$produce", "e", "$this$produce", "e"}, s = {"L$0", "L$0", "L$2", "L$0", "L$2"}, v = 1)
 /* loaded from: classes5.dex */
 final class ChannelsKt__DeprecatedKt$flatMap$1<R> extends SuspendLambda implements Function2<ProducerScope<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ReceiveChannel<E> $this_flatMap;
     final /* synthetic */ Function2<E, Continuation<? super ReceiveChannel<? extends R>>, Object> $transform;
     private /* synthetic */ Object L$0;
     Object L$1;
+    Object L$2;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -45,62 +47,67 @@ final class ChannelsKt__DeprecatedKt$flatMap$1<R> extends SuspendLambda implemen
         return ((ChannelsKt__DeprecatedKt$flatMap$1) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0058, code lost:
-        if (r9 == r0) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0054, code lost:
+        if (r11 == r1) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0073, code lost:
-        if (r9 == r0) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0093, code lost:
+        if (kotlinx.coroutines.channels.ChannelsKt.toChannel((kotlinx.coroutines.channels.ReceiveChannel) r11, r0, r10) != r1) goto L7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0088, code lost:
-        if (kotlinx.coroutines.channels.ChannelsKt.toChannel((kotlinx.coroutines.channels.ReceiveChannel) r9, r5, r8) == r0) goto L18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x008a, code lost:
-        return r0;
-     */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x0088 -> B:13:0x004b). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0093 -> B:13:0x0044). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         ChannelIterator it;
-        ProducerScope producerScope;
+        Object obj2;
+        ProducerScope producerScope = (ProducerScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             it = this.$this_flatMap.iterator();
-            producerScope = (ProducerScope) this.L$0;
         } else if (i == 1) {
             it = (ChannelIterator) this.L$1;
-            producerScope = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 Object next = it.next();
                 Function2<E, Continuation<? super ReceiveChannel<? extends R>>, Object> function2 = this.$transform;
                 this.L$0 = producerScope;
                 this.L$1 = it;
+                this.L$2 = SpillingKt.nullOutSpilledVariable(next);
                 this.label = 2;
-                obj = function2.invoke(next, this);
-            } else {
-                return Unit.INSTANCE;
+                Object invoke = function2.invoke(next, this);
+                if (invoke != coroutine_suspended) {
+                    obj2 = next;
+                    obj = invoke;
+                    this.L$0 = producerScope;
+                    this.L$1 = it;
+                    this.L$2 = SpillingKt.nullOutSpilledVariable(obj2);
+                    this.label = 3;
+                }
+                return coroutine_suspended;
             }
+            return Unit.INSTANCE;
         } else if (i == 2) {
-            it = (ChannelIterator) this.L$1;
-            producerScope = (ProducerScope) this.L$0;
+            Object obj3 = this.L$2;
+            ChannelIterator channelIterator = (ChannelIterator) this.L$1;
             ResultKt.throwOnFailure(obj);
+            obj2 = obj3;
+            it = channelIterator;
             this.L$0 = producerScope;
             this.L$1 = it;
+            this.L$2 = SpillingKt.nullOutSpilledVariable(obj2);
             this.label = 3;
         } else if (i != 3) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             it = (ChannelIterator) this.L$1;
-            producerScope = (ProducerScope) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         this.L$0 = producerScope;
         this.L$1 = it;
+        this.L$2 = null;
         this.label = 1;
         obj = it.hasNext(this);
     }

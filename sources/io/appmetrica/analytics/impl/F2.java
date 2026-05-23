@@ -1,30 +1,23 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import android.content.Intent;
 /* loaded from: classes5.dex */
-public abstract class F2 {
+public final class F2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ff f582a;
-    public final Ea b;
+    public final /* synthetic */ Context f536a;
+    public final /* synthetic */ Intent b;
+    public final /* synthetic */ G2 c;
 
-    public F2(Ff ff, Ea ea) {
-        this.f582a = ff;
-        this.b = ea;
+    public F2(G2 g2, Context context, Intent intent) {
+        this.c = g2;
+        this.f536a = context;
+        this.b = intent;
     }
 
-    public final boolean a(P5 p5, E2 e2) {
-        for (Object obj : ((V8) this.f582a.a(p5.d)).f829a) {
-            if (e2.a(obj, p5)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final Ff b() {
-        return this.f582a;
-    }
-
-    public final Ea a() {
-        return this.b;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.c.f555a.consume(this.f536a, this.b);
     }
 }

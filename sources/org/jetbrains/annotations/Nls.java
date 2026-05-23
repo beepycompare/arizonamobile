@@ -8,10 +8,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE, ElementType.TYPE, ElementType.PACKAGE})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Nls {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public enum Capitalization {
         NotSpecified,
         Title,

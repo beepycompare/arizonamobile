@@ -3,7 +3,7 @@ package com.miami.game.core.news.domain;
 import com.miami.game.core.news.data.NewsRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NewsInteractor_Factory implements Factory<NewsInteractor> {
     private final Provider<NewsRepository> repositoryProvider;
 

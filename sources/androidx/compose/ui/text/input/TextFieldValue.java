@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextFieldValue.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0007\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fB%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\bB)\b\u0016\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\u000bJ-\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0016\u0010\u0017J+\u0010\u0015\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0016\u0010\u0018J\u0013\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u001c\u001a\u00020\u001dH\u0016J\b\u0010\u001e\u001a\u00020\nH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\t\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u0006 "}, d2 = {"Landroidx/compose/ui/text/input/TextFieldValue;", "", "annotatedString", "Landroidx/compose/ui/text/AnnotatedString;", "selection", "Landroidx/compose/ui/text/TextRange;", "composition", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;JLandroidx/compose/ui/text/TextRange;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "text", "", "(Ljava/lang/String;JLandroidx/compose/ui/text/TextRange;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getAnnotatedString", "()Landroidx/compose/ui/text/AnnotatedString;", "getText", "()Ljava/lang/String;", "getSelection-d9O1mEE", "()J", "J", "getComposition-MzsxiRA", "()Landroidx/compose/ui/text/TextRange;", "copy", "copy-3r_uNRQ", "(Landroidx/compose/ui/text/AnnotatedString;JLandroidx/compose/ui/text/TextRange;)Landroidx/compose/ui/text/input/TextFieldValue;", "(Ljava/lang/String;JLandroidx/compose/ui/text/TextRange;)Landroidx/compose/ui/text/input/TextFieldValue;", "equals", "", "other", "hashCode", "", "toString", "Companion", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0007\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fB%\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\bB)\b\u0016\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\u000bJ-\u0010\u0015\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0016\u0010\u0017J+\u0010\u0015\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0016\u0010\u0018J\u0013\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010\u001c\u001a\u00020\u001dH\u0016J\b\u0010\u001e\u001a\u00020\nH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\t\u001a\u00020\n8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u0006 "}, d2 = {"Landroidx/compose/ui/text/input/TextFieldValue;", "", "annotatedString", "Landroidx/compose/ui/text/AnnotatedString;", "selection", "Landroidx/compose/ui/text/TextRange;", "composition", "<init>", "(Landroidx/compose/ui/text/AnnotatedString;JLandroidx/compose/ui/text/TextRange;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "text", "", "(Ljava/lang/String;JLandroidx/compose/ui/text/TextRange;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getAnnotatedString", "()Landroidx/compose/ui/text/AnnotatedString;", "getText", "()Ljava/lang/String;", "getSelection-d9O1mEE", "()J", "J", "getComposition-MzsxiRA", "()Landroidx/compose/ui/text/TextRange;", "copy", "copy-3r_uNRQ", "(Landroidx/compose/ui/text/AnnotatedString;JLandroidx/compose/ui/text/TextRange;)Landroidx/compose/ui/text/input/TextFieldValue;", "(Ljava/lang/String;JLandroidx/compose/ui/text/TextRange;)Landroidx/compose/ui/text/input/TextFieldValue;", "equals", "", "other", "hashCode", "", "toString", "Companion", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class TextFieldValue {
     public static final int $stable = 0;
@@ -25,7 +25,7 @@ public final class TextFieldValue {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(r2.annotatedString, SaversKt.getAnnotatedStringSaver(), r1), SaversKt.save(TextRange.m6991boximpl(((TextFieldValue) obj2).selection), SaversKt.getSaver(TextRange.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(r2.annotatedString, SaversKt.getAnnotatedStringSaver(), r1), SaversKt.save(TextRange.m7596boximpl(((TextFieldValue) obj2).selection), SaversKt.getSaver(TextRange.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.input.TextFieldValue$$ExternalSyntheticLambda1
@@ -48,8 +48,8 @@ public final class TextFieldValue {
 
     private TextFieldValue(AnnotatedString annotatedString, long j, TextRange textRange) {
         this.annotatedString = annotatedString;
-        this.selection = TextRangeKt.m7009coerceIn8ffj60Q(j, 0, getText().length());
-        this.composition = textRange != null ? TextRange.m6991boximpl(TextRangeKt.m7009coerceIn8ffj60Q(textRange.m7007unboximpl(), 0, getText().length())) : null;
+        this.selection = TextRangeKt.m7614coerceIn8ffj60Q(j, 0, getText().length());
+        this.composition = textRange != null ? TextRange.m7596boximpl(TextRangeKt.m7614coerceIn8ffj60Q(textRange.m7612unboximpl(), 0, getText().length())) : null;
     }
 
     public final AnnotatedString getAnnotatedString() {
@@ -57,11 +57,11 @@ public final class TextFieldValue {
     }
 
     public /* synthetic */ TextFieldValue(AnnotatedString annotatedString, long j, TextRange textRange, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, (i & 2) != 0 ? TextRange.Companion.m7008getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
+        this(annotatedString, (i & 2) != 0 ? TextRange.Companion.m7613getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ TextFieldValue(String str, long j, TextRange textRange, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? TextRange.Companion.m7008getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
+        this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? TextRange.Companion.m7613getZerod9O1mEE() : j, (i & 4) != 0 ? null : textRange, (DefaultConstructorMarker) null);
     }
 
     private TextFieldValue(String str, long j, TextRange textRange) {
@@ -73,17 +73,17 @@ public final class TextFieldValue {
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m7253getSelectiond9O1mEE() {
+    public final long m7858getSelectiond9O1mEE() {
         return this.selection;
     }
 
     /* renamed from: getComposition-MzsxiRA  reason: not valid java name */
-    public final TextRange m7252getCompositionMzsxiRA() {
+    public final TextRange m7857getCompositionMzsxiRA() {
         return this.composition;
     }
 
     /* renamed from: copy-3r_uNRQ$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldValue m7248copy3r_uNRQ$default(TextFieldValue textFieldValue, AnnotatedString annotatedString, long j, TextRange textRange, int i, Object obj) {
+    public static /* synthetic */ TextFieldValue m7853copy3r_uNRQ$default(TextFieldValue textFieldValue, AnnotatedString annotatedString, long j, TextRange textRange, int i, Object obj) {
         if ((i & 1) != 0) {
             annotatedString = textFieldValue.annotatedString;
         }
@@ -93,27 +93,27 @@ public final class TextFieldValue {
         if ((i & 4) != 0) {
             textRange = textFieldValue.composition;
         }
-        return textFieldValue.m7250copy3r_uNRQ(annotatedString, j, textRange);
+        return textFieldValue.m7855copy3r_uNRQ(annotatedString, j, textRange);
     }
 
     /* renamed from: copy-3r_uNRQ  reason: not valid java name */
-    public final TextFieldValue m7250copy3r_uNRQ(AnnotatedString annotatedString, long j, TextRange textRange) {
+    public final TextFieldValue m7855copy3r_uNRQ(AnnotatedString annotatedString, long j, TextRange textRange) {
         return new TextFieldValue(annotatedString, j, textRange, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-3r_uNRQ$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldValue m7249copy3r_uNRQ$default(TextFieldValue textFieldValue, String str, long j, TextRange textRange, int i, Object obj) {
+    public static /* synthetic */ TextFieldValue m7854copy3r_uNRQ$default(TextFieldValue textFieldValue, String str, long j, TextRange textRange, int i, Object obj) {
         if ((i & 2) != 0) {
             j = textFieldValue.selection;
         }
         if ((i & 4) != 0) {
             textRange = textFieldValue.composition;
         }
-        return textFieldValue.m7251copy3r_uNRQ(str, j, textRange);
+        return textFieldValue.m7856copy3r_uNRQ(str, j, textRange);
     }
 
     /* renamed from: copy-3r_uNRQ  reason: not valid java name */
-    public final TextFieldValue m7251copy3r_uNRQ(String str, long j, TextRange textRange) {
+    public final TextFieldValue m7856copy3r_uNRQ(String str, long j, TextRange textRange) {
         return new TextFieldValue(new AnnotatedString(str, null, 2, null), j, textRange, (DefaultConstructorMarker) null);
     }
 
@@ -123,23 +123,23 @@ public final class TextFieldValue {
         }
         if (obj instanceof TextFieldValue) {
             TextFieldValue textFieldValue = (TextFieldValue) obj;
-            return TextRange.m6996equalsimpl0(this.selection, textFieldValue.selection) && Intrinsics.areEqual(this.composition, textFieldValue.composition) && Intrinsics.areEqual(this.annotatedString, textFieldValue.annotatedString);
+            return TextRange.m7601equalsimpl0(this.selection, textFieldValue.selection) && Intrinsics.areEqual(this.composition, textFieldValue.composition) && Intrinsics.areEqual(this.annotatedString, textFieldValue.annotatedString);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.annotatedString.hashCode() * 31) + TextRange.m7004hashCodeimpl(this.selection)) * 31;
+        int hashCode = ((this.annotatedString.hashCode() * 31) + TextRange.m7609hashCodeimpl(this.selection)) * 31;
         TextRange textRange = this.composition;
-        return hashCode + (textRange != null ? TextRange.m7004hashCodeimpl(textRange.m7007unboximpl()) : 0);
+        return hashCode + (textRange != null ? TextRange.m7609hashCodeimpl(textRange.m7612unboximpl()) : 0);
     }
 
     public String toString() {
-        return "TextFieldValue(text='" + ((Object) this.annotatedString) + "', selection=" + ((Object) TextRange.m7006toStringimpl(this.selection)) + ", composition=" + this.composition + ')';
+        return "TextFieldValue(text='" + ((Object) this.annotatedString) + "', selection=" + ((Object) TextRange.m7611toStringimpl(this.selection)) + ", composition=" + this.composition + ')';
     }
 
     /* compiled from: TextFieldValue.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/text/input/TextFieldValue$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/input/TextFieldValue;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/text/input/TextFieldValue$Companion;", "", "<init>", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/input/TextFieldValue;", "getSaver", "()Landroidx/compose/runtime/saveable/Saver;", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -169,6 +169,6 @@ public final class TextFieldValue {
             textRange = saver.restore(obj3);
         }
         Intrinsics.checkNotNull(textRange);
-        return new TextFieldValue(restore, textRange.m7007unboximpl(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+        return new TextFieldValue(restore, textRange.m7612unboximpl(), (TextRange) null, 4, (DefaultConstructorMarker) null);
     }
 }

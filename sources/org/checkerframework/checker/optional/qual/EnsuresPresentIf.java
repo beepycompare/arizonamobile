@@ -12,13 +12,13 @@ import org.checkerframework.framework.qual.InheritedAnnotation;
 @ConditionalPostconditionAnnotation(qualifier = Present.class)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresPresentIf {
 
     @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
     @ConditionalPostconditionAnnotation(qualifier = Present.class)
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface List {
         EnsuresPresentIf[] value();
     }

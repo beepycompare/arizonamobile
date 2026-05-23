@@ -13,12 +13,12 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DebugGameTestScriptCard.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$DebugGameTestScriptCardKt {
     public static final ComposableSingletons$DebugGameTestScriptCardKt INSTANCE = new ComposableSingletons$DebugGameTestScriptCardKt();
 
     /* renamed from: lambda$-937640016  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f149lambda$937640016 = ComposableLambdaKt.composableLambdaInstance(-937640016, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda0
+    private static Function3<RowScope, Composer, Integer, Unit> f69lambda$937640016 = ComposableLambdaKt.composableLambdaInstance(-937640016, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__937640016$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -26,7 +26,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-1164861006  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f146lambda$1164861006 = ComposableLambdaKt.composableLambdaInstance(-1164861006, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda3
+    private static Function3<RowScope, Composer, Integer, Unit> f66lambda$1164861006 = ComposableLambdaKt.composableLambdaInstance(-1164861006, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__1164861006$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -34,7 +34,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-235814089  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f147lambda$235814089 = ComposableLambdaKt.composableLambdaInstance(-235814089, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda4
+    private static Function2<Composer, Integer, Unit> f67lambda$235814089 = ComposableLambdaKt.composableLambdaInstance(-235814089, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__235814089$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -42,7 +42,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-1004594734  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f145lambda$1004594734 = ComposableLambdaKt.composableLambdaInstance(-1004594734, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda5
+    private static Function2<Composer, Integer, Unit> f65lambda$1004594734 = ComposableLambdaKt.composableLambdaInstance(-1004594734, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__1004594734$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -50,7 +50,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-5343975  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f148lambda$5343975 = ComposableLambdaKt.composableLambdaInstance(-5343975, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda6
+    private static Function3<RowScope, Composer, Integer, Unit> f68lambda$5343975 = ComposableLambdaKt.composableLambdaInstance(-5343975, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__5343975$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -94,28 +94,28 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: getLambda$-1004594734$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9129getLambda$1004594734$settings() {
-        return f145lambda$1004594734;
+    public final Function2<Composer, Integer, Unit> m9767getLambda$1004594734$settings() {
+        return f65lambda$1004594734;
     }
 
     /* renamed from: getLambda$-1164861006$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9130getLambda$1164861006$settings() {
-        return f146lambda$1164861006;
+    public final Function3<RowScope, Composer, Integer, Unit> m9768getLambda$1164861006$settings() {
+        return f66lambda$1164861006;
     }
 
     /* renamed from: getLambda$-235814089$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9131getLambda$235814089$settings() {
-        return f147lambda$235814089;
+    public final Function2<Composer, Integer, Unit> m9769getLambda$235814089$settings() {
+        return f67lambda$235814089;
     }
 
     /* renamed from: getLambda$-5343975$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9132getLambda$5343975$settings() {
-        return f148lambda$5343975;
+    public final Function3<RowScope, Composer, Integer, Unit> m9770getLambda$5343975$settings() {
+        return f68lambda$5343975;
     }
 
     /* renamed from: getLambda$-937640016$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9133getLambda$937640016$settings() {
-        return f149lambda$937640016;
+    public final Function3<RowScope, Composer, Integer, Unit> m9771getLambda$937640016$settings() {
+        return f69lambda$937640016;
     }
 
     public final Function2<Composer, Integer, Unit> getLambda$139506400$settings() {
@@ -151,7 +151,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-235814089, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$-235814089.<anonymous> (DebugGameTestScriptCard.kt:156)");
             }
-            TextKt.m2712TextNvy7gAk("Screenshot Pull Directory", null, Color.Companion.m4809getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
+            TextKt.m3157TextNvy7gAk("Screenshot Pull Directory", null, Color.Companion.m5385getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -168,7 +168,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1004594734, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$-1004594734.<anonymous> (DebugGameTestScriptCard.kt:168)");
             }
-            TextKt.m2712TextNvy7gAk("Local path", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("Local path", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -186,7 +186,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-937640016, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$-937640016.<anonymous> (DebugGameTestScriptCard.kt:179)");
             }
-            TextKt.m2712TextNvy7gAk("SAVE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("SAVE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -204,7 +204,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1164861006, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$-1164861006.<anonymous> (DebugGameTestScriptCard.kt:186)");
             }
-            TextKt.m2712TextNvy7gAk("CANCEL", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("CANCEL", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -221,7 +221,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(139506400, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$139506400.<anonymous> (DebugGameTestScriptCard.kt:197)");
             }
-            TextKt.m2712TextNvy7gAk("Phone Screenshot Directory", null, Color.Companion.m4809getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
+            TextKt.m3157TextNvy7gAk("Phone Screenshot Directory", null, Color.Companion.m5385getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -238,7 +238,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1903163953, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$1903163953.<anonymous> (DebugGameTestScriptCard.kt:218)");
             }
-            TextKt.m2712TextNvy7gAk("Phone path", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("Phone path", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -256,7 +256,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-5343975, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$-5343975.<anonymous> (DebugGameTestScriptCard.kt:230)");
             }
-            TextKt.m2712TextNvy7gAk("SAVE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("SAVE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -274,7 +274,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(678616731, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$678616731.<anonymous> (DebugGameTestScriptCard.kt:237)");
             }
-            TextKt.m2712TextNvy7gAk("CANCEL", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("CANCEL", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -291,7 +291,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1433925247, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$1433925247.<anonymous> (DebugGameTestScriptCard.kt:248)");
             }
-            TextKt.m2712TextNvy7gAk("Select Test Script", null, Color.Companion.m4809getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
+            TextKt.m3157TextNvy7gAk("Select Test Script", null, Color.Companion.m5385getWhite0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 390, 0, 262138);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -325,7 +325,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1973035578, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt.lambda$1973035578.<anonymous> (DebugGameTestScriptCard.kt:308)");
             }
-            TextKt.m2712TextNvy7gAk("CLOSE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
+            TextKt.m3157TextNvy7gAk("CLOSE", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 6, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -8,25 +8,25 @@ import kotlin.Metadata;
 public final class FabMediumTokens {
     public static final int $stable = 0;
     public static final FabMediumTokens INSTANCE = new FabMediumTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(80.0f);
-    private static final float ContainerWidth = Dp.m7555constructorimpl(80.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(28.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(80.0f);
+    private static final float ContainerWidth = Dp.m8160constructorimpl(80.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(28.0f);
 
     private FabMediumTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3396getContainerHeightD9Ej5fM() {
+    public final float m3841getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3397getContainerWidthD9Ej5fM() {
+    public final float m3842getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3398getIconSizeD9Ej5fM() {
+    public final float m3843getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

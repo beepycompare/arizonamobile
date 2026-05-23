@@ -15,7 +15,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.ranges.RangesKt;
 /* compiled from: LazyListSnapLayoutInfoProvider.kt */
-@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u001a\u001f\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\b\u001a\u0019\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0000¢\u0006\u0002\u0010\u0013\"\u0018\u0010\t\u001a\u00020\n*\u00020\u000b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\r¨\u0006\u0014"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "lazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "rememberSnapFlingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "(Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/gestures/FlingBehavior;", "singleAxisViewportSize", "", "Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/LazyListLayoutInfo;)I", "calculateFinalSnappingItem", "Landroidx/compose/foundation/gestures/snapping/FinalSnappingItem;", "Landroidx/compose/ui/unit/Density;", "velocity", "", "(Landroidx/compose/ui/unit/Density;F)I", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u001a\u001f\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\b\u001a\u0019\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0000¢\u0006\u0002\u0010\u0013\"\u0018\u0010\t\u001a\u00020\n*\u00020\u000b8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\f\u0010\r¨\u0006\u0014"}, d2 = {"SnapLayoutInfoProvider", "Landroidx/compose/foundation/gestures/snapping/SnapLayoutInfoProvider;", "lazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "rememberSnapFlingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "(Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Landroidx/compose/runtime/Composer;II)Landroidx/compose/foundation/gestures/FlingBehavior;", "singleAxisViewportSize", "", "Landroidx/compose/foundation/lazy/LazyListLayoutInfo;", "getSingleAxisViewportSize", "(Landroidx/compose/foundation/lazy/LazyListLayoutInfo;)I", "calculateFinalSnappingItem", "Landroidx/compose/foundation/gestures/snapping/FinalSnappingItem;", "Landroidx/compose/ui/unit/Density;", "velocity", "", "(Landroidx/compose/ui/unit/Density;F)I", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyListSnapLayoutInfoProviderKt {
     public static /* synthetic */ SnapLayoutInfoProvider SnapLayoutInfoProvider$default(LazyListState lazyListState, SnapPosition snapPosition, int i, Object obj) {
@@ -33,13 +33,15 @@ public final class LazyListSnapLayoutInfoProviderKt {
 
             private final int getAverageItemSize() {
                 LazyListLayoutInfo layoutInfo = getLayoutInfo();
-                int i = 0;
                 if (layoutInfo.getVisibleItemsInfo().isEmpty()) {
                     return 0;
                 }
                 int size = layoutInfo.getVisibleItemsInfo().size();
-                for (LazyListItemInfo lazyListItemInfo : layoutInfo.getVisibleItemsInfo()) {
-                    i += lazyListItemInfo.getSize();
+                List<LazyListItemInfo> visibleItemsInfo = layoutInfo.getVisibleItemsInfo();
+                int size2 = visibleItemsInfo.size();
+                int i = 0;
+                for (int i2 = 0; i2 < size2; i2++) {
+                    i += visibleItemsInfo.get(i2).getSize();
                 }
                 return i / size;
             }
@@ -69,18 +71,18 @@ public final class LazyListSnapLayoutInfoProviderKt {
                         }
                     }
                 }
-                return SnapFlingBehaviorKt.m628calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyListState.this.getDensity$foundation(), f), f2, f3);
+                return SnapFlingBehaviorKt.m682calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyListState.this.getDensity$foundation(), f), f2, f3);
             }
         };
     }
 
     public static final FlingBehavior rememberSnapFlingBehavior(LazyListState lazyListState, SnapPosition snapPosition, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -338621290, "C(rememberSnapFlingBehavior)N(lazyListState,snapPosition)117@4794L79,118@4885L41:LazyListSnapLayoutInfoProvider.kt#ppz6w6");
+        ComposerKt.sourceInformationMarkerStart(composer, -338621290, "C(rememberSnapFlingBehavior)N(lazyListState,snapPosition)118@4840L79,119@4931L41:LazyListSnapLayoutInfoProvider.kt#ppz6w6");
         if ((i2 & 2) != 0) {
             snapPosition = SnapPosition.Center.INSTANCE;
         }
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-338621290, i, -1, "androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior (LazyListSnapLayoutInfoProvider.kt:115)");
+            ComposerKt.traceEventStart(-338621290, i, -1, "androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior (LazyListSnapLayoutInfoProvider.kt:116)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 1002460357, "CC(remember):LazyListSnapLayoutInfoProvider.kt#9igjgp");
         boolean z = (((i & 14) ^ 6) > 4 && composer.changed(lazyListState)) || (i & 6) == 4;
@@ -99,13 +101,13 @@ public final class LazyListSnapLayoutInfoProviderKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyListLayoutInfo lazyListLayoutInfo) {
-        return (int) (lazyListLayoutInfo.getOrientation() == Orientation.Vertical ? lazyListLayoutInfo.mo923getViewportSizeYbymL2g() & 4294967295L : lazyListLayoutInfo.mo923getViewportSizeYbymL2g() >> 32);
+        return (int) (lazyListLayoutInfo.getOrientation() == Orientation.Vertical ? lazyListLayoutInfo.mo1177getViewportSizeYbymL2g() & 4294967295L : lazyListLayoutInfo.mo1177getViewportSizeYbymL2g() >> 32);
     }
 
     public static final int calculateFinalSnappingItem(Density density, float f) {
-        if (Math.abs(f) < density.mo405toPx0680j_4(SnapFlingBehaviorKt.getMinFlingVelocityDp())) {
-            return FinalSnappingItem.Companion.m625getClosestItembbeMdSM();
+        if (Math.abs(f) < density.mo434toPx0680j_4(SnapFlingBehaviorKt.getMinFlingVelocityDp())) {
+            return FinalSnappingItem.Companion.m679getClosestItembbeMdSM();
         }
-        return f > 0.0f ? FinalSnappingItem.Companion.m626getNextItembbeMdSM() : FinalSnappingItem.Companion.m627getPreviousItembbeMdSM();
+        return f > 0.0f ? FinalSnappingItem.Companion.m680getNextItembbeMdSM() : FinalSnappingItem.Companion.m681getPreviousItembbeMdSM();
     }
 }

@@ -15,14 +15,14 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Savers.android.kt */
-@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006\"\u001a\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\t8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\n\" \u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u000f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0010\"\u001a\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0014\"\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0018\"\u001a\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/PlatformParagraphStyle;", "", "Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;", "getSaver", "(Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "PlatformParagraphStyleSaver", "Landroidx/compose/ui/text/EmojiSupportMatch;", "Landroidx/compose/ui/text/EmojiSupportMatch$Companion;", "(Landroidx/compose/ui/text/EmojiSupportMatch$Companion;)Landroidx/compose/runtime/saveable/Saver;", "emojiSupportMatchSaver", "getEmojiSupportMatchSaver", "()Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/style/LineBreak;", "Landroidx/compose/ui/text/style/LineBreak$Companion;", "(Landroidx/compose/ui/text/style/LineBreak$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineBreakSaver", "Landroidx/compose/ui/text/style/TextMotion;", "Landroidx/compose/ui/text/style/TextMotion$Companion;", "(Landroidx/compose/ui/text/style/TextMotion$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextMotionSaver", "Landroidx/compose/ui/text/style/TextMotion$Linearity;", "Landroidx/compose/ui/text/style/TextMotion$Linearity$Companion;", "(Landroidx/compose/ui/text/style/TextMotion$Linearity$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextMotionLinearitySaver", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00048@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006\"\u001a\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\t8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\n\" \u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00030\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u000f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0010\"\u001a\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0014\"\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"$\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u00178BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0018\"\u001a\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00030\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/PlatformParagraphStyle;", "", "Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;", "getSaver", "(Landroidx/compose/ui/text/PlatformParagraphStyle$Companion;)Landroidx/compose/runtime/saveable/Saver;", "PlatformParagraphStyleSaver", "Landroidx/compose/ui/text/EmojiSupportMatch;", "Landroidx/compose/ui/text/EmojiSupportMatch$Companion;", "(Landroidx/compose/ui/text/EmojiSupportMatch$Companion;)Landroidx/compose/runtime/saveable/Saver;", "emojiSupportMatchSaver", "getEmojiSupportMatchSaver", "()Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/ui/text/style/LineBreak;", "Landroidx/compose/ui/text/style/LineBreak$Companion;", "(Landroidx/compose/ui/text/style/LineBreak$Companion;)Landroidx/compose/runtime/saveable/Saver;", "LineBreakSaver", "Landroidx/compose/ui/text/style/TextMotion;", "Landroidx/compose/ui/text/style/TextMotion$Companion;", "(Landroidx/compose/ui/text/style/TextMotion$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextMotionSaver", "Landroidx/compose/ui/text/style/TextMotion$Linearity;", "Landroidx/compose/ui/text/style/TextMotion$Linearity$Companion;", "(Landroidx/compose/ui/text/style/TextMotion$Linearity$Companion;)Landroidx/compose/runtime/saveable/Saver;", "TextMotionLinearitySaver", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Savers_androidKt {
     private static final Saver<PlatformParagraphStyle, Object> PlatformParagraphStyleSaver = SaverKt.Saver(new Function2() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Boolean.valueOf(r2.getIncludeFontPadding())), SaversKt.save(EmojiSupportMatch.m6850boximpl(((PlatformParagraphStyle) obj2).m6931getEmojiSupportMatch_3YsG6Y()), Savers_androidKt.getSaver(EmojiSupportMatch.Companion), (SaverScope) obj));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(Boolean.valueOf(r2.getIncludeFontPadding())), SaversKt.save(EmojiSupportMatch.m7455boximpl(((PlatformParagraphStyle) obj2).m7536getEmojiSupportMatch_3YsG6Y()), Savers_androidKt.getSaver(EmojiSupportMatch.Companion), (SaverScope) obj));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda1
@@ -36,7 +36,7 @@ public final class Savers_androidKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((EmojiSupportMatch) obj2).m6856unboximpl());
+            valueOf = Integer.valueOf(((EmojiSupportMatch) obj2).m7461unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda3
@@ -50,7 +50,7 @@ public final class Savers_androidKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((LineBreak) obj2).m7343unboximpl());
+            valueOf = Integer.valueOf(((LineBreak) obj2).m7948unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda5
@@ -63,7 +63,7 @@ public final class Savers_androidKt {
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             Object arrayListOf;
-            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextMotion.Linearity.m7468boximpl(r2.m7467getLinearity4e0Vf04$ui_text()), Savers_androidKt.getSaver(TextMotion.Linearity.Companion), (SaverScope) obj), SaversKt.save(Boolean.valueOf(((TextMotion) obj2).getSubpixelTextPositioning$ui_text())));
+            arrayListOf = CollectionsKt.arrayListOf(SaversKt.save(TextMotion.Linearity.m8073boximpl(r2.m8072getLinearity4e0Vf04$ui_text()), Savers_androidKt.getSaver(TextMotion.Linearity.Companion), (SaverScope) obj), SaversKt.save(Boolean.valueOf(((TextMotion) obj2).getSubpixelTextPositioning$ui_text())));
             return arrayListOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda7
@@ -77,7 +77,7 @@ public final class Savers_androidKt {
         public final Object invoke(Object obj, Object obj2) {
             Object valueOf;
             SaverScope saverScope = (SaverScope) obj;
-            valueOf = Integer.valueOf(((TextMotion.Linearity) obj2).m7474unboximpl());
+            valueOf = Integer.valueOf(((TextMotion.Linearity) obj2).m8079unboximpl());
             return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.ui.text.Savers_androidKt$$ExternalSyntheticLambda9
@@ -103,7 +103,7 @@ public final class Savers_androidKt {
         Saver<EmojiSupportMatch, Object> saver = getSaver(EmojiSupportMatch.Companion);
         EmojiSupportMatch restore = ((!Intrinsics.areEqual(obj3, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj3 != null) ? saver.restore(obj3) : null;
         Intrinsics.checkNotNull(restore);
-        return new PlatformParagraphStyle(restore.m6856unboximpl(), booleanValue, (DefaultConstructorMarker) null);
+        return new PlatformParagraphStyle(restore.m7461unboximpl(), booleanValue, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<EmojiSupportMatch, Object> getSaver(EmojiSupportMatch.Companion companion) {
@@ -117,7 +117,7 @@ public final class Savers_androidKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final EmojiSupportMatch emojiSupportMatchSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return EmojiSupportMatch.m6850boximpl(EmojiSupportMatch.m6851constructorimpl(((Integer) obj).intValue()));
+        return EmojiSupportMatch.m7455boximpl(EmojiSupportMatch.m7456constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<LineBreak, Object> getSaver(LineBreak.Companion companion) {
@@ -127,7 +127,7 @@ public final class Savers_androidKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final LineBreak LineBreakSaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return LineBreak.m7331boximpl(LineBreak.m7332constructorimpl(((Integer) obj).intValue()));
+        return LineBreak.m7936boximpl(LineBreak.m7937constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<TextMotion, Object> getSaver(TextMotion.Companion companion) {
@@ -142,11 +142,11 @@ public final class Savers_androidKt {
         Saver<TextMotion.Linearity, Object> saver = getSaver(TextMotion.Linearity.Companion);
         TextMotion.Linearity restore = ((!Intrinsics.areEqual(obj2, (Object) false) || (saver instanceof NonNullValueClassSaver)) && obj2 != null) ? saver.restore(obj2) : null;
         Intrinsics.checkNotNull(restore);
-        int m7474unboximpl = restore.m7474unboximpl();
+        int m8079unboximpl = restore.m8079unboximpl();
         Object obj3 = list.get(1);
         Boolean bool = obj3 != null ? (Boolean) obj3 : null;
         Intrinsics.checkNotNull(bool);
-        return new TextMotion(m7474unboximpl, bool.booleanValue(), null);
+        return new TextMotion(m8079unboximpl, bool.booleanValue(), null);
     }
 
     private static final Saver<TextMotion.Linearity, Object> getSaver(TextMotion.Linearity.Companion companion) {
@@ -156,6 +156,6 @@ public final class Savers_androidKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextMotion.Linearity TextMotionLinearitySaver$lambda$1(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return TextMotion.Linearity.m7468boximpl(TextMotion.Linearity.m7469constructorimpl(((Integer) obj).intValue()));
+        return TextMotion.Linearity.m8073boximpl(TextMotion.Linearity.m8074constructorimpl(((Integer) obj).intValue()));
     }
 }

@@ -8,13 +8,13 @@ import android.os.RemoteException;
 import com.google.android.a.a;
 import com.google.android.a.b;
 import com.google.android.a.c;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface IGetInstallReferrerService extends IInterface {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends b implements IGetInstallReferrerService {
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class Proxy extends a implements IGetInstallReferrerService {
             Proxy(IBinder iBinder) {
                 super(iBinder);

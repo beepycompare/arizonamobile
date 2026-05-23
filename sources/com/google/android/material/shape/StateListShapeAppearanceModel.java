@@ -14,11 +14,7 @@ import java.util.Objects;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 /* loaded from: classes4.dex */
-public class StateListShapeAppearanceModel {
-    public static final int CORNER_BOTTOM_LEFT = 4;
-    public static final int CORNER_BOTTOM_RIGHT = 8;
-    public static final int CORNER_TOP_LEFT = 1;
-    public static final int CORNER_TOP_RIGHT = 2;
+public class StateListShapeAppearanceModel implements ShapeAppearance {
     private static final int INITIAL_CAPACITY = 10;
     final StateListCornerSize bottomLeftCornerSizeOverride;
     final StateListCornerSize bottomRightCornerSizeOverride;
@@ -44,10 +40,6 @@ public class StateListShapeAppearanceModel {
         private int[][] stateSpecs;
         private StateListCornerSize topLeftCornerSizeOverride;
         private StateListCornerSize topRightCornerSizeOverride;
-
-        private boolean containsFlag(int i, int i2) {
-            return (i | i2) == i;
-        }
 
         public Builder(StateListShapeAppearanceModel stateListShapeAppearanceModel) {
             this.stateCount = stateListShapeAppearanceModel.stateCount;
@@ -100,16 +92,16 @@ public class StateListShapeAppearanceModel {
         }
 
         public Builder setCornerSizeOverride(StateListCornerSize stateListCornerSize, int i) {
-            if (containsFlag(i, 1)) {
+            if (ShapeAppearanceModel.containsFlag(i, 1)) {
                 this.topLeftCornerSizeOverride = stateListCornerSize;
             }
-            if (containsFlag(i, 2)) {
+            if (ShapeAppearanceModel.containsFlag(i, 2)) {
                 this.topRightCornerSizeOverride = stateListCornerSize;
             }
-            if (containsFlag(i, 4)) {
+            if (ShapeAppearanceModel.containsFlag(i, 4)) {
                 this.bottomLeftCornerSizeOverride = stateListCornerSize;
             }
-            if (containsFlag(i, 8)) {
+            if (ShapeAppearanceModel.containsFlag(i, 8)) {
                 this.bottomRightCornerSizeOverride = stateListCornerSize;
             }
             return this;
@@ -237,6 +229,11 @@ public class StateListShapeAppearanceModel {
         return this.stateCount;
     }
 
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel getDefaultShape() {
+        return getDefaultShape(true);
+    }
+
     public ShapeAppearanceModel getDefaultShape(boolean z) {
         if (!z || (this.topLeftCornerSizeOverride == null && this.topRightCornerSizeOverride == null && this.bottomLeftCornerSizeOverride == null && this.bottomRightCornerSizeOverride == null)) {
             return this.defaultShape;
@@ -261,7 +258,7 @@ public class StateListShapeAppearanceModel {
         return builder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.material.shape.ShapeAppearance
     public ShapeAppearanceModel getShapeForState(int[] iArr) {
         int indexOfStateSet = indexOfStateSet(iArr);
         if (indexOfStateSet < 0) {
@@ -290,6 +287,11 @@ public class StateListShapeAppearanceModel {
         return builder.build();
     }
 
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel[] getShapeAppearanceModels() {
+        return this.shapeAppearanceModels;
+    }
+
     private int indexOfStateSet(int[] iArr) {
         int[][] iArr2 = this.stateSpecs;
         for (int i = 0; i < this.stateCount; i++) {
@@ -308,6 +310,17 @@ public class StateListShapeAppearanceModel {
         return new Builder(this);
     }
 
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel withCornerSize(float f) {
+        return getDefaultShape().withCornerSize(f);
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
+    public ShapeAppearanceModel withCornerSize(CornerSize cornerSize) {
+        return getDefaultShape().withCornerSize(cornerSize);
+    }
+
+    @Override // com.google.android.material.shape.ShapeAppearance
     public boolean isStateful() {
         StateListCornerSize stateListCornerSize;
         StateListCornerSize stateListCornerSize2;

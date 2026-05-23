@@ -15,14 +15,16 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import kotlinx.serialization.json.JsonConfiguration;
 /* compiled from: AbstractJsonLexer.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0010\f\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u0005\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u000b\b \u0018\u00002\u00020\u0001B\t\bF¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\f\u001a\u00020\r*\u00020\u000eH\u0084\u0088\u0004J\n\u0010\u000f\u001a\u00020\u0010H\u0096\u0080\u0004J\n\u0010\u0011\u001a\u00020\rH\u0086\u0080\u0004J\u0012\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\tH¦\u0080\u0004J\n\u0010\u0014\u001a\u00020\rH¦\u0080\u0004J\n\u0010\u0015\u001a\u00020\u0016H¦\u0080\u0004J\n\u0010\u0017\u001a\u00020\rH\u0086\u0080\u0004J\u0012\u0010\u0018\u001a\u00020\r2\u0006\u0010\u0019\u001a\u00020\u000eH\u0084\u0080\u0004J\n\u0010\u001a\u001a\u00020\u0010H\u0086\u0080\u0004J\u0012\u0010\u0015\u001a\u00020\u00162\u0006\u0010$\u001a\u00020\u0016H\u0087\u0080\bJ\u0012\u0010\u0015\u001a\u00020\u00102\u0006\u0010$\u001a\u00020\u000eH¦\u0080\u0004J\u0012\u0010%\u001a\u00020\u00102\u0006\u0010$\u001a\u00020\u000eH\u0084\u0080\u0004J^\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u00162\b\b\u0002\u0010)\u001a\u00020\r28\b\u0002\u0010*\u001a2\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b,\u0012\b\b-\u0012\u0004\b\b($\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b,\u0012\b\b-\u0012\u0004\b\b(\u0004\u0012\u0004\u0012\u00020\u001c0+H\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\b.J\n\u0010/\u001a\u00020\u0016H\u0096\u0080\u0004J\u0014\u00100\u001a\u00020\r2\b\b\u0002\u00101\u001a\u00020\rH\u0086\u0080\u0004J\n\u00102\u001a\u00020\tH¦\u0080\u0004J\u001c\u00103\u001a\u0004\u0018\u00010\u001c2\u0006\u00104\u001a\u00020\u001c2\u0006\u00105\u001a\u00020\rH¦\u0080\u0004J\u0014\u00106\u001a\u0004\u0018\u00010\u001c2\u0006\u00105\u001a\u00020\rH\u0086\u0080\u0004J\n\u00107\u001a\u00020\u0010H\u0086\u0080\u0004J\u001a\u00108\u001a\u00020\t2\u0006\u00109\u001a\u00020\u000e2\u0006\u0010:\u001a\u00020\tH\u0096\u0080\u0004J\u001a\u0010;\u001a\u00020\u001c2\u0006\u0010:\u001a\u00020\t2\u0006\u0010<\u001a\u00020\tH\u0096\u0080\u0004J\n\u0010=\u001a\u00020\u001cH¦\u0080\u0004J\u001a\u0010>\u001a\u00020\r2\u0006\u00105\u001a\u00020\r2\u0006\u00109\u001a\u00020\u000eH\u0082\u0080\u0004J5\u0010?\u001a\u00020\u00102\u0006\u00105\u001a\u00020\r2!\u0010@\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b,\u0012\b\b-\u0012\u0004\b\b(B\u0012\u0004\u0012\u00020\u00100AH\u0096\u0080\u0004JE\u0010C\u001a\u00020\u00102\u0006\u0010D\u001a\u00020\t2\u0006\u0010E\u001a\u00020\t2\u0006\u0010F\u001a\u00020\r2!\u0010@\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b,\u0012\b\b-\u0012\u0004\b\b(B\u0012\u0004\u0012\u00020\u00100AH\u0082\u0080\u0004J\n\u0010G\u001a\u00020\u001cH\u0086\u0080\u0004J\"\u0010G\u001a\u00020\u001c2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010H\u001a\u00020\t2\u0006\u0010I\u001a\u00020\tH\u0085\u0080\u0004J\u001a\u0010J\u001a\u00020\t2\u0006\u0010K\u001a\u00020\t2\u0006\u0010I\u001a\u00020\tH\u0082\u0080\u0004J\u001a\u0010L\u001a\u00020\u001c2\u0006\u0010K\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\tH\u0082\u0080\u0004J\n\u0010M\u001a\u00020\u001cH\u0082\u0080\u0004J\n\u0010N\u001a\u00020\u001cH\u0086\u0080\u0004J\n\u0010O\u001a\u00020\rH\u0082\u0080\u0004J\n\u0010P\u001a\u00020\u001cH\u0086\u0080\u0004J\u001a\u0010Q\u001a\u00020\u00102\u0006\u0010D\u001a\u00020\t2\u0006\u0010E\u001a\u00020\tH\u0094\u0080\u0004J\u0012\u0010R\u001a\u00020\t2\u0006\u0010H\u001a\u00020\tH\u0082\u0080\u0004J\u001a\u0010S\u001a\u00020\t2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\tH\u0082\u0080\u0004J2\u0010T\u001a\u00020\u00102\u0006\u0010U\u001a\u00020\r2\b\b\u0002\u0010\u0013\u001a\u00020\t2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u001c0VH\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\bWJ\u001a\u0010X\u001a\u00020\t2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\tH\u0082\u0080\u0004J\u0012\u0010Y\u001a\u00020\u00102\u0006\u0010Z\u001a\u00020\rH\u0086\u0080\u0004J\n\u0010[\u001a\u00020\u001cH\u0096\u0080\u0004J\u0012\u0010\\\u001a\u00020\u00102\u0006\u0010]\u001a\u00020\u001cH\u0086\u0080\u0004J&\u0010&\u001a\u00020'2\u0006\u0010*\u001a\u00020\u001c2\b\b\u0002\u0010\u0013\u001a\u00020\t2\b\b\u0002\u0010^\u001a\u00020\u001cH\u0086\u0080\u0004J\n\u0010_\u001a\u00020`H\u0086\u0080\u0004J\n\u0010a\u001a\u00020`H\u0086\u0080\u0004J\n\u0010b\u001a\u00020\rH\u0086\u0080\u0004J\n\u0010c\u001a\u00020\rH\u0086\u0080\u0004J\u0012\u0010b\u001a\u00020\r2\u0006\u0010d\u001a\u00020\tH\u0083\u0080\u0004J\u001a\u0010e\u001a\u00020\u00102\u0006\u0010f\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\tH\u0082\u0080\u0004J#\u0010g\u001a\u0002Hh\"\u0004\b\u0000\u0010h2\f\u0010i\u001a\b\u0012\u0004\u0012\u0002Hh0VH\u0082\u0088\u0004¢\u0006\u0002\u0010jR\u0013\u0010\u0004\u001a\u00020\u0005X¤\u0084\b¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\t8\u0000@\u0000X\u0081\u008e\b¢\u0006\u0002\n\u0000R\u0011\u0010\n\u001a\u00020\u000b8\u0006X\u0087\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u001f\u0010\u001d\u001a\u00060\u001ej\u0002`\u001fX\u0084\u008e\b¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006k"}, d2 = {"Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "", "<init>", "()V", "source", "", "getSource", "()Ljava/lang/CharSequence;", "currentPosition", "", "path", "Lkotlinx/serialization/json/internal/JsonPath;", "isWs", "", "", "ensureHaveChars", "", "isNotEof", "prefetchOrEof", "position", "canConsumeValue", "consumeNextToken", "", "tryConsumeComma", "isValidValueStart", "c", "expectEof", "peekedString", "", "escapedString", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "getEscapedString", "()Ljava/lang/StringBuilder;", "setEscapedString", "(Ljava/lang/StringBuilder;)V", "expected", "unexpectedToken", "fail", "", "expectedToken", "wasConsumed", "message", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "fail$kotlinx_serialization_json", "peekNextToken", "tryConsumeNull", "doConsume", "skipWhitespaces", "peekLeadingMatchingValue", "keyToMatch", "isLenient", "peekString", "discardPeeked", "indexOf", "char", "startPos", "substring", "endPos", "consumeKeyString", "insideString", "consumeStringChunked", "consumeChunk", "Lkotlin/Function1;", "stringChunk", "writeRange", "fromIndex", "toIndex", "currentChunkHasEscape", "consumeString", "startPosition", "current", "appendEscape", "lastPosition", "decodedString", "takePeeked", "consumeStringLenientNotNull", "wasUnquotedString", "consumeStringLenient", "appendRange", "appendEsc", "appendHex", "require", "condition", "Lkotlin/Function0;", "require$kotlinx_serialization_json", "fromHexChar", "skipElement", "allowLenientStrings", "toString", "failOnUnknownKey", "key", "hint", "consumeNumericLiteral", "", "consumeNumericLiteralFully", "consumeBoolean", "consumeBooleanLenient", TtmlNode.START, "consumeBooleanLiteral", "literalSuffix", "withPositionRollback", ExifInterface.GPS_DIRECTION_TRUE, "action", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\r\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0010\f\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u0005\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u000b\b \u0018\u00002\u00020\u0001B\u0011\bF\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0084\u0088\u0004J\n\u0010\u0013\u001a\u00020\u0014H\u0096\u0080\u0004J\n\u0010\u0015\u001a\u00020\u0011H\u0086\u0080\u0004J\u0012\u0010\u0016\u001a\u00020\r2\u0006\u0010\u0017\u001a\u00020\rH¦\u0080\u0004J\n\u0010\u0018\u001a\u00020\u0011H¦\u0080\u0004J\n\u0010\u0019\u001a\u00020\u001aH¦\u0080\u0004J\n\u0010\u001b\u001a\u00020\u0011H\u0086\u0080\u0004J\u0012\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u0012H\u0084\u0080\u0004J\n\u0010\u001e\u001a\u00020\u0014H\u0086\u0080\u0004J\u0012\u0010\u0019\u001a\u00020\u001a2\u0006\u0010(\u001a\u00020\u001aH\u0087\u0080\bJ\u0012\u0010\u0019\u001a\u00020\u00142\u0006\u0010(\u001a\u00020\u0012H¦\u0080\u0004J\u0012\u0010)\u001a\u00020\u00142\u0006\u0010(\u001a\u00020\u0012H\u0084\u0080\u0004J^\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u001a2\b\b\u0002\u0010-\u001a\u00020\u001128\b\u0002\u0010.\u001a2\u0012\u0013\u0012\u00110 ¢\u0006\f\b0\u0012\b\b1\u0012\u0004\b\b((\u0012\u0013\u0012\u00110 ¢\u0006\f\b0\u0012\b\b1\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020 0/H\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\b2J\n\u00103\u001a\u00020\u001aH\u0096\u0080\u0004J\u0014\u00104\u001a\u00020\u00112\b\b\u0002\u00105\u001a\u00020\u0011H\u0086\u0080\u0004J\n\u00106\u001a\u00020\rH¦\u0080\u0004J\u001c\u00107\u001a\u0004\u0018\u00010 2\u0006\u00108\u001a\u00020 2\u0006\u00109\u001a\u00020\u0011H¦\u0080\u0004J\u0014\u0010:\u001a\u0004\u0018\u00010 2\u0006\u00109\u001a\u00020\u0011H\u0086\u0080\u0004J\n\u0010;\u001a\u00020\u0014H\u0086\u0080\u0004J\u001a\u0010<\u001a\u00020\r2\u0006\u0010=\u001a\u00020\u00122\u0006\u0010>\u001a\u00020\rH\u0096\u0080\u0004J\u001a\u0010?\u001a\u00020 2\u0006\u0010>\u001a\u00020\r2\u0006\u0010@\u001a\u00020\rH\u0096\u0080\u0004J\n\u0010A\u001a\u00020 H¦\u0080\u0004J\u001a\u0010B\u001a\u00020\u00112\u0006\u00109\u001a\u00020\u00112\u0006\u0010=\u001a\u00020\u0012H\u0082\u0080\u0004J5\u0010C\u001a\u00020\u00142\u0006\u00109\u001a\u00020\u00112!\u0010D\u001a\u001d\u0012\u0013\u0012\u00110 ¢\u0006\f\b0\u0012\b\b1\u0012\u0004\b\b(F\u0012\u0004\u0012\u00020\u00140EH\u0096\u0080\u0004JE\u0010G\u001a\u00020\u00142\u0006\u0010H\u001a\u00020\r2\u0006\u0010I\u001a\u00020\r2\u0006\u0010J\u001a\u00020\u00112!\u0010D\u001a\u001d\u0012\u0013\u0012\u00110 ¢\u0006\f\b0\u0012\b\b1\u0012\u0004\b\b(F\u0012\u0004\u0012\u00020\u00140EH\u0082\u0080\u0004J\n\u0010K\u001a\u00020 H\u0086\u0080\u0004J\"\u0010K\u001a\u00020 2\u0006\u0010\b\u001a\u00020\t2\u0006\u0010L\u001a\u00020\r2\u0006\u0010M\u001a\u00020\rH\u0085\u0080\u0004J\u001a\u0010N\u001a\u00020\r2\u0006\u0010O\u001a\u00020\r2\u0006\u0010M\u001a\u00020\rH\u0082\u0080\u0004J\u001a\u0010P\u001a\u00020 2\u0006\u0010O\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\rH\u0082\u0080\u0004J\n\u0010Q\u001a\u00020 H\u0082\u0080\u0004J\n\u0010R\u001a\u00020 H\u0086\u0080\u0004J\n\u0010S\u001a\u00020\u0011H\u0082\u0080\u0004J\n\u0010T\u001a\u00020 H\u0086\u0080\u0004J\u001a\u0010U\u001a\u00020\u00142\u0006\u0010H\u001a\u00020\r2\u0006\u0010I\u001a\u00020\rH\u0094\u0080\u0004J\u0012\u0010V\u001a\u00020\r2\u0006\u0010L\u001a\u00020\rH\u0082\u0080\u0004J\u001a\u0010W\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\t2\u0006\u0010>\u001a\u00020\rH\u0082\u0080\u0004J2\u0010X\u001a\u00020\u00142\u0006\u0010Y\u001a\u00020\u00112\b\b\u0002\u0010\u0017\u001a\u00020\r2\f\u0010.\u001a\b\u0012\u0004\u0012\u00020 0ZH\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\b[J\u001a\u0010\\\u001a\u00020\r2\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\rH\u0082\u0080\u0004J\u0012\u0010]\u001a\u00020\u00142\u0006\u0010^\u001a\u00020\u0011H\u0086\u0080\u0004J\n\u0010_\u001a\u00020 H\u0096\u0080\u0004J\u0012\u0010`\u001a\u00020\u00142\u0006\u0010a\u001a\u00020 H\u0086\u0080\u0004J(\u0010*\u001a\u00020+2\u0006\u0010.\u001a\u00020 2\b\b\u0002\u0010\u0017\u001a\u00020\r2\n\b\u0002\u0010b\u001a\u0004\u0018\u00010 H\u0086\u0080\u0004J\n\u0010c\u001a\u00020dH\u0086\u0080\u0004J\n\u0010e\u001a\u00020dH\u0086\u0080\u0004J\n\u0010f\u001a\u00020\u0011H\u0086\u0080\u0004J\n\u0010g\u001a\u00020\u0011H\u0086\u0080\u0004J\u0012\u0010f\u001a\u00020\u00112\u0006\u0010h\u001a\u00020\rH\u0083\u0080\u0004J\u001a\u0010i\u001a\u00020\u00142\u0006\u0010j\u001a\u00020 2\u0006\u0010M\u001a\u00020\rH\u0082\u0080\u0004J#\u0010k\u001a\u0002Hl\"\u0004\b\u0000\u0010l2\f\u0010m\u001a\b\u0012\u0004\u0012\u0002Hl0ZH\u0082\u0088\u0004¢\u0006\u0002\u0010nR\u0015\u0010\u0002\u001a\u00020\u0003X\u0080\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\b\u001a\u00020\tX¤\u0084\b¢\u0006\u0006\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\f\u001a\u00020\r8\u0000@\u0000X\u0081\u008e\b¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f8\u0006X\u0087\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u008e\b¢\u0006\u0002\n\u0000R\u001f\u0010!\u001a\u00060\"j\u0002`#X\u0084\u008e\b¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006o"}, d2 = {"Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "", "configuration", "Lkotlinx/serialization/json/JsonConfiguration;", "<init>", "(Lkotlinx/serialization/json/JsonConfiguration;)V", "getConfiguration$kotlinx_serialization_json", "()Lkotlinx/serialization/json/JsonConfiguration;", "source", "", "getSource", "()Ljava/lang/CharSequence;", "currentPosition", "", "path", "Lkotlinx/serialization/json/internal/JsonPath;", "isWs", "", "", "ensureHaveChars", "", "isNotEof", "prefetchOrEof", "position", "canConsumeValue", "consumeNextToken", "", "tryConsumeComma", "isValidValueStart", "c", "expectEof", "peekedString", "", "escapedString", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "getEscapedString", "()Ljava/lang/StringBuilder;", "setEscapedString", "(Ljava/lang/StringBuilder;)V", "expected", "unexpectedToken", "fail", "", "expectedToken", "wasConsumed", "message", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "fail$kotlinx_serialization_json", "peekNextToken", "tryConsumeNull", "doConsume", "skipWhitespaces", "peekLeadingMatchingValue", "keyToMatch", "isLenient", "peekString", "discardPeeked", "indexOf", "char", "startPos", "substring", "endPos", "consumeKeyString", "insideString", "consumeStringChunked", "consumeChunk", "Lkotlin/Function1;", "stringChunk", "writeRange", "fromIndex", "toIndex", "currentChunkHasEscape", "consumeString", "startPosition", "current", "appendEscape", "lastPosition", "decodedString", "takePeeked", "consumeStringLenientNotNull", "wasUnquotedString", "consumeStringLenient", "appendRange", "appendEsc", "appendHex", "require", "condition", "Lkotlin/Function0;", "require$kotlinx_serialization_json", "fromHexChar", "skipElement", "allowLenientStrings", "toString", "failOnUnknownKey", "key", "hint", "consumeNumericLiteral", "", "consumeNumericLiteralFully", "consumeBoolean", "consumeBooleanLenient", TtmlNode.START, "consumeBooleanLiteral", "literalSuffix", "withPositionRollback", ExifInterface.GPS_DIRECTION_TRUE, "action", "(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
+/* loaded from: classes4.dex */
 public abstract class AbstractJsonLexer {
+    private final JsonConfiguration configuration;
     public int currentPosition;
+    private StringBuilder escapedString;
+    public final JsonPath path;
     private String peekedString;
-    public final JsonPath path = new JsonPath();
-    private StringBuilder escapedString = new StringBuilder();
 
     public abstract boolean canConsumeValue();
 
@@ -35,10 +37,8 @@ public abstract class AbstractJsonLexer {
     public void ensureHaveChars() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public abstract CharSequence getSource();
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public final boolean isValidValueStart(char c) {
         return (c == ',' || c == ':' || c == ']' || c == '}') ? false : true;
     }
@@ -52,6 +52,17 @@ public abstract class AbstractJsonLexer {
     public abstract int prefetchOrEof(int i);
 
     public abstract int skipWhitespaces();
+
+    public AbstractJsonLexer(JsonConfiguration configuration) {
+        Intrinsics.checkNotNullParameter(configuration, "configuration");
+        this.configuration = configuration;
+        this.path = new JsonPath(configuration);
+        this.escapedString = new StringBuilder();
+    }
+
+    public final JsonConfiguration getConfiguration$kotlinx_serialization_json() {
+        return this.configuration;
+    }
 
     public final boolean isNotEof() {
         return peekNextToken() != 10;
@@ -75,7 +86,6 @@ public abstract class AbstractJsonLexer {
         throw new KotlinNothingValueException();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public final StringBuilder getEscapedString() {
         return this.escapedString;
     }
@@ -91,14 +101,13 @@ public abstract class AbstractJsonLexer {
         if (consumeNextToken != b) {
             String str = AbstractJsonLexerKt.tokenDescription(b);
             int i = this.currentPosition;
-            int i2 = i - 1;
+            int i2 = i > 0 ? i - 1 : i;
             fail$default(this, "Expected " + str + ", but had '" + ((i == getSource().length() || i2 < 0) ? "EOF" : String.valueOf(getSource().charAt(i2))) + "' instead", i2, null, 4, null);
             throw new KotlinNothingValueException();
         }
         return consumeNextToken;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public final void unexpectedToken(char c) {
         int i = this.currentPosition;
         if (i > 0 && c == '\"') {
@@ -117,12 +126,13 @@ public abstract class AbstractJsonLexer {
         }
         String str = AbstractJsonLexerKt.tokenDescription(AbstractJsonLexerKt.charToTokenClass(c));
         int i2 = this.currentPosition;
-        int i3 = i2 - 1;
+        int i3 = i2 > 0 ? i2 - 1 : i2;
         fail$default(this, "Expected " + str + ", but had '" + ((i2 == getSource().length() || i3 < 0) ? "EOF" : String.valueOf(getSource().charAt(i3))) + "' instead", i3, null, 4, null);
         throw new KotlinNothingValueException();
     }
 
     public static /* synthetic */ Void fail$kotlinx_serialization_json$default(AbstractJsonLexer abstractJsonLexer, byte b, boolean z, Function2 message, int i, Object obj) {
+        int i2;
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = true;
@@ -139,21 +149,18 @@ public abstract class AbstractJsonLexer {
             }
             Intrinsics.checkNotNullParameter(message, "message");
             String str = AbstractJsonLexerKt.tokenDescription(b);
-            int i2 = z ? abstractJsonLexer.currentPosition - 1 : abstractJsonLexer.currentPosition;
-            fail$default(abstractJsonLexer, (String) message.invoke(str, (abstractJsonLexer.currentPosition == abstractJsonLexer.getSource().length() || i2 < 0) ? "EOF" : String.valueOf(abstractJsonLexer.getSource().charAt(i2))), i2, null, 4, null);
+            int i3 = (!z || (i2 = abstractJsonLexer.currentPosition) <= 0) ? abstractJsonLexer.currentPosition : i2 - 1;
+            fail$default(abstractJsonLexer, (String) message.invoke(str, (abstractJsonLexer.currentPosition == abstractJsonLexer.getSource().length() || i3 < 0) ? "EOF" : String.valueOf(abstractJsonLexer.getSource().charAt(i3))), i3, null, 4, null);
             throw new KotlinNothingValueException();
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: fail");
     }
 
     public final Void fail$kotlinx_serialization_json(byte b, boolean z, Function2<? super String, ? super String, String> message) {
+        int i;
         Intrinsics.checkNotNullParameter(message, "message");
         String str = AbstractJsonLexerKt.tokenDescription(b);
-        int i = this.currentPosition;
-        if (z) {
-            i--;
-        }
-        int i2 = i;
+        int i2 = (!z || (i = this.currentPosition) <= 0) ? this.currentPosition : i - 1;
         fail$default(this, message.invoke(str, (this.currentPosition == getSource().length() || i2 < 0) ? "EOF" : String.valueOf(getSource().charAt(i2))), i2, null, 4, null);
         throw new KotlinNothingValueException();
     }
@@ -308,7 +315,6 @@ public abstract class AbstractJsonLexer {
         return consumeKeyString();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     public final String consumeString(CharSequence source, int i, int i2) {
         String decodedString;
         AbstractJsonLexer abstractJsonLexer;
@@ -513,7 +519,8 @@ public abstract class AbstractJsonLexer {
 
     public final void skipElement(boolean z) {
         AbstractJsonLexer abstractJsonLexer;
-        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList;
+        ArrayList arrayList2 = new ArrayList();
         byte peekNextToken = peekNextToken();
         if (peekNextToken != 8 && peekNextToken != 6) {
             consumeStringLenient();
@@ -523,30 +530,43 @@ public abstract class AbstractJsonLexer {
             byte peekNextToken2 = this.peekNextToken();
             if (peekNextToken2 != 1) {
                 if (peekNextToken2 == 8 || peekNextToken2 == 6) {
+                    ArrayList arrayList3 = arrayList2;
                     abstractJsonLexer = this;
+                    arrayList = arrayList3;
                     arrayList.add(Byte.valueOf(peekNextToken2));
-                } else {
-                    if (peekNextToken2 == 9) {
-                        if (((Number) CollectionsKt.last((List<? extends Object>) arrayList)).byteValue() != 8) {
-                            throw JsonExceptionsKt.JsonDecodingException(this.currentPosition, "found ] instead of } at path: " + this.path, this.getSource());
+                } else if (peekNextToken2 != 9) {
+                    AbstractJsonLexer abstractJsonLexer2 = this;
+                    if (peekNextToken2 != 7) {
+                        arrayList = arrayList2;
+                        abstractJsonLexer = abstractJsonLexer2;
+                        if (peekNextToken2 == 10) {
+                            fail$default(abstractJsonLexer, "Unexpected end of input due to malformed JSON during ignoring unknown keys", 0, null, 6, null);
+                            throw new KotlinNothingValueException();
                         }
-                        CollectionsKt.removeLast(arrayList);
-                    } else if (peekNextToken2 == 7) {
-                        if (((Number) CollectionsKt.last((List<? extends Object>) arrayList)).byteValue() != 6) {
-                            throw JsonExceptionsKt.JsonDecodingException(this.currentPosition, "found } instead of ] at path: " + this.path, this.getSource());
-                        }
-                        CollectionsKt.removeLast(arrayList);
-                    } else if (peekNextToken2 == 10) {
-                        fail$default(this, "Unexpected end of input due to malformed JSON during ignoring unknown keys", 0, null, 6, null);
+                    } else if (((Number) CollectionsKt.last((List<? extends Object>) arrayList2)).byteValue() != 6) {
+                        fail$default(abstractJsonLexer2, "found } instead of ]", 0, null, 6, null);
                         throw new KotlinNothingValueException();
+                    } else {
+                        CollectionsKt.removeLast(arrayList2);
+                        arrayList = arrayList2;
+                        abstractJsonLexer = abstractJsonLexer2;
                     }
+                } else if (((Number) CollectionsKt.last((List<? extends Object>) arrayList2)).byteValue() != 8) {
+                    fail$default(this, "found ] instead of }", 0, null, 6, null);
+                    throw new KotlinNothingValueException();
+                } else {
+                    CollectionsKt.removeLast(arrayList2);
+                    ArrayList arrayList4 = arrayList2;
                     abstractJsonLexer = this;
+                    arrayList = arrayList4;
                 }
                 abstractJsonLexer.consumeNextToken();
                 if (arrayList.size() == 0) {
                     return;
                 }
-                this = abstractJsonLexer;
+                AbstractJsonLexer abstractJsonLexer3 = abstractJsonLexer;
+                arrayList2 = arrayList;
+                this = abstractJsonLexer3;
             } else if (z) {
                 this.consumeStringLenient();
             } else {
@@ -561,8 +581,8 @@ public abstract class AbstractJsonLexer {
 
     public final void failOnUnknownKey(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        int lastIndexOf$default = StringsKt.lastIndexOf$default((CharSequence) substring(0, this.currentPosition), key, 0, false, 6, (Object) null);
-        throw new JsonDecodingException("Encountered an unknown key '" + key + "' at offset " + lastIndexOf$default + " at path: " + this.path.getPath() + "\nUse 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.\nJSON input: " + ((Object) JsonExceptionsKt.minify(getSource(), lastIndexOf$default)));
+        fail("Encountered an unknown key '" + key + '\'', StringsKt.lastIndexOf$default((CharSequence) substring(0, this.currentPosition), key, 0, false, 6, (Object) null), AbstractJsonLexerKt.ignoreUnknownKeysHint);
+        throw new KotlinNothingValueException();
     }
 
     public static /* synthetic */ Void fail$default(AbstractJsonLexer abstractJsonLexer, String str, int i, String str2, int i2, Object obj) {
@@ -571,116 +591,121 @@ public abstract class AbstractJsonLexer {
                 i = abstractJsonLexer.currentPosition;
             }
             if ((i2 & 4) != 0) {
-                str2 = "";
+                str2 = null;
             }
             return abstractJsonLexer.fail(str, i, str2);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: fail");
     }
 
-    public final Void fail(String message, int i, String hint) {
+    public final Void fail(String message, int i, String str) {
         Intrinsics.checkNotNullParameter(message, "message");
-        Intrinsics.checkNotNullParameter(hint, "hint");
-        throw JsonExceptionsKt.JsonDecodingException(i, message + " at path: " + this.path.getPath() + (hint.length() == 0 ? "" : "\n" + hint), getSource());
+        throw JsonExceptionsKt.decodingExceptionOf(this, message, i, this.path.getPath(), str, getSource());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x01ec, code lost:
-        fail$default(r18, "Expected numeric literal", 0, null, 6, null);
+    /* JADX WARN: Code restructure failed: missing block: B:185:0x0115, code lost:
+        fail$default(r18, "Unexpected symbol '" + r15 + "' in numeric literal", r2, null, 4, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x01fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x0133, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x013b, code lost:
-        if (r2 == r1) goto L96;
+    /* JADX WARN: Code restructure failed: missing block: B:187:0x0134, code lost:
+        if (r2 == r1) goto L94;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x013d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x0136, code lost:
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x013f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x0138, code lost:
         r4 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0140, code lost:
-        if (r1 == r2) goto L94;
+    /* JADX WARN: Code restructure failed: missing block: B:190:0x0139, code lost:
+        if (r1 == r2) goto L92;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0142, code lost:
-        if (r9 == false) goto L64;
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x013b, code lost:
+        if (r9 == false) goto L62;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0146, code lost:
-        if (r1 == (r2 - 1)) goto L94;
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x013f, code lost:
+        if (r1 == (r2 - 1)) goto L92;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0148, code lost:
-        if (r0 == false) goto L73;
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x0141, code lost:
+        if (r0 == false) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x014a, code lost:
-        if (r4 == false) goto L71;
+    /* JADX WARN: Code restructure failed: missing block: B:195:0x0143, code lost:
+        if (r4 == false) goto L69;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0154, code lost:
-        if (getSource().charAt(r2) != '\"') goto L69;
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x014f, code lost:
+        if (getSource().charAt(r2) != '\"') goto L67;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0156, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:198:0x0151, code lost:
         r2 = r2 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0159, code lost:
-        fail$default(r18, "Expected closing quotation mark", 0, null, 6, null);
+    /* JADX WARN: Code restructure failed: missing block: B:199:0x0154, code lost:
+        fail$default(r18, "Expected closing quotation mark", r2, null, 4, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0169, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:200:0x0163, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x016a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x0164, code lost:
         fail$default(r18, "EOF", 0, null, 6, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x017a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:202:0x0174, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x017b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:203:0x0175, code lost:
         r18.currentPosition = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x017f, code lost:
-        if (r8 == false) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:204:0x0179, code lost:
+        if (r8 == false) goto L84;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0181, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:205:0x017b, code lost:
         r1 = r10 * consumeNumericLiteral$calculateExponent(r12, r14);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x018b, code lost:
-        if (r1 > 9.223372036854776E18d) goto L84;
+    /* JADX WARN: Code restructure failed: missing block: B:206:0x0185, code lost:
+        if (r1 > 9.223372036854776E18d) goto L82;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0191, code lost:
-        if (r1 < (-9.223372036854776E18d)) goto L84;
+    /* JADX WARN: Code restructure failed: missing block: B:208:0x018b, code lost:
+        if (r1 < (-9.223372036854776E18d)) goto L82;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x0199, code lost:
-        if (java.lang.Math.floor(r1) != r1) goto L82;
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x0193, code lost:
+        if (java.lang.Math.floor(r1) != r1) goto L80;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x019b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x0195, code lost:
         r10 = (long) r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x019d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:212:0x0197, code lost:
         fail$default(r18, "Can't convert " + r1 + " to Long", 0, null, 6, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x01be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:213:0x01b8, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x01b9, code lost:
         fail$default(r18, "Numeric value overflow", 0, null, 6, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x01cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:215:0x01c9, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x01d0, code lost:
-        if (r9 == false) goto L88;
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x01ca, code lost:
+        if (r9 == false) goto L86;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x01d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:217:0x01cc, code lost:
         return r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01d7, code lost:
-        if (r10 == Long.MIN_VALUE) goto L92;
+    /* JADX WARN: Code restructure failed: missing block: B:219:0x01d1, code lost:
+        if (r10 == Long.MIN_VALUE) goto L90;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:221:0x01d4, code lost:
         return -r10;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x01db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:222:0x01d5, code lost:
         fail$default(r18, "Numeric value overflow", 0, null, 6, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x01eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:223:0x01e5, code lost:
+        throw new kotlin.KotlinNothingValueException();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:224:0x01e6, code lost:
+        fail$default(r18, "Expected numeric literal", r2, null, 4, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:225:0x01f5, code lost:
         throw new kotlin.KotlinNothingValueException();
      */
     /*
@@ -688,7 +713,6 @@ public abstract class AbstractJsonLexer {
     */
     public final long consumeNumericLiteral() {
         boolean z;
-        char charAt;
         int prefetchOrEof = prefetchOrEof(skipWhitespaces());
         if (prefetchOrEof >= getSource().length() || prefetchOrEof == -1) {
             fail$default(this, "EOF", 0, null, 6, null);
@@ -705,24 +729,24 @@ public abstract class AbstractJsonLexer {
             z = false;
         }
         int i = prefetchOrEof;
-        long j = 0;
-        long j2 = 0;
         boolean z2 = false;
         boolean z3 = false;
+        long j = 0;
+        long j2 = 0;
         loop0: while (true) {
             boolean z4 = false;
             while (i != getSource().length()) {
-                charAt = getSource().charAt(i);
+                char charAt = getSource().charAt(i);
                 if ((charAt == 'e' || charAt == 'E') && !z2) {
                     if (i == prefetchOrEof) {
-                        fail$default(this, "Unexpected symbol " + charAt + " in numeric literal", 0, null, 6, null);
+                        fail$default(this, "Unexpected symbol '" + charAt + "' in numeric literal", i, null, 4, null);
                         throw new KotlinNothingValueException();
                     }
                     i++;
                     z2 = true;
                 } else if (charAt == '-' && z2) {
                     if (i == prefetchOrEof) {
-                        fail$default(this, "Unexpected symbol '-' in numeric literal", 0, null, 6, null);
+                        fail$default(this, "Unexpected symbol '-' in numeric literal", i, null, 4, null);
                         throw new KotlinNothingValueException();
                     }
                     i++;
@@ -731,28 +755,30 @@ public abstract class AbstractJsonLexer {
                         if (AbstractJsonLexerKt.charToTokenClass(charAt) != 0) {
                             break loop0;
                         }
-                        i++;
-                        int i2 = charAt - '0';
-                        if (i2 < 0 || i2 >= 10) {
+                        int i2 = i + 1;
+                        int i3 = charAt - '0';
+                        if (i3 < 0 || i3 >= 10) {
                             break loop0;
-                        } else if (z2) {
-                            j2 = (j2 * 10) + i2;
+                        }
+                        if (z2) {
+                            j2 = (j2 * 10) + i3;
                         } else {
-                            j = (j * 10) - i2;
+                            j = (j * 10) - i3;
                             if (j > 0) {
                                 fail$default(this, "Numeric value overflow", 0, null, 6, null);
                                 throw new KotlinNothingValueException();
                             }
                         }
+                        i = i2;
                     } else if (i != prefetchOrEof) {
-                        fail$default(this, "Unexpected symbol '-' in numeric literal", 0, null, 6, null);
+                        fail$default(this, "Unexpected symbol '-' in numeric literal", i, null, 4, null);
                         throw new KotlinNothingValueException();
                     } else {
                         i++;
                         z3 = true;
                     }
                 } else if (i == prefetchOrEof) {
-                    fail$default(this, "Unexpected symbol '+' in numeric literal", 0, null, 6, null);
+                    fail$default(this, "Unexpected symbol '+' in numeric literal", i, null, 4, null);
                     throw new KotlinNothingValueException();
                 } else {
                     i++;
@@ -761,8 +787,6 @@ public abstract class AbstractJsonLexer {
             }
             break loop0;
         }
-        fail$default(this, "Unexpected symbol '" + charAt + "' in numeric literal", 0, null, 6, null);
-        throw new KotlinNothingValueException();
     }
 
     private static final double consumeNumericLiteral$calculateExponent(long j, boolean z) {
@@ -780,7 +804,7 @@ public abstract class AbstractJsonLexer {
         if (consumeNextToken() != 10) {
             AbstractJsonLexerKt.tokenDescription((byte) 10);
             int i = this.currentPosition;
-            int i2 = i - 1;
+            int i2 = i > 0 ? i - 1 : i;
             fail$default(this, "Expected input to contain a single valid number, but got '" + ((i == getSource().length() || i2 < 0) ? "EOF" : String.valueOf(getSource().charAt(i2))) + "' after it", i2, null, 4, null);
             throw new KotlinNothingValueException();
         }

@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: SharedEventFlow.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.decompose.utils.SharedEventFlow", f = "SharedEventFlow.kt", i = {0}, l = {22}, m = "collect", n = {"collector"}, nl = {-1}, s = {"L$0"}, v = 2)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SharedEventFlow$collect$1 extends ContinuationImpl {
     Object L$0;
     int label;

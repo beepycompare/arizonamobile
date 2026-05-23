@@ -12,12 +12,12 @@ public final class RadioButtonTokens {
     public static final RadioButtonTokens INSTANCE = new RadioButtonTokens();
     private static final ColorSchemeKeyTokens DisabledSelectedIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens DisabledUnselectedIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m7555constructorimpl(20.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(20.0f);
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.Primary;
-    private static final float StateLayerSize = Dp.m7555constructorimpl(40.0f);
+    private static final float StateLayerSize = Dp.m8160constructorimpl(40.0f);
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedHoverIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -35,7 +35,7 @@ public final class RadioButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3700getIconSizeD9Ej5fM() {
+    public final float m4145getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -56,7 +56,7 @@ public final class RadioButtonTokens {
     }
 
     /* renamed from: getStateLayerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3701getStateLayerSizeD9Ej5fM() {
+    public final float m4146getStateLayerSizeD9Ej5fM() {
         return StateLayerSize;
     }
 

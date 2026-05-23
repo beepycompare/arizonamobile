@@ -202,7 +202,12 @@ public final class MetadataUtil {
                 int i2 = readInt - 16;
                 byte[] bArr = new byte[i2];
                 parsableByteArray.readBytes(bArr, 0, i2);
-                return new MdtaMetadataEntry(str, bArr, readInt3, readInt2);
+                try {
+                    return new MdtaMetadataEntry(str, bArr, readInt3, readInt2);
+                } catch (Exception unused) {
+                    Log.w(TAG, "Failed to parse metadata entry with key: " + str);
+                    return null;
+                }
             }
             parsableByteArray.setPosition(position + readInt);
         }

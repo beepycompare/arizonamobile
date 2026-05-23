@@ -7,11 +7,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt", f = "Limit.kt", i = {0}, l = {TsExtractor.TS_SYNC_BYTE}, m = "emitAbort$FlowKt__LimitKt", n = {"ownershipMarker"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt", f = "Limit.kt", i = {0, 0, 0}, l = {TsExtractor.TS_SYNC_BYTE}, m = "emitAbort$FlowKt__LimitKt", n = {"$this$emitAbort", "value", "ownershipMarker"}, s = {"L$0", "L$1", "L$2"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$emitAbort$1<T> extends ContinuationImpl {
     Object L$0;
+    Object L$1;
+    Object L$2;
     int label;
     /* synthetic */ Object result;
 

@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function5;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyGridDslKt$itemsIndexed$10 implements Function4<LazyGridItemScope, Integer, Composer, Integer, Unit> {
     final /* synthetic */ Function5<LazyGridItemScope, Integer, T, Composer, Integer, Unit> $itemContent;

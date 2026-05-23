@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LegacyPlatformTextInputServiceAdapter.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final /* synthetic */ class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2$1$request$1 extends FunctionReferenceImpl implements Function1<Matrix, Unit> {
     final /* synthetic */ LegacyPlatformTextInputServiceAdapter.LegacyPlatformTextInputNode $node;
@@ -22,12 +22,12 @@ final /* synthetic */ class AndroidLegacyPlatformTextInputServiceAdapter$startIn
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-        m1361invoke58bKbWc(matrix.m5039unboximpl());
+        m1749invoke58bKbWc(matrix.m5615unboximpl());
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke-58bKbWc  reason: not valid java name */
-    public final void m1361invoke58bKbWc(float[] fArr) {
+    public final void m1749invoke58bKbWc(float[] fArr) {
         AndroidLegacyPlatformTextInputServiceAdapter.startInput$localToScreen(this.$node, fArr);
     }
 }

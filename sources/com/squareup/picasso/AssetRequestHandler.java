@@ -8,7 +8,7 @@ import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
 import okio.Okio;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AssetRequestHandler extends RequestHandler {
     protected static final String ANDROID_ASSET = "android_asset";
     private static final int ASSET_PREFIX_LENGTH = "file:///android_asset/".length();

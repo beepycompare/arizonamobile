@@ -3,10 +3,12 @@ package kotlinx.coroutines.flow;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.collections.IndexedValue;
@@ -30,7 +32,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.channels.BufferOverflow;
 import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.channels.ReceiveChannel;
-@Metadata(d1 = {"kotlinx/coroutines/flow/FlowKt__BuildersKt", "kotlinx/coroutines/flow/FlowKt__ChannelsKt", "kotlinx/coroutines/flow/FlowKt__CollectKt", "kotlinx/coroutines/flow/FlowKt__CollectionKt", "kotlinx/coroutines/flow/FlowKt__ContextKt", "kotlinx/coroutines/flow/FlowKt__CountKt", "kotlinx/coroutines/flow/FlowKt__DelayKt", "kotlinx/coroutines/flow/FlowKt__DistinctKt", "kotlinx/coroutines/flow/FlowKt__EmittersKt", "kotlinx/coroutines/flow/FlowKt__ErrorsKt", "kotlinx/coroutines/flow/FlowKt__LimitKt", "kotlinx/coroutines/flow/FlowKt__LogicKt", "kotlinx/coroutines/flow/FlowKt__MergeKt", "kotlinx/coroutines/flow/FlowKt__MigrationKt", "kotlinx/coroutines/flow/FlowKt__ReduceKt", "kotlinx/coroutines/flow/FlowKt__ShareKt", "kotlinx/coroutines/flow/FlowKt__TransformKt", "kotlinx/coroutines/flow/FlowKt__ZipKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"kotlinx/coroutines/flow/FlowKt__BuildersKt", "kotlinx/coroutines/flow/FlowKt__ChannelsKt", "kotlinx/coroutines/flow/FlowKt__CollectKt", "kotlinx/coroutines/flow/FlowKt__CollectionKt", "kotlinx/coroutines/flow/FlowKt__ContextKt", "kotlinx/coroutines/flow/FlowKt__CountKt", "kotlinx/coroutines/flow/FlowKt__DelayKt", "kotlinx/coroutines/flow/FlowKt__DistinctKt", "kotlinx/coroutines/flow/FlowKt__EmittersKt", "kotlinx/coroutines/flow/FlowKt__ErrorsKt", "kotlinx/coroutines/flow/FlowKt__LimitKt", "kotlinx/coroutines/flow/FlowKt__LogicKt", "kotlinx/coroutines/flow/FlowKt__MergeKt", "kotlinx/coroutines/flow/FlowKt__MigrationKt", "kotlinx/coroutines/flow/FlowKt__ReduceKt", "kotlinx/coroutines/flow/FlowKt__ShareKt", "kotlinx/coroutines/flow/FlowKt__TransformKt", "kotlinx/coroutines/flow/FlowKt__ZipKt"}, k = 4, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt {
     public static final String DEFAULT_CONCURRENCY_PROPERTY_NAME = "kotlinx.coroutines.flow.defaultConcurrency";
@@ -71,6 +73,10 @@ public final class FlowKt {
         return FlowKt__BuildersKt.asFlow(sequence);
     }
 
+    public static final <T> Flow<T> asFlow(SharedFlow<? extends T> sharedFlow) {
+        return FlowKt__ShareKt.asFlow(sharedFlow);
+    }
+
     public static final Flow<Integer> asFlow(int[] iArr) {
         return FlowKt__BuildersKt.asFlow(iArr);
     }
@@ -91,6 +97,38 @@ public final class FlowKt {
         return FlowKt__ShareKt.asStateFlow(mutableStateFlow);
     }
 
+    public static final <T, K, V> Object associate(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super Pair<? extends K, ? extends V>>, ? extends Object> function2, Continuation<? super Map<K, ? extends V>> continuation) {
+        return FlowKt__CollectionKt.associate(flow, function2, continuation);
+    }
+
+    public static final <T, K> Object associateBy(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Continuation<? super Map<K, ? extends T>> continuation) {
+        return FlowKt__CollectionKt.associateBy(flow, function2, continuation);
+    }
+
+    public static final <T, K, V> Object associateBy(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Function2<? super T, ? super Continuation<? super V>, ? extends Object> function22, Continuation<? super Map<K, ? extends V>> continuation) {
+        return FlowKt__CollectionKt.associateBy(flow, function2, function22, continuation);
+    }
+
+    public static final <T, K, M extends Map<? super K, ? super T>> Object associateByTo(Flow<? extends T> flow, M m, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.associateByTo(flow, m, function2, continuation);
+    }
+
+    public static final <T, K, V, M extends Map<? super K, ? super V>> Object associateByTo(Flow<? extends T> flow, M m, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Function2<? super T, ? super Continuation<? super V>, ? extends Object> function22, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.associateByTo(flow, m, function2, function22, continuation);
+    }
+
+    public static final <T, K, V, M extends Map<? super K, ? super V>> Object associateTo(Flow<? extends T> flow, M m, Function2<? super T, ? super Continuation<? super Pair<? extends K, ? extends V>>, ? extends Object> function2, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.associateTo(flow, m, function2, continuation);
+    }
+
+    public static final <K, V> Object associateWith(Flow<? extends K> flow, Function2<? super K, ? super Continuation<? super V>, ? extends Object> function2, Continuation<? super Map<K, ? extends V>> continuation) {
+        return FlowKt__CollectionKt.associateWith(flow, function2, continuation);
+    }
+
+    public static final <K, V, M extends Map<? super K, ? super V>> Object associateWithTo(Flow<? extends K> flow, M m, Function2<? super K, ? super Continuation<? super V>, ? extends Object> function2, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.associateWithTo(flow, m, function2, continuation);
+    }
+
     public static final <T> Flow<T> buffer(Flow<? extends T> flow, int i, BufferOverflow bufferOverflow) {
         return FlowKt__ContextKt.buffer(flow, i, bufferOverflow);
     }
@@ -109,8 +147,8 @@ public final class FlowKt {
     }
 
     /* renamed from: catch  reason: not valid java name */
-    public static final <T> Flow<T> m10749catch(Flow<? extends T> flow, Function3<? super FlowCollector<? super T>, ? super Throwable, ? super Continuation<? super Unit>, ? extends Object> function3) {
-        return FlowKt__ErrorsKt.m10762catch(flow, function3);
+    public static final <T> Flow<T> m11388catch(Flow<? extends T> flow, Function3<? super FlowCollector<? super T>, ? super Throwable, ? super Continuation<? super Unit>, ? extends Object> function3) {
+        return FlowKt__ErrorsKt.m11400catch(flow, function3);
     }
 
     public static final <T> Object catchImpl(Flow<? extends T> flow, FlowCollector<? super T> flowCollector, Continuation<? super Throwable> continuation) {
@@ -135,6 +173,10 @@ public final class FlowKt {
 
     public static final <T> Object collectLatest(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation) {
         return FlowKt__CollectKt.collectLatest(flow, function2, continuation);
+    }
+
+    public static final <T> Object collectLatest(SharedFlow<? extends T> sharedFlow, Function2<? super T, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<?> continuation) {
+        return FlowKt__CollectKt.collectLatest(sharedFlow, function2, continuation);
     }
 
     public static final <T> Object collectWhile(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function2, Continuation<? super Unit> continuation) {
@@ -238,8 +280,8 @@ public final class FlowKt {
     }
 
     /* renamed from: debounce-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m10750debounceHG0u8IE(Flow<? extends T> flow, long j) {
-        return FlowKt__DelayKt.m10754debounceHG0u8IE(flow, j);
+    public static final <T> Flow<T> m11389debounceHG0u8IE(Flow<? extends T> flow, long j) {
+        return FlowKt__DelayKt.m11393debounceHG0u8IE(flow, j);
     }
 
     public static final <T> Flow<T> debounceDuration(Flow<? extends T> flow, Function1<? super T, Duration> function1) {
@@ -395,6 +437,22 @@ public final class FlowKt {
         return FlowKt__MergeKt.getDEFAULT_CONCURRENCY();
     }
 
+    public static final <T, K> Object groupBy(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Continuation<? super Map<K, ? extends List<? extends T>>> continuation) {
+        return FlowKt__CollectionKt.groupBy(flow, function2, continuation);
+    }
+
+    public static final <T, K, V> Object groupBy(Flow<? extends T> flow, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Function2<? super T, ? super Continuation<? super V>, ? extends Object> function22, Continuation<? super Map<K, ? extends List<? extends V>>> continuation) {
+        return FlowKt__CollectionKt.groupBy(flow, function2, function22, continuation);
+    }
+
+    public static final <T, K, M extends Map<? super K, List<T>>> Object groupByTo(Flow<? extends T> flow, M m, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.groupByTo(flow, m, function2, continuation);
+    }
+
+    public static final <T, K, V, M extends Map<? super K, List<V>>> Object groupByTo(Flow<? extends T> flow, M m, Function2<? super T, ? super Continuation<? super K>, ? extends Object> function2, Function2<? super T, ? super Continuation<? super V>, ? extends Object> function22, Continuation<? super M> continuation) {
+        return FlowKt__CollectionKt.groupByTo(flow, m, function2, function22, continuation);
+    }
+
     public static final <T> Object last(Flow<? extends T> flow, Continuation<? super T> continuation) {
         return FlowKt__ReduceKt.last(flow, continuation);
     }
@@ -485,6 +543,10 @@ public final class FlowKt {
         return FlowKt__ShareKt.onSubscription(sharedFlow, function2);
     }
 
+    public static final <T> StateFlow<T> onSubscription(StateFlow<? extends T> stateFlow, Function2<? super FlowCollector<? super T>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        return FlowKt__ShareKt.onSubscription((StateFlow) stateFlow, (Function2) function2);
+    }
+
     public static final <T> ReceiveChannel<T> produceIn(Flow<? extends T> flow, CoroutineScope coroutineScope) {
         return FlowKt__ChannelsKt.produceIn(flow, coroutineScope);
     }
@@ -543,8 +605,8 @@ public final class FlowKt {
     }
 
     /* renamed from: sample-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m10751sampleHG0u8IE(Flow<? extends T> flow, long j) {
-        return FlowKt__DelayKt.m10755sampleHG0u8IE(flow, j);
+    public static final <T> Flow<T> m11390sampleHG0u8IE(Flow<? extends T> flow, long j) {
+        return FlowKt__DelayKt.m11394sampleHG0u8IE(flow, j);
     }
 
     public static final <T, R> Flow<R> scan(Flow<? extends T> flow, R r, Function3<? super R, ? super T, ? super Continuation<? super R>, ? extends Object> function3) {
@@ -630,8 +692,8 @@ public final class FlowKt {
     }
 
     /* renamed from: timeout-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m10752timeoutHG0u8IE(Flow<? extends T> flow, long j) {
-        return FlowKt__DelayKt.m10756timeoutHG0u8IE(flow, j);
+    public static final <T> Flow<T> m11391timeoutHG0u8IE(Flow<? extends T> flow, long j) {
+        return FlowKt__DelayKt.m11395timeoutHG0u8IE(flow, j);
     }
 
     public static final <T, C extends Collection<? super T>> Object toCollection(Flow<? extends T> flow, C c, Continuation<? super C> continuation) {

@@ -5,7 +5,7 @@ import com.google.android.datatransport.runtime.scheduling.persistence.EventStor
 import com.google.android.datatransport.runtime.synchronization.SynchronizationGuard;
 import java.util.concurrent.Executor;
 import javax.inject.Inject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WorkInitializer {
     private final Executor executor;
     private final SynchronizationGuard guard;
@@ -25,25 +25,25 @@ public class WorkInitializer {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WorkInitializer.this.m8833xb85b87dc();
+                WorkInitializer.this.m9443xb85b87dc();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$ensureContextsScheduled$1$com-google-android-datatransport-runtime-scheduling-jobscheduling-WorkInitializer  reason: not valid java name */
-    public /* synthetic */ void m8833xb85b87dc() {
+    public /* synthetic */ void m9443xb85b87dc() {
         this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda1
             @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
             public final Object execute() {
-                return WorkInitializer.this.m8832x10dfae1b();
+                return WorkInitializer.this.m9442x10dfae1b();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$ensureContextsScheduled$0$com-google-android-datatransport-runtime-scheduling-jobscheduling-WorkInitializer  reason: not valid java name */
-    public /* synthetic */ Object m8832x10dfae1b() {
+    public /* synthetic */ Object m9442x10dfae1b() {
         for (TransportContext transportContext : this.store.loadActiveContexts()) {
             this.scheduler.schedule(transportContext, 1);
         }

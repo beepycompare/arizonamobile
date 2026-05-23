@@ -20,6 +20,10 @@ public interface ProgressiveMediaExtractor {
 
     long getCurrentInputPosition();
 
+    default String getUnderlyingImplementationName() {
+        return null;
+    }
+
     void init(DataReader dataReader, Uri uri, Map<String, List<String>> map, long j, long j2, ExtractorOutput extractorOutput) throws IOException;
 
     int read(PositionHolder positionHolder) throws IOException;

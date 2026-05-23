@@ -71,19 +71,19 @@ public final class SessionsSettings {
     }
 
     /* renamed from: getSessionRestartTimeout-UwyO8pc  reason: not valid java name */
-    public final long m9072getSessionRestartTimeoutUwyO8pc() {
-        Duration mo9070getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9070getSessionRestartTimeoutFghU774();
-        if (mo9070getSessionRestartTimeoutFghU774 != null) {
-            long m10604unboximpl = mo9070getSessionRestartTimeoutFghU774.m10604unboximpl();
-            if (m9071isValidSessionRestartTimeoutLRDsOJo(m10604unboximpl)) {
-                return m10604unboximpl;
+    public final long m9709getSessionRestartTimeoutUwyO8pc() {
+        Duration mo9707getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9707getSessionRestartTimeoutFghU774();
+        if (mo9707getSessionRestartTimeoutFghU774 != null) {
+            long m11244unboximpl = mo9707getSessionRestartTimeoutFghU774.m11244unboximpl();
+            if (m9708isValidSessionRestartTimeoutLRDsOJo(m11244unboximpl)) {
+                return m11244unboximpl;
             }
         }
-        Duration mo9070getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9070getSessionRestartTimeoutFghU774();
-        if (mo9070getSessionRestartTimeoutFghU7742 != null) {
-            long m10604unboximpl2 = mo9070getSessionRestartTimeoutFghU7742.m10604unboximpl();
-            if (m9071isValidSessionRestartTimeoutLRDsOJo(m10604unboximpl2)) {
-                return m10604unboximpl2;
+        Duration mo9707getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9707getSessionRestartTimeoutFghU774();
+        if (mo9707getSessionRestartTimeoutFghU7742 != null) {
+            long m11244unboximpl2 = mo9707getSessionRestartTimeoutFghU7742.m11244unboximpl();
+            if (m9708isValidSessionRestartTimeoutLRDsOJo(m11244unboximpl2)) {
+                return m11244unboximpl2;
             }
         }
         Duration.Companion companion = Duration.Companion;
@@ -91,21 +91,21 @@ public final class SessionsSettings {
     }
 
     /* renamed from: isValidSessionRestartTimeout-LRDsOJo  reason: not valid java name */
-    private final boolean m9071isValidSessionRestartTimeoutLRDsOJo(long j) {
-        return Duration.m10585isPositiveimpl(j) && Duration.m10580isFiniteimpl(j);
+    private final boolean m9708isValidSessionRestartTimeoutLRDsOJo(long j) {
+        return Duration.m11225isPositiveimpl(j) && Duration.m11220isFiniteimpl(j);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x004a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0044, code lost:
         if (r6.updateSettings(r0) == r1) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x004f, code lost:
         if (r5.updateSettings(r0) != r1) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x005a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0051, code lost:
         return r1;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -122,7 +122,6 @@ public final class SessionsSettings {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     SettingsProvider settingsProvider = this.localOverrideSettings;
-                    sessionsSettings$updateSettings$1.L$0 = this;
                     sessionsSettings$updateSettings$1.label = 1;
                 } else if (i != 1) {
                     if (i == 2) {
@@ -131,11 +130,9 @@ public final class SessionsSettings {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    this = (SessionsSettings) sessionsSettings$updateSettings$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 SettingsProvider settingsProvider2 = this.remoteSettings;
-                sessionsSettings$updateSettings$1.L$0 = null;
                 sessionsSettings$updateSettings$1.label = 2;
             }
         }
@@ -146,7 +143,6 @@ public final class SessionsSettings {
         if (i != 0) {
         }
         SettingsProvider settingsProvider22 = this.remoteSettings;
-        sessionsSettings$updateSettings$1.L$0 = null;
         sessionsSettings$updateSettings$1.label = 2;
     }
 

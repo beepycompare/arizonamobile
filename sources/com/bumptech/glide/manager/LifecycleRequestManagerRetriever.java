@@ -58,9 +58,8 @@ public final class LifecycleRequestManagerRetriever {
         return only;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public final class SupportRequestManagerTreeNode implements RequestManagerTreeNode {
+    private final class SupportRequestManagerTreeNode implements RequestManagerTreeNode {
         private final FragmentManager childFragmentManager;
 
         SupportRequestManagerTreeNode(FragmentManager fragmentManager) {

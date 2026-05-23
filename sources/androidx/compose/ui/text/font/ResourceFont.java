@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Font.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B9\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ+\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u001a\u0010\u001bJA\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0004\b\u001c\u0010\u001dJ\u0013\u0010\u001e\u001a\u00020\u001f2\b\u0010 \u001a\u0004\u0018\u00010!H\u0096\u0002J\b\u0010\"\u001a\u00020\u0003H\u0016J\b\u0010#\u001a\u00020$H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0012\u0010\u000fR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001e\u0010\n\u001a\u00020\u000b8\u0016X\u0097\u0004¢\u0006\u0010\n\u0002\u0010\u0013\u0012\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0018\u0010\u000f¨\u0006%"}, d2 = {"Landroidx/compose/ui/text/font/ResourceFont;", "Landroidx/compose/ui/text/font/Font;", "resId", "", "weight", "Landroidx/compose/ui/text/font/FontWeight;", "style", "Landroidx/compose/ui/text/font/FontStyle;", "variationSettings", "Landroidx/compose/ui/text/font/FontVariation$Settings;", "loadingStrategy", "Landroidx/compose/ui/text/font/FontLoadingStrategy;", "<init>", "(ILandroidx/compose/ui/text/font/FontWeight;ILandroidx/compose/ui/text/font/FontVariation$Settings;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getResId", "()I", "getWeight", "()Landroidx/compose/ui/text/font/FontWeight;", "getStyle-_-LCdwA", "I", "getVariationSettings", "()Landroidx/compose/ui/text/font/FontVariation$Settings;", "getLoadingStrategy-PKNRLFQ$annotations", "()V", "getLoadingStrategy-PKNRLFQ", "copy", "copy-RetOiIg", "(ILandroidx/compose/ui/text/font/FontWeight;I)Landroidx/compose/ui/text/font/ResourceFont;", "copy-F3nL8kk", "(ILandroidx/compose/ui/text/font/FontWeight;IILandroidx/compose/ui/text/font/FontVariation$Settings;)Landroidx/compose/ui/text/font/ResourceFont;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B9\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ+\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u001a\u0010\u001bJA\u0010\u0019\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\b\u001a\u00020\tH\u0007¢\u0006\u0004\b\u001c\u0010\u001dJ\u0013\u0010\u001e\u001a\u00020\u001f2\b\u0010 \u001a\u0004\u0018\u00010!H\u0096\u0002J\b\u0010\"\u001a\u00020\u0003H\u0016J\b\u0010#\u001a\u00020$H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0006\u001a\u00020\u0007X\u0096\u0004¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0012\u0010\u000fR\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001e\u0010\n\u001a\u00020\u000b8\u0016X\u0097\u0004¢\u0006\u0010\n\u0002\u0010\u0013\u0012\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0018\u0010\u000f¨\u0006%"}, d2 = {"Landroidx/compose/ui/text/font/ResourceFont;", "Landroidx/compose/ui/text/font/Font;", "resId", "", "weight", "Landroidx/compose/ui/text/font/FontWeight;", "style", "Landroidx/compose/ui/text/font/FontStyle;", "variationSettings", "Landroidx/compose/ui/text/font/FontVariation$Settings;", "loadingStrategy", "Landroidx/compose/ui/text/font/FontLoadingStrategy;", "<init>", "(ILandroidx/compose/ui/text/font/FontWeight;ILandroidx/compose/ui/text/font/FontVariation$Settings;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getResId", "()I", "getWeight", "()Landroidx/compose/ui/text/font/FontWeight;", "getStyle-_-LCdwA", "I", "getVariationSettings", "()Landroidx/compose/ui/text/font/FontVariation$Settings;", "getLoadingStrategy-PKNRLFQ$annotations", "()V", "getLoadingStrategy-PKNRLFQ", "copy", "copy-RetOiIg", "(ILandroidx/compose/ui/text/font/FontWeight;I)Landroidx/compose/ui/text/font/ResourceFont;", "copy-F3nL8kk", "(ILandroidx/compose/ui/text/font/FontWeight;IILandroidx/compose/ui/text/font/FontVariation$Settings;)Landroidx/compose/ui/text/font/ResourceFont;", "equals", "", "other", "", "hashCode", "toString", "", "ui-text"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ResourceFont implements Font {
     public static final int $stable = 0;
@@ -20,7 +20,7 @@ public final class ResourceFont implements Font {
     }
 
     /* renamed from: getLoadingStrategy-PKNRLFQ$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7154getLoadingStrategyPKNRLFQ$annotations() {
+    public static /* synthetic */ void m7759getLoadingStrategyPKNRLFQ$annotations() {
     }
 
     private ResourceFont(int i, FontWeight fontWeight, int i2, FontVariation.Settings settings, int i3) {
@@ -40,9 +40,9 @@ public final class ResourceFont implements Font {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ ResourceFont(int i, FontWeight fontWeight, int i2, FontVariation.Settings settings, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, r2, r3, (i4 & 8) != 0 ? FontVariation.INSTANCE.m7138Settings6EWAqTQ(r2, r3, new FontVariation.Setting[0]) : settings, (i4 & 16) != 0 ? FontLoadingStrategy.Companion.m7106getAsyncPKNRLFQ() : i3, null);
+        this(i, r2, r3, (i4 & 8) != 0 ? FontVariation.INSTANCE.m7743Settings6EWAqTQ(r2, r3, new FontVariation.Setting[0]) : settings, (i4 & 16) != 0 ? FontLoadingStrategy.Companion.m7711getAsyncPKNRLFQ() : i3, null);
         FontWeight normal = (i4 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight;
-        int m7122getNormal_LCdwA = (i4 & 4) != 0 ? FontStyle.Companion.m7122getNormal_LCdwA() : i2;
+        int m7727getNormal_LCdwA = (i4 & 4) != 0 ? FontStyle.Companion.m7727getNormal_LCdwA() : i2;
     }
 
     @Override // androidx.compose.ui.text.font.Font
@@ -52,7 +52,7 @@ public final class ResourceFont implements Font {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getStyle-_-LCdwA */
-    public int mo7068getStyle_LCdwA() {
+    public int mo7673getStyle_LCdwA() {
         return this.style;
     }
 
@@ -62,12 +62,12 @@ public final class ResourceFont implements Font {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getLoadingStrategy-PKNRLFQ */
-    public int mo7060getLoadingStrategyPKNRLFQ() {
+    public int mo7665getLoadingStrategyPKNRLFQ() {
         return this.loadingStrategy;
     }
 
     /* renamed from: copy-RetOiIg$default  reason: not valid java name */
-    public static /* synthetic */ ResourceFont m7153copyRetOiIg$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, Object obj) {
+    public static /* synthetic */ ResourceFont m7758copyRetOiIg$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = resourceFont.resId;
         }
@@ -75,18 +75,18 @@ public final class ResourceFont implements Font {
             fontWeight = resourceFont.getWeight();
         }
         if ((i3 & 4) != 0) {
-            i2 = resourceFont.mo7068getStyle_LCdwA();
+            i2 = resourceFont.mo7673getStyle_LCdwA();
         }
-        return resourceFont.m7156copyRetOiIg(i, fontWeight, i2);
+        return resourceFont.m7761copyRetOiIg(i, fontWeight, i2);
     }
 
     /* renamed from: copy-RetOiIg  reason: not valid java name */
-    public final ResourceFont m7156copyRetOiIg(int i, FontWeight fontWeight, int i2) {
-        return m7152copyF3nL8kk$default(this, i, fontWeight, i2, mo7060getLoadingStrategyPKNRLFQ(), null, 16, null);
+    public final ResourceFont m7761copyRetOiIg(int i, FontWeight fontWeight, int i2) {
+        return m7757copyF3nL8kk$default(this, i, fontWeight, i2, mo7665getLoadingStrategyPKNRLFQ(), null, 16, null);
     }
 
     /* renamed from: copy-F3nL8kk$default  reason: not valid java name */
-    public static /* synthetic */ ResourceFont m7152copyF3nL8kk$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
+    public static /* synthetic */ ResourceFont m7757copyF3nL8kk$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             i = resourceFont.resId;
         }
@@ -94,21 +94,21 @@ public final class ResourceFont implements Font {
             fontWeight = resourceFont.getWeight();
         }
         if ((i4 & 4) != 0) {
-            i2 = resourceFont.mo7068getStyle_LCdwA();
+            i2 = resourceFont.mo7673getStyle_LCdwA();
         }
         if ((i4 & 8) != 0) {
-            i3 = resourceFont.mo7060getLoadingStrategyPKNRLFQ();
+            i3 = resourceFont.mo7665getLoadingStrategyPKNRLFQ();
         }
         if ((i4 & 16) != 0) {
             settings = resourceFont.variationSettings;
         }
         FontVariation.Settings settings2 = settings;
         int i5 = i2;
-        return resourceFont.m7155copyF3nL8kk(i, fontWeight, i5, i3, settings2);
+        return resourceFont.m7760copyF3nL8kk(i, fontWeight, i5, i3, settings2);
     }
 
     /* renamed from: copy-F3nL8kk  reason: not valid java name */
-    public final ResourceFont m7155copyF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
+    public final ResourceFont m7760copyF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
         return new ResourceFont(i, fontWeight, i2, settings, i3, null);
     }
 
@@ -118,16 +118,16 @@ public final class ResourceFont implements Font {
         }
         if (obj instanceof ResourceFont) {
             ResourceFont resourceFont = (ResourceFont) obj;
-            return this.resId == resourceFont.resId && Intrinsics.areEqual(getWeight(), resourceFont.getWeight()) && FontStyle.m7115equalsimpl0(mo7068getStyle_LCdwA(), resourceFont.mo7068getStyle_LCdwA()) && Intrinsics.areEqual(this.variationSettings, resourceFont.variationSettings) && FontLoadingStrategy.m7102equalsimpl0(mo7060getLoadingStrategyPKNRLFQ(), resourceFont.mo7060getLoadingStrategyPKNRLFQ());
+            return this.resId == resourceFont.resId && Intrinsics.areEqual(getWeight(), resourceFont.getWeight()) && FontStyle.m7720equalsimpl0(mo7673getStyle_LCdwA(), resourceFont.mo7673getStyle_LCdwA()) && Intrinsics.areEqual(this.variationSettings, resourceFont.variationSettings) && FontLoadingStrategy.m7707equalsimpl0(mo7665getLoadingStrategyPKNRLFQ(), resourceFont.mo7665getLoadingStrategyPKNRLFQ());
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.resId * 31) + getWeight().hashCode()) * 31) + FontStyle.m7116hashCodeimpl(mo7068getStyle_LCdwA())) * 31) + FontLoadingStrategy.m7103hashCodeimpl(mo7060getLoadingStrategyPKNRLFQ())) * 31) + this.variationSettings.hashCode();
+        return (((((((this.resId * 31) + getWeight().hashCode()) * 31) + FontStyle.m7721hashCodeimpl(mo7673getStyle_LCdwA())) * 31) + FontLoadingStrategy.m7708hashCodeimpl(mo7665getLoadingStrategyPKNRLFQ())) * 31) + this.variationSettings.hashCode();
     }
 
     public String toString() {
-        return "ResourceFont(resId=" + this.resId + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7117toStringimpl(mo7068getStyle_LCdwA())) + ", loadingStrategy=" + ((Object) FontLoadingStrategy.m7104toStringimpl(mo7060getLoadingStrategyPKNRLFQ())) + ')';
+        return "ResourceFont(resId=" + this.resId + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7722toStringimpl(mo7673getStyle_LCdwA())) + ", loadingStrategy=" + ((Object) FontLoadingStrategy.m7709toStringimpl(mo7665getLoadingStrategyPKNRLFQ())) + ')';
     }
 }

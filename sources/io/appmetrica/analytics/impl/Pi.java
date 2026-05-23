@@ -1,41 +1,52 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Pi {
+public final class Pi extends Mn {
+    public final Oi d;
+    public final ICommonExecutor e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f745a;
-    public final SafePackageManager b;
-
-    public Pi(Context context, SafePackageManager safePackageManager) {
-        this.f745a = context;
-        this.b = safePackageManager;
+    public Pi(C0448n5 c0448n5, InterfaceC0439mm interfaceC0439mm, ICommonExecutor iCommonExecutor) {
+        super(c0448n5, interfaceC0439mm);
+        this.d = new Oi(this);
+        this.e = iCommonExecutor;
     }
 
-    public final ArrayList a() {
-        ArrayList arrayList = new ArrayList();
-        SafePackageManager safePackageManager = this.b;
-        Context context = this.f745a;
-        PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
-        if (packageInfo != null) {
-            String[] strArr = packageInfo.requestedPermissions;
-            int[] iArr = packageInfo.requestedPermissionsFlags;
-            if (strArr != null) {
-                for (int i = 0; i < strArr.length; i++) {
-                    String str = strArr[i];
-                    if (iArr != null && iArr.length > i && (iArr[i] & 2) != 0) {
-                        arrayList.add(new PermissionState(str, true));
-                    } else {
-                        arrayList.add(new PermissionState(str, false));
-                    }
-                }
+    @Override // io.appmetrica.analytics.impl.Mn
+    public final void a() {
+        this.e.remove(this.d);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Mn
+    public final void f() {
+        this.b.a();
+        Eh eh = (Eh) ((C0448n5) this.f669a).k.a();
+        if (eh.k.a(eh.j)) {
+            String str = eh.m;
+            if (TextUtils.isEmpty(str) || "-1".equals(str)) {
+                return;
+            }
+            try {
+                a(C0690we.a((C0448n5) this.f669a));
+            } catch (Throwable unused) {
             }
         }
-        return arrayList;
+    }
+
+    @Override // io.appmetrica.analytics.impl.Mn
+    public final void g() {
+        this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(1L));
+    }
+
+    public final void h() {
+        if (this.c.get()) {
+            return;
+        }
+        this.e.remove(this.d);
+        if (((Eh) ((C0448n5) this.f669a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((Eh) ((C0448n5) this.f669a).k.a()).g));
+        }
     }
 }

@@ -144,8 +144,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     /* renamed from: SetHudTimer2 */
     public native void lambda$hudSetTimer2$51(int seconds, int maxTime, int type);
 
-    public native void SetTreesNewState(boolean trees_new);
-
     public native void initSAMP();
 
     public void removePLayerFromList(int id) {
@@ -258,7 +256,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         FullScreenCall();
         this.show_fps = defaultSharedPreferences.getBoolean(SettingsConstants.SHOW_FPS, this.show_fps);
         initSAMPWrapper();
-        SetTreesNewState(defaultSharedPreferences.getBoolean(SettingsConstants.UPDATED_GRAPHICS, true));
         if (Build.VERSION.SDK_INT >= 31) {
             Log.d(TAG, "onCreate: gameMode" + ((GameManager) getSystemService(GameManager.class)).getGameMode());
         }
@@ -396,8 +393,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.1.7\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.1.7", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.2.0\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.2.0", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);

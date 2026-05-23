@@ -23,11 +23,10 @@ import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.Arrays;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zay extends GoogleApi implements ModuleInstallClient {
     public static final /* synthetic */ int zab = 0;
@@ -38,9 +37,9 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
     static {
         Api.ClientKey clientKey = new Api.ClientKey();
         zac = clientKey;
-        zaq zaqVar = new zaq();
-        zad = zaqVar;
-        zae = new Api("ModuleInstall.API", zaqVar, clientKey);
+        zai zaiVar = new zai();
+        zad = zaiVar;
+        zae = new Api("ModuleInstall.API", zaiVar, clientKey);
     }
 
     public zay(Activity activity) {
@@ -63,13 +62,13 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
             return Tasks.forResult(new ModuleAvailabilityResponse(true, 0));
         }
         TaskApiCall.Builder builder = TaskApiCall.builder();
-        builder.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+        builder.setFeatures(com.google.android.gms.internal.base.zap.zaa);
         builder.setMethodKey(27301);
         builder.setAutoResolveMissingFeatures(false);
-        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zal
+        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zax
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zae(new zar(zay.this, (TaskCompletionSource) obj2), zad2);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zae(new zaj(zay.this, (TaskCompletionSource) obj2), zad2);
             }
         });
         return doRead(builder.build());
@@ -82,13 +81,13 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
             return Tasks.forResult(null);
         }
         TaskApiCall.Builder builder = TaskApiCall.builder();
-        builder.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+        builder.setFeatures(com.google.android.gms.internal.base.zap.zaa);
         builder.setMethodKey(27302);
         builder.setAutoResolveMissingFeatures(false);
-        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zap
+        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zaq
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zag(new zas(zay.this, (TaskCompletionSource) obj2), zad2, null);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zaf(new zak(zay.this, (TaskCompletionSource) obj2), zad2, null);
             }
         });
         return doRead(builder.build());
@@ -101,12 +100,12 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
             return Tasks.forResult(new ModuleInstallIntentResponse(null));
         }
         TaskApiCall.Builder builder = TaskApiCall.builder();
-        builder.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+        builder.setFeatures(com.google.android.gms.internal.base.zap.zaa);
         builder.setMethodKey(27307);
-        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zan
+        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zav
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zaf(new zaw(zay.this, (TaskCompletionSource) obj2), zad2);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zag(new zao(zay.this, (TaskCompletionSource) obj2), zad2);
             }
         });
         return doRead(builder.build());
@@ -123,13 +122,13 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         }
         if (listener == null) {
             TaskApiCall.Builder builder = TaskApiCall.builder();
-            builder.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+            builder.setFeatures(com.google.android.gms.internal.base.zap.zaa);
             builder.setAutoResolveMissingFeatures(true);
             builder.setMethodKey(27304);
-            builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zao
+            builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zar
                 @Override // com.google.android.gms.common.api.internal.RemoteCall
-                public final void accept(Object obj, Object obj2) {
-                    ((zaf) ((zaz) obj).getService()).zag(new zat(zay.this, (TaskCompletionSource) obj2), fromModuleInstallRequest, null);
+                public final /* synthetic */ void accept(Object obj, Object obj2) {
+                    ((zaf) ((zaz) obj).getService()).zaf(new zal(zay.this, (TaskCompletionSource) obj2), fromModuleInstallRequest, null);
                 }
             });
             return doRead(builder.build());
@@ -142,28 +141,28 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
         }
         final zaab zaabVar = new zaab(createListenerHolder);
         final AtomicReference atomicReference = new AtomicReference();
-        RemoteCall remoteCall = new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zai
+        RemoteCall remoteCall = new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zas
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zag(new zau(zay.this, atomicReference, (TaskCompletionSource) obj2, listener), fromModuleInstallRequest, zaabVar);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zaf(new zam(zay.this, atomicReference, (TaskCompletionSource) obj2, listener), fromModuleInstallRequest, zaabVar);
             }
         };
-        RemoteCall remoteCall2 = new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zaj
+        RemoteCall remoteCall2 = new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zat
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zai(new zav(zay.this, (TaskCompletionSource) obj2), zaabVar);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zai(new zan(zay.this, (TaskCompletionSource) obj2), zaabVar);
             }
         };
         RegistrationMethods.Builder builder2 = RegistrationMethods.builder();
         builder2.withHolder(createListenerHolder);
-        builder2.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+        builder2.setFeatures(com.google.android.gms.internal.base.zap.zaa);
         builder2.setAutoResolveMissingFeatures(true);
         builder2.register(remoteCall);
         builder2.unregister(remoteCall2);
         builder2.setMethodKey(27305);
-        return doRegisterEventListener(builder2.build()).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.gms.common.moduleinstall.internal.zak
+        return doRegisterEventListener(builder2.build()).onSuccessTask(new SuccessContinuation() { // from class: com.google.android.gms.common.moduleinstall.internal.zau
             @Override // com.google.android.gms.tasks.SuccessContinuation
-            public final Task then(Object obj) {
+            public final /* synthetic */ Task then(Object obj) {
                 Void r1 = (Void) obj;
                 int i = zay.zab;
                 AtomicReference atomicReference2 = atomicReference;
@@ -182,20 +181,19 @@ public final class zay extends GoogleApi implements ModuleInstallClient {
             return Tasks.forResult(null);
         }
         TaskApiCall.Builder builder = TaskApiCall.builder();
-        builder.setFeatures(com.google.android.gms.internal.base.zav.zaa);
+        builder.setFeatures(com.google.android.gms.internal.base.zap.zaa);
         builder.setMethodKey(27303);
         builder.setAutoResolveMissingFeatures(false);
-        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zam
+        builder.run(new RemoteCall() { // from class: com.google.android.gms.common.moduleinstall.internal.zaw
             @Override // com.google.android.gms.common.api.internal.RemoteCall
-            public final void accept(Object obj, Object obj2) {
-                ((zaf) ((zaz) obj).getService()).zah(new zax(zay.this, (TaskCompletionSource) obj2), zad2);
+            public final /* synthetic */ void accept(Object obj, Object obj2) {
+                ((zaf) ((zaz) obj).getService()).zah(new zap(zay.this, (TaskCompletionSource) obj2), zad2);
             }
         });
         return doRead(builder.build());
     }
 
     @Override // com.google.android.gms.common.moduleinstall.ModuleInstallClient
-    @ResultIgnorabilityUnspecified
     public final Task<Boolean> unregisterListener(InstallStatusListener installStatusListener) {
         return doUnregisterEventListener(ListenerHolders.createListenerKey(installStatusListener, "InstallStatusListener"), 27306);
     }

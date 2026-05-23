@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,10 +120,14 @@ public class SingleDateSelector implements DateSelector<Long> {
             defaultTextInputHint = UtcDates.getDefaultTextInputHint(inflate.getResources(), simpleDateFormat2);
         }
         String str = defaultTextInputHint;
-        textInputLayout.setPlaceholderText(str);
+        textInputLayout.setPlaceholderText(UtcDates.getVerbatimTextInputHint(str));
         Long l = this.selectedItem;
         if (l != null) {
             editText.setText(simpleDateFormat2.format(l));
+            Editable text = editText.getText();
+            if (text != null) {
+                editText.setSelection(text.length());
+            }
         }
         editText.addTextChangedListener(new DateFormatTextWatcher(str, simpleDateFormat2, textInputLayout, calendarConstraints) { // from class: com.google.android.material.datepicker.SingleDateSelector.1
             @Override // com.google.android.material.datepicker.DateFormatTextWatcher

@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzr extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzr> CREATOR = new zzs();
@@ -16,6 +16,7 @@ public final class zzr extends AbstractSafeParcelable {
     public final String zzC;
     public final long zzD;
     public final int zzE;
+    public final long zzF;
     public final String zza;
     public final String zzb;
     public final String zzc;
@@ -44,7 +45,7 @@ public final class zzr extends AbstractSafeParcelable {
     public final int zzz;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzr(String str, String str2, String str3, long j, String str4, long j2, long j3, String str5, boolean z, boolean z2, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4) {
+    public zzr(String str, String str2, String str3, long j, String str4, long j2, long j3, String str5, boolean z, boolean z2, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4, long j9) {
         Preconditions.checkNotEmpty(str);
         this.zza = str;
         this.zzb = true == TextUtils.isEmpty(str2) ? null : str2;
@@ -77,6 +78,7 @@ public final class zzr extends AbstractSafeParcelable {
         this.zzC = str12;
         this.zzD = j8;
         this.zzE = i4;
+        this.zzF = j9;
     }
 
     @Override // android.os.Parcelable
@@ -114,11 +116,12 @@ public final class zzr extends AbstractSafeParcelable {
         SafeParcelWriter.writeString(parcel, 36, this.zzC, false);
         SafeParcelWriter.writeLong(parcel, 37, this.zzD);
         SafeParcelWriter.writeInt(parcel, 38, this.zzE);
+        SafeParcelWriter.writeLong(parcel, 39, this.zzF);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzr(String str, String str2, String str3, String str4, long j, long j2, String str5, boolean z, boolean z2, long j3, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4) {
+    public zzr(String str, String str2, String str3, String str4, long j, long j2, String str5, boolean z, boolean z2, long j3, String str6, long j4, int i, boolean z3, boolean z4, Boolean bool, long j5, List list, String str7, String str8, String str9, boolean z5, long j6, int i2, String str10, int i3, long j7, String str11, String str12, long j8, int i4, long j9) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = str3;
@@ -150,5 +153,6 @@ public final class zzr extends AbstractSafeParcelable {
         this.zzC = str12;
         this.zzD = j8;
         this.zzE = i4;
+        this.zzF = j9;
     }
 }

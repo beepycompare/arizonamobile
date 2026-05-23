@@ -19,44 +19,44 @@ public final class RippleKt {
             return RippleKt.LocalRippleConfiguration$lambda$0();
         }
     }, 1, null);
-    private static final RippleNodeFactory DefaultBoundedRipple = new RippleNodeFactory(true, Dp.Companion.m7575getUnspecifiedD9Ej5fM(), Color.Companion.m4808getUnspecified0d7_KjU(), (DefaultConstructorMarker) null);
-    private static final RippleNodeFactory DefaultUnboundedRipple = new RippleNodeFactory(false, Dp.Companion.m7575getUnspecifiedD9Ej5fM(), Color.Companion.m4808getUnspecified0d7_KjU(), (DefaultConstructorMarker) null);
+    private static final RippleNodeFactory DefaultBoundedRipple = new RippleNodeFactory(true, Dp.Companion.m8180getUnspecifiedD9Ej5fM(), Color.Companion.m5384getUnspecified0d7_KjU(), (DefaultConstructorMarker) null);
+    private static final RippleNodeFactory DefaultUnboundedRipple = new RippleNodeFactory(false, Dp.Companion.m8180getUnspecifiedD9Ej5fM(), Color.Companion.m5384getUnspecified0d7_KjU(), (DefaultConstructorMarker) null);
 
     /* renamed from: ripple-H2RKhps$default */
-    public static /* synthetic */ IndicationNodeFactory m2402rippleH2RKhps$default(boolean z, float f, long j, int i, Object obj) {
+    public static /* synthetic */ IndicationNodeFactory m2847rippleH2RKhps$default(boolean z, float f, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
         if ((i & 2) != 0) {
-            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8180getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            j = Color.Companion.m4808getUnspecified0d7_KjU();
+            j = Color.Companion.m5384getUnspecified0d7_KjU();
         }
-        return m2401rippleH2RKhps(z, f, j);
+        return m2846rippleH2RKhps(z, f, j);
     }
 
     /* renamed from: ripple-H2RKhps */
-    public static final IndicationNodeFactory m2401rippleH2RKhps(boolean z, float f, long j) {
-        if (Dp.m7560equalsimpl0(f, Dp.Companion.m7575getUnspecifiedD9Ej5fM()) && Color.m4773equalsimpl0(j, Color.Companion.m4808getUnspecified0d7_KjU())) {
+    public static final IndicationNodeFactory m2846rippleH2RKhps(boolean z, float f, long j) {
+        if (Dp.m8165equalsimpl0(f, Dp.Companion.m8180getUnspecifiedD9Ej5fM()) && Color.m5349equalsimpl0(j, Color.Companion.m5384getUnspecified0d7_KjU())) {
             return z ? DefaultBoundedRipple : DefaultUnboundedRipple;
         }
         return new RippleNodeFactory(z, f, j, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: ripple-wH6b6FI$default */
-    public static /* synthetic */ IndicationNodeFactory m2404ripplewH6b6FI$default(ColorProducer colorProducer, boolean z, float f, int i, Object obj) {
+    public static /* synthetic */ IndicationNodeFactory m2849ripplewH6b6FI$default(ColorProducer colorProducer, boolean z, float f, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
         }
         if ((i & 4) != 0) {
-            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m8180getUnspecifiedD9Ej5fM();
         }
-        return m2403ripplewH6b6FI(colorProducer, z, f);
+        return m2848ripplewH6b6FI(colorProducer, z, f);
     }
 
     /* renamed from: ripple-wH6b6FI */
-    public static final IndicationNodeFactory m2403ripplewH6b6FI(ColorProducer colorProducer, boolean z, float f) {
+    public static final IndicationNodeFactory m2848ripplewH6b6FI(ColorProducer colorProducer, boolean z, float f) {
         return new RippleNodeFactory(z, f, colorProducer, (DefaultConstructorMarker) null);
     }
 

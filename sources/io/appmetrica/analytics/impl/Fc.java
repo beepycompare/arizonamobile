@@ -1,53 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Fc extends HashMap {
+public final class Fc implements L9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f585a;
+    public final A5 f543a;
 
-    public Fc() {
-        this.f585a = 0;
+    public Fc(P9 p9, C0166c7 c0166c7, C0279gh c0279gh, F4 f4, C0267g5 c0267g5, C0691wf c0691wf) {
+        Ec ec = new Ec(c0166c7, c0279gh, this, f4, c0691wf);
+        this.f543a = new A5(p9, ec.a(), ec.b(), c0267g5);
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    /* renamed from: a */
-    public final String put(String str, String str2) {
-        if (!containsKey(str)) {
-            if (str2 != null) {
-                this.f585a = str2.length() + str.length() + this.f585a;
-                return (String) super.put(str, str2);
-            }
-            return null;
-        }
-        if (str2 == null) {
-            if (containsKey(str)) {
-                String str3 = (String) get(str);
-                this.f585a -= str.length() + (str3 != null ? str3.length() : 0);
-            }
-            return (String) super.remove(str);
-        }
-        String str4 = (String) get(str);
-        this.f585a = (str2.length() - (str4 != null ? str4.length() : 0)) + this.f585a;
-        return (String) super.put(str, str2);
+    @Override // io.appmetrica.analytics.impl.L9
+    public final K9 a() {
+        return this.f543a;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        if (containsKey(obj)) {
-            String str = (String) get(obj);
-            this.f585a -= ((String) obj).length() + (str == null ? 0 : str.length());
-        }
-        return (String) super.remove(obj);
-    }
-
-    public Fc(String str) {
-        super(AbstractC0271gb.d(str));
-        this.f585a = 0;
-        for (String str2 : keySet()) {
-            String str3 = (String) get(str2);
-            this.f585a = str2.length() + (str3 == null ? 0 : str3.length()) + this.f585a;
-        }
+    public final A5 b() {
+        return this.f543a;
     }
 }

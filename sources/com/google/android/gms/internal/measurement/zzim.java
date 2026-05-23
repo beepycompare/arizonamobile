@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzim implements zzmk {
-    static final zzmk zza = new zzim();
+final class zzim implements zzadz {
+    static final zzadz zza = new zzim();
 
     private zzim() {
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmk
+    @Override // com.google.android.gms.internal.measurement.zzadz
     public final boolean zza(int i) {
         return zzin.zzb(i) != null;
     }

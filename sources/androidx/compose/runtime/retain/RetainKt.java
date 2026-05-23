@@ -12,13 +12,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Retain.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a&\u0010\u0000\u001a\u0002H\u0001\"\u0006\b\u0000\u0010\u0001\u0018\u00012\u000e\b\b\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0087\b¢\u0006\u0002\u0010\u0004\u001a>\u0010\u0000\u001a\u0002H\u0001\"\u0006\b\u0000\u0010\u0001\u0018\u00012\u0016\u0010\u0005\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u00070\u0006\"\u0004\u0018\u00010\u00072\u000e\b\b\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0087\b¢\u0006\u0002\u0010\b\u001a)\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0001¢\u0006\u0002\u0010\u000b\u001aA\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\t\u001a\u00020\n2\u0016\u0010\u0005\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u00070\u0006\"\u0004\u0018\u00010\u00072\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0001¢\u0006\u0002\u0010\f\u001a)\u0010\r\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u000e\u001a\u00020\u000f2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0003¢\u0006\u0002\u0010\u0010\"\u000e\u0010\u0011\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"retain", ExifInterface.GPS_DIRECTION_TRUE, "calculation", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", UserMetadata.KEYDATA_FILENAME, "", "", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "typeHash", "", "(ILkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "(I[Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "retainImpl", "key", "Landroidx/compose/runtime/retain/RetainKeys;", "(Landroidx/compose/runtime/retain/RetainKeys;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "RetainedValuesStoreMissingValue", "runtime-retain"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a&\u0010\u0000\u001a\u0002H\u0001\"\u0006\b\u0000\u0010\u0001\u0018\u00012\u000e\b\b\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0087\b¢\u0006\u0002\u0010\u0004\u001a>\u0010\u0000\u001a\u0002H\u0001\"\u0006\b\u0000\u0010\u0001\u0018\u00012\u0016\u0010\u0005\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u00070\u0006\"\u0004\u0018\u00010\u00072\u000e\b\b\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0087\b¢\u0006\u0002\u0010\b\u001a)\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0001¢\u0006\u0002\u0010\u000b\u001aA\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\t\u001a\u00020\n2\u0016\u0010\u0005\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u00070\u0006\"\u0004\u0018\u00010\u00072\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0001¢\u0006\u0002\u0010\f\u001a)\u0010\r\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u000e\u001a\u00020\u000f2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0003H\u0003¢\u0006\u0002\u0010\u0010\"\u000e\u0010\u0011\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"retain", ExifInterface.GPS_DIRECTION_TRUE, "calculation", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", UserMetadata.KEYDATA_FILENAME, "", "", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "typeHash", "", "(ILkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "(I[Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "retainImpl", "key", "Landroidx/compose/runtime/retain/RetainKeys;", "(Landroidx/compose/runtime/retain/RetainKeys;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;", "RetainedValuesStoreMissingValue", "runtime-retain"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class RetainKt {
     private static final Object RetainedValuesStoreMissingValue = new Object();
 
     public static final /* synthetic */ <T> T retain(Function0<? extends T> function0, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1709446474, "CC(retain)N(calculation)97@5268L60:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, -1709446474, "CC(retain)N(calculation)99@5407L60:Retain.kt#3my55w");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
         T t = (T) retain(Object.class.getName().hashCode(), function0, composer, (i << 3) & 112);
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -26,7 +26,7 @@ public final class RetainKt {
     }
 
     public static final /* synthetic */ <T> T retain(Object[] objArr, Function0<? extends T> function0, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1675961545, "CC(retain)N(keys,calculation)181@10409L73:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, 1675961545, "CC(retain)N(keys,calculation)190@11048L73:Retain.kt#3my55w");
         Intrinsics.reifiedOperationMarker(4, ExifInterface.GPS_DIRECTION_TRUE);
         T t = (T) retain(Object.class.getName().hashCode(), Arrays.copyOf(objArr, objArr.length), function0, composer, (i << 3) & 896);
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -34,9 +34,9 @@ public final class RetainKt {
     }
 
     public static final <T> T retain(int i, Function0<? extends T> function0, Composer composer, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 663053747, "C(retain)N(typeHash,calculation)191@10700L27,187@10589L232:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, 663053747, "C(retain)N(typeHash,calculation)200@11339L27,196@11228L232:Retain.kt#3my55w");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(663053747, i2, -1, "androidx.compose.runtime.retain.retain (Retain.kt:186)");
+            ComposerKt.traceEventStart(663053747, i2, -1, "androidx.compose.runtime.retain.retain (Retain.kt:195)");
         }
         T t = (T) retainImpl(new RetainKeys(null, ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0), i), function0, composer, i2 & 112);
         if (ComposerKt.isTraceInProgress()) {
@@ -47,9 +47,9 @@ public final class RetainKt {
     }
 
     public static final <T> T retain(int i, Object[] objArr, Function0<? extends T> function0, Composer composer, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, 2119413254, "C(retain)N(typeHash,keys,calculation)205@11058L27,201@10947L232:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, 2119413254, "C(retain)N(typeHash,keys,calculation)214@11697L27,210@11586L232:Retain.kt#3my55w");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(2119413254, i2, -1, "androidx.compose.runtime.retain.retain (Retain.kt:200)");
+            ComposerKt.traceEventStart(2119413254, i2, -1, "androidx.compose.runtime.retain.retain (Retain.kt:209)");
         }
         T t = (T) retainImpl(new RetainKeys(objArr, ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0), i), function0, composer, (i2 >> 3) & 112);
         if (ComposerKt.isTraceInProgress()) {
@@ -60,9 +60,9 @@ public final class RetainKt {
     }
 
     private static final <T> T retainImpl(RetainKeys retainKeys, Function0<? extends T> function0, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 583113279, "C(retainImpl)N(key,calculation)214@11321L7,216@11354L824:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, 583113279, "C(retainImpl)N(key,calculation)223@11960L7,225@11993L824:Retain.kt#3my55w");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(583113279, i, -1, "androidx.compose.runtime.retain.retainImpl (Retain.kt:213)");
+            ComposerKt.traceEventStart(583113279, i, -1, "androidx.compose.runtime.retain.retainImpl (Retain.kt:222)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(LocalRetainedValuesStoreKt.getLocalRetainedValuesStore());
@@ -83,11 +83,9 @@ public final class RetainKt {
         }
         final RetainedValueHolder retainedValueHolder = (RetainedValueHolder) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        if (retainedValueHolder.getOwner() == retainedValuesStore) {
-            composer.startReplaceGroup(-1626131997);
-        } else {
+        if (retainedValueHolder.getOwner() != retainedValuesStore) {
             composer.startReplaceGroup(-1614000612);
-            ComposerKt.sourceInformation(composer, "241@12247L44,241@12236L55");
+            ComposerKt.sourceInformation(composer, "250@12886L44,250@12875L55");
             ComposerKt.sourceInformationMarkerStart(composer, 2026146091, "CC(remember):Retain.kt#9igjgp");
             boolean changedInstance = composer.changedInstance(retainedValueHolder) | composer.changedInstance(retainedValuesStore);
             Object rememberedValue2 = composer.rememberedValue();
@@ -104,8 +102,11 @@ public final class RetainKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
             EffectsKt.SideEffect((Function0) rememberedValue2, composer, 0);
+            composer.endReplaceGroup();
+        } else {
+            composer.startReplaceGroup(-1613932381);
+            composer.endReplaceGroup();
         }
-        composer.endReplaceGroup();
         T t = (T) retainedValueHolder.getValue();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();

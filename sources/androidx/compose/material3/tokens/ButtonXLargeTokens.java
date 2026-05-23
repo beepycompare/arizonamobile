@@ -8,23 +8,23 @@ import kotlin.Metadata;
 public final class ButtonXLargeTokens {
     public static final int $stable = 0;
     public static final ButtonXLargeTokens INSTANCE = new ButtonXLargeTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(136.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(136.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(40.0f);
-    private static final float LeadingSpace = Dp.m7555constructorimpl(64.0f);
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(3.0f);
+    private static final float IconLabelSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(40.0f);
+    private static final float LeadingSpace = Dp.m8160constructorimpl(64.0f);
+    private static final float OutlinedOutlineWidth = Dp.m8160constructorimpl(3.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float TrailingSpace = Dp.m7555constructorimpl(64.0f);
+    private static final float TrailingSpace = Dp.m8160constructorimpl(64.0f);
 
     private ButtonXLargeTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3170getContainerHeightD9Ej5fM() {
+    public final float m3615getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -37,22 +37,22 @@ public final class ButtonXLargeTokens {
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3171getIconLabelSpaceD9Ej5fM() {
+    public final float m3616getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3172getIconSizeD9Ej5fM() {
+    public final float m3617getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3173getLeadingSpaceD9Ej5fM() {
+    public final float m3618getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getOutlinedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3174getOutlinedOutlineWidthD9Ej5fM() {
+    public final float m3619getOutlinedOutlineWidthD9Ej5fM() {
         return OutlinedOutlineWidth;
     }
 
@@ -69,7 +69,7 @@ public final class ButtonXLargeTokens {
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3175getTrailingSpaceD9Ej5fM() {
+    public final float m3620getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 }

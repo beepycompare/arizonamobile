@@ -135,4 +135,12 @@ public final class MediaParserExtractorAdapter implements ProgressiveMediaExtrac
         }
         return -1;
     }
+
+    @Override // androidx.media3.exoplayer.source.ProgressiveMediaExtractor
+    public String getUnderlyingImplementationName() {
+        if (this.mediaParser.getParserName().equals("android.media.mediaparser.UNKNOWN")) {
+            return null;
+        }
+        return this.mediaParser.getParserName();
+    }
 }

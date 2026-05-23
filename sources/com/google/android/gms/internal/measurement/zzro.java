@@ -1,8 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import java.io.IOException;
+import java.util.List;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public interface zzro {
-    boolean zza();
+    default void zza(List list) throws IOException {
+    }
 
-    boolean zzb();
+    default void zzb() throws IOException {
+    }
 }

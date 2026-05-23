@@ -6,7 +6,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import javax.inject.Singleton;
 @Module
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class ExecutionModule {
     ExecutionModule() {
     }

@@ -290,14 +290,14 @@ public class CLContainer extends CLElement {
 
     @Override // androidx.constraintlayout.core.parser.CLElement
     /* renamed from: clone */
-    public CLContainer mo8036clone() {
-        CLContainer cLContainer = (CLContainer) super.mo8036clone();
+    public CLContainer mo8641clone() {
+        CLContainer cLContainer = (CLContainer) super.mo8641clone();
         ArrayList<CLElement> arrayList = new ArrayList<>(this.mElements.size());
         Iterator<CLElement> it = this.mElements.iterator();
         while (it.hasNext()) {
-            CLElement mo8036clone = it.next().mo8036clone();
-            mo8036clone.setContainer(cLContainer);
-            arrayList.add(mo8036clone);
+            CLElement mo8641clone = it.next().mo8641clone();
+            mo8641clone.setContainer(cLContainer);
+            arrayList.add(mo8641clone);
         }
         cLContainer.mElements = arrayList;
         return cLContainer;

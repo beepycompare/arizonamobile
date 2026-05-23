@@ -1,20 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.content.Context;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Lambda;
 /* loaded from: classes5.dex */
-public final class V {
+public final class V extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0685wn f822a;
-    public final List b;
-    public final String c;
+    public final /* synthetic */ W f799a;
+    public final /* synthetic */ InterfaceC0152bj b;
 
-    public V(C0685wn c0685wn, ArrayList arrayList, String str) {
-        this.f822a = c0685wn;
-        this.b = arrayList == null ? Collections.emptyList() : CollectionUtils.unmodifiableListCopy(arrayList);
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public V(W w, C0441mo c0441mo) {
+        super(0);
+        this.f799a = w;
+        this.b = c0441mo;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        W w = this.f799a;
+        K k = w.h;
+        Context context = w.f814a;
+        InterfaceC0152bj interfaceC0152bj = this.b;
+        k.getClass();
+        return K.a(new J(k, context, interfaceC0152bj));
     }
 }

@@ -1,26 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
+import io.appmetrica.analytics.AdvIdentifiersResult;
+import io.appmetrica.analytics.internal.IdentifiersResult;
 /* loaded from: classes5.dex */
-public final class Q extends Lambda implements Function0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f750a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Q(U u) {
-        super(0);
-        this.f750a = u;
-    }
-
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        U u = this.f750a;
-        N n = u.f;
-        Context context = u.f809a;
-        n.getClass();
-        return N.a(new L(n, context));
+public final class Q {
+    public static AdvIdentifiersResult.AdvId a(IdentifiersResult identifiersResult) {
+        AdvIdentifiersResult.Details details;
+        String str = identifiersResult == null ? null : identifiersResult.id;
+        if (identifiersResult == null) {
+            details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+        } else {
+            int i = P.f708a[identifiersResult.status.ordinal()];
+            if (i == 1) {
+                details = AdvIdentifiersResult.Details.OK;
+            } else if (i == 2) {
+                details = AdvIdentifiersResult.Details.FEATURE_DISABLED;
+            } else if (i == 3) {
+                details = AdvIdentifiersResult.Details.IDENTIFIER_PROVIDER_UNAVAILABLE;
+            } else if (i == 4) {
+                details = AdvIdentifiersResult.Details.INVALID_ADV_ID;
+            } else if (i != 5) {
+                details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+            } else {
+                details = AdvIdentifiersResult.Details.FORBIDDEN_BY_CLIENT_CONFIG;
+            }
+        }
+        return new AdvIdentifiersResult.AdvId(str, details, identifiersResult != null ? identifiersResult.errorExplanation : null);
     }
 }

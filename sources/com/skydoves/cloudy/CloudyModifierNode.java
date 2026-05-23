@@ -24,7 +24,7 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 /* compiled from: CloudyLegacyBlurStrategy.kt */
 @Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002B'\u0012\b\b\u0002\u0010\u0003\u001a\u00020\u0004\u0012\u0014\b\u0002\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006¢\u0006\u0004\b\t\u0010\nJ\u000e\u0010\u0017\u001a\u00020\b2\u0006\u0010\u0018\u001a\u00020\u0004J\u0006\u0010\u0019\u001a\u00020\bJ\f\u0010\u001a\u001a\u00020\b*\u00020\u001bH\u0016J\u001a\u0010\u001c\u001a\u00020\u00122\u0006\u0010\u001d\u001a\u00020\u001e2\b\b\u0002\u0010\u001f\u001a\u00020\u0004H\u0002R\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u000b\u001a\u00020\u0004@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lcom/skydoves/cloudy/CloudyModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "radius", "", "onStateChanged", "Lkotlin/Function1;", "Lcom/skydoves/cloudy/CloudyState;", "", "<init>", "(ILkotlin/jvm/functions/Function1;)V", "value", "getRadius", "()I", "blurredBitmap", "Lcom/skydoves/cloudy/PlatformBitmap;", "cachedBlurRadius", "isProcessing", "", "pendingInvalidateRequest", "blurJob", "Lkotlinx/coroutines/Job;", "contentMayHaveChanged", "updateRadius", "newRadius", "onUpdate", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "isTransparentBitmap", "bitmap", "Landroid/graphics/Bitmap;", "grid", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode {
     private Job blurJob;
     private PlatformBitmap blurredBitmap;
@@ -78,7 +78,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         this.radius = i;
         Job job = this.blurJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.blurJob = null;
         this.isProcessing = false;
@@ -107,7 +107,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         GraphicsContext requireGraphicsContext = DelegatableNodeKt.requireGraphicsContext(this);
         GraphicsLayer createGraphicsLayer = requireGraphicsContext.createGraphicsLayer();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5344recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
+        DrawScope.m5920recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return CloudyModifierNode.draw$lambda$0(ContentDrawScope.this, (DrawScope) obj);
@@ -120,7 +120,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         }
         PlatformBitmap platformBitmap = this.blurredBitmap;
         if (platformBitmap != null && !platformBitmap.getBitmap().isRecycled()) {
-            DrawScope.m5330drawImagegbVJVH8$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0.0f, null, null, 0, 62, null);
+            DrawScope.m5906drawImagegbVJVH8$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0.0f, null, null, 0, 62, null);
         } else {
             GraphicsLayerKt.drawLayer(contentDrawScope2, createGraphicsLayer);
         }

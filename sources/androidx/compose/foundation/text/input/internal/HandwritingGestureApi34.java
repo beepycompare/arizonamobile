@@ -41,7 +41,7 @@ import kotlin.jvm.internal.Ref;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 /* compiled from: HandwritingGesture.android.kt */
-@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J;\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\f2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0000¢\u0006\u0002\b\u0010J+\u0010\u0011\u001a\u00020\u0012*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00132\u0006\u0010\t\u001a\u00020\n2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0000¢\u0006\u0002\b\u0016J,\u0010\u0017\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\fH\u0002J\u001c\u0010\u001a\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010\u001b\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010\u001d\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010\t\u001a\u00020\nH\u0002J,\u0010\u001e\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001f2\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\fH\u0002J\u001c\u0010 \u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001f2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010!\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010#\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010\t\u001a\u00020\nH\u0002J&\u0010$\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020%2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J&\u0010&\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020'2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J&\u0010(\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020)2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J#\u0010*\u001a\u00020\r*\u00020\u00062\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0012H\u0002¢\u0006\u0004\b.\u0010/J\u0014\u00100\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\bH\u0002J#\u00101\u001a\u00020\r*\u00020\u00062\u0006\u00102\u001a\u00020,2\u0006\u00103\u001a\u000204H\u0002¢\u0006\u0004\b5\u00106JA\u0010\u0004\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\b2\b\u00108\u001a\u0004\u0018\u0001092\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0000¢\u0006\u0002\b\u0010J-\u0010\u0011\u001a\u00020\u0012*\u0002072\u0006\u0010\u0018\u001a\u00020\u00132\b\u00108\u001a\u0004\u0018\u0001092\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0000¢\u0006\u0002\b\u0016J2\u0010\u0017\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010\u001a\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u00192\b\u00108\u001a\u0004\u0018\u000109H\u0002J0\u0010\u001b\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010>\u001a\u00020?2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010\u001d\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u001c2\b\u00108\u001a\u0004\u0018\u000109H\u0002J2\u0010\u001e\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u001f2\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010 \u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u001f2\b\u00108\u001a\u0004\u0018\u000109H\u0002J0\u0010!\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010>\u001a\u00020?2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010#\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\"2\b\u00108\u001a\u0004\u0018\u000109H\u0002J:\u0010$\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020%2\u0006\u0010>\u001a\u00020?2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J2\u0010&\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020'2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J:\u0010(\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020)2\u0006\u0010>\u001a\u00020?2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J,\u0010@\u001a\u00020\r2\u0006\u0010A\u001a\u00020\u00052\u0006\u0010>\u001a\u00020B2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J5\u0010C\u001a\u00020\r2\u0006\u00102\u001a\u00020,2\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002¢\u0006\u0004\bD\u0010EJ;\u0010F\u001a\u00020\r2\u0006\u00102\u001a\u00020,2\u0006\u0010>\u001a\u00020?2\u0006\u0010-\u001a\u00020\u00122\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002¢\u0006\u0004\bG\u0010HJ$\u0010I\u001a\u00020\u00052\u0006\u0010\u0018\u001a\u00020\b2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u0013\u0010J\u001a\u00020K*\u00020\u0005H\u0002¢\u0006\u0004\bL\u0010M¨\u0006N"}, d2 = {"Landroidx/compose/foundation/text/input/internal/HandwritingGestureApi34;", "", "<init>", "()V", "performHandwritingGesture", "", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "handwritingGesture", "Landroid/view/inputmethod/HandwritingGesture;", "layoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "updateSelectionState", "Lkotlin/Function0;", "", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "performHandwritingGesture$foundation", "previewHandwritingGesture", "", "Landroid/view/inputmethod/PreviewableHandwritingGesture;", "cancellationSignal", "Landroid/os/CancellationSignal;", "previewHandwritingGesture$foundation", "performSelectGesture", "gesture", "Landroid/view/inputmethod/SelectGesture;", "previewSelectGesture", "performDeleteGesture", "Landroid/view/inputmethod/DeleteGesture;", "previewDeleteGesture", "performSelectRangeGesture", "Landroid/view/inputmethod/SelectRangeGesture;", "previewSelectRangeGesture", "performDeleteRangeGesture", "Landroid/view/inputmethod/DeleteRangeGesture;", "previewDeleteRangeGesture", "performJoinOrSplitGesture", "Landroid/view/inputmethod/JoinOrSplitGesture;", "performInsertGesture", "Landroid/view/inputmethod/InsertGesture;", "performRemoveSpaceGesture", "Landroid/view/inputmethod/RemoveSpaceGesture;", "performDeletion", "rangeInTransformedText", "Landroidx/compose/ui/text/TextRange;", "adjustRange", "performDeletion-Sb-Bc2M", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;JZ)V", "fallback", "highlightRange", "range", "type", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlightRange-XJREzCE", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;JI)V", "Landroidx/compose/foundation/text/LegacyTextFieldState;", "textFieldSelectionManager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "editCommandConsumer", "Lkotlin/Function1;", "Landroidx/compose/ui/text/input/EditCommand;", "textSelectionManager", "text", "Landroidx/compose/ui/text/AnnotatedString;", "performInsertionOnLegacyTextField", TypedValues.CycleType.S_WAVE_OFFSET, "", "performSelectionOnLegacyTextField", "performSelectionOnLegacyTextField-8ffj60Q", "(JLandroidx/compose/foundation/text/selection/TextFieldSelectionManager;Lkotlin/jvm/functions/Function1;)V", "performDeletionOnLegacyTextField", "performDeletionOnLegacyTextField-vJH6DeI", "(JLandroidx/compose/ui/text/AnnotatedString;ZLkotlin/jvm/functions/Function1;)V", "fallbackOnLegacyTextField", "toTextGranularity", "Landroidx/compose/ui/text/TextGranularity;", "toTextGranularity-NUwxegE", "(I)I", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J;\u0010\u0004\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\f2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0000¢\u0006\u0002\b\u0010J+\u0010\u0011\u001a\u00020\u0012*\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00132\u0006\u0010\t\u001a\u00020\n2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0000¢\u0006\u0002\b\u0016J,\u0010\u0017\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\fH\u0002J\u001c\u0010\u001a\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010\u001b\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010\u001d\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010\t\u001a\u00020\nH\u0002J,\u0010\u001e\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001f2\u0006\u0010\t\u001a\u00020\n2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\fH\u0002J\u001c\u0010 \u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u001f2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010!\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010\t\u001a\u00020\nH\u0002J\u001c\u0010#\u001a\u00020\r*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010\t\u001a\u00020\nH\u0002J&\u0010$\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020%2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J&\u0010&\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020'2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J&\u0010(\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020)2\u0006\u0010\t\u001a\u00020\n2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000fH\u0002J#\u0010*\u001a\u00020\r*\u00020\u00062\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0012H\u0002¢\u0006\u0004\b.\u0010/J\u0014\u00100\u001a\u00020\u0005*\u00020\u00062\u0006\u0010\u0018\u001a\u00020\bH\u0002J#\u00101\u001a\u00020\r*\u00020\u00062\u0006\u00102\u001a\u00020,2\u0006\u00103\u001a\u000204H\u0002¢\u0006\u0004\b5\u00106JA\u0010\u0004\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\b2\b\u00108\u001a\u0004\u0018\u0001092\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0000¢\u0006\u0002\b\u0010J-\u0010\u0011\u001a\u00020\u0012*\u0002072\u0006\u0010\u0018\u001a\u00020\u00132\b\u00108\u001a\u0004\u0018\u0001092\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0000¢\u0006\u0002\b\u0016J2\u0010\u0017\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010\u001a\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u00192\b\u00108\u001a\u0004\u0018\u000109H\u0002J0\u0010\u001b\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u001c2\u0006\u0010>\u001a\u00020?2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010\u001d\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u001c2\b\u00108\u001a\u0004\u0018\u000109H\u0002J2\u0010\u001e\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\u001f2\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010 \u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\u001f2\b\u00108\u001a\u0004\u0018\u000109H\u0002J0\u0010!\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020\"2\u0006\u0010>\u001a\u00020?2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u001e\u0010#\u001a\u00020\r*\u0002072\u0006\u0010\u0018\u001a\u00020\"2\b\u00108\u001a\u0004\u0018\u000109H\u0002J:\u0010$\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020%2\u0006\u0010>\u001a\u00020?2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J2\u0010&\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020'2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J:\u0010(\u001a\u00020\u0005*\u0002072\u0006\u0010\u0018\u001a\u00020)2\u0006\u0010>\u001a\u00020?2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J,\u0010@\u001a\u00020\r2\u0006\u0010A\u001a\u00020\u00052\u0006\u0010>\u001a\u00020B2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J5\u0010C\u001a\u00020\r2\u0006\u00102\u001a\u00020,2\b\u0010=\u001a\u0004\u0018\u0001092\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002¢\u0006\u0004\bD\u0010EJ;\u0010F\u001a\u00020\r2\u0006\u00102\u001a\u00020,2\u0006\u0010>\u001a\u00020?2\u0006\u0010-\u001a\u00020\u00122\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002¢\u0006\u0004\bG\u0010HJ$\u0010I\u001a\u00020\u00052\u0006\u0010\u0018\u001a\u00020\b2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020\r0;H\u0002J\u0013\u0010J\u001a\u00020K*\u00020\u0005H\u0002¢\u0006\u0004\bL\u0010M¨\u0006N"}, d2 = {"Landroidx/compose/foundation/text/input/internal/HandwritingGestureApi34;", "", "<init>", "()V", "performHandwritingGesture", "", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "handwritingGesture", "Landroid/view/inputmethod/HandwritingGesture;", "layoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "updateSelectionState", "Lkotlin/Function0;", "", "viewConfiguration", "Landroidx/compose/ui/platform/ViewConfiguration;", "performHandwritingGesture$foundation", "previewHandwritingGesture", "", "Landroid/view/inputmethod/PreviewableHandwritingGesture;", "cancellationSignal", "Landroid/os/CancellationSignal;", "previewHandwritingGesture$foundation", "performSelectGesture", "gesture", "Landroid/view/inputmethod/SelectGesture;", "previewSelectGesture", "performDeleteGesture", "Landroid/view/inputmethod/DeleteGesture;", "previewDeleteGesture", "performSelectRangeGesture", "Landroid/view/inputmethod/SelectRangeGesture;", "previewSelectRangeGesture", "performDeleteRangeGesture", "Landroid/view/inputmethod/DeleteRangeGesture;", "previewDeleteRangeGesture", "performJoinOrSplitGesture", "Landroid/view/inputmethod/JoinOrSplitGesture;", "performInsertGesture", "Landroid/view/inputmethod/InsertGesture;", "performRemoveSpaceGesture", "Landroid/view/inputmethod/RemoveSpaceGesture;", "performDeletion", "rangeInTransformedText", "Landroidx/compose/ui/text/TextRange;", "adjustRange", "performDeletion-Sb-Bc2M", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;JZ)V", "fallback", "highlightRange", "range", "type", "Landroidx/compose/foundation/text/input/TextHighlightType;", "highlightRange-XJREzCE", "(Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;JI)V", "Landroidx/compose/foundation/text/LegacyTextFieldState;", "textFieldSelectionManager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", "editCommandConsumer", "Lkotlin/Function1;", "Landroidx/compose/ui/text/input/EditCommand;", "textSelectionManager", "text", "Landroidx/compose/ui/text/AnnotatedString;", "performInsertionOnLegacyTextField", TypedValues.CycleType.S_WAVE_OFFSET, "", "performSelectionOnLegacyTextField", "performSelectionOnLegacyTextField-8ffj60Q", "(JLandroidx/compose/foundation/text/selection/TextFieldSelectionManager;Lkotlin/jvm/functions/Function1;)V", "performDeletionOnLegacyTextField", "performDeletionOnLegacyTextField-vJH6DeI", "(JLandroidx/compose/ui/text/AnnotatedString;ZLkotlin/jvm/functions/Function1;)V", "fallbackOnLegacyTextField", "toTextGranularity", "Landroidx/compose/ui/text/TextGranularity;", "toTextGranularity-NUwxegE", "(I)I", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class HandwritingGestureApi34 {
     public static final int $stable = 0;
@@ -100,12 +100,12 @@ public final class HandwritingGestureApi34 {
     }
 
     private final int performSelectGesture(TransformedTextFieldState transformedTextFieldState, SelectGesture selectGesture, TextLayoutState textLayoutState, Function0<Unit> function0) {
-        long m1401getRangeForScreenRectOH9lIzo;
-        m1401getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1401getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1383toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1401getRangeForScreenRectOH9lIzo)) {
+        long m1787getRangeForScreenRectOH9lIzo;
+        m1787getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1787getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1769toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1787getRangeForScreenRectOH9lIzo)) {
             return INSTANCE.fallback(transformedTextFieldState, (HandwritingGesture) selectGesture);
         }
-        transformedTextFieldState.m1466selectCharsIn5zctL8(m1401getRangeForScreenRectOH9lIzo);
+        transformedTextFieldState.m1899selectCharsIn5zctL8(m1787getRangeForScreenRectOH9lIzo);
         if (function0 != null) {
             function0.invoke();
             return 1;
@@ -114,35 +114,35 @@ public final class HandwritingGestureApi34 {
     }
 
     private final void previewSelectGesture(TransformedTextFieldState transformedTextFieldState, SelectGesture selectGesture, TextLayoutState textLayoutState) {
-        long m1401getRangeForScreenRectOH9lIzo;
-        m1401getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1401getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1383toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        m1379highlightRangeXJREzCE(transformedTextFieldState, m1401getRangeForScreenRectOH9lIzo, TextHighlightType.Companion.m1350getHandwritingSelectPreviewsxJuwY());
+        long m1787getRangeForScreenRectOH9lIzo;
+        m1787getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1787getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1769toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        m1765highlightRangeXJREzCE(transformedTextFieldState, m1787getRangeForScreenRectOH9lIzo, TextHighlightType.Companion.m1738getHandwritingSelectPreviewsxJuwY());
     }
 
     private final int performDeleteGesture(TransformedTextFieldState transformedTextFieldState, DeleteGesture deleteGesture, TextLayoutState textLayoutState) {
-        long m1401getRangeForScreenRectOH9lIzo;
-        int m1383toTextGranularityNUwxegE = m1383toTextGranularityNUwxegE(deleteGesture.getGranularity());
-        m1401getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1401getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1383toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1401getRangeForScreenRectOH9lIzo)) {
+        long m1787getRangeForScreenRectOH9lIzo;
+        int m1769toTextGranularityNUwxegE = m1769toTextGranularityNUwxegE(deleteGesture.getGranularity());
+        m1787getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1787getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1769toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1787getRangeForScreenRectOH9lIzo)) {
             return INSTANCE.fallback(transformedTextFieldState, (HandwritingGesture) deleteGesture);
         }
-        m1380performDeletionSbBc2M(transformedTextFieldState, m1401getRangeForScreenRectOH9lIzo, TextGranularity.m6961equalsimpl0(m1383toTextGranularityNUwxegE, TextGranularity.Companion.m6966getWordDRrd7Zo()));
+        m1766performDeletionSbBc2M(transformedTextFieldState, m1787getRangeForScreenRectOH9lIzo, TextGranularity.m7566equalsimpl0(m1769toTextGranularityNUwxegE, TextGranularity.Companion.m7571getWordDRrd7Zo()));
         return 1;
     }
 
     private final void previewDeleteGesture(TransformedTextFieldState transformedTextFieldState, DeleteGesture deleteGesture, TextLayoutState textLayoutState) {
-        long m1401getRangeForScreenRectOH9lIzo;
-        m1401getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1401getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1383toTextGranularityNUwxegE(deleteGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        m1379highlightRangeXJREzCE(transformedTextFieldState, m1401getRangeForScreenRectOH9lIzo, TextHighlightType.Companion.m1349getHandwritingDeletePreviewsxJuwY());
+        long m1787getRangeForScreenRectOH9lIzo;
+        m1787getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1787getRangeForScreenRectOH9lIzo(textLayoutState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1769toTextGranularityNUwxegE(deleteGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        m1765highlightRangeXJREzCE(transformedTextFieldState, m1787getRangeForScreenRectOH9lIzo, TextHighlightType.Companion.m1737getHandwritingDeletePreviewsxJuwY());
     }
 
     private final int performSelectRangeGesture(TransformedTextFieldState transformedTextFieldState, SelectRangeGesture selectRangeGesture, TextLayoutState textLayoutState, Function0<Unit> function0) {
-        long m1403getRangeForScreenRectsO048IG0;
-        m1403getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1403getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1383toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1403getRangeForScreenRectsO048IG0)) {
+        long m1789getRangeForScreenRectsO048IG0;
+        m1789getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1789getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1769toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1789getRangeForScreenRectsO048IG0)) {
             return INSTANCE.fallback(transformedTextFieldState, (HandwritingGesture) selectRangeGesture);
         }
-        transformedTextFieldState.m1466selectCharsIn5zctL8(m1403getRangeForScreenRectsO048IG0);
+        transformedTextFieldState.m1899selectCharsIn5zctL8(m1789getRangeForScreenRectsO048IG0);
         if (function0 != null) {
             function0.invoke();
             return 1;
@@ -151,26 +151,26 @@ public final class HandwritingGestureApi34 {
     }
 
     private final void previewSelectRangeGesture(TransformedTextFieldState transformedTextFieldState, SelectRangeGesture selectRangeGesture, TextLayoutState textLayoutState) {
-        long m1403getRangeForScreenRectsO048IG0;
-        m1403getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1403getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1383toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        m1379highlightRangeXJREzCE(transformedTextFieldState, m1403getRangeForScreenRectsO048IG0, TextHighlightType.Companion.m1350getHandwritingSelectPreviewsxJuwY());
+        long m1789getRangeForScreenRectsO048IG0;
+        m1789getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1789getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1769toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        m1765highlightRangeXJREzCE(transformedTextFieldState, m1789getRangeForScreenRectsO048IG0, TextHighlightType.Companion.m1738getHandwritingSelectPreviewsxJuwY());
     }
 
     private final int performDeleteRangeGesture(TransformedTextFieldState transformedTextFieldState, DeleteRangeGesture deleteRangeGesture, TextLayoutState textLayoutState) {
-        long m1403getRangeForScreenRectsO048IG0;
-        int m1383toTextGranularityNUwxegE = m1383toTextGranularityNUwxegE(deleteRangeGesture.getGranularity());
-        m1403getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1403getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1383toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1403getRangeForScreenRectsO048IG0)) {
+        long m1789getRangeForScreenRectsO048IG0;
+        int m1769toTextGranularityNUwxegE = m1769toTextGranularityNUwxegE(deleteRangeGesture.getGranularity());
+        m1789getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1789getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1769toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1789getRangeForScreenRectsO048IG0)) {
             return INSTANCE.fallback(transformedTextFieldState, (HandwritingGesture) deleteRangeGesture);
         }
-        m1380performDeletionSbBc2M(transformedTextFieldState, m1403getRangeForScreenRectsO048IG0, TextGranularity.m6961equalsimpl0(m1383toTextGranularityNUwxegE, TextGranularity.Companion.m6966getWordDRrd7Zo()));
+        m1766performDeletionSbBc2M(transformedTextFieldState, m1789getRangeForScreenRectsO048IG0, TextGranularity.m7566equalsimpl0(m1769toTextGranularityNUwxegE, TextGranularity.Companion.m7571getWordDRrd7Zo()));
         return 1;
     }
 
     private final void previewDeleteRangeGesture(TransformedTextFieldState transformedTextFieldState, DeleteRangeGesture deleteRangeGesture, TextLayoutState textLayoutState) {
-        long m1403getRangeForScreenRectsO048IG0;
-        m1403getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1403getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1383toTextGranularityNUwxegE(deleteRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        m1379highlightRangeXJREzCE(transformedTextFieldState, m1403getRangeForScreenRectsO048IG0, TextHighlightType.Companion.m1349getHandwritingDeletePreviewsxJuwY());
+        long m1789getRangeForScreenRectsO048IG0;
+        m1789getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1789getRangeForScreenRectsO048IG0(textLayoutState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1769toTextGranularityNUwxegE(deleteRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        m1765highlightRangeXJREzCE(transformedTextFieldState, m1789getRangeForScreenRectsO048IG0, TextHighlightType.Companion.m1737getHandwritingDeletePreviewsxJuwY());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0026, code lost:
@@ -181,24 +181,24 @@ public final class HandwritingGestureApi34 {
     */
     private final int performJoinOrSplitGesture(TransformedTextFieldState transformedTextFieldState, JoinOrSplitGesture joinOrSplitGesture, TextLayoutState textLayoutState, ViewConfiguration viewConfiguration) {
         long offset;
-        int m1396getOffsetForHandwritingGestured4ec7I;
+        int m1782getOffsetForHandwritingGestured4ec7I;
         long rangeOfWhitespaces;
         boolean isBiDiBoundary;
         if (transformedTextFieldState.getOutputText() != transformedTextFieldState.getUntransformedText()) {
             return 3;
         }
         offset = HandwritingGesture_androidKt.toOffset(joinOrSplitGesture.getJoinOrSplitPoint());
-        m1396getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1396getOffsetForHandwritingGestured4ec7I(textLayoutState, offset, viewConfiguration);
-        if (m1396getOffsetForHandwritingGestured4ec7I != -1) {
+        m1782getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1782getOffsetForHandwritingGestured4ec7I(textLayoutState, offset, viewConfiguration);
+        if (m1782getOffsetForHandwritingGestured4ec7I != -1) {
             TextLayoutResult layoutResult = textLayoutState.getLayoutResult();
             if (layoutResult != null) {
-                isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(layoutResult, m1396getOffsetForHandwritingGestured4ec7I);
+                isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(layoutResult, m1782getOffsetForHandwritingGestured4ec7I);
             }
-            rangeOfWhitespaces = HandwritingGesture_androidKt.rangeOfWhitespaces(transformedTextFieldState.getVisualText(), m1396getOffsetForHandwritingGestured4ec7I);
-            if (TextRange.m6997getCollapsedimpl(rangeOfWhitespaces)) {
-                TransformedTextFieldState.m1459replaceTextM8tDOmk$default(transformedTextFieldState, " ", rangeOfWhitespaces, null, false, 12, null);
+            rangeOfWhitespaces = HandwritingGesture_androidKt.rangeOfWhitespaces(transformedTextFieldState.getVisualText(), m1782getOffsetForHandwritingGestured4ec7I);
+            if (TextRange.m7602getCollapsedimpl(rangeOfWhitespaces)) {
+                TransformedTextFieldState.m1891replaceTextM8tDOmk$default(transformedTextFieldState, " ", rangeOfWhitespaces, null, false, 12, null);
             } else {
-                m1380performDeletionSbBc2M(transformedTextFieldState, rangeOfWhitespaces, false);
+                m1766performDeletionSbBc2M(transformedTextFieldState, rangeOfWhitespaces, false);
             }
             return 1;
         }
@@ -207,32 +207,32 @@ public final class HandwritingGestureApi34 {
 
     private final int performInsertGesture(TransformedTextFieldState transformedTextFieldState, InsertGesture insertGesture, TextLayoutState textLayoutState, ViewConfiguration viewConfiguration) {
         long offset;
-        int m1396getOffsetForHandwritingGestured4ec7I;
+        int m1782getOffsetForHandwritingGestured4ec7I;
         offset = HandwritingGesture_androidKt.toOffset(insertGesture.getInsertionPoint());
-        m1396getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1396getOffsetForHandwritingGestured4ec7I(textLayoutState, offset, viewConfiguration);
-        if (m1396getOffsetForHandwritingGestured4ec7I == -1) {
+        m1782getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1782getOffsetForHandwritingGestured4ec7I(textLayoutState, offset, viewConfiguration);
+        if (m1782getOffsetForHandwritingGestured4ec7I == -1) {
             return fallback(transformedTextFieldState, (HandwritingGesture) insertGesture);
         }
-        TransformedTextFieldState.m1459replaceTextM8tDOmk$default(transformedTextFieldState, insertGesture.getTextToInsert(), TextRangeKt.TextRange(m1396getOffsetForHandwritingGestured4ec7I), null, false, 12, null);
+        TransformedTextFieldState.m1891replaceTextM8tDOmk$default(transformedTextFieldState, insertGesture.getTextToInsert(), TextRangeKt.TextRange(m1782getOffsetForHandwritingGestured4ec7I), null, false, 12, null);
         return 1;
     }
 
     private final int performRemoveSpaceGesture(TransformedTextFieldState transformedTextFieldState, RemoveSpaceGesture removeSpaceGesture, TextLayoutState textLayoutState, ViewConfiguration viewConfiguration) {
         long offset;
         long offset2;
-        long m1398getRangeForRemoveSpaceGesture5iVPX68;
+        long m1784getRangeForRemoveSpaceGesture5iVPX68;
         TextLayoutResult layoutResult = textLayoutState.getLayoutResult();
         offset = HandwritingGesture_androidKt.toOffset(removeSpaceGesture.getStartPoint());
         offset2 = HandwritingGesture_androidKt.toOffset(removeSpaceGesture.getEndPoint());
-        m1398getRangeForRemoveSpaceGesture5iVPX68 = HandwritingGesture_androidKt.m1398getRangeForRemoveSpaceGesture5iVPX68(layoutResult, offset, offset2, textLayoutState.getTextLayoutNodeCoordinates(), viewConfiguration);
-        if (TextRange.m6997getCollapsedimpl(m1398getRangeForRemoveSpaceGesture5iVPX68)) {
+        m1784getRangeForRemoveSpaceGesture5iVPX68 = HandwritingGesture_androidKt.m1784getRangeForRemoveSpaceGesture5iVPX68(layoutResult, offset, offset2, textLayoutState.getTextLayoutNodeCoordinates(), viewConfiguration);
+        if (TextRange.m7602getCollapsedimpl(m1784getRangeForRemoveSpaceGesture5iVPX68)) {
             return INSTANCE.fallback(transformedTextFieldState, (HandwritingGesture) removeSpaceGesture);
         }
         final Ref.IntRef intRef = new Ref.IntRef();
         intRef.element = -1;
         final Ref.IntRef intRef2 = new Ref.IntRef();
         intRef2.element = -1;
-        String replace = new Regex("\\s+").replace(TextRangeKt.m7010substringFDrldGo(transformedTextFieldState.getVisualText(), m1398getRangeForRemoveSpaceGesture5iVPX68), new Function1() { // from class: androidx.compose.foundation.text.input.internal.HandwritingGestureApi34$$ExternalSyntheticLambda0
+        String replace = new Regex("\\s+").replace(TextRangeKt.m7615substringFDrldGo(transformedTextFieldState.getVisualText(), m1784getRangeForRemoveSpaceGesture5iVPX68), new Function1() { // from class: androidx.compose.foundation.text.input.internal.HandwritingGestureApi34$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return HandwritingGestureApi34.performRemoveSpaceGesture$lambda$1(Ref.IntRef.this, intRef2, (MatchResult) obj);
@@ -241,10 +241,10 @@ public final class HandwritingGestureApi34 {
         if (intRef.element == -1 || intRef2.element == -1) {
             return fallback(transformedTextFieldState, (HandwritingGesture) removeSpaceGesture);
         }
-        long TextRange = TextRangeKt.TextRange(TextRange.m7003getStartimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) + intRef.element, TextRange.m7003getStartimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) + intRef2.element);
-        String substring = replace.substring(intRef.element, replace.length() - (TextRange.m6999getLengthimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) - intRef2.element));
+        long TextRange = TextRangeKt.TextRange(TextRange.m7608getStartimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) + intRef.element, TextRange.m7608getStartimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) + intRef2.element);
+        String substring = replace.substring(intRef.element, replace.length() - (TextRange.m7604getLengthimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) - intRef2.element));
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-        TransformedTextFieldState.m1459replaceTextM8tDOmk$default(transformedTextFieldState, substring, TextRange, null, false, 12, null);
+        TransformedTextFieldState.m1891replaceTextM8tDOmk$default(transformedTextFieldState, substring, TextRange, null, false, 12, null);
         return 1;
     }
 
@@ -258,16 +258,16 @@ public final class HandwritingGestureApi34 {
     }
 
     /* renamed from: performDeletion-Sb-Bc2M  reason: not valid java name */
-    private final void m1380performDeletionSbBc2M(TransformedTextFieldState transformedTextFieldState, long j, boolean z) {
+    private final void m1766performDeletionSbBc2M(TransformedTextFieldState transformedTextFieldState, long j, boolean z) {
         if (z) {
-            j = HandwritingGesture_androidKt.m1392adjustHandwritingDeleteGestureRange72CqOWE(j, transformedTextFieldState.getVisualText());
+            j = HandwritingGesture_androidKt.m1778adjustHandwritingDeleteGestureRange72CqOWE(j, transformedTextFieldState.getVisualText());
         }
-        TransformedTextFieldState.m1459replaceTextM8tDOmk$default(transformedTextFieldState, "", j, null, false, 12, null);
+        TransformedTextFieldState.m1891replaceTextM8tDOmk$default(transformedTextFieldState, "", j, null, false, 12, null);
     }
 
     /* renamed from: highlightRange-XJREzCE  reason: not valid java name */
-    private final void m1379highlightRangeXJREzCE(TransformedTextFieldState transformedTextFieldState, long j, int i) {
-        if (TextRange.m6997getCollapsedimpl(j)) {
+    private final void m1765highlightRangeXJREzCE(TransformedTextFieldState transformedTextFieldState, long j, int i) {
+        if (TextRange.m7602getCollapsedimpl(j)) {
             TextFieldState textFieldState = transformedTextFieldState.textFieldState;
             InputTransformation inputTransformation = transformedTextFieldState.inputTransformation;
             TextFieldEditUndoBehavior textFieldEditUndoBehavior = TextFieldEditUndoBehavior.MergeIfPossible;
@@ -276,9 +276,10 @@ public final class HandwritingGestureApi34 {
             mainBuffer$foundation.clearHighlight$foundation();
             transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation);
             textFieldState.commitEditAsUser(inputTransformation, true, textFieldEditUndoBehavior);
+            textFieldState.setUserCommit(true);
             return;
         }
-        transformedTextFieldState.m1460highlightCharsIn7RAjNK8(i, j);
+        transformedTextFieldState.m1893highlightCharsIn7RAjNK8(i, j);
     }
 
     public final int performHandwritingGesture$foundation(LegacyTextFieldState legacyTextFieldState, HandwritingGesture handwritingGesture, TextFieldSelectionManager textFieldSelectionManager, ViewConfiguration viewConfiguration, Function1<? super EditCommand, Unit> function1) {
@@ -358,76 +359,76 @@ public final class HandwritingGestureApi34 {
     }
 
     private final int performSelectGesture(LegacyTextFieldState legacyTextFieldState, SelectGesture selectGesture, TextFieldSelectionManager textFieldSelectionManager, Function1<? super EditCommand, Unit> function1) {
-        long m1400getRangeForScreenRectOH9lIzo;
-        m1400getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1400getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1383toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1400getRangeForScreenRectOH9lIzo)) {
+        long m1786getRangeForScreenRectOH9lIzo;
+        m1786getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1786getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1769toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1786getRangeForScreenRectOH9lIzo)) {
             return INSTANCE.fallbackOnLegacyTextField((HandwritingGesture) selectGesture, function1);
         }
-        m1382performSelectionOnLegacyTextField8ffj60Q(m1400getRangeForScreenRectOH9lIzo, textFieldSelectionManager, function1);
+        m1768performSelectionOnLegacyTextField8ffj60Q(m1786getRangeForScreenRectOH9lIzo, textFieldSelectionManager, function1);
         return 1;
     }
 
     private final void previewSelectGesture(LegacyTextFieldState legacyTextFieldState, SelectGesture selectGesture, TextFieldSelectionManager textFieldSelectionManager) {
-        long m1400getRangeForScreenRectOH9lIzo;
+        long m1786getRangeForScreenRectOH9lIzo;
         if (textFieldSelectionManager != null) {
-            m1400getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1400getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1383toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-            textFieldSelectionManager.m1667setSelectionPreviewHighlight5zctL8$foundation(m1400getRangeForScreenRectOH9lIzo);
+            m1786getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1786getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectGesture.getSelectionArea()), m1769toTextGranularityNUwxegE(selectGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+            textFieldSelectionManager.m2112setSelectionPreviewHighlight5zctL8$foundation(m1786getRangeForScreenRectOH9lIzo);
         }
     }
 
     private final int performDeleteGesture(LegacyTextFieldState legacyTextFieldState, DeleteGesture deleteGesture, AnnotatedString annotatedString, Function1<? super EditCommand, Unit> function1) {
-        long m1400getRangeForScreenRectOH9lIzo;
-        int m1383toTextGranularityNUwxegE = m1383toTextGranularityNUwxegE(deleteGesture.getGranularity());
-        m1400getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1400getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1383toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1400getRangeForScreenRectOH9lIzo)) {
+        long m1786getRangeForScreenRectOH9lIzo;
+        int m1769toTextGranularityNUwxegE = m1769toTextGranularityNUwxegE(deleteGesture.getGranularity());
+        m1786getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1786getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1769toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1786getRangeForScreenRectOH9lIzo)) {
             return INSTANCE.fallbackOnLegacyTextField((HandwritingGesture) deleteGesture, function1);
         }
-        m1381performDeletionOnLegacyTextFieldvJH6DeI(m1400getRangeForScreenRectOH9lIzo, annotatedString, TextGranularity.m6961equalsimpl0(m1383toTextGranularityNUwxegE, TextGranularity.Companion.m6966getWordDRrd7Zo()), function1);
+        m1767performDeletionOnLegacyTextFieldvJH6DeI(m1786getRangeForScreenRectOH9lIzo, annotatedString, TextGranularity.m7566equalsimpl0(m1769toTextGranularityNUwxegE, TextGranularity.Companion.m7571getWordDRrd7Zo()), function1);
         return 1;
     }
 
     private final void previewDeleteGesture(LegacyTextFieldState legacyTextFieldState, DeleteGesture deleteGesture, TextFieldSelectionManager textFieldSelectionManager) {
-        long m1400getRangeForScreenRectOH9lIzo;
+        long m1786getRangeForScreenRectOH9lIzo;
         if (textFieldSelectionManager != null) {
-            m1400getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1400getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1383toTextGranularityNUwxegE(deleteGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-            textFieldSelectionManager.m1665setDeletionPreviewHighlight5zctL8$foundation(m1400getRangeForScreenRectOH9lIzo);
+            m1786getRangeForScreenRectOH9lIzo = HandwritingGesture_androidKt.m1786getRangeForScreenRectOH9lIzo(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteGesture.getDeletionArea()), m1769toTextGranularityNUwxegE(deleteGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+            textFieldSelectionManager.m2110setDeletionPreviewHighlight5zctL8$foundation(m1786getRangeForScreenRectOH9lIzo);
         }
     }
 
     private final int performSelectRangeGesture(LegacyTextFieldState legacyTextFieldState, SelectRangeGesture selectRangeGesture, TextFieldSelectionManager textFieldSelectionManager, Function1<? super EditCommand, Unit> function1) {
-        long m1402getRangeForScreenRectsO048IG0;
-        m1402getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1402getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1383toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1402getRangeForScreenRectsO048IG0)) {
+        long m1788getRangeForScreenRectsO048IG0;
+        m1788getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1788getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1769toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1788getRangeForScreenRectsO048IG0)) {
             return INSTANCE.fallbackOnLegacyTextField((HandwritingGesture) selectRangeGesture, function1);
         }
-        m1382performSelectionOnLegacyTextField8ffj60Q(m1402getRangeForScreenRectsO048IG0, textFieldSelectionManager, function1);
+        m1768performSelectionOnLegacyTextField8ffj60Q(m1788getRangeForScreenRectsO048IG0, textFieldSelectionManager, function1);
         return 1;
     }
 
     private final void previewSelectRangeGesture(LegacyTextFieldState legacyTextFieldState, SelectRangeGesture selectRangeGesture, TextFieldSelectionManager textFieldSelectionManager) {
-        long m1402getRangeForScreenRectsO048IG0;
+        long m1788getRangeForScreenRectsO048IG0;
         if (textFieldSelectionManager != null) {
-            m1402getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1402getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1383toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-            textFieldSelectionManager.m1667setSelectionPreviewHighlight5zctL8$foundation(m1402getRangeForScreenRectsO048IG0);
+            m1788getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1788getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionStartArea()), RectHelper_androidKt.toComposeRect(selectRangeGesture.getSelectionEndArea()), m1769toTextGranularityNUwxegE(selectRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+            textFieldSelectionManager.m2112setSelectionPreviewHighlight5zctL8$foundation(m1788getRangeForScreenRectsO048IG0);
         }
     }
 
     private final int performDeleteRangeGesture(LegacyTextFieldState legacyTextFieldState, DeleteRangeGesture deleteRangeGesture, AnnotatedString annotatedString, Function1<? super EditCommand, Unit> function1) {
-        long m1402getRangeForScreenRectsO048IG0;
-        int m1383toTextGranularityNUwxegE = m1383toTextGranularityNUwxegE(deleteRangeGesture.getGranularity());
-        m1402getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1402getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1383toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
-        if (TextRange.m6997getCollapsedimpl(m1402getRangeForScreenRectsO048IG0)) {
+        long m1788getRangeForScreenRectsO048IG0;
+        int m1769toTextGranularityNUwxegE = m1769toTextGranularityNUwxegE(deleteRangeGesture.getGranularity());
+        m1788getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1788getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1769toTextGranularityNUwxegE, TextInclusionStrategy.Companion.getContainsCenter());
+        if (TextRange.m7602getCollapsedimpl(m1788getRangeForScreenRectsO048IG0)) {
             return INSTANCE.fallbackOnLegacyTextField((HandwritingGesture) deleteRangeGesture, function1);
         }
-        m1381performDeletionOnLegacyTextFieldvJH6DeI(m1402getRangeForScreenRectsO048IG0, annotatedString, TextGranularity.m6961equalsimpl0(m1383toTextGranularityNUwxegE, TextGranularity.Companion.m6966getWordDRrd7Zo()), function1);
+        m1767performDeletionOnLegacyTextFieldvJH6DeI(m1788getRangeForScreenRectsO048IG0, annotatedString, TextGranularity.m7566equalsimpl0(m1769toTextGranularityNUwxegE, TextGranularity.Companion.m7571getWordDRrd7Zo()), function1);
         return 1;
     }
 
     private final void previewDeleteRangeGesture(LegacyTextFieldState legacyTextFieldState, DeleteRangeGesture deleteRangeGesture, TextFieldSelectionManager textFieldSelectionManager) {
-        long m1402getRangeForScreenRectsO048IG0;
+        long m1788getRangeForScreenRectsO048IG0;
         if (textFieldSelectionManager != null) {
-            m1402getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1402getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1383toTextGranularityNUwxegE(deleteRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
-            textFieldSelectionManager.m1665setDeletionPreviewHighlight5zctL8$foundation(m1402getRangeForScreenRectsO048IG0);
+            m1788getRangeForScreenRectsO048IG0 = HandwritingGesture_androidKt.m1788getRangeForScreenRectsO048IG0(legacyTextFieldState, RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionStartArea()), RectHelper_androidKt.toComposeRect(deleteRangeGesture.getDeletionEndArea()), m1769toTextGranularityNUwxegE(deleteRangeGesture.getGranularity()), TextInclusionStrategy.Companion.getContainsCenter());
+            textFieldSelectionManager.m2110setDeletionPreviewHighlight5zctL8$foundation(m1788getRangeForScreenRectsO048IG0);
         }
     }
 
@@ -439,23 +440,23 @@ public final class HandwritingGestureApi34 {
     */
     private final int performJoinOrSplitGesture(LegacyTextFieldState legacyTextFieldState, JoinOrSplitGesture joinOrSplitGesture, AnnotatedString annotatedString, ViewConfiguration viewConfiguration, Function1<? super EditCommand, Unit> function1) {
         long offset;
-        int m1395getOffsetForHandwritingGestured4ec7I;
+        int m1781getOffsetForHandwritingGestured4ec7I;
         long rangeOfWhitespaces;
         TextLayoutResult value;
         boolean isBiDiBoundary;
         if (viewConfiguration != null) {
             offset = HandwritingGesture_androidKt.toOffset(joinOrSplitGesture.getJoinOrSplitPoint());
-            m1395getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1395getOffsetForHandwritingGestured4ec7I(legacyTextFieldState, offset, viewConfiguration);
-            if (m1395getOffsetForHandwritingGestured4ec7I != -1) {
+            m1781getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1781getOffsetForHandwritingGestured4ec7I(legacyTextFieldState, offset, viewConfiguration);
+            if (m1781getOffsetForHandwritingGestured4ec7I != -1) {
                 TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
                 if (layoutResult != null && (value = layoutResult.getValue()) != null) {
-                    isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(value, m1395getOffsetForHandwritingGestured4ec7I);
+                    isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(value, m1781getOffsetForHandwritingGestured4ec7I);
                 }
-                rangeOfWhitespaces = HandwritingGesture_androidKt.rangeOfWhitespaces(annotatedString, m1395getOffsetForHandwritingGestured4ec7I);
-                if (TextRange.m6997getCollapsedimpl(rangeOfWhitespaces)) {
-                    performInsertionOnLegacyTextField(TextRange.m7003getStartimpl(rangeOfWhitespaces), " ", function1);
+                rangeOfWhitespaces = HandwritingGesture_androidKt.rangeOfWhitespaces(annotatedString, m1781getOffsetForHandwritingGestured4ec7I);
+                if (TextRange.m7602getCollapsedimpl(rangeOfWhitespaces)) {
+                    performInsertionOnLegacyTextField(TextRange.m7608getStartimpl(rangeOfWhitespaces), " ", function1);
                 } else {
-                    m1381performDeletionOnLegacyTextFieldvJH6DeI(rangeOfWhitespaces, annotatedString, false, function1);
+                    m1767performDeletionOnLegacyTextFieldvJH6DeI(rangeOfWhitespaces, annotatedString, false, function1);
                 }
                 return 1;
             }
@@ -472,18 +473,18 @@ public final class HandwritingGestureApi34 {
     */
     private final int performInsertGesture(LegacyTextFieldState legacyTextFieldState, InsertGesture insertGesture, ViewConfiguration viewConfiguration, Function1<? super EditCommand, Unit> function1) {
         long offset;
-        int m1395getOffsetForHandwritingGestured4ec7I;
+        int m1781getOffsetForHandwritingGestured4ec7I;
         TextLayoutResult value;
         boolean isBiDiBoundary;
         if (viewConfiguration != null) {
             offset = HandwritingGesture_androidKt.toOffset(insertGesture.getInsertionPoint());
-            m1395getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1395getOffsetForHandwritingGestured4ec7I(legacyTextFieldState, offset, viewConfiguration);
-            if (m1395getOffsetForHandwritingGestured4ec7I != -1) {
+            m1781getOffsetForHandwritingGestured4ec7I = HandwritingGesture_androidKt.m1781getOffsetForHandwritingGestured4ec7I(legacyTextFieldState, offset, viewConfiguration);
+            if (m1781getOffsetForHandwritingGestured4ec7I != -1) {
                 TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
                 if (layoutResult != null && (value = layoutResult.getValue()) != null) {
-                    isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(value, m1395getOffsetForHandwritingGestured4ec7I);
+                    isBiDiBoundary = HandwritingGesture_androidKt.isBiDiBoundary(value, m1781getOffsetForHandwritingGestured4ec7I);
                 }
-                performInsertionOnLegacyTextField(m1395getOffsetForHandwritingGestured4ec7I, insertGesture.getTextToInsert(), function1);
+                performInsertionOnLegacyTextField(m1781getOffsetForHandwritingGestured4ec7I, insertGesture.getTextToInsert(), function1);
                 return 1;
             }
             return fallbackOnLegacyTextField((HandwritingGesture) insertGesture, function1);
@@ -494,21 +495,21 @@ public final class HandwritingGestureApi34 {
     private final int performRemoveSpaceGesture(LegacyTextFieldState legacyTextFieldState, RemoveSpaceGesture removeSpaceGesture, AnnotatedString annotatedString, ViewConfiguration viewConfiguration, Function1<? super EditCommand, Unit> function1) {
         long offset;
         long offset2;
-        long m1398getRangeForRemoveSpaceGesture5iVPX68;
+        long m1784getRangeForRemoveSpaceGesture5iVPX68;
         EditCommand compoundEditCommand;
         TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
         TextLayoutResult value = layoutResult != null ? layoutResult.getValue() : null;
         offset = HandwritingGesture_androidKt.toOffset(removeSpaceGesture.getStartPoint());
         offset2 = HandwritingGesture_androidKt.toOffset(removeSpaceGesture.getEndPoint());
-        m1398getRangeForRemoveSpaceGesture5iVPX68 = HandwritingGesture_androidKt.m1398getRangeForRemoveSpaceGesture5iVPX68(value, offset, offset2, legacyTextFieldState.getLayoutCoordinates(), viewConfiguration);
-        if (TextRange.m6997getCollapsedimpl(m1398getRangeForRemoveSpaceGesture5iVPX68)) {
+        m1784getRangeForRemoveSpaceGesture5iVPX68 = HandwritingGesture_androidKt.m1784getRangeForRemoveSpaceGesture5iVPX68(value, offset, offset2, legacyTextFieldState.getLayoutCoordinates(), viewConfiguration);
+        if (TextRange.m7602getCollapsedimpl(m1784getRangeForRemoveSpaceGesture5iVPX68)) {
             return INSTANCE.fallbackOnLegacyTextField((HandwritingGesture) removeSpaceGesture, function1);
         }
         final Ref.IntRef intRef = new Ref.IntRef();
         intRef.element = -1;
         final Ref.IntRef intRef2 = new Ref.IntRef();
         intRef2.element = -1;
-        String replace = new Regex("\\s+").replace(TextRangeKt.m7010substringFDrldGo(annotatedString, m1398getRangeForRemoveSpaceGesture5iVPX68), new Function1() { // from class: androidx.compose.foundation.text.input.internal.HandwritingGestureApi34$$ExternalSyntheticLambda2
+        String replace = new Regex("\\s+").replace(TextRangeKt.m7615substringFDrldGo(annotatedString, m1784getRangeForRemoveSpaceGesture5iVPX68), new Function1() { // from class: androidx.compose.foundation.text.input.internal.HandwritingGestureApi34$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return HandwritingGestureApi34.performRemoveSpaceGesture$lambda$3(Ref.IntRef.this, intRef2, (MatchResult) obj);
@@ -517,11 +518,11 @@ public final class HandwritingGestureApi34 {
         if (intRef.element == -1 || intRef2.element == -1) {
             return fallbackOnLegacyTextField((HandwritingGesture) removeSpaceGesture, function1);
         }
-        int m7003getStartimpl = TextRange.m7003getStartimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) + intRef.element;
-        int m7003getStartimpl2 = TextRange.m7003getStartimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) + intRef2.element;
-        String substring = replace.substring(intRef.element, replace.length() - (TextRange.m6999getLengthimpl(m1398getRangeForRemoveSpaceGesture5iVPX68) - intRef2.element));
+        int m7608getStartimpl = TextRange.m7608getStartimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) + intRef.element;
+        int m7608getStartimpl2 = TextRange.m7608getStartimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) + intRef2.element;
+        String substring = replace.substring(intRef.element, replace.length() - (TextRange.m7604getLengthimpl(m1784getRangeForRemoveSpaceGesture5iVPX68) - intRef2.element));
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-        compoundEditCommand = HandwritingGesture_androidKt.compoundEditCommand(new SetSelectionCommand(m7003getStartimpl, m7003getStartimpl2), new CommitTextCommand(substring, 1));
+        compoundEditCommand = HandwritingGesture_androidKt.compoundEditCommand(new SetSelectionCommand(m7608getStartimpl, m7608getStartimpl2), new CommitTextCommand(substring, 1));
         function1.invoke(compoundEditCommand);
         return 1;
     }
@@ -542,20 +543,20 @@ public final class HandwritingGestureApi34 {
     }
 
     /* renamed from: performSelectionOnLegacyTextField-8ffj60Q  reason: not valid java name */
-    private final void m1382performSelectionOnLegacyTextField8ffj60Q(long j, TextFieldSelectionManager textFieldSelectionManager, Function1<? super EditCommand, Unit> function1) {
-        function1.invoke(new SetSelectionCommand(TextRange.m7003getStartimpl(j), TextRange.m6998getEndimpl(j)));
+    private final void m1768performSelectionOnLegacyTextField8ffj60Q(long j, TextFieldSelectionManager textFieldSelectionManager, Function1<? super EditCommand, Unit> function1) {
+        function1.invoke(new SetSelectionCommand(TextRange.m7608getStartimpl(j), TextRange.m7603getEndimpl(j)));
         if (textFieldSelectionManager != null) {
             textFieldSelectionManager.enterSelectionMode$foundation(true);
         }
     }
 
     /* renamed from: performDeletionOnLegacyTextField-vJH6DeI  reason: not valid java name */
-    private final void m1381performDeletionOnLegacyTextFieldvJH6DeI(long j, AnnotatedString annotatedString, boolean z, Function1<? super EditCommand, Unit> function1) {
+    private final void m1767performDeletionOnLegacyTextFieldvJH6DeI(long j, AnnotatedString annotatedString, boolean z, Function1<? super EditCommand, Unit> function1) {
         EditCommand compoundEditCommand;
         if (z) {
-            j = HandwritingGesture_androidKt.m1392adjustHandwritingDeleteGestureRange72CqOWE(j, annotatedString);
+            j = HandwritingGesture_androidKt.m1778adjustHandwritingDeleteGestureRange72CqOWE(j, annotatedString);
         }
-        compoundEditCommand = HandwritingGesture_androidKt.compoundEditCommand(new SetSelectionCommand(TextRange.m6998getEndimpl(j), TextRange.m6998getEndimpl(j)), new DeleteSurroundingTextCommand(TextRange.m6999getLengthimpl(j), 0));
+        compoundEditCommand = HandwritingGesture_androidKt.compoundEditCommand(new SetSelectionCommand(TextRange.m7603getEndimpl(j), TextRange.m7603getEndimpl(j)), new DeleteSurroundingTextCommand(TextRange.m7604getLengthimpl(j), 0));
         function1.invoke(compoundEditCommand);
     }
 
@@ -569,14 +570,14 @@ public final class HandwritingGestureApi34 {
     }
 
     /* renamed from: toTextGranularity-NUwxegE  reason: not valid java name */
-    private final int m1383toTextGranularityNUwxegE(int i) {
+    private final int m1769toTextGranularityNUwxegE(int i) {
         if (i != 1) {
             if (i == 2) {
-                return TextGranularity.Companion.m6965getCharacterDRrd7Zo();
+                return TextGranularity.Companion.m7570getCharacterDRrd7Zo();
             }
-            return TextGranularity.Companion.m6965getCharacterDRrd7Zo();
+            return TextGranularity.Companion.m7570getCharacterDRrd7Zo();
         }
-        return TextGranularity.Companion.m6966getWordDRrd7Zo();
+        return TextGranularity.Companion.m7571getWordDRrd7Zo();
     }
 
     private final int fallback(TransformedTextFieldState transformedTextFieldState, HandwritingGesture handwritingGesture) {
@@ -588,6 +589,7 @@ public final class HandwritingGestureApi34 {
         mainBuffer$foundation.clearHighlight$foundation();
         transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation);
         textFieldState.commitEditAsUser(inputTransformation, true, textFieldEditUndoBehavior);
+        textFieldState.setUserCommit(true);
         String fallbackText = handwritingGesture.getFallbackText();
         if (fallbackText == null) {
             return 3;
@@ -606,5 +608,6 @@ public final class HandwritingGestureApi34 {
         mainBuffer$foundation.clearHighlight$foundation();
         transformedTextFieldState.updateWedgeAffinity(mainBuffer$foundation);
         textFieldState.commitEditAsUser(inputTransformation, true, textFieldEditUndoBehavior);
+        textFieldState.setUserCommit(true);
     }
 }

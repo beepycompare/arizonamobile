@@ -59,7 +59,7 @@ final class NavigationRailKt$NavigationRailItem$1$indicator$1 implements Functio
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        BoxKt.Box(BackgroundKt.m263backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(layoutId, (Function1) rememberedValue), this.$colors.m2328getIndicatorColor0d7_KjU$material3(), this.$indicatorShape), composer, 0);
+        BoxKt.Box(BackgroundKt.m287backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(layoutId, (Function1) rememberedValue), this.$colors.m2773getIndicatorColor0d7_KjU$material3(), this.$indicatorShape), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

@@ -1,15 +1,16 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import com.google.android.gms.internal.measurement.zzahz;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class zzfu implements Runnable {
+final /* synthetic */ class zzfu implements zzbo {
     static final /* synthetic */ zzfu zza = new zzfu();
 
     private /* synthetic */ zzfu() {
     }
 
-    @Override // java.lang.Runnable
-    public final /* synthetic */ void run() {
-        com.google.android.gms.internal.measurement.zzkm.zzc();
+    @Override // com.google.android.gms.measurement.internal.zzbo
+    public final /* synthetic */ Object zza() {
+        return new Boolean(zzahz.zza());
     }
 }

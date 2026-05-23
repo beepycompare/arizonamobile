@@ -1,17 +1,16 @@
 package com.google.android.gms.common.images;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.SystemClock;
 import com.google.android.gms.common.images.ImageManager;
 import com.google.android.gms.common.internal.Asserts;
-import com.google.android.gms.internal.base.zam;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zac implements Runnable {
     final /* synthetic */ ImageManager zaa;
@@ -20,6 +19,7 @@ final class zac implements Runnable {
     private final CountDownLatch zad;
 
     public zac(ImageManager imageManager, Uri uri, Bitmap bitmap, boolean z, CountDownLatch countDownLatch) {
+        Objects.requireNonNull(imageManager);
         this.zaa = imageManager;
         this.zab = uri;
         this.zac = bitmap;
@@ -28,37 +28,27 @@ final class zac implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        Map map;
         Object obj;
         HashSet hashSet;
-        ArrayList arrayList;
-        Map map2;
-        zam zamVar;
-        Map map3;
         Asserts.checkMainThread("OnBitmapLoadedRunnable must be executed in the main thread");
-        map = this.zaa.zai;
-        ImageManager.ImageReceiver imageReceiver = (ImageManager.ImageReceiver) map.remove(this.zab);
+        ImageManager imageManager = this.zaa;
+        Map zai = imageManager.zai();
+        Uri uri = this.zab;
+        ImageManager.ImageReceiver imageReceiver = (ImageManager.ImageReceiver) zai.remove(uri);
         if (imageReceiver != null) {
-            arrayList = imageReceiver.zac;
-            int size = arrayList.size();
+            ArrayList zad = imageReceiver.zad();
+            int size = zad.size();
             for (int i = 0; i < size; i++) {
-                zag zagVar = (zag) arrayList.get(i);
+                zag zagVar = (zag) zad.get(i);
                 Bitmap bitmap = this.zac;
-                ImageManager imageManager = this.zaa;
-                if (bitmap != null) {
-                    zagVar.zac(imageManager.zad, bitmap, false);
+                if (bitmap == null) {
+                    imageManager.zaj().put(uri, Long.valueOf(SystemClock.elapsedRealtime()));
+                    zagVar.zac(imageManager.zad(), imageManager.zag(), false);
                 } else {
-                    Uri uri = this.zab;
-                    map2 = imageManager.zaj;
-                    map2.put(uri, Long.valueOf(SystemClock.elapsedRealtime()));
-                    ImageManager imageManager2 = this.zaa;
-                    Context context = imageManager2.zad;
-                    zamVar = imageManager2.zag;
-                    zagVar.zab(context, zamVar, false);
+                    zagVar.zab(imageManager.zad(), bitmap, false);
                 }
                 if (!(zagVar instanceof zaf)) {
-                    map3 = this.zaa.zah;
-                    map3.remove(zagVar);
+                    imageManager.zah().remove(zagVar);
                 }
             }
         }
@@ -66,7 +56,7 @@ final class zac implements Runnable {
         obj = ImageManager.zaa;
         synchronized (obj) {
             hashSet = ImageManager.zab;
-            hashSet.remove(this.zab);
+            hashSet.remove(uri);
         }
     }
 }

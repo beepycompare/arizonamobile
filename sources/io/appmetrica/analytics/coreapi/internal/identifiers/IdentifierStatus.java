@@ -2,25 +2,30 @@ package io.appmetrica.analytics.coreapi.internal.identifiers;
 
 import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
+import kotlin.enums.EnumEntries;
+import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-@Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0010\u000e\n\u0002\b\r\b\u0086\u0001\u0018\u0000 \b2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\bR\u0017\u0010\u0007\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006j\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000e¨\u0006\u000f"}, d2 = {"Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus;", "", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Ljava/lang/String;", "getValue", "()Ljava/lang/String;", "value", "Companion", "OK", "IDENTIFIER_PROVIDER_UNAVAILABLE", "INVALID_ADV_ID", "FORBIDDEN_BY_CLIENT_CONFIG", "FEATURE_DISABLED", "UNKNOWN", "core-api_release"}, k = 1, mv = {1, 6, 0})
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+@Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0010\u000e\n\u0002\b\r\b\u0086\u0081\u0002\u0018\u0000 \b2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\bR\u0017\u0010\u0007\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006j\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000e¨\u0006\u000f"}, d2 = {"Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus;", "", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Ljava/lang/String;", "getValue", "()Ljava/lang/String;", "value", "Companion", "OK", "IDENTIFIER_PROVIDER_UNAVAILABLE", "INVALID_ADV_ID", "FORBIDDEN_BY_CLIENT_CONFIG", "FEATURE_DISABLED", "UNKNOWN", "core-api_release"}, k = 1, mv = {1, 9, 0})
 /* loaded from: classes5.dex */
-public enum IdentifierStatus {
-    OK("OK"),
-    IDENTIFIER_PROVIDER_UNAVAILABLE("IDENTIFIER_PROVIDER_UNAVAILABLE"),
-    INVALID_ADV_ID("INVALID_ADV_ID"),
-    FORBIDDEN_BY_CLIENT_CONFIG("FORBIDDEN_BY_CLIENT_CONFIG"),
-    FEATURE_DISABLED("FEATURE_DISABLED"),
-    UNKNOWN("UNKNOWN");
-    
-    public static final Companion Companion = new Companion(null);
+public final class IdentifierStatus {
+    public static final Companion Companion;
+    public static final IdentifierStatus FEATURE_DISABLED;
+    public static final IdentifierStatus FORBIDDEN_BY_CLIENT_CONFIG;
+    public static final IdentifierStatus IDENTIFIER_PROVIDER_UNAVAILABLE;
+    public static final IdentifierStatus INVALID_ADV_ID;
+    public static final IdentifierStatus OK;
+    public static final IdentifierStatus UNKNOWN;
+    private static final /* synthetic */ IdentifierStatus[] b;
+    private static final /* synthetic */ EnumEntries c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f375a;
+    private final String f321a;
 
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001J\u0012\u0010\u0005\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0007¨\u0006\u0006"}, d2 = {"Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus$Companion;", "", "", "stringValue", "Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus;", "from", "core-api_release"}, k = 1, mv = {1, 6, 0})
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001J\u0012\u0010\u0005\u001a\u00020\u00042\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0007¨\u0006\u0006"}, d2 = {"Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus$Companion;", "", "", "stringValue", "Lio/appmetrica/analytics/coreapi/internal/identifiers/IdentifierStatus;", "from", "core-api_release"}, k = 1, mv = {1, 9, 0})
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -51,8 +56,27 @@ public enum IdentifierStatus {
         }
     }
 
-    IdentifierStatus(String str) {
-        this.f375a = str;
+    static {
+        IdentifierStatus identifierStatus = new IdentifierStatus("OK", 0, "OK");
+        OK = identifierStatus;
+        IdentifierStatus identifierStatus2 = new IdentifierStatus("IDENTIFIER_PROVIDER_UNAVAILABLE", 1, "IDENTIFIER_PROVIDER_UNAVAILABLE");
+        IDENTIFIER_PROVIDER_UNAVAILABLE = identifierStatus2;
+        IdentifierStatus identifierStatus3 = new IdentifierStatus("INVALID_ADV_ID", 2, "INVALID_ADV_ID");
+        INVALID_ADV_ID = identifierStatus3;
+        IdentifierStatus identifierStatus4 = new IdentifierStatus("FORBIDDEN_BY_CLIENT_CONFIG", 3, "FORBIDDEN_BY_CLIENT_CONFIG");
+        FORBIDDEN_BY_CLIENT_CONFIG = identifierStatus4;
+        IdentifierStatus identifierStatus5 = new IdentifierStatus("FEATURE_DISABLED", 4, "FEATURE_DISABLED");
+        FEATURE_DISABLED = identifierStatus5;
+        IdentifierStatus identifierStatus6 = new IdentifierStatus("UNKNOWN", 5, "UNKNOWN");
+        UNKNOWN = identifierStatus6;
+        IdentifierStatus[] identifierStatusArr = {identifierStatus, identifierStatus2, identifierStatus3, identifierStatus4, identifierStatus5, identifierStatus6};
+        b = identifierStatusArr;
+        c = EnumEntriesKt.enumEntries(identifierStatusArr);
+        Companion = new Companion(null);
+    }
+
+    private IdentifierStatus(String str, int i, String str2) {
+        this.f321a = str2;
     }
 
     @JvmStatic
@@ -60,7 +84,19 @@ public enum IdentifierStatus {
         return Companion.from(str);
     }
 
+    public static EnumEntries<IdentifierStatus> getEntries() {
+        return c;
+    }
+
+    public static IdentifierStatus valueOf(String str) {
+        return (IdentifierStatus) Enum.valueOf(IdentifierStatus.class, str);
+    }
+
+    public static IdentifierStatus[] values() {
+        return (IdentifierStatus[]) b.clone();
+    }
+
     public final String getValue() {
-        return this.f375a;
+        return this.f321a;
     }
 }

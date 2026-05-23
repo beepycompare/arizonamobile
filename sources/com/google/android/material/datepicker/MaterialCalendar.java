@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+import androidx.appcompat.widget.TooltipCompat;
 import androidx.core.util.Pair;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
@@ -39,9 +40,11 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     private DateSelector<S> dateSelector;
     private View dayFrame;
     private DayViewDecorator dayViewDecorator;
+    private boolean isFullscreen;
     private MaterialButton monthDropSelect;
     private View monthNext;
     private View monthPrev;
+    private PagerSnapHelper pagerSnapHelper;
     private RecyclerView recyclerView;
     private int themeResId;
     private View yearFrame;
@@ -62,6 +65,14 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     /* loaded from: classes4.dex */
     public interface OnDayClickListener {
         void onDayClick(long j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes4.dex */
+    public interface OnMonthNavigationListener {
+        boolean onMonthNavigationNext();
+
+        boolean onMonthNavigationPrevious();
     }
 
     public static <T> MaterialCalendar<T> newInstance(DateSelector<T> dateSelector, int i, CalendarConstraints calendarConstraints) {
@@ -103,6 +114,7 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
         this.current = (Month) bundle.getParcelable(CURRENT_MONTH_KEY);
     }
 
+    /* JADX WARN: Type inference failed for: r6v1, types: [android.content.Context, android.view.ContextThemeWrapper, com.google.android.material.datepicker.MaterialCalendar$4, com.google.android.material.datepicker.MaterialCalendar$OnMonthNavigationListener] */
     @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         int i;
@@ -112,7 +124,9 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
         LayoutInflater cloneInContext = layoutInflater.cloneInContext(contextThemeWrapper);
         this.accessibilityManager = (AccessibilityManager) requireContext().getSystemService("accessibility");
         Month start = this.calendarConstraints.getStart();
-        if (MaterialDatePicker.isFullscreen(contextThemeWrapper)) {
+        boolean isFullscreen = MaterialDatePicker.isFullscreen(contextThemeWrapper);
+        this.isFullscreen = isFullscreen;
+        if (isFullscreen) {
             i = R.layout.mtrl_calendar_vertical;
             i2 = 1;
         } else {
@@ -150,7 +164,10 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
             }
         });
         this.recyclerView.setTag(MONTHS_VIEW_GROUP_TAG);
-        MonthsPagerAdapter monthsPagerAdapter = new MonthsPagerAdapter(contextThemeWrapper, this.dateSelector, this.calendarConstraints, this.dayViewDecorator, new OnDayClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.3
+        DateSelector<S> dateSelector = this.dateSelector;
+        CalendarConstraints calendarConstraints = this.calendarConstraints;
+        DayViewDecorator dayViewDecorator = this.dayViewDecorator;
+        OnDayClickListener onDayClickListener = new OnDayClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.3
             @Override // com.google.android.material.datepicker.MaterialCalendar.OnDayClickListener
             public void onDayClick(long j) {
                 if (MaterialCalendar.this.calendarConstraints.getDateValidator().isValid(j)) {
@@ -165,30 +182,45 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
                     }
                 }
             }
-        });
+        };
+        ?? r6 = new OnMonthNavigationListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.4
+            @Override // com.google.android.material.datepicker.MaterialCalendar.OnMonthNavigationListener
+            public boolean onMonthNavigationPrevious() {
+                return MaterialCalendar.this.handleNavigateToMonthForKeyboard(false);
+            }
+
+            @Override // com.google.android.material.datepicker.MaterialCalendar.OnMonthNavigationListener
+            public boolean onMonthNavigationNext() {
+                return MaterialCalendar.this.handleNavigateToMonthForKeyboard(true);
+            }
+        };
+        MonthsPagerAdapter monthsPagerAdapter = new MonthsPagerAdapter(r6, dateSelector, calendarConstraints, dayViewDecorator, onDayClickListener, r6);
         this.recyclerView.setAdapter(monthsPagerAdapter);
-        int integer = contextThemeWrapper.getResources().getInteger(R.integer.mtrl_calendar_year_selector_span);
+        int integer = r6.getResources().getInteger(R.integer.mtrl_calendar_year_selector_span);
         RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.mtrl_calendar_year_selector_frame);
         this.yearSelector = recyclerView;
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
-            this.yearSelector.setLayoutManager(new GridLayoutManager((Context) contextThemeWrapper, integer, 1, false));
+            this.yearSelector.setLayoutManager(new GridLayoutManager((Context) r6, integer, 1, false));
             this.yearSelector.setAdapter(new YearGridAdapter(this));
             this.yearSelector.addItemDecoration(createItemDecoration());
+        }
+        if (!this.isFullscreen) {
+            PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
+            this.pagerSnapHelper = pagerSnapHelper;
+            pagerSnapHelper.attachToRecyclerView(this.recyclerView);
         }
         if (inflate.findViewById(R.id.month_navigation_fragment_toggle) != null) {
             addActionsToMonthNavigation(inflate, monthsPagerAdapter);
         }
-        if (!MaterialDatePicker.isFullscreen(contextThemeWrapper)) {
-            new PagerSnapHelper().attachToRecyclerView(this.recyclerView);
-        }
         this.recyclerView.scrollToPosition(monthsPagerAdapter.getPosition(this.current));
         setUpForAccessibility();
+        updateAccessibilityPaneTitle(inflate);
         return inflate;
     }
 
     private void setUpForAccessibility() {
-        ViewCompat.setAccessibilityDelegate(this.recyclerView, new AccessibilityDelegateCompat() { // from class: com.google.android.material.datepicker.MaterialCalendar.4
+        ViewCompat.setAccessibilityDelegate(this.recyclerView, new AccessibilityDelegateCompat() { // from class: com.google.android.material.datepicker.MaterialCalendar.5
             @Override // androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
@@ -198,7 +230,7 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     }
 
     private RecyclerView.ItemDecoration createItemDecoration() {
-        return new RecyclerView.ItemDecoration() { // from class: com.google.android.material.datepicker.MaterialCalendar.5
+        return new RecyclerView.ItemDecoration() { // from class: com.google.android.material.datepicker.MaterialCalendar.6
             private final Calendar startItem = UtcDates.getUtcCalendar();
             private final Calendar endItem = UtcDates.getUtcCalendar();
 
@@ -251,6 +283,27 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
         return this.calendarConstraints;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public boolean handleNavigateToMonthForKeyboard(boolean z) {
+        Month month;
+        if (this.isFullscreen) {
+            return false;
+        }
+        if (this.recyclerView.getScrollState() != 0) {
+            return true;
+        }
+        MonthsPagerAdapter monthsPagerAdapter = (MonthsPagerAdapter) this.recyclerView.getAdapter();
+        if (monthsPagerAdapter != null && (month = this.current) != null) {
+            int position = monthsPagerAdapter.getPosition(month) + (z ? 1 : -1);
+            if (position >= 0 && position < monthsPagerAdapter.getItemCount()) {
+                monthsPagerAdapter.setKeyboardFocusDirection(z ? 2 : 1);
+                setCurrentMonth(monthsPagerAdapter.getPageMonth(position));
+                return true;
+            }
+        }
+        return false;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setCurrentMonth(Month month) {
         MonthsPagerAdapter monthsPagerAdapter = (MonthsPagerAdapter) this.recyclerView.getAdapter();
@@ -274,7 +327,17 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
                 postSmoothRecyclerViewScroll(position);
             }
         }
+        updateCurrentVisibleMonth();
         updateNavigationButtonsEnabled(position);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateCurrentVisibleMonth() {
+        MonthsPagerAdapter monthsPagerAdapter = (MonthsPagerAdapter) this.recyclerView.getAdapter();
+        if (monthsPagerAdapter == null || this.isFullscreen) {
+            return;
+        }
+        monthsPagerAdapter.setVisibleMonth(this.current);
     }
 
     @Override // com.google.android.material.datepicker.PickerFragment
@@ -321,10 +384,20 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
     void toggleVisibleSelector() {
         if (this.calendarSelector == CalendarSelector.YEAR) {
             setSelector(CalendarSelector.DAY);
-            this.recyclerView.announceForAccessibility(getString(R.string.mtrl_picker_toggled_to_day_selection));
         } else if (this.calendarSelector == CalendarSelector.DAY) {
             setSelector(CalendarSelector.YEAR);
-            this.yearSelector.announceForAccessibility(getString(R.string.mtrl_picker_toggled_to_year_selection));
+        }
+        updateAccessibilityPaneTitle(getView());
+    }
+
+    private void updateAccessibilityPaneTitle(View view) {
+        if (view == null) {
+            return;
+        }
+        if (this.calendarSelector == CalendarSelector.YEAR) {
+            ViewCompat.setAccessibilityPaneTitle(view, getString(R.string.mtrl_picker_pane_title_year_view));
+        } else if (this.calendarSelector == CalendarSelector.DAY) {
+            ViewCompat.setAccessibilityPaneTitle(view, getString(R.string.mtrl_picker_pane_title_calendar_view));
         }
     }
 
@@ -332,7 +405,7 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
         MaterialButton materialButton = (MaterialButton) view.findViewById(R.id.month_navigation_fragment_toggle);
         this.monthDropSelect = materialButton;
         materialButton.setTag(SELECTOR_TOGGLE_TAG);
-        ViewCompat.setAccessibilityDelegate(this.monthDropSelect, new AccessibilityDelegateCompat() { // from class: com.google.android.material.datepicker.MaterialCalendar.6
+        ViewCompat.setAccessibilityDelegate(this.monthDropSelect, new AccessibilityDelegateCompat() { // from class: com.google.android.material.datepicker.MaterialCalendar.7
             @Override // androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 String string;
@@ -350,14 +423,16 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
         View findViewById = view.findViewById(R.id.month_navigation_previous);
         this.monthPrev = findViewById;
         findViewById.setTag(NAVIGATION_PREV_TAG);
+        TooltipCompat.setTooltipText(this.monthPrev, getString(R.string.mtrl_picker_prev_month_tooltip));
         View findViewById2 = view.findViewById(R.id.month_navigation_next);
         this.monthNext = findViewById2;
         findViewById2.setTag(NAVIGATION_NEXT_TAG);
+        TooltipCompat.setTooltipText(this.monthNext, getString(R.string.mtrl_picker_next_month_tooltip));
         this.yearFrame = view.findViewById(R.id.mtrl_calendar_year_selector_frame);
         this.dayFrame = view.findViewById(R.id.mtrl_calendar_day_selector_frame);
         setSelector(CalendarSelector.DAY);
         this.monthDropSelect.setText(this.current.getLongName());
-        this.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.7
+        this.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.8
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 int findLastVisibleItemPosition;
@@ -367,28 +442,48 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
                 } else {
                     findLastVisibleItemPosition = materialCalendar.getLayoutManager().findLastVisibleItemPosition();
                 }
-                Month pageMonth = monthsPagerAdapter.getPageMonth(findLastVisibleItemPosition);
-                MaterialCalendar.this.current = pageMonth;
+                if (MaterialCalendar.this.pagerSnapHelper == null) {
+                    MaterialCalendar.this.current = monthsPagerAdapter.getPageMonth(findLastVisibleItemPosition);
+                }
                 MaterialCalendar.this.monthDropSelect.setText(monthsPagerAdapter.getPageTitle(findLastVisibleItemPosition));
-                MaterialCalendar.this.updateNavigationButtonsEnabled(monthsPagerAdapter.getPosition(pageMonth));
+                MaterialCalendar.this.updateNavigationButtonsEnabled(findLastVisibleItemPosition);
+            }
+
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
+                int childAdapterPosition;
+                if (i != 0 || MaterialCalendar.this.pagerSnapHelper == null) {
+                    return;
+                }
+                View findSnapView = MaterialCalendar.this.pagerSnapHelper.findSnapView(MaterialCalendar.this.getLayoutManager());
+                if (findSnapView != null && (childAdapterPosition = recyclerView.getChildAdapterPosition(findSnapView)) != -1) {
+                    MaterialCalendar.this.current = monthsPagerAdapter.getPageMonth(childAdapterPosition);
+                    MaterialCalendar.this.monthDropSelect.setText(monthsPagerAdapter.getPageTitle(childAdapterPosition));
+                    MaterialCalendar.this.updateNavigationButtonsEnabled(childAdapterPosition);
+                }
+                MaterialCalendar.this.updateCurrentVisibleMonth();
             }
         });
-        this.monthDropSelect.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.8
+        this.monthDropSelect.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.9
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 MaterialCalendar.this.toggleVisibleSelector();
             }
         });
-        this.monthNext.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.9
+        this.monthNext.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.10
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
-                MaterialCalendar.this.setCurrentMonth(monthsPagerAdapter.getPageMonth(MaterialCalendar.this.getLayoutManager().findFirstVisibleItemPosition() + 1));
+                int findFirstVisibleItemPosition = MaterialCalendar.this.getLayoutManager().findFirstVisibleItemPosition();
+                monthsPagerAdapter.setKeyboardFocusDirection(2);
+                MaterialCalendar.this.setCurrentMonth(monthsPagerAdapter.getPageMonth(findFirstVisibleItemPosition + 1));
             }
         });
-        this.monthPrev.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.10
+        this.monthPrev.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialCalendar.11
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
-                MaterialCalendar.this.setCurrentMonth(monthsPagerAdapter.getPageMonth(MaterialCalendar.this.getLayoutManager().findLastVisibleItemPosition() - 1));
+                int findLastVisibleItemPosition = MaterialCalendar.this.getLayoutManager().findLastVisibleItemPosition();
+                monthsPagerAdapter.setKeyboardFocusDirection(1);
+                MaterialCalendar.this.setCurrentMonth(monthsPagerAdapter.getPageMonth(findLastVisibleItemPosition - 1));
             }
         });
         updateNavigationButtonsEnabled(monthsPagerAdapter.getPosition(this.current));
@@ -396,12 +491,18 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateNavigationButtonsEnabled(int i) {
-        this.monthNext.setEnabled(i + 1 < this.recyclerView.getAdapter().getItemCount());
-        this.monthPrev.setEnabled(i - 1 >= 0);
+        View view = this.monthNext;
+        if (view != null) {
+            view.setEnabled(i + 1 < this.recyclerView.getAdapter().getItemCount());
+        }
+        View view2 = this.monthPrev;
+        if (view2 != null) {
+            view2.setEnabled(i - 1 >= 0);
+        }
     }
 
     private void postSmoothRecyclerViewScroll(final int i) {
-        this.recyclerView.post(new Runnable() { // from class: com.google.android.material.datepicker.MaterialCalendar.11
+        this.recyclerView.post(new Runnable() { // from class: com.google.android.material.datepicker.MaterialCalendar.12
             @Override // java.lang.Runnable
             public void run() {
                 MaterialCalendar.this.recyclerView.smoothScrollToPosition(i);

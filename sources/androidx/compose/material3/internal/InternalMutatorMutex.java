@@ -50,7 +50,7 @@ public final class InternalMutatorMutex {
         }
 
         public final void cancel() {
-            Job.DefaultImpls.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(this.job, (CancellationException) null, 1, (Object) null);
         }
     }
 
@@ -91,13 +91,14 @@ public final class InternalMutatorMutex {
     }
 
     public final boolean tryMutate(Function0<Unit> function0) {
-        boolean tryLock$default = Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null);
+        boolean tryLock$default;
+        tryLock$default = Mutex.tryLock$default(this.mutex, null, 1, null);
         if (tryLock$default) {
             try {
                 function0.invoke();
                 return tryLock$default;
             } finally {
-                Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+                Mutex.unlock$default(this.mutex, null, 1, null);
             }
         }
         return tryLock$default;

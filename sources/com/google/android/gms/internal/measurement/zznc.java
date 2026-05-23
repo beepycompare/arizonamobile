@@ -1,34 +1,9 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zznc implements zznk {
-    private final zznk[] zza;
+final /* synthetic */ class zznc implements zzmt {
+    static final /* synthetic */ zznc zza = new zznc();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zznc(zznk... zznkVarArr) {
-        this.zza = zznkVarArr;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final boolean zzb(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            if (this.zza[i].zzb(cls)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final zznj zzc(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            zznk zznkVar = this.zza[i];
-            if (zznkVar.zzb(cls)) {
-                return zznkVar.zzc(cls);
-            }
-        }
-        String name = cls.getName();
-        String.valueOf(name);
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(String.valueOf(name)));
+    private /* synthetic */ zznc() {
     }
 }

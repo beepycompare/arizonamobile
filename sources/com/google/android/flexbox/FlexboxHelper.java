@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FlexboxHelper {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final int INITIAL_CAPACITY = 10;
@@ -1279,7 +1279,7 @@ public class FlexboxHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Order implements Comparable<Order> {
         int index;
         int order;
@@ -1300,7 +1300,7 @@ public class FlexboxHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class FlexLinesResult {
         int mChildState;
         List<FlexLine> mFlexLines;

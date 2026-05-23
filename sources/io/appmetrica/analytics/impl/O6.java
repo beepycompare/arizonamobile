@@ -1,15 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
-import java.sql.SQLException;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.ArraysKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
 /* loaded from: classes5.dex */
-public final class O6 extends DatabaseScript {
-    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
-    public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY,session_id INTEGER,session_type INTEGER,number_in_session INTEGER,type INTEGER,global_number INTEGER,time INTEGER,event_description BLOB )");
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS sessions (id INTEGER,type INTEGER,report_request_parameters TEXT,session_description BLOB )");
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS preferences (key TEXT PRIMARY KEY,value TEXT,type INTEGER)");
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS binary_data (data_key TEXT PRIMARY KEY,value BLOB)");
+public final class O6 implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Rm[] fromModel(Map<String, ? extends List<String>> map) {
+        Rm[] rmArr = new Rm[map.size()];
+        int i = 0;
+        for (Object obj : map.entrySet()) {
+            int i2 = i + 1;
+            if (i < 0) {
+                CollectionsKt.throwIndexOverflow();
+            }
+            Map.Entry entry = (Map.Entry) obj;
+            Rm rm = new Rm();
+            rm.f751a = (String) entry.getKey();
+            rm.b = (String[]) ((Collection) entry.getValue()).toArray(new String[0]);
+            rmArr[i] = rm;
+            i = i2;
+        }
+        return rmArr;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Map<String, List<String>> toModel(Rm[] rmArr) {
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(rmArr.length), 16));
+        for (Rm rm : rmArr) {
+            Pair pair = TuplesKt.to(rm.f751a, ArraysKt.toList(rm.b));
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
+        }
+        return linkedHashMap;
     }
 }

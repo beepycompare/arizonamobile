@@ -1,60 +1,73 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes5.dex */
-public final class F implements Parcelable {
-    public static final E CREATOR = new E();
+public final class F implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0785z f1449a;
-    public final H b;
-    public final B c;
+    public final C0784f f1432a;
+    public final I b;
+    public final C0793o c;
 
-    public F(C0785z c0785z, H h, B b) {
-        this.f1449a = c0785z;
-        this.b = h;
-        this.c = b;
+    public F() {
+        this(null, null, null, 7, null);
     }
 
-    public final C0785z a() {
-        return this.f1449a;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final A fromModel(P p) {
+        A a2 = new A();
+        a2.f1429a = p.f1440a;
+        z zVar = new z();
+        N n = p.b;
+        zVar.f1463a = n != null ? this.f1432a.fromModel(n) : null;
+        U u = p.c;
+        zVar.b = u != null ? this.b.fromModel(u) : null;
+        O o = p.d;
+        zVar.c = o != null ? this.c.fromModel(o) : null;
+        a2.b = zVar;
+        return a2;
     }
 
-    public final B b() {
-        return this.c;
+    public F(C0784f c0784f, I i, C0793o c0793o) {
+        this.f1432a = c0784f;
+        this.b = i;
+        this.c = c0793o;
     }
 
-    public final H c() {
-        return this.b;
+    public /* synthetic */ F(C0784f c0784f, I i, C0793o c0793o, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i2 & 1) != 0 ? new C0784f() : c0784f, (i2 & 2) != 0 ? new I() : i, (i2 & 4) != 0 ? new C0793o() : c0793o);
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String toString() {
-        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1449a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1449a, i);
-        parcel.writeParcelable(this.b, i);
-        parcel.writeParcelable(this.c, i);
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public F(k0 k0Var) {
-        this(r2, r3, r5 != null ? new B(r5) : null);
-        h0 a2 = k0Var.a();
-        C0785z c0785z = a2 != null ? new C0785z(a2) : null;
-        l0 c = k0Var.c();
-        H h = c != null ? new H(c) : null;
-        i0 b = k0Var.b();
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final P toModel(A a2) {
+        N n;
+        U u;
+        x xVar;
+        y yVar;
+        w wVar;
+        boolean z = a2.f1429a;
+        z zVar = a2.b;
+        O o = null;
+        if (zVar == null || (wVar = zVar.f1463a) == null) {
+            n = null;
+        } else {
+            this.f1432a.getClass();
+            n = new N(wVar.f1460a);
+        }
+        z zVar2 = a2.b;
+        if (zVar2 == null || (yVar = zVar2.b) == null) {
+            u = null;
+        } else {
+            this.b.getClass();
+            u = new U(yVar.f1462a, yVar.b);
+        }
+        z zVar3 = a2.b;
+        if (zVar3 != null && (xVar = zVar3.c) != null) {
+            o = this.c.toModel(xVar);
+        }
+        return new P(z, n, u, o);
     }
 }

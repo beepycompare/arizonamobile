@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.Api.AnyClient;
 import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class RegisterListenerMethod<A extends Api.AnyClient, L> {
     private final ListenerHolder zaa;
@@ -41,12 +41,12 @@ public abstract class RegisterListenerMethod<A extends Api.AnyClient, L> {
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract void registerListener(A a2, TaskCompletionSource<Void> taskCompletionSource) throws RemoteException;
 
-    public final int zaa() {
-        return this.zad;
+    public final boolean zaa() {
+        return this.zac;
     }
 
-    public final boolean zab() {
-        return this.zac;
+    public final int zab() {
+        return this.zad;
     }
 
     protected RegisterListenerMethod(ListenerHolder<L> listenerHolder, Feature[] featureArr, boolean z) {

@@ -1,37 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.os.Handler;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public abstract class D0 {
-    public static B6 a(Handler handler, C0 c0) {
-        return new B6(handler, c0);
+public final class D0 implements Xc {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ E0 f502a;
+    public final /* synthetic */ AppMetricaConfig b;
+    public final /* synthetic */ PublicLogger c;
+
+    public D0(E0 e0, AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
+        this.f502a = e0;
+        this.b = appMetricaConfig;
+        this.c = publicLogger;
     }
 
-    public static Bf a(Context context, B6 b6) {
-        return new Bf(context, b6);
-    }
-
-    public static C0680wi a(Bf bf, Context context, ICommonExecutor iCommonExecutor) {
-        C0488p0 c0488p0 = new C0488p0(context, iCommonExecutor);
-        return new C0680wi(c0488p0, new Sn(new C0399lb()), new F4(bf), new Yj(context, c0488p0));
-    }
-
-    public static Ol a(Context context, C0680wi c0680wi, Ve ve, Handler handler) {
-        return new Ol(c0680wi, new Wl(context, ve), handler);
-    }
-
-    public static C0353jg a(C0680wi c0680wi, Ve ve, Handler handler) {
-        return new C0353jg(c0680wi, ve, handler, ve.s());
-    }
-
-    public static C0355ji a(Context context, Bf bf, C0680wi c0680wi, Handler handler, Ol ol) {
-        return new C0355ji(context, bf, c0680wi, handler, ol);
-    }
-
-    public static C0170cd a(Context context) {
-        return new C0170cd(C0135b4.l().c.a(), C0135b4.l().b(context), "client_modules", new SystemTimeProvider());
+    @Override // io.appmetrica.analytics.impl.Xc
+    public final Jc a() {
+        E0 e0 = this.f502a;
+        Di di = e0.g;
+        AppMetricaConfig appMetricaConfig = this.b;
+        PublicLogger publicLogger = this.c;
+        V7 v7 = e0.i;
+        return di.b(appMetricaConfig, publicLogger, new C0443n0(v7.j, v7.h));
     }
 }

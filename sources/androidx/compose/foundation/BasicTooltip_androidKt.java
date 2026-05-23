@@ -16,7 +16,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: BasicTooltip.android.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\u001ac\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"BasicTooltipBoxAndroid", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", FirebaseAnalytics.Param.CONTENT, "BasicTooltipBox", "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\u001ac\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0004\b\u000f\u0010\u0010¨\u0006\u0011"}, d2 = {"BasicTooltipBoxAndroid", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/BasicTooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "focusable", "", "enableUserInput", FirebaseAnalytics.Param.CONTENT, "BasicTooltipBox", "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/BasicTooltipState;Landroidx/compose/ui/Modifier;ZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTooltip_androidKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,13 +29,14 @@ public final class BasicTooltip_androidKt {
     /* JADX WARN: Removed duplicated region for block: B:38:0x0069  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0084  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00ae  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:91:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:92:? A[RETURN, SYNTHETIC] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility.")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -96,7 +97,7 @@ public final class BasicTooltip_androidKt {
                             ComposerKt.traceEventStart(-1368136524, i3, -1, "androidx.compose.foundation.BasicTooltipBoxAndroid (BasicTooltip.android.kt:61)");
                         }
                         composer2 = startRestartGroup;
-                        BasicTooltipKt.BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, companion, z6, z7, function22, composer2, i3 & 4194302, 0);
+                        BasicTooltipKt.BasicTooltipBox(popupPositionProvider, function2, basicTooltipState, companion, z6, z7, false, function22, composer2, (524286 & i3) | ((i3 << 3) & 29360128), 64);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }

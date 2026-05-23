@@ -3,7 +3,7 @@ package com.miami.game.core.files;
 import android.content.Context;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AndroidFiles_Factory implements Factory<AndroidFiles> {
     private final Provider<Context> applicationContextProvider;
 

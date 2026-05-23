@@ -119,7 +119,7 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
         });
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new WorkshopViewHolder$bind$1$3(itemInventoryBinding, this, itemVal, null), 3, null);

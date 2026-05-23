@@ -1,12 +1,36 @@
 package com.google.android.gms.internal.measurement;
 
-import android.net.Uri;
-import java.util.regex.Pattern;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzjg {
-    public static final Uri zza = Uri.parse("content://com.google.android.gsf.gservices");
-    public static final Uri zzb = Uri.parse("content://com.google.android.gsf.gservices/prefix");
-    public static final Pattern zzc = Pattern.compile("^(1|true|t|on|yes|y)$", 2);
-    public static final Pattern zzd = Pattern.compile("^(0|false|f|off|no|n)$", 2);
+public final class zzjg implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
+        zzjo[] zzjoVarArr = null;
+        int i = 0;
+        String[] strArr = null;
+        while (parcel.dataPosition() < validateObjectHeader) {
+            int readHeader = SafeParcelReader.readHeader(parcel);
+            int fieldId = SafeParcelReader.getFieldId(readHeader);
+            if (fieldId == 2) {
+                i = SafeParcelReader.readInt(parcel, readHeader);
+            } else if (fieldId == 3) {
+                zzjoVarArr = (zzjo[]) SafeParcelReader.createTypedArray(parcel, readHeader, zzjo.CREATOR);
+            } else if (fieldId == 4) {
+                strArr = SafeParcelReader.createStringArray(parcel, readHeader);
+            } else {
+                SafeParcelReader.skipUnknownField(parcel, readHeader);
+            }
+        }
+        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
+        return new zzjf(i, zzjoVarArr, strArr);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i) {
+        return new zzjf[i];
+    }
 }

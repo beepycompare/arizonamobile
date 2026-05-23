@@ -20,7 +20,7 @@ public final class FirebaseSessionsComponent_MainModule_Companion_TimeProviderFa
 
     /* loaded from: classes4.dex */
     private static final class InstanceHolder {
-        private static final FirebaseSessionsComponent_MainModule_Companion_TimeProviderFactory INSTANCE = new FirebaseSessionsComponent_MainModule_Companion_TimeProviderFactory();
+        static final FirebaseSessionsComponent_MainModule_Companion_TimeProviderFactory INSTANCE = new FirebaseSessionsComponent_MainModule_Companion_TimeProviderFactory();
 
         private InstanceHolder() {
         }

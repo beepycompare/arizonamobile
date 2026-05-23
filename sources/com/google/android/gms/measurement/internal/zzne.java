@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzne implements Runnable {
     final /* synthetic */ ConnectionResult zza;
@@ -30,9 +30,9 @@ public final class zzne implements Runnable {
                 @Override // java.lang.Runnable
                 public final /* synthetic */ void run() {
                     final zznl zznlVar2 = zzne.this.zzb.zza;
-                    zzhz zzaW = zznlVar2.zzu.zzaW();
+                    zzhz zzaX = zznlVar2.zzu.zzaX();
                     Objects.requireNonNull(zznlVar2);
-                    zzaW.zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznd
+                    zzaX.zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zznd
                         @Override // java.lang.Runnable
                         public final /* synthetic */ void run() {
                             zznl.this.zzI();

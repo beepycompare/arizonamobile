@@ -1,27 +1,28 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzfn extends zzmf implements zznn {
-    private static final zzfn zzj;
+public final class zzfn extends zzadu implements zzafd {
+    private static final zzfn zzk;
+    private static volatile zzafj zzl;
     private int zzb;
-    private int zzd;
-    private String zze = "";
-    private zzfh zzf;
-    private boolean zzg;
+    private int zze;
+    private String zzf = "";
+    private zzfh zzg;
     private boolean zzh;
     private boolean zzi;
+    private boolean zzj;
 
     static {
         zzfn zzfnVar = new zzfn();
-        zzj = zzfnVar;
-        zzmf.zzcp(zzfn.class, zzfnVar);
+        zzk = zzfnVar;
+        zzadu.zzcs(zzfn.class, zzfnVar);
     }
 
     private zzfn() {
     }
 
-    public static zzfm zzi() {
-        return (zzfm) zzj.zzck();
+    public static zzfm zzj() {
+        return (zzfm) zzk.zzcn();
     }
 
     public final boolean zza() {
@@ -29,51 +30,66 @@ public final class zzfn extends zzmf implements zznn {
     }
 
     public final int zzb() {
-        return this.zzd;
-    }
-
-    public final String zzc() {
         return this.zze;
     }
 
+    public final String zzc() {
+        return this.zzf;
+    }
+
     public final zzfh zzd() {
-        zzfh zzfhVar = this.zzf;
-        return zzfhVar == null ? zzfh.zzi() : zzfhVar;
+        zzfh zzfhVar = this.zzg;
+        return zzfhVar == null ? zzfh.zzj() : zzfhVar;
     }
 
     public final boolean zze() {
-        return this.zzg;
-    }
-
-    public final boolean zzf() {
         return this.zzh;
     }
 
-    public final boolean zzg() {
-        return (this.zzb & 32) != 0;
-    }
-
-    public final boolean zzh() {
+    public final boolean zzf() {
         return this.zzi;
     }
 
-    public final /* synthetic */ void zzj(String str) {
-        this.zzb |= 2;
-        this.zze = str;
+    public final boolean zzh() {
+        return (this.zzb & 32) != 0;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    public final boolean zzi() {
+        return this.zzj;
+    }
+
+    public final /* synthetic */ void zzk(String str) {
+        this.zzb |= 2;
+        this.zzf = str;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzj, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001\u0003ဉ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ဇ\u0005", new Object[]{"zzb", "zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+                return zzct(zzk, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001\u0003ဉ\u0002\u0004ဇ\u0003\u0005ဇ\u0004\u0006ဇ\u0005", new Object[]{"zzb", "zze", "zzf", "zzg", "zzh", "zzi", "zzj"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzj;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzl;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzfn.class) {
+                                    zzafjVar = zzl;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzk);
+                                        zzl = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzk;
                 }
                 return new zzfm(null);
             } else {

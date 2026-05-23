@@ -1,6 +1,5 @@
 package kotlinx.coroutines.flow;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.List;
 import kotlin.Metadata;
@@ -11,13 +10,14 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 import kotlin.reflect.KClass;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 /* compiled from: Transform.kt */
-@Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0000\u001aJ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012$\b\u0004\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001aJ\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012$\b\u0004\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001a\u001f\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0006\b\u0000\u0010\u000b\u0018\u0001*\u0006\u0012\u0002\b\u00030\u0001H\u0086\b\u001a,\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\b\b\u0000\u0010\u000b*\u00020\u0007*\u0006\u0012\u0002\b\u00030\u00012\f\u0010\f\u001a\b\u0012\u0004\u0012\u0002H\u000b0\r\u001a\"\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0007*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0001\u001a_\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u000123\b\u0004\u0010\u0010\u001a-\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001ae\u0010\u0014\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u000b*\u00020\u0007*\b\u0012\u0004\u0012\u0002H\u00020\u000125\b\u0004\u0010\u0010\u001a/\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001a\"\u0010\u0015\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00160\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0001\u001aE\u0010\u0017\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\"\u0010\u0018\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004¢\u0006\u0002\u0010\b\u001ay\u0010\u001a\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010\u001b\u001a\u0002H\u000b2H\b\u0001\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u000b¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\u001f\u001ay\u0010 \u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010\u001b\u001a\u0002H\u000b2H\b\u0001\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u000b¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\u001f\u001ai\u0010!\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012F\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\"\u001a,\u0010#\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020$0\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010%\u001a\u00020&H\u0007¨\u0006'"}, d2 = {"filter", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;", "filterNot", "filterIsInstance", "R", "klass", "Lkotlin/reflect/KClass;", "filterNotNull", "map", "transform", "Lkotlin/ParameterName;", "name", "value", "mapNotNull", "withIndex", "Lkotlin/collections/IndexedValue;", "onEach", "action", "", "scan", "initial", "operation", "Lkotlin/Function3;", "accumulator", "(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/flow/Flow;", "runningFold", "runningReduce", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/flow/Flow;", "chunked", "", "size", "", "kotlinx-coroutines-core"}, k = 5, mv = {2, 1, 0}, xi = 48, xs = "kotlinx/coroutines/flow/FlowKt")
+@Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0000\u001aJ\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012$\b\u0004\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001aJ\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012$\b\u0004\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001a\u001f\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0006\b\u0000\u0010\u000b\u0018\u0001*\u0006\u0012\u0002\b\u00030\u0001H\u0086\b\u001a,\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\b\b\u0000\u0010\u000b*\u00020\u0007*\u0006\u0012\u0002\b\u00030\u00012\f\u0010\f\u001a\b\u0012\u0004\u0012\u0002H\u000b0\r\u001a\"\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0007*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0001\u001a_\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u000123\b\u0004\u0010\u0010\u001a-\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001ae\u0010\u0014\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u000b*\u00020\u0007*\b\u0012\u0004\u0012\u0002H\u00020\u000125\b\u0004\u0010\u0010\u001a/\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086\b¢\u0006\u0002\u0010\b\u001a\"\u0010\u0015\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00160\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0001\u001aE\u0010\u0017\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\"\u0010\u0018\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004¢\u0006\u0002\u0010\b\u001aw\u0010\u001a\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010\u001b\u001a\u0002H\u000b2F\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u000b¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\u001f\u001aw\u0010 \u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u000b*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010\u001b\u001a\u0002H\u000b2F\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u000b¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\u001f\u001ai\u0010!\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012F\u0010\u001c\u001aB\b\u0001\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u001e\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0011\u0012\b\b\u0012\u0012\u0004\b\b(\u0013\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0005\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u001d¢\u0006\u0002\u0010\"\u001a,\u0010#\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020$0\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0006\u0010%\u001a\u00020&H\u0007¨\u0006'"}, d2 = {"filter", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;", "filterNot", "filterIsInstance", "R", "klass", "Lkotlin/reflect/KClass;", "filterNotNull", "map", "transform", "Lkotlin/ParameterName;", "name", "value", "mapNotNull", "withIndex", "Lkotlin/collections/IndexedValue;", "onEach", "action", "", "scan", "initial", "operation", "Lkotlin/Function3;", "accumulator", "(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/flow/Flow;", "runningFold", "runningReduce", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/flow/Flow;", "chunked", "", "size", "", "kotlinx-coroutines-core"}, k = 5, mv = {2, 2, 0}, xi = 48, xs = "kotlinx/coroutines/flow/FlowKt")
 /* loaded from: classes5.dex */
 public final /* synthetic */ class FlowKt__TransformKt {
     public static final <T, R> Flow<R> scan(Flow<? extends T> flow, R r, Function3<? super R, ? super T, ? super Continuation<? super R>, ? extends Object> function3) {
@@ -56,20 +56,23 @@ public final /* synthetic */ class FlowKt__TransformKt {
         return (Flow) new Flow<Object>() { // from class: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$2
 
             /* compiled from: Emitters.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2  reason: invalid class name */
             /* loaded from: classes5.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ KClass $klass$inlined;
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2", f = "Transform.kt", i = {}, l = {50}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2", f = "Transform.kt", i = {0, 0, 0, 0, 0}, l = {217}, m = "emit", n = {"value", "$completion", "value", "$this$filter_u24lambda_u240", "$i$a$-unsafeTransform-FlowKt__TransformKt$filter$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
                 /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2$1  reason: invalid class name */
                 /* loaded from: classes5.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
+                    int I$0;
                     Object L$0;
                     Object L$1;
+                    Object L$2;
+                    Object L$3;
                     int label;
                     /* synthetic */ Object result;
 
@@ -91,7 +94,7 @@ public final /* synthetic */ class FlowKt__TransformKt {
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+                /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -110,6 +113,11 @@ public final /* synthetic */ class FlowKt__TransformKt {
                                 ResultKt.throwOnFailure(obj2);
                                 FlowCollector flowCollector = this.$this_unsafeFlow;
                                 if (this.$klass$inlined.isInstance(obj)) {
+                                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
+                                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
+                                    anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                                    anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                                    anonymousClass1.I$0 = 0;
                                     anonymousClass1.label = 1;
                                     if (flowCollector.emit(obj, anonymousClass1) == coroutine_suspended) {
                                         return coroutine_suspended;
@@ -118,6 +126,11 @@ public final /* synthetic */ class FlowKt__TransformKt {
                             } else if (i != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
+                                int i2 = anonymousClass1.I$0;
+                                FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
+                                Object obj3 = anonymousClass1.L$2;
+                                AnonymousClass1 anonymousClass12 = (AnonymousClass1) anonymousClass1.L$1;
+                                Object obj4 = anonymousClass1.L$0;
                                 ResultKt.throwOnFailure(obj2);
                             }
                             return Unit.INSTANCE;
@@ -145,17 +158,22 @@ public final /* synthetic */ class FlowKt__TransformKt {
         return new Flow<T>() { // from class: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2  reason: invalid class name */
             /* loaded from: classes5.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2", f = "Transform.kt", i = {}, l = {50}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2", f = "Transform.kt", i = {0, 0, 0, 0, 0}, l = {217}, m = "emit", n = {"value", "$completion", "value", "$this$filterNotNull_u24lambda_u240", "$i$a$-unsafeTransform-FlowKt__TransformKt$filterNotNull$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
                 /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2$1  reason: invalid class name */
                 /* loaded from: classes5.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
+                    int I$0;
+                    Object L$0;
+                    Object L$1;
+                    Object L$2;
+                    Object L$3;
                     int label;
                     /* synthetic */ Object result;
 
@@ -176,7 +194,7 @@ public final /* synthetic */ class FlowKt__TransformKt {
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+                /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -194,7 +212,13 @@ public final /* synthetic */ class FlowKt__TransformKt {
                             if (i != 0) {
                                 ResultKt.throwOnFailure(obj);
                                 FlowCollector flowCollector = this.$this_unsafeFlow;
+                                AnonymousClass1 anonymousClass12 = anonymousClass1;
                                 if (t != null) {
+                                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass12);
+                                    anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(t);
+                                    anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                                    anonymousClass1.I$0 = 0;
                                     anonymousClass1.label = 1;
                                     if (flowCollector.emit(t, anonymousClass1) == coroutine_suspended) {
                                         return coroutine_suspended;
@@ -203,13 +227,18 @@ public final /* synthetic */ class FlowKt__TransformKt {
                             } else if (i != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
+                                int i2 = anonymousClass1.I$0;
+                                FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
+                                Object obj2 = anonymousClass1.L$2;
+                                Continuation continuation2 = (Continuation) anonymousClass1.L$1;
+                                Object obj3 = anonymousClass1.L$0;
                                 ResultKt.throwOnFailure(obj);
                             }
                             return Unit.INSTANCE;
                         }
                     }
                     anonymousClass1 = new AnonymousClass1(continuation);
-                    Object obj2 = anonymousClass1.result;
+                    Object obj4 = anonymousClass1.result;
                     Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = anonymousClass1.label;
                     if (i != 0) {
@@ -248,20 +277,23 @@ public final /* synthetic */ class FlowKt__TransformKt {
         return new Flow<T>() { // from class: kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
             /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2  reason: invalid class name */
             /* loaded from: classes5.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ Function2 $action$inlined;
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2", f = "Transform.kt", i = {0, 0}, l = {50, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG}, m = "emit", n = {"value", "$this$onEach_u24lambda_u248"}, s = {"L$0", "L$1"})
+                @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+                @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2", f = "Transform.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {217, 218}, m = "emit", n = {"value", "$completion", "value", "$this$onEach_u24lambda_u240", "$i$a$-unsafeTransform-FlowKt__TransformKt$onEach$1", "value", "$completion", "value", "$this$onEach_u24lambda_u240", "$i$a$-unsafeTransform-FlowKt__TransformKt$onEach$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
                 /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2$1  reason: invalid class name */
                 /* loaded from: classes5.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
+                    int I$0;
                     Object L$0;
                     Object L$1;
+                    Object L$2;
+                    Object L$3;
                     int label;
                     /* synthetic */ Object result;
 
@@ -282,11 +314,11 @@ public final /* synthetic */ class FlowKt__TransformKt {
                     this.$action$inlined = function2;
                 }
 
-                /* JADX WARN: Code restructure failed: missing block: B:21:0x0062, code lost:
-                    if (r5.emit(r6, r0) != r1) goto L11;
+                /* JADX WARN: Code restructure failed: missing block: B:21:0x00a0, code lost:
+                    if (r7.emit(r2, r0) != r1) goto L11;
                  */
                 /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-                /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
+                /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
@@ -294,49 +326,75 @@ public final /* synthetic */ class FlowKt__TransformKt {
                 public final Object emit(T t, Continuation<? super Unit> continuation) {
                     AnonymousClass1 anonymousClass1;
                     int i;
+                    Continuation continuation2;
+                    int i2;
+                    Object obj;
+                    Object obj2;
                     FlowCollector flowCollector;
                     if (continuation instanceof AnonymousClass1) {
                         anonymousClass1 = (AnonymousClass1) continuation;
                         if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
                             anonymousClass1.label -= Integer.MIN_VALUE;
-                            Object obj = anonymousClass1.result;
+                            Object obj3 = anonymousClass1.result;
                             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                             i = anonymousClass1.label;
                             if (i != 0) {
-                                ResultKt.throwOnFailure(obj);
+                                ResultKt.throwOnFailure(obj3);
                                 FlowCollector flowCollector2 = this.$this_unsafeFlow;
+                                AnonymousClass1 anonymousClass12 = anonymousClass1;
                                 Function2 function2 = this.$action$inlined;
-                                anonymousClass1.L$0 = t;
-                                anonymousClass1.L$1 = flowCollector2;
+                                anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                                anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass12);
+                                anonymousClass1.L$2 = t;
+                                anonymousClass1.L$3 = flowCollector2;
+                                anonymousClass1.I$0 = 0;
                                 anonymousClass1.label = 1;
                                 if (function2.invoke(t, anonymousClass1) != coroutine_suspended) {
+                                    continuation2 = anonymousClass12;
+                                    i2 = 0;
+                                    obj = t;
+                                    obj2 = obj;
                                     flowCollector = flowCollector2;
                                 }
                                 return coroutine_suspended;
                             } else if (i != 1) {
                                 if (i == 2) {
-                                    ResultKt.throwOnFailure(obj);
+                                    int i3 = anonymousClass1.I$0;
+                                    FlowCollector flowCollector3 = (FlowCollector) anonymousClass1.L$3;
+                                    Object obj4 = anonymousClass1.L$2;
+                                    Continuation continuation3 = (Continuation) anonymousClass1.L$1;
+                                    Object obj5 = anonymousClass1.L$0;
+                                    ResultKt.throwOnFailure(obj3);
                                     return Unit.INSTANCE;
                                 }
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             } else {
-                                flowCollector = (FlowCollector) anonymousClass1.L$1;
-                                t = (T) anonymousClass1.L$0;
-                                ResultKt.throwOnFailure(obj);
+                                i2 = anonymousClass1.I$0;
+                                flowCollector = (FlowCollector) anonymousClass1.L$3;
+                                obj = anonymousClass1.L$2;
+                                continuation2 = (Continuation) anonymousClass1.L$1;
+                                obj2 = anonymousClass1.L$0;
+                                ResultKt.throwOnFailure(obj3);
                             }
-                            anonymousClass1.L$0 = null;
-                            anonymousClass1.L$1 = null;
+                            anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj2);
+                            anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(continuation2);
+                            anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                            anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                            anonymousClass1.I$0 = i2;
                             anonymousClass1.label = 2;
                         }
                     }
                     anonymousClass1 = new AnonymousClass1(continuation);
-                    Object obj2 = anonymousClass1.result;
+                    Object obj32 = anonymousClass1.result;
                     Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = anonymousClass1.label;
                     if (i != 0) {
                     }
-                    anonymousClass1.L$0 = null;
-                    anonymousClass1.L$1 = null;
+                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj2);
+                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(continuation2);
+                    anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
+                    anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                    anonymousClass1.I$0 = i2;
                     anonymousClass1.label = 2;
                 }
             }

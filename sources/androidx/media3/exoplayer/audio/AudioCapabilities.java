@@ -31,49 +31,74 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AudioCapabilities {
+    static final ImmutableMap<Integer, Integer> ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS;
+    public static final AudioCapabilities DEFAULT_AUDIO_CAPABILITIES;
+    private static final ImmutableList<Integer> DEFAULT_EMPTY_SPATIALIZER_CHANNEL_MASKS;
     static final int DEFAULT_MAX_CHANNEL_COUNT = 10;
     static final int DEFAULT_SAMPLE_RATE_HZ = 48000;
+    private static final ImmutableList<Integer> DEFAULT_SPEAKER_LAYOUT_CHANNEL_MASKS;
+    private static final ImmutableList<Integer> EXTERNAL_SURROUND_SOUND_ENCODINGS;
     private static final String EXTERNAL_SURROUND_SOUND_KEY = "external_surround_sound_enabled";
     private static final String FORCE_EXTERNAL_SURROUND_SOUND_KEY = "use_external_surround_sound_flag";
     private final SparseArray<AudioProfile> encodingToAudioProfile;
     private final int maxChannelCount;
-    public static final AudioCapabilities DEFAULT_AUDIO_CAPABILITIES = new AudioCapabilities(ImmutableList.of(AudioProfile.DEFAULT_AUDIO_PROFILE));
-    private static final ImmutableList<Integer> EXTERNAL_SURROUND_SOUND_ENCODINGS = ImmutableList.of(2, 5, 6);
-    static final ImmutableMap<Integer, Integer> ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS = new ImmutableMap.Builder().put(5, 6).put(17, 6).put(7, 6).put(30, 10).put(18, 6).put(6, 8).put(8, 8).put(14, 8).buildOrThrow();
+    private final ImmutableList<Integer> spatializerChannelMasks;
+    private final ImmutableList<Integer> speakerLayoutChannelMasks;
+
+    static {
+        ImmutableList<Integer> of = ImmutableList.of(12);
+        DEFAULT_SPEAKER_LAYOUT_CHANNEL_MASKS = of;
+        ImmutableList<Integer> of2 = ImmutableList.of();
+        DEFAULT_EMPTY_SPATIALIZER_CHANNEL_MASKS = of2;
+        DEFAULT_AUDIO_CAPABILITIES = new AudioCapabilities(ImmutableList.of(AudioProfile.DEFAULT_AUDIO_PROFILE), of, of2);
+        EXTERNAL_SURROUND_SOUND_ENCODINGS = ImmutableList.of(2, 5, 6);
+        ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS = new ImmutableMap.Builder().put(5, 6).put(17, 6).put(7, 6).put(30, 10).put(18, 6).put(6, 8).put(8, 8).put(14, 8).buildOrThrow();
+    }
 
     @Deprecated
     public static AudioCapabilities getCapabilities(Context context) {
         return getCapabilities(context, AudioAttributes.DEFAULT, null);
     }
 
+    @Deprecated
     public static AudioCapabilities getCapabilities(Context context, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo) {
-        return getCapabilitiesInternal(context, audioAttributes, audioDeviceInfo);
+        return getCapabilities(context, audioAttributes, audioDeviceInfo, DEFAULT_EMPTY_SPATIALIZER_CHANNEL_MASKS);
+    }
+
+    public static AudioCapabilities getCapabilities(Context context, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo, List<Integer> list) {
+        return getCapabilitiesInternal(context, audioAttributes, audioDeviceInfo, list);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static AudioCapabilities getCapabilitiesInternal(Context context, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo) {
-        return getCapabilitiesInternal(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), audioAttributes, audioDeviceInfo);
+    public static AudioCapabilities getCapabilitiesInternal(Context context, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo, List<Integer> list) {
+        return getCapabilitiesInternal(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), audioAttributes, audioDeviceInfo, list);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static AudioCapabilities getCapabilitiesInternal(Context context, Intent intent, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo) {
+    public static AudioCapabilities getCapabilitiesInternal(Context context, Intent intent, AudioAttributes audioAttributes, AudioDeviceInfo audioDeviceInfo, List<Integer> list) {
+        ImmutableList<Integer> immutableList;
         AudioManager audioManager = AudioManagerCompat.getAudioManager(context);
         if (audioDeviceInfo == null) {
             audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? Api33.getDefaultRoutedDeviceForAttributes(audioManager, audioAttributes) : null;
         }
+        if (audioDeviceInfo != null) {
+            immutableList = SpeakerLayoutUtil.getLoudspeakerLayoutChannelMasks(audioDeviceInfo);
+        } else {
+            immutableList = DEFAULT_SPEAKER_LAYOUT_CHANNEL_MASKS;
+        }
         if (Build.VERSION.SDK_INT >= 33 && (Util.isTv(context) || Util.isAutomotive(context))) {
-            return Api33.getCapabilitiesInternalForDirectPlayback(audioManager, audioAttributes);
+            return Api33.getCapabilitiesInternalForDirectPlayback(audioManager, audioAttributes, immutableList, list);
         }
         if (isBluetoothConnected(audioManager, audioDeviceInfo)) {
-            return DEFAULT_AUDIO_CAPABILITIES;
+            return new AudioCapabilities(ImmutableList.of(AudioProfile.DEFAULT_AUDIO_PROFILE), immutableList, list);
         }
         ImmutableSet.Builder builder = new ImmutableSet.Builder();
         builder.add((ImmutableSet.Builder) 2);
         if (Build.VERSION.SDK_INT >= 29 && (Util.isTv(context) || Util.isAutomotive(context))) {
             builder.addAll((Iterable) Api29.getDirectPlaybackSupportedEncodings(audioAttributes));
-            return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), 10));
+            return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), 10), immutableList, list);
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z = Settings.Global.getInt(contentResolver, FORCE_EXTERNAL_SURROUND_SOUND_KEY, 0) == 1;
@@ -85,9 +110,9 @@ public final class AudioCapabilities {
             if (intArrayExtra != null) {
                 builder.addAll((Iterable) Ints.asList(intArrayExtra));
             }
-            return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10)));
+            return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10)), immutableList, list);
         }
-        return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), 10));
+        return new AudioCapabilities(getAudioProfiles(Ints.toArray(builder.build()), 10), immutableList, list);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -100,10 +125,14 @@ public final class AudioCapabilities {
 
     @Deprecated
     public AudioCapabilities(int[] iArr, int i) {
-        this(getAudioProfiles(iArr, i));
+        this(getAudioProfiles(iArr, i), DEFAULT_SPEAKER_LAYOUT_CHANNEL_MASKS, DEFAULT_EMPTY_SPATIALIZER_CHANNEL_MASKS);
     }
 
-    private AudioCapabilities(List<AudioProfile> list) {
+    AudioCapabilities(int[] iArr, int i, List<Integer> list, List<Integer> list2) {
+        this(getAudioProfiles(iArr, i), list, list2);
+    }
+
+    private AudioCapabilities(List<AudioProfile> list, List<Integer> list2, List<Integer> list3) {
         this.encodingToAudioProfile = new SparseArray<>();
         for (int i = 0; i < list.size(); i++) {
             AudioProfile audioProfile = list.get(i);
@@ -114,6 +143,8 @@ public final class AudioCapabilities {
             i2 = Math.max(i2, this.encodingToAudioProfile.valueAt(i3).maxChannelCount);
         }
         this.maxChannelCount = i2;
+        this.speakerLayoutChannelMasks = ImmutableList.copyOf((Collection) list2);
+        this.spatializerChannelMasks = ImmutableList.copyOf((Collection) list3);
     }
 
     public boolean supportsEncoding(int i) {
@@ -122,6 +153,14 @@ public final class AudioCapabilities {
 
     public int getMaxChannelCount() {
         return this.maxChannelCount;
+    }
+
+    public ImmutableList<Integer> getSpeakerLayoutChannelMasks() {
+        return this.speakerLayoutChannelMasks;
+    }
+
+    public ImmutableList<Integer> getSpatializerChannelMasks() {
+        return this.spatializerChannelMasks;
     }
 
     @Deprecated
@@ -178,17 +217,17 @@ public final class AudioCapabilities {
         }
         if (obj instanceof AudioCapabilities) {
             AudioCapabilities audioCapabilities = (AudioCapabilities) obj;
-            return Util.contentEquals(this.encodingToAudioProfile, audioCapabilities.encodingToAudioProfile) && this.maxChannelCount == audioCapabilities.maxChannelCount;
+            return Util.contentEquals(this.encodingToAudioProfile, audioCapabilities.encodingToAudioProfile) && this.maxChannelCount == audioCapabilities.maxChannelCount && Objects.equals(this.speakerLayoutChannelMasks, audioCapabilities.speakerLayoutChannelMasks) && Objects.equals(this.spatializerChannelMasks, audioCapabilities.spatializerChannelMasks);
         }
         return false;
     }
 
     public int hashCode() {
-        return this.maxChannelCount + (Util.contentHashCode(this.encodingToAudioProfile) * 31);
+        return (((((this.maxChannelCount * 31) + Util.contentHashCode(this.encodingToAudioProfile)) * 31) + Objects.hashCode(this.speakerLayoutChannelMasks)) * 31) + Objects.hashCode(this.spatializerChannelMasks);
     }
 
     public String toString() {
-        return "AudioCapabilities[maxChannelCount=" + this.maxChannelCount + ", audioProfiles=" + this.encodingToAudioProfile + "]";
+        return "AudioCapabilities[maxChannelCount=" + this.maxChannelCount + ", audioProfiles=" + this.encodingToAudioProfile + ", speakerLayoutChannelMasks=" + this.speakerLayoutChannelMasks + ", spatializerChannelMasks=" + this.spatializerChannelMasks + "]";
     }
 
     private static boolean deviceMaySetExternalSurroundSoundGlobalSetting() {
@@ -245,29 +284,16 @@ public final class AudioCapabilities {
     }
 
     private static boolean isBluetoothConnected(AudioManager audioManager, AudioDeviceInfo audioDeviceInfo) {
-        AudioDeviceInfo[] devices = audioDeviceInfo == null ? ((AudioManager) Preconditions.checkNotNull(audioManager)).getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo};
-        ImmutableSet<Integer> allBluetoothDeviceTypes = getAllBluetoothDeviceTypes();
-        for (AudioDeviceInfo audioDeviceInfo2 : devices) {
-            if (allBluetoothDeviceTypes.contains(Integer.valueOf(audioDeviceInfo2.getType()))) {
+        for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? ((AudioManager) Preconditions.checkNotNull(audioManager)).getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
+            if (DeviceTypeUtil.isBluetoothDevice(audioDeviceInfo2.getType())) {
                 return true;
             }
         }
         return false;
     }
 
-    private static ImmutableSet<Integer> getAllBluetoothDeviceTypes() {
-        ImmutableSet.Builder add = new ImmutableSet.Builder().add((Object[]) new Integer[]{8, 7});
-        if (Build.VERSION.SDK_INT >= 31) {
-            add.add((Object[]) new Integer[]{26, 27});
-        }
-        if (Build.VERSION.SDK_INT >= 33) {
-            add.add((ImmutableSet.Builder) 30);
-        }
-        return add.build();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AudioProfile {
         public static final AudioProfile DEFAULT_AUDIO_PROFILE;
         private final ImmutableSet<Integer> channelMasks;
@@ -354,7 +380,7 @@ public final class AudioCapabilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api29 {
         private Api29() {
         }
@@ -384,13 +410,13 @@ public final class AudioCapabilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Api33 {
         private Api33() {
         }
 
-        public static AudioCapabilities getCapabilitiesInternalForDirectPlayback(AudioManager audioManager, AudioAttributes audioAttributes) {
-            return new AudioCapabilities(AudioCapabilities.getAudioProfiles(audioManager.getDirectProfilesForAttributes(audioAttributes.getPlatformAudioAttributes())));
+        public static AudioCapabilities getCapabilitiesInternalForDirectPlayback(AudioManager audioManager, AudioAttributes audioAttributes, List<Integer> list, List<Integer> list2) {
+            return new AudioCapabilities(AudioCapabilities.getAudioProfiles(audioManager.getDirectProfilesForAttributes(audioAttributes.getPlatformAudioAttributes())), list, list2);
         }
 
         public static AudioDeviceInfo getDefaultRoutedDeviceForAttributes(AudioManager audioManager, AudioAttributes audioAttributes) {

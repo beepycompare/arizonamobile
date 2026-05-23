@@ -6,7 +6,6 @@ import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.State;
 import androidx.navigation.NavBackStackEntry;
 import java.util.List;
-import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,13 +15,12 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NavHost.kt */
 @Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0010\u0010\u0002\u001a\f\u0012\b\u0012\u00060\u0004j\u0002`\u00050\u0003H\n"}, d2 = {"<anonymous>", "", "backEvent", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/activity/BackEventCompat;", "Landroidx/navigation/compose/internal/BackEventCompat;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.navigation.compose.NavHostKt$NavHost$25$1", f = "NavHost.kt", i = {0}, l = {534}, m = "invokeSuspend", n = {"currentBackStackEntry"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.navigation.compose.NavHostKt$NavHost$25$1", f = "NavHost.kt", i = {1}, l = {524, 534}, m = "invokeSuspend", n = {"currentBackStackEntry"}, s = {"L$0"})
 /* loaded from: classes3.dex */
 public final class NavHostKt$NavHost$25$1 extends SuspendLambda implements Function2<Flow<? extends BackEventCompat>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ComposeNavigator $composeNavigator;
@@ -60,79 +58,77 @@ public final class NavHostKt$NavHost$25$1 extends SuspendLambda implements Funct
         return ((NavHostKt$NavHost$25$1) create(flow, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0047, code lost:
+        if (r8.collect(androidx.navigation.compose.NavHostKt$NavHost$25$1.AnonymousClass1.INSTANCE, r7) == r0) goto L22;
+     */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
         List NavHost$lambda$38;
         List NavHost$lambda$382;
-        NavBackStackEntry navBackStackEntry;
-        NavBackStackEntry navBackStackEntry2;
         List NavHost$lambda$383;
         List NavHost$lambda$384;
-        List NavHost$lambda$385;
-        List NavHost$lambda$386;
+        NavBackStackEntry navBackStackEntry;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
-            if (i == 0) {
-                ResultKt.throwOnFailure(obj);
-                Flow flow = (Flow) this.L$0;
-                NavHost$lambda$382 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-                if (NavHost$lambda$382.size() > 1) {
-                    this.$progress$delegate.setFloatValue(0.0f);
-                    NavHost$lambda$383 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-                    navBackStackEntry = (NavBackStackEntry) CollectionsKt.lastOrNull((List<? extends Object>) NavHost$lambda$383);
-                    ComposeNavigator composeNavigator = this.$composeNavigator;
-                    Intrinsics.checkNotNull(navBackStackEntry);
-                    composeNavigator.prepareForTransition(navBackStackEntry);
-                    NavHost$lambda$384 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-                    NavHost$lambda$385 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-                    this.$composeNavigator.prepareForTransition((NavBackStackEntry) NavHost$lambda$384.get(NavHost$lambda$385.size() - 2));
+            if (i != 0) {
+                if (i == 1) {
+                    ResultKt.throwOnFailure(obj);
+                    return Unit.INSTANCE;
+                } else if (i == 2) {
+                    navBackStackEntry = (NavBackStackEntry) this.L$0;
+                    ResultKt.throwOnFailure(obj);
+                    this.$composeNavigator.popBackStack(navBackStackEntry, false);
+                    NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
+                    return Unit.INSTANCE;
                 } else {
-                    navBackStackEntry = null;
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
-                final State<List<NavBackStackEntry>> state = this.$currentBackStack$delegate;
+            }
+            ResultKt.throwOnFailure(obj);
+            Flow flow = (Flow) this.L$0;
+            NavHost$lambda$38 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+            if (NavHost$lambda$38.size() < 2) {
+                this.label = 1;
+            } else {
+                this.$progress$delegate.setFloatValue(0.0f);
+                NavHost$lambda$382 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+                NavBackStackEntry navBackStackEntry2 = (NavBackStackEntry) CollectionsKt.last((List<? extends Object>) NavHost$lambda$382);
+                this.$composeNavigator.prepareForTransition(navBackStackEntry2);
+                NavHost$lambda$383 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+                NavHost$lambda$384 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+                this.$composeNavigator.prepareForTransition((NavBackStackEntry) NavHost$lambda$383.get(NavHost$lambda$384.size() - 2));
                 final MutableState<Boolean> mutableState = this.$inPredictiveBack$delegate;
                 final MutableFloatState mutableFloatState = this.$progress$delegate;
-                this.L$0 = navBackStackEntry;
-                this.label = 1;
-                if (flow.collect(new FlowCollector() { // from class: androidx.navigation.compose.NavHostKt$NavHost$25$1.1
+                this.L$0 = navBackStackEntry2;
+                this.label = 2;
+                if (flow.collect(new FlowCollector() { // from class: androidx.navigation.compose.NavHostKt$NavHost$25$1.2
                     @Override // kotlinx.coroutines.flow.FlowCollector
                     public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
                         return emit((BackEventCompat) obj2, (Continuation<? super Unit>) continuation);
                     }
 
                     public final Object emit(BackEventCompat backEventCompat, Continuation<? super Unit> continuation) {
-                        List NavHost$lambda$387;
-                        NavHost$lambda$387 = NavHostKt.NavHost$lambda$38(state);
-                        if (NavHost$lambda$387.size() > 1) {
-                            NavHostKt.NavHost$lambda$44(mutableState, true);
-                            mutableFloatState.setFloatValue(backEventCompat.getProgress());
-                        }
+                        NavHostKt.NavHost$lambda$44(mutableState, true);
+                        mutableFloatState.setFloatValue(backEventCompat.getProgress());
                         return Unit.INSTANCE;
                     }
-                }, this) == coroutine_suspended) {
-                    return coroutine_suspended;
+                }, this) != coroutine_suspended) {
+                    navBackStackEntry = navBackStackEntry2;
+                    this.$composeNavigator.popBackStack(navBackStackEntry, false);
+                    NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
+                    return Unit.INSTANCE;
                 }
-                navBackStackEntry2 = navBackStackEntry;
-            } else if (i != 1) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            } else {
-                navBackStackEntry2 = (NavBackStackEntry) this.L$0;
-                ResultKt.throwOnFailure(obj);
             }
-            NavHost$lambda$386 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-            if (NavHost$lambda$386.size() > 1) {
-                NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
-                ComposeNavigator composeNavigator2 = this.$composeNavigator;
-                Intrinsics.checkNotNull(navBackStackEntry2);
-                composeNavigator2.popBackStack(navBackStackEntry2, false);
-            }
-        } catch (CancellationException unused) {
-            NavHost$lambda$38 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-            if (NavHost$lambda$38.size() > 1) {
-                NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
-            }
+            return coroutine_suspended;
+        } catch (Throwable th) {
+            NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
+            throw th;
         }
-        return Unit.INSTANCE;
+        NavHostKt.NavHost$lambda$44(this.$inPredictiveBack$delegate, false);
+        throw th;
     }
 }

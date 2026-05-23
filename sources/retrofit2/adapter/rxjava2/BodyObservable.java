@@ -7,7 +7,7 @@ import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 import retrofit2.Response;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class BodyObservable<T> extends Observable<T> {
     private final Observable<Response<T>> upstream;
 
@@ -21,7 +21,7 @@ final class BodyObservable<T> extends Observable<T> {
         this.upstream.subscribe(new BodyObserver(observer));
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static class BodyObserver<R> implements Observer<Response<R>> {
         private final Observer<? super R> observer;
         private boolean terminated;

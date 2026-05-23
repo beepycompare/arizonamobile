@@ -9,19 +9,19 @@ import kotlin.jvm.internal.Lambda;
 public final class c extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ SafePackageManager f390a;
+    public final /* synthetic */ SafePackageManager f336a;
     public final /* synthetic */ Context b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c(SafePackageManager safePackageManager, Context context) {
         super(0);
-        this.f390a = safePackageManager;
+        this.f336a = safePackageManager;
         this.b = context;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        SafePackageManager safePackageManager = this.f390a;
+        SafePackageManager safePackageManager = this.f336a;
         Context context = this.b;
         ApplicationInfo applicationInfo = safePackageManager.getApplicationInfo(context, context.getPackageName(), 128);
         if (applicationInfo != null) {

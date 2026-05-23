@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.AdaptedFunctionReference;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ComposableLambda.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final /* synthetic */ class ComposableLambdaImpl$invoke$1 extends AdaptedFunctionReference implements Function2<Composer, Integer, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

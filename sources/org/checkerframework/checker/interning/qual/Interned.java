@@ -16,6 +16,6 @@ import org.checkerframework.framework.qual.TypeKind;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({UnknownInterned.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Interned {
 }

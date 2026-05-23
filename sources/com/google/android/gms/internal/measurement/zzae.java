@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzae implements Iterable, zzao, zzak {
     final SortedMap zza;
@@ -71,7 +71,7 @@ public final class zzae implements Iterable, zzao, zzak {
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao
-    public final zzao zzcA(String str, zzg zzgVar, List list) {
+    public final zzao zzcG(String str, zzg zzgVar, List list) {
         if ("concat".equals(str) || "every".equals(str) || "filter".equals(str) || "forEach".equals(str) || "indexOf".equals(str) || "join".equals(str) || "lastIndexOf".equals(str) || "map".equals(str) || "pop".equals(str) || Constants.PUSH.equals(str) || "reduce".equals(str) || "reduceRight".equals(str) || "reverse".equals(str) || "shift".equals(str) || "slice".equals(str) || "some".equals(str) || "sort".equals(str) || "splice".equals(str) || "toString".equals(str) || "unshift".equals(str)) {
             return zzba.zza(str, this, zzgVar, list);
         }
@@ -124,10 +124,7 @@ public final class zzae implements Iterable, zzao, zzak {
     @Override // com.google.android.gms.internal.measurement.zzak
     public final zzao zzk(String str) {
         zzao zzaoVar;
-        if ("length".equals(str)) {
-            return new zzah(Double.valueOf(zzh()));
-        }
-        return (!zzj(str) || (zzaoVar = (zzao) this.zzb.get(str)) == null) ? zzf : zzaoVar;
+        return "length".equals(str) ? new zzah(Double.valueOf(zzh())) : (!zzj(str) || (zzaoVar = (zzao) this.zzb.get(str)) == null) ? zzf : zzaoVar;
     }
 
     public final zzao zzl(int i) {

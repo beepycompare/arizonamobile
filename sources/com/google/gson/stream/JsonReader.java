@@ -698,6 +698,7 @@ public class JsonReader implements Closeable {
             } else {
                 this.peekedString = nextQuotedValue(i == 8 ? '\'' : '\"');
             }
+            validateAscii(this.peekedString);
             try {
                 long parseLong = Long.parseLong(this.peekedString);
                 this.peeked = 0;
@@ -948,6 +949,7 @@ public class JsonReader implements Closeable {
             } else {
                 this.peekedString = nextQuotedValue(i == 8 ? '\'' : '\"');
             }
+            validateAscii(this.peekedString);
             try {
                 int parseInt = Integer.parseInt(this.peekedString);
                 this.peeked = 0;
@@ -1364,6 +1366,14 @@ public class JsonReader implements Closeable {
             char[] cArr = this.buffer;
             if (cArr[i2] == ')' && cArr[i2 + 1] == ']' && cArr[i2 + 2] == '}' && cArr[i2 + 3] == '\'' && cArr[i2 + 4] == '\n') {
                 this.pos = i2 + 5;
+            }
+        }
+    }
+
+    private void validateAscii(String str) throws MalformedJsonException {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) > 127) {
+                throw syntaxError("String contains non-ASCII characters: " + str);
             }
         }
     }

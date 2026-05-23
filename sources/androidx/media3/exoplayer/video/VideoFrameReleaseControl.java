@@ -36,6 +36,7 @@ public final class VideoFrameReleaseControl {
     private long joiningDeadlineMs = C.TIME_UNSET;
     private float playbackSpeed = 1.0f;
     private Clock clock = Clock.DEFAULT;
+    private boolean requiresOutputSurface = true;
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -115,6 +116,10 @@ public final class VideoFrameReleaseControl {
         this.frameReleaseHelper.onFormatChanged(f);
     }
 
+    public void setRequiresOutputSurface(boolean z) {
+        this.requiresOutputSurface = z;
+    }
+
     public boolean onFrameReleasedIsFirstFrame() {
         boolean z = this.firstFrameState != 3;
         this.firstFrameState = 3;
@@ -133,7 +138,7 @@ public final class VideoFrameReleaseControl {
     }
 
     public boolean isReady(boolean z) {
-        if (z && (this.firstFrameState == 3 || (!this.hasOutputSurface && this.frameReadyWithoutSurface))) {
+        if (z && (this.firstFrameState == 3 || (this.frameReadyWithoutSurface && (!this.hasOutputSurface || !this.requiresOutputSurface)))) {
             this.joiningDeadlineMs = C.TIME_UNSET;
             return true;
         } else if (this.joiningDeadlineMs == C.TIME_UNSET) {
@@ -163,30 +168,33 @@ public final class VideoFrameReleaseControl {
         }
         frameReleaseInfo.earlyUs = calculateEarlyTimeUs(j2, j3, j);
         if (!z || z2) {
-            if (this.hasOutputSurface) {
-                if (shouldForceRelease(j2, frameReleaseInfo.earlyUs, j4)) {
-                    return 0;
-                }
-                if (!this.started || j2 == this.initialPositionUs) {
-                    return 5;
-                }
-                long nanoTime = this.clock.nanoTime();
-                frameReleaseInfo.releaseTimeNs = this.frameReleaseHelper.adjustReleaseTime((frameReleaseInfo.earlyUs * 1000) + nanoTime, j);
-                frameReleaseInfo.earlyUs = (frameReleaseInfo.releaseTimeNs - nanoTime) / 1000;
-                boolean z3 = (this.joiningDeadlineMs == C.TIME_UNSET || this.joiningRenderNextFrameImmediately) ? false : true;
-                if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, z3)) {
+            if (!this.hasOutputSurface && this.requiresOutputSurface) {
+                if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, true)) {
                     return 4;
                 }
-                return this.frameTimingEvaluator.shouldDropFrame(frameReleaseInfo.earlyUs, j3, z2) ? z3 ? 3 : 2 : frameReleaseInfo.earlyUs > MAX_EARLY_US_THRESHOLD ? 5 : 1;
-            } else if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, true)) {
-                return 4;
-            } else {
                 if (!this.started || frameReleaseInfo.earlyUs >= 30000) {
                     this.frameReadyWithoutSurface = true;
                     return 5;
                 }
                 return 3;
             }
+            if (!this.requiresOutputSurface) {
+                this.frameReadyWithoutSurface = true;
+            }
+            if (shouldForceRelease(j2, frameReleaseInfo.earlyUs, j4)) {
+                return 0;
+            }
+            if (!this.started || j2 == this.initialPositionUs) {
+                return 5;
+            }
+            long nanoTime = this.clock.nanoTime();
+            frameReleaseInfo.releaseTimeNs = this.frameReleaseHelper.adjustReleaseTime((frameReleaseInfo.earlyUs * 1000) + nanoTime, j);
+            frameReleaseInfo.earlyUs = (frameReleaseInfo.releaseTimeNs - nanoTime) / 1000;
+            boolean z3 = (this.joiningDeadlineMs == C.TIME_UNSET || this.joiningRenderNextFrameImmediately) ? false : true;
+            if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, z3)) {
+                return 4;
+            }
+            return this.frameTimingEvaluator.shouldDropFrame(frameReleaseInfo.earlyUs, j3, z2) ? z3 ? 3 : 2 : frameReleaseInfo.earlyUs > MAX_EARLY_US_THRESHOLD ? 5 : 1;
         }
         return 3;
     }
@@ -197,6 +205,7 @@ public final class VideoFrameReleaseControl {
         this.initialPositionUs = C.TIME_UNSET;
         lowerFirstFrameState(1);
         this.joiningDeadlineMs = C.TIME_UNSET;
+        this.frameReadyWithoutSurface = false;
     }
 
     public void setChangeFrameRateStrategy(int i) {

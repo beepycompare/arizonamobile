@@ -141,7 +141,7 @@ public class FileProvider extends ContentProvider {
                         file = externalCacheDirs[0];
                     }
                 } else if (TAG_EXTERNAL_MEDIA.equals(name)) {
-                    File[] externalMediaDirs = Api21Impl.getExternalMediaDirs(context);
+                    File[] externalMediaDirs = context.getExternalMediaDirs();
                     if (externalMediaDirs.length > 0) {
                         file = externalMediaDirs[0];
                     }
@@ -372,17 +372,6 @@ public class FileProvider extends ContentProvider {
 
         private boolean belongsToRoot(String str, String str2) {
             return FileProvider.removeTrailingSlash(str).startsWith(FileProvider.removeTrailingSlash(str2) + '/');
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static File[] getExternalMediaDirs(Context context) {
-            return context.getExternalMediaDirs();
         }
     }
 }

@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.arizonaui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Ap2022ClaimAwardScreenBinding implements ViewBinding {
     public final TextView awardTitle;
     public final Button claimAwardToInventoryButton;

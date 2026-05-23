@@ -12,8 +12,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import androidx.media3.common.C;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class WarServiceNotifyAlarm extends Service {
     public int icon;
     private NotificationManager mManager;
@@ -58,7 +57,7 @@ public class WarServiceNotifyAlarm extends Service {
             intent2 = new Intent();
         }
         intent2.addFlags(603979776);
-        this.mManager.notify(i4, new Notification.Builder(this).setContentTitle(string).setContentText(string2).setSmallIcon(i3).setLargeIcon(BitmapFactory.decodeResource(resources, i2)).setAutoCancel(true).setDefaults(4).setTicker(string2).setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, intent2, C.BUFFER_FLAG_FIRST_SAMPLE)).build());
+        this.mManager.notify(i4, new Notification.Builder(this).setContentTitle(string).setContentText(string2).setSmallIcon(i3).setLargeIcon(BitmapFactory.decodeResource(resources, i2)).setAutoCancel(true).setDefaults(4).setTicker(string2).setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, intent2, 134217728)).build());
         if (WarService.myWarService != null) {
             WarService.myWarService.UpdateBadgeReceiver(true, string3);
         }

@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* compiled from: CommonContextMenuArea.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "clickLocation", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "clickLocation", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1", f = "CommonContextMenuArea.kt", i = {0}, l = {82, 83}, m = "invokeSuspend", n = {"clickLocation"}, s = {"J$0"}, v = 1)
 /* loaded from: classes.dex */
 final class CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 extends SuspendLambda implements Function2<Offset, Continuation<? super Unit>, Object> {
@@ -30,22 +30,22 @@ final class CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 extends S
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 = new CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1(this.$selectionState, continuation);
-        commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1.J$0 = ((Offset) obj).m4537unboximpl();
+        commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1.J$0 = ((Offset) obj).m5113unboximpl();
         return commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Unit> continuation) {
-        return m1165invoke3MmeM6k(offset.m4537unboximpl(), continuation);
+        return m1509invoke3MmeM6k(offset.m5113unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
-    public final Object m1165invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
-        return ((CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1) create(Offset.m4516boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m1509invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
+        return ((CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1) create(Offset.m5092boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0067, code lost:
-        if (r5.mo1590onShowContextMenu_2OEclM(r11.$selectionState.getTextFieldState$foundation().getVisualText().getText(), r11.$selectionState.getTextFieldState$foundation().getVisualText().m1336getSelectiond9O1mEE(), androidx.compose.ui.geometry.Offset.m4516boximpl(r3), r11) == r0) goto L16;
+        if (r5.mo2035onShowContextMenu_2OEclM(r11.$selectionState.getTextFieldState$foundation().getVisualText().getText(), r11.$selectionState.getTextFieldState$foundation().getVisualText().m1724getSelectiond9O1mEE(), androidx.compose.ui.geometry.Offset.m5092boximpl(r3), r11) == r0) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*

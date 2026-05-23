@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgi extends zzg {
     private String zza;
@@ -25,19 +25,21 @@ public final class zzgi extends zzg {
     private final long zzh;
     private List zzi;
     private String zzj;
-    private int zzk;
-    private String zzl;
+    private final String zzk;
+    private int zzl;
     private String zzm;
-    private long zzn;
-    private String zzo;
+    private String zzn;
+    private long zzo;
+    private String zzp;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzgi(zzic zzicVar, long j, long j2) {
+    public zzgi(zzic zzicVar, long j, long j2, String str) {
         super(zzicVar);
-        this.zzn = 0L;
-        this.zzo = null;
+        this.zzo = 0L;
+        this.zzp = null;
         this.zzg = j;
         this.zzh = j2;
+        this.zzk = str;
     }
 
     @Override // com.google.android.gms.measurement.internal.zzg
@@ -45,21 +47,23 @@ public final class zzgi extends zzg {
         return true;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(15:1|(1:3)(6:58|59|(1:61)(2:76|(1:78))|62|63|(16:65|(1:67)(1:74)|68|69|5|(2:7|(2:9|(2:11|(2:13|(2:15|(2:17|(1:19)(1:51))(1:52))(1:53))(1:54))(1:55))(1:56))(1:57)|20|21|22|(1:24)(1:48)|25|(1:27)|29|(3:31|(1:33)(3:40|(3:43|(1:45)|41)|46)|(2:35|36)(2:38|39))|47|(0)(0)))|4|5|(0)(0)|20|21|22|(0)(0)|25|(0)|29|(0)|47|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0199, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(17:1|(1:3)(6:62|63|(1:65)(2:80|(1:82))|66|67|(18:69|(1:71)(1:78)|72|73|5|(2:7|(2:9|(2:11|(2:13|(2:15|(2:17|(1:19)(1:55))(1:56))(1:57))(1:58))(1:59))(1:60))(1:61)|20|21|22|(1:24)(1:52)|25|(1:27)(1:51)|28|(1:30)|32|(3:34|(1:36)(3:43|(3:46|(1:48)|44)|49)|(2:38|39)(2:41|42))|50|(0)(0)))|4|5|(0)(0)|20|21|22|(0)(0)|25|(0)(0)|28|(0)|32|(0)|50|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x01a2, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x019a, code lost:
-        r11.zzu.zzaV().zzb().zzc("Fetching Google App Id failed with exception. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r1), r0);
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x01a3, code lost:
+        r11.zzu.zzaW().zzb().zzc("Fetching Google App Id failed with exception. appId", com.google.android.gms.measurement.internal.zzgu.zzl(r1), r0);
      */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c7  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x0157  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0181  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0182  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0187 A[Catch: IllegalStateException -> 0x0199, TRY_LEAVE, TryCatch #2 {IllegalStateException -> 0x0199, blocks: (B:49:0x016d, B:53:0x0183, B:55:0x0187), top: B:81:0x016d }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0176 A[Catch: IllegalStateException -> 0x01a2, TryCatch #1 {IllegalStateException -> 0x01a2, blocks: (B:49:0x016d, B:53:0x0184, B:57:0x018c, B:59:0x0190, B:52:0x0176), top: B:83:0x016d }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0190 A[Catch: IllegalStateException -> 0x01a2, TRY_LEAVE, TryCatch #1 {IllegalStateException -> 0x01a2, blocks: (B:49:0x016d, B:53:0x0184, B:57:0x018c, B:59:0x0190, B:52:0x0176), top: B:83:0x016d }] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x020b  */
     @Override // com.google.android.gms.measurement.internal.zzg
     @EnsuresNonNull({RemoteConfigConstants.RequestFieldKey.APP_ID, "appStore", "appName", "gmpAppId", "gaAppId"})
     /*
@@ -71,30 +75,30 @@ public final class zzgi extends zzg {
         PackageInfo packageInfo;
         int zzC;
         List<String> zzs;
-        String zza;
+        String str3;
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzk().zzc("sdkVersion bundled with app, dynamiteVersion", Long.valueOf(this.zzh), Long.valueOf(this.zzg));
-        String packageName = zzicVar.zzaY().getPackageName();
-        PackageManager packageManager = zzicVar.zzaY().getPackageManager();
-        String str3 = "";
+        zzicVar.zzaW().zzk().zzc("sdkVersion bundled with app, dynamiteVersion", Long.valueOf(this.zzh), Long.valueOf(this.zzg));
+        String packageName = zzicVar.zzaZ().getPackageName();
+        PackageManager packageManager = zzicVar.zzaZ().getPackageManager();
+        String str4 = "";
         int i = Integer.MIN_VALUE;
-        String str4 = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
-        String str5 = "unknown";
+        String str5 = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        String str6 = "unknown";
         if (packageManager == null) {
-            zzicVar.zzaV().zzb().zzb("PackageManager is null, app identity information might be inaccurate. appId", zzgu.zzl(packageName));
+            zzicVar.zzaW().zzb().zzb("PackageManager is null, app identity information might be inaccurate. appId", zzgu.zzl(packageName));
         } else {
             try {
-                str5 = packageManager.getInstallerPackageName(packageName);
+                str6 = packageManager.getInstallerPackageName(packageName);
             } catch (IllegalArgumentException unused) {
-                this.zzu.zzaV().zzb().zzb("Error retrieving app installer package name. appId", zzgu.zzl(packageName));
+                this.zzu.zzaW().zzb().zzb("Error retrieving app installer package name. appId", zzgu.zzl(packageName));
             }
-            if (str5 == null) {
-                str5 = "manual_install";
-            } else if ("com.android.vending".equals(str5)) {
-                str5 = "";
+            if (str6 == null) {
+                str6 = "manual_install";
+            } else if ("com.android.vending".equals(str6)) {
+                str6 = "";
             }
             try {
-                packageInfo = packageManager.getPackageInfo(this.zzu.zzaY().getPackageName(), 0);
+                packageInfo = packageManager.getPackageInfo(this.zzu.zzaZ().getPackageName(), 0);
             } catch (PackageManager.NameNotFoundException unused2) {
                 str = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
             }
@@ -102,17 +106,17 @@ public final class zzgi extends zzg {
                 CharSequence applicationLabel = packageManager.getApplicationLabel(packageInfo.applicationInfo);
                 str2 = !TextUtils.isEmpty(applicationLabel) ? applicationLabel.toString() : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
                 try {
-                    str4 = packageInfo.versionName;
+                    str5 = packageInfo.versionName;
                     i = packageInfo.versionCode;
                 } catch (PackageManager.NameNotFoundException unused3) {
-                    str = str4;
-                    str4 = str2;
-                    this.zzu.zzaV().zzb().zzc("Error retrieving package info. appId, appName", zzgu.zzl(packageName), str4);
-                    str2 = str4;
-                    str4 = str;
+                    str = str5;
+                    str5 = str2;
+                    this.zzu.zzaW().zzb().zzc("Error retrieving package info. appId, appName", zzgu.zzl(packageName), str5);
+                    str2 = str5;
+                    str5 = str;
                     this.zza = packageName;
-                    this.zzd = str5;
-                    this.zzb = str4;
+                    this.zzd = str6;
+                    this.zzb = str5;
                     this.zzc = i;
                     this.zze = str2;
                     this.zzf = 0L;
@@ -120,18 +124,20 @@ public final class zzgi extends zzg {
                     zzC = zzicVar2.zzC();
                     if (zzC == 0) {
                     }
-                    this.zzl = "";
+                    this.zzm = "";
                     zzic zzicVar3 = this.zzu;
-                    zzicVar3.zzaU();
-                    zza = zzlt.zza(zzicVar3.zzaY(), "google_app_id", zzicVar2.zzq());
-                    if (!TextUtils.isEmpty(zza)) {
+                    zzicVar3.zzaV();
+                    str3 = this.zzk;
+                    if (TextUtils.isEmpty(str3)) {
                     }
-                    this.zzl = str3;
+                    if (!TextUtils.isEmpty(str3)) {
+                    }
+                    this.zzm = str4;
                     if (zzC == 0) {
                     }
                     this.zzi = null;
                     zzic zzicVar4 = this.zzu;
-                    zzicVar4.zzaU();
+                    zzicVar4.zzaV();
                     zzs = zzicVar4.zzc().zzs("analytics.safelisted_events");
                     if (zzs != null) {
                     }
@@ -140,62 +146,65 @@ public final class zzgi extends zzg {
                     }
                 }
                 this.zza = packageName;
-                this.zzd = str5;
-                this.zzb = str4;
+                this.zzd = str6;
+                this.zzb = str5;
                 this.zzc = i;
                 this.zze = str2;
                 this.zzf = 0L;
                 zzic zzicVar22 = this.zzu;
                 zzC = zzicVar22.zzC();
                 if (zzC == 0) {
-                    this.zzu.zzaV().zzk().zza("App measurement collection enabled");
+                    this.zzu.zzaW().zzk().zza("App measurement collection enabled");
                 } else if (zzC == 1) {
-                    this.zzu.zzaV().zzi().zza("App measurement deactivated via the manifest");
+                    this.zzu.zzaW().zzi().zza("App measurement deactivated via the manifest");
                 } else if (zzC == 3) {
-                    this.zzu.zzaV().zzi().zza("App measurement disabled by setAnalyticsCollectionEnabled(false)");
+                    this.zzu.zzaW().zzi().zza("App measurement disabled by setAnalyticsCollectionEnabled(false)");
                 } else if (zzC == 4) {
-                    this.zzu.zzaV().zzi().zza("App measurement disabled via the manifest");
+                    this.zzu.zzaW().zzi().zza("App measurement disabled via the manifest");
                 } else if (zzC == 6) {
-                    this.zzu.zzaV().zzh().zza("App measurement deactivated via resources. This method is being deprecated. Please refer to https://firebase.google.com/support/guides/disable-analytics");
+                    this.zzu.zzaW().zzh().zza("App measurement deactivated via resources. This method is being deprecated. Please refer to https://firebase.google.com/support/guides/disable-analytics");
                 } else if (zzC == 7) {
-                    this.zzu.zzaV().zzi().zza("App measurement disabled via the global data collection setting");
+                    this.zzu.zzaW().zzi().zza("App measurement disabled via the global data collection setting");
                 } else if (zzC != 8) {
                     zzic zzicVar5 = this.zzu;
-                    zzicVar5.zzaV().zzi().zza("App measurement disabled");
-                    zzicVar5.zzaV().zzc().zza("Invalid scion state in identity");
+                    zzicVar5.zzaW().zzi().zza("App measurement disabled");
+                    zzicVar5.zzaW().zzc().zza("Invalid scion state in identity");
                 } else {
-                    this.zzu.zzaV().zzi().zza("App measurement disabled due to denied storage consent");
+                    this.zzu.zzaW().zzi().zza("App measurement disabled due to denied storage consent");
                 }
-                this.zzl = "";
+                this.zzm = "";
                 zzic zzicVar32 = this.zzu;
-                zzicVar32.zzaU();
-                zza = zzlt.zza(zzicVar32.zzaY(), "google_app_id", zzicVar22.zzq());
-                if (!TextUtils.isEmpty(zza)) {
-                    str3 = zza;
+                zzicVar32.zzaV();
+                str3 = this.zzk;
+                if (TextUtils.isEmpty(str3)) {
+                    str3 = zzlt.zza(zzicVar32.zzaZ(), "google_app_id", zzicVar22.zzq());
                 }
-                this.zzl = str3;
+                if (!TextUtils.isEmpty(str3)) {
+                    str4 = str3;
+                }
+                this.zzm = str4;
                 if (zzC == 0) {
-                    zzicVar32.zzaV().zzk().zzc("App measurement enabled for app package, google app id", this.zza, this.zzl);
+                    zzicVar32.zzaW().zzk().zzc("App measurement enabled for app package, google app id", this.zza, this.zzm);
                 }
                 this.zzi = null;
                 zzic zzicVar42 = this.zzu;
-                zzicVar42.zzaU();
+                zzicVar42.zzaV();
                 zzs = zzicVar42.zzc().zzs("analytics.safelisted_events");
                 if (zzs != null) {
                     if (zzs.isEmpty()) {
-                        zzicVar42.zzaV().zzh().zza("Safelisted event list is empty. Ignoring");
+                        zzicVar42.zzaW().zzh().zza("Safelisted event list is empty. Ignoring");
                     } else {
-                        for (String str6 : zzs) {
-                            if (!zzicVar42.zzk().zzk("safelisted event", str6)) {
+                        for (String str7 : zzs) {
+                            if (!zzicVar42.zzk().zzl("safelisted event", str7)) {
                                 break;
                             }
                         }
                     }
                     if (packageManager == null) {
-                        this.zzk = InstantApps.isInstantApp(zzicVar42.zzaY()) ? 1 : 0;
+                        this.zzl = InstantApps.isInstantApp(zzicVar42.zzaZ()) ? 1 : 0;
                         return;
                     } else {
-                        this.zzk = 0;
+                        this.zzl = 0;
                         return;
                     }
                 }
@@ -206,8 +215,8 @@ public final class zzgi extends zzg {
         }
         str2 = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
         this.zza = packageName;
-        this.zzd = str5;
-        this.zzb = str4;
+        this.zzd = str6;
+        this.zzb = str5;
         this.zzc = i;
         this.zze = str2;
         this.zzf = 0L;
@@ -215,18 +224,20 @@ public final class zzgi extends zzg {
         zzC = zzicVar222.zzC();
         if (zzC == 0) {
         }
-        this.zzl = "";
+        this.zzm = "";
         zzic zzicVar322 = this.zzu;
-        zzicVar322.zzaU();
-        zza = zzlt.zza(zzicVar322.zzaY(), "google_app_id", zzicVar222.zzq());
-        if (!TextUtils.isEmpty(zza)) {
+        zzicVar322.zzaV();
+        str3 = this.zzk;
+        if (TextUtils.isEmpty(str3)) {
         }
-        this.zzl = str3;
+        if (!TextUtils.isEmpty(str3)) {
+        }
+        this.zzm = str4;
         if (zzC == 0) {
         }
         this.zzi = null;
         zzic zzicVar422 = this.zzu;
-        zzicVar422.zzaU();
+        zzicVar422.zzaV();
         zzs = zzicVar422.zzc().zzs("analytics.safelisted_events");
         if (zzs != null) {
         }
@@ -241,9 +252,9 @@ public final class zzgi extends zzg {
         	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:47)
         	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
         */
-    final com.google.android.gms.measurement.internal.zzr zzh(java.lang.String r45) {
+    final com.google.android.gms.measurement.internal.zzr zzh(java.lang.String r52) {
         /*
-            Method dump skipped, instructions count: 872
+            Method dump skipped, instructions count: 912
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.measurement.internal.zzgi.zzh(java.lang.String):com.google.android.gms.measurement.internal.zzr");
@@ -255,16 +266,16 @@ public final class zzgi extends zzg {
         zzg();
         zzic zzicVar = this.zzu;
         if (!zzicVar.zzd().zzl().zzo(zzjk.ANALYTICS_STORAGE)) {
-            zzicVar.zzaV().zzj().zza("Analytics Storage consent is not granted");
+            zzicVar.zzaW().zzj().zza("Analytics Storage consent is not granted");
             format = null;
         } else {
             byte[] bArr = new byte[16];
             zzicVar.zzk().zzf().nextBytes(bArr);
             format = String.format(Locale.US, "%032x", new BigInteger(1, bArr));
         }
-        zzicVar.zzaV().zzj().zza(String.format("Resetting session stitching token to %s", format == null ? AbstractJsonLexerKt.NULL : "not null"));
-        this.zzm = format;
-        this.zzn = zzicVar.zzaZ().currentTimeMillis();
+        zzicVar.zzaW().zzj().zza(String.format("Resetting session stitching token to %s", format == null ? AbstractJsonLexerKt.NULL : "not null"));
+        this.zzn = format;
+        this.zzo = zzicVar.zzba().currentTimeMillis();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -278,8 +289,8 @@ public final class zzgi extends zzg {
     public final String zzk() {
         zzg();
         zzb();
-        Preconditions.checkNotNull(this.zzl);
-        return this.zzl;
+        Preconditions.checkNotNull(this.zzm);
+        return this.zzm;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -303,7 +314,7 @@ public final class zzgi extends zzg {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zzo() {
         zzb();
-        return this.zzk;
+        return this.zzl;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -313,12 +324,12 @@ public final class zzgi extends zzg {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean zzq(String str) {
-        String str2 = this.zzo;
+        String str2 = this.zzp;
         boolean z = false;
         if (str2 != null && !str2.equals(str)) {
             z = true;
         }
-        this.zzo = str;
+        this.zzp = str;
         return z;
     }
 }

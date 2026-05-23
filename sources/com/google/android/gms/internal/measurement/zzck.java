@@ -1,5 +1,17 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzck {
+public final class zzck {
+    private static final zzci zza;
+    private static volatile zzci zzb;
+
+    static {
+        zzcj zzcjVar = new zzcj(null);
+        zza = zzcjVar;
+        zzb = zzcjVar;
+    }
+
+    public static zzci zza() {
+        return zzb;
+    }
 }

@@ -26,7 +26,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagingDataPresenter.kt */
-@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2", f = "PagingDataPresenter.kt", i = {}, l = {119}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
@@ -71,7 +71,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: PagingDataPresenter.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
                 @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2$1$2", f = "PagingDataPresenter.kt", i = {}, l = {137, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 165, 168, 223, 226}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.PagingDataPresenter$collectFrom$2$1$2  reason: invalid class name */
                 /* loaded from: classes3.dex */
@@ -265,7 +265,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                         if (hintReceiver != null) {
                                             pageStore2 = ((PagingDataPresenter) this.this$0).pageStore;
                                             i = ((PagingDataPresenter) this.this$0).lastAccessedIndex;
-                                            hintReceiver.accessHint(pageStore2.accessHintForPresenterIndex(i));
+                                            hintReceiver.processHint(pageStore2.createAccessHintForIndex(i));
                                         }
                                     }
                                 }

@@ -1,34 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Xi extends Rg {
-    public Xi(X4 x4) {
-        super(x4);
-        x4.b().a();
+public final class Xi implements InterfaceC0549r3 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Object f838a;
+    public final InterfaceC0549r3 b;
+
+    public Xi(Object obj, InterfaceC0549r3 interfaceC0549r3) {
+        this.f838a = obj;
+        this.b = interfaceC0549r3;
     }
 
-    @Override // io.appmetrica.analytics.impl.Rg
-    public final boolean a(P5 p5) {
-        Object remove;
-        for (Map.Entry entry : p5.p.entrySet()) {
-            Jk jk = this.f772a.u;
-            String str = (String) entry.getKey();
-            byte[] bArr = (byte[]) entry.getValue();
-            if (bArr != null) {
-                jk.getClass();
-                if (bArr.length != 0) {
-                    remove = jk.b.put(str, bArr);
-                    byte[] bArr2 = (byte[]) remove;
-                    Nk nk = jk.f652a;
-                    nk.d.insert(nk.f718a, nk.c.toByteArray((Mk) nk.b.fromModel(jk.b)));
-                }
-            }
-            remove = jk.b.remove(str);
-            byte[] bArr22 = (byte[]) remove;
-            Nk nk2 = jk.f652a;
-            nk2.d.insert(nk2.f718a, nk2.c.toByteArray((Mk) nk2.b.fromModel(jk.b)));
-        }
-        return true;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0549r3
+    public final int getBytesTruncated() {
+        return this.b.getBytesTruncated();
+    }
+
+    public final String toString() {
+        return "Result{result=" + this.f838a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

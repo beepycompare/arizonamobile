@@ -11,6 +11,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt;
@@ -22,7 +23,7 @@ import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u00020\u00030\u00022\b\u0012\u0004\u0012\u0002H\u00010\u00042\b\u0012\u0004\u0012\u0002H\u00010\u00052\b\u0012\u0004\u0012\u0002H\u00010\u0006B\u000f\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u001d\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0017J\u001a\u0010\u0018\u001a\u00020\u00142\b\u0010\u0019\u001a\u0004\u0018\u00010\b2\u0006\u0010\u001a\u001a\u00020\bH\u0002J\u0015\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u000f\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010 J\u0016\u0010!\u001a\u00020\"2\u0006\u0010\u000f\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010#J\b\u0010$\u001a\u00020\"H\u0016J\u001c\u0010%\u001a\u00020&2\f\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000(H\u0096@¢\u0006\u0002\u0010)J\b\u0010*\u001a\u00020\u0003H\u0014J\u001d\u0010+\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030,2\u0006\u0010-\u001a\u00020\u000eH\u0014¢\u0006\u0002\u0010.J&\u0010/\u001a\b\u0012\u0004\u0012\u00028\u0000002\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u000e2\u0006\u00104\u001a\u000205H\u0016R\u000f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\b0\fX\u0082\u0004R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u000f\u001a\u00028\u00002\u0006\u0010\u000f\u001a\u00028\u00008V@VX\u0096\u000e¢\u0006\f\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\nR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00028\u00000\u001c8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u00066"}, d2 = {"Lkotlinx/coroutines/flow/StateFlowImpl;", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/internal/AbstractSharedFlow;", "Lkotlinx/coroutines/flow/StateFlowSlot;", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlinx/coroutines/flow/CancellableFlow;", "Lkotlinx/coroutines/flow/internal/FusibleFlow;", "initialState", "", "<init>", "(Ljava/lang/Object;)V", "_state", "Lkotlinx/atomicfu/AtomicRef;", "sequence", "", "value", "getValue", "()Ljava/lang/Object;", "setValue", "compareAndSet", "", "expect", "update", "(Ljava/lang/Object;Ljava/lang/Object;)Z", "updateState", "expectedState", DownloaderClientMarshaller.PARAM_NEW_STATE, "replayCache", "", "getReplayCache", "()Ljava/util/List;", "tryEmit", "(Ljava/lang/Object;)Z", "emit", "", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resetReplayCache", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "createSlot", "createSlotArray", "", "size", "(I)[Lkotlinx/coroutines/flow/StateFlowSlot;", "fuse", "Lkotlinx/coroutines/flow/Flow;", "context", "Lkotlin/coroutines/CoroutineContext;", "capacity", "onBufferOverflow", "Lkotlinx/coroutines/channels/BufferOverflow;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u0000*\u0004\b\u0000\u0010\u00012\b\u0012\u0004\u0012\u00020\u00030\u00022\b\u0012\u0004\u0012\u0002H\u00010\u00042\b\u0012\u0004\u0012\u0002H\u00010\u00052\b\u0012\u0004\u0012\u0002H\u00010\u0006B\u000f\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u001d\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010\u0017J\u001a\u0010\u0018\u001a\u00020\u00142\b\u0010\u0019\u001a\u0004\u0018\u00010\b2\u0006\u0010\u001a\u001a\u00020\bH\u0002J\u0015\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u000f\u001a\u00028\u0000H\u0016¢\u0006\u0002\u0010 J\u0016\u0010!\u001a\u00020\"2\u0006\u0010\u000f\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010#J\b\u0010$\u001a\u00020\"H\u0016J\u001c\u0010%\u001a\u00020&2\f\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00000(H\u0096@¢\u0006\u0002\u0010)J\b\u0010*\u001a\u00020\u0003H\u0014J\u001d\u0010+\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030,2\u0006\u0010-\u001a\u00020\u000eH\u0014¢\u0006\u0002\u0010.J&\u0010/\u001a\b\u0012\u0004\u0012\u00028\u0000002\u0006\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u000e2\u0006\u00104\u001a\u000205H\u0016R\u000f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\b0\fX\u0082\u0004R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R$\u0010\u000f\u001a\u00028\u00002\u0006\u0010\u000f\u001a\u00028\u00008V@VX\u0096\u000e¢\u0006\f\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\nR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00028\u00000\u001c8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001e¨\u00066"}, d2 = {"Lkotlinx/coroutines/flow/StateFlowImpl;", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/internal/AbstractSharedFlow;", "Lkotlinx/coroutines/flow/StateFlowSlot;", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlinx/coroutines/flow/CancellableFlow;", "Lkotlinx/coroutines/flow/internal/FusibleFlow;", "initialState", "", "<init>", "(Ljava/lang/Object;)V", "_state", "Lkotlinx/atomicfu/AtomicRef;", "sequence", "", "value", "getValue", "()Ljava/lang/Object;", "setValue", "compareAndSet", "", "expect", "update", "(Ljava/lang/Object;Ljava/lang/Object;)Z", "updateState", "expectedState", DownloaderClientMarshaller.PARAM_NEW_STATE, "replayCache", "", "getReplayCache", "()Ljava/util/List;", "tryEmit", "(Ljava/lang/Object;)Z", "emit", "", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resetReplayCache", "collect", "", "collector", "Lkotlinx/coroutines/flow/FlowCollector;", "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "createSlot", "createSlotArray", "", "size", "(I)[Lkotlinx/coroutines/flow/StateFlowSlot;", "fuse", "Lkotlinx/coroutines/flow/Flow;", "context", "Lkotlin/coroutines/CoroutineContext;", "capacity", "onBufferOverflow", "Lkotlinx/coroutines/channels/BufferOverflow;", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> implements MutableStateFlow<T>, CancellableFlow<T>, FusibleFlow<T> {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _state$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowImpl.class, Object.class, "_state$volatile");
@@ -92,32 +93,35 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
         throw new UnsupportedOperationException("MutableStateFlow.resetReplayCache is not supported");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00bd, code lost:
-        if (kotlin.jvm.internal.Intrinsics.areEqual(r12, r7) == false) goto L25;
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0088, code lost:
+        if (((kotlinx.coroutines.flow.SubscribedFlowCollector) r10).onSubscription(r0) == r1) goto L24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00f4, code lost:
-        if (r7 == r1) goto L23;
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00b1, code lost:
+        if (kotlin.jvm.internal.Intrinsics.areEqual(r10, r11) == false) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x00ed, code lost:
+        if (r11 == r1) goto L24;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00b4 A[Catch: all -> 0x00f7, TryCatch #1 {all -> 0x00f7, blocks: (B:33:0x00aa, B:35:0x00b4, B:37:0x00b9, B:48:0x00de, B:50:0x00e4, B:39:0x00bf, B:43:0x00c6, B:24:0x0075, B:32:0x0099, B:27:0x0083, B:29:0x0087), top: B:58:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00b9 A[Catch: all -> 0x00f7, TryCatch #1 {all -> 0x00f7, blocks: (B:33:0x00aa, B:35:0x00b4, B:37:0x00b9, B:48:0x00de, B:50:0x00e4, B:39:0x00bf, B:43:0x00c6, B:24:0x0075, B:32:0x0099, B:27:0x0083, B:29:0x0087), top: B:58:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00e4 A[Catch: all -> 0x00f7, TRY_LEAVE, TryCatch #1 {all -> 0x00f7, blocks: (B:33:0x00aa, B:35:0x00b4, B:37:0x00b9, B:48:0x00de, B:50:0x00e4, B:39:0x00bf, B:43:0x00c6, B:24:0x0075, B:32:0x0099, B:27:0x0083, B:29:0x0087), top: B:58:0x0025 }] */
-    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v1 */
-    /* JADX WARN: Type inference failed for: r2v19 */
-    /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v20 */
-    /* JADX WARN: Type inference failed for: r2v21 */
-    /* JADX WARN: Type inference failed for: r2v22 */
-    /* JADX WARN: Type inference failed for: r2v8, types: [java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:49:0x00e2 -> B:33:0x00aa). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:51:0x00f4 -> B:33:0x00aa). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00a8 A[Catch: all -> 0x006b, TryCatch #1 {all -> 0x006b, blocks: (B:14:0x003d, B:34:0x009e, B:36:0x00a8, B:38:0x00ad, B:49:0x00d3, B:51:0x00d9, B:40:0x00b3, B:44:0x00ba, B:19:0x0059, B:22:0x0067, B:33:0x008d), top: B:60:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ad A[Catch: all -> 0x006b, TryCatch #1 {all -> 0x006b, blocks: (B:14:0x003d, B:34:0x009e, B:36:0x00a8, B:38:0x00ad, B:49:0x00d3, B:51:0x00d9, B:40:0x00b3, B:44:0x00ba, B:19:0x0059, B:22:0x0067, B:33:0x008d), top: B:60:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00d9 A[Catch: all -> 0x006b, TRY_LEAVE, TryCatch #1 {all -> 0x006b, blocks: (B:14:0x003d, B:34:0x009e, B:36:0x00a8, B:38:0x00ad, B:49:0x00d3, B:51:0x00d9, B:40:0x00b3, B:44:0x00ba, B:19:0x0059, B:22:0x0067, B:33:0x008d), top: B:60:0x0025 }] */
+    /* JADX WARN: Type inference failed for: r6v0 */
+    /* JADX WARN: Type inference failed for: r6v1 */
+    /* JADX WARN: Type inference failed for: r6v16 */
+    /* JADX WARN: Type inference failed for: r6v17 */
+    /* JADX WARN: Type inference failed for: r6v18 */
+    /* JADX WARN: Type inference failed for: r6v19 */
+    /* JADX WARN: Type inference failed for: r6v2 */
+    /* JADX WARN: Type inference failed for: r6v9, types: [java.lang.Object] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x00d7 -> B:34:0x009e). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:52:0x00ed -> B:34:0x009e). Please submit an issue!!! */
     @Override // kotlinx.coroutines.flow.SharedFlow, kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -125,21 +129,18 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
     public Object collect(FlowCollector<? super T> flowCollector, Continuation<?> continuation) {
         StateFlowImpl$collect$1 stateFlowImpl$collect$1;
         Object coroutine_suspended;
-        ?? r2;
-        StateFlowImpl<T> stateFlowImpl;
-        Throwable th;
+        int i;
+        StateFlowSlot stateFlowSlot;
+        FlowCollector flowCollector2;
         Job job;
         Object obj;
-        StateFlowImpl<T> stateFlowImpl2;
-        FlowCollector<? super T> flowCollector2;
-        StateFlowSlot stateFlowSlot;
-        Object obj2;
         FlowCollector<? super T> flowCollector3;
         StateFlowSlot stateFlowSlot2;
-        boolean takePending;
-        FlowCollector flowCollector4;
-        Object obj3;
+        Object obj2;
+        FlowCollector<? super T> flowCollector4;
         StateFlowSlot stateFlowSlot3;
+        boolean takePending;
+        Object obj3;
         try {
             if (continuation instanceof StateFlowImpl$collect$1) {
                 stateFlowImpl$collect$1 = (StateFlowImpl$collect$1) continuation;
@@ -147,187 +148,175 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
                     stateFlowImpl$collect$1.label -= Integer.MIN_VALUE;
                     Object obj4 = stateFlowImpl$collect$1.result;
                     coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    r2 = stateFlowImpl$collect$1.label;
-                    if (r2 != 0) {
+                    i = stateFlowImpl$collect$1.label;
+                    StateFlowSlot stateFlowSlot4 = 1;
+                    if (i != 0) {
                         ResultKt.throwOnFailure(obj4);
                         StateFlowSlot allocateSlot = allocateSlot();
-                        stateFlowSlot3 = allocateSlot;
-                        if (flowCollector instanceof SubscribedFlowCollector) {
-                            stateFlowImpl$collect$1.L$0 = this;
-                            stateFlowImpl$collect$1.L$1 = flowCollector;
-                            stateFlowImpl$collect$1.L$2 = allocateSlot;
-                            stateFlowImpl$collect$1.label = 1;
-                            stateFlowSlot3 = allocateSlot;
-                            if (((SubscribedFlowCollector) flowCollector).onSubscription(stateFlowImpl$collect$1) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                        }
-                    } else if (r2 != 1) {
                         try {
-                            if (r2 == 2) {
-                                obj = stateFlowImpl$collect$1.L$4;
-                                job = (Job) stateFlowImpl$collect$1.L$3;
-                                StateFlowSlot stateFlowSlot4 = (StateFlowSlot) stateFlowImpl$collect$1.L$2;
-                                FlowCollector<? super T> flowCollector5 = (FlowCollector) stateFlowImpl$collect$1.L$1;
-                                stateFlowImpl2 = (StateFlowImpl) stateFlowImpl$collect$1.L$0;
-                                ResultKt.throwOnFailure(obj4);
-                                stateFlowSlot = stateFlowSlot4;
-                                flowCollector2 = flowCollector5;
-                                obj2 = obj;
-                                this = stateFlowImpl2;
-                                stateFlowSlot2 = stateFlowSlot;
-                                flowCollector3 = flowCollector2;
-                                takePending = stateFlowSlot2.takePending();
-                                r2 = stateFlowSlot2;
-                                flowCollector4 = flowCollector3;
-                                if (!takePending) {
-                                }
-                                Object obj5 = _state$volatile$FU.get(this);
-                                if (job != null) {
-                                }
-                                if (obj2 != null) {
-                                }
-                                if (obj5 == NullSurrogateKt.NULL) {
-                                }
-                                stateFlowImpl$collect$1.L$0 = this;
-                                stateFlowImpl$collect$1.L$1 = flowCollector4;
-                                stateFlowImpl$collect$1.L$2 = r2;
-                                stateFlowImpl$collect$1.L$3 = job;
-                                stateFlowImpl$collect$1.L$4 = obj5;
-                                stateFlowImpl$collect$1.label = 2;
-                                if (flowCollector4.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
-                                }
-                            } else if (r2 != 3) {
-                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                            } else {
-                                Object obj6 = stateFlowImpl$collect$1.L$4;
-                                job = (Job) stateFlowImpl$collect$1.L$3;
-                                StateFlowSlot stateFlowSlot5 = (StateFlowSlot) stateFlowImpl$collect$1.L$2;
-                                FlowCollector flowCollector6 = (FlowCollector) stateFlowImpl$collect$1.L$1;
-                                StateFlowImpl<T> stateFlowImpl3 = (StateFlowImpl) stateFlowImpl$collect$1.L$0;
-                                ResultKt.throwOnFailure(obj4);
-                                obj2 = obj6;
-                                this = stateFlowImpl3;
-                                r2 = stateFlowSlot5;
-                                flowCollector4 = flowCollector6;
-                                Object obj52 = _state$volatile$FU.get(this);
-                                if (job != null) {
-                                    JobKt.ensureActive(job);
-                                }
-                                if (obj2 != null) {
-                                    stateFlowSlot2 = r2;
-                                    flowCollector3 = flowCollector4;
-                                }
-                                obj3 = obj52 == NullSurrogateKt.NULL ? null : obj52;
-                                stateFlowImpl$collect$1.L$0 = this;
-                                stateFlowImpl$collect$1.L$1 = flowCollector4;
-                                stateFlowImpl$collect$1.L$2 = r2;
-                                stateFlowImpl$collect$1.L$3 = job;
-                                stateFlowImpl$collect$1.L$4 = obj52;
-                                stateFlowImpl$collect$1.label = 2;
-                                if (flowCollector4.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
-                                stateFlowImpl2 = this;
-                                obj = obj52;
-                                stateFlowSlot = r2;
-                                flowCollector2 = flowCollector4;
-                                obj2 = obj;
-                                this = stateFlowImpl2;
-                                stateFlowSlot2 = stateFlowSlot;
-                                flowCollector3 = flowCollector2;
-                                takePending = stateFlowSlot2.takePending();
-                                r2 = stateFlowSlot2;
-                                flowCollector4 = flowCollector3;
-                                if (!takePending) {
-                                    stateFlowImpl$collect$1.L$0 = this;
-                                    stateFlowImpl$collect$1.L$1 = flowCollector3;
-                                    stateFlowImpl$collect$1.L$2 = stateFlowSlot2;
-                                    stateFlowImpl$collect$1.L$3 = job;
-                                    stateFlowImpl$collect$1.L$4 = obj2;
-                                    stateFlowImpl$collect$1.label = 3;
-                                    Object awaitPending = stateFlowSlot2.awaitPending(stateFlowImpl$collect$1);
-                                    r2 = stateFlowSlot2;
-                                    flowCollector4 = flowCollector3;
-                                }
-                                Object obj522 = _state$volatile$FU.get(this);
-                                if (job != null) {
-                                }
-                                if (obj2 != null) {
-                                }
-                                if (obj522 == NullSurrogateKt.NULL) {
-                                }
-                                stateFlowImpl$collect$1.L$0 = this;
-                                stateFlowImpl$collect$1.L$1 = flowCollector4;
-                                stateFlowImpl$collect$1.L$2 = r2;
-                                stateFlowImpl$collect$1.L$3 = job;
-                                stateFlowImpl$collect$1.L$4 = obj522;
-                                stateFlowImpl$collect$1.label = 2;
-                                if (flowCollector4.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
-                                }
+                            if (flowCollector instanceof SubscribedFlowCollector) {
+                                stateFlowImpl$collect$1.L$0 = flowCollector;
+                                stateFlowImpl$collect$1.L$1 = allocateSlot;
+                                stateFlowImpl$collect$1.label = 1;
                             }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            stateFlowImpl.freeSlot((AbstractSharedFlowSlot) r2);
+                            stateFlowSlot = allocateSlot;
+                        } catch (Throwable th) {
+                            th = th;
+                            stateFlowSlot4 = allocateSlot;
+                            freeSlot((AbstractSharedFlowSlot) stateFlowSlot4);
                             throw th;
                         }
-                    } else {
-                        StateFlowSlot stateFlowSlot6 = (StateFlowSlot) stateFlowImpl$collect$1.L$2;
-                        flowCollector = (FlowCollector) stateFlowImpl$collect$1.L$1;
-                        this = (StateFlowImpl) stateFlowImpl$collect$1.L$0;
+                    } else if (i == 1) {
+                        stateFlowSlot = (StateFlowSlot) stateFlowImpl$collect$1.L$1;
+                        flowCollector = (FlowCollector) stateFlowImpl$collect$1.L$0;
                         ResultKt.throwOnFailure(obj4);
-                        stateFlowSlot3 = stateFlowSlot6;
+                    } else if (i == 2) {
+                        obj = stateFlowImpl$collect$1.L$4;
+                        Object obj5 = stateFlowImpl$collect$1.L$3;
+                        job = (Job) stateFlowImpl$collect$1.L$2;
+                        StateFlowSlot stateFlowSlot5 = (StateFlowSlot) stateFlowImpl$collect$1.L$1;
+                        FlowCollector<? super T> flowCollector5 = (FlowCollector) stateFlowImpl$collect$1.L$0;
+                        ResultKt.throwOnFailure(obj4);
+                        stateFlowSlot2 = stateFlowSlot5;
+                        flowCollector3 = flowCollector5;
+                        obj2 = obj;
+                        stateFlowSlot3 = stateFlowSlot2;
+                        flowCollector4 = flowCollector3;
+                        takePending = stateFlowSlot3.takePending();
+                        stateFlowSlot4 = stateFlowSlot3;
+                        flowCollector2 = flowCollector4;
+                        if (!takePending) {
+                        }
+                        obj2 = _state$volatile$FU.get(this);
+                        if (job != null) {
+                        }
+                        if (obj != null) {
+                        }
+                        if (obj2 == NullSurrogateKt.NULL) {
+                        }
+                        stateFlowImpl$collect$1.L$0 = flowCollector2;
+                        stateFlowImpl$collect$1.L$1 = stateFlowSlot4;
+                        stateFlowImpl$collect$1.L$2 = job;
+                        stateFlowImpl$collect$1.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+                        stateFlowImpl$collect$1.L$4 = obj2;
+                        stateFlowImpl$collect$1.label = 2;
+                        if (flowCollector2.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
+                        }
+                    } else if (i != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        Object obj6 = stateFlowImpl$collect$1.L$4;
+                        obj = stateFlowImpl$collect$1.L$3;
+                        job = (Job) stateFlowImpl$collect$1.L$2;
+                        StateFlowSlot stateFlowSlot6 = (StateFlowSlot) stateFlowImpl$collect$1.L$1;
+                        FlowCollector flowCollector6 = (FlowCollector) stateFlowImpl$collect$1.L$0;
+                        ResultKt.throwOnFailure(obj4);
+                        stateFlowSlot4 = stateFlowSlot6;
+                        flowCollector2 = flowCollector6;
+                        obj2 = _state$volatile$FU.get(this);
+                        if (job != null) {
+                            JobKt.ensureActive(job);
+                        }
+                        if (obj != null) {
+                            stateFlowSlot3 = stateFlowSlot4;
+                            flowCollector4 = flowCollector2;
+                        }
+                        obj3 = obj2 == NullSurrogateKt.NULL ? null : obj2;
+                        stateFlowImpl$collect$1.L$0 = flowCollector2;
+                        stateFlowImpl$collect$1.L$1 = stateFlowSlot4;
+                        stateFlowImpl$collect$1.L$2 = job;
+                        stateFlowImpl$collect$1.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+                        stateFlowImpl$collect$1.L$4 = obj2;
+                        stateFlowImpl$collect$1.label = 2;
+                        if (flowCollector2.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        obj = obj2;
+                        stateFlowSlot2 = stateFlowSlot4;
+                        flowCollector3 = flowCollector2;
+                        obj2 = obj;
+                        stateFlowSlot3 = stateFlowSlot2;
+                        flowCollector4 = flowCollector3;
+                        takePending = stateFlowSlot3.takePending();
+                        stateFlowSlot4 = stateFlowSlot3;
+                        flowCollector2 = flowCollector4;
+                        if (!takePending) {
+                            stateFlowImpl$collect$1.L$0 = flowCollector4;
+                            stateFlowImpl$collect$1.L$1 = stateFlowSlot3;
+                            stateFlowImpl$collect$1.L$2 = job;
+                            stateFlowImpl$collect$1.L$3 = obj;
+                            stateFlowImpl$collect$1.L$4 = SpillingKt.nullOutSpilledVariable(obj2);
+                            stateFlowImpl$collect$1.label = 3;
+                            Object awaitPending = stateFlowSlot3.awaitPending(stateFlowImpl$collect$1);
+                            stateFlowSlot4 = stateFlowSlot3;
+                            flowCollector2 = flowCollector4;
+                        }
+                        obj2 = _state$volatile$FU.get(this);
+                        if (job != null) {
+                        }
+                        if (obj != null) {
+                        }
+                        if (obj2 == NullSurrogateKt.NULL) {
+                        }
+                        stateFlowImpl$collect$1.L$0 = flowCollector2;
+                        stateFlowImpl$collect$1.L$1 = stateFlowSlot4;
+                        stateFlowImpl$collect$1.L$2 = job;
+                        stateFlowImpl$collect$1.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+                        stateFlowImpl$collect$1.L$4 = obj2;
+                        stateFlowImpl$collect$1.label = 2;
+                        if (flowCollector2.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
+                        }
                     }
-                    flowCollector4 = flowCollector;
+                    flowCollector2 = flowCollector;
                     job = (Job) stateFlowImpl$collect$1.getContext().get(Job.Key);
-                    obj2 = null;
-                    r2 = stateFlowSlot3;
-                    Object obj5222 = _state$volatile$FU.get(this);
+                    obj = null;
+                    stateFlowSlot4 = stateFlowSlot;
+                    obj2 = _state$volatile$FU.get(this);
                     if (job != null) {
                     }
-                    if (obj2 != null) {
+                    if (obj != null) {
                     }
-                    if (obj5222 == NullSurrogateKt.NULL) {
+                    if (obj2 == NullSurrogateKt.NULL) {
                     }
-                    stateFlowImpl$collect$1.L$0 = this;
-                    stateFlowImpl$collect$1.L$1 = flowCollector4;
-                    stateFlowImpl$collect$1.L$2 = r2;
-                    stateFlowImpl$collect$1.L$3 = job;
-                    stateFlowImpl$collect$1.L$4 = obj5222;
+                    stateFlowImpl$collect$1.L$0 = flowCollector2;
+                    stateFlowImpl$collect$1.L$1 = stateFlowSlot4;
+                    stateFlowImpl$collect$1.L$2 = job;
+                    stateFlowImpl$collect$1.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+                    stateFlowImpl$collect$1.L$4 = obj2;
                     stateFlowImpl$collect$1.label = 2;
-                    if (flowCollector4.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
+                    if (flowCollector2.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
                     }
                 }
             }
-            if (r2 != 0) {
+            if (i != 0) {
             }
-            flowCollector4 = flowCollector;
+            flowCollector2 = flowCollector;
             job = (Job) stateFlowImpl$collect$1.getContext().get(Job.Key);
-            obj2 = null;
-            r2 = stateFlowSlot3;
-            Object obj52222 = _state$volatile$FU.get(this);
+            obj = null;
+            stateFlowSlot4 = stateFlowSlot;
+            obj2 = _state$volatile$FU.get(this);
             if (job != null) {
             }
-            if (obj2 != null) {
+            if (obj != null) {
             }
-            if (obj52222 == NullSurrogateKt.NULL) {
+            if (obj2 == NullSurrogateKt.NULL) {
             }
-            stateFlowImpl$collect$1.L$0 = this;
-            stateFlowImpl$collect$1.L$1 = flowCollector4;
-            stateFlowImpl$collect$1.L$2 = r2;
-            stateFlowImpl$collect$1.L$3 = job;
-            stateFlowImpl$collect$1.L$4 = obj52222;
+            stateFlowImpl$collect$1.L$0 = flowCollector2;
+            stateFlowImpl$collect$1.L$1 = stateFlowSlot4;
+            stateFlowImpl$collect$1.L$2 = job;
+            stateFlowImpl$collect$1.L$3 = SpillingKt.nullOutSpilledVariable(obj);
+            stateFlowImpl$collect$1.L$4 = obj2;
             stateFlowImpl$collect$1.label = 2;
-            if (flowCollector4.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
+            if (flowCollector2.emit(obj3, stateFlowImpl$collect$1) == coroutine_suspended) {
             }
-        } catch (Throwable th3) {
-            stateFlowImpl = this;
-            th = th3;
+        } catch (Throwable th2) {
+            th = th2;
         }
         stateFlowImpl$collect$1 = new StateFlowImpl$collect$1(this, continuation);
         Object obj42 = stateFlowImpl$collect$1.result;
         coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        r2 = stateFlowImpl$collect$1.label;
+        i = stateFlowImpl$collect$1.label;
+        StateFlowSlot stateFlowSlot42 = 1;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -362,35 +351,34 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
             }
             _state$volatile$FU.set(this, obj2);
             int i2 = this.sequence;
-            if ((i2 & 1) == 0) {
-                int i3 = i2 + 1;
-                this.sequence = i3;
-                StateFlowSlot[] slots2 = getSlots();
-                Unit unit = Unit.INSTANCE;
-                while (true) {
-                    StateFlowSlot[] stateFlowSlotArr = slots2;
-                    if (stateFlowSlotArr != null) {
-                        for (StateFlowSlot stateFlowSlot : stateFlowSlotArr) {
-                            if (stateFlowSlot != null) {
-                                stateFlowSlot.makePending();
-                            }
-                        }
-                    }
-                    synchronized (this) {
-                        i = this.sequence;
-                        if (i == i3) {
-                            this.sequence = i3 + 1;
-                            return true;
-                        }
-                        slots = getSlots();
-                        Unit unit2 = Unit.INSTANCE;
-                    }
-                    slots2 = slots;
-                    i3 = i;
-                }
-            } else {
+            if ((i2 & 1) != 0) {
                 this.sequence = i2 + 2;
                 return true;
+            }
+            int i3 = i2 + 1;
+            this.sequence = i3;
+            StateFlowSlot[] slots2 = getSlots();
+            Unit unit = Unit.INSTANCE;
+            while (true) {
+                StateFlowSlot[] stateFlowSlotArr = slots2;
+                if (stateFlowSlotArr != null) {
+                    for (StateFlowSlot stateFlowSlot : stateFlowSlotArr) {
+                        if (stateFlowSlot != null) {
+                            stateFlowSlot.makePending();
+                        }
+                    }
+                }
+                synchronized (this) {
+                    i = this.sequence;
+                    if (i == i3) {
+                        this.sequence = i3 + 1;
+                        return true;
+                    }
+                    slots = getSlots();
+                    Unit unit2 = Unit.INSTANCE;
+                }
+                slots2 = slots;
+                i3 = i;
             }
         }
     }

@@ -57,7 +57,7 @@ public final class SelectorScreen$startTimer$1 extends SuspendLambda implements 
                 this.this$0.timerCount = 0;
                 job = this.this$0.timerJob;
                 if (job != null) {
-                    Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                    Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
                 }
             }
             this.label = 1;

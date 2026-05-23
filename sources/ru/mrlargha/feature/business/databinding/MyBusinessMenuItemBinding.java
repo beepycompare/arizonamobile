@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.business.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class MyBusinessMenuItemBinding implements ViewBinding {
     public final ImageView arrow;
     public final RecyclerView childMenuRc;

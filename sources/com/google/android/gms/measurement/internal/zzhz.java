@@ -10,7 +10,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhz extends zzjf {
     private static final AtomicLong zzj = new AtomicLong(Long.MIN_VALUE);
@@ -57,7 +57,7 @@ public final class zzhz extends zzjf {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzje
-    public final void zzaX() {
+    public final void zzaY() {
         if (Thread.currentThread() != this.zzb) {
             throw new IllegalStateException("Call expected from network thread");
         }
@@ -90,7 +90,7 @@ public final class zzhz extends zzjf {
         zzhx zzhxVar = new zzhx(this, callable, false, "Task exception on worker thread");
         if (Thread.currentThread() == this.zza) {
             if (!this.zzc.isEmpty()) {
-                this.zzu.zzaV().zze().zza("Callable skipped the worker queue.");
+                this.zzu.zzaW().zze().zza("Callable skipped the worker queue.");
             }
             zzhxVar.run();
             return zzhxVar;
@@ -120,11 +120,11 @@ public final class zzhz extends zzjf {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final Object zzk(AtomicReference atomicReference, long j, String str, Runnable runnable) {
         synchronized (atomicReference) {
-            this.zzu.zzaW().zzj(runnable);
+            this.zzu.zzaX().zzj(runnable);
             try {
                 atomicReference.wait(j);
             } catch (InterruptedException unused) {
-                zzgs zze = this.zzu.zzaV().zze();
+                zzgs zze = this.zzu.zzaW().zze();
                 StringBuilder sb = new StringBuilder(str.length() + 24);
                 sb.append("Interrupted waiting for ");
                 sb.append(str);
@@ -134,7 +134,7 @@ public final class zzhz extends zzjf {
         }
         Object obj = atomicReference.get();
         if (obj == null) {
-            this.zzu.zzaV().zze().zza("Timed out waiting for ".concat(str));
+            this.zzu.zzaW().zze().zza("Timed out waiting for ".concat(str));
         }
         return obj;
     }

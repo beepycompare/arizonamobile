@@ -31,7 +31,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(1425358052, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda$1425358052.<anonymous> (TimePicker.kt:1328)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m2712TextNvy7gAk(Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_time_picker_am), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
+            TextKt.m3157TextNvy7gAk(Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_time_picker_am), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -39,7 +39,7 @@ public final class ComposableSingletons$TimePickerKt {
     });
 
     /* renamed from: lambda$-1179219109  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f97lambda$1179219109 = ComposableLambdaKt.composableLambdaInstance(-1179219109, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TimePickerKt$lambda$-1179219109$1
+    private static Function3<RowScope, Composer, Integer, Unit> f40lambda$1179219109 = ComposableLambdaKt.composableLambdaInstance(-1179219109, false, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$TimePickerKt$lambda$-1179219109$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer, Integer num) {
             invoke(rowScope, composer, num.intValue());
@@ -56,7 +56,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(-1179219109, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda$-1179219109.<anonymous> (TimePicker.kt:1346)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m2712TextNvy7gAk(Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_time_picker_pm), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
+            TextKt.m3157TextNvy7gAk(Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_time_picker_pm), composer, 0), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262142);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -64,8 +64,8 @@ public final class ComposableSingletons$TimePickerKt {
     });
 
     /* renamed from: getLambda$-1179219109$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m1952getLambda$1179219109$material3() {
-        return f97lambda$1179219109;
+    public final Function3<RowScope, Composer, Integer, Unit> m2397getLambda$1179219109$material3() {
+        return f40lambda$1179219109;
     }
 
     public final Function3<RowScope, Composer, Integer, Unit> getLambda$1425358052$material3() {

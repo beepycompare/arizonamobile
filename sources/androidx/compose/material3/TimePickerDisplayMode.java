@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TimePickerDisplayMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Picker = m2744constructorimpl(0);
-    private static final int Input = m2744constructorimpl(1);
+    private static final int Picker = m3189constructorimpl(0);
+    private static final int Input = m3189constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TimePickerDisplayMode m2743boximpl(int i) {
+    public static final /* synthetic */ TimePickerDisplayMode m3188boximpl(int i) {
         return new TimePickerDisplayMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m2744constructorimpl(int i) {
+    public static int m3189constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2745equalsimpl(int i, Object obj) {
-        return (obj instanceof TimePickerDisplayMode) && i == ((TimePickerDisplayMode) obj).m2749unboximpl();
+    public static boolean m3190equalsimpl(int i, Object obj) {
+        return (obj instanceof TimePickerDisplayMode) && i == ((TimePickerDisplayMode) obj).m3194unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2746equalsimpl0(int i, int i2) {
+    public static final boolean m3191equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2747hashCodeimpl(int i) {
+    public static int m3192hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2745equalsimpl(this.value, obj);
+        return m3190equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2747hashCodeimpl(this.value);
+        return m3192hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2749unboximpl() {
+    public final /* synthetic */ int m3194unboximpl() {
         return this.value;
     }
 
@@ -68,22 +68,22 @@ public final class TimePickerDisplayMode {
         }
 
         /* renamed from: getPicker--ONbchU  reason: not valid java name */
-        public final int m2751getPickerONbchU() {
+        public final int m3196getPickerONbchU() {
             return TimePickerDisplayMode.Picker;
         }
 
         /* renamed from: getInput--ONbchU  reason: not valid java name */
-        public final int m2750getInputONbchU() {
+        public final int m3195getInputONbchU() {
             return TimePickerDisplayMode.Input;
         }
     }
 
     public String toString() {
-        return m2748toStringimpl(this.value);
+        return m3193toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2748toStringimpl(int i) {
-        return m2746equalsimpl0(i, Picker) ? "Picker" : m2746equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m3193toStringimpl(int i) {
+        return m3191equalsimpl0(i, Picker) ? "Picker" : m3191equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

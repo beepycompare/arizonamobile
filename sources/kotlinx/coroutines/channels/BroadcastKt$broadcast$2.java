@@ -7,17 +7,19 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: Broadcast.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.BroadcastKt$broadcast$2", f = "Broadcast.kt", i = {0, 1}, l = {26, 27}, m = "invokeSuspend", n = {"$this$broadcast", "$this$broadcast"}, s = {"L$0", "L$0"})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.BroadcastKt$broadcast$2", f = "Broadcast.kt", i = {0, 1, 1}, l = {26, 27}, m = "invokeSuspend", n = {"$this$broadcast", "$this$broadcast", "e"}, s = {"L$0", "L$0", "L$2"}, v = 1)
 /* loaded from: classes5.dex */
 final class BroadcastKt$broadcast$2<E> extends SuspendLambda implements Function2<ProducerScope<? super E>, Continuation<? super Unit>, Object> {
     final /* synthetic */ ReceiveChannel<E> $channel;
     private /* synthetic */ Object L$0;
     Object L$1;
+    Object L$2;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,30 +46,30 @@ final class BroadcastKt$broadcast$2<E> extends SuspendLambda implements Function
         return ((BroadcastKt$broadcast$2) create(producerScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0068, code lost:
-        if (r4.send(r1.next(), r7) == r0) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0069, code lost:
+        if (r0.send(r9, r8) == r1) goto L17;
      */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006b  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0068 -> B:7:0x0019). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006c  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0069 -> B:7:0x0019). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        ProducerScope producerScope;
         ChannelIterator<E> it;
-        ProducerScope producerScope2;
+        ChannelIterator<E> channelIterator;
         Object hasNext;
+        ProducerScope producerScope = (ProducerScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            producerScope = (ProducerScope) this.L$0;
             it = this.$channel.iterator();
             this.L$0 = producerScope;
             this.L$1 = it;
+            this.L$2 = null;
             this.label = 1;
             hasNext = it.hasNext(this);
             if (hasNext != coroutine_suspended) {
@@ -75,30 +77,31 @@ final class BroadcastKt$broadcast$2<E> extends SuspendLambda implements Function
             return coroutine_suspended;
         } else if (i != 1) {
             if (i == 2) {
-                it = (ChannelIterator) this.L$1;
-                producerScope2 = (ProducerScope) this.L$0;
+                channelIterator = (ChannelIterator) this.L$1;
                 ResultKt.throwOnFailure(obj);
-                producerScope = producerScope2;
+                it = channelIterator;
                 this.L$0 = producerScope;
                 this.L$1 = it;
+                this.L$2 = null;
                 this.label = 1;
                 hasNext = it.hasNext(this);
                 if (hasNext != coroutine_suspended) {
-                    producerScope2 = producerScope;
+                    channelIterator = it;
                     obj = hasNext;
                     if (((Boolean) obj).booleanValue()) {
                         return Unit.INSTANCE;
                     }
-                    this.L$0 = producerScope2;
-                    this.L$1 = it;
+                    E next = channelIterator.next();
+                    this.L$0 = producerScope;
+                    this.L$1 = channelIterator;
+                    this.L$2 = SpillingKt.nullOutSpilledVariable(next);
                     this.label = 2;
                 }
                 return coroutine_suspended;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            it = (ChannelIterator) this.L$1;
-            producerScope2 = (ProducerScope) this.L$0;
+            channelIterator = (ChannelIterator) this.L$1;
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
             }

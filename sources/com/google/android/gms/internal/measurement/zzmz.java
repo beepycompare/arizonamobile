@@ -1,16 +1,53 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
-/* loaded from: classes4.dex */
-final class zzmz {
-    private static final zzmy zza;
 
-    static {
-        int i = zznu.zza;
-        zza = new zzmy();
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import com.google.common.hash.Hashing;
+import com.google.common.io.BaseEncoding;
+import java.io.File;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* loaded from: classes4.dex */
+public final class zzmz {
+    private final BaseEncoding zza = BaseEncoding.base64Url();
+    private final Supplier zzb;
+    private final Supplier zzc;
+
+    public zzmz(final zzacr zzacrVar, final String str, String str2) {
+        this.zzb = Suppliers.memoize(new Supplier() { // from class: com.google.android.gms.internal.measurement.zzmy
+            @Override // com.google.common.base.Supplier
+            public final /* synthetic */ Object get() {
+                return zzmz.this.zzb(zzacrVar);
+            }
+        });
+        this.zzc = Suppliers.memoize(new Supplier(str, "") { // from class: com.google.android.gms.internal.measurement.zzmx
+            private final /* synthetic */ String zzb;
+            private final /* synthetic */ String zzc = "";
+
+            @Override // com.google.common.base.Supplier
+            public final /* synthetic */ Object get() {
+                return zzmz.this.zzc(this.zzb, this.zzc);
+            }
+        });
+    }
+
+    public final File zza() {
+        String str = (String) this.zzb.get();
+        String str2 = (String) this.zzc.get();
+        StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 1 + String.valueOf(str2).length() + 3);
+        sb.append(str);
+        sb.append("/");
+        sb.append(str2);
+        sb.append(".pb");
+        return new File(sb.toString());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static zzmy zza() {
-        return zza;
+    public final /* synthetic */ String zzb(zzacr zzacrVar) {
+        return this.zza.encode(zzacrVar.zzm());
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ String zzc(String str, String str2) {
+        return this.zza.encode(Hashing.murmur3_128().newHasher().putBytes(str.getBytes()).putByte((byte) 0).putBytes("".getBytes()).hash().asBytes());
     }
 }

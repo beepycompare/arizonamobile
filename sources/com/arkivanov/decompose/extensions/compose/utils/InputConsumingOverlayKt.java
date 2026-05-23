@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InputConsumingOverlay.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"InputConsumingOverlay", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V", "extensions-compose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class InputConsumingOverlayKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit InputConsumingOverlay$lambda$1(Modifier modifier, int i, Composer composer, int i2) {
@@ -51,7 +51,7 @@ public final class InputConsumingOverlayKt {
                     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
                     @DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.utils.InputConsumingOverlayKt$InputConsumingOverlay$1$1$1", f = "InputConsumingOverlay.kt", i = {0}, l = {14}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope"}, s = {"L$0"})
                     /* renamed from: com.arkivanov.decompose.extensions.compose.utils.InputConsumingOverlayKt$InputConsumingOverlay$1$1$1  reason: invalid class name */
-                    /* loaded from: classes2.dex */
+                    /* loaded from: classes.dex */
                     static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
                         private /* synthetic */ Object L$0;
                         int label;

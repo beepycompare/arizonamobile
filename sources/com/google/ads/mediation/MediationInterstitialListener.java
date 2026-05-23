@@ -2,7 +2,7 @@ package com.google.ads.mediation;
 
 import com.google.ads.AdRequest;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface MediationInterstitialListener {
     void onDismissScreen(MediationInterstitialAdapter<?, ?> mediationInterstitialAdapter);
 

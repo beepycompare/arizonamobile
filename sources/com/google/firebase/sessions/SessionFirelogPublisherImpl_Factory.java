@@ -3,8 +3,8 @@ package com.google.firebase.sessions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.installations.FirebaseInstallationsApi;
 import com.google.firebase.sessions.dagger.internal.Factory;
+import com.google.firebase.sessions.dagger.internal.Provider;
 import com.google.firebase.sessions.settings.SessionsSettings;
-import javax.inject.Provider;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class SessionFirelogPublisherImpl_Factory implements Factory<SessionFirelogPublisherImpl> {
@@ -14,7 +14,7 @@ public final class SessionFirelogPublisherImpl_Factory implements Factory<Sessio
     private final Provider<FirebaseInstallationsApi> firebaseInstallationsProvider;
     private final Provider<SessionsSettings> sessionSettingsProvider;
 
-    public SessionFirelogPublisherImpl_Factory(Provider<FirebaseApp> provider, Provider<FirebaseInstallationsApi> provider2, Provider<SessionsSettings> provider3, Provider<EventGDTLoggerInterface> provider4, Provider<CoroutineContext> provider5) {
+    private SessionFirelogPublisherImpl_Factory(Provider<FirebaseApp> provider, Provider<FirebaseInstallationsApi> provider2, Provider<SessionsSettings> provider3, Provider<EventGDTLoggerInterface> provider4, Provider<CoroutineContext> provider5) {
         this.firebaseAppProvider = provider;
         this.firebaseInstallationsProvider = provider2;
         this.sessionSettingsProvider = provider3;

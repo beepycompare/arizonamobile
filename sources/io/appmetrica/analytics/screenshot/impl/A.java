@@ -1,23 +1,94 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class A implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        boolean z = parcel.readByte() != 0;
-        List createStringArrayList = parcel.createStringArrayList();
-        if (createStringArrayList == null) {
-            createStringArrayList = CollectionsKt.emptyList();
-        }
-        return new B(z, createStringArrayList, parcel.readLong());
+public final class A extends MessageNano {
+    public static volatile A[] c;
+
+    /* renamed from: a  reason: collision with root package name */
+    public boolean f1429a;
+    public z b;
+
+    public A() {
+        a();
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new B[i];
+    public static A[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new A[0];
+                }
+            }
+        }
+        return c;
+    }
+
+    public final A a() {
+        this.f1429a = true;
+        this.b = null;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        boolean z = this.f1429a;
+        if (!z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
+        }
+        z zVar = this.b;
+        return zVar != null ? CodedOutputByteBufferNano.computeMessageSize(2, zVar) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        boolean z = this.f1429a;
+        if (!z) {
+            codedOutputByteBufferNano.writeBool(1, z);
+        }
+        z zVar = this.b;
+        if (zVar != null) {
+            codedOutputByteBufferNano.writeMessage(2, zVar);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final A mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 8) {
+                this.f1429a = codedInputByteBufferNano.readBool();
+            } else if (readTag != 18) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                if (this.b == null) {
+                    this.b = new z();
+                }
+                codedInputByteBufferNano.readMessage(this.b);
+            }
+        }
+        return this;
+    }
+
+    public static A b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new A().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static A a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (A) MessageNano.mergeFrom(new A(), bArr);
     }
 }

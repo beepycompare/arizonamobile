@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNestedScrollConnection", f = "Scrollable.kt", i = {0}, l = {977}, m = "onPostFling-RZ2iAVY", n = {"$v$c$androidx-compose-ui-unit-Velocity$-available$0"}, s = {"J$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableNestedScrollConnection", f = "Scrollable.kt", i = {0}, l = {1008}, m = "onPostFling-RZ2iAVY", n = {"available"}, s = {"J$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class ScrollableNestedScrollConnection$onPostFling$1 extends ContinuationImpl {
     long J$0;
@@ -26,6 +26,6 @@ public final class ScrollableNestedScrollConnection$onPostFling$1 extends Contin
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo572onPostFlingRZ2iAVY(0L, 0L, this);
+        return this.this$0.mo602onPostFlingRZ2iAVY(0L, 0L, this);
     }
 }

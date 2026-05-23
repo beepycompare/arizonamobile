@@ -1,27 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import com.facebook.internal.NativeProtocol;
-import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
-import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import kotlin.KotlinVersion;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
+import io.appmetrica.analytics.networktasks.internal.NetworkServiceLocator;
+import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 /* loaded from: classes5.dex */
-public final class Yg implements Runnable {
-    @Override // java.lang.Runnable
-    public final void run() {
-        TimePassedChecker timePassedChecker = new TimePassedChecker();
-        SystemTimeProvider systemTimeProvider = new SystemTimeProvider();
-        Ze y = C0448na.I.y();
-        if (timePassedChecker.didTimePassMillis(y.f(), TimeUnit.DAYS.toMillis(1L), "[ReportKotlinVersionTask]")) {
-            KotlinVersion kotlinVersion = KotlinVersion.CURRENT;
-            Map mapOf = MapsKt.mapOf(TuplesKt.to("major", Integer.valueOf(kotlinVersion.getMajor())), TuplesKt.to("minor", Integer.valueOf(kotlinVersion.getMinor())), TuplesKt.to("patch", Integer.valueOf(kotlinVersion.getPatch())), TuplesKt.to(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, new StringBuilder().append(kotlinVersion.getMajor()).append('.').append(kotlinVersion.getMinor()).append('.').append(kotlinVersion.getPatch()).toString()));
-            Qj qj = AbstractC0482oj.f1163a;
-            qj.getClass();
-            qj.a(new Pj("kotlin_version", mapOf));
-            y.c(systemTimeProvider.currentTimeMillis()).b();
+public final class Yg implements InterfaceC0439mm {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0182cn f857a;
+
+    public Yg(C0182cn c0182cn) {
+        this.f857a = c0182cn;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0439mm
+    public final void a() {
+        NetworkTask c = this.f857a.c();
+        if (c != null) {
+            Na.I.getClass();
+            NetworkServiceLocator.getInstance().getNetworkCore().startTask(c);
         }
     }
 }

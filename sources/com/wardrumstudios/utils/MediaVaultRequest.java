@@ -1,5 +1,5 @@
 package com.wardrumstudios.utils;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaVaultRequest {
     private String ipAddress;
     private String mediaURL;

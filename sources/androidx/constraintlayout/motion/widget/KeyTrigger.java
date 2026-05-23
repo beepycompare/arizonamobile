@@ -424,7 +424,7 @@ public class KeyTrigger extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo8038clone() {
+    public Key mo8643clone() {
         return new KeyTrigger().copy(this);
     }
 

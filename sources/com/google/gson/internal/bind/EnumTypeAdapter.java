@@ -40,11 +40,12 @@ class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
         write(jsonWriter, (JsonWriter) ((Enum) obj));
     }
 
+    private static int calculateHashMapCapacity(int i) {
+        return (int) Math.ceil(i / 0.75f);
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     private EnumTypeAdapter(Class<T> cls) {
-        this.nameToConstant = new HashMap();
-        this.stringToConstant = new HashMap();
-        this.constantToName = new HashMap();
         try {
             Field[] declaredFields = cls.getDeclaredFields();
             int i = 0;
@@ -55,6 +56,10 @@ class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
                 }
             }
             Field[] fieldArr = (Field[]) Arrays.copyOf(declaredFields, i);
+            int calculateHashMapCapacity = calculateHashMapCapacity(i);
+            this.nameToConstant = new HashMap(calculateHashMapCapacity);
+            this.stringToConstant = new HashMap(calculateHashMapCapacity);
+            this.constantToName = new HashMap(calculateHashMapCapacity);
             AccessibleObject.setAccessible(fieldArr, true);
             for (Field field2 : fieldArr) {
                 Enum r4 = (Enum) field2.get(null);

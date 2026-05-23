@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class EventLogger implements AnalyticsListener {
     private static final Joiner COMMA_JOINER = Joiner.on(", ");
     private static final String DEFAULT_TAG = "EventLogger";

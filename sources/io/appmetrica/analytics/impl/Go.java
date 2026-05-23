@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import android.util.SparseArray;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Go implements Consumer {
+public final class Go {
+    public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f609a;
-    public final /* synthetic */ String b = "WebView interface setup failed because of an exception.";
+    public final SparseArray f567a = new SparseArray();
+    public int b = 0;
 
-    public Go(Throwable th) {
-        this.f609a = th;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).error(this.f609a, this.b, new Object[0]);
+    public Go(int[] iArr) {
+        for (int i : iArr) {
+            this.f567a.put(i, new HashMap());
+        }
     }
 }

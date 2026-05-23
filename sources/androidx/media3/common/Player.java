@@ -699,7 +699,7 @@ public interface Player {
             }
             MediaItem mediaItem = this.mediaItem;
             if (mediaItem != null) {
-                bundle.putBundle(FIELD_MEDIA_ITEM, mediaItem.toBundle());
+                bundle.putBundle(FIELD_MEDIA_ITEM, mediaItem.toBundle(i));
             }
             if (i < 3 || this.periodIndex != 0) {
                 bundle.putInt(FIELD_PERIOD_INDEX, this.periodIndex);
@@ -726,10 +726,15 @@ public interface Player {
             return toBundle(Integer.MAX_VALUE);
         }
 
+        @Deprecated
         public static PositionInfo fromBundle(Bundle bundle) {
+            return fromBundle(bundle, 9);
+        }
+
+        public static PositionInfo fromBundle(Bundle bundle, int i) {
             int max = Math.max(0, bundle.getInt(FIELD_MEDIA_ITEM_INDEX, 0));
             Bundle bundle2 = bundle.getBundle(FIELD_MEDIA_ITEM);
-            return new PositionInfo(null, max, bundle2 == null ? null : MediaItem.fromBundle(bundle2), null, Math.max(0, bundle.getInt(FIELD_PERIOD_INDEX, 0)), bundle.getLong(FIELD_POSITION_MS, 0L), bundle.getLong(FIELD_CONTENT_POSITION_MS, 0L), bundle.getInt(FIELD_AD_GROUP_INDEX, -1), bundle.getInt(FIELD_AD_INDEX_IN_AD_GROUP, -1));
+            return new PositionInfo(null, max, bundle2 == null ? null : MediaItem.fromBundle(bundle2, i), null, Math.max(0, bundle.getInt(FIELD_PERIOD_INDEX, 0)), bundle.getLong(FIELD_POSITION_MS, 0L), bundle.getLong(FIELD_CONTENT_POSITION_MS, 0L), bundle.getInt(FIELD_AD_GROUP_INDEX, -1), bundle.getInt(FIELD_AD_INDEX_IN_AD_GROUP, -1));
         }
     }
 

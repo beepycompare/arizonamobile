@@ -50,9 +50,9 @@ public final class MovableStackAnimation<C, T> extends AbstractStackAnimation<C,
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1396755942, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.MovableStackAnimation.Child (MovableStackAnimation.kt:20)");
         }
-        Object key = item.getChild().getKey();
+        String key = item.getChild().getKey();
         Child.Created<? extends C, ? extends T> otherChild = item.getOtherChild();
-        Object key2 = otherChild != null ? otherChild.getKey() : null;
+        String key2 = otherChild != null ? otherChild.getKey() : null;
         Direction direction = item.getDirection();
         composer.startReplaceGroup(578509470);
         boolean changed = composer.changed(key) | composer.changed(key2) | composer.changed(direction);
@@ -97,14 +97,14 @@ public final class MovableStackAnimation<C, T> extends AbstractStackAnimation<C,
                     }
                     Function3<Child.Created<? extends C, ? extends T>, Composer, Integer, Unit> function32 = function3;
                     AbstractStackAnimation.AnimationItem<C, T> animationItem = item;
-                    ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+                    ComposerKt.sourceInformationMarkerStart(composer2, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-                    ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-                    int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
+                    ComposerKt.sourceInformationMarkerStart(composer2, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+                    int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer2, 0));
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
                     Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, modifier);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                    ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(composer2, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                     if (!(composer2.getApplier() instanceof Applier)) {
                         ComposablesKt.invalidApplier();
                     }
@@ -114,16 +114,16 @@ public final class MovableStackAnimation<C, T> extends AbstractStackAnimation<C,
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
-                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer2);
+                    Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                        m4467constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                    ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     function32.invoke(animationItem.getChild(), composer2, 48);
                     ComposerKt.sourceInformationMarkerEnd(composer2);

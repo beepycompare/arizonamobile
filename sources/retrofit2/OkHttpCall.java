@@ -13,7 +13,7 @@ import okio.ForwardingSource;
 import okio.Okio;
 import okio.Timeout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class OkHttpCall<T> implements Call<T> {
     private final Object[] args;
     private final Call.Factory callFactory;
@@ -38,7 +38,7 @@ public final class OkHttpCall<T> implements Call<T> {
 
     @Override // retrofit2.Call
     /* renamed from: clone */
-    public OkHttpCall<T> mo9087clone() {
+    public OkHttpCall<T> mo9725clone() {
         return new OkHttpCall<>(this.requestFactory, this.instance, this.args, this.callFactory, this.responseConverter);
     }
 
@@ -224,7 +224,7 @@ public final class OkHttpCall<T> implements Call<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class NoContentResponseBody extends ResponseBody {
         private final long contentLength;
         @Nullable
@@ -253,7 +253,7 @@ public final class OkHttpCall<T> implements Call<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class ExceptionCatchingResponseBody extends ResponseBody {
         private final ResponseBody delegate;
         private final BufferedSource delegateSource;

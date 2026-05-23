@@ -3,7 +3,7 @@ package com.miami.game.core.files.updater.domain;
 import com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FilesUpdaterInteractor_Factory implements Factory<FilesUpdaterInteractor> {
     private final Provider<DownloaderSyncInteractor> downloaderSyncInteractorProvider;
 

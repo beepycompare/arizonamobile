@@ -15,6 +15,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({ArrayLen.class, BoolVal.class, DoubleVal.class, IntVal.class, StringVal.class, MatchesRegex.class, DoesNotMatchRegex.class, ArrayLenRange.class, IntRange.class, IntRangeFromPositive.class, IntRangeFromGTENegativeOne.class, IntRangeFromNonNegative.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface BottomVal {
 }

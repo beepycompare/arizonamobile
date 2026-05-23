@@ -236,7 +236,7 @@ public final class MoneyElement {
         Job launch$default;
         Job job = this.hideDeltaJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         HudElementMoneyItemBinding blockM = this.binding.blockM;
         Intrinsics.checkNotNullExpressionValue(blockM, "blockM");
@@ -318,7 +318,7 @@ public final class MoneyElement {
     private final void hideDeltaImmediate() {
         Job job = this.hideDeltaJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         for (LinearLayout linearLayout : CollectionsKt.listOf((Object[]) new LinearLayout[]{this.binding.blockM.deltaRow, this.binding.blockKK.deltaRow, this.binding.blockK.deltaRow})) {
             linearLayout.clearAnimation();

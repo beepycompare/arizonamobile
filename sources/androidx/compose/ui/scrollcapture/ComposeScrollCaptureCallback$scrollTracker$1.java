@@ -5,6 +5,7 @@ import androidx.compose.ui.internal.InlineClassHelperKt;
 import androidx.compose.ui.semantics.ScrollAxisRange;
 import androidx.compose.ui.semantics.SemanticsNode;
 import androidx.compose.ui.semantics.SemanticsProperties;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,8 +18,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ComposeScrollCaptureCallback.android.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0007\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "", "delta"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.scrollcapture.ComposeScrollCaptureCallback$scrollTracker$1", f = "ComposeScrollCaptureCallback.android.kt", i = {0}, l = {90}, m = "invokeSuspend", n = {"reverseScrolling"}, s = {"Z$0"}, v = 1)
+@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\u0007\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "", "delta"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.scrollcapture.ComposeScrollCaptureCallback$scrollTracker$1", f = "ComposeScrollCaptureCallback.android.kt", i = {0}, l = {TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {"reverseScrolling"}, s = {"Z$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class ComposeScrollCaptureCallback$scrollTracker$1 extends SuspendLambda implements Function2<Float, Continuation<? super Float>, Object> {
     /* synthetic */ float F$0;
@@ -67,10 +68,10 @@ public final class ComposeScrollCaptureCallback$scrollTracker$1 extends SuspendL
                 if (reverseScrolling) {
                     f = -f;
                 }
-                Offset m4516boximpl = Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)));
+                Offset m5092boximpl = Offset.m5092boximpl(Offset.m5095constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)));
                 this.Z$0 = reverseScrolling;
                 this.label = 1;
-                obj = scrollCaptureScrollByAction.invoke(m4516boximpl, this);
+                obj = scrollCaptureScrollByAction.invoke(m5092boximpl, this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -85,7 +86,7 @@ public final class ComposeScrollCaptureCallback$scrollTracker$1 extends SuspendL
             z = this.Z$0;
             ResultKt.throwOnFailure(obj);
         }
-        long m4537unboximpl = ((Offset) obj).m4537unboximpl();
-        return Boxing.boxFloat(z ? -Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) : Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)));
+        long m5113unboximpl = ((Offset) obj).m5113unboximpl();
+        return Boxing.boxFloat(z ? -Float.intBitsToFloat((int) (m5113unboximpl & 4294967295L)) : Float.intBitsToFloat((int) (m5113unboximpl & 4294967295L)));
     }
 }

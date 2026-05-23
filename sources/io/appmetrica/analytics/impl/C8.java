@@ -1,30 +1,82 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class C8 implements to {
+public final class C8 extends MessageNano {
+    public static volatile C8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final H8 f536a;
+    public A8 f490a;
 
     public C8() {
-        this(new H8());
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0380kh c0380kh) {
-        byte[] bArr;
-        String str = n8.b;
-        if (str != null) {
-            bArr = StringUtils.getUTF8Bytes(str);
-        } else {
-            bArr = new byte[0];
+    public static C8[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new C8[0];
+                }
+            }
         }
-        H8 h8 = this.f536a;
-        return ((G8) h8.f616a.a(n8.o)).a(bArr);
+        return b;
     }
 
-    public C8(H8 h8) {
-        this.f536a = h8;
+    public final C8 a() {
+        this.f490a = null;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        A8 a8 = this.f490a;
+        return a8 != null ? CodedOutputByteBufferNano.computeMessageSize(1, a8) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        A8 a8 = this.f490a;
+        if (a8 != null) {
+            codedOutputByteBufferNano.writeMessage(1, a8);
+        }
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final C8 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 10) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                if (this.f490a == null) {
+                    this.f490a = new A8();
+                }
+                codedInputByteBufferNano.readMessage(this.f490a);
+            }
+        }
+        return this;
+    }
+
+    public static C8 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new C8().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static C8 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (C8) MessageNano.mergeFrom(new C8(), bArr);
     }
 }

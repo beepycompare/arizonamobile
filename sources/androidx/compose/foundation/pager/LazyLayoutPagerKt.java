@@ -1,5 +1,6 @@
 package androidx.compose.foundation.pager;
 
+import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.foundation.ScrollableAreaKt;
 import androidx.compose.foundation.gestures.BringIntoViewSpec;
@@ -24,6 +25,7 @@ import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.geometry.Offset;
@@ -37,11 +39,12 @@ import androidx.compose.ui.input.pointer.PointerInputChange;
 import androidx.compose.ui.input.pointer.PointerInputEventHandler;
 import androidx.compose.ui.input.pointer.PointerInputScope;
 import androidx.compose.ui.input.pointer.SuspendingPointerInputFilterKt;
+import androidx.compose.ui.platform.CompositionLocalsKt;
 import androidx.compose.ui.unit.Dp;
+import androidx.compose.ui.unit.LayoutDirection;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
-import com.google.android.vending.licensing.Policy;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.List;
@@ -63,17 +66,17 @@ import kotlin.reflect.KProperty0;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: LazyLayoutPager.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001aå\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\t2\b\u0010\u000f\u001a\u0004\u0018\u00010\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182#\u0010\u0019\u001a\u001f\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001d\u0012\u0004\u0012\u00020\u001e\u0018\u00010\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$21\u0010%\u001a-\u0012\u0004\u0012\u00020'\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b((\u0012\u0004\u0012\u00020\u00010&¢\u0006\u0002\b)¢\u0006\u0002\b*H\u0001¢\u0006\u0004\b+\u0010,\u001a\u0081\u0001\u0010-\u001a\b\u0012\u0004\u0012\u00020/0.2\u0006\u0010\u0004\u001a\u00020\u000521\u0010%\u001a-\u0012\u0004\u0012\u00020'\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b((\u0012\u0004\u0012\u00020\u00010&¢\u0006\u0002\b)¢\u0006\u0002\b*2#\u0010\u0019\u001a\u001f\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001d\u0012\u0004\u0012\u00020\u001e\u0018\u00010\u001a2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u00120.H\u0003¢\u0006\u0002\u00101\u001a\u0014\u00102\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0002¨\u00063"}, d2 = {"Pager", "", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "Pager-eLwUrMk", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;IFLandroidx/compose/foundation/pager/PageSize;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "rememberPagerItemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "pageCount", "(Landroidx/compose/foundation/pager/PagerState;Lkotlin/jvm/functions/Function4;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Lkotlin/jvm/functions/Function0;", "dragDirectionDetector", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001aå\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\t2\b\u0010\u000f\u001a\u0004\u0018\u00010\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182#\u0010\u0019\u001a\u001f\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001d\u0012\u0004\u0012\u00020\u001e\u0018\u00010\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$21\u0010%\u001a-\u0012\u0004\u0012\u00020'\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b((\u0012\u0004\u0012\u00020\u00010&¢\u0006\u0002\b)¢\u0006\u0002\b*H\u0001¢\u0006\u0004\b+\u0010,\u001a\u0081\u0001\u0010-\u001a\b\u0012\u0004\u0012\u00020/0.2\u0006\u0010\u0004\u001a\u00020\u000521\u0010%\u001a-\u0012\u0004\u0012\u00020'\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b((\u0012\u0004\u0012\u00020\u00010&¢\u0006\u0002\b)¢\u0006\u0002\b*2#\u0010\u0019\u001a\u001f\u0012\u0013\u0012\u00110\u0012¢\u0006\f\b\u001b\u0012\b\b\u001c\u0012\u0004\b\b(\u001d\u0012\u0004\u0012\u00020\u001e\u0018\u00010\u001a2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u00120.H\u0003¢\u0006\u0002\u00101\u001a\u0014\u00102\u001a\u00020\u0003*\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0002¨\u00063"}, d2 = {"Pager", "", "modifier", "Landroidx/compose/ui/Modifier;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/pager/PagerState;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "flingBehavior", "Landroidx/compose/foundation/gestures/TargetedFlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "beyondViewportPageCount", "", "pageSpacing", "Landroidx/compose/ui/unit/Dp;", "pageSize", "Landroidx/compose/foundation/pager/PageSize;", "pageNestedScrollConnection", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "key", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "", "horizontalAlignment", "Landroidx/compose/ui/Alignment$Horizontal;", "verticalAlignment", "Landroidx/compose/ui/Alignment$Vertical;", "snapPosition", "Landroidx/compose/foundation/gestures/snapping/SnapPosition;", "pageContent", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "page", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "Pager-eLwUrMk", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/TargetedFlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;IFLandroidx/compose/foundation/pager/PageSize;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/foundation/gestures/snapping/SnapPosition;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;III)V", "rememberPagerItemProviderLambda", "Lkotlin/Function0;", "Landroidx/compose/foundation/pager/PagerLazyLayoutItemProvider;", "pageCount", "(Landroidx/compose/foundation/pager/PagerState;Lkotlin/jvm/functions/Function4;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Lkotlin/jvm/functions/Function0;", "dragDirectionDetector", "foundation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutPagerKt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit Pager_eLwUrMk$lambda$5(Modifier modifier, PagerState pagerState, PaddingValues paddingValues, boolean z, Orientation orientation, TargetedFlingBehavior targetedFlingBehavior, boolean z2, OverscrollEffect overscrollEffect, int i, float f, PageSize pageSize, NestedScrollConnection nestedScrollConnection, Function1 function1, Alignment.Horizontal horizontal, Alignment.Vertical vertical, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1067PagereLwUrMk(modifier, pagerState, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i, f, pageSize, nestedScrollConnection, function1, horizontal, vertical, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+    public static final Unit Pager_eLwUrMk$lambda$6(Modifier modifier, PagerState pagerState, PaddingValues paddingValues, boolean z, Orientation orientation, TargetedFlingBehavior targetedFlingBehavior, boolean z2, OverscrollEffect overscrollEffect, int i, float f, PageSize pageSize, NestedScrollConnection nestedScrollConnection, Function1 function1, Alignment.Horizontal horizontal, Alignment.Vertical vertical, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
+        m1321PagereLwUrMk(modifier, pagerState, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i, f, pageSize, nestedScrollConnection, function1, horizontal, vertical, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:163:0x0210, code lost:
-        if (r7 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L189;
+        if (r7 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L201;
      */
     /* JADX WARN: Removed duplicated region for block: B:102:0x013a  */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0140  */
@@ -83,9 +86,9 @@ public final class LazyLayoutPagerKt {
     /* JADX WARN: Removed duplicated region for block: B:121:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:128:0x017f  */
     /* JADX WARN: Removed duplicated region for block: B:142:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x043a  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0449  */
-    /* JADX WARN: Removed duplicated region for block: B:224:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x04af  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:236:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:73:0x00ea  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x00ef  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0108  */
@@ -96,7 +99,7 @@ public final class LazyLayoutPagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1067PagereLwUrMk(final Modifier modifier, final PagerState pagerState, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final TargetedFlingBehavior targetedFlingBehavior, final boolean z2, final OverscrollEffect overscrollEffect, int i, float f, final PageSize pageSize, NestedScrollConnection nestedScrollConnection, final Function1<? super Integer, ? extends Object> function1, final Alignment.Horizontal horizontal, final Alignment.Vertical vertical, final SnapPosition snapPosition, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1321PagereLwUrMk(final Modifier modifier, final PagerState pagerState, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final TargetedFlingBehavior targetedFlingBehavior, final boolean z2, final OverscrollEffect overscrollEffect, int i, float f, final PageSize pageSize, NestedScrollConnection nestedScrollConnection, final Function1<? super Integer, ? extends Object> function1, final Alignment.Horizontal horizontal, final Alignment.Vertical vertical, final SnapPosition snapPosition, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         int i6;
         int i7;
@@ -110,9 +113,10 @@ public final class LazyLayoutPagerKt {
         final float f3;
         ScopeUpdateScope endRestartGroup;
         int i11;
+        LegacyPagerBringIntoViewSpec legacyPagerBringIntoViewSpec;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-572816025);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Pager)N(modifier,state,contentPadding,reverseLayout,orientation,flingBehavior,userScrollEnabled,overscrollEffect,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,pageSize,pageNestedScrollConnection,key,horizontalAlignment,verticalAlignment,snapPosition,pageContent)109@5362L39,109@5277L124,113@5428L24,129@6071L19,116@5486L615,132@6127L70,135@6239L82,137@6381L7,139@6430L121,164@7268L301,159@7099L1450:LazyLayoutPager.kt#g6yjnt");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Pager)N(modifier,state,contentPadding,reverseLayout,orientation,flingBehavior,userScrollEnabled,overscrollEffect,beyondViewportPageCount,pageSpacing:c#ui.unit.Dp,pageSize,pageNestedScrollConnection,key,horizontalAlignment,verticalAlignment,snapPosition,pageContent)113@5634L39,113@5549L124,117@5700L24,133@6343L19,120@5758L615,136@6399L70,139@6511L82,141@6653L7,142@6708L7,175@7881L301,170@7712L1450:LazyLayoutPager.kt#g6yjnt");
         if ((i2 & 6) == 0) {
             i5 = (startRestartGroup.changed(modifier) ? 4 : 2) | i2;
         } else {
@@ -144,7 +148,7 @@ public final class LazyLayoutPagerKt {
             i5 |= 100663296;
         } else if ((i2 & 100663296) == 0) {
             i6 = 196608;
-            i5 |= startRestartGroup.changed(i) ? 67108864 : 33554432;
+            i5 |= startRestartGroup.changed(i) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
             i7 = i4 & 512;
             if (i7 == 0) {
                 i5 |= 805306368;
@@ -152,7 +156,7 @@ public final class LazyLayoutPagerKt {
             } else {
                 f2 = f;
                 if ((i2 & 805306368) == 0) {
-                    i5 |= startRestartGroup.changed(f2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                    i5 |= startRestartGroup.changed(f2) ? 536870912 : 268435456;
                 }
             }
             if ((i3 & 6) != 0) {
@@ -188,9 +192,9 @@ public final class LazyLayoutPagerKt {
                 f3 = f2;
             } else {
                 int i13 = i12 != 0 ? 0 : i;
-                float m7555constructorimpl = i7 != 0 ? Dp.m7555constructorimpl(0.0f) : f2;
+                float m8160constructorimpl = i7 != 0 ? Dp.m8160constructorimpl(0.0f) : f2;
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-572816025, i5, i9, "androidx.compose.foundation.pager.Pager (LazyLayoutPager.kt:102)");
+                    ComposerKt.traceEventStart(-572816025, i5, i9, "androidx.compose.foundation.pager.Pager (LazyLayoutPager.kt:106)");
                 }
                 if (!(i13 >= 0)) {
                     InlineClassHelperKt.throwIllegalArgumentException("beyondViewportPageCount should be greater than or equal to 0, you selected " + i13);
@@ -220,7 +224,7 @@ public final class LazyLayoutPagerKt {
                 int i18 = i5;
                 int i19 = i11;
                 Function0<PagerLazyLayoutItemProvider> rememberPagerItemProviderLambda = rememberPagerItemProviderLambda(pagerState, function4, function1, (Function0) rememberedValue, startRestartGroup, i16 | (i17 & 112) | (i9 & 896));
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)616@28039L68:Effects.kt#9igjgp");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
                 if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -248,9 +252,9 @@ public final class LazyLayoutPagerKt {
                 int i20 = i18 >> 9;
                 int i21 = (i18 & 65520) | (i20 & 458752) | (i20 & 3670016) | ((i9 << 21) & 29360128);
                 int i22 = i9 << 15;
-                LazyLayoutMeasurePolicy m1079rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1079rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i19, m7555constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, i21 | (i22 & 234881024) | (i22 & 1879048192), i17 & 14);
+                LazyLayoutMeasurePolicy m1333rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1333rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i19, m8160constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, i21 | (i22 & 234881024) | (i22 & C.ENCODING_PCM_DOUBLE), i17 & 14);
                 pagerState2 = pagerState;
-                float f4 = m7555constructorimpl;
+                float f4 = m8160constructorimpl;
                 LazyLayoutSemanticState rememberPagerSemanticState = PagerSemanticsKt.rememberPagerSemanticState(pagerState2, orientation == Orientation.Vertical, startRestartGroup, i16);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720291719, "CC(remember):LazyLayoutPager.kt#9igjgp");
                 boolean z5 = (i14 == 32) | ((i18 & 458752) == 131072);
@@ -265,28 +269,50 @@ public final class LazyLayoutPagerKt {
                 Object consume = startRestartGroup.consume(BringIntoViewSpec_androidKt.getLocalBringIntoViewSpec());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 BringIntoViewSpec bringIntoViewSpec = (BringIntoViewSpec) consume;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720285568, "CC(remember):LazyLayoutPager.kt#9igjgp");
-                boolean changed = (i14 == 32) | startRestartGroup.changed(bringIntoViewSpec);
-                Object rememberedValue5 = startRestartGroup.rememberedValue();
-                if (changed || rememberedValue5 == Composer.Companion.getEmpty()) {
-                    rememberedValue5 = new PagerBringIntoViewSpec(pagerState2, bringIntoViewSpec);
-                    startRestartGroup.updateRememberedValue(rememberedValue5);
-                }
-                PagerBringIntoViewSpec pagerBringIntoViewSpec = (PagerBringIntoViewSpec) rememberedValue5;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                LayoutDirection layoutDirection = (LayoutDirection) consume2;
+                if (ComposeFoundationFlags.isBringIntoViewRltBouncyBehaviorInPagerFixEnabled) {
+                    startRestartGroup.startReplaceGroup(-853904960);
+                    ComposerKt.sourceInformation(startRestartGroup, "145@6826L163");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720281558, "CC(remember):LazyLayoutPager.kt#9igjgp");
+                    boolean changed = (i14 == 32) | startRestartGroup.changed(bringIntoViewSpec) | startRestartGroup.changed(layoutDirection.ordinal());
+                    Object rememberedValue5 = startRestartGroup.rememberedValue();
+                    if (changed || rememberedValue5 == Composer.Companion.getEmpty()) {
+                        rememberedValue5 = new PagerBringIntoViewSpec(pagerState2, bringIntoViewSpec, layoutDirection);
+                        startRestartGroup.updateRememberedValue(rememberedValue5);
+                    }
+                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                    startRestartGroup.endReplaceGroup();
+                    legacyPagerBringIntoViewSpec = (PagerBringIntoViewSpec) rememberedValue5;
+                } else {
+                    startRestartGroup.startReplaceGroup(-853714372);
+                    ComposerKt.sourceInformation(startRestartGroup, "149@7019L135");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720275410, "CC(remember):LazyLayoutPager.kt#9igjgp");
+                    boolean changed2 = (i14 == 32) | startRestartGroup.changed(bringIntoViewSpec);
+                    Object rememberedValue6 = startRestartGroup.rememberedValue();
+                    if (changed2 || rememberedValue6 == Composer.Companion.getEmpty()) {
+                        rememberedValue6 = new LegacyPagerBringIntoViewSpec(pagerState2, bringIntoViewSpec);
+                        startRestartGroup.updateRememberedValue(rememberedValue6);
+                    }
+                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                    startRestartGroup.endReplaceGroup();
+                    legacyPagerBringIntoViewSpec = (LegacyPagerBringIntoViewSpec) rememberedValue6;
+                }
                 if (z2) {
-                    startRestartGroup.startReplaceGroup(-853822717);
-                    ComposerKt.sourceInformation(startRestartGroup, "147@6714L167");
-                    companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, PagerBeyondBoundsModifierKt.rememberPagerBeyondBoundsState(pagerState2, i19, startRestartGroup, ((i18 >> 21) & 112) | i16), pagerState2.getBeyondBoundsInfo$foundation(), z, orientation);
+                    startRestartGroup.startReplaceGroup(-853484445);
+                    ComposerKt.sourceInformation(startRestartGroup, "158@7327L167");
+                    companion = LazyLayoutBeyondBoundsModifierLocalKt.lazyLayoutBeyondBoundsModifier(Modifier.Companion, PagerBeyondBoundsModifierKt.rememberPagerBeyondBoundsState(pagerState2, i19, startRestartGroup, i16 | ((i18 >> 21) & 112)), pagerState2.getBeyondBoundsInfo$foundation(), z, orientation);
                     startRestartGroup.endReplaceGroup();
                 } else {
-                    startRestartGroup.startReplaceGroup(-853392933);
+                    startRestartGroup.startReplaceGroup(-853054661);
                     startRestartGroup.endReplaceGroup();
                     companion = Modifier.Companion;
                 }
                 Modifier lazyLayoutSemantics = LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(pagerState2.getRemeasurementModifier$foundation()).then(pagerState2.getAwaitLayoutModifier$foundation()), rememberPagerItemProviderLambda, rememberPagerSemanticState, orientation, z2, z, startRestartGroup, ((i18 << 6) & 458752) | (i15 & 7168) | ((i18 >> 6) & 57344));
                 nestedScrollConnection2 = nestedScrollConnection;
-                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollableAreaKt.scrollableArea(PagerKt.pagerSemantics(lazyLayoutSemantics, pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, overscrollEffect, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation(), pagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation(), m1079rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
+                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollableAreaKt.scrollableArea(PagerKt.pagerSemantics(lazyLayoutSemantics, pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, overscrollEffect, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation(), legacyPagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation(), m1333rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
                 composer2 = startRestartGroup;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
@@ -301,7 +327,7 @@ public final class LazyLayoutPagerKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.LazyLayoutPagerKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
-                        return LazyLayoutPagerKt.Pager_eLwUrMk$lambda$5(Modifier.this, pagerState3, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i10, f3, pageSize, nestedScrollConnection3, function1, horizontal, vertical, snapPosition, function4, i2, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
+                        return LazyLayoutPagerKt.Pager_eLwUrMk$lambda$6(Modifier.this, pagerState3, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i10, f3, pageSize, nestedScrollConnection3, function1, horizontal, vertical, snapPosition, function4, i2, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
                     }
                 });
                 return;
@@ -335,9 +361,9 @@ public final class LazyLayoutPagerKt {
     }
 
     private static final Function0<PagerLazyLayoutItemProvider> rememberPagerItemProviderLambda(final PagerState pagerState, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Function1<? super Integer, ? extends Object> function1, final Function0<Integer> function0, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 1052364153, "C(rememberPagerItemProviderLambda)N(state,pageContent,key,pageCount)258@10763L33,259@10817L25,260@10854L742:LazyLayoutPager.kt#g6yjnt");
+        ComposerKt.sourceInformationMarkerStart(composer, 1052364153, "C(rememberPagerItemProviderLambda)N(state,pageContent,key,pageCount)269@11376L33,270@11430L25,271@11467L742:LazyLayoutPager.kt#g6yjnt");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(1052364153, i, -1, "androidx.compose.foundation.pager.rememberPagerItemProviderLambda (LazyLayoutPager.kt:257)");
+            ComposerKt.traceEventStart(1052364153, i, -1, "androidx.compose.foundation.pager.rememberPagerItemProviderLambda (LazyLayoutPager.kt:268)");
         }
         final State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function4, composer, (i >> 3) & 14);
         final State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(function1, composer, (i >> 6) & 14);
@@ -393,8 +419,8 @@ public final class LazyLayoutPagerKt {
         return modifier.then(SuspendingPointerInputFilterKt.pointerInput(Modifier.Companion, pagerState, new PointerInputEventHandler() { // from class: androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1
 
             /* compiled from: LazyLayoutPager.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1", f = "LazyLayoutPager.kt", i = {}, l = {285}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+            @DebugMetadata(c = "androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1", f = "LazyLayoutPager.kt", i = {}, l = {296}, m = "invokeSuspend", n = {}, s = {}, v = 1)
             /* renamed from: androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1  reason: invalid class name */
             /* loaded from: classes.dex */
             static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -421,8 +447,8 @@ public final class LazyLayoutPagerKt {
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: LazyLayoutPager.kt */
-                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1$1", f = "LazyLayoutPager.kt", i = {0, 1, 1, 1}, l = {287, Policy.RETRY}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "downEvent", "upEventOrCancellation"}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 1)
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1$1", f = "LazyLayoutPager.kt", i = {0, 1, 1, 1}, l = {298, 302}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "downEvent", "upEventOrCancellation"}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 1)
                 /* renamed from: androidx.compose.foundation.pager.LazyLayoutPagerKt$dragDirectionDetector$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
                 public static final class C00101 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -511,11 +537,11 @@ public final class LazyLayoutPagerKt {
                                 this.label = 2;
                                 obj = awaitPointerEventScope2.awaitPointerEvent(PointerEventPass.Initial, this);
                             } else {
-                                this.$state.m1086setUpDownDifferencek4lQ0M$foundation(Offset.m4531minusMKHz9U(pointerInputChange.m6085getPositionF1C5BW0(), pointerInputChange2.m6085getPositionF1C5BW0()));
+                                this.$state.m1340setUpDownDifferencek4lQ0M$foundation(Offset.m5107minusMKHz9U(pointerInputChange.m6685getPositionF1C5BW0(), pointerInputChange2.m6685getPositionF1C5BW0()));
                                 return Unit.INSTANCE;
                             }
                         }
-                        this.$state.m1086setUpDownDifferencek4lQ0M$foundation(Offset.Companion.m4543getZeroF1C5BW0());
+                        this.$state.m1340setUpDownDifferencek4lQ0M$foundation(Offset.Companion.m5119getZeroF1C5BW0());
                         awaitPointerEventScope2 = awaitPointerEventScope;
                         pointerInputChange = null;
                         pointerInputChange2 = (PointerInputChange) obj;

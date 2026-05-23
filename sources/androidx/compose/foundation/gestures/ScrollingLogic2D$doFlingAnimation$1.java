@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable2D.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic2D", f = "Scrollable2D.kt", i = {0}, l = {434}, m = "doFlingAnimation-QWom1Mo", n = {"result"}, s = {"L$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollingLogic2D", f = "Scrollable2D.kt", i = {0}, l = {439}, m = "doFlingAnimation-QWom1Mo", n = {"result"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class ScrollingLogic2D$doFlingAnimation$1 extends ContinuationImpl {
     Object L$0;
@@ -26,6 +26,6 @@ public final class ScrollingLogic2D$doFlingAnimation$1 extends ContinuationImpl 
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo561doFlingAnimationQWom1Mo(0L, this);
+        return this.this$0.mo591doFlingAnimationQWom1Mo(0L, this);
     }
 }

@@ -319,7 +319,11 @@ public final class CarsScreen extends SAMPUIElement {
         setCarRarity(new CarsRarity(vehicleItem.getRarity(), vehicleItem.getRarityLevel()));
         this.binding.carName.setText(vehicleItem.getTitle());
         ArrayList arrayList = new ArrayList();
-        for (Bonus bonus : vehicleItem.getBonuses()) {
+        List<Bonus> bonuses = vehicleItem.getBonuses();
+        if (bonuses == null) {
+            bonuses = CollectionsKt.emptyList();
+        }
+        for (Bonus bonus : bonuses) {
             Iterator<T> it = this.bonusType.iterator();
             while (true) {
                 if (!it.hasNext()) {

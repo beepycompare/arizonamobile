@@ -3,11 +3,15 @@ package com.google.gson.internal.sql;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.bind.DefaultDateTypeAdapter;
 import java.sql.Timestamp;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 /* loaded from: classes4.dex */
 public final class SqlTypesSupport {
     public static final DefaultDateTypeAdapter.DateType<? extends Date> DATE_DATE_TYPE;
     public static final TypeAdapterFactory DATE_FACTORY;
+    public static final List<TypeAdapterFactory> SQL_TYPE_FACTORIES;
     public static final boolean SUPPORTS_SQL_TYPES;
     public static final DefaultDateTypeAdapter.DateType<? extends Date> TIMESTAMP_DATE_TYPE;
     public static final TypeAdapterFactory TIMESTAMP_FACTORY;
@@ -39,9 +43,13 @@ public final class SqlTypesSupport {
                     return new Timestamp(date.getTime());
                 }
             };
-            DATE_FACTORY = SqlDateTypeAdapter.FACTORY;
-            TIME_FACTORY = SqlTimeTypeAdapter.FACTORY;
-            TIMESTAMP_FACTORY = SqlTimestampTypeAdapter.FACTORY;
+            TypeAdapterFactory typeAdapterFactory = SqlDateTypeAdapter.FACTORY;
+            DATE_FACTORY = typeAdapterFactory;
+            TypeAdapterFactory typeAdapterFactory2 = SqlTimeTypeAdapter.FACTORY;
+            TIME_FACTORY = typeAdapterFactory2;
+            TypeAdapterFactory typeAdapterFactory3 = SqlTimestampTypeAdapter.FACTORY;
+            TIMESTAMP_FACTORY = typeAdapterFactory3;
+            SQL_TYPE_FACTORIES = Collections.unmodifiableList(Arrays.asList(typeAdapterFactory2, typeAdapterFactory, typeAdapterFactory3));
             return;
         }
         DATE_DATE_TYPE = null;
@@ -49,6 +57,7 @@ public final class SqlTypesSupport {
         DATE_FACTORY = null;
         TIME_FACTORY = null;
         TIMESTAMP_FACTORY = null;
+        SQL_TYPE_FACTORIES = Collections.emptyList();
     }
 
     private SqlTypesSupport() {

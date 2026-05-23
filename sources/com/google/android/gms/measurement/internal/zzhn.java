@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.List;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 final class zzhn implements com.google.android.gms.internal.measurement.zzr {
     final /* synthetic */ zzht zza;
@@ -18,30 +18,30 @@ final class zzhn implements com.google.android.gms.internal.measurement.zzr {
         zzgs zzj;
         int i2 = i - 1;
         if (i2 == 0) {
-            zzj = this.zza.zzu.zzaV().zzj();
+            zzj = this.zza.zzu.zzaW().zzj();
         } else if (i2 != 1) {
             if (i2 == 3) {
-                zzj = this.zza.zzu.zzaV().zzk();
+                zzj = this.zza.zzu.zzaW().zzk();
             } else if (i2 != 4) {
-                zzj = this.zza.zzu.zzaV().zzi();
+                zzj = this.zza.zzu.zzaW().zzi();
             } else if (z) {
-                zzj = this.zza.zzu.zzaV().zzf();
+                zzj = this.zza.zzu.zzaW().zzf();
             } else {
                 zzht zzhtVar = this.zza;
                 if (!z2) {
-                    zzj = zzhtVar.zzu.zzaV().zzh();
+                    zzj = zzhtVar.zzu.zzaW().zzh();
                 } else {
-                    zzj = zzhtVar.zzu.zzaV().zze();
+                    zzj = zzhtVar.zzu.zzaW().zze();
                 }
             }
         } else if (z) {
-            zzj = this.zza.zzu.zzaV().zzc();
+            zzj = this.zza.zzu.zzaW().zzc();
         } else {
             zzht zzhtVar2 = this.zza;
             if (!z2) {
-                zzj = zzhtVar2.zzu.zzaV().zzd();
+                zzj = zzhtVar2.zzu.zzaW().zzd();
             } else {
-                zzj = zzhtVar2.zzu.zzaV().zzb();
+                zzj = zzhtVar2.zzu.zzaW().zzb();
             }
         }
         int size = list.size();

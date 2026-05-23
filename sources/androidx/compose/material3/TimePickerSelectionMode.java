@@ -9,45 +9,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class TimePickerSelectionMode {
     public static final Companion Companion = new Companion(null);
-    private static final int Hour = m2776constructorimpl(0);
-    private static final int Minute = m2776constructorimpl(1);
+    private static final int Hour = m3221constructorimpl(0);
+    private static final int Minute = m3221constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TimePickerSelectionMode m2775boximpl(int i) {
+    public static final /* synthetic */ TimePickerSelectionMode m3220boximpl(int i) {
         return new TimePickerSelectionMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m2776constructorimpl(int i) {
+    private static int m3221constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2777equalsimpl(int i, Object obj) {
-        return (obj instanceof TimePickerSelectionMode) && i == ((TimePickerSelectionMode) obj).m2781unboximpl();
+    public static boolean m3222equalsimpl(int i, Object obj) {
+        return (obj instanceof TimePickerSelectionMode) && i == ((TimePickerSelectionMode) obj).m3226unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2778equalsimpl0(int i, int i2) {
+    public static final boolean m3223equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2779hashCodeimpl(int i) {
+    public static int m3224hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2777equalsimpl(this.value, obj);
+        return m3222equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2779hashCodeimpl(this.value);
+        return m3224hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2781unboximpl() {
+    public final /* synthetic */ int m3226unboximpl() {
         return this.value;
     }
 
@@ -63,12 +63,12 @@ public final class TimePickerSelectionMode {
         }
 
         /* renamed from: getHour-yecRtBI  reason: not valid java name */
-        public final int m2782getHouryecRtBI() {
+        public final int m3227getHouryecRtBI() {
             return TimePickerSelectionMode.Hour;
         }
 
         /* renamed from: getMinute-yecRtBI  reason: not valid java name */
-        public final int m2783getMinuteyecRtBI() {
+        public final int m3228getMinuteyecRtBI() {
             return TimePickerSelectionMode.Minute;
         }
     }
@@ -82,11 +82,11 @@ public final class TimePickerSelectionMode {
     }
 
     public String toString() {
-        return m2780toStringimpl(this.value);
+        return m3225toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2780toStringimpl(int i) {
-        return m2778equalsimpl0(i, Hour) ? "Hour" : m2778equalsimpl0(i, Minute) ? "Minute" : "";
+    public static String m3225toStringimpl(int i) {
+        return m3223equalsimpl0(i, Hour) ? "Hour" : m3223equalsimpl0(i, Minute) ? "Minute" : "";
     }
 }

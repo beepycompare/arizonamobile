@@ -2,7 +2,6 @@ package com.google.android.gms.internal.play_billing;
 
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.media3.common.C;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -891,7 +890,7 @@ public final class zzhe<T> implements zzhl<T> {
                 int i104 = i69 + 1;
                 iArr3[i69] = charAt23;
                 int i105 = i69 + 2;
-                iArr3[i104] = ((charAt24 & 512) != 0 ? C.BUFFER_FLAG_LAST_SAMPLE : 0) | ((charAt24 & 256) != 0 ? 268435456 : 0) | (i23 != 0 ? Integer.MIN_VALUE : 0) | (i78 << 20) | objectFieldOffset;
+                iArr3[i104] = ((charAt24 & 512) != 0 ? 536870912 : 0) | ((charAt24 & 256) != 0 ? 268435456 : 0) | (i23 != 0 ? Integer.MIN_VALUE : 0) | (i78 << 20) | objectFieldOffset;
                 i69 += 3;
                 iArr3[i105] = (i22 << 20) | i21;
                 i35 = i17;
@@ -2755,7 +2754,7 @@ public final class zzhe<T> implements zzhl<T> {
                                             i6 = i44;
                                             i7 = i42;
                                             if (i52 == 2) {
-                                                if ((i54 & C.BUFFER_FLAG_LAST_SAMPLE) == 0) {
+                                                if ((i54 & 536870912) == 0) {
                                                     i39 = zzek.zzi(bArr16, i39, zzejVar18);
                                                     int i59 = zzejVar18.zza;
                                                     if (i59 < 0) {
@@ -3913,7 +3912,7 @@ public final class zzhe<T> implements zzhl<T> {
                                                                 unsafe.putObject(obj2, j, "");
                                                             } else {
                                                                 int i104 = zzi16 + i103;
-                                                                if ((i54 & C.BUFFER_FLAG_LAST_SAMPLE) == 0 || zzin.zzc(bArr2, zzi16, i104)) {
+                                                                if ((i54 & 536870912) == 0 || zzin.zzc(bArr2, zzi16, i104)) {
                                                                     unsafe.putObject(obj2, j, new String(bArr2, zzi16, i103, zzga.zza));
                                                                     zzi16 = i104;
                                                                 } else {

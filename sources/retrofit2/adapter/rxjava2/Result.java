@@ -2,7 +2,7 @@ package retrofit2.adapter.rxjava2;
 
 import javax.annotation.Nullable;
 import retrofit2.Response;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class Result<T> {
     @Nullable
     private final Throwable error;

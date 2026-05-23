@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 /* compiled from: AndroidPopup.android.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0006\u001a\u00020\u0007H\n¢\u0006\u0004\b\b\u0010\t"}, d2 = {"<anonymous>", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0006\u001a\u00020\u0007H\n¢\u0006\u0004\b\b\u0010\t"}, d2 = {"<anonymous>", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurables", "", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidPopup_androidKt$SimpleStack$1$1 implements MeasurePolicy {
     public static final AndroidPopup_androidKt$SimpleStack$1$1 INSTANCE = new AndroidPopup_androidKt$SimpleStack$1$1();
@@ -23,8 +23,8 @@ public final class AndroidPopup_androidKt$SimpleStack$1$1 implements MeasurePoli
         int size = list.size();
         if (size != 0) {
             if (size == 1) {
-                final Placeable mo6216measureBRTryo0 = list.get(0).mo6216measureBRTryo0(j);
-                return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.2
+                final Placeable mo6818measureBRTryo0 = list.get(0).mo6818measureBRTryo0(j);
+                return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.2
                     {
                         super(1);
                     }
@@ -46,10 +46,10 @@ public final class AndroidPopup_androidKt$SimpleStack$1$1 implements MeasurePoli
             int i = 0;
             int i2 = 0;
             for (int i3 = 0; i3 < size2; i3++) {
-                Placeable mo6216measureBRTryo02 = list.get(i3).mo6216measureBRTryo0(j);
-                i = Math.max(i, mo6216measureBRTryo02.getWidth());
-                i2 = Math.max(i2, mo6216measureBRTryo02.getHeight());
-                arrayList.add(mo6216measureBRTryo02);
+                Placeable mo6818measureBRTryo02 = list.get(i3).mo6818measureBRTryo0(j);
+                i = Math.max(i, mo6818measureBRTryo02.getWidth());
+                i2 = Math.max(i2, mo6818measureBRTryo02.getHeight());
+                arrayList.add(mo6818measureBRTryo02);
             }
             final ArrayList arrayList2 = arrayList;
             return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$SimpleStack$1$1.3

@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
+import androidx.media3.common.StreamKey;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
@@ -10,6 +11,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
+import java.util.List;
 /* loaded from: classes3.dex */
 public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     private final Allocator allocator;
@@ -106,6 +108,11 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public List<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
+        return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getStreamKeys(list);
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
     public TrackGroupArray getTrackGroups() {
         return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).getTrackGroups();
     }
@@ -170,6 +177,15 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
     public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
         ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onContinueLoadingRequested(this);
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaPeriod
+    public long setEndPositionUs(long j) {
+        MediaPeriod mediaPeriod = this.mediaPeriod;
+        if (mediaPeriod != null) {
+            return mediaPeriod.setEndPositionUs(j);
+        }
+        return Long.MIN_VALUE;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod.Callback

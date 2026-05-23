@@ -46,7 +46,7 @@ public class CrashlyticsReportDataCapture {
         hashMap.put("arm64-v8a", 9);
         hashMap.put("x86", 0);
         hashMap.put("x86_64", 1);
-        GENERATOR = String.format(Locale.US, "Crashlytics Android SDK/%s", "20.0.4");
+        GENERATOR = String.format(Locale.US, "Crashlytics Android SDK/%s", "20.0.6");
     }
 
     public CrashlyticsReportDataCapture(Context context, IdManager idManager, AppData appData, StackTraceTrimmingStrategy stackTraceTrimmingStrategy, SettingsProvider settingsProvider) {
@@ -86,7 +86,7 @@ public class CrashlyticsReportDataCapture {
     }
 
     private CrashlyticsReport.Builder buildReportData() {
-        return CrashlyticsReport.builder().setSdkVersion("20.0.4").setGmpAppId(this.appData.googleAppId).setInstallationUuid(this.idManager.getInstallIds().getCrashlyticsInstallId()).setFirebaseInstallationId(this.idManager.getInstallIds().getFirebaseInstallationId()).setFirebaseAuthenticationToken(this.idManager.getInstallIds().getFirebaseAuthenticationToken()).setBuildVersion(this.appData.versionCode).setDisplayVersion(this.appData.versionName).setPlatform(4);
+        return CrashlyticsReport.builder().setSdkVersion("20.0.6").setGmpAppId(this.appData.googleAppId).setInstallationUuid(this.idManager.getInstallIds().getCrashlyticsInstallId()).setFirebaseInstallationId(this.idManager.getInstallIds().getFirebaseInstallationId()).setFirebaseAuthenticationToken(this.idManager.getInstallIds().getFirebaseAuthenticationToken()).setBuildVersion(this.appData.versionCode).setDisplayVersion(this.appData.versionName).setPlatform(4);
     }
 
     private CrashlyticsReport.Session populateSessionData(String str, long j) {

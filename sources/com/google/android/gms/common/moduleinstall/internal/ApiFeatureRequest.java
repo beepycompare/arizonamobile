@@ -15,22 +15,11 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class ApiFeatureRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ApiFeatureRequest> CREATOR = new zac();
-    private static final Comparator zaa = new Comparator() { // from class: com.google.android.gms.common.moduleinstall.internal.zab
-        @Override // java.util.Comparator
-        public final int compare(Object obj, Object obj2) {
-            Feature feature = (Feature) obj;
-            Feature feature2 = (Feature) obj2;
-            Parcelable.Creator<ApiFeatureRequest> creator = ApiFeatureRequest.CREATOR;
-            if (!feature.getName().equals(feature2.getName())) {
-                return feature.getName().compareTo(feature2.getName());
-            }
-            return (feature.getVersion() > feature2.getVersion() ? 1 : (feature.getVersion() == feature2.getVersion() ? 0 : -1));
-        }
-    };
+    private static final Comparator zaa = zab.zaa;
     private final List zab;
     private final boolean zac;
     private final String zad;

@@ -1,10 +1,12 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-public class zzcj {
-    public static final /* synthetic */ int zzb = 0;
+final class zzcj implements zzci {
+    private zzcj() {
+        throw null;
+    }
 
-    static {
-        int i = zzci.zza;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzcj(byte[] bArr) {
     }
 }

@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import android.util.Pair;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.InputDeviceCompat;
@@ -11,11 +12,13 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.UnsignedBytes;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /* loaded from: classes3.dex */
@@ -31,6 +34,8 @@ public final class CodecSpecificDataUtil {
     private static final String CODEC_ID_IAMF = "iamf";
     private static final String CODEC_ID_MP4A = "mp4a";
     private static final String CODEC_ID_VP09 = "vp09";
+    private static final String CODEC_ID_VVC1 = "vvc1";
+    private static final String CODEC_ID_VVI1 = "vvi1";
     private static final int EXTENDED_PAR = 15;
     private static final int OBU_IA_CODEC_CONFIG = 0;
     private static final int OBU_IA_SEQUENCE_HEADER = 31;
@@ -38,6 +43,33 @@ public final class CodecSpecificDataUtil {
     private static final String TAG = "CodecSpecificDataUtil";
     private static final int VISUAL_OBJECT_LAYER = 1;
     private static final int VISUAL_OBJECT_LAYER_START = 32;
+    private static final int VVC_HIGH_TIER_LEVEL_4_0 = 64;
+    private static final int VVC_HIGH_TIER_LEVEL_4_1 = 256;
+    private static final int VVC_HIGH_TIER_LEVEL_5_0 = 1024;
+    private static final int VVC_HIGH_TIER_LEVEL_5_1 = 4096;
+    private static final int VVC_HIGH_TIER_LEVEL_5_2 = 16384;
+    private static final int VVC_HIGH_TIER_LEVEL_6_0 = 65536;
+    private static final int VVC_HIGH_TIER_LEVEL_6_1 = 262144;
+    private static final int VVC_HIGH_TIER_LEVEL_6_2 = 1048576;
+    private static final int VVC_HIGH_TIER_LEVEL_6_3 = 4194304;
+    private static final int VVC_MAIN_TIER_LEVEL_1_0 = 1;
+    private static final int VVC_MAIN_TIER_LEVEL_2_0 = 2;
+    private static final int VVC_MAIN_TIER_LEVEL_2_1 = 4;
+    private static final int VVC_MAIN_TIER_LEVEL_3_0 = 8;
+    private static final int VVC_MAIN_TIER_LEVEL_3_1 = 16;
+    private static final int VVC_MAIN_TIER_LEVEL_4_0 = 32;
+    private static final int VVC_MAIN_TIER_LEVEL_4_1 = 128;
+    private static final int VVC_MAIN_TIER_LEVEL_5_0 = 512;
+    private static final int VVC_MAIN_TIER_LEVEL_5_1 = 2048;
+    private static final int VVC_MAIN_TIER_LEVEL_5_2 = 8192;
+    private static final int VVC_MAIN_TIER_LEVEL_6_0 = 32768;
+    private static final int VVC_MAIN_TIER_LEVEL_6_1 = 131072;
+    private static final int VVC_MAIN_TIER_LEVEL_6_2 = 524288;
+    private static final int VVC_MAIN_TIER_LEVEL_6_3 = 2097152;
+    private static final int VVC_PROFILE_MAIN_10 = 2;
+    private static final int VVC_PROFILE_MAIN_10_HDR10 = 4096;
+    private static final int VVC_PROFILE_MAIN_10_STILL = 4;
+    private static final int VVC_PROFILE_MAIN_8 = 1;
     private static final byte[] NAL_START_CODE = {0, 0, 0, 1};
     private static final String[] HEVC_GENERAL_PROFILE_SPACE_STRINGS = {"", ExifInterface.GPS_MEASUREMENT_IN_PROGRESS, "B", "C"};
     private static final Pattern PROFILE_PATTERN = Pattern.compile("^\\D?(\\d+)$");
@@ -423,6 +455,26 @@ public final class CodecSpecificDataUtil {
         return bArr;
     }
 
+    public static byte[] getOpusInitializationData(Format format) {
+        Preconditions.checkArgument(!format.initializationData.isEmpty(), "csd-0 must be present for Opus.");
+        int i = 0;
+        byte[] bArr = format.initializationData.get(0);
+        Preconditions.checkArgument(bArr.length >= 8);
+        ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
+        int length = bArr.length;
+        String readString = parsableByteArray.readString(8);
+        if (readString.equals("AOPUSHDR")) {
+            Preconditions.checkArgument(bArr.length >= 24);
+            long readLittleEndianLong = parsableByteArray.readLittleEndianLong();
+            Preconditions.checkArgument(16 + readLittleEndianLong <= ((long) bArr.length));
+            length = (int) readLittleEndianLong;
+            i = 16;
+        } else {
+            Preconditions.checkArgument(readString.equals("OpusHead"));
+        }
+        return Arrays.copyOfRange(bArr, i, length + i);
+    }
+
     public static Pair<Integer, Integer> getVideoResolutionFromMpeg4VideoConfig(byte[] bArr) {
         boolean z;
         ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
@@ -501,7 +553,7 @@ public final class CodecSpecificDataUtil {
         Preconditions.checkArgument(bArr.length >= 17, "Invalid APV CSD length: %s", bArr.length);
         byte b = bArr[0];
         Preconditions.checkArgument(b == 1, "Invalid APV CSD version: %s", (int) b);
-        return Util.formatInvariant("apv1.apvf%d.apvl%d.apvb%d", Integer.valueOf(bArr[5]), Integer.valueOf(bArr[6]), Integer.valueOf(bArr[7]));
+        return Util.formatInvariant("apv1.apvf%d.apvl%d.apvb%d", Integer.valueOf(UnsignedBytes.toInt(bArr[5])), Integer.valueOf(UnsignedBytes.toInt(bArr[6])), Integer.valueOf(UnsignedBytes.toInt(bArr[7])));
     }
 
     public static String buildH263CodecString(int i, int i2) {
@@ -519,7 +571,7 @@ public final class CodecSpecificDataUtil {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ca, code lost:
         if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AC4) == false) goto L11;
      */
     /*
@@ -609,6 +661,20 @@ public final class CodecSpecificDataUtil {
                 }
                 c = 65535;
                 break;
+            case 3631854:
+                if (str.equals(CODEC_ID_VVC1)) {
+                    c = 11;
+                    break;
+                }
+                c = 65535;
+                break;
+            case 3632040:
+                if (str.equals(CODEC_ID_VVI1)) {
+                    c = '\f';
+                    break;
+                }
+                c = 65535;
+                break;
             default:
                 c = 65535;
                 break;
@@ -634,6 +700,240 @@ public final class CodecSpecificDataUtil {
                 return getH263ProfileAndLevel(format.codecs, split);
             case '\n':
                 return getVp9ProfileAndLevel(format.codecs, split);
+            case 11:
+            case '\f':
+                return getVvcProfileAndLevel(format.codecs, split, format.colorInfo);
+            default:
+                return null;
+        }
+    }
+
+    private static Pair<Integer, Integer> getVvcProfileAndLevel(String str, String[] strArr, ColorInfo colorInfo) {
+        if (strArr.length < 3) {
+            Log.w(TAG, "Ignoring malformed VVC codec string: " + str);
+            return null;
+        }
+        int i = 1;
+        try {
+            int parseInt = Integer.parseInt(strArr[1]);
+            if (parseInt == 1) {
+                if (colorInfo != null && colorInfo.colorTransfer == 6) {
+                    i = 4096;
+                } else if (colorInfo == null || colorInfo.lumaBitdepth != 8) {
+                    i = 2;
+                }
+            } else if (parseInt != 65) {
+                Log.w(TAG, "Unknown VVC profile IDC: " + strArr[1]);
+                return null;
+            } else {
+                i = 4;
+            }
+            String str2 = strArr[2];
+            Integer vvcCodecStringToProfileLevel = vvcCodecStringToProfileLevel(str2);
+            if (vvcCodecStringToProfileLevel == null) {
+                Log.w(TAG, "Unknown VVC level string: " + str2);
+                return null;
+            }
+            return new Pair<>(Integer.valueOf(i), vvcCodecStringToProfileLevel);
+        } catch (NumberFormatException unused) {
+            Log.w(TAG, "Ignoring malformed VVC codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Integer vvcCodecStringToProfileLevel(String str) {
+        if (str == null) {
+            return null;
+        }
+        str.hashCode();
+        char c = 65535;
+        switch (str.hashCode()) {
+            case 70918:
+                if (str.equals("H64")) {
+                    c = 0;
+                    break;
+                }
+                break;
+            case 70921:
+                if (str.equals("H67")) {
+                    c = 1;
+                    break;
+                }
+                break;
+            case 70976:
+                if (str.equals("H80")) {
+                    c = 2;
+                    break;
+                }
+                break;
+            case 70979:
+                if (str.equals("H83")) {
+                    c = 3;
+                    break;
+                }
+                break;
+            case 70982:
+                if (str.equals("H86")) {
+                    c = 4;
+                    break;
+                }
+                break;
+            case 71013:
+                if (str.equals("H96")) {
+                    c = 5;
+                    break;
+                }
+                break;
+            case 74609:
+                if (str.equals("L16")) {
+                    c = 6;
+                    break;
+                }
+                break;
+            case 74667:
+                if (str.equals("L32")) {
+                    c = 7;
+                    break;
+                }
+                break;
+            case 74670:
+                if (str.equals("L35")) {
+                    c = '\b';
+                    break;
+                }
+                break;
+            case 74704:
+                if (str.equals("L48")) {
+                    c = '\t';
+                    break;
+                }
+                break;
+            case 74728:
+                if (str.equals("L51")) {
+                    c = '\n';
+                    break;
+                }
+                break;
+            case 74762:
+                if (str.equals("L64")) {
+                    c = 11;
+                    break;
+                }
+                break;
+            case 74765:
+                if (str.equals("L67")) {
+                    c = '\f';
+                    break;
+                }
+                break;
+            case 74820:
+                if (str.equals("L80")) {
+                    c = '\r';
+                    break;
+                }
+                break;
+            case 74823:
+                if (str.equals("L83")) {
+                    c = 14;
+                    break;
+                }
+                break;
+            case 74826:
+                if (str.equals("L86")) {
+                    c = 15;
+                    break;
+                }
+                break;
+            case 74857:
+                if (str.equals("L96")) {
+                    c = 16;
+                    break;
+                }
+                break;
+            case 2193610:
+                if (str.equals("H112")) {
+                    c = 17;
+                    break;
+                }
+                break;
+            case 2193647:
+                if (str.equals("H128")) {
+                    c = 18;
+                    break;
+                }
+                break;
+            case 2193705:
+                if (str.equals("H144")) {
+                    c = 19;
+                    break;
+                }
+                break;
+            case 2312774:
+                if (str.equals("L112")) {
+                    c = 20;
+                    break;
+                }
+                break;
+            case 2312811:
+                if (str.equals("L128")) {
+                    c = 21;
+                    break;
+                }
+                break;
+            case 2312869:
+                if (str.equals("L144")) {
+                    c = 22;
+                    break;
+                }
+                break;
+        }
+        switch (c) {
+            case 0:
+                return 64;
+            case 1:
+                return 256;
+            case 2:
+                return 1024;
+            case 3:
+                return 4096;
+            case 4:
+                return 16384;
+            case 5:
+                return 65536;
+            case 6:
+                return 1;
+            case 7:
+                return 2;
+            case '\b':
+                return 4;
+            case '\t':
+                return 8;
+            case '\n':
+                return 16;
+            case 11:
+                return 32;
+            case '\f':
+                return 128;
+            case '\r':
+                return 512;
+            case 14:
+                return 2048;
+            case 15:
+                return 8192;
+            case 16:
+                return 32768;
+            case 17:
+                return 262144;
+            case 18:
+                return 1048576;
+            case 19:
+                return 4194304;
+            case 20:
+                return 131072;
+            case 21:
+                return 524288;
+            case 22:
+                return 2097152;
             default:
                 return null;
         }
@@ -824,6 +1124,24 @@ public final class CodecSpecificDataUtil {
             return null;
         }
         return new Pair<>(dolbyVisionStringToProfile, dolbyVisionStringToLevel);
+    }
+
+    public static String getDolbyVisionBaseLayerMimeType(Format format) {
+        Pair<Integer, Integer> codecProfileAndLevel;
+        if (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_DOLBY_VISION) && (codecProfileAndLevel = getCodecProfileAndLevel(format)) != null) {
+            int intValue = ((Integer) codecProfileAndLevel.first).intValue();
+            if (intValue == 16 || intValue == 32 || intValue == 256) {
+                return MimeTypes.VIDEO_H265;
+            }
+            if (intValue != 512) {
+                if (intValue != 1024) {
+                    return null;
+                }
+                return MimeTypes.VIDEO_AV1;
+            }
+            return MimeTypes.VIDEO_H264;
+        }
+        return null;
     }
 
     private static Pair<Integer, Integer> getH263ProfileAndLevel(String str, String[] strArr) {
@@ -1265,7 +1583,7 @@ public final class CodecSpecificDataUtil {
             case 16:
                 return 8388608;
             case 17:
-                return 33554432;
+                return Integer.valueOf((int) GroupFlagsKt.HasAuxSlotFlag);
             case 18:
                 return 1024;
             case 19:

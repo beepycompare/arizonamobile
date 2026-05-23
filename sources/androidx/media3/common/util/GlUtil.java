@@ -14,6 +14,7 @@ import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import android.os.Build;
 import androidx.media3.common.C;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.adjust.sdk.Constants;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -32,6 +33,7 @@ public final class GlUtil {
     private static final String EXTENSION_SURFACELESS_CONTEXT = "EGL_KHR_surfaceless_context";
     private static final String EXTENSION_YUV_TARGET = "GL_EXT_YUV_target";
     private static final long GL_FENCE_SYNC_FAILED = 0;
+    public static final long GL_FENCE_SYNC_UNSET = -1;
     public static final int HOMOGENEOUS_COORDINATE_VECTOR_SIZE = 4;
     public static final float LENGTH_NDC = 2.0f;
     public static final int MAX_BITMAP_DECODING_SIZE = 4096;
@@ -141,7 +143,7 @@ public final class GlUtil {
         EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
         checkGlException(!eglGetDisplay.equals(EGL14.EGL_NO_DISPLAY), "No EGL display.");
         checkGlException(EGL14.eglInitialize(eglGetDisplay, new int[1], 0, new int[1], 0), "Error in eglInitialize.");
-        checkGlError();
+        checkEglException("Error in getDefaultEglDisplay");
         return eglGetDisplay;
     }
 
@@ -161,7 +163,7 @@ public final class GlUtil {
             EGL14.eglTerminate(eGLDisplay);
             throw new GlException("eglCreateContext() failed to create a valid context. The device may not support EGL version " + i);
         }
-        checkGlError();
+        checkEglException("Error in createEglContext");
         return eglCreateContext;
     }
 
@@ -235,10 +237,16 @@ public final class GlUtil {
     }
 
     public static void deleteSyncObjectQuietly(long j) {
+        if (j == -1) {
+            return;
+        }
         GLES30.glDeleteSync(j);
     }
 
     public static void awaitSyncObject(long j) throws GlException {
+        if (j == -1) {
+            return;
+        }
         if (j == 0) {
             GLES20.glFinish();
             return;
@@ -273,6 +281,13 @@ public final class GlUtil {
         }
         if (z) {
             throw new GlException(sb.toString(), builder.build());
+        }
+    }
+
+    public static void checkEglException(String str) throws GlException {
+        int eglGetError = EGL14.eglGetError();
+        if (eglGetError != 12288) {
+            throw new GlException(str + ", error code: 0x" + Integer.toHexString(eglGetError), ImmutableList.of(Integer.valueOf(eglGetError)));
         }
     }
 
@@ -521,12 +536,12 @@ public final class GlUtil {
         EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, eGLContext);
         checkEglException("Error making context current");
         focusFramebufferUsingCurrentContext(i, i2, i3);
-    }
-
-    private static void checkEglException(String str) throws GlException {
-        int eglGetError = EGL14.eglGetError();
-        if (eglGetError != 12288) {
-            throw new GlException(str + ", error code: 0x" + Integer.toHexString(eglGetError), ImmutableList.of(Integer.valueOf(eglGetError)));
+        if (eGLSurface.equals(EGL14.EGL_NO_SURFACE) || i != 0 || getContextMajorVersion() < 3) {
+            return;
         }
+        GLES30.glDrawBuffers(1, new int[]{AnalyticsListener.EVENT_AUDIO_CODEC_ERROR}, 0);
+        checkGlError();
+        GLES30.glReadBuffer(AnalyticsListener.EVENT_AUDIO_CODEC_ERROR);
+        checkGlError();
     }
 }

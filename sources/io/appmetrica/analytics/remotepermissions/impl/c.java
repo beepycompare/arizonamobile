@@ -1,49 +1,47 @@
 package io.appmetrica.analytics.remotepermissions.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import java.util.ArrayList;
-import java.util.Set;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.SetsKt;
-import kotlin.text.Charsets;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
+import io.appmetrica.analytics.remotepermissions.internal.config.FeatureConfig;
+import java.util.HashSet;
+import org.json.JSONArray;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class c implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+public final class c implements JsonParser {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f1422a = "permissions";
+    public final String b = "name";
+    public final String c = "list";
+    public final String d = "enabled";
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
     /* renamed from: a */
-    public final f fromModel(a aVar) {
-        f fVar = new f();
-        Set<String> set = aVar.f1439a;
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(set, 10));
-        for (String str : set) {
-            arrayList.add(str.getBytes(Charsets.UTF_8));
+    public final FeatureConfig parse(JSONObject jSONObject) {
+        JSONArray optJSONArray;
+        HashSet hashSet = new HashSet();
+        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1422a);
+        if (optJSONObject != null && (optJSONArray = optJSONObject.optJSONArray(this.c)) != null) {
+            int length = optJSONArray.length();
+            for (int i = 0; i < length; i++) {
+                JSONObject optJSONObject2 = optJSONArray.optJSONObject(i);
+                if (optJSONObject2 != null && optJSONObject2.optBoolean(this.d)) {
+                    String optString = optJSONObject2.optString(this.b);
+                    if (!TextUtils.isEmpty(optString)) {
+                        hashSet.add(optString);
+                    }
+                }
+            }
         }
-        Object[] array = arrayList.toArray(new byte[0]);
-        if (array != null) {
-            fVar.f1443a = (byte[][]) array;
-            return fVar;
-        }
-        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+        return new FeatureConfig(hashSet);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0021, code lost:
-        if (r5 == null) goto L12;
-     */
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final a toModel(f fVar) {
-        Set emptySet;
-        byte[][] bArr = fVar.f1443a;
-        if (bArr != null) {
-            ArrayList arrayList = new ArrayList(bArr.length);
-            for (byte[] bArr2 : bArr) {
-                arrayList.add(new String(bArr2, Charsets.UTF_8));
-            }
-            emptySet = CollectionsKt.toSet(arrayList);
-        }
-        emptySet = SetsKt.emptySet();
-        return new a(emptySet);
+    public final FeatureConfig b(JSONObject jSONObject) {
+        return (FeatureConfig) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
+    public final Object parseOrNull(JSONObject jSONObject) {
+        return (FeatureConfig) JsonParser.DefaultImpls.parseOrNull(this, jSONObject);
     }
 }

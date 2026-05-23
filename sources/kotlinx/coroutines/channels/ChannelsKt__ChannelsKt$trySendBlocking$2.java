@@ -7,18 +7,21 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Channels.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/channels/ChannelResult;", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$trySendBlocking$2", f = "Channels.kt", i = {}, l = {39}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlinx/coroutines/channels/ChannelResult;", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$trySendBlocking$2", f = "Channels.kt", i = {0, 0, 0}, l = {39}, m = "invokeSuspend", n = {"$this$runBlocking", "$this$invokeSuspend_u24lambda_u240", "$i$a$-runCatching-ChannelsKt__ChannelsKt$trySendBlocking$2$r$1"}, s = {"L$0", "L$1", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ChannelResult<? extends Unit>>, Object> {
     final /* synthetic */ E $element;
     final /* synthetic */ SendChannel<E> $this_trySendBlocking;
+    int I$0;
     private /* synthetic */ Object L$0;
+    Object L$1;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -49,16 +52,19 @@ public final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambd
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9202constructorimpl;
+        Object m9842constructorimpl;
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
                 SendChannel<E> sendChannel = this.$this_trySendBlocking;
                 E e = this.$element;
                 Result.Companion companion = Result.Companion;
+                this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
+                this.L$1 = SpillingKt.nullOutSpilledVariable(coroutineScope);
+                this.I$0 = 0;
                 this.label = 1;
                 if (sendChannel.send(e, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -66,13 +72,14 @@ public final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambd
             } else if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
+                CoroutineScope coroutineScope2 = (CoroutineScope) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
-            m9202constructorimpl = Result.m9202constructorimpl(Unit.INSTANCE);
+            m9842constructorimpl = Result.m9842constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9202constructorimpl = Result.m9202constructorimpl(ResultKt.createFailure(th));
+            m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
         }
-        return ChannelResult.m10729boximpl(Result.m9209isSuccessimpl(m9202constructorimpl) ? ChannelResult.Companion.m10744successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m10742closedJP2dKIU(Result.m9205exceptionOrNullimpl(m9202constructorimpl)));
+        return ChannelResult.m11369boximpl(Result.m9849isSuccessimpl(m9842constructorimpl) ? ChannelResult.Companion.m11384successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m11382closedJP2dKIU(Result.m9845exceptionOrNullimpl(m9842constructorimpl)));
     }
 }

@@ -49,87 +49,87 @@ public final class SwitchColors {
     }
 
     /* renamed from: getCheckedThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m2582getCheckedThumbColor0d7_KjU() {
+    public final long m3027getCheckedThumbColor0d7_KjU() {
         return this.checkedThumbColor;
     }
 
     /* renamed from: getCheckedTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2583getCheckedTrackColor0d7_KjU() {
+    public final long m3028getCheckedTrackColor0d7_KjU() {
         return this.checkedTrackColor;
     }
 
     /* renamed from: getCheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2580getCheckedBorderColor0d7_KjU() {
+    public final long m3025getCheckedBorderColor0d7_KjU() {
         return this.checkedBorderColor;
     }
 
     /* renamed from: getCheckedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2581getCheckedIconColor0d7_KjU() {
+    public final long m3026getCheckedIconColor0d7_KjU() {
         return this.checkedIconColor;
     }
 
     /* renamed from: getUncheckedThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m2594getUncheckedThumbColor0d7_KjU() {
+    public final long m3039getUncheckedThumbColor0d7_KjU() {
         return this.uncheckedThumbColor;
     }
 
     /* renamed from: getUncheckedTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2595getUncheckedTrackColor0d7_KjU() {
+    public final long m3040getUncheckedTrackColor0d7_KjU() {
         return this.uncheckedTrackColor;
     }
 
     /* renamed from: getUncheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2592getUncheckedBorderColor0d7_KjU() {
+    public final long m3037getUncheckedBorderColor0d7_KjU() {
         return this.uncheckedBorderColor;
     }
 
     /* renamed from: getUncheckedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2593getUncheckedIconColor0d7_KjU() {
+    public final long m3038getUncheckedIconColor0d7_KjU() {
         return this.uncheckedIconColor;
     }
 
     /* renamed from: getDisabledCheckedThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m2586getDisabledCheckedThumbColor0d7_KjU() {
+    public final long m3031getDisabledCheckedThumbColor0d7_KjU() {
         return this.disabledCheckedThumbColor;
     }
 
     /* renamed from: getDisabledCheckedTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2587getDisabledCheckedTrackColor0d7_KjU() {
+    public final long m3032getDisabledCheckedTrackColor0d7_KjU() {
         return this.disabledCheckedTrackColor;
     }
 
     /* renamed from: getDisabledCheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2584getDisabledCheckedBorderColor0d7_KjU() {
+    public final long m3029getDisabledCheckedBorderColor0d7_KjU() {
         return this.disabledCheckedBorderColor;
     }
 
     /* renamed from: getDisabledCheckedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2585getDisabledCheckedIconColor0d7_KjU() {
+    public final long m3030getDisabledCheckedIconColor0d7_KjU() {
         return this.disabledCheckedIconColor;
     }
 
     /* renamed from: getDisabledUncheckedThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m2590getDisabledUncheckedThumbColor0d7_KjU() {
+    public final long m3035getDisabledUncheckedThumbColor0d7_KjU() {
         return this.disabledUncheckedThumbColor;
     }
 
     /* renamed from: getDisabledUncheckedTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2591getDisabledUncheckedTrackColor0d7_KjU() {
+    public final long m3036getDisabledUncheckedTrackColor0d7_KjU() {
         return this.disabledUncheckedTrackColor;
     }
 
     /* renamed from: getDisabledUncheckedBorderColor-0d7_KjU  reason: not valid java name */
-    public final long m2588getDisabledUncheckedBorderColor0d7_KjU() {
+    public final long m3033getDisabledUncheckedBorderColor0d7_KjU() {
         return this.disabledUncheckedBorderColor;
     }
 
     /* renamed from: getDisabledUncheckedIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2589getDisabledUncheckedIconColor0d7_KjU() {
+    public final long m3034getDisabledUncheckedIconColor0d7_KjU() {
         return this.disabledUncheckedIconColor;
     }
 
     /* renamed from: copy-Q_H9qLU$default  reason: not valid java name */
-    public static /* synthetic */ SwitchColors m2577copyQ_H9qLU$default(SwitchColors switchColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, int i, Object obj) {
+    public static /* synthetic */ SwitchColors m3022copyQ_H9qLU$default(SwitchColors switchColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, int i, Object obj) {
         long j17;
         long j18;
         long j19;
@@ -197,31 +197,31 @@ public final class SwitchColors {
             j30 = j37;
             j31 = j38;
         }
-        return switchColors2.m2579copyQ_H9qLU(j39, j26, j27, j28, j29, j30, j31, j19, j20, j21, j22, j23, j24, j25, j18, j17);
+        return switchColors2.m3024copyQ_H9qLU(j39, j26, j27, j28, j29, j30, j31, j19, j20, j21, j22, j23, j24, j25, j18, j17);
     }
 
     /* renamed from: copy-Q_H9qLU  reason: not valid java name */
-    public final SwitchColors m2579copyQ_H9qLU(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16) {
+    public final SwitchColors m3024copyQ_H9qLU(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16) {
         return new SwitchColors(j != 16 ? j : this.checkedThumbColor, j2 != 16 ? j2 : this.checkedTrackColor, j3 != 16 ? j3 : this.checkedBorderColor, j4 != 16 ? j4 : this.checkedIconColor, j5 != 16 ? j5 : this.uncheckedThumbColor, j6 != 16 ? j6 : this.uncheckedTrackColor, j7 != 16 ? j7 : this.uncheckedBorderColor, j8 != 16 ? j8 : this.uncheckedIconColor, j9 != 16 ? j9 : this.disabledCheckedThumbColor, j10 != 16 ? j10 : this.disabledCheckedTrackColor, j11 != 16 ? j11 : this.disabledCheckedBorderColor, j12 != 16 ? j12 : this.disabledCheckedIconColor, j13 != 16 ? j13 : this.disabledUncheckedThumbColor, j14 != 16 ? j14 : this.disabledUncheckedTrackColor, j15 != 16 ? j15 : this.disabledUncheckedBorderColor, j16 != 16 ? j16 : this.disabledUncheckedIconColor, null);
     }
 
     /* renamed from: thumbColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2597thumbColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m3042thumbColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.checkedThumbColor : this.uncheckedThumbColor : z2 ? this.disabledCheckedThumbColor : this.disabledUncheckedThumbColor;
     }
 
     /* renamed from: trackColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2598trackColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m3043trackColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.checkedTrackColor : this.uncheckedTrackColor : z2 ? this.disabledCheckedTrackColor : this.disabledUncheckedTrackColor;
     }
 
     /* renamed from: borderColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2578borderColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m3023borderColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.checkedBorderColor : this.uncheckedBorderColor : z2 ? this.disabledCheckedBorderColor : this.disabledUncheckedBorderColor;
     }
 
     /* renamed from: iconColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m2596iconColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m3041iconColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.checkedIconColor : this.uncheckedIconColor : z2 ? this.disabledCheckedIconColor : this.disabledUncheckedIconColor;
     }
 
@@ -233,10 +233,10 @@ public final class SwitchColors {
             return false;
         }
         SwitchColors switchColors = (SwitchColors) obj;
-        return Color.m4773equalsimpl0(this.checkedThumbColor, switchColors.checkedThumbColor) && Color.m4773equalsimpl0(this.checkedTrackColor, switchColors.checkedTrackColor) && Color.m4773equalsimpl0(this.checkedBorderColor, switchColors.checkedBorderColor) && Color.m4773equalsimpl0(this.checkedIconColor, switchColors.checkedIconColor) && Color.m4773equalsimpl0(this.uncheckedThumbColor, switchColors.uncheckedThumbColor) && Color.m4773equalsimpl0(this.uncheckedTrackColor, switchColors.uncheckedTrackColor) && Color.m4773equalsimpl0(this.uncheckedBorderColor, switchColors.uncheckedBorderColor) && Color.m4773equalsimpl0(this.uncheckedIconColor, switchColors.uncheckedIconColor) && Color.m4773equalsimpl0(this.disabledCheckedThumbColor, switchColors.disabledCheckedThumbColor) && Color.m4773equalsimpl0(this.disabledCheckedTrackColor, switchColors.disabledCheckedTrackColor) && Color.m4773equalsimpl0(this.disabledCheckedBorderColor, switchColors.disabledCheckedBorderColor) && Color.m4773equalsimpl0(this.disabledCheckedIconColor, switchColors.disabledCheckedIconColor) && Color.m4773equalsimpl0(this.disabledUncheckedThumbColor, switchColors.disabledUncheckedThumbColor) && Color.m4773equalsimpl0(this.disabledUncheckedTrackColor, switchColors.disabledUncheckedTrackColor) && Color.m4773equalsimpl0(this.disabledUncheckedBorderColor, switchColors.disabledUncheckedBorderColor) && Color.m4773equalsimpl0(this.disabledUncheckedIconColor, switchColors.disabledUncheckedIconColor);
+        return Color.m5349equalsimpl0(this.checkedThumbColor, switchColors.checkedThumbColor) && Color.m5349equalsimpl0(this.checkedTrackColor, switchColors.checkedTrackColor) && Color.m5349equalsimpl0(this.checkedBorderColor, switchColors.checkedBorderColor) && Color.m5349equalsimpl0(this.checkedIconColor, switchColors.checkedIconColor) && Color.m5349equalsimpl0(this.uncheckedThumbColor, switchColors.uncheckedThumbColor) && Color.m5349equalsimpl0(this.uncheckedTrackColor, switchColors.uncheckedTrackColor) && Color.m5349equalsimpl0(this.uncheckedBorderColor, switchColors.uncheckedBorderColor) && Color.m5349equalsimpl0(this.uncheckedIconColor, switchColors.uncheckedIconColor) && Color.m5349equalsimpl0(this.disabledCheckedThumbColor, switchColors.disabledCheckedThumbColor) && Color.m5349equalsimpl0(this.disabledCheckedTrackColor, switchColors.disabledCheckedTrackColor) && Color.m5349equalsimpl0(this.disabledCheckedBorderColor, switchColors.disabledCheckedBorderColor) && Color.m5349equalsimpl0(this.disabledCheckedIconColor, switchColors.disabledCheckedIconColor) && Color.m5349equalsimpl0(this.disabledUncheckedThumbColor, switchColors.disabledUncheckedThumbColor) && Color.m5349equalsimpl0(this.disabledUncheckedTrackColor, switchColors.disabledUncheckedTrackColor) && Color.m5349equalsimpl0(this.disabledUncheckedBorderColor, switchColors.disabledUncheckedBorderColor) && Color.m5349equalsimpl0(this.disabledUncheckedIconColor, switchColors.disabledUncheckedIconColor);
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((((((Color.m4779hashCodeimpl(this.checkedThumbColor) * 31) + Color.m4779hashCodeimpl(this.checkedTrackColor)) * 31) + Color.m4779hashCodeimpl(this.checkedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.checkedIconColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedThumbColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedTrackColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.uncheckedIconColor)) * 31) + Color.m4779hashCodeimpl(this.disabledCheckedThumbColor)) * 31) + Color.m4779hashCodeimpl(this.disabledCheckedTrackColor)) * 31) + Color.m4779hashCodeimpl(this.disabledCheckedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.disabledCheckedIconColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedThumbColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedTrackColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedBorderColor)) * 31) + Color.m4779hashCodeimpl(this.disabledUncheckedIconColor);
+        return (((((((((((((((((((((((((((((Color.m5355hashCodeimpl(this.checkedThumbColor) * 31) + Color.m5355hashCodeimpl(this.checkedTrackColor)) * 31) + Color.m5355hashCodeimpl(this.checkedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.checkedIconColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedThumbColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedTrackColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.uncheckedIconColor)) * 31) + Color.m5355hashCodeimpl(this.disabledCheckedThumbColor)) * 31) + Color.m5355hashCodeimpl(this.disabledCheckedTrackColor)) * 31) + Color.m5355hashCodeimpl(this.disabledCheckedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.disabledCheckedIconColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedThumbColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedTrackColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedBorderColor)) * 31) + Color.m5355hashCodeimpl(this.disabledUncheckedIconColor);
     }
 }

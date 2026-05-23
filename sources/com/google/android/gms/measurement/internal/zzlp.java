@@ -1,6 +1,6 @@
 package com.google.android.gms.measurement.internal;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzlp extends zzos {
     public zzlp(zzpg zzpgVar) {
@@ -13,7 +13,7 @@ public final class zzlp extends zzos {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzos
-    protected final boolean zzbb() {
+    protected final boolean zzbc() {
         return false;
     }
 }

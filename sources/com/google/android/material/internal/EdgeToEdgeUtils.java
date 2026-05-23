@@ -35,8 +35,8 @@ public class EdgeToEdgeUtils {
         WindowCompat.setDecorFitsSystemWindows(window, !z);
         int statusBarColor = getStatusBarColor(window.getContext(), z);
         int navigationBarColor = getNavigationBarColor(window.getContext(), z);
-        window.setStatusBarColor(statusBarColor);
-        window.setNavigationBarColor(navigationBarColor);
+        setStatusBarColor(window, statusBarColor);
+        setNavigationBarColor(window, navigationBarColor);
         setLightStatusBar(window, isUsingLightSystemBar(statusBarColor, MaterialColors.isColorLight(num.intValue())));
         setLightNavigationBar(window, isUsingLightSystemBar(navigationBarColor, MaterialColors.isColorLight(num2.intValue())));
     }
@@ -56,6 +56,12 @@ public class EdgeToEdgeUtils {
         return MaterialColors.getColor(context, 16843857, -16777216);
     }
 
+    public static void setStatusBarColor(Window window, int i) {
+        if (Build.VERSION.SDK_INT < 35) {
+            window.setStatusBarColor(i);
+        }
+    }
+
     private static int getNavigationBarColor(Context context, boolean z) {
         if (!z || Build.VERSION.SDK_INT >= 27) {
             if (z) {
@@ -64,6 +70,19 @@ public class EdgeToEdgeUtils {
             return MaterialColors.getColor(context, 16843858, -16777216);
         }
         return ColorUtils.setAlphaComponent(MaterialColors.getColor(context, 16843858, -16777216), 128);
+    }
+
+    public static int getNavigationBarColor(Window window) {
+        if (Build.VERSION.SDK_INT < 35) {
+            return window.getNavigationBarColor();
+        }
+        return 0;
+    }
+
+    public static void setNavigationBarColor(Window window, int i) {
+        if (Build.VERSION.SDK_INT < 35) {
+            window.setNavigationBarColor(i);
+        }
     }
 
     private static boolean isUsingLightSystemBar(int i, boolean z) {

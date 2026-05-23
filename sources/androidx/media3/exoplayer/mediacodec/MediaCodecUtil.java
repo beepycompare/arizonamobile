@@ -23,14 +23,14 @@ import java.util.HashMap;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaCodecUtil {
     private static final String TAG = "MediaCodecUtil";
     private static final HashMap<CodecKey, List<MediaCodecInfo>> decoderInfosCache = new HashMap<>();
     private static int maxH264DecodableFrameSize = -1;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface MediaCodecListCompat {
         int getCodecCount();
 
@@ -44,7 +44,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ScoreProvider<T> {
         int getScore(T t);
     }
@@ -86,7 +86,7 @@ public final class MediaCodecUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class DecoderQueryException extends Exception {
         private DecoderQueryException(Throwable th) {
             super("Failed to query underlying media codecs", th);
@@ -256,6 +256,9 @@ public final class MediaCodecUtil {
                 return MimeTypes.VIDEO_H264;
             }
             if (intValue == 1024) {
+                if (format.colorInfo != null && format.colorInfo.colorTransfer == 6 && format.colorInfo.colorRange == 1) {
+                    return null;
+                }
                 return MimeTypes.VIDEO_AV1;
             }
         }
@@ -489,7 +492,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaCodecListCompatV21 implements MediaCodecListCompat {
         private final int codecKind;
         private android.media.MediaCodecInfo[] mediaCodecInfos;
@@ -533,7 +536,7 @@ public final class MediaCodecUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.MediaCodecListCompat
         public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -565,7 +568,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class CodecKey {
         public final String mimeType;
         public final boolean secure;

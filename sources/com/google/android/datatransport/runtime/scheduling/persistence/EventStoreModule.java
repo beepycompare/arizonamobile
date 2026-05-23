@@ -8,7 +8,7 @@ import com.google.android.datatransport.runtime.synchronization.SynchronizationG
 import javax.inject.Named;
 import javax.inject.Singleton;
 @Module
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EventStoreModule {
     @Binds
     abstract ClientHealthMetricsStore clientHealthMetricsStore(SQLiteEventStore sQLiteEventStore);

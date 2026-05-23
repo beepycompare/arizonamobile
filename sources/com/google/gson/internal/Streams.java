@@ -5,11 +5,13 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
-import com.google.gson.internal.bind.TypeAdapters;
+import com.google.gson.internal.bind.JsonElementTypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
+import java.io.Closeable;
 import java.io.EOFException;
+import java.io.Flushable;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Objects;
@@ -30,7 +32,7 @@ public final class Streams {
                 z = true;
             }
             try {
-                return TypeAdapters.JSON_ELEMENT.read(jsonReader);
+                return JsonElementTypeAdapter.ADAPTER.read(jsonReader);
             } catch (EOFException e2) {
                 e = e2;
                 if (z) {
@@ -48,7 +50,7 @@ public final class Streams {
     }
 
     public static void write(JsonElement jsonElement, JsonWriter jsonWriter) throws IOException {
-        TypeAdapters.JSON_ELEMENT.write(jsonWriter, jsonElement);
+        JsonElementTypeAdapter.ADAPTER.write(jsonWriter, jsonElement);
     }
 
     public static Writer writerForAppendable(Appendable appendable) {
@@ -60,14 +62,6 @@ public final class Streams {
         private final Appendable appendable;
         private final CurrentWrite currentWrite = new CurrentWrite();
 
-        @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
-        public void close() {
-        }
-
-        @Override // java.io.Writer, java.io.Flushable
-        public void flush() {
-        }
-
         AppendableWriter(Appendable appendable) {
             this.appendable = appendable;
         }
@@ -76,6 +70,22 @@ public final class Streams {
         public void write(char[] cArr, int i, int i2) throws IOException {
             this.currentWrite.setChars(cArr);
             this.appendable.append(this.currentWrite, i, i2 + i);
+        }
+
+        @Override // java.io.Writer, java.io.Flushable
+        public void flush() throws IOException {
+            Appendable appendable = this.appendable;
+            if (appendable instanceof Flushable) {
+                ((Flushable) appendable).flush();
+            }
+        }
+
+        @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
+        public void close() throws IOException {
+            Appendable appendable = this.appendable;
+            if (appendable instanceof Closeable) {
+                ((Closeable) appendable).close();
+            }
         }
 
         @Override // java.io.Writer

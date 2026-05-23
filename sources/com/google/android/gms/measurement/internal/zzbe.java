@@ -1,68 +1,33 @@
 package com.google.android.gms.measurement.internal;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import java.util.Iterator;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzbe extends AbstractSafeParcelable implements Iterable<String> {
-    public static final Parcelable.Creator<zzbe> CREATOR = new zzbf();
-    private final Bundle zza;
+final class zzbe implements Iterator {
+    final Iterator zza;
+    final /* synthetic */ zzbf zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzbe(Bundle bundle) {
-        this.zza = bundle;
+    public zzbe(zzbf zzbfVar) {
+        Objects.requireNonNull(zzbfVar);
+        this.zzb = zzbfVar;
+        this.zza = zzbfVar.zzg().keySet().iterator();
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator<String> iterator() {
-        return new zzbd(this);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.zza.hasNext();
     }
 
-    public final String toString() {
-        return this.zza.toString();
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Remove not supported");
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeBundle(parcel, 2, zzf(), false);
-        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final Object zza(String str) {
-        return this.zza.get(str);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final Long zzb(String str) {
-        return Long.valueOf(this.zza.getLong(str));
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final Double zzc(String str) {
-        return Double.valueOf(this.zza.getDouble("value"));
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final String zzd(String str) {
-        return this.zza.getString(str);
-    }
-
-    public final int zze() {
-        return this.zza.size();
-    }
-
-    public final Bundle zzf() {
-        return new Bundle(this.zza);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ Bundle zzg() {
-        return this.zza;
+    @Override // java.util.Iterator
+    /* renamed from: zza */
+    public final String next() {
+        return (String) this.zza.next();
     }
 }

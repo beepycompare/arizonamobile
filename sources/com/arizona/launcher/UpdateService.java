@@ -66,8 +66,8 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt__Builders_concurrentKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
 import okhttp3.ConnectionPool;
@@ -995,7 +995,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1717;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1720;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1240,7 +1240,7 @@ public final class UpdateService extends Hilt_UpdateService {
                             filesChek = filesChek3;
                         }
                         data.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek, true, true, false, false, updateService.mDataInfo, 8, null));
-                        BuildersKt__BuildersKt.runBlocking$default(null, new UpdateService$IncomingHandler$handleMessage$2(updateService, null), 1, null);
+                        BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new UpdateService$IncomingHandler$handleMessage$2(updateService, null), 1, null);
                         obtain4.replyTo = updateService.mMessenger;
                         Messenger messenger4 = updateService.mActivityMessenger;
                         if (messenger4 != null) {
@@ -1265,7 +1265,7 @@ public final class UpdateService extends Hilt_UpdateService {
                             filesChek2 = filesChek4;
                         }
                         data2.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek2, true, true, false, false, updateService.mDataInfo, 8, null));
-                        BuildersKt__BuildersKt.runBlocking$default(null, new UpdateService$IncomingHandler$handleMessage$3(updateService, null), 1, null);
+                        BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new UpdateService$IncomingHandler$handleMessage$3(updateService, null), 1, null);
                         obtain5.replyTo = updateService.mMessenger;
                         Messenger messenger5 = updateService.mActivityMessenger;
                         if (messenger5 != null) {

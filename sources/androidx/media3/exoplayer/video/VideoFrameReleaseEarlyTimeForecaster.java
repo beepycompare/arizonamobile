@@ -5,7 +5,7 @@ import androidx.media3.common.C;
 import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class VideoFrameReleaseEarlyTimeForecaster {
     private static final float SMOOTHING_FACTOR = 0.2f;
     private double derivativeOfEarlyTime;

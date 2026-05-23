@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FirebaseSessionsDependencies.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "com.google.firebase.sessions.api.FirebaseSessionsDependencies", f = "FirebaseSessionsDependencies.kt", i = {0, 0, 0}, l = {110}, m = "getRegisteredSubscribers$com_google_firebase_firebase_sessions", n = {"destination$iv$iv", "subscriberName", "$this$withLock_u24default$iv"}, s = {"L$0", "L$2", "L$3"})
+@DebugMetadata(c = "com.google.firebase.sessions.api.FirebaseSessionsDependencies", f = "FirebaseSessionsDependencies.kt", i = {0, 0}, l = {76}, m = "getRegisteredSubscribers$com_google_firebase_firebase_sessions", n = {"destination$iv$iv", "subscriberName"}, s = {"L$0", "L$2"})
 /* loaded from: classes4.dex */
 public final class FirebaseSessionsDependencies$getRegisteredSubscribers$1 extends ContinuationImpl {
     Object L$0;
@@ -15,7 +15,6 @@ public final class FirebaseSessionsDependencies$getRegisteredSubscribers$1 exten
     Object L$2;
     Object L$3;
     Object L$4;
-    Object L$5;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FirebaseSessionsDependencies this$0;

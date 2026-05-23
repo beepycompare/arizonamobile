@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.draw.DrawModifierKt;
@@ -60,37 +61,37 @@ import kotlin.ranges.RangesKt;
 public final class CarouselKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Carousel_cJHQLPU$lambda$19(CarouselState carouselState, Orientation orientation, Function2 function2, PaddingValues paddingValues, int i, Modifier modifier, float f, TargetedFlingBehavior targetedFlingBehavior, boolean z, Function4 function4, int i2, int i3, Composer composer, int i4) {
-        m2970CarouselcJHQLPU(carouselState, orientation, function2, paddingValues, i, modifier, f, targetedFlingBehavior, z, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m3415CarouselcJHQLPU(carouselState, orientation, function2, paddingValues, i, modifier, f, targetedFlingBehavior, z, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalCenteredHeroCarousel_p2lB3Bg$lambda$13(CarouselState carouselState, Modifier modifier, float f, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, Function4 function4, int i, int i2, Composer composer, int i3) {
-        m2971HorizontalCenteredHeroCarouselp2lB3Bg(carouselState, modifier, f, f2, targetedFlingBehavior, z, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3416HorizontalCenteredHeroCarouselp2lB3Bg(carouselState, modifier, f, f2, targetedFlingBehavior, z, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalMultiBrowseCarousel_3tcCNu0$lambda$3(CarouselState carouselState, float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, Function4 function4, int i, int i2, Composer composer, int i3) {
-        m2972HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f, modifier, f2, targetedFlingBehavior, z, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3417HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f, modifier, f2, targetedFlingBehavior, z, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalMultiBrowseCarousel_zCIJ0Nk$lambda$4(CarouselState carouselState, float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, float f3, float f4, PaddingValues paddingValues, Function4 function4, int i, int i2, Composer composer, int i3) {
-        m2973HorizontalMultiBrowseCarouselzCIJ0Nk(carouselState, f, modifier, f2, targetedFlingBehavior, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3418HorizontalMultiBrowseCarouselzCIJ0Nk(carouselState, f, modifier, f2, targetedFlingBehavior, f3, f4, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalUncontainedCarousel_9QcgTRs$lambda$9(CarouselState carouselState, float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, PaddingValues paddingValues, Function4 function4, int i, int i2, Composer composer, int i3) {
-        m2974HorizontalUncontainedCarousel9QcgTRs(carouselState, f, modifier, f2, targetedFlingBehavior, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3419HorizontalUncontainedCarousel9QcgTRs(carouselState, f, modifier, f2, targetedFlingBehavior, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalUncontainedCarousel_VUP9l70$lambda$8(CarouselState carouselState, float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, PaddingValues paddingValues, Function4 function4, int i, int i2, Composer composer, int i3) {
-        m2975HorizontalUncontainedCarouselVUP9l70(carouselState, f, modifier, f2, targetedFlingBehavior, z, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m3420HorizontalUncontainedCarouselVUP9l70(carouselState, f, modifier, f2, targetedFlingBehavior, z, paddingValues, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -125,7 +126,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2972HorizontalMultiBrowseCarousel3tcCNu0(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
+    public static final void m3417HorizontalMultiBrowseCarousel3tcCNu0(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -226,12 +227,12 @@ public final class CarouselKt {
                     } else if ((i & 100663296) == 0) {
                         i9 = i8;
                         obj2 = paddingValues;
-                        i3 |= startRestartGroup.changed(obj2) ? 67108864 : 33554432;
+                        i3 |= startRestartGroup.changed(obj2) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         i10 = i3;
                         if ((i2 & 512) != 0) {
                             i10 |= 805306368;
                         } else if ((i & 805306368) == 0) {
-                            i10 |= startRestartGroup.changedInstance(function4) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i10 |= startRestartGroup.changedInstance(function4) ? 536870912 : 268435456;
                             if (!startRestartGroup.shouldExecute((i10 & 306783379) == 306783378, i10 & 1)) {
                                 startRestartGroup.startDefaults();
                                 ComposerKt.sourceInformation(startRestartGroup, "114@5807L41");
@@ -249,7 +250,7 @@ public final class CarouselKt {
                                 } else {
                                     Modifier.Companion companion = i13 != 0 ? Modifier.Companion : obj;
                                     if (i4 != 0) {
-                                        f5 = Dp.m7555constructorimpl(0.0f);
+                                        f5 = Dp.m8160constructorimpl(0.0f);
                                     }
                                     if ((i2 & 16) != 0) {
                                         CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
@@ -264,11 +265,11 @@ public final class CarouselKt {
                                         z2 = true;
                                     }
                                     if (i6 != 0) {
-                                        f6 = CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM();
+                                        f6 = CarouselDefaults.INSTANCE.m3414getMinSmallItemSizeD9Ej5fM();
                                     }
-                                    float m2968getMaxSmallItemSizeD9Ej5fM = i7 != 0 ? CarouselDefaults.INSTANCE.m2968getMaxSmallItemSizeD9Ej5fM() : f4;
+                                    float m3413getMaxSmallItemSizeD9Ej5fM = i7 != 0 ? CarouselDefaults.INSTANCE.m3413getMaxSmallItemSizeD9Ej5fM() : f4;
                                     if (i9 == 0) {
-                                        f9 = m2968getMaxSmallItemSizeD9Ej5fM;
+                                        f9 = m3413getMaxSmallItemSizeD9Ej5fM;
                                         f10 = f6;
                                         f8 = f5;
                                         targetedFlingBehavior4 = targetedFlingBehavior2;
@@ -296,7 +297,7 @@ public final class CarouselKt {
                                                 @Override // kotlin.jvm.functions.Function2
                                                 public final Object invoke(Object obj3, Object obj4) {
                                                     KeylineList multiBrowseKeylineList;
-                                                    multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f12), Density.this.mo405toPx0680j_4(f13));
+                                                    multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo434toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo434toPx0680j_4(f12), Density.this.mo434toPx0680j_4(f13));
                                                     return multiBrowseKeylineList;
                                                 }
                                             };
@@ -310,7 +311,7 @@ public final class CarouselKt {
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                         int i15 = i11 << 9;
                                         PaddingValues paddingValues4 = paddingValues3;
-                                        m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues4, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | (1879048192 & i11), 0);
+                                        m3415CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues4, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | (1879048192 & i11), 0);
                                         startRestartGroup = startRestartGroup;
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
@@ -323,8 +324,8 @@ public final class CarouselKt {
                                         f8 = f5;
                                         z3 = z2;
                                         modifier2 = companion;
-                                        paddingValues3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
-                                        f9 = m2968getMaxSmallItemSizeD9Ej5fM;
+                                        paddingValues3 = PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f));
+                                        f9 = m3413getMaxSmallItemSizeD9Ej5fM;
                                     }
                                 }
                                 f10 = f6;
@@ -350,7 +351,7 @@ public final class CarouselKt {
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj3, Object obj4) {
                                         KeylineList multiBrowseKeylineList;
-                                        multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo405toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState32.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo405toPx0680j_4(f122), Density.this.mo405toPx0680j_4(f132));
+                                        multiBrowseKeylineList = KeylinesKt.multiBrowseKeylineList(r0, ((Float) obj3).floatValue(), r0.mo434toPx0680j_4(f), ((Float) obj4).floatValue(), carouselState32.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), r0.mo434toPx0680j_4(f122), Density.this.mo434toPx0680j_4(f132));
                                         return multiBrowseKeylineList;
                                     }
                                 };
@@ -360,7 +361,7 @@ public final class CarouselKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 int i152 = i11 << 9;
                                 PaddingValues paddingValues42 = paddingValues3;
-                                m2970CarouselcJHQLPU(carouselState, orientation2, (Function2) rememberedValue, paddingValues42, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i152) | (3670016 & i152) | (29360128 & i152) | (i152 & 234881024) | (1879048192 & i11), 0);
+                                m3415CarouselcJHQLPU(carouselState, orientation2, (Function2) rememberedValue, paddingValues42, 2, modifier2, f8, targetedFlingBehavior4, z3, function4, startRestartGroup, (i11 & 14) | 24624 | ((i11 >> 15) & 7168) | (458752 & i152) | (3670016 & i152) | (29360128 & i152) | (i152 & 234881024) | (1879048192 & i11), 0);
                                 startRestartGroup = startRestartGroup;
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
@@ -512,7 +513,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2973HorizontalMultiBrowseCarouselzCIJ0Nk(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, float f3, float f4, PaddingValues paddingValues, final Function4 function4, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m3418HorizontalMultiBrowseCarouselzCIJ0Nk(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, float f3, float f4, PaddingValues paddingValues, final Function4 function4, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         float f5;
@@ -623,7 +624,7 @@ public final class CarouselKt {
                     if ((i2 & 256) == 0) {
                         i3 |= 100663296;
                     } else if ((i & 100663296) == 0) {
-                        i3 |= startRestartGroup.changedInstance(function4) ? 67108864 : 33554432;
+                        i3 |= startRestartGroup.changedInstance(function4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         i9 = i3;
                         if (startRestartGroup.shouldExecute((i9 & 38347923) != 38347922, i9 & 1)) {
                             startRestartGroup.startDefaults();
@@ -643,7 +644,7 @@ public final class CarouselKt {
                                 modifier3 = modifier;
                             } else {
                                 Modifier.Companion companion = i13 != 0 ? Modifier.Companion : modifier;
-                                float m7555constructorimpl = i4 != 0 ? Dp.m7555constructorimpl(0.0f) : f6;
+                                float m8160constructorimpl = i4 != 0 ? Dp.m8160constructorimpl(0.0f) : f6;
                                 if ((i2 & 16) != 0) {
                                     CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
                                     int i14 = (i9 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK;
@@ -651,17 +652,17 @@ public final class CarouselKt {
                                     obj2 = carouselDefaults.singleAdvanceFlingBehavior(obj, null, startRestartGroup, i14, 2);
                                 }
                                 if (i5 != 0) {
-                                    f7 = CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM();
+                                    f7 = CarouselDefaults.INSTANCE.m3414getMinSmallItemSizeD9Ej5fM();
                                 }
                                 if (i6 != 0) {
-                                    f8 = CarouselDefaults.INSTANCE.m2968getMaxSmallItemSizeD9Ej5fM();
+                                    f8 = CarouselDefaults.INSTANCE.m3413getMaxSmallItemSizeD9Ej5fM();
                                 }
                                 if (i8 != 0) {
                                     float f15 = f7;
                                     modifier3 = companion;
                                     i10 = i9;
                                     f12 = f15;
-                                    paddingValues3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                    paddingValues3 = PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f));
                                 } else {
                                     float f16 = f7;
                                     modifier3 = companion;
@@ -671,7 +672,7 @@ public final class CarouselKt {
                                 }
                                 targetedFlingBehavior3 = obj2;
                                 f13 = f8;
-                                f14 = m7555constructorimpl;
+                                f14 = m8160constructorimpl;
                                 i11 = -118598974;
                             }
                             startRestartGroup.endDefaults();
@@ -679,7 +680,7 @@ public final class CarouselKt {
                                 ComposerKt.traceEventStart(i11, i10, -1, "androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel (Carousel.kt:165)");
                             }
                             int i15 = i10 << 3;
-                            m2972HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f5, modifier3, f14, targetedFlingBehavior3, true, f12, f13, paddingValues3, function4, startRestartGroup, (i10 & 14) | i7 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (57344 & i10) | (3670016 & i15) | (29360128 & i15) | (234881024 & i15) | (i15 & 1879048192), 0);
+                            m3417HorizontalMultiBrowseCarousel3tcCNu0(carouselState, f5, modifier3, f14, targetedFlingBehavior3, true, f12, f13, paddingValues3, function4, startRestartGroup, (i10 & 14) | i7 | (i10 & 112) | (i10 & 896) | (i10 & 7168) | (57344 & i10) | (3670016 & i15) | (29360128 & i15) | (234881024 & i15) | (i15 & C.ENCODING_PCM_DOUBLE), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -809,7 +810,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2975HorizontalUncontainedCarouselVUP9l70(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
+    public static final void m3420HorizontalUncontainedCarouselVUP9l70(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
         CarouselState carouselState2;
         int i3;
         Modifier.Companion companion;
@@ -832,7 +833,7 @@ public final class CarouselKt {
         float f5;
         boolean z4;
         boolean z5;
-        PaddingValues m811PaddingValues0680j_4;
+        PaddingValues m1043PaddingValues0680j_4;
         boolean z6;
         TargetedFlingBehavior targetedFlingBehavior4;
         boolean z7;
@@ -914,7 +915,7 @@ public final class CarouselKt {
                                     companion = Modifier.Companion;
                                 }
                                 if (i4 != 0) {
-                                    f3 = Dp.m7555constructorimpl(0.0f);
+                                    f3 = Dp.m8160constructorimpl(0.0f);
                                 }
                                 if ((i2 & 16) != 0) {
                                     i8 = i7 & (-57345);
@@ -929,7 +930,7 @@ public final class CarouselKt {
                                     f5 = f3;
                                     z4 = true;
                                     z5 = z2;
-                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                    m1043PaddingValues0680j_4 = PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f));
                                     z6 = false;
                                     targetedFlingBehavior4 = targetedFlingBehavior2;
                                     startRestartGroup.endDefaults();
@@ -953,7 +954,7 @@ public final class CarouselKt {
                                             @Override // kotlin.jvm.functions.Function2
                                             public final Object invoke(Object obj3, Object obj4) {
                                                 KeylineList uncontainedKeylineList;
-                                                uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo405toPx0680j_4(f), ((Float) obj4).floatValue());
+                                                uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo434toPx0680j_4(f), ((Float) obj4).floatValue());
                                                 return uncontainedKeylineList;
                                             }
                                         };
@@ -963,11 +964,11 @@ public final class CarouselKt {
                                     int i11 = i8 << 9;
                                     composer2 = startRestartGroup;
                                     Modifier modifier3 = companion;
-                                    m2970CarouselcJHQLPU(carouselState2, orientation, rememberedValue, m811PaddingValues0680j_4, 0, modifier3, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i11) | (3670016 & i11) | (29360128 & i11) | (i11 & 234881024) | ((i8 << 6) & 1879048192), 0);
+                                    m3415CarouselcJHQLPU(carouselState2, orientation, rememberedValue, m1043PaddingValues0680j_4, 0, modifier3, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i11) | (3670016 & i11) | (29360128 & i11) | (i11 & 234881024) | ((i8 << 6) & C.ENCODING_PCM_DOUBLE), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    paddingValues2 = m811PaddingValues0680j_4;
+                                    paddingValues2 = m1043PaddingValues0680j_4;
                                     modifier2 = modifier3;
                                     f4 = f5;
                                     targetedFlingBehavior3 = targetedFlingBehavior4;
@@ -984,7 +985,7 @@ public final class CarouselKt {
                                     f5 = f3;
                                     targetedFlingBehavior4 = targetedFlingBehavior2;
                                     z5 = z2;
-                                    m811PaddingValues0680j_4 = obj;
+                                    m1043PaddingValues0680j_4 = obj;
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
@@ -1005,7 +1006,7 @@ public final class CarouselKt {
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj3, Object obj4) {
                                             KeylineList uncontainedKeylineList;
-                                            uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo405toPx0680j_4(f), ((Float) obj4).floatValue());
+                                            uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo434toPx0680j_4(f), ((Float) obj4).floatValue());
                                             return uncontainedKeylineList;
                                         }
                                     };
@@ -1014,10 +1015,10 @@ public final class CarouselKt {
                                     int i112 = i8 << 9;
                                     composer2 = startRestartGroup;
                                     Modifier modifier32 = companion;
-                                    m2970CarouselcJHQLPU(carouselState2, orientation2, rememberedValue, m811PaddingValues0680j_4, 0, modifier32, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i112) | (3670016 & i112) | (29360128 & i112) | (i112 & 234881024) | ((i8 << 6) & 1879048192), 0);
+                                    m3415CarouselcJHQLPU(carouselState2, orientation2, rememberedValue, m1043PaddingValues0680j_4, 0, modifier32, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i112) | (3670016 & i112) | (29360128 & i112) | (i112 & 234881024) | ((i8 << 6) & C.ENCODING_PCM_DOUBLE), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                     }
-                                    paddingValues2 = m811PaddingValues0680j_4;
+                                    paddingValues2 = m1043PaddingValues0680j_4;
                                     modifier2 = modifier32;
                                     f4 = f5;
                                     targetedFlingBehavior3 = targetedFlingBehavior4;
@@ -1029,7 +1030,7 @@ public final class CarouselKt {
                             z4 = true;
                             targetedFlingBehavior4 = targetedFlingBehavior2;
                             z5 = z2;
-                            m811PaddingValues0680j_4 = obj;
+                            m1043PaddingValues0680j_4 = obj;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
@@ -1050,7 +1051,7 @@ public final class CarouselKt {
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
                                     KeylineList uncontainedKeylineList;
-                                    uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo405toPx0680j_4(f), ((Float) obj4).floatValue());
+                                    uncontainedKeylineList = KeylinesKt.uncontainedKeylineList(r0, ((Float) obj3).floatValue(), Density.this.mo434toPx0680j_4(f), ((Float) obj4).floatValue());
                                     return uncontainedKeylineList;
                                 }
                             };
@@ -1059,10 +1060,10 @@ public final class CarouselKt {
                             int i1122 = i8 << 9;
                             composer2 = startRestartGroup;
                             Modifier modifier322 = companion;
-                            m2970CarouselcJHQLPU(carouselState2, orientation22, rememberedValue, m811PaddingValues0680j_4, 0, modifier322, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i1122) | (3670016 & i1122) | (29360128 & i1122) | (i1122 & 234881024) | ((i8 << 6) & 1879048192), 0);
+                            m3415CarouselcJHQLPU(carouselState2, orientation22, rememberedValue, m1043PaddingValues0680j_4, 0, modifier322, f5, targetedFlingBehavior4, z5, function4, composer2, (i8 & 14) | 24624 | ((i8 >> 9) & 7168) | (458752 & i1122) | (3670016 & i1122) | (29360128 & i1122) | (i1122 & 234881024) | ((i8 << 6) & C.ENCODING_PCM_DOUBLE), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
-                            paddingValues2 = m811PaddingValues0680j_4;
+                            paddingValues2 = m1043PaddingValues0680j_4;
                             modifier2 = modifier322;
                             f4 = f5;
                             targetedFlingBehavior3 = targetedFlingBehavior4;
@@ -1172,7 +1173,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2974HorizontalUncontainedCarousel9QcgTRs(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, PaddingValues paddingValues, final Function4 function4, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m3419HorizontalUncontainedCarousel9QcgTRs(final CarouselState carouselState, final float f, Modifier modifier, float f2, TargetedFlingBehavior targetedFlingBehavior, PaddingValues paddingValues, final Function4 function4, Composer composer, final int i, final int i2) {
         CarouselState carouselState2;
         int i3;
         float f3;
@@ -1189,7 +1190,7 @@ public final class CarouselKt {
         final PaddingValues paddingValues2;
         ScopeUpdateScope endRestartGroup;
         Modifier modifier3;
-        PaddingValues m811PaddingValues0680j_4;
+        PaddingValues m1043PaddingValues0680j_4;
         float f6;
         int i6;
         Composer startRestartGroup = composer.startRestartGroup(-2013916597);
@@ -1263,7 +1264,7 @@ public final class CarouselKt {
                             } else {
                                 Modifier.Companion companion = i7 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    f4 = Dp.m7555constructorimpl(0.0f);
+                                    f4 = Dp.m8160constructorimpl(0.0f);
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -1271,7 +1272,7 @@ public final class CarouselKt {
                                 }
                                 if (i5 != 0) {
                                     modifier3 = companion;
-                                    m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                    m1043PaddingValues0680j_4 = PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f));
                                     f6 = f4;
                                     TargetedFlingBehavior targetedFlingBehavior3 = obj2;
                                     startRestartGroup.endDefaults();
@@ -1280,33 +1281,33 @@ public final class CarouselKt {
                                     }
                                     int i8 = i3 << 3;
                                     composer2 = startRestartGroup;
-                                    m2975HorizontalUncontainedCarouselVUP9l70(carouselState2, f3, modifier3, f6, targetedFlingBehavior3, true, m811PaddingValues0680j_4, function4, composer2, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (3670016 & i8) | (i8 & 29360128), 0);
+                                    m3420HorizontalUncontainedCarouselVUP9l70(carouselState2, f3, modifier3, f6, targetedFlingBehavior3, true, m1043PaddingValues0680j_4, function4, composer2, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (3670016 & i8) | (i8 & 29360128), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
                                     modifier2 = modifier3;
                                     f5 = f6;
                                     targetedFlingBehavior2 = targetedFlingBehavior3;
-                                    paddingValues2 = m811PaddingValues0680j_4;
+                                    paddingValues2 = m1043PaddingValues0680j_4;
                                 } else {
                                     modifier3 = companion;
                                 }
                             }
                             f6 = f4;
-                            m811PaddingValues0680j_4 = obj3;
+                            m1043PaddingValues0680j_4 = obj3;
                             TargetedFlingBehavior targetedFlingBehavior32 = obj2;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             int i82 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m2975HorizontalUncontainedCarouselVUP9l70(carouselState2, f3, modifier3, f6, targetedFlingBehavior32, true, m811PaddingValues0680j_4, function4, composer2, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (3670016 & i82) | (i82 & 29360128), 0);
+                            m3420HorizontalUncontainedCarouselVUP9l70(carouselState2, f3, modifier3, f6, targetedFlingBehavior32, true, m1043PaddingValues0680j_4, function4, composer2, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (3670016 & i82) | (i82 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier2 = modifier3;
                             f5 = f6;
                             targetedFlingBehavior2 = targetedFlingBehavior32;
-                            paddingValues2 = m811PaddingValues0680j_4;
+                            paddingValues2 = m1043PaddingValues0680j_4;
                         } else {
                             composer2 = startRestartGroup;
                             composer2.skipToGroupEnd();
@@ -1403,7 +1404,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2971HorizontalCenteredHeroCarouselp2lB3Bg(final CarouselState carouselState, Modifier modifier, float f, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
+    public static final void m3416HorizontalCenteredHeroCarouselp2lB3Bg(final CarouselState carouselState, Modifier modifier, float f, float f2, TargetedFlingBehavior targetedFlingBehavior, boolean z, float f3, float f4, PaddingValues paddingValues, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -1511,12 +1512,12 @@ public final class CarouselKt {
                         } else if ((i & 100663296) == 0) {
                             i10 = i9;
                             obj2 = paddingValues;
-                            i3 |= startRestartGroup.changed(obj2) ? 67108864 : 33554432;
+                            i3 |= startRestartGroup.changed(obj2) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                             i11 = i3;
                             if ((i2 & 512) == 0) {
                                 i11 |= 805306368;
                             } else if ((i & 805306368) == 0) {
-                                i11 |= startRestartGroup.changedInstance(function4) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                                i11 |= startRestartGroup.changedInstance(function4) ? 536870912 : 268435456;
                                 if (startRestartGroup.shouldExecute((i11 & 306783379) != 306783378, i11 & 1)) {
                                     startRestartGroup.startDefaults();
                                     ComposerKt.sourceInformation(startRestartGroup, "298@13764L41");
@@ -1536,10 +1537,10 @@ public final class CarouselKt {
                                     } else {
                                         Modifier.Companion companion = i14 != 0 ? Modifier.Companion : obj;
                                         if (i4 != 0) {
-                                            f5 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
+                                            f5 = Dp.Companion.m8180getUnspecifiedD9Ej5fM();
                                         }
                                         if (i5 != 0) {
-                                            f6 = Dp.m7555constructorimpl(0.0f);
+                                            f6 = Dp.m8160constructorimpl(0.0f);
                                         }
                                         if ((i2 & 16) != 0) {
                                             CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
@@ -1554,20 +1555,20 @@ public final class CarouselKt {
                                             z2 = true;
                                         }
                                         if (i7 != 0) {
-                                            f7 = CarouselDefaults.INSTANCE.m2969getMinSmallItemSizeD9Ej5fM();
+                                            f7 = CarouselDefaults.INSTANCE.m3414getMinSmallItemSizeD9Ej5fM();
                                         }
-                                        float m2968getMaxSmallItemSizeD9Ej5fM = i8 != 0 ? CarouselDefaults.INSTANCE.m2968getMaxSmallItemSizeD9Ej5fM() : f4;
+                                        float m3413getMaxSmallItemSizeD9Ej5fM = i8 != 0 ? CarouselDefaults.INSTANCE.m3413getMaxSmallItemSizeD9Ej5fM() : f4;
                                         if (i10 != 0) {
-                                            obj3 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0.0f));
+                                            obj3 = PaddingKt.m1043PaddingValues0680j_4(Dp.m8160constructorimpl(0.0f));
                                             f13 = f6;
                                             modifier3 = companion;
                                             i12 = i11;
-                                            f11 = m2968getMaxSmallItemSizeD9Ej5fM;
+                                            f11 = m3413getMaxSmallItemSizeD9Ej5fM;
                                             f12 = f7;
                                             targetedFlingBehavior4 = targetedFlingBehavior2;
                                         } else {
                                             obj3 = paddingValues;
-                                            f11 = m2968getMaxSmallItemSizeD9Ej5fM;
+                                            f11 = m3413getMaxSmallItemSizeD9Ej5fM;
                                             f12 = f7;
                                             f13 = f6;
                                             targetedFlingBehavior4 = targetedFlingBehavior2;
@@ -1596,7 +1597,7 @@ public final class CarouselKt {
                                             @Override // kotlin.jvm.functions.Function2
                                             public final Object invoke(Object obj4, Object obj5) {
                                                 KeylineList heroKeylineList;
-                                                heroKeylineList = KeylinesKt.heroKeylineList(r0, ((Float) obj4).floatValue(), !Float.isNaN(r9) ? Float.valueOf(r0.mo405toPx0680j_4(f19)) : null, ((Float) obj5).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), true, r0.mo405toPx0680j_4(f17), Density.this.mo405toPx0680j_4(f18));
+                                                heroKeylineList = KeylinesKt.heroKeylineList(r0, ((Float) obj4).floatValue(), !Float.isNaN(r9) ? Float.valueOf(r0.mo434toPx0680j_4(f19)) : null, ((Float) obj5).floatValue(), carouselState3.getPagerState$material3().getPageCountState().getValue().invoke().intValue(), true, r0.mo434toPx0680j_4(f17), Density.this.mo434toPx0680j_4(f18));
                                                 return heroKeylineList;
                                             }
                                         };
@@ -1613,7 +1614,7 @@ public final class CarouselKt {
                                     int i16 = i12 << 9;
                                     PaddingValues paddingValues3 = obj3;
                                     boolean z4 = z2;
-                                    m2970CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier3, f13, targetedFlingBehavior4, z4, function4, startRestartGroup, (i12 & 14) | 24624 | ((i12 >> 15) & 7168) | ((i12 << 12) & 458752) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | (1879048192 & i12), 0);
+                                    m3415CarouselcJHQLPU(carouselState, orientation, (Function2) rememberedValue, paddingValues3, 2, modifier3, f13, targetedFlingBehavior4, z4, function4, startRestartGroup, (i12 & 14) | 24624 | ((i12 >> 15) & 7168) | ((i12 << 12) & 458752) | (3670016 & i16) | (29360128 & i16) | (i16 & 234881024) | (1879048192 & i12), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1799,7 +1800,7 @@ public final class CarouselKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2970CarouselcJHQLPU(CarouselState carouselState, final Orientation orientation, final Function2<? super Float, ? super Float, KeylineList> function2, final PaddingValues paddingValues, final int i, Modifier modifier, float f, TargetedFlingBehavior targetedFlingBehavior, boolean z, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3) {
+    public static final void m3415CarouselcJHQLPU(CarouselState carouselState, final Orientation orientation, final Function2<? super Float, ? super Float, KeylineList> function2, final PaddingValues paddingValues, final int i, Modifier modifier, float f, TargetedFlingBehavior targetedFlingBehavior, boolean z, final Function4<? super CarouselItemScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         Object obj;
@@ -1883,11 +1884,11 @@ public final class CarouselKt {
                     i4 |= 100663296;
                 } else if ((i2 & 100663296) == 0) {
                     i8 = i12;
-                    i4 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                    i4 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     i9 = i4;
                     if ((i3 & 512) != 0) {
                         if ((i2 & 805306368) == 0) {
-                            i10 = i9 | (startRestartGroup.changedInstance(function4) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456);
+                            i10 = i9 | (startRestartGroup.changedInstance(function4) ? 536870912 : 268435456);
                         }
                         boolean z4 = true;
                         if (startRestartGroup.shouldExecute((i9 & 306783379) != 306783378, i9 & 1)) {
@@ -1904,7 +1905,7 @@ public final class CarouselKt {
                             } else {
                                 Modifier.Companion companion = i8 != 0 ? Modifier.Companion : obj;
                                 if (i6 != 0) {
-                                    f2 = Dp.m7555constructorimpl(0.0f);
+                                    f2 = Dp.m8160constructorimpl(0.0f);
                                 }
                                 if ((i3 & 128) != 0) {
                                     CarouselDefaults carouselDefaults = CarouselDefaults.INSTANCE;
@@ -1943,7 +1944,7 @@ public final class CarouselKt {
                                 startRestartGroup.startReplaceGroup(273387289);
                                 ComposerKt.sourceInformation(startRestartGroup, "399@18566L24,400@18602L1024,385@17885L1741");
                                 CarouselPagerState pagerState$material3 = carouselState2.getPagerState$material3();
-                                PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, paddingValues.mo770calculateTopPaddingD9Ej5fM(), 0.0f, paddingValues.mo767calculateBottomPaddingD9Ej5fM(), 5, null);
+                                PaddingValues m1047PaddingValuesa9UjIt4$default = PaddingKt.m1047PaddingValuesa9UjIt4$default(0.0f, paddingValues.mo1002calculateTopPaddingD9Ej5fM(), 0.0f, paddingValues.mo999calculateBottomPaddingD9Ej5fM(), 5, null);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 285933988, "CC(remember):Carousel.kt#9igjgp");
                                 Object rememberedValue2 = startRestartGroup.rememberedValue();
                                 if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -1956,7 +1957,7 @@ public final class CarouselKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                PagerKt.m1072HorizontalPager8jOkeI(pagerState$material3, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue2, 1, null), m815PaddingValuesa9UjIt4$default, carouselPageSize, i5, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1817116752, true, new CarouselKt$Carousel$2(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
+                                PagerKt.m1326HorizontalPager8jOkeI(pagerState$material3, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue2, 1, null), m1047PaddingValuesa9UjIt4$default, carouselPageSize, i5, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1817116752, true, new CarouselKt$Carousel$2(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
                                 startRestartGroup.endReplaceGroup();
                             } else if (orientation == Orientation.Vertical) {
                                 startRestartGroup.startReplaceGroup(275178469);
@@ -1969,7 +1970,7 @@ public final class CarouselKt {
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                 Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                PaddingValues m815PaddingValuesa9UjIt4$default2 = PaddingKt.m815PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null);
+                                PaddingValues m1047PaddingValuesa9UjIt4$default2 = PaddingKt.m1047PaddingValuesa9UjIt4$default(calculateStartPadding, 0.0f, PaddingKt.calculateEndPadding(paddingValues, (LayoutDirection) consume2), 0.0f, 10, null);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 285993380, "CC(remember):Carousel.kt#9igjgp");
                                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                                 if (rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -1982,7 +1983,7 @@ public final class CarouselKt {
                                     startRestartGroup.updateRememberedValue(rememberedValue3);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                PagerKt.m1074VerticalPager8jOkeI(pagerState$material32, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue3, 1, null), m815PaddingValuesa9UjIt4$default2, carouselPageSize, i, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1042567175, true, new CarouselKt$Carousel$4(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
+                                PagerKt.m1328VerticalPager8jOkeI(pagerState$material32, SemanticsModifierKt.semantics$default(obj, false, (Function1) rememberedValue3, 1, null), m1047PaddingValuesa9UjIt4$default2, carouselPageSize, i, f4, null, targetedFlingBehavior3, z3, false, null, null, KeylineSnapPosition, null, ComposableLambdaKt.rememberComposableLambda(-1042567175, true, new CarouselKt$Carousel$4(carouselState2, carouselPageSize, function4), startRestartGroup, 54), startRestartGroup, (i14 & 57344) | ((i14 >> 3) & 458752) | (i14 & 29360128) | (i14 & 234881024), 24576, 11840);
                                 startRestartGroup.endReplaceGroup();
                             } else {
                                 startRestartGroup.startReplaceGroup(276916918);
@@ -2078,13 +2079,13 @@ public final class CarouselKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Carousel_cJHQLPU$lambda$16$lambda$15(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6775getCarouselo7Vup1c());
+        SemanticsPropertiesKt.m7397setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7379getCarouselo7Vup1c());
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Carousel_cJHQLPU$lambda$18$lambda$17(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6775getCarouselo7Vup1c());
+        SemanticsPropertiesKt.m7397setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7379getCarouselo7Vup1c());
         return Unit.INSTANCE;
     }
 
@@ -2097,7 +2098,7 @@ public final class CarouselKt {
         if (orientation == Orientation.Vertical) {
             composer.startReplaceGroup(-143556958);
             composer.endReplaceGroup();
-            calculateStartPadding = paddingValues.mo770calculateTopPaddingD9Ej5fM();
+            calculateStartPadding = paddingValues.mo1002calculateTopPaddingD9Ej5fM();
         } else {
             composer.startReplaceGroup(-143505436);
             ComposerKt.sourceInformation(composer, "481@21770L7");
@@ -2110,12 +2111,12 @@ public final class CarouselKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo405toPx0680j_4 = ((Density) consume2).mo405toPx0680j_4(calculateStartPadding);
+        float mo434toPx0680j_4 = ((Density) consume2).mo434toPx0680j_4(calculateStartPadding);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return mo405toPx0680j_4;
+        return mo434toPx0680j_4;
     }
 
     private static final float calculateAfterContentPadding(PaddingValues paddingValues, Orientation orientation, Composer composer, int i) {
@@ -2127,7 +2128,7 @@ public final class CarouselKt {
         if (orientation == Orientation.Vertical) {
             composer.startReplaceGroup(-1907991582);
             composer.endReplaceGroup();
-            calculateEndPadding = paddingValues.mo767calculateBottomPaddingD9Ej5fM();
+            calculateEndPadding = paddingValues.mo999calculateBottomPaddingD9Ej5fM();
         } else {
             composer.startReplaceGroup(-1907937239);
             ComposerKt.sourceInformation(composer, "493@22128L7");
@@ -2140,12 +2141,12 @@ public final class CarouselKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float mo405toPx0680j_4 = ((Density) consume2).mo405toPx0680j_4(calculateEndPadding);
+        float mo434toPx0680j_4 = ((Density) consume2).mo434toPx0680j_4(calculateEndPadding);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return mo405toPx0680j_4;
+        return mo434toPx0680j_4;
     }
 
     public static final Modifier carouselItem(Modifier modifier, final int i, final CarouselState carouselState, final Function0<Strategy> function0, final CarouselItemDrawInfoImpl carouselItemDrawInfoImpl, final Shape shape) {
@@ -2159,7 +2160,7 @@ public final class CarouselKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult carouselItem$lambda$26(Function0 function0, final CarouselState carouselState, final int i, final CarouselItemDrawInfoImpl carouselItemDrawInfoImpl, final Shape shape, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        long m7497copyZbe2FdA;
+        long m8102copyZbe2FdA;
         final Strategy strategy = (Strategy) function0.invoke();
         if (!strategy.isValid()) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda13
@@ -2176,13 +2177,13 @@ public final class CarouselKt {
         final boolean z2 = measureScope.getLayoutDirection() == LayoutDirection.Rtl;
         float itemMainAxisSize = strategy.getItemMainAxisSize();
         if (z) {
-            m7497copyZbe2FdA = Constraints.m7497copyZbe2FdA(constraints.m7514unboximpl(), Constraints.m7510getMinWidthimpl(constraints.m7514unboximpl()), Constraints.m7508getMaxWidthimpl(constraints.m7514unboximpl()), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize));
+            m8102copyZbe2FdA = Constraints.m8102copyZbe2FdA(constraints.m8119unboximpl(), Constraints.m8115getMinWidthimpl(constraints.m8119unboximpl()), Constraints.m8113getMaxWidthimpl(constraints.m8119unboximpl()), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize));
         } else {
-            m7497copyZbe2FdA = Constraints.m7497copyZbe2FdA(constraints.m7514unboximpl(), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize), Constraints.m7509getMinHeightimpl(constraints.m7514unboximpl()), Constraints.m7507getMaxHeightimpl(constraints.m7514unboximpl()));
+            m8102copyZbe2FdA = Constraints.m8102copyZbe2FdA(constraints.m8119unboximpl(), MathKt.roundToInt(itemMainAxisSize), MathKt.roundToInt(itemMainAxisSize), Constraints.m8114getMinHeightimpl(constraints.m8119unboximpl()), Constraints.m8112getMaxHeightimpl(constraints.m8119unboximpl()));
         }
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7497copyZbe2FdA);
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(m8102copyZbe2FdA);
         final float f = i != carouselState.getPagerState$material3().getCurrentPage() ? i == 0 ? 0.0f : 1.0f / i : 1.0f;
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda14
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return CarouselKt.carouselItem$lambda$26$lambda$25(Placeable.this, f, carouselState, strategy, i, z, carouselItemDrawInfoImpl, shape, z2, (Placeable.PlacementScope) obj);
@@ -2212,10 +2213,10 @@ public final class CarouselKt {
         Keyline keylineAfter = keylineListForScrollOffset$material3$default.getKeylineAfter(itemMainAxisSize);
         Keyline lerp = KeylineListKt.lerp(keylineBefore, keylineAfter, getProgress(keylineBefore, keylineAfter, itemMainAxisSize));
         boolean areEqual = Intrinsics.areEqual(keylineBefore, keylineAfter);
-        float intBitsToFloat = (z ? Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)) : strategy.getItemMainAxisSize()) / 2.0f;
-        float itemMainAxisSize2 = (z ? strategy.getItemMainAxisSize() : Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L))) / 2.0f;
-        float intBitsToFloat2 = (z ? Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() >> 32)) : lerp.getSize()) / 2.0f;
-        float size = (z ? lerp.getSize() : Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L))) / 2.0f;
+        float intBitsToFloat = (z ? Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() & 4294967295L)) : strategy.getItemMainAxisSize()) / 2.0f;
+        float itemMainAxisSize2 = (z ? strategy.getItemMainAxisSize() : Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() & 4294967295L))) / 2.0f;
+        float intBitsToFloat2 = (z ? Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() >> 32)) : lerp.getSize()) / 2.0f;
+        float size = (z ? lerp.getSize() : Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() & 4294967295L))) / 2.0f;
         Rect rect = new Rect(intBitsToFloat - intBitsToFloat2, itemMainAxisSize2 - size, intBitsToFloat + intBitsToFloat2, itemMainAxisSize2 + size);
         carouselItemDrawInfoImpl.setSizeState(lerp.getSize());
         Iterator<Keyline> it = keylineListForScrollOffset$material3.iterator();
@@ -2238,7 +2239,7 @@ public final class CarouselKt {
             carouselItemDrawInfoImpl.setMinSizeState(next.getSize());
             carouselItemDrawInfoImpl.setMaxSizeState(keylineListForScrollOffset$material3.getFirstFocal().getSize());
             carouselItemDrawInfoImpl.setMaskRectState(rect);
-            graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)))));
+            graphicsLayerScope.setClip(!Intrinsics.areEqual(rect, new Rect(0.0f, 0.0f, Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (graphicsLayerScope.mo5542getSizeNHjbRc() & 4294967295L)))));
             graphicsLayerScope.setShape(shape);
             float offset = lerp.getOffset() - itemMainAxisSize;
             if (areEqual) {
@@ -2258,19 +2259,19 @@ public final class CarouselKt {
     }
 
     /* renamed from: drawDebugLines-1Yev-eo$default  reason: not valid java name */
-    static /* synthetic */ Modifier m2977drawDebugLines1Yeveo$default(Modifier modifier, CarouselState carouselState, CarouselPageSize carouselPageSize, long j, float f, int i, Object obj) {
+    static /* synthetic */ Modifier m3422drawDebugLines1Yeveo$default(Modifier modifier, CarouselState carouselState, CarouselPageSize carouselPageSize, long j, float f, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = Color.Companion.m4805getMagenta0d7_KjU();
+            j = Color.Companion.m5381getMagenta0d7_KjU();
         }
         long j2 = j;
         if ((i & 8) != 0) {
-            f = Dp.m7555constructorimpl(4.0f);
+            f = Dp.m8160constructorimpl(4.0f);
         }
-        return m2976drawDebugLines1Yeveo(modifier, carouselState, carouselPageSize, j2, f);
+        return m3421drawDebugLines1Yeveo(modifier, carouselState, carouselPageSize, j2, f);
     }
 
     /* renamed from: drawDebugLines-1Yev-eo  reason: not valid java name */
-    private static final Modifier m2976drawDebugLines1Yeveo(Modifier modifier, final CarouselState carouselState, final CarouselPageSize carouselPageSize, final long j, final float f) {
+    private static final Modifier m3421drawDebugLines1Yeveo(Modifier modifier, final CarouselState carouselState, final CarouselPageSize carouselPageSize, final long j, final float f) {
         return DrawModifierKt.drawWithContent(modifier, new Function1() { // from class: androidx.compose.material3.carousel.CarouselKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -2284,9 +2285,9 @@ public final class CarouselKt {
         contentDrawScope.drawContent();
         Strategy strategy = carouselPageSize.getStrategy();
         KeylineList keylineListForScrollOffset$material3$default = Strategy.getKeylineListForScrollOffset$material3$default(strategy, calculateCurrentScrollOffset(carouselState, strategy), calculateMaxScrollOffset(carouselState, strategy), false, 4, null);
-        float f2 = contentDrawScope.mo405toPx0680j_4(f);
+        float f2 = contentDrawScope.mo434toPx0680j_4(f);
         for (Keyline keyline : keylineListForScrollOffset$material3$default) {
-            DrawScope.m5332drawLineNGM6Ib0$default(contentDrawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(keyline.getOffset()) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(keyline.getOffset()) << 32) | (Float.floatToRawIntBits(100.0f) & 4294967295L)), f2, 0, null, 0.0f, null, 0, 496, null);
+            DrawScope.m5908drawLineNGM6Ib0$default(contentDrawScope, j, Offset.m5095constructorimpl((Float.floatToRawIntBits(keyline.getOffset()) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m5095constructorimpl((Float.floatToRawIntBits(keyline.getOffset()) << 32) | (Float.floatToRawIntBits(100.0f) & 4294967295L)), f2, 0, null, 0.0f, null, 0, 496, null);
         }
         return Unit.INSTANCE;
     }

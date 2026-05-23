@@ -3,7 +3,7 @@ package androidx.media3.exoplayer;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class StandaloneMediaClock implements MediaClock {
     private long baseElapsedMs;
     private long baseUs;

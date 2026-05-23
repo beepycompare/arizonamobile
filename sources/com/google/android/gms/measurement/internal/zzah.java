@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzah extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzah> CREATOR = new zzai();
@@ -15,11 +15,11 @@ public final class zzah extends AbstractSafeParcelable {
     public long zzd;
     public boolean zze;
     public String zzf;
-    public final zzbg zzg;
+    public final zzbh zzg;
     public long zzh;
-    public zzbg zzi;
+    public zzbh zzi;
     public final long zzj;
-    public final zzbg zzk;
+    public final zzbh zzk;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzah(zzah zzahVar) {
@@ -55,17 +55,17 @@ public final class zzah extends AbstractSafeParcelable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzah(String str, String str2, zzpl zzplVar, long j, boolean z, String str3, zzbg zzbgVar, long j2, zzbg zzbgVar2, long j3, zzbg zzbgVar3) {
+    public zzah(String str, String str2, zzpl zzplVar, long j, boolean z, String str3, zzbh zzbhVar, long j2, zzbh zzbhVar2, long j3, zzbh zzbhVar3) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = zzplVar;
         this.zzd = j;
         this.zze = z;
         this.zzf = str3;
-        this.zzg = zzbgVar;
+        this.zzg = zzbhVar;
         this.zzh = j2;
-        this.zzi = zzbgVar2;
+        this.zzi = zzbhVar2;
         this.zzj = j3;
-        this.zzk = zzbgVar3;
+        this.zzk = zzbhVar3;
     }
 }

@@ -25,9 +25,7 @@ public class TimeModel implements Parcelable {
     public static final String ZERO_LEADING_NUMBER_FORMAT = "%02d";
     final int format;
     int hour;
-    private final MaxInputValidator hourInputValidator;
     int minute;
-    private final MaxInputValidator minuteInputValidator;
     int period;
     int selection;
 
@@ -54,8 +52,6 @@ public class TimeModel implements Parcelable {
         this.selection = i3;
         this.format = i4;
         this.period = getPeriod(i);
-        this.minuteInputValidator = new MaxInputValidator(59);
-        this.hourInputValidator = new MaxInputValidator(i4 == 1 ? 23 : 12);
     }
 
     protected TimeModel(Parcel parcel) {
@@ -93,14 +89,6 @@ public class TimeModel implements Parcelable {
 
     public int getHourContentDescriptionResId() {
         return this.format == 1 ? R.string.material_hour_24h_suffix : R.string.material_hour_suffix;
-    }
-
-    public MaxInputValidator getMinuteInputValidator() {
-        return this.minuteInputValidator;
-    }
-
-    public MaxInputValidator getHourInputValidator() {
-        return this.hourInputValidator;
     }
 
     public int hashCode() {

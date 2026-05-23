@@ -13,13 +13,13 @@ import ru.rustore.sdk.reactive.core.Disposable;
 public final class Z implements Dispatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ScheduledThreadPoolExecutor f1603a = new ScheduledThreadPoolExecutor(1);
+    public final ScheduledThreadPoolExecutor f1575a = new ScheduledThreadPoolExecutor(1);
 
     /* loaded from: classes6.dex */
     public static final class a implements Disposable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final AtomicBoolean f1604a = new AtomicBoolean();
+        public final AtomicBoolean f1576a = new AtomicBoolean();
         public final /* synthetic */ ScheduledFuture<?> b;
 
         public a(ScheduledFuture<?> scheduledFuture) {
@@ -28,14 +28,14 @@ public final class Z implements Dispatcher {
 
         @Override // ru.rustore.sdk.reactive.core.Disposable
         public final void dispose() {
-            if (this.f1604a.compareAndSet(false, true)) {
+            if (this.f1576a.compareAndSet(false, true)) {
                 this.b.cancel(false);
             }
         }
 
         @Override // ru.rustore.sdk.reactive.core.Disposable
         public final boolean isDisposed() {
-            return this.f1604a.get();
+            return this.f1576a.get();
         }
     }
 
@@ -52,7 +52,7 @@ public final class Z implements Dispatcher {
     @Override // ru.rustore.sdk.reactive.core.Dispatcher
     public final void execute(final Function0<Unit> block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        this.f1603a.submit(new Runnable() { // from class: ru.rustore.sdk.metrics.internal.Z$$ExternalSyntheticLambda0
+        this.f1575a.submit(new Runnable() { // from class: ru.rustore.sdk.metrics.internal.Z$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 Z.a(Function0.this);
@@ -64,7 +64,7 @@ public final class Z implements Dispatcher {
     public final Disposable executeDelayed(long j, TimeUnit timeUnit, final Function0<Unit> block) {
         Intrinsics.checkNotNullParameter(timeUnit, "timeUnit");
         Intrinsics.checkNotNullParameter(block, "block");
-        return new a(this.f1603a.schedule(new Runnable() { // from class: ru.rustore.sdk.metrics.internal.Z$$ExternalSyntheticLambda1
+        return new a(this.f1575a.schedule(new Runnable() { // from class: ru.rustore.sdk.metrics.internal.Z$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 Z.b(Function0.this);

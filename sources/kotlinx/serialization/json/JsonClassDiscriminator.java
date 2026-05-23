@@ -14,12 +14,12 @@ import kotlinx.serialization.ExperimentalSerializationApi;
 @ExperimentalSerializationApi
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.CLASS})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes.dex */
 public @interface JsonClassDiscriminator {
 
     /* compiled from: JsonAnnotations.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes.dex */
     public static final /* synthetic */ class Impl implements JsonClassDiscriminator {
         private final /* synthetic */ String discriminator;
 

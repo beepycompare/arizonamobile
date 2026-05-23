@@ -1,97 +1,97 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgx extends zzmb implements zznn {
+public final class zzgx extends zzadp implements zzafd {
     private zzgx() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzgx(byte[] bArr) {
-        super(zzha.zzJ());
+        super(zzha.zzN());
     }
 
     public final zzgx zza(String str) {
-        zzaX();
-        ((zzha) this.zza).zzt(str);
-        return this;
-    }
-
-    public final zzgx zzb() {
-        zzaX();
-        ((zzha) this.zza).zzu();
-        return this;
-    }
-
-    public final zzgx zzc(String str) {
-        zzaX();
+        zzaY();
         ((zzha) this.zza).zzv(str);
         return this;
     }
 
-    public final zzgx zzd() {
-        zzaX();
+    public final zzgx zzb() {
+        zzaY();
         ((zzha) this.zza).zzw();
         return this;
     }
 
-    public final zzgx zze(String str) {
-        zzaX();
+    public final zzgx zzc(String str) {
+        zzaY();
         ((zzha) this.zza).zzx(str);
         return this;
     }
 
-    public final zzgx zzf() {
-        zzaX();
+    public final zzgx zzd() {
+        zzaY();
         ((zzha) this.zza).zzy();
         return this;
     }
 
+    public final zzgx zze(String str) {
+        zzaY();
+        ((zzha) this.zza).zzz(str);
+        return this;
+    }
+
+    public final zzgx zzf() {
+        zzaY();
+        ((zzha) this.zza).zzA();
+        return this;
+    }
+
     public final long zzg() {
-        return ((zzha) this.zza).zzh();
+        return ((zzha) this.zza).zzi();
     }
 
     public final zzgx zzh(long j) {
-        zzaX();
-        ((zzha) this.zza).zzz(j);
+        zzaY();
+        ((zzha) this.zza).zzB(j);
         return this;
     }
 
     public final zzgx zzi(String str) {
-        zzaX();
-        ((zzha) this.zza).zzA(str);
-        return this;
-    }
-
-    public final zzgx zzj() {
-        zzaX();
-        ((zzha) this.zza).zzB();
-        return this;
-    }
-
-    public final zzgx zzk(String str) {
-        zzaX();
+        zzaY();
         ((zzha) this.zza).zzC(str);
         return this;
     }
 
-    public final zzgx zzl() {
-        zzaX();
+    public final zzgx zzj() {
+        zzaY();
         ((zzha) this.zza).zzD();
         return this;
     }
 
-    public final zzgx zzm(String str) {
-        zzaX();
+    public final zzgx zzk(String str) {
+        zzaY();
         ((zzha) this.zza).zzE(str);
         return this;
     }
 
-    public final zzgx zzn() {
-        zzaX();
+    public final zzgx zzl() {
+        zzaY();
         ((zzha) this.zza).zzF();
+        return this;
+    }
+
+    public final zzgx zzm(String str) {
+        zzaY();
+        ((zzha) this.zza).zzG(str);
+        return this;
+    }
+
+    public final zzgx zzn() {
+        zzaY();
+        ((zzha) this.zza).zzH();
         return this;
     }
 
@@ -100,32 +100,44 @@ public final class zzgx extends zzmb implements zznn {
     }
 
     public final zzgx zzp(long j) {
-        zzaX();
-        ((zzha) this.zza).zzG(j);
+        zzaY();
+        ((zzha) this.zza).zzI(j);
         return this;
     }
 
     public final zzgx zzq() {
-        zzaX();
-        ((zzha) this.zza).zzH().clear();
+        zzaY();
+        ((zzha) this.zza).zzJ().clear();
         return this;
     }
 
     public final zzgx zzr(Map map) {
-        zzaX();
-        ((zzha) this.zza).zzH().putAll(map);
+        zzaY();
+        ((zzha) this.zza).zzJ().putAll(map);
         return this;
     }
 
     public final zzgx zzs() {
-        zzaX();
-        ((zzha) this.zza).zzI().clear();
+        zzaY();
+        ((zzha) this.zza).zzK().clear();
         return this;
     }
 
     public final zzgx zzt(Map map) {
-        zzaX();
-        ((zzha) this.zza).zzI().putAll(map);
+        zzaY();
+        ((zzha) this.zza).zzK().putAll(map);
+        return this;
+    }
+
+    public final zzgx zzu(String str) {
+        zzaY();
+        ((zzha) this.zza).zzL(str);
+        return this;
+    }
+
+    public final zzgx zzv() {
+        zzaY();
+        ((zzha) this.zza).zzM();
         return this;
     }
 }

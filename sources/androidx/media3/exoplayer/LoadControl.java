@@ -7,14 +7,14 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface LoadControl {
     @Deprecated
     public static final MediaSource.MediaPeriodId EMPTY_MEDIA_PERIOD_ID = new MediaSource.MediaPeriodId(new Object());
 
     Allocator getAllocator(PlayerId playerId);
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Parameters {
         public final long bufferedDurationUs;
         public final long lastRebufferRealtimeMs;

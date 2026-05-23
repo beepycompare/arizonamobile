@@ -8,26 +8,26 @@ import kotlin.Metadata;
 public final class LargeIconButtonTokens {
     public static final int $stable = 0;
     public static final LargeIconButtonTokens INSTANCE = new LargeIconButtonTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(96.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(96.0f);
     private static final ShapeKeyTokens ContainerShapeRound = ShapeKeyTokens.CornerFull;
     private static final ShapeKeyTokens ContainerShapeSquare = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconSize = Dp.m7555constructorimpl(32.0f);
-    private static final float NarrowLeadingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float NarrowTrailingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float OutlinedOutlineWidth = Dp.m7555constructorimpl(2.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(32.0f);
+    private static final float NarrowLeadingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float NarrowTrailingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float OutlinedOutlineWidth = Dp.m8160constructorimpl(2.0f);
     private static final ShapeKeyTokens PressedContainerShape = ShapeKeyTokens.CornerLarge;
     private static final ShapeKeyTokens SelectedContainerShapeRound = ShapeKeyTokens.CornerExtraLarge;
     private static final ShapeKeyTokens SelectedContainerShapeSquare = ShapeKeyTokens.CornerFull;
-    private static final float UniformLeadingSpace = Dp.m7555constructorimpl(32.0f);
-    private static final float UniformTrailingSpace = Dp.m7555constructorimpl(32.0f);
-    private static final float WideLeadingSpace = Dp.m7555constructorimpl(48.0f);
-    private static final float WideTrailingSpace = Dp.m7555constructorimpl(48.0f);
+    private static final float UniformLeadingSpace = Dp.m8160constructorimpl(32.0f);
+    private static final float UniformTrailingSpace = Dp.m8160constructorimpl(32.0f);
+    private static final float WideLeadingSpace = Dp.m8160constructorimpl(48.0f);
+    private static final float WideTrailingSpace = Dp.m8160constructorimpl(48.0f);
 
     private LargeIconButtonTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3484getContainerHeightD9Ej5fM() {
+    public final float m3929getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -40,22 +40,22 @@ public final class LargeIconButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3485getIconSizeD9Ej5fM() {
+    public final float m3930getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getNarrowLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3486getNarrowLeadingSpaceD9Ej5fM() {
+    public final float m3931getNarrowLeadingSpaceD9Ej5fM() {
         return NarrowLeadingSpace;
     }
 
     /* renamed from: getNarrowTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3487getNarrowTrailingSpaceD9Ej5fM() {
+    public final float m3932getNarrowTrailingSpaceD9Ej5fM() {
         return NarrowTrailingSpace;
     }
 
     /* renamed from: getOutlinedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3488getOutlinedOutlineWidthD9Ej5fM() {
+    public final float m3933getOutlinedOutlineWidthD9Ej5fM() {
         return OutlinedOutlineWidth;
     }
 
@@ -72,22 +72,22 @@ public final class LargeIconButtonTokens {
     }
 
     /* renamed from: getUniformLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3489getUniformLeadingSpaceD9Ej5fM() {
+    public final float m3934getUniformLeadingSpaceD9Ej5fM() {
         return UniformLeadingSpace;
     }
 
     /* renamed from: getUniformTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3490getUniformTrailingSpaceD9Ej5fM() {
+    public final float m3935getUniformTrailingSpaceD9Ej5fM() {
         return UniformTrailingSpace;
     }
 
     /* renamed from: getWideLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3491getWideLeadingSpaceD9Ej5fM() {
+    public final float m3936getWideLeadingSpaceD9Ej5fM() {
         return WideLeadingSpace;
     }
 
     /* renamed from: getWideTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3492getWideTrailingSpaceD9Ej5fM() {
+    public final float m3937getWideTrailingSpaceD9Ej5fM() {
         return WideTrailingSpace;
     }
 }

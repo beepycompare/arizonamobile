@@ -32,7 +32,7 @@ import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer, ? extends SimpleDecoderOutputBuffer, ? extends DecoderException>> extends BaseRenderer implements MediaClock {
     private static final int MAX_PENDING_OUTPUT_STREAM_OFFSET_COUNT = 10;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -100,7 +100,6 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         super(1);
         this.eventDispatcher = new AudioRendererEventListener.EventDispatcher(handler, audioRendererEventListener);
         this.audioSink = audioSink;
-        audioSink.setListener(new AudioSinkListener());
         this.flagsOnlyBuffer = DecoderInputBuffer.newNoDataInstance();
         this.decoderReinitializationState = 0;
         this.audioTrackNeedsConfigure = true;
@@ -311,7 +310,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         } else {
             if (!this.firstStreamSampleRead) {
                 this.firstStreamSampleRead = true;
-                this.inputBuffer.addFlag(C.BUFFER_FLAG_FIRST_SAMPLE);
+                this.inputBuffer.addFlag(134217728);
             }
             this.largestQueuedPresentationTimeUs = this.inputBuffer.timeUs;
             if (hasReadStreamToEnd() || this.inputBuffer.isLastSample()) {
@@ -400,6 +399,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         }
         this.audioSink.setPlayerId(getPlayerId());
         this.audioSink.setClock(getClock());
+        this.audioSink.setListener(new AudioSinkListener());
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
@@ -598,7 +598,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }

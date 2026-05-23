@@ -4,10 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import java.lang.ref.WeakReference;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class ViewPropertyAnimatorCompat {
     private final WeakReference<View> mView;
 
@@ -242,7 +241,7 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat translationZBy(float f) {
         View view = this.mView.get();
         if (view != null) {
-            Api21Impl.translationZBy(view.animate(), f);
+            view.animate().translationZBy(f);
         }
         return this;
     }
@@ -250,7 +249,7 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat translationZ(float f) {
         View view = this.mView.get();
         if (view != null) {
-            Api21Impl.translationZ(view.animate(), f);
+            view.animate().translationZ(f);
         }
         return this;
     }
@@ -258,7 +257,7 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat z(float f) {
         View view = this.mView.get();
         if (view != null) {
-            Api21Impl.z(view.animate(), f);
+            view.animate().z(f);
         }
         return this;
     }
@@ -266,7 +265,7 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat zBy(float f) {
         View view = this.mView.get();
         if (view != null) {
-            Api21Impl.zBy(view.animate(), f);
+            view.animate().zBy(f);
         }
         return this;
     }
@@ -336,27 +335,5 @@ public final class ViewPropertyAnimatorCompat {
             } : null);
         }
         return this;
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static ViewPropertyAnimator translationZBy(ViewPropertyAnimator viewPropertyAnimator, float f) {
-            return viewPropertyAnimator.translationZBy(f);
-        }
-
-        static ViewPropertyAnimator translationZ(ViewPropertyAnimator viewPropertyAnimator, float f) {
-            return viewPropertyAnimator.translationZ(f);
-        }
-
-        static ViewPropertyAnimator z(ViewPropertyAnimator viewPropertyAnimator, float f) {
-            return viewPropertyAnimator.z(f);
-        }
-
-        static ViewPropertyAnimator zBy(ViewPropertyAnimator viewPropertyAnimator, float f) {
-            return viewPropertyAnimator.zBy(f);
-        }
     }
 }

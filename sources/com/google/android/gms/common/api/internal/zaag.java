@@ -1,109 +1,105 @@
 package com.google.android.gms.common.api.internal;
 
-import androidx.fragment.app.FragmentActivity;
+import android.os.Bundle;
+import android.os.DeadObjectException;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Status;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.api.internal.BaseImplementation;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Set;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public class zaag extends GoogleApiClient {
-    private final String zaa = "Method is not supported by connectionless client. APIs supporting connectionless client must not call this method.";
+public final class zaag implements zaba {
+    private final zabd zaa;
+    private boolean zab = false;
 
-    public zaag(String str) {
+    public zaag(zabd zabdVar) {
+        this.zaa = zabdVar;
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final ConnectionResult blockingConnect() {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final void zaa() {
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final PendingResult<Status> clearDefaultAccountAndReconnect() {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final BaseImplementation.ApiMethodImpl zab(BaseImplementation.ApiMethodImpl apiMethodImpl) {
+        zac(apiMethodImpl);
+        return apiMethodImpl;
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void connect() {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final BaseImplementation.ApiMethodImpl zac(BaseImplementation.ApiMethodImpl apiMethodImpl) {
+        try {
+            zabd zabdVar = this.zaa;
+            zaaz zaazVar = zabdVar.zag;
+            zaazVar.zai.zaa(apiMethodImpl);
+            Api.Client client = (Api.Client) zaazVar.zac.get(apiMethodImpl.getClientKey());
+            Preconditions.checkNotNull(client, "Appropriate Api was not requested.");
+            if (client.isConnected() || !zabdVar.zab.containsKey(apiMethodImpl.getClientKey())) {
+                apiMethodImpl.run(client);
+                return apiMethodImpl;
+            }
+            apiMethodImpl.setFailedResult(new Status(17));
+            return apiMethodImpl;
+        } catch (DeadObjectException unused) {
+            this.zaa.zar(new zaae(this, this));
+            return apiMethodImpl;
+        }
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void disconnect() {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final boolean zad() {
+        if (this.zab) {
+            return false;
+        }
+        zabd zabdVar = this.zaa;
+        Set<zacs> set = zabdVar.zag.zah;
+        if (set == null || set.isEmpty()) {
+            zabdVar.zaq(null);
+            return true;
+        }
+        this.zab = true;
+        for (zacs zacsVar : set) {
+            zacsVar.zab();
+        }
+        return false;
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final void zae() {
+        if (this.zab) {
+            this.zab = false;
+            this.zaa.zar(new zaaf(this, this));
+        }
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final ConnectionResult getConnectionResult(Api<?> api) {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final void zaf(Bundle bundle) {
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final boolean hasConnectedApi(Api<?> api) {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final void zag(ConnectionResult connectionResult, Api api, boolean z) {
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final boolean isConnected() {
-        throw new UnsupportedOperationException(this.zaa);
+    @Override // com.google.android.gms.common.api.internal.zaba
+    public final void zah(int i) {
+        zabd zabdVar = this.zaa;
+        zabdVar.zaq(null);
+        zabdVar.zah.zac(i, this.zab);
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final boolean isConnecting() {
-        throw new UnsupportedOperationException(this.zaa);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void zai() {
+        if (this.zab) {
+            this.zab = false;
+            this.zaa.zag.zai.zab();
+            zad();
+        }
     }
 
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final boolean isConnectionCallbacksRegistered(GoogleApiClient.ConnectionCallbacks connectionCallbacks) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final boolean isConnectionFailedListenerRegistered(GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void reconnect() {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void registerConnectionCallbacks(GoogleApiClient.ConnectionCallbacks connectionCallbacks) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void registerConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void stopAutoManage(FragmentActivity fragmentActivity) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void unregisterConnectionCallbacks(GoogleApiClient.ConnectionCallbacks connectionCallbacks) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final void unregisterConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        throw new UnsupportedOperationException(this.zaa);
-    }
-
-    @Override // com.google.android.gms.common.api.GoogleApiClient
-    public final ConnectionResult blockingConnect(long j, TimeUnit timeUnit) {
-        throw new UnsupportedOperationException(this.zaa);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zabd zaj() {
+        return this.zaa;
     }
 }

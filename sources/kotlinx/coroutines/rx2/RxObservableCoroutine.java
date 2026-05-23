@@ -32,7 +32,7 @@ import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RxObservable.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0010\b\u0002\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u00020\u00040\u00032\b\u0012\u0004\u0012\u0002H\u00010\u0005B\u001d\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00028\u00000\t¢\u0006\u0004\b\n\u0010\u000bJ\u0012\u0010\u0015\u001a\u00020\u00132\b\u0010\u0016\u001a\u0004\u0018\u00010\u0017H\u0016J\u001e\u0010\u0018\u001a\u00020\u00192\u0014\u0010\u001a\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0017\u0012\u0004\u0012\u00020\u00040\u001bH\u0016J\u001e\u0010$\u001a\u00020\u00042\n\u0010%\u001a\u0006\u0012\u0002\b\u00030&2\b\u0010'\u001a\u0004\u0018\u00010\u0002H\u0002J\u001e\u0010(\u001a\u0004\u0018\u00010\u00022\b\u0010'\u001a\u0004\u0018\u00010\u00022\b\u0010)\u001a\u0004\u0018\u00010\u0002H\u0002J\u001d\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00040+2\u0006\u0010'\u001a\u00028\u0000H\u0016¢\u0006\u0004\b,\u0010-J\u0016\u0010.\u001a\u00020\u00042\u0006\u0010'\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010/J\u0017\u00100\u001a\u0004\u0018\u00010\u00172\u0006\u00101\u001a\u00028\u0000H\u0002¢\u0006\u0002\u00102J\b\u00103\u001a\u00020\u0004H\u0002J\u001a\u00104\u001a\u00020\u00042\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u00105\u001a\u00020\u0013H\u0002J\u001a\u00106\u001a\u00020\u00042\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u00105\u001a\u00020\u0013H\u0002J\u0015\u00107\u001a\u00020\u00042\u0006\u00108\u001a\u00020\u0004H\u0014¢\u0006\u0002\u00109J\u0018\u0010:\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u00105\u001a\u00020\u0013H\u0014R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00028\u00000\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00000\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\t\u0010\u0010\u001a\u00020\u0011X\u0082\u0004R\u0014\u0010\u0012\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0014R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\u001e\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\r0\u001f8VX\u0096\u0004¢\u0006\f\u0012\u0004\b \u0010!\u001a\u0004\b\"\u0010#¨\u0006;"}, d2 = {"Lkotlinx/coroutines/rx2/RxObservableCoroutine;", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/AbstractCoroutine;", "", "Lkotlinx/coroutines/channels/ProducerScope;", "parentContext", "Lkotlin/coroutines/CoroutineContext;", "subscriber", "Lio/reactivex/ObservableEmitter;", "<init>", "(Lkotlin/coroutines/CoroutineContext;Lio/reactivex/ObservableEmitter;)V", "channel", "Lkotlinx/coroutines/channels/SendChannel;", "getChannel", "()Lkotlinx/coroutines/channels/SendChannel;", "_signal", "Lkotlinx/atomicfu/AtomicInt;", "isClosedForSend", "", "()Z", "close", "cause", "", "invokeOnClose", "", "handler", "Lkotlin/Function1;", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "onSend", "Lkotlinx/coroutines/selects/SelectClause2;", "getOnSend$annotations", "()V", "getOnSend", "()Lkotlinx/coroutines/selects/SelectClause2;", "registerSelectForSend", "select", "Lkotlinx/coroutines/selects/SelectInstance;", "element", "processResultSelectSend", "selectResult", "trySend", "Lkotlinx/coroutines/channels/ChannelResult;", "trySend-JP2dKIU", "(Ljava/lang/Object;)Ljava/lang/Object;", "send", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "doLockedNext", "elem", "(Ljava/lang/Object;)Ljava/lang/Throwable;", "unlockAndCheckCompleted", "doLockedSignalCompleted", "handled", "signalCompleted", "onCompleted", "value", "(Lkotlin/Unit;)V", "onCancelled", "kotlinx-coroutines-rx2"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0010\b\u0002\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u00020\u00040\u00032\b\u0012\u0004\u0012\u0002H\u00010\u0005B\u001d\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\f\u0010\b\u001a\b\u0012\u0004\u0012\u00028\u00000\t¢\u0006\u0004\b\n\u0010\u000bJ\u0012\u0010\u0015\u001a\u00020\u00132\b\u0010\u0016\u001a\u0004\u0018\u00010\u0017H\u0016J\u001e\u0010\u0018\u001a\u00020\u00192\u0014\u0010\u001a\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0017\u0012\u0004\u0012\u00020\u00040\u001bH\u0016J\u001e\u0010$\u001a\u00020\u00042\n\u0010%\u001a\u0006\u0012\u0002\b\u00030&2\b\u0010'\u001a\u0004\u0018\u00010\u0002H\u0002J\u001e\u0010(\u001a\u0004\u0018\u00010\u00022\b\u0010'\u001a\u0004\u0018\u00010\u00022\b\u0010)\u001a\u0004\u0018\u00010\u0002H\u0002J\u001d\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00040+2\u0006\u0010'\u001a\u00028\u0000H\u0016¢\u0006\u0004\b,\u0010-J\u0016\u0010.\u001a\u00020\u00042\u0006\u0010'\u001a\u00028\u0000H\u0096@¢\u0006\u0002\u0010/J\u0017\u00100\u001a\u0004\u0018\u00010\u00172\u0006\u00101\u001a\u00028\u0000H\u0002¢\u0006\u0002\u00102J\b\u00103\u001a\u00020\u0004H\u0002J\u001a\u00104\u001a\u00020\u00042\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u00105\u001a\u00020\u0013H\u0002J\u001a\u00106\u001a\u00020\u00042\b\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u00105\u001a\u00020\u0013H\u0002J\u0015\u00107\u001a\u00020\u00042\u0006\u00108\u001a\u00020\u0004H\u0014¢\u0006\u0002\u00109J\u0018\u0010:\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u00105\u001a\u00020\u0013H\u0014R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00028\u00000\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00000\r8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\t\u0010\u0010\u001a\u00020\u0011X\u0082\u0004R\u0014\u0010\u0012\u001a\u00020\u00138VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0014R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\u001e\u001a\u0014\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\r0\u001f8VX\u0096\u0004¢\u0006\f\u0012\u0004\b \u0010!\u001a\u0004\b\"\u0010#¨\u0006;"}, d2 = {"Lkotlinx/coroutines/rx2/RxObservableCoroutine;", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/AbstractCoroutine;", "", "Lkotlinx/coroutines/channels/ProducerScope;", "parentContext", "Lkotlin/coroutines/CoroutineContext;", "subscriber", "Lio/reactivex/ObservableEmitter;", "<init>", "(Lkotlin/coroutines/CoroutineContext;Lio/reactivex/ObservableEmitter;)V", "channel", "Lkotlinx/coroutines/channels/SendChannel;", "getChannel", "()Lkotlinx/coroutines/channels/SendChannel;", "_signal", "Lkotlinx/atomicfu/AtomicInt;", "isClosedForSend", "", "()Z", "close", "cause", "", "invokeOnClose", "", "handler", "Lkotlin/Function1;", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "onSend", "Lkotlinx/coroutines/selects/SelectClause2;", "getOnSend$annotations", "()V", "getOnSend", "()Lkotlinx/coroutines/selects/SelectClause2;", "registerSelectForSend", "select", "Lkotlinx/coroutines/selects/SelectInstance;", "element", "processResultSelectSend", "selectResult", "trySend", "Lkotlinx/coroutines/channels/ChannelResult;", "trySend-JP2dKIU", "(Ljava/lang/Object;)Ljava/lang/Object;", "send", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "doLockedNext", "elem", "(Ljava/lang/Object;)Ljava/lang/Throwable;", "unlockAndCheckCompleted", "doLockedSignalCompleted", "handled", "signalCompleted", "onCompleted", "value", "(Lkotlin/Unit;)V", "onCancelled", "kotlinx-coroutines-rx2"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> implements ProducerScope<T> {
     private static final /* synthetic */ AtomicIntegerFieldUpdater _signal$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(RxObservableCoroutine.class, "_signal$volatile");
@@ -51,22 +51,22 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
         this._signal$volatile = i;
     }
 
+    public RxObservableCoroutine(CoroutineContext coroutineContext, ObservableEmitter<T> observableEmitter) {
+        super(coroutineContext, false, true);
+        this.subscriber = observableEmitter;
+        this.mutex = MutexKt.Mutex$default(false, 1, null);
+    }
+
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public /* bridge */ /* synthetic */ void mo10790invokeOnClose(Function1 function1) {
+    public /* bridge */ /* synthetic */ void mo11429invokeOnClose(Function1 function1) {
         invokeOnClose((Function1<? super Throwable, Unit>) function1);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
     @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated in the favour of 'trySend' method", replaceWith = @ReplaceWith(expression = "trySend(element).isSuccess", imports = {}))
-    public boolean offer(T t) {
-        return ProducerScope.DefaultImpls.offer(this, t);
-    }
-
-    public RxObservableCoroutine(CoroutineContext coroutineContext, ObservableEmitter<T> observableEmitter) {
-        super(coroutineContext, false, true);
-        this.subscriber = observableEmitter;
-        this.mutex = MutexKt.Mutex$default(false, 1, null);
+    public /* bridge */ boolean offer(T t) {
+        return super.offer(t);
     }
 
     @Override // kotlinx.coroutines.channels.ProducerScope
@@ -99,7 +99,7 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void registerSelectForSend(SelectInstance<?> selectInstance, Object obj) {
-        if (!Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
+        if (!Mutex.tryLock$default(this.mutex, null, 1, null)) {
             BuildersKt__Builders_commonKt.launch$default(this, null, null, new RxObservableCoroutine$registerSelectForSend$1(this, selectInstance, null), 3, null);
         } else {
             selectInstance.selectInRegistrationPhase(Unit.INSTANCE);
@@ -119,21 +119,21 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo8396trySendJP2dKIU(T t) {
-        if (!Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
-            return ChannelResult.Companion.m10743failurePtdJZtk();
+    public Object mo9005trySendJP2dKIU(T t) {
+        if (!Mutex.tryLock$default(this.mutex, null, 1, null)) {
+            return ChannelResult.Companion.m11383failurePtdJZtk();
         }
         Throwable doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
-            return ChannelResult.Companion.m10744successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m11384successJP2dKIU(Unit.INSTANCE);
         }
-        return ChannelResult.Companion.m10742closedJP2dKIU(doLockedNext);
+        return ChannelResult.Companion.m11382closedJP2dKIU(doLockedNext);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x004e  */
     @Override // kotlinx.coroutines.channels.SendChannel
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -152,20 +152,18 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Mutex mutex = this.mutex;
-                    rxObservableCoroutine$send$1.L$0 = this;
-                    rxObservableCoroutine$send$1.L$1 = t;
+                    rxObservableCoroutine$send$1.L$0 = t;
                     rxObservableCoroutine$send$1.label = 1;
-                    if (Mutex.DefaultImpls.lock$default(mutex, null, rxObservableCoroutine$send$1, 1, null) == coroutine_suspended) {
+                    if (Mutex.lock$default(mutex, null, rxObservableCoroutine$send$1, 1, null) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    t = (T) rxObservableCoroutine$send$1.L$1;
-                    this = (RxObservableCoroutine) rxObservableCoroutine$send$1.L$0;
+                    t = (T) rxObservableCoroutine$send$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                doLockedNext = this.doLockedNext(t);
+                doLockedNext = doLockedNext(t);
                 if (doLockedNext == null) {
                     throw doLockedNext;
                 }
@@ -178,7 +176,7 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
         i = rxObservableCoroutine$send$1.label;
         if (i != 0) {
         }
-        doLockedNext = this.doLockedNext(t);
+        doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
         }
     }
@@ -205,8 +203,8 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
     }
 
     private final void unlockAndCheckCompleted() {
-        Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
-        if (isActive() || !Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
+        Mutex.unlock$default(this.mutex, null, 1, null);
+        if (isActive() || !Mutex.tryLock$default(this.mutex, null, 1, null)) {
             return;
         }
         doLockedSignalCompleted(getCompletionCause(), getCompletionCauseHandled());
@@ -237,12 +235,12 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
                     RxCancellableKt.handleUndeliverableException(th, getContext());
                 }
             }
-            Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+            Mutex.unlock$default(this.mutex, null, 1, null);
         }
     }
 
     private final void signalCompleted(Throwable th, boolean z) {
-        if (_signal$volatile$FU.compareAndSet(this, 0, -1) && Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
+        if (_signal$volatile$FU.compareAndSet(this, 0, -1) && Mutex.tryLock$default(this.mutex, null, 1, null)) {
             doLockedSignalCompleted(th, z);
         }
     }

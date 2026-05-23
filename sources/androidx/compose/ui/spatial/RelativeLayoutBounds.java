@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RelativeLayoutBounds.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0007\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001BC\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0'J\u000e\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u0000J&\u0010+\u001a\u00020)2\u0006\u0010,\u001a\u00020\u00192\u0006\u0010-\u001a\u00020\u00192\u0006\u0010.\u001a\u00020\u00192\u0006\u0010/\u001a\u00020\u0019J\u0006\u00100\u001a\u00020)J\u001d\u00101\u001a\u00020)2\u0006\u00102\u001a\u00020\u00062\u0006\u00103\u001a\u00020\u0006¢\u0006\u0004\b4\u00105J\u0013\u00106\u001a\u0002072\b\u00108\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u00109\u001a\u00020\u0019H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000fR\u0010\u0010\u0007\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000fR\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0011\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0013R\u0011\u0010\u0016\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0013R\u0011\u0010\u0018\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u001c\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001bR\u0011\u0010\u001e\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b \u0010!R\u0011\u0010\"\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b#\u0010!R\u0011\u0010$\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b%\u0010!¨\u0006:"}, d2 = {"Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "", "topLeft", "", "bottomRight", "windowOffset", "Landroidx/compose/ui/unit/IntOffset;", "screenOffset", "windowSize", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "node", "Landroidx/compose/ui/node/DelegatableNode;", "<init>", "(JJJJJ[FLandroidx/compose/ui/node/DelegatableNode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "J", "[F", "positionInRoot", "getPositionInRoot-nOcc-ac", "()J", "positionInWindow", "getPositionInWindow-nOcc-ac", "positionInScreen", "getPositionInScreen-nOcc-ac", "width", "", "getWidth", "()I", "height", "getHeight", "boundsInRoot", "Landroidx/compose/ui/unit/IntRect;", "getBoundsInRoot", "()Landroidx/compose/ui/unit/IntRect;", "boundsInWindow", "getBoundsInWindow", "boundsInScreen", "getBoundsInScreen", "calculateOcclusions", "", "fractionVisibleIn", "", "viewport", "fractionVisibleInRect", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "fractionVisibleInWindow", "fractionVisibleInWindowWithInsets", "topLeftInset", "bottomRightInset", "fractionVisibleInWindowWithInsets-E1MhUcY", "(JJ)F", "equals", "", "other", "hashCode", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0007\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001BC\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0'J\u000e\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u0000J&\u0010+\u001a\u00020)2\u0006\u0010,\u001a\u00020\u00192\u0006\u0010-\u001a\u00020\u00192\u0006\u0010.\u001a\u00020\u00192\u0006\u0010/\u001a\u00020\u0019J\u0006\u00100\u001a\u00020)J\u001d\u00101\u001a\u00020)2\u0006\u00102\u001a\u00020\u00062\u0006\u00103\u001a\u00020\u0006¢\u0006\u0004\b4\u00105J\u0013\u00106\u001a\u0002072\b\u00108\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u00109\u001a\u00020\u0019H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000fR\u0010\u0010\u0007\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u000fR\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0011\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0013R\u0011\u0010\u0016\u001a\u00020\u00068F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0013R\u0011\u0010\u0018\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\u001c\u001a\u00020\u00198F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001bR\u0011\u0010\u001e\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b \u0010!R\u0011\u0010\"\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b#\u0010!R\u0011\u0010$\u001a\u00020\u001f8F¢\u0006\u0006\u001a\u0004\b%\u0010!¨\u0006:"}, d2 = {"Landroidx/compose/ui/spatial/RelativeLayoutBounds;", "", "topLeft", "", "bottomRight", "windowOffset", "Landroidx/compose/ui/unit/IntOffset;", "screenOffset", "windowSize", "viewToWindowMatrix", "Landroidx/compose/ui/graphics/Matrix;", "node", "Landroidx/compose/ui/node/DelegatableNode;", "<init>", "(JJJJJ[FLandroidx/compose/ui/node/DelegatableNode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "J", "[F", "positionInRoot", "getPositionInRoot-nOcc-ac", "()J", "positionInWindow", "getPositionInWindow-nOcc-ac", "positionInScreen", "getPositionInScreen-nOcc-ac", "width", "", "getWidth", "()I", "height", "getHeight", "boundsInRoot", "Landroidx/compose/ui/unit/IntRect;", "getBoundsInRoot", "()Landroidx/compose/ui/unit/IntRect;", "boundsInWindow", "getBoundsInWindow", "boundsInScreen", "getBoundsInScreen", "calculateOcclusions", "", "fractionVisibleIn", "", "viewport", "fractionVisibleInRect", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "fractionVisibleInWindow", "fractionVisibleInWindowWithInsets", "topLeftInset", "bottomRightInset", "fractionVisibleInWindowWithInsets-E1MhUcY", "(JJ)F", "equals", "", "other", "hashCode", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class RelativeLayoutBounds {
     public static final int $stable = 8;
@@ -42,24 +42,24 @@ public final class RelativeLayoutBounds {
     }
 
     /* renamed from: getPositionInRoot-nOcc-ac  reason: not valid java name */
-    public final long m6803getPositionInRootnOccac() {
-        return IntOffset.m7677constructorimpl(this.topLeft);
+    public final long m7408getPositionInRootnOccac() {
+        return IntOffset.m8282constructorimpl(this.topLeft);
     }
 
     /* renamed from: getPositionInWindow-nOcc-ac  reason: not valid java name */
-    public final long m6805getPositionInWindownOccac() {
-        int m7683getXimpl = IntOffset.m7683getXimpl(this.screenOffset) - IntOffset.m7683getXimpl(this.windowOffset);
-        int m7684getYimpl = IntOffset.m7684getYimpl(this.screenOffset) - IntOffset.m7684getYimpl(this.windowOffset);
+    public final long m7410getPositionInWindownOccac() {
+        int m8288getXimpl = IntOffset.m8288getXimpl(this.screenOffset) - IntOffset.m8288getXimpl(this.windowOffset);
+        int m8289getYimpl = IntOffset.m8289getYimpl(this.screenOffset) - IntOffset.m8289getYimpl(this.windowOffset);
         long j = this.topLeft;
-        return IntOffset.m7677constructorimpl(((((int) (j >> 32)) + m7683getXimpl) << 32) | ((((int) j) + m7684getYimpl) & 4294967295L));
+        return IntOffset.m8282constructorimpl(((((int) (j >> 32)) + m8288getXimpl) << 32) | ((((int) j) + m8289getYimpl) & 4294967295L));
     }
 
     /* renamed from: getPositionInScreen-nOcc-ac  reason: not valid java name */
-    public final long m6804getPositionInScreennOccac() {
-        int m7683getXimpl = IntOffset.m7683getXimpl(this.screenOffset);
-        int m7684getYimpl = IntOffset.m7684getYimpl(this.screenOffset);
+    public final long m7409getPositionInScreennOccac() {
+        int m8288getXimpl = IntOffset.m8288getXimpl(this.screenOffset);
+        int m8289getYimpl = IntOffset.m8289getYimpl(this.screenOffset);
         long j = this.topLeft;
-        return IntOffset.m7677constructorimpl(((((int) (j >> 32)) + m7683getXimpl) << 32) | ((((int) j) + m7684getYimpl) & 4294967295L));
+        return IntOffset.m8282constructorimpl(((((int) (j >> 32)) + m8288getXimpl) << 32) | ((((int) j) + m8289getYimpl) & 4294967295L));
     }
 
     public final int getWidth() {
@@ -85,25 +85,25 @@ public final class RelativeLayoutBounds {
         int i4 = (int) j2;
         float[] fArr = this.viewToWindowMatrix;
         if (fArr != null) {
-            return IntRectKt.roundToIntRect(Matrix.m5023mapimpl(fArr, new Rect(i, i2, i3, i4)));
+            return IntRectKt.roundToIntRect(Matrix.m5599mapimpl(fArr, new Rect(i, i2, i3, i4)));
         }
-        int m7683getXimpl = IntOffset.m7683getXimpl(this.screenOffset) - IntOffset.m7683getXimpl(this.windowOffset);
-        int m7684getYimpl = IntOffset.m7684getYimpl(this.screenOffset) - IntOffset.m7684getYimpl(this.windowOffset);
-        return new IntRect(i + m7683getXimpl, i2 + m7684getYimpl, i3 + m7683getXimpl, i4 + m7684getYimpl);
+        int m8288getXimpl = IntOffset.m8288getXimpl(this.screenOffset) - IntOffset.m8288getXimpl(this.windowOffset);
+        int m8289getYimpl = IntOffset.m8289getYimpl(this.screenOffset) - IntOffset.m8289getYimpl(this.windowOffset);
+        return new IntRect(i + m8288getXimpl, i2 + m8289getYimpl, i3 + m8288getXimpl, i4 + m8289getYimpl);
     }
 
     public final IntRect getBoundsInScreen() {
         if (this.viewToWindowMatrix != null) {
             IntRect boundsInWindow = getBoundsInWindow();
             long j = this.windowOffset;
-            return new IntRect(boundsInWindow.getLeft() + IntOffset.m7683getXimpl(j), boundsInWindow.getTop() + IntOffset.m7684getYimpl(j), boundsInWindow.getRight() + IntOffset.m7683getXimpl(j), boundsInWindow.getBottom() + IntOffset.m7684getYimpl(j));
+            return new IntRect(boundsInWindow.getLeft() + IntOffset.m8288getXimpl(j), boundsInWindow.getTop() + IntOffset.m8289getYimpl(j), boundsInWindow.getRight() + IntOffset.m8288getXimpl(j), boundsInWindow.getBottom() + IntOffset.m8289getYimpl(j));
         }
         long j2 = this.topLeft;
         long j3 = this.bottomRight;
         int i = (int) j3;
-        int m7683getXimpl = IntOffset.m7683getXimpl(this.screenOffset);
-        int m7684getYimpl = IntOffset.m7684getYimpl(this.screenOffset);
-        return new IntRect(((int) (j2 >> 32)) + m7683getXimpl, ((int) j2) + m7684getYimpl, ((int) (j3 >> 32)) + m7683getXimpl, i + m7684getYimpl);
+        int m8288getXimpl = IntOffset.m8288getXimpl(this.screenOffset);
+        int m8289getYimpl = IntOffset.m8289getYimpl(this.screenOffset);
+        return new IntRect(((int) (j2 >> 32)) + m8288getXimpl, ((int) j2) + m8289getYimpl, ((int) (j3 >> 32)) + m8288getXimpl, i + m8289getYimpl);
     }
 
     public final List<IntRect> calculateOcclusions() {
@@ -174,15 +174,15 @@ public final class RelativeLayoutBounds {
     }
 
     /* renamed from: fractionVisibleInWindowWithInsets-E1MhUcY  reason: not valid java name */
-    public final float m6802fractionVisibleInWindowWithInsetsE1MhUcY(long j, long j2) {
+    public final float m7407fractionVisibleInWindowWithInsetsE1MhUcY(long j, long j2) {
         long j3 = this.windowSize;
-        int m7683getXimpl = IntOffset.m7683getXimpl(this.windowOffset);
-        int m7684getYimpl = IntOffset.m7684getYimpl(this.windowOffset);
-        return fractionVisibleInRect(IntOffset.m7683getXimpl(j) + m7683getXimpl, IntOffset.m7684getYimpl(j) + m7684getYimpl, (m7683getXimpl + ((int) (j3 >> 32))) - IntOffset.m7683getXimpl(j2), (m7684getYimpl + ((int) j3)) - IntOffset.m7684getYimpl(j2));
+        int m8288getXimpl = IntOffset.m8288getXimpl(this.windowOffset);
+        int m8289getYimpl = IntOffset.m8289getYimpl(this.windowOffset);
+        return fractionVisibleInRect(IntOffset.m8288getXimpl(j) + m8288getXimpl, IntOffset.m8289getYimpl(j) + m8289getYimpl, (m8288getXimpl + ((int) (j3 >> 32))) - IntOffset.m8288getXimpl(j2), (m8289getYimpl + ((int) j3)) - IntOffset.m8289getYimpl(j2));
     }
 
     public boolean equals(Object obj) {
-        boolean m5018equalsimpl0;
+        boolean m5594equalsimpl0;
         if (this == obj) {
             return true;
         }
@@ -190,28 +190,28 @@ public final class RelativeLayoutBounds {
             return false;
         }
         RelativeLayoutBounds relativeLayoutBounds = (RelativeLayoutBounds) obj;
-        if (this.topLeft == relativeLayoutBounds.topLeft && this.bottomRight == relativeLayoutBounds.bottomRight && this.windowSize == relativeLayoutBounds.windowSize && IntOffset.m7682equalsimpl0(this.windowOffset, relativeLayoutBounds.windowOffset) && IntOffset.m7682equalsimpl0(this.screenOffset, relativeLayoutBounds.screenOffset)) {
+        if (this.topLeft == relativeLayoutBounds.topLeft && this.bottomRight == relativeLayoutBounds.bottomRight && this.windowSize == relativeLayoutBounds.windowSize && IntOffset.m8287equalsimpl0(this.windowOffset, relativeLayoutBounds.windowOffset) && IntOffset.m8287equalsimpl0(this.screenOffset, relativeLayoutBounds.screenOffset)) {
             float[] fArr = this.viewToWindowMatrix;
             float[] fArr2 = relativeLayoutBounds.viewToWindowMatrix;
             if (fArr == null) {
                 if (fArr2 == null) {
-                    m5018equalsimpl0 = true;
+                    m5594equalsimpl0 = true;
                 }
-                m5018equalsimpl0 = false;
+                m5594equalsimpl0 = false;
             } else {
                 if (fArr2 != null) {
-                    m5018equalsimpl0 = Matrix.m5018equalsimpl0(fArr, fArr2);
+                    m5594equalsimpl0 = Matrix.m5594equalsimpl0(fArr, fArr2);
                 }
-                m5018equalsimpl0 = false;
+                m5594equalsimpl0 = false;
             }
-            return m5018equalsimpl0 && Intrinsics.areEqual(this.node, relativeLayoutBounds.node);
+            return m5594equalsimpl0 && Intrinsics.areEqual(this.node, relativeLayoutBounds.node);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((Long.hashCode(this.topLeft) * 31) + Long.hashCode(this.bottomRight)) * 31) + Long.hashCode(this.windowSize)) * 31) + IntOffset.m7685hashCodeimpl(this.windowOffset)) * 31) + IntOffset.m7685hashCodeimpl(this.screenOffset)) * 31;
+        int hashCode = ((((((((Long.hashCode(this.topLeft) * 31) + Long.hashCode(this.bottomRight)) * 31) + Long.hashCode(this.windowSize)) * 31) + IntOffset.m8290hashCodeimpl(this.windowOffset)) * 31) + IntOffset.m8290hashCodeimpl(this.screenOffset)) * 31;
         float[] fArr = this.viewToWindowMatrix;
-        return ((hashCode + (fArr != null ? Matrix.m5020hashCodeimpl(fArr) : 0)) * 31) + this.node.hashCode();
+        return ((hashCode + (fArr != null ? Matrix.m5596hashCodeimpl(fArr) : 0)) * 31) + this.node.hashCode();
     }
 }

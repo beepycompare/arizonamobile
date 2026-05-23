@@ -49,7 +49,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BasicMarquee.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B7\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0006\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\b\u0010:\u001a\u00020;H\u0016J\b\u0010<\u001a\u00020;H\u0016J=\u0010=\u001a\u00020;2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b>\u0010?J\u0010\u0010@\u001a\u00020;2\u0006\u0010A\u001a\u00020BH\u0016J#\u0010C\u001a\u00020D*\u00020E2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020IH\u0016¢\u0006\u0004\bJ\u0010KJ\u001c\u0010L\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0006H\u0016J\u001c\u0010P\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0006H\u0016J\u001c\u0010Q\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010R\u001a\u00020\u0006H\u0016J\u001c\u0010S\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010R\u001a\u00020\u0006H\u0016J\f\u0010T\u001a\u00020;*\u00020UH\u0016J\b\u0010V\u001a\u00020;H\u0002J\u000e\u0010W\u001a\u00020;H\u0082@¢\u0006\u0002\u0010XR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R+\u0010\u0013\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0018\u0010\u0019\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R+\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001d\u0010\u0019\u001a\u0004\b\u001b\u0010\u0015\"\u0004\b\u001c\u0010\u0017R+\u0010\u001f\u001a\u00020\u001e2\u0006\u0010\u0012\u001a\u00020\u001e8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b$\u0010%\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0010\u0010&\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\f8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b.\u0010%\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R+\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\b8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b1\u0010%\u001a\u0004\b/\u0010\u0015\"\u0004\b0\u0010\u0017R\u001a\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u00020503X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u00106\u001a\u00020\u00068BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b8\u00109\u001a\u0004\b7\u0010\u0015¨\u0006Y"}, d2 = {"Landroidx/compose/foundation/MarqueeModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "iterations", "", "animationMode", "Landroidx/compose/foundation/MarqueeAnimationMode;", "delayMillis", "initialDelayMillis", "spacing", "Landroidx/compose/foundation/MarqueeSpacing;", "velocity", "Landroidx/compose/ui/unit/Dp;", "<init>", "(IIIILandroidx/compose/foundation/MarqueeSpacing;FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "<set-?>", "contentWidth", "getContentWidth", "()I", "setContentWidth", "(I)V", "contentWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "containerWidth", "getContainerWidth", "setContainerWidth", "containerWidth$delegate", "", "hasFocus", "getHasFocus", "()Z", "setHasFocus", "(Z)V", "hasFocus$delegate", "Landroidx/compose/runtime/MutableState;", "animationJob", "Lkotlinx/coroutines/Job;", "marqueeLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "getSpacing", "()Landroidx/compose/foundation/MarqueeSpacing;", "setSpacing", "(Landroidx/compose/foundation/MarqueeSpacing;)V", "spacing$delegate", "getAnimationMode-ZbEOnfQ", "setAnimationMode-97h66l8", "animationMode$delegate", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/animation/core/Animatable;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "spacingPx", "getSpacingPx", "spacingPx$delegate", "Landroidx/compose/runtime/State;", "onAttach", "", "onDetach", "update", "update-lWfNwf4", "(IIIILandroidx/compose/foundation/MarqueeSpacing;F)V", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "maxIntrinsicWidth", "minIntrinsicHeight", "width", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "restartAnimation", "runAnimation", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u0004B7\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\u0006\u0012\u0006\u0010\n\u001a\u00020\u0006\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b\u000f\u0010\u0010J\b\u0010:\u001a\u00020;H\u0016J\b\u0010<\u001a\u00020;H\u0016J=\u0010=\u001a\u00020;2\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e¢\u0006\u0004\b>\u0010?J\u0010\u0010@\u001a\u00020;2\u0006\u0010A\u001a\u00020BH\u0016J#\u0010C\u001a\u00020D*\u00020E2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020IH\u0016¢\u0006\u0004\bJ\u0010KJ\u001c\u0010L\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0006H\u0016J\u001c\u0010P\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010O\u001a\u00020\u0006H\u0016J\u001c\u0010Q\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010R\u001a\u00020\u0006H\u0016J\u001c\u0010S\u001a\u00020\u0006*\u00020M2\u0006\u0010F\u001a\u00020N2\u0006\u0010R\u001a\u00020\u0006H\u0016J\f\u0010T\u001a\u00020;*\u00020UH\u0016J\b\u0010V\u001a\u00020;H\u0002J\u000e\u0010W\u001a\u00020;H\u0082@¢\u0006\u0002\u0010XR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R+\u0010\u0013\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u0018\u0010\u0019\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R+\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00068B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b\u001d\u0010\u0019\u001a\u0004\b\u001b\u0010\u0015\"\u0004\b\u001c\u0010\u0017R+\u0010\u001f\u001a\u00020\u001e2\u0006\u0010\u0012\u001a\u00020\u001e8B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b$\u0010%\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u0010\u0010&\u001a\u0004\u0018\u00010'X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R+\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\f8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b.\u0010%\u001a\u0004\b*\u0010+\"\u0004\b,\u0010-R+\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\b8F@FX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b1\u0010%\u001a\u0004\b/\u0010\u0015\"\u0004\b0\u0010\u0017R\u001a\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u00020503X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u00106\u001a\u00020\u00068BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b8\u00109\u001a\u0004\b7\u0010\u0015¨\u0006Y"}, d2 = {"Landroidx/compose/foundation/MarqueeModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/LayoutModifierNode;", "Landroidx/compose/ui/node/DrawModifierNode;", "Landroidx/compose/ui/focus/FocusEventModifierNode;", "iterations", "", "animationMode", "Landroidx/compose/foundation/MarqueeAnimationMode;", "delayMillis", "initialDelayMillis", "spacing", "Landroidx/compose/foundation/MarqueeSpacing;", "velocity", "Landroidx/compose/ui/unit/Dp;", "<init>", "(IIIILandroidx/compose/foundation/MarqueeSpacing;FLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "<set-?>", "contentWidth", "getContentWidth", "()I", "setContentWidth", "(I)V", "contentWidth$delegate", "Landroidx/compose/runtime/MutableIntState;", "containerWidth", "getContainerWidth", "setContainerWidth", "containerWidth$delegate", "", "hasFocus", "getHasFocus", "()Z", "setHasFocus", "(Z)V", "hasFocus$delegate", "Landroidx/compose/runtime/MutableState;", "animationJob", "Lkotlinx/coroutines/Job;", "marqueeLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "getSpacing", "()Landroidx/compose/foundation/MarqueeSpacing;", "setSpacing", "(Landroidx/compose/foundation/MarqueeSpacing;)V", "spacing$delegate", "getAnimationMode-ZbEOnfQ", "setAnimationMode-97h66l8", "animationMode$delegate", TypedValues.CycleType.S_WAVE_OFFSET, "Landroidx/compose/animation/core/Animatable;", "", "Landroidx/compose/animation/core/AnimationVector1D;", "spacingPx", "getSpacingPx", "spacingPx$delegate", "Landroidx/compose/runtime/State;", "onAttach", "", "onDetach", "update", "update-lWfNwf4", "(IIIILandroidx/compose/foundation/MarqueeSpacing;F)V", "onFocusEvent", "focusState", "Landroidx/compose/ui/focus/FocusState;", "measure", "Landroidx/compose/ui/layout/MeasureResult;", "Landroidx/compose/ui/layout/MeasureScope;", "measurable", "Landroidx/compose/ui/layout/Measurable;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "measure-3p2s80s", "(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;", "minIntrinsicWidth", "Landroidx/compose/ui/layout/IntrinsicMeasureScope;", "Landroidx/compose/ui/layout/IntrinsicMeasurable;", "height", "maxIntrinsicWidth", "minIntrinsicHeight", "width", "maxIntrinsicHeight", "draw", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "restartAnimation", "runAnimation", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class MarqueeModifierNode extends Modifier.Node implements LayoutModifierNode, DrawModifierNode, FocusEventModifierNode {
     private Job animationJob;
@@ -67,7 +67,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     private float velocity;
 
     /* compiled from: BasicMarquee.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,7 +109,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         this.hasFocus$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(marqueeSpacing, null, 2, null);
         this.spacing$delegate = mutableStateOf$default2;
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m334boximpl(i2), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m358boximpl(i2), null, 2, null);
         this.animationMode$delegate = mutableStateOf$default3;
         this.offset = AnimatableKt.Animatable$default(0.0f, 0.0f, 2, null);
         this.spacingPx$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda2
@@ -158,13 +158,13 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     }
 
     /* renamed from: getAnimationMode-ZbEOnfQ  reason: not valid java name */
-    public final int m348getAnimationModeZbEOnfQ() {
-        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m340unboximpl();
+    public final int m372getAnimationModeZbEOnfQ() {
+        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m364unboximpl();
     }
 
     /* renamed from: setAnimationMode-97h66l8  reason: not valid java name */
-    public final void m349setAnimationMode97h66l8(int i) {
-        this.animationMode$delegate.setValue(MarqueeAnimationMode.m334boximpl(i));
+    public final void m373setAnimationMode97h66l8(int i) {
+        this.animationMode$delegate.setValue(MarqueeAnimationMode.m358boximpl(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,7 +187,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     public void onDetach() {
         Job job = this.animationJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.animationJob = null;
         GraphicsLayer graphicsLayer = this.marqueeLayer;
@@ -198,10 +198,10 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     }
 
     /* renamed from: update-lWfNwf4  reason: not valid java name */
-    public final void m350updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
+    public final void m374updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
         setSpacing(marqueeSpacing);
-        m349setAnimationMode97h66l8(i2);
-        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m7560equalsimpl0(this.velocity, f)) {
+        m373setAnimationMode97h66l8(i2);
+        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m8165equalsimpl0(this.velocity, f)) {
             return;
         }
         this.iterations = i;
@@ -219,10 +219,10 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
-        setContainerWidth(ConstraintsKt.m7525constrainWidthK40F9xA(j, mo6216measureBRTryo0.getWidth()));
-        setContentWidth(mo6216measureBRTryo0.getWidth());
-        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda1
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(Constraints.m8103copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
+        setContainerWidth(ConstraintsKt.m8130constrainWidthK40F9xA(j, mo6818measureBRTryo0.getWidth()));
+        setContentWidth(mo6818measureBRTryo0.getWidth());
+        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo6818measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return MarqueeModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
@@ -269,7 +269,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         ContentDrawScope contentDrawScope2;
         DrawContext drawContext;
         GraphicsLayer graphicsLayer2;
-        if (Dp.m7554compareTo0680j_4(this.velocity, Dp.m7555constructorimpl(0.0f)) <= 0) {
+        if (Dp.m8159compareTo0680j_4(this.velocity, Dp.m8160constructorimpl(0.0f)) <= 0) {
             int i = WhenMappings.$EnumSwitchMapping$0[contentDrawScope.getLayoutDirection().ordinal()];
             if (i == 1) {
                 contentWidth = (-this.offset.getValue().floatValue()) + getContentWidth() + getSpacingPx();
@@ -278,18 +278,18 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
                 if (((float) getContainerWidth()) + contentWidth > ((float) (getContentWidth() + getSpacingPx()))) {
                 }
                 float contentWidth2 = getContentWidth() + getSpacingPx();
-                float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L));
+                float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5922getSizeNHjbRc() & 4294967295L));
                 graphicsLayer = this.marqueeLayer;
                 if (graphicsLayer != null) {
                 }
                 contentDrawScope2 = contentDrawScope;
                 float containerWidth2 = getContainerWidth();
-                float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
-                int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
+                float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo5922getSizeNHjbRc() & 4294967295L));
+                int m5337getIntersectrtfAjoo = ClipOp.Companion.m5337getIntersectrtfAjoo();
                 drawContext = contentDrawScope2.getDrawContext();
-                long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
+                long mo5843getSizeNHjbRc = drawContext.mo5843getSizeNHjbRc();
                 drawContext.getCanvas().save();
-                drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, containerWidth2, intBitsToFloat2, m4761getIntersectrtfAjoo);
+                drawContext.getTransform().mo5846clipRectN_I0leg(0.0f, 0.0f, containerWidth2, intBitsToFloat2, m5337getIntersectrtfAjoo);
                 float f = -contentWidth;
                 contentDrawScope2.getDrawContext().getTransform().translate(f, 0.0f);
                 graphicsLayer2 = this.marqueeLayer;
@@ -307,18 +307,18 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
                 if (((float) getContainerWidth()) + contentWidth > ((float) (getContentWidth() + getSpacingPx()))) {
                 }
                 float contentWidth22 = getContentWidth() + getSpacingPx();
-                float intBitsToFloat3 = Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L));
+                float intBitsToFloat3 = Float.intBitsToFloat((int) (contentDrawScope.mo5922getSizeNHjbRc() & 4294967295L));
                 graphicsLayer = this.marqueeLayer;
                 if (graphicsLayer != null) {
                 }
                 contentDrawScope2 = contentDrawScope;
                 float containerWidth22 = getContainerWidth();
-                float intBitsToFloat22 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
-                int m4761getIntersectrtfAjoo2 = ClipOp.Companion.m4761getIntersectrtfAjoo();
+                float intBitsToFloat22 = Float.intBitsToFloat((int) (contentDrawScope2.mo5922getSizeNHjbRc() & 4294967295L));
+                int m5337getIntersectrtfAjoo2 = ClipOp.Companion.m5337getIntersectrtfAjoo();
                 drawContext = contentDrawScope2.getDrawContext();
-                long mo5267getSizeNHjbRc2 = drawContext.mo5267getSizeNHjbRc();
+                long mo5843getSizeNHjbRc2 = drawContext.mo5843getSizeNHjbRc();
                 drawContext.getCanvas().save();
-                drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, containerWidth22, intBitsToFloat22, m4761getIntersectrtfAjoo2);
+                drawContext.getTransform().mo5846clipRectN_I0leg(0.0f, 0.0f, containerWidth22, intBitsToFloat22, m5337getIntersectrtfAjoo2);
                 float f2 = -contentWidth;
                 contentDrawScope2.getDrawContext().getTransform().translate(f2, 0.0f);
                 graphicsLayer2 = this.marqueeLayer;
@@ -335,18 +335,18 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
             if (((float) getContainerWidth()) + contentWidth > ((float) (getContentWidth() + getSpacingPx()))) {
             }
             float contentWidth222 = getContentWidth() + getSpacingPx();
-            float intBitsToFloat32 = Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L));
+            float intBitsToFloat32 = Float.intBitsToFloat((int) (contentDrawScope.mo5922getSizeNHjbRc() & 4294967295L));
             graphicsLayer = this.marqueeLayer;
             if (graphicsLayer != null) {
             }
             contentDrawScope2 = contentDrawScope;
             float containerWidth222 = getContainerWidth();
-            float intBitsToFloat222 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
-            int m4761getIntersectrtfAjoo22 = ClipOp.Companion.m4761getIntersectrtfAjoo();
+            float intBitsToFloat222 = Float.intBitsToFloat((int) (contentDrawScope2.mo5922getSizeNHjbRc() & 4294967295L));
+            int m5337getIntersectrtfAjoo22 = ClipOp.Companion.m5337getIntersectrtfAjoo();
             drawContext = contentDrawScope2.getDrawContext();
-            long mo5267getSizeNHjbRc22 = drawContext.mo5267getSizeNHjbRc();
+            long mo5843getSizeNHjbRc22 = drawContext.mo5843getSizeNHjbRc();
             drawContext.getCanvas().save();
-            drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, containerWidth222, intBitsToFloat222, m4761getIntersectrtfAjoo22);
+            drawContext.getTransform().mo5846clipRectN_I0leg(0.0f, 0.0f, containerWidth222, intBitsToFloat222, m5337getIntersectrtfAjoo22);
             float f22 = -contentWidth;
             contentDrawScope2.getDrawContext().getTransform().translate(f22, 0.0f);
             graphicsLayer2 = this.marqueeLayer;
@@ -362,10 +362,10 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
             boolean z = contentWidth >= ((float) getContentWidth());
             boolean z2 = ((float) getContainerWidth()) + contentWidth > ((float) (getContentWidth() + getSpacingPx()));
             float contentWidth2222 = getContentWidth() + getSpacingPx();
-            float intBitsToFloat322 = Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() & 4294967295L));
+            float intBitsToFloat322 = Float.intBitsToFloat((int) (contentDrawScope.mo5922getSizeNHjbRc() & 4294967295L));
             graphicsLayer = this.marqueeLayer;
             if (graphicsLayer != null) {
-                contentDrawScope.mo5347recordJVtK1S4(graphicsLayer, IntSize.m7721constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat322) & 4294967295L)), new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda0
+                contentDrawScope.mo5923recordJVtK1S4(graphicsLayer, IntSize.m8326constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat322) & 4294967295L)), new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit draw$lambda$0$0;
@@ -376,13 +376,13 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
             }
             contentDrawScope2 = contentDrawScope;
             float containerWidth2222 = getContainerWidth();
-            float intBitsToFloat2222 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
-            int m4761getIntersectrtfAjoo222 = ClipOp.Companion.m4761getIntersectrtfAjoo();
+            float intBitsToFloat2222 = Float.intBitsToFloat((int) (contentDrawScope2.mo5922getSizeNHjbRc() & 4294967295L));
+            int m5337getIntersectrtfAjoo222 = ClipOp.Companion.m5337getIntersectrtfAjoo();
             drawContext = contentDrawScope2.getDrawContext();
-            long mo5267getSizeNHjbRc222 = drawContext.mo5267getSizeNHjbRc();
+            long mo5843getSizeNHjbRc222 = drawContext.mo5843getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, containerWidth2222, intBitsToFloat2222, m4761getIntersectrtfAjoo222);
+                drawContext.getTransform().mo5846clipRectN_I0leg(0.0f, 0.0f, containerWidth2222, intBitsToFloat2222, m5337getIntersectrtfAjoo222);
                 float f222 = -contentWidth;
                 contentDrawScope2.getDrawContext().getTransform().translate(f222, 0.0f);
                 graphicsLayer2 = this.marqueeLayer;
@@ -414,7 +414,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
                 contentDrawScope2.getDrawContext().getTransform().translate(-f222, -0.0f);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc222);
+                drawContext.mo5844setSizeuvyYCjk(mo5843getSizeNHjbRc222);
             }
         }
     }
@@ -429,7 +429,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         Job launch$default;
         Job job = this.animationJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (isAttached()) {
             launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new MarqueeModifierNode$restartAnimation$1(job, this, null), 3, null);

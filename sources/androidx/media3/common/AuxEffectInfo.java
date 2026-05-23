@@ -1,5 +1,5 @@
 package androidx.media3.common;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AuxEffectInfo {
     public static final int NO_AUX_EFFECT_ID = 0;
     public final int effectId;

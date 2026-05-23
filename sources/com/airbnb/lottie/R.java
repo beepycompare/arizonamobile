@@ -4,30 +4,30 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int lottieAnimationViewStyle = 0x7f040402;
-        public static int lottie_applyOpacityToLayers = 0x7f040403;
-        public static int lottie_applyShadowToLayers = 0x7f040404;
-        public static int lottie_asyncUpdates = 0x7f040405;
-        public static int lottie_autoPlay = 0x7f040406;
-        public static int lottie_cacheComposition = 0x7f040407;
-        public static int lottie_clipTextToBoundingBox = 0x7f040408;
-        public static int lottie_clipToCompositionBounds = 0x7f040409;
-        public static int lottie_colorFilter = 0x7f04040a;
-        public static int lottie_defaultFontFileExtension = 0x7f04040b;
-        public static int lottie_enableMergePathsForKitKatAndAbove = 0x7f04040c;
-        public static int lottie_fallbackRes = 0x7f04040d;
-        public static int lottie_fileName = 0x7f04040e;
-        public static int lottie_ignoreDisabledSystemAnimations = 0x7f04040f;
-        public static int lottie_imageAssetsFolder = 0x7f040410;
-        public static int lottie_loop = 0x7f040411;
-        public static int lottie_progress = 0x7f040412;
-        public static int lottie_rawRes = 0x7f040413;
-        public static int lottie_renderMode = 0x7f040414;
-        public static int lottie_repeatCount = 0x7f040415;
-        public static int lottie_repeatMode = 0x7f040416;
-        public static int lottie_speed = 0x7f040417;
-        public static int lottie_url = 0x7f040418;
-        public static int lottie_useCompositionFrameRate = 0x7f040419;
+        public static int lottieAnimationViewStyle = 0x7f040420;
+        public static int lottie_applyOpacityToLayers = 0x7f040421;
+        public static int lottie_applyShadowToLayers = 0x7f040422;
+        public static int lottie_asyncUpdates = 0x7f040423;
+        public static int lottie_autoPlay = 0x7f040424;
+        public static int lottie_cacheComposition = 0x7f040425;
+        public static int lottie_clipTextToBoundingBox = 0x7f040426;
+        public static int lottie_clipToCompositionBounds = 0x7f040427;
+        public static int lottie_colorFilter = 0x7f040428;
+        public static int lottie_defaultFontFileExtension = 0x7f040429;
+        public static int lottie_enableMergePathsForKitKatAndAbove = 0x7f04042a;
+        public static int lottie_fallbackRes = 0x7f04042b;
+        public static int lottie_fileName = 0x7f04042c;
+        public static int lottie_ignoreDisabledSystemAnimations = 0x7f04042d;
+        public static int lottie_imageAssetsFolder = 0x7f04042e;
+        public static int lottie_loop = 0x7f04042f;
+        public static int lottie_progress = 0x7f040430;
+        public static int lottie_rawRes = 0x7f040431;
+        public static int lottie_renderMode = 0x7f040432;
+        public static int lottie_repeatCount = 0x7f040433;
+        public static int lottie_repeatMode = 0x7f040434;
+        public static int lottie_speed = 0x7f040435;
+        public static int lottie_url = 0x7f040436;
+        public static int lottie_useCompositionFrameRate = 0x7f040437;
 
         private attr() {
         }
@@ -35,14 +35,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int automatic = 0x7f0a013f;
-        public static int disabled = 0x7f0a0453;
-        public static int enabled = 0x7f0a04eb;
-        public static int hardware = 0x7f0a068b;
-        public static int lottie_layer_name = 0x7f0a08b3;
-        public static int restart = 0x7f0a0bd0;
-        public static int reverse = 0x7f0a0bd6;
-        public static int software = 0x7f0a0d66;
+        public static int automatic = 0x7f0a0140;
+        public static int disabled = 0x7f0a0454;
+        public static int enabled = 0x7f0a04ec;
+        public static int hardware = 0x7f0a068c;
+        public static int lottie_layer_name = 0x7f0a08b5;
+        public static int restart = 0x7f0a0bd9;
+        public static int reverse = 0x7f0a0bdf;
+        public static int software = 0x7f0a0d6f;
 
         private id() {
         }

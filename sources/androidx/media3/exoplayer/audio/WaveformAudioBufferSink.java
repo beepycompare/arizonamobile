@@ -8,7 +8,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.TeeAudioProcessor;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class WaveformAudioBufferSink implements TeeAudioProcessor.AudioBufferSink {
     private final int barsPerSecond;
     private ChannelMixingMatrix channelMixingMatrix;
@@ -19,12 +19,12 @@ public class WaveformAudioBufferSink implements TeeAudioProcessor.AudioBufferSin
     private final SparseArray<WaveformBar> outputChannels;
     private int samplesPerBar;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onNewWaveformBar(int i, WaveformBar waveformBar);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class WaveformBar {
         private int sampleCount;
         private double squareSum;

@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AudioTrackAudioOutput implements AudioOutput {
     private static final int AUDIO_TRACK_VOLUME_RAMP_TIME_MS = 20;
     private static final int ERROR_NATIVE_DEAD_OBJECT = -32;
@@ -46,6 +46,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     private long lastTunnelingAvSyncPresentationTimeUs;
     private int lastUnderrunCount;
     private final ListenerSet<AudioOutput.Listener> listeners;
+    private final float maxPlaybackSpeed;
     private final StreamEventCallbackV29 offloadStreamEventCallbackV29;
     private OnRoutingChangedListenerApi24 onRoutingChangedListener;
     private final int pcmFrameSize;
@@ -53,7 +54,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     private long writtenPcmBytes;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface CapabilityChangeListener {
         void onRecoverableWriteError();
 
@@ -64,13 +65,17 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         return i == -6 || i == ERROR_NATIVE_DEAD_OBJECT;
     }
 
+    @Deprecated
     public AudioTrackAudioOutput(AudioTrack audioTrack, AudioOutputProvider.OutputConfig outputConfig, CapabilityChangeListener capabilityChangeListener, Clock clock) {
+        this(audioTrack, outputConfig, capabilityChangeListener, 8.0f, clock);
+    }
+
+    public AudioTrackAudioOutput(AudioTrack audioTrack, AudioOutputProvider.OutputConfig outputConfig, CapabilityChangeListener capabilityChangeListener, float f, Clock clock) {
         this.audioTrack = audioTrack;
         this.config = outputConfig;
+        this.maxPlaybackSpeed = f;
         this.capabilityChangeListener = capabilityChangeListener;
-        ListenerSet<AudioOutput.Listener> listenerSet = new ListenerSet<>(Thread.currentThread());
-        this.listeners = listenerSet;
-        listenerSet.setThrowsWhenUsingWrongThread(false);
+        this.listeners = new ListenerSet<>(Thread.currentThread());
         boolean isEncodingLinearPcm = Util.isEncodingLinearPcm(outputConfig.encoding);
         this.isOutputPcm = isEncodingLinearPcm;
         if (isEncodingLinearPcm) {
@@ -230,7 +235,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     @Override // androidx.media3.exoplayer.audio.AudioOutput
     public void setPlaybackParameters(PlaybackParameters playbackParameters) {
         try {
-            this.audioTrack.setPlaybackParams(new PlaybackParams().allowDefaults().setSpeed(playbackParameters.speed).setPitch(playbackParameters.pitch).setAudioFallbackMode(2));
+            this.audioTrack.setPlaybackParams(new PlaybackParams().allowDefaults().setSpeed(Util.constrainValue(playbackParameters.speed, 0.1f, this.maxPlaybackSpeed)).setPitch(Util.constrainValue(playbackParameters.pitch, 0.1f, 8.0f)).setAudioFallbackMode(2));
         } catch (IllegalArgumentException e) {
             Log.w(TAG, "Failed to set playback params", e);
         }
@@ -327,7 +332,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     }
 
     private void maybeReportUnderrun() {
-        if (hasPendingAudioTrackUnderruns(getWrittenFrames())) {
+        if (this.listeners.isRunningOnCorrectThread() && hasPendingAudioTrackUnderruns(getWrittenFrames())) {
             this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
@@ -373,12 +378,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ListenerSet.this.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda1
-                            @Override // androidx.media3.common.util.ListenerSet.Event
-                            public final void invoke(Object obj) {
-                                ((AudioOutput.Listener) obj).onReleased();
-                            }
-                        });
+                        AudioTrackAudioOutput.lambda$releaseAudioTrackAsync$0(ListenerSet.this);
                     }
                 });
             }
@@ -395,12 +395,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ListenerSet.this.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda1
-                            @Override // androidx.media3.common.util.ListenerSet.Event
-                            public final void invoke(Object obj) {
-                                ((AudioOutput.Listener) obj).onReleased();
-                            }
-                        });
+                        AudioTrackAudioOutput.lambda$releaseAudioTrackAsync$0(ListenerSet.this);
                     }
                 });
             }
@@ -416,7 +411,19 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void lambda$releaseAudioTrackAsync$0(ListenerSet listenerSet) {
+        if (listenerSet.isRunningOnCorrectThread()) {
+            listenerSet.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$$ExternalSyntheticLambda1
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((AudioOutput.Listener) obj).onReleased();
+                }
+            });
+        }
+    }
+
+    /* loaded from: classes3.dex */
     private final class PositionTrackerListener implements AudioTrackPositionTracker.Listener {
         private PositionTrackerListener() {
         }
@@ -446,16 +453,18 @@ public final class AudioTrackAudioOutput implements AudioOutput {
 
         @Override // androidx.media3.exoplayer.audio.AudioTrackPositionTracker.Listener
         public void onPositionAdvancing(final long j) {
-            AudioTrackAudioOutput.this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$PositionTrackerListener$$ExternalSyntheticLambda0
-                @Override // androidx.media3.common.util.ListenerSet.Event
-                public final void invoke(Object obj) {
-                    ((AudioOutput.Listener) obj).onPositionAdvancing(j);
-                }
-            });
+            if (AudioTrackAudioOutput.this.listeners.isRunningOnCorrectThread()) {
+                AudioTrackAudioOutput.this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$PositionTrackerListener$$ExternalSyntheticLambda0
+                    @Override // androidx.media3.common.util.ListenerSet.Event
+                    public final void invoke(Object obj) {
+                        ((AudioOutput.Listener) obj).onPositionAdvancing(j);
+                    }
+                });
+            }
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class InvalidAudioTrackTimestampException extends RuntimeException {
         private InvalidAudioTrackTimestampException(String str) {
             super(str);
@@ -463,7 +472,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OnRoutingChangedListenerApi24 {
         private final AudioTrack audioTrack;
         private final CapabilityChangeListener capabilityChangeListener;
@@ -499,20 +508,20 @@ public final class AudioTrackAudioOutput implements AudioOutput {
             BackgroundExecutor.get().execute(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8248xdb32c08b(audioRouting);
+                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8855xdb32c08b(audioRouting);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$1$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8248xdb32c08b(AudioRouting audioRouting) {
+        public /* synthetic */ void m8855xdb32c08b(AudioRouting audioRouting) {
             final AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
             if (routedDevice != null) {
                 this.playbackThreadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8247x2346530a(routedDevice);
+                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8854x2346530a(routedDevice);
                     }
                 });
             }
@@ -520,7 +529,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$0$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8247x2346530a(AudioDeviceInfo audioDeviceInfo) {
+        public /* synthetic */ void m8854x2346530a(AudioDeviceInfo audioDeviceInfo) {
             if (this.listener == null) {
                 return;
             }
@@ -528,7 +537,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class StreamEventCallbackV29 {
         private final AudioTrack.StreamEventCallback callback;
         private final Handler handler;

@@ -18,6 +18,6 @@ import org.checkerframework.framework.qual.UpperBoundFor;
 @Documented
 @UpperBoundFor(typeKinds = {TypeKind.FLOAT, TypeKind.DOUBLE}, types = {Float.class, Double.class})
 @DefaultQualifierInHierarchy
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Signed {
 }

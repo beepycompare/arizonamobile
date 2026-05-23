@@ -1,25 +1,23 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import com.google.android.gms.common.GoogleApiAvailabilityLight;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.internal.BaseGmsClient;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaak implements Runnable {
-    final /* synthetic */ zaaw zaa;
+final class zaak extends zabb {
+    final /* synthetic */ BaseGmsClient.ConnectionProgressReportCallbacks zaa;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zaak(zaaw zaawVar) {
-        this.zaa = zaawVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zaak(zaal zaalVar, zaba zabaVar, BaseGmsClient.ConnectionProgressReportCallbacks connectionProgressReportCallbacks) {
+        super(zabaVar);
+        this.zaa = connectionProgressReportCallbacks;
+        Objects.requireNonNull(zaalVar);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        GoogleApiAvailabilityLight googleApiAvailabilityLight;
-        Context context;
-        zaaw zaawVar = this.zaa;
-        googleApiAvailabilityLight = zaawVar.zad;
-        context = zaawVar.zac;
-        googleApiAvailabilityLight.cancelAvailabilityErrorNotifications(context);
+    @Override // com.google.android.gms.common.api.internal.zabb
+    public final void zaa() {
+        this.zaa.onReportServiceBinding(new ConnectionResult(16, null));
     }
 }

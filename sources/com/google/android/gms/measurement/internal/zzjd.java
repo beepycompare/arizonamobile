@@ -11,6 +11,7 @@ import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.GoogleSignatureVerifier;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.UidVerifier;
+import com.google.android.gms.internal.measurement.zzaeh;
 import com.google.firebase.messaging.Constants;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +20,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzjd extends zzga {
     private final zzpg zza;
@@ -32,10 +33,10 @@ public final class zzjd extends zzga {
         this.zzc = null;
     }
 
-    private final void zzM(zzbg zzbgVar, zzr zzrVar) {
+    private final void zzM(zzbh zzbhVar, zzr zzrVar) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
-        zzpgVar.zzF(zzbgVar, zzrVar);
+        zzpgVar.zzaa();
+        zzpgVar.zzF(zzbhVar, zzrVar);
     }
 
     private final void zzN(zzr zzrVar, boolean z) {
@@ -43,7 +44,7 @@ public final class zzjd extends zzga {
         String str = zzrVar.zza;
         Preconditions.checkNotEmpty(str);
         zzO(str, false);
-        this.zza.zzt().zzA(zzrVar.zzb);
+        this.zza.zzt().zzC(zzrVar.zzb);
     }
 
     private final void zzO(String str, boolean z) {
@@ -54,7 +55,7 @@ public final class zzjd extends zzga {
                         boolean z2 = true;
                         if (!"com.google.android.gms".equals(this.zzc)) {
                             zzpg zzpgVar = this.zza;
-                            if (!UidVerifier.isGooglePlayServicesUid(zzpgVar.zzaY(), Binder.getCallingUid()) && !GoogleSignatureVerifier.getInstance(zzpgVar.zzaY()).isUidGoogleSigned(Binder.getCallingUid())) {
+                            if (!UidVerifier.isGooglePlayServicesUid(zzpgVar.zzaZ(), Binder.getCallingUid()) && !GoogleSignatureVerifier.getInstance(zzpgVar.zzaZ()).isUidGoogleSigned(Binder.getCallingUid())) {
                                 z2 = false;
                             }
                         }
@@ -64,11 +65,11 @@ public final class zzjd extends zzga {
                         return;
                     }
                 } catch (SecurityException e) {
-                    this.zza.zzaV().zzb().zzb("Measurement Service called with invalid calling package. appId", zzgu.zzl(str));
+                    this.zza.zzaW().zzb().zzb("Measurement Service called with invalid calling package. appId", zzgu.zzl(str));
                     throw e;
                 }
             }
-            if (this.zzc == null && GooglePlayServicesUtilLight.uidHasPackageName(this.zza.zzaY(), Binder.getCallingUid(), str)) {
+            if (this.zzc == null && GooglePlayServicesUtilLight.uidHasPackageName(this.zza.zzaZ(), Binder.getCallingUid(), str)) {
                 this.zzc = str;
             }
             if (str.equals(this.zzc)) {
@@ -76,7 +77,7 @@ public final class zzjd extends zzga {
             }
             throw new SecurityException(String.format("Unknown calling package name '%s'.", str));
         }
-        this.zza.zzaV().zzb().zza("Measurement Service called without app package");
+        this.zza.zzaW().zzb().zza("Measurement Service called without app package");
         throw new SecurityException("Measurement Service called without app package");
     }
 
@@ -90,7 +91,7 @@ public final class zzjd extends zzga {
     public final void zzB(zzr zzrVar, final zzoo zzooVar, final zzgh zzghVar) {
         zzN(zzrVar, false);
         final String str = (String) Preconditions.checkNotNull(zzrVar.zza);
-        this.zza.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zziz
+        this.zza.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zziz
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
                 zzjd.this.zzI(str, zzooVar, zzghVar);
@@ -113,7 +114,7 @@ public final class zzjd extends zzga {
     public final void zzD(final zzr zzrVar, final Bundle bundle, final zzge zzgeVar) {
         zzN(zzrVar, false);
         final String str = (String) Preconditions.checkNotNull(zzrVar.zza);
-        this.zza.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zziy
+        this.zza.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zziy
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
                 zzjd.this.zzH(zzrVar, bundle, zzgeVar, str);
@@ -124,43 +125,43 @@ public final class zzjd extends zzga {
     final void zzE(Runnable runnable) {
         Preconditions.checkNotNull(runnable);
         zzpg zzpgVar = this.zza;
-        if (zzpgVar.zzaW().zze()) {
+        if (zzpgVar.zzaX().zze()) {
             runnable.run();
         } else {
-            zzpgVar.zzaW().zzl(runnable);
+            zzpgVar.zzaX().zzl(runnable);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzF(zzr zzrVar) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
+        zzpgVar.zzaa();
         zzpgVar.zzv(zzrVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzG(zzr zzrVar) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
+        zzpgVar.zzaa();
         zzpgVar.zzw(zzrVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzH(zzr zzrVar, Bundle bundle, zzge zzgeVar, String str) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
+        zzpgVar.zzaa();
         try {
-            zzgeVar.zze(zzpgVar.zzaq(zzrVar, bundle));
+            zzgeVar.zze(zzpgVar.zzar(zzrVar, bundle));
         } catch (RemoteException e) {
-            this.zza.zzaV().zzb().zzc("Failed to return trigger URIs for app", str, e);
+            this.zza.zzaW().zzb().zzc("Failed to return trigger URIs for app", str, e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzI(String str, zzoo zzooVar, zzgh zzghVar) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
-        zzpgVar.zzaW().zzg();
+        zzpgVar.zzaa();
+        zzpgVar.zzaX().zzg();
         zzpgVar.zzu();
         List<zzpj> zzC = zzpgVar.zzj().zzC(str, zzooVar, ((Integer) zzfy.zzA.zzb(null)).intValue());
         ArrayList arrayList = new ArrayList();
@@ -169,84 +170,84 @@ public final class zzjd extends zzga {
                 int zzi = zzpjVar.zzi();
                 if (zzi > 0) {
                     if (zzi <= ((Integer) zzfy.zzy.zzb(null)).intValue()) {
-                        if (zzpgVar.zzaZ().currentTimeMillis() >= zzpjVar.zzh() + Math.min(((Long) zzfy.zzw.zzb(null)).longValue() * (1 << (zzi - 1)), ((Long) zzfy.zzx.zzb(null)).longValue())) {
+                        if (zzpgVar.zzba().currentTimeMillis() >= zzpjVar.zzh() + Math.min(((Long) zzfy.zzw.zzb(null)).longValue() * (1 << (zzi - 1)), ((Long) zzfy.zzx.zzb(null)).longValue())) {
                         }
                     }
-                    zzpgVar.zzaV().zzk().zzd("[sgtm] batch skipped waiting for next retry. appId, rowId, lastUploadMillis", str, Long.valueOf(zzpjVar.zzc()), Long.valueOf(zzpjVar.zzh()));
+                    zzpgVar.zzaW().zzk().zzd("[sgtm] batch skipped waiting for next retry. appId, rowId, lastUploadMillis", str, Long.valueOf(zzpjVar.zzc()), Long.valueOf(zzpjVar.zzh()));
                 }
                 zzom zzb = zzpjVar.zzb();
                 try {
-                    com.google.android.gms.internal.measurement.zzhz zzhzVar = (com.google.android.gms.internal.measurement.zzhz) zzpk.zzw(com.google.android.gms.internal.measurement.zzib.zzh(), zzb.zzb);
+                    com.google.android.gms.internal.measurement.zzhz zzhzVar = (com.google.android.gms.internal.measurement.zzhz) zzpk.zzw(com.google.android.gms.internal.measurement.zzib.zzi(), zzb.zzb);
                     for (int i = 0; i < zzhzVar.zzb(); i++) {
-                        com.google.android.gms.internal.measurement.zzic zzicVar = (com.google.android.gms.internal.measurement.zzic) zzhzVar.zzc(i).zzcl();
-                        zzicVar.zzs(zzpgVar.zzaZ().currentTimeMillis());
+                        com.google.android.gms.internal.measurement.zzic zzicVar = (com.google.android.gms.internal.measurement.zzic) zzhzVar.zzc(i).zzco();
+                        zzicVar.zzs(zzpgVar.zzba().currentTimeMillis());
                         zzhzVar.zzd(i, zzicVar);
                     }
-                    zzb.zzb = ((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbc()).zzcc();
-                    if (Log.isLoggable(zzpgVar.zzaV().zzn(), 2)) {
-                        zzb.zzg = zzpgVar.zzp().zzi((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbc());
+                    zzb.zzb = ((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbd()).zzcd();
+                    if (Log.isLoggable(zzpgVar.zzaW().zzn(), 2)) {
+                        zzb.zzg = zzpgVar.zzp().zzi((com.google.android.gms.internal.measurement.zzib) zzhzVar.zzbd());
                     }
                     arrayList.add(zzb);
-                } catch (com.google.android.gms.internal.measurement.zzmr unused) {
-                    zzpgVar.zzaV().zze().zzb("Failed to parse queued batch. appId", str);
+                } catch (zzaeh unused) {
+                    zzpgVar.zzaW().zze().zzb("Failed to parse queued batch. appId", str);
                 }
             } else {
-                zzpgVar.zzaV().zzk().zzd("[sgtm] batch skipped due to destination in backoff. appId, rowId, url", str, Long.valueOf(zzpjVar.zzc()), zzpjVar.zze());
+                zzpgVar.zzaW().zzk().zzd("[sgtm] batch skipped due to destination in backoff. appId, rowId, url", str, Long.valueOf(zzpjVar.zzc()), zzpjVar.zze());
             }
         }
         zzoq zzoqVar = new zzoq(arrayList);
         try {
             zzghVar.zze(zzoqVar);
-            this.zza.zzaV().zzk().zzc("[sgtm] Sending queued upload batches to client. appId, count", str, Integer.valueOf(zzoqVar.zza.size()));
+            this.zza.zzaW().zzk().zzc("[sgtm] Sending queued upload batches to client. appId, count", str, Integer.valueOf(zzoqVar.zza.size()));
         } catch (RemoteException e) {
-            this.zza.zzaV().zzb().zzc("[sgtm] Failed to return upload batches for app", str, e);
+            this.zza.zzaW().zzb().zzc("[sgtm] Failed to return upload batches for app", str, e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzJ(zzr zzrVar, zzaf zzafVar) {
         zzpg zzpgVar = this.zza;
-        zzpgVar.zzZ();
-        zzpgVar.zzar((String) Preconditions.checkNotNull(zzrVar.zza), zzafVar);
+        zzpgVar.zzaa();
+        zzpgVar.zzas((String) Preconditions.checkNotNull(zzrVar.zza), zzafVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzK(Bundle bundle, String str, zzr zzrVar) {
+        boolean isEmpty = bundle.isEmpty();
         zzpg zzpgVar = this.zza;
-        boolean zzp = zzpgVar.zzd().zzp(null, zzfy.zzaV);
-        if (!bundle.isEmpty() || !zzp) {
-            zzav zzj = zzpgVar.zzj();
+        if (isEmpty) {
+            zzaw zzj = zzpgVar.zzj();
             zzj.zzg();
-            zzj.zzaw();
-            byte[] zzcc = zzj.zzg.zzp().zzh(new zzbb(zzj.zzu, "", str, "dep", 0L, 0L, bundle)).zzcc();
-            zzic zzicVar = zzj.zzu;
-            zzicVar.zzaV().zzk().zzc("Saving default event parameters, appId, data size", str, Integer.valueOf(zzcc.length));
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("app_id", str);
-            contentValues.put("parameters", zzcc);
+            zzj.zzay();
             try {
-                if (zzj.zze().insertWithOnConflict("default_event_params", null, contentValues, 5) == -1) {
-                    zzicVar.zzaV().zzb().zzb("Failed to insert default event parameters (got -1). appId", zzgu.zzl(str));
-                }
+                zzj.zze().execSQL("delete from default_event_params where app_id=?", new String[]{str});
+                return;
             } catch (SQLiteException e) {
-                zzj.zzu.zzaV().zzb().zzc("Error storing default event parameters. appId", zzgu.zzl(str), e);
-            }
-            zzpg zzpgVar2 = this.zza;
-            zzav zzj2 = zzpgVar2.zzj();
-            long j = zzrVar.zzD;
-            if (zzj2.zzV(str, j)) {
-                zzpgVar2.zzj().zzW(str, Long.valueOf(j), null, bundle);
+                zzj.zzu.zzaW().zzb().zzb("Error clearing default event params", e);
                 return;
             }
-            return;
         }
-        zzav zzj3 = this.zza.zzj();
-        zzj3.zzg();
-        zzj3.zzaw();
+        zzaw zzj2 = zzpgVar.zzj();
+        zzj2.zzg();
+        zzj2.zzay();
+        byte[] zzcd = zzj2.zzg.zzp().zzh(new zzbc(zzj2.zzu, "", str, "dep", 0L, 0L, 0L, bundle)).zzcd();
+        zzic zzicVar = zzj2.zzu;
+        zzicVar.zzaW().zzk().zzc("Saving default event parameters, appId, data size", str, Integer.valueOf(zzcd.length));
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("app_id", str);
+        contentValues.put("parameters", zzcd);
         try {
-            zzj3.zze().execSQL("delete from default_event_params where app_id=?", new String[]{str});
+            if (zzj2.zze().insertWithOnConflict("default_event_params", null, contentValues, 5) == -1) {
+                zzicVar.zzaW().zzb().zzb("Failed to insert default event parameters (got -1). appId", zzgu.zzl(str));
+            }
         } catch (SQLiteException e2) {
-            zzj3.zzu.zzaV().zzb().zzb("Error clearing default event params", e2);
+            zzj2.zzu.zzaW().zzb().zzc("Error storing default event parameters. appId", zzgu.zzl(str), e2);
+        }
+        zzpg zzpgVar2 = this.zza;
+        zzaw zzj3 = zzpgVar2.zzj();
+        long j = zzrVar.zzD;
+        if (zzj3.zzW(str, j)) {
+            zzpgVar2.zzj().zzX(str, Long.valueOf(j), null, bundle);
         }
     }
 
@@ -256,31 +257,31 @@ public final class zzjd extends zzga {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzb(zzbg zzbgVar, zzr zzrVar) {
+    public final void zzb(zzbh zzbhVar, zzr zzrVar) {
         zzpg zzpgVar = this.zza;
         zzht zzh = zzpgVar.zzh();
         String str = zzrVar.zza;
-        com.google.android.gms.internal.measurement.zzc zzcVar = TextUtils.isEmpty(str) ? null : (com.google.android.gms.internal.measurement.zzc) zzh.zzd.get(str);
+        com.google.android.gms.internal.measurement.zzc zzcVar = TextUtils.isEmpty(str) ? null : (com.google.android.gms.internal.measurement.zzc) zzh.zze.get(str);
         if (zzcVar != null) {
             try {
-                Map zzz = zzpgVar.zzp().zzz(zzbgVar.zzb.zzf(), true);
-                String str2 = zzbgVar.zza;
+                Map zzz = zzpgVar.zzp().zzz(zzbhVar.zzb.zzf(), true);
+                String str2 = zzbhVar.zza;
                 String zza = zzjm.zza(str2);
                 if (zza != null) {
                     str2 = zza;
                 }
-                if (zzcVar.zzb(new com.google.android.gms.internal.measurement.zzaa(str2, zzbgVar.zzd, zzz))) {
+                if (zzcVar.zzb(new com.google.android.gms.internal.measurement.zzaa(str2, zzbhVar.zzd, zzz))) {
                     if (zzcVar.zzc()) {
                         zzpg zzpgVar2 = this.zza;
-                        zzpgVar2.zzaV().zzk().zzb("EES edited event", zzbgVar.zza);
+                        zzpgVar2.zzaW().zzk().zzb("EES edited event", zzbhVar.zza);
                         zzM(zzpgVar2.zzp().zzA(zzcVar.zze().zzc()), zzrVar);
                     } else {
-                        zzM(zzbgVar, zzrVar);
+                        zzM(zzbhVar, zzrVar);
                     }
                     if (zzcVar.zzd()) {
                         for (com.google.android.gms.internal.measurement.zzaa zzaaVar : zzcVar.zze().zzf()) {
                             zzpg zzpgVar3 = this.zza;
-                            zzpgVar3.zzaV().zzk().zzb("EES logging created event", zzaaVar.zzb());
+                            zzpgVar3.zzaW().zzk().zzb("EES logging created event", zzaaVar.zzb());
                             zzM(zzpgVar3.zzp().zzA(zzaaVar), zzrVar);
                         }
                         return;
@@ -288,44 +289,44 @@ public final class zzjd extends zzga {
                     return;
                 }
             } catch (com.google.android.gms.internal.measurement.zzd unused) {
-                this.zza.zzaV().zzb().zzc("EES error. appId, eventName", zzrVar.zzb, zzbgVar.zza);
+                this.zza.zzaW().zzb().zzc("EES error. appId, eventName", zzrVar.zzb, zzbhVar.zza);
             }
-            this.zza.zzaV().zzk().zzb("EES was not applied to event", zzbgVar.zza);
-            zzM(zzbgVar, zzrVar);
+            this.zza.zzaW().zzk().zzb("EES was not applied to event", zzbhVar.zza);
+            zzM(zzbhVar, zzrVar);
             return;
         }
-        this.zza.zzaV().zzk().zzb("EES not loaded for", zzrVar.zza);
-        zzM(zzbgVar, zzrVar);
+        this.zza.zzaW().zzk().zzb("EES not loaded for", zzrVar.zza);
+        zzM(zzbhVar, zzrVar);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final zzbg zzc(zzbg zzbgVar, zzr zzrVar) {
-        zzbe zzbeVar;
-        if (Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(zzbgVar.zza) && (zzbeVar = zzbgVar.zzb) != null && zzbeVar.zze() != 0) {
-            String zzd = zzbeVar.zzd("_cis");
+    public final zzbh zzc(zzbh zzbhVar, zzr zzrVar) {
+        zzbf zzbfVar;
+        if (Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(zzbhVar.zza) && (zzbfVar = zzbhVar.zzb) != null && zzbfVar.zze() != 0) {
+            String zzd = zzbfVar.zzd("_cis");
             if ("referrer broadcast".equals(zzd) || "referrer API".equals(zzd)) {
-                this.zza.zzaV().zzi().zzb("Event has been filtered ", zzbgVar.toString());
-                return new zzbg("_cmpx", zzbeVar, zzbgVar.zzc, zzbgVar.zzd);
+                this.zza.zzaW().zzi().zzb("Event has been filtered ", zzbhVar.toString());
+                return new zzbh("_cmpx", zzbfVar, zzbhVar.zzc, zzbhVar.zzd, zzbhVar.zze);
             }
         }
-        return zzbgVar;
+        return zzbhVar;
     }
 
     final void zzd(Runnable runnable) {
         Preconditions.checkNotNull(runnable);
         zzpg zzpgVar = this.zza;
-        if (zzpgVar.zzaW().zze()) {
+        if (zzpgVar.zzaX().zze()) {
             runnable.run();
         } else {
-            zzpgVar.zzaW().zzj(runnable);
+            zzpgVar.zzaX().zzj(runnable);
         }
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final void zze(zzbg zzbgVar, zzr zzrVar) {
-        Preconditions.checkNotNull(zzbgVar);
+    public final void zze(zzbh zzbhVar, zzr zzrVar) {
+        Preconditions.checkNotNull(zzbhVar);
         zzN(zzrVar, false);
-        zzd(new zzir(this, zzbgVar, zzrVar));
+        zzd(new zzir(this, zzbhVar, zzrVar));
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
@@ -342,11 +343,11 @@ public final class zzjd extends zzga {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final void zzh(zzbg zzbgVar, String str, String str2) {
-        Preconditions.checkNotNull(zzbgVar);
+    public final void zzh(zzbh zzbhVar, String str, String str2) {
+        Preconditions.checkNotNull(zzbhVar);
         Preconditions.checkNotEmpty(str);
         zzO(str, true);
-        zzd(new zzis(this, zzbgVar, str));
+        zzd(new zzis(this, zzbhVar, str));
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
@@ -361,42 +362,42 @@ public final class zzjd extends zzga {
         String str = zzrVar.zza;
         Preconditions.checkNotNull(str);
         try {
-            List<zzpn> list = (List) this.zza.zzaW().zzh(new zzid(this, str)).get();
+            List<zzpn> list = (List) this.zza.zzaX().zzh(new zzid(this, str)).get();
             ArrayList arrayList = new ArrayList(list.size());
             for (zzpn zzpnVar : list) {
-                if (z || !zzpp.zzZ(zzpnVar.zzc)) {
+                if (z || !zzpp.zzac(zzpnVar.zzc)) {
                     arrayList.add(new zzpl(zzpnVar));
                 }
             }
             return arrayList;
         } catch (InterruptedException | ExecutionException e) {
-            this.zza.zzaV().zzb().zzc("Failed to get user properties. appId", zzgu.zzl(zzrVar.zza), e);
+            this.zza.zzaW().zzb().zzc("Failed to get user properties. appId", zzgu.zzl(zzrVar.zza), e);
             return null;
         }
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
-    public final byte[] zzk(zzbg zzbgVar, String str) {
+    public final byte[] zzk(zzbh zzbhVar, String str) {
         Preconditions.checkNotEmpty(str);
-        Preconditions.checkNotNull(zzbgVar);
+        Preconditions.checkNotNull(zzbhVar);
         zzO(str, true);
         zzpg zzpgVar = this.zza;
-        zzgs zzj = zzpgVar.zzaV().zzj();
+        zzgs zzj = zzpgVar.zzaW().zzj();
         zzgn zzs = zzpgVar.zzs();
-        String str2 = zzbgVar.zza;
+        String str2 = zzbhVar.zza;
         zzj.zzb("Log and bundle. event", zzs.zza(str2));
-        long nanoTime = zzpgVar.zzaZ().nanoTime() / 1000000;
+        long nanoTime = zzpgVar.zzba().nanoTime() / 1000000;
         try {
-            byte[] bArr = (byte[]) zzpgVar.zzaW().zzi(new zzit(this, zzbgVar, str)).get();
+            byte[] bArr = (byte[]) zzpgVar.zzaX().zzi(new zzit(this, zzbhVar, str)).get();
             if (bArr == null) {
-                zzpgVar.zzaV().zzb().zzb("Log and bundle returned null. appId", zzgu.zzl(str));
+                zzpgVar.zzaW().zzb().zzb("Log and bundle returned null. appId", zzgu.zzl(str));
                 bArr = new byte[0];
             }
-            zzpgVar.zzaV().zzj().zzd("Log and bundle processed. event, size, time_ms", zzpgVar.zzs().zza(str2), Integer.valueOf(bArr.length), Long.valueOf((zzpgVar.zzaZ().nanoTime() / 1000000) - nanoTime));
+            zzpgVar.zzaW().zzj().zzd("Log and bundle processed. event, size, time_ms", zzpgVar.zzs().zza(str2), Integer.valueOf(bArr.length), Long.valueOf((zzpgVar.zzba().nanoTime() / 1000000) - nanoTime));
             return bArr;
         } catch (InterruptedException | ExecutionException e) {
             zzpg zzpgVar2 = this.zza;
-            zzpgVar2.zzaV().zzb().zzd("Failed to log and bundle. appId, event, error", zzgu.zzl(str), zzpgVar2.zzs().zza(zzbgVar.zza), e);
+            zzpgVar2.zzaW().zzb().zzd("Failed to log and bundle. appId, event, error", zzgu.zzl(str), zzpgVar2.zzs().zza(zzbhVar.zza), e);
             return null;
         }
     }
@@ -409,7 +410,7 @@ public final class zzjd extends zzga {
     @Override // com.google.android.gms.measurement.internal.zzgb
     public final String zzm(zzr zzrVar) {
         zzN(zzrVar, false);
-        return this.zza.zzap(zzrVar);
+        return this.zza.zzaq(zzrVar);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzgb
@@ -437,16 +438,16 @@ public final class zzjd extends zzga {
         String str3 = zzrVar.zza;
         Preconditions.checkNotNull(str3);
         try {
-            List<zzpn> list = (List) this.zza.zzaW().zzh(new zzij(this, str3, str, str2)).get();
+            List<zzpn> list = (List) this.zza.zzaX().zzh(new zzij(this, str3, str, str2)).get();
             ArrayList arrayList = new ArrayList(list.size());
             for (zzpn zzpnVar : list) {
-                if (z || !zzpp.zzZ(zzpnVar.zzc)) {
+                if (z || !zzpp.zzac(zzpnVar.zzc)) {
                     arrayList.add(new zzpl(zzpnVar));
                 }
             }
             return arrayList;
         } catch (InterruptedException | ExecutionException e) {
-            this.zza.zzaV().zzb().zzc("Failed to query user properties. appId", zzgu.zzl(zzrVar.zza), e);
+            this.zza.zzaW().zzb().zzc("Failed to query user properties. appId", zzgu.zzl(zzrVar.zza), e);
             return Collections.emptyList();
         }
     }
@@ -455,16 +456,16 @@ public final class zzjd extends zzga {
     public final List zzq(String str, String str2, String str3, boolean z) {
         zzO(str, true);
         try {
-            List<zzpn> list = (List) this.zza.zzaW().zzh(new zzik(this, str, str2, str3)).get();
+            List<zzpn> list = (List) this.zza.zzaX().zzh(new zzik(this, str, str2, str3)).get();
             ArrayList arrayList = new ArrayList(list.size());
             for (zzpn zzpnVar : list) {
-                if (z || !zzpp.zzZ(zzpnVar.zzc)) {
+                if (z || !zzpp.zzac(zzpnVar.zzc)) {
                     arrayList.add(new zzpl(zzpnVar));
                 }
             }
             return arrayList;
         } catch (InterruptedException | ExecutionException e) {
-            this.zza.zzaV().zzb().zzc("Failed to get user properties as. appId", zzgu.zzl(str), e);
+            this.zza.zzaW().zzb().zzc("Failed to get user properties as. appId", zzgu.zzl(str), e);
             return Collections.emptyList();
         }
     }
@@ -475,9 +476,9 @@ public final class zzjd extends zzga {
         String str3 = zzrVar.zza;
         Preconditions.checkNotNull(str3);
         try {
-            return (List) this.zza.zzaW().zzh(new zzil(this, str3, str, str2)).get();
+            return (List) this.zza.zzaX().zzh(new zzil(this, str3, str, str2)).get();
         } catch (InterruptedException | ExecutionException e) {
-            this.zza.zzaV().zzb().zzb("Failed to get conditional user properties", e);
+            this.zza.zzaW().zzb().zzb("Failed to get conditional user properties", e);
             return Collections.emptyList();
         }
     }
@@ -486,9 +487,9 @@ public final class zzjd extends zzga {
     public final List zzs(String str, String str2, String str3) {
         zzO(str, true);
         try {
-            return (List) this.zza.zzaW().zzh(new zzim(this, str, str2, str3)).get();
+            return (List) this.zza.zzaX().zzh(new zzim(this, str, str2, str3)).get();
         } catch (InterruptedException | ExecutionException e) {
-            this.zza.zzaV().zzb().zzb("Failed to get conditional user properties as", e);
+            this.zza.zzaW().zzb().zzb("Failed to get conditional user properties as", e);
             return Collections.emptyList();
         }
     }
@@ -526,9 +527,9 @@ public final class zzjd extends zzga {
         zzN(zzrVar, false);
         Preconditions.checkNotEmpty(zzrVar.zza);
         try {
-            return (zzao) this.zza.zzaW().zzi(new zziq(this, zzrVar)).get(10000L, TimeUnit.MILLISECONDS);
+            return (zzao) this.zza.zzaX().zzi(new zziq(this, zzrVar)).get(10000L, TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            this.zza.zzaV().zzb().zzc("Failed to get consent. appId", zzgu.zzl(zzrVar.zza), e);
+            this.zza.zzaW().zzb().zzc("Failed to get consent. appId", zzgu.zzl(zzrVar.zza), e);
             return new zzao(null);
         }
     }
@@ -538,18 +539,18 @@ public final class zzjd extends zzga {
         zzN(zzrVar, false);
         Preconditions.checkNotNull(zzrVar.zza);
         zzpg zzpgVar = this.zza;
-        if (zzpgVar.zzd().zzp(null, zzfy.zzaY)) {
+        if (zzpgVar.zzd().zzp(null, zzfy.zzaT)) {
             try {
-                return (List) zzpgVar.zzaW().zzi(new zziv(this, zzrVar, bundle)).get(10000L, TimeUnit.MILLISECONDS);
+                return (List) zzpgVar.zzaX().zzi(new zziv(this, zzrVar, bundle)).get(10000L, TimeUnit.MILLISECONDS);
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                this.zza.zzaV().zzb().zzc("Failed to get trigger URIs. appId", zzgu.zzl(zzrVar.zza), e);
+                this.zza.zzaW().zzb().zzc("Failed to get trigger URIs. appId", zzgu.zzl(zzrVar.zza), e);
                 return Collections.emptyList();
             }
         }
         try {
-            return (List) this.zza.zzaW().zzh(new zziw(this, zzrVar, bundle)).get();
+            return (List) this.zza.zzaX().zzh(new zziw(this, zzrVar, bundle)).get();
         } catch (InterruptedException | ExecutionException e2) {
-            this.zza.zzaV().zzb().zzc("Failed to get trigger URIs. appId", zzgu.zzl(zzrVar.zza), e2);
+            this.zza.zzaW().zzb().zzc("Failed to get trigger URIs. appId", zzgu.zzl(zzrVar.zza), e2);
             return Collections.emptyList();
         }
     }

@@ -29,6 +29,9 @@ public final class DebugMetadataKt {
     }
 
     private static final int getLabel(BaseContinuationImpl baseContinuationImpl) {
+        if (baseContinuationImpl instanceof TailCallBaseContinuationImpl) {
+            return 0;
+        }
         try {
             Field declaredField = baseContinuationImpl.getClass().getDeclaredField(Constants.ScionAnalytics.PARAM_LABEL);
             declaredField.setAccessible(true);

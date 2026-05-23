@@ -1,12 +1,9 @@
 package androidx.core.app;
 
 import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.LocusId;
 import android.graphics.drawable.Icon;
-import android.media.AudioAttributes;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,10 +22,9 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
     private final NotificationCompat.Builder mBuilderCompat;
     private RemoteViews mContentView;
     private final Context mContext;
+    private final Bundle mExtras = new Bundle();
     private int mGroupAlertBehavior;
     private RemoteViews mHeadsUpContentView;
-    private final List<Bundle> mActionExtrasList = new ArrayList();
-    private final Bundle mExtras = new Bundle();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public NotificationCompatBuilder(NotificationCompat.Builder builder) {
@@ -43,7 +39,7 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         }
         Notification notification = builder.mNotification;
         this.mBuilder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.mTickerView).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.mContentTitle).setContentText(builder.mContentText).setContentInfo(builder.mContentInfo).setContentIntent(builder.mContentIntent).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.mFullScreenIntent, (notification.flags & 128) != 0).setNumber(builder.mNumber).setProgress(builder.mProgressMax, builder.mProgress, builder.mProgressIndeterminate);
-        Api23Impl.setLargeIcon(this.mBuilder, builder.mLargeIcon == null ? null : builder.mLargeIcon.toIcon(context));
+        this.mBuilder.setLargeIcon(builder.mLargeIcon == null ? null : builder.mLargeIcon.toIcon(context));
         this.mBuilder.setSubText(builder.mSubText).setUsesChronometer(builder.mUseChronometer).setPriority(builder.mPriority);
         if (builder.mStyle instanceof NotificationCompat.CallStyle) {
             for (NotificationCompat.Action action : ((NotificationCompat.CallStyle) builder.mStyle).getActionsListWithSystemActions()) {
@@ -61,16 +57,16 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         this.mContentView = builder.mContentView;
         this.mBigContentView = builder.mBigContentView;
         this.mBuilder.setShowWhen(builder.mShowWhen);
-        Api20Impl.setLocalOnly(this.mBuilder, builder.mLocalOnly);
-        Api20Impl.setGroup(this.mBuilder, builder.mGroupKey);
-        Api20Impl.setSortKey(this.mBuilder, builder.mSortKey);
-        Api20Impl.setGroupSummary(this.mBuilder, builder.mGroupSummary);
+        this.mBuilder.setLocalOnly(builder.mLocalOnly);
+        this.mBuilder.setGroup(builder.mGroupKey);
+        this.mBuilder.setSortKey(builder.mSortKey);
+        this.mBuilder.setGroupSummary(builder.mGroupSummary);
         this.mGroupAlertBehavior = builder.mGroupAlertBehavior;
-        Api21Impl.setCategory(this.mBuilder, builder.mCategory);
-        Api21Impl.setColor(this.mBuilder, builder.mColor);
-        Api21Impl.setVisibility(this.mBuilder, builder.mVisibility);
-        Api21Impl.setPublicVersion(this.mBuilder, builder.mPublicVersion);
-        Api21Impl.setSound(this.mBuilder, notification.sound, notification.audioAttributes);
+        this.mBuilder.setCategory(builder.mCategory);
+        this.mBuilder.setColor(builder.mColor);
+        this.mBuilder.setVisibility(builder.mVisibility);
+        this.mBuilder.setPublicVersion(builder.mPublicVersion);
+        this.mBuilder.setSound(notification.sound, notification.audioAttributes);
         if (Build.VERSION.SDK_INT < 28) {
             list = combineLists(getPeople(builder.mPersonList), builder.mPeople);
         } else {
@@ -78,7 +74,7 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         }
         if (list != null && !list.isEmpty()) {
             for (String str : list) {
-                Api21Impl.addPerson(this.mBuilder, str);
+                this.mBuilder.addPerson(str);
             }
         }
         this.mHeadsUpContentView = builder.mHeadsUpContentView;
@@ -96,7 +92,7 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
             this.mExtras.putBundle("android.car.EXTENSIONS", bundle2);
         }
         if (builder.mSmallIcon != null) {
-            Api23Impl.setSmallIcon(this.mBuilder, builder.mSmallIcon);
+            this.mBuilder.setSmallIcon((Icon) builder.mSmallIcon);
         }
         this.mBuilder.setExtras(builder.mExtras);
         Api24Impl.setRemoteInputHistory(this.mBuilder, builder.mRemoteInputHistory);
@@ -154,7 +150,7 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
             this.mBuilder.setDefaults(notification.defaults);
             if (Build.VERSION.SDK_INT >= 26) {
                 if (TextUtils.isEmpty(this.mBuilderCompat.mGroupKey)) {
-                    Api20Impl.setGroup(this.mBuilder, NotificationCompat.GROUP_KEY_SILENT);
+                    this.mBuilder.setGroup(NotificationCompat.GROUP_KEY_SILENT);
                 }
                 Api26Impl.setGroupAlertBehavior(this.mBuilder, this.mGroupAlertBehavior);
             }
@@ -225,10 +221,10 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
     private void addAction(NotificationCompat.Action action) {
         Bundle bundle;
         IconCompat iconCompat = action.getIconCompat();
-        Notification.Action.Builder createBuilder = Api23Impl.createBuilder(iconCompat != null ? iconCompat.toIcon() : null, action.getTitle(), action.getActionIntent());
+        Notification.Action.Builder builder = new Notification.Action.Builder(iconCompat != null ? iconCompat.toIcon() : null, action.getTitle(), action.getActionIntent());
         if (action.getRemoteInputs() != null) {
             for (android.app.RemoteInput remoteInput : RemoteInput.fromCompat(action.getRemoteInputs())) {
-                Api20Impl.addRemoteInput(createBuilder, remoteInput);
+                builder.addRemoteInput(remoteInput);
             }
         }
         if (action.getExtras() != null) {
@@ -237,20 +233,20 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
             bundle = new Bundle();
         }
         bundle.putBoolean("android.support.allowGeneratedReplies", action.getAllowGeneratedReplies());
-        Api24Impl.setAllowGeneratedReplies(createBuilder, action.getAllowGeneratedReplies());
+        Api24Impl.setAllowGeneratedReplies(builder, action.getAllowGeneratedReplies());
         bundle.putInt("android.support.action.semanticAction", action.getSemanticAction());
         if (Build.VERSION.SDK_INT >= 28) {
-            Api28Impl.setSemanticAction(createBuilder, action.getSemanticAction());
+            Api28Impl.setSemanticAction(builder, action.getSemanticAction());
         }
         if (Build.VERSION.SDK_INT >= 29) {
-            Api29Impl.setContextual(createBuilder, action.isContextual());
+            Api29Impl.setContextual(builder, action.isContextual());
         }
         if (Build.VERSION.SDK_INT >= 31) {
-            Api31Impl.setAuthenticationRequired(createBuilder, action.isAuthenticationRequired());
+            Api31Impl.setAuthenticationRequired(builder, action.isAuthenticationRequired());
         }
         bundle.putBoolean("android.support.action.showsUserInterface", action.getShowsUserInterface());
-        Api20Impl.addExtras(createBuilder, bundle);
-        Api20Impl.addAction(this.mBuilder, Api20Impl.build(createBuilder));
+        builder.addExtras(bundle);
+        this.mBuilder.addAction(builder.build());
     }
 
     protected Notification buildInternal() {
@@ -261,10 +257,10 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         }
         Notification build = builder.build();
         if (this.mGroupAlertBehavior != 0) {
-            if (Api20Impl.getGroup(build) != null && (build.flags & 512) != 0 && this.mGroupAlertBehavior == 2) {
+            if (build.getGroup() != null && (build.flags & 512) != 0 && this.mGroupAlertBehavior == 2) {
                 removeSoundAndVibration(build);
             }
-            if (Api20Impl.getGroup(build) != null && (build.flags & 512) == 0 && this.mGroupAlertBehavior == 1) {
+            if (build.getGroup() != null && (build.flags & 512) == 0 && this.mGroupAlertBehavior == 1) {
                 removeSoundAndVibration(build);
             }
         }
@@ -276,102 +272,6 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         notification.vibrate = null;
         notification.defaults &= -2;
         notification.defaults &= -3;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api20Impl {
-        private Api20Impl() {
-        }
-
-        static Notification.Action.Builder createBuilder(int i, CharSequence charSequence, PendingIntent pendingIntent) {
-            return new Notification.Action.Builder(i, charSequence, pendingIntent);
-        }
-
-        static Notification.Action.Builder addRemoteInput(Notification.Action.Builder builder, android.app.RemoteInput remoteInput) {
-            return builder.addRemoteInput(remoteInput);
-        }
-
-        static Notification.Action.Builder addExtras(Notification.Action.Builder builder, Bundle bundle) {
-            return builder.addExtras(bundle);
-        }
-
-        static Notification.Builder addAction(Notification.Builder builder, Notification.Action action) {
-            return builder.addAction(action);
-        }
-
-        static Notification.Action build(Notification.Action.Builder builder) {
-            return builder.build();
-        }
-
-        static String getGroup(Notification notification) {
-            return notification.getGroup();
-        }
-
-        static Notification.Builder setGroup(Notification.Builder builder, String str) {
-            return builder.setGroup(str);
-        }
-
-        static Notification.Builder setGroupSummary(Notification.Builder builder, boolean z) {
-            return builder.setGroupSummary(z);
-        }
-
-        static Notification.Builder setLocalOnly(Notification.Builder builder, boolean z) {
-            return builder.setLocalOnly(z);
-        }
-
-        static Notification.Builder setSortKey(Notification.Builder builder, String str) {
-            return builder.setSortKey(str);
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static Notification.Builder addPerson(Notification.Builder builder, String str) {
-            return builder.addPerson(str);
-        }
-
-        static Notification.Builder setCategory(Notification.Builder builder, String str) {
-            return builder.setCategory(str);
-        }
-
-        static Notification.Builder setColor(Notification.Builder builder, int i) {
-            return builder.setColor(i);
-        }
-
-        static Notification.Builder setVisibility(Notification.Builder builder, int i) {
-            return builder.setVisibility(i);
-        }
-
-        static Notification.Builder setPublicVersion(Notification.Builder builder, Notification notification) {
-            return builder.setPublicVersion(notification);
-        }
-
-        static Notification.Builder setSound(Notification.Builder builder, Uri uri, Object obj) {
-            return builder.setSound(uri, (AudioAttributes) obj);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api23Impl {
-        private Api23Impl() {
-        }
-
-        static Notification.Action.Builder createBuilder(Icon icon, CharSequence charSequence, PendingIntent pendingIntent) {
-            return new Notification.Action.Builder(icon, charSequence, pendingIntent);
-        }
-
-        static Notification.Builder setSmallIcon(Notification.Builder builder, Object obj) {
-            return builder.setSmallIcon((Icon) obj);
-        }
-
-        static Notification.Builder setLargeIcon(Notification.Builder builder, Icon icon) {
-            return builder.setLargeIcon(icon);
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

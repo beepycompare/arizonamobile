@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class id {
-        public static int report_drawn = 0x7f0a0bcc;
-        public static int view_tree_on_back_pressed_dispatcher_owner = 0x7f0a1060;
+        public static int report_drawn = 0x7f0a0bd5;
+        public static int view_tree_on_back_pressed_dispatcher_owner = 0x7f0a1069;
 
         private id() {
         }

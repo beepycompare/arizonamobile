@@ -1,26 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ValidationException;
 /* loaded from: classes5.dex */
-public class En implements so {
+public final class En implements InterfaceC0493oo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final so f577a;
+    public final InterfaceC0493oo f532a;
+    public final Object b;
 
-    public En(so soVar) {
-        this.f577a = soVar;
+    public En(InterfaceC0493oo interfaceC0493oo, Object obj) {
+        this.f532a = interfaceC0493oo;
+        this.b = obj;
     }
 
-    @Override // io.appmetrica.analytics.impl.so
-    public final qo a(Object obj) {
-        qo a2 = this.f577a.a(obj);
-        if (a2.f1199a) {
-            return a2;
-        }
-        throw new ValidationException(a2.b);
-    }
-
-    public final so a() {
-        return this.f577a;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0493oo
+    public final Object a(Object obj) {
+        return obj != this.f532a.a(obj) ? this.b : obj;
     }
 }

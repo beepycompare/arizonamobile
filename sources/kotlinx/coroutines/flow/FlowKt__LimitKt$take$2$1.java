@@ -5,10 +5,11 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
     final /* synthetic */ Ref.IntRef $consumed;
@@ -25,14 +26,14 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
         this.$ownershipMarker = obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0053, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x005d, code lost:
         if (r5.emit(r7, r0) == r1) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0071, code lost:
         if (r6 == r1) goto L23;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -50,9 +51,11 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
                 i = flowKt__LimitKt$take$2$1$emit$1.label;
                 if (i == 0) {
                     if (i == 1) {
+                        Object obj2 = flowKt__LimitKt$take$2$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     } else if (i == 2) {
+                        Object obj3 = flowKt__LimitKt$take$2$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     } else {
@@ -65,17 +68,19 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
                 int i3 = this.$count;
                 FlowCollector<T> flowCollector = this.$this_flow;
                 if (i2 >= i3) {
-                    Object obj2 = this.$ownershipMarker;
+                    Object obj4 = this.$ownershipMarker;
+                    flowKt__LimitKt$take$2$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__LimitKt$take$2$1$emit$1.label = 2;
-                    emitAbort$FlowKt__LimitKt = FlowKt__LimitKt.emitAbort$FlowKt__LimitKt(flowCollector, t, obj2, flowKt__LimitKt$take$2$1$emit$1);
+                    emitAbort$FlowKt__LimitKt = FlowKt__LimitKt.emitAbort$FlowKt__LimitKt(flowCollector, t, obj4, flowKt__LimitKt$take$2$1$emit$1);
                 } else {
+                    flowKt__LimitKt$take$2$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__LimitKt$take$2$1$emit$1.label = 1;
                 }
                 return coroutine_suspended;
             }
         }
         flowKt__LimitKt$take$2$1$emit$1 = new FlowKt__LimitKt$take$2$1$emit$1(this, continuation);
-        Object obj3 = flowKt__LimitKt$take$2$1$emit$1.result;
+        Object obj5 = flowKt__LimitKt$take$2$1$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__LimitKt$take$2$1$emit$1.label;
         if (i == 0) {

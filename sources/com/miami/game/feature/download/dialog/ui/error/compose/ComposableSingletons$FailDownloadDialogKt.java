@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FailDownloadDialog.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ComposableSingletons$FailDownloadDialogKt {
     public static final ComposableSingletons$FailDownloadDialogKt INSTANCE = new ComposableSingletons$FailDownloadDialogKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$1464513202 = ComposableLambdaKt.composableLambdaInstance(1464513202, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda0
@@ -23,7 +23,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     });
 
     /* renamed from: lambda$-1143154327  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f137lambda$1143154327 = ComposableLambdaKt.composableLambdaInstance(-1143154327, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> f57lambda$1143154327 = ComposableLambdaKt.composableLambdaInstance(-1143154327, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$FailDownloadDialogKt.lambda__1143154327$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -31,8 +31,8 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     });
 
     /* renamed from: getLambda$-1143154327$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9098getLambda$1143154327$dialogs() {
-        return f137lambda$1143154327;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9736getLambda$1143154327$dialogs() {
+        return f57lambda$1143154327;
     }
 
     public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1464513202$dialogs() {
@@ -49,7 +49,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1464513202, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt.lambda$1464513202.<anonymous> (FailDownloadDialog.kt:65)");
             }
-            TextKt.m2712TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ОТМЕНА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -67,7 +67,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1143154327, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt.lambda$-1143154327.<anonymous> (FailDownloadDialog.kt:71)");
             }
-            TextKt.m2712TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -1,13 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes5.dex */
-public final class Ld {
+public final class Ld extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final G0 f682a;
-    public final EnumC0142bb b;
+    public final /* synthetic */ Nd f645a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ byte[] c;
 
-    public Ld(G0 g0, EnumC0142bb enumC0142bb) {
-        this.f682a = g0;
-        this.b = enumC0142bb;
+    public Ld(Nd nd, String str, byte[] bArr) {
+        this.f645a = nd;
+        this.b = str;
+        this.c = bArr;
+    }
+
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        Nd.a(this.f645a).setSessionExtra(this.b, this.c);
     }
 }

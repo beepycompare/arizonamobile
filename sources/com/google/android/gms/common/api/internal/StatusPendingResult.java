@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.os.Looper;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class StatusPendingResult extends BasePendingResult<Status> {
     @Deprecated

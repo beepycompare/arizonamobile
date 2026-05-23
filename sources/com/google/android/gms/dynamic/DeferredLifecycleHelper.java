@@ -13,9 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.dynamic.LifecycleDelegate;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.LinkedList;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class DeferredLifecycleHelper<T extends LifecycleDelegate> {
     private LifecycleDelegate zaa;
@@ -27,8 +26,8 @@ public abstract class DeferredLifecycleHelper<T extends LifecycleDelegate> {
         GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
         Context context = frameLayout.getContext();
         int isGooglePlayServicesAvailable = googleApiAvailability.isGooglePlayServicesAvailable(context);
-        String zac = com.google.android.gms.common.internal.zac.zac(context, isGooglePlayServicesAvailable);
-        String zab = com.google.android.gms.common.internal.zac.zab(context, isGooglePlayServicesAvailable);
+        String zac = com.google.android.gms.common.internal.zaf.zac(context, isGooglePlayServicesAvailable);
+        String zae = com.google.android.gms.common.internal.zaf.zae(context, isGooglePlayServicesAvailable);
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
         linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
@@ -42,7 +41,7 @@ public abstract class DeferredLifecycleHelper<T extends LifecycleDelegate> {
             Button button = new Button(context);
             button.setId(16908313);
             button.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
-            button.setText(zab);
+            button.setText(zae);
             linearLayout.addView(button);
             button.setOnClickListener(new zae(context, errorResolutionIntent));
         }
@@ -89,7 +88,6 @@ public abstract class DeferredLifecycleHelper<T extends LifecycleDelegate> {
         zaf(bundle, new zac(this, bundle));
     }
 
-    @ResultIgnorabilityUnspecified
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FrameLayout frameLayout = new FrameLayout(layoutInflater.getContext());
         zaf(bundle, new zad(this, frameLayout, layoutInflater, viewGroup, bundle));
@@ -164,5 +162,25 @@ public abstract class DeferredLifecycleHelper<T extends LifecycleDelegate> {
         } else {
             zae(4);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ LifecycleDelegate zaa() {
+        return this.zaa;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zab(LifecycleDelegate lifecycleDelegate) {
+        this.zaa = lifecycleDelegate;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zac(Bundle bundle) {
+        this.zab = null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ LinkedList zad() {
+        return this.zac;
     }
 }

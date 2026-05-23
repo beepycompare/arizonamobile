@@ -39,26 +39,10 @@ public final class SizeFCompat {
     }
 
     public SizeF toSizeF() {
-        return Api21Impl.toSizeF(this);
+        return new SizeF(getWidth(), getHeight());
     }
 
     public static SizeFCompat toSizeFCompat(SizeF sizeF) {
-        return Api21Impl.toSizeFCompat(sizeF);
-    }
-
-    /* loaded from: classes2.dex */
-    private static final class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static SizeFCompat toSizeFCompat(SizeF sizeF) {
-            Preconditions.checkNotNull(sizeF);
-            return new SizeFCompat(sizeF.getWidth(), sizeF.getHeight());
-        }
-
-        static SizeF toSizeF(SizeFCompat sizeFCompat) {
-            Preconditions.checkNotNull(sizeFCompat);
-            return new SizeF(sizeFCompat.getWidth(), sizeFCompat.getHeight());
-        }
+        return new SizeFCompat(sizeF.getWidth(), sizeF.getHeight());
     }
 }

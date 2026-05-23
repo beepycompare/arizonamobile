@@ -7,56 +7,56 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextFieldKeyEventHandler.kt */
-@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u000eHÖ\u0001J\t\u0010\u000f\u001a\u00020\u0010HÖ\u0001R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t\u0088\u0001\u0002¨\u0006\u0011"}, d2 = {"Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "", "handler", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/KeyCommand;", "", "constructor-impl", "(Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;", "getHandler", "()Lkotlin/jvm/functions/Function1;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t\u0088\u0001\u0002¨\u0006\u0011"}, d2 = {"Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "", "handler", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/KeyCommand;", "", "constructor-impl", "(Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;", "getHandler", "()Lkotlin/jvm/functions/Function1;", "equals", "", "other", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class ClipboardKeyCommandsHandler {
     private final Function1<KeyCommand, Unit> handler;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ClipboardKeyCommandsHandler m1368boximpl(Function1 function1) {
+    public static final /* synthetic */ ClipboardKeyCommandsHandler m1754boximpl(Function1 function1) {
         return new ClipboardKeyCommandsHandler(function1);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Function1<? super KeyCommand, ? extends Unit> m1369constructorimpl(Function1<? super KeyCommand, Unit> function1) {
+    public static Function1<? super KeyCommand, ? extends Unit> m1755constructorimpl(Function1<? super KeyCommand, Unit> function1) {
         return function1;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1370equalsimpl(Function1<? super KeyCommand, ? extends Unit> function1, Object obj) {
-        return (obj instanceof ClipboardKeyCommandsHandler) && Intrinsics.areEqual(function1, ((ClipboardKeyCommandsHandler) obj).m1374unboximpl());
+    public static boolean m1756equalsimpl(Function1<? super KeyCommand, ? extends Unit> function1, Object obj) {
+        return (obj instanceof ClipboardKeyCommandsHandler) && Intrinsics.areEqual(function1, ((ClipboardKeyCommandsHandler) obj).m1760unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1371equalsimpl0(Function1<? super KeyCommand, ? extends Unit> function1, Function1<? super KeyCommand, ? extends Unit> function12) {
+    public static final boolean m1757equalsimpl0(Function1<? super KeyCommand, ? extends Unit> function1, Function1<? super KeyCommand, ? extends Unit> function12) {
         return Intrinsics.areEqual(function1, function12);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1372hashCodeimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
+    public static int m1758hashCodeimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
         return function1.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1373toStringimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
+    public static String m1759toStringimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
         return "ClipboardKeyCommandsHandler(handler=" + function1 + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1370equalsimpl(this.handler, obj);
+        return m1756equalsimpl(this.handler, obj);
     }
 
     public int hashCode() {
-        return m1372hashCodeimpl(this.handler);
+        return m1758hashCodeimpl(this.handler);
     }
 
     public String toString() {
-        return m1373toStringimpl(this.handler);
+        return m1759toStringimpl(this.handler);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Function1 m1374unboximpl() {
+    public final /* synthetic */ Function1 m1760unboximpl() {
         return this.handler;
     }
 

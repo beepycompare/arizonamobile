@@ -1,11 +1,13 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 /* loaded from: classes5.dex */
-public final class Ac extends B2 {
-    public static final C0749zc b = new C0749zc();
+public final class Ac implements LocationReceiver {
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiver
+    public final void startLocationUpdates() {
+    }
 
-    public Ac(J9 j9, Map<String, ? extends Object> map) {
-        super(C0749zc.a(b, j9, map));
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiver
+    public final void stopLocationUpdates() {
     }
 }

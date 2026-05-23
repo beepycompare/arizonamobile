@@ -1,0 +1,28 @@
+package com.google.android.material.listitem;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+/* loaded from: classes4.dex */
+public interface RevealableListItem {
+    public static final int PRIMARY_ACTION_SWIPE_DIRECT = 2;
+    public static final int PRIMARY_ACTION_SWIPE_DISABLED = 0;
+    public static final int PRIMARY_ACTION_SWIPE_INDIRECT = 1;
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes4.dex */
+    public @interface PrimaryActionSwipeMode {
+    }
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes4.dex */
+    public @interface RevealGravity {
+    }
+
+    int getIntrinsicWidth();
+
+    int getPrimaryActionSwipeMode();
+
+    void setPrimaryActionSwipeMode(int i);
+
+    void setRevealedWidth(int i);
+}

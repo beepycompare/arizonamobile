@@ -12,7 +12,7 @@ import org.checkerframework.framework.qual.PostconditionAnnotation;
 @InheritedAnnotation
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface EnsuresPresent {
     String[] value();
 }

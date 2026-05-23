@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.gms.internal.measurement.zzdf;
-import com.google.android.gms.internal.measurement.zzfb;
+import com.google.android.gms.internal.measurement.zzdd;
+import com.google.android.gms.internal.measurement.zzez;
 import com.google.android.gms.measurement.internal.zzlk;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
@@ -17,21 +17,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class FirebaseAnalytics {
     private static volatile FirebaseAnalytics zza;
-    private final zzfb zzb;
+    private final zzez zzb;
     private ExecutorService zzc;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public enum ConsentStatus {
         GRANTED,
         DENIED
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public enum ConsentType {
         AD_STORAGE,
@@ -40,7 +40,7 @@ public final class FirebaseAnalytics {
         AD_PERSONALIZATION
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public static class Event {
         public static final String ADD_PAYMENT_INFO = "add_payment_info";
@@ -53,6 +53,7 @@ public final class FirebaseAnalytics {
         public static final String CAMPAIGN_DETAILS = "campaign_details";
         public static final String EARN_VIRTUAL_CURRENCY = "earn_virtual_currency";
         public static final String GENERATE_LEAD = "generate_lead";
+        public static final String IN_APP_PURCHASE = "in_app_purchase";
         public static final String JOIN_GROUP = "join_group";
         public static final String LEVEL_END = "level_end";
         public static final String LEVEL_START = "level_start";
@@ -83,7 +84,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public static class Param {
         public static final String ACHIEVEMENT_ID = "achievement_id";
@@ -109,6 +110,7 @@ public final class FirebaseAnalytics {
         public static final String END_DATE = "end_date";
         public static final String EXTEND_SESSION = "extend_session";
         public static final String FLIGHT_NUMBER = "flight_number";
+        public static final String FREE_TRIAL = "free_trial";
         public static final String GROUP_ID = "group_id";
         public static final String INDEX = "index";
         public static final String ITEMS = "items";
@@ -136,6 +138,9 @@ public final class FirebaseAnalytics {
         public static final String ORIGIN = "origin";
         public static final String PAYMENT_TYPE = "payment_type";
         public static final String PRICE = "price";
+        public static final String PRICE_IS_DISCOUNTED = "price_is_discounted";
+        public static final String PRODUCT_ID = "product_id";
+        public static final String PRODUCT_NAME = "product_name";
         public static final String PROMOTION_ID = "promotion_id";
         public static final String PROMOTION_NAME = "promotion_name";
         public static final String QUANTITY = "quantity";
@@ -148,6 +153,7 @@ public final class FirebaseAnalytics {
         public static final String SOURCE = "source";
         public static final String SOURCE_PLATFORM = "source_platform";
         public static final String START_DATE = "start_date";
+        public static final String SUBSCRIPTION = "subscription";
         public static final String SUCCESS = "success";
         public static final String TAX = "tax";
         public static final String TERM = "term";
@@ -160,7 +166,7 @@ public final class FirebaseAnalytics {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public static class UserProperty {
         public static final String ALLOW_AD_PERSONALIZATION_SIGNALS = "allow_personalized_ads";
@@ -170,16 +176,16 @@ public final class FirebaseAnalytics {
         }
     }
 
-    public FirebaseAnalytics(zzfb zzfbVar) {
-        Preconditions.checkNotNull(zzfbVar);
-        this.zzb = zzfbVar;
+    public FirebaseAnalytics(zzez zzezVar) {
+        Preconditions.checkNotNull(zzezVar);
+        this.zzb = zzezVar;
     }
 
     public static FirebaseAnalytics getInstance(Context context) {
         if (zza == null) {
             synchronized (FirebaseAnalytics.class) {
                 if (zza == null) {
-                    zza = new FirebaseAnalytics(zzfb.zza(context, null));
+                    zza = new FirebaseAnalytics(zzez.zza(context, null));
                 }
             }
         }
@@ -187,7 +193,7 @@ public final class FirebaseAnalytics {
     }
 
     public static zzlk getScionFrontendApiImplementation(Context context, Bundle bundle) {
-        zzfb zza2 = zzfb.zza(context, bundle);
+        zzez zza2 = zzez.zza(context, bundle);
         if (zza2 == null) {
             return null;
         }
@@ -295,7 +301,7 @@ public final class FirebaseAnalytics {
 
     @Deprecated
     public void setCurrentScreen(Activity activity, String str, String str2) {
-        this.zzb.zzp(zzdf.zza(activity), str, str2);
+        this.zzb.zzp(zzdd.zza(activity), str, str2);
     }
 
     public void setDefaultEventParameters(Bundle bundle) {
@@ -318,7 +324,7 @@ public final class FirebaseAnalytics {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ zzfb zza() {
+    public final /* synthetic */ zzez zza() {
         return this.zzb;
     }
 }

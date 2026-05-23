@@ -1,9 +1,10 @@
 package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
+/* JADX INFO: Access modifiers changed from: package-private */
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
-final class CollectPreconditions {
+public final class CollectPreconditions {
     CollectPreconditions() {
     }
 

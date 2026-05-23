@@ -1,112 +1,44 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes5.dex */
-public final class Q extends MessageNano {
-    public static volatile Q[] d;
+public final class Q implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public N f1459a;
-    public P b;
-    public O c;
+    public final F f1441a;
 
     public Q() {
-        a();
+        this(null, 1, null);
     }
 
-    public static Q[] b() {
-        if (d == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (d == null) {
-                    d = new Q[0];
-                }
-            }
-        }
-        return d;
+    public final byte[] a(P p) {
+        return MessageNano.toByteArray(this.f1441a.fromModel(p));
     }
 
-    public final Q a() {
-        this.f1459a = null;
-        this.b = null;
-        this.c = null;
-        this.cachedSize = -1;
-        return this;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object fromModel(Object obj) {
+        return MessageNano.toByteArray(this.f1441a.fromModel((P) obj));
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        N n = this.f1459a;
-        if (n != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, n);
-        }
-        P p = this.b;
-        if (p != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, p);
-        }
-        O o = this.c;
-        return o != null ? CodedOutputByteBufferNano.computeMessageSize(3, o) + computeSerializedSize : computeSerializedSize;
+    public Q(F f) {
+        this.f1441a = f;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        N n = this.f1459a;
-        if (n != null) {
-            codedOutputByteBufferNano.writeMessage(1, n);
-        }
-        P p = this.b;
-        if (p != null) {
-            codedOutputByteBufferNano.writeMessage(2, p);
-        }
-        O o = this.c;
-        if (o != null) {
-            codedOutputByteBufferNano.writeMessage(3, o);
-        }
-        super.writeTo(codedOutputByteBufferNano);
-    }
-
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Q mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                if (this.f1459a == null) {
-                    this.f1459a = new N();
-                }
-                codedInputByteBufferNano.readMessage(this.f1459a);
-            } else if (readTag == 18) {
-                if (this.b == null) {
-                    this.b = new P();
-                }
-                codedInputByteBufferNano.readMessage(this.b);
-            } else if (readTag != 26) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
-            } else {
-                if (this.c == null) {
-                    this.c = new O();
-                }
-                codedInputByteBufferNano.readMessage(this.c);
-            }
+    public final P toModel(byte[] bArr) {
+        A a2;
+        try {
+            a2 = (A) MessageNano.mergeFrom(new A(), bArr);
+        } catch (Throwable unused) {
+            a2 = new A();
         }
-        return this;
+        return this.f1441a.toModel(a2);
     }
 
-    public static Q b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Q().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static Q a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (Q) MessageNano.mergeFrom(new Q(), bArr);
+    public /* synthetic */ Q(F f, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? new F(null, null, null, 7, null) : f);
     }
 }

@@ -8,31 +8,31 @@ import kotlin.Metadata;
 public final class NavigationBarVerticalItemTokens {
     public static final int $stable = 0;
     public static final NavigationBarVerticalItemTokens INSTANCE = new NavigationBarVerticalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(32.0f);
-    private static final float ActiveIndicatorWidth = Dp.m7555constructorimpl(56.0f);
-    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl(6.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(24.0f);
+    private static final float ActiveIndicatorHeight = Dp.m8160constructorimpl(32.0f);
+    private static final float ActiveIndicatorWidth = Dp.m8160constructorimpl(56.0f);
+    private static final float ContainerBetweenSpace = Dp.m8160constructorimpl(6.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(24.0f);
 
     private NavigationBarVerticalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3542getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3987getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3543getActiveIndicatorWidthD9Ej5fM() {
+    public final float m3988getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
     /* renamed from: getContainerBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3544getContainerBetweenSpaceD9Ej5fM() {
+    public final float m3989getContainerBetweenSpaceD9Ej5fM() {
         return ContainerBetweenSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3545getIconSizeD9Ej5fM() {
+    public final float m3990getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

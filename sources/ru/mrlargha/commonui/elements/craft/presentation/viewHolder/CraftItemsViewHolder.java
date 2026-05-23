@@ -47,7 +47,7 @@ public final class CraftItemsViewHolder extends RecyclerView.ViewHolder {
         });
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new CraftItemsViewHolder$bind$1$2(itemBulletBinding, this, item, null), 3, null);
         this.loadImageJob = launch$default;

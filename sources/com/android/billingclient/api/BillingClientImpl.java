@@ -1975,8 +1975,8 @@ public class BillingClientImpl extends BillingClient {
     /* JADX WARN: Removed duplicated region for block: B:375:0x0386  */
     /* JADX WARN: Removed duplicated region for block: B:378:0x038e  */
     /* JADX WARN: Removed duplicated region for block: B:379:0x0396  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x03e6  */
-    /* JADX WARN: Removed duplicated region for block: B:398:0x03e9  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:398:0x03e8  */
     @Override // com.android.billingclient.api.BillingClient
     /*
         Code decompiled incorrectly, please refer to instructions dump.

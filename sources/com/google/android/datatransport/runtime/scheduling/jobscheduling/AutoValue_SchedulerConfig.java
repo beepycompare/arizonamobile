@@ -4,7 +4,7 @@ import com.google.android.datatransport.Priority;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig;
 import com.google.android.datatransport.runtime.time.Clock;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_SchedulerConfig extends SchedulerConfig {
     private final Clock clock;
     private final Map<Priority, SchedulerConfig.ConfigValue> values;

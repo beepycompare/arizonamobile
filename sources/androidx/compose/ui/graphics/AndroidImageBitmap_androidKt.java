@@ -7,8 +7,8 @@ import android.util.DisplayMetrics;
 import androidx.compose.ui.graphics.colorspace.ColorSpace;
 import kotlin.Metadata;
 /* compiled from: AndroidImageBitmap.android.kt */
-@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u0010\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a7\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000¢\u0006\u0004\b\u0010\u0010\u0011\u001a\n\u0010\u0012\u001a\u00020\u0002*\u00020\u0001\u001a\u0013\u0010\u0013\u001a\u00020\u0014*\u00020\u000bH\u0000¢\u0006\u0004\b\u0015\u0010\u0016\u001a\u0011\u0010\u0017\u001a\u00020\u000b*\u00020\u0014H\u0000¢\u0006\u0002\u0010\u0018¨\u0006\u0019"}, d2 = {"asImageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", "Landroid/graphics/Bitmap;", "createImageBitmap", "bytes", "", "ActualImageBitmap", "width", "", "height", "config", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "hasAlpha", "", "colorSpace", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "ActualImageBitmap-x__-hDU", "(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/ImageBitmap;", "asAndroidBitmap", "toBitmapConfig", "Landroid/graphics/Bitmap$Config;", "toBitmapConfig-1JJdX4A", "(I)Landroid/graphics/Bitmap$Config;", "toImageConfig", "(Landroid/graphics/Bitmap$Config;)I", "ui-graphics"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u0010\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a7\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0000¢\u0006\u0004\b\u0010\u0010\u0011\u001a\n\u0010\u0012\u001a\u00020\u0002*\u00020\u0001\u001a\u0013\u0010\u0013\u001a\u00020\u0014*\u00020\u000bH\u0000¢\u0006\u0004\b\u0015\u0010\u0016\u001a\u0011\u0010\u0017\u001a\u00020\u000b*\u00020\u0014H\u0000¢\u0006\u0002\u0010\u0018¨\u0006\u0019"}, d2 = {"asImageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", "Landroid/graphics/Bitmap;", "createImageBitmap", "bytes", "", "ActualImageBitmap", "width", "", "height", "config", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "hasAlpha", "", "colorSpace", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "ActualImageBitmap-x__-hDU", "(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/ImageBitmap;", "asAndroidBitmap", "toBitmapConfig", "Landroid/graphics/Bitmap$Config;", "toBitmapConfig-1JJdX4A", "(I)Landroid/graphics/Bitmap$Config;", "toImageConfig", "(Landroid/graphics/Bitmap$Config;)I", "ui-graphics"}, k = 2, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class AndroidImageBitmap_androidKt {
     public static final ImageBitmap asImageBitmap(Bitmap bitmap) {
         return new AndroidImageBitmap(bitmap);
@@ -19,13 +19,13 @@ public final class AndroidImageBitmap_androidKt {
     }
 
     /* renamed from: ActualImageBitmap-x__-hDU  reason: not valid java name */
-    public static final ImageBitmap m4637ActualImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
+    public static final ImageBitmap m5213ActualImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
         Bitmap createBitmap;
-        Bitmap.Config m4638toBitmapConfig1JJdX4A = m4638toBitmapConfig1JJdX4A(i3);
+        Bitmap.Config m5214toBitmapConfig1JJdX4A = m5214toBitmapConfig1JJdX4A(i3);
         if (Build.VERSION.SDK_INT >= 26) {
-            createBitmap = Api26Bitmap.m4677createBitmapx__hDU$ui_graphics(i, i2, i3, z, colorSpace);
+            createBitmap = Api26Bitmap.m5253createBitmapx__hDU$ui_graphics(i, i2, i3, z, colorSpace);
         } else {
-            createBitmap = Bitmap.createBitmap((DisplayMetrics) null, i, i2, m4638toBitmapConfig1JJdX4A);
+            createBitmap = Bitmap.createBitmap((DisplayMetrics) null, i, i2, m5214toBitmapConfig1JJdX4A);
             createBitmap.setHasAlpha(z);
         }
         return new AndroidImageBitmap(createBitmap);
@@ -39,20 +39,20 @@ public final class AndroidImageBitmap_androidKt {
     }
 
     /* renamed from: toBitmapConfig-1JJdX4A  reason: not valid java name */
-    public static final Bitmap.Config m4638toBitmapConfig1JJdX4A(int i) {
-        if (ImageBitmapConfig.m4998equalsimpl0(i, ImageBitmapConfig.Companion.m5003getArgb8888_sVssgQ())) {
+    public static final Bitmap.Config m5214toBitmapConfig1JJdX4A(int i) {
+        if (ImageBitmapConfig.m5574equalsimpl0(i, ImageBitmapConfig.Companion.m5579getArgb8888_sVssgQ())) {
             return Bitmap.Config.ARGB_8888;
         }
-        if (ImageBitmapConfig.m4998equalsimpl0(i, ImageBitmapConfig.Companion.m5002getAlpha8_sVssgQ())) {
+        if (ImageBitmapConfig.m5574equalsimpl0(i, ImageBitmapConfig.Companion.m5578getAlpha8_sVssgQ())) {
             return Bitmap.Config.ALPHA_8;
         }
-        if (ImageBitmapConfig.m4998equalsimpl0(i, ImageBitmapConfig.Companion.m5006getRgb565_sVssgQ())) {
+        if (ImageBitmapConfig.m5574equalsimpl0(i, ImageBitmapConfig.Companion.m5582getRgb565_sVssgQ())) {
             return Bitmap.Config.RGB_565;
         }
-        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4998equalsimpl0(i, ImageBitmapConfig.Companion.m5004getF16_sVssgQ())) {
+        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m5574equalsimpl0(i, ImageBitmapConfig.Companion.m5580getF16_sVssgQ())) {
             return Bitmap.Config.RGBA_F16;
         }
-        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4998equalsimpl0(i, ImageBitmapConfig.Companion.m5005getGpu_sVssgQ())) {
+        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m5574equalsimpl0(i, ImageBitmapConfig.Companion.m5581getGpu_sVssgQ())) {
             return Bitmap.Config.HARDWARE;
         }
         return Bitmap.Config.ARGB_8888;
@@ -60,20 +60,20 @@ public final class AndroidImageBitmap_androidKt {
 
     public static final int toImageConfig(Bitmap.Config config) {
         if (config == Bitmap.Config.ALPHA_8) {
-            return ImageBitmapConfig.Companion.m5002getAlpha8_sVssgQ();
+            return ImageBitmapConfig.Companion.m5578getAlpha8_sVssgQ();
         }
         if (config == Bitmap.Config.RGB_565) {
-            return ImageBitmapConfig.Companion.m5006getRgb565_sVssgQ();
+            return ImageBitmapConfig.Companion.m5582getRgb565_sVssgQ();
         }
         if (config == Bitmap.Config.ARGB_4444) {
-            return ImageBitmapConfig.Companion.m5003getArgb8888_sVssgQ();
+            return ImageBitmapConfig.Companion.m5579getArgb8888_sVssgQ();
         }
         if (Build.VERSION.SDK_INT >= 26 && config == Bitmap.Config.RGBA_F16) {
-            return ImageBitmapConfig.Companion.m5004getF16_sVssgQ();
+            return ImageBitmapConfig.Companion.m5580getF16_sVssgQ();
         }
         if (Build.VERSION.SDK_INT >= 26 && config == Bitmap.Config.HARDWARE) {
-            return ImageBitmapConfig.Companion.m5005getGpu_sVssgQ();
+            return ImageBitmapConfig.Companion.m5581getGpu_sVssgQ();
         }
-        return ImageBitmapConfig.Companion.m5003getArgb8888_sVssgQ();
+        return ImageBitmapConfig.Companion.m5579getArgb8888_sVssgQ();
     }
 }

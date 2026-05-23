@@ -24,6 +24,7 @@ public final class MimeTypes {
     public static final String APPLICATION_EXTERNALLY_LOADED_IMAGE = "application/x-image-uri";
     public static final String APPLICATION_ICY = "application/x-icy";
     public static final String APPLICATION_ID3 = "application/id3";
+    public static final String APPLICATION_ITUT_T35 = "application/x-itut-t35";
     public static final String APPLICATION_M3U8 = "application/x-mpegURL";
     public static final String APPLICATION_MATROSKA = "application/x-matroska";
     public static final String APPLICATION_MEDIA3_CUES = "application/x-media3-cues";
@@ -52,6 +53,7 @@ public final class MimeTypes {
     public static final String AUDIO_AMR = "audio/amr";
     public static final String AUDIO_AMR_NB = "audio/3gpp";
     public static final String AUDIO_AMR_WB = "audio/amr-wb";
+    public static final String AUDIO_DSD = "audio/dsd";
     public static final String AUDIO_DTS = "audio/vnd.dts";
     public static final String AUDIO_DTS_EXPRESS = "audio/vnd.dts.hd;profile=lbr";
     public static final String AUDIO_DTS_HD = "audio/vnd.dts.hd";
@@ -106,6 +108,7 @@ public final class MimeTypes {
     public static final String VIDEO_H263 = "video/3gpp";
     public static final String VIDEO_H264 = "video/avc";
     public static final String VIDEO_H265 = "video/hevc";
+    public static final String VIDEO_H266 = "video/vvc";
     public static final String VIDEO_MATROSKA = "video/x-matroska";
     public static final String VIDEO_MJPEG = "video/mjpeg";
     public static final String VIDEO_MP2T = "video/mp2t";
@@ -182,63 +185,123 @@ public final class MimeTypes {
                     break;
                 }
                 break;
+            case -1354451219:
+                if (str.equals(APPLICATION_AIT)) {
+                    c = 1;
+                    break;
+                }
+                break;
+            case -1348231605:
+                if (str.equals(APPLICATION_ICY)) {
+                    c = 2;
+                    break;
+                }
+                break;
+            case -1265048566:
+                if (str.equals(APPLICATION_CAMERA_MOTION)) {
+                    c = 3;
+                    break;
+                }
+                break;
+            case -1248341703:
+                if (str.equals(APPLICATION_ID3)) {
+                    c = 4;
+                    break;
+                }
+                break;
             case -432837260:
                 if (str.equals(AUDIO_MPEG_L1)) {
-                    c = 1;
+                    c = 5;
                     break;
                 }
                 break;
             case -432837259:
                 if (str.equals(AUDIO_MPEG_L2)) {
-                    c = 2;
+                    c = 6;
                     break;
                 }
                 break;
             case -53558318:
                 if (str.equals(AUDIO_AAC)) {
-                    c = 3;
+                    c = 7;
+                    break;
+                }
+                break;
+            case -43764892:
+                if (str.equals(APPLICATION_META)) {
+                    c = '\b';
                     break;
                 }
                 break;
             case 187078296:
                 if (str.equals(AUDIO_AC3)) {
-                    c = 4;
+                    c = '\t';
                     break;
                 }
                 break;
             case 187094639:
                 if (str.equals(AUDIO_RAW)) {
-                    c = 5;
+                    c = '\n';
+                    break;
+                }
+                break;
+            case 469933706:
+                if (str.equals(APPLICATION_MEDIA3_CUES)) {
+                    c = 11;
+                    break;
+                }
+                break;
+            case 1054472807:
+                if (str.equals(APPLICATION_ITUT_T35)) {
+                    c = '\f';
+                    break;
+                }
+                break;
+            case 1154383568:
+                if (str.equals(APPLICATION_EMSG)) {
+                    c = '\r';
+                    break;
+                }
+                break;
+            case 1331836563:
+                if (str.equals(VIDEO_APV)) {
+                    c = 14;
                     break;
                 }
                 break;
             case 1504578661:
                 if (str.equals(AUDIO_E_AC3)) {
-                    c = 6;
+                    c = 15;
                     break;
                 }
                 break;
             case 1504619009:
                 if (str.equals(AUDIO_FLAC)) {
-                    c = 7;
+                    c = 16;
                     break;
                 }
                 break;
             case 1504831518:
                 if (str.equals(AUDIO_MPEG)) {
-                    c = '\b';
+                    c = 17;
+                    break;
+                }
+                break;
+            case 1652648887:
+                if (str.equals(APPLICATION_SCTE35)) {
+                    c = 18;
                     break;
                 }
                 break;
             case 1903231877:
                 if (str.equals(AUDIO_ALAW)) {
-                    c = '\t';
+                    c = 19;
                     break;
                 }
                 break;
             case 1903589369:
                 if (str.equals(AUDIO_MLAW)) {
-                    c = '\n';
+                    c = 20;
                     break;
                 }
                 break;
@@ -247,15 +310,25 @@ public final class MimeTypes {
             case 0:
             case 1:
             case 2:
+            case 3:
             case 4:
             case 5:
             case 6:
-            case 7:
             case '\b':
             case '\t':
             case '\n':
+            case 11:
+            case '\f':
+            case '\r':
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
                 return true;
-            case 3:
+            case 7:
                 return (str2 == null || (objectTypeFromMp4aRFC6381CodecString = getObjectTypeFromMp4aRFC6381CodecString(str2)) == null || (encoding = objectTypeFromMp4aRFC6381CodecString.getEncoding()) == 0 || encoding == 16) ? false : true;
             default:
                 return false;
@@ -337,7 +410,10 @@ public final class MimeTypes {
         if (lowerCase.startsWith("hev1") || lowerCase.startsWith("hvc1")) {
             return VIDEO_H265;
         }
-        if (lowerCase.startsWith("dvav") || lowerCase.startsWith("dva1") || lowerCase.startsWith("dvhe") || lowerCase.startsWith("dvh1")) {
+        if (lowerCase.startsWith("vvc1") || lowerCase.startsWith("vvi1")) {
+            return VIDEO_H266;
+        }
+        if (lowerCase.startsWith("dvav") || lowerCase.startsWith("dva1") || lowerCase.startsWith("dvhe") || lowerCase.startsWith("dvh1") || lowerCase.startsWith("dav1")) {
             return VIDEO_DOLBY_VISION;
         }
         if (lowerCase.startsWith("av01")) {
@@ -513,7 +589,7 @@ public final class MimeTypes {
         if (str == null) {
             return false;
         }
-        if (str.startsWith("dvhe") || str.startsWith("dvh1")) {
+        if (str.startsWith("dvhe") || str.startsWith("dvh1") || str.startsWith("dav1")) {
             return true;
         }
         if (str2 == null) {
@@ -538,7 +614,7 @@ public final class MimeTypes {
         if (isImage(str)) {
             return 4;
         }
-        if (APPLICATION_ID3.equals(str) || APPLICATION_EMSG.equals(str) || APPLICATION_SCTE35.equals(str) || APPLICATION_ICY.equals(str) || APPLICATION_AIT.equals(str) || APPLICATION_META.equals(str)) {
+        if (APPLICATION_ID3.equals(str) || APPLICATION_EMSG.equals(str) || APPLICATION_SCTE35.equals(str) || APPLICATION_ICY.equals(str) || APPLICATION_AIT.equals(str) || APPLICATION_META.equals(str) || APPLICATION_ITUT_T35.equals(str)) {
             return 5;
         }
         if (APPLICATION_CAMERA_MOTION.equals(str)) {
@@ -588,39 +664,45 @@ public final class MimeTypes {
                     break;
                 }
                 break;
+            case 187081724:
+                if (str.equals(AUDIO_DSD)) {
+                    c = 6;
+                    break;
+                }
+                break;
             case 550520934:
                 if (str.equals(AUDIO_DTS_X)) {
-                    c = 6;
+                    c = 7;
                     break;
                 }
                 break;
             case 1504578661:
                 if (str.equals(AUDIO_E_AC3)) {
-                    c = 7;
+                    c = '\b';
                     break;
                 }
                 break;
             case 1504831518:
                 if (str.equals(AUDIO_MPEG)) {
-                    c = '\b';
+                    c = '\t';
                     break;
                 }
                 break;
             case 1504891608:
                 if (str.equals(AUDIO_OPUS)) {
-                    c = '\t';
+                    c = '\n';
                     break;
                 }
                 break;
             case 1505942594:
                 if (str.equals(AUDIO_DTS_HD)) {
-                    c = '\n';
+                    c = 11;
                     break;
                 }
                 break;
             case 1556697186:
                 if (str.equals(AUDIO_TRUEHD)) {
-                    c = 11;
+                    c = '\f';
                     break;
                 }
                 break;
@@ -642,16 +724,18 @@ public final class MimeTypes {
             case 5:
                 return 17;
             case 6:
-                return 30;
+                return 31;
             case 7:
-                return 6;
+                return 30;
             case '\b':
-                return 9;
+                return 6;
             case '\t':
-                return 20;
+                return 9;
             case '\n':
-                return 8;
+                return 20;
             case 11:
+                return 8;
+            case '\f':
                 return 14;
             default:
                 return 0;

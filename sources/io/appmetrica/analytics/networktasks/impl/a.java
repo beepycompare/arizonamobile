@@ -16,7 +16,7 @@ public final class a {
         }
         NetworkClientBuilder networkClientBuilder = new NetworkClientBuilder();
         NetworkClientSettings.Builder withSslSocketFactory = new NetworkClientSettings.Builder().withInstanceFollowRedirects(true).withSslSocketFactory(sSLSocketFactory);
-        int i = b.f1400a;
+        int i = b.f1382a;
         return networkClientBuilder.withSettings(withSslSocketFactory.withConnectTimeout(i).withReadTimeout(i).build()).build().newCall(withMethod.build()).execute();
     }
 }

@@ -62,6 +62,7 @@ public final class Format {
     public final int pcmEncoding;
     public final int peakBitrate;
     public final float pixelWidthHeightRatio;
+    public final String primaryTrackGroupId;
     public final byte[] projectionData;
     public final int roleFlags;
     public final int rotationDegrees;
@@ -111,6 +112,7 @@ public final class Format {
     private static final String FIELD_MAX_SUB_LAYERS = Util.intToStringMaxRadix(34);
     private static final String FIELD_DECODED_WIDTH = Util.intToStringMaxRadix(35);
     private static final String FIELD_DECODED_HEIGHT = Util.intToStringMaxRadix(36);
+    private static final String FIELD_PRIMARY_TRACK_GROUP_ID = Util.intToStringMaxRadix(37);
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -155,6 +157,7 @@ public final class Format {
         private int pcmEncoding;
         private int peakBitrate;
         private float pixelWidthHeightRatio;
+        private String primaryTrackGroupId;
         private byte[] projectionData;
         private int roleFlags;
         private int rotationDegrees;
@@ -205,6 +208,7 @@ public final class Format {
             this.codecs = format.codecs;
             this.metadata = format.metadata;
             this.customData = format.customData;
+            this.primaryTrackGroupId = format.primaryTrackGroupId;
             this.containerMimeType = format.containerMimeType;
             this.sampleMimeType = format.sampleMimeType;
             this.maxInputSize = format.maxInputSize;
@@ -298,6 +302,11 @@ public final class Format {
 
         public Builder setCustomData(Object obj) {
             this.customData = obj;
+            return this;
+        }
+
+        public Builder setPrimaryTrackGroupId(String str) {
+            this.primaryTrackGroupId = str;
             return this;
         }
 
@@ -492,6 +501,7 @@ public final class Format {
         this.codecs = builder.codecs;
         this.metadata = builder.metadata;
         this.customData = builder.customData;
+        this.primaryTrackGroupId = builder.primaryTrackGroupId;
         this.containerMimeType = builder.containerMimeType;
         this.sampleMimeType = builder.sampleMimeType;
         this.maxInputSize = builder.maxInputSize;
@@ -566,6 +576,10 @@ public final class Format {
                 str5 = codecsOfType;
             }
         }
+        String str6 = this.primaryTrackGroupId;
+        if (str6 == null) {
+            str6 = format.primaryTrackGroupId;
+        }
         Metadata metadata = this.metadata;
         if (metadata == null) {
             copyWithAppendedEntriesFrom = format.metadata;
@@ -576,7 +590,7 @@ public final class Format {
         if (f == -1.0f && trackType == 2) {
             f = format.frameRate;
         }
-        return buildUpon().setId(str2).setLabel(str3).setLabels(list).setLanguage(str4).setSelectionFlags(this.selectionFlags | format.selectionFlags).setRoleFlags(this.roleFlags | format.roleFlags).setAverageBitrate(i3).setPeakBitrate(i4).setCodecs(str5).setMetadata(copyWithAppendedEntriesFrom).setDrmInitData(DrmInitData.createSessionCreationData(format.drmInitData, this.drmInitData)).setFrameRate(f).setTileCountHorizontal(i).setTileCountVertical(i2).build();
+        return buildUpon().setId(str2).setLabel(str3).setLabels(list).setLanguage(str4).setSelectionFlags(this.selectionFlags | format.selectionFlags).setRoleFlags(this.roleFlags | format.roleFlags).setAverageBitrate(i3).setPeakBitrate(i4).setCodecs(str5).setMetadata(copyWithAppendedEntriesFrom).setPrimaryTrackGroupId(str6).setDrmInitData(DrmInitData.createSessionCreationData(format.drmInitData, this.drmInitData)).setFrameRate(f).setTileCountHorizontal(i).setTileCountVertical(i2).build();
     }
 
     public Format copyWithCryptoType(int i) {
@@ -610,10 +624,12 @@ public final class Format {
             int hashCode5 = (hashCode4 + (metadata == null ? 0 : metadata.hashCode())) * 31;
             Object obj = this.customData;
             int hashCode6 = (hashCode5 + (obj == null ? 0 : obj.hashCode())) * 31;
-            String str5 = this.containerMimeType;
+            String str5 = this.primaryTrackGroupId;
             int hashCode7 = (hashCode6 + (str5 == null ? 0 : str5.hashCode())) * 31;
-            String str6 = this.sampleMimeType;
-            this.hashCode = ((((((((((((((((((((((((((((((((((((((((hashCode7 + (str6 != null ? str6.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + this.decodedWidth) * 31) + this.decodedHeight) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.maxSubLayers) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
+            String str6 = this.containerMimeType;
+            int hashCode8 = (hashCode7 + (str6 == null ? 0 : str6.hashCode())) * 31;
+            String str7 = this.sampleMimeType;
+            this.hashCode = ((((((((((((((((((((((((((((((((((((((((hashCode8 + (str7 != null ? str7.hashCode() : 0)) * 31) + this.maxInputSize) * 31) + ((int) this.subsampleOffsetUs)) * 31) + this.width) * 31) + this.height) * 31) + this.decodedWidth) * 31) + this.decodedHeight) * 31) + Float.floatToIntBits(this.frameRate)) * 31) + this.rotationDegrees) * 31) + Float.floatToIntBits(this.pixelWidthHeightRatio)) * 31) + this.stereoMode) * 31) + this.maxSubLayers) * 31) + this.channelCount) * 31) + this.sampleRate) * 31) + this.pcmEncoding) * 31) + this.encoderDelay) * 31) + this.encoderPadding) * 31) + this.accessibilityChannel) * 31) + this.tileCountHorizontal) * 31) + this.tileCountVertical) * 31) + this.cryptoType;
         }
         return this.hashCode;
     }
@@ -626,7 +642,7 @@ public final class Format {
         if (obj != null && getClass() == obj.getClass()) {
             Format format = (Format) obj;
             int i2 = this.hashCode;
-            if ((i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.auxiliaryTrackType == format.auxiliaryTrackType && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.decodedWidth == format.decodedWidth && this.decodedHeight == format.decodedHeight && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.maxSubLayers == format.maxSubLayers && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Objects.equals(this.id, format.id) && Objects.equals(this.label, format.label) && this.labels.equals(format.labels) && Objects.equals(this.codecs, format.codecs) && Objects.equals(this.containerMimeType, format.containerMimeType) && Objects.equals(this.sampleMimeType, format.sampleMimeType) && Objects.equals(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Objects.equals(this.metadata, format.metadata) && Objects.equals(this.colorInfo, format.colorInfo) && Objects.equals(this.drmInitData, format.drmInitData) && initializationDataEquals(format) && Objects.equals(this.customData, format.customData)) {
+            if ((i2 == 0 || (i = format.hashCode) == 0 || i2 == i) && this.selectionFlags == format.selectionFlags && this.roleFlags == format.roleFlags && this.auxiliaryTrackType == format.auxiliaryTrackType && this.averageBitrate == format.averageBitrate && this.peakBitrate == format.peakBitrate && this.maxInputSize == format.maxInputSize && this.subsampleOffsetUs == format.subsampleOffsetUs && this.width == format.width && this.height == format.height && this.decodedWidth == format.decodedWidth && this.decodedHeight == format.decodedHeight && this.rotationDegrees == format.rotationDegrees && this.stereoMode == format.stereoMode && this.maxSubLayers == format.maxSubLayers && this.channelCount == format.channelCount && this.sampleRate == format.sampleRate && this.pcmEncoding == format.pcmEncoding && this.encoderDelay == format.encoderDelay && this.encoderPadding == format.encoderPadding && this.accessibilityChannel == format.accessibilityChannel && this.tileCountHorizontal == format.tileCountHorizontal && this.tileCountVertical == format.tileCountVertical && this.cryptoType == format.cryptoType && Float.compare(this.frameRate, format.frameRate) == 0 && Float.compare(this.pixelWidthHeightRatio, format.pixelWidthHeightRatio) == 0 && Objects.equals(this.id, format.id) && Objects.equals(this.label, format.label) && this.labels.equals(format.labels) && Objects.equals(this.codecs, format.codecs) && Objects.equals(this.primaryTrackGroupId, format.primaryTrackGroupId) && Objects.equals(this.containerMimeType, format.containerMimeType) && Objects.equals(this.sampleMimeType, format.sampleMimeType) && Objects.equals(this.language, format.language) && Arrays.equals(this.projectionData, format.projectionData) && Objects.equals(this.metadata, format.metadata) && Objects.equals(this.colorInfo, format.colorInfo) && Objects.equals(this.drmInitData, format.drmInitData) && initializationDataEquals(format) && Objects.equals(this.customData, format.customData)) {
                 return true;
             }
         }
@@ -654,6 +670,9 @@ public final class Format {
         sb.append("id=").append(format.id).append(", mimeType=").append(format.sampleMimeType);
         if (format.containerMimeType != null) {
             sb.append(", container=").append(format.containerMimeType);
+        }
+        if (format.primaryTrackGroupId != null) {
+            sb.append(", primaryGroupId=").append(format.primaryTrackGroupId);
         }
         if (format.bitrate != -1) {
             sb.append(", bitrate=").append(format.bitrate);
@@ -765,6 +784,10 @@ public final class Format {
         bundle.putInt(FIELD_AVERAGE_BITRATE, this.averageBitrate);
         bundle.putInt(FIELD_PEAK_BITRATE, this.peakBitrate);
         bundle.putString(FIELD_CODECS, this.codecs);
+        String str = this.primaryTrackGroupId;
+        if (str != null) {
+            bundle.putString(FIELD_PRIMARY_TRACK_GROUP_ID, str);
+        }
         bundle.putString(FIELD_CONTAINER_MIME_TYPE, this.containerMimeType);
         bundle.putString(FIELD_SAMPLE_MIME_TYPE, this.sampleMimeType);
         bundle.putInt(FIELD_MAX_INPUT_SIZE, this.maxInputSize);
@@ -817,7 +840,7 @@ public final class Format {
                 }
             }, parcelableArrayList);
         }
-        builder.setLabels(fromBundleList).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAuxiliaryTrackType(bundle.getInt(FIELD_AUXILIARY_TRACK_TYPE, format.auxiliaryTrackType)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
+        builder.setLabels(fromBundleList).setLanguage((String) defaultIfNull(bundle.getString(FIELD_LANGUAGE), format.language)).setSelectionFlags(bundle.getInt(FIELD_SELECTION_FLAGS, format.selectionFlags)).setRoleFlags(bundle.getInt(FIELD_ROLE_FLAGS, format.roleFlags)).setAuxiliaryTrackType(bundle.getInt(FIELD_AUXILIARY_TRACK_TYPE, format.auxiliaryTrackType)).setAverageBitrate(bundle.getInt(FIELD_AVERAGE_BITRATE, format.averageBitrate)).setPeakBitrate(bundle.getInt(FIELD_PEAK_BITRATE, format.peakBitrate)).setCodecs((String) defaultIfNull(bundle.getString(FIELD_CODECS), format.codecs)).setPrimaryTrackGroupId((String) defaultIfNull(bundle.getString(FIELD_PRIMARY_TRACK_GROUP_ID), format.primaryTrackGroupId)).setContainerMimeType((String) defaultIfNull(bundle.getString(FIELD_CONTAINER_MIME_TYPE), format.containerMimeType)).setSampleMimeType((String) defaultIfNull(bundle.getString(FIELD_SAMPLE_MIME_TYPE), format.sampleMimeType)).setMaxInputSize(bundle.getInt(FIELD_MAX_INPUT_SIZE, format.maxInputSize));
         ArrayList arrayList = new ArrayList();
         int i = 0;
         while (true) {

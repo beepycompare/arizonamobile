@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhh extends zzmb implements zznn {
+public final class zzhh extends zzadp implements zzafd {
     private zzhh() {
         throw null;
     }
@@ -12,7 +12,7 @@ public final class zzhh extends zzmb implements zznn {
     }
 
     public final zzhh zza(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzho) this.zza).zzd(iterable);
         return this;
     }

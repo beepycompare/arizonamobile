@@ -2,6 +2,7 @@ package com.miami.game.core.app.root;
 
 import androidx.compose.foundation.layout.PaddingValues;
 import androidx.compose.foundation.layout.SizeKt;
+import androidx.compose.foundation.layout.WindowInsets;
 import androidx.compose.foundation.layout.WindowInsetsKt;
 import androidx.compose.material3.ScaffoldKt;
 import androidx.compose.runtime.Composer;
@@ -9,6 +10,7 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.ui.Modifier;
+import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
@@ -18,7 +20,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MainScaffold.kt */
 @Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001ao\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0013\b\u0002\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\b\u0002\u0010\u0007\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0013\b\u0002\u0010\b\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\f¨\u0006\r"}, d2 = {"MainScaffold", "", "modifier", "Landroidx/compose/ui/Modifier;", "topBar", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "bottomBar", "snackbarHost", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/PaddingValues;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "app-root"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class MainScaffoldKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MainScaffold$lambda$0(Modifier modifier, Function2 function2, Function2 function22, Function2 function23, Function3 function3, int i, int i2, Composer composer, int i3) {
@@ -101,22 +103,24 @@ public final class MainScaffoldKt {
                         Function2<Composer, Integer, Unit> lambda$1170228028$app_root = i7 != 0 ? ComposableSingletons$MainScaffoldKt.INSTANCE.getLambda$1170228028$app_root() : obj2;
                         if (i4 != 0) {
                             function28 = lambda$1170228028$app_root;
-                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9075getLambda$863503316$app_root();
+                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9713getLambda$863503316$app_root();
                         } else {
                             function28 = lambda$1170228028$app_root;
                             function29 = obj3;
                         }
                         if (i5 != 0) {
-                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9074getLambda$1632204659$app_root();
+                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9712getLambda$1632204659$app_root();
                         }
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-521208120, i3, -1, "com.miami.game.core.app.root.MainScaffold (MainScaffold.kt:16)");
                         }
-                        int i8 = (i3 & 8176) | ((i3 << 15) & 1879048192);
+                        Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(companion, 0.0f, 1, null);
+                        WindowInsets WindowInsets = WindowInsetsKt.WindowInsets(0, 0, 0, 0);
+                        int i8 = (i3 & 8176) | ((i3 << 15) & C.ENCODING_PCM_DOUBLE);
                         Modifier modifier3 = companion;
                         Function2<? super Composer, ? super Integer, Unit> function210 = function28;
                         Function2<? super Composer, ? super Integer, Unit> function211 = function24;
-                        ScaffoldKt.m2405ScaffoldTvnljyQ(SizeKt.fillMaxSize$default(companion, 0.0f, 1, null), function210, function29, function211, null, 0, 0L, 0L, WindowInsetsKt.WindowInsets(0, 0, 0, 0), content, startRestartGroup, i8, 240);
+                        ScaffoldKt.m2850ScaffoldTvnljyQ(fillMaxSize$default, function210, function29, function211, null, 0, 0L, 0L, WindowInsets, content, startRestartGroup, i8, 240);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }

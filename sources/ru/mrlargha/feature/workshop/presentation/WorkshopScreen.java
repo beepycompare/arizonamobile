@@ -13,7 +13,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.internal.view.SupportMenu;
-import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -1100,7 +1099,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     public final void run() {
                         WorkshopScreen.onBackendMessageHandled$lambda$0(WorkshopScreen.this);
                     }
-                }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+                }, 2000L);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
                 if (selectColorAdapter == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("colorsAdapter");

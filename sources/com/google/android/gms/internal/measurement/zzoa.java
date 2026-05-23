@@ -1,32 +1,33 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import java.io.IOException;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzoa extends zzoe {
+class zzoa extends zzof {
+    private volatile double zza;
+
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzoa() {
-        super(null);
+    public zzoa(String str, String str2, zzph zzphVar) {
+        super("com.google.android.gms.measurement", "measurement.test.double_flag", zzphVar);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzoe
-    public final void zza() {
-        if (!zzb()) {
-            for (int i = 0; i < zzc(); i++) {
-                Map.Entry zzd = zzd(i);
-                if (((zzlv) ((zzob) zzd).zza()).zzd()) {
-                    zzd.setValue(Collections.unmodifiableList((List) zzd.getValue()));
-                }
-            }
-            for (Map.Entry entry : zze()) {
-                if (((zzlv) entry.getKey()).zzd()) {
-                    entry.setValue(Collections.unmodifiableList((List) entry.getValue()));
-                }
-            }
-        }
-        super.zza();
+    @Override // com.google.android.gms.internal.measurement.zznp
+    protected final /* synthetic */ Object zzc(String str) throws IOException {
+        return Double.valueOf(Double.parseDouble(str));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznp
+    protected final /* synthetic */ Object zzd(Object obj) throws IOException {
+        return (Double) obj;
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final /* synthetic */ Object zze() {
+        return Double.valueOf(this.zza);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zznw
+    public final /* synthetic */ void zzh(Object obj) {
+        this.zza = ((Double) obj).doubleValue();
     }
 }

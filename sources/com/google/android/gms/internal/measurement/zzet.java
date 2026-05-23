@@ -1,43 +1,26 @@
 package com.google.android.gms.internal.measurement;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzet extends zzeq {
-    final /* synthetic */ Bundle zza;
-    final /* synthetic */ Activity zzb;
-    final /* synthetic */ zzfa zzc;
+final class zzet extends zzeo {
+    final /* synthetic */ Activity zza;
+    final /* synthetic */ zzey zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzet(zzfa zzfaVar, Bundle bundle, Activity activity) {
-        super(zzfaVar.zza, true);
-        this.zza = bundle;
-        this.zzb = activity;
-        Objects.requireNonNull(zzfaVar);
-        this.zzc = zzfaVar;
+    public zzet(zzey zzeyVar, Activity activity) {
+        super(zzeyVar.zza, true);
+        this.zza = activity;
+        Objects.requireNonNull(zzeyVar);
+        this.zzb = zzeyVar;
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzeq
+    @Override // com.google.android.gms.internal.measurement.zzeo
     final void zza() throws RemoteException {
-        Bundle bundle;
-        Bundle bundle2 = this.zza;
-        if (bundle2 != null) {
-            bundle = new Bundle();
-            if (bundle2.containsKey("com.google.app_measurement.screen_service")) {
-                Object obj = bundle2.get("com.google.app_measurement.screen_service");
-                if (obj instanceof Bundle) {
-                    bundle.putBundle("com.google.app_measurement.screen_service", (Bundle) obj);
-                }
-            }
-        } else {
-            bundle = null;
-        }
-        Activity activity = this.zzb;
-        ((zzcr) Preconditions.checkNotNull(this.zzc.zza.zzQ())).onActivityCreatedByScionActivityInfo(zzdf.zza(activity), bundle, this.zzi);
+        ((zzcp) Preconditions.checkNotNull(this.zzb.zza.zzS())).onActivityResumedByScionActivityInfo(zzdd.zza(this.zza), this.zzj);
     }
 }

@@ -7,6 +7,7 @@ public final class ParsableNalUnitBitArray {
     private int byteLimit;
     private int byteOffset;
     private byte[] data;
+    private int startOffset;
 
     public ParsableNalUnitBitArray(byte[] bArr, int i, int i2) {
         reset(bArr, i, i2);
@@ -14,6 +15,7 @@ public final class ParsableNalUnitBitArray {
 
     public void reset(byte[] bArr, int i, int i2) {
         this.data = bArr;
+        this.startOffset = i;
         this.byteOffset = i;
         this.byteLimit = i2;
         this.bitOffset = 0;
@@ -74,7 +76,7 @@ public final class ParsableNalUnitBitArray {
         }
         while (true) {
             i2++;
-            if (i2 > i4 || i4 >= this.byteLimit) {
+            if (i2 > i4 || i4 > this.byteLimit) {
                 break;
             } else if (shouldSkipByte(i2)) {
                 i4++;
@@ -152,11 +154,12 @@ public final class ParsableNalUnitBitArray {
     }
 
     private boolean shouldSkipByte(int i) {
-        if (2 > i || i >= this.byteLimit) {
+        int i2 = i - 2;
+        if (this.startOffset > i2 || i >= this.byteLimit) {
             return false;
         }
         byte[] bArr = this.data;
-        return bArr[i] == 3 && bArr[i + (-2)] == 0 && bArr[i - 1] == 0;
+        return bArr[i] == 3 && bArr[i2] == 0 && bArr[i - 1] == 0;
     }
 
     private void assertValidOffset() {

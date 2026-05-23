@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WrapperDataSource.jvmAndAndroid.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.WrapperDataSource", f = "WrapperDataSource.jvmAndAndroid.kt", i = {0}, l = {72}, m = "load$suspendImpl", n = {"$this"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class WrapperDataSource$load$1<Key, ValueFrom, ValueTo> extends ContinuationImpl {

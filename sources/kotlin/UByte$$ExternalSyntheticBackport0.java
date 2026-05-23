@@ -3,14 +3,10 @@ package kotlin;
 import android.content.res.TypedArray;
 import android.media.MediaDrm;
 import android.media.MediaMetadataRetriever;
-import androidx.media3.extractor.text.ttml.TtmlNode;
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -28,7 +24,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m9271m(long j, long j2) {
+    public static /* synthetic */ long m9911m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? j : j - j2;
         } else if (j >= 0) {
@@ -43,7 +39,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m9272m(int i, int i2) {
+    public static /* synthetic */ String m9912m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -80,24 +76,6 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
         return new String(cArr, i3, 64 - i3);
     }
 
-    public static /* synthetic */ String m(CharSequence charSequence, Iterable iterable) {
-        if (charSequence != null) {
-            StringBuilder sb = new StringBuilder();
-            Iterator it = iterable.iterator();
-            if (it.hasNext()) {
-                while (true) {
-                    sb.append((CharSequence) it.next());
-                    if (!it.hasNext()) {
-                        break;
-                    }
-                    sb.append(charSequence);
-                }
-            }
-            return sb.toString();
-        }
-        throw new NullPointerException(TtmlNode.RUBY_DELIMITER);
-    }
-
     public static /* synthetic */ String m(String str) {
         int length = str.length();
         while (length > 0) {
@@ -118,12 +96,8 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
         return Collections.unmodifiableList(arrayList);
     }
 
-    public static /* synthetic */ Map.Entry m(Object obj, Object obj2) {
-        return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
-    }
-
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m9274m(Object[] objArr) {
+    public static /* synthetic */ Set m9914m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -134,7 +108,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m9275m(Object obj) {
+    public static /* synthetic */ void m9915m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {

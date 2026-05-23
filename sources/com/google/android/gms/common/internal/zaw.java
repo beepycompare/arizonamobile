@@ -1,44 +1,40 @@
 package com.google.android.gms.common.internal;
 
-import android.os.IBinder;
+import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaw implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        int i = 0;
-        boolean z = false;
-        boolean z2 = false;
-        IBinder iBinder = null;
-        ConnectionResult connectionResult = null;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId == 2) {
-                iBinder = SafeParcelReader.readIBinder(parcel, readHeader);
-            } else if (fieldId == 3) {
-                connectionResult = (ConnectionResult) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionResult.CREATOR);
-            } else if (fieldId == 4) {
-                z = SafeParcelReader.readBoolean(parcel, readHeader);
-            } else if (fieldId == 5) {
-                z2 = SafeParcelReader.readBoolean(parcel, readHeader);
-            } else {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zav(i, iBinder, connectionResult, z, z2);
+public final class zaw extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zaw> CREATOR = new zax();
+    final int zaa;
+    private final Account zab;
+    private final int zac;
+    private final GoogleSignInAccount zad;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zaw(int i, Account account, int i2, GoogleSignInAccount googleSignInAccount) {
+        this.zaa = i;
+        this.zab = account;
+        this.zac = i2;
+        this.zad = googleSignInAccount;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new zav[i];
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int i2 = this.zaa;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeInt(parcel, 1, i2);
+        SafeParcelWriter.writeParcelable(parcel, 2, this.zab, i, false);
+        SafeParcelWriter.writeInt(parcel, 3, this.zac);
+        SafeParcelWriter.writeParcelable(parcel, 4, this.zad, i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
+    }
+
+    public zaw(Account account, int i, GoogleSignInAccount googleSignInAccount) {
+        this(2, account, i, googleSignInAccount);
     }
 }

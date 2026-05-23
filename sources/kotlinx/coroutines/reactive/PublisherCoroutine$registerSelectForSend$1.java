@@ -13,8 +13,8 @@ import kotlinx.coroutines.selects.SelectInstance;
 import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Publish.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.reactive.PublisherCoroutine$registerSelectForSend$1", f = "Publish.kt", i = {}, l = {104}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.reactive.PublisherCoroutine$registerSelectForSend$1", f = "Publish.kt", i = {}, l = {104}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 public final class PublisherCoroutine$registerSelectForSend$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ SelectInstance<?> $select;
@@ -50,7 +50,7 @@ public final class PublisherCoroutine$registerSelectForSend$1 extends SuspendLam
             ResultKt.throwOnFailure(obj);
             mutex = ((PublisherCoroutine) this.this$0).mutex;
             this.label = 1;
-            if (Mutex.DefaultImpls.lock$default(mutex, null, this, 1, null) == coroutine_suspended) {
+            if (Mutex.lock$default(mutex, null, this, 1, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -60,7 +60,7 @@ public final class PublisherCoroutine$registerSelectForSend$1 extends SuspendLam
         }
         if (!this.$select.trySelect(this.this$0, Unit.INSTANCE)) {
             mutex2 = ((PublisherCoroutine) this.this$0).mutex;
-            Mutex.DefaultImpls.unlock$default(mutex2, null, 1, null);
+            Mutex.unlock$default(mutex2, null, 1, null);
         }
         return Unit.INSTANCE;
     }

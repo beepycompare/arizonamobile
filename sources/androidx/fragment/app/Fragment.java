@@ -1394,7 +1394,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         this.mViewLifecycleOwner = new FragmentViewLifecycleOwner(this, getViewModelStore(), new Runnable() { // from class: androidx.fragment.app.Fragment$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Fragment.this.m8081lambda$performCreateView$0$androidxfragmentappFragment();
+                Fragment.this.m8686lambda$performCreateView$0$androidxfragmentappFragment();
             }
         });
         View onCreateView = onCreateView(layoutInflater, viewGroup, bundle);
@@ -1418,7 +1418,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$performCreateView$0$androidx-fragment-app-Fragment  reason: not valid java name */
-    public /* synthetic */ void m8081lambda$performCreateView$0$androidxfragmentappFragment() {
+    public /* synthetic */ void m8686lambda$performCreateView$0$androidxfragmentappFragment() {
         this.mViewLifecycleOwner.performRestore(this.mSavedViewRegistryState);
         this.mSavedViewRegistryState = null;
     }

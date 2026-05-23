@@ -10,7 +10,7 @@ import kotlin.Metadata;
 import kotlin.collections.ArraysKt;
 import kotlin.coroutines.Continuation;
 /* compiled from: NestedScrollInteropConnection.android.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001f\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012J'\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0015\u0010\u0016J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000e\u001a\u00020\u0018H\u0096@¢\u0006\u0004\b\u0019\u0010\u001aJ \u0010\u001b\u001a\u00020\u00182\u0006\u0010\u0014\u001a\u00020\u00182\u0006\u0010\u000e\u001a\u00020\u0018H\u0096@¢\u0006\u0004\b\u001c\u0010\u001dJ\b\u0010\u001e\u001a\u00020\u001fH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Landroidx/compose/ui/platform/NestedScrollInteropConnection;", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "view", "Landroid/view/View;", "minFlingVelocity", "", "<init>", "(Landroid/view/View;F)V", "nestedScrollChildHelper", "Landroidx/core/view/NestedScrollingChildHelper;", "consumedScrollCache", "", "onPreScroll", "Landroidx/compose/ui/geometry/Offset;", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "onPreScroll-OzD1aCk", "(JI)J", "onPostScroll", "consumed", "onPostScroll-DzOQY0M", "(JJI)J", "onPreFling", "Landroidx/compose/ui/unit/Velocity;", "onPreFling-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPostFling", "onPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopNestedScrolls", "", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001f\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012J'\u0010\u0013\u001a\u00020\r2\u0006\u0010\u0014\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0015\u0010\u0016J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000e\u001a\u00020\u0018H\u0096@¢\u0006\u0004\b\u0019\u0010\u001aJ \u0010\u001b\u001a\u00020\u00182\u0006\u0010\u0014\u001a\u00020\u00182\u0006\u0010\u000e\u001a\u00020\u0018H\u0096@¢\u0006\u0004\b\u001c\u0010\u001dJ\b\u0010\u001e\u001a\u00020\u001fH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Landroidx/compose/ui/platform/NestedScrollInteropConnection;", "Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;", "view", "Landroid/view/View;", "minFlingVelocity", "", "<init>", "(Landroid/view/View;F)V", "nestedScrollChildHelper", "Landroidx/core/view/NestedScrollingChildHelper;", "consumedScrollCache", "", "onPreScroll", "Landroidx/compose/ui/geometry/Offset;", "available", "source", "Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;", "onPreScroll-OzD1aCk", "(JI)J", "onPostScroll", "consumed", "onPostScroll-DzOQY0M", "(JJI)J", "onPreFling", "Landroidx/compose/ui/unit/Velocity;", "onPreFling-QWom1Mo", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPostFling", "onPostFling-RZ2iAVY", "(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "stopNestedScrolls", "", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class NestedScrollInteropConnection implements NestedScrollConnection {
     public static final int $stable = 8;
@@ -31,79 +31,79 @@ public final class NestedScrollInteropConnection implements NestedScrollConnecti
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk */
-    public long mo896onPreScrollOzD1aCk(long j, int i) {
-        int m6741getScrollAxesk4lQ0M;
-        int m6744toViewTypeGyEprt8;
-        int m6744toViewTypeGyEprt82;
-        long m6743toOffsetmoWRBKg;
+    public long mo1150onPreScrollOzD1aCk(long j, int i) {
+        int m7345getScrollAxesk4lQ0M;
+        int m7348toViewTypeGyEprt8;
+        int m7348toViewTypeGyEprt82;
+        long m7347toOffsetmoWRBKg;
         NestedScrollingChildHelper nestedScrollingChildHelper = this.nestedScrollChildHelper;
-        m6741getScrollAxesk4lQ0M = NestedScrollInteropConnectionKt.m6741getScrollAxesk4lQ0M(j);
-        m6744toViewTypeGyEprt8 = NestedScrollInteropConnectionKt.m6744toViewTypeGyEprt8(i);
-        if (nestedScrollingChildHelper.startNestedScroll(m6741getScrollAxesk4lQ0M, m6744toViewTypeGyEprt8)) {
+        m7345getScrollAxesk4lQ0M = NestedScrollInteropConnectionKt.m7345getScrollAxesk4lQ0M(j);
+        m7348toViewTypeGyEprt8 = NestedScrollInteropConnectionKt.m7348toViewTypeGyEprt8(i);
+        if (nestedScrollingChildHelper.startNestedScroll(m7345getScrollAxesk4lQ0M, m7348toViewTypeGyEprt8)) {
             ArraysKt.fill$default(this.consumedScrollCache, 0, 0, 0, 6, (Object) null);
             int composeToViewOffset = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (j >> 32)));
             int composeToViewOffset2 = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (4294967295L & j)));
             NestedScrollingChildHelper nestedScrollingChildHelper2 = this.nestedScrollChildHelper;
             int[] iArr = this.consumedScrollCache;
-            m6744toViewTypeGyEprt82 = NestedScrollInteropConnectionKt.m6744toViewTypeGyEprt8(i);
-            nestedScrollingChildHelper2.dispatchNestedPreScroll(composeToViewOffset, composeToViewOffset2, iArr, null, m6744toViewTypeGyEprt82);
-            m6743toOffsetmoWRBKg = NestedScrollInteropConnectionKt.m6743toOffsetmoWRBKg(composeToViewOffset, composeToViewOffset2, this.consumedScrollCache, j);
-            return m6743toOffsetmoWRBKg;
+            m7348toViewTypeGyEprt82 = NestedScrollInteropConnectionKt.m7348toViewTypeGyEprt8(i);
+            nestedScrollingChildHelper2.dispatchNestedPreScroll(composeToViewOffset, composeToViewOffset2, iArr, null, m7348toViewTypeGyEprt82);
+            m7347toOffsetmoWRBKg = NestedScrollInteropConnectionKt.m7347toOffsetmoWRBKg(composeToViewOffset, composeToViewOffset2, this.consumedScrollCache, j);
+            return m7347toOffsetmoWRBKg;
         }
-        return Offset.Companion.m4543getZeroF1C5BW0();
+        return Offset.Companion.m5119getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
-    public long mo573onPostScrollDzOQY0M(long j, long j2, int i) {
-        int m6741getScrollAxesk4lQ0M;
-        int m6744toViewTypeGyEprt8;
-        int m6744toViewTypeGyEprt82;
-        long m6743toOffsetmoWRBKg;
+    public long mo603onPostScrollDzOQY0M(long j, long j2, int i) {
+        int m7345getScrollAxesk4lQ0M;
+        int m7348toViewTypeGyEprt8;
+        int m7348toViewTypeGyEprt82;
+        long m7347toOffsetmoWRBKg;
         NestedScrollingChildHelper nestedScrollingChildHelper = this.nestedScrollChildHelper;
-        m6741getScrollAxesk4lQ0M = NestedScrollInteropConnectionKt.m6741getScrollAxesk4lQ0M(j2);
-        m6744toViewTypeGyEprt8 = NestedScrollInteropConnectionKt.m6744toViewTypeGyEprt8(i);
-        if (nestedScrollingChildHelper.startNestedScroll(m6741getScrollAxesk4lQ0M, m6744toViewTypeGyEprt8)) {
+        m7345getScrollAxesk4lQ0M = NestedScrollInteropConnectionKt.m7345getScrollAxesk4lQ0M(j2);
+        m7348toViewTypeGyEprt8 = NestedScrollInteropConnectionKt.m7348toViewTypeGyEprt8(i);
+        if (nestedScrollingChildHelper.startNestedScroll(m7345getScrollAxesk4lQ0M, m7348toViewTypeGyEprt8)) {
             ArraysKt.fill$default(this.consumedScrollCache, 0, 0, 0, 6, (Object) null);
             int composeToViewOffset = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (j2 >> 32)));
             int composeToViewOffset2 = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (j2 & 4294967295L)));
             NestedScrollingChildHelper nestedScrollingChildHelper2 = this.nestedScrollChildHelper;
             int composeToViewOffset3 = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (j >> 32)));
             int composeToViewOffset4 = NestedScrollInteropConnectionKt.composeToViewOffset(Float.intBitsToFloat((int) (j & 4294967295L)));
-            m6744toViewTypeGyEprt82 = NestedScrollInteropConnectionKt.m6744toViewTypeGyEprt8(i);
-            nestedScrollingChildHelper2.dispatchNestedScroll(composeToViewOffset3, composeToViewOffset4, composeToViewOffset, composeToViewOffset2, null, m6744toViewTypeGyEprt82, this.consumedScrollCache);
-            m6743toOffsetmoWRBKg = NestedScrollInteropConnectionKt.m6743toOffsetmoWRBKg(composeToViewOffset, composeToViewOffset2, this.consumedScrollCache, j2);
-            return m6743toOffsetmoWRBKg;
+            m7348toViewTypeGyEprt82 = NestedScrollInteropConnectionKt.m7348toViewTypeGyEprt8(i);
+            nestedScrollingChildHelper2.dispatchNestedScroll(composeToViewOffset3, composeToViewOffset4, composeToViewOffset, composeToViewOffset2, null, m7348toViewTypeGyEprt82, this.consumedScrollCache);
+            m7347toOffsetmoWRBKg = NestedScrollInteropConnectionKt.m7347toOffsetmoWRBKg(composeToViewOffset, composeToViewOffset2, this.consumedScrollCache, j2);
+            return m7347toOffsetmoWRBKg;
         }
-        return Offset.Companion.m4543getZeroF1C5BW0();
+        return Offset.Companion.m5119getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreFling-QWom1Mo */
-    public Object mo895onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public Object mo1149onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         float viewVelocity;
         float viewVelocity2;
         float viewVelocity3;
         float viewVelocity4;
         NestedScrollingChildHelper nestedScrollingChildHelper = this.nestedScrollChildHelper;
-        viewVelocity = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m7793getXimpl(j));
-        viewVelocity2 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m7794getYimpl(j));
+        viewVelocity = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m8398getXimpl(j));
+        viewVelocity2 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m8399getYimpl(j));
         if (!nestedScrollingChildHelper.dispatchNestedPreFling(viewVelocity, viewVelocity2)) {
             NestedScrollingChildHelper nestedScrollingChildHelper2 = this.nestedScrollChildHelper;
-            viewVelocity3 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m7793getXimpl(j));
-            viewVelocity4 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m7794getYimpl(j));
+            viewVelocity3 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m8398getXimpl(j));
+            viewVelocity4 = NestedScrollInteropConnectionKt.toViewVelocity(Velocity.m8399getYimpl(j));
             if (!nestedScrollingChildHelper2.dispatchNestedFling(viewVelocity3, viewVelocity4, true)) {
-                j = Velocity.Companion.m7804getZero9UxMQ8M();
+                j = Velocity.Companion.m8409getZero9UxMQ8M();
             }
         }
-        return Velocity.m7784boximpl(j);
+        return Velocity.m8389boximpl(j);
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostFling-RZ2iAVY */
-    public Object mo572onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public Object mo602onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         stopNestedScrolls();
-        return Velocity.m7784boximpl(Velocity.Companion.m7804getZero9UxMQ8M());
+        return Velocity.m8389boximpl(Velocity.Companion.m8409getZero9UxMQ8M());
     }
 
     private final void stopNestedScrolls() {

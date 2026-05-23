@@ -1,5 +1,5 @@
 package com.google.android.datatransport;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ProductData extends ProductData {
     private final Integer productId;
 

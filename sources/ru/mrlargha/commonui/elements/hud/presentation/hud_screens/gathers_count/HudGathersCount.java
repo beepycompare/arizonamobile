@@ -87,7 +87,7 @@ public final class HudGathersCount {
             debuffContainer.setVisibility(0);
             startDebuffTimer(hudGathersCountDebuff.getTime());
             hudGathersCountBinding.tvDebuff.setText(hudGathersCountDebuff.getTitle());
-            int i = WhenMappings.$EnumSwitchMapping$0[hudGathersCountDebuff.m11134getType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[hudGathersCountDebuff.m11774getType().ordinal()];
             if (i == 1) {
                 hudGathersCountBinding.ivDebuffBg.setImageResource(R.drawable.hud_gathers_count_frozen_item_bg);
                 hudGathersCountBinding.ivDebuffIc.setImageResource(R.drawable.hud_gathers_count_ic_snow);
@@ -111,7 +111,7 @@ public final class HudGathersCount {
         HudGathersCountBinding hudGathersCountBinding = this.binding;
         Job job = this.jobTimer;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new HudGathersCount$startTimer$1$1(i, this, hudGathersCountBinding, null), 3, null);
         this.jobTimer = launch$default;
@@ -122,7 +122,7 @@ public final class HudGathersCount {
         HudGathersCountBinding hudGathersCountBinding = this.binding;
         Job job = this.jobDebuffTimer;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new HudGathersCount$startDebuffTimer$1$1(i, this, hudGathersCountBinding, null), 3, null);
         this.jobDebuffTimer = launch$default;
@@ -139,7 +139,7 @@ public final class HudGathersCount {
     private final void stopTimer() {
         Job job = this.jobTimer;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.jobTimer = null;
     }
@@ -148,7 +148,7 @@ public final class HudGathersCount {
     public final void stopDebuffTimer() {
         Job job = this.jobDebuffTimer;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.jobDebuffTimer = null;
     }

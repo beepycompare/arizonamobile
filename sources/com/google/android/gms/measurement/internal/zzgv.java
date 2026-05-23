@@ -1,28 +1,30 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.Bundle;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgv {
     public final String zza;
     public final String zzb;
     public final long zzc;
-    public final Bundle zzd;
+    public final long zzd;
+    public final Bundle zze;
 
-    public zzgv(String str, String str2, Bundle bundle, long j) {
+    public zzgv(String str, String str2, Bundle bundle, long j, long j2) {
         this.zza = str;
         this.zzb = str2;
-        this.zzd = bundle;
+        this.zze = bundle;
         this.zzc = j;
+        this.zzd = j2;
     }
 
-    public static zzgv zza(zzbg zzbgVar) {
-        return new zzgv(zzbgVar.zza, zzbgVar.zzc, zzbgVar.zzb.zzf(), zzbgVar.zzd);
+    public static zzgv zza(zzbh zzbhVar) {
+        return new zzgv(zzbhVar.zza, zzbhVar.zzc, zzbhVar.zzb.zzf(), zzbhVar.zzd, zzbhVar.zze);
     }
 
     public final String toString() {
         String str = this.zzb;
-        String obj = this.zzd.toString();
+        String obj = this.zze.toString();
         int length = String.valueOf(str).length();
         String str2 = this.zza;
         StringBuilder sb = new StringBuilder(length + 13 + String.valueOf(str2).length() + 8 + obj.length());
@@ -35,7 +37,7 @@ public final class zzgv {
         return sb.toString();
     }
 
-    public final zzbg zzb() {
-        return new zzbg(this.zza, new zzbe(new Bundle(this.zzd)), this.zzb, this.zzc);
+    public final zzbh zzb() {
+        return new zzbh(this.zza, new zzbf(new Bundle(this.zze)), this.zzb, this.zzc, this.zzd);
     }
 }

@@ -1,22 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModule;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDummy;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class Bd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bf f523a;
-    public final NativeCrashClientModule b;
-    public final I0 c;
-    public H0 d;
+    public final String f475a;
+    public final boolean b;
 
-    public Bd(Bf bf) {
-        this.f523a = bf;
-        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
-        NativeCrashClientModule nativeCrashClientModule = (NativeCrashClientModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashClientModuleImpl", NativeCrashClientModule.class);
-        this.b = nativeCrashClientModule == null ? new NativeCrashClientModuleDummy() : nativeCrashClientModule;
-        this.c = new I0();
+    public Bd(String str, boolean z) {
+        this.f475a = str;
+        this.b = z;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Bd) {
+            Bd bd = (Bd) obj;
+            return Intrinsics.areEqual(this.f475a, bd.f475a) && this.b == bd.b;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Boolean.hashCode(this.b) + (this.f475a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return "ModuleStatus(moduleName=" + this.f475a + ", loaded=" + this.b + ')';
     }
 }

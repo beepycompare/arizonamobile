@@ -1,5 +1,5 @@
 package com.squareup.picasso;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public enum MemoryPolicy {
     NO_CACHE(1),
     NO_STORE(2);

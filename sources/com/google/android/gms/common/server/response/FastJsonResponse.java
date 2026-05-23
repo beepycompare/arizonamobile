@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class FastJsonResponse {
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface FieldConverter<I, O> {
         int zaa();
@@ -34,28 +34,28 @@ public abstract class FastJsonResponse {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static final Object zaD(Field field, Object obj) {
-        return field.zak != null ? field.zaf(obj) : obj;
+        return field.zaj() != null ? field.zai(obj) : obj;
     }
 
     private final void zaE(Field field, Object obj) {
         int i = field.zac;
-        Object zae = field.zae(obj);
+        Object zah = field.zah(obj);
         String str = field.zae;
         switch (i) {
             case 0:
-                if (zae != null) {
-                    setIntegerInternal(field, str, ((Integer) zae).intValue());
+                if (zah != null) {
+                    setIntegerInternal(field, str, ((Integer) zah).intValue());
                     return;
                 } else {
                     zaG(str);
                     return;
                 }
             case 1:
-                zaf(field, str, (BigInteger) zae);
+                zat(field, str, (BigInteger) zah);
                 return;
             case 2:
-                if (zae != null) {
-                    setLongInternal(field, str, ((Long) zae).longValue());
+                if (zah != null) {
+                    setLongInternal(field, str, ((Long) zah).longValue());
                     return;
                 } else {
                     zaG(str);
@@ -63,33 +63,36 @@ public abstract class FastJsonResponse {
                 }
             case 3:
             default:
-                throw new IllegalStateException("Unsupported type for conversion: " + i);
+                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 33);
+                sb.append("Unsupported type for conversion: ");
+                sb.append(i);
+                throw new IllegalStateException(sb.toString());
             case 4:
-                if (zae != null) {
-                    zan(field, str, ((Double) zae).doubleValue());
+                if (zah != null) {
+                    zay(field, str, ((Double) zah).doubleValue());
                     return;
                 } else {
                     zaG(str);
                     return;
                 }
             case 5:
-                zab(field, str, (BigDecimal) zae);
+                zaA(field, str, (BigDecimal) zah);
                 return;
             case 6:
-                if (zae != null) {
-                    setBooleanInternal(field, str, ((Boolean) zae).booleanValue());
+                if (zah != null) {
+                    setBooleanInternal(field, str, ((Boolean) zah).booleanValue());
                     return;
                 } else {
                     zaG(str);
                     return;
                 }
             case 7:
-                setStringInternal(field, str, (String) zae);
+                setStringInternal(field, str, (String) zah);
                 return;
             case 8:
             case 9:
-                if (zae != null) {
-                    setDecodedBytesInternal(field, str, (byte[]) zae);
+                if (zah != null) {
+                    setDecodedBytesInternal(field, str, (byte[]) zah);
                     return;
                 } else {
                     zaG(str);
@@ -115,7 +118,11 @@ public abstract class FastJsonResponse {
 
     private static final void zaG(String str) {
         if (Log.isLoggable("FastJsonResponse", 6)) {
-            Log.e("FastJsonResponse", "Output field (" + str + ") has a null value, but expected a primitive");
+            StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 58);
+            sb.append("Output field (");
+            sb.append(str);
+            sb.append(") has a null value, but expected a primitive");
+            Log.e("FastJsonResponse", sb.toString());
         }
     }
 
@@ -225,195 +232,51 @@ public abstract class FastJsonResponse {
         return sb.toString();
     }
 
-    public final void zaA(Field field, String str) {
-        if (field.zak == null) {
-            setStringInternal(field, field.zae, str);
-        } else {
-            zaE(field, str);
-        }
-    }
-
-    public final void zaB(Field field, Map map) {
-        if (field.zak == null) {
-            setStringMapInternal(field, field.zae, map);
-        } else {
-            zaE(field, map);
-        }
-    }
-
-    public final void zaC(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            setStringsInternal(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    public final void zaa(Field field, BigDecimal bigDecimal) {
-        if (field.zak == null) {
-            zab(field, field.zae, bigDecimal);
-        } else {
-            zaE(field, bigDecimal);
-        }
-    }
-
-    protected void zab(Field field, String str, BigDecimal bigDecimal) {
+    protected void zaA(Field field, String str, BigDecimal bigDecimal) {
         throw new UnsupportedOperationException("BigDecimal not supported");
     }
 
-    public final void zac(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zad(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zad(Field field, String str, ArrayList arrayList) {
+    protected void zaB(Field field, String str, ArrayList arrayList) {
         throw new UnsupportedOperationException("BigDecimal list not supported");
     }
 
-    public final void zae(Field field, BigInteger bigInteger) {
-        if (field.zak == null) {
-            zaf(field, field.zae, bigInteger);
-        } else {
-            zaE(field, bigInteger);
-        }
-    }
-
-    protected void zaf(Field field, String str, BigInteger bigInteger) {
-        throw new UnsupportedOperationException("BigInteger not supported");
-    }
-
-    public final void zag(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zah(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zah(Field field, String str, ArrayList arrayList) {
-        throw new UnsupportedOperationException("BigInteger list not supported");
-    }
-
-    public final void zai(Field field, boolean z) {
-        if (field.zak == null) {
-            setBooleanInternal(field, field.zae, z);
-        } else {
-            zaE(field, Boolean.valueOf(z));
-        }
-    }
-
-    public final void zaj(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zak(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zak(Field field, String str, ArrayList arrayList) {
+    protected void zaC(Field field, String str, ArrayList arrayList) {
         throw new UnsupportedOperationException("Boolean list not supported");
     }
 
-    public final void zal(Field field, byte[] bArr) {
-        if (field.zak == null) {
-            setDecodedBytesInternal(field, field.zae, bArr);
-        } else {
-            zaE(field, bArr);
-        }
-    }
-
-    public final void zam(Field field, double d) {
-        if (field.zak == null) {
-            zan(field, field.zae, d);
-        } else {
-            zaE(field, Double.valueOf(d));
-        }
-    }
-
-    protected void zan(Field field, String str, double d) {
-        throw new UnsupportedOperationException("Double not supported");
-    }
-
-    public final void zao(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zap(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zap(Field field, String str, ArrayList arrayList) {
-        throw new UnsupportedOperationException("Double list not supported");
-    }
-
-    public final void zaq(Field field, float f) {
-        if (field.zak == null) {
-            zar(field, field.zae, f);
-        } else {
-            zaE(field, Float.valueOf(f));
-        }
-    }
-
-    protected void zar(Field field, String str, float f) {
-        throw new UnsupportedOperationException("Float not supported");
-    }
-
-    public final void zas(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zat(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zat(Field field, String str, ArrayList arrayList) {
-        throw new UnsupportedOperationException("Float list not supported");
-    }
-
-    public final void zau(Field field, int i) {
-        if (field.zak == null) {
-            setIntegerInternal(field, field.zae, i);
-        } else {
-            zaE(field, Integer.valueOf(i));
-        }
-    }
-
-    public final void zav(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zaw(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
-    }
-
-    protected void zaw(Field field, String str, ArrayList arrayList) {
+    protected void zas(Field field, String str, ArrayList arrayList) {
         throw new UnsupportedOperationException("Integer list not supported");
     }
 
-    public final void zax(Field field, long j) {
-        if (field.zak == null) {
-            setLongInternal(field, field.zae, j);
-        } else {
-            zaE(field, Long.valueOf(j));
-        }
+    protected void zat(Field field, String str, BigInteger bigInteger) {
+        throw new UnsupportedOperationException("BigInteger not supported");
     }
 
-    public final void zay(Field field, ArrayList arrayList) {
-        if (field.zak == null) {
-            zaz(field, field.zae, arrayList);
-        } else {
-            zaE(field, arrayList);
-        }
+    protected void zau(Field field, String str, ArrayList arrayList) {
+        throw new UnsupportedOperationException("BigInteger list not supported");
     }
 
-    protected void zaz(Field field, String str, ArrayList arrayList) {
+    protected void zav(Field field, String str, ArrayList arrayList) {
         throw new UnsupportedOperationException("Long list not supported");
     }
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    protected void zaw(Field field, String str, float f) {
+        throw new UnsupportedOperationException("Float not supported");
+    }
+
+    protected void zax(Field field, String str, ArrayList arrayList) {
+        throw new UnsupportedOperationException("Float list not supported");
+    }
+
+    protected void zay(Field field, String str, double d) {
+        throw new UnsupportedOperationException("Double not supported");
+    }
+
+    protected void zaz(Field field, String str, ArrayList arrayList) {
+        throw new UnsupportedOperationException("Double list not supported");
+    }
+
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class Field<I, O> extends AbstractSafeParcelable {
         public static final zaj CREATOR = new zaj();
@@ -507,7 +370,7 @@ public abstract class FastJsonResponse {
         }
 
         public final String toString() {
-            Objects.ToStringHelper add = Objects.toStringHelper(this).add("versionCode", Integer.valueOf(this.zai)).add("typeIn", Integer.valueOf(this.zaa)).add("typeInArray", Boolean.valueOf(this.zab)).add("typeOut", Integer.valueOf(this.zac)).add("typeOutArray", Boolean.valueOf(this.zad)).add("outputFieldName", this.zae).add("safeParcelFieldId", Integer.valueOf(this.zaf)).add("concreteTypeName", zag());
+            Objects.ToStringHelper add = Objects.toStringHelper(this).add("versionCode", Integer.valueOf(this.zai)).add("typeIn", Integer.valueOf(this.zaa)).add("typeInArray", Boolean.valueOf(this.zab)).add("typeOut", Integer.valueOf(this.zac)).add("typeOutArray", Boolean.valueOf(this.zad)).add("outputFieldName", this.zae).add("safeParcelFieldId", Integer.valueOf(this.zaf)).add("concreteTypeName", zab());
             Class cls = this.zag;
             if (cls != null) {
                 add.add("concreteType.class", cls.getCanonicalName());
@@ -530,45 +393,16 @@ public abstract class FastJsonResponse {
             SafeParcelWriter.writeBoolean(parcel, 5, this.zad);
             SafeParcelWriter.writeString(parcel, 6, this.zae, false);
             SafeParcelWriter.writeInt(parcel, 7, getSafeParcelableFieldId());
-            SafeParcelWriter.writeString(parcel, 8, zag(), false);
-            SafeParcelWriter.writeParcelable(parcel, 9, zaa(), i, false);
+            SafeParcelWriter.writeString(parcel, 8, zab(), false);
+            SafeParcelWriter.writeParcelable(parcel, 9, zae(), i, false);
             SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
         }
 
-        final com.google.android.gms.common.server.converter.zaa zaa() {
-            FieldConverter fieldConverter = this.zak;
-            if (fieldConverter == null) {
-                return null;
-            }
-            return com.google.android.gms.common.server.converter.zaa.zaa(fieldConverter);
+        public final Field zaa() {
+            return new Field(this.zai, this.zaa, this.zab, this.zac, this.zad, this.zae, this.zaf, this.zah, zae());
         }
 
-        public final Field zab() {
-            return new Field(this.zai, this.zaa, this.zab, this.zac, this.zad, this.zae, this.zaf, this.zah, zaa());
-        }
-
-        public final FastJsonResponse zad() throws InstantiationException, IllegalAccessException {
-            Preconditions.checkNotNull(this.zag);
-            Class cls = this.zag;
-            if (cls == SafeParcelResponse.class) {
-                Preconditions.checkNotNull(this.zah);
-                Preconditions.checkNotNull(this.zaj, "The field mapping dictionary must be set if the concrete type is a SafeParcelResponse object.");
-                return new SafeParcelResponse(this.zaj, this.zah);
-            }
-            return (FastJsonResponse) cls.newInstance();
-        }
-
-        public final Object zae(Object obj) {
-            Preconditions.checkNotNull(this.zak);
-            return Preconditions.checkNotNull(this.zak.zac(obj));
-        }
-
-        public final Object zaf(Object obj) {
-            Preconditions.checkNotNull(this.zak);
-            return this.zak.zad(obj);
-        }
-
-        final String zag() {
+        final String zab() {
             String str = this.zah;
             if (str == null) {
                 return null;
@@ -576,18 +410,55 @@ public abstract class FastJsonResponse {
             return str;
         }
 
-        public final Map zah() {
-            Preconditions.checkNotNull(this.zah);
-            Preconditions.checkNotNull(this.zaj);
-            return (Map) Preconditions.checkNotNull(this.zaj.zab(this.zah));
+        public final boolean zac() {
+            return this.zak != null;
         }
 
-        public final void zai(zan zanVar) {
+        public final void zad(zan zanVar) {
             this.zaj = zanVar;
         }
 
-        public final boolean zaj() {
-            return this.zak != null;
+        final com.google.android.gms.common.server.converter.zaa zae() {
+            FieldConverter fieldConverter = this.zak;
+            if (fieldConverter == null) {
+                return null;
+            }
+            return com.google.android.gms.common.server.converter.zaa.zaa(fieldConverter);
+        }
+
+        public final FastJsonResponse zaf() throws InstantiationException, IllegalAccessException {
+            Class cls = this.zag;
+            Preconditions.checkNotNull(cls);
+            if (cls == SafeParcelResponse.class) {
+                String str = this.zah;
+                Preconditions.checkNotNull(str);
+                Preconditions.checkNotNull(this.zaj, "The field mapping dictionary must be set if the concrete type is a SafeParcelResponse object.");
+                return new SafeParcelResponse(this.zaj, str);
+            }
+            return (FastJsonResponse) cls.newInstance();
+        }
+
+        public final Map zag() {
+            String str = this.zah;
+            Preconditions.checkNotNull(str);
+            Preconditions.checkNotNull(this.zaj);
+            return (Map) Preconditions.checkNotNull(this.zaj.zad(str));
+        }
+
+        public final Object zah(Object obj) {
+            FieldConverter fieldConverter = this.zak;
+            Preconditions.checkNotNull(fieldConverter);
+            return Preconditions.checkNotNull(fieldConverter.zad(obj));
+        }
+
+        public final Object zai(Object obj) {
+            FieldConverter fieldConverter = this.zak;
+            Preconditions.checkNotNull(fieldConverter);
+            return fieldConverter.zac(obj);
+        }
+
+        final /* synthetic */ FieldConverter zaj() {
+            return this.zak;
         }
 
         protected Field(int i, boolean z, int i2, boolean z2, String str, int i3, Class cls, FieldConverter fieldConverter) {
@@ -614,14 +485,162 @@ public abstract class FastJsonResponse {
         if (field.zag == null) {
             return getValueObject(str);
         }
-        Preconditions.checkState(getValueObject(str) == null, "Concrete field shouldn't be value object: %s", field.zae);
+        Preconditions.checkState(getValueObject(str) == null, "Concrete field shouldn't be value object: %s", str);
         boolean z = field.zad;
         try {
             char upperCase = Character.toUpperCase(str.charAt(0));
             String substring = str.substring(1);
-            return getClass().getMethod("get" + upperCase + substring, new Class[0]).invoke(this, new Object[0]);
+            StringBuilder sb = new StringBuilder(String.valueOf(upperCase).length() + 3 + String.valueOf(substring).length());
+            sb.append("get");
+            sb.append(upperCase);
+            sb.append(substring);
+            return getClass().getMethod(sb.toString(), new Class[0]).invoke(this, new Object[0]);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public final void zaa(Field field, int i) {
+        if (field.zaj() != null) {
+            zaE(field, Integer.valueOf(i));
+        } else {
+            setIntegerInternal(field, field.zae, i);
+        }
+    }
+
+    public final void zab(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zas(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zac(Field field, BigInteger bigInteger) {
+        if (field.zaj() != null) {
+            zaE(field, bigInteger);
+        } else {
+            zat(field, field.zae, bigInteger);
+        }
+    }
+
+    public final void zad(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zau(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zae(Field field, long j) {
+        if (field.zaj() != null) {
+            zaE(field, Long.valueOf(j));
+        } else {
+            setLongInternal(field, field.zae, j);
+        }
+    }
+
+    public final void zaf(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zav(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zag(Field field, float f) {
+        if (field.zaj() != null) {
+            zaE(field, Float.valueOf(f));
+        } else {
+            zaw(field, field.zae, f);
+        }
+    }
+
+    public final void zah(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zax(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zai(Field field, double d) {
+        if (field.zaj() != null) {
+            zaE(field, Double.valueOf(d));
+        } else {
+            zay(field, field.zae, d);
+        }
+    }
+
+    public final void zaj(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zaz(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zak(Field field, BigDecimal bigDecimal) {
+        if (field.zaj() != null) {
+            zaE(field, bigDecimal);
+        } else {
+            zaA(field, field.zae, bigDecimal);
+        }
+    }
+
+    public final void zal(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zaB(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zam(Field field, boolean z) {
+        if (field.zaj() != null) {
+            zaE(field, Boolean.valueOf(z));
+        } else {
+            setBooleanInternal(field, field.zae, z);
+        }
+    }
+
+    public final void zan(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            zaC(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zao(Field field, String str) {
+        if (field.zaj() != null) {
+            zaE(field, str);
+        } else {
+            setStringInternal(field, field.zae, str);
+        }
+    }
+
+    public final void zap(Field field, ArrayList arrayList) {
+        if (field.zaj() != null) {
+            zaE(field, arrayList);
+        } else {
+            setStringsInternal(field, field.zae, arrayList);
+        }
+    }
+
+    public final void zaq(Field field, byte[] bArr) {
+        if (field.zaj() != null) {
+            zaE(field, bArr);
+        } else {
+            setDecodedBytesInternal(field, field.zae, bArr);
+        }
+    }
+
+    public final void zar(Field field, Map map) {
+        if (field.zaj() != null) {
+            zaE(field, map);
+        } else {
+            setStringMapInternal(field, field.zae, map);
         }
     }
 

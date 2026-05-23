@@ -5,9 +5,10 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 /* compiled from: Emitters.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
 /* loaded from: classes5.dex */
 public final class FlowKt__EmittersKt$unsafeTransform$1$1<T> implements FlowCollector {
     final /* synthetic */ FlowCollector<R> $this_unsafeFlow;
@@ -20,7 +21,7 @@ public final class FlowKt__EmittersKt$unsafeTransform$1$1<T> implements FlowColl
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -39,6 +40,7 @@ public final class FlowKt__EmittersKt$unsafeTransform$1$1<T> implements FlowColl
                     ResultKt.throwOnFailure(obj);
                     Function3<FlowCollector<? super R>, T, Continuation<? super Unit>, Object> function3 = this.$transform;
                     Object obj2 = this.$this_unsafeFlow;
+                    flowKt__EmittersKt$unsafeTransform$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__EmittersKt$unsafeTransform$1$1$emit$1.label = 1;
                     if (function3.invoke(obj2, t, flowKt__EmittersKt$unsafeTransform$1$1$emit$1) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -46,13 +48,14 @@ public final class FlowKt__EmittersKt$unsafeTransform$1$1<T> implements FlowColl
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    Object obj3 = flowKt__EmittersKt$unsafeTransform$1$1$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return Unit.INSTANCE;
             }
         }
         flowKt__EmittersKt$unsafeTransform$1$1$emit$1 = new FlowKt__EmittersKt$unsafeTransform$1$1$emit$1(this, continuation);
-        Object obj3 = flowKt__EmittersKt$unsafeTransform$1$1$emit$1.result;
+        Object obj4 = flowKt__EmittersKt$unsafeTransform$1$1$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__EmittersKt$unsafeTransform$1$1$emit$1.label;
         if (i != 0) {

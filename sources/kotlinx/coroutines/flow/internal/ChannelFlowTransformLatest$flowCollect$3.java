@@ -7,6 +7,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
@@ -25,12 +26,13 @@ import kotlinx.coroutines.flow.FlowCollector;
     	at jadx.core.dex.visitors.ClassModifier.visit(ClassModifier.java:55)
     */
 /* compiled from: Merge.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3", f = "Merge.kt", i = {}, l = {23}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3", f = "Merge.kt", i = {0, 0}, l = {23}, m = "invokeSuspend", n = {"$this$coroutineScope", "previousFlow"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes5.dex */
 final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ FlowCollector<R> $collector;
     private /* synthetic */ Object L$0;
+    Object L$1;
     int label;
     final /* synthetic */ ChannelFlowTransformLatest<T, R> this$0;
 
@@ -62,18 +64,22 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             Ref.ObjectRef objectRef = new Ref.ObjectRef();
+            this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
+            this.L$1 = SpillingKt.nullOutSpilledVariable(objectRef);
             this.label = 1;
-            if (this.this$0.flow.collect(new AnonymousClass1(objectRef, (CoroutineScope) this.L$0, this.this$0, this.$collector), this) == coroutine_suspended) {
+            if (this.this$0.flow.collect(new AnonymousClass1(objectRef, coroutineScope, this.this$0, this.$collector), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
+            Ref.ObjectRef objectRef2 = (Ref.ObjectRef) this.L$1;
             ResultKt.throwOnFailure(obj);
         }
         return Unit.INSTANCE;
@@ -81,7 +87,7 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Merge.kt */
-    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
     /* renamed from: kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
@@ -98,9 +104,8 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
             this.$collector = flowCollector;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003f  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x003e  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -121,9 +126,10 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
                         Job job = this.$previousFlow.element;
                         if (job != null) {
                             job.cancel((CancellationException) new ChildCancelledException());
-                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0 = this;
-                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1 = t;
-                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$2 = job;
+                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0 = t;
+                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1 = job;
+                            channelFlowTransformLatest$flowCollect$3$1$emit$1.L$2 = SpillingKt.nullOutSpilledVariable(job);
+                            channelFlowTransformLatest$flowCollect$3$1$emit$1.I$0 = 0;
                             channelFlowTransformLatest$flowCollect$3$1$emit$1.label = 1;
                             if (job.join(channelFlowTransformLatest$flowCollect$3$1$emit$1) == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -132,12 +138,11 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
+                        int i2 = channelFlowTransformLatest$flowCollect$3$1$emit$1.I$0;
                         Job job2 = (Job) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$2;
-                        Object obj2 = channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1;
-                        AnonymousClass1<T> anonymousClass1 = (AnonymousClass1) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0;
+                        Job job3 = (Job) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$1;
+                        t = (T) channelFlowTransformLatest$flowCollect$3$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        t = obj2;
-                        this = anonymousClass1;
                     }
                     Ref.ObjectRef<Job> objectRef = this.$previousFlow;
                     launch$default = BuildersKt__Builders_commonKt.launch$default(this.$$this$coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass2(this.this$0, this.$collector, t, null), 1, null);
@@ -146,7 +151,7 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
                 }
             }
             channelFlowTransformLatest$flowCollect$3$1$emit$1 = new ChannelFlowTransformLatest$flowCollect$3$1$emit$1(this, continuation);
-            Object obj3 = channelFlowTransformLatest$flowCollect$3$1$emit$1.result;
+            Object obj2 = channelFlowTransformLatest$flowCollect$3$1$emit$1.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             i = channelFlowTransformLatest$flowCollect$3$1$emit$1.label;
             if (i != 0) {
@@ -159,8 +164,8 @@ final class ChannelFlowTransformLatest$flowCollect$3 extends SuspendLambda imple
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: Merge.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-        @DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2", f = "Merge.kt", i = {}, l = {30}, m = "invokeSuspend", n = {}, s = {})
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+        @DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2", f = "Merge.kt", i = {}, l = {30}, m = "invokeSuspend", n = {}, s = {}, v = 1)
         /* renamed from: kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2  reason: invalid class name */
         /* loaded from: classes5.dex */
         public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

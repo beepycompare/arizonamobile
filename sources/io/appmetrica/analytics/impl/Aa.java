@@ -1,21 +1,27 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
 /* loaded from: classes5.dex */
-public interface Aa extends SimpleAdvertisingIdGetter, InterfaceC0385km {
-    AdvertisingIdsHolder a();
+public enum Aa {
+    UNKNOWN(0),
+    FIRST_OCCURRENCE(1),
+    NON_FIRST_OCCURENCE(2);
+    
 
-    AdvertisingIdsHolder a(Gi gi);
+    /* renamed from: a  reason: collision with root package name */
+    public final int f455a;
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0385km
-    /* synthetic */ void a(C0256fm c0256fm);
+    Aa(int i) {
+        this.f455a = i;
+    }
 
-    void b(boolean z);
-
-    void c(boolean z);
-
-    AdvertisingIdsHolder getIdentifiers();
-
-    void init();
+    public static Aa a(Integer num) {
+        Aa[] values;
+        if (num != null) {
+            for (Aa aa : values()) {
+                if (aa.f455a == num.intValue()) {
+                    return aa;
+                }
+            }
+        }
+        return UNKNOWN;
+    }
 }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
 import android.os.RemoteException;
 import kotlin.text.Typography;
 /* loaded from: classes.dex */
@@ -60,7 +59,7 @@ public interface IResultReceiver2 extends IInterface {
                 parcel2.writeString(str);
                 return true;
             } else if (i == 1) {
-                send(parcel.readInt(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR));
+                send(parcel.readInt(), (Bundle) parcel.readTypedObject(Bundle.CREATOR));
                 return true;
             } else {
                 return super.onTransact(i, parcel, parcel2, i2);
@@ -90,33 +89,12 @@ public interface IResultReceiver2 extends IInterface {
                 try {
                     obtain.writeInterfaceToken(DESCRIPTOR);
                     obtain.writeInt(i);
-                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeTypedObject(bundle, 0);
                     this.mRemote.transact(1, obtain, null, 1);
                 } finally {
                     obtain.recycle();
                 }
             }
-        }
-    }
-
-    /* loaded from: classes.dex */
-    public static class _Parcel {
-        /* JADX INFO: Access modifiers changed from: private */
-        public static <T> T readTypedObject(Parcel parcel, Parcelable.Creator<T> creator) {
-            if (parcel.readInt() != 0) {
-                return creator.createFromParcel(parcel);
-            }
-            return null;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static <T extends Parcelable> void writeTypedObject(Parcel parcel, T t, int i) {
-            if (t != null) {
-                parcel.writeInt(1);
-                t.writeToParcel(parcel, i);
-                return;
-            }
-            parcel.writeInt(0);
         }
     }
 }

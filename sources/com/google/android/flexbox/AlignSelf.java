@@ -3,7 +3,7 @@ package com.google.android.flexbox;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public @interface AlignSelf {
     public static final int AUTO = -1;
     public static final int BASELINE = 3;

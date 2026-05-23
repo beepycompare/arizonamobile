@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzpc {
     com.google.android.gms.internal.measurement.zzid zza;
@@ -33,27 +33,26 @@ public final class zzpc {
             this.zzb = new ArrayList();
         }
         if (this.zzc.isEmpty() || zzb((com.google.android.gms.internal.measurement.zzhs) this.zzc.get(0)) == zzb(zzhsVar)) {
-            long zzcn = this.zzd + zzhsVar.zzcn();
+            long zzcq = this.zzd + zzhsVar.zzcq();
             zzpg zzpgVar = this.zze;
-            if (zzpgVar.zzd().zzp(null, zzfy.zzbd)) {
+            if (zzpgVar.zzd().zzp(null, zzfy.zzaY)) {
                 if (!this.zzc.isEmpty()) {
                     zzpgVar.zzd();
-                    if (zzcn >= zzal.zzG()) {
+                    if (zzcq >= zzal.zzG()) {
                         return false;
                     }
                 }
             } else {
                 zzpgVar.zzd();
-                if (zzcn >= zzal.zzG()) {
+                if (zzcq >= zzal.zzG()) {
                     return false;
                 }
             }
-            this.zzd = zzcn;
+            this.zzd = zzcq;
             this.zzc.add(zzhsVar);
             this.zzb.add(Long.valueOf(j));
-            int size = this.zzc.size();
-            zzpgVar.zzd();
-            return size < Math.max(1, ((Integer) zzfy.zzj.zzb(null)).intValue());
+            com.google.android.gms.internal.measurement.zzid zzidVar = this.zza;
+            return this.zzc.size() < Math.max(1, zzpgVar.zzd().zzm(zzidVar != null ? zzidVar.zzA() : null, zzfy.zzj));
         }
         return false;
     }

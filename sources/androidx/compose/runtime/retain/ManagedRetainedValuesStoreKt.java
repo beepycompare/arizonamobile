@@ -5,7 +5,7 @@ import androidx.compose.runtime.ComposerKt;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ManagedRetainedValuesStore.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0002¨\u0006\u0003"}, d2 = {"retainManagedRetainedValuesStore", "Landroidx/compose/runtime/retain/ManagedRetainedValuesStore;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/retain/ManagedRetainedValuesStore;", "runtime-retain"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0002¨\u0006\u0003"}, d2 = {"retainManagedRetainedValuesStore", "Landroidx/compose/runtime/retain/ManagedRetainedValuesStore;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/retain/ManagedRetainedValuesStore;", "runtime-retain"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ManagedRetainedValuesStoreKt {
     public static final ManagedRetainedValuesStore retainManagedRetainedValuesStore(Composer composer, int i) {
@@ -27,7 +27,7 @@ public final class ManagedRetainedValuesStoreKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        ComposerKt.sourceInformationMarkerStart(composer, -1709446474, "CC(retain)N(calculation)97@5268L60:Retain.kt#3my55w");
+        ComposerKt.sourceInformationMarkerStart(composer, -1709446474, "CC(retain)N(calculation)99@5407L60:Retain.kt#3my55w");
         Object retain = RetainKt.retain("androidx.compose.runtime.retain.RetainManagedRetainedValuesStoreWrapper".hashCode(), (Function0) rememberedValue, composer, 48);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ManagedRetainedValuesStore retainedValuesStore = ((RetainManagedRetainedValuesStoreWrapper) retain).getRetainedValuesStore();

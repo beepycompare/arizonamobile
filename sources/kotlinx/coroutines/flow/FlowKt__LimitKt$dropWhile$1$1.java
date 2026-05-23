@@ -5,11 +5,12 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$dropWhile$1$1<T> implements FlowCollector {
     final /* synthetic */ Ref.BooleanRef $matched;
@@ -24,13 +25,13 @@ public final class FlowKt__LimitKt$dropWhile$1$1<T> implements FlowCollector {
         this.$predicate = function2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005d, code lost:
         if (r6.emit(r7, r0) == r1) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0069, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x006d, code lost:
         if (r8 == r1) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0085, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x008a, code lost:
         if (r6.$this_flow.emit(r7, r0) == r1) goto L22;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
@@ -53,40 +54,40 @@ public final class FlowKt__LimitKt$dropWhile$1$1<T> implements FlowCollector {
                     ResultKt.throwOnFailure(obj);
                     if (this.$matched.element) {
                         FlowCollector<T> flowCollector = this.$this_flow;
+                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                         flowKt__LimitKt$dropWhile$1$1$emit$1.label = 1;
                     } else {
                         Function2<T, Continuation<? super Boolean>, Object> function2 = this.$predicate;
-                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = this;
-                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = t;
+                        flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = t;
                         flowKt__LimitKt$dropWhile$1$1$emit$1.label = 2;
                         obj = function2.invoke(t, flowKt__LimitKt$dropWhile$1$1$emit$1);
                     }
                     return coroutine_suspended;
                 } else if (i == 1) {
+                    Object obj2 = flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     return Unit.INSTANCE;
                 } else if (i != 2) {
                     if (i == 3) {
+                        Object obj3 = flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    t = (T) flowKt__LimitKt$dropWhile$1$1$emit$1.L$1;
-                    this = (FlowKt__LimitKt$dropWhile$1$1) flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
+                    t = (T) flowKt__LimitKt$dropWhile$1$1$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                     if (((Boolean) obj).booleanValue()) {
                         return Unit.INSTANCE;
                     }
                     this.$matched.element = true;
-                    flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = null;
-                    flowKt__LimitKt$dropWhile$1$1$emit$1.L$1 = null;
+                    flowKt__LimitKt$dropWhile$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__LimitKt$dropWhile$1$1$emit$1.label = 3;
                 }
             }
         }
         flowKt__LimitKt$dropWhile$1$1$emit$1 = new FlowKt__LimitKt$dropWhile$1$1$emit$1(this, continuation);
-        Object obj2 = flowKt__LimitKt$dropWhile$1$1$emit$1.result;
+        Object obj4 = flowKt__LimitKt$dropWhile$1$1$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = flowKt__LimitKt$dropWhile$1$1$emit$1.label;
         if (i != 0) {

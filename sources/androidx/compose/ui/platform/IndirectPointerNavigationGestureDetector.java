@@ -11,14 +11,14 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: AndroidComposeView.android.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\b\u0010\tJ\u0016\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0012J\u0006\u0010\u0019\u001a\u00020\u0007R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/platform/IndirectPointerNavigationGestureDetector;", "", "context", "Landroid/content/Context;", "onMoveFocus", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusDirection;", "", "<init>", "(Landroid/content/Context;Lkotlin/jvm/functions/Function1;)V", "primaryDirectionalMotionAxis", "Landroidx/compose/ui/input/indirect/IndirectPointerEventPrimaryDirectionalMotionAxis;", "getPrimaryDirectionalMotionAxis-nZO2Niw", "()I", "setPrimaryDirectionalMotionAxis-WQKaTuc", "(I)V", "I", "ignoreCurrentGestureStream", "", "gestureDetector", "Landroid/view/GestureDetector;", "onIndirectPointerEvent", "indirectPointerEvent", "Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "isConsumed", "cancelCurrentEventStream", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0001\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\b\u0010\tJ\u0016\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0012J\u0006\u0010\u0019\u001a\u00020\u0007R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Landroidx/compose/ui/platform/IndirectPointerNavigationGestureDetector;", "", "context", "Landroid/content/Context;", "onMoveFocus", "Lkotlin/Function1;", "Landroidx/compose/ui/focus/FocusDirection;", "", "<init>", "(Landroid/content/Context;Lkotlin/jvm/functions/Function1;)V", "primaryDirectionalMotionAxis", "Landroidx/compose/ui/input/indirect/IndirectPointerEventPrimaryDirectionalMotionAxis;", "getPrimaryDirectionalMotionAxis-nZO2Niw", "()I", "setPrimaryDirectionalMotionAxis-WQKaTuc", "(I)V", "I", "ignoreCurrentGestureStream", "", "gestureDetector", "Landroid/view/GestureDetector;", "onIndirectPointerEvent", "indirectPointerEvent", "Landroidx/compose/ui/input/indirect/IndirectPointerEvent;", "isConsumed", "cancelCurrentEventStream", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class IndirectPointerNavigationGestureDetector {
     public static final int $stable = 8;
     private final GestureDetector gestureDetector;
     private boolean ignoreCurrentGestureStream;
     private final Function1<FocusDirection, Unit> onMoveFocus;
-    private int primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
+    private int primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6175getNonenZO2Niw();
 
     /* JADX WARN: Multi-variable type inference failed */
     public IndirectPointerNavigationGestureDetector(Context context, Function1<? super FocusDirection, Unit> function1) {
@@ -56,16 +56,16 @@ public final class IndirectPointerNavigationGestureDetector {
                 if (z) {
                     return true;
                 }
-                if (IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(IndirectPointerNavigationGestureDetector.this.m6712getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw())) {
+                if (IndirectPointerEventPrimaryDirectionalMotionAxis.m6171equalsimpl0(IndirectPointerNavigationGestureDetector.this.m7316getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6176getXnZO2Niw())) {
                     if (Math.abs(f) > Math.abs(f2)) {
-                        int m4410getNextdhqQ8s = f > 0.0f ? FocusDirection.Companion.m4410getNextdhqQ8s() : FocusDirection.Companion.m4411getPreviousdhqQ8s();
+                        int m4986getNextdhqQ8s = f > 0.0f ? FocusDirection.Companion.m4986getNextdhqQ8s() : FocusDirection.Companion.m4987getPreviousdhqQ8s();
                         function13 = IndirectPointerNavigationGestureDetector.this.onMoveFocus;
-                        function13.invoke(FocusDirection.m4399boximpl(m4410getNextdhqQ8s));
+                        function13.invoke(FocusDirection.m4975boximpl(m4986getNextdhqQ8s));
                     }
-                } else if (IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(IndirectPointerNavigationGestureDetector.this.m6712getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw()) && Math.abs(f2) > Math.abs(f)) {
-                    int m4410getNextdhqQ8s2 = f2 > 0.0f ? FocusDirection.Companion.m4410getNextdhqQ8s() : FocusDirection.Companion.m4411getPreviousdhqQ8s();
+                } else if (IndirectPointerEventPrimaryDirectionalMotionAxis.m6171equalsimpl0(IndirectPointerNavigationGestureDetector.this.m7316getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6177getYnZO2Niw()) && Math.abs(f2) > Math.abs(f)) {
+                    int m4986getNextdhqQ8s2 = f2 > 0.0f ? FocusDirection.Companion.m4986getNextdhqQ8s() : FocusDirection.Companion.m4987getPreviousdhqQ8s();
                     function12 = IndirectPointerNavigationGestureDetector.this.onMoveFocus;
-                    function12.invoke(FocusDirection.m4399boximpl(m4410getNextdhqQ8s2));
+                    function12.invoke(FocusDirection.m4975boximpl(m4986getNextdhqQ8s2));
                 }
                 return true;
             }
@@ -73,12 +73,12 @@ public final class IndirectPointerNavigationGestureDetector {
     }
 
     /* renamed from: getPrimaryDirectionalMotionAxis-nZO2Niw  reason: not valid java name */
-    public final int m6712getPrimaryDirectionalMotionAxisnZO2Niw() {
+    public final int m7316getPrimaryDirectionalMotionAxisnZO2Niw() {
         return this.primaryDirectionalMotionAxis;
     }
 
     /* renamed from: setPrimaryDirectionalMotionAxis-WQKaTuc  reason: not valid java name */
-    public final void m6713setPrimaryDirectionalMotionAxisWQKaTuc(int i) {
+    public final void m7317setPrimaryDirectionalMotionAxisWQKaTuc(int i) {
         this.primaryDirectionalMotionAxis = i;
     }
 
@@ -86,7 +86,7 @@ public final class IndirectPointerNavigationGestureDetector {
         MotionEvent nativeEvent = AndroidIndirectPointerEvent_androidKt.getNativeEvent(indirectPointerEvent);
         int action = nativeEvent.getAction();
         if (action == 0) {
-            this.primaryDirectionalMotionAxis = indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw();
+            this.primaryDirectionalMotionAxis = indirectPointerEvent.mo6164getPrimaryDirectionalMotionAxisnZO2Niw();
             this.ignoreCurrentGestureStream = false;
         } else if ((action == 1 || action == 2) && z) {
             cancelCurrentEventStream();
@@ -95,7 +95,7 @@ public final class IndirectPointerNavigationGestureDetector {
     }
 
     public final void cancelCurrentEventStream() {
-        this.primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
+        this.primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6175getNonenZO2Niw();
         this.ignoreCurrentGestureStream = true;
     }
 }

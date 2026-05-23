@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.NetworkConnectionInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_NetworkConnectionInfo extends NetworkConnectionInfo {
     private final NetworkConnectionInfo.MobileSubtype mobileSubtype;
     private final NetworkConnectionInfo.NetworkType networkType;
@@ -49,7 +49,7 @@ final class AutoValue_NetworkConnectionInfo extends NetworkConnectionInfo {
         return hashCode ^ (mobileSubtype != null ? mobileSubtype.hashCode() : 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends NetworkConnectionInfo.Builder {
         private NetworkConnectionInfo.MobileSubtype mobileSubtype;
         private NetworkConnectionInfo.NetworkType networkType;

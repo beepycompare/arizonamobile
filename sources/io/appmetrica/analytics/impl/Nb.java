@@ -1,16 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.locationapi.internal.LocationProvider;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes5.dex */
-public interface Nb extends LocationProvider {
-    void a(Location location);
+public final class Nb implements Converter {
 
-    void a(Object obj);
+    /* renamed from: a  reason: collision with root package name */
+    public final C0456nd f681a;
 
-    void a(boolean z);
+    public Nb() {
+        this(new C0456nd(new C0648uo()));
+    }
 
-    void b(Object obj);
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final byte[] fromModel(C0622to c0622to) {
+        return MessageNano.toByteArray((MessageNano) this.f681a.f1113a.fromModel(c0622to));
+    }
 
-    void init();
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        byte[] bArr = (byte[]) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Nb(C0456nd c0456nd) {
+        this.f681a = c0456nd;
+    }
+
+    public final C0622to a(byte[] bArr) {
+        throw new UnsupportedOperationException();
+    }
 }

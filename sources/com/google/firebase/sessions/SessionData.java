@@ -1,8 +1,12 @@
 package com.google.firebase.sessions;
 
 import java.util.Map;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.KSerializer;
@@ -22,7 +26,19 @@ public final class SessionData {
     private final Map<String, ProcessData> processDataMap;
     private final SessionDetails sessionDetails;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, null, new LinkedHashMapSerializer(StringSerializer.INSTANCE, ProcessData$$serializer.INSTANCE)};
+    private static final Lazy<KSerializer<Object>>[] $childSerializers = {null, null, LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: com.google.firebase.sessions.SessionData$$ExternalSyntheticLambda0
+        @Override // kotlin.jvm.functions.Function0
+        public final Object invoke() {
+            KSerializer _childSerializers$_anonymous_;
+            _childSerializers$_anonymous_ = SessionData._childSerializers$_anonymous_();
+            return _childSerializers$_anonymous_;
+        }
+    })};
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final /* synthetic */ KSerializer _childSerializers$_anonymous_() {
+        return new LinkedHashMapSerializer(StringSerializer.INSTANCE, ProcessData$$serializer.INSTANCE);
+    }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ SessionData copy$default(SessionData sessionData, SessionDetails sessionDetails, Time time, Map map, int i, Object obj) {
@@ -113,7 +129,7 @@ public final class SessionData {
 
     @JvmStatic
     public static final /* synthetic */ void write$Self$com_google_firebase_firebase_sessions(SessionData sessionData, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        KSerializer<Object>[] kSerializerArr = $childSerializers;
+        Lazy<KSerializer<Object>>[] lazyArr = $childSerializers;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, SessionDetails$$serializer.INSTANCE, sessionData.sessionDetails);
         if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 1) || sessionData.backgroundTime != null) {
             compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 1, Time$$serializer.INSTANCE, sessionData.backgroundTime);
@@ -121,7 +137,7 @@ public final class SessionData {
         if (!compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) && sessionData.processDataMap == null) {
             return;
         }
-        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 2, kSerializerArr[2], sessionData.processDataMap);
+        compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 2, lazyArr[2].getValue(), sessionData.processDataMap);
     }
 
     public SessionData(SessionDetails sessionDetails, Time time, Map<String, ProcessData> map) {

@@ -1,15 +1,49 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes5.dex */
-public enum Jl {
-    UNKNOWN(0),
-    NETWORK(1),
-    PARSE(2);
-    
+public final class Jl implements InterfaceC0632u8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f653a;
+    public final C0304hg f616a;
+    public final C0744yg b;
 
-    Jl(int i) {
-        this.f653a = i;
+    public Jl() {
+        this(new C0304hg(), new C0744yg());
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final List<Xi> fromModel(Il il) {
+        Xi xi;
+        N8 n8 = new N8();
+        n8.f679a = 3;
+        n8.d = new L8();
+        Xi fromModel = this.f616a.fromModel(il.f597a);
+        n8.d.f642a = (G8) fromModel.f838a;
+        Ng ng = il.b;
+        if (ng != null) {
+            xi = this.b.fromModel(ng);
+            n8.d.b = (I8) xi.f838a;
+        } else {
+            xi = null;
+        }
+        return Collections.singletonList(new Xi(n8, new C0524q3(C0524q3.b(fromModel, xi))));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        List list = (List) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public Jl(C0304hg c0304hg, C0744yg c0744yg) {
+        this.f616a = c0304hg;
+        this.b = c0744yg;
+    }
+
+    public final Il a(List<Xi> list) {
+        throw new UnsupportedOperationException();
     }
 }

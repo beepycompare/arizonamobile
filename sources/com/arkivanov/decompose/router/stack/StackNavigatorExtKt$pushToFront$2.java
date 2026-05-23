@@ -24,6 +24,13 @@ public final class StackNavigatorExtKt$pushToFront$2<C> implements Function1<Lis
 
     public final List<C> invoke(List<? extends C> stack) {
         Intrinsics.checkNotNullParameter(stack, "stack");
-        return CollectionsKt.plus((Collection<? extends C>) CollectionsKt.minus(stack, this.$configuration), this.$configuration);
+        List<C> mutableList = CollectionsKt.toMutableList((Collection) stack);
+        C c = this.$configuration;
+        int lastIndexOf = mutableList.lastIndexOf(c);
+        if (lastIndexOf >= 0) {
+            mutableList.remove(lastIndexOf);
+        }
+        mutableList.add(c);
+        return mutableList;
     }
 }

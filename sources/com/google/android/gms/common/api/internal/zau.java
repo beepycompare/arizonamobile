@@ -1,10 +1,25 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.GoogleApiClient;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public interface zau extends GoogleApiClient.ConnectionCallbacks {
-    void zaa(ConnectionResult connectionResult, Api api, boolean z);
+final class zau implements Runnable {
+    final /* synthetic */ zax zaa;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zau(zax zaxVar) {
+        Objects.requireNonNull(zaxVar);
+        this.zaa = zaxVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        zax zaxVar = this.zaa;
+        zaxVar.zay().lock();
+        try {
+            zaxVar.zao();
+        } finally {
+            this.zaa.zay().unlock();
+        }
+    }
 }

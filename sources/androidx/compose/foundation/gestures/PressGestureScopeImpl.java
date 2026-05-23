@@ -13,7 +13,7 @@ import kotlin.coroutines.jvm.internal.Boxing;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: TapGestureDetector.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0002¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\fJ\u000e\u0010\u000e\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\u000fJ\u000e\u0010\u0010\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010\u000fJ\u000e\u0010\u0011\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\u000fJ\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b\u0015\u0010\u0016J\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u0018\u0010\u0019J\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001cJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001eJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u001f\u0010 J\u0014\u0010!\u001a\u00020\"*\u00020#H\u0097\u0001¢\u0006\u0004\b$\u0010%J\u0014\u0010&\u001a\u00020\u001d*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b'\u0010\u001eJ\u0014\u0010&\u001a\u00020\u001d*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b(\u0010 J\r\u0010)\u001a\u00020**\u00020+H\u0097\u0001J\u0014\u0010,\u001a\u00020#*\u00020\"H\u0097\u0001¢\u0006\u0004\b-\u0010%J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b/\u00100J\u0014\u0010.\u001a\u00020\u0017*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b/\u00101J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b2\u00101R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0003\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b3\u00104R\u0014\u00105\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b6\u00104¨\u00067"}, d2 = {"Landroidx/compose/foundation/gestures/PressGestureScopeImpl;", "Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/unit/Density;", "density", "<init>", "(Landroidx/compose/ui/unit/Density;)V", "isReleased", "", "isCanceled", "mutex", "Lkotlinx/coroutines/sync/Mutex;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "release", "reset", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitRelease", "tryAwaitRelease", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "getDensity", "()F", "fontScale", "getFontScale", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\b\u0001\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0002¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u000b\u001a\u00020\fJ\u0006\u0010\r\u001a\u00020\fJ\u000e\u0010\u000e\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\u000fJ\u000e\u0010\u0010\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010\u000fJ\u000e\u0010\u0011\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\u000fJ\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b\u0015\u0010\u0016J\u0014\u0010\u0012\u001a\u00020\u0013*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u0018\u0010\u0019J\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001cJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b\u001b\u0010\u001eJ\u0014\u0010\u001a\u001a\u00020\u0014*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b\u001f\u0010 J\u0014\u0010!\u001a\u00020\"*\u00020#H\u0097\u0001¢\u0006\u0004\b$\u0010%J\u0014\u0010&\u001a\u00020\u001d*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b'\u0010\u001eJ\u0014\u0010&\u001a\u00020\u001d*\u00020\u0017H\u0097\u0001¢\u0006\u0004\b(\u0010 J\r\u0010)\u001a\u00020**\u00020+H\u0097\u0001J\u0014\u0010,\u001a\u00020#*\u00020\"H\u0097\u0001¢\u0006\u0004\b-\u0010%J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0013H\u0097\u0001¢\u0006\u0004\b/\u00100J\u0014\u0010.\u001a\u00020\u0017*\u00020\u001dH\u0097\u0001¢\u0006\u0004\b/\u00101J\u0014\u0010.\u001a\u00020\u0017*\u00020\u0014H\u0097\u0001¢\u0006\u0004\b2\u00101R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0003\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b3\u00104R\u0014\u00105\u001a\u00020\u001d8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b6\u00104¨\u00067"}, d2 = {"Landroidx/compose/foundation/gestures/PressGestureScopeImpl;", "Landroidx/compose/foundation/gestures/PressGestureScope;", "Landroidx/compose/ui/unit/Density;", "density", "<init>", "(Landroidx/compose/ui/unit/Density;)V", "isReleased", "", "isCanceled", "mutex", "Lkotlinx/coroutines/sync/Mutex;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "release", "reset", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitRelease", "tryAwaitRelease", "roundToPx", "", "Landroidx/compose/ui/unit/Dp;", "roundToPx-0680j_4", "(F)I", "Landroidx/compose/ui/unit/TextUnit;", "roundToPx--R2X_6o", "(J)I", "toDp", "toDp-u2uoSUM", "(I)F", "", "(F)F", "toDp-GaN1DYA", "(J)F", "toDpSize", "Landroidx/compose/ui/unit/DpSize;", "Landroidx/compose/ui/geometry/Size;", "toDpSize-k-rfVVM", "(J)J", "toPx", "toPx-0680j_4", "toPx--R2X_6o", "toRect", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/ui/unit/DpRect;", "toSize", "toSize-XkaWNTQ", "toSp", "toSp-kPz2Gy4", "(I)J", "(F)J", "toSp-0xMU5do", "getDensity", "()F", "fontScale", "getFontScale", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PressGestureScopeImpl implements PressGestureScope, Density {
     public static final int $stable = 0;
@@ -34,50 +34,50 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx--R2X_6o */
-    public int mo398roundToPxR2X_6o(long j) {
-        return this.$$delegate_0.mo398roundToPxR2X_6o(j);
+    public int mo427roundToPxR2X_6o(long j) {
+        return this.$$delegate_0.mo427roundToPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx-0680j_4 */
-    public int mo399roundToPx0680j_4(float f) {
-        return this.$$delegate_0.mo399roundToPx0680j_4(f);
+    public int mo428roundToPx0680j_4(float f) {
+        return this.$$delegate_0.mo428roundToPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo400toDpGaN1DYA(long j) {
-        return this.$$delegate_0.mo400toDpGaN1DYA(j);
+    public float mo429toDpGaN1DYA(long j) {
+        return this.$$delegate_0.mo429toDpGaN1DYA(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo401toDpu2uoSUM(float f) {
-        return this.$$delegate_0.mo401toDpu2uoSUM(f);
+    public float mo430toDpu2uoSUM(float f) {
+        return this.$$delegate_0.mo430toDpu2uoSUM(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo402toDpu2uoSUM(int i) {
-        return this.$$delegate_0.mo402toDpu2uoSUM(i);
+    public float mo431toDpu2uoSUM(int i) {
+        return this.$$delegate_0.mo431toDpu2uoSUM(i);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDpSize-k-rfVVM */
-    public long mo403toDpSizekrfVVM(long j) {
-        return this.$$delegate_0.mo403toDpSizekrfVVM(j);
+    public long mo432toDpSizekrfVVM(long j) {
+        return this.$$delegate_0.mo432toDpSizekrfVVM(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx--R2X_6o */
-    public float mo404toPxR2X_6o(long j) {
-        return this.$$delegate_0.mo404toPxR2X_6o(j);
+    public float mo433toPxR2X_6o(long j) {
+        return this.$$delegate_0.mo433toPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx-0680j_4 */
-    public float mo405toPx0680j_4(float f) {
-        return this.$$delegate_0.mo405toPx0680j_4(f);
+    public float mo434toPx0680j_4(float f) {
+        return this.$$delegate_0.mo434toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -87,26 +87,26 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSize-XkaWNTQ */
-    public long mo406toSizeXkaWNTQ(long j) {
-        return this.$$delegate_0.mo406toSizeXkaWNTQ(j);
+    public long mo435toSizeXkaWNTQ(long j) {
+        return this.$$delegate_0.mo435toSizeXkaWNTQ(j);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo407toSp0xMU5do(float f) {
-        return this.$$delegate_0.mo407toSp0xMU5do(f);
+    public long mo436toSp0xMU5do(float f) {
+        return this.$$delegate_0.mo436toSp0xMU5do(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo408toSpkPz2Gy4(float f) {
-        return this.$$delegate_0.mo408toSpkPz2Gy4(f);
+    public long mo437toSpkPz2Gy4(float f) {
+        return this.$$delegate_0.mo437toSpkPz2Gy4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo409toSpkPz2Gy4(int i) {
-        return this.$$delegate_0.mo409toSpkPz2Gy4(i);
+    public long mo438toSpkPz2Gy4(int i) {
+        return this.$$delegate_0.mo438toSpkPz2Gy4(i);
     }
 
     public PressGestureScopeImpl(Density density) {
@@ -116,14 +116,14 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
     public final void cancel() {
         this.isCanceled = true;
         if (this.mutex.isLocked()) {
-            Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+            Mutex.unlock$default(this.mutex, null, 1, null);
         }
     }
 
     public final void release() {
         this.isReleased = true;
         if (this.mutex.isLocked()) {
-            Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+            Mutex.unlock$default(this.mutex, null, 1, null);
         }
     }
 
@@ -135,6 +135,7 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
     public final Object reset(Continuation<? super Unit> continuation) {
         PressGestureScopeImpl$reset$1 pressGestureScopeImpl$reset$1;
         int i;
+        Object lock$default;
         if (continuation instanceof PressGestureScopeImpl$reset$1) {
             pressGestureScopeImpl$reset$1 = (PressGestureScopeImpl$reset$1) continuation;
             if ((pressGestureScopeImpl$reset$1.label & Integer.MIN_VALUE) != 0) {
@@ -146,7 +147,8 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
                     ResultKt.throwOnFailure(obj);
                     Mutex mutex = this.mutex;
                     pressGestureScopeImpl$reset$1.label = 1;
-                    if (Mutex.DefaultImpls.lock$default(mutex, null, pressGestureScopeImpl$reset$1, 1, null) == coroutine_suspended) {
+                    lock$default = Mutex.lock$default(mutex, null, pressGestureScopeImpl$reset$1, 1, null);
+                    if (lock$default == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -226,6 +228,7 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
     public Object tryAwaitRelease(Continuation<? super Boolean> continuation) {
         PressGestureScopeImpl$tryAwaitRelease$1 pressGestureScopeImpl$tryAwaitRelease$1;
         int i;
+        Object lock$default;
         if (continuation instanceof PressGestureScopeImpl$tryAwaitRelease$1) {
             pressGestureScopeImpl$tryAwaitRelease$1 = (PressGestureScopeImpl$tryAwaitRelease$1) continuation;
             if ((pressGestureScopeImpl$tryAwaitRelease$1.label & Integer.MIN_VALUE) != 0) {
@@ -238,7 +241,8 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
                     if (!this.isReleased && !this.isCanceled) {
                         Mutex mutex = this.mutex;
                         pressGestureScopeImpl$tryAwaitRelease$1.label = 1;
-                        if (Mutex.DefaultImpls.lock$default(mutex, null, pressGestureScopeImpl$tryAwaitRelease$1, 1, null) == coroutine_suspended) {
+                        lock$default = Mutex.lock$default(mutex, null, pressGestureScopeImpl$tryAwaitRelease$1, 1, null);
+                        if (lock$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                     }
@@ -248,7 +252,7 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
                 } else {
                     ResultKt.throwOnFailure(obj);
                 }
-                Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+                Mutex.unlock$default(this.mutex, null, 1, null);
                 return Boxing.boxBoolean(this.isReleased);
             }
         }
@@ -258,7 +262,7 @@ public final class PressGestureScopeImpl implements PressGestureScope, Density {
         i = pressGestureScopeImpl$tryAwaitRelease$1.label;
         if (i != 0) {
         }
-        Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
+        Mutex.unlock$default(this.mutex, null, 1, null);
         return Boxing.boxBoolean(this.isReleased);
     }
 }

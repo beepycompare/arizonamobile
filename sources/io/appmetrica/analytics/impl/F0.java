@@ -1,73 +1,37 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import androidx.core.app.NotificationCompat;
-import io.appmetrica.analytics.ModuleEvent;
-import io.appmetrica.analytics.ModulesFacade;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.List;
-import java.util.Map;
-import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.os.Handler;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 /* loaded from: classes5.dex */
-public final class F0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Bb f580a = new Bb(C0135b4.l().d());
-    public final Cb b = new Cb();
-    public final Eb c = new Eb();
-
-    public final void a(final String str, final String str2, final String str3) {
-        Bb bb = this.f580a;
-        if (bb.c.a((Void) null).f1199a && bb.d.a(str).f1199a && bb.e.a(str2).f1199a && bb.f.a(str3).f1199a) {
-            this.b.getClass();
-            IHandlerExecutor a2 = C0135b4.l().c.a();
-            ((C0746z9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.F0$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    F0.a(F0.this, str, str2, str3);
-                }
-            });
-            return;
-        }
-        PublicLogger.Companion.getAnonymousInstance().warning("[AppMetricaLibraryAdapterProxy]" + ("Failed report event from sender: " + str + " with name = " + str2 + " and payload = " + str3), new Object[0]);
+public abstract class F0 {
+    public static T6 a(Handler handler, E0 e0) {
+        return new T6(handler, e0);
     }
 
-    public static final void a(F0 f0, String str, String str2, String str3) {
-        List<InterfaceC0586t> list;
-        Context a2;
-        Eb eb = f0.c;
-        eb.getClass();
-        Pair[] pairArr = new Pair[3];
-        if (str == null) {
-            str = AbstractJsonLexerKt.NULL;
-        }
-        pairArr[0] = TuplesKt.to("sender", str);
-        if (str2 == null) {
-            str2 = AbstractJsonLexerKt.NULL;
-        }
-        pairArr[1] = TuplesKt.to(NotificationCompat.CATEGORY_EVENT, str2);
-        if (str3 == null) {
-            str3 = AbstractJsonLexerKt.NULL;
-        }
-        pairArr[2] = TuplesKt.to("payload", str3);
-        Map<String, Object> mutableMapOf = MapsKt.mutableMapOf(pairArr);
-        ModuleEvent.Builder withName = ModuleEvent.newBuilder(4).withName("appmetrica_system_event_42");
-        synchronized (eb) {
-            if (eb.f570a == null && (a2 = C0135b4.l().g.a()) != null) {
-                eb.f570a = CollectionsKt.listOf((Object[]) new InterfaceC0586t[]{new Pd(), new C0257fn(a2), new Jo()});
-            }
-            list = eb.f570a;
-        }
-        if (list != null) {
-            for (InterfaceC0586t interfaceC0586t : list) {
-                interfaceC0586t.a(mutableMapOf);
-            }
-        }
-        ModulesFacade.reportEvent(withName.withAttributes(mutableMapOf).build());
+    public static C0175cg a(Context context, T6 t6) {
+        return new C0175cg(context, t6);
+    }
+
+    public static Qi a(C0175cg c0175cg, Context context, ICommonExecutor iCommonExecutor) {
+        C0546r0 c0546r0 = new C0546r0(context, iCommonExecutor);
+        return new Qi(c0546r0, new C0674vo(new Nb()), new V4(c0175cg), new Ak(context, c0546r0));
+    }
+
+    public static C0543qm a(Context context, Qi qi, Handler handler) {
+        return new C0543qm(qi, C0576s4.l().d(context), handler);
+    }
+
+    public static C0770zg a(Qi qi, C0665vf c0665vf, Handler handler) {
+        return new C0770zg(qi, c0665vf, handler, c0665vf.s());
+    }
+
+    public static Di a(Context context, C0175cg c0175cg, Qi qi, Handler handler, C0543qm c0543qm) {
+        return new Di(context, c0175cg, qi, handler, c0543qm);
+    }
+
+    public static Cd a(Context context) {
+        return new Cd(C0576s4.l().c.a(), C0576s4.l().b(context), "client_modules", new SystemTimeProvider());
     }
 }

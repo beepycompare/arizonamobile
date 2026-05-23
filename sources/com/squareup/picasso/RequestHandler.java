@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import com.squareup.picasso.Picasso;
 import java.io.IOException;
 import okio.Source;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class RequestHandler {
     public abstract boolean canHandleRequest(Request request);
 
@@ -27,7 +27,7 @@ public abstract class RequestHandler {
         return false;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Result {
         private final Bitmap bitmap;
         private final int exifOrientation;

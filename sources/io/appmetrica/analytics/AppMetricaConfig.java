@@ -3,12 +3,12 @@ package io.appmetrica.analytics;
 import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0286h0;
-import io.appmetrica.analytics.impl.C0443n5;
-import io.appmetrica.analytics.impl.C7;
-import io.appmetrica.analytics.impl.En;
-import io.appmetrica.analytics.impl.G3;
-import io.appmetrica.analytics.impl.lo;
+import io.appmetrica.analytics.impl.C0312ho;
+import io.appmetrica.analytics.impl.C0339j0;
+import io.appmetrica.analytics.impl.D5;
+import io.appmetrica.analytics.impl.Oo;
+import io.appmetrica.analytics.impl.U7;
+import io.appmetrica.analytics.impl.X3;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
@@ -52,13 +52,13 @@ public class AppMetricaConfig {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final En D = new En(new C0286h0());
+        private static final C0312ho D = new C0312ho(new C0339j0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0443n5 f280a;
+        private final D5 f207a;
         private final String b;
         private String c;
         private Integer d;
@@ -200,7 +200,7 @@ public class AppMetricaConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.n = Integer.valueOf(this.f280a.a(i));
+            this.n = Integer.valueOf(this.f207a.a(i));
             return this;
         }
 
@@ -239,7 +239,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f280a = new C0443n5(str);
+            this.f207a = new D5(str);
             this.b = str;
         }
     }
@@ -249,7 +249,7 @@ public class AppMetricaConfig {
     }
 
     public static AppMetricaConfig fromJson(String str) {
-        Builder a2 = new G3().a(str);
+        Builder a2 = new X3().a(str);
         if (a2 == null) {
             return null;
         }
@@ -271,13 +271,13 @@ public class AppMetricaConfig {
     public String toJson() {
         String str;
         List<String> list;
-        new C7();
+        new U7();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
             jSONObject.put("app_version", this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
-            jSONObject.put(FirebaseAnalytics.Param.LOCATION, G3.a(this.location));
+            jSONObject.put(FirebaseAnalytics.Param.LOCATION, X3.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;
             JSONArray jSONArray = null;
             if (preloadInfo != null) {
@@ -315,7 +315,7 @@ public class AppMetricaConfig {
                 jSONObject.put("anr_monitoring_timeout", this.anrMonitoringTimeout);
                 list = this.customHosts;
                 if (list != null) {
-                    if (!lo.a((Collection) list)) {
+                    if (!Oo.a((Collection) list)) {
                         jSONArray = new JSONArray((Collection) list);
                     }
                     jSONObject.put("customHosts", jSONArray);

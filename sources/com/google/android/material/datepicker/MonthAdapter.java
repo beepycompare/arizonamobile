@@ -221,4 +221,63 @@ public class MonthAdapter extends BaseAdapter {
     public boolean isLastInRow(int i) {
         return (i + 1) % this.month.daysInWeek == 0;
     }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public boolean isDayPositionValid(int i) {
+        Long item = getItem(i);
+        return item != null && this.calendarConstraints.getDateValidator().isValid(item.longValue());
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int findNextValidDayPosition(int i) {
+        do {
+            i++;
+            if (i > lastPositionInMonth()) {
+                return -1;
+            }
+        } while (!isDayPositionValid(i));
+        return i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int findPreviousValidDayPosition(int i) {
+        while (true) {
+            i--;
+            if (i < firstPositionInMonth()) {
+                return -1;
+            }
+            if (isDayPositionValid(i)) {
+                return i;
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int findFirstValidDayPosition() {
+        return findNextValidDayPosition(firstPositionInMonth() - 1);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int findLastValidDayPosition() {
+        return findPreviousValidDayPosition(lastPositionInMonth() + 1);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int findNearestValidDayPositionInRow(int i) {
+        if (isDayPositionValid(i)) {
+            return i;
+        }
+        long itemId = getItemId(i);
+        for (int i2 = 1; i2 < this.month.daysInWeek; i2++) {
+            int i3 = i + i2;
+            if (i3 < getCount() && getItemId(i3) == itemId && isDayPositionValid(i3)) {
+                return i3;
+            }
+            int i4 = i - i2;
+            if (i4 >= 0 && getItemId(i4) == itemId && isDayPositionValid(i4)) {
+                return i4;
+            }
+        }
+        return -1;
+    }
 }

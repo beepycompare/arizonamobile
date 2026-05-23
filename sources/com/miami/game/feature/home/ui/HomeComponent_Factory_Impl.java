@@ -4,11 +4,11 @@ import com.arkivanov.decompose.ComponentContext;
 import com.miami.game.feature.home.ui.HomeComponent;
 import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class HomeComponent_Factory_Impl implements HomeComponent.Factory {
-    private final C0091HomeComponent_Factory delegateFactory;
+    private final C0093HomeComponent_Factory delegateFactory;
 
-    HomeComponent_Factory_Impl(C0091HomeComponent_Factory delegateFactory) {
+    HomeComponent_Factory_Impl(C0093HomeComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class HomeComponent_Factory_Impl implements HomeComponent.Factory {
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<HomeComponent.Factory> create(C0091HomeComponent_Factory delegateFactory) {
+    public static Provider<HomeComponent.Factory> create(C0093HomeComponent_Factory delegateFactory) {
         return InstanceFactory.create(new HomeComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<HomeComponent.Factory> createFactoryProvider(C0091HomeComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<HomeComponent.Factory> createFactoryProvider(C0093HomeComponent_Factory delegateFactory) {
         return InstanceFactory.create(new HomeComponent_Factory_Impl(delegateFactory));
     }
 }

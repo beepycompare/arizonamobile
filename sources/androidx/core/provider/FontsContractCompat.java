@@ -145,8 +145,7 @@ public class FontsContractCompat {
             this(uri, i, i2, z, null, i3);
         }
 
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public static FontInfo create(Uri uri, int i, int i2, boolean z, int i3) {
+        static FontInfo create(Uri uri, int i, int i2, boolean z, int i3) {
             return new FontInfo(uri, i, i2, z, i3);
         }
 

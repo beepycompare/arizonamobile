@@ -9,7 +9,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import androidx.media3.exoplayer.ExoPlayer;
 import ru.mrlargha.commonui.R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes6.dex */
@@ -39,7 +38,7 @@ public final class PausableProgressBar extends FrameLayout {
 
     public PausableProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.duration = ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS;
+        this.duration = 2000L;
         LayoutInflater.from(context).inflate(R.layout.pausable_progress, this);
         this.frontProgressView = findViewById(R.id.front_progress);
         this.maxProgressView = findViewById(R.id.max_progress);

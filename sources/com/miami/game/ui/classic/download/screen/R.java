@@ -1,11 +1,11 @@
 package com.miami.game.ui.classic.download.screen;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class drawable {
         public static int arizona_launcher_update = 0x7f080362;
-        public static int rodina_launcher_update = 0x7f080e6b;
+        public static int rodina_launcher_update = 0x7f080ea6;
 
         private drawable() {
         }

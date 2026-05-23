@@ -2,9 +2,9 @@ package com.google.android.gms.measurement.internal;
 
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzkb extends zzay {
+public final class zzkb extends zzaz {
     final /* synthetic */ zzlj zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -15,8 +15,8 @@ public final class zzkb extends zzay {
         this.zza = zzljVar;
     }
 
-    @Override // com.google.android.gms.measurement.internal.zzay
+    @Override // com.google.android.gms.measurement.internal.zzaz
     public final void zza() {
-        this.zza.zzD();
+        this.zza.zzC();
     }
 }

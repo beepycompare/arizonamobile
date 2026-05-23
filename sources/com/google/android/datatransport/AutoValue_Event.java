@@ -1,6 +1,6 @@
 package com.google.android.datatransport;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AutoValue_Event<T> extends Event<T> {
     private final Integer code;
     private final EventContext eventContext;

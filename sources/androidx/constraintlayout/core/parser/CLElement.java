@@ -170,7 +170,7 @@ public class CLElement implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public CLElement mo8036clone() {
+    public CLElement mo8641clone() {
         try {
             return (CLElement) super.clone();
         } catch (CloneNotSupportedException unused) {

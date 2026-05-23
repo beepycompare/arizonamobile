@@ -1,11 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.Map;
 /* loaded from: classes5.dex */
-public interface Cn {
-    Thread a();
+public final class Cn extends AbstractC0396l5 {
+    public Cn() {
+        super(null);
+    }
 
-    StackTraceElement[] b();
-
-    Map c();
+    @Override // io.appmetrica.analytics.impl.AbstractC0396l5
+    public final <C extends InterfaceC0273gb> InterfaceC0439mm a() {
+        return new Dn();
+    }
 }

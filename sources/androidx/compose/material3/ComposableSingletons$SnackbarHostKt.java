@@ -14,7 +14,7 @@ public final class ComposableSingletons$SnackbarHostKt {
     public static final ComposableSingletons$SnackbarHostKt INSTANCE = new ComposableSingletons$SnackbarHostKt();
 
     /* renamed from: lambda$-1548712596  reason: not valid java name */
-    private static Function3<SnackbarData, Composer, Integer, Unit> f90lambda$1548712596 = ComposableLambdaKt.composableLambdaInstance(-1548712596, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda$-1548712596$1
+    private static Function3<SnackbarData, Composer, Integer, Unit> f33lambda$1548712596 = ComposableLambdaKt.composableLambdaInstance(-1548712596, false, new Function3<SnackbarData, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ComposableSingletons$SnackbarHostKt$lambda$-1548712596$1
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(SnackbarData snackbarData, Composer composer, Integer num) {
             invoke(snackbarData, composer, num.intValue());
@@ -39,7 +39,7 @@ public final class ComposableSingletons$SnackbarHostKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1548712596, i2, -1, "androidx.compose.material3.ComposableSingletons$SnackbarHostKt.lambda$-1548712596.<anonymous> (SnackbarHost.kt:219)");
             }
-            SnackbarKt.m2555SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            SnackbarKt.m3000SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -47,7 +47,7 @@ public final class ComposableSingletons$SnackbarHostKt {
     });
 
     /* renamed from: getLambda$-1548712596$material3  reason: not valid java name */
-    public final Function3<SnackbarData, Composer, Integer, Unit> m1945getLambda$1548712596$material3() {
-        return f90lambda$1548712596;
+    public final Function3<SnackbarData, Composer, Integer, Unit> m2390getLambda$1548712596$material3() {
+        return f33lambda$1548712596;
     }
 }

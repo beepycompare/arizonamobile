@@ -7,7 +7,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzod {
     private final Map zza;
@@ -19,30 +19,7 @@ public final class zzod {
         hashMap.putAll(map);
     }
 
-    private final Bundle zzf() {
-        int zzg;
-        Map map = this.zza;
-        if ("1".equals(map.get("GoogleConsent")) && (zzg = zzg()) >= 0) {
-            String str = (String) map.get("PurposeConsents");
-            if (!TextUtils.isEmpty(str)) {
-                Bundle bundle = new Bundle();
-                String str2 = "granted";
-                if (str.length() > 0) {
-                    bundle.putString(zzjk.AD_STORAGE.zze, str.charAt(0) == '1' ? "granted" : "denied");
-                }
-                if (str.length() > 3) {
-                    bundle.putString(zzjk.AD_PERSONALIZATION.zze, (str.charAt(2) == '1' && str.charAt(3) == '1') ? "granted" : "denied");
-                }
-                if (str.length() > 6 && zzg >= 4) {
-                    bundle.putString(zzjk.AD_USER_DATA.zze, (str.charAt(0) == '1' && str.charAt(6) == '1') ? "denied" : "denied");
-                }
-                return bundle;
-            }
-        }
-        return Bundle.EMPTY;
-    }
-
-    private final int zzg() {
+    private final int zzf() {
         try {
             String str = (String) this.zza.get("PolicyVersion");
             if (!TextUtils.isEmpty(str)) {
@@ -89,31 +66,45 @@ public final class zzod {
     }
 
     public final Bundle zzb() {
-        zzfx zzfxVar = zzfy.zzaZ;
-        boolean booleanValue = ((Boolean) zzfxVar.zzb(null)).booleanValue();
+        int zzf;
         Map map = this.zza;
-        if (!booleanValue ? !(!"1".equals(map.get("GoogleConsent")) || !"1".equals(map.get("gdprApplies")) || !"1".equals(map.get("EnableAdvertiserConsentMode"))) : !(!"1".equals(map.get("gdprApplies")) || !"1".equals(map.get("EnableAdvertiserConsentMode")))) {
-            if (((Boolean) zzfxVar.zzb(null)).booleanValue()) {
-                Map map2 = this.zza;
-                if (map2.get("Version") == null) {
-                    return zzf();
-                }
-                if (zzg() >= 0) {
+        if ("1".equals(map.get("gdprApplies")) && "1".equals(map.get("EnableAdvertiserConsentMode"))) {
+            String str = "denied";
+            if (map.get("Version") == null) {
+                if ("1".equals(map.get("GoogleConsent")) && (zzf = zzf()) >= 0) {
+                    String str2 = (String) map.get("PurposeConsents");
+                    if (TextUtils.isEmpty(str2)) {
+                        return Bundle.EMPTY;
+                    }
                     Bundle bundle = new Bundle();
-                    String str = "denied";
-                    bundle.putString(zzjk.AD_STORAGE.zze, true != Objects.equals(map2.get("AuthorizePurpose1"), "1") ? "denied" : "granted");
-                    bundle.putString(zzjk.AD_PERSONALIZATION.zze, (Objects.equals(map2.get("AuthorizePurpose3"), "1") && Objects.equals(map2.get("AuthorizePurpose4"), "1")) ? "granted" : "denied");
-                    if (zzg() >= 4) {
-                        String str2 = zzjk.AD_USER_DATA.zze;
-                        if (Objects.equals(map2.get("AuthorizePurpose1"), "1") && Objects.equals(map2.get("AuthorizePurpose7"), "1")) {
+                    if (str2.length() > 0) {
+                        bundle.putString(zzjk.AD_STORAGE.zze, str2.charAt(0) == '1' ? "granted" : "denied");
+                    }
+                    if (str2.length() > 3) {
+                        bundle.putString(zzjk.AD_PERSONALIZATION.zze, (str2.charAt(2) == '1' && str2.charAt(3) == '1') ? "granted" : "denied");
+                    }
+                    if (str2.length() > 6 && zzf >= 4) {
+                        String str3 = zzjk.AD_USER_DATA.zze;
+                        if (str2.charAt(0) == '1' && str2.charAt(6) == '1') {
                             str = "granted";
                         }
-                        bundle.putString(str2, str);
+                        bundle.putString(str3, str);
                     }
                     return bundle;
                 }
-            } else {
-                return zzf();
+                return Bundle.EMPTY;
+            } else if (zzf() >= 0) {
+                Bundle bundle2 = new Bundle();
+                bundle2.putString(zzjk.AD_STORAGE.zze, true != Objects.equals(map.get("AuthorizePurpose1"), "1") ? "denied" : "granted");
+                bundle2.putString(zzjk.AD_PERSONALIZATION.zze, (Objects.equals(map.get("AuthorizePurpose3"), "1") && Objects.equals(map.get("AuthorizePurpose4"), "1")) ? "granted" : "denied");
+                if (zzf() >= 4) {
+                    String str4 = zzjk.AD_USER_DATA.zze;
+                    if (Objects.equals(map.get("AuthorizePurpose1"), "1") && Objects.equals(map.get("AuthorizePurpose7"), "1")) {
+                        str = "granted";
+                    }
+                    bundle2.putString(str4, str);
+                }
+                return bundle2;
             }
         }
         return Bundle.EMPTY;
@@ -152,11 +143,11 @@ public final class zzod {
             sb.append("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".charAt(i >> 6));
             sb.append("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".charAt(i & 63));
         }
-        int zzg = zzg();
-        if (zzg < 0 || zzg > 63) {
+        int zzf = zzf();
+        if (zzf < 0 || zzf > 63) {
             sb.append("0");
         } else {
-            sb.append("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".charAt(zzg));
+            sb.append("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".charAt(zzf));
         }
         Preconditions.checkArgument(true);
         Map map = this.zza;

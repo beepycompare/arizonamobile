@@ -1,8 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class I7 {
+public final class I7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Long f629a = 30L;
-    public static final C0634um b = new C0634um();
+    public final Long f589a;
+    public final Long b;
+    public final Boolean c;
+
+    public I7(Long l, Long l2, Boolean bool) {
+        this.f589a = l;
+        this.b = l2;
+        this.c = bool;
+    }
 }

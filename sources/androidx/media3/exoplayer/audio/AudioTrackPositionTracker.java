@@ -7,7 +7,7 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.Method;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class AudioTrackPositionTracker {
     private static final long FORCE_RESET_WORKAROUND_TIMEOUT_MS = 200;
     private static final long MAX_LATENCY_US = 10000000;
@@ -46,7 +46,7 @@ final class AudioTrackPositionTracker {
     private long stopTimestampUs;
     private long sumRawPlaybackHeadPosition;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onInvalidLatency(long j);
 

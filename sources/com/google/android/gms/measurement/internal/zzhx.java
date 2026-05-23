@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicLong;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzhx extends FutureTask implements Comparable {
     final boolean zza;
@@ -29,7 +29,7 @@ public final class zzhx extends FutureTask implements Comparable {
         this.zzd = str;
         this.zza = z;
         if (andIncrement == Long.MAX_VALUE) {
-            zzhzVar.zzu.zzaV().zzb().zza("Tasks index overflow");
+            zzhzVar.zzu.zzaW().zzb().zza("Tasks index overflow");
         }
     }
 
@@ -49,14 +49,14 @@ public final class zzhx extends FutureTask implements Comparable {
         if (i > 0) {
             return 1;
         }
-        this.zzb.zzu.zzaV().zzc().zzb("Two tasks share the same index. index", Long.valueOf(j));
+        this.zzb.zzu.zzaW().zzc().zzb("Two tasks share the same index. index", Long.valueOf(j));
         return 0;
     }
 
     @Override // java.util.concurrent.FutureTask
     protected final void setException(Throwable th) {
         Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler;
-        this.zzb.zzu.zzaV().zzb().zzb(this.zzd, th);
+        this.zzb.zzu.zzaW().zzb().zzb(this.zzd, th);
         if ((th instanceof zzhv) && (defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()) != null) {
             defaultUncaughtExceptionHandler.uncaughtException(Thread.currentThread(), th);
         }
@@ -77,7 +77,7 @@ public final class zzhx extends FutureTask implements Comparable {
         this.zzd = "Task exception on worker thread";
         this.zza = z;
         if (andIncrement == Long.MAX_VALUE) {
-            zzhzVar.zzu.zzaV().zzb().zza("Tasks index overflow");
+            zzhzVar.zzu.zzaW().zzb().zza("Tasks index overflow");
         }
     }
 }

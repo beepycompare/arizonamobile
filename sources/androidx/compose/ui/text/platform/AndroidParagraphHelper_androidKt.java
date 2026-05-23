@@ -28,7 +28,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidParagraphHelper.android.kt */
-@Metadata(d1 = {"\u0000]\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\b\u0003*\u0001\u001b\u001a\u0082\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0014\u0010\b\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u000b0\n0\t2\u0012\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\n0\t2\u0006\u0010\u000e\u001a\u00020\u000f2&\u0010\u0010\u001a\"\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u00160\u00112\u0006\u0010\u0017\u001a\u00020\u0018H\u0000\u001a\f\u0010\u0019\u001a\u00020\u0018*\u00020\u0007H\u0000\"\u0010\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001c¨\u0006\u001d"}, d2 = {"createCharSequence", "", "text", "", "contextFontSize", "", "contextTextStyle", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "resolveTypeface", "Lkotlin/Function4;", "Landroidx/compose/ui/text/font/FontFamily;", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontStyle;", "Landroidx/compose/ui/text/font/FontSynthesis;", "Landroid/graphics/Typeface;", "useEmojiCompat", "", "isIncludeFontPaddingEnabled", "NoopSpan", "androidx/compose/ui/text/platform/AndroidParagraphHelper_androidKt$NoopSpan$1", "Landroidx/compose/ui/text/platform/AndroidParagraphHelper_androidKt$NoopSpan$1;", "ui-text"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000]\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\b\u0003*\u0001\u001b\u001a\u0082\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0014\u0010\b\u001a\u0010\u0012\f\u0012\n\u0012\u0006\b\u0001\u0012\u00020\u000b0\n0\t2\u0012\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\n0\t2\u0006\u0010\u000e\u001a\u00020\u000f2&\u0010\u0010\u001a\"\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u00160\u00112\u0006\u0010\u0017\u001a\u00020\u0018H\u0000\u001a\f\u0010\u0019\u001a\u00020\u0018*\u00020\u0007H\u0000\"\u0010\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001c¨\u0006\u001d"}, d2 = {"createCharSequence", "", "text", "", "contextFontSize", "", "contextTextStyle", "Landroidx/compose/ui/text/TextStyle;", "annotations", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/AnnotatedString$Annotation;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "resolveTypeface", "Lkotlin/Function4;", "Landroidx/compose/ui/text/font/FontFamily;", "Landroidx/compose/ui/text/font/FontWeight;", "Landroidx/compose/ui/text/font/FontStyle;", "Landroidx/compose/ui/text/font/FontSynthesis;", "Landroid/graphics/Typeface;", "useEmojiCompat", "", "isIncludeFontPaddingEnabled", "NoopSpan", "androidx/compose/ui/text/platform/AndroidParagraphHelper_androidKt$NoopSpan$1", "Landroidx/compose/ui/text/platform/AndroidParagraphHelper_androidKt$NoopSpan$1;", "ui-text"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class AndroidParagraphHelper_androidKt {
     private static final AndroidParagraphHelper_androidKt$NoopSpan$1 NoopSpan = new CharacterStyle() { // from class: androidx.compose.ui.text.platform.AndroidParagraphHelper_androidKt$NoopSpan$1
@@ -50,13 +50,13 @@ public final class AndroidParagraphHelper_androidKt {
         PlatformParagraphStyle paragraphStyle;
         if (z && EmojiCompat.isConfigured()) {
             PlatformTextStyle platformStyle = textStyle.getPlatformStyle();
-            EmojiSupportMatch m6850boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m6850boximpl(paragraphStyle.m6931getEmojiSupportMatch_3YsG6Y());
-            str2 = EmojiCompat.get().process(str, 0, str.length(), Integer.MAX_VALUE, m6850boximpl == null ? 0 : EmojiSupportMatch.m6853equalsimpl0(m6850boximpl.m6856unboximpl(), EmojiSupportMatch.Companion.m6857getAll_3YsG6Y()));
+            EmojiSupportMatch m7455boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m7455boximpl(paragraphStyle.m7536getEmojiSupportMatch_3YsG6Y());
+            str2 = EmojiCompat.get().process(str, 0, str.length(), Integer.MAX_VALUE, m7455boximpl == null ? 0 : EmojiSupportMatch.m7458equalsimpl0(m7455boximpl.m7461unboximpl(), EmojiSupportMatch.Companion.m7462getAll_3YsG6Y()));
             Intrinsics.checkNotNull(str2);
         } else {
             str2 = str;
         }
-        if (list.isEmpty() && list2.isEmpty() && Intrinsics.areEqual(textStyle.getTextIndent(), TextIndent.Companion.getNone()) && TextUnit.m7747getRawTypeimpl(textStyle.m7042getLineHeightXSAIIZE()) == 0) {
+        if (list.isEmpty() && list2.isEmpty() && Intrinsics.areEqual(textStyle.getTextIndent(), TextIndent.Companion.getNone()) && TextUnit.m8352getRawTypeimpl(textStyle.m7647getLineHeightXSAIIZE()) == 0) {
             return str2;
         }
         if (str2 instanceof Spannable) {
@@ -69,7 +69,7 @@ public final class AndroidParagraphHelper_androidKt {
             SpannableExtensions_androidKt.setSpan(spannable, NoopSpan, 0, str.length());
         }
         if (isIncludeFontPaddingEnabled(textStyle) && textStyle.getLineHeightStyle() == null) {
-            SpannableExtensions_androidKt.m7286setLineHeightr9BaKPg(spannable, textStyle.m7042getLineHeightXSAIIZE(), f, density);
+            SpannableExtensions_androidKt.m7891setLineHeightr9BaKPg(spannable, textStyle.m7647getLineHeightXSAIIZE(), f, density);
             f2 = f;
             density2 = density;
         } else {
@@ -79,7 +79,7 @@ public final class AndroidParagraphHelper_androidKt {
             }
             f2 = f;
             density2 = density;
-            SpannableExtensions_androidKt.m7285setLineHeightKmRG4DE(spannable, textStyle.m7042getLineHeightXSAIIZE(), f2, density2, lineHeightStyle);
+            SpannableExtensions_androidKt.m7890setLineHeightKmRG4DE(spannable, textStyle.m7647getLineHeightXSAIIZE(), f2, density2, lineHeightStyle);
         }
         SpannableExtensions_androidKt.setTextIndent(spannable, textStyle.getTextIndent(), f2, density2);
         SpannableExtensions_androidKt.setSpanStyles(spannable, textStyle, list, density2, function4);

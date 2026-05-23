@@ -20,7 +20,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Objects;
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
     private final SuitableOutputChecker impl;
 
@@ -48,7 +48,7 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ImplApi35 implements SuitableOutputChecker {
         private static final RouteDiscoveryPreference EMPTY_DISCOVERY_PREFERENCE = new RouteDiscoveryPreference.Builder(ImmutableList.of(), false).build();
         private MediaRouter2.ControllerCallback controllerCallback;
@@ -72,14 +72,14 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi35$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi35.this.m8185x2808a185(context);
+                    DefaultSuitableOutputChecker.ImplApi35.this.m8790x2808a185(context);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$enable$1$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi35  reason: not valid java name */
-        public /* synthetic */ void m8185x2808a185(Context context) {
+        public /* synthetic */ void m8790x2808a185(Context context) {
             Preconditions.checkNotNull(this.isSuitableForPlaybackState);
             this.router = MediaRouter2.getInstance(context);
             this.routeCallback = new MediaRouter2.RouteCallback() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker.ImplApi35.1
@@ -109,14 +109,14 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             ((BackgroundThreadStateHandler) Preconditions.checkNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi35$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi35.this.m8184x2d89dbb9();
+                    DefaultSuitableOutputChecker.ImplApi35.this.m8789x2d89dbb9();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$disable$2$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi35  reason: not valid java name */
-        public /* synthetic */ void m8184x2d89dbb9() {
+        public /* synthetic */ void m8789x2d89dbb9() {
             ((MediaRouter2) Preconditions.checkNotNull(this.router)).unregisterControllerCallback((MediaRouter2.ControllerCallback) Preconditions.checkNotNull(this.controllerCallback));
             this.controllerCallback = null;
             this.router.unregisterRouteCallback((MediaRouter2.RouteCallback) Preconditions.checkNotNull(this.routeCallback));
@@ -150,7 +150,7 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ImplApi23 implements SuitableOutputChecker {
         private AudioDeviceCallback audioDeviceCallback;
         private AudioManager audioManager;
@@ -172,14 +172,14 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi23$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi23.this.m8182x2808a164(context);
+                    DefaultSuitableOutputChecker.ImplApi23.this.m8787x2808a164(context);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$enable$1$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi23  reason: not valid java name */
-        public /* synthetic */ void m8182x2808a164(Context context) {
+        public /* synthetic */ void m8787x2808a164(Context context) {
             AudioManager audioManager;
             Preconditions.checkNotNull(this.isSuitableForPlaybackState);
             if (Util.isWear(context) && (audioManager = (AudioManager) context.getSystemService(MimeTypes.BASE_TYPE_AUDIO)) != null) {
@@ -206,14 +206,14 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             ((BackgroundThreadStateHandler) Preconditions.checkNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi23.this.m8181x2d89db98();
+                    DefaultSuitableOutputChecker.ImplApi23.this.m8786x2d89db98();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$disable$2$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi23  reason: not valid java name */
-        public /* synthetic */ void m8181x2d89db98() {
+        public /* synthetic */ void m8786x2d89db98() {
             AudioManager audioManager = this.audioManager;
             if (audioManager != null) {
                 audioManager.unregisterAudioDeviceCallback((AudioDeviceCallback) Preconditions.checkNotNull(this.audioDeviceCallback));

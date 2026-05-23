@@ -1,10 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zznl extends Cloneable, zznn {
-    zznl zzaV(byte[] bArr, zzlr zzlrVar) throws zzmr;
+public final class zznl extends zzadp implements zzafd {
+    private zznl() {
+        throw null;
+    }
 
-    zznl zzaW(byte[] bArr) throws zzmr;
-
-    zznm zzbf();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zznl(byte[] bArr) {
+        super(zznm.zzd());
+    }
 }

@@ -49,7 +49,7 @@ public final class ViewParentCompat {
         }
         if (i2 == 0) {
             try {
-                return Api21Impl.onStartNestedScroll(viewParent, view, view2, i);
+                return viewParent.onStartNestedScroll(view, view2, i);
             } catch (AbstractMethodError e) {
                 Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onStartNestedScroll", e);
                 return false;
@@ -63,7 +63,7 @@ public final class ViewParentCompat {
             ((NestedScrollingParent2) viewParent).onNestedScrollAccepted(view, view2, i, i2);
         } else if (i2 == 0) {
             try {
-                Api21Impl.onNestedScrollAccepted(viewParent, view, view2, i);
+                viewParent.onNestedScrollAccepted(view, view2, i);
             } catch (AbstractMethodError e) {
                 Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onNestedScrollAccepted", e);
             }
@@ -75,7 +75,7 @@ public final class ViewParentCompat {
             ((NestedScrollingParent2) viewParent).onStopNestedScroll(view, i);
         } else if (i == 0) {
             try {
-                Api21Impl.onStopNestedScroll(viewParent, view);
+                viewParent.onStopNestedScroll(view);
             } catch (AbstractMethodError e) {
                 Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onStopNestedScroll", e);
             }
@@ -93,7 +93,7 @@ public final class ViewParentCompat {
             ((NestedScrollingParent2) viewParent).onNestedScroll(view, i, i2, i3, i4, i5);
         } else if (i5 == 0) {
             try {
-                Api21Impl.onNestedScroll(viewParent, view, i, i2, i3, i4);
+                viewParent.onNestedScroll(view, i, i2, i3, i4);
             } catch (AbstractMethodError e) {
                 Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onNestedScroll", e);
             }
@@ -105,7 +105,7 @@ public final class ViewParentCompat {
             ((NestedScrollingParent2) viewParent).onNestedPreScroll(view, i, i2, iArr, i3);
         } else if (i3 == 0) {
             try {
-                Api21Impl.onNestedPreScroll(viewParent, view, i, i2, iArr);
+                viewParent.onNestedPreScroll(view, i, i2, iArr);
             } catch (AbstractMethodError e) {
                 Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onNestedPreScroll", e);
             }
@@ -114,7 +114,7 @@ public final class ViewParentCompat {
 
     public static boolean onNestedFling(ViewParent viewParent, View view, float f, float f2, boolean z) {
         try {
-            return Api21Impl.onNestedFling(viewParent, view, f, f2, z);
+            return viewParent.onNestedFling(view, f, f2, z);
         } catch (AbstractMethodError e) {
             Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onNestedFling", e);
             return false;
@@ -123,7 +123,7 @@ public final class ViewParentCompat {
 
     public static boolean onNestedPreFling(ViewParent viewParent, View view, float f, float f2) {
         try {
-            return Api21Impl.onNestedPreFling(viewParent, view, f, f2);
+            return viewParent.onNestedPreFling(view, f, f2);
         } catch (AbstractMethodError e) {
             Log.e(TAG, "ViewParent " + viewParent + " does not implement interface method onNestedPreFling", e);
             return false;
@@ -145,40 +145,5 @@ public final class ViewParentCompat {
             iArr[1] = 0;
         }
         return sTempNestedScrollConsumed;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static boolean onStartNestedScroll(ViewParent viewParent, View view, View view2, int i) {
-            return viewParent.onStartNestedScroll(view, view2, i);
-        }
-
-        static void onNestedScrollAccepted(ViewParent viewParent, View view, View view2, int i) {
-            viewParent.onNestedScrollAccepted(view, view2, i);
-        }
-
-        static void onStopNestedScroll(ViewParent viewParent, View view) {
-            viewParent.onStopNestedScroll(view);
-        }
-
-        static void onNestedScroll(ViewParent viewParent, View view, int i, int i2, int i3, int i4) {
-            viewParent.onNestedScroll(view, i, i2, i3, i4);
-        }
-
-        static void onNestedPreScroll(ViewParent viewParent, View view, int i, int i2, int[] iArr) {
-            viewParent.onNestedPreScroll(view, i, i2, iArr);
-        }
-
-        static boolean onNestedFling(ViewParent viewParent, View view, float f, float f2, boolean z) {
-            return viewParent.onNestedFling(view, f, f2, z);
-        }
-
-        static boolean onNestedPreFling(ViewParent viewParent, View view, float f, float f2) {
-            return viewParent.onNestedPreFling(view, f, f2);
-        }
     }
 }

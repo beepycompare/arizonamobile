@@ -1,29 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import java.io.File;
+import io.appmetrica.analytics.PreloadInfo;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Uf implements Runnable {
+public final class Uf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f817a;
-    public final Consumer b;
+    public final Qf f792a;
 
-    public Uf(File file, C0266g6 c0266g6) {
-        this.f817a = file;
-        this.b = c0266g6;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        File[] listFiles;
-        if (!this.f817a.exists() || !this.f817a.isDirectory() || (listFiles = this.f817a.listFiles()) == null || listFiles.length == 0) {
-            return;
-        }
-        for (File file : listFiles) {
-            try {
-                this.b.consume(file);
-            } catch (Throwable unused) {
+    public Uf(PreloadInfo preloadInfo, PublicLogger publicLogger, boolean z) {
+        if (preloadInfo != null) {
+            if (StringUtils.isNullOrEmpty(preloadInfo.getTrackingId())) {
+                publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
+            } else {
+                this.f792a = new Qf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0399l8.d);
             }
         }
     }

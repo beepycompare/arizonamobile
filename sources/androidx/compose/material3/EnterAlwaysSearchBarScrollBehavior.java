@@ -57,49 +57,49 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
     private final NestedScrollConnection nestedScrollConnection = new NestedScrollConnection() { // from class: androidx.compose.material3.EnterAlwaysSearchBarScrollBehavior$nestedScrollConnection$1
         @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
         /* renamed from: onPreScroll-OzD1aCk */
-        public long mo896onPreScrollOzD1aCk(long j, int i) {
+        public long mo1150onPreScrollOzD1aCk(long j, int i) {
             if (EnterAlwaysSearchBarScrollBehavior.this.getCanScroll().invoke().booleanValue()) {
                 float scrollOffset = EnterAlwaysSearchBarScrollBehavior.this.getScrollOffset();
                 EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior = EnterAlwaysSearchBarScrollBehavior.this;
                 enterAlwaysSearchBarScrollBehavior.setScrollOffset(enterAlwaysSearchBarScrollBehavior.getScrollOffset() + Float.intBitsToFloat((int) (4294967295L & j)));
                 if (!EnterAlwaysSearchBarScrollBehavior.this.getReverseLayout() && scrollOffset != EnterAlwaysSearchBarScrollBehavior.this.getScrollOffset()) {
-                    return Offset.m4521copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
+                    return Offset.m5097copydBAh8RU$default(j, 0.0f, 0.0f, 2, null);
                 }
-                return Offset.Companion.m4543getZeroF1C5BW0();
+                return Offset.Companion.m5119getZeroF1C5BW0();
             }
-            return Offset.Companion.m4543getZeroF1C5BW0();
+            return Offset.Companion.m5119getZeroF1C5BW0();
         }
 
         @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
         /* renamed from: onPostScroll-DzOQY0M */
-        public long mo573onPostScrollDzOQY0M(long j, long j2, int i) {
+        public long mo603onPostScrollDzOQY0M(long j, long j2, int i) {
             if (EnterAlwaysSearchBarScrollBehavior.this.getCanScroll().invoke().booleanValue()) {
                 if (EnterAlwaysSearchBarScrollBehavior.this.getReverseLayout()) {
                     int i2 = (int) (j2 & 4294967295L);
                     if (Float.intBitsToFloat(i2) > 0.0f) {
                         EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior = EnterAlwaysSearchBarScrollBehavior.this;
                         enterAlwaysSearchBarScrollBehavior.setScrollOffset(enterAlwaysSearchBarScrollBehavior.getScrollOffset() + Float.intBitsToFloat(i2));
-                        return Offset.m4521copydBAh8RU$default(j2, 0.0f, 0.0f, 2, null);
+                        return Offset.m5097copydBAh8RU$default(j2, 0.0f, 0.0f, 2, null);
                     }
                 }
                 if (!EnterAlwaysSearchBarScrollBehavior.this.getReverseLayout()) {
                     EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior2 = EnterAlwaysSearchBarScrollBehavior.this;
                     enterAlwaysSearchBarScrollBehavior2.setScrollOffset(enterAlwaysSearchBarScrollBehavior2.getScrollOffset() + Float.intBitsToFloat((int) (j & 4294967295L)));
                 }
-                return Offset.Companion.m4543getZeroF1C5BW0();
+                return Offset.Companion.m5119getZeroF1C5BW0();
             }
-            return Offset.Companion.m4543getZeroF1C5BW0();
+            return Offset.Companion.m5119getZeroF1C5BW0();
         }
 
         @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
         /* renamed from: onPostFling-RZ2iAVY */
-        public Object mo572onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-            Object m2053settleSearchBarOhffZ5M;
+        public Object mo602onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+            Object m2498settleSearchBarOhffZ5M;
             if (EnterAlwaysSearchBarScrollBehavior.this.getCanScroll().invoke().booleanValue()) {
-                m2053settleSearchBarOhffZ5M = EnterAlwaysSearchBarScrollBehavior.this.m2053settleSearchBarOhffZ5M(Velocity.m7794getYimpl(j2), continuation);
-                return m2053settleSearchBarOhffZ5M;
+                m2498settleSearchBarOhffZ5M = EnterAlwaysSearchBarScrollBehavior.this.m2498settleSearchBarOhffZ5M(Velocity.m8399getYimpl(j2), continuation);
+                return m2498settleSearchBarOhffZ5M;
             }
-            return Velocity.m7784boximpl(Velocity.Companion.m7804getZero9UxMQ8M());
+            return Velocity.m8389boximpl(Velocity.Companion.m8409getZero9UxMQ8M());
         }
     };
     private final boolean reverseLayout;
@@ -179,9 +179,9 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult searchBarScrollBehavior$lambda$2(EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(constraints.m8119unboximpl());
         final int roundToInt = MathKt.roundToInt(enterAlwaysSearchBarScrollBehavior.getScrollOffset());
-        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), RangesKt.coerceAtLeast(mo6216measureBRTryo0.getHeight() + roundToInt, 0), null, new Function1() { // from class: androidx.compose.material3.EnterAlwaysSearchBarScrollBehavior$$ExternalSyntheticLambda2
+        return MeasureScope.layout$default(measureScope, mo6818measureBRTryo0.getWidth(), RangesKt.coerceAtLeast(mo6818measureBRTryo0.getHeight() + roundToInt, 0), null, new Function1() { // from class: androidx.compose.material3.EnterAlwaysSearchBarScrollBehavior$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return EnterAlwaysSearchBarScrollBehavior.searchBarScrollBehavior$lambda$2$lambda$1(Placeable.this, roundToInt, (Placeable.PlacementScope) obj);
@@ -197,7 +197,7 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit searchBarScrollBehavior$lambda$3(EnterAlwaysSearchBarScrollBehavior enterAlwaysSearchBarScrollBehavior, IntSize intSize) {
-        enterAlwaysSearchBarScrollBehavior.setScrollOffsetLimit(-((int) (intSize.m7730unboximpl() & 4294967295L)));
+        enterAlwaysSearchBarScrollBehavior.setScrollOffsetLimit(-((int) (intSize.m8335unboximpl() & 4294967295L)));
         return Unit.INSTANCE;
     }
 
@@ -217,7 +217,7 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m2053settleSearchBarOhffZ5M(float f, Continuation<? super Velocity> continuation) {
+    public final Object m2498settleSearchBarOhffZ5M(float f, Continuation<? super Velocity> continuation) {
         EnterAlwaysSearchBarScrollBehavior$settleSearchBar$1 enterAlwaysSearchBarScrollBehavior$settleSearchBar$1;
         int i;
         float scrollOffset;
@@ -241,7 +241,7 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
                     ResultKt.throwOnFailure(obj);
                     scrollOffset = getScrollOffsetLimit() == 0.0f ? 0.0f : getScrollOffset() / getScrollOffsetLimit();
                     if (scrollOffset < 0.01f || scrollOffset == 1.0f) {
-                        return Velocity.m7784boximpl(Velocity.Companion.m7804getZero9UxMQ8M());
+                        return Velocity.m8389boximpl(Velocity.Companion.m8409getZero9UxMQ8M());
                     }
                     floatRef = new Ref.FloatRef();
                     floatRef.element = f;
@@ -282,13 +282,13 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
                         }
                         return coroutine_suspended;
                     }
-                    return Velocity.m7784boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                    return Velocity.m8389boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                 } else if (i != 1) {
                     if (i == 2) {
                         floatRef3 = (Ref.FloatRef) enterAlwaysSearchBarScrollBehavior$settleSearchBar$12.L$0;
                         ResultKt.throwOnFailure(obj);
                         floatRef = floatRef3;
-                        return Velocity.m7784boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                        return Velocity.m8389boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -314,7 +314,7 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
                     }
                     return coroutine_suspended;
                 }
-                return Velocity.m7784boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                return Velocity.m8389boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
             }
         }
         enterAlwaysSearchBarScrollBehavior$settleSearchBar$1 = new EnterAlwaysSearchBarScrollBehavior$settleSearchBar$1(this, continuation);
@@ -328,7 +328,7 @@ public final class EnterAlwaysSearchBarScrollBehavior implements SearchBarScroll
         floatRef = floatRef2;
         if (getScrollOffsetLimit() < getScrollOffset()) {
         }
-        return Velocity.m7784boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+        return Velocity.m8389boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

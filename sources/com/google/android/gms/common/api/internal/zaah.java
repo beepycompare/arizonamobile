@@ -1,18 +1,21 @@
 package com.google.android.gms.common.api.internal;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zaah extends zabg {
-    final /* synthetic */ zaaj zaa;
+public final class zaah implements Runnable {
+    final /* synthetic */ zaar zaa;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zaah(zaaj zaajVar, zabf zabfVar) {
-        super(zabfVar);
-        this.zaa = zaajVar;
+    public zaah(zaar zaarVar) {
+        Objects.requireNonNull(zaarVar);
+        this.zaa = zaarVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.zabg
-    public final void zaa() {
-        this.zaa.zai(1);
+    @Override // java.lang.Runnable
+    public final void run() {
+        zaar zaarVar = this.zaa;
+        zaarVar.zau().cancelAvailabilityErrorNotifications(zaarVar.zat());
     }
 }

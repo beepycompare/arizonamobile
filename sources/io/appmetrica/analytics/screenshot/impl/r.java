@@ -1,26 +1,35 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import kotlin.collections.ArraysKt;
+import android.app.Activity;
+import android.provider.MediaStore;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
 /* loaded from: classes5.dex */
-public final class r implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final O fromModel(C0776p c0776p) {
-        O o = new O();
-        o.f1457a = c0776p.f1487a;
-        Object[] array = c0776p.b.toArray(new String[0]);
-        if (array != null) {
-            o.c = (String[]) array;
-            o.b = c0776p.c;
-            return o;
-        }
-        throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
+public final class r implements ActivityLifecycleListener {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ C0796s f1455a;
+
+    public r(C0796s c0796s) {
+        this.f1455a = c0796s;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0776p toModel(O o) {
-        return new C0776p(o.f1457a, ArraysKt.toList(o.c), o.b);
+    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
+    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
+        int i = AbstractC0795q.f1454a[activityEvent.ordinal()];
+        try {
+            if (i != 1) {
+                if (i == 2) {
+                    this.f1455a.f1456a.getContext().getContentResolver().unregisterContentObserver(this.f1455a.d);
+                    return;
+                }
+            }
+            C0788j c0788j = this.f1455a.c;
+            if (c0788j == null || !c0788j.f1449a) {
+                return;
+            }
+            this.f1455a.f1456a.getContext().getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, true, this.f1455a.d);
+        } catch (Throwable unused) {
+        }
     }
 }

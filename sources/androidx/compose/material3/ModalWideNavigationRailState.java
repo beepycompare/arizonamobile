@@ -37,9 +37,9 @@ public final class ModalWideNavigationRailState implements WideNavigationRailSta
         }, new Function0() { // from class: androidx.compose.material3.ModalWideNavigationRailState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float mo405toPx0680j_4;
-                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl(400.0f));
-                return Float.valueOf(mo405toPx0680j_4);
+                float mo434toPx0680j_4;
+                mo434toPx0680j_4 = Density.this.mo434toPx0680j_4(Dp.m8160constructorimpl(400.0f));
+                return Float.valueOf(mo434toPx0680j_4);
             }
         }, new Function0() { // from class: androidx.compose.material3.ModalWideNavigationRailState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0

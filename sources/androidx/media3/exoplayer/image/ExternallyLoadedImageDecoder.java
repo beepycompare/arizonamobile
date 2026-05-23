@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     private final BitmapResolver bitmapResolver;
     private final DecoderInputBuffer inputBuffer;
@@ -24,7 +24,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     private long pendingDecodeTimeUs;
     private boolean pendingEndOfStream;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface BitmapResolver {
         ListenableFuture<Bitmap> resolve(ExternalImageRequest externalImageRequest);
     }
@@ -33,7 +33,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     public void setOutputStartTimeUs(long j) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ExternalImageRequest {
         public final Uri uri;
 
@@ -42,7 +42,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ImageDecoder.Factory {
         private final BitmapResolver bitmapResolver;
 

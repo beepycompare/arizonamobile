@@ -16,7 +16,7 @@ public interface Constants {
     public static final String BASE_URL_FORMAT = "https://app.%s";
     public static final String BASE_URL_NO_SUB_DOMAIN_FORMAT = "https://%s";
     public static final String CALLBACK_PARAMETERS = "callback_params";
-    public static final String CLIENT_SDK = "android5.5.0";
+    public static final String CLIENT_SDK = "android5.7.0";
     public static final int CONNECTION_TIMEOUT = 60000;
     public static final int CONNECTION_TIMEOUT_VERIFY = 30000;
     public static final String CONTENT_PROVIDER = "content_provider";
@@ -76,5 +76,6 @@ public interface Constants {
     public static final String SYSTEM_PROPERTIES_REFLECTION = "system_properties_reflection";
     public static final int THIRTY_MINUTES = 1800000;
     public static final String THREAD_PREFIX = "Adjust-";
+    public static final String TPS_SETTINGS_TIMEOUT_TIMER_NAME = "Get Third party sharing settings timeout timer";
     public static final String XLARGE = "xlarge";
 }

@@ -41,7 +41,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Crossfade.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\u001aX\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0017\u0010\u000b\u001a\u0013\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000e\u001aN\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\u0017\u0010\u000b\u001a\u0013\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000f\u001a\u0086\u0001\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00102\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072%\b\u0002\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0003\u0012\u0006\u0012\u0004\u0018\u00010\u00140\f2&\u0010\u000b\u001a\"\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0003\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u0015¨\u0006\u0016²\u0006\n\u0010\u0017\u001a\u00020\bX\u008a\u0084\u0002"}, d2 = {"Crossfade", "", ExifInterface.GPS_DIRECTION_TRUE, "targetState", "modifier", "Landroidx/compose/ui/Modifier;", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "", Constants.ScionAnalytics.PARAM_LABEL, "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Ljava/lang/Object;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/animation/core/Transition;", "contentKey", "Lkotlin/ParameterName;", "name", "", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "animation", "alpha"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\u001aX\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\u0017\u0010\u000b\u001a\u0013\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000e\u001aN\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u00022\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\u0017\u0010\u000b\u001a\u0013\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000f\u001a\u0086\u0001\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00102\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u00072%\b\u0002\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0003\u0012\u0006\u0012\u0004\u0018\u00010\u00140\f2&\u0010\u000b\u001a\"\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0003\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u0015¨\u0006\u0016²\u0006\n\u0010\u0017\u001a\u00020\bX\u008a\u0084\u0002"}, d2 = {"Crossfade", "", ExifInterface.GPS_DIRECTION_TRUE, "targetState", "modifier", "Landroidx/compose/ui/Modifier;", "animationSpec", "Landroidx/compose/animation/core/FiniteAnimationSpec;", "", Constants.ScionAnalytics.PARAM_LABEL, "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/runtime/Composable;", "(Ljava/lang/Object;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Ljava/lang/Object;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/animation/core/Transition;", "contentKey", "Lkotlin/ParameterName;", "name", "", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/ui/Modifier;Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "animation", "alpha"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CrossfadeKt {
     /* JADX WARN: Removed duplicated region for block: B:26:0x004b  */
@@ -71,7 +71,7 @@ public final class CrossfadeKt {
         int i6;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(-513216493);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)P(4,3!1,2)56@2427L36,57@2479L53:Crossfade.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)N(targetState,modifier,animationSpec,label,content)56@2427L36,57@2479L53:Crossfade.kt#xbi5r1");
         if ((i & 6) == 0) {
             i3 = ((i & 8) == 0 ? startRestartGroup.changed(t) : startRestartGroup.changedInstance(t) ? 4 : 2) | i;
         } else {
@@ -191,7 +191,7 @@ public final class CrossfadeKt {
         final FiniteAnimationSpec finiteAnimationSpec2;
         final Modifier modifier2;
         Composer startRestartGroup = composer.startRestartGroup(-160948176);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)P(3,2)69@2888L29,70@2933L53:Crossfade.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)N(targetState,modifier,animationSpec,content)69@2888L29,70@2933L53:Crossfade.kt#xbi5r1");
         if ((i & 6) == 0) {
             i3 = ((i & 8) == 0 ? startRestartGroup.changed(obj) : startRestartGroup.changedInstance(obj) ? 4 : 2) | i;
         } else {
@@ -260,9 +260,9 @@ public final class CrossfadeKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:133:0x033b  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0346  */
-    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x034b  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0356  */
+    /* JADX WARN: Removed duplicated region for block: B:143:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0047  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0060  */
@@ -286,7 +286,7 @@ public final class CrossfadeKt {
         SnapshotStateList snapshotStateList;
         final Transition<T> transition2 = transition;
         Composer startRestartGroup = composer.startRestartGroup(-1877370462);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)P(3!1,2)100@4602L6,103@4692L64,104@4778L61,134@6037L111:Crossfade.kt#xbi5r1");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Crossfade)N(modifier,animationSpec,contentKey,content)100@4602L6,103@4692L64,104@4778L61,134@6037L111:Crossfade.kt#xbi5r1");
         int i5 = (i & 6) == 0 ? (startRestartGroup.changed(transition2) ? 4 : 2) | i : i;
         int i6 = i2 & 1;
         if (i6 != 0) {
@@ -361,14 +361,10 @@ public final class CrossfadeKt {
                         }
                         MutableScatterMap mutableScatterMap = (MutableScatterMap) rememberedValue3;
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        if (!Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState())) {
-                            startRestartGroup.startReplaceGroup(316295552);
-                        } else {
+                        if (Intrinsics.areEqual(transition2.getCurrentState(), transition2.getTargetState())) {
                             startRestartGroup.startReplaceGroup(321145192);
                             ComposerKt.sourceInformation(startRestartGroup, "");
-                            if (snapshotStateList3.size() == 1 && Intrinsics.areEqual(snapshotStateList3.get(0), transition2.getTargetState())) {
-                                startRestartGroup.startReplaceGroup(316295552);
-                            } else {
+                            if (snapshotStateList3.size() != 1 || !Intrinsics.areEqual(snapshotStateList3.get(0), transition2.getTargetState())) {
                                 startRestartGroup.startReplaceGroup(321279546);
                                 ComposerKt.sourceInformation(startRestartGroup, "109@5153L21");
                                 SnapshotStateList snapshotStateList4 = snapshotStateList3;
@@ -400,14 +396,17 @@ public final class CrossfadeKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 CollectionsKt.removeAll((List) snapshotStateList4, (Function1) rememberedValue4);
                                 mutableScatterMap.clear();
+                                startRestartGroup.endReplaceGroup();
+                            } else {
+                                startRestartGroup.startReplaceGroup(321469824);
+                                startRestartGroup.endReplaceGroup();
                             }
                             startRestartGroup.endReplaceGroup();
-                        }
-                        startRestartGroup.endReplaceGroup();
-                        if (mutableScatterMap.contains(transition2.getTargetState())) {
-                            snapshotStateList = snapshotStateList3;
-                            startRestartGroup.startReplaceGroup(316295552);
                         } else {
+                            startRestartGroup.startReplaceGroup(321475776);
+                            startRestartGroup.endReplaceGroup();
+                        }
+                        if (!mutableScatterMap.contains(transition2.getTargetState())) {
                             startRestartGroup.startReplaceGroup(321536443);
                             ComposerKt.sourceInformation(startRestartGroup, "*124@5720L295");
                             SnapshotStateList snapshotStateList5 = snapshotStateList3;
@@ -439,8 +438,12 @@ public final class CrossfadeKt {
                                 snapshotStateList3 = snapshotStateList3;
                             }
                             snapshotStateList = snapshotStateList3;
+                            startRestartGroup.endReplaceGroup();
+                        } else {
+                            snapshotStateList = snapshotStateList3;
+                            startRestartGroup.startReplaceGroup(322279296);
+                            startRestartGroup.endReplaceGroup();
                         }
-                        startRestartGroup.endReplaceGroup();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -458,12 +461,12 @@ public final class CrossfadeKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-                        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Updater.m4471initimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                        Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2039243542, "C:Crossfade.kt#xbi5r1");

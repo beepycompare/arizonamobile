@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.SchedulerConfig;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_SchedulerConfig_ConfigValue extends SchedulerConfig.ConfigValue {
     private final long delta;
     private final Set<SchedulerConfig.Flag> flags;
@@ -52,7 +52,7 @@ final class AutoValue_SchedulerConfig_ConfigValue extends SchedulerConfig.Config
         return this.flags.hashCode() ^ ((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends SchedulerConfig.ConfigValue.Builder {
         private Long delta;
         private Set<SchedulerConfig.Flag> flags;

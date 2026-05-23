@@ -16,7 +16,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FlexboxLayout extends ViewGroup implements FlexContainer {
     public static final int SHOW_DIVIDER_BEGINNING = 1;
     public static final int SHOW_DIVIDER_END = 4;
@@ -41,7 +41,7 @@ public class FlexboxLayout extends ViewGroup implements FlexContainer {
     private int mShowDividerVertical;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface DividerMode {
     }
 
@@ -1153,7 +1153,7 @@ public class FlexboxLayout extends ViewGroup implements FlexContainer {
         return false;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LayoutParams extends ViewGroup.MarginLayoutParams implements FlexItem {
         public static final Parcelable.Creator<LayoutParams> CREATOR = new Parcelable.Creator<LayoutParams>() { // from class: com.google.android.flexbox.FlexboxLayout.LayoutParams.1
             /* JADX WARN: Can't rename method to resolve collision */

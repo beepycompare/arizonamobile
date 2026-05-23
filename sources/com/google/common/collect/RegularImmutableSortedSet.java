@@ -217,8 +217,9 @@ public final class RegularImmutableSortedSet<E> extends ImmutableSortedSet<E> {
         return this.elements.get(tailIndex);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableSortedSet
-    ImmutableSortedSet<E> headSetImpl(E toElement, boolean inclusive) {
+    public ImmutableSortedSet<E> headSetImpl(E toElement, boolean inclusive) {
         return getSubSet(0, headIndex(toElement, inclusive));
     }
 
@@ -290,8 +291,9 @@ public final class RegularImmutableSortedSet<E> extends ImmutableSortedSet<E> {
         return new RegularImmutableSortedSet(this.elements.reverse(), reverseOrder);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection
-    Object writeReplace() {
+    public Object writeReplace() {
         return super.writeReplace();
     }
 }

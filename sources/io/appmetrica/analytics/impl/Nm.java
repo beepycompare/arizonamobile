@@ -1,56 +1,77 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class Nm extends Rm {
+public final class Nm extends MessageNano {
+    public static volatile Nm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f720a;
-    public final /* synthetic */ ProtobufStateSerializer b;
-    public final /* synthetic */ ProtobufConverter c;
+    public String f689a;
 
-    public Nm(String str, ProtobufStateSerializer protobufStateSerializer, ProtobufConverter protobufConverter) {
-        this.f720a = str;
-        this.b = protobufStateSerializer;
-        this.c = protobufConverter;
+    public Nm() {
+        a();
     }
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper a(Context context) {
-        return C0448na.I.B().b(context);
+    public static Nm[] b() {
+        if (b == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (b == null) {
+                    b = new Nm[0];
+                }
+            }
+        }
+        return b;
     }
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper b(Context context) {
-        IBinaryDataHelper a2;
-        C0732yk B = C0448na.I.B();
-        synchronized (B) {
-            a2 = B.a(context);
-        }
-        return a2;
+    public final Nm a() {
+        this.f689a = "";
+        this.cachedSize = -1;
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
-        byte[] bArr;
-        byte[] bArr2;
-        String str = this.f720a;
-        ProtobufStateSerializer protobufStateSerializer = this.b;
-        try {
-            bArr = AbstractC0279gj.a(context.getPackageName());
-        } catch (Throwable unused) {
-            bArr = new byte[16];
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        return !this.f689a.equals("") ? CodedOutputByteBufferNano.computeStringSize(1, this.f689a) + computeSerializedSize : computeSerializedSize;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        if (!this.f689a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f689a);
         }
-        try {
-            bArr2 = AbstractC0279gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
-        } catch (Throwable unused2) {
-            bArr2 = new byte[16];
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Nm mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag != 10) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.f689a = codedInputByteBufferNano.readString();
+            }
         }
-        return new Mf(str, iBinaryDataHelper, new A8(protobufStateSerializer, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), this.c);
+        return this;
+    }
+
+    public static Nm b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Nm().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Nm a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Nm) MessageNano.mergeFrom(new Nm(), bArr);
     }
 }

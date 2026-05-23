@@ -61,7 +61,7 @@ public final class BlockRunner$cancel$1 extends SuspendLambda implements Functio
         if (!coroutineLiveData.hasActiveObservers()) {
             job = ((BlockRunner) this.this$0).runningJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             ((BlockRunner) this.this$0).runningJob = null;
         }

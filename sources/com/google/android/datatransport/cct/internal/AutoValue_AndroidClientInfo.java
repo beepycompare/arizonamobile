@@ -1,7 +1,7 @@
 package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.AndroidClientInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
     private final String applicationBuild;
     private final String country;
@@ -170,7 +170,7 @@ final class AutoValue_AndroidClientInfo extends AndroidClientInfo {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends AndroidClientInfo.Builder {
         private String applicationBuild;
         private String country;

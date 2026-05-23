@@ -39,32 +39,32 @@ public final class TopAppBarColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2910getContainerColor0d7_KjU() {
+    public final long m3355getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getScrolledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2912getScrolledContainerColor0d7_KjU() {
+    public final long m3357getScrolledContainerColor0d7_KjU() {
         return this.scrolledContainerColor;
     }
 
     /* renamed from: getNavigationIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2911getNavigationIconContentColor0d7_KjU() {
+    public final long m3356getNavigationIconContentColor0d7_KjU() {
         return this.navigationIconContentColor;
     }
 
     /* renamed from: getTitleContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2914getTitleContentColor0d7_KjU() {
+    public final long m3359getTitleContentColor0d7_KjU() {
         return this.titleContentColor;
     }
 
     /* renamed from: getActionIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2909getActionIconContentColor0d7_KjU() {
+    public final long m3354getActionIconContentColor0d7_KjU() {
         return this.actionIconContentColor;
     }
 
     /* renamed from: getSubtitleContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2913getSubtitleContentColor0d7_KjU() {
+    public final long m3358getSubtitleContentColor0d7_KjU() {
         return this.subtitleContentColor;
     }
 
@@ -73,21 +73,21 @@ public final class TopAppBarColors {
     }
 
     /* renamed from: copy-tNS2XkQ$default  reason: not valid java name */
-    public static /* synthetic */ TopAppBarColors m2906copytNS2XkQ$default(TopAppBarColors topAppBarColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
+    public static /* synthetic */ TopAppBarColors m3351copytNS2XkQ$default(TopAppBarColors topAppBarColors, long j, long j2, long j3, long j4, long j5, long j6, int i, Object obj) {
         if ((i & 1) != 0) {
             j = topAppBarColors.containerColor;
         }
-        return topAppBarColors.m2908copytNS2XkQ(j, (i & 2) != 0 ? topAppBarColors.scrolledContainerColor : j2, (i & 4) != 0 ? topAppBarColors.navigationIconContentColor : j3, (i & 8) != 0 ? topAppBarColors.titleContentColor : j4, (i & 16) != 0 ? topAppBarColors.actionIconContentColor : j5, (i & 32) != 0 ? topAppBarColors.subtitleContentColor : j6);
+        return topAppBarColors.m3353copytNS2XkQ(j, (i & 2) != 0 ? topAppBarColors.scrolledContainerColor : j2, (i & 4) != 0 ? topAppBarColors.navigationIconContentColor : j3, (i & 8) != 0 ? topAppBarColors.titleContentColor : j4, (i & 16) != 0 ? topAppBarColors.actionIconContentColor : j5, (i & 32) != 0 ? topAppBarColors.subtitleContentColor : j6);
     }
 
     /* renamed from: copy-tNS2XkQ  reason: not valid java name */
-    public final TopAppBarColors m2908copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
+    public final TopAppBarColors m3353copytNS2XkQ(long j, long j2, long j3, long j4, long j5, long j6) {
         return new TopAppBarColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.scrolledContainerColor, j3 != 16 ? j3 : this.navigationIconContentColor, j4 != 16 ? j4 : this.titleContentColor, j5 != 16 ? j5 : this.actionIconContentColor, j6 != 16 ? j6 : this.subtitleContentColor, null);
     }
 
     /* renamed from: containerColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2907containerColorvNxB06k$material3(float f) {
-        return ColorKt.m4823lerpjxsXWHM(this.containerColor, this.scrolledContainerColor, EasingKt.getFastOutLinearInEasing().transform(f));
+    public final long m3352containerColorvNxB06k$material3(float f) {
+        return ColorKt.m5399lerpjxsXWHM(this.containerColor, this.scrolledContainerColor, EasingKt.getFastOutLinearInEasing().transform(f));
     }
 
     public boolean equals(Object obj) {
@@ -98,10 +98,10 @@ public final class TopAppBarColors {
             return false;
         }
         TopAppBarColors topAppBarColors = (TopAppBarColors) obj;
-        return Color.m4773equalsimpl0(this.containerColor, topAppBarColors.containerColor) && Color.m4773equalsimpl0(this.scrolledContainerColor, topAppBarColors.scrolledContainerColor) && Color.m4773equalsimpl0(this.navigationIconContentColor, topAppBarColors.navigationIconContentColor) && Color.m4773equalsimpl0(this.titleContentColor, topAppBarColors.titleContentColor) && Color.m4773equalsimpl0(this.actionIconContentColor, topAppBarColors.actionIconContentColor) && Color.m4773equalsimpl0(this.subtitleContentColor, topAppBarColors.subtitleContentColor);
+        return Color.m5349equalsimpl0(this.containerColor, topAppBarColors.containerColor) && Color.m5349equalsimpl0(this.scrolledContainerColor, topAppBarColors.scrolledContainerColor) && Color.m5349equalsimpl0(this.navigationIconContentColor, topAppBarColors.navigationIconContentColor) && Color.m5349equalsimpl0(this.titleContentColor, topAppBarColors.titleContentColor) && Color.m5349equalsimpl0(this.actionIconContentColor, topAppBarColors.actionIconContentColor) && Color.m5349equalsimpl0(this.subtitleContentColor, topAppBarColors.subtitleContentColor);
     }
 
     public int hashCode() {
-        return (((((((((Color.m4779hashCodeimpl(this.containerColor) * 31) + Color.m4779hashCodeimpl(this.scrolledContainerColor)) * 31) + Color.m4779hashCodeimpl(this.navigationIconContentColor)) * 31) + Color.m4779hashCodeimpl(this.titleContentColor)) * 31) + Color.m4779hashCodeimpl(this.actionIconContentColor)) * 31) + Color.m4779hashCodeimpl(this.subtitleContentColor);
+        return (((((((((Color.m5355hashCodeimpl(this.containerColor) * 31) + Color.m5355hashCodeimpl(this.scrolledContainerColor)) * 31) + Color.m5355hashCodeimpl(this.navigationIconContentColor)) * 31) + Color.m5355hashCodeimpl(this.titleContentColor)) * 31) + Color.m5355hashCodeimpl(this.actionIconContentColor)) * 31) + Color.m5355hashCodeimpl(this.subtitleContentColor);
     }
 }

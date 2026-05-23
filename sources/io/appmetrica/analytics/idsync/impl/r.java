@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public final class r implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f484a;
+    public final ServiceContext f434a;
     public final String b;
     public final String c = CommonUrlParts.ADV_ID;
     public final String d = CommonUrlParts.HUAWEI_OAID;
@@ -28,15 +28,15 @@ public final class r implements s {
     public final u l;
 
     public r(ServiceContext serviceContext, String str) {
-        this.f484a = serviceContext;
+        this.f434a = serviceContext;
         this.b = str;
         this.l = new u(serviceContext);
     }
 
     @Override // io.appmetrica.analytics.idsync.impl.s
     public final void a(final String str, SdkIdentifiers sdkIdentifiers) {
-        PlatformIdentifiers platformIdentifiers = this.f484a.getPlatformIdentifiers();
-        AdvertisingIdsHolder identifiers = platformIdentifiers.getAdvIdentifiersProvider().getIdentifiers(this.f484a.getContext());
+        PlatformIdentifiers platformIdentifiers = this.f434a.getPlatformIdentifiers();
+        AdvertisingIdsHolder identifiers = platformIdentifiers.getAdvIdentifiersProvider().getIdentifiers();
         Uri.Builder buildUpon = Uri.parse(this.b).buildUpon();
         AdTrackingInfo adTrackingInfo = identifiers.getGoogle().mAdTrackingInfo;
         if (adTrackingInfo != null) {
@@ -57,7 +57,7 @@ public final class r implements s {
             buildUpon.appendQueryParameter(this.h, id);
         }
         final String uri = buildUpon.build().toString();
-        final IHandlerExecutor supportIOExecutor = this.f484a.getExecutorProvider().getSupportIOExecutor();
+        final IHandlerExecutor supportIOExecutor = this.f434a.getExecutorProvider().getSupportIOExecutor();
         final long currentTimeMillis = this.k.currentTimeMillis();
         supportIOExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.r$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable

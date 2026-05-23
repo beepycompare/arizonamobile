@@ -4,17 +4,19 @@ import android.content.Context;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import com.google.android.gms.internal.base.zau;
+import com.google.android.gms.internal.base.zao;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zad extends zau {
+public final class zad extends zao {
     final /* synthetic */ GoogleApiAvailability zaa;
     private final Context zab;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zad(GoogleApiAvailability googleApiAvailability, Context context) {
         super(Looper.myLooper() == null ? Looper.getMainLooper() : Looper.myLooper());
+        Objects.requireNonNull(googleApiAvailability);
         this.zaa = googleApiAvailability;
         this.zab = context.getApplicationContext();
     }
@@ -23,14 +25,18 @@ public final class zad extends zau {
     public final void handleMessage(Message message) {
         if (message.what == 1) {
             GoogleApiAvailability googleApiAvailability = this.zaa;
-            int isGooglePlayServicesAvailable = googleApiAvailability.isGooglePlayServicesAvailable(this.zab);
+            Context context = this.zab;
+            int isGooglePlayServicesAvailable = googleApiAvailability.isGooglePlayServicesAvailable(context);
             if (googleApiAvailability.isUserResolvableError(isGooglePlayServicesAvailable)) {
-                this.zaa.showErrorNotification(this.zab, isGooglePlayServicesAvailable);
+                googleApiAvailability.showErrorNotification(context, isGooglePlayServicesAvailable);
                 return;
             }
             return;
         }
         int i = message.what;
-        Log.w("GoogleApiAvailability", "Don't know how to handle this message: " + i);
+        StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 39);
+        sb.append("Don't know how to handle this message: ");
+        sb.append(i);
+        Log.w("GoogleApiAvailability", sb.toString());
     }
 }

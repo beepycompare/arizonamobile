@@ -22,50 +22,50 @@ public final class SwitchTokens {
     private static final ColorSchemeKeyTokens DisabledUnselectedTrackOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ShapeKeyTokens HandleShape = ShapeKeyTokens.CornerFull;
-    private static final float PressedHandleHeight = Dp.m7555constructorimpl(28.0f);
-    private static final float PressedHandleWidth = Dp.m7555constructorimpl(28.0f);
+    private static final float PressedHandleHeight = Dp.m8160constructorimpl(28.0f);
+    private static final float PressedHandleWidth = Dp.m8160constructorimpl(28.0f);
     private static final ColorSchemeKeyTokens SelectedFocusHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHandleColor = ColorSchemeKeyTokens.OnPrimary;
-    private static final float SelectedHandleHeight = Dp.m7555constructorimpl(24.0f);
-    private static final float SelectedHandleWidth = Dp.m7555constructorimpl(24.0f);
+    private static final float SelectedHandleHeight = Dp.m8160constructorimpl(24.0f);
+    private static final float SelectedHandleWidth = Dp.m8160constructorimpl(24.0f);
     private static final ColorSchemeKeyTokens SelectedHoverHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
-    private static final float SelectedIconSize = Dp.m7555constructorimpl(16.0f);
+    private static final float SelectedIconSize = Dp.m8160constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens SelectedPressedHandleColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens SelectedPressedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedTrackColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens StateLayerShape = ShapeKeyTokens.CornerFull;
-    private static final float StateLayerSize = Dp.m7555constructorimpl(40.0f);
-    private static final float TrackHeight = Dp.m7555constructorimpl(32.0f);
-    private static final float TrackOutlineWidth = Dp.m7555constructorimpl(2.0f);
+    private static final float StateLayerSize = Dp.m8160constructorimpl(40.0f);
+    private static final float TrackHeight = Dp.m8160constructorimpl(32.0f);
+    private static final float TrackOutlineWidth = Dp.m8160constructorimpl(2.0f);
     private static final ShapeKeyTokens TrackShape = ShapeKeyTokens.CornerFull;
-    private static final float TrackWidth = Dp.m7555constructorimpl(52.0f);
+    private static final float TrackWidth = Dp.m8160constructorimpl(52.0f);
     private static final ColorSchemeKeyTokens UnselectedFocusHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedFocusTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedFocusTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedHandleColor = ColorSchemeKeyTokens.Outline;
-    private static final float UnselectedHandleHeight = Dp.m7555constructorimpl(16.0f);
-    private static final float UnselectedHandleWidth = Dp.m7555constructorimpl(16.0f);
+    private static final float UnselectedHandleHeight = Dp.m8160constructorimpl(16.0f);
+    private static final float UnselectedHandleWidth = Dp.m8160constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens UnselectedHoverHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedHoverIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedHoverTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedHoverTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
-    private static final float UnselectedIconSize = Dp.m7555constructorimpl(16.0f);
+    private static final float UnselectedIconSize = Dp.m8160constructorimpl(16.0f);
     private static final ColorSchemeKeyTokens UnselectedPressedHandleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedPressedIconColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedPressedTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedPressedTrackOutlineColor = ColorSchemeKeyTokens.Outline;
     private static final ColorSchemeKeyTokens UnselectedTrackColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ColorSchemeKeyTokens UnselectedTrackOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float IconHandleHeight = Dp.m7555constructorimpl(24.0f);
-    private static final float IconHandleWidth = Dp.m7555constructorimpl(24.0f);
+    private static final float IconHandleHeight = Dp.m8160constructorimpl(24.0f);
+    private static final float IconHandleWidth = Dp.m8160constructorimpl(24.0f);
 
     private SwitchTokens() {
     }
@@ -127,12 +127,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getPressedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3793getPressedHandleHeightD9Ej5fM() {
+    public final float m4238getPressedHandleHeightD9Ej5fM() {
         return PressedHandleHeight;
     }
 
     /* renamed from: getPressedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3794getPressedHandleWidthD9Ej5fM() {
+    public final float m4239getPressedHandleWidthD9Ej5fM() {
         return PressedHandleWidth;
     }
 
@@ -153,12 +153,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getSelectedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3795getSelectedHandleHeightD9Ej5fM() {
+    public final float m4240getSelectedHandleHeightD9Ej5fM() {
         return SelectedHandleHeight;
     }
 
     /* renamed from: getSelectedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3796getSelectedHandleWidthD9Ej5fM() {
+    public final float m4241getSelectedHandleWidthD9Ej5fM() {
         return SelectedHandleWidth;
     }
 
@@ -179,7 +179,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getSelectedIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3797getSelectedIconSizeD9Ej5fM() {
+    public final float m4242getSelectedIconSizeD9Ej5fM() {
         return SelectedIconSize;
     }
 
@@ -204,17 +204,17 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getStateLayerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3798getStateLayerSizeD9Ej5fM() {
+    public final float m4243getStateLayerSizeD9Ej5fM() {
         return StateLayerSize;
     }
 
     /* renamed from: getTrackHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3799getTrackHeightD9Ej5fM() {
+    public final float m4244getTrackHeightD9Ej5fM() {
         return TrackHeight;
     }
 
     /* renamed from: getTrackOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3800getTrackOutlineWidthD9Ej5fM() {
+    public final float m4245getTrackOutlineWidthD9Ej5fM() {
         return TrackOutlineWidth;
     }
 
@@ -223,7 +223,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getTrackWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3801getTrackWidthD9Ej5fM() {
+    public final float m4246getTrackWidthD9Ej5fM() {
         return TrackWidth;
     }
 
@@ -248,12 +248,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getUnselectedHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3802getUnselectedHandleHeightD9Ej5fM() {
+    public final float m4247getUnselectedHandleHeightD9Ej5fM() {
         return UnselectedHandleHeight;
     }
 
     /* renamed from: getUnselectedHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3803getUnselectedHandleWidthD9Ej5fM() {
+    public final float m4248getUnselectedHandleWidthD9Ej5fM() {
         return UnselectedHandleWidth;
     }
 
@@ -278,7 +278,7 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getUnselectedIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3804getUnselectedIconSizeD9Ej5fM() {
+    public final float m4249getUnselectedIconSizeD9Ej5fM() {
         return UnselectedIconSize;
     }
 
@@ -307,12 +307,12 @@ public final class SwitchTokens {
     }
 
     /* renamed from: getIconHandleHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3791getIconHandleHeightD9Ej5fM() {
+    public final float m4236getIconHandleHeightD9Ej5fM() {
         return IconHandleHeight;
     }
 
     /* renamed from: getIconHandleWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3792getIconHandleWidthD9Ej5fM() {
+    public final float m4237getIconHandleWidthD9Ej5fM() {
         return IconHandleWidth;
     }
 }

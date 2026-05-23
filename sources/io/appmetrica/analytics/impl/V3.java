@@ -1,33 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.util.SparseArray;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
 /* loaded from: classes5.dex */
-public final class V3 extends Jc {
+public final class V3 extends SimpleThreadSafeToggle {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ve f826a;
+    public final C0769zf f802a;
 
-    public V3(Context context) {
-        this(new Ve(C0135b4.l().c(context).b(context)));
+    public V3(C0769zf c0769zf) {
+        super(c0769zf.e(), "[ClientApiTrackingStatusToggle]");
+        this.f802a = c0769zf;
     }
 
-    @Override // io.appmetrica.analytics.impl.Jc
-    public final void a(int i) {
-        this.f826a.c(i);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Jc
-    public final int b() {
-        return (int) this.f826a.a(-1L);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Jc
-    public final SparseArray<Ic> c() {
-        return new SparseArray<>();
-    }
-
-    public V3(Ve ve) {
-        this.f826a = ve;
+    public final void a(boolean z) {
+        updateState(z);
+        this.f802a.f(z);
     }
 }

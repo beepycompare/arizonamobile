@@ -7,9 +7,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import androidx.fragment.app.Fragment;
-import com.google.android.gms.common.internal.zag;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.api.internal.GoogleApiManager;
+import com.google.android.gms.common.internal.GmsClientSupervisor;
+import com.google.android.gms.common.internal.zaj;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
     public static final String GMS_ERROR_DIALOG = "GooglePlayServicesErrorDialog";
@@ -45,7 +46,6 @@ public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
         return GooglePlayServicesUtilLight.getRemoteResource(context);
     }
 
-    @ResultIgnorabilityUnspecified
     @Deprecated
     public static int isGooglePlayServicesAvailable(Context context) {
         return GooglePlayServicesUtilLight.isGooglePlayServicesAvailable(context);
@@ -56,7 +56,10 @@ public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
         return GooglePlayServicesUtilLight.isUserRecoverableError(i);
     }
 
-    @ResultIgnorabilityUnspecified
+    public static boolean isUsingBackgroundThreadExecutorForBindService() {
+        return GoogleApiManager.zat();
+    }
+
     @Deprecated
     public static boolean showErrorDialogFragment(int i, Activity activity, int i2) {
         return showErrorDialogFragment(i, activity, i2, null);
@@ -66,10 +69,18 @@ public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
     public static void showErrorNotification(int i, Context context) {
         GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
         if (GooglePlayServicesUtilLight.isPlayServicesPossiblyUpdating(context, i) || GooglePlayServicesUtilLight.isPlayStorePossiblyUpdating(context, i)) {
-            googleApiAvailability.zaf(context);
+            googleApiAvailability.zai(context);
         } else {
             googleApiAvailability.showErrorNotification(context, i);
         }
+    }
+
+    public static boolean useBackgroundThreadExecutorForBindService() {
+        return GoogleApiManager.zas();
+    }
+
+    public static void useBackgroundThreadForConnectionCallback() {
+        GmsClientSupervisor.setUseHandlerThreadForCallbacks();
     }
 
     @Deprecated
@@ -85,13 +96,11 @@ public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
         return GooglePlayServicesUtilLight.isGooglePlayServicesAvailable(context, i);
     }
 
-    @ResultIgnorabilityUnspecified
     @Deprecated
     public static boolean showErrorDialogFragment(int i, Activity activity, int i2, DialogInterface.OnCancelListener onCancelListener) {
         return showErrorDialogFragment(i, activity, null, i2, onCancelListener);
     }
 
-    @ResultIgnorabilityUnspecified
     public static boolean showErrorDialogFragment(int i, Activity activity, Fragment fragment, int i2, DialogInterface.OnCancelListener onCancelListener) {
         if (true == GooglePlayServicesUtilLight.isPlayServicesPossiblyUpdating(activity, i)) {
             i = 18;
@@ -101,11 +110,11 @@ public final class GooglePlayServicesUtil extends GooglePlayServicesUtilLight {
         if (fragment == null) {
             return googleApiAvailability.showErrorDialogFragment(activity, i3, i2, onCancelListener);
         }
-        Dialog zaa = googleApiAvailability.zaa(activity, i3, zag.zac(fragment, GoogleApiAvailability.getInstance().getErrorResolutionIntent(activity, i3, "d"), i2), onCancelListener, null);
+        Dialog zaa = googleApiAvailability.zaa(activity, i3, zaj.zac(fragment, GoogleApiAvailability.getInstance().getErrorResolutionIntent(activity, i3, "d"), i2), onCancelListener, null);
         if (zaa == null) {
             return false;
         }
-        googleApiAvailability.zad(activity, zaa, GMS_ERROR_DIALOG, onCancelListener);
+        googleApiAvailability.zah(activity, zaa, GMS_ERROR_DIALOG, onCancelListener);
         return true;
     }
 }

@@ -1,22 +1,24 @@
 package io.appmetrica.analytics.screenshot.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* loaded from: classes5.dex */
-public final class I implements InterfaceC0769i {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1451a;
-    public final U b;
-
-    public I(ClientContext clientContext, U u) {
-        this.f1451a = clientContext;
-        this.b = u;
+public final class I implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final y fromModel(U u) {
+        y yVar = new y();
+        yVar.f1462a = u.f1443a;
+        yVar.b = u.b;
+        return yVar;
     }
 
-    @Override // io.appmetrica.analytics.screenshot.impl.InterfaceC0769i
-    public final List<T> a() {
-        return CollectionsKt.listOf((Object[]) new T[]{new C0781v(this.f1451a, this.b), new g0(this.f1451a, this.b)});
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        y yVar = (y) obj;
+        return new U(yVar.f1462a, yVar.b);
+    }
+
+    public final U a(y yVar) {
+        return new U(yVar.f1462a, yVar.b);
     }
 }

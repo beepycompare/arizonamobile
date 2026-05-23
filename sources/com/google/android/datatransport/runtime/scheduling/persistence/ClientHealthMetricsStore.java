@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime.scheduling.persistence;
 
 import com.google.android.datatransport.runtime.firebase.transport.ClientMetrics;
 import com.google.android.datatransport.runtime.firebase.transport.LogEventDropped;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ClientHealthMetricsStore {
     ClientMetrics loadClientMetrics();
 

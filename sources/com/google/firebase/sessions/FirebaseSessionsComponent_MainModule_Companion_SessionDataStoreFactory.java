@@ -5,7 +5,7 @@ import androidx.datastore.core.DataStore;
 import com.google.firebase.sessions.FirebaseSessionsComponent;
 import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Preconditions;
-import javax.inject.Provider;
+import com.google.firebase.sessions.dagger.internal.Provider;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class FirebaseSessionsComponent_MainModule_Companion_SessionDataStoreFactory implements Factory<DataStore<SessionData>> {
@@ -13,7 +13,7 @@ public final class FirebaseSessionsComponent_MainModule_Companion_SessionDataSto
     private final Provider<CoroutineContext> blockingDispatcherProvider;
     private final Provider<SessionDataSerializer> sessionDataSerializerProvider;
 
-    public FirebaseSessionsComponent_MainModule_Companion_SessionDataStoreFactory(Provider<Context> provider, Provider<CoroutineContext> provider2, Provider<SessionDataSerializer> provider3) {
+    private FirebaseSessionsComponent_MainModule_Companion_SessionDataStoreFactory(Provider<Context> provider, Provider<CoroutineContext> provider2, Provider<SessionDataSerializer> provider3) {
         this.appContextProvider = provider;
         this.blockingDispatcherProvider = provider2;
         this.sessionDataSerializerProvider = provider3;

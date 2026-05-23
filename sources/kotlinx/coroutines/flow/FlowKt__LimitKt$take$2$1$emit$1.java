@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$take$2$1", f = "Limit.kt", i = {}, l = {59, 61}, m = "emit", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt$take$2$1", f = "Limit.kt", i = {0, 1}, l = {59, 61}, m = "emit", n = {"value", "value"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$take$2$1$emit$1 extends ContinuationImpl {
+    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FlowKt__LimitKt$take$2$1<T> this$0;

@@ -1,22 +1,148 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.BuildConfig;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class Dm implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0634um fromModel(Cm cm) {
-        C0634um c0634um = new C0634um();
-        c0634um.f1266a = cm.f544a;
-        return c0634um;
+public final class Dm extends C0191d6 {
+    public List d;
+    public List e;
+    public String f;
+    public String g;
+    public Map h;
+    public I3 i;
+    public List j;
+    public boolean k;
+    public boolean l;
+    public String m;
+    public long n;
+    public final Fg o;
+    public final Z7 p;
+
+    public Dm() {
+        this(Na.k().u(), new Z7());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new Cm(((C0634um) obj).f1266a);
+    public final long a(long j) {
+        if (this.n == 0) {
+            this.n = j;
+        }
+        return this.n;
     }
 
-    public final Cm a(C0634um c0634um) {
-        return new Cm(c0634um.f1266a);
+    public final I3 c() {
+        return this.i;
+    }
+
+    public final Map<String, String> d() {
+        return this.h;
+    }
+
+    public final String e() {
+        return this.m;
+    }
+
+    public final String f() {
+        return this.f;
+    }
+
+    public final long g() {
+        return this.n;
+    }
+
+    public final String h() {
+        return this.g;
+    }
+
+    public final List<String> i() {
+        return this.j;
+    }
+
+    public final Fg j() {
+        return this.o;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0052, code lost:
+        if (r3 != null) goto L26;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final List<String> k() {
+        ArrayList arrayList;
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        if (!Oo.a((Collection) this.d)) {
+            linkedHashSet.addAll(this.d);
+        }
+        if (!Oo.a((Collection) this.e)) {
+            linkedHashSet.addAll(this.e);
+        }
+        String[] strArr = (String[]) this.p.f867a.a();
+        if (strArr != null) {
+            arrayList = new ArrayList();
+            for (String str : strArr) {
+                str = (str == null || StringsKt.isBlank(str)) ? null : null;
+                if (str != null) {
+                    arrayList.add(str);
+                }
+            }
+            if (arrayList.isEmpty()) {
+                arrayList = null;
+            }
+        }
+        String[] strArr2 = BuildConfig.DEFAULT_HOSTS;
+        arrayList = new ArrayList();
+        for (String str2 : strArr2) {
+            str2 = (str2 == null || StringsKt.isBlank(str2)) ? null : null;
+            if (str2 != null) {
+                arrayList.add(str2);
+            }
+        }
+        linkedHashSet.addAll(arrayList);
+        return new ArrayList(linkedHashSet);
+    }
+
+    public final List<String> l() {
+        return this.e;
+    }
+
+    public final List<String> m() {
+        return this.d;
+    }
+
+    public final boolean n() {
+        return this.k;
+    }
+
+    public final boolean o() {
+        return this.l;
+    }
+
+    @Override // io.appmetrica.analytics.impl.C0191d6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
+    public final String toString() {
+        return "StartupRequestConfig{mStartupHostsFromStartup=" + this.d + ", mStartupHostsFromClient=" + this.e + ", mDistributionReferrer='" + this.f + "', mInstallReferrerSource='" + this.g + "', mClidsFromClient=" + this.h + ", mNewCustomHosts=" + this.j + ", mHasNewCustomHosts=" + this.k + ", mSuccessfulStartup=" + this.l + ", mCountryInit='" + this.m + "', mFirstStartupTime=" + this.n + "} " + super.toString();
+    }
+
+    public Dm(Fg fg, Z7 z7) {
+        this.i = new I3(null, EnumC0399l8.d);
+        this.n = 0L;
+        this.o = fg;
+        this.p = z7;
+    }
+
+    public final void a(List<String> list) {
+        this.j = list;
+    }
+
+    public final void a(boolean z) {
+        this.k = z;
+    }
+
+    public final void a(String str) {
+        this.m = str;
     }
 }

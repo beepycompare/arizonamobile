@@ -3,18 +3,18 @@ package com.google.android.gms.measurement.api;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import com.google.android.gms.internal.measurement.zzdf;
-import com.google.android.gms.internal.measurement.zzfb;
+import com.google.android.gms.internal.measurement.zzdd;
+import com.google.android.gms.internal.measurement.zzez;
 import com.google.android.gms.measurement.internal.zzjp;
 import com.google.android.gms.measurement.internal.zzjq;
 import java.util.List;
 import java.util.Map;
-/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
 /* loaded from: classes4.dex */
 public class AppMeasurementSdk {
-    private final zzfb zza;
+    private final zzez zza;
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public static final class ConditionalUserProperty {
         public static final String ACTIVE = "active";
@@ -37,26 +37,26 @@ public class AppMeasurementSdk {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public interface EventInterceptor extends zzjp {
         @Override // com.google.android.gms.measurement.internal.zzjp
         void interceptEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.0.0 */
+    /* compiled from: com.google.android.gms:play-services-measurement-sdk-api@@23.2.0 */
     /* loaded from: classes4.dex */
     public interface OnEventListener extends zzjq {
         @Override // com.google.android.gms.measurement.internal.zzjq
         void onEvent(String str, String str2, Bundle bundle, long j);
     }
 
-    public AppMeasurementSdk(zzfb zzfbVar) {
-        this.zza = zzfbVar;
+    public AppMeasurementSdk(zzez zzezVar) {
+        this.zza = zzezVar;
     }
 
     public static AppMeasurementSdk getInstance(Context context) {
-        return zzfb.zza(context, null).zzb();
+        return zzez.zza(context, null).zzb();
     }
 
     public void beginAdUnitExposure(String str) {
@@ -112,7 +112,7 @@ public class AppMeasurementSdk {
     }
 
     public void logEventNoInterceptor(String str, String str2, Bundle bundle, long j) {
-        this.zza.zzj(str, str2, bundle, j);
+        this.zza.zzj(str, str2, bundle, j, 0L);
     }
 
     public void performAction(Bundle bundle) {
@@ -136,7 +136,7 @@ public class AppMeasurementSdk {
     }
 
     public void setCurrentScreen(Activity activity, String str, String str2) {
-        this.zza.zzp(zzdf.zza(activity), str, str2);
+        this.zza.zzp(zzdd.zza(activity), str, str2);
     }
 
     public void setEventInterceptor(EventInterceptor eventInterceptor) {
@@ -165,6 +165,6 @@ public class AppMeasurementSdk {
 
     @Deprecated
     public static AppMeasurementSdk getInstance(Context context, String str, String str2, String str3, Bundle bundle) {
-        return zzfb.zza(context, bundle).zzb();
+        return zzez.zza(context, bundle).zzb();
     }
 }

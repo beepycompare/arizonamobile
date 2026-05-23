@@ -303,15 +303,19 @@ public class CollapsingToolbarLayout extends FrameLayout {
         super.onConfigurationChanged(configuration);
         this.collapsingTitleHelper.maybeUpdateFontWeightAdjustment(configuration);
         if (this.screenOrientation != configuration.orientation && this.extraMultilineHeightEnabled && this.collapsingTitleHelper.getExpansionFraction() == 1.0f) {
-            ViewParent parent = getParent();
-            if (parent instanceof AppBarLayout) {
-                AppBarLayout appBarLayout = (AppBarLayout) parent;
-                if (appBarLayout.getPendingAction() == 0) {
-                    appBarLayout.setPendingAction(2);
-                }
-            }
+            maybeSetPendingActionCollapsed();
         }
         this.screenOrientation = configuration.orientation;
+    }
+
+    private void maybeSetPendingActionCollapsed() {
+        ViewParent parent = getParent();
+        if (parent instanceof AppBarLayout) {
+            AppBarLayout appBarLayout = (AppBarLayout) parent;
+            if (appBarLayout.getPendingAction() == 0) {
+                appBarLayout.setPendingAction(2);
+            }
+        }
     }
 
     @Override // android.view.ViewGroup
@@ -487,6 +491,9 @@ public class CollapsingToolbarLayout extends FrameLayout {
             } else {
                 collapsingToolbarLayout.setMinimumHeight(getHeightWithMargins(view));
             }
+        }
+        if (collapsingToolbarLayout.extraMultilineHeightEnabled && collapsingToolbarLayout.collapsingTitleHelper.getExpandedMaxLines() > 1 && collapsingToolbarLayout.collapsingTitleHelper.getExpansionFraction() == 1.0f) {
+            collapsingToolbarLayout.maybeSetPendingActionCollapsed();
         }
     }
 

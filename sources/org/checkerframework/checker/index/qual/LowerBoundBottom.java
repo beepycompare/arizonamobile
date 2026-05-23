@@ -13,6 +13,6 @@ import org.checkerframework.framework.qual.TypeUseLocation;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({Positive.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface LowerBoundBottom {
 }

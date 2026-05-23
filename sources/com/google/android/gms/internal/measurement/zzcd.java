@@ -1,83 +1,37 @@
 package com.google.android.gms.internal.measurement;
-
-import android.content.SharedPreferences;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzcd implements SharedPreferences {
-    private final Map zza = new HashMap();
-    private final Set zzb = new HashSet();
+public abstract class zzcd {
+    public static final /* synthetic */ int zza = 0;
 
-    private final Object zzc(String str, Object obj) {
-        Object obj2 = this.zza.get(str);
-        return obj2 != null ? obj2 : obj;
+    static {
+        zzbw zzbwVar = new zzbw();
+        zzbwVar.zza("");
+        zzbwVar.zzb(false);
+        zzbwVar.zzd(1);
+        zzbwVar.zze(1);
+        zzbwVar.zzc();
+        zzbw zzbwVar2 = new zzbw();
+        zzbwVar2.zza("");
+        zzbwVar2.zzb(false);
+        zzbwVar2.zzd(4);
+        zzbwVar2.zze(1);
+        zzbwVar2.zzc();
+        zzbw zzbwVar3 = new zzbw();
+        zzbwVar3.zza("");
+        zzbwVar3.zzb(false);
+        zzbwVar3.zzd(2);
+        zzbwVar3.zze(1);
+        zzbwVar3.zzc();
     }
 
-    @Override // android.content.SharedPreferences
-    public final boolean contains(String str) {
-        return this.zza.containsKey(str);
-    }
+    public abstract String zza();
 
-    @Override // android.content.SharedPreferences
-    public final SharedPreferences.Editor edit() {
-        return new zzcc(this, null);
-    }
+    public abstract boolean zzb();
 
-    @Override // android.content.SharedPreferences
-    public final Map getAll() {
-        return this.zza;
-    }
+    public abstract zzbv zzc();
 
-    @Override // android.content.SharedPreferences
-    public final boolean getBoolean(String str, boolean z) {
-        return ((Boolean) zzc(str, Boolean.valueOf(z))).booleanValue();
-    }
+    public abstract int zzd();
 
-    @Override // android.content.SharedPreferences
-    public final float getFloat(String str, float f) {
-        return ((Float) zzc(str, Float.valueOf(f))).floatValue();
-    }
-
-    @Override // android.content.SharedPreferences
-    public final int getInt(String str, int i) {
-        return ((Integer) zzc(str, Integer.valueOf(i))).intValue();
-    }
-
-    @Override // android.content.SharedPreferences
-    public final long getLong(String str, long j) {
-        return ((Long) zzc(str, Long.valueOf(j))).longValue();
-    }
-
-    @Override // android.content.SharedPreferences
-    public final String getString(String str, String str2) {
-        return (String) zzc(str, str2);
-    }
-
-    @Override // android.content.SharedPreferences
-    public final Set getStringSet(String str, Set set) {
-        return (Set) zzc(str, set);
-    }
-
-    @Override // android.content.SharedPreferences
-    public final void registerOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener) {
-        this.zzb.add(onSharedPreferenceChangeListener);
-    }
-
-    @Override // android.content.SharedPreferences
-    public final void unregisterOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener) {
-        this.zzb.remove(onSharedPreferenceChangeListener);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ Map zza() {
-        return this.zza;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ Set zzb() {
-        return this.zzb;
-    }
+    public abstract int zze();
 }

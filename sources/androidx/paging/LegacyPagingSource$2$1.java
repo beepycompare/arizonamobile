@@ -8,7 +8,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LegacyPagingSource.jvmAndAndroid.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final /* synthetic */ class LegacyPagingSource$2$1 implements DataSource.InvalidatedCallback, FunctionAdapter {
     final /* synthetic */ LegacyPagingSource<Key, Value> $tmp0;

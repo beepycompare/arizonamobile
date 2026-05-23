@@ -1,13 +1,21 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.util.concurrent.NumberedThreadFactory;
-import java.util.concurrent.ExecutorService;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.internal.BaseGmsClient;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zabj {
-    private static final ExecutorService zaa = com.google.android.gms.internal.base.zat.zaa().zac(2, new NumberedThreadFactory("GAC_Executor"), 2);
+public final class zabj implements BaseGmsClient.SignOutCallbacks {
+    final /* synthetic */ zabk zaa;
 
-    public static ExecutorService zaa() {
-        return zaa;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zabj(zabk zabkVar) {
+        Objects.requireNonNull(zabkVar);
+        this.zaa = zabkVar;
+    }
+
+    @Override // com.google.android.gms.common.internal.BaseGmsClient.SignOutCallbacks
+    public final void onSignOutComplete() {
+        this.zaa.zaa.zaF().post(new zabi(this));
     }
 }

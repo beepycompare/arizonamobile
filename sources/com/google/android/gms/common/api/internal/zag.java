@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.Feature;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zag extends zac {
     private final TaskApiCall zaa;
@@ -23,12 +23,17 @@ public final class zag extends zac {
     }
 
     @Override // com.google.android.gms.common.api.internal.zac
-    public final boolean zaa(zabq zabqVar) {
+    public final Feature[] zaa(zabk zabkVar) {
+        return this.zaa.zaa();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.zac
+    public final boolean zab(zabk zabkVar) {
         return this.zaa.shouldAutoResolveMissingFeatures();
     }
 
     @Override // com.google.android.gms.common.api.internal.zac
-    public final Feature[] zab(zabq zabqVar) {
+    public final int zac(zabk zabkVar) {
         return this.zaa.zab();
     }
 
@@ -43,20 +48,20 @@ public final class zag extends zac {
     }
 
     @Override // com.google.android.gms.common.api.internal.zai
-    public final void zaf(zabq zabqVar) throws DeadObjectException {
-        try {
-            this.zaa.doExecute(zabqVar.zaf(), this.zab);
-        } catch (DeadObjectException e) {
-            throw e;
-        } catch (RemoteException e2) {
-            zad(zai.zah(e2));
-        } catch (RuntimeException e3) {
-            this.zab.trySetException(e3);
-        }
+    public final void zaf(zaaa zaaaVar, boolean z) {
+        zaaaVar.zab(this.zab, z);
     }
 
     @Override // com.google.android.gms.common.api.internal.zai
-    public final void zag(zaad zaadVar, boolean z) {
-        zaadVar.zad(this.zab, z);
+    public final void zag(zabk zabkVar) throws DeadObjectException {
+        try {
+            this.zaa.doExecute(zabkVar.zaf(), this.zab);
+        } catch (DeadObjectException e) {
+            throw e;
+        } catch (RemoteException e2) {
+            zad(zai.zai(e2));
+        } catch (RuntimeException e3) {
+            this.zab.trySetException(e3);
+        }
     }
 }

@@ -3,11 +3,12 @@ package androidx.media3.exoplayer.audio;
 import android.media.AudioDeviceInfo;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.exoplayer.analytics.PlayerId;
+import androidx.media3.exoplayer.audio.AudioOutputProvider;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface AudioOutput {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Listener {
         void onOffloadDataRequest();
 
@@ -67,7 +68,7 @@ public interface AudioOutput {
 
     boolean write(ByteBuffer byteBuffer, int i, long j) throws WriteException;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class WriteException extends Exception {
         public final int errorCode;
         public final boolean isRecoverable;
@@ -77,5 +78,9 @@ public interface AudioOutput {
             this.isRecoverable = z;
             this.errorCode = i;
         }
+    }
+
+    default boolean canReuseAudioOutput(AudioOutputProvider.OutputConfig outputConfig, AudioOutputProvider.FormatConfig formatConfig, AudioOutputProvider.OutputConfig outputConfig2) {
+        return outputConfig2.equals(outputConfig);
     }
 }

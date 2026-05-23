@@ -1,24 +1,17 @@
 package com.google.android.gms.internal.measurement;
-
-import java.io.IOException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-interface zznx<T> {
-    Object zza();
+final class zznx extends zzny {
+    private final boolean zza;
 
-    boolean zzb(Object obj, Object obj2);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public zznx(String str, String str2, zzph zzphVar, boolean z) {
+        super("com.google.android.gms.measurement", str2, zzphVar);
+        this.zza = z;
+    }
 
-    int zzc(Object obj);
-
-    void zzd(Object obj, Object obj2);
-
-    int zze(Object obj);
-
-    void zzf(Object obj, zzov zzovVar) throws IOException;
-
-    void zzi(Object obj, byte[] bArr, int i, int i2, zzkw zzkwVar) throws IOException;
-
-    void zzj(Object obj);
-
-    boolean zzk(Object obj);
+    @Override // com.google.android.gms.internal.measurement.zznp
+    public final /* synthetic */ Object zza() {
+        return Boolean.valueOf(this.zza);
+    }
 }

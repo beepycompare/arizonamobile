@@ -47,7 +47,7 @@ import retrofit2.http.QueryName;
 import retrofit2.http.Tag;
 import retrofit2.http.Url;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class RequestFactory {
     private final HttpUrl baseUrl;
     @Nullable
@@ -105,7 +105,7 @@ public final class RequestFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         @Nullable
         MediaType contentType;

@@ -4,8 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-import com.google.android.gms.common.internal.zav;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import com.google.android.gms.common.internal.zay;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zal implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
@@ -13,7 +13,7 @@ public final class zal implements Parcelable.Creator {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         ConnectionResult connectionResult = null;
         int i = 0;
-        zav zavVar = null;
+        zay zayVar = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
@@ -22,13 +22,13 @@ public final class zal implements Parcelable.Creator {
             } else if (fieldId == 2) {
                 connectionResult = (ConnectionResult) SafeParcelReader.createParcelable(parcel, readHeader, ConnectionResult.CREATOR);
             } else if (fieldId == 3) {
-                zavVar = (zav) SafeParcelReader.createParcelable(parcel, readHeader, zav.CREATOR);
+                zayVar = (zay) SafeParcelReader.createParcelable(parcel, readHeader, zay.CREATOR);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new zak(i, connectionResult, zavVar);
+        return new zak(i, connectionResult, zayVar);
     }
 
     @Override // android.os.Parcelable.Creator

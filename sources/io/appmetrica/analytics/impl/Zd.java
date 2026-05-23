@@ -1,21 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: classes5.dex */
-public final class Zd implements so {
+public final class Zd implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f891a;
+    public static final AtomicInteger f870a = new AtomicInteger(0);
 
-    public Zd(String str) {
-        this.f891a = str;
-    }
-
-    @Override // io.appmetrica.analytics.impl.so
-    public final qo a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return new qo(this, false, this.f891a + " is empty.");
-        }
-        return new qo(this, true, "");
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        return new InterruptionSafeThread(runnable, "null-" + f870a.incrementAndGet());
     }
 }

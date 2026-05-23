@@ -10,7 +10,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.http.Streaming;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class BuiltInConverters extends Converter.Factory {
     @Override // retrofit2.Converter.Factory
     @Nullable
@@ -39,7 +39,7 @@ public final class BuiltInConverters extends Converter.Factory {
         return null;
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class VoidResponseBodyConverter implements Converter<ResponseBody, Void> {
         static final VoidResponseBodyConverter INSTANCE = new VoidResponseBodyConverter();
 
@@ -53,7 +53,7 @@ public final class BuiltInConverters extends Converter.Factory {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class UnitResponseBodyConverter implements Converter<ResponseBody, Unit> {
         static final UnitResponseBodyConverter INSTANCE = new UnitResponseBodyConverter();
 
@@ -67,7 +67,7 @@ public final class BuiltInConverters extends Converter.Factory {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class RequestBodyConverter implements Converter<RequestBody, RequestBody> {
         static final RequestBodyConverter INSTANCE = new RequestBodyConverter();
 
@@ -80,7 +80,7 @@ public final class BuiltInConverters extends Converter.Factory {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class StreamingResponseBodyConverter implements Converter<ResponseBody, ResponseBody> {
         static final StreamingResponseBodyConverter INSTANCE = new StreamingResponseBodyConverter();
 
@@ -93,7 +93,7 @@ public final class BuiltInConverters extends Converter.Factory {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class BufferingResponseBodyConverter implements Converter<ResponseBody, ResponseBody> {
         static final BufferingResponseBodyConverter INSTANCE = new BufferingResponseBodyConverter();
 
@@ -111,7 +111,7 @@ public final class BuiltInConverters extends Converter.Factory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class ToStringConverter implements Converter<Object, String> {
         static final ToStringConverter INSTANCE = new ToStringConverter();
 

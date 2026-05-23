@@ -2,7 +2,7 @@ package com.google.ads.mediation.customevent;
 
 import com.google.ads.mediation.MediationServerParameters;
 import com.google.firebase.messaging.Constants;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class CustomEventServerParameters extends MediationServerParameters {
     @MediationServerParameters.Parameter(name = "class_name", required = true)
     public String className;

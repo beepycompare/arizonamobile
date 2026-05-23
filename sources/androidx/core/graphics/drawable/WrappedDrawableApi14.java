@@ -28,8 +28,7 @@ class WrappedDrawableApi14 extends Drawable implements Drawable.Callback, Wrappe
         updateLocalState(resources);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public WrappedDrawableApi14(Drawable drawable) {
+    WrappedDrawableApi14(Drawable drawable) {
         this.mState = mutateConstantState();
         setWrappedDrawable(drawable);
     }
@@ -166,12 +165,12 @@ class WrappedDrawableApi14 extends Drawable implements Drawable.Callback, Wrappe
 
     @Override // android.graphics.drawable.Drawable
     public boolean onLayoutDirectionChanged(int i) {
-        return DrawableCompat.setLayoutDirection(this.mDrawable, i);
+        return this.mDrawable.setLayoutDirection(i);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getLayoutDirection() {
-        return DrawableCompat.getLayoutDirection(this.mDrawable);
+        return this.mDrawable.getLayoutDirection();
     }
 
     @Override // android.graphics.drawable.Drawable

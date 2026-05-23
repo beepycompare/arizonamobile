@@ -8,8 +8,8 @@ import kotlin.Metadata;
 public final class InputChipTokens {
     public static final int $stable = 0;
     public static final InputChipTokens INSTANCE = new InputChipTokens();
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(32.0f);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m8160constructorimpl(32.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerSmall;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLabelTextOpacity = 0.38f;
@@ -17,7 +17,7 @@ public final class InputChipTokens {
     private static final float DisabledSelectedContainerOpacity = 0.12f;
     private static final ColorSchemeKeyTokens DisabledUnselectedOutlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledUnselectedOutlineOpacity = 0.12f;
-    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3363getLevel4D9Ej5fM();
+    private static final float DraggedContainerElevation = ElevationTokens.INSTANCE.m3808getLevel4D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
@@ -25,7 +25,7 @@ public final class InputChipTokens {
     private static final ColorSchemeKeyTokens SelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float SelectedOutlineWidth = Dp.m7555constructorimpl(0.0f);
+    private static final float SelectedOutlineWidth = Dp.m8160constructorimpl(0.0f);
     private static final ColorSchemeKeyTokens SelectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens UnselectedDraggedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedFocusLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -33,14 +33,14 @@ public final class InputChipTokens {
     private static final ColorSchemeKeyTokens UnselectedHoverLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedOutlineColor = ColorSchemeKeyTokens.OutlineVariant;
-    private static final float UnselectedOutlineWidth = Dp.m7555constructorimpl(1.0f);
+    private static final float UnselectedOutlineWidth = Dp.m8160constructorimpl(1.0f);
     private static final ColorSchemeKeyTokens UnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ShapeKeyTokens AvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float AvatarSize = Dp.m7555constructorimpl(24.0f);
+    private static final float AvatarSize = Dp.m8160constructorimpl(24.0f);
     private static final float DisabledAvatarOpacity = 0.38f;
     private static final ColorSchemeKeyTokens DisabledLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final float DisabledLeadingIconOpacity = 0.38f;
-    private static final float LeadingIconSize = Dp.m7555constructorimpl(18.0f);
+    private static final float LeadingIconSize = Dp.m8160constructorimpl(18.0f);
     private static final ColorSchemeKeyTokens SelectedDraggedLeadingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedFocusLeadingIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHoverLeadingIconColor = ColorSchemeKeyTokens.Primary;
@@ -58,7 +58,7 @@ public final class InputChipTokens {
     private static final ColorSchemeKeyTokens SelectedHoverTrailingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedPressedTrailingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens SelectedTrailingIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
-    private static final float TrailingIconSize = Dp.m7555constructorimpl(18.0f);
+    private static final float TrailingIconSize = Dp.m8160constructorimpl(18.0f);
     private static final ColorSchemeKeyTokens UnselectedDraggedTrailingIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens UnselectedFocusTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedHoverTrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -69,12 +69,12 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3477getContainerElevationD9Ej5fM() {
+    public final float m3922getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3478getContainerHeightD9Ej5fM() {
+    public final float m3923getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -107,7 +107,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getDraggedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3479getDraggedContainerElevationD9Ej5fM() {
+    public final float m3924getDraggedContainerElevationD9Ej5fM() {
         return DraggedContainerElevation;
     }
 
@@ -140,7 +140,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getSelectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3481getSelectedOutlineWidthD9Ej5fM() {
+    public final float m3926getSelectedOutlineWidthD9Ej5fM() {
         return SelectedOutlineWidth;
     }
 
@@ -173,7 +173,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getUnselectedOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3483getUnselectedOutlineWidthD9Ej5fM() {
+    public final float m3928getUnselectedOutlineWidthD9Ej5fM() {
         return UnselectedOutlineWidth;
     }
 
@@ -186,7 +186,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3476getAvatarSizeD9Ej5fM() {
+    public final float m3921getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -203,7 +203,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3480getLeadingIconSizeD9Ej5fM() {
+    public final float m3925getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -276,7 +276,7 @@ public final class InputChipTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3482getTrailingIconSizeD9Ej5fM() {
+    public final float m3927getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 

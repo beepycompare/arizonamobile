@@ -125,7 +125,7 @@ public class TypefaceCompat {
                     Log.w(TAG, "Unable identify the primary font for " + fontRequest.getSystemFont() + ". Falling back to provider font.");
                     return null;
                 }
-                if (TextUtils.isEmpty(fontRequest.getVariationSettings())) {
+                if (!TextUtils.isEmpty(fontRequest.getVariationSettings())) {
                     try {
                         build = new FontFamily.Builder(new Font.Builder(guessPrimaryFont).setFontVariationSettings(fontRequest.getVariationSettings()).build()).build();
                     } catch (IOException unused) {
@@ -214,15 +214,6 @@ public class TypefaceCompat {
         }
     }
 
-    private static Typeface getBestFontFromFamily(Context context, Typeface typeface, int i) {
-        TypefaceCompatBaseImpl typefaceCompatBaseImpl = sTypefaceCompatImpl;
-        FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamily = typefaceCompatBaseImpl.getFontFamily(typeface);
-        if (fontFamily == null) {
-            return null;
-        }
-        return typefaceCompatBaseImpl.createFromFontFamilyFilesResourceEntry(context, fontFamily, context.getResources(), i);
-    }
-
     public static Typeface create(Context context, Typeface typeface, int i) {
         if (context == null) {
             throw new IllegalArgumentException("Context cannot be null");
@@ -257,7 +248,7 @@ public class TypefaceCompat {
         public void onTypefaceRetrieved(Typeface typeface) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m8046x46c88379(typeface);
+                fontCallback.m8651x46c88379(typeface);
             }
         }
 
@@ -265,7 +256,7 @@ public class TypefaceCompat {
         public void onTypefaceRequestFailed(int i) {
             ResourcesCompat.FontCallback fontCallback = this.mFontCallback;
             if (fontCallback != null) {
-                fontCallback.m8045xb24343b7(i);
+                fontCallback.m8650xb24343b7(i);
             }
         }
     }

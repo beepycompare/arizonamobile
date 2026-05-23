@@ -2,7 +2,6 @@ package androidx.media3.exoplayer.source.chunk;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.MimeTypes;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderInputBuffer;
@@ -31,7 +30,6 @@ import java.util.List;
 public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, SequenceableLoader, Loader.Callback<Chunk>, Loader.ReleaseCallback {
     private static final String TAG = "ChunkSampleStream";
     private final SequenceableLoader.Callback<ChunkSampleStream<T>> callback;
-    private boolean canReportInitialDiscontinuity;
     private BaseMediaChunk canceledMediaChunk;
     private final BaseMediaChunkOutput chunkOutput;
     private final T chunkSource;
@@ -47,6 +45,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     boolean loadingFinished;
     private final ArrayList<BaseMediaChunk> mediaChunks;
     private final MediaSourceEventListener.EventDispatcher mediaSourceEventDispatcher;
+    private boolean needToEvaluateInitialDiscontinuity;
     private final ChunkHolder nextChunkHolder;
     private int nextNotifyPrimaryFormatMediaChunkIndex;
     private long pendingResetPositionUs;
@@ -55,15 +54,15 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     public final int primaryTrackType;
     private final List<BaseMediaChunk> readOnlyMediaChunks;
     private ReleaseCallback<T> releaseCallback;
+    private boolean suppressRead;
 
     /* loaded from: classes3.dex */
     public interface ReleaseCallback<T extends ChunkSource> {
         void onSampleStreamReleased(ChunkSampleStream<T> chunkSampleStream);
     }
 
-    public ChunkSampleStream(int i, int[] iArr, Format[] formatArr, T t, SequenceableLoader.Callback<ChunkSampleStream<T>> callback, Allocator allocator, long j, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, boolean z, ReleasableExecutor releasableExecutor) {
+    public ChunkSampleStream(int i, int[] iArr, Format[] formatArr, T t, SequenceableLoader.Callback<ChunkSampleStream<T>> callback, Allocator allocator, long j, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, boolean z, long j2, ReleasableExecutor releasableExecutor) {
         this.primaryTrackType = i;
-        int i2 = 0;
         iArr = iArr == null ? new int[0] : iArr;
         this.embeddedTrackTypes = iArr;
         this.embeddedTrackFormats = formatArr == null ? new Format[0] : formatArr;
@@ -71,7 +70,6 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         this.callback = callback;
         this.mediaSourceEventDispatcher = eventDispatcher2;
         this.loadErrorHandlingPolicy = loadErrorHandlingPolicy;
-        this.canReportInitialDiscontinuity = z;
         this.loader = releasableExecutor != null ? new Loader(releasableExecutor) : new Loader(TAG);
         this.nextChunkHolder = new ChunkHolder();
         ArrayList<BaseMediaChunk> arrayList = new ArrayList<>();
@@ -80,24 +78,31 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         int length = iArr.length;
         this.embeddedSampleQueues = new SampleQueue[length];
         this.embeddedTracksSelected = new boolean[length];
-        int i3 = length + 1;
-        int[] iArr2 = new int[i3];
-        SampleQueue[] sampleQueueArr = new SampleQueue[i3];
+        int i2 = length + 1;
+        int[] iArr2 = new int[i2];
+        SampleQueue[] sampleQueueArr = new SampleQueue[i2];
         SampleQueue createWithDrm = SampleQueue.createWithDrm(allocator, drmSessionManager, eventDispatcher);
         this.primarySampleQueue = createWithDrm;
         iArr2[0] = i;
         sampleQueueArr[0] = createWithDrm;
-        while (i2 < length) {
+        int i3 = 0;
+        while (i3 < length) {
             SampleQueue createWithoutDrm = SampleQueue.createWithoutDrm(allocator);
-            this.embeddedSampleQueues[i2] = createWithoutDrm;
-            int i4 = i2 + 1;
+            this.embeddedSampleQueues[i3] = createWithoutDrm;
+            int i4 = i3 + 1;
             sampleQueueArr[i4] = createWithoutDrm;
-            iArr2[i4] = this.embeddedTrackTypes[i2];
-            i2 = i4;
+            iArr2[i4] = this.embeddedTrackTypes[i3];
+            i3 = i4;
         }
         this.chunkOutput = new BaseMediaChunkOutput(iArr2, sampleQueueArr);
         this.pendingResetPositionUs = j;
         this.lastSeekPositionUs = j;
+        this.needToEvaluateInitialDiscontinuity = z;
+        if (!z || j2 == C.TIME_UNSET) {
+            return;
+        }
+        this.needToEvaluateInitialDiscontinuity = false;
+        this.hasInitialDiscontinuity = j2 < j;
     }
 
     public void discardBuffer(long j, boolean z) {
@@ -169,9 +174,11 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     public void seekToUs(long j) {
         BaseMediaChunk baseMediaChunk;
         boolean seekTo;
+        BaseMediaChunk baseMediaChunk2;
         this.lastSeekPositionUs = j;
         int i = 0;
-        this.canReportInitialDiscontinuity = false;
+        this.needToEvaluateInitialDiscontinuity = false;
+        this.hasInitialDiscontinuity = false;
         if (isPendingReset()) {
             this.pendingResetPositionUs = j;
             return;
@@ -191,6 +198,9 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         } else {
             long nextLoadPositionUs = getNextLoadPositionUs();
             seekTo = this.primarySampleQueue.seekTo(j, nextLoadPositionUs == Long.MIN_VALUE || j < nextLoadPositionUs);
+        }
+        if (seekTo && (baseMediaChunk2 = this.canceledMediaChunk) != null && baseMediaChunk2.getFirstSampleIndex(0) <= this.primarySampleQueue.getReadIndex()) {
+            seekTo = false;
         }
         if (seekTo) {
             this.nextNotifyPrimaryFormatMediaChunkIndex = primarySampleIndexToMediaChunkIndex(this.primarySampleQueue.getReadIndex(), 0);
@@ -219,6 +229,13 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         }
         this.loader.clearFatalError();
         resetSampleQueues();
+    }
+
+    public void setEndPositionUs(long j) {
+        this.primarySampleQueue.setReadEndTimeUs(j);
+        for (SampleQueue sampleQueue : this.embeddedSampleQueues) {
+            sampleQueue.setReadEndTimeUs(j);
+        }
     }
 
     public void release() {
@@ -264,7 +281,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
 
     @Override // androidx.media3.exoplayer.source.SampleStream
     public int readData(FormatHolder formatHolder, DecoderInputBuffer decoderInputBuffer, int i) {
-        if (isPendingReset()) {
+        if (isPendingReset() || mayHaveInitialDiscontinuity() || this.suppressRead) {
             return -3;
         }
         BaseMediaChunk baseMediaChunk = this.canceledMediaChunk;
@@ -277,7 +294,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
 
     @Override // androidx.media3.exoplayer.source.SampleStream
     public int skipData(long j) {
-        if (isPendingReset()) {
+        if (isPendingReset() || mayHaveInitialDiscontinuity() || this.suppressRead) {
             return 0;
         }
         int skipCount = this.primarySampleQueue.getSkipCount(j, this.loadingFinished);
@@ -422,11 +439,9 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
                         for (SampleQueue sampleQueue : this.embeddedSampleQueues) {
                             sampleQueue.setStartTimeUs(this.pendingResetPositionUs);
                         }
-                        if (this.canReportInitialDiscontinuity) {
-                            this.hasInitialDiscontinuity = !MimeTypes.allSamplesAreSyncSamples(baseMediaChunk.trackFormat.sampleMimeType, baseMediaChunk.trackFormat.codecs);
-                        }
+                        this.hasInitialDiscontinuity = this.needToEvaluateInitialDiscontinuity;
                     }
-                    this.canReportInitialDiscontinuity = false;
+                    this.needToEvaluateInitialDiscontinuity = false;
                     this.pendingResetPositionUs = C.TIME_UNSET;
                 }
                 baseMediaChunk.init(this.chunkOutput);
@@ -476,6 +491,13 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         if (preferredQueueSize < this.mediaChunks.size()) {
             discardUpstream(preferredQueueSize);
         }
+        if (this.primarySampleQueue.hasQueuedTimestampsUpToReadEndTimeUs()) {
+            this.loadingFinished = true;
+        }
+    }
+
+    public boolean mayHaveInitialDiscontinuity() {
+        return ((!this.needToEvaluateInitialDiscontinuity && !this.hasInitialDiscontinuity) || this.loadingFinished || this.loader.hasFatalError()) ? false : true;
     }
 
     public boolean consumeInitialDiscontinuity() {
@@ -484,6 +506,10 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         } finally {
             this.hasInitialDiscontinuity = false;
         }
+    }
+
+    public void setSuppressRead(boolean z) {
+        this.suppressRead = z;
     }
 
     public void discardUpstreamSamplesForClippedDuration(long j) {

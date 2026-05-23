@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.trackselection;
 
 import android.graphics.Point;
-import android.os.SystemClock;
 import androidx.media3.common.TrackGroup;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.util.Util;
@@ -9,7 +8,6 @@ import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.MappingTrackSelector;
-import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,18 +48,6 @@ public final class TrackSelectionUtil {
         return rendererDisabled.build();
     }
 
-    public static LoadErrorHandlingPolicy.FallbackOptions createFallbackOptions(ExoTrackSelection exoTrackSelection) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        int length = exoTrackSelection.length();
-        int i = 0;
-        for (int i2 = 0; i2 < length; i2++) {
-            if (exoTrackSelection.isTrackExcluded(i2, elapsedRealtime)) {
-                i++;
-            }
-        }
-        return new LoadErrorHandlingPolicy.FallbackOptions(1, 0, length, i);
-    }
-
     public static Tracks buildTracks(MappingTrackSelector.MappedTrackInfo mappedTrackInfo, TrackSelection[] trackSelectionArr) {
         List[] listArr = new List[trackSelectionArr.length];
         for (int i = 0; i < trackSelectionArr.length; i++) {
@@ -71,40 +57,67 @@ public final class TrackSelectionUtil {
         return buildTracks(mappedTrackInfo, listArr);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r14v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r14v3 */
+    /* JADX WARN: Type inference failed for: r3v10, types: [int] */
+    /* JADX WARN: Type inference failed for: r3v14 */
     public static Tracks buildTracks(MappingTrackSelector.MappedTrackInfo mappedTrackInfo, List<? extends TrackSelection>[] listArr) {
-        boolean z;
+        MappingTrackSelector.MappedTrackInfo mappedTrackInfo2 = mappedTrackInfo;
+        List<? extends TrackSelection>[] listArr2 = listArr;
         ImmutableList.Builder builder = new ImmutableList.Builder();
-        for (int i = 0; i < mappedTrackInfo.getRendererCount(); i++) {
-            TrackGroupArray trackGroups = mappedTrackInfo.getTrackGroups(i);
-            List<? extends TrackSelection> list = listArr[i];
-            for (int i2 = 0; i2 < trackGroups.length; i2++) {
+        boolean z = false;
+        int i = 0;
+        while (i < mappedTrackInfo2.getRendererCount()) {
+            TrackGroupArray trackGroups = mappedTrackInfo2.getTrackGroups(i);
+            int i2 = z;
+            while (i2 < trackGroups.length) {
                 TrackGroup trackGroup = trackGroups.get(i2);
-                boolean z2 = mappedTrackInfo.getAdaptiveSupport(i, i2, false) != 0;
+                boolean z2 = mappedTrackInfo2.getAdaptiveSupport(i, i2, z) != 0 ? true : z;
                 int[] iArr = new int[trackGroup.length];
                 boolean[] zArr = new boolean[trackGroup.length];
-                for (int i3 = 0; i3 < trackGroup.length; i3++) {
-                    iArr[i3] = mappedTrackInfo.getTrackSupport(i, i2, i3);
-                    int i4 = 0;
-                    while (true) {
-                        if (i4 >= list.size()) {
-                            z = false;
-                            break;
+                MappingTrackSelector.MappedTrackInfo mappedTrackInfo3 = mappedTrackInfo2;
+                for (int i3 = z; i3 < trackGroup.length; i3++) {
+                    iArr[i3] = mappedTrackInfo3.getTrackSupport(i, i2, i3);
+                    int length = listArr2.length;
+                    boolean z3 = z;
+                    boolean z4 = z3;
+                    boolean z5 = z;
+                    for (int i4 = z3; i4 < length; i4++) {
+                        List<? extends TrackSelection> list = listArr2[i4];
+                        int i5 = z5;
+                        while (true) {
+                            if (i5 < list.size()) {
+                                TrackSelection trackSelection = list.get(i5);
+                                if (trackSelection.getTrackGroup().equals(trackGroup) && trackSelection.indexOf(i3) != -1) {
+                                    z4 = true;
+                                    break;
+                                }
+                                i5++;
+                            }
                         }
-                        TrackSelection trackSelection = list.get(i4);
-                        if (trackSelection.getTrackGroup().equals(trackGroup) && trackSelection.indexOf(i3) != -1) {
-                            z = true;
-                            break;
-                        }
-                        i4++;
+                        listArr2 = listArr;
+                        z5 = false;
                     }
-                    zArr[i3] = z;
+                    zArr[i3] = z4;
+                    mappedTrackInfo3 = mappedTrackInfo;
+                    listArr2 = listArr;
+                    z = false;
                 }
                 builder.add((ImmutableList.Builder) new Tracks.Group(trackGroup, z2, iArr, zArr));
+                i2++;
+                mappedTrackInfo2 = mappedTrackInfo;
+                listArr2 = listArr;
+                z = false;
             }
+            i++;
+            mappedTrackInfo2 = mappedTrackInfo;
+            listArr2 = listArr;
+            z = false;
         }
         TrackGroupArray unmappedTrackGroups = mappedTrackInfo.getUnmappedTrackGroups();
-        for (int i5 = 0; i5 < unmappedTrackGroups.length; i5++) {
-            TrackGroup trackGroup2 = unmappedTrackGroups.get(i5);
+        for (int i6 = 0; i6 < unmappedTrackGroups.length; i6++) {
+            TrackGroup trackGroup2 = unmappedTrackGroups.get(i6);
             int[] iArr2 = new int[trackGroup2.length];
             Arrays.fill(iArr2, 0);
             builder.add((ImmutableList.Builder) new Tracks.Group(trackGroup2, false, iArr2, new boolean[trackGroup2.length]));

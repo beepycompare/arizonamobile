@@ -9,7 +9,7 @@ import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.audio.AudioRendererEventListener;
 import androidx.media3.exoplayer.audio.AudioSink;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface AudioRendererEventListener {
     default void onAudioCodecError(Exception exc) {
     }
@@ -53,7 +53,7 @@ public interface AudioRendererEventListener {
     default void onSkipSilenceEnabledChanged(boolean z) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class EventDispatcher {
         private final Handler handler;
         private final AudioRendererEventListener listener;
@@ -69,7 +69,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8241x55ee20a7(decoderCounters);
+                        AudioRendererEventListener.EventDispatcher.this.m8848x55ee20a7(decoderCounters);
                     }
                 });
             }
@@ -77,7 +77,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$enabled$0$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8241x55ee20a7(DecoderCounters decoderCounters) {
+        public /* synthetic */ void m8848x55ee20a7(DecoderCounters decoderCounters) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioEnabled(decoderCounters);
         }
 
@@ -87,7 +87,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda12
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8238x4e7a341d(str, j, j2);
+                        AudioRendererEventListener.EventDispatcher.this.m8845x4e7a341d(str, j, j2);
                     }
                 });
             }
@@ -95,7 +95,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$decoderInitialized$1$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8238x4e7a341d(String str, long j, long j2) {
+        public /* synthetic */ void m8845x4e7a341d(String str, long j, long j2) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioDecoderInitialized(str, j, j2);
         }
 
@@ -105,7 +105,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8242x1ee33b39(format, decoderReuseEvaluation);
+                        AudioRendererEventListener.EventDispatcher.this.m8849x1ee33b39(format, decoderReuseEvaluation);
                     }
                 });
             }
@@ -113,7 +113,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$inputFormatChanged$2$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8242x1ee33b39(Format format, DecoderReuseEvaluation decoderReuseEvaluation) {
+        public /* synthetic */ void m8849x1ee33b39(Format format, DecoderReuseEvaluation decoderReuseEvaluation) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioInputFormatChanged(format, decoderReuseEvaluation);
         }
 
@@ -123,7 +123,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8243xa4e1944f(j);
+                        AudioRendererEventListener.EventDispatcher.this.m8850xa4e1944f(j);
                     }
                 });
             }
@@ -131,7 +131,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$positionAdvancing$3$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8243xa4e1944f(long j) {
+        public /* synthetic */ void m8850xa4e1944f(long j) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioPositionAdvancing(j);
         }
 
@@ -141,7 +141,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8245x8e019017(i, j, j2);
+                        AudioRendererEventListener.EventDispatcher.this.m8852x8e019017(i, j, j2);
                     }
                 });
             }
@@ -149,7 +149,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$underrun$4$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8245x8e019017(int i, long j, long j2) {
+        public /* synthetic */ void m8852x8e019017(int i, long j, long j2) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioUnderrun(i, j, j2);
         }
 
@@ -159,7 +159,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8239x102cf822(str);
+                        AudioRendererEventListener.EventDispatcher.this.m8846x102cf822(str);
                     }
                 });
             }
@@ -167,7 +167,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$decoderReleased$5$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8239x102cf822(String str) {
+        public /* synthetic */ void m8846x102cf822(String str) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioDecoderReleased(str);
         }
 
@@ -178,7 +178,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8240xe116cfac(decoderCounters);
+                        AudioRendererEventListener.EventDispatcher.this.m8847xe116cfac(decoderCounters);
                     }
                 });
             }
@@ -186,7 +186,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$disabled$6$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8240xe116cfac(DecoderCounters decoderCounters) {
+        public /* synthetic */ void m8847xe116cfac(DecoderCounters decoderCounters) {
             decoderCounters.ensureUpdated();
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioDisabled(decoderCounters);
         }
@@ -197,7 +197,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8244x60b531cc(z);
+                        AudioRendererEventListener.EventDispatcher.this.m8851x60b531cc(z);
                     }
                 });
             }
@@ -205,7 +205,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$skipSilenceEnabledChanged$7$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8244x60b531cc(boolean z) {
+        public /* synthetic */ void m8851x60b531cc(boolean z) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onSkipSilenceEnabledChanged(z);
         }
 
@@ -215,7 +215,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8235xc89a3787(exc);
+                        AudioRendererEventListener.EventDispatcher.this.m8842xc89a3787(exc);
                     }
                 });
             }
@@ -223,7 +223,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioSinkError$8$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8235xc89a3787(Exception exc) {
+        public /* synthetic */ void m8842xc89a3787(Exception exc) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioSinkError(exc);
         }
 
@@ -233,7 +233,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8232xdf751697(exc);
+                        AudioRendererEventListener.EventDispatcher.this.m8839xdf751697(exc);
                     }
                 });
             }
@@ -241,7 +241,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioCodecError$9$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8232xdf751697(Exception exc) {
+        public /* synthetic */ void m8839xdf751697(Exception exc) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioCodecError(exc);
         }
 
@@ -251,7 +251,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8236xee74b056(audioTrackConfig);
+                        AudioRendererEventListener.EventDispatcher.this.m8843xee74b056(audioTrackConfig);
                     }
                 });
             }
@@ -259,7 +259,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioTrackInitialized$10$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8236xee74b056(AudioSink.AudioTrackConfig audioTrackConfig) {
+        public /* synthetic */ void m8843xee74b056(AudioSink.AudioTrackConfig audioTrackConfig) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioTrackInitialized(audioTrackConfig);
         }
 
@@ -269,7 +269,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8237x12b02702(audioTrackConfig);
+                        AudioRendererEventListener.EventDispatcher.this.m8844x12b02702(audioTrackConfig);
                     }
                 });
             }
@@ -277,7 +277,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioTrackReleased$11$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8237x12b02702(AudioSink.AudioTrackConfig audioTrackConfig) {
+        public /* synthetic */ void m8844x12b02702(AudioSink.AudioTrackConfig audioTrackConfig) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioTrackReleased(audioTrackConfig);
         }
 
@@ -287,7 +287,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8234x1e3a42e(i);
+                        AudioRendererEventListener.EventDispatcher.this.m8841x1e3a42e(i);
                     }
                 });
             }
@@ -295,7 +295,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioSessionIdChanged$12$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8234x1e3a42e(int i) {
+        public /* synthetic */ void m8841x1e3a42e(int i) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioSessionIdChanged(i);
         }
 
@@ -305,7 +305,7 @@ public interface AudioRendererEventListener {
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioRendererEventListener.EventDispatcher.this.m8233xa7a89dde(codecParameters);
+                        AudioRendererEventListener.EventDispatcher.this.m8840xa7a89dde(codecParameters);
                     }
                 });
             }
@@ -313,7 +313,7 @@ public interface AudioRendererEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$audioCodecParametersChanged$13$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8233xa7a89dde(CodecParameters codecParameters) {
+        public /* synthetic */ void m8840xa7a89dde(CodecParameters codecParameters) {
             ((AudioRendererEventListener) Util.castNonNull(this.listener)).onAudioCodecParametersChanged(codecParameters);
         }
     }

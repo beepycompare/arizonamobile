@@ -50,7 +50,7 @@ public final class WifiLockManager {
             this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.common.util.WifiLockManager$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WifiLockManager.this.m8175xfd5ac0b8(z, z2);
+                    WifiLockManager.this.m8780xfd5ac0b8(z, z2);
                 }
             });
             return;
@@ -59,32 +59,32 @@ public final class WifiLockManager {
         this.mainHandler.postDelayed(new Runnable() { // from class: androidx.media3.common.util.WifiLockManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                WifiLockManager.this.m8176x97fb8339(atomicBoolean);
+                WifiLockManager.this.m8781x97fb8339(atomicBoolean);
             }
         }, 1000L);
         this.wifiLockHandler.post(new Runnable() { // from class: androidx.media3.common.util.WifiLockManager$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                WifiLockManager.this.m8177x329c45ba(atomicBoolean, z, z2);
+                WifiLockManager.this.m8782x329c45ba(atomicBoolean, z, z2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWifiLock$0$androidx-media3-common-util-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m8175xfd5ac0b8(boolean z, boolean z2) {
+    public /* synthetic */ void m8780xfd5ac0b8(boolean z, boolean z2) {
         this.wifiLockManagerInternal.updateWifiLock(z, z2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWifiLock$1$androidx-media3-common-util-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m8176x97fb8339(AtomicBoolean atomicBoolean) {
+    public /* synthetic */ void m8781x97fb8339(AtomicBoolean atomicBoolean) {
         this.wifiLockManagerInternal.forceReleaseWifiLock(atomicBoolean);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postUpdateWifiLock$2$androidx-media3-common-util-WifiLockManager  reason: not valid java name */
-    public /* synthetic */ void m8177x329c45ba(AtomicBoolean atomicBoolean, boolean z, boolean z2) {
+    public /* synthetic */ void m8782x329c45ba(AtomicBoolean atomicBoolean, boolean z, boolean z2) {
         atomicBoolean.set(false);
         this.wifiLockManagerInternal.updateWifiLock(z, z2);
     }
@@ -132,7 +132,7 @@ public final class WifiLockManager {
                 new Thread(new Runnable() { // from class: androidx.media3.common.util.WifiLockManager$WifiLockManagerInternal$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WifiLockManager.WifiLockManagerInternal.this.m8178xd91cfc11(atomicBoolean);
+                        WifiLockManager.WifiLockManagerInternal.this.m8783xd91cfc11(atomicBoolean);
                     }
                 }, WifiLockManager.WIFI_LOCK_TAG).start();
             }
@@ -140,7 +140,7 @@ public final class WifiLockManager {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: forceReleaseWifiLockInternal */
-        public synchronized void m8178xd91cfc11(AtomicBoolean atomicBoolean) {
+        public synchronized void m8783xd91cfc11(AtomicBoolean atomicBoolean) {
             WifiManager.WifiLock wifiLock;
             if (atomicBoolean.get() && (wifiLock = this.wifiLock) != null) {
                 wifiLock.release();

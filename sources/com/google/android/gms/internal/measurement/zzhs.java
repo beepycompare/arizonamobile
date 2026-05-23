@@ -1,53 +1,62 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzhs extends zzmf implements zznn {
-    private static final zzhs zzj;
+public final class zzhs extends zzadu implements zzafd {
+    private static final zzhs zzm;
+    private static volatile zzafj zzn;
     private int zzb;
-    private zzmo zzd = zzcv();
-    private String zze = "";
-    private long zzf;
+    private zzaef zze = zzcy();
+    private String zzf = "";
     private long zzg;
-    private int zzh;
-    private long zzi;
+    private long zzh;
+    private int zzi;
+    private long zzj;
+    private long zzk;
+    private long zzl;
 
     static {
         zzhs zzhsVar = new zzhs();
-        zzj = zzhsVar;
-        zzmf.zzcp(zzhs.class, zzhsVar);
+        zzm = zzhsVar;
+        zzadu.zzcs(zzhs.class, zzhsVar);
     }
 
     private zzhs() {
     }
 
-    public static zzhr zzk() {
-        return (zzhr) zzj.zzck();
-    }
-
-    private final void zzw() {
-        zzmo zzmoVar = this.zzd;
-        if (zzmoVar.zza()) {
+    private final void zzC() {
+        zzaef zzaefVar = this.zze;
+        if (zzaefVar.zza()) {
             return;
         }
-        this.zzd = zzmf.zzcw(zzmoVar);
+        this.zze = zzadu.zzcz(zzaefVar);
+    }
+
+    public static zzhr zzp() {
+        return (zzhr) zzm.zzcn();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzA(long j) {
+        this.zzb |= 64;
+        this.zzl = j;
     }
 
     public final List zza() {
-        return this.zzd;
+        return this.zze;
     }
 
     public final int zzb() {
-        return this.zzd.size();
+        return this.zze.size();
     }
 
     public final zzhw zzc(int i) {
-        return (zzhw) this.zzd.get(i);
+        return (zzhw) this.zze.get(i);
     }
 
     public final String zzd() {
-        return this.zze;
+        return this.zzf;
     }
 
     public final boolean zze() {
@@ -55,38 +64,131 @@ public final class zzhs extends zzmf implements zznn {
     }
 
     public final long zzf() {
-        return this.zzf;
-    }
-
-    public final boolean zzg() {
-        return (this.zzb & 4) != 0;
-    }
-
-    public final long zzh() {
         return this.zzg;
     }
 
-    public final boolean zzi() {
-        return (this.zzb & 8) != 0;
+    public final boolean zzh() {
+        return (this.zzb & 4) != 0;
     }
 
-    public final int zzj() {
+    public final long zzi() {
         return this.zzh;
     }
 
+    public final boolean zzj() {
+        return (this.zzb & 8) != 0;
+    }
+
+    public final int zzk() {
+        return this.zzi;
+    }
+
+    public final boolean zzl() {
+        return (this.zzb & 32) != 0;
+    }
+
+    public final long zzm() {
+        return this.zzk;
+    }
+
+    public final boolean zzn() {
+        return (this.zzb & 64) != 0;
+    }
+
+    public final long zzo() {
+        return this.zzl;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzq(int i, zzhw zzhwVar) {
+        zzhwVar.getClass();
+        zzC();
+        this.zze.set(i, zzhwVar);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzr(zzhw zzhwVar) {
+        zzhwVar.getClass();
+        zzC();
+        this.zze.add(zzhwVar);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzs(Iterable iterable) {
+        zzC();
+        zzacb.zzcg(iterable, this.zze);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzt() {
+        this.zze = zzcy();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzu(int i) {
+        zzC();
+        this.zze.remove(i);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzv(String str) {
+        str.getClass();
+        this.zzb |= 1;
+        this.zzf = str;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzw(long j) {
+        this.zzb |= 2;
+        this.zzg = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzx(long j) {
+        this.zzb |= 4;
+        this.zzh = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzy(long j) {
+        this.zzb |= 16;
+        this.zzj = j;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ void zzz(long j) {
+        this.zzb |= 32;
+        this.zzk = j;
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzj, "\u0004\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000\u0003ဂ\u0001\u0004ဂ\u0002\u0005င\u0003\u0006ဂ\u0004", new Object[]{"zzb", "zzd", zzhw.class, "zze", "zzf", "zzg", "zzh", "zzi"});
+                return zzct(zzm, "\u0004\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000\u0003ဂ\u0001\u0004ဂ\u0002\u0005င\u0003\u0006ဂ\u0004\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zzb", "zze", zzhw.class, "zzf", "zzg", "zzh", "zzi", "zzj", "zzk", "zzl"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzj;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzn;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzhs.class) {
+                                    zzafjVar = zzn;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzm);
+                                        zzn = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzm;
                 }
                 return new zzhr(null);
             } else {
@@ -94,61 +196,5 @@ public final class zzhs extends zzmf implements zznn {
             }
         }
         return (byte) 1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzm(int i, zzhw zzhwVar) {
-        zzhwVar.getClass();
-        zzw();
-        this.zzd.set(i, zzhwVar);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzn(zzhw zzhwVar) {
-        zzhwVar.getClass();
-        zzw();
-        this.zzd.add(zzhwVar);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzo(Iterable iterable) {
-        zzw();
-        zzks.zzce(iterable, this.zzd);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzp() {
-        this.zzd = zzcv();
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzq(int i) {
-        zzw();
-        this.zzd.remove(i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzr(String str) {
-        str.getClass();
-        this.zzb |= 1;
-        this.zze = str;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzs(long j) {
-        this.zzb |= 2;
-        this.zzf = j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzt(long j) {
-        this.zzb |= 4;
-        this.zzg = j;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzu(long j) {
-        this.zzb |= 16;
-        this.zzi = j;
     }
 }

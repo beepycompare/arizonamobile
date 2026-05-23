@@ -6,28 +6,32 @@ import androidx.compose.ui.geometry.RectKt;
 import androidx.compose.ui.geometry.Size;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SharedTransitionStateMachine.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a7\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\u0001H\u0002¢\u0006\u0004\b\f\u0010\r\u001a\u0018\u0010\u000e\u001a\u0004\u0018\u00010\u000f*\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0002\u001a\u0019\u0010\u0016\u001a\u00020\t*\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u000fH\u0000¢\u0006\u0002\u0010\u0018\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u0018\u0010\u0013\u001a\u00020\u000f*\u00020\u00058@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015¨\u0006\u0019"}, d2 = {"SharedTransitionDebug", "", "updateTargetData", "", "targetData", "Landroidx/compose/animation/TargetData;", "lookaheadSize", "Landroidx/compose/ui/geometry/Size;", "topLeft", "Landroidx/compose/ui/geometry/Offset;", "structuralOffset", "targetBoundsProviderChanged", "updateTargetData-BGTQxF0", "(Landroidx/compose/animation/TargetData;JJJZ)V", "obtainBoundsFromLastTarget", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/animation/SharedElement;", "lastTargetBoundsProvider", "Landroidx/compose/animation/BoundsProvider;", "targetBounds", "getTargetBounds", "(Landroidx/compose/animation/TargetData;)Landroidx/compose/ui/geometry/Rect;", "calculateOffsetFromDirectManipulation", "animatedBounds", "(Landroidx/compose/animation/TargetData;Landroidx/compose/ui/geometry/Rect;)J", "animation"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u001a\u0017\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H\u0080\b\u001a7\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0001H\u0002¢\u0006\u0004\b\u0010\u0010\u0011\u001a\u0018\u0010\u0012\u001a\u0004\u0018\u00010\u0013*\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0002\u001a\u0019\u0010\u001a\u001a\u00020\r*\u00020\t2\u0006\u0010\u001b\u001a\u00020\u0013H\u0000¢\u0006\u0002\u0010\u001c\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u0018\u0010\u0017\u001a\u00020\u0013*\u00020\t8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019¨\u0006\u001d"}, d2 = {"SharedTransitionDebug", "", "sharedTransitionDebug", "", "message", "Lkotlin/Function0;", "", "updateTargetData", "targetData", "Landroidx/compose/animation/TargetData;", "lookaheadSize", "Landroidx/compose/ui/geometry/Size;", "topLeft", "Landroidx/compose/ui/geometry/Offset;", "structuralOffset", "targetBoundsProviderChanged", "updateTargetData-BGTQxF0", "(Landroidx/compose/animation/TargetData;JJJZ)V", "obtainBoundsFromLastTarget", "Landroidx/compose/ui/geometry/Rect;", "Landroidx/compose/animation/SharedElement;", "lastTargetBoundsProvider", "Landroidx/compose/animation/BoundsProvider;", "targetBounds", "getTargetBounds", "(Landroidx/compose/animation/TargetData;)Landroidx/compose/ui/geometry/Rect;", "calculateOffsetFromDirectManipulation", "animatedBounds", "(Landroidx/compose/animation/TargetData;Landroidx/compose/ui/geometry/Rect;)J", "animation"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SharedTransitionStateMachineKt {
     public static final boolean SharedTransitionDebug = false;
 
     /* renamed from: access$updateTargetData-BGTQxF0 */
-    public static final /* synthetic */ void m130access$updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
-        m131updateTargetDataBGTQxF0(targetData, j, j2, j3, z);
+    public static final /* synthetic */ void m154access$updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
+        m155updateTargetDataBGTQxF0(targetData, j, j2, j3, z);
+    }
+
+    public static final void sharedTransitionDebug(Function0<String> function0) {
     }
 
     /* renamed from: updateTargetData-BGTQxF0 */
-    public static final void m131updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
-        if (!Offset.m4524equalsimpl0(targetData.m147getTargetStructuralOffsetF1C5BW0(), j3) || !Size.m4592equalsimpl0(targetData.m146getSizeNHjbRc(), j) || z) {
-            targetData.m150setSizeuvyYCjk(j);
-            targetData.m151setTargetStructuralOffsetk4lQ0M(j3);
+    public static final void m155updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
+        if (!Offset.m5100equalsimpl0(targetData.m171getTargetStructuralOffsetF1C5BW0(), j3) || !Size.m5168equalsimpl0(targetData.m170getSizeNHjbRc(), j) || z) {
+            targetData.m174setSizeuvyYCjk(j);
+            targetData.m175setTargetStructuralOffsetk4lQ0M(j3);
             if (z) {
-                targetData.m149setInitialMfrOffsetk4lQ0M(Offset.m4531minusMKHz9U(Offset.m4531minusMKHz9U(j2, j3), Offset.m4531minusMKHz9U(targetData.m144getCurrentMfrOffsetF1C5BW0(), targetData.m145getInitialMfrOffsetF1C5BW0())));
+                targetData.m173setInitialMfrOffsetk4lQ0M(Offset.m5107minusMKHz9U(Offset.m5107minusMKHz9U(j2, j3), Offset.m5107minusMKHz9U(targetData.m168getCurrentMfrOffsetF1C5BW0(), targetData.m169getInitialMfrOffsetF1C5BW0())));
             }
         }
-        targetData.m148setCurrentMfrOffsetk4lQ0M(Offset.m4531minusMKHz9U(j2, j3));
+        targetData.m172setCurrentMfrOffsetk4lQ0M(Offset.m5107minusMKHz9U(j2, j3));
     }
 
     public static final Rect obtainBoundsFromLastTarget(SharedElement sharedElement, BoundsProvider boundsProvider) {
@@ -45,10 +49,10 @@ public final class SharedTransitionStateMachineKt {
     }
 
     public static final Rect getTargetBounds(TargetData targetData) {
-        return RectKt.m4567Recttz77jQw(Offset.m4532plusMKHz9U(targetData.m145getInitialMfrOffsetF1C5BW0(), targetData.m147getTargetStructuralOffsetF1C5BW0()), targetData.m146getSizeNHjbRc());
+        return RectKt.m5143Recttz77jQw(Offset.m5108plusMKHz9U(targetData.m169getInitialMfrOffsetF1C5BW0(), targetData.m171getTargetStructuralOffsetF1C5BW0()), targetData.m170getSizeNHjbRc());
     }
 
     public static final long calculateOffsetFromDirectManipulation(TargetData targetData, Rect rect) {
-        return Offset.m4532plusMKHz9U(Offset.m4531minusMKHz9U(rect.m4562getTopLeftF1C5BW0(), targetData.m145getInitialMfrOffsetF1C5BW0()), targetData.m144getCurrentMfrOffsetF1C5BW0());
+        return Offset.m5108plusMKHz9U(Offset.m5107minusMKHz9U(rect.m5138getTopLeftF1C5BW0(), targetData.m169getInitialMfrOffsetF1C5BW0()), targetData.m168getCurrentMfrOffsetF1C5BW0());
     }
 }

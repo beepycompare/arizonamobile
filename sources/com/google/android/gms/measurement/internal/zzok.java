@@ -9,28 +9,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.PersistableBundle;
 import androidx.core.app.NotificationCompat;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzok extends zzos {
     private final AlarmManager zza;
-    private zzay zzb;
+    private zzaz zzb;
     private Integer zzc;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public zzok(zzpg zzpgVar) {
         super(zzpgVar);
-        this.zza = (AlarmManager) this.zzu.zzaY().getSystemService(NotificationCompat.CATEGORY_ALARM);
-    }
-
-    private final zzay zzf() {
-        if (this.zzb == null) {
-            this.zzb = new zzoj(this, this.zzg.zzag());
-        }
-        return this.zzb;
+        this.zza = (AlarmManager) this.zzu.zzaZ().getSystemService(NotificationCompat.CATEGORY_ALARM);
     }
 
     private final void zzh() {
-        JobScheduler jobScheduler = (JobScheduler) this.zzu.zzaY().getSystemService("jobscheduler");
+        JobScheduler jobScheduler = (JobScheduler) this.zzu.zzaZ().getSystemService("jobscheduler");
         if (jobScheduler != null) {
             jobScheduler.cancel(zzi());
         }
@@ -38,7 +31,7 @@ public final class zzok extends zzos {
 
     private final int zzi() {
         if (this.zzc == null) {
-            String packageName = this.zzu.zzaY().getPackageName();
+            String packageName = this.zzu.zzaZ().getPackageName();
             String.valueOf(packageName);
             this.zzc = Integer.valueOf("measurement".concat(String.valueOf(packageName)).hashCode());
         }
@@ -46,12 +39,12 @@ public final class zzok extends zzos {
     }
 
     private final PendingIntent zzj() {
-        Context zzaY = this.zzu.zzaY();
-        return PendingIntent.getBroadcast(zzaY, 0, new Intent().setClassName(zzaY, "com.google.android.gms.measurement.AppMeasurementReceiver").setAction("com.google.android.gms.measurement.UPLOAD"), com.google.android.gms.internal.measurement.zzcg.zza);
+        Context zzaZ = this.zzu.zzaZ();
+        return com.google.android.gms.internal.measurement.zzce.zza(zzaZ, 0, new Intent().setClassName(zzaZ, "com.google.android.gms.measurement.AppMeasurementReceiver").setAction("com.google.android.gms.measurement.UPLOAD"), com.google.android.gms.internal.measurement.zzce.zza);
     }
 
     @Override // com.google.android.gms.measurement.internal.zzos
-    protected final boolean zzbb() {
+    protected final boolean zzbc() {
         AlarmManager alarmManager = this.zza;
         if (alarmManager != null) {
             alarmManager.cancel(zzj());
@@ -60,41 +53,48 @@ public final class zzok extends zzos {
         return false;
     }
 
-    public final void zzc(long j) {
-        zzaw();
+    protected final zzaz zzc() {
+        if (this.zzb == null) {
+            this.zzb = new zzoj(this, this.zzg.zzah());
+        }
+        return this.zzb;
+    }
+
+    public final void zzd(long j) {
+        zzay();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaU();
-        Context zzaY = zzicVar.zzaY();
-        if (!zzpp.zzau(zzaY)) {
-            zzicVar.zzaV().zzj().zza("Receiver not registered/enabled");
+        zzicVar.zzaV();
+        Context zzaZ = zzicVar.zzaZ();
+        if (!zzpp.zzax(zzaZ)) {
+            zzicVar.zzaW().zzj().zza("Receiver not registered/enabled");
         }
-        if (!zzpp.zzQ(zzaY, false)) {
-            zzicVar.zzaV().zzj().zza("Service not registered/enabled");
+        if (!zzpp.zzS(zzaZ, false)) {
+            zzicVar.zzaW().zzj().zza("Service not registered/enabled");
         }
-        zzd();
-        zzicVar.zzaV().zzk().zzb("Scheduling upload, millis", Long.valueOf(j));
-        zzicVar.zzaZ().elapsedRealtime();
+        zzf();
+        zzicVar.zzaW().zzk().zzb("Scheduling upload, millis", Long.valueOf(j));
+        zzicVar.zzba().elapsedRealtime();
         zzicVar.zzc();
-        if (j < Math.max(0L, ((Long) zzfy.zzL.zzb(null)).longValue()) && !zzf().zzc()) {
-            zzf().zzb(j);
+        if (j < Math.max(0L, ((Long) zzfy.zzL.zzb(null)).longValue()) && !zzc().zzc()) {
+            zzc().zzb(j);
         }
-        zzicVar.zzaU();
-        Context zzaY2 = zzicVar.zzaY();
-        ComponentName componentName = new ComponentName(zzaY2, "com.google.android.gms.measurement.AppMeasurementJobService");
+        zzicVar.zzaV();
+        Context zzaZ2 = zzicVar.zzaZ();
+        ComponentName componentName = new ComponentName(zzaZ2, "com.google.android.gms.measurement.AppMeasurementJobService");
         int zzi = zzi();
         PersistableBundle persistableBundle = new PersistableBundle();
         persistableBundle.putString("action", "com.google.android.gms.measurement.UPLOAD");
-        com.google.android.gms.internal.measurement.zzch.zza(zzaY2, new JobInfo.Builder(zzi, componentName).setMinimumLatency(j).setOverrideDeadline(j + j).setExtras(persistableBundle).build(), "com.google.android.gms", "UploadAlarm");
+        com.google.android.gms.internal.measurement.zzcf.zza(zzaZ2, new JobInfo.Builder(zzi, componentName).setMinimumLatency(j).setOverrideDeadline(j + j).setExtras(persistableBundle).build(), "com.google.android.gms", "UploadAlarm");
     }
 
-    public final void zzd() {
-        zzaw();
-        this.zzu.zzaV().zzk().zza("Unscheduling upload");
+    public final void zzf() {
+        zzay();
+        this.zzu.zzaW().zzk().zza("Unscheduling upload");
         AlarmManager alarmManager = this.zza;
         if (alarmManager != null) {
             alarmManager.cancel(zzj());
         }
-        zzf().zzd();
+        zzc().zzd();
         zzh();
     }
 }

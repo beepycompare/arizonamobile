@@ -9,7 +9,7 @@ import android.util.Log;
 import android.util.Xml;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParserException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ComplexColorCompat {
     private static final String LOG_TAG = "ComplexColorCompat";
     private int mColor;

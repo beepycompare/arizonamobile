@@ -22,7 +22,7 @@ import java.util.concurrent.ThreadFactory;
 import okio.BufferedSource;
 import okio.ByteString;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class Utils {
     private static final int KEY_PADDING = 50;
     static final char KEY_SEPARATOR = '\n';
@@ -278,7 +278,7 @@ public final class Utils {
         handler.sendMessageDelayed(handler.obtainMessage(), 1000L);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     static class PicassoThreadFactory implements ThreadFactory {
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
@@ -286,7 +286,7 @@ public final class Utils {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     private static class PicassoThread extends Thread {
         PicassoThread(Runnable runnable) {
             super(runnable);

@@ -1,7 +1,7 @@
 package com.miami.game.feature.notifications;
 
 import dagger.internal.Factory;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class NotificationStateHolder_Factory implements Factory<NotificationStateHolder> {
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public NotificationStateHolder get() {
@@ -16,7 +16,7 @@ public final class NotificationStateHolder_Factory implements Factory<Notificati
         return new NotificationStateHolder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class InstanceHolder {
         static final NotificationStateHolder_Factory INSTANCE = new NotificationStateHolder_Factory();
 

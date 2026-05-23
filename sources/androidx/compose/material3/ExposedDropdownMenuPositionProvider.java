@@ -64,7 +64,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
     }
 
     public /* synthetic */ ExposedDropdownMenuPositionProvider(Density density, int i, State state, int i2, Function2 function2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(density, i, (i3 & 4) != 0 ? null : state, (i3 & 8) != 0 ? density.mo399roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i2, (i3 & 16) != 0 ? new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuPositionProvider$$ExternalSyntheticLambda0
+        this(density, i, (i3 & 4) != 0 ? null : state, (i3 & 8) != 0 ? density.mo428roundToPx0680j_4(MenuKt.getMenuVerticalMargin()) : i2, (i3 & 16) != 0 ? new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuPositionProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 Unit unit;
@@ -86,7 +86,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+    public long mo401calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
         MenuPosition.Horizontal horizontal;
         IntRect intRect2;
         char c;
@@ -99,13 +99,13 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         }
         char c2 = ' ';
         long j4 = 4294967295L;
-        long m7721constructorimpl = IntSize.m7721constructorimpl(((((int) (j & 4294967295L)) + this.topWindowInsets) & 4294967295L) | (((int) (j >> 32)) << 32));
+        long m8326constructorimpl = IntSize.m8326constructorimpl(((((int) (j & 4294967295L)) + this.topWindowInsets) & 4294967295L) | (((int) (j >> 32)) << 32));
         MenuPosition.Horizontal[] horizontalArr = new MenuPosition.Horizontal[3];
         int i2 = 0;
         horizontalArr[0] = this.startToAnchorStart;
         horizontalArr[1] = this.endToAnchorEnd;
-        int i3 = (int) (m7721constructorimpl >> 32);
-        if (IntOffset.m7683getXimpl(intRect.m7707getCenternOccac()) < i3 / 2) {
+        int i3 = (int) (m8326constructorimpl >> 32);
+        if (IntOffset.m8288getXimpl(intRect.m8312getCenternOccac()) < i3 / 2) {
             horizontal = this.leftToWindowLeft;
         } else {
             horizontal = this.rightToWindowRight;
@@ -129,7 +129,7 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
             int i7 = i4;
             intRect2 = intRect;
             List list = listOf;
-            i = ((MenuPosition.Horizontal) listOf.get(i4)).mo2982position95KtPRI(intRect2, m7721constructorimpl, i5, layoutDirection);
+            i = ((MenuPosition.Horizontal) listOf.get(i4)).mo3427position95KtPRI(intRect2, m8326constructorimpl, i5, layoutDirection);
             if (i7 == CollectionsKt.getLastIndex(list) || (i >= 0 && i5 + i <= i3)) {
                 break;
             }
@@ -142,8 +142,8 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         MenuPosition.Vertical[] verticalArr = new MenuPosition.Vertical[3];
         verticalArr[0] = this.topToAnchorBottom;
         verticalArr[1] = this.bottomToAnchorTop;
-        int i8 = (int) (m7721constructorimpl & j3);
-        if (IntOffset.m7684getYimpl(intRect2.m7707getCenternOccac()) < i8 / 2) {
+        int i8 = (int) (m8326constructorimpl & j3);
+        if (IntOffset.m8289getYimpl(intRect2.m8312getCenternOccac()) < i8 / 2) {
             vertical = this.topToWindowTop;
         } else {
             vertical = this.bottomToWindowBottom;
@@ -153,14 +153,14 @@ public final class ExposedDropdownMenuPositionProvider implements PopupPositionP
         int size2 = listOf2.size();
         for (int i9 = 0; i9 < size2; i9++) {
             int i10 = (int) (j2 & j3);
-            int mo2983positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i9)).mo2983positionJVtK1S4(intRect2, m7721constructorimpl, i10);
-            if (i9 == CollectionsKt.getLastIndex(listOf2) || (mo2983positionJVtK1S4 >= 0 && i10 + mo2983positionJVtK1S4 <= i8)) {
-                i2 = mo2983positionJVtK1S4;
+            int mo3428positionJVtK1S4 = ((MenuPosition.Vertical) listOf2.get(i9)).mo3428positionJVtK1S4(intRect2, m8326constructorimpl, i10);
+            if (i9 == CollectionsKt.getLastIndex(listOf2) || (mo3428positionJVtK1S4 >= 0 && i10 + mo3428positionJVtK1S4 <= i8)) {
+                i2 = mo3428positionJVtK1S4;
                 break;
             }
         }
-        long m7677constructorimpl = IntOffset.m7677constructorimpl((i << c) | (i2 & j3));
-        this.onPositionCalculated.invoke(intRect2, IntRectKt.m7716IntRectVbeCjmY(m7677constructorimpl, j2));
-        return m7677constructorimpl;
+        long m8282constructorimpl = IntOffset.m8282constructorimpl((i << c) | (i2 & j3));
+        this.onPositionCalculated.invoke(intRect2, IntRectKt.m8321IntRectVbeCjmY(m8282constructorimpl, j2));
+        return m8282constructorimpl;
     }
 }

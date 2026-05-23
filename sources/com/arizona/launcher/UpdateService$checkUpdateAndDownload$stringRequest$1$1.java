@@ -133,7 +133,7 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
             this.this$0.mUpdateFiles = this.$gameDataInfo.getFirst();
             this.this$0.resetGameStatus();
             this.this$0.setUpdateStatus(UpdateService.UpdateStatus.Undefined);
-            BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new C00441(this.$onFinish, null), 2, null);
+            BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new C00451(this.$onFinish, null), 2, null);
             this.this$0.stopForegroundService();
             return Unit.INSTANCE;
         }
@@ -144,24 +144,24 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
         @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
         /* renamed from: com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C00441 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00451 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function0<Unit> $onFinish;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00441(Function0<Unit> function0, Continuation<? super C00441> continuation) {
+            C00451(Function0<Unit> function0, Continuation<? super C00451> continuation) {
                 super(2, continuation);
                 this.$onFinish = function0;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00441(this.$onFinish, continuation);
+                return new C00451(this.$onFinish, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00441) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00451) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.time;
 
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TestClock implements Clock {
     private final AtomicLong timestamp;
 

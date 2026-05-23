@@ -10,6 +10,7 @@ public final class RemoteConfigConstants {
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes4.dex */
     public @interface ExperimentDescriptionFieldKey {
+        public static final String AFFECTED_PARAMETER_KEYS = "affectedParameterKeys";
         public static final String EXPERIMENT_ID = "experimentId";
         public static final String VARIANT_ID = "variantId";
     }

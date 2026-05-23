@@ -1,16 +1,19 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes5.dex */
-public final class L2 implements InterfaceC0536qn {
+public final class L2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0560rn f673a;
+    public final Context f637a;
+    public final C0497p2 b;
 
-    public L2(InterfaceC0560rn interfaceC0560rn) {
-        this.f673a = interfaceC0560rn;
+    public L2(Context context) {
+        this(context, new C0497p2());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0536qn
-    public final void a(InterfaceC0511pn interfaceC0511pn) {
-        interfaceC0511pn.a(this.f673a.a());
+    public L2(Context context, C0497p2 c0497p2) {
+        this.f637a = context;
+        this.b = c0497p2;
     }
 }

@@ -61,7 +61,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         final int i3 = i + 1;
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         final EventAwardItemBinding eventAwardItemBinding = this.binding;
         eventAwardItemBinding.levelText.setText(String.valueOf(i3));

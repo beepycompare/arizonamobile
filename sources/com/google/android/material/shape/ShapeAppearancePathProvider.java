@@ -4,6 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.os.Looper;
 /* loaded from: classes4.dex */
 public class ShapeAppearancePathProvider {
     protected static final int BOTTOM_LEFT_CORNER_INDEX = 2;
@@ -30,8 +31,9 @@ public class ShapeAppearancePathProvider {
         void onEdgePathCreated(ShapePath shapePath, Matrix matrix, int i);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    private static class Lazy {
+    public static class Lazy {
         static final ShapeAppearancePathProvider INSTANCE = new ShapeAppearancePathProvider();
 
         private Lazy() {
@@ -44,6 +46,13 @@ public class ShapeAppearancePathProvider {
             this.cornerTransforms[i] = new Matrix();
             this.edgeTransforms[i] = new Matrix();
         }
+    }
+
+    public static ShapeAppearancePathProvider getInstanceOrCreate() {
+        if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
+            return getInstance();
+        }
+        return new ShapeAppearancePathProvider();
     }
 
     public static ShapeAppearancePathProvider getInstance() {

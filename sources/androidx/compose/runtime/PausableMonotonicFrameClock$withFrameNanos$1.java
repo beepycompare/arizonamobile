@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PausableMonotonicFrameClock.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.runtime.PausableMonotonicFrameClock", f = "PausableMonotonicFrameClock.kt", i = {0}, l = {61, RectListKt.BitOffsetForGesturable}, m = "withFrameNanos", n = {"onFrame"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class PausableMonotonicFrameClock$withFrameNanos$1<R> extends ContinuationImpl {

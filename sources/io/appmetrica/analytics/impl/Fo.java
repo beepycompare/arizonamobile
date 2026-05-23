@@ -1,15 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import io.appmetrica.analytics.BuildConfig;
+import io.appmetrica.analytics.coreutils.internal.network.UserAgent;
 /* loaded from: classes5.dex */
-public final class Fo implements Consumer {
+public final class Fo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f591a = "WebView interface setup failed because javascript is disabled for the WebView.";
+    public final String f552a = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "8.2.0", "50163623");
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f591a, new Object[0]);
+    public final String a() {
+        return this.f552a;
     }
 }

@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.server.response.FastJsonResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class StringToIntConverter extends AbstractSafeParcelable implements FastJsonResponse.FieldConverter<String, Integer> {
     public static final Parcelable.Creator<StringToIntConverter> CREATOR = new zad();
@@ -34,8 +34,9 @@ public final class StringToIntConverter extends AbstractSafeParcelable implement
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 1, i2);
         ArrayList arrayList = new ArrayList();
-        for (String str : this.zab.keySet()) {
-            arrayList.add(new zac(str, ((Integer) this.zab.get(str)).intValue()));
+        HashMap hashMap = this.zab;
+        for (String str : hashMap.keySet()) {
+            arrayList.add(new zac(str, ((Integer) hashMap.get(str)).intValue()));
         }
         SafeParcelWriter.writeTypedList(parcel, 2, arrayList, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
@@ -53,14 +54,15 @@ public final class StringToIntConverter extends AbstractSafeParcelable implement
 
     @Override // com.google.android.gms.common.server.response.FastJsonResponse.FieldConverter
     public final /* bridge */ /* synthetic */ Object zac(Object obj) {
-        Integer num = (Integer) this.zab.get((String) obj);
-        return num == null ? (Integer) this.zab.get("gms_unknown") : num;
+        String str = (String) this.zac.get(((Integer) obj).intValue());
+        return (str == null && this.zab.containsKey("gms_unknown")) ? "gms_unknown" : str;
     }
 
     @Override // com.google.android.gms.common.server.response.FastJsonResponse.FieldConverter
     public final /* bridge */ /* synthetic */ Object zad(Object obj) {
-        String str = (String) this.zac.get(((Integer) obj).intValue());
-        return (str == null && this.zab.containsKey("gms_unknown")) ? "gms_unknown" : str;
+        HashMap hashMap = this.zab;
+        Integer num = (Integer) hashMap.get((String) obj);
+        return num == null ? (Integer) hashMap.get("gms_unknown") : num;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

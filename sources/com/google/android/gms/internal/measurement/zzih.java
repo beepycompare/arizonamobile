@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzih extends zzmb implements zznn {
+public final class zzih extends zzadp implements zzafd {
     private zzih() {
         throw null;
     }
@@ -12,49 +12,49 @@ public final class zzih extends zzmb implements zznn {
     }
 
     public final zzih zza(Iterable iterable) {
-        zzaX();
-        ((zzii) this.zza).zzk(iterable);
+        zzaY();
+        ((zzii) this.zza).zzl(iterable);
         return this;
     }
 
     public final zzih zzb() {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzm();
         return this;
     }
 
     public final zzih zzc(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzn(iterable);
         return this;
     }
 
     public final zzih zzd() {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzo();
         return this;
     }
 
     public final zzih zze(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzp(iterable);
         return this;
     }
 
     public final zzih zzf() {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzq();
         return this;
     }
 
     public final zzih zzg(Iterable iterable) {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzr(iterable);
         return this;
     }
 
     public final zzih zzh() {
-        zzaX();
+        zzaY();
         ((zzii) this.zza).zzs();
         return this;
     }

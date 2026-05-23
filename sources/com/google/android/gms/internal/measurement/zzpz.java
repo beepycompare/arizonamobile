@@ -1,11 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzpz implements zzpy {
-    public static final zzkm zza = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb().zzd("measurement.fix_params_logcat_spam", true);
+final /* synthetic */ class zzpz implements Runnable {
+    static final /* synthetic */ zzpz zza = new zzpz();
 
-    @Override // com.google.android.gms.internal.measurement.zzpy
-    public final boolean zza() {
-        return ((Boolean) zza.zzd()).booleanValue();
+    private /* synthetic */ zzpz() {
+    }
+
+    @Override // java.lang.Runnable
+    public final /* synthetic */ void run() {
     }
 }

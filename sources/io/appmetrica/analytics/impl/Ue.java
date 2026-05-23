@@ -1,62 +1,36 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import kotlin.jvm.internal.Intrinsics;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 /* loaded from: classes5.dex */
-public final class Ue implements Rc {
+public final class Ue implements InterfaceC0426m9, Ve {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f816a;
-    public final String b;
-    public final String c;
+    public final C0166c7 f791a;
+    public final AtomicLong b;
 
-    public Ue(Context context, String str, String str2) {
-        this.f816a = context;
-        this.b = str;
-        this.c = str2;
+    public Ue(C0166c7 c0166c7) {
+        this.f791a = c0166c7;
+        this.b = new AtomicLong(c0166c7.a());
+        c0166c7.a(this);
     }
 
-    public final Ue a(Context context, String str, String str2) {
-        return new Ue(context, str, str2);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    public final void a(List<Integer> list) {
+        this.b.addAndGet(list.size());
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof Ue) {
-            Ue ue = (Ue) obj;
-            return Intrinsics.areEqual(this.f816a, ue.f816a) && Intrinsics.areEqual(this.b, ue.b) && Intrinsics.areEqual(this.c, ue.c);
-        }
-        return false;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    public final void b(List<Integer> list) {
+        this.b.addAndGet(-list.size());
     }
 
-    public final int hashCode() {
-        int hashCode = this.b.hashCode();
-        return this.c.hashCode() + ((hashCode + (this.f816a.hashCode() * 31)) * 31);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    public final void a() {
+        this.b.set(this.f791a.a());
     }
 
-    public final String toString() {
-        return "PreferencesBasedModuleEntryPoint(context=" + this.f816a + ", prefName=" + this.b + ", prefValueName=" + this.c + ')';
-    }
-
-    public static Ue a(Ue ue, Context context, String str, String str2, int i, Object obj) {
-        if ((i & 1) != 0) {
-            context = ue.f816a;
-        }
-        if ((i & 2) != 0) {
-            str = ue.b;
-        }
-        if ((i & 4) != 0) {
-            str2 = ue.c;
-        }
-        ue.getClass();
-        return new Ue(context, str, str2);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rc
-    public final String a() {
-        String string = this.f816a.getSharedPreferences(this.b, 0).getString(this.c, "");
-        return string == null ? "" : string;
+    public final long b() {
+        return this.b.get();
     }
 }

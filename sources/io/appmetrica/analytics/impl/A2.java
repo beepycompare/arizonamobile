@@ -1,43 +1,47 @@
 package io.appmetrica.analytics.impl;
+
+import android.util.Pair;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import java.util.ArrayList;
 /* loaded from: classes5.dex */
-public final class A2 {
+public final class A2 implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Pm fromModel(C0756z2 c0756z2) {
+        Nm nm;
+        Pm pm = new Pm();
+        pm.f720a = new Om[c0756z2.f1304a.size()];
+        for (int i = 0; i < c0756z2.f1304a.size(); i++) {
+            Om om = new Om();
+            Pair pair = (Pair) c0756z2.f1304a.get(i);
+            om.f707a = (String) pair.first;
+            if (pair.second != null) {
+                om.b = new Nm();
+                C0730y2 c0730y2 = (C0730y2) pair.second;
+                if (c0730y2 == null) {
+                    nm = null;
+                } else {
+                    Nm nm2 = new Nm();
+                    nm2.f689a = c0730y2.f1284a;
+                    nm = nm2;
+                }
+                om.b = nm;
+            }
+            pm.f720a[i] = om;
+        }
+        return pm;
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final C0311i f497a;
-    public final En b = new En(new C0145be("Config"));
-    public final En c = new En(new C0145be("Activity"));
-    public final En d = new En(new C0145be("Intent"));
-    public final En e = new En(new C0145be("Application"));
-    public final En f = new En(new C0145be("Context"));
-    public final En g = new En(new C0145be("Deeplink listener"));
-    public final En h = new En(new C0145be("Reporter Config"));
-    public final En i = new En(new Zd("Deeplink"));
-    public final En j = new En(new C0286h0());
-    public final En k = new En(new C0145be("Key"));
-    public final En l = new En(new C0145be("WebView"));
-    public final Zd m = new Zd("value");
-    public final Zd n = new Zd("name");
-    public final En o = new En(new C0145be("AppMetricaDeviceIdentifiers callback"));
-    public final En p = new En(new C0145be("ANR listener"));
-    public final En q = new En(new C0145be("External attribution"));
-    public final En r = new En(new Zd("Event name"));
-    public final En s = new En(new Zd("Error message"));
-    public final En t = new En(new Zd("Error identifier"));
-    public final En u;
-    public final En v;
-    public final En w;
-    public final En x;
-    public final En y;
-    public final En z;
-
-    public A2(C0737z0 c0737z0) {
-        this.f497a = new C0311i(c0737z0);
-        new En(new C0145be("Unhandled exception"));
-        this.u = new En(new C0145be("Throwable"));
-        this.v = new En(new C0145be("User profile"));
-        this.w = new En(new C0145be("Revenue"));
-        this.x = new En(new C0145be("AdRevenue"));
-        this.y = new En(new C0145be("ECommerceEvent"));
-        this.z = new En(new C0145be("Anr all threads"));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0756z2 toModel(Pm pm) {
+        Om[] omArr;
+        ArrayList arrayList = new ArrayList();
+        for (Om om : pm.f720a) {
+            String str = om.f707a;
+            Nm nm = om.b;
+            arrayList.add(new Pair(str, nm == null ? null : new C0730y2(nm.f689a)));
+        }
+        return new C0756z2(arrayList);
     }
 }

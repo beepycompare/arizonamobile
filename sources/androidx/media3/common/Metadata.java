@@ -13,7 +13,7 @@ public final class Metadata {
     private final Entry[] entries;
     public final long presentationTimeUs;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface Entry {
         default byte[] getWrappedMetadataBytes() {
             return null;

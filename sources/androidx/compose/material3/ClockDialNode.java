@@ -46,7 +46,7 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
         this.autoSwitchToMinute = z;
         this.selection = i;
         this.animationSpec = animationSpec;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m7674boximpl(IntOffset.Companion.m7694getZeronOccac()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m8279boximpl(IntOffset.Companion.m8299getZeronOccac()), null, 2, null);
         this.center$delegate = mutableStateOf$default;
         this.pointerInputTapNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new ClockDialNode$pointerInputTapNode$1(this)));
         this.pointerInputDragNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new ClockDialNode$pointerInputDragNode$1(this)));
@@ -54,13 +54,13 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getCenter-nOcc-ac  reason: not valid java name */
-    public final long m1841getCenternOccac() {
-        return ((IntOffset) this.center$delegate.getValue()).m7692unboximpl();
+    public final long m2286getCenternOccac() {
+        return ((IntOffset) this.center$delegate.getValue()).m8297unboximpl();
     }
 
     /* renamed from: setCenter--gyyYBs  reason: not valid java name */
-    private final void m1842setCentergyyYBs(long j) {
-        this.center$delegate.setValue(IntOffset.m7674boximpl(j));
+    private final void m2287setCentergyyYBs(long j) {
+        this.center$delegate.setValue(IntOffset.m8279boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,21 +68,21 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
         float f;
         Density requireDensity = DelegatableNodeKt.requireDensity(this);
         f = TimePickerKt.MaxDistance;
-        return (requireDensity.mo405toPx0680j_4(f) * requireDensity.mo399roundToPx0680j_4(this.state.m1701getCurrentDiameterD9Ej5fM())) / requireDensity.mo399roundToPx0680j_4(TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM());
+        return (requireDensity.mo434toPx0680j_4(f) * requireDensity.mo428roundToPx0680j_4(this.state.m2146getCurrentDiameterD9Ej5fM())) / requireDensity.mo428roundToPx0680j_4(TimePickerTokens.INSTANCE.m4257getClockDialContainerSizeD9Ej5fM());
     }
 
-    @Override // androidx.compose.ui.node.LayoutAwareModifierNode
+    @Override // androidx.compose.ui.node.LayoutAwareModifierNode, androidx.compose.ui.node.MeasuredSizeAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo394onRemeasuredozmzZPI(long j) {
-        m1842setCentergyyYBs(IntSizeKt.m7732getCenterozmzZPI(j));
-        this.state.m1703setCurrentDiameter0680j_4(DelegatableNodeKt.requireDensity(this).mo402toDpu2uoSUM((int) (j >> 32)));
+    public void mo423onRemeasuredozmzZPI(long j) {
+        m2287setCentergyyYBs(IntSizeKt.m8337getCenterozmzZPI(j));
+        this.state.m2148setCurrentDiameter0680j_4(DelegatableNodeKt.requireDensity(this).mo431toDpu2uoSUM((int) (j >> 32)));
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputTapNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
-        this.pointerInputDragNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo257onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputTapNode.mo257onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        this.pointerInputDragNode.mo257onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -92,11 +92,11 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
     }
 
     /* renamed from: updateNode-JwYzU44  reason: not valid java name */
-    public final void m1843updateNodeJwYzU44(AnalogTimePickerState analogTimePickerState, boolean z, int i, AnimationSpec<Float> animationSpec) {
+    public final void m2288updateNodeJwYzU44(AnalogTimePickerState analogTimePickerState, boolean z, int i, AnimationSpec<Float> animationSpec) {
         this.state = analogTimePickerState;
         this.autoSwitchToMinute = z;
         this.animationSpec = animationSpec;
-        if (TimePickerSelectionMode.m2778equalsimpl0(this.selection, i)) {
+        if (TimePickerSelectionMode.m3223equalsimpl0(this.selection, i)) {
             return;
         }
         this.selection = i;

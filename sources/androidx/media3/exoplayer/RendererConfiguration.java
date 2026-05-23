@@ -1,5 +1,5 @@
 package androidx.media3.exoplayer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class RendererConfiguration {
     public static final RendererConfiguration DEFAULT = new RendererConfiguration(0, false);
     public final int offloadModePreferred;

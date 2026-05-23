@@ -83,7 +83,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
     }
 
     /* renamed from: component6-f-v9h1I  reason: not valid java name */
-    private final int m8569component6fv9h1I() {
+    private final int m9178component6fv9h1I() {
         return this.filterQuality;
     }
 
@@ -101,15 +101,15 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-3ECvelE$default  reason: not valid java name */
-    public static /* synthetic */ ContentPainterElement m8570copy3ECvelE$default(ContentPainterElement contentPainterElement, ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1 function1, Function1 function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str, int i2, Object obj) {
+    public static /* synthetic */ ContentPainterElement m9179copy3ECvelE$default(ContentPainterElement contentPainterElement, ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1 function1, Function1 function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             imageRequest = contentPainterElement.request;
         }
-        return contentPainterElement.m8571copy3ECvelE(imageRequest, (i2 & 2) != 0 ? contentPainterElement.imageLoader : imageLoader, (i2 & 4) != 0 ? contentPainterElement.modelEqualityDelegate : asyncImageModelEqualityDelegate, (i2 & 8) != 0 ? contentPainterElement.transform : function1, (i2 & 16) != 0 ? contentPainterElement.onState : function12, (i2 & 32) != 0 ? contentPainterElement.filterQuality : i, (i2 & 64) != 0 ? contentPainterElement.alignment : alignment, (i2 & 128) != 0 ? contentPainterElement.contentScale : contentScale, (i2 & 256) != 0 ? contentPainterElement.alpha : f, (i2 & 512) != 0 ? contentPainterElement.colorFilter : colorFilter, (i2 & 1024) != 0 ? contentPainterElement.clipToBounds : z, (i2 & 2048) != 0 ? contentPainterElement.previewHandler : asyncImagePreviewHandler, (i2 & 4096) != 0 ? contentPainterElement.contentDescription : str);
+        return contentPainterElement.m9180copy3ECvelE(imageRequest, (i2 & 2) != 0 ? contentPainterElement.imageLoader : imageLoader, (i2 & 4) != 0 ? contentPainterElement.modelEqualityDelegate : asyncImageModelEqualityDelegate, (i2 & 8) != 0 ? contentPainterElement.transform : function1, (i2 & 16) != 0 ? contentPainterElement.onState : function12, (i2 & 32) != 0 ? contentPainterElement.filterQuality : i, (i2 & 64) != 0 ? contentPainterElement.alignment : alignment, (i2 & 128) != 0 ? contentPainterElement.contentScale : contentScale, (i2 & 256) != 0 ? contentPainterElement.alpha : f, (i2 & 512) != 0 ? contentPainterElement.colorFilter : colorFilter, (i2 & 1024) != 0 ? contentPainterElement.clipToBounds : z, (i2 & 2048) != 0 ? contentPainterElement.previewHandler : asyncImagePreviewHandler, (i2 & 4096) != 0 ? contentPainterElement.contentDescription : str);
     }
 
     /* renamed from: copy-3ECvelE  reason: not valid java name */
-    public final ContentPainterElement m8571copy3ECvelE(ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str) {
+    public final ContentPainterElement m9180copy3ECvelE(ImageRequest imageRequest, ImageLoader imageLoader, AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate, Function1<? super AsyncImagePainter.State, ? extends AsyncImagePainter.State> function1, Function1<? super AsyncImagePainter.State, Unit> function12, int i, Alignment alignment, ContentScale contentScale, float f, ColorFilter colorFilter, boolean z, AsyncImagePreviewHandler asyncImagePreviewHandler, String str) {
         return new ContentPainterElement(imageRequest, imageLoader, asyncImageModelEqualityDelegate, function1, function12, i, alignment, contentScale, f, colorFilter, z, asyncImagePreviewHandler, str, null);
     }
 
@@ -120,7 +120,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         }
         if (obj instanceof ContentPainterElement) {
             ContentPainterElement contentPainterElement = (ContentPainterElement) obj;
-            return Intrinsics.areEqual(this.request, contentPainterElement.request) && Intrinsics.areEqual(this.imageLoader, contentPainterElement.imageLoader) && Intrinsics.areEqual(this.modelEqualityDelegate, contentPainterElement.modelEqualityDelegate) && Intrinsics.areEqual(this.transform, contentPainterElement.transform) && Intrinsics.areEqual(this.onState, contentPainterElement.onState) && FilterQuality.m4867equalsimpl0(this.filterQuality, contentPainterElement.filterQuality) && Intrinsics.areEqual(this.alignment, contentPainterElement.alignment) && Intrinsics.areEqual(this.contentScale, contentPainterElement.contentScale) && Float.compare(this.alpha, contentPainterElement.alpha) == 0 && Intrinsics.areEqual(this.colorFilter, contentPainterElement.colorFilter) && this.clipToBounds == contentPainterElement.clipToBounds && Intrinsics.areEqual(this.previewHandler, contentPainterElement.previewHandler) && Intrinsics.areEqual(this.contentDescription, contentPainterElement.contentDescription);
+            return Intrinsics.areEqual(this.request, contentPainterElement.request) && Intrinsics.areEqual(this.imageLoader, contentPainterElement.imageLoader) && Intrinsics.areEqual(this.modelEqualityDelegate, contentPainterElement.modelEqualityDelegate) && Intrinsics.areEqual(this.transform, contentPainterElement.transform) && Intrinsics.areEqual(this.onState, contentPainterElement.onState) && FilterQuality.m5443equalsimpl0(this.filterQuality, contentPainterElement.filterQuality) && Intrinsics.areEqual(this.alignment, contentPainterElement.alignment) && Intrinsics.areEqual(this.contentScale, contentPainterElement.contentScale) && Float.compare(this.alpha, contentPainterElement.alpha) == 0 && Intrinsics.areEqual(this.colorFilter, contentPainterElement.colorFilter) && this.clipToBounds == contentPainterElement.clipToBounds && Intrinsics.areEqual(this.previewHandler, contentPainterElement.previewHandler) && Intrinsics.areEqual(this.contentDescription, contentPainterElement.contentDescription);
         }
         return false;
     }
@@ -129,7 +129,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
     public int hashCode() {
         int hashCode = ((((((this.request.hashCode() * 31) + this.imageLoader.hashCode()) * 31) + this.modelEqualityDelegate.hashCode()) * 31) + this.transform.hashCode()) * 31;
         Function1<AsyncImagePainter.State, Unit> function1 = this.onState;
-        int hashCode2 = (((((((((hashCode + (function1 == null ? 0 : function1.hashCode())) * 31) + FilterQuality.m4868hashCodeimpl(this.filterQuality)) * 31) + this.alignment.hashCode()) * 31) + this.contentScale.hashCode()) * 31) + Float.hashCode(this.alpha)) * 31;
+        int hashCode2 = (((((((((hashCode + (function1 == null ? 0 : function1.hashCode())) * 31) + FilterQuality.m5444hashCodeimpl(this.filterQuality)) * 31) + this.alignment.hashCode()) * 31) + this.contentScale.hashCode()) * 31) + Float.hashCode(this.alpha)) * 31;
         ColorFilter colorFilter = this.colorFilter;
         int hashCode3 = (((hashCode2 + (colorFilter == null ? 0 : colorFilter.hashCode())) * 31) + Boolean.hashCode(this.clipToBounds)) * 31;
         AsyncImagePreviewHandler asyncImagePreviewHandler = this.previewHandler;
@@ -144,14 +144,14 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         AsyncImageModelEqualityDelegate asyncImageModelEqualityDelegate = this.modelEqualityDelegate;
         Function1<AsyncImagePainter.State, AsyncImagePainter.State> function1 = this.transform;
         Function1<AsyncImagePainter.State, Unit> function12 = this.onState;
-        String m4869toStringimpl = FilterQuality.m4869toStringimpl(this.filterQuality);
+        String m5445toStringimpl = FilterQuality.m5445toStringimpl(this.filterQuality);
         Alignment alignment = this.alignment;
         ContentScale contentScale = this.contentScale;
         float f = this.alpha;
         ColorFilter colorFilter = this.colorFilter;
         boolean z = this.clipToBounds;
         AsyncImagePreviewHandler asyncImagePreviewHandler = this.previewHandler;
-        return "ContentPainterElement(request=" + imageRequest + ", imageLoader=" + imageLoader + ", modelEqualityDelegate=" + asyncImageModelEqualityDelegate + ", transform=" + function1 + ", onState=" + function12 + ", filterQuality=" + m4869toStringimpl + ", alignment=" + alignment + ", contentScale=" + contentScale + ", alpha=" + f + ", colorFilter=" + colorFilter + ", clipToBounds=" + z + ", previewHandler=" + asyncImagePreviewHandler + ", contentDescription=" + this.contentDescription + ")";
+        return "ContentPainterElement(request=" + imageRequest + ", imageLoader=" + imageLoader + ", modelEqualityDelegate=" + asyncImageModelEqualityDelegate + ", transform=" + function1 + ", onState=" + function12 + ", filterQuality=" + m5445toStringimpl + ", alignment=" + alignment + ", contentScale=" + contentScale + ", alpha=" + f + ", colorFilter=" + colorFilter + ", clipToBounds=" + z + ", previewHandler=" + asyncImagePreviewHandler + ", contentDescription=" + this.contentDescription + ")";
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -178,7 +178,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         asyncImagePainter.setTransform$coil_compose_core_release(this.transform);
         asyncImagePainter.setOnState$coil_compose_core_release(this.onState);
         asyncImagePainter.setContentScale$coil_compose_core_release(this.contentScale);
-        asyncImagePainter.m8548setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
+        asyncImagePainter.m9157setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
         asyncImagePainter.setPreviewHandler$coil_compose_core_release(this.previewHandler);
         asyncImagePainter.set_input$coil_compose_core_release(input);
         SizeResolver sizeResolver = this.request.getSizeResolver();
@@ -187,17 +187,17 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(ContentPainterNode contentPainterNode) {
-        long mo5466getIntrinsicSizeNHjbRc = contentPainterNode.getPainter().mo5466getIntrinsicSizeNHjbRc();
+        long mo6042getIntrinsicSizeNHjbRc = contentPainterNode.getPainter().mo6042getIntrinsicSizeNHjbRc();
         ConstraintsSizeResolver constraintSizeResolver = contentPainterNode.getConstraintSizeResolver();
         AsyncImagePainter.Input input = new AsyncImagePainter.Input(this.imageLoader, this.request, this.modelEqualityDelegate);
         AsyncImagePainter painter = contentPainterNode.getPainter();
         painter.setTransform$coil_compose_core_release(this.transform);
         painter.setOnState$coil_compose_core_release(this.onState);
         painter.setContentScale$coil_compose_core_release(this.contentScale);
-        painter.m8548setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
+        painter.m9157setFilterQualityvDHp3xo$coil_compose_core_release(this.filterQuality);
         painter.setPreviewHandler$coil_compose_core_release(this.previewHandler);
         painter.set_input$coil_compose_core_release(input);
-        boolean m4592equalsimpl0 = Size.m4592equalsimpl0(mo5466getIntrinsicSizeNHjbRc, painter.mo5466getIntrinsicSizeNHjbRc());
+        boolean m5168equalsimpl0 = Size.m5168equalsimpl0(mo6042getIntrinsicSizeNHjbRc, painter.mo6042getIntrinsicSizeNHjbRc());
         contentPainterNode.setAlignment(this.alignment);
         SizeResolver sizeResolver = this.request.getSizeResolver();
         contentPainterNode.setConstraintSizeResolver(sizeResolver instanceof ConstraintsSizeResolver ? (ConstraintsSizeResolver) sizeResolver : null);
@@ -210,7 +210,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
             SemanticsModifierNodeKt.invalidateSemantics(contentPainterNode);
         }
         boolean areEqual = Intrinsics.areEqual(constraintSizeResolver, contentPainterNode.getConstraintSizeResolver());
-        if (!m4592equalsimpl0 || !areEqual) {
+        if (!m5168equalsimpl0 || !areEqual) {
             LayoutModifierNodeKt.invalidateMeasurement(contentPainterNode);
         }
         DrawModifierNodeKt.invalidateDraw(contentPainterNode);
@@ -224,7 +224,7 @@ public final class ContentPainterElement extends ModifierNodeElement<ContentPain
         inspectorInfo.getProperties().set("modelEqualityDelegate", this.modelEqualityDelegate);
         inspectorInfo.getProperties().set("transform", this.transform);
         inspectorInfo.getProperties().set("onState", this.onState);
-        inspectorInfo.getProperties().set("filterQuality", FilterQuality.m4864boximpl(this.filterQuality));
+        inspectorInfo.getProperties().set("filterQuality", FilterQuality.m5440boximpl(this.filterQuality));
         inspectorInfo.getProperties().set("alignment", this.alignment);
         inspectorInfo.getProperties().set("contentScale", this.contentScale);
         inspectorInfo.getProperties().set("alpha", Float.valueOf(this.alpha));

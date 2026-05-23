@@ -106,7 +106,7 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
         hashMap = windowAreaControllerImpl.currentWindowAreaInfoMap;
         Collection values = hashMap.values();
         Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
-        channel.mo8396trySendJP2dKIU(CollectionsKt.toList(values));
+        channel.mo9005trySendJP2dKIU(CollectionsKt.toList(values));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -117,7 +117,7 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
         hashMap = windowAreaControllerImpl.currentWindowAreaInfoMap;
         Collection values = hashMap.values();
         Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
-        channel.mo8396trySendJP2dKIU(CollectionsKt.toList(values));
+        channel.mo9005trySendJP2dKIU(CollectionsKt.toList(values));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -26,17 +26,17 @@ import kotlin.jvm.functions.Function2;
 public final class TimePickerDialogDefaults {
     public static final int $stable = 0;
     public static final TimePickerDialogDefaults INSTANCE = new TimePickerDialogDefaults();
-    private static final float MinHeightForTimePicker = Dp.m7555constructorimpl(300.0f);
+    private static final float MinHeightForTimePicker = Dp.m8160constructorimpl(300.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DisplayModeToggle_S7Bxtbk$lambda$0(TimePickerDialogDefaults timePickerDialogDefaults, Function0 function0, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
-        timePickerDialogDefaults.m2738DisplayModeToggleS7Bxtbk(function0, i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        timePickerDialogDefaults.m3183DisplayModeToggleS7Bxtbk(function0, i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Title_pK_nZyw$lambda$1(TimePickerDialogDefaults timePickerDialogDefaults, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
-        timePickerDialogDefaults.m2739TitlepK_nZyw(i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        timePickerDialogDefaults.m3184TitlepK_nZyw(i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -70,7 +70,7 @@ public final class TimePickerDialogDefaults {
     }
 
     /* renamed from: getMinHeightForTimePicker-D9Ej5fM  reason: not valid java name */
-    public final float m2740getMinHeightForTimePickerD9Ej5fM() {
+    public final float m3185getMinHeightForTimePickerD9Ej5fM() {
         return MinHeightForTimePicker;
     }
 
@@ -84,7 +84,7 @@ public final class TimePickerDialogDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2738DisplayModeToggleS7Bxtbk(final Function0<Unit> function0, final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
+    public final void m3183DisplayModeToggleS7Bxtbk(final Function0<Unit> function0, final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         Object obj2;
@@ -131,7 +131,7 @@ public final class TimePickerDialogDefaults {
 
                     public final void invoke(Composer composer2, int i6) {
                         ImageVector schedule;
-                        int m3009constructorimpl;
+                        int m3454constructorimpl;
                         ComposerKt.sourceInformation(composer2, "C276@11499L285,273@11400L399:TimePickerDialog.kt#uh7d8r");
                         if (!composer2.shouldExecute((i6 & 3) != 2, i6 & 1)) {
                             composer2.skipToGroupEnd();
@@ -140,20 +140,20 @@ public final class TimePickerDialogDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-698026161, i6, -1, "androidx.compose.material3.TimePickerDialogDefaults.DisplayModeToggle.<anonymous> (TimePickerDialog.kt:266)");
                         }
-                        if (TimePickerDisplayMode.m2746equalsimpl0(i, TimePickerDisplayMode.Companion.m2751getPickerONbchU())) {
+                        if (TimePickerDisplayMode.m3191equalsimpl0(i, TimePickerDisplayMode.Companion.m3196getPickerONbchU())) {
                             schedule = Icons.Outlined.INSTANCE.getKeyboard();
                         } else {
                             schedule = Icons.Outlined.INSTANCE.getSchedule();
                         }
                         ImageVector imageVector = schedule;
-                        if (TimePickerDisplayMode.m2746equalsimpl0(i, TimePickerDisplayMode.Companion.m2751getPickerONbchU())) {
+                        if (TimePickerDisplayMode.m3191equalsimpl0(i, TimePickerDisplayMode.Companion.m3196getPickerONbchU())) {
                             Strings.Companion companion2 = Strings.Companion;
-                            m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_toggle_touch);
+                            m3454constructorimpl = Strings.m3454constructorimpl(R.string.m3c_time_picker_toggle_touch);
                         } else {
                             Strings.Companion companion3 = Strings.Companion;
-                            m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_toggle_keyboard);
+                            m3454constructorimpl = Strings.m3454constructorimpl(R.string.m3c_time_picker_toggle_keyboard);
                         }
-                        IconKt.m2160Iconww6aTOc(imageVector, Strings_androidKt.m3088getString2EP1pXo(m3009constructorimpl, composer2, 0), (Modifier) null, 0L, composer2, 0, 12);
+                        IconKt.m2605Iconww6aTOc(imageVector, Strings_androidKt.m3533getString2EP1pXo(m3454constructorimpl, composer2, 0), (Modifier) null, 0L, composer2, 0, 12);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -194,13 +194,13 @@ public final class TimePickerDialogDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2739TitlepK_nZyw(final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
+    public final void m3184TitlepK_nZyw(final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         Composer composer2;
         final Modifier modifier2;
         ScopeUpdateScope endRestartGroup;
-        int m3009constructorimpl;
+        int m3454constructorimpl;
         Composer startRestartGroup = composer.startRestartGroup(1546564986);
         ComposerKt.sourceInformation(startRestartGroup, "C(Title)N(displayMode:c#material3.TimePickerDisplayMode,modifier)297@12224L10,299@12283L257,295@12127L424:TimePickerDialog.kt#uh7d8r");
         if ((i3 & 1) != 0) {
@@ -225,18 +225,18 @@ public final class TimePickerDialogDefaults {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1546564986, i4, -1, "androidx.compose.material3.TimePickerDialogDefaults.Title (TimePickerDialog.kt:294)");
                 }
-                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(companion, 0.0f, 0.0f, 0.0f, Dp.m7555constructorimpl(20.0f), 7, null);
+                Modifier m1054paddingqDBjuR0$default = PaddingKt.m1054paddingqDBjuR0$default(companion, 0.0f, 0.0f, 0.0f, Dp.m8160constructorimpl(20.0f), 7, null);
                 Modifier modifier3 = companion;
                 TextStyle labelMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getLabelMedium();
-                if (TimePickerDisplayMode.m2746equalsimpl0(i, TimePickerDisplayMode.Companion.m2751getPickerONbchU())) {
+                if (TimePickerDisplayMode.m3191equalsimpl0(i, TimePickerDisplayMode.Companion.m3196getPickerONbchU())) {
                     Strings.Companion companion2 = Strings.Companion;
-                    m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_dialog_title);
+                    m3454constructorimpl = Strings.m3454constructorimpl(R.string.m3c_time_picker_dialog_title);
                 } else {
                     Strings.Companion companion3 = Strings.Companion;
-                    m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_input_dialog_title);
+                    m3454constructorimpl = Strings.m3454constructorimpl(R.string.m3c_time_input_dialog_title);
                 }
                 composer2 = startRestartGroup;
-                TextKt.m2712TextNvy7gAk(Strings_androidKt.m3088getString2EP1pXo(m3009constructorimpl, startRestartGroup, 0), m822paddingqDBjuR0$default, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, labelMedium, composer2, 0, 0, 131068);
+                TextKt.m3157TextNvy7gAk(Strings_androidKt.m3533getString2EP1pXo(m3454constructorimpl, startRestartGroup, 0), m1054paddingqDBjuR0$default, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, labelMedium, composer2, 0, 0, 131068);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

@@ -32,7 +32,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DotsIndicator.kt */
 @Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\u001a>\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u00032\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102%\b\u0002\u0010\u0012\u001a\u001f\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\u0016\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018\u001a\r\u0010\u0019\u001a\u00020\u0001H\u0003¢\u0006\u0002\u0010\u001a\u001a \u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00112\u0006\u0010\u001e\u001a\u00020\u0003H\u0002\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001f²\u0006\n\u0010 \u001a\u00020\u0011X\u008a\u0084\u0002"}, d2 = {"DotsIndicator", "", "dotCount", "", "modifier", "Landroidx/compose/ui/Modifier;", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", "type", "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "DotsIndicator-TN_CM5M", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/runtime/Composer;II)V", "currentPage", "currentPageOffsetFraction", "Lkotlin/Function0;", "", "onDotClicked", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "DotsIndicator-AFY4PWA", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;ILkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "DotsIndicatorPreview", "(Landroidx/compose/runtime/Composer;I)V", "computeGlobalScrollOffset", "position", "positionOffset", "totalCount", "viewpagerdotsindicator_release", "globalOffset"}, k = 2, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class DotsIndicatorKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final float computeGlobalScrollOffset(int i, float f, int i2) {
@@ -48,26 +48,26 @@ public final class DotsIndicatorKt {
         return i3 + (f2 % 1.0f);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0116  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0155  */
     /* JADX WARN: Removed duplicated region for block: B:89:? A[RETURN, SYNTHETIC] */
     /* renamed from: DotsIndicator-TN_CM5M  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9170DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
+    public static final void m9809DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
         int i4;
         float f2;
         Object rememberedValue;
@@ -110,7 +110,7 @@ public final class DotsIndicatorKt {
             }
             if ((46811 & i4) == 9362 || !startRestartGroup.getSkipping()) {
                 Modifier.Companion companion = i5 == 0 ? Modifier.Companion : modifier;
-                float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12.0f) : f2;
+                float m8160constructorimpl = i6 == 0 ? Dp.m8160constructorimpl(12.0f) : f2;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(2032190952, i4, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:22)");
                 }
@@ -126,7 +126,7 @@ public final class DotsIndicatorKt {
                 final CoroutineScope coroutineScope = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier modifier3 = companion;
-                float f4 = m7555constructorimpl;
+                float f4 = m8160constructorimpl;
                 int currentPage = pagerState.getCurrentPage();
                 startRestartGroup.startReplaceGroup(581553696);
                 z = (i4 & 57344) != 16384;
@@ -147,7 +147,7 @@ public final class DotsIndicatorKt {
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
                 startRestartGroup.endReplaceGroup();
-                m9169DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+                m9808DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -165,7 +165,7 @@ public final class DotsIndicatorKt {
                     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
                     @DebugMetadata(c = "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2$1", f = "DotsIndicator.kt", i = {}, l = {33}, m = "invokeSuspend", n = {}, s = {})
                     /* renamed from: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2$1  reason: invalid class name */
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes5.dex */
                     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                         final /* synthetic */ int $dotIndex;
                         final /* synthetic */ PagerState $pagerState;
@@ -237,7 +237,7 @@ public final class DotsIndicatorKt {
                     }
 
                     public final void invoke(Composer composer2, int i7) {
-                        DotsIndicatorKt.m9170DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                        DotsIndicatorKt.m9809DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                     }
                 });
                 return;
@@ -266,7 +266,7 @@ public final class DotsIndicatorKt {
         final CoroutineScope coroutineScope2 = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         Modifier modifier32 = companion;
-        float f42 = m7555constructorimpl;
+        float f42 = m8160constructorimpl;
         int currentPage2 = pagerState.getCurrentPage();
         startRestartGroup.startReplaceGroup(581553696);
         if ((i4 & 57344) != 16384) {
@@ -288,7 +288,7 @@ public final class DotsIndicatorKt {
         };
         startRestartGroup.updateRememberedValue(rememberedValue2);
         startRestartGroup.endReplaceGroup();
-        m9169DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+        m9808DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -306,7 +306,7 @@ public final class DotsIndicatorKt {
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 9, 0}, xi = 48)
             @DebugMetadata(c = "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2$1", f = "DotsIndicator.kt", i = {}, l = {33}, m = "invokeSuspend", n = {}, s = {})
             /* renamed from: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2$1  reason: invalid class name */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes5.dex */
             public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 final /* synthetic */ int $dotIndex;
                 final /* synthetic */ PagerState $pagerState;
@@ -361,36 +361,36 @@ public final class DotsIndicatorKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0143  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x016e  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x01a8  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01b3  */
     /* JADX WARN: Removed duplicated region for block: B:117:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x00fe  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0136  */
     /* renamed from: DotsIndicator-AFY4PWA  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9169DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
+    public static final void m9808DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
         int i5;
         Modifier.Companion companion;
         int i6;
@@ -464,7 +464,7 @@ public final class DotsIndicatorKt {
                         if (i10 != 0) {
                             companion = Modifier.Companion;
                         }
-                        float m7555constructorimpl = i6 == 0 ? Dp.m7555constructorimpl(12.0f) : f2;
+                        float m8160constructorimpl = i6 == 0 ? Dp.m8160constructorimpl(12.0f) : f2;
                         Function1<? super Integer, Unit> function13 = i8 == 0 ? null : obj;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1298032090, i5, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:45)");
@@ -517,11 +517,11 @@ public final class DotsIndicatorKt {
                         startRestartGroup.endReplaceGroup();
                         int i11 = i5 << 6;
                         modifier2 = companion;
-                        type.mo9181IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7555constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
+                        type.mo9820IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
-                        f3 = m7555constructorimpl;
+                        f3 = m8160constructorimpl;
                         function12 = function13;
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
@@ -541,7 +541,7 @@ public final class DotsIndicatorKt {
                             }
 
                             public final void invoke(Composer composer2, int i12) {
-                                DotsIndicatorKt.m9169DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+                                DotsIndicatorKt.m9808DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
                             }
                         });
                         return;
@@ -615,10 +615,10 @@ public final class DotsIndicatorKt {
                 startRestartGroup.endReplaceGroup();
                 int i112 = i5 << 6;
                 modifier2 = companion;
-                type.mo9181IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7555constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
+                type.mo9820IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                f3 = m7555constructorimpl;
+                f3 = m8160constructorimpl;
                 function12 = function13;
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -697,10 +697,10 @@ public final class DotsIndicatorKt {
             startRestartGroup.endReplaceGroup();
             int i1122 = i5 << 6;
             modifier2 = companion;
-            type.mo9181IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7555constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
+            type.mo9820IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
-            f3 = m7555constructorimpl;
+            f3 = m8160constructorimpl;
             function12 = function13;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
@@ -783,10 +783,10 @@ public final class DotsIndicatorKt {
         startRestartGroup.endReplaceGroup();
         int i11222 = i5 << 6;
         modifier2 = companion;
-        type.mo9181IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7555constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
+        type.mo9820IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
-        f3 = m7555constructorimpl;
+        f3 = m8160constructorimpl;
         function12 = function13;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -800,7 +800,7 @@ public final class DotsIndicatorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2128547675, i, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorPreview (DotsIndicator.kt:72)");
             }
-            m9169DotsIndicatorAFY4PWA(10, null, Dp.m7555constructorimpl(8.0f), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
+            m9808DotsIndicatorAFY4PWA(10, null, Dp.m8160constructorimpl(8.0f), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final Float invoke() {

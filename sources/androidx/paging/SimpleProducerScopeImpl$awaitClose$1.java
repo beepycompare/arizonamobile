@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SimpleChannelFlow.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.SimpleProducerScopeImpl", f = "SimpleChannelFlow.kt", i = {0, 0}, l = {96}, m = "awaitClose", n = {"block", "job"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes3.dex */
 public final class SimpleProducerScopeImpl$awaitClose$1 extends ContinuationImpl {

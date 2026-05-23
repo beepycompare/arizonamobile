@@ -2,15 +2,15 @@ package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.util.Util;
+import androidx.media3.container.OpusUtil;
 import androidx.media3.decoder.DecoderInputBuffer;
-import androidx.media3.extractor.OpusUtil;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.UnsignedBytes;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class OggOpusAudioPacketizer {
     private static final int CHECKSUM_INDEX = 22;
     private static final int FIRST_AUDIO_SAMPLE_PAGE_SEQUENCE_NUMBER = 2;

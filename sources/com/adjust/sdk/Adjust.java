@@ -158,6 +158,20 @@ public class Adjust {
         }
     }
 
+    public static void getThirdPartySharingSettingsWithTimeout(Context context, long j, OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener) {
+        if (onThirdPartySharingSettingsReadListener == null) {
+            AdjustFactory.getLogger().error("Callback for getting third party sharing settings can't be null", new Object[0]);
+        } else if (context == null) {
+            AdjustFactory.getLogger().error("Context for getting third party sharing settings can't be null", new Object[0]);
+            onThirdPartySharingSettingsReadListener.onThirdPartySharingSettingsRead(null);
+        } else if (j < 0) {
+            AdjustFactory.getLogger().error("Timeout value for getting third party sharing settings can't be negative", new Object[0]);
+            onThirdPartySharingSettingsReadListener.onThirdPartySharingSettingsRead(null);
+        } else {
+            getDefaultInstance().getThirdPartySharingSettingsWithTimeout(extractApplicationContext(context), j, onThirdPartySharingSettingsReadListener);
+        }
+    }
+
     public static void initSdk(AdjustConfig adjustConfig) {
         getDefaultInstance().initSdk(adjustConfig);
     }

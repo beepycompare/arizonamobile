@@ -10,7 +10,7 @@ import androidx.compose.animation.core.MutatorMutex$$ExternalSyntheticBackportWi
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.concurrent.atomic.AtomicReference;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class zap extends LifecycleCallback implements DialogInterface.OnCancelListener {
     protected volatile boolean zaa;
@@ -22,23 +22,25 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
     public zap(LifecycleFragment lifecycleFragment, GoogleApiAvailability googleApiAvailability) {
         super(lifecycleFragment);
         this.zab = new AtomicReference(null);
-        this.zad = new com.google.android.gms.internal.base.zau(Looper.getMainLooper());
+        this.zad = new com.google.android.gms.internal.base.zao(Looper.getMainLooper());
         this.zac = googleApiAvailability;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void zaa(ConnectionResult connectionResult, int i) {
+    /* renamed from: zaa */
+    public final void zag() {
         this.zab.set(null);
-        zab(connectionResult, i);
+        zae();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void zad() {
+    /* renamed from: zab */
+    public final void zah(ConnectionResult connectionResult, int i) {
         this.zab.set(null);
-        zac();
+        zad(connectionResult, i);
     }
 
-    private static final int zae(zam zamVar) {
+    private static final int zac(zam zamVar) {
         if (zamVar == null) {
             return -1;
         }
@@ -52,7 +54,7 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
             if (i == 2) {
                 int isGooglePlayServicesAvailable = this.zac.isGooglePlayServicesAvailable(getActivity());
                 if (isGooglePlayServicesAvailable == 0) {
-                    zad();
+                    zag();
                     return;
                 } else if (zamVar == null) {
                     return;
@@ -63,23 +65,23 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
                 }
             }
         } else if (i2 == -1) {
-            zad();
+            zag();
             return;
         } else if (i2 == 0) {
             if (zamVar != null) {
-                zaa(new ConnectionResult(intent != null ? intent.getIntExtra("<<ResolutionFailureErrorDetail>>", 13) : 13, null, zamVar.zab().toString()), zae(zamVar));
+                zah(new ConnectionResult(intent != null ? intent.getIntExtra("<<ResolutionFailureErrorDetail>>", 13) : 13, null, zamVar.zab().toString()), zac(zamVar));
                 return;
             }
             return;
         }
         if (zamVar != null) {
-            zaa(zamVar.zab(), zamVar.zaa());
+            zah(zamVar.zab(), zamVar.zaa());
         }
     }
 
     @Override // android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
-        zaa(new ConnectionResult(13, null), zae((zam) this.zab.get()));
+        zah(new ConnectionResult(13, null), zac((zam) this.zab.get()));
     }
 
     @Override // com.google.android.gms.common.api.internal.LifecycleCallback
@@ -115,19 +117,14 @@ public abstract class zap extends LifecycleCallback implements DialogInterface.O
         this.zaa = false;
     }
 
-    protected abstract void zab(ConnectionResult connectionResult, int i);
+    protected abstract void zad(ConnectionResult connectionResult, int i);
 
-    protected abstract void zac();
+    protected abstract void zae();
 
-    public final void zah(ConnectionResult connectionResult, int i) {
-        AtomicReference atomicReference;
+    public final void zaf(ConnectionResult connectionResult, int i) {
         zam zamVar = new zam(connectionResult, i);
-        do {
-            atomicReference = this.zab;
-            if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, null, zamVar)) {
-                this.zad.post(new zao(this, zamVar));
-                return;
-            }
-        } while (atomicReference.get() == null);
+        if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.zab, null, zamVar)) {
+            this.zad.post(new zao(this, zamVar));
+        }
     }
 }

@@ -39,7 +39,7 @@ public class FilteringMediaSource extends WrappingMediaSource {
     }
 
     /* loaded from: classes3.dex */
-    private static final class FilteringMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
+    static final class FilteringMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         private MediaPeriod.Callback callback;
         private TrackGroupArray filteredTrackGroups;
         public final MediaPeriod mediaPeriod;
@@ -138,6 +138,11 @@ public class FilteringMediaSource extends WrappingMediaSource {
         @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
         public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
             ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        }
+
+        @Override // androidx.media3.exoplayer.source.MediaPeriod
+        public long setEndPositionUs(long j) {
+            return this.mediaPeriod.setEndPositionUs(j);
         }
     }
 }

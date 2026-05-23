@@ -4,7 +4,7 @@ import com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository;
 import com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DownloaderSyncRepository_Factory implements Factory<DownloaderSyncRepository> {
     private final Provider<DownloaderSyncApiRepository> apiRepositoryProvider;
     private final Provider<DownloaderSyncDbRepository> dbRepositoryProvider;

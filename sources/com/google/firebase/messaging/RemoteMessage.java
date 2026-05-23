@@ -12,6 +12,7 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.firebase.messaging.Constants;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes4.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
@@ -59,7 +60,7 @@ public final class RemoteMessage extends AbstractSafeParcelable {
         if (this.data == null) {
             this.data = Constants.MessagePayloadKeys.extractDeveloperDefinedPayload(this.bundle);
         }
-        return this.data;
+        return new HashMap(this.data);
     }
 
     public byte[] getRawData() {

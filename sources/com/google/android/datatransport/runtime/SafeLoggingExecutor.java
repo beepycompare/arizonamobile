@@ -2,7 +2,7 @@ package com.google.android.datatransport.runtime;
 
 import com.google.android.datatransport.runtime.logging.Logging;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class SafeLoggingExecutor implements Executor {
     private final Executor delegate;
 
@@ -16,7 +16,7 @@ class SafeLoggingExecutor implements Executor {
         this.delegate.execute(new SafeLoggingRunnable(runnable));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class SafeLoggingRunnable implements Runnable {
         private final Runnable delegate;
 

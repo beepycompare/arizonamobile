@@ -1,23 +1,24 @@
 package com.google.android.gms.internal.measurement;
 
-import android.database.ContentObserver;
-import android.os.Handler;
-import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzjj extends ContentObserver {
-    final /* synthetic */ zzjl zza;
+public final class zzjj extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzjj> CREATOR = new zzjk();
+    public final byte[] zza;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzjj(zzjl zzjlVar, Handler handler) {
-        super(null);
-        Objects.requireNonNull(zzjlVar);
-        this.zza = zzjlVar;
+    public zzjj(byte[] bArr) {
+        this.zza = bArr;
     }
 
-    @Override // android.database.ContentObserver
-    public final void onChange(boolean z) {
-        this.zza.zzb().set(true);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        byte[] bArr = this.zza;
+        int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeByteArray(parcel, 2, bArr, false);
+        SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 }

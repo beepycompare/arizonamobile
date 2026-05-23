@@ -20,7 +20,7 @@ import kotlin.io.CloseableKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: saveLogToDownloads.kt */
 @Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u001a\u001e\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u0006¨\u0006\u0007"}, d2 = {"copyToDownloads", "Landroid/net/Uri;", "Landroid/content/Context;", "file", "Ljava/io/File;", "displayName", "", "settings"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SaveLogToDownloadsKt {
     public static /* synthetic */ Uri copyToDownloads$default(Context context, File file, String str, int i, Object obj) {
         if ((i & 2) != 0) {
@@ -67,12 +67,12 @@ public final class SaveLogToDownloadsKt {
                     return null;
                 } catch (Exception unused) {
                     Result.Companion companion = Result.Companion;
-                    Result.m9202constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
+                    Result.m9842constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
                     return null;
                 }
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9202constructorimpl(ResultKt.createFailure(th));
+                Result.m9842constructorimpl(ResultKt.createFailure(th));
                 return null;
             }
         }

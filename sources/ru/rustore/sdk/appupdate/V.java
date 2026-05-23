@@ -15,35 +15,35 @@ import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 public final class V extends Lambda implements Function1<InstallState, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Z f1528a;
+    public final /* synthetic */ Z f1500a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public V(Z z) {
         super(1);
-        this.f1528a = z;
+        this.f1500a = z;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(InstallState installState) {
         InstallState installState2 = installState;
         Intrinsics.checkNotNullParameter(installState2, "installState");
-        Z z = this.f1528a;
+        Z z = this.f1500a;
         AppUpdateOptions appUpdateOptions = z.d;
         if (appUpdateOptions != null) {
             int appUpdateType = appUpdateOptions.getAppUpdateType();
             int installStatus = installState2.getInstallStatus();
             if (installStatus == 1) {
-                C0791e c0791e = z.c;
-                c0791e.getClass();
-                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0789c(c0791e, new C0795i("updateStart.downloaded", c0791e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0790d.f1536a, 1, null);
+                C0804e c0804e = z.c;
+                c0804e.getClass();
+                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0802c(c0804e, new C0808i("updateStart.downloaded", c0804e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0803d.f1508a, 1, null);
             } else if (installStatus == 3) {
                 z.c.a(appUpdateType, String.valueOf(installState2.getInstallErrorCode()));
             }
         }
         if (installState2.getInstallStatus() == 3) {
-            this.f1528a.d = null;
+            this.f1500a.d = null;
         }
-        for (InstallStateUpdateListener installStateUpdateListener : this.f1528a.b) {
+        for (InstallStateUpdateListener installStateUpdateListener : this.f1500a.b) {
             installStateUpdateListener.onStateUpdated(installState2);
         }
         return Unit.INSTANCE;

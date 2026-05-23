@@ -39,9 +39,7 @@ public final class WindowInsetsAnimationCompat {
 
     private WindowInsetsAnimationCompat(WindowInsetsAnimation windowInsetsAnimation) {
         this(0, null, 0L);
-        if (Build.VERSION.SDK_INT >= 30) {
-            this.mImpl = new Impl30(windowInsetsAnimation);
-        }
+        this.mImpl = new Impl30(windowInsetsAnimation);
     }
 
     public int getTypeMask() {

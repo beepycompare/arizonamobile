@@ -1,10 +1,10 @@
 package com.miami.game.ui.classic.notifications;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int notification_topbar_label = 0x7f080d21;
+        public static int notification_topbar_label = 0x7f080d5c;
 
         private drawable() {
         }

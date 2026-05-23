@@ -1,21 +1,21 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zaaf {
-    private final ApiKey zaa;
-    private final TaskCompletionSource zab = new TaskCompletionSource();
+final class zaaf extends zabb {
+    final /* synthetic */ zaag zaa;
 
-    public zaaf(ApiKey apiKey) {
-        this.zaa = apiKey;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zaaf(zaag zaagVar, zaba zabaVar) {
+        super(zabaVar);
+        Objects.requireNonNull(zaagVar);
+        this.zaa = zaagVar;
     }
 
-    public final ApiKey zaa() {
-        return this.zaa;
-    }
-
-    public final TaskCompletionSource zab() {
-        return this.zab;
+    @Override // com.google.android.gms.common.api.internal.zabb
+    public final void zaa() {
+        this.zaa.zaj().zah.zaa(null);
     }
 }

@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Scrollable.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableKt", f = "Scrollable.kt", i = {0, 0}, l = {1118}, m = "semanticsScrollBy-d-4ec7I", n = {"$this$semanticsScrollBy_u2dd_u2d4ec7I", "previousValue"}, s = {"L$0", "L$1"}, v = 1)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.ScrollableKt", f = "Scrollable.kt", i = {0, 0}, l = {1149}, m = "semanticsScrollBy-d-4ec7I", n = {"$this$semanticsScrollBy_u2dd_u2d4ec7I", "previousValue"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes.dex */
 public final class ScrollableKt$semanticsScrollBy$1 extends ContinuationImpl {
     Object L$0;
@@ -22,10 +22,10 @@ public final class ScrollableKt$semanticsScrollBy$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m571semanticsScrollByd4ec7I;
+        Object m601semanticsScrollByd4ec7I;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m571semanticsScrollByd4ec7I = ScrollableKt.m571semanticsScrollByd4ec7I(null, 0L, this);
-        return m571semanticsScrollByd4ec7I;
+        m601semanticsScrollByd4ec7I = ScrollableKt.m601semanticsScrollByd4ec7I(null, 0L, this);
+        return m601semanticsScrollByd4ec7I;
     }
 }

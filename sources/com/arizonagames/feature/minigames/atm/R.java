@@ -40,40 +40,40 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int atmGameBaseScreen = 0x7f0a0104;
-        public static int atmImage = 0x7f0a0105;
-        public static int backgroundImage = 0x7f0a0165;
-        public static int bagImage = 0x7f0a0168;
-        public static int bagTouchArea = 0x7f0a0169;
-        public static int bgResult = 0x7f0a01ad;
-        public static int billsContainer = 0x7f0a01b4;
-        public static int bottomArea = 0x7f0a01e4;
-        public static int centerPanel = 0x7f0a0354;
-        public static int close = 0x7f0a03a4;
-        public static int contentContainer = 0x7f0a03de;
-        public static int dragLayer = 0x7f0a049b;
-        public static int infoCard = 0x7f0a073c;
-        public static int infoIcon = 0x7f0a073d;
-        public static int infoText = 0x7f0a073f;
-        public static int leftPanel = 0x7f0a0855;
-        public static int progressBlock = 0x7f0a0b2b;
-        public static int progressIcon = 0x7f0a0b2c;
-        public static int progressText = 0x7f0a0b2d;
-        public static int progressTitleText = 0x7f0a0b2f;
-        public static int rightPanel = 0x7f0a0bf4;
-        public static int root = 0x7f0a0c5f;
-        public static int slot100Container = 0x7f0a0d4f;
-        public static int slot10Container = 0x7f0a0d50;
-        public static int slot1Container = 0x7f0a0d51;
-        public static int slot50Container = 0x7f0a0d52;
-        public static int slotBill1 = 0x7f0a0d53;
-        public static int slotBody = 0x7f0a0d54;
-        public static int slotsRow = 0x7f0a0d55;
-        public static int statusPanel = 0x7f0a0dc3;
-        public static int statusText = 0x7f0a0dc4;
-        public static int titleText = 0x7f0a0ea1;
-        public static int topRow = 0x7f0a0eb4;
-        public static int tray = 0x7f0a0ee4;
+        public static int atmGameBaseScreen = 0x7f0a0105;
+        public static int atmImage = 0x7f0a0106;
+        public static int backgroundImage = 0x7f0a0166;
+        public static int bagImage = 0x7f0a0169;
+        public static int bagTouchArea = 0x7f0a016a;
+        public static int bgResult = 0x7f0a01ae;
+        public static int billsContainer = 0x7f0a01b5;
+        public static int bottomArea = 0x7f0a01e5;
+        public static int centerPanel = 0x7f0a0355;
+        public static int close = 0x7f0a03a5;
+        public static int contentContainer = 0x7f0a03df;
+        public static int dragLayer = 0x7f0a049c;
+        public static int infoCard = 0x7f0a073e;
+        public static int infoIcon = 0x7f0a073f;
+        public static int infoText = 0x7f0a0741;
+        public static int leftPanel = 0x7f0a0857;
+        public static int progressBlock = 0x7f0a0b33;
+        public static int progressIcon = 0x7f0a0b34;
+        public static int progressText = 0x7f0a0b35;
+        public static int progressTitleText = 0x7f0a0b37;
+        public static int rightPanel = 0x7f0a0bfd;
+        public static int root = 0x7f0a0c68;
+        public static int slot100Container = 0x7f0a0d58;
+        public static int slot10Container = 0x7f0a0d59;
+        public static int slot1Container = 0x7f0a0d5a;
+        public static int slot50Container = 0x7f0a0d5b;
+        public static int slotBill1 = 0x7f0a0d5c;
+        public static int slotBody = 0x7f0a0d5d;
+        public static int slotsRow = 0x7f0a0d5e;
+        public static int statusPanel = 0x7f0a0dcc;
+        public static int statusText = 0x7f0a0dcd;
+        public static int titleText = 0x7f0a0eaa;
+        public static int topRow = 0x7f0a0ebd;
+        public static int tray = 0x7f0a0eed;
 
         private id() {
         }

@@ -4,6 +4,7 @@ import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
+import androidx.media3.exoplayer.RendererCapabilities;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -16,11 +17,10 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DragGestureDetector.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {359, RouletteView.PREMIUM_ROULETTE_WIDTH, 365}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5", f = "DragGestureDetector.kt", i = {0, 1, 2}, l = {RendererCapabilities.DECODER_SUPPORT_MASK, 385, 390}, m = "invokeSuspend", n = {"$this$awaitEachGesture", "$this$awaitEachGesture", "$this$awaitEachGesture"}, s = {"L$0", "L$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<PointerInputChange, Offset, Unit> $onDrag;
@@ -104,12 +104,12 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
                 ResultKt.throwOnFailure(obj);
                 pointerInputChange = (PointerInputChange) obj;
                 if (pointerInputChange != null) {
-                    this.$onDragStart.invoke(Offset.m4516boximpl(pointerInputChange.m6085getPositionF1C5BW0()));
-                    long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m5092boximpl(pointerInputChange.m6685getPositionF1C5BW0()));
+                    long m6682getIdJ3iCeTQ = pointerInputChange.m6682getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = awaitPointerEventScope;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m473dragjO51t88(awaitPointerEventScope, m6083getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
+                    obj = DragGestureDetectorKt.m506dragjO51t88(awaitPointerEventScope, m6682getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             return DragGestureDetectorKt$detectDragGesturesAfterLongPress$5.invokeSuspend$lambda$0(Function2.this, (PointerInputChange) obj2);
@@ -129,7 +129,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             }
             this.L$0 = awaitPointerEventScope;
             this.label = 2;
-            obj = DragGestureDetectorKt.m463awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6083getIdJ3iCeTQ(), this);
+            obj = DragGestureDetectorKt.m496awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6682getIdJ3iCeTQ(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -145,7 +145,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Function2 function2, PointerInputChange pointerInputChange) {
-        function2.invoke(pointerInputChange, Offset.m4516boximpl(PointerEventKt.positionChange(pointerInputChange)));
+        function2.invoke(pointerInputChange, Offset.m5092boximpl(PointerEventKt.positionChange(pointerInputChange)));
         pointerInputChange.consume();
         return Unit.INSTANCE;
     }

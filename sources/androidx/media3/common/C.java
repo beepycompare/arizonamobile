@@ -1,6 +1,8 @@
 package androidx.media3.common;
 
 import android.content.Context;
+import android.os.Build;
+import android.os.IBinder;
 import androidx.media3.common.util.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -37,6 +39,7 @@ public final class C {
     public static final String CENC_TYPE_cbcs = "cbcs";
     public static final String CENC_TYPE_cenc = "cenc";
     public static final String CENC_TYPE_cens = "cens";
+    public static final UUID CLEARKEY_UUID;
     public static final int COLOR_RANGE_FULL = 1;
     public static final int COLOR_RANGE_LIMITED = 2;
     public static final int COLOR_SPACE_BT2020 = 6;
@@ -48,6 +51,7 @@ public final class C {
     public static final int COLOR_TRANSFER_SDR = 3;
     public static final int COLOR_TRANSFER_SRGB = 2;
     public static final int COLOR_TRANSFER_ST2084 = 6;
+    public static final UUID COMMON_PSSH_UUID;
     public static final int CONTENT_TYPE_DASH = 0;
     public static final int CONTENT_TYPE_HLS = 2;
     @Deprecated
@@ -70,6 +74,7 @@ public final class C {
     public static final int CRYPTO_TYPE_FRAMEWORK = 2;
     public static final int CRYPTO_TYPE_NONE = 0;
     public static final int CRYPTO_TYPE_UNSUPPORTED = 1;
+    public static final String CSAI_SCHEME = "csai";
     public static final int DATA_TYPE_AD = 6;
     public static final int DATA_TYPE_CUSTOM_BASE = 10000;
     public static final int DATA_TYPE_DRM = 3;
@@ -77,6 +82,7 @@ public final class C {
     public static final int DATA_TYPE_MEDIA = 1;
     public static final int DATA_TYPE_MEDIA_INITIALIZATION = 2;
     public static final int DATA_TYPE_MEDIA_PROGRESSIVE_LIVE = 7;
+    public static final int DATA_TYPE_STEERING_MANIFEST = 8;
     public static final int DATA_TYPE_TIME_SYNCHRONIZATION = 5;
     public static final int DATA_TYPE_UNKNOWN = 0;
     public static final int DEFAULT_BUFFER_SEGMENT_SIZE = 65536;
@@ -92,6 +98,7 @@ public final class C {
     public static final int ENCODING_AC3 = 5;
     public static final int ENCODING_AC4 = 17;
     public static final int ENCODING_DOLBY_TRUEHD = 14;
+    public static final int ENCODING_DSD = 31;
     public static final int ENCODING_DTS = 7;
     public static final int ENCODING_DTS_HD = 8;
     public static final int ENCODING_DTS_UHD_P2 = 30;
@@ -107,6 +114,7 @@ public final class C {
     public static final int ENCODING_PCM_32BIT = 22;
     public static final int ENCODING_PCM_32BIT_BIG_ENDIAN = 1610612736;
     public static final int ENCODING_PCM_8BIT = 3;
+    public static final int ENCODING_PCM_DOUBLE = 1879048192;
     public static final int ENCODING_PCM_FLOAT = 4;
     public static final int FIRST_FRAME_NOT_RENDERED = 1;
     public static final int FIRST_FRAME_NOT_RENDERED_AFTER_STREAM_CHANGE = 2;
@@ -138,6 +146,7 @@ public final class C {
     public static final int NETWORK_TYPE_UNKNOWN = 0;
     public static final int NETWORK_TYPE_WIFI = 2;
     public static final int PERCENTAGE_UNSET = -1;
+    public static final UUID PLAYREADY_UUID;
     @Deprecated
     public static final int POSITION_UNSET = -1;
     public static final int PRIORITY_DOWNLOAD = -4000;
@@ -202,6 +211,7 @@ public final class C {
     public static final int STREAM_TYPE_RING = 2;
     public static final int STREAM_TYPE_SYSTEM = 1;
     public static final int STREAM_TYPE_VOICE_CALL = 0;
+    public static final int SUGGESTED_MAX_IPC_SIZE;
     public static final int TEXTURE_MIN_FILTER_LINEAR = 9729;
     public static final int TEXTURE_MIN_FILTER_LINEAR_MIPMAP_LINEAR = 9987;
     public static final long TIME_END_OF_SOURCE = Long.MIN_VALUE;
@@ -242,6 +252,7 @@ public final class C {
     public static final int USAGE_UNKNOWN = 0;
     public static final int USAGE_VOICE_COMMUNICATION = 2;
     public static final int USAGE_VOICE_COMMUNICATION_SIGNALLING = 3;
+    public static final UUID UUID_NIL;
     public static final int VIDEO_CHANGE_FRAME_RATE_STRATEGY_OFF = Integer.MIN_VALUE;
     public static final int VIDEO_CHANGE_FRAME_RATE_STRATEGY_ONLY_IF_SEAMLESS = 0;
     public static final int VIDEO_CODEC_FLAG_H264 = 1;
@@ -263,11 +274,7 @@ public final class C {
     public static final int WAKE_MODE_LOCAL = 1;
     public static final int WAKE_MODE_NETWORK = 2;
     public static final int WAKE_MODE_NONE = 0;
-    public static final UUID UUID_NIL = new UUID(0, 0);
-    public static final UUID COMMON_PSSH_UUID = new UUID(1186680826959645954L, -5988876978535335093L);
-    public static final UUID CLEARKEY_UUID = new UUID(-2129748144642739255L, 8654423357094679310L);
-    public static final UUID WIDEVINE_UUID = new UUID(-1301668207276963122L, -6645017420763422227L);
-    public static final UUID PLAYREADY_UUID = new UUID(-7348484286925749626L, -6083546864340672619L);
+    public static final UUID WIDEVINE_UUID;
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
@@ -515,6 +522,15 @@ public final class C {
     }
 
     private C() {
+    }
+
+    static {
+        SUGGESTED_MAX_IPC_SIZE = Build.VERSION.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
+        UUID_NIL = new UUID(0L, 0L);
+        COMMON_PSSH_UUID = new UUID(1186680826959645954L, -5988876978535335093L);
+        CLEARKEY_UUID = new UUID(-2129748144642739255L, 8654423357094679310L);
+        WIDEVINE_UUID = new UUID(-1301668207276963122L, -6645017420763422227L);
+        PLAYREADY_UUID = new UUID(-7348484286925749626L, -6083546864340672619L);
     }
 
     @Deprecated

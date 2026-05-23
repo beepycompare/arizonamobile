@@ -4,10 +4,10 @@ import com.facebook.model.GraphObject;
 import java.util.Date;
 import java.util.List;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface OpenGraphAction extends GraphObject {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Factory {
         public static OpenGraphAction createForPost() {
             return (OpenGraphAction) GraphObject.Factory.create(OpenGraphAction.class);

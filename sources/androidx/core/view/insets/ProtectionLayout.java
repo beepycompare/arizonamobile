@@ -45,7 +45,6 @@ public class ProtectionLayout extends FrameLayout {
         this.mProtections.clear();
         this.mProtections.addAll(list);
         if (isAttachedToWindow()) {
-            removeProtectionViews();
             addProtectionViews();
             requestApplyInsets();
         }
@@ -78,9 +77,6 @@ public class ProtectionLayout extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (this.mGroup != null) {
-            removeProtectionViews();
-        }
         addProtectionViews();
         requestApplyInsets();
     }
@@ -94,9 +90,12 @@ public class ProtectionLayout extends FrameLayout {
 
     private void addProtectionViews() {
         if (this.mProtections.isEmpty()) {
+            removeProtectionViews();
             return;
         }
-        this.mGroup = new ProtectionGroup(getOrInstallSystemBarStateMonitor(), this.mProtections);
+        SystemBarStateMonitor orInstallSystemBarStateMonitor = getOrInstallSystemBarStateMonitor();
+        removeProtectionViews();
+        this.mGroup = new ProtectionGroup(orInstallSystemBarStateMonitor, this.mProtections);
         int childCount = getChildCount();
         int size = this.mGroup.size();
         for (int i = 0; i < size; i++) {
@@ -162,7 +161,7 @@ public class ProtectionLayout extends FrameLayout {
             view.setTranslationX(attributes.getTranslationX());
             view.setTranslationY(attributes.getTranslationY());
             view.setAlpha(attributes.getAlpha());
-            view.setVisibility(attributes.isVisible() ? 0 : 4);
+            view.setVisibility(attributes.isVisible() ? 0 : 8);
             view.setBackground(attributes.getDrawable());
             attributes.setCallback(new Protection.Attributes.Callback() { // from class: androidx.core.view.insets.ProtectionLayout.1
                 @Override // androidx.core.view.insets.Protection.Attributes.Callback
@@ -188,7 +187,7 @@ public class ProtectionLayout extends FrameLayout {
 
                 @Override // androidx.core.view.insets.Protection.Attributes.Callback
                 public void onVisibilityChanged(boolean z) {
-                    view.setVisibility(z ? 0 : 4);
+                    view.setVisibility(z ? 0 : 8);
                 }
 
                 @Override // androidx.core.view.insets.Protection.Attributes.Callback
@@ -226,7 +225,7 @@ public class ProtectionLayout extends FrameLayout {
         view2.setTranslationX(attributes.getTranslationX());
         view2.setTranslationY(attributes.getTranslationY());
         view2.setAlpha(attributes.getAlpha());
-        view2.setVisibility(attributes.isVisible() ? 0 : 4);
+        view2.setVisibility(attributes.isVisible() ? 0 : 8);
         view2.setBackground(attributes.getDrawable());
         attributes.setCallback(new Protection.Attributes.Callback() { // from class: androidx.core.view.insets.ProtectionLayout.1
             @Override // androidx.core.view.insets.Protection.Attributes.Callback
@@ -252,7 +251,7 @@ public class ProtectionLayout extends FrameLayout {
 
             @Override // androidx.core.view.insets.Protection.Attributes.Callback
             public void onVisibilityChanged(boolean z) {
-                view2.setVisibility(z ? 0 : 4);
+                view2.setVisibility(z ? 0 : 8);
             }
 
             @Override // androidx.core.view.insets.Protection.Attributes.Callback

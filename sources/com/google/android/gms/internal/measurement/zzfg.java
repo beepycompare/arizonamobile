@@ -1,19 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzfg extends zzmb implements zznn {
+public final class zzfg extends zzadp implements zzafd {
     private zzfg() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzfg(byte[] bArr) {
-        super(zzfh.zzk());
+        super(zzfh.zzl());
     }
 
     public final zzfg zza(String str) {
-        zzaX();
-        ((zzfh) this.zza).zzj(str);
+        zzaY();
+        ((zzfh) this.zza).zzk(str);
         return this;
     }
 }

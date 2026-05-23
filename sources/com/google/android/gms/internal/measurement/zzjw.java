@@ -1,21 +1,16 @@
 package com.google.android.gms.internal.measurement;
 
-import android.database.ContentObserver;
-import android.os.Handler;
-import java.util.Objects;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+import android.content.Context;
+import android.os.Looper;
+import com.google.android.gms.common.api.Api;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.internal.ClientSettings;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzjw extends ContentObserver {
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzjw(zzjy zzjyVar, Handler handler) {
-        super(null);
-        Objects.requireNonNull(zzjyVar);
-    }
-
-    @Override // android.database.ContentObserver
-    public final void onChange(boolean z) {
-        zzkm.zzc();
+final class zzjw extends Api.AbstractClientBuilder {
+    @Override // com.google.android.gms.common.api.Api.AbstractClientBuilder
+    public final /* synthetic */ Api.Client buildClient(Context context, Looper looper, ClientSettings clientSettings, Object obj, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+        Api.ApiOptions.NoOptions noOptions = (Api.ApiOptions.NoOptions) obj;
+        return new zzku(context, looper, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 }

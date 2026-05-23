@@ -2,7 +2,7 @@ package retrofit2;
 
 import java.util.Objects;
 import javax.annotation.Nullable;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class HttpException extends RuntimeException {
     private final int code;
     private final String message;

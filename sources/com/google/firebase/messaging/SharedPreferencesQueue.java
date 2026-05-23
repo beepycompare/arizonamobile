@@ -93,7 +93,7 @@ public final class SharedPreferencesQueue {
     /* JADX INFO: Access modifiers changed from: private */
     public void syncState() {
         synchronized (this.internalQueue) {
-            this.sharedPreferences.edit().putString(this.queueName, serialize()).commit();
+            this.sharedPreferences.edit().putString(this.queueName, serialize()).apply();
         }
     }
 

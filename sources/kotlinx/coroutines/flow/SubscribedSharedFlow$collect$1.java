@@ -1,16 +1,16 @@
 package kotlinx.coroutines.flow;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Share.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.SubscribedSharedFlow", f = "Share.kt", i = {}, l = {Constants.STATUS_PRECONDITION_FAILED}, m = "collect", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.SubscribedSharedFlow", f = "Share.kt", i = {0}, l = {442}, m = "collect", n = {"collector"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class SubscribedSharedFlow$collect$1 extends ContinuationImpl {
+    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ SubscribedSharedFlow<T> this$0;

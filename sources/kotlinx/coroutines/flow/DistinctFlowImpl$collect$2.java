@@ -5,11 +5,12 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Distinct.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DistinctFlowImpl$collect$2<T> implements FlowCollector {
     final /* synthetic */ FlowCollector<T> $collector;
@@ -25,7 +26,7 @@ public final class DistinctFlowImpl$collect$2<T> implements FlowCollector {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
     @Override // kotlinx.coroutines.flow.FlowCollector
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -46,6 +47,8 @@ public final class DistinctFlowImpl$collect$2<T> implements FlowCollector {
                     if (this.$previousKey.element == NullSurrogateKt.NULL || !this.this$0.areEquivalent.invoke(this.$previousKey.element, t2).booleanValue()) {
                         this.$previousKey.element = t2;
                         FlowCollector<T> flowCollector = this.$collector;
+                        distinctFlowImpl$collect$2$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                        distinctFlowImpl$collect$2$emit$1.L$1 = SpillingKt.nullOutSpilledVariable(t2);
                         distinctFlowImpl$collect$2$emit$1.label = 1;
                         if (flowCollector.emit(t, distinctFlowImpl$collect$2$emit$1) == coroutine_suspended) {
                             return coroutine_suspended;
@@ -56,13 +59,15 @@ public final class DistinctFlowImpl$collect$2<T> implements FlowCollector {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    Object obj2 = distinctFlowImpl$collect$2$emit$1.L$1;
+                    Object obj3 = distinctFlowImpl$collect$2$emit$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
                 return Unit.INSTANCE;
             }
         }
         distinctFlowImpl$collect$2$emit$1 = new DistinctFlowImpl$collect$2$emit$1(this, continuation);
-        Object obj2 = distinctFlowImpl$collect$2$emit$1.result;
+        Object obj4 = distinctFlowImpl$collect$2$emit$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = distinctFlowImpl$collect$2$emit$1.label;
         if (i != 0) {

@@ -1,59 +1,36 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.internal.BaseImplementation;
-import java.util.Collections;
-import org.checkerframework.checker.initialization.qual.NotOnlyInitialized;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import java.util.Objects;
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaax implements zabf {
-    @NotOnlyInitialized
-    private final zabi zaa;
+public final class zaax extends com.google.android.gms.internal.base.zao {
+    final /* synthetic */ zaaz zaa;
 
-    public zaax(zabi zabiVar) {
-        this.zaa = zabiVar;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zaax(zaaz zaazVar, Looper looper) {
+        super(looper);
+        Objects.requireNonNull(zaazVar);
+        this.zaa = zaazVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final BaseImplementation.ApiMethodImpl zaa(BaseImplementation.ApiMethodImpl apiMethodImpl) {
-        this.zaa.zag.zaa.add(apiMethodImpl);
-        return apiMethodImpl;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final BaseImplementation.ApiMethodImpl zab(BaseImplementation.ApiMethodImpl apiMethodImpl) {
-        throw new IllegalStateException("GoogleApiClient is not connected yet.");
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final void zad() {
-        for (Api.Client client : this.zaa.zaa.values()) {
-            client.disconnect();
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        int i = message.what;
+        if (i == 1) {
+            this.zaa.zaj();
+        } else if (i == 2) {
+            this.zaa.zai();
+        } else {
+            int i2 = message.what;
+            StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 20);
+            sb.append("Unknown message id: ");
+            sb.append(i2);
+            Log.w("GoogleApiClientImpl", sb.toString());
         }
-        this.zaa.zag.zad = Collections.emptySet();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final void zae() {
-        this.zaa.zaj();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final void zag(Bundle bundle) {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final void zah(ConnectionResult connectionResult, Api api, boolean z) {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final void zai(int i) {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.zabf
-    public final boolean zaj() {
-        return true;
     }
 }

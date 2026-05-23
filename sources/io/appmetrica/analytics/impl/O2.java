@@ -1,88 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import java.util.ArrayList;
-import java.util.Iterator;
+import io.appmetrica.analytics.ExternalAttribution;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
-public final class O2 implements InterfaceC0408lk {
+public class O2 implements ExternalAttribution {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f724a;
-    public Intent b;
-    public final Context c;
-    public final G5 d;
-    public final IHandlerExecutor e;
+    public final V9 f694a;
 
-    public O2(Context context, IHandlerExecutor iHandlerExecutor) {
-        this(context, iHandlerExecutor, 0);
+    public O2(V9 v9) {
+        this.f694a = v9;
     }
 
-    public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f724a.add(consumer);
-        return this.b;
+    @Override // io.appmetrica.analytics.ExternalAttribution
+    public final byte[] toBytes() {
+        return MessageNano.toByteArray(this.f694a);
     }
 
-    public final void b() {
-        this.b = null;
-        G5 g5 = this.d;
-        Context context = this.c;
-        synchronized (g5) {
-            if (g5.b) {
-                try {
-                    context.unregisterReceiver(g5.f596a);
-                    g5.b = false;
-                } catch (Throwable unused) {
-                }
-            }
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0408lk
-    public final synchronized void onCreate() {
-        Intent a2 = a();
-        this.b = a2;
-        Iterator it = this.f724a.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).consume(a2);
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0408lk
-    public final synchronized void onDestroy() {
-        this.b = null;
-        b();
-        Iterator it = this.f724a.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).consume(null);
-        }
-    }
-
-    public O2(Context context, IHandlerExecutor iHandlerExecutor, int i) {
-        this.f724a = new ArrayList();
-        this.b = null;
-        this.c = context;
-        this.e = iHandlerExecutor;
-        this.d = F5.a(new C0589t2(new N2(this), iHandlerExecutor));
-    }
-
-    public final Intent a() {
-        Intent intent;
-        IntentFilter intentFilter = new IntentFilter("android.intent.action.BATTERY_CHANGED");
-        G5 g5 = this.d;
-        Context context = this.c;
-        IHandlerExecutor iHandlerExecutor = this.e;
-        synchronized (g5) {
-            intent = null;
-            try {
-                intent = context.registerReceiver(g5.f596a, intentFilter, null, iHandlerExecutor.getHandler());
-                g5.b = true;
-            } catch (Throwable unused) {
-            }
-        }
-        return intent;
+    public final String toString() {
+        return "ExternalAttribution(type=`" + AbstractC0246fa.a(this.f694a.f806a) + "`value=`" + new String(this.f694a.b, Charsets.UTF_8) + "`)";
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime.scheduling.persistence;
 import com.google.android.datatransport.runtime.EventInternal;
 import com.google.android.datatransport.runtime.TransportContext;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AutoValue_PersistedEvent extends PersistedEvent {
     private final EventInternal event;
     private final long id;

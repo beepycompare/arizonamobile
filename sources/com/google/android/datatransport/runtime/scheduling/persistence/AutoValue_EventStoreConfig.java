@@ -1,7 +1,7 @@
 package com.google.android.datatransport.runtime.scheduling.persistence;
 
 import com.google.android.datatransport.runtime.scheduling.persistence.EventStoreConfig;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_EventStoreConfig extends EventStoreConfig {
     private final int criticalSectionEnterTimeoutMs;
     private final long eventCleanUpAge;
@@ -65,7 +65,7 @@ final class AutoValue_EventStoreConfig extends EventStoreConfig {
         return this.maxBlobByteSizePerRow ^ ((((((((((int) (j ^ (j >>> 32))) ^ 1000003) * 1000003) ^ this.loadBatchSize) * 1000003) ^ this.criticalSectionEnterTimeoutMs) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends EventStoreConfig.Builder {
         private Integer criticalSectionEnterTimeoutMs;
         private Long eventCleanUpAge;

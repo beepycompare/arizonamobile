@@ -5,14 +5,14 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ModuleInstallRequest {
     private final List zaa;
     private final InstallStatusListener zab;
     private final Executor zac;
 
-    /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+    /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class Builder {
         private final List zaa = new ArrayList();
@@ -39,7 +39,7 @@ public final class ModuleInstallRequest {
         }
     }
 
-    /* synthetic */ ModuleInstallRequest(List list, InstallStatusListener installStatusListener, Executor executor, boolean z, zac zacVar) {
+    /* synthetic */ ModuleInstallRequest(List list, InstallStatusListener installStatusListener, Executor executor, boolean z, byte[] bArr) {
         Preconditions.checkNotNull(list, "APIs must not be null.");
         Preconditions.checkArgument(!list.isEmpty(), "APIs must not be empty.");
         if (executor != null) {

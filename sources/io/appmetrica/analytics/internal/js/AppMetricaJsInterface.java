@@ -1,19 +1,19 @@
 package io.appmetrica.analytics.internal.js;
 
 import android.webkit.JavascriptInterface;
-import io.appmetrica.analytics.impl.C0588t1;
+import io.appmetrica.analytics.impl.C0651v1;
 /* loaded from: classes5.dex */
 public class AppMetricaJsInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0588t1 f1349a;
+    private final C0651v1 f1328a;
 
-    public AppMetricaJsInterface(C0588t1 c0588t1) {
-        this.f1349a = c0588t1;
+    public AppMetricaJsInterface(C0651v1 c0651v1) {
+        this.f1328a = c0651v1;
     }
 
     @JavascriptInterface
     public void reportEvent(String str, String str2) {
-        this.f1349a.d(str, str2);
+        this.f1328a.d(str, str2);
     }
 }

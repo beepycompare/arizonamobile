@@ -4,7 +4,7 @@ import android.app.Service;
 import dagger.hilt.android.internal.managers.ServiceComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.UnsafeCasts;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class Hilt_DownloadService extends Service implements GeneratedComponentManagerHolder {
     private volatile ServiceComponentManager componentManager;
     private final Object componentManagerLock = new Object();

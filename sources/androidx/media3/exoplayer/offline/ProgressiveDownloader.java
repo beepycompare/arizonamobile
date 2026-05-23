@@ -12,7 +12,7 @@ import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ProgressiveDownloader implements Downloader {
     private final CacheWriter cacheWriter;
     private final CacheDataSource dataSource;

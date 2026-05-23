@@ -1,5 +1,6 @@
 package com.google.firebase.remoteconfig.internal;
 
+import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,6 +17,7 @@ public class ConfigContainer {
     private static final Date DEFAULTS_FETCH_TIME = new Date(0);
     static final String FETCH_TIME_KEY = "fetch_time_key";
     static final String PERSONALIZATION_METADATA_KEY = "personalization_metadata_key";
+    static final String ROLLOUT_ID_PREFIX = "rollout";
     public static final String ROLLOUT_METADATA_AFFECTED_KEYS = "affectedParameterKeys";
     public static final String ROLLOUT_METADATA_ID = "rolloutId";
     static final String ROLLOUT_METADATA_KEY = "rollout_metadata_key";
@@ -108,7 +110,7 @@ public class ConfigContainer {
             JSONObject jSONObject = getRolloutMetadata().getJSONObject(i);
             String string = jSONObject.getString(ROLLOUT_METADATA_ID);
             String string2 = jSONObject.getString("variantId");
-            JSONArray jSONArray = jSONObject.getJSONArray(ROLLOUT_METADATA_AFFECTED_KEYS);
+            JSONArray jSONArray = jSONObject.getJSONArray("affectedParameterKeys");
             for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                 String string3 = jSONArray.getString(i2);
                 if (!hashMap.containsKey(string3)) {
@@ -123,10 +125,27 @@ public class ConfigContainer {
         return hashMap;
     }
 
+    private Map<String, JSONObject> createExperimentsMap() throws JSONException {
+        HashMap hashMap = new HashMap();
+        JSONArray abtExperiments = getAbtExperiments();
+        for (int i = 0; i < abtExperiments.length(); i++) {
+            JSONObject jSONObject = abtExperiments.getJSONObject(i);
+            if (jSONObject.has("affectedParameterKeys") && !jSONObject.getString(RemoteConfigConstants.ExperimentDescriptionFieldKey.EXPERIMENT_ID).startsWith(ROLLOUT_ID_PREFIX)) {
+                JSONArray jSONArray = jSONObject.getJSONArray("affectedParameterKeys");
+                for (int i2 = 0; i2 < jSONArray.length(); i2++) {
+                    hashMap.put(jSONArray.getString(i2), jSONObject);
+                }
+            }
+        }
+        return hashMap;
+    }
+
     public Set<String> getChangedParams(ConfigContainer configContainer) throws JSONException {
         JSONObject configs = deepCopyOf(configContainer.containerJson).getConfigs();
         Map<String, Map<String, String>> createRolloutParameterKeyMap = createRolloutParameterKeyMap();
         Map<String, Map<String, String>> createRolloutParameterKeyMap2 = configContainer.createRolloutParameterKeyMap();
+        Map<String, JSONObject> createExperimentsMap = createExperimentsMap();
+        Map<String, JSONObject> createExperimentsMap2 = configContainer.createExperimentsMap();
         HashSet hashSet = new HashSet();
         Iterator<String> keys = getConfigs().keys();
         while (keys.hasNext()) {
@@ -142,6 +161,10 @@ public class ConfigContainer {
             } else if (createRolloutParameterKeyMap.containsKey(next) != createRolloutParameterKeyMap2.containsKey(next)) {
                 hashSet.add(next);
             } else if (createRolloutParameterKeyMap.containsKey(next) && createRolloutParameterKeyMap2.containsKey(next) && !createRolloutParameterKeyMap.get(next).equals(createRolloutParameterKeyMap2.get(next))) {
+                hashSet.add(next);
+            } else if (createExperimentsMap.containsKey(next) != createExperimentsMap2.containsKey(next)) {
+                hashSet.add(next);
+            } else if (createExperimentsMap2.containsKey(next) && createExperimentsMap.containsKey(next) && !createExperimentsMap2.get(next).toString().equals(createExperimentsMap.get(next).toString())) {
                 hashSet.add(next);
             } else {
                 configs.remove(next);

@@ -68,7 +68,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
                 /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes6.dex */
-                public static final class C00821 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+                public static final class C00841 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ Pair<Long, Integer> $it;
                     final /* synthetic */ DonateBoostModelUi $model;
                     int label;
@@ -100,7 +100,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                     }
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00821(Pair<Long, Integer> pair, DonateBoostModelUi donateBoostModelUi, DonateReplenishmentDialogPage donateReplenishmentDialogPage, Continuation<? super C00821> continuation) {
+                    C00841(Pair<Long, Integer> pair, DonateBoostModelUi donateBoostModelUi, DonateReplenishmentDialogPage donateReplenishmentDialogPage, Continuation<? super C00841> continuation) {
                         super(2, continuation);
                         this.$it = pair;
                         this.$model = donateBoostModelUi;
@@ -109,12 +109,12 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        return new C00821(this.$it, this.$model, this.this$0, continuation);
+                        return new C00841(this.$it, this.$model, this.this$0, continuation);
                     }
 
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                        return ((C00821) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                        return ((C00841) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -156,7 +156,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                 }
 
                 public final Object emit(Pair<Long, Integer> pair, Continuation<? super Unit> continuation) {
-                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00821(pair, DonateBoostModelUi.this, donateReplenishmentDialogPage, null), continuation);
+                    Object withContext = BuildersKt.withContext(Dispatchers.getMain(), new C00841(pair, DonateBoostModelUi.this, donateReplenishmentDialogPage, null), continuation);
                     return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
                 }
             }, this) == coroutine_suspended) {

@@ -44,9 +44,9 @@ import java.util.ArrayDeque;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultAudioSink implements AudioSink {
-    private static final int AUDIO_OUTPUT_SMALLER_BUFFER_RETRY_SIZE = 1000000;
+    private static final int AUDIO_OUTPUT_RETRY_BUFFER_SIZE_THRESHOLD = 1000000;
     private static final int AUDIO_OUTPUT_VOLUME_RAMP_TIME_MS = 20;
     public static final float DEFAULT_PLAYBACK_SPEED = 1.0f;
     private static final boolean DEFAULT_SKIP_SILENCE = false;
@@ -119,17 +119,17 @@ public final class DefaultAudioSink implements AudioSink {
     private long writtenEncodedFrames;
     private long writtenPcmBytes;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioOffloadSupportProvider {
         AudioOffloadSupport getAudioOffloadSupport(Format format, AudioAttributes audioAttributes);
     }
 
     @Deprecated
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioProcessorChain extends androidx.media3.common.audio.AudioProcessorChain {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioTrackBufferSizeProvider {
         public static final AudioTrackBufferSizeProvider DEFAULT = new DefaultAudioTrackBufferSizeProvider.Builder().build();
 
@@ -139,7 +139,7 @@ public final class DefaultAudioSink implements AudioSink {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface OutputMode {
     }
 
@@ -155,7 +155,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     @Deprecated
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioTrackProvider {
         public static final AudioTrackProvider DEFAULT = new DefaultAudioTrackProvider();
 
@@ -166,7 +166,7 @@ public final class DefaultAudioSink implements AudioSink {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class DefaultAudioProcessorChain implements AudioProcessorChain {
         private final AudioProcessor[] audioProcessors;
         private final SilenceSkippingAudioProcessor silenceSkippingAudioProcessor;
@@ -215,7 +215,7 @@ public final class DefaultAudioSink implements AudioSink {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private AudioCapabilities audioCapabilities;
         private ExoPlayer.AudioOffloadListener audioOffloadListener;
@@ -561,7 +561,8 @@ public final class DefaultAudioSink implements AudioSink {
             if (!drainToEndOfStream()) {
                 return false;
             }
-            if (!this.pendingConfiguration.canReuseAudioOutput(this.configuration)) {
+            AudioOutput audioOutput = this.audioOutput;
+            if (audioOutput != null && !audioOutput.canReuseAudioOutput(this.configuration.outputConfig, getFormatConfig(this.pendingConfiguration.afterProcessingInputFormat), this.pendingConfiguration.outputConfig)) {
                 playPendingData();
                 if (hasPendingData()) {
                     return false;
@@ -570,8 +571,8 @@ public final class DefaultAudioSink implements AudioSink {
             } else {
                 this.configuration = this.pendingConfiguration;
                 this.pendingConfiguration = null;
-                AudioOutput audioOutput = this.audioOutput;
-                if (audioOutput != null && audioOutput.isOffloadedPlayback() && this.configuration.outputConfig.useOffloadGapless) {
+                AudioOutput audioOutput2 = this.audioOutput;
+                if (audioOutput2 != null && audioOutput2.isOffloadedPlayback() && this.configuration.outputConfig.useOffloadGapless) {
                     this.audioOutput.setOffloadEndOfStream();
                     this.audioOutput.setOffloadDelayPadding(this.configuration.inputFormat.encoderDelay, this.configuration.inputFormat.encoderPadding);
                     this.isWaitingForOffloadEndOfStreamHandled = true;
@@ -671,16 +672,21 @@ public final class DefaultAudioSink implements AudioSink {
         try {
             return buildAudioOutput(this.configuration.outputConfig);
         } catch (AudioSink.InitializationException e) {
-            if (this.configuration.outputConfig.bufferSize > 1000000) {
-                AudioOutputProvider.OutputConfig build = this.configuration.outputConfig.buildUpon().setBufferSize(1000000).build();
+            int i = this.configuration.outputConfig.bufferSize;
+            while (i > 1000000) {
+                i /= 2;
+                int i2 = this.configuration.outputPcmFrameSize != -1 ? this.configuration.outputPcmFrameSize : 1;
+                int i3 = i % i2;
+                if (i3 != 0) {
+                    i += i2 - i3;
+                }
+                AudioOutputProvider.OutputConfig build = this.configuration.outputConfig.buildUpon().setBufferSize(i).build();
                 try {
                     AudioOutput buildAudioOutput = this.buildAudioOutput(build);
                     this.configuration = this.configuration.copyWithOutputConfig(build);
                     return buildAudioOutput;
                 } catch (AudioSink.InitializationException e2) {
                     e.addSuppressed(e2);
-                    this.maybeDisableOffload();
-                    throw e;
                 }
             }
             this.maybeDisableOffload();
@@ -864,12 +870,14 @@ public final class DefaultAudioSink implements AudioSink {
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
     public void setPlaybackParameters(PlaybackParameters playbackParameters) {
-        this.playbackParameters = new PlaybackParameters(Util.constrainValue(playbackParameters.speed, 0.1f, 8.0f), Util.constrainValue(playbackParameters.pitch, 0.1f, 8.0f));
         if (useAudioOutputPlaybackParams()) {
+            this.playbackParameters = playbackParameters;
             setAudioOutputPlaybackParameters();
-        } else {
-            setAudioProcessorPlaybackParameters(playbackParameters);
+            return;
         }
+        PlaybackParameters playbackParameters2 = new PlaybackParameters(Util.constrainValue(playbackParameters.speed, 0.1f, 8.0f), Util.constrainValue(playbackParameters.pitch, 0.1f, 8.0f));
+        this.playbackParameters = playbackParameters2;
+        setAudioProcessorPlaybackParameters(playbackParameters2);
     }
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
@@ -903,6 +911,15 @@ public final class DefaultAudioSink implements AudioSink {
     @Override // androidx.media3.exoplayer.audio.AudioSink
     public AudioAttributes getAudioAttributes() {
         return this.audioAttributes;
+    }
+
+    @Override // androidx.media3.exoplayer.audio.AudioSink
+    public AudioCapabilities getAudioCapabilities() {
+        AudioOutputProvider audioOutputProvider = this.audioOutputProvider;
+        if (audioOutputProvider instanceof AudioTrackAudioOutputProvider) {
+            return ((AudioTrackAudioOutputProvider) audioOutputProvider).getAudioCapabilities();
+        }
+        return null;
     }
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
@@ -1238,7 +1255,7 @@ public final class DefaultAudioSink implements AudioSink {
         AudioOutputProvider.Listener listener = new AudioOutputProvider.Listener() { // from class: androidx.media3.exoplayer.audio.DefaultAudioSink$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.audio.AudioOutputProvider.Listener
             public final void onFormatSupportChanged() {
-                DefaultAudioSink.this.m8249x5f4a2db();
+                DefaultAudioSink.this.m8856x5f4a2db();
             }
         };
         this.audioOutputProviderListener = listener;
@@ -1247,7 +1264,7 @@ public final class DefaultAudioSink implements AudioSink {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeAddAudioOutputProviderListener$0$androidx-media3-exoplayer-audio-DefaultAudioSink  reason: not valid java name */
-    public /* synthetic */ void m8249x5f4a2db() {
+    public /* synthetic */ void m8856x5f4a2db() {
         AudioSink.Listener listener = this.listener;
         if (listener != null) {
             listener.onAudioCapabilitiesChanged();
@@ -1354,7 +1371,7 @@ public final class DefaultAudioSink implements AudioSink {
             int r2 = androidx.media3.extractor.DtsUtil.parseDtsAudioSampleCount(r3)
             return r2
         L61:
-            int r2 = androidx.media3.extractor.OpusUtil.parseOggPacketAudioSampleCount(r3)
+            int r2 = androidx.media3.container.OpusUtil.parseOggPacketAudioSampleCount(r3)
             return r2
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.media3.exoplayer.audio.DefaultAudioSink.getFramesPerEncodedSample(int, java.nio.ByteBuffer):int");
@@ -1395,7 +1412,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public final class AudioOutputListener implements AudioOutput.Listener {
         private final AudioOutputProvider.OutputConfig outputConfig;
 
@@ -1419,7 +1436,7 @@ public final class DefaultAudioSink implements AudioSink {
 
         @Override // androidx.media3.exoplayer.audio.AudioOutput.Listener
         public void onOffloadPresentationEnded() {
-            if (equals(DefaultAudioSink.this.audioOutputListener)) {
+            if (equals(DefaultAudioSink.this.audioOutputListener) && DefaultAudioSink.this.stoppedAudioOutput) {
                 DefaultAudioSink.this.handledOffloadOnPresentationEnded = true;
             }
         }
@@ -1441,7 +1458,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MediaPositionParameters {
         public final long audioOutputPositionUs;
         public long mediaPositionDriftUs;
@@ -1456,7 +1473,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Configuration {
         private final Format afterProcessingInputFormat;
         private final AudioProcessingPipeline audioProcessingPipeline;
@@ -1477,11 +1494,6 @@ public final class DefaultAudioSink implements AudioSink {
         /* JADX INFO: Access modifiers changed from: private */
         public Configuration copyWithOutputConfig(AudioOutputProvider.OutputConfig outputConfig) {
             return new Configuration(this.inputFormat, this.afterProcessingInputFormat, this.inputPcmFrameSize, this.outputPcmFrameSize, outputConfig, this.audioProcessingPipeline);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public boolean canReuseAudioOutput(Configuration configuration) {
-            return configuration.outputConfig.equals(this.outputConfig);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1506,7 +1518,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class PendingExceptionHolder<T extends Exception> {
         private static final int RETRY_DELAY_MS = 50;
         private static final int RETRY_DURATION_MS = 200;

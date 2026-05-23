@@ -34,52 +34,52 @@ public final class ListItemColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2196getContainerColor0d7_KjU() {
+    public final long m2641getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getHeadlineColor-0d7_KjU  reason: not valid java name */
-    public final long m2200getHeadlineColor0d7_KjU() {
+    public final long m2645getHeadlineColor0d7_KjU() {
         return this.headlineColor;
     }
 
     /* renamed from: getLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2201getLeadingIconColor0d7_KjU() {
+    public final long m2646getLeadingIconColor0d7_KjU() {
         return this.leadingIconColor;
     }
 
     /* renamed from: getOverlineColor-0d7_KjU  reason: not valid java name */
-    public final long m2202getOverlineColor0d7_KjU() {
+    public final long m2647getOverlineColor0d7_KjU() {
         return this.overlineColor;
     }
 
     /* renamed from: getSupportingTextColor-0d7_KjU  reason: not valid java name */
-    public final long m2203getSupportingTextColor0d7_KjU() {
+    public final long m2648getSupportingTextColor0d7_KjU() {
         return this.supportingTextColor;
     }
 
     /* renamed from: getTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2204getTrailingIconColor0d7_KjU() {
+    public final long m2649getTrailingIconColor0d7_KjU() {
         return this.trailingIconColor;
     }
 
     /* renamed from: getDisabledHeadlineColor-0d7_KjU  reason: not valid java name */
-    public final long m2197getDisabledHeadlineColor0d7_KjU() {
+    public final long m2642getDisabledHeadlineColor0d7_KjU() {
         return this.disabledHeadlineColor;
     }
 
     /* renamed from: getDisabledLeadingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2198getDisabledLeadingIconColor0d7_KjU() {
+    public final long m2643getDisabledLeadingIconColor0d7_KjU() {
         return this.disabledLeadingIconColor;
     }
 
     /* renamed from: getDisabledTrailingIconColor-0d7_KjU  reason: not valid java name */
-    public final long m2199getDisabledTrailingIconColor0d7_KjU() {
+    public final long m2644getDisabledTrailingIconColor0d7_KjU() {
         return this.disabledTrailingIconColor;
     }
 
     /* renamed from: copy-5r9EGqc$default  reason: not valid java name */
-    public static /* synthetic */ ListItemColors m2193copy5r9EGqc$default(ListItemColors listItemColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, int i, Object obj) {
+    public static /* synthetic */ ListItemColors m2638copy5r9EGqc$default(ListItemColors listItemColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, int i, Object obj) {
         long j10;
         long j11;
         long j12 = (i & 1) != 0 ? listItemColors.containerColor : j;
@@ -98,41 +98,41 @@ public final class ListItemColors {
             j10 = j9;
             j11 = j20;
         }
-        return listItemColors.m2195copy5r9EGqc(j19, j13, j14, j15, j16, j17, j18, j11, j10);
+        return listItemColors.m2640copy5r9EGqc(j19, j13, j14, j15, j16, j17, j18, j11, j10);
     }
 
     /* renamed from: copy-5r9EGqc  reason: not valid java name */
-    public final ListItemColors m2195copy5r9EGqc(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9) {
+    public final ListItemColors m2640copy5r9EGqc(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9) {
         return new ListItemColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.headlineColor, j3 != 16 ? j3 : this.leadingIconColor, j4 != 16 ? j4 : this.overlineColor, j5 != 16 ? j5 : this.supportingTextColor, j6 != 16 ? j6 : this.trailingIconColor, j7 != 16 ? j7 : this.disabledHeadlineColor, j8 != 16 ? j8 : this.disabledLeadingIconColor, j9 != 16 ? j9 : this.disabledTrailingIconColor, null);
     }
 
     /* renamed from: containerColor-0d7_KjU$material3  reason: not valid java name */
-    public final long m2194containerColor0d7_KjU$material3() {
+    public final long m2639containerColor0d7_KjU$material3() {
         return this.containerColor;
     }
 
     /* renamed from: headlineColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2205headlineColorvNxB06k$material3(boolean z) {
+    public final long m2650headlineColorvNxB06k$material3(boolean z) {
         return z ? this.headlineColor : this.disabledHeadlineColor;
     }
 
     /* renamed from: leadingIconColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2206leadingIconColorvNxB06k$material3(boolean z) {
+    public final long m2651leadingIconColorvNxB06k$material3(boolean z) {
         return z ? this.leadingIconColor : this.disabledLeadingIconColor;
     }
 
     /* renamed from: overlineColor-0d7_KjU$material3  reason: not valid java name */
-    public final long m2207overlineColor0d7_KjU$material3() {
+    public final long m2652overlineColor0d7_KjU$material3() {
         return this.overlineColor;
     }
 
     /* renamed from: supportingColor-0d7_KjU$material3  reason: not valid java name */
-    public final long m2208supportingColor0d7_KjU$material3() {
+    public final long m2653supportingColor0d7_KjU$material3() {
         return this.supportingTextColor;
     }
 
     /* renamed from: trailingIconColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2209trailingIconColorvNxB06k$material3(boolean z) {
+    public final long m2654trailingIconColorvNxB06k$material3(boolean z) {
         return z ? this.trailingIconColor : this.disabledTrailingIconColor;
     }
 }

@@ -26,7 +26,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class IconKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconCompat_FNF3uiM$lambda$0(Painter painter, Modifier modifier, long j, int i, int i2, Composer composer, int i3) {
-        m8812IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m9421IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -47,7 +47,7 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m8812IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m9421IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -78,16 +78,16 @@ public final class IconKt {
                 i3 |= startRestartGroup.changed(j2) ? 256 : 128;
                 if ((i3 & 147) == 146 || !startRestartGroup.getSkipping()) {
                     Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj;
-                    long m4808getUnspecified0d7_KjU = i4 != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
+                    long m5384getUnspecified0d7_KjU = i4 != 0 ? Color.Companion.m5384getUnspecified0d7_KjU() : j2;
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1547148365, i3, -1, "com.arkivanov.decompose.extensions.compose.utils.IconCompat (Icon.kt:21)");
                     }
-                    BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m4773equalsimpl0(m4808getUnspecified0d7_KjU, Color.Companion.m4808getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m4813tintxETnrds$default(ColorFilter.Companion, m4808getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
+                    BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m5349equalsimpl0(m5384getUnspecified0d7_KjU, Color.Companion.m5384getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m5389tintxETnrds$default(ColorFilter.Companion, m5384getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                     modifier2 = companion;
-                    j3 = m4808getUnspecified0d7_KjU;
+                    j3 = m5384getUnspecified0d7_KjU;
                 } else {
                     startRestartGroup.skipToGroupEnd();
                     modifier2 = obj;
@@ -114,11 +114,11 @@ public final class IconKt {
             }
             if (ComposerKt.isTraceInProgress()) {
             }
-            BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m4773equalsimpl0(m4808getUnspecified0d7_KjU, Color.Companion.m4808getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m4813tintxETnrds$default(ColorFilter.Companion, m4808getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
+            BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m5349equalsimpl0(m5384getUnspecified0d7_KjU, Color.Companion.m5384getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m5389tintxETnrds$default(ColorFilter.Companion, m5384getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = companion;
-            j3 = m4808getUnspecified0d7_KjU;
+            j3 = m5384getUnspecified0d7_KjU;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -136,22 +136,22 @@ public final class IconKt {
         }
         if (ComposerKt.isTraceInProgress()) {
         }
-        BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m4773equalsimpl0(m4808getUnspecified0d7_KjU, Color.Companion.m4808getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m4813tintxETnrds$default(ColorFilter.Companion, m4808getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
+        BoxKt.Box(PainterModifierKt.paint$default(defaultSizeFor(GraphicsLayerModifierKt.toolingGraphicsLayer(companion), painter), painter, false, null, ContentScale.Companion.getFit(), 0.0f, Color.m5349equalsimpl0(m5384getUnspecified0d7_KjU, Color.Companion.m5384getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m5389tintxETnrds$default(ColorFilter.Companion, m5384getUnspecified0d7_KjU, 0, 2, null), 22, null), startRestartGroup, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = companion;
-        j3 = m4808getUnspecified0d7_KjU;
+        j3 = m5384getUnspecified0d7_KjU;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
         }
     }
 
     private static final Modifier defaultSizeFor(Modifier modifier, Painter painter) {
-        return (Size.m4592equalsimpl0(painter.mo5466getIntrinsicSizeNHjbRc(), Size.Companion.m4604getUnspecifiedNHjbRc()) || m8813isInfiniteuvyYCjk(painter.mo5466getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(24.0f))) : modifier;
+        return (Size.m5168equalsimpl0(painter.mo6042getIntrinsicSizeNHjbRc(), Size.Companion.m5180getUnspecifiedNHjbRc()) || m9422isInfiniteuvyYCjk(painter.mo6042getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(24.0f))) : modifier;
     }
 
     /* renamed from: isInfinite-uvyYCjk  reason: not valid java name */
-    private static final boolean m8813isInfiniteuvyYCjk(long j) {
+    private static final boolean m9422isInfiniteuvyYCjk(long j) {
         return Float.isInfinite(Float.intBitsToFloat((int) (j >> 32))) && Float.isInfinite(Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 }

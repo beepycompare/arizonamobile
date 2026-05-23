@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzmx implements Runnable {
     final /* synthetic */ AtomicReference zza;
@@ -39,7 +39,7 @@ public final class zzmx implements Runnable {
                 zznlVar = this.zzf;
                 zzZ = zznlVar.zzZ();
             } catch (RemoteException e) {
-                this.zzf.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; remote exception", null, this.zzb, e);
+                this.zzf.zzu.zzaW().zzb().zzd("(legacy) Failed to get user properties; remote exception", null, this.zzb, e);
                 this.zza.set(Collections.emptyList());
                 atomicReference = this.zza;
             }
@@ -56,7 +56,7 @@ public final class zzmx implements Runnable {
                 atomicReference.notify();
                 return;
             }
-            zznlVar.zzu.zzaV().zzb().zzd("(legacy) Failed to get user properties; not connected to service", null, this.zzb, this.zzc);
+            zznlVar.zzu.zzaW().zzb().zzd("(legacy) Failed to get user properties; not connected to service", null, this.zzb, this.zzc);
             atomicReference2.set(Collections.emptyList());
             atomicReference2.notify();
         }

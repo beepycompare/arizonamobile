@@ -29,7 +29,7 @@ public final class ShortNavigationBarItemDefaults {
     }
 
     /* renamed from: colors-69fazGs  reason: not valid java name */
-    public final NavigationItemColors m2489colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
+    public final NavigationItemColors m2934colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
         long j8;
         long j9;
         long j10;
@@ -43,7 +43,7 @@ public final class ShortNavigationBarItemDefaults {
         long value5 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(NavigationBarTokens.INSTANCE.getItemInactiveLabelTextColor(), composer, 6) : j5;
         if ((i2 & 32) != 0) {
             long j13 = value4;
-            j9 = Color.m4771copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j9 = Color.m5347copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j8 = j13;
         } else {
             j8 = value4;
@@ -51,7 +51,7 @@ public final class ShortNavigationBarItemDefaults {
         }
         if ((i2 & 64) != 0) {
             long j14 = value5;
-            j11 = Color.m4771copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j11 = Color.m5347copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j10 = j14;
         } else {
             j10 = value5;
@@ -63,18 +63,18 @@ public final class ShortNavigationBarItemDefaults {
         } else {
             j12 = value;
         }
-        NavigationItemColors m2292copy4JmcsL4 = getDefaultShortNavigationBarItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2292copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
+        NavigationItemColors m2737copy4JmcsL4 = getDefaultShortNavigationBarItemColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2737copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2292copy4JmcsL4;
+        return m2737copy4JmcsL4;
     }
 
     public final NavigationItemColors getDefaultShortNavigationBarItemColors$material3(ColorScheme colorScheme) {
         NavigationItemColors defaultShortNavigationBarItemColorsCached$material3 = colorScheme.getDefaultShortNavigationBarItemColorsCached$material3();
         if (defaultShortNavigationBarItemColorsCached$material3 == null) {
-            NavigationItemColors navigationItemColors = new NavigationItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveIndicatorColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveLabelTextColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            NavigationItemColors navigationItemColors = new NavigationItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemActiveIndicatorColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveIconColor()), ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveLabelTextColor()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationBarTokens.INSTANCE.getItemInactiveLabelTextColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultShortNavigationBarItemColorsCached$material3(navigationItemColors);
             return navigationItemColors;
         }

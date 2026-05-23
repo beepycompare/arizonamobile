@@ -8,18 +8,18 @@ import kotlin.Metadata;
 public final class ExtendedFabLargeTokens {
     public static final int $stable = 0;
     public static final ExtendedFabLargeTokens INSTANCE = new ExtendedFabLargeTokens();
-    private static final float ContainerHeight = Dp.m7555constructorimpl(96.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(96.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
-    private static final float IconLabelSpace = Dp.m7555constructorimpl(20.0f);
-    private static final float IconSize = Dp.m7555constructorimpl(32.0f);
-    private static final float LeadingSpace = Dp.m7555constructorimpl(28.0f);
-    private static final float TrailingSpace = Dp.m7555constructorimpl(28.0f);
+    private static final float IconLabelSpace = Dp.m8160constructorimpl(20.0f);
+    private static final float IconSize = Dp.m8160constructorimpl(32.0f);
+    private static final float LeadingSpace = Dp.m8160constructorimpl(28.0f);
+    private static final float TrailingSpace = Dp.m8160constructorimpl(28.0f);
 
     private ExtendedFabLargeTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3365getContainerHeightD9Ej5fM() {
+    public final float m3810getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -28,22 +28,22 @@ public final class ExtendedFabLargeTokens {
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3366getIconLabelSpaceD9Ej5fM() {
+    public final float m3811getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3367getIconSizeD9Ej5fM() {
+    public final float m3812getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3368getLeadingSpaceD9Ej5fM() {
+    public final float m3813getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3369getTrailingSpaceD9Ej5fM() {
+    public final float m3814getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 }

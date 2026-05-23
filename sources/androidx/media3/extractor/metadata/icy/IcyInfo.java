@@ -3,7 +3,7 @@ package androidx.media3.extractor.metadata.icy;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Metadata;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class IcyInfo implements Metadata.Entry {
     public final byte[] rawMetadata;
     public final String title;

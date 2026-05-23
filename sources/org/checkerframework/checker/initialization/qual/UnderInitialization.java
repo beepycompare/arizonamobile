@@ -10,7 +10,7 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({UnknownInitialization.class})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface UnderInitialization {
     Class<?> value() default Object.class;
 }

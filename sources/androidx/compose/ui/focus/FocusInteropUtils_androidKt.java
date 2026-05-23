@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.LayoutDirection;
 import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 /* compiled from: FocusInteropUtils.android.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u0015\u0010\b\u001a\u0004\u0018\u00010\u0007*\u00020\u0005H\u0000¢\u0006\u0004\b\t\u0010\n\u001a\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005*\u00020\u000bH\u0000¢\u0006\u0004\b\f\u0010\r\u001a\u0012\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0010\u001a\u00020\u0007H\u0000\u001a\u0014\u0010\u0011\u001a\u00020\u0012*\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0013H\u0000\u001a%\u0010\u0015\u001a\u00020\u0016*\u00020\u00132\b\u0010\u0017\u001a\u0004\u0018\u00010\u00072\b\u0010\u0018\u001a\u0004\u0018\u00010\u0003H\u0000¢\u0006\u0002\u0010\u0019\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"tempCoordinates", "", "tempRect", "Landroid/graphics/Rect;", "toFocusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "androidDirection", "", "toAndroidFocusDirection", "toAndroidFocusDirection-3ESFkO8", "(I)Ljava/lang/Integer;", "Landroidx/compose/ui/input/key/KeyEvent;", "toFocusDirection-ZmokQxo", "(Landroid/view/KeyEvent;)Landroidx/compose/ui/focus/FocusDirection;", "toLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "androidLayoutDirection", "calculateFocusRectRelativeTo", "Landroidx/compose/ui/geometry/Rect;", "Landroid/view/View;", "view", "requestInteropFocus", "", "direction", "rect", "(Landroid/view/View;Ljava/lang/Integer;Landroid/graphics/Rect;)Z", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u0015\u0010\b\u001a\u0004\u0018\u00010\u0007*\u00020\u0005H\u0000¢\u0006\u0004\b\t\u0010\n\u001a\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005*\u00020\u000bH\u0000¢\u0006\u0004\b\f\u0010\r\u001a\u0012\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0010\u001a\u00020\u0007H\u0000\u001a\u0014\u0010\u0011\u001a\u00020\u0012*\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0013H\u0000\u001a%\u0010\u0015\u001a\u00020\u0016*\u00020\u00132\b\u0010\u0017\u001a\u0004\u0018\u00010\u00072\b\u0010\u0018\u001a\u0004\u0018\u00010\u0003H\u0000¢\u0006\u0002\u0010\u0019\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"tempCoordinates", "", "tempRect", "Landroid/graphics/Rect;", "toFocusDirection", "Landroidx/compose/ui/focus/FocusDirection;", "androidDirection", "", "toAndroidFocusDirection", "toAndroidFocusDirection-3ESFkO8", "(I)Ljava/lang/Integer;", "Landroidx/compose/ui/input/key/KeyEvent;", "toFocusDirection-ZmokQxo", "(Landroid/view/KeyEvent;)Landroidx/compose/ui/focus/FocusDirection;", "toLayoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "androidLayoutDirection", "calculateFocusRectRelativeTo", "Landroidx/compose/ui/geometry/Rect;", "Landroid/view/View;", "view", "requestInteropFocus", "", "direction", "rect", "(Landroid/view/View;Ljava/lang/Integer;Landroid/graphics/Rect;)Z", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class FocusInteropUtils_androidKt {
     private static final int[] tempCoordinates = new int[2];
@@ -27,67 +27,67 @@ public final class FocusInteropUtils_androidKt {
                             if (i != 130) {
                                 return null;
                             }
-                            return FocusDirection.m4399boximpl(FocusDirection.Companion.m4406getDowndhqQ8s());
+                            return FocusDirection.m4975boximpl(FocusDirection.Companion.m4982getDowndhqQ8s());
                         }
-                        return FocusDirection.m4399boximpl(FocusDirection.Companion.m4412getRightdhqQ8s());
+                        return FocusDirection.m4975boximpl(FocusDirection.Companion.m4988getRightdhqQ8s());
                     }
-                    return FocusDirection.m4399boximpl(FocusDirection.Companion.m4413getUpdhqQ8s());
+                    return FocusDirection.m4975boximpl(FocusDirection.Companion.m4989getUpdhqQ8s());
                 }
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4409getLeftdhqQ8s());
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4985getLeftdhqQ8s());
             }
-            return FocusDirection.m4399boximpl(FocusDirection.Companion.m4410getNextdhqQ8s());
+            return FocusDirection.m4975boximpl(FocusDirection.Companion.m4986getNextdhqQ8s());
         }
-        return FocusDirection.m4399boximpl(FocusDirection.Companion.m4411getPreviousdhqQ8s());
+        return FocusDirection.m4975boximpl(FocusDirection.Companion.m4987getPreviousdhqQ8s());
     }
 
     /* renamed from: toAndroidFocusDirection-3ESFkO8  reason: not valid java name */
-    public static final Integer m4414toAndroidFocusDirection3ESFkO8(int i) {
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4413getUpdhqQ8s())) {
+    public static final Integer m4990toAndroidFocusDirection3ESFkO8(int i) {
+        if (FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4989getUpdhqQ8s())) {
             return 33;
         }
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4406getDowndhqQ8s())) {
+        if (FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4982getDowndhqQ8s())) {
             return Integer.valueOf((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
         }
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4409getLeftdhqQ8s())) {
+        if (FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4985getLeftdhqQ8s())) {
             return 17;
         }
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4412getRightdhqQ8s())) {
+        if (FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4988getRightdhqQ8s())) {
             return 66;
         }
-        if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4410getNextdhqQ8s())) {
+        if (FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4986getNextdhqQ8s())) {
             return 2;
         }
-        return FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4411getPreviousdhqQ8s()) ? 1 : null;
+        return FocusDirection.m4978equalsimpl0(i, FocusDirection.Companion.m4987getPreviousdhqQ8s()) ? 1 : null;
     }
 
     /* renamed from: toFocusDirection-ZmokQxo  reason: not valid java name */
-    public static final FocusDirection m4415toFocusDirectionZmokQxo(KeyEvent keyEvent) {
-        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
-        if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5780getNavigatePreviousEK5gGoQ())) {
-            return FocusDirection.m4399boximpl(FocusDirection.Companion.m4411getPreviousdhqQ8s());
+    public static final FocusDirection m4991toFocusDirectionZmokQxo(KeyEvent keyEvent) {
+        long m6517getKeyZmokQxo = KeyEvent_androidKt.m6517getKeyZmokQxo(keyEvent);
+        if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6358getNavigatePreviousEK5gGoQ())) {
+            return FocusDirection.m4975boximpl(FocusDirection.Companion.m4987getPreviousdhqQ8s());
         }
-        if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5778getNavigateNextEK5gGoQ())) {
-            return FocusDirection.m4399boximpl(FocusDirection.Companion.m4410getNextdhqQ8s());
+        if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6356getNavigateNextEK5gGoQ())) {
+            return FocusDirection.m4975boximpl(FocusDirection.Companion.m4986getNextdhqQ8s());
         }
-        if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5856getTabEK5gGoQ())) {
-            return FocusDirection.m4399boximpl(KeyEvent_androidKt.m5934isShiftPressedZmokQxo(keyEvent) ? FocusDirection.Companion.m4411getPreviousdhqQ8s() : FocusDirection.Companion.m4410getNextdhqQ8s());
-        } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5697getDirectionRightEK5gGoQ())) {
-            return FocusDirection.m4399boximpl(FocusDirection.Companion.m4412getRightdhqQ8s());
+        if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6445getTabEK5gGoQ())) {
+            return FocusDirection.m4975boximpl(KeyEvent_androidKt.m6523isShiftPressedZmokQxo(keyEvent) ? FocusDirection.Companion.m4987getPreviousdhqQ8s() : FocusDirection.Companion.m4986getNextdhqQ8s());
+        } else if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6275getDirectionRightEK5gGoQ())) {
+            return FocusDirection.m4975boximpl(FocusDirection.Companion.m4988getRightdhqQ8s());
         } else {
-            if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5696getDirectionLeftEK5gGoQ())) {
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4409getLeftdhqQ8s());
+            if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6274getDirectionLeftEK5gGoQ())) {
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4985getLeftdhqQ8s());
             }
-            if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5698getDirectionUpEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5809getPageUpEK5gGoQ())) {
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4413getUpdhqQ8s());
+            if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6276getDirectionUpEK5gGoQ()) || Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6397getPageUpEK5gGoQ())) {
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4989getUpdhqQ8s());
             }
-            if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5693getDirectionDownEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5808getPageDownEK5gGoQ())) {
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4406getDowndhqQ8s());
+            if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6271getDirectionDownEK5gGoQ()) || Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6396getPageDownEK5gGoQ())) {
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4982getDowndhqQ8s());
             }
-            if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5692getDirectionCenterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5706getEnterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5798getNumPadEnterEK5gGoQ())) {
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4407getEnterdhqQ8s());
+            if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6270getDirectionCenterEK5gGoQ()) || Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6284getEnterEK5gGoQ()) || Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6381getNumPadEnterEK5gGoQ())) {
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4983getEnterdhqQ8s());
             }
-            if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5635getBackEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5709getEscapeEK5gGoQ())) {
-                return FocusDirection.m4399boximpl(FocusDirection.Companion.m4408getExitdhqQ8s());
+            if (Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6213getBackEK5gGoQ()) || Key.m6197equalsimpl0(m6517getKeyZmokQxo, Key.Companion.m6287getEscapeEK5gGoQ())) {
+                return FocusDirection.m4975boximpl(FocusDirection.Companion.m4984getExitdhqQ8s());
             }
             return null;
         }

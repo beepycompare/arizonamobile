@@ -6,7 +6,7 @@ import android.widget.RelativeLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarAdMob {
     private static final int AD_Failed = 2;
     private static final int AD_FailedToLoad = 3;

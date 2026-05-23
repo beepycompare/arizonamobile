@@ -23,6 +23,7 @@ public class AdjustInstance {
     private final ArrayList<AdjustTimeoutCallback> cachedAdidReadTimeoutCallbacks = new ArrayList<>();
     private final ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
     private final ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
+    private final ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacks = new ArrayList<>();
 
     /* loaded from: classes3.dex */
     public static class PreLaunchActions {
@@ -220,7 +221,7 @@ public class AdjustInstance {
     }
 
     public void getGooglePlayInstallReferrer(Context context, final OnGooglePlayInstallReferrerReadListener onGooglePlayInstallReferrerReadListener) {
-        new InstallReferrer(context, new InstallReferrerReadListener() { // from class: com.adjust.sdk.AdjustInstance.11
+        new InstallReferrer(context, new InstallReferrerReadListener() { // from class: com.adjust.sdk.AdjustInstance.12
             @Override // com.adjust.sdk.InstallReferrerReadListener
             public final void onFail(String str) {
                 OnGooglePlayInstallReferrerReadListener.this.onFail(str);
@@ -234,7 +235,7 @@ public class AdjustInstance {
     }
 
     public void getLastDeeplink(final Context context, final OnLastDeeplinkReadListener onLastDeeplinkReadListener) {
-        new AsyncTaskExecutor<Void, Uri>() { // from class: com.adjust.sdk.AdjustInstance.12
+        new AsyncTaskExecutor<Void, Uri>() { // from class: com.adjust.sdk.AdjustInstance.13
             @Override // com.adjust.sdk.scheduler.AsyncTaskExecutor
             public final Uri doInBackground(Void[] voidArr) {
                 try {
@@ -252,7 +253,7 @@ public class AdjustInstance {
     }
 
     public void getSdkVersion(final OnSdkVersionReadListener onSdkVersionReadListener) {
-        new AsyncTaskExecutor<Void, String>() { // from class: com.adjust.sdk.AdjustInstance.10
+        new AsyncTaskExecutor<Void, String>() { // from class: com.adjust.sdk.AdjustInstance.11
             @Override // com.adjust.sdk.scheduler.AsyncTaskExecutor
             public final String doInBackground(Void[] voidArr) {
                 return Util.getSdkVersion();
@@ -263,6 +264,29 @@ public class AdjustInstance {
                 OnSdkVersionReadListener.this.onSdkVersionRead(str);
             }
         }.execute(new Void[0]);
+    }
+
+    public void getThirdPartySharingSettingsWithTimeout(final Context context, final long j, final OnThirdPartySharingSettingsReadListener onThirdPartySharingSettingsReadListener) {
+        if (!checkActivityHandler("getThirdPartySharingSettings")) {
+            new SingleThreadCachedScheduler("getThirdPartySharingSettings").submit(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.10
+                @Override // java.lang.Runnable
+                public final void run() {
+                    final AdjustThirdPartySharingResult thirdPartySharingResult = SharedPreferencesManager.getDefaultInstance(context).getThirdPartySharingResult();
+                    if (thirdPartySharingResult == null) {
+                        ActivityHandler.queueGetThirdPartySharingSettingsWithTimeout(j, onThirdPartySharingSettingsReadListener, AdjustInstance.this.cachedThirdPartySharingTimeoutCallbacks, context);
+                    } else {
+                        new Handler(context.getMainLooper()).post(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.10.1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                onThirdPartySharingSettingsReadListener.onThirdPartySharingSettingsRead(thirdPartySharingResult);
+                            }
+                        });
+                    }
+                }
+            });
+        } else {
+            this.activityHandler.getThirdPartySharingSettingsWithTimeout(j, onThirdPartySharingSettingsReadListener);
+        }
     }
 
     public void initSdk(AdjustConfig adjustConfig) {
@@ -288,6 +312,7 @@ public class AdjustInstance {
             adjustConfig.cachedAdidReadTimeoutCallbacks = this.cachedAdidReadTimeoutCallbacks;
             adjustConfig.cachedAttributionReadCallbacks = this.cachedAttributionReadCallbacks;
             adjustConfig.cachedAttributionReadTimeoutCallbacks = this.cachedAttributionReadTimeoutCallbacks;
+            adjustConfig.cachedThirdPartySharingTimeoutCallbacks = this.cachedThirdPartySharingTimeoutCallbacks;
             this.activityHandler = AdjustFactory.getActivityHandler(adjustConfig);
             setSendingReferrersAsNotSent(adjustConfig.context);
         }

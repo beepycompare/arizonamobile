@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @SubtypeOf({})
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface FromByteCode {
 }

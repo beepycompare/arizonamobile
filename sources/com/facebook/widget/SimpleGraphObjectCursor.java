@@ -4,7 +4,7 @@ import android.database.CursorIndexOutOfBoundsException;
 import com.facebook.model.GraphObject;
 import java.util.ArrayList;
 import java.util.Collection;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 class SimpleGraphObjectCursor<T extends GraphObject> implements GraphObjectCursor<T> {
     private boolean closed;
     private boolean fromCache;

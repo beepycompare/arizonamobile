@@ -33,47 +33,47 @@ public final class ChipColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1810getContainerColor0d7_KjU() {
+    public final long m2255getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m1815getLabelColor0d7_KjU() {
+    public final long m2260getLabelColor0d7_KjU() {
         return this.labelColor;
     }
 
     /* renamed from: getLeadingIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1816getLeadingIconContentColor0d7_KjU() {
+    public final long m2261getLeadingIconContentColor0d7_KjU() {
         return this.leadingIconContentColor;
     }
 
     /* renamed from: getTrailingIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1817getTrailingIconContentColor0d7_KjU() {
+    public final long m2262getTrailingIconContentColor0d7_KjU() {
         return this.trailingIconContentColor;
     }
 
     /* renamed from: getDisabledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m1811getDisabledContainerColor0d7_KjU() {
+    public final long m2256getDisabledContainerColor0d7_KjU() {
         return this.disabledContainerColor;
     }
 
     /* renamed from: getDisabledLabelColor-0d7_KjU  reason: not valid java name */
-    public final long m1812getDisabledLabelColor0d7_KjU() {
+    public final long m2257getDisabledLabelColor0d7_KjU() {
         return this.disabledLabelColor;
     }
 
     /* renamed from: getDisabledLeadingIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1813getDisabledLeadingIconContentColor0d7_KjU() {
+    public final long m2258getDisabledLeadingIconContentColor0d7_KjU() {
         return this.disabledLeadingIconContentColor;
     }
 
     /* renamed from: getDisabledTrailingIconContentColor-0d7_KjU  reason: not valid java name */
-    public final long m1814getDisabledTrailingIconContentColor0d7_KjU() {
+    public final long m2259getDisabledTrailingIconContentColor0d7_KjU() {
         return this.disabledTrailingIconContentColor;
     }
 
     /* renamed from: copy-FD3wquc$default  reason: not valid java name */
-    public static /* synthetic */ ChipColors m1807copyFD3wquc$default(ChipColors chipColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, int i, Object obj) {
+    public static /* synthetic */ ChipColors m2252copyFD3wquc$default(ChipColors chipColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, int i, Object obj) {
         long j9;
         long j10;
         long j11 = (i & 1) != 0 ? chipColors.containerColor : j;
@@ -90,31 +90,31 @@ public final class ChipColors {
             j9 = j8;
             j10 = j11;
         }
-        return chipColors.m1809copyFD3wquc(j10, j12, j13, j14, j15, j16, j17, j9);
+        return chipColors.m2254copyFD3wquc(j10, j12, j13, j14, j15, j16, j17, j9);
     }
 
     /* renamed from: copy-FD3wquc  reason: not valid java name */
-    public final ChipColors m1809copyFD3wquc(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8) {
+    public final ChipColors m2254copyFD3wquc(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8) {
         return new ChipColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.labelColor, j3 != 16 ? j3 : this.leadingIconContentColor, j4 != 16 ? j4 : this.trailingIconContentColor, j5 != 16 ? j5 : this.disabledContainerColor, j6 != 16 ? j6 : this.disabledLabelColor, j7 != 16 ? j7 : this.disabledLeadingIconContentColor, j8 != 16 ? j8 : this.disabledTrailingIconContentColor, null);
     }
 
     /* renamed from: containerColor-vNxB06k$material3  reason: not valid java name */
-    public final long m1808containerColorvNxB06k$material3(boolean z) {
+    public final long m2253containerColorvNxB06k$material3(boolean z) {
         return z ? this.containerColor : this.disabledContainerColor;
     }
 
     /* renamed from: labelColor-vNxB06k$material3  reason: not valid java name */
-    public final long m1818labelColorvNxB06k$material3(boolean z) {
+    public final long m2263labelColorvNxB06k$material3(boolean z) {
         return z ? this.labelColor : this.disabledLabelColor;
     }
 
     /* renamed from: leadingIconContentColor-vNxB06k$material3  reason: not valid java name */
-    public final long m1819leadingIconContentColorvNxB06k$material3(boolean z) {
+    public final long m2264leadingIconContentColorvNxB06k$material3(boolean z) {
         return z ? this.leadingIconContentColor : this.disabledLeadingIconContentColor;
     }
 
     /* renamed from: trailingIconContentColor-vNxB06k$material3  reason: not valid java name */
-    public final long m1820trailingIconContentColorvNxB06k$material3(boolean z) {
+    public final long m2265trailingIconContentColorvNxB06k$material3(boolean z) {
         return z ? this.trailingIconContentColor : this.disabledTrailingIconContentColor;
     }
 
@@ -126,10 +126,10 @@ public final class ChipColors {
             return false;
         }
         ChipColors chipColors = (ChipColors) obj;
-        return Color.m4773equalsimpl0(this.containerColor, chipColors.containerColor) && Color.m4773equalsimpl0(this.labelColor, chipColors.labelColor) && Color.m4773equalsimpl0(this.leadingIconContentColor, chipColors.leadingIconContentColor) && Color.m4773equalsimpl0(this.trailingIconContentColor, chipColors.trailingIconContentColor) && Color.m4773equalsimpl0(this.disabledContainerColor, chipColors.disabledContainerColor) && Color.m4773equalsimpl0(this.disabledLabelColor, chipColors.disabledLabelColor) && Color.m4773equalsimpl0(this.disabledLeadingIconContentColor, chipColors.disabledLeadingIconContentColor) && Color.m4773equalsimpl0(this.disabledTrailingIconContentColor, chipColors.disabledTrailingIconContentColor);
+        return Color.m5349equalsimpl0(this.containerColor, chipColors.containerColor) && Color.m5349equalsimpl0(this.labelColor, chipColors.labelColor) && Color.m5349equalsimpl0(this.leadingIconContentColor, chipColors.leadingIconContentColor) && Color.m5349equalsimpl0(this.trailingIconContentColor, chipColors.trailingIconContentColor) && Color.m5349equalsimpl0(this.disabledContainerColor, chipColors.disabledContainerColor) && Color.m5349equalsimpl0(this.disabledLabelColor, chipColors.disabledLabelColor) && Color.m5349equalsimpl0(this.disabledLeadingIconContentColor, chipColors.disabledLeadingIconContentColor) && Color.m5349equalsimpl0(this.disabledTrailingIconContentColor, chipColors.disabledTrailingIconContentColor);
     }
 
     public int hashCode() {
-        return (((((((((((((Color.m4779hashCodeimpl(this.containerColor) * 31) + Color.m4779hashCodeimpl(this.labelColor)) * 31) + Color.m4779hashCodeimpl(this.leadingIconContentColor)) * 31) + Color.m4779hashCodeimpl(this.trailingIconContentColor)) * 31) + Color.m4779hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4779hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m4779hashCodeimpl(this.disabledLeadingIconContentColor)) * 31) + Color.m4779hashCodeimpl(this.disabledTrailingIconContentColor);
+        return (((((((((((((Color.m5355hashCodeimpl(this.containerColor) * 31) + Color.m5355hashCodeimpl(this.labelColor)) * 31) + Color.m5355hashCodeimpl(this.leadingIconContentColor)) * 31) + Color.m5355hashCodeimpl(this.trailingIconContentColor)) * 31) + Color.m5355hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5355hashCodeimpl(this.disabledLabelColor)) * 31) + Color.m5355hashCodeimpl(this.disabledLeadingIconContentColor)) * 31) + Color.m5355hashCodeimpl(this.disabledTrailingIconContentColor);
     }
 }

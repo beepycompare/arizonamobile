@@ -1,0 +1,68 @@
+package com.google.android.gms.internal.measurement;
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.2.0 */
+/* loaded from: classes4.dex */
+final class zzagb extends zzafz {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    public final /* bridge */ /* synthetic */ void zza(Object obj, int i, long j) {
+        ((zzaga) obj).zzk(i << 3, Long.valueOf(j));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    final /* bridge */ /* synthetic */ void zzb(Object obj, int i, int i2) {
+        ((zzaga) obj).zzk((i << 3) | 5, Integer.valueOf(i2));
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    final /* bridge */ /* synthetic */ void zzc(Object obj, int i, long j) {
+        ((zzaga) obj).zzk((i << 3) | 1, Long.valueOf(j));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    public final /* bridge */ /* synthetic */ void zzd(Object obj, int i, zzacr zzacrVar) {
+        ((zzaga) obj).zzk((i << 3) | 2, zzacrVar);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    final /* bridge */ /* synthetic */ void zze(Object obj, int i, Object obj2) {
+        ((zzaga) obj).zzk((i << 3) | 3, (zzaga) obj2);
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    final /* synthetic */ Object zzf() {
+        return zzaga.zzb();
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    final /* synthetic */ Object zzg(Object obj) {
+        zzaga zzagaVar = (zzaga) obj;
+        zzagaVar.zzd();
+        return zzagaVar;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    public final /* bridge */ /* synthetic */ Object zzh(Object obj) {
+        zzadu zzaduVar = (zzadu) obj;
+        zzaga zzagaVar = zzaduVar.zzc;
+        if (zzagaVar == zzaga.zza()) {
+            zzaga zzb = zzaga.zzb();
+            zzaduVar.zzc = zzb;
+            return zzb;
+        }
+        return zzagaVar;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    public final /* synthetic */ void zzi(Object obj, Object obj2) {
+        ((zzadu) obj).zzc = (zzaga) obj2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    @Override // com.google.android.gms.internal.measurement.zzafz
+    public final void zzj(Object obj) {
+        ((zzadu) obj).zzc.zzd();
+    }
+}

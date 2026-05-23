@@ -9,8 +9,8 @@ import kotlin.Metadata;
 public final class ConnectedButtonGroupSmallTokens {
     public static final int $stable = 0;
     public static final ConnectedButtonGroupSmallTokens INSTANCE = new ConnectedButtonGroupSmallTokens();
-    private static final float BetweenSpace = Dp.m7555constructorimpl(2.0f);
-    private static final float ContainerHeight = Dp.m7555constructorimpl(40.0f);
+    private static final float BetweenSpace = Dp.m8160constructorimpl(2.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(40.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final CornerSize InnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueSmall();
     private static final CornerSize PressedInnerCornerCornerSize = ShapeTokens.INSTANCE.getCornerValueExtraSmall();
@@ -20,12 +20,12 @@ public final class ConnectedButtonGroupSmallTokens {
     }
 
     /* renamed from: getBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3305getBetweenSpaceD9Ej5fM() {
+    public final float m3750getBetweenSpaceD9Ej5fM() {
         return BetweenSpace;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3306getContainerHeightD9Ej5fM() {
+    public final float m3751getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.PARAMETER})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface HeaderMap {
     boolean allowUnsafeNonAsciiValues() default false;
 }

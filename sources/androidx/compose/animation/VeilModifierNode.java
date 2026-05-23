@@ -20,7 +20,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function1;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: EnterExitTransition.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002BC\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007R\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\f\u0010 \u001a\u00020!*\u00020\"H\u0016R \u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R0\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007R\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001f¨\u0006#"}, d2 = {"Landroidx/compose/animation/VeilModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "transition", "Landroidx/compose/animation/core/Transition;", "Landroidx/compose/animation/EnterExitState;", "veilAnimation", "Landroidx/compose/animation/core/Transition$DeferredAnimation;", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/animation/core/AnimationVector4D;", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "<init>", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;)V", "getTransition", "()Landroidx/compose/animation/core/Transition;", "setTransition", "(Landroidx/compose/animation/core/Transition;)V", "getVeilAnimation", "()Landroidx/compose/animation/core/Transition$DeferredAnimation;", "setVeilAnimation", "(Landroidx/compose/animation/core/Transition$DeferredAnimation;)V", "getEnter", "()Landroidx/compose/animation/EnterTransition;", "setEnter", "(Landroidx/compose/animation/EnterTransition;)V", "getExit", "()Landroidx/compose/animation/ExitTransition;", "setExit", "(Landroidx/compose/animation/ExitTransition;)V", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002BC\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007R\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\f\u0010 \u001a\u00020!*\u00020\"H\u0016R \u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R0\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007R\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001f¨\u0006#"}, d2 = {"Landroidx/compose/animation/VeilModifierNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "transition", "Landroidx/compose/animation/core/Transition;", "Landroidx/compose/animation/EnterExitState;", "veilAnimation", "Landroidx/compose/animation/core/Transition$DeferredAnimation;", "Landroidx/compose/ui/graphics/Color;", "Landroidx/compose/animation/core/AnimationVector4D;", "enter", "Landroidx/compose/animation/EnterTransition;", "exit", "Landroidx/compose/animation/ExitTransition;", "<init>", "(Landroidx/compose/animation/core/Transition;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;)V", "getTransition", "()Landroidx/compose/animation/core/Transition;", "setTransition", "(Landroidx/compose/animation/core/Transition;)V", "getVeilAnimation", "()Landroidx/compose/animation/core/Transition$DeferredAnimation;", "setVeilAnimation", "(Landroidx/compose/animation/core/Transition$DeferredAnimation;)V", "getEnter", "()Landroidx/compose/animation/EnterTransition;", "setEnter", "(Landroidx/compose/animation/EnterTransition;)V", "getExit", "()Landroidx/compose/animation/ExitTransition;", "setExit", "(Landroidx/compose/animation/ExitTransition;)V", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "animation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
     private EnterTransition enter;
@@ -69,7 +69,7 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        long m4605getZeroNHjbRc;
+        long m5181getZeroNHjbRc;
         contentDrawScope.drawContent();
         State<Color> animate = this.veilAnimation.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<Color>>() { // from class: androidx.compose.animation.VeilModifierNode$draw$veilColor$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -106,7 +106,7 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
         }, new Function1<EnterExitState, Color>() { // from class: androidx.compose.animation.VeilModifierNode$draw$veilColor$2
 
             /* compiled from: EnterExitTransition.kt */
-            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
             /* loaded from: classes.dex */
             public static final /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -136,31 +136,31 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Color invoke(EnterExitState enterExitState) {
-                return Color.m4762boximpl(m160invokevNxB06k(enterExitState));
+                return Color.m5338boximpl(m184invokevNxB06k(enterExitState));
             }
 
             /* renamed from: invoke-vNxB06k  reason: not valid java name */
-            public final long m160invokevNxB06k(EnterExitState enterExitState) {
+            public final long m184invokevNxB06k(EnterExitState enterExitState) {
                 int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
                 if (i == 1) {
                     Veil veil = VeilModifierNode.this.getEnter().getData$animation().getVeil();
                     if (veil != null) {
-                        return veil.m159getTargetColor0d7_KjU();
+                        return veil.m183getTargetColor0d7_KjU();
                     }
                     Veil veil2 = VeilModifierNode.this.getExit().getData$animation().getVeil();
-                    return veil2 != null ? veil2.m158getInitialColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
+                    return veil2 != null ? veil2.m182getInitialColor0d7_KjU() : Color.Companion.m5383getTransparent0d7_KjU();
                 } else if (i == 2) {
                     Veil veil3 = VeilModifierNode.this.getEnter().getData$animation().getVeil();
-                    return veil3 != null ? veil3.m158getInitialColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
+                    return veil3 != null ? veil3.m182getInitialColor0d7_KjU() : Color.Companion.m5383getTransparent0d7_KjU();
                 } else if (i != 3) {
                     throw new NoWhenBranchMatchedException();
                 } else {
                     Veil veil4 = VeilModifierNode.this.getExit().getData$animation().getVeil();
-                    return veil4 != null ? veil4.m159getTargetColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
+                    return veil4 != null ? veil4.m183getTargetColor0d7_KjU() : Color.Companion.m5383getTransparent0d7_KjU();
                 }
             }
         });
-        if (Color.m4774getAlphaimpl(animate.getValue().m4782unboximpl()) == 0.0f) {
+        if (Color.m5350getAlphaimpl(animate.getValue().m5358unboximpl()) == 0.0f) {
             return;
         }
         Veil veil = this.enter.getData$animation().getVeil();
@@ -171,15 +171,15 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
             LayoutCoordinates requireLayoutCoordinates = DelegatableNodeKt.requireLayoutCoordinates(this);
             LayoutCoordinates parentLayoutCoordinates = requireLayoutCoordinates.getParentLayoutCoordinates();
             if (parentLayoutCoordinates == null) {
-                m4605getZeroNHjbRc = Size.Companion.m4605getZeroNHjbRc();
+                m5181getZeroNHjbRc = Size.Companion.m5181getZeroNHjbRc();
             } else {
-                long mo6224getSizeYbymL2g = parentLayoutCoordinates.mo6224getSizeYbymL2g();
-                m4605getZeroNHjbRc = Size.m4587constructorimpl((Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g >> 32)) << 32));
+                long mo6826getSizeYbymL2g = parentLayoutCoordinates.mo6826getSizeYbymL2g();
+                m5181getZeroNHjbRc = Size.m5163constructorimpl((Float.floatToRawIntBits((int) (mo6826getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6826getSizeYbymL2g >> 32)) << 32));
             }
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m4782unboximpl(), Offset.m4519constructorimpl((-9223372034707292160L) ^ LayoutCoordinatesKt.positionInParent(requireLayoutCoordinates)), m4605getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
+            DrawScope.m5916drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m5358unboximpl(), Offset.m5095constructorimpl((-9223372034707292160L) ^ LayoutCoordinatesKt.positionInParent(requireLayoutCoordinates)), m5181getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
             return;
         }
-        DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope, animate.getValue().m4782unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5916drawRectnJ9OG0$default(contentDrawScope, animate.getValue().m5358unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
     }
 }

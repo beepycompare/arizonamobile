@@ -2,10 +2,10 @@ package com.google.android.gms.signin;
 
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.internal.Objects;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class SignInOptions implements Api.ApiOptions.Optional {
-    public static final SignInOptions zaa = new SignInOptions(false, false, null, false, null, null, false, null, null, null);
+    public static final SignInOptions zaa = new SignInOptions(false, false, null, false, null, null, false, null, null);
     private final boolean zab = false;
     private final boolean zac = false;
     private final String zad = null;
@@ -16,7 +16,7 @@ public final class SignInOptions implements Api.ApiOptions.Optional {
     private final Long zai = null;
     private final Long zaj = null;
 
-    /* synthetic */ SignInOptions(boolean z, boolean z2, String str, boolean z3, String str2, String str3, boolean z4, Long l, Long l2, zaf zafVar) {
+    private SignInOptions(boolean z, boolean z2, String str, boolean z3, String str2, String str3, boolean z4, Long l, Long l2) {
     }
 
     public final boolean equals(Object obj) {

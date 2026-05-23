@@ -16,7 +16,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionGestures.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt$awaitSelectionGestures$2", f = "SelectionGestures.kt", i = {0}, l = {111, 119, 122, 124}, m = "invokeSuspend", n = {"$this$awaitEachGesture"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class SelectionGesturesKt$awaitSelectionGestures$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
@@ -90,7 +90,7 @@ public final class SelectionGesturesKt$awaitSelectionGestures$2 extends Restrict
         PointerEvent pointerEvent = (PointerEvent) obj;
         this.$clicksCounter.update(pointerEvent);
         boolean isMouseOrTouchPad = SelectionGestures_androidKt.isMouseOrTouchPad(pointerEvent);
-        if (isMouseOrTouchPad && PointerEvent_androidKt.m6058isPrimaryPressedaHzCxE(pointerEvent.m6025getButtonsry648PA())) {
+        if (isMouseOrTouchPad && PointerEvent_androidKt.m6655isPrimaryPressedaHzCxE(pointerEvent.m6616getButtonsry648PA())) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
             int size = changes.size();
             for (int i2 = 0; i2 < size; i2++) {

@@ -1,19 +1,7 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.Bundle;
 /* loaded from: classes5.dex */
-public final class Fk {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Long f588a;
-    public final Vk b;
-    public Long c;
-    public Long d;
-    public final Integer e;
-    public Long f;
-    public Boolean g;
-    public Long h;
-
-    public Fk(Pk pk) {
-        this.b = pk.b();
-        this.e = pk.a();
-    }
+public interface Fk {
+    void reportData(int i, Bundle bundle);
 }

@@ -30,22 +30,22 @@ public final class MinimumInteractiveModifierNode extends Modifier.Node implemen
     public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         final int width;
         final int height;
-        float m7555constructorimpl = Dp.m7555constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m7569unboximpl(), Dp.m7555constructorimpl(0.0f)));
-        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
-        boolean z = isAttached() && !Float.isNaN(m7555constructorimpl) && Dp.m7554compareTo0680j_4(m7555constructorimpl, Dp.m7555constructorimpl(0.0f)) > 0;
-        int i = Float.isNaN(m7555constructorimpl) ? 0 : measureScope.mo399roundToPx0680j_4(m7555constructorimpl);
+        float m8160constructorimpl = Dp.m8160constructorimpl(RangesKt.coerceAtLeast(((Dp) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, InteractiveComponentSizeKt.getLocalMinimumInteractiveComponentSize())).m8174unboximpl(), Dp.m8160constructorimpl(0.0f)));
+        final Placeable mo6818measureBRTryo0 = measurable.mo6818measureBRTryo0(j);
+        boolean z = isAttached() && !Float.isNaN(m8160constructorimpl) && Dp.m8159compareTo0680j_4(m8160constructorimpl, Dp.m8160constructorimpl(0.0f)) > 0;
+        int i = Float.isNaN(m8160constructorimpl) ? 0 : measureScope.mo428roundToPx0680j_4(m8160constructorimpl);
         if (z) {
-            width = Math.max(mo6216measureBRTryo0.getWidth(), i);
+            width = Math.max(mo6818measureBRTryo0.getWidth(), i);
         } else {
-            width = mo6216measureBRTryo0.getWidth();
+            width = mo6818measureBRTryo0.getWidth();
         }
         if (z) {
-            height = Math.max(mo6216measureBRTryo0.getHeight(), i);
+            height = Math.max(mo6818measureBRTryo0.getHeight(), i);
         } else {
-            height = mo6216measureBRTryo0.getHeight();
+            height = mo6818measureBRTryo0.getHeight();
         }
         if (z) {
-            updateAlignmentLines(i, mo6216measureBRTryo0);
+            updateAlignmentLines(i, mo6818measureBRTryo0);
         }
         Map<AlignmentLine, Integer> map = this.alignmentLinesCache;
         if (map == null) {
@@ -54,7 +54,7 @@ public final class MinimumInteractiveModifierNode extends Modifier.Node implemen
         return measureScope.layout(width, height, map, new Function1() { // from class: androidx.compose.material3.MinimumInteractiveModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return MinimumInteractiveModifierNode.measure_3p2s80s$lambda$0(width, mo6216measureBRTryo0, height, (Placeable.PlacementScope) obj);
+                return MinimumInteractiveModifierNode.measure_3p2s80s$lambda$0(width, mo6818measureBRTryo0, height, (Placeable.PlacementScope) obj);
             }
         });
     }

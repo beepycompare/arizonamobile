@@ -53,7 +53,7 @@ public final class DefaultShortNavigationBarOverride implements ShortNavigationB
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(256157474, i2, -1, "androidx.compose.material3.DefaultShortNavigationBarOverride.ShortNavigationBar (ShortNavigationBar.kt:122)");
             }
-            SurfaceKt.m2569SurfaceT9BRK9s(shortNavigationBarOverrideScope.getModifier(), null, shortNavigationBarOverrideScope.m2493getContainerColor0d7_KjU(), shortNavigationBarOverrideScope.m2494getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(236236519, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultShortNavigationBarOverride$ShortNavigationBar$1
+            SurfaceKt.m3014SurfaceT9BRK9s(shortNavigationBarOverrideScope.getModifier(), null, shortNavigationBarOverrideScope.m2938getContainerColor0d7_KjU(), shortNavigationBarOverrideScope.m2939getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(236236519, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultShortNavigationBarOverride$ShortNavigationBar$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                     invoke(composer2, num.intValue());
@@ -70,12 +70,12 @@ public final class DefaultShortNavigationBarOverride implements ShortNavigationB
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(236236519, i3, -1, "androidx.compose.material3.DefaultShortNavigationBarOverride.ShortNavigationBar.<anonymous> (ShortNavigationBar.kt:124)");
                     }
-                    Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m849defaultMinSizeVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, ShortNavigationBarOverrideScope.this.getWindowInsets()), 0.0f, NavigationBarTokens.INSTANCE.m3538getContainerHeightD9Ej5fM(), 1, null));
+                    Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m1102defaultMinSizeVpY3zN4$default(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, ShortNavigationBarOverrideScope.this.getWindowInsets()), 0.0f, NavigationBarTokens.INSTANCE.m3983getContainerHeightD9Ej5fM(), 1, null));
                     Function2<Composer, Integer, Unit> content = ShortNavigationBarOverrideScope.this.getContent();
-                    int m2492getArrangementLnnQw40 = ShortNavigationBarOverrideScope.this.m2492getArrangementLnnQw40();
-                    if (ShortNavigationBarArrangement.m2482equalsimpl0(m2492getArrangementLnnQw40, ShortNavigationBarArrangement.Companion.m2487getEqualWeightLnnQw40())) {
+                    int m2937getArrangementLnnQw40 = ShortNavigationBarOverrideScope.this.m2937getArrangementLnnQw40();
+                    if (ShortNavigationBarArrangement.m2927equalsimpl0(m2937getArrangementLnnQw40, ShortNavigationBarArrangement.Companion.m2932getEqualWeightLnnQw40())) {
                         centeredContentMeasurePolicy = new EqualWeightContentMeasurePolicy();
-                    } else if (ShortNavigationBarArrangement.m2482equalsimpl0(m2492getArrangementLnnQw40, ShortNavigationBarArrangement.Companion.m2486getCenteredLnnQw40())) {
+                    } else if (ShortNavigationBarArrangement.m2927equalsimpl0(m2937getArrangementLnnQw40, ShortNavigationBarArrangement.Companion.m2931getCenteredLnnQw40())) {
                         centeredContentMeasurePolicy = new CenteredContentMeasurePolicy();
                     } else {
                         throw new IllegalArgumentException("Invalid ItemsArrangement value.");
@@ -95,15 +95,15 @@ public final class DefaultShortNavigationBarOverride implements ShortNavigationB
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
-                    Updater.m4049setimpl(m4041constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer2);
+                    Updater.m4475setimpl(m4467constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     content.invoke(composer2, 0);
                     composer2.endNode();
                     ComposerKt.sourceInformationMarkerEnd(composer2);

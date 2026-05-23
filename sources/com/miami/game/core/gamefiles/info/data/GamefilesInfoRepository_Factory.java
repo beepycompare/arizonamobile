@@ -4,7 +4,7 @@ import com.miami.game.core.gamefiles.info.data.api.GamefilesInfoApiRepository;
 import com.miami.game.core.gamefiles.info.data.store.GameInfoPrefRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GamefilesInfoRepository_Factory implements Factory<GamefilesInfoRepository> {
     private final Provider<GameInfoPrefRepository> gameInfoPrefRepositoryProvider;
     private final Provider<GamefilesInfoApiRepository> gamefilesInfoApiRepositoryProvider;

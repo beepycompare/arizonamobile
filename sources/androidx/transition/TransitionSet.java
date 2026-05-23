@@ -643,12 +643,12 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* renamed from: clone */
-    public Transition mo8541clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo8541clone();
+    public Transition mo9150clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo9150clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo8541clone());
+            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo9150clone());
         }
         return transitionSet;
     }

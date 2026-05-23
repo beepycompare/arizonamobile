@@ -3,8 +3,10 @@ package com.google.android.material.textfield;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.View;
 import android.widget.ImageView;
+import androidx.appcompat.widget.TooltipCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import com.google.android.material.internal.CheckableImageButton;
 import java.util.Arrays;
@@ -40,7 +42,9 @@ public class IconHelper {
         checkableImageButton.setFocusable(z);
         checkableImageButton.setClickable(hasOnClickListeners);
         checkableImageButton.setPressable(hasOnClickListeners);
-        checkableImageButton.setLongClickable(z2);
+        if (Build.VERSION.SDK_INT >= 26 || !z || z2) {
+            checkableImageButton.setLongClickable(z2);
+        }
         checkableImageButton.setImportantForAccessibility(z ? 1 : 2);
     }
 
@@ -116,5 +120,17 @@ public class IconHelper {
             return ImageView.ScaleType.FIT_START;
         }
         return ImageView.ScaleType.FIT_XY;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static void updateIconTooltip(CheckableImageButton checkableImageButton, View.OnLongClickListener onLongClickListener, CharSequence charSequence) {
+        if (!checkableImageButton.isFocusable()) {
+            charSequence = null;
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            checkableImageButton.setTooltipText(charSequence);
+        } else if (onLongClickListener == null) {
+            TooltipCompat.setTooltipText(checkableImageButton, charSequence);
+        }
     }
 }

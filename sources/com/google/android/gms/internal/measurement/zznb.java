@@ -1,14 +1,9 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zznb implements zznk {
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final boolean zzb(Class cls) {
-        return false;
-    }
+final /* synthetic */ class zznb implements zzmt {
+    static final /* synthetic */ zznb zza = new zznb();
 
-    @Override // com.google.android.gms.internal.measurement.zznk
-    public final zznj zzc(Class cls) {
-        throw new IllegalStateException("This should never be called.");
+    private /* synthetic */ zznb() {
     }
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class OptionalConverterFactory extends Converter.Factory {
     public static OptionalConverterFactory create() {
         return new OptionalConverterFactory();
@@ -23,7 +23,7 @@ public final class OptionalConverterFactory extends Converter.Factory {
         return new OptionalConverter(retrofit.responseBodyConverter(getParameterUpperBound(0, (ParameterizedType) type), annotationArr));
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class OptionalConverter<T> implements Converter<ResponseBody, Optional<T>> {
         private final Converter<ResponseBody, T> delegate;
 

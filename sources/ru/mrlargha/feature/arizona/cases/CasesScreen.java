@@ -303,7 +303,7 @@ public final class CasesScreen extends SAMPUIElement {
         this.casesBinding.goldBox.setVisibility(4);
         Job job = this.initMainPageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new CasesScreen$setCollectors$1(this, null), 2, null);
         this.initMainPageJob = launch$default;

@@ -1,19 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import android.text.TextUtils;
 /* loaded from: classes5.dex */
-public final class Vi extends Rg {
-    public Vi(X4 x4) {
-        super(x4);
+public final class Vi extends AbstractC0121ae {
+    public Vi(int i, String str, Vo vo, InterfaceC0678w2 interfaceC0678w2) {
+        super(i, str, vo, new Ui(interfaceC0678w2));
     }
 
-    @Override // io.appmetrica.analytics.impl.Rg
-    public final boolean a(P5 p5) {
-        String str = p5.h;
-        if (TextUtils.isEmpty(str)) {
-            return false;
+    @Override // io.appmetrica.analytics.impl.AbstractC0121ae, io.appmetrica.analytics.impl.Ho
+    public final void a(Go go) {
+        if (f()) {
+            this.d.a(go, null, this);
         }
-        this.f772a.c.j(str).b();
-        return false;
     }
 }

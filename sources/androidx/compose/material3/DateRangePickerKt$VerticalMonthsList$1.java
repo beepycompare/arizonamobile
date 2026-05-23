@@ -116,9 +116,9 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         Strings.Companion companion = Strings.Companion;
-        String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_scroll_to_previous_month), composer, 0);
+        String m3533getString2EP1pXo = Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_date_range_picker_scroll_to_previous_month), composer, 0);
         Strings.Companion companion2 = Strings.Companion;
-        String m3088getString2EP1pXo2 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_scroll_to_next_month), composer, 0);
+        String m3533getString2EP1pXo2 = Strings_androidKt.m3533getString2EP1pXo(Strings.m3454constructorimpl(R.string.m3c_date_range_picker_scroll_to_next_month), composer, 0);
         ComposerKt.sourceInformationMarkerStart(composer, 261262006, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$selectedStartDateMillis) | composer.changed(this.$selectedEndDateMillis) | composer.changed(this.$onDatesSelectionChange);
         final Long l = this.$selectedStartDateMillis;
@@ -136,7 +136,7 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         }
         final Function1 function1 = (Function1) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        customScrollActions = DateRangePickerKt.customScrollActions(this.$lazyListState, coroutineScope, m3088getString2EP1pXo, m3088getString2EP1pXo2);
+        customScrollActions = DateRangePickerKt.customScrollActions(this.$lazyListState, coroutineScope, m3533getString2EP1pXo, m3533getString2EP1pXo2);
         Modifier.Companion companion3 = Modifier.Companion;
         ComposerKt.sourceInformationMarkerStart(composer, 261288524, "CC(remember):DateRangePicker.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
@@ -261,15 +261,15 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
                 } else {
                     composer.useNode();
                 }
-                Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-                Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+                Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 185122771, "C857@38312L5,857@38319L653,857@38242L730,883@39764L602:DateRangePicker.kt#uh7d8r");

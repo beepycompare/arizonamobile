@@ -1,6 +1,7 @@
 package androidx.media3.exoplayer.mediacodec;
 
 import android.media.MediaCodec;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -14,12 +15,13 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
     private static final int MSG_OPEN_CV = 3;
     private static final int MSG_QUEUE_INPUT_BUFFER = 1;
     private static final int MSG_QUEUE_SECURE_INPUT_BUFFER = 2;
     private static final int MSG_SET_PARAMETERS = 4;
+    private final boolean asyncCryptoSynchronizationEnabled;
     private final MediaCodec codec;
     private final ConditionVariable conditionVariable;
     private Handler handler;
@@ -29,14 +31,15 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
     private static final ArrayDeque<MessageParams> MESSAGE_PARAMS_INSTANCE_POOL = new ArrayDeque<>();
     private static final Object QUEUE_SECURE_LOCK = new Object();
 
-    public AsynchronousMediaCodecBufferEnqueuer(MediaCodec mediaCodec, HandlerThread handlerThread) {
-        this(mediaCodec, handlerThread, new ConditionVariable());
+    public AsynchronousMediaCodecBufferEnqueuer(MediaCodec mediaCodec, HandlerThread handlerThread, boolean z) {
+        this(mediaCodec, handlerThread, new ConditionVariable(), z);
     }
 
-    AsynchronousMediaCodecBufferEnqueuer(MediaCodec mediaCodec, HandlerThread handlerThread, ConditionVariable conditionVariable) {
+    AsynchronousMediaCodecBufferEnqueuer(MediaCodec mediaCodec, HandlerThread handlerThread, ConditionVariable conditionVariable, boolean z) {
         this.codec = mediaCodec;
         this.handlerThread = handlerThread;
         this.conditionVariable = conditionVariable;
+        this.asyncCryptoSynchronizationEnabled = z;
         this.pendingRuntimeException = new AtomicReference<>();
     }
 
@@ -173,6 +176,10 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
 
     private void doQueueSecureInputBuffer(int i, int i2, MediaCodec.CryptoInfo cryptoInfo, long j, int i3) {
         try {
+            if (Build.VERSION.SDK_INT >= 31 && !this.asyncCryptoSynchronizationEnabled) {
+                this.codec.queueSecureInputBuffer(i, i2, cryptoInfo, j, i3);
+                return;
+            }
             synchronized (QUEUE_SECURE_LOCK) {
                 this.codec.queueSecureInputBuffer(i, i2, cryptoInfo, j, i3);
             }
@@ -207,7 +214,7 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class MessageParams {
         public final MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
         public int flags;

@@ -133,7 +133,7 @@ public final class StringSetParserOperation<Output> implements ParserOperation<O
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo10816consumeFANa98k(Output output, CharSequence input, final int i) {
+    public Object mo11456consumeFANa98k(Output output, CharSequence input, final int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         TrieNode trieNode = this.trie;
         final Ref.IntRef intRef = new Ref.IntRef();
@@ -157,7 +157,7 @@ public final class StringSetParserOperation<Output> implements ParserOperation<O
         if (num != null) {
             return ParserOperationKt.access$setWithoutReassigning(this.setter, output, charSequence2.subSequence(i, num.intValue()).toString(), i, num.intValue());
         }
-        return ParseResult.Companion.m10826ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.StringSetParserOperation$$ExternalSyntheticLambda0
+        return ParseResult.Companion.m11466ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.StringSetParserOperation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return StringSetParserOperation.consume_FANa98k$lambda$5(StringSetParserOperation.this, charSequence2, i, intRef);

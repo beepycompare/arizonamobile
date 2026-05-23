@@ -1,21 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 /* loaded from: classes5.dex */
-public final class Md {
+public final class Md extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f698a;
-    public final Sg b;
-    public final Rd c;
-    public final EnumC0142bb d;
-    public final C0115aa e = new C0115aa();
-    public final Ed f = new Ed();
+    public final /* synthetic */ String f662a;
 
-    public Md(Context context, Sg sg, Rd rd, EnumC0142bb enumC0142bb) {
-        this.f698a = context;
-        this.b = sg;
-        this.c = rd;
-        this.d = enumC0142bb;
+    public Md(String str) {
+        this.f662a = str;
+    }
+
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        B0 b0 = C0576s4.l().q;
+        String str = this.f662a;
+        b0.getClass();
+        A0.c().a(str);
     }
 }

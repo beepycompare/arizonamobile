@@ -3,13 +3,14 @@ package com.google.android.gms.measurement.internal;
 import android.content.pm.PackageManager;
 import android.util.Pair;
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.common.internal.Preconditions;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zznn extends zzos {
     public final zzhe zza;
@@ -45,32 +46,34 @@ public final class zznn extends zzos {
     }
 
     @Override // com.google.android.gms.measurement.internal.zzos
-    protected final boolean zzbb() {
+    protected final boolean zzbc() {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final Pair zzc(String str, zzjl zzjlVar) {
-        if (zzjlVar.zzo(zzjk.AD_STORAGE)) {
-            return zzd(str);
+    public final Pair zzc(zzr zzrVar, zzjl zzjlVar) {
+        String str = zzrVar.zza;
+        Preconditions.checkNotEmpty(str);
+        if (!zzjlVar.zzo(zzjk.AD_STORAGE) || !zzrVar.zzn) {
+            return new Pair("", false);
         }
-        return new Pair("", false);
+        return zzd(str);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Deprecated
-    final Pair zzd(String str) {
+    public final Pair zzd(String str) {
         zznm zznmVar;
         AdvertisingIdClient.Info info;
         zzg();
         zzic zzicVar = this.zzu;
-        long elapsedRealtime = zzicVar.zzaZ().elapsedRealtime();
+        long elapsedRealtime = zzicVar.zzba().elapsedRealtime();
         zznm zznmVar2 = (zznm) this.zzh.get(str);
         if (zznmVar2 == null || elapsedRealtime >= zznmVar2.zzc) {
             AdvertisingIdClient.setShouldSkipGmsCoreVersionCheck(true);
             long zzl = zzicVar.zzc().zzl(str, zzfy.zza) + elapsedRealtime;
             try {
                 try {
-                    info = AdvertisingIdClient.getAdvertisingIdInfo(zzicVar.zzaY());
+                    info = AdvertisingIdClient.getAdvertisingIdInfo(zzicVar.zzaZ());
                 } catch (PackageManager.NameNotFoundException unused) {
                     info = null;
                     if (zznmVar2 != null && elapsedRealtime < zznmVar2.zzc + this.zzu.zzc().zzl(str, zzfy.zzb)) {
@@ -78,7 +81,7 @@ public final class zznn extends zzos {
                     }
                 }
             } catch (Exception e) {
-                this.zzu.zzaV().zzj().zzb("Unable to get advertising id", e);
+                this.zzu.zzaW().zzj().zzb("Unable to get advertising id", e);
                 zznmVar = new zznm("", false, zzl);
             }
             if (info == null) {
@@ -97,20 +100,18 @@ public final class zznn extends zzos {
         return new Pair(zznmVar2.zza, Boolean.valueOf(zznmVar2.zzb));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    @Deprecated
-    public final String zzf(String str, boolean z) {
-        String str2;
-        zzg();
-        if (z) {
-            str2 = (String) zzd(str).first;
-        } else {
-            str2 = "00000000-0000-0000-0000-000000000000";
+    public final String zzf(zzr zzrVar, zzjl zzjlVar) {
+        String str = zzrVar.zza;
+        Preconditions.checkNotEmpty(str);
+        if (!zzjlVar.zzo(zzjk.AD_STORAGE) || !zzrVar.zzn) {
+            return "";
         }
-        MessageDigest zzO = zzpp.zzO();
-        if (zzO == null) {
+        zzg();
+        String str2 = (String) zzd(str).first;
+        MessageDigest zzQ = zzpp.zzQ();
+        if (zzQ == null) {
             return null;
         }
-        return String.format(Locale.US, "%032X", new BigInteger(1, zzO.digest(str2.getBytes())));
+        return String.format(Locale.US, "%032X", new BigInteger(1, zzQ.digest(str2.getBytes())));
     }
 }

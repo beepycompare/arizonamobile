@@ -100,19 +100,19 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1640665680, i2, -1, "androidx.compose.material3.DefaultTwoRowsTopAppBarOverride.TwoRowsTopAppBar (AppBar.kt:2732)");
             }
-            if (Float.isNaN(twoRowsTopAppBarOverrideScope.m2935getCollapsedHeightD9Ej5fM()) || (Float.floatToRawIntBits(twoRowsTopAppBarOverrideScope.m2935getCollapsedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
+            if (Float.isNaN(twoRowsTopAppBarOverrideScope.m3380getCollapsedHeightD9Ej5fM()) || (Float.floatToRawIntBits(twoRowsTopAppBarOverrideScope.m3380getCollapsedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
                 throw new IllegalArgumentException("The collapsedHeight is expected to be specified and finite".toString());
             }
-            if (Float.isNaN(twoRowsTopAppBarOverrideScope.m2936getExpandedHeightD9Ej5fM()) || (Float.floatToRawIntBits(twoRowsTopAppBarOverrideScope.m2936getExpandedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
+            if (Float.isNaN(twoRowsTopAppBarOverrideScope.m3381getExpandedHeightD9Ej5fM()) || (Float.floatToRawIntBits(twoRowsTopAppBarOverrideScope.m3381getExpandedHeightD9Ej5fM()) & Integer.MAX_VALUE) >= 2139095040) {
                 throw new IllegalArgumentException("The expandedHeight is expected to be specified and finite".toString());
             }
-            if (Dp.m7554compareTo0680j_4(twoRowsTopAppBarOverrideScope.m2936getExpandedHeightD9Ej5fM(), twoRowsTopAppBarOverrideScope.m2935getCollapsedHeightD9Ej5fM()) < 0) {
+            if (Dp.m8159compareTo0680j_4(twoRowsTopAppBarOverrideScope.m3381getExpandedHeightD9Ej5fM(), twoRowsTopAppBarOverrideScope.m3380getCollapsedHeightD9Ej5fM()) < 0) {
                 throw new IllegalArgumentException("The expandedHeight is expected to be greater or equal to the collapsedHeight".toString());
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            int mo399roundToPx0680j_4 = ((Density) consume).mo399roundToPx0680j_4(twoRowsTopAppBarOverrideScope.m2937getTitleBottomPaddingD9Ej5fM());
+            int mo428roundToPx0680j_4 = ((Density) consume).mo428roundToPx0680j_4(twoRowsTopAppBarOverrideScope.m3382getTitleBottomPaddingD9Ej5fM());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -426685886, "CC(remember):AppBar.kt#9igjgp");
             int i3 = i2 & 14;
             boolean z = i3 == 4;
@@ -135,12 +135,12 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
                 rememberedValue2 = (Function0) new Function0<Color>() { // from class: androidx.compose.material3.DefaultTwoRowsTopAppBarOverride$TwoRowsTopAppBar$appBarContainerColor$1$1
                     @Override // kotlin.jvm.functions.Function0
                     public /* bridge */ /* synthetic */ Color invoke() {
-                        return Color.m4762boximpl(m2026invoke0d7_KjU());
+                        return Color.m5338boximpl(m2471invoke0d7_KjU());
                     }
 
                     /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-                    public final long m2026invoke0d7_KjU() {
-                        return TwoRowsTopAppBarOverrideScope.this.getColors().m2907containerColorvNxB06k$material3(function0.invoke().floatValue());
+                    public final long m2471invoke0d7_KjU() {
+                        return TwoRowsTopAppBarOverrideScope.this.getColors().m3352containerColorvNxB06k$material3(function0.invoke().floatValue());
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -183,15 +183,15 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
-                    Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer3);
+                    Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                     actions.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -343,15 +343,15 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1325285569, "C2801@131204L2842:AppBar.kt#uh7d8r");
@@ -372,15 +372,15 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -200564612, "C2807@131523L6,2802@131229L1260,2833@133025L45,2825@132506L1526:AppBar.kt#uh7d8r");
@@ -397,8 +397,8 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
                 startRestartGroup.updateRememberedValue(rememberedValue11);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AppBarKt.m1731TopAppBarLayoutlyUyIHI(clipToBounds, (FloatProducer) rememberedValue11, twoRowsTopAppBarOverrideScope.getColors().m2911getNavigationIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2914getTitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2913getSubtitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2909getActionIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getSmallTitle(), twoRowsTopAppBarOverrideScope.getSmallTitleTextStyle(), twoRowsTopAppBarOverrideScope.getSmallSubtitle(), twoRowsTopAppBarOverrideScope.getSmallSubtitleTextStyle(), function03, Arrangement.INSTANCE.getCenter(), twoRowsTopAppBarOverrideScope.getTitleHorizontalAlignment(), 0, TwoRowsTopAppBar$lambda$13(state), twoRowsTopAppBarOverrideScope.getNavigationIcon(), rememberComposableLambda, twoRowsTopAppBarOverrideScope.m2935getCollapsedHeightD9Ej5fM(), startRestartGroup, 0, 1575984);
-            adjustHeightOffsetLimit = AppBarKt.adjustHeightOffsetLimit(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, WindowInsetsKt.m891onlybOOhFvg(twoRowsTopAppBarOverrideScope.getWindowInsets(), WindowInsetsSides.Companion.m913getHorizontalJoeWqyM()))), twoRowsTopAppBarOverrideScope.getScrollBehavior());
+            AppBarKt.m2176TopAppBarLayoutlyUyIHI(clipToBounds, (FloatProducer) rememberedValue11, twoRowsTopAppBarOverrideScope.getColors().m3356getNavigationIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3359getTitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3358getSubtitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3354getActionIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getSmallTitle(), twoRowsTopAppBarOverrideScope.getSmallTitleTextStyle(), twoRowsTopAppBarOverrideScope.getSmallSubtitle(), twoRowsTopAppBarOverrideScope.getSmallSubtitleTextStyle(), function03, Arrangement.INSTANCE.getCenter(), twoRowsTopAppBarOverrideScope.getTitleHorizontalAlignment(), 0, TwoRowsTopAppBar$lambda$13(state), twoRowsTopAppBarOverrideScope.getNavigationIcon(), rememberComposableLambda, twoRowsTopAppBarOverrideScope.m3380getCollapsedHeightD9Ej5fM(), startRestartGroup, 0, 1575984);
+            adjustHeightOffsetLimit = AppBarKt.adjustHeightOffsetLimit(ClipKt.clipToBounds(WindowInsetsPaddingKt.windowInsetsPadding(Modifier.Companion, WindowInsetsKt.m1145onlybOOhFvg(twoRowsTopAppBarOverrideScope.getWindowInsets(), WindowInsetsSides.Companion.m1167getHorizontalJoeWqyM()))), twoRowsTopAppBarOverrideScope.getScrollBehavior());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1379058209, "CC(remember):AppBar.kt#9igjgp");
             boolean z5 = i3 == 4;
             Object rememberedValue12 = startRestartGroup.rememberedValue();
@@ -413,7 +413,7 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            AppBarKt.m1731TopAppBarLayoutlyUyIHI(adjustHeightOffsetLimit, (FloatProducer) rememberedValue12, twoRowsTopAppBarOverrideScope.getColors().m2911getNavigationIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2914getTitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2913getSubtitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m2909getActionIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getTitle(), twoRowsTopAppBarOverrideScope.getTitleTextStyle(), twoRowsTopAppBarOverrideScope.getSubtitle(), twoRowsTopAppBarOverrideScope.getSubtitleTextStyle(), function04, Arrangement.INSTANCE.getBottom(), twoRowsTopAppBarOverrideScope.getTitleHorizontalAlignment(), mo399roundToPx0680j_4, z2, ComposableSingletons$AppBarKt.INSTANCE.m1926getLambda$2101264077$material3(), ComposableSingletons$AppBarKt.INSTANCE.getLambda$37575796$material3(), Dp.m7555constructorimpl(twoRowsTopAppBarOverrideScope.m2936getExpandedHeightD9Ej5fM() - twoRowsTopAppBarOverrideScope.m2935getCollapsedHeightD9Ej5fM()), composer2, 0, 1769520);
+            AppBarKt.m2176TopAppBarLayoutlyUyIHI(adjustHeightOffsetLimit, (FloatProducer) rememberedValue12, twoRowsTopAppBarOverrideScope.getColors().m3356getNavigationIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3359getTitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3358getSubtitleContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getColors().m3354getActionIconContentColor0d7_KjU(), twoRowsTopAppBarOverrideScope.getTitle(), twoRowsTopAppBarOverrideScope.getTitleTextStyle(), twoRowsTopAppBarOverrideScope.getSubtitle(), twoRowsTopAppBarOverrideScope.getSubtitleTextStyle(), function04, Arrangement.INSTANCE.getBottom(), twoRowsTopAppBarOverrideScope.getTitleHorizontalAlignment(), mo428roundToPx0680j_4, z2, ComposableSingletons$AppBarKt.INSTANCE.m2371getLambda$2101264077$material3(), ComposableSingletons$AppBarKt.INSTANCE.getLambda$37575796$material3(), Dp.m8160constructorimpl(twoRowsTopAppBarOverrideScope.m3381getExpandedHeightD9Ej5fM() - twoRowsTopAppBarOverrideScope.m3380getCollapsedHeightD9Ej5fM()), composer2, 0, 1769520);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -470,7 +470,7 @@ public final class DefaultTwoRowsTopAppBarOverride implements TwoRowsTopAppBarOv
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TwoRowsTopAppBar$lambda$18$lambda$17(Function0 function0, DrawScope drawScope) {
-        DrawScope.m5340drawRectnJ9OG0$default(drawScope, ((Color) function0.invoke()).m4782unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5916drawRectnJ9OG0$default(drawScope, ((Color) function0.invoke()).m5358unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         return Unit.INSTANCE;
     }
 

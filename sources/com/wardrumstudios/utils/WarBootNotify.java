@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import androidx.core.app.NotificationCompat;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarBootNotify extends Service {
     private void CreateAlarmIntent(int i, String str) {
         String[] split = str.split("\\|");

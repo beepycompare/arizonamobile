@@ -196,6 +196,11 @@ public final class GlideBuilder {
         return this;
     }
 
+    public GlideBuilder setMemoryCategoryInBackground(MemoryCategory memoryCategory) {
+        this.glideExperimentsBuilder.add(new MemoryCategoryInBackground(memoryCategory));
+        return this;
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setRequestManagerFactory(RequestManagerRetriever.RequestManagerFactory requestManagerFactory) {
         this.requestManagerFactory = requestManagerFactory;
@@ -265,6 +270,19 @@ public final class GlideBuilder {
     /* loaded from: classes3.dex */
     static final class EnableImageDecoderForBitmaps implements GlideExperiments.Experiment {
         EnableImageDecoderForBitmaps() {
+        }
+    }
+
+    /* loaded from: classes3.dex */
+    public static final class MemoryCategoryInBackground implements GlideExperiments.Experiment {
+        private final MemoryCategory memoryCategory;
+
+        MemoryCategoryInBackground(MemoryCategory memoryCategory) {
+            this.memoryCategory = memoryCategory;
+        }
+
+        public MemoryCategory value() {
+            return this.memoryCategory;
         }
     }
 }

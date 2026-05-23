@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Zip.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
 /* loaded from: classes5.dex */
 public final class FlowKt__ZipKt$combine$5$1<T> implements Function0<T[]> {
     final /* synthetic */ Flow<T>[] $flows;

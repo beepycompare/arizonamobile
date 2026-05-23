@@ -1,37 +1,46 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.internal.IAccountAccessor;
-import java.util.ArrayList;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.Bundle;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.internal.ClientSettings;
+import com.google.android.gms.common.internal.Preconditions;
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zaap extends zaav {
-    final /* synthetic */ zaaw zaa;
-    private final ArrayList zac;
+final class zaap implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    final /* synthetic */ zaar zaa;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zaap(zaaw zaawVar, ArrayList arrayList) {
-        super(zaawVar, null);
-        this.zaa = zaawVar;
-        this.zac = arrayList;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zaap(zaar zaarVar, byte[] bArr) {
+        Objects.requireNonNull(zaarVar);
+        this.zaa = zaarVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.zaav
-    public final void zaa() {
-        zabi zabiVar;
-        IAccountAccessor iAccountAccessor;
-        zabi zabiVar2;
-        zaaw zaawVar = this.zaa;
-        zabiVar = zaawVar.zaa;
-        zabiVar.zag.zad = zaaw.zao(zaawVar);
-        ArrayList arrayList = this.zac;
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            zaaw zaawVar2 = this.zaa;
-            iAccountAccessor = zaawVar2.zao;
-            zabiVar2 = zaawVar2.zaa;
-            ((Api.Client) arrayList.get(i)).getRemoteService(iAccountAccessor, zabiVar2.zag.zad);
+    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
+    public final void onConnected(Bundle bundle) {
+        zaar zaarVar = this.zaa;
+        ClientSettings clientSettings = (ClientSettings) Preconditions.checkNotNull(zaarVar.zay());
+        ((com.google.android.gms.signin.zae) Preconditions.checkNotNull(zaarVar.zav())).zaa(new zaao(zaarVar));
+    }
+
+    @Override // com.google.android.gms.common.api.internal.OnConnectionFailedListener
+    public final void onConnectionFailed(ConnectionResult connectionResult) {
+        zaar zaarVar = this.zaa;
+        zaarVar.zas().lock();
+        try {
+            if (!zaarVar.zan(connectionResult)) {
+                zaarVar.zao(connectionResult);
+            } else {
+                zaarVar.zam();
+                zaarVar.zak();
+            }
+        } finally {
+            this.zaa.zas().unlock();
         }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.ConnectionCallbacks
+    public final void onConnectionSuspended(int i) {
     }
 }

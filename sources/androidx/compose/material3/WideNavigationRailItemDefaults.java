@@ -17,9 +17,9 @@ public final class WideNavigationRailItemDefaults {
     }
 
     /* renamed from: iconPositionFor-s8pcRp0  reason: not valid java name */
-    public final int m2950iconPositionFors8pcRp0(boolean z) {
+    public final int m3395iconPositionFors8pcRp0(boolean z) {
         NavigationItemIconPosition.Companion companion = NavigationItemIconPosition.Companion;
-        return z ? companion.m2309getStartxw1Ddg() : companion.m2310getTopxw1Ddg();
+        return z ? companion.m2754getStartxw1Ddg() : companion.m2755getTopxw1Ddg();
     }
 
     public final NavigationItemColors colors(Composer composer, int i) {
@@ -36,7 +36,7 @@ public final class WideNavigationRailItemDefaults {
     }
 
     /* renamed from: colors-69fazGs  reason: not valid java name */
-    public final NavigationItemColors m2949colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
+    public final NavigationItemColors m3394colors69fazGs(long j, long j2, long j3, long j4, long j5, long j6, long j7, Composer composer, int i, int i2) {
         long j8;
         long j9;
         long j10;
@@ -50,7 +50,7 @@ public final class WideNavigationRailItemDefaults {
         long value5 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText(), composer, 6) : j5;
         if ((i2 & 32) != 0) {
             long j13 = value4;
-            j9 = Color.m4771copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j9 = Color.m5347copywmQWz5c$default(j13, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j8 = j13;
         } else {
             j8 = value4;
@@ -58,7 +58,7 @@ public final class WideNavigationRailItemDefaults {
         }
         if ((i2 & 64) != 0) {
             long j14 = value5;
-            j11 = Color.m4771copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            j11 = Color.m5347copywmQWz5c$default(j14, 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             j10 = j14;
         } else {
             j10 = value5;
@@ -70,18 +70,18 @@ public final class WideNavigationRailItemDefaults {
         } else {
             j12 = value;
         }
-        NavigationItemColors m2292copy4JmcsL4 = getDefaultWideNavigationRailItemColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2292copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
+        NavigationItemColors m2737copy4JmcsL4 = getDefaultWideNavigationRailItemColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2737copy4JmcsL4(j12, value2, value3, j8, j10, j9, j11);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2292copy4JmcsL4;
+        return m2737copy4JmcsL4;
     }
 
     private final NavigationItemColors getDefaultWideNavigationRailItemColors(ColorScheme colorScheme) {
         NavigationItemColors defaultWideNavigationRailItemColorsCached$material3 = colorScheme.getDefaultWideNavigationRailItemColorsCached$material3();
         if (defaultWideNavigationRailItemColorsCached$material3 == null) {
-            NavigationItemColors navigationItemColors = new NavigationItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveLabelText()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIndicator()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            NavigationItemColors navigationItemColors = new NavigationItemColors(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveLabelText()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemActiveIndicator()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveIcon()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5347copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, NavigationRailColorTokens.INSTANCE.getItemInactiveLabelText()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultWideNavigationRailItemColorsCached$material3(navigationItemColors);
             return navigationItemColors;
         }

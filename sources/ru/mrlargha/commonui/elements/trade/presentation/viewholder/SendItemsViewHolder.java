@@ -112,7 +112,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
         boolean z2 = true;
         Object obj = null;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new SendItemsViewHolder$bind$1$4(itemInventoryBinding, this, itemVal, null), 3, null);

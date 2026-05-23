@@ -25,6 +25,7 @@ import kotlinx.serialization.internal.JsonInternalDependenciesKt;
 import kotlinx.serialization.json.Json;
 import kotlinx.serialization.json.JsonConfiguration;
 import kotlinx.serialization.json.JsonDecoder;
+import kotlinx.serialization.json.JsonDecodingException;
 import kotlinx.serialization.json.JsonElement;
 import kotlinx.serialization.json.JsonElementKt;
 import kotlinx.serialization.json.JsonObject;
@@ -32,7 +33,7 @@ import kotlinx.serialization.json.JsonPrimitive;
 import kotlinx.serialization.modules.SerializersModule;
 /* compiled from: StreamingJsonDecoder.kt */
 @Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u000e\n\u0002\u0010\u0005\n\u0000\n\u0002\u0010\n\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\f\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0010\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0001UB3\bF\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u0018\u0010\u0012\u001a\u00020\u0013*\u0004\u0018\u00010\r2\u0006\u0010\u0014\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010 \u001a\u00020!H\u0096\u0080\u0004J#\u0010\"\u001a\u0002H#\"\u0004\b\u0000\u0010#2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%H\u0096\u0080\u0004¢\u0006\u0002\u0010&J\u0012\u0010'\u001a\u00020(2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010)\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010+\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0082\u0080\u0004J\n\u0010,\u001a\u00020\u0013H\u0096\u0080\u0004J\f\u0010-\u001a\u0004\u0018\u00010.H\u0096\u0080\u0004J\n\u0010/\u001a\u00020*H\u0082\u0080\u0004J=\u00100\u001a\u0002H#\"\u0004\b\u0000\u0010#2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001b2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%2\b\u00102\u001a\u0004\u0018\u0001H#H\u0096\u0080\u0004¢\u0006\u0002\u00103J\u0012\u00104\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\n\u00105\u001a\u00020\u001bH\u0082\u0080\u0004J\u001a\u00106\u001a\u00020\u00132\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001bH\u0082\u0080\u0004J\u0012\u00107\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0082\u0080\u0004J\u001a\u00108\u001a\u00020\u00132\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00109\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010:\u001a\u00020\u001bH\u0082\u0080\u0004J\n\u0010;\u001a\u00020\u0013H\u0096\u0080\u0004J\n\u0010<\u001a\u00020=H\u0096\u0080\u0004J\n\u0010>\u001a\u00020?H\u0096\u0080\u0004J\n\u0010@\u001a\u00020\u001bH\u0096\u0080\u0004J\n\u0010A\u001a\u00020BH\u0096\u0080\u0004J\n\u0010C\u001a\u00020DH\u0096\u0080\u0004J\n\u0010E\u001a\u00020FH\u0096\u0080\u0004J\n\u0010G\u001a\u00020HH\u0096\u0080\u0004J\n\u0010I\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010J\u001a\u00020\u0015H\u0096\u0080\u0004J-\u0010K\u001a\u00020*2!\u0010L\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\bN\u0012\b\bO\u0012\u0004\b\b(P\u0012\u0004\u0012\u00020*0MH\u0096\u0080\u0004J\u0012\u0010Q\u001a\u00020R2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010S\u001a\u00020\u001b2\u0006\u0010T\u001a\u00020\u000bH\u0096\u0080\u0004R\u0015\u0010\u0004\u001a\u00020\u0005X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000f\u0010\u0006\u001a\u00020\u0007X\u0082\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8\u0000X\u0081\u0084\b¢\u0006\u0002\n\u0000R\u0015\u0010\u0016\u001a\u00020\u0017X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u000f\u0010\u001a\u001a\u00020\u001bX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u0011\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u000f\u0010\u001c\u001a\u00020\u001dX\u0082\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0084\b¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder;", "Lkotlinx/serialization/json/JsonDecoder;", "Lkotlinx/serialization/encoding/ChunkedDecoder;", "Lkotlinx/serialization/encoding/AbstractDecoder;", "json", "Lkotlinx/serialization/json/Json;", UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/json/internal/WriteMode;", "lexer", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "discriminatorHolder", "Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/internal/WriteMode;Lkotlinx/serialization/json/internal/AbstractJsonLexer;Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;)V", "getJson", "()Lkotlinx/serialization/json/Json;", "trySkip", "", "unknownKey", "", "serializersModule", "Lkotlinx/serialization/modules/SerializersModule;", "getSerializersModule", "()Lkotlinx/serialization/modules/SerializersModule;", "currentIndex", "", "configuration", "Lkotlinx/serialization/json/JsonConfiguration;", "elementMarker", "Lkotlinx/serialization/json/internal/JsonElementMarker;", "decodeJsonElement", "Lkotlinx/serialization/json/JsonElement;", "decodeSerializableValue", ExifInterface.GPS_DIRECTION_TRUE, "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "(Lkotlinx/serialization/DeserializationStrategy;)Ljava/lang/Object;", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "skipLeftoverElements", "decodeNotNullMark", "decodeNull", "", "checkLeadingComma", "decodeSerializableElement", FirebaseAnalytics.Param.INDEX, "previousValue", "(Lkotlinx/serialization/descriptors/SerialDescriptor;ILkotlinx/serialization/DeserializationStrategy;Ljava/lang/Object;)Ljava/lang/Object;", "decodeElementIndex", "decodeMapIndex", "coerceInputValue", "decodeObjectIndex", "handleUnknown", "key", "decodeListIndex", "decodeBoolean", "decodeByte", "", "decodeShort", "", "decodeInt", "decodeLong", "", "decodeFloat", "", "decodeDouble", "", "decodeChar", "", "decodeStringKey", "decodeString", "decodeStringChunked", "consumeChunk", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "chunk", "decodeInline", "Lkotlinx/serialization/encoding/Decoder;", "decodeEnum", "enumDescriptor", "DiscriminatorHolder", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder, ChunkedDecoder {
     private final JsonConfiguration configuration;
     private int currentIndex;
@@ -45,7 +46,7 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
 
     /* compiled from: StreamingJsonDecoder.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -99,7 +100,7 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
 
     /* compiled from: StreamingJsonDecoder.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0013\bF\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u00038\u0006@\u0006X\u0087\u008e\b¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "", "discriminatorToSkip", "", "<init>", "(Ljava/lang/String;)V", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public static final class DiscriminatorHolder {
         public String discriminatorToSkip;
 
@@ -126,8 +127,8 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         return new JsonTreeReader(this.json.getConfiguration(), this.lexer).read();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x017a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01bf  */
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -146,43 +147,47 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         if ((deserializer instanceof AbstractPolymorphicSerializer) && !this.json.getConfiguration().getUseArrayPolymorphism()) {
             String classDiscriminator = PolymorphicKt.classDiscriminator(((AbstractPolymorphicSerializer) deserializer).getDescriptor(), this.json);
             String peekLeadingMatchingValue = this.lexer.peekLeadingMatchingValue(classDiscriminator, this.configuration.isLenient());
-            if (peekLeadingMatchingValue == null) {
-                StreamingJsonDecoder streamingJsonDecoder = this;
-                if ((deserializer instanceof AbstractPolymorphicSerializer) && !streamingJsonDecoder.getJson().getConfiguration().getUseArrayPolymorphism()) {
-                    String classDiscriminator2 = PolymorphicKt.classDiscriminator(((AbstractPolymorphicSerializer) deserializer).getDescriptor(), streamingJsonDecoder.getJson());
-                    JsonElement decodeJsonElement = streamingJsonDecoder.decodeJsonElement();
-                    String serialName = ((AbstractPolymorphicSerializer) deserializer).getDescriptor().getSerialName();
-                    if (decodeJsonElement instanceof JsonObject) {
-                        JsonObject jsonObject = (JsonObject) decodeJsonElement;
-                        JsonElement jsonElement = (JsonElement) jsonObject.get((Object) classDiscriminator2);
-                        try {
-                            DeserializationStrategy findPolymorphicSerializer = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, streamingJsonDecoder, (jsonElement == null || (jsonPrimitive = JsonElementKt.getJsonPrimitive(jsonElement)) == null) ? null : JsonElementKt.getContentOrNull(jsonPrimitive));
-                            Intrinsics.checkNotNull(findPolymorphicSerializer, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.decodeSerializableValuePolymorphic>");
-                            return (T) TreeJsonDecoderKt.readPolymorphicJson(streamingJsonDecoder.getJson(), classDiscriminator2, jsonObject, findPolymorphicSerializer);
-                        } catch (SerializationException e2) {
-                            String message2 = e2.getMessage();
-                            Intrinsics.checkNotNull(message2);
-                            throw JsonExceptionsKt.JsonDecodingException(-1, message2, jsonObject.toString());
-                        }
-                    }
-                    throw JsonExceptionsKt.JsonDecodingException(-1, "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(decodeJsonElement.getClass()).getSimpleName() + " as the serialized body of " + serialName + " at element: " + this.lexer.path.getPath(), decodeJsonElement.toString());
+            if (peekLeadingMatchingValue != null) {
+                try {
+                    DeserializationStrategy findPolymorphicSerializer = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, this, peekLeadingMatchingValue);
+                    Intrinsics.checkNotNull(findPolymorphicSerializer, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue>");
+                    this.discriminatorHolder = new DiscriminatorHolder(classDiscriminator);
+                    return (T) findPolymorphicSerializer.deserialize(this);
+                } catch (SerializationException e2) {
+                    String message2 = e2.getMessage();
+                    Intrinsics.checkNotNull(message2);
+                    String removeSuffix = StringsKt.removeSuffix(StringsKt.substringBefore$default(message2, '\n', (String) null, 2, (Object) null), (CharSequence) ".");
+                    String message3 = e2.getMessage();
+                    Intrinsics.checkNotNull(message3);
+                    AbstractJsonLexer.fail$default(this.lexer, removeSuffix, 0, StringsKt.substringAfter(message3, '\n', ""), 2, null);
+                    throw new KotlinNothingValueException();
                 }
-                return deserializer.deserialize(streamingJsonDecoder);
             }
-            try {
-                DeserializationStrategy findPolymorphicSerializer2 = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, this, peekLeadingMatchingValue);
-                Intrinsics.checkNotNull(findPolymorphicSerializer2, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue>");
-                this.discriminatorHolder = new DiscriminatorHolder(classDiscriminator);
-                return (T) findPolymorphicSerializer2.deserialize(this);
-            } catch (SerializationException e3) {
-                String message3 = e3.getMessage();
-                Intrinsics.checkNotNull(message3);
-                String removeSuffix = StringsKt.removeSuffix(StringsKt.substringBefore$default(message3, '\n', (String) null, 2, (Object) null), (CharSequence) ".");
-                String message4 = e3.getMessage();
-                Intrinsics.checkNotNull(message4);
-                AbstractJsonLexer.fail$default(this.lexer, removeSuffix, 0, StringsKt.substringAfter(message4, '\n', ""), 2, null);
-                throw new KotlinNothingValueException();
+            StreamingJsonDecoder streamingJsonDecoder = this;
+            if ((deserializer instanceof AbstractPolymorphicSerializer) && !streamingJsonDecoder.getJson().getConfiguration().getUseArrayPolymorphism()) {
+                String classDiscriminator2 = PolymorphicKt.classDiscriminator(((AbstractPolymorphicSerializer) deserializer).getDescriptor(), streamingJsonDecoder.getJson());
+                JsonElement decodeJsonElement = streamingJsonDecoder.decodeJsonElement();
+                String serialName = ((AbstractPolymorphicSerializer) deserializer).getDescriptor().getSerialName();
+                if (!(decodeJsonElement instanceof JsonObject)) {
+                    String str = "Expected " + Reflection.getOrCreateKotlinClass(JsonObject.class).getSimpleName() + ", but had " + Reflection.getOrCreateKotlinClass(decodeJsonElement.getClass()).getSimpleName() + " as the serialized body of " + serialName;
+                    String path = this.lexer.path.getPath();
+                    String obj = streamingJsonDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(decodeJsonElement.toString(), 0, 1, null).toString() : null;
+                    throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, str, path, null, obj), str, -1, path, obj, null);
+                }
+                JsonObject jsonObject = (JsonObject) decodeJsonElement;
+                JsonElement jsonElement = (JsonElement) jsonObject.get((Object) classDiscriminator2);
+                try {
+                    DeserializationStrategy findPolymorphicSerializer2 = PolymorphicSerializerKt.findPolymorphicSerializer((AbstractPolymorphicSerializer) deserializer, streamingJsonDecoder, (jsonElement == null || (jsonPrimitive = JsonElementKt.getJsonPrimitive(jsonElement)) == null) ? null : JsonElementKt.getContentOrNull(jsonPrimitive));
+                    Intrinsics.checkNotNull(findPolymorphicSerializer2, "null cannot be cast to non-null type kotlinx.serialization.DeserializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.decodeSerializableValuePolymorphic>");
+                    return (T) TreeJsonDecoderKt.readPolymorphicJson(streamingJsonDecoder.getJson(), classDiscriminator2, jsonObject, findPolymorphicSerializer2);
+                } catch (SerializationException e3) {
+                    String message4 = e3.getMessage();
+                    Intrinsics.checkNotNull(message4);
+                    String obj2 = streamingJsonDecoder.getJson().getConfiguration().getExceptionsWithDebugInfo() ? JsonExceptionsKt.minify$default(jsonObject.toString(), 0, 1, null).toString() : null;
+                    throw new JsonDecodingException(JsonExceptionsKt.formatDecodingException(-1, message4, null, null, obj2), message4, -1, null, obj2, null);
+                }
             }
+            return deserializer.deserialize(streamingJsonDecoder);
             message = e.getMessage();
             Intrinsics.checkNotNull(message);
             if (StringsKt.contains$default((CharSequence) message, (CharSequence) "at path", false, 2, (Object) null)) {

@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.LocaleList;
 import androidx.core.os.LocaleListCompat;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
-import java.util.Locale;
 /* loaded from: classes2.dex */
 public final class LocaleManagerCompat {
     private LocaleManagerCompat() {
@@ -40,16 +39,6 @@ public final class LocaleManagerCompat {
 
     static LocaleListCompat getConfigurationLocales(Configuration configuration) {
         return Api24Impl.getLocales(configuration);
-    }
-
-    /* loaded from: classes2.dex */
-    static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static String toLanguageTag(Locale locale) {
-            return locale.toLanguageTag();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

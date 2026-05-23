@@ -9,56 +9,56 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Stack.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B!\u0012\u0018\b\u0002\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00028\u00000\u0004j\b\u0012\u0004\u0012\u00028\u0000`\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00028\u0000¢\u0006\u0004\b\u000f\u0010\u0010J\r\u0010\u0011\u001a\u00028\u0000¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0014\u001a\u00028\u0000¢\u0006\u0004\b\u0015\u0010\u0013J\u0015\u0010\u0014\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00020\t¢\u0006\u0004\b\u0015\u0010\u0017J\r\u0010\u0018\u001a\u00020\r¢\u0006\u0004\b\u0019\u0010\u001aJ\r\u0010\u001b\u001a\u00020\r¢\u0006\u0004\b\u001c\u0010\u001aJ\r\u0010\u001d\u001a\u00020\u001e¢\u0006\u0004\b\u001f\u0010 J\u0013\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\"¢\u0006\u0004\b#\u0010$J\u0013\u0010%\u001a\u00020\r2\b\u0010&\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010'\u001a\u00020\tHÖ\u0001J\t\u0010(\u001a\u00020)HÖ\u0001R\u001e\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00028\u00000\u0004j\b\u0012\u0004\u0012\u00028\u0000`\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b\u0088\u0001\u0003\u0092\u0001\u0012\u0012\u0004\u0012\u0002H\u00010\u0004j\b\u0012\u0004\u0012\u0002H\u0001`\u0005¨\u0006*"}, d2 = {"Landroidx/compose/runtime/Stack;", ExifInterface.GPS_DIRECTION_TRUE, "", "backing", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "constructor-impl", "(Ljava/util/ArrayList;)Ljava/util/ArrayList;", "size", "", "getSize-impl", "(Ljava/util/ArrayList;)I", Constants.PUSH, "", "value", "push-impl", "(Ljava/util/ArrayList;Ljava/lang/Object;)Z", "pop", "pop-impl", "(Ljava/util/ArrayList;)Ljava/lang/Object;", "peek", "peek-impl", FirebaseAnalytics.Param.INDEX, "(Ljava/util/ArrayList;I)Ljava/lang/Object;", "isEmpty", "isEmpty-impl", "(Ljava/util/ArrayList;)Z", "isNotEmpty", "isNotEmpty-impl", "clear", "", "clear-impl", "(Ljava/util/ArrayList;)V", "toArray", "", "toArray-impl", "(Ljava/util/ArrayList;)[Ljava/lang/Object;", "equals", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\b\u0081@\u0018\u0000*\u0004\b\u0000\u0010\u00012\u00020\u0002B!\u0012\u0018\b\u0002\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00028\u00000\u0004j\b\u0012\u0004\u0012\u00028\u0000`\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0015\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00028\u0000¢\u0006\u0004\b\u000f\u0010\u0010J\r\u0010\u0011\u001a\u00028\u0000¢\u0006\u0004\b\u0012\u0010\u0013J\r\u0010\u0014\u001a\u00028\u0000¢\u0006\u0004\b\u0015\u0010\u0013J\u0015\u0010\u0014\u001a\u00028\u00002\u0006\u0010\u0016\u001a\u00020\t¢\u0006\u0004\b\u0015\u0010\u0017J\r\u0010\u0018\u001a\u00020\r¢\u0006\u0004\b\u0019\u0010\u001aJ\r\u0010\u001b\u001a\u00020\r¢\u0006\u0004\b\u001c\u0010\u001aJ\r\u0010\u001d\u001a\u00020\u001e¢\u0006\u0004\b\u001f\u0010 J\u0013\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\"¢\u0006\u0004\b#\u0010$J\u0014\u0010%\u001a\u00020\r2\b\u0010&\u001a\u0004\u0018\u00010\u0002HÖ\u0083\u0004J\n\u0010'\u001a\u00020\tHÖ\u0081\u0004J\n\u0010(\u001a\u00020)HÖ\u0081\u0004R\u001e\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00028\u00000\u0004j\b\u0012\u0004\u0012\u00028\u0000`\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8F¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b\u0088\u0001\u0003\u0092\u0001\u0012\u0012\u0004\u0012\u0002H\u00010\u0004j\b\u0012\u0004\u0012\u0002H\u0001`\u0005¨\u0006*"}, d2 = {"Landroidx/compose/runtime/Stack;", ExifInterface.GPS_DIRECTION_TRUE, "", "backing", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "constructor-impl", "(Ljava/util/ArrayList;)Ljava/util/ArrayList;", "size", "", "getSize-impl", "(Ljava/util/ArrayList;)I", Constants.PUSH, "", "value", "push-impl", "(Ljava/util/ArrayList;Ljava/lang/Object;)Z", "pop", "pop-impl", "(Ljava/util/ArrayList;)Ljava/lang/Object;", "peek", "peek-impl", FirebaseAnalytics.Param.INDEX, "(Ljava/util/ArrayList;I)Ljava/lang/Object;", "isEmpty", "isEmpty-impl", "(Ljava/util/ArrayList;)Z", "isNotEmpty", "isNotEmpty-impl", "clear", "", "clear-impl", "(Ljava/util/ArrayList;)V", "toArray", "", "toArray-impl", "(Ljava/util/ArrayList;)[Ljava/lang/Object;", "equals", "other", "hashCode", "toString", "", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 @JvmInline
 /* loaded from: classes.dex */
 public final class Stack<T> {
     private final ArrayList<T> backing;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Stack m4023boximpl(ArrayList arrayList) {
+    public static final /* synthetic */ Stack m4449boximpl(ArrayList arrayList) {
         return new Stack(arrayList);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> ArrayList<T> m4025constructorimpl(ArrayList<T> arrayList) {
+    public static <T> ArrayList<T> m4451constructorimpl(ArrayList<T> arrayList) {
         return arrayList;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4027equalsimpl(ArrayList<T> arrayList, Object obj) {
-        return (obj instanceof Stack) && Intrinsics.areEqual(arrayList, ((Stack) obj).m4039unboximpl());
+    public static boolean m4453equalsimpl(ArrayList<T> arrayList, Object obj) {
+        return (obj instanceof Stack) && Intrinsics.areEqual(arrayList, ((Stack) obj).m4465unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4028equalsimpl0(ArrayList<Object> arrayList, ArrayList<Object> arrayList2) {
+    public static final boolean m4454equalsimpl0(ArrayList<Object> arrayList, ArrayList<Object> arrayList2) {
         return Intrinsics.areEqual(arrayList, arrayList2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4030hashCodeimpl(ArrayList<T> arrayList) {
+    public static int m4456hashCodeimpl(ArrayList<T> arrayList) {
         return arrayList.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4038toStringimpl(ArrayList<T> arrayList) {
+    public static String m4464toStringimpl(ArrayList<T> arrayList) {
         return "Stack(backing=" + arrayList + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4027equalsimpl(this.backing, obj);
+        return m4453equalsimpl(this.backing, obj);
     }
 
     public int hashCode() {
-        return m4030hashCodeimpl(this.backing);
+        return m4456hashCodeimpl(this.backing);
     }
 
     public String toString() {
-        return m4038toStringimpl(this.backing);
+        return m4464toStringimpl(this.backing);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ ArrayList m4039unboximpl() {
+    public final /* synthetic */ ArrayList m4465unboximpl() {
         return this.backing;
     }
 
@@ -67,55 +67,55 @@ public final class Stack<T> {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ ArrayList m4026constructorimpl$default(ArrayList arrayList, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ ArrayList m4452constructorimpl$default(ArrayList arrayList, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             arrayList = new ArrayList();
         }
-        return m4025constructorimpl(arrayList);
+        return m4451constructorimpl(arrayList);
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static final int m4029getSizeimpl(ArrayList<T> arrayList) {
+    public static final int m4455getSizeimpl(ArrayList<T> arrayList) {
         return arrayList.size();
     }
 
     /* renamed from: push-impl  reason: not valid java name */
-    public static final boolean m4036pushimpl(ArrayList<T> arrayList, T t) {
+    public static final boolean m4462pushimpl(ArrayList<T> arrayList, T t) {
         return arrayList.add(t);
     }
 
     /* renamed from: pop-impl  reason: not valid java name */
-    public static final T m4035popimpl(ArrayList<T> arrayList) {
-        return arrayList.remove(m4029getSizeimpl(arrayList) - 1);
+    public static final T m4461popimpl(ArrayList<T> arrayList) {
+        return arrayList.remove(m4455getSizeimpl(arrayList) - 1);
     }
 
     /* renamed from: peek-impl  reason: not valid java name */
-    public static final T m4033peekimpl(ArrayList<T> arrayList) {
-        return arrayList.get(m4029getSizeimpl(arrayList) - 1);
+    public static final T m4459peekimpl(ArrayList<T> arrayList) {
+        return arrayList.get(m4455getSizeimpl(arrayList) - 1);
     }
 
     /* renamed from: peek-impl  reason: not valid java name */
-    public static final T m4034peekimpl(ArrayList<T> arrayList, int i) {
+    public static final T m4460peekimpl(ArrayList<T> arrayList, int i) {
         return arrayList.get(i);
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m4031isEmptyimpl(ArrayList<T> arrayList) {
+    public static final boolean m4457isEmptyimpl(ArrayList<T> arrayList) {
         return arrayList.isEmpty();
     }
 
     /* renamed from: isNotEmpty-impl  reason: not valid java name */
-    public static final boolean m4032isNotEmptyimpl(ArrayList<T> arrayList) {
-        return !m4031isEmptyimpl(arrayList);
+    public static final boolean m4458isNotEmptyimpl(ArrayList<T> arrayList) {
+        return !m4457isEmptyimpl(arrayList);
     }
 
     /* renamed from: clear-impl  reason: not valid java name */
-    public static final void m4024clearimpl(ArrayList<T> arrayList) {
+    public static final void m4450clearimpl(ArrayList<T> arrayList) {
         arrayList.clear();
     }
 
     /* renamed from: toArray-impl  reason: not valid java name */
-    public static final T[] m4037toArrayimpl(ArrayList<T> arrayList) {
+    public static final T[] m4463toArrayimpl(ArrayList<T> arrayList) {
         int size = arrayList.size();
         T[] tArr = (T[]) new Object[size];
         for (int i = 0; i < size; i++) {

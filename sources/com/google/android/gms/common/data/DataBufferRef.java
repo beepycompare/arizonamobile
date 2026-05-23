@@ -4,7 +4,7 @@ import android.database.CharArrayBuffer;
 import android.net.Uri;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class DataBufferRef {
     protected final DataHolder mDataHolder;
@@ -17,7 +17,7 @@ public abstract class DataBufferRef {
     }
 
     protected void copyToBuffer(String str, CharArrayBuffer charArrayBuffer) {
-        this.mDataHolder.zac(str, this.mDataRow, this.zaa, charArrayBuffer);
+        this.mDataHolder.zad(str, this.mDataRow, this.zaa, charArrayBuffer);
     }
 
     public boolean equals(Object obj) {
@@ -43,7 +43,7 @@ public abstract class DataBufferRef {
     }
 
     protected double getDouble(String str) {
-        return this.mDataHolder.zaa(str, this.mDataRow, this.zaa);
+        return this.mDataHolder.zac(str, this.mDataRow, this.zaa);
     }
 
     protected float getFloat(String str) {

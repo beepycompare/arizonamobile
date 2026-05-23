@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.functions.Function5;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: LazyStaggeredGridDsl.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridDslKt$itemsIndexed$5 implements Function4<LazyStaggeredGridItemScope, Integer, Composer, Integer, Unit> {
     final /* synthetic */ Function5<LazyStaggeredGridItemScope, Integer, T, Composer, Integer, Unit> $itemContent;

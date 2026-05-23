@@ -13,9 +13,9 @@ public final class BadgeTokens {
     private static final ColorSchemeKeyTokens LargeLabelTextColor = ColorSchemeKeyTokens.OnError;
     private static final TypographyKeyTokens LargeLabelTextFont = TypographyKeyTokens.LabelSmall;
     private static final ShapeKeyTokens LargeShape = ShapeKeyTokens.CornerFull;
-    private static final float LargeSize = Dp.m7555constructorimpl(16.0f);
+    private static final float LargeSize = Dp.m8160constructorimpl(16.0f);
     private static final ShapeKeyTokens Shape = ShapeKeyTokens.CornerFull;
-    private static final float Size = Dp.m7555constructorimpl(6.0f);
+    private static final float Size = Dp.m8160constructorimpl(6.0f);
 
     private BadgeTokens() {
     }
@@ -41,7 +41,7 @@ public final class BadgeTokens {
     }
 
     /* renamed from: getLargeSize-D9Ej5fM  reason: not valid java name */
-    public final float m3136getLargeSizeD9Ej5fM() {
+    public final float m3581getLargeSizeD9Ej5fM() {
         return LargeSize;
     }
 
@@ -50,7 +50,7 @@ public final class BadgeTokens {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3137getSizeD9Ej5fM() {
+    public final float m3582getSizeD9Ej5fM() {
         return Size;
     }
 }

@@ -8,20 +8,20 @@ import kotlin.Metadata;
 public final class NavigationRailExpandedTokens {
     public static final int $stable = 0;
     public static final NavigationRailExpandedTokens INSTANCE = new NavigationRailExpandedTokens();
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3804getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerWidthMaximum = Dp.m7555constructorimpl(360.0f);
-    private static final float ContainerWidthMinimum = Dp.m7555constructorimpl(220.0f);
-    private static final float ModalContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
+    private static final float ContainerWidthMaximum = Dp.m8160constructorimpl(360.0f);
+    private static final float ContainerWidthMinimum = Dp.m8160constructorimpl(220.0f);
+    private static final float ModalContainerElevation = ElevationTokens.INSTANCE.m3806getLevel2D9Ej5fM();
     private static final ShapeKeyTokens ModalContainerShape = ShapeKeyTokens.CornerLarge;
-    private static final float TopSpace = Dp.m7555constructorimpl(44.0f);
+    private static final float TopSpace = Dp.m8160constructorimpl(44.0f);
     private static final ColorSchemeKeyTokens ModalContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
 
     private NavigationRailExpandedTokens() {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3564getContainerElevationD9Ej5fM() {
+    public final float m4009getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -30,17 +30,17 @@ public final class NavigationRailExpandedTokens {
     }
 
     /* renamed from: getContainerWidthMaximum-D9Ej5fM  reason: not valid java name */
-    public final float m3565getContainerWidthMaximumD9Ej5fM() {
+    public final float m4010getContainerWidthMaximumD9Ej5fM() {
         return ContainerWidthMaximum;
     }
 
     /* renamed from: getContainerWidthMinimum-D9Ej5fM  reason: not valid java name */
-    public final float m3566getContainerWidthMinimumD9Ej5fM() {
+    public final float m4011getContainerWidthMinimumD9Ej5fM() {
         return ContainerWidthMinimum;
     }
 
     /* renamed from: getModalContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3567getModalContainerElevationD9Ej5fM() {
+    public final float m4012getModalContainerElevationD9Ej5fM() {
         return ModalContainerElevation;
     }
 
@@ -49,7 +49,7 @@ public final class NavigationRailExpandedTokens {
     }
 
     /* renamed from: getTopSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3568getTopSpaceD9Ej5fM() {
+    public final float m4013getTopSpaceD9Ej5fM() {
         return TopSpace;
     }
 

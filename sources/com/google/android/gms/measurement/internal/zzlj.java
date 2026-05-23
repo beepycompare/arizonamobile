@@ -15,7 +15,9 @@ import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManage
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.CollectionUtils;
 import com.google.android.gms.common.util.Strings;
-import com.google.android.gms.internal.measurement.zzqp;
+import com.google.android.gms.internal.measurement.zzabw;
+import com.google.android.gms.internal.measurement.zzabx;
+import com.google.android.gms.internal.measurement.zzaif;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -45,9 +47,8 @@ import java.util.TreeSet;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlin.Unit;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzlj extends zzg {
     protected zzky zza;
@@ -60,17 +61,16 @@ public final class zzlj extends zzg {
     private final Object zzh;
     private boolean zzi;
     private int zzj;
-    private zzay zzk;
-    private zzay zzl;
+    private zzaz zzk;
+    private zzaz zzl;
     private PriorityQueue zzm;
-    private boolean zzn;
-    private zzjl zzo;
-    private final AtomicLong zzp;
-    private long zzq;
-    private zzay zzr;
-    private SharedPreferences.OnSharedPreferenceChangeListener zzs;
-    private zzay zzt;
-    private final zzpo zzv;
+    private zzjl zzn;
+    private final AtomicLong zzo;
+    private long zzp;
+    private zzaz zzq;
+    private SharedPreferences.OnSharedPreferenceChangeListener zzr;
+    private zzaz zzs;
+    private final zzpo zzt;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public zzlj(zzic zzicVar) {
@@ -80,25 +80,25 @@ public final class zzlj extends zzg {
         this.zzi = false;
         this.zzj = 1;
         this.zzc = true;
-        this.zzv = new zzkn(this);
+        this.zzt = new zzkn(this);
         this.zzg = new AtomicReference();
-        this.zzo = zzjl.zza;
-        this.zzq = -1L;
-        this.zzp = new AtomicLong(0L);
+        this.zzn = zzjl.zza;
+        this.zzp = -1L;
+        this.zzo = new AtomicLong(0L);
         this.zzb = new zzx(zzicVar);
     }
 
-    private final zzlr zzar(final zzom zzomVar) {
+    private final zzlr zzap(final zzom zzomVar) {
         try {
             URL url = new URI(zzomVar.zzc).toURL();
             final AtomicReference atomicReference = new AtomicReference();
             String zzl = this.zzu.zzv().zzl();
             zzic zzicVar = this.zzu;
-            zzgs zzk = zzicVar.zzaV().zzk();
+            zzgs zzk = zzicVar.zzaW().zzk();
             Long valueOf = Long.valueOf(zzomVar.zza);
             zzk.zzd("[sgtm] Uploading data from app. row_id, url, uncompressed size", valueOf, zzomVar.zzc, Integer.valueOf(zzomVar.zzb.length));
             if (!TextUtils.isEmpty(zzomVar.zzg)) {
-                zzicVar.zzaV().zzk().zzc("[sgtm] Uploading data from app. row_id", valueOf, zzomVar.zzg);
+                zzicVar.zzaW().zzk().zzc("[sgtm] Uploading data from app. row_id", valueOf, zzomVar.zzg);
             }
             HashMap hashMap = new HashMap();
             Bundle bundle = zzomVar.zzd;
@@ -128,13 +128,13 @@ public final class zzlj extends zzg {
                         if (i == 304) {
                             i = 304;
                         }
-                        zzljVar.zzu.zzaV().zze().zzd("[sgtm] Upload failed for row_id. response, exception", Long.valueOf(zzomVar2.zza), Integer.valueOf(i), th);
+                        zzljVar.zzu.zzaW().zze().zzd("[sgtm] Upload failed for row_id. response, exception", Long.valueOf(zzomVar2.zza), Integer.valueOf(i), th);
                         zzlrVar = !Arrays.asList(((String) zzfy.zzt.zzb(null)).split(StringUtils.COMMA)).contains(String.valueOf(i)) ? zzlr.BACKOFF : zzlr.FAILURE;
                         atomicReference2 = atomicReference;
                         zznl zzt = zzljVar.zzu.zzt();
                         long j = zzomVar2.zza;
                         zzt.zzy(new zzaf(j, zzlrVar.zza(), zzomVar2.zzf));
-                        zzljVar.zzu.zzaV().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j), zzlrVar);
+                        zzljVar.zzu.zzaW().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j), zzlrVar);
                         synchronized (atomicReference2) {
                             atomicReference2.set(zzlrVar);
                             atomicReference2.notifyAll();
@@ -142,24 +142,24 @@ public final class zzlj extends zzg {
                         return;
                     }
                     if (th == null) {
-                        zzljVar.zzu.zzaV().zzk().zzb("[sgtm] Upload succeeded for row_id", Long.valueOf(zzomVar2.zza));
+                        zzljVar.zzu.zzaW().zzk().zzb("[sgtm] Upload succeeded for row_id", Long.valueOf(zzomVar2.zza));
                         zzlrVar = zzlr.SUCCESS;
                         atomicReference2 = atomicReference;
                         zznl zzt2 = zzljVar.zzu.zzt();
                         long j2 = zzomVar2.zza;
                         zzt2.zzy(new zzaf(j2, zzlrVar.zza(), zzomVar2.zzf));
-                        zzljVar.zzu.zzaV().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j2), zzlrVar);
+                        zzljVar.zzu.zzaW().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j2), zzlrVar);
                         synchronized (atomicReference2) {
                         }
                     }
-                    zzljVar.zzu.zzaV().zze().zzd("[sgtm] Upload failed for row_id. response, exception", Long.valueOf(zzomVar2.zza), Integer.valueOf(i), th);
+                    zzljVar.zzu.zzaW().zze().zzd("[sgtm] Upload failed for row_id. response, exception", Long.valueOf(zzomVar2.zza), Integer.valueOf(i), th);
                     if (!Arrays.asList(((String) zzfy.zzt.zzb(null)).split(StringUtils.COMMA)).contains(String.valueOf(i))) {
                     }
                     atomicReference2 = atomicReference;
                     zznl zzt22 = zzljVar.zzu.zzt();
                     long j22 = zzomVar2.zza;
                     zzt22.zzy(new zzaf(j22, zzlrVar.zza(), zzomVar2.zzf));
-                    zzljVar.zzu.zzaV().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j22), zzlrVar);
+                    zzljVar.zzu.zzaW().zzk().zzc("[sgtm] Updated status for row_id", Long.valueOf(j22), zzlrVar);
                     synchronized (atomicReference2) {
                     }
                 }
@@ -168,30 +168,30 @@ public final class zzlj extends zzg {
             Preconditions.checkNotNull(url);
             Preconditions.checkNotNull(bArr);
             Preconditions.checkNotNull(zzllVar);
-            zzn.zzu.zzaW().zzm(new zzln(zzn, zzl, url, bArr, hashMap, zzllVar));
+            zzn.zzu.zzaX().zzm(new zzln(zzn, zzl, url, bArr, hashMap, zzllVar));
             try {
                 zzic zzicVar2 = zzicVar.zzk().zzu;
-                long currentTimeMillis = zzicVar2.zzaZ().currentTimeMillis() + 60000;
+                long currentTimeMillis = zzicVar2.zzba().currentTimeMillis() + 60000;
                 synchronized (atomicReference) {
-                    for (long j = 60000; atomicReference.get() == null && j > 0; j = currentTimeMillis - zzicVar2.zzaZ().currentTimeMillis()) {
+                    for (long j = 60000; atomicReference.get() == null && j > 0; j = currentTimeMillis - zzicVar2.zzba().currentTimeMillis()) {
                         atomicReference.wait(j);
                     }
                 }
             } catch (InterruptedException unused) {
-                this.zzu.zzaV().zze().zza("[sgtm] Interrupted waiting for uploading batch");
+                this.zzu.zzaW().zze().zza("[sgtm] Interrupted waiting for uploading batch");
             }
             return atomicReference.get() == null ? zzlr.UNKNOWN : (zzlr) atomicReference.get();
         } catch (MalformedURLException | URISyntaxException e) {
-            this.zzu.zzaV().zzb().zzd("[sgtm] Bad upload url for row_id", zzomVar.zzc, Long.valueOf(zzomVar.zza), e);
+            this.zzu.zzaW().zzb().zzd("[sgtm] Bad upload url for row_id", zzomVar.zzc, Long.valueOf(zzomVar.zza), e);
             return zzlr.FAILURE;
         }
     }
 
-    private final void zzas(Boolean bool, boolean z) {
+    private final void zzaq(Boolean bool, boolean z) {
         zzg();
         zzb();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzj().zzb("Setting app measurement enabled (FE)", bool);
+        zzicVar.zzaW().zzj().zzb("Setting app measurement enabled (FE)", bool);
         zzicVar.zzd().zzh(bool);
         if (z) {
             zzhh zzd = zzicVar.zzd();
@@ -206,13 +206,13 @@ public final class zzlj extends zzg {
             edit.apply();
         }
         if (this.zzu.zzE() || !(bool == null || bool.booleanValue())) {
-            zzal();
+            zzak();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: zzat */
-    public final void zzal() {
+    /* renamed from: zzar */
+    public final void zzak() {
         zzlj zzljVar;
         zzg();
         zzic zzicVar = this.zzu;
@@ -221,239 +221,203 @@ public final class zzlj extends zzg {
             zzljVar = this;
         } else if ("unset".equals(zza)) {
             zzljVar = this;
-            zzljVar.zzN("app", "_npa", null, zzicVar.zzaZ().currentTimeMillis());
+            zzljVar.zzM("app", "_npa", null, zzicVar.zzba().currentTimeMillis());
         } else {
             zzljVar = this;
-            zzljVar.zzN("app", "_npa", Long.valueOf(true != "true".equals(zza) ? 0L : 1L), zzicVar.zzaZ().currentTimeMillis());
+            zzljVar.zzM("app", "_npa", Long.valueOf(true != "true".equals(zza) ? 0L : 1L), zzicVar.zzba().currentTimeMillis());
         }
         if (!zzljVar.zzu.zzB() || !zzljVar.zzc) {
-            zzicVar.zzaV().zzj().zza("Updating Scion state (FE)");
+            zzicVar.zzaW().zzj().zza("Updating Scion state (FE)");
             zzljVar.zzu.zzt().zzi();
             return;
         }
-        zzicVar.zzaV().zzj().zza("Recording app launch after enabling measurement for the first time (FE)");
-        zzljVar.zzU();
+        zzicVar.zzaW().zzj().zza("Recording app launch after enabling measurement for the first time (FE)");
+        zzljVar.zzT();
         zzljVar.zzu.zzh().zza.zza();
-        zzicVar.zzaW().zzj(new zzjz(zzljVar));
+        zzicVar.zzaX().zzj(new zzjz(zzljVar));
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzA(zzjl zzjlVar) {
-        zzg();
-        boolean z = (zzjlVar.zzo(zzjk.ANALYTICS_STORAGE) && zzjlVar.zzo(zzjk.AD_STORAGE)) || this.zzu.zzt().zzO();
+    public final void zzA(String str, String str2, Bundle bundle) {
         zzic zzicVar = this.zzu;
-        if (z != zzicVar.zzE()) {
-            zzicVar.zzD(z);
-            zzhh zzd = this.zzu.zzd();
-            zzic zzicVar2 = zzd.zzu;
-            zzd.zzg();
-            Boolean valueOf = zzd.zzd().contains("measurement_enabled_from_api") ? Boolean.valueOf(zzd.zzd().getBoolean("measurement_enabled_from_api", true)) : null;
-            if (!z || valueOf == null || valueOf.booleanValue()) {
-                zzas(Boolean.valueOf(z), false);
-            }
-        }
+        zzB(str, str2, bundle, true, true, zzicVar.zzba().currentTimeMillis(), zzicVar.zzc().zzp(null, zzfy.zzbe) ? zzicVar.zzba().elapsedRealtime() : 0L);
     }
 
-    public final void zzB(String str, String str2, Bundle bundle) {
-        zzC(str, str2, bundle, true, true, this.zzu.zzaZ().currentTimeMillis());
-    }
-
-    public final void zzC(String str, String str2, Bundle bundle, boolean z, boolean z2, long j) {
+    public final void zzB(String str, String str2, Bundle bundle, boolean z, boolean z2, long j, long j2) {
+        long j3;
+        zzmb zzmbVar;
+        long j4;
+        Bundle bundle2;
         if (bundle == null) {
             bundle = new Bundle();
         }
-        Bundle bundle2 = bundle;
+        Bundle bundle3 = bundle;
         if (Objects.equals(str2, FirebaseAnalytics.Event.SCREEN_VIEW)) {
-            this.zzu.zzs().zzj(bundle2, j);
+            zzic zzicVar = this.zzu;
+            zzic zzicVar2 = this.zzu;
+            zzmb zzs = zzicVar.zzs();
+            if (true != zzicVar2.zzc().zzp(null, zzfy.zzbe)) {
+                j3 = 0;
+                j4 = j;
+                bundle2 = bundle3;
+                zzmbVar = zzs;
+            } else {
+                j3 = j2;
+                zzmbVar = zzs;
+                j4 = j;
+                bundle2 = bundle3;
+            }
+            zzmbVar.zzj(bundle2, j4, j3);
             return;
         }
-        boolean z3 = true;
-        if (z2 && this.zzd != null && !zzpp.zzZ(str2)) {
-            z3 = false;
-        }
-        boolean z4 = z3;
+        boolean z3 = !z2 || this.zzd == null || zzpp.zzac(str2);
         if (str == null) {
             str = "app";
         }
-        zzJ(str, str2, j, bundle2, z2, z4, z, null);
+        zzI(str, str2, j, true != this.zzu.zzc().zzp(null, zzfy.zzbe) ? 0L : j2, bundle3, z2, z3, z, null);
     }
 
-    public final void zzD() {
+    public final void zzC() {
         zzod zzodVar;
-        zzod zzodVar2;
-        com.google.android.gms.internal.measurement.zzkq zzkqVar;
+        zzabx zzabxVar;
         zzg();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzj().zza("Handle tcf update.");
+        zzicVar.zzaW().zzj().zza("Handle tcf update.");
         SharedPreferences zze = zzicVar.zzd().zze();
-        HashMap hashMap = new HashMap();
-        zzfx zzfxVar = zzfy.zzaZ;
-        if (((Boolean) zzfxVar.zzb(null)).booleanValue()) {
-            int i = zzof.zzb;
-            com.google.android.gms.internal.measurement.zzkp zzkpVar = com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_STORE_AND_ACCESS_INFORMATION_ON_A_DEVICE;
-            int i2 = 2;
-            zzoe zzoeVar = zzoe.CONSENT;
-            com.google.android.gms.internal.measurement.zzkp zzkpVar2 = com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_SELECT_BASIC_ADS;
-            int i3 = 1;
-            zzoe zzoeVar2 = zzoe.FLEXIBLE_LEGITIMATE_INTEREST;
-            ImmutableMap ofEntries = ImmutableMap.ofEntries(UByte$$ExternalSyntheticBackport0.m(zzkpVar, zzoeVar), UByte$$ExternalSyntheticBackport0.m(zzkpVar2, zzoeVar2), UByte$$ExternalSyntheticBackport0.m(com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_CREATE_A_PERSONALISED_ADS_PROFILE, zzoeVar), UByte$$ExternalSyntheticBackport0.m(com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_SELECT_PERSONALISED_ADS, zzoeVar), UByte$$ExternalSyntheticBackport0.m(com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_MEASURE_AD_PERFORMANCE, zzoeVar2), UByte$$ExternalSyntheticBackport0.m(com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_APPLY_MARKET_RESEARCH_TO_GENERATE_AUDIENCE_INSIGHTS, zzoeVar2), UByte$$ExternalSyntheticBackport0.m(com.google.android.gms.internal.measurement.zzkp.IAB_TCF_PURPOSE_DEVELOP_AND_IMPROVE_PRODUCTS, zzoeVar2));
-            ImmutableSet of = ImmutableSet.of("CH");
-            char[] cArr = new char[5];
-            boolean contains = zze.contains("IABTCF_TCString");
-            int zzb = zzof.zzb(zze, "IABTCF_CmpSdkID");
-            int zzb2 = zzof.zzb(zze, "IABTCF_PolicyVersion");
-            int zzb3 = zzof.zzb(zze, "IABTCF_gdprApplies");
-            int zzb4 = zzof.zzb(zze, "IABTCF_PurposeOneTreatment");
-            int zzb5 = zzof.zzb(zze, "IABTCF_EnableAdvertiserConsentMode");
-            String zza = zzof.zza(zze, "IABTCF_PublisherCC");
-            ImmutableMap.Builder builder = ImmutableMap.builder();
-            UnmodifiableIterator it = ofEntries.keySet().iterator();
-            while (it.hasNext()) {
-                com.google.android.gms.internal.measurement.zzkp zzkpVar3 = (com.google.android.gms.internal.measurement.zzkp) it.next();
-                int zza2 = zzkpVar3.zza();
-                StringBuilder sb = new StringBuilder(String.valueOf(zza2).length() + 28);
-                sb.append("IABTCF_PublisherRestrictions");
-                sb.append(zza2);
-                String zza3 = zzof.zza(zze, sb.toString());
-                if (TextUtils.isEmpty(zza3) || zza3.length() < 755) {
-                    zzkqVar = com.google.android.gms.internal.measurement.zzkq.PURPOSE_RESTRICTION_UNDEFINED;
-                } else {
-                    int digit = Character.digit(zza3.charAt(754), 10);
-                    zzkqVar = (digit < 0 || digit > com.google.android.gms.internal.measurement.zzkq.values().length || digit == 0) ? com.google.android.gms.internal.measurement.zzkq.PURPOSE_RESTRICTION_NOT_ALLOWED : digit != i3 ? digit != i2 ? com.google.android.gms.internal.measurement.zzkq.PURPOSE_RESTRICTION_UNDEFINED : com.google.android.gms.internal.measurement.zzkq.PURPOSE_RESTRICTION_REQUIRE_LEGITIMATE_INTEREST : com.google.android.gms.internal.measurement.zzkq.PURPOSE_RESTRICTION_REQUIRE_CONSENT;
-                }
-                builder.put(zzkpVar3, zzkqVar);
-                i2 = 2;
-                i3 = 1;
+        int i = zzof.zzb;
+        zzabw zzabwVar = zzabw.IAB_TCF_PURPOSE_STORE_AND_ACCESS_INFORMATION_ON_A_DEVICE;
+        zzoe zzoeVar = zzoe.CONSENT;
+        zzabw zzabwVar2 = zzabw.IAB_TCF_PURPOSE_SELECT_BASIC_ADS;
+        zzoe zzoeVar2 = zzoe.FLEXIBLE_LEGITIMATE_INTEREST;
+        ImmutableMap of = ImmutableMap.of(zzabwVar, zzoeVar, zzabwVar2, zzoeVar2, zzabw.IAB_TCF_PURPOSE_CREATE_A_PERSONALISED_ADS_PROFILE, zzoeVar, zzabw.IAB_TCF_PURPOSE_SELECT_PERSONALISED_ADS, zzoeVar, zzabw.IAB_TCF_PURPOSE_MEASURE_AD_PERFORMANCE, zzoeVar2, zzabw.IAB_TCF_PURPOSE_APPLY_MARKET_RESEARCH_TO_GENERATE_AUDIENCE_INSIGHTS, zzoeVar2, zzabw.IAB_TCF_PURPOSE_DEVELOP_AND_IMPROVE_PRODUCTS, zzoeVar2);
+        ImmutableSet of2 = ImmutableSet.of("CH");
+        char[] cArr = new char[5];
+        boolean contains = zze.contains("IABTCF_TCString");
+        int zzb = zzof.zzb(zze, "IABTCF_CmpSdkID");
+        int zzb2 = zzof.zzb(zze, "IABTCF_PolicyVersion");
+        int zzb3 = zzof.zzb(zze, "IABTCF_gdprApplies");
+        int zzb4 = zzof.zzb(zze, "IABTCF_PurposeOneTreatment");
+        int zzb5 = zzof.zzb(zze, "IABTCF_EnableAdvertiserConsentMode");
+        String zza = zzof.zza(zze, "IABTCF_PublisherCC");
+        ImmutableMap.Builder builder = ImmutableMap.builder();
+        UnmodifiableIterator it = of.keySet().iterator();
+        while (it.hasNext()) {
+            zzabw zzabwVar3 = (zzabw) it.next();
+            int zza2 = zzabwVar3.zza();
+            StringBuilder sb = new StringBuilder(String.valueOf(zza2).length() + 28);
+            sb.append("IABTCF_PublisherRestrictions");
+            sb.append(zza2);
+            String zza3 = zzof.zza(zze, sb.toString());
+            if (TextUtils.isEmpty(zza3) || zza3.length() < 755) {
+                zzabxVar = zzabx.PURPOSE_RESTRICTION_UNDEFINED;
+            } else {
+                int digit = Character.digit(zza3.charAt(754), 10);
+                zzabxVar = (digit < 0 || digit > zzabx.values().length || digit == 0) ? zzabx.PURPOSE_RESTRICTION_NOT_ALLOWED : digit != 1 ? digit != 2 ? zzabx.PURPOSE_RESTRICTION_UNDEFINED : zzabx.PURPOSE_RESTRICTION_REQUIRE_LEGITIMATE_INTEREST : zzabx.PURPOSE_RESTRICTION_REQUIRE_CONSENT;
             }
-            ImmutableMap buildOrThrow = builder.buildOrThrow();
-            String zza4 = zzof.zza(zze, "IABTCF_PurposeConsents");
-            String zza5 = zzof.zza(zze, "IABTCF_VendorConsents");
-            boolean z = !TextUtils.isEmpty(zza5) && zza5.length() >= 755 && zza5.charAt(754) == '1';
-            String zza6 = zzof.zza(zze, "IABTCF_PurposeLegitimateInterests");
-            String zza7 = zzof.zza(zze, "IABTCF_VendorLegitimateInterests");
-            boolean z2 = !TextUtils.isEmpty(zza7) && zza7.length() >= 755 && zza7.charAt(754) == '1';
-            cArr[0] = '2';
-            zzodVar = new zzod(zzof.zzd(ofEntries, buildOrThrow, of, cArr, zzb, zzb5, zzb3, zzb2, zzb4, zza, zza4, zza6, z, z2, contains));
-        } else {
-            String zza8 = zzof.zza(zze, "IABTCF_VendorConsents");
-            if (!"".equals(zza8) && zza8.length() > 754) {
-                hashMap.put("GoogleConsent", String.valueOf(zza8.charAt(754)));
-            }
-            int zzb6 = zzof.zzb(zze, "IABTCF_gdprApplies");
-            if (zzb6 != -1) {
-                hashMap.put("gdprApplies", String.valueOf(zzb6));
-            }
-            int zzb7 = zzof.zzb(zze, "IABTCF_EnableAdvertiserConsentMode");
-            if (zzb7 != -1) {
-                hashMap.put("EnableAdvertiserConsentMode", String.valueOf(zzb7));
-            }
-            int zzb8 = zzof.zzb(zze, "IABTCF_PolicyVersion");
-            if (zzb8 != -1) {
-                hashMap.put("PolicyVersion", String.valueOf(zzb8));
-            }
-            String zza9 = zzof.zza(zze, "IABTCF_PurposeConsents");
-            if (!"".equals(zza9)) {
-                hashMap.put("PurposeConsents", zza9);
-            }
-            int zzb9 = zzof.zzb(zze, "IABTCF_CmpSdkID");
-            if (zzb9 != -1) {
-                hashMap.put("CmpSdkID", String.valueOf(zzb9));
-            }
-            zzodVar = new zzod(hashMap);
+            builder.put(zzabwVar3, zzabxVar);
         }
-        zzicVar.zzaV().zzk().zzb("Tcf preferences read", zzodVar);
-        if (!zzicVar.zzc().zzp(null, zzfxVar)) {
-            if (zzicVar.zzd().zzm(zzodVar)) {
-                Bundle zzb10 = zzodVar.zzb();
-                zzicVar.zzaV().zzk().zzb("Consent generated from Tcf", zzb10);
-                if (zzb10 != Bundle.EMPTY) {
-                    zzp(zzb10, -30, zzicVar.zzaZ().currentTimeMillis());
-                }
-                Bundle bundle = new Bundle();
-                bundle.putString("_tcfd", zzodVar.zze());
-                zzF("auto", "_tcf", bundle);
-                return;
-            }
-            return;
-        }
+        ImmutableMap buildOrThrow = builder.buildOrThrow();
+        String zza4 = zzof.zza(zze, "IABTCF_PurposeConsents");
+        String zza5 = zzof.zza(zze, "IABTCF_VendorConsents");
+        boolean z = !TextUtils.isEmpty(zza5) && zza5.length() >= 755 && zza5.charAt(754) == '1';
+        String zza6 = zzof.zza(zze, "IABTCF_PurposeLegitimateInterests");
+        String zza7 = zzof.zza(zze, "IABTCF_VendorLegitimateInterests");
+        boolean z2 = !TextUtils.isEmpty(zza7) && zza7.length() >= 755 && zza7.charAt(754) == '1';
+        cArr[0] = '2';
+        zzod zzodVar2 = new zzod(zzof.zzd(of, buildOrThrow, of2, cArr, zzb, zzb5, zzb3, zzb2, zzb4, zza, zza4, zza6, z, z2, contains));
+        zzicVar.zzaW().zzk().zzb("Tcf preferences read", zzodVar2);
         zzhh zzd = zzicVar.zzd();
         zzd.zzg();
         String string = zzd.zzd().getString("stored_tcf_param", "");
-        HashMap hashMap2 = new HashMap();
+        HashMap hashMap = new HashMap();
         if (TextUtils.isEmpty(string)) {
-            zzodVar2 = new zzod(hashMap2);
+            zzodVar = new zzod(hashMap);
         } else {
             for (String str : string.split(";")) {
                 String[] split = str.split("=");
                 if (split.length >= 2 && zzof.zza.contains(split[0])) {
-                    hashMap2.put(split[0], split[1]);
+                    hashMap.put(split[0], split[1]);
                 }
             }
-            zzodVar2 = new zzod(hashMap2);
+            zzodVar = new zzod(hashMap);
         }
-        if (zzicVar.zzd().zzm(zzodVar)) {
-            Bundle zzb11 = zzodVar.zzb();
-            zzicVar.zzaV().zzk().zzb("Consent generated from Tcf", zzb11);
-            if (zzb11 != Bundle.EMPTY) {
-                zzp(zzb11, -30, zzicVar.zzaZ().currentTimeMillis());
-            }
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("_tcfm", zzodVar.zzd(zzodVar2));
-            bundle2.putString("_tcfd2", zzodVar.zzc());
-            bundle2.putString("_tcfd", zzodVar.zze());
-            zzF("auto", "_tcf", bundle2);
+        zzhh zzd2 = zzicVar.zzd();
+        zzd2.zzg();
+        String string2 = zzd2.zzd().getString("stored_tcf_param", "");
+        String zza8 = zzodVar2.zza();
+        if (zza8.equals(string2)) {
+            return;
         }
+        SharedPreferences.Editor edit = zzd2.zzd().edit();
+        edit.putString("stored_tcf_param", zza8);
+        edit.apply();
+        Bundle zzb6 = zzodVar2.zzb();
+        zzicVar.zzaW().zzk().zzb("Consent generated from Tcf", zzb6);
+        if (zzb6 != Bundle.EMPTY) {
+            zzp(zzb6, -30, zzicVar.zzba().currentTimeMillis());
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("_tcfm", zzodVar2.zzd(zzodVar));
+        bundle.putString("_tcfd2", zzodVar2.zzc());
+        bundle.putString("_tcfd", zzodVar2.zze());
+        zzE("auto", "_tcf", bundle);
     }
 
-    public final void zzE() {
+    public final void zzD() {
         zzg();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzj().zza("Register tcfPrefChangeListener.");
-        if (this.zzs == null) {
-            this.zzt = new zzkb(this, this.zzu);
-            this.zzs = new SharedPreferences.OnSharedPreferenceChangeListener() { // from class: com.google.android.gms.measurement.internal.zzle
+        zzicVar.zzaW().zzj().zza("Register tcfPrefChangeListener.");
+        if (this.zzr == null) {
+            this.zzs = new zzkb(this, this.zzu);
+            this.zzr = new SharedPreferences.OnSharedPreferenceChangeListener() { // from class: com.google.android.gms.measurement.internal.zzle
                 @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
                 public final /* synthetic */ void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
-                    zzlj.this.zzag(sharedPreferences, str);
+                    zzlj.this.zzaf(sharedPreferences, str);
                 }
             };
         }
-        zzicVar.zzd().zze().registerOnSharedPreferenceChangeListener(this.zzs);
+        zzicVar.zzd().zze().registerOnSharedPreferenceChangeListener(this.zzr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzF(String str, String str2, Bundle bundle) {
+    public final void zzE(String str, String str2, Bundle bundle) {
         zzg();
-        zzG(str, str2, this.zzu.zzaZ().currentTimeMillis(), bundle);
+        zzic zzicVar = this.zzu;
+        zzF(str, str2, zzicVar.zzba().currentTimeMillis(), zzicVar.zzc().zzp(null, zzfy.zzbe) ? zzicVar.zzba().elapsedRealtime() : 0L, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzG(String str, String str2, long j, Bundle bundle) {
+    public final void zzF(String str, String str2, long j, long j2, Bundle bundle) {
         zzg();
         boolean z = true;
-        if (this.zzd != null && !zzpp.zzZ(str2)) {
+        if (this.zzd != null && !zzpp.zzac(str2)) {
             z = false;
         }
-        zzH(str, str2, j, bundle, true, z, true, null);
+        zzG(str, str2, j, j2, bundle, true, z, true, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x03bc  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x03e7  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0438  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0403  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0454  */
+    /* JADX WARN: Removed duplicated region for block: B:189:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01f1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzH(String str, String str2, long j, Bundle bundle, boolean z, boolean z2, boolean z3, String str3) {
+    public final void zzG(String str, String str2, long j, long j2, Bundle bundle, boolean z, boolean z2, boolean z3, String str3) {
+        char c;
+        zzlu zzh;
+        boolean equals;
         boolean z4;
+        zzic zzicVar;
         int i;
-        long j2;
-        boolean zza;
-        ArrayList arrayList;
         long j3;
+        boolean zza;
+        boolean z5;
         long j4;
         String str4;
+        ArrayList arrayList;
+        zzlj zzljVar;
         int size;
         int i2;
         int i3;
@@ -465,165 +429,169 @@ public final class zzlj extends zzg {
         Preconditions.checkNotNull(bundle);
         zzg();
         zzb();
-        zzic zzicVar = this.zzu;
-        if (zzicVar.zzB()) {
+        zzic zzicVar2 = this.zzu;
+        if (zzicVar2.zzB()) {
             List zzp = this.zzu.zzv().zzp();
-            if (zzp == null || zzp.contains(str2)) {
-                if (!this.zzf) {
-                    this.zzf = true;
+            if (zzp != null && !zzp.contains(str2)) {
+                this.zzu.zzaW().zzj().zzc("Dropping non-safelisted event. event name, origin", str2, str5);
+                return;
+            }
+            if (!this.zzf) {
+                this.zzf = true;
+                try {
+                    if (zzicVar2.zzp()) {
+                        cls = Class.forName("com.google.android.gms.tagmanager.TagManagerService");
+                    } else {
+                        cls = Class.forName("com.google.android.gms.tagmanager.TagManagerService", true, this.zzu.zzaZ().getClassLoader());
+                    }
                     try {
-                        if (zzicVar.zzp()) {
-                            cls = Class.forName("com.google.android.gms.tagmanager.TagManagerService");
+                        cls.getDeclaredMethod("initialize", Context.class).invoke(null, this.zzu.zzaZ());
+                    } catch (Exception e) {
+                        this.zzu.zzaW().zze().zzb("Failed to invoke Tag Manager's initialize() method", e);
+                    }
+                } catch (ClassNotFoundException unused) {
+                    this.zzu.zzaW().zzi().zza("Tag Manager is not found and thus will not be used");
+                }
+            }
+            zzic zzicVar3 = this.zzu;
+            if (!zzicVar3.zzc().zzp(null, zzfy.zzaZ) && Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(str2) && bundle.containsKey("gclid")) {
+                zzicVar3.zzaV();
+                zzM("auto", "_lgclid", bundle.getString("gclid"), zzicVar3.zzba().currentTimeMillis());
+            }
+            zzicVar3.zzaV();
+            if (z && zzpp.zzai(str2)) {
+                zzicVar3.zzk().zzK(bundle, zzicVar3.zzd().zzt.zza());
+            }
+            if (!z3) {
+                zzicVar3.zzaV();
+                if (!"_iap".equals(str2)) {
+                    zzic zzicVar4 = this.zzu;
+                    zzpp zzk = zzicVar4.zzk();
+                    if (zzk.zzk(NotificationCompat.CATEGORY_EVENT, str2)) {
+                        zzic zzicVar5 = zzk.zzu;
+                        c = 2;
+                        if (zzk.zzm(NotificationCompat.CATEGORY_EVENT, zzjm.zza, zzicVar5.zzc().zzp(null, zzfy.zzbf) ? zzjm.zzc : zzjm.zzb, str2)) {
+                            zzicVar5.zzc();
+                            i4 = !zzk.zzn(NotificationCompat.CATEGORY_EVENT, 40, str2) ? 2 : 0;
                         } else {
-                            cls = Class.forName("com.google.android.gms.tagmanager.TagManagerService", true, this.zzu.zzaY().getClassLoader());
+                            i4 = 13;
                         }
-                        try {
-                            cls.getDeclaredMethod("initialize", Context.class).invoke(null, this.zzu.zzaY());
-                        } catch (Exception e) {
-                            this.zzu.zzaV().zze().zzb("Failed to invoke Tag Manager's initialize() method", e);
-                        }
-                    } catch (ClassNotFoundException unused) {
-                        this.zzu.zzaV().zzi().zza("Tag Manager is not found and thus will not be used");
-                    }
-                }
-                zzic zzicVar2 = this.zzu;
-                if (!zzicVar2.zzc().zzp(null, zzfy.zzbf) && Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN.equals(str2) && bundle.containsKey("gclid")) {
-                    zzicVar2.zzaU();
-                    zzN("auto", "_lgclid", bundle.getString("gclid"), zzicVar2.zzaZ().currentTimeMillis());
-                }
-                zzlj zzljVar = this;
-                zzicVar2.zzaU();
-                if (z && zzpp.zzaf(str2)) {
-                    zzicVar2.zzk().zzI(bundle, zzicVar2.zzd().zzt.zza());
-                }
-                if (!z3) {
-                    zzicVar2.zzaU();
-                    if (!"_iap".equals(str2)) {
-                        zzic zzicVar3 = zzljVar.zzu;
-                        zzpp zzk = zzicVar3.zzk();
-                        if (zzk.zzj(NotificationCompat.CATEGORY_EVENT, str2)) {
-                            if (zzk.zzl(NotificationCompat.CATEGORY_EVENT, zzjm.zza, zzjm.zzb, str2)) {
-                                zzk.zzu.zzc();
-                                if (zzk.zzm(NotificationCompat.CATEGORY_EVENT, 40, str2)) {
-                                    i4 = 0;
-                                }
-                            } else {
-                                i4 = 13;
-                            }
-                            if (i4 != 0) {
-                                zzicVar2.zzaV().zzd().zzb("Invalid public event name. Event will not be logged (FE)", zzicVar2.zzl().zza(str2));
-                                zzpp zzk2 = zzicVar3.zzk();
-                                zzicVar3.zzc();
-                                zzicVar3.zzk().zzN(zzljVar.zzv, null, i4, "_ev", zzk2.zzC(str2, 40, true), str2 != null ? str2.length() : 0);
-                                return;
-                            }
-                        }
+                    } else {
                         i4 = 2;
-                        if (i4 != 0) {
-                        }
+                        c = 2;
                     }
-                }
-                zzicVar2.zzaU();
-                zzic zzicVar4 = zzljVar.zzu;
-                zzlu zzh = zzicVar4.zzs().zzh(false);
-                if (zzh != null && !bundle.containsKey("_sc")) {
-                    zzh.zzd = true;
-                }
-                zzpp.zzav(zzh, bundle, z && !z3);
-                boolean equals = "am".equals(str5);
-                boolean zzZ = zzpp.zzZ(str2);
-                if (!z || zzljVar.zzd == null || zzZ) {
-                    z4 = equals;
-                } else if (!equals) {
-                    zzicVar2.zzaV().zzj().zzc("Passing event to registered event handler (FE)", zzicVar2.zzl().zza(str2), zzicVar2.zzl().zze(bundle));
-                    Preconditions.checkNotNull(zzljVar.zzd);
-                    zzljVar.zzd.interceptEvent(str5, str2, bundle, j);
-                    return;
-                } else {
-                    z4 = true;
-                }
-                zzic zzicVar5 = zzljVar.zzu;
-                if (zzicVar5.zzH()) {
-                    int zzn = zzicVar2.zzk().zzn(str2);
-                    if (zzn != 0) {
-                        zzicVar2.zzaV().zzd().zzb("Invalid event name. Event will not be logged (FE)", zzicVar2.zzl().zza(str2));
-                        zzpp zzk3 = zzicVar2.zzk();
-                        zzicVar2.zzc();
-                        zzicVar5.zzk().zzN(zzljVar.zzv, str3, zzn, "_ev", zzk3.zzC(str2, 40, true), str2 != null ? str2.length() : 0);
+                    if (i4 != 0) {
+                        zzicVar3.zzaW().zzd().zzb("Invalid public event name. Event will not be logged (FE)", zzicVar3.zzl().zza(str2));
+                        zzpp zzk2 = zzicVar4.zzk();
+                        zzicVar4.zzc();
+                        zzicVar4.zzk().zzP(this.zzt, null, i4, "_ev", zzk2.zzE(str2, 40, true), str2 != null ? str2.length() : 0);
                         return;
                     }
-                    Bundle zzF = zzicVar2.zzk().zzF(str3, str2, bundle, CollectionUtils.listOf((Object[]) new String[]{"_o", "_sn", "_sc", "_si"}), z3);
-                    Preconditions.checkNotNull(zzF);
-                    zzicVar2.zzaU();
-                    if (zzicVar4.zzs().zzh(false) == null || !"_ae".equals(str2)) {
-                        i = 0;
-                        j2 = 0;
+                    zzicVar3.zzaV();
+                    zzic zzicVar6 = this.zzu;
+                    zzh = zzicVar6.zzs().zzh(false);
+                    if (zzh != null && !bundle.containsKey("_sc")) {
+                        zzh.zzd = true;
+                    }
+                    zzpp.zzay(zzh, bundle, (z || z3) ? false : true);
+                    equals = "am".equals(str5);
+                    boolean zzac = zzpp.zzac(str2);
+                    if (z || this.zzd == null || zzac) {
+                        z4 = equals;
+                    } else if (!equals) {
+                        zzicVar3.zzaW().zzj().zzc("Passing event to registered event handler (FE)", zzicVar3.zzl().zza(str2), zzicVar3.zzl().zze(bundle));
+                        Preconditions.checkNotNull(this.zzd);
+                        this.zzd.interceptEvent(str5, str2, bundle, j);
+                        return;
                     } else {
-                        zzoa zzoaVar = zzicVar4.zzh().zzb;
-                        j2 = 0;
-                        long elapsedRealtime = zzoaVar.zzc.zzu.zzaZ().elapsedRealtime();
+                        z4 = true;
+                    }
+                    zzicVar = this.zzu;
+                    if (zzicVar.zzH()) {
+                        return;
+                    }
+                    int zzp2 = zzicVar3.zzk().zzp(str2);
+                    if (zzp2 != 0) {
+                        zzicVar3.zzaW().zzd().zzb("Invalid event name. Event will not be logged (FE)", zzicVar3.zzl().zza(str2));
+                        zzpp zzk3 = zzicVar3.zzk();
+                        zzicVar3.zzc();
+                        zzicVar.zzk().zzP(this.zzt, str3, zzp2, "_ev", zzk3.zzE(str2, 40, true), str2 != null ? str2.length() : 0);
+                        return;
+                    }
+                    String[] strArr = new String[4];
+                    strArr[0] = "_o";
+                    strArr[1] = "_sn";
+                    strArr[c] = "_sc";
+                    strArr[3] = "_si";
+                    Bundle zzH = zzicVar3.zzk().zzH(str3, str2, bundle, CollectionUtils.listOf((Object[]) strArr), z3);
+                    Preconditions.checkNotNull(zzH);
+                    zzicVar3.zzaV();
+                    if (zzicVar6.zzs().zzh(false) == null || !"_ae".equals(str2)) {
+                        i = 0;
+                        j3 = 0;
+                    } else {
+                        zzoa zzoaVar = zzicVar6.zzh().zzb;
+                        j3 = 0;
+                        long elapsedRealtime = zzoaVar.zzc.zzu.zzba().elapsedRealtime();
                         i = 0;
                         long j5 = elapsedRealtime - zzoaVar.zzb;
                         zzoaVar.zzb = elapsedRealtime;
                         if (j5 > 0) {
-                            zzicVar2.zzk().zzak(zzF, j5);
+                            zzicVar3.zzk().zzan(zzH, j5);
                         }
                     }
-                    if ("auto".equals(str5) || !"_ssr".equals(str2)) {
-                        if ("_ae".equals(str2)) {
-                            String zza2 = zzicVar2.zzk().zzu.zzd().zzq.zza();
-                            if (!TextUtils.isEmpty(zza2)) {
-                                zzF.putString("_ffr", zza2);
-                            }
-                        }
-                    } else {
-                        zzpp zzk4 = zzicVar2.zzk();
-                        String string = zzF.getString("_ffr");
+                    if (!"auto".equals(str5) && "_ssr".equals(str2)) {
+                        zzpp zzk4 = zzicVar3.zzk();
+                        String string = zzH.getString("_ffr");
                         if (Strings.isEmptyOrWhitespace(string)) {
                             string = null;
                         } else if (string != null) {
                             string = string.trim();
                         }
-                        zzic zzicVar6 = zzk4.zzu;
-                        if (!Objects.equals(string, zzicVar6.zzd().zzq.zza())) {
-                            zzicVar6.zzd().zzq.zzb(string);
+                        zzic zzicVar7 = zzk4.zzu;
+                        if (!Objects.equals(string, zzicVar7.zzd().zzq.zza())) {
+                            zzicVar7.zzd().zzq.zzb(string);
                         } else {
-                            zzicVar6.zzaV().zzj().zza("Not logging duplicate session_start_with_rollout event");
+                            zzicVar7.zzaW().zzj().zza("Not logging duplicate session_start_with_rollout event");
                             return;
+                        }
+                    } else if ("_ae".equals(str2)) {
+                        String zza2 = zzicVar3.zzk().zzu.zzd().zzq.zza();
+                        if (!TextUtils.isEmpty(zza2)) {
+                            zzH.putString("_ffr", zza2);
                         }
                     }
                     ArrayList arrayList2 = new ArrayList();
-                    arrayList2.add(zzF);
-                    if (!zzicVar2.zzc().zzp(null, zzfy.zzaU)) {
-                        zza = zzicVar2.zzd().zzn.zza();
+                    arrayList2.add(zzH);
+                    if (!zzicVar3.zzc().zzp(null, zzfy.zzaS)) {
+                        zza = zzicVar3.zzd().zzn.zza();
                     } else {
-                        zza = zzicVar4.zzh().zzi();
+                        zza = zzicVar6.zzh().zzi();
                     }
-                    if (zzicVar2.zzd().zzk.zza() > j2) {
-                        j4 = j;
-                        if (zzicVar2.zzd().zzp(j4) && zza) {
-                            zzicVar2.zzaV().zzk().zza("Current session is expired, remove the session number, ID, and engagement time");
-                            long j6 = j2;
-                            arrayList = arrayList2;
-                            j3 = j6;
+                    if (zzicVar3.zzd().zzk.zza() > j3) {
+                        arrayList = arrayList2;
+                        if (zzicVar3.zzd().zzo(j) && zza) {
+                            zzicVar3.zzaW().zzk().zza("Current session is expired, remove the session number, ID, and engagement time");
+                            z5 = z4;
+                            j4 = j3;
                             str4 = "_ae";
-                            zzN("auto", "_sid", null, zzicVar2.zzaZ().currentTimeMillis());
-                            zzN("auto", "_sno", null, zzicVar2.zzaZ().currentTimeMillis());
-                            zzN("auto", "_se", null, zzicVar2.zzaZ().currentTimeMillis());
+                            zzM("auto", "_sid", null, zzicVar3.zzba().currentTimeMillis());
+                            zzM("auto", "_sno", null, zzicVar3.zzba().currentTimeMillis());
+                            zzM("auto", "_se", null, zzicVar3.zzba().currentTimeMillis());
                             zzljVar = this;
-                            zzicVar2.zzd().zzl.zzb(j3);
-                            if (zzF.getLong(FirebaseAnalytics.Param.EXTEND_SESSION, j3) == 1) {
-                                zzicVar2.zzaV().zzk().zza("EXTEND_SESSION param attached: initiate a new session or extend the current active session");
-                                zzicVar5.zzh().zza.zzb(j4, true);
+                            zzicVar3.zzd().zzl.zzb(j4);
+                            if (zzH.getLong(FirebaseAnalytics.Param.EXTEND_SESSION, j4) == 1) {
+                                zzicVar3.zzaW().zzk().zza("EXTEND_SESSION param attached: initiate a new session or extend the current active session");
+                                zzicVar.zzh().zza.zzb(j, j2, true);
                             }
-                            ArrayList arrayList3 = new ArrayList(zzF.keySet());
+                            ArrayList arrayList3 = new ArrayList(zzH.keySet());
                             Collections.sort(arrayList3);
                             size = arrayList3.size();
                             for (i2 = i; i2 < size; i2++) {
                                 String str6 = (String) arrayList3.get(i2);
                                 if (str6 != null) {
-                                    zzicVar2.zzk();
-                                    Object obj = zzF.get(str6);
+                                    zzicVar3.zzk();
+                                    Object obj = zzH.get(str6);
                                     if (obj instanceof Bundle) {
                                         bundleArr = new Bundle[1];
                                         bundleArr[i] = (Bundle) obj;
@@ -637,7 +605,7 @@ public final class zzlj extends zzg {
                                         bundleArr = null;
                                     }
                                     if (bundleArr != null) {
-                                        zzF.putParcelableArray(str6, bundleArr);
+                                        zzH.putParcelableArray(str6, bundleArr);
                                     }
                                 }
                             }
@@ -648,41 +616,39 @@ public final class zzlj extends zzg {
                                 String str7 = i3 != 0 ? "_ep" : str2;
                                 bundle2.putString("_o", str5);
                                 if (z2) {
-                                    bundle2 = zzicVar2.zzk().zzab(bundle2, null);
+                                    bundle2 = zzicVar3.zzk().zzae(bundle2, null);
                                 }
-                                String str8 = str5;
                                 Bundle bundle3 = bundle2;
-                                zzicVar4.zzt().zzn(new zzbg(str7, new zzbe(bundle2), str8, j4), str3);
-                                if (!z4) {
+                                zzicVar6.zzt().zzn(new zzbh(str7, new zzbf(bundle2), str5, j, j2), str3);
+                                if (!z5) {
                                     for (zzjq zzjqVar : zzljVar.zze) {
                                         zzjqVar.onEvent(str, str2, new Bundle(bundle3), j);
                                     }
                                 }
                                 i3++;
                                 str5 = str;
-                                j4 = j;
                                 arrayList = arrayList5;
                             }
-                            zzicVar2.zzaU();
-                            if (zzicVar4.zzs().zzh(i) == null && str4.equals(str2)) {
-                                zzicVar4.zzh().zzb.zzd(true, true, zzicVar2.zzaZ().elapsedRealtime());
+                            zzicVar3.zzaV();
+                            if (zzicVar6.zzs().zzh(i) == null && str4.equals(str2)) {
+                                zzicVar6.zzh().zzb.zzd(true, true, zzicVar3.zzba().elapsedRealtime());
                                 return;
                             }
                             return;
                         }
-                        long j7 = j2;
-                        arrayList = arrayList2;
-                        j3 = j7;
+                        z5 = z4;
+                        j4 = j3;
+                        str4 = "_ae";
                     } else {
-                        long j8 = j2;
+                        z5 = z4;
+                        j4 = j3;
+                        str4 = "_ae";
                         arrayList = arrayList2;
-                        j3 = j8;
-                        j4 = j;
                     }
-                    str4 = "_ae";
-                    if (zzF.getLong(FirebaseAnalytics.Param.EXTEND_SESSION, j3) == 1) {
+                    zzljVar = this;
+                    if (zzH.getLong(FirebaseAnalytics.Param.EXTEND_SESSION, j4) == 1) {
                     }
-                    ArrayList arrayList32 = new ArrayList(zzF.keySet());
+                    ArrayList arrayList32 = new ArrayList(zzH.keySet());
                     Collections.sort(arrayList32);
                     size = arrayList32.size();
                     while (i2 < size) {
@@ -690,26 +656,41 @@ public final class zzlj extends zzg {
                     i3 = i;
                     while (i3 < arrayList.size()) {
                     }
-                    zzicVar2.zzaU();
-                    if (zzicVar4.zzs().zzh(i) == null) {
+                    zzicVar3.zzaV();
+                    if (zzicVar6.zzs().zzh(i) == null) {
                         return;
                     }
                     return;
                 }
-                return;
             }
-            this.zzu.zzaV().zzj().zzc("Dropping non-safelisted event. event name, origin", str2, str5);
-            return;
+            c = 2;
+            zzicVar3.zzaV();
+            zzic zzicVar62 = this.zzu;
+            zzh = zzicVar62.zzs().zzh(false);
+            if (zzh != null) {
+                zzh.zzd = true;
+            }
+            zzpp.zzay(zzh, bundle, (z || z3) ? false : true);
+            equals = "am".equals(str5);
+            boolean zzac2 = zzpp.zzac(str2);
+            if (z) {
+            }
+            z4 = equals;
+            zzicVar = this.zzu;
+            if (zzicVar.zzH()) {
+            }
+        } else {
+            this.zzu.zzaW().zzj().zza("Event not sent since app measurement is disabled");
         }
-        this.zzu.zzaV().zzj().zza("Event not sent since app measurement is disabled");
     }
 
-    public final void zzI(String str, String str2, Bundle bundle, String str3) {
+    public final void zzH(String str, String str2, Bundle bundle, String str3) {
         zzic.zzL();
-        zzJ("auto", str2, this.zzu.zzaZ().currentTimeMillis(), bundle, false, true, true, str3);
+        zzic zzicVar = this.zzu;
+        zzI("auto", str2, zzicVar.zzba().currentTimeMillis(), zzicVar.zzc().zzp(null, zzfy.zzbe) ? zzicVar.zzba().elapsedRealtime() : 0L, bundle, false, true, true, str3);
     }
 
-    protected final void zzJ(String str, String str2, long j, Bundle bundle, boolean z, boolean z2, boolean z3, String str3) {
+    protected final void zzI(String str, String str2, long j, long j2, Bundle bundle, boolean z, boolean z2, boolean z3, String str3) {
         int i = zzpp.zza;
         Bundle bundle2 = new Bundle(bundle);
         for (String str4 : bundle2.keySet()) {
@@ -739,19 +720,19 @@ public final class zzlj extends zzg {
                 }
             }
         }
-        this.zzu.zzaW().zzj(new zzkc(this, str, str2, j, bundle2, z, z2, z3, str3));
+        this.zzu.zzaX().zzj(new zzkc(this, str, str2, j, j2, bundle2, z, z2, z3, str3));
     }
 
-    public final void zzK(String str, String str2, Object obj, boolean z) {
-        zzL("auto", "_ldl", obj, true, this.zzu.zzaZ().currentTimeMillis());
+    public final void zzJ(String str, String str2, Object obj, boolean z) {
+        zzK("auto", "_ldl", obj, true, this.zzu.zzba().currentTimeMillis());
     }
 
-    final void zzM(String str, String str2, long j, Object obj) {
-        this.zzu.zzaW().zzj(new zzkd(this, str, str2, obj, j));
+    final void zzL(String str, String str2, long j, Object obj) {
+        this.zzu.zzaX().zzj(new zzkd(this, str, str2, obj, j));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzN(String str, String str2, Object obj, long j) {
+    public final void zzM(String str, String str2, Object obj, long j) {
         Preconditions.checkNotEmpty(str);
         Preconditions.checkNotEmpty(str2);
         zzg();
@@ -766,61 +747,61 @@ public final class zzlj extends zzg {
                     zzicVar.zzd().zzh.zzb(valueOf.longValue() == 1 ? "true" : "false");
                     obj = valueOf;
                     str2 = "_npa";
-                    this.zzu.zzaV().zzk().zzc("Setting user property(FE)", "non_personalized_ads(_npa)", obj);
+                    this.zzu.zzaW().zzk().zzc("Setting user property(FE)", "non_personalized_ads(_npa)", obj);
                 }
             }
             if (obj == null) {
                 this.zzu.zzd().zzh.zzb("unset");
                 str2 = "_npa";
             }
-            this.zzu.zzaV().zzk().zzc("Setting user property(FE)", "non_personalized_ads(_npa)", obj);
+            this.zzu.zzaW().zzk().zzc("Setting user property(FE)", "non_personalized_ads(_npa)", obj);
         }
         String str4 = str2;
         Object obj2 = obj;
         zzic zzicVar2 = this.zzu;
         if (!zzicVar2.zzB()) {
-            this.zzu.zzaV().zzk().zza("User property not set since app measurement is disabled");
+            this.zzu.zzaW().zzk().zza("User property not set since app measurement is disabled");
         } else if (zzicVar2.zzH()) {
             this.zzu.zzt().zzA(new zzpl(str4, j, obj2, str));
         }
     }
 
-    public final List zzO(boolean z) {
+    public final List zzN(boolean z) {
         zzb();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzk().zza("Getting user properties (FE)");
-        if (!zzicVar.zzaW().zze()) {
-            zzicVar.zzaU();
+        zzicVar.zzaW().zzk().zza("Getting user properties (FE)");
+        if (!zzicVar.zzaX().zze()) {
+            zzicVar.zzaV();
             if (zzae.zza()) {
-                zzicVar.zzaV().zzb().zza("Cannot get all user properties from main thread");
+                zzicVar.zzaW().zzb().zza("Cannot get all user properties from main thread");
                 return Collections.emptyList();
             }
             AtomicReference atomicReference = new AtomicReference();
-            this.zzu.zzaW().zzk(atomicReference, 5000L, "get user properties", new zzkf(this, atomicReference, z));
+            this.zzu.zzaX().zzk(atomicReference, 5000L, "get user properties", new zzkf(this, atomicReference, z));
             List list = (List) atomicReference.get();
             if (list == null) {
-                zzicVar.zzaV().zzb().zzb("Timed out waiting for get user properties, includeInternal", Boolean.valueOf(z));
+                zzicVar.zzaW().zzb().zzb("Timed out waiting for get user properties, includeInternal", Boolean.valueOf(z));
                 return Collections.emptyList();
             }
             return list;
         }
-        zzicVar.zzaV().zzb().zza("Cannot get all user properties from analytics worker thread");
+        zzicVar.zzaW().zzb().zza("Cannot get all user properties from analytics worker thread");
         return Collections.emptyList();
     }
 
-    public final Map zzP(String str, String str2, boolean z) {
+    public final Map zzO(String str, String str2, boolean z) {
         zzic zzicVar = this.zzu;
-        if (!zzicVar.zzaW().zze()) {
-            zzicVar.zzaU();
+        if (!zzicVar.zzaX().zze()) {
+            zzicVar.zzaV();
             if (zzae.zza()) {
-                zzicVar.zzaV().zzb().zza("Cannot get user properties from main thread");
+                zzicVar.zzaW().zzb().zza("Cannot get user properties from main thread");
                 return Collections.emptyMap();
             }
             AtomicReference atomicReference = new AtomicReference();
-            this.zzu.zzaW().zzk(atomicReference, 5000L, "get user properties", new zzkl(this, atomicReference, null, str, str2, z));
+            this.zzu.zzaX().zzk(atomicReference, 5000L, "get user properties", new zzkl(this, atomicReference, null, str, str2, z));
             List<zzpl> list = (List) atomicReference.get();
             if (list == null) {
-                zzicVar.zzaV().zzb().zzb("Timed out waiting for handle get user properties, includeInternal", Boolean.valueOf(z));
+                zzicVar.zzaW().zzb().zzb("Timed out waiting for handle get user properties, includeInternal", Boolean.valueOf(z));
                 return Collections.emptyMap();
             }
             ArrayMap arrayMap = new ArrayMap(list.size());
@@ -832,20 +813,20 @@ public final class zzlj extends zzg {
             }
             return arrayMap;
         }
-        zzicVar.zzaV().zzb().zza("Cannot get user properties from analytics worker thread");
+        zzicVar.zzaW().zzb().zza("Cannot get user properties from analytics worker thread");
         return Collections.emptyMap();
     }
 
-    public final String zzQ() {
+    public final String zzP() {
         return (String) this.zzg.get();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzR(String str) {
+    public final void zzQ(String str) {
         this.zzg.set(str);
     }
 
-    public final void zzS() {
+    public final void zzR() {
         zzg();
         zzic zzicVar = this.zzu;
         if (!zzicVar.zzd().zzo.zza()) {
@@ -853,38 +834,38 @@ public final class zzlj extends zzg {
             zzicVar.zzd().zzp.zzb(1 + zza);
             zzicVar.zzc();
             if (zza >= 5) {
-                zzicVar.zzaV().zze().zza("Permanently failed to retrieve Deferred Deep Link. Reached maximum retries.");
+                zzicVar.zzaW().zze().zza("Permanently failed to retrieve Deferred Deep Link. Reached maximum retries.");
                 zzicVar.zzd().zzo.zzb(true);
                 return;
             }
-            if (this.zzr == null) {
-                this.zzr = new zzkg(this, this.zzu);
+            if (this.zzq == null) {
+                this.zzq = new zzkg(this, this.zzu);
             }
-            this.zzr.zzb(0L);
+            this.zzq.zzb(0L);
             return;
         }
-        zzicVar.zzaV().zzj().zza("Deferred Deep Link already retrieved. Not fetching again.");
+        zzicVar.zzaW().zzj().zza("Deferred Deep Link already retrieved. Not fetching again.");
     }
 
-    public final void zzT(long j) {
+    public final void zzS(long j, long j2) {
         this.zzg.set(null);
-        this.zzu.zzaW().zzj(new zzkh(this, j));
+        this.zzu.zzaX().zzj(new zzkh(this, j));
     }
 
-    public final void zzU() {
+    public final void zzT() {
         zzg();
         zzb();
         if (this.zzu.zzH()) {
             zzic zzicVar = this.zzu;
             zzal zzc = zzicVar.zzc();
-            zzc.zzu.zzaU();
+            zzc.zzu.zzaV();
             Boolean zzr = zzc.zzr("google_analytics_deferred_deep_link_enabled");
             if (zzr != null && zzr.booleanValue()) {
-                zzicVar.zzaV().zzj().zza("Deferred Deep Link feature enabled.");
-                zzicVar.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlh
+                zzicVar.zzaW().zzj().zza("Deferred Deep Link feature enabled.");
+                zzicVar.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlh
                     @Override // java.lang.Runnable
                     public final /* synthetic */ void run() {
-                        zzlj.this.zzS();
+                        zzlj.this.zzR();
                     }
                 });
             }
@@ -909,11 +890,11 @@ public final class zzlj extends zzg {
             }
             Bundle bundle = new Bundle();
             bundle.putString("_po", string);
-            zzF("auto", "_ou", bundle);
+            zzE("auto", "_ou", bundle);
         }
     }
 
-    public final void zzV(zzjp zzjpVar) {
+    public final void zzU(zzjp zzjpVar) {
         zzjp zzjpVar2;
         zzg();
         zzb();
@@ -923,39 +904,39 @@ public final class zzlj extends zzg {
         this.zzd = zzjpVar;
     }
 
-    public final void zzW(zzjq zzjqVar) {
+    public final void zzV(zzjq zzjqVar) {
         zzb();
         Preconditions.checkNotNull(zzjqVar);
         if (this.zze.add(zzjqVar)) {
             return;
         }
-        this.zzu.zzaV().zze().zza("OnEventListener already registered");
+        this.zzu.zzaW().zze().zza("OnEventListener already registered");
     }
 
-    public final void zzX(zzjq zzjqVar) {
+    public final void zzW(zzjq zzjqVar) {
         zzb();
         Preconditions.checkNotNull(zzjqVar);
         if (this.zze.remove(zzjqVar)) {
             return;
         }
-        this.zzu.zzaV().zze().zza("OnEventListener had not been registered");
+        this.zzu.zzaW().zze().zza("OnEventListener had not been registered");
     }
 
-    public final int zzY(String str) {
+    public final int zzX(String str) {
         Preconditions.checkNotEmpty(str);
         this.zzu.zzc();
         return 25;
     }
 
-    public final void zzZ(Bundle bundle) {
-        zzaa(bundle, this.zzu.zzaZ().currentTimeMillis());
+    public final void zzY(Bundle bundle) {
+        zzZ(bundle, this.zzu.zzba().currentTimeMillis());
     }
 
-    public final void zzaa(Bundle bundle, long j) {
+    public final void zzZ(Bundle bundle, long j) {
         Preconditions.checkNotNull(bundle);
         Bundle bundle2 = new Bundle(bundle);
         if (!TextUtils.isEmpty(bundle2.getString("app_id"))) {
-            this.zzu.zzaV().zze().zza("Package name should be null when calling setConditionalUserProperty");
+            this.zzu.zzaW().zze().zza("Package name should be null when calling setConditionalUserProperty");
         }
         bundle2.remove("app_id");
         Preconditions.checkNotNull(bundle2);
@@ -979,41 +960,41 @@ public final class zzlj extends zzg {
         String string = bundle2.getString("name");
         Object obj = bundle2.get("value");
         zzic zzicVar = this.zzu;
-        if (zzicVar.zzk().zzp(string) == 0) {
-            if (zzicVar.zzk().zzK(string, obj) == 0) {
-                Object zzL = zzicVar.zzk().zzL(string, obj);
-                if (zzL == null) {
-                    zzicVar.zzaV().zzb().zzc("Unable to normalize conditional user property value", zzicVar.zzl().zzc(string), obj);
+        if (zzicVar.zzk().zzs(string) == 0) {
+            if (zzicVar.zzk().zzM(string, obj) == 0) {
+                Object zzN = zzicVar.zzk().zzN(string, obj);
+                if (zzN == null) {
+                    zzicVar.zzaW().zzb().zzc("Unable to normalize conditional user property value", zzicVar.zzl().zzc(string), obj);
                     return;
                 }
-                zzjh.zza(bundle2, zzL);
+                zzjh.zza(bundle2, zzN);
                 long j2 = bundle2.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT);
                 if (!TextUtils.isEmpty(bundle2.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME))) {
                     zzicVar.zzc();
                     if (j2 > 15552000000L || j2 < 1) {
-                        zzicVar.zzaV().zzb().zzc("Invalid conditional user property timeout", zzicVar.zzl().zzc(string), Long.valueOf(j2));
+                        zzicVar.zzaW().zzb().zzc("Invalid conditional user property timeout", zzicVar.zzl().zzc(string), Long.valueOf(j2));
                         return;
                     }
                 }
                 long j3 = bundle2.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE);
                 zzicVar.zzc();
                 if (j3 > 15552000000L || j3 < 1) {
-                    zzicVar.zzaV().zzb().zzc("Invalid conditional user property time to live", zzicVar.zzl().zzc(string), Long.valueOf(j3));
+                    zzicVar.zzaW().zzb().zzc("Invalid conditional user property time to live", zzicVar.zzl().zzc(string), Long.valueOf(j3));
                     return;
                 } else {
-                    zzicVar.zzaW().zzj(new zzki(this, bundle2));
+                    zzicVar.zzaX().zzj(new zzki(this, bundle2));
                     return;
                 }
             }
-            zzicVar.zzaV().zzb().zzc("Invalid conditional user property value", zzicVar.zzl().zzc(string), obj);
+            zzicVar.zzaW().zzb().zzc("Invalid conditional user property value", zzicVar.zzl().zzc(string), obj);
             return;
         }
-        zzicVar.zzaV().zzb().zzb("Invalid conditional user property name", zzicVar.zzl().zzc(string));
+        zzicVar.zzaW().zzb().zzb("Invalid conditional user property name", zzicVar.zzl().zzc(string));
     }
 
-    public final void zzab(String str, String str2, Bundle bundle) {
+    public final void zzaa(String str, String str2, Bundle bundle) {
         zzic zzicVar = this.zzu;
-        long currentTimeMillis = zzicVar.zzaZ().currentTimeMillis();
+        long currentTimeMillis = zzicVar.zzba().currentTimeMillis();
         Preconditions.checkNotEmpty(str);
         Bundle bundle2 = new Bundle();
         bundle2.putString("name", str);
@@ -1022,31 +1003,31 @@ public final class zzlj extends zzg {
             bundle2.putString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME, str2);
             bundle2.putBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS, bundle);
         }
-        zzicVar.zzaW().zzj(new zzkj(this, bundle2));
+        zzicVar.zzaX().zzj(new zzkj(this, bundle2));
     }
 
-    public final ArrayList zzac(String str, String str2) {
+    public final ArrayList zzab(String str, String str2) {
         zzic zzicVar = this.zzu;
-        if (!zzicVar.zzaW().zze()) {
-            zzicVar.zzaU();
+        if (!zzicVar.zzaX().zze()) {
+            zzicVar.zzaV();
             if (zzae.zza()) {
-                zzicVar.zzaV().zzb().zza("Cannot get conditional user properties from main thread");
+                zzicVar.zzaW().zzb().zza("Cannot get conditional user properties from main thread");
                 return new ArrayList(0);
             }
             AtomicReference atomicReference = new AtomicReference();
-            this.zzu.zzaW().zzk(atomicReference, 5000L, "get conditional user properties", new zzkk(this, atomicReference, null, str, str2));
+            this.zzu.zzaX().zzk(atomicReference, 5000L, "get conditional user properties", new zzkk(this, atomicReference, null, str, str2));
             List list = (List) atomicReference.get();
             if (list == null) {
-                zzicVar.zzaV().zzb().zzb("Timed out waiting for get conditional user properties", null);
+                zzicVar.zzaW().zzb().zzb("Timed out waiting for get conditional user properties", null);
                 return new ArrayList();
             }
-            return zzpp.zzas(list);
+            return zzpp.zzav(list);
         }
-        zzicVar.zzaV().zzb().zza("Cannot get conditional user properties from analytics worker thread");
+        zzicVar.zzaW().zzb().zza("Cannot get conditional user properties from analytics worker thread");
         return new ArrayList(0);
     }
 
-    public final String zzad() {
+    public final String zzac() {
         zzlu zzl = this.zzu.zzs().zzl();
         if (zzl != null) {
             return zzl.zza;
@@ -1054,7 +1035,7 @@ public final class zzlj extends zzg {
         return null;
     }
 
-    public final String zzae() {
+    public final String zzad() {
         zzlu zzl = this.zzu.zzs().zzl();
         if (zzl != null) {
             return zzl.zzb;
@@ -1062,38 +1043,29 @@ public final class zzlj extends zzg {
         return null;
     }
 
-    public final String zzaf() {
+    public final String zzae() {
         try {
-            return zzlt.zza(this.zzu.zzaY(), "google_app_id", this.zzu.zzq());
+            return zzlt.zza(this.zzu.zzaZ(), "google_app_id", this.zzu.zzq());
         } catch (IllegalStateException e) {
-            this.zzu.zzaV().zzb().zzb("getGoogleAppId failed with exception", e);
+            this.zzu.zzaW().zzb().zzb("getGoogleAppId failed with exception", e);
             return null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzag(SharedPreferences sharedPreferences, String str) {
-        zzic zzicVar = this.zzu;
-        if (!zzicVar.zzc().zzp(null, zzfy.zzaZ)) {
-            if (Objects.equals(str, "IABTCF_TCString")) {
-                zzicVar.zzaV().zzk().zza("IABTCF_TCString change picked up in listener.");
-                ((zzay) Preconditions.checkNotNull(this.zzt)).zzb(500L);
-            }
-        } else if (Objects.equals(str, "IABTCF_TCString") || Objects.equals(str, "IABTCF_gdprApplies") || Objects.equals(str, "IABTCF_EnableAdvertiserConsentMode")) {
-            zzicVar.zzaV().zzk().zza("IABTCF_TCString change picked up in listener.");
-            ((zzay) Preconditions.checkNotNull(this.zzt)).zzb(500L);
+    public final /* synthetic */ void zzaf(SharedPreferences sharedPreferences, String str) {
+        if (Objects.equals(str, "IABTCF_TCString") || Objects.equals(str, "IABTCF_gdprApplies") || Objects.equals(str, "IABTCF_EnableAdvertiserConsentMode")) {
+            this.zzu.zzaW().zzk().zza("IABTCF_TCString change picked up in listener.");
+            ((zzaz) Preconditions.checkNotNull(this.zzs)).zzb(500L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzah(Bundle bundle) {
-        Bundle bundle2;
+    public final /* synthetic */ void zzag(Bundle bundle) {
         int i;
-        if (bundle.isEmpty()) {
-            bundle2 = bundle;
-        } else {
+        if (!bundle.isEmpty()) {
             zzic zzicVar = this.zzu;
-            bundle2 = new Bundle(zzicVar.zzd().zzt.zza());
+            Bundle bundle2 = new Bundle(zzicVar.zzd().zzt.zza());
             Iterator<String> it = bundle.keySet().iterator();
             while (true) {
                 i = 0;
@@ -1102,19 +1074,17 @@ public final class zzlj extends zzg {
                 }
                 String next = it.next();
                 Object obj = bundle.get(next);
-                if (obj == null || (obj instanceof String) || (obj instanceof Long) || (obj instanceof Double)) {
-                    if (zzpp.zzZ(next)) {
-                        zzicVar.zzaV().zzh().zzb("Invalid default event parameter name. Name", next);
-                    } else if (obj == null) {
-                        bundle2.remove(next);
-                    } else if (zzicVar.zzk().zzu("param", next, zzicVar.zzc().zze(null, false), obj)) {
-                        zzicVar.zzk().zzM(bundle2, next, obj);
+                if (obj != null && !(obj instanceof String) && !(obj instanceof Long) && !(obj instanceof Double)) {
+                    if (zzicVar.zzk().zzz(obj)) {
+                        zzicVar.zzk().zzP(this.zzt, null, 27, null, null, 0);
                     }
-                } else {
-                    if (zzicVar.zzk().zzt(obj)) {
-                        zzicVar.zzk().zzN(this.zzv, null, 27, null, null, 0);
-                    }
-                    zzicVar.zzaV().zzh().zzc("Invalid default event parameter type. Name, value", next, obj);
+                    zzicVar.zzaW().zzh().zzc("Invalid default event parameter type. Name, value", next, obj);
+                } else if (zzpp.zzac(next)) {
+                    zzicVar.zzaW().zzh().zzb("Invalid default event parameter name. Name", next);
+                } else if (obj == null) {
+                    bundle2.remove(next);
+                } else if (zzicVar.zzk().zzA("param", next, zzicVar.zzc().zze(null, false), obj)) {
+                    zzicVar.zzk().zzO(bundle2, next, obj);
                 }
             }
             zzicVar.zzk();
@@ -1126,19 +1096,17 @@ public final class zzlj extends zzg {
                         bundle2.remove(str);
                     }
                 }
-                zzicVar.zzk().zzN(this.zzv, null, 26, null, null, 0);
-                zzicVar.zzaV().zzh().zza("Too many default event parameters set. Discarding beyond event parameter limit");
+                zzicVar.zzk().zzP(this.zzt, null, 26, null, null, 0);
+                zzicVar.zzaW().zzh().zza("Too many default event parameters set. Discarding beyond event parameter limit");
             }
+            bundle = bundle2;
         }
-        zzic zzicVar2 = this.zzu;
-        zzicVar2.zzd().zzt.zzb(bundle2);
-        if (!bundle.isEmpty() || zzicVar2.zzc().zzp(null, zzfy.zzaW)) {
-            this.zzu.zzt().zzH(bundle2);
-        }
+        this.zzu.zzd().zzt.zzb(bundle);
+        this.zzu.zzt().zzH(bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzai(int i) {
+    public final /* synthetic */ void zzah(int i) {
         if (this.zzk == null) {
             this.zzk = new zzjx(this, this.zzu);
         }
@@ -1146,81 +1114,64 @@ public final class zzlj extends zzg {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzaj(Boolean bool, boolean z) {
-        zzas(bool, true);
+    public final /* synthetic */ void zzai(Boolean bool, boolean z) {
+        zzaq(bool, true);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzak(zzjl zzjlVar, long j, boolean z, boolean z2) {
+    public final /* synthetic */ void zzaj(zzjl zzjlVar, long j, boolean z, boolean z2) {
         zzg();
         zzb();
         zzic zzicVar = this.zzu;
         zzjl zzl = zzicVar.zzd().zzl();
-        if (j > this.zzq || !zzjl.zzu(zzl.zzb(), zzjlVar.zzb())) {
-            zzhh zzd = zzicVar.zzd();
-            zzic zzicVar2 = zzd.zzu;
-            zzd.zzg();
-            int zzb = zzjlVar.zzb();
-            if (zzd.zzk(zzb)) {
-                zzic zzicVar3 = this.zzu;
-                SharedPreferences.Editor edit = zzd.zzd().edit();
-                edit.putString("consent_settings", zzjlVar.zzl());
-                edit.putInt("consent_source", zzb);
-                edit.apply();
-                zzicVar.zzaV().zzk().zzb("Setting storage consent(FE)", zzjlVar);
-                this.zzq = j;
-                if (!zzicVar3.zzt().zzP()) {
-                    zzicVar3.zzt().zzj(z);
-                } else {
-                    zzicVar3.zzt().zzk(z);
-                }
-                if (z2) {
-                    zzicVar3.zzt().zzC(new AtomicReference());
-                    return;
-                }
-                return;
-            }
-            zzicVar.zzaV().zzi().zzb("Lower precedence consent source ignored, proposed source", Integer.valueOf(zzjlVar.zzb()));
+        if (j <= this.zzp && zzjl.zzu(zzl.zzb(), zzjlVar.zzb())) {
+            zzicVar.zzaW().zzi().zzb("Dropped out-of-date consent setting, proposed settings", zzjlVar);
             return;
         }
-        zzicVar.zzaV().zzi().zzb("Dropped out-of-date consent setting, proposed settings", zzjlVar);
+        zzhh zzd = zzicVar.zzd();
+        zzic zzicVar2 = zzd.zzu;
+        zzd.zzg();
+        int zzb = zzjlVar.zzb();
+        if (zzd.zzk(zzb)) {
+            zzic zzicVar3 = this.zzu;
+            SharedPreferences.Editor edit = zzd.zzd().edit();
+            edit.putString("consent_settings", zzjlVar.zzl());
+            edit.putInt("consent_source", zzb);
+            edit.apply();
+            zzicVar.zzaW().zzk().zzb("Setting storage consent(FE)", zzjlVar);
+            this.zzp = j;
+            if (!zzicVar3.zzt().zzP()) {
+                zzicVar3.zzt().zzj(z);
+            } else {
+                zzicVar3.zzt().zzk(z);
+            }
+            if (z2) {
+                zzicVar3.zzt().zzC(new AtomicReference());
+                return;
+            }
+            return;
+        }
+        zzicVar.zzaW().zzi().zzb("Lower precedence consent source ignored, proposed source", Integer.valueOf(zzjlVar.zzb()));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzam(boolean z) {
+    public final /* synthetic */ void zzal(boolean z) {
         this.zzi = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ int zzan() {
+    public final /* synthetic */ int zzam() {
         return this.zzj;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ void zzao(int i) {
+    public final /* synthetic */ void zzan(int i) {
         this.zzj = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ zzay zzap() {
-        return this.zzr;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final /* synthetic */ int zzaq(Throwable th) {
-        String message = th.getMessage();
-        this.zzn = false;
-        if (message == null) {
-            return 2;
-        }
-        if (!(th instanceof IllegalStateException) && !message.contains("garbage collected") && !th.getClass().getSimpleName().equals("ServiceUnavailableException")) {
-            return (!(th instanceof SecurityException) || message.endsWith("READ_DEVICE_CONFIG")) ? 2 : 3;
-        } else if (message.contains("Background")) {
-            this.zzn = true;
-            return 1;
-        } else {
-            return 1;
-        }
+    public final /* synthetic */ zzaz zzao() {
+        return this.zzq;
     }
 
     @Override // com.google.android.gms.measurement.internal.zzg
@@ -1230,40 +1181,40 @@ public final class zzlj extends zzg {
 
     public final void zzh() {
         zzic zzicVar = this.zzu;
-        if (!(zzicVar.zzaY().getApplicationContext() instanceof Application) || this.zza == null) {
+        if (!(zzicVar.zzaZ().getApplicationContext() instanceof Application) || this.zza == null) {
             return;
         }
-        ((Application) zzicVar.zzaY().getApplicationContext()).unregisterActivityLifecycleCallbacks(this.zza);
+        ((Application) zzicVar.zzaZ().getApplicationContext()).unregisterActivityLifecycleCallbacks(this.zza);
     }
 
     public final Boolean zzi() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Boolean) this.zzu.zzaW().zzk(atomicReference, 15000L, "boolean test flag value", new zzke(this, atomicReference));
+        return (Boolean) this.zzu.zzaX().zzk(atomicReference, 15000L, "boolean test flag value", new zzke(this, atomicReference));
     }
 
     public final String zzj() {
         AtomicReference atomicReference = new AtomicReference();
-        return (String) this.zzu.zzaW().zzk(atomicReference, 15000L, "String test flag value", new zzko(this, atomicReference));
+        return (String) this.zzu.zzaX().zzk(atomicReference, 15000L, "String test flag value", new zzko(this, atomicReference));
     }
 
     public final Long zzk() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Long) this.zzu.zzaW().zzk(atomicReference, 15000L, "long test flag value", new zzkp(this, atomicReference));
+        return (Long) this.zzu.zzaX().zzk(atomicReference, 15000L, "long test flag value", new zzkp(this, atomicReference));
     }
 
     public final Integer zzl() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Integer) this.zzu.zzaW().zzk(atomicReference, 15000L, "int test flag value", new zzkq(this, atomicReference));
+        return (Integer) this.zzu.zzaX().zzk(atomicReference, 15000L, "int test flag value", new zzkq(this, atomicReference));
     }
 
     public final Double zzm() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Double) this.zzu.zzaW().zzk(atomicReference, 15000L, "double test flag value", new zzkr(this, atomicReference));
+        return (Double) this.zzu.zzaX().zzk(atomicReference, 15000L, "double test flag value", new zzkr(this, atomicReference));
     }
 
     public final void zzn(Boolean bool) {
         zzb();
-        this.zzu.zzaW().zzj(new zzks(this, bool));
+        this.zzu.zzaX().zzj(new zzks(this, bool));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1296,34 +1247,34 @@ public final class zzlj extends zzg {
         }
         if (obj != null) {
             zzic zzicVar = this.zzu;
-            zzicVar.zzaV().zzh().zzb("Ignoring invalid consent setting", obj);
-            zzicVar.zzaV().zzh().zza("Valid consent values are 'granted', 'denied'");
+            zzicVar.zzaW().zzh().zzb("Ignoring invalid consent setting", obj);
+            zzicVar.zzaW().zzh().zza("Valid consent values are 'granted', 'denied'");
         }
-        boolean zze = this.zzu.zzaW().zze();
+        boolean zze = this.zzu.zzaX().zze();
         zzjl zze2 = zzjl.zze(bundle, i);
         if (zze2.zzc()) {
             zzs(zze2, zze);
         }
-        zzaz zzh = zzaz.zzh(bundle, i);
+        zzba zzh = zzba.zzh(bundle, i);
         if (zzh.zzd()) {
             zzq(zzh, zze);
         }
-        Boolean zzi = zzaz.zzi(bundle);
+        Boolean zzi = zzba.zzi(bundle);
         if (zzi != null) {
             String str2 = i == -30 ? "tcf" : "app";
             if (zze) {
-                zzN(str2, FirebaseAnalytics.UserProperty.ALLOW_AD_PERSONALIZATION_SIGNALS, zzi.toString(), j);
+                zzM(str2, FirebaseAnalytics.UserProperty.ALLOW_AD_PERSONALIZATION_SIGNALS, zzi.toString(), j);
             } else {
-                zzL(str2, FirebaseAnalytics.UserProperty.ALLOW_AD_PERSONALIZATION_SIGNALS, zzi.toString(), false, j);
+                zzK(str2, FirebaseAnalytics.UserProperty.ALLOW_AD_PERSONALIZATION_SIGNALS, zzi.toString(), false, j);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzq(zzaz zzazVar, boolean z) {
-        zzkt zzktVar = new zzkt(this, zzazVar);
+    public final void zzq(zzba zzbaVar, boolean z) {
+        zzkt zzktVar = new zzkt(this, zzbaVar);
         if (!z) {
-            this.zzu.zzaW().zzj(zzktVar);
+            this.zzu.zzaX().zzj(zzktVar);
             return;
         }
         zzg();
@@ -1341,20 +1292,20 @@ public final class zzlj extends zzg {
             zzji zzp = zzjlVar.zzp();
             zzji zzjiVar = zzji.UNINITIALIZED;
             if (zzp == zzjiVar && zzjlVar.zzq() == zzjiVar) {
-                this.zzu.zzaV().zzh().zza("Ignoring empty consent settings");
+                this.zzu.zzaW().zzh().zza("Ignoring empty consent settings");
                 return;
             }
         }
         synchronized (this.zzh) {
             z2 = false;
-            if (zzjl.zzu(zzb, this.zzo.zzb())) {
-                z3 = zzjlVar.zzr(this.zzo);
+            if (zzjl.zzu(zzb, this.zzn.zzb())) {
+                z3 = zzjlVar.zzr(this.zzn);
                 zzjk zzjkVar = zzjk.ANALYTICS_STORAGE;
-                if (zzjlVar.zzo(zzjkVar) && !this.zzo.zzo(zzjkVar)) {
+                if (zzjlVar.zzo(zzjkVar) && !this.zzn.zzo(zzjkVar)) {
                     z2 = true;
                 }
-                zzjlVar = zzjlVar.zzt(this.zzo);
-                this.zzo = zzjlVar;
+                zzjlVar = zzjlVar.zzt(this.zzn);
+                this.zzn = zzjlVar;
                 z4 = z2;
                 z2 = true;
             } else {
@@ -1364,15 +1315,15 @@ public final class zzlj extends zzg {
             zzjlVar2 = zzjlVar;
         }
         if (!z2) {
-            this.zzu.zzaV().zzi().zzb("Ignoring lower-priority consent settings, proposed settings", zzjlVar2);
+            this.zzu.zzaW().zzi().zzb("Ignoring lower-priority consent settings, proposed settings", zzjlVar2);
             return;
         }
-        long andIncrement = this.zzp.getAndIncrement();
+        long andIncrement = this.zzo.getAndIncrement();
         if (z3) {
             this.zzg.set(null);
             zzku zzkuVar = new zzku(this, zzjlVar2, andIncrement, z4);
             if (!z) {
-                this.zzu.zzaW().zzl(zzkuVar);
+                this.zzu.zzaX().zzl(zzkuVar);
                 return;
             }
             zzg();
@@ -1384,9 +1335,9 @@ public final class zzlj extends zzg {
             zzg();
             zzkvVar.run();
         } else if (zzb == 30 || zzb == -10) {
-            this.zzu.zzaW().zzl(zzkvVar);
+            this.zzu.zzaX().zzl(zzkvVar);
         } else {
-            this.zzu.zzaW().zzj(zzkvVar);
+            this.zzu.zzaX().zzj(zzkvVar);
         }
     }
 
@@ -1394,18 +1345,18 @@ public final class zzlj extends zzg {
     public final void zzt(Runnable runnable) {
         zzb();
         zzic zzicVar = this.zzu;
-        if (!zzicVar.zzaW().zze()) {
-            if (!zzicVar.zzaW().zzf()) {
-                zzicVar.zzaU();
+        if (!zzicVar.zzaX().zze()) {
+            if (!zzicVar.zzaX().zzf()) {
+                zzicVar.zzaV();
                 if (!zzae.zza()) {
-                    zzicVar.zzaV().zzk().zza("[sgtm] Started client-side batch upload work.");
+                    zzicVar.zzaW().zzk().zza("[sgtm] Started client-side batch upload work.");
                     boolean z = false;
                     int i = 0;
                     int i2 = 0;
                     while (!z) {
-                        zzicVar.zzaV().zzk().zza("[sgtm] Getting upload batches from service (FE)");
+                        zzicVar.zzaW().zzk().zza("[sgtm] Getting upload batches from service (FE)");
                         final AtomicReference atomicReference = new AtomicReference();
-                        zzicVar.zzaW().zzk(atomicReference, 10000L, "[sgtm] Getting upload batches", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzli
+                        zzicVar.zzaX().zzk(atomicReference, 10000L, "[sgtm] Getting upload batches", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzli
                             @Override // java.lang.Runnable
                             public final /* synthetic */ void run() {
                                 zzlj.this.zzu.zzt().zzx(atomicReference, zzoo.zza(zzls.SGTM_CLIENT));
@@ -1417,7 +1368,7 @@ public final class zzlj extends zzg {
                         }
                         List list = zzoqVar.zza;
                         if (!list.isEmpty()) {
-                            zzicVar.zzaV().zzk().zzb("[sgtm] Retrieved upload batches. count", Integer.valueOf(list.size()));
+                            zzicVar.zzaW().zzk().zzb("[sgtm] Retrieved upload batches. count", Integer.valueOf(list.size()));
                             i += list.size();
                             Iterator it = list.iterator();
                             while (true) {
@@ -1425,10 +1376,10 @@ public final class zzlj extends zzg {
                                     z = false;
                                     break;
                                 }
-                                zzlr zzar = zzar((zzom) it.next());
-                                if (zzar == zzlr.SUCCESS) {
+                                zzlr zzap = zzap((zzom) it.next());
+                                if (zzap == zzlr.SUCCESS) {
                                     i2++;
-                                } else if (zzar == zzlr.BACKOFF) {
+                                } else if (zzap == zzlr.BACKOFF) {
                                     z = true;
                                     break;
                                 }
@@ -1437,17 +1388,17 @@ public final class zzlj extends zzg {
                             break;
                         }
                     }
-                    zzicVar.zzaV().zzk().zzc("[sgtm] Completed client-side batch upload work. total, success", Integer.valueOf(i), Integer.valueOf(i2));
+                    zzicVar.zzaW().zzk().zzc("[sgtm] Completed client-side batch upload work. total, success", Integer.valueOf(i), Integer.valueOf(i2));
                     runnable.run();
                     return;
                 }
-                zzicVar.zzaV().zzb().zza("Cannot retrieve and upload batches from main thread");
+                zzicVar.zzaW().zzb().zza("Cannot retrieve and upload batches from main thread");
                 return;
             }
-            zzicVar.zzaV().zzb().zza("Cannot retrieve and upload batches from analytics network thread");
+            zzicVar.zzaW().zzb().zza("Cannot retrieve and upload batches from analytics network thread");
             return;
         }
-        zzicVar.zzaV().zzb().zza("Cannot retrieve and upload batches from analytics worker thread");
+        zzicVar.zzaW().zzb().zza("Cannot retrieve and upload batches from analytics worker thread");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1462,24 +1413,24 @@ public final class zzlj extends zzg {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzv() {
         zzg();
-        zzay zzayVar = this.zzl;
-        if (zzayVar != null) {
-            zzayVar.zzd();
+        zzaz zzazVar = this.zzl;
+        if (zzazVar != null) {
+            zzazVar.zzd();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zzw() {
-        zzqp.zza();
+        zzaif.zza();
         zzic zzicVar = this.zzu;
-        if (zzicVar.zzc().zzp(null, zzfy.zzaQ)) {
-            if (!zzicVar.zzaW().zze()) {
-                zzicVar.zzaU();
+        if (zzicVar.zzc().zzp(null, zzfy.zzaP)) {
+            if (!zzicVar.zzaX().zze()) {
+                zzicVar.zzaV();
                 if (!zzae.zza()) {
                     zzb();
-                    zzicVar.zzaV().zzk().zza("Getting trigger URIs (FE)");
+                    zzicVar.zzaW().zzk().zza("Getting trigger URIs (FE)");
                     final AtomicReference atomicReference = new AtomicReference();
-                    zzicVar.zzaW().zzk(atomicReference, 10000L, "get trigger URIs", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzla
+                    zzicVar.zzaX().zzk(atomicReference, 10000L, "get trigger URIs", new Runnable() { // from class: com.google.android.gms.measurement.internal.zzla
                         @Override // java.lang.Runnable
                         public final /* synthetic */ void run() {
                             zzlj zzljVar = zzlj.this;
@@ -1488,10 +1439,10 @@ public final class zzlj extends zzg {
                     });
                     final List list = (List) atomicReference.get();
                     if (list == null) {
-                        zzicVar.zzaV().zzd().zza("Timed out waiting for get trigger URIs");
+                        zzicVar.zzaW().zzd().zza("Timed out waiting for get trigger URIs");
                         return;
                     } else {
-                        zzicVar.zzaW().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlb
+                        zzicVar.zzaX().zzj(new Runnable() { // from class: com.google.android.gms.measurement.internal.zzlb
                             @Override // java.lang.Runnable
                             public final /* synthetic */ void run() {
                                 zzlj zzljVar = zzlj.this;
@@ -1504,29 +1455,24 @@ public final class zzlj extends zzg {
                                 for (zzoh zzohVar : list2) {
                                     int i = zzohVar.zzc;
                                     if (!zzf.contains(i) || ((Long) zzf.get(i)).longValue() < zzohVar.zzb) {
-                                        zzljVar.zzy().add(zzohVar);
+                                        zzljVar.zzx().add(zzohVar);
                                     }
                                 }
-                                zzljVar.zzz();
+                                zzljVar.zzy();
                             }
                         });
                         return;
                     }
                 }
-                zzicVar.zzaV().zzb().zza("Cannot get trigger URIs from main thread");
+                zzicVar.zzaW().zzb().zza("Cannot get trigger URIs from main thread");
                 return;
             }
-            zzicVar.zzaV().zzb().zza("Cannot get trigger URIs from analytics worker thread");
+            zzicVar.zzaW().zzb().zza("Cannot get trigger URIs from analytics worker thread");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final boolean zzx() {
-        return this.zzn;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public final PriorityQueue zzy() {
+    public final PriorityQueue zzx() {
         if (this.zzm == null) {
             this.zzm = new PriorityQueue(Comparator.comparing(zzlc.zza, zzld.zza));
         }
@@ -1534,38 +1480,54 @@ public final class zzlj extends zzg {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void zzz() {
+    public final void zzy() {
         zzoh zzohVar;
         zzg();
-        this.zzn = false;
-        if (zzy().isEmpty() || this.zzi || (zzohVar = (zzoh) zzy().poll()) == null) {
+        if (zzx().isEmpty() || this.zzi || (zzohVar = (zzoh) zzx().poll()) == null) {
             return;
         }
         zzic zzicVar = this.zzu;
-        MeasurementManagerFutures zzT = zzicVar.zzk().zzT();
-        if (zzT != null) {
+        MeasurementManagerFutures zzV = zzicVar.zzk().zzV();
+        if (zzV != null) {
             this.zzi = true;
-            zzgs zzk = zzicVar.zzaV().zzk();
+            zzgs zzk = zzicVar.zzaW().zzk();
             String str = zzohVar.zza;
             zzk.zzb("Registering trigger URI", str);
-            ListenableFuture<Unit> registerTriggerAsync = zzT.registerTriggerAsync(Uri.parse(str));
+            ListenableFuture<Unit> registerTriggerAsync = zzV.registerTriggerAsync(Uri.parse(str));
             if (registerTriggerAsync == null) {
                 this.zzi = false;
-                zzy().add(zzohVar);
+                zzx().add(zzohVar);
                 return;
             }
             Futures.addCallback(registerTriggerAsync, new zzjw(this, zzohVar), new zzjv(this));
         }
     }
 
-    public final void zzL(String str, String str2, Object obj, boolean z, long j) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final void zzz(zzjl zzjlVar) {
+        zzg();
+        boolean z = (zzjlVar.zzo(zzjk.ANALYTICS_STORAGE) && zzjlVar.zzo(zzjk.AD_STORAGE)) || this.zzu.zzt().zzO();
+        zzic zzicVar = this.zzu;
+        if (z != zzicVar.zzE()) {
+            zzicVar.zzD(z);
+            zzhh zzd = this.zzu.zzd();
+            zzic zzicVar2 = zzd.zzu;
+            zzd.zzg();
+            Boolean valueOf = zzd.zzd().contains("measurement_enabled_from_api") ? Boolean.valueOf(zzd.zzd().getBoolean("measurement_enabled_from_api", true)) : null;
+            if (!z || valueOf == null || valueOf.booleanValue()) {
+                zzaq(Boolean.valueOf(z), false);
+            }
+        }
+    }
+
+    public final void zzK(String str, String str2, Object obj, boolean z, long j) {
         int i;
         if (!z) {
             zzpp zzk = this.zzu.zzk();
-            if (zzk.zzj("user property", str2)) {
-                if (zzk.zzl("user property", zzjo.zza, null, str2)) {
+            if (zzk.zzk("user property", str2)) {
+                if (zzk.zzm("user property", zzjo.zza, null, str2)) {
                     zzk.zzu.zzc();
-                    if (zzk.zzm("user property", 24, str2)) {
+                    if (zzk.zzn("user property", 24, str2)) {
                         i = 0;
                     }
                 } else {
@@ -1574,36 +1536,36 @@ public final class zzlj extends zzg {
             }
             i = 6;
         } else {
-            i = this.zzu.zzk().zzp(str2);
+            i = this.zzu.zzk().zzs(str2);
         }
         if (i != 0) {
             zzic zzicVar = this.zzu;
             zzpp zzk2 = zzicVar.zzk();
             zzicVar.zzc();
-            this.zzu.zzk().zzN(this.zzv, null, i, "_ev", zzk2.zzC(str2, 24, true), str2 != null ? str2.length() : 0);
+            this.zzu.zzk().zzP(this.zzt, null, i, "_ev", zzk2.zzE(str2, 24, true), str2 != null ? str2.length() : 0);
             return;
         }
         String str3 = str == null ? "app" : str;
         if (obj != null) {
             zzic zzicVar2 = this.zzu;
-            int zzK = zzicVar2.zzk().zzK(str2, obj);
-            if (zzK == 0) {
-                Object zzL = zzicVar2.zzk().zzL(str2, obj);
-                if (zzL != null) {
-                    zzM(str3, str2, j, zzL);
+            int zzM = zzicVar2.zzk().zzM(str2, obj);
+            if (zzM == 0) {
+                Object zzN = zzicVar2.zzk().zzN(str2, obj);
+                if (zzN != null) {
+                    zzL(str3, str2, j, zzN);
                     return;
                 }
                 return;
             }
             zzpp zzk3 = zzicVar2.zzk();
             zzicVar2.zzc();
-            String zzC = zzk3.zzC(str2, 24, true);
+            String zzE = zzk3.zzE(str2, 24, true);
             if ((obj instanceof String) || (obj instanceof CharSequence)) {
                 r3 = obj.toString().length();
             }
-            this.zzu.zzk().zzN(this.zzv, null, zzK, "_ev", zzC, r3);
+            this.zzu.zzk().zzP(this.zzt, null, zzM, "_ev", zzE, r3);
             return;
         }
-        zzM(str3, str2, j, null);
+        zzL(str3, str2, j, null);
     }
 }

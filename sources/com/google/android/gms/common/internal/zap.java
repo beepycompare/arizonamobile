@@ -1,32 +1,25 @@
 package com.google.android.gms.common.internal;
 
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.internal.PendingResultUtil;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.TimeUnit;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.dynamic.IObjectWrapper;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zap implements PendingResult.StatusListener {
-    final /* synthetic */ PendingResult zaa;
-    final /* synthetic */ TaskCompletionSource zab;
-    final /* synthetic */ PendingResultUtil.ResultConverter zac;
-    final /* synthetic */ zas zad;
-
+public final class zap extends com.google.android.gms.internal.base.zaa implements IInterface {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zap(PendingResult pendingResult, TaskCompletionSource taskCompletionSource, PendingResultUtil.ResultConverter resultConverter, zas zasVar) {
-        this.zaa = pendingResult;
-        this.zab = taskCompletionSource;
-        this.zac = resultConverter;
-        this.zad = zasVar;
+    public zap(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.common.internal.ISignInButtonCreator");
     }
 
-    @Override // com.google.android.gms.common.api.PendingResult.StatusListener
-    public final void onComplete(Status status) {
-        if (status.isSuccess()) {
-            this.zab.setResult(this.zac.convert(this.zaa.await(0L, TimeUnit.MILLISECONDS)));
-            return;
-        }
-        this.zab.setException(ApiExceptionUtil.fromStatus(status));
+    public final IObjectWrapper zae(IObjectWrapper iObjectWrapper, zaaa zaaaVar) throws RemoteException {
+        Parcel zaa = zaa();
+        com.google.android.gms.internal.base.zac.zac(zaa, iObjectWrapper);
+        com.google.android.gms.internal.base.zac.zab(zaa, zaaaVar);
+        Parcel zab = zab(2, zaa);
+        IObjectWrapper asInterface = IObjectWrapper.Stub.asInterface(zab.readStrongBinder());
+        zab.recycle();
+        return asInterface;
     }
 }

@@ -55,11 +55,12 @@ public class SystemBarStateMonitor {
             }
         };
         this.mDetector = view;
+        view.setVisibility(8);
         view.setWillNotDraw(true);
         ViewCompat.setOnApplyWindowInsetsListener(view, new OnApplyWindowInsetsListener() { // from class: androidx.core.view.insets.SystemBarStateMonitor$$ExternalSyntheticLambda0
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat) {
-                return SystemBarStateMonitor.this.m8070lambda$new$0$androidxcoreviewinsetsSystemBarStateMonitor(view2, windowInsetsCompat);
+                return SystemBarStateMonitor.this.m8675lambda$new$0$androidxcoreviewinsetsSystemBarStateMonitor(view2, windowInsetsCompat);
             }
         });
         ViewCompat.setWindowInsetsAnimationCallback(view, new WindowInsetsAnimationCompat.Callback(0) { // from class: androidx.core.view.insets.SystemBarStateMonitor.2
@@ -141,12 +142,12 @@ public class SystemBarStateMonitor {
                 return (windowInsetsAnimationCompat.getTypeMask() & WindowInsetsCompat.Type.systemBars()) != 0;
             }
         });
-        viewGroup.addView(view, 0);
+        addViewWhenReady(viewGroup, view, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-core-view-insets-SystemBarStateMonitor  reason: not valid java name */
-    public /* synthetic */ WindowInsetsCompat m8070lambda$new$0$androidxcoreviewinsetsSystemBarStateMonitor(View view, WindowInsetsCompat windowInsetsCompat) {
+    public /* synthetic */ WindowInsetsCompat m8675lambda$new$0$androidxcoreviewinsetsSystemBarStateMonitor(View view, WindowInsetsCompat windowInsetsCompat) {
         Insets insets = getInsets(windowInsetsCompat);
         Insets insetsIgnoringVisibility = getInsetsIgnoringVisibility(windowInsetsCompat);
         if (!insets.equals(this.mInsets) || !insetsIgnoringVisibility.equals(this.mInsetsIgnoringVisibility)) {
@@ -157,6 +158,39 @@ public class SystemBarStateMonitor {
             }
         }
         return windowInsetsCompat;
+    }
+
+    private static void addViewWhenReady(final ViewGroup viewGroup, final View view, final int i) {
+        View view2;
+        int childCount = viewGroup.getChildCount() - 1;
+        while (true) {
+            if (childCount < 0) {
+                view2 = null;
+                break;
+            }
+            view2 = viewGroup.getChildAt(childCount);
+            if (view2.isAttachedToWindow() != viewGroup.isAttachedToWindow()) {
+                break;
+            }
+            childCount--;
+        }
+        if (view2 == null) {
+            viewGroup.addView(view, i);
+        } else {
+            view2.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.core.view.insets.SystemBarStateMonitor.3
+                @Override // android.view.View.OnAttachStateChangeListener
+                public void onViewAttachedToWindow(View view3) {
+                    viewGroup.addView(view, i);
+                    view3.removeOnAttachStateChangeListener(this);
+                }
+
+                @Override // android.view.View.OnAttachStateChangeListener
+                public void onViewDetachedFromWindow(View view3) {
+                    viewGroup.addView(view, i);
+                    view3.removeOnAttachStateChangeListener(this);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -193,14 +227,14 @@ public class SystemBarStateMonitor {
         this.mDetector.post(new Runnable() { // from class: androidx.core.view.insets.SystemBarStateMonitor$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SystemBarStateMonitor.this.m8069xf3edbe07();
+                SystemBarStateMonitor.this.m8674xf3edbe07();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$detachFromWindow$1$androidx-core-view-insets-SystemBarStateMonitor  reason: not valid java name */
-    public /* synthetic */ void m8069xf3edbe07() {
+    public /* synthetic */ void m8674xf3edbe07() {
         ViewParent parent = this.mDetector.getParent();
         if (parent instanceof ViewGroup) {
             ((ViewGroup) parent).removeView(this.mDetector);

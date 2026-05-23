@@ -1,16 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
-public final class Jj implements Qa {
+public abstract /* synthetic */ class Jj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ V f651a;
+    public static final /* synthetic */ int[] f614a;
 
-    public Jj(V v) {
-        this.f651a = v;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Qa
-    public final void a(Ra ra) {
-        ra.a(this.f651a);
+    static {
+        int[] iArr = new int[CounterConfigurationReporterType.values().length];
+        f614a = iArr;
+        try {
+            iArr[CounterConfigurationReporterType.MAIN.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            f614a[CounterConfigurationReporterType.MANUAL.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
     }
 }

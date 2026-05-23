@@ -40,7 +40,7 @@ public final class WideNavigationRailStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        WideNavigationRailState wideNavigationRailState = (WideNavigationRailState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        WideNavigationRailState wideNavigationRailState = (WideNavigationRailState) RememberSaveableKt.m4739rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

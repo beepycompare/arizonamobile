@@ -3,7 +3,7 @@ package com.google.android.datatransport.runtime.backends;
 import com.google.android.datatransport.runtime.EventInternal;
 import com.google.android.datatransport.runtime.backends.BackendRequest;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_BackendRequest extends BackendRequest {
     private final Iterable<EventInternal> events;
     private final byte[] extras;
@@ -47,7 +47,7 @@ final class AutoValue_BackendRequest extends BackendRequest {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends BackendRequest.Builder {
         private Iterable<EventInternal> events;
         private byte[] extras;

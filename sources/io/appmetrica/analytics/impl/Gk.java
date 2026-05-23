@@ -1,39 +1,9 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.LinkedHashMap;
 /* loaded from: classes5.dex */
 public final class Gk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vk f605a;
-    public final Long b;
-    public final Long c;
-    public final Integer d;
-    public final Long e;
-    public final Boolean f;
-    public final Long g;
-    public final Long h;
-
-    public Gk(Fk fk) {
-        Vk vk;
-        Integer num;
-        Long l;
-        Long l2;
-        Long l3;
-        Boolean bool;
-        Long l4;
-        vk = fk.b;
-        this.f605a = vk;
-        num = fk.e;
-        this.d = num;
-        l = fk.c;
-        this.b = l;
-        l2 = fk.d;
-        this.c = l2;
-        l3 = fk.f;
-        this.e = l3;
-        bool = fk.g;
-        this.f = bool;
-        l4 = fk.h;
-        this.g = l4;
-        this.h = fk.f588a;
-    }
+    public final LinkedHashMap f563a = new LinkedHashMap();
 }

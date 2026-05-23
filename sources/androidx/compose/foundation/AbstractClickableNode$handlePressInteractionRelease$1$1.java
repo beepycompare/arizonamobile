@@ -13,15 +13,13 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Job;
 /* compiled from: Clickable.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionRelease$1$1", f = "Clickable.kt", i = {1}, l = {1669, 1674, 1675}, m = "invokeSuspend", n = {"release"}, s = {"L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.foundation.AbstractClickableNode$handlePressInteractionRelease$1$1", f = "Clickable.kt", i = {1}, l = {2157, 2162, 2163}, m = "invokeSuspend", n = {"release"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 final class AbstractClickableNode$handlePressInteractionRelease$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: $$v$c$androidx-compose-ui-geometry-Offset$-offset$0  reason: not valid java name */
-    final /* synthetic */ long f4$$v$c$androidxcomposeuigeometryOffset$offset$0;
     final /* synthetic */ MutableInteractionSource $interactionSource;
     final /* synthetic */ Job $job;
+    final /* synthetic */ long $offset;
     Object L$0;
     int label;
 
@@ -30,13 +28,13 @@ final class AbstractClickableNode$handlePressInteractionRelease$1$1 extends Susp
     public AbstractClickableNode$handlePressInteractionRelease$1$1(Job job, long j, MutableInteractionSource mutableInteractionSource, Continuation<? super AbstractClickableNode$handlePressInteractionRelease$1$1> continuation) {
         super(2, continuation);
         this.$job = job;
-        this.f4$$v$c$androidxcomposeuigeometryOffset$offset$0 = j;
+        this.$offset = j;
         this.$interactionSource = mutableInteractionSource;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new AbstractClickableNode$handlePressInteractionRelease$1$1(this.$job, this.f4$$v$c$androidxcomposeuigeometryOffset$offset$0, this.$interactionSource, continuation);
+        return new AbstractClickableNode$handlePressInteractionRelease$1$1(this.$job, this.$offset, this.$interactionSource, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -81,7 +79,7 @@ final class AbstractClickableNode$handlePressInteractionRelease$1$1 extends Susp
             this.L$0 = null;
             this.label = 3;
         }
-        PressInteraction.Press press = new PressInteraction.Press(this.f4$$v$c$androidxcomposeuigeometryOffset$offset$0, null);
+        PressInteraction.Press press = new PressInteraction.Press(this.$offset, null);
         release = new PressInteraction.Release(press);
         this.L$0 = release;
         this.label = 2;

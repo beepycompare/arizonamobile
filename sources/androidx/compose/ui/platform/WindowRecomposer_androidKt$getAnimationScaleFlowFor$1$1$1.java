@@ -16,8 +16,8 @@ import kotlinx.coroutines.channels.ChannelIterator;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WindowRecomposer.android.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1", f = "WindowRecomposer.android.kt", i = {0, 1}, l = {115, 122}, m = "invokeSuspend", n = {"$this$flow", "$this$flow"}, s = {"L$0", "L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1", f = "WindowRecomposer.android.kt", i = {0, 1}, l = {119, 121}, m = "invokeSuspend", n = {"$this$flow", "$this$flow"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1 extends SuspendLambda implements Function2<FlowCollector<? super Float>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Uri $animationScaleUri;
@@ -52,14 +52,14 @@ public final class WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1 ext
         return ((WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1) create(flowCollector, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0085, code lost:
-        if (r4.emit(kotlin.coroutines.jvm.internal.Boxing.boxFloat(android.provider.Settings.Global.getFloat(r8.$applicationContext.getContentResolver(), "animator_duration_scale", 1.0f)), r8) == r0) goto L12;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007d, code lost:
+        if (r4.emit(kotlin.coroutines.jvm.internal.Boxing.boxFloat(r9), r8) == r0) goto L12;
      */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0063 A[Catch: all -> 0x0094, TRY_LEAVE, TryCatch #0 {all -> 0x0094, blocks: (B:7:0x0016, B:16:0x0048, B:20:0x005b, B:22:0x0063, B:12:0x002b, B:15:0x0042), top: B:30:0x0008 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0088  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0085 -> B:8:0x0019). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0063 A[Catch: all -> 0x008c, TRY_LEAVE, TryCatch #0 {all -> 0x008c, blocks: (B:7:0x0016, B:16:0x0048, B:20:0x005b, B:22:0x0063, B:12:0x002b, B:15:0x0042), top: B:30:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0080  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x007d -> B:8:0x0019). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -68,6 +68,7 @@ public final class WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1 ext
         FlowCollector flowCollector;
         ChannelIterator<Unit> it;
         FlowCollector flowCollector2;
+        float readAnimationScale;
         Object hasNext;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -87,7 +88,7 @@ public final class WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1 ext
                 it = (ChannelIterator) this.L$1;
                 flowCollector2 = (FlowCollector) this.L$0;
                 ResultKt.throwOnFailure(obj);
-                if (((Boolean) obj).booleanValue()) {
+                if (!((Boolean) obj).booleanValue()) {
                 }
             } else if (i != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -105,14 +106,16 @@ public final class WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1 ext
                 }
                 flowCollector2 = flowCollector;
                 obj = hasNext;
-                if (((Boolean) obj).booleanValue()) {
+                if (!((Boolean) obj).booleanValue()) {
+                    it.next();
+                    readAnimationScale = WindowRecomposer_androidKt.readAnimationScale(this.$applicationContext);
+                    this.L$0 = flowCollector2;
+                    this.L$1 = it;
+                    this.label = 2;
+                } else {
                     this.$resolver.unregisterContentObserver(this.$contentObserver);
                     return Unit.INSTANCE;
                 }
-                it.next();
-                this.L$0 = flowCollector2;
-                this.L$1 = it;
-                this.label = 2;
             }
         } catch (Throwable th) {
             this.$resolver.unregisterContentObserver(this.$contentObserver);

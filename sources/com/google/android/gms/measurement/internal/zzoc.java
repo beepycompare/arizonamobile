@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import android.os.Handler;
 import android.os.Looper;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzoc extends zzg {
     protected final zzob zza;
@@ -25,7 +25,7 @@ public final class zzoc extends zzg {
     public final void zzj() {
         zzg();
         if (this.zzd == null) {
-            this.zzd = new com.google.android.gms.internal.measurement.zzcn(Looper.getMainLooper());
+            this.zzd = new com.google.android.gms.internal.measurement.zzcl(Looper.getMainLooper());
         }
     }
 
@@ -51,8 +51,8 @@ public final class zzoc extends zzg {
         zzg();
         zzj();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzk().zzb("Activity resumed, time", Long.valueOf(j));
-        if (!zzicVar.zzc().zzp(null, zzfy.zzaU)) {
+        zzicVar.zzaW().zzk().zzb("Activity resumed, time", Long.valueOf(j));
+        if (!zzicVar.zzc().zzp(null, zzfy.zzaS)) {
             if (zzicVar.zzc().zzv() || zzicVar.zzd().zzn.zza()) {
                 this.zzb.zza(j);
             }
@@ -64,7 +64,8 @@ public final class zzoc extends zzg {
         zzoc zzocVar = zzobVar.zza;
         zzocVar.zzg();
         if (zzocVar.zzu.zzB()) {
-            zzobVar.zzb(zzocVar.zzu.zzaZ().currentTimeMillis(), false);
+            zzic zzicVar2 = zzocVar.zzu;
+            zzobVar.zzb(zzicVar2.zzba().currentTimeMillis(), zzicVar2.zzc().zzp(null, zzfy.zzbe) ? zzicVar2.zzba().elapsedRealtime() : 0L, false);
         }
     }
 
@@ -73,7 +74,7 @@ public final class zzoc extends zzg {
         zzg();
         zzj();
         zzic zzicVar = this.zzu;
-        zzicVar.zzaV().zzk().zzb("Activity paused, time", Long.valueOf(j));
+        zzicVar.zzaW().zzk().zzb("Activity paused, time", Long.valueOf(j));
         this.zzc.zzb(j);
         if (zzicVar.zzc().zzv()) {
             this.zzb.zzb(j);

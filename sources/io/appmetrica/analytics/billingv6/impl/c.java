@@ -11,12 +11,12 @@ import kotlin.collections.CollectionsKt;
 public final class c implements BillingInfoManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BillingInfoStorage f344a;
+    public final BillingInfoStorage f290a;
     public boolean b;
     public final LinkedHashMap c;
 
     public c(BillingInfoStorage billingInfoStorage) {
-        this.f344a = billingInfoStorage;
+        this.f290a = billingInfoStorage;
         this.b = billingInfoStorage.isFirstInappCheckOccurred();
         List<BillingInfo> billingInfo = billingInfoStorage.getBillingInfo();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -42,7 +42,7 @@ public final class c implements BillingInfoManager {
             return;
         }
         this.b = true;
-        this.f344a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
+        this.f290a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoManager
@@ -50,6 +50,6 @@ public final class c implements BillingInfoManager {
         for (BillingInfo billingInfo : map.values()) {
             this.c.put(billingInfo.productId, billingInfo);
         }
-        this.f344a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
+        this.f290a.saveInfo(CollectionsKt.toList(this.c.values()), this.b);
     }
 }

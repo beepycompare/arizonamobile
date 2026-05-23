@@ -1,10 +1,20 @@
 package com.google.android.gms.internal.measurement;
 
-import android.os.Bundle;
-import android.os.IInterface;
+import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-base@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzcu extends IInterface {
-    void zzb(Bundle bundle) throws RemoteException;
+public abstract class zzcu extends zzbm implements zzcv {
+    public zzcu() {
+        super("com.google.android.gms.measurement.api.internal.IDynamiteUploadBatchesCallback");
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzbm
+    protected final boolean zza(int i, Parcel parcel, Parcel parcel2, int i2) throws RemoteException {
+        if (i == 2) {
+            zze();
+            return true;
+        }
+        return false;
+    }
 }

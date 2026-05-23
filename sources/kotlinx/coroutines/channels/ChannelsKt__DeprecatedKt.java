@@ -21,16 +21,18 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
+import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
-import kotlinx.coroutines.channels.ReceiveChannel;
+import kotlinx.coroutines.Job;
 /* compiled from: Deprecated.kt */
-@Metadata(d1 = {"\u0000¸\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u001f\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0010!\n\u0000\n\u0002\u0010\"\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010#\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u001aC\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u001d\u0010\u0004\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\u0004\u0012\u0002H\u00010\u0005¢\u0006\u0002\b\u0007H\u0087\b¢\u0006\u0002\u0010\b\u001a2\u0010\t\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\n0\u0005H\u0087H¢\u0006\u0002\u0010\f\u001aJ\u0010\r\u001a#\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\n0\u0005j\u0002`\u00122\u001a\u0010\u0013\u001a\u000e\u0012\n\b\u0001\u0012\u0006\u0012\u0002\b\u00030\u00060\u0014\"\u0006\u0012\u0002\b\u00030\u0006H\u0001¢\u0006\u0002\u0010\u0015\u001a&\u0010\u0016\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0087@¢\u0006\u0002\u0010\u0019\u001a(\u0010\u001a\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0087@¢\u0006\u0002\u0010\u0019\u001a\u001e\u0010\u001b\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a \u0010\u001d\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a&\u0010\u001e\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u001f\u001a\u0002H\u0002H\u0087@¢\u0006\u0002\u0010 \u001a\u001e\u0010!\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a&\u0010\"\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u001f\u001a\u0002H\u0002H\u0087@¢\u0006\u0002\u0010 \u001a \u0010#\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010$\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a \u0010%\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a0\u0010&\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010'\u001a\u00020\u00182\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001aQ\u0010*\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001aQ\u00101\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001af\u00102\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)27\u0010+\u001a3\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0007¢\u0006\u0002\u00104\u001aQ\u00105\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a$\u00106\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\b\b\u0000\u0010\u0002*\u00020/*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0006H\u0001\u001a>\u00107\u001a\u0002H8\"\b\b\u0000\u0010\u0002*\u00020/\"\u0010\b\u0001\u00108*\n\u0012\u0006\b\u0000\u0012\u0002H\u000209*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0087@¢\u0006\u0002\u0010;\u001a<\u00107\u001a\u0002H8\"\b\b\u0000\u0010\u0002*\u00020/\"\u000e\b\u0001\u00108*\b\u0012\u0004\u0012\u0002H\u00020<*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0087@¢\u0006\u0002\u0010=\u001a0\u0010>\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010'\u001a\u00020\u00182\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001aQ\u0010?\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a6\u0010@\u001a\u0002H8\"\u0004\b\u0000\u0010\u0002\"\u000e\b\u0001\u00108*\b\u0012\u0004\u0012\u0002H\u00020<*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0081@¢\u0006\u0002\u0010=\u001a8\u0010A\u001a\u0002H8\"\u0004\b\u0000\u0010\u0002\"\u0010\b\u0001\u00108*\n\u0012\u0006\b\u0000\u0012\u0002H\u000209*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0081@¢\u0006\u0002\u0010;\u001a<\u0010B\u001a\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0C\"\u0004\b\u0000\u0010D\"\u0004\b\u0001\u0010E*\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0F0\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001aR\u0010B\u001a\u0002HG\"\u0004\b\u0000\u0010D\"\u0004\b\u0001\u0010E\"\u0018\b\u0002\u0010G*\u0012\u0012\u0006\b\u0000\u0012\u0002HD\u0012\u0006\b\u0000\u0012\u0002HE0H*\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0F0\u00062\u0006\u0010:\u001a\u0002HGH\u0081@¢\u0006\u0002\u0010I\u001a$\u0010J\u001a\b\u0012\u0004\u0012\u0002H\u00020K\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a$\u0010L\u001a\b\u0012\u0004\u0012\u0002H\u00020M\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a]\u0010N\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2(\u0010O\u001a$\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u00060-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001aW\u0010P\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010O\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001al\u0010Q\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)27\u0010O\u001a3\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0001¢\u0006\u0002\u00104\u001ar\u0010R\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0001*\u00020/*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)29\u0010O\u001a5\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0007¢\u0006\u0002\u00104\u001a]\u0010S\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0001*\u00020/*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2$\u0010O\u001a \b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a.\u0010T\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020U0\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001a\u001e\u0010V\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0007\u001aW\u0010W\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010D*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010X\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002HD0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001a$\u0010Y\u001a\b\u0012\u0004\u0012\u0002H\u00020Z\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0081@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010[\u001a\u00020.\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010\\\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a<\u0010]\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u001a\u0010^\u001a\u0016\u0012\u0006\b\u0000\u0012\u0002H\u00020_j\n\u0012\u0006\b\u0000\u0012\u0002H\u0002``H\u0087@¢\u0006\u0002\u0010a\u001a<\u0010b\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u001a\u0010^\u001a\u0016\u0012\u0006\b\u0000\u0012\u0002H\u00020_j\n\u0012\u0006\b\u0000\u0012\u0002H\u0002``H\u0087@¢\u0006\u0002\u0010a\u001a\u001e\u0010c\u001a\u00020.\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a$\u0010d\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\b\b\u0000\u0010\u0002*\u00020/*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0006H\u0007\u001a?\u0010e\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00010F0\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\f\u0010f\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006H\u0087\u0004\u001az\u0010e\u001a\b\u0012\u0004\u0012\u0002HE0\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001\"\u0004\b\u0002\u0010E*\b\u0012\u0004\u0012\u0002H\u00020\u00062\f\u0010f\u001a\b\u0012\u0004\u0012\u0002H\u00010\u00062\b\b\u0002\u0010(\u001a\u00020)26\u0010O\u001a2\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(g\u0012\u0013\u0012\u0011H\u0001¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(h\u0012\u0004\u0012\u0002HE0,H\u0001\u001a1\u0010i\u001a#\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\n0\u0005j\u0002`\u0012*\u0006\u0012\u0002\b\u00030\u0006H\u0001¨\u0006j"}, d2 = {"consume", "R", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/BroadcastChannel;", "block", "Lkotlin/Function1;", "Lkotlinx/coroutines/channels/ReceiveChannel;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/channels/BroadcastChannel;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "consumeEach", "", "action", "(Lkotlinx/coroutines/channels/BroadcastChannel;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumesAll", "", "Lkotlin/ParameterName;", "name", "cause", "Lkotlinx/coroutines/CompletionHandler;", "channels", "", "([Lkotlinx/coroutines/channels/ReceiveChannel;)Lkotlin/jvm/functions/Function1;", "elementAt", FirebaseAnalytics.Param.INDEX, "", "(Lkotlinx/coroutines/channels/ReceiveChannel;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "elementAtOrNull", "first", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstOrNull", "indexOf", "element", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "last", "lastIndexOf", "lastOrNull", "single", "singleOrNull", "drop", "n", "context", "Lkotlin/coroutines/CoroutineContext;", "dropWhile", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;", "filter", "filterIndexed", "Lkotlin/Function3;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/channels/ReceiveChannel;", "filterNot", "filterNotNull", "filterNotNullTo", "C", "", FirebaseAnalytics.Param.DESTINATION, "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lkotlinx/coroutines/channels/SendChannel;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/channels/SendChannel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "take", "takeWhile", "toChannel", "toCollection", "toMap", "", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Lkotlin/Pair;", "M", "", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toMutableList", "", "toSet", "", "flatMap", "transform", "map", "mapIndexed", "mapIndexedNotNull", "mapNotNull", "withIndex", "Lkotlin/collections/IndexedValue;", "distinct", "distinctBy", "selector", "toMutableSet", "", "any", "count", "maxWith", "comparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Comparator;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "minWith", "none", "requireNoNulls", "zip", "other", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "consumes", "kotlinx-coroutines-core"}, k = 5, mv = {2, 1, 0}, xi = 48, xs = "kotlinx/coroutines/channels/ChannelsKt")
+@Metadata(d1 = {"\u0000Ê\u0001\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u001f\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0010!\n\u0000\n\u0002\u0010\"\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010#\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aC\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u001d\u0010\u0004\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0012\u0004\u0012\u0002H\u00010\u0005¢\u0006\u0002\b\u0007H\u0087\b¢\u0006\u0002\u0010\b\u001a2\u0010\t\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\n0\u0005H\u0087H¢\u0006\u0002\u0010\f\u001aJ\u0010\r\u001a#\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\n0\u0005j\u0002`\u00122\u001a\u0010\u0013\u001a\u000e\u0012\n\b\u0001\u0012\u0006\u0012\u0002\b\u00030\u00060\u0014\"\u0006\u0012\u0002\b\u00030\u0006H\u0001¢\u0006\u0002\u0010\u0015\u001a&\u0010\u0016\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0087@¢\u0006\u0002\u0010\u0019\u001a(\u0010\u001a\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0018H\u0087@¢\u0006\u0002\u0010\u0019\u001a\u001e\u0010\u001b\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a \u0010\u001d\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a&\u0010\u001e\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u001f\u001a\u0002H\u0002H\u0087@¢\u0006\u0002\u0010 \u001a\u001e\u0010!\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a&\u0010\"\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010\u001f\u001a\u0002H\u0002H\u0087@¢\u0006\u0002\u0010 \u001a \u0010#\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010$\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a \u0010%\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a0\u0010&\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010'\u001a\u00020\u00182\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001aQ\u0010*\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001aQ\u00101\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001af\u00102\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)27\u0010+\u001a3\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0007¢\u0006\u0002\u00104\u001aQ\u00105\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a$\u00106\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\b\b\u0000\u0010\u0002*\u00020/*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0006H\u0001\u001a>\u00107\u001a\u0002H8\"\b\b\u0000\u0010\u0002*\u00020/\"\u0010\b\u0001\u00108*\n\u0012\u0006\b\u0000\u0012\u0002H\u000209*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0087@¢\u0006\u0002\u0010;\u001a<\u00107\u001a\u0002H8\"\b\b\u0000\u0010\u0002*\u00020/\"\u000e\b\u0001\u00108*\b\u0012\u0004\u0012\u0002H\u00020<*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0087@¢\u0006\u0002\u0010=\u001a0\u0010>\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010'\u001a\u00020\u00182\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001aQ\u0010?\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020.0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a6\u0010@\u001a\u0002H8\"\u0004\b\u0000\u0010\u0002\"\u000e\b\u0001\u00108*\b\u0012\u0004\u0012\u0002H\u00020<*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0081@¢\u0006\u0002\u0010=\u001a8\u0010A\u001a\u0002H8\"\u0004\b\u0000\u0010\u0002\"\u0010\b\u0001\u00108*\n\u0012\u0006\b\u0000\u0012\u0002H\u000209*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u0006\u0010:\u001a\u0002H8H\u0081@¢\u0006\u0002\u0010;\u001a<\u0010B\u001a\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0C\"\u0004\b\u0000\u0010D\"\u0004\b\u0001\u0010E*\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0F0\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001aR\u0010B\u001a\u0002HG\"\u0004\b\u0000\u0010D\"\u0004\b\u0001\u0010E\"\u0018\b\u0002\u0010G*\u0012\u0012\u0006\b\u0000\u0012\u0002HD\u0012\u0006\b\u0000\u0012\u0002HE0H*\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002HD\u0012\u0004\u0012\u0002HE0F0\u00062\u0006\u0010:\u001a\u0002HGH\u0081@¢\u0006\u0002\u0010I\u001a$\u0010J\u001a\b\u0012\u0004\u0012\u0002H\u00020K\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a$\u0010L\u001a\b\u0012\u0004\u0012\u0002H\u00020M\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a]\u0010N\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2(\u0010O\u001a$\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u00060-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001aW\u0010P\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010O\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001al\u0010Q\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)27\u0010O\u001a3\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0001¢\u0006\u0002\u00104\u001ar\u0010R\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0001*\u00020/*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)29\u0010O\u001a5\b\u0001\u0012\u0013\u0012\u00110\u0018¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u0002H\u0002\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/03H\u0007¢\u0006\u0002\u00104\u001a]\u0010S\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\b\b\u0001\u0010\u0001*\u00020/*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2$\u0010O\u001a \b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00010-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0007¢\u0006\u0002\u00100\u001a.\u0010T\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020U0\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)H\u0007\u001a\u001e\u0010V\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0007\u001aW\u0010W\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010D*\b\u0012\u0004\u0012\u0002H\u00020\u00062\b\b\u0002\u0010(\u001a\u00020)2\"\u0010X\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002HD0-\u0012\u0006\u0012\u0004\u0018\u00010/0,H\u0001¢\u0006\u0002\u00100\u001a$\u0010Y\u001a\b\u0012\u0004\u0012\u0002H\u00020Z\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0081@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010[\u001a\u00020.\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a\u001e\u0010\\\u001a\u00020\u0018\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a<\u0010]\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u001a\u0010^\u001a\u0016\u0012\u0006\b\u0000\u0012\u0002H\u00020_j\n\u0012\u0006\b\u0000\u0012\u0002H\u0002``H\u0087@¢\u0006\u0002\u0010a\u001a<\u0010b\u001a\u0004\u0018\u0001H\u0002\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00062\u001a\u0010^\u001a\u0016\u0012\u0006\b\u0000\u0012\u0002H\u00020_j\n\u0012\u0006\b\u0000\u0012\u0002H\u0002``H\u0087@¢\u0006\u0002\u0010a\u001a\u001e\u0010c\u001a\u00020.\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0006H\u0087@¢\u0006\u0002\u0010\u001c\u001a$\u0010d\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\b\b\u0000\u0010\u0002*\u00020/*\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0006H\u0007\u001a?\u0010e\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00010F0\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00020\u00062\f\u0010f\u001a\b\u0012\u0004\u0012\u0002H\u00010\u0006H\u0087\u0004\u001az\u0010e\u001a\b\u0012\u0004\u0012\u0002HE0\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0001\"\u0004\b\u0002\u0010E*\b\u0012\u0004\u0012\u0002H\u00020\u00062\f\u0010f\u001a\b\u0012\u0004\u0012\u0002H\u00010\u00062\b\b\u0002\u0010(\u001a\u00020)26\u0010O\u001a2\u0012\u0013\u0012\u0011H\u0002¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(g\u0012\u0013\u0012\u0011H\u0001¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(h\u0012\u0004\u0012\u0002HE0,H\u0001\u001a1\u0010i\u001a#\u0012\u0015\u0012\u0013\u0018\u00010\u000e¢\u0006\f\b\u000f\u0012\b\b\u0010\u0012\u0004\b\b(\u0011\u0012\u0004\u0012\u00020\n0\u0005j\u0002`\u0012*\u0006\u0012\u0002\b\u00030\u0006H\u0001\u001a`\u0010j\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0006\"\u0004\b\u0000\u0010\u0002*\u00020k2\u0006\u0010(\u001a\u00020l2\b\b\u0002\u0010m\u001a\u00020\u00182/\b\u0001\u0010\u0004\u001a)\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020n\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0-\u0012\u0006\u0012\u0004\u0018\u00010/0,¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010o¨\u0006p"}, d2 = {"consume", "R", ExifInterface.LONGITUDE_EAST, "Lkotlinx/coroutines/channels/BroadcastChannel;", "block", "Lkotlin/Function1;", "Lkotlinx/coroutines/channels/ReceiveChannel;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/channels/BroadcastChannel;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "consumeEach", "", "action", "(Lkotlinx/coroutines/channels/BroadcastChannel;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumesAll", "", "Lkotlin/ParameterName;", "name", "cause", "Lkotlinx/coroutines/CompletionHandler;", "channels", "", "([Lkotlinx/coroutines/channels/ReceiveChannel;)Lkotlin/jvm/functions/Function1;", "elementAt", FirebaseAnalytics.Param.INDEX, "", "(Lkotlinx/coroutines/channels/ReceiveChannel;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "elementAtOrNull", "first", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstOrNull", "indexOf", "element", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "last", "lastIndexOf", "lastOrNull", "single", "singleOrNull", "drop", "n", "context", "Lkotlin/coroutines/CoroutineContext;", "dropWhile", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;", "filter", "filterIndexed", "Lkotlin/Function3;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function3;)Lkotlinx/coroutines/channels/ReceiveChannel;", "filterNot", "filterNotNull", "filterNotNullTo", "C", "", FirebaseAnalytics.Param.DESTINATION, "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lkotlinx/coroutines/channels/SendChannel;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/channels/SendChannel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "take", "takeWhile", "toChannel", "toCollection", "toMap", "", "K", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Lkotlin/Pair;", "M", "", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toMutableList", "", "toSet", "", "flatMap", "transform", "map", "mapIndexed", "mapIndexedNotNull", "mapNotNull", "withIndex", "Lkotlin/collections/IndexedValue;", "distinct", "distinctBy", "selector", "toMutableSet", "", "any", "count", "maxWith", "comparator", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/util/Comparator;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "minWith", "none", "requireNoNulls", "zip", "other", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "consumes", "produce", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlinx/coroutines/Job;", "capacity", "Lkotlinx/coroutines/channels/ProducerScope;", "(Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/Job;ILkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;", "kotlinx-coroutines-core"}, k = 5, mv = {2, 2, 0}, xi = 48, xs = "kotlinx/coroutines/channels/ChannelsKt")
 /* loaded from: classes5.dex */
 public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     @Deprecated(level = DeprecationLevel.ERROR, message = "BroadcastChannel is deprecated in the favour of SharedFlow and is no longer supported")
@@ -39,17 +41,17 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         try {
             return function1.invoke(openSubscription);
         } finally {
-            ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
+            ReceiveChannel.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0061 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x006e A[Catch: all -> 0x0080, TryCatch #0 {all -> 0x0080, blocks: (B:74:0x0066, B:76:0x006e, B:77:0x0078), top: B:88:0x0066 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0078 A[Catch: all -> 0x0080, TRY_LEAVE, TryCatch #0 {all -> 0x0080, blocks: (B:74:0x0066, B:76:0x006e, B:77:0x0078), top: B:88:0x0066 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:73:0x0062 -> B:62:0x0039). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0095 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00a2 A[Catch: all -> 0x00b4, TryCatch #0 {all -> 0x00b4, blocks: (B:64:0x009a, B:66:0x00a2, B:67:0x00ac), top: B:77:0x009a }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00ac A[Catch: all -> 0x00b4, TRY_LEAVE, TryCatch #0 {all -> 0x00b4, blocks: (B:64:0x009a, B:66:0x00a2, B:67:0x00ac), top: B:77:0x009a }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:63:0x0096 -> B:77:0x009a). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.ERROR, message = "BroadcastChannel is deprecated in the favour of SharedFlow and is no longer supported")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -58,111 +60,141 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         ChannelsKt__DeprecatedKt$consumeEach$1 channelsKt__DeprecatedKt$consumeEach$1;
         int i;
         ReceiveChannel<E> receiveChannel;
-        Throwable th;
+        int i2;
+        ChannelsKt__DeprecatedKt$consumeEach$1 channelsKt__DeprecatedKt$consumeEach$12;
+        int i3;
+        int i4;
         ReceiveChannel<E> receiveChannel2;
+        ReceiveChannel<E> receiveChannel3;
         ChannelIterator<E> it;
+        Function1<? super E, Unit> function12;
+        BroadcastChannel<E> broadcastChannel2;
         Object hasNext;
-        if (continuation instanceof ChannelsKt__DeprecatedKt$consumeEach$1) {
-            channelsKt__DeprecatedKt$consumeEach$1 = (ChannelsKt__DeprecatedKt$consumeEach$1) continuation;
-            if ((channelsKt__DeprecatedKt$consumeEach$1.label & Integer.MIN_VALUE) != 0) {
-                channelsKt__DeprecatedKt$consumeEach$1.label -= Integer.MIN_VALUE;
-                Object obj = channelsKt__DeprecatedKt$consumeEach$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = channelsKt__DeprecatedKt$consumeEach$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    ReceiveChannel<E> openSubscription = broadcastChannel.openSubscription();
-                    try {
+        try {
+            if (continuation instanceof ChannelsKt__DeprecatedKt$consumeEach$1) {
+                channelsKt__DeprecatedKt$consumeEach$1 = (ChannelsKt__DeprecatedKt$consumeEach$1) continuation;
+                if ((channelsKt__DeprecatedKt$consumeEach$1.label & Integer.MIN_VALUE) != 0) {
+                    channelsKt__DeprecatedKt$consumeEach$1.label -= Integer.MIN_VALUE;
+                    Object obj = channelsKt__DeprecatedKt$consumeEach$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = channelsKt__DeprecatedKt$consumeEach$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        ReceiveChannel<E> openSubscription = broadcastChannel.openSubscription();
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$consumeEach$12 = channelsKt__DeprecatedKt$consumeEach$1;
+                        i3 = 0;
+                        i4 = 0;
                         receiveChannel2 = openSubscription;
+                        receiveChannel3 = receiveChannel2;
                         it = openSubscription.iterator();
-                        channelsKt__DeprecatedKt$consumeEach$1.L$0 = function1;
-                        channelsKt__DeprecatedKt$consumeEach$1.L$1 = receiveChannel2;
-                        channelsKt__DeprecatedKt$consumeEach$1.L$2 = it;
-                        channelsKt__DeprecatedKt$consumeEach$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$consumeEach$1);
+                        function12 = function1;
+                        broadcastChannel2 = broadcastChannel;
+                        channelsKt__DeprecatedKt$consumeEach$12.L$0 = SpillingKt.nullOutSpilledVariable(broadcastChannel);
+                        channelsKt__DeprecatedKt$consumeEach$12.L$1 = function12;
+                        channelsKt__DeprecatedKt$consumeEach$12.L$2 = SpillingKt.nullOutSpilledVariable(broadcastChannel2);
+                        channelsKt__DeprecatedKt$consumeEach$12.L$3 = receiveChannel3;
+                        channelsKt__DeprecatedKt$consumeEach$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel2);
+                        channelsKt__DeprecatedKt$consumeEach$12.L$5 = it;
+                        channelsKt__DeprecatedKt$consumeEach$12.I$0 = i4;
+                        channelsKt__DeprecatedKt$consumeEach$12.I$1 = i3;
+                        channelsKt__DeprecatedKt$consumeEach$12.I$2 = i2;
+                        channelsKt__DeprecatedKt$consumeEach$12.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$consumeEach$12);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } catch (Throwable th2) {
-                        receiveChannel = openSubscription;
-                        th = th2;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    ChannelIterator<E> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$consumeEach$1.L$2;
-                    receiveChannel = (ReceiveChannel) channelsKt__DeprecatedKt$consumeEach$1.L$1;
-                    Function1<? super E, Unit> function12 = (Function1) channelsKt__DeprecatedKt$consumeEach$1.L$0;
-                    try {
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i5 = channelsKt__DeprecatedKt$consumeEach$1.I$2;
+                        int i6 = channelsKt__DeprecatedKt$consumeEach$1.I$1;
+                        int i7 = channelsKt__DeprecatedKt$consumeEach$1.I$0;
+                        ChannelIterator<E> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$consumeEach$1.L$5;
+                        ReceiveChannel<E> receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$consumeEach$1.L$4;
+                        ReceiveChannel<E> receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$consumeEach$1.L$3;
+                        BroadcastChannel<E> broadcastChannel3 = (BroadcastChannel) channelsKt__DeprecatedKt$consumeEach$1.L$2;
+                        Function1<? super E, Unit> function13 = (Function1) channelsKt__DeprecatedKt$consumeEach$1.L$1;
+                        BroadcastChannel<E> broadcastChannel4 = (BroadcastChannel) channelsKt__DeprecatedKt$consumeEach$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        ChannelsKt__DeprecatedKt$consumeEach$1 channelsKt__DeprecatedKt$consumeEach$12 = channelsKt__DeprecatedKt$consumeEach$1;
-                        ReceiveChannel<E> receiveChannel3 = receiveChannel;
-                        function1 = function12;
+                        i2 = i5;
+                        broadcastChannel = broadcastChannel4;
+                        ReceiveChannel<E> receiveChannel6 = receiveChannel5;
                         ChannelIterator<E> channelIterator2 = channelIterator;
-                        ChannelsKt__DeprecatedKt$consumeEach$1 channelsKt__DeprecatedKt$consumeEach$13 = channelsKt__DeprecatedKt$consumeEach$12;
+                        channelsKt__DeprecatedKt$consumeEach$12 = channelsKt__DeprecatedKt$consumeEach$1;
+                        i3 = i6;
+                        broadcastChannel2 = broadcastChannel3;
+                        receiveChannel2 = receiveChannel4;
+                        i4 = i7;
                         try {
                             if (!((Boolean) obj).booleanValue()) {
-                                function1.invoke((Object) channelIterator2.next());
-                                receiveChannel2 = receiveChannel3;
-                                channelsKt__DeprecatedKt$consumeEach$1 = channelsKt__DeprecatedKt$consumeEach$13;
+                                function13.invoke((Object) channelIterator2.next());
+                                function12 = function13;
+                                receiveChannel3 = receiveChannel6;
                                 it = channelIterator2;
                                 try {
-                                    channelsKt__DeprecatedKt$consumeEach$1.L$0 = function1;
-                                    channelsKt__DeprecatedKt$consumeEach$1.L$1 = receiveChannel2;
-                                    channelsKt__DeprecatedKt$consumeEach$1.L$2 = it;
-                                    channelsKt__DeprecatedKt$consumeEach$1.label = 1;
-                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$consumeEach$1);
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$0 = SpillingKt.nullOutSpilledVariable(broadcastChannel);
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$1 = function12;
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$2 = SpillingKt.nullOutSpilledVariable(broadcastChannel2);
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$3 = receiveChannel3;
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel2);
+                                    channelsKt__DeprecatedKt$consumeEach$12.L$5 = it;
+                                    channelsKt__DeprecatedKt$consumeEach$12.I$0 = i4;
+                                    channelsKt__DeprecatedKt$consumeEach$12.I$1 = i3;
+                                    channelsKt__DeprecatedKt$consumeEach$12.I$2 = i2;
+                                    channelsKt__DeprecatedKt$consumeEach$12.label = 1;
+                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$consumeEach$12);
                                     if (hasNext != coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
-                                    channelsKt__DeprecatedKt$consumeEach$12 = channelsKt__DeprecatedKt$consumeEach$1;
-                                    receiveChannel3 = receiveChannel2;
+                                    ReceiveChannel<E> receiveChannel7 = receiveChannel3;
+                                    function13 = function12;
                                     obj = hasNext;
+                                    receiveChannel6 = receiveChannel7;
                                     channelIterator2 = it;
-                                    ChannelsKt__DeprecatedKt$consumeEach$1 channelsKt__DeprecatedKt$consumeEach$132 = channelsKt__DeprecatedKt$consumeEach$12;
                                     if (!((Boolean) obj).booleanValue()) {
                                         Unit unit = Unit.INSTANCE;
-                                        ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) receiveChannel3, (CancellationException) null, 1, (Object) null);
+                                        ReceiveChannel.cancel$default((ReceiveChannel) receiveChannel6, (CancellationException) null, 1, (Object) null);
                                         return Unit.INSTANCE;
                                     }
-                                } catch (Throwable th3) {
-                                    th = th3;
-                                    receiveChannel = receiveChannel2;
+                                } catch (Throwable th) {
+                                    th = th;
+                                    receiveChannel = receiveChannel3;
+                                    ReceiveChannel.cancel$default((ReceiveChannel) receiveChannel, (CancellationException) null, 1, (Object) null);
+                                    throw th;
                                 }
                             }
-                        } catch (Throwable th4) {
-                            th = th4;
-                            receiveChannel = receiveChannel3;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            receiveChannel = receiveChannel6;
+                            ReceiveChannel.cancel$default((ReceiveChannel) receiveChannel, (CancellationException) null, 1, (Object) null);
+                            throw th;
                         }
-                    } catch (Throwable th5) {
-                        th = th5;
                     }
                 }
-                ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) receiveChannel, (CancellationException) null, 1, (Object) null);
-                throw th;
             }
+            if (i != 0) {
+            }
+        } catch (Throwable th3) {
+            th = th3;
         }
         channelsKt__DeprecatedKt$consumeEach$1 = new ChannelsKt__DeprecatedKt$consumeEach$1(continuation);
         Object obj2 = channelsKt__DeprecatedKt$consumeEach$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$consumeEach$1.label;
-        if (i != 0) {
-        }
-        ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) receiveChannel, (CancellationException) null, 1, (Object) null);
-        throw th;
     }
 
     public static final Function1<Throwable, Unit> consumesAll(final ReceiveChannel<?>... receiveChannelArr) {
         return new Function1() { // from class: kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit consumesAll$lambda$2$ChannelsKt__DeprecatedKt;
-                consumesAll$lambda$2$ChannelsKt__DeprecatedKt = ChannelsKt__DeprecatedKt.consumesAll$lambda$2$ChannelsKt__DeprecatedKt(receiveChannelArr, (Throwable) obj);
-                return consumesAll$lambda$2$ChannelsKt__DeprecatedKt;
+                Unit consumesAll$lambda$0$ChannelsKt__DeprecatedKt;
+                consumesAll$lambda$0$ChannelsKt__DeprecatedKt = ChannelsKt__DeprecatedKt.consumesAll$lambda$0$ChannelsKt__DeprecatedKt(receiveChannelArr, (Throwable) obj);
+                return consumesAll$lambda$0$ChannelsKt__DeprecatedKt;
             }
         };
     }
 
-    public static final Unit consumesAll$lambda$2$ChannelsKt__DeprecatedKt(ReceiveChannel[] receiveChannelArr, Throwable th) {
+    public static final Unit consumesAll$lambda$0$ChannelsKt__DeprecatedKt(ReceiveChannel[] receiveChannelArr, Throwable th) {
         Throwable th2 = null;
         for (ReceiveChannel receiveChannel : receiveChannelArr) {
             try {
@@ -181,13 +213,13 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0029  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0060 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x006e A[Catch: all -> 0x003b, TRY_LEAVE, TryCatch #2 {all -> 0x003b, blocks: (B:60:0x0037, B:73:0x0066, B:75:0x006e, B:81:0x007e, B:82:0x0098), top: B:94:0x0037 }] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x007e A[Catch: all -> 0x003b, TRY_ENTER, TryCatch #2 {all -> 0x003b, blocks: (B:60:0x0037, B:73:0x0066, B:75:0x006e, B:81:0x007e, B:82:0x0098), top: B:94:0x0037 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:72:0x0061 -> B:73:0x0066). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x009c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00ad A[Catch: all -> 0x005b, TRY_LEAVE, TryCatch #2 {all -> 0x005b, blocks: (B:65:0x0047, B:79:0x00a5, B:81:0x00ad, B:87:0x00be, B:88:0x00d8), top: B:103:0x0047 }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00be A[Catch: all -> 0x005b, TRY_ENTER, TryCatch #2 {all -> 0x005b, blocks: (B:65:0x0047, B:79:0x00a5, B:81:0x00ad, B:87:0x00be, B:88:0x00d8), top: B:103:0x0047 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:78:0x009d -> B:79:0x00a5). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -196,100 +228,148 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         ChannelsKt__DeprecatedKt$elementAt$1 channelsKt__DeprecatedKt$elementAt$1;
         int i2;
         ReceiveChannel receiveChannel2;
-        Throwable th;
         ChannelIterator it;
+        ChannelsKt__DeprecatedKt$elementAt$1 channelsKt__DeprecatedKt$elementAt$12;
         int i3;
+        int i4;
+        Throwable th;
+        ReceiveChannel receiveChannel3;
+        ReceiveChannel receiveChannel4;
+        int i5;
+        int i6;
+        ReceiveChannel receiveChannel5;
+        Throwable th2;
         Object hasNext;
-        try {
-            if (continuation instanceof ChannelsKt__DeprecatedKt$elementAt$1) {
-                channelsKt__DeprecatedKt$elementAt$1 = (ChannelsKt__DeprecatedKt$elementAt$1) continuation;
-                if ((channelsKt__DeprecatedKt$elementAt$1.label & Integer.MIN_VALUE) != 0) {
-                    channelsKt__DeprecatedKt$elementAt$1.label -= Integer.MIN_VALUE;
-                    Object obj = channelsKt__DeprecatedKt$elementAt$1.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i2 = channelsKt__DeprecatedKt$elementAt$1.label;
-                    if (i2 != 0) {
-                        ResultKt.throwOnFailure(obj);
+        if (continuation instanceof ChannelsKt__DeprecatedKt$elementAt$1) {
+            channelsKt__DeprecatedKt$elementAt$1 = (ChannelsKt__DeprecatedKt$elementAt$1) continuation;
+            if ((channelsKt__DeprecatedKt$elementAt$1.label & Integer.MIN_VALUE) != 0) {
+                channelsKt__DeprecatedKt$elementAt$1.label -= Integer.MIN_VALUE;
+                Object obj = channelsKt__DeprecatedKt$elementAt$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i2 = channelsKt__DeprecatedKt$elementAt$1.label;
+                if (i2 != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    try {
                         if (i < 0) {
                             throw new IndexOutOfBoundsException("ReceiveChannel doesn't contain element at index " + i + '.');
                         }
                         it = receiveChannel.iterator();
+                        channelsKt__DeprecatedKt$elementAt$12 = channelsKt__DeprecatedKt$elementAt$1;
                         i3 = 0;
-                        channelsKt__DeprecatedKt$elementAt$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$elementAt$1.L$1 = it;
-                        channelsKt__DeprecatedKt$elementAt$1.I$0 = i;
-                        channelsKt__DeprecatedKt$elementAt$1.I$1 = i3;
-                        channelsKt__DeprecatedKt$elementAt$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAt$1);
+                        i4 = 0;
+                        th = null;
+                        receiveChannel3 = receiveChannel;
+                        receiveChannel4 = receiveChannel3;
+                        i5 = i;
+                        i6 = 0;
+                        receiveChannel5 = receiveChannel4;
+                        channelsKt__DeprecatedKt$elementAt$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                        channelsKt__DeprecatedKt$elementAt$12.L$1 = receiveChannel3;
+                        channelsKt__DeprecatedKt$elementAt$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                        channelsKt__DeprecatedKt$elementAt$12.L$3 = it;
+                        channelsKt__DeprecatedKt$elementAt$12.I$0 = i5;
+                        channelsKt__DeprecatedKt$elementAt$12.I$1 = i4;
+                        channelsKt__DeprecatedKt$elementAt$12.I$2 = i3;
+                        channelsKt__DeprecatedKt$elementAt$12.I$3 = i6;
+                        channelsKt__DeprecatedKt$elementAt$12.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAt$12);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } else if (i2 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        int i4 = channelsKt__DeprecatedKt$elementAt$1.I$1;
-                        i = channelsKt__DeprecatedKt$elementAt$1.I$0;
-                        ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$elementAt$1.L$1;
-                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAt$1.L$0;
-                        try {
-                            ResultKt.throwOnFailure(obj);
-                            if (!((Boolean) obj).booleanValue()) {
-                                Object next = channelIterator.next();
-                                int i5 = i4 + 1;
-                                if (i == i4) {
-                                    ChannelsKt.cancelConsumed(receiveChannel2, null);
-                                    return next;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        receiveChannel2 = receiveChannel;
+                        th2 = th;
+                        throw th2;
+                    }
+                } else if (i2 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    int i7 = channelsKt__DeprecatedKt$elementAt$1.I$3;
+                    int i8 = channelsKt__DeprecatedKt$elementAt$1.I$2;
+                    int i9 = channelsKt__DeprecatedKt$elementAt$1.I$1;
+                    int i10 = channelsKt__DeprecatedKt$elementAt$1.I$0;
+                    ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$elementAt$1.L$3;
+                    ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAt$1.L$2;
+                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAt$1.L$1;
+                    ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAt$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                        channelsKt__DeprecatedKt$elementAt$12 = channelsKt__DeprecatedKt$elementAt$1;
+                        receiveChannel4 = receiveChannel6;
+                        i4 = i9;
+                        i3 = i8;
+                        i5 = i10;
+                        th = null;
+                        ChannelIterator channelIterator2 = channelIterator;
+                        if (!((Boolean) obj).booleanValue()) {
+                            Object next = channelIterator2.next();
+                            int i11 = i7 + 1;
+                            if (i5 != i7) {
+                                receiveChannel3 = receiveChannel2;
+                                receiveChannel5 = receiveChannel7;
+                                it = channelIterator2;
+                                i6 = i11;
+                                try {
+                                    channelsKt__DeprecatedKt$elementAt$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                    channelsKt__DeprecatedKt$elementAt$12.L$1 = receiveChannel3;
+                                    channelsKt__DeprecatedKt$elementAt$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                    channelsKt__DeprecatedKt$elementAt$12.L$3 = it;
+                                    channelsKt__DeprecatedKt$elementAt$12.I$0 = i5;
+                                    channelsKt__DeprecatedKt$elementAt$12.I$1 = i4;
+                                    channelsKt__DeprecatedKt$elementAt$12.I$2 = i3;
+                                    channelsKt__DeprecatedKt$elementAt$12.I$3 = i6;
+                                    channelsKt__DeprecatedKt$elementAt$12.label = 1;
+                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAt$12);
+                                    if (hasNext != coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    receiveChannel7 = receiveChannel5;
+                                    i7 = i6;
+                                    channelIterator2 = it;
+                                    receiveChannel2 = receiveChannel3;
+                                    obj = hasNext;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        throw new IndexOutOfBoundsException("ReceiveChannel doesn't contain element at index " + i5 + '.');
+                                    }
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    receiveChannel2 = receiveChannel3;
+                                    th2 = th;
+                                    try {
+                                        throw th2;
+                                    } catch (Throwable th5) {
+                                        ChannelsKt.cancelConsumed(receiveChannel2, th2);
+                                        throw th5;
+                                    }
                                 }
-                                it = channelIterator;
-                                receiveChannel = receiveChannel2;
-                                i3 = i5;
-                                channelsKt__DeprecatedKt$elementAt$1.L$0 = receiveChannel;
-                                channelsKt__DeprecatedKt$elementAt$1.L$1 = it;
-                                channelsKt__DeprecatedKt$elementAt$1.I$0 = i;
-                                channelsKt__DeprecatedKt$elementAt$1.I$1 = i3;
-                                channelsKt__DeprecatedKt$elementAt$1.label = 1;
-                                hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAt$1);
-                                if (hasNext != coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
-                                receiveChannel2 = receiveChannel;
-                                i4 = i3;
-                                channelIterator = it;
-                                obj = hasNext;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    throw new IndexOutOfBoundsException("ReceiveChannel doesn't contain element at index " + i + '.');
-                                }
-                            }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            try {
-                                throw th;
-                            } catch (Throwable th3) {
+                            } else {
                                 ChannelsKt.cancelConsumed(receiveChannel2, th);
-                                throw th3;
+                                return next;
                             }
                         }
+                    } catch (Throwable th6) {
+                        th = th6;
+                        th2 = th;
+                        throw th2;
                     }
                 }
             }
-            if (i2 != 0) {
-            }
-        } catch (Throwable th4) {
-            receiveChannel2 = receiveChannel;
-            th = th4;
         }
         channelsKt__DeprecatedKt$elementAt$1 = new ChannelsKt__DeprecatedKt$elementAt$1(continuation);
         Object obj2 = channelsKt__DeprecatedKt$elementAt$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i2 = channelsKt__DeprecatedKt$elementAt$1.label;
+        if (i2 != 0) {
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0066 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0074 A[Catch: all -> 0x0089, TRY_LEAVE, TryCatch #0 {all -> 0x0089, blocks: (B:76:0x006c, B:78:0x0074, B:72:0x0056, B:71:0x0050), top: B:92:0x0050 }] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0085 A[DONT_GENERATE] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:75:0x0067 -> B:76:0x006c). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x008c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x009c A[Catch: all -> 0x00b2, TRY_LEAVE, TryCatch #0 {all -> 0x00b2, blocks: (B:82:0x0094, B:84:0x009c, B:78:0x006c), top: B:100:0x0094 }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x00ae  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x008d -> B:100:0x0094). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -297,95 +377,130 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     public static final /* synthetic */ Object elementAtOrNull(ReceiveChannel receiveChannel, int i, Continuation continuation) {
         ChannelsKt__DeprecatedKt$elementAtOrNull$1 channelsKt__DeprecatedKt$elementAtOrNull$1;
         int i2;
-        ChannelIterator it;
-        int i3;
-        Throwable th;
-        Throwable th2;
         ReceiveChannel receiveChannel2;
+        Throwable th;
+        int i3;
+        ChannelIterator it;
+        ChannelsKt__DeprecatedKt$elementAtOrNull$1 channelsKt__DeprecatedKt$elementAtOrNull$12;
+        int i4;
+        int i5;
+        Throwable th2;
+        ReceiveChannel receiveChannel3;
+        int i6;
         Object hasNext;
-        if (continuation instanceof ChannelsKt__DeprecatedKt$elementAtOrNull$1) {
-            channelsKt__DeprecatedKt$elementAtOrNull$1 = (ChannelsKt__DeprecatedKt$elementAtOrNull$1) continuation;
-            if ((channelsKt__DeprecatedKt$elementAtOrNull$1.label & Integer.MIN_VALUE) != 0) {
-                channelsKt__DeprecatedKt$elementAtOrNull$1.label -= Integer.MIN_VALUE;
-                Object obj = channelsKt__DeprecatedKt$elementAtOrNull$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i2 = channelsKt__DeprecatedKt$elementAtOrNull$1.label;
-                if (i2 != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    if (i >= 0) {
-                        try {
-                            it = receiveChannel.iterator();
-                            i3 = 0;
-                            th = null;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.L$0 = receiveChannel;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.L$1 = it;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.I$0 = i;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.I$1 = i3;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAtOrNull$1);
-                            if (hasNext != coroutine_suspended) {
-                            }
-                        } catch (Throwable th3) {
-                            receiveChannel2 = receiveChannel;
-                            th2 = th3;
-                            throw th2;
-                        }
-                    } else {
-                        ChannelsKt.cancelConsumed(receiveChannel, null);
-                        return null;
-                    }
-                } else if (i2 != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    int i4 = channelsKt__DeprecatedKt$elementAtOrNull$1.I$1;
-                    i = channelsKt__DeprecatedKt$elementAtOrNull$1.I$0;
-                    ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$elementAtOrNull$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAtOrNull$1.L$0;
-                    try {
+        try {
+            if (continuation instanceof ChannelsKt__DeprecatedKt$elementAtOrNull$1) {
+                channelsKt__DeprecatedKt$elementAtOrNull$1 = (ChannelsKt__DeprecatedKt$elementAtOrNull$1) continuation;
+                if ((channelsKt__DeprecatedKt$elementAtOrNull$1.label & Integer.MIN_VALUE) != 0) {
+                    channelsKt__DeprecatedKt$elementAtOrNull$1.label -= Integer.MIN_VALUE;
+                    Object obj = channelsKt__DeprecatedKt$elementAtOrNull$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i2 = channelsKt__DeprecatedKt$elementAtOrNull$1.label;
+                    if (i2 != 0) {
                         ResultKt.throwOnFailure(obj);
-                        i3 = i4;
-                        receiveChannel = receiveChannel2;
-                        ChannelsKt__DeprecatedKt$elementAtOrNull$1 channelsKt__DeprecatedKt$elementAtOrNull$12 = channelsKt__DeprecatedKt$elementAtOrNull$1;
-                        ChannelIterator channelIterator2 = channelIterator;
-                        Throwable th4 = null;
-                        if (!((Boolean) obj).booleanValue()) {
-                            Object next = channelIterator2.next();
-                            int i5 = i3 + 1;
-                            if (i == i3) {
-                                return next;
+                        if (i >= 0) {
+                            try {
+                                i3 = 0;
+                                it = receiveChannel.iterator();
+                                channelsKt__DeprecatedKt$elementAtOrNull$12 = channelsKt__DeprecatedKt$elementAtOrNull$1;
+                                i4 = 0;
+                                i5 = 0;
+                                th2 = null;
+                                receiveChannel3 = receiveChannel;
+                                i6 = i;
+                                receiveChannel2 = receiveChannel3;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.L$1 = receiveChannel2;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.L$3 = it;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.I$0 = i6;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.I$1 = i5;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.I$2 = i4;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.I$3 = i3;
+                                channelsKt__DeprecatedKt$elementAtOrNull$12.label = 1;
+                                hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAtOrNull$12);
+                                if (hasNext != coroutine_suspended) {
+                                }
+                            } catch (Throwable th3) {
+                                receiveChannel2 = receiveChannel;
+                                th = th3;
                             }
-                            it = channelIterator2;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1 = channelsKt__DeprecatedKt$elementAtOrNull$12;
-                            th = th2;
-                            i3 = i5;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.L$0 = receiveChannel;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.L$1 = it;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.I$0 = i;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.I$1 = i3;
-                            channelsKt__DeprecatedKt$elementAtOrNull$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAtOrNull$1);
-                            if (hasNext != coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            ChannelsKt__DeprecatedKt$elementAtOrNull$1 channelsKt__DeprecatedKt$elementAtOrNull$13 = channelsKt__DeprecatedKt$elementAtOrNull$1;
-                            channelIterator2 = it;
-                            obj = hasNext;
-                            th4 = th;
-                            channelsKt__DeprecatedKt$elementAtOrNull$12 = channelsKt__DeprecatedKt$elementAtOrNull$13;
-                            if (!((Boolean) obj).booleanValue()) {
-                                return null;
-                            }
+                        } else {
+                            ChannelsKt.cancelConsumed(receiveChannel, null);
+                            return null;
                         }
-                    } catch (Throwable th5) {
-                        th2 = th5;
+                    } else if (i2 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i7 = channelsKt__DeprecatedKt$elementAtOrNull$1.I$3;
+                        int i8 = channelsKt__DeprecatedKt$elementAtOrNull$1.I$2;
+                        int i9 = channelsKt__DeprecatedKt$elementAtOrNull$1.I$1;
+                        int i10 = channelsKt__DeprecatedKt$elementAtOrNull$1.I$0;
+                        ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$elementAtOrNull$1.L$3;
+                        ReceiveChannel receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAtOrNull$1.L$2;
+                        ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAtOrNull$1.L$1;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$elementAtOrNull$1.L$0;
                         try {
-                            throw th2;
-                        } finally {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th2);
+                            ResultKt.throwOnFailure(obj);
+                            i4 = i8;
+                            receiveChannel2 = receiveChannel5;
+                            it = channelIterator;
+                            channelsKt__DeprecatedKt$elementAtOrNull$12 = channelsKt__DeprecatedKt$elementAtOrNull$1;
+                            i6 = i10;
+                            Throwable th4 = null;
+                            try {
+                                if (!((Boolean) obj).booleanValue()) {
+                                    Object next = it.next();
+                                    int i11 = i7 + 1;
+                                    if (i6 == i7) {
+                                        ChannelsKt.cancelConsumed(receiveChannel2, th4);
+                                        return next;
+                                    }
+                                    receiveChannel3 = receiveChannel4;
+                                    receiveChannel = receiveChannel6;
+                                    th2 = th4;
+                                    i5 = i9;
+                                    i3 = i11;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.L$1 = receiveChannel2;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.L$3 = it;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.I$0 = i6;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.I$1 = i5;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.I$2 = i4;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.I$3 = i3;
+                                    channelsKt__DeprecatedKt$elementAtOrNull$12.label = 1;
+                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$elementAtOrNull$12);
+                                    if (hasNext != coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    Throwable th5 = th2;
+                                    receiveChannel6 = receiveChannel;
+                                    i7 = i3;
+                                    i9 = i5;
+                                    receiveChannel4 = receiveChannel3;
+                                    obj = hasNext;
+                                    th4 = th5;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        ChannelsKt.cancelConsumed(receiveChannel2, th4);
+                                        return null;
+                                    }
+                                }
+                            } catch (Throwable th6) {
+                                th = th6;
+                            }
+                        } catch (Throwable th7) {
+                            th = th7;
+                            receiveChannel2 = receiveChannel5;
                         }
                     }
+                    throw th;
                 }
             }
+            throw th;
+        } catch (Throwable th8) {
+            ChannelsKt.cancelConsumed(receiveChannel2, th);
+            throw th8;
         }
         channelsKt__DeprecatedKt$elementAtOrNull$1 = new ChannelsKt__DeprecatedKt$elementAtOrNull$1(continuation);
         Object obj2 = channelsKt__DeprecatedKt$elementAtOrNull$1.result;
@@ -396,9 +511,9 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:51:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x005c A[Catch: all -> 0x0032, TRY_LEAVE, TryCatch #1 {all -> 0x0032, blocks: (B:53:0x002e, B:64:0x0054, B:66:0x005c, B:69:0x0065, B:70:0x006c), top: B:79:0x002e }] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0065 A[Catch: all -> 0x0032, TRY_ENTER, TryCatch #1 {all -> 0x0032, blocks: (B:53:0x002e, B:64:0x0054, B:66:0x005c, B:69:0x0065, B:70:0x006c), top: B:79:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0078 A[Catch: all -> 0x003e, TRY_LEAVE, TryCatch #2 {all -> 0x003e, blocks: (B:53:0x003a, B:64:0x0070, B:66:0x0078, B:69:0x0081, B:70:0x0088), top: B:81:0x003a }] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0081 A[Catch: all -> 0x003e, TRY_ENTER, TryCatch #2 {all -> 0x003e, blocks: (B:53:0x003a, B:64:0x0070, B:66:0x0078, B:69:0x0081, B:70:0x0088), top: B:81:0x003a }] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -421,8 +536,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$first$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$first$1.L$1 = it;
+                        channelsKt__DeprecatedKt$first$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$first$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$first$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$first$1.L$3 = it;
+                        channelsKt__DeprecatedKt$first$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$first$1.I$1 = 0;
                         channelsKt__DeprecatedKt$first$1.label = 1;
                         Object hasNext = it.hasNext(channelsKt__DeprecatedKt$first$1);
                         if (hasNext == coroutine_suspended) {
@@ -439,8 +558,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$first$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$first$1.L$0;
+                    int i2 = channelsKt__DeprecatedKt$first$1.I$1;
+                    int i3 = channelsKt__DeprecatedKt$first$1.I$0;
+                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$first$1.L$3;
+                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$first$1.L$2;
+                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$first$1.L$1;
+                    ReceiveChannel receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$first$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                     } catch (Throwable th3) {
@@ -472,9 +595,9 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:53:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0061 A[Catch: all -> 0x0032, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0032, blocks: (B:55:0x002e, B:66:0x0054, B:71:0x0061), top: B:80:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x007d A[Catch: all -> 0x003e, TRY_ENTER, TRY_LEAVE, TryCatch #2 {all -> 0x003e, blocks: (B:55:0x003a, B:66:0x0070, B:71:0x007d), top: B:84:0x003a }] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -497,8 +620,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$firstOrNull$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$firstOrNull$1.L$1 = it;
+                        channelsKt__DeprecatedKt$firstOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$firstOrNull$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$firstOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$firstOrNull$1.L$3 = it;
+                        channelsKt__DeprecatedKt$firstOrNull$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$firstOrNull$1.I$1 = 0;
                         channelsKt__DeprecatedKt$firstOrNull$1.label = 1;
                         Object hasNext = it.hasNext(channelsKt__DeprecatedKt$firstOrNull$1);
                         if (hasNext == coroutine_suspended) {
@@ -515,8 +642,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$firstOrNull$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$firstOrNull$1.L$0;
+                    int i2 = channelsKt__DeprecatedKt$firstOrNull$1.I$1;
+                    int i3 = channelsKt__DeprecatedKt$firstOrNull$1.I$0;
+                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$firstOrNull$1.L$3;
+                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$firstOrNull$1.L$2;
+                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$firstOrNull$1.L$1;
+                    ReceiveChannel receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$firstOrNull$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                     } catch (Throwable th3) {
@@ -548,13 +679,13 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0064 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0070 A[Catch: all -> 0x0039, TryCatch #1 {all -> 0x0039, blocks: (B:59:0x0035, B:72:0x0068, B:74:0x0070, B:76:0x007a, B:79:0x0084, B:68:0x0054, B:80:0x008b), top: B:91:0x0035 }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x008b A[Catch: all -> 0x0039, TRY_LEAVE, TryCatch #1 {all -> 0x0039, blocks: (B:59:0x0035, B:72:0x0068, B:74:0x0070, B:76:0x007a, B:79:0x0084, B:68:0x0054, B:80:0x008b), top: B:91:0x0035 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x0065 -> B:72:0x0068). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00a3 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00b3 A[Catch: all -> 0x0058, TryCatch #1 {all -> 0x0058, blocks: (B:63:0x0047, B:76:0x00ab, B:78:0x00b3, B:80:0x00bd, B:83:0x00c7, B:84:0x00d2), top: B:97:0x0047 }] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x00d2 A[Catch: all -> 0x0058, TRY_LEAVE, TryCatch #1 {all -> 0x0058, blocks: (B:63:0x0047, B:76:0x00ab, B:78:0x00b3, B:80:0x00bd, B:83:0x00c7, B:84:0x00d2), top: B:97:0x0047 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:75:0x00a4 -> B:76:0x00ab). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -564,9 +695,16 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel receiveChannel2;
         Throwable th;
-        ChannelIterator it;
+        int i2;
         Ref.IntRef intRef;
+        ChannelsKt__DeprecatedKt$indexOf$1 channelsKt__DeprecatedKt$indexOf$12;
+        ChannelIterator it;
+        Throwable th2;
+        int i3;
+        int i4;
+        ReceiveChannel receiveChannel3;
         Object obj2;
+        ReceiveChannel receiveChannel4;
         Object hasNext;
         try {
             if (continuation instanceof ChannelsKt__DeprecatedKt$indexOf$1) {
@@ -578,70 +716,119 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     i = channelsKt__DeprecatedKt$indexOf$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj3);
-                        Ref.IntRef intRef2 = new Ref.IntRef();
                         try {
-                            receiveChannel2 = receiveChannel;
+                            i2 = 0;
+                            intRef = new Ref.IntRef();
+                            channelsKt__DeprecatedKt$indexOf$12 = channelsKt__DeprecatedKt$indexOf$1;
                             it = receiveChannel.iterator();
-                            intRef = intRef2;
+                            th2 = null;
+                            i3 = 0;
+                            i4 = 0;
+                            receiveChannel2 = receiveChannel;
+                            receiveChannel3 = receiveChannel2;
                             obj2 = obj;
-                            channelsKt__DeprecatedKt$indexOf$1.L$0 = obj2;
-                            channelsKt__DeprecatedKt$indexOf$1.L$1 = intRef;
-                            channelsKt__DeprecatedKt$indexOf$1.L$2 = receiveChannel2;
-                            channelsKt__DeprecatedKt$indexOf$1.L$3 = it;
-                            channelsKt__DeprecatedKt$indexOf$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$indexOf$1);
+                            receiveChannel4 = receiveChannel3;
+                            channelsKt__DeprecatedKt$indexOf$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                            channelsKt__DeprecatedKt$indexOf$12.L$1 = obj2;
+                            channelsKt__DeprecatedKt$indexOf$12.L$2 = intRef;
+                            channelsKt__DeprecatedKt$indexOf$12.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                            channelsKt__DeprecatedKt$indexOf$12.L$4 = receiveChannel2;
+                            channelsKt__DeprecatedKt$indexOf$12.L$5 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                            channelsKt__DeprecatedKt$indexOf$12.L$6 = it;
+                            channelsKt__DeprecatedKt$indexOf$12.I$0 = i4;
+                            channelsKt__DeprecatedKt$indexOf$12.I$1 = i3;
+                            channelsKt__DeprecatedKt$indexOf$12.I$2 = i2;
+                            channelsKt__DeprecatedKt$indexOf$12.label = 1;
+                            hasNext = it.hasNext(channelsKt__DeprecatedKt$indexOf$12);
                             if (hasNext != coroutine_suspended) {
                             }
-                        } catch (Throwable th2) {
+                        } catch (Throwable th3) {
                             receiveChannel2 = receiveChannel;
-                            th = th2;
+                            th = th3;
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        it = (ChannelIterator) channelsKt__DeprecatedKt$indexOf$1.L$3;
-                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$indexOf$1.L$2;
-                        intRef = (Ref.IntRef) channelsKt__DeprecatedKt$indexOf$1.L$1;
-                        Object obj4 = channelsKt__DeprecatedKt$indexOf$1.L$0;
+                        int i5 = channelsKt__DeprecatedKt$indexOf$1.I$2;
+                        int i6 = channelsKt__DeprecatedKt$indexOf$1.I$1;
+                        int i7 = channelsKt__DeprecatedKt$indexOf$1.I$0;
+                        ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$indexOf$1.L$6;
+                        ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$indexOf$1.L$5;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$indexOf$1.L$4;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$indexOf$1.L$3;
+                        Ref.IntRef intRef2 = (Ref.IntRef) channelsKt__DeprecatedKt$indexOf$1.L$2;
+                        Object obj4 = channelsKt__DeprecatedKt$indexOf$1.L$1;
+                        ReceiveChannel receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$indexOf$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj3);
+                            i2 = i5;
+                            receiveChannel = receiveChannel8;
+                            Ref.IntRef intRef3 = intRef2;
+                            Throwable th4 = null;
+                            i3 = i6;
+                            receiveChannel4 = receiveChannel7;
+                            int i8 = i7;
+                            obj2 = obj4;
+                            ChannelIterator channelIterator2 = channelIterator;
+                            channelsKt__DeprecatedKt$indexOf$12 = channelsKt__DeprecatedKt$indexOf$1;
+                            receiveChannel3 = receiveChannel5;
                             if (((Boolean) obj3).booleanValue()) {
-                                if (Intrinsics.areEqual(obj4, it.next())) {
-                                    Integer boxInt = Boxing.boxInt(intRef.element);
-                                    ChannelsKt.cancelConsumed(receiveChannel2, null);
+                                if (Intrinsics.areEqual(obj2, channelIterator2.next())) {
+                                    Integer boxInt = Boxing.boxInt(intRef3.element);
+                                    ChannelsKt.cancelConsumed(receiveChannel6, th4);
                                     return boxInt;
                                 }
-                                intRef.element++;
-                                obj2 = obj4;
-                                channelsKt__DeprecatedKt$indexOf$1.L$0 = obj2;
-                                channelsKt__DeprecatedKt$indexOf$1.L$1 = intRef;
-                                channelsKt__DeprecatedKt$indexOf$1.L$2 = receiveChannel2;
-                                channelsKt__DeprecatedKt$indexOf$1.L$3 = it;
-                                channelsKt__DeprecatedKt$indexOf$1.label = 1;
-                                hasNext = it.hasNext(channelsKt__DeprecatedKt$indexOf$1);
-                                if (hasNext != coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
-                                obj4 = obj2;
-                                obj3 = hasNext;
-                                if (((Boolean) obj3).booleanValue()) {
+                                intRef3.element++;
+                                receiveChannel2 = receiveChannel6;
+                                i4 = i8;
+                                th2 = th4;
+                                it = channelIterator2;
+                                intRef = intRef3;
+                                try {
+                                    channelsKt__DeprecatedKt$indexOf$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                    channelsKt__DeprecatedKt$indexOf$12.L$1 = obj2;
+                                    channelsKt__DeprecatedKt$indexOf$12.L$2 = intRef;
+                                    channelsKt__DeprecatedKt$indexOf$12.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                    channelsKt__DeprecatedKt$indexOf$12.L$4 = receiveChannel2;
+                                    channelsKt__DeprecatedKt$indexOf$12.L$5 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                    channelsKt__DeprecatedKt$indexOf$12.L$6 = it;
+                                    channelsKt__DeprecatedKt$indexOf$12.I$0 = i4;
+                                    channelsKt__DeprecatedKt$indexOf$12.I$1 = i3;
+                                    channelsKt__DeprecatedKt$indexOf$12.I$2 = i2;
+                                    channelsKt__DeprecatedKt$indexOf$12.label = 1;
+                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$indexOf$12);
+                                    if (hasNext != coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    int i9 = i4;
+                                    receiveChannel6 = receiveChannel2;
+                                    obj3 = hasNext;
+                                    intRef3 = intRef;
+                                    channelIterator2 = it;
+                                    th4 = th2;
+                                    i8 = i9;
+                                    if (((Boolean) obj3).booleanValue()) {
+                                    }
+                                } catch (Throwable th5) {
+                                    th = th5;
                                 }
                             } else {
                                 Unit unit = Unit.INSTANCE;
-                                ChannelsKt.cancelConsumed(receiveChannel2, null);
+                                ChannelsKt.cancelConsumed(receiveChannel6, th4);
                                 return Boxing.boxInt(-1);
                             }
-                        } catch (Throwable th3) {
-                            th = th3;
+                        } catch (Throwable th6) {
+                            th = th6;
+                            receiveChannel2 = receiveChannel6;
                         }
                     }
                     throw th;
                 }
             }
             throw th;
-        } catch (Throwable th4) {
+        } catch (Throwable th7) {
             ChannelsKt.cancelConsumed(receiveChannel2, th);
-            throw th4;
+            throw th7;
         }
         channelsKt__DeprecatedKt$indexOf$1 = new ChannelsKt__DeprecatedKt$indexOf$1(continuation);
         Object obj32 = channelsKt__DeprecatedKt$indexOf$1.result;
@@ -651,14 +838,14 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x009e A[Catch: all -> 0x0050, TRY_ENTER, TryCatch #0 {all -> 0x0050, blocks: (B:78:0x004c, B:87:0x006a, B:89:0x0072, B:101:0x009e, B:102:0x00a5), top: B:109:0x004c }] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0072 A[Catch: all -> 0x0050, TRY_LEAVE, TryCatch #0 {all -> 0x0050, blocks: (B:78:0x004c, B:87:0x006a, B:89:0x0072, B:101:0x009e, B:102:0x00a5), top: B:109:0x004c }] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0094 A[Catch: all -> 0x0038, TRY_LEAVE, TryCatch #2 {all -> 0x0038, blocks: (B:71:0x0034, B:95:0x008c, B:97:0x0094), top: B:112:0x0034 }] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x009a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:94:0x0088 -> B:95:0x008c). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00eb A[Catch: all -> 0x0075, TRY_ENTER, TryCatch #1 {all -> 0x0075, blocks: (B:80:0x006c, B:89:0x00a2, B:91:0x00aa, B:103:0x00eb, B:104:0x00f2), top: B:113:0x006c }] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x00aa A[Catch: all -> 0x0075, TRY_LEAVE, TryCatch #1 {all -> 0x0075, blocks: (B:80:0x006c, B:89:0x00a2, B:91:0x00aa, B:103:0x00eb, B:104:0x00f2), top: B:113:0x006c }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x00de A[Catch: all -> 0x00f3, TRY_LEAVE, TryCatch #0 {all -> 0x00f3, blocks: (B:97:0x00d6, B:99:0x00de, B:93:0x00b2, B:85:0x007b), top: B:111:0x007b }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:96:0x00d1 -> B:74:0x0046). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -667,10 +854,16 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         ChannelsKt__DeprecatedKt$last$1 channelsKt__DeprecatedKt$last$1;
         Object obj;
         int i;
+        int i2;
         ReceiveChannel receiveChannel2;
+        ReceiveChannel receiveChannel3;
         ChannelIterator channelIterator;
+        int i3;
         Object next;
+        ReceiveChannel receiveChannel4;
+        ReceiveChannel receiveChannel5;
         ChannelIterator channelIterator2;
+        Throwable th;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$last$1) {
             channelsKt__DeprecatedKt$last$1 = (ChannelsKt__DeprecatedKt$last$1) continuation;
@@ -679,82 +872,125 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 obj = channelsKt__DeprecatedKt$last$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = channelsKt__DeprecatedKt$last$1.label;
+                Throwable th2 = null;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$last$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$last$1.L$1 = it;
+                        channelsKt__DeprecatedKt$last$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$last$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$last$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$last$1.L$3 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$last$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$last$1.I$1 = 0;
                         channelsKt__DeprecatedKt$last$1.label = 1;
                         Object hasNext2 = it.hasNext(channelsKt__DeprecatedKt$last$1);
                         if (hasNext2 != coroutine_suspended) {
                             receiveChannel2 = receiveChannel;
+                            receiveChannel3 = receiveChannel2;
                             channelIterator = it;
                             obj = hasNext2;
+                            i3 = 0;
                         }
                         return coroutine_suspended;
-                    } catch (Throwable th) {
-                        receiveChannel2 = receiveChannel;
-                        th = th;
-                        throw th;
-                    }
-                } else if (i == 1) {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$last$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        throw th;
-                    }
-                } else if (i != 2) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    Object obj2 = channelsKt__DeprecatedKt$last$1.L$2;
-                    channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$last$1.L$1;
-                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        if (!((Boolean) obj).booleanValue()) {
-                            next = channelIterator2.next();
-                            receiveChannel = receiveChannel3;
-                            channelsKt__DeprecatedKt$last$1.L$0 = receiveChannel;
-                            channelsKt__DeprecatedKt$last$1.L$1 = channelIterator2;
-                            channelsKt__DeprecatedKt$last$1.L$2 = next;
-                            channelsKt__DeprecatedKt$last$1.label = 2;
-                            hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$last$1);
-                            if (hasNext != coroutine_suspended) {
-                                receiveChannel3 = receiveChannel;
-                                obj2 = next;
-                                obj = hasNext;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    ChannelsKt.cancelConsumed(receiveChannel3, null);
-                                    return obj2;
-                                }
-                            }
-                            return coroutine_suspended;
-                        }
                     } catch (Throwable th3) {
+                        receiveChannel3 = receiveChannel;
                         th = th3;
-                        receiveChannel2 = receiveChannel3;
+                    }
+                } else {
+                    if (i == 1) {
+                        int i4 = channelsKt__DeprecatedKt$last$1.I$1;
+                        int i5 = channelsKt__DeprecatedKt$last$1.I$0;
+                        ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$last$1.L$3;
+                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$2;
+                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$1;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$0;
                         try {
-                            throw th;
+                            ResultKt.throwOnFailure(obj);
+                            i2 = i4;
+                            receiveChannel = receiveChannel6;
+                            channelIterator = channelIterator3;
+                            i3 = i5;
                         } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            th = th4;
                         }
+                    } else if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i6 = channelsKt__DeprecatedKt$last$1.I$1;
+                        int i7 = channelsKt__DeprecatedKt$last$1.I$0;
+                        Object obj2 = channelsKt__DeprecatedKt$last$1.L$4;
+                        channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$last$1.L$3;
+                        receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$2;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$1;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$last$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                            int i8 = i7;
+                            i2 = i6;
+                            receiveChannel = receiveChannel7;
+                            ReceiveChannel receiveChannel8 = receiveChannel5;
+                            ChannelIterator channelIterator4 = channelIterator2;
+                            Throwable th5 = th2;
+                            int i9 = i8;
+                            if (!((Boolean) obj).booleanValue()) {
+                                next = channelIterator4.next();
+                                i3 = i9;
+                                th2 = th5;
+                                channelIterator2 = channelIterator4;
+                                receiveChannel5 = receiveChannel8;
+                                channelsKt__DeprecatedKt$last$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$last$1.L$1 = receiveChannel;
+                                channelsKt__DeprecatedKt$last$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                channelsKt__DeprecatedKt$last$1.L$3 = channelIterator2;
+                                channelsKt__DeprecatedKt$last$1.L$4 = next;
+                                channelsKt__DeprecatedKt$last$1.I$0 = i3;
+                                channelsKt__DeprecatedKt$last$1.I$1 = i2;
+                                channelsKt__DeprecatedKt$last$1.label = 2;
+                                hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$last$1);
+                                if (hasNext != coroutine_suspended) {
+                                    i8 = i3;
+                                    obj2 = next;
+                                    obj = hasNext;
+                                    ReceiveChannel receiveChannel82 = receiveChannel5;
+                                    ChannelIterator channelIterator42 = channelIterator2;
+                                    Throwable th52 = th2;
+                                    int i92 = i8;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        ChannelsKt.cancelConsumed(receiveChannel, th52);
+                                        return obj2;
+                                    }
+                                }
+                                return coroutine_suspended;
+                            }
+                        } catch (Throwable th6) {
+                            th = th6;
+                            receiveChannel3 = receiveChannel7;
+                        }
+                    }
+                    try {
+                        throw th;
+                    } catch (Throwable th7) {
+                        ChannelsKt.cancelConsumed(receiveChannel3, th);
+                        throw th7;
                     }
                 }
                 if (((Boolean) obj).booleanValue()) {
                     throw new NoSuchElementException("ReceiveChannel is empty.");
                 }
                 next = channelIterator.next();
-                ReceiveChannel receiveChannel4 = receiveChannel2;
+                receiveChannel4 = receiveChannel;
+                receiveChannel = receiveChannel3;
+                receiveChannel5 = receiveChannel2;
                 channelIterator2 = channelIterator;
-                receiveChannel = receiveChannel4;
-                channelsKt__DeprecatedKt$last$1.L$0 = receiveChannel;
-                channelsKt__DeprecatedKt$last$1.L$1 = channelIterator2;
-                channelsKt__DeprecatedKt$last$1.L$2 = next;
+                channelsKt__DeprecatedKt$last$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                channelsKt__DeprecatedKt$last$1.L$1 = receiveChannel;
+                channelsKt__DeprecatedKt$last$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                channelsKt__DeprecatedKt$last$1.L$3 = channelIterator2;
+                channelsKt__DeprecatedKt$last$1.L$4 = next;
+                channelsKt__DeprecatedKt$last$1.I$0 = i3;
+                channelsKt__DeprecatedKt$last$1.I$1 = i2;
                 channelsKt__DeprecatedKt$last$1.label = 2;
                 hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$last$1);
                 if (hasNext != coroutine_suspended) {
@@ -766,19 +1002,20 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         obj = channelsKt__DeprecatedKt$last$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$last$1.label;
+        Throwable th22 = null;
         if (i != 0) {
         }
         if (((Boolean) obj).booleanValue()) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0048  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0073 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x007f A[Catch: all -> 0x003d, TryCatch #2 {all -> 0x003d, blocks: (B:58:0x0039, B:71:0x0077, B:73:0x007f, B:75:0x0089, B:76:0x008d, B:67:0x0061, B:77:0x0094), top: B:90:0x0039 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0094 A[Catch: all -> 0x003d, TRY_LEAVE, TryCatch #2 {all -> 0x003d, blocks: (B:58:0x0039, B:71:0x0077, B:73:0x007f, B:75:0x0089, B:76:0x008d, B:67:0x0061, B:77:0x0094), top: B:90:0x0039 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:70:0x0074 -> B:71:0x0077). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0027  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00c2 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00d0 A[Catch: all -> 0x00f1, TryCatch #0 {all -> 0x00f1, blocks: (B:76:0x00c8, B:78:0x00d0, B:80:0x00da, B:81:0x00de, B:72:0x0098, B:82:0x00e5), top: B:94:0x00c8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00e5 A[Catch: all -> 0x00f1, TRY_LEAVE, TryCatch #0 {all -> 0x00f1, blocks: (B:76:0x00c8, B:78:0x00d0, B:80:0x00da, B:81:0x00de, B:72:0x0098, B:82:0x00e5), top: B:94:0x00c8 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:75:0x00c3 -> B:94:0x00c8). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -786,12 +1023,20 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     public static final /* synthetic */ Object lastIndexOf(ReceiveChannel receiveChannel, Object obj, Continuation continuation) {
         ChannelsKt__DeprecatedKt$lastIndexOf$1 channelsKt__DeprecatedKt$lastIndexOf$1;
         int i;
-        Ref.IntRef intRef;
         ReceiveChannel receiveChannel2;
+        Ref.IntRef intRef;
+        Ref.IntRef intRef2;
         Throwable th;
         ChannelIterator it;
-        Ref.IntRef intRef2;
+        int i2;
+        int i3;
+        int i4;
+        ReceiveChannel receiveChannel3;
+        ReceiveChannel receiveChannel4;
         Object obj2;
+        ChannelsKt__DeprecatedKt$lastIndexOf$1 channelsKt__DeprecatedKt$lastIndexOf$12;
+        ReceiveChannel receiveChannel5;
+        Throwable th2;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$lastIndexOf$1) {
             channelsKt__DeprecatedKt$lastIndexOf$1 = (ChannelsKt__DeprecatedKt$lastIndexOf$1) continuation;
@@ -804,69 +1049,115 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     ResultKt.throwOnFailure(obj3);
                     Ref.IntRef intRef3 = new Ref.IntRef();
                     intRef3.element = -1;
-                    intRef = new Ref.IntRef();
                     try {
-                        receiveChannel2 = receiveChannel;
+                        intRef = intRef3;
+                        intRef2 = new Ref.IntRef();
+                        th = null;
                         it = receiveChannel.iterator();
-                        intRef2 = intRef3;
+                        i2 = 0;
+                        i3 = 0;
+                        i4 = 0;
+                        receiveChannel3 = receiveChannel;
+                        receiveChannel2 = receiveChannel3;
+                        receiveChannel4 = receiveChannel2;
                         obj2 = obj;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.L$0 = obj2;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.L$1 = intRef2;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.L$2 = intRef;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.L$3 = receiveChannel2;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.L$4 = it;
-                        channelsKt__DeprecatedKt$lastIndexOf$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$lastIndexOf$1);
+                        channelsKt__DeprecatedKt$lastIndexOf$12 = channelsKt__DeprecatedKt$lastIndexOf$1;
+                        receiveChannel5 = receiveChannel4;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$1 = obj2;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$2 = intRef;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$3 = intRef2;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$5 = receiveChannel2;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$6 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                        channelsKt__DeprecatedKt$lastIndexOf$12.L$7 = it;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.I$0 = i4;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.I$1 = i3;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.I$2 = i2;
+                        channelsKt__DeprecatedKt$lastIndexOf$12.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$lastIndexOf$12);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } catch (Throwable th2) {
+                    } catch (Throwable th3) {
+                        th = th3;
                         receiveChannel2 = receiveChannel;
-                        th = th2;
-                        throw th;
+                        th2 = th;
+                        throw th2;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    it = (ChannelIterator) channelsKt__DeprecatedKt$lastIndexOf$1.L$4;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$lastIndexOf$1.L$3;
-                    intRef = (Ref.IntRef) channelsKt__DeprecatedKt$lastIndexOf$1.L$2;
-                    intRef2 = (Ref.IntRef) channelsKt__DeprecatedKt$lastIndexOf$1.L$1;
-                    Object obj4 = channelsKt__DeprecatedKt$lastIndexOf$1.L$0;
+                    int i5 = channelsKt__DeprecatedKt$lastIndexOf$1.I$2;
+                    int i6 = channelsKt__DeprecatedKt$lastIndexOf$1.I$1;
+                    int i7 = channelsKt__DeprecatedKt$lastIndexOf$1.I$0;
+                    ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$lastIndexOf$1.L$7;
+                    ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$lastIndexOf$1.L$6;
+                    ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$lastIndexOf$1.L$5;
+                    ReceiveChannel receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$lastIndexOf$1.L$4;
+                    Ref.IntRef intRef4 = (Ref.IntRef) channelsKt__DeprecatedKt$lastIndexOf$1.L$3;
+                    Ref.IntRef intRef5 = (Ref.IntRef) channelsKt__DeprecatedKt$lastIndexOf$1.L$2;
+                    Object obj4 = channelsKt__DeprecatedKt$lastIndexOf$1.L$1;
+                    ReceiveChannel receiveChannel9 = (ReceiveChannel) channelsKt__DeprecatedKt$lastIndexOf$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj3);
-                        if (((Boolean) obj3).booleanValue()) {
-                            if (Intrinsics.areEqual(obj4, it.next())) {
-                                intRef2.element = intRef.element;
-                            }
-                            intRef.element++;
-                            obj2 = obj4;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.L$0 = obj2;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.L$1 = intRef2;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.L$2 = intRef;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.L$3 = receiveChannel2;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.L$4 = it;
-                            channelsKt__DeprecatedKt$lastIndexOf$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$lastIndexOf$1);
-                            if (hasNext != coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            obj4 = obj2;
-                            obj3 = hasNext;
-                            if (((Boolean) obj3).booleanValue()) {
-                            }
-                        } else {
-                            Unit unit = Unit.INSTANCE;
-                            ChannelsKt.cancelConsumed(receiveChannel2, null);
-                            return Boxing.boxInt(intRef2.element);
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
+                        channelsKt__DeprecatedKt$lastIndexOf$12 = channelsKt__DeprecatedKt$lastIndexOf$1;
+                        receiveChannel5 = receiveChannel8;
+                        i4 = i7;
+                        i2 = i5;
+                        receiveChannel2 = receiveChannel7;
+                        i3 = i6;
+                        obj2 = obj4;
+                        intRef = intRef5;
+                        intRef2 = intRef4;
+                        it = channelIterator;
+                        th = null;
+                        receiveChannel4 = receiveChannel6;
                         try {
-                            throw th;
+                            if (((Boolean) obj3).booleanValue()) {
+                                if (Intrinsics.areEqual(obj2, it.next())) {
+                                    intRef.element = intRef2.element;
+                                }
+                                intRef2.element++;
+                                receiveChannel3 = receiveChannel9;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$1 = obj2;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$2 = intRef;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$3 = intRef2;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$5 = receiveChannel2;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$6 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$lastIndexOf$12.L$7 = it;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.I$0 = i4;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.I$1 = i3;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.I$2 = i2;
+                                channelsKt__DeprecatedKt$lastIndexOf$12.label = 1;
+                                hasNext = it.hasNext(channelsKt__DeprecatedKt$lastIndexOf$12);
+                                if (hasNext != coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                                receiveChannel9 = receiveChannel3;
+                                obj3 = hasNext;
+                                if (((Boolean) obj3).booleanValue()) {
+                                }
+                            } else {
+                                Unit unit = Unit.INSTANCE;
+                                ChannelsKt.cancelConsumed(receiveChannel2, th);
+                                return Boxing.boxInt(intRef.element);
+                            }
                         } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            th = th4;
+                            th2 = th;
+                            try {
+                                throw th2;
+                            } catch (Throwable th5) {
+                                ChannelsKt.cancelConsumed(receiveChannel2, th2);
+                                throw th5;
+                            }
                         }
+                    } catch (Throwable th6) {
+                        th2 = th6;
+                        receiveChannel2 = receiveChannel7;
+                        throw th2;
                     }
                 }
             }
@@ -879,14 +1170,14 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0098 A[Catch: all -> 0x0038, TRY_LEAVE, TryCatch #3 {all -> 0x0038, blocks: (B:72:0x0034, B:98:0x0090, B:100:0x0098), top: B:116:0x0034 }] */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00e2 A[Catch: all -> 0x00ef, TRY_LEAVE, TryCatch #3 {all -> 0x00ef, blocks: (B:98:0x00da, B:100:0x00e2, B:94:0x00b6, B:89:0x00a2, B:93:0x00ae, B:85:0x007b), top: B:116:0x007b }] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x00eb  */
     /* JADX WARN: Removed duplicated region for block: B:69:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0076 A[Catch: all -> 0x0050, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0050, blocks: (B:79:0x004c, B:88:0x006a, B:92:0x0076), top: B:110:0x004c }] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x008c  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:97:0x008c -> B:98:0x0090). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x00ae A[Catch: all -> 0x00ef, TRY_ENTER, TryCatch #3 {all -> 0x00ef, blocks: (B:98:0x00da, B:100:0x00e2, B:94:0x00b6, B:89:0x00a2, B:93:0x00ae, B:85:0x007b), top: B:116:0x007b }] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x00d5  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:97:0x00d5 -> B:74:0x0046). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -895,10 +1186,17 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         ChannelsKt__DeprecatedKt$lastOrNull$1 channelsKt__DeprecatedKt$lastOrNull$1;
         Object obj;
         int i;
+        int i2;
         ReceiveChannel receiveChannel2;
+        ReceiveChannel receiveChannel3;
         ChannelIterator channelIterator;
+        int i3;
         Object next;
+        ReceiveChannel receiveChannel4;
         ChannelIterator channelIterator2;
+        ReceiveChannel receiveChannel5;
+        Throwable th;
+        ReceiveChannel receiveChannel6;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$lastOrNull$1) {
             channelsKt__DeprecatedKt$lastOrNull$1 = (ChannelsKt__DeprecatedKt$lastOrNull$1) continuation;
@@ -907,87 +1205,130 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 obj = channelsKt__DeprecatedKt$lastOrNull$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = channelsKt__DeprecatedKt$lastOrNull$1.label;
+                Throwable th2 = null;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$lastOrNull$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$lastOrNull$1.L$1 = it;
+                        channelsKt__DeprecatedKt$lastOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$lastOrNull$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$lastOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$lastOrNull$1.L$3 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$lastOrNull$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$lastOrNull$1.I$1 = 0;
                         channelsKt__DeprecatedKt$lastOrNull$1.label = 1;
                         Object hasNext2 = it.hasNext(channelsKt__DeprecatedKt$lastOrNull$1);
-                        if (hasNext2 != coroutine_suspended) {
-                            receiveChannel2 = receiveChannel;
-                            channelIterator = it;
-                            obj = hasNext2;
-                        }
-                        return coroutine_suspended;
-                    } catch (Throwable th) {
-                        receiveChannel2 = receiveChannel;
-                        th = th;
-                        throw th;
-                    }
-                } else if (i == 1) {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$lastOrNull$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        throw th;
-                    }
-                } else if (i != 2) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    Object obj2 = channelsKt__DeprecatedKt$lastOrNull$1.L$2;
-                    channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$lastOrNull$1.L$1;
-                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        if (!((Boolean) obj).booleanValue()) {
-                            next = channelIterator2.next();
-                            receiveChannel = receiveChannel3;
-                            channelsKt__DeprecatedKt$lastOrNull$1.L$0 = receiveChannel;
-                            channelsKt__DeprecatedKt$lastOrNull$1.L$1 = channelIterator2;
-                            channelsKt__DeprecatedKt$lastOrNull$1.L$2 = next;
-                            channelsKt__DeprecatedKt$lastOrNull$1.label = 2;
-                            hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$lastOrNull$1);
-                            if (hasNext != coroutine_suspended) {
-                                receiveChannel3 = receiveChannel;
-                                obj2 = next;
-                                obj = hasNext;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    ChannelsKt.cancelConsumed(receiveChannel3, null);
-                                    return obj2;
-                                }
-                            }
+                        if (hasNext2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        receiveChannel2 = receiveChannel;
+                        receiveChannel3 = receiveChannel2;
+                        channelIterator = it;
+                        obj = hasNext2;
+                        i3 = 0;
                     } catch (Throwable th3) {
+                        receiveChannel6 = receiveChannel;
                         th = th3;
-                        receiveChannel2 = receiveChannel3;
+                    }
+                } else {
+                    if (i == 1) {
+                        int i4 = channelsKt__DeprecatedKt$lastOrNull$1.I$1;
+                        int i5 = channelsKt__DeprecatedKt$lastOrNull$1.I$0;
+                        ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$lastOrNull$1.L$3;
+                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$2;
+                        receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$1;
+                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$0;
                         try {
-                            throw th;
+                            ResultKt.throwOnFailure(obj);
+                            i2 = i4;
+                            receiveChannel = receiveChannel6;
+                            channelIterator = channelIterator3;
+                            i3 = i5;
                         } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            th = th4;
                         }
+                    } else if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i6 = channelsKt__DeprecatedKt$lastOrNull$1.I$1;
+                        int i7 = channelsKt__DeprecatedKt$lastOrNull$1.I$0;
+                        Object obj2 = channelsKt__DeprecatedKt$lastOrNull$1.L$4;
+                        channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$lastOrNull$1.L$3;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$2;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$1;
+                        receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$lastOrNull$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                            int i8 = i7;
+                            i2 = i6;
+                            receiveChannel = receiveChannel7;
+                            ReceiveChannel receiveChannel8 = receiveChannel4;
+                            ChannelIterator channelIterator4 = channelIterator2;
+                            Throwable th5 = th2;
+                            int i9 = i8;
+                            if (!((Boolean) obj).booleanValue()) {
+                                next = channelIterator4.next();
+                                i3 = i9;
+                                th2 = th5;
+                                channelIterator2 = channelIterator4;
+                                receiveChannel4 = receiveChannel8;
+                                channelsKt__DeprecatedKt$lastOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                channelsKt__DeprecatedKt$lastOrNull$1.L$1 = receiveChannel;
+                                channelsKt__DeprecatedKt$lastOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$lastOrNull$1.L$3 = channelIterator2;
+                                channelsKt__DeprecatedKt$lastOrNull$1.L$4 = next;
+                                channelsKt__DeprecatedKt$lastOrNull$1.I$0 = i3;
+                                channelsKt__DeprecatedKt$lastOrNull$1.I$1 = i2;
+                                channelsKt__DeprecatedKt$lastOrNull$1.label = 2;
+                                hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$lastOrNull$1);
+                                if (hasNext != coroutine_suspended) {
+                                    i8 = i3;
+                                    obj2 = next;
+                                    obj = hasNext;
+                                    ReceiveChannel receiveChannel82 = receiveChannel4;
+                                    ChannelIterator channelIterator42 = channelIterator2;
+                                    Throwable th52 = th2;
+                                    int i92 = i8;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        ChannelsKt.cancelConsumed(receiveChannel, th52);
+                                        return obj2;
+                                    }
+                                }
+                                return coroutine_suspended;
+                            }
+                        } catch (Throwable th6) {
+                            th = th6;
+                            receiveChannel6 = receiveChannel7;
+                        }
+                    }
+                    try {
+                        throw th;
+                    } catch (Throwable th7) {
+                        ChannelsKt.cancelConsumed(receiveChannel6, th);
+                        throw th7;
                     }
                 }
                 if (!((Boolean) obj).booleanValue()) {
                     next = channelIterator.next();
-                    ReceiveChannel receiveChannel4 = receiveChannel2;
-                    channelIterator2 = channelIterator;
-                    receiveChannel = receiveChannel4;
-                    channelsKt__DeprecatedKt$lastOrNull$1.L$0 = receiveChannel;
-                    channelsKt__DeprecatedKt$lastOrNull$1.L$1 = channelIterator2;
-                    channelsKt__DeprecatedKt$lastOrNull$1.L$2 = next;
+                    ChannelIterator channelIterator5 = channelIterator;
+                    receiveChannel4 = receiveChannel2;
+                    channelIterator2 = channelIterator5;
+                    receiveChannel5 = receiveChannel3;
+                    channelsKt__DeprecatedKt$lastOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                    channelsKt__DeprecatedKt$lastOrNull$1.L$1 = receiveChannel;
+                    channelsKt__DeprecatedKt$lastOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                    channelsKt__DeprecatedKt$lastOrNull$1.L$3 = channelIterator2;
+                    channelsKt__DeprecatedKt$lastOrNull$1.L$4 = next;
+                    channelsKt__DeprecatedKt$lastOrNull$1.I$0 = i3;
+                    channelsKt__DeprecatedKt$lastOrNull$1.I$1 = i2;
                     channelsKt__DeprecatedKt$lastOrNull$1.label = 2;
                     hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$lastOrNull$1);
                     if (hasNext != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 }
-                ChannelsKt.cancelConsumed(receiveChannel2, null);
+                ChannelsKt.cancelConsumed(receiveChannel, null);
                 return null;
             }
         }
@@ -995,6 +1336,7 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         obj = channelsKt__DeprecatedKt$lastOrNull$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$lastOrNull$1.label;
+        Throwable th22 = null;
         if (i != 0) {
         }
         if (!((Boolean) obj).booleanValue()) {
@@ -1002,11 +1344,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:66:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x004d  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x006d A[Catch: all -> 0x004b, TRY_LEAVE, TryCatch #2 {all -> 0x004b, blocks: (B:76:0x0047, B:85:0x0065, B:87:0x006d, B:97:0x0097, B:98:0x009e), top: B:109:0x0047 }] */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x008f A[Catch: all -> 0x0033, TRY_ENTER, TryCatch #1 {all -> 0x0033, blocks: (B:69:0x002f, B:91:0x0082, B:95:0x008f, B:96:0x0096), top: B:107:0x002f }] */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0097 A[Catch: all -> 0x004b, TRY_ENTER, TryCatch #2 {all -> 0x004b, blocks: (B:76:0x0047, B:85:0x0065, B:87:0x006d, B:97:0x0097, B:98:0x009e), top: B:109:0x0047 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00a2 A[Catch: all -> 0x006d, TRY_LEAVE, TryCatch #2 {all -> 0x006d, blocks: (B:76:0x0064, B:85:0x009a, B:87:0x00a2, B:97:0x00e2, B:98:0x00e9), top: B:109:0x0064 }] */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x00da A[Catch: all -> 0x0044, TRY_ENTER, TryCatch #0 {all -> 0x0044, blocks: (B:69:0x003f, B:91:0x00cd, B:95:0x00da, B:96:0x00e1), top: B:105:0x003f }] */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x00e2 A[Catch: all -> 0x006d, TRY_ENTER, TryCatch #2 {all -> 0x006d, blocks: (B:76:0x0064, B:85:0x009a, B:87:0x00a2, B:97:0x00e2, B:98:0x00e9), top: B:109:0x0064 }] */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1017,9 +1359,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel receiveChannel2;
         Throwable th;
-        ChannelIterator channelIterator;
-        Object obj2;
+        int i2;
         ReceiveChannel receiveChannel3;
+        ChannelIterator channelIterator;
+        int i3;
+        Object obj2;
+        ReceiveChannel receiveChannel4;
         if (continuation instanceof ChannelsKt__DeprecatedKt$single$1) {
             channelsKt__DeprecatedKt$single$1 = (ChannelsKt__DeprecatedKt$single$1) continuation;
             if ((channelsKt__DeprecatedKt$single$1.label & Integer.MIN_VALUE) != 0) {
@@ -1031,14 +1376,21 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$single$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$single$1.L$1 = it;
+                        channelsKt__DeprecatedKt$single$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$single$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$single$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$single$1.L$3 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$single$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$single$1.I$1 = 0;
                         channelsKt__DeprecatedKt$single$1.label = 1;
                         Object hasNext = it.hasNext(channelsKt__DeprecatedKt$single$1);
                         if (hasNext != coroutine_suspended) {
-                            receiveChannel2 = receiveChannel;
+                            receiveChannel3 = receiveChannel;
+                            receiveChannel2 = receiveChannel3;
                             channelIterator = it;
                             obj = hasNext;
+                            i3 = 0;
                         }
                         return coroutine_suspended;
                     } catch (Throwable th2) {
@@ -1048,18 +1400,23 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     }
                 } else if (i != 1) {
                     if (i == 2) {
-                        obj2 = channelsKt__DeprecatedKt$single$1.L$1;
-                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$0;
+                        int i4 = channelsKt__DeprecatedKt$single$1.I$1;
+                        int i5 = channelsKt__DeprecatedKt$single$1.I$0;
+                        obj2 = channelsKt__DeprecatedKt$single$1.L$4;
+                        ChannelIterator channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$single$1.L$3;
+                        ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$2;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$1;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
                             if (!((Boolean) obj).booleanValue()) {
                                 throw new IllegalArgumentException("ReceiveChannel has more than one element.");
                             }
-                            ChannelsKt.cancelConsumed(receiveChannel3, null);
+                            ChannelsKt.cancelConsumed(receiveChannel4, null);
                             return obj2;
                         } catch (Throwable th3) {
                             th = th3;
-                            receiveChannel2 = receiveChannel3;
+                            receiveChannel2 = receiveChannel4;
                             try {
                                 throw th;
                             } catch (Throwable th4) {
@@ -1070,10 +1427,18 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$single$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$0;
+                    int i6 = channelsKt__DeprecatedKt$single$1.I$1;
+                    int i7 = channelsKt__DeprecatedKt$single$1.I$0;
+                    ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$single$1.L$3;
+                    receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$2;
+                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$1;
+                    ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$single$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
+                        i2 = i6;
+                        receiveChannel = receiveChannel7;
+                        channelIterator = channelIterator3;
+                        i3 = i7;
                     } catch (Throwable th5) {
                         th = th5;
                         throw th;
@@ -1083,14 +1448,19 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     throw new NoSuchElementException("ReceiveChannel is empty.");
                 }
                 Object next = channelIterator.next();
-                channelsKt__DeprecatedKt$single$1.L$0 = receiveChannel2;
-                channelsKt__DeprecatedKt$single$1.L$1 = next;
+                channelsKt__DeprecatedKt$single$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                channelsKt__DeprecatedKt$single$1.L$1 = receiveChannel2;
+                channelsKt__DeprecatedKt$single$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                channelsKt__DeprecatedKt$single$1.L$3 = SpillingKt.nullOutSpilledVariable(channelIterator);
+                channelsKt__DeprecatedKt$single$1.L$4 = next;
+                channelsKt__DeprecatedKt$single$1.I$0 = i3;
+                channelsKt__DeprecatedKt$single$1.I$1 = i2;
                 channelsKt__DeprecatedKt$single$1.label = 2;
                 Object hasNext2 = channelIterator.hasNext(channelsKt__DeprecatedKt$single$1);
                 if (hasNext2 != coroutine_suspended) {
                     obj = hasNext2;
                     obj2 = next;
-                    receiveChannel3 = receiveChannel2;
+                    receiveChannel4 = receiveChannel2;
                     if (!((Boolean) obj).booleanValue()) {
                     }
                 }
@@ -1108,11 +1478,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:67:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0072 A[Catch: all -> 0x004c, TRY_ENTER, TRY_LEAVE, TryCatch #3 {all -> 0x004c, blocks: (B:77:0x0048, B:86:0x0066, B:90:0x0072), top: B:112:0x0048 }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x00a7 A[Catch: all -> 0x00e1, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x00e1, blocks: (B:86:0x009b, B:90:0x00a7, B:82:0x0074), top: B:106:0x0074 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x00dd  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1121,11 +1491,14 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         ChannelsKt__DeprecatedKt$singleOrNull$1 channelsKt__DeprecatedKt$singleOrNull$1;
         Object obj;
         int i;
+        int i2;
         ReceiveChannel receiveChannel2;
-        Throwable th;
-        ChannelIterator channelIterator;
-        Object obj2;
         ReceiveChannel receiveChannel3;
+        ChannelIterator channelIterator;
+        int i3;
+        ReceiveChannel receiveChannel4;
+        Throwable th;
+        Object obj2;
         if (continuation instanceof ChannelsKt__DeprecatedKt$singleOrNull$1) {
             channelsKt__DeprecatedKt$singleOrNull$1 = (ChannelsKt__DeprecatedKt$singleOrNull$1) continuation;
             if ((channelsKt__DeprecatedKt$singleOrNull$1.label & Integer.MIN_VALUE) != 0) {
@@ -1137,71 +1510,96 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     ResultKt.throwOnFailure(obj);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$singleOrNull$1.L$0 = receiveChannel;
-                        channelsKt__DeprecatedKt$singleOrNull$1.L$1 = it;
+                        channelsKt__DeprecatedKt$singleOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$singleOrNull$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$singleOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$singleOrNull$1.L$3 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$singleOrNull$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$singleOrNull$1.I$1 = 0;
                         channelsKt__DeprecatedKt$singleOrNull$1.label = 1;
                         Object hasNext = it.hasNext(channelsKt__DeprecatedKt$singleOrNull$1);
-                        if (hasNext != coroutine_suspended) {
-                            receiveChannel2 = receiveChannel;
-                            channelIterator = it;
-                            obj = hasNext;
+                        if (hasNext == coroutine_suspended) {
+                            return coroutine_suspended;
                         }
-                        return coroutine_suspended;
-                    } catch (Throwable th2) {
                         receiveChannel2 = receiveChannel;
+                        receiveChannel3 = receiveChannel2;
+                        channelIterator = it;
+                        obj = hasNext;
+                        i3 = 0;
+                    } catch (Throwable th2) {
+                        receiveChannel4 = receiveChannel;
                         th = th2;
                         throw th;
                     }
                 } else if (i != 1) {
                     if (i == 2) {
-                        obj2 = channelsKt__DeprecatedKt$singleOrNull$1.L$1;
-                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$0;
+                        int i4 = channelsKt__DeprecatedKt$singleOrNull$1.I$1;
+                        int i5 = channelsKt__DeprecatedKt$singleOrNull$1.I$0;
+                        obj2 = channelsKt__DeprecatedKt$singleOrNull$1.L$4;
+                        ChannelIterator channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$singleOrNull$1.L$3;
+                        ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$2;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$1;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$0;
                         try {
                             ResultKt.throwOnFailure(obj);
                             if (((Boolean) obj).booleanValue()) {
-                                ChannelsKt.cancelConsumed(receiveChannel3, null);
+                                ChannelsKt.cancelConsumed(receiveChannel4, null);
                                 return obj2;
                             }
-                            ChannelsKt.cancelConsumed(receiveChannel3, null);
+                            ChannelsKt.cancelConsumed(receiveChannel4, null);
                             return null;
                         } catch (Throwable th3) {
                             th = th3;
-                            receiveChannel2 = receiveChannel3;
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                ChannelsKt.cancelConsumed(receiveChannel2, th);
+                                ChannelsKt.cancelConsumed(receiveChannel4, th);
                                 throw th4;
                             }
                         }
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$singleOrNull$1.L$1;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$0;
+                    int i6 = channelsKt__DeprecatedKt$singleOrNull$1.I$1;
+                    int i7 = channelsKt__DeprecatedKt$singleOrNull$1.I$0;
+                    ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$singleOrNull$1.L$3;
+                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$2;
+                    ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$1;
+                    receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$singleOrNull$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
+                        i2 = i6;
+                        receiveChannel = receiveChannel7;
+                        channelIterator = channelIterator3;
+                        i3 = i7;
                     } catch (Throwable th5) {
                         th = th5;
+                        receiveChannel4 = receiveChannel7;
                         throw th;
                     }
                 }
                 if (!((Boolean) obj).booleanValue()) {
                     Object next = channelIterator.next();
-                    channelsKt__DeprecatedKt$singleOrNull$1.L$0 = receiveChannel2;
-                    channelsKt__DeprecatedKt$singleOrNull$1.L$1 = next;
+                    channelsKt__DeprecatedKt$singleOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                    channelsKt__DeprecatedKt$singleOrNull$1.L$1 = receiveChannel;
+                    channelsKt__DeprecatedKt$singleOrNull$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel2);
+                    channelsKt__DeprecatedKt$singleOrNull$1.L$3 = SpillingKt.nullOutSpilledVariable(channelIterator);
+                    channelsKt__DeprecatedKt$singleOrNull$1.L$4 = next;
+                    channelsKt__DeprecatedKt$singleOrNull$1.I$0 = i3;
+                    channelsKt__DeprecatedKt$singleOrNull$1.I$1 = i2;
                     channelsKt__DeprecatedKt$singleOrNull$1.label = 2;
                     Object hasNext2 = channelIterator.hasNext(channelsKt__DeprecatedKt$singleOrNull$1);
                     if (hasNext2 != coroutine_suspended) {
-                        obj = hasNext2;
+                        receiveChannel4 = receiveChannel;
                         obj2 = next;
-                        receiveChannel3 = receiveChannel2;
+                        obj = hasNext2;
                         if (((Boolean) obj).booleanValue()) {
                         }
                     }
                     return coroutine_suspended;
                 }
-                ChannelsKt.cancelConsumed(receiveChannel2, null);
+                ChannelsKt.cancelConsumed(receiveChannel, null);
                 return null;
             }
         }
@@ -1289,13 +1687,13 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         return filter$default;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x005a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0066 A[Catch: all -> 0x0037, TryCatch #1 {all -> 0x0037, blocks: (B:58:0x0033, B:71:0x005e, B:73:0x0066, B:75:0x006c, B:67:0x004c, B:77:0x0071), top: B:88:0x0033 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0071 A[Catch: all -> 0x0037, TRY_LEAVE, TryCatch #1 {all -> 0x0037, blocks: (B:58:0x0033, B:71:0x005e, B:73:0x0066, B:75:0x006c, B:67:0x004c, B:77:0x0071), top: B:88:0x0033 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:70:0x005b -> B:71:0x005e). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0099 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x00a8 A[Catch: all -> 0x0056, TryCatch #1 {all -> 0x0056, blocks: (B:62:0x0045, B:75:0x00a0, B:77:0x00a8, B:79:0x00ae, B:81:0x00b6), top: B:94:0x0045 }] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00b6 A[Catch: all -> 0x0056, TRY_LEAVE, TryCatch #1 {all -> 0x0056, blocks: (B:62:0x0045, B:75:0x00a0, B:77:0x00a8, B:79:0x00ae, B:81:0x00b6), top: B:94:0x0045 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:74:0x009a -> B:75:0x00a0). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1305,8 +1703,15 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel receiveChannel2;
         Throwable th;
+        int i2;
         ChannelIterator it;
+        ChannelsKt__DeprecatedKt$filterNotNullTo$1 channelsKt__DeprecatedKt$filterNotNullTo$12;
+        int i3;
+        int i4;
+        Throwable th2;
+        ReceiveChannel receiveChannel3;
         Collection collection2;
+        ReceiveChannel receiveChannel4;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$filterNotNullTo$1) {
             channelsKt__DeprecatedKt$filterNotNullTo$1 = (ChannelsKt__DeprecatedKt$filterNotNullTo$1) continuation;
@@ -1318,59 +1723,107 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
-                        receiveChannel2 = receiveChannel;
+                        i2 = 0;
                         it = receiveChannel.iterator();
+                        channelsKt__DeprecatedKt$filterNotNullTo$12 = channelsKt__DeprecatedKt$filterNotNullTo$1;
+                        i3 = 0;
+                        i4 = 0;
+                        th2 = null;
+                        receiveChannel2 = receiveChannel;
+                        receiveChannel3 = receiveChannel2;
                         collection2 = collection;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$0 = collection2;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$1 = receiveChannel2;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$2 = it;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$1);
+                        receiveChannel4 = receiveChannel3;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$1 = collection2;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$3 = receiveChannel2;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.L$5 = it;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.I$0 = i4;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.I$1 = i3;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.I$2 = i2;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$12);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } catch (Throwable th2) {
+                    } catch (Throwable th3) {
                         receiveChannel2 = receiveChannel;
-                        th = th2;
+                        th = th3;
                         throw th;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    it = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$1.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$1.L$1;
-                    Collection collection3 = (Collection) channelsKt__DeprecatedKt$filterNotNullTo$1.L$0;
+                    int i5 = channelsKt__DeprecatedKt$filterNotNullTo$1.I$2;
+                    int i6 = channelsKt__DeprecatedKt$filterNotNullTo$1.I$1;
+                    int i7 = channelsKt__DeprecatedKt$filterNotNullTo$1.I$0;
+                    ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$1.L$5;
+                    ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$1.L$4;
+                    ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$1.L$3;
+                    ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$1.L$2;
+                    Collection collection3 = (Collection) channelsKt__DeprecatedKt$filterNotNullTo$1.L$1;
+                    ReceiveChannel receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
+                        i2 = i5;
+                        receiveChannel = receiveChannel8;
+                        ChannelIterator channelIterator2 = channelIterator;
+                        i3 = i6;
+                        receiveChannel4 = receiveChannel7;
+                        int i8 = i7;
+                        channelsKt__DeprecatedKt$filterNotNullTo$12 = channelsKt__DeprecatedKt$filterNotNullTo$1;
+                        receiveChannel3 = receiveChannel5;
+                        Throwable th4 = null;
+                        collection2 = collection3;
                         if (!((Boolean) obj).booleanValue()) {
                             Unit unit = Unit.INSTANCE;
-                            ChannelsKt.cancelConsumed(receiveChannel2, null);
-                            return collection3;
+                            ChannelsKt.cancelConsumed(receiveChannel6, th4);
+                            return collection2;
                         }
-                        Object next = it.next();
-                        if (next != null) {
-                            collection3.add(next);
-                        }
-                        collection2 = collection3;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$0 = collection2;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$1 = receiveChannel2;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.L$2 = it;
-                        channelsKt__DeprecatedKt$filterNotNullTo$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$1);
-                        if (hasNext != coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        collection3 = collection2;
-                        obj = hasNext;
-                        if (!((Boolean) obj).booleanValue()) {
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
                         try {
-                            throw th;
-                        } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            Object next = channelIterator2.next();
+                            if (next != null) {
+                                collection2.add(next);
+                            }
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$1 = collection2;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$3 = receiveChannel2;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.L$5 = it;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.I$0 = i4;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.I$1 = i3;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.I$2 = i2;
+                            channelsKt__DeprecatedKt$filterNotNullTo$12.label = 1;
+                            hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$12);
+                            if (hasNext != coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            int i9 = i4;
+                            receiveChannel6 = receiveChannel2;
+                            obj = hasNext;
+                            channelIterator2 = it;
+                            th4 = th2;
+                            i8 = i9;
+                            if (!((Boolean) obj).booleanValue()) {
+                            }
+                        } catch (Throwable th5) {
+                            th = th5;
+                            try {
+                                throw th;
+                            } catch (Throwable th6) {
+                                ChannelsKt.cancelConsumed(receiveChannel2, th);
+                                throw th6;
+                            }
                         }
+                        receiveChannel2 = receiveChannel6;
+                        i4 = i8;
+                        th2 = th4;
+                        it = channelIterator2;
+                    } catch (Throwable th7) {
+                        th = th7;
+                        receiveChannel2 = receiveChannel6;
+                        throw th;
                     }
                 }
             }
@@ -1383,23 +1836,14 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0089, code lost:
-        if (r2.send(r9, r0) == r1) goto L28;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x006a  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0077 A[Catch: all -> 0x0052, TryCatch #0 {all -> 0x0052, blocks: (B:64:0x0036, B:79:0x006f, B:81:0x0077, B:83:0x007d, B:87:0x0090, B:69:0x004e), top: B:96:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0090 A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #0 {all -> 0x0052, blocks: (B:64:0x0036, B:79:0x006f, B:81:0x0077, B:83:0x007d, B:87:0x0090, B:69:0x004e), top: B:96:0x0024 }] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [kotlinx.coroutines.channels.SendChannel] */
-    /* JADX WARN: Type inference failed for: r8v1 */
-    /* JADX WARN: Type inference failed for: r8v19 */
-    /* JADX WARN: Type inference failed for: r8v2, types: [kotlinx.coroutines.channels.ReceiveChannel] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [kotlinx.coroutines.channels.ReceiveChannel, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r8v7 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:82:0x007b -> B:86:0x008c). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:84:0x0089 -> B:86:0x008c). Please submit an issue!!! */
+    /* JADX WARN: Not initialized variable reg: 12, insn: 0x008a: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r12 I:??[OBJECT, ARRAY]), block:B:80:0x0089 */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0029 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x00e2 A[Catch: all -> 0x0149, TryCatch #2 {all -> 0x0149, blocks: (B:84:0x00a1, B:88:0x00da, B:90:0x00e2, B:92:0x00e8, B:99:0x0143), top: B:114:0x00a1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0143 A[Catch: all -> 0x0149, TRY_LEAVE, TryCatch #2 {all -> 0x0149, blocks: (B:84:0x00a1, B:88:0x00da, B:90:0x00e2, B:92:0x00e8, B:99:0x0143), top: B:114:0x00a1 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:98:0x0140 -> B:114:0x00a1). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1407,111 +1851,254 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     public static final /* synthetic */ Object filterNotNullTo(ReceiveChannel receiveChannel, SendChannel sendChannel, Continuation continuation) {
         ChannelsKt__DeprecatedKt$filterNotNullTo$3 channelsKt__DeprecatedKt$filterNotNullTo$3;
         int i;
-        ChannelIterator it;
+        Throwable th;
+        ReceiveChannel receiveChannel2;
+        ReceiveChannel receiveChannel3;
+        int i2;
+        int i3;
         ChannelIterator channelIterator;
+        ReceiveChannel receiveChannel4;
+        ReceiveChannel receiveChannel5;
         SendChannel sendChannel2;
+        int i4;
+        ReceiveChannel receiveChannel6;
+        Throwable th2;
+        Throwable th3;
+        int i5;
+        int i6;
+        ChannelsKt__DeprecatedKt$filterNotNullTo$3 channelsKt__DeprecatedKt$filterNotNullTo$32;
         SendChannel sendChannel3;
+        ReceiveChannel receiveChannel7;
+        ReceiveChannel receiveChannel8;
+        ReceiveChannel receiveChannel9;
         Object hasNext;
-        try {
-            if (continuation instanceof ChannelsKt__DeprecatedKt$filterNotNullTo$3) {
-                channelsKt__DeprecatedKt$filterNotNullTo$3 = (ChannelsKt__DeprecatedKt$filterNotNullTo$3) continuation;
-                if ((channelsKt__DeprecatedKt$filterNotNullTo$3.label & Integer.MIN_VALUE) != 0) {
-                    channelsKt__DeprecatedKt$filterNotNullTo$3.label -= Integer.MIN_VALUE;
-                    Object obj = channelsKt__DeprecatedKt$filterNotNullTo$3.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = channelsKt__DeprecatedKt$filterNotNullTo$3.label;
-                    if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        try {
-                            it = receiveChannel.iterator();
-                            sendChannel3 = sendChannel;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$0 = sendChannel3;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$2 = it;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$3);
-                            if (hasNext != coroutine_suspended) {
-                            }
-                            return coroutine_suspended;
-                        } catch (Throwable th) {
-                            sendChannel = receiveChannel;
-                            th = th;
-                            try {
-                                throw th;
-                            } catch (Throwable th2) {
-                                ChannelsKt.cancelConsumed(sendChannel, th);
-                                throw th2;
-                            }
+        if (continuation instanceof ChannelsKt__DeprecatedKt$filterNotNullTo$3) {
+            channelsKt__DeprecatedKt$filterNotNullTo$3 = (ChannelsKt__DeprecatedKt$filterNotNullTo$3) continuation;
+            if ((channelsKt__DeprecatedKt$filterNotNullTo$3.label & Integer.MIN_VALUE) != 0) {
+                channelsKt__DeprecatedKt$filterNotNullTo$3.label -= Integer.MIN_VALUE;
+                Object obj = channelsKt__DeprecatedKt$filterNotNullTo$3.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = channelsKt__DeprecatedKt$filterNotNullTo$3.label;
+                int i7 = 1;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    try {
+                        receiveChannel3 = receiveChannel;
+                        receiveChannel7 = receiveChannel3;
+                        sendChannel3 = sendChannel;
+                        channelIterator = receiveChannel.iterator();
+                        channelsKt__DeprecatedKt$filterNotNullTo$32 = channelsKt__DeprecatedKt$filterNotNullTo$3;
+                        i6 = 0;
+                        i5 = 0;
+                        i4 = 0;
+                        th2 = null;
+                        receiveChannel9 = receiveChannel7;
+                        receiveChannel8 = receiveChannel9;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$1 = sendChannel3;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$3 = receiveChannel3;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$5 = channelIterator;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$6 = null;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$7 = null;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$0 = i6;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$1 = i5;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$2 = i4;
+                        channelsKt__DeprecatedKt$filterNotNullTo$32.label = i7;
+                        hasNext = channelIterator.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$32);
+                        if (hasNext != coroutine_suspended) {
                         }
-                    } else if (i != 1) {
-                        if (i == 2) {
-                            channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$3.L$2;
-                            ReceiveChannel receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$1;
-                            sendChannel2 = (SendChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$0;
+                    } catch (Throwable th4) {
+                        th3 = th4;
+                        receiveChannel3 = receiveChannel;
+                        th = th3;
+                        throw th;
+                    }
+                } else {
+                    try {
+                        if (i == 1) {
+                            int i8 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$2;
+                            i2 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$1;
+                            i3 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$0;
+                            channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$3.L$5;
+                            receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$4;
+                            ReceiveChannel receiveChannel10 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$3;
+                            receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$2;
+                            SendChannel sendChannel4 = (SendChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$1;
+                            ReceiveChannel receiveChannel11 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$0;
                             ResultKt.throwOnFailure(obj);
-                            ReceiveChannel receiveChannel3 = receiveChannel2;
-                            it = channelIterator;
-                            receiveChannel = receiveChannel3;
-                            sendChannel3 = sendChannel2;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$0 = sendChannel3;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.L$2 = it;
-                            channelsKt__DeprecatedKt$filterNotNullTo$3.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$3);
-                            if (hasNext != coroutine_suspended) {
-                                SendChannel sendChannel4 = sendChannel3;
-                                sendChannel = receiveChannel;
-                                channelIterator = it;
+                            sendChannel2 = sendChannel4;
+                            i4 = i8;
+                            receiveChannel3 = receiveChannel10;
+                            receiveChannel6 = receiveChannel11;
+                            th2 = null;
+                            if (!((Boolean) obj).booleanValue()) {
+                            }
+                        } else if (i != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        } else {
+                            int i9 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$3;
+                            int i10 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$2;
+                            i2 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$1;
+                            i3 = channelsKt__DeprecatedKt$filterNotNullTo$3.I$0;
+                            Object obj2 = channelsKt__DeprecatedKt$filterNotNullTo$3.L$7;
+                            Object obj3 = channelsKt__DeprecatedKt$filterNotNullTo$3.L$6;
+                            channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$3.L$5;
+                            receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$4;
+                            ReceiveChannel receiveChannel12 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$3;
+                            receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$2;
+                            SendChannel sendChannel5 = (SendChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$1;
+                            ReceiveChannel receiveChannel13 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            Throwable th5 = null;
+                            try {
+                                ReceiveChannel receiveChannel14 = receiveChannel13;
+                                th2 = th5;
+                                receiveChannel9 = receiveChannel14;
+                                ReceiveChannel receiveChannel15 = receiveChannel4;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32 = channelsKt__DeprecatedKt$filterNotNullTo$3;
+                                receiveChannel8 = receiveChannel5;
+                                i5 = i2;
+                                receiveChannel7 = receiveChannel15;
+                                SendChannel sendChannel6 = sendChannel5;
+                                i4 = i10;
+                                receiveChannel3 = receiveChannel12;
+                                i6 = i3;
+                                sendChannel3 = sendChannel6;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$1 = sendChannel3;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$3 = receiveChannel3;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$5 = channelIterator;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$6 = null;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$7 = null;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$0 = i6;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$1 = i5;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$2 = i4;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.label = i7;
+                                hasNext = channelIterator.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$32);
+                                if (hasNext != coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                                int i11 = i6;
+                                receiveChannel6 = receiveChannel9;
                                 obj = hasNext;
-                                sendChannel2 = sendChannel4;
-                                if (((Boolean) obj).booleanValue()) {
+                                sendChannel2 = sendChannel3;
+                                i3 = i11;
+                                int i12 = i5;
+                                receiveChannel5 = receiveChannel8;
+                                channelsKt__DeprecatedKt$filterNotNullTo$3 = channelsKt__DeprecatedKt$filterNotNullTo$32;
+                                receiveChannel4 = receiveChannel7;
+                                i2 = i12;
+                                if (!((Boolean) obj).booleanValue()) {
                                     Unit unit = Unit.INSTANCE;
-                                    ChannelsKt.cancelConsumed(sendChannel, null);
                                     return sendChannel2;
                                 }
                                 Object next = channelIterator.next();
-                                receiveChannel3 = sendChannel;
                                 if (next != null) {
-                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$0 = sendChannel2;
-                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$1 = sendChannel;
-                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$2 = channelIterator;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel6);
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$1 = sendChannel2;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$3 = receiveChannel3;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$5 = channelIterator;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$6 = SpillingKt.nullOutSpilledVariable(next);
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.L$7 = SpillingKt.nullOutSpilledVariable(next);
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.I$0 = i3;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.I$1 = i2;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.I$2 = i4;
+                                    channelsKt__DeprecatedKt$filterNotNullTo$3.I$3 = 0;
                                     channelsKt__DeprecatedKt$filterNotNullTo$3.label = 2;
-                                    receiveChannel3 = sendChannel;
+                                    if (sendChannel2.send(next, channelsKt__DeprecatedKt$filterNotNullTo$3) != coroutine_suspended) {
+                                        th5 = th;
+                                        receiveChannel13 = receiveChannel6;
+                                        receiveChannel12 = receiveChannel3;
+                                        i10 = i4;
+                                        sendChannel5 = sendChannel2;
+                                        ReceiveChannel receiveChannel142 = receiveChannel13;
+                                        th2 = th5;
+                                        receiveChannel9 = receiveChannel142;
+                                        ReceiveChannel receiveChannel152 = receiveChannel4;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32 = channelsKt__DeprecatedKt$filterNotNullTo$3;
+                                        receiveChannel8 = receiveChannel5;
+                                        i5 = i2;
+                                        receiveChannel7 = receiveChannel152;
+                                        SendChannel sendChannel62 = sendChannel5;
+                                        i4 = i10;
+                                        receiveChannel3 = receiveChannel12;
+                                        i6 = i3;
+                                        sendChannel3 = sendChannel62;
+                                        i7 = 1;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$1 = sendChannel3;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$3 = receiveChannel3;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$5 = channelIterator;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$6 = null;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.L$7 = null;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$0 = i6;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$1 = i5;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.I$2 = i4;
+                                        channelsKt__DeprecatedKt$filterNotNullTo$32.label = i7;
+                                        hasNext = channelIterator.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$32);
+                                        if (hasNext != coroutine_suspended) {
+                                        }
+                                    }
+                                    return coroutine_suspended;
                                 }
-                                it = channelIterator;
-                                receiveChannel = receiveChannel3;
+                                ReceiveChannel receiveChannel16 = receiveChannel4;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32 = channelsKt__DeprecatedKt$filterNotNullTo$3;
+                                receiveChannel8 = receiveChannel5;
+                                i5 = i2;
+                                receiveChannel7 = receiveChannel16;
+                                receiveChannel9 = receiveChannel6;
+                                i6 = i3;
                                 sendChannel3 = sendChannel2;
-                                channelsKt__DeprecatedKt$filterNotNullTo$3.L$0 = sendChannel3;
-                                channelsKt__DeprecatedKt$filterNotNullTo$3.L$1 = receiveChannel;
-                                channelsKt__DeprecatedKt$filterNotNullTo$3.L$2 = it;
-                                channelsKt__DeprecatedKt$filterNotNullTo$3.label = 1;
-                                hasNext = it.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$3);
+                                i7 = 1;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$1 = sendChannel3;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$3 = receiveChannel3;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$5 = channelIterator;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$6 = null;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.L$7 = null;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$0 = i6;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$1 = i5;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.I$2 = i4;
+                                channelsKt__DeprecatedKt$filterNotNullTo$32.label = i7;
+                                hasNext = channelIterator.hasNext(channelsKt__DeprecatedKt$filterNotNullTo$32);
                                 if (hasNext != coroutine_suspended) {
                                 }
+                            } catch (Throwable th6) {
+                                th3 = th6;
+                                th = th3;
+                                try {
+                                    throw th;
+                                } finally {
+                                    ChannelsKt.cancelConsumed(receiveChannel3, th);
+                                }
                             }
-                            return coroutine_suspended;
+                            i7 = 1;
                         }
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$filterNotNullTo$3.L$2;
-                        ReceiveChannel receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$1;
-                        sendChannel2 = (SendChannel) channelsKt__DeprecatedKt$filterNotNullTo$3.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        sendChannel = receiveChannel4;
-                        if (((Boolean) obj).booleanValue()) {
-                        }
+                    } catch (Throwable th7) {
+                        th = th7;
+                        receiveChannel3 = receiveChannel2;
+                        throw th;
                     }
                 }
             }
-            if (i != 0) {
-            }
-        } catch (Throwable th3) {
-            th = th3;
         }
         channelsKt__DeprecatedKt$filterNotNullTo$3 = new ChannelsKt__DeprecatedKt$filterNotNullTo$3(continuation);
-        Object obj2 = channelsKt__DeprecatedKt$filterNotNullTo$3.result;
+        Object obj4 = channelsKt__DeprecatedKt$filterNotNullTo$3.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$filterNotNullTo$3.label;
+        int i72 = 1;
+        if (i != 0) {
+        }
     }
 
     public static /* synthetic */ ReceiveChannel take$default(ReceiveChannel receiveChannel, int i, CoroutineContext coroutineContext, int i2, Object obj) {
@@ -1542,131 +2129,249 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         return ProduceKt.produce$default(GlobalScope.INSTANCE, coroutineContext, 0, null, ChannelsKt.consumes(receiveChannel), new ChannelsKt__DeprecatedKt$takeWhile$1(receiveChannel, function2, null), 6, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x008a, code lost:
-        if (r2.send(r9, r0) == r1) goto L26;
-     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x007a A[Catch: all -> 0x0055, TryCatch #1 {all -> 0x0055, blocks: (B:61:0x0036, B:76:0x0072, B:78:0x007a, B:81:0x008d, B:66:0x0051), top: B:92:0x0024 }] */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x008d A[Catch: all -> 0x0055, TRY_LEAVE, TryCatch #1 {all -> 0x0055, blocks: (B:61:0x0036, B:76:0x0072, B:78:0x007a, B:81:0x008d, B:66:0x0051), top: B:92:0x0024 }] */
-    /* JADX WARN: Type inference failed for: r8v1 */
-    /* JADX WARN: Type inference failed for: r8v14, types: [kotlinx.coroutines.channels.ReceiveChannel] */
-    /* JADX WARN: Type inference failed for: r8v2, types: [kotlinx.coroutines.channels.ReceiveChannel] */
-    /* JADX WARN: Type inference failed for: r8v25 */
-    /* JADX WARN: Type inference failed for: r8v26 */
-    /* JADX WARN: Type inference failed for: r8v5, types: [kotlinx.coroutines.channels.ReceiveChannel, java.lang.Object] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:79:0x008a -> B:62:0x0039). Please submit an issue!!! */
+    /* JADX WARN: Not initialized variable reg: 12, insn: 0x0095: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r12 I:??[OBJECT, ARRAY]), block:B:76:0x0094 */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0029 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00ed A[Catch: all -> 0x0138, TryCatch #1 {all -> 0x0138, blocks: (B:80:0x00ac, B:84:0x00e5, B:86:0x00ed, B:91:0x0132), top: B:104:0x00ac }] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0132 A[Catch: all -> 0x0138, TRY_LEAVE, TryCatch #1 {all -> 0x0138, blocks: (B:80:0x00ac, B:84:0x00e5, B:86:0x00ed, B:91:0x0132), top: B:104:0x00ac }] */
+    /* JADX WARN: Type inference failed for: r14v1, types: [kotlinx.coroutines.channels.SendChannel] */
+    /* JADX WARN: Type inference failed for: r14v4, types: [kotlinx.coroutines.channels.SendChannel] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:90:0x012f -> B:104:0x00ac). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final <E, C extends SendChannel<? super E>> Object toChannel(ReceiveChannel<? extends E> receiveChannel, C c, Continuation<? super C> continuation) {
         ChannelsKt__DeprecatedKt$toChannel$1 channelsKt__DeprecatedKt$toChannel$1;
         int i;
-        ChannelIterator<? extends E> it;
-        ChannelIterator<? extends E> channelIterator;
-        SendChannel sendChannel;
+        Throwable th;
+        ReceiveChannel<? extends E> receiveChannel2;
+        ReceiveChannel<? extends E> receiveChannel3;
+        int i2;
+        int i3;
+        ReceiveChannel<? extends E> receiveChannel4;
+        ReceiveChannel<? extends E> receiveChannel5;
         C c2;
+        int i4;
+        ReceiveChannel<? extends E> receiveChannel6;
+        Throwable th2;
+        ChannelsKt__DeprecatedKt$toChannel$1 channelsKt__DeprecatedKt$toChannel$12;
+        ReceiveChannel<? extends E> receiveChannel7;
+        int i5;
+        ReceiveChannel<? extends E> receiveChannel8;
+        int i6;
+        C c3;
+        ReceiveChannel<? extends E> receiveChannel9;
+        Throwable th3;
+        ChannelIterator<? extends E> channelIterator;
+        ChannelIterator<? extends E> channelIterator2;
         Object hasNext;
-        try {
-            if (continuation instanceof ChannelsKt__DeprecatedKt$toChannel$1) {
-                channelsKt__DeprecatedKt$toChannel$1 = (ChannelsKt__DeprecatedKt$toChannel$1) continuation;
-                if ((channelsKt__DeprecatedKt$toChannel$1.label & Integer.MIN_VALUE) != 0) {
-                    channelsKt__DeprecatedKt$toChannel$1.label -= Integer.MIN_VALUE;
-                    Object obj = channelsKt__DeprecatedKt$toChannel$1.result;
-                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = channelsKt__DeprecatedKt$toChannel$1.label;
-                    if (i != 0) {
-                        ResultKt.throwOnFailure(obj);
-                        try {
-                            it = receiveChannel.iterator();
-                            c2 = c;
-                            channelsKt__DeprecatedKt$toChannel$1.L$0 = c2;
-                            channelsKt__DeprecatedKt$toChannel$1.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$toChannel$1.L$2 = it;
-                            channelsKt__DeprecatedKt$toChannel$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$toChannel$1);
-                            if (hasNext != coroutine_suspended) {
-                            }
-                            return coroutine_suspended;
-                        } catch (Throwable th) {
-                            c = receiveChannel;
-                            th = th;
-                            try {
-                                throw th;
-                            } catch (Throwable th2) {
-                                ChannelsKt.cancelConsumed(c, th);
-                                throw th2;
-                            }
+        if (continuation instanceof ChannelsKt__DeprecatedKt$toChannel$1) {
+            channelsKt__DeprecatedKt$toChannel$1 = (ChannelsKt__DeprecatedKt$toChannel$1) continuation;
+            if ((channelsKt__DeprecatedKt$toChannel$1.label & Integer.MIN_VALUE) != 0) {
+                channelsKt__DeprecatedKt$toChannel$1.label -= Integer.MIN_VALUE;
+                Object obj = channelsKt__DeprecatedKt$toChannel$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = channelsKt__DeprecatedKt$toChannel$1.label;
+                int i7 = 1;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    try {
+                        receiveChannel3 = receiveChannel;
+                        receiveChannel8 = receiveChannel3;
+                        c3 = c;
+                        channelIterator2 = receiveChannel.iterator();
+                        channelsKt__DeprecatedKt$toChannel$12 = channelsKt__DeprecatedKt$toChannel$1;
+                        i6 = 0;
+                        i5 = 0;
+                        i4 = 0;
+                        th2 = null;
+                        receiveChannel9 = receiveChannel8;
+                        receiveChannel7 = receiveChannel9;
+                        channelsKt__DeprecatedKt$toChannel$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                        channelsKt__DeprecatedKt$toChannel$12.L$1 = c3;
+                        channelsKt__DeprecatedKt$toChannel$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                        channelsKt__DeprecatedKt$toChannel$12.L$3 = receiveChannel3;
+                        channelsKt__DeprecatedKt$toChannel$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                        channelsKt__DeprecatedKt$toChannel$12.L$5 = channelIterator2;
+                        channelsKt__DeprecatedKt$toChannel$12.L$6 = null;
+                        channelsKt__DeprecatedKt$toChannel$12.L$7 = null;
+                        channelsKt__DeprecatedKt$toChannel$12.I$0 = i6;
+                        channelsKt__DeprecatedKt$toChannel$12.I$1 = i5;
+                        channelsKt__DeprecatedKt$toChannel$12.I$2 = i4;
+                        channelsKt__DeprecatedKt$toChannel$12.label = i7;
+                        hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$toChannel$12);
+                        if (hasNext == coroutine_suspended) {
                         }
-                    } else if (i != 1) {
-                        if (i == 2) {
-                            channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toChannel$1.L$2;
-                            ?? r8 = (C) ((ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$1);
-                            sendChannel = (SendChannel) channelsKt__DeprecatedKt$toChannel$1.L$0;
-                            ResultKt.throwOnFailure(obj);
-                            ReceiveChannel<? extends E> receiveChannel2 = r8;
-                            it = channelIterator;
-                            receiveChannel = receiveChannel2;
-                            c2 = (C) sendChannel;
-                            channelsKt__DeprecatedKt$toChannel$1.L$0 = c2;
-                            channelsKt__DeprecatedKt$toChannel$1.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$toChannel$1.L$2 = it;
-                            channelsKt__DeprecatedKt$toChannel$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$toChannel$1);
-                            if (hasNext != coroutine_suspended) {
-                                channelIterator = it;
-                                obj = hasNext;
-                                sendChannel = c2;
-                                c = (C) receiveChannel;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    E next = channelIterator.next();
-                                    channelsKt__DeprecatedKt$toChannel$1.L$0 = sendChannel;
-                                    channelsKt__DeprecatedKt$toChannel$1.L$1 = (Object) c;
-                                    channelsKt__DeprecatedKt$toChannel$1.L$2 = channelIterator;
-                                    channelsKt__DeprecatedKt$toChannel$1.label = 2;
-                                    receiveChannel2 = c;
-                                } else {
+                    } catch (Throwable th4) {
+                        th3 = th4;
+                        receiveChannel3 = receiveChannel;
+                        th = th3;
+                        throw th;
+                    }
+                } else {
+                    try {
+                        if (i != 1) {
+                            if (i == 2) {
+                                int i8 = channelsKt__DeprecatedKt$toChannel$1.I$3;
+                                int i9 = channelsKt__DeprecatedKt$toChannel$1.I$2;
+                                int i10 = channelsKt__DeprecatedKt$toChannel$1.I$1;
+                                int i11 = channelsKt__DeprecatedKt$toChannel$1.I$0;
+                                Object obj2 = channelsKt__DeprecatedKt$toChannel$1.L$7;
+                                Object obj3 = channelsKt__DeprecatedKt$toChannel$1.L$6;
+                                ChannelIterator<? extends E> channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$toChannel$1.L$5;
+                                ReceiveChannel<? extends E> receiveChannel10 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$4;
+                                ReceiveChannel<? extends E> receiveChannel11 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$3;
+                                ReceiveChannel<? extends E> receiveChannel12 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$2;
+                                ?? r14 = (SendChannel) channelsKt__DeprecatedKt$toChannel$1.L$1;
+                                ReceiveChannel<? extends E> receiveChannel13 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$0;
+                                ResultKt.throwOnFailure(obj);
+                                channelsKt__DeprecatedKt$toChannel$12 = channelsKt__DeprecatedKt$toChannel$1;
+                                receiveChannel7 = receiveChannel12;
+                                i5 = i10;
+                                receiveChannel8 = receiveChannel10;
+                                i4 = i9;
+                                receiveChannel3 = receiveChannel11;
+                                i6 = i11;
+                                c3 = r14;
+                                receiveChannel9 = receiveChannel13;
+                                th2 = null;
+                                ChannelIterator<? extends E> channelIterator4 = channelIterator3;
+                                i7 = 1;
+                                channelIterator2 = channelIterator4;
+                                try {
+                                    channelsKt__DeprecatedKt$toChannel$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                                    channelsKt__DeprecatedKt$toChannel$12.L$1 = c3;
+                                    channelsKt__DeprecatedKt$toChannel$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                                    channelsKt__DeprecatedKt$toChannel$12.L$3 = receiveChannel3;
+                                    channelsKt__DeprecatedKt$toChannel$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                                    channelsKt__DeprecatedKt$toChannel$12.L$5 = channelIterator2;
+                                    channelsKt__DeprecatedKt$toChannel$12.L$6 = null;
+                                    channelsKt__DeprecatedKt$toChannel$12.L$7 = null;
+                                    channelsKt__DeprecatedKt$toChannel$12.I$0 = i6;
+                                    channelsKt__DeprecatedKt$toChannel$12.I$1 = i5;
+                                    channelsKt__DeprecatedKt$toChannel$12.I$2 = i4;
+                                    channelsKt__DeprecatedKt$toChannel$12.label = i7;
+                                    hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$toChannel$12);
+                                    if (hasNext == coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    int i12 = i6;
+                                    receiveChannel6 = receiveChannel9;
+                                    obj = hasNext;
+                                    c2 = c3;
+                                    i3 = i12;
+                                    int i13 = i5;
+                                    receiveChannel5 = receiveChannel7;
+                                    channelsKt__DeprecatedKt$toChannel$1 = channelsKt__DeprecatedKt$toChannel$12;
+                                    receiveChannel4 = receiveChannel8;
+                                    i2 = i13;
+                                    channelIterator = channelIterator2;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        E next = channelIterator.next();
+                                        channelsKt__DeprecatedKt$toChannel$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel6);
+                                        channelsKt__DeprecatedKt$toChannel$1.L$1 = c2;
+                                        channelsKt__DeprecatedKt$toChannel$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                        channelsKt__DeprecatedKt$toChannel$1.L$3 = receiveChannel3;
+                                        channelsKt__DeprecatedKt$toChannel$1.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                        channelsKt__DeprecatedKt$toChannel$1.L$5 = channelIterator;
+                                        channelsKt__DeprecatedKt$toChannel$1.L$6 = SpillingKt.nullOutSpilledVariable(next);
+                                        channelsKt__DeprecatedKt$toChannel$1.L$7 = SpillingKt.nullOutSpilledVariable(next);
+                                        channelsKt__DeprecatedKt$toChannel$1.I$0 = i3;
+                                        channelsKt__DeprecatedKt$toChannel$1.I$1 = i2;
+                                        channelsKt__DeprecatedKt$toChannel$1.I$2 = i4;
+                                        channelsKt__DeprecatedKt$toChannel$1.I$3 = 0;
+                                        channelsKt__DeprecatedKt$toChannel$1.label = 2;
+                                        if (c2.send(next, channelsKt__DeprecatedKt$toChannel$1) != coroutine_suspended) {
+                                            ReceiveChannel<? extends E> receiveChannel14 = receiveChannel4;
+                                            channelsKt__DeprecatedKt$toChannel$12 = channelsKt__DeprecatedKt$toChannel$1;
+                                            receiveChannel7 = receiveChannel5;
+                                            i5 = i2;
+                                            receiveChannel8 = receiveChannel14;
+                                            receiveChannel9 = receiveChannel6;
+                                            i6 = i3;
+                                            c3 = c2;
+                                            channelIterator4 = channelIterator;
+                                            i7 = 1;
+                                            channelIterator2 = channelIterator4;
+                                            channelsKt__DeprecatedKt$toChannel$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel9);
+                                            channelsKt__DeprecatedKt$toChannel$12.L$1 = c3;
+                                            channelsKt__DeprecatedKt$toChannel$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel7);
+                                            channelsKt__DeprecatedKt$toChannel$12.L$3 = receiveChannel3;
+                                            channelsKt__DeprecatedKt$toChannel$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel8);
+                                            channelsKt__DeprecatedKt$toChannel$12.L$5 = channelIterator2;
+                                            channelsKt__DeprecatedKt$toChannel$12.L$6 = null;
+                                            channelsKt__DeprecatedKt$toChannel$12.L$7 = null;
+                                            channelsKt__DeprecatedKt$toChannel$12.I$0 = i6;
+                                            channelsKt__DeprecatedKt$toChannel$12.I$1 = i5;
+                                            channelsKt__DeprecatedKt$toChannel$12.I$2 = i4;
+                                            channelsKt__DeprecatedKt$toChannel$12.label = i7;
+                                            hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$toChannel$12);
+                                            if (hasNext == coroutine_suspended) {
+                                            }
+                                        }
+                                        return coroutine_suspended;
+                                    }
                                     Unit unit = Unit.INSTANCE;
-                                    ChannelsKt.cancelConsumed((ReceiveChannel) c, null);
-                                    return sendChannel;
+                                    return c2;
+                                } catch (Throwable th5) {
+                                    th3 = th5;
+                                    th = th3;
+                                    try {
+                                        throw th;
+                                    } finally {
+                                        ChannelsKt.cancelConsumed(receiveChannel3, th);
+                                    }
                                 }
                             }
-                            return coroutine_suspended;
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    } else {
-                        channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toChannel$1.L$2;
-                        C c3 = (C) ((ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$1);
-                        sendChannel = (SendChannel) channelsKt__DeprecatedKt$toChannel$1.L$0;
+                        int i14 = channelsKt__DeprecatedKt$toChannel$1.I$2;
+                        i2 = channelsKt__DeprecatedKt$toChannel$1.I$1;
+                        i3 = channelsKt__DeprecatedKt$toChannel$1.I$0;
+                        ChannelIterator<? extends E> channelIterator5 = (ChannelIterator) channelsKt__DeprecatedKt$toChannel$1.L$5;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$4;
+                        ReceiveChannel<? extends E> receiveChannel15 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$3;
+                        receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$2;
+                        ?? r142 = (SendChannel) channelsKt__DeprecatedKt$toChannel$1.L$1;
+                        ReceiveChannel<? extends E> receiveChannel16 = (ReceiveChannel) channelsKt__DeprecatedKt$toChannel$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        c = c3;
+                        c2 = r142;
+                        i4 = i14;
+                        receiveChannel3 = receiveChannel15;
+                        receiveChannel6 = receiveChannel16;
+                        th2 = null;
+                        channelIterator = channelIterator5;
                         if (!((Boolean) obj).booleanValue()) {
                         }
+                    } catch (Throwable th6) {
+                        th = th6;
+                        receiveChannel3 = receiveChannel2;
+                        throw th;
                     }
                 }
             }
-            if (i != 0) {
-            }
-        } catch (Throwable th3) {
-            th = th3;
         }
         channelsKt__DeprecatedKt$toChannel$1 = new ChannelsKt__DeprecatedKt$toChannel$1(continuation);
-        Object obj2 = channelsKt__DeprecatedKt$toChannel$1.result;
+        Object obj4 = channelsKt__DeprecatedKt$toChannel$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$toChannel$1.label;
+        int i72 = 1;
+        if (i != 0) {
+        }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x005a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0066 A[Catch: all -> 0x0037, TryCatch #1 {all -> 0x0037, blocks: (B:55:0x0033, B:68:0x005e, B:70:0x0066, B:64:0x004c, B:71:0x006f), top: B:82:0x0033 }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x006f A[Catch: all -> 0x0037, TRY_LEAVE, TryCatch #1 {all -> 0x0037, blocks: (B:55:0x0033, B:68:0x005e, B:70:0x0066, B:64:0x004c, B:71:0x006f), top: B:82:0x0033 }] */
-    /* JADX WARN: Type inference failed for: r2v5, types: [java.util.Collection] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x005b -> B:68:0x005e). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0099 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00a8 A[Catch: all -> 0x0056, TryCatch #1 {all -> 0x0056, blocks: (B:59:0x0045, B:72:0x00a0, B:74:0x00a8, B:75:0x00b4), top: B:88:0x0045 }] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00b4 A[Catch: all -> 0x0056, TRY_LEAVE, TryCatch #1 {all -> 0x0056, blocks: (B:59:0x0045, B:72:0x00a0, B:74:0x00a8, B:75:0x00b4), top: B:88:0x0045 }] */
+    /* JADX WARN: Type inference failed for: r9v6, types: [java.util.Collection] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x009a -> B:72:0x00a0). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1675,8 +2380,15 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel<? extends E> receiveChannel2;
         Throwable th;
+        int i2;
         ChannelIterator<? extends E> it;
+        ChannelsKt__DeprecatedKt$toCollection$1 channelsKt__DeprecatedKt$toCollection$12;
+        int i3;
+        int i4;
+        Throwable th2;
+        ReceiveChannel<? extends E> receiveChannel3;
         C c2;
+        ReceiveChannel<? extends E> receiveChannel4;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$toCollection$1) {
             channelsKt__DeprecatedKt$toCollection$1 = (ChannelsKt__DeprecatedKt$toCollection$1) continuation;
@@ -1688,60 +2400,104 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
-                        receiveChannel2 = receiveChannel;
+                        i2 = 0;
                         it = receiveChannel.iterator();
+                        channelsKt__DeprecatedKt$toCollection$12 = channelsKt__DeprecatedKt$toCollection$1;
+                        i3 = 0;
+                        i4 = 0;
+                        th2 = null;
+                        receiveChannel2 = receiveChannel;
+                        receiveChannel3 = receiveChannel2;
                         c2 = c;
-                        channelsKt__DeprecatedKt$toCollection$1.L$0 = c2;
-                        channelsKt__DeprecatedKt$toCollection$1.L$1 = receiveChannel2;
-                        channelsKt__DeprecatedKt$toCollection$1.L$2 = it;
-                        channelsKt__DeprecatedKt$toCollection$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$toCollection$1);
+                        receiveChannel4 = receiveChannel3;
+                        channelsKt__DeprecatedKt$toCollection$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$toCollection$12.L$1 = c2;
+                        channelsKt__DeprecatedKt$toCollection$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                        channelsKt__DeprecatedKt$toCollection$12.L$3 = receiveChannel2;
+                        channelsKt__DeprecatedKt$toCollection$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                        channelsKt__DeprecatedKt$toCollection$12.L$5 = it;
+                        channelsKt__DeprecatedKt$toCollection$12.I$0 = i4;
+                        channelsKt__DeprecatedKt$toCollection$12.I$1 = i3;
+                        channelsKt__DeprecatedKt$toCollection$12.I$2 = i2;
+                        channelsKt__DeprecatedKt$toCollection$12.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$toCollection$12);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } catch (Throwable th2) {
+                    } catch (Throwable th3) {
                         receiveChannel2 = receiveChannel;
-                        th = th2;
+                        th = th3;
                         throw th;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    ChannelIterator<? extends E> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toCollection$1.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$toCollection$1.L$1;
-                    ?? r2 = (Collection) channelsKt__DeprecatedKt$toCollection$1.L$0;
+                    int i5 = channelsKt__DeprecatedKt$toCollection$1.I$2;
+                    int i6 = channelsKt__DeprecatedKt$toCollection$1.I$1;
+                    int i7 = channelsKt__DeprecatedKt$toCollection$1.I$0;
+                    ChannelIterator<? extends E> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toCollection$1.L$5;
+                    ReceiveChannel<? extends E> receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$toCollection$1.L$4;
+                    ReceiveChannel<? extends E> receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$toCollection$1.L$3;
+                    ReceiveChannel<? extends E> receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$toCollection$1.L$2;
+                    ?? r9 = (Collection) channelsKt__DeprecatedKt$toCollection$1.L$1;
+                    ReceiveChannel<? extends E> receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$toCollection$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                        C c3 = r2;
+                        i2 = i5;
+                        receiveChannel = receiveChannel8;
                         ChannelIterator<? extends E> channelIterator2 = channelIterator;
+                        i3 = i6;
+                        receiveChannel4 = receiveChannel7;
+                        int i8 = i7;
+                        channelsKt__DeprecatedKt$toCollection$12 = channelsKt__DeprecatedKt$toCollection$1;
+                        receiveChannel3 = receiveChannel5;
+                        Throwable th4 = null;
+                        c2 = r9;
                         if (!((Boolean) obj).booleanValue()) {
-                            c3.add(channelIterator2.next());
-                            c2 = c3;
+                            c2.add(channelIterator2.next());
+                            receiveChannel2 = receiveChannel6;
+                            i4 = i8;
+                            th2 = th4;
                             it = channelIterator2;
-                            channelsKt__DeprecatedKt$toCollection$1.L$0 = c2;
-                            channelsKt__DeprecatedKt$toCollection$1.L$1 = receiveChannel2;
-                            channelsKt__DeprecatedKt$toCollection$1.L$2 = it;
-                            channelsKt__DeprecatedKt$toCollection$1.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$toCollection$1);
-                            if (hasNext != coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            c3 = c2;
-                            obj = hasNext;
-                            channelIterator2 = it;
-                            if (!((Boolean) obj).booleanValue()) {
-                                Unit unit = Unit.INSTANCE;
-                                ChannelsKt.cancelConsumed(receiveChannel2, null);
-                                return c3;
+                            try {
+                                channelsKt__DeprecatedKt$toCollection$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                channelsKt__DeprecatedKt$toCollection$12.L$1 = c2;
+                                channelsKt__DeprecatedKt$toCollection$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$toCollection$12.L$3 = receiveChannel2;
+                                channelsKt__DeprecatedKt$toCollection$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                channelsKt__DeprecatedKt$toCollection$12.L$5 = it;
+                                channelsKt__DeprecatedKt$toCollection$12.I$0 = i4;
+                                channelsKt__DeprecatedKt$toCollection$12.I$1 = i3;
+                                channelsKt__DeprecatedKt$toCollection$12.I$2 = i2;
+                                channelsKt__DeprecatedKt$toCollection$12.label = 1;
+                                hasNext = it.hasNext(channelsKt__DeprecatedKt$toCollection$12);
+                                if (hasNext != coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                                int i9 = i4;
+                                receiveChannel6 = receiveChannel2;
+                                obj = hasNext;
+                                channelIterator2 = it;
+                                th4 = th2;
+                                i8 = i9;
+                                if (!((Boolean) obj).booleanValue()) {
+                                    Unit unit = Unit.INSTANCE;
+                                    ChannelsKt.cancelConsumed(receiveChannel6, th4);
+                                    return c2;
+                                }
+                            } catch (Throwable th5) {
+                                th = th5;
+                                try {
+                                    throw th;
+                                } catch (Throwable th6) {
+                                    ChannelsKt.cancelConsumed(receiveChannel2, th);
+                                    throw th6;
+                                }
                             }
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        try {
-                            throw th;
-                        } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
-                        }
+                    } catch (Throwable th7) {
+                        th = th7;
+                        receiveChannel2 = receiveChannel6;
+                        throw th;
                     }
                 }
             }
@@ -1754,13 +2510,13 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x005a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0066 A[Catch: all -> 0x0037, TryCatch #1 {all -> 0x0037, blocks: (B:55:0x0033, B:68:0x005e, B:70:0x0066, B:64:0x004c, B:71:0x0079), top: B:82:0x0033 }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0079 A[Catch: all -> 0x0037, TRY_LEAVE, TryCatch #1 {all -> 0x0037, blocks: (B:55:0x0033, B:68:0x005e, B:70:0x0066, B:64:0x004c, B:71:0x0079), top: B:82:0x0033 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x005b -> B:68:0x005e). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0099 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00a8 A[Catch: all -> 0x0056, TryCatch #2 {all -> 0x0056, blocks: (B:59:0x0045, B:72:0x00a0, B:74:0x00a8, B:75:0x00be), top: B:90:0x0045 }] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00be A[Catch: all -> 0x0056, TRY_LEAVE, TryCatch #2 {all -> 0x0056, blocks: (B:59:0x0045, B:72:0x00a0, B:74:0x00a8, B:75:0x00be), top: B:90:0x0045 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x009a -> B:72:0x00a0). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1769,8 +2525,15 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel2;
         Throwable th;
+        int i2;
         ChannelIterator<? extends Pair<? extends K, ? extends V>> it;
-        M m2;
+        ChannelsKt__DeprecatedKt$toMap$2 channelsKt__DeprecatedKt$toMap$22;
+        int i3;
+        int i4;
+        Throwable th2;
+        ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel3;
+        Map map;
+        ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel4;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$toMap$2) {
             channelsKt__DeprecatedKt$toMap$2 = (ChannelsKt__DeprecatedKt$toMap$2) continuation;
@@ -1782,61 +2545,105 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     try {
-                        receiveChannel2 = receiveChannel;
+                        i2 = 0;
                         it = receiveChannel.iterator();
-                        m2 = m;
-                        channelsKt__DeprecatedKt$toMap$2.L$0 = m2;
-                        channelsKt__DeprecatedKt$toMap$2.L$1 = receiveChannel2;
-                        channelsKt__DeprecatedKt$toMap$2.L$2 = it;
-                        channelsKt__DeprecatedKt$toMap$2.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$toMap$2);
+                        channelsKt__DeprecatedKt$toMap$22 = channelsKt__DeprecatedKt$toMap$2;
+                        i3 = 0;
+                        i4 = 0;
+                        th2 = null;
+                        receiveChannel2 = receiveChannel;
+                        receiveChannel3 = receiveChannel2;
+                        map = m;
+                        receiveChannel4 = receiveChannel3;
+                        channelsKt__DeprecatedKt$toMap$22.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$toMap$22.L$1 = map;
+                        channelsKt__DeprecatedKt$toMap$22.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                        channelsKt__DeprecatedKt$toMap$22.L$3 = receiveChannel2;
+                        channelsKt__DeprecatedKt$toMap$22.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                        channelsKt__DeprecatedKt$toMap$22.L$5 = it;
+                        channelsKt__DeprecatedKt$toMap$22.I$0 = i4;
+                        channelsKt__DeprecatedKt$toMap$22.I$1 = i3;
+                        channelsKt__DeprecatedKt$toMap$22.I$2 = i2;
+                        channelsKt__DeprecatedKt$toMap$22.label = 1;
+                        hasNext = it.hasNext(channelsKt__DeprecatedKt$toMap$22);
                         if (hasNext != coroutine_suspended) {
                         }
-                    } catch (Throwable th2) {
+                    } catch (Throwable th3) {
                         receiveChannel2 = receiveChannel;
-                        th = th2;
+                        th = th3;
                         throw th;
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    ChannelIterator<? extends Pair<? extends K, ? extends V>> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toMap$2.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$toMap$2.L$1;
-                    Map map = (Map) channelsKt__DeprecatedKt$toMap$2.L$0;
+                    int i5 = channelsKt__DeprecatedKt$toMap$2.I$2;
+                    int i6 = channelsKt__DeprecatedKt$toMap$2.I$1;
+                    int i7 = channelsKt__DeprecatedKt$toMap$2.I$0;
+                    ChannelIterator<? extends Pair<? extends K, ? extends V>> channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$toMap$2.L$5;
+                    ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$toMap$2.L$4;
+                    ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$toMap$2.L$3;
+                    ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$toMap$2.L$2;
+                    Map map2 = (Map) channelsKt__DeprecatedKt$toMap$2.L$1;
+                    ReceiveChannel<? extends Pair<? extends K, ? extends V>> receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$toMap$2.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
-                        Map map2 = map;
+                        i2 = i5;
+                        receiveChannel = receiveChannel8;
                         ChannelIterator<? extends Pair<? extends K, ? extends V>> channelIterator2 = channelIterator;
+                        i3 = i6;
+                        receiveChannel4 = receiveChannel7;
+                        int i8 = i7;
+                        channelsKt__DeprecatedKt$toMap$22 = channelsKt__DeprecatedKt$toMap$2;
+                        receiveChannel3 = receiveChannel5;
+                        Throwable th4 = null;
+                        map = map2;
                         if (!((Boolean) obj).booleanValue()) {
                             Pair<? extends K, ? extends V> next = channelIterator2.next();
-                            map2.put(next.getFirst(), next.getSecond());
-                            m2 = map2;
+                            map.put(next.getFirst(), next.getSecond());
+                            receiveChannel2 = receiveChannel6;
+                            i4 = i8;
+                            th2 = th4;
                             it = channelIterator2;
-                            channelsKt__DeprecatedKt$toMap$2.L$0 = m2;
-                            channelsKt__DeprecatedKt$toMap$2.L$1 = receiveChannel2;
-                            channelsKt__DeprecatedKt$toMap$2.L$2 = it;
-                            channelsKt__DeprecatedKt$toMap$2.label = 1;
-                            hasNext = it.hasNext(channelsKt__DeprecatedKt$toMap$2);
-                            if (hasNext != coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            map2 = m2;
-                            obj = hasNext;
-                            channelIterator2 = it;
-                            if (!((Boolean) obj).booleanValue()) {
-                                Unit unit = Unit.INSTANCE;
-                                ChannelsKt.cancelConsumed(receiveChannel2, null);
-                                return map2;
+                            try {
+                                channelsKt__DeprecatedKt$toMap$22.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                channelsKt__DeprecatedKt$toMap$22.L$1 = map;
+                                channelsKt__DeprecatedKt$toMap$22.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$toMap$22.L$3 = receiveChannel2;
+                                channelsKt__DeprecatedKt$toMap$22.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                channelsKt__DeprecatedKt$toMap$22.L$5 = it;
+                                channelsKt__DeprecatedKt$toMap$22.I$0 = i4;
+                                channelsKt__DeprecatedKt$toMap$22.I$1 = i3;
+                                channelsKt__DeprecatedKt$toMap$22.I$2 = i2;
+                                channelsKt__DeprecatedKt$toMap$22.label = 1;
+                                hasNext = it.hasNext(channelsKt__DeprecatedKt$toMap$22);
+                                if (hasNext != coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                                int i9 = i4;
+                                receiveChannel6 = receiveChannel2;
+                                obj = hasNext;
+                                channelIterator2 = it;
+                                th4 = th2;
+                                i8 = i9;
+                                if (!((Boolean) obj).booleanValue()) {
+                                    Unit unit = Unit.INSTANCE;
+                                    ChannelsKt.cancelConsumed(receiveChannel6, th4);
+                                    return map;
+                                }
+                            } catch (Throwable th5) {
+                                th = th5;
+                                try {
+                                    throw th;
+                                } catch (Throwable th6) {
+                                    ChannelsKt.cancelConsumed(receiveChannel2, th);
+                                    throw th6;
+                                }
                             }
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        try {
-                            throw th;
-                        } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
-                        }
+                    } catch (Throwable th7) {
+                        th = th7;
+                        receiveChannel2 = receiveChannel6;
+                        throw th;
                     }
                 }
             }
@@ -1943,7 +2750,7 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0042  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1962,7 +2769,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$any$1.L$0 = receiveChannel;
+                        channelsKt__DeprecatedKt$any$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$any$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$any$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$any$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$any$1.I$1 = 0;
                         channelsKt__DeprecatedKt$any$1.label = 1;
                         obj = it.hasNext(channelsKt__DeprecatedKt$any$1);
                         if (obj == coroutine_suspended) {
@@ -1971,7 +2782,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        receiveChannel = (ReceiveChannel) channelsKt__DeprecatedKt$any$1.L$0;
+                        int i2 = channelsKt__DeprecatedKt$any$1.I$1;
+                        int i3 = channelsKt__DeprecatedKt$any$1.I$0;
+                        ReceiveChannel receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$any$1.L$2;
+                        receiveChannel = (ReceiveChannel) channelsKt__DeprecatedKt$any$1.L$1;
+                        ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$any$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     ChannelsKt.cancelConsumed(receiveChannel, null);
@@ -1991,12 +2806,12 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:57:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x005e A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x006a A[Catch: all -> 0x0037, TryCatch #3 {all -> 0x0037, blocks: (B:59:0x0033, B:72:0x0062, B:74:0x006a, B:75:0x0074), top: B:92:0x0033 }] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0074 A[Catch: all -> 0x0037, TRY_LEAVE, TryCatch #3 {all -> 0x0037, blocks: (B:59:0x0033, B:72:0x0062, B:74:0x006a, B:75:0x0074), top: B:92:0x0033 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x005f -> B:72:0x0062). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x009c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00aa A[Catch: all -> 0x00c2, TryCatch #0 {all -> 0x00c2, blocks: (B:72:0x00a2, B:74:0x00aa, B:68:0x0076, B:75:0x00b6), top: B:86:0x00a2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00b6 A[Catch: all -> 0x00c2, TRY_LEAVE, TryCatch #0 {all -> 0x00c2, blocks: (B:72:0x00a2, B:74:0x00aa, B:68:0x0076, B:75:0x00b6), top: B:86:0x00a2 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x009d -> B:86:0x00a2). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2006,80 +2821,125 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         int i;
         ReceiveChannel receiveChannel2;
         Throwable th;
+        int i2;
         Ref.IntRef intRef;
-        ReceiveChannel receiveChannel3;
         ChannelIterator it;
+        Throwable th2;
+        int i3;
+        int i4;
+        ReceiveChannel receiveChannel3;
+        ReceiveChannel receiveChannel4;
+        ChannelsKt__DeprecatedKt$count$1 channelsKt__DeprecatedKt$count$12;
         Object hasNext;
-        if (continuation instanceof ChannelsKt__DeprecatedKt$count$1) {
-            channelsKt__DeprecatedKt$count$1 = (ChannelsKt__DeprecatedKt$count$1) continuation;
-            if ((channelsKt__DeprecatedKt$count$1.label & Integer.MIN_VALUE) != 0) {
-                channelsKt__DeprecatedKt$count$1.label -= Integer.MIN_VALUE;
-                Object obj = channelsKt__DeprecatedKt$count$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = channelsKt__DeprecatedKt$count$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    try {
-                        intRef = new Ref.IntRef();
-                        receiveChannel3 = receiveChannel;
-                        it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$count$1.L$0 = intRef;
-                        channelsKt__DeprecatedKt$count$1.L$1 = receiveChannel3;
-                        channelsKt__DeprecatedKt$count$1.L$2 = it;
-                        channelsKt__DeprecatedKt$count$1.label = 1;
-                        hasNext = it.hasNext(channelsKt__DeprecatedKt$count$1);
-                        if (hasNext != coroutine_suspended) {
-                        }
-                    } catch (Throwable th2) {
-                        receiveChannel2 = receiveChannel;
-                        th = th2;
-                        throw th;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    it = (ChannelIterator) channelsKt__DeprecatedKt$count$1.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$count$1.L$1;
-                    intRef = (Ref.IntRef) channelsKt__DeprecatedKt$count$1.L$0;
-                    try {
+        try {
+            if (continuation instanceof ChannelsKt__DeprecatedKt$count$1) {
+                channelsKt__DeprecatedKt$count$1 = (ChannelsKt__DeprecatedKt$count$1) continuation;
+                if ((channelsKt__DeprecatedKt$count$1.label & Integer.MIN_VALUE) != 0) {
+                    channelsKt__DeprecatedKt$count$1.label -= Integer.MIN_VALUE;
+                    Object obj = channelsKt__DeprecatedKt$count$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = channelsKt__DeprecatedKt$count$1.label;
+                    if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        if (!((Boolean) obj).booleanValue()) {
-                            it.next();
-                            intRef.element++;
-                            receiveChannel3 = receiveChannel2;
-                            try {
-                                channelsKt__DeprecatedKt$count$1.L$0 = intRef;
-                                channelsKt__DeprecatedKt$count$1.L$1 = receiveChannel3;
-                                channelsKt__DeprecatedKt$count$1.L$2 = it;
-                                channelsKt__DeprecatedKt$count$1.label = 1;
-                                hasNext = it.hasNext(channelsKt__DeprecatedKt$count$1);
-                                if (hasNext != coroutine_suspended) {
-                                    return coroutine_suspended;
-                                }
-                                receiveChannel2 = receiveChannel3;
-                                obj = hasNext;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    Unit unit = Unit.INSTANCE;
-                                    ChannelsKt.cancelConsumed(receiveChannel2, null);
-                                    return Boxing.boxInt(intRef.element);
-                                }
-                            } catch (Throwable th3) {
-                                th = th3;
-                                receiveChannel2 = receiveChannel3;
-                                try {
-                                    throw th;
-                                } catch (Throwable th4) {
-                                    ChannelsKt.cancelConsumed(receiveChannel2, th);
-                                    throw th4;
-                                }
+                        try {
+                            i2 = 0;
+                            intRef = new Ref.IntRef();
+                            it = receiveChannel.iterator();
+                            th2 = null;
+                            i3 = 0;
+                            i4 = 0;
+                            receiveChannel3 = receiveChannel;
+                            receiveChannel4 = receiveChannel3;
+                            channelsKt__DeprecatedKt$count$12 = channelsKt__DeprecatedKt$count$1;
+                            receiveChannel2 = receiveChannel4;
+                            channelsKt__DeprecatedKt$count$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                            channelsKt__DeprecatedKt$count$12.L$1 = intRef;
+                            channelsKt__DeprecatedKt$count$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                            channelsKt__DeprecatedKt$count$12.L$3 = receiveChannel2;
+                            channelsKt__DeprecatedKt$count$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                            channelsKt__DeprecatedKt$count$12.L$5 = it;
+                            channelsKt__DeprecatedKt$count$12.I$0 = i4;
+                            channelsKt__DeprecatedKt$count$12.I$1 = i3;
+                            channelsKt__DeprecatedKt$count$12.I$2 = i2;
+                            channelsKt__DeprecatedKt$count$12.label = 1;
+                            hasNext = it.hasNext(channelsKt__DeprecatedKt$count$12);
+                            if (hasNext != coroutine_suspended) {
                             }
+                        } catch (Throwable th3) {
+                            receiveChannel2 = receiveChannel;
+                            th = th3;
                         }
-                    } catch (Throwable th5) {
-                        th = th5;
-                        throw th;
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i5 = channelsKt__DeprecatedKt$count$1.I$2;
+                        int i6 = channelsKt__DeprecatedKt$count$1.I$1;
+                        int i7 = channelsKt__DeprecatedKt$count$1.I$0;
+                        ChannelIterator channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$count$1.L$5;
+                        ReceiveChannel receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$count$1.L$4;
+                        ReceiveChannel receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$count$1.L$3;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$count$1.L$2;
+                        Ref.IntRef intRef2 = (Ref.IntRef) channelsKt__DeprecatedKt$count$1.L$1;
+                        ReceiveChannel receiveChannel8 = (ReceiveChannel) channelsKt__DeprecatedKt$count$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                            i2 = i5;
+                            receiveChannel = receiveChannel8;
+                            Ref.IntRef intRef3 = intRef2;
+                            ChannelIterator channelIterator2 = channelIterator;
+                            i3 = i6;
+                            receiveChannel4 = receiveChannel5;
+                            th2 = null;
+                            channelsKt__DeprecatedKt$count$12 = channelsKt__DeprecatedKt$count$1;
+                            receiveChannel2 = receiveChannel6;
+                            i4 = i7;
+                            try {
+                                if (!((Boolean) obj).booleanValue()) {
+                                    channelIterator2.next();
+                                    intRef3.element++;
+                                    receiveChannel3 = receiveChannel7;
+                                    it = channelIterator2;
+                                    intRef = intRef3;
+                                    channelsKt__DeprecatedKt$count$12.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                                    channelsKt__DeprecatedKt$count$12.L$1 = intRef;
+                                    channelsKt__DeprecatedKt$count$12.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel3);
+                                    channelsKt__DeprecatedKt$count$12.L$3 = receiveChannel2;
+                                    channelsKt__DeprecatedKt$count$12.L$4 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                    channelsKt__DeprecatedKt$count$12.L$5 = it;
+                                    channelsKt__DeprecatedKt$count$12.I$0 = i4;
+                                    channelsKt__DeprecatedKt$count$12.I$1 = i3;
+                                    channelsKt__DeprecatedKt$count$12.I$2 = i2;
+                                    channelsKt__DeprecatedKt$count$12.label = 1;
+                                    hasNext = it.hasNext(channelsKt__DeprecatedKt$count$12);
+                                    if (hasNext != coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    ChannelIterator channelIterator3 = it;
+                                    receiveChannel7 = receiveChannel3;
+                                    obj = hasNext;
+                                    intRef3 = intRef;
+                                    channelIterator2 = channelIterator3;
+                                    if (!((Boolean) obj).booleanValue()) {
+                                        Unit unit = Unit.INSTANCE;
+                                        ChannelsKt.cancelConsumed(receiveChannel2, th2);
+                                        return Boxing.boxInt(intRef3.element);
+                                    }
+                                }
+                            } catch (Throwable th4) {
+                                th = th4;
+                            }
+                        } catch (Throwable th5) {
+                            th = th5;
+                            receiveChannel2 = receiveChannel6;
+                        }
                     }
+                    throw th;
                 }
             }
+            throw th;
+        } catch (Throwable th6) {
+            ChannelsKt.cancelConsumed(receiveChannel2, th);
+            throw th6;
         }
         channelsKt__DeprecatedKt$count$1 = new ChannelsKt__DeprecatedKt$count$1(continuation);
         Object obj2 = channelsKt__DeprecatedKt$count$1.result;
@@ -2089,278 +2949,386 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x00ac A[Catch: all -> 0x00be, TRY_LEAVE, TryCatch #3 {all -> 0x00be, blocks: (B:103:0x00a4, B:105:0x00ac, B:99:0x008f, B:89:0x0063), top: B:124:0x0063 }] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0087 A[Catch: all -> 0x005d, TRY_ENTER, TRY_LEAVE, TryCatch #2 {all -> 0x005d, blocks: (B:84:0x0059, B:93:0x007b, B:97:0x0087), top: B:122:0x0059 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:102:0x00a0 -> B:78:0x003e). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00f4 A[Catch: all -> 0x010e, TRY_LEAVE, TryCatch #3 {all -> 0x010e, blocks: (B:101:0x00ec, B:103:0x00f4, B:97:0x00c6, B:92:0x00b0, B:96:0x00bc, B:88:0x0087), top: B:122:0x0087 }] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00bc A[Catch: all -> 0x010e, TRY_ENTER, TryCatch #3 {all -> 0x010e, blocks: (B:101:0x00ec, B:103:0x00f4, B:97:0x00c6, B:92:0x00b0, B:96:0x00bc, B:88:0x0087), top: B:122:0x0087 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x00e7 -> B:77:0x004a). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final /* synthetic */ Object maxWith(ReceiveChannel receiveChannel, Comparator comparator, Continuation continuation) {
         ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$1;
-        Object obj;
         int i;
+        int i2;
         ReceiveChannel receiveChannel2;
         ChannelIterator channelIterator;
+        Object obj;
+        ReceiveChannel receiveChannel3;
+        int i3;
+        ReceiveChannel receiveChannel4;
         Comparator comparator2;
+        int i4;
         Object next;
+        ReceiveChannel receiveChannel5;
         ChannelIterator channelIterator2;
-        Comparator comparator3;
+        Throwable th;
+        ReceiveChannel receiveChannel6;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$maxWith$1) {
             channelsKt__DeprecatedKt$maxWith$1 = (ChannelsKt__DeprecatedKt$maxWith$1) continuation;
             if ((channelsKt__DeprecatedKt$maxWith$1.label & Integer.MIN_VALUE) != 0) {
                 channelsKt__DeprecatedKt$maxWith$1.label -= Integer.MIN_VALUE;
-                obj = channelsKt__DeprecatedKt$maxWith$1.result;
+                Object obj2 = channelsKt__DeprecatedKt$maxWith$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = channelsKt__DeprecatedKt$maxWith$1.label;
+                Throwable th2 = null;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
+                    ResultKt.throwOnFailure(obj2);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$maxWith$1.L$0 = comparator;
-                        channelsKt__DeprecatedKt$maxWith$1.L$1 = receiveChannel;
-                        channelsKt__DeprecatedKt$maxWith$1.L$2 = it;
+                        channelsKt__DeprecatedKt$maxWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$maxWith$1.L$1 = comparator;
+                        channelsKt__DeprecatedKt$maxWith$1.L$2 = receiveChannel;
+                        channelsKt__DeprecatedKt$maxWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$maxWith$1.L$4 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$maxWith$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$maxWith$1.I$1 = 0;
                         channelsKt__DeprecatedKt$maxWith$1.label = 1;
                         Object hasNext2 = it.hasNext(channelsKt__DeprecatedKt$maxWith$1);
-                        if (hasNext2 != coroutine_suspended) {
-                            receiveChannel2 = receiveChannel;
-                            channelIterator = it;
-                            obj = hasNext2;
-                            comparator2 = comparator;
-                        }
-                        return coroutine_suspended;
-                    } catch (Throwable th) {
-                        receiveChannel2 = receiveChannel;
-                        th = th;
-                        throw th;
-                    }
-                } else if (i == 1) {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$maxWith$1.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$1;
-                    comparator2 = (Comparator) channelsKt__DeprecatedKt$maxWith$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        throw th;
-                    }
-                } else if (i != 2) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    Object obj2 = channelsKt__DeprecatedKt$maxWith$1.L$3;
-                    channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$maxWith$1.L$2;
-                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$1;
-                    comparator3 = (Comparator) channelsKt__DeprecatedKt$maxWith$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$12 = channelsKt__DeprecatedKt$maxWith$1;
-                        Object obj3 = obj2;
-                        receiveChannel = receiveChannel3;
-                        ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$13 = channelsKt__DeprecatedKt$maxWith$12;
-                        if (!((Boolean) obj).booleanValue()) {
-                            next = channelIterator2.next();
-                            if (comparator3.compare(obj3, next) >= 0) {
-                                next = obj3;
-                            }
-                            channelsKt__DeprecatedKt$maxWith$1 = channelsKt__DeprecatedKt$maxWith$13;
-                            channelsKt__DeprecatedKt$maxWith$1.L$0 = comparator3;
-                            channelsKt__DeprecatedKt$maxWith$1.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$maxWith$1.L$2 = channelIterator2;
-                            channelsKt__DeprecatedKt$maxWith$1.L$3 = next;
-                            channelsKt__DeprecatedKt$maxWith$1.label = 2;
-                            hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$maxWith$1);
-                            if (hasNext != coroutine_suspended) {
-                                channelsKt__DeprecatedKt$maxWith$12 = channelsKt__DeprecatedKt$maxWith$1;
-                                obj3 = next;
-                                obj = hasNext;
-                                ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$132 = channelsKt__DeprecatedKt$maxWith$12;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    ChannelsKt.cancelConsumed(receiveChannel, null);
-                                    return obj3;
-                                }
-                            }
+                        if (hasNext2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        receiveChannel2 = receiveChannel;
+                        channelIterator = it;
+                        obj = hasNext2;
+                        receiveChannel3 = receiveChannel2;
+                        i3 = 0;
                     } catch (Throwable th3) {
+                        receiveChannel6 = receiveChannel;
                         th = th3;
-                        receiveChannel2 = receiveChannel3;
+                    }
+                } else {
+                    if (i == 1) {
+                        int i5 = channelsKt__DeprecatedKt$maxWith$1.I$1;
+                        int i6 = channelsKt__DeprecatedKt$maxWith$1.I$0;
+                        ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$maxWith$1.L$4;
+                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$3;
+                        receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$2;
+                        Comparator comparator3 = (Comparator) channelsKt__DeprecatedKt$maxWith$1.L$1;
+                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$0;
                         try {
-                            throw th;
+                            ResultKt.throwOnFailure(obj2);
+                            i2 = i5;
+                            receiveChannel = receiveChannel6;
+                            obj = obj2;
+                            i3 = i6;
+                            comparator = comparator3;
+                            channelIterator = channelIterator3;
                         } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            th = th4;
                         }
+                    } else if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i7 = channelsKt__DeprecatedKt$maxWith$1.I$1;
+                        i4 = channelsKt__DeprecatedKt$maxWith$1.I$0;
+                        next = channelsKt__DeprecatedKt$maxWith$1.L$5;
+                        channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$maxWith$1.L$4;
+                        receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$3;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$2;
+                        comparator2 = (Comparator) channelsKt__DeprecatedKt$maxWith$1.L$1;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$maxWith$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj2);
+                            ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$12 = channelsKt__DeprecatedKt$maxWith$1;
+                            int i8 = i7;
+                            receiveChannel = receiveChannel7;
+                            ReceiveChannel receiveChannel8 = receiveChannel5;
+                            Throwable th5 = th2;
+                            ChannelIterator channelIterator4 = channelIterator2;
+                            Object obj3 = next;
+                            ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$13 = channelsKt__DeprecatedKt$maxWith$12;
+                            if (!((Boolean) obj2).booleanValue()) {
+                                Object next2 = channelIterator4.next();
+                                if (comparator2.compare(obj3, next2) < 0) {
+                                    next = next2;
+                                    i2 = i8;
+                                    channelsKt__DeprecatedKt$maxWith$1 = channelsKt__DeprecatedKt$maxWith$13;
+                                } else {
+                                    i2 = i8;
+                                    channelsKt__DeprecatedKt$maxWith$1 = channelsKt__DeprecatedKt$maxWith$13;
+                                    next = obj3;
+                                }
+                                channelIterator2 = channelIterator4;
+                                th2 = th5;
+                                receiveChannel5 = receiveChannel8;
+                                channelsKt__DeprecatedKt$maxWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$maxWith$1.L$1 = comparator2;
+                                channelsKt__DeprecatedKt$maxWith$1.L$2 = receiveChannel;
+                                channelsKt__DeprecatedKt$maxWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                channelsKt__DeprecatedKt$maxWith$1.L$4 = channelIterator2;
+                                channelsKt__DeprecatedKt$maxWith$1.L$5 = next;
+                                channelsKt__DeprecatedKt$maxWith$1.I$0 = i4;
+                                channelsKt__DeprecatedKt$maxWith$1.I$1 = i2;
+                                channelsKt__DeprecatedKt$maxWith$1.label = 2;
+                                hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$maxWith$1);
+                                if (hasNext != coroutine_suspended) {
+                                    channelsKt__DeprecatedKt$maxWith$12 = channelsKt__DeprecatedKt$maxWith$1;
+                                    i8 = i2;
+                                    obj2 = hasNext;
+                                    ReceiveChannel receiveChannel82 = receiveChannel5;
+                                    Throwable th52 = th2;
+                                    ChannelIterator channelIterator42 = channelIterator2;
+                                    Object obj32 = next;
+                                    ChannelsKt__DeprecatedKt$maxWith$1 channelsKt__DeprecatedKt$maxWith$132 = channelsKt__DeprecatedKt$maxWith$12;
+                                    if (!((Boolean) obj2).booleanValue()) {
+                                        ChannelsKt.cancelConsumed(receiveChannel, th52);
+                                        return obj32;
+                                    }
+                                }
+                                return coroutine_suspended;
+                            }
+                        } catch (Throwable th6) {
+                            th = th6;
+                            receiveChannel6 = receiveChannel7;
+                        }
+                    }
+                    try {
+                        throw th;
+                    } catch (Throwable th7) {
+                        ChannelsKt.cancelConsumed(receiveChannel6, th);
+                        throw th7;
                     }
                 }
                 if (!((Boolean) obj).booleanValue()) {
+                    receiveChannel4 = receiveChannel2;
+                    comparator2 = comparator;
+                    i4 = i3;
                     next = channelIterator.next();
-                    ReceiveChannel receiveChannel4 = receiveChannel2;
+                    receiveChannel5 = receiveChannel3;
                     channelIterator2 = channelIterator;
-                    receiveChannel = receiveChannel4;
-                    comparator3 = comparator2;
-                    channelsKt__DeprecatedKt$maxWith$1.L$0 = comparator3;
-                    channelsKt__DeprecatedKt$maxWith$1.L$1 = receiveChannel;
-                    channelsKt__DeprecatedKt$maxWith$1.L$2 = channelIterator2;
-                    channelsKt__DeprecatedKt$maxWith$1.L$3 = next;
+                    channelsKt__DeprecatedKt$maxWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                    channelsKt__DeprecatedKt$maxWith$1.L$1 = comparator2;
+                    channelsKt__DeprecatedKt$maxWith$1.L$2 = receiveChannel;
+                    channelsKt__DeprecatedKt$maxWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                    channelsKt__DeprecatedKt$maxWith$1.L$4 = channelIterator2;
+                    channelsKt__DeprecatedKt$maxWith$1.L$5 = next;
+                    channelsKt__DeprecatedKt$maxWith$1.I$0 = i4;
+                    channelsKt__DeprecatedKt$maxWith$1.I$1 = i2;
                     channelsKt__DeprecatedKt$maxWith$1.label = 2;
                     hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$maxWith$1);
                     if (hasNext != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 }
-                ChannelsKt.cancelConsumed(receiveChannel2, null);
+                ChannelsKt.cancelConsumed(receiveChannel, null);
                 return null;
             }
         }
         channelsKt__DeprecatedKt$maxWith$1 = new ChannelsKt__DeprecatedKt$maxWith$1(continuation);
-        obj = channelsKt__DeprecatedKt$maxWith$1.result;
+        Object obj22 = channelsKt__DeprecatedKt$maxWith$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$maxWith$1.label;
+        Throwable th22 = null;
         if (i != 0) {
         }
         if (!((Boolean) obj).booleanValue()) {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x00ac A[Catch: all -> 0x00be, TRY_LEAVE, TryCatch #3 {all -> 0x00be, blocks: (B:103:0x00a4, B:105:0x00ac, B:99:0x008f, B:89:0x0063), top: B:124:0x0063 }] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0087 A[Catch: all -> 0x005d, TRY_ENTER, TRY_LEAVE, TryCatch #2 {all -> 0x005d, blocks: (B:84:0x0059, B:93:0x007b, B:97:0x0087), top: B:122:0x0059 }] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:102:0x00a0 -> B:78:0x003e). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00f4 A[Catch: all -> 0x010e, TRY_LEAVE, TryCatch #3 {all -> 0x010e, blocks: (B:101:0x00ec, B:103:0x00f4, B:97:0x00c6, B:92:0x00b0, B:96:0x00bc, B:88:0x0087), top: B:122:0x0087 }] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00bc A[Catch: all -> 0x010e, TRY_ENTER, TryCatch #3 {all -> 0x010e, blocks: (B:101:0x00ec, B:103:0x00f4, B:97:0x00c6, B:92:0x00b0, B:96:0x00bc, B:88:0x0087), top: B:122:0x0087 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x00e7 -> B:77:0x004a). Please submit an issue!!! */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final /* synthetic */ Object minWith(ReceiveChannel receiveChannel, Comparator comparator, Continuation continuation) {
         ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$1;
-        Object obj;
         int i;
+        int i2;
         ReceiveChannel receiveChannel2;
         ChannelIterator channelIterator;
+        Object obj;
+        ReceiveChannel receiveChannel3;
+        int i3;
+        ReceiveChannel receiveChannel4;
         Comparator comparator2;
+        int i4;
         Object next;
+        ReceiveChannel receiveChannel5;
         ChannelIterator channelIterator2;
-        Comparator comparator3;
+        Throwable th;
+        ReceiveChannel receiveChannel6;
         Object hasNext;
         if (continuation instanceof ChannelsKt__DeprecatedKt$minWith$1) {
             channelsKt__DeprecatedKt$minWith$1 = (ChannelsKt__DeprecatedKt$minWith$1) continuation;
             if ((channelsKt__DeprecatedKt$minWith$1.label & Integer.MIN_VALUE) != 0) {
                 channelsKt__DeprecatedKt$minWith$1.label -= Integer.MIN_VALUE;
-                obj = channelsKt__DeprecatedKt$minWith$1.result;
+                Object obj2 = channelsKt__DeprecatedKt$minWith$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = channelsKt__DeprecatedKt$minWith$1.label;
+                Throwable th2 = null;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
+                    ResultKt.throwOnFailure(obj2);
                     try {
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$minWith$1.L$0 = comparator;
-                        channelsKt__DeprecatedKt$minWith$1.L$1 = receiveChannel;
-                        channelsKt__DeprecatedKt$minWith$1.L$2 = it;
+                        channelsKt__DeprecatedKt$minWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$minWith$1.L$1 = comparator;
+                        channelsKt__DeprecatedKt$minWith$1.L$2 = receiveChannel;
+                        channelsKt__DeprecatedKt$minWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$minWith$1.L$4 = it;
+                        i2 = 0;
+                        channelsKt__DeprecatedKt$minWith$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$minWith$1.I$1 = 0;
                         channelsKt__DeprecatedKt$minWith$1.label = 1;
                         Object hasNext2 = it.hasNext(channelsKt__DeprecatedKt$minWith$1);
-                        if (hasNext2 != coroutine_suspended) {
-                            receiveChannel2 = receiveChannel;
-                            channelIterator = it;
-                            obj = hasNext2;
-                            comparator2 = comparator;
-                        }
-                        return coroutine_suspended;
-                    } catch (Throwable th) {
-                        receiveChannel2 = receiveChannel;
-                        th = th;
-                        throw th;
-                    }
-                } else if (i == 1) {
-                    channelIterator = (ChannelIterator) channelsKt__DeprecatedKt$minWith$1.L$2;
-                    receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$1;
-                    comparator2 = (Comparator) channelsKt__DeprecatedKt$minWith$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        throw th;
-                    }
-                } else if (i != 2) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    Object obj2 = channelsKt__DeprecatedKt$minWith$1.L$3;
-                    channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$minWith$1.L$2;
-                    ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$1;
-                    comparator3 = (Comparator) channelsKt__DeprecatedKt$minWith$1.L$0;
-                    try {
-                        ResultKt.throwOnFailure(obj);
-                        ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$12 = channelsKt__DeprecatedKt$minWith$1;
-                        Object obj3 = obj2;
-                        receiveChannel = receiveChannel3;
-                        ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$13 = channelsKt__DeprecatedKt$minWith$12;
-                        if (!((Boolean) obj).booleanValue()) {
-                            next = channelIterator2.next();
-                            if (comparator3.compare(obj3, next) <= 0) {
-                                next = obj3;
-                            }
-                            channelsKt__DeprecatedKt$minWith$1 = channelsKt__DeprecatedKt$minWith$13;
-                            channelsKt__DeprecatedKt$minWith$1.L$0 = comparator3;
-                            channelsKt__DeprecatedKt$minWith$1.L$1 = receiveChannel;
-                            channelsKt__DeprecatedKt$minWith$1.L$2 = channelIterator2;
-                            channelsKt__DeprecatedKt$minWith$1.L$3 = next;
-                            channelsKt__DeprecatedKt$minWith$1.label = 2;
-                            hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$minWith$1);
-                            if (hasNext != coroutine_suspended) {
-                                channelsKt__DeprecatedKt$minWith$12 = channelsKt__DeprecatedKt$minWith$1;
-                                obj3 = next;
-                                obj = hasNext;
-                                ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$132 = channelsKt__DeprecatedKt$minWith$12;
-                                if (!((Boolean) obj).booleanValue()) {
-                                    ChannelsKt.cancelConsumed(receiveChannel, null);
-                                    return obj3;
-                                }
-                            }
+                        if (hasNext2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        receiveChannel2 = receiveChannel;
+                        channelIterator = it;
+                        obj = hasNext2;
+                        receiveChannel3 = receiveChannel2;
+                        i3 = 0;
                     } catch (Throwable th3) {
+                        receiveChannel6 = receiveChannel;
                         th = th3;
-                        receiveChannel2 = receiveChannel3;
+                    }
+                } else {
+                    if (i == 1) {
+                        int i5 = channelsKt__DeprecatedKt$minWith$1.I$1;
+                        int i6 = channelsKt__DeprecatedKt$minWith$1.I$0;
+                        ChannelIterator channelIterator3 = (ChannelIterator) channelsKt__DeprecatedKt$minWith$1.L$4;
+                        receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$3;
+                        receiveChannel6 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$2;
+                        Comparator comparator3 = (Comparator) channelsKt__DeprecatedKt$minWith$1.L$1;
+                        receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$0;
                         try {
-                            throw th;
+                            ResultKt.throwOnFailure(obj2);
+                            i2 = i5;
+                            receiveChannel = receiveChannel6;
+                            obj = obj2;
+                            i3 = i6;
+                            comparator = comparator3;
+                            channelIterator = channelIterator3;
                         } catch (Throwable th4) {
-                            ChannelsKt.cancelConsumed(receiveChannel2, th);
-                            throw th4;
+                            th = th4;
                         }
+                    } else if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        int i7 = channelsKt__DeprecatedKt$minWith$1.I$1;
+                        i4 = channelsKt__DeprecatedKt$minWith$1.I$0;
+                        next = channelsKt__DeprecatedKt$minWith$1.L$5;
+                        channelIterator2 = (ChannelIterator) channelsKt__DeprecatedKt$minWith$1.L$4;
+                        receiveChannel5 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$3;
+                        ReceiveChannel receiveChannel7 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$2;
+                        comparator2 = (Comparator) channelsKt__DeprecatedKt$minWith$1.L$1;
+                        receiveChannel4 = (ReceiveChannel) channelsKt__DeprecatedKt$minWith$1.L$0;
+                        try {
+                            ResultKt.throwOnFailure(obj2);
+                            ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$12 = channelsKt__DeprecatedKt$minWith$1;
+                            int i8 = i7;
+                            receiveChannel = receiveChannel7;
+                            ReceiveChannel receiveChannel8 = receiveChannel5;
+                            Throwable th5 = th2;
+                            ChannelIterator channelIterator4 = channelIterator2;
+                            Object obj3 = next;
+                            ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$13 = channelsKt__DeprecatedKt$minWith$12;
+                            if (!((Boolean) obj2).booleanValue()) {
+                                Object next2 = channelIterator4.next();
+                                if (comparator2.compare(obj3, next2) > 0) {
+                                    next = next2;
+                                    i2 = i8;
+                                    channelsKt__DeprecatedKt$minWith$1 = channelsKt__DeprecatedKt$minWith$13;
+                                } else {
+                                    i2 = i8;
+                                    channelsKt__DeprecatedKt$minWith$1 = channelsKt__DeprecatedKt$minWith$13;
+                                    next = obj3;
+                                }
+                                channelIterator2 = channelIterator4;
+                                th2 = th5;
+                                receiveChannel5 = receiveChannel8;
+                                channelsKt__DeprecatedKt$minWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                                channelsKt__DeprecatedKt$minWith$1.L$1 = comparator2;
+                                channelsKt__DeprecatedKt$minWith$1.L$2 = receiveChannel;
+                                channelsKt__DeprecatedKt$minWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                                channelsKt__DeprecatedKt$minWith$1.L$4 = channelIterator2;
+                                channelsKt__DeprecatedKt$minWith$1.L$5 = next;
+                                channelsKt__DeprecatedKt$minWith$1.I$0 = i4;
+                                channelsKt__DeprecatedKt$minWith$1.I$1 = i2;
+                                channelsKt__DeprecatedKt$minWith$1.label = 2;
+                                hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$minWith$1);
+                                if (hasNext != coroutine_suspended) {
+                                    channelsKt__DeprecatedKt$minWith$12 = channelsKt__DeprecatedKt$minWith$1;
+                                    i8 = i2;
+                                    obj2 = hasNext;
+                                    ReceiveChannel receiveChannel82 = receiveChannel5;
+                                    Throwable th52 = th2;
+                                    ChannelIterator channelIterator42 = channelIterator2;
+                                    Object obj32 = next;
+                                    ChannelsKt__DeprecatedKt$minWith$1 channelsKt__DeprecatedKt$minWith$132 = channelsKt__DeprecatedKt$minWith$12;
+                                    if (!((Boolean) obj2).booleanValue()) {
+                                        ChannelsKt.cancelConsumed(receiveChannel, th52);
+                                        return obj32;
+                                    }
+                                }
+                                return coroutine_suspended;
+                            }
+                        } catch (Throwable th6) {
+                            th = th6;
+                            receiveChannel6 = receiveChannel7;
+                        }
+                    }
+                    try {
+                        throw th;
+                    } catch (Throwable th7) {
+                        ChannelsKt.cancelConsumed(receiveChannel6, th);
+                        throw th7;
                     }
                 }
                 if (!((Boolean) obj).booleanValue()) {
+                    receiveChannel4 = receiveChannel2;
+                    comparator2 = comparator;
+                    i4 = i3;
                     next = channelIterator.next();
-                    ReceiveChannel receiveChannel4 = receiveChannel2;
+                    receiveChannel5 = receiveChannel3;
                     channelIterator2 = channelIterator;
-                    receiveChannel = receiveChannel4;
-                    comparator3 = comparator2;
-                    channelsKt__DeprecatedKt$minWith$1.L$0 = comparator3;
-                    channelsKt__DeprecatedKt$minWith$1.L$1 = receiveChannel;
-                    channelsKt__DeprecatedKt$minWith$1.L$2 = channelIterator2;
-                    channelsKt__DeprecatedKt$minWith$1.L$3 = next;
+                    channelsKt__DeprecatedKt$minWith$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel4);
+                    channelsKt__DeprecatedKt$minWith$1.L$1 = comparator2;
+                    channelsKt__DeprecatedKt$minWith$1.L$2 = receiveChannel;
+                    channelsKt__DeprecatedKt$minWith$1.L$3 = SpillingKt.nullOutSpilledVariable(receiveChannel5);
+                    channelsKt__DeprecatedKt$minWith$1.L$4 = channelIterator2;
+                    channelsKt__DeprecatedKt$minWith$1.L$5 = next;
+                    channelsKt__DeprecatedKt$minWith$1.I$0 = i4;
+                    channelsKt__DeprecatedKt$minWith$1.I$1 = i2;
                     channelsKt__DeprecatedKt$minWith$1.label = 2;
                     hasNext = channelIterator2.hasNext(channelsKt__DeprecatedKt$minWith$1);
                     if (hasNext != coroutine_suspended) {
                     }
                     return coroutine_suspended;
                 }
-                ChannelsKt.cancelConsumed(receiveChannel2, null);
+                ChannelsKt.cancelConsumed(receiveChannel, null);
                 return null;
             }
         }
         channelsKt__DeprecatedKt$minWith$1 = new ChannelsKt__DeprecatedKt$minWith$1(continuation);
-        obj = channelsKt__DeprecatedKt$minWith$1.result;
+        Object obj22 = channelsKt__DeprecatedKt$minWith$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = channelsKt__DeprecatedKt$minWith$1.label;
+        Throwable th22 = null;
         if (i != 0) {
         }
         if (!((Boolean) obj).booleanValue()) {
@@ -2368,7 +3336,7 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:42:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0042  */
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Binary compatibility")
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2387,7 +3355,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         ChannelIterator it = receiveChannel.iterator();
-                        channelsKt__DeprecatedKt$none$1.L$0 = receiveChannel;
+                        channelsKt__DeprecatedKt$none$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$none$1.L$1 = receiveChannel;
+                        channelsKt__DeprecatedKt$none$1.L$2 = SpillingKt.nullOutSpilledVariable(receiveChannel);
+                        channelsKt__DeprecatedKt$none$1.I$0 = 0;
+                        channelsKt__DeprecatedKt$none$1.I$1 = 0;
                         channelsKt__DeprecatedKt$none$1.label = 1;
                         obj = it.hasNext(channelsKt__DeprecatedKt$none$1);
                         if (obj == coroutine_suspended) {
@@ -2396,7 +3368,11 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        receiveChannel = (ReceiveChannel) channelsKt__DeprecatedKt$none$1.L$0;
+                        int i2 = channelsKt__DeprecatedKt$none$1.I$1;
+                        int i3 = channelsKt__DeprecatedKt$none$1.I$0;
+                        ReceiveChannel receiveChannel2 = (ReceiveChannel) channelsKt__DeprecatedKt$none$1.L$2;
+                        receiveChannel = (ReceiveChannel) channelsKt__DeprecatedKt$none$1.L$1;
+                        ReceiveChannel receiveChannel3 = (ReceiveChannel) channelsKt__DeprecatedKt$none$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     Boolean boxBoolean = Boxing.boxBoolean(!((Boolean) obj).booleanValue());
@@ -2432,16 +3408,29 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
         return new Function1() { // from class: kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit consumes$lambda$24$ChannelsKt__DeprecatedKt;
-                consumes$lambda$24$ChannelsKt__DeprecatedKt = ChannelsKt__DeprecatedKt.consumes$lambda$24$ChannelsKt__DeprecatedKt(ReceiveChannel.this, (Throwable) obj);
-                return consumes$lambda$24$ChannelsKt__DeprecatedKt;
+                Unit consumes$lambda$0$ChannelsKt__DeprecatedKt;
+                consumes$lambda$0$ChannelsKt__DeprecatedKt = ChannelsKt__DeprecatedKt.consumes$lambda$0$ChannelsKt__DeprecatedKt(ReceiveChannel.this, (Throwable) obj);
+                return consumes$lambda$0$ChannelsKt__DeprecatedKt;
             }
         };
     }
 
-    public static final Unit consumes$lambda$24$ChannelsKt__DeprecatedKt(ReceiveChannel receiveChannel, Throwable th) {
+    public static final Unit consumes$lambda$0$ChannelsKt__DeprecatedKt(ReceiveChannel receiveChannel, Throwable th) {
         ChannelsKt.cancelConsumed(receiveChannel, th);
         return Unit.INSTANCE;
+    }
+
+    public static /* synthetic */ ReceiveChannel produce$default(CoroutineScope coroutineScope, Job job, int i, Function2 function2, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            i = 0;
+        }
+        return ChannelsKt.produce(coroutineScope, job, i, function2);
+    }
+
+    @Deprecated(level = DeprecationLevel.WARNING, message = "Passing a Job to coroutine builders breaks structured concurrency, leading to hard-to-diagnose errors. This pattern should be avoided. This overload will be deprecated with an error in the future.")
+    public static final <E> ReceiveChannel<E> produce(CoroutineScope coroutineScope, Job job, int i, Function2<? super ProducerScope<? super E>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        Intrinsics.checkNotNull(job, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext");
+        return ProduceKt.produce(coroutineScope, job, i, function2);
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "BroadcastChannel is deprecated in the favour of SharedFlow and is no longer supported")
@@ -2454,10 +3443,10 @@ public final /* synthetic */ class ChannelsKt__DeprecatedKt {
                 function1.invoke(it.next());
             }
             Unit unit = Unit.INSTANCE;
-            ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
+            ReceiveChannel.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
             return Unit.INSTANCE;
         } catch (Throwable th) {
-            ReceiveChannel.DefaultImpls.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
+            ReceiveChannel.cancel$default((ReceiveChannel) openSubscription, (CancellationException) null, 1, (Object) null);
             throw th;
         }
     }

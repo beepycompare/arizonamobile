@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: Emitters.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1", f = "AsyncPagingDataDiffer.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends SuspendLambda implements Function2<FlowCollector<? super CombinedLoadStates>, Continuation<? super Unit>, Object> {
@@ -43,14 +43,14 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
     }
 
     /* compiled from: Emitters.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* renamed from: androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
         final /* synthetic */ FlowCollector<CombinedLoadStates> $$this$flow;
         final /* synthetic */ AsyncPagingDataDiffer this$0;
 
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1", f = "AsyncPagingDataDiffer.kt", i = {0, 0, 1, 1}, l = {40, 41, 43}, m = "emit", n = {"it", "$this$loadStateFlow_u24lambda_u240", "it", "$this$loadStateFlow_u24lambda_u240"}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 1)
         /* renamed from: androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */

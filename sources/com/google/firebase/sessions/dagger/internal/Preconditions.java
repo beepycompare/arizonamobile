@@ -1,54 +1,51 @@
 package com.google.firebase.sessions.dagger.internal;
 /* loaded from: classes4.dex */
 public final class Preconditions {
-    public static <T> T checkNotNull(T t) {
-        t.getClass();
-        return t;
+    public static <T> T checkNotNull(T reference) {
+        reference.getClass();
+        return reference;
     }
 
-    public static <T> T checkNotNull(T t, String str) {
-        if (t != null) {
-            return t;
+    public static <T> T checkNotNull(T reference, String errorMessage) {
+        if (reference != null) {
+            return reference;
         }
-        throw new NullPointerException(str);
+        throw new NullPointerException(errorMessage);
     }
 
-    public static <T> T checkNotNullFromProvides(T t) {
-        if (t != null) {
-            return t;
+    public static <T> T checkNotNullFromProvides(T reference) {
+        if (reference != null) {
+            return reference;
         }
         throw new NullPointerException("Cannot return null from a non-@Nullable @Provides method");
     }
 
-    public static <T> T checkNotNullFromComponent(T t) {
-        if (t != null) {
-            return t;
+    public static <T> T checkNotNullFromComponent(T reference) {
+        if (reference != null) {
+            return reference;
         }
         throw new NullPointerException("Cannot return null from a non-@Nullable component method");
     }
 
-    public static <T> T checkNotNull(T t, String str, Object obj) {
-        String valueOf;
-        if (t == null) {
-            if (str.contains("%s")) {
-                if (str.indexOf("%s") != str.lastIndexOf("%s")) {
+    public static <T> T checkNotNull(T reference, String errorMessageTemplate, Object errorMessageArg) {
+        if (reference == null) {
+            if (errorMessageTemplate.contains("%s")) {
+                if (errorMessageTemplate.indexOf("%s") != errorMessageTemplate.lastIndexOf("%s")) {
                     throw new IllegalArgumentException("errorMessageTemplate has more than one format specifier");
                 }
-                if (obj instanceof Class) {
-                    valueOf = ((Class) obj).getCanonicalName();
-                } else {
-                    valueOf = String.valueOf(obj);
+                if (errorMessageArg instanceof Class) {
+                    errorMessageArg = ((Class) errorMessageArg).getCanonicalName();
                 }
-                throw new NullPointerException(str.replace("%s", valueOf));
+                throw new NullPointerException(errorMessageTemplate.replace("%s", String.valueOf(errorMessageArg)));
             }
             throw new IllegalArgumentException("errorMessageTemplate has no format specifiers");
         }
-        return t;
+        return reference;
     }
 
-    public static <T> void checkBuilderRequirement(T t, Class<T> cls) {
-        if (t == null) {
-            throw new IllegalStateException(cls.getCanonicalName() + " must be set");
+    public static <T> void checkBuilderRequirement(T requirement, Class<T> clazz) {
+        if (requirement == null) {
+            throw new IllegalStateException(clazz.getCanonicalName() + " must be set");
         }
     }
 

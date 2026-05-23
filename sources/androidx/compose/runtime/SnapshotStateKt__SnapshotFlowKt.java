@@ -1,8 +1,6 @@
 package androidx.compose.runtime;
 
-import androidx.collection.MutableScatterSet;
 import androidx.exifinterface.media.ExifInterface;
-import java.util.Set;
 import kotlin.Metadata;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
@@ -13,17 +11,17 @@ import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.flow.StateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SnapshotFlow.kt */
-@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\"\n\u0002\b\u0002\u001a-\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a?\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00070\u0001\"\b\b\u0000\u0010\u0002*\u0002H\u0007\"\u0004\b\u0001\u0010\u0007*\b\u0012\u0004\u0012\u0002H\u00020\b2\u0006\u0010\t\u001a\u0002H\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\n\u001a \u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\u00020\b\"\u0004\b\u0000\u0010\u00022\f\u0010\f\u001a\b\u0012\u0004\u0012\u0002H\u00020\r\u001a%\u0010\u000e\u001a\u00020\u000f*\b\u0012\u0004\u0012\u00020\u00110\u00102\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00110\u0013H\u0002¢\u0006\u0002\b\u0014¨\u0006\u0015"}, d2 = {"collectAsState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/StateFlow;", "context", "Lkotlin/coroutines/CoroutineContext;", "(Lkotlinx/coroutines/flow/StateFlow;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;", "R", "Lkotlinx/coroutines/flow/Flow;", "initial", "(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;", "snapshotFlow", "block", "Lkotlin/Function0;", "intersects", "", "Landroidx/collection/MutableScatterSet;", "", "set", "", "intersects$SnapshotStateKt__SnapshotFlowKt", "runtime"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/compose/runtime/SnapshotStateKt")
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a-\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a?\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00070\u0001\"\b\b\u0000\u0010\u0002*\u0002H\u0007\"\u0004\b\u0001\u0010\u0007*\b\u0012\u0004\u0012\u0002H\u00020\b2\u0006\u0010\t\u001a\u0002H\u00072\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\n\u001a1\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\u00020\b\"\u0004\b\u0000\u0010\u00022\b\u0010\f\u001a\u0004\u0018\u00010\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00020\u000fH\u0002¢\u0006\u0002\b\u0010\u001a \u0010\u0011\u001a\b\u0012\u0004\u0012\u0002H\u00020\b\"\u0004\b\u0000\u0010\u00022\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00020\u000f\u001a*\u0010\u0011\u001a\b\u0012\u0004\u0012\u0002H\u00020\b\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0012\u001a\u00020\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00020\u000fH\u0007¨\u0006\u0013"}, d2 = {"collectAsState", "Landroidx/compose/runtime/State;", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/StateFlow;", "context", "Lkotlin/coroutines/CoroutineContext;", "(Lkotlinx/coroutines/flow/StateFlow;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;", "R", "Lkotlinx/coroutines/flow/Flow;", "initial", "(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;", "snapshotFlowImpl", "externalManager", "Landroidx/compose/runtime/SnapshotFlowManager;", "block", "Lkotlin/Function0;", "snapshotFlowImpl$SnapshotStateKt__SnapshotFlowKt", "snapshotFlow", "manager", "runtime"}, k = 5, mv = {2, 1, 0}, xi = 48, xs = "androidx/compose/runtime/SnapshotStateKt")
 /* loaded from: classes.dex */
 public final /* synthetic */ class SnapshotStateKt__SnapshotFlowKt {
     public static final <T> State<T> collectAsState(StateFlow<? extends T> stateFlow, CoroutineContext coroutineContext, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -1439883919, "C(collectAsState)N(context)49@1914L30:SnapshotFlow.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -1439883919, "C(collectAsState)N(context)53@2117L30:SnapshotFlow.kt#9igjgp");
         if ((i2 & 1) != 0) {
             coroutineContext = EmptyCoroutineContext.INSTANCE;
         }
         CoroutineContext coroutineContext2 = coroutineContext;
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-1439883919, i, -1, "androidx.compose.runtime.collectAsState (SnapshotFlow.kt:49)");
+            ComposerKt.traceEventStart(-1439883919, i, -1, "androidx.compose.runtime.collectAsState (SnapshotFlow.kt:53)");
         }
         State<T> collectAsState = SnapshotStateKt.collectAsState(stateFlow, stateFlow.getValue(), coroutineContext2, composer, (i & 14) | ((i << 3) & 896), 0);
         if (ComposerKt.isTraceInProgress()) {
@@ -34,13 +32,13 @@ public final /* synthetic */ class SnapshotStateKt__SnapshotFlowKt {
     }
 
     public static final <T extends R, R> State<R> collectAsState(Flow<? extends T> flow, R r, CoroutineContext coroutineContext, Composer composer, int i, int i2) {
-        ComposerKt.sourceInformationMarkerStart(composer, -606625098, "C(collectAsState)N(initial,context)65@2592L153,65@2555L190:SnapshotFlow.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -606625098, "C(collectAsState)N(initial,context)69@2795L153,69@2758L190:SnapshotFlow.kt#9igjgp");
         if ((i2 & 2) != 0) {
             coroutineContext = EmptyCoroutineContext.INSTANCE;
         }
         CoroutineContext coroutineContext2 = coroutineContext;
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-606625098, i, -1, "androidx.compose.runtime.collectAsState (SnapshotFlow.kt:65)");
+            ComposerKt.traceEventStart(-606625098, i, -1, "androidx.compose.runtime.collectAsState (SnapshotFlow.kt:69)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 1148838511, "CC(remember):SnapshotFlow.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(coroutineContext2) | composer.changedInstance(flow);
@@ -58,38 +56,15 @@ public final /* synthetic */ class SnapshotStateKt__SnapshotFlowKt {
         return produceState;
     }
 
-    public static final <T> Flow<T> snapshotFlow(Function0<? extends T> function0) {
-        return FlowKt.flow(new SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1(function0, null));
+    private static final <T> Flow<T> snapshotFlowImpl$SnapshotStateKt__SnapshotFlowKt(SnapshotFlowManager snapshotFlowManager, Function0<? extends T> function0) {
+        return FlowKt.flow(new SnapshotStateKt__SnapshotFlowKt$snapshotFlowImpl$1(snapshotFlowManager, function0, null));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean intersects$SnapshotStateKt__SnapshotFlowKt(MutableScatterSet<Object> mutableScatterSet, Set<? extends Object> set) {
-        MutableScatterSet<Object> mutableScatterSet2 = mutableScatterSet;
-        Object[] objArr = mutableScatterSet2.elements;
-        long[] jArr = mutableScatterSet2.metadata;
-        int length = jArr.length - 2;
-        if (length >= 0) {
-            int i = 0;
-            while (true) {
-                long j = jArr[i];
-                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i2 = 8 - ((~(i - length)) >>> 31);
-                    for (int i3 = 0; i3 < i2; i3++) {
-                        if ((255 & j) < 128 && set.contains(objArr[(i << 3) + i3])) {
-                            return true;
-                        }
-                        j >>= 8;
-                    }
-                    if (i2 != 8) {
-                        break;
-                    }
-                }
-                if (i == length) {
-                    break;
-                }
-                i++;
-            }
-        }
-        return false;
+    public static final <T> Flow<T> snapshotFlow(Function0<? extends T> function0) {
+        return snapshotFlowImpl$SnapshotStateKt__SnapshotFlowKt(null, function0);
+    }
+
+    public static final <T> Flow<T> snapshotFlow(SnapshotFlowManager snapshotFlowManager, Function0<? extends T> function0) {
+        return snapshotFlowImpl$SnapshotStateKt__SnapshotFlowKt(snapshotFlowManager, function0);
     }
 }

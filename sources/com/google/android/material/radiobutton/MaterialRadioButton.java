@@ -3,6 +3,9 @@ package com.google.android.material.radiobutton;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableWrapper;
+import android.graphics.drawable.RippleDrawable;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.core.widget.CompoundButtonCompat;
@@ -37,6 +40,9 @@ public class MaterialRadioButton extends AppCompatRadioButton {
         TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialRadioButton, i, i2, new int[0]);
         if (obtainStyledAttributes.hasValue(R.styleable.MaterialRadioButton_buttonTint)) {
             CompoundButtonCompat.setButtonTintList(this, MaterialResources.getColorStateList(context2, obtainStyledAttributes, R.styleable.MaterialRadioButton_buttonTint));
+        }
+        if (obtainStyledAttributes.hasValue(R.styleable.MaterialRadioButton_rippleColor)) {
+            setRippleColor(MaterialResources.getColorStateList(context2, obtainStyledAttributes, R.styleable.MaterialRadioButton_rippleColor));
         }
         this.useMaterialThemeColors = obtainStyledAttributes.getBoolean(R.styleable.MaterialRadioButton_useMaterialThemeColors, false);
         obtainStyledAttributes.recycle();
@@ -77,5 +83,18 @@ public class MaterialRadioButton extends AppCompatRadioButton {
             this.materialThemeColorsTintList = new ColorStateList(iArr, iArr2);
         }
         return this.materialThemeColorsTintList;
+    }
+
+    private void setRippleColor(ColorStateList colorStateList) {
+        if (colorStateList == null) {
+            return;
+        }
+        Drawable background = getBackground();
+        if (background instanceof DrawableWrapper) {
+            background = ((DrawableWrapper) background).getDrawable();
+        }
+        if (background instanceof RippleDrawable) {
+            ((RippleDrawable) background).setColor(colorStateList);
+        }
     }
 }

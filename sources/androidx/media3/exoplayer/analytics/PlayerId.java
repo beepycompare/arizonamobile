@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.analytics;
 import android.media.metrics.LogSessionId;
 import android.os.Build;
 import com.google.common.base.Preconditions;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class PlayerId {
     private final LogSessionIdApi31 logSessionIdApi31;
     public final String name;
@@ -23,7 +23,7 @@ public final class PlayerId {
         ((LogSessionIdApi31) Preconditions.checkNotNull(this.logSessionIdApi31)).setLogSessionId(logSessionId);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static final class LogSessionIdApi31 {
         public LogSessionId logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
 

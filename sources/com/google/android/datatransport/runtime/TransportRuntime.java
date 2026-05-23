@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 @Singleton
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TransportRuntime implements TransportInternal {
     private static volatile TransportRuntimeComponent instance;
     private final Clock eventClock;

@@ -1,20 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public interface Sa extends Ta {
-    Ia a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0388l0 c0388l0);
+public final class Sa {
 
-    @Override // io.appmetrica.analytics.impl.Ta
-    /* synthetic */ Sa a();
+    /* renamed from: a  reason: collision with root package name */
+    public final HashMap f762a;
+    public final boolean b;
 
-    Ua a(AppMetricaConfig appMetricaConfig);
+    public Sa() {
+        this(false);
+    }
 
-    void a(ReporterConfig reporterConfig);
+    public final void a(Object obj, Object obj2) {
+        ArrayList arrayList;
+        Collection collection = (Collection) this.f762a.get(obj);
+        if (collection == null) {
+            arrayList = new ArrayList();
+        } else {
+            arrayList = new ArrayList(collection);
+        }
+        arrayList.add(obj2);
+        Collection collection2 = (Collection) this.f762a.put(obj, arrayList);
+    }
 
-    Ia b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0388l0 c0388l0);
+    public final String toString() {
+        return this.f762a.toString();
+    }
 
-    Ra b(ReporterConfig reporterConfig);
+    public Sa(boolean z) {
+        this.f762a = new HashMap();
+        this.b = z;
+    }
 }

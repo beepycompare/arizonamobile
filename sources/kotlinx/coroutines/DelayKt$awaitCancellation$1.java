@@ -6,10 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Delay.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.DelayKt", f = "Delay.kt", i = {}, l = {160}, m = "awaitCancellation", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.DelayKt", f = "Delay.kt", i = {0}, l = {160}, m = "awaitCancellation", n = {"$i$f$suspendCancellableCoroutine"}, s = {"I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class DelayKt$awaitCancellation$1 extends ContinuationImpl {
+    int I$0;
     int label;
     /* synthetic */ Object result;
 

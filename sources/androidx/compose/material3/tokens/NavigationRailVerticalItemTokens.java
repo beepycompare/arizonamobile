@@ -8,38 +8,38 @@ import kotlin.Metadata;
 public final class NavigationRailVerticalItemTokens {
     public static final int $stable = 0;
     public static final NavigationRailVerticalItemTokens INSTANCE = new NavigationRailVerticalItemTokens();
-    private static final float ActiveIndicatorHeight = Dp.m7555constructorimpl(32.0f);
-    private static final float ActiveIndicatorWidth = Dp.m7555constructorimpl(56.0f);
-    private static final float IconLabelSpace = Dp.m7555constructorimpl(4.0f);
-    private static final float LeadingSpace = Dp.m7555constructorimpl(16.0f);
-    private static final float TrailingSpace = Dp.m7555constructorimpl(16.0f);
+    private static final float ActiveIndicatorHeight = Dp.m8160constructorimpl(32.0f);
+    private static final float ActiveIndicatorWidth = Dp.m8160constructorimpl(56.0f);
+    private static final float IconLabelSpace = Dp.m8160constructorimpl(4.0f);
+    private static final float LeadingSpace = Dp.m8160constructorimpl(16.0f);
+    private static final float TrailingSpace = Dp.m8160constructorimpl(16.0f);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelMedium;
 
     private NavigationRailVerticalItemTokens() {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3574getActiveIndicatorHeightD9Ej5fM() {
+    public final float m4019getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3575getActiveIndicatorWidthD9Ej5fM() {
+    public final float m4020getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3576getIconLabelSpaceD9Ej5fM() {
+    public final float m4021getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3577getLeadingSpaceD9Ej5fM() {
+    public final float m4022getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3578getTrailingSpaceD9Ej5fM() {
+    public final float m4023getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 

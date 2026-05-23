@@ -38,7 +38,7 @@ public final class DatePickerKt$DatePicker$5 implements Function2<Composer, Inte
             ComposerKt.traceEventStart(-1483431603, i, -1, "androidx.compose.material3.DatePicker.<anonymous> (DatePicker.kt:206)");
         }
         Modifier padding = PaddingKt.padding(Modifier.Companion, DatePickerKt.getDatePickerModeTogglePadding());
-        int mo1996getDisplayModejFl4v0 = this.$state.mo1996getDisplayModejFl4v0();
+        int mo2441getDisplayModejFl4v0 = this.$state.mo2441getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, 351379263, "CC(remember):DatePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DatePickerState datePickerState = this.$state;
@@ -53,7 +53,7 @@ public final class DatePickerKt$DatePicker$5 implements Function2<Composer, Inte
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DatePickerKt.m1991DisplayModeToggleButtoniUJLfQg(padding, mo1996getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
+        DatePickerKt.m2436DisplayModeToggleButtoniUJLfQg(padding, mo2441getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -61,7 +61,7 @@ public final class DatePickerKt$DatePicker$5 implements Function2<Composer, Inte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(DatePickerState datePickerState, DisplayMode displayMode) {
-        datePickerState.mo1997setDisplayModevCnGnXg(displayMode.m2034unboximpl());
+        datePickerState.mo2442setDisplayModevCnGnXg(displayMode.m2479unboximpl());
         return Unit.INSTANCE;
     }
 }

@@ -2,8 +2,8 @@ package com.google.firebase.sessions;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.sessions.dagger.internal.Factory;
+import com.google.firebase.sessions.dagger.internal.Provider;
 import com.google.firebase.sessions.settings.SessionsSettings;
-import javax.inject.Provider;
 import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes4.dex */
 public final class FirebaseSessions_Factory implements Factory<FirebaseSessions> {
@@ -12,7 +12,7 @@ public final class FirebaseSessions_Factory implements Factory<FirebaseSessions>
     private final Provider<SessionsActivityLifecycleCallbacks> sessionsActivityLifecycleCallbacksProvider;
     private final Provider<SessionsSettings> settingsProvider;
 
-    public FirebaseSessions_Factory(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionsActivityLifecycleCallbacks> provider4) {
+    private FirebaseSessions_Factory(Provider<FirebaseApp> provider, Provider<SessionsSettings> provider2, Provider<CoroutineContext> provider3, Provider<SessionsActivityLifecycleCallbacks> provider4) {
         this.firebaseAppProvider = provider;
         this.settingsProvider = provider2;
         this.backgroundDispatcherProvider = provider3;

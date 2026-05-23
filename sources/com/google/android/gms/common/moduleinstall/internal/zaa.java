@@ -4,26 +4,26 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.moduleinstall.ModuleAvailabilityResponse;
 import com.google.android.gms.common.moduleinstall.ModuleInstallIntentResponse;
 import com.google.android.gms.common.moduleinstall.ModuleInstallResponse;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class zaa extends zad {
     @Override // com.google.android.gms.common.moduleinstall.internal.zae
-    public void zab(Status status) {
+    public void zab(Status status, ModuleAvailabilityResponse moduleAvailabilityResponse) {
         throw new UnsupportedOperationException();
     }
 
     @Override // com.google.android.gms.common.moduleinstall.internal.zae
-    public void zac(Status status, ModuleInstallIntentResponse moduleInstallIntentResponse) {
+    public void zac(Status status, ModuleInstallResponse moduleInstallResponse) {
         throw new UnsupportedOperationException();
     }
 
     @Override // com.google.android.gms.common.moduleinstall.internal.zae
-    public void zad(Status status, ModuleInstallResponse moduleInstallResponse) {
+    public void zad(Status status, ModuleInstallIntentResponse moduleInstallIntentResponse) {
         throw new UnsupportedOperationException();
     }
 
     @Override // com.google.android.gms.common.moduleinstall.internal.zae
-    public void zae(Status status, ModuleAvailabilityResponse moduleAvailabilityResponse) {
+    public void zae(Status status) {
         throw new UnsupportedOperationException();
     }
 }

@@ -1,5 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+
+import com.google.common.base.Supplier;
+import com.google.common.util.concurrent.MoreExecutors;
+import java.util.concurrent.Executors;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public class zzlp {
+final /* synthetic */ class zzlp implements Supplier {
+    static final /* synthetic */ zzlp zza = new zzlp();
+
+    private /* synthetic */ zzlp() {
+    }
+
+    @Override // com.google.common.base.Supplier
+    public final /* synthetic */ Object get() {
+        int i = zzlk.zza;
+        return MoreExecutors.listeningDecorator(Executors.newSingleThreadScheduledExecutor(zzlo.zza));
+    }
 }

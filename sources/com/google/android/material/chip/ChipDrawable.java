@@ -17,6 +17,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -30,6 +31,7 @@ import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.canvas.CanvasCompat;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.drawable.DrawableUtils;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.TextDrawableHelper;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
@@ -174,6 +176,12 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         setText(obtainStyledAttributes.getText(R.styleable.Chip_android_text));
         TextAppearance textAppearance = MaterialResources.getTextAppearance(this.context, obtainStyledAttributes, R.styleable.Chip_android_textAppearance);
         textAppearance.setTextSize(obtainStyledAttributes.getDimension(R.styleable.Chip_android_textSize, textAppearance.getTextSize()));
+        if (Build.VERSION.SDK_INT >= 26) {
+            int indexWithValue = MaterialResources.getIndexWithValue(obtainStyledAttributes, R.styleable.Chip_fontVariationSettings, R.styleable.Chip_android_fontVariationSettings);
+            if (obtainStyledAttributes.hasValue(indexWithValue)) {
+                textAppearance.setFontVariationSettings(obtainStyledAttributes.getString(indexWithValue));
+            }
+        }
         setTextAppearance(textAppearance);
         int i3 = obtainStyledAttributes.getInt(R.styleable.Chip_android_ellipsize, 0);
         if (i3 == 1) {
@@ -885,10 +893,11 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
         drawable.setLevel(getLevel());
         drawable.setVisible(isVisible(), false);
         if (drawable == this.closeIcon) {
+            drawable.setTintList(this.closeIconTint);
             if (drawable.isStateful()) {
                 drawable.setState(getCloseIconState());
+                return;
             }
-            drawable.setTintList(this.closeIconTint);
             return;
         }
         Drawable drawable2 = this.chipIcon;
@@ -947,6 +956,22 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             textAppearance.setTextColor(colorStateList);
             invalidateSelf();
         }
+    }
+
+    public String getFontVariationSettings() {
+        TextAppearance textAppearance = getTextAppearance();
+        if (textAppearance == null || Build.VERSION.SDK_INT < 26) {
+            return null;
+        }
+        return textAppearance.getFontVariationSettings();
+    }
+
+    public void setFontVariationSettings(String str) {
+        TextAppearance textAppearance = getTextAppearance();
+        if (textAppearance == null || Build.VERSION.SDK_INT < 26) {
+            return;
+        }
+        textAppearance.setFontVariationSettings(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1280,7 +1305,9 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
     }
 
     private void updateFrameworkCloseIconRipple() {
-        this.closeIconRipple = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(getRippleColor()), this.closeIcon, closeIconRippleMask);
+        RippleDrawable rippleDrawable = new RippleDrawable(RippleUtils.sanitizeRippleDrawableColor(getRippleColor()), this.closeIcon, closeIconRippleMask);
+        FocusRingDrawable.layer(this.context, rippleDrawable);
+        this.closeIconRipple = rippleDrawable;
     }
 
     public ColorStateList getCloseIconTint() {

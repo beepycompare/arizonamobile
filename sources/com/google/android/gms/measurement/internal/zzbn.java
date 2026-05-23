@@ -1,7 +1,16 @@
 package com.google.android.gms.measurement.internal;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import com.google.android.gms.internal.measurement.zzahq;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzbn {
-    Object zza();
+final /* synthetic */ class zzbn implements zzbo {
+    static final /* synthetic */ zzbn zza = new zzbn();
+
+    private /* synthetic */ zzbn() {
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzbo
+    public final /* synthetic */ Object zza() {
+        return new Boolean(zzahq.zza());
+    }
 }

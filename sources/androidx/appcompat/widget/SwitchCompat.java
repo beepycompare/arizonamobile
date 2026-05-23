@@ -758,8 +758,9 @@ public class SwitchCompat extends CompoundButton implements EmojiCompatConfigura
         setThumbPosition(isChecked ? 1.0f : 0.0f);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5;
         int width;
         int i6;

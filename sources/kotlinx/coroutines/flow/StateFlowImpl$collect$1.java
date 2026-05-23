@@ -8,8 +8,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.StateFlowImpl", f = "StateFlow.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {389, 401, Constants.STATUS_NOT_ACCEPTABLE}, m = "collect", n = {"this", "collector", "slot", "this", "collector", "slot", "collectorJob", DownloaderClientMarshaller.PARAM_NEW_STATE, "this", "collector", "slot", "collectorJob", "oldState"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.StateFlowImpl", f = "StateFlow.kt", i = {0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {389, 401, Constants.STATUS_NOT_ACCEPTABLE}, m = "collect", n = {"collector", "slot", "collector", "slot", "collectorJob", "oldState", DownloaderClientMarshaller.PARAM_NEW_STATE, "collector", "slot", "collectorJob", "oldState", DownloaderClientMarshaller.PARAM_NEW_STATE}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 1)
 /* loaded from: classes5.dex */
 public final class StateFlowImpl$collect$1 extends ContinuationImpl {
     Object L$0;

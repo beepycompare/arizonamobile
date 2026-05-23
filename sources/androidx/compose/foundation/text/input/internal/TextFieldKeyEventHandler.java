@@ -2,13 +2,12 @@ package androidx.compose.foundation.text.input.internal;
 
 import android.view.KeyEvent;
 import androidx.collection.MutableLongSet;
-import androidx.compose.foundation.ComposeFoundationFlags;
 import androidx.compose.foundation.text.DeadKeyCombiner;
 import androidx.compose.foundation.text.KeyCommand;
 import androidx.compose.foundation.text.KeyEventHelpers_androidKt;
 import androidx.compose.foundation.text.KeyMapping;
 import androidx.compose.foundation.text.KeyMapping_androidKt;
-import androidx.compose.foundation.text.StringHelpers_jvmKt;
+import androidx.compose.foundation.text.StringsHelpers_jvmAndAndroidKt;
 import androidx.compose.foundation.text.TextFieldKeyInput_androidKt;
 import androidx.compose.foundation.text.input.internal.selection.SelectionMovementDeletionContext;
 import androidx.compose.foundation.text.input.internal.selection.TextFieldPreparedSelectionState;
@@ -27,7 +26,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 /* compiled from: TextFieldKeyEventHandler.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0000\b!\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J7\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J]\u0010\u001a\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0016¢\u0006\u0004\b#\u0010$JU\u0010%\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0002¢\u0006\u0004\b&\u0010'J\f\u0010(\u001a\u00020)*\u00020\u001cH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "", "<init>", "()V", "preparedSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldPreparedSelectionState;", "deadKeyCombiner", "Landroidx/compose/foundation/text/DeadKeyCombiner;", "keyMapping", "Landroidx/compose/foundation/text/KeyMapping;", "currentlyConsumedDownKeys", "Landroidx/collection/MutableLongSet;", "onPreKeyEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "focusManager", "Landroidx/compose/ui/focus/FocusManager;", "keyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "onPreKeyEvent-MyFupTE", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/focus/FocusManager;Landroidx/compose/ui/platform/SoftwareKeyboardController;)Z", "onKeyEvent", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "editable", "singleLine", "onSubmit", "Lkotlin/Function0;", "onKeyEvent-8zsqlwg", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "processKeyDownEvent", "processKeyDownEvent-q0GpTC0", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "getVisibleTextLayoutHeight", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0000\b!\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J7\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016¢\u0006\u0004\b\u0018\u0010\u0019J]\u0010\u001a\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0016¢\u0006\u0004\b#\u0010$JU\u0010%\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\r2\u0006\u0010 \u001a\u00020\r2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\r0\"H\u0002¢\u0006\u0004\b&\u0010'J\f\u0010(\u001a\u00020)*\u00020\u001cH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/compose/foundation/text/input/internal/TextFieldKeyEventHandler;", "", "<init>", "()V", "preparedSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldPreparedSelectionState;", "deadKeyCombiner", "Landroidx/compose/foundation/text/DeadKeyCombiner;", "keyMapping", "Landroidx/compose/foundation/text/KeyMapping;", "currentlyConsumedDownKeys", "Landroidx/collection/MutableLongSet;", "onPreKeyEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/compose/ui/input/key/KeyEvent;", "textFieldState", "Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;", "textFieldSelectionState", "Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;", "focusManager", "Landroidx/compose/ui/focus/FocusManager;", "keyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "onPreKeyEvent-MyFupTE", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Landroidx/compose/ui/focus/FocusManager;Landroidx/compose/ui/platform/SoftwareKeyboardController;)Z", "onKeyEvent", "textLayoutState", "Landroidx/compose/foundation/text/input/internal/TextLayoutState;", "clipboardKeyCommandsHandler", "Landroidx/compose/foundation/text/input/internal/ClipboardKeyCommandsHandler;", "editable", "singleLine", "onSubmit", "Lkotlin/Function0;", "onKeyEvent-8zsqlwg", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Landroidx/compose/foundation/text/input/internal/selection/TextFieldSelectionState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "processKeyDownEvent", "processKeyDownEvent-q0GpTC0", "(Landroid/view/KeyEvent;Landroidx/compose/foundation/text/input/internal/TransformedTextFieldState;Landroidx/compose/foundation/text/input/internal/TextLayoutState;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/platform/SoftwareKeyboardController;ZZLkotlin/jvm/functions/Function0;)Z", "getVisibleTextLayoutHeight", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public abstract class TextFieldKeyEventHandler {
     public static final int $stable = 8;
@@ -37,7 +36,7 @@ public abstract class TextFieldKeyEventHandler {
     private final KeyMapping keyMapping = KeyMapping_androidKt.getPlatformDefaultKeyMapping();
 
     /* compiled from: TextFieldKeyEventHandler.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -244,9 +243,9 @@ public abstract class TextFieldKeyEventHandler {
         }
     }
 
-    /* renamed from: onPreKeyEvent-MyFupTE */
-    public boolean mo1363onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
-        if (TextRange.m6997getCollapsedimpl(transformedTextFieldState.getVisualText().m1336getSelectiond9O1mEE()) || !KeyEventHelpers_androidKt.m1199cancelsTextSelectionZmokQxo(keyEvent)) {
+    /* renamed from: onPreKeyEvent-MyFupTE  reason: not valid java name */
+    public boolean m1869onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
+        if (TextRange.m7602getCollapsedimpl(transformedTextFieldState.getVisualText().m1724getSelectiond9O1mEE()) || !KeyEventHelpers_androidKt.m1540cancelsTextSelectionZmokQxo(keyEvent)) {
             return false;
         }
         textFieldSelectionState.deselect();
@@ -254,56 +253,56 @@ public abstract class TextFieldKeyEventHandler {
     }
 
     /* renamed from: onKeyEvent-8zsqlwg */
-    public boolean mo1362onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
-        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
-        if (KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5926getKeyUpCS__XNY())) {
+    public boolean mo1750onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
+        long m6517getKeyZmokQxo = KeyEvent_androidKt.m6517getKeyZmokQxo(keyEvent);
+        if (KeyEventType.m6510equalsimpl0(KeyEvent_androidKt.m6518getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6515getKeyUpCS__XNY())) {
             MutableLongSet mutableLongSet = this.currentlyConsumedDownKeys;
-            if (mutableLongSet == null || !mutableLongSet.contains(m5928getKeyZmokQxo)) {
+            if (mutableLongSet == null || !mutableLongSet.contains(m6517getKeyZmokQxo)) {
                 return false;
             }
             MutableLongSet mutableLongSet2 = this.currentlyConsumedDownKeys;
             if (mutableLongSet2 != null) {
-                mutableLongSet2.remove(m5928getKeyZmokQxo);
+                mutableLongSet2.remove(m6517getKeyZmokQxo);
             }
             return true;
-        } else if (!KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5927getUnknownCS__XNY()) || TextFieldKeyInput_androidKt.m1279isTypedEventZmokQxo(keyEvent)) {
-            boolean m1436processKeyDownEventq0GpTC0 = m1436processKeyDownEventq0GpTC0(keyEvent, transformedTextFieldState, textLayoutState, function1, softwareKeyboardController, z, z2, function0);
-            if (m1436processKeyDownEventq0GpTC0) {
+        } else if (!KeyEventType.m6510equalsimpl0(KeyEvent_androidKt.m6518getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6516getUnknownCS__XNY()) || TextFieldKeyInput_androidKt.m1667isTypedEventZmokQxo(keyEvent)) {
+            boolean m1868processKeyDownEventq0GpTC0 = m1868processKeyDownEventq0GpTC0(keyEvent, transformedTextFieldState, textLayoutState, function1, softwareKeyboardController, z, z2, function0);
+            if (m1868processKeyDownEventq0GpTC0) {
                 MutableLongSet mutableLongSet3 = this.currentlyConsumedDownKeys;
                 if (mutableLongSet3 == null) {
                     mutableLongSet3 = new MutableLongSet(3);
                     this.currentlyConsumedDownKeys = mutableLongSet3;
                 }
-                mutableLongSet3.plusAssign(m5928getKeyZmokQxo);
+                mutableLongSet3.plusAssign(m6517getKeyZmokQxo);
             }
-            return m1436processKeyDownEventq0GpTC0;
+            return m1868processKeyDownEventq0GpTC0;
         } else {
             return false;
         }
     }
 
     /* renamed from: processKeyDownEvent-q0GpTC0  reason: not valid java name */
-    private final boolean m1436processKeyDownEventq0GpTC0(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
+    private final boolean m1868processKeyDownEventq0GpTC0(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
         WedgeAffinity wedgeAffinity;
-        Integer m1197consumeZmokQxo;
+        Integer m1538consumeZmokQxo;
         boolean z3 = false;
-        if (TextFieldKeyInput_androidKt.m1279isTypedEventZmokQxo(keyEvent) && (m1197consumeZmokQxo = this.deadKeyCombiner.m1197consumeZmokQxo(keyEvent)) != null) {
-            String sb = StringHelpers_jvmKt.appendCodePointX(new StringBuilder(2), m1197consumeZmokQxo.intValue()).toString();
+        if (TextFieldKeyInput_androidKt.m1667isTypedEventZmokQxo(keyEvent) && (m1538consumeZmokQxo = this.deadKeyCombiner.m1538consumeZmokQxo(keyEvent)) != null) {
+            String sb = StringsHelpers_jvmAndAndroidKt.appendCodePointX(new StringBuilder(2), m1538consumeZmokQxo.intValue()).toString();
             if (z) {
-                TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, sb, true, null, !TextFieldKeyEventHandler_androidKt.m1438isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, sb, true, null, !TextFieldKeyEventHandler_androidKt.m1870isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
                 this.preparedSelectionState.resetCachedX();
                 return true;
             }
             return false;
         }
-        KeyCommand mo1200mapZmokQxo = this.keyMapping.mo1200mapZmokQxo(keyEvent);
-        if (mo1200mapZmokQxo != null && (!mo1200mapZmokQxo.getEditsText() || z)) {
-            SelectionMovementDeletionContext selectionMovementDeletionContext = new SelectionMovementDeletionContext(transformedTextFieldState, textLayoutState.getLayoutResult(), TextFieldKeyEventHandler_androidKt.m1438isFromSoftKeyboardZmokQxo(keyEvent), getVisibleTextLayoutHeight(textLayoutState), this.preparedSelectionState);
-            switch (WhenMappings.$EnumSwitchMapping$0[mo1200mapZmokQxo.ordinal()]) {
+        KeyCommand mo1541mapZmokQxo = this.keyMapping.mo1541mapZmokQxo(keyEvent);
+        if (mo1541mapZmokQxo != null && (!mo1541mapZmokQxo.getEditsText() || z)) {
+            SelectionMovementDeletionContext selectionMovementDeletionContext = new SelectionMovementDeletionContext(transformedTextFieldState, textLayoutState.getLayoutResult(), TextFieldKeyEventHandler_androidKt.m1870isFromSoftKeyboardZmokQxo(keyEvent), getVisibleTextLayoutHeight(textLayoutState), this.preparedSelectionState);
+            switch (WhenMappings.$EnumSwitchMapping$0[mo1541mapZmokQxo.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:
-                    function1.invoke(mo1200mapZmokQxo);
+                    function1.invoke(mo1541mapZmokQxo);
                     Unit unit = Unit.INSTANCE;
                     z3 = true;
                     break;
@@ -411,7 +410,7 @@ public abstract class TextFieldKeyEventHandler {
                     break;
                 case 26:
                     if (!z2) {
-                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\n", true, null, !TextFieldKeyEventHandler_androidKt.m1438isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\n", true, null, !TextFieldKeyEventHandler_androidKt.m1870isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
                         z3 = true;
                     } else {
                         z3 = function0.invoke().booleanValue();
@@ -420,7 +419,7 @@ public abstract class TextFieldKeyEventHandler {
                     break;
                 case 27:
                     if (!z2) {
-                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\t", true, null, !TextFieldKeyEventHandler_androidKt.m1438isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
+                        TransformedTextFieldState.replaceSelectedText$default(transformedTextFieldState, "\t", true, null, !TextFieldKeyEventHandler_androidKt.m1870isFromSoftKeyboardZmokQxo(keyEvent), 4, null);
                         z3 = true;
                     }
                     Unit unit3 = Unit.INSTANCE;
@@ -513,23 +512,21 @@ public abstract class TextFieldKeyEventHandler {
                     z3 = true;
                     break;
                 case 49:
-                    if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled) {
-                        softwareKeyboardController.show();
-                        z3 = true;
-                    }
+                    softwareKeyboardController.show();
                     Unit unit7 = Unit.INSTANCE;
+                    z3 = true;
                     break;
                 default:
                     throw new NoWhenBranchMatchedException();
             }
-            if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled && (mo1200mapZmokQxo == KeyCommand.UP || mo1200mapZmokQxo == KeyCommand.DOWN || mo1200mapZmokQxo == KeyCommand.LEFT_CHAR || mo1200mapZmokQxo == KeyCommand.RIGHT_CHAR)) {
-                z3 = !TextRange.m6996equalsimpl0(selectionMovementDeletionContext.getInitialValue().m1336getSelectiond9O1mEE(), selectionMovementDeletionContext.m1486getSelectiond9O1mEE());
+            if (mo1541mapZmokQxo == KeyCommand.UP || mo1541mapZmokQxo == KeyCommand.DOWN || mo1541mapZmokQxo == KeyCommand.LEFT_CHAR || mo1541mapZmokQxo == KeyCommand.RIGHT_CHAR) {
+                z3 = !TextRange.m7601equalsimpl0(selectionMovementDeletionContext.getInitialValue().m1724getSelectiond9O1mEE(), selectionMovementDeletionContext.m1919getSelectiond9O1mEE());
             }
-            if (!TextRange.m6996equalsimpl0(selectionMovementDeletionContext.m1486getSelectiond9O1mEE(), selectionMovementDeletionContext.getInitialValue().m1336getSelectiond9O1mEE())) {
-                transformedTextFieldState.m1466selectCharsIn5zctL8(selectionMovementDeletionContext.m1486getSelectiond9O1mEE());
+            if (!TextRange.m7601equalsimpl0(selectionMovementDeletionContext.m1919getSelectiond9O1mEE(), selectionMovementDeletionContext.getInitialValue().m1724getSelectiond9O1mEE())) {
+                transformedTextFieldState.m1899selectCharsIn5zctL8(selectionMovementDeletionContext.m1919getSelectiond9O1mEE());
             }
             if (selectionMovementDeletionContext.getWedgeAffinity() != null && (wedgeAffinity = selectionMovementDeletionContext.getWedgeAffinity()) != null) {
-                if (TextRange.m6997getCollapsedimpl(transformedTextFieldState.getUntransformedText().m1336getSelectiond9O1mEE())) {
+                if (TextRange.m7602getCollapsedimpl(transformedTextFieldState.getUntransformedText().m1724getSelectiond9O1mEE())) {
                     transformedTextFieldState.setSelectionWedgeAffinity(new SelectionWedgeAffinity(wedgeAffinity));
                     return z3;
                 }
@@ -569,7 +566,7 @@ public abstract class TextFieldKeyEventHandler {
                     }
                 }
                 if (rect != null) {
-                    return Float.intBitsToFloat((int) (rect.m4560getSizeNHjbRc() & 4294967295L));
+                    return Float.intBitsToFloat((int) (rect.m5136getSizeNHjbRc() & 4294967295L));
                 }
                 return Float.NaN;
             }

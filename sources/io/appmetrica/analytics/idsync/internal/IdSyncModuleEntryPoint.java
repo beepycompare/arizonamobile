@@ -2,9 +2,9 @@ package io.appmetrica.analytics.idsync.internal;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
-import io.appmetrica.analytics.idsync.impl.C0099c;
-import io.appmetrica.analytics.idsync.impl.C0100d;
-import io.appmetrica.analytics.idsync.impl.C0101e;
+import io.appmetrica.analytics.idsync.impl.C0101c;
+import io.appmetrica.analytics.idsync.impl.C0102d;
+import io.appmetrica.analytics.idsync.impl.C0103e;
 import io.appmetrica.analytics.idsync.impl.h;
 import io.appmetrica.analytics.idsync.internal.model.IdSyncConfig;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig;
@@ -19,22 +19,22 @@ import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\b\u0012\u0004\u0012\u00020\u00020\u0003B\u0007¢\u0006\u0004\b\u0018\u0010\u0019J \u0010\t\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u00042\u000e\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0016J\u0018\u0010\u000b\u001a\u00020\b2\u000e\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0016R\u001a\u0010\u0011\u001a\u00020\f8\u0016X\u0096D¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000f\u0010\u0010R \u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00020\u00128\u0016X\u0096\u0004¢\u0006\f\n\u0004\b\u0013\u0010\u0014\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u001a"}, d2 = {"Lio/appmetrica/analytics/idsync/internal/IdSyncModuleEntryPoint;", "Lio/appmetrica/analytics/modulesapi/internal/service/ModuleServiceEntryPoint;", "Lio/appmetrica/analytics/idsync/internal/model/IdSyncConfig;", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigUpdateListener;", "Lio/appmetrica/analytics/modulesapi/internal/service/ServiceContext;", "serviceContext", "Lio/appmetrica/analytics/modulesapi/internal/service/ModuleRemoteConfig;", "initialConfig", "", "initServiceSide", "config", "onRemoteConfigUpdated", "", "d", "Ljava/lang/String;", "getIdentifier", "()Ljava/lang/String;", "identifier", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "e", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "getRemoteConfigExtensionConfiguration", "()Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "remoteConfigExtensionConfiguration", "<init>", "()V", "id-sync_release"}, k = 1, mv = {1, 6, 0})
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u00012\b\u0012\u0004\u0012\u00020\u00020\u0003B\u0007¢\u0006\u0004\b\u0018\u0010\u0019J \u0010\t\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u00042\u000e\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0016J\u0018\u0010\u000b\u001a\u00020\b2\u000e\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0016R\u001a\u0010\u0011\u001a\u00020\f8\u0016X\u0096D¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000f\u0010\u0010R \u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00020\u00128\u0016X\u0096\u0004¢\u0006\f\n\u0004\b\u0013\u0010\u0014\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u001a"}, d2 = {"Lio/appmetrica/analytics/idsync/internal/IdSyncModuleEntryPoint;", "Lio/appmetrica/analytics/modulesapi/internal/service/ModuleServiceEntryPoint;", "Lio/appmetrica/analytics/idsync/internal/model/IdSyncConfig;", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigUpdateListener;", "Lio/appmetrica/analytics/modulesapi/internal/service/ServiceContext;", "serviceContext", "Lio/appmetrica/analytics/modulesapi/internal/service/ModuleRemoteConfig;", "initialConfig", "", "initServiceSide", "config", "onRemoteConfigUpdated", "", "d", "Ljava/lang/String;", "getIdentifier", "()Ljava/lang/String;", "identifier", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "e", "Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "getRemoteConfigExtensionConfiguration", "()Lio/appmetrica/analytics/modulesapi/internal/service/RemoteConfigExtensionConfiguration;", "remoteConfigExtensionConfiguration", "<init>", "()V", "id-sync_release"}, k = 1, mv = {1, 9, 0})
 /* loaded from: classes5.dex */
 public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSyncConfig> implements RemoteConfigUpdateListener<IdSyncConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0100d f489a;
-    private final C0099c b;
+    private final C0102d f439a;
+    private final C0101c b;
     private h c;
     private final String d;
     private final IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1 e;
 
     /* JADX WARN: Type inference failed for: r0v2, types: [io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1] */
     public IdSyncModuleEntryPoint() {
-        C0101e c0101e = new C0101e();
-        this.f489a = new C0100d(c0101e);
-        this.b = new C0099c(c0101e);
+        C0103e c0103e = new C0103e();
+        this.f439a = new C0102d(c0103e);
+        this.b = new C0101c(c0103e);
         this.d = "id-sync";
         this.e = new RemoteConfigExtensionConfiguration<IdSyncConfig>() { // from class: io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
@@ -49,16 +49,16 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public JsonParser<IdSyncConfig> getJsonParser() {
-                C0099c c0099c;
-                c0099c = IdSyncModuleEntryPoint.this.b;
-                return c0099c;
+                C0101c c0101c;
+                c0101c = IdSyncModuleEntryPoint.this.b;
+                return c0101c;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public Converter<IdSyncConfig, byte[]> getProtobufConverter() {
-                C0100d c0100d;
-                c0100d = IdSyncModuleEntryPoint.this.f489a;
-                return c0100d;
+                C0102d c0102d;
+                c0102d = IdSyncModuleEntryPoint.this.f439a;
+                return c0102d;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration

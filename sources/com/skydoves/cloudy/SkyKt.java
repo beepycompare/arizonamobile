@@ -6,7 +6,7 @@ import androidx.compose.runtime.internal.FunctionKeyMeta;
 import kotlin.Metadata;
 /* compiled from: Sky.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0002¨\u0006\u0003"}, d2 = {"rememberSky", "Lcom/skydoves/cloudy/Sky;", "(Landroidx/compose/runtime/Composer;I)Lcom/skydoves/cloudy/Sky;", "cloudy_release"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SkyKt {
     @FunctionKeyMeta(endOffset = 4757, key = -441141553, startOffset = 4714)
     public static final Sky rememberSky(Composer composer, int i) {

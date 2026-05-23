@@ -120,7 +120,7 @@ public class LinearProgressIndicator extends BaseProgressIndicator<LinearProgres
 
     public void setTrackStopIndicatorSize(int i) {
         if (((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize != i) {
-            ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize = Math.min(i, ((LinearProgressIndicatorSpec) this.spec).trackThickness);
+            ((LinearProgressIndicatorSpec) this.spec).trackStopIndicatorSize = i;
             ((LinearProgressIndicatorSpec) this.spec).validateSpec();
             invalidate();
         }

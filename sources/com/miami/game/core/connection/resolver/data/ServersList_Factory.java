@@ -3,7 +3,7 @@ package com.miami.game.core.connection.resolver.data;
 import com.miami.game.core.build.config.BuildConfigRepository;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ServersList_Factory implements Factory<ServersList> {
     private final Provider<BuildConfigRepository> buildConfigProvider;
 

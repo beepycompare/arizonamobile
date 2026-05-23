@@ -1,40 +1,44 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes5.dex */
-public final class Y implements Converter {
+public final class Y implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0644v7 f863a;
-    public final C0572sa b;
+    public final C0131ao f845a;
 
-    public Y() {
-        this(new C0644v7(), new C0572sa(20));
+    public Y(C0131ao c0131ao) {
+        this.f845a = c0131ao;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Di fromModel(Z z) {
-        C0165c8 c0165c8 = new C0165c8();
-        c0165c8.b = this.f863a.fromModel(z.f879a);
-        Mn a2 = this.b.a(z.b);
-        c0165c8.f937a = StringUtils.getUTF8Bytes((String) a2.f704a);
-        return new Di(c0165c8, new C0108a3(C0108a3.b(a2)));
+    public final C0294h6 fromModel(X x) {
+        C0294h6 c0294h6 = new C0294h6();
+        Zn zn = x.f832a;
+        if (zn != null) {
+            c0294h6.f1007a = this.f845a.fromModel(zn);
+        }
+        c0294h6.b = new C0527q6[x.b.size()];
+        int i = 0;
+        for (Zn zn2 : x.b) {
+            c0294h6.b[i] = this.f845a.fromModel(zn2);
+            i++;
+        }
+        String str = x.c;
+        if (str != null) {
+            c0294h6.c = str;
+        }
+        return c0294h6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        Di di = (Di) obj;
+        C0294h6 c0294h6 = (C0294h6) obj;
         throw new UnsupportedOperationException();
     }
 
-    public Y(C0644v7 c0644v7, C0572sa c0572sa) {
-        this.f863a = c0644v7;
-        this.b = c0572sa;
-    }
-
-    public final Z a(Di di) {
+    public final X a(C0294h6 c0294h6) {
         throw new UnsupportedOperationException();
     }
 }

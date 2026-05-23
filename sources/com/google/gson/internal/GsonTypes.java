@@ -1,6 +1,5 @@
 package com.google.gson.internal;
 
-import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Modifier;
@@ -349,8 +348,7 @@ public final class GsonTypes {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class ParameterizedTypeImpl implements ParameterizedType, Serializable {
-        private static final long serialVersionUID = 0;
+    public static final class ParameterizedTypeImpl implements ParameterizedType {
         private final Type ownerType;
         private final Type rawType;
         private final Type[] typeArguments;
@@ -419,8 +417,7 @@ public final class GsonTypes {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class GenericArrayTypeImpl implements GenericArrayType, Serializable {
-        private static final long serialVersionUID = 0;
+    public static final class GenericArrayTypeImpl implements GenericArrayType {
         private final Type componentType;
 
         GenericArrayTypeImpl(Type type) {
@@ -448,8 +445,7 @@ public final class GsonTypes {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class WildcardTypeImpl implements WildcardType, Serializable {
-        private static final long serialVersionUID = 0;
+    public static final class WildcardTypeImpl implements WildcardType {
         private final Type lowerBound;
         private final Type upperBound;
 

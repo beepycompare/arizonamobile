@@ -13,7 +13,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface Renderer extends PlayerMessage.Target {
     public static final long DEFAULT_DURATION_TO_PROGRESS_US = 10000;
     public static final long DEFAULT_IDLE_DURATION_TO_PROGRESS_US = 1000000;
@@ -25,6 +25,7 @@ public interface Renderer extends PlayerMessage.Target {
     public static final int MSG_SET_CAMERA_MOTION_LISTENER = 8;
     public static final int MSG_SET_CHANGE_FRAME_RATE_STRATEGY = 5;
     public static final int MSG_SET_CODEC_PARAMETERS = 21;
+    public static final int MSG_SET_IMAGE_METADATA_LISTENER = 23;
     public static final int MSG_SET_IMAGE_OUTPUT = 15;
     public static final int MSG_SET_PREFERRED_AUDIO_DEVICE = 12;
     public static final int MSG_SET_PRIORITY = 16;
@@ -47,18 +48,18 @@ public interface Renderer extends PlayerMessage.Target {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface MessageType {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface State {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface WakeupListener {
         void onSleep();
 

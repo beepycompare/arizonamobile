@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MetadataRetrieverInternal implements AutoCloseable {
     private final Clock clock;
     private final MediaItem mediaItem;
@@ -130,7 +130,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
             Futures.whenAllComplete(this.allFutures).run(new Runnable() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MetadataRetrieverInternal.this.m8213xe88b021d();
+                    MetadataRetrieverInternal.this.m8819xe88b021d();
                 }
             }, MoreExecutors.directExecutor());
         }
@@ -138,7 +138,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$close$0$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8213xe88b021d() {
+    public /* synthetic */ void m8819xe88b021d() {
         synchronized (this.lock) {
             RetrievalTask retrievalTask = this.retrievalTask;
             if (retrievalTask != null) {
@@ -153,12 +153,12 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
             RetrievalTask retrievalTask = new RetrievalTask(this.mediaSourceFactory, this.mediaItem, this.clock, new RetrievalTask.OnPreparedListener() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda1
                 @Override // androidx.media3.exoplayer.MetadataRetrieverInternal.RetrievalTask.OnPreparedListener
                 public final void onPrepared(TrackGroupArray trackGroupArray, Timeline timeline) {
-                    MetadataRetrieverInternal.this.m8214x26d3b195(trackGroupArray, timeline);
+                    MetadataRetrieverInternal.this.m8820x26d3b195(trackGroupArray, timeline);
                 }
             }, new RetrievalTask.OnFailureListener() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda2
                 @Override // androidx.media3.exoplayer.MetadataRetrieverInternal.RetrievalTask.OnFailureListener
                 public final void onFailure(Exception exc) {
-                    MetadataRetrieverInternal.this.m8215xb40e6316(exc);
+                    MetadataRetrieverInternal.this.m8821xb40e6316(exc);
                 }
             });
             this.retrievalTask = retrievalTask;
@@ -168,7 +168,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$1$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8214x26d3b195(TrackGroupArray trackGroupArray, Timeline timeline) {
+    public /* synthetic */ void m8820x26d3b195(TrackGroupArray trackGroupArray, Timeline timeline) {
         synchronized (this.lock) {
             ((SettableFuture) Preconditions.checkNotNull(this.preparationFuture)).set(new InternalResult(trackGroupArray, timeline));
         }
@@ -176,14 +176,14 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$2$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8215xb40e6316(Exception exc) {
+    public /* synthetic */ void m8821xb40e6316(Exception exc) {
         synchronized (this.lock) {
             ((SettableFuture) Preconditions.checkNotNull(this.preparationFuture)).setException(exc);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class InternalResult {
         public final Timeline timeline;
         public final TrackGroupArray trackGroups;
@@ -194,7 +194,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class RetrievalTask {
         private static final int MESSAGE_CHECK_FOR_FAILURE = 2;
         private static final int MESSAGE_CONTINUE_LOADING = 3;
@@ -208,12 +208,12 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
         private final OnPreparedListener onPreparedListener;
         private boolean sentReleaseMessage;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public interface OnFailureListener {
             void onFailure(Exception exc);
         }
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public interface OnPreparedListener {
             void onPrepared(TrackGroupArray trackGroupArray, Timeline timeline);
         }
@@ -242,7 +242,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public final class MediaSourceHandlerCallback implements Handler.Callback {
             private static final int ERROR_POLL_INTERVAL_MS = 100;
             private MediaPeriod mediaPeriod;
@@ -259,49 +259,55 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
                 if (this.released) {
                     return true;
                 }
-                int i = message.what;
-                if (i == 1) {
-                    MediaSource createMediaSource = RetrievalTask.this.mediaSourceFactory.createMediaSource((MediaItem) message.obj);
-                    this.mediaSource = createMediaSource;
-                    createMediaSource.prepareSource(this.mediaSourceCaller, null, PlayerId.UNSET);
-                    RetrievalTask.this.mediaSourceHandler.sendEmptyMessage(2);
-                    return true;
-                } else if (i == 2) {
-                    try {
-                        MediaPeriod mediaPeriod = this.mediaPeriod;
-                        if (mediaPeriod == null) {
-                            ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).maybeThrowSourceInfoRefreshError();
-                        } else {
-                            mediaPeriod.maybeThrowPrepareError();
+                try {
+                    int i = message.what;
+                    if (i == 1) {
+                        MediaSource createMediaSource = RetrievalTask.this.mediaSourceFactory.createMediaSource((MediaItem) message.obj);
+                        this.mediaSource = createMediaSource;
+                        createMediaSource.prepareSource(this.mediaSourceCaller, null, PlayerId.UNSET);
+                        RetrievalTask.this.mediaSourceHandler.sendEmptyMessage(2);
+                        return true;
+                    } else if (i == 2) {
+                        try {
+                            MediaPeriod mediaPeriod = this.mediaPeriod;
+                            if (mediaPeriod == null) {
+                                ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).maybeThrowSourceInfoRefreshError();
+                            } else {
+                                mediaPeriod.maybeThrowPrepareError();
+                            }
+                            RetrievalTask.this.mediaSourceHandler.sendEmptyMessageDelayed(2, 100);
+                        } catch (IOException e) {
+                            RetrievalTask.this.onFailureListener.onFailure(e);
+                            RetrievalTask.this.release();
                         }
-                        RetrievalTask.this.mediaSourceHandler.sendEmptyMessageDelayed(2, 100);
-                    } catch (IOException e) {
-                        RetrievalTask.this.onFailureListener.onFailure(e);
-                        RetrievalTask.this.release();
+                        return true;
+                    } else if (i == 3) {
+                        ((MediaPeriod) Preconditions.checkNotNull(this.mediaPeriod)).continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(0L).build());
+                        return true;
+                    } else if (i != 4) {
+                        return false;
+                    } else {
+                        if (this.mediaPeriod != null) {
+                            ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
+                        }
+                        MediaSource mediaSource = this.mediaSource;
+                        if (mediaSource != null) {
+                            mediaSource.releaseSource(this.mediaSourceCaller);
+                        }
+                        RetrievalTask.this.mediaSourceHandler.removeCallbacksAndMessages(null);
+                        RetrievalTask.SHARED_WORKER_THREAD.removeWorker();
+                        this.released = true;
+                        return true;
                     }
-                    return true;
-                } else if (i == 3) {
-                    ((MediaPeriod) Preconditions.checkNotNull(this.mediaPeriod)).continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(0L).build());
-                    return true;
-                } else if (i != 4) {
-                    return false;
-                } else {
-                    if (this.mediaPeriod != null) {
-                        ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
-                    }
-                    MediaSource mediaSource = this.mediaSource;
-                    if (mediaSource != null) {
-                        mediaSource.releaseSource(this.mediaSourceCaller);
-                    }
-                    RetrievalTask.this.mediaSourceHandler.removeCallbacksAndMessages(null);
-                    RetrievalTask.SHARED_WORKER_THREAD.removeWorker();
-                    this.released = true;
+                } catch (RuntimeException e2) {
+                    RetrievalTask.this.onFailureListener.onFailure(e2);
+                    RetrievalTask.this.release();
                     return true;
                 }
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            /* loaded from: classes2.dex */
+            /* loaded from: classes3.dex */
             public final class MediaSourceCaller implements MediaSource.MediaSourceCaller {
                 private boolean mediaPeriodCreated;
                 private final MediaPeriodCallback mediaPeriodCallback = new MediaPeriodCallback();
@@ -321,7 +327,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
                     MediaSourceHandlerCallback.this.mediaPeriod.prepare(this.mediaPeriodCallback, 0L);
                 }
 
-                /* loaded from: classes2.dex */
+                /* loaded from: classes3.dex */
                 private final class MediaPeriodCallback implements MediaPeriod.Callback {
                     private MediaPeriodCallback() {
                     }
@@ -341,7 +347,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class SharedWorkerThread {
         public static final AtomicInteger MAX_PARALLEL_RETRIEVALS = new AtomicInteger(5);
         private HandlerThread mediaSourceThread;

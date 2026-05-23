@@ -1,33 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
+import io.appmetrica.analytics.coreapi.internal.data.Savable;
 /* loaded from: classes5.dex */
-public final class N implements K {
+public final class N implements Savable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final K f705a;
+    public final /* synthetic */ O f671a;
 
-    public N(K k) {
-        this.f705a = k;
+    public N(O o) {
+        this.f671a = o;
     }
 
-    @Override // io.appmetrica.analytics.impl.K
-    public final AdTrackingInfoResult a(Context context) {
-        return a(new L(this, context));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
+    /* renamed from: a */
+    public final Boolean getValue() {
+        return Boolean.valueOf(this.f671a.f691a.a(false));
     }
 
-    @Override // io.appmetrica.analytics.impl.K
-    public final AdTrackingInfoResult a(Context context, Gi gi) {
-        return a(new M(this, context, gi));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
+    public final /* bridge */ /* synthetic */ void setValue(Object obj) {
+        a(((Boolean) obj).booleanValue());
     }
 
-    public static AdTrackingInfoResult a(Provider provider) {
-        AdTrackingInfoResult adTrackingInfoResult = (AdTrackingInfoResult) provider.get();
-        AdTrackingInfo adTrackingInfo = adTrackingInfoResult.mAdTrackingInfo;
-        return (adTrackingInfo == null || !"00000000-0000-0000-0000-000000000000".equals(adTrackingInfo.advId)) ? adTrackingInfoResult : new AdTrackingInfoResult(null, IdentifierStatus.INVALID_ADV_ID, "AdvId is invalid: 00000000-0000-0000-0000-000000000000");
+    public final void a(boolean z) {
+        this.f671a.f691a.e(z);
     }
 }

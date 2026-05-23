@@ -2,18 +2,18 @@ package io.appmetrica.analytics.coreutils.internal.encryption;
 
 import android.util.Base64;
 import io.appmetrica.analytics.coreapi.internal.crypto.Encrypter;
-import io.appmetrica.analytics.coreutils.internal.io.CloseableUtilsKt;
+import io.appmetrica.analytics.coreutils.internal.io.CloseableUtils;
 import java.io.ByteArrayOutputStream;
 import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.security.spec.X509EncodedKeySpec;
 import javax.crypto.Cipher;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AESRSAEncrypter implements Encrypter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f408a;
+    private final String f358a;
     private final String b;
 
     public AESRSAEncrypter() {
@@ -39,18 +39,18 @@ public class AESRSAEncrypter implements Encrypter {
         }
         try {
             byteArrayOutputStream.write(cipher.doFinal(byteArray));
-            encrypt = new AESEncrypter(this.f408a, bArr2, bArr3).encrypt(bArr);
+            encrypt = new AESEncrypter(this.f358a, bArr2, bArr3).encrypt(bArr);
         } catch (Throwable unused2) {
-            CloseableUtilsKt.closeSafely(byteArrayOutputStream);
+            CloseableUtils.closeSafely(byteArrayOutputStream);
             return null;
         }
         if (encrypt != null) {
             byteArrayOutputStream.write(encrypt);
             byte[] byteArray2 = byteArrayOutputStream.toByteArray();
-            CloseableUtilsKt.closeSafely(byteArrayOutputStream);
+            CloseableUtils.closeSafely(byteArrayOutputStream);
             return byteArray2;
         }
-        CloseableUtilsKt.closeSafely(byteArrayOutputStream);
+        CloseableUtils.closeSafely(byteArrayOutputStream);
         return null;
     }
 
@@ -69,7 +69,7 @@ public class AESRSAEncrypter implements Encrypter {
     }
 
     AESRSAEncrypter(int i) {
-        this.f408a = AESEncrypter.DEFAULT_ALGORITHM;
+        this.f358a = AESEncrypter.DEFAULT_ALGORITHM;
         this.b = "RSA/ECB/PKCS1Padding";
     }
 }

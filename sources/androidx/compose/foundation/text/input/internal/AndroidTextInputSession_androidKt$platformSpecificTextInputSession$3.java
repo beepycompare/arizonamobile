@@ -31,7 +31,7 @@ import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.flow.MutableSharedFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidTextInputSession.android.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3", f = "AndroidTextInputSession.android.kt", i = {}, l = {127}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<?>, Object> {
@@ -81,7 +81,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: AndroidTextInputSession.android.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$1", f = "AndroidTextInputSession.android.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$1  reason: invalid class name */
     /* loaded from: classes.dex */
@@ -134,15 +134,15 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final void invokeSuspend$lambda$0(ComposeInputMethodManager composeInputMethodManager, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
-            long m1336getSelectiond9O1mEE = textFieldCharSequence.m1336getSelectiond9O1mEE();
-            TextRange m1335getCompositionMzsxiRA = textFieldCharSequence.m1335getCompositionMzsxiRA();
-            long m1336getSelectiond9O1mEE2 = textFieldCharSequence2.m1336getSelectiond9O1mEE();
-            TextRange m1335getCompositionMzsxiRA2 = textFieldCharSequence2.m1335getCompositionMzsxiRA();
+            long m1724getSelectiond9O1mEE = textFieldCharSequence.m1724getSelectiond9O1mEE();
+            TextRange m1723getCompositionMzsxiRA = textFieldCharSequence.m1723getCompositionMzsxiRA();
+            long m1724getSelectiond9O1mEE2 = textFieldCharSequence2.m1724getSelectiond9O1mEE();
+            TextRange m1723getCompositionMzsxiRA2 = textFieldCharSequence2.m1723getCompositionMzsxiRA();
             if (z) {
                 composeInputMethodManager.restartInput();
-            } else if (TextRange.m6996equalsimpl0(m1336getSelectiond9O1mEE, m1336getSelectiond9O1mEE2) && Intrinsics.areEqual(m1335getCompositionMzsxiRA, m1335getCompositionMzsxiRA2)) {
+            } else if (TextRange.m7601equalsimpl0(m1724getSelectiond9O1mEE, m1724getSelectiond9O1mEE2) && Intrinsics.areEqual(m1723getCompositionMzsxiRA, m1723getCompositionMzsxiRA2)) {
             } else {
-                composeInputMethodManager.updateSelection(TextRange.m7001getMinimpl(m1336getSelectiond9O1mEE2), TextRange.m7000getMaximpl(m1336getSelectiond9O1mEE2), m1335getCompositionMzsxiRA2 != null ? TextRange.m7001getMinimpl(m1335getCompositionMzsxiRA2.m7007unboximpl()) : -1, m1335getCompositionMzsxiRA2 != null ? TextRange.m7000getMaximpl(m1335getCompositionMzsxiRA2.m7007unboximpl()) : -1);
+                composeInputMethodManager.updateSelection(TextRange.m7606getMinimpl(m1724getSelectiond9O1mEE2), TextRange.m7605getMaximpl(m1724getSelectiond9O1mEE2), m1723getCompositionMzsxiRA2 != null ? TextRange.m7606getMinimpl(m1723getCompositionMzsxiRA2.m7612unboximpl()) : -1, m1723getCompositionMzsxiRA2 != null ? TextRange.m7605getMaximpl(m1723getCompositionMzsxiRA2.m7612unboximpl()) : -1);
             }
         }
     }
@@ -188,22 +188,9 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final InputConnection invokeSuspend$lambda$1(final TransformedTextFieldState transformedTextFieldState, ImeOptions imeOptions, ReceiveContentConfiguration receiveContentConfiguration, ComposeInputMethodManager composeInputMethodManager, Function1 function1, CursorAnchorInfoController cursorAnchorInfoController, TextLayoutState textLayoutState, Function0 function0, ViewConfiguration viewConfiguration, Function1 function12, EditorInfo editorInfo) {
-        AndroidTextInputSession_androidKt.logDebug$default(null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                String invokeSuspend$lambda$1$0;
-                invokeSuspend$lambda$1$0 = AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3.invokeSuspend$lambda$1$0(TransformedTextFieldState.this);
-                return invokeSuspend$lambda$1$0;
-            }
-        }, 1, null);
+    public static final InputConnection invokeSuspend$lambda$1(TransformedTextFieldState transformedTextFieldState, ImeOptions imeOptions, ReceiveContentConfiguration receiveContentConfiguration, ComposeInputMethodManager composeInputMethodManager, Function1 function1, CursorAnchorInfoController cursorAnchorInfoController, TextLayoutState textLayoutState, Function0 function0, ViewConfiguration viewConfiguration, Function1 function12, EditorInfo editorInfo) {
         AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 = new AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1(new DefaultImeEditCommandScope(transformedTextFieldState), transformedTextFieldState, composeInputMethodManager, function1, receiveContentConfiguration, cursorAnchorInfoController, textLayoutState, function0, viewConfiguration, function12);
-        EditorInfo_androidKt.m1377updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1336getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
+        EditorInfo_androidKt.m1763updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1724getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
         return new StatelessInputConnection(androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1, editorInfo);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final String invokeSuspend$lambda$1$0(TransformedTextFieldState transformedTextFieldState) {
-        return "createInputConnection(value=\"" + ((Object) transformedTextFieldState.getVisualText()) + "\")";
     }
 }

@@ -1,6 +1,19 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.content.Context;
+import com.google.common.base.Function;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public interface zzox {
-    boolean zza();
+final /* synthetic */ class zzox implements Function {
+    static final /* synthetic */ zzox zza = new zzox();
+
+    private /* synthetic */ zzox() {
+    }
+
+    @Override // com.google.common.base.Function
+    public final /* synthetic */ Object apply(Object obj) {
+        Context context = (Context) obj;
+        int i = zzpg.zzb;
+        return "";
+    }
 }

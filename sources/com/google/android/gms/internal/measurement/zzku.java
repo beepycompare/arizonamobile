@@ -1,134 +1,50 @@
 package com.google.android.gms.internal.measurement;
 
-import java.util.AbstractList;
-import java.util.Collection;
-import java.util.List;
-import java.util.RandomAccess;
-/* compiled from: com.google.android.gms:play-services-measurement-base@@23.0.0 */
+import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import com.google.android.gms.common.Feature;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.internal.ConnectionCallbacks;
+import com.google.android.gms.common.api.internal.OnConnectionFailedListener;
+import com.google.android.gms.common.internal.ClientSettings;
+import com.google.android.gms.common.internal.GmsClient;
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-abstract class zzku extends AbstractList implements zzmo {
-    private boolean zza;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzku(boolean z) {
-        this.zza = z;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public void add(int i, Object obj) {
-        zzcF();
-        super.add(i, obj);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        zzcF();
-        return super.addAll(i, collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        zzcF();
-        super.clear();
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof List) {
-            if (!(obj instanceof RandomAccess)) {
-                return super.equals(obj);
-            }
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                for (int i = 0; i < size; i++) {
-                    if (!get(i).equals(list.get(i))) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public int hashCode() {
-        int size = size();
-        int i = 1;
-        for (int i2 = 0; i2 < size; i2++) {
-            i = (i * 31) + get(i2).hashCode();
-        }
-        return i;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public Object remove(int i) {
-        zzcF();
-        return super.remove(i);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        zzcF();
-        return super.removeAll(collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean retainAll(Collection collection) {
-        zzcF();
-        return super.retainAll(collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public Object set(int i, Object obj) {
-        zzcF();
-        return super.set(i, obj);
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmo
-    public final boolean zza() {
-        return this.zza;
-    }
-
-    @Override // com.google.android.gms.internal.measurement.zzmo
-    public final void zzb() {
-        if (this.zza) {
-            this.zza = false;
-        }
+public final class zzku extends GmsClient {
+    public zzku(Context context, Looper looper, ClientSettings clientSettings, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+        super(context, looper, 51, clientSettings, (ConnectionCallbacks) connectionCallbacks, (OnConnectionFailedListener) onConnectionFailedListener);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void zzcF() {
-        if (!this.zza) {
-            throw new UnsupportedOperationException();
+    @Override // com.google.android.gms.common.internal.BaseGmsClient
+    public final /* synthetic */ IInterface createServiceInterface(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.phenotype.internal.IPhenotypeService");
+        return queryLocalInterface instanceof zzkt ? (zzkt) queryLocalInterface : new zzkt(iBinder);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        zzcF();
-        return super.add(obj);
+    @Override // com.google.android.gms.common.internal.BaseGmsClient
+    public final Feature[] getApiFeatures() {
+        return zzjn.zzj;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        zzcF();
-        return super.addAll(collection);
+    @Override // com.google.android.gms.common.internal.BaseGmsClient, com.google.android.gms.common.api.Api.Client
+    public final int getMinApkVersion() {
+        return 9410000;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        zzcF();
-        int indexOf = indexOf(obj);
-        if (indexOf == -1) {
-            return false;
-        }
-        remove(indexOf);
-        return true;
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // com.google.android.gms.common.internal.BaseGmsClient
+    public final String getServiceDescriptor() {
+        return "com.google.android.gms.phenotype.internal.IPhenotypeService";
+    }
+
+    @Override // com.google.android.gms.common.internal.BaseGmsClient
+    protected final String getStartServiceAction() {
+        return "com.google.android.gms.phenotype.service.START";
     }
 }

@@ -29,7 +29,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: LazyLayoutItemAnimator.kt */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\b\u0001\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0003:\u0003KLMB\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0082\u0001\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\f2\u0006\u0010\u001c\u001a\u00020\f2\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00028\u00000\u00102\u0006\u0010\t\u001a\u00020\n2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020\f2\u0006\u0010$\u001a\u00020!2\u0006\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020\f2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u0010\u0010+\u001a\u00020\u00192\u0006\u0010,\u001a\u00020\u0003H\u0002J\u0006\u0010-\u001a\u00020\u0019J\b\u0010.\u001a\u00020\u0019H\u0002J1\u0010/\u001a\u00020\u00192\u0006\u00100\u001a\u00028\u00002\u0006\u00101\u001a\u00020\f2\u0012\b\u0002\u00102\u001a\f0\bR\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002¢\u0006\u0002\u00103J\u001f\u00104\u001a\u00020\u00192\u0006\u00100\u001a\u00028\u00002\b\b\u0002\u00105\u001a\u00020!H\u0002¢\u0006\u0002\u00106J\u0018\u00107\u001a\u0004\u0018\u00010\u00152\u0006\u0010,\u001a\u00020\u00032\u0006\u00108\u001a\u00020\fJ\u0019\u00109\u001a\u00020\f*\u00020:2\u0006\u00100\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010;R$\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\u0003\u0012\u000e\u0012\f0\bR\b\u0012\u0004\u0012\u00028\u00000\u00000\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00030\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010<\u001a\u00020=8F¢\u0006\u0006\u001a\u0004\b>\u0010?R\u0011\u0010@\u001a\u00020A¢\u0006\b\n\u0000\u001a\u0004\bB\u0010CR\u0018\u0010D\u001a\u00020!*\u00028\u00008BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bE\u0010FR\u0018\u00101\u001a\u00020\f*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bG\u0010HR\u0018\u0010I\u001a\u00020\f*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bJ\u0010H¨\u0006N"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;", "", "<init>", "()V", "keyToItemInfoMap", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;", "keyIndexMap", "Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;", "firstVisibleIndex", "", "movingAwayKeys", "Landroidx/collection/MutableScatterSet;", "movingInFromStartBound", "", "movingInFromEndBound", "movingAwayToStartBound", "movingAwayToEndBound", "disappearingItems", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "displayingNode", "Landroidx/compose/ui/node/DrawModifierNode;", "onMeasured", "", "consumedScroll", "layoutWidth", "layoutHeight", "positionedItems", "itemProvider", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItemProvider;", "isVertical", "", "isLookingAhead", "laneCount", "hasLookaheadOccurred", "layoutMinOffset", "layoutMaxOffset", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "removeInfoForKey", "key", "reset", "releaseAnimations", "initializeAnimation", "item", "mainAxisOffset", "itemInfo", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;ILandroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;)V", "startPlacementAnimationsIfNeeded", "isMovingAway", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;Z)V", "getAnimation", "placeableIndex", "updateAndReturnOffsetFor", "", "([ILandroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)I", "minSizeToFitDisappearingItems", "Landroidx/compose/ui/unit/IntSize;", "getMinSizeToFitDisappearingItems-YbymL2g", "()J", "modifier", "Landroidx/compose/ui/Modifier;", "getModifier", "()Landroidx/compose/ui/Modifier;", "hasAnimations", "getHasAnimations", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)Z", "getMainAxisOffset", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)I", "crossAxisOffset", "getCrossAxisOffset", "ItemInfo", "DisplayingDisappearingItemsElement", "DisplayingDisappearingItemsNode", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\b\u0001\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0003:\u0003KLMB\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0082\u0001\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\f2\u0006\u0010\u001c\u001a\u00020\f2\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00028\u00000\u00102\u0006\u0010\t\u001a\u00020\n2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00000\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020\f2\u0006\u0010$\u001a\u00020!2\u0006\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020\f2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u0010\u0010+\u001a\u00020\u00192\u0006\u0010,\u001a\u00020\u0003H\u0002J\u0006\u0010-\u001a\u00020\u0019J\b\u0010.\u001a\u00020\u0019H\u0002J1\u0010/\u001a\u00020\u00192\u0006\u00100\u001a\u00028\u00002\u0006\u00101\u001a\u00020\f2\u0012\b\u0002\u00102\u001a\f0\bR\b\u0012\u0004\u0012\u00028\u00000\u0000H\u0002¢\u0006\u0002\u00103J\u001f\u00104\u001a\u00020\u00192\u0006\u00100\u001a\u00028\u00002\b\b\u0002\u00105\u001a\u00020!H\u0002¢\u0006\u0002\u00106J\u0018\u00107\u001a\u0004\u0018\u00010\u00152\u0006\u0010,\u001a\u00020\u00032\u0006\u00108\u001a\u00020\fJ\u0019\u00109\u001a\u00020\f*\u00020:2\u0006\u00100\u001a\u00028\u0000H\u0002¢\u0006\u0002\u0010;R$\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\u0003\u0012\u000e\u0012\f0\bR\b\u0012\u0004\u0012\u00028\u00000\u00000\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00030\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00028\u00000\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010<\u001a\u00020=8F¢\u0006\u0006\u001a\u0004\b>\u0010?R\u0011\u0010@\u001a\u00020A¢\u0006\b\n\u0000\u001a\u0004\bB\u0010CR\u0018\u0010D\u001a\u00020!*\u00028\u00008BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bE\u0010FR\u0018\u00101\u001a\u00020\f*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bG\u0010HR\u0018\u0010I\u001a\u00020\f*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\bJ\u0010H¨\u0006N"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;", "", "<init>", "()V", "keyToItemInfoMap", "Landroidx/collection/MutableScatterMap;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;", "keyIndexMap", "Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;", "firstVisibleIndex", "", "movingAwayKeys", "Landroidx/collection/MutableScatterSet;", "movingInFromStartBound", "", "movingInFromEndBound", "movingAwayToStartBound", "movingAwayToEndBound", "disappearingItems", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "displayingNode", "Landroidx/compose/ui/node/DrawModifierNode;", "onMeasured", "", "consumedScroll", "layoutWidth", "layoutHeight", "positionedItems", "itemProvider", "Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItemProvider;", "isVertical", "", "isLookingAhead", "laneCount", "hasLookaheadOccurred", "layoutMinOffset", "layoutMaxOffset", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "removeInfoForKey", "key", "reset", "releaseAnimations", "initializeAnimation", "item", "mainAxisOffset", "itemInfo", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;ILandroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;)V", "startPlacementAnimationsIfNeeded", "isMovingAway", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;Z)V", "getAnimation", "placeableIndex", "updateAndReturnOffsetFor", "", "([ILandroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)I", "minSizeToFitDisappearingItems", "Landroidx/compose/ui/unit/IntSize;", "getMinSizeToFitDisappearingItems-YbymL2g", "()J", "modifier", "Landroidx/compose/ui/Modifier;", "getModifier", "()Landroidx/compose/ui/Modifier;", "hasAnimations", "getHasAnimations", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)Z", "getMainAxisOffset", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;)I", "crossAxisOffset", "getCrossAxisOffset", "ItemInfo", "DisplayingDisappearingItemsElement", "DisplayingDisappearingItemsNode", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     public static final int $stable = 8;
@@ -278,9 +278,9 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         r1 = kotlin.Unit.INSTANCE;
      */
     /* JADX WARN: Code restructure failed: missing block: B:168:0x03b3, code lost:
-        r2 = r15.m989getConstraintsDWUhwKw();
+        r2 = r15.m1242getConstraintsDWUhwKw();
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
-        r1 = r47.mo933getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m7514unboximpl());
+        r1 = r47.mo1186getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m8119unboximpl());
         r1.setNonScrollableItem(true);
         r7 = r15.getAnimations();
         r1 = r7.length;
@@ -360,7 +360,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         if (r5 != 8) goto L212;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl(r42 & 4294967295L);
+        r4 = androidx.compose.ui.unit.IntOffset.m8282constructorimpl(r42 & 4294967295L);
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x044d, code lost:
         r30 = r1;
@@ -392,7 +392,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         r3 = 0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0054, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl(r42 << 32);
+        r4 = androidx.compose.ui.unit.IntOffset.m8282constructorimpl(r42 << 32);
      */
     /* JADX WARN: Code restructure failed: missing block: B:200:0x0486, code lost:
         if (r3 >= r2) goto L231;
@@ -623,16 +623,16 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         java.lang.Boolean.valueOf(r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:64:0x0151, code lost:
-        r24 = r14.mo931getOffsetBjo55l4(0);
+        r24 = r14.mo1184getOffsetBjo55l4(0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x015a, code lost:
         if (r14.isVertical() == false) goto L72;
      */
     /* JADX WARN: Code restructure failed: missing block: B:66:0x015c, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m7684getYimpl(r24);
+        r1 = androidx.compose.ui.unit.IntOffset.m8289getYimpl(r24);
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x0161, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m7683getXimpl(r24);
+        r1 = androidx.compose.ui.unit.IntOffset.m8288getXimpl(r24);
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0165, code lost:
         initializeAnimation(r14, r1, r12);
@@ -689,10 +689,10 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         if (r13 == null) goto L85;
      */
     /* JADX WARN: Code restructure failed: missing block: B:84:0x01b9, code lost:
-        if (androidx.compose.ui.unit.IntOffset.m7682equalsimpl0(r13.m982getRawOffsetnOccac(), androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation.Companion.m986getNotInitializednOccac()) != false) goto L84;
+        if (androidx.compose.ui.unit.IntOffset.m8287equalsimpl0(r13.m1235getRawOffsetnOccac(), androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation.Companion.m1239getNotInitializednOccac()) != false) goto L84;
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x01bb, code lost:
-        r13.m985setRawOffsetgyyYBs(androidx.compose.ui.unit.IntOffset.m7687plusqkQi6aY(r13.m982getRawOffsetnOccac(), r4));
+        r13.m1238setRawOffsetgyyYBs(androidx.compose.ui.unit.IntOffset.m8292plusqkQi6aY(r13.m1235getRawOffsetnOccac(), r4));
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x01c6, code lost:
         r12 = r12 + 1;
@@ -829,13 +829,13 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     private final void initializeAnimation(T t, int i, LazyLayoutItemAnimator<T>.ItemInfo itemInfo) {
-        long m7679copyiSbpLlY$default;
+        long m8284copyiSbpLlY$default;
         int i2 = 0;
-        long mo931getOffsetBjo55l4 = t.mo931getOffsetBjo55l4(0);
+        long mo1184getOffsetBjo55l4 = t.mo1184getOffsetBjo55l4(0);
         if (t.isVertical()) {
-            m7679copyiSbpLlY$default = IntOffset.m7679copyiSbpLlY$default(mo931getOffsetBjo55l4, 0, i, 1, null);
+            m8284copyiSbpLlY$default = IntOffset.m8284copyiSbpLlY$default(mo1184getOffsetBjo55l4, 0, i, 1, null);
         } else {
-            m7679copyiSbpLlY$default = IntOffset.m7679copyiSbpLlY$default(mo931getOffsetBjo55l4, i, 0, 2, null);
+            m8284copyiSbpLlY$default = IntOffset.m8284copyiSbpLlY$default(mo1184getOffsetBjo55l4, i, 0, 2, null);
         }
         LazyLayoutItemAnimation[] animations = itemInfo.getAnimations();
         int length = animations.length;
@@ -844,7 +844,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = animations[i2];
             int i4 = i3 + 1;
             if (lazyLayoutItemAnimation != null) {
-                lazyLayoutItemAnimation.m985setRawOffsetgyyYBs(IntOffset.m7687plusqkQi6aY(m7679copyiSbpLlY$default, IntOffset.m7686minusqkQi6aY(t.mo931getOffsetBjo55l4(i3), mo931getOffsetBjo55l4)));
+                lazyLayoutItemAnimation.m1238setRawOffsetgyyYBs(IntOffset.m8292plusqkQi6aY(m8284copyiSbpLlY$default, IntOffset.m8291minusqkQi6aY(t.mo1184getOffsetBjo55l4(i3), mo1184getOffsetBjo55l4)));
             }
             i2++;
             i3 = i4;
@@ -869,12 +869,12 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = animations[i];
             int i3 = i2 + 1;
             if (lazyLayoutItemAnimation != null) {
-                long mo931getOffsetBjo55l4 = t.mo931getOffsetBjo55l4(i2);
-                long m982getRawOffsetnOccac = lazyLayoutItemAnimation.m982getRawOffsetnOccac();
-                if (!IntOffset.m7682equalsimpl0(m982getRawOffsetnOccac, LazyLayoutItemAnimation.Companion.m986getNotInitializednOccac()) && !IntOffset.m7682equalsimpl0(m982getRawOffsetnOccac, mo931getOffsetBjo55l4)) {
-                    lazyLayoutItemAnimation.m978animatePlacementDeltaar5cAso(IntOffset.m7686minusqkQi6aY(mo931getOffsetBjo55l4, m982getRawOffsetnOccac), z);
+                long mo1184getOffsetBjo55l4 = t.mo1184getOffsetBjo55l4(i2);
+                long m1235getRawOffsetnOccac = lazyLayoutItemAnimation.m1235getRawOffsetnOccac();
+                if (!IntOffset.m8287equalsimpl0(m1235getRawOffsetnOccac, LazyLayoutItemAnimation.Companion.m1239getNotInitializednOccac()) && !IntOffset.m8287equalsimpl0(m1235getRawOffsetnOccac, mo1184getOffsetBjo55l4)) {
+                    lazyLayoutItemAnimation.m1231animatePlacementDeltaar5cAso(IntOffset.m8291minusqkQi6aY(mo1184getOffsetBjo55l4, m1235getRawOffsetnOccac), z);
                 }
-                lazyLayoutItemAnimation.m985setRawOffsetgyyYBs(mo931getOffsetBjo55l4);
+                lazyLayoutItemAnimation.m1238setRawOffsetgyyYBs(mo1184getOffsetBjo55l4);
             }
             i++;
             i2 = i3;
@@ -904,19 +904,19 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     /* renamed from: getMinSizeToFitDisappearingItems-YbymL2g  reason: not valid java name */
-    public final long m987getMinSizeToFitDisappearingItemsYbymL2g() {
-        long m7731getZeroYbymL2g = IntSize.Companion.m7731getZeroYbymL2g();
+    public final long m1240getMinSizeToFitDisappearingItemsYbymL2g() {
+        long m8336getZeroYbymL2g = IntSize.Companion.m8336getZeroYbymL2g();
         List<LazyLayoutItemAnimation> list = this.disappearingItems;
         int size = list.size();
         for (int i = 0; i < size; i++) {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = list.get(i);
             GraphicsLayer layer = lazyLayoutItemAnimation.getLayer();
             if (layer != null) {
-                int max = Math.max((int) (m7731getZeroYbymL2g >> 32), IntOffset.m7683getXimpl(lazyLayoutItemAnimation.m982getRawOffsetnOccac()) + ((int) (layer.m5437getSizeYbymL2g() >> 32)));
-                m7731getZeroYbymL2g = IntSize.m7721constructorimpl((Math.max((int) (m7731getZeroYbymL2g & 4294967295L), IntOffset.m7684getYimpl(lazyLayoutItemAnimation.m982getRawOffsetnOccac()) + ((int) (layer.m5437getSizeYbymL2g() & 4294967295L))) & 4294967295L) | (max << 32));
+                int max = Math.max((int) (m8336getZeroYbymL2g >> 32), IntOffset.m8288getXimpl(lazyLayoutItemAnimation.m1235getRawOffsetnOccac()) + ((int) (layer.m6013getSizeYbymL2g() >> 32)));
+                m8336getZeroYbymL2g = IntSize.m8326constructorimpl((Math.max((int) (m8336getZeroYbymL2g & 4294967295L), IntOffset.m8289getYimpl(lazyLayoutItemAnimation.m1235getRawOffsetnOccac()) + ((int) (layer.m6013getSizeYbymL2g() & 4294967295L))) & 4294967295L) | (max << 32));
             }
         }
-        return m7731getZeroYbymL2g;
+        return m8336getZeroYbymL2g;
     }
 
     public final Modifier getModifier() {
@@ -934,19 +934,19 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     private final int getMainAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo931getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo931getOffsetBjo55l4(0);
-        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7684getYimpl(mo931getOffsetBjo55l4) : IntOffset.m7683getXimpl(mo931getOffsetBjo55l4);
+        long mo1184getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo1184getOffsetBjo55l4(0);
+        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8289getYimpl(mo1184getOffsetBjo55l4) : IntOffset.m8288getXimpl(mo1184getOffsetBjo55l4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int getCrossAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo931getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo931getOffsetBjo55l4(0);
-        return !lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7684getYimpl(mo931getOffsetBjo55l4) : IntOffset.m7683getXimpl(mo931getOffsetBjo55l4);
+        long mo1184getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo1184getOffsetBjo55l4(0);
+        return !lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8289getYimpl(mo1184getOffsetBjo55l4) : IntOffset.m8288getXimpl(mo1184getOffsetBjo55l4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LazyLayoutItemAnimator.kt */
-    @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J=\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00028\u00002\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010 \u001a\u00020\u00122\u0006\u0010\"\u001a\u00020\u00122\b\b\u0002\u0010\u0011\u001a\u00020\u0012¢\u0006\u0002\u0010+R0\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00052\u000e\u0010\u0004\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0005@BX\u0086\u000e¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\b\u0010\tR\u001c\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0017\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0014\"\u0004\b\u0019\u0010\u0016R\u001a\u0010\u001a\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0014\"\u0004\b\u001c\u0010\u0016R\u0014\u0010\u001d\u001a\u00020\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001fR\u001e\u0010 \u001a\u00020\u00122\u0006\u0010\u0004\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0014R\u001e\u0010\"\u001a\u00020\u00122\u0006\u0010\u0004\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0014¨\u0006,"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;", "", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "value", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "animations", "getAnimations", "()[Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "[Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "getConstraints-DWUhwKw", "()Landroidx/compose/ui/unit/Constraints;", "setConstraints-_Sx5XlM", "(Landroidx/compose/ui/unit/Constraints;)V", "crossAxisOffset", "", "getCrossAxisOffset", "()I", "setCrossAxisOffset", "(I)V", "lane", "getLane", "setLane", TtmlNode.TAG_SPAN, "getSpan", "setSpan", "isRunningPlacement", "", "()Z", "layoutMinOffset", "getLayoutMinOffset", "layoutMaxOffset", "getLayoutMaxOffset", "updateAnimation", "", "positionedItem", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/graphics/GraphicsContext;III)V", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J=\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00028\u00002\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010 \u001a\u00020\u00122\u0006\u0010\"\u001a\u00020\u00122\b\b\u0002\u0010\u0011\u001a\u00020\u0012¢\u0006\u0002\u0010+R0\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u00052\u000e\u0010\u0004\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0005@BX\u0086\u000e¢\u0006\n\n\u0002\u0010\n\u001a\u0004\b\b\u0010\tR\u001c\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0017\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0014\"\u0004\b\u0019\u0010\u0016R\u001a\u0010\u001a\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0014\"\u0004\b\u001c\u0010\u0016R\u0014\u0010\u001d\u001a\u00020\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001fR\u001e\u0010 \u001a\u00020\u00122\u0006\u0010\u0004\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0014R\u001e\u0010\"\u001a\u00020\u00122\u0006\u0010\u0004\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0014¨\u0006,"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$ItemInfo;", "", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "value", "", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "animations", "getAnimations", "()[Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "[Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimation;", "constraints", "Landroidx/compose/ui/unit/Constraints;", "getConstraints-DWUhwKw", "()Landroidx/compose/ui/unit/Constraints;", "setConstraints-_Sx5XlM", "(Landroidx/compose/ui/unit/Constraints;)V", "crossAxisOffset", "", "getCrossAxisOffset", "()I", "setCrossAxisOffset", "(I)V", "lane", "getLane", "setLane", TtmlNode.TAG_SPAN, "getSpan", "setSpan", "isRunningPlacement", "", "()Z", "layoutMinOffset", "getLayoutMinOffset", "layoutMaxOffset", "getLayoutMaxOffset", "updateAnimation", "", "positionedItem", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "graphicsContext", "Landroidx/compose/ui/graphics/GraphicsContext;", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasuredItem;Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/ui/graphics/GraphicsContext;III)V", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public final class ItemInfo {
         private Constraints constraints;
@@ -965,12 +965,12 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         }
 
         /* renamed from: getConstraints-DWUhwKw  reason: not valid java name */
-        public final Constraints m989getConstraintsDWUhwKw() {
+        public final Constraints m1242getConstraintsDWUhwKw() {
             return this.constraints;
         }
 
         /* renamed from: setConstraints-_Sx5XlM  reason: not valid java name */
-        public final void m990setConstraints_Sx5XlM(Constraints constraints) {
+        public final void m1243setConstraints_Sx5XlM(Constraints constraints) {
             this.constraints = constraints;
         }
 
@@ -1047,7 +1047,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
                 Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                 this.animations = (LazyLayoutItemAnimation[]) copyOf;
             }
-            this.constraints = Constraints.m7495boximpl(t.mo930getConstraintsmsEJaDk());
+            this.constraints = Constraints.m8100boximpl(t.mo1183getConstraintsmsEJaDk());
             this.crossAxisOffset = i3;
             this.lane = t.getLane();
             this.span = t.getSpan();
@@ -1093,7 +1093,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     /* compiled from: LazyLayoutItemAnimator.kt */
-    @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0013\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u0007\u001a\u00020\u0002H\u0016J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0002H\u0016J\f\u0010\u000b\u001a\u00020\t*\u00020\fH\u0016J\r\u0010\r\u001a\u0006\u0012\u0002\b\u00030\u0004HÂ\u0003J\u0017\u0010\u000e\u001a\u00020\u00002\f\b\u0002\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004HÆ\u0001J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0003J\t\u0010\u0013\u001a\u00020\u0014HÖ\u0001J\t\u0010\u0015\u001a\u00020\u0016HÖ\u0001R\u0012\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsNode;", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "create", "update", "", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0013\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u0007\u001a\u00020\u0002H\u0016J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u0002H\u0016J\f\u0010\u000b\u001a\u00020\t*\u00020\fH\u0016J\r\u0010\r\u001a\u0006\u0012\u0002\b\u00030\u0004HÂ\u0003J\u0017\u0010\u000e\u001a\u00020\u00002\f\b\u0002\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0012\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsElement;", "Landroidx/compose/ui/node/ModifierNodeElement;", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsNode;", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "create", "update", "", "node", "inspectableProperties", "Landroidx/compose/ui/platform/InspectorInfo;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     private static final class DisplayingDisappearingItemsElement extends ModifierNodeElement<DisplayingDisappearingItemsNode> {
         private final LazyLayoutItemAnimator<?> animator;
@@ -1154,7 +1154,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LazyLayoutItemAnimator.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u00012\u00020\u0002B\u0013\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\f\u0010\u0007\u001a\u00020\b*\u00020\tH\u0016J\b\u0010\n\u001a\u00020\bH\u0016J\b\u0010\u000b\u001a\u00020\bH\u0016J\u0012\u0010\f\u001a\u00020\b2\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004J\r\u0010\r\u001a\u0006\u0012\u0002\b\u00030\u0004HÂ\u0003J\u0017\u0010\u000e\u001a\u00020\u00002\f\b\u0002\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004HÆ\u0001J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0003J\t\u0010\u0013\u001a\u00020\u0014HÖ\u0001J\t\u0010\u0015\u001a\u00020\u0016HÖ\u0001R\u0012\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "onAttach", "onDetach", "setAnimator", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u00012\u00020\u0002B\u0013\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\f\u0010\u0007\u001a\u00020\b*\u00020\tH\u0016J\b\u0010\n\u001a\u00020\bH\u0016J\b\u0010\u000b\u001a\u00020\bH\u0016J\u0012\u0010\f\u001a\u00020\b2\n\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004J\r\u0010\r\u001a\u0006\u0012\u0002\b\u00030\u0004HÂ\u0003J\u0017\u0010\u000e\u001a\u00020\u00002\f\b\u0002\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0012\u0010\u0003\u001a\u0006\u0012\u0002\b\u00030\u0004X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator$DisplayingDisappearingItemsNode;", "Landroidx/compose/ui/Modifier$Node;", "Landroidx/compose/ui/node/DrawModifierNode;", "animator", "Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;", "<init>", "(Landroidx/compose/foundation/lazy/layout/LazyLayoutItemAnimator;)V", "draw", "", "Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;", "onAttach", "onDetach", "setAnimator", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "foundation"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class DisplayingDisappearingItemsNode extends Modifier.Node implements DrawModifierNode {
         private LazyLayoutItemAnimator<?> animator;
@@ -1203,13 +1203,13 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
                 GraphicsLayer layer = lazyLayoutItemAnimation.getLayer();
                 if (layer != null) {
                     ContentDrawScope contentDrawScope2 = contentDrawScope;
-                    float m7683getXimpl = IntOffset.m7683getXimpl(lazyLayoutItemAnimation.m979getFinalOffsetnOccac()) - IntOffset.m7683getXimpl(layer.m5439getTopLeftnOccac());
-                    float m7684getYimpl = IntOffset.m7684getYimpl(lazyLayoutItemAnimation.m979getFinalOffsetnOccac()) - IntOffset.m7684getYimpl(layer.m5439getTopLeftnOccac());
-                    contentDrawScope2.getDrawContext().getTransform().translate(m7683getXimpl, m7684getYimpl);
+                    float m8288getXimpl = IntOffset.m8288getXimpl(lazyLayoutItemAnimation.m1232getFinalOffsetnOccac()) - IntOffset.m8288getXimpl(layer.m6015getTopLeftnOccac());
+                    float m8289getYimpl = IntOffset.m8289getYimpl(lazyLayoutItemAnimation.m1232getFinalOffsetnOccac()) - IntOffset.m8289getYimpl(layer.m6015getTopLeftnOccac());
+                    contentDrawScope2.getDrawContext().getTransform().translate(m8288getXimpl, m8289getYimpl);
                     try {
                         GraphicsLayerKt.drawLayer(contentDrawScope2, layer);
                     } finally {
-                        contentDrawScope2.getDrawContext().getTransform().translate(-m7683getXimpl, -m7684getYimpl);
+                        contentDrawScope2.getDrawContext().getTransform().translate(-m8288getXimpl, -m8289getYimpl);
                     }
                 }
             }

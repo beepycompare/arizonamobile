@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Arrangement.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0006\bÇ\u0002\u0018\u00002\u00020\u0001:\u0005FGHIJB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\"\u001a\u00020\u00152\u0006\u0010#\u001a\u00020$H\u0007¢\u0006\u0004\b%\u0010&J\u001f\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020$2\u0006\u0010'\u001a\u00020(H\u0007¢\u0006\u0004\b)\u0010*J\u001f\u0010\"\u001a\u00020\r2\u0006\u0010#\u001a\u00020$2\u0006\u0010'\u001a\u00020+H\u0007¢\u0006\u0004\b)\u0010,J\u0010\u0010-\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0007J\u0010\u0010-\u001a\u00020\r2\u0006\u0010'\u001a\u00020+H\u0007J-\u0010.\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b7J%\u00108\u001a\u00020/2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b9J-\u0010:\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b;J-\u0010<\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b=J-\u0010>\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b?J-\u0010@\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\bAJ/\u0010B\u001a\u00020/*\u0002032\u0006\u0010C\u001a\u0002062\u0018\u0010D\u001a\u0014\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u00020/0EH\u0082\bR\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\r8\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\u0010R\u001c\u0010\u0011\u001a\u00020\r8\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0012\u0010\u0003\u001a\u0004\b\u0013\u0010\u0010R\u001c\u0010\u0014\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0016\u0010\u0003\u001a\u0004\b\u0017\u0010\u0018R\u001c\u0010\u0019\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001a\u0010\u0003\u001a\u0004\b\u001b\u0010\u0018R\u001c\u0010\u001c\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001d\u0010\u0003\u001a\u0004\b\u001e\u0010\u0018R\u001c\u0010\u001f\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b \u0010\u0003\u001a\u0004\b!\u0010\u0018¨\u0006K"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement;", "", "<init>", "()V", "Start", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "getStart$annotations", "getStart", "()Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "End", "getEnd$annotations", "getEnd", "Top", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "getTop$annotations", "getTop", "()Landroidx/compose/foundation/layout/Arrangement$Vertical;", "Bottom", "getBottom$annotations", "getBottom", "Center", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "getCenter$annotations", "getCenter", "()Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "SpaceEvenly", "getSpaceEvenly$annotations", "getSpaceEvenly", "SpaceBetween", "getSpaceBetween$annotations", "getSpaceBetween", "SpaceAround", "getSpaceAround$annotations", "getSpaceAround", "spacedBy", "space", "Landroidx/compose/ui/unit/Dp;", "spacedBy-0680j_4", "(F)Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "alignment", "Landroidx/compose/ui/Alignment$Horizontal;", "spacedBy-D5KLDUw", "(FLandroidx/compose/ui/Alignment$Horizontal;)Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/ui/Alignment$Vertical;", "(FLandroidx/compose/ui/Alignment$Vertical;)Landroidx/compose/foundation/layout/Arrangement$Vertical;", "aligned", "placeRightOrBottom", "", "totalSize", "", "size", "", "outPosition", "reverseInput", "", "placeRightOrBottom$foundation_layout", "placeLeftOrTop", "placeLeftOrTop$foundation_layout", "placeCenter", "placeCenter$foundation_layout", "placeSpaceEvenly", "placeSpaceEvenly$foundation_layout", "placeSpaceBetween", "placeSpaceBetween$foundation_layout", "placeSpaceAround", "placeSpaceAround$foundation_layout", "forEachIndexed", "reversed", "action", "Lkotlin/Function2;", "Horizontal", "Vertical", "HorizontalOrVertical", "Absolute", "SpacedAligned", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0007\bÇ\u0002\u0018\u00002\u00020\u0001:\u0006FGHIJKB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\"\u001a\u00020\u00152\u0006\u0010#\u001a\u00020$H\u0007¢\u0006\u0004\b%\u0010&J\u001f\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020$2\u0006\u0010'\u001a\u00020(H\u0007¢\u0006\u0004\b)\u0010*J\u001f\u0010\"\u001a\u00020\r2\u0006\u0010#\u001a\u00020$2\u0006\u0010'\u001a\u00020+H\u0007¢\u0006\u0004\b)\u0010,J\u0010\u0010-\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0007J\u0010\u0010-\u001a\u00020\r2\u0006\u0010'\u001a\u00020+H\u0007J-\u0010.\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b7J%\u00108\u001a\u00020/2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b9J-\u0010:\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b;J-\u0010<\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b=J-\u0010>\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\b?J-\u0010@\u001a\u00020/2\u0006\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u0002032\u0006\u00105\u001a\u000206H\u0000¢\u0006\u0002\bAJ/\u0010B\u001a\u00020/*\u0002032\u0006\u0010C\u001a\u0002062\u0018\u0010D\u001a\u0014\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u00020/0EH\u0082\bR\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\r8\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u000e\u0010\u0003\u001a\u0004\b\u000f\u0010\u0010R\u001c\u0010\u0011\u001a\u00020\r8\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0012\u0010\u0003\u001a\u0004\b\u0013\u0010\u0010R\u001c\u0010\u0014\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0016\u0010\u0003\u001a\u0004\b\u0017\u0010\u0018R\u001c\u0010\u0019\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001a\u0010\u0003\u001a\u0004\b\u001b\u0010\u0018R\u001c\u0010\u001c\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u001d\u0010\u0003\u001a\u0004\b\u001e\u0010\u0018R\u001c\u0010\u001f\u001a\u00020\u00158\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b \u0010\u0003\u001a\u0004\b!\u0010\u0018¨\u0006L"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement;", "", "<init>", "()V", "Start", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "getStart$annotations", "getStart", "()Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "End", "getEnd$annotations", "getEnd", "Top", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "getTop$annotations", "getTop", "()Landroidx/compose/foundation/layout/Arrangement$Vertical;", "Bottom", "getBottom$annotations", "getBottom", "Center", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "getCenter$annotations", "getCenter", "()Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "SpaceEvenly", "getSpaceEvenly$annotations", "getSpaceEvenly", "SpaceBetween", "getSpaceBetween$annotations", "getSpaceBetween", "SpaceAround", "getSpaceAround$annotations", "getSpaceAround", "spacedBy", "space", "Landroidx/compose/ui/unit/Dp;", "spacedBy-0680j_4", "(F)Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "alignment", "Landroidx/compose/ui/Alignment$Horizontal;", "spacedBy-D5KLDUw", "(FLandroidx/compose/ui/Alignment$Horizontal;)Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/ui/Alignment$Vertical;", "(FLandroidx/compose/ui/Alignment$Vertical;)Landroidx/compose/foundation/layout/Arrangement$Vertical;", "aligned", "placeRightOrBottom", "", "totalSize", "", "size", "", "outPosition", "reverseInput", "", "placeRightOrBottom$foundation_layout", "placeLeftOrTop", "placeLeftOrTop$foundation_layout", "placeCenter", "placeCenter$foundation_layout", "placeSpaceEvenly", "placeSpaceEvenly$foundation_layout", "placeSpaceBetween", "placeSpaceBetween$foundation_layout", "placeSpaceAround", "placeSpaceAround$foundation_layout", "forEachIndexed", "reversed", "action", "Lkotlin/Function2;", "Horizontal", "Vertical", "HorizontalOrVertical", "Absolute", "SpacingAlignmentCalculator", "SpacedAligned", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class Arrangement {
     public static final int $stable = 0;
@@ -65,11 +65,11 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical Center = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$Center$1
-        private final float spacing = Dp.m7555constructorimpl(0.0f);
+        private final float spacing = Dp.m8160constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
-        public float mo694getSpacingD9Ej5fM() {
+        public float mo748getSpacingD9Ej5fM() {
             return this.spacing;
         }
 
@@ -92,11 +92,11 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceEvenly = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceEvenly$1
-        private final float spacing = Dp.m7555constructorimpl(0.0f);
+        private final float spacing = Dp.m8160constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
-        public float mo694getSpacingD9Ej5fM() {
+        public float mo748getSpacingD9Ej5fM() {
             return this.spacing;
         }
 
@@ -119,11 +119,11 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceBetween = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceBetween$1
-        private final float spacing = Dp.m7555constructorimpl(0.0f);
+        private final float spacing = Dp.m8160constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
-        public float mo694getSpacingD9Ej5fM() {
+        public float mo748getSpacingD9Ej5fM() {
             return this.spacing;
         }
 
@@ -146,11 +146,11 @@ public final class Arrangement {
         }
     };
     private static final HorizontalOrVertical SpaceAround = new HorizontalOrVertical() { // from class: androidx.compose.foundation.layout.Arrangement$SpaceAround$1
-        private final float spacing = Dp.m7555constructorimpl(0.0f);
+        private final float spacing = Dp.m8160constructorimpl(0.0f);
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
-        public float mo694getSpacingD9Ej5fM() {
+        public float mo748getSpacingD9Ej5fM() {
             return this.spacing;
         }
 
@@ -172,6 +172,13 @@ public final class Arrangement {
             return "Arrangement#SpaceAround";
         }
     };
+
+    /* compiled from: Arrangement.kt */
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\bà\u0080\u0001\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H&ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0001"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$SpacingAlignmentCalculator;", "", "align", "", "size", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    /* loaded from: classes.dex */
+    public interface SpacingAlignmentCalculator {
+        int align(int i, LayoutDirection layoutDirection);
+    }
 
     public static /* synthetic */ void getBottom$annotations() {
     }
@@ -201,71 +208,71 @@ public final class Arrangement {
     }
 
     /* compiled from: Arrangement.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bg\u0018\u00002\u00020\u0001J,\u0010\u0006\u001a\u00020\u0007*\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\fH&R\u0014\u0010\u0002\u001a\u00020\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0010À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "", "sizes", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "outPositions", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bg\u0018\u00002\u00020\u0001J,\u0010\u0006\u001a\u00020\u0007*\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\fH&R\u0014\u0010\u0002\u001a\u00020\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0010À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "", "sizes", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "outPositions", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public interface Horizontal {
         void arrange(Density density, int i, int[] iArr, LayoutDirection layoutDirection, int[] iArr2);
 
         /* compiled from: Arrangement.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* loaded from: classes.dex */
         public static final class DefaultImpls {
             @Deprecated
             /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
-            public static float m696getSpacingD9Ej5fM(Horizontal horizontal) {
-                return Horizontal.super.mo694getSpacingD9Ej5fM();
+            public static float m750getSpacingD9Ej5fM(Horizontal horizontal) {
+                return Horizontal.super.mo748getSpacingD9Ej5fM();
             }
         }
 
         /* renamed from: getSpacing-D9Ej5fM */
-        default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0.0f);
+        default float mo748getSpacingD9Ej5fM() {
+            return Dp.m8160constructorimpl(0.0f);
         }
     }
 
     /* compiled from: Arrangement.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\bg\u0018\u00002\u00020\u0001J$\u0010\u0006\u001a\u00020\u0007*\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\fH&R\u0014\u0010\u0002\u001a\u00020\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u000eÀ\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Vertical;", "", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "", "sizes", "", "outPositions", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0002\b\u0002\bg\u0018\u00002\u00020\u0001J$\u0010\u0006\u001a\u00020\u0007*\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\fH&R\u0014\u0010\u0002\u001a\u00020\u00038VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u000eÀ\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Vertical;", "", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "", "sizes", "", "outPositions", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public interface Vertical {
         void arrange(Density density, int i, int[] iArr, int[] iArr2);
 
         /* compiled from: Arrangement.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* loaded from: classes.dex */
         public static final class DefaultImpls {
             @Deprecated
             /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
-            public static float m704getSpacingD9Ej5fM(Vertical vertical) {
-                return Vertical.super.mo694getSpacingD9Ej5fM();
+            public static float m758getSpacingD9Ej5fM(Vertical vertical) {
+                return Vertical.super.mo748getSpacingD9Ej5fM();
             }
         }
 
         /* renamed from: getSpacing-D9Ej5fM */
-        default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0.0f);
+        default float mo748getSpacingD9Ej5fM() {
+            return Dp.m8160constructorimpl(0.0f);
         }
     }
 
     /* compiled from: Arrangement.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bg\u0018\u00002\u00020\u00012\u00020\u0002R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bg\u0018\u00002\u00020\u00012\u00020\u0002R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006ø\u0001\u0000\u0082\u0002\u0006\n\u0004\b!0\u0001¨\u0006\u0007À\u0006\u0003"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "spacing", "Landroidx/compose/ui/unit/Dp;", "getSpacing-D9Ej5fM", "()F", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public interface HorizontalOrVertical extends Horizontal, Vertical {
 
         /* compiled from: Arrangement.kt */
-        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
         /* loaded from: classes.dex */
         public static final class DefaultImpls {
             @Deprecated
             /* renamed from: getSpacing-D9Ej5fM  reason: not valid java name */
-            public static float m698getSpacingD9Ej5fM(HorizontalOrVertical horizontalOrVertical) {
-                return HorizontalOrVertical.super.mo694getSpacingD9Ej5fM();
+            public static float m752getSpacingD9Ej5fM(HorizontalOrVertical horizontalOrVertical) {
+                return HorizontalOrVertical.super.mo748getSpacingD9Ej5fM();
             }
         }
 
         @Override // androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
-        default float mo694getSpacingD9Ej5fM() {
-            return Dp.m7555constructorimpl(0.0f);
+        default float mo748getSpacingD9Ej5fM() {
+            return Dp.m8160constructorimpl(0.0f);
         }
     }
 
@@ -302,67 +309,65 @@ public final class Arrangement {
     }
 
     /* renamed from: spacedBy-0680j_4  reason: not valid java name */
-    public final HorizontalOrVertical m688spacedBy0680j_4(float f) {
-        return new SpacedAligned(f, true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda4
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
+    public final HorizontalOrVertical m742spacedBy0680j_4(float f) {
+        return new SpacedAligned(f, true, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda4
+            @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+            public final int align(int i, LayoutDirection layoutDirection) {
                 int align;
-                align = Alignment.Companion.getStart().align(0, ((Integer) obj).intValue(), (LayoutDirection) obj2);
-                return Integer.valueOf(align);
+                align = Alignment.Companion.getStart().align(0, i, layoutDirection);
+                return align;
             }
         }, null);
     }
 
     /* renamed from: spacedBy-D5KLDUw  reason: not valid java name */
-    public final Horizontal m689spacedByD5KLDUw(float f, final Alignment.Horizontal horizontal) {
-        return new SpacedAligned(f, true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
+    public final Horizontal m743spacedByD5KLDUw(float f, final Alignment.Horizontal horizontal) {
+        return new SpacedAligned(f, true, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda0
+            @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+            public final int align(int i, LayoutDirection layoutDirection) {
                 int align;
-                align = Alignment.Horizontal.this.align(0, ((Integer) obj).intValue(), (LayoutDirection) obj2);
-                return Integer.valueOf(align);
+                align = Alignment.Horizontal.this.align(0, i, layoutDirection);
+                return align;
             }
         }, null);
     }
 
     /* renamed from: spacedBy-D5KLDUw  reason: not valid java name */
-    public final Vertical m690spacedByD5KLDUw(float f, final Alignment.Vertical vertical) {
-        return new SpacedAligned(f, false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
+    public final Vertical m744spacedByD5KLDUw(float f, final Alignment.Vertical vertical) {
+        return new SpacedAligned(f, false, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda1
+            @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+            public final int align(int i, LayoutDirection layoutDirection) {
                 int align;
-                LayoutDirection layoutDirection = (LayoutDirection) obj2;
-                align = Alignment.Vertical.this.align(0, ((Integer) obj).intValue());
-                return Integer.valueOf(align);
+                align = Alignment.Vertical.this.align(0, i);
+                return align;
             }
         }, null);
     }
 
     public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-        return new SpacedAligned(Dp.m7555constructorimpl(0.0f), true, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
+        return new SpacedAligned(Dp.m8160constructorimpl(0.0f), true, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda2
+            @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+            public final int align(int i, LayoutDirection layoutDirection) {
                 int align;
-                align = Alignment.Horizontal.this.align(0, ((Integer) obj).intValue(), (LayoutDirection) obj2);
-                return Integer.valueOf(align);
+                align = Alignment.Horizontal.this.align(0, i, layoutDirection);
+                return align;
             }
         }, null);
     }
 
     public final Vertical aligned(final Alignment.Vertical vertical) {
-        return new SpacedAligned(Dp.m7555constructorimpl(0.0f), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
+        return new SpacedAligned(Dp.m8160constructorimpl(0.0f), false, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$$ExternalSyntheticLambda3
+            @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+            public final int align(int i, LayoutDirection layoutDirection) {
                 int align;
-                LayoutDirection layoutDirection = (LayoutDirection) obj2;
-                align = Alignment.Vertical.this.align(0, ((Integer) obj).intValue());
-                return Integer.valueOf(align);
+                align = Alignment.Vertical.this.align(0, i);
+                return align;
             }
         }, null);
     }
 
     /* compiled from: Arrangement.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0007¢\u0006\u0004\b\u001c\u0010\u001dJ\u001f\u0010\u0018\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\u001fH\u0007¢\u0006\u0004\b \u0010!J\u001f\u0010\u0018\u001a\u00020\"2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020#H\u0007¢\u0006\u0004\b \u0010$J\u0010\u0010%\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u001fH\u0007R\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\u0003\u001a\u0004\b\u000e\u0010\bR\u001c\u0010\u000f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0010\u0010\u0003\u001a\u0004\b\u0011\u0010\bR\u001c\u0010\u0012\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0013\u0010\u0003\u001a\u0004\b\u0014\u0010\bR\u001c\u0010\u0015\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0016\u0010\u0003\u001a\u0004\b\u0017\u0010\b¨\u0006&"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Absolute;", "", "<init>", "()V", "Left", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "getLeft$annotations", "getLeft", "()Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Center", "getCenter$annotations", "getCenter", "Right", "getRight$annotations", "getRight", "SpaceBetween", "getSpaceBetween$annotations", "getSpaceBetween", "SpaceEvenly", "getSpaceEvenly$annotations", "getSpaceEvenly", "SpaceAround", "getSpaceAround$annotations", "getSpaceAround", "spacedBy", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "space", "Landroidx/compose/ui/unit/Dp;", "spacedBy-0680j_4", "(F)Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "alignment", "Landroidx/compose/ui/Alignment$Horizontal;", "spacedBy-D5KLDUw", "(FLandroidx/compose/ui/Alignment$Horizontal;)Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "Landroidx/compose/ui/Alignment$Vertical;", "(FLandroidx/compose/ui/Alignment$Vertical;)Landroidx/compose/foundation/layout/Arrangement$Vertical;", "aligned", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0007¢\u0006\u0004\b\u001c\u0010\u001dJ\u001f\u0010\u0018\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020\u001fH\u0007¢\u0006\u0004\b \u0010!J\u001f\u0010\u0018\u001a\u00020\"2\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001e\u001a\u00020#H\u0007¢\u0006\u0004\b \u0010$J\u0010\u0010%\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u001fH\u0007R\u001c\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0006\u0010\u0003\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\n\u0010\u0003\u001a\u0004\b\u000b\u0010\bR\u001c\u0010\f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\u0003\u001a\u0004\b\u000e\u0010\bR\u001c\u0010\u000f\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0010\u0010\u0003\u001a\u0004\b\u0011\u0010\bR\u001c\u0010\u0012\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0013\u0010\u0003\u001a\u0004\b\u0014\u0010\bR\u001c\u0010\u0015\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0016\u0010\u0003\u001a\u0004\b\u0017\u0010\b¨\u0006&"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$Absolute;", "", "<init>", "()V", "Left", "Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "getLeft$annotations", "getLeft", "()Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Center", "getCenter$annotations", "getCenter", "Right", "getRight$annotations", "getRight", "SpaceBetween", "getSpaceBetween$annotations", "getSpaceBetween", "SpaceEvenly", "getSpaceEvenly$annotations", "getSpaceEvenly", "SpaceAround", "getSpaceAround$annotations", "getSpaceAround", "spacedBy", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "space", "Landroidx/compose/ui/unit/Dp;", "spacedBy-0680j_4", "(F)Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "alignment", "Landroidx/compose/ui/Alignment$Horizontal;", "spacedBy-D5KLDUw", "(FLandroidx/compose/ui/Alignment$Horizontal;)Landroidx/compose/foundation/layout/Arrangement$Horizontal;", "Landroidx/compose/foundation/layout/Arrangement$Vertical;", "Landroidx/compose/ui/Alignment$Vertical;", "(FLandroidx/compose/ui/Alignment$Vertical;)Landroidx/compose/foundation/layout/Arrangement$Vertical;", "aligned", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class Absolute {
         public static final int $stable = 0;
@@ -474,64 +479,62 @@ public final class Arrangement {
         }
 
         /* renamed from: spacedBy-0680j_4  reason: not valid java name */
-        public final HorizontalOrVertical m691spacedBy0680j_4(float f) {
+        public final HorizontalOrVertical m745spacedBy0680j_4(float f) {
             return new SpacedAligned(f, false, null, null);
         }
 
         /* renamed from: spacedBy-D5KLDUw  reason: not valid java name */
-        public final Horizontal m692spacedByD5KLDUw(float f, final Alignment.Horizontal horizontal) {
-            return new SpacedAligned(f, false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda2
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(Object obj, Object obj2) {
+        public final Horizontal m746spacedByD5KLDUw(float f, final Alignment.Horizontal horizontal) {
+            return new SpacedAligned(f, false, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda2
+                @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+                public final int align(int i, LayoutDirection layoutDirection) {
                     int align;
-                    align = Alignment.Horizontal.this.align(0, ((Integer) obj).intValue(), (LayoutDirection) obj2);
-                    return Integer.valueOf(align);
+                    align = Alignment.Horizontal.this.align(0, i, layoutDirection);
+                    return align;
                 }
             }, null);
         }
 
         /* renamed from: spacedBy-D5KLDUw  reason: not valid java name */
-        public final Vertical m693spacedByD5KLDUw(float f, final Alignment.Vertical vertical) {
-            return new SpacedAligned(f, false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda0
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(Object obj, Object obj2) {
+        public final Vertical m747spacedByD5KLDUw(float f, final Alignment.Vertical vertical) {
+            return new SpacedAligned(f, false, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda0
+                @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+                public final int align(int i, LayoutDirection layoutDirection) {
                     int align;
-                    LayoutDirection layoutDirection = (LayoutDirection) obj2;
-                    align = Alignment.Vertical.this.align(0, ((Integer) obj).intValue());
-                    return Integer.valueOf(align);
+                    align = Alignment.Vertical.this.align(0, i);
+                    return align;
                 }
             }, null);
         }
 
         public final Horizontal aligned(final Alignment.Horizontal horizontal) {
-            return new SpacedAligned(Dp.m7555constructorimpl(0.0f), false, new Function2() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
-                @Override // kotlin.jvm.functions.Function2
-                public final Object invoke(Object obj, Object obj2) {
+            return new SpacedAligned(Dp.m8160constructorimpl(0.0f), false, new SpacingAlignmentCalculator() { // from class: androidx.compose.foundation.layout.Arrangement$Absolute$$ExternalSyntheticLambda1
+                @Override // androidx.compose.foundation.layout.Arrangement.SpacingAlignmentCalculator
+                public final int align(int i, LayoutDirection layoutDirection) {
                     int align;
-                    align = Alignment.Horizontal.this.align(0, ((Integer) obj).intValue(), (LayoutDirection) obj2);
-                    return Integer.valueOf(align);
+                    align = Alignment.Horizontal.this.align(0, i, layoutDirection);
+                    return align;
                 }
             }, null);
         }
     }
 
     /* compiled from: Arrangement.kt */
-    @Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0015\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0081\b\u0018\u00002\u00020\u0001B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u001a\u0010\u0006\u001a\u0016\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007¢\u0006\u0004\b\n\u0010\u000bJ,\u0010\u0015\u001a\u00020\u0016*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\t2\u0006\u0010\u001c\u001a\u00020\u001aH\u0016J$\u0010\u0015\u001a\u00020\u0016*\u00020\u00172\u0006\u0010\u0018\u001a\u00020\b2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001aH\u0016J\b\u0010\u001d\u001a\u00020\u001eH\u0016J\u0010\u0010\u001f\u001a\u00020\u0003HÆ\u0003¢\u0006\u0004\b \u0010\rJ\t\u0010!\u001a\u00020\u0005HÆ\u0003J\u001d\u0010\"\u001a\u0016\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007HÆ\u0003JB\u0010#\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u001c\b\u0002\u0010\u0006\u001a\u0016\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007HÆ\u0001¢\u0006\u0004\b$\u0010%J\u0013\u0010&\u001a\u00020\u00052\b\u0010'\u001a\u0004\u0018\u00010(HÖ\u0003J\t\u0010)\u001a\u00020\bHÖ\u0001R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R%\u0010\u0006\u001a\u0016\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0016\u0010\u0013\u001a\u00020\u0003X\u0096\u0004¢\u0006\n\n\u0002\u0010\u000e\u001a\u0004\b\u0014\u0010\r¨\u0006*"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$SpacedAligned;", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "space", "Landroidx/compose/ui/unit/Dp;", "rtlMirror", "", "alignment", "Lkotlin/Function2;", "", "Landroidx/compose/ui/unit/LayoutDirection;", "<init>", "(FZLkotlin/jvm/functions/Function2;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getSpace-D9Ej5fM", "()F", "F", "getRtlMirror", "()Z", "getAlignment", "()Lkotlin/jvm/functions/Function2;", "spacing", "getSpacing-D9Ej5fM", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "sizes", "", "layoutDirection", "outPositions", "toString", "", "component1", "component1-D9Ej5fM", "component2", "component3", "copy", "copy-8Feqmps", "(FZLkotlin/jvm/functions/Function2;)Landroidx/compose/foundation/layout/Arrangement$SpacedAligned;", "equals", "other", "", "hashCode", "foundation-layout"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0015\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\u0000\n\u0002\b\u0002\b\u0081\b\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\u0004\b\b\u0010\tJ,\u0010\u0013\u001a\u00020\u0014*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0019H\u0016J$\u0010\u0013\u001a\u00020\u0014*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001c\u001a\u00020\u0019H\u0016J\b\u0010\u001d\u001a\u00020\u001eH\u0016J\u0010\u0010\u001f\u001a\u00020\u0003HÆ\u0003¢\u0006\u0004\b \u0010\u000bJ\t\u0010!\u001a\u00020\u0005HÆ\u0003J\u000b\u0010\"\u001a\u0004\u0018\u00010\u0007HÆ\u0003J0\u0010#\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÆ\u0001¢\u0006\u0004\b$\u0010%J\u0014\u0010&\u001a\u00020\u00052\b\u0010'\u001a\u0004\u0018\u00010(HÖ\u0083\u0004J\n\u0010)\u001a\u00020\u0017HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u00020\u0003¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0016\u0010\u0011\u001a\u00020\u0003X\u0096\u0004¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u0012\u0010\u000b¨\u0006*"}, d2 = {"Landroidx/compose/foundation/layout/Arrangement$SpacedAligned;", "Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;", "space", "Landroidx/compose/ui/unit/Dp;", "rtlMirror", "", "alignment", "Landroidx/compose/foundation/layout/Arrangement$SpacingAlignmentCalculator;", "<init>", "(FZLandroidx/compose/foundation/layout/Arrangement$SpacingAlignmentCalculator;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getSpace-D9Ej5fM", "()F", "F", "getRtlMirror", "()Z", "getAlignment", "()Landroidx/compose/foundation/layout/Arrangement$SpacingAlignmentCalculator;", "spacing", "getSpacing-D9Ej5fM", "arrange", "", "Landroidx/compose/ui/unit/Density;", "totalSize", "", "sizes", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "outPositions", "toString", "", "component1", "component1-D9Ej5fM", "component2", "component3", "copy", "copy-8Feqmps", "(FZLandroidx/compose/foundation/layout/Arrangement$SpacingAlignmentCalculator;)Landroidx/compose/foundation/layout/Arrangement$SpacedAligned;", "equals", "other", "", "hashCode", "foundation-layout"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static final class SpacedAligned implements HorizontalOrVertical {
         public static final int $stable = 0;
-        private final Function2<Integer, LayoutDirection, Integer> alignment;
+        private final SpacingAlignmentCalculator alignment;
         private final boolean rtlMirror;
         private final float space;
         private final float spacing;
 
-        public /* synthetic */ SpacedAligned(float f, boolean z, Function2 function2, DefaultConstructorMarker defaultConstructorMarker) {
-            this(f, z, function2);
+        public /* synthetic */ SpacedAligned(float f, boolean z, SpacingAlignmentCalculator spacingAlignmentCalculator, DefaultConstructorMarker defaultConstructorMarker) {
+            this(f, z, spacingAlignmentCalculator);
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: copy-8Feqmps$default  reason: not valid java name */
-        public static /* synthetic */ SpacedAligned m699copy8Feqmps$default(SpacedAligned spacedAligned, float f, boolean z, Function2 function2, int i, Object obj) {
+        public static /* synthetic */ SpacedAligned m753copy8Feqmps$default(SpacedAligned spacedAligned, float f, boolean z, SpacingAlignmentCalculator spacingAlignmentCalculator, int i, Object obj) {
             if ((i & 1) != 0) {
                 f = spacedAligned.space;
             }
@@ -539,13 +542,13 @@ public final class Arrangement {
                 z = spacedAligned.rtlMirror;
             }
             if ((i & 4) != 0) {
-                function2 = spacedAligned.alignment;
+                spacingAlignmentCalculator = spacedAligned.alignment;
             }
-            return spacedAligned.m701copy8Feqmps(f, z, function2);
+            return spacedAligned.m755copy8Feqmps(f, z, spacingAlignmentCalculator);
         }
 
         /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-        public final float m700component1D9Ej5fM() {
+        public final float m754component1D9Ej5fM() {
             return this.space;
         }
 
@@ -553,13 +556,13 @@ public final class Arrangement {
             return this.rtlMirror;
         }
 
-        public final Function2<Integer, LayoutDirection, Integer> component3() {
+        public final SpacingAlignmentCalculator component3() {
             return this.alignment;
         }
 
         /* renamed from: copy-8Feqmps  reason: not valid java name */
-        public final SpacedAligned m701copy8Feqmps(float f, boolean z, Function2<? super Integer, ? super LayoutDirection, Integer> function2) {
-            return new SpacedAligned(f, z, function2, null);
+        public final SpacedAligned m755copy8Feqmps(float f, boolean z, SpacingAlignmentCalculator spacingAlignmentCalculator) {
+            return new SpacedAligned(f, z, spacingAlignmentCalculator, null);
         }
 
         public boolean equals(Object obj) {
@@ -568,27 +571,26 @@ public final class Arrangement {
             }
             if (obj instanceof SpacedAligned) {
                 SpacedAligned spacedAligned = (SpacedAligned) obj;
-                return Dp.m7560equalsimpl0(this.space, spacedAligned.space) && this.rtlMirror == spacedAligned.rtlMirror && Intrinsics.areEqual(this.alignment, spacedAligned.alignment);
+                return Dp.m8165equalsimpl0(this.space, spacedAligned.space) && this.rtlMirror == spacedAligned.rtlMirror && Intrinsics.areEqual(this.alignment, spacedAligned.alignment);
             }
             return false;
         }
 
         public int hashCode() {
-            int m7561hashCodeimpl = ((Dp.m7561hashCodeimpl(this.space) * 31) + Boolean.hashCode(this.rtlMirror)) * 31;
-            Function2<Integer, LayoutDirection, Integer> function2 = this.alignment;
-            return m7561hashCodeimpl + (function2 == null ? 0 : function2.hashCode());
+            int m8166hashCodeimpl = ((Dp.m8166hashCodeimpl(this.space) * 31) + Boolean.hashCode(this.rtlMirror)) * 31;
+            SpacingAlignmentCalculator spacingAlignmentCalculator = this.alignment;
+            return m8166hashCodeimpl + (spacingAlignmentCalculator == null ? 0 : spacingAlignmentCalculator.hashCode());
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
-        private SpacedAligned(float f, boolean z, Function2<? super Integer, ? super LayoutDirection, Integer> function2) {
+        private SpacedAligned(float f, boolean z, SpacingAlignmentCalculator spacingAlignmentCalculator) {
             this.space = f;
             this.rtlMirror = z;
-            this.alignment = function2;
+            this.alignment = spacingAlignmentCalculator;
             this.spacing = f;
         }
 
         /* renamed from: getSpace-D9Ej5fM  reason: not valid java name */
-        public final float m702getSpaceD9Ej5fM() {
+        public final float m756getSpaceD9Ej5fM() {
             return this.space;
         }
 
@@ -596,62 +598,69 @@ public final class Arrangement {
             return this.rtlMirror;
         }
 
-        public final Function2<Integer, LayoutDirection, Integer> getAlignment() {
+        public final SpacingAlignmentCalculator getAlignment() {
             return this.alignment;
         }
 
         @Override // androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical, androidx.compose.foundation.layout.Arrangement.Horizontal, androidx.compose.foundation.layout.Arrangement.Vertical
         /* renamed from: getSpacing-D9Ej5fM */
-        public float mo694getSpacingD9Ej5fM() {
+        public float mo748getSpacingD9Ej5fM() {
             return this.spacing;
         }
 
         @Override // androidx.compose.foundation.layout.Arrangement.Horizontal
         public void arrange(Density density, int i, int[] iArr, LayoutDirection layoutDirection, int[] iArr2) {
             int i2;
-            int i3;
             if (iArr.length == 0) {
                 return;
             }
-            int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(this.space);
+            int mo428roundToPx0680j_4 = density.mo428roundToPx0680j_4(this.space);
             boolean z = this.rtlMirror && layoutDirection == LayoutDirection.Rtl;
-            Arrangement arrangement = Arrangement.INSTANCE;
-            if (!z) {
+            if (z) {
                 int length = iArr.length;
+                int i3 = 0;
                 int i4 = 0;
-                i2 = 0;
-                i3 = 0;
                 int i5 = 0;
-                while (i4 < length) {
-                    int i6 = iArr[i4];
-                    int min = Math.min(i2, i - i6);
-                    iArr2[i5] = min;
-                    int min2 = Math.min(mo399roundToPx0680j_4, (i - min) - i6);
-                    i4++;
-                    i3 = min2;
-                    i2 = iArr2[i5] + i6 + min2;
+                while (i3 < length) {
+                    int max = Math.max(0, i - iArr[i3]);
+                    iArr2[i5] = max;
+                    i4 = Math.min(mo428roundToPx0680j_4, max);
+                    i = iArr2[i5] - i4;
+                    i3++;
                     i5++;
                 }
+                i2 = i + i4;
             } else {
-                i2 = 0;
-                i3 = 0;
-                for (int length2 = iArr.length - 1; -1 < length2; length2--) {
-                    int i7 = iArr[length2];
-                    int min3 = Math.min(i2, i - i7);
-                    iArr2[length2] = min3;
-                    i3 = Math.min(mo399roundToPx0680j_4, (i - min3) - i7);
-                    i2 = iArr2[length2] + i7 + i3;
+                int length2 = iArr.length;
+                int i6 = 0;
+                int i7 = 0;
+                int i8 = 0;
+                int i9 = 0;
+                while (i6 < length2) {
+                    int i10 = iArr[i6];
+                    int min = Math.min(i7, i - i10);
+                    iArr2[i9] = min;
+                    int min2 = Math.min(mo428roundToPx0680j_4, (i - min) - i10);
+                    i6++;
+                    i8 = min2;
+                    i7 = iArr2[i9] + i10 + min2;
+                    i9++;
                 }
+                i2 = i - (i7 - i8);
             }
-            int i8 = i2 - i3;
-            Function2<Integer, LayoutDirection, Integer> function2 = this.alignment;
-            if (function2 == null || i8 >= i) {
+            SpacingAlignmentCalculator spacingAlignmentCalculator = this.alignment;
+            if (spacingAlignmentCalculator == null || i2 <= 0) {
                 return;
             }
-            int intValue = function2.invoke(Integer.valueOf(i - i8), layoutDirection).intValue();
-            int length3 = iArr2.length;
-            for (int i9 = 0; i9 < length3; i9++) {
-                iArr2[i9] = iArr2[i9] + intValue;
+            int align = spacingAlignmentCalculator.align(i2, layoutDirection);
+            if (z) {
+                align -= i2;
+            }
+            if (align != 0) {
+                int length3 = iArr2.length;
+                for (int i11 = 0; i11 < length3; i11++) {
+                    iArr2[i11] = iArr2[i11] + align;
+                }
             }
         }
 
@@ -661,7 +670,7 @@ public final class Arrangement {
         }
 
         public String toString() {
-            return (this.rtlMirror ? "" : "Absolute") + "Arrangement#spacedAligned(" + ((Object) Dp.m7566toStringimpl(this.space)) + ", " + this.alignment + ')';
+            return (this.rtlMirror ? "" : "Absolute") + "Arrangement#spacedAligned(" + ((Object) Dp.m8171toStringimpl(this.space)) + ", " + this.alignment + ')';
         }
     }
 

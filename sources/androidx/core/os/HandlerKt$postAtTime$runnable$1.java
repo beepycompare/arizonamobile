@@ -4,7 +4,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 /* compiled from: Handler.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
 /* loaded from: classes2.dex */
 public final class HandlerKt$postAtTime$runnable$1 implements Runnable {
     final /* synthetic */ Function0<Unit> $action;

@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.app.Activity;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zaa extends LifecycleCallback {
     private List zaa;
@@ -15,7 +15,7 @@ final class zaa extends LifecycleCallback {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* bridge */ /* synthetic */ zaa zaa(Activity activity) {
+    public static /* synthetic */ zaa zaa(Activity activity) {
         zaa zaaVar;
         synchronized (activity) {
             LifecycleFragment fragment = getFragment(activity);
@@ -28,7 +28,8 @@ final class zaa extends LifecycleCallback {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final synchronized void zac(Runnable runnable) {
+    /* renamed from: zac */
+    public final synchronized void zab(Runnable runnable) {
         this.zaa.add(runnable);
     }
 

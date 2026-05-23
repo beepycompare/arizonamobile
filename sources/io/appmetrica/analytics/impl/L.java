@@ -1,21 +1,38 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
+import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class L implements Provider {
+public final class L {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f670a;
-    public final /* synthetic */ N b;
+    public final M f634a;
+    public final M b;
+    public final M c;
 
-    public L(N n, Context context) {
-        this.b = n;
-        this.f670a = context;
+    public L(M m, M m2, M m3) {
+        this.f634a = m;
+        this.b = m2;
+        this.c = m3;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
-    public final Object get() {
-        return this.b.f705a.a(this.f670a);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (Intrinsics.areEqual(L.class, obj != null ? obj.getClass() : null)) {
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type io.appmetrica.analytics.impl.id.AdvIdGetterController.CanTrackIdentifiers");
+            L l = (L) obj;
+            return this.f634a == l.f634a && this.b == l.b && this.c == l.c;
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = this.b.hashCode();
+        return this.c.hashCode() + ((hashCode + (this.f634a.hashCode() * 31)) * 31);
+    }
+
+    public final String toString() {
+        return "CanTrackIdentifiers(canTrackGaid=" + this.f634a + ", canTrackHoaid=" + this.b + ", canTrackYandexAdvId=" + this.c + ')';
     }
 }

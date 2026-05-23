@@ -7,11 +7,14 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Limit.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt", f = "Limit.kt", i = {0}, l = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m = "collectWhile", n = {"collector"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 176)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LimitKt", f = "Limit.kt", i = {0, 0, 0, 0}, l = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m = "collectWhile", n = {"$this$collectWhile", "predicate", "collector", "$i$f$collectWhile"}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__LimitKt$collectWhile$1<T> extends ContinuationImpl {
+    int I$0;
     Object L$0;
+    Object L$1;
+    Object L$2;
     int label;
     /* synthetic */ Object result;
 

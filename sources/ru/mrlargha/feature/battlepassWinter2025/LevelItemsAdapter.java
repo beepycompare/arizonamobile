@@ -169,7 +169,7 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
             final int i3 = i + 1;
             Job job = this.loadImageJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             final WinterBattlepassLevelItemBinding winterBattlepassLevelItemBinding = this.binding;
             final LevelItemsAdapter levelItemsAdapter = this.this$0;

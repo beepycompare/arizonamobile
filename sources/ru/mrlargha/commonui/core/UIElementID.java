@@ -1,6 +1,6 @@
 package ru.mrlargha.commonui.core;
 
-import androidx.compose.runtime.ComposerImplKt;
+import androidx.compose.runtime.GapComposerKt;
 import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.enums.EnumEntries;
@@ -138,14 +138,14 @@ public final class UIElementID {
     public static final UIElementID ARIZONA_EVENT = new UIElementID("ARIZONA_EVENT", 115, 122, ProjectType.COMMON);
     public static final UIElementID SPAWN_SELECTION = new UIElementID("SPAWN_SELECTION", 116, 123, ProjectType.RODINA);
     public static final UIElementID TRANSPORT_SHOP = new UIElementID("TRANSPORT_SHOP", 117, 124, ProjectType.RODINA);
-    public static final UIElementID RATING = new UIElementID("RATING", 118, ComposerImplKt.nodeKey, ProjectType.RODINA);
+    public static final UIElementID RATING = new UIElementID("RATING", 118, GapComposerKt.nodeKey, ProjectType.RODINA);
     public static final UIElementID CERTIFICATE = new UIElementID("CERTIFICATE", 119, WebSocketProtocol.PAYLOAD_SHORT, ProjectType.COMMON);
     public static final UIElementID AZ_ROULETTE = new UIElementID("AZ_ROULETTE", 120, TsExtractor.TS_STREAM_TYPE_AC3, ProjectType.RODINA);
     public static final UIElementID SELECTOR = new UIElementID("SELECTOR", 121, 127, ProjectType.ARIZONA);
     public static final UIElementID EMPLOYMENT_CENTER = new UIElementID("EMPLOYMENT_CENTER", 122, 131, ProjectType.ARIZONA);
     public static final UIElementID ARIZONA_RATING = new UIElementID("ARIZONA_RATING", 123, 132, ProjectType.COMMON);
     public static final UIElementID RODINA_ACCS_CERTIFICATE = new UIElementID("RODINA_ACCS_CERTIFICATE", 124, 133, ProjectType.RODINA);
-    public static final UIElementID ARIZONA_PROMO = new UIElementID("ARIZONA_PROMO", ComposerImplKt.nodeKey, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, ProjectType.COMMON);
+    public static final UIElementID ARIZONA_PROMO = new UIElementID("ARIZONA_PROMO", GapComposerKt.nodeKey, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, ProjectType.COMMON);
     public static final UIElementID FISHING_BACKEND = new UIElementID("FISHING_BACKEND", WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_E_AC3, ProjectType.COMMON);
     public static final UIElementID PHONE_NUMBER = new UIElementID("PHONE_NUMBER", 127, TsExtractor.TS_STREAM_TYPE_DTS_HD, ProjectType.RODINA);
     public static final UIElementID ATM_MINIGAME = new UIElementID("ATM_MINIGAME", 128, 137, ProjectType.COMMON);

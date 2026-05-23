@@ -24,7 +24,7 @@ public final class AnimatedShapeState {
     private final FiniteAnimationSpec<Float> spec;
     private Animatable<Float, AnimationVector1D> topEnd;
     private Animatable<Float, AnimationVector1D> topStart;
-    private long size = Size.Companion.m4605getZeroNHjbRc();
+    private long size = Size.Companion.m5181getZeroNHjbRc();
     private Density density = DensityKt.Density(0.0f, 0.0f);
 
     public AnimatedShapeState(RoundedCornerShape roundedCornerShape, FiniteAnimationSpec<Float> finiteAnimationSpec) {
@@ -41,12 +41,12 @@ public final class AnimatedShapeState {
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m2990getSizeNHjbRc() {
+    public final long m3435getSizeNHjbRc() {
         return this.size;
     }
 
     /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-    public final void m2991setSizeuvyYCjk(long j) {
+    public final void m3436setSizeuvyYCjk(long j) {
         this.size = j;
     }
 
@@ -59,84 +59,84 @@ public final class AnimatedShapeState {
     }
 
     /* renamed from: topStart-TmRCtEA$default  reason: not valid java name */
-    public static /* synthetic */ float m2987topStartTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
+    public static /* synthetic */ float m3432topStartTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
         if ((i & 1) != 0) {
             j = animatedShapeState.size;
         }
         if ((i & 2) != 0) {
             density = animatedShapeState.density;
         }
-        return animatedShapeState.m2993topStartTmRCtEA(j, density);
+        return animatedShapeState.m3438topStartTmRCtEA(j, density);
     }
 
     /* renamed from: topStart-TmRCtEA  reason: not valid java name */
-    public final float m2993topStartTmRCtEA(long j, Density density) {
+    public final float m3438topStartTmRCtEA(long j, Density density) {
         Animatable<Float, AnimationVector1D> animatable = this.topStart;
         if (animatable == null) {
-            animatable = AnimatableKt.Animatable$default(this.shape.getTopStart().mo1117toPxTmRCtEA(j, density), 0.0f, 2, null);
+            animatable = AnimatableKt.Animatable$default(this.shape.getTopStart().mo1371toPxTmRCtEA(j, density), 0.0f, 2, null);
             this.topStart = animatable;
         }
         return animatable.getValue().floatValue();
     }
 
     /* renamed from: topEnd-TmRCtEA$default  reason: not valid java name */
-    public static /* synthetic */ float m2986topEndTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
+    public static /* synthetic */ float m3431topEndTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
         if ((i & 1) != 0) {
             j = animatedShapeState.size;
         }
         if ((i & 2) != 0) {
             density = animatedShapeState.density;
         }
-        return animatedShapeState.m2992topEndTmRCtEA(j, density);
+        return animatedShapeState.m3437topEndTmRCtEA(j, density);
     }
 
     /* renamed from: topEnd-TmRCtEA  reason: not valid java name */
-    public final float m2992topEndTmRCtEA(long j, Density density) {
+    public final float m3437topEndTmRCtEA(long j, Density density) {
         Animatable<Float, AnimationVector1D> animatable = this.topEnd;
         if (animatable == null) {
-            animatable = AnimatableKt.Animatable$default(this.shape.getTopEnd().mo1117toPxTmRCtEA(j, density), 0.0f, 2, null);
+            animatable = AnimatableKt.Animatable$default(this.shape.getTopEnd().mo1371toPxTmRCtEA(j, density), 0.0f, 2, null);
             this.topEnd = animatable;
         }
         return animatable.getValue().floatValue();
     }
 
     /* renamed from: bottomStart-TmRCtEA$default  reason: not valid java name */
-    public static /* synthetic */ float m2985bottomStartTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
+    public static /* synthetic */ float m3430bottomStartTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
         if ((i & 1) != 0) {
             j = animatedShapeState.size;
         }
         if ((i & 2) != 0) {
             density = animatedShapeState.density;
         }
-        return animatedShapeState.m2989bottomStartTmRCtEA(j, density);
+        return animatedShapeState.m3434bottomStartTmRCtEA(j, density);
     }
 
     /* renamed from: bottomStart-TmRCtEA  reason: not valid java name */
-    public final float m2989bottomStartTmRCtEA(long j, Density density) {
+    public final float m3434bottomStartTmRCtEA(long j, Density density) {
         Animatable<Float, AnimationVector1D> animatable = this.bottomStart;
         if (animatable == null) {
-            animatable = AnimatableKt.Animatable$default(this.shape.getBottomStart().mo1117toPxTmRCtEA(j, density), 0.0f, 2, null);
+            animatable = AnimatableKt.Animatable$default(this.shape.getBottomStart().mo1371toPxTmRCtEA(j, density), 0.0f, 2, null);
             this.bottomStart = animatable;
         }
         return animatable.getValue().floatValue();
     }
 
     /* renamed from: bottomEnd-TmRCtEA$default  reason: not valid java name */
-    public static /* synthetic */ float m2984bottomEndTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
+    public static /* synthetic */ float m3429bottomEndTmRCtEA$default(AnimatedShapeState animatedShapeState, long j, Density density, int i, Object obj) {
         if ((i & 1) != 0) {
             j = animatedShapeState.size;
         }
         if ((i & 2) != 0) {
             density = animatedShapeState.density;
         }
-        return animatedShapeState.m2988bottomEndTmRCtEA(j, density);
+        return animatedShapeState.m3433bottomEndTmRCtEA(j, density);
     }
 
     /* renamed from: bottomEnd-TmRCtEA  reason: not valid java name */
-    public final float m2988bottomEndTmRCtEA(long j, Density density) {
+    public final float m3433bottomEndTmRCtEA(long j, Density density) {
         Animatable<Float, AnimationVector1D> animatable = this.bottomEnd;
         if (animatable == null) {
-            animatable = AnimatableKt.Animatable$default(this.shape.getBottomEnd().mo1117toPxTmRCtEA(j, density), 0.0f, 2, null);
+            animatable = AnimatableKt.Animatable$default(this.shape.getBottomEnd().mo1371toPxTmRCtEA(j, density), 0.0f, 2, null);
             this.bottomEnd = animatable;
         }
         return animatable.getValue().floatValue();

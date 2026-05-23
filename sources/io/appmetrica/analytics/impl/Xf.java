@@ -1,23 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Xf implements InterfaceC0578sg {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0224eg f859a;
-
-    public Xf(C0224eg c0224eg) {
-        this.f859a = c0224eg;
+public final class Xf extends Ra {
+    public Xf(Li li) {
+        super(li);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0578sg
-    public final void a(C0454ng c0454ng) {
-        C0224eg c0224eg = this.f859a;
-        C0224eg.a(c0224eg, c0454ng, (Wf) c0224eg.d.getValue());
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0578sg
-    public final void a(Throwable th) {
-        C0224eg c0224eg = this.f859a;
-        C0224eg.a(c0224eg, null, (Wf) c0224eg.d.getValue());
+    @Override // io.appmetrica.analytics.impl.Ra
+    public final void a(List<AbstractC0305hh> list) {
+        list.add(this.f742a.n);
+        list.add(this.f742a.h);
+        list.add(this.f742a.d);
     }
 }

@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzfo extends zzmb implements zznn {
+public final class zzfo extends zzadp implements zzafd {
     private zzfo() {
         throw null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public /* synthetic */ zzfo(byte[] bArr) {
-        super(zzfr.zzi());
+        super(zzfr.zzj());
     }
 }

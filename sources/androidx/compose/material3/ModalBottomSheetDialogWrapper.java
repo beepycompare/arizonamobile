@@ -84,8 +84,8 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
         this.properties = modalBottomSheetProperties;
         this.contentColor = j;
         this.composeView = view;
-        float m7555constructorimpl = Dp.m7555constructorimpl(8.0f);
-        this.maxSupportedElevation = m7555constructorimpl;
+        float m8160constructorimpl = Dp.m8160constructorimpl(8.0f);
+        this.maxSupportedElevation = m8160constructorimpl;
         Window window = getWindow();
         if (window == null) {
             throw new IllegalStateException("Dialog has no window".toString());
@@ -96,7 +96,7 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
         ModalBottomSheetDialogLayout modalBottomSheetDialogLayout = new ModalBottomSheetDialogLayout(getContext(), window);
         modalBottomSheetDialogLayout.setTag(androidx.compose.ui.R.id.compose_view_saveable_id_tag, "Dialog:" + uuid);
         modalBottomSheetDialogLayout.setClipChildren(false);
-        modalBottomSheetDialogLayout.setElevation(density.mo405toPx0680j_4(m7555constructorimpl));
+        modalBottomSheetDialogLayout.setElevation(density.mo434toPx0680j_4(m8160constructorimpl));
         modalBottomSheetDialogLayout.setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.material3.ModalBottomSheetDialogWrapper$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {
@@ -109,12 +109,12 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
         ViewTreeLifecycleOwner.set(modalBottomSheetDialogLayout, ViewTreeLifecycleOwner.get(view));
         ViewTreeViewModelStoreOwner.set(modalBottomSheetDialogLayout, ViewTreeViewModelStoreOwner.get(view));
         ViewTreeSavedStateRegistryOwner.set(modalBottomSheetDialogLayout, ViewTreeSavedStateRegistryOwner.get(view));
-        m2249updateParameters9LQNqLg(this.onDismissRequest, this.properties, this.contentColor, layoutDirection);
+        m2694updateParameters9LQNqLg(this.onDismissRequest, this.properties, this.contentColor, layoutDirection);
         WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(window, window.getDecorView());
         Boolean isAppearanceLightStatusBars$material3 = this.properties.isAppearanceLightStatusBars$material3();
-        insetsController.setAppearanceLightStatusBars(isAppearanceLightStatusBars$material3 != null ? isAppearanceLightStatusBars$material3.booleanValue() : ModalBottomSheet_androidKt.m2257isDark8_81llA(this.contentColor));
+        insetsController.setAppearanceLightStatusBars(isAppearanceLightStatusBars$material3 != null ? isAppearanceLightStatusBars$material3.booleanValue() : ModalBottomSheet_androidKt.m2702isDark8_81llA(this.contentColor));
         Boolean isAppearanceLightNavigationBars$material3 = this.properties.isAppearanceLightNavigationBars$material3();
-        insetsController.setAppearanceLightNavigationBars(isAppearanceLightNavigationBars$material3 != null ? isAppearanceLightNavigationBars$material3.booleanValue() : ModalBottomSheet_androidKt.m2257isDark8_81llA(this.contentColor));
+        insetsController.setAppearanceLightNavigationBars(isAppearanceLightNavigationBars$material3 != null ? isAppearanceLightNavigationBars$material3.booleanValue() : ModalBottomSheet_androidKt.m2702isDark8_81llA(this.contentColor));
         getOnBackPressedDispatcher().addCallback(this, new PredictiveBackOnBackPressedCallback(this.properties.getShouldDismissOnBackPress(), coroutineScope, animatable, new Function0() { // from class: androidx.compose.material3.ModalBottomSheetDialogWrapper$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -158,7 +158,7 @@ public final class ModalBottomSheetDialogWrapper extends ComponentDialog impleme
     }
 
     /* renamed from: updateParameters-9LQNqLg  reason: not valid java name */
-    public final void m2249updateParameters9LQNqLg(Function0<Unit> function0, ModalBottomSheetProperties modalBottomSheetProperties, long j, LayoutDirection layoutDirection) {
+    public final void m2694updateParameters9LQNqLg(Function0<Unit> function0, ModalBottomSheetProperties modalBottomSheetProperties, long j, LayoutDirection layoutDirection) {
         this.onDismissRequest = function0;
         this.properties = modalBottomSheetProperties;
         this.contentColor = j;

@@ -47,7 +47,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MediaCodecAudioRenderer extends MediaCodecRenderer implements MediaClock {
     private static final String TAG = "MediaCodecAudioRenderer";
     private static final String VIVO_BITS_PER_SAMPLE_KEY = "v-bits-per-sample";
@@ -115,7 +115,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.rendererPriority = -1000;
         this.eventDispatcher = new AudioRendererEventListener.EventDispatcher(handler, audioRendererEventListener);
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
-        audioSink.setListener(new AudioSinkListener());
     }
 
     @Override // androidx.media3.exoplayer.Renderer
@@ -228,7 +227,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
-    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2) {
+    protected DecoderReuseEvaluation canReuseCodec(MediaCodecInfo mediaCodecInfo, Format format, Format format2, boolean z) {
         DecoderReuseEvaluation canReuseCodec = mediaCodecInfo.canReuseCodec(format, format2);
         int i = canReuseCodec.discardReasons;
         if (isBypassPossible(format2)) {
@@ -352,6 +351,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         }
         this.audioSink.setPlayerId(getPlayerId());
         this.audioSink.setClock(getClock());
+        this.audioSink.setListener(new AudioSinkListener());
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
@@ -610,6 +610,19 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         if (Build.VERSION.SDK_INT >= 35) {
             mediaFormat.setInteger("importance", Math.max(0, -this.rendererPriority));
         }
+        if (Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_IAMF)) {
+            AudioCapabilities audioCapabilities = this.audioSink.getAudioCapabilities();
+            if (audioCapabilities == null) {
+                Log.w(TAG, "AudioCapabilities from the AudioSink are null, using default stereo output layout.");
+                mediaFormat.setInteger("channel-mask", 12);
+                mediaFormat.setInteger("max-output-channel-count", 2);
+            } else {
+                int outputChannelMaskForCurrentConfiguration = IamfUtil.getOutputChannelMaskForCurrentConfiguration(audioCapabilities);
+                int bitCount = Integer.bitCount(outputChannelMaskForCurrentConfiguration);
+                mediaFormat.setInteger("channel-mask", outputChannelMaskForCurrentConfiguration);
+                mediaFormat.setInteger("max-output-channel-count", bitCount);
+            }
+        }
         applyCodecParametersToMediaFormat(mediaFormat);
         return mediaFormat;
     }
@@ -647,7 +660,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         return str.equals("OMX.google.opus.decoder") || str.equals("c2.android.opus.decoder") || str.equals("OMX.google.vorbis.decoder") || str.equals("c2.android.vorbis.decoder");
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }

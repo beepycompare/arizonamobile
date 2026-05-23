@@ -21,7 +21,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
-import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -576,7 +575,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
                         public final void run() {
                             CraftScreen.onBackendMessageHandled$lambda$3(CraftScreen.this);
                         }
-                    }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+                    }, 2000L);
                 } else if (success == 1) {
                     if (craftSuccess.getCount() == 0) {
                         this.isDisableAll = false;
@@ -655,7 +654,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
                         public final void run() {
                             CraftScreen.onBackendMessageHandled$lambda$7(CraftScreen.this);
                         }
-                    }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+                    }, 2000L);
                 }
             }
         }

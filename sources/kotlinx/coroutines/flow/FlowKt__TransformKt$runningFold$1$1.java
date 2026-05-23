@@ -5,11 +5,12 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Transform.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollector {
     final /* synthetic */ Ref.ObjectRef<R> $accumulator;
@@ -24,8 +25,8 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
         this.$this_flow = flowCollector;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006e, code lost:
-        if (r7.emit(r8, r0) != r1) goto L11;
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
+        if (r9.emit(r8, r0) != r1) goto L11;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
@@ -36,7 +37,7 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
     public final Object emit(T t, Continuation<? super Unit> continuation) {
         FlowKt__TransformKt$runningFold$1$1$emit$1 flowKt__TransformKt$runningFold$1$1$emit$1;
         int i;
-        FlowKt__TransformKt$runningFold$1$1<T> flowKt__TransformKt$runningFold$1$1;
+        Object obj;
         Ref.ObjectRef objectRef;
         if (continuation instanceof FlowKt__TransformKt$runningFold$1$1$emit$1) {
             flowKt__TransformKt$runningFold$1$1$emit$1 = (FlowKt__TransformKt$runningFold$1$1$emit$1) continuation;
@@ -50,31 +51,32 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
                     Ref.ObjectRef objectRef2 = this.$accumulator;
                     Function3<R, T, Continuation<? super R>, Object> function3 = this.$operation;
                     T t3 = objectRef2.element;
-                    flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = this;
+                    flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t);
                     flowKt__TransformKt$runningFold$1$1$emit$1.L$1 = objectRef2;
                     flowKt__TransformKt$runningFold$1$1$emit$1.label = 1;
                     Object invoke = function3.invoke(t3, t, flowKt__TransformKt$runningFold$1$1$emit$1);
                     if (invoke != coroutine_suspended) {
-                        flowKt__TransformKt$runningFold$1$1 = this;
+                        obj = t;
                         objectRef = objectRef2;
                         t2 = (T) invoke;
                     }
                     return coroutine_suspended;
                 } else if (i != 1) {
                     if (i == 2) {
+                        Object obj2 = flowKt__TransformKt$runningFold$1$1$emit$1.L$0;
                         ResultKt.throwOnFailure(t2);
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     objectRef = (Ref.ObjectRef) flowKt__TransformKt$runningFold$1$1$emit$1.L$1;
-                    flowKt__TransformKt$runningFold$1$1 = (FlowKt__TransformKt$runningFold$1$1) flowKt__TransformKt$runningFold$1$1$emit$1.L$0;
+                    obj = flowKt__TransformKt$runningFold$1$1$emit$1.L$0;
                     ResultKt.throwOnFailure(t2);
                 }
                 objectRef.element = t2;
-                FlowCollector<R> flowCollector = flowKt__TransformKt$runningFold$1$1.$this_flow;
-                T t4 = flowKt__TransformKt$runningFold$1$1.$accumulator.element;
-                flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = null;
+                FlowCollector<R> flowCollector = this.$this_flow;
+                T t4 = this.$accumulator.element;
+                flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
                 flowKt__TransformKt$runningFold$1$1$emit$1.L$1 = null;
                 flowKt__TransformKt$runningFold$1$1$emit$1.label = 2;
             }
@@ -86,9 +88,9 @@ public final class FlowKt__TransformKt$runningFold$1$1<T> implements FlowCollect
         if (i != 0) {
         }
         objectRef.element = t22;
-        FlowCollector<R> flowCollector2 = flowKt__TransformKt$runningFold$1$1.$this_flow;
-        T t42 = flowKt__TransformKt$runningFold$1$1.$accumulator.element;
-        flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = null;
+        FlowCollector<R> flowCollector2 = this.$this_flow;
+        T t42 = this.$accumulator.element;
+        flowKt__TransformKt$runningFold$1$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
         flowKt__TransformKt$runningFold$1$1$emit$1.L$1 = null;
         flowKt__TransformKt$runningFold$1$1$emit$1.label = 2;
     }

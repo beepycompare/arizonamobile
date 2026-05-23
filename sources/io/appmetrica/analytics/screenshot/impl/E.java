@@ -1,16 +1,19 @@
 package io.appmetrica.analytics.screenshot.impl;
-
-import android.os.Parcel;
-import android.os.Parcelable;
 /* loaded from: classes5.dex */
-public final class E implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        return new F((C0785z) parcel.readParcelable(C0785z.class.getClassLoader()), (H) parcel.readParcelable(H.class.getClassLoader()), (B) parcel.readParcelable(B.class.getClassLoader()));
+public final class E {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0783e f1431a;
+    public final H b;
+    public final C0792n c;
+
+    public E(C0783e c0783e, H h, C0792n c0792n) {
+        this.f1431a = c0783e;
+        this.b = h;
+        this.c = c0792n;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i) {
-        return new F[i];
+    public /* synthetic */ E() {
+        this(new C0783e(), new H(), new C0792n());
     }
 }

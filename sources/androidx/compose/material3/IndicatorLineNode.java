@@ -75,7 +75,7 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
         this.unfocusedIndicatorWidth = f2;
         this._colors = textFieldColors;
         this._shape = shape;
-        this.widthAnimatable = new Animatable<>(Dp.m7553boximpl((this.focused && this.enabled) ? this.focusedIndicatorWidth : this.unfocusedIndicatorWidth), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+        this.widthAnimatable = new Animatable<>(Dp.m8158boximpl((this.focused && this.enabled) ? this.focusedIndicatorWidth : this.unfocusedIndicatorWidth), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
         this.drawWithCacheModifierNode = (CacheDrawModifierNode) delegate(DrawModifierKt.CacheDrawModifierNode(new Function1() { // from class: androidx.compose.material3.IndicatorLineNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -108,7 +108,7 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
     }
 
     /* renamed from: update-gv0btCI  reason: not valid java name */
-    public final void m2176updategv0btCI(boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2) {
+    public final void m2621updategv0btCI(boolean z, boolean z2, InteractionSource interactionSource, TextFieldColors textFieldColors, Shape shape, float f, float f2) {
         boolean z3;
         Job launch$default;
         boolean z4 = true;
@@ -126,7 +126,7 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
             this.interactionSource = interactionSource;
             Job job = this.trackFocusStateJob;
             if (job != null) {
-                Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new IndicatorLineNode$update$1(this, null), 3, null);
             this.trackFocusStateJob = launch$default;
@@ -139,11 +139,11 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
             set_shape(shape);
             z3 = true;
         }
-        if (!Dp.m7560equalsimpl0(this.focusedIndicatorWidth, f)) {
+        if (!Dp.m8165equalsimpl0(this.focusedIndicatorWidth, f)) {
             this.focusedIndicatorWidth = f;
             z3 = true;
         }
-        if (Dp.m7560equalsimpl0(this.unfocusedIndicatorWidth, f2)) {
+        if (Dp.m8165equalsimpl0(this.unfocusedIndicatorWidth, f2)) {
             z4 = z3;
         } else {
             this.unfocusedIndicatorWidth = f2;
@@ -159,8 +159,8 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
         launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new IndicatorLineNode$onAttach$1(this, null), 3, null);
         this.trackFocusStateJob = launch$default;
         if (this.colorAnimatable == null) {
-            long m2672indicatorColorXeAY9LY$material3 = getColors().m2672indicatorColorXeAY9LY$material3(this.enabled, this.isError, this.focused);
-            this.colorAnimatable = new Animatable<>(Color.m4762boximpl(m2672indicatorColorXeAY9LY$material3), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4776getColorSpaceimpl(m2672indicatorColorXeAY9LY$material3)), null, null, 12, null);
+            long m3117indicatorColorXeAY9LY$material3 = getColors().m3117indicatorColorXeAY9LY$material3(this.enabled, this.isError, this.focused);
+            this.colorAnimatable = new Animatable<>(Color.m5338boximpl(m3117indicatorColorXeAY9LY$material3), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m5352getColorSpaceimpl(m3117indicatorColorXeAY9LY$material3)), null, null, 12, null);
         }
     }
 
@@ -201,11 +201,11 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final DrawResult drawWithCacheModifierNode$lambda$3(final IndicatorLineNode indicatorLineNode, CacheDrawScope cacheDrawScope) {
-        float f = cacheDrawScope.mo405toPx0680j_4(indicatorLineNode.widthAnimatable.getValue().m7569unboximpl());
+        float f = cacheDrawScope.mo434toPx0680j_4(indicatorLineNode.widthAnimatable.getValue().m8174unboximpl());
         Path Path = AndroidPath_androidKt.Path();
-        OutlineKt.addOutline(Path, indicatorLineNode.getShape().mo320createOutlinePq9zytI(cacheDrawScope.m4307getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope));
+        OutlineKt.addOutline(Path, indicatorLineNode.getShape().mo344createOutlinePq9zytI(cacheDrawScope.m4883getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope));
         Path Path2 = AndroidPath_androidKt.Path();
-        Path.addRect$default(Path2, new Rect(0.0f, Float.intBitsToFloat((int) (cacheDrawScope.m4307getSizeNHjbRc() & 4294967295L)) - f, Float.intBitsToFloat((int) (cacheDrawScope.m4307getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (cacheDrawScope.m4307getSizeNHjbRc() & 4294967295L))), null, 2, null);
+        Path.addRect$default(Path2, new Rect(0.0f, Float.intBitsToFloat((int) (cacheDrawScope.m4883getSizeNHjbRc() & 4294967295L)) - f, Float.intBitsToFloat((int) (cacheDrawScope.m4883getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (cacheDrawScope.m4883getSizeNHjbRc() & 4294967295L))), null, 2, null);
         final Path and = Path2.and(Path);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.material3.IndicatorLineNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -220,7 +220,7 @@ public final class IndicatorLineNode extends DelegatingNode implements Compositi
         contentDrawScope.drawContent();
         Animatable<Color, AnimationVector4D> animatable = indicatorLineNode.colorAnimatable;
         Intrinsics.checkNotNull(animatable);
-        DrawScope.m5335drawPathGBMwjPU$default(contentDrawScope, path, new SolidColor(animatable.getValue().m4782unboximpl(), null), 0.0f, null, null, 0, 60, null);
+        DrawScope.m5911drawPathGBMwjPU$default(contentDrawScope, path, new SolidColor(animatable.getValue().m5358unboximpl(), null), 0.0f, null, null, 0, 60, null);
         return Unit.INSTANCE;
     }
 }

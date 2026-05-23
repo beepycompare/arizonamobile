@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
-import androidx.media3.exoplayer.ExoPlayer;
 import com.facebook.AppEventsLogger;
 import com.facebook.FacebookException;
 import com.facebook.LoggingBehavior;
@@ -34,7 +33,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class PlacePickerFragment extends PickerFragment<GraphPlace> {
     private static final String CATEGORY = "category";
     public static final int DEFAULT_RADIUS_IN_METERS = 1000;
@@ -59,7 +58,7 @@ public class PlacePickerFragment extends PickerFragment<GraphPlace> {
     private Timer searchTextTimer;
     private boolean showSearchBox;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private class AsNeededLoadingStrategy extends PickerFragment<GraphPlace>.LoadingStrategy {
         private AsNeededLoadingStrategy() {
             super();
@@ -97,7 +96,7 @@ public class PlacePickerFragment extends PickerFragment<GraphPlace> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private class SearchTextWatcher implements TextWatcher {
         private SearchTextWatcher() {
         }
@@ -153,7 +152,7 @@ public class PlacePickerFragment extends PickerFragment<GraphPlace> {
             public void run() {
                 PlacePickerFragment.this.onSearchTextTimerTriggered();
             }
-        }, 0L, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+        }, 0L, 2000L);
         return timer;
     }
 

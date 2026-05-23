@@ -2,7 +2,7 @@ package com.google.android.datatransport.cct.internal;
 
 import com.google.android.datatransport.cct.internal.ExperimentIds;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_ExperimentIds extends ExperimentIds {
     private final byte[] clearBlob;
     private final byte[] encryptedBlob;
@@ -46,7 +46,7 @@ final class AutoValue_ExperimentIds extends ExperimentIds {
         return Arrays.hashCode(this.encryptedBlob) ^ ((Arrays.hashCode(this.clearBlob) ^ 1000003) * 1000003);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends ExperimentIds.Builder {
         private byte[] clearBlob;
         private byte[] encryptedBlob;

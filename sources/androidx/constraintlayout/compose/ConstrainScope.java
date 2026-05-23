@@ -80,9 +80,9 @@ public final class ConstrainScope {
         this.rotationX$delegate = new FloatProperty(this, 0.0f, null, 2, null);
         this.rotationY$delegate = new FloatProperty(this, 0.0f, null, 2, null);
         this.rotationZ$delegate = new FloatProperty(this, 0.0f, null, 2, null);
-        this.translationX$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
-        this.translationY$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
-        this.translationZ$delegate = new DpProperty(this, Dp.m7555constructorimpl(0.0f), null, 2, null);
+        this.translationX$delegate = new DpProperty(this, Dp.m8160constructorimpl(0.0f), null, 2, null);
+        this.translationY$delegate = new DpProperty(this, Dp.m8160constructorimpl(0.0f), null, 2, null);
+        this.translationZ$delegate = new DpProperty(this, Dp.m8160constructorimpl(0.0f), null, 2, null);
         this.pivotX$delegate = new FloatProperty(this, 0.5f, null, 2, null);
         this.pivotY$delegate = new FloatProperty(this, 0.5f, null, 2, null);
         this.horizontalChainWeight$delegate = new FloatProperty(Float.NaN, "hWeight");
@@ -208,33 +208,33 @@ public final class ConstrainScope {
     }
 
     /* renamed from: getTranslationX-D9Ej5fM  reason: not valid java name */
-    public final float m7834getTranslationXD9Ej5fM() {
-        return this.translationX$delegate.getValue(this, $$delegatedProperties[8]).m7569unboximpl();
+    public final float m8439getTranslationXD9Ej5fM() {
+        return this.translationX$delegate.getValue(this, $$delegatedProperties[8]).m8174unboximpl();
     }
 
     /* renamed from: setTranslationX-0680j_4  reason: not valid java name */
-    public final void m7840setTranslationX0680j_4(float f) {
-        this.translationX$delegate.setValue(this, $$delegatedProperties[8], Dp.m7553boximpl(f));
+    public final void m8445setTranslationX0680j_4(float f) {
+        this.translationX$delegate.setValue(this, $$delegatedProperties[8], Dp.m8158boximpl(f));
     }
 
     /* renamed from: getTranslationY-D9Ej5fM  reason: not valid java name */
-    public final float m7835getTranslationYD9Ej5fM() {
-        return this.translationY$delegate.getValue(this, $$delegatedProperties[9]).m7569unboximpl();
+    public final float m8440getTranslationYD9Ej5fM() {
+        return this.translationY$delegate.getValue(this, $$delegatedProperties[9]).m8174unboximpl();
     }
 
     /* renamed from: setTranslationY-0680j_4  reason: not valid java name */
-    public final void m7841setTranslationY0680j_4(float f) {
-        this.translationY$delegate.setValue(this, $$delegatedProperties[9], Dp.m7553boximpl(f));
+    public final void m8446setTranslationY0680j_4(float f) {
+        this.translationY$delegate.setValue(this, $$delegatedProperties[9], Dp.m8158boximpl(f));
     }
 
     /* renamed from: getTranslationZ-D9Ej5fM  reason: not valid java name */
-    public final float m7836getTranslationZD9Ej5fM() {
-        return this.translationZ$delegate.getValue(this, $$delegatedProperties[10]).m7569unboximpl();
+    public final float m8441getTranslationZD9Ej5fM() {
+        return this.translationZ$delegate.getValue(this, $$delegatedProperties[10]).m8174unboximpl();
     }
 
     /* renamed from: setTranslationZ-0680j_4  reason: not valid java name */
-    public final void m7842setTranslationZ0680j_4(float f) {
-        this.translationZ$delegate.setValue(this, $$delegatedProperties[10], Dp.m7553boximpl(f));
+    public final void m8447setTranslationZ0680j_4(float f) {
+        this.translationZ$delegate.setValue(this, $$delegatedProperties[10], Dp.m8158boximpl(f));
     }
 
     public final float getPivotX() {
@@ -294,27 +294,27 @@ public final class ConstrainScope {
     }
 
     /* renamed from: linkTo-8ZKsbrE  reason: not valid java name */
-    public final void m7838linkTo8ZKsbrE(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, float f, float f2, float f3, float f4, float f5) {
-        this.start.mo7814linkToVpY3zN4(verticalAnchor, f, f3);
-        this.end.mo7814linkToVpY3zN4(verticalAnchor2, f2, f4);
+    public final void m8443linkTo8ZKsbrE(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, float f, float f2, float f3, float f4, float f5) {
+        this.start.mo8419linkToVpY3zN4(verticalAnchor, f, f3);
+        this.end.mo8419linkToVpY3zN4(verticalAnchor2, f2, f4);
         this.containerObject.putNumber("hRtlBias", f5);
     }
 
     /* renamed from: linkTo-8ZKsbrE  reason: not valid java name */
-    public final void m7837linkTo8ZKsbrE(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5) {
-        this.top.mo7813linkToVpY3zN4(horizontalAnchor, f, f3);
-        this.bottom.mo7813linkToVpY3zN4(horizontalAnchor2, f2, f4);
+    public final void m8442linkTo8ZKsbrE(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5) {
+        this.top.mo8418linkToVpY3zN4(horizontalAnchor, f, f3);
+        this.bottom.mo8418linkToVpY3zN4(horizontalAnchor2, f2, f4);
         this.containerObject.putNumber("vBias", f5);
     }
 
     /* renamed from: linkTo-R7zmacU  reason: not valid java name */
-    public final void m7839linkToR7zmacU(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10) {
-        m7838linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f, f3, f5, f7, f9);
-        m7837linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f2, f4, f6, f8, f10);
+    public final void m8444linkToR7zmacU(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10) {
+        m8443linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f, f3, f5, f7, f9);
+        m8442linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f2, f4, f6, f8, f10);
     }
 
     public final void centerTo(ConstrainedLayoutReference constrainedLayoutReference) {
-        m7831linkToR7zmacU$default(this, constrainedLayoutReference.getStart(), constrainedLayoutReference.getTop(), constrainedLayoutReference.getEnd(), constrainedLayoutReference.getBottom(), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 16368, null);
+        m8436linkToR7zmacU$default(this, constrainedLayoutReference.getStart(), constrainedLayoutReference.getTop(), constrainedLayoutReference.getEnd(), constrainedLayoutReference.getBottom(), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 16368, null);
     }
 
     public static /* synthetic */ void centerHorizontallyTo$default(ConstrainScope constrainScope, ConstrainedLayoutReference constrainedLayoutReference, float f, int i, Object obj) {
@@ -325,7 +325,7 @@ public final class ConstrainScope {
     }
 
     public final void centerHorizontallyTo(ConstrainedLayoutReference constrainedLayoutReference, float f) {
-        m7830linkTo8ZKsbrE$default(this, constrainedLayoutReference.getStart(), constrainedLayoutReference.getEnd(), 0.0f, 0.0f, 0.0f, 0.0f, f, 60, (Object) null);
+        m8435linkTo8ZKsbrE$default(this, constrainedLayoutReference.getStart(), constrainedLayoutReference.getEnd(), 0.0f, 0.0f, 0.0f, 0.0f, f, 60, (Object) null);
     }
 
     public static /* synthetic */ void centerVerticallyTo$default(ConstrainScope constrainScope, ConstrainedLayoutReference constrainedLayoutReference, float f, int i, Object obj) {
@@ -336,19 +336,19 @@ public final class ConstrainScope {
     }
 
     public final void centerVerticallyTo(ConstrainedLayoutReference constrainedLayoutReference, float f) {
-        m7829linkTo8ZKsbrE$default(this, constrainedLayoutReference.getTop(), constrainedLayoutReference.getBottom(), 0.0f, 0.0f, 0.0f, 0.0f, f, 60, (Object) null);
+        m8434linkTo8ZKsbrE$default(this, constrainedLayoutReference.getTop(), constrainedLayoutReference.getBottom(), 0.0f, 0.0f, 0.0f, 0.0f, f, 60, (Object) null);
     }
 
     public final void centerAround(ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor) {
-        m7830linkTo8ZKsbrE$default(this, verticalAnchor, verticalAnchor, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 124, (Object) null);
+        m8435linkTo8ZKsbrE$default(this, verticalAnchor, verticalAnchor, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 124, (Object) null);
     }
 
     public final void centerAround(ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor) {
-        m7829linkTo8ZKsbrE$default(this, horizontalAnchor, horizontalAnchor, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 124, (Object) null);
+        m8434linkTo8ZKsbrE$default(this, horizontalAnchor, horizontalAnchor, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 124, (Object) null);
     }
 
     /* renamed from: circular-wH6b6FI  reason: not valid java name */
-    public final void m7833circularwH6b6FI(ConstrainedLayoutReference constrainedLayoutReference, float f, float f2) {
+    public final void m8438circularwH6b6FI(ConstrainedLayoutReference constrainedLayoutReference, float f, float f2) {
         CLArray cLArray = new CLArray(new char[0]);
         cLArray.add(CLString.from(constrainedLayoutReference.getId$constraintlayout_compose_release().toString()));
         cLArray.add(new CLNumber(f));
@@ -395,8 +395,8 @@ public final class ConstrainScope {
     }
 
     /* renamed from: asDimension-0680j_4  reason: not valid java name */
-    public final Dimension m7832asDimension0680j_4(float f) {
-        return Dimension.Companion.m7912value0680j_4(f);
+    public final Dimension m8437asDimension0680j_4(float f) {
+        return Dimension.Companion.m8517value0680j_4(f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -466,7 +466,7 @@ public final class ConstrainScope {
         }
 
         private DpProperty(float f, String str) {
-            super(Dp.m7553boximpl(f));
+            super(Dp.m8158boximpl(f));
             this.nameOverride = str;
         }
 
@@ -476,11 +476,11 @@ public final class ConstrainScope {
 
         @Override // kotlin.properties.ObservableProperty
         public /* bridge */ /* synthetic */ void afterChange(KProperty kProperty, Dp dp, Dp dp2) {
-            m7843afterChangeVpY3zN4(kProperty, dp.m7569unboximpl(), dp2.m7569unboximpl());
+            m8448afterChangeVpY3zN4(kProperty, dp.m8174unboximpl(), dp2.m8174unboximpl());
         }
 
         /* renamed from: afterChange-VpY3zN4  reason: not valid java name */
-        protected void m7843afterChangeVpY3zN4(KProperty<?> kProperty, float f, float f2) {
+        protected void m8448afterChangeVpY3zN4(KProperty<?> kProperty, float f, float f2) {
             if (Float.isNaN(f2)) {
                 return;
             }
@@ -494,39 +494,39 @@ public final class ConstrainScope {
     }
 
     /* renamed from: linkTo-8ZKsbrE$default  reason: not valid java name */
-    public static /* synthetic */ void m7830linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
+    public static /* synthetic */ void m8435linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if ((i & 4) != 0) {
-            f = Dp.m7555constructorimpl(0.0f);
+            f = Dp.m8160constructorimpl(0.0f);
         }
         float f6 = f;
         if ((i & 8) != 0) {
-            f2 = Dp.m7555constructorimpl(0.0f);
+            f2 = Dp.m8160constructorimpl(0.0f);
         }
         float f7 = f2;
         if ((i & 16) != 0) {
-            f3 = Dp.m7555constructorimpl(0.0f);
+            f3 = Dp.m8160constructorimpl(0.0f);
         }
-        constrainScope.m7838linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
+        constrainScope.m8443linkTo8ZKsbrE(verticalAnchor, verticalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m8160constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
     }
 
     /* renamed from: linkTo-8ZKsbrE$default  reason: not valid java name */
-    public static /* synthetic */ void m7829linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
+    public static /* synthetic */ void m8434linkTo8ZKsbrE$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, int i, Object obj) {
         if ((i & 4) != 0) {
-            f = Dp.m7555constructorimpl(0.0f);
+            f = Dp.m8160constructorimpl(0.0f);
         }
         float f6 = f;
         if ((i & 8) != 0) {
-            f2 = Dp.m7555constructorimpl(0.0f);
+            f2 = Dp.m8160constructorimpl(0.0f);
         }
         float f7 = f2;
         if ((i & 16) != 0) {
-            f3 = Dp.m7555constructorimpl(0.0f);
+            f3 = Dp.m8160constructorimpl(0.0f);
         }
-        constrainScope.m7837linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
+        constrainScope.m8442linkTo8ZKsbrE(horizontalAnchor, horizontalAnchor2, f6, f7, f3, (i & 32) != 0 ? Dp.m8160constructorimpl(0.0f) : f4, (i & 64) != 0 ? 0.5f : f5);
     }
 
     /* renamed from: linkTo-R7zmacU$default  reason: not valid java name */
-    public static /* synthetic */ void m7831linkToR7zmacU$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, int i, Object obj) {
-        constrainScope.m7839linkToR7zmacU(verticalAnchor, horizontalAnchor, verticalAnchor2, horizontalAnchor2, (i & 16) != 0 ? Dp.m7555constructorimpl(0.0f) : f, (i & 32) != 0 ? Dp.m7555constructorimpl(0.0f) : f2, (i & 64) != 0 ? Dp.m7555constructorimpl(0.0f) : f3, (i & 128) != 0 ? Dp.m7555constructorimpl(0.0f) : f4, (i & 256) != 0 ? Dp.m7555constructorimpl(0.0f) : f5, (i & 512) != 0 ? Dp.m7555constructorimpl(0.0f) : f6, (i & 1024) != 0 ? Dp.m7555constructorimpl(0.0f) : f7, (i & 2048) != 0 ? Dp.m7555constructorimpl(0.0f) : f8, (i & 4096) != 0 ? 0.5f : f9, (i & 8192) != 0 ? 0.5f : f10);
+    public static /* synthetic */ void m8436linkToR7zmacU$default(ConstrainScope constrainScope, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor, ConstraintLayoutBaseScope.VerticalAnchor verticalAnchor2, ConstraintLayoutBaseScope.HorizontalAnchor horizontalAnchor2, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, int i, Object obj) {
+        constrainScope.m8444linkToR7zmacU(verticalAnchor, horizontalAnchor, verticalAnchor2, horizontalAnchor2, (i & 16) != 0 ? Dp.m8160constructorimpl(0.0f) : f, (i & 32) != 0 ? Dp.m8160constructorimpl(0.0f) : f2, (i & 64) != 0 ? Dp.m8160constructorimpl(0.0f) : f3, (i & 128) != 0 ? Dp.m8160constructorimpl(0.0f) : f4, (i & 256) != 0 ? Dp.m8160constructorimpl(0.0f) : f5, (i & 512) != 0 ? Dp.m8160constructorimpl(0.0f) : f6, (i & 1024) != 0 ? Dp.m8160constructorimpl(0.0f) : f7, (i & 2048) != 0 ? Dp.m8160constructorimpl(0.0f) : f8, (i & 4096) != 0 ? 0.5f : f9, (i & 8192) != 0 ? 0.5f : f10);
     }
 }

@@ -6,10 +6,12 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Logic.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LogicKt", f = "Logic.kt", i = {}, l = {107}, m = "none", n = {}, s = {})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__LogicKt", f = "Logic.kt", i = {0, 0}, l = {107}, m = "none", n = {"$this$none", "predicate"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes5.dex */
 public final class FlowKt__LogicKt$none$1<T> extends ContinuationImpl {
+    Object L$0;
+    Object L$1;
     int label;
     /* synthetic */ Object result;
 

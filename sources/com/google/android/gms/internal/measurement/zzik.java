@@ -1,25 +1,26 @@
 package com.google.android.gms.internal.measurement;
 
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzik extends zzmf implements zznn {
-    private static final zzik zzf;
+public final class zzik extends zzadu implements zzafd {
+    private static final zzik zzg;
+    private static volatile zzafj zzh;
     private int zzb;
-    private int zzd;
-    private zzmn zze = zzct();
+    private int zze;
+    private zzaee zzf = zzcw();
 
     static {
         zzik zzikVar = new zzik();
-        zzf = zzikVar;
-        zzmf.zzcp(zzik.class, zzikVar);
+        zzg = zzikVar;
+        zzadu.zzcs(zzik.class, zzikVar);
     }
 
     private zzik() {
     }
 
     public static zzij zzf() {
-        return (zzij) zzf.zzck();
+        return (zzij) zzg.zzcn();
     }
 
     public final boolean zza() {
@@ -27,46 +28,61 @@ public final class zzik extends zzmf implements zznn {
     }
 
     public final int zzb() {
-        return this.zzd;
-    }
-
-    public final List zzc() {
         return this.zze;
     }
 
+    public final List zzc() {
+        return this.zzf;
+    }
+
     public final int zzd() {
-        return this.zze.size();
+        return this.zzf.size();
     }
 
     public final long zze(int i) {
-        return this.zze.zzc(i);
+        return this.zzf.zzc(i);
     }
 
-    public final /* synthetic */ void zzg(int i) {
+    public final /* synthetic */ void zzh(int i) {
         this.zzb |= 1;
-        this.zzd = i;
+        this.zze = i;
     }
 
-    public final /* synthetic */ void zzh(Iterable iterable) {
-        zzmn zzmnVar = this.zze;
-        if (!zzmnVar.zza()) {
-            this.zze = zzmf.zzcu(zzmnVar);
+    public final /* synthetic */ void zzi(Iterable iterable) {
+        zzaee zzaeeVar = this.zzf;
+        if (!zzaeeVar.zza()) {
+            this.zzf = zzadu.zzcx(zzaeeVar);
         }
-        zzks.zzce(iterable, this.zze);
+        zzacb.zzcg(iterable, this.zzf);
     }
 
-    @Override // com.google.android.gms.internal.measurement.zzmf
-    public final Object zzl(int i, Object obj, Object obj2) {
+    @Override // com.google.android.gms.internal.measurement.zzadu
+    public final Object zzg(int i, Object obj, Object obj2) {
+        zzafj zzafjVar;
         int i2 = i - 1;
         if (i2 != 0) {
             if (i2 == 2) {
-                return zzcq(zzf, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001င\u0000\u0002\u0014", new Object[]{"zzb", "zzd", "zze"});
+                return zzct(zzg, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001င\u0000\u0002\u0014", new Object[]{"zzb", "zze", "zzf"});
             } else if (i2 != 3) {
                 if (i2 != 4) {
-                    if (i2 == 5) {
-                        return zzf;
+                    if (i2 != 5) {
+                        if (i2 == 6) {
+                            zzafj zzafjVar2 = zzh;
+                            if (zzafjVar2 == null) {
+                                synchronized (zzik.class) {
+                                    zzafjVar = zzh;
+                                    if (zzafjVar == null) {
+                                        zzafjVar = new zzadq(zzg);
+                                        zzh = zzafjVar;
+                                    }
+                                }
+                                return zzafjVar;
+                            }
+                            return zzafjVar2;
+                        }
+                        throw null;
                     }
-                    throw null;
+                    return zzg;
                 }
                 return new zzij(null);
             } else {

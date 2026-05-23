@@ -6,46 +6,46 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 /* compiled from: IntOffset.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\u001a\u001e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0087\b¢\u0006\u0002\u0010\u0005\u001a'\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\nH\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a\u0014\u0010\r\u001a\u00020\u000e*\u00020\u0001H\u0087\b¢\u0006\u0004\b\u000f\u0010\u0010\u001a\u001c\u0010\u0011\u001a\u00020\u000e*\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0001H\u0087\u0002¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u001c\u0010\u0015\u001a\u00020\u000e*\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0001H\u0087\u0002¢\u0006\u0004\b\u0016\u0010\u0014\u001a\u001c\u0010\u0011\u001a\u00020\u000e*\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u000eH\u0087\u0002¢\u0006\u0004\b\u0017\u0010\u0014\u001a\u001c\u0010\u0015\u001a\u00020\u000e*\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u000eH\u0087\u0002¢\u0006\u0004\b\u0018\u0010\u0014\u001a\u0013\u0010\u0019\u001a\u00020\u0001*\u00020\u000eH\u0007¢\u0006\u0004\b\u001a\u0010\u0010¨\u0006\u001b"}, d2 = {"IntOffset", "Landroidx/compose/ui/unit/IntOffset;", "x", "", "y", "(II)J", "lerp", TtmlNode.START, "stop", "fraction", "", "lerp-81ZRxRo", "(JJF)J", "toOffset", "Landroidx/compose/ui/geometry/Offset;", "toOffset--gyyYBs", "(J)J", "plus", TypedValues.CycleType.S_WAVE_OFFSET, "plus-Nv-tHpc", "(JJ)J", "minus", "minus-Nv-tHpc", "plus-oCl6YwE", "minus-oCl6YwE", "round", "round-k-4lQ0M", "ui-unit"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\u001a\u001e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\u0087\b¢\u0006\u0002\u0010\u0005\u001a'\u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\nH\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a\u0014\u0010\r\u001a\u00020\u000e*\u00020\u0001H\u0087\b¢\u0006\u0004\b\u000f\u0010\u0010\u001a\u001c\u0010\u0011\u001a\u00020\u000e*\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0001H\u0087\u0002¢\u0006\u0004\b\u0013\u0010\u0014\u001a\u001c\u0010\u0015\u001a\u00020\u000e*\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0001H\u0087\u0002¢\u0006\u0004\b\u0016\u0010\u0014\u001a\u001c\u0010\u0011\u001a\u00020\u000e*\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u000eH\u0087\u0002¢\u0006\u0004\b\u0017\u0010\u0014\u001a\u001c\u0010\u0015\u001a\u00020\u000e*\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u000eH\u0087\u0002¢\u0006\u0004\b\u0018\u0010\u0014\u001a\u0013\u0010\u0019\u001a\u00020\u0001*\u00020\u000eH\u0007¢\u0006\u0004\b\u001a\u0010\u0010¨\u0006\u001b"}, d2 = {"IntOffset", "Landroidx/compose/ui/unit/IntOffset;", "x", "", "y", "(II)J", "lerp", TtmlNode.START, "stop", "fraction", "", "lerp-81ZRxRo", "(JJF)J", "toOffset", "Landroidx/compose/ui/geometry/Offset;", "toOffset--gyyYBs", "(J)J", "plus", TypedValues.CycleType.S_WAVE_OFFSET, "plus-Nv-tHpc", "(JJ)J", "minus", "minus-Nv-tHpc", "plus-oCl6YwE", "minus-oCl6YwE", "round", "round-k-4lQ0M", "ui-unit"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class IntOffsetKt {
     public static final long IntOffset(int i, int i2) {
-        return IntOffset.m7677constructorimpl((i2 & 4294967295L) | (i << 32));
+        return IntOffset.m8282constructorimpl((i2 & 4294967295L) | (i << 32));
     }
 
     /* renamed from: lerp-81ZRxRo  reason: not valid java name */
-    public static final long m7695lerp81ZRxRo(long j, long j2, float f) {
-        return IntOffset.m7677constructorimpl((MathHelpersKt.lerp(IntOffset.m7683getXimpl(j), IntOffset.m7683getXimpl(j2), f) << 32) | (MathHelpersKt.lerp(IntOffset.m7684getYimpl(j), IntOffset.m7684getYimpl(j2), f) & 4294967295L));
+    public static final long m8300lerp81ZRxRo(long j, long j2, float f) {
+        return IntOffset.m8282constructorimpl((MathHelpersKt.lerp(IntOffset.m8288getXimpl(j), IntOffset.m8288getXimpl(j2), f) << 32) | (MathHelpersKt.lerp(IntOffset.m8289getYimpl(j), IntOffset.m8289getYimpl(j2), f) & 4294967295L));
     }
 
     /* renamed from: toOffset--gyyYBs  reason: not valid java name */
-    public static final long m7701toOffsetgyyYBs(long j) {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7684getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m7683getXimpl(j)) << 32));
+    public static final long m8306toOffsetgyyYBs(long j) {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(IntOffset.m8289getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m8288getXimpl(j)) << 32));
     }
 
     /* renamed from: plus-oCl6YwE  reason: not valid java name */
-    public static final long m7699plusoCl6YwE(long j, long j2) {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(j) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7684getYimpl(j) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m8304plusoCl6YwE(long j, long j2) {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(IntOffset.m8288getXimpl(j) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m8289getYimpl(j) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: minus-oCl6YwE  reason: not valid java name */
-    public static final long m7697minusoCl6YwE(long j, long j2) {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(j) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7684getYimpl(j) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m8302minusoCl6YwE(long j, long j2) {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(IntOffset.m8288getXimpl(j) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m8289getYimpl(j) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: plus-Nv-tHpc  reason: not valid java name */
-    public static final long m7698plusNvtHpc(long j, long j2) {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + IntOffset.m7683getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + IntOffset.m7684getYimpl(j2)) & 4294967295L));
+    public static final long m8303plusNvtHpc(long j, long j2) {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + IntOffset.m8288getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + IntOffset.m8289getYimpl(j2)) & 4294967295L));
     }
 
     /* renamed from: minus-Nv-tHpc  reason: not valid java name */
-    public static final long m7696minusNvtHpc(long j, long j2) {
-        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - IntOffset.m7683getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - IntOffset.m7684getYimpl(j2)) & 4294967295L));
+    public static final long m8301minusNvtHpc(long j, long j2) {
+        return Offset.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - IntOffset.m8288getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - IntOffset.m8289getYimpl(j2)) & 4294967295L));
     }
 
     /* renamed from: round-k-4lQ0M  reason: not valid java name */
-    public static final long m7700roundk4lQ0M(long j) {
+    public static final long m8305roundk4lQ0M(long j) {
         int round = Math.round(Float.intBitsToFloat((int) (j >> 32)));
-        return IntOffset.m7677constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
+        return IntOffset.m8282constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
     }
 }

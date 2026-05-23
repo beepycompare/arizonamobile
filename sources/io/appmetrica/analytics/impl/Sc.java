@@ -1,35 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes5.dex */
-public final class Sc {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f785a = new ArrayList();
-
-    public final synchronized List a() {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.f785a;
-        ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
-        Iterator it = arrayList2.iterator();
-        while (it.hasNext()) {
-            arrayList3.add(((Rc) it.next()).a());
-        }
-        arrayList = new ArrayList();
-        Iterator it2 = arrayList3.iterator();
-        while (it2.hasNext()) {
-            Object next = it2.next();
-            if (((String) next).length() > 0) {
-                arrayList.add(next);
-            }
-        }
-        return CollectionsKt.distinct(arrayList);
+public final class Sc extends C0577s5 {
+    public Sc(Context context, C0267g5 c0267g5, F4 f4, AbstractC0396l5 abstractC0396l5, Hm hm, Bh bh, ICommonExecutor iCommonExecutor, int i, Mk mk, C0300hc c0300hc, M9 m9) {
+        super(context, c0267g5, f4, abstractC0396l5, hm, bh, iCommonExecutor, i, c0300hc, m9);
     }
 
-    public final synchronized void a(Rc... rcArr) {
-        CollectionsKt.addAll(this.f785a, rcArr);
+    @Override // io.appmetrica.analytics.impl.C0577s5
+    public final K9 a(P9 p9, C0166c7 c0166c7, C0279gh c0279gh, F4 f4, C0267g5 c0267g5, C0691wf c0691wf) {
+        return this.l.a(p9, c0166c7, c0279gh, f4, c0267g5, c0691wf).a();
     }
 }

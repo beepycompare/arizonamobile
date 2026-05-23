@@ -68,7 +68,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         tvItemNum.setVisibility(8);
         Job job = this.loadImageJob;
         if (job != null) {
-            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             ImageView ivItemImage = itemSubInventoryBinding.ivItemImage;

@@ -1,9 +1,21 @@
 package com.google.android.gms.internal.measurement;
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
+/* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
-final class zzce extends ThreadLocal {
-    @Override // java.lang.ThreadLocal
-    protected final /* synthetic */ Object initialValue() {
-        return true;
+public final class zzce {
+    public static final int zza;
+    private static volatile boolean zzb = false;
+
+    static {
+        zza = Build.VERSION.SDK_INT >= 31 ? GroupFlagsKt.HasAuxSlotFlag : 0;
+    }
+
+    public static PendingIntent zza(Context context, int i, Intent intent, int i2) {
+        return PendingIntent.getBroadcast(context, 0, intent, i2);
     }
 }

@@ -8,14 +8,14 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BufferedChannel.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.BufferedChannel", f = "BufferedChannel.kt", i = {0, 0, 0, 0}, l = {3117}, m = "receiveCatchingOnNoWaiterSuspend-GKJJFZk", n = {"this", "segment", FirebaseAnalytics.Param.INDEX, "r"}, s = {"L$0", "L$1", "I$0", "J$0"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.BufferedChannel", f = "BufferedChannel.kt", i = {0, 0, 0, 0}, l = {3093}, m = "receiveCatchingOnNoWaiterSuspend-GKJJFZk", n = {"segment", FirebaseAnalytics.Param.INDEX, "r", "$i$f$suspendCancellableCoroutineReusable"}, s = {"L$0", "I$0", "J$0", "I$1"}, v = 1)
 /* loaded from: classes5.dex */
 public final class BufferedChannel$receiveCatchingOnNoWaiterSuspend$1 extends ContinuationImpl {
     int I$0;
+    int I$1;
     long J$0;
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ BufferedChannel<E> this$0;
@@ -29,10 +29,10 @@ public final class BufferedChannel$receiveCatchingOnNoWaiterSuspend$1 extends Co
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m10720receiveCatchingOnNoWaiterSuspendGKJJFZk;
+        Object m11361receiveCatchingOnNoWaiterSuspendGKJJFZk;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m10720receiveCatchingOnNoWaiterSuspendGKJJFZk = this.this$0.m10720receiveCatchingOnNoWaiterSuspendGKJJFZk(null, 0, 0L, this);
-        return m10720receiveCatchingOnNoWaiterSuspendGKJJFZk == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m10720receiveCatchingOnNoWaiterSuspendGKJJFZk : ChannelResult.m10729boximpl(m10720receiveCatchingOnNoWaiterSuspendGKJJFZk);
+        m11361receiveCatchingOnNoWaiterSuspendGKJJFZk = this.this$0.m11361receiveCatchingOnNoWaiterSuspendGKJJFZk(null, 0, 0L, this);
+        return m11361receiveCatchingOnNoWaiterSuspendGKJJFZk == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m11361receiveCatchingOnNoWaiterSuspendGKJJFZk : ChannelResult.m11369boximpl(m11361receiveCatchingOnNoWaiterSuspendGKJJFZk);
     }
 }

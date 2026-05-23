@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.internal.ApiKey;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public class AvailabilityException extends Exception {
     private final ArrayMap zaa;
@@ -21,27 +21,38 @@ public class AvailabilityException extends Exception {
         ApiKey<? extends Api.ApiOptions> apiKey = googleApi.getApiKey();
         Object obj = arrayMap.get(apiKey);
         String zaa = apiKey.zaa();
-        Preconditions.checkArgument(obj != null, "The given API (" + zaa + ") was not part of the availability request.");
-        return (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) this.zaa.get(apiKey));
+        StringBuilder sb = new StringBuilder(String.valueOf(zaa).length() + 58);
+        sb.append("The given API (");
+        sb.append(zaa);
+        sb.append(") was not part of the availability request.");
+        Preconditions.checkArgument(obj != null, sb.toString());
+        return (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) arrayMap.get(apiKey));
     }
 
     @Override // java.lang.Throwable
     public String getMessage() {
         ArrayList arrayList = new ArrayList();
+        ArrayMap arrayMap = this.zaa;
         boolean z = true;
-        for (ApiKey apiKey : this.zaa.keySet()) {
-            ConnectionResult connectionResult = (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) this.zaa.get(apiKey));
+        for (ApiKey apiKey : arrayMap.keySet()) {
+            ConnectionResult connectionResult = (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) arrayMap.get(apiKey));
             z &= !connectionResult.isSuccess();
-            arrayList.add(apiKey.zaa() + ": " + String.valueOf(connectionResult));
+            String zaa = apiKey.zaa();
+            String valueOf = String.valueOf(connectionResult);
+            StringBuilder sb = new StringBuilder(String.valueOf(zaa).length() + 2 + String.valueOf(valueOf).length());
+            sb.append(zaa);
+            sb.append(": ");
+            sb.append(valueOf);
+            arrayList.add(sb.toString());
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         if (z) {
-            sb.append("None of the queried APIs are available. ");
+            sb2.append("None of the queried APIs are available. ");
         } else {
-            sb.append("Some of the queried APIs are unavailable. ");
+            sb2.append("Some of the queried APIs are unavailable. ");
         }
-        sb.append(TextUtils.join("; ", arrayList));
-        return sb.toString();
+        sb2.append(TextUtils.join("; ", arrayList));
+        return sb2.toString();
     }
 
     public ConnectionResult getConnectionResult(HasApiKey<? extends Api.ApiOptions> hasApiKey) {
@@ -49,7 +60,11 @@ public class AvailabilityException extends Exception {
         ApiKey<? extends Api.ApiOptions> apiKey = hasApiKey.getApiKey();
         Object obj = arrayMap.get(apiKey);
         String zaa = apiKey.zaa();
-        Preconditions.checkArgument(obj != null, "The given API (" + zaa + ") was not part of the availability request.");
-        return (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) this.zaa.get(apiKey));
+        StringBuilder sb = new StringBuilder(String.valueOf(zaa).length() + 58);
+        sb.append("The given API (");
+        sb.append(zaa);
+        sb.append(") was not part of the availability request.");
+        Preconditions.checkArgument(obj != null, sb.toString());
+        return (ConnectionResult) Preconditions.checkNotNull((ConnectionResult) arrayMap.get(apiKey));
     }
 }

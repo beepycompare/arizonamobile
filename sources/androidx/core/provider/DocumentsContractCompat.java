@@ -30,7 +30,7 @@ public final class DocumentsContractCompat {
     }
 
     public static String getTreeDocumentId(Uri uri) {
-        return DocumentsContractApi21Impl.getTreeDocumentId(uri);
+        return DocumentsContract.getTreeDocumentId(uri);
     }
 
     public static Uri buildDocumentUri(String str, String str2) {
@@ -38,65 +38,31 @@ public final class DocumentsContractCompat {
     }
 
     public static Uri buildDocumentUriUsingTree(Uri uri, String str) {
-        return DocumentsContractApi21Impl.buildDocumentUriUsingTree(uri, str);
+        return DocumentsContract.buildDocumentUriUsingTree(uri, str);
     }
 
     public static Uri buildTreeDocumentUri(String str, String str2) {
-        return DocumentsContractApi21Impl.buildTreeDocumentUri(str, str2);
+        return DocumentsContract.buildTreeDocumentUri(str, str2);
     }
 
     public static Uri buildChildDocumentsUri(String str, String str2) {
-        return DocumentsContractApi21Impl.buildChildDocumentsUri(str, str2);
+        return DocumentsContract.buildChildDocumentsUri(str, str2);
     }
 
     public static Uri buildChildDocumentsUriUsingTree(Uri uri, String str) {
-        return DocumentsContractApi21Impl.buildChildDocumentsUriUsingTree(uri, str);
+        return DocumentsContract.buildChildDocumentsUriUsingTree(uri, str);
     }
 
     public static Uri createDocument(ContentResolver contentResolver, Uri uri, String str, String str2) throws FileNotFoundException {
-        return DocumentsContractApi21Impl.createDocument(contentResolver, uri, str, str2);
+        return DocumentsContract.createDocument(contentResolver, uri, str, str2);
     }
 
     public static Uri renameDocument(ContentResolver contentResolver, Uri uri, String str) throws FileNotFoundException {
-        return DocumentsContractApi21Impl.renameDocument(contentResolver, uri, str);
+        return DocumentsContract.renameDocument(contentResolver, uri, str);
     }
 
     public static boolean removeDocument(ContentResolver contentResolver, Uri uri, Uri uri2) throws FileNotFoundException {
         return DocumentsContractApi24Impl.removeDocument(contentResolver, uri, uri2);
-    }
-
-    /* loaded from: classes2.dex */
-    private static class DocumentsContractApi21Impl {
-        static String getTreeDocumentId(Uri uri) {
-            return DocumentsContract.getTreeDocumentId(uri);
-        }
-
-        public static Uri buildTreeDocumentUri(String str, String str2) {
-            return DocumentsContract.buildTreeDocumentUri(str, str2);
-        }
-
-        static Uri buildDocumentUriUsingTree(Uri uri, String str) {
-            return DocumentsContract.buildDocumentUriUsingTree(uri, str);
-        }
-
-        static Uri buildChildDocumentsUri(String str, String str2) {
-            return DocumentsContract.buildChildDocumentsUri(str, str2);
-        }
-
-        static Uri buildChildDocumentsUriUsingTree(Uri uri, String str) {
-            return DocumentsContract.buildChildDocumentsUriUsingTree(uri, str);
-        }
-
-        static Uri createDocument(ContentResolver contentResolver, Uri uri, String str, String str2) throws FileNotFoundException {
-            return DocumentsContract.createDocument(contentResolver, uri, str, str2);
-        }
-
-        static Uri renameDocument(ContentResolver contentResolver, Uri uri, String str) throws FileNotFoundException {
-            return DocumentsContract.renameDocument(contentResolver, uri, str);
-        }
-
-        private DocumentsContractApi21Impl() {
-        }
     }
 
     /* loaded from: classes2.dex */

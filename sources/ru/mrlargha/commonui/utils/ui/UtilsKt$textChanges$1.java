@@ -18,7 +18,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 /* compiled from: utils.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.utils.ui.UtilsKt$textChanges$1", f = "utils.kt", i = {0, 0}, l = {32}, m = "invokeSuspend", n = {"$this$callbackFlow", "watcher"}, nl = {33}, s = {"L$0", "L$1"}, v = 2)
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<ProducerScope<? super String>, Continuation<? super Unit>, Object> {
     final /* synthetic */ EditText $this_textChanges;
     private /* synthetic */ Object L$0;
@@ -63,7 +63,7 @@ final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<Pro
 
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
-                    producerScope.mo8396trySendJP2dKIU(String.valueOf(editable));
+                    producerScope.mo9005trySendJP2dKIU(String.valueOf(editable));
                 }
             };
             this.$this_textChanges.addTextChangedListener((TextWatcher) r7);

@@ -42,7 +42,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: ShiftIndicatorType.kt */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\b\u0007\u0018\u00002\u00020\u0001B\u0019\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006JN\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0014\u0010\u0011\u001a\u0010\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\b\u0018\u00010\u0012H\u0017ø\u0001\u0000¢\u0006\u0004\b\u0013\u0010\u0014J%\u0010\u0015\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u000e2\u0006\u0010\u0017\u001a\u00020\u0005H\u0002ø\u0001\u0001ø\u0001\u0000¢\u0006\u0004\b\u0018\u0010\u0019R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u001a²\u0006\n\u0010\u001b\u001a\u00020\u0010X\u008a\u0084\u0002²\u0006\n\u0010\u001c\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"Lcom/tbuonomo/viewpagerdotsindicator/compose/type/ShiftIndicatorType;", "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "dotsGraphic", "Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;", "shiftSizeFactor", "", "(Lcom/tbuonomo/viewpagerdotsindicator/compose/model/DotGraphic;F)V", "IndicatorTypeComposable", "", "globalOffsetProvider", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "dotCount", "", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", "onDotClicked", "Lkotlin/Function1;", "IndicatorTypeComposable--jt2gSs", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;IFLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "computeDotWidth", "currentDotIndex", "globalOffset", "computeDotWidth-chRvn1I", "(IF)F", "viewpagerdotsindicator_release", "dotWidth", "dotModifier"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ShiftIndicatorType extends IndicatorType {
     public static final int $stable = 0;
     private final DotGraphic dotsGraphic;
@@ -64,7 +64,7 @@ public final class ShiftIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo9181IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo9820IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         Composer composer2;
         Intrinsics.checkNotNullParameter(globalOffsetProvider, "globalOffsetProvider");
@@ -111,21 +111,21 @@ public final class ShiftIndicatorType extends IndicatorType {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
-            Arrangement.Horizontal m689spacedByD5KLDUw = Arrangement.INSTANCE.m689spacedByD5KLDUw(f, Alignment.Companion.getCenterHorizontally());
+            Arrangement.Horizontal m743spacedByD5KLDUw = Arrangement.INSTANCE.m743spacedByD5KLDUw(f, Alignment.Companion.getCenterHorizontally());
             int i4 = i3;
-            PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(f, 0.0f, f, 0.0f, 10, null);
+            PaddingValues m1047PaddingValuesa9UjIt4$default = PaddingKt.m1047PaddingValuesa9UjIt4$default(f, 0.0f, f, 0.0f, 10, null);
             startRestartGroup.startReplaceGroup(1682794319);
             boolean z = ((i4 & 14) == 4) | ((i4 & 896) == 256) | ((i4 & 458752) == 131072) | ((i4 & 57344) == 16384);
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -190,14 +190,14 @@ public final class ShiftIndicatorType extends IndicatorType {
 
                                             @Override // kotlin.jvm.functions.Function0
                                             public /* bridge */ /* synthetic */ Dp invoke() {
-                                                return Dp.m7553boximpl(m9184invokeD9Ej5fM());
+                                                return Dp.m8158boximpl(m9823invokeD9Ej5fM());
                                             }
 
                                             /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                                            public final float m9184invokeD9Ej5fM() {
-                                                float m9183computeDotWidthchRvn1I;
-                                                m9183computeDotWidthchRvn1I = ShiftIndicatorType.this.m9183computeDotWidthchRvn1I(i6, function02.invoke().floatValue());
-                                                return m9183computeDotWidthchRvn1I;
+                                            public final float m9823invokeD9Ej5fM() {
+                                                float m9822computeDotWidthchRvn1I;
+                                                m9822computeDotWidthchRvn1I = ShiftIndicatorType.this.m9822computeDotWidthchRvn1I(i6, function02.invoke().floatValue());
+                                                return m9822computeDotWidthchRvn1I;
                                             }
                                         });
                                         composer3.updateRememberedValue(rememberedValue2);
@@ -210,7 +210,7 @@ public final class ShiftIndicatorType extends IndicatorType {
                                     final Function1<Integer, Unit> function13 = function12;
                                     Object rememberedValue3 = composer3.rememberedValue();
                                     if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                        rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ClickableKt.m297clickableXHw0xAI$default(SizeKt.m869width3ABfNKs(Modifier.Companion, invoke$lambda$1(state)), false, null, null, new Function0<Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.type.ShiftIndicatorType$IndicatorTypeComposable$1$1$1$1$dotModifier$2$1
+                                        rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ClickableKt.m321clickableXHw0xAI$default(SizeKt.m1122width3ABfNKs(Modifier.Companion, invoke$lambda$1(state)), false, null, null, new Function0<Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.type.ShiftIndicatorType$IndicatorTypeComposable$1$1$1$1$dotModifier$2$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                             /* JADX WARN: Multi-variable type inference failed */
@@ -251,7 +251,7 @@ public final class ShiftIndicatorType extends IndicatorType {
                             }
 
                             private static final float invoke$lambda$1(State<Dp> state) {
-                                return state.getValue().m7569unboximpl();
+                                return state.getValue().m8174unboximpl();
                             }
                         }), 6, null);
                     }
@@ -260,7 +260,7 @@ public final class ShiftIndicatorType extends IndicatorType {
             }
             startRestartGroup.endReplaceGroup();
             composer2 = startRestartGroup;
-            LazyDslKt.LazyRow(fillMaxWidth$default, null, m815PaddingValuesa9UjIt4$default, false, m689spacedByD5KLDUw, null, null, false, (Function1) rememberedValue, composer2, 6, 234);
+            LazyDslKt.LazyRow(fillMaxWidth$default, null, m1047PaddingValuesa9UjIt4$default, false, m743spacedByD5KLDUw, null, null, false, (Function1) rememberedValue, composer2, 6, 234);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -290,7 +290,7 @@ public final class ShiftIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i5) {
-                    ShiftIndicatorType.this.mo9181IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    ShiftIndicatorType.this.mo9820IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -298,7 +298,7 @@ public final class ShiftIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeDotWidth-chRvn1I  reason: not valid java name */
-    public final float m9183computeDotWidthchRvn1I(int i, float f) {
-        return Dp.m7555constructorimpl(this.dotsGraphic.m9180getSizeD9Ej5fM() + Dp.m7555constructorimpl(Dp.m7555constructorimpl(RangesKt.coerceAtLeast(this.shiftSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m9180getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f))));
+    public final float m9822computeDotWidthchRvn1I(int i, float f) {
+        return Dp.m8160constructorimpl(this.dotsGraphic.m9819getSizeD9Ej5fM() + Dp.m8160constructorimpl(Dp.m8160constructorimpl(RangesKt.coerceAtLeast(this.shiftSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m9819getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f))));
     }
 }

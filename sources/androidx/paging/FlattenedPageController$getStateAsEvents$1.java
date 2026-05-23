@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CachedPageEventFlow.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.paging.FlattenedPageController", f = "CachedPageEventFlow.kt", i = {0}, l = {274}, m = "getStateAsEvents", n = {"$this$withLock_u24default$iv"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlattenedPageController$getStateAsEvents$1 extends ContinuationImpl {

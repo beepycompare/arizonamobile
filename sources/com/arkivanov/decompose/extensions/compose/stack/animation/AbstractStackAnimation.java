@@ -92,19 +92,27 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
             mutableState.setValue(stack);
             Map<Object, AnimationItem<C, T>> animationItems = getAnimationItems(invoke$lambda$1(mutableState), invoke$lambda$1);
             if (invoke$lambda$4(mutableState2).size() == 1) {
+                Object last = CollectionsKt.last(invoke$lambda$4(mutableState2).keySet());
+                Map.Entry entry = (Map.Entry) CollectionsKt.last(animationItems.entrySet());
+                Object key = entry.getKey();
+                AnimationItem animationItem = (AnimationItem) entry.getValue();
+                if (Intrinsics.areEqual(key, last) && !DirectionKt.isExit(animationItem.getDirection())) {
+                    animationItems = MapsKt.mapOf(TuplesKt.to(key, animationItem));
+                }
                 mutableState2.setValue(animationItems);
+                mutableState3.setValue(null);
             } else {
                 mutableState3.setValue(animationItems);
             }
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
+        ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
-        ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
-        int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer, 0);
+        ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
+        int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
         CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
         Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, modifier);
         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-        ComposerKt.sourceInformationMarkerStart(composer, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
         if (!(composer.getApplier() instanceof Applier)) {
             ComposablesKt.invalidApplier();
         }
@@ -114,39 +122,39 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
         } else {
             composer.useNode();
         }
-        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+        Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m4467constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m4467constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-        ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
+        Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-        composer.startReplaceGroup(619201461);
-        for (Map.Entry entry : invoke$lambda$4(mutableState2).entrySet()) {
-            final Object key = entry.getKey();
-            final AnimationItem<? extends C, ? extends T> animationItem = (AnimationItem) entry.getValue();
-            composer.startMovableGroup(800472477, key);
-            composer.startReplaceGroup(800475536);
-            boolean changedInstance = composer.changedInstance(animationItem) | composer.changedInstance(key);
+        composer.startReplaceGroup(619209717);
+        for (Map.Entry entry2 : invoke$lambda$4(mutableState2).entrySet()) {
+            final Object key2 = entry2.getKey();
+            final AnimationItem<? extends C, ? extends T> animationItem2 = (AnimationItem) entry2.getValue();
+            composer.startMovableGroup(800480733, key2);
+            composer.startReplaceGroup(800483792);
+            boolean changedInstance = composer.changedInstance(animationItem2) | composer.changedInstance(key2);
             Object rememberedValue4 = composer.rememberedValue();
             if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.AbstractStackAnimation$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        return AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$10$lambda$9(AbstractStackAnimation.AnimationItem.this, key, mutableState2);
+                        return AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$10$lambda$9(AbstractStackAnimation.AnimationItem.this, key2, mutableState2);
                     }
                 };
                 composer.updateRememberedValue(rememberedValue4);
             }
             composer.endReplaceGroup();
-            Child(animationItem, (Function0) rememberedValue4, content, composer, i & 8064);
-            if (DirectionKt.isExit(animationItem.getDirection())) {
+            Child(animationItem2, (Function0) rememberedValue4, content, composer, i & 8064);
+            if (DirectionKt.isExit(animationItem2.getDirection())) {
                 Unit unit = Unit.INSTANCE;
-                composer.startReplaceGroup(800489518);
+                composer.startReplaceGroup(800497774);
                 Object rememberedValue5 = composer.rememberedValue();
                 if (rememberedValue5 == Composer.Companion.getEmpty()) {
                     rememberedValue5 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.AbstractStackAnimation$$ExternalSyntheticLambda1
@@ -164,7 +172,7 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
             content = function3;
         }
         composer.endReplaceGroup();
-        composer.startReplaceGroup(619233416);
+        composer.startReplaceGroup(619241672);
         if (this.disableInputDuringAnimation && (invoke$lambda$4(mutableState2).size() > 1 || invoke$lambda$7(mutableState3) != null)) {
             InputConsumingOverlayKt.InputConsumingOverlay(boxScopeInstance.matchParentSize(Modifier.Companion), composer, 0);
         }

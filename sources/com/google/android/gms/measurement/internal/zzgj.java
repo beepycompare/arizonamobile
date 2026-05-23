@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteException;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
+/* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
-public final class zzgj extends com.google.android.gms.internal.measurement.zzby {
+public final class zzgj extends com.google.android.gms.internal.measurement.zzcb {
     final /* synthetic */ zzgl zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,15 +27,15 @@ public final class zzgj extends com.google.android.gms.internal.measurement.zzby
             throw e;
         } catch (SQLiteException unused) {
             zzic zzicVar = this.zza.zzu;
-            zzicVar.zzaV().zzb().zza("Opening the local database failed, dropping and recreating it");
+            zzicVar.zzaW().zzb().zza("Opening the local database failed, dropping and recreating it");
             zzicVar.zzc();
-            if (!zzicVar.zzaY().getDatabasePath("google_app_measurement_local.db").delete()) {
-                zzicVar.zzaV().zzb().zzb("Failed to delete corrupted local db file", "google_app_measurement_local.db");
+            if (!zzicVar.zzaZ().getDatabasePath("google_app_measurement_local.db").delete()) {
+                zzicVar.zzaW().zzb().zzb("Failed to delete corrupted local db file", "google_app_measurement_local.db");
             }
             try {
                 return super.getWritableDatabase();
             } catch (SQLiteException e2) {
-                this.zza.zzu.zzaV().zzb().zzb("Failed to open local database. Events will bypass local storage", e2);
+                this.zza.zzu.zzaW().zzb().zzb("Failed to open local database. Events will bypass local storage", e2);
                 return null;
             }
         }
@@ -43,7 +43,7 @@ public final class zzgj extends com.google.android.gms.internal.measurement.zzby
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {
-        zzaw.zzb(this.zza.zzu.zzaV(), sQLiteDatabase);
+        zzax.zzb(this.zza.zzu.zzaW(), sQLiteDatabase);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
@@ -54,7 +54,7 @@ public final class zzgj extends com.google.android.gms.internal.measurement.zzby
     public final void onOpen(SQLiteDatabase sQLiteDatabase) {
         String[] strArr;
         strArr = zzgl.zza;
-        zzaw.zza(this.zza.zzu.zzaV(), sQLiteDatabase, "messages", "create table if not exists messages ( type INTEGER NOT NULL, entry BLOB NOT NULL)", "type,entry", strArr);
+        zzax.zza(this.zza.zzu.zzaW(), sQLiteDatabase, "messages", "create table if not exists messages ( type INTEGER NOT NULL, entry BLOB NOT NULL)", "type,entry", strArr);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper

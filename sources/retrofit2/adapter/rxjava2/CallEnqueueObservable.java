@@ -9,7 +9,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class CallEnqueueObservable<T> extends Observable<Response<T>> {
     private final Call<T> originalCall;
 
@@ -20,16 +20,16 @@ final class CallEnqueueObservable<T> extends Observable<Response<T>> {
 
     @Override // io.reactivex.Observable
     protected void subscribeActual(Observer<? super Response<T>> observer) {
-        Call<T> mo9087clone = this.originalCall.mo9087clone();
-        CallCallback callCallback = new CallCallback(mo9087clone, observer);
+        Call<T> mo9725clone = this.originalCall.mo9725clone();
+        CallCallback callCallback = new CallCallback(mo9725clone, observer);
         observer.onSubscribe(callCallback);
         if (callCallback.isDisposed()) {
             return;
         }
-        mo9087clone.enqueue(callCallback);
+        mo9725clone.enqueue(callCallback);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static final class CallCallback<T> implements Disposable, Callback<T> {
         private final Call<?> call;
         private volatile boolean disposed;

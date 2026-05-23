@@ -4,7 +4,7 @@ import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public @interface RestrictedApi {
     String allowedOnPath() default "";
 

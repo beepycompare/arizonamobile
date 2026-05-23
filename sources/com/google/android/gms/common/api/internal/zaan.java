@@ -1,21 +1,23 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.internal.BaseGmsClient;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zaan extends zabg {
-    final /* synthetic */ BaseGmsClient.ConnectionProgressReportCallbacks zaa;
+final class zaan extends zabb {
+    final /* synthetic */ zaar zaa;
+    final /* synthetic */ com.google.android.gms.signin.internal.zak zab;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zaan(zaao zaaoVar, zabf zabfVar, BaseGmsClient.ConnectionProgressReportCallbacks connectionProgressReportCallbacks) {
-        super(zabfVar);
-        this.zaa = connectionProgressReportCallbacks;
+    public zaan(zaao zaaoVar, zaba zabaVar, zaar zaarVar, com.google.android.gms.signin.internal.zak zakVar) {
+        super(zabaVar);
+        this.zaa = zaarVar;
+        this.zab = zakVar;
+        Objects.requireNonNull(zaaoVar);
     }
 
-    @Override // com.google.android.gms.common.api.internal.zabg
+    @Override // com.google.android.gms.common.api.internal.zabb
     public final void zaa() {
-        this.zaa.onReportServiceBinding(new ConnectionResult(16, null));
+        this.zaa.zaj(this.zab);
     }
 }

@@ -1,41 +1,42 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
+import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Km extends Rm {
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper a(Context context) {
-        return C0448na.I.B().b(context);
-    }
+public final class Km {
+    public Map A;
+    public W9 B;
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final IBinaryDataHelper b(Context context) {
-        IBinaryDataHelper a2;
-        C0732yk B = C0448na.I.B();
-        synchronized (B) {
-            a2 = B.a(context);
-        }
-        return a2;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public String f632a;
+    public List b;
+    public String c;
+    public String d;
+    public String e;
+    public List f;
+    public List g;
+    public List h;
+    public Map i;
+    public String j;
+    public String k;
+    public String l;
+    public final C4 m;
+    public Ye n;
+    public long o;
+    public boolean p;
+    public boolean q;
+    public String r;
+    public C0336in s;
+    public long t;
+    public long u;
+    public boolean v;
+    public RetryPolicyConfig w;
+    public C0601t3 x;
+    public C0756z2 y;
+    public C0233en z;
 
-    @Override // io.appmetrica.analytics.impl.Rm
-    public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
-        byte[] bArr;
-        byte[] bArr2;
-        Y1 y1 = new Y1();
-        try {
-            bArr = AbstractC0279gj.a(context.getPackageName());
-        } catch (Throwable unused) {
-            bArr = new byte[16];
-        }
-        try {
-            bArr2 = AbstractC0279gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
-        } catch (Throwable unused2) {
-            bArr2 = new byte[16];
-        }
-        return new Mf("app_permissions_state", iBinaryDataHelper, new A8(y1, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new U1(new C0639v2()));
+    public Km(C4 c4) {
+        this.m = c4;
     }
 }

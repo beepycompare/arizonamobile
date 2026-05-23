@@ -11,6 +11,7 @@ import com.arkivanov.decompose.value.Value;
 import com.arkivanov.essenty.statekeeper.SerializableContainer;
 import com.arkivanov.essenty.statekeeper.SerializableContainerKt;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -18,6 +19,7 @@ import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
 import kotlin.Triple;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -37,7 +39,7 @@ public final class ChildPanelsFactoryKt {
         }
         String str2 = str;
         if ((i & 16) != 0) {
-            function2 = new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda5
+            function2 = new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     return ChildPanelsFactoryKt.childPanels$lambda$0((Panels) obj2, (Panels) obj3);
@@ -104,7 +106,7 @@ public final class ChildPanelsFactoryKt {
         if ((i & 8) != 0) {
             str = "DefaultChildPanels";
         }
-        return childPanels(genericComponentContext, navigationSource, triple, function0, str, (i & 16) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda3
+        return childPanels(genericComponentContext, navigationSource, triple, function0, str, (i & 16) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj2, Object obj3) {
                 return ChildPanelsFactoryKt.childPanels$lambda$3((Panels) obj2, (Panels) obj3);
@@ -175,50 +177,50 @@ public final class ChildPanelsFactoryKt {
         Intrinsics.checkNotNullParameter(mainFactory, "mainFactory");
         Intrinsics.checkNotNullParameter(detailsFactory, "detailsFactory");
         Intrinsics.checkNotNullParameter(extraFactory, "extraFactory");
-        return ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda10
+        return ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return ChildPanelsFactoryKt.childPanels$lambda$7(Function0.this);
             }
-        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda11
+        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ChildPanelsFactoryKt.childPanels$lambda$8(Function1.this, (PanelsNavState) obj);
             }
-        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda12
+        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ChildPanelsFactoryKt.childPanels$lambda$9(Function1.this, (SerializableContainer) obj);
             }
-        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda13
+        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return ChildPanelsFactoryKt.childPanels$lambda$10((PanelsNavState) obj, (PanelsNavigation.Event) obj2);
             }
-        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda14
+        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return ChildPanelsFactoryKt.childPanels$lambda$16((PanelsNavState) obj, (List) obj2);
+                return ChildPanelsFactoryKt.childPanels$lambda$17((PanelsNavState) obj, (List) obj2);
             }
-        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda15
+        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return ChildPanelsFactoryKt.childPanels$lambda$17(Function2.this, (PanelsNavState) obj, (PanelsNavState) obj2);
+                return ChildPanelsFactoryKt.childPanels$lambda$18(Function2.this, (PanelsNavState) obj, (PanelsNavState) obj2);
             }
-        }, new Function3() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda16
+        }, new Function3() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                return ChildPanelsFactoryKt.childPanels$lambda$18((PanelsNavigation.Event) obj, (PanelsNavState) obj2, (PanelsNavState) obj3);
+                return ChildPanelsFactoryKt.childPanels$lambda$19((PanelsNavigation.Event) obj, (PanelsNavState) obj2, (PanelsNavState) obj3);
             }
-        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda1
+        }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return ChildPanelsFactoryKt.childPanels$lambda$21(z, (PanelsNavState) obj);
+                return ChildPanelsFactoryKt.childPanels$lambda$22(z, (PanelsNavState) obj);
             }
-        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda2
+        }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return ChildPanelsFactoryKt.childPanels$lambda$22(Function2.this, detailsFactory, extraFactory, (Config) obj, (GenericComponentContext) obj2);
+                return ChildPanelsFactoryKt.childPanels$lambda$23(Function2.this, detailsFactory, extraFactory, (Config) obj, (GenericComponentContext) obj2);
             }
         });
     }
@@ -252,82 +254,94 @@ public final class ChildPanelsFactoryKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final ChildPanels childPanels$lambda$16(PanelsNavState state, List children) {
-        Panel.Main main;
-        Panel.Details details;
-        Panel.Extra extra;
+    public static final ChildPanels childPanels$lambda$17(PanelsNavState state, List children) {
+        Pair pair;
+        Pair pair2;
+        Pair pair3;
         Intrinsics.checkNotNullParameter(state, "state");
         Intrinsics.checkNotNullParameter(children, "children");
-        List list = children;
-        Iterator it = list.iterator();
+        ArrayList arrayList = new ArrayList();
+        Iterator it = children.iterator();
         while (true) {
             if (!it.hasNext()) {
-                main = null;
                 break;
             }
-            Object child = ((Child) it.next()).getInstance();
-            if (child instanceof Panel.Main) {
-                main = (Panel.Main) child;
-                continue;
-            } else {
-                main = null;
-                continue;
-            }
-            if (main != null) {
-                break;
+            Child child = (Child) it.next();
+            Child.Created created = child instanceof Child.Created ? (Child.Created) child : null;
+            if (created != null) {
+                arrayList.add(created);
             }
         }
-        if (main == null) {
-            throw new NoSuchElementException("No element of the collection was transformed to a non-null value.");
-        }
-        Iterator it2 = list.iterator();
+        ArrayList arrayList2 = arrayList;
+        Iterator it2 = arrayList2.iterator();
         while (true) {
             if (!it2.hasNext()) {
-                details = null;
+                pair = null;
                 break;
             }
-            Object child2 = ((Child) it2.next()).getInstance();
-            if (child2 instanceof Panel.Details) {
-                details = (Panel.Details) child2;
+            Child.Created created2 = (Child.Created) it2.next();
+            if (created2.getInstance() instanceof Panel.Main) {
+                pair = TuplesKt.to(created2.getInstance(), created2.getKey());
                 continue;
             } else {
-                details = null;
+                pair = null;
                 continue;
             }
-            if (details != null) {
+            if (pair != null) {
                 break;
             }
         }
-        Iterator it3 = list.iterator();
+        if (pair == null) {
+            throw new NoSuchElementException("No element of the collection was transformed to a non-null value.");
+        }
+        Iterator it3 = arrayList2.iterator();
         while (true) {
             if (!it3.hasNext()) {
-                extra = null;
+                pair2 = null;
                 break;
             }
-            Object child3 = ((Child) it3.next()).getInstance();
-            if (child3 instanceof Panel.Extra) {
-                extra = (Panel.Extra) child3;
+            Child.Created created3 = (Child.Created) it3.next();
+            if (created3.getInstance() instanceof Panel.Details) {
+                pair2 = TuplesKt.to(created3.getInstance(), created3.getKey());
                 continue;
             } else {
-                extra = null;
+                pair2 = null;
                 continue;
             }
-            if (extra != null) {
+            if (pair2 != null) {
                 break;
             }
         }
-        return new ChildPanels(new Child.Created(main.getConfig(), main.getInstance()), details != null ? new Child.Created(details.getConfig(), details.getInstance()) : null, extra != null ? new Child.Created(extra.getConfig(), extra.getInstance()) : null, state.getPanels().getMode());
+        Iterator it4 = arrayList2.iterator();
+        while (true) {
+            if (!it4.hasNext()) {
+                pair3 = null;
+                break;
+            }
+            Child.Created created4 = (Child.Created) it4.next();
+            if (created4.getInstance() instanceof Panel.Extra) {
+                pair3 = TuplesKt.to(created4.getInstance(), created4.getKey());
+                continue;
+            } else {
+                pair3 = null;
+                continue;
+            }
+            if (pair3 != null) {
+                break;
+            }
+        }
+        return new ChildPanels(new Child.Created(((Panel.Main) pair.getFirst()).getConfig(), ((Panel.Main) pair.getFirst()).getInstance(), (String) pair.getSecond()), pair2 != null ? new Child.Created(((Panel.Details) pair2.getFirst()).getConfig(), ((Panel.Details) pair2.getFirst()).getInstance(), (String) pair2.getSecond()) : null, pair3 != null ? new Child.Created(((Panel.Extra) pair3.getFirst()).getConfig(), ((Panel.Extra) pair3.getFirst()).getInstance(), (String) pair3.getSecond()) : null, state.getPanels().getMode());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit childPanels$lambda$17(Function2 function2, PanelsNavState newState, PanelsNavState panelsNavState) {
+    public static final Unit childPanels$lambda$18(Function2 function2, PanelsNavState newState, PanelsNavState panelsNavState) {
         Intrinsics.checkNotNullParameter(newState, "newState");
         function2.invoke(newState.getPanels(), panelsNavState != null ? panelsNavState.getPanels() : null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit childPanels$lambda$18(PanelsNavigation.Event event, PanelsNavState newState, PanelsNavState oldState) {
+    public static final Unit childPanels$lambda$19(PanelsNavigation.Event event, PanelsNavState newState, PanelsNavState oldState) {
         Intrinsics.checkNotNullParameter(event, "event");
         Intrinsics.checkNotNullParameter(newState, "newState");
         Intrinsics.checkNotNullParameter(oldState, "oldState");
@@ -336,12 +350,12 @@ public final class ChildPanelsFactoryKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Function0 childPanels$lambda$21(boolean z, final PanelsNavState state) {
+    public static final Function0 childPanels$lambda$22(boolean z, final PanelsNavState state) {
         Intrinsics.checkNotNullParameter(state, "state");
         final Panels panels = state.getPanels();
         if (z) {
             if (panels.getMode() == ChildPanelsMode.SINGLE && panels.getExtra() != null) {
-                return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda6
+                return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda9
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         PanelsNavState copy;
@@ -353,7 +367,7 @@ public final class ChildPanelsFactoryKt {
             if (panels.getMode() != ChildPanelsMode.SINGLE || panels.getDetails() == null) {
                 return null;
             }
-            return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda7
+            return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     PanelsNavState copy;
@@ -366,7 +380,7 @@ public final class ChildPanelsFactoryKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Panel childPanels$lambda$22(Function2 function2, Function2 function22, Function2 function23, Config config, GenericComponentContext ctx) {
+    public static final Panel childPanels$lambda$23(Function2 function2, Function2 function22, Function2 function23, Config config, GenericComponentContext ctx) {
         Intrinsics.checkNotNullParameter(config, "config");
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         if (config instanceof Config.Main) {

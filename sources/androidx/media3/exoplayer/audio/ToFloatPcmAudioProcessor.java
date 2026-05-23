@@ -4,7 +4,7 @@ import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
     private static final int FLOAT_NAN_AS_INT = Float.floatToIntBits(Float.NaN);
     private static final double PCM_32_BIT_INT_TO_PCM_32_BIT_FLOAT_FACTOR = 4.656612875245797E-10d;
@@ -45,6 +45,12 @@ public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
             while (position < limit) {
                 writePcm32BitFloat((byteBuffer.get(position + 3) & 255) | ((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), replaceOutputBuffer);
                 position += 4;
+            }
+        } else if (i2 == 1879048192) {
+            replaceOutputBuffer = replaceOutputBuffer(i / 2);
+            while (position < limit) {
+                replaceOutputBuffer.putFloat((float) byteBuffer.getDouble(position));
+                position += 8;
             }
         } else if (i2 == 21) {
             replaceOutputBuffer = replaceOutputBuffer((i / 3) * 4);

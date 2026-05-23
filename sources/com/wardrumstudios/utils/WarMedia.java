@@ -63,7 +63,6 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.internal.view.SupportMenu;
-import androidx.media3.common.C;
 import androidx.media3.common.MimeTypes;
 import com.google.android.vending.expansion.downloader.DownloadProgressInfo;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
@@ -91,7 +90,7 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnSeekCompleteListener, MediaPlayer.OnErrorListener, IDownloaderClient {
     static final int REQUEST_READ_EXTERNAL_STORAGE = 8001;
     AudioManager audioManager;
@@ -275,7 +274,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarMedia$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass1 implements Runnable {
         final /* synthetic */ Activity val$myActivity;
 
@@ -307,7 +306,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.wardrumstudios.utils.WarMedia$2  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass2 implements Runnable {
         final /* synthetic */ Activity val$myActivity;
 
@@ -337,7 +336,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     class PoolInfo {
         float duration;
         String filename;
@@ -349,7 +348,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static class XAPKFile {
         public final long mFileSize;
         public final int mFileVersion;
@@ -1978,7 +1977,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             Intent intent = new Intent(this, getClass());
             intent.setFlags(335544320);
             try {
-                int startDownloadServiceIfRequired = DownloaderClientMarshaller.startDownloadServiceIfRequired(this, PendingIntent.getActivity(this, 0, intent, C.BUFFER_FLAG_FIRST_SAMPLE), WarDownloaderService.class);
+                int startDownloadServiceIfRequired = DownloaderClientMarshaller.startDownloadServiceIfRequired(this, PendingIntent.getActivity(this, 0, intent, 134217728), WarDownloaderService.class);
                 System.out.println("localHasGameData startDownloadServiceIfRequired startResult " + startDownloadServiceIfRequired);
                 if (startDownloadServiceIfRequired == 0) {
                     if (expansionFilesDelivered()) {

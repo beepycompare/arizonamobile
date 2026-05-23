@@ -1,9 +1,8 @@
 package com.google.android.gms.common.data;
 
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.errorprone.annotations.ResultIgnorabilityUnspecified;
 import java.util.ArrayList;
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class EntityBuffer<T> extends AbstractDataBuffer<T> {
     private boolean zaa;
@@ -27,12 +26,20 @@ public abstract class EntityBuffer<T> extends AbstractDataBuffer<T> {
                     for (int i = 1; i < count; i++) {
                         int windowIndex = this.mDataHolder.getWindowIndex(i);
                         String string2 = this.mDataHolder.getString(primaryDataMarkerColumn, i, windowIndex);
-                        if (string2 == null) {
-                            throw new NullPointerException("Missing value for markerColumn: " + primaryDataMarkerColumn + ", at row: " + i + ", for window: " + windowIndex);
-                        }
-                        if (!string2.equals(string)) {
-                            this.zab.add(Integer.valueOf(i));
-                            string = string2;
+                        if (string2 != null) {
+                            if (!string2.equals(string)) {
+                                this.zab.add(Integer.valueOf(i));
+                                string = string2;
+                            }
+                        } else {
+                            StringBuilder sb = new StringBuilder(String.valueOf(primaryDataMarkerColumn).length() + 42 + String.valueOf(i).length() + 14 + String.valueOf(windowIndex).length());
+                            sb.append("Missing value for markerColumn: ");
+                            sb.append(primaryDataMarkerColumn);
+                            sb.append(", at row: ");
+                            sb.append(i);
+                            sb.append(", for window: ");
+                            sb.append(windowIndex);
+                            throw new NullPointerException(sb.toString());
                         }
                     }
                 }
@@ -42,7 +49,6 @@ public abstract class EntityBuffer<T> extends AbstractDataBuffer<T> {
     }
 
     @Override // com.google.android.gms.common.data.AbstractDataBuffer, com.google.android.gms.common.data.DataBuffer
-    @ResultIgnorabilityUnspecified
     public final T get(int i) {
         int intValue;
         int intValue2;
@@ -88,7 +94,11 @@ public abstract class EntityBuffer<T> extends AbstractDataBuffer<T> {
 
     final int zaa(int i) {
         if (i < 0 || i >= this.zab.size()) {
-            throw new IllegalArgumentException("Position " + i + " is out of bounds for this buffer");
+            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 42);
+            sb.append("Position ");
+            sb.append(i);
+            sb.append(" is out of bounds for this buffer");
+            throw new IllegalArgumentException(sb.toString());
         }
         return ((Integer) this.zab.get(i)).intValue();
     }

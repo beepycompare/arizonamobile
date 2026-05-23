@@ -210,7 +210,7 @@ public class FontResourcesParserCompat {
     }
 
     private static int getType(TypedArray typedArray, int i) {
-        return Api21Impl.getType(typedArray, i);
+        return typedArray.getType(i);
     }
 
     public static List<List<byte[]>> readCerts(Resources resources, int i) {
@@ -261,13 +261,13 @@ public class FontResourcesParserCompat {
             }
             FontRequest fontRequest = new FontRequest(str, str2, string, list, string2, string3);
             if (obtainAttributes != null) {
-                UByte$$ExternalSyntheticBackport0.m9275m((Object) obtainAttributes);
+                UByte$$ExternalSyntheticBackport0.m9915m((Object) obtainAttributes);
             }
             return fontRequest;
         } catch (Throwable th) {
             if (obtainAttributes != null) {
                 try {
-                    UByte$$ExternalSyntheticBackport0.m9275m((Object) obtainAttributes);
+                    UByte$$ExternalSyntheticBackport0.m9915m((Object) obtainAttributes);
                 } catch (Throwable th2) {
                     th.addSuppressed(th2);
                 }
@@ -334,16 +334,5 @@ public class FontResourcesParserCompat {
     }
 
     private FontResourcesParserCompat() {
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api21Impl {
-        private Api21Impl() {
-        }
-
-        static int getType(TypedArray typedArray, int i) {
-            return typedArray.getType(i);
-        }
     }
 }

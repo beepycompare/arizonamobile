@@ -4,13 +4,13 @@ import androidx.compose.ui.graphics.BezierKt;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
 /* compiled from: Easing.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\n\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000b\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u0003H\u0016J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\f\u001a\u00020\u0003H\u0002J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0096\u0002J\b\u0010\u0013\u001a\u00020\u0014H\u0016J\b\u0010\u0015\u001a\u00020\u0016H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/animation/core/CubicBezierEasing;", "Landroidx/compose/animation/core/Easing;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "c", "d", "<init>", "(FFFF)V", "min", "max", "transform", "fraction", "throwNoSolution", "", "equals", "", "other", "", "hashCode", "", "toString", "", "animation-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\n\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0007\u0018\u00002\u00020\u0001B'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000b\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u0003H\u0016J\u0010\u0010\r\u001a\u00020\u000e2\u0006\u0010\f\u001a\u00020\u0003H\u0002J\u0013\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0096\u0002J\b\u0010\u0013\u001a\u00020\u0014H\u0016J\b\u0010\u0015\u001a\u00020\u0016H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Landroidx/compose/animation/core/CubicBezierEasing;", "Landroidx/compose/animation/core/Easing;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "c", "d", "<init>", "(FFFF)V", "min", "max", "transform", "fraction", "throwNoSolution", "", "equals", "", "other", "", "hashCode", "", "toString", "", "animation-core"}, k = 1, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class CubicBezierEasing implements Easing {
     public static final int $stable = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f165a;
+    private final float f83a;
     private final float b;
     private final float c;
     private final float d;
@@ -18,7 +18,7 @@ public final class CubicBezierEasing implements Easing {
     private final float min;
 
     public CubicBezierEasing(float f, float f2, float f3, float f4) {
-        this.f165a = f;
+        this.f83a = f;
         this.b = f2;
         this.c = f3;
         this.d = f4;
@@ -34,7 +34,7 @@ public final class CubicBezierEasing implements Easing {
     public float transform(float f) {
         if (f > 0.0f && f < 1.0f) {
             float max = Math.max(f, 1.1920929E-7f);
-            float findFirstCubicRoot = BezierKt.findFirstCubicRoot(0.0f - max, this.f165a - max, this.c - max, 1.0f - max);
+            float findFirstCubicRoot = BezierKt.findFirstCubicRoot(0.0f - max, this.f83a - max, this.c - max, 1.0f - max);
             if (Float.isNaN(findFirstCubicRoot)) {
                 throwNoSolution(f);
             }
@@ -52,22 +52,22 @@ public final class CubicBezierEasing implements Easing {
     }
 
     private final void throwNoSolution(float f) {
-        throw new IllegalArgumentException("The cubic curve with parameters (" + this.f165a + ", " + this.b + ", " + this.c + ", " + this.d + ") has no solution at " + f);
+        throw new IllegalArgumentException("The cubic curve with parameters (" + this.f83a + ", " + this.b + ", " + this.c + ", " + this.d + ") has no solution at " + f);
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof CubicBezierEasing) {
             CubicBezierEasing cubicBezierEasing = (CubicBezierEasing) obj;
-            return this.f165a == cubicBezierEasing.f165a && this.b == cubicBezierEasing.b && this.c == cubicBezierEasing.c && this.d == cubicBezierEasing.d;
+            return this.f83a == cubicBezierEasing.f83a && this.b == cubicBezierEasing.b && this.c == cubicBezierEasing.c && this.d == cubicBezierEasing.d;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Float.hashCode(this.f165a) * 31) + Float.hashCode(this.b)) * 31) + Float.hashCode(this.c)) * 31) + Float.hashCode(this.d);
+        return (((((Float.hashCode(this.f83a) * 31) + Float.hashCode(this.b)) * 31) + Float.hashCode(this.c)) * 31) + Float.hashCode(this.d);
     }
 
     public String toString() {
-        return "CubicBezierEasing(a=" + this.f165a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ')';
+        return "CubicBezierEasing(a=" + this.f83a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ')';
     }
 }

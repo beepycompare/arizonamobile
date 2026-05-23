@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: PointerInputTestUtil.kt */
-@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0011\n\u0002\b\u0004\u001a@\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\u0010\b\u0002\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\tH\u0000\u001a(\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u0006H\u0000\u001a(\u0010\f\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00062\b\b\u0002\u0010\u000e\u001a\u00020\u0006H\u0000\u001a\u0014\u0010\u000f\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0003H\u0000\u001aA\u0010\u0016\u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b\u001a\u0010\u001b\u001aI\u0010\u001c\u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u001d\u001a\u00020\u00132\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b\u001e\u0010\u001f\u001aU\u0010 \u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\u0012\u0010!\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00130\"\"\u00020\u00132\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b#\u0010$\u001aO\u0010 \u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00130\t2\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b#\u0010%*<\b\u0000\u0010\u0010\"\u001a\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u00112\u001a\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011¨\u0006&"}, d2 = {"down", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "id", "", "durationMillis", "x", "", "y", "historicalData", "", "Landroidx/compose/ui/input/pointer/HistoricalChange;", "moveTo", "moveBy", "dx", "dy", "up", "PointerInputHandler", "Lkotlin/Function3;", "Landroidx/compose/ui/input/pointer/PointerEvent;", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "Landroidx/compose/ui/unit/IntSize;", "", "invokeOverAllPasses", "Landroidx/compose/ui/input/pointer/PointerInputHandler;", "pointerEvent", "size", "invokeOverAllPasses-H0pRuoY", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;J)V", "invokeOverPass", "pointerEventPass", "invokeOverPass-hUlJWOE", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "invokeOverPasses", "pointerEventPasses", "", "invokeOverPasses-hUlJWOE", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;[Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Ljava/util/List;J)V", "ui"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0011\n\u0002\b\u0004\u001a@\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\u0010\b\u0002\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\tH\u0000\u001a(\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u0006H\u0000\u001a(\u0010\f\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00062\b\b\u0002\u0010\u000e\u001a\u00020\u0006H\u0000\u001a\u0014\u0010\u000f\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0003H\u0000\u001aA\u0010\u0016\u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b\u001a\u0010\u001b\u001aI\u0010\u001c\u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u001d\u001a\u00020\u00132\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b\u001e\u0010\u001f\u001aU\u0010 \u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\u0012\u0010!\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00130\"\"\u00020\u00132\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b#\u0010$\u001aO\u0010 \u001a\u00020\u0015*\u001e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011j\u0002`\u00172\u0006\u0010\u0018\u001a\u00020\u00122\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00130\t2\b\b\u0002\u0010\u0019\u001a\u00020\u0014H\u0000¢\u0006\u0004\b#\u0010%*<\b\u0000\u0010\u0010\"\u001a\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u00112\u001a\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0011¨\u0006&"}, d2 = {"down", "Landroidx/compose/ui/input/pointer/PointerInputChange;", "id", "", "durationMillis", "x", "", "y", "historicalData", "", "Landroidx/compose/ui/input/pointer/HistoricalChange;", "moveTo", "moveBy", "dx", "dy", "up", "PointerInputHandler", "Lkotlin/Function3;", "Landroidx/compose/ui/input/pointer/PointerEvent;", "Landroidx/compose/ui/input/pointer/PointerEventPass;", "Landroidx/compose/ui/unit/IntSize;", "", "invokeOverAllPasses", "Landroidx/compose/ui/input/pointer/PointerInputHandler;", "pointerEvent", "size", "invokeOverAllPasses-H0pRuoY", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;J)V", "invokeOverPass", "pointerEventPass", "invokeOverPass-hUlJWOE", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "invokeOverPasses", "pointerEventPasses", "", "invokeOverPasses-hUlJWOE", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;[Landroidx/compose/ui/input/pointer/PointerEventPass;J)V", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Ljava/util/List;J)V", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class PointerInputTestUtilKt {
     public static /* synthetic */ PointerInputChange down$default(long j, long j2, float f, float f2, List list, int i, Object obj) {
@@ -27,9 +27,9 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange down(long j, long j2, float f, float f2, List<HistoricalChange> list) {
-        PointerInputChange pointerInputChange = new PointerInputChange(PointerId.m6065constructorimpl(j), j2, Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, j2, Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), false, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        PointerInputChange pointerInputChange = new PointerInputChange(PointerId.m6662constructorimpl(j), j2, Offset.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, j2, Offset.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), false, false, 0, 0L, 0.0f, 0L, 7680, (DefaultConstructorMarker) null);
         List<HistoricalChange> list2 = list;
-        return (list2 == null || list2.isEmpty()) ? pointerInputChange : PointerInputChange.m6074copyOHpmEuE$default(pointerInputChange, 0L, 0L, 0L, false, 0L, 0L, false, 0, list, 0L, 767, null);
+        return (list2 == null || list2.isEmpty()) ? pointerInputChange : PointerInputChange.m6671copyOHpmEuE$default(pointerInputChange, 0L, 0L, 0L, false, 0L, 0L, false, 0, list, 0L, 767, null);
     }
 
     public static /* synthetic */ PointerInputChange moveTo$default(PointerInputChange pointerInputChange, long j, float f, float f2, int i, Object obj) {
@@ -43,10 +43,10 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange moveTo(PointerInputChange pointerInputChange, long j, float f, float f2) {
-        long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
+        long m6682getIdJ3iCeTQ = pointerInputChange.m6682getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6083getIdJ3iCeTQ, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, uptimeMillis, pointerInputChange.m6085getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6682getIdJ3iCeTQ, j, Offset.m5095constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), true, 1.0f, uptimeMillis, pointerInputChange.m6685getPositionF1C5BW0(), pressed, false, 0, 0L, 0.0f, 0L, 7680, (DefaultConstructorMarker) null);
     }
 
     public static /* synthetic */ PointerInputChange moveBy$default(PointerInputChange pointerInputChange, long j, float f, float f2, int i, Object obj) {
@@ -60,36 +60,36 @@ public final class PointerInputTestUtilKt {
     }
 
     public static final PointerInputChange moveBy(PointerInputChange pointerInputChange, long j, float f, float f2) {
-        long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
+        long m6682getIdJ3iCeTQ = pointerInputChange.m6682getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6083getIdJ3iCeTQ, pointerInputChange.getUptimeMillis() + j, Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6085getPositionF1C5BW0() & 4294967295L)) + f2) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6085getPositionF1C5BW0() >> 32)) + f) << 32)), true, 1.0f, uptimeMillis, pointerInputChange.m6085getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6682getIdJ3iCeTQ, pointerInputChange.getUptimeMillis() + j, Offset.m5095constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6685getPositionF1C5BW0() & 4294967295L)) + f2) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (pointerInputChange.m6685getPositionF1C5BW0() >> 32)) + f) << 32)), true, 1.0f, uptimeMillis, pointerInputChange.m6685getPositionF1C5BW0(), pressed, false, 0, 0L, 0.0f, 0L, 7680, (DefaultConstructorMarker) null);
     }
 
     public static final PointerInputChange up(PointerInputChange pointerInputChange, long j) {
-        long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
+        long m6682getIdJ3iCeTQ = pointerInputChange.m6682getIdJ3iCeTQ();
         long uptimeMillis = pointerInputChange.getUptimeMillis();
         boolean pressed = pointerInputChange.getPressed();
-        return new PointerInputChange(m6083getIdJ3iCeTQ, j, pointerInputChange.m6085getPositionF1C5BW0(), false, 1.0f, uptimeMillis, pointerInputChange.m6085getPositionF1C5BW0(), pressed, false, 0, 0L, 1536, (DefaultConstructorMarker) null);
+        return new PointerInputChange(m6682getIdJ3iCeTQ, j, pointerInputChange.m6685getPositionF1C5BW0(), false, 1.0f, uptimeMillis, pointerInputChange.m6685getPositionF1C5BW0(), pressed, false, 0, 0L, 0.0f, 0L, 7680, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: invokeOverAllPasses-H0pRuoY  reason: not valid java name */
-    public static final void m6135invokeOverAllPassesH0pRuoY(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, long j) {
-        m6139invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf((Object[]) new PointerEventPass[]{PointerEventPass.Initial, PointerEventPass.Main, PointerEventPass.Final}), j);
+    public static final void m6737invokeOverAllPassesH0pRuoY(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, long j) {
+        m6741invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf((Object[]) new PointerEventPass[]{PointerEventPass.Initial, PointerEventPass.Main, PointerEventPass.Final}), j);
     }
 
     /* renamed from: invokeOverPass-hUlJWOE  reason: not valid java name */
-    public static final void m6137invokeOverPasshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        m6139invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf(pointerEventPass), j);
+    public static final void m6739invokeOverPasshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        m6741invokeOverPasseshUlJWOE(function3, pointerEvent, CollectionsKt.listOf(pointerEventPass), j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE  reason: not valid java name */
-    public static final void m6140invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j) {
-        m6139invokeOverPasseshUlJWOE(function3, pointerEvent, ArraysKt.toList(pointerEventPassArr), j);
+    public static final void m6742invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j) {
+        m6741invokeOverPasseshUlJWOE(function3, pointerEvent, ArraysKt.toList(pointerEventPassArr), j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE  reason: not valid java name */
-    public static final void m6139invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, List<? extends PointerEventPass> list, long j) {
+    public static final void m6741invokeOverPasseshUlJWOE(Function3<? super PointerEvent, ? super PointerEventPass, ? super IntSize, Unit> function3, PointerEvent pointerEvent, List<? extends PointerEventPass> list, long j) {
         if (pointerEvent.getChanges().isEmpty()) {
             throw new IllegalArgumentException("invokeOverPasses called with no changes".toString());
         }
@@ -99,39 +99,39 @@ public final class PointerInputTestUtilKt {
         }
         int size = list2.size();
         for (int i = 0; i < size; i++) {
-            function3.invoke(pointerEvent, list.get(i), IntSize.m7718boximpl(j));
+            function3.invoke(pointerEvent, list.get(i), IntSize.m8323boximpl(j));
         }
     }
 
     /* renamed from: invokeOverAllPasses-H0pRuoY$default  reason: not valid java name */
-    public static /* synthetic */ void m6136invokeOverAllPassesH0pRuoY$default(Function3 function3, PointerEvent pointerEvent, long j, int i, Object obj) {
+    public static /* synthetic */ void m6738invokeOverAllPassesH0pRuoY$default(Function3 function3, PointerEvent pointerEvent, long j, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = IntSize.m7721constructorimpl(9223372034707292159L);
+            j = IntSize.m8326constructorimpl(9223372034707292159L);
         }
-        m6135invokeOverAllPassesH0pRuoY(function3, pointerEvent, j);
+        m6737invokeOverAllPassesH0pRuoY(function3, pointerEvent, j);
     }
 
     /* renamed from: invokeOverPass-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6138invokeOverPasshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j, int i, Object obj) {
+    public static /* synthetic */ void m6740invokeOverPasshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = IntSize.m7721constructorimpl(9223372034707292159L);
+            j = IntSize.m8326constructorimpl(9223372034707292159L);
         }
-        m6137invokeOverPasshUlJWOE(function3, pointerEvent, pointerEventPass, j);
+        m6739invokeOverPasshUlJWOE(function3, pointerEvent, pointerEventPass, j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6142invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j, int i, Object obj) {
+    public static /* synthetic */ void m6744invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, PointerEventPass[] pointerEventPassArr, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = IntSize.m7721constructorimpl(9223372034707292159L);
+            j = IntSize.m8326constructorimpl(9223372034707292159L);
         }
-        m6140invokeOverPasseshUlJWOE(function3, pointerEvent, pointerEventPassArr, j);
+        m6742invokeOverPasseshUlJWOE(function3, pointerEvent, pointerEventPassArr, j);
     }
 
     /* renamed from: invokeOverPasses-hUlJWOE$default  reason: not valid java name */
-    public static /* synthetic */ void m6141invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, List list, long j, int i, Object obj) {
+    public static /* synthetic */ void m6743invokeOverPasseshUlJWOE$default(Function3 function3, PointerEvent pointerEvent, List list, long j, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = IntSize.m7721constructorimpl(9223372034707292159L);
+            j = IntSize.m8326constructorimpl(9223372034707292159L);
         }
-        m6139invokeOverPasseshUlJWOE(function3, pointerEvent, list, j);
+        m6741invokeOverPasseshUlJWOE(function3, pointerEvent, list, j);
     }
 }

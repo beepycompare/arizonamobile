@@ -2,10 +2,10 @@ package com.google.android.datatransport.cct.internal;
 
 import android.util.SparseArray;
 import com.google.android.datatransport.cct.internal.AutoValue_NetworkConnectionInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class NetworkConnectionInfo {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract NetworkConnectionInfo build();
 
@@ -18,7 +18,7 @@ public abstract class NetworkConnectionInfo {
 
     public abstract NetworkType getNetworkType();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum NetworkType {
         MOBILE(0),
         WIFI(1),
@@ -99,7 +99,7 @@ public abstract class NetworkConnectionInfo {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum MobileSubtype {
         UNKNOWN_MOBILE_SUBTYPE(0),
         GPRS(1),

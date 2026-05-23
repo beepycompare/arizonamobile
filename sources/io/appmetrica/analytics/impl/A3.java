@@ -1,22 +1,53 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
 /* loaded from: classes5.dex */
-public final class A3 extends R7 {
-    @Override // io.appmetrica.analytics.impl.R7
-    public final boolean a(C0540r3 c0540r3, C0540r3 c0540r32) {
-        if (lo.a(c0540r32.f1204a)) {
-            return true;
+public final class A3 implements Converter {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C0304hg f448a;
+    public final N7 b;
+    public final Yf c;
+    public final C0744yg d;
+
+    public A3() {
+        this(new C0304hg(), new N7(), new Yf(), new C0744yg());
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Xi fromModel(B3 b3) {
+        Xi xi;
+        C0710x8 c0710x8 = new C0710x8();
+        Xi fromModel = this.f448a.fromModel(b3.f465a);
+        c0710x8.f1276a = (G8) fromModel.f838a;
+        c0710x8.c = this.b.fromModel(b3.b);
+        Xi fromModel2 = this.c.fromModel(b3.c);
+        c0710x8.d = (F8) fromModel2.f838a;
+        Ng ng = b3.d;
+        if (ng != null) {
+            xi = this.d.fromModel(ng);
+            c0710x8.b = (I8) xi.f838a;
+        } else {
+            xi = null;
         }
-        if (lo.a(c0540r3.f1204a)) {
-            return false;
-        }
-        S7 s7 = c0540r3.b;
-        if (s7 == S7.c) {
-            if (((Number) this.f767a.a(s7)).intValue() >= ((Number) this.f767a.a(c0540r32.b)).intValue()) {
-                return true;
-            }
-        } else if (((Number) this.f767a.a(s7)).intValue() > ((Number) this.f767a.a(c0540r32.b)).intValue()) {
-            return true;
-        }
-        return false;
+        return new Xi(c0710x8, new C0524q3(C0524q3.b(fromModel, fromModel2, xi)));
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Xi xi = (Xi) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public A3(C0304hg c0304hg, N7 n7, Yf yf, C0744yg c0744yg) {
+        this.f448a = c0304hg;
+        this.b = n7;
+        this.c = yf;
+        this.d = c0744yg;
+    }
+
+    public final B3 a(Xi xi) {
+        throw new UnsupportedOperationException();
     }
 }

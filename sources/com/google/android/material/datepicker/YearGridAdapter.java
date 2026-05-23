@@ -1,5 +1,6 @@
 package com.google.android.material.datepicker;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.R;
 import com.google.android.material.datepicker.MaterialCalendar;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.timepicker.TimeModel;
 import java.util.Calendar;
 import java.util.Locale;
@@ -50,8 +52,22 @@ public class YearGridAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         }
         calendarItemStyle.styleItem(viewHolder.textView);
+        ensureFocusRingForeground(viewHolder.textView, calendarItemStyle);
         viewHolder.textView.setSelected(calendarItemStyle == calendarStyle.selectedYear);
         viewHolder.textView.setOnClickListener(createYearClickListener(yearForPosition));
+    }
+
+    private void ensureFocusRingForeground(TextView textView, CalendarItemStyle calendarItemStyle) {
+        if (textView.getForeground() instanceof FocusRingDrawable) {
+            return;
+        }
+        Drawable wrap = FocusRingDrawable.wrap(textView.getContext(), textView.getForeground());
+        if (wrap instanceof FocusRingDrawable) {
+            FocusRingDrawable focusRingDrawable = (FocusRingDrawable) wrap;
+            focusRingDrawable.setFocusRingShapeAppearance(calendarItemStyle.getItemShapeAppearanceModel());
+            focusRingDrawable.setFocusRingInset(calendarItemStyle.getTopInset());
+            textView.setForeground(focusRingDrawable);
+        }
     }
 
     private View.OnClickListener createYearClickListener(final int i) {

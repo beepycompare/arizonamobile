@@ -4,11 +4,11 @@ import com.arkivanov.decompose.ComponentContext;
 import com.miami.game.feature.download.screen.ui.DownloadScreenComponent;
 import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DownloadScreenComponent_Factory_Impl implements DownloadScreenComponent.Factory {
-    private final C0090DownloadScreenComponent_Factory delegateFactory;
+    private final C0092DownloadScreenComponent_Factory delegateFactory;
 
-    DownloadScreenComponent_Factory_Impl(C0090DownloadScreenComponent_Factory delegateFactory) {
+    DownloadScreenComponent_Factory_Impl(C0092DownloadScreenComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class DownloadScreenComponent_Factory_Impl implements DownloadScree
         return this.delegateFactory.get(componentContext);
     }
 
-    public static Provider<DownloadScreenComponent.Factory> create(C0090DownloadScreenComponent_Factory delegateFactory) {
+    public static Provider<DownloadScreenComponent.Factory> create(C0092DownloadScreenComponent_Factory delegateFactory) {
         return InstanceFactory.create(new DownloadScreenComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<DownloadScreenComponent.Factory> createFactoryProvider(C0090DownloadScreenComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<DownloadScreenComponent.Factory> createFactoryProvider(C0092DownloadScreenComponent_Factory delegateFactory) {
         return InstanceFactory.create(new DownloadScreenComponent_Factory_Impl(delegateFactory));
     }
 }

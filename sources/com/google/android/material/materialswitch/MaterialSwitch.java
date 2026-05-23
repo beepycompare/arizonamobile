@@ -12,6 +12,7 @@ import androidx.appcompat.widget.TintTypedArray;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.material.R;
 import com.google.android.material.drawable.DrawableUtils;
+import com.google.android.material.focus.FocusRingDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
@@ -74,6 +75,18 @@ public class MaterialSwitch extends SwitchCompat {
     public void invalidate() {
         updateDrawableTints();
         super.invalidate();
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.appcompat.widget.SwitchCompat, android.widget.TextView, android.view.View
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        FocusRingDrawable find;
+        super.onLayout(z, i, i2, i3, i4);
+        if (this.trackDrawable == null || (find = FocusRingDrawable.find(getBackground())) == null) {
+            return;
+        }
+        find.mutate();
+        find.setFocusRingBounds(this.trackDrawable.getBounds());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -1,42 +1,24 @@
 package com.google.android.gms.common.api.internal;
-
-import android.content.Context;
-import com.google.android.gms.auth.api.signin.internal.Storage;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Result;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
+/* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-public final class zabb implements ResultCallback {
-    final /* synthetic */ StatusPendingResult zaa;
-    final /* synthetic */ boolean zab;
-    final /* synthetic */ GoogleApiClient zac;
-    final /* synthetic */ zabe zad;
+abstract class zabb {
+    private final zaba zaa;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zabb(zabe zabeVar, StatusPendingResult statusPendingResult, boolean z, GoogleApiClient googleApiClient) {
-        this.zad = zabeVar;
-        this.zaa = statusPendingResult;
-        this.zab = z;
-        this.zac = googleApiClient;
+    /* JADX INFO: Access modifiers changed from: protected */
+    public zabb(zaba zabaVar) {
+        this.zaa = zabaVar;
     }
 
-    @Override // com.google.android.gms.common.api.ResultCallback
-    public final /* bridge */ /* synthetic */ void onResult(Result result) {
-        Context context;
-        Status status = (Status) result;
-        context = this.zad.zan;
-        Storage.getInstance(context).zac();
-        if (status.isSuccess() && this.zad.isConnected()) {
-            zabe zabeVar = this.zad;
-            zabeVar.disconnect();
-            zabeVar.connect();
-        }
-        this.zaa.setResult(status);
-        if (this.zab) {
-            this.zac.disconnect();
+    protected abstract void zaa();
+
+    public final void zab(zabd zabdVar) {
+        zabdVar.zat().lock();
+        try {
+            if (zabdVar.zau() == this.zaa) {
+                zaa();
+            }
+        } finally {
+            zabdVar.zat().unlock();
         }
     }
 }

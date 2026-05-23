@@ -56,6 +56,7 @@ import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambda;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.runtime.saveable.RememberSaveableKt;
@@ -146,16 +147,16 @@ public final class SearchBarKt {
     private static final String LayoutIdSurface = "Surface";
     private static final float SearchBarPredictiveBackMaxOffsetXRatio = 0.05f;
     private static final float SearchBarPredictiveBackMinScale = 0.9f;
-    private static final TextFieldColors UnspecifiedTextFieldColors = new TextFieldColors(Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), new TextSelectionColors(Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), null), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), Color.Companion.m4808getUnspecified0d7_KjU(), null);
-    private static final float SearchBarAsTopBarPadding = Dp.m7555constructorimpl(8.0f);
-    private static final float SearchBarCornerRadius = Dp.m7555constructorimpl(SearchBarDefaults.INSTANCE.m2414getInputFieldHeightD9Ej5fM() / 2.0f);
-    private static final float DockedExpandedTableMinHeight = Dp.m7555constructorimpl(240.0f);
-    private static final float SearchBarMinWidth = Dp.m7555constructorimpl(360.0f);
-    private static final float SearchBarMaxWidth = Dp.m7555constructorimpl(720.0f);
-    private static final float SearchBarVerticalPadding = Dp.m7555constructorimpl(8.0f);
-    private static final float SearchBarIconOffsetX = Dp.m7555constructorimpl(4.0f);
-    private static final float SearchBarPredictiveBackMinMargin = Dp.m7555constructorimpl(8.0f);
-    private static final float SearchBarPredictiveBackMaxOffsetY = Dp.m7555constructorimpl(24.0f);
+    private static final TextFieldColors UnspecifiedTextFieldColors = new TextFieldColors(Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), new TextSelectionColors(Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), null), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), Color.Companion.m5384getUnspecified0d7_KjU(), null);
+    private static final float SearchBarAsTopBarPadding = Dp.m8160constructorimpl(8.0f);
+    private static final float SearchBarCornerRadius = Dp.m8160constructorimpl(SearchBarDefaults.INSTANCE.m2859getInputFieldHeightD9Ej5fM() / 2.0f);
+    private static final float DockedExpandedTableMinHeight = Dp.m8160constructorimpl(240.0f);
+    private static final float SearchBarMinWidth = Dp.m8160constructorimpl(360.0f);
+    private static final float SearchBarMaxWidth = Dp.m8160constructorimpl(720.0f);
+    private static final float SearchBarVerticalPadding = Dp.m8160constructorimpl(8.0f);
+    private static final float SearchBarIconOffsetX = Dp.m8160constructorimpl(4.0f);
+    private static final float SearchBarPredictiveBackMinMargin = Dp.m8160constructorimpl(8.0f);
+    private static final float SearchBarPredictiveBackMaxOffsetY = Dp.m8160constructorimpl(24.0f);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DetectClickFromInteractionSource$lambda$73(InteractionSource interactionSource, Function0 function0, int i, Composer composer, int i2) {
@@ -165,55 +166,55 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DockedSearchBarLayout_nbWgWpA$lambda$52(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function3 function3, int i, Composer composer, int i2) {
-        m2423DockedSearchBarLayoutnbWgWpA(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2868DockedSearchBarLayoutnbWgWpA(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DockedSearchBar_EQC0FA8$lambda$25(Function2 function2, boolean z, Function1 function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2421DockedSearchBarEQC0FA8(function2, z, function1, modifier, shape, searchBarColors, f, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2866DockedSearchBarEQC0FA8(function2, z, function1, modifier, shape, searchBarColors, f, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DockedSearchBar_eWTbjVg$lambda$29(String str, Function1 function1, Function1 function12, boolean z, Function1 function13, Modifier modifier, boolean z2, Function2 function2, Function2 function22, Function2 function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        m2422DockedSearchBareWTbjVg(str, function1, function12, z, function13, modifier, z2, function2, function22, function23, shape, searchBarColors, f, f2, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2867DockedSearchBareWTbjVg(str, function1, function12, z, function13, modifier, z2, function2, function22, function23, shape, searchBarColors, f, f2, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExpandedDockedSearchBar_qKj4JfE$lambda$10(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, PopupProperties popupProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2424ExpandedDockedSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2869ExpandedDockedSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExpandedDockedSearchBar_qKj4JfE$lambda$14(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, PopupProperties popupProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2424ExpandedDockedSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2869ExpandedDockedSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExpandedFullScreenSearchBar__UtchM0$lambda$6(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function2 function22, DialogProperties dialogProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2425ExpandedFullScreenSearchBar_UtchM0(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function22, dialogProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2870ExpandedFullScreenSearchBar_UtchM0(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function22, dialogProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExpandedFullScreenSearchBar__UtchM0$lambda$9(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function2 function22, DialogProperties dialogProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2425ExpandedFullScreenSearchBar_UtchM0(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function22, dialogProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2870ExpandedFullScreenSearchBar_UtchM0(searchBarState, function2, modifier, shape, searchBarColors, f, f2, function22, dialogProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit FullScreenSearchBarLayout_EQC0FA8$lambda$70(SearchBarState searchBarState, PredictiveBackState predictiveBackState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, Function3 function3, int i, Composer composer, int i2) {
-        m2426FullScreenSearchBarLayoutEQC0FA8(searchBarState, predictiveBackState, function2, modifier, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2871FullScreenSearchBarLayoutEQC0FA8(searchBarState, predictiveBackState, function2, modifier, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SearchBarImpl_j1jLAyQ$lambda$39(Animatable animatable, MutableFloatState mutableFloatState, MutableState mutableState, MutableState mutableState2, Modifier modifier, Function2 function2, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        m2430SearchBarImplj1jLAyQ(animatable, mutableFloatState, mutableState, mutableState2, modifier, function2, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2875SearchBarImplj1jLAyQ(animatable, mutableFloatState, mutableState, mutableState2, modifier, function2, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -225,25 +226,25 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SearchBar_WuY5d9Q$lambda$28(String str, Function1 function1, Function1 function12, boolean z, Function1 function13, Modifier modifier, boolean z2, Function2 function2, Function2 function22, Function2 function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        m2427SearchBarWuY5d9Q(str, function1, function12, z, function13, modifier, z2, function2, function22, function23, shape, searchBarColors, f, f2, windowInsets, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m2872SearchBarWuY5d9Q(str, function1, function12, z, function13, modifier, z2, function2, function22, function23, shape, searchBarColors, f, f2, windowInsets, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SearchBar_Y92LkZI$lambda$22(Function2 function2, boolean z, Function1 function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2428SearchBarY92LkZI(function2, z, function1, modifier, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2873SearchBarY92LkZI(function2, z, function1, modifier, shape, searchBarColors, f, f2, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SearchBar_nbWgWpA$lambda$2(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, int i, int i2, Composer composer, int i3) {
-        m2429SearchBarnbWgWpA(searchBarState, function2, modifier, shape, searchBarColors, f, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2874SearchBarnbWgWpA(searchBarState, function2, modifier, shape, searchBarColors, f, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TopSearchBar_qKj4JfE$lambda$5(SearchBarState searchBarState, Function2 function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, SearchBarScrollBehavior searchBarScrollBehavior, int i, int i2, Composer composer, int i3) {
-        m2431TopSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, windowInsets, searchBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2876TopSearchBarqKj4JfE(searchBarState, function2, modifier, shape, searchBarColors, f, f2, windowInsets, searchBarScrollBehavior, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -276,7 +277,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2429SearchBarnbWgWpA(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Composer composer, final int i, final int i2) {
+    public static final void m2874SearchBarnbWgWpA(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -392,25 +393,25 @@ public final class SearchBarKt {
                                 }
                                 if ((i2 & 16) != 0) {
                                     i7 = 0;
-                                    searchBarColors2 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                                    searchBarColors2 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                                     i3 &= -57345;
                                 } else {
                                     i7 = 0;
                                 }
-                                float m2416getTonalElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
+                                float m2861getTonalElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
                                 if (i6 != 0) {
                                     SearchBarColors searchBarColors6 = searchBarColors2;
                                     i8 = i3;
                                     searchBarColors4 = searchBarColors6;
-                                    float f10 = m2416getTonalElevationD9Ej5fM;
+                                    float f10 = m2861getTonalElevationD9Ej5fM;
                                     shape3 = obj2;
                                     f7 = f10;
-                                    f8 = SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM();
+                                    f8 = SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM();
                                 } else {
                                     SearchBarColors searchBarColors7 = searchBarColors2;
                                     i8 = i3;
                                     searchBarColors4 = searchBarColors7;
-                                    float f11 = m2416getTonalElevationD9Ej5fM;
+                                    float f11 = m2861getTonalElevationD9Ej5fM;
                                     shape3 = obj2;
                                     f7 = f11;
                                     f8 = f2;
@@ -434,11 +435,11 @@ public final class SearchBarKt {
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(companion, (Function1) rememberedValue);
-                            long m2408getContainerColor0d7_KjU = searchBarColors4.m2408getContainerColor0d7_KjU();
-                            long m1902contentColorForek8zF_U = ColorSchemeKt.m1902contentColorForek8zF_U(searchBarColors4.m2408getContainerColor0d7_KjU(), startRestartGroup, i7);
+                            long m2853getContainerColor0d7_KjU = searchBarColors4.m2853getContainerColor0d7_KjU();
+                            long m2347contentColorForek8zF_U = ColorSchemeKt.m2347contentColorForek8zF_U(searchBarColors4.m2853getContainerColor0d7_KjU(), startRestartGroup, i7);
                             int i12 = i8 >> 3;
                             float f12 = f7;
-                            SurfaceKt.m2569SurfaceT9BRK9s(onGloballyPositioned, shape3, m2408getContainerColor0d7_KjU, m1902contentColorForek8zF_U, f12, f8, null, obj, startRestartGroup, ((i8 >> 6) & 112) | (i12 & 57344) | (i12 & 458752) | ((i8 << 18) & 29360128), 64);
+                            SurfaceKt.m3014SurfaceT9BRK9s(onGloballyPositioned, shape3, m2853getContainerColor0d7_KjU, m2347contentColorForek8zF_U, f12, f8, null, obj, startRestartGroup, ((i8 >> 6) & 112) | (i12 & 57344) | (i12 & 458752) | ((i8 << 18) & 29360128), 64);
                             startRestartGroup = startRestartGroup;
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
@@ -557,7 +558,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2431TopSearchBarqKj4JfE(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, SearchBarScrollBehavior searchBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m2876TopSearchBarqKj4JfE(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, SearchBarScrollBehavior searchBarScrollBehavior, Composer composer, final int i, final int i2) {
         SearchBarState searchBarState2;
         int i3;
         Function2<? super Composer, ? super Integer, Unit> function22;
@@ -684,7 +685,7 @@ public final class SearchBarKt {
                 if (i6 != 0) {
                     i3 |= 100663296;
                 } else if ((i & 100663296) == 0) {
-                    i3 |= startRestartGroup.changed(searchBarScrollBehavior) ? 67108864 : 33554432;
+                    i3 |= startRestartGroup.changed(searchBarScrollBehavior) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                 }
                 if (startRestartGroup.shouldExecute((i3 & 38347923) != 38347922, i3 & 1)) {
                     startRestartGroup.startDefaults();
@@ -722,16 +723,16 @@ public final class SearchBarKt {
                             modifier3 = companion2;
                             i7 = 6;
                             i15 &= -57345;
-                            searchBarColors2 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                            searchBarColors2 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                         } else {
                             modifier3 = companion2;
                             i7 = 6;
                             i8 = i6;
                         }
                         if (i4 != 0) {
-                            f3 = SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM();
+                            f3 = SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM();
                         }
-                        float m2415getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                        float m2860getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                         if ((i2 & 128) != 0) {
                             windowInsets3 = SearchBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, i7);
                             i15 &= -29360129;
@@ -739,7 +740,7 @@ public final class SearchBarKt {
                             windowInsets3 = windowInsets;
                         }
                         windowInsets2 = windowInsets3;
-                        f7 = m2415getShadowElevationD9Ej5fM;
+                        f7 = m2860getShadowElevationD9Ej5fM;
                         searchBarColors3 = searchBarColors2;
                         f8 = f3;
                         shape3 = shape4;
@@ -763,7 +764,7 @@ public final class SearchBarKt {
                     if (searchBarScrollBehavior3 == null || (companion = searchBarScrollBehavior3.searchBarScrollBehavior(Modifier.Companion)) == null) {
                         companion = Modifier.Companion;
                     }
-                    m2429SearchBarnbWgWpA(searchBarState2, function22, SizeKt.wrapContentWidth$default(SizeKt.fillMaxWidth$default(PaddingKt.m818padding3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(modifier4.then(companion), windowInsets2), SearchBarAsTopBarPadding), 0.0f, 1, null), null, z, 3, null), shape3, searchBarColors3, f8, f7, startRestartGroup, i9 & 4193406, 0);
+                    m2874SearchBarnbWgWpA(searchBarState2, function22, SizeKt.wrapContentWidth$default(SizeKt.fillMaxWidth$default(PaddingKt.m1050padding3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(modifier4.then(companion), windowInsets2), SearchBarAsTopBarPadding), 0.0f, 1, null), null, z, 3, null), shape3, searchBarColors3, f8, f7, startRestartGroup, i9 & 4193406, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -856,7 +857,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2425ExpandedFullScreenSearchBar_UtchM0(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, DialogProperties dialogProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2870ExpandedFullScreenSearchBar_UtchM0(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, Function2<? super Composer, ? super Integer, ? extends WindowInsets> function22, DialogProperties dialogProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Object obj2;
@@ -998,12 +999,12 @@ public final class SearchBarKt {
                     if (i6 == 0) {
                         i3 |= 100663296;
                     } else if ((i & 100663296) == 0) {
-                        i3 |= startRestartGroup.changed(dialogProperties) ? 67108864 : 33554432;
+                        i3 |= startRestartGroup.changed(dialogProperties) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     }
                     if ((i2 & 512) == 0) {
                         i3 |= 805306368;
                     } else if ((i & 805306368) == 0) {
-                        i3 |= startRestartGroup.changedInstance(function3) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i3 |= startRestartGroup.changedInstance(function3) ? 536870912 : 268435456;
                         if (startRestartGroup.shouldExecute((i3 & 306783379) != 306783378, i3 & 1)) {
                             startRestartGroup.startDefaults();
                             ComposerKt.sourceInformation(startRestartGroup, "346@17492L15,347@17557L8");
@@ -1041,13 +1042,13 @@ public final class SearchBarKt {
                                     z = true;
                                     composer3 = startRestartGroup;
                                     i12 &= -57345;
-                                    obj4 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                                    obj4 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                                 } else {
                                     z = true;
                                     composer3 = startRestartGroup;
                                 }
-                                float m2416getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                                float m2415getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                                float m2861getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                                float m2860getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                                 if ((i2 & 128) != 0) {
                                     searchBarKt$ExpandedFullScreenSearchBar$1 = new Function2<Composer, Integer, WindowInsets>() { // from class: androidx.compose.material3.SearchBarKt$ExpandedFullScreenSearchBar$1
                                         public final WindowInsets invoke(Composer composer4, int i13) {
@@ -1074,13 +1075,13 @@ public final class SearchBarKt {
                                     searchBarKt$ExpandedFullScreenSearchBar$1 = function22;
                                 }
                                 dialogProperties3 = i6 != 0 ? new DialogProperties(false, false, false, 7, (DefaultConstructorMarker) null) : dialogProperties;
-                                f7 = m2415getShadowElevationD9Ej5fM;
+                                f7 = m2860getShadowElevationD9Ej5fM;
                                 function25 = searchBarKt$ExpandedFullScreenSearchBar$1;
                                 searchBarColors3 = obj4;
                                 shape4 = shape3;
                                 i7 = i12;
                                 modifier3 = companion;
-                                f8 = m2416getTonalElevationD9Ej5fM;
+                                f8 = m2861getTonalElevationD9Ej5fM;
                             }
                             composer3.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -1168,7 +1169,7 @@ public final class SearchBarKt {
                                     int i15 = i14;
                                     SearchBarState searchBarState2 = SearchBarState.this;
                                     final Function2<Composer, Integer, Unit> function28 = function2;
-                                    SearchBarKt.m2426FullScreenSearchBarLayoutEQC0FA8(searchBarState2, predictiveBackState, ComposableLambdaKt.rememberComposableLambda(-2142632188, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$ExpandedFullScreenSearchBar$4.1
+                                    SearchBarKt.m2871FullScreenSearchBarLayoutEQC0FA8(searchBarState2, predictiveBackState, ComposableLambdaKt.rememberComposableLambda(-2142632188, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$ExpandedFullScreenSearchBar$4.1
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
                                             invoke(composer6, num.intValue());
@@ -1203,15 +1204,15 @@ public final class SearchBarKt {
                                             } else {
                                                 composer6.useNode();
                                             }
-                                            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer6);
-                                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer6);
+                                            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer6, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer6, 1606432749, "C371@18542L12:SearchBar.kt#uh7d8r");
@@ -1386,7 +1387,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2424ExpandedDockedSearchBarqKj4JfE(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, PopupProperties popupProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2869ExpandedDockedSearchBarqKj4JfE(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, PopupProperties popupProperties, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         Object obj;
@@ -1502,7 +1503,7 @@ public final class SearchBarKt {
                             i3 |= 100663296;
                         } else if ((i & 100663296) == 0) {
                             obj4 = function3;
-                            i3 |= startRestartGroup.changedInstance(obj4) ? 67108864 : 33554432;
+                            i3 |= startRestartGroup.changedInstance(obj4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                             if (!startRestartGroup.shouldExecute((i3 & 38347923) == 38347922, i3 & 1)) {
                                 startRestartGroup.startDefaults();
                                 ComposerKt.sourceInformation(startRestartGroup, "429@21409L11,430@21470L8");
@@ -1535,7 +1536,7 @@ public final class SearchBarKt {
                                     if ((i2 & 16) != 0) {
                                         z = true;
                                         i7 = i6;
-                                        searchBarColors3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                                        searchBarColors3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                                         composer3 = startRestartGroup;
                                         i3 = (-57345) & i3;
                                     } else {
@@ -1544,22 +1545,22 @@ public final class SearchBarKt {
                                         i7 = i6;
                                         searchBarColors3 = obj2;
                                     }
-                                    float m2416getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                                    float m2415getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                                    float m2861getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                                    float m2860getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                                     if (i7 != 0) {
                                         z2 = z;
                                         shape3 = obj;
-                                        f6 = m2415getShadowElevationD9Ej5fM;
+                                        f6 = m2860getShadowElevationD9Ej5fM;
                                         popupProperties3 = new PopupProperties(true, false, false, false, 6, (DefaultConstructorMarker) null);
                                     } else {
                                         popupProperties3 = popupProperties;
                                         z2 = z;
                                         shape3 = obj;
-                                        f6 = m2415getShadowElevationD9Ej5fM;
+                                        f6 = m2860getShadowElevationD9Ej5fM;
                                     }
                                     i8 = i3;
                                     modifier3 = companion;
-                                    f7 = m2416getTonalElevationD9Ej5fM;
+                                    f7 = m2861getTonalElevationD9Ej5fM;
                                 }
                                 composer3.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
@@ -1575,10 +1576,10 @@ public final class SearchBarKt {
                                         rememberedValue = new PopupPositionProvider() { // from class: androidx.compose.material3.SearchBarKt$ExpandedDockedSearchBar$positionProvider$1$1
                                             @Override // androidx.compose.ui.window.PopupPositionProvider
                                             /* renamed from: calculatePosition-llwVHH4 */
-                                            public long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+                                            public long mo401calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
                                                 IntRect collapsedBounds;
                                                 collapsedBounds = SearchBarKt.getCollapsedBounds(SearchBarState.this);
-                                                return collapsedBounds.m7712getTopLeftnOccac();
+                                                return collapsedBounds.m8317getTopLeftnOccac();
                                             }
                                         };
                                         composer3.updateRememberedValue(rememberedValue);
@@ -1641,7 +1642,7 @@ public final class SearchBarKt {
                                             ComposerKt.sourceInformationMarkerEnd(composer5);
                                             SearchBarState searchBarState2 = SearchBarState.this;
                                             final Function2<Composer, Integer, Unit> function23 = function2;
-                                            SearchBarKt.m2423DockedSearchBarLayoutnbWgWpA(searchBarState2, ComposableLambdaKt.rememberComposableLambda(2123999554, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$ExpandedDockedSearchBar$3.1
+                                            SearchBarKt.m2868DockedSearchBarLayoutnbWgWpA(searchBarState2, ComposableLambdaKt.rememberComposableLambda(2123999554, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$ExpandedDockedSearchBar$3.1
                                                 @Override // kotlin.jvm.functions.Function2
                                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer6, Integer num) {
                                                     invoke(composer6, num.intValue());
@@ -1676,15 +1677,15 @@ public final class SearchBarKt {
                                                     } else {
                                                         composer6.useNode();
                                                     }
-                                                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer6);
-                                                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer6);
+                                                    Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                     }
-                                                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                     ComposerKt.sourceInformationMarkerStart(composer6, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                     ComposerKt.sourceInformationMarkerStart(composer6, 1558467823, "C466@22749L12:SearchBar.kt#uh7d8r");
@@ -1882,7 +1883,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2428SearchBarY92LkZI(final Function2<? super Composer, ? super Integer, Unit> function2, boolean z, final Function1<? super Boolean, Unit> function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2873SearchBarY92LkZI(final Function2<? super Composer, ? super Integer, Unit> function2, boolean z, final Function1<? super Boolean, Unit> function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Modifier.Companion companion;
@@ -2000,7 +2001,7 @@ public final class SearchBarKt {
                     } else {
                         windowInsets2 = windowInsets;
                     }
-                    i8 = 33554432;
+                    i8 = GroupFlagsKt.HasAuxSlotFlag;
                     i3 |= i8;
                 } else {
                     windowInsets2 = windowInsets;
@@ -2008,7 +2009,7 @@ public final class SearchBarKt {
                 if ((i2 & 512) != 0) {
                     i3 |= 805306368;
                 } else if ((i & 805306368) == 0) {
-                    i3 |= startRestartGroup.changedInstance(function3) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                    i3 |= startRestartGroup.changedInstance(function3) ? 536870912 : 268435456;
                     if (!startRestartGroup.shouldExecute((i3 & 306783379) == 306783378, i3 & 1)) {
                         startRestartGroup.startDefaults();
                         ComposerKt.sourceInformation(startRestartGroup, "538@26130L15,539@26195L8,542@26376L12");
@@ -2043,19 +2044,19 @@ public final class SearchBarKt {
                             if ((i2 & 32) != 0) {
                                 composer3 = startRestartGroup;
                                 i3 &= -458753;
-                                obj3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                                obj3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                             } else {
                                 composer3 = startRestartGroup;
                             }
-                            float m2416getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                            float m2415getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                            float m2861getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                            float m2860getShadowElevationD9Ej5fM = i5 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                             if ((i2 & 256) != 0) {
                                 windowInsets2 = SearchBarDefaults.INSTANCE.getWindowInsets(composer3, 6);
                                 i3 &= -234881025;
                             }
-                            f6 = m2416getTonalElevationD9Ej5fM;
+                            f6 = m2861getTonalElevationD9Ej5fM;
                             windowInsets4 = windowInsets2;
-                            f7 = m2415getShadowElevationD9Ej5fM;
+                            f7 = m2860getShadowElevationD9Ej5fM;
                             searchBarColors3 = obj3;
                             shape4 = shape3;
                             i6 = i3;
@@ -2161,7 +2162,7 @@ public final class SearchBarKt {
                         Modifier modifier3 = companion;
                         float f9 = f6;
                         Shape shape6 = shape5;
-                        m2430SearchBarImplj1jLAyQ(animatable, mutableFloatState, mutableState, mutableState2, modifier3, function2, shape6, searchBarColors4, f9, f8, windowInsets4, function3, composer2, Animatable.$stable | 3504 | ((i7 << 3) & 57344) | ((i7 << 15) & 458752) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & 1879048192), (i7 >> 24) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                        m2875SearchBarImplj1jLAyQ(animatable, mutableFloatState, mutableState, mutableState2, modifier3, function2, shape6, searchBarColors4, f9, f8, windowInsets4, function3, composer2, Animatable.$stable | 3504 | ((i7 << 3) & 57344) | ((i7 << 15) & 458752) | (3670016 & i14) | (29360128 & i14) | (234881024 & i14) | (i14 & C.ENCODING_PCM_DOUBLE), (i7 >> 24) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2257,7 +2258,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2421DockedSearchBarEQC0FA8(final Function2<? super Composer, ? super Integer, Unit> function2, final boolean z, final Function1<? super Boolean, Unit> function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2866DockedSearchBarEQC0FA8(final Function2<? super Composer, ? super Integer, Unit> function2, final boolean z, final Function1<? super Boolean, Unit> function1, Modifier modifier, Shape shape, SearchBarColors searchBarColors, float f, float f2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         Object obj;
@@ -2351,7 +2352,7 @@ public final class SearchBarKt {
                 if ((i2 & 256) != 0) {
                     i3 |= 100663296;
                 } else if ((i & 100663296) == 0) {
-                    i3 |= startRestartGroup.changedInstance(function3) ? 67108864 : 33554432;
+                    i3 |= startRestartGroup.changedInstance(function3) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                 }
                 i6 = i3;
                 if (startRestartGroup.shouldExecute((38347923 & i3) != 38347922, i6 & 1)) {
@@ -2385,7 +2386,7 @@ public final class SearchBarKt {
                         if ((i2 & 32) != 0) {
                             i9 = 0;
                             i8 = i5;
-                            searchBarColors3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                            searchBarColors3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                             composer3 = startRestartGroup;
                             i7 &= -458753;
                         } else {
@@ -2395,14 +2396,14 @@ public final class SearchBarKt {
                             searchBarColors3 = searchBarColors;
                         }
                         int i14 = i7;
-                        float m2416getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
+                        float m2861getTonalElevationD9Ej5fM = i4 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
                         if (i8 != 0) {
-                            f4 = SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM();
+                            f4 = SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM();
                         }
                         SearchBarColors searchBarColors5 = searchBarColors3;
                         obj = shape2;
                         searchBarColors4 = searchBarColors5;
-                        f7 = m2416getTonalElevationD9Ej5fM;
+                        f7 = m2861getTonalElevationD9Ej5fM;
                         f8 = f4;
                         i10 = i14;
                     }
@@ -2410,14 +2411,14 @@ public final class SearchBarKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-2008777812, i10, -1, "androidx.compose.material3.DockedSearchBar (SearchBar.kt:657)");
                     }
-                    long m2408getContainerColor0d7_KjU = searchBarColors4.m2408getContainerColor0d7_KjU();
+                    long m2853getContainerColor0d7_KjU = searchBarColors4.m2853getContainerColor0d7_KjU();
                     int i15 = i10;
-                    long m1902contentColorForek8zF_U = ColorSchemeKt.m1902contentColorForek8zF_U(searchBarColors4.m2408getContainerColor0d7_KjU(), composer3, i9);
+                    long m2347contentColorForek8zF_U = ColorSchemeKt.m2347contentColorForek8zF_U(searchBarColors4.m2853getContainerColor0d7_KjU(), composer3, i9);
                     SearchBarColors searchBarColors6 = searchBarColors4;
                     int i16 = i15 >> 6;
                     Composer composer4 = composer3;
                     Shape shape3 = obj;
-                    SurfaceKt.m2569SurfaceT9BRK9s(SizeKt.m869width3ABfNKs(ZIndexModifierKt.zIndex(companion, 1.0f), SearchBarMinWidth), shape3, m2408getContainerColor0d7_KjU, m1902contentColorForek8zF_U, f7, f8, null, ComposableLambdaKt.rememberComposableLambda(401953073, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBar$1
+                    SurfaceKt.m3014SurfaceT9BRK9s(SizeKt.m1122width3ABfNKs(ZIndexModifierKt.zIndex(companion, 1.0f), SearchBarMinWidth), shape3, m2853getContainerColor0d7_KjU, m2347contentColorForek8zF_U, f7, f8, null, ComposableLambdaKt.rememberComposableLambda(401953073, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBar$1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                             invoke(composer5, num.intValue());
@@ -2456,15 +2457,15 @@ public final class SearchBarKt {
                             } else {
                                 composer5.useNode();
                             }
-                            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer5);
-                            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer5);
+                            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer5, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                             ComposerKt.sourceInformationMarkerStart(composer5, -439279917, "C667@31842L12,673@32030L461,669@31868L623:SearchBar.kt#uh7d8r");
                             function22.invoke(composer5, 0);
@@ -2482,8 +2483,8 @@ public final class SearchBarKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1224554113, i18, -1, "androidx.compose.material3.DockedSearchBar.<anonymous>.<anonymous>.<anonymous> (SearchBar.kt:674)");
                                     }
-                                    float m7555constructorimpl = Dp.m7555constructorimpl(SearchBar_androidKt.getWindowContainerHeight(composer6, 0) * 0.6666667f);
-                                    Modifier m851heightInVpY3zN4 = SizeKt.m851heightInVpY3zN4(Modifier.Companion, ((Dp) RangesKt.coerceAtMost(Dp.m7553boximpl(SearchBarKt.getDockedExpandedTableMinHeight()), Dp.m7553boximpl(m7555constructorimpl))).m7569unboximpl(), m7555constructorimpl);
+                                    float m8160constructorimpl = Dp.m8160constructorimpl(SearchBar_androidKt.getWindowContainerHeight(composer6, 0) * 0.6666667f);
+                                    Modifier m1104heightInVpY3zN4 = SizeKt.m1104heightInVpY3zN4(Modifier.Companion, ((Dp) RangesKt.coerceAtMost(Dp.m8158boximpl(SearchBarKt.getDockedExpandedTableMinHeight()), Dp.m8158boximpl(m8160constructorimpl))).m8174unboximpl(), m8160constructorimpl);
                                     SearchBarColors searchBarColors8 = SearchBarColors.this;
                                     Function3<ColumnScope, Composer, Integer, Unit> function33 = function32;
                                     ComposerKt.sourceInformationMarkerStart(composer6, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
@@ -2491,7 +2492,7 @@ public final class SearchBarKt {
                                     ComposerKt.sourceInformationMarkerStart(composer6, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer6, 0);
                                     CompositionLocalMap currentCompositionLocalMap2 = composer6.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer6, m851heightInVpY3zN4);
+                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer6, m1104heightInVpY3zN4);
                                     Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer6, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                     if (!(composer6.getApplier() instanceof Applier)) {
@@ -2503,18 +2504,18 @@ public final class SearchBarKt {
                                     } else {
                                         composer6.useNode();
                                     }
-                                    Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer6);
-                                    Updater.m4049setimpl(m4041constructorimpl2, columnMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4467constructorimpl2 = Updater.m4467constructorimpl(composer6);
+                                    Updater.m4475setimpl(m4467constructorimpl2, columnMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer6, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                     ComposerKt.sourceInformationMarkerStart(composer6, -1564650142, "C679@32383L46,680@32450L9:SearchBar.kt#uh7d8r");
-                                    DividerKt.m2039HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors8.m2409getDividerColor0d7_KjU(), composer6, 0, 3);
+                                    DividerKt.m2484HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors8.m2854getDividerColor0d7_KjU(), composer6, 0, 3);
                                     function33.invoke(ColumnScopeInstance.INSTANCE, composer6, 6);
                                     ComposerKt.sourceInformationMarkerEnd(composer6);
                                     ComposerKt.sourceInformationMarkerEnd(composer6);
@@ -2654,7 +2655,7 @@ public final class SearchBarKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SearchBarState searchBarState = (SearchBarState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        SearchBarState searchBarState = (SearchBarState) RememberSaveableKt.m4739rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -2705,7 +2706,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2427SearchBarWuY5d9Q(final String str, final Function1<? super String, Unit> function1, final Function1<? super String, Unit> function12, final boolean z, final Function1<? super Boolean, Unit> function13, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2872SearchBarWuY5d9Q(final String str, final Function1<? super String, Unit> function1, final Function1<? super String, Unit> function12, final boolean z, final Function1<? super Boolean, Unit> function13, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         Object obj;
         int i4;
         int i5;
@@ -2741,7 +2742,7 @@ public final class SearchBarKt {
         Composer composer3;
         int i18;
         SearchBarColors searchBarColors3;
-        float m2416getTonalElevationD9Ej5fM;
+        float m2861getTonalElevationD9Ej5fM;
         WindowInsets windowInsets3;
         final MutableInteractionSource mutableInteractionSource3;
         final Function2<? super Composer, ? super Integer, Unit> function27;
@@ -2824,7 +2825,7 @@ public final class SearchBarKt {
                     } else {
                         obj4 = function22;
                         if ((i & 100663296) == 0) {
-                            i4 |= startRestartGroup.changedInstance(obj4) ? 67108864 : 33554432;
+                            i4 |= startRestartGroup.changedInstance(obj4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                     }
                     i9 = i3 & 512;
@@ -2832,7 +2833,7 @@ public final class SearchBarKt {
                         i4 |= 805306368;
                     } else if ((i & 805306368) == 0) {
                         i10 = i9;
-                        i4 |= startRestartGroup.changedInstance(function23) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i4 |= startRestartGroup.changedInstance(function23) ? 536870912 : 268435456;
                         if ((i2 & 6) == 0) {
                             if ((i3 & 1024) == 0 && startRestartGroup.changed(shape)) {
                                 i21 = 4;
@@ -2902,7 +2903,7 @@ public final class SearchBarKt {
                                             }
                                             function29 = function23;
                                             searchBarColors4 = searchBarColors;
-                                            m2416getTonalElevationD9Ej5fM = f;
+                                            m2861getTonalElevationD9Ej5fM = f;
                                             f5 = f2;
                                             windowInsets4 = windowInsets;
                                             mutableInteractionSource3 = mutableInteractionSource;
@@ -2931,15 +2932,15 @@ public final class SearchBarKt {
                                             if ((i3 & 2048) != 0) {
                                                 i18 = i4;
                                                 composer3 = startRestartGroup;
-                                                searchBarColors3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, composer3, 3072, 7);
+                                                searchBarColors3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, composer3, 3072, 7);
                                                 i15 &= -113;
                                             } else {
                                                 composer3 = startRestartGroup;
                                                 i18 = i4;
                                                 searchBarColors3 = searchBarColors;
                                             }
-                                            m2416getTonalElevationD9Ej5fM = i12 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                                            float m2415getShadowElevationD9Ej5fM = i17 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                                            m2861getTonalElevationD9Ej5fM = i12 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                                            float m2860getShadowElevationD9Ej5fM = i17 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                                             if ((i3 & 16384) != 0) {
                                                 windowInsets3 = SearchBarDefaults.INSTANCE.getWindowInsets(composer3, 6);
                                                 i15 &= -57345;
@@ -2949,14 +2950,14 @@ public final class SearchBarKt {
                                             if (i16 != 0) {
                                                 function27 = obj4;
                                                 searchBarColors4 = searchBarColors3;
-                                                f5 = m2415getShadowElevationD9Ej5fM;
+                                                f5 = m2860getShadowElevationD9Ej5fM;
                                                 windowInsets4 = windowInsets3;
                                                 mutableInteractionSource3 = null;
                                             } else {
                                                 mutableInteractionSource3 = mutableInteractionSource;
                                                 function27 = obj4;
                                                 searchBarColors4 = searchBarColors3;
-                                                f5 = m2415getShadowElevationD9Ej5fM;
+                                                f5 = m2860getShadowElevationD9Ej5fM;
                                                 windowInsets4 = windowInsets3;
                                             }
                                             function28 = function210;
@@ -2998,8 +2999,8 @@ public final class SearchBarKt {
                                         int i27 = i19 << 12;
                                         SearchBarColors searchBarColors5 = searchBarColors4;
                                         Composer composer4 = composer3;
-                                        float f6 = m2416getTonalElevationD9Ej5fM;
-                                        m2428SearchBarY92LkZI(rememberComposableLambda, z, function13, modifier2, shape4, searchBarColors5, f6, f5, windowInsets4, function3, composer4, i26 | (57344 & i27) | (458752 & i27) | (3670016 & i27) | (29360128 & i27) | (i27 & 234881024) | ((i19 << 9) & 1879048192), 0);
+                                        float f6 = m2861getTonalElevationD9Ej5fM;
+                                        m2873SearchBarY92LkZI(rememberComposableLambda, z, function13, modifier2, shape4, searchBarColors5, f6, f5, windowInsets4, function3, composer4, i26 | (57344 & i27) | (458752 & i27) | (3670016 & i27) | (29360128 & i27) | (i27 & 234881024) | ((i19 << 9) & C.ENCODING_PCM_DOUBLE), 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -3259,7 +3260,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2422DockedSearchBareWTbjVg(final String str, final Function1<? super String, Unit> function1, final Function1<? super String, Unit> function12, final boolean z, final Function1<? super Boolean, Unit> function13, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2867DockedSearchBareWTbjVg(final String str, final Function1<? super String, Unit> function1, final Function1<? super String, Unit> function12, final boolean z, final Function1<? super Boolean, Unit> function13, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Shape shape, SearchBarColors searchBarColors, float f, float f2, MutableInteractionSource mutableInteractionSource, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -3298,7 +3299,7 @@ public final class SearchBarKt {
         int i20;
         SearchBarColors searchBarColors3;
         int i21;
-        float m2416getTonalElevationD9Ej5fM;
+        float m2861getTonalElevationD9Ej5fM;
         final MutableInteractionSource mutableInteractionSource3;
         final Function2<? super Composer, ? super Integer, Unit> function27;
         SearchBarColors searchBarColors4;
@@ -3377,7 +3378,7 @@ public final class SearchBarKt {
                     } else {
                         obj4 = function22;
                         if ((i & 100663296) == 0) {
-                            i4 |= startRestartGroup.changedInstance(obj4) ? 67108864 : 33554432;
+                            i4 |= startRestartGroup.changedInstance(obj4) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         }
                     }
                     i9 = i3 & 512;
@@ -3385,7 +3386,7 @@ public final class SearchBarKt {
                         i4 |= 805306368;
                     } else if ((i & 805306368) == 0) {
                         i10 = i9;
-                        i4 |= startRestartGroup.changedInstance(function23) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i4 |= startRestartGroup.changedInstance(function23) ? 536870912 : 268435456;
                         if ((i2 & 6) == 0) {
                             if ((i3 & 1024) == 0 && startRestartGroup.changed(shape)) {
                                 i23 = 4;
@@ -3461,7 +3462,7 @@ public final class SearchBarKt {
                                             composer3 = startRestartGroup;
                                             i21 = i17;
                                             shape4 = shape;
-                                            m2416getTonalElevationD9Ej5fM = f;
+                                            m2861getTonalElevationD9Ej5fM = f;
                                             i20 = i4;
                                         } else {
                                             Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj2;
@@ -3482,7 +3483,7 @@ public final class SearchBarKt {
                                                 i20 = i4;
                                                 composer3 = startRestartGroup;
                                                 z5 = true;
-                                                searchBarColors3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, composer3, 3072, 7);
+                                                searchBarColors3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, composer3, 3072, 7);
                                                 i21 = i19 & (-113);
                                             } else {
                                                 z5 = true;
@@ -3491,19 +3492,19 @@ public final class SearchBarKt {
                                                 searchBarColors3 = searchBarColors;
                                                 i21 = i19;
                                             }
-                                            m2416getTonalElevationD9Ej5fM = i12 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                                            float m2415getShadowElevationD9Ej5fM = i14 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                                            m2861getTonalElevationD9Ej5fM = i12 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                                            float m2860getShadowElevationD9Ej5fM = i14 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                                             if (i18 != 0) {
                                                 function27 = obj4;
                                                 searchBarColors4 = searchBarColors3;
-                                                f5 = m2415getShadowElevationD9Ej5fM;
+                                                f5 = m2860getShadowElevationD9Ej5fM;
                                                 shape4 = shape3;
                                                 mutableInteractionSource3 = null;
                                             } else {
                                                 mutableInteractionSource3 = mutableInteractionSource;
                                                 function27 = obj4;
                                                 searchBarColors4 = searchBarColors3;
-                                                f5 = m2415getShadowElevationD9Ej5fM;
+                                                f5 = m2860getShadowElevationD9Ej5fM;
                                                 shape4 = shape3;
                                             }
                                             function28 = function211;
@@ -3520,8 +3521,8 @@ public final class SearchBarKt {
                                         int i27 = i20 >> 6;
                                         int i28 = i21 << 12;
                                         Composer composer4 = composer3;
-                                        float f6 = m2416getTonalElevationD9Ej5fM;
-                                        m2421DockedSearchBarEQC0FA8(ComposableLambdaKt.rememberComposableLambda(-1275782414, z5, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBar$4
+                                        float f6 = m2861getTonalElevationD9Ej5fM;
+                                        m2866DockedSearchBarEQC0FA8(ComposableLambdaKt.rememberComposableLambda(-1275782414, z5, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBar$4
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                                 invoke(composer5, num.intValue());
@@ -3778,7 +3779,7 @@ public final class SearchBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2430SearchBarImplj1jLAyQ(final Animatable<Float, AnimationVector1D> animatable, final MutableFloatState mutableFloatState, final MutableState<BackEventCompat> mutableState, final MutableState<BackEventCompat> mutableState2, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m2875SearchBarImplj1jLAyQ(final Animatable<Float, AnimationVector1D> animatable, final MutableFloatState mutableFloatState, final MutableState<BackEventCompat> mutableState, final MutableState<BackEventCompat> mutableState2, Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, Shape shape, SearchBarColors searchBarColors, float f, float f2, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -3877,13 +3878,13 @@ public final class SearchBarKt {
                     i4 |= 100663296;
                 } else if ((i & 100663296) == 0) {
                     i7 = i6;
-                    i4 |= startRestartGroup.changed(f) ? 67108864 : 33554432;
+                    i4 |= startRestartGroup.changed(f) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                     i8 = i3 & 512;
                     if (i8 == 0) {
                         i4 |= 805306368;
                     } else if ((i & 805306368) == 0) {
                         i9 = i8;
-                        i4 |= startRestartGroup.changed(f2) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                        i4 |= startRestartGroup.changed(f2) ? 536870912 : 268435456;
                         if ((i2 & 6) == 0) {
                             if ((i3 & 1024) == 0) {
                                 obj4 = windowInsets;
@@ -3939,7 +3940,7 @@ public final class SearchBarKt {
                                 if ((i3 & 128) != 0) {
                                     modifier3 = companion;
                                     i11 = 6;
-                                    searchBarColors3 = SearchBarDefaults.INSTANCE.m2411colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
+                                    searchBarColors3 = SearchBarDefaults.INSTANCE.m2856colorsKlgxPg(0L, 0L, null, startRestartGroup, 3072, 7);
                                     i12 = i17 & (-29360129);
                                 } else {
                                     modifier3 = companion;
@@ -3947,23 +3948,23 @@ public final class SearchBarKt {
                                     searchBarColors3 = obj3;
                                     i12 = i17;
                                 }
-                                float m2416getTonalElevationD9Ej5fM = i7 != 0 ? SearchBarDefaults.INSTANCE.m2416getTonalElevationD9Ej5fM() : f;
-                                float m2415getShadowElevationD9Ej5fM = i9 != 0 ? SearchBarDefaults.INSTANCE.m2415getShadowElevationD9Ej5fM() : f2;
+                                float m2861getTonalElevationD9Ej5fM = i7 != 0 ? SearchBarDefaults.INSTANCE.m2861getTonalElevationD9Ej5fM() : f;
+                                float m2860getShadowElevationD9Ej5fM = i9 != 0 ? SearchBarDefaults.INSTANCE.m2860getShadowElevationD9Ej5fM() : f2;
                                 if ((i3 & 1024) != 0) {
                                     i13 = i12;
                                     obj6 = SearchBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, i11);
                                     i14 = i10 & (-15);
                                     searchBarColors4 = searchBarColors3;
-                                    f5 = m2415getShadowElevationD9Ej5fM;
+                                    f5 = m2860getShadowElevationD9Ej5fM;
                                     shape3 = obj5;
-                                    f6 = m2416getTonalElevationD9Ej5fM;
+                                    f6 = m2861getTonalElevationD9Ej5fM;
                                 } else {
                                     obj6 = windowInsets;
                                     i13 = i12;
-                                    f5 = m2415getShadowElevationD9Ej5fM;
+                                    f5 = m2860getShadowElevationD9Ej5fM;
                                     i14 = i10;
                                     searchBarColors4 = searchBarColors3;
-                                    f6 = m2416getTonalElevationD9Ej5fM;
+                                    f6 = m2861getTonalElevationD9Ej5fM;
                                     shape3 = obj5;
                                 }
                                 modifier4 = modifier3;
@@ -4032,7 +4033,7 @@ public final class SearchBarKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1304392981, i19, -1, "androidx.compose.material3.SearchBarImpl.<anonymous> (SearchBar.kt:2119)");
                                     }
-                                    SurfaceKt.m2569SurfaceT9BRK9s(null, Shape.this, searchBarColors4.m2408getContainerColor0d7_KjU(), ColorSchemeKt.m1902contentColorForek8zF_U(searchBarColors4.m2408getContainerColor0d7_KjU(), composer3, 0), f6, f5, null, ComposableSingletons$SearchBarKt.INSTANCE.getLambda$1165377840$material3(), composer3, 12582912, 65);
+                                    SurfaceKt.m3014SurfaceT9BRK9s(null, Shape.this, searchBarColors4.m2853getContainerColor0d7_KjU(), ColorSchemeKt.m2347contentColorForek8zF_U(searchBarColors4.m2853getContainerColor0d7_KjU(), composer3, 0), f6, f5, null, ComposableSingletons$SearchBarKt.INSTANCE.getLambda$1165377840$material3(), composer3, 12582912, 65);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -4187,8 +4188,8 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SearchBarImpl_j1jLAyQ$lambda$35$lambda$34(Density density, Animatable animatable, Path path, Size size, LayoutDirection layoutDirection) {
-        float mo405toPx0680j_4 = density.mo405toPx0680j_4(Dp.m7555constructorimpl(SearchBarCornerRadius * (1.0f - ((Number) animatable.getValue()).floatValue())));
-        Path.addRoundRect$default(path, RoundRectKt.m4582RoundRectsniSvfs(androidx.compose.ui.geometry.SizeKt.m4617toRectuvyYCjk(size.m4601unboximpl()), CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_4) << 32) | (Float.floatToRawIntBits(mo405toPx0680j_4) & 4294967295L))), null, 2, null);
+        float mo434toPx0680j_4 = density.mo434toPx0680j_4(Dp.m8160constructorimpl(SearchBarCornerRadius * (1.0f - ((Number) animatable.getValue()).floatValue())));
+        Path.addRoundRect$default(path, RoundRectKt.m5158RoundRectsniSvfs(androidx.compose.ui.geometry.SizeKt.m5193toRectuvyYCjk(size.m5177unboximpl()), CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(mo434toPx0680j_4) << 32) | (Float.floatToRawIntBits(mo434toPx0680j_4) & 4294967295L))), null, 2, null);
         return Unit.INSTANCE;
     }
 
@@ -4237,7 +4238,7 @@ public final class SearchBarKt {
             i2 |= startRestartGroup.changedInstance(function22) ? 8388608 : 4194304;
         }
         if ((100663296 & i) == 0) {
-            i2 |= startRestartGroup.changedInstance(function23) ? 67108864 : 33554432;
+            i2 |= startRestartGroup.changedInstance(function23) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
         }
         if (!startRestartGroup.shouldExecute((38347923 & i2) != 38347922, i2 & 1)) {
             startRestartGroup.skipToGroupEnd();
@@ -4296,15 +4297,15 @@ public final class SearchBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2058590599, "C2181@101796L85,2182@101894L119:SearchBar.kt#uh7d8r");
             Modifier layoutId = LayoutIdKt.layoutId(Modifier.Companion, LayoutIdSurface);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -4324,15 +4325,15 @@ public final class SearchBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 329239585, "C2181@101870L9:SearchBar.kt#uh7d8r");
@@ -4361,15 +4362,15 @@ public final class SearchBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl3 = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+            if (m4467constructorimpl3.getInserting() || !Intrinsics.areEqual(m4467constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                m4467constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m4467constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
-            Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 397275701, "C2183@101987L12:SearchBar.kt#uh7d8r");
@@ -4404,15 +4405,15 @@ public final class SearchBarKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4041constructorimpl4 = Updater.m4041constructorimpl(startRestartGroup);
-                Updater.m4049setimpl(m4041constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4049setimpl(m4041constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4467constructorimpl4 = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4041constructorimpl4.getInserting() || !Intrinsics.areEqual(m4041constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                    m4041constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                    m4041constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                if (m4467constructorimpl4.getInserting() || !Intrinsics.areEqual(m4467constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                    m4467constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                    m4467constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                 }
-                Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4475setimpl(m4467constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1819747385, "C2187@102168L9:SearchBar.kt#uh7d8r");
@@ -4454,7 +4455,7 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: DockedSearchBarLayout-nbWgWpA  reason: not valid java name */
-    public static final void m2423DockedSearchBarLayoutnbWgWpA(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, final Shape shape, final SearchBarColors searchBarColors, final float f, final float f2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
+    public static final void m2868DockedSearchBarLayoutnbWgWpA(final SearchBarState searchBarState, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, final Shape shape, final SearchBarColors searchBarColors, final float f, final float f2, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
         int i2;
         Modifier modifier2;
         Composer composer2;
@@ -4523,7 +4524,7 @@ public final class SearchBarKt {
             BackHandler_androidKt.BackHandler(isExpanded, (Function0) rememberedValue2, startRestartGroup, 0, 0);
             int i3 = i2 >> 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2569SurfaceT9BRK9s(WindowInsetsPadding_androidKt.imePadding(modifier2), shape, searchBarColors.m2408getContainerColor0d7_KjU(), ColorSchemeKt.m1902contentColorForek8zF_U(searchBarColors.m2408getContainerColor0d7_KjU(), startRestartGroup, 0), f, f2, null, ComposableLambdaKt.rememberComposableLambda(-956905210, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2
+            SurfaceKt.m3014SurfaceT9BRK9s(WindowInsetsPadding_androidKt.imePadding(modifier2), shape, searchBarColors.m2853getContainerColor0d7_KjU(), ColorSchemeKt.m2347contentColorForek8zF_U(searchBarColors.m2853getContainerColor0d7_KjU(), startRestartGroup, 0), f, f2, null, ComposableLambdaKt.rememberComposableLambda(-956905210, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -4539,8 +4540,8 @@ public final class SearchBarKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-956905210, i4, -1, "androidx.compose.material3.DockedSearchBarLayout.<anonymous> (SearchBar.kt:2335)");
                     }
-                    float m7555constructorimpl = Dp.m7555constructorimpl(SearchBar_androidKt.getWindowContainerHeight(composer3, 0) * 0.6666667f);
-                    float m7569unboximpl = ((Dp) RangesKt.coerceAtMost(Dp.m7553boximpl(SearchBarKt.getDockedExpandedTableMinHeight()), Dp.m7553boximpl(m7555constructorimpl))).m7569unboximpl();
+                    float m8160constructorimpl = Dp.m8160constructorimpl(SearchBar_androidKt.getWindowContainerHeight(composer3, 0) * 0.6666667f);
+                    float m8174unboximpl = ((Dp) RangesKt.coerceAtMost(Dp.m8158boximpl(SearchBarKt.getDockedExpandedTableMinHeight()), Dp.m8158boximpl(m8160constructorimpl))).m8174unboximpl();
                     final SearchBarColors searchBarColors2 = searchBarColors;
                     final Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
                     List listOf = CollectionsKt.listOf((Object[]) new Function2[]{function2, ComposableLambdaKt.rememberComposableLambda(-1776541672, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.SearchBarKt$DockedSearchBarLayout$2.1
@@ -4578,18 +4579,18 @@ public final class SearchBarKt {
                             } else {
                                 composer4.useNode();
                             }
-                            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer4);
-                            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer4);
+                            Updater.m4475setimpl(m4467constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer4, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                             ComposerKt.sourceInformationMarkerStart(composer4, 1313930401, "C2345@108383L46,2346@108458L9:SearchBar.kt#uh7d8r");
-                            DividerKt.m2039HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors3.m2409getDividerColor0d7_KjU(), composer4, 0, 3);
+                            DividerKt.m2484HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors3.m2854getDividerColor0d7_KjU(), composer4, 0, 3);
                             function33.invoke(ColumnScopeInstance.INSTANCE, composer4, 6);
                             ComposerKt.sourceInformationMarkerEnd(composer4);
                             ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -4603,11 +4604,11 @@ public final class SearchBarKt {
                         }
                     }, composer3, 54)});
                     ComposerKt.sourceInformationMarkerStart(composer3, -462885538, "CC(remember):SearchBar.kt#9igjgp");
-                    boolean changed = composer3.changed(searchBarState) | composer3.changed(m7555constructorimpl) | composer3.changed(m7569unboximpl);
+                    boolean changed = composer3.changed(searchBarState) | composer3.changed(m8160constructorimpl) | composer3.changed(m8174unboximpl);
                     SearchBarState searchBarState2 = searchBarState;
                     Object rememberedValue3 = composer3.rememberedValue();
                     if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
-                        rememberedValue3 = (MultiContentMeasurePolicy) new SearchBarKt$DockedSearchBarLayout$2$2$1(searchBarState2, m7555constructorimpl, m7569unboximpl);
+                        rememberedValue3 = (MultiContentMeasurePolicy) new SearchBarKt$DockedSearchBarLayout$2$2$1(searchBarState2, m8160constructorimpl, m8174unboximpl);
                         composer3.updateRememberedValue(rememberedValue3);
                     }
                     MultiContentMeasurePolicy multiContentMeasurePolicy = (MultiContentMeasurePolicy) rememberedValue3;
@@ -4639,15 +4640,15 @@ public final class SearchBarKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
-                    Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4467constructorimpl = Updater.m4467constructorimpl(composer3);
+                    Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(composer3, 0);
                     composer3.endNode();
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -4682,7 +4683,7 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: FullScreenSearchBarLayout-EQC0FA8  reason: not valid java name */
-    public static final void m2426FullScreenSearchBarLayoutEQC0FA8(final SearchBarState searchBarState, final PredictiveBackState predictiveBackState, final Function2<? super Composer, ? super Integer, Unit> function2, final Modifier modifier, final Shape shape, final SearchBarColors searchBarColors, final float f, final float f2, final WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
+    public static final void m2871FullScreenSearchBarLayoutEQC0FA8(final SearchBarState searchBarState, final PredictiveBackState predictiveBackState, final Function2<? super Composer, ? super Integer, Unit> function2, final Modifier modifier, final Shape shape, final SearchBarColors searchBarColors, final float f, final float f2, final WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i) {
         int i2;
         Composer composer2;
         State state;
@@ -4718,10 +4719,10 @@ public final class SearchBarKt {
             i2 |= startRestartGroup.changed(f2) ? 8388608 : 4194304;
         }
         if ((i & 100663296) == 0) {
-            i2 |= startRestartGroup.changed(windowInsets) ? 67108864 : 33554432;
+            i2 |= startRestartGroup.changed(windowInsets) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
         }
         if ((i & 805306368) == 0) {
-            i2 |= startRestartGroup.changedInstance(function3) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+            i2 |= startRestartGroup.changedInstance(function3) ? 536870912 : 268435456;
         }
         if (!startRestartGroup.shouldExecute((i2 & 306783379) != 306783378, i2 & 1)) {
             composer2 = startRestartGroup;
@@ -4818,7 +4819,7 @@ public final class SearchBarKt {
             }
             final MutableWindowInsets mutableWindowInsets = (MutableWindowInsets) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            WindowInsets m891onlybOOhFvg = WindowInsetsKt.m891onlybOOhFvg(mutableWindowInsets.getInsets(), WindowInsetsSides.m903plusgK_yJZ4(WindowInsetsSides.Companion.m913getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m911getBottomJoeWqyM()));
+            WindowInsets m1145onlybOOhFvg = WindowInsetsKt.m1145onlybOOhFvg(mutableWindowInsets.getInsets(), WindowInsetsSides.m1157plusgK_yJZ4(WindowInsetsSides.Companion.m1167getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m1165getBottomJoeWqyM()));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019155903, "CC(remember):SearchBar.kt#9igjgp");
             int i6 = (i3 & 234881024) == 67108864 ? i4 : 0;
             Object rememberedValue6 = startRestartGroup.rememberedValue();
@@ -4857,17 +4858,17 @@ public final class SearchBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4467constructorimpl.getInserting() || !Intrinsics.areEqual(m4467constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4467constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4467constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1312429125, "C2461@113581L17,2458@113410L297,2471@113910L38,2467@113721L372,2478@114193L17,2477@114107L223:SearchBar.kt#uh7d8r");
-            Modifier padding = PaddingKt.padding(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdInputField), WindowInsetsKt.asPaddingValues(WindowInsetsKt.m891onlybOOhFvg(m891onlybOOhFvg, WindowInsetsSides.Companion.m913getHorizontalJoeWqyM()), startRestartGroup, 0));
+            Modifier padding = PaddingKt.padding(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdInputField), WindowInsetsKt.asPaddingValues(WindowInsetsKt.m1145onlybOOhFvg(m1145onlybOOhFvg, WindowInsetsSides.Companion.m1167getHorizontalJoeWqyM()), startRestartGroup, 0));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -4885,15 +4886,15 @@ public final class SearchBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4467constructorimpl2.getInserting() || !Intrinsics.areEqual(m4467constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4467constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4467constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 714795213, "C2464@113681L12:SearchBar.kt#uh7d8r");
@@ -4905,9 +4906,9 @@ public final class SearchBarKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            SurfaceKt.m2569SurfaceT9BRK9s(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdSurface), genericShape2, searchBarColors.m2408getContainerColor0d7_KjU(), ColorSchemeKt.m1902contentColorForek8zF_U(searchBarColors.m2408getContainerColor0d7_KjU(), startRestartGroup, 0), f, f2, null, ComposableSingletons$SearchBarKt.INSTANCE.m1944getLambda$1146652811$material3(), startRestartGroup, (57344 & i7) | 12582918 | (i7 & 458752), 64);
+            SurfaceKt.m3014SurfaceT9BRK9s(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdSurface), genericShape2, searchBarColors.m2853getContainerColor0d7_KjU(), ColorSchemeKt.m2347contentColorForek8zF_U(searchBarColors.m2853getContainerColor0d7_KjU(), startRestartGroup, 0), f, f2, null, ComposableSingletons$SearchBarKt.INSTANCE.m2389getLambda$1146652811$material3(), startRestartGroup, (57344 & i7) | 12582918 | (i7 & 458752), 64);
             composer2 = startRestartGroup;
-            Modifier padding2 = PaddingKt.padding(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdSearchContent), WindowInsetsKt.asPaddingValues(m891onlybOOhFvg, composer2, 0));
+            Modifier padding2 = PaddingKt.padding(LayoutIdKt.layoutId(Modifier.Companion, LayoutIdSearchContent), WindowInsetsKt.asPaddingValues(m1145onlybOOhFvg, composer2, 0));
             ComposerKt.sourceInformationMarkerStart(composer2, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer2, 0);
             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -4925,18 +4926,18 @@ public final class SearchBarKt {
             } else {
                 composer2.useNode();
             }
-            Composer m4041constructorimpl3 = Updater.m4041constructorimpl(composer2);
-            Updater.m4049setimpl(m4041constructorimpl3, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4467constructorimpl3 = Updater.m4467constructorimpl(composer2);
+            Updater.m4475setimpl(m4467constructorimpl3, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+            if (m4467constructorimpl3.getInserting() || !Intrinsics.areEqual(m4467constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                m4467constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m4467constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
-            Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(composer2, -1748770687, "C2480@114244L46,2481@114307L9:SearchBar.kt#uh7d8r");
-            DividerKt.m2039HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2409getDividerColor0d7_KjU(), composer2, 0, 3);
+            DividerKt.m2484HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2854getDividerColor0d7_KjU(), composer2, 0, 3);
             function3.invoke(ColumnScopeInstance.INSTANCE, composer2, Integer.valueOf(6 | ((i3 >> 24) & 112)));
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -4966,17 +4967,17 @@ public final class SearchBarKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit FullScreenSearchBarLayout_EQC0FA8$lambda$62$lambda$61(Shape shape, Shape shape2, Density density, SearchBarState searchBarState, MutableState mutableState, Path path, Size size, LayoutDirection layoutDirection) {
         if (shape == RoundedCornerShapeKt.getCircleShape() && shape2 == RectangleShapeKt.getRectangleShape()) {
-            float mo405toPx0680j_4 = density.mo405toPx0680j_4(Dp.m7555constructorimpl(SearchBarCornerRadius * Math.max(1.0f - searchBarState.getProgress(), transform((BackEventProgress.InProgress) mutableState.getValue()))));
-            if (mo405toPx0680j_4 < 0.001d) {
-                Path.addRect$default(path, androidx.compose.ui.geometry.SizeKt.m4617toRectuvyYCjk(size.m4601unboximpl()), null, 2, null);
+            float mo434toPx0680j_4 = density.mo434toPx0680j_4(Dp.m8160constructorimpl(SearchBarCornerRadius * Math.max(1.0f - searchBarState.getProgress(), transform((BackEventProgress.InProgress) mutableState.getValue()))));
+            if (mo434toPx0680j_4 < 0.001d) {
+                Path.addRect$default(path, androidx.compose.ui.geometry.SizeKt.m5193toRectuvyYCjk(size.m5177unboximpl()), null, 2, null);
             } else {
-                Path.addRoundRect$default(path, RoundRectKt.m4582RoundRectsniSvfs(androidx.compose.ui.geometry.SizeKt.m4617toRectuvyYCjk(size.m4601unboximpl()), CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_4) << 32) | (Float.floatToRawIntBits(mo405toPx0680j_4) & 4294967295L))), null, 2, null);
+                Path.addRoundRect$default(path, RoundRectKt.m5158RoundRectsniSvfs(androidx.compose.ui.geometry.SizeKt.m5193toRectuvyYCjk(size.m5177unboximpl()), CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(mo434toPx0680j_4) << 32) | (Float.floatToRawIntBits(mo434toPx0680j_4) & 4294967295L))), null, 2, null);
             }
         } else {
             if (searchBarState.getProgress() >= 0.5f) {
                 shape = shape2;
             }
-            OutlineKt.addOutline(path, shape.mo320createOutlinePq9zytI(size.m4601unboximpl(), layoutDirection, density));
+            OutlineKt.addOutline(path, shape.mo344createOutlinePq9zytI(size.m5177unboximpl(), layoutDirection, density));
         }
         return Unit.INSTANCE;
     }
@@ -4997,9 +4998,9 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntRect getCollapsedBounds(SearchBarState searchBarState) {
-        IntRect m7716IntRectVbeCjmY;
+        IntRect m8321IntRectVbeCjmY;
         LayoutCoordinates collapsedCoords = searchBarState.getCollapsedCoords();
-        return (collapsedCoords == null || (m7716IntRectVbeCjmY = IntRectKt.m7716IntRectVbeCjmY(IntOffsetKt.m7700roundk4lQ0M(LayoutCoordinatesKt.positionInWindow(collapsedCoords)), collapsedCoords.mo6224getSizeYbymL2g())) == null) ? IntRect.Companion.getZero() : m7716IntRectVbeCjmY;
+        return (collapsedCoords == null || (m8321IntRectVbeCjmY = IntRectKt.m8321IntRectVbeCjmY(IntOffsetKt.m8305roundk4lQ0M(LayoutCoordinatesKt.positionInWindow(collapsedCoords)), collapsedCoords.mo6826getSizeYbymL2g())) == null) ? IntRect.Companion.getZero() : m8321IntRectVbeCjmY;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5062,22 +5063,22 @@ public final class SearchBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculatePredictiveBackOffsetX-rOvwMX4  reason: not valid java name */
-    public static final int m2436calculatePredictiveBackOffsetXrOvwMX4(long j, int i, BackEventCompat backEventCompat, LayoutDirection layoutDirection, float f, float f2) {
+    public static final int m2881calculatePredictiveBackOffsetXrOvwMX4(long j, int i, BackEventCompat backEventCompat, LayoutDirection layoutDirection, float f, float f2) {
         if (backEventCompat == null || f2 == 0.0f) {
             return 0;
         }
-        return MathKt.roundToInt(((Constraints.m7508getMaxWidthimpl(j) * SearchBarPredictiveBackMaxOffsetXRatio) - i) * (1.0f - f) * f2 * (backEventCompat.getSwipeEdge() == 0 ? 1 : -1) * (layoutDirection != LayoutDirection.Ltr ? -1 : 1));
+        return MathKt.roundToInt(((Constraints.m8113getMaxWidthimpl(j) * SearchBarPredictiveBackMaxOffsetXRatio) - i) * (1.0f - f) * f2 * (backEventCompat.getSwipeEdge() == 0 ? 1 : -1) * (layoutDirection != LayoutDirection.Ltr ? -1 : 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: calculatePredictiveBackOffsetY-dzo92Q0  reason: not valid java name */
-    public static final int m2437calculatePredictiveBackOffsetYdzo92Q0(long j, int i, BackEventCompat backEventCompat, BackEventCompat backEventCompat2, int i2, int i3, float f) {
+    public static final int m2882calculatePredictiveBackOffsetYdzo92Q0(long j, int i, BackEventCompat backEventCompat, BackEventCompat backEventCompat2, int i2, int i3, float f) {
         if (backEventCompat2 == null || backEventCompat == null || f == 0.0f) {
             return 0;
         }
-        int min = Math.min(Math.max(0, ((Constraints.m7507getMaxHeightimpl(j) - i2) / 2) - i), i3);
+        int min = Math.min(Math.max(0, ((Constraints.m8112getMaxHeightimpl(j) - i2) / 2) - i), i3);
         float touchY = backEventCompat.getTouchY() - backEventCompat2.getTouchY();
-        float abs = Math.abs(touchY) / Constraints.m7507getMaxHeightimpl(j);
+        float abs = Math.abs(touchY) / Constraints.m8112getMaxHeightimpl(j);
         return MathKt.roundToInt(MathHelpersKt.lerp(0, min, abs) * f * Math.signum(touchY));
     }
 

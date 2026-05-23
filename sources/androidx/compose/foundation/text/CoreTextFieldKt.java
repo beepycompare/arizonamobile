@@ -1,6 +1,7 @@
 package androidx.compose.foundation.text;
 
 import androidx.compose.foundation.ComposeFoundationFlags;
+import androidx.compose.foundation.OverscrollEffect;
 import androidx.compose.foundation.gestures.Orientation;
 import androidx.compose.foundation.gestures.TapGestureDetectorKt;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
@@ -14,11 +15,9 @@ import androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsMod
 import androidx.compose.foundation.text.input.internal.LegacyAdaptingPlatformTextInputModifierNodeKt;
 import androidx.compose.foundation.text.input.internal.LegacyPlatformTextInputServiceAdapter;
 import androidx.compose.foundation.text.input.internal.LegacyPlatformTextInputServiceAdapter_androidKt;
-import androidx.compose.foundation.text.selection.MouseSelectionObserver;
 import androidx.compose.foundation.text.selection.OffsetProvider;
 import androidx.compose.foundation.text.selection.PlatformSelectionBehaviors_androidKt;
 import androidx.compose.foundation.text.selection.SelectedTextType;
-import androidx.compose.foundation.text.selection.SelectionGesturesKt;
 import androidx.compose.foundation.text.selection.SelectionHandleAnchor;
 import androidx.compose.foundation.text.selection.SelectionHandleInfo;
 import androidx.compose.foundation.text.selection.SelectionHandlesKt;
@@ -42,6 +41,7 @@ import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.SnapshotStateKt;
 import androidx.compose.runtime.State;
 import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.compose.runtime.internal.ComposableLambdaKt;
 import androidx.compose.runtime.saveable.RememberSaveableKt;
 import androidx.compose.runtime.saveable.Saver;
@@ -63,8 +63,6 @@ import androidx.compose.ui.graphics.drawscope.DrawScope;
 import androidx.compose.ui.hapticfeedback.HapticFeedback;
 import androidx.compose.ui.input.key.KeyEvent;
 import androidx.compose.ui.input.key.KeyInputModifierKt;
-import androidx.compose.ui.input.pointer.PointerIcon;
-import androidx.compose.ui.input.pointer.PointerIconKt;
 import androidx.compose.ui.input.pointer.PointerInputEventHandler;
 import androidx.compose.ui.input.pointer.PointerInputScope;
 import androidx.compose.ui.input.pointer.SuspendingPointerInputFilterKt;
@@ -95,7 +93,6 @@ import androidx.compose.ui.text.input.TransformedText;
 import androidx.compose.ui.text.input.VisualTransformation;
 import androidx.compose.ui.text.style.ResolvedTextDirection;
 import androidx.compose.ui.unit.Density;
-import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -119,11 +116,11 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.CoroutineStart;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: CoreTextField.kt */
-@Metadata(d1 = {"\u0000¨\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aú\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00010\u00052\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0016\u001a\u00020\u00152\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00132\b\b\u0002\u0010\u001c\u001a\u00020\u001323\b\u0002\u0010\u001d\u001a-\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00010\u001e¢\u0006\u0002\b\u001f¢\u0006\f\b \u0012\b\b!\u0012\u0004\b\b(\"\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u001f2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$H\u0001¢\u0006\u0002\u0010%\u001a0\u0010&\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010'\u001a\u00020(2\u0011\u0010)\u001a\r\u0012\u0004\u0012\u00020\u00010\u001e¢\u0006\u0002\b\u001fH\u0003¢\u0006\u0002\u0010*\u001a\u001c\u0010+\u001a\u00020\u0007*\u00020\u00072\u0006\u0010,\u001a\u00020-2\u0006\u0010'\u001a\u00020(H\u0002\u001a \u0010.\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0013H\u0000\u001a0\u00102\u001a\u00020\u00012\u0006\u00103\u001a\u0002042\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u00105\u001a\u000206H\u0002\u001a\u0010\u00107\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-H\u0002\u001a2\u00108\u001a\u00020\u0001*\u0002092\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020\r2\u0006\u00105\u001a\u000206H\u0080@¢\u0006\u0002\u0010=\u001a\u001d\u0010>\u001a\u00020\u00012\u0006\u0010'\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0013H\u0003¢\u0006\u0002\u0010@\u001a\u0015\u0010A\u001a\u00020\u00012\u0006\u0010'\u001a\u00020(H\u0001¢\u0006\u0002\u0010B\u001a \u0010C\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u00105\u001a\u000206H\u0002\u001a\u001c\u0010D\u001a\u00020\u0007*\u00020\u00072\u0006\u0010E\u001a\u00020(2\u0006\u0010F\u001a\u00020GH\u0002¨\u0006H²\u0006\n\u0010I\u001a\u00020\u0013X\u008a\u0084\u0002"}, d2 = {"CoreTextField", "", "value", "Landroidx/compose/ui/text/input/TextFieldValue;", "onValueChange", "Lkotlin/Function1;", "modifier", "Landroidx/compose/ui/Modifier;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "onTextLayout", "Landroidx/compose/ui/text/TextLayoutResult;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "softWrap", "", "maxLines", "", "minLines", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "keyboardActions", "Landroidx/compose/foundation/text/KeyboardActions;", "enabled", "readOnly", "decorationBox", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ParameterName;", "name", "innerTextField", "textScrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "(Landroidx/compose/ui/text/input/TextFieldValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/input/VisualTransformation;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;ZIILandroidx/compose/ui/text/input/ImeOptions;Landroidx/compose/foundation/text/KeyboardActions;ZZLkotlin/jvm/functions/Function3;Landroidx/compose/foundation/text/TextFieldScrollerPosition;Landroidx/compose/runtime/Composer;III)V", "CoreTextFieldRootBox", "manager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "previewKeyEventToDeselectOnBack", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/LegacyTextFieldState;", "tapToFocus", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "allowKeyboard", "startInputSession", "textInputService", "Landroidx/compose/ui/text/input/TextInputService;", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "endInputSession", "bringSelectionEndIntoView", "Landroidx/compose/foundation/relocation/BringIntoViewRequester;", "textDelegate", "Landroidx/compose/foundation/text/TextDelegate;", "textLayoutResult", "(Landroidx/compose/foundation/relocation/BringIntoViewRequester;Landroidx/compose/ui/text/input/TextFieldValue;Landroidx/compose/foundation/text/TextDelegate;Landroidx/compose/ui/text/TextLayoutResult;Landroidx/compose/ui/text/input/OffsetMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "SelectionToolbarAndHandles", "show", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;ZLandroidx/compose/runtime/Composer;I)V", "TextFieldCursorHandle", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Landroidx/compose/runtime/Composer;I)V", "notifyFocusedRect", "addContextMenuComponents", "textFieldSelectionManager", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "foundation", "writeable"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¨\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aú\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00010\u00052\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0016\u001a\u00020\u00152\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u00132\b\b\u0002\u0010\u001c\u001a\u00020\u001323\b\u0002\u0010\u001d\u001a-\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00010\u001e¢\u0006\u0002\b\u001f¢\u0006\f\b \u0012\b\b!\u0012\u0004\b\b(\"\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u001f2\n\b\u0002\u0010#\u001a\u0004\u0018\u00010$H\u0001¢\u0006\u0002\u0010%\u001a0\u0010&\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010'\u001a\u00020(2\u0011\u0010)\u001a\r\u0012\u0004\u0012\u00020\u00010\u001e¢\u0006\u0002\b\u001fH\u0003¢\u0006\u0002\u0010*\u001a\u001c\u0010+\u001a\u00020\u0007*\u00020\u00072\u0006\u0010,\u001a\u00020-2\u0006\u0010'\u001a\u00020(H\u0002\u001a \u0010.\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0013H\u0000\u001a0\u00102\u001a\u00020\u00012\u0006\u00103\u001a\u0002042\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u00105\u001a\u000206H\u0002\u001a\u0010\u00107\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-H\u0002\u001a2\u00108\u001a\u00020\u0001*\u0002092\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020\r2\u0006\u00105\u001a\u000206H\u0080@¢\u0006\u0002\u0010=\u001a\u001d\u0010>\u001a\u00020\u00012\u0006\u0010'\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0013H\u0003¢\u0006\u0002\u0010@\u001a\u0015\u0010A\u001a\u00020\u00012\u0006\u0010'\u001a\u00020(H\u0001¢\u0006\u0002\u0010B\u001a$\u0010C\u001a\u00020\u0007*\u00020\u00072\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u00105\u001a\u000206H\u0000\u001a \u0010D\u001a\u00020\u00012\u0006\u0010,\u001a\u00020-2\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u00105\u001a\u000206H\u0002\u001a\u001c\u0010E\u001a\u00020\u0007*\u00020\u00072\u0006\u0010F\u001a\u00020(2\u0006\u0010G\u001a\u00020HH\u0002¨\u0006I²\u0006\n\u0010J\u001a\u00020\u0013X\u008a\u0084\u0002"}, d2 = {"CoreTextField", "", "value", "Landroidx/compose/ui/text/input/TextFieldValue;", "onValueChange", "Lkotlin/Function1;", "modifier", "Landroidx/compose/ui/Modifier;", "textStyle", "Landroidx/compose/ui/text/TextStyle;", "visualTransformation", "Landroidx/compose/ui/text/input/VisualTransformation;", "onTextLayout", "Landroidx/compose/ui/text/TextLayoutResult;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "cursorBrush", "Landroidx/compose/ui/graphics/Brush;", "softWrap", "", "maxLines", "", "minLines", "imeOptions", "Landroidx/compose/ui/text/input/ImeOptions;", "keyboardActions", "Landroidx/compose/foundation/text/KeyboardActions;", "enabled", "readOnly", "decorationBox", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ParameterName;", "name", "innerTextField", "textScrollerPosition", "Landroidx/compose/foundation/text/TextFieldScrollerPosition;", "(Landroidx/compose/ui/text/input/TextFieldValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/input/VisualTransformation;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/ui/graphics/Brush;ZIILandroidx/compose/ui/text/input/ImeOptions;Landroidx/compose/foundation/text/KeyboardActions;ZZLkotlin/jvm/functions/Function3;Landroidx/compose/foundation/text/TextFieldScrollerPosition;Landroidx/compose/runtime/Composer;III)V", "CoreTextFieldRootBox", "manager", "Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "previewKeyEventToDeselectOnBack", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/text/LegacyTextFieldState;", "requestFocusAndShowKeyboardIfNeeded", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "allowKeyboard", "startInputSession", "textInputService", "Landroidx/compose/ui/text/input/TextInputService;", "offsetMapping", "Landroidx/compose/ui/text/input/OffsetMapping;", "endInputSession", "bringSelectionEndIntoView", "Landroidx/compose/foundation/relocation/BringIntoViewRequester;", "textDelegate", "Landroidx/compose/foundation/text/TextDelegate;", "textLayoutResult", "(Landroidx/compose/foundation/relocation/BringIntoViewRequester;Landroidx/compose/ui/text/input/TextFieldValue;Landroidx/compose/foundation/text/TextDelegate;Landroidx/compose/ui/text/TextLayoutResult;Landroidx/compose/ui/text/input/OffsetMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "SelectionToolbarAndHandles", "show", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;ZLandroidx/compose/runtime/Composer;I)V", "TextFieldCursorHandle", "(Landroidx/compose/foundation/text/selection/TextFieldSelectionManager;Landroidx/compose/runtime/Composer;I)V", "defaultTextFieldDraw", "notifyFocusedRect", "addContextMenuComponents", "textFieldSelectionManager", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "foundation", "writeable"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CoreTextFieldKt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit CoreTextField$lambda$27(TextFieldValue textFieldValue, Function1 function1, Modifier modifier, TextStyle textStyle, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, boolean z, int i, int i2, ImeOptions imeOptions, KeyboardActions keyboardActions, boolean z2, boolean z3, Function3 function3, TextFieldScrollerPosition textFieldScrollerPosition, int i3, int i4, int i5, Composer composer, int i6) {
+    public static final Unit CoreTextField$lambda$23(TextFieldValue textFieldValue, Function1 function1, Modifier modifier, TextStyle textStyle, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, boolean z, int i, int i2, ImeOptions imeOptions, KeyboardActions keyboardActions, boolean z2, boolean z3, Function3 function3, TextFieldScrollerPosition textFieldScrollerPosition, int i3, int i4, int i5, Composer composer, int i6) {
         CoreTextField(textFieldValue, function1, modifier, textStyle, visualTransformation, function12, mutableInteractionSource, brush, z, i, i2, imeOptions, keyboardActions, z2, z3, function3, textFieldScrollerPosition, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
         return Unit.INSTANCE;
     }
@@ -151,17 +148,11 @@ public final class CoreTextFieldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x0480, code lost:
-        if (r11 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L334;
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x0485, code lost:
+        if (r12 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L297;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:402:0x0918, code lost:
-        if (r11 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L302;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:444:0x0a53, code lost:
-        if (r11 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L294;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:478:0x0b36, code lost:
-        if (r11 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L285;
+    /* JADX WARN: Code restructure failed: missing block: B:407:0x0993, code lost:
+        if (r8 == androidx.compose.runtime.Composer.Companion.getEmpty()) goto L265;
      */
     /* JADX WARN: Removed duplicated region for block: B:105:0x0137  */
     /* JADX WARN: Removed duplicated region for block: B:106:0x0140  */
@@ -171,60 +162,45 @@ public final class CoreTextFieldKt {
     /* JADX WARN: Removed duplicated region for block: B:128:0x0181  */
     /* JADX WARN: Removed duplicated region for block: B:138:0x01a3  */
     /* JADX WARN: Removed duplicated region for block: B:139:0x01a6  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x01c5  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x01ee  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0241  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:351:0x078a  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x07aa  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x07e5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x081b  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x082d  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0836  */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x087c  */
-    /* JADX WARN: Removed duplicated region for block: B:386:0x08a3  */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x08a5  */
-    /* JADX WARN: Removed duplicated region for block: B:390:0x08ab  */
-    /* JADX WARN: Removed duplicated region for block: B:391:0x08ad  */
-    /* JADX WARN: Removed duplicated region for block: B:394:0x08bf  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x0910  */
-    /* JADX WARN: Removed duplicated region for block: B:404:0x091b  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x094e  */
-    /* JADX WARN: Removed duplicated region for block: B:409:0x0950  */
-    /* JADX WARN: Removed duplicated region for block: B:412:0x095d  */
-    /* JADX WARN: Removed duplicated region for block: B:419:0x0990  */
-    /* JADX WARN: Removed duplicated region for block: B:420:0x0992  */
-    /* JADX WARN: Removed duplicated region for block: B:423:0x09a3  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x09a5  */
-    /* JADX WARN: Removed duplicated region for block: B:427:0x09b2  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x020e  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x022d  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:371:0x0827  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x082f  */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x08c9  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x08cb  */
+    /* JADX WARN: Removed duplicated region for block: B:385:0x08e1  */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x08e3  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x08f4  */
+    /* JADX WARN: Removed duplicated region for block: B:393:0x0902  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x0946 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x098b  */
+    /* JADX WARN: Removed duplicated region for block: B:409:0x0996  */
+    /* JADX WARN: Removed duplicated region for block: B:413:0x09bb  */
+    /* JADX WARN: Removed duplicated region for block: B:414:0x09bd  */
+    /* JADX WARN: Removed duplicated region for block: B:417:0x09c3  */
+    /* JADX WARN: Removed duplicated region for block: B:425:0x09d7  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x0a06 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:430:0x0a01  */
+    /* JADX WARN: Removed duplicated region for block: B:431:0x0a04  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x0a36  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:443:0x0a4b  */
-    /* JADX WARN: Removed duplicated region for block: B:446:0x0a56  */
-    /* JADX WARN: Removed duplicated region for block: B:450:0x0a7b  */
-    /* JADX WARN: Removed duplicated region for block: B:451:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:454:0x0a84  */
-    /* JADX WARN: Removed duplicated region for block: B:462:0x0a99  */
-    /* JADX WARN: Removed duplicated region for block: B:467:0x0ac4  */
-    /* JADX WARN: Removed duplicated region for block: B:468:0x0ac7  */
-    /* JADX WARN: Removed duplicated region for block: B:471:0x0af7  */
-    /* JADX WARN: Removed duplicated region for block: B:477:0x0b2e  */
-    /* JADX WARN: Removed duplicated region for block: B:480:0x0b39  */
-    /* JADX WARN: Removed duplicated region for block: B:484:0x0b9e  */
-    /* JADX WARN: Removed duplicated region for block: B:489:0x0c02  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x0c19  */
-    /* JADX WARN: Removed duplicated region for block: B:499:0x0c22  */
-    /* JADX WARN: Removed duplicated region for block: B:502:0x0c72  */
-    /* JADX WARN: Removed duplicated region for block: B:504:0x0c95  */
-    /* JADX WARN: Removed duplicated region for block: B:507:0x0cba  */
-    /* JADX WARN: Removed duplicated region for block: B:509:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:440:0x0a6b  */
+    /* JADX WARN: Removed duplicated region for block: B:445:0x0ad8  */
+    /* JADX WARN: Removed duplicated region for block: B:450:0x0b3f  */
+    /* JADX WARN: Removed duplicated region for block: B:459:0x0b56  */
+    /* JADX WARN: Removed duplicated region for block: B:460:0x0b5f  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x0baa  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x0bc8  */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x0bea  */
+    /* JADX WARN: Removed duplicated region for block: B:470:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:53:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x009e  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x00b7  */
@@ -244,12 +220,12 @@ public final class CoreTextFieldKt {
         int i7;
         Object obj;
         int i8;
-        int i9;
         Object obj2;
-        int i10;
+        int i9;
         Object obj3;
+        int i10;
+        Object obj4;
         int i11;
-        SolidColor solidColor;
         int i12;
         int i13;
         int i14;
@@ -265,37 +241,38 @@ public final class CoreTextFieldKt {
         int i24;
         int i25;
         int i26;
+        Composer composer2;
         final int i27;
-        final KeyboardActions keyboardActions2;
+        final ImeOptions imeOptions2;
+        KeyboardActions keyboardActions2;
         final boolean z4;
         final Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function32;
         final TextFieldScrollerPosition textFieldScrollerPosition2;
-        Composer composer2;
-        final Brush brush2;
         final MutableInteractionSource mutableInteractionSource2;
         final Function1<? super TextLayoutResult, Unit> function13;
         final TextStyle textStyle2;
-        final Modifier modifier2;
         final VisualTransformation visualTransformation2;
+        final Brush brush2;
         final boolean z5;
         final int i28;
-        final ImeOptions imeOptions2;
         final boolean z6;
         ScopeUpdateScope endRestartGroup;
+        Function1<? super TextLayoutResult, Unit> function14;
         MutableInteractionSource mutableInteractionSource3;
+        SolidColor solidColor;
         ImeOptions imeOptions3;
-        KeyboardActions keyboardActions3;
         Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$559628295$foundation;
         TextFieldScrollerPosition textFieldScrollerPosition3;
         boolean z7;
         boolean z8;
         int i29;
-        final Function1<? super TextLayoutResult, Unit> function14;
+        final Function1<? super TextLayoutResult, Unit> function15;
+        Object obj5;
+        int i30;
         boolean z9;
         VisualTransformation visualTransformation3;
-        Modifier modifier3;
+        KeyboardActions keyboardActions3;
         ImeOptions imeOptions4;
-        int i30;
         int i31;
         Brush brush3;
         MutableInteractionSource mutableInteractionSource4;
@@ -310,59 +287,46 @@ public final class CoreTextFieldKt {
         boolean z10;
         FontFamily.Resolver resolver;
         FocusManager focusManager;
-        final LegacyTextFieldState legacyTextFieldState;
+        UndoManager undoManager;
+        final TextInputService textInputService;
         boolean z11;
         boolean changedInstance;
-        final TextFieldSelectionManager textFieldSelectionManager;
-        final LegacyTextFieldState legacyTextFieldState2;
-        boolean z12;
-        final TextInputService textInputService;
-        ImeOptions imeOptions5;
+        Object rememberedValue;
         final OffsetMapping offsetMapping;
+        boolean z12;
+        boolean z13;
+        TextInputService textInputService2;
+        TextFieldValue textFieldValue2;
+        ImeOptions imeOptions5;
+        TextFieldSelectionManager textFieldSelectionManager;
         CoroutineScope coroutineScope;
         BringIntoViewRequester bringIntoViewRequester;
-        VisualTransformation visualTransformation4;
-        String str;
-        boolean z13;
-        final TextFieldSelectionManager textFieldSelectionManager2;
-        boolean changed;
+        ImeOptions imeOptions6;
         boolean z14;
         boolean z15;
-        boolean z16;
-        CoreTextFieldKt$CoreTextField$5$1 rememberedValue;
-        State state;
+        final TextInputService textInputService3;
+        ImeOptions imeOptions7;
+        CoreTextFieldKt$CoreTextField$5$1 coreTextFieldKt$CoreTextField$5$1;
+        final ImeOptions imeOptions8;
+        final boolean z16;
         boolean changedInstance2;
-        Object rememberedValue2;
+        final WindowInfo windowInfo2;
+        WindowInfo windowInfo3;
         boolean changedInstance3;
-        Object rememberedValue3;
-        FocusRequester focusRequester;
-        boolean z17;
-        final ImeOptions imeOptions6;
+        Modifier modifier2;
         boolean changedInstance4;
-        final boolean z18;
+        Object rememberedValue2;
+        final boolean z17;
+        boolean changed;
+        Object rememberedValue3;
         boolean changedInstance5;
         Object rememberedValue4;
-        final TextFieldValue textFieldValue2;
-        final WindowInfo windowInfo2;
-        boolean changedInstance6;
-        Object rememberedValue5;
-        boolean z19;
-        WindowInfo windowInfo3;
-        final LegacyTextFieldState legacyTextFieldState3;
-        boolean changedInstance7;
-        Modifier modifier4;
-        boolean changedInstance8;
-        Object rememberedValue6;
-        boolean changed2;
-        int i33;
-        boolean changedInstance9;
-        Object rememberedValue7;
-        final boolean z20;
+        final boolean z18;
         Modifier.Companion companion2;
-        String str2;
-        int i34;
+        String str;
+        int i33;
         Composer startRestartGroup = composer.startRestartGroup(31062401);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CoreTextField)N(value,onValueChange,modifier,textStyle,visualTransformation,onTextLayout,interactionSource,cursorBrush,softWrap,maxLines,minLines,imeOptions,keyboardActions,enabled,readOnly,decorationBox,textScrollerPosition)213@12062L29,214@12132L58,215@12236L72,220@12366L7,221@12427L7,222@12495L7,223@12560L7,224@12605L7,225@12674L7,246@13516L277,258@14098L21,260@14144L453,289@14997L26,292@15090L24,293@15148L37,295@15205L51,301@15494L7,303@15589L7,304@15646L7,314@16020L206,327@16443L1514,362@18064L42,363@18132L971,363@18111L992,389@19173L28,390@19269L992,412@20352L177,421@20630L577,439@21278L1606,492@23496L48,492@23470L74,494@23579L503,494@23550L532,526@24756L987,545@25860L7,546@25917L7,550@26055L327,559@26411L35,587@27673L5409,587@27620L5462:CoreTextField.kt#423gt5");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CoreTextField)N(value,onValueChange,modifier,textStyle,visualTransformation,onTextLayout,interactionSource,cursorBrush,softWrap,maxLines,minLines,imeOptions,keyboardActions,enabled,readOnly,decorationBox,textScrollerPosition)209@11803L29,210@11873L58,211@11977L72,216@12107L7,217@12168L7,218@12236L7,219@12301L7,220@12346L7,221@12415L7,242@13257L277,254@13839L21,256@13885L453,285@14738L26,288@14831L24,289@14889L37,291@14946L51,297@15235L7,299@15330L7,300@15387L7,310@15761L206,323@16184L1514,358@17805L42,359@17873L971,359@17852L992,385@18889L196,398@19232L1606,452@21467L48,452@21441L74,454@21550L503,454@21521L532,486@22727L987,505@23831L7,506@23888L7,510@24026L327,519@24382L35,547@25644L5409,547@25591L5462:CoreTextField.kt#423gt5");
         if ((i3 & 6) == 0) {
             i6 = (startRestartGroup.changed(textFieldValue) ? 4 : 2) | i3;
         } else {
@@ -371,8 +335,8 @@ public final class CoreTextFieldKt {
         if ((i3 & 48) == 0) {
             i6 |= startRestartGroup.changedInstance(function1) ? 32 : 16;
         }
-        int i35 = i5 & 4;
-        if (i35 != 0) {
+        int i34 = i5 & 4;
+        if (i34 != 0) {
             i6 |= RendererCapabilities.DECODER_SUPPORT_MASK;
         } else if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             companion = modifier;
@@ -387,49 +351,46 @@ public final class CoreTextFieldKt {
                 if (i8 != 0) {
                     i6 |= 24576;
                 } else if ((i3 & 24576) == 0) {
-                    i6 |= startRestartGroup.changed(visualTransformation) ? 16384 : 8192;
+                    obj2 = visualTransformation;
+                    i6 |= startRestartGroup.changed(obj2) ? 16384 : 8192;
                     i9 = i5 & 32;
                     if (i9 == 0) {
                         i6 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                        obj2 = function12;
+                        obj3 = function12;
                     } else {
-                        obj2 = function12;
+                        obj3 = function12;
                         if ((i3 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                            i6 |= startRestartGroup.changedInstance(obj2) ? 131072 : 65536;
+                            i6 |= startRestartGroup.changedInstance(obj3) ? 131072 : 65536;
                         }
                     }
                     i10 = i5 & 64;
                     if (i10 == 0) {
                         i6 |= 1572864;
-                        obj3 = mutableInteractionSource;
+                        obj4 = mutableInteractionSource;
                     } else {
-                        obj3 = mutableInteractionSource;
+                        obj4 = mutableInteractionSource;
                         if ((i3 & 1572864) == 0) {
-                            i6 |= startRestartGroup.changed(obj3) ? 1048576 : 524288;
+                            i6 |= startRestartGroup.changed(obj4) ? 1048576 : 524288;
                         }
                     }
                     i11 = i5 & 128;
                     if (i11 == 0) {
                         i6 |= 12582912;
-                        solidColor = brush;
-                    } else {
-                        solidColor = brush;
-                        if ((i3 & 12582912) == 0) {
-                            i6 |= startRestartGroup.changed(solidColor) ? 8388608 : 4194304;
-                        }
+                    } else if ((i3 & 12582912) == 0) {
+                        i6 |= startRestartGroup.changed(brush) ? 8388608 : 4194304;
                     }
                     i12 = i5 & 256;
                     if (i12 == 0) {
                         i6 |= 100663296;
                     } else if ((i3 & 100663296) == 0) {
                         i13 = i12;
-                        i6 |= startRestartGroup.changed(z) ? 67108864 : 33554432;
+                        i6 |= startRestartGroup.changed(z) ? 67108864 : GroupFlagsKt.HasAuxSlotFlag;
                         i14 = i5 & 512;
                         if (i14 != 0) {
                             i6 |= 805306368;
                         } else if ((i3 & 805306368) == 0) {
                             i15 = i14;
-                            i6 |= startRestartGroup.changed(i) ? C.BUFFER_FLAG_LAST_SAMPLE : 268435456;
+                            i6 |= startRestartGroup.changed(i) ? 536870912 : 268435456;
                             i16 = i5 & 1024;
                             if (i16 == 0) {
                                 i18 = i4 | 6;
@@ -443,1532 +404,1155 @@ public final class CoreTextFieldKt {
                             }
                             if ((i4 & 48) == 0) {
                                 if ((i5 & 2048) == 0 && startRestartGroup.changed(imeOptions)) {
-                                    i34 = 32;
-                                    i18 |= i34;
+                                    i33 = 32;
+                                    i18 |= i33;
                                 }
-                                i34 = 16;
-                                i18 |= i34;
+                                i33 = 16;
+                                i18 |= i33;
                             }
-                            int i36 = i18;
+                            int i35 = i18;
                             i19 = i5 & 4096;
                             if (i19 == 0) {
-                                i20 = i36 | RendererCapabilities.DECODER_SUPPORT_MASK;
+                                i20 = i35 | RendererCapabilities.DECODER_SUPPORT_MASK;
                             } else if ((i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-                                i20 = i36 | (startRestartGroup.changed(keyboardActions) ? 256 : 128);
+                                i20 = i35 | (startRestartGroup.changed(keyboardActions) ? 256 : 128);
                             } else {
-                                i20 = i36;
+                                i20 = i35;
                             }
                             i21 = i5 & 8192;
                             if (i21 == 0) {
                                 i22 = i20 | 3072;
                             } else {
-                                int i37 = i20;
+                                int i36 = i20;
                                 if ((i4 & 3072) == 0) {
-                                    i22 = i37 | (startRestartGroup.changed(z2) ? 2048 : 1024);
-                                } else {
-                                    i22 = i37;
+                                    i36 |= startRestartGroup.changed(z2) ? 2048 : 1024;
                                 }
+                                i22 = i36;
                             }
                             i23 = i5 & 16384;
                             if (i23 == 0) {
                                 i24 = i22 | 24576;
                             } else {
-                                i24 = i22;
+                                int i37 = i22;
                                 if ((i4 & 24576) == 0) {
-                                    i24 |= startRestartGroup.changed(z3) ? 16384 : 8192;
-                                    i25 = i5 & 32768;
-                                    if (i25 != 0) {
-                                        i24 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
-                                    } else if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
-                                        i24 |= startRestartGroup.changedInstance(function3) ? 131072 : 65536;
+                                    i24 = i37 | (startRestartGroup.changed(z3) ? 16384 : 8192);
+                                } else {
+                                    i24 = i37;
+                                }
+                            }
+                            i25 = i5 & 32768;
+                            if (i25 == 0) {
+                                i24 |= ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE;
+                            } else if ((i4 & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 0) {
+                                i24 |= startRestartGroup.changedInstance(function3) ? 131072 : 65536;
+                            }
+                            i26 = i5 & 65536;
+                            if (i26 == 0) {
+                                i24 |= 1572864;
+                            } else if ((i4 & 1572864) == 0) {
+                                i24 |= startRestartGroup.changed(textFieldScrollerPosition) ? 1048576 : 524288;
+                            }
+                            if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+                                startRestartGroup.startDefaults();
+                                ComposerKt.sourceInformation(startRestartGroup, "194@11128L2");
+                                if ((i3 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
+                                    startRestartGroup.skipToGroupEnd();
+                                    if ((i5 & 2048) != 0) {
+                                        i24 &= -113;
                                     }
-                                    i26 = i5 & 65536;
-                                    if (i26 != 0) {
-                                        i24 |= 1572864;
-                                    } else if ((i4 & 1572864) == 0) {
-                                        i24 |= startRestartGroup.changed(textFieldScrollerPosition) ? 1048576 : 524288;
+                                    z9 = z;
+                                    i31 = i;
+                                    imeOptions4 = imeOptions;
+                                    z7 = z2;
+                                    z8 = z3;
+                                    lambda$559628295$foundation = function3;
+                                    textFieldScrollerPosition3 = textFieldScrollerPosition;
+                                    mutableInteractionSource4 = obj4;
+                                    function15 = obj3;
+                                    obj5 = companion;
+                                    visualTransformation3 = obj2;
+                                    i29 = i24;
+                                    brush3 = brush;
+                                    i30 = i2;
+                                    keyboardActions3 = keyboardActions;
+                                } else {
+                                    if (i34 != 0) {
+                                        companion = Modifier.Companion;
                                     }
-                                    if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
-                                        startRestartGroup.startDefaults();
-                                        ComposerKt.sourceInformation(startRestartGroup, "198@11387L2");
-                                        if ((i3 & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
-                                            startRestartGroup.skipToGroupEnd();
-                                            if ((i5 & 2048) != 0) {
-                                                i24 &= -113;
-                                            }
-                                            MutableInteractionSource mutableInteractionSource5 = obj3;
-                                            brush3 = solidColor;
-                                            mutableInteractionSource4 = mutableInteractionSource5;
-                                            visualTransformation3 = visualTransformation;
-                                            i31 = i;
-                                            i30 = i2;
-                                            keyboardActions3 = keyboardActions;
-                                            z7 = z2;
-                                            z8 = z3;
-                                            lambda$559628295$foundation = function3;
-                                            textFieldScrollerPosition3 = textFieldScrollerPosition;
-                                            function14 = obj2;
-                                            modifier3 = companion;
-                                            i29 = i24;
-                                            z9 = z;
-                                            imeOptions4 = imeOptions;
-                                        } else {
-                                            if (i35 != 0) {
-                                                companion = Modifier.Companion;
-                                            }
-                                            if (i7 != 0) {
-                                                obj = TextStyle.Companion.getDefault();
-                                            }
-                                            VisualTransformation none = i8 != 0 ? VisualTransformation.Companion.getNone() : visualTransformation;
-                                            if (i9 != 0) {
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213794269, "CC(remember):CoreTextField.kt#9igjgp");
-                                                Object rememberedValue8 = startRestartGroup.rememberedValue();
-                                                if (rememberedValue8 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue8 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda17
-                                                        @Override // kotlin.jvm.functions.Function1
-                                                        public final Object invoke(Object obj4) {
-                                                            Unit CoreTextField$lambda$0$0;
-                                                            CoreTextField$lambda$0$0 = CoreTextFieldKt.CoreTextField$lambda$0$0((TextLayoutResult) obj4);
-                                                            return CoreTextField$lambda$0$0;
-                                                        }
-                                                    };
-                                                    startRestartGroup.updateRememberedValue(rememberedValue8);
-                                                }
-                                                obj2 = (Function1) rememberedValue8;
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            }
-                                            if (i10 != 0) {
-                                                obj3 = null;
-                                            }
-                                            if (i11 != 0) {
-                                                mutableInteractionSource3 = obj3;
-                                                solidColor = new SolidColor(Color.Companion.m4808getUnspecified0d7_KjU(), null);
-                                            } else {
-                                                mutableInteractionSource3 = obj3;
-                                            }
-                                            boolean z21 = i13 != 0 ? true : z;
-                                            int i38 = i15 != 0 ? Integer.MAX_VALUE : i;
-                                            int i39 = i17 != 0 ? 1 : i2;
-                                            if ((i5 & 2048) != 0) {
-                                                imeOptions3 = ImeOptions.Companion.getDefault();
-                                                i24 &= -113;
-                                            } else {
-                                                imeOptions3 = imeOptions;
-                                            }
-                                            keyboardActions3 = i19 != 0 ? KeyboardActions.Companion.getDefault() : keyboardActions;
-                                            boolean z22 = i21 != 0 ? true : z2;
-                                            boolean z23 = i23 != 0 ? false : z3;
-                                            lambda$559628295$foundation = i25 != 0 ? ComposableSingletons$CoreTextFieldKt.INSTANCE.getLambda$559628295$foundation() : function3;
-                                            textFieldScrollerPosition3 = i26 != 0 ? null : textFieldScrollerPosition;
-                                            z7 = z22;
-                                            z8 = z23;
-                                            i29 = i24;
-                                            function14 = obj2;
-                                            z9 = z21;
-                                            visualTransformation3 = none;
-                                            modifier3 = companion;
-                                            imeOptions4 = imeOptions3;
-                                            i30 = i39;
-                                            i31 = i38;
-                                            brush3 = solidColor;
-                                            mutableInteractionSource4 = mutableInteractionSource3;
-                                        }
-                                        startRestartGroup.endDefaults();
-                                        if (ComposerKt.isTraceInProgress()) {
-                                            brush4 = brush3;
-                                            ComposerKt.traceEventStart(31062401, i6, i29, "androidx.compose.foundation.text.CoreTextField (CoreTextField.kt:212)");
-                                        } else {
-                                            brush4 = brush3;
-                                        }
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213772642, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue9 = startRestartGroup.rememberedValue();
-                                        if (rememberedValue9 == Composer.Companion.getEmpty()) {
-                                            rememberedValue9 = new FocusRequester();
-                                            startRestartGroup.updateRememberedValue(rememberedValue9);
-                                        }
-                                        final FocusRequester focusRequester2 = (FocusRequester) rememberedValue9;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213770373, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue10 = startRestartGroup.rememberedValue();
-                                        int i40 = i6;
-                                        if (rememberedValue10 == Composer.Companion.getEmpty()) {
-                                            rememberedValue10 = LegacyPlatformTextInputServiceAdapter_androidKt.createLegacyPlatformTextInputServiceAdapter();
-                                            startRestartGroup.updateRememberedValue(rememberedValue10);
-                                        }
-                                        LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter2 = (LegacyPlatformTextInputServiceAdapter) rememberedValue10;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213767031, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue11 = startRestartGroup.rememberedValue();
-                                        boolean z24 = z9;
-                                        if (rememberedValue11 == Composer.Companion.getEmpty()) {
-                                            rememberedValue11 = new TextInputService(legacyPlatformTextInputServiceAdapter2);
-                                            startRestartGroup.updateRememberedValue(rememberedValue11);
-                                        }
-                                        final TextInputService textInputService2 = (TextInputService) rememberedValue11;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        TextStyle textStyle4 = obj;
-                                        final int i41 = i30;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final Density density = (Density) consume;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        FontFamily.Resolver resolver2 = (FontFamily.Resolver) consume2;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume3 = startRestartGroup.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        long m1675getBackgroundColor0d7_KjU = ((TextSelectionColors) consume3).m1675getBackgroundColor0d7_KjU();
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume4 = startRestartGroup.consume(CompositionLocalsKt.getLocalFocusManager());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        FocusManager focusManager2 = (FocusManager) consume4;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume5 = startRestartGroup.consume(CompositionLocalsKt.getLocalWindowInfo());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        WindowInfo windowInfo4 = (WindowInfo) consume5;
-                                        KeyboardActions keyboardActions4 = keyboardActions3;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume6 = startRestartGroup.consume(CompositionLocalsKt.getLocalSoftwareKeyboardController());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        SoftwareKeyboardController softwareKeyboardController = (SoftwareKeyboardController) consume6;
-                                        final Orientation orientation = (i31 == 1 && !z24 && imeOptions4.getSingleLine()) ? Orientation.Horizontal : Orientation.Vertical;
-                                        Modifier modifier5 = modifier3;
-                                        if (textFieldScrollerPosition3 != null) {
-                                            legacyPlatformTextInputServiceAdapter = legacyPlatformTextInputServiceAdapter2;
-                                            windowInfo = windowInfo4;
-                                            i32 = i31;
-                                            startRestartGroup.startReplaceGroup(-213745742);
-                                            startRestartGroup.endReplaceGroup();
-                                            textFieldScrollerPosition4 = textFieldScrollerPosition3;
-                                        } else {
-                                            startRestartGroup.startReplaceGroup(-213744626);
-                                            ComposerKt.sourceInformation(startRestartGroup, "232@13005L70,232@12934L141");
-                                            Object[] objArr = {orientation};
-                                            legacyPlatformTextInputServiceAdapter = legacyPlatformTextInputServiceAdapter2;
-                                            Saver<TextFieldScrollerPosition, Object> saver = TextFieldScrollerPosition.Companion.getSaver();
-                                            i32 = i31;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213742425, "CC(remember):CoreTextField.kt#9igjgp");
-                                            boolean changed3 = startRestartGroup.changed(orientation.ordinal());
-                                            Object rememberedValue12 = startRestartGroup.rememberedValue();
-                                            if (changed3) {
-                                                windowInfo = windowInfo4;
-                                            } else {
-                                                windowInfo = windowInfo4;
-                                            }
-                                            rememberedValue12 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda2
-                                                @Override // kotlin.jvm.functions.Function0
-                                                public final Object invoke() {
-                                                    TextFieldScrollerPosition CoreTextField$lambda$4$0;
-                                                    CoreTextField$lambda$4$0 = CoreTextFieldKt.CoreTextField$lambda$4$0(Orientation.this);
-                                                    return CoreTextField$lambda$4$0;
+                                    if (i7 != 0) {
+                                        obj = TextStyle.Companion.getDefault();
+                                    }
+                                    if (i8 != 0) {
+                                        obj2 = VisualTransformation.Companion.getNone();
+                                    }
+                                    if (i9 != 0) {
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213794269, "CC(remember):CoreTextField.kt#9igjgp");
+                                        Object rememberedValue5 = startRestartGroup.rememberedValue();
+                                        if (rememberedValue5 == Composer.Companion.getEmpty()) {
+                                            rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda11
+                                                @Override // kotlin.jvm.functions.Function1
+                                                public final Object invoke(Object obj6) {
+                                                    Unit CoreTextField$lambda$0$0;
+                                                    CoreTextField$lambda$0$0 = CoreTextFieldKt.CoreTextField$lambda$0$0((TextLayoutResult) obj6);
+                                                    return CoreTextField$lambda$0$0;
                                                 }
                                             };
-                                            startRestartGroup.updateRememberedValue(rememberedValue12);
-                                            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            textFieldScrollerPosition4 = (TextFieldScrollerPosition) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue12, startRestartGroup, 0);
-                                            startRestartGroup.endReplaceGroup();
+                                            startRestartGroup.updateRememberedValue(rememberedValue5);
                                         }
-                                        if (textFieldScrollerPosition4.getOrientation() != orientation) {
-                                            if (orientation == Orientation.Vertical) {
-                                                str2 = "only single-line, non-wrap text fields can scroll horizontally";
-                                            } else {
-                                                str2 = "single-line, non-wrap text fields can only scroll horizontally";
-                                            }
-                                            throw new IllegalArgumentException("Mismatching scroller orientation; ".concat(str2));
+                                        function14 = (Function1) rememberedValue5;
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    } else {
+                                        function14 = obj3;
+                                    }
+                                    if (i10 != 0) {
+                                        obj4 = null;
+                                    }
+                                    if (i11 != 0) {
+                                        mutableInteractionSource3 = obj4;
+                                        solidColor = new SolidColor(Color.Companion.m5384getUnspecified0d7_KjU(), null);
+                                    } else {
+                                        mutableInteractionSource3 = obj4;
+                                        solidColor = brush;
+                                    }
+                                    boolean z19 = i13 != 0 ? true : z;
+                                    int i38 = i15 != 0 ? Integer.MAX_VALUE : i;
+                                    int i39 = i17 != 0 ? 1 : i2;
+                                    if ((i5 & 2048) != 0) {
+                                        imeOptions3 = ImeOptions.Companion.getDefault();
+                                        i24 &= -113;
+                                    } else {
+                                        imeOptions3 = imeOptions;
+                                    }
+                                    KeyboardActions keyboardActions4 = i19 != 0 ? KeyboardActions.Companion.getDefault() : keyboardActions;
+                                    boolean z20 = i21 != 0 ? true : z2;
+                                    boolean z21 = i23 != 0 ? false : z3;
+                                    lambda$559628295$foundation = i25 != 0 ? ComposableSingletons$CoreTextFieldKt.INSTANCE.getLambda$559628295$foundation() : function3;
+                                    textFieldScrollerPosition3 = i26 != 0 ? null : textFieldScrollerPosition;
+                                    z7 = z20;
+                                    z8 = z21;
+                                    i29 = i24;
+                                    function15 = function14;
+                                    obj5 = companion;
+                                    i30 = i39;
+                                    z9 = z19;
+                                    visualTransformation3 = obj2;
+                                    keyboardActions3 = keyboardActions4;
+                                    imeOptions4 = imeOptions3;
+                                    i31 = i38;
+                                    brush3 = solidColor;
+                                    mutableInteractionSource4 = mutableInteractionSource3;
+                                }
+                                startRestartGroup.endDefaults();
+                                if (ComposerKt.isTraceInProgress()) {
+                                    brush4 = brush3;
+                                    ComposerKt.traceEventStart(31062401, i6, i29, "androidx.compose.foundation.text.CoreTextField (CoreTextField.kt:208)");
+                                } else {
+                                    brush4 = brush3;
+                                }
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213772642, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue6 = startRestartGroup.rememberedValue();
+                                if (rememberedValue6 == Composer.Companion.getEmpty()) {
+                                    rememberedValue6 = new FocusRequester();
+                                    startRestartGroup.updateRememberedValue(rememberedValue6);
+                                }
+                                FocusRequester focusRequester = (FocusRequester) rememberedValue6;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213770373, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue7 = startRestartGroup.rememberedValue();
+                                int i40 = i6;
+                                if (rememberedValue7 == Composer.Companion.getEmpty()) {
+                                    rememberedValue7 = LegacyPlatformTextInputServiceAdapter_androidKt.createLegacyPlatformTextInputServiceAdapter();
+                                    startRestartGroup.updateRememberedValue(rememberedValue7);
+                                }
+                                LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter2 = (LegacyPlatformTextInputServiceAdapter) rememberedValue7;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213767031, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue8 = startRestartGroup.rememberedValue();
+                                boolean z22 = z9;
+                                if (rememberedValue8 == Composer.Companion.getEmpty()) {
+                                    rememberedValue8 = new TextInputService(legacyPlatformTextInputServiceAdapter2);
+                                    startRestartGroup.updateRememberedValue(rememberedValue8);
+                                }
+                                TextInputService textInputService4 = (TextInputService) rememberedValue8;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                TextStyle textStyle4 = obj;
+                                final int i41 = i30;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                final Density density = (Density) consume;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalFontFamilyResolver());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                FontFamily.Resolver resolver2 = (FontFamily.Resolver) consume2;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume3 = startRestartGroup.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                long m2120getBackgroundColor0d7_KjU = ((TextSelectionColors) consume3).m2120getBackgroundColor0d7_KjU();
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume4 = startRestartGroup.consume(CompositionLocalsKt.getLocalFocusManager());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                FocusManager focusManager2 = (FocusManager) consume4;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume5 = startRestartGroup.consume(CompositionLocalsKt.getLocalWindowInfo());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                WindowInfo windowInfo4 = (WindowInfo) consume5;
+                                keyboardActions2 = keyboardActions3;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume6 = startRestartGroup.consume(CompositionLocalsKt.getLocalSoftwareKeyboardController());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                SoftwareKeyboardController softwareKeyboardController = (SoftwareKeyboardController) consume6;
+                                final Orientation orientation = (i31 == 1 && !z22 && imeOptions4.getSingleLine()) ? Orientation.Horizontal : Orientation.Vertical;
+                                Modifier modifier3 = obj5;
+                                if (textFieldScrollerPosition3 != null) {
+                                    legacyPlatformTextInputServiceAdapter = legacyPlatformTextInputServiceAdapter2;
+                                    windowInfo = windowInfo4;
+                                    i32 = i31;
+                                    startRestartGroup.startReplaceGroup(-213745742);
+                                    startRestartGroup.endReplaceGroup();
+                                    textFieldScrollerPosition4 = textFieldScrollerPosition3;
+                                } else {
+                                    startRestartGroup.startReplaceGroup(-213744626);
+                                    ComposerKt.sourceInformation(startRestartGroup, "228@12746L70,228@12675L141");
+                                    Object[] objArr = {orientation};
+                                    legacyPlatformTextInputServiceAdapter = legacyPlatformTextInputServiceAdapter2;
+                                    Saver<TextFieldScrollerPosition, Object> saver = TextFieldScrollerPosition.Companion.getSaver();
+                                    i32 = i31;
+                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213742425, "CC(remember):CoreTextField.kt#9igjgp");
+                                    boolean changed2 = startRestartGroup.changed(orientation.ordinal());
+                                    Object rememberedValue9 = startRestartGroup.rememberedValue();
+                                    if (changed2) {
+                                        windowInfo = windowInfo4;
+                                    } else {
+                                        windowInfo = windowInfo4;
+                                    }
+                                    rememberedValue9 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda18
+                                        @Override // kotlin.jvm.functions.Function0
+                                        public final Object invoke() {
+                                            TextFieldScrollerPosition CoreTextField$lambda$4$0;
+                                            CoreTextField$lambda$4$0 = CoreTextFieldKt.CoreTextField$lambda$4$0(Orientation.this);
+                                            return CoreTextField$lambda$4$0;
                                         }
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213725866, "CC(remember):CoreTextField.kt#9igjgp");
-                                        int i42 = i40 & 14;
-                                        boolean z25 = (i42 == 4) | ((i40 & 57344) == 16384);
-                                        TransformedText rememberedValue13 = startRestartGroup.rememberedValue();
-                                        if (z25 || rememberedValue13 == Composer.Companion.getEmpty()) {
-                                            TransformedText filterWithValidation = ValidatingOffsetMappingKt.filterWithValidation(visualTransformation3, textFieldValue.getAnnotatedString());
-                                            TextRange m7252getCompositionMzsxiRA = textFieldValue.m7252getCompositionMzsxiRA();
-                                            if (m7252getCompositionMzsxiRA != null) {
-                                                textFieldScrollerPosition5 = textFieldScrollerPosition4;
-                                                TransformedText m1261applyCompositionDecoration72CqOWE = TextFieldDelegate.Companion.m1261applyCompositionDecoration72CqOWE(m7252getCompositionMzsxiRA.m7007unboximpl(), filterWithValidation);
-                                                if (m1261applyCompositionDecoration72CqOWE != null) {
-                                                    rememberedValue13 = m1261applyCompositionDecoration72CqOWE;
-                                                    startRestartGroup.updateRememberedValue(rememberedValue13);
+                                    };
+                                    startRestartGroup.updateRememberedValue(rememberedValue9);
+                                    ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                    textFieldScrollerPosition4 = (TextFieldScrollerPosition) RememberSaveableKt.m4739rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue9, startRestartGroup, 0);
+                                    startRestartGroup.endReplaceGroup();
+                                }
+                                if (textFieldScrollerPosition4.getOrientation() != orientation) {
+                                    if (orientation == Orientation.Vertical) {
+                                        str = "only single-line, non-wrap text fields can scroll horizontally";
+                                    } else {
+                                        str = "single-line, non-wrap text fields can only scroll horizontally";
+                                    }
+                                    throw new IllegalArgumentException("Mismatching scroller orientation; ".concat(str));
+                                }
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213725866, "CC(remember):CoreTextField.kt#9igjgp");
+                                int i42 = i40 & 14;
+                                boolean z23 = (i42 == 4) | ((i40 & 57344) == 16384);
+                                TransformedText rememberedValue10 = startRestartGroup.rememberedValue();
+                                if (z23 || rememberedValue10 == Composer.Companion.getEmpty()) {
+                                    TransformedText filterWithValidation = ValidatingOffsetMappingKt.filterWithValidation(visualTransformation3, textFieldValue.getAnnotatedString());
+                                    TextRange m7857getCompositionMzsxiRA = textFieldValue.m7857getCompositionMzsxiRA();
+                                    if (m7857getCompositionMzsxiRA != null) {
+                                        textFieldScrollerPosition5 = textFieldScrollerPosition4;
+                                        TransformedText m1649applyCompositionDecoration72CqOWE = TextFieldDelegate.Companion.m1649applyCompositionDecoration72CqOWE(m7857getCompositionMzsxiRA.m7612unboximpl(), filterWithValidation);
+                                        if (m1649applyCompositionDecoration72CqOWE != null) {
+                                            rememberedValue10 = m1649applyCompositionDecoration72CqOWE;
+                                            startRestartGroup.updateRememberedValue(rememberedValue10);
+                                        }
+                                    } else {
+                                        textFieldScrollerPosition5 = textFieldScrollerPosition4;
+                                    }
+                                    rememberedValue10 = filterWithValidation;
+                                    startRestartGroup.updateRememberedValue(rememberedValue10);
+                                } else {
+                                    textFieldScrollerPosition5 = textFieldScrollerPosition4;
+                                }
+                                TransformedText transformedText = (TransformedText) rememberedValue10;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                AnnotatedString text = transformedText.getText();
+                                OffsetMapping offsetMapping2 = transformedText.getOffsetMapping();
+                                RecomposeScope currentRecomposeScope = ComposablesKt.getCurrentRecomposeScope(startRestartGroup, 0);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213705594, "CC(remember):CoreTextField.kt#9igjgp");
+                                boolean changed3 = startRestartGroup.changed(softwareKeyboardController);
+                                Object rememberedValue11 = startRestartGroup.rememberedValue();
+                                if (changed3 || rememberedValue11 == Composer.Companion.getEmpty()) {
+                                    annotatedString = text;
+                                    textStyle3 = textStyle4;
+                                    z10 = z22;
+                                    resolver = resolver2;
+                                    rememberedValue11 = new LegacyTextFieldState(new TextDelegate(text, textStyle4, 0, 0, z22, 0, density, resolver2, null, 300, null), currentRecomposeScope, softwareKeyboardController);
+                                    startRestartGroup.updateRememberedValue(rememberedValue11);
+                                } else {
+                                    annotatedString = text;
+                                    textStyle3 = textStyle4;
+                                    z10 = z22;
+                                    resolver = resolver2;
+                                }
+                                final LegacyTextFieldState legacyTextFieldState = (LegacyTextFieldState) rememberedValue11;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                legacyTextFieldState.m1614updatefnh65Uc(textFieldValue.getAnnotatedString(), annotatedString, textStyle3, z10, density, resolver, function1, keyboardActions2, focusManager2, m2120getBackgroundColor0d7_KjU);
+                                final Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function33 = lambda$559628295$foundation;
+                                legacyTextFieldState.getProcessor().reset(textFieldValue, legacyTextFieldState.getInputSession());
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213678725, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue12 = startRestartGroup.rememberedValue();
+                                if (rememberedValue12 == Composer.Companion.getEmpty()) {
+                                    focusManager = focusManager2;
+                                    rememberedValue12 = new UndoManager(0, 1, null);
+                                    startRestartGroup.updateRememberedValue(rememberedValue12);
+                                } else {
+                                    focusManager = focusManager2;
+                                }
+                                UndoManager undoManager2 = (UndoManager) rememberedValue12;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                UndoManager.snapshotIfNeeded$default(undoManager2, textFieldValue, 0L, 2, null);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)616@28039L68:Effects.kt#9igjgp");
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
+                                Object rememberedValue13 = startRestartGroup.rememberedValue();
+                                if (rememberedValue13 == Composer.Companion.getEmpty()) {
+                                    rememberedValue13 = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
+                                    startRestartGroup.updateRememberedValue(rememberedValue13);
+                                }
+                                final CoroutineScope coroutineScope2 = (CoroutineScope) rememberedValue13;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213673882, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue14 = startRestartGroup.rememberedValue();
+                                MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource4;
+                                if (rememberedValue14 == Composer.Companion.getEmpty()) {
+                                    rememberedValue14 = BringIntoViewRequesterKt.BringIntoViewRequester();
+                                    startRestartGroup.updateRememberedValue(rememberedValue14);
+                                }
+                                final BringIntoViewRequester bringIntoViewRequester2 = (BringIntoViewRequester) rememberedValue14;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213672044, "CC(remember):CoreTextField.kt#9igjgp");
+                                Object rememberedValue15 = startRestartGroup.rememberedValue();
+                                if (rememberedValue15 == Composer.Companion.getEmpty()) {
+                                    rememberedValue15 = new TextFieldSelectionManager(undoManager2);
+                                    startRestartGroup.updateRememberedValue(rememberedValue15);
+                                }
+                                final TextFieldSelectionManager textFieldSelectionManager2 = (TextFieldSelectionManager) rememberedValue15;
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                textFieldSelectionManager2.setOffsetMapping$foundation(offsetMapping2);
+                                textFieldSelectionManager2.setVisualTransformation$foundation(visualTransformation3);
+                                textFieldSelectionManager2.setOnValueChange$foundation(legacyTextFieldState.getOnValueChange());
+                                textFieldSelectionManager2.setState$foundation(legacyTextFieldState);
+                                textFieldSelectionManager2.setValue$foundation(textFieldValue);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume7 = startRestartGroup.consume(CompositionLocalsKt.getLocalClipboard());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                textFieldSelectionManager2.setClipboard$foundation((Clipboard) consume7);
+                                textFieldSelectionManager2.setCoroutineScope$foundation(coroutineScope2);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume8 = startRestartGroup.consume(CompositionLocalsKt.getLocalTextToolbar());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                textFieldSelectionManager2.setTextToolbar((TextToolbar) consume8);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume9 = startRestartGroup.consume(CompositionLocalsKt.getLocalHapticFeedback());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                textFieldSelectionManager2.setHapticFeedBack((HapticFeedback) consume9);
+                                textFieldSelectionManager2.setFocusRequester(focusRequester);
+                                textFieldSelectionManager2.setEditable(!z8);
+                                final boolean z24 = z7;
+                                textFieldSelectionManager2.setEnabled(z24);
+                                if (ComposeFoundationFlags.isSmartSelectionEnabled) {
+                                    startRestartGroup.startReplaceGroup(1966756105);
+                                    ComposerKt.sourceInformation(startRestartGroup, "307@15662L87");
+                                    undoManager = undoManager2;
+                                    textFieldSelectionManager2.setPlatformSelectionBehaviors$foundation(PlatformSelectionBehaviors_androidKt.rememberPlatformSelectionBehaviors(SelectedTextType.EditableText, textStyle3.getLocaleList(), startRestartGroup, 6));
+                                    startRestartGroup.endReplaceGroup();
+                                } else {
+                                    undoManager = undoManager2;
+                                    startRestartGroup.startReplaceGroup(1966902177);
+                                    startRestartGroup.endReplaceGroup();
+                                }
+                                legacyTextFieldState.getHasFocus();
+                                new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda19
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        return CoreTextFieldKt.CoreTextField$lambda$10(TextFieldSelectionManager.this, (AnnotatedString) obj6);
+                                    }
+                                };
+                                new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda20
+                                    @Override // kotlin.jvm.functions.Function0
+                                    public final Object invoke() {
+                                        AnnotatedString copyWithResult$foundation$default;
+                                        copyWithResult$foundation$default = TextFieldSelectionManager.copyWithResult$foundation$default(TextFieldSelectionManager.this, false, 1, null);
+                                        return copyWithResult$foundation$default;
+                                    }
+                                };
+                                new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda21
+                                    @Override // kotlin.jvm.functions.Function0
+                                    public final Object invoke() {
+                                        AnnotatedString cutWithResult$foundation;
+                                        cutWithResult$foundation = TextFieldSelectionManager.this.cutWithResult$foundation();
+                                        return cutWithResult$foundation;
+                                    }
+                                };
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1264411026, "CC(rememberClipboardEventsHandler)N(onPaste,onCopy,onCut,isEnabled):ClipboardEventsHandler.jvmAndAndroid.kt#423gt5");
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                Modifier.Companion companion3 = Modifier.Companion;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213630965, "CC(remember):CoreTextField.kt#9igjgp");
+                                int i43 = i29 & 7168;
+                                int i44 = i29;
+                                boolean changedInstance6 = (i43 == 2048) | startRestartGroup.changedInstance(legacyTextFieldState) | ((i44 & 57344) == 16384) | startRestartGroup.changedInstance(textInputService4) | (i42 == 4);
+                                int i45 = (i44 & 112) ^ 48;
+                                if (i45 <= 32 || !startRestartGroup.changed(imeOptions4)) {
+                                    textInputService = textInputService4;
+                                    if ((i44 & 48) != 32) {
+                                        z11 = false;
+                                        changedInstance = changedInstance6 | z11 | startRestartGroup.changedInstance(offsetMapping2) | startRestartGroup.changedInstance(coroutineScope2) | startRestartGroup.changedInstance(bringIntoViewRequester2) | startRestartGroup.changedInstance(textFieldSelectionManager2);
+                                        rememberedValue = startRestartGroup.rememberedValue();
+                                        if (!changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                                            offsetMapping = offsetMapping2;
+                                            final ImeOptions imeOptions9 = imeOptions4;
+                                            final boolean z25 = z8;
+                                            rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda1
+                                                @Override // kotlin.jvm.functions.Function1
+                                                public final Object invoke(Object obj6) {
+                                                    Unit CoreTextField$lambda$13$0;
+                                                    CoreTextField$lambda$13$0 = CoreTextFieldKt.CoreTextField$lambda$13$0(LegacyTextFieldState.this, z24, z25, textInputService, textFieldValue, imeOptions9, offsetMapping, textFieldSelectionManager2, coroutineScope2, bringIntoViewRequester2, (FocusState) obj6);
+                                                    return CoreTextField$lambda$13$0;
                                                 }
-                                            } else {
-                                                textFieldScrollerPosition5 = textFieldScrollerPosition4;
-                                            }
-                                            rememberedValue13 = filterWithValidation;
-                                            startRestartGroup.updateRememberedValue(rememberedValue13);
+                                            };
+                                            z12 = z24;
+                                            z13 = z25;
+                                            textInputService2 = textInputService;
+                                            textFieldValue2 = textFieldValue;
+                                            imeOptions5 = imeOptions9;
+                                            textFieldSelectionManager = textFieldSelectionManager2;
+                                            coroutineScope = coroutineScope2;
+                                            bringIntoViewRequester = bringIntoViewRequester2;
+                                            startRestartGroup.updateRememberedValue(rememberedValue);
                                         } else {
-                                            textFieldScrollerPosition5 = textFieldScrollerPosition4;
+                                            coroutineScope = coroutineScope2;
+                                            offsetMapping = offsetMapping2;
+                                            imeOptions5 = imeOptions4;
+                                            z13 = z8;
+                                            z12 = z24;
+                                            bringIntoViewRequester = bringIntoViewRequester2;
+                                            textFieldSelectionManager = textFieldSelectionManager2;
+                                            textFieldValue2 = textFieldValue;
+                                            textInputService2 = textInputService;
                                         }
-                                        TransformedText transformedText = (TransformedText) rememberedValue13;
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        AnnotatedString text = transformedText.getText();
-                                        final OffsetMapping offsetMapping2 = transformedText.getOffsetMapping();
-                                        RecomposeScope currentRecomposeScope = ComposablesKt.getCurrentRecomposeScope(startRestartGroup, 0);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213705594, "CC(remember):CoreTextField.kt#9igjgp");
-                                        boolean changed4 = startRestartGroup.changed(softwareKeyboardController);
-                                        Object rememberedValue14 = startRestartGroup.rememberedValue();
-                                        if (changed4 || rememberedValue14 == Composer.Companion.getEmpty()) {
-                                            annotatedString = text;
-                                            textStyle3 = textStyle4;
-                                            z10 = z24;
-                                            resolver = resolver2;
-                                            rememberedValue14 = new LegacyTextFieldState(new TextDelegate(text, textStyle4, 0, 0, z24, 0, density, resolver2, null, 300, null), currentRecomposeScope, softwareKeyboardController);
-                                            startRestartGroup.updateRememberedValue(rememberedValue14);
-                                        } else {
-                                            annotatedString = text;
-                                            textStyle3 = textStyle4;
-                                            z10 = z24;
-                                            resolver = resolver2;
-                                        }
-                                        LegacyTextFieldState legacyTextFieldState4 = (LegacyTextFieldState) rememberedValue14;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        legacyTextFieldState4.m1226updatefnh65Uc(textFieldValue.getAnnotatedString(), annotatedString, textStyle3, z10, density, resolver, function1, keyboardActions4, focusManager2, m1675getBackgroundColor0d7_KjU);
-                                        legacyTextFieldState4.getProcessor().reset(textFieldValue, legacyTextFieldState4.getInputSession());
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213678725, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue15 = startRestartGroup.rememberedValue();
-                                        if (rememberedValue15 == Composer.Companion.getEmpty()) {
-                                            focusManager = focusManager2;
-                                            rememberedValue15 = new UndoManager(0, 1, null);
-                                            startRestartGroup.updateRememberedValue(rememberedValue15);
-                                        } else {
-                                            focusManager = focusManager2;
-                                        }
-                                        UndoManager undoManager = (UndoManager) rememberedValue15;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        UndoManager.snapshotIfNeeded$default(undoManager, textFieldValue, 0L, 2, null);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 773894976, "CC(rememberCoroutineScope)N(getContext)600@27430L68:Effects.kt#9igjgp");
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 683736516, "CC(remember):Effects.kt#9igjgp");
-                                        Object rememberedValue16 = startRestartGroup.rememberedValue();
-                                        if (rememberedValue16 == Composer.Companion.getEmpty()) {
-                                            rememberedValue16 = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, startRestartGroup);
-                                            startRestartGroup.updateRememberedValue(rememberedValue16);
-                                        }
-                                        final CoroutineScope coroutineScope2 = (CoroutineScope) rememberedValue16;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213673882, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue17 = startRestartGroup.rememberedValue();
-                                        MutableInteractionSource mutableInteractionSource6 = mutableInteractionSource4;
-                                        if (rememberedValue17 == Composer.Companion.getEmpty()) {
-                                            rememberedValue17 = BringIntoViewRequesterKt.BringIntoViewRequester();
-                                            startRestartGroup.updateRememberedValue(rememberedValue17);
-                                        }
-                                        final BringIntoViewRequester bringIntoViewRequester2 = (BringIntoViewRequester) rememberedValue17;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213672044, "CC(remember):CoreTextField.kt#9igjgp");
-                                        Object rememberedValue18 = startRestartGroup.rememberedValue();
-                                        if (rememberedValue18 == Composer.Companion.getEmpty()) {
-                                            rememberedValue18 = new TextFieldSelectionManager(undoManager);
-                                            startRestartGroup.updateRememberedValue(rememberedValue18);
-                                        }
-                                        final TextFieldSelectionManager textFieldSelectionManager3 = (TextFieldSelectionManager) rememberedValue18;
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        textFieldSelectionManager3.setOffsetMapping$foundation(offsetMapping2);
-                                        textFieldSelectionManager3.setVisualTransformation$foundation(visualTransformation3);
-                                        textFieldSelectionManager3.setOnValueChange$foundation(legacyTextFieldState4.getOnValueChange());
-                                        textFieldSelectionManager3.setState$foundation(legacyTextFieldState4);
-                                        textFieldSelectionManager3.setValue$foundation(textFieldValue);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume7 = startRestartGroup.consume(CompositionLocalsKt.getLocalClipboard());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        textFieldSelectionManager3.setClipboard$foundation((Clipboard) consume7);
-                                        textFieldSelectionManager3.setCoroutineScope$foundation(coroutineScope2);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume8 = startRestartGroup.consume(CompositionLocalsKt.getLocalTextToolbar());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        textFieldSelectionManager3.setTextToolbar((TextToolbar) consume8);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-                                        Object consume9 = startRestartGroup.consume(CompositionLocalsKt.getLocalHapticFeedback());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        textFieldSelectionManager3.setHapticFeedBack((HapticFeedback) consume9);
-                                        textFieldSelectionManager3.setFocusRequester(focusRequester2);
-                                        textFieldSelectionManager3.setEditable(!z8);
-                                        final boolean z26 = z7;
-                                        textFieldSelectionManager3.setEnabled(z26);
-                                        if (!ComposeFoundationFlags.isSmartSelectionEnabled) {
-                                            startRestartGroup.startReplaceGroup(1951015297);
-                                        } else {
-                                            startRestartGroup.startReplaceGroup(1966756105);
-                                            ComposerKt.sourceInformation(startRestartGroup, "311@15921L87");
-                                            textFieldSelectionManager3.setPlatformSelectionBehaviors$foundation(PlatformSelectionBehaviors_androidKt.rememberPlatformSelectionBehaviors(SelectedTextType.EditableText, textStyle3.getLocaleList(), startRestartGroup, 6));
-                                        }
-                                        startRestartGroup.endReplaceGroup();
-                                        legacyTextFieldState4.getHasFocus();
-                                        new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda3
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                return CoreTextFieldKt.CoreTextField$lambda$10(TextFieldSelectionManager.this, (AnnotatedString) obj4);
-                                            }
-                                        };
-                                        new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda4
-                                            @Override // kotlin.jvm.functions.Function0
-                                            public final Object invoke() {
-                                                AnnotatedString copyWithResult$foundation$default;
-                                                copyWithResult$foundation$default = TextFieldSelectionManager.copyWithResult$foundation$default(TextFieldSelectionManager.this, false, 1, null);
-                                                return copyWithResult$foundation$default;
-                                            }
-                                        };
-                                        new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda5
-                                            @Override // kotlin.jvm.functions.Function0
-                                            public final Object invoke() {
-                                                AnnotatedString cutWithResult$foundation;
-                                                cutWithResult$foundation = TextFieldSelectionManager.this.cutWithResult$foundation();
-                                                return cutWithResult$foundation;
-                                            }
-                                        };
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1197772674, "CC(rememberClipboardEventsHandler)N(onPaste,onCopy,onCut,isEnabled):ClipboardEventsHandler.jvm.kt#423gt5");
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier.Companion companion3 = Modifier.Companion;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213630965, "CC(remember):CoreTextField.kt#9igjgp");
-                                        int i43 = i29 & 7168;
-                                        int i44 = i29;
-                                        int i45 = i44 & 57344;
-                                        boolean changedInstance10 = (i43 == 2048) | startRestartGroup.changedInstance(legacyTextFieldState4) | (i45 == 16384) | startRestartGroup.changedInstance(textInputService2) | (i42 == 4);
-                                        int i46 = (i44 & 112) ^ 48;
-                                        if (i46 <= 32 || !startRestartGroup.changed(imeOptions4)) {
-                                            legacyTextFieldState = legacyTextFieldState4;
+                                        Modifier textFieldFocusModifier = TextFieldGestureModifiersKt.textFieldFocusModifier(companion3, z12, focusRequester, mutableInteractionSource5, (Function1) rememberedValue);
+                                        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Boolean.valueOf((z12 || z13) ? false : true), startRestartGroup, 0);
+                                        Unit unit = Unit.INSTANCE;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213577460, "CC(remember):CoreTextField.kt#9igjgp");
+                                        boolean changed4 = startRestartGroup.changed(rememberUpdatedState) | startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService2) | startRestartGroup.changedInstance(textFieldSelectionManager);
+                                        TextInputService textInputService5 = textInputService2;
+                                        if (i45 > 32 || !startRestartGroup.changed(imeOptions5)) {
+                                            imeOptions6 = imeOptions5;
                                             if ((i44 & 48) != 32) {
-                                                z11 = false;
-                                                changedInstance = changedInstance10 | z11 | startRestartGroup.changedInstance(offsetMapping2) | startRestartGroup.changedInstance(coroutineScope2) | startRestartGroup.changedInstance(bringIntoViewRequester2) | startRestartGroup.changedInstance(textFieldSelectionManager3);
-                                                Object rememberedValue19 = startRestartGroup.rememberedValue();
-                                                if (changedInstance) {
-                                                    textFieldSelectionManager = textFieldSelectionManager3;
-                                                    if (rememberedValue19 != Composer.Companion.getEmpty()) {
-                                                        visualTransformation4 = visualTransformation3;
-                                                        coroutineScope = coroutineScope2;
-                                                        str = "CC(<get-current>):CompositionLocal.kt#9igjgp";
-                                                        imeOptions5 = imeOptions4;
-                                                        z12 = z8;
-                                                        legacyTextFieldState2 = legacyTextFieldState;
-                                                        z13 = z26;
-                                                        textFieldSelectionManager2 = textFieldSelectionManager;
-                                                        bringIntoViewRequester = bringIntoViewRequester2;
-                                                        offsetMapping = offsetMapping2;
-                                                        textInputService = textInputService2;
+                                                z14 = false;
+                                                z15 = z14 | changed4;
+                                                Object rememberedValue16 = startRestartGroup.rememberedValue();
+                                                if (!z15 || rememberedValue16 == Composer.Companion.getEmpty()) {
+                                                    ImeOptions imeOptions10 = imeOptions6;
+                                                    textInputService3 = textInputService5;
+                                                    imeOptions7 = imeOptions10;
+                                                    coreTextFieldKt$CoreTextField$5$1 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState, rememberUpdatedState, textInputService5, textFieldSelectionManager, imeOptions10, null);
+                                                    startRestartGroup.updateRememberedValue(coreTextFieldKt$CoreTextField$5$1);
+                                                } else {
+                                                    imeOptions7 = imeOptions6;
+                                                    coreTextFieldKt$CoreTextField$5$1 = rememberedValue16;
+                                                    textInputService3 = textInputService5;
+                                                }
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                imeOptions8 = imeOptions7;
+                                                EffectsKt.LaunchedEffect(unit, coreTextFieldKt$CoreTextField$5$1, startRestartGroup, 6);
+                                                int i46 = i44 >> 3;
+                                                final TextFieldSelectionManager textFieldSelectionManager3 = textFieldSelectionManager;
+                                                z16 = z12;
+                                                Modifier textFieldPointer = TextFieldPointerModifier_androidKt.textFieldPointer(Modifier.Companion, textFieldSelectionManager3, z16, mutableInteractionSource5, legacyTextFieldState, focusRequester, z13, offsetMapping, startRestartGroup, ((i40 >> 9) & 7168) | (i46 & 896) | 196614 | ((i44 << 6) & 3670016));
+                                                final OffsetMapping offsetMapping3 = offsetMapping;
+                                                final Modifier textFieldDraw = CoreTextField_androidKt.textFieldDraw(Modifier.Companion, legacyTextFieldState, textFieldValue2, offsetMapping3);
+                                                Modifier.Companion companion4 = Modifier.Companion;
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213533337, "CC(remember):CoreTextField.kt#9igjgp");
+                                                WindowInfo windowInfo5 = windowInfo;
+                                                changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState) | (i43 == 2048) | startRestartGroup.changed(windowInfo5) | startRestartGroup.changedInstance(textFieldSelectionManager3) | (i42 == 4) | startRestartGroup.changedInstance(offsetMapping3);
+                                                Object rememberedValue17 = startRestartGroup.rememberedValue();
+                                                if (changedInstance2) {
+                                                    windowInfo2 = windowInfo5;
+                                                } else {
+                                                    windowInfo2 = windowInfo5;
+                                                    if (rememberedValue17 != Composer.Companion.getEmpty()) {
+                                                        windowInfo3 = windowInfo2;
                                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        Modifier textFieldFocusModifier = TextFieldGestureModifiersKt.textFieldFocusModifier(companion3, z13, focusRequester2, mutableInteractionSource6, (Function1) rememberedValue19);
-                                                        State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(Boolean.valueOf((z13 || z12) ? false : true), startRestartGroup, 0);
-                                                        Unit unit = Unit.INSTANCE;
-                                                        final boolean z27 = z13;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213577460, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changed = startRestartGroup.changed(rememberUpdatedState) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changedInstance(textInputService) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                        if (i46 > 32 || !startRestartGroup.changed(imeOptions5)) {
-                                                            z14 = changed;
-                                                            if ((i44 & 48) != 32) {
-                                                                z15 = false;
-                                                                z16 = z14 | z15;
-                                                                rememberedValue = startRestartGroup.rememberedValue();
-                                                                if (!z16 || rememberedValue == Composer.Companion.getEmpty()) {
-                                                                    CoreTextFieldKt$CoreTextField$5$1 coreTextFieldKt$CoreTextField$5$1 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState2, rememberUpdatedState, textInputService, textFieldSelectionManager2, imeOptions5, null);
-                                                                    state = rememberUpdatedState;
-                                                                    rememberedValue = coreTextFieldKt$CoreTextField$5$1;
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue);
-                                                                } else {
-                                                                    state = rememberUpdatedState;
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                State state2 = state;
-                                                                EffectsKt.LaunchedEffect(unit, (Function2) rememberedValue, startRestartGroup, 6);
-                                                                Modifier.Companion companion4 = Modifier.Companion;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213545091, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState2);
-                                                                rememberedValue2 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                                                                    rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda7
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            Unit CoreTextField$lambda$16$0;
-                                                                            CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, ((Boolean) obj4).booleanValue());
-                                                                            return CoreTextField$lambda$16$0;
-                                                                        }
-                                                                    };
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue2);
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                Modifier updateSelectionTouchMode = SelectionGesturesKt.updateSelectionTouchMode(companion4, (Function1) rememberedValue2);
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213541055, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance3 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i45 != 16384) | (i43 != 2048) | startRestartGroup.changedInstance(offsetMapping) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                                rememberedValue3 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance3 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                                                                    final OffsetMapping offsetMapping3 = offsetMapping;
-                                                                    final TextFieldSelectionManager textFieldSelectionManager4 = textFieldSelectionManager2;
-                                                                    final LegacyTextFieldState legacyTextFieldState5 = legacyTextFieldState2;
-                                                                    final boolean z28 = z12;
-                                                                    rememberedValue3 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda8
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            Unit CoreTextField$lambda$17$0;
-                                                                            CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(LegacyTextFieldState.this, focusRequester2, z28, z27, textFieldSelectionManager4, offsetMapping3, (Offset) obj4);
-                                                                            return CoreTextField$lambda$17$0;
-                                                                        }
-                                                                    };
-                                                                    focusRequester = focusRequester2;
-                                                                    z17 = z27;
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue3);
-                                                                } else {
-                                                                    focusRequester = focusRequester2;
-                                                                    z17 = z27;
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                Modifier tapPressTextFieldModifier = TextFieldPressGestureFilterKt.tapPressTextFieldModifier(updateSelectionTouchMode, mutableInteractionSource6, z17, (Function1) rememberedValue3);
-                                                                MouseSelectionObserver mouseSelectionObserver$foundation = textFieldSelectionManager2.getMouseSelectionObserver$foundation();
-                                                                FocusRequester focusRequester3 = focusRequester;
-                                                                TextDragObserver touchSelectionObserver$foundation = textFieldSelectionManager2.getTouchSelectionObserver$foundation();
-                                                                imeOptions6 = imeOptions5;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213507214, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance4 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                                PointerInputEventHandler rememberedValue20 = startRestartGroup.rememberedValue();
-                                                                if (changedInstance4) {
-                                                                    z18 = z17;
-                                                                } else {
-                                                                    z18 = z17;
-                                                                }
-                                                                rememberedValue20 = new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$pointerModifier$3$1
-                                                                    @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
-                                                                    public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-                                                                        Object awaitSelectionGestures = SelectionGesturesKt.awaitSelectionGestures(pointerInputScope, TextFieldSelectionManager.this.getMouseSelectionObserver$foundation(), TextFieldSelectionManager.this.getTouchSelectionObserver$foundation(), continuation);
-                                                                        return awaitSelectionGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitSelectionGestures : Unit.INSTANCE;
-                                                                    }
-                                                                };
-                                                                startRestartGroup.updateRememberedValue(rememberedValue20);
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                Modifier pointerHoverIcon$default = PointerIconKt.pointerHoverIcon$default(SuspendingPointerInputFilterKt.pointerInput(tapPressTextFieldModifier, mouseSelectionObserver$foundation, touchSelectionObserver$foundation, (PointerInputEventHandler) rememberedValue20), PointerIcon.Companion.getText(), false, 2, null);
-                                                                Modifier.Companion companion5 = Modifier.Companion;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213497918, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
-                                                                rememberedValue4 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance5 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                                                    textFieldValue2 = textFieldValue;
-                                                                    rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda9
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            Unit CoreTextField$lambda$19$0;
-                                                                            CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(LegacyTextFieldState.this, textFieldValue2, offsetMapping, (DrawScope) obj4);
-                                                                            return CoreTextField$lambda$19$0;
-                                                                        }
-                                                                    };
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue4);
-                                                                } else {
-                                                                    textFieldValue2 = textFieldValue;
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                final Modifier drawBehind = DrawModifierKt.drawBehind(companion5, (Function1) rememberedValue4);
-                                                                Modifier.Companion companion6 = Modifier.Companion;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213476153, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                windowInfo2 = windowInfo;
-                                                                changedInstance6 = (i43 != 2048) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changed(windowInfo2) | startRestartGroup.changedInstance(textFieldSelectionManager2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
-                                                                rememberedValue5 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance6 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                                                                    final TextFieldValue textFieldValue3 = textFieldValue2;
-                                                                    final OffsetMapping offsetMapping4 = offsetMapping;
-                                                                    final TextFieldSelectionManager textFieldSelectionManager5 = textFieldSelectionManager2;
-                                                                    final LegacyTextFieldState legacyTextFieldState6 = legacyTextFieldState2;
-                                                                    rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda10
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            Unit CoreTextField$lambda$20$0;
-                                                                            CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, z18, windowInfo2, textFieldSelectionManager5, textFieldValue3, offsetMapping4, (LayoutCoordinates) obj4);
-                                                                            return CoreTextField$lambda$20$0;
-                                                                        }
-                                                                    };
-                                                                    z19 = z18;
-                                                                    windowInfo3 = windowInfo2;
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue5);
-                                                                } else {
-                                                                    z19 = z18;
-                                                                    windowInfo3 = windowInfo2;
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                final Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(companion6, (Function1) rememberedValue5);
-                                                                final VisualTransformation visualTransformation5 = visualTransformation4;
-                                                                boolean z29 = z19;
-                                                                CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState2, z12, z29, visualTransformation5 instanceof PasswordVisualTransformation, offsetMapping, textFieldSelectionManager2, imeOptions6, focusRequester3);
-                                                                Brush brush5 = brush4;
-                                                                final OffsetMapping offsetMapping5 = offsetMapping;
-                                                                legacyTextFieldState3 = legacyTextFieldState2;
-                                                                Modifier cursor = TextFieldCursorKt.cursor(Modifier.Companion, legacyTextFieldState3, textFieldValue, offsetMapping5, brush5, (z29 || z12 || !windowInfo3.isWindowFocused() || legacyTextFieldState2.hasHighlight()) ? false : true);
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213406735, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance7 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                                Object rememberedValue21 = startRestartGroup.rememberedValue();
-                                                                if (changedInstance7) {
-                                                                    modifier4 = cursor;
-                                                                } else {
-                                                                    modifier4 = cursor;
-                                                                }
-                                                                rememberedValue21 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda18
-                                                                    @Override // kotlin.jvm.functions.Function1
-                                                                    public final Object invoke(Object obj4) {
-                                                                        DisposableEffectResult CoreTextField$lambda$21$0;
-                                                                        CoreTextField$lambda$21$0 = CoreTextFieldKt.CoreTextField$lambda$21$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj4);
-                                                                        return CoreTextField$lambda$21$0;
-                                                                    }
-                                                                };
-                                                                startRestartGroup.updateRememberedValue(rememberedValue21);
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                EffectsKt.DisposableEffect(textFieldSelectionManager2, (Function1) rememberedValue21, startRestartGroup, 0);
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213403624, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance8 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changedInstance(textInputService) | (i42 != 4) | ((i46 <= 32 && startRestartGroup.changed(imeOptions6)) || (i44 & 48) == 32);
-                                                                rememberedValue6 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance8 || rememberedValue6 == Composer.Companion.getEmpty()) {
-                                                                    rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda19
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            DisposableEffectResult CoreTextField$lambda$22$0;
-                                                                            CoreTextField$lambda$22$0 = CoreTextFieldKt.CoreTextField$lambda$22$0(LegacyTextFieldState.this, textInputService, textFieldValue, imeOptions6, (DisposableEffectScope) obj4);
-                                                                            return CoreTextField$lambda$22$0;
-                                                                        }
-                                                                    };
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue6);
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                EffectsKt.DisposableEffect(imeOptions6, (Function1) rememberedValue6, startRestartGroup, (i44 >> 3) & 14);
-                                                                int i47 = i32;
-                                                                Modifier m1276textFieldKeyInput2WJ9YEU = TextFieldKeyInputKt.m1276textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState3, textFieldSelectionManager2, textFieldValue, legacyTextFieldState3.getOnValueChange(), !z12, i47 != 1, offsetMapping5, undoManager, imeOptions6.m7200getImeActioneUduSuo());
-                                                                final boolean z30 = KeyboardType.m7224equalsimpl0(imeOptions6.m7201getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7243getPasswordPjHm6EE()) && !KeyboardType.m7224equalsimpl0(imeOptions6.m7201getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7242getNumberPasswordPjHm6EE());
-                                                                Modifier.Companion companion7 = Modifier.Companion;
-                                                                boolean CoreTextField$lambda$14 = CoreTextField$lambda$14(state2);
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213365476, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter3 = legacyPlatformTextInputServiceAdapter;
-                                                                changed2 = startRestartGroup.changed(z30) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter3);
-                                                                Object rememberedValue22 = startRestartGroup.rememberedValue();
-                                                                if (changed2) {
-                                                                    i33 = i47;
-                                                                } else {
-                                                                    i33 = i47;
-                                                                }
-                                                                rememberedValue22 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda20
-                                                                    @Override // kotlin.jvm.functions.Function0
-                                                                    public final Object invoke() {
-                                                                        Unit CoreTextField$lambda$23$0;
-                                                                        CoreTextField$lambda$23$0 = CoreTextFieldKt.CoreTextField$lambda$23$0(z30, legacyPlatformTextInputServiceAdapter3);
-                                                                        return CoreTextField$lambda$23$0;
-                                                                    }
-                                                                };
-                                                                startRestartGroup.updateRememberedValue(rememberedValue22);
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                Modifier stylusHandwriting = StylusHandwritingKt.stylusHandwriting(companion7, CoreTextField$lambda$14, z30, (Function0) rememberedValue22);
-                                                                String str3 = str;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str3);
-                                                                Object consume10 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str3);
-                                                                Object consume11 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                final Brush m1132resolveAutofillHighlightWkMShQ = AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) consume10, ((Color) consume11).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
-                                                                Modifier.Companion companion8 = Modifier.Companion;
-                                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213324568, "CC(remember):CoreTextField.kt#9igjgp");
-                                                                changedInstance9 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changed(m1132resolveAutofillHighlightWkMShQ);
-                                                                rememberedValue7 = startRestartGroup.rememberedValue();
-                                                                if (!changedInstance9 || rememberedValue7 == Composer.Companion.getEmpty()) {
-                                                                    rememberedValue7 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda21
-                                                                        @Override // kotlin.jvm.functions.Function1
-                                                                        public final Object invoke(Object obj4) {
-                                                                            Unit CoreTextField$lambda$24$0;
-                                                                            CoreTextField$lambda$24$0 = CoreTextFieldKt.CoreTextField$lambda$24$0(LegacyTextFieldState.this, m1132resolveAutofillHighlightWkMShQ, (ContentDrawScope) obj4);
-                                                                            return CoreTextField$lambda$24$0;
-                                                                        }
-                                                                    };
-                                                                    startRestartGroup.updateRememberedValue(rememberedValue7);
-                                                                }
-                                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                                final TextFieldScrollerPosition textFieldScrollerPosition6 = textFieldScrollerPosition5;
-                                                                Modifier addContextMenuComponents = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier5.then(DrawModifierKt.drawWithContent(companion8, (Function1) rememberedValue7)), legacyPlatformTextInputServiceAdapter3, legacyTextFieldState3, textFieldSelectionManager2).then(stylusHandwriting).then(textFieldFocusModifier), legacyTextFieldState3, focusManager), legacyTextFieldState3, textFieldSelectionManager2).then(m1276textFieldKeyInput2WJ9YEU), textFieldScrollerPosition6, mutableInteractionSource6, z29, TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0)).then(pointerHoverIcon$default).then(coreTextFieldSemanticsModifier), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda22
-                                                                    @Override // kotlin.jvm.functions.Function1
-                                                                    public final Object invoke(Object obj4) {
-                                                                        return CoreTextFieldKt.CoreTextField$lambda$25(LegacyTextFieldState.this, (LayoutCoordinates) obj4);
-                                                                    }
-                                                                }), textFieldSelectionManager2, coroutineScope);
-                                                                z20 = !z29 && legacyTextFieldState3.getHasFocus() && legacyTextFieldState3.isInTouchMode() && windowInfo3.isWindowFocused();
-                                                                if (!z20) {
-                                                                    companion2 = TextFieldSelectionManager_androidKt.textFieldMagnifier(Modifier.Companion, textFieldSelectionManager2);
-                                                                } else {
-                                                                    companion2 = Modifier.Companion;
-                                                                }
-                                                                final Modifier modifier6 = companion2;
-                                                                final Modifier modifier7 = modifier4;
-                                                                final int i48 = i33;
-                                                                final TextStyle textStyle5 = textStyle3;
-                                                                final TextFieldSelectionManager textFieldSelectionManager6 = textFieldSelectionManager2;
-                                                                final BringIntoViewRequester bringIntoViewRequester3 = bringIntoViewRequester;
-                                                                final Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit> function33 = lambda$559628295$foundation;
-                                                                final boolean z31 = z12;
-                                                                CoreTextFieldRootBox(addContextMenuComponents, textFieldSelectionManager6, ComposableLambdaKt.rememberComposableLambda(-814563849, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda23
-                                                                    @Override // kotlin.jvm.functions.Function2
-                                                                    public final Object invoke(Object obj4, Object obj5) {
-                                                                        return CoreTextFieldKt.CoreTextField$lambda$26(Function3.this, legacyTextFieldState3, textStyle5, i41, i48, textFieldScrollerPosition6, textFieldValue, visualTransformation5, modifier7, drawBehind, onGloballyPositioned, modifier6, bringIntoViewRequester3, textFieldSelectionManager6, z20, z31, function14, offsetMapping5, density, (Composer) obj4, ((Integer) obj5).intValue());
-                                                                    }
-                                                                }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                                                if (ComposerKt.isTraceInProgress()) {
-                                                                    ComposerKt.traceEventEnd();
-                                                                }
-                                                                function32 = function33;
-                                                                i27 = i41;
-                                                                composer2 = startRestartGroup;
-                                                                function13 = function14;
-                                                                imeOptions2 = imeOptions6;
-                                                                textFieldScrollerPosition2 = textFieldScrollerPosition3;
-                                                                mutableInteractionSource2 = mutableInteractionSource6;
-                                                                keyboardActions2 = keyboardActions4;
-                                                                brush2 = brush5;
-                                                                z6 = z29;
-                                                                modifier2 = modifier5;
-                                                                i28 = i33;
-                                                                z5 = z10;
-                                                                textStyle2 = textStyle3;
-                                                                z4 = z12;
-                                                                visualTransformation2 = visualTransformation5;
-                                                            }
-                                                        } else {
-                                                            z14 = changed;
-                                                        }
-                                                        z15 = true;
-                                                        z16 = z14 | z15;
-                                                        rememberedValue = startRestartGroup.rememberedValue();
-                                                        if (z16) {
-                                                        }
-                                                        CoreTextFieldKt$CoreTextField$5$1 coreTextFieldKt$CoreTextField$5$12 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState2, rememberUpdatedState, textInputService, textFieldSelectionManager2, imeOptions5, null);
-                                                        state = rememberUpdatedState;
-                                                        rememberedValue = coreTextFieldKt$CoreTextField$5$12;
-                                                        startRestartGroup.updateRememberedValue(rememberedValue);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        State state22 = state;
-                                                        EffectsKt.LaunchedEffect(unit, (Function2) rememberedValue, startRestartGroup, 6);
-                                                        Modifier.Companion companion42 = Modifier.Companion;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213545091, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState2);
-                                                        rememberedValue2 = startRestartGroup.rememberedValue();
-                                                        if (!changedInstance2) {
-                                                        }
-                                                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda7
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                Unit CoreTextField$lambda$16$0;
-                                                                CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, ((Boolean) obj4).booleanValue());
-                                                                return CoreTextField$lambda$16$0;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue2);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        Modifier updateSelectionTouchMode2 = SelectionGesturesKt.updateSelectionTouchMode(companion42, (Function1) rememberedValue2);
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213541055, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance3 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i45 != 16384) | (i43 != 2048) | startRestartGroup.changedInstance(offsetMapping) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                        rememberedValue3 = startRestartGroup.rememberedValue();
+                                                        final Modifier onGloballyPositioned = OnGloballyPositionedModifierKt.onGloballyPositioned(companion4, (Function1) rememberedValue17);
+                                                        CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState, z13, z16, visualTransformation3 instanceof PasswordVisualTransformation, offsetMapping3, textFieldSelectionManager3, imeOptions8, focusRequester);
+                                                        Brush brush5 = brush4;
+                                                        Modifier textFieldCursor = CoreTextField_androidKt.textFieldCursor(Modifier.Companion, legacyTextFieldState, textFieldValue, offsetMapping3, brush5, (z16 || z13 || !windowInfo3.isWindowFocused() || legacyTextFieldState.hasHighlight()) ? false : true);
+                                                        final VisualTransformation visualTransformation4 = visualTransformation3;
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213463375, "CC(remember):CoreTextField.kt#9igjgp");
+                                                        changedInstance3 = startRestartGroup.changedInstance(textFieldSelectionManager3);
+                                                        Object rememberedValue18 = startRestartGroup.rememberedValue();
                                                         if (changedInstance3) {
+                                                            modifier2 = textFieldCursor;
+                                                        } else {
+                                                            modifier2 = textFieldCursor;
                                                         }
-                                                        final OffsetMapping offsetMapping32 = offsetMapping;
-                                                        final TextFieldSelectionManager textFieldSelectionManager42 = textFieldSelectionManager2;
-                                                        final LegacyTextFieldState legacyTextFieldState52 = legacyTextFieldState2;
-                                                        final boolean z282 = z12;
-                                                        rememberedValue3 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda8
+                                                        rememberedValue18 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda3
                                                             @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                Unit CoreTextField$lambda$17$0;
-                                                                CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(LegacyTextFieldState.this, focusRequester2, z282, z27, textFieldSelectionManager42, offsetMapping32, (Offset) obj4);
+                                                            public final Object invoke(Object obj6) {
+                                                                DisposableEffectResult CoreTextField$lambda$17$0;
+                                                                CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj6);
                                                                 return CoreTextField$lambda$17$0;
                                                             }
                                                         };
-                                                        focusRequester = focusRequester2;
-                                                        z17 = z27;
-                                                        startRestartGroup.updateRememberedValue(rememberedValue3);
+                                                        startRestartGroup.updateRememberedValue(rememberedValue18);
                                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        Modifier tapPressTextFieldModifier2 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier(updateSelectionTouchMode2, mutableInteractionSource6, z17, (Function1) rememberedValue3);
-                                                        MouseSelectionObserver mouseSelectionObserver$foundation2 = textFieldSelectionManager2.getMouseSelectionObserver$foundation();
-                                                        FocusRequester focusRequester32 = focusRequester;
-                                                        TextDragObserver touchSelectionObserver$foundation2 = textFieldSelectionManager2.getTouchSelectionObserver$foundation();
-                                                        imeOptions6 = imeOptions5;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213507214, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance4 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                        PointerInputEventHandler rememberedValue202 = startRestartGroup.rememberedValue();
-                                                        if (changedInstance4) {
+                                                        EffectsKt.DisposableEffect(textFieldSelectionManager3, (Function1) rememberedValue18, startRestartGroup, 0);
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213460264, "CC(remember):CoreTextField.kt#9igjgp");
+                                                        changedInstance4 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService3) | (i42 != 4) | ((i45 <= 32 && startRestartGroup.changed(imeOptions8)) || (i44 & 48) == 32);
+                                                        rememberedValue2 = startRestartGroup.rememberedValue();
+                                                        if (!changedInstance4 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                                                            rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda4
+                                                                @Override // kotlin.jvm.functions.Function1
+                                                                public final Object invoke(Object obj6) {
+                                                                    DisposableEffectResult CoreTextField$lambda$18$0;
+                                                                    CoreTextField$lambda$18$0 = CoreTextFieldKt.CoreTextField$lambda$18$0(LegacyTextFieldState.this, textInputService3, textFieldValue, imeOptions8, (DisposableEffectScope) obj6);
+                                                                    return CoreTextField$lambda$18$0;
+                                                                }
+                                                            };
+                                                            startRestartGroup.updateRememberedValue(rememberedValue2);
                                                         }
-                                                        rememberedValue202 = new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$pointerModifier$3$1
-                                                            @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
-                                                            public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-                                                                Object awaitSelectionGestures = SelectionGesturesKt.awaitSelectionGestures(pointerInputScope, TextFieldSelectionManager.this.getMouseSelectionObserver$foundation(), TextFieldSelectionManager.this.getTouchSelectionObserver$foundation(), continuation);
-                                                                return awaitSelectionGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitSelectionGestures : Unit.INSTANCE;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue202);
                                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        Modifier pointerHoverIcon$default2 = PointerIconKt.pointerHoverIcon$default(SuspendingPointerInputFilterKt.pointerInput(tapPressTextFieldModifier2, mouseSelectionObserver$foundation2, touchSelectionObserver$foundation2, (PointerInputEventHandler) rememberedValue202), PointerIcon.Companion.getText(), false, 2, null);
-                                                        Modifier.Companion companion52 = Modifier.Companion;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213497918, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
+                                                        EffectsKt.DisposableEffect(imeOptions8, (Function1) rememberedValue2, startRestartGroup, i46 & 14);
+                                                        final int i47 = i32;
+                                                        Modifier m1664textFieldKeyInput2WJ9YEU = TextFieldKeyInputKt.m1664textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState, textFieldSelectionManager3, textFieldValue, legacyTextFieldState.getOnValueChange(), !z13, i47 != 1, offsetMapping3, undoManager, imeOptions8.m7805getImeActioneUduSuo());
+                                                        z17 = KeyboardType.m7829equalsimpl0(imeOptions8.m7806getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7848getPasswordPjHm6EE()) && !KeyboardType.m7829equalsimpl0(imeOptions8.m7806getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7847getNumberPasswordPjHm6EE());
+                                                        Modifier.Companion companion5 = Modifier.Companion;
+                                                        boolean CoreTextField$lambda$14 = CoreTextField$lambda$14(rememberUpdatedState);
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213422116, "CC(remember):CoreTextField.kt#9igjgp");
+                                                        final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter3 = legacyPlatformTextInputServiceAdapter;
+                                                        changed = startRestartGroup.changed(z17) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter3);
+                                                        rememberedValue3 = startRestartGroup.rememberedValue();
+                                                        if (!changed || rememberedValue3 == Composer.Companion.getEmpty()) {
+                                                            rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda5
+                                                                @Override // kotlin.jvm.functions.Function0
+                                                                public final Object invoke() {
+                                                                    Unit CoreTextField$lambda$19$0;
+                                                                    CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(z17, legacyPlatformTextInputServiceAdapter3);
+                                                                    return CoreTextField$lambda$19$0;
+                                                                }
+                                                            };
+                                                            startRestartGroup.updateRememberedValue(rememberedValue3);
+                                                        }
+                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                        Modifier stylusHandwriting = StylusHandwritingKt.stylusHandwriting(companion5, CoreTextField$lambda$14, z17, (Function0) rememberedValue3);
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                        Object consume10 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
+                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                        Object consume11 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
+                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                        final Brush m1477resolveAutofillHighlightWkMShQ = AutofillHighlightKt.m1477resolveAutofillHighlightWkMShQ((Brush) consume10, ((Color) consume11).m5358unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
+                                                        Modifier.Companion companion6 = Modifier.Companion;
+                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213381208, "CC(remember):CoreTextField.kt#9igjgp");
+                                                        changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changed(m1477resolveAutofillHighlightWkMShQ);
                                                         rememberedValue4 = startRestartGroup.rememberedValue();
-                                                        if (changedInstance5) {
+                                                        if (!changedInstance5 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                                                            rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda14
+                                                                @Override // kotlin.jvm.functions.Function1
+                                                                public final Object invoke(Object obj6) {
+                                                                    Unit CoreTextField$lambda$20$0;
+                                                                    CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, m1477resolveAutofillHighlightWkMShQ, (ContentDrawScope) obj6);
+                                                                    return CoreTextField$lambda$20$0;
+                                                                }
+                                                            };
+                                                            startRestartGroup.updateRememberedValue(rememberedValue4);
                                                         }
-                                                        textFieldValue2 = textFieldValue;
-                                                        rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda9
+                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                        Modifier drawWithContent = DrawModifierKt.drawWithContent(companion6, (Function1) rememberedValue4);
+                                                        OverscrollEffect rememberTextFieldOverscrollEffect = TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0);
+                                                        Modifier then = previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier3.then(drawWithContent), legacyPlatformTextInputServiceAdapter3, legacyTextFieldState, textFieldSelectionManager3).then(stylusHandwriting).then(textFieldFocusModifier), legacyTextFieldState, focusManager), legacyTextFieldState, textFieldSelectionManager3).then(m1664textFieldKeyInput2WJ9YEU);
+                                                        final TextFieldScrollerPosition textFieldScrollerPosition6 = textFieldScrollerPosition5;
+                                                        Modifier addContextMenuComponents = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(then, textFieldScrollerPosition6, mutableInteractionSource5, z16, rememberTextFieldOverscrollEffect).then(textFieldPointer).then(coreTextFieldSemanticsModifier), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda15
                                                             @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                Unit CoreTextField$lambda$19$0;
-                                                                CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(LegacyTextFieldState.this, textFieldValue2, offsetMapping, (DrawScope) obj4);
-                                                                return CoreTextField$lambda$19$0;
+                                                            public final Object invoke(Object obj6) {
+                                                                return CoreTextFieldKt.CoreTextField$lambda$21(LegacyTextFieldState.this, (LayoutCoordinates) obj6);
                                                             }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue4);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        final Modifier drawBehind2 = DrawModifierKt.drawBehind(companion52, (Function1) rememberedValue4);
-                                                        Modifier.Companion companion62 = Modifier.Companion;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213476153, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        windowInfo2 = windowInfo;
-                                                        changedInstance6 = (i43 != 2048) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changed(windowInfo2) | startRestartGroup.changedInstance(textFieldSelectionManager2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
-                                                        rememberedValue5 = startRestartGroup.rememberedValue();
-                                                        if (changedInstance6) {
+                                                        }), textFieldSelectionManager3, coroutineScope);
+                                                        z18 = !z16 && legacyTextFieldState.getHasFocus() && legacyTextFieldState.isInTouchMode() && windowInfo3.isWindowFocused();
+                                                        if (!z18) {
+                                                            companion2 = TextFieldSelectionManager_androidKt.textFieldMagnifier(Modifier.Companion, textFieldSelectionManager3);
+                                                        } else {
+                                                            companion2 = Modifier.Companion;
                                                         }
-                                                        final TextFieldValue textFieldValue32 = textFieldValue2;
-                                                        final OffsetMapping offsetMapping42 = offsetMapping;
-                                                        final TextFieldSelectionManager textFieldSelectionManager52 = textFieldSelectionManager2;
-                                                        final LegacyTextFieldState legacyTextFieldState62 = legacyTextFieldState2;
-                                                        rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda10
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                Unit CoreTextField$lambda$20$0;
-                                                                CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, z18, windowInfo2, textFieldSelectionManager52, textFieldValue32, offsetMapping42, (LayoutCoordinates) obj4);
-                                                                return CoreTextField$lambda$20$0;
-                                                            }
-                                                        };
-                                                        z19 = z18;
-                                                        windowInfo3 = windowInfo2;
-                                                        startRestartGroup.updateRememberedValue(rememberedValue5);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        final Modifier onGloballyPositioned2 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion62, (Function1) rememberedValue5);
-                                                        final VisualTransformation visualTransformation52 = visualTransformation4;
-                                                        boolean z292 = z19;
-                                                        CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier2 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState2, z12, z292, visualTransformation52 instanceof PasswordVisualTransformation, offsetMapping, textFieldSelectionManager2, imeOptions6, focusRequester32);
-                                                        Brush brush52 = brush4;
-                                                        final OffsetMapping offsetMapping52 = offsetMapping;
-                                                        legacyTextFieldState3 = legacyTextFieldState2;
-                                                        Modifier cursor2 = TextFieldCursorKt.cursor(Modifier.Companion, legacyTextFieldState3, textFieldValue, offsetMapping52, brush52, (z292 || z12 || !windowInfo3.isWindowFocused() || legacyTextFieldState2.hasHighlight()) ? false : true);
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213406735, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance7 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                        Object rememberedValue212 = startRestartGroup.rememberedValue();
-                                                        if (changedInstance7) {
-                                                        }
-                                                        rememberedValue212 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda18
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                DisposableEffectResult CoreTextField$lambda$21$0;
-                                                                CoreTextField$lambda$21$0 = CoreTextFieldKt.CoreTextField$lambda$21$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj4);
-                                                                return CoreTextField$lambda$21$0;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue212);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        EffectsKt.DisposableEffect(textFieldSelectionManager2, (Function1) rememberedValue212, startRestartGroup, 0);
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213403624, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance8 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changedInstance(textInputService) | (i42 != 4) | ((i46 <= 32 && startRestartGroup.changed(imeOptions6)) || (i44 & 48) == 32);
-                                                        rememberedValue6 = startRestartGroup.rememberedValue();
-                                                        if (!changedInstance8) {
-                                                        }
-                                                        rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda19
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                DisposableEffectResult CoreTextField$lambda$22$0;
-                                                                CoreTextField$lambda$22$0 = CoreTextFieldKt.CoreTextField$lambda$22$0(LegacyTextFieldState.this, textInputService, textFieldValue, imeOptions6, (DisposableEffectScope) obj4);
-                                                                return CoreTextField$lambda$22$0;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue6);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        EffectsKt.DisposableEffect(imeOptions6, (Function1) rememberedValue6, startRestartGroup, (i44 >> 3) & 14);
-                                                        int i472 = i32;
-                                                        Modifier m1276textFieldKeyInput2WJ9YEU2 = TextFieldKeyInputKt.m1276textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState3, textFieldSelectionManager2, textFieldValue, legacyTextFieldState3.getOnValueChange(), !z12, i472 != 1, offsetMapping52, undoManager, imeOptions6.m7200getImeActioneUduSuo());
-                                                        if (KeyboardType.m7224equalsimpl0(imeOptions6.m7201getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7243getPasswordPjHm6EE())) {
-                                                        }
-                                                        Modifier.Companion companion72 = Modifier.Companion;
-                                                        boolean CoreTextField$lambda$142 = CoreTextField$lambda$14(state22);
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213365476, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter32 = legacyPlatformTextInputServiceAdapter;
-                                                        changed2 = startRestartGroup.changed(z30) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter32);
-                                                        Object rememberedValue222 = startRestartGroup.rememberedValue();
-                                                        if (changed2) {
-                                                        }
-                                                        rememberedValue222 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda20
-                                                            @Override // kotlin.jvm.functions.Function0
-                                                            public final Object invoke() {
-                                                                Unit CoreTextField$lambda$23$0;
-                                                                CoreTextField$lambda$23$0 = CoreTextFieldKt.CoreTextField$lambda$23$0(z30, legacyPlatformTextInputServiceAdapter32);
-                                                                return CoreTextField$lambda$23$0;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue222);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        Modifier stylusHandwriting2 = StylusHandwritingKt.stylusHandwriting(companion72, CoreTextField$lambda$142, z30, (Function0) rememberedValue222);
-                                                        String str32 = str;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str32);
-                                                        Object consume102 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str32);
-                                                        Object consume112 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        final Brush m1132resolveAutofillHighlightWkMShQ2 = AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) consume102, ((Color) consume112).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
-                                                        Modifier.Companion companion82 = Modifier.Companion;
-                                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213324568, "CC(remember):CoreTextField.kt#9igjgp");
-                                                        changedInstance9 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changed(m1132resolveAutofillHighlightWkMShQ2);
-                                                        rememberedValue7 = startRestartGroup.rememberedValue();
-                                                        if (!changedInstance9) {
-                                                        }
-                                                        rememberedValue7 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda21
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                Unit CoreTextField$lambda$24$0;
-                                                                CoreTextField$lambda$24$0 = CoreTextFieldKt.CoreTextField$lambda$24$0(LegacyTextFieldState.this, m1132resolveAutofillHighlightWkMShQ2, (ContentDrawScope) obj4);
-                                                                return CoreTextField$lambda$24$0;
-                                                            }
-                                                        };
-                                                        startRestartGroup.updateRememberedValue(rememberedValue7);
-                                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                        final TextFieldScrollerPosition textFieldScrollerPosition62 = textFieldScrollerPosition5;
-                                                        Modifier addContextMenuComponents2 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier5.then(DrawModifierKt.drawWithContent(companion82, (Function1) rememberedValue7)), legacyPlatformTextInputServiceAdapter32, legacyTextFieldState3, textFieldSelectionManager2).then(stylusHandwriting2).then(textFieldFocusModifier), legacyTextFieldState3, focusManager), legacyTextFieldState3, textFieldSelectionManager2).then(m1276textFieldKeyInput2WJ9YEU2), textFieldScrollerPosition62, mutableInteractionSource6, z292, TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0)).then(pointerHoverIcon$default2).then(coreTextFieldSemanticsModifier2), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda22
-                                                            @Override // kotlin.jvm.functions.Function1
-                                                            public final Object invoke(Object obj4) {
-                                                                return CoreTextFieldKt.CoreTextField$lambda$25(LegacyTextFieldState.this, (LayoutCoordinates) obj4);
-                                                            }
-                                                        }), textFieldSelectionManager2, coroutineScope);
-                                                        if (z292) {
-                                                        }
-                                                        if (!z20) {
-                                                        }
-                                                        final Modifier modifier62 = companion2;
-                                                        final Modifier modifier72 = modifier4;
-                                                        final int i482 = i33;
-                                                        final TextStyle textStyle52 = textStyle3;
-                                                        final TextFieldSelectionManager textFieldSelectionManager62 = textFieldSelectionManager2;
-                                                        final BringIntoViewRequester bringIntoViewRequester32 = bringIntoViewRequester;
-                                                        final Function3 function332 = lambda$559628295$foundation;
-                                                        final boolean z312 = z12;
-                                                        CoreTextFieldRootBox(addContextMenuComponents2, textFieldSelectionManager62, ComposableLambdaKt.rememberComposableLambda(-814563849, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda23
+                                                        final Modifier modifier4 = companion2;
+                                                        final Modifier modifier5 = modifier2;
+                                                        final BringIntoViewRequester bringIntoViewRequester3 = bringIntoViewRequester;
+                                                        final boolean z26 = z13;
+                                                        final TextStyle textStyle5 = textStyle3;
+                                                        Function2 function2 = new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda16
                                                             @Override // kotlin.jvm.functions.Function2
-                                                            public final Object invoke(Object obj4, Object obj5) {
-                                                                return CoreTextFieldKt.CoreTextField$lambda$26(Function3.this, legacyTextFieldState3, textStyle52, i41, i482, textFieldScrollerPosition62, textFieldValue, visualTransformation52, modifier72, drawBehind2, onGloballyPositioned2, modifier62, bringIntoViewRequester32, textFieldSelectionManager62, z20, z312, function14, offsetMapping52, density, (Composer) obj4, ((Integer) obj5).intValue());
+                                                            public final Object invoke(Object obj6, Object obj7) {
+                                                                return CoreTextFieldKt.CoreTextField$lambda$22(Function3.this, legacyTextFieldState, textStyle5, i41, i47, textFieldScrollerPosition6, textFieldValue, visualTransformation4, modifier5, textFieldDraw, onGloballyPositioned, modifier4, bringIntoViewRequester3, textFieldSelectionManager3, z18, z26, function15, offsetMapping3, density, (Composer) obj6, ((Integer) obj7).intValue());
                                                             }
-                                                        }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK);
-                                                        if (ComposerKt.isTraceInProgress()) {
-                                                        }
-                                                        function32 = function332;
-                                                        i27 = i41;
+                                                        };
                                                         composer2 = startRestartGroup;
-                                                        function13 = function14;
-                                                        imeOptions2 = imeOptions6;
+                                                        CoreTextFieldRootBox(addContextMenuComponents, textFieldSelectionManager3, ComposableLambdaKt.rememberComposableLambda(-814563849, true, function2, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                        if (ComposerKt.isTraceInProgress()) {
+                                                            ComposerKt.traceEventEnd();
+                                                        }
+                                                        i28 = i41;
+                                                        visualTransformation2 = visualTransformation4;
+                                                        function32 = function33;
+                                                        function13 = function15;
                                                         textFieldScrollerPosition2 = textFieldScrollerPosition3;
-                                                        mutableInteractionSource2 = mutableInteractionSource6;
-                                                        keyboardActions2 = keyboardActions4;
-                                                        brush2 = brush52;
-                                                        z6 = z292;
-                                                        modifier2 = modifier5;
-                                                        i28 = i33;
+                                                        z4 = z16;
+                                                        mutableInteractionSource2 = mutableInteractionSource5;
+                                                        z6 = z13;
+                                                        companion = modifier3;
+                                                        i27 = i47;
+                                                        brush2 = brush5;
                                                         z5 = z10;
                                                         textStyle2 = textStyle3;
-                                                        z4 = z12;
-                                                        visualTransformation2 = visualTransformation52;
+                                                        imeOptions2 = imeOptions8;
                                                     }
-                                                } else {
-                                                    textFieldSelectionManager = textFieldSelectionManager3;
                                                 }
-                                                final ImeOptions imeOptions7 = imeOptions4;
-                                                final boolean z32 = z8;
-                                                rememberedValue19 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda6
+                                                rememberedValue17 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda2
                                                     @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$13$0;
-                                                        CoreTextField$lambda$13$0 = CoreTextFieldKt.CoreTextField$lambda$13$0(LegacyTextFieldState.this, z26, z32, textInputService2, textFieldValue, imeOptions7, offsetMapping2, textFieldSelectionManager, coroutineScope2, bringIntoViewRequester2, (FocusState) obj4);
-                                                        return CoreTextField$lambda$13$0;
+                                                    public final Object invoke(Object obj6) {
+                                                        Unit CoreTextField$lambda$16$0;
+                                                        CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, z16, windowInfo2, textFieldSelectionManager3, textFieldValue, offsetMapping3, (LayoutCoordinates) obj6);
+                                                        return CoreTextField$lambda$16$0;
                                                     }
                                                 };
-                                                legacyTextFieldState2 = legacyTextFieldState;
-                                                z12 = z32;
-                                                textInputService = textInputService2;
-                                                imeOptions5 = imeOptions7;
-                                                offsetMapping = offsetMapping2;
-                                                coroutineScope = coroutineScope2;
-                                                bringIntoViewRequester = bringIntoViewRequester2;
-                                                visualTransformation4 = visualTransformation3;
-                                                str = "CC(<get-current>):CompositionLocal.kt#9igjgp";
-                                                z13 = z26;
-                                                textFieldSelectionManager2 = textFieldSelectionManager;
-                                                startRestartGroup.updateRememberedValue(rememberedValue19);
+                                                windowInfo3 = windowInfo2;
+                                                startRestartGroup.updateRememberedValue(rememberedValue17);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                Modifier textFieldFocusModifier2 = TextFieldGestureModifiersKt.textFieldFocusModifier(companion3, z13, focusRequester2, mutableInteractionSource6, (Function1) rememberedValue19);
-                                                State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(Boolean.valueOf((z13 || z12) ? false : true), startRestartGroup, 0);
-                                                Unit unit2 = Unit.INSTANCE;
-                                                final boolean z272 = z13;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213577460, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changed = startRestartGroup.changed(rememberUpdatedState2) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changedInstance(textInputService) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                if (i46 > 32) {
+                                                final Modifier onGloballyPositioned2 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion4, (Function1) rememberedValue17);
+                                                CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier2 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState, z13, z16, visualTransformation3 instanceof PasswordVisualTransformation, offsetMapping3, textFieldSelectionManager3, imeOptions8, focusRequester);
+                                                Brush brush52 = brush4;
+                                                Modifier textFieldCursor2 = CoreTextField_androidKt.textFieldCursor(Modifier.Companion, legacyTextFieldState, textFieldValue, offsetMapping3, brush52, (z16 || z13 || !windowInfo3.isWindowFocused() || legacyTextFieldState.hasHighlight()) ? false : true);
+                                                final VisualTransformation visualTransformation42 = visualTransformation3;
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213463375, "CC(remember):CoreTextField.kt#9igjgp");
+                                                changedInstance3 = startRestartGroup.changedInstance(textFieldSelectionManager3);
+                                                Object rememberedValue182 = startRestartGroup.rememberedValue();
+                                                if (changedInstance3) {
                                                 }
-                                                z14 = changed;
-                                                if ((i44 & 48) != 32) {
-                                                }
-                                                z15 = true;
-                                                z16 = z14 | z15;
-                                                rememberedValue = startRestartGroup.rememberedValue();
-                                                if (z16) {
-                                                }
-                                                CoreTextFieldKt$CoreTextField$5$1 coreTextFieldKt$CoreTextField$5$122 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState2, rememberUpdatedState2, textInputService, textFieldSelectionManager2, imeOptions5, null);
-                                                state = rememberUpdatedState2;
-                                                rememberedValue = coreTextFieldKt$CoreTextField$5$122;
-                                                startRestartGroup.updateRememberedValue(rememberedValue);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                State state222 = state;
-                                                EffectsKt.LaunchedEffect(unit2, (Function2) rememberedValue, startRestartGroup, 6);
-                                                Modifier.Companion companion422 = Modifier.Companion;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213545091, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState2);
-                                                rememberedValue2 = startRestartGroup.rememberedValue();
-                                                if (!changedInstance2) {
-                                                }
-                                                rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda7
+                                                rememberedValue182 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda3
                                                     @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$16$0;
-                                                        CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, ((Boolean) obj4).booleanValue());
-                                                        return CoreTextField$lambda$16$0;
+                                                    public final Object invoke(Object obj6) {
+                                                        DisposableEffectResult CoreTextField$lambda$17$0;
+                                                        CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj6);
+                                                        return CoreTextField$lambda$17$0;
+                                                    }
+                                                };
+                                                startRestartGroup.updateRememberedValue(rememberedValue182);
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                EffectsKt.DisposableEffect(textFieldSelectionManager3, (Function1) rememberedValue182, startRestartGroup, 0);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213460264, "CC(remember):CoreTextField.kt#9igjgp");
+                                                changedInstance4 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService3) | (i42 != 4) | ((i45 <= 32 && startRestartGroup.changed(imeOptions8)) || (i44 & 48) == 32);
+                                                rememberedValue2 = startRestartGroup.rememberedValue();
+                                                if (!changedInstance4) {
+                                                }
+                                                rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda4
+                                                    @Override // kotlin.jvm.functions.Function1
+                                                    public final Object invoke(Object obj6) {
+                                                        DisposableEffectResult CoreTextField$lambda$18$0;
+                                                        CoreTextField$lambda$18$0 = CoreTextFieldKt.CoreTextField$lambda$18$0(LegacyTextFieldState.this, textInputService3, textFieldValue, imeOptions8, (DisposableEffectScope) obj6);
+                                                        return CoreTextField$lambda$18$0;
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                Modifier updateSelectionTouchMode22 = SelectionGesturesKt.updateSelectionTouchMode(companion422, (Function1) rememberedValue2);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213541055, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance3 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i45 != 16384) | (i43 != 2048) | startRestartGroup.changedInstance(offsetMapping) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                rememberedValue3 = startRestartGroup.rememberedValue();
-                                                if (changedInstance3) {
+                                                EffectsKt.DisposableEffect(imeOptions8, (Function1) rememberedValue2, startRestartGroup, i46 & 14);
+                                                final int i472 = i32;
+                                                Modifier m1664textFieldKeyInput2WJ9YEU2 = TextFieldKeyInputKt.m1664textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState, textFieldSelectionManager3, textFieldValue, legacyTextFieldState.getOnValueChange(), !z13, i472 != 1, offsetMapping3, undoManager, imeOptions8.m7805getImeActioneUduSuo());
+                                                if (KeyboardType.m7829equalsimpl0(imeOptions8.m7806getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7848getPasswordPjHm6EE())) {
                                                 }
-                                                final OffsetMapping offsetMapping322 = offsetMapping;
-                                                final TextFieldSelectionManager textFieldSelectionManager422 = textFieldSelectionManager2;
-                                                final LegacyTextFieldState legacyTextFieldState522 = legacyTextFieldState2;
-                                                final boolean z2822 = z12;
-                                                rememberedValue3 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda8
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$17$0;
-                                                        CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(LegacyTextFieldState.this, focusRequester2, z2822, z272, textFieldSelectionManager422, offsetMapping322, (Offset) obj4);
-                                                        return CoreTextField$lambda$17$0;
+                                                Modifier.Companion companion52 = Modifier.Companion;
+                                                boolean CoreTextField$lambda$142 = CoreTextField$lambda$14(rememberUpdatedState);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213422116, "CC(remember):CoreTextField.kt#9igjgp");
+                                                final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter32 = legacyPlatformTextInputServiceAdapter;
+                                                changed = startRestartGroup.changed(z17) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter32);
+                                                rememberedValue3 = startRestartGroup.rememberedValue();
+                                                if (!changed) {
+                                                }
+                                                rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda5
+                                                    @Override // kotlin.jvm.functions.Function0
+                                                    public final Object invoke() {
+                                                        Unit CoreTextField$lambda$19$0;
+                                                        CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(z17, legacyPlatformTextInputServiceAdapter32);
+                                                        return CoreTextField$lambda$19$0;
                                                     }
                                                 };
-                                                focusRequester = focusRequester2;
-                                                z17 = z272;
                                                 startRestartGroup.updateRememberedValue(rememberedValue3);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                Modifier tapPressTextFieldModifier22 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier(updateSelectionTouchMode22, mutableInteractionSource6, z17, (Function1) rememberedValue3);
-                                                MouseSelectionObserver mouseSelectionObserver$foundation22 = textFieldSelectionManager2.getMouseSelectionObserver$foundation();
-                                                FocusRequester focusRequester322 = focusRequester;
-                                                TextDragObserver touchSelectionObserver$foundation22 = textFieldSelectionManager2.getTouchSelectionObserver$foundation();
-                                                imeOptions6 = imeOptions5;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213507214, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance4 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                PointerInputEventHandler rememberedValue2022 = startRestartGroup.rememberedValue();
-                                                if (changedInstance4) {
-                                                }
-                                                rememberedValue2022 = new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$pointerModifier$3$1
-                                                    @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
-                                                    public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-                                                        Object awaitSelectionGestures = SelectionGesturesKt.awaitSelectionGestures(pointerInputScope, TextFieldSelectionManager.this.getMouseSelectionObserver$foundation(), TextFieldSelectionManager.this.getTouchSelectionObserver$foundation(), continuation);
-                                                        return awaitSelectionGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitSelectionGestures : Unit.INSTANCE;
-                                                    }
-                                                };
-                                                startRestartGroup.updateRememberedValue(rememberedValue2022);
+                                                Modifier stylusHandwriting2 = StylusHandwritingKt.stylusHandwriting(companion52, CoreTextField$lambda$142, z17, (Function0) rememberedValue3);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                Object consume102 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                Modifier pointerHoverIcon$default22 = PointerIconKt.pointerHoverIcon$default(SuspendingPointerInputFilterKt.pointerInput(tapPressTextFieldModifier22, mouseSelectionObserver$foundation22, touchSelectionObserver$foundation22, (PointerInputEventHandler) rememberedValue2022), PointerIcon.Companion.getText(), false, 2, null);
-                                                Modifier.Companion companion522 = Modifier.Companion;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213497918, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                                Object consume112 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
+                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                                final Brush m1477resolveAutofillHighlightWkMShQ2 = AutofillHighlightKt.m1477resolveAutofillHighlightWkMShQ((Brush) consume102, ((Color) consume112).m5358unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
+                                                Modifier.Companion companion62 = Modifier.Companion;
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213381208, "CC(remember):CoreTextField.kt#9igjgp");
+                                                changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changed(m1477resolveAutofillHighlightWkMShQ2);
                                                 rememberedValue4 = startRestartGroup.rememberedValue();
-                                                if (changedInstance5) {
+                                                if (!changedInstance5) {
                                                 }
-                                                textFieldValue2 = textFieldValue;
-                                                rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda9
+                                                rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda14
                                                     @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$19$0;
-                                                        CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(LegacyTextFieldState.this, textFieldValue2, offsetMapping, (DrawScope) obj4);
-                                                        return CoreTextField$lambda$19$0;
+                                                    public final Object invoke(Object obj6) {
+                                                        Unit CoreTextField$lambda$20$0;
+                                                        CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, m1477resolveAutofillHighlightWkMShQ2, (ContentDrawScope) obj6);
+                                                        return CoreTextField$lambda$20$0;
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue4);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                final Modifier drawBehind22 = DrawModifierKt.drawBehind(companion522, (Function1) rememberedValue4);
-                                                Modifier.Companion companion622 = Modifier.Companion;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213476153, "CC(remember):CoreTextField.kt#9igjgp");
-                                                windowInfo2 = windowInfo;
-                                                changedInstance6 = (i43 != 2048) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changed(windowInfo2) | startRestartGroup.changedInstance(textFieldSelectionManager2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
-                                                rememberedValue5 = startRestartGroup.rememberedValue();
-                                                if (changedInstance6) {
-                                                }
-                                                final TextFieldValue textFieldValue322 = textFieldValue2;
-                                                final OffsetMapping offsetMapping422 = offsetMapping;
-                                                final TextFieldSelectionManager textFieldSelectionManager522 = textFieldSelectionManager2;
-                                                final LegacyTextFieldState legacyTextFieldState622 = legacyTextFieldState2;
-                                                rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda10
+                                                Modifier drawWithContent2 = DrawModifierKt.drawWithContent(companion62, (Function1) rememberedValue4);
+                                                OverscrollEffect rememberTextFieldOverscrollEffect2 = TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0);
+                                                Modifier then2 = previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier3.then(drawWithContent2), legacyPlatformTextInputServiceAdapter32, legacyTextFieldState, textFieldSelectionManager3).then(stylusHandwriting2).then(textFieldFocusModifier), legacyTextFieldState, focusManager), legacyTextFieldState, textFieldSelectionManager3).then(m1664textFieldKeyInput2WJ9YEU2);
+                                                final TextFieldScrollerPosition textFieldScrollerPosition62 = textFieldScrollerPosition5;
+                                                Modifier addContextMenuComponents2 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(then2, textFieldScrollerPosition62, mutableInteractionSource5, z16, rememberTextFieldOverscrollEffect2).then(textFieldPointer).then(coreTextFieldSemanticsModifier2), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda15
                                                     @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$20$0;
-                                                        CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, z18, windowInfo2, textFieldSelectionManager522, textFieldValue322, offsetMapping422, (LayoutCoordinates) obj4);
-                                                        return CoreTextField$lambda$20$0;
+                                                    public final Object invoke(Object obj6) {
+                                                        return CoreTextFieldKt.CoreTextField$lambda$21(LegacyTextFieldState.this, (LayoutCoordinates) obj6);
                                                     }
-                                                };
-                                                z19 = z18;
-                                                windowInfo3 = windowInfo2;
-                                                startRestartGroup.updateRememberedValue(rememberedValue5);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                final Modifier onGloballyPositioned22 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion622, (Function1) rememberedValue5);
-                                                final VisualTransformation visualTransformation522 = visualTransformation4;
-                                                boolean z2922 = z19;
-                                                CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier22 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState2, z12, z2922, visualTransformation522 instanceof PasswordVisualTransformation, offsetMapping, textFieldSelectionManager2, imeOptions6, focusRequester322);
-                                                Brush brush522 = brush4;
-                                                final OffsetMapping offsetMapping522 = offsetMapping;
-                                                legacyTextFieldState3 = legacyTextFieldState2;
-                                                Modifier cursor22 = TextFieldCursorKt.cursor(Modifier.Companion, legacyTextFieldState3, textFieldValue, offsetMapping522, brush522, (z2922 || z12 || !windowInfo3.isWindowFocused() || legacyTextFieldState2.hasHighlight()) ? false : true);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213406735, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance7 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                                Object rememberedValue2122 = startRestartGroup.rememberedValue();
-                                                if (changedInstance7) {
+                                                }), textFieldSelectionManager3, coroutineScope);
+                                                if (z16) {
                                                 }
-                                                rememberedValue2122 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda18
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        DisposableEffectResult CoreTextField$lambda$21$0;
-                                                        CoreTextField$lambda$21$0 = CoreTextFieldKt.CoreTextField$lambda$21$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj4);
-                                                        return CoreTextField$lambda$21$0;
-                                                    }
-                                                };
-                                                startRestartGroup.updateRememberedValue(rememberedValue2122);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                EffectsKt.DisposableEffect(textFieldSelectionManager2, (Function1) rememberedValue2122, startRestartGroup, 0);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213403624, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance8 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changedInstance(textInputService) | (i42 != 4) | ((i46 <= 32 && startRestartGroup.changed(imeOptions6)) || (i44 & 48) == 32);
-                                                rememberedValue6 = startRestartGroup.rememberedValue();
-                                                if (!changedInstance8) {
+                                                if (!z18) {
                                                 }
-                                                rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda19
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        DisposableEffectResult CoreTextField$lambda$22$0;
-                                                        CoreTextField$lambda$22$0 = CoreTextFieldKt.CoreTextField$lambda$22$0(LegacyTextFieldState.this, textInputService, textFieldValue, imeOptions6, (DisposableEffectScope) obj4);
-                                                        return CoreTextField$lambda$22$0;
-                                                    }
-                                                };
-                                                startRestartGroup.updateRememberedValue(rememberedValue6);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                EffectsKt.DisposableEffect(imeOptions6, (Function1) rememberedValue6, startRestartGroup, (i44 >> 3) & 14);
-                                                int i4722 = i32;
-                                                Modifier m1276textFieldKeyInput2WJ9YEU22 = TextFieldKeyInputKt.m1276textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState3, textFieldSelectionManager2, textFieldValue, legacyTextFieldState3.getOnValueChange(), !z12, i4722 != 1, offsetMapping522, undoManager, imeOptions6.m7200getImeActioneUduSuo());
-                                                if (KeyboardType.m7224equalsimpl0(imeOptions6.m7201getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7243getPasswordPjHm6EE())) {
-                                                }
-                                                Modifier.Companion companion722 = Modifier.Companion;
-                                                boolean CoreTextField$lambda$1422 = CoreTextField$lambda$14(state222);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213365476, "CC(remember):CoreTextField.kt#9igjgp");
-                                                final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter322 = legacyPlatformTextInputServiceAdapter;
-                                                changed2 = startRestartGroup.changed(z30) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter322);
-                                                Object rememberedValue2222 = startRestartGroup.rememberedValue();
-                                                if (changed2) {
-                                                }
-                                                rememberedValue2222 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda20
-                                                    @Override // kotlin.jvm.functions.Function0
-                                                    public final Object invoke() {
-                                                        Unit CoreTextField$lambda$23$0;
-                                                        CoreTextField$lambda$23$0 = CoreTextFieldKt.CoreTextField$lambda$23$0(z30, legacyPlatformTextInputServiceAdapter322);
-                                                        return CoreTextField$lambda$23$0;
-                                                    }
-                                                };
-                                                startRestartGroup.updateRememberedValue(rememberedValue2222);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                Modifier stylusHandwriting22 = StylusHandwritingKt.stylusHandwriting(companion722, CoreTextField$lambda$1422, z30, (Function0) rememberedValue2222);
-                                                String str322 = str;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str322);
-                                                Object consume1022 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str322);
-                                                Object consume1122 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                final Brush m1132resolveAutofillHighlightWkMShQ22 = AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) consume1022, ((Color) consume1122).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
-                                                Modifier.Companion companion822 = Modifier.Companion;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213324568, "CC(remember):CoreTextField.kt#9igjgp");
-                                                changedInstance9 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changed(m1132resolveAutofillHighlightWkMShQ22);
-                                                rememberedValue7 = startRestartGroup.rememberedValue();
-                                                if (!changedInstance9) {
-                                                }
-                                                rememberedValue7 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda21
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        Unit CoreTextField$lambda$24$0;
-                                                        CoreTextField$lambda$24$0 = CoreTextFieldKt.CoreTextField$lambda$24$0(LegacyTextFieldState.this, m1132resolveAutofillHighlightWkMShQ22, (ContentDrawScope) obj4);
-                                                        return CoreTextField$lambda$24$0;
-                                                    }
-                                                };
-                                                startRestartGroup.updateRememberedValue(rememberedValue7);
-                                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                final TextFieldScrollerPosition textFieldScrollerPosition622 = textFieldScrollerPosition5;
-                                                Modifier addContextMenuComponents22 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier5.then(DrawModifierKt.drawWithContent(companion822, (Function1) rememberedValue7)), legacyPlatformTextInputServiceAdapter322, legacyTextFieldState3, textFieldSelectionManager2).then(stylusHandwriting22).then(textFieldFocusModifier2), legacyTextFieldState3, focusManager), legacyTextFieldState3, textFieldSelectionManager2).then(m1276textFieldKeyInput2WJ9YEU22), textFieldScrollerPosition622, mutableInteractionSource6, z2922, TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0)).then(pointerHoverIcon$default22).then(coreTextFieldSemanticsModifier22), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda22
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj4) {
-                                                        return CoreTextFieldKt.CoreTextField$lambda$25(LegacyTextFieldState.this, (LayoutCoordinates) obj4);
-                                                    }
-                                                }), textFieldSelectionManager2, coroutineScope);
-                                                if (z2922) {
-                                                }
-                                                if (!z20) {
-                                                }
-                                                final Modifier modifier622 = companion2;
-                                                final Modifier modifier722 = modifier4;
-                                                final int i4822 = i33;
-                                                final TextStyle textStyle522 = textStyle3;
-                                                final TextFieldSelectionManager textFieldSelectionManager622 = textFieldSelectionManager2;
-                                                final BringIntoViewRequester bringIntoViewRequester322 = bringIntoViewRequester;
-                                                final Function3 function3322 = lambda$559628295$foundation;
-                                                final boolean z3122 = z12;
-                                                CoreTextFieldRootBox(addContextMenuComponents22, textFieldSelectionManager622, ComposableLambdaKt.rememberComposableLambda(-814563849, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda23
+                                                final Modifier modifier42 = companion2;
+                                                final Modifier modifier52 = modifier2;
+                                                final BringIntoViewRequester bringIntoViewRequester32 = bringIntoViewRequester;
+                                                final boolean z262 = z13;
+                                                final TextStyle textStyle52 = textStyle3;
+                                                Function2 function22 = new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda16
                                                     @Override // kotlin.jvm.functions.Function2
-                                                    public final Object invoke(Object obj4, Object obj5) {
-                                                        return CoreTextFieldKt.CoreTextField$lambda$26(Function3.this, legacyTextFieldState3, textStyle522, i41, i4822, textFieldScrollerPosition622, textFieldValue, visualTransformation522, modifier722, drawBehind22, onGloballyPositioned22, modifier622, bringIntoViewRequester322, textFieldSelectionManager622, z20, z3122, function14, offsetMapping522, density, (Composer) obj4, ((Integer) obj5).intValue());
+                                                    public final Object invoke(Object obj6, Object obj7) {
+                                                        return CoreTextFieldKt.CoreTextField$lambda$22(Function3.this, legacyTextFieldState, textStyle52, i41, i472, textFieldScrollerPosition62, textFieldValue, visualTransformation42, modifier52, textFieldDraw, onGloballyPositioned2, modifier42, bringIntoViewRequester32, textFieldSelectionManager3, z18, z262, function15, offsetMapping3, density, (Composer) obj6, ((Integer) obj7).intValue());
                                                     }
-                                                }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                };
+                                                composer2 = startRestartGroup;
+                                                CoreTextFieldRootBox(addContextMenuComponents2, textFieldSelectionManager3, ComposableLambdaKt.rememberComposableLambda(-814563849, true, function22, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                 }
-                                                function32 = function3322;
-                                                i27 = i41;
-                                                composer2 = startRestartGroup;
-                                                function13 = function14;
-                                                imeOptions2 = imeOptions6;
+                                                i28 = i41;
+                                                visualTransformation2 = visualTransformation42;
+                                                function32 = function33;
+                                                function13 = function15;
                                                 textFieldScrollerPosition2 = textFieldScrollerPosition3;
-                                                mutableInteractionSource2 = mutableInteractionSource6;
-                                                keyboardActions2 = keyboardActions4;
-                                                brush2 = brush522;
-                                                z6 = z2922;
-                                                modifier2 = modifier5;
-                                                i28 = i33;
+                                                z4 = z16;
+                                                mutableInteractionSource2 = mutableInteractionSource5;
+                                                z6 = z13;
+                                                companion = modifier3;
+                                                i27 = i472;
+                                                brush2 = brush52;
                                                 z5 = z10;
                                                 textStyle2 = textStyle3;
-                                                z4 = z12;
-                                                visualTransformation2 = visualTransformation522;
+                                                imeOptions2 = imeOptions8;
                                             }
                                         } else {
-                                            legacyTextFieldState = legacyTextFieldState4;
+                                            imeOptions6 = imeOptions5;
                                         }
-                                        z11 = true;
-                                        changedInstance = changedInstance10 | z11 | startRestartGroup.changedInstance(offsetMapping2) | startRestartGroup.changedInstance(coroutineScope2) | startRestartGroup.changedInstance(bringIntoViewRequester2) | startRestartGroup.changedInstance(textFieldSelectionManager3);
-                                        Object rememberedValue192 = startRestartGroup.rememberedValue();
-                                        if (changedInstance) {
+                                        z14 = true;
+                                        z15 = z14 | changed4;
+                                        Object rememberedValue162 = startRestartGroup.rememberedValue();
+                                        if (z15) {
                                         }
-                                        final ImeOptions imeOptions72 = imeOptions4;
-                                        final boolean z322 = z8;
-                                        rememberedValue192 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda6
+                                        ImeOptions imeOptions102 = imeOptions6;
+                                        textInputService3 = textInputService5;
+                                        imeOptions7 = imeOptions102;
+                                        coreTextFieldKt$CoreTextField$5$1 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState, rememberUpdatedState, textInputService5, textFieldSelectionManager, imeOptions102, null);
+                                        startRestartGroup.updateRememberedValue(coreTextFieldKt$CoreTextField$5$1);
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        imeOptions8 = imeOptions7;
+                                        EffectsKt.LaunchedEffect(unit, coreTextFieldKt$CoreTextField$5$1, startRestartGroup, 6);
+                                        int i462 = i44 >> 3;
+                                        final TextFieldSelectionManager textFieldSelectionManager32 = textFieldSelectionManager;
+                                        z16 = z12;
+                                        Modifier textFieldPointer2 = TextFieldPointerModifier_androidKt.textFieldPointer(Modifier.Companion, textFieldSelectionManager32, z16, mutableInteractionSource5, legacyTextFieldState, focusRequester, z13, offsetMapping, startRestartGroup, ((i40 >> 9) & 7168) | (i462 & 896) | 196614 | ((i44 << 6) & 3670016));
+                                        final OffsetMapping offsetMapping32 = offsetMapping;
+                                        final Modifier textFieldDraw2 = CoreTextField_androidKt.textFieldDraw(Modifier.Companion, legacyTextFieldState, textFieldValue2, offsetMapping32);
+                                        Modifier.Companion companion42 = Modifier.Companion;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213533337, "CC(remember):CoreTextField.kt#9igjgp");
+                                        WindowInfo windowInfo52 = windowInfo;
+                                        changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState) | (i43 == 2048) | startRestartGroup.changed(windowInfo52) | startRestartGroup.changedInstance(textFieldSelectionManager32) | (i42 == 4) | startRestartGroup.changedInstance(offsetMapping32);
+                                        Object rememberedValue172 = startRestartGroup.rememberedValue();
+                                        if (changedInstance2) {
+                                        }
+                                        rememberedValue172 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda2
                                             @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$13$0;
-                                                CoreTextField$lambda$13$0 = CoreTextFieldKt.CoreTextField$lambda$13$0(LegacyTextFieldState.this, z26, z322, textInputService2, textFieldValue, imeOptions72, offsetMapping2, textFieldSelectionManager, coroutineScope2, bringIntoViewRequester2, (FocusState) obj4);
-                                                return CoreTextField$lambda$13$0;
+                                            public final Object invoke(Object obj6) {
+                                                Unit CoreTextField$lambda$16$0;
+                                                CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, z16, windowInfo2, textFieldSelectionManager32, textFieldValue, offsetMapping32, (LayoutCoordinates) obj6);
+                                                return CoreTextField$lambda$16$0;
                                             }
                                         };
-                                        legacyTextFieldState2 = legacyTextFieldState;
-                                        z12 = z322;
-                                        textInputService = textInputService2;
-                                        imeOptions5 = imeOptions72;
-                                        offsetMapping = offsetMapping2;
-                                        coroutineScope = coroutineScope2;
-                                        bringIntoViewRequester = bringIntoViewRequester2;
-                                        visualTransformation4 = visualTransformation3;
-                                        str = "CC(<get-current>):CompositionLocal.kt#9igjgp";
-                                        z13 = z26;
-                                        textFieldSelectionManager2 = textFieldSelectionManager;
-                                        startRestartGroup.updateRememberedValue(rememberedValue192);
+                                        windowInfo3 = windowInfo2;
+                                        startRestartGroup.updateRememberedValue(rememberedValue172);
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier textFieldFocusModifier22 = TextFieldGestureModifiersKt.textFieldFocusModifier(companion3, z13, focusRequester2, mutableInteractionSource6, (Function1) rememberedValue192);
-                                        State rememberUpdatedState22 = SnapshotStateKt.rememberUpdatedState(Boolean.valueOf((z13 || z12) ? false : true), startRestartGroup, 0);
-                                        Unit unit22 = Unit.INSTANCE;
-                                        final boolean z2722 = z13;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213577460, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changed = startRestartGroup.changed(rememberUpdatedState22) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changedInstance(textInputService) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                        if (i46 > 32) {
+                                        final Modifier onGloballyPositioned22 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion42, (Function1) rememberedValue172);
+                                        CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier22 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState, z13, z16, visualTransformation3 instanceof PasswordVisualTransformation, offsetMapping32, textFieldSelectionManager32, imeOptions8, focusRequester);
+                                        Brush brush522 = brush4;
+                                        Modifier textFieldCursor22 = CoreTextField_androidKt.textFieldCursor(Modifier.Companion, legacyTextFieldState, textFieldValue, offsetMapping32, brush522, (z16 || z13 || !windowInfo3.isWindowFocused() || legacyTextFieldState.hasHighlight()) ? false : true);
+                                        final VisualTransformation visualTransformation422 = visualTransformation3;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213463375, "CC(remember):CoreTextField.kt#9igjgp");
+                                        changedInstance3 = startRestartGroup.changedInstance(textFieldSelectionManager32);
+                                        Object rememberedValue1822 = startRestartGroup.rememberedValue();
+                                        if (changedInstance3) {
                                         }
-                                        z14 = changed;
-                                        if ((i44 & 48) != 32) {
-                                        }
-                                        z15 = true;
-                                        z16 = z14 | z15;
-                                        rememberedValue = startRestartGroup.rememberedValue();
-                                        if (z16) {
-                                        }
-                                        CoreTextFieldKt$CoreTextField$5$1 coreTextFieldKt$CoreTextField$5$1222 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState2, rememberUpdatedState22, textInputService, textFieldSelectionManager2, imeOptions5, null);
-                                        state = rememberUpdatedState22;
-                                        rememberedValue = coreTextFieldKt$CoreTextField$5$1222;
-                                        startRestartGroup.updateRememberedValue(rememberedValue);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        State state2222 = state;
-                                        EffectsKt.LaunchedEffect(unit22, (Function2) rememberedValue, startRestartGroup, 6);
-                                        Modifier.Companion companion4222 = Modifier.Companion;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213545091, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState2);
-                                        rememberedValue2 = startRestartGroup.rememberedValue();
-                                        if (!changedInstance2) {
-                                        }
-                                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda7
+                                        rememberedValue1822 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda3
                                             @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$16$0;
-                                                CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, ((Boolean) obj4).booleanValue());
-                                                return CoreTextField$lambda$16$0;
+                                            public final Object invoke(Object obj6) {
+                                                DisposableEffectResult CoreTextField$lambda$17$0;
+                                                CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj6);
+                                                return CoreTextField$lambda$17$0;
+                                            }
+                                        };
+                                        startRestartGroup.updateRememberedValue(rememberedValue1822);
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        EffectsKt.DisposableEffect(textFieldSelectionManager32, (Function1) rememberedValue1822, startRestartGroup, 0);
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213460264, "CC(remember):CoreTextField.kt#9igjgp");
+                                        changedInstance4 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService3) | (i42 != 4) | ((i45 <= 32 && startRestartGroup.changed(imeOptions8)) || (i44 & 48) == 32);
+                                        rememberedValue2 = startRestartGroup.rememberedValue();
+                                        if (!changedInstance4) {
+                                        }
+                                        rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda4
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public final Object invoke(Object obj6) {
+                                                DisposableEffectResult CoreTextField$lambda$18$0;
+                                                CoreTextField$lambda$18$0 = CoreTextFieldKt.CoreTextField$lambda$18$0(LegacyTextFieldState.this, textInputService3, textFieldValue, imeOptions8, (DisposableEffectScope) obj6);
+                                                return CoreTextField$lambda$18$0;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue2);
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier updateSelectionTouchMode222 = SelectionGesturesKt.updateSelectionTouchMode(companion4222, (Function1) rememberedValue2);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213541055, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance3 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i45 != 16384) | (i43 != 2048) | startRestartGroup.changedInstance(offsetMapping) | startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                        rememberedValue3 = startRestartGroup.rememberedValue();
-                                        if (changedInstance3) {
+                                        EffectsKt.DisposableEffect(imeOptions8, (Function1) rememberedValue2, startRestartGroup, i462 & 14);
+                                        final int i4722 = i32;
+                                        Modifier m1664textFieldKeyInput2WJ9YEU22 = TextFieldKeyInputKt.m1664textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState, textFieldSelectionManager32, textFieldValue, legacyTextFieldState.getOnValueChange(), !z13, i4722 != 1, offsetMapping32, undoManager, imeOptions8.m7805getImeActioneUduSuo());
+                                        if (KeyboardType.m7829equalsimpl0(imeOptions8.m7806getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7848getPasswordPjHm6EE())) {
                                         }
-                                        final OffsetMapping offsetMapping3222 = offsetMapping;
-                                        final TextFieldSelectionManager textFieldSelectionManager4222 = textFieldSelectionManager2;
-                                        final LegacyTextFieldState legacyTextFieldState5222 = legacyTextFieldState2;
-                                        final boolean z28222 = z12;
-                                        rememberedValue3 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda8
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$17$0;
-                                                CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(LegacyTextFieldState.this, focusRequester2, z28222, z2722, textFieldSelectionManager4222, offsetMapping3222, (Offset) obj4);
-                                                return CoreTextField$lambda$17$0;
+                                        Modifier.Companion companion522 = Modifier.Companion;
+                                        boolean CoreTextField$lambda$1422 = CoreTextField$lambda$14(rememberUpdatedState);
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213422116, "CC(remember):CoreTextField.kt#9igjgp");
+                                        final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter322 = legacyPlatformTextInputServiceAdapter;
+                                        changed = startRestartGroup.changed(z17) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter322);
+                                        rememberedValue3 = startRestartGroup.rememberedValue();
+                                        if (!changed) {
+                                        }
+                                        rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda5
+                                            @Override // kotlin.jvm.functions.Function0
+                                            public final Object invoke() {
+                                                Unit CoreTextField$lambda$19$0;
+                                                CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(z17, legacyPlatformTextInputServiceAdapter322);
+                                                return CoreTextField$lambda$19$0;
                                             }
                                         };
-                                        focusRequester = focusRequester2;
-                                        z17 = z2722;
                                         startRestartGroup.updateRememberedValue(rememberedValue3);
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier tapPressTextFieldModifier222 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier(updateSelectionTouchMode222, mutableInteractionSource6, z17, (Function1) rememberedValue3);
-                                        MouseSelectionObserver mouseSelectionObserver$foundation222 = textFieldSelectionManager2.getMouseSelectionObserver$foundation();
-                                        FocusRequester focusRequester3222 = focusRequester;
-                                        TextDragObserver touchSelectionObserver$foundation222 = textFieldSelectionManager2.getTouchSelectionObserver$foundation();
-                                        imeOptions6 = imeOptions5;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213507214, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance4 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                        PointerInputEventHandler rememberedValue20222 = startRestartGroup.rememberedValue();
-                                        if (changedInstance4) {
-                                        }
-                                        rememberedValue20222 = new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$pointerModifier$3$1
-                                            @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
-                                            public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
-                                                Object awaitSelectionGestures = SelectionGesturesKt.awaitSelectionGestures(pointerInputScope, TextFieldSelectionManager.this.getMouseSelectionObserver$foundation(), TextFieldSelectionManager.this.getTouchSelectionObserver$foundation(), continuation);
-                                                return awaitSelectionGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? awaitSelectionGestures : Unit.INSTANCE;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue20222);
+                                        Modifier stylusHandwriting22 = StylusHandwritingKt.stylusHandwriting(companion522, CoreTextField$lambda$1422, z17, (Function0) rememberedValue3);
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                        Object consume1022 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier pointerHoverIcon$default222 = PointerIconKt.pointerHoverIcon$default(SuspendingPointerInputFilterKt.pointerInput(tapPressTextFieldModifier222, mouseSelectionObserver$foundation222, touchSelectionObserver$foundation222, (PointerInputEventHandler) rememberedValue20222), PointerIcon.Companion.getText(), false, 2, null);
-                                        Modifier.Companion companion5222 = Modifier.Companion;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213497918, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                        Object consume1122 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
+                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                        final Brush m1477resolveAutofillHighlightWkMShQ22 = AutofillHighlightKt.m1477resolveAutofillHighlightWkMShQ((Brush) consume1022, ((Color) consume1122).m5358unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
+                                        Modifier.Companion companion622 = Modifier.Companion;
+                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213381208, "CC(remember):CoreTextField.kt#9igjgp");
+                                        changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changed(m1477resolveAutofillHighlightWkMShQ22);
                                         rememberedValue4 = startRestartGroup.rememberedValue();
-                                        if (changedInstance5) {
+                                        if (!changedInstance5) {
                                         }
-                                        textFieldValue2 = textFieldValue;
-                                        rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda9
+                                        rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda14
                                             @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$19$0;
-                                                CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(LegacyTextFieldState.this, textFieldValue2, offsetMapping, (DrawScope) obj4);
-                                                return CoreTextField$lambda$19$0;
+                                            public final Object invoke(Object obj6) {
+                                                Unit CoreTextField$lambda$20$0;
+                                                CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, m1477resolveAutofillHighlightWkMShQ22, (ContentDrawScope) obj6);
+                                                return CoreTextField$lambda$20$0;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue4);
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final Modifier drawBehind222 = DrawModifierKt.drawBehind(companion5222, (Function1) rememberedValue4);
-                                        Modifier.Companion companion6222 = Modifier.Companion;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213476153, "CC(remember):CoreTextField.kt#9igjgp");
-                                        windowInfo2 = windowInfo;
-                                        changedInstance6 = (i43 != 2048) | startRestartGroup.changedInstance(legacyTextFieldState2) | startRestartGroup.changed(windowInfo2) | startRestartGroup.changedInstance(textFieldSelectionManager2) | (i42 != 4) | startRestartGroup.changedInstance(offsetMapping);
-                                        rememberedValue5 = startRestartGroup.rememberedValue();
-                                        if (changedInstance6) {
-                                        }
-                                        final TextFieldValue textFieldValue3222 = textFieldValue2;
-                                        final OffsetMapping offsetMapping4222 = offsetMapping;
-                                        final TextFieldSelectionManager textFieldSelectionManager5222 = textFieldSelectionManager2;
-                                        final LegacyTextFieldState legacyTextFieldState6222 = legacyTextFieldState2;
-                                        rememberedValue5 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda10
+                                        Modifier drawWithContent22 = DrawModifierKt.drawWithContent(companion622, (Function1) rememberedValue4);
+                                        OverscrollEffect rememberTextFieldOverscrollEffect22 = TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0);
+                                        Modifier then22 = previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier3.then(drawWithContent22), legacyPlatformTextInputServiceAdapter322, legacyTextFieldState, textFieldSelectionManager32).then(stylusHandwriting22).then(textFieldFocusModifier), legacyTextFieldState, focusManager), legacyTextFieldState, textFieldSelectionManager32).then(m1664textFieldKeyInput2WJ9YEU22);
+                                        final TextFieldScrollerPosition textFieldScrollerPosition622 = textFieldScrollerPosition5;
+                                        Modifier addContextMenuComponents22 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(then22, textFieldScrollerPosition622, mutableInteractionSource5, z16, rememberTextFieldOverscrollEffect22).then(textFieldPointer2).then(coreTextFieldSemanticsModifier22), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda15
                                             @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$20$0;
-                                                CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, z18, windowInfo2, textFieldSelectionManager5222, textFieldValue3222, offsetMapping4222, (LayoutCoordinates) obj4);
-                                                return CoreTextField$lambda$20$0;
+                                            public final Object invoke(Object obj6) {
+                                                return CoreTextFieldKt.CoreTextField$lambda$21(LegacyTextFieldState.this, (LayoutCoordinates) obj6);
                                             }
-                                        };
-                                        z19 = z18;
-                                        windowInfo3 = windowInfo2;
-                                        startRestartGroup.updateRememberedValue(rememberedValue5);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final Modifier onGloballyPositioned222 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion6222, (Function1) rememberedValue5);
-                                        final VisualTransformation visualTransformation5222 = visualTransformation4;
-                                        boolean z29222 = z19;
-                                        CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier222 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState2, z12, z29222, visualTransformation5222 instanceof PasswordVisualTransformation, offsetMapping, textFieldSelectionManager2, imeOptions6, focusRequester3222);
-                                        Brush brush5222 = brush4;
-                                        final OffsetMapping offsetMapping5222 = offsetMapping;
-                                        legacyTextFieldState3 = legacyTextFieldState2;
-                                        Modifier cursor222 = TextFieldCursorKt.cursor(Modifier.Companion, legacyTextFieldState3, textFieldValue, offsetMapping5222, brush5222, (z29222 || z12 || !windowInfo3.isWindowFocused() || legacyTextFieldState2.hasHighlight()) ? false : true);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213406735, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance7 = startRestartGroup.changedInstance(textFieldSelectionManager2);
-                                        Object rememberedValue21222 = startRestartGroup.rememberedValue();
-                                        if (changedInstance7) {
+                                        }), textFieldSelectionManager32, coroutineScope);
+                                        if (z16) {
                                         }
-                                        rememberedValue21222 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda18
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                DisposableEffectResult CoreTextField$lambda$21$0;
-                                                CoreTextField$lambda$21$0 = CoreTextFieldKt.CoreTextField$lambda$21$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj4);
-                                                return CoreTextField$lambda$21$0;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue21222);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        EffectsKt.DisposableEffect(textFieldSelectionManager2, (Function1) rememberedValue21222, startRestartGroup, 0);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213403624, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance8 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changedInstance(textInputService) | (i42 != 4) | ((i46 <= 32 && startRestartGroup.changed(imeOptions6)) || (i44 & 48) == 32);
-                                        rememberedValue6 = startRestartGroup.rememberedValue();
-                                        if (!changedInstance8) {
+                                        if (!z18) {
                                         }
-                                        rememberedValue6 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda19
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                DisposableEffectResult CoreTextField$lambda$22$0;
-                                                CoreTextField$lambda$22$0 = CoreTextFieldKt.CoreTextField$lambda$22$0(LegacyTextFieldState.this, textInputService, textFieldValue, imeOptions6, (DisposableEffectScope) obj4);
-                                                return CoreTextField$lambda$22$0;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue6);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        EffectsKt.DisposableEffect(imeOptions6, (Function1) rememberedValue6, startRestartGroup, (i44 >> 3) & 14);
-                                        int i47222 = i32;
-                                        Modifier m1276textFieldKeyInput2WJ9YEU222 = TextFieldKeyInputKt.m1276textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState3, textFieldSelectionManager2, textFieldValue, legacyTextFieldState3.getOnValueChange(), !z12, i47222 != 1, offsetMapping5222, undoManager, imeOptions6.m7200getImeActioneUduSuo());
-                                        if (KeyboardType.m7224equalsimpl0(imeOptions6.m7201getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7243getPasswordPjHm6EE())) {
-                                        }
-                                        Modifier.Companion companion7222 = Modifier.Companion;
-                                        boolean CoreTextField$lambda$14222 = CoreTextField$lambda$14(state2222);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213365476, "CC(remember):CoreTextField.kt#9igjgp");
-                                        final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter3222 = legacyPlatformTextInputServiceAdapter;
-                                        changed2 = startRestartGroup.changed(z30) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter3222);
-                                        Object rememberedValue22222 = startRestartGroup.rememberedValue();
-                                        if (changed2) {
-                                        }
-                                        rememberedValue22222 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda20
-                                            @Override // kotlin.jvm.functions.Function0
-                                            public final Object invoke() {
-                                                Unit CoreTextField$lambda$23$0;
-                                                CoreTextField$lambda$23$0 = CoreTextFieldKt.CoreTextField$lambda$23$0(z30, legacyPlatformTextInputServiceAdapter3222);
-                                                return CoreTextField$lambda$23$0;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue22222);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        Modifier stylusHandwriting222 = StylusHandwritingKt.stylusHandwriting(companion7222, CoreTextField$lambda$14222, z30, (Function0) rememberedValue22222);
-                                        String str3222 = str;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str3222);
-                                        Object consume10222 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, str3222);
-                                        Object consume11222 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final Brush m1132resolveAutofillHighlightWkMShQ222 = AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) consume10222, ((Color) consume11222).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
-                                        Modifier.Companion companion8222 = Modifier.Companion;
-                                        ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213324568, "CC(remember):CoreTextField.kt#9igjgp");
-                                        changedInstance9 = startRestartGroup.changedInstance(legacyTextFieldState3) | startRestartGroup.changed(m1132resolveAutofillHighlightWkMShQ222);
-                                        rememberedValue7 = startRestartGroup.rememberedValue();
-                                        if (!changedInstance9) {
-                                        }
-                                        rememberedValue7 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda21
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                Unit CoreTextField$lambda$24$0;
-                                                CoreTextField$lambda$24$0 = CoreTextFieldKt.CoreTextField$lambda$24$0(LegacyTextFieldState.this, m1132resolveAutofillHighlightWkMShQ222, (ContentDrawScope) obj4);
-                                                return CoreTextField$lambda$24$0;
-                                            }
-                                        };
-                                        startRestartGroup.updateRememberedValue(rememberedValue7);
-                                        ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final TextFieldScrollerPosition textFieldScrollerPosition6222 = textFieldScrollerPosition5;
-                                        Modifier addContextMenuComponents222 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier5.then(DrawModifierKt.drawWithContent(companion8222, (Function1) rememberedValue7)), legacyPlatformTextInputServiceAdapter3222, legacyTextFieldState3, textFieldSelectionManager2).then(stylusHandwriting222).then(textFieldFocusModifier22), legacyTextFieldState3, focusManager), legacyTextFieldState3, textFieldSelectionManager2).then(m1276textFieldKeyInput2WJ9YEU222), textFieldScrollerPosition6222, mutableInteractionSource6, z29222, TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0)).then(pointerHoverIcon$default222).then(coreTextFieldSemanticsModifier222), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda22
-                                            @Override // kotlin.jvm.functions.Function1
-                                            public final Object invoke(Object obj4) {
-                                                return CoreTextFieldKt.CoreTextField$lambda$25(LegacyTextFieldState.this, (LayoutCoordinates) obj4);
-                                            }
-                                        }), textFieldSelectionManager2, coroutineScope);
-                                        if (z29222) {
-                                        }
-                                        if (!z20) {
-                                        }
-                                        final Modifier modifier6222 = companion2;
-                                        final Modifier modifier7222 = modifier4;
-                                        final int i48222 = i33;
-                                        final TextStyle textStyle5222 = textStyle3;
-                                        final TextFieldSelectionManager textFieldSelectionManager6222 = textFieldSelectionManager2;
-                                        final BringIntoViewRequester bringIntoViewRequester3222 = bringIntoViewRequester;
-                                        final Function3 function33222 = lambda$559628295$foundation;
-                                        final boolean z31222 = z12;
-                                        CoreTextFieldRootBox(addContextMenuComponents222, textFieldSelectionManager6222, ComposableLambdaKt.rememberComposableLambda(-814563849, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda23
+                                        final Modifier modifier422 = companion2;
+                                        final Modifier modifier522 = modifier2;
+                                        final BringIntoViewRequester bringIntoViewRequester322 = bringIntoViewRequester;
+                                        final boolean z2622 = z13;
+                                        final TextStyle textStyle522 = textStyle3;
+                                        Function2 function222 = new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda16
                                             @Override // kotlin.jvm.functions.Function2
-                                            public final Object invoke(Object obj4, Object obj5) {
-                                                return CoreTextFieldKt.CoreTextField$lambda$26(Function3.this, legacyTextFieldState3, textStyle5222, i41, i48222, textFieldScrollerPosition6222, textFieldValue, visualTransformation5222, modifier7222, drawBehind222, onGloballyPositioned222, modifier6222, bringIntoViewRequester3222, textFieldSelectionManager6222, z20, z31222, function14, offsetMapping5222, density, (Composer) obj4, ((Integer) obj5).intValue());
+                                            public final Object invoke(Object obj6, Object obj7) {
+                                                return CoreTextFieldKt.CoreTextField$lambda$22(Function3.this, legacyTextFieldState, textStyle522, i41, i4722, textFieldScrollerPosition622, textFieldValue, visualTransformation422, modifier522, textFieldDraw2, onGloballyPositioned22, modifier422, bringIntoViewRequester322, textFieldSelectionManager32, z18, z2622, function15, offsetMapping32, density, (Composer) obj6, ((Integer) obj7).intValue());
                                             }
-                                        }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                        };
+                                        composer2 = startRestartGroup;
+                                        CoreTextFieldRootBox(addContextMenuComponents22, textFieldSelectionManager32, ComposableLambdaKt.rememberComposableLambda(-814563849, true, function222, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
                                         if (ComposerKt.isTraceInProgress()) {
                                         }
-                                        function32 = function33222;
-                                        i27 = i41;
-                                        composer2 = startRestartGroup;
-                                        function13 = function14;
-                                        imeOptions2 = imeOptions6;
+                                        i28 = i41;
+                                        visualTransformation2 = visualTransformation422;
+                                        function32 = function33;
+                                        function13 = function15;
                                         textFieldScrollerPosition2 = textFieldScrollerPosition3;
-                                        mutableInteractionSource2 = mutableInteractionSource6;
-                                        keyboardActions2 = keyboardActions4;
-                                        brush2 = brush5222;
-                                        z6 = z29222;
-                                        modifier2 = modifier5;
-                                        i28 = i33;
+                                        z4 = z16;
+                                        mutableInteractionSource2 = mutableInteractionSource5;
+                                        z6 = z13;
+                                        companion = modifier3;
+                                        i27 = i4722;
+                                        brush2 = brush522;
                                         z5 = z10;
                                         textStyle2 = textStyle3;
-                                        z4 = z12;
-                                        visualTransformation2 = visualTransformation5222;
-                                    } else {
-                                        startRestartGroup.skipToGroupEnd();
-                                        i27 = i2;
-                                        keyboardActions2 = keyboardActions;
-                                        z4 = z3;
-                                        function32 = function3;
-                                        textFieldScrollerPosition2 = textFieldScrollerPosition;
-                                        composer2 = startRestartGroup;
-                                        brush2 = solidColor;
-                                        mutableInteractionSource2 = obj3;
-                                        function13 = obj2;
-                                        textStyle2 = obj;
-                                        modifier2 = companion;
-                                        visualTransformation2 = visualTransformation;
-                                        z5 = z;
-                                        i28 = i;
-                                        imeOptions2 = imeOptions;
-                                        z6 = z2;
+                                        imeOptions2 = imeOptions8;
                                     }
-                                    endRestartGroup = composer2.endRestartGroup();
-                                    if (endRestartGroup != null) {
-                                        endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda1
-                                            @Override // kotlin.jvm.functions.Function2
-                                            public final Object invoke(Object obj4, Object obj5) {
-                                                return CoreTextFieldKt.CoreTextField$lambda$27(TextFieldValue.this, function1, modifier2, textStyle2, visualTransformation2, function13, mutableInteractionSource2, brush2, z5, i28, i27, imeOptions2, keyboardActions2, z6, z4, function32, textFieldScrollerPosition2, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
-                                            }
-                                        });
-                                        return;
-                                    }
-                                    return;
+                                } else {
+                                    textInputService = textInputService4;
                                 }
-                            }
-                            i25 = i5 & 32768;
-                            if (i25 != 0) {
-                            }
-                            i26 = i5 & 65536;
-                            if (i26 != 0) {
-                            }
-                            if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+                                z11 = true;
+                                changedInstance = changedInstance6 | z11 | startRestartGroup.changedInstance(offsetMapping2) | startRestartGroup.changedInstance(coroutineScope2) | startRestartGroup.changedInstance(bringIntoViewRequester2) | startRestartGroup.changedInstance(textFieldSelectionManager2);
+                                rememberedValue = startRestartGroup.rememberedValue();
+                                if (changedInstance) {
+                                }
+                                offsetMapping = offsetMapping2;
+                                final ImeOptions imeOptions92 = imeOptions4;
+                                final boolean z252 = z8;
+                                rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda1
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        Unit CoreTextField$lambda$13$0;
+                                        CoreTextField$lambda$13$0 = CoreTextFieldKt.CoreTextField$lambda$13$0(LegacyTextFieldState.this, z24, z252, textInputService, textFieldValue, imeOptions92, offsetMapping, textFieldSelectionManager2, coroutineScope2, bringIntoViewRequester2, (FocusState) obj6);
+                                        return CoreTextField$lambda$13$0;
+                                    }
+                                };
+                                z12 = z24;
+                                z13 = z252;
+                                textInputService2 = textInputService;
+                                textFieldValue2 = textFieldValue;
+                                imeOptions5 = imeOptions92;
+                                textFieldSelectionManager = textFieldSelectionManager2;
+                                coroutineScope = coroutineScope2;
+                                bringIntoViewRequester = bringIntoViewRequester2;
+                                startRestartGroup.updateRememberedValue(rememberedValue);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                Modifier textFieldFocusModifier2 = TextFieldGestureModifiersKt.textFieldFocusModifier(companion3, z12, focusRequester, mutableInteractionSource5, (Function1) rememberedValue);
+                                State rememberUpdatedState2 = SnapshotStateKt.rememberUpdatedState(Boolean.valueOf((z12 || z13) ? false : true), startRestartGroup, 0);
+                                Unit unit2 = Unit.INSTANCE;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213577460, "CC(remember):CoreTextField.kt#9igjgp");
+                                boolean changed42 = startRestartGroup.changed(rememberUpdatedState2) | startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService2) | startRestartGroup.changedInstance(textFieldSelectionManager);
+                                TextInputService textInputService52 = textInputService2;
+                                if (i45 > 32) {
+                                }
+                                imeOptions6 = imeOptions5;
+                                if ((i44 & 48) != 32) {
+                                }
+                                z14 = true;
+                                z15 = z14 | changed42;
+                                Object rememberedValue1622 = startRestartGroup.rememberedValue();
+                                if (z15) {
+                                }
+                                ImeOptions imeOptions1022 = imeOptions6;
+                                textInputService3 = textInputService52;
+                                imeOptions7 = imeOptions1022;
+                                coreTextFieldKt$CoreTextField$5$1 = new CoreTextFieldKt$CoreTextField$5$1(legacyTextFieldState, rememberUpdatedState2, textInputService52, textFieldSelectionManager, imeOptions1022, null);
+                                startRestartGroup.updateRememberedValue(coreTextFieldKt$CoreTextField$5$1);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                imeOptions8 = imeOptions7;
+                                EffectsKt.LaunchedEffect(unit2, coreTextFieldKt$CoreTextField$5$1, startRestartGroup, 6);
+                                int i4622 = i44 >> 3;
+                                final TextFieldSelectionManager textFieldSelectionManager322 = textFieldSelectionManager;
+                                z16 = z12;
+                                Modifier textFieldPointer22 = TextFieldPointerModifier_androidKt.textFieldPointer(Modifier.Companion, textFieldSelectionManager322, z16, mutableInteractionSource5, legacyTextFieldState, focusRequester, z13, offsetMapping, startRestartGroup, ((i40 >> 9) & 7168) | (i4622 & 896) | 196614 | ((i44 << 6) & 3670016));
+                                final OffsetMapping offsetMapping322 = offsetMapping;
+                                final Modifier textFieldDraw22 = CoreTextField_androidKt.textFieldDraw(Modifier.Companion, legacyTextFieldState, textFieldValue2, offsetMapping322);
+                                Modifier.Companion companion422 = Modifier.Companion;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213533337, "CC(remember):CoreTextField.kt#9igjgp");
+                                WindowInfo windowInfo522 = windowInfo;
+                                changedInstance2 = startRestartGroup.changedInstance(legacyTextFieldState) | (i43 == 2048) | startRestartGroup.changed(windowInfo522) | startRestartGroup.changedInstance(textFieldSelectionManager322) | (i42 == 4) | startRestartGroup.changedInstance(offsetMapping322);
+                                Object rememberedValue1722 = startRestartGroup.rememberedValue();
+                                if (changedInstance2) {
+                                }
+                                rememberedValue1722 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda2
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        Unit CoreTextField$lambda$16$0;
+                                        CoreTextField$lambda$16$0 = CoreTextFieldKt.CoreTextField$lambda$16$0(LegacyTextFieldState.this, z16, windowInfo2, textFieldSelectionManager322, textFieldValue, offsetMapping322, (LayoutCoordinates) obj6);
+                                        return CoreTextField$lambda$16$0;
+                                    }
+                                };
+                                windowInfo3 = windowInfo2;
+                                startRestartGroup.updateRememberedValue(rememberedValue1722);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                final Modifier onGloballyPositioned222 = OnGloballyPositionedModifierKt.onGloballyPositioned(companion422, (Function1) rememberedValue1722);
+                                CoreTextFieldSemanticsModifier coreTextFieldSemanticsModifier222 = new CoreTextFieldSemanticsModifier(transformedText, textFieldValue, legacyTextFieldState, z13, z16, visualTransformation3 instanceof PasswordVisualTransformation, offsetMapping322, textFieldSelectionManager322, imeOptions8, focusRequester);
+                                Brush brush5222 = brush4;
+                                Modifier textFieldCursor222 = CoreTextField_androidKt.textFieldCursor(Modifier.Companion, legacyTextFieldState, textFieldValue, offsetMapping322, brush5222, (z16 || z13 || !windowInfo3.isWindowFocused() || legacyTextFieldState.hasHighlight()) ? false : true);
+                                final VisualTransformation visualTransformation4222 = visualTransformation3;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213463375, "CC(remember):CoreTextField.kt#9igjgp");
+                                changedInstance3 = startRestartGroup.changedInstance(textFieldSelectionManager322);
+                                Object rememberedValue18222 = startRestartGroup.rememberedValue();
+                                if (changedInstance3) {
+                                }
+                                rememberedValue18222 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda3
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        DisposableEffectResult CoreTextField$lambda$17$0;
+                                        CoreTextField$lambda$17$0 = CoreTextFieldKt.CoreTextField$lambda$17$0(TextFieldSelectionManager.this, (DisposableEffectScope) obj6);
+                                        return CoreTextField$lambda$17$0;
+                                    }
+                                };
+                                startRestartGroup.updateRememberedValue(rememberedValue18222);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                EffectsKt.DisposableEffect(textFieldSelectionManager322, (Function1) rememberedValue18222, startRestartGroup, 0);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213460264, "CC(remember):CoreTextField.kt#9igjgp");
+                                changedInstance4 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changedInstance(textInputService3) | (i42 != 4) | ((i45 <= 32 && startRestartGroup.changed(imeOptions8)) || (i44 & 48) == 32);
+                                rememberedValue2 = startRestartGroup.rememberedValue();
+                                if (!changedInstance4) {
+                                }
+                                rememberedValue2 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda4
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        DisposableEffectResult CoreTextField$lambda$18$0;
+                                        CoreTextField$lambda$18$0 = CoreTextFieldKt.CoreTextField$lambda$18$0(LegacyTextFieldState.this, textInputService3, textFieldValue, imeOptions8, (DisposableEffectScope) obj6);
+                                        return CoreTextField$lambda$18$0;
+                                    }
+                                };
+                                startRestartGroup.updateRememberedValue(rememberedValue2);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                EffectsKt.DisposableEffect(imeOptions8, (Function1) rememberedValue2, startRestartGroup, i4622 & 14);
+                                final int i47222 = i32;
+                                Modifier m1664textFieldKeyInput2WJ9YEU222 = TextFieldKeyInputKt.m1664textFieldKeyInput2WJ9YEU(Modifier.Companion, legacyTextFieldState, textFieldSelectionManager322, textFieldValue, legacyTextFieldState.getOnValueChange(), !z13, i47222 != 1, offsetMapping322, undoManager, imeOptions8.m7805getImeActioneUduSuo());
+                                if (KeyboardType.m7829equalsimpl0(imeOptions8.m7806getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7848getPasswordPjHm6EE())) {
+                                }
+                                Modifier.Companion companion5222 = Modifier.Companion;
+                                boolean CoreTextField$lambda$14222 = CoreTextField$lambda$14(rememberUpdatedState2);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213422116, "CC(remember):CoreTextField.kt#9igjgp");
+                                final LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter3222 = legacyPlatformTextInputServiceAdapter;
+                                changed = startRestartGroup.changed(z17) | startRestartGroup.changedInstance(legacyPlatformTextInputServiceAdapter3222);
+                                rememberedValue3 = startRestartGroup.rememberedValue();
+                                if (!changed) {
+                                }
+                                rememberedValue3 = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda5
+                                    @Override // kotlin.jvm.functions.Function0
+                                    public final Object invoke() {
+                                        Unit CoreTextField$lambda$19$0;
+                                        CoreTextField$lambda$19$0 = CoreTextFieldKt.CoreTextField$lambda$19$0(z17, legacyPlatformTextInputServiceAdapter3222);
+                                        return CoreTextField$lambda$19$0;
+                                    }
+                                };
+                                startRestartGroup.updateRememberedValue(rememberedValue3);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                Modifier stylusHandwriting222 = StylusHandwritingKt.stylusHandwriting(companion5222, CoreTextField$lambda$14222, z17, (Function0) rememberedValue3);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume10222 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightBrush());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
+                                Object consume11222 = startRestartGroup.consume(AutofillHighlightKt.getLocalAutofillHighlightColor());
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                final Brush m1477resolveAutofillHighlightWkMShQ222 = AutofillHighlightKt.m1477resolveAutofillHighlightWkMShQ((Brush) consume10222, ((Color) consume11222).m5358unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor());
+                                Modifier.Companion companion6222 = Modifier.Companion;
+                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -213381208, "CC(remember):CoreTextField.kt#9igjgp");
+                                changedInstance5 = startRestartGroup.changedInstance(legacyTextFieldState) | startRestartGroup.changed(m1477resolveAutofillHighlightWkMShQ222);
+                                rememberedValue4 = startRestartGroup.rememberedValue();
+                                if (!changedInstance5) {
+                                }
+                                rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda14
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        Unit CoreTextField$lambda$20$0;
+                                        CoreTextField$lambda$20$0 = CoreTextFieldKt.CoreTextField$lambda$20$0(LegacyTextFieldState.this, m1477resolveAutofillHighlightWkMShQ222, (ContentDrawScope) obj6);
+                                        return CoreTextField$lambda$20$0;
+                                    }
+                                };
+                                startRestartGroup.updateRememberedValue(rememberedValue4);
+                                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                                Modifier drawWithContent222 = DrawModifierKt.drawWithContent(companion6222, (Function1) rememberedValue4);
+                                OverscrollEffect rememberTextFieldOverscrollEffect222 = TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0);
+                                Modifier then222 = previewKeyEventToDeselectOnBack(TextFieldFocusModifier_androidKt.interceptDPadAndMoveFocus(LegacyAdaptingPlatformTextInputModifierNodeKt.legacyTextInputAdapter(modifier3.then(drawWithContent222), legacyPlatformTextInputServiceAdapter3222, legacyTextFieldState, textFieldSelectionManager322).then(stylusHandwriting222).then(textFieldFocusModifier2), legacyTextFieldState, focusManager), legacyTextFieldState, textFieldSelectionManager322).then(m1664textFieldKeyInput2WJ9YEU222);
+                                final TextFieldScrollerPosition textFieldScrollerPosition6222 = textFieldScrollerPosition5;
+                                Modifier addContextMenuComponents222 = addContextMenuComponents(OnGloballyPositionedModifierKt.onGloballyPositioned(TextFieldScrollKt.textFieldScrollable(then222, textFieldScrollerPosition6222, mutableInteractionSource5, z16, rememberTextFieldOverscrollEffect222).then(textFieldPointer22).then(coreTextFieldSemanticsModifier222), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda15
+                                    @Override // kotlin.jvm.functions.Function1
+                                    public final Object invoke(Object obj6) {
+                                        return CoreTextFieldKt.CoreTextField$lambda$21(LegacyTextFieldState.this, (LayoutCoordinates) obj6);
+                                    }
+                                }), textFieldSelectionManager322, coroutineScope);
+                                if (z16) {
+                                }
+                                if (!z18) {
+                                }
+                                final Modifier modifier4222 = companion2;
+                                final Modifier modifier5222 = modifier2;
+                                final BringIntoViewRequester bringIntoViewRequester3222 = bringIntoViewRequester;
+                                final boolean z26222 = z13;
+                                final TextStyle textStyle5222 = textStyle3;
+                                Function2 function2222 = new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda16
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj6, Object obj7) {
+                                        return CoreTextFieldKt.CoreTextField$lambda$22(Function3.this, legacyTextFieldState, textStyle5222, i41, i47222, textFieldScrollerPosition6222, textFieldValue, visualTransformation4222, modifier5222, textFieldDraw22, onGloballyPositioned222, modifier4222, bringIntoViewRequester3222, textFieldSelectionManager322, z18, z26222, function15, offsetMapping322, density, (Composer) obj6, ((Integer) obj7).intValue());
+                                    }
+                                };
+                                composer2 = startRestartGroup;
+                                CoreTextFieldRootBox(addContextMenuComponents222, textFieldSelectionManager322, ComposableLambdaKt.rememberComposableLambda(-814563849, true, function2222, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK);
+                                if (ComposerKt.isTraceInProgress()) {
+                                }
+                                i28 = i41;
+                                visualTransformation2 = visualTransformation4222;
+                                function32 = function33;
+                                function13 = function15;
+                                textFieldScrollerPosition2 = textFieldScrollerPosition3;
+                                z4 = z16;
+                                mutableInteractionSource2 = mutableInteractionSource5;
+                                z6 = z13;
+                                companion = modifier3;
+                                i27 = i47222;
+                                brush2 = brush5222;
+                                z5 = z10;
+                                textStyle2 = textStyle3;
+                                imeOptions2 = imeOptions8;
+                            } else {
+                                composer2 = startRestartGroup;
+                                composer2.skipToGroupEnd();
+                                i27 = i;
+                                imeOptions2 = imeOptions;
+                                keyboardActions2 = keyboardActions;
+                                z4 = z2;
+                                function32 = function3;
+                                textFieldScrollerPosition2 = textFieldScrollerPosition;
+                                mutableInteractionSource2 = obj4;
+                                function13 = obj3;
+                                textStyle2 = obj;
+                                visualTransformation2 = obj2;
+                                brush2 = brush;
+                                z5 = z;
+                                i28 = i2;
+                                z6 = z3;
                             }
                             endRestartGroup = composer2.endRestartGroup();
-                            if (endRestartGroup != null) {
+                            if (endRestartGroup == null) {
+                                final Modifier modifier6 = companion;
+                                final KeyboardActions keyboardActions5 = keyboardActions2;
+                                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda17
+                                    @Override // kotlin.jvm.functions.Function2
+                                    public final Object invoke(Object obj6, Object obj7) {
+                                        return CoreTextFieldKt.CoreTextField$lambda$23(TextFieldValue.this, function1, modifier6, textStyle2, visualTransformation2, function13, mutableInteractionSource2, brush2, z5, i27, i28, imeOptions2, keyboardActions5, z4, z6, function32, textFieldScrollerPosition2, i3, i4, i5, (Composer) obj6, ((Integer) obj7).intValue());
+                                    }
+                                });
+                                return;
                             }
+                            return;
                         }
                         i15 = i14;
                         i16 = i5 & 1024;
@@ -1976,7 +1560,7 @@ public final class CoreTextFieldKt {
                         }
                         if ((i4 & 48) == 0) {
                         }
-                        int i362 = i18;
+                        int i352 = i18;
                         i19 = i5 & 4096;
                         if (i19 == 0) {
                         }
@@ -1987,15 +1571,15 @@ public final class CoreTextFieldKt {
                         if (i23 == 0) {
                         }
                         i25 = i5 & 32768;
-                        if (i25 != 0) {
+                        if (i25 == 0) {
                         }
                         i26 = i5 & 65536;
-                        if (i26 != 0) {
+                        if (i26 == 0) {
                         }
-                        if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+                        if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
                         }
                         endRestartGroup = composer2.endRestartGroup();
-                        if (endRestartGroup != null) {
+                        if (endRestartGroup == null) {
                         }
                     }
                     i13 = i12;
@@ -2008,7 +1592,7 @@ public final class CoreTextFieldKt {
                     }
                     if ((i4 & 48) == 0) {
                     }
-                    int i3622 = i18;
+                    int i3522 = i18;
                     i19 = i5 & 4096;
                     if (i19 == 0) {
                     }
@@ -2019,17 +1603,18 @@ public final class CoreTextFieldKt {
                     if (i23 == 0) {
                     }
                     i25 = i5 & 32768;
-                    if (i25 != 0) {
+                    if (i25 == 0) {
                     }
                     i26 = i5 & 65536;
-                    if (i26 != 0) {
+                    if (i26 == 0) {
                     }
-                    if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+                    if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
                     }
                     endRestartGroup = composer2.endRestartGroup();
-                    if (endRestartGroup != null) {
+                    if (endRestartGroup == null) {
                     }
                 }
+                obj2 = visualTransformation;
                 i9 = i5 & 32;
                 if (i9 == 0) {
                 }
@@ -2052,7 +1637,7 @@ public final class CoreTextFieldKt {
                 }
                 if ((i4 & 48) == 0) {
                 }
-                int i36222 = i18;
+                int i35222 = i18;
                 i19 = i5 & 4096;
                 if (i19 == 0) {
                 }
@@ -2063,21 +1648,22 @@ public final class CoreTextFieldKt {
                 if (i23 == 0) {
                 }
                 i25 = i5 & 32768;
-                if (i25 != 0) {
+                if (i25 == 0) {
                 }
                 i26 = i5 & 65536;
-                if (i26 != 0) {
+                if (i26 == 0) {
                 }
-                if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+                if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
                 }
                 endRestartGroup = composer2.endRestartGroup();
-                if (endRestartGroup != null) {
+                if (endRestartGroup == null) {
                 }
             }
             obj = textStyle;
             i8 = i5 & 16;
             if (i8 != 0) {
             }
+            obj2 = visualTransformation;
             i9 = i5 & 32;
             if (i9 == 0) {
             }
@@ -2100,7 +1686,7 @@ public final class CoreTextFieldKt {
             }
             if ((i4 & 48) == 0) {
             }
-            int i362222 = i18;
+            int i352222 = i18;
             i19 = i5 & 4096;
             if (i19 == 0) {
             }
@@ -2111,15 +1697,15 @@ public final class CoreTextFieldKt {
             if (i23 == 0) {
             }
             i25 = i5 & 32768;
-            if (i25 != 0) {
+            if (i25 == 0) {
             }
             i26 = i5 & 65536;
-            if (i26 != 0) {
+            if (i26 == 0) {
             }
-            if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+            if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
             }
             endRestartGroup = composer2.endRestartGroup();
-            if (endRestartGroup != null) {
+            if (endRestartGroup == null) {
             }
         }
         companion = modifier;
@@ -2130,6 +1716,7 @@ public final class CoreTextFieldKt {
         i8 = i5 & 16;
         if (i8 != 0) {
         }
+        obj2 = visualTransformation;
         i9 = i5 & 32;
         if (i9 == 0) {
         }
@@ -2152,7 +1739,7 @@ public final class CoreTextFieldKt {
         }
         if ((i4 & 48) == 0) {
         }
-        int i3622222 = i18;
+        int i3522222 = i18;
         i19 = i5 & 4096;
         if (i19 == 0) {
         }
@@ -2163,15 +1750,15 @@ public final class CoreTextFieldKt {
         if (i23 == 0) {
         }
         i25 = i5 & 32768;
-        if (i25 != 0) {
+        if (i25 == 0) {
         }
         i26 = i5 & 65536;
-        if (i26 != 0) {
+        if (i26 == 0) {
         }
-        if (startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
+        if (!startRestartGroup.shouldExecute((i6 & 306783379) == 306783378 || (i24 & 599187) != 599186, i6 & 1)) {
         }
         endRestartGroup = composer2.endRestartGroup();
-        if (endRestartGroup != null) {
+        if (endRestartGroup == null) {
         }
     }
 
@@ -2202,47 +1789,13 @@ public final class CoreTextFieldKt {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new CoreTextFieldKt$CoreTextField$focusModifier$1$1$1$1(bringIntoViewRequester, textFieldValue, legacyTextFieldState, layoutResult, offsetMapping, null), 3, null);
         }
         if (!focusState.isFocused()) {
-            TextFieldSelectionManager.m1655deselect_kEHs6E$foundation$default(textFieldSelectionManager, null, 1, null);
+            TextFieldSelectionManager.m2100deselect_kEHs6E$foundation$default(textFieldSelectionManager, null, 1, null);
         }
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$16$0(LegacyTextFieldState legacyTextFieldState, boolean z) {
-        legacyTextFieldState.setInTouchMode(z);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$17$0(LegacyTextFieldState legacyTextFieldState, FocusRequester focusRequester, boolean z, boolean z2, TextFieldSelectionManager textFieldSelectionManager, OffsetMapping offsetMapping, Offset offset) {
-        tapToFocus(legacyTextFieldState, focusRequester, !z);
-        if (legacyTextFieldState.getHasFocus() && z2) {
-            if (legacyTextFieldState.getHandleState() != HandleState.Selection) {
-                TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
-                if (layoutResult != null) {
-                    TextFieldDelegate.Companion.m1264setCursorOffsetULxng0E$foundation(offset.m4537unboximpl(), layoutResult, legacyTextFieldState.getProcessor(), offsetMapping, legacyTextFieldState.getOnValueChange());
-                    if (legacyTextFieldState.getTextDelegate().getText().length() > 0) {
-                        legacyTextFieldState.setHandleState(HandleState.Cursor);
-                    }
-                }
-            } else {
-                textFieldSelectionManager.m1659deselect_kEHs6E$foundation(offset);
-            }
-        }
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$19$0(LegacyTextFieldState legacyTextFieldState, TextFieldValue textFieldValue, OffsetMapping offsetMapping, DrawScope drawScope) {
-        TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
-        if (layoutResult != null) {
-            TextFieldDelegate.Companion.m1262drawQ1vqE60$foundation(drawScope.getDrawContext().getCanvas(), textFieldValue, legacyTextFieldState.m1221getSelectionPreviewHighlightRanged9O1mEE(), legacyTextFieldState.m1218getDeletionPreviewHighlightRanged9O1mEE(), offsetMapping, layoutResult.getValue(), legacyTextFieldState.getHighlightPaint(), legacyTextFieldState.m1220getSelectionBackgroundColor0d7_KjU());
-        }
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$20$0(LegacyTextFieldState legacyTextFieldState, boolean z, WindowInfo windowInfo, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, OffsetMapping offsetMapping, LayoutCoordinates layoutCoordinates) {
+    public static final Unit CoreTextField$lambda$16$0(LegacyTextFieldState legacyTextFieldState, boolean z, WindowInfo windowInfo, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, OffsetMapping offsetMapping, LayoutCoordinates layoutCoordinates) {
         TextInputSession inputSession;
         legacyTextFieldState.setLayoutCoordinates(layoutCoordinates);
         TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
@@ -2258,7 +1811,7 @@ public final class CoreTextFieldKt {
                 }
                 legacyTextFieldState.setShowSelectionHandleStart(TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(textFieldSelectionManager, true));
                 legacyTextFieldState.setShowSelectionHandleEnd(TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(textFieldSelectionManager, false));
-                legacyTextFieldState.setShowCursorHandle(TextRange.m6997getCollapsedimpl(textFieldValue.m7253getSelectiond9O1mEE()));
+                legacyTextFieldState.setShowCursorHandle(TextRange.m7602getCollapsedimpl(textFieldValue.m7858getSelectiond9O1mEE()));
             } else if (legacyTextFieldState.getHandleState() == HandleState.Cursor) {
                 legacyTextFieldState.setShowCursorHandle(TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(textFieldSelectionManager, true));
             }
@@ -2272,11 +1825,11 @@ public final class CoreTextFieldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult CoreTextField$lambda$22$0(LegacyTextFieldState legacyTextFieldState, TextInputService textInputService, TextFieldValue textFieldValue, ImeOptions imeOptions, DisposableEffectScope disposableEffectScope) {
+    public static final DisposableEffectResult CoreTextField$lambda$18$0(LegacyTextFieldState legacyTextFieldState, TextInputService textInputService, TextFieldValue textFieldValue, ImeOptions imeOptions, DisposableEffectScope disposableEffectScope) {
         if (legacyTextFieldState.getHasFocus()) {
             legacyTextFieldState.setInputSession(TextFieldDelegate.Companion.restartInput$foundation(textInputService, textFieldValue, legacyTextFieldState.getProcessor(), imeOptions, legacyTextFieldState.getOnValueChange(), legacyTextFieldState.getOnImeActionPerformed()));
         }
-        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$lambda$22$0$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$lambda$18$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
             }
@@ -2284,7 +1837,7 @@ public final class CoreTextFieldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$23$0(boolean z, LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter) {
+    public static final Unit CoreTextField$lambda$19$0(boolean z, LegacyPlatformTextInputServiceAdapter legacyPlatformTextInputServiceAdapter) {
         if (z) {
             legacyPlatformTextInputServiceAdapter.startStylusHandwriting();
         }
@@ -2292,16 +1845,16 @@ public final class CoreTextFieldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$24$0(LegacyTextFieldState legacyTextFieldState, Brush brush, ContentDrawScope contentDrawScope) {
+    public static final Unit CoreTextField$lambda$20$0(LegacyTextFieldState legacyTextFieldState, Brush brush, ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         if (legacyTextFieldState.getAutofillHighlightOn() || legacyTextFieldState.getJustAutofilled()) {
-            DrawScope.m5339drawRectAsUm42w$default(contentDrawScope, brush, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            DrawScope.m5915drawRectAsUm42w$default(contentDrawScope, brush, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit CoreTextField$lambda$25(LegacyTextFieldState legacyTextFieldState, LayoutCoordinates layoutCoordinates) {
+    public static final Unit CoreTextField$lambda$21(LegacyTextFieldState legacyTextFieldState, LayoutCoordinates layoutCoordinates) {
         TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
         if (layoutResult != null) {
             layoutResult.setDecorationBoxCoordinates(layoutCoordinates);
@@ -2310,20 +1863,20 @@ public final class CoreTextFieldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit CoreTextField$lambda$26(Function3 function3, final LegacyTextFieldState legacyTextFieldState, final TextStyle textStyle, final int i, final int i2, final TextFieldScrollerPosition textFieldScrollerPosition, final TextFieldValue textFieldValue, final VisualTransformation visualTransformation, final Modifier modifier, final Modifier modifier2, final Modifier modifier3, final Modifier modifier4, final BringIntoViewRequester bringIntoViewRequester, final TextFieldSelectionManager textFieldSelectionManager, final boolean z, final boolean z2, final Function1 function1, final OffsetMapping offsetMapping, final Density density, Composer composer, int i3) {
-        ComposerKt.sourceInformation(composer, "C588@27697L5379,588@27683L5393:CoreTextField.kt#423gt5");
+    public static final Unit CoreTextField$lambda$22(Function3 function3, final LegacyTextFieldState legacyTextFieldState, final TextStyle textStyle, final int i, final int i2, final TextFieldScrollerPosition textFieldScrollerPosition, final TextFieldValue textFieldValue, final VisualTransformation visualTransformation, final Modifier modifier, final Modifier modifier2, final Modifier modifier3, final Modifier modifier4, final BringIntoViewRequester bringIntoViewRequester, final TextFieldSelectionManager textFieldSelectionManager, final boolean z, final boolean z2, final Function1 function1, final OffsetMapping offsetMapping, final Density density, Composer composer, int i3) {
+        ComposerKt.sourceInformation(composer, "C548@25668L5379,548@25654L5393:CoreTextField.kt#423gt5");
         if (!composer.shouldExecute((i3 & 3) != 2, i3 & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-814563849, i3, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous> (CoreTextField.kt:588)");
+                ComposerKt.traceEventStart(-814563849, i3, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous> (CoreTextField.kt:548)");
             }
-            function3.invoke(ComposableLambdaKt.rememberComposableLambda(-44346382, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda15
+            function3.invoke(ComposableLambdaKt.rememberComposableLambda(-44346382, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda13
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CoreTextField$lambda$26$0;
-                    CoreTextField$lambda$26$0 = CoreTextFieldKt.CoreTextField$lambda$26$0(LegacyTextFieldState.this, textStyle, i, i2, textFieldScrollerPosition, textFieldValue, visualTransformation, modifier, modifier2, modifier3, modifier4, bringIntoViewRequester, textFieldSelectionManager, z, z2, function1, offsetMapping, density, (Composer) obj, ((Integer) obj2).intValue());
-                    return CoreTextField$lambda$26$0;
+                    Unit CoreTextField$lambda$22$0;
+                    CoreTextField$lambda$22$0 = CoreTextFieldKt.CoreTextField$lambda$22$0(LegacyTextFieldState.this, textStyle, i, i2, textFieldScrollerPosition, textFieldValue, visualTransformation, modifier, modifier2, modifier3, modifier4, bringIntoViewRequester, textFieldSelectionManager, z, z2, function1, offsetMapping, density, (Composer) obj, ((Integer) obj2).intValue());
+                    return CoreTextField$lambda$22$0;
                 }
             }, composer, 54), composer, 6);
             if (ComposerKt.isTraceInProgress()) {
@@ -2334,20 +1887,20 @@ public final class CoreTextFieldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CoreTextField$lambda$26$0(final LegacyTextFieldState legacyTextFieldState, TextStyle textStyle, int i, final int i2, TextFieldScrollerPosition textFieldScrollerPosition, final TextFieldValue textFieldValue, VisualTransformation visualTransformation, Modifier modifier, Modifier modifier2, Modifier modifier3, Modifier modifier4, BringIntoViewRequester bringIntoViewRequester, final TextFieldSelectionManager textFieldSelectionManager, final boolean z, final boolean z2, final Function1 function1, final OffsetMapping offsetMapping, final Density density, Composer composer, int i3) {
-        ComposerKt.sourceInformation(composer, "C602@28548L22,611@28935L4131,611@28899L4167:CoreTextField.kt#423gt5");
+    public static final Unit CoreTextField$lambda$22$0(final LegacyTextFieldState legacyTextFieldState, TextStyle textStyle, int i, final int i2, TextFieldScrollerPosition textFieldScrollerPosition, final TextFieldValue textFieldValue, VisualTransformation visualTransformation, Modifier modifier, Modifier modifier2, Modifier modifier3, Modifier modifier4, BringIntoViewRequester bringIntoViewRequester, final TextFieldSelectionManager textFieldSelectionManager, final boolean z, final boolean z2, final Function1 function1, final OffsetMapping offsetMapping, final Density density, Composer composer, int i3) {
+        ComposerKt.sourceInformation(composer, "C562@26519L22,571@26906L4131,571@26870L4167:CoreTextField.kt#423gt5");
         if (!composer.shouldExecute((i3 & 3) != 2, i3 & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-44346382, i3, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous>.<anonymous> (CoreTextField.kt:591)");
+                ComposerKt.traceEventStart(-44346382, i3, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous>.<anonymous> (CoreTextField.kt:551)");
             }
-            Modifier heightInLines = HeightInLinesModifierKt.heightInLines(SizeKt.m852heightInVpY3zN4$default(Modifier.Companion, legacyTextFieldState.m1219getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle, i, i2);
+            Modifier heightInLines = HeightInLinesModifierKt.heightInLines(SizeKt.m1105heightInVpY3zN4$default(Modifier.Companion, legacyTextFieldState.m1607getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle, i, i2);
             ComposerKt.sourceInformationMarkerStart(composer, 332827112, "CC(remember):CoreTextField.kt#9igjgp");
             boolean changedInstance = composer.changedInstance(legacyTextFieldState);
             Object rememberedValue = composer.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda11
+                rememberedValue = new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda9
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         TextLayoutResultProxy layoutResult;
@@ -2358,12 +1911,12 @@ public final class CoreTextFieldKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            SimpleLayoutKt.SimpleLayout(BringIntoViewRequesterKt.bringIntoViewRequester(TextFieldSizeKt.textFieldMinSize(TextFieldScroll_androidKt.textFieldScroll(heightInLines, textFieldScrollerPosition, textFieldValue, visualTransformation, (Function0) rememberedValue).then(modifier).then(modifier2), textStyle).then(modifier3).then(modifier4), bringIntoViewRequester), ComposableLambdaKt.rememberComposableLambda(1412697320, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda16
+            SimpleLayoutKt.SimpleLayout(BringIntoViewRequesterKt.bringIntoViewRequester(TextFieldSizeKt.textFieldMinSize(TextFieldScroll_androidKt.textFieldScroll(heightInLines, textFieldScrollerPosition, textFieldValue, visualTransformation, (Function0) rememberedValue).then(modifier).then(modifier2), textStyle).then(modifier3).then(modifier4), bringIntoViewRequester), ComposableLambdaKt.rememberComposableLambda(1412697320, true, new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CoreTextField$lambda$26$0$1;
-                    CoreTextField$lambda$26$0$1 = CoreTextFieldKt.CoreTextField$lambda$26$0$1(TextFieldSelectionManager.this, legacyTextFieldState, z, z2, function1, textFieldValue, offsetMapping, density, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return CoreTextField$lambda$26$0$1;
+                    Unit CoreTextField$lambda$22$0$1;
+                    CoreTextField$lambda$22$0$1 = CoreTextFieldKt.CoreTextField$lambda$22$0$1(TextFieldSelectionManager.this, legacyTextFieldState, z, z2, function1, textFieldValue, offsetMapping, density, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return CoreTextField$lambda$22$0$1;
                 }
             }, composer, 54), composer, 48, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -2380,22 +1933,22 @@ public final class CoreTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Unit CoreTextField$lambda$26$0$1(TextFieldSelectionManager textFieldSelectionManager, LegacyTextFieldState legacyTextFieldState, boolean z, boolean z2, Function1 function1, TextFieldValue textFieldValue, OffsetMapping offsetMapping, Density density, int i, Composer composer, int i2) {
-        ComposerKt.sourceInformation(composer, "C612@28953L3502,677@32473L359:CoreTextField.kt#423gt5");
+    public static final Unit CoreTextField$lambda$22$0$1(TextFieldSelectionManager textFieldSelectionManager, LegacyTextFieldState legacyTextFieldState, boolean z, boolean z2, Function1 function1, TextFieldValue textFieldValue, OffsetMapping offsetMapping, Density density, int i, Composer composer, int i2) {
+        ComposerKt.sourceInformation(composer, "C572@26924L3502,637@30444L359:CoreTextField.kt#423gt5");
         boolean z3 = true;
         if (!composer.shouldExecute((i2 & 3) != 2, i2 & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1412697320, i2, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous>.<anonymous>.<anonymous> (CoreTextField.kt:612)");
+                ComposerKt.traceEventStart(1412697320, i2, -1, "androidx.compose.foundation.text.CoreTextField.<anonymous>.<anonymous>.<anonymous> (CoreTextField.kt:572)");
             }
             CoreTextFieldKt$CoreTextField$8$1$1$2 coreTextFieldKt$CoreTextField$8$1$1$2 = new CoreTextFieldKt$CoreTextField$8$1$1$2(legacyTextFieldState, function1, textFieldValue, offsetMapping, density, i);
-            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, Modifier.Companion);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -2405,12 +1958,12 @@ public final class CoreTextFieldKt {
             } else {
                 composer.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
-            Updater.m4049setimpl(m4041constructorimpl, coreTextFieldKt$CoreTextField$8$1$1$2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(composer);
+            Updater.m4475setimpl(m4467constructorimpl, coreTextFieldKt$CoreTextField$8$1$1$2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1613409842, "C:CoreTextField.kt#423gt5");
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -2424,14 +1977,15 @@ public final class CoreTextFieldKt {
             }
             z3 = false;
             SelectionToolbarAndHandles(textFieldSelectionManager, z3, composer, 0);
-            if (legacyTextFieldState.getHandleState() != HandleState.Cursor || z2 || !z) {
-                composer.startReplaceGroup(-747377894);
-            } else {
+            if (legacyTextFieldState.getHandleState() == HandleState.Cursor && !z2 && z) {
                 composer.startReplaceGroup(-714666198);
-                ComposerKt.sourceInformation(composer, "689@32994L40");
+                ComposerKt.sourceInformation(composer, "649@30965L40");
                 TextFieldCursorHandle(textFieldSelectionManager, composer, 0);
+                composer.endReplaceGroup();
+            } else {
+                composer.startReplaceGroup(-714589318);
+                composer.endReplaceGroup();
             }
-            composer.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -2442,7 +1996,7 @@ public final class CoreTextFieldKt {
     private static final void CoreTextFieldRootBox(final Modifier modifier, final TextFieldSelectionManager textFieldSelectionManager, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(2036174316);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CoreTextFieldRootBox)N(modifier,manager,content)702@33241L83:CoreTextField.kt#423gt5");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CoreTextFieldRootBox)N(modifier,manager,content)662@31212L83:CoreTextField.kt#423gt5");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(modifier) ? 4 : 2) | i;
         } else {
@@ -2458,16 +2012,16 @@ public final class CoreTextFieldKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2036174316, i2, -1, "androidx.compose.foundation.text.CoreTextFieldRootBox (CoreTextField.kt:701)");
+                ComposerKt.traceEventStart(2036174316, i2, -1, "androidx.compose.foundation.text.CoreTextFieldRootBox (CoreTextField.kt:661)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
             Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, modifier);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
                 ComposablesKt.invalidApplier();
             }
@@ -2477,15 +2031,15 @@ public final class CoreTextFieldKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
-            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+            Updater.m4475setimpl(m4467constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1799443472, "C702@33289L33:CoreTextField.kt#423gt5");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1799443472, "C662@31260L33:CoreTextField.kt#423gt5");
             ContextMenu_androidKt.ContextMenuArea(textFieldSelectionManager, function2, startRestartGroup, (i2 >> 3) & WebSocketProtocol.PAYLOAD_SHORT);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -2512,15 +2066,15 @@ public final class CoreTextFieldKt {
         return KeyInputModifierKt.onPreviewKeyEvent(modifier, new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$previewKeyEventToDeselectOnBack$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m1196invokeZmokQxo(keyEvent.m5917unboximpl());
+                return m1537invokeZmokQxo(keyEvent.m6506unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-            public final Boolean m1196invokeZmokQxo(android.view.KeyEvent keyEvent) {
+            public final Boolean m1537invokeZmokQxo(android.view.KeyEvent keyEvent) {
                 boolean z;
-                if (LegacyTextFieldState.this.getHandleState() == HandleState.Selection && KeyEventHelpers_androidKt.m1199cancelsTextSelectionZmokQxo(keyEvent)) {
+                if (LegacyTextFieldState.this.getHandleState() == HandleState.Selection && KeyEventHelpers_androidKt.m1540cancelsTextSelectionZmokQxo(keyEvent)) {
                     z = true;
-                    TextFieldSelectionManager.m1655deselect_kEHs6E$foundation$default(textFieldSelectionManager, null, 1, null);
+                    TextFieldSelectionManager.m2100deselect_kEHs6E$foundation$default(textFieldSelectionManager, null, 1, null);
                 } else {
                     z = false;
                 }
@@ -2529,10 +2083,10 @@ public final class CoreTextFieldKt {
         });
     }
 
-    public static final void tapToFocus(LegacyTextFieldState legacyTextFieldState, FocusRequester focusRequester, boolean z) {
+    public static final void requestFocusAndShowKeyboardIfNeeded(LegacyTextFieldState legacyTextFieldState, FocusRequester focusRequester, boolean z) {
         SoftwareKeyboardController keyboardController;
         if (!legacyTextFieldState.getHasFocus()) {
-            FocusRequester.m4432requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+            FocusRequester.m5008requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
         } else if (!z || (keyboardController = legacyTextFieldState.getKeyboardController()) == null) {
         } else {
             keyboardController.show();
@@ -2556,7 +2110,7 @@ public final class CoreTextFieldKt {
 
     public static final Object bringSelectionEndIntoView(BringIntoViewRequester bringIntoViewRequester, TextFieldValue textFieldValue, TextDelegate textDelegate, TextLayoutResult textLayoutResult, OffsetMapping offsetMapping, Continuation<? super Unit> continuation) {
         Rect rect;
-        int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7000getMaximpl(textFieldValue.m7253getSelectiond9O1mEE()));
+        int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7605getMaximpl(textFieldValue.m7858getSelectiond9O1mEE()));
         if (originalToTransformed < textLayoutResult.getLayoutInput().getText().length()) {
             rect = textLayoutResult.getBoundingBox(originalToTransformed);
         } else if (originalToTransformed != 0) {
@@ -2582,11 +2136,9 @@ public final class CoreTextFieldKt {
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changed(z) ? 32 : 16;
         }
-        if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
-            startRestartGroup.skipToGroupEnd();
-        } else {
+        if (startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(626339208, i2, -1, "androidx.compose.foundation.text.SelectionToolbarAndHandles (CoreTextField.kt:1054)");
+                ComposerKt.traceEventStart(626339208, i2, -1, "androidx.compose.foundation.text.SelectionToolbarAndHandles (CoreTextField.kt:1014)");
             }
             if (z) {
                 startRestartGroup.startReplaceGroup(1530097388);
@@ -2601,38 +2153,42 @@ public final class CoreTextFieldKt {
                 }
                 if (textLayoutResult == null) {
                     startRestartGroup.startReplaceGroup(1530097387);
+                    startRestartGroup.endReplaceGroup();
                 } else {
                     startRestartGroup.startReplaceGroup(1530097388);
                     ComposerKt.sourceInformation(startRestartGroup, "");
-                    if (TextRange.m6997getCollapsedimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE())) {
-                        startRestartGroup.startReplaceGroup(2062097806);
+                    if (TextRange.m7602getCollapsedimpl(textFieldSelectionManager.getValue$foundation().m7858getSelectiond9O1mEE())) {
+                        startRestartGroup.startReplaceGroup(2110860558);
+                        startRestartGroup.endReplaceGroup();
                     } else {
                         startRestartGroup.startReplaceGroup(2109807302);
                         ComposerKt.sourceInformation(startRestartGroup, "");
-                        int originalToTransformed = textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(TextRange.m7003getStartimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE()));
-                        int originalToTransformed2 = textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(TextRange.m6998getEndimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE()));
+                        int originalToTransformed = textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(TextRange.m7608getStartimpl(textFieldSelectionManager.getValue$foundation().m7858getSelectiond9O1mEE()));
+                        int originalToTransformed2 = textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(TextRange.m7603getEndimpl(textFieldSelectionManager.getValue$foundation().m7858getSelectiond9O1mEE()));
                         ResolvedTextDirection bidiRunDirection = textLayoutResult.getBidiRunDirection(originalToTransformed);
                         ResolvedTextDirection bidiRunDirection2 = textLayoutResult.getBidiRunDirection(Math.max(originalToTransformed2 - 1, 0));
                         LegacyTextFieldState state$foundation3 = textFieldSelectionManager.getState$foundation();
                         if (state$foundation3 == null || !state$foundation3.getShowSelectionHandleStart()) {
-                            startRestartGroup.startReplaceGroup(2062097806);
+                            startRestartGroup.startReplaceGroup(2110490542);
+                            startRestartGroup.endReplaceGroup();
                         } else {
                             startRestartGroup.startReplaceGroup(2110225306);
-                            ComposerKt.sourceInformation(startRestartGroup, "1070@48536L220");
+                            ComposerKt.sourceInformation(startRestartGroup, "1030@46532L220");
                             TextFieldSelectionManagerKt.TextFieldSelectionHandle(true, bidiRunDirection, textFieldSelectionManager, startRestartGroup, ((i2 << 6) & 896) | 6);
+                            startRestartGroup.endReplaceGroup();
                         }
-                        startRestartGroup.endReplaceGroup();
                         LegacyTextFieldState state$foundation4 = textFieldSelectionManager.getState$foundation();
                         if (state$foundation4 == null || !state$foundation4.getShowSelectionHandleEnd()) {
-                            startRestartGroup.startReplaceGroup(2062097806);
+                            startRestartGroup.startReplaceGroup(2110838734);
+                            startRestartGroup.endReplaceGroup();
                         } else {
                             startRestartGroup.startReplaceGroup(2110574459);
-                            ComposerKt.sourceInformation(startRestartGroup, "1077@48888L219");
+                            ComposerKt.sourceInformation(startRestartGroup, "1037@46884L219");
                             TextFieldSelectionManagerKt.TextFieldSelectionHandle(false, bidiRunDirection2, textFieldSelectionManager, startRestartGroup, ((i2 << 6) & 896) | 6);
+                            startRestartGroup.endReplaceGroup();
                         }
                         startRestartGroup.endReplaceGroup();
                     }
-                    startRestartGroup.endReplaceGroup();
                     LegacyTextFieldState state$foundation5 = textFieldSelectionManager.getState$foundation();
                     if (state$foundation5 != null) {
                         if (textFieldSelectionManager.isTextChanged$foundation()) {
@@ -2647,8 +2203,8 @@ public final class CoreTextFieldKt {
                         }
                         Unit unit = Unit.INSTANCE;
                     }
+                    startRestartGroup.endReplaceGroup();
                 }
-                startRestartGroup.endReplaceGroup();
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(1989076778);
@@ -2658,10 +2214,12 @@ public final class CoreTextFieldKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
+        } else {
+            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda14
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return CoreTextFieldKt.SelectionToolbarAndHandles$lambda$1(TextFieldSelectionManager.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
@@ -2684,14 +2242,12 @@ public final class CoreTextFieldKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1436003720, i2, -1, "androidx.compose.foundation.text.TextFieldCursorHandle (CoreTextField.kt:1101)");
+                ComposerKt.traceEventStart(-1436003720, i2, -1, "androidx.compose.foundation.text.TextFieldCursorHandle (CoreTextField.kt:1061)");
             }
             LegacyTextFieldState state$foundation = textFieldSelectionManager.getState$foundation();
-            if (state$foundation == null || !state$foundation.getShowCursorHandle() || (transformedText$foundation = textFieldSelectionManager.getTransformedText$foundation()) == null || transformedText$foundation.length() <= 0) {
-                startRestartGroup.startReplaceGroup(2132946858);
-            } else {
+            if (state$foundation != null && state$foundation.getShowCursorHandle() && (transformedText$foundation = textFieldSelectionManager.getTransformedText$foundation()) != null && transformedText$foundation.length() > 0) {
                 startRestartGroup.startReplaceGroup(-2112351432);
-                ComposerKt.sourceInformation(startRestartGroup, "1103@50051L50,1104@50164L7,1106@50224L12,1108@50309L645,1120@50986L385,1105@50181L1201");
+                ComposerKt.sourceInformation(startRestartGroup, "1063@48047L50,1064@48160L7,1066@48220L12,1068@48305L645,1080@48982L385,1065@48177L1201");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1315066870, "CC(remember):CoreTextField.kt#9igjgp");
                 boolean changed = startRestartGroup.changed(textFieldSelectionManager);
                 Object rememberedValue = startRestartGroup.rememberedValue();
@@ -2704,16 +2260,16 @@ public final class CoreTextFieldKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                 Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                final long m1661getCursorPositiontuRUvjQ$foundation = textFieldSelectionManager.m1661getCursorPositiontuRUvjQ$foundation((Density) consume);
+                final long m2106getCursorPositiontuRUvjQ$foundation = textFieldSelectionManager.m2106getCursorPositiontuRUvjQ$foundation((Density) consume);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1315061372, "CC(remember):CoreTextField.kt#9igjgp");
-                boolean changed2 = startRestartGroup.changed(m1661getCursorPositiontuRUvjQ$foundation);
+                boolean changed2 = startRestartGroup.changed(m2106getCursorPositiontuRUvjQ$foundation);
                 OffsetProvider rememberedValue2 = startRestartGroup.rememberedValue();
                 if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                     rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$1$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0 */
-                        public final long mo1144provideF1C5BW0() {
-                            return m1661getCursorPositiontuRUvjQ$foundation;
+                        public final long mo1489provideF1C5BW0() {
+                            return m2106getCursorPositiontuRUvjQ$foundation;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -2728,7 +2284,7 @@ public final class CoreTextFieldKt {
                     rememberedValue3 = new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1
 
                         /* compiled from: CoreTextField.kt */
-                        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
                         @DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1", f = "CoreTextField.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                         /* renamed from: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1  reason: invalid class name */
                         /* loaded from: classes.dex */
@@ -2774,8 +2330,8 @@ public final class CoreTextFieldKt {
 
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* compiled from: CoreTextField.kt */
-                            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                            @DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$1", f = "CoreTextField.kt", i = {}, l = {1114}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+                            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                            @DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$1", f = "CoreTextField.kt", i = {}, l = {1074}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                             /* renamed from: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$1  reason: invalid class name and collision with other inner class name */
                             /* loaded from: classes.dex */
                             public static final class C00121 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -2821,8 +2377,8 @@ public final class CoreTextFieldKt {
 
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* compiled from: CoreTextField.kt */
-                            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-                            @DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$2", f = "CoreTextField.kt", i = {}, l = {1117}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+                            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+                            @DebugMetadata(c = "androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$2", f = "CoreTextField.kt", i = {}, l = {1077}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                             /* renamed from: androidx.compose.foundation.text.CoreTextFieldKt$TextFieldCursorHandle$2$1$1$2  reason: invalid class name */
                             /* loaded from: classes.dex */
                             public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -2953,30 +2509,33 @@ public final class CoreTextFieldKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1315036615, "CC(remember):CoreTextField.kt#9igjgp");
-                    boolean changed3 = startRestartGroup.changed(m1661getCursorPositiontuRUvjQ$foundation);
+                    boolean changed3 = startRestartGroup.changed(m2106getCursorPositiontuRUvjQ$foundation);
                     Object rememberedValue4 = startRestartGroup.rememberedValue();
                     if (changed3 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                        rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda12
+                        rememberedValue4 = new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda6
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit TextFieldCursorHandle$lambda$3$0;
-                                TextFieldCursorHandle$lambda$3$0 = CoreTextFieldKt.TextFieldCursorHandle$lambda$3$0(m1661getCursorPositiontuRUvjQ$foundation, (SemanticsPropertyReceiver) obj);
+                                TextFieldCursorHandle$lambda$3$0 = CoreTextFieldKt.TextFieldCursorHandle$lambda$3$0(m2106getCursorPositiontuRUvjQ$foundation, (SemanticsPropertyReceiver) obj);
                                 return TextFieldCursorHandle$lambda$3$0;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue4);
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    AndroidCursorHandle_androidKt.m1130CursorHandleUSBMPiE(offsetProvider, SemanticsModifierKt.semantics$default(pointerInput, false, (Function1) rememberedValue4, 1, null), 0L, startRestartGroup, 0, 4);
+                    AndroidCursorHandle_androidKt.m1474CursorHandleUSBMPiE(offsetProvider, SemanticsModifierKt.semantics$default(pointerInput, false, (Function1) rememberedValue4, 1, null), 0L, startRestartGroup, 0, 4);
+                    startRestartGroup.endReplaceGroup();
+                } else {
+                    startRestartGroup.startReplaceGroup(-2111042550);
+                    startRestartGroup.endReplaceGroup();
                 }
-                startRestartGroup.endReplaceGroup();
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
             }
             ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup != null) {
-                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda13
+                endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda7
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
                         return CoreTextFieldKt.TextFieldCursorHandle$lambda$4(TextFieldSelectionManager.this, i, (Composer) obj, ((Integer) obj2).intValue());
@@ -2988,6 +2547,24 @@ public final class CoreTextFieldKt {
         /* JADX INFO: Access modifiers changed from: private */
         public static final Unit TextFieldCursorHandle$lambda$3$0(long j, SemanticsPropertyReceiver semanticsPropertyReceiver) {
             semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(Handle.Cursor, j, SelectionHandleAnchor.Middle, true, null));
+            return Unit.INSTANCE;
+        }
+
+        public static final Modifier defaultTextFieldDraw(Modifier modifier, final LegacyTextFieldState legacyTextFieldState, final TextFieldValue textFieldValue, final OffsetMapping offsetMapping) {
+            return DrawModifierKt.drawBehind(modifier, new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$$ExternalSyntheticLambda12
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return CoreTextFieldKt.defaultTextFieldDraw$lambda$0(LegacyTextFieldState.this, textFieldValue, offsetMapping, (DrawScope) obj);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public static final Unit defaultTextFieldDraw$lambda$0(LegacyTextFieldState legacyTextFieldState, TextFieldValue textFieldValue, OffsetMapping offsetMapping, DrawScope drawScope) {
+            TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
+            if (layoutResult != null) {
+                TextFieldDelegate.Companion.m1650drawQ1vqE60$foundation(drawScope.getDrawContext().getCanvas(), textFieldValue, legacyTextFieldState.m1609getSelectionPreviewHighlightRanged9O1mEE(), legacyTextFieldState.m1606getDeletionPreviewHighlightRanged9O1mEE(), offsetMapping, layoutResult.getValue(), legacyTextFieldState.getHighlightPaint(), legacyTextFieldState.m1608getSelectionBackgroundColor0d7_KjU());
+            }
             return Unit.INSTANCE;
         }
 
@@ -3022,17 +2599,17 @@ public final class CoreTextFieldKt {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final boolean CoreTextField$lambda$14(State<Boolean> state) {
-            return state.getValue().booleanValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final DisposableEffectResult CoreTextField$lambda$21$0(final TextFieldSelectionManager textFieldSelectionManager, DisposableEffectScope disposableEffectScope) {
-            return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$lambda$21$0$$inlined$onDispose$1
+        public static final DisposableEffectResult CoreTextField$lambda$17$0(final TextFieldSelectionManager textFieldSelectionManager, DisposableEffectScope disposableEffectScope) {
+            return new DisposableEffectResult() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$lambda$17$0$$inlined$onDispose$1
                 @Override // androidx.compose.runtime.DisposableEffectResult
                 public void dispose() {
                     TextFieldSelectionManager.this.hideSelectionToolbar$foundation();
                 }
             };
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final boolean CoreTextField$lambda$14(State<Boolean> state) {
+            return state.getValue().booleanValue();
         }
     }

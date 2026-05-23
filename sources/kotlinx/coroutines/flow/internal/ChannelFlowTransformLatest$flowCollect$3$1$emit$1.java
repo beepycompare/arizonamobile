@@ -7,10 +7,11 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Merge.kt */
-@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1", f = "Merge.kt", i = {0, 0}, l = {26}, m = "emit", n = {"this", "value"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1", f = "Merge.kt", i = {0, 0, 0}, l = {26}, m = "emit", n = {"value", "$this$emit_u24lambda_u240", "$i$a$-apply-ChannelFlowTransformLatest$flowCollect$3$1$1"}, s = {"L$0", "L$2", "I$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class ChannelFlowTransformLatest$flowCollect$3$1$emit$1 extends ContinuationImpl {
+    int I$0;
     Object L$0;
     Object L$1;
     Object L$2;

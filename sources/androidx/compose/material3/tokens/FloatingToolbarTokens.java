@@ -8,12 +8,12 @@ import kotlin.Metadata;
 public final class FloatingToolbarTokens {
     public static final int $stable = 0;
     public static final FloatingToolbarTokens INSTANCE = new FloatingToolbarTokens();
-    private static final float ContainerBetweenSpace = Dp.m7555constructorimpl(4.0f);
-    private static final float ContainerExternalPadding = Dp.m7555constructorimpl(16.0f);
-    private static final float ContainerHeight = Dp.m7555constructorimpl(64.0f);
-    private static final float ContainerLeadingSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float ContainerBetweenSpace = Dp.m8160constructorimpl(4.0f);
+    private static final float ContainerExternalPadding = Dp.m8160constructorimpl(16.0f);
+    private static final float ContainerHeight = Dp.m8160constructorimpl(64.0f);
+    private static final float ContainerLeadingSpace = Dp.m8160constructorimpl(8.0f);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
-    private static final float ContainerTrailingSpace = Dp.m7555constructorimpl(8.0f);
+    private static final float ContainerTrailingSpace = Dp.m8160constructorimpl(8.0f);
     private static final ColorSchemeKeyTokens StandardContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final ColorSchemeKeyTokens VibrantButtonSelectedContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
     private static final ColorSchemeKeyTokens VibrantButtonSelectedIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -26,22 +26,22 @@ public final class FloatingToolbarTokens {
     }
 
     /* renamed from: getContainerBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3471getContainerBetweenSpaceD9Ej5fM() {
+    public final float m3916getContainerBetweenSpaceD9Ej5fM() {
         return ContainerBetweenSpace;
     }
 
     /* renamed from: getContainerExternalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m3472getContainerExternalPaddingD9Ej5fM() {
+    public final float m3917getContainerExternalPaddingD9Ej5fM() {
         return ContainerExternalPadding;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3473getContainerHeightD9Ej5fM() {
+    public final float m3918getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getContainerLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3474getContainerLeadingSpaceD9Ej5fM() {
+    public final float m3919getContainerLeadingSpaceD9Ej5fM() {
         return ContainerLeadingSpace;
     }
 
@@ -50,7 +50,7 @@ public final class FloatingToolbarTokens {
     }
 
     /* renamed from: getContainerTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3475getContainerTrailingSpaceD9Ej5fM() {
+    public final float m3920getContainerTrailingSpaceD9Ej5fM() {
         return ContainerTrailingSpace;
     }
 

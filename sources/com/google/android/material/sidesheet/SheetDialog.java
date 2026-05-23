@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
+import com.google.android.material.internal.EdgeToEdgeUtils;
 import com.google.android.material.motion.MaterialBackOrchestrator;
 import com.google.android.material.sidesheet.SheetCallback;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -28,7 +30,9 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
     private boolean canceledOnTouchOutside;
     private boolean canceledOnTouchOutsideSet;
     private FrameLayout container;
+    private CoordinatorLayout coordinator;
     boolean dismissWithAnimation;
+    private boolean fitsSystemWindows;
     private FrameLayout sheet;
 
     abstract void addSheetCancelOnHideCallback(Sheet<C> sheet);
@@ -46,6 +50,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         super(context, getThemeResId(context, i, i2, i3));
         this.cancelable = true;
         this.canceledOnTouchOutside = true;
+        this.fitsSystemWindows = true;
         supportRequestWindowFeature(1);
     }
 
@@ -70,7 +75,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         super.onCreate(bundle);
         Window window = getWindow();
         if (window != null) {
-            window.setStatusBarColor(0);
+            EdgeToEdgeUtils.setStatusBarColor(window, 0);
             window.addFlags(Integer.MIN_VALUE);
             window.setLayout(-1, -1);
         }
@@ -84,6 +89,21 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         }
         if (getWindow() != null) {
             updateListeningForBackCallbacks();
+        }
+    }
+
+    private void updateFitsSystemWindows() {
+        FrameLayout frameLayout = this.container;
+        if (frameLayout != null) {
+            frameLayout.setFitsSystemWindows(this.fitsSystemWindows);
+        }
+        CoordinatorLayout coordinatorLayout = this.coordinator;
+        if (coordinatorLayout != null) {
+            coordinatorLayout.setFitsSystemWindows(this.fitsSystemWindows);
+        }
+        Window window = getWindow();
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, this.fitsSystemWindows);
         }
     }
 
@@ -114,6 +134,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         maybeUpdateWindowAnimationsBasedOnLayoutDirection();
+        updateFitsSystemWindows();
         updateListeningForBackCallbacks();
     }
 
@@ -154,6 +175,11 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         return this.dismissWithAnimation;
     }
 
+    public void setFitsSystemWindows(boolean z) {
+        this.fitsSystemWindows = z;
+        updateFitsSystemWindows();
+    }
+
     private void ensureContainerAndBehavior() {
         if (this.container == null) {
             FrameLayout frameLayout = (FrameLayout) View.inflate(getContext(), getLayoutResId(), null);
@@ -191,9 +217,9 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
 
     private View wrapInSheet(int i, View view, ViewGroup.LayoutParams layoutParams) {
         ensureContainerAndBehavior();
-        CoordinatorLayout coordinatorLayout = (CoordinatorLayout) getContainer().findViewById(COORDINATOR_LAYOUT_ID);
+        this.coordinator = (CoordinatorLayout) getContainer().findViewById(COORDINATOR_LAYOUT_ID);
         if (i != 0 && view == null) {
-            view = getLayoutInflater().inflate(i, (ViewGroup) coordinatorLayout, false);
+            view = getLayoutInflater().inflate(i, (ViewGroup) this.coordinator, false);
         }
         FrameLayout sheet = getSheet();
         sheet.removeAllViews();
@@ -202,10 +228,10 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
         } else {
             sheet.addView(view, layoutParams);
         }
-        coordinatorLayout.findViewById(TOUCH_OUTSIDE_ID).setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.sidesheet.SheetDialog$$ExternalSyntheticLambda0
+        this.coordinator.findViewById(TOUCH_OUTSIDE_ID).setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.sidesheet.SheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SheetDialog.this.m8927x401f75dd(view2);
+                SheetDialog.this.m9554x401f75dd(view2);
             }
         });
         ViewCompat.setAccessibilityDelegate(getSheet(), new AccessibilityDelegateCompat() { // from class: com.google.android.material.sidesheet.SheetDialog.1
@@ -234,7 +260,7 @@ public abstract class SheetDialog<C extends SheetCallback> extends AppCompatDial
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$wrapInSheet$0$com-google-android-material-sidesheet-SheetDialog  reason: not valid java name */
-    public /* synthetic */ void m8927x401f75dd(View view) {
+    public /* synthetic */ void m9554x401f75dd(View view) {
         if (this.cancelable && isShowing() && shouldWindowCloseOnTouchOutside()) {
             cancel();
         }
