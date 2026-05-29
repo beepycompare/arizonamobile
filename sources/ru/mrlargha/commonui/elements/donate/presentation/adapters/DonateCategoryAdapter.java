@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -28,8 +29,9 @@ import ru.mrlargha.commonui.databinding.DonateCategoryItemBinding;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonateCategoryAdapter.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001e2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u001d\u001eB*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u0014\u001a\u00020\tJ\u0006\u0010\u0015\u001a\u00020\tJ\u001c\u0010\u0016\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u000fH\u0016J\u001c\u0010\u001a\u001a\u00020\t2\n\u0010\u001b\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u000fH\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "onClick", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", CommonUrlParts.MODEL, "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "selectItemPosition", "", "isRateCategory", "", "scope", "Lkotlinx/coroutines/CoroutineScope;", "rateCategory", "refreshSelectItem", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateCategoryViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \"2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002!\"B*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\u0004\b\n\u0010\u000bJ\u0006\u0010\u0016\u001a\u00020\tJ\u0006\u0010\u0017\u001a\u00020\tJ\u000e\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u000fJ\u001c\u0010\u001a\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u000fH\u0016J\u001c\u0010\u001e\u001a\u00020\t2\n\u0010\u001f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010 \u001a\u00020\u000fH\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u0010\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "onClick", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", CommonUrlParts.MODEL, "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "selectItemPosition", "", "selectedCategoryId", "Ljava/lang/Integer;", "isRateCategory", "", "scope", "Lkotlinx/coroutines/CoroutineScope;", "rateCategory", "refreshSelectItem", "selectItemById", "id", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonateCategoryViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModelUi, DonateCategoryViewHolder> {
     private static final long SELECT_ANIMATION_DURATION = 500;
@@ -37,6 +39,7 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
     private final Function1<DonateCategoryModelUi, Unit> onClick;
     private final CoroutineScope scope;
     private int selectItemPosition;
+    private Integer selectedCategoryId;
     public static final Companion Companion = new Companion(null);
     private static final DonateCategoryAdapter$Companion$diffUtilCallback$1 diffUtilCallback = new DiffUtil.ItemCallback<DonateCategoryModelUi>() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$Companion$diffUtilCallback$1
         @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
@@ -73,6 +76,52 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
 
     public final void refreshSelectItem() {
         this.selectItemPosition = 0;
+        this.selectedCategoryId = null;
+        this.isRateCategory = false;
+    }
+
+    public final boolean selectItemById(int i) {
+        List<DonateCategoryModelUi> currentList = getCurrentList();
+        Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+        Iterator<DonateCategoryModelUi> it = currentList.iterator();
+        int i2 = 0;
+        while (true) {
+            if (!it.hasNext()) {
+                i2 = -1;
+                break;
+            }
+            int id = it.next().getId();
+            Integer num = this.selectedCategoryId;
+            if (num != null && id == num.intValue()) {
+                break;
+            }
+            i2++;
+        }
+        List<DonateCategoryModelUi> currentList2 = getCurrentList();
+        Intrinsics.checkNotNullExpressionValue(currentList2, "getCurrentList(...)");
+        Iterator<DonateCategoryModelUi> it2 = currentList2.iterator();
+        int i3 = 0;
+        while (true) {
+            if (!it2.hasNext()) {
+                i3 = -1;
+                break;
+            } else if (it2.next().getId() == i) {
+                break;
+            } else {
+                i3++;
+            }
+        }
+        this.selectedCategoryId = Integer.valueOf(i);
+        if (i3 != -1) {
+            this.selectItemPosition = i3;
+        }
+        if (i2 != -1) {
+            notifyItemChanged(i2);
+        }
+        if (i3 != -1) {
+            notifyItemChanged(i3);
+        }
+        return i3 != -1;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -92,7 +141,7 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
     }
 
     /* compiled from: DonateCategoryAdapter.kt */
-    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rJ\u0018\u0010\u000e\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u000f\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0018\u0010\u0010\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0016\u0010\u0011\u001a\u00020\t2\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013H\u0002J\u0010\u0010\u0015\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0014H\u0002J\b\u0010\u0019\u001a\u00020\tH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;", "<init>", "(Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "position", "", "initItem", "isStartAnimation", "checkSelectItem", "setBorders", "transfusionColorList", "", "", "setupListeners", "setSelectItem", "", "color", "setDefaultItem", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rJ\u0018\u0010\u000e\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u000f\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0018\u0010\u0010\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0018\u0010\u0011\u001a\u00020\u00122\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0016\u0010\u0013\u001a\u00020\t2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0010\u0010\u0017\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u0016H\u0002J\b\u0010\u001a\u001a\u00020\tH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter$DonateCategoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;", "<init>", "(Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateCategoryItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "position", "", "initItem", "isStartAnimation", "checkSelectItem", "isSelectedItem", "", "setBorders", "transfusionColorList", "", "", "setupListeners", "setSelectItem", "color", "setDefaultItem", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class DonateCategoryViewHolder extends RecyclerView.ViewHolder {
         private final DonateCategoryItemBinding binding;
@@ -118,8 +167,7 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
 
         private final void initItem(DonateCategoryModelUi donateCategoryModelUi, int i) {
             DonateCategoryItemBinding donateCategoryItemBinding = this.binding;
-            DonateCategoryAdapter donateCategoryAdapter = this.this$0;
-            donateCategoryItemBinding.tvCategoryTitle.setText(donateCategoryModelUi.getTitle());
+            donateCategoryItemBinding.tvCategoryTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateCategoryModelUi.getTitle(), 0.0f, null, 3, null));
             ImageView ivNewIc = donateCategoryItemBinding.ivNewIc;
             Intrinsics.checkNotNullExpressionValue(ivNewIc, "ivNewIc");
             ivNewIc.setVisibility(donateCategoryModelUi.isNew() ? 0 : 8);
@@ -131,7 +179,7 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
             DonateUtilsKt.setBackgroundCategorySdn(ivCategoryBg, donateCategoryModelUi.getBackground());
             ImageView ivSelectBackground = donateCategoryItemBinding.ivSelectBackground;
             Intrinsics.checkNotNullExpressionValue(ivSelectBackground, "ivSelectBackground");
-            ivSelectBackground.setVisibility(donateCategoryAdapter.selectItemPosition == i ? 0 : 8);
+            ivSelectBackground.setVisibility(isSelectedItem(donateCategoryModelUi, i) ? 0 : 8);
             isStartAnimation(donateCategoryModelUi);
             checkSelectItem(donateCategoryModelUi, i);
         }
@@ -154,11 +202,16 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
         }
 
         private final void checkSelectItem(DonateCategoryModelUi donateCategoryModelUi, int i) {
-            if (i == this.this$0.selectItemPosition) {
+            if (isSelectedItem(donateCategoryModelUi, i)) {
                 setSelectItem(donateCategoryModelUi.getHoverColor());
             } else {
                 setDefaultItem();
             }
+        }
+
+        private final boolean isSelectedItem(DonateCategoryModelUi donateCategoryModelUi, int i) {
+            Integer num = this.this$0.selectedCategoryId;
+            return num != null ? num.intValue() == donateCategoryModelUi.getId() : i == this.this$0.selectItemPosition;
         }
 
         private final void setBorders(List<String> list) {
@@ -175,22 +228,23 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
             donateCategoryItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateCategoryAdapter.DonateCategoryViewHolder.setupListeners$lambda$0$0(DonateCategoryAdapter.this, i, donateCategoryItemBinding, view);
+                    DonateCategoryAdapter.DonateCategoryViewHolder.setupListeners$lambda$0$0(DonateCategoryAdapter.this, i, this, donateCategoryItemBinding, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void setupListeners$lambda$0$0(DonateCategoryAdapter donateCategoryAdapter, int i, DonateCategoryItemBinding donateCategoryItemBinding, View view) {
-            if (donateCategoryAdapter.selectItemPosition != i || donateCategoryAdapter.isRateCategory) {
+        public static final void setupListeners$lambda$0$0(DonateCategoryAdapter donateCategoryAdapter, int i, DonateCategoryViewHolder donateCategoryViewHolder, DonateCategoryItemBinding donateCategoryItemBinding, View view) {
+            List<DonateCategoryModelUi> currentList = donateCategoryAdapter.getCurrentList();
+            Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+            DonateCategoryModelUi donateCategoryModelUi = (DonateCategoryModelUi) CollectionsKt.getOrNull(currentList, i);
+            if (donateCategoryModelUi == null) {
+                return;
+            }
+            if (!donateCategoryViewHolder.isSelectedItem(donateCategoryModelUi, i) || donateCategoryAdapter.isRateCategory) {
                 donateCategoryAdapter.isRateCategory = false;
-                donateCategoryAdapter.notifyItemChanged(donateCategoryAdapter.selectItemPosition);
-                donateCategoryAdapter.selectItemPosition = i;
-                donateCategoryAdapter.notifyItemChanged(i);
-                Function1<DonateCategoryModelUi, Unit> onClick = donateCategoryAdapter.getOnClick();
-                DonateCategoryModelUi donateCategoryModelUi = donateCategoryAdapter.getCurrentList().get(i);
-                Intrinsics.checkNotNullExpressionValue(donateCategoryModelUi, "get(...)");
-                onClick.invoke(donateCategoryModelUi);
+                donateCategoryAdapter.selectItemById(donateCategoryModelUi.getId());
+                donateCategoryAdapter.getOnClick().invoke(donateCategoryModelUi);
                 BuildersKt__Builders_commonKt.launch$default(donateCategoryAdapter.scope, null, null, new DonateCategoryAdapter$DonateCategoryViewHolder$setupListeners$1$1$1(donateCategoryItemBinding, null), 3, null);
             }
         }

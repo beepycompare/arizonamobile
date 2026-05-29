@@ -40,6 +40,7 @@ import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryElementItemBinding;
 import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryItemBinding;
@@ -313,9 +314,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
 
         private final void initDesc(MobileRentAccessoryModel mobileRentAccessoryModel) {
             MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding = this.binding;
-            int cost = mobileRentAccessoryModel.getCost() / 1000000;
-            mobileRentAccessoryItemBinding.tvKCost.setText(String.valueOf(mobileRentAccessoryModel.getCost() - (1000000 * cost)));
-            mobileRentAccessoryItemBinding.tvKkCost.setText(String.valueOf(cost));
+            mobileRentAccessoryItemBinding.tvCost.setText(MoneyFormatter.INSTANCE.formatPlain(mobileRentAccessoryModel.getCost()));
             mobileRentAccessoryItemBinding.tvDesc.setText(mobileRentAccessoryModel.getDescription());
             TextView textView = mobileRentAccessoryItemBinding.tvNickName;
             String nickName = mobileRentAccessoryModel.getNickName();
@@ -344,7 +343,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                 CustomCardView btnPass = mobileRentAccessoryItemBinding.btnPass;
                 Intrinsics.checkNotNullExpressionValue(btnPass, "btnPass");
                 CustomCardView.setBackground$default(btnPass, Color.parseColor("#FF8183"), Color.parseColor("#DF0004"), null, null, 12, null);
-                mobileRentAccessoryItemBinding.tvPass.setText("Сдать лот в аренду");
+                mobileRentAccessoryItemBinding.tvPass.setText(this.context.getString(R.string.mobile_give_lot_for_rent));
             } else if ((mobileRentAccessoryModel.getStatus() == 2 && isMy) || (mobileRentAccessoryModel.getStatus() == 3 && isRent)) {
                 CustomCardView btnRent2 = mobileRentAccessoryItemBinding.btnRent;
                 Intrinsics.checkNotNullExpressionValue(btnRent2, "btnRent");
@@ -358,7 +357,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                 CustomCardView btnRent3 = mobileRentAccessoryItemBinding.btnRent;
                 Intrinsics.checkNotNullExpressionValue(btnRent3, "btnRent");
                 CustomCardView.setBackground$default(btnRent3, Color.parseColor("#FFBE4D"), Color.parseColor("#F39E09"), null, null, 12, null);
-                mobileRentAccessoryItemBinding.tvRent.setText("Забрать предметы");
+                mobileRentAccessoryItemBinding.tvRent.setText(this.context.getString(R.string.mobile_take_items));
             } else if (mobileRentAccessoryModel.getStatus() == 1 && isMy && mobileRentAccessoryMainAdapter.currentTopBar == MobileRentAccessoryMainPage.Companion.TopBar.MY) {
                 CustomCardView btnRent4 = mobileRentAccessoryItemBinding.btnRent;
                 Intrinsics.checkNotNullExpressionValue(btnRent4, "btnRent");
@@ -372,7 +371,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                 CustomCardView btnPass2 = mobileRentAccessoryItemBinding.btnPass;
                 Intrinsics.checkNotNullExpressionValue(btnPass2, "btnPass");
                 CustomCardView.setBackground$default(btnPass2, Color.parseColor("#4BBF2E"), Color.parseColor("#7ADA62"), null, null, 12, null);
-                mobileRentAccessoryItemBinding.tvPass.setText("Повысить рейтинг");
+                mobileRentAccessoryItemBinding.tvPass.setText(this.context.getString(R.string.mobile_raise_rating));
             } else if (mobileRentAccessoryModel.getStatus() == 1 && isMy && mobileRentAccessoryMainAdapter.currentTopBar == MobileRentAccessoryMainPage.Companion.TopBar.ALL) {
                 CustomCardView btnRent5 = mobileRentAccessoryItemBinding.btnRent;
                 Intrinsics.checkNotNullExpressionValue(btnRent5, "btnRent");
@@ -397,12 +396,12 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                 CustomCardView btnRent7 = mobileRentAccessoryItemBinding.btnRent;
                 Intrinsics.checkNotNullExpressionValue(btnRent7, "btnRent");
                 CustomCardView.setBackground$default(btnRent7, Color.parseColor("#DB81FF"), Color.parseColor("#8A4CF4"), null, null, 12, null);
-                mobileRentAccessoryItemBinding.tvRent.setText("Арендовать");
+                mobileRentAccessoryItemBinding.tvRent.setText(this.context.getString(R.string.mobile_rent));
             }
         }
 
         private final void setupListeners(final MobileRentAccessoryModel mobileRentAccessoryModel) {
-            final MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding = this.binding;
+            MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding = this.binding;
             final MobileRentAccessoryMainAdapter mobileRentAccessoryMainAdapter = this.this$0;
             mobileRentAccessoryItemBinding.btnDeleteThree.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -413,13 +412,13 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
             mobileRentAccessoryItemBinding.btnRent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MobileRentAccessoryMainAdapter.MainViewHolder.setupListeners$lambda$0$1(MobileRentAccessoryModel.this, mobileRentAccessoryItemBinding, mobileRentAccessoryMainAdapter, view);
+                    MobileRentAccessoryMainAdapter.MainViewHolder.setupListeners$lambda$0$1(MobileRentAccessoryModel.this, this, mobileRentAccessoryMainAdapter, view);
                 }
             });
             mobileRentAccessoryItemBinding.btnPass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MobileRentAccessoryMainAdapter.MainViewHolder.setupListeners$lambda$0$2(MobileRentAccessoryModel.this, mobileRentAccessoryItemBinding, mobileRentAccessoryMainAdapter, view);
+                    MobileRentAccessoryMainAdapter.MainViewHolder.setupListeners$lambda$0$2(MobileRentAccessoryModel.this, this, mobileRentAccessoryMainAdapter, view);
                 }
             });
             mobileRentAccessoryItemBinding.btnDeleteTwo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$$ExternalSyntheticLambda3
@@ -463,23 +462,46 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void setupListeners$lambda$0$1(MobileRentAccessoryModel mobileRentAccessoryModel, MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding, MobileRentAccessoryMainAdapter mobileRentAccessoryMainAdapter, View view) {
+        /* JADX WARN: Code restructure failed: missing block: B:10:0x003c, code lost:
+            r6.sendEvent.invoke(ru.mrlargha.feature.mobile.presentation.MobilePHoneSendSubIds.RENT_ACCESSORY_TAKE_ITEMS, ru.mrlargha.commonui.utils.StringKt.toStringJson(r7), 0);
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:11:0x0049, code lost:
+            return;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:5:0x0028, code lost:
+            if (r4.getIsMy(r0) == false) goto L8;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:9:0x003a, code lost:
+            if (r4.getIsRent(r5) != false) goto L5;
+         */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
+        public static final void setupListeners$lambda$0$1(MobileRentAccessoryModel mobileRentAccessoryModel, MainViewHolder mainViewHolder, MobileRentAccessoryMainAdapter mobileRentAccessoryMainAdapter, View view) {
             MobileRentAccessorySendModel mobileRentAccessorySendModel = new MobileRentAccessorySendModel(mobileRentAccessoryModel.getListUID(), mobileRentAccessoryModel.getListID(), mobileRentAccessoryModel.getBizID());
-            if (Intrinsics.areEqual(mobileRentAccessoryItemBinding.tvRent.getText(), "Забрать предметы")) {
-                mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_TAKE_ITEMS, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
-            } else {
-                mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_RENT, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
+            if (mobileRentAccessoryModel.getStatus() == 2) {
+                Context context = mainViewHolder.context;
+                Intrinsics.checkNotNullExpressionValue(context, "context");
             }
+            if (mobileRentAccessoryModel.getStatus() == 3) {
+                Context context2 = mainViewHolder.context;
+                Intrinsics.checkNotNullExpressionValue(context2, "context");
+            }
+            mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_RENT, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void setupListeners$lambda$0$2(MobileRentAccessoryModel mobileRentAccessoryModel, MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding, MobileRentAccessoryMainAdapter mobileRentAccessoryMainAdapter, View view) {
+        public static final void setupListeners$lambda$0$2(MobileRentAccessoryModel mobileRentAccessoryModel, MainViewHolder mainViewHolder, MobileRentAccessoryMainAdapter mobileRentAccessoryMainAdapter, View view) {
             MobileRentAccessorySendModel mobileRentAccessorySendModel = new MobileRentAccessorySendModel(mobileRentAccessoryModel.getListUID(), mobileRentAccessoryModel.getListID(), mobileRentAccessoryModel.getBizID());
-            if (Intrinsics.areEqual(mobileRentAccessoryItemBinding.tvPass.getText(), "Повысить рейтинг")) {
-                mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_RAISE, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
-            } else {
-                mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_PUBLIC, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
+            if (mobileRentAccessoryModel.getStatus() == 1) {
+                Context context = mainViewHolder.context;
+                Intrinsics.checkNotNullExpressionValue(context, "context");
+                if (mobileRentAccessoryModel.getIsMy(context) && mobileRentAccessoryMainAdapter.currentTopBar == MobileRentAccessoryMainPage.Companion.TopBar.MY) {
+                    mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_RAISE, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
+                    return;
+                }
             }
+            mobileRentAccessoryMainAdapter.sendEvent.invoke(MobilePHoneSendSubIds.RENT_ACCESSORY_PUBLIC, StringKt.toStringJson(mobileRentAccessorySendModel), 0);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

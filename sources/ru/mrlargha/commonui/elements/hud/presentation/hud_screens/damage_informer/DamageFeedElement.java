@@ -400,15 +400,8 @@ public final class DamageFeedElement {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0153  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0157  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void bindRow(View root, StrokeTextView tvName, TextView tvId, StrokeTextView tvValue, StrokeTextView tvValueTotal, CustomCardView cardId, ImageView ivWeapon, DamageLogItem item, Function0<Unit> animate) {
-        boolean z;
-        CharSequence charSequence;
+        SpannableString spannable$default;
         Intrinsics.checkNotNullParameter(root, "root");
         Intrinsics.checkNotNullParameter(tvName, "tvName");
         Intrinsics.checkNotNullParameter(tvId, "tvId");
@@ -418,53 +411,23 @@ public final class DamageFeedElement {
         Intrinsics.checkNotNullParameter(ivWeapon, "ivWeapon");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(animate, "animate");
-        boolean z2 = root.getVisibility() != 0;
+        boolean z = root.getVisibility() != 0;
         root.setVisibility(0);
         String name = item.getName();
-        if (name != null) {
-            z = z2;
-            SpannableString spannable$default = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, name, 0.0f, 1, null);
-            if (spannable$default != null) {
-                charSequence = spannable$default;
-                tvName.setText(charSequence);
-                tvId.setText(String.valueOf(item.getId()));
-                tvValue.setText((item.getValue() != null || item.getValue().floatValue() < 0.0f) ? "" : String.valueOf(item.getValue().floatValue()));
-                tvValueTotal.setText((item.getTotalValue() != null || item.getTotalValue().floatValue() <= 0.0f) ? "" : "(" + item.getTotalValue() + ")");
-                CustomCardView customCardView = cardId;
-                customCardView.setVisibility(8);
-                if (item.getTag() != null) {
-                    customCardView.setVisibility(item.getTag().length() == 0 ? 8 : 0);
-                    if (item.getTag().length() > 0) {
-                        cardId.setVisibility(0);
-                        cardId.setBackground(Color.parseColor(item.getTagBackgroundColor()));
-                        tvId.setTextColor(Color.parseColor(item.getTagTextColor()));
-                        tvId.setText(item.getTag());
-                    }
-                }
-                tvName.setTextColor(parseColorSafe(item.getNameColor(), -1));
-                tvValue.setTextColor(parseColorSafe(item.getValueColor(), -1));
-                tvName.setStroke(-16777216, 3.0f);
-                tvValue.setStroke(-16777216, 3.0f);
-                tvValueTotal.setStroke(-16777216, 3.0f);
-                bindWeapon(ivWeapon, item);
-                if (!z) {
-                    animate.invoke();
-                    return;
-                }
-                root.setAlpha(1.0f);
-                root.setTranslationX(0.0f);
-                return;
-            }
-        } else {
-            z = z2;
-        }
-        tvName.setText(charSequence);
+        tvName.setText((name == null || (spannable$default = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, name, 0.0f, null, 3, null)) == null) ? "" : spannable$default);
         tvId.setText(String.valueOf(item.getId()));
-        tvValue.setText((item.getValue() != null || item.getValue().floatValue() < 0.0f) ? "" : String.valueOf(item.getValue().floatValue()));
-        tvValueTotal.setText((item.getTotalValue() != null || item.getTotalValue().floatValue() <= 0.0f) ? "" : "(" + item.getTotalValue() + ")");
-        CustomCardView customCardView2 = cardId;
-        customCardView2.setVisibility(8);
+        tvValue.setText((item.getValue() == null || item.getValue().floatValue() < 0.0f) ? "" : String.valueOf(item.getValue().floatValue()));
+        tvValueTotal.setText((item.getTotalValue() == null || item.getTotalValue().floatValue() <= 0.0f) ? "" : "(" + item.getTotalValue() + ")");
+        CustomCardView customCardView = cardId;
+        customCardView.setVisibility(8);
         if (item.getTag() != null) {
+            customCardView.setVisibility(item.getTag().length() == 0 ? 8 : 0);
+            if (item.getTag().length() > 0) {
+                cardId.setVisibility(0);
+                cardId.setBackground(Color.parseColor(item.getTagBackgroundColor()));
+                tvId.setTextColor(Color.parseColor(item.getTagTextColor()));
+                tvId.setText(item.getTag());
+            }
         }
         tvName.setTextColor(parseColorSafe(item.getNameColor(), -1));
         tvValue.setTextColor(parseColorSafe(item.getValueColor(), -1));
@@ -472,8 +435,12 @@ public final class DamageFeedElement {
         tvValue.setStroke(-16777216, 3.0f);
         tvValueTotal.setStroke(-16777216, 3.0f);
         bindWeapon(ivWeapon, item);
-        if (!z) {
+        if (z) {
+            animate.invoke();
+            return;
         }
+        root.setAlpha(1.0f);
+        root.setTranslationX(0.0f);
     }
 
     private final void bindWeapon(ImageView imageView, DamageLogItem damageLogItem) {

@@ -16,16 +16,18 @@ public final class HudElementMoneyItemBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final LinearLayout topRow;
     public final TextView tvDelta;
+    public final TextView tvDeltaSign;
     public final ImageView tvPrefix;
     public final ImageView tvPrefixDelta;
     public final TextView tvValue;
 
-    private HudElementMoneyItemBinding(LinearLayout rootView, LinearLayout deltaRow, LinearLayout root, LinearLayout topRow, TextView tvDelta, ImageView tvPrefix, ImageView tvPrefixDelta, TextView tvValue) {
+    private HudElementMoneyItemBinding(LinearLayout rootView, LinearLayout deltaRow, LinearLayout root, LinearLayout topRow, TextView tvDelta, TextView tvDeltaSign, ImageView tvPrefix, ImageView tvPrefixDelta, TextView tvValue) {
         this.rootView = rootView;
         this.deltaRow = deltaRow;
         this.root = root;
         this.topRow = topRow;
         this.tvDelta = tvDelta;
+        this.tvDeltaSign = tvDeltaSign;
         this.tvPrefix = tvPrefix;
         this.tvPrefixDelta = tvPrefixDelta;
         this.tvValue = tvValue;
@@ -59,16 +61,20 @@ public final class HudElementMoneyItemBinding implements ViewBinding {
                 i = R.id.tvDelta;
                 TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView != null) {
-                    i = R.id.tvPrefix;
-                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                    if (imageView != null) {
-                        i = R.id.tvPrefixDelta;
-                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                        if (imageView2 != null) {
-                            i = R.id.tvValue;
-                            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView2 != null) {
-                                return new HudElementMoneyItemBinding(linearLayout2, linearLayout, linearLayout2, linearLayout3, textView, imageView, imageView2, textView2);
+                    i = R.id.tvDeltaSign;
+                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView2 != null) {
+                        i = R.id.tvPrefix;
+                        ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView != null) {
+                            i = R.id.tvPrefixDelta;
+                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView2 != null) {
+                                i = R.id.tvValue;
+                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView3 != null) {
+                                    return new HudElementMoneyItemBinding(linearLayout2, linearLayout, linearLayout2, linearLayout3, textView, textView2, imageView, imageView2, textView3);
+                                }
                             }
                         }
                     }

@@ -29,7 +29,7 @@ public final class QuestTaskAdapter extends ListAdapter<QuestTask, QuestTaskView
         public boolean areItemsTheSame(QuestTask oldItem, QuestTask newItem) {
             Intrinsics.checkNotNullParameter(oldItem, "oldItem");
             Intrinsics.checkNotNullParameter(newItem, "newItem");
-            return oldItem.getId() == newItem.getId();
+            return oldItem.getId() == newItem.getId() && oldItem.getStageId() == newItem.getStageId();
         }
 
         @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback

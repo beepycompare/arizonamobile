@@ -36,18 +36,18 @@ public final class DialogFactory {
         ChatEmoji.INSTANCE.init(context);
         switch (i2) {
             case 0:
-                return new InfoDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), i);
+                return new InfoDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), i);
             case 1:
-                return new UserInputDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), false, i, inputHint);
+                return new UserInputDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), false, i, inputHint);
             case 2:
             case 4:
-                return new TableDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), parseTable(info), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), false, i);
+                return new TableDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), parseTable(info), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), false, i);
             case 3:
-                return new UserInputDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), true, i, inputHint);
+                return new UserInputDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), true, i, inputHint);
             case 5:
-                return new TableDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), parseTable(info), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), true, i);
+                return new TableDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), parseTable(info), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), true, i);
             case 6:
-                return new DialogWithdraw(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, 1, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, 1, null), false, i, inputHint);
+                return new DialogWithdraw(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), false, i, inputHint);
             default:
                 throw new IllegalArgumentException("Unsupported style number: " + i2 + "!");
         }
@@ -61,37 +61,37 @@ public final class DialogFactory {
                 arrayList.add(obj2);
             }
         }
-        ArrayList arrayList2 = arrayList;
+        ArrayList<String> arrayList2 = arrayList;
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
-        Iterator it = arrayList2.iterator();
-        while (true) {
-            obj = null;
-            if (!it.hasNext()) {
-                break;
-            }
-            List<String> split$default = StringsKt.split$default((CharSequence) ((String) it.next()), new String[]{"\t"}, false, 0, 6, (Object) null);
+        for (String str2 : arrayList2) {
+            List<String> split$default = StringsKt.split$default((CharSequence) str2, new String[]{"\t"}, false, 0, 6, (Object) null);
             ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(split$default, 10));
-            for (String str2 : split$default) {
-                arrayList4.add(new TableCell(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, str2, 0.0f, 1, null)));
+            for (String str3 : split$default) {
+                arrayList4.add(new TableCell(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, str3, 0.0f, null, 3, null)));
             }
             arrayList3.add(CollectionsKt.toMutableList((Collection) arrayList4));
         }
         ArrayList arrayList5 = arrayList3;
         ArrayList<List> arrayList6 = arrayList5;
-        Iterator it2 = arrayList6.iterator();
-        if (it2.hasNext()) {
-            obj = it2.next();
-            if (it2.hasNext()) {
-                int size = ((List) obj).size();
+        Iterator it = arrayList6.iterator();
+        if (it.hasNext()) {
+            Object next = it.next();
+            if (it.hasNext()) {
+                int size = ((List) next).size();
                 do {
-                    Object next = it2.next();
-                    int size2 = ((List) next).size();
+                    Object next2 = it.next();
+                    int size2 = ((List) next2).size();
                     if (size < size2) {
-                        obj = next;
+                        next = next2;
                         size = size2;
                     }
-                } while (it2.hasNext());
+                } while (it.hasNext());
+                obj = next;
+            } else {
+                obj = next;
             }
+        } else {
+            obj = null;
         }
         List list = (List) obj;
         int size3 = list != null ? list.size() : 0;

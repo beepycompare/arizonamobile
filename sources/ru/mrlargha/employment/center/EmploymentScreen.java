@@ -359,14 +359,14 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         }
         this.textBonusAdapter.addAllItems(jobInfo.getAdditionalInfo());
         EmploymentCenterSalaryTableBinding employmentCenterSalaryTableBinding = this.binding.salaryTable;
-        employmentCenterSalaryTableBinding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary(), false, null, null, 7, null));
+        employmentCenterSalaryTableBinding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary(), false, null, null, null, 15, null));
         for (AdditionalInfo additionalInfo : jobInfo.getAdditionalInfo()) {
             i2 += additionalInfo.getValue();
         }
         employmentCenterSalaryTableBinding.totalBonus.setText("+" + i2 + "%");
         long j = i2;
-        employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / 100), false, null, null, 7, null));
-        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / 100), false, null, null, 7, null));
+        employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / 100), false, null, null, null, 15, null));
+        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / 100), false, null, null, null, 15, null));
         employmentCenterMainBinding.buttonInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -421,8 +421,8 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         } else {
             employmentCenterMainBinding.label.setVisibility(8);
         }
-        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(job.getAvgHourSalary(), false, null, null, 7, null));
-        this.binding.textTable.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, job.getDescriptionMobile(), 0.0f, 1, null));
+        employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(job.getAvgHourSalary(), false, null, null, null, 15, null));
+        this.binding.textTable.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, job.getDescriptionMobile(), 0.0f, null, 3, null));
         this.binding.textTable.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

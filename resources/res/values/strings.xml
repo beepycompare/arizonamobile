@@ -224,7 +224,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f1200df_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f1200e0_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"5c0cf08a5f9f4b4447d64bdf787315947fdd32ce\"\n}\n</string>
+    <string name="res_0x7f1200e0_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"c326ad4041a666f148dc8581bc7a4f6602df24a3\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>
@@ -304,6 +304,7 @@
     <string name="donate_category_currency">Валюта</string>
     <string name="donate_exchange_action">ОБМЕНЯТЬ</string>
     <string name="donate_exchange_az_coins_title">обмен az coins</string>
+    <string name="donate_exchange_az_green_coins_title">обмен рублей на az-coins</string>
     <string name="donate_exchange_az_to_exp">ОБМЕН AZ COINS НА EXP</string>
     <string name="donate_top_up_az_coins_title">пополнение az коинов</string>
     <string name="dont_have_account">У вас нет аккаунта?</string>
@@ -911,6 +912,7 @@
     <string name="mobile_choose_class">Выберите класс</string>
     <string name="mobile_choose_destination">Выбрать пункт назначения</string>
     <string name="mobile_close">Закрыть</string>
+    <string name="mobile_days_count">%1$d дней</string>
     <string name="mobile_driver_distance_meters">%1$s м</string>
     <string name="mobile_driver_on_way">Водитель уже в пути!</string>
     <string name="mobile_enter_number">Введите номер</string>
@@ -918,6 +920,7 @@
     <string name="mobile_filter">Фильтр</string>
     <string name="mobile_find">найти</string>
     <string name="mobile_fixed">Фикс</string>
+    <string name="mobile_for_full_rent">на всю аренду</string>
     <string name="mobile_from_price">от %1$s$</string>
     <string name="mobile_fuel">ТОПЛИВО</string>
     <string name="mobile_give_lot_for_rent">Сдать лот в аренду</string>
@@ -968,6 +971,7 @@
     <string name="mobile_playlists">Плейлисты</string>
     <string name="mobile_price">Цена</string>
     <string name="mobile_price_currency">%1$s$</string>
+    <string name="mobile_price_from_prefix">от</string>
     <string name="mobile_publish">опубликовать</string>
     <string name="mobile_raise_rating">Повысить рейтинг</string>
     <string name="mobile_rate_trip">Оцените качество поездки</string>
@@ -1134,6 +1138,23 @@
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="payday_deposit_blocked">Временно заблокирован</string>
+    <string name="payday_deposit_title">Депозит</string>
+    <string name="payday_fraction_title">Фракция</string>
+    <string name="payday_hour_label">За час</string>
+    <string name="payday_house_badge">ДОМ</string>
+    <string name="payday_law_title">Законопослушность</string>
+    <string name="payday_level_title">%1$d уровень</string>
+    <string name="payday_lost_property_title">Ваш %1$s</string>
+    <string name="payday_lost_property_value">Слетел</string>
+    <string name="payday_med_card_title">&lt;ic&gt;1&lt;ic&gt; Мед.карта</string>
+    <string name="payday_no_fraction_hint">вступи во фракцию и зарабатывай каждый payday</string>
+    <string name="payday_no_uniform">Вы не в форме</string>
+    <string name="payday_not_in_fraction">НЕ СОСТОИТ</string>
+    <string name="payday_online_label">ВАШ ОНЛАЙН</string>
+    <string name="payday_other_income_title">Другой доход</string>
+    <string name="payday_tax_warning_title">Скоро слетит</string>
+    <string name="payday_today_label">Сегодня</string>
     <string name="per_day">в сутки</string>
     <string name="per_hour">за час</string>
     <string name="permissions_not_granted">Для использования микрофона, Вам необходимо предоставить все разрешения.\nВы сможете сделать это позже в игре</string>
@@ -1211,6 +1232,7 @@
     <string name="publish_add">Публикация объявления</string>
     <string name="published">(опубликовано)</string>
     <string name="purchase">Покупка</string>
+    <string name="purchase_rubles_title">Покупка рублей</string>
     <string name="purchase_title">Покупка AZ-коинов</string>
     <string name="quests_available_title">Доступные квесты</string>
     <string name="quests_select_to_view_info">Выберите квест, чтобы посмотреть информацию</string>
@@ -1375,6 +1397,7 @@
     <string name="tooltip_description">tooltip</string>
     <string name="tooltip_label">show tooltip</string>
     <string name="top_up">Пополнить</string>
+    <string name="trade_money">Деньги</string>
     <string name="trade_request">Ожидание подтверждения обмена</string>
     <string name="trade_shop">Торговая лавка</string>
     <string name="trailer">Трейлер</string>
@@ -1384,6 +1407,7 @@
     <string name="unavailable">недоступно</string>
     <string name="unknown">Неизвестно</string>
     <string name="unlock">Разоблачить</string>
+    <string name="unsupported_native_abi">Device architecture is not supported</string>
     <string name="unsupported_version">Не поддерживается</string>
     <string name="unsupported_version_info">Требуется версия Android не ниже 5.0</string>
     <string name="until_the_end">До окончания:</string>
@@ -1417,6 +1441,8 @@
     <string name="warehouse_fraction">общак фракции</string>
     <string name="warehouse_home_wardrobe">Домашний шкаф</string>
     <string name="warehouse_house">шкаф</string>
+    <string name="warehouse_laboratory">Шкаф</string>
+    <string name="warehouse_laboratory_loot">Предметы Франки</string>
     <string name="warehouse_lombard_menu">меню ломбарда</string>
     <string name="warehouse_motorhome">Дом на колесах</string>
     <string name="warehouse_nightstand">Тумбочка</string>

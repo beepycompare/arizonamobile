@@ -480,7 +480,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     private final void setRefPage(ReferralResponse referralResponse) {
         ReferalsBinding referalsBinding = this.binding.referals;
         referalsBinding.title.setText(referralResponse.getName());
-        referalsBinding.header.cash.setText(MoneyElementKt.toMoneyFormattedSpannable$default(referralResponse.getCashBack(), false, null, null, 7, null));
+        referalsBinding.header.cash.setText(MoneyElementKt.toMoneyFormattedSpannable$default(referralResponse.getCashBack(), false, null, null, null, 15, null));
         referalsBinding.header.count.setText(String.valueOf(referralResponse.getReferralsValue()));
         this.refProgressAdapter.addAllItems(referralResponse.getReferralsRewards());
         PromoReward promoReward = (PromoReward) CollectionsKt.firstOrNull((List<? extends Object>) referralResponse.getReferralsRewards());

@@ -64,7 +64,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 binding.title1.setText(item.getTitle());
                 TextView textView = binding.value1;
                 String value = item.getValue();
-                textView.setText(value != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value, 0.0f, 1, null) : null);
+                textView.setText(value != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value, 0.0f, null, 3, null) : null);
                 binding.value1.setTextColor(-1);
                 String color = item.getColor();
                 if (color != null) {
@@ -74,7 +74,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 binding.title2.setText(item.getTitle());
                 TextView textView2 = binding.value2;
                 String value2 = item.getValue();
-                textView2.setText(value2 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value2, 0.0f, 1, null) : null);
+                textView2.setText(value2 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value2, 0.0f, null, 3, null) : null);
                 binding.value2.setTextColor(-1);
                 String color2 = item.getColor();
                 if (color2 != null) {
@@ -84,7 +84,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 binding.title3.setText(item.getTitle());
                 TextView textView3 = binding.value3;
                 String value3 = item.getValue();
-                textView3.setText(value3 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value3, 0.0f, 1, null) : null);
+                textView3.setText(value3 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value3, 0.0f, null, 3, null) : null);
                 binding.value3.setTextColor(-1);
                 String color3 = item.getColor();
                 if (color3 != null) {
@@ -94,7 +94,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 binding.title4.setText(item.getTitle());
                 TextView textView4 = binding.value4;
                 String value4 = item.getValue();
-                textView4.setText(value4 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value4, 0.0f, 1, null) : null);
+                textView4.setText(value4 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value4, 0.0f, null, 3, null) : null);
                 binding.value4.setTextColor(-1);
                 String color4 = item.getColor();
                 if (color4 != null) {
@@ -104,7 +104,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                 binding.title5.setText(item.getTitle());
                 TextView textView5 = binding.value5;
                 String value5 = item.getValue();
-                textView5.setText(value5 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value5, 0.0f, 1, null) : null);
+                textView5.setText(value5 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value5, 0.0f, null, 3, null) : null);
                 binding.value5.setTextColor(-1);
                 String color5 = item.getColor();
                 if (color5 != null) {
@@ -121,7 +121,7 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                     binding.title6.setText(item.getTitle());
                     TextView textView6 = binding.value6;
                     String value7 = item.getValue();
-                    textView6.setText(value7 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value7, 0.0f, 1, null) : null);
+                    textView6.setText(value7 != null ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, value7, 0.0f, null, 3, null) : null);
                     binding.value6.setTextColor(-1);
                     String color6 = item.getColor();
                     if (color6 != null) {

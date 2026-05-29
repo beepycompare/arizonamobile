@@ -59,6 +59,7 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         binding.mainInfoTitle.setText(roleInfo2.getTitle());
         TextView textView = binding.rang;
         Context context = this.context;
+        Context context2 = null;
         if (context == null) {
             Intrinsics.throwUninitializedPropertyAccessException("context");
             context = null;
@@ -66,22 +67,24 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         textView.setText(context.getResources().getQuantityString(R.plurals.situation_rank, roleInfo2.getMinRank(), Integer.valueOf(roleInfo2.getMinRank())));
         if (roleInfo2.getMaxSlots() > 0) {
             TextView textView2 = binding.freeSlotsTitle;
-            Context context2 = this.context;
-            if (context2 == null) {
+            Context context3 = this.context;
+            if (context3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
-                context2 = null;
+            } else {
+                context2 = context3;
             }
             textView2.setText(context2.getString(R.string.situation_free_slots_limited, Integer.valueOf(roleInfo2.getSlots()), Integer.valueOf(roleInfo2.getMaxSlots())));
         } else {
             TextView textView3 = binding.freeSlotsTitle;
-            Context context3 = this.context;
-            if (context3 == null) {
+            Context context4 = this.context;
+            if (context4 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
-                context3 = null;
+            } else {
+                context2 = context4;
             }
-            textView3.setText(context3.getString(R.string.situation_free_slots_unlimited));
+            textView3.setText(context2.getString(R.string.situation_free_slots_unlimited));
         }
-        binding.fullInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, roleInfo2.getDescription(), 0.0f, 1, null));
+        binding.fullInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, roleInfo2.getDescription(), 0.0f, null, 3, null));
         if (roleInfo2.isPressed()) {
             ConstraintLayout mainInfoContainer = binding.mainInfoContainer;
             Intrinsics.checkNotNullExpressionValue(mainInfoContainer, "mainInfoContainer");

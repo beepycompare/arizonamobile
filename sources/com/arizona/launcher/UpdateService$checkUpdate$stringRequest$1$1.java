@@ -23,7 +23,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {394, 395}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {395, 413}, s = {"L$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {395, 396}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {396, 414}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -47,13 +47,13 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
         return ((UpdateService$checkUpdate$stringRequest$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0043, code lost:
-        if (r7 == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
+        if (r12 == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0066, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1.AnonymousClass1(r6.this$0, r7, null), r6) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006b, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1.AnonymousClass1(r11.this$0, r12, null), r11) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0068, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x006d, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -61,17 +61,20 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
+        FilesChek filesChek;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            FilesChek filesChek = this.this$0.filesChek;
-            if (filesChek == null) {
+            FilesChek filesChek2 = this.this$0.filesChek;
+            if (filesChek2 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("filesChek");
                 filesChek = null;
+            } else {
+                filesChek = filesChek2;
             }
             this.label = 1;
-            obj = filesChek.checkGameDataUpdate(this.this$0.mDataInfo, true, this);
+            obj = FilesChek.checkGameDataUpdate$default(filesChek, this.this$0.mDataInfo, false, this, 2, null);
         } else if (i != 1) {
             if (i == 2) {
                 Pair pair = (Pair) this.L$0;

@@ -61,8 +61,8 @@ public final class TextListAdapter extends ListAdapter<TextInfo, ViewHolder> {
         binding.carsTextItem.getLayoutParams().width = (int) ((i2 * 11.71d) / 100.0d);
         binding.carsTextItem.getLayoutParams().height = (int) ((i3 * 6.01d) / 100.0d);
         TextInfo item = getItem(i);
-        binding.itemTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, 1, null));
-        binding.itemValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getValue(), 0.0f, 1, null));
+        binding.itemTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, null, 3, null));
+        binding.itemValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getValue(), 0.0f, null, 3, null));
     }
 
     /* compiled from: TextListAdapter.kt */

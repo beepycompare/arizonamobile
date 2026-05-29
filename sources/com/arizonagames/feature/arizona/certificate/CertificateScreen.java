@@ -206,7 +206,7 @@ public final class CertificateScreen extends SAMPUIElement {
         certificateScreenBinding.title.setText(mainInfo.getTitle());
         mainInfo.getPrice();
         if (mainInfo.getPrice() > 0) {
-            certificateScreenBinding.sellText.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainInfo.getPrice(), false, null, null, 7, null));
+            certificateScreenBinding.sellText.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainInfo.getPrice(), false, null, null, null, 15, null));
             if (!UtilsKt.isArizonaType()) {
                 certificateScreenBinding.sellIc.setVisibility(0);
             }

@@ -24,10 +24,11 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryMo
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateStates.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setCategories$1", f = "DonateStates.kt", i = {1, 2}, l = {90, 92, 96}, m = "invokeSuspend", n = {RemoteConfigConstants.ResponseFieldKey.STATE, RemoteConfigConstants.ResponseFieldKey.STATE}, nl = {91, 95, 90}, s = {"L$0", "L$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setCategories$1", f = "DonateStates.kt", i = {1, 2, 2}, l = {82, 84, 92}, m = "invokeSuspend", n = {RemoteConfigConstants.ResponseFieldKey.STATE, RemoteConfigConstants.ResponseFieldKey.STATE, "categories"}, nl = {83, 87, 82}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateStates$setCategories$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
+    Object L$1;
     int label;
     final /* synthetic */ DonateStates this$0;
 
@@ -48,16 +49,16 @@ public final class DonateStates$setCategories$1 extends SuspendLambda implements
         return ((DonateStates$setCategories$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0039, code lost:
-        if (r7 == r0) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x003d, code lost:
+        if (r7 == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0064, code lost:
-        if (r1.emit(new ru.mrlargha.commonui.elements.donate.presentation.UiState.Error(((ru.mrlargha.commonui.elements.donate.domain.ResultState.Error) r7).getMessage()), r6) == r0) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0068, code lost:
+        if (r1.emit(new ru.mrlargha.commonui.elements.donate.presentation.UiState.Error(((ru.mrlargha.commonui.elements.donate.domain.ResultState.Error) r7).getMessage()), r6) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00bc, code lost:
-        if (r1.emit(new ru.mrlargha.commonui.elements.donate.presentation.UiState.Successful(r4), r6) == r0) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00cc, code lost:
+        if (r3.emit(new ru.mrlargha.commonui.elements.donate.presentation.UiState.Successful(r1), r6) == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00ce, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -66,6 +67,7 @@ public final class DonateStates$setCategories$1 extends SuspendLambda implements
     */
     public final Object invokeSuspend(Object obj) {
         DonateGetCategoriesUseCase donateGetCategoriesUseCase;
+        List applyCategoryUpdates;
         MutableStateFlow mutableStateFlow;
         MutableStateFlow mutableStateFlow2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -76,12 +78,15 @@ public final class DonateStates$setCategories$1 extends SuspendLambda implements
             this.label = 1;
             obj = donateGetCategoriesUseCase.invoke(this);
         } else if (i != 1) {
-            if (i == 2 || i == 3) {
-                ResultState resultState = (ResultState) this.L$0;
-                ResultKt.throwOnFailure(obj);
-                return Unit.INSTANCE;
+            if (i != 2) {
+                if (i != 3) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                List list = (List) this.L$1;
             }
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            ResultState resultState = (ResultState) this.L$0;
+            ResultKt.throwOnFailure(obj);
+            return Unit.INSTANCE;
         } else {
             ResultKt.throwOnFailure(obj);
         }
@@ -90,19 +95,21 @@ public final class DonateStates$setCategories$1 extends SuspendLambda implements
             mutableStateFlow2 = this.this$0._categoriesState;
             this.L$0 = SpillingKt.nullOutSpilledVariable(resultState2);
             this.label = 2;
-        } else if (resultState2 instanceof ResultState.Success) {
-            mutableStateFlow = this.this$0._categoriesState;
+        } else if (!(resultState2 instanceof ResultState.Success)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
             Object data = ((ResultState.Success) resultState2).getData();
             Intrinsics.checkNotNull(data, "null cannot be cast to non-null type kotlin.collections.List<ru.mrlargha.commonui.elements.donate.domain.models.DonateCategoryModel>");
-            List<DonateCategoryModel> list = (List) data;
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (DonateCategoryModel donateCategoryModel : list) {
+            List<DonateCategoryModel> list2 = (List) data;
+            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
+            for (DonateCategoryModel donateCategoryModel : list2) {
                 arrayList.add(DonateCategoryModelUiKt.toUi(donateCategoryModel));
             }
+            applyCategoryUpdates = this.this$0.applyCategoryUpdates(arrayList);
+            mutableStateFlow = this.this$0._categoriesState;
             this.L$0 = SpillingKt.nullOutSpilledVariable(resultState2);
+            this.L$1 = SpillingKt.nullOutSpilledVariable(applyCategoryUpdates);
             this.label = 3;
-        } else {
-            throw new NoWhenBranchMatchedException();
         }
     }
 }

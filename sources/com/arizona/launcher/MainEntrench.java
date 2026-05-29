@@ -76,6 +76,7 @@ import com.android.installreferrer.api.ReferrerDetails;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.arizona.game.GTASA;
+import com.arizona.game.GTASAInternal;
 import com.arizona.game.R;
 import com.arizona.launcher.LogcatHelper;
 import com.arizona.launcher.MainEntrench;
@@ -148,7 +149,7 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 import ru.rustore.sdk.core.tasks.OnFailureListener;
 import ru.rustore.sdk.core.tasks.OnSuccessListener;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\u0095\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0005*\u0001d\b\u0007\u0018\u0000 f2\u00020\u0001:\u0002fgB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0014J\u0012\u0010*\u001a\u00020'2\b\u0010+\u001a\u0004\u0018\u00010,H\u0015J\u0010\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020,H\u0014J\b\u0010/\u001a\u00020'H\u0014J\r\u00100\u001a\u00020'H\u0007¢\u0006\u0002\u00101J\u0010\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0019H\u0002J\u001e\u00105\u001a\u00020'2\u0014\u00106\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000103\u0012\u0004\u0012\u00020'07H\u0002J\b\u00108\u001a\u00020'H\u0002J\b\u00109\u001a\u00020'H\u0002J\b\u0010:\u001a\u00020'H\u0002J\b\u0010;\u001a\u00020'H\u0002J\b\u0010<\u001a\u00020'H\u0002J\b\u0010=\u001a\u00020'H\u0002J\u0010\u0010>\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)H\u0002J\u0010\u0010@\u001a\u00020'2\u0006\u0010?\u001a\u00020)H\u0002J\b\u0010A\u001a\u00020'H\u0002J\b\u0010B\u001a\u00020'H\u0002J\b\u0010C\u001a\u00020'H\u0002J\u0018\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u0002032\u0006\u0010F\u001a\u000203H\u0002J\b\u0010G\u001a\u00020'H\u0002J\b\u0010H\u001a\u00020'H\u0014J\b\u0010I\u001a\u00020'H\u0014J\b\u0010J\u001a\u00020'H\u0014J\b\u0010K\u001a\u00020'H\u0002J\b\u0010L\u001a\u00020'H\u0002J\b\u0010M\u001a\u00020\u0015H\u0002J\b\u0010N\u001a\u00020'H\u0002J\u000e\u0010O\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)J\u0010\u0010P\u001a\u00020'2\u0006\u0010Q\u001a\u00020\u0015H\u0002J\b\u0010R\u001a\u00020'H\u0002J\b\u0010S\u001a\u00020'H\u0002J\b\u0010T\u001a\u00020'H\u0002J\b\u0010U\u001a\u00020'H\u0002J\b\u0010V\u001a\u00020'H\u0002J\u0010\u0010W\u001a\u00020'2\u0006\u0010X\u001a\u00020YH\u0002J\b\u0010Z\u001a\u00020'H\u0002J&\u0010[\u001a\u00020\\*\u00020]2\u0006\u0010F\u001a\u0002032\u0006\u0010^\u001a\u00020_2\b\b\u0002\u0010`\u001a\u00020aH\u0002J\b\u0010b\u001a\u00020'H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u00020\u001b8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001e\u0010 \u001a\u00020!8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u0010\u0010c\u001a\u00020dX\u0082\u0004¢\u0006\u0004\n\u0002\u0010e¨\u0006h"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "didRunStartupDebugAutoConnect", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "attachBaseContext", "", "newBase", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onSaveInstanceState", "outState", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkHuaweiUpdate", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "tryAutoConnectToSavedDebugServer", "syncConnectionHolderSettings", "sharedPreferences", "Landroid/content/SharedPreferences;", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0095\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0005*\u0001e\b\u0007\u0018\u0000 g2\u00020\u0001:\u0002ghB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0014J\u0012\u0010*\u001a\u00020'2\b\u0010+\u001a\u0004\u0018\u00010,H\u0015J\u0010\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020,H\u0014J\b\u0010/\u001a\u00020'H\u0014J\r\u00100\u001a\u00020'H\u0007¢\u0006\u0002\u00101J\u0010\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0019H\u0002J\u001e\u00105\u001a\u00020'2\u0014\u00106\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000103\u0012\u0004\u0012\u00020'07H\u0002J\b\u00108\u001a\u00020'H\u0002J\b\u00109\u001a\u00020'H\u0002J\b\u0010:\u001a\u00020'H\u0002J\b\u0010;\u001a\u00020'H\u0002J\b\u0010<\u001a\u00020'H\u0002J\b\u0010=\u001a\u00020'H\u0002J\u0010\u0010>\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)H\u0002J\u0010\u0010@\u001a\u00020'2\u0006\u0010?\u001a\u00020)H\u0002J\b\u0010A\u001a\u00020'H\u0002J\b\u0010B\u001a\u00020'H\u0002J\b\u0010C\u001a\u00020'H\u0002J\u0018\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u0002032\u0006\u0010F\u001a\u000203H\u0002J\b\u0010G\u001a\u00020'H\u0002J\b\u0010H\u001a\u00020'H\u0014J\b\u0010I\u001a\u00020'H\u0014J\b\u0010J\u001a\u00020'H\u0014J\b\u0010K\u001a\u00020'H\u0002J\b\u0010L\u001a\u00020'H\u0002J\b\u0010M\u001a\u00020\u0015H\u0002J\b\u0010N\u001a\u00020'H\u0002J\u000e\u0010O\u001a\u00020\u00152\u0006\u0010?\u001a\u00020)J\u0010\u0010P\u001a\u00020'2\u0006\u0010Q\u001a\u00020\u0015H\u0002J\b\u0010R\u001a\u00020'H\u0002J\b\u0010S\u001a\u00020'H\u0002J\b\u0010T\u001a\u00020'H\u0002J\b\u0010U\u001a\u00020'H\u0002J\b\u0010V\u001a\u00020'H\u0002J\u0010\u0010W\u001a\u00020'2\u0006\u0010X\u001a\u00020YH\u0002J\b\u0010Z\u001a\u00020'H\u0002J&\u0010[\u001a\u00020\\*\u00020]2\u0006\u0010F\u001a\u0002032\u0006\u0010^\u001a\u00020_2\b\b\u0002\u0010`\u001a\u00020aH\u0002J\b\u0010b\u001a\u00020'H\u0002J\b\u0010c\u001a\u00020'H\u0002R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0007\u001a\u00020\b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000b\u0010\f\u001a\u0004\b\t\u0010\nR\u001b\u0010\r\u001a\u00020\u000e8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0011\u0010\f\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u00020\u001b8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001e\u0010 \u001a\u00020!8\u0006@\u0006X\u0087.¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u0010\u0010d\u001a\u00020eX\u0082\u0004¢\u0006\u0004\n\u0002\u0010f¨\u0006i"}, d2 = {"Lcom/arizona/launcher/MainEntrench;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "mService", "Landroid/os/Messenger;", "mMessenger", "mainViewModel", "Lcom/arizona/launcher/MainViewModel;", "getMainViewModel", "()Lcom/arizona/launcher/MainViewModel;", "mainViewModel$delegate", "Lkotlin/Lazy;", "notificationsViewModel", "Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "getNotificationsViewModel", "()Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "notificationsViewModel$delegate", "referrerClient", "Lcom/android/installreferrer/api/InstallReferrerClient;", "isStartApp", "", "didRunStartupDebugAutoConnect", "permissionAsk", "lastStartGameTime", "", "rootFactory", "Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "getRootFactory", "()Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;", "setRootFactory", "(Lcom/miami/game/core/app/root/nav/main/MainComponent$Factory;)V", "notificationStateHolder", "Lcom/miami/game/feature/notifications/NotificationStateHolder;", "getNotificationStateHolder", "()Lcom/miami/game/feature/notifications/NotificationStateHolder;", "setNotificationStateHolder", "(Lcom/miami/game/feature/notifications/NotificationStateHolder;)V", "attachBaseContext", "", "newBase", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onSaveInstanceState", "outState", "onStart", "GLView", "(Landroidx/compose/runtime/Composer;I)V", "convertBytesToHumanReadable", "", "bytes", "getCurrentToken", "callback", "Lkotlin/Function1;", "checkHuaweiUpdate", "checkRUStoreUpdate", "saveGameType", "getBuildType", "initTracking", "obtainReferrerDetails", "checkNotificationPermission", "context", "openNotificationSettings", "askPermission", "checkUpdate", "observeData", "createDialog", "message", "url", "startApp", "onResume", "onPause", "onDestroy", "check", "checkLauncherUpdate", "getFirstOpen", "checkGameUpdate", "isOnline", "setProgressVisible", "visible", "showDialog", "hideDialog", "checkGame", "connectToTestServer", "tryAutoConnectToSavedDebugServer", "syncConnectionHolderSettings", "sharedPreferences", "Landroid/content/SharedPreferences;", "shareLogs", "sendRequests", "Lkotlinx/coroutines/Job;", "Landroidx/activity/ComponentActivity;", "iterations", "", "queue", "Lcom/android/volley/RequestQueue;", "startGame", "launchGameActivity", "mConnection", "com/arizona/launcher/MainEntrench$mConnection$1", "Lcom/arizona/launcher/MainEntrench$mConnection$1;", "Companion", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class MainEntrench extends Hilt_MainEntrench {
@@ -388,7 +389,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.2.0 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.2.1 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -476,12 +477,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C264@10216L269,264@10197L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C265@10254L269,265@10235L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:264)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:265)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function2
@@ -500,12 +501,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C265@10234L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C266@10272L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:265)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:266)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -532,7 +533,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C266@10263L8,270@10388L43,268@10293L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C267@10301L8,271@10426L43,269@10331L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -567,13 +568,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)302@11180L7,303@11237L7,305@11267L48,307@11358L464,307@11325L497,322@11867L10,321@11832L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)303@11218L7,304@11275L7,306@11305L48,308@11396L464,308@11363L497,323@11905L10,322@11870L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:301)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:302)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -1555,8 +1556,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             file.delete();
         }
         file.createNewFile();
-        MainEntrench mainEntrench = this;
-        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainEntrench);
+        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         if (FlavorUtilKt.isArizona()) {
             if (defaultSharedPreferences != null && (edit2 = defaultSharedPreferences.edit()) != null && (putInt2 = edit2.putInt(SettingsConstants.PROJECT_ID, ServerType.ARIZONA.getBackendLaunchCode())) != null) {
                 putInt2.apply();
@@ -1578,7 +1578,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         if (companion2 != null) {
             companion2.clean(false);
         }
-        startActivity(new Intent(mainEntrench, GTASA.class));
+        launchGameActivity();
     }
 
     private static final void tryAutoConnectToSavedDebugServer$lambda$0(MainEntrench mainEntrench) {
@@ -1687,8 +1687,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             serverType = ServerType.RODINA;
         }
         ServerType serverType2 = serverType;
-        MainEntrench mainEntrench = this;
-        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mainEntrench);
+        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         if (defaultSharedPreferences != null && (edit = defaultSharedPreferences.edit()) != null && (putInt = edit.putInt(SettingsConstants.PROJECT_ID, serverType2.getBackendLaunchCode())) != null) {
             putInt.apply();
         }
@@ -1713,9 +1712,9 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Log.e("ServerInfoActivity", "write failed: ENOSPC (No space left on device)");
         }
         int nextInt = Random.Default.nextInt(3, 6);
-        MainEntrench mainEntrench2 = this;
-        sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + ":825/", nextInt, null, 4, null);
-        sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + "/", nextInt, null, 4, null);
+        MainEntrench mainEntrench = this;
+        sendRequests$default(this, mainEntrench, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + ":825/", nextInt, null, 4, null);
+        sendRequests$default(this, mainEntrench, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + "/", nextInt, null, 4, null);
         getMainViewModel().setNotFirstRun();
         LogcatHelper.Companion companion = LogcatHelper.Companion;
         Context applicationContext = getApplicationContext();
@@ -1724,6 +1723,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
         if (companion2 != null) {
             companion2.clean(false);
         }
-        startActivity(new Intent(mainEntrench, GTASA.class));
+        launchGameActivity();
+    }
+
+    private final void launchGameActivity() {
+        if (!GTASAInternal.areNativeLibrariesLoaded()) {
+            Log.e(TAG, "Native libraries are not loaded", GTASAInternal.getNativeLibraryLoadError());
+            GTASAInternal.recordNativeLibraryLoadFailure(getApplicationContext());
+            Toast.makeText(getApplicationContext(), R.string.unsupported_native_abi, 1).show();
+            return;
+        }
+        startActivity(new Intent(this, GTASA.class));
     }
 }

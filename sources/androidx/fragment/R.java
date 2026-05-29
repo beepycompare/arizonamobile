@@ -25,9 +25,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int fragment_container_view_tag = 0x7f0a05a6;
-        public static int special_effects_controller_view_tag = 0x7f0a0d82;
-        public static int visible_removing_fragment_view_tag = 0x7f0a1077;
+        public static int fragment_container_view_tag = 0x7f0a05a0;
+        public static int special_effects_controller_view_tag = 0x7f0a0d7d;
+        public static int visible_removing_fragment_view_tag = 0x7f0a1071;
 
         private id() {
         }

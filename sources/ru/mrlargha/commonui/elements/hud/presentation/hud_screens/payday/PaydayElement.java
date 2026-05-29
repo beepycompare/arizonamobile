@@ -33,11 +33,10 @@ import ru.mrlargha.commonui.databinding.HudElementPaydayItemBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
-import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: PaydayElement.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\b\u0010\u001d\u001a\u00020\u0019H\u0002J\u0006\u0010\u001e\u001a\u00020\u0019J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010 \u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010!\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010\"\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0016\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u00152\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0018\u0010%\u001a\u00020\u00192\u0006\u0010\u0002\u001a\u00020\u00162\u0006\u0010&\u001a\u00020$H\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010,\u001a\u00020-2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u0010\u0010.\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010/\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020\u000fH\u0002J\u0010\u00100\u001a\u00020\u001b2\u0006\u00101\u001a\u00020\u000fH\u0002J\u0010\u00102\u001a\u00020\u001b2\u0006\u00103\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0014\u001a\r\u0012\t\u0012\u00070\u0016¢\u0006\u0002\b\u00170\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "clockJob", "Lkotlinx/coroutines/Job;", "secondsPassed", "", "currentData", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayData;", "isVisible", "", "cards", "", "Lru/mrlargha/commonui/databinding/HudElementPaydayItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "setVisibility", "", "data", "", "setInfo", "startClock", "stopClock", "render", "renderHeader", "renderOnline", "renderCards", "buildCards", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayCardUi;", "bindCard", "item", "formExtraCard", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/ExtraData;", "int", "", "postfix", "value", "", "formatFloat", "formatMainIncome", "formatTime", "actualTime", "formatTimer", "seconds", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u000e\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\b\u0010\u001d\u001a\u00020\u0019H\u0002J\u0006\u0010\u001e\u001a\u00020\u0019J\u0010\u0010\u001f\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010 \u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010!\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0010\u0010\"\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0016\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u00152\u0006\u0010\u001a\u001a\u00020\u0011H\u0002J\u0018\u0010%\u001a\u00020\u00192\u0006\u0010\u0002\u001a\u00020\u00162\u0006\u0010&\u001a\u00020$H\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u001a\u0010'\u001a\u0004\u0018\u00010(2\u0006\u0010,\u001a\u00020-2\u0006\u0010+\u001a\u00020\u001bH\u0002J\u0010\u0010.\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010/\u001a\u0002002\u0006\u0010,\u001a\u00020\u000fH\u0002J\u0010\u00101\u001a\u0002002\u0006\u0010,\u001a\u00020\u000fH\u0002J\u0010\u00102\u001a\u00020\u001b2\u0006\u00103\u001a\u00020\u000fH\u0002J\u0010\u00104\u001a\u00020\u001b2\u0006\u00105\u001a\u00020\u000fH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u0014\u001a\r\u0012\t\u0012\u00070\u0016¢\u0006\u0002\b\u00170\u0015X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00066"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementPaydayBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "clockJob", "Lkotlinx/coroutines/Job;", "secondsPassed", "", "currentData", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayData;", "isVisible", "", "cards", "", "Lru/mrlargha/commonui/databinding/HudElementPaydayItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "setVisibility", "", "data", "", "setInfo", "startClock", "stopClock", "render", "renderHeader", "renderOnline", "renderCards", "buildCards", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayCardUi;", "bindCard", "item", "formExtraCard", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/ExtraData;", "int", "", "postfix", "value", "", "formatFloat", "formatMainIncome", "Landroid/text/SpannableString;", "formatIncome", "formatTime", "actualTime", "formatTimer", "seconds", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class PaydayElement {
     private final HudElementPaydayBinding binding;
@@ -121,10 +120,7 @@ public final class PaydayElement {
     }
 
     private final void renderHeader(PaydayData paydayData) {
-        TextView textView = this.binding.tvMainIncome;
-        Context context = this.binding.getRoot().getContext();
-        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-        textView.setText(TextWithIconsKt.toTextWithIcons(StringsKt.replace$default(StringsKt.replace$default(formatMainIncome(paydayData.getIncomeMoney()), ":kk:", "<ic>1<ic>", false, 4, (Object) null), ":k:", "<ic>2<ic>", false, 4, (Object) null), context, new IconAndSize(R.drawable.hud_element_payday_kk, R.dimen._12sdp, R.dimen._7sdp), new IconAndSize(R.drawable.hud_element_payday_k, R.dimen._8sdp, R.dimen._7sdp)));
+        this.binding.tvMainIncome.setText(formatMainIncome(paydayData.getIncomeMoney()));
         boolean z = paydayData.getPaydayMultiplier().getValue() >= 3;
         FrameLayout root = this.binding.badgePaydayMultiplier.root;
         Intrinsics.checkNotNullExpressionValue(root, "root");
@@ -137,7 +133,7 @@ public final class PaydayElement {
         Intrinsics.checkNotNullExpressionValue(root2, "root");
         root2.setVisibility(z2 ? 0 : 8);
         if (z2) {
-            this.binding.badgeHouseMultiplier.text.setText("X" + paydayData.getHouseMultiplier() + " ДОМ");
+            this.binding.badgeHouseMultiplier.text.setText("X" + paydayData.getHouseMultiplier() + " " + this.binding.getRoot().getContext().getString(R.string.payday_house_badge));
         }
         int i = (paydayData.getPlayedHour() > 900L ? 1 : (paydayData.getPlayedHour() == 900L ? 0 : -1));
         HudElementPaydayBinding hudElementPaydayBinding = this.binding;
@@ -183,65 +179,92 @@ public final class PaydayElement {
         String str2;
         String str3;
         String name;
+        Context context = this.binding.getRoot().getContext();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = arrayList;
         if (paydayData.getLevel().getLostProperty().length() > 0) {
-            paydayCardUi = new PaydayCardUi("Ваш " + paydayData.getLevel().getLostProperty(), "Слетел", null, null, R.drawable.hud_element_payday_ic_lost, "#EA1E1E", "#FFC5C5", false, null, 396, null);
+            String string = context.getString(R.string.payday_lost_property_title, paydayData.getLevel().getLostProperty());
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            String str4 = string;
+            String string2 = context.getString(R.string.payday_lost_property_value);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            paydayCardUi = new PaydayCardUi(str4, string2, null, null, R.drawable.hud_element_payday_ic_lost, "#EA1E1E", "#FFC5C5", false, null, 396, null);
         } else {
-            paydayCardUi = new PaydayCardUi(paydayData.getLevel().getLevel() + " уровень", paydayData.getLevel().getCurrentExp() + " / " + paydayData.getLevel().getMaxExp(), null, null, R.drawable.hud_element_payday_ic_level, "#1558A0", "#5DDCFF", false, null, 396, null);
+            String string3 = context.getString(R.string.payday_level_title, Integer.valueOf(paydayData.getLevel().getLevel()));
+            Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
+            paydayCardUi = new PaydayCardUi(string3, paydayData.getLevel().getCurrentExp() + " / " + paydayData.getLevel().getMaxExp(), null, null, R.drawable.hud_element_payday_ic_level, "#1558A0", "#5DDCFF", false, null, 396, null);
         }
         arrayList2.add(paydayCardUi);
         ExtraData formExtraCard = formExtraCard(paydayData.getDeposit().getActualPercent(), "%");
         if (paydayData.getDeposit().getTaxWarningProperty().length() > 0) {
-            paydayCardUi2 = new PaydayCardUi("Скоро слетит", paydayData.getDeposit().getTaxWarningProperty(), null, null, R.drawable.hud_element_payday_ic_deposit_warn, "#FFA600", "#FFF2BD", false, null, 396, null);
+            String string4 = context.getString(R.string.payday_tax_warning_title);
+            Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
+            paydayCardUi2 = new PaydayCardUi(string4, paydayData.getDeposit().getTaxWarningProperty(), null, null, R.drawable.hud_element_payday_ic_deposit_warn, "#FFA600", "#FFF2BD", false, null, 396, null);
             c = 0;
             obj = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
         } else if (Intrinsics.areEqual(paydayData.getDeposit().getState(), AppMeasurementSdk.ConditionalUserProperty.ACTIVE)) {
-            SpannableString moneyFormattedSpannable$default = MoneyElementKt.toMoneyFormattedSpannable$default(paydayData.getDeposit().getIncome(), true, "+", null, 4, null);
+            String string5 = context.getString(R.string.payday_deposit_title);
+            Intrinsics.checkNotNullExpressionValue(string5, "getString(...)");
+            SpannableString formatIncome = formatIncome(paydayData.getDeposit().getIncome());
             int i = paydayData.getDeposit().getHasAgenda() ? R.drawable.hud_element_payday_ic_deposit_agenda : R.drawable.hud_element_payday_ic_deposit;
-            SpannableString spannableString = moneyFormattedSpannable$default;
             obj = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
             c = 0;
-            paydayCardUi2 = new PaydayCardUi("Депозит", spannableString, null, formExtraCard, i, "#46A015", "#CCF053", false, null, 388, null);
+            paydayCardUi2 = new PaydayCardUi(string5, formatIncome, null, formExtraCard, i, "#46A015", "#CCF053", false, null, 388, null);
         } else {
             c = 0;
             obj = AppMeasurementSdk.ConditionalUserProperty.ACTIVE;
-            SpannableString spannableString2 = new SpannableString("Временно заблокирован");
-            spannableString2.setSpan(new RelativeSizeSpan(0.66f), 0, spannableString2.length(), 33);
-            paydayCardUi2 = new PaydayCardUi("Депозит", spannableString2, null, null, R.drawable.hud_element_payday_ic_deposit, "#46A015", "#CCF053", true, null, 268, null);
+            String string6 = context.getString(R.string.payday_deposit_title);
+            Intrinsics.checkNotNullExpressionValue(string6, "getString(...)");
+            String str5 = string6;
+            SpannableString spannableString = new SpannableString(context.getString(R.string.payday_deposit_blocked));
+            spannableString.setSpan(new RelativeSizeSpan(0.66f), 0, spannableString.length(), 33);
+            paydayCardUi2 = new PaydayCardUi(str5, spannableString, null, null, R.drawable.hud_element_payday_ic_deposit, "#46A015", "#CCF053", true, null, 268, null);
         }
         arrayList2.add(paydayCardUi2);
         ExtraData formExtraCard2 = formExtraCard(paydayData.getFraction().getActualPercent(), "%");
         ExtraData extraData = paydayData.getFraction().getMultiplier() > 1 ? new ExtraData("X" + paydayData.getFraction().getMultiplier(), -1, Color.parseColor("#FF4400")) : null;
         if (paydayData.getFraction().getDebuffType().length() > 0) {
             if (Intrinsics.areEqual(paydayData.getFraction().getDebuffType(), "medCard")) {
-                Context context = this.binding.getRoot().getContext();
-                Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+                String string7 = context.getString(R.string.payday_med_card_title);
+                Intrinsics.checkNotNullExpressionValue(string7, "getString(...)");
+                Intrinsics.checkNotNull(context);
                 IconAndSize[] iconAndSizeArr = new IconAndSize[1];
                 iconAndSizeArr[c] = new IconAndSize(R.drawable.hud_element_payday_warning_ic, R.dimen._5sdp, R.dimen._5sdp);
-                name = TextWithIconsKt.toTextWithIcons("<ic>1<ic> Мед.карта", context, iconAndSizeArr);
+                name = TextWithIconsKt.toTextWithIcons(string7, context, iconAndSizeArr);
             } else {
                 name = paydayData.getFraction().getName();
             }
             CharSequence charSequence = name;
             str = "";
-            paydayCardUi3 = new PaydayCardUi(charSequence, MoneyElementKt.toMoneyFormattedSpannable$default(paydayData.getFraction().getIncome(), true, "+", null, 4, null), formExtraCard2, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, 392, null);
+            paydayCardUi3 = new PaydayCardUi(charSequence, formatIncome(paydayData.getFraction().getIncome()), formExtraCard2, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, 392, null);
         } else {
             str = "";
             if (Intrinsics.areEqual(paydayData.getFraction().getState(), "noUniform")) {
-                paydayCardUi3 = new PaydayCardUi(paydayData.getFraction().getName(), "Вы не в форме", null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", true, null, 268, null);
+                String name2 = paydayData.getFraction().getName();
+                String string8 = context.getString(R.string.payday_no_uniform);
+                Intrinsics.checkNotNullExpressionValue(string8, "getString(...)");
+                paydayCardUi3 = new PaydayCardUi(name2, string8, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", true, null, 268, null);
             } else if (Intrinsics.areEqual(paydayData.getFraction().getState(), obj)) {
-                paydayCardUi3 = new PaydayCardUi(paydayData.getFraction().getName(), MoneyElementKt.toMoneyFormattedSpannable$default(paydayData.getFraction().getIncome(), true, "+", null, 4, null), formExtraCard2, extraData, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, RendererCapabilities.DECODER_SUPPORT_MASK, null);
+                paydayCardUi3 = new PaydayCardUi(paydayData.getFraction().getName(), formatIncome(paydayData.getFraction().getIncome()), formExtraCard2, extraData, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, RendererCapabilities.DECODER_SUPPORT_MASK, null);
             } else if (Intrinsics.areEqual(paydayData.getFraction().getState(), "noFraction")) {
-                paydayCardUi3 = new PaydayCardUi(str, str, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, "вступи во фракцию и зарабатывай каждый payday", 140, null);
+                String string9 = context.getString(R.string.payday_no_fraction_hint);
+                Intrinsics.checkNotNullExpressionValue(string9, "getString(...)");
+                paydayCardUi3 = new PaydayCardUi(str, str, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, string9, 140, null);
             } else {
-                paydayCardUi3 = new PaydayCardUi("Фракция", "НЕ СОСТОИТ", null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, 396, null);
+                String string10 = context.getString(R.string.payday_fraction_title);
+                Intrinsics.checkNotNullExpressionValue(string10, "getString(...)");
+                String str6 = string10;
+                String string11 = context.getString(R.string.payday_not_in_fraction);
+                Intrinsics.checkNotNullExpressionValue(string11, "getString(...)");
+                paydayCardUi3 = new PaydayCardUi(str6, string11, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, null, 396, null);
             }
         }
         arrayList2.add(paydayCardUi3);
         arrayList2.add(new PaydayCardUi("AZ COINS", paydayData.getAz().getCurrent() + " AZ", null, paydayData.getAz().getIncome() > 0 ? new ExtraData("+" + paydayData.getAz().getIncome(), Color.parseColor("#FFDB79"), Color.parseColor("#80582200")) : null, R.drawable.hud_element_payday_az_coins, "#A97700", "#FFDB79", false, null, 388, null));
         if (paydayData.getLaw().getCurrentValue() < paydayData.getLaw().getMaxValue() && paydayData.getLaw().getIncome() != 0) {
-            String str4 = paydayData.getLaw().getCurrentValue() + "/" + paydayData.getLaw().getMaxValue();
+            String string12 = context.getString(R.string.payday_law_title);
+            Intrinsics.checkNotNullExpressionValue(string12, "getString(...)");
+            String str7 = paydayData.getLaw().getCurrentValue() + "/" + paydayData.getLaw().getMaxValue();
             int i2 = R.drawable.hud_element_payday_laws;
             int currentValue = paydayData.getLaw().getCurrentValue();
             if (currentValue >= 0 && currentValue < 30) {
@@ -251,7 +274,7 @@ public final class PaydayElement {
             } else {
                 str2 = "#448D04";
             }
-            String str5 = str2;
+            String str8 = str2;
             int currentValue2 = paydayData.getLaw().getCurrentValue();
             if (currentValue2 >= 0 && currentValue2 < 30) {
                 str3 = "#FF7676";
@@ -260,10 +283,12 @@ public final class PaydayElement {
             } else {
                 str3 = "#BCFF50";
             }
-            arrayList2.add(new PaydayCardUi("Законопослушность", str4, formExtraCard(paydayData.getLaw().getIncome(), str), null, i2, str5, str3, false, null, 392, null));
+            arrayList2.add(new PaydayCardUi(string12, str7, formExtraCard(paydayData.getLaw().getIncome(), str), null, i2, str8, str3, false, null, 392, null));
         }
         if (paydayData.getOtherIncome().getIncome() > 0) {
-            arrayList2.add(new PaydayCardUi("Другой доход", MoneyElementKt.toMoneyFormattedSpannable$default(paydayData.getOtherIncome().getIncome(), true, "+", null, 4, null), null, null, R.drawable.hud_element_payday_ic_other_income, "#8E7CFF", "#6A5BEA", false, null, 396, null));
+            String string13 = context.getString(R.string.payday_other_income_title);
+            Intrinsics.checkNotNullExpressionValue(string13, "getString(...)");
+            arrayList2.add(new PaydayCardUi(string13, formatIncome(paydayData.getOtherIncome().getIncome()), null, null, R.drawable.hud_element_payday_ic_other_income, "#8E7CFF", "#6A5BEA", false, null, 396, null));
         }
         return arrayList;
     }
@@ -338,9 +363,12 @@ public final class PaydayElement {
         return StringsKt.trimEnd(StringsKt.trimEnd(String.valueOf(f), '0'), '.');
     }
 
-    private final String formatMainIncome(long j) {
-        String format$default = MoneyFormatter.format$default(MoneyFormatter.INSTANCE, j, false, null, null, 14, null);
-        return j >= 0 ? "+" + format$default : format$default;
+    private final SpannableString formatMainIncome(long j) {
+        return formatIncome(j);
+    }
+
+    private final SpannableString formatIncome(long j) {
+        return MoneyElementKt.toMoneyFormattedSpannable$default(j, false, j >= 0 ? "+" : "", null, null, 13, null);
     }
 
     private final String formatTime(long j) {

@@ -63,9 +63,9 @@ public final class MyHousesUpgradesAdapter extends RecyclerView.Adapter<ViewHold
         Intrinsics.checkNotNullExpressionValue(upgradeItem, "get(...)");
         final MyHouseScreen.Companion.UpgradeItem upgradeItem2 = upgradeItem;
         MyHouseUpgradeItemBinding binding = holder.getBinding();
-        binding.nameContainerTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getTitle(), 0.0f, 1, null));
-        binding.nameContainerValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getShortDescription(), 0.0f, 1, null));
-        binding.priceContainerTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getPrice(), 0.0f, 1, null));
+        binding.nameContainerTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getTitle(), 0.0f, null, 3, null));
+        binding.nameContainerValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getShortDescription(), 0.0f, null, 3, null));
+        binding.priceContainerTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, upgradeItem2.getPrice(), 0.0f, null, 3, null));
         if (upgradeItem2.getPurchased() > 0) {
             binding.buyButton.setOnClickListener(null);
             binding.buyButton.setImageResource(R.drawable.houses_upgrade_button);

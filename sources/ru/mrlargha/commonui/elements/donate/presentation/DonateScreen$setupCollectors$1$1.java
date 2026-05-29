@@ -2,7 +2,7 @@ package ru.mrlargha.commonui.elements.donate.presentation;
 
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
@@ -22,13 +22,14 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
 import ru.mrlargha.commonui.databinding.DonateScreenBinding;
+import ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1;
 import ru.mrlargha.commonui.elements.donate.presentation.UiState;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {}, nl = {222}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1", f = "DonateScreen.kt", i = {}, l = {249}, m = "invokeSuspend", n = {}, nl = {285}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
@@ -56,7 +57,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {198}, m = "invokeSuspend", n = {}, nl = {221}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1", f = "DonateScreen.kt", i = {}, l = {250}, m = "invokeSuspend", n = {}, nl = {284}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -81,6 +82,103 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
             return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
+        /* JADX INFO: Access modifiers changed from: package-private */
+        /* compiled from: DonateScreen.kt */
+        @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+        /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1  reason: invalid class name and collision with other inner class name */
+        /* loaded from: classes6.dex */
+        public static final class C00811<T> implements FlowCollector {
+            final /* synthetic */ DonateScreenBinding $this_with;
+            final /* synthetic */ DonateScreen this$0;
+
+            C00811(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen) {
+                this.$this_with = donateScreenBinding;
+                this.this$0 = donateScreen;
+            }
+
+            @Override // kotlinx.coroutines.flow.FlowCollector
+            public /* bridge */ /* synthetic */ Object emit(Object obj, Continuation continuation) {
+                return emit((UiState) obj, (Continuation<? super Unit>) continuation);
+            }
+
+            public final Object emit(UiState<? extends List<DonateCategoryModelUi>> uiState, Continuation<? super Unit> continuation) {
+                DonateCategoryAdapter donateCategoryAdapter;
+                boolean z;
+                Integer num;
+                DonateCategoryModelUi donateCategoryModelUi;
+                if (uiState instanceof UiState.Loading) {
+                    ProgressBar contentProgressBar = this.$this_with.contentProgressBar;
+                    Intrinsics.checkNotNullExpressionValue(contentProgressBar, "contentProgressBar");
+                    contentProgressBar.setVisibility(0);
+                    LinearLayout contentContainer = this.$this_with.contentContainer;
+                    Intrinsics.checkNotNullExpressionValue(contentContainer, "contentContainer");
+                    contentContainer.setVisibility(8);
+                    LinearLayout errorPlaceholder = this.$this_with.errorPlaceholder;
+                    Intrinsics.checkNotNullExpressionValue(errorPlaceholder, "errorPlaceholder");
+                    errorPlaceholder.setVisibility(8);
+                } else if (uiState instanceof UiState.Error) {
+                    ProgressBar contentProgressBar2 = this.$this_with.contentProgressBar;
+                    Intrinsics.checkNotNullExpressionValue(contentProgressBar2, "contentProgressBar");
+                    contentProgressBar2.setVisibility(8);
+                    LinearLayout contentContainer2 = this.$this_with.contentContainer;
+                    Intrinsics.checkNotNullExpressionValue(contentContainer2, "contentContainer");
+                    contentContainer2.setVisibility(8);
+                    LinearLayout errorPlaceholder2 = this.$this_with.errorPlaceholder;
+                    Intrinsics.checkNotNullExpressionValue(errorPlaceholder2, "errorPlaceholder");
+                    errorPlaceholder2.setVisibility(0);
+                } else if (uiState instanceof UiState.Successful) {
+                    UiState.Successful successful = (UiState.Successful) uiState;
+                    this.this$0.categories = (List) successful.getData();
+                    donateCategoryAdapter = this.this$0.categoryAdapter;
+                    ArrayList arrayList = new ArrayList();
+                    for (T t : (Iterable) successful.getData()) {
+                        if (((DonateCategoryModelUi) t).getVisible()) {
+                            arrayList.add(t);
+                        }
+                    }
+                    final DonateScreen donateScreen = this.this$0;
+                    donateCategoryAdapter.submitList(arrayList, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            DonateScreen$setupCollectors$1$1.AnonymousClass1.C00811.emit$lambda$1(DonateScreen.this);
+                        }
+                    });
+                    z = this.this$0.hasInitializedCategory;
+                    if (!z) {
+                        num = this.this$0.pendingOpenCategoryId;
+                        if (num == null && (donateCategoryModelUi = (DonateCategoryModelUi) CollectionsKt.firstOrNull((List<? extends Object>) successful.getData())) != null) {
+                            DonateScreen donateScreen2 = this.this$0;
+                            donateScreen2.hasInitializedCategory = true;
+                            donateScreen2.selectCategory(donateCategoryModelUi, true);
+                        }
+                    }
+                    ProgressBar contentProgressBar3 = this.$this_with.contentProgressBar;
+                    Intrinsics.checkNotNullExpressionValue(contentProgressBar3, "contentProgressBar");
+                    contentProgressBar3.setVisibility(8);
+                    LinearLayout contentContainer3 = this.$this_with.contentContainer;
+                    Intrinsics.checkNotNullExpressionValue(contentContainer3, "contentContainer");
+                    contentContainer3.setVisibility(0);
+                    LinearLayout errorPlaceholder3 = this.$this_with.errorPlaceholder;
+                    Intrinsics.checkNotNullExpressionValue(errorPlaceholder3, "errorPlaceholder");
+                    errorPlaceholder3.setVisibility(8);
+                } else {
+                    throw new NoWhenBranchMatchedException();
+                }
+                return Unit.INSTANCE;
+            }
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            public static final void emit$lambda$1(DonateScreen donateScreen) {
+                Integer num;
+                num = donateScreen.pendingOpenCategoryId;
+                if (num != null) {
+                    int intValue = num.intValue();
+                    donateScreen.pendingOpenCategoryId = null;
+                    donateScreen.openCategory(Integer.valueOf(intValue));
+                }
+            }
+        }
+
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             DonateStates donateStates;
@@ -93,57 +191,8 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                 if (donateStates == null || (categoriesState = donateStates.getCategoriesState()) == null) {
                     return Unit.INSTANCE;
                 }
-                final DonateScreenBinding donateScreenBinding = this.$this_with;
-                final DonateScreen donateScreen = this.this$0;
                 this.label = 1;
-                if (categoriesState.collect(new FlowCollector() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen.setupCollectors.1.1.1.1
-                    @Override // kotlinx.coroutines.flow.FlowCollector
-                    public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                        return emit((UiState) obj2, (Continuation<? super Unit>) continuation);
-                    }
-
-                    public final Object emit(UiState<? extends List<DonateCategoryModelUi>> uiState, Continuation<? super Unit> continuation) {
-                        DonateCategoryAdapter donateCategoryAdapter;
-                        if (uiState instanceof UiState.Loading) {
-                            ProgressBar contentProgressBar = DonateScreenBinding.this.contentProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(contentProgressBar, "contentProgressBar");
-                            contentProgressBar.setVisibility(0);
-                            LinearLayout contentContainer = DonateScreenBinding.this.contentContainer;
-                            Intrinsics.checkNotNullExpressionValue(contentContainer, "contentContainer");
-                            contentContainer.setVisibility(8);
-                            LinearLayout errorPlaceholder = DonateScreenBinding.this.errorPlaceholder;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder, "errorPlaceholder");
-                            errorPlaceholder.setVisibility(8);
-                        } else if (uiState instanceof UiState.Error) {
-                            ProgressBar contentProgressBar2 = DonateScreenBinding.this.contentProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(contentProgressBar2, "contentProgressBar");
-                            contentProgressBar2.setVisibility(8);
-                            LinearLayout contentContainer2 = DonateScreenBinding.this.contentContainer;
-                            Intrinsics.checkNotNullExpressionValue(contentContainer2, "contentContainer");
-                            contentContainer2.setVisibility(8);
-                            LinearLayout errorPlaceholder2 = DonateScreenBinding.this.errorPlaceholder;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder2, "errorPlaceholder");
-                            errorPlaceholder2.setVisibility(0);
-                        } else if (uiState instanceof UiState.Successful) {
-                            UiState.Successful successful = (UiState.Successful) uiState;
-                            donateScreen.onCategoryClick((DonateCategoryModelUi) CollectionsKt.first((List<? extends Object>) successful.getData()));
-                            donateCategoryAdapter = donateScreen.categoryAdapter;
-                            donateCategoryAdapter.submitList((List) successful.getData());
-                            ProgressBar contentProgressBar3 = DonateScreenBinding.this.contentProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(contentProgressBar3, "contentProgressBar");
-                            contentProgressBar3.setVisibility(8);
-                            LinearLayout contentContainer3 = DonateScreenBinding.this.contentContainer;
-                            Intrinsics.checkNotNullExpressionValue(contentContainer3, "contentContainer");
-                            contentContainer3.setVisibility(0);
-                            LinearLayout errorPlaceholder3 = DonateScreenBinding.this.errorPlaceholder;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholder3, "errorPlaceholder");
-                            errorPlaceholder3.setVisibility(8);
-                        } else {
-                            throw new NoWhenBranchMatchedException();
-                        }
-                        return Unit.INSTANCE;
-                    }
-                }, this) == coroutine_suspended) {
+                if (categoriesState.collect(new C00811(this.$this_with, this.this$0), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

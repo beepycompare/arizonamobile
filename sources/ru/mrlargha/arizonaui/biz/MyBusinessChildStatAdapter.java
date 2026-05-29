@@ -33,8 +33,8 @@ public final class MyBusinessChildStatAdapter extends RecyclerView.Adapter<Busin
         Intrinsics.checkNotNullExpressionValue(businessDetailInfoItem, "get(...)");
         MyBusinessScreen.Companion.BusinessDetailInfoItem businessDetailInfoItem2 = businessDetailInfoItem;
         MyBusinessChildStatItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessDetailInfoItem2.getTitle(), 0.0f, 1, null));
-        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessDetailInfoItem2.getValue(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessDetailInfoItem2.getTitle(), 0.0f, null, 3, null));
+        binding.value.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable(businessDetailInfoItem2.getValue()));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

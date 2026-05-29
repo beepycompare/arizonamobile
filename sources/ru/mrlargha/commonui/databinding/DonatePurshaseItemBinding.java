@@ -19,31 +19,43 @@ public final class DonatePurshaseItemBinding implements ViewBinding {
     public final LinearLayout blockContainer;
     public final LinearLayout btnBuy;
     public final CardView cardContainer;
+    public final LinearLayout firstElement;
     public final LinearLayout gradientTextContainer;
+    public final ImageView ivAzCoinIc;
     public final ImageView ivItem;
     public final ImageView ivItemBg;
     public final ImageView ivMoneyIc;
+    public final ImageView ivRateAz;
+    public final LinearLayout rateContainer;
     private final FrameLayout rootView;
     public final RecyclerView rvTags;
+    public final TextView tvAzCoins;
     public final TextView tvBlockReason;
     public final TextView tvFirstTitle;
+    public final TextView tvMoney;
     public final TextView tvOldPrice;
     public final TextView tvPrice;
     public final GradientTextView tvSecondTitle;
 
-    private DonatePurshaseItemBinding(FrameLayout rootView, ImageView animationThumb, LinearLayout blockContainer, LinearLayout btnBuy, CardView cardContainer, LinearLayout gradientTextContainer, ImageView ivItem, ImageView ivItemBg, ImageView ivMoneyIc, RecyclerView rvTags, TextView tvBlockReason, TextView tvFirstTitle, TextView tvOldPrice, TextView tvPrice, GradientTextView tvSecondTitle) {
+    private DonatePurshaseItemBinding(FrameLayout rootView, ImageView animationThumb, LinearLayout blockContainer, LinearLayout btnBuy, CardView cardContainer, LinearLayout firstElement, LinearLayout gradientTextContainer, ImageView ivAzCoinIc, ImageView ivItem, ImageView ivItemBg, ImageView ivMoneyIc, ImageView ivRateAz, LinearLayout rateContainer, RecyclerView rvTags, TextView tvAzCoins, TextView tvBlockReason, TextView tvFirstTitle, TextView tvMoney, TextView tvOldPrice, TextView tvPrice, GradientTextView tvSecondTitle) {
         this.rootView = rootView;
         this.animationThumb = animationThumb;
         this.blockContainer = blockContainer;
         this.btnBuy = btnBuy;
         this.cardContainer = cardContainer;
+        this.firstElement = firstElement;
         this.gradientTextContainer = gradientTextContainer;
+        this.ivAzCoinIc = ivAzCoinIc;
         this.ivItem = ivItem;
         this.ivItemBg = ivItemBg;
         this.ivMoneyIc = ivMoneyIc;
+        this.ivRateAz = ivRateAz;
+        this.rateContainer = rateContainer;
         this.rvTags = rvTags;
+        this.tvAzCoins = tvAzCoins;
         this.tvBlockReason = tvBlockReason;
         this.tvFirstTitle = tvFirstTitle;
+        this.tvMoney = tvMoney;
         this.tvOldPrice = tvOldPrice;
         this.tvPrice = tvPrice;
         this.tvSecondTitle = tvSecondTitle;
@@ -79,37 +91,61 @@ public final class DonatePurshaseItemBinding implements ViewBinding {
                     i = R.id.card_container;
                     CardView cardView = (CardView) ViewBindings.findChildViewById(rootView, i);
                     if (cardView != null) {
-                        i = R.id.gradient_text_container;
+                        i = R.id.first_element;
                         LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                         if (linearLayout3 != null) {
-                            i = R.id.iv_item;
-                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                            if (imageView2 != null) {
-                                i = R.id.iv_item_bg;
-                                ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                if (imageView3 != null) {
-                                    i = R.id.iv_money_ic;
-                                    ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                    if (imageView4 != null) {
-                                        i = R.id.rv_tags;
-                                        RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                        if (recyclerView != null) {
-                                            i = R.id.tv_block_reason;
-                                            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                            if (textView != null) {
-                                                i = R.id.tv_first_title;
-                                                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                if (textView2 != null) {
-                                                    i = R.id.tv_old_price;
-                                                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                    if (textView3 != null) {
-                                                        i = R.id.tv_price;
-                                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                        if (textView4 != null) {
-                                                            i = R.id.tv_second_title;
-                                                            GradientTextView gradientTextView = (GradientTextView) ViewBindings.findChildViewById(rootView, i);
-                                                            if (gradientTextView != null) {
-                                                                return new DonatePurshaseItemBinding((FrameLayout) rootView, imageView, linearLayout, linearLayout2, cardView, linearLayout3, imageView2, imageView3, imageView4, recyclerView, textView, textView2, textView3, textView4, gradientTextView);
+                            i = R.id.gradient_text_container;
+                            LinearLayout linearLayout4 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                            if (linearLayout4 != null) {
+                                i = R.id.iv_az_coin_ic;
+                                ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                if (imageView2 != null) {
+                                    i = R.id.iv_item;
+                                    ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                    if (imageView3 != null) {
+                                        i = R.id.iv_item_bg;
+                                        ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                        if (imageView4 != null) {
+                                            i = R.id.iv_money_ic;
+                                            ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                            if (imageView5 != null) {
+                                                i = R.id.iv_rate_az;
+                                                ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                if (imageView6 != null) {
+                                                    i = R.id.rate_container;
+                                                    LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                    if (linearLayout5 != null) {
+                                                        i = R.id.rv_tags;
+                                                        RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                                        if (recyclerView != null) {
+                                                            i = R.id.tv_az_coins;
+                                                            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                            if (textView != null) {
+                                                                i = R.id.tv_block_reason;
+                                                                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                if (textView2 != null) {
+                                                                    i = R.id.tv_first_title;
+                                                                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                    if (textView3 != null) {
+                                                                        i = R.id.tv_money;
+                                                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (textView4 != null) {
+                                                                            i = R.id.tv_old_price;
+                                                                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                            if (textView5 != null) {
+                                                                                i = R.id.tv_price;
+                                                                                TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                if (textView6 != null) {
+                                                                                    i = R.id.tv_second_title;
+                                                                                    GradientTextView gradientTextView = (GradientTextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (gradientTextView != null) {
+                                                                                        return new DonatePurshaseItemBinding((FrameLayout) rootView, imageView, linearLayout, linearLayout2, cardView, linearLayout3, linearLayout4, imageView2, imageView3, imageView4, imageView5, imageView6, linearLayout5, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, gradientTextView);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }

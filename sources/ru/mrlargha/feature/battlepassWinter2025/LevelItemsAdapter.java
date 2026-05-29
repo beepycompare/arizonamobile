@@ -269,9 +269,9 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
                     }
                 }
             }
-            winterBattlepassLevelItemBinding.itemLevelNamePremium.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, second.getTitle(), 0.0f, 1, null));
+            winterBattlepassLevelItemBinding.itemLevelNamePremium.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, second.getTitle(), 0.0f, null, 3, null));
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new LevelItemsAdapter$LevelItemViewHolder$bind$1$7(winterBattlepassLevelItemBinding, levelItemsAdapter, second, this, null), 3, null);
-            winterBattlepassLevelItemBinding.itemLevelNameUsually.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, first.getTitle(), 0.0f, 1, null));
+            winterBattlepassLevelItemBinding.itemLevelNameUsually.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, first.getTitle(), 0.0f, null, 3, null));
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new LevelItemsAdapter$LevelItemViewHolder$bind$1$8(winterBattlepassLevelItemBinding, levelItemsAdapter, first, this, null), 3, null);
             if (second.getCount() > 0 && !levelItemsAdapter.isArizonaType) {
                 CustomCardView premiumContainerCount = winterBattlepassLevelItemBinding.premiumContainerCount;

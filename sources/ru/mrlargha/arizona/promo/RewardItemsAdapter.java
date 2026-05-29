@@ -44,7 +44,7 @@ public final class RewardItemsAdapter extends RecyclerView.Adapter<RewardItemVie
             promoReward = (PromoReward) CollectionsKt.first((List<? extends Object>) this.itemsList);
         }
         RewardItemBinding binding = holder.getBinding();
-        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, 1, null));
+        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, null, 3, null));
         binding.colorBottom.setBackgroundColor(Color.parseColor(promoReward.getColor()));
         if (!UtilsKt.isArizonaType()) {
             BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new RewardItemsAdapter$onBindViewHolder$1$1(promoReward, binding, null), 3, null);

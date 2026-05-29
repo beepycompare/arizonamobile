@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -29,18 +30,22 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.feature.current_container.R;
 import ru.mrlargha.feature.current_container.databinding.AuctionCurrentContainerBinding;
 import ru.mrlargha.feature.current_container.domain.obj.Container;
 import ru.mrlargha.feature.current_container.domain.obj.ContainerRewards;
 /* compiled from: CurrentContainer.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000b\u0018\u0000 \u001f2\u00020\u0001:\u0002\u001e\u001fB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0014\u001a\u00020\u0015H\u0002J\b\u0010\u0016\u001a\u00020\u0015H\u0002J\b\u0010\u0017\u001a\u00020\u0015H\u0002J\u000e\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u0013J\u0018\u0010\u001a\u001a\u00020\u00152\u0006\u0010\u001b\u001a\u00020\u00132\u0006\u0010\u001c\u001a\u00020\u0005H\u0016J\u000e\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u0013R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lru/mrlargha/feature/current_container/presentation/CurrentContainer;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentContainer", "Landroidx/constraintlayout/widget/ConstraintLayout;", "timer", "Landroid/os/CountDownTimer;", "binding", "Lru/mrlargha/feature/current_container/databinding/AuctionCurrentContainerBinding;", "currentContainerAdapter", "Lru/mrlargha/feature/current_container/presentation/CurrentContainerAdapter;", FirebaseAnalytics.Param.CURRENCY, "", "createCurrentContainerItems", "", "showSetBetMenu", "hiddenSetBetMenu", "addContainer", "message", "onBackendMessageHandled", "data", "subId", "addRewards", "Spawner", "Companion", "current-container"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000b\u0018\u0000  2\u00020\u0001:\u0002\u001f B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u0017\u001a\u00020\u0016H\u0002J\b\u0010\u0018\u001a\u00020\u0016H\u0002J\u000e\u0010\u0019\u001a\u00020\u00162\u0006\u0010\u001a\u001a\u00020\u0014J\u0018\u0010\u001b\u001a\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u001d\u001a\u00020\u0005H\u0016J\u000e\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u001a\u001a\u00020\u0014R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lru/mrlargha/feature/current_container/presentation/CurrentContainer;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentContainer", "Landroidx/constraintlayout/widget/ConstraintLayout;", "timer", "Landroid/os/CountDownTimer;", "binding", "Lru/mrlargha/feature/current_container/databinding/AuctionCurrentContainerBinding;", "currentContainerAdapter", "Lru/mrlargha/feature/current_container/presentation/CurrentContainerAdapter;", "currentBetValue", FirebaseAnalytics.Param.CURRENCY, "", "createCurrentContainerItems", "", "showSetBetMenu", "hiddenSetBetMenu", "addContainer", "message", "onBackendMessageHandled", "data", "subId", "addRewards", "Spawner", "Companion", "current-container"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CurrentContainer extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     private static final String TAG = "CurrentContainer";
     private final AuctionCurrentContainerBinding binding;
     private final String currency;
+    private int currentBetValue;
     private final ConstraintLayout currentContainer;
     private final CurrentContainerAdapter currentContainerAdapter;
     private final IBackendNotifier sendServerEvent;
@@ -49,6 +54,7 @@ public final class CurrentContainer extends SAMPUIElement {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CurrentContainer(Activity activity, int i) {
         super(activity, i);
+        String str;
         Intrinsics.checkNotNullParameter(activity, "activity");
         this.sendServerEvent = (IBackendNotifier) activity;
         View inflate = activity.getLayoutInflater().inflate(R.layout.auction_current_container, (ViewGroup) null);
@@ -59,13 +65,19 @@ public final class CurrentContainer extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.currentContainerAdapter = new CurrentContainerAdapter();
-        String str = UtilsKt.isArizonaType() ? "$" : "₽";
-        this.currency = str;
+        String str2 = UtilsKt.isArizonaType() ? "$" : "₽";
+        this.currency = str2;
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         setVisibility(false);
         createCurrentContainerItems();
-        bind.ccInputForm.setHint("10 000 " + str);
+        EditText editText = bind.ccInputForm;
+        if (UtilsKt.isArizonaType()) {
+            str = MoneyElementKt.toMoneyFormattedSpannable$default(10000L, false, null, null, null, 15, null);
+        } else {
+            str = "10 000 " + str2;
+        }
+        editText.setHint(str);
     }
 
     private final void createCurrentContainerItems() {
@@ -142,47 +154,42 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Can't wrap try/catch for region: R(15:1|(2:3|(13:5|6|(1:8)(1:38)|(1:10)|11|12|(1:14)(1:35)|(7:18|(2:(1:21)|22)|23|24|(3:26|(1:28)|(1:30))|31|32)|34|24|(0)|31|32))|39|6|(0)(0)|(0)|11|12|(0)(0)|(7:18|(0)|23|24|(0)|31|32)|34|24|(0)|31|32) */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0133, code lost:
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0134, code lost:
-        r0.printStackTrace();
-     */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x00b2  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00e2 A[Catch: NumberFormatException -> 0x0133, TryCatch #0 {NumberFormatException -> 0x0133, blocks: (B:14:0x00cd, B:16:0x00e2, B:21:0x00ed, B:24:0x0105, B:25:0x010b, B:26:0x010e, B:27:0x0117), top: B:40:0x00cd }] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00e7  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00f3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void createCurrentContainerItems$lambda$5(CurrentContainer currentContainer, View view) {
-        int parseInt;
-        String str;
-        int parseInt2;
+        String obj;
+        int i;
         CountDownTimer countDownTimer;
-        CharSequence text = currentContainer.binding.ccItemLastBetPrice.getText();
+        int i2 = currentContainer.currentBetValue;
+        CharSequence text = currentContainer.binding.ccItemTimeLeftTimer.getText();
         Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-        if (StringsKt.endsWith$default(text, (CharSequence) currentContainer.currency, false, 2, (Object) null)) {
-            CharSequence text2 = currentContainer.binding.ccItemTimeLeftTimer.getText();
-            Intrinsics.checkNotNullExpressionValue(text2, "getText(...)");
-            if (!StringsKt.isBlank(text2)) {
-                CharSequence text3 = currentContainer.binding.ccItemLastBetPrice.getText();
-                Intrinsics.checkNotNullExpressionValue(text3, "getText(...)");
-                parseInt = Integer.parseInt((String) StringsKt.split$default(text3, new String[]{" " + currentContainer.currency}, false, 0, 6, (Object) null).get(0));
-                CharSequence text4 = currentContainer.binding.ccItemTimeLeftTimer.getText();
-                Intrinsics.checkNotNullExpressionValue(text4, "getText(...)");
-                str = (String) StringsKt.split$default(text4, new String[]{StringUtils.PROCESS_POSTFIX_DELIMITER}, false, 0, 6, (Object) null).get(0);
-                if ((StringsKt.isBlank(str) ? Integer.parseInt(str) : 0) <= 0) {
-                    Toast.makeText(currentContainer.currentContainer.getContext(), currentContainer.currentContainer.getContext().getString(R.string.auction_finished_cannot_bid), 0).show();
+        String str = (String) StringsKt.split$default(text, new String[]{StringUtils.PROCESS_POSTFIX_DELIMITER}, false, 0, 6, (Object) null).get(0);
+        if ((!StringsKt.isBlank(str) ? Integer.parseInt(str) : 0) <= 0) {
+            Toast.makeText(currentContainer.currentContainer.getContext(), currentContainer.currentContainer.getContext().getString(R.string.auction_finished_cannot_bid), 0).show();
+        }
+        try {
+            obj = currentContainer.binding.ccInputForm.getText().toString();
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        if (!StringsKt.isBlank(obj)) {
+            String str2 = obj;
+            StringBuilder sb = new StringBuilder();
+            int length = str2.length();
+            for (int i3 = 0; i3 < length; i3++) {
+                char charAt = str2.charAt(i3);
+                if (Character.isDigit(charAt)) {
+                    sb.append(charAt);
                 }
-                String obj = currentContainer.binding.ccInputForm.getText().toString();
-                parseInt2 = StringsKt.isBlank(obj) ? Integer.parseInt(obj) : 0;
-                if (parseInt2 > 0 && parseInt2 >= parseInt) {
-                    currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), parseInt2, 0);
+            }
+            Integer intOrNull = StringsKt.toIntOrNull(sb.toString());
+            if (intOrNull != null) {
+                i = intOrNull.intValue();
+                if (i > 0 && i >= i2) {
+                    currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), i, 0);
                     currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), 0, 1);
                     countDownTimer = currentContainer.timer;
                     if (countDownTimer != null) {
@@ -209,19 +216,9 @@ public final class CurrentContainer extends SAMPUIElement {
                 currentContainer.hiddenSetBetMenu();
             }
         }
-        CharSequence text5 = currentContainer.binding.ccItemLastBetPrice.getText();
-        Intrinsics.checkNotNullExpressionValue(text5, "getText(...)");
-        parseInt = Integer.parseInt((String) StringsKt.split$default(text5, new String[]{" AZ"}, false, 0, 6, (Object) null).get(0));
-        CharSequence text42 = currentContainer.binding.ccItemTimeLeftTimer.getText();
-        Intrinsics.checkNotNullExpressionValue(text42, "getText(...)");
-        str = (String) StringsKt.split$default(text42, new String[]{StringUtils.PROCESS_POSTFIX_DELIMITER}, false, 0, 6, (Object) null).get(0);
-        if ((StringsKt.isBlank(str) ? Integer.parseInt(str) : 0) <= 0) {
-        }
-        String obj2 = currentContainer.binding.ccInputForm.getText().toString();
-        if (StringsKt.isBlank(obj2)) {
-        }
-        if (parseInt2 > 0) {
-            currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), parseInt2, 0);
+        i = 0;
+        if (i > 0) {
+            currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), i, 0);
             currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), 0, 1);
             countDownTimer = currentContainer.timer;
             if (countDownTimer != null) {
@@ -264,19 +261,31 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     public final void addContainer(String message) {
+        String valueOf;
+        String str;
+        String string;
         Intrinsics.checkNotNullParameter(message, "message");
         Container container = (Container) MapperKt.toModel(message, Container.class);
+        this.currentBetValue = container.getCurrentBet();
         int typePrice = container.getTypePrice();
         AuctionCurrentContainerBinding auctionCurrentContainerBinding = this.binding;
         if (typePrice == 0) {
-            auctionCurrentContainerBinding.ccItemPriceIcone.setText(this.currency);
+            auctionCurrentContainerBinding.ccItemPriceIcone.setText(UtilsKt.isArizonaType() ? ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, ":cash:", 0.0f, null, 3, null) : this.currency);
             TextView textView = this.binding.ccItemLastBetPrice;
-            int currentBet = container.getCurrentBet();
-            textView.setText(currentBet + " " + this.currency);
-            TextView textView2 = this.binding.ccInputBetPrice;
-            int currentBet2 = container.getCurrentBet();
-            textView2.setText(currentBet2 + " " + this.currency);
-            this.binding.ccInputForm.setHint(this.currentContainer.getContext().getString(R.string.auction_bid_hint_cash));
+            if (UtilsKt.isArizonaType()) {
+                str = MoneyElementKt.toMoneyFormattedSpannable$default(container.getCurrentBet(), false, null, null, null, 15, null);
+            } else {
+                str = container.getCurrentBet() + " " + this.currency;
+            }
+            textView.setText(str);
+            this.binding.ccInputBetPrice.setText(this.binding.ccItemLastBetPrice.getText());
+            EditText editText = this.binding.ccInputForm;
+            if (UtilsKt.isArizonaType()) {
+                string = MoneyElementKt.toMoneyFormattedSpannable$default(10000L, false, null, null, null, 15, null);
+            } else {
+                string = this.currentContainer.getContext().getString(R.string.auction_bid_hint_cash);
+            }
+            editText.setHint(string);
         } else {
             auctionCurrentContainerBinding.ccItemLastBetPrice.setText(container.getCurrentBet() + " AZ");
             this.binding.ccInputBetPrice.setText(container.getCurrentBet() + " AZ");
@@ -284,7 +293,13 @@ public final class CurrentContainer extends SAMPUIElement {
             this.binding.ccInputForm.setHint(this.currentContainer.getContext().getString(R.string.auction_bid_hint_az));
         }
         this.binding.ccItemDescription.setText(container.getTitle());
-        this.binding.ccItemPrice.setText(String.valueOf(container.getStartPrice()));
+        TextView textView2 = this.binding.ccItemPrice;
+        if (UtilsKt.isArizonaType() && container.getTypePrice() == 0) {
+            valueOf = MoneyFormatter.INSTANCE.formatPlain(container.getStartPrice());
+        } else {
+            valueOf = String.valueOf(container.getStartPrice());
+        }
+        textView2.setText(valueOf);
         this.binding.ccItemLastBetName.setText(container.getCurrentBetUser());
         this.binding.ccInputBetName.setText(container.getCurrentBetUser());
         Picasso.get().load(CurrentContainerCdnKt.getContainerImageUrl(container.getImage())).placeholder(R.drawable.auction_container_item).error(R.drawable.auction_container_item).into(this.binding.ccItemImage);

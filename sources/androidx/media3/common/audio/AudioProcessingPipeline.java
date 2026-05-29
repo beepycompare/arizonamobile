@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableList;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AudioProcessingPipeline {
     private final ImmutableList<AudioProcessor> audioProcessors;
     private final List<AudioProcessor> activeAudioProcessors = new ArrayList();

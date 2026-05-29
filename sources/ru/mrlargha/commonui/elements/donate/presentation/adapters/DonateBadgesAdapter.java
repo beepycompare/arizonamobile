@@ -22,6 +22,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBadgesAd
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBadgesModelUi;
 import ru.mrlargha.commonui.elements.donate.utils.BadgesType;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonateBadgesAdapter.kt */
 @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0018\u0000 \u00122\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0003\u0010\u0011\u0012B\u0007¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016J\u0018\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\nH\u0016J\u0010\u0010\u000f\u001a\u00020\n2\u0006\u0010\u000e\u001a\u00020\nH\u0016¨\u0006\u0013"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBadgesAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBadgesModelUi;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "<init>", "()V", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "getItemViewType", "DonateBadgesViewHolder", "DonateBadgesTimeViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -95,8 +96,9 @@ public final class DonateBadgesAdapter extends ListAdapter<DonateBadgesModelUi, 
             Intrinsics.checkNotNullParameter(model, "model");
             DonateBadgesItemBinding donateBadgesItemBinding = this.binding;
             TextView textView = donateBadgesItemBinding.tvTitle;
+            ChatEmoji chatEmoji = ChatEmoji.INSTANCE;
             String decodeEmoji = DonateUtilsKt.decodeEmoji(model.getIcon());
-            textView.setText(decodeEmoji + " " + model.getText());
+            textView.setText(ChatEmoji.toSpannable$default(chatEmoji, decodeEmoji + " " + model.getText(), 0.0f, null, 3, null));
             Context context = donateBadgesItemBinding.getRoot().getContext();
             Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
             Drawable buttonsGradientDrawable = DonateUtilsKt.getButtonsGradientDrawable(context, model.getColors());
@@ -133,7 +135,7 @@ public final class DonateBadgesAdapter extends ListAdapter<DonateBadgesModelUi, 
                 LinearLayout root = donateBadgesTimeItemBinding.getRoot();
                 Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
                 root.setVisibility(0);
-                donateBadgesTimeItemBinding.tvLeftTime.setText(timeHM);
+                donateBadgesTimeItemBinding.tvLeftTime.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, timeHM, 0.0f, null, 3, null));
                 return Unit.INSTANCE;
             }
             return new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBadgesAdapter$DonateBadgesTimeViewHolder$$ExternalSyntheticLambda0

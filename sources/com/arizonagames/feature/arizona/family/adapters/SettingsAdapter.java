@@ -83,25 +83,25 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
     /* JADX WARN: Code restructure failed: missing block: B:66:0x00f5, code lost:
         r2 = "Установить цену на выход из семьи";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0140, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0144, code lost:
         r2 = "Выдать премию всем членам семьи";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0146, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x014a, code lost:
         r2 = "Редактировать названия и настройки доступа рангам семьи";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x014c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0150, code lost:
         r2 = "Установить % сбора на баланс семьи";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0157, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x015b, code lost:
         r2 = "Привязать или изменить Discord - канал";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x015d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0161, code lost:
         r2 = "Пополняйте или выводите средства и монеты";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0163, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0167, code lost:
         r2 = "Изменить цвет, иконку, тип, название, слоган";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0169, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x016d, code lost:
         r2 = "Назначить или снять заместителя";
      */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -254,14 +254,14 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
                     if (this.settingsData.getVerificationPrice() == -1) {
                         break;
                     } else {
-                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getVerificationPrice(), false, "Цена: ", null, 5, null);
+                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getVerificationPrice(), false, "Цена: ", null, null, 13, null);
                         break;
                     }
                 case 9:
                     if (this.settingsData.getBrandPrice() == -1) {
                         break;
                     } else {
-                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getBrandPrice(), false, "Цена: ", null, 5, null);
+                        str2 = MoneyElementKt.toMoneyFormattedSpannable$default(this.settingsData.getBrandPrice(), false, "Цена: ", null, null, 13, null);
                         break;
                     }
                 case 17:

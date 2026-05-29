@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f080a87;
-        public static int preference_list_divider_material = 0x7f080e4a;
+        public static int ic_arrow_down_24dp = 0x7f080a89;
+        public static int preference_list_divider_material = 0x7f080e4c;
 
         private drawable() {
         }
@@ -112,15 +112,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int icon_frame = 0x7f0a0700;
-        public static int preferences_detail = 0x7f0a0afd;
-        public static int preferences_header = 0x7f0a0afe;
-        public static int preferences_sliding_pane_layout = 0x7f0a0aff;
-        public static int recycler_view = 0x7f0a0b90;
-        public static int seekbar = 0x7f0a0d05;
-        public static int seekbar_value = 0x7f0a0d06;
-        public static int spinner = 0x7f0a0d85;
-        public static int switchWidget = 0x7f0a0df7;
+        public static int icon_frame = 0x7f0a06fa;
+        public static int preferences_detail = 0x7f0a0af6;
+        public static int preferences_header = 0x7f0a0af7;
+        public static int preferences_sliding_pane_layout = 0x7f0a0af8;
+        public static int recycler_view = 0x7f0a0b8a;
+        public static int seekbar = 0x7f0a0cff;
+        public static int seekbar_value = 0x7f0a0d00;
+        public static int spinner = 0x7f0a0d80;
+        public static int switchWidget = 0x7f0a0df2;
 
         private id() {
         }
@@ -163,12 +163,12 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class string {
         public static int copy = 0x7f120107;
-        public static int expand_button_title = 0x7f1201b6;
-        public static int not_set = 0x7f12044e;
-        public static int preference_copied = 0x7f120486;
-        public static int summary_collapsed_preference_list = 0x7f120548;
-        public static int v7_preference_off = 0x7f120579;
-        public static int v7_preference_on = 0x7f12057a;
+        public static int expand_button_title = 0x7f1201b7;
+        public static int not_set = 0x7f120452;
+        public static int preference_copied = 0x7f12049b;
+        public static int summary_collapsed_preference_list = 0x7f12055e;
+        public static int v7_preference_off = 0x7f120591;
+        public static int v7_preference_on = 0x7f120592;
 
         private string() {
         }

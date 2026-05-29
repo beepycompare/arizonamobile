@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -80,7 +81,9 @@ public final class CasesCanWinAdapter extends ListAdapter<CasesGuaranteedPrizeMo
             }
             ItemsInfo itemsInfo = (ItemsInfo) obj;
             if (itemsInfo != null) {
-                arizonaCasesCanWinItemBinding.tvPrizeName.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11813getCount());
+                TextView textView = arizonaCasesCanWinItemBinding.tvPrizeName;
+                String name = itemsInfo.getName();
+                textView.setText(name + "\n" + casesGuaranteedPrizeModel.m11812getCount());
                 if (casesGuaranteedPrizeModel.getCustom_image() != null) {
                     ImageView ivPrize = arizonaCasesCanWinItemBinding.ivPrize;
                     Intrinsics.checkNotNullExpressionValue(ivPrize, "ivPrize");
@@ -110,7 +113,7 @@ public final class CasesCanWinAdapter extends ListAdapter<CasesGuaranteedPrizeMo
                 }
             });
             if (casesGuaranteedPrizeModel.getCustom_name() != null) {
-                arizonaCasesCanWinItemBinding.tvPrizeName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, casesGuaranteedPrizeModel.getCustom_name(), 0.0f, 1, null));
+                arizonaCasesCanWinItemBinding.tvPrizeName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, casesGuaranteedPrizeModel.getCustom_name(), 0.0f, null, 3, null));
             }
         }
 

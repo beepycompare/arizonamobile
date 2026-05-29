@@ -16,6 +16,7 @@ public final class DonateCategoryModelUiKt {
         boolean z4;
         Intrinsics.checkNotNullParameter(donateCategoryModel, "<this>");
         int key = donateCategoryModel.getKey();
+        int position = donateCategoryModel.getPosition();
         String name = donateCategoryModel.getName();
         List<String> borderColor = donateCategoryModel.getBorderColor();
         String hoverColor = donateCategoryModel.getHoverColor();
@@ -48,6 +49,6 @@ public final class DonateCategoryModelUiKt {
         if (donateCategoryModel.isLimitCategory() != z3) {
             z3 = z;
         }
-        return new DonateCategoryModelUi(key, name, borderColor, hoverColor, image, backgroundImage, z5, z6, i, z4, z3);
+        return new DonateCategoryModelUi(key, position, name, borderColor, hoverColor, image, backgroundImage, z5, z6, i, z4, z3);
     }
 }

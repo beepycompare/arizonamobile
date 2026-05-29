@@ -17,6 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneBinding;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneUberOrderPageBinding;
@@ -95,7 +96,7 @@ public final class UberOrder implements MobileController {
         this.uberOrderBinding.mpUberDriverContainer.setVisibility(0);
         this.uberOrderBinding.mpUberDriverName.setText(driverInfo.getName());
         this.uberOrderBinding.mpUberDriverReviewCount.setText(String.valueOf(driverInfo.getRating()));
-        this.uberOrderBinding.mpUberPriorityDescription.setText("от " + driverInfo.getCount() + "$");
+        this.uberOrderBinding.mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(driverInfo.getCount(), false, this.context.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(this.uberOrderBinding.mpUberOrderPage);
         constraintSet.connect(this.uberOrderBinding.mpUberOrderTitle.getId(), 3, this.uberOrderBinding.mpUberHeader.getId(), 4);
@@ -134,18 +135,18 @@ public final class UberOrder implements MobileController {
                 if (str.equals("economy")) {
                     this.uberOrderBinding.mpUberPriorityTitle.setText("Эконом");
                     this.uberOrderBinding.mpUberPriorityImage.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_uber_econom_car));
-                    this.uberOrderBinding.mpUberPriorityDescription.setText("от 1000$");
+                    this.uberOrderBinding.mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(1000L, false, this.context.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
                 }
             } else if (hashCode == -1146830912) {
                 if (str.equals("business")) {
                     this.uberOrderBinding.mpUberPriorityTitle.setText("Бизнес");
                     this.uberOrderBinding.mpUberPriorityImage.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_uber_business_car));
-                    this.uberOrderBinding.mpUberPriorityDescription.setText("от 10000$");
+                    this.uberOrderBinding.mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(10000L, false, this.context.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
                 }
             } else if (hashCode == 950199756 && str.equals("comfort")) {
                 this.uberOrderBinding.mpUberPriorityTitle.setText("Комфорт");
                 this.uberOrderBinding.mpUberPriorityImage.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_uber_comfort_car));
-                this.uberOrderBinding.mpUberPriorityDescription.setText("от 2000$");
+                this.uberOrderBinding.mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(2000L, false, this.context.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
             }
         }
     }

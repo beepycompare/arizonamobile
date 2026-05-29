@@ -720,6 +720,18 @@ public final class UtilsKt {
             String string18 = context.getString(R.string.trailer);
             Intrinsics.checkNotNullExpressionValue(string18, "getString(...)");
             return string18;
+        } else if (i == RodInventoryButtonTypes.BUTTON_LABORATORY.ordinal()) {
+            String string19 = context.getString(R.string.warehouse_laboratory);
+            Intrinsics.checkNotNullExpressionValue(string19, "getString(...)");
+            return string19;
+        } else if (i == RodInventoryButtonTypes.BUTTON_WAREHOUSE_GARAGE.ordinal()) {
+            String string20 = context.getString(R.string.garage);
+            Intrinsics.checkNotNullExpressionValue(string20, "getString(...)");
+            return string20;
+        } else if (i == RodInventoryButtonTypes.BUTTON_LABORATORY_LOOT.ordinal()) {
+            String string21 = context.getString(R.string.warehouse_laboratory_loot);
+            Intrinsics.checkNotNullExpressionValue(string21, "getString(...)");
+            return string21;
         } else {
             return "";
         }

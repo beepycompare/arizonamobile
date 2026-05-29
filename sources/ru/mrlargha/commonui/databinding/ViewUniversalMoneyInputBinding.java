@@ -4,27 +4,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 /* loaded from: classes6.dex */
 public final class ViewUniversalMoneyInputBinding implements ViewBinding {
-    public final ViewMoneyPartInputBinding blockK;
-    public final ViewMoneyPartInputBinding blockKK;
-    public final ViewMoneyPartInputBinding blockM;
     public final ViewMoneyPartInputBinding etSingle;
-    public final LinearLayout layoutMoney;
     public final FrameLayout root;
     private final FrameLayout rootView;
 
-    private ViewUniversalMoneyInputBinding(FrameLayout rootView, ViewMoneyPartInputBinding blockK, ViewMoneyPartInputBinding blockKK, ViewMoneyPartInputBinding blockM, ViewMoneyPartInputBinding etSingle, LinearLayout layoutMoney, FrameLayout root) {
+    private ViewUniversalMoneyInputBinding(FrameLayout rootView, ViewMoneyPartInputBinding etSingle, FrameLayout root) {
         this.rootView = rootView;
-        this.blockK = blockK;
-        this.blockKK = blockKK;
-        this.blockM = blockM;
         this.etSingle = etSingle;
-        this.layoutMoney = layoutMoney;
         this.root = root;
     }
 
@@ -46,31 +37,11 @@ public final class ViewUniversalMoneyInputBinding implements ViewBinding {
     }
 
     public static ViewUniversalMoneyInputBinding bind(View rootView) {
-        int i = R.id.blockK;
+        int i = R.id.etSingle;
         View findChildViewById = ViewBindings.findChildViewById(rootView, i);
         if (findChildViewById != null) {
-            ViewMoneyPartInputBinding bind = ViewMoneyPartInputBinding.bind(findChildViewById);
-            i = R.id.blockKK;
-            View findChildViewById2 = ViewBindings.findChildViewById(rootView, i);
-            if (findChildViewById2 != null) {
-                ViewMoneyPartInputBinding bind2 = ViewMoneyPartInputBinding.bind(findChildViewById2);
-                i = R.id.blockM;
-                View findChildViewById3 = ViewBindings.findChildViewById(rootView, i);
-                if (findChildViewById3 != null) {
-                    ViewMoneyPartInputBinding bind3 = ViewMoneyPartInputBinding.bind(findChildViewById3);
-                    i = R.id.etSingle;
-                    View findChildViewById4 = ViewBindings.findChildViewById(rootView, i);
-                    if (findChildViewById4 != null) {
-                        ViewMoneyPartInputBinding bind4 = ViewMoneyPartInputBinding.bind(findChildViewById4);
-                        i = R.id.layoutMoney;
-                        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                        if (linearLayout != null) {
-                            FrameLayout frameLayout = (FrameLayout) rootView;
-                            return new ViewUniversalMoneyInputBinding(frameLayout, bind, bind2, bind3, bind4, linearLayout, frameLayout);
-                        }
-                    }
-                }
-            }
+            FrameLayout frameLayout = (FrameLayout) rootView;
+            return new ViewUniversalMoneyInputBinding(frameLayout, ViewMoneyPartInputBinding.bind(findChildViewById), frameLayout);
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
     }

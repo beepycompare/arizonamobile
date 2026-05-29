@@ -33,8 +33,8 @@ public final class MyHouseMainInfoAdapter extends RecyclerView.Adapter<BusinessV
         Intrinsics.checkNotNullExpressionValue(mainHouseInfoStat, "get(...)");
         MyHouseScreen.Companion.MainHouseInfoStat mainHouseInfoStat2 = mainHouseInfoStat;
         MyHouseMainStatItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainHouseInfoStat2.getTitle(), 0.0f, 1, null));
-        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainHouseInfoStat2.getValue(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainHouseInfoStat2.getTitle(), 0.0f, null, 3, null));
+        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainHouseInfoStat2.getValue(), 0.0f, null, 3, null));
         if (mainHouseInfoStat2.getLabel() != null) {
             binding.labelContainer.setVisibility(0);
             binding.label.setText(mainHouseInfoStat2.getLabel());
@@ -43,7 +43,7 @@ public final class MyHouseMainInfoAdapter extends RecyclerView.Adapter<BusinessV
         }
         if (mainHouseInfoStat2.getMaxValue() != null) {
             binding.maxValue.setVisibility(0);
-            binding.maxValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, "/ " + mainHouseInfoStat2.getMaxValue(), 0.0f, 1, null));
+            binding.maxValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, "/ " + mainHouseInfoStat2.getMaxValue(), 0.0f, null, 3, null));
             return;
         }
         binding.maxValue.setVisibility(8);

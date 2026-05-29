@@ -77,7 +77,7 @@ public final class HintsScreen extends SAMPUIElement {
 
     private final void setHintInfo(Companion.HintInfo hintInfo) {
         HintsScreenBinding hintsScreenBinding = this.binding;
-        SpannableString spannable$default = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, hintInfo.getHint(), 0.0f, 1, null);
+        SpannableString spannable$default = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, hintInfo.getHint(), 0.0f, null, 3, null);
         int position = hintInfo.getPosition();
         if (position == 0) {
             hintsScreenBinding.rightHint.setVisibility(8);

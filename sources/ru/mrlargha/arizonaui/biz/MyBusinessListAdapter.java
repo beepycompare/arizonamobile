@@ -91,14 +91,14 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
             }
             MyBusinessScreen.Companion.BusinessItemStatInfo businessItemStatInfo = (MyBusinessScreen.Companion.BusinessItemStatInfo) obj;
             if (i2 == 0) {
-                binding.firstValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.firstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.firstValue.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable(businessItemStatInfo.getValue()));
+                binding.firstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, null, 3, null));
             } else if (i2 == 1) {
-                binding.secondValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.secondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.secondValue.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable(businessItemStatInfo.getValue()));
+                binding.secondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, null, 3, null));
             } else if (i2 == 2) {
-                binding.thirdValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.thirdTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.thirdValue.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable(businessItemStatInfo.getValue()));
+                binding.thirdTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, businessItemStatInfo.getTitle(), 0.0f, null, 3, null));
             }
             i2 = i3;
         }

@@ -70,7 +70,7 @@ public final class QuestDialogScreen extends SAMPUIElement {
         RodinaQuestDialogBinding rodinaQuestDialogBinding = this.binding;
         rodinaQuestDialogBinding.rodinaQuestTitle.setText(questData.getQuestName());
         rodinaQuestDialogBinding.rodinaQuestNpcName.setText(questData.getNpcName());
-        rodinaQuestDialogBinding.rodinaQuestNpcText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questData.getNpcText(), 0.0f, 1, null));
+        rodinaQuestDialogBinding.rodinaQuestNpcText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questData.getNpcText(), 0.0f, null, 3, null));
         rodinaQuestDialogBinding.rodinaQuestDialogRecycler.setAdapter(new QuestAnswerAdapter(questData.getAnswers(), new Function1() { // from class: ru.mrlargha.commonui.elements.quest.QuestDialogScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {

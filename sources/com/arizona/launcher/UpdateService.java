@@ -6,7 +6,6 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -47,6 +46,7 @@ import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
 import com.liulishuo.okdownload.kotlin.listener.DownloadListener1ExtensionKt;
 import dagger.hilt.android.AndroidEntryPoint;
 import java.io.File;
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -76,7 +76,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000·\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001%\b\u0007\u0018\u0000 Y2\u00020\u0001:\u0005YZ[\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010'\u001a\u00020(H\u0016J\b\u0010)\u001a\u00020(H\u0002J\"\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020+2\u0006\u0010/\u001a\u00020+H\u0016J\b\u00100\u001a\u00020(H\u0002J\b\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u000202H\u0002J\b\u00106\u001a\u00020(H\u0002J\u0012\u00107\u001a\u0004\u0018\u0001082\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u00109\u001a\u0002022\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u0010:\u001a\u00020(2\u0006\u0010,\u001a\u00020-H\u0016J\b\u0010;\u001a\u00020(H\u0016J\u0012\u0010<\u001a\u00020(2\b\u0010=\u001a\u0004\u0018\u00010-H\u0016J\u000e\u0010>\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012J\b\u0010@\u001a\u000202H\u0002J\b\u0010A\u001a\u00020(H\u0002J\u0006\u0010B\u001a\u00020(J\b\u0010C\u001a\u00020(H\u0002J\u0018\u0010D\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J \u0010G\u001a\u00020(2\u0016\u0010H\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J\b\u0010I\u001a\u00020(H\u0002J\u0010\u0010J\u001a\u00020(2\u0006\u00105\u001a\u000202H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0014H\u0002J\b\u0010O\u001a\u00020\u0012H\u0002J\u0010\u0010P\u001a\u00020(2\u0006\u0010Q\u001a\u00020\bH\u0002J\u0010\u0010R\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\b\u0010S\u001a\u00020(H\u0002J\u0010\u0010U\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\u001c\u0010V\u001a\u00020(2\u0006\u0010?\u001a\u00020\u00122\f\u0010W\u001a\b\u0012\u0004\u0012\u00020(0XR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010T\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006^"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", "intent", "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isAppInForeground", "", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "onFinish", "Lkotlin/Function0;", "Companion", "Errno", "UpdateStatus", "GameStatus", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¿\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001%\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0005\\]^_`B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010'\u001a\u00020(H\u0016J\b\u0010)\u001a\u00020(H\u0002J\"\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020+2\u0006\u0010/\u001a\u00020+H\u0016J\b\u00100\u001a\u00020(H\u0002J\b\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u000202H\u0002J\b\u00106\u001a\u00020(H\u0002J\u0012\u00107\u001a\u0004\u0018\u0001082\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u00109\u001a\u0002022\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u0010:\u001a\u00020(2\u0006\u0010,\u001a\u00020-H\u0016J\b\u0010;\u001a\u00020(H\u0016J\u0012\u0010<\u001a\u00020(2\b\u0010=\u001a\u0004\u0018\u00010-H\u0016J\u000e\u0010>\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012J\b\u0010@\u001a\u000202H\u0002J\b\u0010A\u001a\u00020(H\u0002J\u0006\u0010B\u001a\u00020(J\b\u0010C\u001a\u00020(H\u0002J\u0018\u0010D\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J \u0010G\u001a\u00020(2\u0016\u0010H\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J\b\u0010I\u001a\u00020(H\u0002J\u0010\u0010J\u001a\u00020(2\u0006\u00105\u001a\u000202H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0014H\u0002J\b\u0010O\u001a\u00020\u0012H\u0002J\u0010\u0010P\u001a\u00020(2\u0006\u0010Q\u001a\u00020\bH\u0002J\u0010\u0010R\u001a\u0002022\u0006\u0010S\u001a\u00020TH\u0002J\u0010\u0010U\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\b\u0010V\u001a\u00020(H\u0002J\u0010\u0010X\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\u001c\u0010Y\u001a\u00020(2\u0006\u0010?\u001a\u00020\u00122\f\u0010Z\u001a\b\u0012\u0004\u0012\u00020(0[R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010W\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006a"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", "intent", "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isAppInForeground", "", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "onFinish", "Lkotlin/Function0;", "Companion", "Errno", "UpdateStatus", "GameStatus", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateService extends Hilt_UpdateService {
@@ -319,9 +319,7 @@ public final class UpdateService extends Hilt_UpdateService {
             Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
             sharedPreferences2 = null;
         }
-        ContentResolver contentResolver = getContentResolver();
-        Intrinsics.checkNotNullExpressionValue(contentResolver, "getContentResolver(...)");
-        this.filesChek = new FilesChek(TAG, sharedPreferences2, contentResolver, updateService);
+        this.filesChek = new FilesChek(TAG, sharedPreferences2, updateService);
     }
 
     private final void createNotificationChannel() {
@@ -597,6 +595,7 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mTotalLength = 0L;
         String currentServer = FileServers.INSTANCE.getCurrentServer();
         this.mLastOperationStatus = Errno.NoError;
+        int i = 2;
         if (currentServer.length() == 0) {
             Bundle bundle = new Bundle();
             bundle.putInt(".kt", 478);
@@ -633,23 +632,32 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         int size = this.mUpdateFiles.size();
-        for (int i = 0; i < size; i++) {
-            String str2 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i);
-            if (str2 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i)) == null) {
+        int i2 = 0;
+        while (i2 < size) {
+            String str2 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2);
+            if (str2 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2)) == null) {
                 return;
             }
             String str3 = currentServer + "data/files" + str2;
-            SharedPreferences sharedPreferences = null;
             File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + str);
-            if (!file.isDirectory() && file.exists()) {
-                SharedPreferences sharedPreferences2 = this.updatePreferences;
-                if (sharedPreferences2 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                } else {
-                    sharedPreferences = sharedPreferences2;
+            if (!deleteExistingDownloadTarget(file)) {
+                this.mLastOperationStatus = Errno.CorruptedFilesFound;
+                resetGameStatus();
+                setUpdateStatus(UpdateStatus.Undefined);
+                Bundle bundle3 = new Bundle();
+                bundle3.putInt(".kt", 536);
+                bundle3.putInt(ERRNO_MSG, Errno.CorruptedFilesFound.ordinal());
+                FirebaseAnalytics.getInstance(this).logEvent("error_download", bundle3);
+                Message obtain3 = Message.obtain(this.mInHandler, i);
+                obtain3.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
+                obtain3.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+                obtain3.replyTo = this.mMessenger;
+                Messenger messenger3 = this.mActivityMessenger;
+                if (messenger3 != null) {
+                    messenger3.send(obtain3);
                 }
-                sharedPreferences.edit().remove(file.getAbsolutePath()).apply();
-                file.delete();
+                stopForegroundService();
+                return;
             }
             File parentFile = file.getParentFile();
             if (parentFile != null && !parentFile.exists() && !parentFile.mkdirs()) {
@@ -662,16 +670,23 @@ public final class UpdateService extends Hilt_UpdateService {
                 Intrinsics.checkNotNullExpressionValue(next, "next(...)");
                 int intValue = next.intValue();
                 BreakpointInfo breakpointInfo = OkDownload.with().breakpointStore().get(intValue);
-                if (breakpointInfo != null && Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
-                    BreakpointInfo copyWithReplaceIdAndUrl = breakpointInfo.copyWithReplaceIdAndUrl(intValue, str3);
-                    OkDownload.with().breakpointStore().update(copyWithReplaceIdAndUrl);
-                    Log.i(TAG, "Update breakPoint " + copyWithReplaceIdAndUrl + " " + intValue);
+                if (breakpointInfo != null) {
+                    if (Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
+                        BreakpointInfo copyWithReplaceIdAndUrl = breakpointInfo.copyWithReplaceIdAndUrl(intValue, str3);
+                        OkDownload.with().breakpointStore().update(copyWithReplaceIdAndUrl);
+                        Log.i(TAG, "Update breakPoint " + copyWithReplaceIdAndUrl + " " + intValue);
+                        currentServer = currentServer;
+                    }
                 }
             }
+            String str4 = currentServer;
             DownloadTask build = new DownloadTask.Builder(str3, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
             commit.bindSetTask(build);
             Log.v(TAG, "Create download " + build);
             arrayList.add(Integer.valueOf(build.getId()));
+            i2++;
+            currentServer = str4;
+            i = 2;
         }
         this.mDownloadContext = commit.build();
         this.mSpeedCalculator = new SpeedCalculator();
@@ -950,6 +965,32 @@ public final class UpdateService extends Hilt_UpdateService {
         }
     }
 
+    private final boolean deleteExistingDownloadTarget(File file) {
+        if (!file.isDirectory() && file.exists()) {
+            SharedPreferences sharedPreferences = this.updatePreferences;
+            if (sharedPreferences == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
+                sharedPreferences = null;
+            }
+            sharedPreferences.edit().remove(file.getAbsolutePath()).apply();
+            if (!file.delete() && file.exists()) {
+                IOException iOException = new IOException("Unable to delete existing file before download: " + file.getAbsolutePath());
+                String message = iOException.getMessage();
+                IOException iOException2 = iOException;
+                Log.e(TAG, message, iOException2);
+                FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+                firebaseCrashlytics.setCustomKey("download_delete_failed_path", file.getAbsolutePath());
+                firebaseCrashlytics.setCustomKey("download_delete_failed_exists", file.exists());
+                firebaseCrashlytics.setCustomKey("download_delete_failed_can_read", file.canRead());
+                firebaseCrashlytics.setCustomKey("download_delete_failed_can_write", file.canWrite());
+                firebaseCrashlytics.setCustomKey("download_delete_failed_size", file.length());
+                firebaseCrashlytics.recordException(iOException2);
+                return false;
+            }
+        }
+        return true;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkLauncherUpdate(String str) {
         UpdateService updateService = this;
@@ -995,7 +1036,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1720;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1721;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);

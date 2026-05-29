@@ -3,6 +3,7 @@ package ru.mrlargha.commonui.elements.shop.viewholder;
 import android.text.SpannableString;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Iterator;
@@ -19,6 +20,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
+import ru.mrlargha.commonui.elements.shop.ShopMoneyFormatterKt;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
@@ -58,13 +60,20 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
             Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
+            itemInventoryBinding.tvTitleText.setIncludeFontPadding(true);
+            itemInventoryBinding.tvTitleText.setPadding(0, 0, 0, 0);
             itemInventoryBinding.tvTitleText.setText(itemVal.getText());
             if (Intrinsics.areEqual(itemVal.getText(), "$") && (amount = itemVal.getAmount()) != null) {
-                SpannableString moneyShortFormattedSpannable = MoneyElementKt.toMoneyShortFormattedSpannable(amount.longValue());
-                if (moneyShortFormattedSpannable.length() > 8) {
-                    MoneyElementKt.resize(moneyShortFormattedSpannable, 0.9f);
+                SpannableString shopMoneyFormattedSpannable = ShopMoneyFormatterKt.toShopMoneyFormattedSpannable(amount.longValue());
+                itemInventoryBinding.tvTitleText.setIncludeFontPadding(false);
+                itemInventoryBinding.tvTitleText.setPadding(0, 0, itemInventoryBinding.getRoot().getResources().getDimensionPixelSize(R.dimen._1sdp), 0);
+                TextView textView = itemInventoryBinding.tvTitleText;
+                int length = shopMoneyFormattedSpannable.length();
+                SpannableString spannableString = shopMoneyFormattedSpannable;
+                if (length > 8) {
+                    spannableString = MoneyElementKt.resize(spannableString, 0.9f);
                 }
-                itemInventoryBinding.tvTitleText.setText(moneyShortFormattedSpannable);
+                textView.setText(spannableString);
             }
             launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new LavkaTypeViewHolder$bind$1$3(itemInventoryBinding, this, itemVal, null), 3, null);
             this.loadImageJob = launch$default;

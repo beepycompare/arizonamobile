@@ -20,7 +20,7 @@ public final class DonateBoostModelUiKt {
         for (DonateBonusModel donateBonusModel : bonusList) {
             arrayList.add(toUi(donateBonusModel));
         }
-        return new DonateBoostModelUi(donateRateModel, boostEndTime, arrayList, false, 0L, donateBoostModel.getMainBoostPayment(), DonateItemType.RATE);
+        return new DonateBoostModelUi(donateRateModel, boostEndTime, arrayList, false, 0L, donateBoostModel.getMainBoostPayment(), DonateItemType.RATE, null, 128, null);
     }
 
     public static final DonateBonusModelUi toUi(DonateBonusModel donateBonusModel) {

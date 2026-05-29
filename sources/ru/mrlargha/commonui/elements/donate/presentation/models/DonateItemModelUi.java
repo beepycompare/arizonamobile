@@ -58,8 +58,12 @@ public final class DonateItemModelUi {
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[DonatePriceCurrencyType.DOLLAR.ordinal()] = 3;
+                iArr[DonatePriceCurrencyType.NONE.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[DonatePriceCurrencyType.GAME_RUB.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -407,7 +411,7 @@ public final class DonateItemModelUi {
     }
 
     /* renamed from: getBlockType  reason: collision with other method in class */
-    public final DonateBlockType m11764getBlockType() {
+    public final DonateBlockType m11762getBlockType() {
         Object obj;
         Iterator<E> it = DonateBlockType.getEntries().iterator();
         while (true) {
@@ -427,17 +431,21 @@ public final class DonateItemModelUi {
     public final Pair<String, String> getButtonTitle() {
         String str;
         String str2;
+        String str3;
         int i;
         str = "";
         if (this.titleButton.length() == 0) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[getCurrencyType().ordinal()];
-            String str3 = " РУБ";
-            if (i2 != 1) {
-                if (i2 == 2) {
-                    str3 = " AZ";
-                } else if (i2 != 3) {
-                    throw new NoWhenBranchMatchedException();
-                }
+            if (i2 == 1) {
+                str3 = " РУБ";
+            } else if (i2 == 2) {
+                str3 = " AZ";
+            } else if (i2 == 3) {
+                str3 = "";
+            } else if (i2 != 4) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                str3 = " ИГРОВЫХ РУБЛЕЙ";
             }
             str = this.discount > 0 ? String.valueOf(this.price) : "";
             str2 = (this.discountPrice <= 0 ? String.valueOf(this.price) : String.valueOf(i)) + str3;

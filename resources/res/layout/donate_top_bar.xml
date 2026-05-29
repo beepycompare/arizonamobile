@@ -9,7 +9,7 @@
         <LinearLayout android:background="@drawable/donate_top_bar_item_bg" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginEnd="@dimen/_8sdp">
             <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:paddingLeft="@dimen/_14sdp" android:paddingRight="@dimen/_14sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/_14sdp">
                 <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:id="@+id/tv_money_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/heading_now_66_bold"/>
-                <ImageView android:id="@+id/iv_money_ic" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_dollar" android:tint="#95ff00" android:layout_marginStart="@dimen/_4sdp"/>
+                <ImageView android:id="@+id/iv_money_ic" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/donate_ic_rub" android:tint="#95ff00" android:layout_marginStart="@dimen/_4sdp"/>
             </LinearLayout>
             <ImageView android:id="@+id/btn_add_money" android:layout_width="wrap_content" android:layout_height="match_parent" android:src="@drawable/donate_add_money_button" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
         </LinearLayout>

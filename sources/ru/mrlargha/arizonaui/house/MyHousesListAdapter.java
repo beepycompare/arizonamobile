@@ -109,14 +109,14 @@ public final class MyHousesListAdapter extends RecyclerView.Adapter<ViewHolder> 
             }
             MyHouseScreen.Companion.HouseItemStatInfo houseItemStatInfo = (MyHouseScreen.Companion.HouseItemStatInfo) obj;
             if (i2 == 0) {
-                binding.secondValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.secondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.secondValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, null, 3, null));
+                binding.secondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, null, 3, null));
             } else if (i2 == 1) {
-                binding.thirdValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.thirdTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.thirdValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, null, 3, null));
+                binding.thirdTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, null, 3, null));
             } else if (i2 == 2) {
-                binding.fourthValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, 1, null));
-                binding.fourthTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, 1, null));
+                binding.fourthValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getValue(), 0.0f, null, 3, null));
+                binding.fourthTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseItemStatInfo.getTitle(), 0.0f, null, 3, null));
             }
             i2 = i3;
         }

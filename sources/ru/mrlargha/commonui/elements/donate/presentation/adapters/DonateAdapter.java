@@ -34,9 +34,11 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBadgesMode
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBlockType;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonatePriceCurrencyType;
 import ru.mrlargha.commonui.elements.donate.utils.CustomGridLayoutManager;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonateAdapter.kt */
 @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 &2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0003$%&B]\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012!\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b\u0012#\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\u00060\b¢\u0006\u0004\b\u000f\u0010\u0010J\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0003H\u0016J\u0018\u0010\u0018\u001a\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\tH\u0016J\u0014\u0010\u001c\u001a\u00060\u001dR\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0014\u0010\u001e\u001a\u00060\u001dR\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0014\u0010\u001f\u001a\u00060 R\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010!\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\tH\u0016J\u0010\u0010#\u001a\u00020\t2\u0006\u0010\"\u001a\u00020\tH\u0016R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R,\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R.\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0002¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\u000e\u0012\u0004\u0012\u00020\u00060\b¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0014¨\u0006'"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "lastItemBind", "Lkotlin/Function0;", "", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "openDialog", "itemModel", "<init>", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getLastItemBind", "()Lkotlin/jvm/functions/Function0;", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "getOpenDialog", "onViewRecycled", "holder", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "createDefaultViewHolder", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter$DonateDefaultViewHolder;", "createWiViewHolder", "createPosterViewHolder", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter$DonatePosterViewHolder;", "onBindViewHolder", "position", "getItemViewType", "DonateDefaultViewHolder", "DonatePosterViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -88,6 +90,10 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             try {
                 iArr[DonateItemType.EXP.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[DonateItemType.RATE_RUB.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -145,6 +151,9 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             return createWiViewHolder(parent);
         }
         if (i == DonateItemType.EXP.getType()) {
+            return createWiViewHolder(parent);
+        }
+        if (i == DonateItemType.RATE_RUB.getType()) {
             return createWiViewHolder(parent);
         }
         return createDefaultViewHolder(parent);
@@ -242,23 +251,22 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemViewType(int i) {
-        int i2 = WhenMappings.$EnumSwitchMapping$0[getCurrentList().get(i).getItemType().ordinal()];
-        if (i2 != 1) {
-            if (i2 != 2) {
-                if (i2 != 3) {
-                    if (i2 != 4) {
-                        if (i2 != 5) {
-                            throw new NoWhenBranchMatchedException();
-                        }
-                        return DonateItemType.EXP.getType();
-                    }
-                    return DonateItemType.RATE.getType();
-                }
+        switch (WhenMappings.$EnumSwitchMapping$0[getCurrentList().get(i).getItemType().ordinal()]) {
+            case 1:
+                return DonateItemType.DEFAULT.getType();
+            case 2:
+                return DonateItemType.WI.getType();
+            case 3:
                 return DonateItemType.BIG.getType();
-            }
-            return DonateItemType.WI.getType();
+            case 4:
+                return DonateItemType.RATE.getType();
+            case 5:
+                return DonateItemType.EXP.getType();
+            case 6:
+                return DonateItemType.RATE_RUB.getType();
+            default:
+                throw new NoWhenBranchMatchedException();
         }
-        return DonateItemType.DEFAULT.getType();
     }
 
     /* compiled from: DonateAdapter.kt */
@@ -371,16 +379,18 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void initItem$lambda$0$0(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
-            if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
+            if (donateItemModelUi.getItemType() == DonateItemType.RATE || donateItemModelUi.getItemType() == DonateItemType.RATE_RUB) {
+                donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
                 donateAdapter.getOpenDialog().invoke(null);
             } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
+                donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
                 donateAdapter.getOpenDialog().invoke(donateItemModelUi);
             } else {
                 donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:19:0x010c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:19:0x0118, code lost:
             if (r9.getTextGradientColor().size() > 1) goto L21;
          */
         /*
@@ -389,7 +399,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
         private final void initTitle(DonateItemModelUi donateItemModelUi) {
             boolean z;
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            donateDefaultItemBinding.tvRantTitle.setText(donateItemModelUi.getDesc());
+            donateDefaultItemBinding.tvRantTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getDesc(), 0.0f, null, 3, null));
             ImageView ivAzCoinIc = donateDefaultItemBinding.ivAzCoinIc;
             Intrinsics.checkNotNullExpressionValue(ivAzCoinIc, "ivAzCoinIc");
             ivAzCoinIc.setVisibility(0);
@@ -444,13 +454,15 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
                 TextView tvName3 = donateDefaultItemBinding.tvName;
                 Intrinsics.checkNotNullExpressionValue(tvName3, "tvName");
                 tvName3.setVisibility(z ? 8 : 0);
-                if (z) {
+                if (UtilsKt.isArizonaType()) {
+                    donateDefaultItemBinding.tvName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getName(), 0.0f, null, 3, null));
+                } else if (z) {
                     donateDefaultItemBinding.tvSecondTitle.setColorList(DonateUtilsKt.convertColorList(donateItemModelUi.getTextGradientColor()));
-                    donateDefaultItemBinding.tvFirstTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst());
-                    donateDefaultItemBinding.tvSecondTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond());
-                    return;
+                    donateDefaultItemBinding.tvFirstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst(), 0.0f, null, 3, null));
+                    donateDefaultItemBinding.tvSecondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond(), 0.0f, null, 3, null));
+                } else {
+                    donateDefaultItemBinding.tvName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getName(), 0.0f, null, 3, null));
                 }
-                donateDefaultItemBinding.tvName.setText(donateItemModelUi.getName());
             }
         }
 
@@ -492,24 +504,27 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             donateDefaultItemBinding.ivMoneyIc.setImageResource(donateItemModelUi.getCurrencyType().getIcon());
             ImageView ivMoneyIc = donateDefaultItemBinding.ivMoneyIc;
             Intrinsics.checkNotNullExpressionValue(ivMoneyIc, "ivMoneyIc");
-            ivMoneyIc.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
-            donateDefaultItemBinding.tvOldPrice.setText(donateItemModelUi.getButtonTitle().getFirst());
-            donateDefaultItemBinding.tvPrice.setText(donateItemModelUi.getButtonTitle().getSecond());
+            ivMoneyIc.setVisibility(donateItemModelUi.getCurrencyType() != DonatePriceCurrencyType.NONE ? 0 : 8);
+            ImageView ivMoneyIc2 = donateDefaultItemBinding.ivMoneyIc;
+            Intrinsics.checkNotNullExpressionValue(ivMoneyIc2, "ivMoneyIc");
+            ivMoneyIc2.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
+            donateDefaultItemBinding.tvOldPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getFirst(), 0.0f, null, 3, null));
+            donateDefaultItemBinding.tvPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getSecond(), 0.0f, null, 3, null));
         }
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11764getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11762getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
                 blockContainer.setVisibility(0);
-                donateDefaultItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donateDefaultItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i == 2) {
                 LinearLayout blockContainer2 = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer2, "blockContainer");
                 blockContainer2.setVisibility(0);
-                donateDefaultItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donateDefaultItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {
@@ -586,7 +601,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
         private final void initItem(final DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
             final DonateAdapter donateAdapter = this.this$0;
-            donatePosterItemBinding.tvAvailable.setText(donateItemModelUi.getDesc());
+            donatePosterItemBinding.tvAvailable.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getDesc(), 0.0f, null, 3, null));
             ImageView ivItemBg = donatePosterItemBinding.ivItemBg;
             Intrinsics.checkNotNullExpressionValue(ivItemBg, "ivItemBg");
             DonateUtilsKt.setImageItemBgSdn(ivItemBg, donateItemModelUi.getBackground());
@@ -601,8 +616,8 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
                 animationThumb2.setVisibility(8);
             }
             donatePosterItemBinding.tvSecondTitle.setColorList(DonateUtilsKt.convertColorList(donateItemModelUi.getTextGradientColor()));
-            donatePosterItemBinding.tvFirstTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst());
-            donatePosterItemBinding.tvSecondTitle.setText(DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond());
+            donatePosterItemBinding.tvFirstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getFirst(), 0.0f, null, 3, null));
+            donatePosterItemBinding.tvSecondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, DonateUtilsKt.splitOnPart(donateItemModelUi.getName()).getSecond(), 0.0f, null, 3, null));
             setImageInfo(donateItemModelUi);
             rvInit(donateItemModelUi.getBadges());
             setButtonTitle(donateItemModelUi);
@@ -626,8 +641,10 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             Log.i(DonateUtilsKt.DONATE_TAG, "onClick: " + donateItemModelUi.getItemType());
             Log.d(DonateUtilsKt.DONATE_TAG, donateItemModelUi.getItemType().toString());
             if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
+                donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
                 donateAdapter.getOpenDialog().invoke(null);
             } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
+                donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
                 donateAdapter.getOpenDialog().invoke(donateItemModelUi);
             } else {
                 donateAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
@@ -672,24 +689,27 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             donatePosterItemBinding.ivMoneyIc.setImageResource(donateItemModelUi.getCurrencyType().getIcon());
             ImageView ivMoneyIc = donatePosterItemBinding.ivMoneyIc;
             Intrinsics.checkNotNullExpressionValue(ivMoneyIc, "ivMoneyIc");
-            ivMoneyIc.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
-            donatePosterItemBinding.tvOldPrice.setText(donateItemModelUi.getButtonTitle().getFirst());
-            donatePosterItemBinding.tvPrice.setText(donateItemModelUi.getButtonTitle().getSecond());
+            ivMoneyIc.setVisibility(donateItemModelUi.getCurrencyType() != DonatePriceCurrencyType.NONE ? 0 : 8);
+            ImageView ivMoneyIc2 = donatePosterItemBinding.ivMoneyIc;
+            Intrinsics.checkNotNullExpressionValue(ivMoneyIc2, "ivMoneyIc");
+            ivMoneyIc2.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
+            donatePosterItemBinding.tvOldPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getFirst(), 0.0f, null, 3, null));
+            donatePosterItemBinding.tvPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getSecond(), 0.0f, null, 3, null));
         }
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11764getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11762getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
                 blockContainer.setVisibility(0);
-                donatePosterItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donatePosterItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i == 2) {
                 LinearLayout blockContainer2 = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer2, "blockContainer");
                 blockContainer2.setVisibility(0);
-                donatePosterItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donatePosterItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {

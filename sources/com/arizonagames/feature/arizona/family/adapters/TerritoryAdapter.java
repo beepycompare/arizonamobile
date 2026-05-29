@@ -100,7 +100,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
         }
         binding.title.setText(binding.getRoot().getContext().getString(R.string.family_zone_number, Integer.valueOf(gangZoneItem.getId())));
         binding.coins.setText(String.valueOf(gangZoneItem.getFamily_moneta()));
-        binding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gangZoneItem.getFamily_money(), false, null, null, 7, null));
+        binding.money.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gangZoneItem.getFamily_money(), false, null, null, null, 15, null));
         binding.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.adapters.TerritoryAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

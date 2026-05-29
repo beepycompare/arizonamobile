@@ -303,7 +303,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     public static final void _init_$lambda$8(TuningAutoScreen tuningAutoScreen, View view) {
         tuningAutoScreen.sendData(StringKt.toStringJson(""), 12);
         tuningAutoScreen.cartUiVisibility(false);
-        tuningAutoScreen.binding.tvCartTotal.setText(MoneyElementKt.toMoneyFormattedSpannable$default(0L, false, null, null, 7, null));
+        tuningAutoScreen.binding.tvCartTotal.setText(MoneyElementKt.toMoneyFormattedSpannable$default(0L, false, null, null, null, 15, null));
         tuningAutoScreen.binding.tvCartCount.setText("0");
     }
 
@@ -1050,16 +1050,16 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
                 Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
                 ClientData clientData = (ClientData) fromJson3;
                 this.binding.tvTitle.setText(clientData.getCarName());
-                this.binding.tvUserMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(clientData.getPlayerMoney(), false, null, null, 7, null));
+                this.binding.tvUserMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(clientData.getPlayerMoney(), false, null, null, null, 15, null));
                 if (UtilsKt.isArizonaType()) {
                     this.binding.tvUserMoney.setCompoundDrawablesRelative(null, null, null, null);
                 }
                 TextView textView = this.binding.tvCartTotal;
                 Long cartCount = clientData.getCartCount();
-                textView.setText(cartCount != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount.longValue(), false, null, null, 7, null) : null);
+                textView.setText(cartCount != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount.longValue(), false, null, null, null, 15, null) : null);
                 TextView textView2 = this.binding.userCartLayout.tvTotalPrice;
                 Long cartCount2 = clientData.getCartCount();
-                textView2.setText(cartCount2 != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount2.longValue(), false, null, null, 7, null) : null);
+                textView2.setText(cartCount2 != null ? MoneyElementKt.toMoneyFormattedSpannable$default(cartCount2.longValue(), false, null, null, null, 15, null) : null);
                 return;
             case 8:
                 this.autoCharsAdapter.submitList(MapperKt.toListModel(data, DashboardProperties.class));

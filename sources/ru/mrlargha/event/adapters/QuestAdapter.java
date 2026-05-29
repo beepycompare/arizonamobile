@@ -1,6 +1,7 @@
 package ru.mrlargha.event.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,23 +16,30 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.datetime.internal.DateCalculationsKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.QuestData;
 import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventTaskItemBinding;
 /* compiled from: QuestAdapter.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0001\"B=\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006\u0012\u0018\u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\b0\n¢\u0006\u0004\b\r\u0010\u000eJ\u001c\u0010\u0011\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0004H\u0016J\u001c\u0010\u0015\u001a\u00020\b2\n\u0010\u0016\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u0004H\u0016J\u0014\u0010\u0018\u001a\u00020\b2\n\u0010\u0016\u001a\u00060\u0002R\u00020\u0000H\u0016J\b\u0010\u0019\u001a\u00020\u0004H\u0016J\u0014\u0010\u001a\u001a\u00020\b2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00070\u001cJ\u0006\u0010\u001d\u001a\u00020\bJ\u0018\u0010\u001e\u001a\u00020\u000b2\u0006\u0010\u001f\u001a\u00020\u00042\u0006\u0010 \u001a\u00020!H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00070\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/event/adapters/QuestAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/event/adapters/QuestAdapter$PiratesTaskViewHolder;", "completeColor", "", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/event/data/QuestData;", "", "onClickPrise", "Lkotlin/Function2;", "", "Landroid/view/View;", "<init>", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)V", "itemsList", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "addAllItems", "items", "", "clearList", "formatSeconds", "seconds", "context", "Landroid/content/Context;", "PiratesTaskViewHolder", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 '2\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0002&'B=\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006\u0012\u0018\u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\b0\n¢\u0006\u0004\b\r\u0010\u000eJ\u001c\u0010\u0011\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0004H\u0016J\u001c\u0010\u0015\u001a\u00020\b2\n\u0010\u0016\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u0004H\u0016J\u0014\u0010\u0018\u001a\u00020\b2\n\u0010\u0016\u001a\u00060\u0002R\u00020\u0000H\u0016J\b\u0010\u0019\u001a\u00020\u0004H\u0016J\u0014\u0010\u001a\u001a\u00020\b2\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00070\u001cJ\u0006\u0010\u001d\u001a\u00020\bJ\u0018\u0010\u001e\u001a\u00020\u000b2\u0006\u0010\u001f\u001a\u00020\u00042\u0006\u0010 \u001a\u00020!H\u0002J\u0016\u0010\"\u001a\u00020\b*\u00020#2\b\u0010$\u001a\u0004\u0018\u00010\u000bH\u0002J\u0010\u0010%\u001a\u00020\u00042\u0006\u0010$\u001a\u00020\u000bH\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00070\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/event/adapters/QuestAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/event/adapters/QuestAdapter$PiratesTaskViewHolder;", "completeColor", "", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/event/data/QuestData;", "", "onClickPrise", "Lkotlin/Function2;", "", "Landroid/view/View;", "<init>", "(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)V", "itemsList", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "addAllItems", "items", "", "clearList", "formatSeconds", "seconds", "context", "Landroid/content/Context;", "bindTaskType", "Lru/mrlargha/feature/event/databinding/EventTaskItemBinding;", "type", "getEverydayColor", "PiratesTaskViewHolder", "Companion", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHolder> {
     private final int completeColor;
     private final List<QuestData> itemsList;
     private final Function1<QuestData, Unit> onClick;
     private final Function2<String, View, Unit> onClickPrise;
+    private static final Companion Companion = new Companion(null);
+    private static final int everydayDefaultColor = Color.parseColor("#FFD500");
+    private static final int everydayGreenColor = Color.parseColor("#2AA903");
+    private static final int everydayYellowColor = Color.parseColor("#EEEB23");
+    private static final int everydayRedColor = Color.parseColor("#FA130F");
 
     /* JADX WARN: Multi-variable type inference failed */
     public QuestAdapter(int i, Function1<? super QuestData, Unit> onClick, Function2<? super String, ? super View, Unit> onClickPrise) {
@@ -51,10 +59,9 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         return new PiratesTaskViewHolder(this, inflate, this.onClickPrise);
     }
 
-    /* JADX WARN: Type inference failed for: r1v22, types: [ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$6$1] */
+    /* JADX WARN: Type inference failed for: r0v56, types: [ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$6$1] */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(PiratesTaskViewHolder holder, int i) {
-        final QuestAdapter questAdapter;
         Integer intOrNull;
         Intrinsics.checkNotNullParameter(holder, "holder");
         final QuestData questData = (QuestData) CollectionsKt.getOrNull(this.itemsList, i);
@@ -92,31 +99,18 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         binding.typeStory.setVisibility(8);
         binding.typeEveryday.setVisibility(8);
         binding.typeNewyear.setVisibility(8);
-        String type = questData.getType();
-        if (type != null) {
-            int hashCode = type.hashCode();
-            if (hashCode != 109770997) {
-                if (hashCode != 281966241) {
-                    if (hashCode == 1846305245 && type.equals("newyear")) {
-                        binding.typeNewyear.setVisibility(0);
-                    }
-                } else if (type.equals("everyday")) {
-                    binding.typeEveryday.setVisibility(0);
-                }
-            } else if (type.equals("story")) {
-                binding.typeStory.setVisibility(0);
-            }
-        }
+        binding.typeEveryday.setCardBackgroundColor(everydayDefaultColor);
+        bindTaskType(binding, questData.getType());
         String buttonType = questData.getButtonType();
-        int hashCode2 = buttonType.hashCode();
-        if (hashCode2 == -1423461112) {
+        int hashCode = buttonType.hashCode();
+        if (hashCode == -1423461112) {
             if (buttonType.equals("accept")) {
                 binding.btnGet.setBackgroundResource(R.drawable.event_task_btn_bg_white);
                 binding.tvBtnGet.setText(context.getString(R.string.event_task_accept));
             }
             binding.btnGet.setBackgroundResource(R.drawable.event_task_btn_bg_gold);
             binding.tvBtnGet.setText(context.getString(R.string.event_get_reward));
-        } else if (hashCode2 == 3089282) {
+        } else if (hashCode == 3089282) {
             if (buttonType.equals("done")) {
                 binding.ivCheckMark.setVisibility(0);
                 binding.btnGet.setBackgroundResource(R.drawable.event_task_btn_bg_white_transparent);
@@ -125,7 +119,7 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
             binding.btnGet.setBackgroundResource(R.drawable.event_task_btn_bg_gold);
             binding.tvBtnGet.setText(context.getString(R.string.event_get_reward));
         } else {
-            if (hashCode2 == 3198785 && buttonType.equals("help")) {
+            if (hashCode == 3198785 && buttonType.equals("help")) {
                 binding.btnGet.setBackgroundResource(R.drawable.event_task_btn_bg_white);
                 binding.tvBtnGet.setText(context.getString(R.string.event_task_track));
             }
@@ -155,9 +149,11 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         }
         String timer2 = questData.getTimer();
         if (timer2 != null && (intOrNull = StringsKt.toIntOrNull(timer2)) != null) {
-            Integer num = intOrNull.intValue() > 0 ? intOrNull : null;
-            if (num != null) {
-                int intValue = num.intValue();
+            if (intOrNull.intValue() <= 0) {
+                intOrNull = null;
+            }
+            if (intOrNull != null) {
+                int intValue = intOrNull.intValue();
                 binding.errorOverlay.setVisibility(0);
                 TextView textView = binding.tvErrorText;
                 int i2 = R.string.event_available_in;
@@ -166,18 +162,17 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
                 binding.btnGet.setVisibility(4);
                 binding.progressBarContainer.setVisibility(4);
                 final long j = intValue * 1000;
-                questAdapter = this;
-                ?? r1 = new CountDownTimer(j) { // from class: ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$6$1
+                ?? r0 = new CountDownTimer(j) { // from class: ru.mrlargha.event.adapters.QuestAdapter$onBindViewHolder$1$6$1
                     @Override // android.os.CountDownTimer
                     public void onTick(long j2) {
                         String formatSeconds;
                         TextView textView2 = EventTaskItemBinding.this.tvErrorText;
                         Context context2 = context;
                         int i3 = R.string.event_available_in;
-                        QuestAdapter questAdapter2 = questAdapter;
+                        QuestAdapter questAdapter = this;
                         Context context3 = context;
                         Intrinsics.checkNotNull(context3);
-                        formatSeconds = questAdapter2.formatSeconds((int) (j2 / 1000), context3);
+                        formatSeconds = questAdapter.formatSeconds((int) (j2 / 1000), context3);
                         textView2.setText(context2.getString(i3, formatSeconds));
                     }
 
@@ -186,17 +181,15 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
                         EventTaskItemBinding.this.errorOverlay.setVisibility(8);
                     }
                 };
-                r1.start();
-                holder.setTimer((CountDownTimer) r1);
-                binding.btnGet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.adapters.QuestAdapter$$ExternalSyntheticLambda0
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        QuestAdapter.onBindViewHolder$lambda$0$6(QuestAdapter.this, questData, view);
-                    }
-                });
+                r0.start();
+                holder.setTimer((CountDownTimer) r0);
             }
         }
-        questAdapter = this;
+        if (UtilsKt.isArizonaType() && StringsKt.isBlank(questData.getButtonType())) {
+            binding.btnGet.setVisibility(8);
+            binding.btnGet.setOnClickListener(null);
+            return;
+        }
         binding.btnGet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.adapters.QuestAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -308,6 +301,96 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
 
         public final PriseAdapter getAdapter() {
             return this.adapter;
+        }
+    }
+
+    private final void bindTaskType(EventTaskItemBinding eventTaskItemBinding, String str) {
+        if (str != null) {
+            switch (str.hashCode()) {
+                case -2120848539:
+                    if (!str.equals("everyday-red")) {
+                        return;
+                    }
+                    break;
+                case 109770997:
+                    if (str.equals("story")) {
+                        eventTaskItemBinding.typeStory.setVisibility(0);
+                        return;
+                    }
+                    return;
+                case 281966241:
+                    if (str.equals("everyday")) {
+                        eventTaskItemBinding.typeEveryday.setVisibility(0);
+                        return;
+                    }
+                    return;
+                case 1265815840:
+                    if (!str.equals("everyday-yellow")) {
+                        return;
+                    }
+                    break;
+                case 1846305245:
+                    if (str.equals("newyear")) {
+                        eventTaskItemBinding.typeNewyear.setVisibility(0);
+                        return;
+                    }
+                    return;
+                case 1964252375:
+                    if (!str.equals("everyday-green")) {
+                        return;
+                    }
+                    break;
+                default:
+                    return;
+            }
+            if (UtilsKt.isArizonaType()) {
+                eventTaskItemBinding.typeEveryday.setVisibility(0);
+                eventTaskItemBinding.typeEveryday.setCardBackgroundColor(getEverydayColor(str));
+            }
+        }
+    }
+
+    private final int getEverydayColor(String str) {
+        int hashCode = str.hashCode();
+        if (hashCode != -2120848539) {
+            if (hashCode != 1265815840) {
+                if (hashCode == 1964252375 && str.equals("everyday-green")) {
+                    return everydayGreenColor;
+                }
+            } else if (str.equals("everyday-yellow")) {
+                return everydayYellowColor;
+            }
+        } else if (str.equals("everyday-red")) {
+            return everydayRedColor;
+        }
+        return everydayDefaultColor;
+    }
+
+    /* compiled from: QuestAdapter.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\t\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0011\u0010\n\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0007R\u0011\u0010\f\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u0007¨\u0006\u000e"}, d2 = {"Lru/mrlargha/event/adapters/QuestAdapter$Companion;", "", "<init>", "()V", "everydayDefaultColor", "", "getEverydayDefaultColor", "()I", "everydayGreenColor", "getEverydayGreenColor", "everydayYellowColor", "getEverydayYellowColor", "everydayRedColor", "getEverydayRedColor", NotificationCompat.CATEGORY_EVENT}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final int getEverydayDefaultColor() {
+            return QuestAdapter.everydayDefaultColor;
+        }
+
+        public final int getEverydayGreenColor() {
+            return QuestAdapter.everydayGreenColor;
+        }
+
+        public final int getEverydayYellowColor() {
+            return QuestAdapter.everydayYellowColor;
+        }
+
+        public final int getEverydayRedColor() {
+            return QuestAdapter.everydayRedColor;
         }
     }
 }

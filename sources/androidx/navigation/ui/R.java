@@ -35,8 +35,8 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class string {
         public static int dest_title = 0x7f120126;
-        public static int nav_app_bar_navigate_up_description = 0x7f120433;
-        public static int nav_app_bar_open_drawer_description = 0x7f120434;
+        public static int nav_app_bar_navigate_up_description = 0x7f120437;
+        public static int nav_app_bar_open_drawer_description = 0x7f120438;
 
         private string() {
         }

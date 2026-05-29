@@ -254,8 +254,8 @@ public final class ArizonaSnackbar extends SAMPUIElement {
             SnackbarModel snackbarModel = (SnackbarModel) MapperKt.toModel(str, SnackbarModel.class);
             this.handler.removeCallbacksAndMessages(null);
             ArizonaSnackbarBinding arizonaSnackbarBinding = this.binding;
-            arizonaSnackbarBinding.snackText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, snackbarModel.getText(), 0.0f, 1, null));
-            arizonaSnackbarBinding.snackTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, snackbarModel.getTitle(), 0.0f, 1, null));
+            arizonaSnackbarBinding.snackText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, snackbarModel.getText(), 0.0f, null, 3, null));
+            arizonaSnackbarBinding.snackTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, snackbarModel.getTitle(), 0.0f, null, 3, null));
             if (StringsKt.isBlank(snackbarModel.getTitle())) {
                 arizonaSnackbarBinding.snackTitle.setVisibility(8);
             }

@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.domain.usecases;
 
-import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -28,14 +27,13 @@ public final class DonateGetCategoriesUseCase {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0032  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0054 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invoke(Continuation<? super ResultState<? extends List<DonateCategoryModel>>> continuation) {
         DonateGetCategoriesUseCase$invoke$1 donateGetCategoriesUseCase$invoke$1;
         int i;
-        ResultState resultState;
         if (continuation instanceof DonateGetCategoriesUseCase$invoke$1) {
             donateGetCategoriesUseCase$invoke$1 = (DonateGetCategoriesUseCase$invoke$1) continuation;
             if ((donateGetCategoriesUseCase$invoke$1.label & Integer.MIN_VALUE) != 0) {
@@ -56,27 +54,18 @@ public final class DonateGetCategoriesUseCase {
                 } else {
                     ResultKt.throwOnFailure(obj);
                 }
-                resultState = (ResultState) obj;
-                if (resultState instanceof ResultState.Success) {
-                    return resultState;
-                }
-                ArrayList arrayList = new ArrayList();
-                for (Object obj2 : (Iterable) ((ResultState.Success) resultState).getData()) {
-                    if (((DonateCategoryModel) obj2).getVisible() == 1) {
-                        arrayList.add(obj2);
-                    }
-                }
-                return new ResultState.Success(arrayList);
+                ResultState resultState = (ResultState) obj;
+                return !(resultState instanceof ResultState.Success) ? new ResultState.Success(((ResultState.Success) resultState).getData()) : resultState;
             }
         }
         donateGetCategoriesUseCase$invoke$1 = new DonateGetCategoriesUseCase$invoke$1(this, continuation);
-        Object obj3 = donateGetCategoriesUseCase$invoke$1.result;
+        Object obj2 = donateGetCategoriesUseCase$invoke$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = donateGetCategoriesUseCase$invoke$1.label;
         if (i != 0) {
         }
-        resultState = (ResultState) obj3;
-        if (resultState instanceof ResultState.Success) {
+        ResultState resultState2 = (ResultState) obj2;
+        if (!(resultState2 instanceof ResultState.Success)) {
         }
     }
 }

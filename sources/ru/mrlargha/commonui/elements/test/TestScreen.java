@@ -86,7 +86,7 @@ public final class TestScreen extends SAMPUIElement {
 
     private final void render() {
         this.binding.etValue1123213e.setText(String.valueOf(this.value1));
-        this.binding.etValue2.setText(MoneyElementKt.toMoneyFormattedSpannable$default(this.value1, false, null, null, 7, null));
+        this.binding.etValue2.setText(MoneyElementKt.toMoneyFormattedSpannable$default(this.value1, false, null, null, null, 15, null));
         this.binding.etValue3.setText(MoneyElementKt.toMoneyShortFormattedSpannable(this.value1));
     }
 

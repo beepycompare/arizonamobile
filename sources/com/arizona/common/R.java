@@ -32,8 +32,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int avatar_error_placeholder = 0x7f08039a;
-        public static int sample_skin_avatar_view = 0x7f080ebf;
+        public static int avatar_error_placeholder = 0x7f08039b;
+        public static int sample_skin_avatar_view = 0x7f080ec1;
 
         private drawable() {
         }
@@ -46,8 +46,8 @@ public final class R {
         public static int avatar_loader = 0x7f0a0147;
         public static int avatar_status = 0x7f0a0148;
         public static int back_progress = 0x7f0a0162;
-        public static int front_progress = 0x7f0a05ad;
-        public static int max_progress = 0x7f0a090f;
+        public static int front_progress = 0x7f0a05a7;
+        public static int max_progress = 0x7f0a0908;
 
         private id() {
         }

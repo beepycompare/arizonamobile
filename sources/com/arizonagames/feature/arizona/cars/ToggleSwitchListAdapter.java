@@ -74,7 +74,7 @@ public final class ToggleSwitchListAdapter extends ListAdapter<ToggleSwitchInfo,
         binding.carsSwitchableItem.getLayoutParams().width = (int) ((i2 * 11.97d) / 100.0d);
         binding.carsSwitchableItem.getLayoutParams().height = (int) ((i3 * 6.94d) / 100.0d);
         final ToggleSwitchInfo item = getItem(i);
-        binding.itemName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, 1, null));
+        binding.itemName.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, null, 3, null));
         binding.carSwitch.setChecked(item.getValue() == 1);
         binding.carSwitch.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.cars.ToggleSwitchListAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

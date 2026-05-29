@@ -17,6 +17,7 @@ import kotlin.text.Regex;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneArizonamobilMainPageBinding;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneBinding;
@@ -65,7 +66,7 @@ public final class CarSharingMain implements MobileController {
         constraintSet.connect(bind.mpArizonamobilMainPage.getId(), 2, binding.phoneCaseContainer.getId(), 2);
         constraintSet.connect(bind.mpArizonamobilMainPage.getId(), 3, binding.phoneTopBarContainer.getId(), 4);
         constraintSet.applyTo(binding.phoneCaseContainer);
-        bind.mpArizonamobileBalanceCount.setText(mobilePhone.getArizonaMobilBalance() + " $");
+        bind.mpArizonamobileBalanceCount.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mobilePhone.getArizonaMobilBalance(), false, null, null, null, 15, null));
         bind.mpArizonamobilAddBalance.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingMain$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -87,7 +88,7 @@ public final class CarSharingMain implements MobileController {
     }
 
     public final void addBalance(int i) {
-        this.arizonaMobilBinding.mpArizonamobileBalanceCount.setText(this.context.getString(R.string.mobile_price_currency, new Object[]{Integer.valueOf(i)}));
+        this.arizonaMobilBinding.mpArizonamobileBalanceCount.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i, false, null, null, null, 15, null));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

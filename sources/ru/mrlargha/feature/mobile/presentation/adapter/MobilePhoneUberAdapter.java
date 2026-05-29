@@ -10,6 +10,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.domain.obj.MobilePhoneUberChoseTaxi;
 /* compiled from: MobilePhoneUberAdapter.kt */
@@ -66,17 +67,17 @@ public final class MobilePhoneUberAdapter extends RecyclerView.Adapter<MobilePho
                 if (hashCode == 1932155732 && title.equals("Комфорт")) {
                     holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_comfort_car));
                     holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-                    holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_from_price, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
+                    holder.getUberItem().mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(this.list.get(i).getPrice(), false, this.activity.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
                 }
             } else if (title.equals("Эконом")) {
                 holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_econom_car));
                 holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-                holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_price_currency, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
+                holder.getUberItem().mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(this.list.get(i).getPrice(), false, null, null, null, 15, null));
             }
         } else if (title.equals("Бизнес")) {
             holder.getUberItem().mpUberPriority.setImageDrawable(ContextCompat.getDrawable(this.activity, R.drawable.ic_uber_business_car));
             holder.getUberItem().mpUberPriorityTitle.setText(this.list.get(i).getTitle());
-            holder.getUberItem().mpUberPriorityDescription.setText(this.activity.getString(R.string.mobile_from_price, new Object[]{Integer.valueOf(this.list.get(i).getPrice())}));
+            holder.getUberItem().mpUberPriorityDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(this.list.get(i).getPrice(), false, this.activity.getString(R.string.mobile_price_from_prefix) + " ", null, null, 13, null));
         }
         if (this.list.get(i).isActive()) {
             holder.getUberItem().mpUberPriorityItem.setBackground(ContextCompat.getDrawable(this.activity, R.drawable.ic_mobile_phone_uber_taxi_shield));

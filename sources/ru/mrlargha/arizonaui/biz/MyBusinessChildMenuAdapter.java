@@ -51,7 +51,7 @@ public final class MyBusinessChildMenuAdapter extends RecyclerView.Adapter<Busin
         Intrinsics.checkNotNullExpressionValue(subMenuItem, "get(...)");
         final MyBusinessScreen.Companion.SubMenuItem subMenuItem2 = subMenuItem;
         MyBusinessChildMenuItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, subMenuItem2.getTitle(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, subMenuItem2.getTitle(), 0.0f, null, 3, null));
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout myBusinessChildMenuItem = binding.myBusinessChildMenuItem;
         Intrinsics.checkNotNullExpressionValue(myBusinessChildMenuItem, "myBusinessChildMenuItem");

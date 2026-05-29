@@ -106,7 +106,7 @@ public final class GasStation extends SAMPUIElement {
                 Intrinsics.checkNotNullParameter(seekBar, "seekBar");
                 GasStation.this.gasStationBinding.gsFuelCounter.setText("+" + i2 + "l.");
                 GasStation.this.gasStationBinding.gsFuelNowCount.setText((GasStation.this.gasNow + i2) + "l.");
-                GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i2 * GasStation.this.price, false, null, null, 7, null));
+                GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i2 * GasStation.this.price, false, null, null, null, 15, null));
                 AppCompatImageView gsFuelCountCurrencyIc = GasStation.this.gasStationBinding.gsFuelCountCurrencyIc;
                 Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
                 gsFuelCountCurrencyIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
@@ -285,7 +285,7 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (UtilsKt.isArizonaType()) {
-                    gasStationBinding.gsFuelTypePrice92.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
+                    gasStationBinding.gsFuelTypePrice92.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", null, 11, null));
                 } else {
                     gasStationBinding.gsFuelTypePrice92.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
@@ -303,7 +303,7 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding2 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (UtilsKt.isArizonaType()) {
-                    gasStationBinding2.gsFuelTypePrice95.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
+                    gasStationBinding2.gsFuelTypePrice95.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", null, 11, null));
                 } else {
                     gasStationBinding2.gsFuelTypePrice95.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
@@ -321,7 +321,7 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding3 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (UtilsKt.isArizonaType()) {
-                    gasStationBinding3.gsFuelTypePrice100.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
+                    gasStationBinding3.gsFuelTypePrice100.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", null, 11, null));
                 } else {
                     gasStationBinding3.gsFuelTypePrice100.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }
@@ -339,7 +339,7 @@ public final class GasStation extends SAMPUIElement {
             GasStationBinding gasStationBinding4 = this.gasStationBinding;
             if (intToBoolean(gasStationFuel.getAvailable())) {
                 if (UtilsKt.isArizonaType()) {
-                    gasStationBinding4.gsFuelTypePriceDiesel.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", 3, null));
+                    gasStationBinding4.gsFuelTypePriceDiesel.setText(MoneyElementKt.toMoneyFormattedSpannable$default(gasStationFuel.getPrice(), false, null, " /1l.", null, 11, null));
                 } else {
                     gasStationBinding4.gsFuelTypePriceDiesel.setText(gasStationFuel.getPrice() + "₽ /1l.");
                 }

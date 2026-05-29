@@ -18,9 +18,9 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreat
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentRealEstateModel;
 /* compiled from: ArizonaRentAddPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1", f = "ArizonaRentAddPage.kt", i = {0, 1}, l = {273, 290}, m = "invokeSuspend", n = {"item", "item"}, nl = {278, 292}, s = {"L$0", "L$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1", f = "ArizonaRentAddPage.kt", i = {0, 1}, l = {252, 269}, m = "invokeSuspend", n = {"item", "item"}, nl = {257, 271}, s = {"L$0", "L$0"}, v = 2)
 /* loaded from: classes6.dex */
-final class ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+final class ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MpArizonaRentAddPageBinding $this_with;
     Object L$0;
     int label;
@@ -28,7 +28,7 @@ final class ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1 extends Suspe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1(MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding, ArizonaRentAddPage arizonaRentAddPage, Continuation<? super ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1> continuation) {
+    public ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1(MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding, ArizonaRentAddPage arizonaRentAddPage, Continuation<? super ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1> continuation) {
         super(2, continuation);
         this.$this_with = mpArizonaRentAddPageBinding;
         this.this$0 = arizonaRentAddPage;
@@ -36,12 +36,12 @@ final class ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1 extends Suspe
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1(this.$this_with, this.this$0, continuation);
+        return new ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1(this.$this_with, this.this$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((ArizonaRentAddPage$setupListeners$1$9$onItemSelected$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        return ((ArizonaRentAddPage$setupListeners$1$8$onItemSelected$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00e9, code lost:

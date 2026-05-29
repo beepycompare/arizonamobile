@@ -192,7 +192,7 @@ public final class SelectorScreen extends SAMPUIElement {
         TextView tvTitle = selectorScreenBinding.tvTitle;
         Intrinsics.checkNotNullExpressionValue(tvTitle, "tvTitle");
         tvTitle.setVisibility(selectorModel.getTitle().length() > 0 ? 0 : 8);
-        selectorScreenBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(selectorModel.getPrice(), false, null, null, 7, null));
+        selectorScreenBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(selectorModel.getPrice(), false, null, null, null, 15, null));
         LinearLayout moneyContainer = selectorScreenBinding.moneyContainer;
         Intrinsics.checkNotNullExpressionValue(moneyContainer, "moneyContainer");
         moneyContainer.setVisibility(selectorModel.getPrice() <= 0 ? 4 : 0);

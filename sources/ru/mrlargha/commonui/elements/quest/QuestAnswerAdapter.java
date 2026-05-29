@@ -93,7 +93,7 @@ public final class QuestAnswerAdapter extends ListAdapter<QuestAnswer, QuestAnsw
                 }
             });
             RodinaQuestDialogItemBinding rodinaQuestDialogItemBinding = this.binding;
-            rodinaQuestDialogItemBinding.rodinaQuestDialogItemText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAnswer.getText(), 0.0f, 1, null));
+            rodinaQuestDialogItemBinding.rodinaQuestDialogItemText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAnswer.getText(), 0.0f, null, 3, null));
             if (Intrinsics.areEqual(questAnswer.getEmoji(), " ")) {
                 rodinaQuestDialogItemBinding.rodinaQuestDialogItemEmoji.setText(Html.fromHtml("&#12539;"));
             } else if (EmojiCompat.get().getLoadState() == 1) {

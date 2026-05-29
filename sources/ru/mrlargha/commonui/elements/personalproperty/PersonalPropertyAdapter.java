@@ -57,8 +57,8 @@ public final class PersonalPropertyAdapter extends ListAdapter<PersonalPropertyD
         public final void bind(PersonalPropertyDetail personalPropertyDetail) {
             Intrinsics.checkNotNullParameter(personalPropertyDetail, "personalPropertyDetail");
             RodinaPersonalPropertyItemViewBinding rodinaPersonalPropertyItemViewBinding = this.binding;
-            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewKey.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getTitle(), 0.0f, 1, null));
-            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getValue(), 0.0f, 1, null));
+            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewKey.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getTitle(), 0.0f, null, 3, null));
+            rodinaPersonalPropertyItemViewBinding.rodinaPersonalPropertyItemViewValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, personalPropertyDetail.getValue(), 0.0f, null, 3, null));
         }
 
         /* compiled from: PersonalPropertyAdapter.kt */

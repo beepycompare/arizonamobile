@@ -1,5 +1,8 @@
 package ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters;
 
+import android.content.Context;
+import android.widget.TextView;
+import androidx.media3.extractor.ts.TsExtractor;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
@@ -7,6 +10,7 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
@@ -17,12 +21,13 @@ import kotlinx.coroutines.DelayKt;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
+import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryItemBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobileRentAccessoryMainAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1", f = "MobileRentAccessoryMainAdapter.kt", i = {0, 0, 0}, l = {131}, m = "invokeSuspend", n = {"$this$launch", "leftTime", "days"}, nl = {133}, s = {"L$0", "J$0", "J$1"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1", f = "MobileRentAccessoryMainAdapter.kt", i = {0, 0, 0}, l = {132}, m = "invokeSuspend", n = {"$this$launch", "leftTime", "days"}, nl = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, s = {"L$0", "J$0", "J$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MobileRentAccessoryItemBinding $this_with;
@@ -55,14 +60,15 @@ public final class MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x0071 -> B:20:0x0074). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x0072 -> B:20:0x0075). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         long j;
+        Context context;
         Job job;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -92,7 +98,9 @@ public final class MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$
                 int i2 = (days > 0L ? 1 : (days == 0L ? 0 : -1));
                 MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding = this.$this_with;
                 if (i2 > 0) {
-                    mobileRentAccessoryItemBinding.tvTime.setText(days + " дней");
+                    TextView textView = mobileRentAccessoryItemBinding.tvTime;
+                    context = this.this$0.context;
+                    textView.setText(context.getString(R.string.mobile_days_count, Boxing.boxLong(days)));
                 } else {
                     mobileRentAccessoryItemBinding.tvTime.setText(TimeConverterKt.formatMillisToTime(j));
                 }

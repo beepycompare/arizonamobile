@@ -51,7 +51,7 @@ public final class MyHouseChildMenuAdapter extends RecyclerView.Adapter<ViewHold
         Intrinsics.checkNotNullExpressionValue(subMenuItem, "get(...)");
         final MyHouseScreen.Companion.SubMenuItem subMenuItem2 = subMenuItem;
         MyHouseChildMenuItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, subMenuItem2.getTitle(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, subMenuItem2.getTitle(), 0.0f, null, 3, null));
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ConstraintLayout myHouseChildMenuItem = binding.myHouseChildMenuItem;
         Intrinsics.checkNotNullExpressionValue(myHouseChildMenuItem, "myHouseChildMenuItem");

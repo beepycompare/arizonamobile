@@ -54,7 +54,7 @@ public final class GasStationAdapter extends RecyclerView.Adapter<GasStationView
         boolean isArizonaType = UtilsKt.isArizonaType();
         ArrayList<GasStationShop> arrayList = this.shopList;
         if (isArizonaType) {
-            str2 = MoneyElementKt.toMoneyFormattedSpannable$default(arrayList.get(i).getPrice(), false, null, null, 7, null);
+            str2 = MoneyElementKt.toMoneyFormattedSpannable$default(arrayList.get(i).getPrice(), false, null, null, null, 15, null);
         } else {
             str2 = arrayList.get(i).getPrice() + str;
         }

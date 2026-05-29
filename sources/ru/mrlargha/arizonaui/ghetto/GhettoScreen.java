@@ -339,7 +339,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
             ghettoMapFrameBinding.containerBalance.setVisibility(8);
         } else {
             ghettoMapFrameBinding.containerBalance.setVisibility(0);
-            ghettoMapFrameBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getMoney().longValue(), false, null, null, 7, null));
+            ghettoMapFrameBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getMoney().longValue(), false, null, null, null, 15, null));
         }
         if (frameMapData.getResp() == null) {
             ghettoMapFrameBinding.containerRespect.setVisibility(8);
@@ -357,7 +357,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
             ghettoMapFrameBinding.containerPlantBalance.setVisibility(8);
         } else {
             ghettoMapFrameBinding.containerPlantBalance.setVisibility(0);
-            ghettoMapFrameBinding.plantBalance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getBalance().longValue(), false, null, null, 7, null));
+            ghettoMapFrameBinding.plantBalance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getBalance().longValue(), false, null, null, null, 15, null));
         }
         ghettoMapFrameBinding.buttonEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener

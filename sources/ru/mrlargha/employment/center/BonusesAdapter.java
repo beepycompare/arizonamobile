@@ -125,7 +125,7 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
         binding.label1.getRoot().setVisibility(0);
         String valueString = bonusItem.getValueString();
         if (valueString != null && valueString.length() != 0) {
-            binding.label1.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, bonusItem.getValueString(), 0.0f, 1, null));
+            binding.label1.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, bonusItem.getValueString(), 0.0f, null, 3, null));
         } else if (bonusItem.getValue() <= 0) {
             binding.label1.getRoot().setVisibility(8);
         } else if (bonusItem.getValueMax() > bonusItem.getValue()) {

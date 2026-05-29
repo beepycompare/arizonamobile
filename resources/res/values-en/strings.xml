@@ -149,7 +149,9 @@
     <string name="container_get_prize_title">Claim the container contents</string>
     <string name="container_items_count_example">6 items</string>
     <string name="cost">cost</string>
+    <string name="cost_days">Cost per day</string>
     <string name="cost_for_hour">Cost per hour</string>
+    <string name="cost_hours">Cost per hour</string>
     <string name="customize_character">Customize your character</string>
     <string name="delivered">delivered</string>
     <string name="dig_item">Dig up item</string>
@@ -520,6 +522,7 @@
     <string name="mobile_choose_class">Choose class</string>
     <string name="mobile_choose_destination">Choose destination</string>
     <string name="mobile_close">Close</string>
+    <string name="mobile_days_count">%1$d days</string>
     <string name="mobile_driver_distance_meters">%1$s m</string>
     <string name="mobile_driver_on_way">Driver is on the way!</string>
     <string name="mobile_enter_number">Enter number</string>
@@ -527,6 +530,7 @@
     <string name="mobile_filter">Filter</string>
     <string name="mobile_find">find</string>
     <string name="mobile_fixed">Fixed</string>
+    <string name="mobile_for_full_rent">for the full rental</string>
     <string name="mobile_from_price">from %1$s$</string>
     <string name="mobile_fuel">FUEL</string>
     <string name="mobile_give_lot_for_rent">List lot for rent</string>
@@ -577,6 +581,7 @@
     <string name="mobile_playlists">Playlists</string>
     <string name="mobile_price">Price</string>
     <string name="mobile_price_currency">%1$s$</string>
+    <string name="mobile_price_from_prefix">from</string>
     <string name="mobile_publish">publish</string>
     <string name="mobile_raise_rating">Increase rating</string>
     <string name="mobile_rate_trip">Rate your trip quality</string>
@@ -632,6 +637,23 @@
     <string name="pass_dimon_mask">Dimon mask</string>
     <string name="password">Password</string>
     <string name="password_reset">Password reset</string>
+    <string name="payday_deposit_blocked">Temporarily blocked</string>
+    <string name="payday_deposit_title">Deposit</string>
+    <string name="payday_fraction_title">Faction</string>
+    <string name="payday_hour_label">Per hour</string>
+    <string name="payday_house_badge">HOUSE</string>
+    <string name="payday_law_title">Lawfulness</string>
+    <string name="payday_level_title">Level %1$d</string>
+    <string name="payday_lost_property_title">Your %1$s</string>
+    <string name="payday_lost_property_value">Expired</string>
+    <string name="payday_med_card_title">&lt;ic&gt;1&lt;ic&gt; Med. card</string>
+    <string name="payday_no_fraction_hint">join a faction and earn every payday</string>
+    <string name="payday_no_uniform">You are not in uniform</string>
+    <string name="payday_not_in_fraction">NOT A MEMBER</string>
+    <string name="payday_online_label">YOUR ONLINE</string>
+    <string name="payday_other_income_title">Other income</string>
+    <string name="payday_tax_warning_title">Expires soon</string>
+    <string name="payday_today_label">Today</string>
     <string name="phoenix">Phoenix</string>
     <string name="ping">Ping</string>
     <string name="plate_american_numbers">American\nplates</string>
@@ -699,6 +721,7 @@
     <string name="publish_add">Publish listing</string>
     <string name="published">(published)</string>
     <string name="purchase">Purchase</string>
+    <string name="purchase_rubles_title">Rubles purchase</string>
     <string name="purchase_title">AZ Coins purchase</string>
     <string name="radar_info">The blinking frequency of the indicator shows how close you are to the alien</string>
     <string name="rating_accessories_title">Accessory rating</string>
@@ -736,6 +759,8 @@
     <string name="register">Register</string>
     <string name="registration">Registration</string>
     <string name="remember_me">Remember me</string>
+    <string name="rental_time_days">Rental time / days</string>
+    <string name="rental_time_hours">Rental time / hours</string>
     <string name="replenishment_az_coins">Top up AZ Coins</string>
     <string name="replenishment_summ">Top-up amount</string>
     <string name="reward">Reward</string>
@@ -796,6 +821,7 @@
     <string name="title">title</string>
     <string name="today_time">Today, 18:30</string>
     <string name="top_up">Top up</string>
+    <string name="trade_money">Money</string>
     <string name="trade_request">Waiting for trade confirmation</string>
     <string name="trade_shop">Trading shop</string>
     <string name="trailer">Trailer</string>
@@ -822,6 +848,8 @@
     <string name="warehouse_fraction">faction stash</string>
     <string name="warehouse_home_wardrobe">Home wardrobe</string>
     <string name="warehouse_house">wardrobe</string>
+    <string name="warehouse_laboratory">Cabinet</string>
+    <string name="warehouse_laboratory_loot">Frankie\'s items</string>
     <string name="warehouse_lombard_menu">pawnshop menu</string>
     <string name="warehouse_motorhome">Motorhome</string>
     <string name="warehouse_nightstand">Nightstand</string>

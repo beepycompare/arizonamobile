@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,16 +22,20 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.DonatePurshaseItemBinding;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonatePurchaseAdapter;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBadgesModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBlockType;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonatePriceCurrencyType;
 import ru.mrlargha.commonui.elements.donate.utils.CustomGridLayoutManager;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonatePurchaseAdapter.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u00172\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0016\u0017B*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0006H\u0016J\u001c\u0010\u0013\u001a\u00020\n2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u0006H\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\n0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter$DonatePurchaseViewHolder;", "onClick", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "id", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "DonatePurchaseViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\u0018\u0000 \u00172\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0016\u0017B*\u0012!\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\u0004\b\n\u0010\u000bJ\u001c\u0010\u000e\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\u001c\u0010\u0013\u001a\u00020\t2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u0012H\u0016R,\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0002¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\t0\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter$DonatePurchaseViewHolder;", "onClick", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "id", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnClick", "()Lkotlin/jvm/functions/Function1;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "DonatePurchaseViewHolder", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, DonatePurchaseViewHolder> {
     public static final Companion Companion = new Companion(null);
@@ -49,15 +54,15 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
             return Intrinsics.areEqual(oldItem, newItem);
         }
     };
-    private final Function1<Integer, Unit> onClick;
+    private final Function1<DonateItemModelUi, Unit> onClick;
 
-    public final Function1<Integer, Unit> getOnClick() {
+    public final Function1<DonateItemModelUi, Unit> getOnClick() {
         return this.onClick;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public DonatePurchaseAdapter(Function1<? super Integer, Unit> onClick) {
+    public DonatePurchaseAdapter(Function1<? super DonateItemModelUi, Unit> onClick) {
         super(diffUtilCallback);
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.onClick = onClick;
@@ -81,7 +86,7 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
     }
 
     /* compiled from: DonatePurchaseAdapter.kt */
-    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fJ\u0010\u0010\u0010\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0017\u0010\u0011\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002¢\u0006\u0002\u0010\u0012J\u0016\u0010\u0013\u001a\u00020\u000b2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0010\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u0018\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter$DonatePurchaseViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;", "<init>", "(Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter;Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;", "badgesAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBadgesAdapter;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "position", "", "initialize", "setImageInfo", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;)Lkotlin/Unit;", "rvInit", "badges", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBadgesModelUi;", "setButtonTitle", "checkBlockType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fJ\u0018\u0010\u0010\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0017\u0010\u0011\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002¢\u0006\u0002\u0010\u0012J\u0016\u0010\u0013\u001a\u00020\u000b2\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0010\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0010\u0010\u0018\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter$DonatePurchaseViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;", "<init>", "(Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonatePurchaseAdapter;Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonatePurshaseItemBinding;", "badgesAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBadgesAdapter;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "position", "", "initialize", "setImageInfo", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;)Lkotlin/Unit;", "rvInit", "badges", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBadgesModelUi;", "setButtonTitle", "checkBlockType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class DonatePurchaseViewHolder extends RecyclerView.ViewHolder {
         private final DonateBadgesAdapter badgesAdapter;
@@ -127,14 +132,16 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
 
         public final void onBind(DonateItemModelUi model, int i) {
             Intrinsics.checkNotNullParameter(model, "model");
-            initialize(model);
+            initialize(model, i);
         }
 
-        private final void initialize(final DonateItemModelUi donateItemModelUi) {
+        private final void initialize(final DonateItemModelUi donateItemModelUi, int i) {
             DonatePurshaseItemBinding donatePurshaseItemBinding = this.binding;
             final DonatePurchaseAdapter donatePurchaseAdapter = this.this$0;
-            donatePurshaseItemBinding.tvFirstTitle.setText(donateItemModelUi.getName());
-            donatePurshaseItemBinding.tvSecondTitle.setText(donateItemModelUi.getDesc());
+            Log.d("DonatePurchaseAdapter frontend", "initialize: " + donateItemModelUi);
+            donatePurshaseItemBinding.cardContainer.setCardBackgroundColor(0);
+            donatePurshaseItemBinding.tvFirstTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getName(), 0.0f, null, 3, null));
+            donatePurshaseItemBinding.tvSecondTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getDesc(), 0.0f, null, 3, null));
             donatePurshaseItemBinding.tvSecondTitle.setColorList(DonateUtilsKt.convertColorList(donateItemModelUi.getTextGradientColor()));
             ImageView ivItemBg = donatePurshaseItemBinding.ivItemBg;
             Intrinsics.checkNotNullExpressionValue(ivItemBg, "ivItemBg");
@@ -165,11 +172,35 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
                     DonatePurchaseAdapter.DonatePurchaseViewHolder.initialize$lambda$0$0(DonatePurchaseAdapter.this, donateItemModelUi, view);
                 }
             });
+            if (UtilsKt.isArizonaType()) {
+                LinearLayout firstElement = donatePurshaseItemBinding.firstElement;
+                Intrinsics.checkNotNullExpressionValue(firstElement, "firstElement");
+                firstElement.setVisibility(i == 0 ? 0 : 8);
+                TextView textView = donatePurshaseItemBinding.tvAzCoins;
+                long j = 1;
+                if (donateItemModelUi.getTotalEarnings() >= 1) {
+                    j = donateItemModelUi.getTotalEarnings();
+                } else if (donateItemModelUi.getPrice() >= 1) {
+                    j = donateItemModelUi.getPrice();
+                }
+                textView.setText(String.valueOf(j));
+                if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
+                    donatePurshaseItemBinding.ivRateAz.setImageResource(R.drawable.donate_ic_rub);
+                    donatePurshaseItemBinding.ivAzCoinIc.setImageResource(R.drawable.ic_az_coins);
+                    return;
+                }
+                donatePurshaseItemBinding.ivRateAz.setImageResource(R.drawable.ic_az_coins);
+                donatePurshaseItemBinding.ivAzCoinIc.setImageResource(R.drawable.ic_dollar);
+                return;
+            }
+            LinearLayout firstElement2 = donatePurshaseItemBinding.firstElement;
+            Intrinsics.checkNotNullExpressionValue(firstElement2, "firstElement");
+            firstElement2.setVisibility(8);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void initialize$lambda$0$0(DonatePurchaseAdapter donatePurchaseAdapter, DonateItemModelUi donateItemModelUi, View view) {
-            donatePurchaseAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
+            donatePurchaseAdapter.getOnClick().invoke(donateItemModelUi);
         }
 
         private final Unit setImageInfo(DonateItemModelUi donateItemModelUi) {
@@ -210,24 +241,27 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
             donatePurshaseItemBinding.ivMoneyIc.setImageResource(donateItemModelUi.getCurrencyType().getIcon());
             ImageView ivMoneyIc = donatePurshaseItemBinding.ivMoneyIc;
             Intrinsics.checkNotNullExpressionValue(ivMoneyIc, "ivMoneyIc");
-            ivMoneyIc.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
-            donatePurshaseItemBinding.tvOldPrice.setText(donateItemModelUi.getButtonTitle().getFirst());
-            donatePurshaseItemBinding.tvPrice.setText(donateItemModelUi.getButtonTitle().getSecond());
+            ivMoneyIc.setVisibility(donateItemModelUi.getCurrencyType() != DonatePriceCurrencyType.NONE ? 0 : 8);
+            ImageView ivMoneyIc2 = donatePurshaseItemBinding.ivMoneyIc;
+            Intrinsics.checkNotNullExpressionValue(ivMoneyIc2, "ivMoneyIc");
+            ivMoneyIc2.setVisibility(donateItemModelUi.getTitleButton().length() == 0 ? 0 : 8);
+            donatePurshaseItemBinding.tvOldPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getFirst(), 0.0f, null, 3, null));
+            donatePurshaseItemBinding.tvPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getButtonTitle().getSecond(), 0.0f, null, 3, null));
         }
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePurshaseItemBinding donatePurshaseItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11764getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11762getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePurshaseItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
                 blockContainer.setVisibility(0);
-                donatePurshaseItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donatePurshaseItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i == 2) {
                 LinearLayout blockContainer2 = donatePurshaseItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer2, "blockContainer");
                 blockContainer2.setVisibility(0);
-                donatePurshaseItemBinding.tvBlockReason.setText(donateItemModelUi.getBlockTitle());
+                donatePurshaseItemBinding.tvBlockReason.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateItemModelUi.getBlockTitle(), 0.0f, null, 3, null));
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {

@@ -477,8 +477,8 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_need_to_have));
         }
         familyCreateClanBinding.buttonCreateFamily.setAlpha(0.5f);
-        this.binding.create.createCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getPrice(), false, null, null, 7, null));
-        this.binding.topbar.createMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getMoney(), false, null, null, 7, null));
+        this.binding.create.createCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getPrice(), false, null, null, null, 15, null));
+        this.binding.topbar.createMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyCreateData.getMoney(), false, null, null, null, 15, null));
     }
 
     private final void setWarInfo(FamilyWarData familyWarData) {
@@ -528,7 +528,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         if (members != null) {
             familyTopbarBinding.textDevil.setText(getTargetActivity().getString(R.string.family_people_count, new Object[]{Integer.valueOf(members.intValue())}));
         }
-        familyTopbarBinding.textMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyData.getMoney(), false, null, null, 7, null));
+        familyTopbarBinding.textMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(familyData.getMoney(), false, null, null, null, 15, null));
         familyTopbarBinding.textCoins.setText(getTargetActivity().getString(R.string.family_pieces_short, new Object[]{Integer.valueOf(familyData.getCoins())}));
         if (familyData.getBg() == -1) {
             familyTopbarBinding.flag.setImageBitmap(null);
@@ -1064,7 +1064,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyMapFrameBinding.containerBalance.setVisibility(8);
         } else {
             familyMapFrameBinding.containerBalance.setVisibility(0);
-            familyMapFrameBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getBalance().longValue(), false, null, null, 7, null));
+            familyMapFrameBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(frameMapData.getBalance().longValue(), false, null, null, null, 15, null));
         }
         if (frameMapData.getCoins() == null) {
             familyMapFrameBinding.containerCoins.setVisibility(8);

@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.arizona.launcher.UpdateActivity;
+import com.google.gson.JsonElement;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -25,6 +27,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
@@ -34,6 +37,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.databinding.DonateReplenishmentDialogBinding;
 import ru.mrlargha.commonui.elements.donate.presentation.DonateOnItemCompleteListeners;
 import ru.mrlargha.commonui.elements.donate.presentation.DonateSubIds;
@@ -42,9 +46,10 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModel
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateRateType;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateReplenishmentDialogPage.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u00002\u00020\u0001B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\u0017\u0010(\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010)J\u0010\u0010*\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u0010+\u001a\u00020\fH\u0002J\u0010\u0010,\u001a\u00020\f2\u0006\u0010-\u001a\u00020\u0003H\u0002J\u0010\u0010.\u001a\u00020\f2\u0006\u0010-\u001a\u00020\u0003H\u0002J\u0017\u0010/\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010)J\u0010\u00100\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u00101\u001a\u00020 H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u00030\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateReplenishmentDialogPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "closePage", "Lkotlin/Function0;", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;Lkotlin/jvm/functions/Function0;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "getClosePage", "()Lkotlin/jvm/functions/Function0;", "adapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBonusAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "willReceiveState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlin/Pair;", "", "upp", "rateType", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateRateType;", "getAmount", "rateJob", "Lkotlinx/coroutines/Job;", "onBackendMessage", "subId", "data", "", "setupListeners", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "dialogInit", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;)Lkotlin/Unit;", "setRateType", "setExpType", "setBuyAzType", "moneyIc", "setExchangeRub", "setBoost", "setupControllers", "clearPage", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\u0018\u00002\u00020\u0001:\u00014B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\u0018\u0010(\u001a\u00020\f2\u0006\u0010&\u001a\u00020'2\u0006\u0010\"\u001a\u00020\u0003H\u0002J\u0017\u0010)\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010*J\u0010\u0010+\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u0010,\u001a\u00020\fH\u0002J\u0010\u0010-\u001a\u00020\f2\u0006\u0010.\u001a\u00020\u0003H\u0002J\u0010\u0010/\u001a\u00020\f2\u0006\u0010.\u001a\u00020\u0003H\u0002J\b\u00100\u001a\u00020\fH\u0002J\u0017\u00101\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010*J\u0010\u00102\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u00103\u001a\u00020 H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u00030\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateReplenishmentDialogPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "closePage", "Lkotlin/Function0;", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;Lkotlin/jvm/functions/Function0;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "getClosePage", "()Lkotlin/jvm/functions/Function0;", "adapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBonusAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "willReceiveState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlin/Pair;", "", "upp", "rateType", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateRateType;", "getAmount", "rateJob", "Lkotlinx/coroutines/Job;", "onBackendMessage", "subId", "data", "", "setupListeners", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "sendConfirmClick", "dialogInit", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;)Lkotlin/Unit;", "setRateType", "setExpType", "setBuyAzType", "moneyIc", "setExchangeRub", "setExchangeGreenRub", "setBoost", "setupControllers", "clearPage", "DonateDialogConfirmPayload", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateReplenishmentDialogPage extends DonatePage {
     private final DonateBonusAdapter adapter;
@@ -76,6 +81,10 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
             try {
                 iArr[DonateRateType.EXCHANGER_EXP.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[DonateRateType.EXCHANGER_GREEN_RUB.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -118,7 +127,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         }
     }
 
-    private final void setupListeners(DonateBoostModelUi donateBoostModelUi) {
+    private final void setupListeners(final DonateBoostModelUi donateBoostModelUi) {
         final DonateReplenishmentDialogBinding donateReplenishmentDialogBinding = this.binding;
         donateReplenishmentDialogBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -172,7 +181,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         donateReplenishmentDialogBinding.btnUpp.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$0$2(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$2(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, donateBoostModelUi, view);
             }
         });
     }
@@ -183,7 +192,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, View view) {
+    public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, DonateBoostModelUi donateBoostModelUi, View view) {
         long j = donateReplenishmentDialogPage.getAmount;
         if (j <= 0) {
             Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_amount_gt_zero), 0).show();
@@ -194,15 +203,34 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         } else {
             int i = WhenMappings.$EnumSwitchMapping$0[donateReplenishmentDialogPage.rateType.ordinal()];
             if (i == 1) {
-                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 7);
+                donateReplenishmentDialogPage.sendConfirmClick(donateBoostModelUi, 7);
             } else if (i == 2) {
-                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 5);
-            } else if (i != 3) {
+                donateReplenishmentDialogPage.sendConfirmClick(donateBoostModelUi, 5);
+            } else if (i == 3) {
+                donateReplenishmentDialogPage.sendConfirmClick(donateBoostModelUi, 8);
+            } else if (i != 4) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                donateReplenishmentDialogPage.getNotifier().clickedWrapper(donateReplenishmentDialogPage.getBackendId(), (int) donateReplenishmentDialogPage.upp, 8);
+                donateReplenishmentDialogPage.sendConfirmClick(donateBoostModelUi, 9);
             }
         }
+    }
+
+    private final void sendConfirmClick(DonateBoostModelUi donateBoostModelUi, int i) {
+        JsonElement mode = donateBoostModelUi.getMode();
+        if (mode == null || mode.isJsonNull()) {
+            mode = null;
+        }
+        if (mode == null) {
+            getNotifier().clickedWrapper(getBackendId(), (int) this.upp, i);
+            return;
+        }
+        IBackendNotifier notifier = getNotifier();
+        int backendId = getBackendId();
+        int i2 = (int) this.upp;
+        byte[] bytes = StringKt.toStringJson(new DonateDialogConfirmPayload(mode)).getBytes(Charsets.UTF_8);
+        Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+        notifier.clickedWrapper(backendId, i2, i, bytes);
     }
 
     private final Unit dialogInit(DonateBoostModelUi donateBoostModelUi) {
@@ -226,6 +254,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
     private final void setRateType(DonateBoostModelUi donateBoostModelUi) {
         DonateReplenishmentDialogBinding donateReplenishmentDialogBinding = this.binding;
         int i = (!UtilsKt.isArizonaType() || this.rateType == DonateRateType.BUY_AZ) ? R.drawable.blueprint_ic_rub : -1;
+        donateReplenishmentDialogBinding.tvReplenishment.setText("Сумма пополнения");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.rateType.ordinal()];
         if (i2 == 1) {
             donateReplenishmentDialogBinding.tvMoney.setText(String.valueOf(donateBoostModelUi.getRate().getFrom()));
@@ -233,10 +262,12 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         } else if (i2 == 2) {
             donateReplenishmentDialogBinding.tvMoney.setText(String.valueOf(donateBoostModelUi.getRate().getFrom()));
             setExchangeRub(i);
-        } else if (i2 != 3) {
+        } else if (i2 == 3) {
+            setExpType();
+        } else if (i2 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            setExpType();
+            setExchangeGreenRub();
         }
     }
 
@@ -330,6 +361,36 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         donateReplenishmentDialogBinding.etReplenishmentSum.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(6)});
     }
 
+    private final void setExchangeGreenRub() {
+        DonateReplenishmentDialogBinding donateReplenishmentDialogBinding = this.binding;
+        donateReplenishmentDialogBinding.ivMoneyIc.setImageResource(R.drawable.donate_ic_rub);
+        donateReplenishmentDialogBinding.ivMoneyIc.setImageTintList(null);
+        donateReplenishmentDialogBinding.ivMoney.setImageResource(R.drawable.donate_ic_rub);
+        donateReplenishmentDialogBinding.ivMoney.setImageTintList(null);
+        donateReplenishmentDialogBinding.ivAzCoinIc.setImageResource(R.drawable.ic_az_coins);
+        donateReplenishmentDialogBinding.ivAzCoinIc.setImageTintList(null);
+        donateReplenishmentDialogBinding.ivAzCoin.setImageResource(R.drawable.ic_az_coins);
+        donateReplenishmentDialogBinding.ivAzCoin.setImageTintList(null);
+        FrameLayout frameLayout = donateReplenishmentDialogBinding.titleContainer;
+        Context context = donateReplenishmentDialogBinding.getRoot().getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        frameLayout.setBackground(DonateUtilsKt.getDialogButtonGradient(context, CollectionsKt.listOf((Object[]) new String[]{"#E54000", "#FF9400"})));
+        TextView textView = donateReplenishmentDialogBinding.tvBtnTitle;
+        Context context2 = donateReplenishmentDialogBinding.getRoot().getContext();
+        Intrinsics.checkNotNullExpressionValue(context2, "getContext(...)");
+        textView.setBackground(DonateUtilsKt.getDialogButtonGradient(context2, CollectionsKt.listOf((Object[]) new String[]{"#E54000", "#FF9400"})));
+        LinearLayout bonusContainer = donateReplenishmentDialogBinding.bonusContainer;
+        Intrinsics.checkNotNullExpressionValue(bonusContainer, "bonusContainer");
+        bonusContainer.setVisibility(8);
+        RecyclerView rvReplenishment = donateReplenishmentDialogBinding.rvReplenishment;
+        Intrinsics.checkNotNullExpressionValue(rvReplenishment, "rvReplenishment");
+        rvReplenishment.setVisibility(8);
+        donateReplenishmentDialogBinding.tvTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_az_green_coins_title));
+        donateReplenishmentDialogBinding.tvBtnTitle.setText(donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_exchange_action));
+        donateReplenishmentDialogBinding.etReplenishmentSum.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(6)});
+        donateReplenishmentDialogBinding.tvReplenishment.setText("Введите количество рублей для обмена");
+    }
+
     private final Unit setBoost(DonateBoostModelUi donateBoostModelUi) {
         DonateReplenishmentDialogBinding donateReplenishmentDialogBinding = this.binding;
         if (donateBoostModelUi.getX() > 3) {
@@ -385,5 +446,53 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         this.getAmount = 0L;
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateReplenishmentDialogPage$clearPage$1$1(this, null), 3, null);
         return launch$default;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: DonateReplenishmentDialogPage.kt */
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0011"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateReplenishmentDialogPage$DonateDialogConfirmPayload;", "", UpdateActivity.UPDATE_MODE, "Lcom/google/gson/JsonElement;", "<init>", "(Lcom/google/gson/JsonElement;)V", "getMode", "()Lcom/google/gson/JsonElement;", "component1", "copy", "equals", "", "other", "hashCode", "", "toString", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class DonateDialogConfirmPayload {
+        private final JsonElement mode;
+
+        public static /* synthetic */ DonateDialogConfirmPayload copy$default(DonateDialogConfirmPayload donateDialogConfirmPayload, JsonElement jsonElement, int i, Object obj) {
+            if ((i & 1) != 0) {
+                jsonElement = donateDialogConfirmPayload.mode;
+            }
+            return donateDialogConfirmPayload.copy(jsonElement);
+        }
+
+        public final JsonElement component1() {
+            return this.mode;
+        }
+
+        public final DonateDialogConfirmPayload copy(JsonElement mode) {
+            Intrinsics.checkNotNullParameter(mode, "mode");
+            return new DonateDialogConfirmPayload(mode);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            return (obj instanceof DonateDialogConfirmPayload) && Intrinsics.areEqual(this.mode, ((DonateDialogConfirmPayload) obj).mode);
+        }
+
+        public int hashCode() {
+            return this.mode.hashCode();
+        }
+
+        public String toString() {
+            return "DonateDialogConfirmPayload(mode=" + this.mode + ")";
+        }
+
+        public DonateDialogConfirmPayload(JsonElement mode) {
+            Intrinsics.checkNotNullParameter(mode, "mode");
+            this.mode = mode;
+        }
+
+        public final JsonElement getMode() {
+            return this.mode;
+        }
     }
 }

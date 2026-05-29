@@ -32,9 +32,8 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
     public final CustomCardView timeContainer;
     public final TextView tvBizPercent;
     public final TextView tvCategory;
+    public final TextView tvCost;
     public final TextView tvDesc;
-    public final TextView tvKCost;
-    public final TextView tvKkCost;
     public final TextView tvLocation;
     public final TextView tvNickName;
     public final TextView tvNumber;
@@ -42,7 +41,7 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
     public final TextView tvRent;
     public final TextView tvTime;
 
-    private MobileRentAccessoryItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, CustomCardView customCardView7, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, CustomCardView customCardView8, CustomCardView customCardView9, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, CustomCardView customCardView10, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11) {
+    private MobileRentAccessoryItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, CustomCardView customCardView7, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, CustomCardView customCardView8, CustomCardView customCardView9, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, CustomCardView customCardView10, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10) {
         this.rootView = customCardView;
         this.bizPercentContainer = customCardView2;
         this.btnDeleteThree = customCardView3;
@@ -63,15 +62,14 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
         this.timeContainer = customCardView10;
         this.tvBizPercent = textView;
         this.tvCategory = textView2;
-        this.tvDesc = textView3;
-        this.tvKCost = textView4;
-        this.tvKkCost = textView5;
-        this.tvLocation = textView6;
-        this.tvNickName = textView7;
-        this.tvNumber = textView8;
-        this.tvPass = textView9;
-        this.tvRent = textView10;
-        this.tvTime = textView11;
+        this.tvCost = textView3;
+        this.tvDesc = textView4;
+        this.tvLocation = textView5;
+        this.tvNickName = textView6;
+        this.tvNumber = textView7;
+        this.tvPass = textView8;
+        this.tvRent = textView9;
+        this.tvTime = textView10;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -151,35 +149,31 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
                                                                         i = R.id.tv_category;
                                                                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                         if (textView2 != null) {
-                                                                            i = R.id.tv_desc;
+                                                                            i = R.id.tv_cost;
                                                                             TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                             if (textView3 != null) {
-                                                                                i = R.id.tv_k_cost;
+                                                                                i = R.id.tv_desc;
                                                                                 TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                 if (textView4 != null) {
-                                                                                    i = R.id.tv_kk_cost;
+                                                                                    i = R.id.tv_location;
                                                                                     TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                     if (textView5 != null) {
-                                                                                        i = R.id.tv_location;
+                                                                                        i = R.id.tv_nick_name;
                                                                                         TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                         if (textView6 != null) {
-                                                                                            i = R.id.tv_nick_name;
+                                                                                            i = R.id.tv_number;
                                                                                             TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                             if (textView7 != null) {
-                                                                                                i = R.id.tv_number;
+                                                                                                i = R.id.tv_pass;
                                                                                                 TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                 if (textView8 != null) {
-                                                                                                    i = R.id.tv_pass;
+                                                                                                    i = R.id.tv_rent;
                                                                                                     TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                     if (textView9 != null) {
-                                                                                                        i = R.id.tv_rent;
+                                                                                                        i = R.id.tv_time;
                                                                                                         TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                         if (textView10 != null) {
-                                                                                                            i = R.id.tv_time;
-                                                                                                            TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                            if (textView11 != null) {
-                                                                                                                return new MobileRentAccessoryItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, customCardView6, bind, bind2, bind3, imageView, customCardView7, customCardView8, linearLayout, bind4, bind5, bind6, customCardView9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11);
-                                                                                                            }
+                                                                                                            return new MobileRentAccessoryItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, customCardView6, bind, bind2, bind3, imageView, customCardView7, customCardView8, linearLayout, bind4, bind5, bind6, customCardView9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
                                                                                                         }
                                                                                                     }
                                                                                                 }

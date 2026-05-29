@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <defaults>
     <entry>
+        <key>launcher_background_hash_rodina
+        </key>
+        <value>d9ccf2bb6a9000c58445e63ab0b624519c74450ecef47991dc9b6f9b99e4047b
+        </value>
+    </entry>
+    <entry>
         <key>launcher_background_rodina
         </key>
-        <value>/assets/images/mobile_launcher/background4.webp
+        <value>/assets/images/mobile_launcher/background5.webp
         </value>
     </entry>
     <entry>
@@ -118,6 +124,12 @@
         <key>cdn_RESERVE_NEWS_AUTH_BASE_URL
         </key>
         <value>https://arz-api-samp-reserve.s-amp.com/
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_background_hash
+        </key>
+        <value>9433becaf578a32db71ef018a286c0c97c499c80c00f48b2454b4bf598c6ce40
         </value>
     </entry>
     <entry>

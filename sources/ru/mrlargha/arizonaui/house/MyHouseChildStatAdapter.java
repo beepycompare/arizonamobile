@@ -33,8 +33,8 @@ public final class MyHouseChildStatAdapter extends RecyclerView.Adapter<Business
         Intrinsics.checkNotNullExpressionValue(houseDetailInfoItem, "get(...)");
         MyHouseScreen.Companion.HouseDetailInfoItem houseDetailInfoItem2 = houseDetailInfoItem;
         MyHouseChildStatItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseDetailInfoItem2.getTitle(), 0.0f, 1, null));
-        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseDetailInfoItem2.getValue(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseDetailInfoItem2.getTitle(), 0.0f, null, 3, null));
+        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, houseDetailInfoItem2.getValue(), 0.0f, null, 3, null));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

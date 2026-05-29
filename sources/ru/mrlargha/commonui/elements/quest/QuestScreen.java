@@ -102,7 +102,7 @@ public final class QuestScreen extends SAMPUIElement {
                     z = false;
                     for (QuestAwards questAwards : questLine.getAwards()) {
                         if (Intrinsics.areEqual(questAwards.getIcon(), "-1")) {
-                            charSequence = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards.getTitle(), 0.0f, 1, null);
+                            charSequence = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards.getTitle(), 0.0f, null, 3, null);
                             z = true;
                         }
                     }

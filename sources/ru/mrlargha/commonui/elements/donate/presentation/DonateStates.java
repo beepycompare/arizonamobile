@@ -6,12 +6,16 @@ import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.comparisons.ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 import kotlinx.coroutines.CoroutineScope;
@@ -35,7 +39,7 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryMo
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateStates.kt */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020.J\b\u0010/\u001a\u00020,H\u0002J\u0016\u00100\u001a\u00020,2\u0006\u0010-\u001a\u0002012\u0006\u00102\u001a\u00020#J\u0016\u00103\u001a\u00020,2\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020#J\u001e\u00106\u001a\u00020,2\u0006\u00104\u001a\u00020\u00052\u0006\u00107\u001a\u00020#2\u0006\u00105\u001a\u00020#J$\u00108\u001a\b\u0012\u0004\u0012\u0002010\u00152\u0006\u00104\u001a\u00020\u00052\f\u00109\u001a\b\u0012\u0004\u0012\u0002010\u0015H\u0002J\u001c\u0010:\u001a\b\u0012\u0004\u0012\u0002010\u00152\f\u00109\u001a\b\u0012\u0004\u0012\u0002010\u0015H\u0002J\u001c\u0010;\u001a\b\u0012\u0004\u0012\u0002010\u00152\f\u00109\u001a\b\u0012\u0004\u0012\u0002010\u0015H\u0002J\b\u0010<\u001a\u00020,H\u0002J\u0006\u0010=\u001a\u00020,R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR \u0010\u001b\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u001d\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001aR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010$\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010&\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001aR\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "repository", "Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "getCategoriesUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetCategoriesUseCase;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getItemsUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "_categoriesState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "categoriesState", "Lkotlinx/coroutines/flow/StateFlow;", "getCategoriesState", "()Lkotlinx/coroutines/flow/StateFlow;", "_itemsState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "itemState", "getItemState", "itemJob", "Lkotlinx/coroutines/Job;", "updateItemJob", "isWorkingMainItemSet", "", "_boostState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "boostState", "getBoostState", "badgesTime", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBadgesModel;", "currentCategory", "updateCategories", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "setCategories", "updateItems", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "isHasUpdate", "setItemsArizona", "categoriesId", "isActionCategory", "setItemsRodina", "isLimitCategory", "filterItemOrdinary", "itemList", "filterItemByAction", "filterItemByLimit", "setBoosts", "clearJobs", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020-J\b\u00101\u001a\u00020/H\u0002J\u001c\u00102\u001a\b\u0012\u0004\u0012\u00020\u00160\u00152\f\u00103\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0016\u00104\u001a\u00020/2\u0006\u00100\u001a\u0002052\u0006\u00106\u001a\u00020#J\u0016\u00107\u001a\u00020/2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020#J\u001e\u0010:\u001a\u00020/2\u0006\u00108\u001a\u00020\u00052\u0006\u0010;\u001a\u00020#2\u0006\u00109\u001a\u00020#J$\u0010<\u001a\b\u0012\u0004\u0012\u0002050\u00152\u0006\u00108\u001a\u00020\u00052\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\u001c\u0010>\u001a\b\u0012\u0004\u0012\u0002050\u00152\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\u001c\u0010?\u001a\b\u0012\u0004\u0012\u0002050\u00152\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\b\u0010@\u001a\u00020/H\u0002J\u0006\u0010A\u001a\u00020/R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR \u0010\u001b\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u001d\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001aR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010$\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010&\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001aR\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010+\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020-0,X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "repository", "Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "getCategoriesUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetCategoriesUseCase;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getItemsUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "_categoriesState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "categoriesState", "Lkotlinx/coroutines/flow/StateFlow;", "getCategoriesState", "()Lkotlinx/coroutines/flow/StateFlow;", "_itemsState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "itemState", "getItemState", "itemJob", "Lkotlinx/coroutines/Job;", "updateItemJob", "isWorkingMainItemSet", "", "_boostState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "boostState", "getBoostState", "badgesTime", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBadgesModel;", "currentCategory", "categoryUpdates", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "updateCategories", "", CommonUrlParts.MODEL, "setCategories", "applyCategoryUpdates", "categories", "updateItems", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "isHasUpdate", "setItemsArizona", "categoriesId", "isActionCategory", "setItemsRodina", "isLimitCategory", "filterItemOrdinary", "itemList", "filterItemByAction", "filterItemByLimit", "setBoosts", "clearJobs", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateStates {
     private final MutableStateFlow<UiState<List<DonateBoostModelUi>>> _boostState;
@@ -44,6 +48,7 @@ public final class DonateStates {
     private final DonateBadgesModel badgesTime;
     private final StateFlow<UiState<List<DonateBoostModelUi>>> boostState;
     private final StateFlow<UiState<List<DonateCategoryModelUi>>> categoriesState;
+    private final Map<Integer, DonateCategoryModel> categoryUpdates;
     private int currentCategory;
     private final DonateGetCategoriesUseCase getCategoriesUseCase;
     private final DonateGetItemUseCase getItemsUseCase;
@@ -76,6 +81,7 @@ public final class DonateStates {
         this._boostState = MutableStateFlow3;
         this.boostState = FlowKt.asStateFlow(MutableStateFlow3);
         this.badgesTime = new DonateBadgesModel(CollectionsKt.listOf((Object[]) new String[]{"", ""}), "", "TIME");
+        this.categoryUpdates = new LinkedHashMap();
         setCategories();
         setBoosts();
     }
@@ -94,22 +100,39 @@ public final class DonateStates {
 
     public final void updateCategories(DonateCategoryModel model) {
         Intrinsics.checkNotNullParameter(model, "model");
+        this.categoryUpdates.put(Integer.valueOf(model.getKey()), model);
         UiState<List<DonateCategoryModelUi>> value = this._categoriesState.getValue();
         if (value instanceof UiState.Successful) {
-            List<DonateCategoryModelUi> list = (List) ((UiState.Successful) value).getData();
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (DonateCategoryModelUi donateCategoryModelUi : list) {
-                if (donateCategoryModelUi.getId() == model.getKey()) {
-                    donateCategoryModelUi = DonateCategoryModelUi.copy$default(donateCategoryModelUi, 0, null, null, null, 0, 0, false, DonateCategoryModelUiKt.toUi(model).getVisible(), 0, false, false, 1919, null);
-                }
-                arrayList.add(donateCategoryModelUi);
-            }
-            this._categoriesState.setValue(new UiState.Successful(arrayList));
+            this._categoriesState.setValue(new UiState.Successful(applyCategoryUpdates((List) ((UiState.Successful) value).getData())));
         }
     }
 
     private final void setCategories() {
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateStates$setCategories$1(this, null), 3, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<DonateCategoryModelUi> applyCategoryUpdates(List<DonateCategoryModelUi> list) {
+        List<DonateCategoryModelUi> list2 = list;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(list2, 10)), 16));
+        for (Object obj : list2) {
+            linkedHashMap.put(Integer.valueOf(((DonateCategoryModelUi) obj).getId()), obj);
+        }
+        Map mutableMap = MapsKt.toMutableMap(linkedHashMap);
+        for (DonateCategoryModel donateCategoryModel : this.categoryUpdates.values()) {
+            DonateCategoryModelUi ui = DonateCategoryModelUiKt.toUi(donateCategoryModel);
+            if (ui.getVisible()) {
+                mutableMap.put(Integer.valueOf(ui.getId()), ui);
+            } else {
+                mutableMap.remove(Integer.valueOf(ui.getId()));
+            }
+        }
+        return CollectionsKt.sortedWith(mutableMap.values(), new Comparator() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateStates$applyCategoryUpdates$$inlined$sortedBy$1
+            @Override // java.util.Comparator
+            public final int compare(T t, T t2) {
+                return ComparisonsKt.compareValues(Integer.valueOf(((DonateCategoryModelUi) t).getPosition()), Integer.valueOf(((DonateCategoryModelUi) t2).getPosition()));
+            }
+        });
     }
 
     public final void updateItems(DonateItemModel model, boolean z) {
@@ -168,7 +191,10 @@ public final class DonateStates {
         for (DonateItemModel donateItemModel : sortedWith) {
             if (donateItemModel.getLeftUnixTime() > 0) {
                 List<DonateBadgesModel> badges = donateItemModel.getBadges();
-                donateItemModel = DonateItemModel.copy$default(donateItemModel, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, badges != null ? CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel.getLeftUnixTime()), null, 5, null)) : null, 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
+                if (badges == null) {
+                    badges = CollectionsKt.emptyList();
+                }
+                donateItemModel = DonateItemModel.copy$default(donateItemModel, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel.getLeftUnixTime()), null, 5, null)), 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
             }
             arrayList3.add(donateItemModel);
         }
@@ -200,7 +226,10 @@ public final class DonateStates {
         for (DonateItemModel donateItemModel2 : sortedWith) {
             if (donateItemModel2.getLeftUnixTime() > 0) {
                 List<DonateBadgesModel> badges = donateItemModel2.getBadges();
-                donateItemModel2 = DonateItemModel.copy$default(donateItemModel2, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, badges != null ? CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel2.getLeftUnixTime()), null, 5, null)) : null, 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
+                if (badges == null) {
+                    badges = CollectionsKt.emptyList();
+                }
+                donateItemModel2 = DonateItemModel.copy$default(donateItemModel2, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel2.getLeftUnixTime()), null, 5, null)), 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
             }
             arrayList3.add(donateItemModel2);
         }
@@ -232,7 +261,10 @@ public final class DonateStates {
         for (DonateItemModel donateItemModel2 : sortedWith) {
             if (donateItemModel2.getLeftUnixTime() > 0) {
                 List<DonateBadgesModel> badges = donateItemModel2.getBadges();
-                donateItemModel2 = DonateItemModel.copy$default(donateItemModel2, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, badges != null ? CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel2.getLeftUnixTime()), null, 5, null)) : null, 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
+                if (badges == null) {
+                    badges = CollectionsKt.emptyList();
+                }
+                donateItemModel2 = DonateItemModel.copy$default(donateItemModel2, 0, 0, null, null, 0, 0, 0, 0, 0, 0, null, null, 0, null, 0, 0, 0, CollectionsKt.plus((Collection<? extends DonateBadgesModel>) badges, DonateBadgesModel.copy$default(this.badgesTime, null, String.valueOf(donateItemModel2.getLeftUnixTime()), null, 5, null)), 0, null, 0, 0, 0, null, 0L, 0, 0, 134086655, null);
             }
             arrayList3.add(donateItemModel2);
         }

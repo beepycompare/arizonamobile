@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Metadata;
@@ -27,7 +29,9 @@ import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
@@ -63,22 +67,31 @@ import ru.mrlargha.commonui.elements.donate.utils.ImageFader;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonateScreen.kt */
-@Metadata(d1 = {"\u0000\u009e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002CDB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020&H\u0016J\u0018\u0010/\u001a\u00020-2\u0006\u00100\u001a\u00020\u001f2\u0006\u00101\u001a\u00020\u0006H\u0016J\b\u00102\u001a\u00020-H\u0002J\u0017\u00103\u001a\u0004\u0018\u00010-2\u0006\u00104\u001a\u000205H\u0002¢\u0006\u0002\u00106J\b\u00107\u001a\u00020-H\u0002J\b\u00108\u001a\u000209H\u0002J\b\u0010:\u001a\u00020-H\u0002J\u0010\u0010;\u001a\u00020-2\u0006\u00104\u001a\u00020)H\u0002J\u0010\u0010<\u001a\u00020-2\u0006\u00104\u001a\u00020=H\u0002J\u0014\u0010>\u001a\u00020-2\n\b\u0002\u00104\u001a\u0004\u0018\u00010?H\u0002J\u0010\u0010@\u001a\u00020-2\u0006\u0010A\u001a\u00020\u0014H\u0002J\b\u0010B\u001a\u00020-H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u000b*\u0004\u0018\u00010\u001c0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00020\u001f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006E"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "fader", "Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "getFader", "()Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "x", "", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;)Lkotlin/Unit;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "setupListeners", "sendDialogData", "onCategoryClick", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "Pages", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¤\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 T2\u00020\u00012\u00020\u0002:\u0003STUB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u00020&H\u0016J\u0018\u00106\u001a\u0002042\u0006\u00107\u001a\u00020\u001f2\u0006\u00108\u001a\u00020\u0006H\u0016J\u0010\u00109\u001a\u0002042\u0006\u00107\u001a\u00020\u001fH\u0002J\u0017\u0010:\u001a\u0002042\b\u0010;\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u0010<J\b\u0010=\u001a\u000204H\u0002J\u0017\u0010>\u001a\u0004\u0018\u0001042\u0006\u0010?\u001a\u00020@H\u0002¢\u0006\u0002\u0010AJ\b\u0010B\u001a\u000204H\u0002J\b\u0010C\u001a\u00020DH\u0002J\b\u0010E\u001a\u000204H\u0002J\u0010\u0010F\u001a\u0002042\u0006\u0010?\u001a\u00020)H\u0002J\u0010\u0010G\u001a\u0002042\u0006\u0010?\u001a\u00020,H\u0002J\u0018\u0010H\u001a\u0002042\u0006\u0010?\u001a\u00020,2\u0006\u0010I\u001a\u00020&H\u0002J\u0010\u0010J\u001a\u0002042\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0010\u0010L\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0010\u0010M\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0014\u0010N\u001a\u0002042\n\b\u0002\u0010?\u001a\u0004\u0018\u00010OH\u0002J\u0010\u0010P\u001a\u0002042\u0006\u0010Q\u001a\u00020\u0014H\u0002J\b\u0010R\u001a\u000204H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u000b*\u0004\u0018\u00010\u001c0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00020\u001f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010-\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u0012\u0010/\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u000e\u00100\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "fader", "Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "getFader", "()Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "categories", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "selectedCategoryId", "Ljava/lang/Integer;", "pendingOpenCategoryId", "hasInitializedCategory", "x", "", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "openBackendDialog", "openCategory", "id", "(Ljava/lang/Integer;)V", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;)Lkotlin/Unit;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "setupListeners", "sendDialogData", "onCategoryClick", "selectCategory", "notifyBackend", "openPurchaseCategory", "categoryId", "isCurrentPurchaseCategory", "isTopBarPurchaseCategory", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "Pages", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateScreen extends SAMPUIElement implements DonateOnItemCompleteListeners {
+    private static final Companion Companion = new Companion(null);
+    @Deprecated
+    public static final int DONATE_AZ_COINS_CATEGORY_ID = 10;
+    @Deprecated
+    public static final int DONATE_RUB_CATEGORY_ID = 11;
     private final String _token;
     private final DonateScreenBinding binding;
+    private List<DonateCategoryModelUi> categories;
     private final DonateCategoryAdapter categoryAdapter;
     private Pages currentPage;
     private DonateBoostModelUi dialogModel;
     private final ImageFader fader;
+    private boolean hasInitializedCategory;
     private boolean isChangeCategory;
     private boolean isHasUpdate;
     private final Map<Pages, DonatePage> pages;
+    private Integer pendingOpenCategoryId;
     private final CoroutineScope scope;
     private final View screen;
+    private Integer selectedCategoryId;
     private final int serverId;
     private final SharedPreferences sharedPref;
     private DonateStates states;
@@ -106,6 +119,10 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             }
             $EnumSwitchMapping$0 = iArr;
         }
+    }
+
+    private final boolean isTopBarPurchaseCategory(int i) {
+        return i == 10 || i == 11;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -165,6 +182,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.sharedPref = sharedPreferences;
         this.serverId = sharedPreferences.getInt("server_id", 0);
         this._token = sharedPreferences.getString("api_token", "");
+        this.categories = CollectionsKt.emptyList();
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
         checkArizonaType();
@@ -210,6 +228,10 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         if (z) {
             this.states = new DonateStates(getTargetActivity(), getBackendID());
             this.isHasUpdate = false;
+            this.categories = CollectionsKt.emptyList();
+            this.selectedCategoryId = null;
+            this.pendingOpenCategoryId = null;
+            this.hasInitializedCategory = false;
             this.categoryAdapter.refreshSelectItem();
             initAdapters();
             setupCollectors();
@@ -226,33 +248,87 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessageHandled(String data, int i) {
+        DonateStates donateStates;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == DonateSubIds.UPDATE_CATEGORY_LIST.getSubIds()) {
-            DonateStates donateStates = this.states;
-            if (donateStates != null) {
-                donateStates.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
+            DonateStates donateStates2 = this.states;
+            if (donateStates2 != null) {
+                donateStates2.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
             }
         } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
-            if (data.length() > 0) {
-                DonateStates donateStates2 = this.states;
-                if (donateStates2 != null) {
-                    donateStates2.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
-                }
-                Log.e(DonateUtilsKt.DONATE_TAG, "data: updateData: " + ((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class)).getKey());
+            if (data.length() <= 0 || (donateStates = this.states) == null) {
+                return;
             }
+            donateStates.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
         } else if (i == DonateSubIds.GET_DOP_INFO.getSubIds()) {
             initDopInfo((DonateScreenModel) MapperKt.toModel(data, DonateScreenModel.class));
+        } else if (i == DonateSubIds.OPEN_CATEGORY.getSubIds()) {
+            String str = data;
+            openCategory(StringsKt.toIntOrNull(StringsKt.trim((CharSequence) str).toString()));
+            Log.d(DonateUtilsKt.DONATE_TAG, "data: open category: " + data);
+            Integer intOrNull = StringsKt.toIntOrNull(StringsKt.trim((CharSequence) str).toString());
+            if (intOrNull != null) {
+                getNotifier().clickedWrapper(getBackendID(), intOrNull.intValue(), 4);
+            }
+        } else if (i == DonateSubIds.DIALOG_INIT.getSubIds()) {
+            openBackendDialog(data);
+        }
+    }
+
+    private final void openBackendDialog(String str) {
+        setPage(Pages.DIALOG);
+        DonatePage donatePage = this.pages.get(Pages.DIALOG);
+        if (donatePage != null) {
+            donatePage.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void openCategory(Integer num) {
+        Object obj;
+        Integer num2;
+        if (num != null) {
+            int intValue = num.intValue();
+            if (this.hasInitializedCategory && (num2 = this.selectedCategoryId) != null && num2.intValue() == intValue) {
+                this.pendingOpenCategoryId = null;
+                return;
+            }
+            Iterator<T> it = this.categories.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    obj = null;
+                    break;
+                }
+                obj = it.next();
+                if (((DonateCategoryModelUi) obj).getId() == intValue) {
+                    break;
+                }
+            }
+            DonateCategoryModelUi donateCategoryModelUi = (DonateCategoryModelUi) obj;
+            if (donateCategoryModelUi == null) {
+                if (UtilsKt.isArizonaType() && isTopBarPurchaseCategory(intValue)) {
+                    openPurchaseCategory(intValue);
+                    return;
+                } else {
+                    this.pendingOpenCategoryId = Integer.valueOf(intValue);
+                    return;
+                }
+            }
+            this.pendingOpenCategoryId = null;
+            this.hasInitializedCategory = true;
+            this.categoryAdapter.selectItemById(intValue);
+            this.binding.rvCategories.scrollToPosition(this.categories.indexOf(donateCategoryModelUi));
+            selectCategory(donateCategoryModelUi, true);
         }
     }
 
     private final void checkArizonaType() {
         DonateTopBarBinding donateTopBarBinding = this.binding.topBar;
         if (UtilsKt.isArizonaType()) {
-            donateTopBarBinding.ivMoneyIc.setVisibility(8);
-            donateTopBarBinding.ivMoneyIc.setImageResource(-1);
-            return;
+            donateTopBarBinding.ivMoneyIc.setImageResource(R.drawable.donate_ic_rub);
+        } else {
+            donateTopBarBinding.ivMoneyIc.setImageResource(R.drawable.blueprint_ic_rub);
         }
-        donateTopBarBinding.ivMoneyIc.setImageResource(R.drawable.blueprint_ic_rub);
     }
 
     private final Unit initDopInfo(DonateScreenModel donateScreenModel) {
@@ -261,9 +337,9 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         LinearLayout btnEvent = donateScreenBinding.topBar.btnEvent;
         Intrinsics.checkNotNullExpressionValue(btnEvent, "btnEvent");
         btnEvent.setVisibility(donateScreenModel.isShowButtonEventStatus() ? 0 : 8);
-        donateScreenBinding.topBar.tvEvent.setText(donateScreenModel.getButtonEventName());
+        donateScreenBinding.topBar.tvEvent.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateScreenModel.getButtonEventName(), 0.0f, null, 3, null));
         Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate_icons/mobile/event.webp").into(donateScreenBinding.topBar.ivEvent);
-        donateScreenBinding.topBar.tvMoneyCount.setText(MoneyElementKt.toMoneyFormattedSpannable$default(donateScreenModel.getCountMoney(), false, null, null, 7, null));
+        donateScreenBinding.topBar.tvMoneyCount.setText(String.valueOf(donateScreenModel.getCountMoney()));
         donateScreenBinding.topBar.tvAzCoin.setText(DonateUtilsKt.formatWithSpaces(donateScreenModel.getCountAzCoins()));
         CardView boostContainer = donateScreenBinding.topBar.boostContainer;
         Intrinsics.checkNotNullExpressionValue(boostContainer, "boostContainer");
@@ -343,6 +419,14 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         if (pagesContainer.getVisibility() == 0) {
+            if (UtilsKt.isArizonaType()) {
+                if (donateScreen.isCurrentPurchaseCategory(11)) {
+                    return;
+                }
+                donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 0, 8);
+                donateScreen.openPurchaseCategory(11);
+                return;
+            }
             donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 1, 2);
             donateScreen.openReverseDialog(null);
         }
@@ -353,24 +437,15 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         if (pagesContainer.getVisibility() == 0) {
-            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
-            donateScreen.setPage(Pages.PURCHASE);
             int size = UtilsKt.isArizonaType() ? 10 : donateScreen.categoryAdapter.getCurrentList().size();
+            if (UtilsKt.isArizonaType() && donateScreen.isCurrentPurchaseCategory(size)) {
+                return;
+            }
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
             Log.d(donateScreen.getCLASS_TAG(), "setupListeners: " + size);
             donateScreen.categoryAdapter.rateCategory();
             donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), size, 4);
-            if (UtilsKt.isArizonaType()) {
-                DonateStates donateStates = donateScreen.states;
-                if (donateStates != null) {
-                    donateStates.setItemsArizona(size, false);
-                    return;
-                }
-                return;
-            }
-            DonateStates donateStates2 = donateScreen.states;
-            if (donateStates2 != null) {
-                donateStates2.setItemsRodina(size, false, false);
-            }
+            donateScreen.openPurchaseCategory(size);
         }
     }
 
@@ -385,16 +460,31 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
 
     private final void sendDialogData(DonateBoostModelUi donateBoostModelUi) {
         DonatePage donatePage;
+        if (UtilsKt.isArizonaType()) {
+            DonatePage donatePage2 = this.pages.get(Pages.DIALOG);
+            if (donatePage2 != null) {
+                donatePage2.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), StringKt.toStringJson(donateBoostModelUi));
+                return;
+            }
+            return;
+        }
         DonateBoostModelUi donateBoostModelUi2 = this.dialogModel;
         if (donateBoostModelUi2 == null || (donatePage = this.pages.get(Pages.DIALOG)) == null) {
             return;
         }
-        donatePage.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), StringKt.toStringJson(DonateBoostModelUi.copy$default(donateBoostModelUi2, new DonateRateModel(1, this.x), 0L, null, true, this.x, 0L, null, 102, null)));
+        donatePage.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), StringKt.toStringJson(DonateBoostModelUi.copy$default(donateBoostModelUi2, new DonateRateModel(1, this.x), 0L, null, true, this.x, 0L, null, null, 230, null)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void onCategoryClick(DonateCategoryModelUi donateCategoryModelUi) {
+        this.hasInitializedCategory = true;
+        selectCategory(donateCategoryModelUi, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void selectCategory(DonateCategoryModelUi donateCategoryModelUi, boolean z) {
         DonateScreenBinding donateScreenBinding = this.binding;
+        this.selectedCategoryId = Integer.valueOf(donateCategoryModelUi.getId());
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         pagesContainer.setVisibility(4);
@@ -406,8 +496,9 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         errorPlaceholderItems.setVisibility(8);
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11763getGridTemplateType().ordinal()];
+        Log.d("TAG", "selectCategory: " + donateCategoryModelUi.getId());
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$selectCategory$1$1(this, donateCategoryModelUi, null), 3, null);
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11761getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {
@@ -417,6 +508,40 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         } else {
             setPage(Pages.PURCHASE);
         }
+    }
+
+    private final void openPurchaseCategory(int i) {
+        DonateScreenBinding donateScreenBinding = this.binding;
+        if (isCurrentPurchaseCategory(i)) {
+            this.pendingOpenCategoryId = null;
+            return;
+        }
+        this.pendingOpenCategoryId = null;
+        this.hasInitializedCategory = true;
+        this.selectedCategoryId = Integer.valueOf(i);
+        this.categoryAdapter.selectItemById(i);
+        FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
+        Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+        pagesContainer.setVisibility(4);
+        ProgressBar pageProgressBar = donateScreenBinding.pageProgressBar;
+        Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
+        pageProgressBar.setVisibility(0);
+        LinearLayout errorPlaceholderItems = donateScreenBinding.errorPlaceholderItems;
+        Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
+        errorPlaceholderItems.setVisibility(8);
+        this.isChangeCategory = true;
+        setPage(Pages.PURCHASE);
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$openPurchaseCategory$1$1(this, i, null), 3, null);
+    }
+
+    private final boolean isCurrentPurchaseCategory(int i) {
+        Integer num;
+        if (this.hasInitializedCategory && this.currentPage == Pages.PURCHASE && (num = this.selectedCategoryId) != null && num.intValue() == i) {
+            FrameLayout pagesContainer = this.binding.pagesContainer;
+            Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+            return pagesContainer.getVisibility() == 0;
+        }
+        return false;
     }
 
     static /* synthetic */ void openReverseDialog$default(DonateScreen donateScreen, DonateItemModelUi donateItemModelUi, int i, Object obj) {
@@ -443,12 +568,12 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             if (donateBoostModelUi3 == null || (donateRateModel = donateBoostModelUi3.getRate()) == null) {
                 donateRateModel = new DonateRateModel(1, 1L);
             }
-            donatePage.onBackendMessage(subIds, StringKt.toStringJson(DonateBoostModelUi.copy$default(donateBoostModelUi, donateRateModel, 0L, null, false, boost, 0L, donateItemType, 38, null)));
+            donatePage.onBackendMessage(subIds, StringKt.toStringJson(DonateBoostModelUi.copy$default(donateBoostModelUi, donateRateModel, 0L, null, false, boost, 0L, donateItemType, null, 166, null)));
             return;
         }
         DonatePage donatePage2 = this.pages.get(Pages.DIALOG);
         if (donatePage2 != null) {
-            donatePage2.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), StringKt.toStringJson(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() >= 1 ? donateItemModelUi.getTotalEarnings() : 1L), 0L, CollectionsKt.emptyList(), false, 0L, 0L, DonateItemType.EXP)));
+            donatePage2.onBackendMessage(DonateSubIds.DIALOG_INIT.getSubIds(), StringKt.toStringJson(new DonateBoostModelUi(new DonateRateModel(1, donateItemModelUi.getTotalEarnings() >= 1 ? donateItemModelUi.getTotalEarnings() : 1L), 0L, CollectionsKt.emptyList(), false, 0L, 0L, donateItemModelUi.getItemType(), null, 128, null)));
         }
     }
 
@@ -509,6 +634,18 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             Pages[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
+        }
+    }
+
+    /* compiled from: DonateScreen.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Companion;", "", "<init>", "()V", "DONATE_AZ_COINS_CATEGORY_ID", "", "DONATE_RUB_CATEGORY_ID", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
         }
     }
 

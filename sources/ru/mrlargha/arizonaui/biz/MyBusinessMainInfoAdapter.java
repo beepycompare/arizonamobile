@@ -33,8 +33,8 @@ public final class MyBusinessMainInfoAdapter extends RecyclerView.Adapter<Busine
         Intrinsics.checkNotNullExpressionValue(mainBusinessInfoStat, "get(...)");
         MyBusinessScreen.Companion.MainBusinessInfoStat mainBusinessInfoStat2 = mainBusinessInfoStat;
         MyBusinessMainStatItemBinding binding = holder.getBinding();
-        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainBusinessInfoStat2.getTitle(), 0.0f, 1, null));
-        binding.value.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainBusinessInfoStat2.getValue(), 0.0f, 1, null));
+        binding.title.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, mainBusinessInfoStat2.getTitle(), 0.0f, null, 3, null));
+        binding.value.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable(mainBusinessInfoStat2.getValue()));
         if (mainBusinessInfoStat2.getLabel() != null) {
             binding.labelContainer.setVisibility(0);
             binding.label.setText(mainBusinessInfoStat2.getLabel());
@@ -43,7 +43,7 @@ public final class MyBusinessMainInfoAdapter extends RecyclerView.Adapter<Busine
         }
         if (mainBusinessInfoStat2.getMaxValue() != null) {
             binding.maxValue.setVisibility(0);
-            binding.maxValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, "/ " + mainBusinessInfoStat2.getMaxValue(), 0.0f, 1, null));
+            binding.maxValue.setText(BusinessMoneyFormatterKt.toBusinessMoneySpannable("/ " + mainBusinessInfoStat2.getMaxValue()));
             return;
         }
         binding.maxValue.setVisibility(8);

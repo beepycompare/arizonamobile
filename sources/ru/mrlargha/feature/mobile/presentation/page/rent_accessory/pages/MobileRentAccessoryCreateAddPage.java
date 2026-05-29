@@ -176,8 +176,7 @@ public final class MobileRentAccessoryCreateAddPage {
         this.chosenItems.clear();
         MobileRentAccessoryAddBinding mobileRentAccessoryAddBinding = this.bindingPage;
         mobileRentAccessoryAddBinding.etDesc.setText("");
-        mobileRentAccessoryAddBinding.etKCost.setText("");
-        mobileRentAccessoryAddBinding.etKkCost.setText("");
+        mobileRentAccessoryAddBinding.etCost.setText("");
         setupListeners();
         selectTopBar(this.currentBar);
         initItems();
@@ -535,12 +534,9 @@ public final class MobileRentAccessoryCreateAddPage {
         InputFilter[] filters = customEditText.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
         customEditText.setFilters((InputFilter[]) ArraysKt.plus((InputFilter.LengthFilter[]) filters, new InputFilter.LengthFilter(this.currentLimits.getMaxDesc())));
-        EditText etKCost = mobileRentAccessoryAddBinding.etKCost;
-        Intrinsics.checkNotNullExpressionValue(etKCost, "etKCost");
-        setLimit(etKCost, this.currentLimits.getMaxCost(), this.currentLimits.getMinCost());
-        EditText etKkCost = mobileRentAccessoryAddBinding.etKkCost;
-        Intrinsics.checkNotNullExpressionValue(etKkCost, "etKkCost");
-        setLimit(etKkCost, this.currentLimits.getMaxCost(), this.currentLimits.getMinCost());
+        EditText etCost = mobileRentAccessoryAddBinding.etCost;
+        Intrinsics.checkNotNullExpressionValue(etCost, "etCost");
+        setLimit(etCost, this.currentLimits.getMaxCost(), this.currentLimits.getMinCost());
     }
 
     private final void setLimit(final EditText editText, final int i, final int i2) {
@@ -555,20 +551,13 @@ public final class MobileRentAccessoryCreateAddPage {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setLimit$lambda$0(MobileRentAccessoryCreateAddPage mobileRentAccessoryCreateAddPage, int i, EditText editText, int i2, TextView textView, int i3, KeyEvent keyEvent) {
         if (i3 == 6) {
-            Integer intOrNull = StringsKt.toIntOrNull(mobileRentAccessoryCreateAddPage.bindingPage.etKkCost.getText().toString());
-            Integer intOrNull2 = StringsKt.toIntOrNull(mobileRentAccessoryCreateAddPage.bindingPage.etKCost.getText().toString());
-            mobileRentAccessoryCreateAddPage.sumCost = 0;
-            if (intOrNull != null) {
-                mobileRentAccessoryCreateAddPage.sumCost += intOrNull.intValue() * 1000000;
-            }
-            if (intOrNull2 != null) {
-                mobileRentAccessoryCreateAddPage.sumCost += intOrNull2.intValue();
-            }
-            int i4 = mobileRentAccessoryCreateAddPage.sumCost;
-            if (i4 < i) {
+            Integer intOrNull = StringsKt.toIntOrNull(mobileRentAccessoryCreateAddPage.bindingPage.etCost.getText().toString());
+            int intValue = intOrNull != null ? intOrNull.intValue() : 0;
+            mobileRentAccessoryCreateAddPage.sumCost = intValue;
+            if (intValue < i) {
                 Toast.makeText(editText.getContext(), "Стоимость должна быть больше " + i, 0).show();
                 mobileRentAccessoryCreateAddPage.isCostSuc = false;
-            } else if (i4 > i2) {
+            } else if (intValue > i2) {
                 Toast.makeText(editText.getContext(), "Стоимость должна быть меньше " + i2, 0).show();
                 mobileRentAccessoryCreateAddPage.isCostSuc = false;
             } else {

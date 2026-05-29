@@ -1,7 +1,9 @@
 package com.arizona.game;
 
 import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import com.google.android.vending.expansion.downloader.Helpers;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.wardrumstudios.utils.WarDownloaderService;
 import com.wardrumstudios.utils.WarMedia;
 import java.io.File;
@@ -21,16 +24,13 @@ public abstract class GTASAInternal extends WarMedia {
     private static final int LEGACY_TOTAL_MEMORY_MB = 256;
     private static final String TAG = "GTASAInternal";
     static boolean UseAndroidHal = false;
+    private static boolean nativeLibrariesLoaded = false;
+    private static Throwable nativeLibraryLoadError;
+    private static String nativeLibraryLoadStage;
     static String vmVersion;
     boolean IsAmazonBuild = false;
     boolean UseExpansionPack = true;
     public boolean isInSocialClub = true;
-
-    @Override // com.wardrumstudios.utils.WarMedia
-    protected boolean localHasGameData() {
-        AfterDownloadFunction();
-        return true;
-    }
 
     static {
         System.out.println("**** Loading SO's");
@@ -38,22 +38,100 @@ public abstract class GTASAInternal extends WarMedia {
             vmVersion = System.getProperty("java.vm.version");
             System.out.println("vmVersion " + vmVersion);
             String str = Build.CPU_ABI;
-            boolean is64Bit = Process.is64Bit();
-            System.out.println("Abi: " + str + ", supported ABIs: " + Arrays.toString(Build.SUPPORTED_ABIS) + ", is64BitProcess: " + is64Bit + " was loaded!");
-            if (is64Bit) {
-                System.loadLibrary("SCAnd");
+            boolean is64BitRuntime = is64BitRuntime();
+            System.out.println("Abi: " + str + ", supported ABIs: " + Arrays.toString(Build.SUPPORTED_ABIS) + ", os.arch: " + System.getProperty("os.arch") + ", is64BitProcess: " + is64BitRuntime + " was loaded!");
+            if (is64BitRuntime) {
+                loadNativeLibrary("SCAnd");
             } else {
-                System.loadLibrary("ImmEmulatorJ");
+                loadNativeLibrary("ImmEmulatorJ");
             }
-            System.loadLibrary("GTASA");
-            System.loadLibrary("samp");
-            if (is64Bit) {
-                System.loadLibrary("bass");
-                System.loadLibrary("bass_fx");
-                System.loadLibrary("bass_ssl");
+            loadNativeLibrary("GTASA");
+            loadNativeLibrary("samp");
+            if (is64BitRuntime) {
+                loadNativeLibrary("bass");
+                loadNativeLibrary("bass_fx");
+                loadNativeLibrary("bass_ssl");
             }
+            nativeLibrariesLoaded = true;
         } catch (RuntimeException e) {
-            Log.d(TAG, e.toString());
+            handleNativeLibraryLoadFailure(e);
+        } catch (UnsatisfiedLinkError e2) {
+            handleNativeLibraryLoadFailure(e2);
+        }
+    }
+
+    @Override // com.wardrumstudios.utils.WarMedia
+    protected boolean localHasGameData() {
+        AfterDownloadFunction();
+        return true;
+    }
+
+    private static boolean is64BitRuntime() {
+        return Process.is64Bit() || isVmRuntime64Bit();
+    }
+
+    private static void loadNativeLibrary(String libraryName) {
+        nativeLibraryLoadStage = libraryName;
+        System.loadLibrary(libraryName);
+    }
+
+    private static void handleNativeLibraryLoadFailure(Throwable error) {
+        nativeLibraryLoadError = error;
+        Log.e(TAG, "Unable to load native library: " + nativeLibraryLoadStage, error);
+    }
+
+    public static boolean areNativeLibrariesLoaded() {
+        return nativeLibrariesLoaded;
+    }
+
+    public static Throwable getNativeLibraryLoadError() {
+        return nativeLibraryLoadError;
+    }
+
+    public static void recordNativeLibraryLoadFailure(Context context) {
+        if (nativeLibrariesLoaded || nativeLibraryLoadError == null) {
+            return;
+        }
+        try {
+            FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
+            firebaseCrashlytics.setCustomKey("native_load_library", String.valueOf(nativeLibraryLoadStage));
+            firebaseCrashlytics.setCustomKey("native_load_error", nativeLibraryLoadError.toString());
+            firebaseCrashlytics.setCustomKey("native_cpu_abi", Build.CPU_ABI);
+            firebaseCrashlytics.setCustomKey("native_supported_abis", Arrays.toString(Build.SUPPORTED_ABIS));
+            firebaseCrashlytics.setCustomKey("native_os_arch", String.valueOf(System.getProperty("os.arch")));
+            firebaseCrashlytics.setCustomKey("native_vm_version", String.valueOf(vmVersion));
+            firebaseCrashlytics.setCustomKey("native_api_level", Build.VERSION.SDK_INT);
+            firebaseCrashlytics.setCustomKey("native_brand", String.valueOf(Build.BRAND));
+            firebaseCrashlytics.setCustomKey("native_device", String.valueOf(Build.DEVICE));
+            firebaseCrashlytics.setCustomKey("native_manufacturer", String.valueOf(Build.MANUFACTURER));
+            firebaseCrashlytics.setCustomKey("native_model", String.valueOf(Build.MODEL));
+            firebaseCrashlytics.setCustomKey("native_product", String.valueOf(Build.PRODUCT));
+            firebaseCrashlytics.setCustomKey("native_version_name", BuildConfig.VERSION_NAME);
+            firebaseCrashlytics.setCustomKey("native_version_code", BuildConfig.VERSION_CODE);
+            firebaseCrashlytics.setCustomKey("native_process_is_64_bit", Process.is64Bit());
+            if (context != null) {
+                ApplicationInfo applicationInfo = context.getApplicationInfo();
+                firebaseCrashlytics.setCustomKey("native_package_name", context.getPackageName());
+                firebaseCrashlytics.setCustomKey("native_library_dir", String.valueOf(applicationInfo.nativeLibraryDir));
+                firebaseCrashlytics.setCustomKey("native_source_dir", String.valueOf(applicationInfo.sourceDir));
+            }
+            firebaseCrashlytics.recordException(new IllegalStateException("Unable to load native library: " + nativeLibraryLoadStage, nativeLibraryLoadError));
+        } catch (RuntimeException e) {
+            Log.w(TAG, "Unable to record native library load failure", e);
+        }
+    }
+
+    private static boolean isVmRuntime64Bit() {
+        try {
+            Class<?> cls = Class.forName("dalvik.system.VMRuntime");
+            Object invoke = cls.getDeclaredMethod("is64Bit", new Class[0]).invoke(cls.getDeclaredMethod("getRuntime", new Class[0]).invoke(null, new Object[0]), new Object[0]);
+            if (invoke instanceof Boolean) {
+                return ((Boolean) invoke).booleanValue();
+            }
+            return false;
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            Log.w(TAG, "Unable to read VMRuntime bitness", e);
+            return false;
         }
     }
 
@@ -174,7 +252,7 @@ public abstract class GTASAInternal extends WarMedia {
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onCreate(Bundle paramBundle) {
         System.out.println("Build Type: release");
-        System.out.println("Version: v17.2.0");
+        System.out.println("Version: v17.2.1");
         this.HELLO_ID = 123324;
         this.appIntent = new Intent(this, GTASA.class);
         this.appTickerText = "GTA3 San Andreas";

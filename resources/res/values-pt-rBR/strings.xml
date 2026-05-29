@@ -219,7 +219,9 @@
     <string name="container_items_count_example">6 itens</string>
     <string name="copy">Copiar</string>
     <string name="cost">custo</string>
+    <string name="cost_days">Custo por dia</string>
     <string name="cost_for_hour">Custo por hora</string>
+    <string name="cost_hours">Custo por hora</string>
     <string name="customize_character">Personalize seu personagem</string>
     <string name="default_error_message">Entrada inválida</string>
     <string name="default_popup_window_title">Janela pop-up</string>
@@ -694,6 +696,7 @@
     <string name="mobile_choose_class">Escolha a classe</string>
     <string name="mobile_choose_destination">Escolher destino</string>
     <string name="mobile_close">Fechar</string>
+    <string name="mobile_days_count">%1$d dias</string>
     <string name="mobile_driver_distance_meters">%1$s m</string>
     <string name="mobile_driver_on_way">O motorista esta a caminho!</string>
     <string name="mobile_enter_number">Digite o numero</string>
@@ -701,6 +704,7 @@
     <string name="mobile_filter">Filtro</string>
     <string name="mobile_find">buscar</string>
     <string name="mobile_fixed">Fixo</string>
+    <string name="mobile_for_full_rent">por todo o aluguel</string>
     <string name="mobile_from_price">a partir de %1$s$</string>
     <string name="mobile_fuel">COMBUSTIVEL</string>
     <string name="mobile_give_lot_for_rent">Colocar lote para alugar</string>
@@ -751,6 +755,7 @@
     <string name="mobile_playlists">Playlists</string>
     <string name="mobile_price">Preco</string>
     <string name="mobile_price_currency">%1$s$</string>
+    <string name="mobile_price_from_prefix">a partir de</string>
     <string name="mobile_publish">publicar</string>
     <string name="mobile_raise_rating">Aumentar classificacao</string>
     <string name="mobile_rate_trip">Avalie a qualidade da viagem</string>
@@ -868,6 +873,23 @@
     <string name="password">Senha</string>
     <string name="password_reset">Redefinir senha</string>
     <string name="password_toggle_content_description">Exibir senha</string>
+    <string name="payday_deposit_blocked">Bloqueado temporariamente</string>
+    <string name="payday_deposit_title">Deposito</string>
+    <string name="payday_fraction_title">Faccao</string>
+    <string name="payday_hour_label">Por hora</string>
+    <string name="payday_house_badge">CASA</string>
+    <string name="payday_law_title">Respeito a lei</string>
+    <string name="payday_level_title">Nivel %1$d</string>
+    <string name="payday_lost_property_title">Seu %1$s</string>
+    <string name="payday_lost_property_value">Expirou</string>
+    <string name="payday_med_card_title">&lt;ic&gt;1&lt;ic&gt; Cartao med.</string>
+    <string name="payday_no_fraction_hint">entre em uma faccao e ganhe a cada payday</string>
+    <string name="payday_no_uniform">Voce nao esta de uniforme</string>
+    <string name="payday_not_in_fraction">NAO PARTICIPA</string>
+    <string name="payday_online_label">SEU ONLINE</string>
+    <string name="payday_other_income_title">Outra renda</string>
+    <string name="payday_tax_warning_title">Expira em breve</string>
+    <string name="payday_today_label">Hoje</string>
     <string name="phoenix">Phoenix</string>
     <string name="ping">Ping</string>
     <string name="plate_american_numbers">placas\namericanas</string>
@@ -936,6 +958,7 @@
     <string name="publish_add">Publicar anuncio</string>
     <string name="published">(publicado)</string>
     <string name="purchase">Compra</string>
+    <string name="purchase_rubles_title">Compra de rublos</string>
     <string name="purchase_title">Compra de AZ Coins</string>
     <string name="radar_info">A frequencia do indicador mostra o quao perto voce esta do alienigena</string>
     <string name="range_end">Fim do intervalo</string>
@@ -975,6 +998,8 @@
     <string name="register">Registrar</string>
     <string name="registration">Cadastro</string>
     <string name="remember_me">Lembrar de mim</string>
+    <string name="rental_time_days">Tempo de aluguel / dias</string>
+    <string name="rental_time_hours">Tempo de aluguel / horas</string>
     <string name="replenishment_az_coins">Recarregar AZ Coins</string>
     <string name="replenishment_summ">Valor da recarga</string>
     <string name="retry">Tentar novamente</string>
@@ -1052,6 +1077,7 @@
     <string name="tooltip_description">dica</string>
     <string name="tooltip_label">mostrar dica</string>
     <string name="top_up">Recarregar</string>
+    <string name="trade_money">Dinheiro</string>
     <string name="trade_request">Aguardando confirmacao da troca</string>
     <string name="trade_shop">Loja de troca</string>
     <string name="trailer">Trailer</string>
@@ -1080,6 +1106,8 @@
     <string name="warehouse_fraction">deposito da faccao</string>
     <string name="warehouse_home_wardrobe">Armario de casa</string>
     <string name="warehouse_house">armario</string>
+    <string name="warehouse_laboratory">Armario</string>
+    <string name="warehouse_laboratory_loot">Itens do Frankie</string>
     <string name="warehouse_lombard_menu">menu da penhora</string>
     <string name="warehouse_motorhome">Casa sobre rodas</string>
     <string name="warehouse_nightstand">Criado-mudo</string>

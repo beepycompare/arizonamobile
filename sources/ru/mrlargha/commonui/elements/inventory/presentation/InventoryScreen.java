@@ -1037,61 +1037,41 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void menuClickHandlerRod(InventoryMenuData inventoryMenuData) {
         getRodWarehouseType(inventoryMenuData.getMenuId());
-        switch (inventoryMenuData.getMenuId()) {
-            case 0:
-                IBackendNotifier notifier = getNotifier();
-                int id = UIElementID.INVENTORY.getId();
-                byte[] bytes = "".getBytes(Charsets.UTF_8);
-                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                notifier.clickedWrapper(id, -1, 0, bytes);
-                defaultInventoryScreen();
-                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY.getId());
-                return;
-            case 1:
-                IBackendNotifier notifier2 = getNotifier();
-                int id2 = UIElementID.INVENTORY_VEHICLE_SCREEN.getId();
-                byte[] bytes2 = "".getBytes(Charsets.UTF_8);
-                Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
-                notifier2.clickedWrapper(id2, -1, 0, bytes2);
-                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_VEHICLE_SCREEN.getId());
-                return;
-            case 2:
-                IBackendNotifier notifier3 = getNotifier();
-                int id3 = UIElementID.INVENTORY_SECURITY_SCREEN.getId();
-                byte[] bytes3 = "".getBytes(Charsets.UTF_8);
-                Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
-                notifier3.clickedWrapper(id3, -1, 0, bytes3);
-                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
-                return;
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-            case 17:
-                IBackendNotifier notifier4 = getNotifier();
-                int id4 = UIElementID.INVENTORY_WAREHOUSE.getId();
-                byte[] bytes4 = StringKt.toStringJson(new BlockType(this.currentWarehouse)).getBytes(Charsets.UTF_8);
-                Intrinsics.checkNotNullExpressionValue(bytes4, "getBytes(...)");
-                notifier4.clickedWrapper(id4, -1, 0, bytes4);
-                return;
-            case 14:
-                sendRequestToClicks(5, 16384);
-                return;
-            case 15:
-                sendRequestToClicks(5, 32768);
-                return;
-            case 16:
-                sendRequestToClicks(5, 65536);
-                return;
-            default:
-                return;
+        int menuId = inventoryMenuData.getMenuId();
+        if (menuId == 0) {
+            IBackendNotifier notifier = getNotifier();
+            int id = UIElementID.INVENTORY.getId();
+            byte[] bytes = "".getBytes(Charsets.UTF_8);
+            Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+            notifier.clickedWrapper(id, -1, 0, bytes);
+            defaultInventoryScreen();
+            BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY.getId());
+        } else if (menuId == 1) {
+            IBackendNotifier notifier2 = getNotifier();
+            int id2 = UIElementID.INVENTORY_VEHICLE_SCREEN.getId();
+            byte[] bytes2 = "".getBytes(Charsets.UTF_8);
+            Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
+            notifier2.clickedWrapper(id2, -1, 0, bytes2);
+            BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_VEHICLE_SCREEN.getId());
+        } else if (menuId == 3 || menuId == 4 || menuId == 5 || menuId == 6 || menuId == 7 || menuId == 8 || menuId == 9 || menuId == 10 || menuId == 11 || menuId == 12 || menuId == 13 || menuId == 17 || menuId == RodInventoryButtonTypes.BUTTON_LABORATORY.ordinal() || menuId == RodInventoryButtonTypes.BUTTON_WAREHOUSE_GARAGE.ordinal() || menuId == RodInventoryButtonTypes.BUTTON_LABORATORY_LOOT.ordinal()) {
+            IBackendNotifier notifier3 = getNotifier();
+            int id3 = UIElementID.INVENTORY_WAREHOUSE.getId();
+            byte[] bytes3 = StringKt.toStringJson(new BlockType(this.currentWarehouse)).getBytes(Charsets.UTF_8);
+            Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
+            notifier3.clickedWrapper(id3, -1, 0, bytes3);
+        } else if (menuId == 2) {
+            IBackendNotifier notifier4 = getNotifier();
+            int id4 = UIElementID.INVENTORY_SECURITY_SCREEN.getId();
+            byte[] bytes4 = "".getBytes(Charsets.UTF_8);
+            Intrinsics.checkNotNullExpressionValue(bytes4, "getBytes(...)");
+            notifier4.clickedWrapper(id4, -1, 0, bytes4);
+            BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
+        } else if (menuId == 14) {
+            sendRequestToClicks(5, 16384);
+        } else if (menuId == 15) {
+            sendRequestToClicks(5, 32768);
+        } else if (menuId == 16) {
+            sendRequestToClicks(5, 65536);
         }
     }
 
@@ -1674,16 +1654,13 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             }
                             if (type == id15 || type == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || type == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                 Log.e("wallet", "onBackendMessage:");
-                                if (this.isWalletListVisible) {
-                                    setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                }
-                                if (!UtilsKt.isArizonaType()) {
-                                    setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
-                                } else {
-                                    setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                                setWalletInventoryList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                                if (UtilsKt.isArizonaType()) {
                                     getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
                                     if (inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || inventoryResponse.getType() == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                         this.person.openFishing();
+                                    } else {
+                                        this.person.openWallet();
                                     }
                                 }
                             } else if (type == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
@@ -1815,7 +1792,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         TextView etStoreMoney = this.binding.layoutWarehouse.etStoreMoney;
                         Intrinsics.checkNotNullExpressionValue(etStoreMoney, "etStoreMoney");
                         etStoreMoney.setVisibility(warehouseMoney.getMoney() != -1 ? 0 : 8);
-                        this.binding.layoutWarehouse.etStoreMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(warehouseMoney.getMoney(), false, null, null, 7, null));
+                        this.binding.layoutWarehouse.etStoreMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(warehouseMoney.getMoney(), false, null, null, null, 15, null));
                         boolean isArizonaType = UtilsKt.isArizonaType();
                         MainInventoryBinding mainInventoryBinding = this.binding;
                         if (isArizonaType) {
@@ -2531,6 +2508,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 initObservers();
             } else if (!UtilsKt.isArizonaType()) {
                 this.mainInventoryAdapter.setWalletVisible(false);
+            } else {
+                this.isWalletListVisible = false;
+                getWalletInventoryList().clear();
+                getWalletInventoryAdapter().submitList(CollectionsKt.emptyList());
+                this.person.closeWalletLocally();
+                BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY.getId());
             }
         }
     }
@@ -2596,47 +2579,36 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void getRodWarehouseType(int i) {
         int id;
-        if (i != 17) {
-            switch (i) {
-                case 2:
-                    id = RodinaBlockType.BLOCK_TYPE_TRASH.getId();
-                    break;
-                case 3:
-                    id = RodinaBlockType.BLOCK_TYPE_TRUNK.getId();
-                    break;
-                case 4:
-                    id = RodinaBlockType.BLOCK_TYPE_HOUSE.getId();
-                    break;
-                case 5:
-                    id = RodinaBlockType.BLOCK_TYPE_DRAWER.getId();
-                    break;
-                case 6:
-                    id = RodinaBlockType.BLOCK_TYPE_SHIP.getId();
-                    break;
-                case 7:
-                    id = RodinaBlockType.BLOCK_TYPE_CAMPER_CUPBOARD.getId();
-                    break;
-                case 8:
-                    id = RodinaBlockType.BLOCK_TYPE_BANK_VAULT.getId();
-                    break;
-                case 9:
-                    id = RodinaBlockType.BLOCK_TYPE_FRACTION_WAREHOUSE.getId();
-                    break;
-                case 10:
-                    id = RodinaBlockType.BLOCK_TYPE_FAMILY_WAREHOUSE.getId();
-                    break;
-                case 11:
-                    id = RodinaBlockType.BLOCK_TYPE_GARDENING_BARN.getId();
-                    break;
-                case 12:
-                    id = RodinaBlockType.BLOCK_TYPE_HOUSE_GARAGE.getId();
-                    break;
-                default:
-                    id = 0;
-                    break;
-            }
-        } else {
+        if (i == 2) {
+            id = RodinaBlockType.BLOCK_TYPE_TRASH.getId();
+        } else if (i == 3) {
+            id = RodinaBlockType.BLOCK_TYPE_TRUNK.getId();
+        } else if (i == 4) {
+            id = RodinaBlockType.BLOCK_TYPE_HOUSE.getId();
+        } else if (i == 5) {
+            id = RodinaBlockType.BLOCK_TYPE_DRAWER.getId();
+        } else if (i == 6) {
+            id = RodinaBlockType.BLOCK_TYPE_SHIP.getId();
+        } else if (i == 7) {
+            id = RodinaBlockType.BLOCK_TYPE_CAMPER_CUPBOARD.getId();
+        } else if (i == 8) {
+            id = RodinaBlockType.BLOCK_TYPE_BANK_VAULT.getId();
+        } else if (i == 9) {
+            id = RodinaBlockType.BLOCK_TYPE_FRACTION_WAREHOUSE.getId();
+        } else if (i == 10) {
+            id = RodinaBlockType.BLOCK_TYPE_FAMILY_WAREHOUSE.getId();
+        } else if (i == 11) {
+            id = RodinaBlockType.BLOCK_TYPE_GARDENING_BARN.getId();
+        } else if (i == 12) {
+            id = RodinaBlockType.BLOCK_TYPE_HOUSE_GARAGE.getId();
+        } else if (i == 17) {
             id = RodinaBlockType.BLOCK_TYPE_TRAILER.getId();
+        } else if (i == RodInventoryButtonTypes.BUTTON_LABORATORY.ordinal()) {
+            id = RodinaBlockType.BLOCK_TYPE_LABORATORY.getId();
+        } else if (i == RodInventoryButtonTypes.BUTTON_WAREHOUSE_GARAGE.ordinal()) {
+            id = RodinaBlockType.BLOCK_TYPE_GARAGE.getId();
+        } else {
+            id = i == RodInventoryButtonTypes.BUTTON_LABORATORY_LOOT.ordinal() ? RodinaBlockType.BLOCK_TYPE_LABORATORY_LOOT.getId() : 0;
         }
         this.currentWarehouse = id;
     }

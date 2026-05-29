@@ -863,8 +863,8 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 btnSharpenEnableStatus(false);
             }
             this.binding.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-            this.binding.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
-            this.binding.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+            this.binding.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
+            this.binding.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
             InventoryItem inventoryItem = this.currentPaintItem;
             long longValue = (inventoryItem == null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
             Integer amount2 = craftItemInfo.getAmount();

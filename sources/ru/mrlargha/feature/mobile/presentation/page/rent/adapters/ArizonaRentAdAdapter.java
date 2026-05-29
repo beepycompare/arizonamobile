@@ -105,7 +105,7 @@ public final class ArizonaRentAdAdapter extends ListAdapter<ArizonaRentAdModel, 
             TextView tvX = mpArizonaRentAdItemBinding.tvX;
             Intrinsics.checkNotNullExpressionValue(tvX, "tvX");
             tvX.setVisibility(arizonaRentAdModel.getXPayDay() > 1 ? 0 : 8);
-            mpArizonaRentAdItemBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(arizonaRentAdModel.getCost(), false, null, null, 7, null));
+            mpArizonaRentAdItemBinding.tvMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(arizonaRentAdModel.getCost(), false, null, null, null, 15, null));
             mpArizonaRentAdItemBinding.tvUserName.setText(context.getString(R.string.name_square_brackets, arizonaRentAdModel.getOwnerName(), String.valueOf(arizonaRentAdModel.getHouseOwnerId())));
             mpArizonaRentAdItemBinding.tvTime.setText(context.getString(arizonaRentAdModel.isFully() ? R.string.per_day : R.string.per_hour));
             TextView tvDesc = mpArizonaRentAdItemBinding.tvDesc;

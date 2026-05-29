@@ -6,6 +6,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -45,6 +46,7 @@ public final class TransportAdapter extends RecyclerView.Adapter<TransportViewHo
     public void onBindViewHolder(TransportViewHolder holder, int i) {
         int parseColor;
         int parseColor2;
+        String formattedTransportCost;
         Intrinsics.checkNotNullParameter(holder, "holder");
         TransportItem transportItem = this.allList.get(i);
         Intrinsics.checkNotNullExpressionValue(transportItem, "get(...)");
@@ -63,7 +65,9 @@ public final class TransportAdapter extends RecyclerView.Adapter<TransportViewHo
             binding.costContainer.setVisibility(8);
         } else {
             binding.costContainer.setVisibility(0);
-            binding.documentsTransportItemCost.setText(transportItem2.getCost());
+            TextView textView = binding.documentsTransportItemCost;
+            formattedTransportCost = TransportAdapterKt.toFormattedTransportCost(transportItem2.getCost());
+            textView.setText(formattedTransportCost);
         }
         String milliage = transportItem2.getMilliage();
         if (milliage == null || milliage.length() == 0) {

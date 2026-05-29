@@ -20,6 +20,7 @@ import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.ConverterKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneArizonamobilCarInfoPageBinding;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneBinding;
@@ -87,7 +88,7 @@ public final class CarSharingInfo implements MobileController {
             TextView textView = bind.mpArizonamobileFuelText;
             Intrinsics.areEqual(mobilePhoneAvailableCar.getFuelType(), "petrol");
             textView.setText(context.getString(R.string.mobile_fuel));
-            bind.mpArizonamobilePriceDescription.setText(mobilePhoneAvailableCar.getPrice() + " $ на всю аренду");
+            bind.mpArizonamobilePriceDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mobilePhoneAvailableCar.getPrice(), false, null, " " + context.getString(R.string.mobile_for_full_rent), null, 11, null));
             bind.mpFuelIndicator.setLayoutParams(new ConstraintLayout.LayoutParams(ConverterKt.dpToPx(mobilePhoneAvailableCar.getFuelValue(), context), ConverterKt.dpToPx(110, context)));
         }
         bind.mpArizonamobilePayRent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.carsharing.CarSharingInfo$$ExternalSyntheticLambda0
@@ -118,7 +119,7 @@ public final class CarSharingInfo implements MobileController {
         TextView textView = this.mpCarSharingInfoBinding.mpArizonamobileFuelText;
         Intrinsics.areEqual(carInfo.getFuelType(), "petrol");
         textView.setText(this.context.getString(R.string.mobile_fuel));
-        this.mpCarSharingInfoBinding.mpArizonamobilePriceDescription.setText(carInfo.getPrice() + " $ на всю аренду");
+        this.mpCarSharingInfoBinding.mpArizonamobilePriceDescription.setText(MoneyElementKt.toMoneyFormattedSpannable$default(carInfo.getPrice(), false, null, " " + this.context.getString(R.string.mobile_for_full_rent), null, 11, null));
         this.mpCarSharingInfoBinding.mpFuelIndicator.setLayoutParams(new ConstraintLayout.LayoutParams(ConverterKt.dpToPx((ConverterKt.dpToPx(132, this.context) / 100) * carInfo.getFuelValue(), this.context), ConverterKt.dpToPx(110, this.context)));
     }
 

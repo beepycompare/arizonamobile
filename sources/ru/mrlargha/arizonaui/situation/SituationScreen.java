@@ -161,8 +161,8 @@ public final class SituationScreen extends SAMPUIElement {
         situationScreenBinding.successRolePage.setVisibility(8);
         situationScreenBinding.alertPage.setVisibility(0);
         situationScreenBinding.mainPageTitle.setText(alertInfo.getTitle());
-        situationScreenBinding.mainPageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, alertInfo.getDescription(), 0.0f, 1, null));
-        situationScreenBinding.actionButtonMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(alertInfo.getJoinReward(), false, "+", null, 5, null));
+        situationScreenBinding.mainPageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, alertInfo.getDescription(), 0.0f, null, 3, null));
+        situationScreenBinding.actionButtonMoney.setText(MoneyElementKt.toMoneyFormattedSpannable$default(alertInfo.getJoinReward(), false, "+", null, null, 13, null));
         ImageView dollarIc = situationScreenBinding.dollarIc;
         Intrinsics.checkNotNullExpressionValue(dollarIc, "dollarIc");
         dollarIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
@@ -229,7 +229,7 @@ public final class SituationScreen extends SAMPUIElement {
         situationScreenBinding.chooseRolePage.setVisibility(8);
         situationScreenBinding.successRolePage.setVisibility(0);
         situationScreenBinding.successRolePageRole.setText(chosenRoleInfo.getSubTitle());
-        situationScreenBinding.successRolePageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, chosenRoleInfo.getDescription(), 0.0f, 1, null));
+        situationScreenBinding.successRolePageDescription.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, chosenRoleInfo.getDescription(), 0.0f, null, 3, null));
     }
 
     private final void setFinalPageInfo(Companion.FinalPageInfo finalPageInfo) {

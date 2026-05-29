@@ -10,18 +10,14 @@ import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 /* loaded from: classes6.dex */
 public final class HudElementMoneyBinding implements ViewBinding {
-    public final HudElementMoneyItemBinding blockK;
-    public final HudElementMoneyItemBinding blockKK;
-    public final HudElementMoneyItemBinding blockM;
+    public final HudElementMoneyItemBinding blockMoney;
     public final LinearLayout main;
     public final FrameLayout root;
     private final FrameLayout rootView;
 
-    private HudElementMoneyBinding(FrameLayout rootView, HudElementMoneyItemBinding blockK, HudElementMoneyItemBinding blockKK, HudElementMoneyItemBinding blockM, LinearLayout main, FrameLayout root) {
+    private HudElementMoneyBinding(FrameLayout rootView, HudElementMoneyItemBinding blockMoney, LinearLayout main, FrameLayout root) {
         this.rootView = rootView;
-        this.blockK = blockK;
-        this.blockKK = blockKK;
-        this.blockM = blockM;
+        this.blockMoney = blockMoney;
         this.main = main;
         this.root = root;
     }
@@ -44,26 +40,17 @@ public final class HudElementMoneyBinding implements ViewBinding {
     }
 
     public static HudElementMoneyBinding bind(View rootView) {
-        int i = R.id.blockK;
+        int i = R.id.blockMoney;
         View findChildViewById = ViewBindings.findChildViewById(rootView, i);
         if (findChildViewById != null) {
             HudElementMoneyItemBinding bind = HudElementMoneyItemBinding.bind(findChildViewById);
-            i = R.id.blockKK;
-            View findChildViewById2 = ViewBindings.findChildViewById(rootView, i);
-            if (findChildViewById2 != null) {
-                HudElementMoneyItemBinding bind2 = HudElementMoneyItemBinding.bind(findChildViewById2);
-                i = R.id.blockM;
-                View findChildViewById3 = ViewBindings.findChildViewById(rootView, i);
-                if (findChildViewById3 != null) {
-                    HudElementMoneyItemBinding bind3 = HudElementMoneyItemBinding.bind(findChildViewById3);
-                    i = R.id.main;
-                    LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                    if (linearLayout != null) {
-                        FrameLayout frameLayout = (FrameLayout) rootView;
-                        return new HudElementMoneyBinding(frameLayout, bind, bind2, bind3, linearLayout, frameLayout);
-                    }
-                }
+            int i2 = R.id.main;
+            LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i2);
+            if (linearLayout != null) {
+                FrameLayout frameLayout = (FrameLayout) rootView;
+                return new HudElementMoneyBinding(frameLayout, bind, linearLayout, frameLayout);
             }
+            i = i2;
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
     }

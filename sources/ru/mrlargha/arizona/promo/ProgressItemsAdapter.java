@@ -62,7 +62,7 @@ public final class ProgressItemsAdapter extends RecyclerView.Adapter<ProgressIte
             promoReward = (PromoReward) CollectionsKt.first((List<? extends Object>) this.itemsList);
         }
         ProgressItemBinding binding = holder.getBinding();
-        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, 1, null));
+        binding.text.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, promoReward.getTitle(), 0.0f, null, 3, null));
         binding.text2.setText(promoReward.getRequirement());
         binding.colorBottom.setBackgroundColor(Color.parseColor(promoReward.getColor()));
         if (promoReward.getAvailable() == 1 || promoReward.getReceived() == 1) {

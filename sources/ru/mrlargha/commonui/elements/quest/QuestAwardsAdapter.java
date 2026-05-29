@@ -42,13 +42,13 @@ public final class QuestAwardsAdapter extends RecyclerView.Adapter<QuestAwardsVi
         Intrinsics.checkNotNullExpressionValue(questAwards, "get(...)");
         QuestAwards questAwards2 = questAwards;
         if (UtilsKt.isArizonaType()) {
-            binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, 1, null));
+            binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, null, 3, null));
             Picasso picasso = Picasso.get();
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso.load(projectResourceUrl$default + "assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
             return;
         }
-        binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, 1, null));
+        binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, null, 3, null));
         Picasso picasso2 = Picasso.get();
         String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         picasso2.load(projectResourceUrl$default2 + "assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);

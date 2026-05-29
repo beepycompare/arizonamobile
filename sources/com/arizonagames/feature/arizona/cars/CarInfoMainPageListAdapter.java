@@ -49,7 +49,7 @@ public final class CarInfoMainPageListAdapter extends ListAdapter<LabelInfo, Vie
         Intrinsics.checkNotNullParameter(holder, "holder");
         CarsFirstScreenCarParamItemBinding binding = holder.getBinding();
         LabelInfo item = getItem(i);
-        binding.itemValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, 1, null));
+        binding.itemValue.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getTitle(), 0.0f, null, 3, null));
         String icon = item.getIcon();
         int hashCode = icon.hashCode();
         if (hashCode == -1437013366) {

@@ -161,7 +161,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                 TradeScreen.this.closeScreen();
             }
         });
-        bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", activity, new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
+        bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("<ic>1<ic> " + targetActivity.getString(R.string.trade_money) + " <ic>2<ic>", activity, new IconAndSize(R.drawable.arizona_dollar, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
         tradeEditText.setType(0);
         tradeEditText2.setType(0);
         if (UtilsKt.isArizonaType()) {
@@ -354,19 +354,19 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final CharSequence setButtonText(int i) {
-        if (i != 0) {
-            if (i != 1) {
-                if (i != 2) {
-                    if (i == 3) {
-                        return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Acs <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_asc_ic, R.dimen._8sdp, R.dimen._8sdp));
-                    }
-                    return "";
+        if (i == 0) {
+            return TextWithIconsKt.toTextWithIcons("<ic>1<ic> " + getTargetActivity().getString(R.string.trade_money) + " <ic>2<ic>", getTargetActivity(), new IconAndSize(R.drawable.arizona_dollar, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
+        } else if (i != 1) {
+            if (i != 2) {
+                if (i == 3) {
+                    return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Acs <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_asc_ic, R.dimen._8sdp, R.dimen._8sdp));
                 }
-                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Bitcoin <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_bitcoin_ic, R.dimen._8sdp, R.dimen._8sdp));
+                return "";
             }
+            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Bitcoin <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_bitcoin_ic, R.dimen._8sdp, R.dimen._8sdp));
+        } else {
             return TextWithIconsKt.toTextWithIcons("<ic>2<ic> Euro <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_euro_ic, R.dimen._8sdp, R.dimen._8sdp));
         }
-        return TextWithIconsKt.toTextWithIcons("$ Деньги <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
     }
 
     private final void defaultScreenState() {
@@ -561,14 +561,15 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void editValueCostUi(TradeValueResponse tradeValueResponse) {
-        this.topMoneyController.setValue(tradeValueResponse.getSelf().getValue());
-        this.bottomMoneyController.setValue(tradeValueResponse.getTarget().getValue());
         this.binding.btnReceiveItemText.setText(setButtonText(tradeValueResponse.getTarget().getType()));
         this.bottomMoneyController.setType(tradeValueResponse.getTarget().getType());
-        if (UtilsKt.isArizonaType()) {
-            return;
+        if (!UtilsKt.isArizonaType()) {
+            this.topMoneyController.setType(tradeValueResponse.getSelf().getType());
         }
-        this.topMoneyController.setType(tradeValueResponse.getSelf().getType());
+        if (!this.topMoneyController.hasFocus() || this.isConfirmedClicked) {
+            this.topMoneyController.setValue(tradeValueResponse.getSelf().getValue());
+        }
+        this.bottomMoneyController.setValue(tradeValueResponse.getTarget().getValue());
     }
 
     private final void editUi(TradeResponse tradeResponse) {

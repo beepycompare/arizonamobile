@@ -50,18 +50,20 @@ public final class TradeScreenBinding implements ViewBinding {
     public final ConstraintLayout parentLayout;
     public final ProgressBar progressBar;
     public final LinearLayout receiveItemsContainer;
+    public final FrameLayout receiveItemsLabelContainer;
     private final ConstraintLayout rootView;
     public final RecyclerView rvInventory;
     public final RecyclerView rvReceiveItems;
     public final RecyclerView rvSendItems;
     public final LinearLayout sendItemContainer;
+    public final FrameLayout sendItemsLabelContainer;
     public final TextView tvLoadingTitle;
     public final TextView tvReceiveItems;
     public final TextView tvSendItems;
     public final TextView tvTitle;
     public final ImageView viewLine;
 
-    private TradeScreenBinding(ConstraintLayout rootView, Button btnAccept, CustomCardView btnArizonaReceiveItem, AppCompatImageView btnBack, Button btnCancel, CustomCardView btnReceiveItem, TextView btnReceiveItemText, CustomCardView btnSendItem, TextView btnSendItemText, CustomCardView buttonCurrency1, CustomCardView buttonCurrency2, CustomCardView buttonCurrency3, CustomCardView buttonCurrency4, FrameLayout currencyChoice, ViewUniversalMoneyInputBinding etReceiveItems, ViewUniversalMoneyInputBinding etSendItems, Group groupProgressBar, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, Guideline guidelineVer5, Guideline guidelineVer6, ImageView ivReceiveStatus, ImageView ivSendStatus, LinearLayout layoutButtons, ConstraintLayout parentLayout, ProgressBar progressBar, LinearLayout receiveItemsContainer, RecyclerView rvInventory, RecyclerView rvReceiveItems, RecyclerView rvSendItems, LinearLayout sendItemContainer, TextView tvLoadingTitle, TextView tvReceiveItems, TextView tvSendItems, TextView tvTitle, ImageView viewLine) {
+    private TradeScreenBinding(ConstraintLayout rootView, Button btnAccept, CustomCardView btnArizonaReceiveItem, AppCompatImageView btnBack, Button btnCancel, CustomCardView btnReceiveItem, TextView btnReceiveItemText, CustomCardView btnSendItem, TextView btnSendItemText, CustomCardView buttonCurrency1, CustomCardView buttonCurrency2, CustomCardView buttonCurrency3, CustomCardView buttonCurrency4, FrameLayout currencyChoice, ViewUniversalMoneyInputBinding etReceiveItems, ViewUniversalMoneyInputBinding etSendItems, Group groupProgressBar, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, Guideline guidelineVer5, Guideline guidelineVer6, ImageView ivReceiveStatus, ImageView ivSendStatus, LinearLayout layoutButtons, ConstraintLayout parentLayout, ProgressBar progressBar, LinearLayout receiveItemsContainer, FrameLayout receiveItemsLabelContainer, RecyclerView rvInventory, RecyclerView rvReceiveItems, RecyclerView rvSendItems, LinearLayout sendItemContainer, FrameLayout sendItemsLabelContainer, TextView tvLoadingTitle, TextView tvReceiveItems, TextView tvSendItems, TextView tvTitle, ImageView viewLine) {
         this.rootView = rootView;
         this.btnAccept = btnAccept;
         this.btnArizonaReceiveItem = btnArizonaReceiveItem;
@@ -93,10 +95,12 @@ public final class TradeScreenBinding implements ViewBinding {
         this.parentLayout = parentLayout;
         this.progressBar = progressBar;
         this.receiveItemsContainer = receiveItemsContainer;
+        this.receiveItemsLabelContainer = receiveItemsLabelContainer;
         this.rvInventory = rvInventory;
         this.rvReceiveItems = rvReceiveItems;
         this.rvSendItems = rvSendItems;
         this.sendItemContainer = sendItemContainer;
+        this.sendItemsLabelContainer = sendItemsLabelContainer;
         this.tvLoadingTitle = tvLoadingTitle;
         this.tvReceiveItems = tvReceiveItems;
         this.tvSendItems = tvSendItems;
@@ -210,34 +214,42 @@ public final class TradeScreenBinding implements ViewBinding {
                                                                                                                     i = R.id.receive_items_container;
                                                                                                                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                                     if (linearLayout2 != null) {
-                                                                                                                        i = R.id.rvInventory;
-                                                                                                                        RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                        if (recyclerView != null) {
-                                                                                                                            i = R.id.rvReceiveItems;
-                                                                                                                            RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                            if (recyclerView2 != null) {
-                                                                                                                                i = R.id.rvSendItems;
-                                                                                                                                RecyclerView recyclerView3 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                if (recyclerView3 != null) {
-                                                                                                                                    i = R.id.send_item_container;
-                                                                                                                                    LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                    if (linearLayout3 != null) {
-                                                                                                                                        i = R.id.tvLoadingTitle;
-                                                                                                                                        TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                        if (textView3 != null) {
-                                                                                                                                            i = R.id.tvReceiveItems;
-                                                                                                                                            TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                            if (textView4 != null) {
-                                                                                                                                                i = R.id.tvSendItems;
-                                                                                                                                                TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                if (textView5 != null) {
-                                                                                                                                                    i = R.id.tvTitle;
-                                                                                                                                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                    if (textView6 != null) {
-                                                                                                                                                        i = R.id.viewLine;
-                                                                                                                                                        ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                        if (imageView3 != null) {
-                                                                                                                                                            return new TradeScreenBinding(constraintLayout, button, customCardView, appCompatImageView, button2, customCardView2, textView, customCardView3, textView2, customCardView4, customCardView5, customCardView6, customCardView7, frameLayout, bind, bind2, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8, imageView, imageView2, linearLayout, constraintLayout, progressBar, linearLayout2, recyclerView, recyclerView2, recyclerView3, linearLayout3, textView3, textView4, textView5, textView6, imageView3);
+                                                                                                                        i = R.id.receive_items_label_container;
+                                                                                                                        FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                        if (frameLayout2 != null) {
+                                                                                                                            i = R.id.rvInventory;
+                                                                                                                            RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                            if (recyclerView != null) {
+                                                                                                                                i = R.id.rvReceiveItems;
+                                                                                                                                RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                if (recyclerView2 != null) {
+                                                                                                                                    i = R.id.rvSendItems;
+                                                                                                                                    RecyclerView recyclerView3 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                    if (recyclerView3 != null) {
+                                                                                                                                        i = R.id.send_item_container;
+                                                                                                                                        LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                        if (linearLayout3 != null) {
+                                                                                                                                            i = R.id.send_items_label_container;
+                                                                                                                                            FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                            if (frameLayout3 != null) {
+                                                                                                                                                i = R.id.tvLoadingTitle;
+                                                                                                                                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                if (textView3 != null) {
+                                                                                                                                                    i = R.id.tvReceiveItems;
+                                                                                                                                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                    if (textView4 != null) {
+                                                                                                                                                        i = R.id.tvSendItems;
+                                                                                                                                                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                        if (textView5 != null) {
+                                                                                                                                                            i = R.id.tvTitle;
+                                                                                                                                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                            if (textView6 != null) {
+                                                                                                                                                                i = R.id.viewLine;
+                                                                                                                                                                ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                if (imageView3 != null) {
+                                                                                                                                                                    return new TradeScreenBinding(constraintLayout, button, customCardView, appCompatImageView, button2, customCardView2, textView, customCardView3, textView2, customCardView4, customCardView5, customCardView6, customCardView7, frameLayout, bind, bind2, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8, imageView, imageView2, linearLayout, constraintLayout, progressBar, linearLayout2, frameLayout2, recyclerView, recyclerView2, recyclerView3, linearLayout3, frameLayout3, textView3, textView4, textView5, textView6, imageView3);
+                                                                                                                                                                }
+                                                                                                                                                            }
                                                                                                                                                         }
                                                                                                                                                     }
                                                                                                                                                 }

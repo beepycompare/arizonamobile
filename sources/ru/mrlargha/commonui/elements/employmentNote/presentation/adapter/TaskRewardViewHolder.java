@@ -46,7 +46,7 @@ public final class TaskRewardViewHolder extends RecyclerView.ViewHolder {
             this.loadImageJob = launch$default;
             return;
         }
-        itemTaskRewardBinding.tvRewardDesc.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getAmount(), false, null, null, 7, null));
+        itemTaskRewardBinding.tvRewardDesc.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getAmount(), false, null, null, null, 15, null));
         itemTaskRewardBinding.ivReward.setImageResource(R.drawable.ic_task_reward_test);
     }
 }

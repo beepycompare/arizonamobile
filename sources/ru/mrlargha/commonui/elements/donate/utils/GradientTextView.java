@@ -49,11 +49,12 @@ public final class GradientTextView extends AppCompatTextView {
 
     public final void setColorList(int[] colorList) {
         Intrinsics.checkNotNullParameter(colorList, "colorList");
-        if (colorList.length > 1) {
-            this.colorArrayList = colorList;
-            updateShader();
-            invalidate();
+        if (colorList.length <= 1) {
+            colorList = new int[]{getCurrentTextColor(), getCurrentTextColor()};
         }
+        this.colorArrayList = colorList;
+        updateShader();
+        invalidate();
     }
 
     private final void updateShader() {

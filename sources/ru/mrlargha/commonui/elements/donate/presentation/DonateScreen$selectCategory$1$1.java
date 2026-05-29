@@ -14,16 +14,16 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$onCategoryClick$1$1", f = "DonateScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$selectCategory$1$1", f = "DonateScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes6.dex */
-public final class DonateScreen$onCategoryClick$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+public final class DonateScreen$selectCategory$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateCategoryModelUi $model;
     int label;
     final /* synthetic */ DonateScreen this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateScreen$onCategoryClick$1$1(DonateScreen donateScreen, DonateCategoryModelUi donateCategoryModelUi, Continuation<? super DonateScreen$onCategoryClick$1$1> continuation) {
+    public DonateScreen$selectCategory$1$1(DonateScreen donateScreen, DonateCategoryModelUi donateCategoryModelUi, Continuation<? super DonateScreen$selectCategory$1$1> continuation) {
         super(2, continuation);
         this.this$0 = donateScreen;
         this.$model = donateCategoryModelUi;
@@ -31,12 +31,12 @@ public final class DonateScreen$onCategoryClick$1$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateScreen$onCategoryClick$1$1(this.this$0, this.$model, continuation);
+        return new DonateScreen$selectCategory$1$1(this.this$0, this.$model, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((DonateScreen$onCategoryClick$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        return ((DonateScreen$selectCategory$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

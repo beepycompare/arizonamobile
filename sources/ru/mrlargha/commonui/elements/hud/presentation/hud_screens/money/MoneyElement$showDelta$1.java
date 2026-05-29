@@ -16,7 +16,7 @@ import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MoneyElement.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money.MoneyElement$showDelta$1", f = "MoneyElement.kt", i = {}, l = {146}, m = "invokeSuspend", n = {}, nl = {147}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money.MoneyElement$showDelta$1", f = "MoneyElement.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, nl = {68}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class MoneyElement$showDelta$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -55,17 +55,9 @@ public final class MoneyElement$showDelta$1 extends SuspendLambda implements Fun
             ResultKt.throwOnFailure(obj);
         }
         MoneyElement moneyElement = this.this$0;
-        LinearLayout deltaRow = moneyElement.getBinding().blockM.deltaRow;
+        LinearLayout deltaRow = moneyElement.getBinding().blockMoney.deltaRow;
         Intrinsics.checkNotNullExpressionValue(deltaRow, "deltaRow");
         moneyElement.hideDeltaAnimated(deltaRow);
-        MoneyElement moneyElement2 = this.this$0;
-        LinearLayout deltaRow2 = moneyElement2.getBinding().blockKK.deltaRow;
-        Intrinsics.checkNotNullExpressionValue(deltaRow2, "deltaRow");
-        moneyElement2.hideDeltaAnimated(deltaRow2);
-        MoneyElement moneyElement3 = this.this$0;
-        LinearLayout deltaRow3 = moneyElement3.getBinding().blockK.deltaRow;
-        Intrinsics.checkNotNullExpressionValue(deltaRow3, "deltaRow");
-        moneyElement3.hideDeltaAnimated(deltaRow3);
         return Unit.INSTANCE;
     }
 }

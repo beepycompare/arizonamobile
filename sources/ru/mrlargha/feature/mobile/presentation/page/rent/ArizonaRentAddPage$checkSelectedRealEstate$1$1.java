@@ -3,7 +3,6 @@ package ru.mrlargha.feature.mobile.presentation.page.rent;
 import android.app.Activity;
 import android.graphics.Color;
 import android.widget.TextView;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,6 +15,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
+import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MpArizonaRentAddPageBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreateAdModel;
@@ -23,7 +23,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentRealE
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentAddPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {380, 401}, m = "invokeSuspend", n = {}, nl = {387, 408}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {359, 380}, m = "invokeSuspend", n = {}, nl = {366, 387}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage$checkSelectedRealEstate$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MpArizonaRentAddPageBinding $this_with;
@@ -137,7 +137,7 @@ public final class ArizonaRentAddPage$checkSelectedRealEstate$1$1 extends Suspen
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {381}, m = "invokeSuspend", n = {}, nl = {386}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {RouletteView.PREMIUM_ROULETTE_WIDTH}, m = "invokeSuspend", n = {}, nl = {365}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -186,7 +186,7 @@ public final class ArizonaRentAddPage$checkSelectedRealEstate$1$1 extends Suspen
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$2", f = "ArizonaRentAddPage.kt", i = {}, l = {TypedValues.CycleType.TYPE_VISIBILITY}, m = "invokeSuspend", n = {}, nl = {407}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$2", f = "ArizonaRentAddPage.kt", i = {}, l = {381}, m = "invokeSuspend", n = {}, nl = {386}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$checkSelectedRealEstate$1$1$2  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

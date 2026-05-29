@@ -1047,8 +1047,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     /* JADX WARN: Code restructure failed: missing block: B:45:0x013c, code lost:
         if (r3 != 4) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0234  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0236  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1164,8 +1164,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     btnPaintEnableStatus(false);
                 }
                 this.binding.infoContainers.sharpingInfoContainer.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-                this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
-                this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+                this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
+                this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
                 InventoryItem inventoryItem = this.currentLeftItem;
                 long longValue = (inventoryItem != null || (amount = inventoryItem.getAmount()) == null) ? 0L : amount.longValue();
                 Integer amount2 = craftItemInfo.getAmount();
@@ -1199,8 +1199,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 btnSharpenEnableStatus(false);
             }
             this.binding.infoContainers.sharpingInfoContainer.successChanceField.valueTextView.setText(craftItemInfo.getChance() + " ");
-            this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
-            this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", 3, null));
+            this.binding.infoContainers.sharpingInfoContainer.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
+            this.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
             InventoryItem inventoryItem3 = this.currentLeftItem;
             if (inventoryItem3 != null) {
             }

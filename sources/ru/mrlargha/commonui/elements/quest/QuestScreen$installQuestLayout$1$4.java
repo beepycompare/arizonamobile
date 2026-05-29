@@ -26,9 +26,9 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
         this.this$0 = questScreen;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0152  */
     @Override // ru.mrlargha.commonui.elements.quest.QuestAdapter.OnQuestClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,7 +56,7 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
                 z = false;
                 for (QuestAwards questAwards : quest.getAwards()) {
                     if (Intrinsics.areEqual(questAwards.getIcon(), "-1")) {
-                        charSequence = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards.getTitle(), 0.0f, 1, null);
+                        charSequence = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards.getTitle(), 0.0f, null, 3, null);
                         z = true;
                     }
                 }

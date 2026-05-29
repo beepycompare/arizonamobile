@@ -16,8 +16,11 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 /* compiled from: EstateAdapter.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u0017\u001a\u00020\u00022\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0005H\u0016J\u0018\u0010\u001b\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0005H\u0016J\b\u0010\u001e\u001a\u00020\u0005H\u0016J\u0016\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020\f2\u0006\u0010!\u001a\u00020\u0005J\u000e\u0010\"\u001a\u00020\u00062\u0006\u0010#\u001a\u00020\u000eR\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/EstateItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "isEstate", "", "estateData", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "flagTitle", "", "items", "", "getItems", "()Ljava/util/List;", "setItems", "(Ljava/util/List;)V", "estateColor", "descColor", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "setInfo", "info", "hasEstate", "setFlagTitle", "flag", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\r\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\u0017\u001a\u00020\u00022\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0005H\u0016J\u0018\u0010\u001b\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0005H\u0016J\b\u0010\u001e\u001a\u00020\u0005H\u0016J\u0016\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020\f2\u0006\u0010!\u001a\u00020\u0005J\u000e\u0010\"\u001a\u00020\u00062\u0006\u0010#\u001a\u00020\u000eJ\u0018\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005H\u0002R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/EstateItemViewHolder;", "onClick", "Lkotlin/Function1;", "", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "isEstate", "", "estateData", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "flagTitle", "", "items", "", "getItems", "()Ljava/util/List;", "setItems", "(Ljava/util/List;)V", "estateColor", "descColor", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "getItemCount", "setInfo", "info", "hasEstate", "setFlagTitle", "flag", "moneyRange", "", "current", "total", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHolder> {
     private final int descColor;
@@ -57,20 +60,49 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
         return new EstateItemViewHolder(inflate);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x01de, code lost:
+        r4 = "Приобрести поместье вместо квартиры";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x01e5, code lost:
+        r4 = "Отметить местоположение в GPS";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0226, code lost:
+        r4 = "Опции продажи семейной квартиры";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x022c, code lost:
+        r4 = "Управление семейными бизнесами";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x0240, code lost:
+        r4 = "Меню управления домом и настройки доступа";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0246, code lost:
+        r4 = "Настройки семейного автопарка и доступа к транспорту";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x024c, code lost:
+        r4 = "Приобретение и информация об улучшениях";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x01da, code lost:
+        r4 = "???";
+     */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onBindViewHolder(EstateItemViewHolder holder, int i) {
         int i2;
         String concat;
+        String str;
+        String str2;
         int parseColor;
         int i3;
         int i4;
-        String str;
+        String str3;
+        String str4;
         Intrinsics.checkNotNullParameter(holder, "holder");
         Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
         if (num != null) {
             final int intValue = num.intValue();
             FamilyEstateItemBinding binding = holder.getBinding();
-            String str2 = "???";
             if (intValue <= 3) {
                 binding.card1.setVisibility(8);
                 binding.card2.setVisibility(0);
@@ -97,27 +129,25 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
                     i4 = R.drawable.family_estate_ic_adi_kit;
                 }
                 if (intValue == 0) {
-                    str = "Аптечек";
+                    str3 = "Аптечек";
                 } else if (intValue == 1) {
-                    str = "Бронежилетов";
+                    str3 = "Бронежилетов";
                 } else if (intValue == 2) {
-                    str = "Семейные монеты";
+                    str3 = "Семейные монеты";
+                } else if (intValue != 3) {
+                    str3 = "???";
                 } else {
-                    str = intValue != 3 ? "???" : "Деньги";
+                    str3 = "Деньги";
                 }
                 if (intValue == 0) {
-                    str2 = this.estateData.getMedkit() + " шт";
-                } else if (intValue == 1) {
-                    str2 = this.estateData.getArmor() + " шт";
-                } else if (intValue == 2) {
-                    str2 = this.estateData.getProducts() + " шт";
-                } else if (intValue == 3) {
-                    str2 = this.estateData.getItems() + " $";
+                    str4 = this.estateData.getMedkit() + " шт";
+                } else {
+                    str4 = intValue != 1 ? intValue != 2 ? intValue != 3 ? "???" : MoneyElementKt.toMoneyFormattedSpannable$default(this.estateData.getItems(), false, null, null, null, 15, null) : this.estateData.getProducts() + " шт" : this.estateData.getArmor() + " шт";
                 }
                 binding.level2Image.setImageResource(i3);
                 binding.level2ImageBg.setImageResource(i4);
-                binding.item2Title.setText(str);
-                binding.item2Desc.setText(str2);
+                binding.item2Title.setText(str3);
+                binding.item2Desc.setText(str4);
             } else {
                 binding.card2.setVisibility(8);
                 binding.card1.setVisibility(0);
@@ -226,53 +256,27 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
                 }
                 switch (intValue) {
                     case 4:
-                        if (this.estateData.getDoorOpened() != 0) {
-                            str2 = "Открыта";
-                            break;
-                        } else {
-                            str2 = "Закрыта";
-                            break;
-                        }
+                        str = this.estateData.getDoorOpened() == 0 ? "Закрыта" : "Открыта";
+                        break;
                     case 5:
-                        str2 = this.estateData.getTaxCurrent() + " / " + this.estateData.getTaxTotal() + " $";
-                        break;
-                    case 6:
-                        str2 = "Приобретение и информация об улучшениях";
-                        break;
-                    case 7:
-                        str2 = "Настройки семейного автопарка и доступа к транспорту";
-                        break;
-                    case 8:
-                        str2 = "Меню управления домом и настройки доступа";
+                        str = moneyRange(this.estateData.getTaxCurrent(), this.estateData.getTaxTotal());
                         break;
                     case 9:
                         if (this.isEstate) {
                             str2 = "‘Настройки доступа к семейному поместью и складу";
-                            break;
                         } else {
                             str2 = "Настройки доступа к семейной квартире и складу";
-                            break;
                         }
-                    case 10:
-                        str2 = "Управление семейными бизнесами";
-                        break;
-                    case 11:
-                        str2 = "Опции продажи семейной квартиры";
+                        str = str2;
                         break;
                     case 12:
-                        str2 = this.estateData.getMedkitPrice() + " единиц семейной репутации";
+                        str = this.estateData.getMedkitPrice() + " единиц семейной репутации";
                         break;
                     case 13:
-                        str2 = this.estateData.getArmorPrice() + " единиц семейной репутации";
+                        str = this.estateData.getArmorPrice() + " единиц семейной репутации";
                         break;
                     case 14:
-                        str2 = this.flagTitle;
-                        break;
-                    case 15:
-                        str2 = "Отметить местоположение в GPS";
-                        break;
-                    case 16:
-                        str2 = "Приобрести поместье вместо квартиры";
+                        str = this.flagTitle;
                         break;
                 }
                 if (intValue == 8) {
@@ -293,7 +297,7 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
                 }
                 binding.levelImage.setImageResource(i2);
                 binding.itemTitle.setText(concat);
-                binding.itemDesc.setText(str2);
+                binding.itemDesc.setText(str);
                 binding.card1.setCardBackgroundColor(parseColor);
             }
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.adapters.EstateAdapter$$ExternalSyntheticLambda0
@@ -342,5 +346,11 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
         }
         this.flagTitle = str;
         notifyDataSetChanged();
+    }
+
+    private final CharSequence moneyRange(int i, int i2) {
+        ChatEmoji chatEmoji = ChatEmoji.INSTANCE;
+        String formatPlain = MoneyFormatter.INSTANCE.formatPlain(i);
+        return ChatEmoji.toSpannable$default(chatEmoji, ":cash: " + formatPlain + " / " + MoneyFormatter.INSTANCE.formatPlain(i2), 0.0f, null, 3, null);
     }
 }

@@ -35,7 +35,7 @@ import ru.mrlargha.commonui.utils.StringKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {224}, m = "invokeSuspend", n = {}, nl = {262}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {287}, m = "invokeSuspend", n = {}, nl = {325}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateScreenBinding $this_with;
@@ -63,7 +63,7 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {225}, m = "invokeSuspend", n = {}, nl = {261}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {288}, m = "invokeSuspend", n = {}, nl = {324}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -141,14 +141,14 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                         } else if (!(uiState instanceof UiState.Successful)) {
                             throw new NoWhenBranchMatchedException();
                         } else {
-                            UiState.Successful successful = (UiState.Successful) uiState;
-                            Log.e(DonateUtilsKt.DONATE_TAG, "data: initData: " + ((List) successful.getData()).size());
                             LinearLayout errorPlaceholderItems3 = DonateScreenBinding.this.errorPlaceholderItems;
                             Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems3, "errorPlaceholderItems");
                             errorPlaceholderItems3.setVisibility(8);
                             z = donateScreen.isHasUpdate;
-                            if (!z && !((Collection) successful.getData()).isEmpty()) {
+                            if (!z) {
                                 donateScreen.isHasUpdate = true;
+                                UiState.Successful successful = (UiState.Successful) uiState;
+                                Log.e(DonateUtilsKt.DONATE_TAG, "data: initData: " + ((List) successful.getData()).size());
                                 notifier = donateScreen.getNotifier();
                                 notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
                                 map2 = donateScreen.pages;
@@ -157,12 +157,15 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                                 if (donatePage != null) {
                                     donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
                                 }
-                            } else if (!((Collection) successful.getData()).isEmpty()) {
-                                map = donateScreen.pages;
-                                pages = donateScreen.currentPage;
-                                DonatePage donatePage2 = (DonatePage) map.get(pages);
-                                if (donatePage2 != null) {
-                                    donatePage2.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
+                            } else {
+                                UiState.Successful successful2 = (UiState.Successful) uiState;
+                                if (!((Collection) successful2.getData()).isEmpty()) {
+                                    map = donateScreen.pages;
+                                    pages = donateScreen.currentPage;
+                                    DonatePage donatePage2 = (DonatePage) map.get(pages);
+                                    if (donatePage2 != null) {
+                                        donatePage2.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful2.getData()));
+                                    }
                                 }
                             }
                             Unit unit = Unit.INSTANCE;

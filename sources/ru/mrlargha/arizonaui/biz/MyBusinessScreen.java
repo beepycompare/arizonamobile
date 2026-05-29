@@ -19,6 +19,7 @@ import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import ru.mrlargha.arizonaui.biz.MyBusinessListAdapter;
 import ru.mrlargha.arizonaui.biz.MyBusinessMenuAdapter;
 import ru.mrlargha.arizonaui.biz.MyBusinessParentStatAdapter;
@@ -27,11 +28,10 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
-import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.business.R;
 import ru.mrlargha.feature.business.databinding.MyBizScreenBinding;
 /* compiled from: MyBusinessScreen.kt */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u0000 )2\u00020\u0001:\u0002)*B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0016\u001a\u00020\u00172\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019H\u0002J\u0010\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u001cH\u0002J\u0010\u0010\u001d\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u001eH\u0002J\u0016\u0010\u001f\u001a\u00020\u00172\f\u0010 \u001a\b\u0012\u0004\u0012\u00020!0\u0019H\u0002J\u0018\u0010\"\u001a\u00020\u00172\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0005H\u0016J\u0010\u0010&\u001a\u00020\u00172\u0006\u0010'\u001a\u00020(H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006+"}, d2 = {"Lru/mrlargha/arizonaui/biz/MyBusinessScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "myBizScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/business/databinding/MyBizScreenBinding;", "bizListAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessListAdapter;", "mainBizStatAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessMainInfoAdapter;", "parentStatAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessParentStatAdapter;", "menuAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessMenuAdapter;", "currentPage", "currentBizId", "setBizList", "", "info", "", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$BusinessItemInfo;", "setMainBizInfo", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfo;", "setBizStat", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$BusinessDetailInfo;", "setMenuList", "items", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MenuItem;", "onBackendMessageHandled", "data", "", "subId", "setVisibility", "visible", "", "Companion", "Spawner", "business"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u0000 *2\u00020\u0001:\u0002*+B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0016\u001a\u00020\u00172\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019H\u0002J\u0010\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u001cH\u0002J\u0010\u0010\u001d\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u001eH\u0002J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u001cH\u0002J\u0016\u0010 \u001a\u00020\u00172\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\"0\u0019H\u0002J\u0018\u0010#\u001a\u00020\u00172\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0005H\u0016J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010(\u001a\u00020)H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Lru/mrlargha/arizonaui/biz/MyBusinessScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "myBizScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/business/databinding/MyBizScreenBinding;", "bizListAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessListAdapter;", "mainBizStatAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessMainInfoAdapter;", "parentStatAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessParentStatAdapter;", "menuAdapter", "Lru/mrlargha/arizonaui/biz/MyBusinessMenuAdapter;", "currentPage", "currentBizId", "setBizList", "", "info", "", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$BusinessItemInfo;", "setMainBizInfo", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MainBusinessInfo;", "setBizStat", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$BusinessDetailInfo;", "setBalance", "setMenuList", "items", "Lru/mrlargha/arizonaui/biz/MyBusinessScreen$Companion$MenuItem;", "onBackendMessageHandled", "data", "", "subId", "setVisibility", "visible", "", "Companion", "Spawner", "business"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MyBusinessScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -130,7 +130,8 @@ public final class MyBusinessScreen extends SAMPUIElement {
                 MyBusinessScreen.lambda$0$4(MyBizScreenBinding.this, this, view);
             }
         });
-        bind.balanceCurrency.setText(UtilsKt.isArizonaType() ? "$" : "₽");
+        bind.balanceCurrency.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
+        bind.balanceCurrency.setText(UtilsKt.isArizonaType() ? "" : "₽");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,17 +194,9 @@ public final class MyBusinessScreen extends SAMPUIElement {
         this.currentBizId = mainBusinessInfo.getId();
         myBizScreenBinding.mainPage.setVisibility(8);
         myBizScreenBinding.infoPage.setVisibility(0);
-        myBizScreenBinding.balance.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainBusinessInfo.getBalance(), false, null, null, 7, null));
+        setBalance(mainBusinessInfo);
         myBizScreenBinding.bizName.setText(mainBusinessInfo.getTitle());
         myBizScreenBinding.bizId.setText(String.valueOf(mainBusinessInfo.getId()));
-        String currency = mainBusinessInfo.getCurrency();
-        if (currency != null) {
-            if (Intrinsics.areEqual(currency, "BTC")) {
-                myBizScreenBinding.balanceCurrency.setText("₿");
-            } else {
-                myBizScreenBinding.balanceCurrency.setText("₽");
-            }
-        }
         if (mainBusinessInfo.getOpened() == 1) {
             myBizScreenBinding.bizStatus.setText("Закрыт");
             myBizScreenBinding.bizStatus.setTextColor(Color.parseColor("#F02A2A"));
@@ -457,6 +450,25 @@ public final class MyBusinessScreen extends SAMPUIElement {
 
     private final void setBizStat(Companion.BusinessDetailInfo businessDetailInfo) {
         this.parentStatAdapter.addParentStat(businessDetailInfo);
+    }
+
+    private final void setBalance(Companion.MainBusinessInfo mainBusinessInfo) {
+        MyBizScreenBinding myBizScreenBinding = this.binding;
+        String currency = mainBusinessInfo.getCurrency();
+        boolean z = true;
+        boolean equals = StringsKt.equals(currency, "BTC", true);
+        String str = currency;
+        if (str != null && !StringsKt.isBlank(str) && !Intrinsics.areEqual(currency, "$") && !StringsKt.equals(currency, "USD", true) && !StringsKt.equals(currency, "CASH", true)) {
+            z = false;
+        }
+        if (UtilsKt.isArizonaType() && z) {
+            myBizScreenBinding.balanceCurrency.setVisibility(8);
+            myBizScreenBinding.balance.setText(BusinessMoneyFormatterKt.toBusinessCashSpannable(mainBusinessInfo.getBalance()));
+            return;
+        }
+        myBizScreenBinding.balanceCurrency.setVisibility(0);
+        myBizScreenBinding.balanceCurrency.setText(equals ? "₿" : "₽");
+        myBizScreenBinding.balance.setText(BusinessMoneyFormatterKt.toBusinessMoneyAmount(mainBusinessInfo.getBalance()));
     }
 
     private final void setMenuList(List<Companion.MenuItem> list) {

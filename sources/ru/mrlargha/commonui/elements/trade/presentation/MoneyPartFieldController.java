@@ -24,7 +24,7 @@ public final class MoneyPartFieldController {
 
     public final void setup(String suffix, int i) {
         Intrinsics.checkNotNullParameter(suffix, "suffix");
-        this.binding.tvSuffix.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, suffix, 0.0f, 1, null));
+        this.binding.tvSuffix.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, suffix, 0.0f, null, 3, null));
         this.binding.etValue.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(i)});
     }
 

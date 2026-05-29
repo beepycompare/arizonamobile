@@ -6,9 +6,13 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import androidx.compose.ui.graphics.ImageBitmap;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.core.app.NotificationCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import coil3.network.internal.UtilsKt;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigValue;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.io.File;
@@ -48,7 +52,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: BackgroundManager.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0018\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010&\u001a\u00020'2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u0006\u0010(\u001a\u00020'J\u0006\u0010)\u001a\u00020*J\u000e\u0010+\u001a\u00020'H\u0082@¢\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020'H\u0082@¢\u0006\u0002\u0010,J \u0010.\u001a\u00020'2\u0006\u0010/\u001a\u00020*2\b\u00100\u001a\u0004\u0018\u000101H\u0082@¢\u0006\u0002\u00102J\b\u00103\u001a\u00020*H\u0002J\b\u00104\u001a\u00020'H\u0002J\b\u00105\u001a\u00020*H\u0002J\b\u00106\u001a\u00020*H\u0002J\b\u00107\u001a\u00020*H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020*H\u0002J\u0018\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u0005H\u0002J\u0010\u0010=\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0018\u0010>\u001a\u00020'2\u0006\u0010?\u001a\u00020\u00052\u0006\u0010@\u001a\u00020*H\u0002J\u0010\u0010A\u001a\u00020\u00132\u0006\u0010/\u001a\u00020*H\u0002J\u0018\u0010B\u001a\u00020'2\u0006\u0010C\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u0005H\u0002J\u0010\u0010E\u001a\u00020\u00052\u0006\u0010/\u001a\u00020*H\u0002J\u0010\u0010F\u001a\u00020\u00052\u0006\u0010/\u001a\u00020*H\u0002J\u0012\u0010G\u001a\u00020\u00052\b\u0010H\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001b\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\"\u001a\b\u0012\u0004\u0012\u00020!0#¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%¨\u0006I"}, d2 = {"Lcom/miami/game/core/design/system/component/background/LauncherBackgroundWriter;", "", "<init>", "()V", "TAG", "", "PREFS_NAME", "DIR_NAME", "KEY_REMOTE", "KEY_REMOTE_RODINA", "KEY_REMOTE_HASH", "KEY_REMOTE_HASH_RODINA", "PREF_CURRENT_FILE_NAME", "PREF_CURRENT_FILE_HASH", "DEFAULT_ASSET_PATH", "DEFAULT_LOCAL_FILE_NAME", "context", "Landroid/content/Context;", "isArizona", "", "prefs", "Landroid/content/SharedPreferences;", "assetPath", "scope", "Lkotlinx/coroutines/CoroutineScope;", "startJob", "Lkotlinx/coroutines/Job;", "remoteConfigProvider", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfigProvider", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/design/system/component/background/LauncherBackgroundState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setParams", "", TtmlNode.START, "currentTargetFile", "Ljava/io/File;", "loadLocal", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "syncRemoteAndStore", "emitNew", "file", "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "(Ljava/io/File;Landroidx/compose/ui/graphics/ImageBitmap;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ensureDir", "ensureDefaultExists", "resolveLocalFile", "ensureValidDefaultFile", "forceRestoreDefaultFile", "writeAssetToFileAtomically", TypedValues.AttributesType.S_TARGET, "buildLocalFileName", "remotePath", "remoteHash", "buildRemoteUrl", "downloadToFile", "urlString", "dest", "isDecodableImage", "persistCurrentFile", "fileName", "fileHash", "calculateFileHashOrEmpty", "calculateFileHash", "normalizeHash", "rawHash", "design-system"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0010\b\n\u0002\b\u0007\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010&\u001a\u00020'2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u0006\u0010(\u001a\u00020'J\u0006\u0010)\u001a\u00020*J\u000e\u0010+\u001a\u00020'H\u0082@¢\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020'H\u0082@¢\u0006\u0002\u0010,J \u0010.\u001a\u00020'2\u0006\u0010/\u001a\u00020*2\b\u00100\u001a\u0004\u0018\u000101H\u0082@¢\u0006\u0002\u00102J\b\u00103\u001a\u00020*H\u0002J\b\u00104\u001a\u00020'H\u0002J\b\u00105\u001a\u00020*H\u0002J\b\u00106\u001a\u00020*H\u0002J\b\u00107\u001a\u00020*H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020*H\u0002J\u0018\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u0005H\u0002J\u0010\u0010=\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0018\u0010>\u001a\u00020'2\u0006\u0010?\u001a\u00020\u00052\u0006\u0010@\u001a\u00020*H\u0002J\u0010\u0010A\u001a\u00020\u00132\u0006\u0010/\u001a\u00020*H\u0002J\u0018\u0010B\u001a\u00020'2\u0006\u0010C\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u0005H\u0002J\u0018\u0010E\u001a\u00020'2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0002J\u0010\u0010H\u001a\u00020\u00052\u0006\u0010I\u001a\u00020JH\u0002J\u0010\u0010K\u001a\u00020\u00052\u0006\u0010L\u001a\u00020JH\u0002J\u0010\u0010M\u001a\u00020\u00052\u0006\u0010/\u001a\u00020*H\u0002J\u0010\u0010N\u001a\u00020\u00052\u0006\u0010/\u001a\u00020*H\u0002J\u0012\u0010O\u001a\u00020\u00052\b\u0010P\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001b\u001a\u00020\u001c¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\"\u001a\b\u0012\u0004\u0012\u00020!0#¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%¨\u0006Q"}, d2 = {"Lcom/miami/game/core/design/system/component/background/LauncherBackgroundWriter;", "", "<init>", "()V", "TAG", "", "PREFS_NAME", "DIR_NAME", "KEY_REMOTE", "KEY_REMOTE_RODINA", "KEY_REMOTE_HASH", "KEY_REMOTE_HASH_RODINA", "PREF_CURRENT_FILE_NAME", "PREF_CURRENT_FILE_HASH", "DEFAULT_ASSET_PATH", "DEFAULT_LOCAL_FILE_NAME", "context", "Landroid/content/Context;", "isArizona", "", "prefs", "Landroid/content/SharedPreferences;", "assetPath", "scope", "Lkotlinx/coroutines/CoroutineScope;", "startJob", "Lkotlinx/coroutines/Job;", "remoteConfigProvider", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfigProvider", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/design/system/component/background/LauncherBackgroundState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setParams", "", TtmlNode.START, "currentTargetFile", "Ljava/io/File;", "loadLocal", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "syncRemoteAndStore", "emitNew", "file", "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "(Ljava/io/File;Landroidx/compose/ui/graphics/ImageBitmap;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ensureDir", "ensureDefaultExists", "resolveLocalFile", "ensureValidDefaultFile", "forceRestoreDefaultFile", "writeAssetToFileAtomically", TypedValues.AttributesType.S_TARGET, "buildLocalFileName", "remotePath", "remoteHash", "buildRemoteUrl", "downloadToFile", "urlString", "dest", "isDecodableImage", "persistCurrentFile", "fileName", "fileHash", "logRemoteConfigInfo", "pathKey", "hashKey", "sourceName", "source", "", "fetchStatusName", NotificationCompat.CATEGORY_STATUS, "calculateFileHashOrEmpty", "calculateFileHash", "normalizeHash", "rawHash", "design-system"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class LauncherBackgroundWriter {
     public static final int $stable;
@@ -96,25 +100,27 @@ public final class LauncherBackgroundWriter {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0090  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void setParams(Context context2, boolean z) {
         boolean z2;
         Context context3;
+        Context context4;
         Intrinsics.checkNotNullParameter(context2, "context");
         Context applicationContext = context2.getApplicationContext();
-        Context context4 = context;
-        Context context5 = null;
-        if (context4 != null) {
-            if (context4 == null) {
+        Context context5 = context;
+        Context context6 = null;
+        if (context5 != null) {
+            if (context5 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
-                context4 = null;
+                context5 = null;
             }
-            if (context4 == applicationContext && isArizona == z) {
+            if (context5 == applicationContext && isArizona == z) {
                 z2 = false;
                 Intrinsics.checkNotNull(applicationContext);
                 context = applicationContext;
@@ -124,12 +130,18 @@ public final class LauncherBackgroundWriter {
                 prefs = sharedPreferences;
                 Log.d(TAG, "setParams: isArizona=" + z);
                 context3 = context;
-                if (context3 != null) {
+                if (context3 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("context");
+                    context3 = null;
+                }
+                Log.d(TAG, "setParams: packageName=" + context3.getPackageName());
+                context4 = context;
+                if (context4 != null) {
                     Intrinsics.throwUninitializedPropertyAccessException("context");
                 } else {
-                    context5 = context3;
+                    context6 = context4;
                 }
-                Log.d(TAG, "setParams: filesDir=" + context5.getFilesDir().getAbsolutePath());
+                Log.d(TAG, "setParams: filesDir=" + context6.getFilesDir().getAbsolutePath());
                 if (z2) {
                     Log.d(TAG, "setParams: already initialized with same params, skip restart");
                     return;
@@ -148,9 +160,13 @@ public final class LauncherBackgroundWriter {
         prefs = sharedPreferences2;
         Log.d(TAG, "setParams: isArizona=" + z);
         context3 = context;
-        if (context3 != null) {
+        if (context3 == null) {
         }
-        Log.d(TAG, "setParams: filesDir=" + context5.getFilesDir().getAbsolutePath());
+        Log.d(TAG, "setParams: packageName=" + context3.getPackageName());
+        context4 = context;
+        if (context4 != null) {
+        }
+        Log.d(TAG, "setParams: filesDir=" + context6.getFilesDir().getAbsolutePath());
         if (z2) {
         }
     }
@@ -261,13 +277,18 @@ public final class LauncherBackgroundWriter {
             boolean z = isArizona;
             String str = z ? KEY_REMOTE : KEY_REMOTE_RODINA;
             String str2 = z ? KEY_REMOTE_HASH : KEY_REMOTE_HASH_RODINA;
+            logRemoteConfigInfo(str, str2);
             FirebaseRemoteConfig firebaseRemoteConfig = remoteConfigProvider;
-            String string = firebaseRemoteConfig.getString(str);
-            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
-            obj = StringsKt.trim((CharSequence) string).toString();
-            normalizeHash = normalizeHash(firebaseRemoteConfig.getString(str2));
-            Log.d(TAG, "syncRemoteAndStore: remotePath=[" + obj + "]");
-            Log.d(TAG, "syncRemoteAndStore: remoteHash=[" + normalizeHash + "]");
+            FirebaseRemoteConfigValue value = firebaseRemoteConfig.getValue(str);
+            Intrinsics.checkNotNullExpressionValue(value, "getValue(...)");
+            FirebaseRemoteConfigValue value2 = firebaseRemoteConfig.getValue(str2);
+            Intrinsics.checkNotNullExpressionValue(value2, "getValue(...)");
+            String asString = value.asString();
+            Intrinsics.checkNotNullExpressionValue(asString, "asString(...)");
+            obj = StringsKt.trim((CharSequence) asString).toString();
+            normalizeHash = normalizeHash(value2.asString());
+            Log.d(TAG, "syncRemoteAndStore: remotePath=[" + obj + "], source=" + sourceName(value.getSource()));
+            Log.d(TAG, "syncRemoteAndStore: remoteHash=[" + normalizeHash + "], source=" + sourceName(value2.getSource()));
         } catch (Throwable th) {
             Log.e(TAG, "syncRemoteAndStore: fatal error", th);
         }
@@ -558,6 +579,43 @@ public final class LauncherBackgroundWriter {
             sharedPreferences = null;
         }
         Log.d(TAG, "persistCurrentFile: fileName=" + str + ", hash=[" + str2 + "], saved=" + sharedPreferences.edit().putString(PREF_CURRENT_FILE_NAME, str).putString(PREF_CURRENT_FILE_HASH, str2).commit());
+    }
+
+    private final void logRemoteConfigInfo(String str, String str2) {
+        FirebaseRemoteConfigInfo info = remoteConfigProvider.getInfo();
+        Intrinsics.checkNotNullExpressionValue(info, "getInfo(...)");
+        String fetchStatusName = fetchStatusName(info.getLastFetchStatus());
+        long fetchTimeMillis = info.getFetchTimeMillis();
+        Log.d(TAG, "remoteConfig: pathKey=" + str + ", hashKey=" + str2 + ", lastFetchStatus=" + fetchStatusName + ", fetchTimeMillis=" + fetchTimeMillis + ", minimumFetchIntervalSeconds=" + info.getConfigSettings().getMinimumFetchIntervalInSeconds());
+    }
+
+    private final String sourceName(int i) {
+        if (i != 0) {
+            if (i != 1) {
+                if (i == 2) {
+                    return "remote";
+                }
+                return "unknown(" + i + ")";
+            }
+            return "default";
+        }
+        return "static";
+    }
+
+    private final String fetchStatusName(int i) {
+        if (i != -1) {
+            if (i != 0) {
+                if (i != 1) {
+                    if (i == 2) {
+                        return "throttled";
+                    }
+                    return "unknown(" + i + ")";
+                }
+                return "failure";
+            }
+            return "no_fetch_yet";
+        }
+        return FirebaseAnalytics.Param.SUCCESS;
     }
 
     private final String calculateFileHashOrEmpty(File file) {

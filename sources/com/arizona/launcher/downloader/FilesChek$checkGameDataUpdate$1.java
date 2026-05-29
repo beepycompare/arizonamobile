@@ -1,6 +1,5 @@
 package com.arizona.launcher.downloader;
 
-import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesChek.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.downloader.FilesChek", f = "FilesChek.kt", i = {0, 0}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "checkGameDataUpdate", n = {"dataInfo", "useManifest"}, nl = {TsExtractor.TS_STREAM_TYPE_AC3}, s = {"L$0", "Z$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.downloader.FilesChek", f = "FilesChek.kt", i = {0, 0}, l = {128}, m = "checkGameDataUpdate", n = {"dataInfo", "useManifest"}, nl = {127}, s = {"L$0", "Z$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class FilesChek$checkGameDataUpdate$1 extends ContinuationImpl {
     Object L$0;

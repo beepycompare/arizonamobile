@@ -95,10 +95,10 @@ public final class CategoryComponentsViewHolder extends RecyclerView.ViewHolder 
         Integer statusColor = item.getStatusColor();
         appCompatTextView.setTextColor(statusColor != null ? statusColor.intValue() : 0);
         if (UtilsKt.isArizonaType()) {
-            itemTuningCharacteristicBinding.tvItemPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getPrice(), false, null, null, 7, null));
+            itemTuningCharacteristicBinding.tvItemPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getPrice(), false, null, null, null, 15, null));
             itemTuningCharacteristicBinding.tvItemPrice.setCompoundDrawablesRelative(null, null, null, null);
         } else {
-            itemTuningCharacteristicBinding.tvItemPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getStatusText(), 0.0f, 1, null));
+            itemTuningCharacteristicBinding.tvItemPrice.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getStatusText(), 0.0f, null, 3, null));
         }
         AppCompatTextView tvItemType = itemTuningCharacteristicBinding.tvItemType;
         Intrinsics.checkNotNullExpressionValue(tvItemType, "tvItemType");

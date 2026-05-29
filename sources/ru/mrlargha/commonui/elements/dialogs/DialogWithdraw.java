@@ -755,36 +755,36 @@ public final class DialogWithdraw extends AbstractDialog {
         if (r16 < r11) goto L95;
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0049, code lost:
-        r6 = r21.binding.tvError;
+        r6 = r22.binding.tvError;
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r6, "tvError");
         r6.setVisibility(0);
-        r6 = r23;
+        r6 = r24;
         android.util.Log.d(r6, "checkValidate: " + r8.getLimits().getMinForM());
-        r21.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r11, false, "Минимум ", null, 5, null));
+        r22.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r11, false, "Минимум ", null, null, 13, null));
         checkActiveButton(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x008a, code lost:
-        r6 = r23;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x008c, code lost:
+        r6 = r24;
         r5 = (r16 > r13 ? 1 : (r16 == r13 ? 0 : -1));
-        r7 = r21.binding;
+        r7 = r22.binding;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0092, code lost:
         if (r5 <= 0) goto L94;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0092, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0094, code lost:
         r5 = r7.tvError;
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, "tvError");
         r5.setVisibility(0);
-        r21.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r13, false, "Максимум ", null, 5, null));
+        r22.binding.tvError.setText(ru.mrlargha.commonui.utils.ui.money.MoneyElementKt.toMoneyFormattedSpannable$default(r13, false, "Максимум ", null, null, 13, null));
         checkActiveButton(false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x00bc, code lost:
         r5 = r7.tvError;
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, "tvError");
         r5.setVisibility(8);
         checkActiveButton(true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x01f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x01f9, code lost:
         if (r5.intValue() < r9.intValue()) goto L51;
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x003e, code lost:

@@ -31,7 +31,7 @@ public final class UserCartViewHolder extends RecyclerView.ViewHolder {
         Intrinsics.checkNotNullParameter(item, "item");
         ItemUserCartBinding itemUserCartBinding = this.binding;
         itemUserCartBinding.tvItemName.setText(item.getName());
-        itemUserCartBinding.tvItemPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getPrice(), false, null, null, 7, null));
+        itemUserCartBinding.tvItemPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(item.getPrice(), false, null, null, null, 15, null));
         if (UtilsKt.isArizonaType()) {
             itemUserCartBinding.tvItemPrice.setCompoundDrawablesRelative(null, null, null, null);
         }

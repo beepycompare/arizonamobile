@@ -23,6 +23,6 @@ public final class QuestActivityViewHolder extends RecyclerView.ViewHolder {
         Intrinsics.checkNotNullParameter(item, "item");
         ItemQuestInfoBinding itemQuestInfoBinding = this.binding;
         itemQuestInfoBinding.tvQuestCount.setText(String.valueOf(item.getCount()));
-        itemQuestInfoBinding.tvQuestInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getName(), 0.0f, 1, null));
+        itemQuestInfoBinding.tvQuestInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, item.getName(), 0.0f, null, 3, null));
     }
 }
