@@ -16,6 +16,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.wardrumstudios.utils.WarDownloaderService;
 import com.wardrumstudios.utils.WarMedia;
 import java.io.File;
+import java.io.FileInputStream;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
@@ -114,11 +115,58 @@ public abstract class GTASAInternal extends WarMedia {
                 firebaseCrashlytics.setCustomKey("native_package_name", context.getPackageName());
                 firebaseCrashlytics.setCustomKey("native_library_dir", String.valueOf(applicationInfo.nativeLibraryDir));
                 firebaseCrashlytics.setCustomKey("native_source_dir", String.valueOf(applicationInfo.sourceDir));
+                recordFailedNativeLibraryFileInfo(firebaseCrashlytics, applicationInfo);
             }
             firebaseCrashlytics.recordException(new IllegalStateException("Unable to load native library: " + nativeLibraryLoadStage, nativeLibraryLoadError));
         } catch (RuntimeException e) {
             Log.w(TAG, "Unable to record native library load failure", e);
         }
+    }
+
+    private static void recordFailedNativeLibraryFileInfo(FirebaseCrashlytics crashlytics, ApplicationInfo applicationInfo) {
+        if (nativeLibraryLoadStage == null || applicationInfo.nativeLibraryDir == null) {
+            return;
+        }
+        File file = new File(applicationInfo.nativeLibraryDir, "lib" + nativeLibraryLoadStage + ".so");
+        crashlytics.setCustomKey("native_failed_so_path", file.getAbsolutePath());
+        crashlytics.setCustomKey("native_failed_so_exists", file.exists());
+        crashlytics.setCustomKey("native_failed_so_is_file", file.isFile());
+        crashlytics.setCustomKey("native_failed_so_can_read", file.canRead());
+        crashlytics.setCustomKey("native_failed_so_can_write", file.canWrite());
+        crashlytics.setCustomKey("native_failed_so_size", file.length());
+        crashlytics.setCustomKey("native_failed_so_magic", readFirstBytesHex(file, 16));
+    }
+
+    private static String readFirstBytesHex(File file, int maxBytes) {
+        if (file.isFile()) {
+            try {
+                FileInputStream fileInputStream = new FileInputStream(file);
+                byte[] bArr = new byte[maxBytes];
+                int read = fileInputStream.read(bArr);
+                if (read > 0) {
+                    String bytesToHex = bytesToHex(bArr, read);
+                    fileInputStream.close();
+                    return bytesToHex;
+                }
+                fileInputStream.close();
+                return "";
+            } catch (Exception e) {
+                Log.w(TAG, "Unable to read native library magic: " + file.getAbsolutePath(), e);
+                return "read_failed:" + e.getClass().getSimpleName();
+            }
+        }
+        return "";
+    }
+
+    private static String bytesToHex(byte[] bytes, int count) {
+        StringBuilder sb = new StringBuilder(count * 3);
+        for (int i = 0; i < count; i++) {
+            if (i > 0) {
+                sb.append(' ');
+            }
+            sb.append(String.format("%02X", Integer.valueOf(bytes[i] & 255)));
+        }
+        return sb.toString();
     }
 
     private static boolean isVmRuntime64Bit() {
@@ -252,7 +300,7 @@ public abstract class GTASAInternal extends WarMedia {
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onCreate(Bundle paramBundle) {
         System.out.println("Build Type: release");
-        System.out.println("Version: v17.2.1");
+        System.out.println("Version: v17.2.2");
         this.HELLO_ID = 123324;
         this.appIntent = new Intent(this, GTASA.class);
         this.appTickerText = "GTA3 San Andreas";

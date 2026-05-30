@@ -12,7 +12,7 @@ public final class E7 extends MessageNano {
     public static volatile E7[] k;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f522a;
+    public int f523a;
     public double b;
     public double c;
     public int d;
@@ -39,7 +39,7 @@ public final class E7 extends MessageNano {
     }
 
     public final E7 a() {
-        this.f522a = -1;
+        this.f523a = -1;
         this.b = -1.0d;
         this.c = -1.0d;
         this.d = -1;
@@ -56,7 +56,7 @@ public final class E7 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f522a;
+        int i = this.f523a;
         if (i != -1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
         }
@@ -94,7 +94,7 @@ public final class E7 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f522a;
+        int i = this.f523a;
         if (i != -1) {
             codedOutputByteBufferNano.writeInt32(1, i);
         }
@@ -150,7 +150,7 @@ public final class E7 extends MessageNano {
                     if (readInt32 != -1 && readInt32 != 0 && readInt32 != 1) {
                         break;
                     } else {
-                        this.f522a = readInt32;
+                        this.f523a = readInt32;
                         break;
                     }
                 case 17:

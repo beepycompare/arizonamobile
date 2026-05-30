@@ -4,24 +4,24 @@ package io.appmetrica.analytics.impl;
 public final class C0248fc implements InterfaceC0158c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0314i0 f977a;
+    public final InterfaceC0314i0 f978a;
     public final C0286go b = new C0286go();
 
     public C0248fc(InterfaceC0314i0 interfaceC0314i0) {
-        this.f977a = interfaceC0314i0;
+        this.f978a = interfaceC0314i0;
     }
 
     public static final void a(C0248fc c0248fc, X x) {
-        c0248fc.f977a.a(x);
+        c0248fc.f978a.a(x);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0158c
     public final void onAppNotResponding() {
         StackTraceElement[] stackTraceElementArr;
         C0286go c0286go = this.b;
-        Thread a2 = c0286go.f1002a.a();
+        Thread a2 = c0286go.f1003a.a();
         try {
-            stackTraceElementArr = c0286go.f1002a.b();
+            stackTraceElementArr = c0286go.f1003a.b();
             if (stackTraceElementArr == null) {
                 try {
                     stackTraceElementArr = a2.getStackTrace();

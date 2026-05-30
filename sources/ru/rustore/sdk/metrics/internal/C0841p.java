@@ -10,17 +10,17 @@ import ru.rustore.sdk.metrics.BuildConfig;
 public final class C0841p extends Lambda implements Function0<URL> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0843s f1593a;
+    public final /* synthetic */ C0843s f1594a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0841p(C0843s c0843s) {
         super(0);
-        this.f1593a = c0843s;
+        this.f1594a = c0843s;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final URL invoke() {
-        this.f1593a.f1602a.getClass();
+        this.f1594a.f1603a.getClass();
         return new URI(BuildConfig.BACKEND_URL).resolve("/v1/send_custom_event_batch").toURL();
     }
 }

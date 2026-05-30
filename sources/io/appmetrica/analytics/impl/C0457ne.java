@@ -13,8 +13,8 @@ public final /* synthetic */ class C0457ne extends FunctionReferenceImpl impleme
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
         C0483oe c0483oe = (C0483oe) this.receiver;
-        c0483oe.f1130a.markCrashCompleted((String) obj);
-        c0483oe.f1130a.deleteCompletedCrashes();
+        c0483oe.f1131a.markCrashCompleted((String) obj);
+        c0483oe.f1131a.deleteCompletedCrashes();
         return Unit.INSTANCE;
     }
 }

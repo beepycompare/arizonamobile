@@ -44,7 +44,7 @@ import org.json.JSONObject;
 public final class Nh implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0448n5 f686a;
+    public final C0448n5 f687a;
     public C7 c;
     public final Oh d;
     public Vf e;
@@ -63,7 +63,7 @@ public final class Nh implements UnderlyingNetworkTask {
     public Nh(C0448n5 c0448n5, C0615th c0615th, C0119ac c0119ac, FullUrlFormer<Eh> fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, RequestBodyEncrypter requestBodyEncrypter) {
         this.m = new SendingDataTaskHelper(requestBodyEncrypter, new GZIPCompressor(), requestDataHolder, responseDataHolder, new DefaultNetworkResponseHandler());
         this.h = c0615th;
-        this.f686a = c0448n5;
+        this.f687a = c0448n5;
         Oh oh = new Oh(c0448n5);
         this.d = oh;
         PublicLogger p = c0448n5.p();
@@ -82,17 +82,17 @@ public final class Nh implements UnderlyingNetworkTask {
         int i3;
         Oh oh = this.d;
         Vf vf = this.e;
-        A9[] a9Arr = vf.f809a.f509a;
+        A9[] a9Arr = vf.f810a.f510a;
         List list = vf.b;
         int i4 = this.n;
         ap apVar = oh.c;
         synchronized (apVar) {
-            JSONObject a2 = apVar.f893a.a();
+            JSONObject a2 = apVar.f894a.a();
             if (a2.optInt("report_request_id", -1) != i4) {
-                apVar.f893a.a(a2.put("report_request_id", i4));
+                apVar.f894a.a(a2.put("report_request_id", i4));
             }
-            bp bpVar = apVar.f893a;
-            bp.a(bpVar.f913a);
+            bp bpVar = apVar.f894a;
+            bp.a(bpVar.f914a);
             bp.a(bpVar.b);
         }
         ArrayList arrayList = new ArrayList(a9Arr.length);
@@ -119,13 +119,13 @@ public final class Nh implements UnderlyingNetworkTask {
             } else {
                 i2 = i5;
                 i3 = i6;
-                Long valueOf = Long.valueOf(c0737y9Arr[i5].f1290a);
+                Long valueOf = Long.valueOf(c0737y9Arr[i5].f1291a);
                 ?? it = new IntRange(1, ArraysKt.getLastIndex(c0737y9Arr)).iterator();
                 l = valueOf;
                 while (it.hasNext()) {
                     List list2 = list;
                     A9[] a9Arr2 = a9Arr;
-                    Long valueOf2 = Long.valueOf(c0737y9Arr[it.nextInt()].f1290a);
+                    Long valueOf2 = Long.valueOf(c0737y9Arr[it.nextInt()].f1291a);
                     if (l.compareTo(valueOf2) < 0) {
                         l = valueOf2;
                     }
@@ -143,7 +143,7 @@ public final class Nh implements UnderlyingNetworkTask {
                     C0737y9 c0737y9 = c0737y9Arr2[i9];
                 }
             }
-            arrayList.add(new C0386kl(longValue, al.f462a, longValue2, z));
+            arrayList.add(new C0386kl(longValue, al.f463a, longValue2, z));
             i6 = i3 + 1;
             a9Arr = a9Arr3;
             i7 = i8;
@@ -151,7 +151,7 @@ public final class Nh implements UnderlyingNetworkTask {
             list = list3;
         }
         int i10 = i5;
-        C0166c7 c0166c7 = oh.f703a;
+        C0166c7 c0166c7 = oh.f704a;
         long a3 = oh.b.a();
         c0166c7.getClass();
         ArrayList arrayList2 = new ArrayList();
@@ -160,7 +160,7 @@ public final class Nh implements UnderlyingNetworkTask {
         try {
             SQLiteDatabase writableDatabase = c0166c7.c.getWritableDatabase();
             if (writableDatabase != null) {
-                if (M5.f657a.booleanValue()) {
+                if (M5.f658a.booleanValue()) {
                     c0166c7.c();
                 }
                 writableDatabase.beginTransaction();
@@ -182,16 +182,16 @@ public final class Nh implements UnderlyingNetworkTask {
         int i11 = i10;
         while (it3.hasNext()) {
             X6 x6 = (X6) it3.next();
-            if (x6.f836a != null) {
+            if (x6.f837a != null) {
                 ArrayList arrayList3 = new ArrayList();
-                for (ContentValues contentValues : x6.f836a) {
+                for (ContentValues contentValues : x6.f837a) {
                     arrayList3.add(Integer.valueOf(contentValues.getAsInteger("type").intValue()));
                 }
                 Iterator it4 = c0166c7.g.iterator();
                 while (it4.hasNext()) {
                     ((InterfaceC0426m9) it4.next()).b(arrayList3);
                 }
-                List list4 = x6.f836a;
+                List list4 = x6.f837a;
                 int i12 = i10;
                 while (i12 < list4.size()) {
                     ContentValues contentValues2 = (ContentValues) list4.get(i12);
@@ -219,7 +219,7 @@ public final class Nh implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final String description() {
-        return "ReportTask_" + ApiKeyUtils.createPartialApiKey(this.f686a.b.b);
+        return "ReportTask_" + ApiKeyUtils.createPartialApiKey(this.f687a.b.b);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -239,7 +239,7 @@ public final class Nh implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final RetryPolicyConfig getRetryPolicyConfig() {
-        return ((Eh) this.f686a.k.a()).getRetryPolicyConfig();
+        return ((Eh) this.f687a.k.a()).getRetryPolicyConfig();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -295,10 +295,10 @@ public final class Nh implements UnderlyingNetworkTask {
         C0581s9[] c0581s9Arr;
         Vf vf;
         Zi zi;
-        C0166c7 c0166c7 = this.d.f703a;
+        C0166c7 c0166c7 = this.d.f704a;
         c0166c7.getClass();
         ArrayList arrayList3 = new ArrayList();
-        c0166c7.f921a.lock();
+        c0166c7.f922a.lock();
         try {
             SQLiteDatabase readableDatabase2 = c0166c7.c.getReadableDatabase();
             if (readableDatabase2 != null) {
@@ -316,7 +316,7 @@ public final class Nh implements UnderlyingNetworkTask {
                             }
                         } finally {
                             Oo.a(cursor);
-                            c0166c7.f921a.unlock();
+                            c0166c7.f922a.unlock();
                         }
                     }
                 }
@@ -372,24 +372,24 @@ public final class Nh implements UnderlyingNetworkTask {
             int i5 = 100;
             try {
                 i2 = 0;
-                for (J7 j7 : mh.f665a.a(linkedHashMap3)) {
+                for (J7 j7 : mh.f666a.a(linkedHashMap3)) {
                     try {
                         if (arrayList4.size() >= i5) {
                             break;
                         }
-                        Long l = j7.f607a;
+                        Long l = j7.f608a;
                         if (l != null) {
                             I7 i7 = j7.d;
                             i = i5;
                             try {
-                                C9 a2 = AbstractC0537qg.a(i7.f589a, i7.b, i7.c);
+                                C9 a2 = AbstractC0537qg.a(i7.f590a, i7.b, i7.c);
                                 String locale = config.getLocale();
                                 Al al = j7.b;
                                 C0763z9 c0763z9 = new C0763z9();
-                                c0763z9.f1310a = a2;
+                                c0763z9.f1311a = a2;
                                 c0763z9.b = locale;
                                 if (al != null) {
-                                    Integer num = (Integer) AbstractC0537qg.f1163a.get(al);
+                                    Integer num = (Integer) AbstractC0537qg.f1164a.get(al);
                                     c0763z9.c = num != null ? num.intValue() : 0;
                                 }
                                 i2 = i2 + CodedOutputByteBufferNano.computeUInt64Size(1, Long.MAX_VALUE) + CodedOutputByteBufferNano.computeMessageSize(i4, c0763z9);
@@ -402,7 +402,7 @@ public final class Nh implements UnderlyingNetworkTask {
                                 }
                                 int i6 = i4;
                                 try {
-                                    arrayList4.add(new Lh(l.longValue(), c0763z9, al2.f462a));
+                                    arrayList4.add(new Lh(l.longValue(), c0763z9, al2.f463a));
                                     i5 = i;
                                     i4 = i6;
                                 } catch (Throwable th2) {
@@ -414,7 +414,7 @@ public final class Nh implements UnderlyingNetworkTask {
                                     linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(list2, 10)), 16));
                                     while (r0.hasNext()) {
                                     }
-                                    C0166c7 c0166c72 = mh.f665a.f703a;
+                                    C0166c7 c0166c72 = mh.f666a.f704a;
                                     c0166c72.getClass();
                                     if (linkedHashMap.isEmpty()) {
                                     }
@@ -465,13 +465,13 @@ public final class Nh implements UnderlyingNetworkTask {
             int intValue2 = ((Number) pair2.component2()).intValue();
             linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(list22, 10)), 16));
             for (Lh lh : list22) {
-                Pair pair3 = TuplesKt.to(Long.valueOf(lh.f647a), Integer.valueOf(lh.c));
+                Pair pair3 = TuplesKt.to(Long.valueOf(lh.f648a), Integer.valueOf(lh.c));
                 linkedHashMap.put(pair3.getFirst(), pair3.getSecond());
             }
-            C0166c7 c0166c722 = mh.f665a.f703a;
+            C0166c7 c0166c722 = mh.f666a.f704a;
             c0166c722.getClass();
             if (linkedHashMap.isEmpty()) {
-                c0166c722.f921a.lock();
+                c0166c722.f922a.lock();
                 try {
                     readableDatabase = c0166c722.c.getReadableDatabase();
                 } catch (Throwable unused4) {
@@ -498,13 +498,13 @@ public final class Nh implements UnderlyingNetworkTask {
                     z = z3;
                     cursor2 = readableDatabase.query("events", null, sb.toString(), strArr, null, null, "session_id ASC, number_in_session ASC", String.valueOf(i));
                     z2 = z3;
-                    c0166c722.f921a.unlock();
+                    c0166c722.f922a.unlock();
                     z3 = z2;
                 }
                 z = z3;
                 cursor2 = null;
                 z2 = z3;
-                c0166c722.f921a.unlock();
+                c0166c722.f922a.unlock();
                 z3 = z2;
             } else {
                 z = true;
@@ -566,7 +566,7 @@ public final class Nh implements UnderlyingNetworkTask {
                 }
                 Mh mh2 = mh;
                 C0723xl c0723xl = mh2.c;
-                long j = lh2.f647a;
+                long j = lh2.f648a;
                 ArrayList arrayList7 = arrayList62;
                 C0763z9 c0763z92 = lh2.b;
                 List list3 = (List) linkedHashMap2.get(Long.valueOf(j));
@@ -597,10 +597,10 @@ public final class Nh implements UnderlyingNetworkTask {
                         break;
                     }
                     c0365k0 = zi.b;
-                    arrayList2.add(Long.valueOf(lh2.f647a));
-                    arrayList.add(zi.f871a);
+                    arrayList2.add(Long.valueOf(lh2.f648a));
+                    arrayList.add(zi.f872a);
                     C0365k0 c0365k02 = zi.b;
-                    String str = c0365k02 != null ? c0365k02.f1058a : null;
+                    String str = c0365k02 != null ? c0365k02.f1059a : null;
                     if (str != null && str.length() != 0) {
                         try {
                             jSONObject2 = new JSONObject(str);
@@ -640,15 +640,15 @@ public final class Nh implements UnderlyingNetworkTask {
                 c0563rh.getClass();
                 D9 d9 = new D9();
                 C0659v9 c0659v9 = new C0659v9();
-                c0659v9.f1245a = WrapUtils.getOrDefaultIfEmpty(c75.b, config.getUuid());
-                c0659v9.b = WrapUtils.getOrDefaultIfEmpty(c75.f489a, config.getDeviceId());
+                c0659v9.f1246a = WrapUtils.getOrDefaultIfEmpty(c75.b, config.getUuid());
+                c0659v9.b = WrapUtils.getOrDefaultIfEmpty(c75.f490a, config.getDeviceId());
                 d9.b = c0659v9;
-                Pn pn = c0563rh.f1182a;
+                Pn pn = c0563rh.f1183a;
                 C0538qh c0538qh = new C0538qh(d9);
                 synchronized (pn) {
-                    pn.f721a.a(c0538qh);
+                    pn.f722a.a(c0538qh);
                 }
-                d9.f509a = (A9[]) arrayList.toArray(new A9[0]);
+                d9.f510a = (A9[]) arrayList.toArray(new A9[0]);
                 int length = jSONObject2.length();
                 if (length <= 0) {
                     c0581s9Arr = null;
@@ -660,7 +660,7 @@ public final class Nh implements UnderlyingNetworkTask {
                         String next = keys.next();
                         try {
                             C0581s9 c0581s9 = new C0581s9();
-                            c0581s9.f1194a = next;
+                            c0581s9.f1195a = next;
                             c0581s9.b = jSONObject2.getString(next);
                             arrayList8.add(c0581s9);
                         } catch (Throwable unused8) {
@@ -678,7 +678,7 @@ public final class Nh implements UnderlyingNetworkTask {
                     bArr[i14] = StringUtils.getUTF8Bytes(strArr2[i14]);
                 }
                 d9.f = bArr;
-                vf = new Vf(d9, arrayList2, c0589sh.f1198a.a());
+                vf = new Vf(d9, arrayList2, c0589sh.f1199a.a());
             } else {
                 vf = null;
             }
@@ -689,7 +689,7 @@ public final class Nh implements UnderlyingNetworkTask {
             int i15 = vf.c;
             this.n = i15;
             this.h.e = i15;
-            this.m.prepareAndSetPostData(MessageNano.toByteArray(vf.f809a));
+            this.m.prepareAndSetPostData(MessageNano.toByteArray(vf.f810a));
             return z;
         }
         this.o = true;
@@ -711,7 +711,7 @@ public final class Nh implements UnderlyingNetworkTask {
             a(true);
         }
         if (z) {
-            for (A9 a9 : this.e.f809a.f509a) {
+            for (A9 a9 : this.e.f810a.f510a) {
                 for (C0737y9 c0737y9 : a9.c) {
                     if (c0737y9 != null && (a2 = AbstractC0562rg.a(c0737y9)) != null) {
                         this.g.info(a2, new Object[0]);
@@ -742,7 +742,7 @@ public final class Nh implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final void onTaskAdded() {
-        ((A5) this.f686a.p).d.set(false);
+        ((A5) this.f687a.p).d.set(false);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -751,9 +751,9 @@ public final class Nh implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final void onTaskRemoved() {
-        ((A5) this.f686a.p).d.set(true);
+        ((A5) this.f687a.p).d.set(true);
         if (this.o) {
-            ((A5) this.f686a.p).f();
+            ((A5) this.f687a.p).f();
         }
     }
 

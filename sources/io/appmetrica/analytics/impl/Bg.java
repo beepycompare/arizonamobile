@@ -6,14 +6,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Bg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f477a;
+    public final String f478a;
     public final long b;
     public final long c;
     public final int d;
 
     public Bg(byte[] bArr) {
         Cg a2 = Cg.a(bArr);
-        this.f477a = a2.f497a;
+        this.f478a = a2.f498a;
         this.b = a2.c;
         this.c = a2.b;
         this.d = a(a2.d);
@@ -35,7 +35,7 @@ public final class Bg {
         }
         if (obj != null && Bg.class == obj.getClass()) {
             Bg bg = (Bg) obj;
-            if (this.b == bg.b && this.c == bg.c && this.f477a.equals(bg.f477a) && this.d == bg.d) {
+            if (this.b == bg.b && this.c == bg.c && this.f478a.equals(bg.f478a) && this.d == bg.d) {
                 return true;
             }
         }
@@ -45,16 +45,16 @@ public final class Bg {
     public final int hashCode() {
         long j = this.b;
         long j2 = this.c;
-        return AbstractC0167c8.a(this.d) + (((((this.f477a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
+        return AbstractC0167c8.a(this.d) + (((((this.f478a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
     }
 
     public final String toString() {
-        return "ReferrerInfo{installReferrer='" + this.f477a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + Ag.b(this.d) + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerInfo{installReferrer='" + this.f478a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + Ag.b(this.d) + AbstractJsonLexerKt.END_OBJ;
     }
 
     public final byte[] a() {
         Cg cg = new Cg();
-        cg.f497a = this.f477a;
+        cg.f498a = this.f478a;
         cg.c = this.b;
         cg.b = this.c;
         int a2 = AbstractC0167c8.a(this.d);
@@ -73,7 +73,7 @@ public final class Bg {
     }
 
     public Bg(String str, long j, long j2, int i) {
-        this.f477a = str;
+        this.f478a = str;
         this.b = j;
         this.c = j2;
         this.d = i;

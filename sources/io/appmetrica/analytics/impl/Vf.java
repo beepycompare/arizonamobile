@@ -6,12 +6,12 @@ import java.util.List;
 public final class Vf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final D9 f809a;
+    public final D9 f810a;
     public final List b;
     public final int c;
 
     public Vf(D9 d9, ArrayList arrayList, int i) {
-        this.f809a = d9;
+        this.f810a = d9;
         this.b = arrayList;
         this.c = i;
     }

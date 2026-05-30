@@ -56,9 +56,9 @@ public final class R {
         public static int event_task_ic_story = 0x7f0807b5;
         public static int event_task_item_bg = 0x7f0807b6;
         public static int event_task_progress_bar_bg = 0x7f0807b7;
-        public static int pirates_dollar = 0x7f080e3f;
-        public static int pirates_rating = 0x7f080e40;
-        public static int pirates_ruble = 0x7f080e41;
+        public static int pirates_dollar = 0x7f080e43;
+        public static int pirates_rating = 0x7f080e44;
+        public static int pirates_ruble = 0x7f080e45;
 
         private drawable() {
         }

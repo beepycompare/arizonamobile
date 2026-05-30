@@ -6,16 +6,16 @@ import io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo;
 public final class C0124ah implements RemoteConfigMetaInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f887a;
+    public final long f888a;
     public final long b;
 
     public C0124ah(long j, long j2) {
-        this.f887a = j;
+        this.f888a = j;
         this.b = j2;
     }
 
     public final long a() {
-        return this.f887a;
+        return this.f888a;
     }
 
     public final long b() {
@@ -28,14 +28,14 @@ public final class C0124ah implements RemoteConfigMetaInfo {
         }
         if (obj instanceof C0124ah) {
             C0124ah c0124ah = (C0124ah) obj;
-            return this.f887a == c0124ah.f887a && this.b == c0124ah.b;
+            return this.f888a == c0124ah.f888a && this.b == c0124ah.b;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
     public final long getFirstSendTime() {
-        return this.f887a;
+        return this.f888a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
@@ -44,11 +44,11 @@ public final class C0124ah implements RemoteConfigMetaInfo {
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f887a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f888a) * 31);
     }
 
     public final String toString() {
-        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f887a + ", lastUpdateTime=" + this.b + ')';
+        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f888a + ", lastUpdateTime=" + this.b + ')';
     }
 
     public final C0124ah a(long j, long j2) {
@@ -57,7 +57,7 @@ public final class C0124ah implements RemoteConfigMetaInfo {
 
     public static C0124ah a(C0124ah c0124ah, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = c0124ah.f887a;
+            j = c0124ah.f888a;
         }
         if ((i & 2) != 0) {
             j2 = c0124ah.b;

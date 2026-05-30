@@ -6,17 +6,17 @@ import io.appmetrica.analytics.Revenue;
 public final class RunnableC0331ii implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f1034a;
+    public final /* synthetic */ Revenue f1035a;
     public final /* synthetic */ Ai b;
 
     public RunnableC0331ii(Ai ai, Revenue revenue) {
         this.b = ai;
-        this.f1034a = revenue;
+        this.f1035a = revenue;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Ai ai = this.b;
-        Ai.a(ai.f460a, ai.d, ai.e).reportRevenue(this.f1034a);
+        Ai.a(ai.f461a, ai.d, ai.e).reportRevenue(this.f1035a);
     }
 }

@@ -23,7 +23,7 @@ import kotlin.Unit;
 public final class AdRevenueOtherClientModuleEntryPoint extends ModuleClientEntryPoint<ClientSideAdRevenueOtherConfigWrapper> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ClientContext f243a;
+    private ClientContext f244a;
     private e b;
     private final AtomicBoolean c = new AtomicBoolean(false);
     private final g d = new g();
@@ -93,28 +93,28 @@ public final class AdRevenueOtherClientModuleEntryPoint extends ModuleClientEntr
     /* JADX INFO: Access modifiers changed from: private */
     public final void a() {
         synchronized (this) {
-            ClientContext clientContext = this.f243a;
+            ClientContext clientContext = this.f244a;
             if (clientContext == null) {
                 return;
             }
             e eVar = this.b;
-            boolean z = eVar != null && eVar.f236a;
+            boolean z = eVar != null && eVar.f237a;
             boolean detectClassExists = ReflectionUtils.detectClassExists("com.facebook.ads.AdSDKNotificationManager");
             if (z && detectClassExists) {
                 g gVar = this.d;
-                if (gVar.f238a == null) {
+                if (gVar.f239a == null) {
                     i iVar = new i(clientContext, new h());
                     AdSDKNotificationManager.addSDKNotificationListener(iVar);
-                    gVar.f238a = iVar;
+                    gVar.f239a = iVar;
                 }
                 this.c.set(true);
             } else {
                 g gVar2 = this.d;
-                i iVar2 = gVar2.f238a;
+                i iVar2 = gVar2.f239a;
                 if (iVar2 != null) {
                     AdSDKNotificationManager.removeSDKNotificationListener(iVar2);
                 }
-                gVar2.f238a = null;
+                gVar2.f239a = null;
                 this.c.set(false);
             }
             Unit unit = Unit.INSTANCE;
@@ -138,7 +138,7 @@ public final class AdRevenueOtherClientModuleEntryPoint extends ModuleClientEntr
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
-        this.f243a = clientContext;
+        this.f244a = clientContext;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint

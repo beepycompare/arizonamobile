@@ -8,7 +8,7 @@ import kotlin.enums.EnumEntriesKt;
 public final class EnumC0220ea {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EnumC0220ea f960a;
+    public static final EnumC0220ea f961a;
     public static final EnumC0220ea b;
     public static final EnumC0220ea c;
     public static final EnumC0220ea d;
@@ -19,7 +19,7 @@ public final class EnumC0220ea {
     static {
         EnumC0220ea enumC0220ea = new EnumC0220ea("UNKNOWN", 0);
         EnumC0220ea enumC0220ea2 = new EnumC0220ea("APPSFLYER", 1);
-        f960a = enumC0220ea2;
+        f961a = enumC0220ea2;
         EnumC0220ea enumC0220ea3 = new EnumC0220ea("ADJUST", 2);
         b = enumC0220ea3;
         EnumC0220ea enumC0220ea4 = new EnumC0220ea("KOCHAVA", 3);

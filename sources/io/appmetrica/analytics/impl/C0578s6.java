@@ -27,7 +27,7 @@ public final class C0578s6 extends C0253fh {
             return;
         }
         this.c = true;
-        String a2 = this.i.f606a.a();
+        String a2 = this.i.f607a.a();
         X1 x1 = this.j;
         Context context = this.f;
         x1.getClass();
@@ -36,7 +36,7 @@ public final class C0578s6 extends C0253fh {
         if (!this.h && Intrinsics.areEqual(a2, str)) {
             this.k.a(this.g);
         } else {
-            this.f748a.c();
+            this.f749a.c();
             this.c = false;
             super.a();
         }

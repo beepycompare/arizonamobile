@@ -5,17 +5,17 @@ import android.content.Context;
 public final class Rg implements InterfaceC0594sm, InterfaceC0325ib {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f747a;
+    public final Context f748a;
     public final C0267g5 b;
     public final C0293h5 c;
     public final C0182cn d;
     public final InterfaceC0454nb e;
 
     public Rg(Context context, C0267g5 c0267g5, G4 g4, InterfaceC0474o5 interfaceC0474o5, C0293h5 c0293h5, C0361jm c0361jm) {
-        this.f747a = context;
+        this.f748a = context;
         this.b = c0267g5;
         this.c = c0293h5;
-        C0182cn a2 = c0361jm.a(context, c0267g5, g4.f556a);
+        C0182cn a2 = c0361jm.a(context, c0267g5, g4.f557a);
         this.d = a2;
         this.e = interfaceC0474o5.a(context, c0267g5, g4.b, a2);
         c0361jm.a(c0267g5, this);
@@ -26,16 +26,16 @@ public final class Rg implements InterfaceC0594sm, InterfaceC0325ib {
     }
 
     public final Context b() {
-        return this.f747a;
+        return this.f748a;
     }
 
     public final void a(InterfaceC0680w4 interfaceC0680w4) {
-        this.c.f1006a.add(interfaceC0680w4);
+        this.c.f1007a.add(interfaceC0680w4);
     }
 
     public final void b(InterfaceC0680w4 interfaceC0680w4) {
-        this.c.f1006a.remove(interfaceC0680w4);
-        if (this.c.f1006a.isEmpty()) {
+        this.c.f1007a.remove(interfaceC0680w4);
+        if (this.c.f1007a.isEmpty()) {
             ((InterfaceC0273gb) this.e).c();
         }
     }
@@ -52,7 +52,7 @@ public final class Rg implements InterfaceC0594sm, InterfaceC0325ib {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0325ib
     public final void a(G4 g4) {
-        this.d.a(g4.f556a);
+        this.d.a(g4.f557a);
         this.e.a(g4.b);
     }
 

@@ -22,8 +22,8 @@ public final class Uk implements InterfaceC0352jd {
         });
         C0128al B = Na.I.B();
         synchronized (B) {
-            C0553r7 c0553r7 = B.f890a;
-            c0502p7 = new C0502p7(context, new C0528q7(c0553r7.f1178a, c0553r7.b, false).a(context, tk), jn, PublicLogger.getAnonymousInstance());
+            C0553r7 c0553r7 = B.f891a;
+            c0502p7 = new C0502p7(context, new C0528q7(c0553r7.f1179a, c0553r7.b, false).a(context, tk), jn, PublicLogger.getAnonymousInstance());
         }
         byte[] bArr = new C0239f3(new Vl(c0502p7), "binary_data").get("auto_inapp_collecting_info_data");
         if (bArr != null) {

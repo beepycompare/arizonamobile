@@ -16,7 +16,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class X8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0502p7 f837a;
+    public final C0502p7 f838a;
     public final C0448n5 b;
     public final AtomicLong c;
     public final List d;
@@ -24,7 +24,7 @@ public final class X8 {
     public final ReentrantReadWriteLock.WriteLock f;
 
     public X8(C0502p7 c0502p7, C0448n5 c0448n5, AtomicLong atomicLong, ArrayList arrayList, Z6 z6, ReentrantReadWriteLock reentrantReadWriteLock) {
-        this.f837a = c0502p7;
+        this.f838a = c0502p7;
         this.b = c0448n5;
         this.c = atomicLong;
         this.d = arrayList;
@@ -37,7 +37,7 @@ public final class X8 {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
             return this.e.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", Arrays.copyOf(new Object[]{CollectionsKt.joinToString$default(Q9.i, ", ", null, null, 0, null, null, 62, null), CollectionsKt.joinToString$default(Q9.j, ", ", null, null, 0, null, null, 62, null), 10}, 3)), null, 2, this.b.b.b, true).b;
         } catch (Throwable th) {
-            C0541qk c0541qk = Oj.f705a;
+            C0541qk c0541qk = Oj.f706a;
             c0541qk.getClass();
             c0541qk.a(new Pj("deleteExcessiveReports exception", th));
             return 0;
@@ -55,7 +55,7 @@ public final class X8 {
         SQLiteDatabase sQLiteDatabase = null;
         try {
             try {
-                SQLiteDatabase writableDatabase = this.f837a.getWritableDatabase();
+                SQLiteDatabase writableDatabase = this.f838a.getWritableDatabase();
                 if (writableDatabase != null) {
                     try {
                         writableDatabase.beginTransaction();

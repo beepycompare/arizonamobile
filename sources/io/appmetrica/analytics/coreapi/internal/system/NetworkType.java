@@ -24,7 +24,7 @@ public final class NetworkType {
     public static final NetworkType WIMAX;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ NetworkType[] f333a;
+    private static final /* synthetic */ NetworkType[] f334a;
     private static final /* synthetic */ EnumEntries b;
 
     static {
@@ -57,7 +57,7 @@ public final class NetworkType {
         NetworkType networkType14 = new NetworkType("UNDEFINED", 13);
         UNDEFINED = networkType14;
         NetworkType[] networkTypeArr = {networkType, networkType2, networkType3, networkType4, networkType5, networkType6, networkType7, networkType8, networkType9, networkType10, networkType11, networkType12, networkType13, networkType14};
-        f333a = networkTypeArr;
+        f334a = networkTypeArr;
         b = EnumEntriesKt.enumEntries(networkTypeArr);
     }
 
@@ -73,6 +73,6 @@ public final class NetworkType {
     }
 
     public static NetworkType[] values() {
-        return (NetworkType[]) f333a.clone();
+        return (NetworkType[]) f334a.clone();
     }
 }

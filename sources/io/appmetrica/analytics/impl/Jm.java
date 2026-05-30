@@ -9,12 +9,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Jm implements Mm {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Hm f617a;
+    public volatile Hm f618a;
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.Mm
     public final void a(Hm hm) {
-        this.f617a = hm;
+        this.f618a = hm;
         for (Mm mm : this.b) {
             mm.a(hm);
         }
@@ -25,7 +25,7 @@ public final class Jm implements Mm {
     }
 
     public final Hm a() {
-        Hm hm = this.f617a;
+        Hm hm = this.f618a;
         if (hm == null) {
             Intrinsics.throwUninitializedPropertyAccessException("startupState");
             return null;
@@ -35,8 +35,8 @@ public final class Jm implements Mm {
 
     public final void a(Mm mm) {
         this.b.add(mm);
-        if (this.f617a != null) {
-            Hm hm = this.f617a;
+        if (this.f618a != null) {
+            Hm hm = this.f618a;
             if (hm == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("startupState");
                 hm = null;
@@ -50,7 +50,7 @@ public final class Jm implements Mm {
         ProtobufStateStorage<Object> create = ((AbstractC0621tn) C0569rn.a(Lm.class)).create(context);
         Zo a2 = Na.k().D().a();
         synchronized (a2) {
-            optStringOrNull = JsonUtils.optStringOrNull(a2.f875a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(a2.f876a.a(), "device_id");
         }
         a(new Hm(optStringOrNull, a2.a(), (Lm) create.read()));
     }

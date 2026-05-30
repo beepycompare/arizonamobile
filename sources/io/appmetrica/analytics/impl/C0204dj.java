@@ -14,7 +14,7 @@ public final class C0204dj extends MessageNano {
     public static volatile C0204dj[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f945a;
+    public long f946a;
     public C0229ej b;
     public int c;
     public byte[] d;
@@ -35,7 +35,7 @@ public final class C0204dj extends MessageNano {
     }
 
     public final C0204dj a() {
-        this.f945a = 0L;
+        this.f946a = 0L;
         this.b = null;
         this.c = 0;
         this.d = WireFormatNano.EMPTY_BYTES;
@@ -46,7 +46,7 @@ public final class C0204dj extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f945a;
+        long j = this.f946a;
         if (j != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt64Size(1, j);
         }
@@ -63,7 +63,7 @@ public final class C0204dj extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f945a;
+        long j = this.f946a;
         if (j != 0) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -89,7 +89,7 @@ public final class C0204dj extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f945a = codedInputByteBufferNano.readInt64();
+                this.f946a = codedInputByteBufferNano.readInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0229ej();

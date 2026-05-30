@@ -9,8 +9,8 @@ public final class i implements ProtobufConverter {
     /* renamed from: a */
     public final c fromModel(BillingInfo billingInfo) {
         c cVar = new c();
-        int i = h.f262a[billingInfo.type.ordinal()];
-        cVar.f260a = i != 1 ? i != 2 ? 1 : 3 : 2;
+        int i = h.f263a[billingInfo.type.ordinal()];
+        cVar.f261a = i != 1 ? i != 2 ? 1 : 3 : 2;
         cVar.b = billingInfo.productId;
         cVar.c = billingInfo.purchaseToken;
         cVar.d = billingInfo.purchaseTime;
@@ -22,7 +22,7 @@ public final class i implements ProtobufConverter {
     /* renamed from: a */
     public final BillingInfo toModel(c cVar) {
         ProductType productType;
-        int i = cVar.f260a;
+        int i = cVar.f261a;
         if (i == 2) {
             productType = ProductType.INAPP;
         } else if (i != 3) {

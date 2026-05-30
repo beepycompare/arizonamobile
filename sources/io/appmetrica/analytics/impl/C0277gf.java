@@ -16,7 +16,7 @@ public final class C0277gf implements FunctionWithThrowable {
         }
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (NetworkType) AbstractC0303hf.f1014a.a(Integer.valueOf(activeNetworkInfo.getType()));
+            return (NetworkType) AbstractC0303hf.f1015a.a(Integer.valueOf(activeNetworkInfo.getType()));
         }
         return NetworkType.OFFLINE;
     }

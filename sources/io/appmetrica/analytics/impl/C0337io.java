@@ -9,7 +9,7 @@ import java.util.List;
 public final class C0337io implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0207dm f1040a;
+    public final C0207dm f1041a;
 
     public C0337io() {
         this(new C0207dm());
@@ -19,11 +19,11 @@ public final class C0337io implements ProtobufConverter {
     /* renamed from: a */
     public final C0552r6 fromModel(C0363jo c0363jo) {
         C0552r6 c0552r6 = new C0552r6();
-        c0552r6.f1177a = (String) WrapUtils.getOrDefault(c0363jo.f1055a, "");
+        c0552r6.f1178a = (String) WrapUtils.getOrDefault(c0363jo.f1056a, "");
         c0552r6.b = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(c0363jo.b, ""));
         List<C0258fm> list = c0363jo.c;
         if (list != null) {
-            c0552r6.c = this.f1040a.fromModel(list);
+            c0552r6.c = this.f1041a.fromModel(list);
         }
         C0363jo c0363jo2 = c0363jo.d;
         if (c0363jo2 != null) {
@@ -50,7 +50,7 @@ public final class C0337io implements ProtobufConverter {
     }
 
     public C0337io(C0207dm c0207dm) {
-        this.f1040a = c0207dm;
+        this.f1041a = c0207dm;
     }
 
     public final C0363jo a(C0552r6 c0552r6) {

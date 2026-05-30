@@ -32,12 +32,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Zk implements InterfaceC0534qd, Mm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f873a = "rp";
+    public final String f874a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public volatile AskForPermissionStrategyModuleProvider c = new S7();
 
     public static void a(String str, String str2, Throwable th) {
-        C0541qk c0541qk = Oj.f705a;
+        C0541qk c0541qk = Oj.f706a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         c0541qk.getClass();
         c0541qk.a(new C0515pk("service_module_errors", mapOf));
@@ -263,7 +263,7 @@ public final class Zk implements InterfaceC0534qd, Mm, AskForPermissionStrategyM
 
     public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
         this.b.add(moduleServiceEntryPoint);
-        if (Intrinsics.areEqual(this.f873a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+        if (Intrinsics.areEqual(this.f874a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
             this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
         }
     }
@@ -271,7 +271,7 @@ public final class Zk implements InterfaceC0534qd, Mm, AskForPermissionStrategyM
     @Override // io.appmetrica.analytics.impl.Mm
     public final void a(Hm hm) {
         HashSet hashSet = new HashSet();
-        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(hm.d, hm.f581a, hm.b);
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(hm.d, hm.f582a, hm.b);
         C0124ah c0124ah = new C0124ah(hm.v, hm.u);
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
@@ -295,13 +295,13 @@ public final class Zk implements InterfaceC0534qd, Mm, AskForPermissionStrategyM
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new Wk(new SdkIdentifiers(hm.d, hm.f581a, hm.b), new C0124ah(hm.v, hm.u), hm.A.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new Wk(new SdkIdentifiers(hm.d, hm.f582a, hm.b), new C0124ah(hm.v, hm.u), hm.A.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
                     C0637ud c0637ud = Na.I.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
                     synchronized (c0637ud) {
-                        c0637ud.f1230a.put(identifier, moduleEventServiceHandlerFactory);
+                        c0637ud.f1231a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {

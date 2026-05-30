@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
 public final class C0596so implements Wo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0142b9 f1202a;
+    public final C0142b9 f1203a;
 
     public C0596so() {
         this(new C0142b9());
@@ -19,15 +19,15 @@ public final class C0596so implements Wo {
             bArr = Base64Utils.decompressBase64GzipAsBytes(c0297h9.b);
         } catch (Throwable unused) {
         }
-        byte[] a2 = ((InterfaceC0116a9) this.f1202a.f904a.a(c0297h9.o)).a(bArr);
+        byte[] a2 = ((InterfaceC0116a9) this.f1203a.f905a.a(c0297h9.o)).a(bArr);
         return a2 == null ? new byte[0] : a2;
     }
 
     public C0596so(C0142b9 c0142b9) {
-        this.f1202a = c0142b9;
+        this.f1203a = c0142b9;
     }
 
     public final C0142b9 a() {
-        return this.f1202a;
+        return this.f1203a;
     }
 }

@@ -4,17 +4,17 @@ package io.appmetrica.analytics.impl;
 public final class C0230ek implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0618tk f966a;
+    public final /* synthetic */ InterfaceC0618tk f967a;
 
     public C0230ek(InterfaceC0618tk interfaceC0618tk) {
-        this.f966a = interfaceC0618tk;
+        this.f967a = interfaceC0618tk;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        C0592sk a2 = ((Ed) this.f966a).a();
+        C0592sk a2 = ((Ed) this.f967a).a();
         if (a2 != null) {
-            interfaceC0506pb.reportEvent(a2.f1200a, a2.b);
+            interfaceC0506pb.reportEvent(a2.f1201a, a2.b);
         }
     }
 }

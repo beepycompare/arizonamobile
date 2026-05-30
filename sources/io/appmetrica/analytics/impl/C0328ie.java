@@ -7,14 +7,14 @@ import kotlin.jvm.functions.Function1;
 public final class C0328ie {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f1031a;
+    public final Function1 f1032a;
 
     public C0328ie(C0457ne c0457ne) {
-        this.f1031a = c0457ne;
+        this.f1032a = c0457ne;
     }
 
     public final C0353je a(Context context, C0330ih c0330ih) {
-        return new C0353je(context, c0330ih, this.f1031a, new InterfaceC0586se() { // from class: io.appmetrica.analytics.impl.ie$$ExternalSyntheticLambda1
+        return new C0353je(context, c0330ih, this.f1032a, new InterfaceC0586se() { // from class: io.appmetrica.analytics.impl.ie$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.InterfaceC0586se
             public final Fl a(I0 i0) {
                 return C0328ie.a(i0);
@@ -23,7 +23,7 @@ public final class C0328ie {
     }
 
     public final C0353je b(Context context, C0330ih c0330ih) {
-        return new C0353je(context, c0330ih, this.f1031a, new InterfaceC0586se() { // from class: io.appmetrica.analytics.impl.ie$$ExternalSyntheticLambda0
+        return new C0353je(context, c0330ih, this.f1032a, new InterfaceC0586se() { // from class: io.appmetrica.analytics.impl.ie$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.InterfaceC0586se
             public final Fl a(I0 i0) {
                 return C0328ie.b(i0);

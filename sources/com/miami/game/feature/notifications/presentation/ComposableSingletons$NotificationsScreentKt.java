@@ -25,7 +25,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
     public static final ComposableSingletons$NotificationsScreentKt INSTANCE = new ComposableSingletons$NotificationsScreentKt();
 
     /* renamed from: lambda$-556808038  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f63lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> f64lambda$556808038 = ComposableLambdaKt.composableLambdaInstance(-556808038, false, new Function3() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationsScreentKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$NotificationsScreentKt.lambda__556808038$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -33,8 +33,8 @@ public final class ComposableSingletons$NotificationsScreentKt {
     });
 
     /* renamed from: getLambda$-556808038$notifications  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9760getLambda$556808038$notifications() {
-        return f63lambda$556808038;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9761getLambda$556808038$notifications() {
+        return f64lambda$556808038;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -15,25 +15,25 @@ public final class Y1 {
     public static C1 d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f847a;
+    public final Context f848a;
     public final B1 b;
     public A1 c;
 
     public Y1(Context context, B1 b1) {
-        this.f847a = context;
+        this.f848a = context;
         this.b = b1;
     }
 
     public final void b() {
-        Na.a(this.f847a);
-        PublicLogger.Companion.init(this.f847a);
-        Context context = this.f847a;
+        Na.a(this.f848a);
+        PublicLogger.Companion.init(this.f848a);
+        Context context = this.f848a;
         B1 b1 = this.b;
         if (d == null) {
             O1 o1 = new O1(context, b1, new C0603t5(context));
             Gk gk = Na.I.v;
             R1 r1 = new R1(o1);
-            LinkedHashMap linkedHashMap = gk.f563a;
+            LinkedHashMap linkedHashMap = gk.f564a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();
@@ -46,7 +46,7 @@ public final class Y1 {
         if (c1 != null) {
             this.c = new A1(c1);
             Na na = Na.I;
-            na.f = new Mj(na.f680a, new Nj(c1));
+            na.f = new Mj(na.f681a, new Nj(c1));
             c1.onCreate();
         }
     }

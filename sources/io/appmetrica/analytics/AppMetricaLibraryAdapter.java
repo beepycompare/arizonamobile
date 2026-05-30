@@ -13,11 +13,11 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static H0 f208a = new H0();
+    private static H0 f209a = new H0();
 
     public static void activate(Context context) {
-        H0 h0 = f208a;
-        if (h0.f568a.f942a.a(context).f781a) {
+        H0 h0 = f209a;
+        if (h0.f569a.f943a.a(context).f782a) {
             C0222ec c0222ec = h0.b;
             Context applicationContext = context.getApplicationContext();
             c0222ec.getClass();
@@ -29,27 +29,27 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void reportEvent(String str, String str2, String str3) {
-        f208a.a(str, str2, str3);
+        f209a.a(str, str2, str3);
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        H0 h0 = f208a;
-        if (h0.f568a.c.a((Void) null).f781a) {
+        H0 h0 = f209a;
+        if (h0.f569a.c.a((Void) null).f782a) {
             h0.b.getClass();
             ModulesFacade.setAdvIdentifiersTracking(z);
         }
     }
 
     public static void setProxy(H0 h0) {
-        f208a = h0;
+        f209a = h0;
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        H0 h0 = f208a;
+        H0 h0 = f209a;
         h0.getClass();
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Subscribe for auto-collected data with api key: " + ApiKeyUtils.createPartialApiKey(str), new Object[0]);
-        C0197dc c0197dc = h0.f568a;
-        if (c0197dc.g.a(str).f781a && c0197dc.f942a.a(context).f781a) {
+        C0197dc c0197dc = h0.f569a;
+        if (c0197dc.g.a(str).f782a && c0197dc.f943a.a(context).f782a) {
             h0.b.getClass();
             C0576s4.l().g.a(context);
             C0185d0 b = C0576s4.l().b();
@@ -59,9 +59,9 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        H0 h0 = f208a;
-        C0197dc c0197dc = h0.f568a;
-        if (c0197dc.f942a.a(context).f781a && c0197dc.b.a(appMetricaLibraryAdapterConfig).f781a) {
+        H0 h0 = f209a;
+        C0197dc c0197dc = h0.f569a;
+        if (c0197dc.f943a.a(context).f782a && c0197dc.b.a(appMetricaLibraryAdapterConfig).f782a) {
             C0222ec c0222ec = h0.b;
             Context applicationContext = context.getApplicationContext();
             c0222ec.getClass();

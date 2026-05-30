@@ -6,16 +6,16 @@ import java.util.Collection;
 public final class C0768ze implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1314a;
+    public final String f1315a;
 
     public C0768ze(String str) {
-        this.f1314a = str;
+        this.f1315a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Collection<Object> collection) {
         if (Oo.a((Collection) collection)) {
-            return new To(this, false, this.f1314a + " is null or empty.");
+            return new To(this, false, this.f1315a + " is null or empty.");
         }
         return new To(this, true, "");
     }

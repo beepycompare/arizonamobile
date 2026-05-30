@@ -13,12 +13,12 @@ public final class C0287h extends Ra {
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(List<AbstractC0305hh> list) {
-        list.add(this.f742a.p);
-        list.add(this.f742a.o);
-        list.add(this.f742a.r);
-        list.add(this.f742a.g);
+        list.add(this.f743a.p);
+        list.add(this.f743a.o);
+        list.add(this.f743a.r);
+        list.add(this.f743a.g);
         if (this.b.d()) {
-            list.add(this.f742a.q);
+            list.add(this.f743a.q);
         }
     }
 }

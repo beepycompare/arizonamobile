@@ -17,7 +17,7 @@ public class Zh extends Y3 {
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        C0175cg c0175cg = this.f849a;
+        C0175cg c0175cg = this.f850a;
         synchronized (c0175cg) {
             bundle.putParcelable("PROCESS_CFG_OBJ", c0175cg);
         }
@@ -27,7 +27,7 @@ public class Zh extends Y3 {
     public final synchronized String d() {
         W8 w8;
         w8 = this.c;
-        return w8.f821a.isEmpty() ? null : new JSONObject(w8.f821a).toString();
+        return w8.f822a.isEmpty() ? null : new JSONObject(w8.f822a).toString();
     }
 
     public final synchronized String e() {

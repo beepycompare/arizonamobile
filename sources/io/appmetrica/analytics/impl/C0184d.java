@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class C0184d extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicBoolean f933a = new AtomicBoolean(true);
+    public final AtomicBoolean f934a = new AtomicBoolean(true);
     public final /* synthetic */ C0209e b;
 
     public C0184d(C0209e c0209e) {
@@ -17,7 +17,7 @@ public final class C0184d extends Thread {
 
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
-        while (!isInterrupted() && this.f933a.get()) {
+        while (!isInterrupted() && this.f934a.get()) {
             this.b.e.set(false);
             C0209e c0209e = this.b;
             c0209e.c.postAtFrontOfQueue(c0209e.f);
@@ -34,7 +34,7 @@ public final class C0184d extends Thread {
                 }
             }
             if (i == 0 && !Debug.isDebuggerConnected()) {
-                Iterator it = this.b.f951a.iterator();
+                Iterator it = this.b.f952a.iterator();
                 while (it.hasNext()) {
                     ((InterfaceC0158c) it.next()).onAppNotResponding();
                 }

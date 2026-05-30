@@ -5,7 +5,7 @@ import io.appmetrica.analytics.billinginterface.internal.BillingType;
 public abstract /* synthetic */ class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f265a;
+    public static final /* synthetic */ int[] f266a;
 
     static {
         int[] iArr = new int[BillingType.values().length];
@@ -17,6 +17,6 @@ public abstract /* synthetic */ class l {
             iArr[BillingType.LIBRARY_V8.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f265a = iArr;
+        f266a = iArr;
     }
 }

@@ -19,7 +19,7 @@ public final class C0354jf implements Converter {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             C0345j6 c0345j6 = c0345j6Arr[i];
             Charset charset = Charsets.UTF_8;
-            c0345j6.f1046a = entry.getKey().getBytes(charset);
+            c0345j6.f1047a = entry.getKey().getBytes(charset);
             c0345j6Arr[i].b = entry.getValue().getBytes(charset);
             i++;
         }

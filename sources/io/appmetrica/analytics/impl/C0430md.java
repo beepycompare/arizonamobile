@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 public final class C0430md implements Sn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1094a;
+    public final Context f1095a;
     public final PermissionResolutionStrategy b;
     public final CellularNetworkTypeExtractor c;
     public final CachedDataProvider.CachedData d;
 
     public C0430md(Context context) {
         PermissionResolutionStrategy alwaysAllowPermissionStrategy;
-        this.f1094a = context;
+        this.f1095a = context;
         if (AndroidUtils.isApiAchieved(29)) {
             alwaysAllowPermissionStrategy = new SinglePermissionStrategy(Na.k().j(), "android.permission.READ_PHONE_STATE");
         } else {
@@ -39,7 +39,7 @@ public final class C0430md implements Sn {
         String str;
         c0404ld = (C0404ld) this.d.getData();
         if (c0404ld == null || this.d.shouldUpdateData()) {
-            if (this.b.hasNecessaryPermissions(this.f1094a)) {
+            if (this.b.hasNecessaryPermissions(this.f1095a)) {
                 str = this.c.getNetworkType();
             } else {
                 str = "unknown";

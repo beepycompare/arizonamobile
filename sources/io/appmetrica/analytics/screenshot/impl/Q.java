@@ -7,23 +7,23 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Q implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final F f1441a;
+    public final F f1442a;
 
     public Q() {
         this(null, 1, null);
     }
 
     public final byte[] a(P p) {
-        return MessageNano.toByteArray(this.f1441a.fromModel(p));
+        return MessageNano.toByteArray(this.f1442a.fromModel(p));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f1441a.fromModel((P) obj));
+        return MessageNano.toByteArray(this.f1442a.fromModel((P) obj));
     }
 
     public Q(F f) {
-        this.f1441a = f;
+        this.f1442a = f;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -35,7 +35,7 @@ public final class Q implements Converter {
         } catch (Throwable unused) {
             a2 = new A();
         }
-        return this.f1441a.toModel(a2);
+        return this.f1442a.toModel(a2);
     }
 
     public /* synthetic */ Q(F f, int i, DefaultConstructorMarker defaultConstructorMarker) {

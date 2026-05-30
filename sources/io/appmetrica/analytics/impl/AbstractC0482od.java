@@ -6,7 +6,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType
 public abstract /* synthetic */ class AbstractC0482od {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1129a;
+    public static final /* synthetic */ int[] f1130a;
 
     static {
         int[] iArr = new int[ModuleAdType.values().length];
@@ -38,6 +38,6 @@ public abstract /* synthetic */ class AbstractC0482od {
             iArr[ModuleAdType.OTHER.ordinal()] = 7;
         } catch (NoSuchFieldError unused7) {
         }
-        f1129a = iArr;
+        f1130a = iArr;
     }
 }

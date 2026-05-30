@@ -7,9 +7,9 @@ public final class Ij implements InterfaceC0706x4 {
     /* renamed from: b */
     public final Hj a(Context context, C0603t5 c0603t5, C0266g4 c0266g4, G4 g4) {
         Rg rg;
-        Pc pc = new Pc(c0266g4.b, c0266g4.f991a);
+        Pc pc = new Pc(c0266g4.b, c0266g4.f992a);
         synchronized (c0603t5) {
-            rg = (Rg) c0603t5.f1209a.get(pc.toString());
+            rg = (Rg) c0603t5.f1210a.get(pc.toString());
         }
         return new Hj(rg);
     }

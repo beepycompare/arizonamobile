@@ -9,16 +9,16 @@ public final class R {
         public static int certificate_police_bonus_deposit = 0x7f0805c0;
         public static int certificate_police_bonus_salary = 0x7f0805c1;
         public static int certificate_police_bonus_tasks = 0x7f0805c2;
-        public static int sertificate_ic_anim = 0x7f080ed5;
-        public static int sertificate_ic_armor = 0x7f080ed6;
-        public static int sertificate_ic_caliper = 0x7f080ed7;
-        public static int sertificate_ic_container = 0x7f080ed8;
-        public static int sertificate_ic_engine = 0x7f080ed9;
-        public static int sertificate_ic_gov = 0x7f080eda;
-        public static int sertificate_ic_hp = 0x7f080edb;
-        public static int sertificate_ic_safe = 0x7f080edc;
-        public static int sertificate_ic_set = 0x7f080edd;
-        public static int sertificate_ic_speed = 0x7f080ede;
+        public static int sertificate_ic_anim = 0x7f080ed9;
+        public static int sertificate_ic_armor = 0x7f080eda;
+        public static int sertificate_ic_caliper = 0x7f080edb;
+        public static int sertificate_ic_container = 0x7f080edc;
+        public static int sertificate_ic_engine = 0x7f080edd;
+        public static int sertificate_ic_gov = 0x7f080ede;
+        public static int sertificate_ic_hp = 0x7f080edf;
+        public static int sertificate_ic_safe = 0x7f080ee0;
+        public static int sertificate_ic_set = 0x7f080ee1;
+        public static int sertificate_ic_speed = 0x7f080ee2;
 
         private drawable() {
         }

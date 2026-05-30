@@ -10,33 +10,33 @@ public abstract class W {
     public static final class a extends W {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1571a = new a();
+        public static final a f1572a = new a();
     }
 
     /* loaded from: classes6.dex */
     public static final class b extends W {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<D> f1572a;
+        public final List<D> f1573a;
 
         public b(ArrayList values) {
             Intrinsics.checkNotNullParameter(values, "values");
-            this.f1572a = values;
+            this.f1573a = values;
         }
 
         public final boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof b) && Intrinsics.areEqual(this.f1572a, ((b) obj).f1572a);
+            return (obj instanceof b) && Intrinsics.areEqual(this.f1573a, ((b) obj).f1573a);
         }
 
         public final int hashCode() {
-            return this.f1572a.hashCode();
+            return this.f1573a.hashCode();
         }
 
         public final String toString() {
-            return "Sent(values=" + this.f1572a + ')';
+            return "Sent(values=" + this.f1573a + ')';
         }
     }
 }

@@ -6,20 +6,20 @@ import android.util.SparseArray;
 public final class C0421m4 extends AbstractC0378kd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0665vf f1090a;
+    public final C0665vf f1091a;
 
     public C0421m4(C0665vf c0665vf) {
-        this.f1090a = c0665vf;
+        this.f1091a = c0665vf;
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0378kd
     public final void a(int i) {
-        this.f1090a.c(i);
+        this.f1091a.c(i);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0378kd
     public final int b() {
-        return (int) this.f1090a.a(-1L);
+        return (int) this.f1091a.a(-1L);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0378kd

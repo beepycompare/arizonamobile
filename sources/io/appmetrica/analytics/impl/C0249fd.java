@@ -6,16 +6,16 @@ import kotlin.jvm.functions.Function0;
 public final class C0249fd implements Z8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ve f978a;
+    public final Ve f979a;
     public final Function0 b;
 
     public C0249fd(Ve ve, Function0<Integer> function0) {
-        this.f978a = ve;
+        this.f979a = ve;
         this.b = function0;
     }
 
     @Override // io.appmetrica.analytics.impl.Z8
     public final boolean b() {
-        return ((Ue) this.f978a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
+        return ((Ue) this.f979a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
     }
 }

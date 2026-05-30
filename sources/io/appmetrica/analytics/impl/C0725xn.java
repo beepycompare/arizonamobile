@@ -11,10 +11,10 @@ public final class C0725xn extends Wi {
 
     @Override // io.appmetrica.analytics.impl.Wi
     public final Object a(int i) {
-        return this.f826a.getString(i);
+        return this.f827a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f826a.getString(i);
+        return this.f827a.getString(i);
     }
 }

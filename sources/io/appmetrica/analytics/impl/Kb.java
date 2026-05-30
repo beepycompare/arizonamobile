@@ -9,6 +9,6 @@ public class Kb extends Ra {
 
     @Override // io.appmetrica.analytics.impl.Ra
     public void a(List<AbstractC0305hh> list) {
-        list.add(this.f742a.b);
+        list.add(this.f743a.b);
     }
 }

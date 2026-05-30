@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public final class C0166c7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantReadWriteLock.ReadLock f921a;
+    public final ReentrantReadWriteLock.ReadLock f922a;
     public final ReentrantReadWriteLock.WriteLock b;
     public final C0502p7 c;
     public final Context d;
@@ -33,7 +33,7 @@ public final class C0166c7 {
 
     public C0166c7(C0448n5 c0448n5, C0502p7 c0502p7, Z6 z6, C0683w7 c0683w7) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-        this.f921a = reentrantReadWriteLock.readLock();
+        this.f922a = reentrantReadWriteLock.readLock();
         this.b = reentrantReadWriteLock.writeLock();
         AtomicLong atomicLong = new AtomicLong();
         this.f = atomicLong;
@@ -49,36 +49,36 @@ public final class C0166c7 {
     }
 
     public final long a() {
-        this.f921a.lock();
+        this.f922a.lock();
         try {
             return this.f.get();
         } finally {
-            this.f921a.unlock();
+            this.f922a.unlock();
         }
     }
 
     public final long b() {
         long j;
         SQLiteDatabase readableDatabase;
-        this.f921a.lock();
+        this.f922a.lock();
         try {
             readableDatabase = this.c.getReadableDatabase();
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
             j = DBUtils.queryRowsCount(readableDatabase, "events");
-            this.f921a.unlock();
+            this.f922a.unlock();
             return j;
         }
         j = 0;
-        this.f921a.unlock();
+        this.f922a.unlock();
         return j;
     }
 
     public final void c() {
         Cursor cursor;
         Cursor cursor2;
-        this.f921a.lock();
+        this.f922a.lock();
         Cursor cursor3 = null;
         try {
             SQLiteDatabase readableDatabase = this.c.getReadableDatabase();
@@ -101,7 +101,7 @@ public final class C0166c7 {
                     cursor3 = cursor2;
                     cursor2 = cursor3;
                     cursor3 = cursor;
-                    this.f921a.unlock();
+                    this.f922a.unlock();
                     Oo.a(cursor2);
                     Oo.a(cursor3);
                 }
@@ -111,7 +111,7 @@ public final class C0166c7 {
         } catch (Throwable unused2) {
             cursor = null;
         }
-        this.f921a.unlock();
+        this.f922a.unlock();
         Oo.a(cursor2);
         Oo.a(cursor3);
     }
@@ -121,7 +121,7 @@ public final class C0166c7 {
         SQLiteDatabase readableDatabase;
         String[] strArr;
         String str;
-        this.f921a.lock();
+        this.f922a.lock();
         try {
             readableDatabase = this.c.getReadableDatabase();
         } catch (Throwable unused) {
@@ -148,11 +148,11 @@ public final class C0166c7 {
                 str = sb.toString();
             }
             j = DatabaseUtils.queryNumEntries(readableDatabase, "events", str, strArr);
-            this.f921a.unlock();
+            this.f922a.unlock();
             return j;
         }
         j = 0;
-        this.f921a.unlock();
+        this.f922a.unlock();
         return j;
     }
 
@@ -176,7 +176,7 @@ public final class C0166c7 {
     }
 
     public final X6 a(SQLiteDatabase sQLiteDatabase, String str, C0386kl c0386kl) {
-        return this.h.a(sQLiteDatabase, str, new String[]{Long.toString(c0386kl.f1069a), Integer.toString(c0386kl.b), Long.toString(c0386kl.c)}, 1, this.e.b.b, c0386kl.d);
+        return this.h.a(sQLiteDatabase, str, new String[]{Long.toString(c0386kl.f1070a), Integer.toString(c0386kl.b), Long.toString(c0386kl.c)}, 1, this.e.b.b, c0386kl.d);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:2|3)|(9:5|7|8|(2:10|11)|13|14|15|(2:17|18)|21)|24|13|14|15|(0)|21) */
@@ -189,13 +189,13 @@ public final class C0166c7 {
         String asString;
         SQLiteDatabase readableDatabase;
         ContentValues contentValues = new ContentValues();
-        this.f921a.lock();
+        this.f922a.lock();
         try {
             readableDatabase = this.c.getReadableDatabase();
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
-            cursor = readableDatabase.query("sessions", new String[]{"report_request_parameters"}, "id = ? AND type = ?", new String[]{String.valueOf(j), String.valueOf(al.f462a)}, null, null, null, "1");
+            cursor = readableDatabase.query("sessions", new String[]{"report_request_parameters"}, "id = ? AND type = ?", new String[]{String.valueOf(j), String.valueOf(al.f463a)}, null, null, null, "1");
             try {
                 if (cursor.moveToNext()) {
                     ContentValues contentValues2 = new ContentValues();
@@ -205,7 +205,7 @@ public final class C0166c7 {
             } catch (Throwable unused2) {
             }
             Oo.a(cursor);
-            this.f921a.unlock();
+            this.f922a.unlock();
             asString = contentValues.getAsString("report_request_parameters");
             if (!StringUtils.isNullOrEmpty(asString)) {
                 return new C0697wl(new JSONObject(asString));
@@ -214,7 +214,7 @@ public final class C0166c7 {
         }
         cursor = null;
         Oo.a(cursor);
-        this.f921a.unlock();
+        this.f922a.unlock();
         asString = contentValues.getAsString("report_request_parameters");
         if (!StringUtils.isNullOrEmpty(asString)) {
         }

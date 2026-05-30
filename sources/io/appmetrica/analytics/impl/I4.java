@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public abstract class I4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Li f587a;
+    public final Li f588a;
 
     public I4(Li li) {
-        this.f587a = li;
+        this.f588a = li;
     }
 
     public final Li a() {
-        return this.f587a;
+        return this.f588a;
     }
 }

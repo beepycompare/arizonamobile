@@ -5,13 +5,13 @@ public final class R {
     /* loaded from: classes6.dex */
     public static final class drawable {
         public static int filter_ic = 0x7f080910;
-        public static int rating_card_bg1 = 0x7f080e7f;
-        public static int rating_card_bg2 = 0x7f080e80;
-        public static int rating_card_bg3 = 0x7f080e81;
-        public static int rating_ic_filter1 = 0x7f080e82;
-        public static int rating_ic_filter2 = 0x7f080e83;
-        public static int rating_ic_top = 0x7f080e84;
-        public static int search_not_found = 0x7f080ec7;
+        public static int rating_card_bg1 = 0x7f080e83;
+        public static int rating_card_bg2 = 0x7f080e84;
+        public static int rating_card_bg3 = 0x7f080e85;
+        public static int rating_ic_filter1 = 0x7f080e86;
+        public static int rating_ic_filter2 = 0x7f080e87;
+        public static int rating_ic_top = 0x7f080e88;
+        public static int search_not_found = 0x7f080ecb;
 
         private drawable() {
         }

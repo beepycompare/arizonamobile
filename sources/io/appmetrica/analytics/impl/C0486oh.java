@@ -26,7 +26,7 @@ public final class C0486oh extends AbstractC0305hh {
                 aa2 = Aa.NON_FIRST_OCCURENCE;
             } else {
                 C0323i9 c0323i9 = c0271g9.c;
-                if (c0323i9.f1029a) {
+                if (c0323i9.f1030a) {
                     aa = Aa.FIRST_OCCURRENCE;
                 } else {
                     aa = Aa.UNKNOWN;
@@ -35,13 +35,13 @@ public final class C0486oh extends AbstractC0305hh {
                     c0323i9.b.add(Integer.valueOf(hashCode));
                     c0323i9.d++;
                 } else {
-                    c0323i9.f1029a = false;
+                    c0323i9.f1030a = false;
                 }
                 C0400l9 c0400l9 = c0271g9.b;
                 C0323i9 c0323i92 = c0271g9.c;
                 IBinaryDataHelper iBinaryDataHelper = c0400l9.c;
                 C0374k9 c0374k9 = c0400l9.b;
-                c0400l9.f1076a.getClass();
+                c0400l9.f1077a.getClass();
                 iBinaryDataHelper.insert("event_hashes", c0374k9.toByteArray((C0374k9) C0348j9.a(c0323i92)));
                 aa2 = aa;
             }

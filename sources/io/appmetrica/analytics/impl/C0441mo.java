@@ -4,12 +4,12 @@ package io.appmetrica.analytics.impl;
 public class C0441mo implements InterfaceC0152bj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1100a;
+    public final int f1101a;
     public final int b;
     public int c = 0;
 
     public C0441mo(int i, int i2) {
-        this.f1100a = i;
+        this.f1101a = i;
         this.b = i2;
     }
 
@@ -20,7 +20,7 @@ public class C0441mo implements InterfaceC0152bj {
     public final boolean b() {
         int i = this.c;
         this.c = i + 1;
-        return i < this.f1100a;
+        return i < this.f1101a;
     }
 
     public final void c() {

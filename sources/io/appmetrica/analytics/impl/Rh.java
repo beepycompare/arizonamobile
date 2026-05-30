@@ -13,12 +13,12 @@ public abstract class Rh implements Callable {
     public static final Qh d = new Qh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0546r0 f748a;
+    public final C0546r0 f749a;
     public final El b;
     public boolean c;
 
     public Rh(C0546r0 c0546r0, El el) {
-        this.f748a = c0546r0;
+        this.f749a = c0546r0;
         this.b = el;
     }
 
@@ -28,26 +28,26 @@ public abstract class Rh implements Callable {
     }
 
     public final C0546r0 b() {
-        return this.f748a;
+        return this.f749a;
     }
 
     public boolean c() {
-        C0546r0 c0546r0 = this.f748a;
+        C0546r0 c0546r0 = this.f749a;
         synchronized (c0546r0) {
             if (c0546r0.d == null) {
                 c0546r0.e = new CountDownLatch(1);
                 T1 t1 = c0546r0.h;
-                Context context = c0546r0.f1172a;
+                Context context = c0546r0.f1173a;
                 t1.getClass();
                 Intent a2 = T1.a(context);
                 try {
-                    c0546r0.g.b(c0546r0.f1172a);
-                    c0546r0.f1172a.bindService(a2, c0546r0.j, 1);
+                    c0546r0.g.b(c0546r0.f1173a);
+                    c0546r0.f1173a.bindService(a2, c0546r0.j, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f748a.a(5000L);
+        this.f749a.a(5000L);
         return true;
     }
 
@@ -74,7 +74,7 @@ public abstract class Rh implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0546r0 c0546r0 = this.f748a;
+                C0546r0 c0546r0 = this.f749a;
                 synchronized (c0546r0) {
                     iAppMetricaService = c0546r0.d;
                 }
@@ -83,7 +83,7 @@ public abstract class Rh implements Callable {
                         a(iAppMetricaService);
                         El el = this.b;
                         if (el == null || ((Ci) el).a()) {
-                            this.f748a.c();
+                            this.f749a.c();
                             return;
                         }
                         return;

@@ -5,14 +5,14 @@ import java.util.HashMap;
 public final class M7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f659a;
+    public final HashMap f660a;
 
     public M7() {
         HashMap hashMap = new HashMap();
-        this.f659a = hashMap;
-        hashMap.put("events", I5.f588a);
-        hashMap.put("sessions", K5.f623a);
-        hashMap.put("preferences", J5.f605a);
-        hashMap.put("binary_data", H5.f571a);
+        this.f660a = hashMap;
+        hashMap.put("events", I5.f589a);
+        hashMap.put("sessions", K5.f624a);
+        hashMap.put("preferences", J5.f606a);
+        hashMap.put("binary_data", H5.f572a);
     }
 }

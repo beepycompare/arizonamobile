@@ -11,19 +11,19 @@ import ru.rustore.sdk.analytics.AnalyticsEventProvider;
 public final class C0802c extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0804e f1506a;
+    public final /* synthetic */ C0804e f1507a;
     public final /* synthetic */ C0808i b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0802c(C0804e c0804e, C0808i c0808i) {
         super(0);
-        this.f1506a = c0804e;
+        this.f1507a = c0804e;
         this.b = c0808i;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        C0804e c0804e = this.f1506a;
+        C0804e c0804e = this.f1507a;
         AnalyticsEventProvider analyticsEventProvider = c0804e.d;
         Context context = c0804e.e;
         String packageName = context.getPackageName();

@@ -5,12 +5,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Lh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f647a;
+    public final long f648a;
     public final C0763z9 b;
     public final int c;
 
     public Lh(long j, C0763z9 c0763z9, int i) {
-        this.f647a = j;
+        this.f648a = j;
         this.b = c0763z9;
         this.c = i;
     }
@@ -21,17 +21,17 @@ public final class Lh {
         }
         if (obj instanceof Lh) {
             Lh lh = (Lh) obj;
-            return this.f647a == lh.f647a && Intrinsics.areEqual(this.b, lh.b) && this.c == lh.c;
+            return this.f648a == lh.f648a && Intrinsics.areEqual(this.b, lh.b) && this.c == lh.c;
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return Integer.hashCode(this.c) + ((hashCode + (Long.hashCode(this.f647a) * 31)) * 31);
+        return Integer.hashCode(this.c) + ((hashCode + (Long.hashCode(this.f648a) * 31)) * 31);
     }
 
     public final String toString() {
-        return "SessionCandidate(sessionId=" + this.f647a + ", sessionDesc=" + this.b + ", sessionTypeCode=" + this.c + ')';
+        return "SessionCandidate(sessionId=" + this.f648a + ", sessionDesc=" + this.b + ", sessionTypeCode=" + this.c + ')';
     }
 }

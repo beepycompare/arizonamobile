@@ -80,7 +80,7 @@ final class ProduceFrameSignal {
             }
             if (cancellableContinuationImpl2 != null) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9842constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(Unit.INSTANCE));
             }
             Object result = cancellableContinuationImpl.getResult();
             if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

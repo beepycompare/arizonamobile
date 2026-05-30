@@ -9,11 +9,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class Y3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0175cg f849a;
+    public final C0175cg f850a;
     public final CounterConfiguration b;
 
     public Y3(C0175cg c0175cg, CounterConfiguration counterConfiguration) {
-        this.f849a = c0175cg;
+        this.f850a = c0175cg;
         this.b = counterConfiguration;
     }
 
@@ -27,7 +27,7 @@ public class Y3 {
             } catch (Throwable unused) {
             }
             fromBundle = CounterConfiguration.fromBundle(bundle);
-            if (fromBundle == null && c0175cg != null && context.getPackageName().equals(c0175cg.f927a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0175cg.f927a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
+            if (fromBundle == null && c0175cg != null && context.getPackageName().equals(c0175cg.f928a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0175cg.f928a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
                 return new Y3(c0175cg, fromBundle);
             }
             return null;
@@ -44,10 +44,10 @@ public class Y3 {
     }
 
     public final String toString() {
-        return "ClientConfiguration{mProcessConfiguration=" + this.f849a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ClientConfiguration{mProcessConfiguration=" + this.f850a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
     public final C0175cg a() {
-        return this.f849a;
+        return this.f850a;
     }
 }

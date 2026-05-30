@@ -36,7 +36,7 @@ public final class C0691wf extends Yd implements ep {
 
     public final C0691wf a(C0365k0 c0365k0) {
         synchronized (this) {
-            d(j.b, c0365k0.f1058a);
+            d(j.b, c0365k0.f1059a);
             d(k.b, c0365k0.b);
         }
         return this;
@@ -48,25 +48,25 @@ public final class C0691wf extends Yd implements ep {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final Set<String> c() {
-        return this.f1278a.b();
+        return this.f1279a.b();
     }
 
     public final C0365k0 d() {
         C0365k0 c0365k0;
         synchronized (this) {
-            c0365k0 = new C0365k0(this.f1278a.getString(j.b, "{}"), this.f1278a.getLong(k.b, 0L));
+            c0365k0 = new C0365k0(this.f1279a.getString(j.b, "{}"), this.f1279a.getLong(k.b, 0L));
         }
         return c0365k0;
     }
 
     public final String e() {
-        return this.f1278a.getString(m.b, "");
+        return this.f1279a.getString(m.b, "");
     }
 
     public final Map<String, Long> f() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f1278a.getString(q.b, null);
+            String string = this.f1279a.getString(q.b, null);
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -82,14 +82,14 @@ public final class C0691wf extends Yd implements ep {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf, io.appmetrica.analytics.impl.Zl, io.appmetrica.analytics.impl.ep
     public final void flushAsync() {
-        this.f1278a.flushAsync();
+        this.f1279a.flushAsync();
     }
 
     public final List<String> g() {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f1278a.getString(str, null);
+        String string = this.f1279a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -107,21 +107,21 @@ public final class C0691wf extends Yd implements ep {
     }
 
     public final int h() {
-        return this.f1278a.getInt(l.b, -1);
+        return this.f1279a.getInt(l.b, -1);
     }
 
     public final long i() {
-        return this.f1278a.getLong(h.b, 0L);
+        return this.f1279a.getLong(h.b, 0L);
     }
 
     public final String j() {
-        return this.f1278a.getString(i.b, null);
+        return this.f1279a.getString(i.b, null);
     }
 
     public final Map<Integer, String> k() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f1278a.getString(p.b, null);
+            String string = this.f1279a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -137,11 +137,11 @@ public final class C0691wf extends Yd implements ep {
 
     @Override // io.appmetrica.analytics.impl.ep
     public final String b() {
-        return this.f1278a.getString(o.b, null);
+        return this.f1279a.getString(o.b, null);
     }
 
     public final String h(String str) {
-        return this.f1278a.getString(new C0743yf(r, str).b, "");
+        return this.f1279a.getString(new C0743yf(r, str).b, "");
     }
 
     public final C0691wf i(String str) {
@@ -185,7 +185,7 @@ public final class C0691wf extends Yd implements ep {
     }
 
     public final boolean a(boolean z) {
-        return this.f1278a.getBoolean(s.b, z);
+        return this.f1279a.getBoolean(s.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.ep

@@ -24,13 +24,13 @@ public final class C0485og implements Wo {
                 if (decode != null && decode.length != 0) {
                     bg = new Bg(decode);
                     C0692wg c0692wg = new C0692wg();
-                    str = bg.f477a;
+                    str = bg.f478a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    c0692wg.f1266a = bytes;
+                    c0692wg.f1267a = bytes;
                     c0692wg.c = bg.b;
                     c0692wg.b = bg.c;
                     a2 = AbstractC0167c8.a(bg.d);
@@ -49,10 +49,10 @@ public final class C0485og implements Wo {
                 }
                 bg = null;
                 C0692wg c0692wg2 = new C0692wg();
-                str = bg.f477a;
+                str = bg.f478a;
                 if (str != null) {
                 }
-                c0692wg2.f1266a = bytes;
+                c0692wg2.f1267a = bytes;
                 c0692wg2.c = bg.b;
                 c0692wg2.b = bg.c;
                 a2 = AbstractC0167c8.a(bg.d);

@@ -4,11 +4,11 @@ package io.appmetrica.analytics.impl;
 public final class C0379ke {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f1063a;
+    public final byte[] f1064a;
     public final C0302he b;
 
     public C0379ke(byte[] bArr, C0302he c0302he) {
-        this.f1063a = bArr;
+        this.f1064a = bArr;
         this.b = c0302he;
     }
 }

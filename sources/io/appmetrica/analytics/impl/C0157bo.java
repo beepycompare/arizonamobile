@@ -7,11 +7,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class C0157bo implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f912a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f913a = new CopyOnWriteArrayList();
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
     public final void uncaughtException(Thread thread, Throwable th) {
-        for (Thread.UncaughtExceptionHandler uncaughtExceptionHandler : this.f912a) {
+        for (Thread.UncaughtExceptionHandler uncaughtExceptionHandler : this.f913a) {
             uncaughtExceptionHandler.uncaughtException(thread, th);
         }
     }

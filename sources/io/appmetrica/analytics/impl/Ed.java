@@ -18,7 +18,7 @@ import org.json.JSONObject;
 public final class Ed implements InterfaceC0618tk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zl f527a;
+    public final Zl f528a;
     public final String b;
     public final SystemTimeProvider c;
     public final List d;
@@ -26,7 +26,7 @@ public final class Ed implements InterfaceC0618tk {
     public final long f;
 
     public Ed(Zl zl, String str, SystemTimeProvider systemTimeProvider, List<Bd> list) {
-        this.f527a = zl;
+        this.f528a = zl;
         this.b = str;
         this.c = systemTimeProvider;
         this.d = list;
@@ -40,7 +40,7 @@ public final class Ed implements InterfaceC0618tk {
             return null;
         }
         List sortedWith = CollectionsKt.sortedWith(this.d, new Dd());
-        String a2 = ((Yd) this.f527a).a(this.e, (String) null);
+        String a2 = ((Yd) this.f528a).a(this.e, (String) null);
         if (a2 != null) {
             try {
                 JSONObject jSONObject = new JSONObject(a2);
@@ -60,9 +60,9 @@ public final class Ed implements InterfaceC0618tk {
             td = null;
         }
         long currentTimeMillis = this.c.currentTimeMillis();
-        if (td == null || currentTimeMillis - td.b > this.f || !Intrinsics.areEqual(sortedWith, td.f775a)) {
+        if (td == null || currentTimeMillis - td.b > this.f || !Intrinsics.areEqual(sortedWith, td.f776a)) {
             Td td2 = new Td(sortedWith, currentTimeMillis);
-            Zl zl = this.f527a;
+            Zl zl = this.f528a;
             Yd yd = (Yd) zl;
             yd.d(yd.g(this.e), td2.a());
             return new C0592sk(this.b + "_status", td2.a());

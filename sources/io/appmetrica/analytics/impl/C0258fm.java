@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0258fm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f984a;
+    public final String f985a;
     public final String b;
     public final Integer c;
     public final Integer d;
@@ -12,7 +12,7 @@ public final class C0258fm {
     public final Boolean f;
 
     public C0258fm(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
-        this.f984a = str;
+        this.f985a = str;
         this.b = str2;
         this.c = num;
         this.d = num2;

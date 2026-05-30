@@ -18,12 +18,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class g extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ i f294a;
+    public final /* synthetic */ i f295a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public g(i iVar, BillingResult billingResult, List list) {
-        this.f294a = iVar;
+        this.f295a = iVar;
         this.b = billingResult;
         this.c = list;
     }
@@ -31,7 +31,7 @@ public final class g extends SafeRunnable {
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
         ProductType productType;
-        i iVar = this.f294a;
+        i iVar = this.f295a;
         BillingResult billingResult = this.b;
         List<PurchaseHistoryRecord> list = this.c;
         iVar.getClass();
@@ -49,7 +49,7 @@ public final class g extends SafeRunnable {
                     linkedHashMap.put(billingInfo.productId, billingInfo);
                 }
             }
-            Map<String, BillingInfo> billingInfoToUpdate = iVar.c.getUpdatePolicy().getBillingInfoToUpdate(iVar.f296a, linkedHashMap, iVar.c.getBillingInfoManager());
+            Map<String, BillingInfo> billingInfoToUpdate = iVar.c.getUpdatePolicy().getBillingInfoToUpdate(iVar.f297a, linkedHashMap, iVar.c.getBillingInfoManager());
             if (billingInfoToUpdate.isEmpty()) {
                 m.a(linkedHashMap, billingInfoToUpdate, iVar.d, iVar.c.getBillingInfoManager());
                 iVar.f.onUpdateFinished();
@@ -79,7 +79,7 @@ public final class g extends SafeRunnable {
         } else {
             iVar.f.onUpdateFinished();
         }
-        i iVar2 = this.f294a;
+        i iVar2 = this.f295a;
         iVar2.e.a(iVar2);
     }
 }

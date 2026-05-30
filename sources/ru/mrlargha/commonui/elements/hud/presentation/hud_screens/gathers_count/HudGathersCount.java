@@ -87,7 +87,7 @@ public final class HudGathersCount {
             debuffContainer.setVisibility(0);
             startDebuffTimer(hudGathersCountDebuff.getTime());
             hudGathersCountBinding.tvDebuff.setText(hudGathersCountDebuff.getTitle());
-            int i = WhenMappings.$EnumSwitchMapping$0[hudGathersCountDebuff.m11773getType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[hudGathersCountDebuff.m11774getType().ordinal()];
             if (i == 1) {
                 hudGathersCountBinding.ivDebuffBg.setImageResource(R.drawable.hud_gathers_count_frozen_item_bg);
                 hudGathersCountBinding.ivDebuffIc.setImageResource(R.drawable.hud_gathers_count_ic_snow);

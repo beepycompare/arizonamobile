@@ -12,19 +12,19 @@ import kotlin.jvm.functions.Function0;
 public final class e extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ f f306a;
+    public final /* synthetic */ f f307a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ QueryProductDetailsResult c;
 
     public e(f fVar, BillingResult billingResult, QueryProductDetailsResult queryProductDetailsResult) {
-        this.f306a = fVar;
+        this.f307a = fVar;
         this.b = billingResult;
         this.c = queryProductDetailsResult;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        f fVar = this.f306a;
+        f fVar = this.f307a;
         BillingResult billingResult = this.b;
         List<ProductDetails> productDetailsList = this.c.getProductDetailsList();
         fVar.getClass();
@@ -36,7 +36,7 @@ public final class e extends SafeRunnable {
             k kVar = new k(utilsProvider, function0, list, productDetailsList, dVar, fVar.g);
             dVar.b.add(kVar);
             if (fVar.b.isReady()) {
-                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f307a).build(), kVar);
+                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f308a).build(), kVar);
             } else {
                 fVar.f.a(kVar);
                 fVar.g.onUpdateFinished();
@@ -44,7 +44,7 @@ public final class e extends SafeRunnable {
         } else {
             fVar.g.onUpdateFinished();
         }
-        f fVar2 = this.f306a;
+        f fVar2 = this.f307a;
         fVar2.f.a(fVar2);
     }
 }

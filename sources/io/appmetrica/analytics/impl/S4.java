@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public final class S4 extends AbstractC0278gg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final R4 f757a;
+    public final R4 f758a;
 
     public S4(N4 n4) {
-        this.f757a = new R4(n4);
+        this.f758a = new R4(n4);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0278gg
@@ -16,11 +16,11 @@ public final class S4 extends AbstractC0278gg {
         ArrayList arrayList = new ArrayList();
         int ordinal = Db.a(i).ordinal();
         if (ordinal == 12) {
-            arrayList.add(this.f757a.f739a);
+            arrayList.add(this.f758a.f740a);
         } else if (ordinal == 14) {
-            arrayList.add(this.f757a.b);
+            arrayList.add(this.f758a.b);
         } else if (ordinal == 34) {
-            arrayList.add(this.f757a.c);
+            arrayList.add(this.f758a.c);
         }
         return new C0504p9(arrayList);
     }

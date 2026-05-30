@@ -12,14 +12,14 @@ import java.util.Collection;
 public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1143a;
+    public final String f1144a;
     public final PublicLogger b;
     public final Jn c;
 
     public C0502p7(Context context, String str, Jn jn, PublicLogger publicLogger) {
         super(context, str, (SQLiteDatabase.CursorFactory) null, M5.b);
         this.c = jn;
-        this.f1143a = str;
+        this.f1144a = str;
         this.b = publicLogger;
     }
 
@@ -28,8 +28,8 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getReadableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1143a);
-            C0541qk c0541qk = Oj.f705a;
+            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1144a);
+            C0541qk c0541qk = Oj.f706a;
             c0541qk.getClass();
             c0541qk.a(new Pj("db_read_error", th));
             return null;
@@ -41,8 +41,8 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getWritableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1143a);
-            C0541qk c0541qk = Oj.f705a;
+            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1144a);
+            C0541qk c0541qk = Oj.f706a;
             c0541qk.getClass();
             c0541qk.a(new Pj("db_write_error", th));
             return null;
@@ -52,7 +52,7 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.c.f618a.runScript(sQLiteDatabase);
+            this.c.f619a.runScript(sQLiteDatabase);
         } catch (Throwable unused) {
         }
     }
@@ -66,7 +66,7 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
             } catch (Throwable unused) {
             }
             try {
-                jn.f618a.runScript(sQLiteDatabase);
+                jn.f619a.runScript(sQLiteDatabase);
                 return;
             } catch (Throwable unused2) {
                 return;
@@ -89,7 +89,7 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
                 jn.b.runScript(sQLiteDatabase);
             } catch (Throwable unused) {
             }
-            jn.f618a.runScript(sQLiteDatabase);
+            jn.f619a.runScript(sQLiteDatabase);
         } catch (Throwable unused2) {
         }
     }
@@ -107,7 +107,7 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
         if (i2 > i) {
             for (int i3 = i + 1; i3 <= i2; i3++) {
                 try {
-                    Collection<DatabaseScript> collection = (Collection) jn.c.f762a.get(Integer.valueOf(i3));
+                    Collection<DatabaseScript> collection = (Collection) jn.c.f763a.get(Integer.valueOf(i3));
                     if (collection != null) {
                         for (DatabaseScript databaseScript : collection) {
                             databaseScript.runScript(sQLiteDatabase);
@@ -123,7 +123,7 @@ public final class C0502p7 extends SQLiteOpenHelper implements Closeable {
                 } catch (Throwable unused2) {
                 }
                 try {
-                    jn.f618a.runScript(sQLiteDatabase);
+                    jn.f619a.runScript(sQLiteDatabase);
                     return;
                 } catch (Throwable unused3) {
                     return;

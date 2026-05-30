@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FirstPartyDataPhoneSha256Attribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1412a = new L6("appmetrica_1pd_phone_sha256", new C0606t8(), new C0326ic(new D4(100)));
+    private final L6 f1413a = new L6("appmetrica_1pd_phone_sha256", new C0606t8(), new C0326ic(new D4(100)));
     private final Dl b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,10 +29,10 @@ public class FirstPartyDataPhoneSha256Attribute {
     }
 
     public UserProfileUpdate<? extends Ho> withPhoneValues(Iterable<String> iterable) {
-        String str = this.f1412a.c;
+        String str = this.f1413a.c;
         ArrayList a2 = this.b.a(iterable);
         C0777zn c0777zn = new C0777zn(200, "First party data phones attribute", PublicLogger.getAnonymousInstance());
-        L6 l6 = this.f1412a;
-        return new UserProfileUpdate<>(new C0751yn(str, a2, 10, c0777zn, l6.f641a, new J4(l6.b)));
+        L6 l6 = this.f1413a;
+        return new UserProfileUpdate<>(new C0751yn(str, a2, 10, c0777zn, l6.f642a, new J4(l6.b)));
     }
 }

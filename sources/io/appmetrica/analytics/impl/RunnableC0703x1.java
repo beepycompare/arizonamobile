@@ -7,24 +7,24 @@ import java.util.Iterator;
 public final class RunnableC0703x1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f1272a;
+    public final /* synthetic */ Context f1273a;
 
     public RunnableC0703x1(Context context) {
-        this.f1272a = context;
+        this.f1273a = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0541qk c0541qk = Oj.f705a;
-        Context context = this.f1272a;
+        C0541qk c0541qk = Oj.f706a;
+        Context context = this.f1273a;
         synchronized (c0541qk) {
             if (c0541qk.b == null) {
-                c0541qk.b = Hi.f577a.a(context, "20799a27-fa80-4b36-b2db-0f8141f24180");
-                Iterator it = c0541qk.f1167a.iterator();
+                c0541qk.b = Hi.f578a.a(context, "20799a27-fa80-4b36-b2db-0f8141f24180");
+                Iterator it = c0541qk.f1168a.iterator();
                 while (it.hasNext()) {
                     ((InterfaceC0480ob) it.next()).a(c0541qk.b);
                 }
-                c0541qk.f1167a.clear();
+                c0541qk.f1168a.clear();
             }
         }
     }

@@ -10,11 +10,11 @@ import java.util.List;
 public final class C0420m3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X8 f1089a;
+    public final X8 f1090a;
     public final DeferredBatchExecutor b;
 
     public C0420m3(X8 x8, IHandlerExecutor iHandlerExecutor) {
-        this.f1089a = x8;
+        this.f1090a = x8;
         this.b = new DeferredBatchExecutor(iHandlerExecutor, new AccumulatingTaskBuffer(), new BatchProcessor() { // from class: io.appmetrica.analytics.impl.m3$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor
             public final void processBatch(List list) {
@@ -25,8 +25,8 @@ public final class C0420m3 {
 
     public static final void a(C0420m3 c0420m3, List list) {
         try {
-            c0420m3.f1089a.b(list);
-            c0420m3.f1089a.a(list);
+            c0420m3.f1090a.b(list);
+            c0420m3.f1090a.a(list);
         } catch (Exception unused) {
         }
     }

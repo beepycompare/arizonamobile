@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0744yg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0773zj f1296a;
+    public final C0773zj f1297a;
     public final Va b;
     public final Va c;
 
@@ -20,14 +20,14 @@ public final class C0744yg implements Converter {
     public final Xi fromModel(Ng ng) {
         Xi xi;
         I8 i8 = new I8();
-        C0519po a2 = this.b.a(ng.f685a);
-        i8.f590a = StringUtils.getUTF8Bytes((String) a2.f1152a);
+        C0519po a2 = this.b.a(ng.f686a);
+        i8.f591a = StringUtils.getUTF8Bytes((String) a2.f1153a);
         C0519po a3 = this.c.a(ng.b);
-        i8.b = StringUtils.getUTF8Bytes((String) a3.f1152a);
+        i8.b = StringUtils.getUTF8Bytes((String) a3.f1153a);
         Dj dj = ng.c;
         if (dj != null) {
-            xi = this.f1296a.fromModel(dj);
-            i8.c = (J8) xi.f838a;
+            xi = this.f1297a.fromModel(dj);
+            i8.c = (J8) xi.f839a;
         } else {
             xi = null;
         }
@@ -41,7 +41,7 @@ public final class C0744yg implements Converter {
     }
 
     public C0744yg(C0773zj c0773zj, Va va, Va va2) {
-        this.f1296a = c0773zj;
+        this.f1297a = c0773zj;
         this.b = va;
         this.c = va2;
     }

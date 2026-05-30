@@ -8,18 +8,18 @@ import kotlin.collections.CollectionsKt;
 public final class N5 implements Z8, InterfaceC0426m9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0166c7 f677a;
+    public final C0166c7 f678a;
     public final AtomicLong b;
 
     public N5(C0166c7 c0166c7) {
-        this.f677a = c0166c7;
+        this.f678a = c0166c7;
         this.b = new AtomicLong(c0166c7.a(Eo.a()));
         c0166c7.a(this);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
     public final void a() {
-        this.b.set(this.f677a.a(Eo.f533a));
+        this.b.set(this.f678a.a(Eo.f534a));
     }
 
     @Override // io.appmetrica.analytics.impl.Z8
@@ -32,7 +32,7 @@ public final class N5 implements Z8, InterfaceC0426m9 {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Number number : list) {
-                if (Eo.f533a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
+                if (Eo.f534a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }
@@ -45,7 +45,7 @@ public final class N5 implements Z8, InterfaceC0426m9 {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Number number : list) {
-                if (Eo.f533a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
+                if (Eo.f534a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }

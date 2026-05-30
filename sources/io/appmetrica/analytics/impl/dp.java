@@ -6,13 +6,13 @@ import java.util.LinkedHashMap;
 public final class dp {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f950a;
+    public final Context f951a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final Zo c;
     public final Zo d;
 
     public dp(Context context) {
-        this.f950a = context;
+        this.f951a = context;
         C0738ya c0738ya = new C0738ya(context, "appmetrica_vital.dat", Na.k().w().e(), 0L, 8, null);
         this.c = new Zo(Na.k().y(), c0738ya);
         this.d = new Zo(new C0769zf(Na.k().B().e(context)), c0738ya);

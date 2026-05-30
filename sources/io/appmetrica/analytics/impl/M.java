@@ -7,7 +7,7 @@ import kotlin.enums.EnumEntriesKt;
 public final class M {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final M f653a;
+    public static final M f654a;
     public static final M b;
     public static final M c;
     public static final M d;
@@ -15,7 +15,7 @@ public final class M {
 
     static {
         M m = new M("ALLOWED", 0);
-        f653a = m;
+        f654a = m;
         M m2 = new M("FORBIDDEN_BY_CLIENT_CONFIG", 1);
         b = m2;
         M m3 = new M("FORBIDDEN_BY_REMOTE_CONFIG", 2);

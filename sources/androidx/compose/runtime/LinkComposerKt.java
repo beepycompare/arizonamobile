@@ -75,7 +75,7 @@ public final class LinkComposerKt {
 
     public static final long toInsertAddress(long j) {
         int context = GroupHandleKt.getContext(j);
-        return (UInt.m9942constructorimpl((-10) - GroupHandleKt.getGroup(j)) & 4294967295L) | (context << 32);
+        return (UInt.m9943constructorimpl((-10) - GroupHandleKt.getGroup(j)) & 4294967295L) | (context << 32);
     }
 
     private static final long toGroupHandle(long j) {
@@ -358,7 +358,7 @@ public final class LinkComposerKt {
     }
 
     private static final long toGroupHandle(int i) {
-        return UInt.m9942constructorimpl(i) & 4294967295L;
+        return UInt.m9943constructorimpl(i) & 4294967295L;
     }
 
     public static final Integer findSubcompositionContextGroup(SlotTable slotTable, CompositionContext compositionContext) {

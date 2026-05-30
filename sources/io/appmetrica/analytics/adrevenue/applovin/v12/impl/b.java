@@ -26,11 +26,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class b implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f225a;
+    public final a f226a;
     public final ClientContext b;
 
     public b(a aVar, ClientContext clientContext) {
-        this.f225a = aVar;
+        this.f226a = aVar;
         this.b = clientContext;
     }
 
@@ -50,7 +50,7 @@ public final class b implements ModuleAdRevenueProcessor {
             Object orNull2 = ArraysKt.getOrNull(objArr, 1);
             Intrinsics.checkNotNull(orNull2, "null cannot be cast to non-null type com.applovin.sdk.AppLovinSdk");
             AppLovinSdk appLovinSdk = (AppLovinSdk) orNull2;
-            this.f225a.getClass();
+            this.f226a.getClass();
             MaxAdFormat format = maxAd.getFormat();
             if (format == null) {
                 moduleAdType = null;

@@ -6,11 +6,11 @@ import android.content.Context;
 public final class C0384kj implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1067a;
+    public final Context f1068a;
     public final String b = "rustore";
 
     public C0384kj(Context context) {
-        this.f1067a = context;
+        this.f1068a = context;
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
@@ -20,6 +20,6 @@ public final class C0384kj implements Hg {
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final void a(Dg dg) {
-        new C0462nj(this.f1067a).a(dg);
+        new C0462nj(this.f1068a).a(dg);
     }
 }

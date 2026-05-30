@@ -8,12 +8,12 @@ import kotlin.jvm.internal.Lambda;
 public final class S extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ W f752a;
+    public final /* synthetic */ W f753a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public S(W w) {
         super(0);
-        this.f752a = w;
+        this.f753a = w;
     }
 
     public static final Void a(W w) {
@@ -24,7 +24,7 @@ public final class S extends Lambda implements Function0 {
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: a */
     public final FutureTask invoke() {
-        final W w = this.f752a;
+        final W w = this.f753a;
         return new FutureTask(new Callable() { // from class: io.appmetrica.analytics.impl.S$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {

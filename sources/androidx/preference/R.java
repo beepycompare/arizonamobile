@@ -104,7 +104,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int ic_arrow_down_24dp = 0x7f080a89;
-        public static int preference_list_divider_material = 0x7f080e4c;
+        public static int preference_list_divider_material = 0x7f080e50;
 
         private drawable() {
         }

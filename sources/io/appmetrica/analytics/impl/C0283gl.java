@@ -4,17 +4,17 @@ package io.appmetrica.analytics.impl;
 public final class C0283gl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1000a;
+    public final long f1001a;
     public final long b;
     public final C0697wl c;
 
     public C0283gl(long j, long j2, C0697wl c0697wl) {
-        this.f1000a = j;
+        this.f1001a = j;
         this.b = j2;
         this.c = c0697wl;
     }
 
     public final String toString() {
-        return "SessionArguments(creationElapsedRealtime=" + this.f1000a + ", creationTimestamp=" + this.b + ", sessionRequestParams=" + this.c + ')';
+        return "SessionArguments(creationElapsedRealtime=" + this.f1001a + ", creationTimestamp=" + this.b + ", sessionRequestParams=" + this.c + ')';
     }
 }

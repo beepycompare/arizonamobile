@@ -8,16 +8,16 @@ public final class C0259fn implements ProtobufConverter {
     /* renamed from: a */
     public final Wm fromModel(C0233en c0233en) {
         Wm wm = new Wm();
-        wm.f830a = c0233en.f968a;
+        wm.f831a = c0233en.f969a;
         return wm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C0233en(((Wm) obj).f830a);
+        return new C0233en(((Wm) obj).f831a);
     }
 
     public final C0233en a(Wm wm) {
-        return new C0233en(wm.f830a);
+        return new C0233en(wm.f831a);
     }
 }

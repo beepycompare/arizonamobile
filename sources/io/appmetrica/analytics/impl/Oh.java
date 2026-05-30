@@ -16,12 +16,12 @@ import kotlin.io.CloseableKt;
 public final class Oh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0166c7 f703a;
+    public final C0166c7 f704a;
     public final C0671vl b;
     public final ap c;
 
     public Oh(C0448n5 c0448n5) {
-        this.f703a = c0448n5.i();
+        this.f704a = c0448n5.i();
         this.b = c0448n5.s();
         this.c = c0448n5.u();
     }
@@ -34,8 +34,8 @@ public final class Oh {
     public final List a(LinkedHashMap linkedHashMap) {
         Cursor cursor;
         SQLiteDatabase readableDatabase;
-        C0166c7 c0166c7 = this.f703a;
-        c0166c7.f921a.lock();
+        C0166c7 c0166c7 = this.f704a;
+        c0166c7.f922a.lock();
         try {
             readableDatabase = c0166c7.c.getReadableDatabase();
         } catch (Throwable unused) {
@@ -47,7 +47,7 @@ public final class Oh {
                 arrayList.add((String) entry.getValue());
             }
             cursor = readableDatabase.query("sessions", null, a2, (String[]) arrayList.toArray(new String[0]), null, null, "id ASC", null);
-            c0166c7.f921a.unlock();
+            c0166c7.f922a.unlock();
             if (cursor != null) {
                 return CollectionsKt.emptyList();
             }
@@ -65,7 +65,7 @@ public final class Oh {
             return arrayList2;
         }
         cursor = null;
-        c0166c7.f921a.unlock();
+        c0166c7.f922a.unlock();
         if (cursor != null) {
         }
     }
@@ -74,7 +74,7 @@ public final class Oh {
         int optInt;
         ap apVar = this.c;
         synchronized (apVar) {
-            optInt = apVar.f893a.a().optInt("report_request_id", -1);
+            optInt = apVar.f894a.a().optInt("report_request_id", -1);
         }
         return optInt + 1;
     }

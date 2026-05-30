@@ -15,7 +15,7 @@ public final class C0348j9 implements ProtobufConverter {
         }
         o9.c = c0323i9.d;
         o9.b = c0323i9.c;
-        o9.f698a = c0323i9.f1029a;
+        o9.f699a = c0323i9.f1030a;
         return o9;
     }
 
@@ -27,6 +27,6 @@ public final class C0348j9 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         O9 o9 = (O9) obj;
-        return new C0323i9(o9.f698a, o9.b, o9.c, CollectionUtils.hashSetFromIntArray(o9.d));
+        return new C0323i9(o9.f699a, o9.b, o9.c, CollectionUtils.hashSetFromIntArray(o9.d));
     }
 }

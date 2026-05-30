@@ -253,7 +253,7 @@ public final class FastFloatParserKt {
                         }
                         char c7 = charAt7;
                         i10 = i13;
-                        compare4 = Long.compare(ULong.m10021constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                        compare4 = Long.compare(ULong.m10022constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                         if (compare4 >= 0) {
                             break;
                         }
@@ -262,14 +262,14 @@ public final class FastFloatParserKt {
                         charAt7 = i3 < length ? str.charAt(i3) : (char) 0;
                         i13 = i10;
                     }
-                    compare2 = Long.compare(ULong.m10021constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                    compare2 = Long.compare(ULong.m10022constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                     if (compare2 >= 0) {
                         i6 = (i10 - i3) + i8;
                     } else {
                         char charAt8 = str.charAt(i5);
                         int i22 = i5;
                         while (i22 != i4) {
-                            compare3 = Long.compare(ULong.m10021constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                            compare3 = Long.compare(ULong.m10022constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                             if (compare3 >= 0) {
                                 break;
                             }
@@ -282,7 +282,7 @@ public final class FastFloatParserKt {
                     j2 = j6;
                     c4 = c3;
                     if (-10 <= i6 && i6 < 11 && c4 == 0) {
-                        compare = Long.compare(ULong.m10021constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10021constructorimpl(16777216L) ^ Long.MIN_VALUE);
+                        compare = Long.compare(ULong.m10022constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10022constructorimpl(16777216L) ^ Long.MIN_VALUE);
                         if (compare <= 0) {
                             float f2 = (float) j2;
                             if (i6 < 0) {
@@ -302,13 +302,13 @@ public final class FastFloatParserKt {
                         Intrinsics.checkNotNullExpressionValue(str.substring(i, i7), "substring(...)");
                         return (i7 << c2) | (Float.floatToRawIntBits(Float.parseFloat(substring)) & j);
                     } else {
-                        long m10081getsVKNKU = ULongArray.m10081getsVKNKU(Mantissa64, i6 + 325);
+                        long m10082getsVKNKU = ULongArray.m10082getsVKNKU(Mantissa64, i6 + 325);
                         int numberOfLeadingZeros = Long.numberOfLeadingZeros(j2);
                         long j7 = j2 << numberOfLeadingZeros;
                         long j8 = j7 & j;
                         long j9 = j7 >>> c2;
-                        long j10 = m10081getsVKNKU & j;
-                        long j11 = m10081getsVKNKU >>> c2;
+                        long j10 = m10082getsVKNKU & j;
+                        long j11 = m10082getsVKNKU >>> c2;
                         long j12 = j9 * j11;
                         long j13 = j11 * j8;
                         long j14 = j12 + ((((j9 * j10) + ((j8 * j10) >>> c2)) + (j13 & j)) >>> c2) + (j13 >>> c2);
@@ -338,7 +338,7 @@ public final class FastFloatParserKt {
             j2 = j4;
             c4 = 0;
             if (-10 <= i6) {
-                compare = Long.compare(ULong.m10021constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10021constructorimpl(16777216L) ^ Long.MIN_VALUE);
+                compare = Long.compare(ULong.m10022constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10022constructorimpl(16777216L) ^ Long.MIN_VALUE);
                 if (compare <= 0) {
                 }
             }

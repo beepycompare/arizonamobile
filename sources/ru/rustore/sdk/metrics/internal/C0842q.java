@@ -9,20 +9,20 @@ import kotlin.text.StringsKt;
 public final class C0842q extends Lambda implements Function0<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ URL f1600a;
+    public final /* synthetic */ URL f1601a;
     public final /* synthetic */ int b;
     public final /* synthetic */ String c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0842q(URL url, int i, String str) {
         super(0);
-        this.f1600a = url;
+        this.f1601a = url;
         this.b = i;
         this.c = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final String invoke() {
-        return StringsKt.trimIndent("\n                    HTTP REQUEST\n                    URL: " + this.f1600a + "\n                    CODE: " + this.b + "\n                    BODY: " + this.c + "\n                ");
+        return StringsKt.trimIndent("\n                    HTTP REQUEST\n                    URL: " + this.f1601a + "\n                    CODE: " + this.b + "\n                    BODY: " + this.c + "\n                ");
     }
 }

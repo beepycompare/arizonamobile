@@ -155,31 +155,31 @@ public final class Request {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "url", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m11669deprecated_url() {
+    public final HttpUrl m11670deprecated_url() {
         return this.url;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.METHOD, imports = {}))
     /* renamed from: -deprecated_method  reason: not valid java name */
-    public final String m11668deprecated_method() {
+    public final String m11669deprecated_method() {
         return this.method;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "headers", imports = {}))
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m11667deprecated_headers() {
+    public final Headers m11668deprecated_headers() {
         return this.headers;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = TtmlNode.TAG_BODY, imports = {}))
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final RequestBody m11665deprecated_body() {
+    public final RequestBody m11666deprecated_body() {
         return this.body;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cacheControl", imports = {}))
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m11666deprecated_cacheControl() {
+    public final CacheControl m11667deprecated_cacheControl() {
         return cacheControl();
     }
 

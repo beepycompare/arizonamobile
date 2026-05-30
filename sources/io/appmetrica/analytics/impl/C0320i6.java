@@ -13,7 +13,7 @@ public final class C0320i6 extends MessageNano {
     public static volatile C0320i6[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0294h6 f1028a;
+    public C0294h6 f1029a;
     public String b;
     public int c;
 
@@ -33,7 +33,7 @@ public final class C0320i6 extends MessageNano {
     }
 
     public final C0320i6 a() {
-        this.f1028a = null;
+        this.f1029a = null;
         this.b = "";
         this.c = -1;
         this.cachedSize = -1;
@@ -43,7 +43,7 @@ public final class C0320i6 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0294h6 c0294h6 = this.f1028a;
+        C0294h6 c0294h6 = this.f1029a;
         if (c0294h6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0294h6);
         }
@@ -56,7 +56,7 @@ public final class C0320i6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0294h6 c0294h6 = this.f1028a;
+        C0294h6 c0294h6 = this.f1029a;
         if (c0294h6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0294h6);
         }
@@ -78,10 +78,10 @@ public final class C0320i6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f1028a == null) {
-                    this.f1028a = new C0294h6();
+                if (this.f1029a == null) {
+                    this.f1029a = new C0294h6();
                 }
-                codedInputByteBufferNano.readMessage(this.f1028a);
+                codedInputByteBufferNano.readMessage(this.f1029a);
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag != 24) {

@@ -12,7 +12,7 @@ public final class Qm extends MessageNano {
     public static volatile Qm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f736a;
+    public long f737a;
 
     public Qm() {
         a();
@@ -30,7 +30,7 @@ public final class Qm extends MessageNano {
     }
 
     public final Qm a() {
-        this.f736a = 10000L;
+        this.f737a = 10000L;
         this.cachedSize = -1;
         return this;
     }
@@ -38,13 +38,13 @@ public final class Qm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f736a;
+        long j = this.f737a;
         return j != 10000 ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f736a;
+        long j = this.f737a;
         if (j != 10000) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -63,7 +63,7 @@ public final class Qm extends MessageNano {
                     break;
                 }
             } else {
-                this.f736a = codedInputByteBufferNano.readInt64();
+                this.f737a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

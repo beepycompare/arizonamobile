@@ -22,12 +22,12 @@ import kotlin.collections.MapsKt;
 public final class C0499p4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0473o4 f1140a = new C0473o4();
+    public final C0473o4 f1141a = new C0473o4();
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public X5 c;
 
     public static void a(String str, String str2, Throwable th) {
-        C0541qk c0541qk = Oj.f705a;
+        C0541qk c0541qk = Oj.f706a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         c0541qk.getClass();
         c0541qk.a(new C0515pk("client_module_errors", mapOf));
@@ -39,7 +39,7 @@ public final class C0499p4 {
         if (x5 == null || (c0113a6 = ((C0137b4) x5).b) == null) {
             return null;
         }
-        return c0113a6.f881a;
+        return c0113a6.f882a;
     }
 
     public final void c() {
@@ -110,7 +110,7 @@ public final class C0499p4 {
                 ServiceConfigExtensionConfiguration serviceConfigExtensionConfiguration = moduleClientEntryPoint.getServiceConfigExtensionConfiguration();
                 if (serviceConfigExtensionConfiguration != null) {
                     ServiceConfigUpdateListener serviceConfigUpdateListener = serviceConfigExtensionConfiguration.getServiceConfigUpdateListener();
-                    C0473o4 c0473o4 = this.f1140a;
+                    C0473o4 c0473o4 = this.f1141a;
                     String identifier = moduleClientEntryPoint.getIdentifier();
                     c0473o4.getClass();
                     Bundle bundle2 = bundle.getBundle(identifier);

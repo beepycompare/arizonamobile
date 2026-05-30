@@ -9,20 +9,20 @@ import kotlin.collections.CollectionsKt;
 public final class C0705x3 implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hg f1273a;
+    public final Hg f1274a;
     public final InterfaceC0718xg b;
     public boolean c;
     public final ArrayList d = new ArrayList();
     public final Object e = new Object();
 
     public C0705x3(Hg hg, InterfaceC0718xg interfaceC0718xg) {
-        this.f1273a = hg;
+        this.f1274a = hg;
         this.b = interfaceC0718xg;
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final String a() {
-        return this.f1273a.a();
+        return this.f1274a.a();
     }
 
     public final void b() {
@@ -36,7 +36,7 @@ public final class C0705x3 implements Hg {
             }
             Unit unit = Unit.INSTANCE;
             try {
-                this.f1273a.a(new Dg() { // from class: io.appmetrica.analytics.impl.x3$$ExternalSyntheticLambda0
+                this.f1274a.a(new Dg() { // from class: io.appmetrica.analytics.impl.x3$$ExternalSyntheticLambda0
                     @Override // io.appmetrica.analytics.impl.Dg
                     public final void a(Lg lg) {
                         C0705x3.a(C0705x3.this, lg);

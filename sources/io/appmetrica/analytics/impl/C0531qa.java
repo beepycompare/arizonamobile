@@ -10,12 +10,12 @@ public final class C0531qa implements Parcelable {
     public static final C0505pa CREATOR = new C0505pa();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Boolean f1162a;
+    public final Boolean f1163a;
     public final IdentifierStatus b;
     public final String c;
 
     public C0531qa(Boolean bool, IdentifierStatus identifierStatus, String str) {
-        this.f1162a = bool;
+        this.f1163a = bool;
         this.b = identifierStatus;
         this.c = str;
     }
@@ -31,25 +31,25 @@ public final class C0531qa implements Parcelable {
         }
         if (obj instanceof C0531qa) {
             C0531qa c0531qa = (C0531qa) obj;
-            return Intrinsics.areEqual(this.f1162a, c0531qa.f1162a) && this.b == c0531qa.b && Intrinsics.areEqual(this.c, c0531qa.c);
+            return Intrinsics.areEqual(this.f1163a, c0531qa.f1163a) && this.b == c0531qa.b && Intrinsics.areEqual(this.c, c0531qa.c);
         }
         return false;
     }
 
     public final int hashCode() {
-        Boolean bool = this.f1162a;
+        Boolean bool = this.f1163a;
         int hashCode = (this.b.hashCode() + ((bool == null ? 0 : bool.hashCode()) * 31)) * 31;
         String str = this.c;
         return hashCode + (str != null ? str.hashCode() : 0);
     }
 
     public final String toString() {
-        return "FeaturesInternal(sslPinning=" + this.f1162a + ", status=" + this.b + ", errorExplanation=" + this.c + ')';
+        return "FeaturesInternal(sslPinning=" + this.f1163a + ", status=" + this.b + ", errorExplanation=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeValue(this.f1162a);
+        parcel.writeValue(this.f1163a);
         parcel.writeString(this.b.getValue());
         parcel.writeString(this.c);
     }

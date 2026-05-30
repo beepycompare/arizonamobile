@@ -7,7 +7,7 @@ public final class b implements Converter {
     /* renamed from: a */
     public final c fromModel(j jVar) {
         c cVar = new c();
-        cVar.f235a = jVar.f240a;
+        cVar.f236a = jVar.f241a;
         cVar.b = jVar.b;
         return cVar;
     }
@@ -15,10 +15,10 @@ public final class b implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         c cVar = (c) obj;
-        return new j(cVar.f235a, cVar.b);
+        return new j(cVar.f236a, cVar.b);
     }
 
     public final j a(c cVar) {
-        return new j(cVar.f235a, cVar.b);
+        return new j(cVar.f236a, cVar.b);
     }
 }

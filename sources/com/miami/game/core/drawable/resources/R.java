@@ -26,12 +26,12 @@ public final class R {
         public static int ic_play_home_screen_inactive = 0x7f080b1e;
         public static int ic_setting = 0x7f080b30;
         public static int icon_close = 0x7f080bb2;
-        public static int news_background = 0x7f080d49;
-        public static int repair_game_btn = 0x7f080e98;
-        public static int rodina_backgournd_home = 0x7f080ea0;
-        public static int select_server_favorite_false = 0x7f080ecf;
-        public static int select_server_favorite_true = 0x7f080ed0;
-        public static int setup_image = 0x7f080ee4;
+        public static int news_background = 0x7f080d4d;
+        public static int repair_game_btn = 0x7f080e9c;
+        public static int rodina_backgournd_home = 0x7f080ea4;
+        public static int select_server_favorite_false = 0x7f080ed3;
+        public static int select_server_favorite_true = 0x7f080ed4;
+        public static int setup_image = 0x7f080ee8;
 
         private drawable() {
         }

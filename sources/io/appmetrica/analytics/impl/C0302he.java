@@ -6,11 +6,11 @@ import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 public final class C0302he {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashSource f1013a;
+    public final NativeCrashSource f1014a;
     public final String b;
 
     public C0302he(NativeCrashSource nativeCrashSource, String str) {
-        this.f1013a = nativeCrashSource;
+        this.f1014a = nativeCrashSource;
         this.b = str;
     }
 }

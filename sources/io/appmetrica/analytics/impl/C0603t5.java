@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class C0603t5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1209a = new HashMap();
+    public final HashMap f1210a = new HashMap();
     public final HashMap b = new HashMap();
     public final Context c;
 

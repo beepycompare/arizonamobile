@@ -8,8 +8,8 @@ public final class Kh extends AbstractC0305hh {
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
         C0257fl c0257fl;
-        ((A5) this.f1016a.p).e();
-        C0671vl c0671vl = this.f1016a.j;
+        ((A5) this.f1017a.p).e();
+        C0671vl c0671vl = this.f1017a.j;
         synchronized (c0671vl) {
             if (c0671vl.g == 0) {
                 c0257fl = c0671vl.c.a();

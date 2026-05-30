@@ -11,7 +11,7 @@ import java.util.Map;
 public abstract class AbstractC0537qg {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f1163a;
+    public static final Map f1164a;
     public static final SparseArray b;
     public static final Map c;
     public static final Map d;
@@ -22,7 +22,7 @@ public abstract class AbstractC0537qg {
         hashMap.put(al, 0);
         Al al2 = Al.BACKGROUND;
         hashMap.put(al2, 1);
-        f1163a = Collections.unmodifiableMap(hashMap);
+        f1164a = Collections.unmodifiableMap(hashMap);
         SparseArray sparseArray = new SparseArray();
         sparseArray.put(0, al);
         sparseArray.put(1, al2);
@@ -99,7 +99,7 @@ public abstract class AbstractC0537qg {
         a5.b = c0596so;
         C0478o9 c0478o94 = new C0478o9(a5);
         C0452n9 a6 = C0478o9.a();
-        a6.f1111a = p8;
+        a6.f1112a = p8;
         C0478o9 c0478o95 = new C0478o9(a6);
         C0452n9 a7 = C0478o9.a();
         a7.b = new Xo(new V8());
@@ -109,7 +109,7 @@ public abstract class AbstractC0537qg {
         a8.b = new C0485og();
         hashMap3.put(db3, new C0478o9(a8));
         C0452n9 a9 = C0478o9.a();
-        a9.f1111a = p8;
+        a9.f1112a = p8;
         a9.b = q8;
         a9.e = new C0503p8();
         a9.f = new C0529q8();
@@ -123,7 +123,7 @@ public abstract class AbstractC0537qg {
         hashMap3.put(db7, c0478o93);
         hashMap3.put(db8, c0478o93);
         C0452n9 a10 = C0478o9.a();
-        a10.f1111a = new P8();
+        a10.f1112a = new P8();
         a10.b = c0575s3;
         hashMap3.put(db14, new C0478o9(a10));
         Db db25 = Db.EVENT_TYPE_CUSTOM_EVENT;
@@ -148,7 +148,7 @@ public abstract class AbstractC0537qg {
     public static C9 a(Long l, Long l2, Boolean bool) {
         C9 c9 = new C9();
         if (l != null) {
-            c9.f491a = l.longValue();
+            c9.f492a = l.longValue();
             c9.b = ((GregorianCalendar) Calendar.getInstance()).getTimeZone().getOffset(l.longValue() * 1000) / 1000;
         }
         if (l2 != null) {

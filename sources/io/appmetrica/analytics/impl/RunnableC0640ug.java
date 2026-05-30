@@ -8,7 +8,7 @@ import java.io.File;
 public final class RunnableC0640ug implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f1232a;
+    public final File f1233a;
     public final Function b;
     public final Consumer c;
     public final Consumer d;
@@ -16,7 +16,7 @@ public final class RunnableC0640ug implements Runnable {
     public final Fl f;
 
     public RunnableC0640ug(File file, Function function, Consumer consumer, Consumer consumer2, C0660va c0660va, Fl fl) {
-        this.f1232a = file;
+        this.f1233a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
@@ -29,25 +29,25 @@ public final class RunnableC0640ug implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f1232a.exists()) {
-            R9 b = this.e.b(this.f1232a.getName());
+        if (this.f1233a.exists()) {
+            R9 b = this.e.b(this.f1233a.getName());
             Consumer consumer = this.c;
             try {
-                b.f741a.lock();
+                b.f742a.lock();
                 b.b.a();
             } catch (Throwable unused) {
             }
-            if (!this.f1232a.exists()) {
-                consumer.consume(this.f1232a);
+            if (!this.f1233a.exists()) {
+                consumer.consume(this.f1233a);
                 b.c();
                 C0660va c0660va = this.e;
-                String name = this.f1232a.getName();
+                String name = this.f1233a.getName();
                 synchronized (c0660va) {
                     c0660va.b.remove(name);
                 }
                 return;
             }
-            Object apply = this.b.apply(this.f1232a);
+            Object apply = this.b.apply(this.f1233a);
             if (apply != null) {
                 if (this.f.a(apply)) {
                     this.d.consume(apply);
@@ -60,9 +60,9 @@ public final class RunnableC0640ug implements Runnable {
                     };
                 }
             }
-            consumer.consume(this.f1232a);
+            consumer.consume(this.f1233a);
             b.c();
-            this.e.a(this.f1232a.getName());
+            this.e.a(this.f1233a.getName());
         }
     }
 }

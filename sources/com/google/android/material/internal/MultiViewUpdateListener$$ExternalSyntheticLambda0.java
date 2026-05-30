@@ -8,6 +8,6 @@ import com.google.android.material.internal.MultiViewUpdateListener;
 public final /* synthetic */ class MultiViewUpdateListener$$ExternalSyntheticLambda0 implements MultiViewUpdateListener.Listener {
     @Override // com.google.android.material.internal.MultiViewUpdateListener.Listener
     public final void onAnimationUpdate(ValueAnimator valueAnimator, View view) {
-        MultiViewUpdateListener.setTranslationX(valueAnimator, view);
+        MultiViewUpdateListener.$r8$lambda$tf5oGWUNf6tQQxMTGg7FpP3COoI(valueAnimator, view);
     }
 }

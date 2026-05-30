@@ -131,7 +131,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265NalHeader {
         public final int layerId;
         public final int nalUnitType;
@@ -144,7 +144,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265LayerInfo {
         public final int layerIdInVps;
         public final int viewId;
@@ -155,7 +155,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265ProfileTierLevel {
         public final int[] constraintBytes;
         public final int generalLevelIdc;
@@ -174,7 +174,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265ProfileTierLevelsAndIndices {
         public final int[] indices;
         public final ImmutableList<H265ProfileTierLevel> profileTierLevels;
@@ -185,7 +185,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265RepFormat {
         public final int bitDepthChromaMinus8;
         public final int bitDepthLumaMinus8;
@@ -202,7 +202,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265RepFormatsAndIndices {
         public final int[] indices;
         public final ImmutableList<H265RepFormat> repFormats;
@@ -213,7 +213,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265VideoSignalInfo {
         public final int colorRange;
         public final int colorSpace;
@@ -226,7 +226,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265VideoSignalInfosAndIndices {
         public final int[] indices;
         public final ImmutableList<H265VideoSignalInfo> videoSignalInfos;
@@ -237,7 +237,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265VpsData {
         public final ImmutableList<H265LayerInfo> layerInfos;
         public final H265NalHeader nalHeader;
@@ -306,7 +306,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class H265Sei3dRefDisplayInfoData {
         public final int exponentRefDisplayWidth;
         public final int exponentRefViewingDist;

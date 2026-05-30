@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public final class C0723xl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0493oo f1280a;
+    public final InterfaceC0493oo f1281a;
     public final InterfaceC0506pb b;
 
     public C0723xl(C0498p3 c0498p3, C0541qk c0541qk) {
-        this.f1280a = c0498p3;
+        this.f1281a = c0498p3;
         this.b = c0541qk;
     }
 
@@ -32,7 +32,7 @@ public final class C0723xl {
         int i2;
         C0478o9 c0478o9;
         ArrayList arrayList = new ArrayList();
-        int i3 = c0408lh.f1080a;
+        int i3 = c0408lh.f1081a;
         int i4 = c0408lh.b;
         Integer num = c0408lh.c;
         Iterator it = list.iterator();
@@ -51,7 +51,7 @@ public final class C0723xl {
                 if (db != null) {
                     c0478o9 = (C0478o9) AbstractC0537qg.d.get(db);
                 } else {
-                    Map map = AbstractC0537qg.f1163a;
+                    Map map = AbstractC0537qg.f1164a;
                     c0478o9 = null;
                 }
                 if (c0478o9 == null) {
@@ -88,7 +88,7 @@ public final class C0723xl {
                                 String next = keys.next();
                                 try {
                                     C0581s9 c0581s9 = new C0581s9();
-                                    c0581s9.f1194a = next;
+                                    c0581s9.f1195a = next;
                                     c0581s9.b = jSONObject.getString(next);
                                     i2 += CodedOutputByteBufferNano.computeMessageSize(7, c0581s9);
                                 } catch (Throwable unused) {
@@ -102,7 +102,7 @@ public final class C0723xl {
                     }
                     c0365k0 = c0365k02;
                 }
-                byte[] bArr = (byte[]) this.f1280a.a(c0737y9.e);
+                byte[] bArr = (byte[]) this.f1281a.a(c0737y9.e);
                 byte[] bArr2 = c0737y9.e;
                 if (bArr2 != bArr) {
                     c0737y9.i = ((bArr2 != null ? bArr2.length : 0) - (bArr != null ? bArr.length : 0)) + c0737y9.i;
@@ -128,7 +128,7 @@ public final class C0723xl {
             return null;
         }
         A9 a9 = new A9();
-        a9.f454a = j;
+        a9.f455a = j;
         a9.b = c0763z9;
         a9.c = (C0737y9[]) arrayList.toArray(new C0737y9[0]);
         return new Zi(a9, c0365k0, z, i6, i5, num2);

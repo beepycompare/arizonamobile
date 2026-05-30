@@ -25,9 +25,9 @@ public final class ExternalAttributions {
 
     public static ExternalAttribution appsflyer(Map<String, Object> map) {
         if (map == null) {
-            return new Ge(EnumC0220ea.f960a);
+            return new Ge(EnumC0220ea.f961a);
         }
-        return new C0146bd(EnumC0220ea.f960a, map);
+        return new C0146bd(EnumC0220ea.f961a, map);
     }
 
     public static ExternalAttribution kochava(JSONObject jSONObject) {

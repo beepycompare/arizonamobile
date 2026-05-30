@@ -7,17 +7,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class C0293h5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f1006a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f1007a = new CopyOnWriteArrayList();
 
     public final void a(InterfaceC0680w4 interfaceC0680w4) {
-        this.f1006a.add(interfaceC0680w4);
+        this.f1007a.add(interfaceC0680w4);
     }
 
     public final void b(InterfaceC0680w4 interfaceC0680w4) {
-        this.f1006a.remove(interfaceC0680w4);
+        this.f1007a.remove(interfaceC0680w4);
     }
 
     public final List<InterfaceC0680w4> a() {
-        return this.f1006a;
+        return this.f1007a;
     }
 }

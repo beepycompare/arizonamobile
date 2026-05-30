@@ -5,11 +5,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Jg implements Lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f612a;
+    public final String f613a;
     public final Throwable b;
 
     public Jg(String str, Throwable th) {
-        this.f612a = str;
+        this.f613a = str;
         this.b = th;
     }
 
@@ -19,7 +19,7 @@ public final class Jg implements Lg {
     }
 
     public final String b() {
-        return this.f612a;
+        return this.f613a;
     }
 
     public final Throwable c() {
@@ -27,7 +27,7 @@ public final class Jg implements Lg {
     }
 
     public final String toString() {
-        return "Failure(message='" + this.f612a + "', throwable=" + this.b + ')';
+        return "Failure(message='" + this.f613a + "', throwable=" + this.b + ')';
     }
 
     public /* synthetic */ Jg(String str, Throwable th, int i, DefaultConstructorMarker defaultConstructorMarker) {

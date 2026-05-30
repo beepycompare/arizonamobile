@@ -21,6 +21,7 @@ public final class GLSurfaceViewForExtensions extends GLSurfaceView {
         super(context);
         this.glVersion = 2;
         setEGLContextClientVersion(2);
+        setEGLConfigChooser(8, 8, 8, 0, 0, 0);
         setRenderer(new GLSurfaceView.Renderer() { // from class: com.arizona.launcher.GLSurfaceViewForExtensions.1
             @Override // android.opengl.GLSurfaceView.Renderer
             public void onDrawFrame(GL10 gl) {

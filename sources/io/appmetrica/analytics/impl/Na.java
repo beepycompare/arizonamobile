@@ -19,7 +19,7 @@ public final class Na {
     public C0128al H;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f680a;
+    public final Context f681a;
     public volatile Fg b;
     public volatile W6 c;
     public volatile C0213e3 e;
@@ -53,7 +53,7 @@ public final class Na {
     public final Mk d = new Mk();
 
     public Na(Context context) {
-        this.f680a = context;
+        this.f681a = context;
     }
 
     public static void a(Context context) {
@@ -82,7 +82,7 @@ public final class Na {
             synchronized (this) {
                 c0128al = this.H;
                 if (c0128al == null) {
-                    Context context = this.f680a;
+                    Context context = this.f681a;
                     String readSystemProperty = SystemPropertiesHelper.readSystemProperty("ro.yndx.metrica.db.dir");
                     String readSystemProperty2 = SystemPropertiesHelper.readSystemProperty("debug.yndx.iaa.db.dir");
                     if (StringsKt.isBlank(readSystemProperty)) {
@@ -114,7 +114,7 @@ public final class Na {
             synchronized (this) {
                 pn = this.x;
                 if (pn == null) {
-                    pn = new Pn(this.f680a);
+                    pn = new Pn(this.f681a);
                     this.x = pn;
                 }
             }
@@ -125,7 +125,7 @@ public final class Na {
 
     public final synchronized dp D() {
         if (this.m == null) {
-            this.m = new dp(this.f680a);
+            this.m = new dp(this.f681a);
         }
         return this.m;
     }
@@ -135,11 +135,11 @@ public final class Na {
             synchronized (this) {
                 if (this.j == null) {
                     InterfaceC0595sn a2 = C0569rn.a(Df.class);
-                    Context context = this.f680a;
+                    Context context = this.f681a;
                     AbstractC0621tn abstractC0621tn = (AbstractC0621tn) a2;
                     ProtobufStateStorage<Object> a3 = abstractC0621tn.a(context, abstractC0621tn.a(context));
                     Df df = (Df) a3.read();
-                    this.j = new Tf(this.f680a, a3, new Kf(), new Bf(df), new Sf(), new Jf(this.f680a), new Of(k().y()), new Ef(), df, "[PreloadInfoStorage]");
+                    this.j = new Tf(this.f681a, a3, new Kf(), new Bf(df), new Sf(), new Jf(this.f681a), new Of(k().y()), new Ef(), df, "[PreloadInfoStorage]");
                 }
             }
         }
@@ -156,7 +156,7 @@ public final class Na {
             synchronized (this) {
                 w = this.g;
                 if (w == null) {
-                    w = new W(this.f680a, this.d.g(), this.u.a());
+                    w = new W(this.f681a, this.d.g(), this.u.a());
                     this.u.a(w);
                     this.g = w;
                 }
@@ -173,7 +173,7 @@ public final class Na {
             synchronized (this) {
                 c0445n2 = this.h;
                 if (c0445n2 == null) {
-                    c0445n2 = new C0445n2(this.f680a, AbstractC0471o2.a());
+                    c0445n2 = new C0445n2(this.f681a, AbstractC0471o2.a());
                     this.h = c0445n2;
                 }
             }
@@ -191,10 +191,10 @@ public final class Na {
             synchronized (this) {
                 if (this.k == null) {
                     InterfaceC0595sn a2 = C0569rn.a(J3.class);
-                    Context context = this.f680a;
+                    Context context = this.f681a;
                     AbstractC0621tn abstractC0621tn = (AbstractC0621tn) a2;
                     ProtobufStateStorage<Object> a3 = abstractC0621tn.a(context, abstractC0621tn.a(context));
-                    this.k = new Q3(this.f680a, a3, new R3(), new E3(), new U3(), new C0643uj(this.f680a), new S3(y()), new F3(), (J3) a3.read(), "[ClidsInfoStorage]");
+                    this.k = new Q3(this.f681a, a3, new R3(), new E3(), new U3(), new C0643uj(this.f681a), new S3(y()), new F3(), (J3) a3.read(), "[ClidsInfoStorage]");
                 }
             }
         }
@@ -202,7 +202,7 @@ public final class Na {
     }
 
     public final Context g() {
-        return this.f680a;
+        return this.f681a;
     }
 
     public final W6 h() {
@@ -223,7 +223,7 @@ public final class Na {
             synchronized (this) {
                 c0298ha = this.C;
                 if (c0298ha == null) {
-                    c0298ha = new C0298ha(this.f680a);
+                    c0298ha = new C0298ha(this.f681a);
                     this.C = c0298ha;
                 }
             }
@@ -255,7 +255,7 @@ public final class Na {
             synchronized (this) {
                 c0300hc = this.o;
                 if (c0300hc == null) {
-                    c0300hc = new C0300hc(new C0136b3(this.f680a, this.d.a()), new C0600t2());
+                    c0300hc = new C0300hc(new C0136b3(this.f681a, this.d.a()), new C0600t2());
                     this.o = c0300hc;
                 }
             }
@@ -271,7 +271,7 @@ public final class Na {
             synchronized (this) {
                 interfaceC0429mc = this.w;
                 if (interfaceC0429mc == null) {
-                    Context context = this.f680a;
+                    Context context = this.f681a;
                     ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
                     LocationClient locationClient = (LocationClient) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.location.internal.LocationClientImpl", LocationClient.class);
                     if (locationClient == null) {
@@ -318,7 +318,7 @@ public final class Na {
             synchronized (this) {
                 vd = this.z;
                 if (vd == null) {
-                    vd = new Vd(this.f680a, new Qo());
+                    vd = new Vd(this.f681a, new Qo());
                     this.z = vd;
                 }
             }
@@ -356,7 +356,7 @@ public final class Na {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.b = new Fg(new Ig().a(this.f680a));
+                    this.b = new Fg(new Ig().a(this.f681a));
                 }
             }
         }
@@ -370,7 +370,7 @@ public final class Na {
             synchronized (this) {
                 fj = this.n;
                 if (fj == null) {
-                    fj = new Fj(this.f680a);
+                    fj = new Fj(this.f681a);
                     this.n = fj;
                 }
             }
@@ -391,7 +391,7 @@ public final class Na {
         if (this.l == null) {
             synchronized (this) {
                 if (this.l == null) {
-                    this.l = new C0769zf(B().d(this.f680a));
+                    this.l = new C0769zf(B().d(this.f681a));
                 }
             }
         }
@@ -400,7 +400,7 @@ public final class Na {
 
     public final synchronized X2 z() {
         if (this.p == null) {
-            C0181cm c0181cm = new C0181cm(this.f680a);
+            C0181cm c0181cm = new C0181cm(this.f681a);
             this.p = c0181cm;
             this.u.a(c0181cm);
         }

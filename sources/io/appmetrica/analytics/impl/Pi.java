@@ -22,14 +22,14 @@ public final class Pi extends Mn {
     @Override // io.appmetrica.analytics.impl.Mn
     public final void f() {
         this.b.a();
-        Eh eh = (Eh) ((C0448n5) this.f669a).k.a();
+        Eh eh = (Eh) ((C0448n5) this.f670a).k.a();
         if (eh.k.a(eh.j)) {
             String str = eh.m;
             if (TextUtils.isEmpty(str) || "-1".equals(str)) {
                 return;
             }
             try {
-                a(C0690we.a((C0448n5) this.f669a));
+                a(C0690we.a((C0448n5) this.f670a));
             } catch (Throwable unused) {
             }
         }
@@ -45,8 +45,8 @@ public final class Pi extends Mn {
             return;
         }
         this.e.remove(this.d);
-        if (((Eh) ((C0448n5) this.f669a).k.a()).g > 0) {
-            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((Eh) ((C0448n5) this.f669a).k.a()).g));
+        if (((Eh) ((C0448n5) this.f670a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((Eh) ((C0448n5) this.f670a).k.a()).g));
         }
     }
 }

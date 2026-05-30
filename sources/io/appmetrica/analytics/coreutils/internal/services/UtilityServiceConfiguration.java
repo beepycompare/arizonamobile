@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class UtilityServiceConfiguration {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f370a;
+    private final long f371a;
     private final long b;
 
     public UtilityServiceConfiguration() {
@@ -17,7 +17,7 @@ public final class UtilityServiceConfiguration {
 
     public static /* synthetic */ UtilityServiceConfiguration copy$default(UtilityServiceConfiguration utilityServiceConfiguration, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = utilityServiceConfiguration.f370a;
+            j = utilityServiceConfiguration.f371a;
         }
         if ((i & 2) != 0) {
             j2 = utilityServiceConfiguration.b;
@@ -26,7 +26,7 @@ public final class UtilityServiceConfiguration {
     }
 
     public final long component1() {
-        return this.f370a;
+        return this.f371a;
     }
 
     public final long component2() {
@@ -43,13 +43,13 @@ public final class UtilityServiceConfiguration {
         }
         if (obj instanceof UtilityServiceConfiguration) {
             UtilityServiceConfiguration utilityServiceConfiguration = (UtilityServiceConfiguration) obj;
-            return this.f370a == utilityServiceConfiguration.f370a && this.b == utilityServiceConfiguration.b;
+            return this.f371a == utilityServiceConfiguration.f371a && this.b == utilityServiceConfiguration.b;
         }
         return false;
     }
 
     public final long getInitialConfigTime() {
-        return this.f370a;
+        return this.f371a;
     }
 
     public final long getLastUpdateConfigTime() {
@@ -57,15 +57,15 @@ public final class UtilityServiceConfiguration {
     }
 
     public int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f370a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f371a) * 31);
     }
 
     public String toString() {
-        return "UtilityServiceConfiguration(initialConfigTime=" + this.f370a + ", lastUpdateConfigTime=" + this.b + ')';
+        return "UtilityServiceConfiguration(initialConfigTime=" + this.f371a + ", lastUpdateConfigTime=" + this.b + ')';
     }
 
     public UtilityServiceConfiguration(long j, long j2) {
-        this.f370a = j;
+        this.f371a = j;
         this.b = j2;
     }
 

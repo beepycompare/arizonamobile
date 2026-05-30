@@ -32,7 +32,7 @@ final class ContinuationBroadcastReceiver extends BroadcastReceiver {
                 throw th;
             }
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m9842constructorimpl(ResultKt.createFailure(th)));
+            continuation.resumeWith(Result.m9843constructorimpl(ResultKt.createFailure(th)));
             this.continuation = null;
         }
     }

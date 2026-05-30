@@ -10,13 +10,13 @@ public final class C0135b2 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0299hb f897a;
+    public final InterfaceC0299hb f898a;
     public final J6 b = C0576s4.l().n();
     public final F6 c = new F6();
     public final C0286go d = new C0286go();
 
     public C0135b2(A6 a6) {
-        this.f897a = a6;
+        this.f898a = a6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -24,14 +24,14 @@ public final class C0135b2 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            InterfaceC0299hb interfaceC0299hb = this.f897a;
+            InterfaceC0299hb interfaceC0299hb = this.f898a;
             Zn apply = this.c.apply(thread);
             C0286go c0286go = this.d;
-            Thread a2 = c0286go.f1002a.a();
+            Thread a2 = c0286go.f1003a.a();
             ArrayList a3 = c0286go.a(a2, thread);
             if (thread != a2) {
                 try {
-                    stackTraceElementArr = c0286go.f1002a.b();
+                    stackTraceElementArr = c0286go.f1003a.b();
                     if (stackTraceElementArr == null) {
                         try {
                             stackTraceElementArr = a2.getStackTrace();
@@ -43,7 +43,7 @@ public final class C0135b2 implements Thread.UncaughtExceptionHandler {
                 }
                 a3.add(0, (Zn) c0286go.b.apply(a2, stackTraceElementArr));
             }
-            interfaceC0299hb.a(th, new X(apply, a3, this.b.f606a.a()));
+            interfaceC0299hb.a(th, new X(apply, a3, this.b.f607a.a()));
         } catch (Throwable th2) {
             LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
         }

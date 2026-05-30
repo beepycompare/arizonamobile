@@ -6,11 +6,11 @@ import android.util.SparseArray;
 public abstract class AbstractC0570ro {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SparseArray f1186a;
+    public static final SparseArray f1187a;
 
     static {
         SparseArray sparseArray = new SparseArray();
-        f1186a = sparseArray;
+        f1187a = sparseArray;
         sparseArray.put(0, "String");
         sparseArray.put(1, "Number");
         sparseArray.put(2, "Counter");

@@ -7,23 +7,23 @@ public final class I2 implements ProtobufConverter {
     /* renamed from: a */
     public final C0316i2 fromModel(K2 k2) {
         C0316i2 c0316i2 = new C0316i2();
-        J2 j2 = k2.f622a;
+        J2 j2 = k2.f623a;
         if (j2 != null) {
             int ordinal = j2.ordinal();
             if (ordinal == 0) {
-                c0316i2.f1025a = 6;
+                c0316i2.f1026a = 6;
             } else if (ordinal == 1) {
-                c0316i2.f1025a = 1;
+                c0316i2.f1026a = 1;
             } else if (ordinal == 2) {
-                c0316i2.f1025a = 2;
+                c0316i2.f1026a = 2;
             } else if (ordinal == 3) {
-                c0316i2.f1025a = 3;
+                c0316i2.f1026a = 3;
             } else if (ordinal == 4) {
-                c0316i2.f1025a = 4;
+                c0316i2.f1026a = 4;
             } else if (ordinal != 5) {
-                c0316i2.f1025a = 0;
+                c0316i2.f1026a = 0;
             } else {
-                c0316i2.f1025a = 5;
+                c0316i2.f1026a = 5;
             }
         }
         Boolean bool = k2.b;
@@ -42,7 +42,7 @@ public final class I2 implements ProtobufConverter {
     public final K2 toModel(C0316i2 c0316i2) {
         J2 j2;
         Boolean bool = null;
-        switch (c0316i2.f1025a) {
+        switch (c0316i2.f1026a) {
             case 1:
                 j2 = J2.ACTIVE;
                 break;

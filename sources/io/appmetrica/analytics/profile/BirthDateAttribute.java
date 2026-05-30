@@ -18,48 +18,48 @@ import java.util.Locale;
 public class BirthDateAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1408a = new L6("appmetrica_birth_date", new C0606t8(), new C0129am());
+    private final L6 f1409a = new L6("appmetrica_birth_date", new C0606t8(), new C0129am());
 
     final UserProfileUpdate a(Calendar calendar, String str, W2 w2) {
-        return new UserProfileUpdate(new An(this.f1408a.c, new SimpleDateFormat(str).format(calendar.getTime()), new C0580s8(), new C0606t8(), w2));
+        return new UserProfileUpdate(new An(this.f1409a.c, new SimpleDateFormat(str).format(calendar.getTime()), new C0580s8(), new C0606t8(), w2));
     }
 
     public UserProfileUpdate<? extends Ho> withAge(int i) {
         int i2 = Calendar.getInstance(Locale.US).get(1) - i;
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.set(1, i2);
-        return a(gregorianCalendar, "yyyy", new J4(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy", new J4(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withAgeIfUndefined(int i) {
         int i2 = Calendar.getInstance(Locale.US).get(1) - i;
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.set(1, i2);
-        return a(gregorianCalendar, "yyyy", new Cl(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy", new Cl(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDate(Calendar calendar) {
-        return a(calendar, "yyyy-MM-dd", new J4(this.f1408a.b));
+        return a(calendar, "yyyy-MM-dd", new J4(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDateIfUndefined(Calendar calendar) {
-        return a(calendar, "yyyy-MM-dd", new Cl(this.f1408a.b));
+        return a(calendar, "yyyy-MM-dd", new Cl(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withValueReset() {
-        return new UserProfileUpdate<>(new Vi(0, this.f1408a.c, new C0606t8(), new C0129am()));
+        return new UserProfileUpdate<>(new Vi(0, this.f1409a.c, new C0606t8(), new C0129am()));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDate(int i) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.set(1, i);
-        return a(gregorianCalendar, "yyyy", new J4(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy", new J4(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDateIfUndefined(int i) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.set(1, i);
-        return a(gregorianCalendar, "yyyy", new Cl(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy", new Cl(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDate(int i, int i2) {
@@ -67,7 +67,7 @@ public class BirthDateAttribute {
         gregorianCalendar.set(1, i);
         gregorianCalendar.set(2, i2 - 1);
         gregorianCalendar.set(5, 1);
-        return a(gregorianCalendar, "yyyy-MM", new J4(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy-MM", new J4(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDateIfUndefined(int i, int i2) {
@@ -75,7 +75,7 @@ public class BirthDateAttribute {
         gregorianCalendar.set(1, i);
         gregorianCalendar.set(2, i2 - 1);
         gregorianCalendar.set(5, 1);
-        return a(gregorianCalendar, "yyyy-MM", new Cl(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy-MM", new Cl(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDate(int i, int i2, int i3) {
@@ -83,7 +83,7 @@ public class BirthDateAttribute {
         gregorianCalendar.set(1, i);
         gregorianCalendar.set(2, i2 - 1);
         gregorianCalendar.set(5, i3);
-        return a(gregorianCalendar, "yyyy-MM-dd", new J4(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy-MM-dd", new J4(this.f1409a.b));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDateIfUndefined(int i, int i2, int i3) {
@@ -91,6 +91,6 @@ public class BirthDateAttribute {
         gregorianCalendar.set(1, i);
         gregorianCalendar.set(2, i2 - 1);
         gregorianCalendar.set(5, i3);
-        return a(gregorianCalendar, "yyyy-MM-dd", new Cl(this.f1408a.b));
+        return a(gregorianCalendar, "yyyy-MM-dd", new Cl(this.f1409a.b));
     }
 }

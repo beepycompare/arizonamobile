@@ -16,18 +16,18 @@ import ru.rustore.sdk.metrics.internal.presentation.SendMetricsEventJobService;
 public final class V {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1570a;
+    public final Context f1571a;
     public final C0829d b;
 
     public V(Context context, C0829d getJobRepeatIntervalUseCase) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(getJobRepeatIntervalUseCase, "getJobRepeatIntervalUseCase");
-        this.f1570a = context;
+        this.f1571a = context;
         this.b = getJobRepeatIntervalUseCase;
     }
 
     public final void a() {
-        Object systemService = this.f1570a.getSystemService(JobScheduler.class);
+        Object systemService = this.f1571a.getSystemService(JobScheduler.class);
         Intrinsics.checkNotNullExpressionValue(systemService, "context.getSystemService(JobScheduler::class.java)");
         JobScheduler jobScheduler = (JobScheduler) systemService;
         List<JobInfo> allPendingJobs = jobScheduler.getAllPendingJobs();
@@ -39,11 +39,11 @@ public final class V {
                 }
             }
         }
-        JobInfo.Builder builder = new JobInfo.Builder(88123556, new ComponentName(this.f1570a, SendMetricsEventJobService.class));
-        this.b.f1580a.f1584a.getClass();
+        JobInfo.Builder builder = new JobInfo.Builder(88123556, new ComponentName(this.f1571a, SendMetricsEventJobService.class));
+        this.b.f1581a.f1585a.getClass();
         Duration.Companion companion = Duration.Companion;
         Integer JOB_REPEAT_INTERVAL_MINUTES = BuildConfig.JOB_REPEAT_INTERVAL_MINUTES;
         Intrinsics.checkNotNullExpressionValue(JOB_REPEAT_INTERVAL_MINUTES, "JOB_REPEAT_INTERVAL_MINUTES");
-        jobScheduler.schedule(builder.setPeriodic(Duration.m11209getInWholeMillisecondsimpl(DurationKt.toDuration(JOB_REPEAT_INTERVAL_MINUTES.intValue(), DurationUnit.MINUTES))).setPersisted(true).build());
+        jobScheduler.schedule(builder.setPeriodic(Duration.m11210getInWholeMillisecondsimpl(DurationKt.toDuration(JOB_REPEAT_INTERVAL_MINUTES.intValue(), DurationUnit.MINUTES))).setPersisted(true).build());
     }
 }

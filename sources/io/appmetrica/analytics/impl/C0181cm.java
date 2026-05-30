@@ -7,10 +7,10 @@ import javax.net.ssl.SSLSocketFactory;
 public final class C0181cm implements X2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f931a;
+    public final Context f932a;
 
     public C0181cm(Context context) {
-        this.f931a = context;
+        this.f932a = context;
     }
 
     @Override // io.appmetrica.analytics.impl.X2, io.appmetrica.analytics.impl.Mm
@@ -23,6 +23,6 @@ public final class C0181cm implements X2 {
     }
 
     public final Context a() {
-        return this.f931a;
+        return this.f932a;
     }
 }

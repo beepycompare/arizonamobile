@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class CacheArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f1346a;
+    private final long f1347a;
     private final long b;
 
     public CacheArguments() {
@@ -24,7 +24,7 @@ public final class CacheArguments {
         if (Intrinsics.areEqual(CacheArguments.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type io.appmetrica.analytics.locationapi.internal.CacheArguments");
             CacheArguments cacheArguments = (CacheArguments) obj;
-            return this.f1346a == cacheArguments.f1346a && this.b == cacheArguments.b;
+            return this.f1347a == cacheArguments.f1347a && this.b == cacheArguments.b;
         }
         return false;
     }
@@ -34,19 +34,19 @@ public final class CacheArguments {
     }
 
     public final long getRefreshPeriod() {
-        return this.f1346a;
+        return this.f1347a;
     }
 
     public int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f1346a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f1347a) * 31);
     }
 
     public String toString() {
-        return "CacheArguments(refreshPeriod=" + this.f1346a + ", outdatedTimeInterval=" + this.b + ')';
+        return "CacheArguments(refreshPeriod=" + this.f1347a + ", outdatedTimeInterval=" + this.b + ')';
     }
 
     public CacheArguments(long j, long j2) {
-        this.f1346a = j;
+        this.f1347a = j;
         this.b = j2;
     }
 

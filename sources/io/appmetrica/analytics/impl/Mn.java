@@ -8,12 +8,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Mn implements Nk, P9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0273gb f669a;
+    public final InterfaceC0273gb f670a;
     public final InterfaceC0439mm b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
     public Mn(InterfaceC0273gb interfaceC0273gb, InterfaceC0439mm interfaceC0439mm) {
-        this.f669a = interfaceC0273gb;
+        this.f670a = interfaceC0273gb;
         this.b = interfaceC0439mm;
         Objects.toString(interfaceC0273gb.a());
     }
@@ -37,7 +37,7 @@ public class Mn implements Nk, P9 {
     }
 
     public final InterfaceC0273gb d() {
-        return this.f669a;
+        return this.f670a;
     }
 
     public final boolean e() {

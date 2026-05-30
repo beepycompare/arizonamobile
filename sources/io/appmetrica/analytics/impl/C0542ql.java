@@ -8,14 +8,14 @@ import java.util.Map;
 public final class C0542ql {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1168a;
+    public final String f1169a;
     public final C0412ll b;
     public final C0516pl c;
     public final IBinaryDataHelper d;
 
     public C0542ql(Context context, C0267g5 c0267g5) {
         c0267g5.a();
-        this.f1168a = "session_extras";
+        this.f1169a = "session_extras";
         this.b = new C0412ll();
         this.c = new C0516pl();
         this.d = Na.k().B().a(context, c0267g5);
@@ -23,7 +23,7 @@ public final class C0542ql {
 
     public final Map a() {
         try {
-            byte[] bArr = this.d.get(this.f1168a);
+            byte[] bArr = this.d.get(this.f1169a);
             if (bArr != null) {
                 if (!(bArr.length == 0)) {
                     return this.b.toModel(this.c.toState(bArr));

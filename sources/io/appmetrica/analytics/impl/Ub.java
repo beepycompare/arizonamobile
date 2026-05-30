@@ -28,7 +28,7 @@ public final class Ub implements InterfaceC0350jb, Closeable {
     public static final Tb g = new Tb();
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f788a;
+    public final String f789a;
     public final Q6 b;
     public final LinkedHashMap c = new LinkedHashMap();
     public final Object d = new Object();
@@ -36,7 +36,7 @@ public final class Ub implements InterfaceC0350jb, Closeable {
     public final DeferredBatchExecutor f;
 
     public Ub(String str, Q6 q6, IHandlerExecutor iHandlerExecutor) {
-        this.f788a = str;
+        this.f789a = str;
         this.b = q6;
         this.f = new DeferredBatchExecutor(iHandlerExecutor, new MapMergingBuffer(), new BatchProcessor() { // from class: io.appmetrica.analytics.impl.Ub$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor
@@ -95,9 +95,9 @@ public final class Ub implements InterfaceC0350jb, Closeable {
                     while (it.hasNext()) {
                         ContentValues contentValues2 = (ContentValues) it.next();
                         if (contentValues2.getAsString("value") == null) {
-                            sQLiteDatabase.delete(ub.f788a, "key = ?", new String[]{contentValues2.getAsString("key")});
+                            sQLiteDatabase.delete(ub.f789a, "key = ?", new String[]{contentValues2.getAsString("key")});
                         } else {
-                            sQLiteDatabase.insertWithOnConflict(ub.f788a, null, contentValues2, 5);
+                            sQLiteDatabase.insertWithOnConflict(ub.f789a, null, contentValues2, 5);
                         }
                     }
                     sQLiteDatabase.setTransactionSuccessful();
@@ -137,7 +137,7 @@ public final class Ub implements InterfaceC0350jb, Closeable {
             sQLiteDatabase = this.b.a();
             if (sQLiteDatabase != null) {
                 try {
-                    Cursor query = sQLiteDatabase.query(this.f788a, new String[]{"key", "value", "type"}, null, null, null, null, null);
+                    Cursor query = sQLiteDatabase.query(this.f789a, new String[]{"key", "value", "type"}, null, null, null, null, null);
                     if (query != null) {
                         while (query.moveToNext()) {
                             String string = query.getString(query.getColumnIndexOrThrow("key"));

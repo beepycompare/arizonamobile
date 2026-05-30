@@ -12,7 +12,7 @@ public final class F8 extends MessageNano {
     public static volatile F8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0658v8 f540a;
+    public C0658v8 f541a;
     public C0658v8[] b;
 
     public F8() {
@@ -31,7 +31,7 @@ public final class F8 extends MessageNano {
     }
 
     public final F8 a() {
-        this.f540a = null;
+        this.f541a = null;
         this.b = C0658v8.b();
         this.cachedSize = -1;
         return this;
@@ -40,7 +40,7 @@ public final class F8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0658v8 c0658v8 = this.f540a;
+        C0658v8 c0658v8 = this.f541a;
         if (c0658v8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0658v8);
         }
@@ -64,7 +64,7 @@ public final class F8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0658v8 c0658v8 = this.f540a;
+        C0658v8 c0658v8 = this.f541a;
         if (c0658v8 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0658v8);
         }
@@ -94,10 +94,10 @@ public final class F8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f540a == null) {
-                    this.f540a = new C0658v8();
+                if (this.f541a == null) {
+                    this.f541a = new C0658v8();
                 }
-                codedInputByteBufferNano.readMessage(this.f540a);
+                codedInputByteBufferNano.readMessage(this.f541a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

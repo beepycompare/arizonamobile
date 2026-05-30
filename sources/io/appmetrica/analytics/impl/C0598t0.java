@@ -8,7 +8,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public final class C0598t0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ao f1204a;
+    public final Ao f1205a;
     public volatile Boolean b;
     public InterfaceC0196db c;
     public InterfaceC0221eb d;
@@ -29,7 +29,7 @@ public final class C0598t0 {
     }
 
     public C0598t0(Ao ao) {
-        this.f1204a = ao;
+        this.f1205a = ao;
     }
 
     public final boolean a(Context context) {
@@ -38,7 +38,7 @@ public final class C0598t0 {
             synchronized (this) {
                 bool = this.b;
                 if (bool == null) {
-                    this.f1204a.getClass();
+                    this.f1205a.getClass();
                     Boolean valueOf = Boolean.valueOf(AndroidUtils.isApiAchieved(24) && !Ao.a(context));
                     this.b = valueOf;
                     if (valueOf.booleanValue()) {

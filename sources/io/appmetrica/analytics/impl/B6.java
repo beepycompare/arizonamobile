@@ -7,18 +7,18 @@ import java.util.Map;
 public final class B6 implements InterfaceC0609tb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C6 f468a;
+    public final C6 f469a;
     public final Zh b;
 
     public B6(C6 c6) {
-        this.f468a = c6;
+        this.f469a = c6;
         this.b = c6.a();
         C0576s4.l().getClass();
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0609tb
     public final void a(C0622to c0622to) {
-        Qi qi = this.f468a.f488a;
+        Qi qi = this.f469a.f489a;
         Ph a2 = qi.a(c0622to, this.b);
         Zh zh = a2.e;
         InterfaceC0568rm interfaceC0568rm = qi.e;
@@ -40,7 +40,7 @@ public final class B6 implements InterfaceC0609tb {
                 String value = entry.getValue();
                 synchronized (zh) {
                     W8 w8 = zh.c;
-                    w8.b.b(w8.f821a, key, value);
+                    w8.b.b(w8.f822a, key, value);
                 }
             }
         }

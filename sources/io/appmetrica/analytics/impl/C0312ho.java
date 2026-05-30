@@ -6,22 +6,22 @@ import io.appmetrica.analytics.ValidationException;
 public class C0312ho implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vo f1022a;
+    public final Vo f1023a;
 
     public C0312ho(Vo vo) {
-        this.f1022a = vo;
+        this.f1023a = vo;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Object obj) {
-        To a2 = this.f1022a.a(obj);
-        if (a2.f781a) {
+        To a2 = this.f1023a.a(obj);
+        if (a2.f782a) {
             return a2;
         }
         throw new ValidationException(a2.b);
     }
 
     public final Vo a() {
-        return this.f1022a;
+        return this.f1023a;
     }
 }

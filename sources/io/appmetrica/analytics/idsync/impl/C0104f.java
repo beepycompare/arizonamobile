@@ -11,31 +11,31 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0104f extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ h f422a;
+    public final /* synthetic */ h f423a;
 
     public C0104f(h hVar) {
-        this.f422a = hVar;
+        this.f423a = hVar;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
         IdSyncConfig idSyncConfig;
-        if (this.f422a.f && (idSyncConfig = this.f422a.e) != null) {
-            this.f422a.getClass();
+        if (this.f423a.f && (idSyncConfig = this.f423a.e) != null) {
+            this.f423a.getClass();
             if (h.a(idSyncConfig)) {
                 List<RequestConfig> requests = idSyncConfig.getRequests();
-                h hVar = this.f422a;
+                h hVar = this.f423a;
                 for (RequestConfig requestConfig : requests) {
                     hVar.d.a(requestConfig);
                 }
-                h hVar2 = this.f422a;
+                h hVar2 = this.f423a;
                 IHandlerExecutor iHandlerExecutor = hVar2.c;
                 C0104f c0104f = hVar2.g;
                 if (c0104f == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("syncRunnable");
                     c0104f = null;
                 }
-                iHandlerExecutor.executeDelayed(c0104f, this.f422a.b);
+                iHandlerExecutor.executeDelayed(c0104f, this.f423a.b);
             }
         }
     }

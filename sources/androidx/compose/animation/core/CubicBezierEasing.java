@@ -10,7 +10,7 @@ public final class CubicBezierEasing implements Easing {
     public static final int $stable = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f83a;
+    private final float f84a;
     private final float b;
     private final float c;
     private final float d;
@@ -18,7 +18,7 @@ public final class CubicBezierEasing implements Easing {
     private final float min;
 
     public CubicBezierEasing(float f, float f2, float f3, float f4) {
-        this.f83a = f;
+        this.f84a = f;
         this.b = f2;
         this.c = f3;
         this.d = f4;
@@ -34,7 +34,7 @@ public final class CubicBezierEasing implements Easing {
     public float transform(float f) {
         if (f > 0.0f && f < 1.0f) {
             float max = Math.max(f, 1.1920929E-7f);
-            float findFirstCubicRoot = BezierKt.findFirstCubicRoot(0.0f - max, this.f83a - max, this.c - max, 1.0f - max);
+            float findFirstCubicRoot = BezierKt.findFirstCubicRoot(0.0f - max, this.f84a - max, this.c - max, 1.0f - max);
             if (Float.isNaN(findFirstCubicRoot)) {
                 throwNoSolution(f);
             }
@@ -52,22 +52,22 @@ public final class CubicBezierEasing implements Easing {
     }
 
     private final void throwNoSolution(float f) {
-        throw new IllegalArgumentException("The cubic curve with parameters (" + this.f83a + ", " + this.b + ", " + this.c + ", " + this.d + ") has no solution at " + f);
+        throw new IllegalArgumentException("The cubic curve with parameters (" + this.f84a + ", " + this.b + ", " + this.c + ", " + this.d + ") has no solution at " + f);
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof CubicBezierEasing) {
             CubicBezierEasing cubicBezierEasing = (CubicBezierEasing) obj;
-            return this.f83a == cubicBezierEasing.f83a && this.b == cubicBezierEasing.b && this.c == cubicBezierEasing.c && this.d == cubicBezierEasing.d;
+            return this.f84a == cubicBezierEasing.f84a && this.b == cubicBezierEasing.b && this.c == cubicBezierEasing.c && this.d == cubicBezierEasing.d;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Float.hashCode(this.f83a) * 31) + Float.hashCode(this.b)) * 31) + Float.hashCode(this.c)) * 31) + Float.hashCode(this.d);
+        return (((((Float.hashCode(this.f84a) * 31) + Float.hashCode(this.b)) * 31) + Float.hashCode(this.c)) * 31) + Float.hashCode(this.d);
     }
 
     public String toString() {
-        return "CubicBezierEasing(a=" + this.f83a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ')';
+        return "CubicBezierEasing(a=" + this.f84a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ')';
     }
 }

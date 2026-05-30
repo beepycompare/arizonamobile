@@ -5,12 +5,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f398a;
+    public final String f399a;
     public final String b;
     public final Boolean c;
 
     public a(String str, String str2, Boolean bool) {
-        this.f398a = str;
+        this.f399a = str;
         this.b = str2;
         this.c = bool;
     }
@@ -21,13 +21,13 @@ public final class a {
         }
         if (obj instanceof a) {
             a aVar = (a) obj;
-            return Intrinsics.areEqual(this.f398a, aVar.f398a) && Intrinsics.areEqual(this.b, aVar.b) && Intrinsics.areEqual(this.c, aVar.c);
+            return Intrinsics.areEqual(this.f399a, aVar.f399a) && Intrinsics.areEqual(this.b, aVar.b) && Intrinsics.areEqual(this.c, aVar.c);
         }
         return false;
     }
 
     public final int hashCode() {
-        int hashCode = this.f398a.hashCode() * 31;
+        int hashCode = this.f399a.hashCode() * 31;
         String str = this.b;
         int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
         Boolean bool = this.c;
@@ -35,6 +35,6 @@ public final class a {
     }
 
     public final String toString() {
-        return "AdvIdInfo(provider=" + this.f398a + ", advId=" + this.b + ", limitedAdTracking=" + this.c + ')';
+        return "AdvIdInfo(provider=" + this.f399a + ", advId=" + this.b + ", limitedAdTracking=" + this.c + ')';
     }
 }

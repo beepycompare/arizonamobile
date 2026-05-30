@@ -8,7 +8,7 @@ public final class C0745yh extends AbstractC0305hh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
-        C0448n5 c0448n5 = this.f1016a;
+        C0448n5 c0448n5 = this.f1017a;
         synchronized (c0448n5) {
             ((A5) c0448n5.p).d();
         }

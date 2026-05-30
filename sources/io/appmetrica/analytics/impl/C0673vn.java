@@ -10,10 +10,10 @@ public final class C0673vn extends Wi {
 
     @Override // io.appmetrica.analytics.impl.Wi
     public final Object a(int i) {
-        return this.f826a.getResources().getStringArray(i);
+        return this.f827a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f826a.getResources().getStringArray(i);
+        return this.f827a.getResources().getStringArray(i);
     }
 }

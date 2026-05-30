@@ -7,12 +7,12 @@ public final class Go {
     public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final SparseArray f567a = new SparseArray();
+    public final SparseArray f568a = new SparseArray();
     public int b = 0;
 
     public Go(int[] iArr) {
         for (int i : iArr) {
-            this.f567a.put(i, new HashMap());
+            this.f568a.put(i, new HashMap());
         }
     }
 }

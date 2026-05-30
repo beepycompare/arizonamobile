@@ -9,7 +9,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Bm extends BaseRequestConfig.BaseRequestArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f481a;
+    public final String f482a;
     public final String b;
     public final Map<String, String> c;
     public final boolean d;
@@ -26,7 +26,7 @@ public final class Bm extends BaseRequestConfig.BaseRequestArguments {
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
     /* renamed from: b */
     public final Bm mergeFrom(Bm bm) {
-        return new Bm((String) WrapUtils.getOrDefaultNullable(this.f481a, bm.f481a), (String) WrapUtils.getOrDefaultNullable(this.b, bm.b), (Map) WrapUtils.getOrDefaultNullable(this.c, bm.c), this.d || bm.d, bm.d ? bm.e : this.e);
+        return new Bm((String) WrapUtils.getOrDefaultNullable(this.f482a, bm.f482a), (String) WrapUtils.getOrDefaultNullable(this.b, bm.b), (Map) WrapUtils.getOrDefaultNullable(this.c, bm.c), this.d || bm.d, bm.d ? bm.e : this.e);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
@@ -36,11 +36,11 @@ public final class Bm extends BaseRequestConfig.BaseRequestArguments {
     }
 
     public final String toString() {
-        return "Arguments{distributionReferrer='" + this.f481a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "Arguments{distributionReferrer='" + this.f482a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Bm(String str, String str2, Map<String, String> map, boolean z, List<String> list) {
-        this.f481a = str;
+        this.f482a = str;
         this.b = str2;
         this.c = map;
         this.d = z;

@@ -9,13 +9,13 @@ import kotlin.enums.EnumEntriesKt;
 public final class EnumC0638ue {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EnumC0638ue f1231a;
+    public static final EnumC0638ue f1232a;
     public static final EnumC0638ue b;
     public static final /* synthetic */ EnumC0638ue[] c;
 
     static {
         EnumC0638ue enumC0638ue = new EnumC0638ue("REPORT", 0);
-        f1231a = enumC0638ue;
+        f1232a = enumC0638ue;
         EnumC0638ue enumC0638ue2 = new EnumC0638ue(CodePackage.LOCATION, 1);
         EnumC0638ue enumC0638ue3 = new EnumC0638ue("STARTUP", 2);
         b = enumC0638ue3;

@@ -10,7 +10,7 @@ public final class Ga implements InterfaceC0714xc {
         if ((c0761z7 != null ? c0761z7.b : null) != null && c0761z7.c != null) {
             c0607t9 = new C0607t9();
             c0607t9.b = c0761z7.b.doubleValue();
-            c0607t9.f1211a = c0761z7.c.doubleValue();
+            c0607t9.f1212a = c0761z7.c.doubleValue();
             Integer num = c0761z7.d;
             if (num != null) {
                 c0607t9.g = num.intValue();

@@ -8,7 +8,7 @@ public final class C0150bh extends AbstractC0305hh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
-        this.f1016a.d();
+        this.f1017a.d();
         return false;
     }
 }

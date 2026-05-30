@@ -16,13 +16,13 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class BufferedFileWriter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f359a;
+    private final File f360a;
     private final Object b = new Object();
     private String c;
     private final DeferredBatchExecutor d;
 
     public BufferedFileWriter(IHandlerExecutor iHandlerExecutor, long j, File file) {
-        this.f359a = file;
+        this.f360a = file;
         this.d = new DeferredBatchExecutor(iHandlerExecutor, new LastValueTaskBuffer(), new BatchProcessor() { // from class: io.appmetrica.analytics.coreutils.internal.io.BufferedFileWriter$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor
             public final void processBatch(List list) {
@@ -35,7 +35,7 @@ public final class BufferedFileWriter {
     public static final void a(BufferedFileWriter bufferedFileWriter, List list) {
         String str = (String) CollectionsKt.first((List<? extends Object>) list);
         try {
-            File parentFile = bufferedFileWriter.f359a.getParentFile();
+            File parentFile = bufferedFileWriter.f360a.getParentFile();
             if (parentFile != null) {
                 if (parentFile.exists()) {
                     parentFile = null;
@@ -44,7 +44,7 @@ public final class BufferedFileWriter {
                     parentFile.mkdirs();
                 }
             }
-            FilesKt.writeText$default(bufferedFileWriter.f359a, str, null, 2, null);
+            FilesKt.writeText$default(bufferedFileWriter.f360a, str, null, 2, null);
             synchronized (bufferedFileWriter.b) {
                 bufferedFileWriter.c = null;
                 Unit unit = Unit.INSTANCE;
@@ -68,8 +68,8 @@ public final class BufferedFileWriter {
             if (str == null) {
                 str = null;
                 try {
-                    if (this.f359a.exists()) {
-                        str = FilesKt.readText$default(this.f359a, null, 1, null);
+                    if (this.f360a.exists()) {
+                        str = FilesKt.readText$default(this.f360a, null, 1, null);
                     }
                 } catch (Exception unused) {
                 }

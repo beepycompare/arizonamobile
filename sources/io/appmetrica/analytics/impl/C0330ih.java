@@ -8,12 +8,12 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 public final class C0330ih implements InterfaceC0604t6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1033a;
+    public final Context f1034a;
     public final C0550r4 b;
     public final IHandlerExecutor c = Na.k().w().f();
 
     public C0330ih(Context context, C0550r4 c0550r4) {
-        this.f1033a = context;
+        this.f1034a = context;
         this.b = c0550r4;
     }
 
@@ -21,7 +21,7 @@ public final class C0330ih implements InterfaceC0604t6 {
         if (c0242f6.m()) {
             return;
         }
-        this.c.execute(new Fh(this.f1033a, c0242f6, bundle, this.b));
+        this.c.execute(new Fh(this.f1034a, c0242f6, bundle, this.b));
     }
 
     public final void a(C0266g4 c0266g4, C0242f6 c0242f6, G4 g4) {

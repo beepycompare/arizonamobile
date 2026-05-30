@@ -5,12 +5,12 @@ import android.content.Context;
 public final class Ak {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f461a;
+    public final Context f462a;
     public final C0546r0 b;
     public El c;
 
     public Ak(Context context, C0546r0 c0546r0) {
-        this.f461a = context;
+        this.f462a = context;
         this.b = c0546r0;
     }
 }

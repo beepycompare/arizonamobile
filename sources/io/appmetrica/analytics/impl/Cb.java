@@ -17,18 +17,18 @@ import kotlin.collections.MapsKt;
 public final class Cb implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0508pd f493a = new C0508pd();
+    public final C0508pd f494a = new C0508pd();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        C0508pd c0508pd = this.f493a;
+        C0508pd c0508pd = this.f494a;
         c0508pd.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : AbstractC0482od.f1129a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : AbstractC0482od.f1130a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -62,7 +62,7 @@ public final class Cb implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        c0508pd.f1145a.getClass();
+        c0508pd.f1146a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }
@@ -77,7 +77,7 @@ public final class Cb implements InternalClientModuleFacade {
         }
         InternalModuleEvent.Category category2 = internalModuleEvent.getCategory();
         if (category2 != null) {
-            int i = Bb.f473a[category2.ordinal()];
+            int i = Bb.f474a[category2.ordinal()];
             if (i != 1) {
                 category = i != 2 ? null : ModuleEvent.Category.GENERAL;
             } else {

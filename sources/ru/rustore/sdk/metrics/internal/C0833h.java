@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Lambda;
 public final class C0833h extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0839n f1585a;
+    public final /* synthetic */ C0839n f1586a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0833h(C0839n c0839n) {
         super(0);
-        this.f1585a = c0839n;
+        this.f1586a = c0839n;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        this.f1585a.f1591a.a();
+        this.f1586a.f1592a.a();
         return Unit.INSTANCE;
     }
 }

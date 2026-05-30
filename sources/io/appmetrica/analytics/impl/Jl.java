@@ -6,7 +6,7 @@ import java.util.List;
 public final class Jl implements InterfaceC0632u8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0304hg f616a;
+    public final C0304hg f617a;
     public final C0744yg b;
 
     public Jl() {
@@ -18,14 +18,14 @@ public final class Jl implements InterfaceC0632u8 {
     public final List<Xi> fromModel(Il il) {
         Xi xi;
         N8 n8 = new N8();
-        n8.f679a = 3;
+        n8.f680a = 3;
         n8.d = new L8();
-        Xi fromModel = this.f616a.fromModel(il.f597a);
-        n8.d.f642a = (G8) fromModel.f838a;
+        Xi fromModel = this.f617a.fromModel(il.f598a);
+        n8.d.f643a = (G8) fromModel.f839a;
         Ng ng = il.b;
         if (ng != null) {
             xi = this.b.fromModel(ng);
-            n8.d.b = (I8) xi.f838a;
+            n8.d.b = (I8) xi.f839a;
         } else {
             xi = null;
         }
@@ -39,7 +39,7 @@ public final class Jl implements InterfaceC0632u8 {
     }
 
     public Jl(C0304hg c0304hg, C0744yg c0744yg) {
-        this.f616a = c0304hg;
+        this.f617a = c0304hg;
         this.b = c0744yg;
     }
 

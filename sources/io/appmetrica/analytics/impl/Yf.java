@@ -7,7 +7,7 @@ import java.util.List;
 public final class Yf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0107a0 f856a;
+    public final C0107a0 f857a;
     public final Zf b;
 
     public Yf() {
@@ -19,17 +19,17 @@ public final class Yf implements Converter {
     public final Xi fromModel(C0123ag c0123ag) {
         int i;
         F8 f8 = new F8();
-        Xi fromModel = this.f856a.fromModel(c0123ag.f886a);
-        f8.f540a = (C0658v8) fromModel.f838a;
+        Xi fromModel = this.f857a.fromModel(c0123ag.f887a);
+        f8.f541a = (C0658v8) fromModel.f839a;
         C0519po a2 = this.b.a(c0123ag.b);
-        if (Oo.a((Collection) a2.f1152a)) {
+        if (Oo.a((Collection) a2.f1153a)) {
             i = 0;
         } else {
-            f8.b = new C0658v8[((List) a2.f1152a).size()];
+            f8.b = new C0658v8[((List) a2.f1153a).size()];
             i = 0;
-            for (int i2 = 0; i2 < ((List) a2.f1152a).size(); i2++) {
-                Xi fromModel2 = this.f856a.fromModel((C0133b0) ((List) a2.f1152a).get(i2));
-                f8.b[i2] = (C0658v8) fromModel2.f838a;
+            for (int i2 = 0; i2 < ((List) a2.f1153a).size(); i2++) {
+                Xi fromModel2 = this.f857a.fromModel((C0133b0) ((List) a2.f1153a).get(i2));
+                f8.b[i2] = (C0658v8) fromModel2.f839a;
                 i += fromModel2.b.getBytesTruncated();
             }
         }
@@ -43,7 +43,7 @@ public final class Yf implements Converter {
     }
 
     public Yf(C0107a0 c0107a0, Zf zf) {
-        this.f856a = c0107a0;
+        this.f857a = c0107a0;
         this.b = zf;
     }
 

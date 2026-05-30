@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class c implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1422a = "permissions";
+    public final String f1423a = "permissions";
     public final String b = "name";
     public final String c = "list";
     public final String d = "enabled";
@@ -20,7 +20,7 @@ public final class c implements JsonParser {
     public final FeatureConfig parse(JSONObject jSONObject) {
         JSONArray optJSONArray;
         HashSet hashSet = new HashSet();
-        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1422a);
+        JSONObject optJSONObject = jSONObject.optJSONObject(this.f1423a);
         if (optJSONObject != null && (optJSONArray = optJSONObject.optJSONArray(this.c)) != null) {
             int length = optJSONArray.length();
             for (int i = 0; i < length; i++) {

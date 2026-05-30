@@ -6,9 +6,9 @@ public enum Al {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f462a;
+    public final int f463a;
 
     Al(int i) {
-        this.f462a = i;
+        this.f463a = i;
     }
 }

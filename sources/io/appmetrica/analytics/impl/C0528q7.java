@@ -12,12 +12,12 @@ import kotlin.collections.CollectionsKt;
 public final class C0528q7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0114a7 f1161a;
+    public final InterfaceC0114a7 f1162a;
     public final List b;
     public final boolean c;
 
     public C0528q7(InterfaceC0114a7 interfaceC0114a7, ArrayList arrayList, boolean z) {
-        this.f1161a = interfaceC0114a7;
+        this.f1162a = interfaceC0114a7;
         this.b = arrayList;
         this.c = z;
     }
@@ -25,7 +25,7 @@ public final class C0528q7 {
     public final String a(Context context, InterfaceC0476o7 interfaceC0476o7) {
         File parentFile;
         try {
-            File a2 = this.f1161a.a(context, interfaceC0476o7.b());
+            File a2 = this.f1162a.a(context, interfaceC0476o7.b());
             if (!a2.exists() && (parentFile = a2.getParentFile()) != null && (parentFile.exists() || parentFile.mkdirs())) {
                 a(context, interfaceC0476o7.a(), a2);
             }

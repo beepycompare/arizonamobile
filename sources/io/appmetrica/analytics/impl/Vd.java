@@ -8,7 +8,7 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class Vd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f808a;
+    public final Context f809a;
     public final InterfaceC0428mb b;
     public final R9 c;
     public final C0148bf d;
@@ -36,7 +36,7 @@ public final class Vd {
         }
         try {
             R9 r9 = this.c;
-            r9.f741a.lock();
+            r9.f742a.lock();
             r9.b.a();
             identifiersResult = this.f;
         } catch (Throwable unused) {
@@ -48,14 +48,14 @@ public final class Vd {
             if (So.a(str2)) {
                 R9 r92 = this.c;
                 r92.b.b();
-                r92.f741a.unlock();
+                r92.f742a.unlock();
                 return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
             }
         }
-        String a2 = AbstractC0402lb.a(FileUtils.getFileFromSdkStorage(this.d.f907a, "uuid.dat"));
+        String a2 = AbstractC0402lb.a(FileUtils.getFileFromSdkStorage(this.d.f908a, "uuid.dat"));
         this.e.getClass();
         if (!So.a(a2)) {
-            a2 = this.d.a(this.b.a(this.f808a));
+            a2 = this.d.a(this.b.a(this.f809a));
         }
         this.e.getClass();
         if (So.a(a2)) {
@@ -68,13 +68,13 @@ public final class Vd {
         }
         R9 r922 = this.c;
         r922.b.b();
-        r922.f741a.unlock();
+        r922.f742a.unlock();
         if (identifiersResult == null) {
         }
     }
 
     public Vd(Context context, InterfaceC0428mb interfaceC0428mb, R9 r9, C0148bf c0148bf, So so) {
-        this.f808a = context;
+        this.f809a = context;
         this.b = interfaceC0428mb;
         this.c = r9;
         this.d = c0148bf;

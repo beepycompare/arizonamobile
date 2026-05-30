@@ -17,7 +17,7 @@ public final class Ch extends AbstractC0165c6 {
     /* renamed from: b */
     public final Eh load(C0139b6 c0139b6) {
         Eh eh = (Eh) super.load(c0139b6);
-        eh.m = ((C0771zh) c0139b6.componentArguments).f1316a;
+        eh.m = ((C0771zh) c0139b6.componentArguments).f1317a;
         eh.r = this.b.t.a();
         eh.w = this.b.q.a();
         C0771zh c0771zh = (C0771zh) c0139b6.componentArguments;
@@ -33,12 +33,12 @@ public final class Ch extends AbstractC0165c6 {
         eh.k = bh;
         C0771zh c0771zh2 = (C0771zh) c0139b6.componentArguments;
         eh.v = c0771zh2.j;
-        Hm hm = c0139b6.f901a;
+        Hm hm = c0139b6.f902a;
         C4 c4 = hm.n;
-        eh.n = c4.f486a;
+        eh.n = c4.f487a;
         Ye ye = hm.s;
         if (ye != null) {
-            eh.s = ye.f855a;
+            eh.s = ye.f856a;
             eh.t = ye.b;
         }
         eh.o = c4.b;

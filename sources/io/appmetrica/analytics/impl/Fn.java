@@ -8,19 +8,19 @@ import kotlin.jvm.internal.Lambda;
 public final class Fn extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Gn f551a;
+    public final /* synthetic */ Gn f552a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Fn(Gn gn) {
         super(0);
-        this.f551a = gn;
+        this.f552a = gn;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
         HashMap hashMap = new HashMap();
-        Gn gn = this.f551a;
-        String a2 = gn.f566a.a();
+        Gn gn = this.f552a;
+        String a2 = gn.f567a.a();
         if (a2 != null) {
             String str = (String) hashMap.put(AdRevenueConstants.NATIVE_SUPPORTED_SOURCES_KEY, a2);
         }

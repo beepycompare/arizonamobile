@@ -9,7 +9,7 @@ import java.util.TreeMap;
 public final class C0286go {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0260fo f1002a;
+    public final InterfaceC0260fo f1003a;
     public final BiFunction b;
     public final InterfaceC0201dg c;
 
@@ -22,7 +22,7 @@ public final class C0286go {
         ArrayList arrayList = new ArrayList();
         TreeMap treeMap = new TreeMap(new C0234eo());
         try {
-            map = this.f1002a.c();
+            map = this.f1003a.c();
         } catch (SecurityException unused) {
             map = null;
         }
@@ -42,7 +42,7 @@ public final class C0286go {
     }
 
     public C0286go(InterfaceC0260fo interfaceC0260fo, Ia ia, J6 j6) {
-        this.f1002a = interfaceC0260fo;
+        this.f1003a = interfaceC0260fo;
         this.b = ia;
         this.c = j6;
     }

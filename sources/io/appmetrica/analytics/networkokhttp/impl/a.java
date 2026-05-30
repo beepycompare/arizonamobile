@@ -5,7 +5,7 @@ import io.appmetrica.analytics.networkapi.Request;
 public abstract /* synthetic */ class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1377a;
+    public static final /* synthetic */ int[] f1378a;
 
     static {
         int[] iArr = new int[Request.Method.values().length];
@@ -37,6 +37,6 @@ public abstract /* synthetic */ class a {
             iArr[Request.Method.OPTIONS.ordinal()] = 7;
         } catch (NoSuchFieldError unused7) {
         }
-        f1377a = iArr;
+        f1378a = iArr;
     }
 }

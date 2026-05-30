@@ -16,17 +16,17 @@ import kotlin.text.StringsKt;
 public final class C0218e8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final W f958a;
+    public final W f959a;
     public final C0445n2 b;
 
     public C0218e8(W w, C0445n2 c0445n2) {
-        this.f958a = w;
+        this.f959a = w;
         this.b = c0445n2;
     }
 
     public final String a() {
         byte[] bArr;
-        AdTrackingInfoResult yandex = this.f958a.getIdentifiers().getYandex();
+        AdTrackingInfoResult yandex = this.f959a.getIdentifiers().getYandex();
         if (yandex.isValid()) {
             AdTrackingInfo adTrackingInfo = yandex.mAdTrackingInfo;
             Intrinsics.checkNotNull(adTrackingInfo);

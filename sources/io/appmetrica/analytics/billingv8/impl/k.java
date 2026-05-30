@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function0;
 public final class k implements PurchasesResponseListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final UtilsProvider f312a;
+    public final UtilsProvider f313a;
     public final Function0 b;
     public final List c;
     public final List d;
@@ -17,7 +17,7 @@ public final class k implements PurchasesResponseListener {
     public final n f;
 
     public k(UtilsProvider utilsProvider, Function0 function0, List list, List list2, d dVar, n nVar) {
-        this.f312a = utilsProvider;
+        this.f313a = utilsProvider;
         this.b = function0;
         this.c = list;
         this.d = list2;
@@ -27,6 +27,6 @@ public final class k implements PurchasesResponseListener {
 
     @Override // com.android.billingclient.api.PurchasesResponseListener
     public final void onQueryPurchasesResponse(BillingResult billingResult, List list) {
-        this.f312a.getWorkerExecutor().execute(new j(this, billingResult, list));
+        this.f313a.getWorkerExecutor().execute(new j(this, billingResult, list));
     }
 }

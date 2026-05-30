@@ -7,7 +7,7 @@ import java.util.List;
 public final class Zn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f874a;
+    public final String f875a;
     public final int b;
     public final long c;
     public final String d;
@@ -15,7 +15,7 @@ public final class Zn {
     public final List f;
 
     public Zn(String str, int i, long j, String str2, Integer num, List list) {
-        this.f874a = str;
+        this.f875a = str;
         this.b = i;
         this.c = j;
         this.d = str2;

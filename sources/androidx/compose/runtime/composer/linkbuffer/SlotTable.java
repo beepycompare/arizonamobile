@@ -100,7 +100,7 @@ public final class SlotTable extends SlotStorage implements CompositionData, Ite
     }
 
     public final long rootHandle() {
-        return (UInt.m9942constructorimpl(this.root) & 4294967295L) | (-4294967296L);
+        return (UInt.m9943constructorimpl(this.root) & 4294967295L) | (-4294967296L);
     }
 
     public final int getVersion() {
@@ -381,7 +381,7 @@ public final class SlotTable extends SlotStorage implements CompositionData, Ite
                         while (i9 < i8) {
                             if ((255 & j) < 128) {
                                 z2 = z3;
-                                openEditor.seek(UInt.m9942constructorimpl(iArr[(i7 << 3) + i9]) & 4294967295L);
+                                openEditor.seek(UInt.m9943constructorimpl(iArr[(i7 << 3) + i9]) & 4294967295L);
                                 openEditor.bashGroup$runtime(-3);
                             } else {
                                 z2 = z3;

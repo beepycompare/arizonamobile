@@ -13,7 +13,7 @@ public final class C0738ya implements ep {
     public static final C0712xa h = new C0712xa();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1291a;
+    public final Context f1292a;
     public final String b;
     public final IHandlerExecutor c;
     public final long d;
@@ -22,7 +22,7 @@ public final class C0738ya implements ep {
     public volatile boolean g;
 
     public C0738ya(Context context, String str, IHandlerExecutor iHandlerExecutor, long j) {
-        this.f1291a = context;
+        this.f1292a = context;
         this.b = str;
         this.c = iHandlerExecutor;
         this.d = j;
@@ -64,7 +64,7 @@ public final class C0738ya implements ep {
             if (bufferedFileWriter2 != null) {
                 return bufferedFileWriter2;
             }
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1291a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1292a, this.b);
             if (fileFromSdkStorage == null) {
                 return null;
             }
@@ -84,8 +84,8 @@ public final class C0738ya implements ep {
                 return;
             }
             try {
-                File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1291a, this.b);
-                if (fileFromSdkStorage != null && !fileFromSdkStorage.exists() && (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f1291a, this.b)) != null) {
+                File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f1292a, this.b);
+                if (fileFromSdkStorage != null && !fileFromSdkStorage.exists() && (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f1292a, this.b)) != null) {
                     FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
                 }
             } catch (Throwable unused) {

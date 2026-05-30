@@ -71,7 +71,7 @@ public final class TransitionKt$rememberTransition$2$1 extends SuspendLambda imp
             CancellableContinuation compositionContinuation$animation_core = ((SeekableTransitionState) transitionState).getCompositionContinuation$animation_core();
             if (compositionContinuation$animation_core != null) {
                 Result.Companion companion = Result.Companion;
-                compositionContinuation$animation_core.resumeWith(Result.m9842constructorimpl(((SeekableTransitionState) transitionState).getTargetState()));
+                compositionContinuation$animation_core.resumeWith(Result.m9843constructorimpl(((SeekableTransitionState) transitionState).getTargetState()));
             }
             ((SeekableTransitionState) transitionState).setCompositionContinuation$animation_core(null);
             Unit unit = Unit.INSTANCE;

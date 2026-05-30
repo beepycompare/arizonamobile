@@ -8,7 +8,7 @@ import okhttp3.internal.connection.RealConnection;
 public final class Y4 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f850a = 2000;
+    public final int f851a = 2000;
     public final String b = "number";
     public final String c = "global_number";
     public final String d = "number_of_type";
@@ -38,7 +38,7 @@ public final class Y4 extends DatabaseScript {
         Db db;
         Long l2;
         Long l3;
-        Long l4 = c0657v7.f1243a;
+        Long l4 = c0657v7.f1244a;
         if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0657v7.b == null || (l = c0657v7.c) == null || l.longValue() < 0 || (db = c0657v7.d) == null || db == Db.EVENT_TYPE_UNDEFINED || (l2 = c0657v7.e) == null || l2.longValue() < 0 || (l3 = c0657v7.f) == null || l3.longValue() < 0) {
             return false;
         }
@@ -59,7 +59,7 @@ public final class Y4 extends DatabaseScript {
         try {
             sQLiteDatabase2 = sQLiteDatabase;
             try {
-                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f850a));
+                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f851a));
                 while (cursor.moveToNext()) {
                     try {
                         C0657v7 a2 = a(cursor);

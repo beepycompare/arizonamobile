@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class I9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f591a;
+    public final String f592a;
 
     public I9(String str) {
-        this.f591a = str;
+        this.f592a = str;
     }
 }

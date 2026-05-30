@@ -8,34 +8,34 @@ import kotlin.Metadata;
 public abstract class NetworkClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private final NetworkClientSettings f1368a;
+    private final NetworkClientSettings f1369a;
 
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\b&\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\f\u0010\rJ\u000e\u0010\u0004\u001a\u00020\u00002\u0006\u0010\u0003\u001a\u00020\u0002J\b\u0010\u0006\u001a\u00020\u0005H&R$\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0007\u001a\u00020\u00028\u0004@BX\u0084\u000e¢\u0006\f\n\u0004\b\b\u0010\t\u001a\u0004\b\n\u0010\u000b¨\u0006\u000e"}, d2 = {"Lio/appmetrica/analytics/networkapi/NetworkClient$Builder;", "", "Lio/appmetrica/analytics/networkapi/NetworkClientSettings;", "settings", "withSettings", "Lio/appmetrica/analytics/networkapi/NetworkClient;", "build", "<set-?>", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Lio/appmetrica/analytics/networkapi/NetworkClientSettings;", "getSettings", "()Lio/appmetrica/analytics/networkapi/NetworkClientSettings;", "<init>", "()V", "network-api_release"}, k = 1, mv = {1, 9, 0})
     /* loaded from: classes5.dex */
     public static abstract class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private NetworkClientSettings f1369a = new NetworkClientSettings.Builder().build();
+        private NetworkClientSettings f1370a = new NetworkClientSettings.Builder().build();
 
         public abstract NetworkClient build();
 
         /* JADX INFO: Access modifiers changed from: protected */
         public final NetworkClientSettings getSettings() {
-            return this.f1369a;
+            return this.f1370a;
         }
 
         public final Builder withSettings(NetworkClientSettings networkClientSettings) {
-            this.f1369a = networkClientSettings;
+            this.f1370a = networkClientSettings;
             return this;
         }
     }
 
     public NetworkClient(NetworkClientSettings networkClientSettings) {
-        this.f1368a = networkClientSettings;
+        this.f1369a = networkClientSettings;
     }
 
     public final NetworkClientSettings getSettings() {
-        return this.f1368a;
+        return this.f1369a;
     }
 
     public abstract Call newCall(Request request);

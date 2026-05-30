@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Y0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0651v1 f846a;
+    public final /* synthetic */ C0651v1 f847a;
 
     public Y0(C0651v1 c0651v1) {
-        this.f846a = c0651v1;
+        this.f847a = c0651v1;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0651v1.a(this.f846a).sendEventsBuffer();
+        C0651v1.a(this.f847a).sendEventsBuffer();
     }
 }

@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommerceProduct {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f390a;
+    private final String f391a;
     private String b;
     private List c;
     private Map d;
@@ -16,7 +16,7 @@ public class ECommerceProduct {
     private List g;
 
     public ECommerceProduct(String str) {
-        this.f390a = str;
+        this.f391a = str;
     }
 
     public ECommercePrice getActualPrice() {
@@ -44,7 +44,7 @@ public class ECommerceProduct {
     }
 
     public String getSku() {
-        return this.f390a;
+        return this.f391a;
     }
 
     public ECommerceProduct setActualPrice(ECommercePrice eCommercePrice) {
@@ -78,6 +78,6 @@ public class ECommerceProduct {
     }
 
     public String toString() {
-        return "ECommerceProduct{sku='" + this.f390a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceProduct{sku='" + this.f391a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 }

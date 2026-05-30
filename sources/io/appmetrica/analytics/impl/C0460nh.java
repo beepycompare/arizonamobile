@@ -12,7 +12,7 @@ public final class C0460nh extends AbstractC0305hh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
-        C0448n5 c0448n5 = this.f1016a;
+        C0448n5 c0448n5 = this.f1017a;
         if (!this.b.c()) {
             if (!this.b.d()) {
                 E9 e9 = c0448n5.n;
@@ -20,12 +20,12 @@ public final class C0460nh extends AbstractC0305hh {
             }
             ap apVar = this.b;
             synchronized (apVar) {
-                JSONObject a2 = apVar.f893a.a();
+                JSONObject a2 = apVar.f894a.a();
                 if (!a2.optBoolean("first_event_done", false)) {
-                    apVar.f893a.a(a2.put("first_event_done", true));
+                    apVar.f894a.a(a2.put("first_event_done", true));
                 }
-                bp bpVar = apVar.f893a;
-                bp.a(bpVar.f913a);
+                bp bpVar = apVar.f894a;
+                bp.a(bpVar.f914a);
                 bp.a(bpVar.b);
             }
         }

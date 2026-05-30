@@ -23,7 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoint<ClientSideScreenshotConfigWrapper> {
 
     /* renamed from: a  reason: collision with root package name */
-    private C0789k f1465a;
+    private C0789k f1466a;
     private D d;
     private final C0785g b = new C0785g();
     private final ScreenshotClientModuleEntryPoint$configUpdateListener$1 c = new ServiceConfigUpdateListener<ClientSideScreenshotConfigWrapper>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$configUpdateListener$1
@@ -35,7 +35,7 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
             ScreenshotClientModuleEntryPoint screenshotClientModuleEntryPoint = ScreenshotClientModuleEntryPoint.this;
             synchronized (screenshotClientModuleEntryPoint) {
                 ClientSideScreenshotConfigWrapper featuresConfig = moduleServiceConfig.getFeaturesConfig();
-                screenshotClientModuleEntryPoint.f1465a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
+                screenshotClientModuleEntryPoint.f1466a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
                 d = screenshotClientModuleEntryPoint.d;
                 if (d != null) {
                     d2 = screenshotClientModuleEntryPoint.d;
@@ -43,9 +43,9 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                         Intrinsics.throwUninitializedPropertyAccessException("screenshotCaptorsController");
                         d2 = null;
                     }
-                    c0789k = screenshotClientModuleEntryPoint.f1465a;
-                    for (B b : d2.f1430a) {
-                        b.a((c0789k == null || !Boolean.valueOf(c0789k.f1450a).booleanValue()) ? null : c0789k);
+                    c0789k = screenshotClientModuleEntryPoint.f1466a;
+                    for (B b : d2.f1431a) {
+                        b.a((c0789k == null || !Boolean.valueOf(c0789k.f1451a).booleanValue()) ? null : c0789k);
                     }
                 }
                 Unit unit = Unit.INSTANCE;
@@ -99,12 +99,12 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
         synchronized (this) {
             D d = this.d;
             if (d != null) {
-                C0789k c0789k = this.f1465a;
-                for (B b : d.f1430a) {
+                C0789k c0789k = this.f1466a;
+                for (B b : d.f1431a) {
                     b.a();
                 }
-                for (B b2 : d.f1430a) {
-                    b2.a((c0789k == null || !Boolean.valueOf(c0789k.f1450a).booleanValue()) ? null : c0789k);
+                for (B b2 : d.f1431a) {
+                    b2.a((c0789k == null || !Boolean.valueOf(c0789k.f1451a).booleanValue()) ? null : c0789k);
                 }
             }
             Unit unit = Unit.INSTANCE;

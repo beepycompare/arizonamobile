@@ -9,11 +9,11 @@ public final class R {
         public static int btn_mobile_server = 0x7f080532;
         public static int btn_mobile_server_inactive = 0x7f080533;
         public static int btn_next = 0x7f080534;
-        public static int mobile_topbar_icon = 0x7f080c6b;
-        public static int no_promo_label = 0x7f080d4e;
-        public static int select_server_label = 0x7f080ed1;
-        public static int server_new_ic = 0x7f080ee0;
-        public static int server_top_ic = 0x7f080ee1;
+        public static int mobile_topbar_icon = 0x7f080c6f;
+        public static int no_promo_label = 0x7f080d52;
+        public static int select_server_label = 0x7f080ed5;
+        public static int server_new_ic = 0x7f080ee4;
+        public static int server_top_ic = 0x7f080ee5;
 
         private drawable() {
         }

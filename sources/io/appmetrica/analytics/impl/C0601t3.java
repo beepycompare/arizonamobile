@@ -6,25 +6,25 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0601t3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1207a;
+    public final long f1208a;
 
     public C0601t3(long j) {
-        this.f1207a = j;
+        this.f1208a = j;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return obj != null && C0601t3.class == obj.getClass() && this.f1207a == ((C0601t3) obj).f1207a;
+        return obj != null && C0601t3.class == obj.getClass() && this.f1208a == ((C0601t3) obj).f1208a;
     }
 
     public final int hashCode() {
-        long j = this.f1207a;
+        long j = this.f1208a;
         return (int) (j ^ (j >>> 32));
     }
 
     public final String toString() {
-        return "CacheControl{lastKnownLocationTtl=" + this.f1207a + AbstractJsonLexerKt.END_OBJ;
+        return "CacheControl{lastKnownLocationTtl=" + this.f1208a + AbstractJsonLexerKt.END_OBJ;
     }
 }

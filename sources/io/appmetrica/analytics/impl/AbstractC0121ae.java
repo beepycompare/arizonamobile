@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class AbstractC0121ae implements Ho, InterfaceC0652v2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f885a;
+    public final String f886a;
     public final int b;
     public final Vo c;
     public final W2 d;
@@ -14,7 +14,7 @@ public abstract class AbstractC0121ae implements Ho, InterfaceC0652v2 {
 
     public AbstractC0121ae(int i, String str, Vo vo, W2 w2) {
         this.b = i;
-        this.f885a = str;
+        this.f886a = str;
         this.c = vo;
         this.d = w2;
     }
@@ -22,7 +22,7 @@ public abstract class AbstractC0121ae implements Ho, InterfaceC0652v2 {
     public final Io a() {
         Io io2 = new Io();
         io2.b = this.b;
-        io2.f599a = this.f885a.getBytes();
+        io2.f600a = this.f886a.getBytes();
         io2.d = new Ko();
         io2.c = new Jo();
         return io2;
@@ -36,7 +36,7 @@ public abstract class AbstractC0121ae implements Ho, InterfaceC0652v2 {
     }
 
     public final String c() {
-        return this.f885a;
+        return this.f886a;
     }
 
     public final Vo d() {
@@ -48,11 +48,11 @@ public abstract class AbstractC0121ae implements Ho, InterfaceC0652v2 {
     }
 
     public final boolean f() {
-        To a2 = this.c.a(this.f885a);
-        if (a2.f781a) {
+        To a2 = this.c.a(this.f886a);
+        if (a2.f782a) {
             return true;
         }
-        this.e.warning("Attribute " + this.f885a + " of type " + ((String) AbstractC0570ro.f1186a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
+        this.e.warning("Attribute " + this.f886a + " of type " + ((String) AbstractC0570ro.f1187a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
         return false;
     }
 

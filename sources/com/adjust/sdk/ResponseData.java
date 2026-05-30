@@ -27,33 +27,33 @@ public class ResponseData {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f179a;
+        public static final /* synthetic */ int[] f180a;
 
         static {
             int[] iArr = new int[ActivityKind.values().length];
-            f179a = iArr;
+            f180a = iArr;
             try {
                 iArr[ActivityKind.SESSION.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f179a[ActivityKind.CLICK.ordinal()] = 2;
+                f180a[ActivityKind.CLICK.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f179a[ActivityKind.ATTRIBUTION.ordinal()] = 3;
+                f180a[ActivityKind.ATTRIBUTION.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f179a[ActivityKind.EVENT.ordinal()] = 4;
+                f180a[ActivityKind.EVENT.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f179a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 5;
+                f180a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f179a[ActivityKind.THIRD_PARTY_SHARING.ordinal()] = 6;
+                f180a[ActivityKind.THIRD_PARTY_SHARING.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
         }
@@ -62,7 +62,7 @@ public class ResponseData {
     public static ResponseData buildResponseData(ActivityPackage activityPackage, Map<String, String> map, Map<String, String> map2) {
         ResponseData sessionResponseData;
         ActivityKind activityKind = activityPackage.getActivityKind();
-        switch (AnonymousClass1.f179a[activityKind.ordinal()]) {
+        switch (AnonymousClass1.f180a[activityKind.ordinal()]) {
             case 1:
                 sessionResponseData = new SessionResponseData(activityPackage);
                 break;

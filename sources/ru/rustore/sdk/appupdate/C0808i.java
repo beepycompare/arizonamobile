@@ -8,13 +8,13 @@ import ru.rustore.sdk.analytics.event.AnalyticsEvent;
 public final class C0808i extends AnalyticsEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1527a;
+    public final String f1528a;
     public final Map<String, String> b;
 
     public C0808i(String eventName, Map<String, String> eventData) {
         Intrinsics.checkNotNullParameter(eventName, "eventName");
         Intrinsics.checkNotNullParameter(eventData, "eventData");
-        this.f1527a = eventName;
+        this.f1528a = eventName;
         this.b = eventData;
     }
 
@@ -24,7 +24,7 @@ public final class C0808i extends AnalyticsEvent {
         }
         if (obj instanceof C0808i) {
             C0808i c0808i = (C0808i) obj;
-            return Intrinsics.areEqual(this.f1527a, c0808i.f1527a) && Intrinsics.areEqual(this.b, c0808i.b);
+            return Intrinsics.areEqual(this.f1528a, c0808i.f1528a) && Intrinsics.areEqual(this.b, c0808i.b);
         }
         return false;
     }
@@ -36,14 +36,14 @@ public final class C0808i extends AnalyticsEvent {
 
     @Override // ru.rustore.sdk.analytics.event.AnalyticsEvent
     public final String getEventName() {
-        return this.f1527a;
+        return this.f1528a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1527a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1528a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "AppUpdateAnalyticsEvent(eventName=" + this.f1527a + ", eventData=" + this.b + ')';
+        return "AppUpdateAnalyticsEvent(eventName=" + this.f1528a + ", eventData=" + this.b + ')';
     }
 }

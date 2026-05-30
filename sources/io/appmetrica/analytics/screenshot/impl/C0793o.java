@@ -9,7 +9,7 @@ public final class C0793o implements Converter {
     /* renamed from: a */
     public final x fromModel(O o) {
         x xVar = new x();
-        xVar.f1461a = o.f1439a;
+        xVar.f1462a = o.f1440a;
         xVar.c = (String[]) o.b.toArray(new String[0]);
         xVar.b = o.c;
         return xVar;
@@ -18,6 +18,6 @@ public final class C0793o implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final O toModel(x xVar) {
-        return new O(xVar.f1461a, ArraysKt.toList(xVar.c), xVar.b);
+        return new O(xVar.f1462a, ArraysKt.toList(xVar.c), xVar.b);
     }
 }

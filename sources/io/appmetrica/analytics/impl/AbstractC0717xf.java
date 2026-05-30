@@ -9,7 +9,7 @@ public abstract class AbstractC0717xf implements Zl {
     public static final String c = "xf";
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0350jb f1278a;
+    public final InterfaceC0350jb f1279a;
     public final String b;
 
     public AbstractC0717xf(InterfaceC0350jb interfaceC0350jb) {
@@ -23,7 +23,7 @@ public abstract class AbstractC0717xf implements Zl {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T a(String str, float f) {
         synchronized (this) {
-            this.f1278a.a(str, f);
+            this.f1279a.a(str, f);
         }
         return this;
     }
@@ -43,7 +43,7 @@ public abstract class AbstractC0717xf implements Zl {
     public abstract /* synthetic */ boolean b(String str);
 
     public final long c(String str, long j) {
-        return this.f1278a.getLong(str, j);
+        return this.f1279a.getLong(str, j);
     }
 
     public final C0743yf d(String str) {
@@ -55,37 +55,37 @@ public abstract class AbstractC0717xf implements Zl {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T f(String str) {
         synchronized (this) {
-            this.f1278a.remove(str);
+            this.f1279a.remove(str);
         }
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.Zl, io.appmetrica.analytics.impl.ep
     public void flushAsync() {
-        this.f1278a.flushAsync();
+        this.f1279a.flushAsync();
     }
 
     public AbstractC0717xf(InterfaceC0350jb interfaceC0350jb, String str) {
-        this.f1278a = interfaceC0350jb;
+        this.f1279a = interfaceC0350jb;
         this.b = str;
     }
 
     public final int c(String str, int i) {
-        return this.f1278a.getInt(str, i);
+        return this.f1279a.getInt(str, i);
     }
 
     public final String c(String str, String str2) {
-        return this.f1278a.getString(str, str2);
+        return this.f1279a.getString(str, str2);
     }
 
     public final boolean c(String str, boolean z) {
-        return this.f1278a.getBoolean(str, z);
+        return this.f1279a.getBoolean(str, z);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T d(String str, String str2) {
         synchronized (this) {
-            this.f1278a.a(str, str2);
+            this.f1279a.a(str, str2);
         }
         return this;
     }
@@ -102,22 +102,22 @@ public abstract class AbstractC0717xf implements Zl {
         } catch (Throwable unused) {
             str2 = null;
         }
-        this.f1278a.a(str, str2);
+        this.f1279a.a(str, str2);
         return this;
     }
 
     public final boolean c(String str) {
-        return this.f1278a.a(str);
+        return this.f1279a.a(str);
     }
 
     public Set<String> c() {
-        return this.f1278a.b();
+        return this.f1279a.b();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T d(String str, long j) {
         synchronized (this) {
-            this.f1278a.a(str, j);
+            this.f1279a.a(str, j);
         }
         return this;
     }
@@ -125,7 +125,7 @@ public abstract class AbstractC0717xf implements Zl {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T d(String str, int i) {
         synchronized (this) {
-            this.f1278a.a(str, i);
+            this.f1279a.a(str, i);
         }
         return this;
     }
@@ -136,14 +136,14 @@ public abstract class AbstractC0717xf implements Zl {
 
     public void a() {
         synchronized (this) {
-            this.f1278a.a();
+            this.f1279a.a();
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends AbstractC0717xf> T d(String str, boolean z) {
         synchronized (this) {
-            this.f1278a.a(str, z);
+            this.f1279a.a(str, z);
         }
         return this;
     }

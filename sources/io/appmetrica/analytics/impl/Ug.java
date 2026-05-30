@@ -9,7 +9,7 @@ import java.util.List;
 public final class Ug implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0337io f793a;
+    public final C0337io f794a;
     public final Y b;
     public final C0708x6 c;
     public final C0207dm d;
@@ -24,12 +24,12 @@ public final class Ug implements ProtobufConverter {
     /* renamed from: a */
     public final C0449n6 fromModel(Tg tg) {
         C0449n6 c0449n6 = new C0449n6();
-        c0449n6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(tg.f777a, c0449n6.f));
+        c0449n6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(tg.f778a, c0449n6.f));
         C0622to c0622to = tg.b;
         if (c0622to != null) {
-            C0363jo c0363jo = c0622to.f1220a;
+            C0363jo c0363jo = c0622to.f1221a;
             if (c0363jo != null) {
-                c0449n6.f1109a = this.f793a.fromModel(c0363jo);
+                c0449n6.f1110a = this.f794a.fromModel(c0363jo);
             }
             X x = c0622to.b;
             if (x != null) {
@@ -61,7 +61,7 @@ public final class Ug implements ProtobufConverter {
     }
 
     public Ug(C0337io c0337io, Y y, C0708x6 c0708x6, C0207dm c0207dm, Cif cif, C0354jf c0354jf) {
-        this.f793a = c0337io;
+        this.f794a = c0337io;
         this.b = y;
         this.c = c0708x6;
         this.d = c0207dm;

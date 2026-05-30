@@ -1,8 +1,8 @@
 package com.miami.game.core.fonts.resources;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class R {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public static final class font {
         public static int dinpro = 0x7f090001;
         public static int dinpro_black = 0x7f090002;

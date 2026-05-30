@@ -16,7 +16,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     private static volatile NetworkServiceLocator b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final NetworkCore f1396a;
+    private final NetworkCore f1397a;
 
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001J\b\u0010\u0003\u001a\u00020\u0002H\u0007J\u0018\u0010\t\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u0006H\u0007J\u0010\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u0002H\u0007R\u0016\u0010\u000b\u001a\u00020\u00028\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator$Companion;", "", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "getInstance", "Landroid/content/Context;", "context", "Lio/appmetrica/analytics/coreapi/internal/io/IExecutionPolicy;", "executionPolicy", "", "init", "networkServiceLocator", "instance", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "network-tasks_release"}, k = 1, mv = {1, 9, 0})
     /* loaded from: classes5.dex */
@@ -61,7 +61,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
         NetworkCore networkCore = new NetworkCore(iExecutionPolicy);
         networkCore.setName("IAA-NC");
         networkCore.start();
-        this.f1396a = networkCore;
+        this.f1397a = networkCore;
     }
 
     @JvmStatic
@@ -75,7 +75,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     }
 
     public final NetworkCore getNetworkCore() {
-        return this.f1396a;
+        return this.f1397a;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
@@ -84,7 +84,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
     public void onDestroy() {
-        this.f1396a.stopTasks();
+        this.f1397a.stopTasks();
     }
 
     @JvmStatic

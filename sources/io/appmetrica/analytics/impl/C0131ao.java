@@ -8,7 +8,7 @@ import java.util.List;
 public final class C0131ao implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0207dm f892a;
+    public final C0207dm f893a;
 
     public C0131ao() {
         this(new C0207dm());
@@ -22,9 +22,9 @@ public final class C0131ao implements ProtobufConverter {
         c0527q6.e = num == null ? -1 : num.intValue();
         c0527q6.d = zn.d;
         c0527q6.b = zn.b;
-        c0527q6.f1160a = zn.f874a;
+        c0527q6.f1161a = zn.f875a;
         c0527q6.c = zn.c;
-        C0207dm c0207dm = this.f892a;
+        C0207dm c0207dm = this.f893a;
         List<StackTraceElement> list = zn.f;
         ArrayList arrayList = new ArrayList();
         for (StackTraceElement stackTraceElement : list) {
@@ -41,7 +41,7 @@ public final class C0131ao implements ProtobufConverter {
     }
 
     public C0131ao(C0207dm c0207dm) {
-        this.f892a = c0207dm;
+        this.f893a = c0207dm;
     }
 
     public final Zn a(C0527q6 c0527q6) {

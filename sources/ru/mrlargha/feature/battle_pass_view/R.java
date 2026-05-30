@@ -4,9 +4,9 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int user_battlepass_logo10 = 0x7f080f91;
-        public static int user_battlepass_logo11 = 0x7f080f92;
-        public static int user_battlepass_topbar_bg_rodina = 0x7f080f94;
+        public static int user_battlepass_logo10 = 0x7f080f95;
+        public static int user_battlepass_logo11 = 0x7f080f96;
+        public static int user_battlepass_topbar_bg_rodina = 0x7f080f98;
 
         private drawable() {
         }

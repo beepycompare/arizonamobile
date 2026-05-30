@@ -7,9 +7,9 @@ public final class J9 implements ProtobufConverter {
     /* renamed from: a */
     public final H9 fromModel(I9 i9) {
         H9 h9 = new H9();
-        String str = i9.f591a;
+        String str = i9.f592a;
         if (str != null) {
-            h9.f575a = str.getBytes();
+            h9.f576a = str.getBytes();
         }
         return h9;
     }
@@ -17,6 +17,6 @@ public final class J9 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final I9 toModel(H9 h9) {
-        return new I9(new String(h9.f575a));
+        return new I9(new String(h9.f576a));
     }
 }

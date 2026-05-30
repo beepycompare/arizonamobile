@@ -56,7 +56,7 @@ public abstract class AbstractC0402lb {
             } catch (Throwable th3) {
                 th = th3;
                 try {
-                    C0541qk c0541qk = Oj.f705a;
+                    C0541qk c0541qk = Oj.f706a;
                     c0541qk.getClass();
                     c0541qk.a(new Pj("error_during_file_reading", th));
                     file.getAbsolutePath();

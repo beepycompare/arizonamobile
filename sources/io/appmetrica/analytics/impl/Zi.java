@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Zi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final A9 f871a;
+    public final A9 f872a;
     public final C0365k0 b;
     public final boolean c;
     public final int d;
@@ -11,7 +11,7 @@ public final class Zi {
     public final Integer f;
 
     public Zi(A9 a9, C0365k0 c0365k0, boolean z, int i, int i2, Integer num) {
-        this.f871a = a9;
+        this.f872a = a9;
         this.b = c0365k0;
         this.c = z;
         this.d = i;

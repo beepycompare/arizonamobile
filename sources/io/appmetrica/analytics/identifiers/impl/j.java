@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public final class j implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final f f404a;
+    public final f f405a;
 
     public j(f fVar) {
-        this.f404a = fVar;
+        this.f405a = fVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -24,9 +24,9 @@ public final class j implements b {
         try {
             try {
                 try {
-                    m mVar = (m) ((o) this.f404a.a(context));
+                    m mVar = (m) ((o) this.f405a.a(context));
                     cVar = new c(IdentifierStatus.OK, new a("huawei", mVar.a(), Boolean.valueOf(mVar.b())), null, 4);
-                    this = this.f404a;
+                    this = this.f405a;
                 } catch (Throwable unused) {
                 }
             } catch (g e) {
@@ -35,12 +35,12 @@ public final class j implements b {
                     message = "unknown exception during binding huawei services";
                 }
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, message);
-                this = this.f404a;
+                this = this.f405a;
                 this.b(context);
                 return cVar;
             } catch (Throwable th) {
                 cVar = new c(IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, null, "exception while fetching hoaid: " + th.getMessage());
-                this = this.f404a;
+                this = this.f405a;
                 this.b(context);
                 return cVar;
             }
@@ -48,7 +48,7 @@ public final class j implements b {
             return cVar;
         } catch (Throwable th2) {
             try {
-                this.f404a.b(context);
+                this.f405a.b(context);
             } catch (Throwable unused2) {
             }
             throw th2;
@@ -60,8 +60,8 @@ public final class j implements b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public j() {
-        this(new f(r1, i.f403a, "huawei"));
+        this(new f(r1, i.f404a, "huawei"));
         Intent intent;
-        intent = k.f405a;
+        intent = k.f406a;
     }
 }

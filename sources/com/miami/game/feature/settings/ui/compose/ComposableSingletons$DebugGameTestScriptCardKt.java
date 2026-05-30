@@ -18,7 +18,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     public static final ComposableSingletons$DebugGameTestScriptCardKt INSTANCE = new ComposableSingletons$DebugGameTestScriptCardKt();
 
     /* renamed from: lambda$-937640016  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f69lambda$937640016 = ComposableLambdaKt.composableLambdaInstance(-937640016, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda0
+    private static Function3<RowScope, Composer, Integer, Unit> f70lambda$937640016 = ComposableLambdaKt.composableLambdaInstance(-937640016, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__937640016$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -26,7 +26,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-1164861006  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f66lambda$1164861006 = ComposableLambdaKt.composableLambdaInstance(-1164861006, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda3
+    private static Function3<RowScope, Composer, Integer, Unit> f67lambda$1164861006 = ComposableLambdaKt.composableLambdaInstance(-1164861006, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__1164861006$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -34,7 +34,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-235814089  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f67lambda$235814089 = ComposableLambdaKt.composableLambdaInstance(-235814089, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda4
+    private static Function2<Composer, Integer, Unit> f68lambda$235814089 = ComposableLambdaKt.composableLambdaInstance(-235814089, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__235814089$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -42,7 +42,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-1004594734  reason: not valid java name */
-    private static Function2<Composer, Integer, Unit> f65lambda$1004594734 = ComposableLambdaKt.composableLambdaInstance(-1004594734, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda5
+    private static Function2<Composer, Integer, Unit> f66lambda$1004594734 = ComposableLambdaKt.composableLambdaInstance(-1004594734, false, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__1004594734$lambda$0((Composer) obj, ((Integer) obj2).intValue());
@@ -50,7 +50,7 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: lambda$-5343975  reason: not valid java name */
-    private static Function3<RowScope, Composer, Integer, Unit> f68lambda$5343975 = ComposableLambdaKt.composableLambdaInstance(-5343975, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda6
+    private static Function3<RowScope, Composer, Integer, Unit> f69lambda$5343975 = ComposableLambdaKt.composableLambdaInstance(-5343975, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$DebugGameTestScriptCardKt$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$DebugGameTestScriptCardKt.lambda__5343975$lambda$0((RowScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -94,28 +94,28 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: getLambda$-1004594734$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9767getLambda$1004594734$settings() {
-        return f65lambda$1004594734;
+    public final Function2<Composer, Integer, Unit> m9768getLambda$1004594734$settings() {
+        return f66lambda$1004594734;
     }
 
     /* renamed from: getLambda$-1164861006$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9768getLambda$1164861006$settings() {
-        return f66lambda$1164861006;
+    public final Function3<RowScope, Composer, Integer, Unit> m9769getLambda$1164861006$settings() {
+        return f67lambda$1164861006;
     }
 
     /* renamed from: getLambda$-235814089$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9769getLambda$235814089$settings() {
-        return f67lambda$235814089;
+    public final Function2<Composer, Integer, Unit> m9770getLambda$235814089$settings() {
+        return f68lambda$235814089;
     }
 
     /* renamed from: getLambda$-5343975$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9770getLambda$5343975$settings() {
-        return f68lambda$5343975;
+    public final Function3<RowScope, Composer, Integer, Unit> m9771getLambda$5343975$settings() {
+        return f69lambda$5343975;
     }
 
     /* renamed from: getLambda$-937640016$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9771getLambda$937640016$settings() {
-        return f69lambda$937640016;
+    public final Function3<RowScope, Composer, Integer, Unit> m9772getLambda$937640016$settings() {
+        return f70lambda$937640016;
     }
 
     public final Function2<Composer, Integer, Unit> getLambda$139506400$settings() {

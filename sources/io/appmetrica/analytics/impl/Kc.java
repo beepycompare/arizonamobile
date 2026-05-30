@@ -5,7 +5,7 @@ import io.appmetrica.analytics.AnrListener;
 public final class Kc {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f626a = 5;
+    public int f627a = 5;
     public final C0209e b;
 
     public Kc(InterfaceC0314i0 interfaceC0314i0) {
@@ -18,7 +18,7 @@ public final class Kc {
 
     public final void a(final AnrListener anrListener) {
         C0209e c0209e = this.b;
-        c0209e.f951a.add(new InterfaceC0158c() { // from class: io.appmetrica.analytics.impl.Kc$$ExternalSyntheticLambda0
+        c0209e.f952a.add(new InterfaceC0158c() { // from class: io.appmetrica.analytics.impl.Kc$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.InterfaceC0158c
             public final void onAppNotResponding() {
                 Kc.b(AnrListener.this);

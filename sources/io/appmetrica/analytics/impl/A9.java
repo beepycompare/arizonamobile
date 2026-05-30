@@ -25,7 +25,7 @@ public final class A9 extends MessageNano {
     public static volatile A9[] q;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f454a;
+    public long f455a;
     public C0763z9 b;
     public C0737y9[] c;
 
@@ -45,7 +45,7 @@ public final class A9 extends MessageNano {
     }
 
     public final A9 a() {
-        this.f454a = 0L;
+        this.f455a = 0L;
         this.b = null;
         this.c = C0737y9.b();
         this.cachedSize = -1;
@@ -54,7 +54,7 @@ public final class A9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f454a) + super.computeSerializedSize();
+        int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f455a) + super.computeSerializedSize();
         C0763z9 c0763z9 = this.b;
         if (c0763z9 != null) {
             computeUInt64Size += CodedOutputByteBufferNano.computeMessageSize(2, c0763z9);
@@ -79,7 +79,7 @@ public final class A9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeUInt64(1, this.f454a);
+        codedOutputByteBufferNano.writeUInt64(1, this.f455a);
         C0763z9 c0763z9 = this.b;
         if (c0763z9 != null) {
             codedOutputByteBufferNano.writeMessage(2, c0763z9);
@@ -110,7 +110,7 @@ public final class A9 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f454a = codedInputByteBufferNano.readUInt64();
+                this.f455a = codedInputByteBufferNano.readUInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0763z9();

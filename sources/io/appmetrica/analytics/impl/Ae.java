@@ -5,16 +5,16 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class Ae implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f457a;
+    public final String f458a;
 
     public Ae(String str) {
-        this.f457a = str;
+        this.f458a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(String str) {
         if (StringUtils.isNullOrEmpty(str)) {
-            return new To(this, false, this.f457a + " is empty.");
+            return new To(this, false, this.f458a + " is empty.");
         }
         return new To(this, true, "");
     }

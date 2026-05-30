@@ -10,8 +10,8 @@ public final class C0785g implements BundleToServiceConfigConverter {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.BundleToServiceConfigConverter
     /* renamed from: a */
     public final ClientSideScreenshotConfigWrapper fromBundle(Bundle bundle) {
-        boolean z = AbstractC0791m.f1452a;
-        boolean z2 = bundle.getBoolean("enabled", AbstractC0791m.f1452a);
+        boolean z = AbstractC0791m.f1453a;
+        boolean z2 = bundle.getBoolean("enabled", AbstractC0791m.f1453a);
         C0787i c0787i = new C0787i(bundle.getBoolean("api_captor_enabled", AbstractC0791m.c));
         C0790l c0790l = new C0790l(bundle.getBoolean("service_captor_enabled", AbstractC0791m.d), bundle.getLong("service_captor_delay_seconds", AbstractC0791m.e));
         boolean z3 = bundle.getBoolean("content_observer_enabled", AbstractC0791m.f);

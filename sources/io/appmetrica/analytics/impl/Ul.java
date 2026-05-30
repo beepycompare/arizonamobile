@@ -10,7 +10,7 @@ import kotlin.jvm.JvmStatic;
 public final class Ul {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ul f796a = new Ul();
+    public static final Ul f797a = new Ul();
 
     private Ul() {
     }

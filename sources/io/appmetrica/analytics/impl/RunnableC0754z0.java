@@ -6,14 +6,14 @@ import java.util.concurrent.TimeUnit;
 public final class RunnableC0754z0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ A0 f1303a;
+    public final /* synthetic */ A0 f1304a;
 
     public RunnableC0754z0(A0 a0) {
-        this.f1303a = a0;
+        this.f1304a = a0;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0576s4.l().c.a().executeDelayed(new RunnableC0703x1(this.f1303a.f446a), TimeUnit.SECONDS.toMillis(5L));
+        C0576s4.l().c.a().executeDelayed(new RunnableC0703x1(this.f1304a.f447a), TimeUnit.SECONDS.toMillis(5L));
     }
 }

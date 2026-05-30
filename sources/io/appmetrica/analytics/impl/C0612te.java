@@ -10,17 +10,17 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
 public final class C0612te implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0655v5 f1215a;
+    public final C0655v5 f1216a;
     public final String b = new Fo().a();
     public final Xl c = new Xl();
 
     public C0612te(Context context) {
-        this.f1215a = new C0655v5(new F5(context), new Ji(Na.k().h()));
+        this.f1216a = new C0655v5(new F5(context), new Ji(Na.k().h()));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
     public final IExecutionPolicy getExecutionPolicy() {
-        return this.f1215a;
+        return this.f1216a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext

@@ -9,13 +9,13 @@ import java.util.Map;
 public abstract class L5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f640a;
+    public static final Map f641a;
 
     static {
         HashMap hashMap = new HashMap();
         hashMap.put(Constants.REFERRER_API_GOOGLE, AdTrackingInfo.Provider.GOOGLE);
         hashMap.put("huawei", AdTrackingInfo.Provider.HMS);
         hashMap.put("yandex", AdTrackingInfo.Provider.YANDEX);
-        f640a = Collections.unmodifiableMap(hashMap);
+        f641a = Collections.unmodifiableMap(hashMap);
     }
 }

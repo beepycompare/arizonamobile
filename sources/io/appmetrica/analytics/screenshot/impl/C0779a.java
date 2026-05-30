@@ -8,12 +8,12 @@ import kotlin.jvm.internal.Lambda;
 public final class C0779a extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0782d f1444a;
+    public final /* synthetic */ C0782d f1445a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0779a(C0782d c0782d) {
         super(0);
-        this.f1444a = c0782d;
+        this.f1445a = c0782d;
     }
 
     public static final void a(C0782d c0782d) {
@@ -23,7 +23,7 @@ public final class C0779a extends Lambda implements Function0 {
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: a */
     public final Activity.ScreenCaptureCallback invoke() {
-        final C0782d c0782d = this.f1444a;
+        final C0782d c0782d = this.f1445a;
         return new Activity.ScreenCaptureCallback() { // from class: io.appmetrica.analytics.screenshot.impl.a$$ExternalSyntheticLambda0
             public final void onScreenCaptured() {
                 C0779a.a(C0782d.this);

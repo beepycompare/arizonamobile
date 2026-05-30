@@ -8,9 +8,9 @@ public enum EnumC0413lm {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1083a;
+    public final int f1084a;
 
     EnumC0413lm(int i) {
-        this.f1083a = i;
+        this.f1084a = i;
     }
 }

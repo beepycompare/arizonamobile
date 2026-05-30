@@ -16,7 +16,7 @@ public final class Cg extends MessageNano {
     public static volatile Cg[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f497a;
+    public String f498a;
     public long b;
     public long c;
     public int d;
@@ -37,7 +37,7 @@ public final class Cg extends MessageNano {
     }
 
     public final Cg a() {
-        this.f497a = "";
+        this.f498a = "";
         this.b = 0L;
         this.c = 0L;
         this.d = 0;
@@ -48,8 +48,8 @@ public final class Cg extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f497a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f497a);
+        if (!this.f498a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f498a);
         }
         long j = this.b;
         if (j != 0) {
@@ -65,8 +65,8 @@ public final class Cg extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f497a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f497a);
+        if (!this.f498a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f498a);
         }
         long j = this.b;
         if (j != 0) {
@@ -91,7 +91,7 @@ public final class Cg extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f497a = codedInputByteBufferNano.readString();
+                this.f498a = codedInputByteBufferNano.readString();
             } else if (readTag == 16) {
                 this.b = codedInputByteBufferNano.readUInt64();
             } else if (readTag == 24) {

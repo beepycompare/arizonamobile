@@ -6,23 +6,23 @@ import androidx.fragment.app.FragmentTransaction;
 public final class C0696wk implements Dg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0722xk f1268a;
+    public final /* synthetic */ C0722xk f1269a;
 
     public C0696wk(C0722xk c0722xk) {
-        this.f1268a = c0722xk;
+        this.f1269a = c0722xk;
     }
 
     @Override // io.appmetrica.analytics.impl.Dg
     public final void a(Lg lg) {
         Bg a2 = lg.a();
-        if (a2 != null && !this.f1268a.b()) {
+        if (a2 != null && !this.f1269a.b()) {
             try {
                 C0242f6 c0242f6 = new C0242f6("", "", 0);
                 c0242f6.setValueBytes(a2.a());
                 Db db = Db.EVENT_TYPE_UNDEFINED;
                 c0242f6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-                this.f1268a.f1016a.a(c0242f6);
-                C0722xk.b(this.f1268a);
+                this.f1269a.f1017a.a(c0242f6);
+                C0722xk.b(this.f1269a);
             } catch (Throwable unused) {
             }
         }

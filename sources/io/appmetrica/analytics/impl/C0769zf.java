@@ -25,7 +25,7 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final long a(int i2) {
-        return this.f1278a.getLong(e.b, i2);
+        return this.f1279a.getLong(e.b, i2);
     }
 
     public final C0769zf b(long j2) {
@@ -41,7 +41,7 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final boolean e() {
-        return this.f1278a.getBoolean(d.b, false);
+        return this.f1279a.getBoolean(d.b, false);
     }
 
     public final void f(boolean z) {
@@ -50,7 +50,7 @@ public final class C0769zf extends Yd implements ep {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf, io.appmetrica.analytics.impl.Zl, io.appmetrica.analytics.impl.ep
     public final void flushAsync() {
-        this.f1278a.flushAsync();
+        this.f1279a.flushAsync();
     }
 
     public final void g() {
@@ -62,11 +62,11 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final boolean i() {
-        return this.f1278a.getBoolean(n.b, false);
+        return this.f1279a.getBoolean(n.b, false);
     }
 
     public final boolean j() {
-        return this.f1278a.getBoolean(o.b, false);
+        return this.f1279a.getBoolean(o.b, false);
     }
 
     public final C0769zf a(long j2) {
@@ -74,18 +74,18 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final boolean b(boolean z) {
-        return this.f1278a.getBoolean(f.b, z);
+        return this.f1279a.getBoolean(f.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final Set<String> c() {
-        return this.f1278a.b();
+        return this.f1279a.b();
     }
 
     public final Boolean d() {
         C0743yf c0743yf = g;
-        if (this.f1278a.a(c0743yf.b)) {
-            return Boolean.valueOf(this.f1278a.getBoolean(c0743yf.b, true));
+        if (this.f1279a.a(c0743yf.b)) {
+            return Boolean.valueOf(this.f1279a.getBoolean(c0743yf.b, true));
         }
         return null;
     }
@@ -95,7 +95,7 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final long f() {
-        return this.f1278a.getLong(q.b, 0L);
+        return this.f1279a.getLong(q.b, 0L);
     }
 
     @Override // io.appmetrica.analytics.impl.Yd
@@ -110,7 +110,7 @@ public final class C0769zf extends Yd implements ep {
 
     @Override // io.appmetrica.analytics.impl.ep
     public final String b() {
-        return this.f1278a.getString(p.b, null);
+        return this.f1279a.getString(p.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf, io.appmetrica.analytics.impl.ep
@@ -132,7 +132,7 @@ public final class C0769zf extends Yd implements ep {
     }
 
     public final boolean a(boolean z) {
-        return this.f1278a.getBoolean(r.b, z);
+        return this.f1279a.getBoolean(r.b, z);
     }
 
     public final int a(EnumC0638ue enumC0638ue, int i2) {
@@ -148,7 +148,7 @@ public final class C0769zf extends Yd implements ep {
         if (c0743yf == null) {
             return i2;
         }
-        return this.f1278a.getInt(c0743yf.b, i2);
+        return this.f1279a.getInt(c0743yf.b, i2);
     }
 
     public final C0769zf b(EnumC0638ue enumC0638ue, long j2) {
@@ -177,6 +177,6 @@ public final class C0769zf extends Yd implements ep {
         if (c0743yf == null) {
             return j2;
         }
-        return this.f1278a.getLong(c0743yf.b, j2);
+        return this.f1279a.getLong(c0743yf.b, j2);
     }
 }

@@ -8,25 +8,25 @@ import kotlin.collections.CollectionsKt;
 public final class A6 implements InterfaceC0299hb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f451a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f452a = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0299hb
     public final void a(Throwable th, X x) {
-        Iterator it = this.f451a.iterator();
+        Iterator it = this.f452a.iterator();
         while (it.hasNext()) {
             ((InterfaceC0299hb) it.next()).a(th, x);
         }
     }
 
     public final void a(InterfaceC0299hb... interfaceC0299hbArr) {
-        CollectionsKt.addAll(this.f451a, interfaceC0299hbArr);
+        CollectionsKt.addAll(this.f452a, interfaceC0299hbArr);
     }
 
     public final void a(List<? extends InterfaceC0299hb> list) {
-        this.f451a.addAll(list);
+        this.f452a.addAll(list);
     }
 
     public final void a() {
-        this.f451a.clear();
+        this.f452a.clear();
     }
 }

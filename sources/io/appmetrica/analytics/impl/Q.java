@@ -10,7 +10,7 @@ public final class Q {
         if (identifiersResult == null) {
             details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
         } else {
-            int i = P.f708a[identifiersResult.status.ordinal()];
+            int i = P.f709a[identifiersResult.status.ordinal()];
             if (i == 1) {
                 details = AdvIdentifiersResult.Details.OK;
             } else if (i == 2) {

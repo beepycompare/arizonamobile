@@ -109,7 +109,7 @@ public final class SlotTableBuilder {
     }
 
     public final long getParentHandle() {
-        return ((this.previousSiblingStack.tos == 0 ? -1 : this.previousSiblingStack.peek()) << 32) | (UInt.m9942constructorimpl(this.parent) & 4294967295L);
+        return ((this.previousSiblingStack.tos == 0 ? -1 : this.previousSiblingStack.peek()) << 32) | (UInt.m9943constructorimpl(this.parent) & 4294967295L);
     }
 
     public final int groupKey(int i) {
@@ -158,7 +158,7 @@ public final class SlotTableBuilder {
                 i = i3;
             }
         }
-        return (i << 32) | (UInt.m9942constructorimpl(root) & 4294967295L);
+        return (i << 32) | (UInt.m9943constructorimpl(root) & 4294967295L);
     }
 
     public final int parent(int i) {

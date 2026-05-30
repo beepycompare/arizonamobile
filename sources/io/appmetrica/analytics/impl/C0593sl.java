@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0593sl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Al f1201a;
+    public final Al f1202a;
     public final Integer b;
 
     public C0593sl(C0567rl c0567rl) {
         Al al;
         Integer num;
-        al = c0567rl.f1184a;
-        this.f1201a = al;
+        al = c0567rl.f1185a;
+        this.f1202a = al;
         num = c0567rl.b;
         this.b = num;
     }
@@ -21,7 +21,7 @@ public final class C0593sl {
     }
 
     public final Al b() {
-        return this.f1201a;
+        return this.f1202a;
     }
 
     public final Integer a() {

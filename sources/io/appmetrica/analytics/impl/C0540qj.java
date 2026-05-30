@@ -4,24 +4,24 @@ package io.appmetrica.analytics.impl;
 public final class C0540qj implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hg f1166a;
+    public final Hg f1167a;
 
     public C0540qj(Hg hg) {
-        this.f1166a = hg;
+        this.f1167a = hg;
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final String a() {
-        return this.f1166a.a();
+        return this.f1167a.a();
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final void a(Dg dg) {
         try {
-            this.f1166a.a(dg);
+            this.f1167a.a(dg);
         } catch (Throwable th) {
-            String str = "Failed to request " + this.f1166a.a() + " referrer";
-            C0541qk c0541qk = Oj.f705a;
+            String str = "Failed to request " + this.f1167a.a() + " referrer";
+            C0541qk c0541qk = Oj.f706a;
             c0541qk.getClass();
             c0541qk.a(new Pj(str, th));
             dg.a(new Jg(str, th));

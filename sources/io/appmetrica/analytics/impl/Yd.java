@@ -7,7 +7,7 @@ public abstract class Yd extends AbstractC0717xf {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final String a(String str, String str2) {
-        return this.f1278a.getString(g(str), str2);
+        return this.f1279a.getString(g(str), str2);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
@@ -33,7 +33,7 @@ public abstract class Yd extends AbstractC0717xf {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final int a(String str, int i) {
-        return this.f1278a.getInt(g(str), i);
+        return this.f1279a.getInt(g(str), i);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
@@ -48,16 +48,16 @@ public abstract class Yd extends AbstractC0717xf {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final long a(String str, long j) {
-        return this.f1278a.getLong(g(str), j);
+        return this.f1279a.getLong(g(str), j);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final boolean b(String str) {
-        return this.f1278a.a(g(str));
+        return this.f1279a.a(g(str));
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0717xf
     public final boolean a(String str, boolean z) {
-        return this.f1278a.getBoolean(g(str), z);
+        return this.f1279a.getBoolean(g(str), z);
     }
 }

@@ -13,7 +13,7 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
     public static final String FUSED_PROVIDER = "fused";
 
     /* renamed from: a  reason: collision with root package name */
-    private final FusedLocationProviderClient f393a;
+    private final FusedLocationProviderClient f394a;
     private final LocationListener b;
     private final LocationCallback c;
     private final Looper d;
@@ -24,14 +24,14 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
     public static class ClientProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f394a;
+        private final Context f395a;
 
         ClientProvider(Context context) {
-            this.f394a = context;
+            this.f395a = context;
         }
 
         final FusedLocationProviderClient a() {
-            return LocationServices.getFusedLocationProviderClient(this.f394a);
+            return LocationServices.getFusedLocationProviderClient(this.f395a);
         }
     }
 
@@ -49,7 +49,7 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void startLocationUpdates(Priority priority) throws Throwable {
-        FusedLocationProviderClient fusedLocationProviderClient = this.f393a;
+        FusedLocationProviderClient fusedLocationProviderClient = this.f394a;
         LocationRequest interval = LocationRequest.create().setInterval(this.f);
         int ordinal = priority.ordinal();
         fusedLocationProviderClient.requestLocationUpdates(interval.setPriority(ordinal != 1 ? ordinal != 2 ? ordinal != 3 ? 105 : 100 : 102 : 104), this.c, this.d);
@@ -57,16 +57,16 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void stopLocationUpdates() throws Throwable {
-        this.f393a.removeLocationUpdates(this.c);
+        this.f394a.removeLocationUpdates(this.c);
     }
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void updateLastKnownLocation() throws Throwable {
-        this.f393a.getLastLocation().addOnSuccessListener(this.e, new GplOnSuccessListener(this.b));
+        this.f394a.getLastLocation().addOnSuccessListener(this.e, new GplOnSuccessListener(this.b));
     }
 
     GplLibraryWrapper(ClientProvider clientProvider, LocationListener locationListener, Looper looper, Executor executor, long j) {
-        this.f393a = clientProvider.a();
+        this.f394a = clientProvider.a();
         this.b = locationListener;
         this.d = looper;
         this.e = executor;

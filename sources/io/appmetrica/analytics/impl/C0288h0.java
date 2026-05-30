@@ -7,10 +7,10 @@ import java.util.Map;
 public final class C0288h0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f1003a;
+    public final Map f1004a;
     public final Thread b = Looper.getMainLooper().getThread();
 
     public C0288h0(InterfaceC0314i0 interfaceC0314i0, Map map) {
-        this.f1003a = map;
+        this.f1004a = map;
     }
 }

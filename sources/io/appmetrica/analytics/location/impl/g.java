@@ -6,13 +6,13 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorPr
 public final class g implements LastKnownLocationExtractorProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LastKnownLocationExtractorProvider f1331a;
+    public final LastKnownLocationExtractorProvider f1332a;
     public final c b = new c("location-module-gpl");
     public final v c = new v("network", new f(), "location-module-network");
     public final v d = new v("gps", new e(), "location-module-gps");
 
     public g(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-        this.f1331a = lastKnownLocationExtractorProvider;
+        this.f1332a = lastKnownLocationExtractorProvider;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
@@ -32,6 +32,6 @@ public final class g implements LastKnownLocationExtractorProviderFactory {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
     public final LastKnownLocationExtractorProvider getPassiveLastKnownLocationExtractorProvider() {
-        return this.f1331a;
+        return this.f1332a;
     }
 }

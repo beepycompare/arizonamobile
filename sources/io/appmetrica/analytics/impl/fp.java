@@ -5,11 +5,11 @@ import org.json.JSONObject;
 public final class fp implements InterfaceC0718xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zo f985a;
+    public final Zo f986a;
     public final String b = "vital";
 
     public fp(Zo zo) {
-        this.f985a = zo;
+        this.f986a = zo;
     }
 
     public final String a() {
@@ -17,7 +17,7 @@ public final class fp implements InterfaceC0718xg {
     }
 
     public final Lg b() {
-        Bg b = this.f985a.b();
+        Bg b = this.f986a.b();
         if (b != null) {
             return new Kg(b);
         }
@@ -26,23 +26,23 @@ public final class fp implements InterfaceC0718xg {
 
     public final boolean c() {
         boolean optBoolean;
-        Zo zo = this.f985a;
+        Zo zo = this.f986a;
         synchronized (zo) {
-            optBoolean = zo.f875a.a().optBoolean("referrer_checked", false);
+            optBoolean = zo.f876a.a().optBoolean("referrer_checked", false);
         }
         return optBoolean;
     }
 
     public final void a(Lg lg) {
-        this.f985a.a(lg.a());
-        Zo zo = this.f985a;
+        this.f986a.a(lg.a());
+        Zo zo = this.f986a;
         synchronized (zo) {
-            JSONObject a2 = zo.f875a.a();
+            JSONObject a2 = zo.f876a.a();
             if (!a2.optBoolean("referrer_checked", false)) {
-                zo.f875a.a(a2.put("referrer_checked", true));
+                zo.f876a.a(a2.put("referrer_checked", true));
             }
-            bp bpVar = zo.f875a;
-            bp.a(bpVar.f913a);
+            bp bpVar = zo.f876a;
+            bp.a(bpVar.f914a);
             bp.a(bpVar.b);
         }
     }

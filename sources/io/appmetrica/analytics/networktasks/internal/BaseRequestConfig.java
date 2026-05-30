@@ -15,7 +15,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class BaseRequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f1388a;
+    private String f1389a;
     private SdkEnvironment b;
     private SdkIdentifiers c;
     private AppSetId d;
@@ -29,19 +29,19 @@ public class BaseRequestConfig {
     public static abstract class ComponentLoader<T extends BaseRequestConfig, A extends BaseRequestArguments, D extends DataSource<A>> implements RequestConfigLoader<T, D> {
 
         /* renamed from: a  reason: collision with root package name */
-        final Context f1389a;
+        final Context f1390a;
         final String b;
 
         /* JADX INFO: Access modifiers changed from: protected */
         public ComponentLoader(Context context, String str) {
-            this.f1389a = context;
+            this.f1390a = context;
             this.b = str;
         }
 
         protected abstract T createBlankConfig();
 
         public Context getContext() {
-            return this.f1389a;
+            return this.f1390a;
         }
 
         public String getPackageName() {
@@ -176,7 +176,7 @@ public class BaseRequestConfig {
     }
 
     public String getPackageName() {
-        return this.f1388a;
+        return this.f1389a;
     }
 
     public String getProtocolVersion() {
@@ -246,7 +246,7 @@ public class BaseRequestConfig {
     }
 
     protected void setPackageName(String str) {
-        this.f1388a = str;
+        this.f1389a = str;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -263,7 +263,7 @@ public class BaseRequestConfig {
     }
 
     public String toString() {
-        return "BaseRequestConfig{mPackageName='" + this.f1388a + "', sdkEnvironment=" + this.b + ", mProtocolVersion='2', sdkIdentifiers=" + this.c + ", retryPolicyConfig=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "BaseRequestConfig{mPackageName='" + this.f1389a + "', sdkEnvironment=" + this.b + ", mProtocolVersion='2', sdkIdentifiers=" + this.c + ", retryPolicyConfig=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public String getLocale() {

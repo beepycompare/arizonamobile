@@ -9,15 +9,15 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class C0672vm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0724xm f1251a = new C0724xm();
+    public final C0724xm f1252a = new C0724xm();
 
     public final StartupParamsItem a(IdentifiersResult identifiersResult) {
         StartupParamsItemStatus startupParamsItemStatus;
         String str = identifiersResult.id;
-        C0724xm c0724xm = this.f1251a;
+        C0724xm c0724xm = this.f1252a;
         IdentifierStatus identifierStatus = identifiersResult.status;
         c0724xm.getClass();
-        int i = AbstractC0698wm.f1270a[identifierStatus.ordinal()];
+        int i = AbstractC0698wm.f1271a[identifierStatus.ordinal()];
         if (i == 1) {
             startupParamsItemStatus = StartupParamsItemStatus.OK;
         } else if (i == 2) {

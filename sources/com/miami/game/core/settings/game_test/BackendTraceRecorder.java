@@ -342,28 +342,28 @@ public final class BackendTraceRecorder {
         }
 
         public final Object toJsonMessage() {
-            Object m9842constructorimpl;
-            Object m9842constructorimpl2;
+            Object m9843constructorimpl;
+            Object m9843constructorimpl2;
             try {
                 Result.Companion companion = Result.Companion;
                 RecordedEvent recordedEvent = this;
-                m9842constructorimpl = Result.m9842constructorimpl(new JSONObject(this.message));
+                m9843constructorimpl = Result.m9843constructorimpl(new JSONObject(this.message));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
+                m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9845exceptionOrNullimpl(m9842constructorimpl) == null) {
-                return m9842constructorimpl;
+            if (Result.m9846exceptionOrNullimpl(m9843constructorimpl) == null) {
+                return m9843constructorimpl;
             }
             try {
                 Result.Companion companion3 = Result.Companion;
                 RecordedEvent recordedEvent2 = this;
-                m9842constructorimpl2 = Result.m9842constructorimpl(new JSONArray(this.message));
+                m9843constructorimpl2 = Result.m9843constructorimpl(new JSONArray(this.message));
             } catch (Throwable th2) {
                 Result.Companion companion4 = Result.Companion;
-                m9842constructorimpl2 = Result.m9842constructorimpl(ResultKt.createFailure(th2));
+                m9843constructorimpl2 = Result.m9843constructorimpl(ResultKt.createFailure(th2));
             }
-            return Result.m9845exceptionOrNullimpl(m9842constructorimpl2) == null ? m9842constructorimpl2 : this.message;
+            return Result.m9846exceptionOrNullimpl(m9843constructorimpl2) == null ? m9843constructorimpl2 : this.message;
         }
     }
 

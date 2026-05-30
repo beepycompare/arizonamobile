@@ -6,14 +6,14 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public class FrameworkDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f367a = new FrameworkDetector().detectFramework();
+    private static final String f368a = new FrameworkDetector().detectFramework();
 
     public static String framework() {
-        return f367a;
+        return f368a;
     }
 
     public static boolean isNative() {
-        return "native".equals(f367a);
+        return "native".equals(f368a);
     }
 
     public String detectFramework() {

@@ -13,6 +13,6 @@ public final class Hc extends AbstractC0778zo {
     }
 
     public final InterfaceC0609tb a() {
-        return this.f1322a.a().a(this.b);
+        return this.f1323a.a().a(this.b);
     }
 }

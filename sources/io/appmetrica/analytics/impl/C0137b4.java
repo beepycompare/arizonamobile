@@ -13,7 +13,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFa
 public final class C0137b4 implements X5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f899a;
+    public final Context f900a;
     public final C0113a6 b = new C0113a6(new C0733y5());
     public final C0628u4 c = new C0628u4(C0576s4.l().b(getContext()));
     public final Cb d = new Cb();
@@ -23,7 +23,7 @@ public final class C0137b4 implements X5 {
     public final C0111a4 h = new C0111a4();
 
     public C0137b4(Context context) {
-        this.f899a = context;
+        this.f900a = context;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
@@ -48,7 +48,7 @@ public final class C0137b4 implements X5 {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
     public final Context getContext() {
-        return this.f899a;
+        return this.f900a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext

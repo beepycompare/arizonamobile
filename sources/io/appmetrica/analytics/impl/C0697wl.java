@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public final class C0697wl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1269a;
+    public final String f1270a;
     public final String b;
     public final String c;
     public final String d;
@@ -25,7 +25,7 @@ public final class C0697wl {
     public final String o;
 
     public C0697wl(JSONObject jSONObject) {
-        this.f1269a = jSONObject.toString();
+        this.f1270a = jSONObject.toString();
         this.b = jSONObject.optString("dId", "");
         this.c = jSONObject.optString("uId", "");
         this.d = jSONObject.optString("appVer", "");

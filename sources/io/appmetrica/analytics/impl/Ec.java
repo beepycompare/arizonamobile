@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class Ec {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0279gh f526a;
+    public final C0279gh f527a;
     public final L9 b;
     public final F4 c;
     public final C0691wf d;
@@ -18,7 +18,7 @@ public final class Ec {
     public final Lazy g = LazyKt.lazy(new Dc(this));
 
     public Ec(C0166c7 c0166c7, C0279gh c0279gh, L9 l9, F4 f4, C0691wf c0691wf) {
-        this.f526a = c0279gh;
+        this.f527a = c0279gh;
         this.b = l9;
         this.c = f4;
         this.d = c0691wf;

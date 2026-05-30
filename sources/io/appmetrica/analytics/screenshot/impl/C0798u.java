@@ -9,13 +9,13 @@ import kotlin.collections.MapsKt;
 public final class C0798u implements C {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1458a;
+    public final ClientContext f1459a;
 
     public C0798u(ClientContext clientContext) {
-        this.f1458a = clientContext;
+        this.f1459a = clientContext;
     }
 
     public final void a(String str) {
-        this.f1458a.getInternalClientModuleFacade().reportEvent(InternalModuleEvent.Companion.newBuilder(4).withName("appmetrica_system_event_screenshot").withAttributes(MapsKt.mapOf(TuplesKt.to("type", str))).withCategory(InternalModuleEvent.Category.SYSTEM).build());
+        this.f1459a.getInternalClientModuleFacade().reportEvent(InternalModuleEvent.Companion.newBuilder(4).withName("appmetrica_system_event_screenshot").withAttributes(MapsKt.mapOf(TuplesKt.to("type", str))).withCategory(InternalModuleEvent.Category.SYSTEM).build());
     }
 }

@@ -32,7 +32,7 @@ import ru.rustore.sdk.reactive.single.SingleTimeoutKt;
 public final class C0817r {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1538a;
+    public final Context f1539a;
     public final C0814o b;
 
     /* JADX INFO: Add missing generic type declarations: [T] */
@@ -50,7 +50,7 @@ public final class C0817r {
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Object obj) {
-            Object m9842constructorimpl;
+            Object m9843constructorimpl;
             SingleEmitter<T> emitter = (SingleEmitter) obj;
             Intrinsics.checkNotNullParameter(emitter, "emitter");
             C0817r c0817r = C0817r.this;
@@ -59,15 +59,15 @@ public final class C0817r {
                 Result.Companion companion = Result.Companion;
                 ServiceConnection invoke = function1.invoke(emitter);
                 emitter.onFinish(new C0815p(c0817r, invoke));
-                C0817r.a(c0817r, c0817r.f1538a, new C0816q(emitter), invoke);
-                m9842constructorimpl = Result.m9842constructorimpl(Unit.INSTANCE);
+                C0817r.a(c0817r, c0817r.f1539a, new C0816q(emitter), invoke);
+                m9843constructorimpl = Result.m9843constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9842constructorimpl = Result.m9842constructorimpl(ResultKt.createFailure(th));
+                m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9845exceptionOrNullimpl = Result.m9845exceptionOrNullimpl(m9842constructorimpl);
-            if (m9845exceptionOrNullimpl != null) {
-                emitter.error(m9845exceptionOrNullimpl);
+            Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
+            if (m9846exceptionOrNullimpl != null) {
+                emitter.error(m9846exceptionOrNullimpl);
             }
             return Unit.INSTANCE;
         }
@@ -78,7 +78,7 @@ public final class C0817r {
     public static final class b extends Lambda implements Function1<Throwable, Throwable> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1540a = new b();
+        public static final b f1541a = new b();
 
         public b() {
             super(1);
@@ -95,7 +95,7 @@ public final class C0817r {
     public C0817r(Context context, C0814o appUpdateInfoMapper) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
-        this.f1538a = context;
+        this.f1539a = context;
         this.b = appUpdateInfoMapper;
     }
 
@@ -132,6 +132,6 @@ public final class C0817r {
     }
 
     public final <T> Single<T> a(Function1<? super SingleEmitter<T>, ? extends ServiceConnection> function1) {
-        return SingleMapErrorKt.mapError(SingleTimeoutKt.timeout$default(Single.Companion.create(new a(function1)), 20000L, TimeUnit.MILLISECONDS, null, 4, null), b.f1540a);
+        return SingleMapErrorKt.mapError(SingleTimeoutKt.timeout$default(Single.Companion.create(new a(function1)), 20000L, TimeUnit.MILLISECONDS, null, 4, null), b.f1541a);
     }
 }

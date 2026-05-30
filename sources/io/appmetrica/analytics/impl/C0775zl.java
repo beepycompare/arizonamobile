@@ -14,13 +14,13 @@ public final class C0775zl {
     public static final String k = "SESSION_CRASHED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1320a;
+    public final String f1321a;
     protected final C0691wf b;
     public Hb c;
 
     public C0775zl(C0691wf c0691wf, String str) {
         this.b = c0691wf;
-        this.f1320a = str;
+        this.f1321a = str;
         Hb hb = new Hb();
         try {
             String h2 = c0691wf.h(str);
@@ -109,7 +109,7 @@ public final class C0775zl {
     }
 
     public final void a() {
-        this.b.e(this.f1320a, this.c.toString());
+        this.b.e(this.f1321a, this.c.toString());
     }
 
     public final void b() {

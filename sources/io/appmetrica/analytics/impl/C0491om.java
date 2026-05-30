@@ -6,14 +6,14 @@ import android.os.Bundle;
 public final class C0491om implements S6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0543qm f1136a;
+    public final /* synthetic */ C0543qm f1137a;
 
     public C0491om(C0543qm c0543qm) {
-        this.f1136a = c0543qm;
+        this.f1137a = c0543qm;
     }
 
     @Override // io.appmetrica.analytics.impl.S6
     public final void a(int i, Bundle bundle) {
-        this.f1136a.b(bundle);
+        this.f1137a.b(bundle);
     }
 }

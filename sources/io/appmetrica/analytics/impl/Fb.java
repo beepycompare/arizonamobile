@@ -34,7 +34,7 @@ public final class Fb {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f806a = i;
+        v9.f807a = i;
         v9.b = jSONObject.toString().getBytes(Charsets.UTF_8);
         return v9;
     }

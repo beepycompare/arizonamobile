@@ -6,15 +6,15 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
 public final class p implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f432a;
+    public final ServiceContext f433a;
     public final String b = "id_sync";
 
     public p(ServiceContext serviceContext) {
-        this.f432a = serviceContext;
+        this.f433a = serviceContext;
     }
 
     @Override // io.appmetrica.analytics.idsync.impl.s
     public final void a(String str, SdkIdentifiers sdkIdentifiers) {
-        this.f432a.getSelfReporter().reportEvent(this.b, str);
+        this.f433a.getSelfReporter().reportEvent(this.b, str);
     }
 }

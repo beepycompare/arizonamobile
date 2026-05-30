@@ -42,15 +42,15 @@ public final class Ya extends P2 {
                 C0519po a2 = this.b.a((String) entry.getKey());
                 C0519po a3 = this.c.a((String) entry.getValue());
                 int utf8BytesLength = StringUtils.getUtf8BytesLength((String) entry.getValue()) + StringUtils.getUtf8BytesLength((String) entry.getKey());
-                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f1152a) + StringUtils.getUtf8BytesLength((String) a2.f1152a);
-                if (z || utf8BytesLength2 + i4 > this.f710a) {
+                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f1153a) + StringUtils.getUtf8BytesLength((String) a2.f1153a);
+                if (z || utf8BytesLength2 + i4 > this.f711a) {
                     i3++;
                     i += utf8BytesLength;
                     z = true;
                 } else {
                     i = a3.b.getBytesTruncated() + a2.b.getBytesTruncated() + i;
-                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f1152a) + StringUtils.getUtf8BytesLength((String) a2.f1152a) + i4;
-                    hashMap.put((String) a2.f1152a, (String) a3.f1152a);
+                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f1153a) + StringUtils.getUtf8BytesLength((String) a2.f1153a) + i4;
+                    hashMap.put((String) a2.f1153a, (String) a3.f1153a);
                     i4 = utf8BytesLength3;
                 }
                 i2++;

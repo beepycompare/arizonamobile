@@ -12,7 +12,7 @@ public final class NetworkType {
     public static final NetworkType CELL;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ NetworkType[] f442a;
+    private static final /* synthetic */ NetworkType[] f443a;
     private static final /* synthetic */ EnumEntries b;
 
     static {
@@ -21,7 +21,7 @@ public final class NetworkType {
         NetworkType networkType2 = new NetworkType("CELL", 1);
         CELL = networkType2;
         NetworkType[] networkTypeArr = {networkType, networkType2};
-        f442a = networkTypeArr;
+        f443a = networkTypeArr;
         b = EnumEntriesKt.enumEntries(networkTypeArr);
     }
 
@@ -37,6 +37,6 @@ public final class NetworkType {
     }
 
     public static NetworkType[] values() {
-        return (NetworkType[]) f442a.clone();
+        return (NetworkType[]) f443a.clone();
     }
 }

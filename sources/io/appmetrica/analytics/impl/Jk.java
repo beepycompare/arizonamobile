@@ -5,13 +5,13 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 public final class Jk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f615a;
+    public final String f616a;
 
     public Jk(String str) {
-        this.f615a = str;
+        this.f616a = str;
     }
 
     public final String toString() {
-        return "ServiceDescription(packageName='" + this.f615a + "', serviceScheme='appmetrica', serviceClass=" + AppMetricaService.class + ')';
+        return "ServiceDescription(packageName='" + this.f616a + "', serviceScheme='appmetrica', serviceClass=" + AppMetricaService.class + ')';
     }
 }

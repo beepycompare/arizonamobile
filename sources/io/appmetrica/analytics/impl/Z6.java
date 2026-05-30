@@ -18,10 +18,10 @@ import org.json.JSONObject;
 public final class Z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CounterConfigurationReporterType f866a;
+    public final CounterConfigurationReporterType f867a;
 
     public Z6(CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f866a = counterConfigurationReporterType;
+        this.f867a = counterConfigurationReporterType;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:1|(2:2|3)|(3:64|65|(10:67|(2:70|68)|71|6|7|8|9|(2:16|(8:19|83|27|28|(4:31|(5:35|36|(1:38)(1:42)|39|40)|41|29)|45|46|(2:50|51)))|60|61))|5|6|7|8|9|(4:11|13|16|(2:19|83))|60|61|(1:(0))) */
@@ -49,7 +49,7 @@ public final class Z6 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    C0541qk c0541qk = Oj.f705a;
+                    C0541qk c0541qk = Oj.f706a;
                     c0541qk.getClass();
                     c0541qk.a(new Pj("select_rows_to_delete_exception", th));
                     Oo.a(cursor);
@@ -73,11 +73,11 @@ public final class Z6 {
                 if (arrayList != null && arrayList.size() != 0 && i2 == arrayList.size() && z) {
                     mj = Na.I.f;
                     if (str2 != null && mj != null) {
-                        CounterConfigurationReporterType counterConfigurationReporterType = this.f866a;
+                        CounterConfigurationReporterType counterConfigurationReporterType = this.f867a;
                         synchronized (mj) {
                             kj = (Kj) mj.c.get(str2);
                             if (kj == null) {
-                                kj = new Kj(str2, mj.b, counterConfigurationReporterType, mj.f666a);
+                                kj = new Kj(str2, mj.b, counterConfigurationReporterType, mj.f667a);
                                 mj.c.put(str2, kj);
                             }
                         }
@@ -92,7 +92,7 @@ public final class Z6 {
                                     jSONArray.put(asInteger);
                                     Db a2 = Db.a(asInteger2.intValue());
                                     if (a2 == null) {
-                                        Map map = AbstractC0537qg.f1163a;
+                                        Map map = AbstractC0537qg.f1164a;
                                         num = null;
                                     } else {
                                         num = (Integer) AbstractC0537qg.c.get(a2);
@@ -104,7 +104,7 @@ public final class Z6 {
                             JSONObject put = new JSONObject().put("details", new JSONObject().put("reason", Y6.a(i)).put("cleared", jSONObject).put("actual_deleted_number", i2));
                             PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str2);
                             String jSONObject2 = put.toString();
-                            Set set = Q9.f727a;
+                            Set set = Q9.f728a;
                             Db db = Db.EVENT_TYPE_UNDEFINED;
                             c0189d4 = new C0189d4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                         } catch (Throwable unused) {
@@ -112,9 +112,9 @@ public final class Z6 {
                         }
                         if (c0189d4 != null && kj.c != null) {
                             try {
-                                CounterConfiguration counterConfiguration = new CounterConfiguration(kj.f629a);
+                                CounterConfiguration counterConfiguration = new CounterConfiguration(kj.f630a);
                                 counterConfiguration.setReporterType(kj.c);
-                                kj.d.f687a.reportData(1, c0189d4.d(new Zh(new C0175cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f629a), "Crash Environment")), null).c()));
+                                kj.d.f688a.reportData(1, c0189d4.d(new Zh(new C0175cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f630a), "Crash Environment")), null).c()));
                             } catch (Throwable unused2) {
                             }
                         }
@@ -128,7 +128,7 @@ public final class Z6 {
         if (arrayList != null) {
             mj = Na.I.f;
             if (str2 != null) {
-                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f866a;
+                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f867a;
                 synchronized (mj) {
                 }
             }

@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class F implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f416a = "request_state";
+    public final String f417a = "request_state";
     public final String b = "type";
     public final String c = "last_attempt";
     public final String d = "prev_attempt_result";
@@ -23,15 +23,15 @@ public final class F implements Converter {
         Collection emptyList;
         JSONObject jSONObject;
         JSONObject jSONObject2 = new JSONObject();
-        String str = this.f416a;
+        String str = this.f417a;
         if (list != null) {
             emptyList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (E e : list) {
                 try {
                     jSONObject = new JSONObject();
-                    jSONObject.put(this.b, e.f415a);
+                    jSONObject.put(this.b, e.f416a);
                     jSONObject.put(this.c, e.b);
-                    jSONObject.put(this.d, e.c.f412a);
+                    jSONObject.put(this.d, e.c.f413a);
                 } catch (Throwable unused) {
                     jSONObject = new JSONObject();
                 }
@@ -51,7 +51,7 @@ public final class F implements Converter {
         E a2;
         try {
             ArrayList arrayList = new ArrayList();
-            if (str != null && (optJSONArray = new JSONObject(str).optJSONArray(this.f416a)) != null) {
+            if (str != null && (optJSONArray = new JSONObject(str).optJSONArray(this.f417a)) != null) {
                 int length = optJSONArray.length();
                 for (int i = 0; i < length; i++) {
                     JSONObject optJSONObject = optJSONArray.optJSONObject(i);
@@ -83,7 +83,7 @@ public final class F implements Converter {
                     break;
                 }
                 a2 = values[i];
-                if (Intrinsics.areEqual(a2.f412a, string2)) {
+                if (Intrinsics.areEqual(a2.f413a, string2)) {
                     break;
                 }
                 i++;

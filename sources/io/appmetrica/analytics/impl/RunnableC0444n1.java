@@ -7,16 +7,16 @@ import java.util.List;
 public final class RunnableC0444n1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ List f1104a;
+    public final /* synthetic */ List f1105a;
     public final /* synthetic */ C0651v1 b;
 
     public RunnableC0444n1(C0651v1 c0651v1, List list) {
         this.b = c0651v1;
-        this.f1104a = list;
+        this.f1105a = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0651v1.a(this.b).reportAnr(CollectionUtils.getMapFromList(this.f1104a));
+        C0651v1.a(this.b).reportAnr(CollectionUtils.getMapFromList(this.f1105a));
     }
 }

@@ -19,7 +19,7 @@ public final class Gh extends AbstractC0305hh {
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
         C0242f6 a2;
-        C0448n5 c0448n5 = this.f1016a;
+        C0448n5 c0448n5 = this.f1017a;
         if (!this.c.d()) {
             if (((Eh) c0448n5.k.a()).e) {
                 a2 = C0242f6.a(c0242f6, Db.EVENT_TYPE_APP_UPDATE);
@@ -28,9 +28,9 @@ public final class Gh extends AbstractC0305hh {
             }
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0448n5.f1108a, c0448n5.b.f992a), ""));
+                jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0448n5.f1109a, c0448n5.b.f993a), ""));
                 Tf tf = this.b;
-                tf.h.a(tf.f1008a);
+                tf.h.a(tf.f1009a);
                 jSONObject.put("preloadInfo", ((Qf) tf.c()).b());
             } catch (Throwable unused) {
             }
@@ -39,12 +39,12 @@ public final class Gh extends AbstractC0305hh {
             e9.a(a2, C0671vl.a(e9.c.b(a2), a2.i));
             ap apVar = this.c;
             synchronized (apVar) {
-                JSONObject a3 = apVar.f893a.a();
+                JSONObject a3 = apVar.f894a.a();
                 if (!a3.optBoolean("init_event_done", false)) {
-                    apVar.f893a.a(a3.put("init_event_done", true));
+                    apVar.f894a.a(a3.put("init_event_done", true));
                 }
-                bp bpVar = apVar.f893a;
-                bp.a(bpVar.f913a);
+                bp bpVar = apVar.f894a;
+                bp.a(bpVar.f914a);
                 bp.a(bpVar.b);
             }
             this.c.a(this.e.currentTimeMillis());

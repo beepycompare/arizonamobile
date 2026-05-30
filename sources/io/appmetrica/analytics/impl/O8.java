@@ -14,7 +14,7 @@ import kotlin.text.StringsKt;
 public final class O8 implements InterfaceC0704x2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f697a = 5;
+    public final int f698a = 5;
     public final int b = 100;
     public final int c = 255;
     public final int d = 2;
@@ -125,7 +125,7 @@ public final class O8 implements InterfaceC0704x2 {
                                     i4++;
                                 }
                                 String str7 = substring + '@' + replace$default;
-                                if (str7.length() < this.f697a || str7.length() > this.b) {
+                                if (str7.length() < this.f698a || str7.length() > this.b) {
                                     return null;
                                 }
                                 return str7;

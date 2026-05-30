@@ -6,17 +6,17 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class C0654v4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SystemTimeProvider f1241a;
+    public final SystemTimeProvider f1242a;
 
     public C0654v4() {
         this(new SystemTimeProvider());
     }
 
     public final void a() {
-        this.f1241a.elapsedRealtime();
+        this.f1242a.elapsedRealtime();
     }
 
     public C0654v4(SystemTimeProvider systemTimeProvider) {
-        this.f1241a = systemTimeProvider;
+        this.f1242a = systemTimeProvider;
     }
 }

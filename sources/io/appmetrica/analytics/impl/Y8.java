@@ -5,7 +5,7 @@ import io.appmetrica.analytics.ModuleEvent;
 public abstract /* synthetic */ class Y8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f853a;
+    public static final /* synthetic */ int[] f854a;
 
     static {
         int[] iArr = new int[ModuleEvent.Category.values().length];
@@ -17,6 +17,6 @@ public abstract /* synthetic */ class Y8 {
             iArr[ModuleEvent.Category.SYSTEM.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f853a = iArr;
+        f854a = iArr;
     }
 }

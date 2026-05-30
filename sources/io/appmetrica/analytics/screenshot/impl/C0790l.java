@@ -4,11 +4,11 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class C0790l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1451a;
+    public final boolean f1452a;
     public final long b;
 
     public C0790l(boolean z, long j) {
-        this.f1451a = z;
+        this.f1452a = z;
         this.b = j;
     }
 
@@ -18,16 +18,16 @@ public final class C0790l {
         }
         if (obj instanceof C0790l) {
             C0790l c0790l = (C0790l) obj;
-            return this.f1451a == c0790l.f1451a && this.b == c0790l.b;
+            return this.f1452a == c0790l.f1452a && this.b == c0790l.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (Boolean.hashCode(this.f1451a) * 31);
+        return Long.hashCode(this.b) + (Boolean.hashCode(this.f1452a) * 31);
     }
 
     public final String toString() {
-        return "ClientSideServiceCaptorConfig(enabled=" + this.f1451a + ", delaySeconds=" + this.b + ')';
+        return "ClientSideServiceCaptorConfig(enabled=" + this.f1452a + ", delaySeconds=" + this.b + ')';
     }
 }

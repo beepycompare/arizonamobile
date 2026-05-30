@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class C0132b implements InterfaceC0116a9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESEncrypter f894a;
+    public final AESEncrypter f895a;
 
     public C0132b() {
         this(new C0106a(Na.k().g()));
@@ -21,7 +21,7 @@ public final class C0132b implements InterfaceC0116a9 {
         String value = c0242f6.getValue();
         if (!TextUtils.isEmpty(value)) {
             try {
-                encrypt = this.f894a.encrypt(value.getBytes("UTF-8"));
+                encrypt = this.f895a.encrypt(value.getBytes("UTF-8"));
             } catch (Throwable unused) {
             }
             if (encrypt != null) {
@@ -40,7 +40,7 @@ public final class C0132b implements InterfaceC0116a9 {
     }
 
     public C0132b(AESEncrypter aESEncrypter) {
-        this.f894a = aESEncrypter;
+        this.f895a = aESEncrypter;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0116a9
@@ -48,7 +48,7 @@ public final class C0132b implements InterfaceC0116a9 {
         byte[] bArr2 = new byte[0];
         if (bArr != null && bArr.length > 0) {
             try {
-                return this.f894a.decrypt(Base64.decode(bArr, 0));
+                return this.f895a.decrypt(Base64.decode(bArr, 0));
             } catch (Throwable unused) {
             }
         }

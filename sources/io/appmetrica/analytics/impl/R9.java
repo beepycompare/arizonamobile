@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public final class R9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantLock f741a;
+    public final ReentrantLock f742a;
     public final C0634ua b;
 
     public R9(Context context, String str) {
@@ -14,26 +14,26 @@ public final class R9 {
     }
 
     public final void a() {
-        this.f741a.lock();
+        this.f742a.lock();
         this.b.a();
     }
 
     public final void b() {
         this.b.b();
-        this.f741a.unlock();
+        this.f742a.unlock();
     }
 
     public final void c() {
         C0634ua c0634ua = this.b;
         synchronized (c0634ua) {
             c0634ua.b();
-            c0634ua.f1228a.delete();
+            c0634ua.f1229a.delete();
         }
-        this.f741a.unlock();
+        this.f742a.unlock();
     }
 
     public R9(ReentrantLock reentrantLock, C0634ua c0634ua) {
-        this.f741a = reentrantLock;
+        this.f742a = reentrantLock;
         this.b = c0634ua;
     }
 }

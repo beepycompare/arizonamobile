@@ -6,11 +6,11 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0172cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f924a;
+    public final String f925a;
     public final PublicLogger b;
 
     public C0172cd(String str, PublicLogger publicLogger) {
-        this.f924a = str;
+        this.f925a = str;
         this.b = publicLogger;
     }
 }

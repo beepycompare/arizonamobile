@@ -6,9 +6,9 @@ import java.util.LinkedHashSet;
 public final class C0548r2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedHashSet f1174a = new LinkedHashSet();
+    public final LinkedHashSet f1175a = new LinkedHashSet();
 
     public final synchronized void a(Ic ic, long j) {
-        this.f1174a.add(new C0523q2(ic, C0576s4.l().c.a(), j));
+        this.f1175a.add(new C0523q2(ic, C0576s4.l().c.a(), j));
     }
 }

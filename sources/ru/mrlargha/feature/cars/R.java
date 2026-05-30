@@ -46,7 +46,7 @@ public final class R {
         public static int cars_switch_red_green_thumb = 0x7f080586;
         public static int cars_thumb = 0x7f080587;
         public static int cars_track = 0x7f080588;
-        public static int transport_random_ic = 0x7f080f88;
+        public static int transport_random_ic = 0x7f080f8c;
 
         private drawable() {
         }

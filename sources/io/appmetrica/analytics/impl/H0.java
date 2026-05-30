@@ -17,13 +17,13 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class H0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0197dc f568a = new C0197dc(C0576s4.l().d());
+    public final C0197dc f569a = new C0197dc(C0576s4.l().d());
     public final C0222ec b = new C0222ec();
     public final C0274gc c = new C0274gc();
 
     public final void a(final String str, final String str2, final String str3) {
-        C0197dc c0197dc = this.f568a;
-        if (c0197dc.c.a((Void) null).f781a && c0197dc.d.a(str).f781a && c0197dc.e.a(str2).f781a && c0197dc.f.a(str3).f781a) {
+        C0197dc c0197dc = this.f569a;
+        if (c0197dc.c.a((Void) null).f782a && c0197dc.d.a(str).f782a && c0197dc.e.a(str2).f782a && c0197dc.f.a(str3).f782a) {
             this.b.getClass();
             IHandlerExecutor a2 = C0576s4.l().c.a();
             ((U9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.H0$$ExternalSyntheticLambda0
@@ -58,10 +58,10 @@ public final class H0 {
         Map<String, Object> mutableMapOf = MapsKt.mutableMapOf(pairArr);
         ModuleEvent.Builder withName = ModuleEvent.newBuilder(4).withName("appmetrica_system_event_42");
         synchronized (c0274gc) {
-            if (c0274gc.f994a == null && (a2 = C0576s4.l().g.a()) != null) {
-                c0274gc.f994a = CollectionsKt.listOf((Object[]) new InterfaceC0623u[]{new C0535qe(), new Gn(a2), new np()});
+            if (c0274gc.f995a == null && (a2 = C0576s4.l().g.a()) != null) {
+                c0274gc.f995a = CollectionsKt.listOf((Object[]) new InterfaceC0623u[]{new C0535qe(), new Gn(a2), new np()});
             }
-            list = c0274gc.f994a;
+            list = c0274gc.f995a;
         }
         if (list != null) {
             for (InterfaceC0623u interfaceC0623u : list) {

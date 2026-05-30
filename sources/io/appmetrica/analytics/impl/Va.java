@@ -10,7 +10,7 @@ public final class Va extends P2 {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f710a;
+            int i2 = this.f711a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;

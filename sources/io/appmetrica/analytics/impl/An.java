@@ -11,7 +11,7 @@ public final class An extends K4 {
     @Override // io.appmetrica.analytics.impl.K4
     public final void a(Io io2) {
         String str = (String) this.g.a((String) this.f);
-        io2.d.f633a = str == null ? new byte[0] : str.getBytes();
+        io2.d.f634a = str == null ? new byte[0] : str.getBytes();
     }
 
     public final InterfaceC0493oo h() {

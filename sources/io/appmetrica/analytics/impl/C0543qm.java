@@ -29,7 +29,7 @@ public final class C0543qm implements InterfaceC0568rm {
     public HashMap i;
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1169a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+    public final List f1170a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
     public final Object g = new Object();
     public final WeakHashMap h = new WeakHashMap();
     public boolean j = false;
@@ -178,7 +178,7 @@ public final class C0543qm implements InterfaceC0568rm {
             c0531qa = c0479oa.b;
         }
         c0453na.getClass();
-        Boolean bool = c0531qa.f1162a;
+        Boolean bool = c0531qa.f1163a;
         return new C0582sa();
     }
 
@@ -215,7 +215,7 @@ public final class C0543qm implements InterfaceC0568rm {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f1169a, this.f, this.i, false);
+                a(this.f1170a, this.f, this.i, false);
             }
         }
     }
@@ -236,10 +236,10 @@ public final class C0543qm implements InterfaceC0568rm {
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new C0687wb(t6, list, map, z));
         Db db = Db.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = Q9.f727a;
+        Set set = Q9.f728a;
         C0189d4 c0189d4 = new C0189d4("", "", 1536, 0, anonymousInstance);
         c0189d4.m = bundle;
-        V4 v4 = qi.f733a;
+        V4 v4 = qi.f734a;
         qi.a(Qi.a(c0189d4, v4), v4, 1, (Map) null);
     }
 

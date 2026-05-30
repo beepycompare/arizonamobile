@@ -8,18 +8,18 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Wk implements ModuleRemoteConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SdkIdentifiers f828a;
+    public final SdkIdentifiers f829a;
     public final RemoteConfigMetaInfo b;
     public final Object c;
 
     public Wk(SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj) {
-        this.f828a = sdkIdentifiers;
+        this.f829a = sdkIdentifiers;
         this.b = remoteConfigMetaInfo;
         this.c = obj;
     }
 
     public final SdkIdentifiers a() {
-        return this.f828a;
+        return this.f829a;
     }
 
     public final RemoteConfigMetaInfo b() {
@@ -36,7 +36,7 @@ public final class Wk implements ModuleRemoteConfig {
         }
         if (obj instanceof Wk) {
             Wk wk = (Wk) obj;
-            return Intrinsics.areEqual(this.f828a, wk.f828a) && Intrinsics.areEqual(this.b, wk.b) && Intrinsics.areEqual(this.c, wk.c);
+            return Intrinsics.areEqual(this.f829a, wk.f829a) && Intrinsics.areEqual(this.b, wk.b) && Intrinsics.areEqual(this.c, wk.c);
         }
         return false;
     }
@@ -48,7 +48,7 @@ public final class Wk implements ModuleRemoteConfig {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
     public final SdkIdentifiers getIdentifiers() {
-        return this.f828a;
+        return this.f829a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
@@ -57,13 +57,13 @@ public final class Wk implements ModuleRemoteConfig {
     }
 
     public final int hashCode() {
-        int hashCode = (this.b.hashCode() + (this.f828a.hashCode() * 31)) * 31;
+        int hashCode = (this.b.hashCode() + (this.f829a.hashCode() * 31)) * 31;
         Object obj = this.c;
         return hashCode + (obj == null ? 0 : obj.hashCode());
     }
 
     public final String toString() {
-        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f828a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
+        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f829a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
     }
 
     public final Wk a(SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj) {
@@ -72,7 +72,7 @@ public final class Wk implements ModuleRemoteConfig {
 
     public static Wk a(Wk wk, SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj, int i, Object obj2) {
         if ((i & 1) != 0) {
-            sdkIdentifiers = wk.f828a;
+            sdkIdentifiers = wk.f829a;
         }
         if ((i & 2) != 0) {
             remoteConfigMetaInfo = wk.b;

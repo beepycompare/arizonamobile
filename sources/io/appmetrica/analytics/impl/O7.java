@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class O7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f696a;
+    public final long f697a;
     public final int b;
 
     public O7(long j, int i) {
-        this.f696a = j;
+        this.f697a = j;
         this.b = i;
     }
 
@@ -17,16 +17,16 @@ public final class O7 {
         }
         if (obj instanceof O7) {
             O7 o7 = (O7) obj;
-            return this.f696a == o7.f696a && this.b == o7.b;
+            return this.f697a == o7.f697a && this.b == o7.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.b) + (Long.hashCode(this.f696a) * 31);
+        return Integer.hashCode(this.b) + (Long.hashCode(this.f697a) * 31);
     }
 
     public final String toString() {
-        return "DecimalProtoModel(mantissa=" + this.f696a + ", exponent=" + this.b + ')';
+        return "DecimalProtoModel(mantissa=" + this.f697a + ", exponent=" + this.b + ')';
     }
 }

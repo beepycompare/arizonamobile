@@ -36,7 +36,7 @@ public final class Je {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f806a = i;
+        v9.f807a = i;
         Ke.b.getClass();
         JSONObject jSONObject = new JSONObject();
         for (Field field : obj.getClass().getFields()) {

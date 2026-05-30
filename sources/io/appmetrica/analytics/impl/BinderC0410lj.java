@@ -7,20 +7,20 @@ import org.json.JSONObject;
 public final class BinderC0410lj extends Ka {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0462nj f1082a;
+    public final /* synthetic */ C0462nj f1083a;
     public final /* synthetic */ ServiceConnectionC0436mj b;
 
     public BinderC0410lj(C0462nj c0462nj, ServiceConnectionC0436mj serviceConnectionC0436mj) {
-        this.f1082a = c0462nj;
+        this.f1083a = c0462nj;
         this.b = serviceConnectionC0436mj;
     }
 
     @Override // io.appmetrica.analytics.impl.Ka
     public final void a(String str) {
         Lg jg;
-        C0462nj.a(this.f1082a, this.b);
-        Dg dg = this.b.f1098a;
-        this.f1082a.getClass();
+        C0462nj.a(this.f1083a, this.b);
+        Dg dg = this.b.f1099a;
+        this.f1083a.getClass();
         if (str != null && !StringsKt.isBlank(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -41,7 +41,7 @@ public final class BinderC0410lj extends Ka {
 
     @Override // io.appmetrica.analytics.impl.Ka
     public final void a(int i, String str) {
-        C0462nj.a(this.f1082a, this.b);
-        this.b.f1098a.a(new Jg("RuStore referrer error " + i + ": " + str, null, 2, null));
+        C0462nj.a(this.f1083a, this.b);
+        this.b.f1099a.a(new Jg("RuStore referrer error " + i + ": " + str, null, 2, null));
     }
 }

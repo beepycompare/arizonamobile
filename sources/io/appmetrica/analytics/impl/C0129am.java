@@ -6,7 +6,7 @@ import java.util.HashMap;
 public final class C0129am implements InterfaceC0678w2 {
     @Override // io.appmetrica.analytics.impl.InterfaceC0678w2
     public final Io a(Go go, Io io2) {
-        ((HashMap) go.f567a.get(io2.b)).put(new String(io2.f599a), io2);
+        ((HashMap) go.f568a.get(io2.b)).put(new String(io2.f600a), io2);
         return io2;
     }
 }

@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0097a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f258a;
+    public final List f259a;
     public final boolean b;
 
     public C0097a(List list, boolean z) {
-        this.f258a = list;
+        this.f259a = list;
         this.b = z;
     }
 
@@ -21,16 +21,16 @@ public final class C0097a {
         }
         if (obj instanceof C0097a) {
             C0097a c0097a = (C0097a) obj;
-            return Intrinsics.areEqual(this.f258a, c0097a.f258a) && this.b == c0097a.b;
+            return Intrinsics.areEqual(this.f259a, c0097a.f259a) && this.b == c0097a.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.b) + (this.f258a.hashCode() * 31);
+        return Boolean.hashCode(this.b) + (this.f259a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "AutoInappCollectingInfo(billingInfos=" + this.f258a + ", firstInappCheckOccurred=" + this.b + ')';
+        return "AutoInappCollectingInfo(billingInfos=" + this.f259a + ", firstInappCheckOccurred=" + this.b + ')';
     }
 }

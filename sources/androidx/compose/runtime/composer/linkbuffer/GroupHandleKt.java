@@ -17,19 +17,19 @@ public final class GroupHandleKt {
     }
 
     public static final long makeGroupHandle(int i, int i2) {
-        return (UInt.m9942constructorimpl(i2) & 4294967295L) | (i << 32);
+        return (UInt.m9943constructorimpl(i2) & 4294967295L) | (i << 32);
     }
 
     public static final long makeGroupHandle(int i, int i2, int i3) {
         long j;
-        int m9942constructorimpl;
+        int m9943constructorimpl;
         if (i3 >= 0) {
             j = i2 << 32;
-            m9942constructorimpl = UInt.m9942constructorimpl(i3);
+            m9943constructorimpl = UInt.m9943constructorimpl(i3);
         } else {
             j = i << 32;
-            m9942constructorimpl = UInt.m9942constructorimpl(-1);
+            m9943constructorimpl = UInt.m9943constructorimpl(-1);
         }
-        return j | (4294967295L & m9942constructorimpl);
+        return j | (4294967295L & m9943constructorimpl);
     }
 }

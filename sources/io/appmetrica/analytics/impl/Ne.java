@@ -6,13 +6,13 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class Ne {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f683a = -1;
+    public final int f684a = -1;
     public final int b = 0;
     public final int c = 1;
 
     public final int a(Boolean bool) {
         if (bool == null) {
-            return this.f683a;
+            return this.f684a;
         }
         if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
             return this.b;

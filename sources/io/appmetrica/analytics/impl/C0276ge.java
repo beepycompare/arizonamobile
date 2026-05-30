@@ -6,14 +6,14 @@ import android.os.Process;
 public final class C0276ge implements Fl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f996a;
+    public final int f997a;
 
     public C0276ge(int i) {
-        this.f996a = i;
+        this.f997a = i;
     }
 
     @Override // io.appmetrica.analytics.impl.Fl
     public final boolean a(String str) {
-        return this.f996a != Process.myPid();
+        return this.f997a != Process.myPid();
     }
 }

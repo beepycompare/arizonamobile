@@ -6,14 +6,14 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class C0153bk implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f909a;
+    public final /* synthetic */ PluginErrorDetails f910a;
 
     public C0153bk(PluginErrorDetails pluginErrorDetails) {
-        this.f909a = pluginErrorDetails;
+        this.f910a = pluginErrorDetails;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        interfaceC0506pb.getPluginExtension().reportUnhandledException(this.f909a);
+        interfaceC0506pb.getPluginExtension().reportUnhandledException(this.f910a);
     }
 }

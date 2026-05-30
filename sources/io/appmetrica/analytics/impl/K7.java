@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class K7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H7 f624a;
+    public final H7 f625a;
 
     public K7() {
         this(null, 1, null);
@@ -18,25 +18,25 @@ public final class K7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(J7 j7) {
         ContentValues contentValues = new ContentValues();
-        Long l = j7.f607a;
+        Long l = j7.f608a;
         if (l != null) {
             contentValues.put("id", Long.valueOf(l.longValue()));
         }
         Al al = j7.b;
         if (al != null) {
-            contentValues.put("type", Integer.valueOf(al.f462a));
+            contentValues.put("type", Integer.valueOf(al.f463a));
         }
         String str = j7.c;
         if (str != null) {
             contentValues.put("report_request_parameters", str);
         }
-        H7 h7 = this.f624a;
-        contentValues.put("session_description", MessageNano.toByteArray(h7.f573a.fromModel(j7.d)));
+        H7 h7 = this.f625a;
+        contentValues.put("session_description", MessageNano.toByteArray(h7.f574a.fromModel(j7.d)));
         return contentValues;
     }
 
     public K7(H7 h7) {
-        this.f624a = h7;
+        this.f625a = h7;
     }
 
     public /* synthetic */ K7(H7 h7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -59,6 +59,6 @@ public final class K7 implements Converter {
         } else {
             al = null;
         }
-        return new J7(asLong, al, contentValues.getAsString("report_request_parameters"), this.f624a.toModel(contentValues.getAsByteArray("session_description")));
+        return new J7(asLong, al, contentValues.getAsString("report_request_parameters"), this.f625a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

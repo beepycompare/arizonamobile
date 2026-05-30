@@ -6,7 +6,7 @@ import android.util.Pair;
 public final class C0391l0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0275gd f1071a;
+    public C0275gd f1072a;
     public long b;
     public boolean c;
     public final Wl d;
@@ -14,21 +14,21 @@ public final class C0391l0 {
     public C0391l0(String str, long j, Wl wl) {
         this.b = j;
         try {
-            this.f1071a = new C0275gd(str);
+            this.f1072a = new C0275gd(str);
         } catch (Throwable unused) {
-            this.f1071a = new C0275gd();
+            this.f1072a = new C0275gd();
         }
         this.d = wl;
     }
 
     public final synchronized void a(Pair pair) {
-        if (this.d.b(this.f1071a, (String) pair.first, (String) pair.second)) {
+        if (this.d.b(this.f1072a, (String) pair.first, (String) pair.second)) {
             this.c = true;
         }
     }
 
     public final synchronized String toString() {
-        return "Map size " + this.f1071a.size() + ". Is changed " + this.c + ". Current revision " + this.b;
+        return "Map size " + this.f1072a.size() + ". Is changed " + this.c + ". Current revision " + this.b;
     }
 
     public final synchronized C0365k0 a() {
@@ -36,6 +36,6 @@ public final class C0391l0 {
             this.b++;
             this.c = false;
         }
-        return new C0365k0(Ib.b(this.f1071a), this.b);
+        return new C0365k0(Ib.b(this.f1072a), this.b);
     }
 }

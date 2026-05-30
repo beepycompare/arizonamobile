@@ -21,7 +21,7 @@ import java.util.concurrent.CountDownLatch;
 public class PreloadInfoContentProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f1325a = false;
+    private boolean f1326a = false;
     private final UriMatcher b = new UriMatcher(-1);
 
     private void a(R5 r5, ContentValues contentValues) {
@@ -29,7 +29,7 @@ public class PreloadInfoContentProvider extends ContentProvider {
         Context applicationContext = context == null ? null : context.getApplicationContext();
         if (applicationContext != null) {
             try {
-                Object invoke = r5.f740a.invoke(contentValues);
+                Object invoke = r5.f741a.invoke(contentValues);
                 if (invoke != null) {
                     r5.c.b(applicationContext);
                     if (((Boolean) r5.b.invoke(invoke)).booleanValue()) {
@@ -51,7 +51,7 @@ public class PreloadInfoContentProvider extends ContentProvider {
     }
 
     public synchronized void disable() {
-        this.f1325a = true;
+        this.f1326a = true;
     }
 
     @Override // android.content.ContentProvider
@@ -62,7 +62,7 @@ public class PreloadInfoContentProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public Uri insert(Uri uri, ContentValues contentValues) {
         synchronized (this) {
-            if (this.f1325a) {
+            if (this.f1326a) {
                 return null;
             }
             if (contentValues != null) {
@@ -75,7 +75,7 @@ public class PreloadInfoContentProvider extends ContentProvider {
                     a(new R5(new G3(), new H3(), Ba.d, "clids"), contentValues);
                 }
             }
-            CountDownLatch countDownLatch = Q5.f725a;
+            CountDownLatch countDownLatch = Q5.f726a;
             if (countDownLatch != null) {
                 countDownLatch.countDown();
             }
@@ -96,7 +96,7 @@ public class PreloadInfoContentProvider extends ContentProvider {
         String str2 = str + ".appmetrica.preloadinfo.retail";
         this.b.addURI(str2, "preloadinfo", 1);
         this.b.addURI(str2, "clids", 2);
-        Q5.f725a = new CountDownLatch(1);
+        Q5.f726a = new CountDownLatch(1);
         Q5.b = this;
         return true;
     }

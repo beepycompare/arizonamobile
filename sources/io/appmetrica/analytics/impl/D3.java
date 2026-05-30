@@ -14,13 +14,13 @@ import java.util.List;
 public final class D3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f504a;
+    public final Context f505a;
     public final C0691wf b;
     public final String c;
     public final SafePackageManager d;
 
     public D3(Context context, C0691wf c0691wf, String str, SafePackageManager safePackageManager) {
-        this.f504a = context;
+        this.f505a = context;
         this.b = c0691wf;
         this.c = str;
         this.d = safePackageManager;
@@ -38,14 +38,14 @@ public final class D3 {
                 boolean isApiAchieved = AndroidUtils.isApiAchieved(28);
                 SafePackageManager safePackageManager = this.d;
                 if (isApiAchieved) {
-                    SigningInfo signingInfo = safePackageManager.getPackageInfo(this.f504a, this.c, 134217728).signingInfo;
+                    SigningInfo signingInfo = safePackageManager.getPackageInfo(this.f505a, this.c, 134217728).signingInfo;
                     if (signingInfo.hasMultipleSigners()) {
                         signatureArr = signingInfo.getApkContentsSigners();
                     } else {
                         signatureArr = signingInfo.getSigningCertificateHistory();
                     }
                 } else {
-                    signatureArr = safePackageManager.getPackageInfo(this.f504a, this.c, 64).signatures;
+                    signatureArr = safePackageManager.getPackageInfo(this.f505a, this.c, 64).signatures;
                 }
                 if (signatureArr != null) {
                     for (Signature signature : signatureArr) {
@@ -65,7 +65,7 @@ public final class D3 {
             boolean isEmpty2 = arrayList2.isEmpty();
             arrayList = arrayList2;
             if (!isEmpty2) {
-                this.b.a(arrayList2).f1278a.flushAsync();
+                this.b.a(arrayList2).f1279a.flushAsync();
                 arrayList = arrayList2;
             }
         }

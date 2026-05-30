@@ -7,7 +7,7 @@ import java.util.List;
 public final class C3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ua f485a;
+    public final Ua f486a;
 
     public C3() {
         this(new Ua(20, 100));
@@ -16,11 +16,11 @@ public final class C3 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Xi fromModel(List<String> list) {
-        C0519po a2 = this.f485a.a((List<Object>) list);
+        C0519po a2 = this.f486a.a((List<Object>) list);
         C0736y8 c0736y8 = new C0736y8();
-        c0736y8.f1289a = StringUtils.getUTF8Bytes((List) a2.f1152a);
+        c0736y8.f1290a = StringUtils.getUTF8Bytes((List) a2.f1153a);
         InterfaceC0549r3 interfaceC0549r3 = a2.b;
-        int i = ((E4) interfaceC0549r3).f1157a;
+        int i = ((E4) interfaceC0549r3).f1158a;
         return new Xi(c0736y8, interfaceC0549r3);
     }
 
@@ -31,7 +31,7 @@ public final class C3 implements Converter {
     }
 
     public C3(Ua ua) {
-        this.f485a = ua;
+        this.f486a = ua;
     }
 
     public final List<String> a(Xi xi) {

@@ -5,9 +5,9 @@ import java.util.List;
 public final class D {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1430a;
+    public final List f1431a;
 
     public D(InterfaceC0786h interfaceC0786h) {
-        this.f1430a = interfaceC0786h.a();
+        this.f1431a = interfaceC0786h.a();
     }
 }

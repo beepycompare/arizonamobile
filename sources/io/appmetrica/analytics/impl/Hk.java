@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Hk implements InterfaceC0476o7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f579a = "service_main.db";
+    public final String f580a = "service_main.db";
     public final String b = "metrica_data.db";
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
@@ -13,6 +13,6 @@ public final class Hk implements InterfaceC0476o7 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
     public final String b() {
-        return this.f579a;
+        return this.f580a;
     }
 }

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BackgroundManager.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.design.system.component.background.LauncherBackgroundWriter", f = "BackgroundManager.kt", i = {0, 1, 1, 1, 1}, l = {112, 118}, m = "loadLocal", n = {"file", "t", "$this$loadLocal_u24lambda_u240", "fallbackFile", "$i$a$-runCatching-LauncherBackgroundWriter$loadLocal$2"}, nl = {113, 119}, s = {"L$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.design.system.component.background.LauncherBackgroundWriter", f = "BackgroundManager.kt", i = {0, 1, 1, 1, 1}, l = {115, 121}, m = "loadLocal", n = {"file", "t", "$this$loadLocal_u24lambda_u240", "fallbackFile", "$i$a$-runCatching-LauncherBackgroundWriter$loadLocal$2"}, nl = {116, 122}, s = {"L$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
 /* loaded from: classes5.dex */
 public final class LauncherBackgroundWriter$loadLocal$1 extends ContinuationImpl {
     int I$0;

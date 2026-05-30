@@ -10,7 +10,7 @@ public final class C0752yo extends Ra {
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(List<AbstractC0305hh> list) {
-        list.add(this.f742a.h);
-        list.add(this.f742a.n);
+        list.add(this.f743a.h);
+        list.add(this.f743a.n);
     }
 }

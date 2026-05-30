@@ -10,18 +10,18 @@ import java.util.ArrayList;
 public final class C0488oj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1133a;
+    public final Context f1134a;
     public final SafePackageManager b;
 
     public C0488oj(Context context, SafePackageManager safePackageManager) {
-        this.f1133a = context;
+        this.f1134a = context;
         this.b = safePackageManager;
     }
 
     public final ArrayList a() {
         ArrayList arrayList = new ArrayList();
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f1133a;
+        Context context = this.f1134a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
         if (packageInfo != null) {
             String[] strArr = packageInfo.requestedPermissions;

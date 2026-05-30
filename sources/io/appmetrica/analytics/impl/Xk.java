@@ -7,11 +7,11 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleR
 public final class Xk implements ServiceModuleReporterComponentContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ck f840a;
+    public final Ck f841a;
     public final Bk b;
 
     public Xk(C0448n5 c0448n5, F4 f4) {
-        this.f840a = new Ck(c0448n5, null, 2, null);
+        this.f841a = new Ck(c0448n5, null, 2, null);
         this.b = new Bk(f4);
     }
 
@@ -20,7 +20,7 @@ public final class Xk implements ServiceModuleReporterComponentContext {
     }
 
     public final Ck b() {
-        return this.f840a;
+        return this.f841a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext
@@ -30,6 +30,6 @@ public final class Xk implements ServiceModuleReporterComponentContext {
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext
     public final ServiceComponentModuleReporter getReporter() {
-        return this.f840a;
+        return this.f841a;
     }
 }

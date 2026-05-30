@@ -6,12 +6,12 @@ import android.os.ResultReceiver;
 public final class L4 implements InterfaceC0680w4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f639a;
+    public final Context f640a;
     public final N4 b;
     public final ResultReceiver c;
 
     public L4(Context context, N4 n4, G4 g4) {
-        this.f639a = context;
+        this.f640a = context;
         this.b = n4;
         this.c = g4.c;
         n4.a(this);
@@ -28,7 +28,7 @@ public final class L4 implements InterfaceC0680w4 {
     }
 
     public final Context c() {
-        return this.f639a;
+        return this.f640a;
     }
 
     public final ResultReceiver d() {

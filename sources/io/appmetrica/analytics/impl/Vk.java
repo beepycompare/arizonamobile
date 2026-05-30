@@ -9,7 +9,7 @@ public final class Vk {
         c0242f6.d = serviceModuleCounterReport.getType();
         String name = serviceModuleCounterReport.getName();
         if (name != null) {
-            c0242f6.f974a = name;
+            c0242f6.f975a = name;
         }
         if (serviceModuleCounterReport.getValueBytes() == null && (value = serviceModuleCounterReport.getValue()) != null) {
             c0242f6.b = value;

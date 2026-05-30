@@ -9,7 +9,7 @@ public final class Z9 extends Kb {
 
     @Override // io.appmetrica.analytics.impl.Kb, io.appmetrica.analytics.impl.Ra
     public final void a(List<AbstractC0305hh> list) {
-        list.add(this.f742a.u);
+        list.add(this.f743a.u);
         super.a(list);
     }
 }

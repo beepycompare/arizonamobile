@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NetworkClientSettings {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Integer f1370a;
+    private final Integer f1371a;
     private final Integer b;
     private final Long c;
     private final SSLSocketFactory d;
@@ -24,7 +24,7 @@ public final class NetworkClientSettings {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Integer f1371a;
+        private Integer f1372a;
         private Integer b;
         private Long c;
         private SSLSocketFactory d;
@@ -34,7 +34,7 @@ public final class NetworkClientSettings {
         private Boolean h;
 
         public final NetworkClientSettings build() {
-            return new NetworkClientSettings(this.f1371a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, null);
+            return new NetworkClientSettings(this.f1372a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, null);
         }
 
         public final Builder withCallTimeout(long j, TimeUnit timeUnit) {
@@ -48,7 +48,7 @@ public final class NetworkClientSettings {
         }
 
         public final Builder withConnectTimeout(int i) {
-            this.f1371a = Integer.valueOf(i);
+            this.f1372a = Integer.valueOf(i);
             return this;
         }
 
@@ -91,7 +91,7 @@ public final class NetworkClientSettings {
     }
 
     public final Integer getConnectTimeout() {
-        return this.f1370a;
+        return this.f1371a;
     }
 
     public final Boolean getInstanceFollowRedirects() {
@@ -115,11 +115,11 @@ public final class NetworkClientSettings {
     }
 
     public String toString() {
-        return "NetworkClientSettings(connectTimeout=" + this.f1370a + ", readTimeout=" + this.b + ", callTimeout=" + this.c + ", sslSocketFactory=" + this.d + ", useCaches=" + this.e + ", instanceFollowRedirects=" + this.f + ", maxResponseSize=" + this.g + ", collectMetrics=" + this.h + ')';
+        return "NetworkClientSettings(connectTimeout=" + this.f1371a + ", readTimeout=" + this.b + ", callTimeout=" + this.c + ", sslSocketFactory=" + this.d + ", useCaches=" + this.e + ", instanceFollowRedirects=" + this.f + ", maxResponseSize=" + this.g + ", collectMetrics=" + this.h + ')';
     }
 
     private NetworkClientSettings(Integer num, Integer num2, Long l, SSLSocketFactory sSLSocketFactory, Boolean bool, Boolean bool2, int i, Boolean bool3) {
-        this.f1370a = num;
+        this.f1371a = num;
         this.b = num2;
         this.c = l;
         this.d = sSLSocketFactory;

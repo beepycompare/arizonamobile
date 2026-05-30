@@ -82,17 +82,17 @@ public final class Instant implements Comparable<Instant>, Serializable {
     }
 
     /* renamed from: minus-LRDsOJo  reason: not valid java name */
-    public final Instant m11301minusLRDsOJo(long j) {
-        return m11303plusLRDsOJo(Duration.m11242unaryMinusUwyO8pc(j));
+    public final Instant m11302minusLRDsOJo(long j) {
+        return m11304plusLRDsOJo(Duration.m11243unaryMinusUwyO8pc(j));
     }
 
     /* renamed from: minus-UwyO8pc  reason: not valid java name */
-    public final long m11302minusUwyO8pc(Instant other) {
+    public final long m11303minusUwyO8pc(Instant other) {
         Intrinsics.checkNotNullParameter(other, "other");
         Duration.Companion companion = Duration.Companion;
         long duration = DurationKt.toDuration(this.epochSeconds - other.epochSeconds, DurationUnit.SECONDS);
         Duration.Companion companion2 = Duration.Companion;
-        return Duration.m11227plusLRDsOJo(duration, DurationKt.toDuration(this.nanosecondsOfSecond - other.nanosecondsOfSecond, DurationUnit.NANOSECONDS));
+        return Duration.m11228plusLRDsOJo(duration, DurationKt.toDuration(this.nanosecondsOfSecond - other.nanosecondsOfSecond, DurationUnit.NANOSECONDS));
     }
 
     @Override // java.lang.Comparable
@@ -219,17 +219,17 @@ public final class Instant implements Comparable<Instant>, Serializable {
     }
 
     /* renamed from: plus-LRDsOJo  reason: not valid java name */
-    public final Instant m11303plusLRDsOJo(long j) {
-        long m11212getInWholeSecondsimpl = Duration.m11212getInWholeSecondsimpl(j);
-        int m11214getNanosecondsComponentimpl = Duration.m11214getNanosecondsComponentimpl(j);
-        if (m11212getInWholeSecondsimpl == 0 && m11214getNanosecondsComponentimpl == 0) {
+    public final Instant m11304plusLRDsOJo(long j) {
+        long m11213getInWholeSecondsimpl = Duration.m11213getInWholeSecondsimpl(j);
+        int m11215getNanosecondsComponentimpl = Duration.m11215getNanosecondsComponentimpl(j);
+        if (m11213getInWholeSecondsimpl == 0 && m11215getNanosecondsComponentimpl == 0) {
             return this;
         }
         long j2 = this.epochSeconds;
-        long j3 = j2 + m11212getInWholeSecondsimpl;
-        if ((j2 ^ j3) >= 0 || (m11212getInWholeSecondsimpl ^ j2) < 0) {
-            return Companion.fromEpochSeconds(j3, this.nanosecondsOfSecond + m11214getNanosecondsComponentimpl);
+        long j3 = j2 + m11213getInWholeSecondsimpl;
+        if ((j2 ^ j3) >= 0 || (m11213getInWholeSecondsimpl ^ j2) < 0) {
+            return Companion.fromEpochSeconds(j3, this.nanosecondsOfSecond + m11215getNanosecondsComponentimpl);
         }
-        return Duration.m11225isPositiveimpl(j) ? MAX : MIN;
+        return Duration.m11226isPositiveimpl(j) ? MAX : MIN;
     }
 }

@@ -7,9 +7,9 @@ import kotlin.collections.CollectionsKt;
 public abstract class AbstractC0791m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f1452a = new A().f1429a;
+    public static final boolean f1453a = new A().f1430a;
     public static final List b = CollectionsKt.listOf((Object[]) new String[]{"_display_name", "_data"});
-    public static final boolean c = new w().f1460a;
+    public static final boolean c = new w().f1461a;
     public static final boolean d;
     public static final long e;
     public static final boolean f;
@@ -17,10 +17,10 @@ public abstract class AbstractC0791m {
 
     static {
         y yVar = new y();
-        d = yVar.f1462a;
+        d = yVar.f1463a;
         e = yVar.b;
         x xVar = new x();
-        f = xVar.f1461a;
+        f = xVar.f1462a;
         g = xVar.b;
     }
 

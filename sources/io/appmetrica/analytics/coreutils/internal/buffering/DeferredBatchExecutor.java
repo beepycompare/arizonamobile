@@ -11,7 +11,7 @@ public final class DeferredBatchExecutor<T> {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final IHandlerExecutor f349a;
+    private final IHandlerExecutor f350a;
     private final TaskBuffer b;
     private final BatchProcessor c;
     private final long d;
@@ -29,7 +29,7 @@ public final class DeferredBatchExecutor<T> {
     }
 
     public DeferredBatchExecutor(IHandlerExecutor iHandlerExecutor, TaskBuffer<T> taskBuffer, BatchProcessor<T> batchProcessor, long j, String str) {
-        this.f349a = iHandlerExecutor;
+        this.f350a = iHandlerExecutor;
         this.b = taskBuffer;
         this.c = batchProcessor;
         this.d = j;
@@ -48,7 +48,7 @@ public final class DeferredBatchExecutor<T> {
             }
         };
         this.e = runnable;
-        this.f349a.executeDelayed(runnable, this.d);
+        this.f350a.executeDelayed(runnable, this.d);
     }
 
     public static /* synthetic */ void submit$default(DeferredBatchExecutor deferredBatchExecutor, Object obj, boolean z, int i, Object obj2) {
@@ -61,7 +61,7 @@ public final class DeferredBatchExecutor<T> {
     public final synchronized void flush() {
         Runnable runnable = this.e;
         if (runnable != null) {
-            this.f349a.remove(runnable);
+            this.f350a.remove(runnable);
             this.e = null;
         }
         if (!this.b.isEmpty()) {
@@ -70,7 +70,7 @@ public final class DeferredBatchExecutor<T> {
     }
 
     public final void flushAsync() {
-        this.f349a.execute(new Runnable() { // from class: io.appmetrica.analytics.coreutils.internal.buffering.DeferredBatchExecutor$$ExternalSyntheticLambda0
+        this.f350a.execute(new Runnable() { // from class: io.appmetrica.analytics.coreutils.internal.buffering.DeferredBatchExecutor$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 DeferredBatchExecutor.a(DeferredBatchExecutor.this);
@@ -83,7 +83,7 @@ public final class DeferredBatchExecutor<T> {
         Runnable runnable = this.e;
         if (z) {
             if (runnable != null) {
-                this.f349a.remove(runnable);
+                this.f350a.remove(runnable);
                 this.e = null;
             }
             a();
