@@ -12,6 +12,10 @@ final class zaf extends Drawable {
     private zaf() {
     }
 
+    public static /* synthetic */ zaf zaa() {
+        return zaa;
+    }
+
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
     }

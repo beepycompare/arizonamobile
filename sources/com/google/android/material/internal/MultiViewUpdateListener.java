@@ -8,14 +8,9 @@ public class MultiViewUpdateListener implements ValueAnimator.AnimatorUpdateList
     private final Listener listener;
     private final View[] views;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    public interface Listener {
+    interface Listener {
         void onAnimationUpdate(ValueAnimator valueAnimator, View view);
-    }
-
-    public static /* synthetic */ void $r8$lambda$tf5oGWUNf6tQQxMTGg7FpP3COoI(ValueAnimator valueAnimator, View view) {
-        setTranslationX(valueAnimator, view);
     }
 
     public MultiViewUpdateListener(Listener listener, View... viewArr) {
@@ -43,6 +38,7 @@ public class MultiViewUpdateListener implements ValueAnimator.AnimatorUpdateList
         return new MultiViewUpdateListener(new MultiViewUpdateListener$$ExternalSyntheticLambda3(), collection);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static void setAlpha(ValueAnimator valueAnimator, View view) {
         view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
@@ -55,6 +51,7 @@ public class MultiViewUpdateListener implements ValueAnimator.AnimatorUpdateList
         return new MultiViewUpdateListener(new MultiViewUpdateListener$$ExternalSyntheticLambda1(), collection);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static void setScale(ValueAnimator valueAnimator, View view) {
         Float f = (Float) valueAnimator.getAnimatedValue();
         view.setScaleX(f.floatValue());
@@ -69,6 +66,7 @@ public class MultiViewUpdateListener implements ValueAnimator.AnimatorUpdateList
         return new MultiViewUpdateListener(new MultiViewUpdateListener$$ExternalSyntheticLambda0(), collection);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static void setTranslationX(ValueAnimator valueAnimator, View view) {
         view.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
@@ -81,6 +79,7 @@ public class MultiViewUpdateListener implements ValueAnimator.AnimatorUpdateList
         return new MultiViewUpdateListener(new MultiViewUpdateListener$$ExternalSyntheticLambda2(), collection);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public static void setTranslationY(ValueAnimator valueAnimator, View view) {
         view.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }

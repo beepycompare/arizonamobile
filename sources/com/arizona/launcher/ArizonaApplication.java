@@ -7,6 +7,7 @@ import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.arizona.launcher.util.FlavorUtilKt;
 import com.arizona.launcher.util.ProjectLocale;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -15,6 +16,7 @@ import com.miami.game.core.connection.resolver.R;
 import dagger.hilt.android.HiltAndroidApp;
 import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.AppMetricaConfig;
+import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
@@ -39,7 +41,11 @@ public final class ArizonaApplication extends Hilt_ArizonaApplication {
         FirebaseApp.initializeApp(arizonaApplication);
         String str = FlavorUtilKt.isArizona() ? ArizonaApplicationKt.ARIZONA_API_KEY : ArizonaApplicationKt.RODINA_API_KEY;
         FirebaseRemoteConfig remoteConfig = RemoteConfigKt.getRemoteConfig(Firebase.INSTANCE);
-        remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults);
+        try {
+            Tasks.await(remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults), 2L, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            Timber.Forest.e(e, "Remote Config defaults failed to apply in time", new Object[0]);
+        }
         remoteConfig.fetchAndActivate();
         AppMetricaConfig build = AppMetricaConfig.newConfigBuilder(str).withLocationTracking(true).withCrashReporting(false).withNativeCrashReporting(false).withLogs().build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");

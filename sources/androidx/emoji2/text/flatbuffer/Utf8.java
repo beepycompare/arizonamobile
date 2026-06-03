@@ -23,8 +23,9 @@ public abstract class Utf8 {
         DEFAULT = utf8;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    static class DecodeUtil {
+    public static class DecodeUtil {
         private static char highSurrogate(int i) {
             return (char) ((i >>> 10) + okio.Utf8.HIGH_SURROGATE_HEADER);
         }

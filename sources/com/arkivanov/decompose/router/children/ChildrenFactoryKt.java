@@ -89,6 +89,27 @@ public final class ChildrenFactoryKt {
         return null;
     }
 
+    public static /* synthetic */ Value children$default(GenericComponentContext genericComponentContext, NavigationSource navigationSource, String str, Function0 function0, Function1 function1, Function1 function12, Function2 function2, Function2 function22, Function2 function23, Function3 function3, Function1 function13, Function2 function24, int i, Object obj) {
+        return children(genericComponentContext, navigationSource, str, function0, function1, function12, function2, function22, (i & 128) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj2, Object obj3) {
+                return ChildrenFactoryKt.children$lambda$4((NavState) obj2, (NavState) obj3);
+            }
+        } : function23, (i & 256) != 0 ? new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda9
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj2, Object obj3, Object obj4) {
+                return ChildrenFactoryKt.children$lambda$5(obj2, (NavState) obj3, (NavState) obj4);
+            }
+        } : function3, (i & 512) != 0 ? new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$children$8
+            /* JADX WARN: Incorrect types in method signature: (TN;)Ljava/lang/Void; */
+            @Override // kotlin.jvm.functions.Function1
+            public final Void invoke(NavState it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return null;
+            }
+        } : function13, function24);
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$4(NavState navState, NavState navState2) {
         Intrinsics.checkNotNullParameter(navState, "<unused var>");

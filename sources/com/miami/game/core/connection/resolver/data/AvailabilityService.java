@@ -11,6 +11,6 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AvailabilityService {
     public final boolean checkAvailability(String serverUri) {
         Intrinsics.checkNotNullParameter(serverUri, "serverUri");
-        return (FirebaseConfigHelper.INSTANCE.checkWithIsReachable(serverUri) || FirebaseConfigHelper.INSTANCE.checkWithUnixSystemPing(serverUri) || FirebaseConfigHelper.INSTANCE.checkWithLinuxNC(serverUri)) && FirebaseConfigHelper.INSTANCE.isServiceAvailable(serverUri);
+        return FirebaseConfigHelper.INSTANCE.isServiceAvailable(serverUri);
     }
 }

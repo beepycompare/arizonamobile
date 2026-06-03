@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <defaults>
     <entry>
-        <key>launcher_background_hash_rodina
+        <key>launcher_background
         </key>
-        <value>d9ccf2bb6a9000c58445e63ab0b624519c74450ecef47991dc9b6f9b99e4047b
+        <value>/assets/images/mobile_launcher/background3.webp
         </value>
     </entry>
     <entry>
-        <key>launcher_background_rodina
+        <key>launcher_background_hash
         </key>
-        <value>/assets/images/mobile_launcher/background5.webp
+        <value>2ce5de6729303a5c8d5184a5de7d3383f608b2275daa0bb4ff3a950f859af773
         </value>
     </entry>
     <entry>
@@ -34,12 +34,6 @@
         <key>main_hud_ping
         </key>
         <value>https://arizona-ping.react.group/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_background
-        </key>
-        <value>/assets/images/mobile_launcher/background3.webp
         </value>
     </entry>
     <entry>
@@ -97,6 +91,12 @@
         </value>
     </entry>
     <entry>
+        <key>launcher_background_hash_rodina
+        </key>
+        <value>d9ccf2bb6a9000c58445e63ab0b624519c74450ecef47991dc9b6f9b99e4047b
+        </value>
+    </entry>
+    <entry>
         <key>reserve_hud_ping
         </key>
         <value>https://arz-reserve.samp-dl.com/
@@ -127,15 +127,15 @@
         </value>
     </entry>
     <entry>
-        <key>launcher_background_hash
-        </key>
-        <value>2ce5de6729303a5c8d5184a5de7d3383f608b2275daa0bb4ff3a950f859af773
-        </value>
-    </entry>
-    <entry>
         <key>main_sound
         </key>
         <value>https://cdn.azsounds.net/
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_background_rodina
+        </key>
+        <value>/assets/images/mobile_launcher/background5.webp
         </value>
     </entry>
 </defaults>

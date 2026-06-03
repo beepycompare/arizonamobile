@@ -7,98 +7,88 @@ import com.google.firebase.remoteconfig.RemoteConfigKt;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import kotlin.Metadata;
 import kotlin.collections.ArraysKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 /* compiled from: FileServers.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0011\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u001d\u001a\u00020\u001eJ\u0006\u0010\u001f\u001a\u00020\u001eJ\u0006\u0010 \u001a\u00020\u0005R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u000e\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\rR\u0011\u0010\u0010\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\rR\u0011\u0010\u0012\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\rR\u0019\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00050\u0015¢\u0006\n\n\u0002\u0010\u0018\u001a\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lcom/arizona/launcher/util/FileServers;", "", "<init>", "()V", "TAG", "", "kotlin.jvm.PlatformType", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "mainChannelArizona", "getMainChannelArizona", "()Ljava/lang/String;", "mainChannelRodina", "getMainChannelRodina", "reserveChannelArizona", "getReserveChannelArizona", "reserveChannelRodina", "getReserveChannelRodina", "game_servers", "", "getGame_servers", "()[Ljava/lang/String;", "[Ljava/lang/String;", "serversIndex", "", "initConnection", "", "initReachableConnection", "", "currentServerIsUnreachable", "getCurrentServer", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010 \u001a\u00020!J\u0006\u0010\"\u001a\u00020!J\u0006\u0010#\u001a\u00020\u0005R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\u00020\f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u0014\u0010\u000f\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0012\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0011R\u0014\u0010\u0014\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0011R\u0014\u0010\u0016\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0011R\u0017\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00050\u00198F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/arizona/launcher/util/FileServers;", "", "<init>", "()V", "TAG", "", "kotlin.jvm.PlatformType", "FALLBACK_MAIN_ARIZONA", "FALLBACK_RESERVE_ARIZONA", "FALLBACK_MAIN_RODINA", "FALLBACK_RESERVE_RODINA", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "mainChannelArizona", "getMainChannelArizona", "()Ljava/lang/String;", "mainChannelRodina", "getMainChannelRodina", "reserveChannelArizona", "getReserveChannelArizona", "reserveChannelRodina", "getReserveChannelRodina", "game_servers", "", "getGame_servers", "()[Ljava/lang/String;", "serversIndex", "", "initConnection", "", "initReachableConnection", "", "currentServerIsUnreachable", "getCurrentServer", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FileServers {
-    public static final int $stable;
+    private static final String FALLBACK_MAIN_ARIZONA = "https://mob.maz-ins.com";
+    private static final String FALLBACK_MAIN_RODINA = "https://mob.azinternal.com";
+    private static final String FALLBACK_RESERVE_ARIZONA = "https://arz-mob.react-group.tech";
+    private static final String FALLBACK_RESERVE_RODINA = "https://rod-mob.react-group.tech";
+    private static boolean initConnection;
+    private static int serversIndex;
     public static final FileServers INSTANCE = new FileServers();
     private static final String TAG = FileServers.class.getCanonicalName();
-    private static final String[] game_servers;
-    private static boolean initConnection;
-    private static final String mainChannelArizona;
-    private static final String mainChannelRodina;
-    private static final FirebaseRemoteConfig remoteConfig;
-    private static final String reserveChannelArizona;
-    private static final String reserveChannelRodina;
-    private static int serversIndex;
+    public static final int $stable = 8;
 
     private FileServers() {
     }
 
-    static {
-        String[] strArr;
-        FirebaseRemoteConfig remoteConfig2 = RemoteConfigKt.getRemoteConfig(Firebase.INSTANCE);
-        remoteConfig = remoteConfig2;
-        String string = remoteConfig2.getString("main_channel_arizona");
-        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
-        mainChannelArizona = string;
-        String string2 = remoteConfig2.getString("main_channel_rodina");
-        Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
-        mainChannelRodina = string2;
-        String string3 = remoteConfig2.getString("reserve_channel_arizona");
-        Intrinsics.checkNotNullExpressionValue(string3, "getString(...)");
-        reserveChannelArizona = string3;
-        String string4 = remoteConfig2.getString("reserve_channel_rodina");
-        Intrinsics.checkNotNullExpressionValue(string4, "getString(...)");
-        reserveChannelRodina = string4;
-        int hashCode = "release".hashCode();
-        if (hashCode == -1897523141) {
-            if ("release".equals("staging")) {
-                strArr = new String[]{string + "/game/staging/", string3 + "/game/staging/"};
-            }
-            strArr = new String[]{string + "/game/release/", string3 + "/game/release/"};
-        } else if (hashCode != 95458899) {
-            if (hashCode == 862681341 && "release".equals("public_debug")) {
-                strArr = new String[]{string + "/game/staging/", string3 + "/game/staging/"};
-            }
-            strArr = new String[]{string + "/game/release/", string3 + "/game/release/"};
-        } else {
-            if ("release".equals("debug")) {
-                strArr = new String[]{string + "/game/staging/", string3 + "/game/staging/"};
-            }
-            strArr = new String[]{string + "/game/release/", string3 + "/game/release/"};
+    private final FirebaseRemoteConfig getRemoteConfig() {
+        return RemoteConfigKt.getRemoteConfig(Firebase.INSTANCE);
+    }
+
+    private final String getMainChannelArizona() {
+        String string = getRemoteConfig().getString("main_channel_arizona");
+        if (StringsKt.isBlank(string)) {
+            string = FALLBACK_MAIN_ARIZONA;
         }
-        game_servers = strArr;
-        $stable = 8;
+        Intrinsics.checkNotNullExpressionValue(string, "ifBlank(...)");
+        return string;
     }
 
-    public final FirebaseRemoteConfig getRemoteConfig() {
-        return remoteConfig;
+    private final String getMainChannelRodina() {
+        String string = getRemoteConfig().getString("main_channel_rodina");
+        if (StringsKt.isBlank(string)) {
+            string = FALLBACK_MAIN_RODINA;
+        }
+        Intrinsics.checkNotNullExpressionValue(string, "ifBlank(...)");
+        return string;
     }
 
-    public final String getMainChannelArizona() {
-        return mainChannelArizona;
+    private final String getReserveChannelArizona() {
+        String string = getRemoteConfig().getString("reserve_channel_arizona");
+        if (StringsKt.isBlank(string)) {
+            string = FALLBACK_RESERVE_ARIZONA;
+        }
+        Intrinsics.checkNotNullExpressionValue(string, "ifBlank(...)");
+        return string;
     }
 
-    public final String getMainChannelRodina() {
-        return mainChannelRodina;
-    }
-
-    public final String getReserveChannelArizona() {
-        return reserveChannelArizona;
-    }
-
-    public final String getReserveChannelRodina() {
-        return reserveChannelRodina;
+    private final String getReserveChannelRodina() {
+        String string = getRemoteConfig().getString("reserve_channel_rodina");
+        if (StringsKt.isBlank(string)) {
+            string = FALLBACK_RESERVE_RODINA;
+        }
+        Intrinsics.checkNotNullExpressionValue(string, "ifBlank(...)");
+        return string;
     }
 
     public final String[] getGame_servers() {
-        return game_servers;
+        int hashCode = "release".hashCode();
+        return (hashCode == -1897523141 ? !"release".equals("staging") : hashCode == 95458899 ? !"release".equals("debug") : !(hashCode == 862681341 && "release".equals("public_debug"))) ? new String[]{getMainChannelArizona() + "/game/release/", getReserveChannelArizona() + "/game/release/"} : new String[]{getMainChannelArizona() + "/game/staging/", getReserveChannelArizona() + "/game/staging/"};
     }
 
     public final void initReachableConnection() {
-        String str = TAG;
-        String[] strArr = game_servers;
-        Log.d(str, "getReachableConnection: " + strArr);
-        for (String str2 : strArr) {
-            if ((FirebaseConfigHelper.INSTANCE.checkWithIsReachable(str2) || FirebaseConfigHelper.INSTANCE.checkWithUnixSystemPing(str2) || FirebaseConfigHelper.INSTANCE.checkWithLinuxNC(str2)) && FirebaseConfigHelper.INSTANCE.isServiceAvailable(str2)) {
-                Log.w(TAG, "File server: Use - " + str2);
-                serversIndex = ArraysKt.indexOf(game_servers, str2);
+        String[] game_servers = getGame_servers();
+        Log.d(TAG, "initReachableConnection: " + ArraysKt.joinToString$default(game_servers, (CharSequence) null, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 63, (Object) null));
+        int length = game_servers.length;
+        int i = 0;
+        int i2 = 0;
+        while (i < length) {
+            String str = game_servers[i];
+            int i3 = i2 + 1;
+            if (FirebaseConfigHelper.INSTANCE.isServiceAvailable(str)) {
+                Log.w(TAG, "File server: Use - " + str);
+                serversIndex = i2;
                 return;
             }
-            Log.w(TAG, "File server: Unreachable - " + str2);
+            Log.w(TAG, "File server: Unreachable - " + str);
+            i++;
+            i2 = i3;
         }
         serversIndex = 0;
         Log.w(TAG, "File server: No reachable server found, use - " + ArraysKt.first(game_servers));
@@ -107,11 +97,10 @@ public final class FileServers {
     public final void currentServerIsUnreachable() {
         int i = serversIndex + 1;
         serversIndex = i;
-        String[] strArr = game_servers;
-        if (i >= strArr.length) {
+        if (i >= getGame_servers().length) {
             serversIndex = 0;
         }
-        Log.w(TAG, "File server: Change to - " + strArr[serversIndex]);
+        Log.w(TAG, "File server: Change to - " + getGame_servers()[serversIndex]);
     }
 
     public final String getCurrentServer() {
@@ -119,6 +108,6 @@ public final class FileServers {
             initReachableConnection();
             initConnection = true;
         }
-        return game_servers[serversIndex];
+        return getGame_servers()[serversIndex];
     }
 }
